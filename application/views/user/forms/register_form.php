@@ -1,0 +1,149 @@
+<div class="form">
+	<?php $form = $this->beginWidget(
+			'CActiveForm',
+			array(
+					'id' => 'register-form',
+					'enableAjaxValidation' => true,
+					'htmlOptions' => array('enctype' => 'multipart/form-data'),
+			));
+	?>
+	<p class="note">
+		<?php echo Yii::t('onlinecourseportal', 'Fields with <span class="required">*</span> are required.'); ?>
+	</p>
+	<?php echo $form->errorSummary($models); ?>
+	
+	<div class="row">
+		<?php echo $form->labelEx($models['user'], 'email'); ?>
+		<?php echo $form->emailField($models['user'], 'email', array('class' => 'wide_200px')); ?>
+		<?php echo $form->error($models['user'], 'email'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($models['user'], 'password_no_hash'); ?>
+		<?php echo $form->passwordField($models['user'], 'password_no_hash', array('class' => 'wide_200px')); ?>
+		<?php echo $form->error($models['user'], 'password_no_hash'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($models['user'], 'password_no_hash_repeat'); ?>
+		<?php echo $form->passwordField($models['user'], 'password_no_hash_repeat', array('class' => 'wide_200px')); ?>
+		<?php echo $form->error($models['user'], 'password_no_hash_repeat'); ?>
+	</div>
+
+	<div class="row">
+		<label for="UserProfile_firstname" class="required">First Name <span class="required">*</span></label>
+		<?php echo $form->textField($models['user_profile'], 'firstname', array('class' => 'wide_200px')); ?>
+		<?php echo $form->error($models['user_profile'], 'firstname'); ?>
+	</div>
+	
+	<div class="row">
+		<label for="UserProfile_lastname" class="required">Last Name <span class="required">*</span></label>
+		<?php echo $form->textField($models['user_profile'], 'lastname', array('class' => 'wide_200px')); ?>
+		<?php echo $form->error($models['user_profile'], 'lastname'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($models['user_profile'], 'city'); ?>
+		<?php echo $form->textField($models['user_profile'], 'city', array('class' => 'wide_200px')); ?>
+		<?php echo $form->error($models['user_profile'], 'city'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($models['user_profile'], 'state_id'); ?>
+		<?php echo $form->dropDownList($models['user_profile'], 'state_id', 
+				CHtml::listData(
+					States::model()->findAll(), 'id', 'name'),
+					array('prompt' => 'Select a State')
+					); 
+		?>
+		<?php echo $form->error($models['user_profile'], 'state_id'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($models['user_profile'], 'zip_code'); ?>
+		<?php echo $form->textField($models['user_profile'], 'zip_code', array('class' => 'wide_200px')); ?>
+		<?php echo $form->error($models['user_profile'], 'zip_code'); ?>
+	</div>
+	
+	<div class="row">
+		<?php echo $form->labelEx($models['user_profile'], 'country_iso'); ?>
+		<?php echo $form->dropDownList($models['user_profile'], 'country_iso', Yii::app()->localeManager->getTerritories()); ?>
+		<?php echo $form->error($models['user_profile'], 'country_iso'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($models['avatar'], 'image'); ?>
+		<?php echo $form->fileField($models['avatar'], 'image'); ?>
+		<?php echo $form->error($models['avatar'], 'image'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($models['profile_questions'], 'questions[1]'); ?>
+		<?php echo $form->dropDownList(
+				$models['profile_questions'], 
+				'options1', 
+				$models['profile_questions']->questions[1]->getOptionsData()
+			); 
+		?>
+		<?php echo $form->error($models['profile_questions'], ''); ?>
+	</div>
+	
+	<div class="row">
+		<?php echo $form->labelEx($models['profile_questions'], 'questions[2]'); ?>
+		<?php echo $form->dropDownList(
+				$models['profile_questions'], 
+				'options2', 
+				$models['profile_questions']->questions[2]->getOptionsData()
+			); ?>
+		<?php echo $form->error($models['profile_questions'], 'questions[2]'); ?>
+	</div>
+	
+	<div class="row">
+		<?php echo $form->labelEx($models['profile_questions'], 'questions[3]'); ?>
+		<?php echo $form->dropDownList(
+				$models['profile_questions'], 
+				'options3', 
+				$models['profile_questions']->questions[3]->getOptionsData()
+			); ?>
+		<?php echo $form->error($models['profile_questions'], 'questions[3]'); ?>
+	</div>
+	
+	<div class="row">
+		<?php echo $form->labelEx($models['profile_questions'], 'questions[4]'); ?>
+		<?php echo $form->checkBoxList(
+				$models['profile_questions'], 
+				'options4', 
+				$models['profile_questions']->questions[4]->getOptionsData()
+			);?>
+		<?php echo $form->error($models['profile_questions'], 'questions[4]'); ?>
+	</div>
+	
+	<div class="row">
+		<?php echo $form->labelEx($models['profile_questions'], 'questions[5]'); ?>
+		<?php echo $form->dropDownList(
+				$models['profile_questions'], 
+				'options5', 
+				$models['profile_questions']->questions[5]->getOptionsData()
+			); ?>
+		<?php echo $form->error($models['profile_questions'], 'questions[5]'); ?>
+	</div>
+
+	<div class="row">
+		<?php 
+		echo $form->labelEx($models['captcha'], 'captcha');
+		$this->widget('ext.recaptcha.EReCaptcha',
+				array('model' => $models['captcha'], 
+						'attribute' => 'captcha',
+						'language' => Yii::app()->language)
+				);
+		echo $form->error($models['captcha'], 'captcha');
+		?>
+	</div>
+				
+	<div class="row submit">
+		<?php echo CHtml::submitButton(Yii::t('onlinecourseportal', 'Submit')); ?>
+	</div>
+
+	<?php $this->endWidget();?>
+</div>
+<!-- form -->
