@@ -58,34 +58,34 @@
 				<?php 
 				if(!isset($this->menu))
 					$this->menu = array(
-									array('label' => Yii::t('onlinecourseportal', 'Home'),
+									array('label' => '<span id="menu-home">' . Yii::t('onlinecourseportal', 'Home') . '</span>',
 											'url' => Yii::app()->createAbsoluteUrl('home/index')),
-									array('label' => Yii::t('onlinecourseportal', 'Contact Us'),
+									array('label' => '<span id="menu-contact">' . Yii::t('onlinecourseportal', 'Contact Us') . '</span>',
 											'url' => Yii::app()->createAbsoluteUrl('home/contact')),
-									array('label' => Yii::t('onlinecourseportal', 'Register'),
+									array('label' => '<span id="menu-register">' . Yii::t('onlinecourseportal', 'Register') . '</span>',
 											'url' => Yii::app()->createAbsoluteUrl('user/register'),
 											'visible' => Yii::app()->user->isGuest),
-									array('label' => Yii::t('onlinecourseportal', 'Login'),
+									array('label' => '<span id="menu-login">' . Yii::t('onlinecourseportal', 'Login') . '</span>',
 											'url' => Yii::app()->createAbsoluteUrl('user/login'),
 											'visible' => Yii::app()->user->isGuest),
-									array('label' => Yii::t('onlinecourseportal', 'Profile / Files'),
+									array('label' => '<span id="menu-profile">' . Yii::t('onlinecourseportal', 'Profile / Files') . '</span>',
 											'url' => Yii::app()->createAbsoluteUrl('user/profile'),
 											'visible' => !Yii::app()->user->isGuest),
-									array('label' => Yii::t('onlinecourseportal', 'Forum'),
+									array('label' => '<span id="menu-forum">' . Yii::t('onlinecourseportal', 'Forum') . '</span>',
 											'url' => Yii::app()->createAbsoluteUrl('forum/index'),
 											'visible' => !Yii::app()->user->isGuest),
-									array('label' => Yii::t('onlinecourseportal', 'Courses'),
+									array('label' => '<span id="menu-courses">' . Yii::t('onlinecourseportal', 'Courses') . '</span>',
 											'url' => Yii::app()->createAbsoluteUrl('course/index'),
 											'visible' => !Yii::app()->user->isGuest),
-									array('label' => Yii::t('onlinecourseportal', 'Admin'),
+									array('label' => '<span id="menu-admin">' . Yii::t('onlinecourseportal', 'Admin') . '</span>',
 											'url' => Yii::app()->createAbsoluteUrl('admin/index'),
 											'visible' => Yii::app()->user->isAdmin),
-									array('label' => Yii::t('onlinecourseportal', 'Logout'),
+									array('label' => '<span id="menu-logout">' . Yii::t('onlinecourseportal', 'Logout') . '</span>',
 											'url' => Yii::app()->createAbsoluteUrl('user/logout'),
 											'visible' => !Yii::app()->user->isGuest)
 							);
 				?>
-				<?php $this->widget('zii.widgets.CMenu', array('items' => $this->menu)); ?>
+				<?php $this->widget('zii.widgets.CMenu', array('items' => $this->menu, 'encodeLabel' => false)); ?>
 			</div>
 
 		</div>
@@ -93,7 +93,7 @@
 
 		<div id="content">
 			<?php $this->widget('zii.widgets.CBreadcrumbs', array(
-					'links'=>$this->breadcrumbs,
+					'links' => $this->breadcrumbs,
 			)); ?>
 			<!-- breadcrumbs -->
 			

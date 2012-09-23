@@ -13,12 +13,12 @@ $this->pageTitle=Yii::app()->name . ' - '.Yii::t('onlinecourseportal', 'Courses'
 		
 		<hr>
 
-		<h3><a href="#coming-soon" class="fancybox"><?php echo Yii::t('onlinecourseportal', 'Intro to Caregiving Online'); ?></a></h3>
+		<img src="<?php echo Yii::app()->theme->baseUrl; ?>/images/image-hands.png" class="image-right" />
+		<h3><a href="#coming-soon" class="fancybox-noscroll"><?php echo Yii::t('onlinecourseportal', 'Intro to Caregiving Online'); ?></a></h3>
 		<p><?php echo Yii::t('onlinecourseportal', 'Few are fully prepared for the responsibilities and tasks involved in caring for an older adult. 
 		As a caregiver, it is important to have a clear plan or guide that has multiple paths. This five-lesson online course introduces the basics 
 		of the caregiver role and explores the challenges associated with older adult care.'); ?></p>
 		
-			
 		<p>Objectives</p>
 		<ul>
 		<li>Explore, define, describe, and understand caregiving</li>
@@ -47,6 +47,7 @@ $this->pageTitle=Yii::app()->name . ' - '.Yii::t('onlinecourseportal', 'Courses'
 		
 		<hr>
 
+		<img src="<?php echo Yii::app()->theme->baseUrl; ?>/images/image-grocery.png" class="image-right" />
 		<h3><a href="#coming-soon" class="fancybox"><?php echo Yii::t('onlinecourseportal', 'CARE Coaching Online'); ?></a></h3>
 		<p><?php echo Yii::t('onlinecourseportal', 'CARE Coaching Online provides working caregivers with essential tools, 
 		knowledge, and skills to effectively deal with the variety of issues arising from caring for their aging parents, relatives, 
@@ -80,6 +81,7 @@ $this->pageTitle=Yii::app()->name . ' - '.Yii::t('onlinecourseportal', 'Courses'
 		
 		<hr>
 		
+		<img src="<?php echo Yii::app()->theme->baseUrl; ?>/images/image-nurse.png" class="image-right" />
 		<h3><a href="#coming-soon" class="fancybox"><?php echo Yii::t('onlinecourseportal', 'Gerontology Online program'); ?></a></h3>
 		<p><?php echo Yii::t('onlinecourseportal', 'Gerontology Online is a web-based continuing education program designed for health care professionals 
 		who wish to enhance their knowledge and skills in the field of aging. This program will provide employees with valuable information about gerontology, 
@@ -97,6 +99,6 @@ $this->pageTitle=Yii::app()->name . ' - '.Yii::t('onlinecourseportal', 'Courses'
 		<li>Self-paced certificate program (6 unique, online courses) completed within one-year</li>
 		</ul>
 
-		<div id="coming-soon" style="display:none;"><h1 class="flowers">Coming September 15th!</h1></div>
+		<div id="coming-soon" style="display:none; width: 400px; height: 200px;"><h1 class="flowers">Coming October 1!</h1></div>
 		
 </div>

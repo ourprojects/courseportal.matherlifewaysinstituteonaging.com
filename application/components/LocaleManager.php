@@ -7,46 +7,9 @@
 class LocaleManager extends CApplicationComponent {
 	
 	/*
-	 * Costly to derive this data from i18n files so cache it until language changes.
+	 * Costly to derive this data from i18n files so cache it.
 	 */
-	private $_languages;
-	private $_scripts;
-	private $_territories;
-
-	public function init() {
-		parent::init();
-		$this->initLanguage();
-	}
-
-
-	protected function initLanguage() {
-		Yii::app()->setLanguage($this->getSelectedLanguage());
-	}
-
-	
-	public function getSelectedLanguage() {
-		if (isset(Yii::app()->session['sel_lang'])) {
-			return Yii::app()->session['sel_lang'];
-		} else {
-			return Yii::app()->getLanguage();
-		}
-	}
-
-
-	public function setLanguage($language) {
-		$this->clearCache();
-		$language =strtolower($language);
-		Yii::app()->setLanguage($language);
-		Yii::app()->session['sel_lang']=$language;
-	}
-	
-	
-	public function clearCache() {
-		$this->_languages = null;
-		$this->_scripts = null;
-		$this->_territories = null;
-	}
-
+	private $_data;
 
 	public function getFormatByType($format_type, $format_id, $datetime_format=false) {
 		$res =false;
@@ -260,50 +223,41 @@ class LocaleManager extends CApplicationComponent {
 
 		return $res;
 	}
+	
+	public function isAcceptedLanguage($id) {
+		return in_array($id, CLocale::getLocaleIds());
+	}
 
 	public function getLanguages() {
-		if(!isset($this->_languages)) {
-			$this->_languages = array();
-			$locale = Yii::app()->locale;
-			$localeIds = CLocale::getLocaleIds();
-			foreach($localeIds as $id) {
-				$langId = $locale->getLanguageId($id);
-				$lang = $locale->getLanguage($langId);
-				$this->_languages[$langId] = empty($lang) ? $langId : $lang;
-			}
-		}
-		asort($this->_languages, SORT_LOCALE_STRING);
-		return $this->_languages;
+		return $this->getLocaleDisplayNames();
 	}
 	
 	public function getScripts() {
-		if(!isset($this->_scripts)) {
-			$this->_scripts = array();
-			$locale = Yii::app()->locale;
-			$localeIds = CLocale::getLocaleIds();
-			foreach($localeIds as $id) {
-				$script = $locale->getScript($id);
-				$scriptId = $locale->getScriptId($id);
-				$this->_scripts[$scriptId] = empty($script) ? $scriptId : $script;
-			}
-		}
-		asort($this->_scripts, SORT_LOCALE_STRING);
-		return $this->_scripts;
+		return $this->getLocaleDisplayNames('script');
 	}
 	
 	public function getTerritories() {
-		if(!isset($this->_territories)) {
-			$this->_territories = array();
-			$locale = Yii::app()->locale;
-			$localeIds = CLocale::getLocaleIds();
-			foreach($localeIds as $id) {
-				$territory = $locale->getTerritory($id);
-				$territoryId = $locale->getTerritoryId($id);
-				$this->_territories[$territoryId] = empty($territory) ? $territoryId : $territory;
+		return $this->getLocaleDisplayNames('territory');
+	}
+	
+	public function getLocaleDisplayNames($category = 'language') {
+		$method = 'get' . ucfirst($category);
+		if(method_exists(Yii::app()->locale, $method)) {
+			$idMethod = "{$method}ID";
+			if(!isset($this->_data[Yii::app()->getLanguage()][$category])) {
+				$this->_data[Yii::app()->getLanguage()][$category] = array();
+				foreach(CLocale::getLocaleIds() as $id) {
+					$id = Yii::app()->locale->$idMethod($id);
+					if($id !== null) {
+						$item = Yii::app()->locale->$method($id);
+						$this->_data[Yii::app()->getLanguage()][$category][$id] = $item === null ? $id : $item;
+					}
+				}
+				asort($this->_data[Yii::app()->getLanguage()][$category], SORT_LOCALE_STRING);
 			}
+			return $this->_data[Yii::app()->getLanguage()][$category];
 		}
-		asort($this->_territories, SORT_LOCALE_STRING);
-		return $this->_territories;
+		return null;
 	}
 	
 }

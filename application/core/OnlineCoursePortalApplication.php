@@ -67,6 +67,8 @@ class OnlineCoursePortalApplication extends CWebApplication {
 		if(isset($_GET['language'])) {
 			$language = (string)$_GET['language'];
 			unset($_GET['language']);
+		} elseif (isset(Yii::app()->session['language'])) {
+			$language = Yii::app()->session['language'];
 		} elseif (Yii::app()->user->hasState('language')) {
     		$language = (string)Yii::app()->user->getState('language');
     	} elseif(isset(Yii::app()->request->cookies['language'])) {
@@ -76,16 +78,15 @@ class OnlineCoursePortalApplication extends CWebApplication {
     	} else {
     		$language = (string)Yii::app()->language;
     	}
-		
-    	$acceptedLanguages = Yii::app()->localeManager->getLanguages();
+    	
     	//If the language is not recognized maybe the user didn't add the language part of the address.
     	//Try and add the source language to the url and redirect to the new url.
-    	if(!isset($acceptedLanguages[$language])) {
+    	if(!Yii::app()->localeManager->isAcceptedLanguage($language)) {
     		$possibleRoute = $language;
     		Yii::app()->getRequest()->redirect($this->createUrl($possibleRoute, array('language' => Yii::app()->sourceLanguage)));
     	}
 		
-    	Yii::app()->translate->acceptedLanguages = $acceptedLanguages;
+    	Yii::app()->translate->acceptedLanguages = Yii::app()->localeManager->getLanguages();
     	Yii::app()->language = $language;
 
     	$this->name = Yii::t('onlinecourseportal', $this->name);
@@ -103,7 +104,8 @@ class OnlineCoursePortalApplication extends CWebApplication {
     
     public function setLanguage($language) {
     	parent::setLanguage($language);
-    	setLocale(LC_ALL, "$language.UTF-8");
+    	setLocale(LC_ALL, $language.'.'.Yii::app()->charset);
+    	Yii::app()->session['language'] = $language;
     	Yii::app()->user->setState('language', $language);
     	Yii::app()->request->cookies['language'] = new CHttpCookie('language', $language);
     	Yii::app()->request->cookies['language']->expire = time() + (60 * 60 * 24 * 365 * 2); // (2 year)

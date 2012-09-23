@@ -27,6 +27,13 @@ $(document).ready(function() {
 		'scrolling' : 'no',
 	});
 
+	$(".fancybox-noscroll").fancybox({
+		'width' : '800px',
+		'height' : '75%',
+		'autoScale' : false,
+		'scrolling' : 'no',
+	});
+
 	$(".survey-one-answer").click(function(){
 		$("#survey-one-question").slideUp();
 		$("#survey-one-results").fadeIn("slow");

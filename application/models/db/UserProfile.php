@@ -25,6 +25,11 @@
  */
 class UserProfile extends CActiveRecord {
 	
+	public function init() {
+		if($this->isNewRecord)
+			$this->country_iso = Yii::app()->locale->getTerritoryID(Yii::app()->language);
+	}
+	
     /**
      * Returns the static model of the specified AR class.
      * @param string $className active record class name.
