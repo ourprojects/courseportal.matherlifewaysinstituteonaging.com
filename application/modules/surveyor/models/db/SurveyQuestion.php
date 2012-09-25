@@ -17,7 +17,6 @@
  */
 class SurveyQuestion extends CActiveRecord
 {
-	public $multipleAnswersAllowed = false;
 	
     /**
      * Returns the static model of the specified AR class.
@@ -104,21 +103,10 @@ class SurveyQuestion extends CActiveRecord
         ));
     }
     
-    /**
-     * Returns the first error of the specified attribute.
-     * @param string $attribute attribute name.
-     * @return string the error message. Null is returned if no error.
-     */
-    public function getError($attribute) {
-    	if($attribute == 'question') {
- 			if(empty($this->answers))
- 				return 'This question is required';
-    	}
-    	return parent::getError($attribute);
-    }
-    
-    public function isMultipleAnswersAllowed() {
-    	return $this->type->name == 'checkbox' || $this->multipleAnswersAllowed;
+    public function __get($name) {
+    	if($name === 'text')
+    		return Yii::t('onlinecourseportal', parent::__get($name));
+    	return parent::__get($name);
     }
     
 }

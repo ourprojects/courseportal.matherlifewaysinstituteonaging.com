@@ -6,6 +6,9 @@
  */
 class SurveyForm extends CFormModel {
 
+	private $_attributeNames = null;
+	private $_questionLabels = null;
+	
 	private $_survey;
 	private $_answers;
 	
@@ -23,11 +26,19 @@ class SurveyForm extends CFormModel {
 		}
 		if(empty($this->_answers)) {
 			$this->_answers = array();
-			foreach($this->_survey->questions as $question)
-				$this->_answers[$question->id] = new SurveyAnswer;
+			foreach($this->_survey->questions as $question) {
+				$answer = new SurveyAnswer;
+				$answer->question_id = $question->id;
+				$answer->user_id = $userId;
+				$this->_answers[$question->id] = $answer;
+			}
 			$scenario = 'create';
 		} else {
 			$scenario = 'update';
+		}
+		$this->_attributeNames = array();
+		foreach($this->_survey->questions as $question) {
+			$this->_attributeNames[] = "answer{$question->id}";
 		}
 		parent::__construct($scenario);
 	}
@@ -37,10 +48,7 @@ class SurveyForm extends CFormModel {
 	 */
 	public function rules() {
 		return array(
-				array('user_id', 'required'),
-				array('user_id', 'unsafe'),
-				array('user_id', 'exist', 'attributeName' => 'id', 'className' => 'User', 'allowEmpty' => false),
-				//array('questions', 'checkAnswers'),
+				array('_answers', 'validateAnswers'),
 		);
 	}
 	
@@ -48,15 +56,41 @@ class SurveyForm extends CFormModel {
 	 * @return array customized attribute labels (name=>label)
 	 */
 	public function attributeLabels() {
-		$labels = array(
-				'userId' => Yii::t('onlinecourseportal', 'User ID'),
-				'name' => Yii::t('onlinecourseportal', $this->_survey->name),
-				'description' => Yii::t('onlinecourseportal', $this->_survey->description),
-		);
-		foreach($this->_survey->questions as $question) {
-			$labels["answer{$question->id}"] = Yii::t('onlinecourseportal', $question->text);
+		if($this->_questionLabels === null) {
+			$this->_questionLabels = array();
+			foreach($this->_survey->questions as $question) {
+				$this->_questionLabels["answer{$question->id}"] = $question->text;
+			}
 		}
-		return $labels;
+		return array_merge(
+				$this->_questionLabels, 
+				array(
+					'userId' => Yii::t('onlinecourseportal', 'User ID'),
+					'name' => $this->_survey->name,
+					'description' => $this->_survey->description,
+				)
+		);
+	}
+	
+	public function attributeNames() {
+		return array_merge(parent::attributeNames(), $this->_attributeNames);
+	}
+	
+	public function getSafeAttributeNames() {
+		return array_merge(parent::getSafeAttributeNames(), $this->_attributeNames);
+	}
+	
+	public function setUserId($userId) {
+		$criteria = new CDbCriteria();
+		$answers = $this->_survey->answers($criteria->addColumnCondition(array('user_id' => $userId)));
+		if(!empty($answers)) {
+			foreach($answers as $answer)
+				$this->_answers[$answer->question_id] = $answer;
+		} else {
+			foreach($this->_answers as $answer) {
+				$answer->user_id = $userId;
+			}
+		}
 	}
 	
 	public function getQuestions() {
@@ -67,64 +101,33 @@ class SurveyForm extends CFormModel {
 		if($this->_survey->hasAttribute($name))
 			return $this->_survey->$name;
 		if(preg_match('/^answer(?P<qId>\d+)$/', $name, $matches))
-			return $this->_answers[$matches['qId']]->options;
+			return $this->_answers[$matches['qId']]->getOptionIds();
 		return parent::__get($name);
 	}
 	
 	public function __set($name, $value) {
 		if(preg_match('/^answer(?P<qId>\d+)$/', $name, $matches)) {
-			$this->_answers[$matches['qId']]->addOptions($value);
+			$this->_answers[$matches['qId']]->addOptionIds($value);
 		} else {
 			parent::__set($name, $value);
 		}
 	}
 	
-	public function checkAnswers($attribute, $params) {
+	public function validateAnswers($attribute, $params) {
 		foreach($this->$attribute as $answer) {
-			if(is_array($answer)) {
-				foreach($answer as $multianswer) {
-					if($multianswer->isNewRecord)
-						$multianswer->user_id = $this->user_id;
-								if(!$multianswer->validate()) {
-					var_dump($multianswer->getErrors());
-					die;
-			 	}
-					foreach($multianswer->getErrors() as $error)
-						$this->addError('questions['.$multianswer->question_id.']', $error);
-				}
-			} else {
-				if($answer->isNewRecord)
-					$answer->user_id = $this->user_id;
-				if(!$answer->validate()) {
-					var_dump($answer->getErrors());
-					die;
-			 	}
-				foreach($answer->getErrors() as $error)
-					$this->addError('questions['.$answer->question_id.']', $error);
-			}
+			$answer->validate();
+			$this->addErrors($answer->getErrors());
 		}
 	}
 	
 	public function save($validate = true) {
-		if($validate)
-			if(!$this->validate())
-				return false;
-		foreach($this->answers as $question_id => $answer) {
-			if(is_array($answer)) {
-				$criteria = new CDbCriteria;
-				$criteria->addCondition("question_id = $question_id", 'AND');
-				foreach($answer as $multianswer) {
-					$criteria->addCondition("option_id != {$multianswer->option_id}", 'AND');
-					if(!$multianswer->save())
-						return false;
-				}
-				QuestionAnswer::model()->deleteAll($criteria);
-			} else {
+		if(!$validate || $this->validate()) {
+			foreach($this->_answers as $answer)
 				if(!$answer->save())
-					return false;	
-			}
+					return false;
+			return true;
 		}
-		return true;
+		return false;
 	}
 
 }

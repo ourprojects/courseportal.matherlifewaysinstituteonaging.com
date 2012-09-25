@@ -95,8 +95,10 @@ class SurveyQuestionOption extends CActiveRecord
         ));
     }
     
-	public function __toString() {
-        return $this->text;
+    public function __get($name) {
+    	if($name === 'text')
+    		return Yii::t('onlinecourseportal', parent::__get($name));
+    	return parent::__get($name);
     }
     
 }

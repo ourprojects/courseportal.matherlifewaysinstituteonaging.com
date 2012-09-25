@@ -100,6 +100,12 @@ class SurveyAR extends CActiveRecord
         ));
     }
     
+    public function __get($name) {
+    	if($name === 'name' || $name === 'description')
+    		return Yii::t('onlinecourseportal', parent::__get($name));
+    	return parent::__get($name);
+    }
+    
     public function getForm($userId = null, $scenario = 'create') {
     	return new SurveyForm($this, $userId, $scenario);
     }

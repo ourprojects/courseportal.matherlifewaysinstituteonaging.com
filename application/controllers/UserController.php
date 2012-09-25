@@ -248,8 +248,11 @@ class UserController extends OnlineCoursePortalController {
 			echo CActiveForm::validate($survey);
 			Yii::app()->end();
 		}
+		$survey->userId = 4;
 		if(isset($_POST['SurveyForm'])) {
-			var_dump($_POST['SurveyForm']); die;
+			$survey->attributes = $_POST['SurveyForm'];
+			$survey->userId = 4;
+			$survey->save();
 		}
 		$this->render('pages/test', array('survey' => $survey));
 	}
