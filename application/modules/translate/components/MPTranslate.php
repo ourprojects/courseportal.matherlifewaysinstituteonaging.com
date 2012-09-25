@@ -173,15 +173,7 @@ class MPTranslate extends CApplicationComponent{
         ),true);
         return $content;
     }
-    /**
-     * generates a dropdown containing all accepted languages
-     * 
-     * @param CBaseController the current controller context
-     * @return string
-     */
-    function selector($controller){
-    	return $controller->widget('modules.translate.widgets.LanguageSelector');
-    }
+
     /**
      * translate some message from $sourceLanguage to $targetLanguage using google translate api
      * googleApiKey must be defined to use this service

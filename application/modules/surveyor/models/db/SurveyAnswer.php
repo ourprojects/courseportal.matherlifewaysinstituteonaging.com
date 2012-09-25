@@ -1,24 +1,27 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed');  
 
 /**
- * This is the model class for table "{{question_answer}}".
+ * This is the model class for table "{{survey_answer}}".
  *
- * The followings are the available columns in table '{{question_answer}}':
+ * The followings are the available columns in table '{{survey_answer}}':
  * @property integer $user_id
  * @property integer $question_id
- * @property integer $option_id
  * 
  * The followings are the available model relations:
- * @property UserProfile $userProfile
- * @property Question $question
- * @property QuestionOption $option
+ * @property User $user
+ * @property SurveyQuestion $question
+ * @property SurveyAnswerOption[] $answerOptions
+ * @property SurveyQuestionOption[] $options
  */
-class QuestionAnswer extends CActiveRecord
+class SurveyAnswer extends CActiveRecord
 {
+	
+	private $_newOptions = array();
+	
     /**
      * Returns the static model of the specified AR class.
      * @param string $className active record class name.
-     * @return QuestionAnswer the static model class
+     * @return SurveyQuestionAnswer the static model class
      */
     public static function model($className=__CLASS__)
     {
@@ -30,7 +33,7 @@ class QuestionAnswer extends CActiveRecord
      */
     public function tableName()
     {
-        return '{{question_answer}}';
+        return '{{survey_answer}}';
     }
 
     /**
@@ -39,15 +42,23 @@ class QuestionAnswer extends CActiveRecord
     public function rules()
     {
         return array(
-            array('user_id, question_id, option_id', 'required'),
+            array('user_id, question_id', 'required'),
         	array('user_id', 'unsafe'),
         	array('user_id', 'exist', 'attributeName' => 'id', 'className' => 'User', 'allowEmpty' => false),
-        	array('question_id', 'exist', 'attributeName' => 'id', 'className' => 'Question', 'allowEmpty' => false),
-        	array('option_id', 'exist', 'attributeName' => 'id', 'className' => 'QuestionOption', 'allowEmpty' => false),
+        	array('question_id', 'exist', 'attributeName' => 'id', 'className' => 'SurveyQuestion', 'allowEmpty' => false),
             // The following rule is used by search().
             // Please remove those attributes that should not be searched.
-            array('user_id, question_id, option_id', 'safe', 'on'=>'search'),
+            array('user_id, question_id', 'safe', 'on'=>'search'),
         );
+    }
+    
+    public function addOptions($optionIds) {
+    	if(is_array($optionIds)) {
+    		foreach($optionIds as $optionId)
+    			$this->_newOptions[$optionId] = new SurveyAnswerOption($this->id, $optionIds);
+    	} else {
+    		$this->_newOptions[$optionIds] = new SurveyAnswerOption($this->id, $optionIds);
+    	}
     }
 
     /**
@@ -56,9 +67,11 @@ class QuestionAnswer extends CActiveRecord
     public function relations()
     {
         return array(
-        		'userProfile' => array(self::BELONGS_TO, 'UserProfile', 'user_id'),
-        		'question' => array(self::BELONGS_TO, 'Question', 'question_id'),
-        		'option' => array(self::BELONGS_TO, 'QuestionOption', 'option_id'),
+        		'user' => array(self::BELONGS_TO, 'User', 'user_id'),
+        		'question' => array(self::BELONGS_TO, 'SurveyQuestion', 'question_id'),
+        		'answerOptions' => array(self::HAS_MANY, 'SurveyAnswerOption', 'answer_id'),
+        		'options' => array(self::HAS_MANY, 'SurveyOption', array('option_id' => 'id'),
+        				'through' => 'answerOptions'),
         );
     }
 
@@ -68,9 +81,12 @@ class QuestionAnswer extends CActiveRecord
     public function attributeLabels()
     {
         return array(
-            'user_id' => Yii::t('onlinecourseportal','User'),
-            'question_id' => Yii::t('onlinecourseportal','Question'),
-            'option_id' => Yii::t('onlinecourseportal','Option'),
+            'user_id' => Yii::t('onlinecourseportal', 'User ID'),
+            'question_id' => Yii::t('onlinecourseportal', 'Survey Question ID'),
+        	'user' => Yii::t('onlinecourseportal', 'User'),
+        	'question' => Yii::t('onlinecourseportal', 'Question'),
+        	'answerOptions' => Yii::t('onlinecourseportal', 'Answer Options'),
+        	'options' => Yii::t('onlinecourseportal', 'Options'),
         );
     }
 

@@ -1,21 +1,22 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed');  
 
 /**
- * This is the model class for table "{{question_type}}".
+ * This is the model class for table "{{survey_answer_option}}".
  *
- * The followings are the available columns in table '{{question_type}}':
- * @property integer $id
- * @property string $name
+ * The followings are the available columns in table '{{survey_answer_option}}':
+ * @property integer $answer_id
+ * @property integer $option_id
  * 
  * The followings are the available model relations:
- * @property QuestionQuestions[] $questions
+ * @property SurveyAnswer $answer
+ * @property SurveyQuestionOption $option
  */
-class QuestionType extends CActiveRecord
+class SurveyAnswerOption extends CActiveRecord
 {
     /**
      * Returns the static model of the specified AR class.
      * @param string $className active record class name.
-     * @return QuestionType the static model class
+     * @return SurveyQuestionAnswer the static model class
      */
     public static function model($className=__CLASS__)
     {
@@ -27,7 +28,7 @@ class QuestionType extends CActiveRecord
      */
     public function tableName()
     {
-        return '{{question_type}}';
+        return '{{survey_answer_option}}';
     }
 
     /**
@@ -36,11 +37,13 @@ class QuestionType extends CActiveRecord
     public function rules()
     {
         return array(
-            array('name', 'required'),
-            array('name', 'length', 'max' => 64),
+            array('option_id, answer_id', 'required'),
+        	array('answer_id', 'unsafe'),
+        	array('answer_id', 'exist', 'attributeName' => 'id', 'className' => 'SurveyAnswer', 'allowEmpty' => false),
+        	array('option_id', 'exist', 'attributeName' => 'id', 'className' => 'SurveyQuestionOption', 'allowEmpty' => false),
             // The following rule is used by search().
             // Please remove those attributes that should not be searched.
-            array('id, name', 'safe', 'on' => 'search'),
+            array('user_id, answer_id', 'safe', 'on'=>'search'),
         );
     }
 
@@ -50,7 +53,8 @@ class QuestionType extends CActiveRecord
     public function relations()
     {
         return array(
-        		'questions' => array(self::HAS_MANY, 'Question', 'type_id'),
+        		'answer' => array(self::BELONGS_TO, 'SurveyAnswer', 'answer_id'),
+        		'option' => array(self::HAS_ONE, 'SurveyQuestionOption', 'option_id'),
         );
     }
 
@@ -60,8 +64,10 @@ class QuestionType extends CActiveRecord
     public function attributeLabels()
     {
         return array(
-            'id' => Yii::t('onlinecourseportal','ID'),
-            'name' => Yii::t('onlinecourseportal','Name'),
+            'answer_id' => Yii::t('onlinecourseportal', 'Answer ID'),
+            'option_id' => Yii::t('onlinecourseportal', 'Option ID'),
+        	'option' => Yii::t('onlinecourseportal', 'Option'),
+        	'option' => Yii::t('onlinecourseportal', 'Answer'),
         );
     }
 
@@ -73,8 +79,8 @@ class QuestionType extends CActiveRecord
     {
         $criteria=new CDbCriteria;
 
-        $criteria->compare('id',$this->id);
-        $criteria->compare('name',$this->name,true);
+        $criteria->compare('answer_id',$this->answer_id);
+        $criteria->compare('option_id',$this->option_id);
 
         return new CActiveDataProvider($this, array(
             'criteria'=>$criteria,

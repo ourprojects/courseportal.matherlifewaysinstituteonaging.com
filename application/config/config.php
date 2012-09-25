@@ -32,6 +32,7 @@ return array(
 		        'ipFilters'=>array('*'),
 		    ),*/
 			'translate',
+			'surveyor',
 		),
 
 		'defaultController' => 'home',
@@ -55,6 +56,10 @@ return array(
 				
 				'localeManager' => array(
 						'class' => 'LocaleManager',			
+				),
+				
+				'surveyor' => array(
+						'class' => 'modules.surveyor.components.Surveyor',		
 				),
 				
 				'translate' => array(

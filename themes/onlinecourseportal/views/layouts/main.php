@@ -46,7 +46,7 @@
 
 			<div id="site-title"><?php echo Yii::app()->name; ?></div>
 			
-			<div id="language-menu"><?php Yii::app()->translate->selector($this); ?></div>
+			<div id="language-menu"><?php $this->widget('modules.translate.widgets.LanguageSelector'); ?></div>
 			
 			<?php if(Yii::app()->user->isAdmin): ?>
 				<div id="translate-button">

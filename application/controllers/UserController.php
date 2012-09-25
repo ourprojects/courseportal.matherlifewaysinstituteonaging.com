@@ -116,7 +116,7 @@ class UserController extends OnlineCoursePortalController {
 					'user_profile' => new UserProfile,
 					'avatar' => new Avatar,
 					'captcha' => new Captcha,
-					'profile_questions' => new ProfileQuestions,
+					//'profile_questions' => new ProfileQuestions,
 				);
 		// if it is ajax validation request
 		if(isset($_POST['ajax']) && $_POST['ajax'] === 'register-form') {
@@ -128,23 +128,18 @@ class UserController extends OnlineCoursePortalController {
 		if(isset($_POST['User']) && 
 				isset($_POST['UserProfile']) && 
 				isset($_POST['Avatar']) && 
-				isset($_POST['Captcha']) &&
-				isset($_POST['ProfileQuestions'])) {
+				isset($_POST['Captcha'])) {
 			$models['user']->attributes = $_POST['User'];
 			$models['user_profile']->attributes = $_POST['UserProfile'];
 			$models['avatar']->attributes = $_POST['Avatar'];
 			$models['captcha']->attributes = $_POST['Captcha'];
-			foreach($_POST['ProfileQuestions'] as $key => $answer)
-				$models['profile_questions']->$key = $answer;
 			if($models['captcha']->validate() && $models['user']->validate()) {
 				$transaction = Yii::app()->db->beginTransaction();
 				try {
 					if($models['user']->save(false)) {
-						$models['profile_questions']->user_id = $models['user']->id;
 						$models['user_profile']->user_id = $models['user']->id;
 						$models['avatar']->user_id = $models['user']->id;
 						if($models['user_profile']->save() &&
-								$models['profile_questions']->save() &&
 								$models['avatar']->validate(array('image')) && 
 								($models['avatar']->image === null || $models['avatar']->save())) {
 							$transaction->commit();
@@ -245,6 +240,18 @@ class UserController extends OnlineCoursePortalController {
 			}
 		}
 		$this->render('pages/profile', array('models' => $models));
+	}
+	
+	public function actionTest() {
+		$survey = Yii::app()->surveyor->profile->form;
+		if(isset($_POST['ajax']) && $_POST['ajax'] === $survey->name) {
+			echo CActiveForm::validate($survey);
+			Yii::app()->end();
+		}
+		if(isset($_POST['SurveyForm'])) {
+			var_dump($_POST['SurveyForm']); die;
+		}
+		$this->render('pages/test', array('survey' => $survey));
 	}
 	
 }

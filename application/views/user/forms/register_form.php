@@ -82,57 +82,6 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($models['profile_questions'], 'questions[1]'); ?>
-		<?php echo $form->dropDownList(
-				$models['profile_questions'], 
-				'options1', 
-				$models['profile_questions']->questions[1]->getOptionsData()
-			); 
-		?>
-		<?php echo $form->error($models['profile_questions'], ''); ?>
-	</div>
-	
-	<div class="row">
-		<?php echo $form->labelEx($models['profile_questions'], 'questions[2]'); ?>
-		<?php echo $form->dropDownList(
-				$models['profile_questions'], 
-				'options2', 
-				$models['profile_questions']->questions[2]->getOptionsData()
-			); ?>
-		<?php echo $form->error($models['profile_questions'], 'questions[2]'); ?>
-	</div>
-	
-	<div class="row">
-		<?php echo $form->labelEx($models['profile_questions'], 'questions[3]'); ?>
-		<?php echo $form->dropDownList(
-				$models['profile_questions'], 
-				'options3', 
-				$models['profile_questions']->questions[3]->getOptionsData()
-			); ?>
-		<?php echo $form->error($models['profile_questions'], 'questions[3]'); ?>
-	</div>
-	
-	<div class="row">
-		<?php echo $form->labelEx($models['profile_questions'], 'questions[4]'); ?>
-		<?php echo $form->checkBoxList(
-				$models['profile_questions'], 
-				'options4', 
-				$models['profile_questions']->questions[4]->getOptionsData()
-			);?>
-		<?php echo $form->error($models['profile_questions'], 'questions[4]'); ?>
-	</div>
-	
-	<div class="row">
-		<?php echo $form->labelEx($models['profile_questions'], 'questions[5]'); ?>
-		<?php echo $form->dropDownList(
-				$models['profile_questions'], 
-				'options5', 
-				$models['profile_questions']->questions[5]->getOptionsData()
-			); ?>
-		<?php echo $form->error($models['profile_questions'], 'questions[5]'); ?>
-	</div>
-
-	<div class="row">
 		<?php 
 		echo $form->labelEx($models['captcha'], 'captcha');
 		$this->widget('ext.recaptcha.EReCaptcha',

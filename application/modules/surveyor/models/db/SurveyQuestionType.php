@@ -1,26 +1,23 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed');  
 
 /**
- * This is the model class for table "{{question}}".
+ * This is the model class for table "{{survey_question_type}}".
  *
- * The followings are the available columns in table '{{question}}':
+ * The followings are the available columns in table '{{survey_question_type}}':
  * @property integer $id
- * @property integer $type_id
- * @property string $text
+ * @property string $name
  * 
  * The followings are the available model relations:
- * @property QuestionType $type
- * @property QuestionAnswer[] $answers
- * @property QuestionOption[] $options
+ * @property SurveyQuestion[] $questions
+ * @property Answer[] $answers
+ * @property Survey[] $surveys
  */
-class Question extends CActiveRecord
+class SurveyQuestionType extends CActiveRecord
 {
-	public $multipleAnswersAllowed = false;
-	
     /**
      * Returns the static model of the specified AR class.
      * @param string $className active record class name.
-     * @return Question the static model class
+     * @return SurveyQuestionType the static model class
      */
     public static function model($className=__CLASS__)
     {
@@ -32,7 +29,7 @@ class Question extends CActiveRecord
      */
     public function tableName()
     {
-        return '{{question}}';
+        return '{{survey_question_type}}';
     }
 
     /**
@@ -41,13 +38,11 @@ class Question extends CActiveRecord
     public function rules()
     {
         return array(
-            array('type_id, text', 'required'),
-            array('type_id', 'numerical', 'integerOnly' => true),
-            array('text', 'length', 'max' => 255),
-        	array('type_id', 'exist', 'attributeName' => 'id', 'className' => 'QuestionType', 'allowEmpty' => false),
+            array('name', 'required'),
+            array('name', 'length', 'max' => 64),
             // The following rule is used by search().
             // Please remove those attributes that should not be searched.
-            array('id, type_id, text', 'safe', 'on' => 'search'),
+            array('id, name', 'safe', 'on' => 'search'),
         );
     }
 
@@ -57,9 +52,12 @@ class Question extends CActiveRecord
     public function relations()
     {
         return array(
-        		'type' => array(self::BELONGS_TO, 'QuestionType', 'type_id'),
-        		'answers' => array(self::HAS_MANY, 'QuestionAnswer', 'question_id'),
-        		'options' => array(self::HAS_MANY, 'QuestionOption', 'question_id'),
+        		'questions' => array(self::HAS_MANY, 'SurveyQuestion', 'type_id',
+        						'order' => 'questions.order ASC'),
+        		'surveys' => array(self::HAS_MANY, 'SurveyAR', array('survey_id' => 'id'),
+        				'through' => 'questions'),
+        		'answers' => array(self::HAS_MANY, 'SurveyAnswer', array('id' => 'question_id'),
+        				'through' => 'questions'),
         );
     }
 
@@ -70,8 +68,9 @@ class Question extends CActiveRecord
     {
         return array(
             'id' => Yii::t('onlinecourseportal','ID'),
-            'type_id' => Yii::t('onlinecourseportal','Type'),
-            'text' => Yii::t('onlinecourseportal','Text'),
+            'name' => Yii::t('onlinecourseportal','Name'),
+        	'questions' => Yii::t('onlinecourseportal','Questions'),
+        	'surveys' => Yii::t('onlinecourseportal','Surveys'),
         );
     }
 
@@ -84,26 +83,12 @@ class Question extends CActiveRecord
         $criteria=new CDbCriteria;
 
         $criteria->compare('id',$this->id);
-        $criteria->compare('type_id',$this->type_id);
-        $criteria->compare('text',$this->text,true);
+        $criteria->compare('name',$this->name,true);
 
         return new CActiveDataProvider($this, array(
             'criteria'=>$criteria,
         ));
     }
-    
-    public function getOptionsData() {
-    	$data = array();
-    	foreach($this->options as $option) {
-    		$data[$option->id] = $option->text;
-    	}
-    	return $data;
-    }
-    
-    public function isMultipleAnswersAllowed() {
-    	return $this->type->name == 'checkbox' || $this->multipleAnswersAllowed;
-    }
-    
 }
 
 ?>
