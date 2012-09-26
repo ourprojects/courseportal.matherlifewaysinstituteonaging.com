@@ -34,14 +34,22 @@ $(document).ready(function() {
 		'scrolling' : 'no',
 	});
 
-	$(".survey-one-answer").click(function(){
-		$("#survey-one-question").slideUp();
-		$("#survey-one-results").fadeIn("slow");
+	$(".tutorial-box").fancybox({
+		'width' : '90%',
+		'height' : '95%',
+		'autoScale' : true,
+		'scrolling' : 'auto',
 	});
 
-	$(".survey-two-answer").click(function(){
-		$("#survey-two-question").slideUp();
-		$("#survey-two-results").fadeIn("slow");
+	$(".slide-previous").click(function(){
+		$(".slide").hide("slide", { direction: "right" }, 300);
+		var relval=$(this).attr("rel");
+		$("#slide-"+relval).show("slide", { direction: "left" }, 300);
+	});
+	$(".slide-change").click(function(){
+		$(".slide").hide("slide", { direction: "left" }, 300);
+		var relval=$(this).attr("rel");
+		$("#slide-"+relval).show("slide", { direction: "right" }, 300);
 	});
 
 	$('.quotes').quote_rotator({

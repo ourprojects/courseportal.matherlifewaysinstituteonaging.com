@@ -97,7 +97,7 @@ h4 {
 div.breadcrumbs span {
 	font-weight: bold;
 }
-.button {
+.button, button, input[type=submit] {
 	color: #fff;
 	background: #f47b20 url(../images/bg-menu.jpg) bottom center repeat-x;
 	font-size: 16px;
@@ -108,6 +108,7 @@ div.breadcrumbs span {
 	font-family: "Source Sans Pro", Arial, sans-serif;
 	box-shadow: 0 0 10px #ccc;
 	display: inline-block;
+	border: 0;
 }
 .button:hover {
 	background-position: top center;
@@ -403,6 +404,9 @@ div.breadcrumbs span {
 
 
 /************* HOMEPAGE SPECIFIC STYLES **************/
+#tutorial {
+	width: 700px;
+}
 #bottom-logos {
 	clear: both;
 	border-top: 1px solid #e6e6e6;
@@ -747,4 +751,30 @@ div.view {
 .image-left {
 	float: left;
 	margin: 15px 20px 15px 15px;
+}
+
+
+.opacity-hover {
+	opacity: .7;
+}
+.opacity-hover:hover {
+	opacity: 1;
+}
+
+#tutorial h2.flowers {
+	border-bottom: 1px solid #ddd;
+	margin-bottom: 10px;
+}
+#tutorial .slide {
+	display: none;
+	padding: 0 10px;
+}
+#tutorial #slide-1.slide {
+	display: block;
+}
+
+
+#translate-button input[type=submit] {
+	padding: 3px 6px;
+	font-size: 10pt;
 }
