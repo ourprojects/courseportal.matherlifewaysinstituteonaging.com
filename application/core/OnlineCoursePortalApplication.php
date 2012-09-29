@@ -82,8 +82,7 @@ class OnlineCoursePortalApplication extends CWebApplication {
     	//If the language is not recognized maybe the user didn't add the language part of the address.
     	//Try and add the source language to the url and redirect to the new url.
     	if(!Yii::app()->localeManager->isAcceptedLanguage($language)) {
-    		$possibleRoute = $language;
-    		Yii::app()->getRequest()->redirect($this->createUrl($possibleRoute, array('language' => Yii::app()->sourceLanguage)));
+    		Yii::app()->getRequest()->redirect($this->createUrl("$language/$route", array('language' => Yii::app()->sourceLanguage)));
     	}
 		
     	Yii::app()->translate->acceptedLanguages = Yii::app()->localeManager->getLanguages();

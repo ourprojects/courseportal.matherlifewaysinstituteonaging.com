@@ -1,6 +1,7 @@
 <?php
-class TranslateController extends TranslateBaseController{
-	public function actionIndex(){
+class TranslateController extends TranslateBaseController {
+	
+	public function actionIndex() {
         if(isset($_POST['Message'])){
             foreach($_POST['Message'] as $id=>$message){
                 if(empty($message['translation']))
@@ -38,7 +39,8 @@ class TranslateController extends TranslateBaseController{
         
         $this->render('index',$data);
 	}
-    function actionGoogletranslate(){
+	
+    function actionGoogletranslate() {
         if(Yii::app()->getRequest()->getIsPostRequest()){
             $translation=TranslateModule::translator()->googleTranslate($_POST['message'],$_POST['language'],$_POST['sourceLanguage']);
             if(is_array($translation))
