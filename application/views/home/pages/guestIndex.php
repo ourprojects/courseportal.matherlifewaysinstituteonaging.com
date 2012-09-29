@@ -137,7 +137,7 @@ $this->pageTitle = Yii::app()->name . ' - '.Yii::t('onlinecourseportal', 'Guest'
 	
 	
 	<div class="box-grey">
-		<video id="MatherCareGivers" controls width="540" height="305">
+		<video id="MatherCareGivers" controls width="540" height="305" poster="<?php echo Yii::app()->theme->baseUrl; ?>/videos/MatherCareGivers.jpg">
 			<source src="<?php echo Yii::app()->theme->baseUrl; ?>/videos/MatherCareGivers.mp4" type='video/mp4' >
 			<source src="<?php echo Yii::app()->theme->baseUrl; ?>/videos/MatherCareGivers.ogv" type='video/ogg; codecs="theora, vorbis"'/>
 			<source src="<?php echo Yii::app()->theme->baseUrl; ?>/videos/MatherCareGivers.webm" type='video/webm' >

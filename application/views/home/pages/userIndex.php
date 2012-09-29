@@ -88,7 +88,7 @@ $this->pageTitle = Yii::app()->name . ' - '.Yii::t('onlinecourseportal', 'User')
 		father. In The Sandwich Generation, they have created an honest, intimate account of their own shifting and challenging responsibilities, as well as some of their unexpected joys.'); ?></p>
 		
 		<div class="box-grey">
-			<video id="TheSandwichGeneration" controls width="540" height="400">
+			<video id="TheSandwichGeneration" controls width="540" height="400" poster="<?php echo Yii::app()->theme->baseUrl; ?>/videos/THE_SANDWICH_GENERATION.jpg">
 				<source src="<?php echo Yii::app()->theme->baseUrl; ?>/videos/THE_SANDWICH_GENERATION.mp4" type='video/mp4' >
 				<source src="<?php echo Yii::app()->theme->baseUrl; ?>/videos/THE_SANDWICH_GENERATION.ogv" type='video/ogg; codecs="theora, vorbis"'/>
 				<source src="<?php echo Yii::app()->theme->baseUrl; ?>/videos/THE_SANDWICH_GENERATION.webm" type='video/webm' >
