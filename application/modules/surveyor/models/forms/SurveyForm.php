@@ -173,8 +173,11 @@ class SurveyForm extends CFormModel {
 		$newAnswers = $this->_questionAnswers;
 		foreach($this->_survey->answers(DbCriteria::instance()->addColumnCondition(array('answers.user_id' => $this->_userId))) as $answer) {
 			if(empty($newAnswers[$answer->question_id]) && $newAnswers[$answer->question_id] !== 0) {
+				SurveyAnswerOption::model()->deleteAll('answer_id = ?', array($answer->id));
+				SurveyAnswerText::model()->deleteAll('answer_id = ?', array($answer->id));
 				if(!$answer->delete())
 					return false;
+				unset($newAnswers[$answer->question_id]);
 			} else if($answer->question->type->name == 'textfield' ||
 					$answer->question->type->name == 'textarea') {
 				if($answer->answerText->text != $newAnswers[$answer->question_id]) {
@@ -211,25 +214,27 @@ class SurveyForm extends CFormModel {
 			}
 		}
 		foreach($newAnswers as $questionId => $questionAnswer) {
-			$surveyAnswer = new SurveyAnswer;
-			$surveyAnswer->user_id = $this->userId;
-			$surveyAnswer->question_id = $questionId;
-			if(!$surveyAnswer->save())
-				return false;
-			if(is_array($questionAnswer)) {
-				foreach($questionAnswer as $answer) {
+			if(!empty($questionAnswer) || $questionAnswer === 0) {
+				$surveyAnswer = new SurveyAnswer;
+				$surveyAnswer->user_id = $this->userId;
+				$surveyAnswer->question_id = $questionId;
+				if(!$surveyAnswer->save())
+					return false;
+				if(is_array($questionAnswer)) {
+					foreach($questionAnswer as $answer) {
+						$surveyAnswerOption = new SurveyAnswerOption;
+						$surveyAnswerOption->answer_id = $surveyAnswer->id;
+						$surveyAnswerOption->option_id = $answer;
+						if(!$surveyAnswerOption->save())
+							return false;
+					}
+				} else {
 					$surveyAnswerOption = new SurveyAnswerOption;
 					$surveyAnswerOption->answer_id = $surveyAnswer->id;
-					$surveyAnswerOption->option_id = $answer;
+					$surveyAnswerOption->option_id = $questionAnswer;
 					if(!$surveyAnswerOption->save())
 						return false;
 				}
-			} else {
-				$surveyAnswerOption = new SurveyAnswerOption;
-				$surveyAnswerOption->answer_id = $surveyAnswer->id;
-				$surveyAnswerOption->option_id = $questionAnswer;
-				if(!$surveyAnswerOption->save())
-					return false;
 			}
 		}
 		return true;
