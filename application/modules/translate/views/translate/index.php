@@ -1,4 +1,7 @@
 <?php 
+if(empty($messages)):
+	echo '<h2>' . TranslateModule::t('All messages translated') . '</h2>';
+else:
     $language=TranslateModule::translator();
     $languageKey=$language::ID; 
     
@@ -72,3 +75,4 @@
     <?php echo CHtml::submitButton(TranslateModule::t('Translate'));?>
     <?php echo CHtml::endForm()?>
 </div>
+<?php endif; ?>

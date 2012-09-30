@@ -17,11 +17,12 @@ class TranslateController extends TranslateBaseController {
             Yii::app()->getUser()->setReturnUrl($referer);
         $translator=TranslateModule::translator();
         $key=$translator::ID."-missing";
+        $postMissing = array();
         if(isset($_POST[$key]))
             $postMissing=$_POST[$key];
         elseif(Yii::app()->getUser()->hasState($key))
             $postMissing=Yii::app()->getUser()->getState($key);
-        
+        $models = array();
         if(count($postMissing)){
             Yii::app()->getUser()->setState($key,$postMissing); 
             $cont=0;
@@ -30,9 +31,6 @@ class TranslateController extends TranslateBaseController {
                 $models[$cont]->setAttributes(array('id'=>$id,'language'=>$message['language']));
                 $cont++;
             }
-        }else{
-            $this->renderText(TranslateModule::t('All messages translated'));
-            Yii::app()->end();
         }
         
         $data=array('messages'=>$postMissing,'models'=>$models);
