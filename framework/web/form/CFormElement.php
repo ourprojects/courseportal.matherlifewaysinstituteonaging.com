@@ -18,6 +18,7 @@
  * (a controller or a widget).
  *
  * @author Qiang Xue <qiang.xue@gmail.com>
+ * @version $Id$
  * @package system.web.form
  * @since 1.1
  */

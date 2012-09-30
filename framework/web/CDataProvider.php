@@ -15,6 +15,7 @@
  * @property integer $totalItemCount Total number of possible data items.
  *
  * @author Qiang Xue <qiang.xue@gmail.com>
+ * @version $Id$
  * @package system.web
  * @since 1.1
  */

@@ -13,13 +13,14 @@
  * as a filter, except that content caching is being done on the client side.
  *
  * @author Da:Sourcerer <webmaster@dasourcerer.net>
+ * @version $Id$
  * @package system.web.filters
  * @since 1.1.11
  */
 class CHttpCacheFilter extends CFilter
 {
 	/**
-	 * Timestamp for the last modification date. Must be either a string parsable by
+	 * Timestamp for the last modification date. Must be either a string parsable by 
 	 * {@link http://php.net/strtotime strtotime()} or an integer representing a unix timestamp.
 	 * @var string|integer
 	 */
@@ -35,7 +36,7 @@ class CHttpCacheFilter extends CFilter
 	 */
 	public $etagSeed;
 	/**
-	 * Expression for the ETag seed. If set, this takes precedence over {@link etagSeed}.
+	 * Expression for the ETag seed. If set, this takes precedence over {@link etag}. 
 	 * @var string|callback
 	 */
 	public $etagSeedExpression;
@@ -92,11 +93,11 @@ class CHttpCacheFilter extends CFilter
 				$this->sendCacheControlHeader();
 				return false;
 			}
-
+			
 		}
-
+				
 		if($lastModified)
-			header('Last-Modified: '.gmdate('D, d M Y H:i:s', $lastModified).' GMT');
+			header('Last-Modified: '.date('r', $lastModified));
 
 		$this->sendCacheControlHeader();
 		return true;
@@ -135,7 +136,7 @@ class CHttpCacheFilter extends CFilter
 
 	/**
 	 *  Gets the ETag out of either {@link etagSeedExpression} or {@link etagSeed}
-	 *  @return string|boolean Either a quoted string serving as ETag or false if neither etagSeed nor etagSeedExpression have been set
+	 *  @return string|boolean Either a quoted string serving as ETag or false if neither etagSeed nor etagSeedExpression have been set 
 	 */
 	protected function getEtagValue()
 	{
@@ -143,7 +144,7 @@ class CHttpCacheFilter extends CFilter
 			return $this->generateEtag($this->evaluateExpression($this->etagSeedExpression));
 		else if($this->etagSeed)
 			return $this->generateEtag($this->etagSeed);
-		return false;
+		return false;		
 	}
 
 	/**
@@ -173,7 +174,7 @@ class CHttpCacheFilter extends CFilter
 	{
 		header('HTTP/1.1 304 Not Modified');
 	}
-
+	
 	/**
 	 * Sends the cache control header to the client
 	 * @see cacheControl

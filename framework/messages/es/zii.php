@@ -13,6 +13,7 @@
  *
  * NOTE, this file must be saved in UTF-8 encoding.
  *
+ * @version $Id$
  */
 return array (
   'Are you sure you want to delete this item?' => 'Seguro que desea borrar este elemento?',

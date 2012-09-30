@@ -32,6 +32,7 @@
  * is returned if {@link name} does not have an extension name.
  *
  * @author Qiang Xue <qiang.xue@gmail.com>
+ * @version $Id$
  * @package system.web
  * @since 1.0
  */
@@ -87,7 +88,7 @@ class CUploadedFile extends CComponent
 	}
 
 	/**
-	 * Returns an array of instances starting with specified array name.
+	 * Returns an array of instances for the specified array name.
 	 *
 	 * If multiple files were uploaded and saved as 'Files[0]', 'Files[1]',
 	 * 'Files[n]'..., you can have them all by passing 'Files' as array name.

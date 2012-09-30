@@ -14,6 +14,7 @@
  *
  * @author Sebastian Thierer <sebathi@gmail.com>
  * @author Qiang Xue <qiang.xue@gmail.com>
+ * @version $Id$
  * @package zii.widgets.jui
  * @since 1.1
  */

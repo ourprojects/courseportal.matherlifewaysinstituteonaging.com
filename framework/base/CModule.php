@@ -33,6 +33,7 @@
  * </pre>.
  *
  * @author Qiang Xue <qiang.xue@gmail.com>
+ * @version $Id$
  * @package system.base
  */
 abstract class CModule extends CComponent

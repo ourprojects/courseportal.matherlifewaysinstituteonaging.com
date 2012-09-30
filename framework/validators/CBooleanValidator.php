@@ -21,6 +21,7 @@
  * </ul>
  *
  * @author Qiang Xue <qiang.xue@gmail.com>
+ * @version $Id$
  * @package system.validators
  */
 class CBooleanValidator extends CValidator

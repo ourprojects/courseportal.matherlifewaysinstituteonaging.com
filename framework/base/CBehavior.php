@@ -15,6 +15,7 @@
  * @property boolean $enabled Whether this behavior is enabled.
  *
  * @author Qiang Xue <qiang.xue@gmail.com>
+ * @version $Id$
  * @package system.base
  */
 class CBehavior extends CComponent implements IBehavior

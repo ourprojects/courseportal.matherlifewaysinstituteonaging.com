@@ -23,6 +23,7 @@
  * @property string $report The type of the profiling report to display. Defaults to 'summary'.
  *
  * @author Qiang Xue <qiang.xue@gmail.com>
+ * @version $Id$
  * @package system.logging
  * @since 1.0
  */

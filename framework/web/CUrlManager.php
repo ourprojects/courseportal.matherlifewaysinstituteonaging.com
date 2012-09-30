@@ -118,6 +118,7 @@
  * Please refer to the guide for more details about the difference between these two formats.
  *
  * @author Qiang Xue <qiang.xue@gmail.com>
+ * @version $Id$
  * @package system.web
  * @since 1.0
  */
@@ -517,6 +518,7 @@ class CUrlManager extends CApplicationComponent
  * {@link createUrl} and {@link parseUrl}.
  *
  * @author Qiang Xue <qiang.xue@gmail.com>
+ * @version $Id$
  * @package system.web
  * @since 1.1.8
  */
@@ -555,6 +557,7 @@ abstract class CBaseUrlRule extends CComponent
  * may have a set of named parameters.
  *
  * @author Qiang Xue <qiang.xue@gmail.com>
+ * @version $Id$
  * @package system.web
  * @since 1.0
  */

@@ -15,6 +15,7 @@
  * @property CDbSchema $schema The schema for this command builder.
  *
  * @author Qiang Xue <qiang.xue@gmail.com>
+ * @version $Id$
  * @package system.db.schema
  * @since 1.0
  */

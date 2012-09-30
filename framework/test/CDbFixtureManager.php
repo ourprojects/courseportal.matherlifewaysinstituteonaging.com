@@ -35,6 +35,7 @@
  * @property array $fixtures The information of the available fixtures (table name => fixture file).
  *
  * @author Qiang Xue <qiang.xue@gmail.com>
+ * @version $Id$
  * @package system.test
  * @since 1.1
  */

@@ -34,6 +34,7 @@
  * @property string $tableAlias The default table alias.
  *
  * @author Qiang Xue <qiang.xue@gmail.com>
+ * @version $Id$
  * @package system.db.ar
  * @since 1.0
  */
@@ -267,7 +268,7 @@ abstract class CActiveRecord extends CModel
 		else
 			$r=$name;
 		unset($this->_related[$name]);
-		
+
 		$finder=new CActiveFinder($this,$r);
 		$finder->lazyFind($this);
 
@@ -470,7 +471,7 @@ abstract class CActiveRecord extends CModel
 	 * and 'foreignKey' states the foreign key that relates the two kinds of active record.
 	 * Note, for composite foreign keys, they can be either listed together, separated by commas or specified as an array
 	 * in format of array('key1','key2'). In case you need to specify custom PK->FK association you can define it as
-	 * array('fk'=>'pk'). For composite keys it will be array('fk_c1'=>'pk_Ñ�1','fk_c2'=>'pk_c2').
+	 * array('fk'=>'pk'). For composite keys it will be array('fk_c1'=>'pk_с1','fk_c2'=>'pk_c2').
 	 * For foreign keys used in MANY_MANY relation, the joining table must be declared as well
 	 * (e.g. 'join_table(fk1, fk2)').
 	 *
@@ -859,15 +860,10 @@ abstract class CActiveRecord extends CModel
 
 	/**
 	 * This event is raised before an AR finder performs a find call.
-	 * This can be either a call to CActiveRecords find methods or a find call
-	 * when model is loaded in relational context via lazy or eager loading.
-	 * If you want to access or modify the query criteria used for the
-	 * find call, you can use {@link getDbCriteria()} to customize it based on your needs.
-	 * When modifying criteria in beforeFind you have to make sure you are using the right
-	 * table alias which is different on normal find and relational call.
-	 * You can use {@link getTableAlias()} to get the alias used for the upcoming find call.
-	 * Please note that modification of criteria is fully supported as of version 1.1.13.
-	 * Earlier versions had some problems with relational context and applying changes correctly.
+	 * In this event, the {@link CModelEvent::criteria} property contains the query criteria
+	 * passed as parameters to those find methods. If you want to access
+	 * the query criteria specified in scopes, please use {@link getDbCriteria()}.
+	 * You can modify either criteria to customize them based on needs.
 	 * @param CModelEvent $event the event parameter
 	 * @see beforeFind
 	 */
@@ -952,12 +948,10 @@ abstract class CActiveRecord extends CModel
 	/**
 	 * This method is invoked before an AR finder executes a find call.
 	 * The find calls include {@link find}, {@link findAll}, {@link findByPk},
-	 * {@link findAllByPk}, {@link findByAttributes}, {@link findAllByAttributes},
-	 * {@link findBySql} and {@link findAllBySql}.
+	 * {@link findAllByPk}, {@link findByAttributes} and {@link findAllByAttributes}.
 	 * The default implementation raises the {@link onBeforeFind} event.
 	 * If you override this method, make sure you call the parent implementation
 	 * so that the event is raised properly.
-	 * For details on modifying query criteria see {@link onBeforeFind} event.
 	 */
 	protected function beforeFind()
 	{
@@ -1871,6 +1865,7 @@ abstract class CActiveRecord extends CModel
 /**
  * CBaseActiveRelation is the base class for all active relations.
  * @author Qiang Xue <qiang.xue@gmail.com>
+ * @version $Id$
  * @package system.db.ar
  */
 class CBaseActiveRelation extends CComponent
@@ -2011,6 +2006,7 @@ class CBaseActiveRelation extends CComponent
 /**
  * CStatRelation represents a statistical relational query.
  * @author Qiang Xue <qiang.xue@gmail.com>
+ * @version $Id$
  * @package system.db.ar
  */
 class CStatRelation extends CBaseActiveRelation
@@ -2046,6 +2042,7 @@ class CStatRelation extends CBaseActiveRelation
 /**
  * CActiveRelation is the base class for representing active relations that bring back related objects.
  * @author Qiang Xue <qiang.xue@gmail.com>
+ * @version $Id$
  * @package system.db.ar
  * @since 1.0
  */
@@ -2139,6 +2136,7 @@ class CActiveRelation extends CBaseActiveRelation
 /**
  * CBelongsToRelation represents the parameters specifying a BELONGS_TO relation.
  * @author Qiang Xue <qiang.xue@gmail.com>
+ * @version $Id$
  * @package system.db.ar
  * @since 1.0
  */
@@ -2150,6 +2148,7 @@ class CBelongsToRelation extends CActiveRelation
 /**
  * CHasOneRelation represents the parameters specifying a HAS_ONE relation.
  * @author Qiang Xue <qiang.xue@gmail.com>
+ * @version $Id$
  * @package system.db.ar
  * @since 1.0
  */
@@ -2167,6 +2166,7 @@ class CHasOneRelation extends CActiveRelation
 /**
  * CHasManyRelation represents the parameters specifying a HAS_MANY relation.
  * @author Qiang Xue <qiang.xue@gmail.com>
+ * @version $Id$
  * @package system.db.ar
  * @since 1.0
  */
@@ -2217,6 +2217,7 @@ class CHasManyRelation extends CActiveRelation
 /**
  * CManyManyRelation represents the parameters specifying a MANY_MANY relation.
  * @author Qiang Xue <qiang.xue@gmail.com>
+ * @version $Id$
  * @package system.db.ar
  * @since 1.0
  */
@@ -2273,6 +2274,7 @@ class CManyManyRelation extends CHasManyRelation
  * CActiveRecordMetaData represents the meta-data for an Active Record class.
  *
  * @author Qiang Xue <qiang.xue@gmail.com>
+ * @version $Id$
  * @package system.db.ar
  * @since 1.0
  */

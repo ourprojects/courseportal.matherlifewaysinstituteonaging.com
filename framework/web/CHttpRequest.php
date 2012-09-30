@@ -49,11 +49,12 @@
  * @property string $acceptTypes User browser accept types, null if not present.
  * @property integer $port Port number for insecure requests.
  * @property integer $securePort Port number for secure requests.
- * @property CCookieCollection|CHttpCookie[] $cookies The cookie collection.
+ * @property CCookieCollection $cookies The cookie collection.
  * @property string $preferredLanguage The user preferred language.
  * @property string $csrfToken The random token for CSRF validation.
  *
  * @author Qiang Xue <qiang.xue@gmail.com>
+ * @version $Id$
  * @package system.web
  * @since 1.0
  */
@@ -749,8 +750,8 @@ class CHttpRequest extends CApplicationComponent
 
 	/**
 	 * Redirects the browser to the specified URL.
-	 * @param string $url URL to be redirected to. Note that when URL is not
-	 * absolute (not starting with "/") it will be relative to current request URL.
+	 * @param string $url URL to be redirected to. If the URL is a relative one, the base URL of
+	 * the application will be inserted at the beginning.
 	 * @param boolean $terminate whether to terminate the current application
 	 * @param integer $statusCode the HTTP status code. Defaults to 302. See {@link http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html}
 	 * for details about HTTP status code.
@@ -815,9 +816,7 @@ class CHttpRequest extends CApplicationComponent
 		{
 			// clean up the application first because the file downloading could take long time
 			// which may cause timeout of some resources (such as DB connection)
-			ob_start();
 			Yii::app()->end(0,false);
-			ob_end_clean();
 			echo $content;
 			exit(0);
 		}
@@ -961,33 +960,19 @@ class CHttpRequest extends CApplicationComponent
 	 */
 	public function validateCsrfToken($event)
 	{
-		if ($this->getIsPostRequest() ||
-			$this->getIsPutRequest() ||
-			$this->getIsDeleteRequest())
+		if($this->getIsPostRequest())
 		{
+			// only validate POST requests
 			$cookies=$this->getCookies();
-
-			$method=$this->getRequestType();
-			switch($method)
+			if($cookies->contains($this->csrfTokenName) && isset($_POST[$this->csrfTokenName]))
 			{
-				case 'POST':
-					$userToken=$this->getPost($this->csrfTokenName);
-				break;
-				case 'PUT':
-					$userToken=$this->getPut($this->csrfTokenName);
-				break;
-				case 'DELETE':
-					$userToken=$this->getDelete($this->csrfTokenName);
-			}
-
-			if (!empty($userToken) && $cookies->contains($this->csrfTokenName))
-			{
-				$cookieToken=$cookies->itemAt($this->csrfTokenName)->value;
-				$valid=$cookieToken===$userToken;
+				$tokenFromCookie=$cookies->itemAt($this->csrfTokenName)->value;
+				$tokenFromPost=$_POST[$this->csrfTokenName];
+				$valid=$tokenFromCookie===$tokenFromPost;
 			}
 			else
-				$valid = false;
-			if (!$valid)
+				$valid=false;
+			if(!$valid)
 				throw new CHttpException(400,Yii::t('yii','The CSRF token could not be verified.'));
 		}
 	}
@@ -1008,6 +993,7 @@ class CHttpRequest extends CApplicationComponent
  * </pre>
  *
  * @author Qiang Xue <qiang.xue@gmail.com>
+ * @version $Id$
  * @package system.web
  * @since 1.0
  */

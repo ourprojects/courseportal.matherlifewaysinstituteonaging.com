@@ -20,6 +20,7 @@
  * $posts = Post::model()->findAll($criteria);
  *
  * @author Qiang Xue <qiang.xue@gmail.com>
+ * @version $Id$
  * @package system.db.schema
  * @since 1.0
  */
@@ -170,30 +171,11 @@ class CDbCriteria extends CComponent
 		$params=array();
 		foreach($this->params as $name=>$value)
 		{
-			if(strpos($name,self::PARAM_PREFIX)===0)
-			{
-				$newName=self::PARAM_PREFIX.self::$paramCount++;
-				$map[$name]=$newName;
-			}
-			else
-			{
-				$newName=$name;
-			}
+			$newName=self::PARAM_PREFIX.self::$paramCount++;
+			$map[$name]=$newName;
 			$params[$newName]=$value;
 		}
-		if (!empty($map))
-		{
-			$sqlContentFieldNames = array(
-				'select',
-				'condition',
-				'order',
-				'group',
-				'join',
-				'having',
-			);
-			foreach($sqlContentFieldNames as $fieldName)
-				$this->$fieldName=strtr($this->$fieldName,$map);
-		}
+		$this->condition=strtr($this->condition,$map);
 		$this->params=$params;
 	}
 

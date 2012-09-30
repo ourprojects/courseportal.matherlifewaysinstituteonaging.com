@@ -15,6 +15,7 @@
  * @property CModel $owner The owner model that this behavior is attached to.
  *
  * @author Qiang Xue <qiang.xue@gmail.com>
+ * @version $Id$
  * @package system.base
  */
 class CModelBehavior extends CBehavior

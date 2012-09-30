@@ -36,6 +36,7 @@
  * you may specify a custom value to use instead via {@link timestampExpression}
  *
  * @author Jonah Turnquist <poppitypop@gmail.com>
+ * @version $Id$
  * @package zii.behaviors
  * @since 1.1
  */
