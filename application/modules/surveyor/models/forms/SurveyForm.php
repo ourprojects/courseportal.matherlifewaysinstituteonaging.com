@@ -172,7 +172,7 @@ class SurveyForm extends CFormModel {
 	private function _save() {
 		$newAnswers = $this->_questionAnswers;
 		foreach($this->_survey->answers(DbCriteria::instance()->addColumnCondition(array('answers.user_id' => $this->_userId))) as $answer) {
-			if(!isset($newAnswers[$answer->question_id])) {
+			if(empty($newAnswers[$answer->question_id]) && $newAnswers[$answer->question_id] !== 0) {
 				if(!$answer->delete())
 					return false;
 			} else if($answer->question->type->name == 'textfield' ||
