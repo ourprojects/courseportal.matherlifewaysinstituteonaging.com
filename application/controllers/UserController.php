@@ -116,7 +116,7 @@ class UserController extends OnlineCoursePortalController {
 					'user_profile' => new UserProfile,
 					'avatar' => new Avatar,
 					'captcha' => new Captcha,
-					//'profile_questions' => new ProfileQuestions,
+					'profile_questions' => Yii::app()->surveyor->profile->form,
 				);
 		// if it is ajax validation request
 		if(isset($_POST['ajax']) && $_POST['ajax'] === 'register-form') {
@@ -128,7 +128,8 @@ class UserController extends OnlineCoursePortalController {
 		if(isset($_POST['User']) && 
 				isset($_POST['UserProfile']) && 
 				isset($_POST['Avatar']) && 
-				isset($_POST['Captcha'])) {
+				isset($_POST['Captcha']) &&
+				isset($_POST['profileSurvey'])) {
 			$models['user']->attributes = $_POST['User'];
 			$models['user_profile']->attributes = $_POST['UserProfile'];
 			$models['avatar']->attributes = $_POST['Avatar'];
@@ -139,7 +140,10 @@ class UserController extends OnlineCoursePortalController {
 					if($models['user']->save(false)) {
 						$models['user_profile']->user_id = $models['user']->id;
 						$models['avatar']->user_id = $models['user']->id;
+						$models['profile_questions']->user_id = $models['user']->id;
+						$models['profile_questions']->attributes = $_POST['profileSurvey'];
 						if($models['user_profile']->save() &&
+								$models['profile_questions']->save(true, false) &&
 								$models['avatar']->validate(array('image')) && 
 								($models['avatar']->image === null || $models['avatar']->save())) {
 							$transaction->commit();
@@ -201,10 +205,11 @@ class UserController extends OnlineCoursePortalController {
 										new UserProfile : Yii::app()->user->model->userProfile,
 				'avatar' => Yii::app()->user->model->avatar === null ? 
 								new Avatar : Yii::app()->user->model->avatar,
-				'profile_questions' => new ProfileQuestions(Yii::app()->user->model->id),
+				'profile_questions' => Yii::app()->surveyor->profile->form,
 			);
 		$models['user_profile']->user_id = $models['user']->id;
 		$models['avatar']->user_id = $models['user']->id;
+		$models['profile_questions']->userId = $models['user']->id;
 		
 		// if it is ajax validation request
 		if(isset($_POST['ajax']) && $_POST['ajax'] === 'profile-form') {
@@ -216,18 +221,17 @@ class UserController extends OnlineCoursePortalController {
 		if(isset($_POST['User']) && 
 				isset($_POST['UserProfile']) && 
 				isset($_POST['Avatar']) &&
-				isset($_POST['ProfileQuestions'])) {
+				isset($_POST['profileSurvey'])) {
 
 			$models['user']->attributes = $_POST['User'];
 			$models['user_profile']->attributes = $_POST['UserProfile'];
 			$models['avatar']->attributes = $_POST['Avatar'];
-			foreach($_POST['ProfileQuestions'] as $key => $answer)
-				$models['profile_questions']->$key = $answer;
+			$models['profile_questions']->attributes = $_POST['profileSurvey'];
 			$transaction = Yii::app()->db->beginTransaction();
 			try {
 				if($models['user']->save() && 
 						$models['user_profile']->save() &&
-						$models['profile_questions']->save() &&
+						$models['profile_questions']->save(true, false) &&
 						$models['avatar']->validate(array('image')) && 
 						($models['avatar']->image === null || $models['avatar']->save())) {
 					$transaction->commit();
@@ -240,21 +244,6 @@ class UserController extends OnlineCoursePortalController {
 			}
 		}
 		$this->render('pages/profile', array('models' => $models));
-	}
-	
-	public function actionTest() {
-		$survey = Yii::app()->surveyor->profile->form;
-		if(isset($_POST['ajax']) && $_POST['ajax'] === $survey->name) {
-			echo CActiveForm::validate($survey);
-			Yii::app()->end();
-		}
-		$survey->userId = 4;
-		if(isset($_POST['SurveyForm'])) {
-			$survey->attributes = $_POST['SurveyForm'];
-			$survey->userId = 4;
-			$survey->save();
-		}
-		$this->render('pages/test', array('survey' => $survey));
 	}
 	
 }

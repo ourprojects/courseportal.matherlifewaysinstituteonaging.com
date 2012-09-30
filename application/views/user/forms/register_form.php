@@ -81,6 +81,16 @@
 		<?php echo $form->error($models['avatar'], 'image'); ?>
 	</div>
 
+	<?php 
+	$this->widget(
+			'modules.surveyor.widgets.Survey', 
+			array('surveyForm' => $models['profile_questions'], 
+					'showName' => false, 
+					'showDescription' => false, 
+					'encloseInForm' => false)
+		); 
+	?>
+	
 	<div class="row">
 		<?php 
 		echo $form->labelEx($models['captcha'], 'captcha');

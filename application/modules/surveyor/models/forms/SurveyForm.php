@@ -6,41 +6,25 @@
  */
 class SurveyForm extends CFormModel {
 
-	private $_attributeNames = null;
-	private $_questionLabels = null;
+	private $_requiredQuestions;
+	private $_safeAttributeNames;
+	private $_attributeNames;
+	private $_attributeLabels;
 	
+	private $_userId;
 	private $_survey;
-	private $_answers;
+	private $_questionAnswers = array();
 	
-	public function __construct($survey, $userId = null, $scenario = 'create') {
+	public function __construct($survey) {
 		if($survey instanceof SurveyAR)
 			$this->_survey = $survey;
 		else if(is_string($survey))
 			$this->_survey = SurveyAR::model()->find('name = :name', array(':name' => $survey));
 		else if(is_numeric($survey))
 			$this->_survey = SurveyAR::model()->findByPk($survey);
-		
-		if($userId !== null) {
-			$criteria = new CDbCriteria();
-			$this->_answers = $this->_survey->answers(array('answers.user_id' => $userId));
-		}
-		if(empty($this->_answers)) {
-			$this->_answers = array();
-			foreach($this->_survey->questions as $question) {
-				$answer = new SurveyAnswer;
-				$answer->question_id = $question->id;
-				$answer->user_id = $userId;
-				$this->_answers[$question->id] = $answer;
-			}
-			$scenario = 'create';
-		} else {
-			$scenario = 'update';
-		}
-		$this->_attributeNames = array();
-		foreach($this->_survey->questions as $question) {
-			$this->_attributeNames[] = "answer{$question->id}";
-		}
-		parent::__construct($scenario);
+		foreach($this->_survey->questions as $question)
+			$this->_questionAnswers[$question->id] = null;
+		parent::__construct();
 	}
 
 	/**
@@ -48,86 +32,207 @@ class SurveyForm extends CFormModel {
 	 */
 	public function rules() {
 		return array(
-				array('_answers', 'validateAnswers'),
+				array('userId', 'exist', 'attributeName' => 'id', 'className' => 'User', 'allowEmpty' => true),
+				array('userId', 'checkAnonymous'),
+				array('_questionAnswers', 'validateAnswers'),
 		);
+	}
+	
+	public function isAttributeRequired($attribute) {
+		if(preg_match('/^question(?P<qId>\d+)$/', $attribute, $matches)) {
+			if(!isset($this->_requiredQuestions))
+				foreach($this->_survey->questions as $question)
+					$this->_requiredQuestions[$question->id] = $question->required;
+
+			if(array_key_exists($matches['qId'], $this->_requiredQuestions))
+				return $this->_requiredQuestions[$matches['qId']];
+		}
+		return parent::isAttributeRequired($attribute);
 	}
 	
 	/**
 	 * @return array customized attribute labels (name=>label)
 	 */
 	public function attributeLabels() {
-		if($this->_questionLabels === null) {
-			$this->_questionLabels = array();
-			foreach($this->_survey->questions as $question) {
-				$this->_questionLabels["answer{$question->id}"] = $question->text;
-			}
-		}
-		return array_merge(
-				$this->_questionLabels, 
-				array(
+		if(!isset($this->_attributeLabels)) {
+			$this->_attributeLabels = array(
 					'userId' => Yii::t('onlinecourseportal', 'User ID'),
 					'name' => $this->_survey->name,
 					'description' => $this->_survey->description,
-				)
-		);
+				);
+			foreach($this->_survey->questions as $question)
+				$this->_attributeLabels["question{$question->id}"] = $question->text;
+		}
+		return $this->_attributeLabels;
 	}
 	
 	public function attributeNames() {
-		return array_merge(parent::attributeNames(), $this->_attributeNames);
+		if(!isset($this->_attributeNames))
+			$this->_attributeNames = array_merge(parent::attributeNames(), $this->_survey->attributeNames());
+		return $this->_attributeNames;
 	}
 	
 	public function getSafeAttributeNames() {
-		return array_merge(parent::getSafeAttributeNames(), $this->_attributeNames);
+		if(!isset($this->_safeAttributeNames)) {
+			$this->_safeAttributeNames = parent::getSafeAttributeNames();
+			foreach($this->_survey->questions as $question)
+				$this->_safeAttributeNames[] = "question{$question->id}";
+		}
+		return $this->_safeAttributeNames;
+	}
+
+	public function getUserId() {
+		return $this->_userId;
 	}
 	
-	public function setUserId($userId) {
-		$criteria = new CDbCriteria();
-		$answers = $this->_survey->answers($criteria->addColumnCondition(array('user_id' => $userId)));
-		if(!empty($answers)) {
-			foreach($answers as $answer)
-				$this->_answers[$answer->question_id] = $answer;
-		} else {
-			foreach($this->_answers as $answer) {
-				$answer->user_id = $userId;
+	public function setUserId($userId, $loadAnswers = true) {
+		$this->_userId = $userId;
+		if($loadAnswers) {
+			foreach($this->_survey->answers(DbCriteria::instance()->addColumnCondition(array('answers.user_id' => $userId))) as $answer) {
+				if($answer->question->type->name == 'textarea' || $answer->question->type->name == 'textfield') {
+					$this->_questionAnswers[$answer->question->id] = $answer->answerText->text;
+				} else if($answer->question->allow_many_options) {
+					$this->_questionAnswers[$answer->question->id] = array();
+					foreach($answer->options as $option)
+						$this->_questionAnswers[$answer->question->id][] = $option->id;
+				} else {
+					$this->_questionAnswers[$answer->question->id] = $answer->options[0]->id;
+				}
 			}
 		}
 	}
 	
-	public function getQuestions() {
-		return $this->_survey->questions;
-	}
-	
 	public function __get($name) {
-		if($this->_survey->hasAttribute($name))
+		if($this->_survey->hasAttribute($name) || $name == 'questions')
 			return $this->_survey->$name;
-		if(preg_match('/^answer(?P<qId>\d+)$/', $name, $matches))
-			return $this->_answers[$matches['qId']]->getOptionIds();
+		if(preg_match('/^question(?P<qId>\d+)$/', $name, $matches) && array_key_exists($matches['qId'], $this->_questionAnswers))
+			return $this->_questionAnswers[$matches['qId']];
 		return parent::__get($name);
 	}
 	
 	public function __set($name, $value) {
-		if(preg_match('/^answer(?P<qId>\d+)$/', $name, $matches)) {
-			$this->_answers[$matches['qId']]->addOptionIds($value);
+		if(preg_match('/^question(?P<qId>\d+)$/', $name, $matches) && array_key_exists($matches['qId'], $this->_questionAnswers)) {
+			$this->_questionAnswers[$matches['qId']] = $value;
 		} else {
 			parent::__set($name, $value);
 		}
 	}
 	
+	public function checkAnonymous($attribute, $params) {
+		if(isset($this->_userId) || $this->_survey->anonymous)
+			return;
+		$this->addError($attribute, Yii::t('onlinecourseportal', 'This survey is not anonymous and a user was not specified.'));
+	}
+	
 	public function validateAnswers($attribute, $params) {
-		foreach($this->$attribute as $answer) {
-			$answer->validate();
-			$this->addErrors($answer->getErrors());
+		$answers = $this->$attribute;
+		foreach($this->_survey->questions as $question) {
+			if(isset($answers[$question->id]) && $answers[$question->id] !== '') {
+				if($question->type->name != 'textarea' && 
+					$question->type->name != 'textfield') {
+					if(is_array($answers[$question->id])) {
+						if($question->allow_many_options) {
+							if(count(array_intersect($question->optionIds, $answers[$question->id])) != count($answers[$question->id]))
+								$this->addError("question{$question->id}", Yii::t('onlinecourseportal', 'Invalid option selected.'));
+						} else {
+							$this->addError("question{$question->id}", Yii::t('onlinecourseportal', 'Only one answer is allowed.'));
+						}
+					} else {
+						if(!in_array($answers[$question->id], $question->optionIds))
+							$this->addError("question{$question->id}", Yii::t('onlinecourseportal', 'Invalid option selected.'));
+					}
+				}
+			} else if($question->required) {
+				$this->addError("question{$question->id}", Yii::t('onlinecourseportal', 'This question is required.'));
+			}
 		}
 	}
 	
-	public function save($validate = true) {
+	public function save($validate = true, $useTransaction = true) {
 		if(!$validate || $this->validate()) {
-			foreach($this->_answers as $answer)
-				if(!$answer->save())
-					return false;
-			return true;
+			if($useTransaction)
+				$transaction = Yii::app()->db->beginTransaction();
+			try {
+				if($this->_save()) {
+					if($useTransaction)
+						$transaction->commit();
+					return true;
+				}
+			} catch(Exception $e) {
+				if($useTransaction)
+					$transaction->rollback();
+				throw $e;
+			}
+			if($useTransaction)
+				$transaction->rollback();
 		}
 		return false;
+	}
+	
+	private function _save() {
+		$newAnswers = $this->_questionAnswers;
+		foreach($this->_survey->answers(DbCriteria::instance()->addColumnCondition(array('answers.user_id' => $this->_userId))) as $answer) {
+			if(!isset($newAnswers[$answer->question_id])) {
+				if(!$answer->delete())
+					return false;
+			} else if($answer->question->type->name == 'textfield' ||
+					$answer->question->type->name == 'textarea') {
+				if($answer->answerText->text != $newAnswers[$answer->question_id]) {
+					$answer->answerText->text = $newAnswers[$answer->question_id];
+					if(!$answer->answerText->save())
+						return false;
+				}
+				unset($newAnswers[$answer->question_id]);
+			} else if(is_array($newAnswers[$answer->question_id])) {
+				foreach($answer->answerOptions as $option) {
+					if(($key = array_search($option->option_id, $newAnswers[$answer->question_id])) === true) {
+						unset($newAnswers[$answer->question_id][$key]);
+					} else {
+						if(!$option->delete())
+							return false;
+					}
+				}
+				foreach($newAnswers[$answer->question_id] as $newAnswer) {
+					$surveyAnswerOption = new SurveyAnswerOption;
+					$surveyAnswerOption->answer_id = $answer->id;
+					$surveyAnswerOption->option_id = $newAnswer;
+					if(!$surveyAnswerOption->save())
+						return false;
+				}
+				unset($newAnswers[$answer->question_id]);
+			} else {
+				$option = $answer->answerOptions[0];
+				if($option->option_id != $newAnswers[$answer->question_id]) {
+					$option->option_id = $newAnswers[$answer->question_id];
+					if(!$option->save())
+						return false;
+				}
+				unset($newAnswers[$answer->question_id]);
+			}
+		}
+		foreach($newAnswers as $questionId => $questionAnswer) {
+			$surveyAnswer = new SurveyAnswer;
+			$surveyAnswer->user_id = $this->userId;
+			$surveyAnswer->question_id = $questionId;
+			if(!$surveyAnswer->save())
+				return false;
+			if(is_array($questionAnswer)) {
+				foreach($questionAnswer as $answer) {
+					$surveyAnswerOption = new SurveyAnswerOption;
+					$surveyAnswerOption->answer_id = $surveyAnswer->id;
+					$surveyAnswerOption->option_id = $answer;
+					if(!$surveyAnswerOption->save())
+						return false;
+				}
+			} else {
+				$surveyAnswerOption = new SurveyAnswerOption;
+				$surveyAnswerOption->answer_id = $surveyAnswer->id;
+				$surveyAnswerOption->option_id = $questionAnswer;
+				if(!$surveyAnswerOption->save())
+					return false;
+			}
+		}
+		return true;
 	}
 
 }

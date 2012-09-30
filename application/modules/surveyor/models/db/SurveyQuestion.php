@@ -7,6 +7,8 @@
  * @property integer $id
  * @property integer $type_id
  * @property string $text
+ * @property integer $allow_many_options
+ * @property integer $required
  * 
  * The followings are the available model relations:
  * @property SurveyQuestionType $type
@@ -17,6 +19,8 @@
  */
 class SurveyQuestion extends CActiveRecord
 {
+	
+	private $_optionIds;
 	
     /**
      * Returns the static model of the specified AR class.
@@ -101,6 +105,15 @@ class SurveyQuestion extends CActiveRecord
         return new CActiveDataProvider($this, array(
             'criteria'=>$criteria,
         ));
+    }
+    
+    public function getOptionIds() {
+    	if(!isset($this->_optionsIds)) {
+    		$this->_optionIds = array();
+    		foreach($this->options as $option)
+    			$this->_optionIds[] = $option->id;
+    	}
+    	return $this->_optionIds;
     }
     
     public function __get($name) {

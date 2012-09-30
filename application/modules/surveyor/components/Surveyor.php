@@ -23,9 +23,7 @@ class Surveyor extends CApplicationComponent {
 	public function getSurveyForm($survey) {
 		if(!$survey instanceof SurveyAR)
 			$survey = $this->$survey;
-		$surveyForm = new SurveyForm;
-		$surveyForm->survey = $survey;
-		return $surveyForm;
+		return $survey->form;
 	}
 	
 	public static function __callStatic($method, $args){

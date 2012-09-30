@@ -9,8 +9,9 @@ class Captcha extends CFormModel {
 	 */
 	public function rules() {
 		return array(
+				array('captcha', 'required'),
 				array('captcha', 'ext.recaptcha.EReCaptchaValidator',
-						'message' => 'Incorrect captcha was entered.'),
+					  'message' => 'Incorrect captcha was entered.'),
 		);
 	}
 	

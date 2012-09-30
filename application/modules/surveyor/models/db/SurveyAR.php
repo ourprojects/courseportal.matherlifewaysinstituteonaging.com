@@ -7,6 +7,7 @@
  * @property integer $id
  * @property string $name
  * @property string $description
+ * @property integer $anonymous
  * 
  * The followings are the available model relations:
  * @property SurveyQuestion[] $questions
@@ -41,8 +42,9 @@ class SurveyAR extends CActiveRecord
     public function rules()
     {
         return array(
-            array('id, name', 'required'),
+            array('id, name, anonymous', 'required'),
             array('id', 'numerical', 'integerOnly' => true),
+        	array('anonymous', 'boolean'),
             array('name', 'length', 'max' => 255),
             // The following rule is used by search().
             // Please remove those attributes that should not be searched.
@@ -81,6 +83,7 @@ class SurveyAR extends CActiveRecord
         	'options' => Yii::t('onlinecourseportal', 'Options'),
         	'types' => Yii::t('onlinecourseportal', 'Question Types'),
         	'answers' => Yii::t('onlinecourseportal', 'Answers'),
+        	'anonymous' => Yii::t('onlinecourseportal', 'Anonymous'),
         );
     }
 
@@ -106,8 +109,8 @@ class SurveyAR extends CActiveRecord
     	return parent::__get($name);
     }
     
-    public function getForm($userId = null, $scenario = 'create') {
-    	return new SurveyForm($this, $userId, $scenario);
+    public function getForm() {
+    	return new SurveyForm($this);
     }
     
 }

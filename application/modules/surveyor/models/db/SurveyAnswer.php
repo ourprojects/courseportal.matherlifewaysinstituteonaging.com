@@ -15,9 +15,6 @@
  */
 class SurveyAnswer extends CActiveRecord
 {
-	
-	private $_newOptions = array();
-	
     /**
      * Returns the static model of the specified AR class.
      * @param string $className active record class name.
@@ -46,90 +43,12 @@ class SurveyAnswer extends CActiveRecord
         	array('user_id', 'unsafe'),
         	array('user_id', 'exist', 'attributeName' => 'id', 'className' => 'User', 'allowEmpty' => false),
         	array('question_id', 'exist', 'attributeName' => 'id', 'className' => 'SurveyQuestion', 'allowEmpty' => false),
-        	array('_newOptions', 'validateNewOptions'),
             // The following rule is used by search().
             // Please remove those attributes that should not be searched.
             array('user_id, question_id', 'safe', 'on'=>'search'),
         );
     }
     
-    public function getOptionIds() {
-    	$ids = array();
-    	foreach($this->_newOptions as $option)
-    		$ids[$option->option_id] = $option->option_id;
-    	foreach($this->answerOptions as $option)
-    		if(!isset($ids[$option->option_id]))
-    			$ids[$option->option_id] = $option->option_id;
-    	return $ids;
-    }
-    
-    public function addOptionIds($optionIds) {
-    	if(is_array($optionIds)) {
-    		foreach($optionIds as $optionId) {
-    			$option = new SurveyAnswerOption;
-    			$option->option_id = $optionId;
-    			$this->_newOptions[$optionId] = $option;
-    		}
-    	} else {
-    		$option = new SurveyAnswerOption;
-    		$option->option_id = $optionIds;
-    		$this->_newOptions[$optionIds] = $option;
-    	}
-    }
-    
-    public function validateNewOptions($attribute, $params) {
-    	if(empty($this->$attribute) && empty($this->answerOptions))
-    		$this->addError($this->question_id, 'Please answer this question.');
-    	if(count($this->$attribute) > 1 && !$this->question->allow_many_options) {
-    		$this->addError($this->question_id, 'Only one option is allowed for this question.');
-    		return;
-    	}
-    	$validOptionIds = array();
-    	foreach($this->question->options as $option)
-    		$validOptionIds[] = $option['id'];
-    	foreach($this->$attribute as $newOption) {
-    		if(!in_array($newOption->option_id, $validOptionIds)) {
-    			$this->addError($this->question_id, 'Invalid option.');
-    			return;
-    		}
-    	}
-    }
-    
-    public function save($validate = true) {
-    	if(!$validate || $this->validate()) {
-    		if($this->getScenario() === 'insert') {
-    			if(!parent::save(false))
-    				return false;
-	    		foreach($this->_newOptions as $option) {
-	    			$option->answer_id = $this->id;
-	    			if(!$option->save($validate)) {
-	    				$this->addErrors($option->getErrors());
-	    				return false;
-	    			}
-	    		}
-	    		return true;
-    		} else {
-    			foreach($this->answerOptions as $key => $option) {
-    				if(!isset($this->_newOptions[$option->option_id])) {
-    					if(!$option->delete())
-    						return false;
-    				} else {
-    					unset($this->_newOptions[$option->option_id]);
-    				}
-    			}
-    			foreach($this->_newOptions as $option) {
-    				$option->answer_id = $this->id;
-    				if(!$option->save($validate)) {
-	    				$this->addErrors($option->getErrors());
-	    				return false;
-	    			}
-    			}
-    		}
-    		return parent::save(false);
-    	}
-    	return false;
-    }
-
     /**
      * @return array relational rules.
      */
@@ -138,6 +57,7 @@ class SurveyAnswer extends CActiveRecord
         return array(
         		'user' => array(self::BELONGS_TO, 'User', 'user_id'),
         		'question' => array(self::BELONGS_TO, 'SurveyQuestion', 'question_id'),
+        		'answerText' => array(self::HAS_MANY, 'SurveyAnswerText', 'answer_id'),
         		'answerOptions' => array(self::HAS_MANY, 'SurveyAnswerOption', 'answer_id'),
         		'options' => array(self::HAS_MANY, 'SurveyQuestionOption', array('option_id' => 'id'),
         				'through' => 'answerOptions'),
@@ -154,6 +74,7 @@ class SurveyAnswer extends CActiveRecord
             'question_id' => Yii::t('onlinecourseportal', 'Survey Question ID'),
         	'user' => Yii::t('onlinecourseportal', 'User'),
         	'question' => Yii::t('onlinecourseportal', 'Question'),
+        	'answerText' => Yii::t('onlinecourseportal', 'Answer Text'),
         	'answerOptions' => Yii::t('onlinecourseportal', 'Answer Options'),
         	'options' => Yii::t('onlinecourseportal', 'Options'),
         );

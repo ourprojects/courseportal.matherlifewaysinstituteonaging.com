@@ -65,57 +65,16 @@
 		<?php echo $form->textField($models['user_profile'], 'zip_code', array('class' => 'wide_200px')); ?>
 		<?php echo $form->error($models['user_profile'], 'zip_code'); ?>
 	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($models['profile_questions'], 'questions[1]'); ?>
-		<?php echo $form->dropDownList(
-				$models['profile_questions'], 
-				'options1', 
-				$models['profile_questions']->questions[1]->getOptionsData()
-			); 
-		?>
-		<?php echo $form->error($models['profile_questions'], ''); ?>
-	</div>
 	
-	<div class="row">
-		<?php echo $form->labelEx($models['profile_questions'], 'questions[2]'); ?>
-		<?php echo $form->dropDownList(
-				$models['profile_questions'], 
-				'options2', 
-				$models['profile_questions']->questions[2]->getOptionsData()
-			); ?>
-		<?php echo $form->error($models['profile_questions'], 'questions[2]'); ?>
-	</div>
-	
-	<div class="row">
-		<?php echo $form->labelEx($models['profile_questions'], 'questions[3]'); ?>
-		<?php echo $form->dropDownList(
-				$models['profile_questions'], 
-				'options3', 
-				$models['profile_questions']->questions[3]->getOptionsData()
-			); ?>
-		<?php echo $form->error($models['profile_questions'], 'questions[3]'); ?>
-	</div>
-	
-	<div class="row">
-		<?php echo $form->labelEx($models['profile_questions'], 'questions[4]'); ?>
-		<?php echo $form->checkBoxList(
-				$models['profile_questions'], 
-				'options4', 
-				$models['profile_questions']->questions[4]->getOptionsData()
-			);?>
-		<?php echo $form->error($models['profile_questions'], 'questions[4]'); ?>
-	</div>
-	
-	<div class="row">
-		<?php echo $form->labelEx($models['profile_questions'], 'questions[5]'); ?>
-		<?php echo $form->dropDownList(
-				$models['profile_questions'], 
-				'options5', 
-				$models['profile_questions']->questions[5]->getOptionsData()
-			); ?>
-		<?php echo $form->error($models['profile_questions'], 'questions[5]'); ?>
-	</div>
+	<?php 
+	$this->widget(
+			'modules.surveyor.widgets.Survey', 
+			array('surveyForm' => $models['profile_questions'], 
+					'showName' => false, 
+					'showDescription' => false, 
+					'encloseInForm' => false)
+		); 
+	?>
 				
 	<div class="row submit">
 		<?php echo CHtml::submitButton(Yii::t('onlinecourseportal', 'Save Changes')); ?>
