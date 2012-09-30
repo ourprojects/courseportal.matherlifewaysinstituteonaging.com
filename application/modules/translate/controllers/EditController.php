@@ -85,7 +85,7 @@ class EditController extends TranslateBaseController
 		if(isset($_GET['MessageSource']))
 			$model->attributes=$_GET['MessageSource'];
         
-        $model->language=TranslateModule::translator()->getLanguage();    
+        $model->language=Yii::app()->getLanguage();    
 
 		$this->render('missing',array(
 			'model'=>$model,

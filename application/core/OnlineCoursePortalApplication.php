@@ -123,16 +123,16 @@ class OnlineCoursePortalApplication extends CWebApplication {
     	$newValues = array();
     	reset($values);
     	$removedKey = null;
-    	if(list($removedKey, $val) =  each($values)) {
+    	if(list($removedKey, $val) = each($values)) {
 	    	$lastValue = $val;
 	    	if($lastValue !== '') {
-	    		if(list($key, $val) =  each($values)) {
+	    		if(list($key, $val) = each($values)) {
 			    	do {
 			    		$newValues[$lastValue] = $key;
 			    		$lastValue = $val;
 			    		if($lastValue === '')
 			    			break;
-			    	} while(list($key, $val) =  each($values));
+			    	} while(list($key, $val) = each($values));
 			    	if($lastValue !== '')
 			    		$newValues[$lastValue] = '';
 	    		} else {

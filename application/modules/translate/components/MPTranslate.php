@@ -55,7 +55,7 @@ class MPTranslate extends CApplicationComponent{
      * @return string the message to translate or the translated message if option autoTranslate is set to true
      */
     function missingTranslation($event) {
-        if($event !== null && (substr($event->language, 0, 2) !== substr(Yii::app()->sourceLanguage, 0, 2) || Yii::app()->getMessages()->forceTranslation)) {
+        if($event !== null && (Yii::app()->locale->getLanguageID($event->language) !== Yii::app()->locale->getLanguageID(Yii::app()->sourceLanguage) || Yii::app()->getMessages()->forceTranslation)) {
         	Yii::import('translate.models.MessageSource');
         	$attributes = array('category'=>$event->category,'message'=>$event->message);
         	if(($model=MessageSource::model()->find('message=:message AND category=:category',$attributes))===null){
@@ -71,7 +71,7 @@ class MPTranslate extends CApplicationComponent{
         			$event->message = $messageModel->translation;
         		} else {
         			if(Yii::app()->translate->autoTranslate){//&& key_exists($event->language,$this->getGoogleAcceptedLanguages($event->language))
-        				$translation = Yii::app()->translate->googleTranslate($event->message, $event->language, Yii::app()->sourceLanguage);
+        				$translation = Yii::app()->translate->googleTranslate($event->message, $event->language, Yii::app()->locale->getLanguageID(Yii::app()->sourceLanguage));
         				if($translation === false)
         					return false;
         				$messageModel=new Message;
