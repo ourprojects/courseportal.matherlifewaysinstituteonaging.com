@@ -5,33 +5,25 @@
 	<meta name="language" content="en" />
 
 	<!-- blueprint CSS framework -->
-	<link rel="stylesheet" type="text/css"
-		href="<?php echo Yii::app()->theme->baseUrl; ?>/css/screen.css"
-		media="screen, projection" />
-	<link rel="stylesheet" type="text/css"
-		href="<?php echo Yii::app()->theme->baseUrl; ?>/css/print.css"
-		media="print" />
+	<?php echo CHtml::cssFile(Yii::app()->theme->baseUrl.'/css/screen.css', 'screen, projection'); ?>
+	<?php echo CHtml::cssFile(Yii::app()->theme->baseUrl.'/css/print.css', 'print'); ?>
+
 	<!--[if lt IE 8]>
-		<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->theme->baseUrl; ?>/css/ie.css" media="screen, projection" />
+		<?php echo CHtml::cssFile(Yii::app()->theme->baseUrl.'/css/ie.css', 'screen, projection'); ?>
 		<![endif]-->
-
-	<link rel="stylesheet" type="text/css"
-		href="<?php echo Yii::app()->theme->baseUrl; ?>/css/main.css" />
-	<link rel="stylesheet" type="text/css"
-		href="<?php echo Yii::app()->theme->baseUrl; ?>/css/form.css" />
-	<link rel="stylesheet" type="text/css"
-		href="<?php echo Yii::app()->theme->baseUrl; ?>/css/fancybox.css" />
-
+	<?php echo CHtml::cssFile(Yii::app()->theme->baseUrl.'/css/main.css'); ?>
+	<?php echo CHtml::cssFile(Yii::app()->theme->baseUrl.'/css/form.css'); ?>
+	<?php echo CHtml::cssFile(Yii::app()->theme->baseUrl.'/css/fancybox.css'); ?>
 
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 
-	<script type="text/javascript" src="<?php echo Yii::app()->theme->baseUrl; ?>/js/jquery.tweet.js"></script>
-	<script type="text/javascript" src="<?php echo Yii::app()->theme->baseUrl; ?>/js/jquery.cycle.js"></script>
-	<script type="text/javascript" src="<?php echo Yii::app()->theme->baseUrl; ?>/js/jquery.quote.js"></script>
-	<script type="text/javascript" src="<?php echo Yii::app()->theme->baseUrl; ?>/js/jquery.feed.js"></script>
-	<script type="text/javascript" src="<?php echo Yii::app()->theme->baseUrl; ?>/js/jquery.fancybox.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/jquery-ui.min.js"></script>
-	<script type="text/javascript" src="<?php echo Yii::app()->theme->baseUrl; ?>/js/main.js"></script>
+	<?php echo CHtml::scriptFile(Yii::app()->theme->baseUrl.'/js/jquery.tweet.js'); ?>
+	<?php echo CHtml::scriptFile(Yii::app()->theme->baseUrl.'/js/jquery.cycle.js'); ?>
+	<?php echo CHtml::scriptFile(Yii::app()->theme->baseUrl.'/js/jquery.quote.js'); ?>
+	<?php echo CHtml::scriptFile(Yii::app()->theme->baseUrl.'/js/jquery.feed.js'); ?>
+	<?php echo CHtml::scriptFile(Yii::app()->theme->baseUrl.'/js/jquery.fancybox.js'); ?>
+	<?php echo CHtml::scriptFile('https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/jquery-ui.min.js'); ?>
+	<?php echo CHtml::scriptFile(Yii::app()->theme->baseUrl.'/js/jquery.tweet.js'); ?>
 
 </head>
 
