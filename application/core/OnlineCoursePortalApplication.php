@@ -68,7 +68,7 @@ class OnlineCoursePortalApplication extends CWebApplication {
 			$language = (string)$_GET['language'];
 			unset($_GET['language']);
 		} elseif (isset(Yii::app()->session['language'])) {
-			$language = Yii::app()->session['language'];
+			$language = (string)Yii::app()->session['language'];
 		} elseif (Yii::app()->user->hasState('language')) {
     		$language = (string)Yii::app()->user->getState('language');
     	} elseif(isset(Yii::app()->request->cookies['language'])) {
@@ -110,38 +110,16 @@ class OnlineCoursePortalApplication extends CWebApplication {
     	Yii::app()->request->cookies['language']->expire = time() + (60 * 60 * 24 * 365 * 2); // (2 year)
     }
     
-    public function createController($route, $owner=null) {
+    public function createController($route, $owner = null) {
     	if($owner !== null) {
-    		$routePart = $this->_shiftOffFirstKey($_GET);
-    		if($routePart !== null)
+    		$routePart = array_shift($this->getUrlManager()->additionalPathInfo);
+    		if($routePart !== null && !is_array($routePart))
     			$route .= "$routePart/";
     	}
-    	return parent::createController($route, $owner);
-    }
-    
-    private function _shiftOffFirstKey(&$values) {
-    	$newValues = array();
-    	reset($values);
-    	$removedKey = null;
-    	if(list($removedKey, $val) = each($values)) {
-	    	$lastValue = $val;
-	    	if($lastValue !== '') {
-	    		if(list($key, $val) = each($values)) {
-			    	do {
-			    		$newValues[$lastValue] = $key;
-			    		$lastValue = $val;
-			    		if($lastValue === '')
-			    			break;
-			    	} while(list($key, $val) = each($values));
-			    	if($lastValue !== '')
-			    		$newValues[$lastValue] = '';
-	    		} else {
-	    			$newValues[$lastValue] = '';
-	    		}
-	    	}
-    	}
-    	$values = $newValues;
-    	return $removedKey;
+    	$controller = parent::createController($route, $owner);
+    	if($controller !== null && $owner !== null)
+    		$this->getUrlManager()->parsePathInfo($this->getUrlManager()->additionalPathInfo);
+    	return $controller;
     }
 
     /**
