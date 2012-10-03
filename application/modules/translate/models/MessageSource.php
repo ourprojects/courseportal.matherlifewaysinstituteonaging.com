@@ -22,9 +22,9 @@ class MessageSource extends CActiveRecord{
 	}
 	function attributeLabels(){
 		return array(
-			'id'=> Yii::t('onlinecourseportal', 'ID'),
-			'category'=> Yii::t('onlinecourseportal', 'Category'),
-			'message'=> Yii::t('onlinecourseportal', 'Message'),
+			'id'=> t('ID'),
+			'category'=> t('Category'),
+			'message'=> t('Message'),
 		);
 	}
 

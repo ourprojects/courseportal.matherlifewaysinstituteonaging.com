@@ -76,14 +76,14 @@ class SurveyAR extends CActiveRecord
     public function attributeLabels()
     {
         return array(
-            'id' => Yii::t('onlinecourseportal', 'ID'),
-            'name' => Yii::t('onlinecourseportal', 'Name'),
-        	'description' => Yii::t('onlinecourseportal', 'Description'),
-        	'questions' => Yii::t('onlinecourseportal', 'Questions'),
-        	'options' => Yii::t('onlinecourseportal', 'Options'),
-        	'types' => Yii::t('onlinecourseportal', 'Question Types'),
-        	'answers' => Yii::t('onlinecourseportal', 'Answers'),
-        	'anonymous' => Yii::t('onlinecourseportal', 'Anonymous'),
+            'id' => t('ID'),
+            'name' => t('Name'),
+        	'description' => t('Description'),
+        	'questions' => t('Questions'),
+        	'options' => t('Options'),
+        	'types' => t('Question Types'),
+        	'answers' => t('Answers'),
+        	'anonymous' => t('Anonymous'),
         );
     }
 
@@ -105,7 +105,7 @@ class SurveyAR extends CActiveRecord
     
     public function __get($name) {
     	if($name === 'name' || $name === 'description')
-    		return Yii::t('onlinecourseportal', parent::__get($name));
+    		return t(parent::__get($name));
     	return parent::__get($name);
     }
     

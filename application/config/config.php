@@ -66,6 +66,7 @@ return array(
 						'class' => 'modules.translate.components.MPTranslate',
 						'googleApiKey' => 'AIzaSyD5Xxt_4VKM13pF9uQdcULK4eHuTe7w940',
 						'autoTranslate' => true,
+						'defaultMessageCategory' => 'onlinecourseportal',
 				),
 				
 				'user' => array(

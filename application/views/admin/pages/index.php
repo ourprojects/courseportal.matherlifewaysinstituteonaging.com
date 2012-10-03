@@ -1,9 +1,9 @@
-<h1><?php echo Yii::t('onlinecourseportal', 'Admin'); ?></h1>
+<h1><?php echo t('Admin'); ?></h1>
 <div id="single-column">
 <?php
-$this->pageTitle = Yii::app()->name . ' - '.Yii::t('onlinecourseportal', 'Admin');
+$this->pageTitle = Yii::app()->name . ' - '.t('Admin');
 $this->breadcrumbs = array(
-		Yii::t('onlinecourseportal', 'Admin'),
+		t('Admin'),
 );
 ?>
 

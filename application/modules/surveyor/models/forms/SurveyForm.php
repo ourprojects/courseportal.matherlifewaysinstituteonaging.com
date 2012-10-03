@@ -56,7 +56,7 @@ class SurveyForm extends CFormModel {
 	public function attributeLabels() {
 		if(!isset($this->_attributeLabels)) {
 			$this->_attributeLabels = array(
-					'userId' => Yii::t('onlinecourseportal', 'User ID'),
+					'userId' => t('User ID'),
 					'name' => $this->_survey->name,
 					'description' => $this->_survey->description,
 				);
@@ -121,7 +121,7 @@ class SurveyForm extends CFormModel {
 	public function checkAnonymous($attribute, $params) {
 		if(isset($this->_userId) || $this->_survey->anonymous)
 			return;
-		$this->addError($attribute, Yii::t('onlinecourseportal', 'This survey is not anonymous and a user was not specified.'));
+		$this->addError($attribute, t('This survey is not anonymous and a user was not specified.'));
 	}
 	
 	public function validateAnswers($attribute, $params) {
@@ -133,17 +133,17 @@ class SurveyForm extends CFormModel {
 					if(is_array($answers[$question->id])) {
 						if($question->allow_many_options) {
 							if(count(array_intersect($question->optionIds, $answers[$question->id])) != count($answers[$question->id]))
-								$this->addError("question{$question->id}", Yii::t('onlinecourseportal', 'Invalid option selected.'));
+								$this->addError("question{$question->id}", t('Invalid option selected.'));
 						} else {
-							$this->addError("question{$question->id}", Yii::t('onlinecourseportal', 'Only one answer is allowed.'));
+							$this->addError("question{$question->id}", t('Only one answer is allowed.'));
 						}
 					} else {
 						if(!in_array($answers[$question->id], $question->optionIds))
-							$this->addError("question{$question->id}", Yii::t('onlinecourseportal', 'Invalid option selected.'));
+							$this->addError("question{$question->id}", t('Invalid option selected.'));
 					}
 				}
 			} else if($question->required) {
-				$this->addError("question{$question->id}", Yii::t('onlinecourseportal', 'This question is required.'));
+				$this->addError("question{$question->id}", t('This question is required.'));
 			}
 		}
 	}

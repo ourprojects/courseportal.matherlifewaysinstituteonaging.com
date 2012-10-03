@@ -70,13 +70,13 @@ class SurveyAnswer extends CActiveRecord
     public function attributeLabels()
     {
         return array(
-            'user_id' => Yii::t('onlinecourseportal', 'User ID'),
-            'question_id' => Yii::t('onlinecourseportal', 'Survey Question ID'),
-        	'user' => Yii::t('onlinecourseportal', 'User'),
-        	'question' => Yii::t('onlinecourseportal', 'Question'),
-        	'answerText' => Yii::t('onlinecourseportal', 'Answer Text'),
-        	'answerOptions' => Yii::t('onlinecourseportal', 'Answer Options'),
-        	'options' => Yii::t('onlinecourseportal', 'Options'),
+            'user_id' => t('User ID'),
+            'question_id' => t('Survey Question ID'),
+        	'user' => t('User'),
+        	'question' => t('Question'),
+        	'answerText' => t('Answer Text'),
+        	'answerOptions' => t('Answer Options'),
+        	'options' => t('Options'),
         );
     }
 

@@ -5,7 +5,7 @@
 )); ?>
 
 	<p class="note">
-		<?php echo Yii::t('onlinecourseportal', 'Fields with <span class="required">*</span> are required.'); ?>
+		<?php echo t('Fields with <span class="required">*</span> are required.'); ?>
 	</p>
 	<?php echo $form->errorSummary($model); ?>
 	<div class="row">
@@ -22,11 +22,11 @@
 
 	<div class="row remember_me">
 		<?php echo CHtml::checkBox('remember_me'); ?>
-		<?php echo CHtml::label(Yii::t('onlinecourseportal', 'Remember me next time.'),'remember_me'); ?>
+		<?php echo CHtml::label(t('Remember me next time.'),'remember_me'); ?>
 	</div>
 
 	<div class="row submit">
-		<?php echo CHtml::submitButton(Yii::t('onlinecourseportal', 'Login')); ?>
+		<?php echo CHtml::submitButton(t('Login')); ?>
 	</div>
 
 	<?php $this->endWidget(); ?>

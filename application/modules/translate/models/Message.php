@@ -23,9 +23,9 @@ class Message extends CActiveRecord{
 	}
 	function attributeLabels(){
 		return array(
-			'id'=> Yii::t('onlinecourseportal', 'ID'),
-			'language'=> Yii::t('onlinecourseportal', 'Language'),
-			'translation'=> Yii::t('onlinecourseportal', 'Translation'),
+			'id'=> t('ID'),
+			'language'=> t('Language'),
+			'translation'=> t('Translation'),
             'category'=> MessageSource::model()->getAttributeLabel('category'),
             'message'=> MessageSource::model()->getAttributeLabel('message'),
 		);

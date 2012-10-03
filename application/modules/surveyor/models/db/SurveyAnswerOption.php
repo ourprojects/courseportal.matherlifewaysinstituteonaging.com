@@ -64,10 +64,10 @@ class SurveyAnswerOption extends CActiveRecord
     public function attributeLabels()
     {
         return array(
-            'answer_id' => Yii::t('onlinecourseportal', 'Answer ID'),
-            'option_id' => Yii::t('onlinecourseportal', 'Option ID'),
-        	'option' => Yii::t('onlinecourseportal', 'Option'),
-        	'option' => Yii::t('onlinecourseportal', 'Answer'),
+            'answer_id' => t('Answer ID'),
+            'option_id' => t('Option ID'),
+        	'option' => t('Option'),
+        	'option' => t('Answer'),
         );
     }
 

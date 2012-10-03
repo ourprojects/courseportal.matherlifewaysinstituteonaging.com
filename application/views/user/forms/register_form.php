@@ -8,7 +8,7 @@
 			));
 	?>
 	<p class="note">
-		<?php echo Yii::t('onlinecourseportal', 'Fields with <span class="required">*</span> are required.'); ?>
+		<?php echo t('Fields with <span class="required">*</span> are required.'); ?>
 	</p>
 	<?php echo $form->errorSummary($models); ?>
 	
@@ -104,7 +104,7 @@
 	</div>
 				
 	<div class="row submit">
-		<?php echo CHtml::submitButton(Yii::t('onlinecourseportal', 'Submit')); ?>
+		<?php echo CHtml::submitButton(t('Submit')); ?>
 	</div>
 
 	<?php $this->endWidget();?>

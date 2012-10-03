@@ -1,4 +1,4 @@
-<p><?php echo Yii::t('onlinecourseportal', 'If you have business inquiries or other questions, please fill out
+<p><?php echo t('If you have business inquiries or other questions, please fill out
 	the following form to contact us. Thank you.'); ?></p>
 
 <div class="form">
@@ -6,7 +6,7 @@
 	<?php $form=$this->beginWidget('CActiveForm'); ?>
 
 	<p class="note">
-		<?php echo Yii::t('onlinecourseportal', 'Fields with <span class="required">*</span> are required.'); ?>
+		<?php echo t('Fields with <span class="required">*</span> are required.'); ?>
 	</p>
 
 	<?php echo $form->errorSummary($models); ?>
@@ -43,7 +43,7 @@
 	</div>
 
 	<div class="row submit">
-		<?php echo CHtml::submitButton(Yii::t('onlinecourseportal', 'Submit')); ?>
+		<?php echo CHtml::submitButton(t('Submit')); ?>
 	</div>
 
 	<?php $this->endWidget(); ?>

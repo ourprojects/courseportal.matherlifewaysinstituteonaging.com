@@ -68,7 +68,7 @@
 	?>
 	<?php if($encloseInForm): ?>
 	<div class="row submit">
-		<?php echo CHtml::submitButton(Yii::t('onlinecourseportal', 'Submit')); ?>
+		<?php echo CHtml::submitButton(t('Submit')); ?>
 	</div>
 
 	<?php $this->endWidget();?>

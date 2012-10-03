@@ -88,7 +88,7 @@ class OnlineCoursePortalApplication extends CWebApplication {
     	Yii::app()->translate->acceptedLanguages = Yii::app()->localeManager->getLanguages();
     	Yii::app()->language = $language;
 
-    	$this->name = Yii::t('onlinecourseportal', $this->name);
+    	$this->name = t($this->name);
 		parent::runController($route);
     }
     

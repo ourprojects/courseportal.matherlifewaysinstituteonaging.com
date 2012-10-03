@@ -22,7 +22,12 @@ class MPTranslate extends CApplicationComponent{
     /**
      * @const string ID an unique key to be used in many situations 
      * */
-    const ID='mp-translate';
+    const ID = 'mp-translate';
+    /**
+     * @var string $defaultMessageCategory
+     * The default category used to identify messages.
+     */
+    public $defaultMessageCategory = self::ID;
     /**
      * @var array $acceptedLanguages contains the languages accepted by your application 
      * */
@@ -46,6 +51,13 @@ class MPTranslate extends CApplicationComponent{
             if(($targetLanguage=Yii::app()->getLanguage())!=null)
                 $this->acceptedLanguages[$targetLanguage]=$targetLanguage;
         }
+        
+        function t($message, $category = MPTranslate::ID, $params = array (), $source = NULL, $language = NULL) {
+        	if($category === MPTranslate::ID)
+        		$category = Yii::app()->getComponent(TranslateModule::$translateComponentId)->defaultMessageCategory;
+        	return Yii::t($category, $message, $params, $source, $language);
+        }
+        
         return parent::init();
 	}
     /**

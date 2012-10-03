@@ -15,7 +15,7 @@
 		</div>
 					
 		<div class="row submit">
-			<?php echo CHtml::submitButton(Yii::t('onlinecourseportal', 'Upload')); ?>
+			<?php echo CHtml::submitButton(t('Upload')); ?>
 		</div>
 
 	<?php $this->endWidget();?>
