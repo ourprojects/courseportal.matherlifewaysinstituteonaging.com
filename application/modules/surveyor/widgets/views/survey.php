@@ -1,76 +1,64 @@
-<div id="survey_<?php echo $survey->id; ?>">
-	<?php if($showName): ?>
-	<h3><?php echo $survey->name; ?></h3>
-	<?php endif; ?>
-	<?php if($showDescription): ?>
-	<div id="survey_description">
-	<?php echo $survey->description; ?>
-	</div>
-	<?php endif; ?>
-	<?php if($encloseInForm): ?>
-	<?php 
-	$this->beginWidget(
-		'CActiveForm',
-		array(
-				'id' => $survey->name,
-				'enableAjaxValidation' => true,
-				'htmlOptions' => array('enctype' => 'multipart/form-data'),
-		));
-	?>
-	<?php endif; ?>
-	<?php 
-	foreach($survey->questions as $question) {
-		echo '<div class="row">';
-		echo CHtml::activeLabelEx($survey, "question{$question->id}", array('for' => "{$survey->name}Survey[question{$question->id}]"));
-		switch($question->type->name) {
+<?php 
+	echo CHtml::tag('div', $survey['options'], false);
+	
+	if($title['show'])
+		echo CHtml::tag('div', $title['options'], t($survey['model']->title));
+	if($description['show'])
+		echo CHtml::tag('div', $description['options'], '<p>'.t($survey['model']->description).'</p>');
+
+	if($form['show'])
+		$this->beginWidget('CActiveForm', $form['options']);
+
+	foreach($survey['model']->questions as $q) {
+		$question['options']['id'] .= "_{$q->id}";
+		echo CHtml::tag('div', $question['options'], '', false);
+		echo CHtml::activeLabelEx($survey['model'], "question{$q->id}", array('for' => "{$survey['model']->name}Survey[question{$q->id}]"));
+		switch($q->type->name) {
 			case 'select':
 				echo CHtml::activeDropDownList(
-										$survey, 
-										"question{$question->id}", 
-										CHtml::listData($question->options, 'id', 'text'), 
-										array('name' => "{$survey->name}Survey[question{$question->id}]")
+										$survey['model'], 
+										"question{$q->id}", 
+										CHtml::listData($q->options, 'id', 'text'), 
+										array('name' => "{$survey['model']->name}Survey[question{$q->id}]")
 					);
 				break;
 			case 'checkbox':
 				echo CHtml::activeCheckBoxList(
-										$survey, 
-										"question{$question->id}", 
-										CHtml::listData($question->options, 'id', 'text'), 
-										array('name' => "{$survey->name}Survey[question{$question->id}]")
+										$survey['model'], 
+										"question{$q->id}", 
+										CHtml::listData($q->options, 'id', 'text'), 
+										array('name' => "{$survey['model']->name}Survey[question{$q->id}]")
 					);
 				break;
 			case 'radio':
 				echo CHtml::activeRadioButtonList(
-										$survey,
-										"question{$question->id}",
-										CHtml::listData($question->options, 'id', 'text'),
-										array('name' => "{$survey->name}Survey[question{$question->id}]")
+										$survey['model'],
+										"question{$q->id}",
+										CHtml::listData($q->options, 'id', 'text'),
+										array('name' => "{$survey['model']->name}Survey[question{$q->id}]")
 					);
 				break;
 			case 'textfield':
 				echo CHtml::activeTextField(
-										$survey, 
-										"question{$question->id}",
-										array('name' => "{$survey->name}Survey[question{$question->id}]")
+										$survey['model'], 
+										"question{$q->id}",
+										array('name' => "{$survey['model']->name}Survey[question{$q->id}]")
 					);
 				break;
 			case 'textarea':
 				echo CHtml::activeTextArea(
-						$survey,
-						"question{$question->id}",
-						array('name' => "{$survey->name}Survey[question{$question->id}]")
+						$survey['model'],
+						"question{$q->id}",
+						array('name' => "{$survey['model']->name}Survey[question{$q->id}]")
 						);
 				break;
 		}
-		echo CHtml::error($survey, "question{$question->id}");
+		echo CHtml::error($survey['model'], "question{$q->id}");
 		echo '</div>';
 	}
-	?>
-	<?php if($encloseInForm): ?>
-	<div class="row submit">
-		<?php echo CHtml::submitButton(t('Submit')); ?>
-	</div>
-
-	<?php $this->endWidget();?>
-	<?php endif; ?>
-</div>
+	if($form['show']) {
+		echo CHtml::tag('div', $submitButton['options'], CHtml::submitButton(t('Submit')));
+		$this->endWidget();
+	}
+	echo '</div>';
+?>

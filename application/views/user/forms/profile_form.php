@@ -69,10 +69,11 @@
 	<?php 
 	$this->widget(
 			'modules.surveyor.widgets.Survey', 
-			array('surveyForm' => $models['profile_questions'], 
-					'showName' => false, 
-					'showDescription' => false, 
-					'encloseInForm' => false)
+			array('survey_model' => $models['profile_questions'], 
+				  'title_show' => false,
+				  'description_show' => false,
+				  'form_show' => false,
+				  'question_options' => array('class' => 'row'))
 		); 
 	?>
 				

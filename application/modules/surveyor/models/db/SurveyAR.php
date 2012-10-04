@@ -6,6 +6,7 @@
  * The followings are the available columns in table '{{survey}}':
  * @property integer $id
  * @property string $name
+ * @property string $title
  * @property string $description
  * @property integer $anonymous
  * 
@@ -48,7 +49,7 @@ class SurveyAR extends CActiveRecord
             array('name', 'length', 'max' => 255),
             // The following rule is used by search().
             // Please remove those attributes that should not be searched.
-            array('id, name, text', 'safe', 'on' => 'search'),
+            array('id, name, title, description, anonymous', 'safe', 'on' => 'search'),
         );
     }
 
@@ -78,6 +79,7 @@ class SurveyAR extends CActiveRecord
         return array(
             'id' => t('ID'),
             'name' => t('Name'),
+        	'title' => t('Title'),
         	'description' => t('Description'),
         	'questions' => t('Questions'),
         	'options' => t('Options'),

@@ -192,27 +192,18 @@ $this->pageTitle = Yii::app()->name . ' - '.t('Guest');
 		experiences for each course user. Mouse-over the chart below to see
 		our areas of focus.'); ?></p>
 	<div id="pie-chart"><img src="<?php echo Yii::app()->theme->baseUrl; ?>/images/home-chart.png" /></div>
-
-	<!--<iframe src="<?php echo Yii::app()->request->baseUrl; ?>/limeSurvey/index.php/survey/index/sid/844119" height="425" width="100%">
-	</iframe>-->
 	
-	<h2 class="flowers top-pad"><?php echo t( 'Caregiver and Working?'); ?></h2>
-	<div class="box-light-grey">
-		<p><?php echo t( 'There are many challenges to being a caregiver and working full-time. 
-		With millions of households in the US caring for a elderly person, among their workplace responsibilities, it is difficult to
-		juggle both. Have you ever taken a day off from work as a result of your role as a caregiver?'); ?></p>
-		<p>
-			<a href="#coming-soon"
-				class="fancybox button"><?php echo t( 'Yes'); ?></a> 
-			<a href="#coming-soon"
-				class="fancybox button"><?php echo t( 'No'); ?></a>
-		</p>
-		<div id="bar-chart"><img src="<?php echo Yii::app()->theme->baseUrl; ?>/images/home-bar-chart.png" /></div>
-		<div id="coming-soon" style="display: none; width: 600px; height: 150px; overflow: hidden;"><h1 class="flowers">Coming soon!</h1><p>The feature you're looking for will be up and running very soon.</p></div>
-	</div>
-					<!-- image here of bar chart horizontal, left color teal, right color orange, fake data 46% left, 54% right
-						with caption/text saying left 'Taken 1 or more days off work this year' right 'Taken no time away from work yet'
-					 -->
+	<?php 
+	$this->widget(
+			'modules.surveyor.widgets.Survey', 
+			array(
+				'survey_model' => $models['workingCaregiver_survey'],
+				'title_options' => array('class' => 'flowers top-pad'),
+				'form_options' => array('enableAjaxValidation' => true,
+										'enableClientValidation' => true),
+			)
+		); 
+	?>
 	
 	<h2 class="flowers top-pad"><?php echo t( 'Health status of your working caregivers'); ?></h2>
 	<p><?php echo t( 'Please choose one of the surveys below to take. Depending on your position, employer 

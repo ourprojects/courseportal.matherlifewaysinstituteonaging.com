@@ -24,10 +24,28 @@ class HomeController extends OnlineCoursePortalController {
 	}
 
 	public function actionIndex() {
-		if(Yii::app()->user->isGuest)
-			$this->render('pages/guestIndex');
-		else
+		if(Yii::app()->user->isGuest) {
+			$models = array(
+						'workingCaregiver_survey' => Yii::app()->surveyor->workingCaregiver->form,
+					);
+
+			if(isset($_POST['ajax']) && isset($models["{$_POST['ajax']}_survey"])) {
+				echo CActiveForm::validate($models["{$_POST['ajax']}_survey"]);
+				Yii::app()->end();
+			}
+			
+			if(Yii::app()->request->isPostRequest) {
+				foreach($models as $model) {
+					if(isset($_POST["{$model->name}Survey"])) {
+						$model->attributes = $_POST["{$model->name}Survey"];
+						$model->save();
+					}
+				}
+			}
+			$this->render('pages/guestIndex', array('models' => $models));
+		} else {
 			$this->render('pages/userIndex');
+		}
 	}
 
 	/**
