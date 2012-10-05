@@ -32,6 +32,7 @@ class SurveyForm extends CFormModel {
 	 */
 	public function rules() {
 		return array(
+				// @ TODO We could just set the allowEmpty based on the anonymous state of the survey.
 				array('userId', 'exist', 'attributeName' => 'id', 'className' => 'User', 'allowEmpty' => true),
 				array('userId', 'checkAnonymous'),
 				array('_questionAnswers', 'validateAnswers'),

@@ -66,7 +66,7 @@ class SurveyAR extends CActiveRecord
         				'order' => 'questions.order, options.order ASC'),
         		'types' => array(self::HAS_MANY, 'SurveyQuestionType', array('type_id' => 'id'),
         				'through' => 'questions'),
-        		'answers' => array(self::HAS_MANY, 'SurveyAnswer',  array('id' => 'question_id'),
+        		'answers' => array(self::HAS_MANY, 'SurveyAnswer', array('id' => 'question_id'),
         				'through' => 'questions')
         );
     }

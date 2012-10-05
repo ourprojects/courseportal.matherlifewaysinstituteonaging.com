@@ -17,14 +17,6 @@
 
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 
-	<?php echo CHtml::scriptFile(Yii::app()->theme->baseUrl.'/js/jquery.tweet.js'); ?>
-	<?php echo CHtml::scriptFile(Yii::app()->theme->baseUrl.'/js/jquery.cycle.js'); ?>
-	<?php echo CHtml::scriptFile(Yii::app()->theme->baseUrl.'/js/jquery.quote.js'); ?>
-	<?php echo CHtml::scriptFile(Yii::app()->theme->baseUrl.'/js/jquery.feed.js'); ?>
-	<?php echo CHtml::scriptFile(Yii::app()->theme->baseUrl.'/js/jquery.fancybox.js'); ?>
-	<?php echo CHtml::scriptFile('https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/jquery-ui.min.js'); ?>
-	<?php echo CHtml::scriptFile(Yii::app()->theme->baseUrl.'/js/jquery.tweet.js'); ?>
-
 </head>
 
 <body>

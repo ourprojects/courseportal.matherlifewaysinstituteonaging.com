@@ -27,6 +27,8 @@ class HomeController extends OnlineCoursePortalController {
 		if(Yii::app()->user->isGuest) {
 			$models = array(
 						'workingCaregiver_survey' => Yii::app()->surveyor->workingCaregiver->form,
+						'hrEmployer_survey' => Yii::app()->surveyor->hrEmployer->form,
+						'caregiver_survey' => Yii::app()->surveyor->caregiver->form,
 					);
 
 			if(isset($_POST['ajax']) && isset($models["{$_POST['ajax']}_survey"])) {

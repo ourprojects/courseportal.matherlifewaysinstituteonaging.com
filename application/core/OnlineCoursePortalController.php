@@ -29,6 +29,24 @@ abstract class OnlineCoursePortalController extends CController {
         Yii::app()->session->init();
 	}
 	
+	public function init() {
+		Yii::app()->clientScript->scriptMap = array(
+				'jquery.js' => Yii::app()->theme->baseUrl.'/js/jquery.js',
+				'jquery-ui.min.js' => Yii::app()->theme->baseUrl.'/js/jquery-ui.min.js',
+				'jquery.cycle.js' => Yii::app()->theme->baseUrl.'/js/jquery.cycle.js',
+				'jquery.fancybox.js' => Yii::app()->theme->baseUrl.'/js/jquery.fancybox.js',
+				'jquery.feed.js' => Yii::app()->theme->baseUrl.'/js/jquery.feed.js',
+				'jquery.mousewheel.pack.js' => Yii::app()->theme->baseUrl.'/js/jquery.mousewheel.pack.js',
+				'jquery.quote.js' => Yii::app()->theme->baseUrl.'/js/jquery.quote.js',
+				'jquery.tweet.js' => Yii::app()->theme->baseUrl.'/js/jquery.tweet.js',
+				'jwplayer.js' => Yii::app()->theme->baseUrl.'/js/jwplayer.js',
+				'main.js' => Yii::app()->theme->baseUrl.'/js/main.js',
+		);
+		foreach(Yii::app()->clientScript->scriptMap as $file => $url) {
+			Yii::app()->clientScript->registerScriptFile($file, CClientScript::POS_HEAD);
+		}
+	}
+	
 	/**
 	 * Creates the action instance based on the action map.
 	 * This method will check to see if the action ID appears in the given

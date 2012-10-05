@@ -4,6 +4,7 @@ class Survey extends CWidget {
 	
 	private $_data = 
 		array(
+			'showStats' => false,
 			'survey' => array(
 							'model' => null,
 			 				'options' => array(),
@@ -31,9 +32,16 @@ class Survey extends CWidget {
 	   );
 	
 	public function run() {
-		if($this->_data['survey']['model'] === null)
-			return;
-		$this->render('survey', $this->_data);
+		if($this->_data['survey']['model'] !== null) {
+			if($this->_data['survey']['model'] instanceof SurveyForm) {
+				$this->render('survey', $this->_data);
+				return;
+			} else if($this->_data['survey']['model'] instanceof SurveyAR) {
+				$this->render('surveyStats', $this->_data);
+				return;
+			}
+		}
+		throw new CHttpException(500, 'survey model must be an instance of SurveyForm or SurveyAR.');
 	}
 	
 	public function __set($name, $value) {
