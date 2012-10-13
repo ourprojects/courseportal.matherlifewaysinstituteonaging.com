@@ -1,13 +1,11 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed');  
 
 abstract class OnlineCoursePortalController extends CController {
-	
-	public $viewActionClass = 'ViewAction';
-	
+
 	/**
-	 * @var array context menu items. This property will be assigned to {@link CMenu::items}.
+	 * @var array context menu attributes. This property will be assigned to {@link CMenu} in the main layout.
 	 */
-	public $menu = null;
+	public $menuAttrs = null;
 	
 	/**
 	 * @var array the breadcrumbs of the current page. The value of this property will
@@ -30,40 +28,49 @@ abstract class OnlineCoursePortalController extends CController {
 	}
 	
 	public function init() {
-		Yii::app()->clientScript->scriptMap = array(
-				'jquery.js' => Yii::app()->theme->baseUrl.'/js/jquery.js',
-				'jquery-ui.min.js' => Yii::app()->theme->baseUrl.'/js/jquery-ui.min.js',
-				'jquery.cycle.js' => Yii::app()->theme->baseUrl.'/js/jquery.cycle.js',
-				'jquery.fancybox.js' => Yii::app()->theme->baseUrl.'/js/jquery.fancybox.js',
-				'jquery.feed.js' => Yii::app()->theme->baseUrl.'/js/jquery.feed.js',
-				'jquery.mousewheel.pack.js' => Yii::app()->theme->baseUrl.'/js/jquery.mousewheel.pack.js',
-				'jquery.quote.js' => Yii::app()->theme->baseUrl.'/js/jquery.quote.js',
-				'jquery.tweet.js' => Yii::app()->theme->baseUrl.'/js/jquery.tweet.js',
-				'jwplayer.js' => Yii::app()->theme->baseUrl.'/js/jwplayer.js',
-				'main.js' => Yii::app()->theme->baseUrl.'/js/main.js',
-		);
-		foreach(Yii::app()->clientScript->scriptMap as $file => $url) {
-			Yii::app()->clientScript->registerScriptFile($file, CClientScript::POS_HEAD);
-		}
+		$this->menuAttrs = $this->getMenuAttributes();
 	}
 	
 	/**
-	 * Creates the action instance based on the action map.
-	 * This method will check to see if the action ID appears in the given
-	 * action map. If so, the corresponding configuration will be used to
-	 * create the action instance.
-	 * @param array $actionMap the action map
-	 * @param string $actionID the action ID that has its prefix stripped off
-	 * @param string $requestActionID the originally requested action ID
-	 * @param array $config the action configuration that should be applied on top of the configuration specified in the map
-	 * @return CAction the action instance, null if the action does not exist.
+	 * @return array context menu attributes. This property will be assigned to {@link OnlineCoursePortalController::menuAttrs} when {@link OnlineCoursePortalController::init} is called.
 	 */
-	protected function createActionFromMap($actionMap, $actionID, $requestActionID, $config = array()) {
-		$action = parent::createActionFromMap($actionMap, $actionID, $requestActionID, $config);
-		if($action === null) {
-			$action = Yii::createComponent($this->viewActionClass, $this, $actionID);
-		}
-		return $action;
+	public function getMenuAttributes() {
+		return array('items' => array(
+							array('label' => '<span id="menu-home" title="'.t('Home').'"></span>',
+									'url' => Yii::app()->createAbsoluteUrl('home/index')),
+							array('label' => '<span id="menu-contact" title="'.t('Contact Us').'"></span>',
+									'url' => Yii::app()->createAbsoluteUrl('home/contact')),
+							array('label' => '<span id="menu-register" title="'.t('Register').'"></span>',
+									'url' => Yii::app()->createAbsoluteUrl('user/register'),
+									'visible' => Yii::app()->user->isGuest),
+							array('label' => '<span id="menu-login" title="'.t('Login').'"></span>',
+									'url' => Yii::app()->createAbsoluteUrl('user/login'),
+									'visible' => Yii::app()->user->isGuest),
+							array('label' => '<span id="menu-profile" title="'.t('Profile / Files').'"></span>',
+									'url' => Yii::app()->createAbsoluteUrl('user/profile'),
+									'visible' => !Yii::app()->user->isGuest),
+							array('label' => '<span id="menu-forum" title="'.t('Forum').'"></span>',
+									'url' => Yii::app()->createAbsoluteUrl('forum/index'),
+									'visible' => !Yii::app()->user->isGuest),
+							array('label' => '<span id="menu-courses" title="'.t('Courses').'"></span>',
+									'url' => Yii::app()->createAbsoluteUrl('course/index'),
+									'visible' => !Yii::app()->user->isGuest),
+							array('label' => '<span id="menu-admin" title="'.t('Admin').'"></span>',
+									'url' => Yii::app()->createAbsoluteUrl('admin/index'),
+									'visible' => !Yii::app()->user->isGuest && Yii::app()->user->group->name === 'admin'),
+							array('label' => '<span id="menu-logout" title="'.t('Logout').'"></span>',
+									'url' => Yii::app()->createAbsoluteUrl('user/logout'),
+									'visible' => !Yii::app()->user->isGuest)
+					 ),
+					 'encodeLabel' => false
+		);
+	}
+	
+	public function actions() {
+		return array(
+				'static' => 'ViewAction',
+				'download' => 'ext.HTTP_Download.components.HTTP_DownloadAction',
+		);
 	}
 
 	/**

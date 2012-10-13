@@ -209,7 +209,7 @@ class UserController extends OnlineCoursePortalController {
 			);
 		$models['user_profile']->user_id = $models['user']->id;
 		$models['avatar']->user_id = $models['user']->id;
-		$models['profile_questions']->userId = $models['user']->id;
+		$models['profile_questions']->user_id = $models['user']->id;
 		
 		// if it is ajax validation request
 		if(isset($_POST['ajax']) && $_POST['ajax'] === 'profile-form') {

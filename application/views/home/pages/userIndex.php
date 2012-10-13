@@ -1,7 +1,10 @@
 <?php
-$this->pageTitle = Yii::app()->name . ' - '.t('User');
+$this->pageTitle = Yii::app()->name . ' - ' . t('User');
+
+Yii::app()->clientScript->registerScriptFile(Yii::app()->theme->getScriptsUrl() . '/jquery.quote.js', CClientScript::POS_HEAD);
+Yii::app()->clientScript->registerScript('quotes_rotator', "$('.quotes').quote_rotator({randomize_first_quote: true});");
 ?>
-	<div class="small-masthead" style="background-image: url(<?php echo Yii::app()->theme->baseUrl; ?>/images/home.png);">
+	<div class="small-masthead" style="background-image: url(<?php echo Yii::app()->theme->getImagesUrl(); ?>/home.png);">
 		<h1 class="bottom"><?php echo t('Welcome!'); ?></h1>
 	</div>
 	<div id="sidebar">
@@ -9,15 +12,15 @@ $this->pageTitle = Yii::app()->name . ' - '.t('User');
 		<div class="box-sidebar three">
 			<h3><?php echo t('Stats on Caregivers'); ?></h3>
 			<ul class="quotes">
-				<li><img src="<?php echo Yii::app()->theme->baseUrl; ?>/images/stat-one-quarter.png" /><?php echo t('<span>1/4</span> of US households has a family caregiver providing some form of care or service to a relative or friend, age 50+'); ?></li>
-				<li><img src="<?php echo Yii::app()->theme->baseUrl; ?>/images/stat-two-thirds.png" /><?php echo t('<span>2/3</span> of these family caregivers are also working.'); ?></li>
-				<li><img src="<?php echo Yii::app()->theme->baseUrl; ?>/images/stat-half.png" /><?php echo t('<span>50%</span> of employed caregivers work full-time/'); ?></li>
+				<li><img src="<?php echo Yii::app()->theme->getImagesUrl(); ?>/stat-one-quarter.png" /><?php echo t('<span>1/4</span> of US households has a family caregiver providing some form of care or service to a relative or friend, age 50+'); ?></li>
+				<li><img src="<?php echo Yii::app()->theme->getImagesUrl(); ?>/stat-two-thirds.png" /><?php echo t('<span>2/3</span> of these family caregivers are also working.'); ?></li>
+				<li><img src="<?php echo Yii::app()->theme->getImagesUrl(); ?>/stat-half.png" /><?php echo t('<span>50%</span> of employed caregivers work full-time/'); ?></li>
 			</ul>
 		</div>
 
 		<div class="box-sidebar four">
 			<h3><a href="http://feeds.feedburner.com/pewresearch/internetandtechnology" target="_blank">Pew Research</a></h3>
-			<p style="text-align: center;"><img src="<?php echo Yii::app()->theme->baseUrl; ?>/images/pew.png" /></p>
+			<p style="text-align: center;"><img src="<?php echo Yii::app()->theme->getImagesUrl(); ?>/pew.png" /></p>
 			<p><?php echo t('As of April 2012, 53% of American adults age 65 and older use the internet or email. 
 			Though these adults are still less likely than all other age groups to use the internet, 
 			the latest data represent the first time that half of seniors are going online. After 
@@ -32,7 +35,7 @@ $this->pageTitle = Yii::app()->name . ' - '.t('User');
 			
 		<div class="box-sidebar one">
 			<h3><?php echo t('Alzheimers Assocation'); ?></h3>
-			<p style="text-align: center;"><img src="<?php echo Yii::app()->theme->baseUrl; ?>/images/alz.png" /></p>
+			<p style="text-align: center;"><img src="<?php echo Yii::app()->theme->getImagesUrl(); ?>/alz.png" /></p>
 			<p><?php echo t('There are 10 warning signs of Alzheimers. If you or someone you know is experiencing 
 			any of the signs, please see a doctor. Early diagnosis gives you a chance to seek treatment and plan for the future.'); ?></p>
 			
@@ -45,7 +48,7 @@ $this->pageTitle = Yii::app()->name . ' - '.t('User');
 				
 		<div class="box-sidebar two">
 			<h3 class="two-line"><?php echo t('Medicare.gov<br />Tips &amp; Resources for Caregivers'); ?></h3>
-			<p style="text-align: center;"><img src="<?php echo Yii::app()->theme->baseUrl; ?>/images/medicare.png" /></p>
+			<p style="text-align: center;"><img src="<?php echo Yii::app()->theme->getImagesUrl(); ?>/medicare.png" /></p>
 			<p><?php echo t('Are you familar and/or have you visited the Medicare website? 
 			The handout below is a list of tips and resources for caregivers as suggested by Medicare.'); ?></p>
 		
@@ -88,26 +91,25 @@ $this->pageTitle = Yii::app()->name . ' - '.t('User');
 		father. In The Sandwich Generation, they have created an honest, intimate account of their own shifting and challenging responsibilities, as well as some of their unexpected joys.'); ?></p>
 		
 		<div class="box-grey">
-			<video id="TheSandwichGeneration" controls width="540" height="400" poster="<?php echo Yii::app()->theme->baseUrl; ?>/videos/THE_SANDWICH_GENERATION.jpg">
-				<source src="<?php echo Yii::app()->theme->baseUrl; ?>/videos/THE_SANDWICH_GENERATION.mp4" type='video/mp4' >
-				<source src="<?php echo Yii::app()->theme->baseUrl; ?>/videos/THE_SANDWICH_GENERATION.ogv" type='video/ogg; codecs="theora, vorbis"'/>
-				<source src="<?php echo Yii::app()->theme->baseUrl; ?>/videos/THE_SANDWICH_GENERATION.webm" type='video/webm' >
-				<p>Video is not visible, most likely your browser does not support HTML5 or flash video</p>
-			</video>
-			
-			<script type="text/javascript">
-			  jwplayer("TheSandwichGeneration").setup({
-				image: "<?php echo Yii::app()->theme->baseUrl; ?>/videos/THE_SANDWICH_GENERATION.jpg",
-			    modes: [
-			        { type: 'html5' },
-			        { type: 'flash', src: '<?php echo Yii::app()->theme->baseUrl; ?>/js/player.swf' },
-			        { type: 'download'}
-			    ],
-				width: 540,
-				height: 400,
-				stretching: "fill",
-			  });
-			</script>
+	<?php 
+		$this->widget(
+				'ext.Jplayer.Jplayer',
+				array(
+					'target' => '#TheSandwichGeneration',
+					'files' => array(
+									'm4v' => $this->createUrl('download').'/videos/TheSandwichGeneration/video.m4v',
+									'ogv' => $this->createUrl('download').'/videos/TheSandwichGeneration/video.ogv',
+									'webmv' => $this->createUrl('download').'/videos/TheSandwichGeneration/video.webm',
+									'poster' => $this->createUrl('download').'/videos/TheSandwichGeneration/poster.jpg'
+								),
+					'size' => array(
+								'width' => '540px',
+								'height' => '400px',
+								'cssClass' => ''
+							)
+				)
+		);
+	?>
 		</div>
 
 	</div>

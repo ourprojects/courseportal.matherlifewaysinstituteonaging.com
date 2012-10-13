@@ -12,8 +12,10 @@ class WebUser extends CWebUser {
 		return $this->_model;
 	}
 	
-	public function getIsAdmin() {
-		return $this->getModel() !== null && $this->getModel()->group->name === 'admin';
+	public function __get($name) {
+		if($this->getModel() !== null && ($this->getModel()->hasAttribute($name) || array_key_exists($name, $this->getModel()->relations())))
+			return $this->getModel()->$name;
+		return parent::__get($name);
 	}
 
 	protected function beforeLogin($id, $states, $fromCookie) {

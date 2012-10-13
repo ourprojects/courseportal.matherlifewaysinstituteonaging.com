@@ -1,4 +1,4 @@
-<div class="small-masthead" style="background-image: url(<?php echo Yii::app()->theme->baseUrl; ?>/images/header-login.png);">
+<div class="small-masthead" style="background-image: url(<?php echo Yii::app()->theme->getImagesUrl(); ?>/header-login.png);">
 	<h1 class="bottom"><?php echo t('Login'); ?></h1>
 </div>
 <div id="single-column">

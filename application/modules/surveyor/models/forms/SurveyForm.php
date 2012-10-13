@@ -11,7 +11,7 @@ class SurveyForm extends CFormModel {
 	private $_attributeNames;
 	private $_attributeLabels;
 	
-	private $_userId;
+	private $_user_id;
 	private $_survey;
 	private $_questionAnswers = array();
 	
@@ -33,8 +33,8 @@ class SurveyForm extends CFormModel {
 	public function rules() {
 		return array(
 				// @ TODO We could just set the allowEmpty based on the anonymous state of the survey.
-				array('userId', 'exist', 'attributeName' => 'id', 'className' => 'User', 'allowEmpty' => true),
-				array('userId', 'checkAnonymous'),
+				array('user_id', 'exist', 'attributeName' => 'id', 'className' => 'User', 'allowEmpty' => true),
+				array('user_id', 'checkAnonymous'),
 				array('_questionAnswers', 'validateAnswers'),
 		);
 	}
@@ -57,7 +57,7 @@ class SurveyForm extends CFormModel {
 	public function attributeLabels() {
 		if(!isset($this->_attributeLabels)) {
 			$this->_attributeLabels = array(
-					'userId' => t('User ID'),
+					'user_id' => t('User ID'),
 					'name' => $this->_survey->name,
 					'description' => $this->_survey->description,
 				);
@@ -82,14 +82,14 @@ class SurveyForm extends CFormModel {
 		return $this->_safeAttributeNames;
 	}
 
-	public function getUserId() {
-		return $this->_userId;
+	public function getUser_id() {
+		return $this->_user_id;
 	}
 	
-	public function setUserId($userId, $loadAnswers = true) {
-		$this->_userId = $userId;
+	public function setUser_id($user_id, $loadAnswers = true) {
+		$this->_user_id = $user_id;
 		if($loadAnswers) {
-			foreach($this->_survey->answers(DbCriteria::instance()->addColumnCondition(array('answers.user_id' => $userId))) as $answer) {
+			foreach($this->_survey->answers(DbCriteria::instance()->addColumnCondition(array('answers.user_id' => $user_id))) as $answer) {
 				if($answer->question->type->name == 'textarea' || $answer->question->type->name == 'textfield') {
 					$this->_questionAnswers[$answer->question->id] = $answer->answerText->text;
 				} else if($answer->question->allow_many_options) {
@@ -120,7 +120,7 @@ class SurveyForm extends CFormModel {
 	}
 	
 	public function checkAnonymous($attribute, $params) {
-		if(isset($this->_userId) || $this->_survey->anonymous)
+		if(isset($this->_user_id) || $this->_survey->anonymous)
 			return;
 		$this->addError($attribute, t('This survey is not anonymous and a user was not specified.'));
 	}
@@ -172,7 +172,7 @@ class SurveyForm extends CFormModel {
 	
 	private function _save() {
 		$newAnswers = $this->_questionAnswers;
-		foreach($this->_survey->answers(DbCriteria::instance()->addColumnCondition(array('answers.user_id' => $this->_userId))) as $answer) {
+		foreach($this->_survey->answers(DbCriteria::instance()->addColumnCondition(array('answers.user_id' => $this->_user_id))) as $answer) {
 			if(empty($newAnswers[$answer->question_id]) && $newAnswers[$answer->question_id] !== 0) {
 				SurveyAnswerOption::model()->deleteAll('answer_id = ?', array($answer->id));
 				SurveyAnswerText::model()->deleteAll('answer_id = ?', array($answer->id));
@@ -217,7 +217,7 @@ class SurveyForm extends CFormModel {
 		foreach($newAnswers as $questionId => $questionAnswer) {
 			if(!empty($questionAnswer) || $questionAnswer === 0) {
 				$surveyAnswer = new SurveyAnswer;
-				$surveyAnswer->user_id = $this->userId;
+				$surveyAnswer->user_id = $this->_user_id;
 				$surveyAnswer->question_id = $questionId;
 				if(!$surveyAnswer->save())
 					return false;

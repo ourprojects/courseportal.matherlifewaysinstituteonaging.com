@@ -8,7 +8,13 @@ class HomeController extends OnlineCoursePortalController {
 	public function filters() {
 		return array(
 				array('filters.HttpsFilter'),
-				'accessControl + userIndex',
+				'accessControl 
+				+ 
+				userIndex 
+				videos.TheSandwichGeneration.poster.jpg
+				videos.TheSandwichGeneration.video.m4v
+				videos.TheSandwichGeneration.video.ogv
+				videos.TheSandwichGeneration.video.webm',
 		);
 	}
 	

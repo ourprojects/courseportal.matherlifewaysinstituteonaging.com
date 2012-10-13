@@ -14,19 +14,19 @@
 	
 	<div class="row">
 		<?php echo $form->labelEx($models['user'], 'email'); ?>
-		<?php echo $form->emailField($models['user'], 'email', array('class' => 'wide_200px')); ?>
+		<?php echo $form->emailField($models['user'], 'email'); ?>
 		<?php echo $form->error($models['user'], 'email'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($models['user_profile'], 'firstname'); ?>
-		<?php echo $form->textField($models['user_profile'], 'firstname', array('class' => 'wide_200px')); ?>
+		<?php echo $form->textField($models['user_profile'], 'firstname'); ?>
 		<?php echo $form->error($models['user_profile'], 'firstname'); ?>
 	</div>
 	
 	<div class="row">
 		<?php echo $form->labelEx($models['user_profile'], 'lastname'); ?>
-		<?php echo $form->textField($models['user_profile'], 'lastname', array('class' => 'wide_200px')); ?>
+		<?php echo $form->textField($models['user_profile'], 'lastname'); ?>
 		<?php echo $form->error($models['user_profile'], 'lastname'); ?>
 	</div>
 
@@ -45,7 +45,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($models['user_profile'], 'city'); ?>
-		<?php echo $form->textField($models['user_profile'], 'city', array('class' => 'wide_200px')); ?>
+		<?php echo $form->textField($models['user_profile'], 'city'); ?>
 		<?php echo $form->error($models['user_profile'], 'city'); ?>
 	</div>
 
@@ -62,7 +62,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($models['user_profile'], 'zip_code'); ?>
-		<?php echo $form->textField($models['user_profile'], 'zip_code', array('class' => 'wide_200px')); ?>
+		<?php echo $form->textField($models['user_profile'], 'zip_code'); ?>
 		<?php echo $form->error($models['user_profile'], 'zip_code'); ?>
 	</div>
 	

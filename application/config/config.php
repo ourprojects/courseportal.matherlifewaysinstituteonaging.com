@@ -41,6 +41,10 @@ return array(
 		// application components
 		'components' => array(
 				
+				'themeManager' => array(
+						'themeClass' => 'Theme'
+				),
+				
 				'request' => array(
 						'enableCookieValidation' => true,
 						'enableCsrfValidation' => true,

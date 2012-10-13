@@ -15,7 +15,7 @@ class AdminController extends OnlineCoursePortalController {
 	public function accessRules() {
 		return array(
 				array('allow',
-						'expression' => '$user->isAdmin',
+						'expression' => '!$user->isGuest && $user->group->name === \'admin\'',
 				),
 				array('deny',
 						'users' => array('*'),

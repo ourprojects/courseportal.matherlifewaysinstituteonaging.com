@@ -1,73 +1,114 @@
 <?php
 $this->pageTitle = Yii::app()->name . ' - '.t('Guest');
+
+Yii::app()->clientScript->registerScriptFile(Yii::app()->theme->getScriptsUrl() . '/jquery.cycle.js', CClientScript::POS_HEAD);
+Yii::app()->clientScript->registerScript('customers_cycle', "$('#customers').cycle({ fx: 'fade' });");
+
+$this->widget(
+		'ext.fancybox.EFancyBox',
+		array(
+				'id' => 'tutorial',
+				'target' => 'a[rel=tutorial]',
+				'config' => array(
+						'width' => '90%',
+						'height' => '95%',
+						'autoDimensions' => false,
+						'showNavArrows' => false
+				)
+		)
+);
+
+$this->widget(
+		'ext.fancybox.EFancyBox',
+		array(
+			'id' => 'survey',
+			'target' => '.survey',
+			'config' => array(
+					'width' => '90%',
+					'height' => '95%',
+					'autoDimensions' => false
+			)
+		)
+);
+
 ?>
 <div class="home-image">
 	<h1>
-		<?php echo t( 'Web-based Training for Caregivers'); ?>
+		<?php echo t('Web-based Training for Caregivers'); ?>
 	</h1>
 </div>
 <div id="sidebar">
 
 	<div class="box-sidebar zero">
-		<a href="<?php echo $this->createUrl('user/register'); ?>"><?php echo t( 'Register'); ?>
-		</a> <a href="<?php echo $this->createUrl('home/contact'); ?>"
-			class="teal"><?php echo t( 'Request Information'); ?> </a> <a
-			href="#tutorial" class="teal tutorial-box"><?php echo t( 'Tutorial'); ?>
+		<a href="<?php echo $this->createUrl('user/register'); ?>">
+			<?php echo t('Register'); ?>
+		</a> 
+		<a href="<?php echo $this->createUrl('home/contact'); ?>" class="teal">
+			<?php echo t('Request Information'); ?> 
 		</a>
+		<a href="#tutorial-slide-1" rel="tutorial" class="teal">
+			<?php echo t('Tutorial'); ?>
+		</a>
+		<a href="#tutorial-slide-2" rel="tutorial" style="display:none"></a>
+		<a href="#tutorial-slide-3" rel="tutorial" style="display:none"></a>
+		<a href="#tutorial-slide-4" rel="tutorial" style="display:none"></a>
+		<a href="#tutorial-slide-5" rel="tutorial" style="display:none"></a>
+		<a href="#tutorial-slide-6" rel="tutorial" style="display:none"></a>
+		<a href="#tutorial-slide-7" rel="tutorial" style="display:none"></a>
 	</div>
 
 	<div class="box-sidebar one">
 		<h3>
-			<?php echo t( 'Stats on Caregivers'); ?>
+			<?php echo t('Stats on Caregivers'); ?>
 		</h3>
 		<div>
 			<img
-				src="<?php echo Yii::app()->theme->baseUrl; ?>/images/two-thirds.png"
+				src="<?php echo Yii::app()->theme->getImagesUrl(); ?>/two-thirds.png"
 				style="margin-bottom: 8px;" /><br />
-			<?php echo t( '2/3 of working caregivers
+			<?php echo t('2/3 of working caregivers
 					report conflicts between work and caregiving that result in increased
 					absenteeism, workday interruptions, reduced hours, and workload
-			shifting to other employees.'); ?>
+					shifting to other employees.'); ?>
 		</div>
 	</div>
 
 	<div class="box-sidebar two">
 		<h3>
-			<?php echo t( 'Recent Research'); ?>
+			<?php echo t('Recent Research'); ?>
 		</h3>
 		<div style="text-align: center">
 			<img
-				src="<?php echo Yii::app()->theme->baseUrl; ?>/images/metlife.jpg" />
+				src="<?php echo Yii::app()->theme->getImagesUrl(); ?>/metlife.jpg" />
 		</div>
 		<p>
-			<?php echo t( '<strong>Double Jeopardy for Baby Boomers Caring for Their Parents</strong><br />
+			<?php echo t('<strong>Double Jeopardy for Baby Boomers Caring for Their Parents</strong><br />
 					Nearly 10 million adult children over the age of 50 care for their
 					aging parents. These family caregivers are themselves aging as well
 					as providing care at a time when they also need to be planning and
 					saving for their own retirement. The study is an updated, national
 					look at adult children who work and care for their parents and the
-			impact of caregiving on their earnings and lifetime wealth.'); ?>
+					impact of caregiving on their earnings and lifetime wealth.'); ?>
 		</p>
 		<p>
 			<a
 				href="http://www.metlife.com/assets/cao/mmi/publications/studies/2010/mmi-working-caregivers-employers-health-care-costs.pdf"
-				class="pdf"><?php echo t( 'Read "The MetLife Study of Working Caregivers and
+				class="pdf"><?php echo t('Read "The MetLife Study of Working Caregivers and
 				Employer Health Care Costs"'); ?> </a>
 		</p>
 	</div>
 
 	<div class="box-sidebar three">
 		<h3>
-			<?php echo t( 'Whitepapers'); ?>
+			<?php echo t('Whitepapers'); ?>
 		</h3>
 		<p>
 			<a
 				href="http://www.matherlifewaysinstituteonaging.com/wp-content/uploads/2012/03/eLearning-Maturing-Technology.pdf"
-				class="pdf"><?php echo t( 'e-Learning: Maturing Technology Brings Balance &amp;
+				class="pdf"><?php echo t('e-Learning: Maturing Technology Brings Balance &amp;
 						Possibilities to Nursing Education'); ?>
 			</a> <a
 				href="http://www.matherlifewaysinstituteonaging.com/wp-content/uploads/2012/03/How-eLearning-Can-Reduce-Expenses-and-Improve-Staff-Performance.pdf"
-				class="pdf"><?php echo t( 'The Bottom Line: How e-Learning Can Reduce Expenses and
+				class="pdf"><?php echo t('The Bottom Line: How e-Learning Can Reduce Expenses and
 				Improve Staff Performance'); ?> </a>
 		</p>
 	</div>
@@ -79,7 +120,7 @@ $this->pageTitle = Yii::app()->name . ' - '.t('Guest');
 							text: Aging in Action is Mather LifeWays Institute on Aging's monthly 
 							e-newsletter and blog containing the latest research news in the field of aging.
 							larger twitter image here
-							link: Evanston, IL Â· http://www.aginginaction.com
+							link: Evanston, IL · http://www.aginginaction.com
 							
 							 -->
 
@@ -89,7 +130,7 @@ $this->pageTitle = Yii::app()->name . ' - '.t('Guest');
 			field of aging.</p>
 		<p style="text-align: center;">
 			<a href="http://twitter.com/aginginaction" target="_blank"> <img
-				src="<?php echo Yii::app()->theme->baseUrl; ?>/images/twitter-bird.png" />
+				src="<?php echo Yii::app()->theme->getImagesUrl(); ?>/twitter-bird.png" />
 			</a>
 		</p>
 		<p>
@@ -100,23 +141,23 @@ $this->pageTitle = Yii::app()->name . ' - '.t('Guest');
 
 	<div class="box-sidebar three">
 		<h3>
-			<?php echo t( 'Our Clients'); ?>
+			<?php echo t('Our Clients'); ?>
 		</h3>
 		<div id="customers">
 			<a href="http://www.ibm.com"><img
-				src="<?php echo Yii::app()->theme->baseUrl; ?>/images/customers/ibm.png"
+				src="<?php echo Yii::app()->theme->getImagesUrl(); ?>/customers/ibm.png"
 				alt="IBM" /> </a> <a href="http://www.ti.com/"><img
-				src="<?php echo Yii::app()->theme->baseUrl; ?>/images/customers/ti.png"
+				src="<?php echo Yii::app()->theme->getImagesUrl(); ?>/customers/ti.png"
 				alt="Texas Instrument" /> </a> <a href="http://www.merck.com"><img
-				src="<?php echo Yii::app()->theme->baseUrl; ?>/images/customers/merck.png"
+				src="<?php echo Yii::app()->theme->getImagesUrl(); ?>/customers/merck.png"
 				alt="Merck Pharmaceuticals" /> </a> <a
 				href="http://www.exxonmobil.com"><img
-				src="<?php echo Yii::app()->theme->baseUrl; ?>/images/customers/exxon.png"
+				src="<?php echo Yii::app()->theme->getImagesUrl(); ?>/customers/exxon.png"
 				alt="Merck Pharmaceuticals" /> </a> <a
 				href="http://www.deloitte.com"><img
-				src="<?php echo Yii::app()->theme->baseUrl; ?>/images/customers/deloitte.png"
+				src="<?php echo Yii::app()->theme->getImagesUrl(); ?>/customers/deloitte.png"
 				alt="Deloitte" /> </a> <a href="http://matherlifeways.com/"><img
-				src="<?php echo Yii::app()->theme->baseUrl; ?>/images/customers/mather.png"
+				src="<?php echo Yii::app()->theme->getImagesUrl(); ?>/customers/mather.png"
 				alt="Mather Lifeways" /> </a>
 		</div>
 	</div>
@@ -125,18 +166,18 @@ $this->pageTitle = Yii::app()->name . ' - '.t('Guest');
 
 <div class="column-wide">
 	<h2 class="flowers" style="font-family:"SourceSansPro", Arial, sans-serif;">
-		<?php echo t( 'Mather
+		<?php echo t('Mather
 				LifeWays Institute on Aging'); ?>
 	</h2>
 	<p>
-		<?php echo t( 'Through research-based programs and innovative techniques, Mather
+		<?php echo t('Through research-based programs and innovative techniques, Mather
 				LifeWays Institute on Aging is committed to advancing the field of
 				geriatric care. Cutting-edge research lays the foundation for our
 				solid solutions to senior care challenges, including recruitment,
 		mentorship, training, and retention.'); ?>
 	</p>
 	<p>
-		<?php echo t( 'Used by individuals and entire organizations, our nationally
+		<?php echo t('Used by individuals and entire organizations, our nationally
 				recognized, award-winning programs include training modules, online
 				courses, toolkits, and learning modules designed to make learning fun
 				and easy. Our programs have been shown to result in measurable
@@ -144,7 +185,7 @@ $this->pageTitle = Yii::app()->name . ' - '.t('Guest');
 	</p>
 
 	<h2 class="flowers top-pad">
-		<?php echo t( 'Online
+		<?php echo t('Online
 				Courses for Caregivers'); ?>
 	</h2>
 	<p style="padding-bottom: 5px;">
@@ -157,7 +198,7 @@ $this->pageTitle = Yii::app()->name . ' - '.t('Guest');
 	</p>
 
 	<h2 class="flowers top-pad">
-		<?php echo t( 'A Closer Look - Lives of Caregivers'); ?>
+		<?php echo t('A Closer Look - Lives of Caregivers'); ?>
 	</h2>
 
 	<p style="padding-bottom: 10px;">
@@ -169,37 +210,25 @@ $this->pageTitle = Yii::app()->name . ' - '.t('Guest');
 
 
 	<div class="box-grey">
-		<video id="MatherCareGivers" controls width="540" height="305"
-			poster="<?php echo Yii::app()->theme->baseUrl; ?>/videos/MatherCareGivers.jpg">
-			<source
-				src="<?php echo Yii::app()->theme->baseUrl; ?>/videos/MatherCareGivers.mp4"
-				type='video/mp4'>
-			<source
-					src="<?php echo Yii::app()->theme->baseUrl; ?>/videos/MatherCareGivers.ogv"
-					type='video/ogg; codecs="theora, vorbis"' />
-			<source
-					src="<?php echo Yii::app()->theme->baseUrl; ?>/videos/MatherCareGivers.webm"
-					type='video/webm'>
-			<p>Video is not visible, most likely your browser does not support HTML5 or flash video</p>
-		
-		
-		
-		
-		</video>
-
-		<script type="text/javascript">
-		  jwplayer("MatherCareGivers").setup({
-			image: "<?php echo Yii::app()->theme->baseUrl; ?>/videos/MatherCareGivers.jpg",
-		    modes: [
-		        { type: 'html5' },
-		        { type: 'flash', src: '<?php echo Yii::app()->theme->baseUrl; ?>/js/player.swf' },
-		        { type: 'download'}
-		    ],
-			width: 540,
-			height: 305,
-			stretching: "fill",Teke
-		  });
-		</script>
+	<?php 
+		$this->widget(
+				'ext.Jplayer.Jplayer',
+				array(
+					'target' => '#MatherCaregivers',
+					'files' => array(
+									'm4v' => $this->createUrl('download').'/videos/MatherCaregivers/video.m4v',
+									'ogv' => $this->createUrl('download').'/videos/MatherCaregivers/video.ogv',
+									'webmv' => $this->createUrl('download').'/videos/MatherCaregivers/video.webm',
+									'poster' => $this->createUrl('download').'/videos/MatherCaregivers/poster.jpg'
+								),
+					'size' => array(
+								'width' => '540px',
+								'height' => '305px',
+								'cssClass' => ''
+							)
+				)
+		);
+	?>
 	</div>
 	<!--
 	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
@@ -227,10 +256,10 @@ $this->pageTitle = Yii::app()->name . ' - '.t('Guest');
 	-->
 
 	<h2 class="flowers top-pad">
-		<?php echo t( 'Pedagogy'); ?>
+		<?php echo t('Pedagogy'); ?>
 	</h2>
 	<p>
-		<?php echo t( 'Effective online instruction depends on learning experiences
+		<?php echo t('Effective online instruction depends on learning experiences
 				appropriately designed and facilitated by knowledgeable facilitators.
 				Because learners have different learning styles or a combination of
 				styles, our web-based training has been design using activities that
@@ -240,7 +269,7 @@ $this->pageTitle = Yii::app()->name . ' - '.t('Guest');
 	</p>
 	<div id="pie-chart">
 		<img
-			src="<?php echo Yii::app()->theme->baseUrl; ?>/images/home-chart.png" />
+			src="<?php echo Yii::app()->theme->getImagesUrl(); ?>/home-chart.png" />
 	</div>
 
 	<?php 
@@ -256,17 +285,17 @@ $this->pageTitle = Yii::app()->name . ' - '.t('Guest');
 	?>
 
 	<h2 class="flowers top-pad">
-		<?php echo t( 'Health status of your working caregivers'); ?>
+		<?php echo t('Health status of your working caregivers'); ?>
 	</h2>
 	<p>
-		<?php echo t( 'Please choose one of the surveys below to take. Depending on your position, employer 
+		<?php echo t('Please choose one of the surveys below to take. Depending on your position, employer 
 	or employee, submit this voluntary survey and view aggregate feedback from all previous users.'); ?>
 	</p>
 
 	<p>
-		<a id="hrEmployerSurvey" href="#survey_hrEmployer" class="fancybox"
+		<a id="hrEmployerSurvey" href="#survey_hrEmployer" class="survey"
 			title="<?php echo t('HR/Employer Survey'); ?>"><?php echo t('HR/Employer Survey'); ?>
-		</a> <a id="caregiverSurvey" href="#survey_caregiver" class="fancybox"
+		</a> <a id="caregiverSurvey" href="#survey_caregiver" class="survey"
 			title="<?php echo t('Caregiver Survey'); ?>"><?php echo t('Caregiver Survey'); ?>
 		</a>
 	</p>
@@ -276,7 +305,7 @@ $this->pageTitle = Yii::app()->name . ' - '.t('Guest');
 <div id="bottom-logos">
 
 	<h4>
-		<?php echo t( 'Partners'); ?>
+		<?php echo t('Partners'); ?>
 	</h4>
 	<a href="http://www.rushu.rush.edu" id="rush">Rush University (Chicago)</a>
 	<a href="http://www.alz.org/" id="aa" target="_blank">Alzheimer's
@@ -292,35 +321,35 @@ $this->pageTitle = Yii::app()->name . ' - '.t('Guest');
 	<div class="clear"></div>
 
 </div>
+<div style="display: none;">
 <?php 
 $this->widget(
 		'modules.surveyor.widgets.Survey',
 		array(
 				'survey_model' => $models['hrEmployer_survey'],
-				'survey_options' => array('style' => 'display:none;'),
 				'title_options' => array('class' => 'flowers top-pad'),
 				'form_options' => array('enableAjaxValidation' => true,
 										'enableClientValidation' => true),
 		)
 );
 ?>
-
+</div>
+<div style="display: none;">
 <?php 
 $this->widget(
 		'modules.surveyor.widgets.Survey',
 		array(
 				'survey_model' => $models['caregiver_survey'],
-				'survey_options' => array('style' => 'display:none;'),
 				'title_options' => array('class' => 'flowers top-pad'),
 				'form_options' => array('enableAjaxValidation' => true,
 										'enableClientValidation' => true),
 		)
 );
 ?>
-
-<div id="tutorial" style="display: none; width: 800px; height: 700px;">
-	<h2 class="flowers">A Guide to Memory Loss (Online)</h2>
-	<div class="slide" id="slide-1">
+</div>
+<div style="display: none;">
+	<div id="tutorial-slide-1" class="slide">
+		<h2 class="flowers">A Guide to Memory Loss (Online)</h2>
 
 		<p>Welcome and thank you for your interest and support of Mather
 			LifeWays Institute on Aging. This three-minute online course was
@@ -337,11 +366,10 @@ $this->widget(
 			presentation, and by no means is conclusive or all-ending.</p>
 		<!-- image here, faded/transparet bottom 20% to compensate for 2 buttons -->
 		<p>
-			<a href="#" class="button slide-change right" rel="2">Start Course
-				&raquo;</a>
+			<a href="javascript:;" onclick="$.fancybox.next();" class="button">Start Course&raquo;</a>
 		</p>
 	</div>
-	<div class="slide" id="slide-2">
+	<div id="tutorial-slide-2"  class="slide">
 		<p class="image-right">
 			<iframe width="450" height="290"
 				src="http://www.youtube.com/embed/In1IJocVor8?rel=0" frameborder="0"
@@ -383,11 +411,11 @@ $this->widget(
 		<!-- image here -->
 		<hr />
 		<p>
-			<a href="#" class="button slide-previous left" rel="1">&laquo; Back</a>
-			<a href="#" class="button slide-change right" rel="3">Next &raquo;</a>
+			<a href="javascript:;" onclick="$.fancybox.prev();" class="button">&laquo; Back</a>
+			<a href="javascript:;" onclick="$.fancybox.next();" class="button">Next &raquo;</a>
 		</p>
 	</div>
-	<div class="slide" id="slide-3">
+	<div id="tutorial-slide-3" class="slide">
 
 		<h4>Explore major medical causes of memory loss</h4>
 
@@ -420,12 +448,12 @@ $this->widget(
 		</p>
 		<hr />
 		<p>
-			<a href="#" class="button slide-previous left" rel="2">&laquo; Back</a>
-			<a href="#" class="button slide-change right" rel="4">Next &raquo;</a>
+			<a href="javascript:;" onclick="$.fancybox.prev();" class="button">&laquo; Back</a>
+			<a href="javascript:;" onclick="$.fancybox.next();" class="button">Next &raquo;</a>
 		</p>
 		<!-- feedback on submit: "If you selected Dementia, Alzheimer's, Delirium, Amnesia, then you are CORRECT!" -->
 	</div>
-	<div class="slide" id="slide-4">
+	<div id="tutorial-slide-4" class="slide">
 
 		<h4>Explanation of types of memory loss</h4>
 
@@ -481,12 +509,12 @@ $this->widget(
 		<!-- image here -->
 		<hr />
 		<p>
-			<a href="#" class="button slide-previous left" rel="3">&laquo; Back</a>
-			<a href="#" class="button slide-change right" rel="5">Next &raquo;</a>
+			<a href="javascript:;" onclick="$.fancybox.prev();" class="button">&laquo; Back</a>
+			<a href="javascript:;" onclick="$.fancybox.next();" class="button">Next &raquo;</a>
 		</p>
 
 	</div>
-	<div class="slide" id="slide-5">
+	<div id="tutorial-slide-5" class="slide">
 
 		<h4>Dementia &amp; Alzheimer's Disease</h4>
 
@@ -536,12 +564,12 @@ $this->widget(
 				available and research continues.</li>
 		</ul>
 		<p>
-			<a href="#" class="button slide-previous left" rel="4">&laquo; Back</a>
-			<a href="#" class="button slide-change right" rel="6">Next &raquo;</a>
+			<a href="javascript:;" onclick="$.fancybox.prev();" class="button">&laquo; Back</a>
+			<a href="javascript:;" onclick="$.fancybox.next();" class="button">Next &raquo;</a>
 		</p>
 
 	</div>
-	<div class="slide" id="slide-6">
+	<div id="tutorial-slide-6" class="slide">
 
 		<h3>Delirium &amp; Amnesia</h3>
 
@@ -583,11 +611,11 @@ $this->widget(
 				information (retrograde amnesia)</li>
 		</ul>
 		<p>
-			<a href="#" class="button slide-previous left" rel="5">&laquo; Back</a>
-			<a href="#" class="button slide-change right" rel="7">Next &raquo;</a>
+			<a href="javascript:;" onclick="$.fancybox.prev();" class="button">&laquo; Back</a>
+			<a href="javascript:;" onclick="$.fancybox.next();" class="button">Next &raquo;</a>
 		</p>
 	</div>
-	<div class="slide" id="slide-7">
+	<div id="tutorial-slide-7" class="slide">
 
 		<h3>Assessment &amp; Completion</h3>
 
@@ -608,9 +636,8 @@ $this->widget(
 		</p>
 		</p>
 		<p>
-			<a href="#" class="button slide-previous left" rel="1">&laquo; Start
+			<a href="javascript:;" onclick="$.fancybox.pos(0);" class="button">&laquo; Start
 				Over</a>
 		</p>
 	</div>
-
 </div>
