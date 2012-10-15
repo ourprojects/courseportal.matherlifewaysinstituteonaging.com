@@ -3,6 +3,12 @@
 class ViewAction extends CAction {
 	
 	/**
+	 * @var string regex used to clean requested view. Matches any string starting
+	 * with a word character containing any number of word characters, dots or dashes in the middle, and
+	 * ending with a word cahracter. If view name requirments are too strict change this in configuration.
+	 */
+	public $pathEscapeRegex = '/^\w([\w\.\-]*\w\z)?$/';
+	/**
 	 * @var string the name of the GET parameter that contains the requested view name. Defaults to 'view'.
 	 */
 	public $viewParam = 'view';
@@ -61,10 +67,10 @@ class ViewAction extends CAction {
 	public function getRequestedView() {
 		if($this->_viewPath === null) {
 			if(!empty($_GET[$this->viewParam])) {
-				$this->_viewPath = $_GET[$this->viewParam];
+				$this->_viewPath = implode(DIRECTORY_SEPARATOR, array_filter(explode('/', $_GET[$this->viewParam]), array(new PregMatch($this->pathEscapeRegex), 'match')));
 			} else if(!empty($_GET)) {
 				Yii::app()->loadHelper('Utilities');
-				$this->_viewPath = flattenAndImplode($_GET, '.');
+				$this->_viewPath = implode(DIRECTORY_SEPARATOR, array_filter(array_flatten($_GET), array(new PregMatch($this->pathEscapeRegex), 'match')));
 			} else {
 				$this->_viewPath = $this->defaultView;
 			}

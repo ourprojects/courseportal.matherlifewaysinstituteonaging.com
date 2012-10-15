@@ -3,9 +3,17 @@
 class HTTP_DownloadAction extends CAction {
 	
 	/**
-	 * @var string the name of the GET parameter that contains the requested file name. Defaults to 'file'.
+	 * @var string regex used to clean requested file and path names. Matches any string starting 
+	 * with a word character containing any number of word characters, dots or dashes in the middle, and 
+	 * ending with a word cahracter. If file name requirments are too strict change this in configuration.
 	 */
-	public $fileParam = 'file';
+	public $pathEscapeRegex = '/^\w([\w\.\-]*\w\z)?$/';
+	
+	/**
+	 * @var string the name of the GET parameter that contains the requested file.
+	 */
+	public $fileParam = 'filePath';
+
 	/**
 	 * @var string the name of the default file when {@link fileParam} GET parameter is not provided by user. Defaults to 'index'.
 	 * This should be in the format of 'path.to.file', similar to that given in
@@ -13,10 +21,7 @@ class HTTP_DownloadAction extends CAction {
 	 * @see basePath
 	 */
 	public $defaultFile;
-	/**
-	 * @var string the name of the file to be rendered. This property will be set
-	 * once the user requested file is resolved.
-	 */
+
 	public $file;
 	/**
 	 * @var string the name of the file to be sent in client download. This property will be set
@@ -37,8 +42,9 @@ class HTTP_DownloadAction extends CAction {
 	 * @see CController::getFileFile
 	 */
 	public $basePath = 'downloads';
-	
+
 	private $_filePath;
+	private $_id = null;
 	
 	public function __construct($controller, $id) {
 		parent::__construct($controller, $id);
@@ -48,7 +54,9 @@ class HTTP_DownloadAction extends CAction {
 	 * @return string id of this action
 	 */
 	public function getId() {
-		return $this->getRequestedFile();
+		if($this->_id === null)
+			$this->_id = parent::getId() . '.' . strtr($this->getRequestedFile(), DIRECTORY_SEPARATOR, '.');
+		return $this->_id;
 	}
 
 	/**
@@ -60,14 +68,16 @@ class HTTP_DownloadAction extends CAction {
 	public function getRequestedFile() {
 		if($this->_filePath === null) {
 			if(!empty($_GET[$this->fileParam])) {
-				$this->_filePath = $_GET[$this->fileParam];
+				$this->_filePath = implode(DIRECTORY_SEPARATOR, array_filter(explode('/', $_GET[$this->fileParam]), array(new PregMatch($this->pathEscapeRegex, 'match'))));
 			} else if(!empty($_GET)) {
 				Yii::app()->loadHelper('Utilities');
-				$this->_filePath = flattenAndImplode($_GET, '.');
-			} else if(!empty($this->defaultFile)) {
-				$this->_filePath = $this->defaultFile;
-			} else {
-				throw new CHttpException(400, Yii::t('HTTP_Download', 'A file to download was not specified.'));
+				$this->_filePath = implode(DIRECTORY_SEPARATOR, array_filter(array_flatten($_GET), array(new PregMatch($this->pathEscapeRegex, 'match'))));
+			}
+			if(empty($this->_filePath)) {
+				if(!empty($this->defaultFile))
+					$this->_filePath = $this->defaultFile;
+				else
+					throw new CHttpException(400, Yii::t('HTTP_Download', 'A file to download was not specified.'));
 			}
 		}
 		return $this->_filePath;
@@ -81,22 +91,21 @@ class HTTP_DownloadAction extends CAction {
 	 */
 	protected function resolveFile($filePath) {
 		// start with a word char and have word chars, dots and dashes only
-		if(preg_match('/^\w[\w\.\-\/]*$/', $filePath)) {
-			$file = strtr($filePath, array('.' => DIRECTORY_SEPARATOR, '/' => DIRECTORY_SEPARATOR));
-			if(!empty($this->basePath))
-				$file = $this->getController()->getViewPath() . DIRECTORY_SEPARATOR . $this->basePath . DIRECTORY_SEPARATOR . $file;
+		if(empty($this->basePath))
+			$file = $this->getController()->getViewPath() . DIRECTORY_SEPARATOR . $filePath;
+		else 
+			$file = $this->getController()->getViewPath() . DIRECTORY_SEPARATOR . $this->basePath . DIRECTORY_SEPARATOR . $filePath;
 
-			if(is_file($file)) {
-				$this->file = $file;
-				if(!isset($this->fileName))
-					$this->fileName = basename($this->file);
-				if(!isset($this->contentType))
-					$this->contentType = mime_content_type($this->file);
-				return;
-			}
-		}
-		throw new CHttpException(404, Yii::t('HTTP_Download', 'File "{file}" does not exist.', 
+		if(is_file($file)) {
+			$this->file = $file;
+			if(!isset($this->fileName))
+				$this->fileName = basename($this->file);
+			if(!isset($this->contentType))
+				$this->contentType = mime_content_type($this->file);
+		} else {
+			throw new CHttpException(404, Yii::t('HTTP_Download', 'File "{file}" does not exist.', 
 				array('{file}' => $file)));
+		}
 	}
 
 	/**
@@ -128,7 +137,7 @@ class HTTP_DownloadAction extends CAction {
 	 * @param CEvent $event event parameter
 	 */
 	public function onBeforeDownload($event) {
-		$this->raiseEvent('onBeforeRender',$event);
+		$this->raiseEvent('onBeforeDownload',$event);
 	}
 
 	/**
@@ -136,7 +145,7 @@ class HTTP_DownloadAction extends CAction {
 	 * @param CEvent $event event parameter
 	 */
 	public function onAfterAfter($event) {
-		$this->raiseEvent('onAfterRender',$event);
+		$this->raiseEvent('onAfterDownload',$event);
 	}
 
 }
