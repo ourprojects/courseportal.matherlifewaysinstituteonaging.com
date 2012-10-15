@@ -490,6 +490,15 @@ div.breadcrumbs span {
 #bottom-logos a#rush:hover, #bottom-logos a#aa:hover, #bottom-logos a#git:hover, #bottom-logos a#yii:hover, #bottom-logos a#wfd:hover, #bottom-logos a#discourse:hover, #bottom-logos a#glader:hover, #bottom-logos a#mediastorm:hover {
 	background-position: bottom;
 }
+div.jp-video-mathercaregivers div.jp-video-play {
+	margin-top:-305px;
+	height:305px;
+}
+
+div.jp-video-the-sandwich-generation div.jp-video-play {
+	margin-top:-400px;
+	height:400px;
+}
 
 .box-sidebar ul.quotes {
 	list-style: none;

@@ -209,7 +209,7 @@ $this->widget(
 	</p>
 
 
-	<div class="box-grey">
+	<div class="box-grey" style="float: left;">
 	<?php 
 		$this->widget(
 				'ext.Jplayer.Jplayer',
@@ -224,7 +224,7 @@ $this->widget(
 					'size' => array(
 								'width' => '540px',
 								'height' => '305px',
-								'cssClass' => ''
+								'cssClass' => 'jp-video-mathercaregivers'
 							)
 				)
 		);
