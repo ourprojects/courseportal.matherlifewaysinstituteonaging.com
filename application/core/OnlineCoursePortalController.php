@@ -72,6 +72,17 @@ abstract class OnlineCoursePortalController extends CController {
 				'download' => 'ext.HTTP_Download.components.HTTP_DownloadAction',
 		);
 	}
+	
+	public function createAction($actionID) {
+		$action = parent::createAction($actionID);
+		if($action === null) {
+			$action = parent::createAction('static');
+			if($action !== null) {
+				array_unshift($_GET, $actionID);
+			} 
+		}
+		return $action;
+	}
 
 	/**
 	 * Loads a helper

@@ -11,8 +11,6 @@ $this->breadcrumbs = array(
 <br />
 <?php echo Yii::app()->translate->missingLink(); ?>
 <br />
-<?php echo CHtml::link('Lime Survey', Yii::app()->request->baseUrl . '/limeSurvey/admin'); ?>
-<br />
 <?php echo CHtml::link('phpBB', Yii::app()->request->baseUrl . '/phpBB'); ?>
 
 </div>

@@ -1,6 +1,6 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed');  
 
-function flattenArrayToString($array, $glue = '', $prefix = '', $recursive = true) {
+function flattenAndImplode($array, $glue = '', $prefix = '', $recursive = true) {
 	foreach($array as $key => $value) {
 		$key = trim($key);
 		$value = trim($value);
@@ -8,7 +8,7 @@ function flattenArrayToString($array, $glue = '', $prefix = '', $recursive = tru
 			$prefix .= $glue . $key;
 		if(!empty($value) && $value !== '..')
 			if(is_array($value) && $recursive)
-				$prefix = flattenArrayToString($value, $glue, $prefix, $recursive);
+				$prefix = flattenAndImplode($value, $glue, $prefix, $recursive);
 			else
 				$prefix .= $glue . $value;
 	}

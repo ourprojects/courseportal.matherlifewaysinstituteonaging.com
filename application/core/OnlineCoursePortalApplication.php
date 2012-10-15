@@ -6,7 +6,6 @@
 class OnlineCoursePortalApplication extends CWebApplication {
 	
     protected $config = array();
-    protected $registry = array();
 
     /**
     * Initiates the application
@@ -16,7 +15,11 @@ class OnlineCoursePortalApplication extends CWebApplication {
     * @return void
     */
     public function __construct($config = null) {
-        parent::__construct($config);
+    	if(is_string($config))
+    		$this->config = require $config;
+    	else
+    		$this->config = $config;
+        parent::__construct($this->config);
     }
     
     protected function preinit() {
@@ -25,28 +28,6 @@ class OnlineCoursePortalApplication extends CWebApplication {
     	Yii::setPathOfAlias('filters', APPPATH . 'filters');
     	Yii::setPathOfAlias('uploads', APPPATH . 'uploads');
     	parent::preinit();
-    }
-    
-    protected function init() {
-    	// Check for most necessary requirements
-    	// Now check for PHP & db version
-    	// Do not localize/translate this!
-    	
-    	if (ini_get('max_execution_time') < 1200)
-    		@set_time_limit(1200); // Maximum execution time - works only if safe_mode is off
-    	
-    	// Deal with server systems having not set a default time zone
-    	if(function_exists('date_default_timezone_set') and function_exists('date_default_timezone_get'))
-    		@date_default_timezone_set(@date_default_timezone_get());
-    	
-    	//SET LOCAL TIME
-    	$timeadjust = $this->getConfig('timeadjust');
-    	if (substr($timeadjust, 0, 1) != '-' && substr($timeadjust, 0, 1) != '+') {
-    		$timeadjust = "+$timeadjust";
-    	}
-    	if (strpos($timeadjust, 'hours') === false && strpos($timeadjust, 'minutes') === false && strpos($timeadjust, 'days') === false) {
-    		$this->setConfig('timeadjust', "$timeadjust hours");
-    	}
     }
     
     /**
@@ -109,18 +90,6 @@ class OnlineCoursePortalApplication extends CWebApplication {
     	Yii::app()->request->cookies['language'] = new CHttpCookie('language', $language);
     	Yii::app()->request->cookies['language']->expire = time() + (60 * 60 * 24 * 365 * 2); // (2 year)
     }
-    
-    public function createController($route, $owner = null) {
-    	if($owner !== null) {
-    		$routePart = array_shift($this->getUrlManager()->additionalPathInfo);
-    		if($routePart !== null && !is_array($routePart))
-    			$route .= "$routePart/";
-    	}
-    	$controller = parent::createController($route, $owner);
-    	if($controller !== null && $owner !== null)
-    		$this->getUrlManager()->parsePathInfo($this->getUrlManager()->additionalPathInfo);
-    	return $controller;
-    }
 
     /**
     * Loads a helper
@@ -146,33 +115,6 @@ class OnlineCoursePortalApplication extends CWebApplication {
     }
 
     /**
-    * Sets a configuration variable into the registry
-    *
-    * @access public
-    * @param string $name
-    * @param mixed $value
-    * @return void
-    */
-    public function setConfig($name, $value) {
-        $this->config[$name] = $value;
-    }
-
-    /**
-    * Loads a config from a file
-    *
-    * @access public
-    * @param string $file
-    * @return void
-    */
-    public function loadConfig($file) {
-        $config = require_once(CONFIGPATH . $file . EXT);
-        if(is_array($config)) {
-            foreach ($config as $k => $v)
-                $this->setConfig($k, $v);
-        }
-    }
-
-    /**
     * Returns a config variable from the registry
     *
     * @access public
@@ -182,27 +124,5 @@ class OnlineCoursePortalApplication extends CWebApplication {
     public function getConfig($name) {
         return isset($this->config[$name]) ? $this->config[$name] : false;
     }
-
-    /**
-    * Sets a configuration variable into the registry
-    *
-    * @access public
-    * @param string $name
-    * @param mixed $value
-    * @return void
-    */
-    public function setRegistry($name, $value) {
-        $this->registry[$name] = $value;
-    }
-
-    /**
-    * Returns a config variable from the registry
-    *
-    * @access public
-    * @param string $name
-    * @return mixed
-    */
-    public function getRegistry($name) {
-        return isset($this->registry[$name]) ? $this->registry[$name] : false;
-    }
+    
 }
