@@ -69,12 +69,12 @@ class SurveyQuestionOption extends CActiveRecord
     public function attributeLabels()
     {
         return array(
-            'id' => SurveyorModule::t('ID'),
-            'question_id' => SurveyorModule::t('Question ID'),
-            'text' => SurveyorModule::t('Text'),
-        	'question' => SurveyorModule::t('Question'),
-        	'answerOptions' => SurveyorModule::t('Answer Options'),
-        	'answers' => SurveyorModule::t('Answers'),
+            'id' => Surveyor::t('ID'),
+            'question_id' => Surveyor::t('Question ID'),
+            'text' => Surveyor::t('Text'),
+        	'question' => Surveyor::t('Question'),
+        	'answerOptions' => Surveyor::t('Answer Options'),
+        	'answers' => Surveyor::t('Answers'),
         );
     }
 
@@ -97,7 +97,7 @@ class SurveyQuestionOption extends CActiveRecord
     
     public function __get($name) {
     	if($name === 'text')
-    		return SurveyorModule::t(parent::__get($name));
+    		return Surveyor::t(parent::__get($name));
     	return parent::__get($name);
     }
     

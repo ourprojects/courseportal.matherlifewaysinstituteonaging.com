@@ -61,9 +61,9 @@ class SurveyAnswerText extends CActiveRecord
     public function attributeLabels()
     {
         return array(
-            'answer_id' => SurveyorModule::t('Answer ID'),
-        	'answer' => SurveyorModule::t('Answer'),
-            'text' => SurveyorModule::t('Text'),
+            'answer_id' => Surveyor::t('Answer ID'),
+        	'answer' => Surveyor::t('Answer'),
+            'text' => Surveyor::t('Text'),
         );
     }
 

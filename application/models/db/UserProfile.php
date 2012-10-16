@@ -26,8 +26,8 @@
 class UserProfile extends CActiveRecord {
 	
 	public function init() {
-		if($this->isNewRecord)
-			$this->country_iso = Yii::app()->locale->getTerritoryID(Yii::app()->language);
+		if($this->getIsNewRecord())
+			$this->country_iso = Yii::app()->locale->getTerritoryID(Yii::app()->getLanguage());
 	}
 	
     /**

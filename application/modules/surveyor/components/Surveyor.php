@@ -1,6 +1,8 @@
 <?php
 class Surveyor extends CApplicationComponent {
 	
+	public static $id = 'surveyor';
+	
 	public function init() {
 		parent::init();
 		Yii::import('surveyor.models.db.*');
@@ -24,6 +26,10 @@ class Surveyor extends CApplicationComponent {
 		if(!$survey instanceof SurveyAR)
 			$survey = $this->$survey;
 		return $survey->form;
+	}
+	
+	static function t($message, $params = array()) {
+		return Yii::t(self::$id, $message, $params);
 	}
 	
 	public static function __callStatic($method, $args){

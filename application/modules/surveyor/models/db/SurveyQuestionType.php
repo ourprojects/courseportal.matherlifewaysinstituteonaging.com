@@ -67,10 +67,10 @@ class SurveyQuestionType extends CActiveRecord
     public function attributeLabels()
     {
         return array(
-            'id' => SurveyorModule::t('ID'),
-            'name' => SurveyorModule::t('Name'),
-        	'questions' => SurveyorModule::t('Questions'),
-        	'surveys' => SurveyorModule::t('Surveys'),
+            'id' => Surveyor::t('ID'),
+            'name' => Surveyor::t('Name'),
+        	'questions' => Surveyor::t('Questions'),
+        	'surveys' => Surveyor::t('Surveys'),
         );
     }
 

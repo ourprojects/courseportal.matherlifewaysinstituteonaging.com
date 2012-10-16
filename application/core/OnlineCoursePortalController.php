@@ -89,9 +89,9 @@ abstract class OnlineCoursePortalController extends CController {
 	
 	public function createAction($actionID) {
 		if($this->getModule() !== null && $actionID === '') {
-			$pathInfoSegs = Yii::app()->getUrlManager()->getPathInfoSegments();
-			if(!empty($pathInfoSegs) && ($action = parent::createAction($pathInfoSegs[0])) !== null) {
-				unset($pathInfoSegs[0]);
+			if(!empty(Yii::app()->getUrlManager()->pathInfoSegments) && 
+					($action = parent::createAction(Yii::app()->getUrlManager()->pathInfoSegments[0])) !== null) {
+				unset(Yii::app()->getUrlManager()->pathInfoSegments[0]);
 				return $action;
 			}
 		}
@@ -99,7 +99,7 @@ abstract class OnlineCoursePortalController extends CController {
 		if($action === null) {
 			$action = parent::createAction('static');
 			if($action !== null)
-				Yii::app()->getUrlManager()->prependPathInfoSegment($actionID);
+				array_unshift(Yii::app()->getUrlManager()->pathInfoSegments, $actionID);
 		}
 		return $action;
 	}

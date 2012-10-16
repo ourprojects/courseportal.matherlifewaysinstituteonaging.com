@@ -2,7 +2,7 @@
 
 class UrlManager extends CUrlManager {
 	
-	private $_pathInfoSegments = array();
+	public $pathInfoSegments = array();
 
 	public function createUrl($route, $params = array(), $ampersand = '&') {
         if (!isset($params['language']))
@@ -19,21 +19,13 @@ class UrlManager extends CUrlManager {
     public function parsePathInfo($pathInfo) {
     	if($pathInfo === '')
     		return;
-    	$this->_pathInfoSegments = explode('/', trim($pathInfo, '/'));
-    }
-    
-    public function getPathInfoSegments() {
-    	 return $this->_pathInfoSegments;
-    }
-    
-    public function prependPathInfoSegment($segment) {
-    	array_unshift($this->_pathInfoSegments, $segment);
+    	$this->pathInfoSegments = explode('/', trim($pathInfo, '/'));
     }
     
     public function parsePathInfoSegments() {
-    	if(empty($this->_pathInfoSegments))
+    	if(empty($this->pathInfoSegments))
     		return;
-    	parent::parsePathInfo(implode('/', $this->_pathInfoSegments));
+    	parent::parsePathInfo(implode('/', $this->pathInfoSegments));
     }
 
 }

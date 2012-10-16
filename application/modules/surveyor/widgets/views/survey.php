@@ -57,7 +57,7 @@
 		echo '</div>';
 	}
 	if($form['show']) {
-		echo CHtml::tag('div', $submitButton['options'], CHtml::submitButton(SurveyorModule::t('Submit')));
+		echo CHtml::tag('div', $submitButton['options'], CHtml::submitButton(Surveyor::t('Submit')));
 		$this->endWidget();
 	}
 	echo '</div>';

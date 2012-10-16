@@ -77,15 +77,15 @@ class SurveyAR extends CActiveRecord
     public function attributeLabels()
     {
         return array(
-            'id' => SurveyorModule::t('ID'),
-            'name' => SurveyorModule::t('Name'),
-        	'title' => SurveyorModule::t('Title'),
-        	'description' => SurveyorModule::t('Description'),
-        	'questions' => SurveyorModule::t('Questions'),
-        	'options' => SurveyorModule::t('Options'),
-        	'types' => SurveyorModule::t('Question Types'),
-        	'answers' => SurveyorModule::t('Answers'),
-        	'anonymous' => SurveyorModule::t('Anonymous'),
+            'id' => Surveyor::t('ID'),
+            'name' => Surveyor::t('Name'),
+        	'title' => Surveyor::t('Title'),
+        	'description' => Surveyor::t('Description'),
+        	'questions' => Surveyor::t('Questions'),
+        	'options' => Surveyor::t('Options'),
+        	'types' => Surveyor::t('Question Types'),
+        	'answers' => Surveyor::t('Answers'),
+        	'anonymous' => Surveyor::t('Anonymous'),
         );
     }
 
@@ -107,7 +107,7 @@ class SurveyAR extends CActiveRecord
     
     public function __get($name) {
     	if($name === 'name' || $name === 'description')
-    		return SurveyorModule::t(parent::__get($name));
+    		return Surveyor::t(parent::__get($name));
     	return parent::__get($name);
     }
     

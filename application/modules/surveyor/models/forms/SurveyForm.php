@@ -57,7 +57,7 @@ class SurveyForm extends CFormModel {
 	public function attributeLabels() {
 		if(!isset($this->_attributeLabels)) {
 			$this->_attributeLabels = array(
-					'user_id' => SurveyorModule::t('User ID'),
+					'user_id' => Surveyor::t('User ID'),
 					'name' => $this->_survey->name,
 					'description' => $this->_survey->description,
 				);
@@ -122,7 +122,7 @@ class SurveyForm extends CFormModel {
 	public function checkAnonymous($attribute, $params) {
 		if(isset($this->_user_id) || $this->_survey->anonymous)
 			return;
-		$this->addError($attribute, SurveyorModule::t('This survey is not anonymous and a user was not specified.'));
+		$this->addError($attribute, Surveyor::t('This survey is not anonymous and a user was not specified.'));
 	}
 	
 	public function validateAnswers($attribute, $params) {
@@ -134,17 +134,17 @@ class SurveyForm extends CFormModel {
 					if(is_array($answers[$question->id])) {
 						if($question->allow_many_options) {
 							if(count(array_intersect($question->optionIds, $answers[$question->id])) != count($answers[$question->id]))
-								$this->addError("question{$question->id}", SurveyorModule::t('Invalid option selected.'));
+								$this->addError("question{$question->id}", Surveyor::t('Invalid option selected.'));
 						} else {
-							$this->addError("question{$question->id}", SurveyorModule::t('Only one answer is allowed.'));
+							$this->addError("question{$question->id}", Surveyor::t('Only one answer is allowed.'));
 						}
 					} else {
 						if(!in_array($answers[$question->id], $question->optionIds))
-							$this->addError("question{$question->id}", SurveyorModule::t('Invalid option selected.'));
+							$this->addError("question{$question->id}", Surveyor::t('Invalid option selected.'));
 					}
 				}
 			} else if($question->required) {
-				$this->addError("question{$question->id}", SurveyorModule::t('This question is required.'));
+				$this->addError("question{$question->id}", Surveyor::t('This question is required.'));
 			}
 		}
 	}
