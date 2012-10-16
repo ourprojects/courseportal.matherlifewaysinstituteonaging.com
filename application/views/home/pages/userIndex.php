@@ -3,12 +3,12 @@ $this->pageTitle = Yii::app()->name . ' - ' . t('User');
 
 Yii::app()->clientScript->registerScriptFile(Yii::app()->theme->getScriptsUrl() . '/jquery.quote.js', CClientScript::POS_HEAD);
 Yii::app()->clientScript->registerScript('quotes_rotator', "$('.quotes').quote_rotator({randomize_first_quote: true});");
+
 ?>
 	<div class="small-masthead" style="background-image: url(<?php echo Yii::app()->theme->getImagesUrl(); ?>/home.png);">
 		<h1 class="bottom"><?php echo t('Welcome!'); ?></h1>
 	</div>
 	<div id="sidebar">
-		
 		<div class="box-sidebar three">
 			<h3><?php echo t('Stats on Caregivers'); ?></h3>
 			<ul class="quotes">

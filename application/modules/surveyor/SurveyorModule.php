@@ -27,6 +27,17 @@ class SurveyorModule extends CWebModule {
 		return call_user_func_array(array(self::getSurveyorComponent(), $method), $args);
 	}
 	
+	/**
+	 * translate some message using the module configuration
+	 *
+	 * @param string $message
+	 * @param array $params
+	 * @return string translated message
+	 */
+	static function t($message, $params = array()) {
+		return Yii::t(self::$surveyorComponentId, $message, $params);
+	}
+	
 	public function beforeControllerAction($controller, $action) {
 		if(parent::beforeControllerAction($controller, $action))
 		{

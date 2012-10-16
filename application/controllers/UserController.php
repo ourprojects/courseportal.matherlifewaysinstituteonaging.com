@@ -37,7 +37,7 @@ class UserController extends OnlineCoursePortalController {
 				}
 			}
 		}
-		throw new CHttpException(401,'Not authorized.');
+		throw new CHttpException(401, t('Not authorized.'));
 	}
 	
 	public function actionCreate() {
@@ -99,7 +99,7 @@ class UserController extends OnlineCoursePortalController {
 			$user->attributes = $_POST['User'];
 			// validate user input and redirect to the previous page if valid
 			if($user->login(isset($_POST['remember_me']))) {
-				Yii::app()->user->setFlash('success', 'Welcome ' . Yii::app()->user->name . '!');
+				Yii::app()->user->setFlash('success', t('Welcome {email}!', array('{email}' => Yii::app()->user->name)));
 				$this->redirect(Yii::app()->user->returnUrl);
 			}
 		}
@@ -182,7 +182,7 @@ class UserController extends OnlineCoursePortalController {
 			$user->userActivated->user_id = $user->id;
 			if($user->userActivated->save() && $user->login(false, false)) {
 				$user->regenerateSessionKey();
-				Yii::app()->user->setFlash('success', 'Your account has been activated. Welcome ' . Yii::app()->user->name . '!');
+				Yii::app()->user->setFlash('success', t('Your account has been activated. Welcome {email}!', array('{email}' => Yii::app()->user->name)));
 				$this->redirect(Yii::app()->homeUrl);
 			}
 		}
@@ -194,7 +194,7 @@ class UserController extends OnlineCoursePortalController {
 	 */
 	public function actionLogout() {
 		Yii::app()->user->logout();
-		Yii::app()->user->setFlash('success', 'You have been logged out.');
+		Yii::app()->user->setFlash('success', t('You have been successfully logged out.'));
 		$this->redirect(Yii::app()->homeUrl);
 	}
 	

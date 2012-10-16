@@ -2,7 +2,7 @@
 
 class EditController extends TranslateBaseController
 {
-    public $defaultAction='admin';
+    public $defaultAction = 'admin';
     /**
 	 * Updates a particular model.
 	 * If update is successful, the browser will be redirected to the 'view' page.

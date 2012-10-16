@@ -37,7 +37,7 @@ class FileController extends OnlineCoursePortalController {
 					'contentdisposition' => array(HTTP_DOWNLOAD_ATTACHMENT, $file->name),
 			), false);
 		} else {
-			throw new CHttpException(404,'The requested file could not be found.');
+			throw new CHttpException(404, t('The file {name} could not be found.', array('{name}' => $id)));
 		}
 	}
 	

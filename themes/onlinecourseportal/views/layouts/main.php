@@ -33,6 +33,7 @@
 		<!-- header -->
 		<div id="content">
 			<?php $this->widget('zii.widgets.CBreadcrumbs', array(
+					'homeLink' => CHtml::link(t('Home'), Yii::app()->homeUrl),
 					'links' => $this->breadcrumbs,
 			)); ?>
 			<!-- breadcrumbs -->

@@ -64,10 +64,10 @@ class SurveyAnswerOption extends CActiveRecord
     public function attributeLabels()
     {
         return array(
-            'answer_id' => t('Answer ID'),
-            'option_id' => t('Option ID'),
-        	'option' => t('Option'),
-        	'option' => t('Answer'),
+            'answer_id' => SurveyorModule::t('Answer ID'),
+            'option_id' => SurveyorModule::t('Option ID'),
+        	'option' => SurveyorModule::t('Option'),
+        	'option' => SurveyorModule::t('Answer'),
         );
     }
 

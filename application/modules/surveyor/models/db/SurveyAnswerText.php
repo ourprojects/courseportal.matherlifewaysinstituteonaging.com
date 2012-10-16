@@ -61,9 +61,9 @@ class SurveyAnswerText extends CActiveRecord
     public function attributeLabels()
     {
         return array(
-            'answer_id' => Yii::t('onlinecourseportal','Answer ID'),
-        	'answer' => Yii::t('onlinecourseportal','Answer'),
-            'text' => Yii::t('onlinecourseportal','Text'),
+            'answer_id' => SurveyorModule::t('Answer ID'),
+        	'answer' => SurveyorModule::t('Answer'),
+            'text' => SurveyorModule::t('Text'),
         );
     }
 

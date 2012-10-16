@@ -23,9 +23,9 @@ class Message extends CActiveRecord{
 	}
 	function attributeLabels(){
 		return array(
-			'id'=> t('ID'),
-			'language'=> t('Language'),
-			'translation'=> t('Translation'),
+			'id'=> TranslateModule::t('ID'),
+			'language'=> TranslateModule::t('Language'),
+			'translation'=> TranslateModule::t('Translation'),
             'category'=> MessageSource::model()->getAttributeLabel('category'),
             'message'=> MessageSource::model()->getAttributeLabel('message'),
 		);

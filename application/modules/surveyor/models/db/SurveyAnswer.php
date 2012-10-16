@@ -70,13 +70,13 @@ class SurveyAnswer extends CActiveRecord
     public function attributeLabels()
     {
         return array(
-            'user_id' => t('User ID'),
-            'question_id' => t('Survey Question ID'),
-        	'user' => t('User'),
-        	'question' => t('Question'),
-        	'answerText' => t('Answer Text'),
-        	'answerOptions' => t('Answer Options'),
-        	'options' => t('Options'),
+            'user_id' => SurveyorModule::t('User ID'),
+            'question_id' => SurveyorModule::t('Survey Question ID'),
+        	'user' => SurveyorModule::t('User'),
+        	'question' => SurveyorModule::t('Question'),
+        	'answerText' => SurveyorModule::t('Answer Text'),
+        	'answerOptions' => SurveyorModule::t('Answer Options'),
+        	'options' => SurveyorModule::t('Options'),
         );
     }
 

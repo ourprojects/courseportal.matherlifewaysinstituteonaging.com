@@ -38,7 +38,7 @@ class TranslateController extends TranslateBaseController {
         $this->render('index',$data);
 	}
 	
-    function actionGoogletranslate() {
+    public function actionGoogletranslate() {
         if(Yii::app()->getRequest()->getIsPostRequest()){
             $translation=TranslateModule::translator()->googleTranslate($_POST['message'],$_POST['language'],$_POST['sourceLanguage']);
             if(is_array($translation))

@@ -4,7 +4,7 @@
 <div id="single-column">
 <?php
 $this->pageTitle = Yii::app()->name . ' - '.t('Contact Us');
-// $this->breadcrumbs = array(	t('Contact Us') );
+$this->breadcrumbs = array(	t('Contact Us') );
 ?>
 
 <?php echo $this->renderPartial('forms/contact', array('models' => $models)); ?>

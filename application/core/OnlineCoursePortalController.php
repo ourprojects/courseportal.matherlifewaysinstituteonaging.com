@@ -73,13 +73,33 @@ abstract class OnlineCoursePortalController extends CController {
 		);
 	}
 	
+	public function run($actionID) {
+		if(($action = $this->createAction($actionID)) !== null) {
+			if(($parent = $this->getModule()) === null)
+				$parent = Yii::app();
+			Yii::app()->getUrlManager()->parsePathInfoSegments();
+			if($parent->beforeControllerAction($this, $action)) {
+				$this->runActionWithFilters($action, $this->filters());
+				$parent->afterControllerAction($this, $action);
+			}
+		}
+		else
+			$this->missingAction($actionID);
+	}
+	
 	public function createAction($actionID) {
+		if($this->getModule() !== null && $actionID === '') {
+			$pathInfoSegs = Yii::app()->getUrlManager()->getPathInfoSegments();
+			if(!empty($pathInfoSegs) && ($action = parent::createAction($pathInfoSegs[0])) !== null) {
+				unset($pathInfoSegs[0]);
+				return $action;
+			}
+		}
 		$action = parent::createAction($actionID);
 		if($action === null) {
 			$action = parent::createAction('static');
-			if($action !== null) {
-				array_unshift($_GET, $actionID);
-			} 
+			if($action !== null)
+				Yii::app()->getUrlManager()->prependPathInfoSegment($actionID);
 		}
 		return $action;
 	}

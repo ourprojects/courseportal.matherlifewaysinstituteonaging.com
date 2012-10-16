@@ -4,7 +4,7 @@
 <div id="single-column">
 	<?php
 	$this->pageTitle = Yii::app()->name . ' - '.t('Login');
-	//$this->breadcrumbs = array( t('Login') );
+	$this->breadcrumbs = array( t('Login') );
 	?>
 
 

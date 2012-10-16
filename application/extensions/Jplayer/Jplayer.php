@@ -136,7 +136,7 @@ class Jplayer extends CWidget {
 			throw new Exception(
 					Yii::t(self::$componentId,
 							'Jplayer - Error: Couldn\'t find assets directory. Please make sure directory exists and is readable "{dir_name}"',
-							array('dir_name' => $assetsDir))
+							array('{dir_name}' => $assetsDir))
 			);
 		}
 	}
@@ -146,7 +146,7 @@ class Jplayer extends CWidget {
 			throw new Exception(
 					Yii::t(self::$componentId,
 							'Jplayer - Error: Unknown player type. Please make sure file exists and is readable "{file_name}"',
-							array('file_name' => self::getViewPathFromAlias($type)))
+							array('{file_name}' => self::getViewPathFromAlias($type)))
 			);
 		$this->_config['type'] = $type;
 	}

@@ -67,10 +67,10 @@ class SurveyQuestionType extends CActiveRecord
     public function attributeLabels()
     {
         return array(
-            'id' => Yii::t('onlinecourseportal','ID'),
-            'name' => Yii::t('onlinecourseportal','Name'),
-        	'questions' => Yii::t('onlinecourseportal','Questions'),
-        	'surveys' => Yii::t('onlinecourseportal','Surveys'),
+            'id' => SurveyorModule::t('ID'),
+            'name' => SurveyorModule::t('Name'),
+        	'questions' => SurveyorModule::t('Questions'),
+        	'surveys' => SurveyorModule::t('Surveys'),
         );
     }
 

@@ -4,7 +4,7 @@
 <div id="single-column">
 <?php
 $this->pageTitle = Yii::app()->name . ' - '.t('Forum');
-//$this->breadcrumbs = array( t('Forum') );
+$this->breadcrumbs = array( t('Forum') );
 ?>
 
 <iframe src="<?php echo Yii::app()->request->baseUrl; ?>/phpBB" height="700" width="100%">

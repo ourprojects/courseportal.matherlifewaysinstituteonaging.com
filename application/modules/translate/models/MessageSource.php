@@ -22,22 +22,22 @@ class MessageSource extends CActiveRecord{
 	}
 	function attributeLabels(){
 		return array(
-			'id'=> t('ID'),
-			'category'=> t('Category'),
-			'message'=> t('Message'),
+			'id'=> TranslateModule::t('ID'),
+			'category'=> TranslateModule::t('Category'),
+			'message'=> TranslateModule::t('Message'),
 		);
 	}
 
-	function search(){
+	function search() {
 		$criteria = new CDbCriteria;
         
         $criteria->with = array('mt');
         
         $criteria->addCondition('not exists (select `id` from `'.Message::model()->tableName().'` `m` where `m`.`language`=:lang and `m`.id=`t`.`id`)');
       
-		$criteria->compare('t.id',$this->id);
-		$criteria->compare('t.category',$this->category);
-		$criteria->compare('t.message',$this->message);
+		$criteria->compare('t.id', $this->id);
+		$criteria->compare('t.category', $this->category);
+		$criteria->compare('t.message', $this->message);
         
         $criteria->params[':lang'] = $this->language;
         

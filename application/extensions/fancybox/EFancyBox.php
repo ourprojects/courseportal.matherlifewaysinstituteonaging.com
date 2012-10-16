@@ -79,7 +79,7 @@ class EFancyBox extends CWidget {
 			throw new Exception(Yii::t(
 							'EFancyBox', 
 							'EFancyBox - Error: Couldn\'t find assets to publish. Please make sure directory exists and is readable {dir_name}',
-							array('dir_name' => $assetsDir))
+							array('{dir_name}' => $assetsDir))
 					);
 		}
 	}

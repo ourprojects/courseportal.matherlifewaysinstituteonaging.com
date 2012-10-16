@@ -2,9 +2,9 @@
 	echo CHtml::tag('div', $survey['options'], false);
 	
 	if($title['show'])
-		echo CHtml::tag('div', $title['options'], t($survey['model']->title));
+		echo CHtml::tag('div', $title['options'], $survey['model']->title);
 	if($description['show'])
-		echo CHtml::tag('div', $description['options'], '<p>'.t($survey['model']->description).'</p>');
+		echo CHtml::tag('div', $description['options'], "<p>{$survey['model']->description}</p>");
 
 	if($form['show'])
 		$this->beginWidget('CActiveForm', $form['options']);
@@ -57,7 +57,7 @@
 		echo '</div>';
 	}
 	if($form['show']) {
-		echo CHtml::tag('div', $submitButton['options'], CHtml::submitButton(t('Submit')));
+		echo CHtml::tag('div', $submitButton['options'], CHtml::submitButton(SurveyorModule::t('Submit')));
 		$this->endWidget();
 	}
 	echo '</div>';

@@ -4,7 +4,7 @@
 <div id="single-column">
 <?php
 $this->pageTitle = Yii::app()->name . ' - '.t('Profile');
-//$this->breadcrumbs = array( t('Profile') );
+$this->breadcrumbs = array( t('Profile') );
 ?>
 
 <?php echo $this->renderPartial('forms/profile_form', array('models' => $models)); ?>

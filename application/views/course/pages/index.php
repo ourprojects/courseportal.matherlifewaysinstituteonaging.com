@@ -4,7 +4,7 @@
 <div id="single-column">
 <?php
 $this->pageTitle = Yii::app()->name . ' - ' . t('Courses');
-
+$this->breadcrumbs = array( t('Courses') );
 $this->widget(
 		'ext.fancybox.EFancyBox',
 		array(

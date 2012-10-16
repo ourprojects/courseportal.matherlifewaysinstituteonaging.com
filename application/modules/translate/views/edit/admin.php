@@ -1,7 +1,7 @@
 <h1><?php echo TranslateModule::t('Manage Messages')?></h1>
 
 <?php 
-$source=MessageSource::model()->findAll();
+$source = MessageSource::model()->findAll();
 $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'message-grid',
 	'dataProvider'=>$model->search(),

@@ -1,4 +1,5 @@
 <?php
+
 class MPTranslate extends CApplicationComponent{
     /**
      * @staticvar array $messages contains the untranslated messages found
@@ -24,10 +25,10 @@ class MPTranslate extends CApplicationComponent{
      * */
     const ID = 'mp-translate';
     /**
-     * @var string $defaultMessageCategory
+     * @var string $messageCategory
      * The default category used to identify messages.
      */
-    public $defaultMessageCategory = self::ID;
+    public $messageCategory = self::ID;
     /**
      * @var array $acceptedLanguages contains the languages accepted by your application 
      * */
@@ -41,21 +42,20 @@ class MPTranslate extends CApplicationComponent{
      * @var array $_cache will contain variables
      * */
     private $_cache=array();
+    
 	/**
 	 * handles the initialization parameters of the components
 	 */
 	function init(){
-        if(!count($this->acceptedLanguages)){
-            if(($sourceLanguage=Yii::app()->sourceLanguage)!==null)
-                $this->acceptedLanguages[$sourceLanguage]=$sourceLanguage;
-            if(($targetLanguage=Yii::app()->getLanguage())!=null)
-                $this->acceptedLanguages[$targetLanguage]=$targetLanguage;
+        if(empty($this->acceptedLanguages)){
+            if(($sourceLanguage=Yii::app()->sourceLanguage) !== null)
+                $this->acceptedLanguages[$sourceLanguage] = $sourceLanguage;
+            if(($targetLanguage=Yii::app()->getLanguage()) != null)
+                $this->acceptedLanguages[$targetLanguage] = $targetLanguage;
         }
         
-        function t($message, $category = MPTranslate::ID, $params = array (), $source = NULL, $language = NULL) {
-        	if($category === MPTranslate::ID)
-        		$category = Yii::app()->getComponent(TranslateModule::$translateComponentId)->defaultMessageCategory;
-        	return Yii::t($category, $message, $params, $source, $language);
+        function t($message, $params = array ()) {
+        	return Yii::t(TranslateModule::translator()->messageCategory, $message, $params, null, null);
         }
         
         return parent::init();
@@ -67,38 +67,48 @@ class MPTranslate extends CApplicationComponent{
      * @return string the message to translate or the translated message if option autoTranslate is set to true
      */
     function missingTranslation($event) {
-        if($event !== null && (Yii::app()->locale->getLanguageID($event->language) !== Yii::app()->locale->getLanguageID(Yii::app()->sourceLanguage) || Yii::app()->getMessages()->forceTranslation)) {
+        if($event !== null && 
+        		(Yii::app()->locale->getLanguageID($event->language) !== Yii::app()->locale->getLanguageID(Yii::app()->sourceLanguage) || 
+        			Yii::app()->getMessages()->forceTranslation)) {
         	Yii::import('translate.models.MessageSource');
-        	$attributes = array('category'=>$event->category,'message'=>$event->message);
-        	if(($model=MessageSource::model()->find('message=:message AND category=:category',$attributes))===null){
-        		$model=new MessageSource();
-        		$model->attributes=$attributes;
-        		if(!$model->save())
-        			return Yii::log(TranslateModule::t('Message '.$event->message.' could not be added to messageSource table'));;
-        	}
-        	if($model->id) {
-        		Yii::import('translate.models.Message');
-        		$messageModel = Message::model()->find('id = :id AND language = :language', array('id' => $model->id, 'language' => $event->language));
-        		if($messageModel !== null) {
-        			$event->message = $messageModel->translation;
-        		} else {
-        			if(Yii::app()->translate->autoTranslate){//&& key_exists($event->language,$this->getGoogleAcceptedLanguages($event->language))
-        				$translation = Yii::app()->translate->googleTranslate($event->message, $event->language, Yii::app()->locale->getLanguageID(Yii::app()->sourceLanguage));
-        				if($translation === false)
-        					return false;
-        				$messageModel=new Message;
-        				$messageModel->attributes=array('id'=>$model->id,'language'=>$event->language,'translation'=>$translation);
-        				if($messageModel->save())
-        					$event->message=$translation;
-        				else
-        					return Yii::log(TranslateModule::t('Message '.$event->message.' could not be translated with auto-translate'));
-        			} else {
-        				self::$messages[$model->id]=array('language'=>$event->language,'message'=>$event->message,'category'=>$event->category);
-        			}
+        	$attributes = array('category' => $event->category, 'message' => $event->message);
+        	if(($model = MessageSource::model()->find('message=:message AND category=:category', $attributes)) === null){
+        		$model = new MessageSource();
+        		$model->attributes = $attributes;
+        		if(!$model->save()) {
+        			Yii::log(TranslateModule::t("Message $event->message could not be added to messageSource table"));
+        			return false;
         		}
         	}
+        	Yii::import('translate.models.Message');
+        	if(($messageModel = Message::model()->find('id = :id AND language = :language', array('id' => $model->id, 'language' => $event->language))) === null &&
+        		Yii::app()->translate->autoTranslate) {
+        		$translation = $event->message;
+
+        		preg_match_all('/\{(.*?)\}/', $translation, $matches);
+        		$matches = $matches[0];
+        		for($i = 0; $i < count($matches); $i++)
+        			$translation = str_replace($matches[$i], "_{$i}_", $translation);
+        		
+        		$translation = Yii::app()->translate->googleTranslate($translation, $event->language, Yii::app()->locale->getLanguageID(Yii::app()->sourceLanguage));
+        		if($translation !== false) {
+        			for($i = 0; $i < count($matches); $i++)
+        				$translation = str_replace("_{$i}_", $matches[$i], $translation);
+
+        			$messageModel = new Message;
+        			$messageModel->attributes = array('id' => $model->id, 'language' => $event->language, 'translation' => $translation);
+        			if(!$messageModel->save())
+        				$messageModel = null;
+        		}
+        	}
+            if($messageModel !== null) {
+            	$event->message = $messageModel->translation;
+            	return true;
+            }
+            Yii::log(TranslateModule::t('Message {message} could not be translated', array('message' => $event->message)));
+            self::$messages[$model->id] = array('language' => $event->language, 'message' => $event->message, 'category' => $event->category);
         }
-        return $event;
+        return false;
     }
     /**
      * generates a link or button to the page where you translate the missing translations found in this page
@@ -108,20 +118,21 @@ class MPTranslate extends CApplicationComponent{
      * @return string
      */
     function translateLink($label='Translate',$type='link'){
-        $form=CHtml::form(Yii::app()->getController()->createUrl('/translate/translate/index'));
+        $form = CHtml::form(Yii::app()->getController()->createUrl('/translate/translate/index'));
         if(count(self::$messages))
-            foreach(self::$messages as $index=>$message)
-                foreach($message as $name=>$value)
-                    $form.=CHtml::hiddenField(self::ID."-missing[$index][$name]",$value);
-        if($type==='button')
-            $form.=CHtml::submitButton($label);
+            foreach(self::$messages as $index => $message)
+                foreach($message as $name => $value)
+                    $form .= CHtml::hiddenField(self::ID."-missing[$index][$name]",$value);
+        if($type === 'button')
+            $form .= CHtml::submitButton($label);
         else
-            $form.=CHtml::linkButton($label);
-        $form.=CHtml::endForm();
+            $form .= CHtml::linkButton($label);
+        $form .= CHtml::endForm();
         return $form;
     }
-    function hasMessages(){
-        return count(self::$messages)>0;
+    
+    function hasMessages() {
+        return count(self::$messages) > 0;
     }
     /**
      * generates a link or button that generates a dialog to the page where you translate the missing translations found in this page
