@@ -54,7 +54,6 @@ class UserProfile extends CActiveRecord {
             array('user_id, 
             		firstname, 
             		lastname, 
-            		state_id, 
             		country_iso',
             		'required'),
         	
@@ -64,7 +63,7 @@ class UserProfile extends CActiveRecord {
 			array('zip_code', 'numerical', 'integerOnly' => true),
             array('zip_code', 'length', 'max' => 10),
         		
-        	array('state_id', 'exist', 'attributeName' => 'id', 'className' => 'States', 'allowEmpty' => false),
+        	array('state_id', 'exist', 'attributeName' => 'id', 'className' => 'States', 'allowEmpty' => true),
         	array('user_id', 'exist', 'attributeName' => 'id', 'className' => 'User', 'allowEmpty' => false),
         );
     }
