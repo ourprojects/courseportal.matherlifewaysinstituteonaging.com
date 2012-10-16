@@ -46,19 +46,24 @@ class MPTranslate extends CApplicationComponent{
 	/**
 	 * handles the initialization parameters of the components
 	 */
-	function init(){
-        if(empty($this->acceptedLanguages)){
-            if(($sourceLanguage=Yii::app()->sourceLanguage) !== null)
-                $this->acceptedLanguages[$sourceLanguage] = $sourceLanguage;
-            if(($targetLanguage=Yii::app()->getLanguage()) != null)
-                $this->acceptedLanguages[$targetLanguage] = $targetLanguage;
-        }
-        
+	function init() {
+		Yii::import('translate.models.*');
+		$acceptedLanguages = AcceptedLanguages::model()->findAll();
+		$languageNames = Yii::app()->localeManager->getLanguages();
+		foreach($acceptedLanguages as $lang) {
+			if(Yii::app()->localeManager->isAcceptedLanguage($lang->id))
+				$this->acceptedLanguages[$lang->id] = $languageNames[$lang->id];
+		}
+
         function t($message, $params = array ()) {
         	return Yii::t(TranslateModule::translator()->messageCategory, $message, $params, null, null);
         }
         
         return parent::init();
+	}
+	
+	function isAcceptedLanguage($id) {
+		return isset($this->acceptedLanguages[$id]);
 	}
     /**
      * method that handles the on missing translation event

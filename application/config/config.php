@@ -9,7 +9,7 @@
 return array(
 		'basePath' => APPPATH,
 		'name' => 'Online Course Portal',
-		'sourceLanguage' => 'en_us',
+		'sourceLanguage' => 'en',
 		'charset' => 'UTF-8',
 
 		// preloading 'log' component
