@@ -93,7 +93,7 @@ array(
 							text: Aging in Action is Mather LifeWays Institute on Aging's monthly 
 							e-newsletter and blog containing the latest research news in the field of aging.
 							larger twitter image here
-							link: Evanston, IL âˆ‘ http://www.aginginaction.com
+							link: Evanston, IL · http://www.aginginaction.com
 							
 							 -->
 
@@ -283,6 +283,9 @@ array(
 )
 );
 ?></div>
+
+
+
 <!-- ------------------------------------start tutorial course here -->
 
 <div
@@ -308,8 +311,8 @@ presentation, and by no means is conclusive or all-ending.</p>
 		style="color: red; font-family: 'Oldtown', fantasy; font-size: 3em;">One
 	in eight older Americans has Alzheimer's disease.</li>
 	<li
-		style="color: red; font-family: 'Oldtown', fantasy; font-size: 3em; padding: 35px 0px;">2012
-	payments for care are estimated to be $200 billion in the U.S.</li>
+		style="color: red; font-family: 'Oldtown', fantasy; font-size: 3em; padding: 35px 0px;">Alzheimer's
+	is not a normal part of aging</li>
 </ul>
 
 <p>With such a profound impact on soceity, businesses and poetneitally
@@ -360,14 +363,8 @@ course by the following:</p>
 </ul>
 
 
-<div style="
-border:2px solid;
-border-radius:25px;
--moz-border-radius:25px; /* Firefox 3.6 and earlier */
-padding:5px;
-margin:15px;
-background-color:#F8F8F8;
-">
+<div
+	style="border: 2px solid; border-radius: 25px; -moz-border-radius: 25px; /* Firefox 3.6 and earlier */ padding: 5px; margin: 15px; background-color: #F8F8F8;">
 
 <p>To help us collect data on our users, please let us know if you have
 ever taken an online course before? <select>
@@ -382,9 +379,7 @@ ever taken an online course before? <select>
 
 
 
-<!--  need javascriopt validator and response for both answers -->
-
-</div>
+<!--  need javascriopt validator and response for both answers --></div>
 
 
 <p><a href="javascript:;" onclick="$.fancybox.prev();" class="button">&laquo;
@@ -426,6 +421,10 @@ meals, remembering appointments or traveling out of the neighborhood.
 Many dementias are progressive, meaning symptoms start out slowly and
 gradually get worse.</p>
 
+
+<div
+	style="border: 2px solid; border-radius: 25px; -moz-border-radius: 25px; /* Firefox 3.6 and earlier */ padding: 5px; margin: 15px; background-color: #F8F8F8;">
+
 <p>Without searching the web, is Dementia a disease of the brain? <select>
 	<option selected="selected" value="select">Select</option>
 	<option value="yes">YES</option>
@@ -435,6 +434,7 @@ gradually get worse.</p>
 <button type="submit">Submit</button>
 <button type="reset">Reset</button>
 </p>
+</div>
 <br>
 <br>
 <br>
@@ -459,7 +459,7 @@ that slowly destroys memory, thinking skills, behavior, and eventually
 even the ability to carry out the simplest tasks of daily living.
 Alzheimer's is the most common form of dementia. Symptoms usually
 develop slowly and get worse over time. In most people with Alzheimer's,
-symptoms first appear after age 60. Alzheimerâ€™s disease is the most
+symptoms first appear after age 60. AlzheimerÕs disease is the most
 common cause of dementia among older people. Alzheimer's has no current
 cure, but treatments for symptoms are available and research continues.
 The disease is named after Dr. Alois Alzheimer.</p>
@@ -478,6 +478,10 @@ suspect someone is suffering from Alzeheimr's disease:</p>
 	<li>Decreased or poor judgement</li>
 </ul>
 
+
+<div
+	style="border: 2px solid; border-radius: 25px; -moz-border-radius: 25px; /* Firefox 3.6 and earlier */ padding: 5px; margin: 15px; background-color: #F8F8F8;">
+
 <p>Without searching the Web, what other signs might there be?</p>
 
 <input type="checkbox" value="1">Trouble understanding visual images and
@@ -492,7 +496,7 @@ activities</input><br>
 
 <button type="submit">Submit</button>
 <button type="reset">Reset</button>
-
+</div>
 
 <p><a href="javascript:;" onclick="$.fancybox.prev();" class="button">&laquo;
 Back</a> <a href="javascript:;" onclick="$.fancybox.next();"
@@ -528,9 +532,13 @@ Back</a> <a href="javascript:;" onclick="$.fancybox.next();"
 <p><strong>Dementia</strong></p>
 
 <ul>
-	<li>Millions of people in the United States have some degree of dementia, and that number will increase over the next few decades with the aging of the population. </li>
-	<li>Dementia affects about 1% of people aged 60-64 years and as many as 30-50% of people older than 85 years.</li>
-	<li>It is the leading reason for placing elderly people in institutions such as nursing homes.</li>
+	<li>Millions of people in the United States have some degree of
+	dementia, and that number will increase over the next few decades with
+	the aging of the population.</li>
+	<li>Dementia affects about 1% of people aged 60-64 years and as many as
+	30-50% of people older than 85 years.</li>
+	<li>It is the leading reason for placing elderly people in institutions
+	such as nursing homes.</li>
 </ul>
 
 
@@ -556,32 +564,38 @@ additional data and statics on Dementia and Alzehimer's disease.</p>
 Back</a> <a href="javascript:;" onclick="$.fancybox.next();"
 	class="button">Next &raquo;</a></p>
 
+
+
+
 </div>
 
+<!-- ------------------------------------  closing here    -->
 
-<!-- ------------------------------------  closing here    --></div>
 <div id="tutorial-slide-6" class="slide">
 
 <h4 style="font-size: 2em; padding-bottom: 15px;">Assessment</h4>
 
+<div
+	style="border: 2px solid; border-radius: 25px; -moz-border-radius: 25px; /* Firefox 3.6 and earlier */ padding: 5px; margin: 15px; background-color: #F8F8F8;">
+
+
 <p>Please take a moment to complete this short assessment. Your
-responses are not recorded, but you will recieve
-immiedate feedback once submitted.
+responses are not recorded, but you will recieve immiedate feedback once
+submitted.</p>
 
 <p>Dementia and Alzheimer's are disease's of the brain.</p>
- <select>
+<select>
 	<option selected="selected" value="select">Select</option>
 	<option value="yes">True</option>
 	<option value="no">False</option>
 </select>
 
 <p>Alzheimer's is the most common form of dementia.</p>
- <select>
+<select>
 	<option selected="selected" value="select">Select</option>
 	<option value="yes">True</option>
 	<option value="no">False</option>
-</select>
-
+</select></div>
 
 <h4 style="font-size: 2em; padding-bottom: 15px;">Certificate of
 Completion</h4>
@@ -597,11 +611,13 @@ downlod your certficiate:</p>
 	alt="Adobe Reader (PDF) Logo" width="75px" height="75px" align="CENTER"
 	border="0" /></p>
 
+<div
+	style="border: 2px solid; border-radius: 25px; -moz-border-radius: 25px; /* Firefox 3.6 and earlier */ padding: 5px; margin: 15px; background-color: #F8F8F8;">
 
-<p><strong>Survey (voluntary and anonymous)</strong>
+<p><strong>Survey (voluntary and anonymous)</strong></p>
 
-<p>Did this tutorial course provide you with an acceptable learning experience?
-<select>
+<p>Did this tutorial course provide you with an acceptable learning
+experience? <select>
 	<option selected="selected" value="select">Select</option>
 	<option value="yes">Yes</option>
 	<option value="no">No</option>
@@ -622,13 +638,7 @@ experience with this tutorial course? <select>
 	<option value="0">Not Likely</option>
 </select></p>
 
-
-
-<!-- feedback yes: "Great!THANK YOU for your feedback!" no: "Please use the Contact Us page to tell us what we can do better" -->
-
-
-<!--  ------------------------------ END TUTORIAL COURSE HERE  -->
-
+</div>
 
 <p><a href="javascript:;" onclick="$.fancybox.pos(0);" class="button">&laquo;
 Start Over</a></p>
