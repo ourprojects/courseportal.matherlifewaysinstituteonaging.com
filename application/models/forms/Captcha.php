@@ -19,7 +19,7 @@ class Captcha extends CFormModel {
 	 */
 	public function attributeLabels() {
 		return array(
-				'captcha' => Yii::t('onlinecourseportal','Captcha'),
+				'captcha' => t('Captcha'),
 		);
 	}
 

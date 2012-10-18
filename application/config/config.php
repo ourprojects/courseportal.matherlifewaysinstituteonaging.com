@@ -9,7 +9,7 @@
 return array(
 		'basePath' => APPPATH,
 		'name' => 'Online Course Portal',
-		'sourceLanguage' => 'en',
+		'sourceLanguage' => 'en_us',
 		'charset' => 'UTF-8',
 
 		// preloading 'log' component
@@ -58,10 +58,6 @@ return array(
 						'translatedMessageTable' => '{{message}}',
 				),
 				
-				'localeManager' => array(
-						'class' => 'LocaleManager',			
-				),
-				
 				'surveyor' => array(
 						'class' => 'modules.surveyor.components.Surveyor',		
 				),
@@ -90,7 +86,7 @@ return array(
 				'db' => require('db.php'),
 				
 				'urlManager' => array(
-						'class'=>'application.components.UrlManager',
+						'class'=>'UrlManager',
 						'urlFormat' => 'path',
 						'showScriptName' => false,
 						'rules' => require('routes.php'),

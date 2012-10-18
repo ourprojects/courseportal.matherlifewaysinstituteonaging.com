@@ -70,14 +70,14 @@ class UploadedFile extends CActiveRecord {
 	 */
 	public function attributeLabels() {
 		return array(
-				'id' => Yii::t('onlinecourseportal','ID'),
-				'user_id' => Yii::t('onlinecourseportal','User ID'),
-				'created' => Yii::t('onlinecourseportal','Created'),
-				'name' => Yii::t('onlinecourseportal','Name'),
-				'size' => Yii::t('onlinecourseportal','Size'),
-				'mime_type' => Yii::t('onlinecourseportal','MIME Type'),
-				'local_name' => Yii::t('onlinecourseportal','Local Name'),
-				'user' => Yii::t('onlinecourseportal','User')
+				'id' => t('ID'),
+				'user_id' => t('User ID'),
+				'created' => t('Created'),
+				'name' => t('Name'),
+				'size' => t('Size'),
+				'mime_type' => t('MIME Type'),
+				'local_name' => t('Local Name'),
+				'user' => t('User')
 		);
 	}
 	

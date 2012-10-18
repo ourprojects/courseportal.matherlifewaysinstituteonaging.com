@@ -67,9 +67,9 @@ class Referral extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => Yii::t('onlinecourseportal','ID'),
-			'referrer' => Yii::t('onlinecourseportal','Referrer'),
-			'referee' => Yii::t('onlinecourseportal','Referee'),
+			'id' => t('ID'),
+			'referrer' => t('Referrer'),
+			'referee' => t('Referee'),
 		);
 	}
 

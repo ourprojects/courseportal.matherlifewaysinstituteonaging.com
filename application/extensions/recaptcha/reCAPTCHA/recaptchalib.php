@@ -103,7 +103,7 @@ function _recaptcha_http_post($host, $path, $data, $port = 80) {
 
  * @return string - The HTML to be embedded in the user's form.
  */
-function recaptcha_get_html ($pubkey, $error = null, $use_ssl = false)
+function recaptcha_get_html ($pubkey, $error = null, $use_ssl = false, $language_override = '')
 {
 	if ($pubkey == null || $pubkey == '') {
 		die ("To use reCAPTCHA you must get an API key from <a href='https://www.google.com/recaptcha/admin/create'>https://www.google.com/recaptcha/admin/create</a>");
@@ -119,10 +119,9 @@ function recaptcha_get_html ($pubkey, $error = null, $use_ssl = false)
 	if ($error) {
 		$errorpart = "&amp;error=" . $error;
 	}
-	return '<script type="text/javascript" src="'. $server . '/challenge?k=' . $pubkey . $errorpart . '"></script>
-
+	return '<script type="text/javascript" src="'. $server . '/challenge?k=' . $pubkey . '&hl=' . $language_override . $errorpart . '"></script>
 	<noscript>
-	<iframe src="'. $server . '/noscript?k=' . $pubkey . $errorpart . '" height="300" width="500" frameborder="0"></iframe><br/>
+	<iframe src="'. $server . '/noscript?k=' . $pubkey . '&hl=' . $language_override . $errorpart . '" height="300" width="500" frameborder="0"></iframe><br/>
 	<textarea name="recaptcha_challenge_field" rows="3" cols="40"></textarea>
 	<input type="hidden" name="recaptcha_response_field" value="manual_challenge"/>
 	</noscript>';

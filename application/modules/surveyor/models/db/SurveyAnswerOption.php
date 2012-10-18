@@ -54,7 +54,7 @@ class SurveyAnswerOption extends CActiveRecord
     {
         return array(
         		'answer' => array(self::BELONGS_TO, 'SurveyAnswer', 'answer_id'),
-        		'option' => array(self::HAS_ONE, 'SurveyQuestionOption', 'option_id'),
+        		'option' => array(self::BELONGS_TO, 'SurveyQuestionOption', 'option_id'),
         );
     }
 

@@ -29,10 +29,10 @@ class ContactUs extends CFormModel {
 	 */
 	public function attributeLabels() {
 		return array(
-				'name' => Yii::t('onlinecourseportal','Name'),
-				'email' => Yii::t('onlinecourseportal','Email'),
-				'subject' => Yii::t('onlinecourseportal','Subject'),
-				'body' => Yii::t('onlinecourseportal','Body'),
+				'name' => t('Name'),
+				'email' => t('Email'),
+				'subject' => t('Subject'),
+				'body' => t('Body'),
 		);
 	}
 

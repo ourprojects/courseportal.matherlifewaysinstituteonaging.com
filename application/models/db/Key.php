@@ -47,9 +47,9 @@ class Key extends CActiveRecord {
      */
     public function attributeLabels() {
         return array(
-            'id' => Yii::t('onlinecourseportal','ID'),
-            'value' => Yii::t('onlinecourseportal','Value'),
-            'salt' => Yii::t('onlinecourseportal','Salt'),
+            'id' => t('ID'),
+            'value' => t('Value'),
+            'salt' => t('Salt'),
         );
     }
 

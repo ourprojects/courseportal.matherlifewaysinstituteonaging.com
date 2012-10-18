@@ -1,4 +1,4 @@
-<h1><?php echo TranslateModule::t('Missing Translations')." - ".TranslateModule::translator()->acceptedLanguages[Yii::app()->getLanguage()]?></h1>
+<h1><?php echo TranslateModule::t('Missing Translations')." - ".TranslateModule::translator()->getLanguageDisplayName(); ?></h1>
 <?php 
 $source=MessageSource::model()->findAll();
 $this->widget('zii.widgets.grid.CGridView', array(

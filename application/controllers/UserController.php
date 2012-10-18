@@ -8,7 +8,6 @@ class UserController extends OnlineCoursePortalController {
 	public function filters() {
 		return array(
 				array('filters.HttpsFilter'),
-				'verifyKey + create',
 				'accessControl + profile',
 		);
 	}
@@ -22,64 +21,6 @@ class UserController extends OnlineCoursePortalController {
 						'users' => array('*'),
 				),
 		);
-	}
-	
-	public function filterVerifyKey($filterChain) {
-		if(isset($_GET['key_id']) && isset($_GET['key'])) {
-			$_GET['key'] = str_replace(array('-','_'), array('+','/'), $_GET['key']);
-			$key = Key::model()->findByPk($_GET['key_id']);
-			if($key !== null) {
-				$this->loadExtension('pbkdf2');
-				$hasher = new PBKDF2($_GET['key'], $key->salt);
-				if($hasher->hashed === $key->value) {
-					$filterChain->run();	
-					return;
-				}
-			}
-		}
-		throw new CHttpException(401, t('Not authorized.'));
-	}
-	
-	public function actionCreate() {
-		$this->loadHelper('Json');
-		$models = array(
-					'user' => new User('pushedRegister'),
-					'user_profile' => new UserProfile,
-					'avatar' => new Avatar,
-				);
-		$models['user']->attributes = $_POST;
-		$models['user_profile']->attributes = $_POST;
-		$models['avatar']->attributes = $_POST;
-
-		if($models['user']->validate()) {
-			$transaction = Yii::app()->db->beginTransaction();
-			try {
-				if($models['user']->save(false)) {
-					$models['user_profile']->user_id = $models['user']->id;
-					$models['avatar']->user_id = $models['user']->id;
-					if($models['user_profile']->save() &&
-							$models['avatar']->validate(array('image')) &&
-							($models['avatar']->image === null || $models['avatar']->save())) {
-						$transaction->commit();
-						$this->_sendResponse(200, array('confirmationUrl' => $models['user']->getActivationUrl()));
-						Yii::app()->end();
-					}
-				}
-			} catch(Exception $e) {
-				if(!$models['avatar']->getIsNewRecord())
-					$models['avatar']->delete();
-				$transaction->rollback();
-				throw $e;
-			}
-			if(!$models['avatar']->getIsNewRecord())
-				$models['avatar']->delete();
-			$transaction->rollback();
-		}
-		$errors = array();
-		foreach($models as $model)
-			if($model->hasErrors())
-				$errors[] = $model->getErrors();
-		$this->_sendResponse(400, $errors);
 	}
 
 	/**

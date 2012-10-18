@@ -86,12 +86,12 @@ class Avatar extends CActiveRecord {
 	 */
 	public function attributeLabels() {
 		return array(
-				'user_id' => Yii::t('onlinecourseportal','User ID'),
-				'mime_type' => Yii::t('onlinecourseportal','MIME Type'),
-				'size' => Yii::t('onlinecourseportal','Size'),
-				'name' => Yii::t('onlinecourseportal','Name'),
-				'image' => Yii::t('onlinecourseportal','Avatar'),
-				'user' => Yii::t('onlinecourseportal','User'),
+				'user_id' => t('User ID'),
+				'mime_type' => t('MIME Type'),
+				'size' => t('Size'),
+				'name' => t('Name'),
+				'image' => t('Avatar'),
+				'user' => t('User'),
 		);
 	}
 	

@@ -35,38 +35,9 @@ class OnlineCoursePortalApplication extends CWebApplication {
      * @param string $route the route of the current request. See {@link createController} for more details.
      * @throws CHttpException if the controller could not be created.
      */
-    public function runController($route)
-    {
-    	// Configure language settings
-    	
-    	// If there is a post-request, redirect the application to the provided url of the selected language
-    	if(isset($_POST['language'])) {
-    		Yii::app()->getRequest()->redirect($this->createUrl($route, array('language' => $_POST['language'])));
-    	}
-		
-    	// Set the application language if provided by GET, session or cookie
-		if(isset($_GET['language'])) {
-			$language = (string)$_GET['language'];
-			unset($_GET['language']);
-		} elseif (isset(Yii::app()->session['language'])) {
-			$language = (string)Yii::app()->session['language'];
-		} elseif (Yii::app()->user->hasState('language')) {
-    		$language = (string)Yii::app()->user->getState('language');
-    	} elseif(isset(Yii::app()->request->cookies['language'])) {
-    		$language = (string)Yii::app()->request->cookies['language'];
-    	} elseif(Yii::app()->getRequest()->getPreferredLanguage() !== false) {
-    		$language = (string)Yii::app()->getRequest()->getPreferredLanguage();
-    	} else {
-    		$language = (string)Yii::app()->language;
-    	}
-    	
-    	//If the language is not recognized maybe the user didn't add the language part of the address.
-    	//Try and add the source language to the url and redirect to the new url.
-    	if(!Yii::app()->translate->isAcceptedLanguage($language)) {
-    		Yii::app()->getRequest()->redirect($this->createUrl("$language/$route", array('language' => Yii::app()->sourceLanguage)));
-    	}
-
-    	Yii::app()->setLanguage($language);
+    public function runController($route) {
+    	// Process the request through the translation system
+    	Yii::app()->translate->processRequest($route);
 
     	$this->name = t($this->name);
 		parent::runController($route);
@@ -79,16 +50,6 @@ class OnlineCoursePortalApplication extends CWebApplication {
     			$this->setComponent($id, null);
     		}
     	}
-    }
-    
-    public function setLanguage($language) {
-    	$language = Yii::app()->locale->getLanguageID($language);
-    	parent::setLanguage($language);
-    	setLocale(LC_ALL, $language.'.'.Yii::app()->charset);
-    	Yii::app()->session['language'] = $language;
-    	Yii::app()->user->setState('language', $language);
-    	Yii::app()->request->cookies['language'] = new CHttpCookie('language', $language);
-    	Yii::app()->request->cookies['language']->expire = time() + (60 * 60 * 24 * 365 * 2); // (2 year)
     }
 
     /**

@@ -54,10 +54,10 @@ class States extends CActiveRecord {
      */
     public function attributeLabels() {
         return array(
-            'id' => Yii::t('onlinecourseportal','ID'),
-            'name' => Yii::t('onlinecourseportal','Name'),
-            'abbrev' => Yii::t('onlinecourseportal','Abbreviation'),
-        	'userProfiles' => Yii::t('onlinecourseportal','User Profiles'),
+            'id' => t('ID'),
+            'name' => t('Name'),
+            'abbrev' => t('Abbreviation'),
+        	'userProfiles' => t('User Profiles'),
         );
     }
 

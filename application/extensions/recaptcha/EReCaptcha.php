@@ -64,11 +64,11 @@ class EReCaptcha extends CInputWidget
 	protected $theme = 'red';
 
 	/**
-	 * The language for the widget. Valid languages are 'en', 'nl', 'fr', 'de', 'pt', 'ru', 'es', 'tr'
+	 * The language for the widget.
 	 *
 	 * @var string the language suffix
 	 */
-	protected $language = 'en';
+	public $language = 'en';
 
 	/**
 	 * @var string the tab index for the HTML tag
@@ -90,13 +90,6 @@ class EReCaptcha extends CInputWidget
 	//***************************************************************************
 
 	/**
-	 * Valid languages
-	 *
-	 * @var array
-	 */
-	protected $validLanguages = array('en','nl','fr','de','pt','ru','es','tr');
-
-	/**
 	 * Valid themes
 	 *
 	 * @var array
@@ -114,28 +107,6 @@ class EReCaptcha extends CInputWidget
 	 */
 	public function getPublicKey() {
 		return Yii::app()->params['reCaptcha']['publicKey'];
-	}
-	
-	/**
-	 * Sets the language
-	 *
-	 * @param string $value the language string
-	 * @return string
-	 */
-	public function setLanguage($value)
-	{
-		$suffix = empty($value) ? 'en' : (($p=strpos($value,'_'))!==false) ? strtolower(substr($value,0,$p)) : strtolower($value);
-		if (in_array($suffix, $this->validLanguages)) $this->language = $suffix;
-	}
-
-	/**
-	 * Returns the language value
-	 *
-	 * @return string
-	 */
-	public function getLanguage()
-	{
-		return $this->language;
 	}
 
 	/**
@@ -193,6 +164,7 @@ EOP;
 		}
 		echo $body . recaptcha_get_html(Yii::app()->params['reCaptcha']['publicKey'],
 				null,
-				($this->useSsl ? true : Yii::app()->request->isSecureConnection));
+				($this->useSsl ? true : Yii::app()->getRequest()->getIsSecureConnection()),
+				$this->language);
 	}
 }

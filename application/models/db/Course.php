@@ -1,21 +1,17 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed');  
 
-class Group extends CActiveRecord {
+class Course extends CActiveRecord {
 	/**
-	 * This is the model class for table "group".
+	 * This is the model class for table "course".
 	 *
-	 * The followings are the available columns in table 'group':
+	 * The followings are the available columns in table 'course':
 	 * @property integer $id
-	 * @property string $name
+	 * @property string $title
 	 *
 	 * The followings are the available model relations:
 	 * @property User[] $users
 	 */
-
-	const ADMIN = 'admin';
-	const GUEST = 'guest';
-	const USER = 'user';
-	const DEFAULT_GROUP = self::USER;
+	
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @return CActiveRecord the static model class
@@ -28,17 +24,28 @@ class Group extends CActiveRecord {
 	 * @return string the associated database table name
 	 */
 	public function tableName() {
-		return '{{group}}';
+		return '{{course}}';
+	}
+	
+	/**
+	 * @return array validation rules for model attributes.
+	 */
+	public function rules() {
+		return array(
+				array('title', 'required'),
+				array('title', 'length', 'max' => 255),
+	
+				array('id, title', 'safe', 'on'=>'search'),
+		);
 	}
 
 	/**
 	 * @return array relational rules.
 	 */
 	public function relations() {
-		// NOTE: you may need to adjust the relation name and the related
-		// class name for the relations automatically generated below.
 		return array(
-				'users' => array(self::HAS_MANY, 'User', 'group_id'),
+				'userCourses' => array(self::HAS_MANY, 'UserCourse', 'course_id'),
+				'users' => array(self::HAS_MANY, 'User', array('user_id' => 'id'), 'through' => 'userCourses'),
 		);
 	}
 
@@ -48,7 +55,8 @@ class Group extends CActiveRecord {
 	public function attributeLabels() {
 		return array(
 				'id' => t('ID'),
-				'name' => t('Name'),
+				'title' => t('Title'),
+				'userCourses' => t('User Courses'),
 				'users' => t('Users'),
 		);
 	}
@@ -57,15 +65,12 @@ class Group extends CActiveRecord {
 	 * Retrieves a list of models based on the current search/filter conditions.
 	 * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.
 	 */
-	public function search()
-	{
-		// Warning: Please modify the following code to remove attributes that
-		// should not be searched.
+	public function search() {
 	
 		$criteria = new CDbCriteria;
 	
 		$criteria->compare('id', $this->id);
-		$criteria->compare('name', $this->name, true);
+		$criteria->compare('title', $this->title, true);
 	
 		return new CActiveDataProvider($this, array(
 				'criteria' => $criteria,

@@ -2,12 +2,11 @@
 if(empty($messages)):
 	echo '<h2>' . TranslateModule::t('All messages translated') . '</h2>';
 else:
-    $language=TranslateModule::translator();
-    $languageKey=$language::ID; 
+    $languageKey = MPTranslate::ID; 
     
-    $google=!empty(TranslateModule::translator()->googleApiKey) ? true : false;
+    $google = !empty(TranslateModule::translator()->googleApiKey);
 ?>
-<h2><?php echo TranslateModule::t('Translate to {lang}',array('{lang}'=>$language->acceptedLanguages[$language->getLanguage()]));?></h2>
+<h2><?php echo TranslateModule::t('Translate to {lang}',array('{lang}'=>TranslateModule::translator()->getLanguageDisplayName()));?></h2>
 <?php
     if($google){
         echo CHtml::link(TranslateModule::t('Translate all with google translate'),"#",array('id'=>$languageKey."-google-translateall"));

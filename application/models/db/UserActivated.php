@@ -54,7 +54,7 @@ class UserActivated extends CActiveRecord {
      */
     public function attributeLabels() {
         return array(
-            'user_id' => Yii::t('onlinecourseportal','User ID'),
+            'user_id' => t('User ID'),
         );
     }
 

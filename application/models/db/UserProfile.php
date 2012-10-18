@@ -25,11 +25,6 @@
  */
 class UserProfile extends CActiveRecord {
 	
-	public function init() {
-		if($this->getIsNewRecord())
-			$this->country_iso = Yii::app()->locale->getTerritoryID(Yii::app()->getLanguage());
-	}
-	
     /**
      * Returns the static model of the specified AR class.
      * @param string $className active record class name.
@@ -84,14 +79,14 @@ class UserProfile extends CActiveRecord {
      */
     public function attributeLabels() {
         return array(
-            'user_id' => Yii::t('onlinecourseportal','User ID'),
-            'firstname' => Yii::t('onlinecourseportal','First Name'),
-            'lastname' => Yii::t('onlinecourseportal','Last Name'),
-            'city' => Yii::t('onlinecourseportal','City'),
-            'zip_code' => Yii::t('onlinecourseportal','Zip Code'),
-            'state_id' => Yii::t('onlinecourseportal','State'),
-            'country_iso' => Yii::t('onlinecourseportal','Country'),
-        	'state' => Yii::t('onlinecourseportal','State')
+            'user_id' => t('User ID'),
+            'firstname' => t('First Name'),
+            'lastname' => t('Last Name'),
+            'city' => t('City'),
+            'zip_code' => t('Zip Code'),
+            'state_id' => t('State'),
+            'country_iso' => t('Country'),
+        	'state' => t('State')
         );
     }
 

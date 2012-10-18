@@ -39,7 +39,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($models['user_profile'], 'country_iso'); ?>
-		<?php echo $form->dropDownList($models['user_profile'], 'country_iso', Yii::app()->localeManager->getTerritories()); ?>
+		<?php echo $form->dropDownList($models['user_profile'], 'country_iso', Yii::app()->translate->getTerritoryDisplayNames()); ?>
 		<?php echo $form->error($models['user_profile'], 'country_iso'); ?>
 	</div>
 

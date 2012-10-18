@@ -70,7 +70,7 @@
 		<?php echo $form->dropDownList(
 							$models['user_profile'], 
 							'country_iso', 
-							Yii::app()->localeManager->getTerritories()
+							Yii::app()->translate->getTerritoryDisplayNames()
 				); ?>
 		<?php echo $form->error($models['user_profile'], 'country_iso'); ?>
 	</div>
@@ -98,7 +98,7 @@
 		$this->widget('ext.recaptcha.EReCaptcha',
 				array('model' => $models['captcha'], 
 						'attribute' => 'captcha',
-						'language' => Yii::app()->language)
+						'language' => Yii::app()->getLanguage())
 				);
 		echo $form->error($models['captcha'], 'captcha');
 		?>

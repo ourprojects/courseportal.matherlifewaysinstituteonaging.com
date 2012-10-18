@@ -16,6 +16,8 @@
  * @property Referral[] $referrals
  * @property Referral[] $referees
  * @property UploadedFile[] $uploadedFiles
+ * @property Course[] $courses
+ * @property UserCourse[] $userCourses
  * @property Group $group
  * @property UserActivated $userActivated
  * @property UserProfile $userProfile
@@ -116,6 +118,8 @@ class User extends CActiveRecord implements IUserIdentity {
 			'userActivated' => array(self::HAS_ONE, 'UserActivated', 'user_id'),
 			'userProfile' => array(self::HAS_ONE, 'UserProfile', 'user_id'),
 			'userProfileExtended' => array(self::HAS_ONE, 'UserProfileExtended', 'user_id'),
+			'userCourses' => array(self::HAS_MANY, 'UserCourse', 'user_id'),
+			'courses' => array(self::HAS_MANY, 'Course', array('course_id' => 'id'), 'through' => 'userCourses'),
 		);
 	}
 
@@ -124,21 +128,23 @@ class User extends CActiveRecord implements IUserIdentity {
 	 */
 	public function attributeLabels() {
 		return array(
-            'id' => Yii::t('onlinecourseportal','ID'),
-            'password' => Yii::t('onlinecourseportal','Password'),
-            'salt' => Yii::t('onlinecourseportal','Salt'),
-            'group_id' => Yii::t('onlinecourseportal','Group ID'),
-            'email' => Yii::t('onlinecourseportal','Email'),
-            'session_key' => Yii::t('onlinecourseportal','Session Key'),
-            'created' => Yii::t('onlinecourseportal','Created'),
-			'referees' => Yii::t('onlinecourseportal','Referees'),
-			'referrals' => Yii::t('onlinecourseportal','Referrals'),
-			'uploadedFiles' => Yii::t('onlinecourseportal','Uploaded Files'),
-			'userActivated' => Yii::t('onlinecourseportal','User Activated'),
-			'userProfile' => Yii::t('onlinecourseportal','User Profile'),
-			'group' => Yii::t('onlinecourseportal','Group'),
-			'password_no_hash' => Yii::t('onlinecourseportal','Password'),
-			'password_no_hash_repeat' => Yii::t('onlinecourseportal','Repeat Password'),
+            'id' => t('ID'),
+            'password' => t('Password'),
+            'salt' => t('Salt'),
+            'group_id' => t('Group ID'),
+            'email' => t('Email'),
+            'session_key' => t('Session Key'),
+            'created' => t('Created'),
+			'referees' => t('Referees'),
+			'referrals' => t('Referrals'),
+			'uploadedFiles' => t('Uploaded Files'),
+			'userActivated' => t('User Activated'),
+			'userProfile' => t('User Profile'),
+			'group' => t('Group'),
+			'password_no_hash' => t('Password'),
+			'password_no_hash_repeat' => t('Repeat Password'),
+			'userCourses' => t('User Courses'),
+			'courses' => t('Courses'),
 		);
 	}
 	

@@ -60,8 +60,8 @@ class EmployerDomain extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => Yii::t('onlinecourseportal','ID'),
-			'domain' => Yii::t('onlinecourseportal','Domain'),
+			'id' => t('ID'),
+			'domain' => t('Domain'),
 		);
 	}
 

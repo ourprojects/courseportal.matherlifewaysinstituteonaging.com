@@ -60,12 +60,12 @@ class Country extends CActiveRecord {
      */
     public function attributeLabels() {
         return array(
-            'iso' => Yii::t('onlinecourseportal','ISO'),
-            'name' => Yii::t('onlinecourseportal','Name'),
-            'printable_name' => Yii::t('onlinecourseportal','Printable Name'),
-            'iso3' => Yii::t('onlinecourseportal','ISO-3'),
-            'numcode' => Yii::t('onlinecourseportal','Number Code'),
-        	'userProfiles' => Yii::t('onlinecourseportal','User Profiles'),
+            'iso' => t('ISO'),
+            'name' => t('Name'),
+            'printable_name' => t('Printable Name'),
+            'iso3' => t('ISO-3'),
+            'numcode' => t('Number Code'),
+        	'userProfiles' => t('User Profiles'),
         );
     }
 

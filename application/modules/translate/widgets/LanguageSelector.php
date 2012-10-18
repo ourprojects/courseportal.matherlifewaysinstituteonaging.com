@@ -4,8 +4,8 @@ class LanguageSelector extends CWidget {
     public function run() {
         $this->render('languageSelector', 
         		array(
-        				'currentLang' => Yii::app()->locale->getLanguageID(Yii::app()->language), 
-        				'languages' => Yii::app()->translate->acceptedLanguages)
+        				'currentLang' => Yii::app()->translate->getLanguageID(), 
+        				'languages' => Yii::app()->translate->getAdminAcceptedLanguages())
         		);
     }
     
