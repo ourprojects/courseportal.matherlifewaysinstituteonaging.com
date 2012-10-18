@@ -1,10 +1,5 @@
-<div class="small-masthead" style="background-image: url(<?php echo Yii::app()->theme->getImagesUrl(); ?>/header-courses.png);">
-	<h1 class="bottom"><?php echo t('Courses'); ?></h1>
-</div>
-<div id="single-column">
 <?php
-$this->pageTitle = Yii::app()->name . ' - ' . t('Courses');
-$this->breadcrumbs = array( t('Courses') );
+$this->breadcrumbs = array(t('Courses'));
 $this->widget(
 		'ext.fancybox.EFancyBox',
 		array(
@@ -18,8 +13,11 @@ $this->widget(
 				)
 		)
 );
-
 ?>
+<div class="small-masthead" style="background-image: url(<?php echo Yii::app()->theme->getImagesUrl(); ?>/header-courses.png);">
+	<h1 class="bottom"><?php echo t('Courses'); ?></h1>
+</div>
+<div id="single-column">
 	<h2 class="flowers"><?php echo t('Online Courses'); ?></h2>
 	<p><?php echo t('To help individual caregivers transition into their new role, be better prepared to 
 	manage their loved one’s needs, and learn how to effectively practice self-care, Mather LifeWays Institute on Aging has developed 

@@ -1,6 +1,4 @@
-<?php
-$this->pageTitle = Yii::app()->name . ' - '.t('Registration Confirmed');
-?>
+<?php $this->breadcrumbs = array(t('Registration Confirmed')); ?>
 <div id="single-column">
 	<h2 class="flowers"><?php echo t('Thank you for registering!'); ?></h2>
 	<p class="header"><?php echo t('Thank you for registering with us! You are now

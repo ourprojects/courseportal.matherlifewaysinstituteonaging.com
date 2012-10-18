@@ -11,7 +11,18 @@
 		<![endif]-->
 	<?php echo CHtml::cssFile(Yii::app()->theme->getStylesUrl().'/main.css'); ?>
 	<?php echo CHtml::cssFile(Yii::app()->theme->getStylesUrl().'/form.css'); ?>
-	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
+	<title>
+		<?php 
+		$this->pageTitle = Yii::app()->name;
+		foreach($this->breadcrumbs as $label => $url) {
+			if(is_string($label))
+				$this->pageTitle .= " - $label";
+			else if(is_string($url))
+				$this->pageTitle .= " - $url";
+		}
+		echo CHtml::encode($this->pageTitle); 
+		?>
+	</title>
 </head>
 <body>
 	<div class="container" id="page">
@@ -32,10 +43,11 @@
 		</div>
 		<!-- header -->
 		<div id="content">
-			<?php $this->widget('zii.widgets.CBreadcrumbs', array(
-					'homeLink' => CHtml::link(t('Home'), Yii::app()->homeUrl),
+			<?php 
+			$this->widget('zii.widgets.CBreadcrumbs', array(
 					'links' => $this->breadcrumbs,
-			)); ?>
+			)); 
+			?>
 			<!-- breadcrumbs -->
 			<?php if(Yii::app()->user->hasFlash('success')): ?>
 					<div class="flash-success">

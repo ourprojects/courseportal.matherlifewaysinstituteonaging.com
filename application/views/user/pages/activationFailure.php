@@ -1,6 +1,4 @@
-<?php
-$this->pageTitle = Yii::app()->name .' - '.t('Activation Failed');
-?>
+<?php $this->breadcrumbs = array(t('Activation Failed')); ?>
 <p class="header">
 	<?php echo t('Oops! An error ocurred while trying to activate your acount.'); ?>
 </p>

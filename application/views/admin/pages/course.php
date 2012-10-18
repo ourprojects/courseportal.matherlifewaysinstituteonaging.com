@@ -1,14 +1,8 @@
+<?php $this->breadcrumbs = array(t('Admin') => Yii::app()->createUrl('admin'), t('Courses')); ?>
 <div class="small-masthead">
 	<h1 class="bottom"><?php echo t('Courses'); ?></h1>
 </div>
 <div id="single-column">
-<?php
-$this->pageTitle = Yii::app()->name . ' - ' . t('Admin') . ' - ' . t('Courses');
-$this->breadcrumbs = array(
-		t('Admin'),
-		t('Courses'),
-);
-?>
 <h2><?php echo t('Current Courses'); ?></h2>
 <?php 
 $source = Course::model()->findAll();
