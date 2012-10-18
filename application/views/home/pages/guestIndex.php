@@ -93,7 +93,7 @@ array(
 							text: Aging in Action is Mather LifeWays Institute on Aging's monthly 
 							e-newsletter and blog containing the latest research news in the field of aging.
 							larger twitter image here
-							link: Evanston, IL · http://www.aginginaction.com
+							link: Evanston, IL âˆ‘ http://www.aginginaction.com
 							
 							 -->
 
@@ -130,7 +130,7 @@ of aging.</p>
 </div>
 
 <div class="column-wide">
-<h2 class="flowers" style="font-family: "SourceSansPro", Arial, sans-serif;">
+<h2 class="flowers">
 <?php echo t('Mather
 				LifeWays Institute on Aging'); ?></h2>
 <p><?php echo t('Through research-based programs and innovative techniques, Mather
@@ -182,32 +182,8 @@ array(
 								)
 								);
 								?></div>
-<!--
-	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
-	<script type="text/javascript">
-	      google.load("visualization", "1", {packages:["corechart"]});
-	      google.setOnLoadCallback(drawChart);
-	      function drawChart() {
-	        var data = google.visualization.arrayToDataTable([
-	          ['Task', 'Hours per Day'],
-	          ['Online Course Delivery', 25],
-	          ['Targeted Collaboration', 50],
-	          ['Institution Wide Content Management', 25]
-	        ]);
 
-	        var options = {
-	          colors: ["#f47b20", "#008c99", "#aaaaaa"],
-	          legend: { position: "none" },
-			  chartArea: {left:20, top:20, width:"90%", height:"90%" },
-	        };
-
-	        var chart = new google.visualization.PieChart(document.getElementById('pie-chart'));
-	        chart.draw(data, options);
-	      }
-	    </script>
-	-->
-
-<h2 class="flowers top-pad"><?php echo t('Pedagogy'); ?></h2>
+<h2 class="flowers top-pad" style="margin-top: 5px;"><?php echo t('Pedagogy'); ?></h2>
 <p><?php echo t('Effective online instruction depends on learning experiences
 				appropriately designed and facilitated by knowledgeable facilitators.
 				Because learners have different learning styles or a combination of
@@ -215,33 +191,47 @@ array(
 				address their modes of learning in order to provide significant
 				experiences for each course user. Mouse-over the chart below to see
 		our areas of focus.'); ?></p>
+		
+		
+		<p><?php echo t('Institution Wide Content Management - 25%')?></p>
+		
+							<p><?php echo t('Online Course Delivery - 25%')?></p>
+						
+							<p><?php echo t('Targeted Collaboration - 50%')?></p>
+		
+		
+		
 <div id="pie-chart"><img
 	src="<?php echo Yii::app()->theme->getImagesUrl(); ?>/home-chart.png" />
 </div>
 
+	<div class="box-white">
 								<?php
 								$this->widget(
 			'modules.surveyor.widgets.Survey',
 								array(
 					'survey_model' => $models['workingCaregiver_survey'],
-					'title_options' => array('class' => 'flowers top-pad'),
+					'title_options' => array('class' => 'flowers'),
 					'form_options' => array('enableAjaxValidation' => true,
 											'enableClientValidation' => true),
 								)
 								);
 								?>
+	</div>
 
-<h2 class="flowers top-pad"><?php echo t('Health status of your working caregivers'); ?>
-</h2>
-<p><?php echo t('Please choose one of the surveys below to take. Depending on your position, employer 
-	or employee, submit this voluntary survey and view aggregate feedback from all previous users.'); ?>
-</p>
+	<div class="box-white">
+		<h2 class="flowers"><?php echo t('Health status of your working caregivers'); ?>
+		</h2>
+		<p><?php echo t('Please choose one of the surveys below to take. Depending on your position, employer 
+			or employee, submit this voluntary survey and view aggregate feedback from all previous users.'); ?>
+		</p>
 
-<p><a id="hrEmployerSurvey" href="#survey_hrEmployer" class="survey"
-	title="<?php echo t('HR/Employer Survey'); ?>"><?php echo t('HR/Employer Survey'); ?>
-</a> <a id="caregiverSurvey" href="#survey_caregiver" class="survey"
-	title="<?php echo t('Caregiver Survey'); ?>"><?php echo t('Caregiver Survey'); ?>
-</a></p>
+		<p><a id="hrEmployerSurvey" href="#survey_hrEmployer" class="survey button"
+			title="<?php echo t('HR/Employer Survey'); ?>"><?php echo t('HR/Employer Survey'); ?>
+		</a> <a id="caregiverSurvey" href="#survey_caregiver" class="survey button"
+			title="<?php echo t('Caregiver Survey'); ?>"><?php echo t('Caregiver Survey'); ?>
+		</a></p>
+	</div>
 
 </div>
 
@@ -266,7 +256,7 @@ $this->widget(
 		'modules.surveyor.widgets.Survey',
 array(
 				'survey_model' => $models['hrEmployer_survey'],
-				'title_options' => array('class' => 'flowers top-pad'),
+				'title_options' => array('class' => 'flowers'),
 				'form_options' => array('enableAjaxValidation' => true,
 										'enableClientValidation' => true),
 )
@@ -277,7 +267,7 @@ $this->widget(
 		'modules.surveyor.widgets.Survey',
 array(
 				'survey_model' => $models['caregiver_survey'],
-				'title_options' => array('class' => 'flowers top-pad'),
+				'title_options' => array('class' => 'flowers'),
 				'form_options' => array('enableAjaxValidation' => true,
 										'enableClientValidation' => true),
 )
@@ -286,10 +276,9 @@ array(
 
 
 
-<!-- ------------------------------------start tutorial course here -->
+<!--  start tutorial course here -->
 
-<div
-	style="display: none;">
+<div style="display: none;">
 <div id="tutorial-slide-1" class="slide">
 <h2 class="flowers">Tutorial</h2>
 <hr>
@@ -324,12 +313,12 @@ Dementia?</p>
 Tutorial&raquo;</a></p>
 </div>
 
-<!-- ------------------------------------  overview of tutorial here    -->
+<!--   overview of tutorial here    -->
 
 
 <div id="tutorial-slide-2" class="slide">
 
-<h4 style="font-size: 2em; padding-bottom: 15px;">Dementia & Alzheimer's
+<h4 style="font-size: 2em; padding-bottom: 15px;">Dementia &amp; Alzheimer's
 Disease - A Short Overview</h4>
 
 <p><strong>Objectives</strong></p>
@@ -358,7 +347,7 @@ course by the following:</p>
 	<li><a href="http://matherlifewaysinstituteonaging.com" target="_blank">Mather
 	LifeWays Insitute on Aging</a></li>
 	<li style="padding-top: 15px;"><a href="http://www.nia.nih.gov"
-		target="_blank">U.S. Department of Health & Human Services - National
+		target="_blank">U.S. Department of Health &amp; Human Services - National
 	Institute on Aging</a></li>
 </ul>
 
@@ -387,7 +376,7 @@ Back</a> <a href="javascript:;" onclick="$.fancybox.next();"
 	class="button">Next &raquo;</a></p>
 </div>
 
-<!-- ------------------------------------  Dementia here    -->
+<!--  Dementia here    -->
 
 <div id="tutorial-slide-3" class="slide">
 
@@ -447,7 +436,7 @@ Back</a> <a href="javascript:;" onclick="$.fancybox.next();"
 </div>
 
 
-<!-- ------------------------------------ Alzheimer's disease here    -->
+<!--  Alzheimer's disease here    -->
 
 
 <div id="tutorial-slide-4" class="slide">
@@ -459,7 +448,7 @@ that slowly destroys memory, thinking skills, behavior, and eventually
 even the ability to carry out the simplest tasks of daily living.
 Alzheimer's is the most common form of dementia. Symptoms usually
 develop slowly and get worse over time. In most people with Alzheimer's,
-symptoms first appear after age 60. AlzheimerÕs disease is the most
+symptoms first appear after age 60. Alzheimerâ€™s disease is the most
 common cause of dementia among older people. Alzheimer's has no current
 cure, but treatments for symptoms are available and research continues.
 The disease is named after Dr. Alois Alzheimer.</p>
@@ -505,7 +494,7 @@ Back</a> <a href="javascript:;" onclick="$.fancybox.next();"
 </div>
 
 
-<!-- ------------------------------------  data, stats, video here    -->
+<!--   data, stats, video here    -->
 
 <div id="tutorial-slide-5" class="slide">
 
@@ -569,7 +558,7 @@ Back</a> <a href="javascript:;" onclick="$.fancybox.next();"
 
 </div>
 
-<!-- ------------------------------------  closing here    -->
+<!--   closing here    -->
 
 <div id="tutorial-slide-6" class="slide">
 
