@@ -202,23 +202,23 @@ $this->widget(
 	</p>
 
 
-	<div class="box-grey" style="float: left;">
+	<div id="MatherCaregivers" class="box-grey">
 		<?php 
 		$this->widget(
-				'ext.Jplayer.Jplayer',
+				'ext.JWplayer.JWplayer',
 				array(
-						'target' => '#MatherCaregivers',
-						'files' => array(
-								'm4v' => $this->createUrl('download').'/videos/MatherCaregivers/video.m4v',
-								'ogv' => $this->createUrl('download').'/videos/MatherCaregivers/video.ogv',
-								'webmv' => $this->createUrl('download').'/videos/MatherCaregivers/video.webm',
-								'poster' => $this->createUrl('download').'/videos/MatherCaregivers/poster.jpg'
-						),
-						'size' => array(
-								'width' => '540px',
-								'height' => '305px',
-								'cssClass' => 'jp-video-mathercaregivers'
-						)
+					'target' => 'MatherCaregivers',
+					'config' => array(
+						'file' => "video.mp4",
+						'image' => $this->createUrl('download').'/videos/MatherCaregivers/poster.jpg',
+						'width' => '540px',
+						'height' => '305px',
+						'levels' => array(
+				            array('file' => $this->createUrl('download').'/videos/MatherCaregivers/video.m4v'),
+				            array('file' => $this->createUrl('download').'/videos/MatherCaregivers/video.webm'),
+				            array('file' => $this->createUrl('download').'/videos/MatherCaregivers/video.ogv')
+				        )
+					)
 				)
 		);
 		?>
