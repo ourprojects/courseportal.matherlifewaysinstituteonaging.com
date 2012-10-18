@@ -8,7 +8,7 @@ class ApiController extends OnlineCoursePortalController {
 	public function filters() {
 		return array(
 				array('filters.HttpsFilter'),
-				'verifyKey + create',
+				'verifyKey',
 		);
 	}
 	

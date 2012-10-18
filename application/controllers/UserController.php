@@ -90,9 +90,10 @@ class UserController extends OnlineCoursePortalController {
 							$transaction->commit();
 							$message = new YiiMailMessage;
 							$message->view = 'registrationConfirmation';
+							$message->setSubject(t('MatherLifeways Registration Confirmation'));
 							$message->setBody(array('user' => $models['user']), 'text/html');
-							$message->addTo($models['user']->email);
-							$message->from = Yii::app()->params['noReplyEmail'];
+							$message->setTo($models['user']->email);
+							$message->setFrom(Yii::app()->params['noReplyEmail']);
 							Yii::app()->mail->send($message);
 							$this->render('pages/registerConfSent');
 							Yii::app()->end();
@@ -115,10 +116,10 @@ class UserController extends OnlineCoursePortalController {
 		$this->render('pages/register', array('models' => $models));
 	}
 
-	public function actionActivate($id, $session_key) {
+	public function actionActivate($id, $sessionKey) {
 		$user = User::model()->findByPk($id);
-		$session_key = str_replace(array('-', '_'), array('+', '/'), $session_key);
-		if($user->session_key === $session_key) {
+		$sessionKey = str_replace(array('-', '_'), array('+', '/'), $sessionKey);
+		if($user->session_key === $sessionKey) {
 			$user->userActivated = new UserActivated;
 			$user->userActivated->user_id = $user->id;
 			if($user->userActivated->save() && $user->login(false, false)) {

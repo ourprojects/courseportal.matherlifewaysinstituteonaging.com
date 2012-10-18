@@ -9,7 +9,7 @@ $this->pageTitle = Yii::app()->name . ' - '.t('Registration Confirmed');
 		the previous page. Please click the link in that email to complete your
 		account registration.'); ?></p>
 	<p class="header">
-		<?php echo t('Please'). CHtml::link(t('email'), $this->createUrl('home/contact')). 
-		t('us if you need assistance completing the registration process.'); ?>
+		<?php echo t('Please '). CHtml::link(t('email'), $this->createUrl('home/contact')). 
+		t(' us if you need assistance completing the registration process.'); ?>
 	</p>
 </div>

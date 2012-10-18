@@ -246,7 +246,7 @@ class User extends CActiveRecord implements IUserIdentity {
 	}
 	
 	public function getActivationUrl() {
-		return Yii::app()->createAbsoluteUrl('user/activate/' . urlencode($this->id) . '/' . str_replace(array('+','/'), array('-','_'), $this->session_key));
+		return Yii::app()->createAbsoluteUrl('user/activate/id/' . urlencode($this->id) . '/sessionKey/' . str_replace(array('+','/'), array('-','_'), $this->session_key));
 	}
 
 	/**
