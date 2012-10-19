@@ -262,7 +262,7 @@ class MPTranslate extends CApplicationComponent {
         	}
         	Yii::import('translate.models.Message');
         	if(($messageModel = Message::model()->find('id = :id AND language = :language', array('id' => $model->id, 'language' => $event->language))) === null &&
-        		$this->autoTranslate) {
+        		TranslateModule::translator()->autoTranslate) {
         		$translation = $event->message;
 
         		preg_match_all('/\{(.*?)\}/', $translation, $matches);
@@ -270,7 +270,11 @@ class MPTranslate extends CApplicationComponent {
         		for($i = 0; $i < count($matches); $i++)
         			$translation = str_replace($matches[$i], "_{$i}_", $translation);
         		
-        		$translation = $this->googleTranslate($translation, $event->language, Yii::app()->getLocale()->getLanguageID(Yii::app()->sourceLanguage));
+        		$translation = TranslateModule::translator()->googleTranslate(
+        				$translation, 
+        				$event->language, 
+        				Yii::app()->getLocale()->getLanguageID(Yii::app()->sourceLanguage)
+        			);
         		if($translation !== false) {
         			for($i = 0; $i < count($matches); $i++)
         				$translation = str_replace("_{$i}_", $matches[$i], $translation);
