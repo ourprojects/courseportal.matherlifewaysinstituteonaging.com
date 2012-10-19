@@ -5,13 +5,17 @@ class MessageSource extends CActiveRecord{
         
 	static function model($className=__CLASS__){return parent::model($className);}
 	function tableName(){return Yii::app()->getMessages()->sourceMessageTable;}
+	
+	function init() {
+		$this->language = TranslateModule::translator()->getLanguageID();
+	}
 
 	function rules(){
 		return array(
             array('category,message','required'),
 			array('category', 'length', 'max'=>32),
 			array('message', 'safe'),
-			array('id, category, message,language', 'safe', 'on'=>'search'),
+			array('id, category, message, language', 'safe', 'on'=>'search'),
 		);
 	}
     
@@ -22,15 +26,18 @@ class MessageSource extends CActiveRecord{
 	}
 	function attributeLabels(){
 		return array(
-			'id'=> TranslateModule::t('ID'),
-			'category'=> TranslateModule::t('Category'),
-			'message'=> TranslateModule::t('Message'),
+			'id' => TranslateModule::t('ID'),
+			'category' => TranslateModule::t('Category'),
+			'message' => TranslateModule::t('Message'),
 		);
 	}
 
-	function search() {
+	function searchMissing() {
+		if($this->language === TranslateModule::translator()->getLanguageID(Yii::app()->sourceLanguage))
+			return new CArrayDataProvider(array());
+
 		$criteria = new CDbCriteria;
-        
+		
         $criteria->with = array('mt');
         
         $criteria->addCondition('not exists (select `id` from `'.Message::model()->tableName().'` `m` where `m`.`language`=:lang and `m`.id=`t`.`id`)');
@@ -38,14 +45,10 @@ class MessageSource extends CActiveRecord{
 		$criteria->compare('t.id', $this->id);
 		$criteria->compare('t.category', $this->category);
 		$criteria->compare('t.message', $this->message);
-        
-        $criteria->params[':lang'] = $this->language;
-        
-		$provider = new CActiveDataProvider($this, array(
-			'criteria'=>$criteria,
-		));
 		
-		return $provider;
+		$criteria->params[':lang'] = $this->language;
+
+		return new CActiveDataProvider($this, array('criteria' => $criteria));
 	}
 
 }

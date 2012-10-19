@@ -32,7 +32,7 @@
 			</div>
 			<div id="site-title"><?php echo Yii::app()->name; ?></div>
 			<div id="language-menu"><?php $this->widget('modules.translate.widgets.LanguageSelector'); ?></div>
-			<?php if(!Yii::app()->user->isGuest && Yii::app()->user->group->name === 'admin'): ?>
+			<?php if(!empty(MPTranslate::$messages) && !Yii::app()->user->isGuest && Yii::app()->user->group->name === 'admin'): ?>
 				<div id="translate-button">
 					<?php echo Yii::app()->translate->translateLink('Missing Translations on Page', 'button'); ?>	
 				</div>

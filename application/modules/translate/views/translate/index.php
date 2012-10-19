@@ -1,77 +1,41 @@
+<h1><?php echo TranslateModule::t('Translations and Languages Management')?></h1>
+<h2><?php echo TranslateModule::t('Translations')?></h2>
+<?php $this->renderPartial('_translations_grid', array('Message' => $Message)); ?>
+<h2>
 <?php 
-if(empty($messages)):
-	echo '<h2>' . TranslateModule::t('All messages translated') . '</h2>';
-else:
-    $languageKey = MPTranslate::ID; 
-    
-    $google = !empty(TranslateModule::translator()->googleApiKey);
+echo TranslateModule::t('Missing Translations ');
+$htmlOptions = array('onchange' => '$.fn.yiiGridView.update("missing-translations-grid", { data : { "MessageSource[language]" : $("#MessageSource_language").val()');
+if(Yii::app()->GetRequest()->enableCsrfValidation)
+	$htmlOptions['onchange'] .= ',"YII_CSRF_TOKEN" : "'.Yii::app()->getRequest()->getCsrfToken().'"';
+$htmlOptions['onchange'] .= '}});';
+echo CHtml::activeDropDownList(
+		$MessageSource, 
+		'language', 
+		TranslateModule::translator()->getAdminAcceptedLanguages(),
+		$htmlOptions
+); 
 ?>
-<h2><?php echo TranslateModule::t('Translate to {lang}',array('{lang}'=>TranslateModule::translator()->getLanguageDisplayName()));?></h2>
-<?php
-    if($google){
-        echo CHtml::link(TranslateModule::t('Translate all with google translate'),"#",array('id'=>$languageKey."-google-translateall"));
-        echo CHtml::script(
-            "\$('#{$languageKey}-google-translateall').click(function(){
-                var messages=[];\$('.{$languageKey}-google-message').each(function(count){
-                    messages[count]=$(this).html();
-                });".
-                CHtml::ajax(array(
-                    'url'=>$this->createUrl('translate/googletranslate'),
-                    'type'=>'post',
-                    'dataType'=>"json",
-                    'data'=>array(
-                        'language'=>Yii::app()->getLanguage(),
-                        'sourceLanguage'=>Yii::app()->sourceLanguage,
-                        'message'=>'js:messages'
-                    ),
-                    'success'=>"js:function(response){
-                        \$('.{$languageKey}-google-translation').each(function(count){
-                            $(this).val(response[count]);
-                        });
-                        \$('.{$languageKey}-google-button,#{$languageKey}-google-translateall').hide();
-                    }",
-                    'error'=>'js:function(xhr){alert(xhr.statusText);}',
-                ))."
-                return false;
-            });
-        ");
-        if(Yii::app()->getRequest()->isAjaxRequest){
-            echo CHtml::script("
-                $('#".$languageKey.'-pager'." a').click(function(){
-                    \$dialog=$('#".$languageKey.'-dialog'."').load($(this).attr('href'));
-                    return false;
-                });
-            ");
-        }
-    }
-?>
+</h2>
+<?php $this->renderPartial('_missing_translations_grid', array('MessageSource' => $MessageSource)); ?>
+<h2><?php echo t('Languages'); ?></h2>
+<?php $this->renderPartial('_accepted_languages_grid', array('AcceptedLanguages' => $AcceptedLanguages)); ?>
+<h2><?php echo t('Create New'); ?></h2>
 <div class="form">
-    <?php echo CHtml::beginForm(); ?>
-    <table>
-        <thead>
-            <th><?php echo MessageSource::model()->getAttributeLabel('category'); ?></th>
-            <th><?php echo MessageSource::model()->getAttributeLabel('message'); ?></th>
-            <th><?php echo Message::model()->getAttributeLabel('translation');?></th>
-            <?php echo $google ? CHtml::tag('th') : null;?>
-        </thead>
-        <tbody>
-        <?php
-            $this->widget('zii.widgets.CListView', array(
-                'dataProvider'=>new CArrayDataProvider($models),
-                'pager'=>array(
-                    'id'=>$languageKey.'-pager',
-                    'class'=>'CLinkPager',
-                ),
-                'viewData'=>array(
-                    'messages'=>$messages,
-                    'google'=>$google,
-                ),
-                'itemView'=>'_form',
-            ));
-        ?>
-        </tbody>
-    </table>
-    <?php echo CHtml::submitButton(TranslateModule::t('Translate'));?>
-    <?php echo CHtml::endForm()?>
+	<?php $form = $this->beginWidget('CActiveForm', array(
+			'id' => 'accepted-languages-create-form',
+			'enableAjaxValidation' => true,
+)); ?>
+	
+	<?php echo $form->errorSummary($AcceptedLanguages); ?>
+	<div class="row">
+		<?php echo $form->labelEx($AcceptedLanguages, 'id'); ?>
+		<?php echo $form->textField($AcceptedLanguages, 'id'); ?>
+		<?php echo $form->error($AcceptedLanguages, 'id'); ?>
+	</div>
+
+	<div class="row submit">
+		<?php echo CHtml::submitButton(t('Add Language')); ?>
+	</div>
+
+	<?php $this->endWidget(); ?>
 </div>
-<?php endif; ?>

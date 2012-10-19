@@ -49,6 +49,6 @@ class TranslateModule extends CWebModule {
      */
     static function t($message, $params = array()) {
         $translator = self::translator();
-        return Yii::t($translator->messageCategory, $message, $params, 'en', 'en');
+        return Yii::t($translator->messageCategory, $message, $params, 'en');
     }
 }

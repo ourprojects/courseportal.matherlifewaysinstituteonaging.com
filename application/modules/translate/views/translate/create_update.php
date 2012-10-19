@@ -1,5 +1,7 @@
-<?php $action=$model->getIsNewRecord() ? 'Create' : 'Update';?>
-<h1><?php echo TranslateModule::t(($action) . ' Message')." # ".$model->id." - ".TranslateModule::translator()->acceptedLanguages[$model->language]; ?></h1>
+<?php $action = $model->getIsNewRecord() ? 'Create' : 'Update'; ?>
+<h1>
+<?php echo TranslateModule::t($action . ' Message').' # '.$model->id.' - '.TranslateModule::translator()->getLanguageDisplayName($model->language); ?>
+</h1>
 
 <div class="form">
 

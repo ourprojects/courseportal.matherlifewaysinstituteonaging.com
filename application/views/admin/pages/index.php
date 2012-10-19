@@ -5,9 +5,7 @@
 <div id="single-column">
 <?php echo CHtml::link(t('Courses'), Yii::app()->createUrl('admin/course')); ?>
 <br />
-<?php echo Yii::app()->translate->editLink(); ?>
-<br />
-<?php echo Yii::app()->translate->missingLink(); ?>
+<?php echo CHtml::link(t('Translations And Languages'), Yii::app()->createUrl('translate/translate')); ?>
 <br />
 <?php echo CHtml::link('phpBB', Yii::app()->request->baseUrl . '/phpBB'); ?>
 </div>

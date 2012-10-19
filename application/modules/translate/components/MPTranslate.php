@@ -41,6 +41,10 @@ class MPTranslate extends CApplicationComponent {
      * */
     public $autoTranslate = false;
     
+    public $managementAccessRules = array();
+    
+    public $managementActionFilters = array();
+    
     /**
      * @var array $_cache will contain variables
      * */
@@ -81,10 +85,10 @@ class MPTranslate extends CApplicationComponent {
 			$language = (string)Yii::app()->getLanguage();
 		}
 		 
-		//If the language is not recognized maybe the user didn't add the language part of the address.
-		//Try and add the source language to the url and redirect to the new url.
+		// If the language is not recognized maybe the user didn't add the language part of the address.
+		// Redirect to the same uri with the source language set.
 		if(!$this->isAdminAcceptedLanguage(Yii::app()->getLocale()->getLanguageID($language))) {
-			Yii::app()->getRequest()->redirect(Yii::app()->createUrl("$language/$route", array('language' => Yii::app()->sourceLanguage)));
+			Yii::app()->getRequest()->redirect(Yii::app()->createUrl(Yii::app()->getRequest()->getRequestUri(), array('language' => Yii::app()->sourceLanguage)));
 		}
 		
 		$this->setLanguage($language);
@@ -242,7 +246,7 @@ class MPTranslate extends CApplicationComponent {
      * @param CMissingTranslationEvent $event
      * @return string the message to translate or the translated message if option autoTranslate is set to true
      */
-    function missingTranslation($event) {
+    public function missingTranslation($event) {
         if($event !== null && 
         		(Yii::app()->getLocale()->getLanguageID($event->language) !== Yii::app()->getLocale()->getLanguageID(Yii::app()->sourceLanguage) || 
         			Yii::app()->getMessages()->forceTranslation)) {
@@ -258,7 +262,7 @@ class MPTranslate extends CApplicationComponent {
         	}
         	Yii::import('translate.models.Message');
         	if(($messageModel = Message::model()->find('id = :id AND language = :language', array('id' => $model->id, 'language' => $event->language))) === null &&
-        		Yii::app()->translate->autoTranslate) {
+        		$this->autoTranslate) {
         		$translation = $event->message;
 
         		preg_match_all('/\{(.*?)\}/', $translation, $matches);
@@ -266,7 +270,7 @@ class MPTranslate extends CApplicationComponent {
         		for($i = 0; $i < count($matches); $i++)
         			$translation = str_replace($matches[$i], "_{$i}_", $translation);
         		
-        		$translation = Yii::app()->translate->googleTranslate($translation, $event->language, Yii::app()->getLocale()->getLanguageID(Yii::app()->sourceLanguage));
+        		$translation = $this->googleTranslate($translation, $event->language, Yii::app()->getLocale()->getLanguageID(Yii::app()->sourceLanguage));
         		if($translation !== false) {
         			for($i = 0; $i < count($matches); $i++)
         				$translation = str_replace("_{$i}_", $matches[$i], $translation);
@@ -294,23 +298,18 @@ class MPTranslate extends CApplicationComponent {
      * @param string $type accepted types are : link and button
      * @return string
      */
-    function translateLink($label='Translate',$type='link'){
+    public function translateLink($label = 'Translate', $type = 'link') {
     	$label = TranslateModule::t($label);
-        $form = CHtml::form(Yii::app()->getController()->createUrl('/translate/translate/index'));
-        if(count(self::$messages))
-            foreach(self::$messages as $index => $message)
-                foreach($message as $name => $value)
-                    $form .= CHtml::hiddenField(self::ID."-missing[$index][$name]",$value);
+        $form = CHtml::form(Yii::app()->getController()->createUrl('/translate/translate/missingOnPage'));
+        foreach(self::$messages as $index => $message)
+            foreach($message as $name => $value)
+                $form .= CHtml::hiddenField(self::ID."-missing[$index][$name]", $value);
         if($type === 'button')
             $form .= CHtml::submitButton($label);
         else
             $form .= CHtml::linkButton($label);
         $form .= CHtml::endForm();
         return $form;
-    }
-    
-    function hasMessages() {
-        return count(self::$messages) > 0;
     }
     
     /**
@@ -321,49 +320,17 @@ class MPTranslate extends CApplicationComponent {
      * @param string $type accepted types are : link and button
      * @return string
      */
-    function translateDialogLink($label='Translate',$title=null,$type='link'){
+    public function translateDialogLink($label='Translate',$title=null,$type='link'){
     	$label = TranslateModule::t($label);
-        return $this->ajaxDialog($label,'translate/translate/index',$title,$type,array('data'=>array(self::ID.'-missing'=>self::$messages)));
+        return $this->ajaxDialog($label,'translate/translate/missingOnPage',$title,$type,array('data'=>array(self::ID.'-missing'=>self::$messages)));
     }
     
-    /**
-     * creates a link to the page where you edit the translations
-     * 
-     * @param string $label
-     * @param string $type accepted types are button and link
-     * @return string
-     */
-    function editLink($label='Edit translations',$type='link'){
-    	$label = TranslateModule::t($label);
-        $url=Yii::app()->getController()->createUrl('/translate/edit/admin');
-        if($type==='button')
-            return CHtml::button($label,$url);
-        else
-            return CHtml::link($label,$url);
-    }
-    
-    /**
-     * creates a link to the page where you check all missing translations
-     * 
-     * @param string $label
-     * @param string $type accepted types are button and link
-     * @return string
-     */
-    function missingLink($label='Missing translations',$type='link'){
-    	$label = TranslateModule::t($label);
-        $url=Yii::app()->getController()->createUrl('/translate/edit/missing');
-        if($type==='button')
-            return CHtml::button($label,$url);
-        else
-            return CHtml::link($label,$url);
-    }
-    
-    private function ajaxDialog($label,$url,$title=null,$type='link',$ajaxOptions=array()){
+    private function ajaxDialog($label, $url, $title=null, $type='link', $ajaxOptions=array()){
         
         $id=self::ID.'-dialog';
         
         $ajaxOptions=array_merge(array(
-            'update'=>'#'.$id,
+            'update'=> "#$id",
             'type'=>'post',
             'complete'=>"function(){ $('#{$id}').dialog('option', 'position', 'center').dialog('open');}",
         ),$ajaxOptions);
@@ -390,7 +357,7 @@ class MPTranslate extends CApplicationComponent {
      * @param mixed $sourceLanguage language that the message is written in, if null it will use the application source language
      * @return string translated message
      */
-    function googleTranslate($message,$targetLanguage=null,$sourceLanguage=null) {
+    public function googleTranslate($message,$targetLanguage=null,$sourceLanguage=null) {
         if($targetLanguage===null)
             $targetLanguage=Yii::app()->getLanguage();
         if($sourceLanguage===null)

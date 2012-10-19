@@ -67,6 +67,18 @@ return array(
 						'googleApiKey' => 'AIzaSyD5Xxt_4VKM13pF9uQdcULK4eHuTe7w940',
 						'autoTranslate' => true,
 						'messageCategory' => 'onlinecourseportal',
+						'managementActionFilters' => array(
+														array('filters.HttpsFilter'),
+														'accessControl',
+												),
+						'managementAccessRules' => array(
+														array('allow',
+																'expression' => '!$user->isGuest && $user->group->name === \'admin\'',
+														),
+														array('deny',
+																'users' => array('*'),
+														),
+												),
 				),
 				
 				'user' => array(
