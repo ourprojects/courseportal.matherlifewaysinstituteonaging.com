@@ -5,14 +5,12 @@ $this->widget('zii.widgets.grid.CGridView', array(
 	'dataProvider' => $AcceptedLanguages->search(),
 	'filter' => $AcceptedLanguages,
 	'columns' => array(
-        array(
-            'name' => 'id',
-            'filter' => CHtml::listData($source, 'id', 'id'),
-        ),
+        'id',
+		'name',
         array(
             'class' => 'CButtonColumn',
             'template' => '{delete}',
-            'deleteButtonUrl' => 'Yii::app()->getController()->createUrl("acceptedLanguageDelete", array("id" => $data->id))',
+            'deleteButtonUrl' => 'Yii::app()->getController()->createUrl("acceptedDelete", array("model" => "AcceptedLanguages", "id" => $data->id))',
         )
 	),
 )); 

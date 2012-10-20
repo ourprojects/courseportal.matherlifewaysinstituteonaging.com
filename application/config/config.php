@@ -51,7 +51,7 @@ return array(
 				),
 				
 				'messages' => array(
-						'class' => 'CDbMessageSource',
+						'class' => 'DbMessageSource',
 						'forceTranslation' => false,
 						'onMissingTranslation' => array('MPTranslate', 'missingTranslation'),
 						'sourceMessageTable' => '{{source_message}}',

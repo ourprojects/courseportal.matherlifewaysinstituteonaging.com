@@ -30,7 +30,7 @@ if($google) {
                     'type' => 'post',
                     'data' => array(
                         'message' => $message['message'],
-                        'language' => Yii::app()->getLanguage(),
+                        'messageLanguage' => Yii::app()->getLanguage(),
                         'sourceLanguage' => Yii::app()->sourceLanguage
                     ),
                     'success' => "js:function(response){

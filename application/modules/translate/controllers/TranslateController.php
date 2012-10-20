@@ -26,23 +26,6 @@ class TranslateController extends OnlineCoursePortalController {
 		}
 	}
 	
-	/**
-	 * override needed to, in case of ajax requests, use renderPartial and disable the jquery
-	 */
-	public function render($view, $data = array(), $return = false) {
-		if(Yii::app()->getRequest()->getIsAjaxRequest()) {
-			Yii::app()->getClientScript()->scriptMap = array(
-					'jquery.js' => false,
-					'jquery.min.js' => false,
-					'jquery.ui.js' => false,
-					'jquery.ui.min.js' => false
-			);
-			return parent::renderPartial($view, $data, false, true);
-		} else {
-			return parent::render($view, $data, $return);
-		}
-	}
-	
 	public function actionMissingOnPage() {
         if(isset($_POST['Message'])) {
             foreach($_POST['Message'] as $id => $message){
@@ -61,7 +44,7 @@ class TranslateController extends OnlineCoursePortalController {
         $key = $translator::ID."-missing";
         $postMissing = array();
         if(isset($_POST[$key]))
-            $postMissing=$_POST[$key];
+            $postMissing = $_POST[$key];
         else if(Yii::app()->getUser()->hasState($key))
             $postMissing = Yii::app()->getUser()->getState($key);
         $models = array();
@@ -75,20 +58,57 @@ class TranslateController extends OnlineCoursePortalController {
             }
         }
         
-        $data=array('messages' => $postMissing, 'models' => $models);
+        $data = array('messages' => $postMissing, 'models' => $models);
         
         $this->render('missing', $data);
 	}
 	
     public function actionGoogleTranslate() {
-        if(Yii::app()->getRequest()->getIsPostRequest()) {
-            $translation = TranslateModule::translator()->googleTranslate($_POST['message'], $_POST['language'], $_POST['sourceLanguage']);
-            if(is_array($translation))
-                echo CJSON::encode($translation);
-            else
-                echo $translation;
-        } else
-            throw new CHttpException(400);
+    	$translation = TranslateModule::translator()->googleTranslate($_REQUEST['message'], $_REQUEST['messageLanguage'], $_REQUEST['sourceLanguage']);
+        if(is_array($translation))
+            echo CJSON::encode($translation);
+        else
+            echo $translation;
+    }
+    
+    public function actionGoogleTranslateMissing() {
+    	if(isset($_REQUEST['MessageSource'])) {
+    		$source = new MessageSource('search');
+    		$source->attributes = $_REQUEST['MessageSource'];
+    		if($source->language !== TranslateModule::translator()->getLanguageID(Yii::app()->sourceLanguage)) {
+	    		$errors = array();
+		    	foreach($source->findAll($source->getMissingSearchCriteria()) as $message) {
+		    		if(($messageModel = Message::model()->find('id = :id AND language = :language', array('id' => $message->id, 'language' => $message->language))) === null) {
+		    			$translation = $message['message'];
+		    			 
+		    			preg_match_all('/\{(.*?)\}/', $translation, $matches);
+		    			$matches = $matches[0];
+		    			for($i = 0; $i < count($matches); $i++)
+		    				$translation = str_replace($matches[$i], "_{$i}_", $translation);
+		    				 
+	    				$translation = TranslateModule::translator()->googleTranslate(
+	    						$translation,
+	    						$message->language,
+	    						Yii::app()->sourceLanguage
+	    				);
+	    				if($translation === false) {
+	    					$errors[$message->id] = TranslateModule::t('Message could not be translated by Google.');
+	    				} else {
+	    					for($i = 0; $i < count($matches); $i++)
+	    						$translation = str_replace("_{$i}_", $matches[$i], $translation);
+	    					 
+	    					$messageModel = new Message;
+	    					$messageModel->attributes = array('id' => $message->id, 'category' => $message->category, 'language' => $message->language, 'translation' => $translation);
+		    				if(!$messageModel->save())
+		    					$errors[$message->id] = TranslateModule::t('Failed to save translated message.');
+		    			}
+			    	}
+			    }
+			    $errors['success'] = empty($errors);
+			    echo CJSON::encode($errors);
+    		}
+    	} else
+    		throw new CHttpException(400, "A message language was not specified.");
     }
     
     /**
@@ -97,14 +117,17 @@ class TranslateController extends OnlineCoursePortalController {
      * @param integer $id the ID of the model to be updated
      */
     public function actionCreate($id, $messageLanguage) {
-    	$model = new Message('create');
+    	$model = new Message;
     	$model->id = $id;
     	$model->language = $messageLanguage;
     
     	if(isset($_POST['Message'])){
     		$model->attributes = $_POST['Message'];
     		if($model->save())
-    			$this->redirect(array('missing'));
+    			$this->redirect(Yii::app()->getUser()->getReturnUrl());
+    	} else {
+	    	if($referer = Yii::app()->getRequest()->getUrlReferrer())
+	    		Yii::app()->getUser()->setReturnUrl($referer);
     	}
     
     	$this->render('create_update', array('model' => $model));
@@ -116,52 +139,58 @@ class TranslateController extends OnlineCoursePortalController {
      * @param integer $id the ID of the model to be updated
      */
     public function actionUpdate($id, $messageLanguage) {
-    	$model = $this->translateLoadModel($id, $messageLanguage);
-    
+    	$model = Message::model()->findByPk(array('id' => $id, 'language' => $messageLanguage));
+    	if($model === null)
+    		throw new CHttpException(404, 'The requested message does not exist.');
     	if(isset($_POST['Message'])) {
     		$model->attributes = $_POST['Message'];
     		if($model->save())
-    			$this->redirect(array('admin'));
+    			$this->redirect(Yii::app()->getUser()->getReturnUrl());
+    	} else {
+	    	if($referer = Yii::app()->getRequest()->getUrlReferrer())
+	    		Yii::app()->getUser()->setReturnUrl($referer);
     	}
     
     	$this->render('create_update', array('model' => $model));
     }
     
     /**
-     * Deletes a message record
+     * Deletes a record
      * @param integer $id the ID of the model to be deleted
      * @param string $language the language of the model to de deleted
      */
-    public function actionDelete($id, $messageLanguage) {
-    	if(Yii::app()->getRequest()->getIsPostRequest()) {
-    		$model = $this->translateLoadModel($id, $messageLanguage);
-    		if($model->delete()) {
-    			if(Yii::app()->getRequest()->getIsAjaxRequest()) {
-    				echo TranslateModule::t('Message deleted successfully');
-    				Yii::app()->end();
-    			} else
-    				$this->redirect(Yii::app()->getRequest()->getUrlReferrer());
-    		}
-    	} else
-    		throw new CHttpException(400);
-    }
-    
-    /**
-     * Deletes an accepted language record
-     * @param integer $id the ID of the model to be deleted
-     * @param string $language the language of the model to de deleted
-     */
-    public function actionAcceptedLanguageDelete($id) {
-    	if(Yii::app()->getRequest()->getIsPostRequest()) {
-    		if(AcceptedLanguages::model()->findByPk($id)->delete()) {
-    			if(Yii::app()->getRequest()->getIsAjaxRequest()) {
-    				echo TranslateModule::t('Language deleted successfully');
-    				Yii::app()->end();
-    			} else
-    				$this->redirect(Yii::app()->getRequest()->getUrlReferrer());
-    		}
-    	} else
-    		throw new CHttpException(400);
+    public function actionDelete($model, $id, $messageLanguage = null) {
+    	$message = '';
+    	switch($model) {
+    		case 'Message':
+    			$result = false;
+    			if($messageLanguage !== null) {
+    				$model = Message::model()->findByPk(array('id' => $id, 'language' => $messageLanguage));
+    				if($model !== null)
+    					$result = $model->delete();
+    			} else {
+    				$result = Message::model()->deleteAll('id=:id', array(':id' => $id));
+    			}
+    			$message = empty($result) ? 'An error occurred deleting the message' : 'Message deleted successfully';
+    			break;
+    		case 'AcceptedLanguages':
+    			$model = AcceptedLanguages::model()->findByPk($id);
+    			$message =  ($model !== null && $model->delete()) ? 'Language deleted successfully' : 'An error occurred deleting the language';
+    			break;
+    		case 'MessageSource':
+    			$model = MessageSource::model()->findByPk($id);
+    			if($model !== null && $model->delete()) {
+    				Message::model()->deleteAll('id=:id', array(':id' => $id));
+					$message = 'Message source deleted successfully';
+    			} else {
+    				$message = 'An error occurred deleting the message source';
+    			}
+    			break;
+    	}
+    	if(Yii::app()->getRequest()->getIsAjaxRequest())
+    		echo TranslateModule::t($message);
+    	else
+    		$this->redirect(Yii::app()->getRequest()->getUrlReferrer());
     }
     
     /**
@@ -190,37 +219,6 @@ class TranslateController extends OnlineCoursePortalController {
     		}
     	}
     	$this->render('index', $models);
-    }
-
-    /**
-     * Deletes a record
-     * @param integer $id the ID of the model to be deleted
-     * @param string $language the language of the model to de deleted
-     */
-    public function actionMissingDelete($id) {
-    	if(Yii::app()->getRequest()->getIsPostRequest()) {
-    		$model = MessageSource::model()->findByPk($id);
-    		if($model->delete()) {
-    			if(Yii::app()->getRequest()->getIsAjaxRequest()) {
-    				echo TranslateModule::t('Message deleted successfully');
-    				Yii::app()->end();
-    			} else
-    				$this->redirect(Yii::app()->getRequest()->getUrlReferrer());
-    		}
-    	} else
-    		throw new CHttpException(400);
-    }
-    
-    /**
-     * Returns the data model based on the primary key given in the GET variable.
-     * If the data model is not found, an HTTP exception will be raised.
-     * @param integer the ID of the model to be loaded
-     */
-    public function translateLoadModel($id, $messageLanguage) {
-    	$model = Message::model()->findByPk(array('id' => $id, 'language' => $messageLanguage));
-    	if($model === null)
-    		throw new CHttpException(404, 'The requested page does not exist.');
-    	return $model;
     }
     
 }

@@ -1,10 +1,15 @@
 <?php
-class MessageSource extends CActiveRecord{
+class MessageSource extends CActiveRecord {
     
     public $language;
         
-	static function model($className=__CLASS__){return parent::model($className);}
-	function tableName(){return Yii::app()->getMessages()->sourceMessageTable;}
+	static function model($className = __CLASS__) {
+		return parent::model($className);
+	}
+	
+	function tableName() {
+		return Yii::app()->getMessages()->sourceMessageTable;
+	}
 	
 	function init() {
 		$this->language = TranslateModule::translator()->getLanguageID();
@@ -21,7 +26,7 @@ class MessageSource extends CActiveRecord{
     
 	function relations(){
 		return array(
-            'mt'=>array(self::HAS_MANY,'Message','id','joinType'=>'inner join'),
+            'mt' => array(self::HAS_MANY, 'Message', 'id', 'joinType'=>'inner join'),
 		);
 	}
 	function attributeLabels(){
@@ -31,24 +36,20 @@ class MessageSource extends CActiveRecord{
 			'message' => TranslateModule::t('Message'),
 		);
 	}
+	
+	public function getMissingSearchCriteria() {
+		$criteria = new CDbCriteria(array('with' => 'mt', 'params' => array(':lang' => $this->language)));
+		return $criteria->addCondition('not exists (select `id` from `'.Message::model()->tableName().'` `m` where `m`.`language`=:lang and `m`.id=`t`.`id`)')
+					->compare('t.id', $this->id)
+					->compare('t.category', $this->category)
+					->compare('t.message', $this->message);
+	}
 
 	function searchMissing() {
 		if($this->language === TranslateModule::translator()->getLanguageID(Yii::app()->sourceLanguage))
 			return new CArrayDataProvider(array());
-
-		$criteria = new CDbCriteria;
 		
-        $criteria->with = array('mt');
-        
-        $criteria->addCondition('not exists (select `id` from `'.Message::model()->tableName().'` `m` where `m`.`language`=:lang and `m`.id=`t`.`id`)');
-      
-		$criteria->compare('t.id', $this->id);
-		$criteria->compare('t.category', $this->category);
-		$criteria->compare('t.message', $this->message);
-		
-		$criteria->params[':lang'] = $this->language;
-
-		return new CActiveDataProvider($this, array('criteria' => $criteria));
+		return new CActiveDataProvider($this, array('criteria' => $this->getMissingSearchCriteria()));
 	}
 
 }

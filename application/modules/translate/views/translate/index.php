@@ -4,20 +4,43 @@
 <h2>
 <?php 
 echo TranslateModule::t('Missing Translations ');
-$htmlOptions = array('onchange' => '$.fn.yiiGridView.update("missing-translations-grid", { data : { "MessageSource[language]" : $("#MessageSource_language").val()');
-if(Yii::app()->GetRequest()->enableCsrfValidation)
-	$htmlOptions['onchange'] .= ',"YII_CSRF_TOKEN" : "'.Yii::app()->getRequest()->getCsrfToken().'"';
-$htmlOptions['onchange'] .= '}});';
 echo CHtml::activeDropDownList(
 		$MessageSource, 
 		'language', 
-		TranslateModule::translator()->getAdminAcceptedLanguages(),
-		$htmlOptions
+		TranslateModule::translator()->getLanguageDisplayNames(),
+		array('onchange' => '$.fn.yiiGridView.update("missing-translations-grid");')
 ); 
+
+if(!empty(TranslateModule::translator()->googleApiKey)) {
+	echo CHtml::ajaxButton(
+			TranslateModule::t('Try Google Translate'), 
+			$this->createUrl('googleTranslateMissing'),
+			array(
+					'beforeSend' => 'function(id, options) { options.url = options.url + "&MessageSource[language]=" + $("#MessageSource_language").val(); }',
+					'success' => 'function(data) {  
+						if(data["success"])
+							alert("All messsages translated.");
+						else
+							alert("Not all messages were translated successfully.");
+						$.fn.yiiGridView.update("missing-translations-grid"); 
+						$.fn.yiiGridView.update("translations-grid"); 
+					}',
+					'error' => 'function(XHR) { alert("A server error ocurred."); }'
+				)
+		);
+}
 ?>
 </h2>
-<?php $this->renderPartial('_missing_translations_grid', array('MessageSource' => $MessageSource)); ?>
-<h2><?php echo t('Languages'); ?></h2>
+<?php $this->renderPartial(
+		'_missing_translations_grid', 
+		array(
+				'MessageSource' => $MessageSource, 
+				'params' => array(
+						'beforeAjaxUpdate' => 'function(id, options) { options.url = options.url + "&MessageSource[language]=" + $("#MessageSource_language").val(); }'
+					)
+			)
+	); ?>
+<h2><?php echo t('User Selectable Languages'); ?></h2>
 <?php $this->renderPartial('_accepted_languages_grid', array('AcceptedLanguages' => $AcceptedLanguages)); ?>
 <h2><?php echo t('Create New'); ?></h2>
 <div class="form">

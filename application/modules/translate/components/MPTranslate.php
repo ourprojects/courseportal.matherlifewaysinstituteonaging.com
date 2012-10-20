@@ -134,7 +134,7 @@ class MPTranslate extends CApplicationComponent {
 	}
 	
 	public function getAdminAcceptedLanguages() {
-		$cacheKey = self::ID . 'cache-admin-accepted-languages-' . Yii::app()->getLanguage();
+		$cacheKey = self::ID . '-cache-admin-accepted-languages-' . Yii::app()->getLanguage();
 		if(!isset($this->_cache[$cacheKey])) {
 			if(($cache = Yii::app()->getCache()) === null || ($languages = $cache->get($cacheKey)) === false) {
 				$languageDisplayNames = $this->getLanguageDisplayNames();

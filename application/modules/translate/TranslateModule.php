@@ -40,6 +40,10 @@ class TranslateModule extends CWebModule {
     static function missingTranslation($event) {
         return self::translator()->missingTranslation($event);
     }
+    
+    static function cDbCriteriaInstance($data = array()) {
+    	return new CDbCriteria($data);
+    }
     /**
      * translate some message using the module configuration
      * 
