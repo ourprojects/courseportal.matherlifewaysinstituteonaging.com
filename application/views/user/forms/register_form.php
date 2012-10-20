@@ -84,11 +84,11 @@
 	<?php 
 	$this->widget(
 			'modules.surveyor.widgets.Survey', 
-			array('survey_model' => $models['profile_questions'], 
-				  'title_show' => false,
-				  'description_show' => false,
-				  'form_show' => false,
-				  'question_options' => array('class' => 'row'))
+			array('model' => $models['profile_questions'], 
+				  'title' => array('show' => false),
+				  'description' => array('show' => false),
+				  'form' => array('show' => false),
+				  'question' => array('options' => array('class' => 'row')))
 		); 
 	?>
 	

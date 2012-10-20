@@ -262,10 +262,15 @@ $this->widget(
 		$this->widget(
 				'modules.surveyor.widgets.Survey',
 				array(
-						'survey_model' => $models['workingCaregiver_survey'],
-						'title_options' => array('class' => 'flowers'),
-						'form_options' => array('enableAjaxValidation' => true,
-								'enableClientValidation' => true),
+						'model' => $models['workingCaregiver_survey'],
+						'title' => array('options' => array('class' => 'flowers')),
+						'form' => array(
+								'options' => 
+										array(
+												'enableAjaxValidation' => true,
+												'enableClientValidation' => true
+											),
+								)				
 				)
 		);
 		?>
@@ -315,10 +320,14 @@ $this->widget(
 	$this->widget(
 			'modules.surveyor.widgets.Survey',
 			array(
-					'survey_model' => $models['hrEmployer_survey'],
-					'title_options' => array('class' => 'flowers'),
-					'form_options' => array('enableAjaxValidation' => true,
-							'enableClientValidation' => true),
+					'model' => $models['hrEmployer_survey'],
+					'title' => array('options' => array('class' => 'flowers')),
+					'form' => array('options' => 
+									array(
+										'enableAjaxValidation' => true,
+										'enableClientValidation' => true
+									),
+								)
 			)
 	);
 	?>
@@ -328,10 +337,14 @@ $this->widget(
 	$this->widget(
 			'modules.surveyor.widgets.Survey',
 			array(
-					'survey_model' => $models['caregiver_survey'],
-					'title_options' => array('class' => 'flowers'),
-					'form_options' => array('enableAjaxValidation' => true,
-							'enableClientValidation' => true),
+					'model' => $models['caregiver_survey'],
+					'title' => array('options' => array('class' => 'flowers')),
+					'form' => array('options' => 
+									array(
+										'enableAjaxValidation' => true,
+										'enableClientValidation' => true
+									),
+								)
 			)
 	);
 	?>
