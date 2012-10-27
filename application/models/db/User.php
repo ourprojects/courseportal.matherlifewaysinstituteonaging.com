@@ -102,6 +102,8 @@ class User extends CActiveRecord implements IUserIdentity {
 			array('group_id', 'determineGroup', 'on' => 'pushedRegister, register'), 
 			array('group_id', 'exist', 'attributeName' => 'id', 'className' => 'Group', 'allowEmpty' => false),
 			array('group_id', 'required'),
+				
+			array('id, group_id, email, created', 'safe', 'on' => 'search')
         );
 	}
 
@@ -117,7 +119,6 @@ class User extends CActiveRecord implements IUserIdentity {
             'group' => array(self::BELONGS_TO, 'Group', 'group_id'),
 			'userActivated' => array(self::HAS_ONE, 'UserActivated', 'user_id'),
 			'userProfile' => array(self::HAS_ONE, 'UserProfile', 'user_id'),
-			'userProfileExtended' => array(self::HAS_ONE, 'UserProfileExtended', 'user_id'),
 			'userCourses' => array(self::HAS_MANY, 'UserCourse', 'user_id'),
 			'courses' => array(self::HAS_MANY, 'Course', array('course_id' => 'id'), 'through' => 'userCourses'),
 		);
@@ -148,24 +149,27 @@ class User extends CActiveRecord implements IUserIdentity {
 		);
 	}
 	
+	public function getSearchCriteria() {
+		$criteria = new CDbCriteria;
+		
+		$criteria->compare('id', $this->id);
+		$criteria->compare('password', $this->password, true);
+		$criteria->compare('salt', $this->salt, true);
+		$criteria->compare('group_id',$this->group_id);
+		$criteria->compare('email', $this->email, true);
+		$criteria->compare('session_key', $this->session_key, true);
+		$criteria->compare('created', $this->created, true);
+		
+		return $criteria;
+	}
+	
 	/**
 	 * Retrieves a list of models based on the current search/filter conditions.
 	 * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.
 	 */
 	public function search() {
-	
-		$criteria = new CDbCriteria;
-	
-        $criteria->compare('id', $this->id);
-        $criteria->compare('password', $this->password, true);
-        $criteria->compare('salt', $this->salt, true);
-        $criteria->compare('group_id',$this->group_id);
-        $criteria->compare('email', $this->email, true);
-        $criteria->compare('session_key', $this->session_key, true);
-        $criteria->compare('created', $this->created, true);
-	
 		return new CActiveDataProvider($this, array(
-				'criteria' => $criteria,
+				'criteria' => $this->getSearchCriteria(),
 		));
 	}
 
@@ -246,7 +250,8 @@ class User extends CActiveRecord implements IUserIdentity {
 	}
 	
 	public function getActivationUrl() {
-		return Yii::app()->createAbsoluteUrl('user/activate/id/' . urlencode($this->id) . '/sessionKey/' . str_replace(array('+','/'), array('-','_'), $this->session_key));
+		Yii::app()->loadHelper('Utilities');
+		return Yii::app()->createAbsoluteUrl('user/activate/' . urlencode($this->id) . '/' . base64_url_encode($this->session_key));
 	}
 
 	/**

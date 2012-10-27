@@ -11,11 +11,6 @@
  * @property string $zip_code
  * @property integer $state_id
  * @property string $country_iso
- * @property integer $employment_status_id
- * @property integer $age_group_id
- * @property integer $caregiver
- * @property string $caregiver_title
- * @property integer $caring_at_home
  *
  * The followings are the available model relations:
  * @property User $user
@@ -60,6 +55,8 @@ class UserProfile extends CActiveRecord {
         		
         	array('state_id', 'exist', 'attributeName' => 'id', 'className' => 'States', 'allowEmpty' => true),
         	array('user_id', 'exist', 'attributeName' => 'id', 'className' => 'User', 'allowEmpty' => false),
+        		
+        	array('user_id, firstname, lastname, city, zip_code, state_id, country_iso', 'safe', 'on' => 'search')
         );
     }
 
@@ -89,25 +86,28 @@ class UserProfile extends CActiveRecord {
         	'state' => t('State')
         );
     }
+    
+    public function getSearchCriteria() {
+    	$criteria = new CDbCriteria;
+    	
+    	$criteria->compare('user_id', $this->user_id);
+    	$criteria->compare('firstname', $this->firstname,true);
+    	$criteria->compare('lastname', $this->lastname,true);
+    	$criteria->compare('city', $this->city,true);
+    	$criteria->compare('zip_code', $this->zip_code,true);
+    	$criteria->compare('state_id', $this->state_id,true);
+    	$criteria->compare('country_iso', $this->country_iso,true);
+    	
+    	return $criteria;
+    }
 
     /**
      * Retrieves a list of models based on the current search/filter conditions.
      * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.
      */
     public function search() {
-
-        $criteria = new CDbCriteria;
-
-        $criteria->compare('user_id', $this->user_id);
-        $criteria->compare('firstname', $this->firstname,true);
-        $criteria->compare('lastname', $this->lastname,true);
-        $criteria->compare('city', $this->city,true);
-        $criteria->compare('zip_code', $this->zip_code,true);
-        $criteria->compare('state_id', $this->state_id,true);
-        $criteria->compare('country_iso', $this->country_iso,true);
-
         return new CActiveDataProvider($this, array(
-            'criteria' => $criteria,
+            'criteria' => $this->getSearchCriteria(),
         ));
     }
     

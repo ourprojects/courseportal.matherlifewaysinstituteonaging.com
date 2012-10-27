@@ -11,6 +11,7 @@
 		<![endif]-->
 	<?php echo CHtml::cssFile(Yii::app()->theme->getStylesUrl().'/main.css'); ?>
 	<?php echo CHtml::cssFile(Yii::app()->theme->getStylesUrl().'/form.css'); ?>
+	<?php Yii::app()->clientScript->registerScriptFile(Yii::app()->theme->getScriptsUrl() . '/main.js', CClientScript::POS_HEAD); ?>
 	<title>
 		<?php 
 		$this->pageTitle = Yii::app()->name;

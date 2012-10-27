@@ -5,9 +5,10 @@ class UrlManager extends CUrlManager {
 	public $pathInfoSegments = array();
 
 	public function createUrl($route, $params = array(), $ampersand = '&') {
-        if (!isset($params['language']))
+        if(!isset($params['language']))
             $params['language'] = Yii::app()->language;
-       	$route = $params['language'] . '/' . ltrim($route, '/');
+        if($params['language'] !== false)
+       		$route = $params['language'] . '/' . ltrim($route, '/');
         unset($params['language']);
         return parent::createUrl($route, $params, $ampersand);
     }

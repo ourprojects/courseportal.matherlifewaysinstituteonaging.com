@@ -46,8 +46,12 @@ return array(
 				),
 				
 				'request' => array(
+						'class' => 'HttpRequest',
 						'enableCookieValidation' => true,
 						'enableCsrfValidation' => true,
+						'noCsrfValidationRoutes' => array(
+									'user/[create|read|update|delete|addCourse]/*'
+								)
 				),
 				
 				'messages' => array(

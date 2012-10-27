@@ -12,14 +12,14 @@
 	foreach($survey['model']->questions as $q) {
 		$question['options']['id'] .= "_{$q->id}";
 		echo CHtml::tag('div', $question['options'], '', false);
-		echo CHtml::activeLabelEx($survey['model'], "question{$q->id}", array('for' => "{$survey['model']->name}Survey[question{$q->id}]"));
+		echo CHtml::activeLabelEx($survey['model'], "question{$q->id}", array('for' => "Survey[{$survey['model']->name}][question{$q->id}]"));
 		switch($q->type->name) {
 			case 'select':
 				echo CHtml::activeDropDownList(
 										$survey['model'], 
 										"question{$q->id}", 
 										CHtml::listData($q->options, 'id', 'text'), 
-										array('name' => "{$survey['model']->name}Survey[question{$q->id}]")
+										array('name' => "Survey[{$survey['model']->name}][question{$q->id}]")
 					);
 				break;
 			case 'checkbox':
@@ -27,7 +27,7 @@
 										$survey['model'], 
 										"question{$q->id}", 
 										CHtml::listData($q->options, 'id', 'text'), 
-										array('name' => "{$survey['model']->name}Survey[question{$q->id}]")
+										array('name' => "Survey[{$survey['model']->name}][question{$q->id}]")
 					);
 				break;
 			case 'radio':
@@ -35,21 +35,21 @@
 										$survey['model'],
 										"question{$q->id}",
 										CHtml::listData($q->options, 'id', 'text'),
-										array('name' => "{$survey['model']->name}Survey[question{$q->id}]")
+										array('name' => "Survey[{$survey['model']->name}][question{$q->id}]")
 					);
 				break;
 			case 'textfield':
 				echo CHtml::activeTextField(
 										$survey['model'], 
 										"question{$q->id}",
-										array('name' => "{$survey['model']->name}Survey[question{$q->id}]")
+										array('name' => "Survey[{$survey['model']->name}][question{$q->id}]")
 					);
 				break;
 			case 'textarea':
 				echo CHtml::activeTextArea(
 						$survey['model'],
 						"question{$q->id}",
-						array('name' => "{$survey['model']->name}Survey[question{$q->id}]")
+						array('name' => "Survey[{$survey['model']->name}][question{$q->id}]")
 						);
 				break;
 		}
