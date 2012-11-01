@@ -73,7 +73,7 @@ class UserController extends ApiController {
 			echo CActiveForm::validateTabular($models, null, false);
 			Yii::app()->end();
 		}
-
+		
 		// collect user input data
 		if(isset($_POST['User']) && 
 				isset($_POST['UserProfile']) && 
@@ -360,7 +360,7 @@ class UserController extends ApiController {
 					$errors['UserCourse'] = $userCourse->getErrors();
 			} else {
 				$this->renderApiResponse(404, array('User' => array('The user requested to add a course to could not be found.')));
-				Yii::app()->end();
+				return;
 			}
 		}
 	

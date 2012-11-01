@@ -2,10 +2,10 @@
 
 $dbConf = array();
 
-$dbConf['connectionString'] = 'mysql:host=208.112.113.154;dbname=h222718';
+$dbConf['connectionString'] = 'mysql:host=localhost;dbname=courseportal';
 $dbConf['emulatePrepare'] = true;
-$dbConf['username'] = 'h222718';
-$dbConf['password'] = 'Mj93f6d42b';
+$dbConf['username'] = 'c145190-h222718';
+$dbConf['password'] = 'Mj93f6d42b!';
 $dbConf['charset'] = 'utf8';
 $dbConf['tablePrefix'] = 'onlinecourseportal_';
 
