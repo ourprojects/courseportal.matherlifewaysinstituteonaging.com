@@ -202,7 +202,6 @@ $this->widget(
 				array(
 					'target' => 'MatherCaregivers',
 					'config' => array(
-						'file' => "video.mp4",
 						'image' => $this->createUrl('download').'/videos/MatherCaregivers/poster.jpg',
 						'width' => '540px',
 						'height' => '305px',

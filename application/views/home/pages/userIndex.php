@@ -98,7 +98,6 @@ Yii::app()->clientScript->registerScript('quotes_rotator', "$('.quotes').quote_r
 					array(
 						'target' => 'TheSandwichGeneration',
 						'config' => array(
-							'file' => "video.mp4",
 							'image' => $this->createUrl('download').'/videos/TheSandwichGeneration/poster.jpg',
 							'width' => '540px',
 							'height' => '400px',

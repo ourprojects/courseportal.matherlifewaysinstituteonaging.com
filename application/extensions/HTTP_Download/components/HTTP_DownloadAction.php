@@ -104,7 +104,7 @@ class HTTP_DownloadAction extends CAction {
 				$this->contentType = mime_content_type($this->file);
 		} else {
 			throw new CHttpException(404, Yii::t('HTTP_Download', 'File "{file}" does not exist.', 
-				array('{file}' => $file)));
+				array('{file}' => $filePath)));
 		}
 	}
 
