@@ -8,11 +8,10 @@ $this->widget(
 		'ext.fancybox.EFancyBox',
 		array(
 				'id' => 'tutorial',
-				'target' => 'a[rel=tutorial]',
+				'target' => '.open-tutorial',
 				'config' => array(
-						'width' => '90%',
-						'height' => '95%',
-						'autoDimensions' => false,
+						'width' => '960px',
+						'height' => '600px',
 						'arrows' => false
 				)
 		)
@@ -40,16 +39,9 @@ $this->widget(
 <div id="sidebar">
 
 	<div class="box-sidebar zero">
-		<a href="<?php echo $this->createUrl('user/register'); ?>"> <?php echo t('Register'); ?>
-		</a> <a href="<?php echo $this->createUrl('home/contact'); ?>"
-			class="teal"> <?php echo t('Request Information'); ?>
-		</a> <a href="#tutorial-slide-1" rel="tutorial" class="teal"> <?php echo t('Tutorial'); ?>
-		</a> <a href="#tutorial-slide-2" rel="tutorial" style="display: none"></a>
-		<a href="#tutorial-slide-3" rel="tutorial" style="display: none"></a>
-		<a href="#tutorial-slide-4" rel="tutorial" style="display: none"></a>
-		<a href="#tutorial-slide-5" rel="tutorial" style="display: none"></a>
-		<a href="#tutorial-slide-6" rel="tutorial" style="display: none"></a>
-		<a href="#tutorial-slide-7" rel="tutorial" style="display: none"></a>
+		<a href="<?php echo $this->createUrl('user/register'); ?>"><?php echo t('Register'); ?></a>
+		<a href="<?php echo $this->createUrl('home/contact'); ?>" class="teal"><?php echo t('Request Information'); ?></a>
+		<a href="#tutorial" class="teal open-tutorial"> <?php echo t('Tutorial'); ?></a>
 	</div>
 
 	<div class="box-sidebar one">
@@ -113,7 +105,7 @@ $this->widget(
 							text: Aging in Action is Mather LifeWays Institute on Aging's monthly 
 							e-newsletter and blog containing the latest research news in the field of aging.
 							larger twitter image here
-							link: Evanston, IL ∑ http://www.aginginaction.com
+							link: Evanston, IL ‚àë http://www.aginginaction.com
 							
 							 -->
 
@@ -202,7 +194,8 @@ $this->widget(
 	</p>
 
 
-	<div id="MatherCaregivers" class="box-grey">
+	<div class="box-grey">
+		<div id="MatherCaregivers">
 		<?php 
 		$this->widget(
 				'ext.JWplayer.JWplayer',
@@ -222,6 +215,7 @@ $this->widget(
 				)
 		);
 		?>
+		</div>
 	</div>
 
 	<h2 class="flowers top-pad" style="margin-top: 5px;">
@@ -354,11 +348,21 @@ $this->widget(
 
 <!--  start tutorial course here -->
 
-<div
-	style="display: none;">
-	<div id="tutorial-slide-1" class="slide">
+<script>
+jQuery(document).ready(function() {
+
+	jQuery(".change-slide").click(function(){
+		var newslide=jQuery(this).attr("rel");
+		jQuery(".slide").hide("slide", { direction: "left" }, 1000);
+		jQuery("#tutorial-slide-"+newslide).show("slide", { direction: "left" }, 1000);
+	});
+
+});
+</script>
+
+<div id="tutorial" style="display: none;">
+	<div id="slide-1" class="slide">
 		<h2 class="flowers">Tutorial</h2>
-		<hr>
 		<p>Welcome and thank you for your interest and support for Mather
 			LifeWays Institute on Aging. This short, online tutorial was designed
 			to help demonstate our course model. Please feel free to contact us
@@ -370,15 +374,9 @@ $this->widget(
 
 		<p>According to the Alzheimer's Assocation (2012):</p>
 		<ul style="list-style-type: none;">
-			<li
-				style="color: red; font-family: 'Oldtown', fantasy; font-size: 3em; padding: 35px 0px;">5.4
-				million Americans are living with Alzheimer's disease.</li>
-			<li
-				style="color: red; font-family: 'Oldtown', fantasy; font-size: 3em;">One
-				in eight older Americans has Alzheimer's disease.</li>
-			<li
-				style="color: red; font-family: 'Oldtown', fantasy; font-size: 3em; padding: 35px 0px;">Alzheimer's
-				is not a normal part of aging</li>
+			<li	class="pull-quote">5.4 million Americans are living with Alzheimer's disease.</li>
+			<li	class="pull-quote">One in eight older Americans has Alzheimer's disease.</li>
+			<li	class="pull-quote">Alzheimer's is not a normal part of aging</li>
 		</ul>
 
 		<p>With such a profound impact on soceity, businesses and poetneitally
@@ -386,8 +384,9 @@ $this->widget(
 			Dementia?</p>
 
 
-		<p>
-			<a href="javascript:;" onclick="$.fancybox.next();" class="button">Start
+		<img src="<?php echo Yii::app()->theme->getImagesUrl(); ?>/image-men.png" style="margin-top: 5px; width: 100%;" />
+		<p class="course-buttons">
+			<a href="javascript:;" class="change-slide button right" rel="2">Start
 				Tutorial&raquo;</a>
 		</p>
 	</div>
@@ -395,14 +394,12 @@ $this->widget(
 	<!--   overview of tutorial here    -->
 
 
-	<div id="tutorial-slide-2" class="slide">
+	<div id="slide-2" class="slide">
 
 		<h4 style="font-size: 2em; padding-bottom: 15px;">Dementia &amp;
 			Alzheimer's Disease - A Short Overview</h4>
 
-		<p>
-			<strong>Objectives</strong>
-		</p>
+		<p><strong>Objectives</strong></p>
 
 		<ul>
 			<li>Describe Dementia</li>
@@ -423,19 +420,15 @@ $this->widget(
 		<p>Data and research have been devloped or collected for this tutorial
 			course by the following:</p>
 
-		<ul style="list-style-type: none";>
-			<li style="padding-bottom: 15px;"><a href="http://www.alz.org"
-				target="_blank">Alziehmer's Assocation</a></li>
-			<li><a href="http://matherlifewaysinstituteonaging.com"
-				target="_blank">Mather LifeWays Insitute on Aging</a></li>
-			<li style="padding-top: 15px;"><a href="http://www.nia.nih.gov"
-				target="_blank">U.S. Department of Health &amp; Human Services -
+		<ul class="no-bullets">
+			<li><a href="http://www.alz.org" target="_blank">Alziehmer's Assocation</a></li>
+			<li><a href="http://matherlifewaysinstituteonaging.com" target="_blank">Mather LifeWays Insitute on Aging</a></li>
+			<li><a href="http://www.nia.nih.gov" target="_blank">U.S. Department of Health &amp; Human Services -
 					National Institute on Aging</a></li>
 		</ul>
 
 
-		<div
-			style="border: 2px solid; border-radius: 25px; -moz-border-radius: 25px; /* Firefox 3.6 and earlier */ padding: 5px; margin: 15px; background-color: #F8F8F8;">
+		<div class="box-white">
 
 			<p>
 				To help us collect data on our users, please let us know if you have
@@ -443,28 +436,23 @@ $this->widget(
 					<option selected="selected" value="select">Select</option>
 					<option value="yes">YES</option>
 					<option value="no">NO</option>
-				</select>
-
-				<button type="submit">Submit</button>
-				<button type="reset">Reset</button>
+				</select><br />
+				<button type="submit" class="button teal">Submit</button>
+				<button type="reset" class="button teal">Reset</button>
 			</p>
-
-
 
 			<!--  need javascriopt validator and response for both answers -->
 		</div>
 
-
-		<p>
-			<a href="javascript:;" onclick="$.fancybox.prev();" class="button">&laquo;
-				Back</a> <a href="javascript:;" onclick="$.fancybox.next();"
-				class="button">Next &raquo;</a>
+		<p class="course-buttons">
+			<a href="javascript:;" class="change-slide button left" rel="1">&laquo; Back</a>
+			<a href="javascript:;" class="change-slide button right" rel="3">Next &raquo;</a>
 		</p>
 	</div>
 
 	<!--  Dementia here    -->
 
-	<div id="tutorial-slide-3" class="slide">
+	<div id="slide-3" class="slide">
 
 		<h4 style="font-size: 2em; padding-bottom: 15px;">Dementia</h4>
 
@@ -499,8 +487,7 @@ $this->widget(
 			out slowly and gradually get worse.</p>
 
 
-		<div
-			style="border: 2px solid; border-radius: 25px; -moz-border-radius: 25px; /* Firefox 3.6 and earlier */ padding: 5px; margin: 15px; background-color: #F8F8F8;">
+		<div class="box-white">
 
 			<p>
 				Without searching the web, is Dementia a disease of the brain? <select>
@@ -508,18 +495,17 @@ $this->widget(
 					<option value="yes">YES</option>
 					<option value="no">NO</option>
 				</select>
-
-				<button type="submit">Submit</button>
-				<button type="reset">Reset</button>
+				<br />
+				<button type="submit" class="teal">Submit</button>
+				<button type="reset" class="teal">Reset</button>
 			</p>
 		</div>
 		<br> <br> <br>
 		<!--  need javascript validator and response here -->
 
-		<p>
-			<a href="javascript:;" onclick="$.fancybox.prev();" class="button">&laquo;
-				Back</a> <a href="javascript:;" onclick="$.fancybox.next();"
-				class="button">Next &raquo;</a>
+		<p class="course-buttons">
+			<a href="javascript:;" class="change-slide button left" rel="2">&laquo; Back</a>
+			<a href="javascript:;" class="change-slide button right" rel="4">Next &raquo;</a>
 		</p>
 
 	</div>
@@ -528,7 +514,7 @@ $this->widget(
 	<!--  Alzheimer's disease here    -->
 
 
-	<div id="tutorial-slide-4" class="slide">
+	<div id="slide-4" class="slide">
 
 		<h4 style="font-size: 2em; padding-bottom: 15px;">Alzheimer's Disease</h4>
 
@@ -537,7 +523,7 @@ $this->widget(
 			eventually even the ability to carry out the simplest tasks of daily
 			living. Alzheimer's is the most common form of dementia. Symptoms
 			usually develop slowly and get worse over time. In most people with
-			Alzheimer's, symptoms first appear after age 60. Alzheimer’s
+			Alzheimer's, symptoms first appear after age 60. Alzheimer‚Äôs
 			disease is the most common cause of dementia among older people.
 			Alzheimer's has no current cure, but treatments for symptoms are
 			available and research continues. The disease is named after Dr.
@@ -561,27 +547,25 @@ $this->widget(
 		</ul>
 
 
-		<div
-			style="border: 2px solid; border-radius: 25px; -moz-border-radius: 25px; /* Firefox 3.6 and earlier */ padding: 5px; margin: 15px; background-color: #F8F8F8;">
+		<div class="box-white">
 
 			<p>Without searching the Web, what other signs might there be?</p>
 
 			<input type="checkbox" value="1">Trouble understanding visual images
 			and spatial relationships</input><br> <input type="checkbox"
-				value="2">New problems with words in speaking or writing</input><br>
+				value="2">New problems with words in speaking or writing</input><br />
 			<input type="checkbox" value="3">Misplacing things and losing the
-			ability to retrace steps</input><br> <input type="checkbox" value="4">Withdrawal
-			from work or social activities</input><br> <input type="checkbox"
-				value="5">Changes in mood and personality</input><br>
+			ability to retrace steps</input><br /> <input type="checkbox" value="4">Withdrawal
+			from work or social activities</input><br /> <input type="checkbox"
+				value="5">Changes in mood and personality</input><br />
 
-			<button type="submit">Submit</button>
-			<button type="reset">Reset</button>
+			<button type="submit" class="teal">Submit</button>
+			<button type="reset" class="teal">Reset</button>
 		</div>
 
-		<p>
-			<a href="javascript:;" onclick="$.fancybox.prev();" class="button">&laquo;
-				Back</a> <a href="javascript:;" onclick="$.fancybox.next();"
-				class="button">Next &raquo;</a>
+		<p class="course-buttons">
+			<a href="javascript:;" class="change-slide button left" rel="3">&laquo;
+				Back</a> <a href="javascript:;" class="change-slide button right" rel="5">Next &raquo;</a>
 		</p>
 
 	</div>
@@ -589,15 +573,13 @@ $this->widget(
 
 	<!--   data, stats, video here    -->
 
-	<div id="tutorial-slide-5" class="slide">
+	<div id="slide-5" class="slide">
 
 		<h4 style="font-size: 2em; padding-bottom: 15px;">Stats and Data (US)</h4>
 
-		<p>
-			<iframe width="450" height="290"
+		<iframe width="450" height="290"
 				src="http://www.youtube.com/embed/In1IJocVor8?rel=0" frameborder="0"
-				allowfullscreen="" align="right"></iframe>
-		</p>
+				allowfullscreen="" class="tutorial-video"></iframe>
 
 		<p>
 			<strong>Alzheimer's disease</strong>
@@ -637,10 +619,8 @@ $this->widget(
 
 		<form method="get" action="http://www.google.com/search"
 			target="_blank">
-
-
-			<input type="search" name="q" size="35" maxlength="255" value="" /> <input
-				type="submit" value="Google Search" />
+			<input type="search" id="google-search" name="q" size="35" maxlength="255" value="" /><br />
+			<input type="submit" value="Google Search" class="teal" />
 		</form>
 
 
@@ -651,10 +631,9 @@ $this->widget(
 					-->
 
 
-		<p>
-			<a href="javascript:;" onclick="$.fancybox.prev();" class="button">&laquo;
-				Back</a> <a href="javascript:;" onclick="$.fancybox.next();"
-				class="button">Next &raquo;</a>
+		<p class="course-buttons">
+			<a href="javascript:;" class="change-slide button left" rel="4">&laquo;
+				Back</a> <a href="javascript:;" class="change-slide button right" rel="6">Next &raquo;</a>
 		</p>
 
 
@@ -664,12 +643,11 @@ $this->widget(
 
 	<!--   closing here    -->
 
-	<div id="tutorial-slide-6" class="slide">
+	<div id="slide-6" class="slide">
 
 		<h4 style="font-size: 2em; padding-bottom: 15px;">Assessment</h4>
 
-		<div
-			style="border: 2px solid; border-radius: 25px; -moz-border-radius: 25px; /* Firefox 3.6 and earlier */ padding: 5px; margin: 15px; background-color: #F8F8F8;">
+		<div class="box-white">
 
 
 			<p>Please take a moment to complete this short assessment. Your
@@ -691,6 +669,17 @@ $this->widget(
 			</select>
 		</div>
 
+		<p class="course-buttons">
+			<a href="javascript:;" class="change-slide button left" rel="5">&laquo;
+				Back</a> <a href="javascript:;" class="change-slide button right" rel="7">Final Step &raquo;</a>
+		</p>
+
+	</div>
+
+	<!--   closing here    -->
+
+	<div id="slide-7" class="slide">
+
 		<h4 style="font-size: 2em; padding-bottom: 15px;">Certificate of
 			Completion</h4>
 
@@ -707,46 +696,38 @@ $this->widget(
 				align="CENTER" border="0" />
 		</p>
 
-		<div
-			style="border: 2px solid; border-radius: 25px; -moz-border-radius: 25px; /* Firefox 3.6 and earlier */ padding: 5px; margin: 15px; background-color: #F8F8F8;">
-
-			<p>
-				<strong>Survey (voluntary and anonymous)</strong>
-			</p>
-
-			<p>
-				Did this tutorial course provide you with an acceptable learning
-				experience? <select>
-					<option selected="selected" value="select">Select</option>
-					<option value="yes">Yes</option>
-					<option value="no">No</option>
-				</select>
-			</p>
-
-			<p>
-				Was the content depth and detail: <select>
-					<option selected="selected" value="select">Select</option>
-					<option value="10">Great</option>
-					<option value="5">Average</option>
-					<option value="0">Poor</option>
-				</select>
-			</p>
-
-			<p>
-				How likely are you to participate in a full course, based on your
-				experience with this tutorial course? <select>
-					<option selected="selected" value="select">Select</option>
-					<option value="10">Likely</option>
-					<option value="5">Possibly</option>
-					<option value="0">Not Likely</option>
-				</select>
-			</p>
-
-		</div>
+		<p><strong>Survey (voluntary and anonymous)</strong></p>
 
 		<p>
-			<a href="javascript:;" onclick="$.fancybox.pos(0);" class="button">&laquo;
-				Start Over</a>
+			Did this tutorial course provide you with an acceptable learning
+			experience? <select>
+				<option selected="selected" value="select">Select</option>
+				<option value="yes">Yes</option>
+				<option value="no">No</option>
+			</select>
+		</p>
+
+		<p>
+			Was the content depth and detail: <select>
+				<option selected="selected" value="select">Select</option>
+				<option value="10">Great</option>
+				<option value="5">Average</option>
+				<option value="0">Poor</option>
+			</select>
+		</p>
+
+		<p>
+			How likely are you to participate in a full course, based on your
+			experience with this tutorial course? <select>
+				<option selected="selected" value="select">Select</option>
+				<option value="10">Likely</option>
+				<option value="5">Possibly</option>
+				<option value="0">Not Likely</option>
+			</select>
+		</p>
+
+		<p class="course-buttons">
+			<a href="javascript:;" class="change-slide button left" rel="1">&laquo; Start Over</a>
 		</p>
 	</div>
 </div>
