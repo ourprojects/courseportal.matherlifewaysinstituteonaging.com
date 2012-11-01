@@ -1,7 +1,7 @@
 
 /**************** GOOGLE WEBFONTS ***************/
 
-@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Arapey:400italic,400);
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Arapey:400italic,400|Hammersmith+One:400);
 
 
 
@@ -109,6 +109,9 @@ div.breadcrumbs span {
 	box-shadow: 0 0 10px #ccc;
 	display: inline-block;
 	border: 0;
+}
+.button.teal, button.teal, input[type=submit].teal {
+	background: #f47b20 url(../images/bg-menu-active.jpg) bottom center repeat-x;
 }
 .button:hover {
 	background-position: top center;
@@ -615,7 +618,7 @@ div.jp-video-the-sandwich-generation div.jp-video-play {
 
 /**************** GENERAL CLASSES ***************/
 .flowers {
-	background: url(../images/bg-flower.jpg) top left no-repeat;
+	background: url(../images/bg-flower.png) top left no-repeat;
 	font-family: "Source Sans Pro", Arial, sans-serif;
 	color: #008c99;
 	padding: 15px 0 7px 45px;
@@ -772,6 +775,7 @@ div.view {
 }
 
 
+
 .opacity-hover {
 	opacity: .7;
 }
@@ -779,6 +783,12 @@ div.view {
 	opacity: 1;
 }
 
+
+
+#tutorial {
+	width: 970px;
+	height: 670px;
+}
 #tutorial h2.flowers {
 	border-bottom: 1px solid #ddd;
 	margin-bottom: 10px;
@@ -790,9 +800,63 @@ div.view {
 #tutorial #slide-1.slide {
 	display: block;
 }
+#tutorial .pull-quote {
+	font-family: "Hammersmith One", Impact, sans-serif;
+	font-size: 30px;
+	line-height: 35px;
+	color: #b71010;
+}
+#tutorial .course-buttons {
+	background: #ddd;
+	border-radius: 10px;
+	height: 40px;
+	position: absolute;
+	padding: 5px;
+	bottom: 5px;
+	left: 5px;
+	right: 5px;
+}
+#tutorial .change-slide.button.left {
+	float: left;
+}
+#tutorial .change-slide.button.right {
+	float: right;
+}
+#tutorial .box-white {
+	font-size: 12pt;
+}
+#tutorial .no-bullets {
+	list-style: none;
+}
+#tutorial .no-bullets li {
+	padding: 5px 0 5px 30px;
+}
+#tutorial .tutorial-video {
+	float: right;
+	margin: 0 0 15px 15px;
+}
+#tutorial .teal {
+	margin: 7px 0 0 0;
+}
+
 
 
 #translate-button input[type=submit] {
 	padding: 3px 6px;
 	font-size: 10pt;
 }
+
+
+
+#form_workingCaregiver, #form_hrEmployer, #form_caregiver {
+	font-size: 12pt;
+}
+#form_workingCaregiver label:first-child, #form_hrEmployer label:first-child, #form_caregiver label:first-child {
+	display: block;
+	padding: 7px 0;
+}
+#form_workingCaregiver input[type=submit], #form_hrEmployer input[type=submit], #form_caregiver input[type=submit] {
+	margin-top: 10px;
+}
+
+
