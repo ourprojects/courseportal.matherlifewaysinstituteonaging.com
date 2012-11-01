@@ -90,26 +90,28 @@ Yii::app()->clientScript->registerScript('quotes_rotator', "$('.quotes').quote_r
 		fastest-growing segment of the population, Winokur and Kashi decided to tell their own story as they took on the care of Winokurs 
 		father. In The Sandwich Generation, they have created an honest, intimate account of their own shifting and challenging responsibilities, as well as some of their unexpected joys.'); ?></p>
 		
-		<div id="TheSandwichGeneration" class="box-grey">
-		<?php 
-		$this->widget(
-				'ext.JWplayer.JWplayer',
-				array(
-					'target' => 'TheSandwichGeneration',
-					'config' => array(
-						'file' => "video.mp4",
-						'image' => $this->createUrl('download').'/videos/TheSandwichGeneration/poster.jpg',
-						'width' => '540px',
-						'height' => '400px',
-						'levels' => array(
-				            array('file' => $this->createUrl('download').'/videos/TheSandwichGeneration/video.m4v'),
-				            array('file' => $this->createUrl('download').'/videos/TheSandwichGeneration/video.webm'),
-				            array('file' => $this->createUrl('download').'/videos/TheSandwichGeneration/video.ogv')
-				        )
+		<div class="box-grey">
+			<div id="TheSandwichGeneration">
+			<?php 
+			$this->widget(
+					'ext.JWplayer.JWplayer',
+					array(
+						'target' => 'TheSandwichGeneration',
+						'config' => array(
+							'file' => "video.mp4",
+							'image' => $this->createUrl('download').'/videos/TheSandwichGeneration/poster.jpg',
+							'width' => '540px',
+							'height' => '400px',
+							'levels' => array(
+					            array('file' => $this->createUrl('download').'/videos/TheSandwichGeneration/video.m4v'),
+					            array('file' => $this->createUrl('download').'/videos/TheSandwichGeneration/video.webm'),
+					            array('file' => $this->createUrl('download').'/videos/TheSandwichGeneration/video.ogv')
+					        )
+						)
 					)
-				)
-		);
-		?>
+			);
+			?>
+			</div>
 		</div>
 
 	</div>
