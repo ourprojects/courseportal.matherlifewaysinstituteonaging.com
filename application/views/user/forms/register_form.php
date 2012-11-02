@@ -88,7 +88,7 @@
 				  'title' => array('show' => false),
 				  'description' => array('show' => false),
 				  'form' => array('show' => false),
-				  'question' => array('options' => array('class' => 'row')))
+				  'question' => array('htmlOptions' => array('class' => 'row')))
 		); 
 	?>
 	

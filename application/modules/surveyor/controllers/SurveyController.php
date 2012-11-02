@@ -4,23 +4,14 @@ class SurveyController extends OnlineCoursePortalController {
 	
 	public function actionSubmit() {
 		if(isset($_POST['Survey'])) {
-			$result = array();
-			$surveys = array();
+			$errors = array();
 			foreach($_POST['Survey'] as $surveyName => $surveyAttributes) {
-				$surveys[$surveyName] = SurveyorModule::surveyor()->$surveyName->form;
-				$surveys[$surveyName]->attributes = $surveyAttributes;
-				$surveys[$surveyName]->validate();
-				foreach($surveys[$surveyName]->getErrors() as $attribute => $errors)
-					$result[CHtml::activeId($surveys[$surveyName], "[$i]$attribute")] = $errors;
+				$survey = SurveyorModule::surveyor()->$surveyName->form;
+				$survey->attributes = $surveyAttributes;
+				$survey->save();
+				$errors[$surveyName] = $survey->getErrors();
 			}
-			if(empty($result)) {
-				foreach($surveys as $survey) {
-					$survey->save();
-					foreach($survey->getErrors() as $attribute => $errors)
-						$result[CHtml::activeId($survey, "[$i]$attribute")] = $errors;
-				}
-			}
-			echo CJSON::encode($result);
+			echo CJSON::encode($errors);
 		}
 	}
 	

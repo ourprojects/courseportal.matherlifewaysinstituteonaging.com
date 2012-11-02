@@ -25,8 +25,6 @@
 
 class User extends CActiveRecord implements IUserIdentity {
 
-
-	
 	const ERROR_NONE = 0;
 	const ERROR_EMAIL_INVALID = 1;
 	const ERROR_PASSWORD_INVALID = 2;

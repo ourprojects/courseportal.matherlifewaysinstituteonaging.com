@@ -39,9 +39,9 @@ class SurveyAnswer extends CActiveRecord
     public function rules()
     {
         return array(
-            array('user_id, question_id', 'required'),
+            array('question_id', 'required'),
         	array('user_id', 'unsafe'),
-        	array('user_id', 'exist', 'attributeName' => 'id', 'className' => 'User', 'allowEmpty' => false),
+        	array('user_id', 'exist', 'attributeName' => 'id', 'className' => 'User', 'allowEmpty' => true),
         	array('question_id', 'exist', 'attributeName' => 'id', 'className' => 'SurveyQuestion', 'allowEmpty' => false),
             // The following rule is used by search().
             // Please remove those attributes that should not be searched.

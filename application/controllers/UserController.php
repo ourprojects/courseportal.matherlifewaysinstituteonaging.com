@@ -99,7 +99,7 @@ class UserController extends ApiController {
 							$transaction->commit();
 							$this->sendConfirmationEmail($models['user']);
 							$this->render('pages/registerConfSent');
-							Yii::app()->end();
+							return;
 						}
 					}
 				} catch(Exception $e) {

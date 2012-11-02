@@ -256,14 +256,16 @@ $this->widget(
 				'modules.surveyor.widgets.Survey',
 				array(
 						'model' => $models['workingCaregiver_survey'],
-						'title' => array('options' => array('class' => 'flowers')),
+						'title' => array('htmlOptions' => array('class' => 'flowers')),
+						'question' => array('htmlOptions' => array('class' => 'row')),
 						'form' => array(
-								'options' => 
+									'options' => 
 										array(
 												'enableAjaxValidation' => true,
 												'enableClientValidation' => true
 											),
-								)				
+								),
+						'submitButton' => array('htmlOptions' => array('class' => 'row submit')),
 				)
 		);
 		?>
@@ -314,7 +316,7 @@ $this->widget(
 			'modules.surveyor.widgets.Survey',
 			array(
 					'model' => $models['hrEmployer_survey'],
-					'title' => array('options' => array('class' => 'flowers')),
+					'title' => array('htmlOptions' => array('class' => 'flowers')),
 					'form' => array('options' => 
 									array(
 										'enableAjaxValidation' => true,
@@ -331,7 +333,7 @@ $this->widget(
 			'modules.surveyor.widgets.Survey',
 			array(
 					'model' => $models['caregiver_survey'],
-					'title' => array('options' => array('class' => 'flowers')),
+					'title' => array('htmlOptions' => array('class' => 'flowers')),
 					'form' => array('options' => 
 									array(
 										'enableAjaxValidation' => true,

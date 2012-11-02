@@ -172,46 +172,58 @@ class SurveyForm extends CFormModel {
 	
 	private function _save() {
 		$newAnswers = $this->_questionAnswers;
-		foreach($this->_survey->answers(DbCriteria::instance()->addColumnCondition(array('answers.user_id' => $this->_user_id))) as $answer) {
-			if(empty($newAnswers[$answer->question_id]) && $newAnswers[$answer->question_id] !== 0) {
-				SurveyAnswerOption::model()->deleteAll('answer_id = ?', array($answer->id));
-				SurveyAnswerText::model()->deleteAll('answer_id = ?', array($answer->id));
-				if(!$answer->delete())
-					return false;
-				unset($newAnswers[$answer->question_id]);
-			} else if($answer->question->type->name == 'textfield' ||
-					$answer->question->type->name == 'textarea') {
-				if($answer->answerText->text != $newAnswers[$answer->question_id]) {
-					$answer->answerText->text = $newAnswers[$answer->question_id];
-					if(!$answer->answerText->save())
+		if(!$this->_survey->anonymous) {
+			foreach($this->_survey->answers(DbCriteria::instance()->addColumnCondition(array('answers.user_id' => $this->_user_id))) as $answer) {
+				if(empty($newAnswers[$answer->question_id]) && $newAnswers[$answer->question_id] !== 0) {
+					SurveyAnswerOption::model()->deleteAll('answer_id = ?', array($answer->id));
+					SurveyAnswerText::model()->deleteAll('answer_id = ?', array($answer->id));
+					if(!$answer->delete()) {
+						$this->addErrors(array("question{$answer->question_id}" => $answer->getErrors()));
 						return false;
-				}
-				unset($newAnswers[$answer->question_id]);
-			} else if(is_array($newAnswers[$answer->question_id])) {
-				foreach($answer->answerOptions as $option) {
-					if(($key = array_search($option->option_id, $newAnswers[$answer->question_id])) === true) {
-						unset($newAnswers[$answer->question_id][$key]);
-					} else {
-						if(!$option->delete())
-							return false;
 					}
+					unset($newAnswers[$answer->question_id]);
+				} else if($answer->question->type->name == 'textfield' ||
+						$answer->question->type->name == 'textarea') {
+					if($answer->answerText->text != $newAnswers[$answer->question_id]) {
+						$answer->answerText->text = $newAnswers[$answer->question_id];
+						if(!$answer->answerText->save()) {
+							$this->addErrors(array("question{$answer->question_id}" => $answer->answerText->getErrors()));
+							return false;
+						}
+					}
+					unset($newAnswers[$answer->question_id]);
+				} else if(is_array($newAnswers[$answer->question_id])) {
+					foreach($answer->answerOptions as $option) {
+						if(($key = array_search($option->option_id, $newAnswers[$answer->question_id])) === true) {
+							unset($newAnswers[$answer->question_id][$key]);
+						} else {
+							if(!$option->delete()) {
+								$this->addErrors(array("question{$answer->question_id}" => $option->getErrors()));
+								return false;
+							}
+						}
+					}
+					foreach($newAnswers[$answer->question_id] as $newAnswer) {
+						$surveyAnswerOption = new SurveyAnswerOption;
+						$surveyAnswerOption->answer_id = $answer->id;
+						$surveyAnswerOption->option_id = $newAnswer;
+						if(!$surveyAnswerOption->save()) {
+							$this->addErrors(array("question{$answer->question_id}" => $surveyAnswerOption->getErrors()));
+							return false;
+						}
+					}
+					unset($newAnswers[$answer->question_id]);
+				} else {
+					$option = $answer->answerOptions[0];
+					if($option->option_id != $newAnswers[$answer->question_id]) {
+						$option->option_id = $newAnswers[$answer->question_id];
+						if(!$option->save()) {
+							$this->addErrors(array("question{$answer->question_id}" => $option->getErrors()));
+							return false;
+						}
+					}
+					unset($newAnswers[$answer->question_id]);
 				}
-				foreach($newAnswers[$answer->question_id] as $newAnswer) {
-					$surveyAnswerOption = new SurveyAnswerOption;
-					$surveyAnswerOption->answer_id = $answer->id;
-					$surveyAnswerOption->option_id = $newAnswer;
-					if(!$surveyAnswerOption->save())
-						return false;
-				}
-				unset($newAnswers[$answer->question_id]);
-			} else {
-				$option = $answer->answerOptions[0];
-				if($option->option_id != $newAnswers[$answer->question_id]) {
-					$option->option_id = $newAnswers[$answer->question_id];
-					if(!$option->save())
-						return false;
-				}
-				unset($newAnswers[$answer->question_id]);
 			}
 		}
 		foreach($newAnswers as $questionId => $questionAnswer) {
@@ -219,22 +231,28 @@ class SurveyForm extends CFormModel {
 				$surveyAnswer = new SurveyAnswer;
 				$surveyAnswer->user_id = $this->_user_id;
 				$surveyAnswer->question_id = $questionId;
-				if(!$surveyAnswer->save())
+				if(!$surveyAnswer->save()) {
+					$this->addErrors(array("question$questionId" => $surveyAnswer->getErrors()));
 					return false;
+				}
 				if(is_array($questionAnswer)) {
 					foreach($questionAnswer as $answer) {
 						$surveyAnswerOption = new SurveyAnswerOption;
 						$surveyAnswerOption->answer_id = $surveyAnswer->id;
 						$surveyAnswerOption->option_id = $answer;
-						if(!$surveyAnswerOption->save())
+						if(!$surveyAnswerOption->save()) {
+							$this->addErrors(array("question$questionId" => $surveyAnswerOption->getErrors()));
 							return false;
+						}
 					}
 				} else {
 					$surveyAnswerOption = new SurveyAnswerOption;
 					$surveyAnswerOption->answer_id = $surveyAnswer->id;
 					$surveyAnswerOption->option_id = $questionAnswer;
-					if(!$surveyAnswerOption->save())
+					if(!$surveyAnswerOption->save()) {
+						$this->addErrors(array("question$questionId" => $surveyAnswerOption->getErrors()));
 						return false;
+					}
 				}
 			}
 		}

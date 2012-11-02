@@ -5,12 +5,16 @@ class Survey extends CWidget {
 	private $_data = 
 		array(
 			'showStats' => false,
-			'survey' => array('model' => null), 
-			'title' => array('show' => true),
-			'description' => array('show' => true),
-			'form' => array('show' => true),
-			'question' => array('show' => true),
-			'submitButton' => array('show' => true)
+			'survey' => array('model' => null, 'htmlOptions' => array()), 
+			'title' => array('show' => true, 'htmlOptions' => array()),
+			'description' => array('show' => true, 'htmlOptions' => array()),
+			'form' => array('show' => true, 'options' => array()),
+			'question' => array('htmlOptions' => array()),
+			'submitButton' => array('ajax' => true, 
+									'label' => 'Submit', 
+									'ajaxOptions' => array(),
+									'htmlOptions' => array()
+								)
 	   );
 	
 	public function run() {
@@ -30,9 +34,11 @@ class Survey extends CWidget {
 	
 	public function setModel($surveyModel) {
 		$this->_data['survey']['model'] = $surveyModel;
+		if(!isset($This->_data['form']['options']['id']))
+			$This->_data['form']['options']['id'] = "form_{$this->_data['survey']['model']->name}";
 		foreach($this->_data as $key => $val) {
-			if(!isset($this->_data[$key]['options']['id']))
-				$this->_data[$key]['options']['id'] = "{$key}_{$this->_data['survey']['model']->name}";
+			if(isset($this->_data[$key]['htmlOptions']) && !isset($this->_data[$key]['htmlOptions']['id']))
+				$this->_data[$key]['htmlOptions']['id'] = "{$key}_{$this->_data['survey']['model']->name}";
 		}
 	}
 	
