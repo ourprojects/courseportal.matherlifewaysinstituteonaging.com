@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost:3306
--- Generation Time: Nov 01, 2012 at 02:50 PM
+-- Generation Time: Nov 02, 2012 at 12:22 AM
 -- Server version: 5.1.61
 -- PHP Version: 5.3.10
 
@@ -1279,7 +1279,9 @@ INSERT INTO `onlinecourseportal_message` (`id`, `language`, `translation`) VALUE
 (201, 'it', 'Presentare'),
 (201, 'zh_cn', '提交'),
 (202, 'es', 'Esta encuesta no es anónima y el usuario no se ha especificado.'),
-(203, 'es', 'Esta pregunta se requiere.');
+(202, 'zh_cn', '这项调查是不记名，不指定用户。'),
+(203, 'es', 'Esta pregunta se requiere.'),
+(203, 'zh_cn', '这个问题是必要的。');
 INSERT INTO `onlinecourseportal_message` (`id`, `language`, `translation`) VALUES
 (204, 'ar', 'التعليم عبر الإنترنت فعالة تعتمد على تصميم خبرات التعلم بشكل مناسب وبتسهيل من الميسرين المعرفة. لأن المتعلمين لديها أنماط التعلم المختلفة أو مزيج من الأساليب، وقد نموذجنا التدريب على شبكة الإنترنت باستخدام تصميم الأنشطة التي تتناول أوضاع الخاصة بهم للتعلم من أجل توفير الخبرات الهامة لكل مستخدم.'),
 (204, 'de', 'Effektive Online-Unterricht hängt von Lernerfahrungen entsprechend konzipiert und von erfahrenen Moderatoren erleichtert. Da die Lernenden unterschiedliche Lernstile oder eine Kombination von Stilen haben, hat unser Web-basiertes Training Modells Design mit Tätigkeiten, die ihre Lernmethoden zu wenden, um wichtige Erfahrungen für jeden Benutzer bereitzustellen.'),
@@ -1770,19 +1772,23 @@ INSERT INTO `onlinecourseportal_survey` (`id`, `name`, `title`, `description`, `
 
 CREATE TABLE IF NOT EXISTS `onlinecourseportal_survey_answer` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user_id` int(11) NOT NULL,
+  `user_id` int(11) DEFAULT NULL,
   `question_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `user_id_question_set_id` (`user_id`,`question_id`),
   KEY `user_id` (`user_id`),
   KEY `question_set_id` (`question_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=69 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=78 ;
 
 --
 -- Dumping data for table `onlinecourseportal_survey_answer`
 --
 
 INSERT INTO `onlinecourseportal_survey_answer` (`id`, `user_id`, `question_id`) VALUES
+(74, NULL, 6),
+(75, NULL, 6),
+(76, NULL, 6),
+(77, NULL, 6),
 (21, 4, 1),
 (22, 4, 2),
 (23, 4, 3),
@@ -1791,7 +1797,11 @@ INSERT INTO `onlinecourseportal_survey_answer` (`id`, `user_id`, `question_id`) 
 (65, 96, 2),
 (66, 96, 3),
 (67, 96, 4),
-(68, 96, 5);
+(68, 96, 5),
+(69, 101, 1),
+(70, 101, 2),
+(71, 101, 3),
+(72, 101, 5);
 
 -- --------------------------------------------------------
 
@@ -1811,15 +1821,23 @@ CREATE TABLE IF NOT EXISTS `onlinecourseportal_survey_answer_option` (
 --
 
 INSERT INTO `onlinecourseportal_survey_answer_option` (`answer_id`, `option_id`) VALUES
+(69, 2),
 (21, 3),
 (64, 5),
 (65, 9),
+(70, 9),
 (22, 11),
 (23, 12),
+(71, 12),
 (66, 13),
 (25, 38),
 (68, 38),
-(67, 56);
+(72, 38),
+(67, 56),
+(76, 62),
+(74, 63),
+(75, 63),
+(77, 63);
 
 -- --------------------------------------------------------
 
@@ -2089,18 +2107,19 @@ CREATE TABLE IF NOT EXISTS `onlinecourseportal_user` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`),
   KEY `group_id` (`group_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=97 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=102 ;
 
 --
 -- Dumping data for table `onlinecourseportal_user`
 --
 
 INSERT INTO `onlinecourseportal_user` (`id`, `password`, `salt`, `group_id`, `email`, `session_key`, `created`) VALUES
-(4, 'DHq2uOG6ntWZOSsvWziPEaz+bNuZpFRT7QLgHs7IgXo=', 'nG42gK97c7hKwAyv++VQ2P9iTNmv5RhpLfb/81Vczgw=', 1, 'l.daprato@gmail.com', '7gSlzizQcVXiC+X9gp701KhptSlSYAiPeUnCRp3Z6YQ=', '2012-08-22 06:36:45'),
+(4, 'DHq2uOG6ntWZOSsvWziPEaz+bNuZpFRT7QLgHs7IgXo=', 'nG42gK97c7hKwAyv++VQ2P9iTNmv5RhpLfb/81Vczgw=', 1, 'l.daprato@gmail.com', 'JzNVWE2bavymM8YXjRkhcu0nAytf5y5RSDOu98jKqSw=', '2012-08-22 06:36:45'),
 (68, 'F4uRu9u3VXAgP/18k8T0Tkaw2AG7AN7W9DS8ssKiusc=', 'r2PFdVVKv0yqc3+yROOOFDVj/4InotUdJnF7ZIRJ44Q=', 1, 'james@jpederson.com', 'H6FBh79Zagnp4sLZSuFMlr6kzNP9VMtGEJmEwL7oaIU=', '2012-08-24 17:58:30'),
-(72, 'qxC8vQi9m5Hi2o3NMNeBBBg2Un4YTqNpij45OmLc2M8=', 'IXmqmaSJoz5/Gc0kCOEYUxGy4IvZj8cZH7abJfI4kSw=', 1, 'jwoodall@matherlifeways.com', 'h6eH1hqBzbi/9Kh3CmSI86kRhpiOQpWt3YLfjdcvnAo=', '2012-08-27 17:08:11'),
+(72, 'qxC8vQi9m5Hi2o3NMNeBBBg2Un4YTqNpij45OmLc2M8=', 'IXmqmaSJoz5/Gc0kCOEYUxGy4IvZj8cZH7abJfI4kSw=', 1, 'jwoodall@matherlifeways.com', '+yaZu9u6XRBs1YRs+G8VqmCaMWWf0ACg2HS2e/6FuBA=', '2012-08-27 17:08:11'),
 (75, 'U6aKLqF/mBHZFc8ZgY5wVW7oIo7mDgJroDX5AMfrCus=', 'QXozcQtePlULwf70nFzwgaLfJu9SjtRMawnCwlwG4do=', 1, 'yin_li_juan@hotmail.com', 'ek0HffubKvL8x+0D6xlQIQHaMAVATZCKJxjG+6m8Rk4=', '2012-08-27 23:32:10'),
-(96, 'puF0IFm/F8VGdmZUxYBalkcPtSrAvCEIr2v4hhaKNAU=', 'ENtVcSM8H9zZJZD+VxtlbqLFOx8hJBHuneYcLZB/fCg=', 1, 'elznavarro@yahoo.com', 'ZJvo0rZm2DU+m6W2fS8B+nLKh/bt31R+IefZOhDT+eg=', '2012-10-19 05:00:15');
+(96, 'puF0IFm/F8VGdmZUxYBalkcPtSrAvCEIr2v4hhaKNAU=', 'ENtVcSM8H9zZJZD+VxtlbqLFOx8hJBHuneYcLZB/fCg=', 1, 'elznavarro@yahoo.com', 'ZJvo0rZm2DU+m6W2fS8B+nLKh/bt31R+IefZOhDT+eg=', '2012-10-19 05:00:15'),
+(101, 'BogQOQCX8p8M0E0/a6FNRDlaXsC1QazIcP6iy5Wy5ec=', 'S/usb02UfO9fa4JGGAqiWGODtfI1IASMlInbgZ8TevM=', 4, 'test@test.com', 'VPIr6K9Pt1DgycB1hRvPLPw8WVFqX++pUzhoIFZYqBw=', '2012-11-01 23:16:20');
 
 -- --------------------------------------------------------
 
@@ -2122,7 +2141,8 @@ INSERT INTO `onlinecourseportal_user_activated` (`user_id`) VALUES
 (68),
 (72),
 (75),
-(96);
+(96),
+(101);
 
 -- --------------------------------------------------------
 
@@ -2149,7 +2169,7 @@ CREATE TABLE IF NOT EXISTS `onlinecourseportal_user_profile` (
   `lastname` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `city` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   `zip_code` varchar(10) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
-  `state_id` int(11) NOT NULL,
+  `state_id` int(11) DEFAULT NULL,
   `country_iso` char(2) COLLATE utf8_unicode_ci NOT NULL,
   `phone` varchar(64) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`user_id`),
@@ -2165,7 +2185,8 @@ INSERT INTO `onlinecourseportal_user_profile` (`user_id`, `firstname`, `lastname
 (68, 'James', 'Pederson', 'Madison', '53714', 17, 'US', '6084437567'),
 (72, 'JON', 'WOODALL', 'EVANSTON', '60201', 17, 'US', '8474926753'),
 (75, 'LiJuan', 'Yin', 'Arlington Heights', '60004', 17, 'US', '2247640558'),
-(96, 'Ellen ', 'Ziegemeier', 'St. Peters', '63376', 30, 'us', '6366999715');
+(96, 'Ellen ', 'Ziegemeier', 'St. Peters', '63376', 30, 'us', '6366999715'),
+(101, 'test', 'test', '', '', NULL, 'af', '');
 
 -- --------------------------------------------------------
 
@@ -3247,7 +3268,7 @@ INSERT INTO `phpbb_config` (`config_name`, `config_value`, `is_dynamic`) VALUES
 ('check_attachment_content', '1', 0),
 ('check_dnsbl', '0', 0),
 ('chg_passforce', '0', 0),
-('cookie_domain', 'onlineportal.matherlifeways.com', 0),
+('cookie_domain', 'courseportal.matherlifewaysinstituteonaging.com', 0),
 ('cookie_name', 'phpbb3_5fzi1', 0),
 ('cookie_path', '/', 0),
 ('cookie_secure', '1', 0),
@@ -3398,13 +3419,13 @@ INSERT INTO `phpbb_config` (`config_name`, `config_value`, `is_dynamic`) VALUES
 ('secure_allow_deny', '1', 0),
 ('secure_allow_empty_referer', '1', 0),
 ('secure_downloads', '0', 0),
-('server_name', 'onlineportal.matherlifeways.com', 0),
+('server_name', 'courseportal.matherlifewaysinstituteonaging.com', 0),
 ('server_port', '443', 0),
 ('server_protocol', 'https://', 0),
 ('session_gc', '3600', 0),
 ('session_length', '3600', 0),
 ('site_desc', 'Mather LifeWays Institute on Aging Online Course Portal', 0),
-('sitename', 'onlineportal.matherlifeways.com', 0),
+('sitename', 'courseportal.matherlifewaysinstituteonaging.com', 0),
 ('smilies_path', 'images/smilies', 0),
 ('smilies_per_page', '50', 0),
 ('smtp_auth_method', 'PLAIN', 0),
@@ -3420,9 +3441,9 @@ INSERT INTO `phpbb_config` (`config_name`, `config_value`, `is_dynamic`) VALUES
 ('version', '3.0.11', 0),
 ('warnings_expire_days', '90', 0),
 ('warnings_gc', '14400', 0),
-('cache_last_gc', '1351356014', 1),
+('cache_last_gc', '1351830788', 1),
 ('cron_lock', '0', 1),
-('database_last_gc', '1351221672', 1),
+('database_last_gc', '1351830922', 1),
 ('last_queue_run', '0', 1),
 ('newest_user_colour', '', 1),
 ('newest_user_id', '55', 1),
@@ -3431,15 +3452,15 @@ INSERT INTO `phpbb_config` (`config_name`, `config_value`, `is_dynamic`) VALUES
 ('num_posts', '35', 1),
 ('num_topics', '35', 1),
 ('num_users', '3', 1),
-('rand_seed', '1be4d7d8c2e36f5f5b19afc032f6d1c5', 1),
-('rand_seed_last_update', '1351356024', 1),
+('rand_seed', '2a37249c904bc9e6013400ead0fb075a', 1),
+('rand_seed_last_update', '1351833690', 1),
 ('record_online_date', '1350620786', 1),
 ('record_online_users', '3', 1),
 ('search_indexing_state', '', 1),
-('search_last_gc', '1351356024', 1),
-('session_last_gc', '1351221697', 1),
+('search_last_gc', '1351831067', 1),
+('session_last_gc', '1351831990', 1),
 ('upload_dir_size', '0', 1),
-('warnings_last_gc', '1351356022', 1),
+('warnings_last_gc', '1351830883', 1),
 ('board_startdate', '1346462145', 0),
 ('default_lang', 'en', 0),
 ('questionnaire_unique_id', '63e4417965db2dba', 0);
@@ -4186,6 +4207,16 @@ CREATE TABLE IF NOT EXISTS `phpbb_login_attempts` (
   KEY `att_time` (`attempt_time`),
   KEY `user_id` (`user_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Dumping data for table `phpbb_login_attempts`
+--
+
+INSERT INTO `phpbb_login_attempts` (`attempt_ip`, `attempt_browser`, `attempt_forwarded_for`, `attempt_time`, `user_id`, `username`, `username_clean`) VALUES
+('98.215.6.86', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_5) AppleWebKit/536.26.14 (KHTML, like Gecko) Version/6.0.1 Safari/536.26.14', '', 1351832910, 0, 'Admin', 'admin'),
+('98.215.6.86', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_5) AppleWebKit/536.26.14 (KHTML, like Gecko) Version/6.0.1 Safari/536.26.14', '', 1351832913, 0, 'admin', 'admin'),
+('98.215.6.86', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_5) AppleWebKit/536.26.14 (KHTML, like Gecko) Version/6.0.1 Safari/536.26.14', '', 1351832939, 0, 'c145190-h222718', 'c145190-h222718'),
+('98.215.6.86', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_5) AppleWebKit/536.26.14 (KHTML, like Gecko) Version/6.0.1 Safari/536.26.14', '', 1351832985, 0, 'c145190-h222718', 'c145190-h222718');
 
 -- --------------------------------------------------------
 
@@ -5576,10 +5607,25 @@ CREATE TABLE IF NOT EXISTS `phpbb_sessions` (
 --
 
 INSERT INTO `phpbb_sessions` (`session_id`, `session_user_id`, `session_forum_id`, `session_last_visit`, `session_start`, `session_time`, `session_ip`, `session_browser`, `session_forwarded_for`, `session_page`, `session_viewonline`, `session_autologin`, `session_admin`) VALUES
-('3ca9c44a7f7519e3ab2bba6868b504ee', 1, 0, 1351308451, 1351308451, 1351308451, '98.253.33.44', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4', '', 'index.php', 1, 0, 0),
-('df748555e1593e22eb90da89acbdf780', 1, 0, 1351356013, 1351356013, 1351356013, '69.179.146.189', 'Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0; yie9)', '', 'index.php', 1, 0, 0),
-('010a9c95309a7b0bc76f35b2f8c3b9b1', 1, 0, 1351225174, 1351225174, 1351225174, '69.179.146.189', 'Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0; yie9)', '', 'ucp.php?mode=logout', 1, 0, 0),
-('b047de31ae9b94aedcf769afc4a5e1ec', 1, 0, 1351225174, 1351225174, 1351225179, '69.179.146.189', 'Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0; yie9)', '', 'index.php', 1, 0, 0);
+('8d2a5d5ab1068be2ac6c299a880c918c', 2, 0, 1350623377, 1351832436, 1351832436, '98.253.33.44', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4', '', 'ucp.php?mode=login', 1, 0, 0),
+('425fcde578855d99e99bca3ee0626ae5', 1, 0, 1351832100, 1351832100, 1351832100, '98.253.33.44', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4', '', 'index.php', 1, 0, 0),
+('935f43daf7bdce065070532fed1aea42', 1, 0, 1351832096, 1351832096, 1351832096, '98.253.33.44', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4', '', 'index.php', 1, 0, 0),
+('01883d5a5db20ec90ec7dd9f129a17e7', 1, 0, 1351830239, 1351830239, 1351830239, '98.253.33.44', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4', '', 'index.php', 1, 0, 0),
+('77fc7060e0a68d45d562e3afdbb57808', 2, 0, 1350623377, 1351830899, 1351830899, '98.253.33.44', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4', '', 'ucp.php?mode=login', 1, 0, 0),
+('55fc26619a97e5e122f47ac3c1b25028', 2, 0, 1350623377, 1351830932, 1351830932, '98.253.33.44', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4', '', 'ucp.php?mode=login', 1, 0, 0),
+('b0ee7f80bd43c7e63c747b6f0442c276', 1, 0, 1351831038, 1351831038, 1351831038, '98.253.33.44', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4', '', 'index.php', 1, 0, 0),
+('7f6f41bb00e0d05ce0534aac31bc8d2a', 1, 0, 1351831056, 1351831056, 1351831056, '98.253.33.44', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4', '', 'index.php', 1, 0, 0),
+('de933a675a5ee7c3cad5ee916e8a051e', 2, 0, 1350623377, 1351831077, 1351831077, '98.253.33.44', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4', '', 'ucp.php?mode=login', 1, 0, 0),
+('4ceb3c5b09cafa7d6405fd042582d21c', 1, 0, 1351831962, 1351831962, 1351831990, '98.215.6.86', 'Mozilla/5.0 (iPad; CPU OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) Version/6.0 Mobile/10A403 Safari/8536.25', '', 'ucp.php?mode=login', 1, 0, 0),
+('b4b05f1c29a93c7788530cc6f8029c28', 2, 0, 1350623377, 1351832452, 1351832452, '98.253.33.44', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4', '', 'ucp.php?mode=login', 1, 0, 0),
+('1abe01c25927c78801ae0ca44db3d0fc', 2, 0, 1350623377, 1351832733, 1351832733, '98.253.33.44', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4', '', 'ucp.php?mode=login', 1, 0, 0),
+('d20433c65dee86833d55cf1825544b28', 2, 0, 1350623377, 1351832810, 1351832810, '98.253.33.44', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4', '', 'ucp.php?mode=login', 1, 0, 0),
+('4073ae62c9e7f60be81b20cab6f7e841', 1, 0, 1351832895, 1351832895, 1351833061, '98.215.6.86', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_5) AppleWebKit/536.26.14 (KHTML, like Gecko) Version/6.0.1 Safari/536.26.14', '', 'ucp.php?mode=login', 1, 0, 0),
+('117454d33586f338b71804f316a42e54', 2, 0, 1350623377, 1351832940, 1351832940, '98.253.33.44', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:16.0) Gecko/20100101 Firefox/16.0', '', 'ucp.php?mode=login', 1, 0, 0),
+('17b4f54415bec1f76a908222e49625b8', 2, 0, 1350623377, 1351833051, 1351833051, '98.253.33.44', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4', '', 'ucp.php?mode=login', 1, 0, 0),
+('6290204adf536139c86a1a9d6920caa0', 1, 0, 1351833674, 1351833674, 1351833674, '98.253.33.44', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:16.0) Gecko/20100101 Firefox/16.0', '', 'ucp.php?mode=logout', 1, 0, 0),
+('f9c2d6e84a2247657fb1c3986044ef7d', 1, 0, 1351833674, 1351833674, 1351833678, '98.253.33.44', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:16.0) Gecko/20100101 Firefox/16.0', '', 'index.php', 1, 0, 0),
+('cea43e02d7c2224a7ec3f7110d754197', 1, 0, 1351833690, 1351833690, 1351833690, '98.253.33.44', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4', '', 'index.php', 1, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -6182,8 +6228,8 @@ CREATE TABLE IF NOT EXISTS `phpbb_users` (
 --
 
 INSERT INTO `phpbb_users` (`user_id`, `user_type`, `group_id`, `user_permissions`, `user_perm_from`, `user_ip`, `user_regdate`, `username`, `username_clean`, `user_password`, `user_passchg`, `user_pass_convert`, `user_email`, `user_email_hash`, `user_birthday`, `user_lastvisit`, `user_lastmark`, `user_lastpost_time`, `user_lastpage`, `user_last_confirm_key`, `user_last_search`, `user_warnings`, `user_last_warning`, `user_login_attempts`, `user_inactive_reason`, `user_inactive_time`, `user_posts`, `user_lang`, `user_timezone`, `user_dst`, `user_dateformat`, `user_style`, `user_rank`, `user_colour`, `user_new_privmsg`, `user_unread_privmsg`, `user_last_privmsg`, `user_message_rules`, `user_full_folder`, `user_emailtime`, `user_topic_show_days`, `user_topic_sortby_type`, `user_topic_sortby_dir`, `user_post_show_days`, `user_post_sortby_type`, `user_post_sortby_dir`, `user_notify`, `user_notify_pm`, `user_notify_type`, `user_allow_pm`, `user_allow_viewonline`, `user_allow_viewemail`, `user_allow_massemail`, `user_options`, `user_avatar`, `user_avatar_type`, `user_avatar_width`, `user_avatar_height`, `user_sig`, `user_sig_bbcode_uid`, `user_sig_bbcode_bitfield`, `user_from`, `user_icq`, `user_aim`, `user_yim`, `user_msnm`, `user_jabber`, `user_website`, `user_occ`, `user_interests`, `user_actkey`, `user_newpasswd`, `user_form_salt`, `user_new`, `user_reminded`, `user_reminded_time`) VALUES
-(1, 2, 1, 0x30303030303030303030336b687261336e6b0a0a0a0a0a6931636a796f3030303030300a6931636a796f3030303030300a6931636a796f3030303030300a6931636a796f3030303030300a6931636a796f3030303030300a6931636a796f3030303030300a6931636a796f3030303030300a6931636a796f3030303030300a6931636a796f3030303030300a6931636a796f3030303030300a6931636a796f3030303030300a6931636a796f3030303030300a6931636a796f3030303030300a6931636a796f3030303030300a6931636a796f3030303030300a6931636a796f3030303030300a6931636a796f3030303030300a6931636a796f3030303030300a6931636a796f3030303030300a6931636a796f3030303030300a6931636a796f3030303030300a6931636a796f3030303030300a6931636a796f3030303030300a6931636a796f3030303030300a6931636a796f3030303030300a6931636a796f3030303030300a6931636a796f3030303030300a6931636a796f3030303030300a6931636a796f3030303030300a6931636a796f303030303030, 0, '', 1346462145, 'Anonymous', 'anonymous', '', 0, 0, '', 0, '', 0, 0, 0, '', '', 0, 0, 0, 0, 0, 0, 0, 'en', 0.00, 0, 'd M Y H:i', 1, 0, '', 0, 0, 0, 0, -3, 0, 0, 't', 'd', 0, 't', 'a', 0, 1, 0, 1, 1, 1, 0, 230271, '', 0, 0, 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '35a08cf92dcfdde4', 1, 0, 0),
-(2, 3, 5, 0x7a696b307a6a7a696b307a6a7a696b3078730a0a0a0a0a716c63747a713030303030300a7a696b307a693030303030300a7a696b307a693030303030300a716c63747a713030303030300a716c63747a713030303030300a716c63747a713030303030300a716c63747a713030303030300a716c63747a713030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a69303030303030, 0, '98.253.33.44', 1346462145, 'Administrator', 'administrator', '$H$9S./VdIikBimqJov/SH3ItZPQ3BqFz/', 0, 0, 'jwoodall@matherlifeways.com', 424732528927, '', 1350623377, 0, 1350620471, 'viewforum.php?f=21', '', 0, 0, 0, 0, 0, 0, 14, 'en', 0.00, 0, 'D M d, Y g:i a', 1, 1, 'AA0000', 0, 0, 0, 0, -3, 0, 0, 't', 'd', 0, 't', 'a', 0, 1, 0, 1, 1, 1, 1, 230271, '', 0, 0, 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '7fd895539bb07990', 0, 0, 0),
+(1, 2, 1, 0x30303030303030303030336b687261336e6b0a0a0a0a0a6931636a796f3030303030300a6931636a796f3030303030300a6931636a796f3030303030300a6931636a796f3030303030300a6931636a796f3030303030300a6931636a796f3030303030300a6931636a796f3030303030300a6931636a796f3030303030300a6931636a796f3030303030300a6931636a796f3030303030300a6931636a796f3030303030300a6931636a796f3030303030300a6931636a796f3030303030300a6931636a796f3030303030300a6931636a796f3030303030300a6931636a796f3030303030300a6931636a796f3030303030300a6931636a796f3030303030300a6931636a796f3030303030300a6931636a796f3030303030300a6931636a796f3030303030300a6931636a796f3030303030300a6931636a796f3030303030300a6931636a796f3030303030300a6931636a796f3030303030300a6931636a796f3030303030300a6931636a796f3030303030300a6931636a796f3030303030300a6931636a796f3030303030300a6931636a796f303030303030, 0, '', 1346462145, 'Anonymous', 'anonymous', '', 0, 0, '', 0, '', 0, 0, 0, '', '', 0, 0, 0, 0, 0, 0, 0, 'en', 0.00, 0, 'd M Y H:i', 1, 0, '', 0, 0, 0, 0, -3, 0, 0, 't', 'd', 0, 't', 'a', 0, 1, 0, 1, 1, 1, 0, 230271, '', 0, 0, 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'f3a23e7eec6dc8c2', 1, 0, 0),
+(2, 3, 5, 0x7a696b307a6a7a696b307a6a7a696b3078730a0a0a0a0a716c63747a713030303030300a7a696b307a693030303030300a7a696b307a693030303030300a716c63747a713030303030300a716c63747a713030303030300a716c63747a713030303030300a716c63747a713030303030300a716c63747a713030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a69303030303030, 0, '98.253.33.44', 1346462145, 'Administrator', 'administrator', '$H$9S./VdIikBimqJov/SH3ItZPQ3BqFz/', 0, 0, 'jwoodall@matherlifeways.com', 424732528927, '', 1351833669, 0, 1350620471, 'viewforum.php?f=21', '', 0, 0, 0, 0, 0, 0, 14, 'en', 0.00, 0, 'D M d, Y g:i a', 1, 1, 'AA0000', 0, 0, 0, 0, -3, 0, 0, 't', 'd', 0, 't', 'a', 0, 1, 0, 1, 1, 1, 1, 230271, '', 0, 0, 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '2b51549836a21e62', 0, 0, 0),
 (3, 2, 6, '', 0, '', 1346462155, 'AdsBot [Google]', 'adsbot [google]', '', 1346462155, 0, '', 0, '', 0, 1346462155, 0, '', '', 0, 0, 0, 0, 0, 0, 0, 'en', 0.00, 0, 'D M d, Y g:i a', 1, 0, '9E8DA7', 0, 0, 0, 0, -3, 0, 0, 't', 'd', 0, 't', 'a', 0, 1, 0, 1, 1, 1, 0, 230271, '', 0, 0, 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'd36d1cda3cabcb1a', 0, 0, 0),
 (4, 2, 6, '', 0, '', 1346462155, 'Alexa [Bot]', 'alexa [bot]', '', 1346462155, 0, '', 0, '', 0, 1346462155, 0, '', '', 0, 0, 0, 0, 0, 0, 0, 'en', 0.00, 0, 'D M d, Y g:i a', 1, 0, '9E8DA7', 0, 0, 0, 0, -3, 0, 0, 't', 'd', 0, 't', 'a', 0, 1, 0, 1, 1, 1, 0, 230271, '', 0, 0, 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '9d02b18144edbf17', 0, 0, 0),
 (5, 2, 6, '', 0, '', 1346462155, 'Alta Vista [Bot]', 'alta vista [bot]', '', 1346462155, 0, '', 0, '', 0, 1346462155, 0, '', '', 0, 0, 0, 0, 0, 0, 0, 'en', 0.00, 0, 'D M d, Y g:i a', 1, 0, '9E8DA7', 0, 0, 0, 0, -3, 0, 0, 't', 'd', 0, 't', 'a', 0, 1, 0, 1, 1, 1, 0, 230271, '', 0, 0, 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '665405a69a650494', 0, 0, 0),

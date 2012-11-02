@@ -1,10 +1,4 @@
-<<<<<<< HEAD
 <Files *>
 	Order Allow,Deny
 	Deny from All
-=======
-<Files *>
-	Order Allow,Deny
-	Deny from All
->>>>>>> refs/remotes/origin/master
 </Files>

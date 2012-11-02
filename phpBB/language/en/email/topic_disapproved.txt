@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 Subject: Topic disapproved - "{TOPIC_TITLE}"
 
 Hello {USERNAME},
@@ -10,17 +9,4 @@ The following reason was given for the disapproval:
 {REASON}
 
 
-=======
-Subject: Topic disapproved - "{TOPIC_TITLE}"
-
-Hello {USERNAME},
-
-You are receiving this notification because your topic "{TOPIC_TITLE}" at "{SITENAME}" was disapproved by a moderator or administrator.
-
-The following reason was given for the disapproval:
-
-{REASON}
-
-
->>>>>>> refs/remotes/origin/master
 {EMAIL_SIG}

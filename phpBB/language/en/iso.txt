@@ -1,8 +1,3 @@
-<<<<<<< HEAD
 British English
 British English
-=======
-British English
-British English
->>>>>>> refs/remotes/origin/master
 phpBB Group

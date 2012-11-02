@@ -54,17 +54,12 @@ hr.dashed {
 }
 
 .navbar {
-	background: #eee;
-	box-shadow: 0 0 10px #ccc;
-	margin-bottom: 15px;
+	background-color: #cadceb;
 }
 
 .forabg {
-	background: #008c99;
-	box-shadow: 0 0 10px #ccc;
-	margin: 10px 0;
-	padding: 5px 10px;
-	border-radius: 8px;
+	background-color: #0076b1;
+	background-image: url("{T_THEME_PATH}/images/bg_list.gif");
 }
 
 .forumbg {
@@ -95,6 +90,22 @@ hr.dashed {
 
 .fieldsbg {
 	background-color: #E7E8EA;
+}
+
+span.corners-top {
+	background-image: url("{T_THEME_PATH}/images/corners_left.png");
+}
+
+span.corners-top span {
+	background-image: url("{T_THEME_PATH}/images/corners_right.png");
+}
+
+span.corners-bottom {
+	background-image: url("{T_THEME_PATH}/images/corners_left.png");
+}
+
+span.corners-bottom span {
+	background-image: url("{T_THEME_PATH}/images/corners_right.png");
 }
 
 /* Horizontal lists
@@ -357,6 +368,11 @@ a.right:hover {
 --------------------------------------------------------------
 Colours and backgrounds for content.css
 -------------------------------------------------------------- */
+
+ul.forums {
+	background-color: #eef5f9;
+	background-image: url("{T_THEME_PATH}/images/gradient.gif");
+}
 
 ul.topiclist li {
 	color: #4C5D77;
@@ -819,6 +835,38 @@ ul.cplist {
 	background-color: #FFFFFF;
 }
 
+#cp-main span.corners-top, #cp-menu span.corners-top {
+	background-image: url("{T_THEME_PATH}/images/corners_left2.gif");
+}
+
+#cp-main span.corners-top span, #cp-menu span.corners-top span {
+	background-image: url("{T_THEME_PATH}/images/corners_right2.gif");
+}
+
+#cp-main span.corners-bottom, #cp-menu span.corners-bottom {
+	background-image: url("{T_THEME_PATH}/images/corners_left2.gif");
+}
+
+#cp-main span.corners-bottom span, #cp-menu span.corners-bottom span {
+	background-image: url("{T_THEME_PATH}/images/corners_right2.gif");
+}
+
+/* Topicreview */
+#cp-main .panel #topicreview span.corners-top, #cp-menu .panel #topicreview span.corners-top {
+	background-image: url("{T_THEME_PATH}/images/corners_left.gif");
+}
+
+#cp-main .panel #topicreview span.corners-top span, #cp-menu .panel #topicreview span.corners-top span {
+	background-image: url("{T_THEME_PATH}/images/corners_right.gif");
+}
+
+#cp-main .panel #topicreview span.corners-bottom, #cp-menu .panel #topicreview span.corners-bottom {
+	background-image: url("{T_THEME_PATH}/images/corners_left.gif");
+}
+
+#cp-main .panel #topicreview span.corners-bottom span, #cp-menu .panel #topicreview span.corners-bottom span {
+	background-image: url("{T_THEME_PATH}/images/corners_right.gif");
+}
 
 /* Friends list */
 .cp-mini {

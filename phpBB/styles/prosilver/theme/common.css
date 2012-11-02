@@ -8,23 +8,25 @@
 }
 
 html {
+	font-size: 100%;
 	/* Always show a scrollbar for short pages - stops the jump when the scrollbar appears. non-IE browsers */
 	height: 101%;
 }
 
 body {
 	/* Text-Sizing with ems: http://www.clagnut.com/blog/348/ */
-	font-family: Arial, sans-serif;
+	font-family: Verdana, Helvetica, Arial, sans-serif;
 	color: #828282;
 	background-color: #FFFFFF;
-	font-size: 14px;
-	line-height: 20px;
+	/*font-size: 62.5%;			 This sets the default font size to be equivalent to 10px */
+	font-size: 10px;
 	margin: 0;
 	padding: 12px 0;
 }
 
 h1 {
 	/* Forum name */
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
 	margin-right: 200px;
 	color: #FFFFFF;
 	margin-top: 15px;
@@ -34,6 +36,7 @@ h1 {
 
 h2 {
 	/* Forum header titles */
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
 	font-weight: normal;
 	color: #3f3f3f;
 	font-size: 2em;
@@ -59,10 +62,13 @@ h3 {
 
 h4 {
 	/* Forum and topic list titles */
+	font-family: "Trebuchet MS", Verdana, Helvetica, Arial, Sans-serif;
 	font-size: 1.3em;
 }
 
 p {
+	line-height: 1.3em;
+	font-size: 1.1em;
 	margin-bottom: 1.5em;
 }
 
@@ -301,6 +307,8 @@ ul.linklist li {
 	float: left;
 	width: auto;
 	margin-right: 5px;
+	font-size: 1.1em;
+	line-height: 2.2em;
 }
 
 ul.linklist li.rightside, p.rightside {
@@ -345,6 +353,8 @@ table.table1 thead th {
 	font-weight: normal;
 	text-transform: uppercase;
 	color: #FFFFFF;
+	line-height: 1.3em;
+	font-size: 1em;
 	padding: 0 0 4px 3px;
 }
 
@@ -363,6 +373,7 @@ table.table1 tbody tr:hover, table.table1 tbody tr.hover {
 
 table.table1 td {
 	color: #6a6a6a;
+	font-size: 1.1em;
 }
 
 table.table1 tbody td {
@@ -452,7 +463,8 @@ table.info tbody th {
 }
 
 dl.details {
-
+	/*font-family: "Lucida Grande", Verdana, Helvetica, Arial, sans-serif;*/
+	font-size: 1.1em;
 }
 
 dl.details dt {
@@ -502,6 +514,7 @@ li.pagination {
 	color: #FFFFFF;
 	background-color: #bfbfbf;
 	border: 1px solid #bfbfbf;
+	font-size: 0.9em;
 }
 
 .pagination span a, .pagination span a:link, .pagination span a:visited, .pagination span a:active {
@@ -512,6 +525,8 @@ li.pagination {
 	padding: 0 2px;
 	background-color: #eeeeee;
 	border: 1px solid #bababa;
+	font-size: 0.9em;
+	line-height: 1.5em;
 }
 
 .pagination span a:hover {
@@ -532,6 +547,7 @@ li.pagination {
 	width: auto;
 	margin-top: 0;
 	padding: 1px 0 1px 15px;
+	font-size: 0.9em;
 	background: none 0 50% no-repeat;
 }
 
@@ -561,6 +577,7 @@ li.pagination {
 }
 
 .small {
+	font-size: 0.9em !important;
 }
 
 .titlespace {
@@ -574,6 +591,7 @@ li.pagination {
 .error {
 	color: #bcbcbc;
 	font-weight: bold;
+	font-size: 1em;
 }
 
 .reported {
@@ -589,6 +607,7 @@ div.rules {
 	color: #bcbcbc;
 	padding: 0 10px;
 	margin: 10px 0;
+	font-size: 1.1em;
 }
 
 div.rules ul, div.rules ol {
