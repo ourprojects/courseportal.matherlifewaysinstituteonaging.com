@@ -55,6 +55,10 @@ class Avatar extends CActiveRecord {
 		);
 	}
 	
+	public function behaviors() {
+		return array_merge(parent::behaviors(), array('toArray' => array('class' => 'behaviors.EArrayBehavior')));
+	}
+	
 	/**
 	 * @return array relational rules.
 	 */

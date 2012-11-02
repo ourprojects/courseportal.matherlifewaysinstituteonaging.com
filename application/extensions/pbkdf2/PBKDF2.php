@@ -44,6 +44,10 @@ class PBKDF2 extends CComponent {
 		return $this->_hash;
 	}
 	
+	public function verifyHash($hash) {
+		return $this->getHash() === $hash;
+	}
+	
 	public function generateIV() {
 		return base64_encode(mcrypt_create_iv($this->saltBytes, MCRYPT_DEV_URANDOM));
 	}

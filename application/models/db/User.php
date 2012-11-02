@@ -47,6 +47,7 @@ class User extends CActiveRecord implements IUserIdentity {
 		if($this->isNewRecord) {
 			$this->salt = $this->getHasher()->getIV();
 			$this->session_key = $this->getHasher()->generateIV();
+			$this->group_id = null;
 		}
 	}
 
@@ -90,11 +91,11 @@ class User extends CActiveRecord implements IUserIdentity {
 				
 			array('email', 'length', 'max' => 255),
 			array('email', 'email'),
-			array('email', 'unique', 'except' => 'login'),
+			array('email', 'unique', 'except' => 'login, search'),
 			array('email', 'loadUserAttributesFromEmail', 'on' => 'login'),
 
-			array('password', 'required', 'except' => 'login'),
-			array('password', 'ext.pbkdf2.PBKDF2validator', 'except' => 'login'),
+			array('password', 'required', 'except' => 'login, search'),
+			array('password', 'ext.pbkdf2.PBKDF2validator', 'except' => 'login, search'),
 
 			array('group_id', 'determineGroup', 'on' => 'pushedRegister, register'), 
 			array('group_id', 'exist', 'attributeName' => 'id', 'className' => 'Group', 'allowEmpty' => false),
@@ -102,6 +103,10 @@ class User extends CActiveRecord implements IUserIdentity {
 				
 			array('id, group_id, email, created', 'safe', 'on' => 'search')
         );
+	}
+	
+	public function behaviors() {
+		return array_merge(parent::behaviors(), array('toArray' => array('class' => 'behaviors.EArrayBehavior')));
 	}
 
 	/**
@@ -148,13 +153,10 @@ class User extends CActiveRecord implements IUserIdentity {
 	
 	public function getSearchCriteria() {
 		$criteria = new CDbCriteria;
-		
+
 		$criteria->compare('id', $this->id);
-		$criteria->compare('password', $this->password, true);
-		$criteria->compare('salt', $this->salt, true);
 		$criteria->compare('group_id',$this->group_id);
 		$criteria->compare('email', $this->email, true);
-		$criteria->compare('session_key', $this->session_key, true);
 		$criteria->compare('created', $this->created, true);
 		
 		return $criteria;

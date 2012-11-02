@@ -60,6 +60,10 @@ class Referral extends CActiveRecord
 			'referrer0' => array(self::BELONGS_TO, 'User', 'referrer'),
 		);
 	}
+	
+	public function behaviors() {
+		return array_merge(parent::behaviors(), array('toArray' => array('class' => 'behaviors.EArrayBehavior')));
+	}
 
 	/**
 	 * @return array customized attribute labels (name=>label)

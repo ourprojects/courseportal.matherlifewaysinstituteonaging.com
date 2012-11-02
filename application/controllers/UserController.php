@@ -6,9 +6,7 @@ class UserController extends ApiController {
 	 * @return array action filters
 	 */
 	public function filters() {
-		$filters = parent::filters();
-		$filters[] = 'verifyKey + addCourse'; 
-		return array_merge($filters, array('accessControl + profile'));
+		return array_merge(parent::filters(), array('accessControl + profile'));
 	}
 	
 	public function accessRules() {
@@ -244,10 +242,11 @@ class UserController extends ApiController {
 				$errors[$name] = $model->getErrors();
 		}
 	
-		if(empty($errors))
-			$this->renderApiResponse(200, array('confirmationUrl' => $models['User']->getActivationUrl()));
-		else
+		if(empty($errors)) {
+			$this->renderApiResponse(200, $models['User']->toArray(array('id', 'email')));
+		} else {
 			$this->renderApiResponse(400, $errors);
+		}
 	}
 	
 	public function actionRead() {
@@ -255,24 +254,16 @@ class UserController extends ApiController {
 				'User' => new User('search'),
 				'UserProfile' => new UserProfile('search'),
 		);
-
-		$criteria = new CDbCriteria();
-		foreach($models as $model) {
-			foreach($model->getSafeAttributeNames() as $attr) {
-				if(isset($_GET[$attr]))
-					$criteria->compare($attr, $_GET[$attr], true);
-			}
+		foreach($models as $name => $model) {
+			if(isset($_GET[$name]))
+				$model->attributes = $_GET[$name];
 		}
-		
-		$criteria->with = array('userProfile');
-		$users = $models['User']->findAll($criteria);
+		$criteria = $models['User']->getSearchCriteria();
+		$criteria->mergeWith($models['UserProfile']->getSearchCriteria());
+		$users = $models['User']->with(array('group', 'userProfile'))->findAll($criteria);
 		$data = array();
 		foreach($users as $user) {
-			$data[] = array_merge(
-							$user->getAttributes(array('email', 'created')), 
-							$user->userProfile->getAttributes(), 
-							array('group_name' => $user->group->name)
-						); 
+			$data[] = $user->toArray($user->getSafeAttributeNames(), array('group' => 'name', 'userProfile' => $models['UserProfile']->getSafeAttributeNames())); 
 		}
 	
 		if(empty($data))
@@ -284,7 +275,7 @@ class UserController extends ApiController {
 	public function actionUpdate() {
 		$requestVars = Yii::app()->getRequest()->getRestParams();
 		if(!isset($requestVars['id'])) {
-			$this->renderApiResponse(400, array(array('User' => array('id' => 'The id of the user to be updated must be specified.'))));
+			$this->renderApiResponse(400, array('id' => t('The id of the user to be updated must be specified.')));
 			return;
 		}
 
@@ -318,7 +309,7 @@ class UserController extends ApiController {
 		}
 	
 		if(empty($errors))
-			$this->renderApiResponse(200);
+			$this->renderApiResponse();
 		else
 			$this->renderApiResponse(400, $errors);
 	}
@@ -326,7 +317,7 @@ class UserController extends ApiController {
 	public function actionDelete() {
 		$requestVars = Yii::app()->getRequest()->getRestParams();
 		if(!isset($requestVars['id'])) {
-			$this->renderApiResponse(400, array(array('User' => array('id' => 'The id of the user to be deleted must be specified.'))));
+			$this->renderApiResponse(400, array('id' => t('The id of the user to be deleted must be specified.')));
 			return;
 		}
 
@@ -334,40 +325,64 @@ class UserController extends ApiController {
 			'User' => array('rows_deleted' => User::model()->deleteByPk($requestVars['id'])),
 			'UserProfile' => array('rows_deleted' => UserProfile::model()->deleteByPk($requestVars['id'])),
 		);
-		if($result['User']['rows_deleted'] === 0 && $result['UserProfile']['rows_deleted'] === 0)
-			$this->renderApiResponse(404, $result);
-		else
-			$this->renderApiResponse(200, $result);
+
+		$this->renderApiResponse(200, $result);
 	}
 	
-	public function actionAddCourse() {
-		$errors = array();
-		if(!isset($_POST['email']) && !isset($_POST['id'])) {
-			$errors['User']['id'] = 'An email or an id must be specified. Who are you adding this course to?';
-			$errors['User']['email'] = 'An email or an id must be specified. Who are you adding this course to?';
+	public function actionOptions() {
+		$models['User'] = new User('search');
+		$models['UserProfile'] = new UserProfile('search');
+		$attributes = array('User' => array(), 'UserProfile' => array());
+		foreach($models as $name => $model) {
+			$attributes[$name] = $model->getSafeAttributeNames();
 		}
-		if(!isset($_POST['course_id']))
-			$errors['UserCourse']['course_id'] = 'A course_id must be specified. What course are you adding?';
-	
-		if(empty($errors)) {
-			$user = new User('search');
-			$user->attributes = $_POST;
-			if(($user = User::model()->find($user->getSearchCriteria())) !== null) {
-				$userCourse = new UserCourse;
-				$userCourse->user_id = $user->id;
-				$userCourse->course_id = $_POST['course_id'];
-				if(!$userCourse->save())
-					$errors['UserCourse'] = $userCourse->getErrors();
-			} else {
-				$this->renderApiResponse(404, array('User' => array('The user requested to add a course to could not be found.')));
-				return;
+		$response = array('GET' =>
+						array(
+							'returns' => 'List of users.',
+							'options' => $attributes,
+							'requirements' => array()
+						)
+					);
+		$attributesRequired = array();
+		foreach($models as $name => $model) {
+			$model->setScenario('pushedRegister');
+			$attributes[$name] = array();
+			$attributesRequired[$name] = array();
+			foreach($model->getSafeAttributeNames() as $attrname) {
+				if($model->isAttributeRequired($attrname))
+					$attributesRequired[$name][] = $attrname;
+				else
+					$attributes[$name][] = $attrname; 
 			}
 		}
-	
-		if(empty($errors))
-			$this->renderApiResponse();
-		else
-			$this->renderApiResponse(400, $errors);
+		$response['POST'] =
+						array(
+							'returns' => array('User' => array('id', 'email')),
+							'options' => $attributes,
+							'requirements' => $attributesRequired,
+						);
+		foreach($models as $name => $model) {
+			$model->setScenario('update');
+			$attributes[$name] = array();
+			$attributesRequired[$name] = array();
+			foreach($model->getSafeAttributeNames() as $attrname) {
+				if($model->isAttributeRequired($attrname))
+					$attributesRequired[$name][] = $attrname;
+				else
+					$attributes[$name][] = $attrname; 
+			}
+		}
+		$response['PUT'] = array(
+							'returns' => 'Number of rows effected',
+							'options' => $attributes,
+							'requirements' => $attributesRequired,
+						);
+		$response['DELETE'] = array(
+							'returns' => 'Number of rows effected',
+							'options' => array(),
+							'requirements' => array('User' => array('id'), 'UserProfile' => array('id')),
+						);
+		$this->renderApiResponse(200, $response);
 	}
 	
 }

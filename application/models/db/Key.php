@@ -59,6 +59,10 @@ class Key extends CActiveRecord {
         );
     }
     
+    public function behaviors() {
+    	return array_merge(parent::behaviors(), array('toArray' => array('class' => 'behaviors.EArrayBehavior')));
+    }
+    
     public function hash($attribute = 'key', $params = array()) {
     	if($this->$attribute !== null)
     		$this->value = $this->getHasher()->getHash($this->$attribute);

@@ -55,6 +55,10 @@ class UploadedFile extends CActiveRecord {
 				array('user_id', 'exist', 'attributeName' => 'id', 'className' => 'User', 'allowEmpty' => false),
 		);
 	}
+	
+	public function behaviors() {
+		return array_merge(parent::behaviors(), array('toArray' => array('class' => 'behaviors.EArrayBehavior')));
+	}
 
 	/**
 	 * @return array relational rules.

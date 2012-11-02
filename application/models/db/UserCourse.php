@@ -51,6 +51,10 @@ class UserCourse extends CActiveRecord {
 				array('user_id, course_id', 'safe', 'on'=>'search'),
 		);
 	}
+	
+	public function behaviors() {
+		return array_merge(parent::behaviors(), array('toArray' => array('class' => 'behaviors.EArrayBehavior')));
+	}
 
 	/**
 	 * @return array relational rules.
@@ -74,22 +78,22 @@ class UserCourse extends CActiveRecord {
 		);
 	}
 	
+	public function getSearchCriteria() {
+		$criteria = new CDbCriteria;
+		
+		$criteria->compare('user_id', $this->user_id);
+		$criteria->compare('course_id', $this->course_id);
+		
+		return $criteria;
+	}
+	
 	/**
 	 * Retrieves a list of models based on the current search/filter conditions.
 	 * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.
 	 */
-	public function search()
-	{
-		// Warning: Please modify the following code to remove attributes that
-		// should not be searched.
-	
-		$criteria = new CDbCriteria;
-	
-		$criteria->compare('user_id', $this->user_id);
-		$criteria->compare('course_id', $this->course_id, true);
-	
+	public function search() {
 		return new CActiveDataProvider($this, array(
-				'criteria' => $criteria,
+				'criteria' => $this->getSearchCriteria(),
 		));
 	}
 

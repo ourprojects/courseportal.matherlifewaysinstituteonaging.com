@@ -39,6 +39,10 @@ class States extends CActiveRecord {
             array('id, name, abbrev', 'safe', 'on' => 'search'),
         );
     }
+    
+    public function behaviors() {
+    	return array_merge(parent::behaviors(), array('toArray' => array('class' => 'behaviors.EArrayBehavior')));
+    }
 
     /**
      * @return array relational rules.

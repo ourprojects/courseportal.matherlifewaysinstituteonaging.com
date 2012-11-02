@@ -45,6 +45,10 @@ class Country extends CActiveRecord {
             array('iso, name, printable_name, iso3, numcode', 'safe', 'on'=>'search'),
         );
     }
+    
+    public function behaviors() {
+    	return array_merge(parent::behaviors(), array('toArray' => array('class' => 'behaviors.EArrayBehavior')));
+    }
 
     /**
      * @return array relational rules.

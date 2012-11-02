@@ -17,9 +17,7 @@ abstract class ApiController extends OnlineCoursePortalController {
 			$_GET['key'] = str_replace(array('-','_'), array('+','/'), $_GET['key']);
 			$key = Key::model()->findByPk($_GET['key_id']);
 			if($key !== null) {
-				$this->loadExtension('pbkdf2');
-				$hasher = new PBKDF2($_GET['key'], $key->salt);
-				if($hasher->hashed === $key->value) {
+				if(Yii::createComponent(array('class' => 'ext.pbkdf2.PBKDF2', 'string' => $_GET['key'], 'IV' => $key->salt))->verifyHash($key->value)) {
 					$filterChain->run();	
 					return;
 				}
@@ -28,13 +26,25 @@ abstract class ApiController extends OnlineCoursePortalController {
 		throw new CHttpException(401, t('Not authorized.'));
 	}
 	
-	public abstract function actionCreate();
+	public function actionCreate() {
+		$this->renderApiResponse(501);
+	}
 	
-	public abstract function actionRead();
+	public function actionRead() {
+		$this->renderApiResponse(501);
+	}
 	
-	public abstract function actionUpdate();
+	public function actionUpdate() {
+		$this->renderApiResponse(501);
+	}
 	
-	public abstract function actionDelete();
+	public function actionDelete() {
+		$this->renderApiResponse(501);
+	}
+	
+	public function actionOptions() {
+		$this->renderApiResponse(501);
+	}
 	
 	public function actionCsrfToken() {
 		echo CJSON::encode(array('csrfToken' => Yii::app()->getRequest()->csrfToken));

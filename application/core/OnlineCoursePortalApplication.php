@@ -27,6 +27,7 @@ class OnlineCoursePortalApplication extends CWebApplication {
     	Yii::setPathOfAlias('helpers', APPPATH . 'helpers');
     	Yii::setPathOfAlias('filters', APPPATH . 'filters');
     	Yii::setPathOfAlias('uploads', APPPATH . 'uploads');
+    	Yii::setPathOfAlias('behaviors', APPPATH . 'behaviors');
     	parent::preinit();
     }
     
