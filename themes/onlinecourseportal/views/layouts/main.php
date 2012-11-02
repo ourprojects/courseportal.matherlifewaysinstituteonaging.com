@@ -95,9 +95,9 @@
 			</div>
 			<div id="copyright">
 				<ul>
-				<li>P: <?php echo Yii::app()->params->phone; ?> | F: <?php echo Yii::app()->params->fax; ?></li>
-				<li><?php echo Yii::app()->params->address; ?></li>
-				<li><?php echo Yii::app()->params->copyrightInfo; ?></li>
+				<li>P: (847) 492.7500 | F: (847) 492.6789</li>
+				<li>1603 Orrington Avenue; Suite 1800 | Evanston; IL 60201</li>
+				<li>&copy; Copyright 2012 Mather LifeWays&reg;</li>
 				</ul>
 			</div>
 
