@@ -23,6 +23,62 @@ class AdminController extends OnlineCoursePortalController {
 		);
 	}
 	
+	public function actionApiKeys() {
+		$models = array(
+				'searchModel' => new Key('search'),
+				'model' => new Key,
+		);
+		
+		if(isset($_POST['ajax'])) {
+			if($_POST['ajax'] === 'key-create-form') {
+				echo CActiveForm::validate($models['model']);
+				Yii::app()->end();
+			}
+		}
+		
+		$models['searchModel']->unsetAttributes();
+		
+		if(isset($_GET['Key']))
+			$models['searchModel']->attributes = $_GET['Key'];
+		
+		if(isset($_POST['Key'])) {
+			$models['model']->attributes = $_POST['Key'];
+			if($models['model']->save())
+				Yii::app()->user->setFlash('success', t('Key saved successfully.'));
+			else
+				Yii::app()->user->setFlash('error', t('Key could not be saved.'));
+		}
+		
+		$this->render('pages/apiKeys', $models);
+	}
+	
+	public function actionKeyGenerate() {
+		if(Yii::app()->getRequest()->getIsAjaxRequest()) {
+			$this->loadHelper('Utilities');
+			echo base64_url_encode(Key::model()->generateKey());
+		}
+	}
+	
+	public function actionKeyDelete($id) {
+		$model = Key::model()->findByPk($id);
+		 
+		if($model === null)
+			throw new CHttpException(404, t('Key ID {id} not found.', array('{id}' => $id)));
+		 
+		if($model->delete()) {
+			$response = array('result' => 'success', 'message' => t('Key deleted successfully.'));
+		} else {
+			$response = array('result' => 'error', 'message' => t('Key could not be deleted.'));
+		}
+		 
+		if(Yii::app()->getRequest()->getIsAjaxRequest()) {
+			echo $response['message'];
+		} else {
+			Yii::app()->user->setFlash($response['result'], $response['message']);
+			$this->redirect(Yii::app()->getRequest()->getUrlReferrer());
+		}
+	}
+	
 	public function actionCourse() {
 		$models = array(
 				'searchModel' => new Course('search'), 
@@ -44,7 +100,9 @@ class AdminController extends OnlineCoursePortalController {
 		if(isset($_POST['Course'])) {
 			$models['model']->attributes = $_POST['Course'];
 			if($models['model']->save())
-				Yii::app()->user->setFlash('success', t('Course added successfully'));
+				Yii::app()->user->setFlash('success', t('Course saved successfully.'));
+			else
+				Yii::app()->user->setFlash('error', t('Course could not be saved.'));
 		}
 		
 		$this->render('pages/course', $models);
@@ -52,16 +110,21 @@ class AdminController extends OnlineCoursePortalController {
 	
 	public function actionCourseDelete($id) {
 	    $model = Course::model()->findByPk($id);
+	    
 	    if($model === null)
 	    	throw new CHttpException(404, t('Course ID {id} not found.', array('{id}' => $id)));
-        if($model->delete()) {
-            if(Yii::app()->getRequest()->getIsAjaxRequest()) {
-                echo t('Course deleted successfully');
-                Yii::app()->end();
-            } else {
-            	Yii::app()->user->setFlash('success', t('Course deleted successfully'));
-                $this->redirect(Yii::app()->getRequest()->getUrlReferrer());
-            }
+	    
+	    if($model->delete()) {
+	    	$response = array('result' => 'success', 'message' => t('Course deleted successfully.'));
+	    } else {
+	    	$response = array('result' => 'error', 'message' => t('Course could not be deleted.'));
+	    }
+	    
+        if(Yii::app()->getRequest()->getIsAjaxRequest()) {
+        	echo $response['message'];
+        } else {
+        	Yii::app()->user->setFlash($response['result'], $response['message']);
+        	$this->redirect(Yii::app()->getRequest()->getUrlReferrer());
         }
 	}
 

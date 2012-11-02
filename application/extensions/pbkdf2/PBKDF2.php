@@ -1,54 +1,51 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed');  
 
-class PBKDF2 {
+class PBKDF2 extends CComponent {
 	
-	const HASH_ALGORITHM = "sha256";
-	const ITERATIONS = 1024;
-	const SALT_BYTES = 32;
-	const HASH_BYTES = 32;
-	const STATIC_SALT = 'aPzMkl7y99vUDZWWyoflnYGkBi8ZoSCXDiDo/7MH+Iw=';
+	public $hashAlgorithm = 'sha256';
 	
-	private $_string;
-	private $_iv;
+	public $iterations = 1024;
 	
-	public function __construct($string = null, $iv = null) {
-		$this->_iv = $iv;
-		$this->_string = $this->hash($string);
+	public $saltBytes = 32;
+	
+	public $hashBytes = 32;
+	
+	public $staticSalt = 'aPzMkl7y99vUDZWWyoflnYGkBi8ZoSCXDiDo/7MH+Iw=';
+	
+	public $string = null;
+	
+	private $_hash = null;
+	private $_iv = null;
+	
+	public function setIV($value) {
+		$this->_iv = $value;
 	}
 	
-	public function __set($name, $value) {
-		if($name === 'string')
-			$this->_string = $this->hash($value);
-		else if($name === 'iv')
-			$this->_iv = $value;
+	public function getIV($generateIvIfNull = true) {
+		if($generateIvIfNull && $this->_iv === null)
+			$this->_iv = $this->generateIV();
+		return $this->_iv;
 	}
 	
-	public function __get($name) {
-		if($name === 'iv') {
-			if($this->_iv === null)
-				$this->_iv = $this->generateIV();
-			return $this->_iv;
-		} else if($name === 'hashed') {
-			return $this->_string;
-		}
-	}	
-	
-	public function generateIV($replaceCurrentIv = true) {
-		$iv = base64_encode(mcrypt_create_iv(self::SALT_BYTES, MCRYPT_DEV_URANDOM));
-		if($replaceCurrentIv)
-			$this->_iv = $iv;
-		return $iv;
+	public function getHash($string = null) {
+		if($string !== null)
+			$this->string = $string;
+		if($this->string === null)
+			$this->_hash = null;
+		else if($string !== null || $this->_hash === null)
+			$this->_hash = base64_encode($this->runPBKDF2Algorithm(
+							$this->hashAlgorithm,
+							$this->string,
+							$this->getIV(),
+							$this->iterations,
+							$this->hashBytes,
+							true
+					));
+		return $this->_hash;
 	}
 	
-	protected function hash($string) {
-		return base64_encode($this->pbkdf2(
-						self::HASH_ALGORITHM,
-						$string,
-						$this->iv,
-						self::ITERATIONS,
-						self::HASH_BYTES,
-						true
-				));
+	public function generateIV() {
+		return base64_encode(mcrypt_create_iv($this->saltBytes, MCRYPT_DEV_URANDOM));
 	}
 	
 	/**
@@ -75,20 +72,20 @@ class PBKDF2 {
 	 *
 	 * Test vectors can be found here: https://www.ietf.org/rfc/rfc6070.txt
 	 */
-	protected function pbkdf2($algorithm, $password, $iv, $count, $key_length, $raw_output = false) {
+	protected function runPBKDF2Algorithm($algorithm, $password, $iv, $count, $key_length, $raw_output = false) {
 		$algorithm = strtolower($algorithm);
 		if(!in_array($algorithm, hash_algos(), true))
-			die('PBKDF2 ERROR: Invalid hash algorithm.');
+			throw new HttpException(500, Yii::t('yii','PBKDF2 ERROR: Unrecognized hash algorithm "{algorithm}".'), array('algorithm' => $algorithm));
 		if($count <= 0 || $key_length <= 0)
-			die('PBKDF2 ERROR: Invalid parameters.');
+			throw new HttpException(500, Yii::t('yii','PBKDF2 ERROR: Invalid parameters.'));
 	
 		$hash_length = strlen(hash($algorithm, "", true));
 		$block_count = ceil($key_length / $hash_length);
 	
-		$output = "";
+		$output = '';
 		for($i = 1; $i <= $block_count; $i++) {
 			// $i encoded as 4 bytes, big endian.
-			$last = $iv . self::STATIC_SALT . pack("N", $i);
+			$last = $iv . $this->staticSalt . pack('N', $i);
 			// first iteration
 			$last = $xorsum = hash_hmac($algorithm, $last, $password, true);
 			// perform the other $count - 1 iterations

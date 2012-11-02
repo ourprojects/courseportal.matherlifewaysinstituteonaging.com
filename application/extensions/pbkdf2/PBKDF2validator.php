@@ -15,17 +15,17 @@ class PBKDF2Validator extends CValidator {
 
 	protected function validateAttribute($object, $attribute) {
 		if(!is_string($object->$attribute)) {
-			$message = $this->message !== null ? $this->message : Yii::t('yii','{attribute} must be a string.');
+			$message = $this->message !== null ? $this->message : Yii::t('yii','{attribute} must be a string.', array('{attribute}' => $attribute));
 			$this->addError($object, $attribute, $message);
 			return false;
 		}
 		if(empty($object->$attribute) && !$this->allowEmpty) {
-			$message = $this->message !== null ? $this->message : Yii::t('yii','{attribute} cannot be blank.');
+			$message = $this->message !== null ? $this->message : Yii::t('yii','{attribute} cannot be blank.', array('{attribute}' => $attribute));
 			$this->addError($object, $attribute, $message);
 			return false;
 		}
 		if(!preg_match('/^(?:[A-Za-z0-9+\/]{4}){10}(?:[A-Za-z0-9+\/]{3}=)$/', $object->$attribute)) {
-			$message = $this->message !== null ? $this->message : Yii::t('yii','{attribute} is not a base64 encoded string.');
+			$message = $this->message !== null ? $this->message : Yii::t('yii','{attribute} is not a base64 encoded string.', array('{attribute}' => $attribute));
 			$this->addError($object, $attribute, $message);
 			return false;
 		}

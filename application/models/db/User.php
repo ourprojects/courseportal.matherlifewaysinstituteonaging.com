@@ -44,10 +44,9 @@ class User extends CActiveRecord implements IUserIdentity {
 	public $password_no_hash_repeat = null;
 
 	public function init() {
-		Yii::import('ext.pbkdf2.PBKDF2');
 		if($this->isNewRecord) {
-			$this->salt = $this->getHasher()->generateIV();
-			$this->session_key = $this->getHasher()->generateIV(false);
+			$this->salt = $this->getHasher()->getIV();
+			$this->session_key = $this->getHasher()->generateIV();
 		}
 	}
 
@@ -216,7 +215,7 @@ class User extends CActiveRecord implements IUserIdentity {
 			$this->getHasher()->iv = $record->salt;
 			$this->getHasher()->string = $this->password_no_hash;
 		}
-		if($record === null || $record->password !== $this->getHasher()->hashed)
+		if($record === null || $record->password !== $this->getHasher()->getHash())
 			$this->addError('User', 'Incorrect email or password.');
 		else if($record->userActivated === null || $record->userActivated->getIsNewRecord())
 			$this->addError('User', 'The email and password you have entered are correct, but your account has not yet been activated.');
@@ -228,8 +227,7 @@ class User extends CActiveRecord implements IUserIdentity {
 	}
 	
 	public function hash($attribute, $params) {
-		$this->getHasher()->string = $this->$attribute;
-		$this->password = $this->getHasher()->hashed;
+		$this->password = $this->getHasher()->getHash($this->$attribute);
 	}
 	
 	/**
@@ -237,13 +235,13 @@ class User extends CActiveRecord implements IUserIdentity {
 	 * @return boolean whether the session key was successfully updated for this user.
 	 */
 	public function regenerateSessionKey() {
-		$this->session_key = $this->getHasher()->generateIV(false);
+		$this->session_key = $this->getHasher()->generateIV();
 		return $this->save(true, array('session_key'));
 	}
 	
 	public function getHasher() {
-		if($this->_pbkdf2Hasher === null)
-			$this->_pbkdf2Hasher = new PBKDF2;
+		if($this->_pbkdf2Hasher === null) 
+			$this->_pbkdf2Hasher = Yii::createComponent('ext.pbkdf2.PBKDF2');
 		return $this->_pbkdf2Hasher;
 	}
 	
