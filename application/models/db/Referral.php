@@ -12,7 +12,7 @@
  * @property User $referee0
  * @property User $referrer0
  */
-class Referral extends CActiveRecord
+class Referral extends ActiveRecord
 {
 	/**
 	 * Returns the static model of the specified AR class.
@@ -59,10 +59,6 @@ class Referral extends CActiveRecord
 			'referee0' => array(self::BELONGS_TO, 'User', 'referee'),
 			'referrer0' => array(self::BELONGS_TO, 'User', 'referrer'),
 		);
-	}
-	
-	public function behaviors() {
-		return array_merge(parent::behaviors(), array('toArray' => array('class' => 'behaviors.EArrayBehavior')));
 	}
 
 	/**

@@ -1,6 +1,6 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed');  
 
-class UserCourse extends CActiveRecord {
+class UserCourse extends ActiveRecord {
 	/**
 	 * This is the model class for table "user_course".
 	 *
@@ -50,10 +50,6 @@ class UserCourse extends CActiveRecord {
 				
 				array('user_id, course_id', 'safe', 'on'=>'search'),
 		);
-	}
-	
-	public function behaviors() {
-		return array_merge(parent::behaviors(), array('toArray' => array('class' => 'behaviors.EArrayBehavior')));
 	}
 
 	/**

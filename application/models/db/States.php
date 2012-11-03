@@ -11,7 +11,7 @@
  * The followings are the available model relations:
  * @property UserProfile[] $userProfiles
  */
-class States extends CActiveRecord {
+class States extends ActiveRecord {
     /**
      * Returns the static model of the specified AR class.
      * @param string $className active record class name.
@@ -38,10 +38,6 @@ class States extends CActiveRecord {
             array('abbrev', 'length', 'is' => 2),
             array('id, name, abbrev', 'safe', 'on' => 'search'),
         );
-    }
-    
-    public function behaviors() {
-    	return array_merge(parent::behaviors(), array('toArray' => array('class' => 'behaviors.EArrayBehavior')));
     }
 
     /**

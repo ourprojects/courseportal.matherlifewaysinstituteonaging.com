@@ -8,7 +8,7 @@
  * @property string $value
  * @property string $salt
  */
-class Key extends CActiveRecord {
+class Key extends ActiveRecord {
 	
 	private $_pbkdf2Hasher = null;
 	public $key = null;
@@ -57,10 +57,6 @@ class Key extends CActiveRecord {
         		
         	array('id', 'safe', 'on' => 'search'),
         );
-    }
-    
-    public function behaviors() {
-    	return array_merge(parent::behaviors(), array('toArray' => array('class' => 'behaviors.EArrayBehavior')));
     }
     
     public function hash($attribute = 'key', $params = array()) {

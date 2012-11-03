@@ -1,6 +1,6 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed');  
 
-class Group extends CActiveRecord {
+class Group extends ActiveRecord {
 	/**
 	 * This is the model class for table "group".
 	 *
@@ -29,10 +29,6 @@ class Group extends CActiveRecord {
 	 */
 	public function tableName() {
 		return '{{group}}';
-	}
-	
-	public function behaviors() {
-		return array_merge(parent::behaviors(), array('toArray' => array('class' => 'behaviors.EArrayBehavior')));
 	}
 
 	/**

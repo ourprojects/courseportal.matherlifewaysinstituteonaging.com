@@ -23,7 +23,7 @@
  * @property UserProfile $userProfile
  */
 
-class User extends CActiveRecord implements IUserIdentity {
+class User extends ActiveRecord implements IUserIdentity {
 
 	const ERROR_NONE = 0;
 	const ERROR_EMAIL_INVALID = 1;
@@ -103,10 +103,6 @@ class User extends CActiveRecord implements IUserIdentity {
 				
 			array('id, group_id, email, created', 'safe', 'on' => 'search')
         );
-	}
-	
-	public function behaviors() {
-		return array_merge(parent::behaviors(), array('toArray' => array('class' => 'behaviors.EArrayBehavior')));
 	}
 
 	/**

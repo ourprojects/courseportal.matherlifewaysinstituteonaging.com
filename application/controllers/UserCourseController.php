@@ -55,29 +55,29 @@ class UserCourseController extends ApiController {
 		$this->renderApiResponse(200, 
 				array('GET' => 
 							array(
-								'returns' => 'List of course, user associations.',
-								'options' => array(
-										'user_id' => 'search for courses associated with this user id.', 
-										'course_id' => 'search for users associated with this course id.'
+								'returns' => t('List of course, user associations.'),
+								'optional' => array(
+										'user_id' => t('search for courses associated with this user id.'), 
+										'course_id' => t('search for users associated with this course id.')
 										),
-								'requirements' => false
+								'required' => array()
 								),
 					  'POST' =>
 							array(
 								'returns' => false,
-								'options' => false,
-								'requirements' => array(
-										'user_id' => 'The id of the user to associate a course with.',
-										'course_id' => 'The id of the course to associate with a user.'
+								'optional' => false,
+								'required' => array(
+										'user_id' => t('The id of the user to associate a course with.'),
+										'course_id' => t('The id of the course to associate with a user.')
 										)
 								),
 					  'PUT' => false,
 					  'DELETE' => array(
-					  			'returns' => 'Number of rows effected',								
-								'options' => false,
-								'requirements' => array(
-										'user_id' => 'The id of the user to associate a course with.',
-										'course_id' => 'The id of the course to associate with a user.'
+					  			'returns' => t('Number of rows effected'),								
+								'optional' => false,
+								'required' => array(
+										'user_id' => t('The id of the user to associate a course with.'),
+										'course_id' => t('The id of the course to associate with a user.')
 										)
 								)		
 					)

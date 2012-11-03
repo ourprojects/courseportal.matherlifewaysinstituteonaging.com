@@ -9,7 +9,7 @@
  * The followings are the available model relations:
  * @property User $user
  */
-class UserActivated extends CActiveRecord {
+class UserActivated extends ActiveRecord {
     /**
      * Returns the static model of the specified AR class.
      * @param string $className active record class name.
@@ -36,10 +36,6 @@ class UserActivated extends CActiveRecord {
         		
         	array('user_id', 'exist', 'attributeName' => 'id', 'className' => 'User'),
         );
-    }
-    
-    public function behaviors() {
-    	return array_merge(parent::behaviors(), array('toArray' => array('class' => 'behaviors.EArrayBehavior')));
     }
 
     /**

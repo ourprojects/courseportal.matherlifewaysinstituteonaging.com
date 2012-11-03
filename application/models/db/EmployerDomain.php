@@ -7,7 +7,7 @@
  * @property integer $id
  * @property string $domain
  */
-class EmployerDomain extends CActiveRecord
+class EmployerDomain extends ActiveRecord
 {
 	/**
 	 * Returns the static model of the specified AR class.
@@ -41,10 +41,6 @@ class EmployerDomain extends CActiveRecord
 			// Please remove those attributes that should not be searched.
 			array('id, domain', 'safe', 'on'=>'search'),
 		);
-	}
-	
-	public function behaviors() {
-		return array_merge(parent::behaviors(), array('toArray' => array('class' => 'behaviors.EArrayBehavior')));
 	}
 
 	/**

@@ -16,7 +16,7 @@
  * The followings are the available model relations:
  * @property User $user
  */
-class UploadedFile extends CActiveRecord {
+class UploadedFile extends ActiveRecord {
 	
 	const FILES_PATH_ALIAS = 'uploads.files';
 	const MAX_FILE_SIZE = 17179869184;
@@ -54,10 +54,6 @@ class UploadedFile extends CActiveRecord {
 				array('user_id, local_name, size, name', 'unsafe'),
 				array('user_id', 'exist', 'attributeName' => 'id', 'className' => 'User', 'allowEmpty' => false),
 		);
-	}
-	
-	public function behaviors() {
-		return array_merge(parent::behaviors(), array('toArray' => array('class' => 'behaviors.EArrayBehavior')));
 	}
 
 	/**

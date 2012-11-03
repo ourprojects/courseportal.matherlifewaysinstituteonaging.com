@@ -332,55 +332,42 @@ class UserController extends ApiController {
 	public function actionOptions() {
 		$models['User'] = new User('search');
 		$models['UserProfile'] = new UserProfile('search');
-		$attributes = array('User' => array(), 'UserProfile' => array());
 		foreach($models as $name => $model) {
-			$attributes[$name] = $model->getSafeAttributeNames();
+			$attributes[$name] = $model->getOptionalAttributes();
+			$attributesRequired[$name] = $model->getRequiredAttributes();
 		}
 		$response = array('GET' =>
 						array(
-							'returns' => 'List of users.',
-							'options' => $attributes,
-							'requirements' => array()
+							'returns' => t('List of users.'),
+							'optional' => $attributes,
+							'required' => $attributesRequired
 						)
 					);
-		$attributesRequired = array();
 		foreach($models as $name => $model) {
 			$model->setScenario('pushedRegister');
-			$attributes[$name] = array();
-			$attributesRequired[$name] = array();
-			foreach($model->getSafeAttributeNames() as $attrname) {
-				if($model->isAttributeRequired($attrname))
-					$attributesRequired[$name][] = $attrname;
-				else
-					$attributes[$name][] = $attrname; 
-			}
+			$attributes[$name] = $model->getOptionalAttributes();
+			$attributesRequired[$name] = $model->getRequiredAttributes();
 		}
 		$response['POST'] =
 						array(
 							'returns' => array('User' => array('id', 'email')),
-							'options' => $attributes,
-							'requirements' => $attributesRequired,
+							'optional' => $attributes,
+							'required' => $attributesRequired,
 						);
 		foreach($models as $name => $model) {
 			$model->setScenario('update');
-			$attributes[$name] = array();
-			$attributesRequired[$name] = array();
-			foreach($model->getSafeAttributeNames() as $attrname) {
-				if($model->isAttributeRequired($attrname))
-					$attributesRequired[$name][] = $attrname;
-				else
-					$attributes[$name][] = $attrname; 
-			}
+			$attributes[$name] = $model->getOptionalAttributes();
+			$attributesRequired[$name] = $model->getRequiredAttributes();
 		}
 		$response['PUT'] = array(
-							'returns' => 'Number of rows effected',
-							'options' => $attributes,
-							'requirements' => $attributesRequired,
+							'returns' => t('Number of rows effected'),
+							'optional' => $attributes,
+							'required' => $attributesRequired,
 						);
 		$response['DELETE'] = array(
-							'returns' => 'Number of rows effected',
-							'options' => array(),
-							'requirements' => array('User' => array('id'), 'UserProfile' => array('id')),
+							'returns' => t('Number of rows effected'),
+							'optional' => array(),
+							'required' => array('User' => array('id'), 'UserProfile' => array('id')),
 						);
 		$this->renderApiResponse(200, $response);
 	}

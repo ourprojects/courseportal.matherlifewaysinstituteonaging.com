@@ -13,7 +13,7 @@
  * The followings are the available model relations:
  * @property UserProfile[] $userProfiles
  */
-class Country extends CActiveRecord {
+class Country extends ActiveRecord {
     /**
      * Returns the static model of the specified AR class.
      * @param string $className active record class name.
@@ -44,10 +44,6 @@ class Country extends CActiveRecord {
             // Please remove those attributes that should not be searched.
             array('iso, name, printable_name, iso3, numcode', 'safe', 'on'=>'search'),
         );
-    }
-    
-    public function behaviors() {
-    	return array_merge(parent::behaviors(), array('toArray' => array('class' => 'behaviors.EArrayBehavior')));
     }
 
     /**

@@ -18,7 +18,7 @@
  * @property QuestionAnswer[] $questionAnswers
  * 
  */
-class UserProfile extends CActiveRecord {
+class UserProfile extends ActiveRecord {
 	
     /**
      * Returns the static model of the specified AR class.
@@ -58,10 +58,6 @@ class UserProfile extends CActiveRecord {
         		
         	array('user_id, firstname, lastname, city, zip_code, state_id, country_iso', 'safe', 'on' => 'search')
         );
-    }
-    
-    public function behaviors() {
-    	return array_merge(parent::behaviors(), array('toArray' => array('class' => 'behaviors.EArrayBehavior')));
     }
 
     /**

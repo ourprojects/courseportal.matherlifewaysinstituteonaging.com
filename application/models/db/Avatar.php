@@ -8,7 +8,7 @@
  * @property integer $size
  * @property string $name
  */
-class Avatar extends CActiveRecord {
+class Avatar extends ActiveRecord {
 
 	const DEFAULT_MIME = 'image/png';
 	const DEFAULT_NAME = 'default.png';
@@ -53,10 +53,6 @@ class Avatar extends CActiveRecord {
 				array('name', 'length', 'is' => 40),
 				array('name', 'match', 'pattern' => '/[\da-fA-F]{1,4}/'),
 		);
-	}
-	
-	public function behaviors() {
-		return array_merge(parent::behaviors(), array('toArray' => array('class' => 'behaviors.EArrayBehavior')));
 	}
 	
 	/**
