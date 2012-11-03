@@ -12,6 +12,7 @@ class ActiveRecord extends CActiveRecord {
 			if($this->isAttributeRequired($attrName))
 				$requiredAttributeNames[] = $attrName;
 		}
+		return $requiredAttributeNames;
 	}
 	
 	public function getOptionalAttributes() {
