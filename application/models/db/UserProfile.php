@@ -45,7 +45,7 @@ class UserProfile extends ActiveRecord {
             		firstname, 
             		lastname, 
             		country_iso',
-            		'required'),
+            		'required', 'except' => 'search'),
         	
             array('firstname, lastname, city', 'length', 'max' => 255),
         		

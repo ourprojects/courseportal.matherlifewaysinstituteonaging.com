@@ -6,10 +6,10 @@ class HttpRequest extends CHttpRequest {
 
 	public function validateCsrfToken($event) {
 		$route = Yii::app()->getUrlManager()->parseUrl(Yii::app()->getRequest());
-		
 		foreach($this->noCsrfValidationRoutes as $noValidationRoute) {
-			if(preg_match('/'.str_replace('/', '\/', $noValidationRoute).'/i', $route))
+			if(preg_match('/'.str_replace('/', '\/', $noValidationRoute).'/i', $route)) {
 				return true;
+			}
 		}
 
 		return parent::validateCsrfToken($event);

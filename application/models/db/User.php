@@ -72,7 +72,7 @@ class User extends ActiveRecord implements IUserIdentity {
 	public function rules() {
 		return array(
 			array('password, salt, session_key, group_id', 'unsafe'),
-			array('email, salt, session_key', 'required'),
+			array('email, salt, session_key', 'required', 'except' => 'search'),
 			array('salt, session_key', 'ext.pbkdf2.PBKDF2validator'),
 				
 			array('password_no_hash', 'required', 'on' => 'pushedRegister, register, login'),
@@ -99,7 +99,7 @@ class User extends ActiveRecord implements IUserIdentity {
 
 			array('group_id', 'determineGroup', 'on' => 'pushedRegister, register'), 
 			array('group_id', 'exist', 'attributeName' => 'id', 'className' => 'Group', 'allowEmpty' => false),
-			array('group_id', 'required'),
+			array('group_id', 'required', 'except' => 'search'),
 				
 			array('id, group_id, email, created', 'safe', 'on' => 'search')
         );

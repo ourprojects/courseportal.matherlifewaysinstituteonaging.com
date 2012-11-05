@@ -8,7 +8,7 @@ abstract class ApiController extends OnlineCoursePortalController {
 	public function filters() {
 		return array(
 				array('filters.HttpsFilter'),
-				'verifyKey + create, read, update, delete, csrfToken',
+				'verifyKey + create, read, update, delete',
 		);
 	}
 	
@@ -18,7 +18,7 @@ abstract class ApiController extends OnlineCoursePortalController {
 			$key = Key::model()->findByPk($_GET['key_id']);
 			if($key !== null) {
 				if(Yii::createComponent(array('class' => 'ext.pbkdf2.PBKDF2', 'string' => $_GET['key'], 'IV' => $key->salt))->verifyHash($key->value)) {
-					$filterChain->run();	
+					$filterChain->run();
 					return;
 				}
 			}
@@ -44,10 +44,6 @@ abstract class ApiController extends OnlineCoursePortalController {
 	
 	public function actionOptions() {
 		$this->renderApiResponse(501);
-	}
-	
-	public function actionCsrfToken() {
-		echo CJSON::encode(array('csrfToken' => Yii::app()->getRequest()->csrfToken));
 	}
 	
 	protected function renderApiResponse($statusCode = 200, $data = array(), $additionalHeaders = null) {

@@ -6,22 +6,16 @@ class ActiveRecord extends CActiveRecord {
 		return array_merge(parent::behaviors(), array('toArray' => array('class' => 'behaviors.EArrayBehavior')));
 	}
 	
-	public function getRequiredAttributes() {
-		$requiredAttributeNames = array();
-		foreach($this->getSafeAttributeNames() as $attrName) {
-			if($this->isAttributeRequired($attrName))
-				$requiredAttributeNames[] = $attrName;
-		}
-		return $requiredAttributeNames;
+	public function getRequiredAttributes($safeOnly = true) {
+		return array_values(array_filter($safeOnly ? $this->getSafeAttributeNames() : $this->attributeNames(), array($this, 'isAttributeRequired')));
 	}
 	
-	public function getOptionalAttributes() {
-		$optionalAttributeNames = array();
-		foreach($this->getSafeAttributeNames() as $attrName) {
-			if($this->isAttributeRequired($attrName))
-				$optionalAttributeNames[] = $attrName;
-		}
-		return $optionalAttributeNames;
+	public function isAttributeOptional($attrName) {
+		return !$this->isAttributeRequired($attrName);
+	}
+	
+	public function getOptionalAttributes($safeOnly = true) {
+		return array_values(array_filter($safeOnly ? $this->getSafeAttributeNames() : $this->attributeNames(), array($this, 'isAttributeOptional')));
 	}
 	
 }

@@ -336,13 +336,12 @@ class UserController extends ApiController {
 			$attributes[$name] = $model->getOptionalAttributes();
 			$attributesRequired[$name] = $model->getRequiredAttributes();
 		}
-		$response = array('GET' =>
+		$response['GET'] =
 						array(
 							'returns' => t('List of users.'),
 							'optional' => $attributes,
 							'required' => $attributesRequired
-						)
-					);
+						);
 		foreach($models as $name => $model) {
 			$model->setScenario('pushedRegister');
 			$attributes[$name] = $model->getOptionalAttributes();

@@ -50,7 +50,7 @@ return array(
 						'enableCookieValidation' => true,
 						'enableCsrfValidation' => true,
 						'noCsrfValidationRoutes' => array(
-									'user/[create|read|update|delete|addCourse]/*'
+									'[user|usercourse]/[create|read|update|delete|options]/*'
 								)
 				),
 				
