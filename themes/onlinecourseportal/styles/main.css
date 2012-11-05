@@ -810,8 +810,7 @@ div.view {
 }
 #tutorial .pull-quote {
 	font-family: "Hammersmith One", Impact, sans-serif;
-	font-size: 30px;
-	line-height: 35px;
+	font-size: 2em;
 	color: #b71010;
 }
 #tutorial .course-buttons {

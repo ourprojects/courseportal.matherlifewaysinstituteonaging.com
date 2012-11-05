@@ -141,6 +141,6 @@ $this->widget(
 	</ul>
 
 	<div id="coming-soon" style="display:none; width: 400px; height: 200px;"><h1 class="flowers">
-	<?php echo t('Please check back later!'); ?></h1></div>
+	<?php echo t('We are almost done! Please check back tomorrow.'); ?></h1></div>
 		
 </div>

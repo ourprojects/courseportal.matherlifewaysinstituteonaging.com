@@ -10,11 +10,11 @@ Yii::app()->clientScript->registerScript('quotes_rotator', "$('.quotes').quote_r
 	</div>
 	<div id="sidebar">
 		<div class="box-sidebar three">
-			<h3><?php echo t('Stats on Caregivers'); ?></h3>
+			<h3><?php echo t('Statistics on Caregivers'); ?></h3>
 			<ul class="quotes">
 				<li><img src="<?php echo Yii::app()->theme->getImagesUrl(); ?>/stat-one-quarter.png" /><?php echo t('<span>1/4</span> of US households has a family caregiver providing some form of care or service to a relative or friend, age 50+'); ?></li>
-				<li><img src="<?php echo Yii::app()->theme->getImagesUrl(); ?>/stat-two-thirds.png" /><?php echo t('<span>2/3</span> of these family caregivers are also working.'); ?></li>
-				<li><img src="<?php echo Yii::app()->theme->getImagesUrl(); ?>/stat-half.png" /><?php echo t('<span>50%</span> of employed caregivers work full-time/'); ?></li>
+				<li><img src="<?php echo Yii::app()->theme->getImagesUrl(); ?>/stat-two-thirds.png" /><?php echo t('<span>2/3</span> of these family caregivers are also working'); ?></li>
+				<li><img src="<?php echo Yii::app()->theme->getImagesUrl(); ?>/stat-half.png" /><?php echo t('<span>50%</span> of employed caregivers work full-time'); ?></li>
 			</ul>
 		</div>
 
@@ -34,9 +34,9 @@ Yii::app()->clientScript->registerScript('quotes_rotator', "$('.quotes').quote_r
 
 			
 		<div class="box-sidebar one">
-			<h3><?php echo t('Alzheimers Assocation'); ?></h3>
+			<h3><?php echo t('Alzheimer\'s Assocation (United States)'); ?></h3>
 			<p style="text-align: center;"><img src="<?php echo Yii::app()->theme->getImagesUrl(); ?>/alz.png" /></p>
-			<p><?php echo t('There are 10 warning signs of Alzheimers. If you or someone you know is experiencing 
+			<p><?php echo t('There are 10 warning signs of Alzheimer\'s. If you or someone you know is experiencing 
 			any of the signs, please see a doctor. Early diagnosis gives you a chance to seek treatment and plan for the future.'); ?></p>
 			
 			<!--- add image for whitepaper here, like a Adobe pdf icon or something -->						
@@ -60,8 +60,8 @@ Yii::app()->clientScript->registerScript('quotes_rotator', "$('.quotes').quote_r
 	</div>
 	<div class="column-wide">
 
-		<h2 class="flowers"><?php echo t('Mather LifeWays Institute on Aging'); ?></h2>
-		<p><?php echo t('Through research-based programs and innovative techniques, Mather LifeWays Institute on Aging is 
+		<h2 class="flowers">Mather LifeWays Institute on Aging</h2>
+		<p><?php echo t('Through research-based programs and innovative techniques, '); ?> Mather LifeWays Institute on Aging <?php echo t('is 
 		committed to advancing the field of geriatric care. Cutting-edge research lays the foundation for our solid solutions to senior care challenges, 
 		including recruitment, mentorship, training, and retention.'); ?></p>
 		
@@ -80,15 +80,15 @@ Yii::app()->clientScript->registerScript('quotes_rotator', "$('.quotes').quote_r
 		caregivers into current training programs. In addition, we are well-positioned to help conduct pilot studies that measure the impact on both 
 		working caregivers and the bottom line for interested corporations.'); ?></p>
 
-		<h2 class="flowers top-pad"><?php echo t('The Sandwich Generation - by Media Storm'); ?></h2>
-		<p><?php echo t('Filmmaker-photographer couple Julie Winokur and Ed Kashi were busy pursuing their careers 
+		<h2 class="flowers top-pad">The Sandwich Generation - by Media Storm <?php echo t('English'); ?></h2>
+		<p><?php echo t('Filmmaker and photographer couple Julie Winokur and Ed Kashi were busy pursuing their careers 
 		and raising two children when Winokurs 83-year-old father, Herbie, became too infirm to care for himself. At that moment they joined 
 		some twenty million other Americans who make up the sandwich generation, those who find themselves responsible for the care of both 
 		their children and their aging parents.'); ?></p>
 		
-		<p><?php echo t('Authors of the book Aging in America: The Years Ahead, which chronicles the countrys 
+		<p><?php echo t('Authors of the book '); ?>Aging in America: The Years Ahead, <?php echo t('which chronicles the countrys 
 		fastest-growing segment of the population, Winokur and Kashi decided to tell their own story as they took on the care of Winokurs 
-		father. In The Sandwich Generation, they have created an honest, intimate account of their own shifting and challenging responsibilities, as well as some of their unexpected joys.'); ?></p>
+		father. In '); ?>The Sandwich Generation<?php echo t(', they have created an honest, intimate account of their own shifting and challenging responsibilities, as well as some of their unexpected joys.'); ?></p>
 		
 		<div class="box-grey">
 			<div id="TheSandwichGeneration">
