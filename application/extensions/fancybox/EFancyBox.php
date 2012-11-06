@@ -49,7 +49,7 @@ class EFancyBox extends CWidget {
 			
 			// if mouse actions enbled register the js
 			if ($this->mouseEnabled) 
-				Yii::app()->clientScript->registerScriptFile("$assetsUrl/jquery.mousewheel-3.0.6.pack.js", CClientScript::POS_HEAD);
+				Yii::app()->clientScript->registerScriptFile("$assetsUrl/lib/jquery.mousewheel-3.0.6.pack.js", CClientScript::POS_HEAD);
 			
 			// include helpers required by the config
 			// thumbs
