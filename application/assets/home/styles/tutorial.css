@@ -1,0 +1,52 @@
+#tutorial {
+	width: 970px;
+	height: 670px;
+}
+#tutorial h2.flowers {
+	border-bottom: 1px solid #ddd;
+	margin-bottom: 10px;
+}
+#tutorial .slide {
+	display: none;
+	padding: 0 10px;
+}
+#tutorial #slide-1.slide {
+	display: block;
+}
+#tutorial .pull-quote {
+	font-family: "Hammersmith One", Impact, sans-serif;
+	font-size: 2em;
+	color: #b71010;
+}
+#tutorial .course-buttons {
+	background: #ddd;
+	border-radius: 10px;
+	height: 40px;
+	position: absolute;
+	padding: 5px;
+	bottom: 5px;
+	left: 5px;
+	right: 5px;
+}
+#tutorial .change-slide.button.left {
+	float: left;
+}
+#tutorial .change-slide.button.right {
+	float: right;
+}
+#tutorial .box-white {
+	font-size: 12pt;
+}
+#tutorial .no-bullets {
+	list-style: none;
+}
+#tutorial .no-bullets li {
+	padding: 5px 0 5px 30px;
+}
+#tutorial .tutorial-video {
+	float: right;
+	margin: 0 0 15px 15px;
+}
+#tutorial .teal {
+	margin: 7px 0 0 0;
+}
