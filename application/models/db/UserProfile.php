@@ -41,11 +41,12 @@ class UserProfile extends ActiveRecord {
      */
     public function rules() {
         return array(
-            array('user_id, 
-            		firstname, 
+            array('user_id',
+            		'required', 'except' => 'search'),
+        	array('firstname, 
             		lastname, 
             		country_iso',
-            		'required', 'except' => 'search'),
+        			'required', 'except' => 'insert'),
         	
             array('firstname, lastname, city', 'length', 'max' => 255),
         		

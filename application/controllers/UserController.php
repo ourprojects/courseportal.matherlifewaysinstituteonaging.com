@@ -52,9 +52,7 @@ class UserController extends ApiController {
 		$models = array(
 					'user' => new User('register'),
 					'user_profile' => new UserProfile,
-					'avatar' => new Avatar,
 					'captcha' => new Captcha,
-					'profile_questions' => Yii::app()->surveyor->profile->form,
 				);
 		// if it is ajax validation request
 		if(isset($_POST['ajax']) && $_POST['ajax'] === 'register-form') {
@@ -62,10 +60,6 @@ class UserController extends ApiController {
 				$models['user']->attributes = $_POST['User'];
 			if(isset($_POST['UserProfile']))
 				$models['user_profile']->attributes = $_POST['UserProfile'];
-			if(isset($_POST['Avatar']))
-				$models['avatar']->attributes = $_POST['Avatar'];
-			if(isset($_POST['Survey']['profile']))
-				$models['profile_questions']->attributes = $_POST['Survey']['profile'];
 			if(isset($_POST['Captcha']))
 				$models['captcha']->attributes = $_POST['Captcha'];
 			echo CActiveForm::validateTabular($models, null, false);
@@ -75,25 +69,16 @@ class UserController extends ApiController {
 		// collect user input data
 		if(isset($_POST['User']) && 
 				isset($_POST['UserProfile']) && 
-				isset($_POST['Avatar']) && 
-				isset($_POST['Captcha']) &&
-				isset($_POST['Survey']['profile'])) {
+				isset($_POST['Captcha'])) {
 			$models['user']->attributes = $_POST['User'];
 			$models['user_profile']->attributes = $_POST['UserProfile'];
-			$models['avatar']->attributes = $_POST['Avatar'];
 			$models['captcha']->attributes = $_POST['Captcha'];
 			if($models['captcha']->validate() && $models['user']->validate()) {
 				$transaction = Yii::app()->db->beginTransaction();
 				try {
 					if($models['user']->save(false)) {
 						$models['user_profile']->user_id = $models['user']->id;
-						$models['avatar']->user_id = $models['user']->id;
-						$models['profile_questions']->user_id = $models['user']->id;
-						$models['profile_questions']->attributes = $_POST['Survey']['profile'];
-						if($models['user_profile']->save() &&
-								$models['profile_questions']->save(true, false) &&
-								$models['avatar']->validate(array('image')) && 
-								($models['avatar']->image === null || $models['avatar']->save())) {
+						if($models['user_profile']->save()) {
 							$transaction->commit();
 							$this->sendConfirmationEmail($models['user']);
 							$this->render('pages/registerConfSent');
@@ -101,15 +86,9 @@ class UserController extends ApiController {
 						}
 					}
 				} catch(Exception $e) {
-					if(!$models['avatar']->getIsNewRecord())
-						$models['avatar']->delete();
-					try {
-						$transaction->rollback();
-					} catch(Exception $e2) { }
+					$transaction->rollback();
 					throw $e;
 				}
-				if(!$models['avatar']->getIsNewRecord())
-					$models['avatar']->delete();
 				$transaction->rollback();
 			}
 		}
@@ -199,6 +178,7 @@ class UserController extends ApiController {
 					$transaction->commit();
 				}
 			} catch(Exception $e) {
+				// Potential problem here.
 				if(!$models['avatar']->getIsNewRecord())
 					$models['avatar']->delete();
 				$transaction->rollback();
