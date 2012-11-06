@@ -2,20 +2,16 @@
 
 class Theme extends CTheme {
 	
-	public function getStylesUrl() {
-		return $this->getBaseUrl() . '/styles';
+	public function getStylesUrl($file = '') {
+		return "{$this->getBaseUrl()}/styles/$file";
 	}
 	
-	public function getScriptsUrl() {
-		return $this->getBaseUrl() . '/scripts';
+	public function getScriptsUrl($file = '') {
+		return "{$this->getBaseUrl()}/scripts/$file";
 	}
 	
-	public function getImagesUrl() {
-		return $this->getBaseUrl() . '/images';
-	}
-	
-	public function getFlashUrl() {
-		return $this->getBaseUrl() . '/flash';
+	public function getImagesUrl($file = '') {
+		return "{$this->getBaseUrl()}/images/$file";
 	}
 	
 }

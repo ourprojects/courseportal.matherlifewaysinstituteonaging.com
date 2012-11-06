@@ -14,7 +14,7 @@ $this->widget(
 		)
 );
 ?>
-<div class="small-masthead" style="background-image: url(<?php echo Yii::app()->theme->getImagesUrl(); ?>/header-courses.png);">
+<div class="small-masthead" style="background-image: url(<?php echo Yii::app()->theme->getImagesUrl('header-courses.png'); ?>);">
 	<h1 class="bottom"><?php echo t('Courses'); ?></h1>
 </div>
 <div id="single-column">
@@ -25,7 +25,7 @@ $this->widget(
 	
 	<hr>
 
-	<img src="<?php echo Yii::app()->theme->getImagesUrl(); ?>/image-hands.png" class="image-right" />
+	<img src="<?php echo Yii::app()->theme->getImagesUrl('image-hands.png'); ?>" class="image-right" />
 	<h3><a href="#coming-soon" class="coming-soon"><?php echo t('Intro to Caregiving Online'); ?></a></h3>
 	<p><?php echo t('Few are fully prepared for the responsibilities and tasks involved in caring for an older adult. 
 	As a caregiver, it is important to have a clear plan or guide that has multiple paths. This five-lesson online course introduces the basics 
@@ -71,7 +71,7 @@ $this->widget(
 	
 	<hr>
 
-	<img src="<?php echo Yii::app()->theme->getImagesUrl(); ?>/image-grocery.png" class="image-right" />
+	<img src="<?php echo Yii::app()->theme->getImagesUrl('image-grocery.png'); ?>" class="image-right" />
 	<h3><a href="#coming-soon" class="coming-soon"><?php echo t('CARE Coaching Online'); ?></a></h3>
 	<p><?php echo t('CARE Coaching Online provides working caregivers with essential tools, 
 	knowledge, and skills to effectively deal with the variety of issues arising from caring for their aging parents, relatives, 
@@ -117,7 +117,7 @@ $this->widget(
 	
 	<hr>
 	
-	<img src="<?php echo Yii::app()->theme->getImagesUrl(); ?>/image-nurse.png" class="image-right" />
+	<img src="<?php echo Yii::app()->theme->getImagesUrl('image-nurse.png'); ?>" class="image-right" />
 	<h3><a href="#coming-soon" class="coming-soon"><?php echo t('Gerontology Online program'); ?></a></h3>
 	<p><?php echo t('Gerontology Online is a web-based continuing education program designed for health care professionals 
 	who wish to enhance their knowledge and skills in the field of aging. This program will provide employees with valuable information about gerontology, 

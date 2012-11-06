@@ -1,26 +1,26 @@
 <?php
 $this->pageTitle = Yii::app()->name . ' - ' . t('User');
 
-Yii::app()->clientScript->registerScriptFile(Yii::app()->theme->getScriptsUrl() . '/jquery.quote.js', CClientScript::POS_HEAD);
+Yii::app()->clientScript->registerScriptFile(Yii::app()->theme->getScriptsUrl('jquery.quote.js'), CClientScript::POS_HEAD);
 Yii::app()->clientScript->registerScript('quotes_rotator', "$('.quotes').quote_rotator({randomize_first_quote: true});");
 
 ?>
-	<div class="small-masthead" style="background-image: url(<?php echo Yii::app()->theme->getImagesUrl(); ?>/home.png);">
+	<div class="small-masthead" style="background-image: url(<?php echo Yii::app()->theme->getImagesUrl('home.png'); ?>);">
 		<h1 class="bottom"><?php echo t('Welcome!'); ?></h1>
 	</div>
 	<div id="sidebar">
 		<div class="box-sidebar three">
 			<h3><?php echo t('Statistics on Caregivers'); ?></h3>
 			<ul class="quotes">
-				<li><img src="<?php echo Yii::app()->theme->getImagesUrl(); ?>/stat-one-quarter.png" /><?php echo t('<span>1/4</span> of US households has a family caregiver providing some form of care or service to a relative or friend, age 50+'); ?></li>
-				<li><img src="<?php echo Yii::app()->theme->getImagesUrl(); ?>/stat-two-thirds.png" /><?php echo t('<span>2/3</span> of these family caregivers are also working'); ?></li>
-				<li><img src="<?php echo Yii::app()->theme->getImagesUrl(); ?>/stat-half.png" /><?php echo t('<span>50%</span> of employed caregivers work full-time'); ?></li>
+				<li><img src="<?php echo Yii::app()->theme->getImagesUrl('stat-one-quarter.png'); ?>" /><?php echo t('<span>1/4</span> of US households has a family caregiver providing some form of care or service to a relative or friend, age 50+'); ?></li>
+				<li><img src="<?php echo Yii::app()->theme->getImagesUrl('stat-two-thirds.png'); ?>" /><?php echo t('<span>2/3</span> of these family caregivers are also working'); ?></li>
+				<li><img src="<?php echo Yii::app()->theme->getImagesUrl('stat-half.png'); ?>" /><?php echo t('<span>50%</span> of employed caregivers work full-time'); ?></li>
 			</ul>
 		</div>
 
 		<div class="box-sidebar four">
 			<h3><a href="http://feeds.feedburner.com/pewresearch/internetandtechnology" target="_blank">Pew Research</a></h3>
-			<p style="text-align: center;"><img src="<?php echo Yii::app()->theme->getImagesUrl(); ?>/pew.png" /></p>
+			<p style="text-align: center;"><img src="<?php echo Yii::app()->theme->getImagesUrl('pew.png'); ?>" /></p>
 			<p><?php echo t('As of April 2012, 53% of American adults age 65 and older use the internet or email. 
 			Though these adults are still less likely than all other age groups to use the internet, 
 			the latest data represent the first time that half of seniors are going online. After 
@@ -35,7 +35,7 @@ Yii::app()->clientScript->registerScript('quotes_rotator', "$('.quotes').quote_r
 			
 		<div class="box-sidebar one">
 			<h3><?php echo t('Alzheimer\'s Assocation (United States)'); ?></h3>
-			<p style="text-align: center;"><img src="<?php echo Yii::app()->theme->getImagesUrl(); ?>/alz.png" /></p>
+			<p style="text-align: center;"><img src="<?php echo Yii::app()->theme->getImagesUrl('alz.png'); ?>" /></p>
 			<p><?php echo t('There are 10 warning signs of Alzheimer\'s. If you or someone you know is experiencing 
 			any of the signs, please see a doctor. Early diagnosis gives you a chance to seek treatment and plan for the future.'); ?></p>
 			
@@ -48,7 +48,7 @@ Yii::app()->clientScript->registerScript('quotes_rotator', "$('.quotes').quote_r
 				
 		<div class="box-sidebar two">
 			<h3 class="two-line"><?php echo t('Medicare.gov<br />Tips &amp; Resources for Caregivers'); ?></h3>
-			<p style="text-align: center;"><img src="<?php echo Yii::app()->theme->getImagesUrl(); ?>/medicare.png" /></p>
+			<p style="text-align: center;"><img src="<?php echo Yii::app()->theme->getImagesUrl('medicare.png'); ?>" /></p>
 			<p><?php echo t('Are you familar and/or have you visited the Medicare website? 
 			The handout below is a list of tips and resources for caregivers as suggested by Medicare.'); ?></p>
 		

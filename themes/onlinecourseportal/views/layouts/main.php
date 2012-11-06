@@ -1,17 +1,17 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="language" content="en" />
+	<meta http-equiv="Content-Type" content="text/html; charset=<?php echo Yii::app()->charset; ?>" />
+	<meta name="language" content="<?php echo Yii::app()->getLanguage(); ?>" />
 	<!-- blueprint CSS framework -->
-	<?php echo CHtml::cssFile(Yii::app()->theme->getStylesUrl().'/screen.css', 'screen, projection'); ?>
-	<?php echo CHtml::cssFile(Yii::app()->theme->getStylesUrl().'/print.css', 'print'); ?>
+	<?php echo CHtml::cssFile(Yii::app()->theme->getStylesUrl('screen.css'), 'screen, projection'); ?>
+	<?php echo CHtml::cssFile(Yii::app()->theme->getStylesUrl('print.css'), 'print'); ?>
 	<!--[if lt IE 8]>
-		<?php echo CHtml::cssFile(Yii::app()->theme->getStylesUrl().'/ie.css', 'screen, projection'); ?>
+		<?php echo CHtml::cssFile(Yii::app()->theme->getStylesUrl('ie.css'), 'screen, projection'); ?>
 		<![endif]-->
-	<?php echo CHtml::cssFile(Yii::app()->theme->getStylesUrl().'/main.css'); ?>
-	<?php echo CHtml::cssFile(Yii::app()->theme->getStylesUrl().'/form.css'); ?>
-	<?php Yii::app()->clientScript->registerScriptFile(Yii::app()->theme->getScriptsUrl() . '/main.js', CClientScript::POS_HEAD); ?>
+	<?php echo CHtml::cssFile(Yii::app()->theme->getStylesUrl('main.css')); ?>
+	<?php echo CHtml::cssFile(Yii::app()->theme->getStylesUrl('form.css')); ?>
+	<?php Yii::app()->clientScript->registerScriptFile(Yii::app()->theme->getScriptsUrl('main.js'), CClientScript::POS_HEAD); ?>
 	<title>
 		<?php 
 		$this->pageTitle = Yii::app()->name;
@@ -29,7 +29,7 @@
 	<div class="container" id="page">
 		<div id="header">
 			<div id="logo">
-				<img src="<?php echo Yii::app()->theme->getImagesUrl(); ?>/logo.png" />
+				<img src="<?php echo Yii::app()->theme->getImagesUrl('logo.png'); ?>" />
 			</div>
 			<div id="site-title"><?php echo Yii::app()->name; ?></div>
 			<div id="language-menu"><?php $this->widget('modules.translate.widgets.LanguageSelector'); ?></div>
@@ -76,7 +76,7 @@
 
 			<div class="logo">
 				<a href="http://www.matherlifewaysinstituteonaging.com/" title="Mather LifeWays Institute on Aging">
-					<img src="<?php echo Yii::app()->theme->getImagesUrl(); ?>/logo-footer.jpg" />
+					<img src="<?php echo Yii::app()->theme->getImagesUrl('logo-footer.jpg'); ?>" />
 				</a>
 			</div>
 			<div id="footer-icons" class="icons">

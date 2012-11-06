@@ -1,7 +1,7 @@
 <?php
 $this->pageTitle = Yii::app()->name . ' - '.t('Guest');
 
-Yii::app()->clientScript->registerScriptFile(Yii::app()->theme->getScriptsUrl() . '/jquery.cycle.js', CClientScript::POS_HEAD);
+Yii::app()->clientScript->registerScriptFile(Yii::app()->theme->getScriptsUrl('jquery.cycle.js'), CClientScript::POS_HEAD);
 Yii::app()->clientScript->registerScript('customers_cycle', "$('#customers').cycle({ fx: 'fade' });");
 
 $this->widget(
@@ -63,7 +63,7 @@ $this->widget(
 		</h3>
 		<div>
 			<img
-				src="<?php echo Yii::app()->theme->getImagesUrl(); ?>/two-thirds.png"
+				src="<?php echo Yii::app()->theme->getImagesUrl('two-thirds.png'); ?>"
 				style="margin-bottom: 8px;" /><br />
 			<?php echo t('2/3 of working caregivers
 					report conflicts between work and caregiving that result in increased
@@ -78,7 +78,7 @@ $this->widget(
 		</h3>
 		<div style="text-align: center">
 			<img
-				src="<?php echo Yii::app()->theme->getImagesUrl(); ?>/metlife.jpg" />
+				src="<?php echo Yii::app()->theme->getImagesUrl('metlife.jpg'); ?>" />
 		</div>
 		<p>
 			<?php echo t('<strong>Double Jeopardy for Baby Boomers Caring for Their Parents</strong><br />
@@ -128,7 +128,7 @@ $this->widget(
 			field of aging.</p>
 		<p style="text-align: center;">
 			<a href="http://twitter.com/aginginaction" target="_blank"> <img
-				src="<?php echo Yii::app()->theme->getImagesUrl(); ?>/twitter-bird.png" />
+				src="<?php echo Yii::app()->theme->getImagesUrl('twitter-bird.png'); ?>" />
 			</a>
 		</p>
 		<p>
@@ -143,19 +143,19 @@ $this->widget(
 		</h3>
 		<div id="customers">
 			<a href="http://www.ibm.com"><img
-				src="<?php echo Yii::app()->theme->getImagesUrl(); ?>/customers/ibm.png"
+				src="<?php echo Yii::app()->theme->getImagesUrl('customers/ibm.png'); ?>"
 				alt="IBM" /> </a> <a href="http://www.ti.com/"><img
-				src="<?php echo Yii::app()->theme->getImagesUrl(); ?>/customers/ti.png"
+				src="<?php echo Yii::app()->theme->getImagesUrl('customers/ti.png'); ?>"
 				alt="Texas Instrument" /> </a> <a href="http://www.merck.com"><img
-				src="<?php echo Yii::app()->theme->getImagesUrl(); ?>/customers/merck.png"
+				src="<?php echo Yii::app()->theme->getImagesUrl('customers/merck.png'); ?>"
 				alt="Merck Pharmaceuticals" /> </a> <a
 				href="http://www.exxonmobil.com"><img
-				src="<?php echo Yii::app()->theme->getImagesUrl(); ?>/customers/exxon.png"
+				src="<?php echo Yii::app()->theme->getImagesUrl('customers/exxon.png'); ?>"
 				alt="Merck Pharmaceuticals" /> </a> <a
 				href="http://www.deloitte.com"><img
-				src="<?php echo Yii::app()->theme->getImagesUrl(); ?>/customers/deloitte.png"
+				src="<?php echo Yii::app()->theme->getImagesUrl('customers/deloitte.png'); ?>"
 				alt="Deloitte" /> </a> <a href="http://matherlifeways.com/"><img
-				src="<?php echo Yii::app()->theme->getImagesUrl(); ?>/customers/mather.png"
+				src="<?php echo Yii::app()->theme->getImagesUrl('customers/mather.png'); ?>"
 				alt="Mather Lifeways" /> </a>
 		</div>
 	</div>
@@ -257,7 +257,7 @@ $this->widget(
 
 	<div id="pie-chart">
 		<img
-			src="<?php echo Yii::app()->theme->getImagesUrl(); ?>/home-chart.png" />
+			src="<?php echo Yii::app()->theme->getImagesUrl('home-chart.png'); ?>" />
 	</div>
 
 	<div class="box-white">
@@ -391,13 +391,13 @@ $this->widget(
 
 		<p>
 			<img
-				src="<?php echo Yii::app()->theme->getImagesUrl(); ?>/image-men.png"
+				src="<?php echo Yii::app()->theme->getImagesUrl('image-men.png'); ?>"
 				style="margin: 5px 5px; width: 100%;" />
 		</p>
 
 		<p class="course-buttons">
 			<a href="javascript:;" class="button right"
-				onClick="$.fancybox.next();" rel="2"><?php echo t('Start Tutorial&raquo;'); ?>
+				onClick="$.fancybox.next();"><?php echo t('Start Tutorial&raquo;'); ?>
 			</a>
 		</p>
 	</div>
@@ -480,9 +480,9 @@ $this->widget(
 
 		<p class="course-buttons">
 			<a href="javascript:;" class="button left"
-				onclick="$.fancybox.prev();" rel="1"><?php echo t('&laquo; Back'); ?>
+				onclick="$.fancybox.prev();"><?php echo t('&laquo; Back'); ?>
 			</a> <a href="javascript:;" class="button right"
-				onClick="$.fancybox.next();" rel="3"><?php echo t('Next &raquo;'); ?>
+				onClick="$.fancybox.next();"><?php echo t('Next &raquo;'); ?>
 			</a>
 		</p>
 	</div>
@@ -561,9 +561,9 @@ $this->widget(
 
 		<p class="course-buttons">
 			<a href="javascript:;" class="button left"
-				onclick="$.fancybox.prev();" rel="2"><?php echo t('&laquo; Back'); ?>
+				onclick="$.fancybox.prev();"><?php echo t('&laquo; Back'); ?>
 			</a> <a href="javascript:;" class="button right"
-				onClick="$.fancybox.next();" rel="4"><?php echo t('Next &raquo;'); ?>
+				onClick="$.fancybox.next();"><?php echo t('Next &raquo;'); ?>
 			</a>
 		</p>
 
@@ -645,10 +645,10 @@ $this->widget(
 
 		<p class="course-buttons">
 			<a href="javascript:;" class="button left"
-				onclick="$.fancybox.prev();" rel="3"><?php echo t('&laquo;
+				onclick="$.fancybox.prev();"><?php echo t('&laquo;
 						Back'); ?>
 			</a> <a href="javascript:;" class="button right"
-				onClick="$.fancybox.next();" rel="5"><?php echo t('Next &raquo;'); ?>
+				onClick="$.fancybox.next();"><?php echo t('Next &raquo;'); ?>
 			</a>
 		</p>
 
@@ -728,10 +728,10 @@ $this->widget(
 
 		<p class="course-buttons">
 			<a href="javascript:;" class="button left"
-				onclick="$.fancybox.prev();" rel="4"><?php echo t('&laquo;
+				onclick="$.fancybox.prev();"><?php echo t('&laquo;
 						Back'); ?>
 			</a> <a href="javascript:;" class="button right"
-				onClick="$.fancybox.next();" rel="6"><?php echo t('Next &raquo;'); ?>
+				onClick="$.fancybox.next();"><?php echo t('Next &raquo;'); ?>
 			</a>
 		</p>
 
@@ -848,7 +848,7 @@ $this->widget(
 		
 		<p class="course-buttons">
 			<a href="javascript:;" class="button left"
-				onclick="$.fancybox.pos(0);" rel="1"><?php echo t('&laquo; Start Over'); ?>
+				onclick="$.fancybox.pos(0);"><?php echo t('&laquo; Start Over'); ?>
 			</a>
 		</p>
 
