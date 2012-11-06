@@ -493,15 +493,6 @@ div.breadcrumbs span {
 #bottom-logos a#rush:hover, #bottom-logos a#aa:hover, #bottom-logos a#git:hover, #bottom-logos a#yii:hover, #bottom-logos a#wfd:hover, #bottom-logos a#discourse:hover, #bottom-logos a#glader:hover, #bottom-logos a#mediastorm:hover {
 	background-position: bottom;
 }
-div.jp-video-mathercaregivers div.jp-video-play {
-	margin-top:-305px;
-	height:305px;
-}
-
-div.jp-video-the-sandwich-generation div.jp-video-play {
-	margin-top:-400px;
-	height:400px;
-}
 
 .loading {
     background-color: #eee;
@@ -718,60 +709,6 @@ div.view {
 .portlet-content li {
 	padding: 2px 0 4px 0px;
 }
-.post {
-	margin: 0 0 20px;
-}
-.post .title {
-	font-size: 1.5em;
-	border-bottom: 1px solid #C9E0ED;
-}
-.post .title a {
-	color: #555;
-	text-decoration: none;
-}
-.post .author {
-	color: #888;
-	margin: 0 0 5px;
-}
-.post .nav {
-	-moz-border-radius: 7px;
-	padding: 5px;
-	background: #EFFDFF;
-}
-.comment {
-	-moz-border-radius: 7px;
-	padding: 10px;
-	background: #F5F5F5;
-	margin: 5px 0;
-}
-.comment .content {
-	margin: 10px 0;
-}
-.comment .author {
-	margin: 5px 0;
-	padding: 0 0 3px;
-	border-bottom: 1px solid #DDD;
-}
-.comment .time {
-	color: #888;
-	font-size: 0.8em;
-}
-.comment a.cid {
-	color: #CCC;
-	float: right;
-	font-size: 1.5em;
-	font-weight: bold;
-	padding: 0 5px 5px 5px;
-	text-decoration: none;
-}
-.comment a.cid:hover {
-	color: #555;
-}
-.comment .pending {
-	color: red;
-}
-
-
 
 .image-right {
 	float: right;
@@ -782,71 +719,12 @@ div.view {
 	margin: 15px 20px 15px 15px;
 }
 
-
-
 .opacity-hover {
 	opacity: .7;
 }
 .opacity-hover:hover {
 	opacity: 1;
 }
-
-
-
-#tutorial {
-	width: 970px;
-	height: 670px;
-}
-#tutorial h2.flowers {
-	border-bottom: 1px solid #ddd;
-	margin-bottom: 10px;
-}
-#tutorial .slide {
-	display: none;
-	padding: 0 10px;
-}
-#tutorial #slide-1.slide {
-	display: block;
-}
-#tutorial .pull-quote {
-	font-family: "Hammersmith One", Impact, sans-serif;
-	font-size: 2em;
-	color: #b71010;
-}
-#tutorial .course-buttons {
-	background: #ddd;
-	border-radius: 10px;
-	height: 40px;
-	position: absolute;
-	padding: 5px;
-	bottom: 5px;
-	left: 5px;
-	right: 5px;
-}
-#tutorial .change-slide.button.left {
-	float: left;
-}
-#tutorial .change-slide.button.right {
-	float: right;
-}
-#tutorial .box-white {
-	font-size: 12pt;
-}
-#tutorial .no-bullets {
-	list-style: none;
-}
-#tutorial .no-bullets li {
-	padding: 5px 0 5px 30px;
-}
-#tutorial .tutorial-video {
-	float: right;
-	margin: 0 0 15px 15px;
-}
-#tutorial .teal {
-	margin: 7px 0 0 0;
-}
-
-
 
 #translate-button input[type=submit] {
 	padding: 3px 6px;

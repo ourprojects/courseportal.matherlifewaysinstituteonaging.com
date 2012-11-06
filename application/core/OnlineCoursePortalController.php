@@ -14,6 +14,8 @@ abstract class OnlineCoursePortalController extends CController {
 	 */
 	public $breadcrumbs = array();
 	
+	private $_assetsUrl = '';
+	
 	/**
 	 * Basic initialiser to the base controller class
 	 *
@@ -79,6 +81,11 @@ abstract class OnlineCoursePortalController extends CController {
 				$parent = Yii::app();
 			Yii::app()->getUrlManager()->parsePathInfoSegments();
 			if($parent->beforeControllerAction($this, $action)) {
+				if($this->getModule() === null) {
+					$assetsDir = Yii::getPathOfAlias('application.assets.' . $this->getId());
+					if(is_dir($assetsDir))
+						$this->_assetsUrl = Yii::app()->assetManager->publish($assetsDir);
+				}
 				$this->runActionWithFilters($action, $this->filters());
 				$parent->afterControllerAction($this, $action);
 			}
@@ -125,6 +132,22 @@ abstract class OnlineCoursePortalController extends CController {
     */
     public function loadExtension($extension, $className = '*') {
         Yii::import("ext.$extension.$className", true);
+    }
+    
+    public function getAssetsUrl() {
+    	return $this->_assetsUrl;
+    }
+    
+    public function getStylesUrl($file = '') {
+    	return "{$this->_assetsUrl}/styles/$file";
+    }
+    
+    public function getScriptsUrl($file = '') {
+    	return "{$this->_assetsUrl}/scripts/$file";
+    }
+    
+    public function getImagesUrl($file = '') {
+    	return "{$this->_assetsUrl}/images/$file";
     }
     
     /**

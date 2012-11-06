@@ -1,5 +1,5 @@
 <?php $this->breadcrumbs = array(t('Forum')); ?>
-<div class="small-masthead" style="background-image: url(<?php echo Yii::app()->theme->getImagesUrl('header-forum.png'); ?>);">
+<div class="small-masthead" style="background-image: url(<?php echo $this->getImagesUrl('header-forum.png'); ?>);">
 	<h1 class="bottom"><?php echo t('Forum'); ?></h1>
 </div>
 
