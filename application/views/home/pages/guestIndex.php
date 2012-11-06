@@ -26,7 +26,8 @@ $this->widget(
 				'config' => array(
 						'width' => '90%',
 						'height' => '95%',
-						'autoDimensions' => false
+						'autoDimensions' => false,
+						'mouseWheel' => false,
 				)
 		)
 );

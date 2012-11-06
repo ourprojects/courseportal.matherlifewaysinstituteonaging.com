@@ -16,8 +16,6 @@ class EFancyBox extends CWidget {
 
 	// @ string the taget element on DOM
 	public $target;
-	// @ boolean whether to enable mouse interaction
-	public $mouseEnabled = true;
 	// @ array of config settings for fancybox
 	public $config = array();
 	
@@ -48,7 +46,7 @@ class EFancyBox extends CWidget {
 			Yii::app()->clientScript->registerCssFile("$assetsUrl/jquery.fancybox.css");
 			
 			// if mouse actions enbled register the js
-			if ($this->mouseEnabled) 
+			if (!isset($this->config['mouseWheel']) || $this->config['mouseWheel'] === true) 
 				Yii::app()->clientScript->registerScriptFile("$assetsUrl/lib/jquery.mousewheel-3.0.6.pack.js", CClientScript::POS_HEAD);
 			
 			// include helpers required by the config
