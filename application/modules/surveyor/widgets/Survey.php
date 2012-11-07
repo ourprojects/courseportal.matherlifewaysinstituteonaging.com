@@ -17,6 +17,14 @@ class Survey extends CWidget {
 								)
 	   );
 	
+	public function init() {
+		$assetsDir = dirname(__FILE__).DIRECTORY_SEPARATOR.'assets';
+		if(is_dir($assetsDir)) {
+			$assetsUrl = Yii::app()->assetManager->publish($assetsDir);
+			Yii::app()->clientScript->registerCssFile("$assetsUrl/survey/styles/survey.css");
+		}
+	}
+	
 	public function run() {
 		if($this->_data['survey']['model'] !== null) {
 			if($this->_data['survey']['model'] instanceof SurveyForm) {

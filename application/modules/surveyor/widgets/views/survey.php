@@ -14,7 +14,7 @@
 	foreach($survey['model']->questions as $q) {
 		$question['htmlOptions']['id'] .= "_{$q->id}";
 		echo CHtml::tag('div', $question['htmlOptions'], '', false);
-		echo CHtml::activeLabelEx($survey['model'], "question{$q->id}", array('for' => "Survey[{$survey['model']->name}][question{$q->id}]"));
+		echo CHtml::activeLabelEx($survey['model'], "question{$q->id}", array('for' => CHtml::getIdByName("Survey[{$survey['model']->name}][question{$q->id}]")));
 		switch($q->type->name) {
 			case 'select':
 				echo CHtml::activeDropDownList(

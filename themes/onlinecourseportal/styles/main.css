@@ -1,9 +1,6 @@
-
 /**************** GOOGLE WEBFONTS ***************/
 
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Arapey:400italic,400|Hammersmith+One:400);
-
-
 
 /**************** MAIN STYLES ***************/
 body {
@@ -12,7 +9,6 @@ body {
 	color: #6d6e71;
 	background: #ededed url(../images/bg-body.jpg) top repeat-x;
 }
-
 h1 {
 	background: url(../images/bg-teal-bar.png) top right no-repeat;
 	font-family: "Source Sans Pro", Arial, sans-serif;
@@ -38,8 +34,8 @@ h4 {
 	font-weight: bold;
 }
 
-
 /**************** BASE STYLES ***************/
+
 #page {
 	margin-top: 90px;
 	min-height: 800px;
@@ -81,13 +77,6 @@ h4 {
 	font-style: italic;
 	color: #999;
 }
-#language {
-	width: 120px;
-	padding: 4px;
-	border: 1px solid #ccc;
-	box-shadow: 0 0 10px #999;
-	margin-top: -2px;
-}
 .breadcrumbs {
 	margin: 0 0 15px 0;
 	padding: 20px 0 0 20px;
@@ -118,8 +107,8 @@ div.breadcrumbs span {
 	color: #fff;
 }
 
-
 /************** MENU STYLES **************/
+
 #mainmenu {
 	position: absolute;
 	top: 40px;
@@ -189,6 +178,13 @@ div.breadcrumbs span {
 	text-decoration: none;
 }
 
+#language {
+	width: 120px;
+	padding: 4px;
+	border: 1px solid #ccc;
+	box-shadow: 0 0 10px #999;
+	margin-top: -2px;
+}
 #language-menu {
 	position: absolute;
 	top: 5px;
@@ -196,7 +192,6 @@ div.breadcrumbs span {
 	font-family: "Arapey", "Times New Roman", serif;
 	font-size: 14pt;
 }
-
 #translate-button {
 	position: absolute;
 	top: 5px;
@@ -204,8 +199,13 @@ div.breadcrumbs span {
 	font-family: "Arapey", "Times New Roman", serif;
 	font-size: 14pt;
 }
+#translate-button input[type=submit] {
+	padding: 3px 6px;
+	font-size: 10pt;
+}
 
 /************** SIDEBAR STYLES **************/
+
 #sidebar {
 	width: 270px;
 	margin: 0 20px 20px 0;
@@ -323,15 +323,9 @@ div.breadcrumbs span {
 	color: #6d6e71;
 	font-weight: normal;
 }
-#customers {
-    height: 90px;
-    width: 220px;
-    padding: 0;
-    margin: 15px auto;
-}
-
 
 /************** COLUMN STYLES **************/
+
 .column-wide {
 	width: 560px;
 	padding: 30px 0 30px 40px;
@@ -404,139 +398,6 @@ div.breadcrumbs span {
 	background-position: top;
 }
 
-
-
-/************* HOMEPAGE SPECIFIC STYLES **************/
-#tutorial {
-	width: 700px;
-}
-#bottom-logos {
-	clear: both;
-	border-top: 1px solid #e6e6e6;
-	margin-top: 40px;
-	height: 150px;
-	position: relative;
-}
-#bottom-logos h4 {
-	color: #a6a6a6;
-	font-weight: normal;
-	font-size: 8pt;
-	letter-spacing: 2px;
-	padding: 0 0 8px 0;
-	margin: 0;
-	text-transform: uppercase;
-	text-align: center;
-}
-#bottom-logos a {
-	float: left;
-	margin: 0 6px;
-	color: transparent;
-	background: top center no-repeat;
-	position: absolute;
-}
-#bottom-logos a#rush {
-	background: url(../images/partners/rush.png) top center no-repeat;
-	width: 202px;
-	height: 35px;
-	top: 35px;
-	left: 90px;
-}
-#bottom-logos a#wfd {
-	background: url(../images/partners/wfd.png) top center no-repeat;
-	width: 35px;
-	height: 35px;
-	top: 35px;
-	left: 450px;
-}
-#bottom-logos a#aa {
-	background: url(../images/partners/aa.png) top center no-repeat;
-	width: 203px;
-	height: 35px;
-	top: 35px;
-	left: 620px;
-}
-#bottom-logos a#yii {
-	background: url(../images/partners/yii.png) top center no-repeat;
-	width: 155px;
-	height: 35px;
-	top: 88px;
-	left: 450px;
-}
-#bottom-logos a#git {
-	background: url(../images/partners/git.png) top center no-repeat;
-	width: 75px;
-	height: 35px;
-	top: 35px;
-	left: 510px;
-}
-#bottom-logos a#discourse {
-	background: url(../images/partners/discourse.png) top center no-repeat;
-	width: 128px;
-	height: 35px;
-	top: 88px;
-	left: 660px;
-}
-#bottom-logos a#glader {
-	background: url(../images/partners/glader.png) top center no-repeat;
-	width: 85px;
-	height: 85px;
-	top: 35px;
-	left: 330px;
-}
-#bottom-logos a#mediastorm {
-	background: url(../images/partners/mediastorm.png) top center no-repeat;
-	width: 163px;
-	height: 35px;
-	top: 88px;
-	left: 110px;
-}
-#bottom-logos a#rush:hover, #bottom-logos a#aa:hover, #bottom-logos a#git:hover, #bottom-logos a#yii:hover, #bottom-logos a#wfd:hover, #bottom-logos a#discourse:hover, #bottom-logos a#glader:hover, #bottom-logos a#mediastorm:hover {
-	background-position: bottom;
-}
-
-.loading {
-    background-color: #eee;
-    background-image: url('../images/loading.gif');
-    background-position: center center;
-    background-repeat: no-repeat;
-    opacity: 1;
-}
-
-.box-sidebar ul.quotes {
-	list-style: none;
-	padding: 6px;
-	margin: 0;
-	height: 290px;
-}
-.box-sidebar ul.quotes li img {
-	max-width: 100%;
-	margin: 6px 0;
-}
-
-.home-image {
-	background: url(../images/home-image.jpg) top center no-repeat;
-	height: 250px;
-	box-shadow: inset 0 0 10px #396caa;
-	overflow: hidden;
-}
-.home-image h1 {
-	color: #fff;
-	padding: 17px;
-	background: none;
-	font-family: "Arapey", "Times New Roman", serif;
-	font-size: 35px;
-	line-height: 40px;
-	font-weight: normal;
-	font-style: italic;
-	text-align: center;
-	opacity: .9;
-	margin-top: 4px;
-}
-.home-image h1.bottom {
-	margin-top: 160px;
-}
-
-
 .small-masthead {
 	background: url(../images/home-image.jpg) top left no-repeat;
 	height: 80px;
@@ -551,30 +412,7 @@ div.breadcrumbs span {
 	opacity: .9;
 }
 
-
-#pie-chart {
-	height: 300px;
-	margin-bottom: 25px;
-	text-align: center;
-}
-
-
-#survey-one, #survey-two {
-	width: 700px;
-	height: 600px;
-	display: none;
-	padding-right: 15px;
-}
-#survey-one ol li, #survey-two ol li {
-	padding: 0 0 14px 0;
-}
-#survey-one .answers, #survey-two .answers {
-	padding: 7px 0 0 0;
-}
-
-
-
-/**************** BOX STYLES ***************/
+/**************** STYLED BOX CLASSES ***************/
 
 .box-white {
 	padding: 10px;
@@ -583,7 +421,6 @@ div.breadcrumbs span {
 	border-radius: 5px;
 	box-shadow: 0 0 10px #999;
 }
-
 .box-grey {
 	padding: 10px;
 	background: #aaa;
@@ -613,9 +450,8 @@ div.breadcrumbs span {
 	box-shadow: 0 0 10px #999;
 }
 
-
-
 /**************** GENERAL CLASSES ***************/
+
 .flowers {
 	background: url(../images/bg-flower.png) top left no-repeat;
 	font-family: "Source Sans Pro", Arial, sans-serif;
@@ -670,8 +506,12 @@ div.view {
 	margin: 10px 0;
 	border: 1px solid #C9E0ED;
 }
-.wide_200px {
-	min-width: 200px;
+.loading {
+    background-color: #eee;
+    background-image: url('../images/loading.gif');
+    background-position: center center;
+    background-repeat: no-repeat;
+    opacity: 1;
 }
 .align_top {
 	vertical-align: top;
@@ -709,7 +549,6 @@ div.view {
 .portlet-content li {
 	padding: 2px 0 4px 0px;
 }
-
 .image-right {
 	float: right;
 	margin: 15px 15px 15px 20px;
@@ -718,30 +557,9 @@ div.view {
 	float: left;
 	margin: 15px 20px 15px 15px;
 }
-
 .opacity-hover {
 	opacity: .7;
 }
 .opacity-hover:hover {
 	opacity: 1;
 }
-
-#translate-button input[type=submit] {
-	padding: 3px 6px;
-	font-size: 10pt;
-}
-
-
-
-#form_workingCaregiver, #form_hrEmployer, #form_caregiver {
-	font-size: 12pt;
-}
-#form_workingCaregiver label:first-child, #form_hrEmployer label:first-child, #form_caregiver label:first-child {
-	display: block;
-	padding: 7px 0;
-}
-#form_workingCaregiver input[type=submit], #form_hrEmployer input[type=submit], #form_caregiver input[type=submit] {
-	margin-top: 10px;
-}
-
-

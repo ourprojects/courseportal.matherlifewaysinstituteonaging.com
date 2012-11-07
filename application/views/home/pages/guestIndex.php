@@ -1,6 +1,9 @@
 <?php
 $this->pageTitle = Yii::app()->name . ' - '.t('Guest');
+
+Yii::app()->clientScript->registerCssFile($this->getStylesUrl('home.css'));
 Yii::app()->clientScript->registerCssFile($this->getStylesUrl('tutorial.css'));
+
 Yii::app()->clientScript->registerScriptFile($this->getScriptsUrl('jquery.cycle.js'), CClientScript::POS_HEAD);
 Yii::app()->clientScript->registerScript('customers_cycle', "$('#customers').cycle({ fx: 'fade' });");
 
@@ -33,7 +36,7 @@ $this->widget(
 );
 
 ?>
-<div class="home-image">
+<div id="home-image">
 	<h1>
 		<?php echo t('Web-based Training for Caregivers'); ?>
 	</h1>
@@ -316,8 +319,7 @@ $this->widget(
 		href="http://www.discoursellc.com/" id="discourse" target="_blank">Discourse,
 		LLC.</a> <a href="http://gladerfilmworks.com/" id="glader"
 		target="_blank">Glader Filmworks</a> <a
-		href="http://www.mediastorm.com/" id="mediastorm" target="_blank">Discourse,
-		LLC.</a>
+		href="http://www.mediastorm.com/" id="mediastorm" target="_blank">Mediastorm</a>
 	<div class="clear"></div>
 
 </div>

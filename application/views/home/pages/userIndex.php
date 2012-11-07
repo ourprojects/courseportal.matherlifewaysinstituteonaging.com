@@ -1,8 +1,8 @@
 <?php
 $this->pageTitle = Yii::app()->name . ' - ' . t('User');
 
-Yii::app()->clientScript->registerScriptFile($this->getScriptUrl('jquery.quote.js'), CClientScript::POS_HEAD);
-Yii::app()->clientScript->registerScript('quotes_rotator', "$('.quotes').quote_rotator({randomize_first_quote: true});");
+Yii::app()->clientScript->registerScriptFile($this->getScriptsUrl('jquery.quote.js'), CClientScript::POS_HEAD);
+Yii::app()->clientScript->registerScript('quotes_rotator', "$('#quotes').quote_rotator({randomize_first_quote: true});");
 
 ?>
 	<div class="small-masthead" style="background-image: url(<?php echo $this->getImagesUrl('home.png'); ?>);">
@@ -11,7 +11,7 @@ Yii::app()->clientScript->registerScript('quotes_rotator', "$('.quotes').quote_r
 	<div id="sidebar">
 		<div class="box-sidebar three">
 			<h3><?php echo t('Statistics on Caregivers'); ?></h3>
-			<ul class="quotes">
+			<ul id="quotes">
 				<li><img src="<?php echo $this->getImagesUrl('stat-one-quarter.png'); ?>" /><?php echo t('<span>1/4</span> of US households has a family caregiver providing some form of care or service to a relative or friend, age 50+'); ?></li>
 				<li><img src="<?php echo $this->getImagesUrl('stat-two-thirds.png'); ?>" /><?php echo t('<span>2/3</span> of these family caregivers are also working'); ?></li>
 				<li><img src="<?php echo $this->getImagesUrl('stat-half.png'); ?>" /><?php echo t('<span>50%</span> of employed caregivers work full-time'); ?></li>
@@ -35,7 +35,7 @@ Yii::app()->clientScript->registerScript('quotes_rotator', "$('.quotes').quote_r
 			
 		<div class="box-sidebar one">
 			<h3><?php echo t('Alzheimer\'s Assocation (United States)'); ?></h3>
-			<p style="text-align: center;"><img src="<?php echo $this->getImagesUrl('alz.png'); ?>" /></p>
+			<p style="text-align: center;"><img src="<?php echo $this->getImagesUrl('partners/alz.png'); ?>" /></p>
 			<p><?php echo t('There are 10 warning signs of Alzheimer\'s. If you or someone you know is experiencing 
 			any of the signs, please see a doctor. Early diagnosis gives you a chance to seek treatment and plan for the future.'); ?></p>
 			
