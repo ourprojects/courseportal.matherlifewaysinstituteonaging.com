@@ -3,7 +3,7 @@ $stats = array();
 
 foreach($survey->questions as $question) {
 	foreach($question->options as $option) {
-		$stats[] = array($option->text, $option->answersCount / $question->answersCount);
+		$stats[] = array($option->text, $question->answersCount <= 0 ? 0 : $option->answersCount / $question->answersCount);
 	}
 }
 
@@ -14,6 +14,7 @@ $this->widget('ext.highcharts.EHighcharts', array(
 	   			'plotBorderWidth' => null,
 	   			'plotShadow' => false
 	   		),
+	   		'credits' => array('enabled' => false),
 	   		'title' => array(
 	   			'text' => $survey->title
 	   		),
