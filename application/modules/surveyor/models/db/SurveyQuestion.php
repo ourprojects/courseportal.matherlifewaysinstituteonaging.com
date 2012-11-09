@@ -70,6 +70,7 @@ class SurveyQuestion extends CActiveRecord
         						   'order' => 'options.order ASC'),
         		'users' => array(self::HAS_MANY, 'User', array('user_id' => 'id'),
         				'through' => 'answers'),
+        		'answersCount' => array(self::STAT, 'SurveyAnswer', 'question_id'),
         );
     }
 

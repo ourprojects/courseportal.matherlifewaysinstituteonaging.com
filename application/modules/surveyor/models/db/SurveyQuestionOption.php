@@ -60,6 +60,7 @@ class SurveyQuestionOption extends CActiveRecord
         		'answerOptions' => array(self::HAS_MANY, 'SurveyAnswerOption', 'option_id'),
         		'answers' => array(self::HAS_MANY, 'SurveyAnswer', array('answer_id' => 'id'),
         				'through' => 'answerOptions'),
+        		'answersCount' => array(self::STAT, 'SurveyAnswerOption', 'option_id'),
         );
     }
 
