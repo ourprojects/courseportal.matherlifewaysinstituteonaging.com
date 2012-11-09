@@ -15,8 +15,11 @@ class SurveyController extends OnlineCoursePortalController {
 		}
 	}
 	
-	public function actionChart($name) {
-		$this->render('chart', array('survey' => SurveyorModule::surveyor()->$name));
+	public function actionChart($name, $qNum = 0) {
+		$survey = SurveyorModule::surveyor()->$name;
+		if($qNum < 0 || $qNum >= count($survey->questions))
+			$qNum = 0;
+		$this->render('chart', array('survey' => $survey, 'qNum' => $qNum));
 	}
 	
 }

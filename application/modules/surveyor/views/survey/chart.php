@@ -1,12 +1,16 @@
+<div class="small-masthead">
+
+</div>
 <?php
 $stats = array();
-
-foreach($survey->questions as $question) {
-	foreach($question->options as $option) {
-		$stats[] = array($option->text, $question->answersCount <= 0 ? 0 : $option->answersCount / $question->answersCount);
-	}
+$question = $survey->questions[$qNum];
+foreach($question->options as $option) {
+	$stats[] = array($option->text, ($question->answersCount <= 0 ? 0 : $option->answersCount / $question->answersCount));
 }
-
+if($qNum > 0)
+	echo CHtml::link('Previous Question', $this->createUrl("survey/chart/name/{$survey->name}/qNum/" . ($qNum - 1)), array('style' => 'float: left;')); 
+if($qNum + 1 < count($survey->questions))
+	echo CHtml::link('Next Question', $this->createUrl("survey/chart/name/{$survey->name}/qNum/" . ($qNum + 1)), array('style' => 'float: right;'));
 $this->widget('ext.highcharts.EHighcharts', array(
 	   'options' => array(
 	   		'chart' => array(
@@ -16,11 +20,11 @@ $this->widget('ext.highcharts.EHighcharts', array(
 	   		),
 	   		'credits' => array('enabled' => false),
 	   		'title' => array(
-	   			'text' => $survey->title
+	   			'text' => "$survey->title: $question->text"
 	   		),
 	   		'tooltip' => array(
 	   			'pointFormat' => '{series.name}: <b>{point.percentage}%</b>',
-	   			'percentageDecimals' => 1
+	   			'percentageDecimals' => 2
 	   		),
 	   		'plotOptions' => array(
 	   			'pie' => array(
@@ -31,7 +35,7 @@ $this->widget('ext.highcharts.EHighcharts', array(
 	   					'color' => '#000000',
 	   					'connectorColor' => '#000000',
 	   					'formatter' => 'js:function() { 
-	   						return "<b>"+ this.point.name + "</b>: " + Highcharts.numberFormat(this.percentage, 2, ".") + " %"; 
+	   						return "<b>"+ this.point.name + "</b>: " + Highcharts.numberFormat(this.percentage, 2) + " %"; 
 						}'
 	   				)
 	   			)
