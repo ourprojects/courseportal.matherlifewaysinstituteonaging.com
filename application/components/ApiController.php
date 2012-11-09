@@ -8,13 +8,12 @@ abstract class ApiController extends OnlineCoursePortalController {
 	public function filters() {
 		return array(
 				array('filters.HttpsFilter'),
-				'verifyKey + create, read, update, delete',
+				'verifyKey + create, read, update, delete, options',
 		);
 	}
 	
 	public function filterVerifyKey($filterChain) {
 		if(isset($_GET['key_id']) && isset($_GET['key'])) {
-			$_GET['key'] = str_replace(array('-','_'), array('+','/'), $_GET['key']);
 			$key = Key::model()->findByPk($_GET['key_id']);
 			if($key !== null) {
 				if(Yii::createComponent(array('class' => 'ext.pbkdf2.PBKDF2', 'string' => $_GET['key'], 'IV' => $key->salt))->verifyHash($key->value)) {

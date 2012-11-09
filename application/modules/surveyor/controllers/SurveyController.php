@@ -15,4 +15,8 @@ class SurveyController extends OnlineCoursePortalController {
 		}
 	}
 	
+	public function actionChart() {
+		$this->renderPartial('chart');
+	}
+	
 }

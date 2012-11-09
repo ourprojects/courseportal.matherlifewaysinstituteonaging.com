@@ -43,10 +43,13 @@ class AdminController extends OnlineCoursePortalController {
 		
 		if(isset($_POST['Key'])) {
 			$models['model']->attributes = $_POST['Key'];
+			
 			if($models['model']->save())
 				Yii::app()->user->setFlash('success', t('Key saved successfully.'));
 			else
 				Yii::app()->user->setFlash('error', t('Key could not be saved.'));
+			
+			var_dump($models['model']); die;
 		}
 		
 		$this->render('pages/apiKeys', $models);

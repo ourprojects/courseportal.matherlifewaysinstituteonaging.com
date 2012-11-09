@@ -10,12 +10,12 @@ function array_flatten($array, $flattened = array()) {
 	return $flattened;
 }
 
-function base64_url_encode($input) {
-	return strtr(base64_encode($input), '+/=', '-_,');
+function base64_url_encode($base64) {
+	return strtr($base64, '+/=', '-_,');
 }
 
-function base64_url_decode($input) {
-	return base64_decode(strtr($input, '-_,', '+/='));
+function base64_url_decode($base64) {
+	return strtr($base64, '-_,', '+/=');
 }
 
 class PregMatch {

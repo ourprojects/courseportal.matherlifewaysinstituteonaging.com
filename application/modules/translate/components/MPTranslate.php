@@ -71,18 +71,19 @@ class MPTranslate extends CApplicationComponent {
 		
 		// Set the application language if provided by GET, session or cookie
 		if(isset($_GET['language'])) {
-			$language = (string)$_GET['language'];
+			$language = $_GET['language'];
 			unset($_GET['language']);
-		} else if (isset(Yii::app()->session['language'])) {
-			$language = (string)Yii::app()->session['language'];
-		} else if (Yii::app()->user->hasState('language')) {
-			$language = (string)Yii::app()->user->getState('language');
-		} else if(isset(Yii::app()->getRequest()->cookies['language'])) {
-			$language = (string)Yii::app()->getRequest()->cookies['language'];
-		} else if(Yii::app()->getRequest()->getPreferredLanguage() !== false) {
-			$language = (string)Yii::app()->getRequest()->getPreferredLanguage();
+		} else if (Yii::app()->getSession()->contains('language')) {
+			$language = Yii::app()->getSession()->itemAt('language');
+		} else if (Yii::app()->getUser()->hasState('language')) {
+			$language = Yii::app()->getUser()->getState('language');
+		} else if(Yii::app()->getRequest()->getCookies()->contains('language')) {
+			$language = Yii::app()->getRequest()->getCookies()->itemAt('language')->value;
+		} else if(Yii::app()->getRequest()->getPreferredLanguage() !== false && 
+				$this->isAdminAcceptedLanguage(Yii::app()->getLocale()->getLanguageID(Yii::app()->getRequest()->getPreferredLanguage()))) {
+			$language = Yii::app()->getRequest()->getPreferredLanguage();
 		} else {
-			$language = (string)Yii::app()->getLanguage();
+			$language = Yii::app()->getLanguage();
 		}
 		 
 		// If the language is not recognized maybe the user didn't add the language part of the address.
@@ -97,10 +98,18 @@ class MPTranslate extends CApplicationComponent {
 	public function setLanguage($language) {
 		Yii::app()->setLanguage($language);
 		setLocale(LC_ALL, $language.'.'.Yii::app()->charset);
-		Yii::app()->session['language'] = $language;
-		Yii::app()->user->setState('language', $language);
-		Yii::app()->getRequest()->cookies['language'] = new CHttpCookie('language', $language);
-		Yii::app()->getRequest()->cookies['language']->expire = time() + (60 * 60 * 24 * 365 * 2); // (2 year)
+		
+		Yii::app()->getSession()->add('language', $language);
+		Yii::app()->getUser()->setState('language', $language);
+		
+		// Set cookie if not set.
+		$cookies = Yii::app()->getRequest()->getCookies();
+		if(!$cookies->contains('language')) {
+			$cookies->add('language', new CHttpCookie('language', $language, array('expire' => time() + (60 * 60 * 24 * 365 * 2)))); // (2 years)
+		} else if ($cookies->itemAt('language')->value !== $language) {
+			$cookies->itemAt('language')->value = $language;
+			$cookies->itemAt('language')->expire = time() + (60 * 60 * 24 * 365 * 2); // (2 years)
+		}
 	}
 	
 	public function getYiiAcceptedLocales() {

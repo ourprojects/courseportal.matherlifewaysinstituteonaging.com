@@ -65,7 +65,7 @@ class EFancyBox extends CWidget {
 			}
 			
 		} else {
-			throw new Exception(Yii::t(
+			throw new CException(Yii::t(
 							self::ID, 
 							self::ID.' - Error: Couldn\'t find assets to publish. Please make sure directory exists and is readable {dir_name}',
 							array('{dir_name}' => $assetsDir))

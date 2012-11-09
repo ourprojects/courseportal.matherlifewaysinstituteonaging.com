@@ -18,7 +18,7 @@ class UrlManager extends CUrlManager {
      * @param string $pathInfo path info
      */
     public function parsePathInfo($pathInfo) {
-    	if($pathInfo === '')
+    	if(empty($pathInfo))
     		return;
     	$this->pathInfoSegments = explode('/', trim($pathInfo, '/'));
     }
