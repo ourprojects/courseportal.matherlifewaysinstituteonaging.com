@@ -169,17 +169,23 @@ class MPTranslate extends CApplicationComponent {
 		return array_key_exists(Yii::app()->getLocale()->getLanguageID($id), $this->getAdminAcceptedLanguages());
 	}
 	
-	public function getLanguageID() {
-		return Yii::app()->getLocale()->getLanguageID(Yii::app()->getLanguage());
+	public function getLanguageID($language = null) {
+		if($language === null)
+			$language = Yii::app()->getLanguage();
+		return Yii::app()->getLocale()->getLanguageID($language);
 	}
 	
-	public function getScriptID() {
-		$id = Yii::app()->getLocale()->getScriptID(Yii::app()->getLanguage());
+	public function getScriptID($language = null) {
+		if($language === null)
+			$language = Yii::app()->getLanguage();
+		$id = Yii::app()->getLocale()->getScriptID($language);
 		return $id === null ? Yii::app()->getLanguage() : $id;
 	}
 	
-	public function getTerritoryID() {
-		$id = Yii::app()->getLocale()->getTerritoryID(Yii::app()->getLanguage());
+	public function getTerritoryID($language = null) {
+		if($language === null)
+			$language = Yii::app()->getLanguage();
+		$id = Yii::app()->getLocale()->getTerritoryID($language);
 		return $id === null ? Yii::app()->getLanguage() : $id;
 	}
 	
@@ -208,16 +214,16 @@ class MPTranslate extends CApplicationComponent {
 	}
 	
 	public function getLocaleDisplayName($id = null, $language = null, $category = 'language') {
-		if($id === null) {
-			$idMethod = 'get' . ucfirst($category) . 'ID';
-			if(!method_exists($this, $idMethod)) {
-				Yii::log(TranslateModule::t('Failed to query Yii locale DB. Possible invalid category requested {category}', array('{category}' => $category)));
-				return false;
-			}
-			$id = $this->$idMethod();
+		$idMethod = 'get' . ucfirst($category) . 'ID';
+		if(!method_exists($this, $idMethod)) {
+			Yii::log(TranslateModule::t('Failed to query Yii locale DB. Possible invalid category requested {category}', array('{category}' => $category)));
+			return false;
 		}
+		$id = $this->$idMethod();
 		$localeDisplayNames = $this->getLocaleDisplayNames($language, $category);
-		return $localeDisplayNames === false ? false : $localeDisplayNames[$id];
+		if($localeDisplayNames === false || !array_key_exists($id, $localeDisplayNames))
+			return false;
+		return $localeDisplayNames[$id];
 	}
 	
 	public function getLocaleDisplayNames($language = null, $category = 'language') {

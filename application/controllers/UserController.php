@@ -143,7 +143,7 @@ class UserController extends ApiController {
 		$models['user_profile']->user_id = $models['user']->id;
 		$models['avatar']->user_id = $models['user']->id;
 		$models['profile_questions']->user_id = $models['user']->id;
-		
+		$models['profile_questions']->translateAttributes = true;
 		// if it is ajax validation request
 		if(isset($_POST['ajax']) && $_POST['ajax'] === 'profile-form') {
 			if(isset($_POST['User']))

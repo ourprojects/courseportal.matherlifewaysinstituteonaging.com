@@ -12,7 +12,7 @@
  * @property Answer[] $answers
  * @property Survey[] $surveys
  */
-class SurveyQuestionType extends CActiveRecord
+class SurveyQuestionType extends SActiveRecord
 {
     /**
      * Returns the static model of the specified AR class.

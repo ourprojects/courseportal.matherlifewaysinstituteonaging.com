@@ -103,6 +103,10 @@ class SurveyForm extends CFormModel {
 		}
 	}
 	
+	public function setTranslateAttributes($translate) {
+		$this->_survey->translateAttributes = $translate;
+	}
+	
 	public function __get($name) {
 		if($this->_survey->hasAttribute($name) || $name == 'questions')
 			return $this->_survey->$name;

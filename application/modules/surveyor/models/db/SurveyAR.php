@@ -16,7 +16,7 @@
  * @property SurveyQuestionType[] $types
  * @property SurveyAnswer[] $answers
  */
-class SurveyAR extends CActiveRecord
+class SurveyAR extends SActiveRecord
 {
 	
     /**
@@ -98,17 +98,13 @@ class SurveyAR extends CActiveRecord
         $criteria=new CDbCriteria;
 
         $criteria->compare('id', $this->id);
+        $criteria->compare('title', $this->title);
+        $criteria->compare('description', $this->description);
         $criteria->compare('name', $this->name);
 
         return new CActiveDataProvider($this, array(
             'criteria'=>$criteria,
         ));
-    }
-    
-    public function __get($name) {
-    	if($name === 'name' || $name === 'description')
-    		return Surveyor::t(parent::__get($name));
-    	return parent::__get($name);
     }
     
     public function getForm() {

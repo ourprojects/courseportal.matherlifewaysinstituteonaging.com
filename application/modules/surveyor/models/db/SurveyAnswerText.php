@@ -10,7 +10,7 @@
  * The followings are the available model relations:
  * @property SurveyAnswer $answer
  */
-class SurveyAnswerText extends CActiveRecord
+class SurveyAnswerText extends SActiveRecord
 {
     /**
      * Returns the static model of the specified AR class.

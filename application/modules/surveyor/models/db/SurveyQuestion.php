@@ -17,7 +17,7 @@
  * @property SurveyQuestionOption[] $options
  * @property User[] $users
  */
-class SurveyQuestion extends CActiveRecord
+class SurveyQuestion extends SActiveRecord
 {
 	
 	private $_optionIds;
@@ -115,12 +115,6 @@ class SurveyQuestion extends CActiveRecord
     			$this->_optionIds[] = $option->id;
     	}
     	return $this->_optionIds;
-    }
-    
-    public function __get($name) {
-    	if($name === 'text')
-    		return Surveyor::t(parent::__get($name));
-    	return parent::__get($name);
     }
     
 }

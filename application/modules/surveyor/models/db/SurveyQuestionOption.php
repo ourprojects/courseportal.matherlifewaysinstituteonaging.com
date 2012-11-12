@@ -14,7 +14,7 @@
  * @property SurveyAnswerOption[] $answerOptions
  * @property SurveyAnswers[] $answers
  */
-class SurveyQuestionOption extends CActiveRecord
+class SurveyQuestionOption extends SActiveRecord
 {
     /**
      * Returns the static model of the specified AR class.
@@ -94,12 +94,6 @@ class SurveyQuestionOption extends CActiveRecord
         return new CActiveDataProvider($this, array(
             'criteria'=>$criteria,
         ));
-    }
-    
-    public function __get($name) {
-    	if($name === 'text')
-    		return Surveyor::t(parent::__get($name));
-    	return parent::__get($name);
     }
     
 }

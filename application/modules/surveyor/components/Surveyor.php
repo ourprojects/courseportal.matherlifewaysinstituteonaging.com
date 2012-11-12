@@ -15,7 +15,7 @@ class Surveyor extends CApplicationComponent {
 	public function __get($name) {
 		if(is_numeric($name))
 			$survey = SurveyAR::model()->findByPk($name);
-		else
+		else if(is_string($name))
 			$survey = SurveyAR::model()->find('name = :name', array(':name' => $name));
 		if($survey === null)
 			return parent::__get($name);
