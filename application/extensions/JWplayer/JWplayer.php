@@ -49,9 +49,9 @@ class JWplayer extends CWidget {
 			switch($this->type) {
 				case 'player':
 					Yii::app()->clientScript->registerScriptFile("$this->_assetsUrl/player/jwplayer.js", CClientScript::POS_HEAD);
-					
+					Yii::app()->clientScript->registerScript($this->getId(), 'jwplayer.key="9kexJkklndg+FRZpAoCLNc7YxWP3J0HN32gVgg=="', CClientScript::POS_HEAD);
 					if(!isset($this->config['flashplayer']))
-						$this->config['flashplayer'] = "$this->_assetsUrl/player/player.swf";
+						$this->config['flashplayer'] = "$this->_assetsUrl/player/jwplayer.flash.swf";
 					break;
 				case 'imagerotator':
 					// @ TODO weird config to automate. Not needed at the moment.

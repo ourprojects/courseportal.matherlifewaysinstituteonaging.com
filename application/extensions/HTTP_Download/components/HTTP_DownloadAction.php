@@ -101,7 +101,7 @@ class HTTP_DownloadAction extends CAction {
 			if(!isset($this->fileName))
 				$this->fileName = basename($this->file);
 			if(!isset($this->contentType))
-				$this->contentType = mime_content_type($this->file);
+				$this->contentType = CFileHelper::getMimeType($this->file, '/usr/share/misc/magic.mgc');
 		} else {
 			throw new CHttpException(404, Yii::t('HTTP_Download', 'File "{file}" does not exist.', 
 				array('{file}' => $filePath)));
@@ -115,7 +115,7 @@ class HTTP_DownloadAction extends CAction {
 	 */
 	public function run() {
 		$this->resolveFile($this->getRequestedFile());
-
+		
 		$this->onBeforeDownload($event = new CEvent($this));
 		if(!$event->handled) {
 			Yii::import('ext.HTTP_Download.HTTP_Download', true);
