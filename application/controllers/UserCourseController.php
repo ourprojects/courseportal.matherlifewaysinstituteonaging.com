@@ -11,7 +11,7 @@ class UserCourseController extends ApiController {
 	
 		if(empty($errors)) {
 			$userCourse = new UserCourse;
-			$userCourse->user_id = $_POST['id'];
+			$userCourse->user_id = $_POST['user_id'];
 			$userCourse->course_id = $_POST['course_id'];
 			if(!$userCourse->save())
 				$errors = $userCourse->getErrors();
