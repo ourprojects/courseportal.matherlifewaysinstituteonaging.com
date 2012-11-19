@@ -12,6 +12,7 @@
 	<?php echo CHtml::cssFile(Yii::app()->theme->getStylesUrl('main.css')); ?>
 	<?php echo CHtml::cssFile(Yii::app()->theme->getStylesUrl('form.css')); ?>
 	<?php Yii::app()->clientScript->registerScriptFile(Yii::app()->theme->getScriptsUrl('main.js'), CClientScript::POS_HEAD); ?>
+	
 	<title>
 		<?php 
 		$this->pageTitle = Yii::app()->name;
@@ -26,6 +27,7 @@
 	</title>
 </head>
 <body>
+	<?php $this->widget('ext.LDGoogleAnalytics.LDGoogleAnalytics', array('accountID' => 'UA-36363866-1')); ?>
 	<div class="container" id="page">
 		<div id="header">
 			<div id="logo">
