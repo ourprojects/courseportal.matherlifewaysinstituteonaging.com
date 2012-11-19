@@ -1,18 +1,16 @@
 <?php
 /**
- * @author Louis DaPrato
- * Adapted from the following Yii widget extension.
+ * A FancyBox widget for Yii
  * 
- * EFancyBox widget class file.
- * @author Thiago Otaviani Vidal <thiagovidal@othys.com>
- * @link http://www.othys.com
- * Copyright (c) 2010 Thiago Otaviani Vidal
- * MADE IN BRAZIL
- * @version: 1.6
+ * @author Louis DaPrato
  */
 class EFancyBox extends CWidget {
 	
 	const ID = 'EFancyBox';
+	
+	const VIEW_NAME = 'FancyBox';
+	
+	public $viewName = self::VIEW_NAME;
 
 	// @ string the taget element on DOM
 	public $target;
@@ -30,10 +28,16 @@ class EFancyBox extends CWidget {
 	
 	// function to run the widget
     public function run() {
-		$config = CJavaScript::encode($this->config);
-		Yii::app()->clientScript->registerScript($this->getId(), "
-			$('$this->target').fancybox($config);
-		");
+		$this->render($this->viewName, $this->config, false);
+	}
+	
+	public function render($view, $data = array(), $return = false) {
+		if(!is_string($data))
+			$data = CJavaScript::encode($this->config);
+		
+		$js = parent::render($view, array('target' => $this->target, 'data' => $data), true);
+		
+		return $return ? $js : Yii::app()->clientScript->registerScript($this->getId(), $js, CClientScript::POS_READY);
 	}
 	
 	// function to publish and register assets on page 

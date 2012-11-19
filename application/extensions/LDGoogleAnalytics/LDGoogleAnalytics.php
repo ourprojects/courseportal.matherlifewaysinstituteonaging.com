@@ -8,7 +8,7 @@ class LDGoogleAnalytics extends CWidget {
 	
 	const ID = 'LDGoogleAnalytics';
 	
-	private static $viewName = 'GoogleAnalytics';
+	const VIEW_NAME = 'GoogleAnalytics';
 
     /**
      * Account ID
@@ -23,6 +23,8 @@ class LDGoogleAnalytics extends CWidget {
      * @var bool
      */
     public $autoTrackPageview = true;
+    
+    public $viewName = self::VIEW_NAME;
 
     /**
      * Available Google Analytics options as of (May 4, 2012), pulled from
@@ -107,7 +109,7 @@ class LDGoogleAnalytics extends CWidget {
 		if(!in_array('_trackPageview', $this->_calledOptions) && $this->autoTrackPageview)
 			$this->_trackPageview();
 		
-		$this->render(self::$viewName, $this->_data, false);
+		$this->render($this->viewName, $this->_data, false);
 	}
 
     /**
