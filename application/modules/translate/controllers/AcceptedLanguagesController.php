@@ -1,5 +1,5 @@
 <?php
-class TranslateController extends TController {
+class AcceptedLanguagesController extends OnlineCoursePortalController {
 	
 	/**
 	 * override needed to check if its ajax, the redirect will be by javascript
@@ -192,7 +192,7 @@ class TranslateController extends TController {
     public function actionIndex() {
     	$models = array(
     			'Message' => new Message('search'),
-    			'MessageSource' => new MessageSource('missing'),
+    			'MessageSource' => new MessageSource('search'),
     			'AcceptedLanguages' => new AcceptedLanguages('search'),
     	);
     	foreach($models as $name => $model) {
@@ -206,7 +206,7 @@ class TranslateController extends TController {
     			case 'translations-grid':
     				return $this->renderPartial('_translations_grid', array('Message' => $models['Message']));
     			case 'missing-translations-grid':
-    				return $this->renderPartial('_message_source_grid', array('MessageSource' => $models['MessageSource'], 'id' => 'missing-translations-grid'));
+    				return $this->renderPartial('_missing_translations_grid', array('MessageSource' => $models['MessageSource']));
     			case 'accepted-languages-grid':
     				return $this->renderPartial('_accepted_languages_grid', array('AcceptedLanguages' => $models['AcceptedLanguages']));
     		}

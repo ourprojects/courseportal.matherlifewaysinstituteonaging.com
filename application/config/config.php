@@ -58,7 +58,7 @@ return array(
 						'class' => 'DbMessageSource',
 						'forceTranslation' => false,
 						'onMissingTranslation' => array('MPTranslate', 'missingTranslation'),
-						'sourceMessageTable' => '{{source_message}}',
+						'sourceMessageTable' => '{{message_source}}',
 						'translatedMessageTable' => '{{message}}',
 				),
 				
@@ -111,9 +111,17 @@ return array(
 				'log' => array(
 						'class' => 'CLogRouter',
 						'routes' => array(
+								// Error Logging
 								array(
 										'class' => 'CFileLogRoute',
 										'levels' => 'error, warning',
+								),
+								// DB logging
+								array(
+										'class' => 'CFileLogRoute',
+										'levels' => 'trace, log, error, warning',
+										'categories' => 'system.db.CDbCommand',
+										'logFile' => 'db.log',
 								),
 						),
 				),

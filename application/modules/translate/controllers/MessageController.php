@@ -1,5 +1,5 @@
 <?php
-class TranslateController extends TController {
+class MessageController extends OnlineCoursePortalController {
 	
 	/**
 	 * override needed to check if its ajax, the redirect will be by javascript
@@ -61,46 +61,6 @@ class TranslateController extends TController {
             echo CJSON::encode($translation);
         else
             echo $translation;
-    }
-    
-    public function actionGoogleTranslateMissing() {
-    	if(isset($_REQUEST['MessageSource'])) {
-    		$source = new MessageSource('search');
-    		$source->attributes = $_REQUEST['MessageSource'];
-    		if($source->language !== TranslateModule::translator()->getLanguageID(Yii::app()->sourceLanguage)) {
-	    		$errors = array();
-		    	foreach($source->findAll($source->getMissingSearchCriteria()) as $message) {
-		    		if(($messageModel = Message::model()->find('id = :id AND language = :language', array('id' => $message->id, 'language' => $message->language))) === null) {
-		    			$translation = $message['message'];
-		    			 
-		    			preg_match_all('/\{(.*?)\}/', $translation, $matches);
-		    			$matches = $matches[0];
-		    			for($i = 0; $i < count($matches); $i++)
-		    				$translation = str_replace($matches[$i], "_{$i}_", $translation);
-		    				 
-	    				$translation = TranslateModule::translator()->googleTranslate(
-	    						$translation,
-	    						$message->language,
-	    						Yii::app()->sourceLanguage
-	    				);
-	    				if($translation === false) {
-	    					$errors[$message->id] = TranslateModule::t('Message could not be translated by Google.');
-	    				} else {
-	    					for($i = 0; $i < count($matches); $i++)
-	    						$translation = str_replace("_{$i}_", $matches[$i], $translation);
-	    					 
-	    					$messageModel = new Message;
-	    					$messageModel->attributes = array('id' => $message->id, 'category' => $message->category, 'language' => $message->language, 'translation' => $translation);
-		    				if(!$messageModel->save())
-		    					$errors[$message->id] = TranslateModule::t('Failed to save translated message.');
-		    			}
-			    	}
-			    }
-			    $errors['success'] = empty($errors);
-			    echo CJSON::encode($errors);
-    		}
-    	} else
-    		throw new CHttpException(400, "A message language was not specified.");
     }
     
     /**
@@ -192,7 +152,7 @@ class TranslateController extends TController {
     public function actionIndex() {
     	$models = array(
     			'Message' => new Message('search'),
-    			'MessageSource' => new MessageSource('missing'),
+    			'MessageSource' => new MessageSource('search'),
     			'AcceptedLanguages' => new AcceptedLanguages('search'),
     	);
     	foreach($models as $name => $model) {
@@ -206,7 +166,7 @@ class TranslateController extends TController {
     			case 'translations-grid':
     				return $this->renderPartial('_translations_grid', array('Message' => $models['Message']));
     			case 'missing-translations-grid':
-    				return $this->renderPartial('_message_source_grid', array('MessageSource' => $models['MessageSource'], 'id' => 'missing-translations-grid'));
+    				return $this->renderPartial('_missing_translations_grid', array('MessageSource' => $models['MessageSource']));
     			case 'accepted-languages-grid':
     				return $this->renderPartial('_accepted_languages_grid', array('AcceptedLanguages' => $models['AcceptedLanguages']));
     		}

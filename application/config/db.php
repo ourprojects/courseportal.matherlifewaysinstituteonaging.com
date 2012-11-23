@@ -9,6 +9,10 @@ $dbConf['password'] = 'Mj93f6d42b!';
 $dbConf['charset'] = 'utf8';
 $dbConf['tablePrefix'] = 'onlinecourseportal_';
 
+// DB profiling and logging
+$dbConf['enableProfiling'] = true;
+$dbConf['enableParamLogging'] = true;
+
 return $dbConf;
 
 ?>

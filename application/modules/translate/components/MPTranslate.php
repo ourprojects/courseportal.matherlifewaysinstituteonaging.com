@@ -45,6 +45,8 @@ class MPTranslate extends CApplicationComponent {
     
     public $managementActionFilters = array();
     
+    public $cookieExpire = 63072000; // 2 Years
+    
     /**
      * @var array $_cache will contain variables
      * */
@@ -54,9 +56,9 @@ class MPTranslate extends CApplicationComponent {
 	 * handles the initialization parameters of the components
 	 */
 	public function init() {
-		Yii::import('translate.models.AcceptedLanguages');
+		Yii::import('translate.models.*');
 
-        function t($message, $params = array ()) {
+        function t($message, $params = array()) {
         	return Yii::t(TranslateModule::translator()->messageCategory, $message, $params, null, null);
         }
         
@@ -105,10 +107,10 @@ class MPTranslate extends CApplicationComponent {
 		// Set cookie if not set.
 		$cookies = Yii::app()->getRequest()->getCookies();
 		if(!$cookies->contains('language')) {
-			$cookies->add('language', new CHttpCookie('language', $language, array('expire' => time() + (60 * 60 * 24 * 365 * 2)))); // (2 years)
-		} else if ($cookies->itemAt('language')->value !== $language) {
+			$cookies->add('language', new CHttpCookie('language', $language, array('expire' => time() + $this->cookieExpire)));
+		} else if($cookies->itemAt('language')->value !== $language) {
 			$cookies->itemAt('language')->value = $language;
-			$cookies->itemAt('language')->expire = time() + (60 * 60 * 24 * 365 * 2); // (2 years)
+			$cookies->itemAt('language')->expire = time() + $this->cookieExpire;
 		}
 	}
 	
@@ -169,6 +171,18 @@ class MPTranslate extends CApplicationComponent {
 		return array_key_exists(Yii::app()->getLocale()->getLanguageID($id), $this->getAdminAcceptedLanguages());
 	}
 	
+	public function getSourceLanguageID() {
+		return $this->getLanguageID(Yii::app()->sourceLanguage);
+	}
+	
+	public function getSourceScriptID() {
+		return $this->getScriptID(Yii::app()->sourceLanguage);
+	}
+	
+	public function getSourceTerritoryID() {
+		return $this->getTerritoryID(Yii::app()->sourceLanguage);
+	}
+	
 	public function getLanguageID($language = null) {
 		if($language === null)
 			$language = Yii::app()->getLanguage();
@@ -216,7 +230,7 @@ class MPTranslate extends CApplicationComponent {
 	public function getLocaleDisplayName($id = null, $language = null, $category = 'language') {
 		$idMethod = 'get' . ucfirst($category) . 'ID';
 		if(!method_exists($this, $idMethod)) {
-			Yii::log(TranslateModule::t('Failed to query Yii locale DB. Possible invalid category requested {category}', array('{category}' => $category)));
+			Yii::log(TranslateModule::t('Failed to query Yii locale DB. Possibly invalid category requested {category}', array('{category}' => $category)));
 			return false;
 		}
 		$id = $this->$idMethod();
@@ -236,7 +250,7 @@ class MPTranslate extends CApplicationComponent {
 				$method = 'get' . ucfirst($category);
 				$idMethod = "{$method}ID";
 				if(!method_exists(Yii::app()->getLocale(), $method) || !method_exists(Yii::app()->getLocale(), $idMethod)) {
-					Yii::log(TranslateModule::t('Failed to query Yii locale DB. Possible invalid category requested {category}', array('{category}' => $category)));
+					Yii::log(TranslateModule::t('Failed to query Yii locale DB. Possibly invalid category requested {category}', array('{category}' => $category)));
 					return false;
 				}
 				foreach(CLocale::getLocaleIds() as $id) {

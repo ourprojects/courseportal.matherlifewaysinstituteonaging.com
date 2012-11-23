@@ -1,35 +1,73 @@
 <?php
 class MessageSource extends CActiveRecord {
-    
-    public $language;
-        
-	static function model($className = __CLASS__) {
+
+	public static function model($className = __CLASS__) {
 		return parent::model($className);
 	}
 	
-	function tableName() {
+	public function tableName() {
 		return Yii::app()->getMessages()->sourceMessageTable;
 	}
-	
-	function init() {
-		$this->language = TranslateModule::translator()->getLanguageID();
-	}
 
-	function rules(){
+	public function rules() {
 		return array(
-            array('category,message','required'),
-			array('category', 'length', 'max'=>32),
+            array('category, message','required'),
+			array('category', 'length', 'max' => 32),
 			array('message', 'safe'),
-			array('id, category, message, language', 'safe', 'on'=>'search'),
+			array('id, category', 'safe', 'on' => 'search, missing'),
+			array('language', 'safe', 'on' => 'missing'),
 		);
 	}
     
-	function relations(){
+	public function relations() {
 		return array(
-            'mt' => array(self::HAS_MANY, 'Message', 'id', 'joinType'=>'inner join'),
+            'translations' => array(self::HAS_MANY, 'Message', 'id', 'joinType' => 'INNER JOIN'),
+			'acceptedLanguages' => array(self::HAS_MANY, 'AcceptedLanguages', array('id' => 'language'), 'through' => 'translations')
 		);
 	}
-	function attributeLabels(){
+	
+	public function scopes() {
+		return array(
+				'isAcceptedLanguage' => array('with' => 'acceptedLanguage'),
+				'missingTranslations' => array(
+					'condition' => '`t`.`id` <> ANY 
+						(
+							SELECT `m`.`id` FROM `'.Message::model()->tableName().'` `m` 
+							WHERE `m`.`language` NOT IN
+							(
+								SELECT `mm`.`language` FROM `'.Message::model()->tableName().'` `mm`
+								WHERE (`mm`.`id` = `t`.`id`)
+							)
+
+						)'
+				),
+				'missingAcceptedLanguageTranslations' => array(
+						'condition' => '`t`.`id` <> ANY 
+							(
+								SELECT `al`.* FROM `'.AcceptedLanguages::model()->tableName().'` `al`
+								WHERE `al`.`id` NOT IN
+								(
+									SELECT `m`.`language` FROM `'.Message::model()->tableName().'` `m`
+									WHERE (`m`.`id` = `t`.`id`)
+								)
+							)'
+				)
+		);
+	}
+	
+	public function missingTranslation($languageId) {
+		$this->getDbCriteria()->mergeWith(array(
+				'params' => array(':languageId' => $languageId),
+				'condition' => '`t`.`id` NOT IN 
+					(
+						SELECT `id` FROM `'.Message::model()->tableName().'` `m` 
+						WHERE (`m`.`language` = :languageId) AND (`m`.`id` = `t`.`id`)
+					)'
+		));
+		return $this;
+	}
+	
+	public function attributeLabels() {
 		return array(
 			'id' => TranslateModule::t('ID'),
 			'category' => TranslateModule::t('Category'),
@@ -37,19 +75,18 @@ class MessageSource extends CActiveRecord {
 		);
 	}
 	
-	public function getMissingSearchCriteria() {
-		$criteria = new CDbCriteria(array('with' => 'mt', 'params' => array(':lang' => $this->language)));
-		return $criteria->addCondition('not exists (select `id` from `'.Message::model()->tableName().'` `m` where `m`.`language`=:lang and `m`.id=`t`.`id`)')
-					->compare('t.id', $this->id)
-					->compare('t.category', $this->category)
-					->compare('t.message', $this->message);
-	}
-
-	function searchMissing() {
-		if($this->language === TranslateModule::translator()->getLanguageID(Yii::app()->sourceLanguage))
-			return new CArrayDataProvider(array());
+	public function getSearchCriteria($data = array()) {
+		$criteria = new CDbCriteria($data);
 		
-		return new CActiveDataProvider($this, array('criteria' => $this->getMissingSearchCriteria()));
+		$criteria->compare('t.id',$this->id);
+		$criteria->compare('t.category',$this->category);
+		$criteria->compare('t.message',$this->message);
+
+		return $criteria;
 	}
 
+	public function search() {
+		return new CActiveDataProvider($this, array('criteria' => $this->getSearchCriteria()));
+	}
+	
 }
