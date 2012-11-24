@@ -108,7 +108,7 @@ class EHighcharts extends CWidget {
 		$baseUrl = Yii::app()->getAssetManager()->publish($basePath, false, 1, YII_DEBUG);
 		$scriptFile = YII_DEBUG ? '/highcharts.src.js' : '/highcharts.js';
 
-		$cs = Yii::app()->clientScript;
+		$cs = Yii::app()->getClientScript();
 		$cs->registerCoreScript('jquery');
 		$cs->registerScriptFile($baseUrl . $scriptFile);
 

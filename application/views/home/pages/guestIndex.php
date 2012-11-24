@@ -1,11 +1,11 @@
 <?php
 $this->pageTitle = Yii::app()->name . ' - '.t('Guest');
 
-Yii::app()->clientScript->registerCssFile($this->getStylesUrl('home.css'));
-Yii::app()->clientScript->registerCssFile($this->getStylesUrl('tutorial.css'));
+Yii::app()->getClientScript()->registerCssFile($this->getStylesUrl('home.css'));
+Yii::app()->getClientScript()->registerCssFile($this->getStylesUrl('tutorial.css'));
 
-Yii::app()->clientScript->registerScriptFile($this->getScriptsUrl('jquery.cycle.js'), CClientScript::POS_HEAD);
-Yii::app()->clientScript->registerScript('customers_cycle', "$('#customers').cycle({ fx: 'fade' });");
+Yii::app()->getClientScript()->registerScriptFile($this->getScriptsUrl('jquery.cycle.js'), CClientScript::POS_HEAD);
+Yii::app()->getClientScript()->registerScript('customers_cycle', "$('#customers').cycle({ fx: 'fade' });");
 
 $this->widget(
 		'ext.fancybox.EFancyBox',
@@ -470,7 +470,7 @@ $this->widget(
 			</select>
 			<p></p>
 			<?php
-			Yii::app()->clientScript->registerScript('survey_onlineexperience',
+			Yii::app()->getClientScript()->registerScript('survey_onlineexperience',
 			"$('#survey_onlineexperience select').change(function() {
 				if($(this).val() == '1') {
 					$('#survey_onlineexperience p').html('Great! Good luck!!');

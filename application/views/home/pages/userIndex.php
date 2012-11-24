@@ -1,8 +1,8 @@
 <?php
 $this->pageTitle = Yii::app()->name . ' - ' . t('User');
 
-Yii::app()->clientScript->registerScriptFile($this->getScriptsUrl('jquery.quote.js'), CClientScript::POS_HEAD);
-Yii::app()->clientScript->registerScript('quotes_rotator', "$('#quotes').quote_rotator({randomize_first_quote: true});");
+Yii::app()->getClientScript()->registerScriptFile($this->getScriptsUrl('jquery.quote.js'), CClientScript::POS_HEAD);
+Yii::app()->getClientScript()->registerScript('quotes_rotator', "$('#quotes').quote_rotator({randomize_first_quote: true});");
 
 ?>
 	<div class="small-masthead" style="background-image: url(<?php echo $this->getImagesUrl('home.png'); ?>);">

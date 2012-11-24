@@ -37,7 +37,7 @@ class EFancyBox extends CWidget {
 		
 		$js = parent::render($view, array('target' => $this->target, 'data' => $data), true);
 		
-		return $return ? $js : Yii::app()->clientScript->registerScript($this->getId(), $js, CClientScript::POS_READY);
+		return $return ? $js : Yii::app()->getClientScript()->registerScript($this->getId(), $js, CClientScript::POS_READY);
 	}
 	
 	// function to publish and register assets on page 
@@ -45,27 +45,27 @@ class EFancyBox extends CWidget {
 		$assetsDir = dirname(__FILE__).DIRECTORY_SEPARATOR.'assets';
 		if(is_dir($assetsDir)) {
 			$assetsUrl = Yii::app()->assetManager->publish($assetsDir);
-			Yii::app()->clientScript->registerCoreScript('jquery');
-			Yii::app()->clientScript->registerScriptFile("$assetsUrl/jquery.fancybox.pack.js", CClientScript::POS_HEAD);
-			Yii::app()->clientScript->registerCssFile("$assetsUrl/jquery.fancybox.css");
+			Yii::app()->getClientScript()->registerCoreScript('jquery');
+			Yii::app()->getClientScript()->registerScriptFile("$assetsUrl/jquery.fancybox.pack.js", CClientScript::POS_HEAD);
+			Yii::app()->getClientScript()->registerCssFile("$assetsUrl/jquery.fancybox.css");
 			
 			// if mouse actions enbled register the js
 			if (!isset($this->config['mouseWheel']) || $this->config['mouseWheel'] === true) 
-				Yii::app()->clientScript->registerScriptFile("$assetsUrl/lib/jquery.mousewheel-3.0.6.pack.js", CClientScript::POS_HEAD);
+				Yii::app()->getClientScript()->registerScriptFile("$assetsUrl/lib/jquery.mousewheel-3.0.6.pack.js", CClientScript::POS_HEAD);
 			
 			// include helpers required by the config
 			// thumbs
 			if(isset($this->config['helpers']['thumbs'])) {
-				Yii::app()->clientScript->registerScriptFile("$assetsUrl/helpers/jquery.fancybox-thumbs.js", CClientScript::POS_HEAD);
-				Yii::app()->clientScript->registerCssFile("$assetsUrl/helpers/jquery.fancybox-thumbs.css");
+				Yii::app()->getClientScript()->registerScriptFile("$assetsUrl/helpers/jquery.fancybox-thumbs.js", CClientScript::POS_HEAD);
+				Yii::app()->getClientScript()->registerCssFile("$assetsUrl/helpers/jquery.fancybox-thumbs.css");
 			}
 			// media
 			if(isset($this->config['helpers']['media']))
-				Yii::app()->clientScript->registerScriptFile("$assetsUrl/helpers/jquery.fancybox-media.js", CClientScript::POS_HEAD);
+				Yii::app()->getClientScript()->registerScriptFile("$assetsUrl/helpers/jquery.fancybox-media.js", CClientScript::POS_HEAD);
 			// buttons
 			if(isset($this->config['helpers']['buttons'])) {
-				Yii::app()->clientScript->registerScriptFile("$assetsUrl/helpers/jquery.fancybox-buttons.js", CClientScript::POS_HEAD);
-				Yii::app()->clientScript->registerCssFile("$assetsUrl/helpers/jquery.fancybox-buttons.css");
+				Yii::app()->getClientScript()->registerScriptFile("$assetsUrl/helpers/jquery.fancybox-buttons.js", CClientScript::POS_HEAD);
+				Yii::app()->getClientScript()->registerCssFile("$assetsUrl/helpers/jquery.fancybox-buttons.css");
 			}
 			
 		} else {

@@ -21,7 +21,7 @@ class Survey extends CWidget {
 		$assetsDir = dirname(__FILE__).DIRECTORY_SEPARATOR.'assets';
 		if(is_dir($assetsDir)) {
 			$assetsUrl = Yii::app()->assetManager->publish($assetsDir);
-			Yii::app()->clientScript->registerCssFile("$assetsUrl/survey/styles/survey.css");
+			Yii::app()->getClientScript()->registerCssFile("$assetsUrl/survey/styles/survey.css");
 		}
 	}
 	

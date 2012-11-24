@@ -25,7 +25,7 @@ class JWplayer extends CWidget {
 			$this->target = $this->getId();
 		switch($this->type) {
 			case 'player':
-				Yii::app()->clientScript->registerScript(
+				Yii::app()->getClientScript()->registerScript(
 					$this->getId(), 
 					'jwplayer("'.$this->target.'").setup('.CJavaScript::encode($this->config).');'
 				);
@@ -34,7 +34,7 @@ class JWplayer extends CWidget {
 				// @ TODO weird config to automate. Not needed at the moment.
 				break;
 			case 'silverlight':
-				Yii::app()->clientScript->registerScript(
+				Yii::app()->getClientScript()->registerScript(
 					$this->getId(), 
 					'new jeroenwijering.Player(document.getElementById("'.$this->target.'"),"'.$this->_assetsUrl.'/silverlight/wmvplayer.xaml",'.CJavaScript::encode($this->config).');'
 				);
@@ -48,8 +48,8 @@ class JWplayer extends CWidget {
 			$this->_assetsUrl = Yii::app()->assetManager->publish($assetsDir);
 			switch($this->type) {
 				case 'player':
-					Yii::app()->clientScript->registerScriptFile("$this->_assetsUrl/player/jwplayer.js", CClientScript::POS_HEAD);
-					Yii::app()->clientScript->registerScript($this->getId(), 'jwplayer.key="9kexJkklndg+FRZpAoCLNc7YxWP3J0HN32gVgg=="', CClientScript::POS_HEAD);
+					Yii::app()->getClientScript()->registerScriptFile("$this->_assetsUrl/player/jwplayer.js", CClientScript::POS_HEAD);
+					Yii::app()->getClientScript()->registerScript($this->getId(), 'jwplayer.key="9kexJkklndg+FRZpAoCLNc7YxWP3J0HN32gVgg=="', CClientScript::POS_HEAD);
 					if(!isset($this->config['flashplayer']))
 						$this->config['flashplayer'] = "$this->_assetsUrl/player/jwplayer.flash.swf";
 					break;
@@ -57,8 +57,8 @@ class JWplayer extends CWidget {
 					// @ TODO weird config to automate. Not needed at the moment.
 					break;
 				case 'silverlight':
-					Yii::app()->clientScript->registerScriptFile("$this->_assetsUrl/silverlight/silverlight.js", CClientScript::POS_HEAD);
-					Yii::app()->clientScript->registerScriptFile("$this->_assetsUrl/silverlight/wmvplayer.js", CClientScript::POS_HEAD);
+					Yii::app()->getClientScript()->registerScriptFile("$this->_assetsUrl/silverlight/silverlight.js", CClientScript::POS_HEAD);
+					Yii::app()->getClientScript()->registerScriptFile("$this->_assetsUrl/silverlight/wmvplayer.js", CClientScript::POS_HEAD);
 					break;
 			}
 		} else {

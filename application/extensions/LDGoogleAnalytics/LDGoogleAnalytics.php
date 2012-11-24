@@ -122,7 +122,7 @@ class LDGoogleAnalytics extends CWidget {
         if($this->_accountID !== null) {
         	$data = parent::render($view, array('_data' => $data), true);
 
-        	return $return ? $data : Yii::app()->clientScript->registerScript($this->getId(), $data, CClientScript::POS_BEGIN);
+        	return $return ? $data : Yii::app()->getClientScript()->registerScript($this->getId(), $data, CClientScript::POS_BEGIN);
         }
         
         throw new CHttpException(500, Yii::t(ID, ID . '- Google Analytics account ID has not been set.'));
