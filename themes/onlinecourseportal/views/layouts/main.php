@@ -4,14 +4,14 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=<?php echo Yii::app()->charset; ?>" />
 	<meta name="language" content="<?php echo Yii::app()->getLanguage(); ?>" />
 	<!-- blueprint CSS framework -->
-	<?php echo CHtml::cssFile(Yii::app()->theme->getStylesUrl('screen.css'), 'screen, projection'); ?>
-	<?php echo CHtml::cssFile(Yii::app()->theme->getStylesUrl('print.css'), 'print'); ?>
+	<?php echo CHtml::cssFile(Yii::app()->getTheme()->getStylesUrl('screen.css'), 'screen, projection'); ?>
+	<?php echo CHtml::cssFile(Yii::app()->getTheme()->getStylesUrl('print.css'), 'print'); ?>
 	<!--[if lt IE 8]>
-		<?php echo CHtml::cssFile(Yii::app()->theme->getStylesUrl('ie.css'), 'screen, projection'); ?>
+		<?php echo CHtml::cssFile(Yii::app()->getTheme()->getStylesUrl('ie.css'), 'screen, projection'); ?>
 		<![endif]-->
-	<?php echo CHtml::cssFile(Yii::app()->theme->getStylesUrl('main.css')); ?>
-	<?php echo CHtml::cssFile(Yii::app()->theme->getStylesUrl('form.css')); ?>
-	<?php Yii::app()->clientScript->registerScriptFile(Yii::app()->theme->getScriptsUrl('main.js'), CClientScript::POS_HEAD); ?>
+	<?php echo CHtml::cssFile(Yii::app()->getTheme()->getStylesUrl('main.css')); ?>
+	<?php echo CHtml::cssFile(Yii::app()->getTheme()->getStylesUrl('form.css')); ?>
+	<?php Yii::app()->clientScript->registerScriptFile(Yii::app()->getTheme()->getScriptsUrl('main.js'), CClientScript::POS_HEAD); ?>
 	
 	<title>
 		<?php 
@@ -31,11 +31,11 @@
 	<div class="container" id="page">
 		<div id="header">
 			<div id="logo">
-				<img src="<?php echo Yii::app()->theme->getImagesUrl('logo.png'); ?>" />
+				<img src="<?php echo Yii::app()->getTheme()->getImagesUrl('logo.png'); ?>" />
 			</div>
 			<div id="site-title"><?php echo Yii::app()->name; ?></div>
 			<div id="language-menu"><?php $this->widget('modules.translate.widgets.LanguageSelector'); ?></div>
-			<?php if(!empty(MPTranslate::$messages) && !Yii::app()->user->isGuest && Yii::app()->user->group->name === 'admin'): ?>
+			<?php if(!empty(MPTranslate::$messages) && Yii::app()->getUser()->isAdmin()): ?>
 				<div id="translate-button">
 					<?php echo Yii::app()->translate->translateLink('Missing Translations on Page', 'button'); ?>	
 				</div>
@@ -52,19 +52,19 @@
 			)); 
 			?>
 			<!-- breadcrumbs -->
-			<?php if(Yii::app()->user->hasFlash('success')): ?>
+			<?php if(Yii::app()->getUser()->hasFlash('success')): ?>
 					<div class="flash-success">
-						<?php echo Yii::app()->user->getFlash('success'); ?>
+						<?php echo Yii::app()->getUser()->getFlash('success'); ?>
 					</div>
 			<?php endif; ?>		
-			<?php if(Yii::app()->user->hasFlash('notice')): ?>
+			<?php if(Yii::app()->getUser()->hasFlash('notice')): ?>
 					<div class="flash-notice">
-						<?php echo Yii::app()->user->getFlash('notice'); ?>
+						<?php echo Yii::app()->getUser()->getFlash('notice'); ?>
 					</div>
 			<?php endif; ?>
-			<?php if(Yii::app()->user->hasFlash('error')): ?>
+			<?php if(Yii::app()->getUser()->hasFlash('error')): ?>
 					<div class="flash-error">
-						<?php echo Yii::app()->user->getFlash('error'); ?>
+						<?php echo Yii::app()->getUser()->getFlash('error'); ?>
 					</div>
 			<?php endif; ?>
 			<?php echo $content; ?>
@@ -78,7 +78,7 @@
 
 			<div class="logo">
 				<a href="http://www.matherlifewaysinstituteonaging.com/" title="Mather LifeWays Institute on Aging">
-					<img src="<?php echo Yii::app()->theme->getImagesUrl('logo-footer.jpg'); ?>" />
+					<img src="<?php echo Yii::app()->getTheme()->getImagesUrl('logo-footer.jpg'); ?>" />
 				</a>
 			</div>
 			<div id="footer-icons" class="icons">

@@ -5,7 +5,7 @@ Yii::import('zii.widgets.CPortlet');
 class UserMenu extends CPortlet {
 
 	public function init() {
-		$this->title = CHtml::encode(Yii::app()->user->name);
+		$this->title = CHtml::encode(Yii::app()->getUser()->name);
 		parent::init();
 	}
 

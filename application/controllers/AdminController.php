@@ -45,9 +45,9 @@ class AdminController extends OnlineCoursePortalController {
 			$models['model']->attributes = $_POST['Key'];
 			
 			if($models['model']->save())
-				Yii::app()->user->setFlash('success', t('Key saved successfully.'));
+				Yii::app()->getUser()->setFlash('success', t('Key saved successfully.'));
 			else
-				Yii::app()->user->setFlash('error', t('Key could not be saved.'));
+				Yii::app()->getUser()->setFlash('error', t('Key could not be saved.'));
 			
 			var_dump($models['model']); die;
 		}
@@ -77,7 +77,7 @@ class AdminController extends OnlineCoursePortalController {
 		if(Yii::app()->getRequest()->getIsAjaxRequest()) {
 			echo $response['message'];
 		} else {
-			Yii::app()->user->setFlash($response['result'], $response['message']);
+			Yii::app()->getUser()->setFlash($response['result'], $response['message']);
 			$this->redirect(Yii::app()->getRequest()->getUrlReferrer());
 		}
 	}
@@ -103,9 +103,9 @@ class AdminController extends OnlineCoursePortalController {
 		if(isset($_POST['Course'])) {
 			$models['model']->attributes = $_POST['Course'];
 			if($models['model']->save())
-				Yii::app()->user->setFlash('success', t('Course saved successfully.'));
+				Yii::app()->getUser()->setFlash('success', t('Course saved successfully.'));
 			else
-				Yii::app()->user->setFlash('error', t('Course could not be saved.'));
+				Yii::app()->getUser()->setFlash('error', t('Course could not be saved.'));
 		}
 		
 		$this->render('pages/course', $models);
@@ -126,7 +126,7 @@ class AdminController extends OnlineCoursePortalController {
         if(Yii::app()->getRequest()->getIsAjaxRequest()) {
         	echo $response['message'];
         } else {
-        	Yii::app()->user->setFlash($response['result'], $response['message']);
+        	Yii::app()->getUser()->setFlash($response['result'], $response['message']);
         	$this->redirect(Yii::app()->getRequest()->getUrlReferrer());
         }
 	}

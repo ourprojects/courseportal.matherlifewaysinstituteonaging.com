@@ -121,6 +121,12 @@ class User extends ActiveRecord implements IUserIdentity {
 			'courses' => array(self::HAS_MANY, 'Course', array('course_id' => 'id'), 'through' => 'userCourses'),
 		);
 	}
+	
+	public function scopes() {
+		return array(
+			'isAdmin' => 'group.name="admin"',
+		);
+	}
 
 	/**
 	 * @return array customized attribute labels (name=>label)
@@ -192,7 +198,7 @@ class User extends ActiveRecord implements IUserIdentity {
 		if(!$run_validation || $this->validate()) {
 			if($remember_me)
 				$this->setState('sk', $this->session_key);
-			if(Yii::app()->user->login($this, $remember_me ? 3600 * 24 * 7 : 0)) {
+			if(Yii::app()->getUser()->login($this, $remember_me ? 3600 * 24 * 7 : 0)) {
 				if($this->scenario === 'login')
 					$this->setScenario('update');
 				return true;

@@ -29,7 +29,7 @@ class AvatarController extends OnlineCoursePortalController {
 	
 	public function actionView($id) {
 		$this->loadExtension('HTTP_Download');
-		$avatar = Yii::app()->user->model->avatar;
+		$avatar = Yii::app()->getUser()->getModel()->avatar;
 		if($avatar !== null) {
 			HTTP_Download::staticSend(array(
 					'file'               => $avatar->getPath(),

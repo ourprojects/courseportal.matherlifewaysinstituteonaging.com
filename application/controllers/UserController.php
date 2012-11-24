@@ -37,8 +37,8 @@ class UserController extends ApiController {
 			$user->attributes = $_POST['User'];
 			// validate user input and redirect to the previous page if valid
 			if($user->login(isset($_POST['remember_me']))) {
-				Yii::app()->user->setFlash('success', t('Welcome {email}!', array('{email}' => Yii::app()->user->name)));
-				$this->redirect(Yii::app()->user->returnUrl);
+				Yii::app()->getUser()->setFlash('success', t('Welcome {email}!', array('{email}' => Yii::app()->getUser()->name)));
+				$this->redirect(Yii::app()->getUser()->returnUrl);
 			}
 		}
 		// display the login form
@@ -115,7 +115,7 @@ class UserController extends ApiController {
 			$user->userActivated->user_id = $user->id;
 			if($user->userActivated->save() && $user->login(false, false)) {
 				$user->regenerateSessionKey();
-				Yii::app()->user->setFlash('success', t('Your account has been activated. Welcome {email}!', array('{email}' => Yii::app()->user->name)));
+				Yii::app()->getUser()->setFlash('success', t('Your account has been activated. Welcome {email}!', array('{email}' => Yii::app()->getUser()->name)));
 				$this->redirect(Yii::app()->homeUrl);
 			}
 		}
@@ -126,18 +126,18 @@ class UserController extends ApiController {
 	 * Logs out the current user and redirect to homepage.
 	 */
 	public function actionLogout() {
-		Yii::app()->user->logout();
-		Yii::app()->user->setFlash('success', t('You have been successfully logged out.'));
+		Yii::app()->getUser()->logout();
+		Yii::app()->getUser()->setFlash('success', t('You have been successfully logged out.'));
 		$this->redirect(Yii::app()->homeUrl);
 	}
 	
 	public function actionProfile() {
 		$models = array(
-				'user' => Yii::app()->user->model,
-				'user_profile' => Yii::app()->user->model->userProfile === null ? 
-										new UserProfile : Yii::app()->user->model->userProfile,
-				'avatar' => Yii::app()->user->model->avatar === null ? 
-								new Avatar : Yii::app()->user->model->avatar,
+				'user' => Yii::app()->getUser()->getModel(),
+				'user_profile' => Yii::app()->getUser()->getModel()->userProfile === null ? 
+										new UserProfile : Yii::app()->getUser()->getModel()->userProfile,
+				'avatar' => Yii::app()->getUser()->getModel()->avatar === null ? 
+								new Avatar : Yii::app()->getUser()->getModel()->avatar,
 				'profile_questions' => Yii::app()->surveyor->profile->form,
 			);
 		$models['user_profile']->user_id = $models['user']->id;

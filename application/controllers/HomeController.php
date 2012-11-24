@@ -30,7 +30,7 @@ class HomeController extends OnlineCoursePortalController {
 	}
 
 	public function actionIndex() {
-		if(Yii::app()->user->isGuest) {
+		if(Yii::app()->getUser()->isGuest()) {
 			$models = array(
 						'workingCaregiver_survey' => Yii::app()->surveyor->workingCaregiver->form,
 						'hrEmployer_survey' => Yii::app()->surveyor->hrEmployer->form,
@@ -84,7 +84,7 @@ class HomeController extends OnlineCoursePortalController {
 				$message->addTo(Yii::app()->params['adminEmail']);
 				$message->from = $contact->email;
 				Yii::app()->mail->send($message);
-				Yii::app()->user->setFlash('success', t('Thank you for contacting us. We will respond to you as soon as possible.'));
+				Yii::app()->getUser()->setFlash('success', t('Thank you for contacting us. We will respond to you as soon as possible.'));
 				$this->refresh();
 			}
 		}

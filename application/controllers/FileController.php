@@ -28,7 +28,7 @@ class FileController extends OnlineCoursePortalController {
 	}
 	
 	public function actionIndex($id) {
-		$file = Yii::app()->user->model->uploadedFiles($id);
+		$file = Yii::app()->getUser()->getModel()->uploadedFiles($id);
 		if($file !== null) {
 			$this->loadExtension('HTTP_Download');
 			HTTP_Download::staticSend(array(

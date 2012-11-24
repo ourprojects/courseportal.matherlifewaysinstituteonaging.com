@@ -4,6 +4,10 @@ class WebUser extends CWebUser {
 
 	private $_model;
 	
+	public function isAdmin() {
+		return ($model = $this->getModel()) !== null && $model->isAdmin();
+	}
+	
 	public function getModel($id = null) {
 		if($id === null)
 			$id = $this->getId();
@@ -13,8 +17,8 @@ class WebUser extends CWebUser {
 	}
 	
 	public function __get($name) {
-		if($this->getModel() !== null && ($this->getModel()->hasAttribute($name) || array_key_exists($name, $this->getModel()->relations())))
-			return $this->getModel()->$name;
+		if(($model = $this->getModel()) !== null && ($model->hasAttribute($name) || array_key_exists($name, $model->relations())))
+			return $model->$name;
 		return parent::__get($name);
 	}
 
@@ -32,7 +36,7 @@ class WebUser extends CWebUser {
 	}
 
 	protected function beforeLogout() {
-		$user = $this->getModel($this->getId());
+		$user = $this->getModel();
 		if($user !== null)
 			$user->regenerateSessionKey();
 		return parent::beforeLogout();
