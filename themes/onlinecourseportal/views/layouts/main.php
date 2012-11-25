@@ -34,7 +34,7 @@
 				<img src="<?php echo Yii::app()->getTheme()->getImagesUrl('logo.png'); ?>" />
 			</div>
 			<div id="site-title"><?php echo Yii::app()->name; ?></div>
-			<div id="language-menu"><?php $this->widget('modules.translate.widgets.LanguageSelector'); ?></div>
+			<div id="language-menu"><?php $this->widget('modules.translate.widgets.acceptedLanguage.Selector'); ?></div>
 			<?php if(!empty(MPTranslate::$messages) && Yii::app()->getUser()->isAdmin()): ?>
 				<div id="translate-button">
 					<?php echo Yii::app()->translate->translateLink('Missing Translations on Page', 'button'); ?>	

@@ -166,8 +166,8 @@ class TranslateController extends TController {
     			}
     			$message = empty($result) ? 'An error occurred deleting the message' : 'Message deleted successfully';
     			break;
-    		case 'AcceptedLanguages':
-    			$model = AcceptedLanguages::model()->findByPk($id);
+    		case 'AcceptedLanguage':
+    			$model = AcceptedLanguage::model()->findByPk($id);
     			$message =  ($model !== null && $model->delete()) ? 'Language deleted successfully' : 'An error occurred deleting the language';
     			break;
     		case 'MessageSource':
@@ -193,7 +193,7 @@ class TranslateController extends TController {
     	$models = array(
     			'Message' => new Message('search'),
     			'MessageSource' => new MessageSource('missing'),
-    			'AcceptedLanguages' => new AcceptedLanguages('search'),
+    			'AcceptedLanguage' => new AcceptedLanguage('search'),
     	);
     	foreach($models as $name => $model) {
     		$model->unsetAttributes();
@@ -208,7 +208,7 @@ class TranslateController extends TController {
     			case 'missing-translations-grid':
     				return $this->renderPartial('_message_source_grid', array('MessageSource' => $models['MessageSource'], 'id' => 'missing-translations-grid'));
     			case 'accepted-languages-grid':
-    				return $this->renderPartial('_accepted_languages_grid', array('AcceptedLanguages' => $models['AcceptedLanguages']));
+    				return $this->renderPartial('_accepted_languages_grid', array('AcceptedLanguage' => $models['AcceptedLanguage']));
     		}
     	}
     	$this->render('index', $models);

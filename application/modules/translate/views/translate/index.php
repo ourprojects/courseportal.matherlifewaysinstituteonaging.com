@@ -151,15 +151,15 @@ $this->widget('zii.widgets.grid.CGridView', array(
 <?php 
 $this->widget('zii.widgets.grid.CGridView', array(
 	'id' => 'accepted-languages-grid',
-	'dataProvider' => $AcceptedLanguages->search(),
-	'filter' => $AcceptedLanguages,
+	'dataProvider' => $AcceptedLanguage->search(),
+	'filter' => $AcceptedLanguage,
 	'columns' => array(
         'id',
 		'name',
         array(
             'class' => 'CButtonColumn',
             'template' => '{delete}',
-            'deleteButtonUrl' => 'Yii::app()->getController()->createUrl("acceptedDelete", array("model" => "AcceptedLanguages", "id" => $data->id))',
+            'deleteButtonUrl' => 'Yii::app()->getController()->createUrl("acceptedDelete", array("model" => "AcceptedLanguage", "id" => $data->id))',
         )
 	),
 )); 
@@ -171,11 +171,11 @@ $this->widget('zii.widgets.grid.CGridView', array(
 			'enableAjaxValidation' => true,
 )); ?>
 	
-	<?php echo $form->errorSummary($AcceptedLanguages); ?>
+	<?php echo $form->errorSummary($AcceptedLanguage); ?>
 	<div class="row">
-		<?php echo $form->labelEx($AcceptedLanguages, 'id'); ?>
-		<?php echo $form->textField($AcceptedLanguages, 'id'); ?>
-		<?php echo $form->error($AcceptedLanguages, 'id'); ?>
+		<?php echo $form->labelEx($AcceptedLanguage, 'id'); ?>
+		<?php echo $form->textField($AcceptedLanguage, 'id'); ?>
+		<?php echo $form->error($AcceptedLanguage, 'id'); ?>
 	</div>
 
 	<div class="row submit">

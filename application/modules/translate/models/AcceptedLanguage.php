@@ -1,5 +1,5 @@
 <?php
-class AcceptedLanguages extends CActiveRecord {
+class AcceptedLanguage extends CActiveRecord {
 
 	private $_name;
     
@@ -8,7 +8,7 @@ class AcceptedLanguages extends CActiveRecord {
 	}
 	
 	public function tableName() {
-		return '{{accepted_languages}}';
+		return '{{accepted_language}}';
 	}
 
 	public function rules() {

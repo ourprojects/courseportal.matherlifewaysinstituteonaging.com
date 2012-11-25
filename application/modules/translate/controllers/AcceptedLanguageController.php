@@ -1,5 +1,5 @@
 <?php
-class AcceptedLanguagesController extends OnlineCoursePortalController {
+class AcceptedLanguageController extends OnlineCoursePortalController {
 	
 	/**
 	 * override needed to check if its ajax, the redirect will be by javascript
@@ -166,8 +166,8 @@ class AcceptedLanguagesController extends OnlineCoursePortalController {
     			}
     			$message = empty($result) ? 'An error occurred deleting the message' : 'Message deleted successfully';
     			break;
-    		case 'AcceptedLanguages':
-    			$model = AcceptedLanguages::model()->findByPk($id);
+    		case 'AcceptedLanguage':
+    			$model = AcceptedLanguage::model()->findByPk($id);
     			$message =  ($model !== null && $model->delete()) ? 'Language deleted successfully' : 'An error occurred deleting the language';
     			break;
     		case 'MessageSource':
@@ -193,7 +193,7 @@ class AcceptedLanguagesController extends OnlineCoursePortalController {
     	$models = array(
     			'Message' => new Message('search'),
     			'MessageSource' => new MessageSource('search'),
-    			'AcceptedLanguages' => new AcceptedLanguages('search'),
+    			'AcceptedLanguage' => new AcceptedLanguage('search'),
     	);
     	foreach($models as $name => $model) {
     		$model->unsetAttributes();
@@ -208,7 +208,7 @@ class AcceptedLanguagesController extends OnlineCoursePortalController {
     			case 'missing-translations-grid':
     				return $this->renderPartial('_missing_translations_grid', array('MessageSource' => $models['MessageSource']));
     			case 'accepted-languages-grid':
-    				return $this->renderPartial('_accepted_languages_grid', array('AcceptedLanguages' => $models['AcceptedLanguages']));
+    				return $this->renderPartial('_accepted_languages_grid', array('AcceptedLanguage' => $models['AcceptedLanguage']));
     		}
     	}
     	$this->render('index', $models);

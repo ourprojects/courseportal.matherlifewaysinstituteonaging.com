@@ -45,7 +45,7 @@ class MPTranslate extends CApplicationComponent {
     
     public $managementActionFilters = array();
     
-    public $cookieExpire = 63072000; // 2 Years
+    public $cookieExpire = 63072000; // 2 Years in seconds.
     
     /**
      * @var array $_cache will contain variables
@@ -149,7 +149,7 @@ class MPTranslate extends CApplicationComponent {
 		if(!isset($this->_cache[$cacheKey])) {
 			if(($cache = Yii::app()->getCache()) === null || ($languages = $cache->get($cacheKey)) === false) {
 				$languageDisplayNames = $this->getLanguageDisplayNames();
-				foreach(AcceptedLanguages::model()->findAll() as $lang)
+				foreach(AcceptedLanguage::model()->findAll() as $lang)
 					$languages[$lang->id] = $languageDisplayNames[$lang->id];
 				if($cache !== null)
 					$cache->set($cacheKey, $languages);

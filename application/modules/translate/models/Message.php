@@ -24,7 +24,7 @@ class Message extends CActiveRecord {
 	public function relations() {
 		return array(
             'source' => array(self::BELONGS_TO, 'MessageSource', 'id'),
-			'acceptedLanguage' => array(self::BELONGS_TO, 'AcceptedLanguages', 'language', 'joinType' => 'INNER JOIN')
+			'acceptedLanguage' => array(self::BELONGS_TO, 'AcceptedLanguage', 'language', 'joinType' => 'INNER JOIN')
 		);
 	}
 	

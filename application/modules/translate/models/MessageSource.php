@@ -22,7 +22,7 @@ class MessageSource extends CActiveRecord {
 	public function relations() {
 		return array(
             'translations' => array(self::HAS_MANY, 'Message', 'id', 'joinType' => 'INNER JOIN'),
-			'acceptedLanguages' => array(self::HAS_MANY, 'AcceptedLanguages', array('id' => 'language'), 'through' => 'translations')
+			'acceptedLanguages' => array(self::HAS_MANY, 'AcceptedLanguage', array('id' => 'language'), 'through' => 'translations')
 		);
 	}
 	
@@ -44,7 +44,7 @@ class MessageSource extends CActiveRecord {
 				'missingAcceptedLanguageTranslations' => array(
 						'condition' => '`t`.`id` <> ANY 
 							(
-								SELECT `al`.* FROM `'.AcceptedLanguages::model()->tableName().'` `al`
+								SELECT `al`.* FROM `'.AcceptedLanguage::model()->tableName().'` `al`
 								WHERE `al`.`id` NOT IN
 								(
 									SELECT `m`.`language` FROM `'.Message::model()->tableName().'` `m`
