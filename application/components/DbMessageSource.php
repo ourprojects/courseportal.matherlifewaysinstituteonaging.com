@@ -1,6 +1,8 @@
 <?php
 
 class DbMessageSource extends CDbMessageSource {
+	
+	public $acceptedLanguageTable;
 
 	/**
 	 * Loads the messages from database.
@@ -13,4 +15,5 @@ class DbMessageSource extends CDbMessageSource {
 	protected function loadMessagesFromDb($category, $language) {
 		return parent::loadMessagesFromDb($category, Yii::app()->getLocale()->getLanguageID($language));
 	}
+	
 }

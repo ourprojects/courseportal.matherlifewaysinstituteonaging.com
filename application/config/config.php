@@ -58,6 +58,7 @@ return array(
 						'class' => 'DbMessageSource',
 						'forceTranslation' => false,
 						'onMissingTranslation' => array('MPTranslate', 'missingTranslation'),
+						'acceptedLanguageTable' => '{{accepted_language}}',
 						'sourceMessageTable' => '{{message_source}}',
 						'translatedMessageTable' => '{{message}}',
 				),

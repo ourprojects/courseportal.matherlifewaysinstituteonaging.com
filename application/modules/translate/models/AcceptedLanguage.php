@@ -8,7 +8,7 @@ class AcceptedLanguage extends CActiveRecord {
 	}
 	
 	public function tableName() {
-		return '{{accepted_language}}';
+		return Yii::app()->getMessages()->acceptedLanguageTable;
 	}
 
 	public function rules() {
