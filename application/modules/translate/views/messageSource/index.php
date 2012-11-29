@@ -1,6 +1,6 @@
-<h1><?php echo TranslateModule::t('Translation Sources')?></h1>
+<?php $this->breadcrumbs = array(TranslateModule::t('Messages')); ?>
 <?php
-var_dump(MessageSource::model()->missingTranslation(50)->find());
-//var_dump(Message::model()->find(MessageSource::model()->getMissingCriteria(MessageSource::model()->getSearchCriteria())));
-//$this->widget('translate.widgets.MessageSourceGrid'); 
+$this->widget('translate.widgets.messageSource.SourceGrid', 
+		array('id' => 'source-grid', 'sources' => $sources)
+); 
 ?>

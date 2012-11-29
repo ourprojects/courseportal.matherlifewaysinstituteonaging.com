@@ -16,8 +16,18 @@ class Message extends CActiveRecord {
             array('id, language, translation', 'required'),
 			array('id', 'numerical', 'integerOnly' => true),
 			array('language', 'length', 'max' => 3),
+			array('id',
+					'unique',
+					'caseSensitive' => false,
+					'criteria' => array(
+							'condition' => 'language = :language',
+							'params' => array(':language' => $this->language),
+					),
+					'message' => 'Source message {attribute} "{value}" has already been translated to '.$this->language.' ('.TranslateModule::translator()->getLanguageDisplayName($this->language).').',
+			),
+			array('id', 'exist', 'attributeName' => 'id', 'className' => 'MessageSource', 'allowEmpty' => false),
 			array('translation', 'safe'),
-			array('id, language, translation, category, message', 'safe', 'on' => 'search'),
+			array('id, language, category, message', 'safe', 'on' => 'search'),
 		);
 	}
     
@@ -31,55 +41,61 @@ class Message extends CActiveRecord {
 	public function scopes() {
 		return array(
 			'isAcceptedLanguage' => array('with' => 'acceptedLanguage'),
-			'missingTranslation' => array(
-					'condition' => '`t`.`id` NOT IN 
-						(
-							SELECT `tt`.`id` FROM `'.Message::model()->tableName().'` `tt` 
-							WHERE (`tt`.`language` = `t`.`language`) AND `tt`.`id` NOT IN 
-							(
-								SELECT `m`.`id` FROM `'.MessageSource::model()->tableName().'` `m` 
-								WHERE (`m`.`id` = `tt`.`id`)
-							)
-						)',
-					'group' => '`t`.`language`'
-				)
 		);
 	}
 	
-	public function missingTranslationSource($sourceMessageId) {
-		$this->getDbCriteria()->mergeWith(array(
-				'params' => array(':sourceMessageId' => $sourceMessageId),
-				'condition' => '`t`.`language` NOT IN 
-					(
-						SELECT `m`.`language` FROM `'.MessageSource::model()->tableName().'` `sm` 
-						INNER JOIN `'.Message::model()->tableName().'` `m` ON ((`sm`.`id` = `m`.`id`) AND (`sm`.`id` = :sourceMessageId))
-					)'
-		));
+	public function missingTranslations($sourceMessageId = null) {
+		if($sourceMessageId === null) {
+			$this->getDbCriteria()->mergeWith(array(
+					'select' => '`t`.`language`',
+					'condition' => '`t`.`id` NOT IN
+						(
+								SELECT `tt`.`id` FROM `'.Message::model()->tableName().'` `tt`
+								WHERE (`tt`.`language` = `t`.`language`) AND `tt`.`id` NOT IN
+								(
+										SELECT `m`.`id` FROM `'.MessageSource::model()->tableName().'` `m`
+										WHERE (`m`.`id` = `tt`.`id`)
+								)
+						)',
+					'group' => '`t`.`language`'
+			));
+		} else {
+			$this->getDbCriteria()->mergeWith(array(
+					'select' => '`t`.`language`',
+					'params' => array(':sourceMessageId' => $sourceMessageId),
+					'condition' => '`t`.`language` NOT IN 
+						(
+							SELECT `m`.`language` FROM `'.MessageSource::model()->tableName().'` `sm` 
+							INNER JOIN `'.Message::model()->tableName().'` `m` ON ((`sm`.`id` = `m`.`id`) AND (`sm`.`id` = :sourceMessageId))
+						)',
+					'group' => '`t`.`language`'
+			));
+		}
 		return $this;
 	}
 	
 	public function attributeLabels() {
 		return array(
-			'id'=> TranslateModule::t('ID'),
-			'language'=> TranslateModule::t('Language'),
-			'translation'=> TranslateModule::t('Translation'),
-            'category'=> MessageSource::model()->getAttributeLabel('category'),
-            'message'=> MessageSource::model()->getAttributeLabel('message'),
+			'id' => TranslateModule::t('ID'),
+			'language' => TranslateModule::t('Language'),
+			'translation' => TranslateModule::t('Translation'),
+            'category' => MessageSource::model()->getAttributeLabel('category'),
+            'message' => MessageSource::model()->getAttributeLabel('message'),
 		);
 	}
 	
-	public function getSearchCriteria($data = array()) {
-		$criteria = new CDbCriteria($data);
-
-		$criteria->compare('t.id', $this->id);
-		$criteria->addSearchCondition('t.language', $this->language, true);
-		$criteria->addSearchCondition('t.translation', $this->translation, true);
-		
-		return $criteria;
-	}
-
 	public function search() {
-		return new CActiveDataProvider($this, array('criteria' => $this->getSearchCriteria()));
+		$criteria = $this->getDbCriteria();
+		
+		$criteria->compare('t.id', $this->id);
+		$criteria->addSearchCondition('t.language', $this->language);
+		$criteria->addSearchCondition('t.translation', $this->translation);
+	
+		return $this;
+	}
+	
+	public function __toString() {
+		return strval($this->translation);
 	}
 
 }

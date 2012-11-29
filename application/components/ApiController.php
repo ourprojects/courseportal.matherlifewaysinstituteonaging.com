@@ -60,7 +60,7 @@ abstract class ApiController extends OnlineCoursePortalController {
 		header('Content-Length: ' . strlen($data));
 		
 		if(strcasecmp(Yii::app()->getRequest()->getRequestType(), 'HEAD') === 0)
-			exit;
+			Yii::app()->end();
 		
 		echo $data;
 	}

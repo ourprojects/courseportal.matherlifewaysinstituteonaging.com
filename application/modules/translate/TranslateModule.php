@@ -1,11 +1,12 @@
-<?php defined('BASEPATH') or exit('No direct script access allowed');  
+<?php
 
 class TranslateModule extends CWebModule {
     /**
      * the name of the translate component
      * change this in case you dont use the default name
      * */
-    static $translateComponentId='translate';
+    const translateComponentId = 'translate';
+    
 	/**
 	 * TranslateModule::init()
 	 * 
@@ -27,7 +28,7 @@ class TranslateModule extends CWebModule {
      * @return MPTranslate
      */
     static function translator() {
-        $component = Yii::app()->getComponent(self::$translateComponentId);
+        $component = Yii::app()->getComponent(self::translateComponentId);
         if($component === null)
             throw new CException('Translate component must be defined');
         return $component;

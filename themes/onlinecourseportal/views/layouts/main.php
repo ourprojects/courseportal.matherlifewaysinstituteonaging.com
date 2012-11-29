@@ -34,7 +34,7 @@
 				<img src="<?php echo Yii::app()->getTheme()->getImagesUrl('logo.png'); ?>" />
 			</div>
 			<div id="site-title"><?php echo Yii::app()->name; ?></div>
-			<div id="language-menu"><?php $this->widget('modules.translate.widgets.acceptedLanguage.Selector'); ?></div>
+			<div id="language-menu"><?php $this->widget('modules.translate.widgets.acceptedLanguage.ALSelector'); ?></div>
 			<?php if(!empty(MPTranslate::$messages) && Yii::app()->getUser()->isAdmin()): ?>
 				<div id="translate-button">
 					<?php echo Yii::app()->translate->translateLink('Missing Translations on Page', 'button'); ?>	
@@ -47,9 +47,13 @@
 		<!-- header -->
 		<div id="content">
 			<?php 
-			$this->widget('zii.widgets.CBreadcrumbs', array(
-					'links' => $this->breadcrumbs,
-			)); 
+			$this->widget('zii.widgets.CBreadcrumbs', 
+					array_merge(
+						array('links' => $this->breadcrumbs), 
+						$this->getModule() === null ? array() : 
+							array('homeLink' => CHtml::link(t('Home'), $this->createUrl($this->getModule()->defaultController.'/')))
+					)
+			); 
 			?>
 			<!-- breadcrumbs -->
 			<?php if(Yii::app()->getUser()->hasFlash('success')): ?>

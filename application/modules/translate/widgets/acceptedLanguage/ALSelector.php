@@ -1,8 +1,8 @@
 <?php
-class Selector extends CWidget {
+class ALSelector extends CWidget {
 	
     public function run() {
-        $this->render('selector', 
+        $this->render('ALSelector', 
         		array(
         				'currentLang' => TranslateModule::translator()->getLanguageID(), 
         				'languages' => TranslateModule::translator()->getAdminAcceptedLanguages())

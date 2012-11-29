@@ -16,12 +16,11 @@ class AcceptedLanguage extends CActiveRecord {
             array('id', 'required'),
 			array('id', 'unique'),
 			array('id', 'length', 'max' => 3),
-			array('id, name', 'safe', 'on' => 'search')
+			array('id', 'safe', 'on' => 'search')
 		);
 	}
 	
 	public function relations() {
-
 		return array(
 			'translations' => array(self::HAS_MANY, 'Message', 'language', 'joinType' => 'INNER JOIN'),
 			'translationSources' => array(self::HAS_MANY, 'MessageSource', array('language' => 'id'), 'through' => 'translations')
@@ -29,30 +28,32 @@ class AcceptedLanguage extends CActiveRecord {
 	}
 	
 	public function scopes() {
-		return array(
-			'missingTranslation' => array(
-					'condition' => '`t`.`id` NOT IN
-						(
-								SELECT `tt`.`language` FROM `'.Message::model()->tableName().'` `tt`
-								WHERE (`tt`.`language` = `t`.`id`) AND `tt`.`id` NOT IN
-								(
-										SELECT `m`.`id` FROM `'.MessageSource::model()->tableName().'` `m`
-										WHERE (`m`.`id` = `tt`.`id`)
-							)
-						)'
-					)		
-		);
+		return array();
 	}
 	
-	public function missingTranslationSource($sourceMessageId) {
-		$this->getDbCriteria()->mergeWith(array(
-				'params' => array(':sourceMessageId' => $sourceMessageId),
-				'condition' => '`t`.`id` NOT IN 
-					(
-						SELECT `m`.`language` FROM `'.MessageSource::model()->tableName().'` `sm` 
-						INNER JOIN `'.Message::model()->tableName().'` `m` ON ((`sm`.`id` = `m`.`id`) AND (`sm`.`id` = :sourceMessageId))
-					)'
-		));
+	public function missingTranslations($sourceMessageId = null) {
+		if($sourceMessageId === null) {
+			$this->getDbCriteria()->mergeWith(array(
+					'condition' => '`t`.`id` NOT IN
+						(
+							SELECT `tt`.`language` FROM `'.Message::model()->tableName().'` `tt`
+							WHERE (`tt`.`language` = `t`.`id`) AND `tt`.`id` NOT IN
+							(
+								SELECT `m`.`id` FROM `'.MessageSource::model()->tableName().'` `m`
+								WHERE (`m`.`id` = `tt`.`id`)
+							)
+						)'
+			));
+		} else {
+			$this->getDbCriteria()->mergeWith(array(
+					'params' => array(':sourceMessageId' => $sourceMessageId),
+					'condition' => '`t`.`id` NOT IN 
+						(
+							SELECT `m`.`language` FROM `'.MessageSource::model()->tableName().'` `sm` 
+							INNER JOIN `'.Message::model()->tableName().'` `m` ON ((`sm`.`id` = `m`.`id`) AND (`sm`.`id` = :sourceMessageId))
+						)'
+			));
+		}
 		return $this;
 	}
 
@@ -69,16 +70,17 @@ class AcceptedLanguage extends CActiveRecord {
 		return $this->_name;
 	}
 	
-	public function getSearchCriteria($data = array()) {
-		$criteria = new CDbCriteria($data);
+	public function search() {
+		$criteria = $this->getDbCriteria();
 		
 		$criteria->compare('id', $this->id);
 		
-		return $criteria;
+		return $this;
 	}
-
-	public function search() {
-		return new CActiveDataProvider($this, array('criteria' => $this->getSearchCriteria()));
+	
+	public function __toString() {
+		$displayName = TranslateModule::translator()->getLanguageDisplayName($this->id);
+		return $displayName === false ? strval($this->id) : $displayName;
 	}
 
 }
