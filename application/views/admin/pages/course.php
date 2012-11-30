@@ -1,9 +1,6 @@
 <?php $this->breadcrumbs = array(t('Admin') => Yii::app()->createUrl('admin'), t('Courses')); ?>
-<div class="small-masthead">
-	<h1 class="bottom"><?php echo t('Courses'); ?></h1>
-</div>
+<h1 class="bottom"><?php echo t('Courses'); ?></h1>
 <div id="single-column">
-<h2><?php echo t('Current Courses'); ?></h2>
 <?php 
 $source = Course::model()->findAll();
 $this->widget('zii.widgets.grid.CGridView', array(

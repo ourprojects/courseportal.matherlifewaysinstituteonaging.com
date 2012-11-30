@@ -1,9 +1,6 @@
 <?php $this->breadcrumbs = array(t('Admin') => Yii::app()->createUrl('admin'), t('API Keys')); ?>
-<div class="small-masthead">
-	<h1 class="bottom"><?php echo t('API Keys'); ?></h1>
-</div>
+<h1><?php echo t('API Keys'); ?></h1>
 <div id="single-column">
-<h2><?php echo t('API Keys'); ?></h2>
 <?php 
 $source = Key::model()->findAll();
 $this->widget('zii.widgets.grid.CGridView', array(

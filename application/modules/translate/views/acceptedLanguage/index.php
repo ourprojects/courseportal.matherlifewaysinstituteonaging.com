@@ -21,4 +21,25 @@ if(TranslateModule::translator()->canUseGoogleTranslate() &&
 			array('id' => 'missingAcceptedLanguageTranslations')
 	);
 }
+
 ?>
+<h2><?php echo TranslateModule::t('Create New'); ?></h2>
+<div class="form">
+	<?php $form = $this->beginWidget('CActiveForm', array(
+			'id' => 'accepted-language-create-form',
+			'enableAjaxValidation' => true,
+)); ?>
+	
+	<?php echo $form->errorSummary($model); ?>
+	<div class="row">
+		<?php echo $form->labelEx($model, 'id'); ?>
+		<?php echo $form->textField($model, 'id'); ?>
+		<?php echo $form->error($model, 'id'); ?>
+	</div>
+
+	<div class="row submit">
+		<?php echo CHtml::submitButton(TranslateModule::t('Add Language')); ?>
+	</div>
+
+	<?php $this->endWidget(); ?>
+</div>

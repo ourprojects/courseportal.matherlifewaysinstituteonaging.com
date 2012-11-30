@@ -160,9 +160,9 @@ class MPTranslate extends CApplicationComponent {
 		if(!isset($this->_cache[$cacheKey])) {
 			if(($cache = Yii::app()->getCache()) === null || ($languages = $cache->get($cacheKey)) === false) {
 				$languageDisplayNames = $this->getLanguageDisplayNames();
-				$languages[$this->getSourceLanguageId()] = $languageDisplayNames[$this->getSourceLanguageId()];
+				$languages[$this->getSourceLanguageId()] = isset($languageDisplayNames[$this->getSourceLanguageId()]) ? $languageDisplayNames[$this->getSourceLanguageId()] : $this->getSourceLanguageId();
 				foreach(AcceptedLanguage::model()->findAll() as $lang)
-					$languages[$lang->id] = $languageDisplayNames[$lang->id];
+					$languages[$lang->id] = isset($languageDisplayNames[$lang->id]) ? $languageDisplayNames[$lang->id] : $lang->id;
 				asort($languages, SORT_LOCALE_STRING);
 				if($cache !== null)
 					$cache->set($cacheKey, $languages);

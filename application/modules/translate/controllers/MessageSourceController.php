@@ -62,8 +62,8 @@ class MessageSourceController extends TController {
     public function actionIndex() {
     	$sources = new MessageSource('search');
     	
-    	if(isset($_REQUEST['MessageSource']))
-    		$sources->attributes = $_REQUEST['MessageSource'];
+    	if(isset($_GET['MessageSource']))
+    		$sources->attributes = $_GET['MessageSource'];
 
     	if(isset($_GET['ajax']) && $_GET['ajax'] === 'source-grid') {
     		$this->widget('translate.widgets.messageSource.SourceGrid', array('id' => 'source-grid', 'sources' => $sources));

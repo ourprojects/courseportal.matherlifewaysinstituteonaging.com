@@ -38,14 +38,32 @@ class AcceptedLanguageController extends TController {
     public function actionIndex() {
         $acceptedLanguages = new AcceptedLanguage('search');
 
-    	if(isset($_REQUEST['AcceptedLanguage']))
-    		$acceptedLanguages->attributes = $_REQUEST['AcceptedLanguage'];
+    	if(isset($_GET['AcceptedLanguage']))
+    		$acceptedLanguages->attributes = $_GET['AcceptedLanguage'];
     	
     	if(isset($_GET['ajax']) && $_GET['ajax'] == 'acceptedLanguages-grid') {
     		$this->widget('translate.widgets.acceptedLanguage.AcceptedLanguageGrid', array('id' => 'acceptedLanguages-grid', 'acceptedLanguagesModel' => $acceptedLanguages));
-    	} else {
-    		$this->render('index', array('acceptedLanguages' => $acceptedLanguages));
+    		Yii::app()->end();
     	}
+    	
+    	$acceptedLanguage = new AcceptedLanguage;
+
+    	if(isset($_POST['ajax'])) {
+    		if($_POST['ajax'] === 'accepted-language-create-form') {
+    			echo CActiveForm::validate($acceptedLanguage);
+    			Yii::app()->end();
+    		}
+    	}
+
+    	if(isset($_POST['AcceptedLanguage'])) {
+    		$acceptedLanguage->attributes = $_POST['AcceptedLanguage'];
+    		if($acceptedLanguage->save())
+    			Yii::app()->getUser()->setFlash('success', TranslateModule::t('Language saved successfully.'));
+    		else
+    			Yii::app()->getUser()->setFlash('error', TranslateModule::t('Language could not be saved.'));
+    	}
+
+    	$this->render('index', array('acceptedLanguages' => $acceptedLanguages, 'model' => $acceptedLanguage));
     }
     
     public function actionView($id) {
