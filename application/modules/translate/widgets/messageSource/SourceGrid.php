@@ -30,7 +30,7 @@ class SourceGrid extends CGridView {
 			array(
 				'header' => TranslateModule::t('Missing Translations?'),
 				'type' => 'boolean',
-				'value' => '$data->missingTranslations()->exists("`t`.`id`=:id", array(":id" => $data->id))',
+				'value' => '$data->isMissingTranslations()',
 			),
 	        array(
 	            'class' => 'CButtonColumn',
@@ -42,6 +42,13 @@ class SourceGrid extends CGridView {
 		);
 		
 		parent::init();
+	}
+	
+	public function hasSourceMessageWithMissingTranslations() {
+		foreach($this->dataProvider->getData() as $item)
+			if($item->isMissingTranslations())
+				return true;
+		return false;
 	}
 
 }

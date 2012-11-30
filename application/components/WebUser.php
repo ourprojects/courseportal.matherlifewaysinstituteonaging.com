@@ -4,7 +4,7 @@ class WebUser extends CWebUser {
 
 	private $_model;
 	
-	public function isAdmin() {
+	public function getIsAdmin() {
 		return ($model = $this->getModel()) !== null && $model->isAdmin();
 	}
 	

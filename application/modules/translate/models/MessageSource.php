@@ -1,5 +1,7 @@
 <?php
 class MessageSource extends CActiveRecord {
+	
+	private $_isMissingTranslations;
 
 	public static function model($className = __CLASS__) {
 		return parent::model($className);
@@ -11,12 +13,12 @@ class MessageSource extends CActiveRecord {
 
 	public function rules() {
 		return array(
-            array('id, category, message', 'required'),
-			array('id', 'numerical', 'integerOnly' => true, 'allowEmpty' => false),
+            array('category, message', 'required'),
+			array('id', 'numerical', 'integerOnly' => true, 'allowEmpty' => true),
 			array('id', 'unique'),
 			array('category', 'length', 'max' => 32),
-			array('message', 'safe'),
-			array('id, category', 'safe', 'on' => 'search'),
+			array('category, message', 'safe'),
+			array('id', 'safe', 'on' => 'search'),
 		);
 	}
 	
@@ -50,6 +52,12 @@ class MessageSource extends CActiveRecord {
 							)'
 				)
 		);
+	}
+	
+	public function isMissingTranslations($refresh = false) {
+		if($refresh || !isset($this->_isMissingTranslations))
+			$this->_isMissingTranslations = $this->missingTranslations()->exists();
+		return $this->_isMissingTranslations;
 	}
 	
 	public function missingTranslations($languageId = null) {

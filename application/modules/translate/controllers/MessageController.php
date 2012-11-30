@@ -8,7 +8,7 @@ class MessageController extends TController {
     			$missingTranslations = $id === null ? MessageSource::model()->missingTranslations($message->language)->findAll() : 
     										MessageSource::model()->missingTranslations($message->language)->findAllByPk($id);
     			$translations = TranslateModule::translator()->googleTranslate($missingTranslations, $message->language);
-    			
+
     			if(is_array($translations) && count($translations) === count($missingTranslations)) {
     				for($i = 0; $i < count($missingTranslations); $i++) {
     					$translation = new Message();

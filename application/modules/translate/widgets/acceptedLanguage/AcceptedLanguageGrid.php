@@ -23,7 +23,7 @@ class AcceptedLanguageGrid extends CGridView {
 			array(
 				'header' => TranslateModule::t('Missing Translations?'),
 				'type' => 'boolean',
-				'value' => '$data->missingTranslations()->exists("`t`.`id`=:id", array(":id" => $data->id))',
+				'value' => '$data->isMissingTranslations()',
 			),
 	        array(
 	            'class' => 'CButtonColumn',
@@ -35,6 +35,13 @@ class AcceptedLanguageGrid extends CGridView {
 		);
 		
 		parent::init();
+	}
+	
+	public function hasAcceptedLanguageWithMissingTranslations() {
+		foreach($this->dataProvider->getData() as $item)
+			if($item->isMissingTranslations())
+				return true;
+		return false;
 	}
 
 }

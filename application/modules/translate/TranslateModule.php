@@ -7,13 +7,15 @@ class TranslateModule extends CWebModule {
      * */
     const translateComponentId = 'translate';
     
+    private static $_translator = null;
+    
 	/**
 	 * TranslateModule::init()
 	 * 
 	 * @return
 	 */
 	public function init() {
-        $this->defaultController='Translate';
+        $this->defaultController = 'Translate';
 		$this->setImport(array(
             'translate.models.*',
             'translate.controllers.*',
@@ -28,10 +30,12 @@ class TranslateModule extends CWebModule {
      * @return MPTranslate
      */
     static function translator() {
-        $component = Yii::app()->getComponent(self::translateComponentId);
-        if($component === null)
-            throw new CException('Translate component must be defined');
-        return $component;
+    	if(self::$_translator === null) {
+        	self::$_translator = Yii::app()->getComponent(self::translateComponentId);
+	        if(self::$_translator === null)
+	            throw new CException('Translate component must be defined');
+    	}
+        return self::$_translator;
     }
     
     static function __callStatic($method, $args) {
@@ -53,7 +57,6 @@ class TranslateModule extends CWebModule {
      * @return string translated message
      */
     static function t($message, $params = array()) {
-        $translator = self::translator();
-        return Yii::t($translator->messageCategory, $message, $params, 'en');
+        return Yii::t(self::translateComponentId, $message, $params);
     }
 }

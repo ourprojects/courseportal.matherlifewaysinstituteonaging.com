@@ -1,5 +1,60 @@
 <?php
 class MessageSourceController extends TController {
+	
+	public function actionTranslateMissing($id = null, $class = 'Message') {
+		$transaction = Yii::app()->db->beginTransaction();
+		try {
+			$missingTranslations = MessageSource::model()->missingTranslations($id)->findAll();
+			if($id === null) {
+				foreach($missingTranslations as $messageSource)
+					$translations[] = TranslateModule::translator()->googleTranslate(
+											$messageSource, 
+											call_user_func(array($class, 'model'))->missingTranslations($messageSource->id)->findAll()
+							);
+				for($i = 0; $i < count($missingTranslations); $i++) {
+					if($translations[$i] === false)
+						throw new CHttpException(500, TranslateModule::t('An error occured translating message {message} with google translate.', array('{message}' => $missingTranslations[$i]->message)));
+					foreach($translations[$i] as $language => $t) {
+						$translation = new Message();
+						$translation->attributes = array(
+								'id' => $missingTranslations[$i]->id,
+								'language' => $language,
+								'translation' => $t
+						);
+							
+						if(!$translation->save()) {
+							$transaction->rollback();
+							throw new CHttpException(500, TranslateModule::t('An error occured while saving a translation'));
+						}
+					}
+				}
+			} else {
+				$translations = TranslateModule::translator()->googleTranslate($missingTranslations, $id);
+				if(is_array($translations) && count($translations) === count($missingTranslations)) {
+					for($i = 0; $i < count($missingTranslations); $i++) {
+						$translation = new Message();
+						$translation->attributes = array(
+								'id' => $missingTranslations[$i]->id,
+								'language' => $id,
+								'translation' => $translations[$i]
+						);
+			
+						if(!$translation->save()) {
+							$transaction->rollback();
+							throw new CHttpException(500, TranslateModule::t('An error occured while saving a translation'));
+						}
+					}
+				} else {
+					throw new CHttpException(500, TranslateModule::t('An error occured translating a message to {language} with google translate.', array('{language}' => $acceptedLanguage->id)));
+				}
+			}
+		} catch(Exception $e) {
+			$transaction->rollback();
+			throw $e;
+		}
+		$transaction->commit();
+		return true;
+	}
     
     /**
      * Manages all models.

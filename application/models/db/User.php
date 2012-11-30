@@ -124,7 +124,10 @@ class User extends ActiveRecord implements IUserIdentity {
 	
 	public function scopes() {
 		return array(
-			'isAdmin' => 'group.name="admin"',
+			'isAdmin' => array(
+					'with' => 'group',
+					'condition' => 'group.name="admin"'
+					),
 		);
 	}
 

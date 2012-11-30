@@ -30,7 +30,7 @@ class HomeController extends OnlineCoursePortalController {
 	}
 
 	public function actionIndex() {
-		if(Yii::app()->getUser()->isGuest()) {
+		if(Yii::app()->getUser()->getIsGuest()) {
 			$models = array(
 						'workingCaregiver_survey' => Yii::app()->surveyor->workingCaregiver->form,
 						'hrEmployer_survey' => Yii::app()->surveyor->hrEmployer->form,
@@ -65,8 +65,8 @@ class HomeController extends OnlineCoursePortalController {
 	 */
 	public function actionContact() {
 		$models = array(
-					'contactUs' => new ContactUs,
-					'captcha' => new Captcha
+					'ContactUs' => new ContactUs,
+					'Captcha' => new Captcha
 				);
 		// if it is ajax validation request
 		if(isset($_POST['ajax']) && $_POST['ajax'] === 'contact-form') {
@@ -75,14 +75,14 @@ class HomeController extends OnlineCoursePortalController {
 		}
 		
 		if(isset($_POST['Captcha']) && isset($_POST['ContactUs'])) {
-			$contact->attributes = $_POST['ContactUs'];
-			if($models['captcha']->validate() && $models['contactUs']->validate()) {
+			$models['ContactUs']->attributes = $_POST['ContactUs'];
+			if($models['Captcha']->validate() && $models['ContactUs']->validate()) {
 				$this->loadExtension('yii-mail');
 				$message = new YiiMailMessage;
-				$message->setBody($contact->body, 'text/html');
-				$message->subject = $contact->subject;
+				$message->setBody($models['ContactUs']->body, 'text/html');
+				$message->subject = $models['ContactUs']->subject;
 				$message->addTo(Yii::app()->params['adminEmail']);
-				$message->from = $contact->email;
+				$message->from = $models['ContactUs']->email;
 				Yii::app()->mail->send($message);
 				Yii::app()->getUser()->setFlash('success', t('Thank you for contacting us. We will respond to you as soon as possible.'));
 				$this->refresh();

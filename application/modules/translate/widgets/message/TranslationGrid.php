@@ -25,8 +25,8 @@ class TranslationGrid extends CGridView {
 				'name' => 'source.category',
 			),
 			array(
-					'name' => 'language',
-					'htmlOptions' => array('width' => '50'),
+				'name' => 'language',
+				'htmlOptions' => array('width' => '50'),
 			),
 	        array(
 	            'name' => 'source.message',

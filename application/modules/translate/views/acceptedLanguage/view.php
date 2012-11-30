@@ -13,25 +13,26 @@
 	<div id="missingTranslations">
 		<h2><?php echo TranslateModule::t('Missing Translations:'); ?></h2>
 		<?php
-    	if(TranslateModule::translator()->canUseGoogleTranslate()) {
+		$widget = $this->widget('translate.widgets.acceptedLanguage.MissingTranslationGrid',
+				array('id' => 'missing-grid', 'sourceLanguage' => $source));
+		
+    	if(TranslateModule::translator()->canUseGoogleTranslate() &&
+    			$widget->dataProvider->getItemCount() > 0) {
 			echo CHtml::ajaxButton(
 					TranslateModule::t('Google Translate Missing'),
-					$this->createUrl('translateMissing'),
+					$this->createUrl('messageSource/translateMissing'),
 					array(
 						'data' => array(
 							'id' => $source->id
 						),
 						'beforeSend' => 'js:function(jqXHR, settings){$("#missingAcceptedLanguageTranslations").addClass("loading");}',
 						'complete' => 'js:function(jqXHR, textStatus){$("#missingAcceptedLanguageTranslations").removeClass("loading");}',
-						'success' => 'js:function(data){$.fn.yiiGridView.update("missing-grid");}',
+						'success' => 'js:function(data){$.fn.yiiGridView.update("missing-grid");$.fn.yiiGridView.update("translation-grid");}',
 						'error' => 'js:function(xhr){alert(xhr.responseText);}'
 					),
 					array('id' => 'missingAcceptedLanguageTranslations')
 			);
     	}
-		
-		$this->widget('translate.widgets.acceptedLanguage.MissingTranslationGrid', 
-				array('id' => 'missing-grid', 'sourceLanguage' => $source)); 
 		?>
 	</div>
 </div>

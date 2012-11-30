@@ -2,6 +2,7 @@
 class AcceptedLanguage extends CActiveRecord {
 
 	private $_name;
+	private $_isMissingTranslations;
     
 	public static function model($className = __CLASS__) {
 		return parent::model($className);
@@ -16,7 +17,7 @@ class AcceptedLanguage extends CActiveRecord {
             array('id', 'required'),
 			array('id', 'unique'),
 			array('id', 'length', 'max' => 3),
-			array('id', 'safe', 'on' => 'search')
+			array('id', 'safe')
 		);
 	}
 	
@@ -27,8 +28,10 @@ class AcceptedLanguage extends CActiveRecord {
 		);
 	}
 	
-	public function scopes() {
-		return array();
+	public function isMissingTranslations($refresh = false) {
+		if($refresh || !isset($this->_isMissingTranslations))
+			$this->_isMissingTranslations = $this->missingTranslations()->exists();
+		return $this->_isMissingTranslations;
 	}
 	
 	public function missingTranslations($sourceMessageId = null) {

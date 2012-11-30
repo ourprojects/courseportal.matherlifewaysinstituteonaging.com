@@ -1,7 +1,7 @@
 <?php
 class Message extends CActiveRecord {
-    
-    public $message, $category;
+
+    private $_isMissingTranslations;
     
 	public static function model($className = __CLASS__) {
 		return parent::model($className);
@@ -26,7 +26,7 @@ class Message extends CActiveRecord {
 					'message' => 'Source message {attribute} "{value}" has already been translated to '.$this->language.' ('.TranslateModule::translator()->getLanguageDisplayName($this->language).').',
 			),
 			array('id', 'exist', 'attributeName' => 'id', 'className' => 'MessageSource', 'allowEmpty' => false),
-			array('translation', 'safe'),
+			array('id, language, translation', 'safe'),
 			array('id, language, category, message', 'safe', 'on' => 'search'),
 		);
 	}
@@ -42,6 +42,12 @@ class Message extends CActiveRecord {
 		return array(
 			'isAcceptedLanguage' => array('with' => 'acceptedLanguage'),
 		);
+	}
+	
+	public function isMissingTranslations($refresh = false) {
+		if($refresh || !isset($this->_isMissingTranslations))
+			$this->_isMissingTranslations = $this->missingTranslations()->exists();
+		return $this->_isMissingTranslations;
 	}
 	
 	public function missingTranslations($sourceMessageId = null) {
@@ -79,8 +85,6 @@ class Message extends CActiveRecord {
 			'id' => TranslateModule::t('ID'),
 			'language' => TranslateModule::t('Language'),
 			'translation' => TranslateModule::t('Translation'),
-            'category' => MessageSource::model()->getAttributeLabel('category'),
-            'message' => MessageSource::model()->getAttributeLabel('message'),
 		);
 	}
 	
@@ -95,7 +99,7 @@ class Message extends CActiveRecord {
 	}
 	
 	public function __toString() {
-		return strval($this->translation);
+		return isset($this->translation) ? strval($this->translation) : strval($this->language);
 	}
 
 }
