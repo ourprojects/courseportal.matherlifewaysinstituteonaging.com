@@ -1,8 +1,8 @@
 <?php
 $this->pageTitle = Yii::app()->name . ' - ' . t('User');
 
-Yii::app()->getClientScript()->registerScriptFile($this->getScriptsUrl('jquery.quote.js'), CClientScript::POS_HEAD);
-Yii::app()->getClientScript()->registerScript('quotes_rotator', "$('#quotes').quote_rotator({randomize_first_quote: true});");
+Yii::app()->clientScript->registerScriptFile($this->getScriptsUrl('jquery.quote.js'), CClientScript::POS_HEAD);
+Yii::app()->clientScript->registerScript('quotes_rotator', "$('#quotes').quote_rotator({randomize_first_quote: true});");
 
 ?>
 	<div class="small-masthead" style="background-image: url(<?php echo $this->getImagesUrl('home.png'); ?>);">
@@ -34,7 +34,7 @@ Yii::app()->getClientScript()->registerScript('quotes_rotator', "$('#quotes').qu
 
 			
 		<div class="box-sidebar one">
-			<h3><?php echo t('Alzheimer\'s Assocation (United States)'); ?></h3>
+			<h3><?php echo t('Alzheimer\'s Assocation (USA)'); ?></h3>
 			<p style="text-align: center;"><img src="<?php echo $this->getImagesUrl('partners/alz.png'); ?>" /></p>
 			<p><?php echo t('There are 10 warning signs of Alzheimer\'s. If you or someone you know is experiencing 
 			any of the signs, please see a doctor. Early diagnosis gives you a chance to seek treatment and plan for the future.'); ?></p>
@@ -80,7 +80,7 @@ Yii::app()->getClientScript()->registerScript('quotes_rotator', "$('#quotes').qu
 		caregivers into current training programs. In addition, we are well-positioned to help conduct pilot studies that measure the impact on both 
 		working caregivers and the bottom line for interested corporations.'); ?></p>
 
-		<h2 class="flowers top-pad">The Sandwich Generation - by Media Storm <?php echo t('English'); ?></h2>
+		<h2 class="flowers top-pad">The Sandwich Generation - by Media Storm <?php echo t('(English)'); ?></h2>
 		<p><?php echo t('Filmmaker and photographer couple Julie Winokur and Ed Kashi were busy pursuing their careers 
 		and raising two children when Winokurs 83-year-old father, Herbie, became too infirm to care for himself. At that moment they joined 
 		some twenty million other Americans who make up the sandwich generation, those who find themselves responsible for the care of both 
