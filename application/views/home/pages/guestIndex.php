@@ -103,7 +103,7 @@ $this->widget(
 
 	<div class="box-sidebar three">
 		<h3>
-			<?php echo t('Whitepapers'); ?>
+			<?php echo t('Whitepapers (English)'); ?>
 		</h3>
 		<p>
 			<a
@@ -122,7 +122,7 @@ $this->widget(
 							text: Aging in Action is Mather LifeWays Institute on Aging's monthly 
 							e-newsletter and blog containing the latest research news in the field of aging.
 							larger twitter image here
-							link: Evanston, IL ‚àë http://www.aginginaction.com
+							link: Evanston, IL â€šÃ Ã« http://www.aginginaction.com
 							
 							 -->
 
@@ -589,7 +589,7 @@ $this->widget(
 					eventually even the ability to carry out the simplest tasks of daily
 					living. Alzheimer\'s is the most common form of dementia. Symptoms
 					usually develop slowly and get worse over time. In most people with
-					Alzheimer\'s, symptoms first appear after age 60. Alzheimer’s
+					Alzheimer\'s, symptoms first appear after age 60. Alzheimerâ€™s
 					disease is the most common cause of dementia among older people.
 					Alzheimer\'s has no current cure, but treatments for symptoms are
 					available and research continues. The disease is named after Dr.
