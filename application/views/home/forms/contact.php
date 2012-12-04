@@ -1,12 +1,11 @@
-<p><?php echo t('If you have business inquiries or other questions, please fill out
-	the following form to contact us. Thank you.'); ?></p>
+<p><?php echo t('Please complete this form to contact us.'); ?></p>
 
 <div class="form">
 
 	<?php $form=$this->beginWidget('CActiveForm'); ?>
 
 	<p class="note">
-		<?php echo t('Fields with <span class="required">*</span> are required.'); ?>
+		<?php echo t('<span class="required">*</span>Required.'); ?>
 	</p>
 
 	<?php echo $form->errorSummary($models); ?>
