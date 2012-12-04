@@ -3,9 +3,9 @@
 	<h1 class="bottom"><?php echo t('Login'); ?></h1>
 </div>
 <div id="single-column">
-	<p><?php echo t('Please fill out the following form with your login credentials:'); ?></p>
+	
 	<p>
-		<?php echo t('If you have not yet registered with us please click'); ?>
+		<?php echo t('Not registered? Click'); ?>
 		<?php echo CHtml::link(t('here'), $this->createUrl('register')); ?>
 	</p>
 
