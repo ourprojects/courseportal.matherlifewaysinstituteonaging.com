@@ -13,10 +13,12 @@ $this->widget(
 				'id' => 'tutorial',
 				'target' => '.open-tutorial',
 				'config' => array(
-						'width' => '960px',
-						'height' => '600px',
+						'width' => '1024px',
+						'height' => '768px',
 						'arrows' => false,
+						'autoSize' => false,
 						'mouseWheel' => false,
+					
 				)
 		)
 );
@@ -27,9 +29,10 @@ $this->widget(
 				'id' => 'survey',
 				'target' => '.survey',
 				'config' => array(
-						'width' => '90%',
-						'height' => '95%',
-						'autoDimensions' => false,
+						'width' => '1024px',
+						'height' => '768px',
+						'arrows' => false,
+						'autoSize' => false,
 						'mouseWheel' => false,
 				)
 		)
@@ -122,7 +125,7 @@ $this->widget(
 							text: Aging in Action is Mather LifeWays Institute on Aging's monthly 
 							e-newsletter and blog containing the latest research news in the field of aging.
 							larger twitter image here
-							link: Evanston, IL â€šÃ Ã« http://www.aginginaction.com
+							link: Evanston, IL ‚Äö√†√´ http://www.aginginaction.com
 							
 							 -->
 
@@ -367,10 +370,11 @@ $this->widget(
 		<h2 class="flowers">
 			<?php echo t('Tutorial'); ?>
 		</h2>
-
+	<hr>
 		<p>
-			<?php echo t('Welcome! This short tutorial is designed to help demonstrate our course model, and is meant to be a basic presentation. 
-		We will briefly explore dementia, Alzheimer\'s disease, and how they\'re related. Please feel free to contact us if you have questions, or need help.'); ?>
+			<?php echo t('Welcome! This tutorial is designed to help demonstrate our course model, and is meant to be a 
+			basic presentation. We will briefly explore dementia, Alzheimer\'s disease, and how they are related. 
+			Please feel free to contact us if you have questions, or need help.'); ?>
 		</p>
 
 		<p>
@@ -387,18 +391,16 @@ $this->widget(
 		</ul>
 
 		<p>
-			<?php echo t('With such a profound impact on society, business and potentially, 
-		on your family, could you explain what Alzheimer\'s disease is? How about dementia?'); ?>
-		</p>
-
+			<?php echo t('With such a profound impact on society, business, and potentially	on your family, could 
+			you explain what Alzheimer\'s disease is? How about dementia?'); ?></p>
 
 		<p>
 			<img
 				src="<?php echo $this->getImagesUrl('image-men.png'); ?>"
-				style="margin: 5px 5px; width: 100%;" />
+				style="margin: 5px 5px; width: 95%;" />
 		</p>
 
-		<p class="course-buttons">
+		<p class="course-buttons" style="text-align: center;">
 			<a href="javascript:;" class="button right"
 				onClick="$.fancybox.next();"><?php echo t('Start Tutorial&raquo;'); ?>
 			</a>
@@ -442,7 +444,7 @@ $this->widget(
 			course by the following:'); ?>
 		</p>
 
-		<ul class="no-bullets">
+		<ul>
 			<li><a href="http://www.alz.org" target="_blank">Alzheimer's
 					Association</a> <?php echo t('(United States)'); ?></li>
 			<li><a href="http://matherlifewaysinstituteonaging.com"
@@ -454,9 +456,17 @@ $this->widget(
 		</ul>
 
 
-		<div id="survey_onlineexperience" class="box-white">
+		<div id="survey_onlineexperience" 
+		style="padding: 10px;
+				background: #fff;
+				margin: 30px;
+				border-radius: 5px;
+				box-shadow: 0 0 10px #999;
+				text-align: center;
+				min-height: 150px;">
+	
 			<?php echo t('Have you ever taken an online course before?');?>
-
+		<br><br>
 			<select>
 				<option selected="selected" value="select">
 					<?php echo t('Select'); ?>
@@ -481,7 +491,7 @@ $this->widget(
 			?>
 		</div>
 
-		<p class="course-buttons">
+		<p class="course-buttons" style="text-align: center">
 			<a href="javascript:;" class="button left"
 				onclick="$.fancybox.prev();"><?php echo t('&laquo; Back'); ?>
 			</a> <a href="javascript:;" class="button right"
@@ -538,31 +548,44 @@ $this->widget(
 		</p>
 
 
-		<div class="box-white">
+		<div id="10002" style="padding: 10px;
+				background: #fff;
+				margin: 30px;
+				border-radius: 5px;
+				box-shadow: 0 0 10px #999;
+				text-align: center;
+				min-height: 150px;">
 
 			<p>
 				<?php echo t('Without searching the web, is dementia a disease of the brain?'); ?>
+				<br><br>
 				<select>
 					<option selected="selected" value="select">
 						<?php echo t('Select'); ?>
 					</option>
-					<option value="yes">
-						<?php echo t('yes'); ?>
+					<option value="1">
+						<?php echo t('Yes'); ?>
 					</option>
-					<option value="no">
-						<?php echo t('no') ?>
+					<option value="0">
+						<?php echo t('No') ?>
 					</option>
 				</select>
 
-				<!-- 
-				<button type="submit" class="teal">Submit</button>
-				<button type="reset" class="teal">Reset</button>
-		-->
+		<?php
+			Yii::app()->getClientScript()->registerScript('10002',
+			"$('#10002 select').change(function() {
+				if($(this).val() == '1') {
+					$('#10002 p').html('Great! Yes, Dementia is a disease of the brain.');
+				} else {
+					$('#10002 p').html('Please review this slide again. Dementia is a disease of the brain.');
+				}
+			});");
+			?>
 		
 		</div>
 
 
-		<p class="course-buttons">
+		<p class="course-buttons" style="text-align: center">
 			<a href="javascript:;" class="button left"
 				onclick="$.fancybox.prev();"><?php echo t('&laquo; Back'); ?>
 			</a> <a href="javascript:;" class="button right"
@@ -589,7 +612,7 @@ $this->widget(
 					eventually even the ability to carry out the simplest tasks of daily
 					living. Alzheimer\'s is the most common form of dementia. Symptoms
 					usually develop slowly and get worse over time. In most people with
-					Alzheimer\'s, symptoms first appear after age 60. Alzheimerâ€™s
+					Alzheimer\'s, symptoms first appear after age 60. Alzheimer‚Äôs
 					disease is the most common cause of dementia among older people.
 					Alzheimer\'s has no current cure, but treatments for symptoms are
 					available and research continues. The disease is named after Dr.
@@ -616,37 +639,44 @@ $this->widget(
 			<li><?php echo t('Decreased or poor judgment') ?></li>
 		</ul>
 
-		<div class="box-white">
-
-			<p>
+		<div id="10003" style="padding: 10px;
+				background: #fff;
+				margin: 30px;
+				border-radius: 5px;
+				box-shadow: 0 0 10px #999;
+				text-align: center;
+				min-height: 150px;">
+		
+		<p>
 				<?php echo t('Without searching the Web, what other signs might there be?'); ?>
-			</p>
-
+	</p>
 
 			<select>
 				<option selected="selected" value="select">
 					<?php echo t('Select'); ?>
 				</option>
-				<option value="1">
+				<option value="0">
 					<?php echo t('Having a brown hair'); ?>
 				</option>
-				<option value="2">
-					<?php echo t('Being two meters tall'); ?>
-				</option>
-				<option value="3">
+				<option value="1">
 					<?php echo t('Misplacing things and losing the ability to retrace steps'); ?>
 				</option>
 			</select>
-
-			<!-- 
-			<button type="submit" class="teal">Submit</button>
-			<button type="reset" class="teal">Reset</button>
-			
-		-->
+		<?php
+			Yii::app()->getClientScript()->registerScript('10003',
+			"$('#10003 select').change(function() {
+				if($(this).val() == '0') {
+					$('#10003 p').html('No. This is not a sign. The correct response is: misplacing things and losing the ability to restrace steps.');
+				} 
+				else {
+					$('#10003 p').html('Correct!');
+				}
+			});");
+		?>
 
 		</div>
 
-		<p class="course-buttons">
+		<p class="course-buttons" style="text-align: center;">
 			<a href="javascript:;" class="button left"
 				onclick="$.fancybox.prev();"><?php echo t('&laquo;
 						Back'); ?>
@@ -654,22 +684,24 @@ $this->widget(
 				onClick="$.fancybox.next();"><?php echo t('Next &raquo;'); ?>
 			</a>
 		</p>
-
 	</div>
-
 
 	<!--   data, stats, video here    -->
 
 	<div id="slide-5" class="slide">
 
 		<h4 style="font-size: 2em;">
-			<?php echo t('Stats and Data (USA / English)'); ?>
+			<?php echo t('Statistics and other Data (USA / English)'); ?>
 		</h4>
 
 		<hr>
+		
+		<!--  
 		<iframe width="450" height="290"
 			src="http://www.youtube.com/embed/In1IJocVor8?rel=0" frameborder="0"
 			allowfullscreen="" class="tutorial-video"></iframe>
+			
+		-->
 		<p>
 			<strong> <?php echo t('Alzheimer\'s disease'); ?>
 			</strong>
@@ -684,9 +716,9 @@ $this->widget(
 			<li><?php echo t('A new person develops Alzheimer\'s disease every 69 seconds in the United States --
 					this is projected to increase to every 33 seconds by 2050.'); ?>
 			</li>
-			<li><a href="http://www.alz.org/downloads/facts_figures_2012.pdf"
-				target="_blank">2012 United States Alzheimer's Disease Facts and
-					Figures report</a>, <?php echo t ('Web Video (English)')?>
+			<li><?php echo t('<a href="http://www.alz.org/downloads/facts_figures_2012.pdf"
+				target="_blank">2012 United States Alzheimer\'s Disease Facts and
+					Figures report (English)</a>'); ?> - Alzheimer's Association (USA)
 			</li>
 		</ul>
 
@@ -708,19 +740,29 @@ $this->widget(
 			</li>
 		</ul>
 
-		<p>
-			<?php echo t('Using the search box below, find additional data and statistics on dementia or Alzheimer\'s disease where you reside. It is 
+
+<div style="padding: 10px;
+				background: #fff;
+				margin: 30px;
+				border-radius: 5px;
+				box-shadow: 0 0 10px #999;
+				text-align: center;
+				min-height: 150px;">
+	
+	<p>
+			<?php echo t('Using the search box below, find additional data and statistics on dementia or Alzheimer\'s disease where you reside.<br>It is 
 			important that you learn to conduct your own research.'); ?>
-		</p>
+	
+	</p>
 
-
-		<form method="get" action="http://www.google.com/search"
-			target="_blank">
+		<form method="get" action="http://www.google.com/search" target="_blank">
+		
 			<input type="search" id="google-search" name="q" size="35"
-				maxlength="255" value="" /><br /> <input type="submit"
-				value="<?php echo t('Google Search'); ?>" class="teal" />
+				maxlength="255" value="" />
+				<br><br>
+			<input type="submit" value="<?php echo t('Google Search'); ?>" class="teal" />
 		</form>
-
+</div>
 
 		<!-- 
 <form method="get" action="http://www.youtube.com" target="_blank"><input
@@ -729,7 +771,7 @@ $this->widget(
 					-->
 
 
-		<p class="course-buttons">
+		<p class="course-buttons" style="text-align: center;">
 			<a href="javascript:;" class="button left"
 				onclick="$.fancybox.prev();"><?php echo t('&laquo;
 						Back'); ?>
@@ -745,22 +787,30 @@ $this->widget(
 	<div id="slide-6" class="slide">
 
 		<h4 style="font-size: 2em;">
-			<?php echo t('Assessment'); ?>
+			<?php echo t('Assessment and Certificate (English)'); ?>
 		</h4>
 
 		<hr>
-
 		<p>
-			<?php echo t('Please complete this short assessment. You will receive immediate feedback.'); ?>
+			<?php echo t('Thank you for participating in this tutorial course! Now that you have a
+				 better idea on what to expect, your next step is to register and
+				begin participating!'); ?>
 		</p>
-
-		<div class="box-white">
-			<p>
-				<strong><u> <?php echo t('Tutorial Course Assessment'); ?>
-				</u> </strong>
-			</p>
+		
+		<div style="padding: 10px;
+				background: #fff;
+				margin: 30px;
+				border-radius: 5px;
+				box-shadow: 0 0 10px #999;
+				text-align: center;
+				min-height: 150px;">
+		
+		<p>
+		<?php echo t('Please complete this final assessment.'); ?>
+		</p>
 			<p>
 				<?php echo t('Dementia and Alzheimer\'s are diseases of the brain.'); ?>
+				
 				<select>
 					<option selected="selected" value="select">
 						<?php echo t('Select'); ?>
@@ -789,48 +839,21 @@ $this->widget(
 			</p>
 		</div>
 
-		<h4 style="font-size: 2em; padding-bottom: 15px;">
-			<?php echo t('Certificate of Completion (English)'); ?>
-		</h4>
+		<div style="padding: 10px;
+				background: #fff;
+				margin: 30px;
+				border-radius: 5px;
+				box-shadow: 0 0 10px #999;
+				text-align: center;
+				min-height: 150px;">
 
-		<p>
-			<?php echo t('Thank you for participating in this tutorial course! Now that you have a
-				 better idea on what to expect, your next step is to register and
-				begin participating! Click below to download your certificate.'); ?>
-		</p>
-		<p style="text-align: center;">
-			<a
-				href="/themes/onlinecourseportal/images/CourseCompletionCertificate.pdf"
-				target="_blank"> <?php echo t('Download Certificate'); ?>
-			</a>
-		</p>
-
-		<div class="box-white">
-
-			<p>
-				<strong><u> <?php echo t('Voluntary Survey'); ?>
-				</u> </strong>
-			</p>
-
-			<p>
-				<?php echo t('Did this tutorial course provide you with an acceptable learning
-			experience?'); ?>
-				<select>
-					<option selected="selected" value="select">
-						<?php echo t('Select'); ?>
-					</option>
-					<option value="1">
-						<?php echo t('Yes'); ?>
-					</option>
-					<option value="0">
-						<?php echo t('No'); ?>
-					</option>
-				</select>
-			</p>
-
+<p>
+			<?php echo t('Please complete this voluntary survey.'); ?>
+</p>
 			<p>
 				<?php echo t('How likely are you to participate in a full course, based on your
 			experience with this tutorial course?'); ?>
+		
 				<select>
 					<option selected="selected" value="select">
 						<?php echo t('Select'); ?>
@@ -845,13 +868,15 @@ $this->widget(
 			</p>
 
 		</div>
-
-		<p class="course-buttons">
+		<p>
+		<?php echo t('Click <a
+				href="/themes/onlinecourseportal/images/CourseCompletionCertificate.pdf"
+				target="_blank">here</a> to download your certificate.'); ?>
+		</p>
 		
-		
-		<p class="course-buttons">
-			<a href="javascript:;" class="button left"
-				onclick="$.fancybox.pos(0);"><?php echo t('&laquo; Start Over'); ?>
+		<p class="course-buttons" style="text-align: center;">
+			<a href="#" onClick="parent.jQuery.fancybox.close();" class="button left">
+			<?php echo t('Exit'); ?>
 			</a>
 		</p>
 
