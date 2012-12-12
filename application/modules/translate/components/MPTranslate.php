@@ -53,6 +53,12 @@ class MPTranslate extends CApplicationComponent {
     
     public $cookieExpire = 63072000; // 2 Years in seconds.
     
+    private $_sourceLanguageId = null;
+    
+    private $_sourceScriptId = null;
+    
+    private $_sourceTerritoryId = null;
+    
     /**
      * @var array $_cache will contain variables
      * */
@@ -185,15 +191,21 @@ class MPTranslate extends CApplicationComponent {
 	}
 	
 	public function getSourceLanguageID() {
-		return $this->getLanguageID(Yii::app()->sourceLanguage);
+		if($this->_sourceLanguageId === null)
+			$this->_sourceLanguageId = $this->getLanguageID(Yii::app()->sourceLanguage);
+		return $this->_sourceLanguageId;
 	}
 	
 	public function getSourceScriptID() {
-		return $this->getScriptID(Yii::app()->sourceLanguage);
+		if($this->_sourceScriptId === null)
+			$this->_sourceScriptId = $this->getScriptID(Yii::app()->sourceScript);
+		return $this->_sourceScriptId;
 	}
 	
 	public function getSourceTerritoryID() {
-		return $this->getTerritoryID(Yii::app()->sourceLanguage);
+		if($this->_sourceTerritoryId === null)
+			$this->_sourceTerritoryId = $this->getTerritoryID(Yii::app()->sourceTerritory);
+		return $this->_sourceTerritoryId;
 	}
 	
 	public function getLanguageID($language = null) {
@@ -241,7 +253,7 @@ class MPTranslate extends CApplicationComponent {
 	}
 	
 	public function getLocaleDisplayName($id = null, $language = null, $category = 'language') {
-		$idMethod = 'get' . ucfirst($category) . 'ID';
+		$idMethod = 'get' . ucfirst(strtolower($category)) . 'ID';
 		if(!method_exists($this, $idMethod)) {
 			Yii::log(TranslateModule::t('Failed to query Yii locale DB. Possibly invalid category requested {category}', 
 					array('{category}' => $category)));
@@ -249,9 +261,9 @@ class MPTranslate extends CApplicationComponent {
 		}
 		$id = $this->$idMethod($id);
 		$localeDisplayNames = $this->getLocaleDisplayNames($language, $category);
-		if($localeDisplayNames === false || !array_key_exists($id, $localeDisplayNames))
-			return false;
-		return $localeDisplayNames[$id];
+		if($localeDisplayNames !== false && array_key_exists($id, $localeDisplayNames))
+			return $localeDisplayNames[$id];
+		return false;
 	}
 	
 	public function getLocaleDisplayNames($language = null, $category = 'language') {
@@ -298,6 +310,9 @@ class MPTranslate extends CApplicationComponent {
         
         if(TranslateModule::translator()->getLanguageID($event->language) === $sourceLanguage && !Yii::app()->getMessages()->forceTranslation)
         	return false;
+        
+        if(is_numeric($event->message))
+        	return true;
 
         Yii::import('translate.models.MessageSource');
         $attributes = array('category' => $event->category, 'message' => $event->message);

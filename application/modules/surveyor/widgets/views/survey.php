@@ -2,9 +2,9 @@
 	echo CHtml::tag('div', $survey['htmlOptions'], false);
 	
 	if($title['show'])
-		echo CHtml::tag('div', $title['htmlOptions'], $survey['model']->title);
+		echo CHtml::tag('div', $title['htmlOptions'], $survey['model']->getAttributeLabel('title'));
 	if($description['show'])
-		echo CHtml::tag('div', $description['htmlOptions'], "<p>{$survey['model']->description}</p>");
+		echo CHtml::tag('div', $description['htmlOptions'], "<p>{$survey['model']->getAttributeLabel('description')}</p>");
 
 	if($form['show']) {
 		$this->beginWidget('CActiveForm', $form['options']);
@@ -20,7 +20,7 @@
 				echo CHtml::activeDropDownList(
 										$survey['model'], 
 										"question{$q->id}", 
-										CHtml::listData($q->options, 'id', 'text'), 
+										array_map(array('Surveyor', 't'), CHtml::listData($q->options, 'id', 'text')), 
 										array('name' => "Survey[{$survey['model']->name}][question{$q->id}]")
 					);
 				break;
@@ -28,7 +28,7 @@
 				echo CHtml::activeCheckBoxList(
 										$survey['model'], 
 										"question{$q->id}", 
-										CHtml::listData($q->options, 'id', 'text'), 
+										array_map(array('Surveyor', 't'), CHtml::listData($q->options, 'id', 'text')), 
 										array('name' => "Survey[{$survey['model']->name}][question{$q->id}]")
 					);
 				break;
@@ -36,7 +36,7 @@
 				echo CHtml::activeRadioButtonList(
 										$survey['model'],
 										"question{$q->id}",
-										CHtml::listData($q->options, 'id', 'text'),
+										array_map(array('Surveyor', 't'), CHtml::listData($q->options, 'id', 'text')),
 										array('name' => "Survey[{$survey['model']->name}][question{$q->id}]")
 					);
 				break;

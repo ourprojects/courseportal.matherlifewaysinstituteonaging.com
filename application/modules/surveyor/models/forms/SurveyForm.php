@@ -59,10 +59,11 @@ class SurveyForm extends CFormModel {
 			$this->_attributeLabels = array(
 					'user_id' => Surveyor::t('User ID'),
 					'name' => $this->_survey->name,
-					'description' => $this->_survey->description,
+					'title' => Surveyor::t($this->_survey->title),
+					'description' => Surveyor::t($this->_survey->description),
 				);
 			foreach($this->_survey->questions as $question)
-				$this->_attributeLabels["question{$question->id}"] = $question->text;
+				$this->_attributeLabels["question{$question->id}"] = Surveyor::t($question->text);
 		}
 		return $this->_attributeLabels;
 	}
@@ -103,12 +104,12 @@ class SurveyForm extends CFormModel {
 		}
 	}
 	
-	public function setTranslateAttributes($translate) {
-		$this->_survey->translateAttributes = $translate;
+	public function getQuestions() {
+		return $this->_survey->questions;
 	}
 	
 	public function __get($name) {
-		if($this->_survey->hasAttribute($name) || $name == 'questions')
+		if($this->_survey->hasAttribute($name))
 			return $this->_survey->$name;
 		if(preg_match('/^question(?P<qId>\d+)$/', $name, $matches) && array_key_exists($matches['qId'], $this->_questionAnswers))
 			return $this->_questionAnswers[$matches['qId']];

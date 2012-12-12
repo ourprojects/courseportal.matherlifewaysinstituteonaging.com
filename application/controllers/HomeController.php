@@ -36,10 +36,6 @@ class HomeController extends OnlineCoursePortalController {
 						'hrEmployer_survey' => Yii::app()->surveyor->hrEmployer->form,
 						'caregiver_survey' => Yii::app()->surveyor->caregiver->form,
 					);
-			
-			$models['workingCaregiver_survey']->translateAttributes = true;
-			$models['hrEmployer_survey']->translateAttributes = true;
-			$models['caregiver_survey']->translateAttributes = true;
 
 			if(isset($_POST['ajax']) && isset($models["{$_POST['ajax']}_survey"])) {
 				echo CActiveForm::validate($models["{$_POST['ajax']}_survey"]);

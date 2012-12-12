@@ -37,7 +37,7 @@ class Survey extends CWidget {
 				return;
 			}
 		}
-		throw new CHttpException(500, 'survey model must be an instance of SurveyForm or SurveyAR.');
+		throw new CHttpException(500, Surveyor::t('survey model must be set and an instance of SurveyForm or SurveyAR.'));
 	}
 	
 	public function setModel($surveyModel) {

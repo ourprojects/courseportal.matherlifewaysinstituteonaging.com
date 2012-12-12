@@ -118,12 +118,12 @@ return array(
 										'levels' => 'error, warning',
 								),
 								// DB logging
-								array(
+								/*array(
 										'class' => 'CFileLogRoute',
 										'levels' => 'trace, log, error, warning',
 										'categories' => 'system.db.CDbCommand',
 										'logFile' => 'db.log',
-								),
+								),*/
 						),
 				),
 

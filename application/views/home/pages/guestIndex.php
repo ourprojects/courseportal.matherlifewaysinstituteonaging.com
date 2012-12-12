@@ -13,8 +13,9 @@ $this->widget(
 				'id' => 'tutorial',
 				'target' => '.open-tutorial',
 				'config' => array(
-						'width' => '960px',
+						'width' => '800px',
 						'height' => '600px',
+						'autoSize' => false,
 						'arrows' => false,
 						'mouseWheel' => false,
 				)
@@ -29,7 +30,7 @@ $this->widget(
 				'config' => array(
 						'width' => '90%',
 						'height' => '95%',
-						'autoDimensions' => false,
+						'autoSize' => false,
 						'mouseWheel' => false,
 				)
 		)
