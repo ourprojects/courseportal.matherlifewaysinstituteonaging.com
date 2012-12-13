@@ -15,6 +15,19 @@ class SurveyController extends OnlineCoursePortalController {
 		}
 	}
 	
+	public function actionStat($name) {
+		$survey = SurveyorModule::surveyor()->$name;
+		$stats = array();
+		foreach($survey->questions as $question) {
+			$stats[] = $question->getStatistics();
+		}
+		echo CJSON::encode($stats);
+	}
+	
+	public function actionStatQuestion($name, $num) {
+		echo CJSON::encode(SurveyorModule::surveyor()->$name->questions[$num]->getStatistics());
+	}
+	
 	public function actionChart($name, $qNum = 0) {
 		$survey = SurveyorModule::surveyor()->$name;
 		if($qNum < 0 || $qNum >= count($survey->questions))

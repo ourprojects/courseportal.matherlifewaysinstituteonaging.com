@@ -88,6 +88,7 @@ class SurveyQuestion extends SActiveRecord
         	'answers' => Surveyor::t('Answers'),
         	'options' => Surveyor::t('Options'),
         	'users' => Surveyor::t('Users'),
+        	'statistics' => Surveyor::t('Statistics'),
         );
     }
 
@@ -106,6 +107,14 @@ class SurveyQuestion extends SActiveRecord
         return new CActiveDataProvider($this, array(
             'criteria'=>$criteria,
         ));
+    }
+    
+    public function getStatistics() {
+	    $stats = array();
+		foreach($this->options as $option) {
+			$stats[] = array($option->text, ($this->answersCount <= 0 ? 0 : $option->answersCount / $this->answersCount));
+		}
+		return $stats;
     }
     
     public function getOptionIds() {

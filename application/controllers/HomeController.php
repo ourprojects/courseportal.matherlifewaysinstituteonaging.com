@@ -77,7 +77,7 @@ class HomeController extends OnlineCoursePortalController {
 				$message = new YiiMailMessage;
 				$message->setBody($models['ContactUs']->body, 'text/html');
 				$message->subject = $models['ContactUs']->subject;
-				$message->addTo(Yii::app()->params['adminEmail']);
+				$message->addTo(Yii::app()->params['contactEmail']);
 				$message->from = $models['ContactUs']->email;
 				Yii::app()->mail->send($message);
 				Yii::app()->getUser()->setFlash('success', t('Thank you for contacting us. We will respond to you as soon as possible.'));
