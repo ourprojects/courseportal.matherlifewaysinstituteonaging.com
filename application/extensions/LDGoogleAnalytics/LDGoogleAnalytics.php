@@ -96,14 +96,6 @@ class LDGoogleAnalytics extends CWidget {
      */
     private $_data = array();
 
-    /**
-     * init function - Yii automatically calls this
-     */
-    public function init() {
-    	if(!isset($this->id))
-    		$this->id = $this->getId();
-    }
-
 	public function run() {
 		// Check to see if we need to throw in the trackPageview call
 		if(!in_array('_trackPageview', $this->_calledOptions) && $this->autoTrackPageview)
@@ -120,9 +112,9 @@ class LDGoogleAnalytics extends CWidget {
      */
     public function render($view, $data = array(), $return = false) {
         if($this->_accountID !== null) {
-        	$data = parent::render($view, array('_data' => $data), true);
+        	$js = parent::render($view, array('_data' => $data), true);
 
-        	return $return ? $data : Yii::app()->getClientScript()->registerScript($this->getId(), $data, CClientScript::POS_BEGIN);
+        	return $return ? $js : Yii::app()->getClientScript()->registerScript($this->getId(), $js, CClientScript::POS_BEGIN);
         }
         
         throw new CHttpException(500, Yii::t(ID, ID . '- Google Analytics account ID has not been set.'));

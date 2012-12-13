@@ -11,63 +11,54 @@ class EFancyBox extends CWidget {
 	const VIEW_NAME = 'FancyBox';
 	
 	public $viewName = self::VIEW_NAME;
-
-	// @ string the taget element on DOM
-	public $target;
+	
 	// @ array of config settings for fancybox
 	public $config = array();
 	
-	// function to init the widget
-	public function init() {
-		// if not informed will generate Yii defaut generated id, since version 1.6
-		if(!isset($this->id))
-			$this->id = $this->getId();
-		// publish the required assets
-		$this->publishAssets();
-	}
-	
 	// function to run the widget
     public function run() {
-		$this->render($this->viewName, $this->config, false);
+    	 $this->render($this->viewName, $this->config, false);
 	}
 	
 	public function render($view, $data = array(), $return = false) {
-		if(!is_string($data))
-			$data = CJavaScript::encode($this->config);
+		if(!is_array($data) && is_string($data) && !$data = CJSON::decode($data))
+			throw new CException(Yii::t(self::ID, 'The options parameter is not an array or a valid JSON string.'));
 		
-		$js = parent::render($view, array('target' => $this->target, 'data' => $data), true);
+		$id = $this->getId();
+		$js = parent::render($view, array('id' => $id, 'config' => $data), true);
 		
-		return $return ? $js : Yii::app()->getClientScript()->registerScript($this->getId(), $js, CClientScript::POS_READY);
+		return $return ? $js : $this->registerScripts(__CLASS__ . $id, $js, CClientScript::POS_READY);
 	}
 	
-	// function to publish and register assets on page 
-	public function publishAssets() {
+	protected function registerScripts($id, $embeddedScript) {
 		$assetsDir = dirname(__FILE__).DIRECTORY_SEPARATOR.'assets';
 		if(is_dir($assetsDir)) {
 			$assetsUrl = Yii::app()->assetManager->publish($assetsDir, false, 1, YII_DEBUG);
-			Yii::app()->getClientScript()->registerCoreScript('jquery');
-			Yii::app()->getClientScript()->registerScriptFile("$assetsUrl/jquery.fancybox.pack.js", CClientScript::POS_HEAD);
-			Yii::app()->getClientScript()->registerCssFile("$assetsUrl/jquery.fancybox.css");
+			
+			$cs = Yii::app()->getClientScript();
+			$cs->registerCoreScript('jquery');
+			$cs->registerScriptFile("$assetsUrl/jquery.fancybox.pack.js", CClientScript::POS_HEAD);
+			$cs->registerCssFile("$assetsUrl/jquery.fancybox.css");
 			
 			// if mouse actions enbled register the js
 			if (!isset($this->config['mouseWheel']) || $this->config['mouseWheel'] === true) 
-				Yii::app()->getClientScript()->registerScriptFile("$assetsUrl/lib/jquery.mousewheel-3.0.6.pack.js", CClientScript::POS_HEAD);
+				$cs->registerScriptFile("$assetsUrl/lib/jquery.mousewheel-3.0.6.pack.js", CClientScript::POS_HEAD);
 			
 			// include helpers required by the config
 			// thumbs
 			if(isset($this->config['helpers']['thumbs'])) {
-				Yii::app()->getClientScript()->registerScriptFile("$assetsUrl/helpers/jquery.fancybox-thumbs.js", CClientScript::POS_HEAD);
-				Yii::app()->getClientScript()->registerCssFile("$assetsUrl/helpers/jquery.fancybox-thumbs.css");
+				$cs->registerScriptFile("$assetsUrl/helpers/jquery.fancybox-thumbs.js", CClientScript::POS_HEAD);
+				$cs->registerCssFile("$assetsUrl/helpers/jquery.fancybox-thumbs.css");
 			}
 			// media
 			if(isset($this->config['helpers']['media']))
-				Yii::app()->getClientScript()->registerScriptFile("$assetsUrl/helpers/jquery.fancybox-media.js", CClientScript::POS_HEAD);
+				$cs->registerScriptFile("$assetsUrl/helpers/jquery.fancybox-media.js", CClientScript::POS_HEAD);
 			// buttons
 			if(isset($this->config['helpers']['buttons'])) {
-				Yii::app()->getClientScript()->registerScriptFile("$assetsUrl/helpers/jquery.fancybox-buttons.js", CClientScript::POS_HEAD);
-				Yii::app()->getClientScript()->registerCssFile("$assetsUrl/helpers/jquery.fancybox-buttons.css");
+				$cs->registerScriptFile("$assetsUrl/helpers/jquery.fancybox-buttons.js", CClientScript::POS_HEAD);
+				$cs->registerCssFile("$assetsUrl/helpers/jquery.fancybox-buttons.css");
 			}
-			
+			$cs->registerScript($id, $embeddedScript, CClientScript::POS_READY);
 		} else {
 			throw new CException(Yii::t(
 							self::ID, 

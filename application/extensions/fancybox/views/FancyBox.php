@@ -1,1 +1,1 @@
-<?php echo "$('$target').fancybox($data);"; ?>
+<?php echo "$('$id').fancybox(".CJavaScript::encode($config).");"; ?>

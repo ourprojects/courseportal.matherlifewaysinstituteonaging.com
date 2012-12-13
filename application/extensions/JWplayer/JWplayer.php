@@ -21,13 +21,12 @@ class JWplayer extends CWidget {
 	}
 	
 	public function run() {
-		if(!isset($this->target))
-			$this->target = $this->getId();
+		$id = $this->getId();
 		switch($this->type) {
 			case 'player':
 				Yii::app()->getClientScript()->registerScript(
-					$this->getId(), 
-					'jwplayer("'.$this->target.'").setup('.CJavaScript::encode($this->config).');'
+					__CLASS__ . $id, 
+					'jwplayer.key="9kexJkklndg+FRZpAoCLNc7YxWP3J0HN32gVgg==";jwplayer("'.$id.'").setup('.CJavaScript::encode($this->config).');'
 				);
 				break;
 			case 'imagerotator':
@@ -35,8 +34,8 @@ class JWplayer extends CWidget {
 				break;
 			case 'silverlight':
 				Yii::app()->getClientScript()->registerScript(
-					$this->getId(), 
-					'new jeroenwijering.Player(document.getElementById("'.$this->target.'"),"'.$this->_assetsUrl.'/silverlight/wmvplayer.xaml",'.CJavaScript::encode($this->config).');'
+					__CLASS__ . "#$id", 
+					'new jeroenwijering.Player(document.getElementById("'.$id.'"),"'.$this->_assetsUrl.'/silverlight/wmvplayer.xaml",'.CJavaScript::encode($this->config).');'
 				);
 				break;
 		}
@@ -44,12 +43,13 @@ class JWplayer extends CWidget {
 
 	public function publishAssets() {
 		$assetsDir = dirname(__FILE__).DIRECTORY_SEPARATOR.'assets';
+		
 		if(is_dir($assetsDir)) {
+			
 			$this->_assetsUrl = Yii::app()->assetManager->publish($assetsDir, false, 1, YII_DEBUG);
 			switch($this->type) {
 				case 'player':
 					Yii::app()->getClientScript()->registerScriptFile("$this->_assetsUrl/player/jwplayer.js", CClientScript::POS_HEAD);
-					Yii::app()->getClientScript()->registerScript($this->getId(), 'jwplayer.key="9kexJkklndg+FRZpAoCLNc7YxWP3J0HN32gVgg=="', CClientScript::POS_HEAD);
 					if(!isset($this->config['flashplayer']))
 						$this->config['flashplayer'] = "$this->_assetsUrl/player/jwplayer.flash.swf";
 					break;
@@ -61,6 +61,7 @@ class JWplayer extends CWidget {
 					Yii::app()->getClientScript()->registerScriptFile("$this->_assetsUrl/silverlight/wmvplayer.js", CClientScript::POS_HEAD);
 					break;
 			}
+			
 		} else {
 			throw new Exception(
 					Yii::t(self::ID,

@@ -78,22 +78,18 @@ class EHighcharts extends CWidget {
 	 * Renders the widget.
 	 */
 	public function run() {
-		$id = $this->getId();
-		$this->htmlOptions['id'] = $id;
+		$this->htmlOptions['id'] = $this->getId();
 
 		echo CHtml::openTag('div', $this->htmlOptions);
 		echo CHtml::closeTag('div');
 
-		// check if options parameter is a json string
-		if(is_string($this->options)) {
-			if(!$this->options = CJSON::decode($this->options))
-				throw new CException(Yii::t(self::ID, 'The options parameter is not valid JSON.'));
-		}
+		// check if options parameter is an array or a json string
+		if(!is_array($this->options) && is_string($this->options) && !$this->options = CJSON::decode($this->options))
+			throw new CException(Yii::t(self::ID, 'The options parameter is not an array or a valid JSON string.'));
 
 		// merge options with default values
-
 		$this->options = CMap::mergeArray($this->getDefaultOptions(), $this->options);
-		$this->registerScripts(__CLASS__ . "#$id", 'var chart = new Highcharts.Chart('.CJavaScript::encode($this->options).');');
+		$this->registerScripts(__CLASS__ . "#{$this->htmlOptions['id']}", 'var chart = new Highcharts.Chart('.CJavaScript::encode($this->options).');');
 	}
 	
 	public function getDefaultOptions() {
@@ -107,22 +103,31 @@ class EHighcharts extends CWidget {
 	 * @param string the embedded script to be inserted into the page
 	 */
 	protected function registerScripts($id, $embeddedScript) {
-		$basePath = dirname(__FILE__) . DIRECTORY_SEPARATOR . 'assets' . DIRECTORY_SEPARATOR;
-		$baseUrl = Yii::app()->getAssetManager()->publish($basePath, false, 1, YII_DEBUG);
-
-		$cs = Yii::app()->getClientScript();
-		$cs->registerCoreScript('jquery');
-		$cs->registerScriptFile("$baseUrl/" . YII_DEBUG ? 'highcharts.src.js' : 'highcharts.js');
-
-		// register exporting module if enabled via the 'exporting' option
-		if($this->options['exporting']['enabled']) {
-			$cs->registerScriptFile("$baseUrl/modules/" . YII_DEBUG ? 'exporting.src.js' : 'exporting.js');
-		}
+		$assetsDir = dirname(__FILE__) . DIRECTORY_SEPARATOR . 'assets' . DIRECTORY_SEPARATOR;
 		
-		// register global theme if specified via the 'theme' option
-		if(isset($this->options['theme'])) {
-			$cs->registerScriptFile("$baseUrl/themes/{$this->options['theme']}.js");
+		if(is_dir($assetsDir)) {
+			$baseUrl = Yii::app()->getAssetManager()->publish($assetsDir, false, 1, YII_DEBUG);
+
+			$cs = Yii::app()->getClientScript();
+			$cs->registerCoreScript('jquery');
+			$cs->registerScriptFile("$baseUrl/" . YII_DEBUG ? 'highcharts.src.js' : 'highcharts.js');
+	
+			// register exporting module if enabled via the 'exporting' option
+			if($this->options['exporting']['enabled']) {
+				$cs->registerScriptFile("$baseUrl/modules/" . YII_DEBUG ? 'exporting.src.js' : 'exporting.js');
+			}
+			
+			// register global theme if specified via the 'theme' option
+			if(isset($this->options['theme'])) {
+				$cs->registerScriptFile("$baseUrl/themes/{$this->options['theme']}.js");
+			}
+			$cs->registerScript($id, $embeddedScript, CClientScript::POS_LOAD);
+		} else {
+			throw new CException(Yii::t(
+					self::ID,
+					self::ID.' - Error: Couldn\'t find assets to publish. Please make sure directory exists and is readable {dir_name}',
+					array('{dir_name}' => $assetsDir))
+			);
 		}
-		$cs->registerScript($id, $embeddedScript, CClientScript::POS_LOAD);
 	}
 }

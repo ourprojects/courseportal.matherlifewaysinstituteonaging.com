@@ -1,17 +1,17 @@
 <?php
 $this->pageTitle = Yii::app()->name . ' - '.t('Guest');
 
-Yii::app()->getClientScript()->registerCssFile($this->getStylesUrl('home.css'));
-Yii::app()->getClientScript()->registerCssFile($this->getStylesUrl('tutorial.css'));
+$clientScript = Yii::app()->getClientScript();
+$clientScript->registerCssFile($this->getStylesUrl('home.css'));
+$clientScript->registerCssFile($this->getStylesUrl('tutorial.css'));
 
-Yii::app()->getClientScript()->registerScriptFile($this->getScriptsUrl('jquery.cycle.js'), CClientScript::POS_HEAD);
-Yii::app()->getClientScript()->registerScript('customers_cycle', "$('#customers').cycle({ fx: 'fade' });");
+$clientScript->registerScriptFile($this->getScriptsUrl('jquery.cycle.js'), CClientScript::POS_HEAD);
+$clientScript->registerScript('customers_cycle', "$('#customers').cycle({ fx: 'fade' });");
 
 $this->widget(
 		'ext.fancybox.EFancyBox',
 		array(
-				'id' => 'tutorial',
-				'target' => '.open-tutorial',
+				'id' => '.open-tutorial',
 				'config' => array(
 						'width' => '1024px',
 						'height' => '768px',
@@ -26,8 +26,7 @@ $this->widget(
 $this->widget(
 		'ext.fancybox.EFancyBox',
 		array(
-				'id' => 'survey',
-				'target' => '.survey',
+				'id' => '.survey',
 				'config' => array(
 						'width' => '1024px',
 						'height' => '768px',
@@ -216,7 +215,7 @@ $this->widget(
 			$this->widget(
 					'ext.JWplayer.JWplayer',
 					array(
-							'target' => 'MatherCaregivers',
+							'id' => 'MatherCaregivers',
 							'config' => array(
 									'image' => $this->createUrl('download').'/videos/MatherCaregivers/poster.jpg',
 									'width' => '540px',
@@ -470,7 +469,7 @@ $this->widget(
 			</select>
 			<p></p>
 			<?php
-			Yii::app()->getClientScript()->registerScript('slide-2',
+			$clientScript->registerScript('slide-2',
 					"$('#slide-2 #question select').change(function() {
 					if($(this).val() == '1') {
 					$('#slide-2 #question p').html('Great! Good luck!!');
@@ -555,7 +554,7 @@ $this->widget(
 				</select>
 
 				<?php
-				Yii::app()->getClientScript()->registerScript('slide-3',
+				$clientScript->registerScript('slide-3',
 						"$('#slide-3 #question select').change(function() {
 						if($(this).val() == '1') {
 						$('#slide-3 #question p').html('Great! Yes, Dementia is a disease of the brain.');
@@ -639,7 +638,7 @@ $this->widget(
 				</option>
 			</select>
 			<?php
-			Yii::app()->getClientScript()->registerScript('slide-4',
+			$clientScript->registerScript('slide-4',
 					"$('#slide-4 #question select').change(function() {
 					if($(this).val() == '0') {
 					$('#slide-4 #question p').html('No. This is not a sign. The correct response is: misplacing things and losing the ability to restrace steps.');

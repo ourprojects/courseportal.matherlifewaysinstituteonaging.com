@@ -3,12 +3,11 @@ $this->breadcrumbs = array(t('Courses'));
 $this->widget(
 		'ext.fancybox.EFancyBox',
 		array(
-				'id' => 'coming-soon',
-				'target' => '.coming-soon',
+				'id' => '.coming-soon',
 				'config' => array(
 						'width' => '800px',
 						'height' => '75%',
-						'autoScale' => false,
+						'autoSize' => false,
 						'scrolling' => 'no',
 				)
 		)
