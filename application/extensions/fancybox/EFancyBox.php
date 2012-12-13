@@ -44,7 +44,7 @@ class EFancyBox extends CWidget {
 	public function publishAssets() {
 		$assetsDir = dirname(__FILE__).DIRECTORY_SEPARATOR.'assets';
 		if(is_dir($assetsDir)) {
-			$assetsUrl = Yii::app()->assetManager->publish($assetsDir);
+			$assetsUrl = Yii::app()->assetManager->publish($assetsDir, false, 1, YII_DEBUG);
 			Yii::app()->getClientScript()->registerCoreScript('jquery');
 			Yii::app()->getClientScript()->registerScriptFile("$assetsUrl/jquery.fancybox.pack.js", CClientScript::POS_HEAD);
 			Yii::app()->getClientScript()->registerCssFile("$assetsUrl/jquery.fancybox.css");

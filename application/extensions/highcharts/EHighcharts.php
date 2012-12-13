@@ -91,10 +91,13 @@ class EHighcharts extends CWidget {
 		}
 
 		// merge options with default values
-		$defaultOptions = array('chart' => array('renderTo' => $id), 'exporting' => array('enabled' => true));
-		$this->options = CMap::mergeArray($defaultOptions, $this->options);
-		$jsOptions = CJavaScript::encode($this->options);
-		$this->registerScripts(__CLASS__ . "#$id", "var chart = new Highcharts.Chart($jsOptions);");
+
+		$this->options = CMap::mergeArray($this->getDefaultOptions(), $this->options);
+		$this->registerScripts(__CLASS__ . "#$id", 'var chart = new Highcharts.Chart('.CJavaScript::encode($this->options).');');
+	}
+	
+	public function getDefaultOptions() {
+		return array('chart' => array('renderTo' => $this->getId()), 'exporting' => array('enabled' => true));
 	}
 
 	/**
@@ -106,22 +109,19 @@ class EHighcharts extends CWidget {
 	protected function registerScripts($id, $embeddedScript) {
 		$basePath = dirname(__FILE__) . DIRECTORY_SEPARATOR . 'assets' . DIRECTORY_SEPARATOR;
 		$baseUrl = Yii::app()->getAssetManager()->publish($basePath, false, 1, YII_DEBUG);
-		$scriptFile = YII_DEBUG ? '/highcharts.src.js' : '/highcharts.js';
 
 		$cs = Yii::app()->getClientScript();
 		$cs->registerCoreScript('jquery');
-		$cs->registerScriptFile($baseUrl . $scriptFile);
+		$cs->registerScriptFile("$baseUrl/" . YII_DEBUG ? 'highcharts.src.js' : 'highcharts.js');
 
 		// register exporting module if enabled via the 'exporting' option
 		if($this->options['exporting']['enabled']) {
-			$scriptFile = YII_DEBUG ? 'exporting.src.js' : 'exporting.js';
-			$cs->registerScriptFile("$baseUrl/modules/$scriptFile");
+			$cs->registerScriptFile("$baseUrl/modules/" . YII_DEBUG ? 'exporting.src.js' : 'exporting.js');
 		}
 		
 		// register global theme if specified via the 'theme' option
 		if(isset($this->options['theme'])) {
-			$scriptFile = $this->options['theme'] . ".js";
-			$cs->registerScriptFile("$baseUrl/themes/$scriptFile");
+			$cs->registerScriptFile("$baseUrl/themes/{$this->options['theme']}.js");
 		}
 		$cs->registerScript($id, $embeddedScript, CClientScript::POS_LOAD);
 	}

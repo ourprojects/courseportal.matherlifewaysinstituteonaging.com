@@ -45,7 +45,7 @@ class JWplayer extends CWidget {
 	public function publishAssets() {
 		$assetsDir = dirname(__FILE__).DIRECTORY_SEPARATOR.'assets';
 		if(is_dir($assetsDir)) {
-			$this->_assetsUrl = Yii::app()->assetManager->publish($assetsDir);
+			$this->_assetsUrl = Yii::app()->assetManager->publish($assetsDir, false, 1, YII_DEBUG);
 			switch($this->type) {
 				case 'player':
 					Yii::app()->getClientScript()->registerScriptFile("$this->_assetsUrl/player/jwplayer.js", CClientScript::POS_HEAD);

@@ -84,7 +84,7 @@ abstract class OnlineCoursePortalController extends CController {
 				if($this->getModule() === null) {
 					$assetsDir = Yii::getPathOfAlias('application.assets.' . $this->getId());
 					if(is_dir($assetsDir))
-						$this->_assetsUrl = Yii::app()->assetManager->publish($assetsDir);
+						$this->_assetsUrl = Yii::app()->assetManager->publish($assetsDir, false, -1, YII_DEBUG);
 				}
 				$this->runActionWithFilters($action, $this->filters());
 				$parent->afterControllerAction($this, $action);
