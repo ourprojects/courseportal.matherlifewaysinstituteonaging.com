@@ -1,3 +1,12 @@
+#tutorial #question {
+	padding: 10px;
+	background: #fff;
+	margin: 30px;
+	border-radius: 5px;
+	box-shadow: 0 0 10px #999;
+	text-align: center;
+	min-height: 150px;
+}
 #tutorial h2.flowers {
 	border-bottom: 1px solid #ddd;
 	margin-bottom: 10px;
