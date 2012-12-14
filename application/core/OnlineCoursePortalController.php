@@ -37,6 +37,7 @@ abstract class OnlineCoursePortalController extends CController {
 	 * @return array context menu attributes. This property will be assigned to {@link OnlineCoursePortalController::menuAttrs} when {@link OnlineCoursePortalController::init} is called.
 	 */
 	public function getMenuAttributes() {
+		$user = Yii::app()->getUser();
 		return array('items' => array(
 							array('label' => '<span id="menu-home" title="'.t('Home').'"></span>',
 									'url' => Yii::app()->createAbsoluteUrl('home/index')),
@@ -44,25 +45,26 @@ abstract class OnlineCoursePortalController extends CController {
 									'url' => Yii::app()->createAbsoluteUrl('home/contact')),
 							array('label' => '<span id="menu-register" title="'.t('Register').'"></span>',
 									'url' => Yii::app()->createAbsoluteUrl('user/register'),
-									'visible' => Yii::app()->getUser()->getIsGuest()),
+									'visible' => $user->getIsGuest()),
 							array('label' => '<span id="menu-login" title="'.t('Login').'"></span>',
 									'url' => Yii::app()->createAbsoluteUrl('user/login'),
-									'visible' => Yii::app()->getUser()->getIsGuest()),
+									'visible' => $user->getIsGuest()),
 							array('label' => '<span id="menu-profile" title="'.t('Profile / Files').'"></span>',
 									'url' => Yii::app()->createAbsoluteUrl('user/profile'),
-									'visible' => !Yii::app()->getUser()->getIsGuest()),
+									'visible' => !$user->getIsGuest()),
 							array('label' => '<span id="menu-forum" title="'.t('Forum').'"></span>',
-									'url' => Yii::app()->createAbsoluteUrl('forum/index'),
-									'visible' => !Yii::app()->getUser()->getIsGuest()),
+									'url' => Yii::app()->getBaseUrl(true) . '/phpBB',
+									'linkOptions' => array('target' => '_blank'),
+									'visible' => !$user->getIsGuest()),
 							array('label' => '<span id="menu-courses" title="'.t('Courses').'"></span>',
 									'url' => Yii::app()->createAbsoluteUrl('course/index'),
-									'visible' => !Yii::app()->getUser()->getIsGuest()),
+									'visible' => !$user->getIsGuest()),
 							array('label' => '<span id="menu-admin" title="'.t('Admin').'"></span>',
 									'url' => Yii::app()->createAbsoluteUrl('admin/index'),
-									'visible' => Yii::app()->getUser()->getIsAdmin()),
+									'visible' => $user->getIsAdmin()),
 							array('label' => '<span id="menu-logout" title="'.t('Logout').'"></span>',
 									'url' => Yii::app()->createAbsoluteUrl('user/logout'),
-									'visible' => !Yii::app()->getUser()->getIsGuest())
+									'visible' => !$user->getIsGuest())
 					 ),
 					 'encodeLabel' => false
 		);
