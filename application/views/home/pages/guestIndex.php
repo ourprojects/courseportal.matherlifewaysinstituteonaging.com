@@ -457,7 +457,9 @@ $this->widget(
 			</li>
 			<li><?php echo t('Confusion with time or place'); ?></li>
 		</ul>	
-		
+		<p style="font-weight:bold;" />
+			<?php echo t('Alzheimer\'s disease Facts and Figures 2012 (Video) (USA) (English)'); ?>
+		</p>
 		  <p><iframe width="450" height="290" src="http://www.youtube.com/embed/In1IJocVor8?rel=0" frameborder="1"
 			allowfullscreen="" class="tutorial-video"></iframe></p>
 		
