@@ -62,6 +62,47 @@ $this->widget(
 			data-fancybox-group="open-tutorial" class="open-tutorial"
 			style="display: none;"></a>
 	</div>
+	
+	
+	<!-- replace sidebar 1 with this one instead and move current one down, and delete original one below
+	
+	 <div class="box-sidebar two">
+		<h3>
+			<?php echo t('Our Clients'); ?>
+		</h3>
+		<div id="customers">
+			<a href="http://www.ibm.com"><img
+				src="<?php echo $this->getImagesUrl('customers/ibm.png'); ?>"
+				alt="IBM" /> </a> <a href="http://www.ti.com/"><img
+				src="<?php echo $this->getImagesUrl('customers/ti.png'); ?>"
+				alt="Texas Instrument" /> </a> <a href="http://www.merck.com"><img
+				src="<?php echo $this->getImagesUrl('customers/merck.png'); ?>"
+				alt="Merck Pharmaceuticals" /> </a> <a
+				href="http://www.exxonmobil.com"><img
+				src="<?php echo $this->getImagesUrl('customers/exxon.png'); ?>"
+				alt="Merck Pharmaceuticals" /> </a> <a
+				href="http://www.deloitte.com"><img
+				src="<?php echo $this->getImagesUrl('customers/deloitte.png'); ?>"
+				alt="Deloitte" /> </a> <a href="http://matherlifeways.com/"><img
+				src="<?php echo $this->getImagesUrl('customers/mather.png'); ?>"
+				alt="Mather Lifeways" /> </a>
+		</div>
+	</div> 
+	
+	-->
+	
+	<!-- replace sidebar 2 with this one instead (newely created sidebar)
+	 <div class="box-sidebar three"><h3><?php echo t('Participating Locations'); ?></h3>
+		<div id="flags">
+			<a href="http://www.ibm.com"><img src="<?php echo $this->getImagesUrl('customers/ibm.png'); ?>" alt="IBM" /> </a> 
+			<a href="http://www.ti.com/"><img src="<?php echo $this->getImagesUrl('customers/ti.png'); ?>" alt="Texas Instrument" /> </a> 
+			<a href="http://www.merck.com"><img src="<?php echo $this->getImagesUrl('customers/merck.png'); ?>" alt="Merck Pharmaceuticals" /> </a> 
+			<a href="http://www.exxonmobil.com"><img src="<?php echo $this->getImagesUrl('customers/exxon.png'); ?>" alt="Merck Pharmaceuticals" /> </a> 
+			<a href="http://www.deloitte.com"><img src="<?php echo $this->getImagesUrl('customers/deloitte.png'); ?>" alt="Deloitte" /> </a> 
+			<a href="http://matherlifeways.com/"><img src="<?php echo $this->getImagesUrl('customers/mather.png'); ?>" alt="Mather Lifeways" /> </a>
+		</div>
+	</div> 
+	-->
 
 	<div class="box-sidebar one">
 		<h3>
@@ -351,105 +392,79 @@ $this->widget(
 <!--  start tutorial course here -->
 
 <div id="tutorial" style="display: none;">
-	<div id="slide-1" class="slide">
-		<h2 class="flowers">
-			<?php echo t('Tutorial'); ?>
-		</h2>
-				<hr>
+	<div id="slide-1" class="slide"><h2 class="flowers"><?php echo t('Tutorial'); ?></h2>
+	
+		<hr>
 				
-			<p style="text-align: center; font-weight: bold;" />
-				THANK YOU for your interest and support!
-			</p>
-			<p>
-				<?php echo t('We are Mather LifeWays, a unique, non-denominational not-for-profit organization based in Evanston, 
-				Illinois, USA, founded more than 70 years ago. We provide a continuum of living and 
-				care; make neighborhoods better places for older adults to live, work, learn, contribute, and play; and identify, 
-				implement, and share best practices for wellness programs, aging-in-the-workplace 
-				issues, emergency preparedness, staff development, and online education and programs empowering working family 
-				caregivers. We are committed to being an ongoing resource for older adults and our 
-				partners - continuing to introduce progressive ideas and help advance all areas of aging and living well.'); ?>
-			</p>
-			<p>
-				<?php echo t('Through conducting applied research, Mather LifeWays Institute on Aging has developed award-winning, 
-				evidence-based education programs for professionals who serve older adults. Staffed by researchers and educators, 
-				the Institute is a global resource for information about wellness, successful aging service innovations, and 
-				educational programming.'); ?>
-			</p>
-			<p>
-				<?php echo t('This tutorial is designed to help demonstrate our course model. We will briefly explore dementia, 
-				Alzheimer\'s disease, and how they are related.'); ?>
-			</p>
-			<p>
-			<?php echo t('Memory loss and other signs of mental decline have profound effects
-					on the lives of individuals and families. But we are
-					convinced that a good quality of life can still be maintained for all
-					concerned by learning to make changes in lifestyle and outlook. For
-					many family members, this involves a change in relationships and
-					priorities. At times, the demands may seem overwhelming, but
-					understanding the type of cognitive impairment can be the first step
-					in combating a challenging situation.'); ?>
+		<p style="text-align: center; font-weight: bold;" />THANK YOU for your interest and support!</p>
+		<p>
+			<?php echo t('We are Mather LifeWays, a unique, non-denominational not-for-profit organization based in Evanston, 
+			Illinois, USA, founded more than 70 years ago. We provide a continuum of living and care; make neighborhoods better 
+			places for older adults to live, work, learn, contribute, and play; and identify, implement, and share best practices 
+			for wellness programs, aging-in-the-workplace issues, emergency preparedness, staff development, and online education 
+			and programs empowering working family caregivers. We are committed to being an ongoing resource for older adults and 
+			our partners - continuing to introduce progressive ideas and help advance all areas of aging and living well.'); ?>
 		</p>
-			<p style="font-weight: bold;" />
-			<?php echo t('Objectives'); ?>
-			</p>
-			<p>
+		<p>
+			<?php echo t('Through conducting applied research, Mather LifeWays Institute on Aging has developed award-winning, 
+			evidence-based education programs for professionals who serve older adults. Staffed by researchers and educators, 
+			the Institute is a global resource for information about wellness, successful aging service innovations, and 
+			educational programming.'); ?>
+		</p>
+		<p>
+			<?php echo t('This tutorial is designed to help demonstrate our course model. We will briefly explore dementia, 
+			Alzheimer\'s disease, and how they are related.'); ?>
+		</p>
+		<p>
+			<?php echo t('Memory loss and other signs of mental decline have profound effects on the lives of individuals and families. But we are
+			convinced that a good quality of life can still be maintained for all concerned by learning to make changes in lifestyle and outlook. For
+			many family members, this involves a change in relationships and priorities. At times, the demands may seem overwhelming, but
+			understanding the type of cognitive impairment can be the first step in combating a challenging situation.'); ?>
+		</p>
+		<p style="font-weight: bold;" /><?php echo t('Objectives'); ?></p>
+		<p>
 			<ul>
 				<li><?php echo t('Describe dementia'); ?></li>
 				<li><?php echo t('Describe Alzheimer\'s disease'); ?></li>
 				<li><?php echo t('Describe the relationship between dementia and Alzheimer\'s disease'); ?>
 				</li>
 			</ul>
-			</p>
-			<p style="font-size: small; font-style: italic;" />
-			<?php echo t('Data and research have been developed or collected for this tutorial
-			course by the following:'); ?>
 		</p>
+		<p style="font-size: small; font-style: italic;" /><?php echo t('Data and research have been developed or collected for this tutorial
+			course by the following:'); ?></p>
 
-		<ul>
-			<li style="font-size: small; font-style: italic;" /><a href="http://www.alz.org" target="_blank">Alzheimer's
-					Association</a> <?php echo t('(USA)'); ?></li>
-			<li style="font-size: small; font-style: italic;" /><a href="http://matherlifewaysinstituteonaging.com"
-				target="_blank">Mather LifeWays Institute on Aging</a> <?php echo t('(USA)'); ?>
-			</li>
-			<li style="font-size: small; font-style: italic;" /><a href="http://www.nia.nih.gov" target="_blank">United States
-					Department of Health &amp; Human Services - National Institute on
-					Aging</a></li>
-		</ul>
-		<p class="course-buttons" style="text-align: center; ">
-				<a href="javascript:;" class="button right"	onClick="$.fancybox.next();"><?php echo t('Start Tutorial &raquo;'); ?>
-				</a>
-		</p>
+			<ul>
+				<li style="font-size: small; font-style: italic;" /><a href="http://www.alz.org" target="_blank">Alzheimer's
+						Association</a> <?php echo t('(USA)'); ?></li>
+				<li style="font-size: small; font-style: italic;" /><a href="http://matherlifewaysinstituteonaging.com"
+					target="_blank">Mather LifeWays Institute on Aging</a> <?php echo t('(USA)'); ?>
+				</li>
+				<li style="font-size: small; font-style: italic;" /><a href="http://www.nia.nih.gov" target="_blank">United States
+						Department of Health &amp; Human Services - National Institute on
+						Aging</a></li>
+			</ul>
+		<p class="course-buttons" style="text-align: center; "><a href="javascript:;" class="button right" onClick="$.fancybox.next();"><?php echo t('Start Tutorial &raquo;'); ?></a></p>
 	</div>
 
 	<!--   Slide #2 Alzheimer's disease    -->
 
 	<div id="slide-2" class="slide">
-		<h4 style="font-size: 2em;">
-			<?php echo t('Alzheimer\'s disease'); ?>
-		</h4>
+		<h4 style="font-size: 2em;"><?php echo t('Alzheimer\'s disease'); ?></h4>
+		
 			<hr>
 			
-			<p>
-				<?php echo t('Alzheimer\'s disease is an irreversible, progressive brain disease
-					that slowly destroys memory, thinking skills, behavior, and
-					eventually even the ability to carry out the simplest tasks of daily
-					living. Symptoms usually develop slowly, worsen over time, and first appear after age 60. Alzheimer\'s
-					disease is the most common form and cause of dementia among older people.
-					Alzheimer\'s has no current cure, but treatments for symptoms are
-					available and research continues. The disease is named after Dr.
-					Alois Alzheimer.'); ?>
-			</p>
+		<p>
+			<?php echo t('Alzheimer\'s disease is an irreversible, progressive brain disease that slowly destroys memory, thinking skills, behavior, and
+					eventually even the ability to carry out the simplest tasks of daily living. Symptoms usually develop slowly, worsen over time, and first appear after age 60. Alzheimer\'s
+					disease is the most common form and cause of dementia among older people. Alzheimer\'s has no current cure, but treatments for symptoms are
+					available and research continues. The disease is named after Dr. Alois Alzheimer.'); ?>
+		</p>
 			<ul>
-				<li class="pull-quote"><?php echo t('5.4 million Americans are living with Alzheimer\'s disease.'); ?>
-				</li>
-				<li class="pull-quote"><?php echo t('One in eight older Americans has Alzheimer\'s disease.'); ?>
-				</li>
-				<li class="pull-quote"><?php echo t('Alzheimer\'s is not a normal part of aging'); ?>
-				</li>
+				<li class="pull-quote"><?php echo t('5.4 million Americans are living with Alzheimer\'s disease.'); ?></li>
+				<li class="pull-quote"><?php echo t('One in eight older Americans has Alzheimer\'s disease.'); ?></li>
+				<li class="pull-quote"><?php echo t('Alzheimer\'s is not a normal part of aging'); ?></li>
 			</ul>
-			<p style="font-weight: bold;" />
-				<?php echo t('What to look for if you suspect someone is suffering from Alzheimer\'s disease:'); ?>
-			</p>
+			<p style="font-weight: bold;" /><?php echo t('What to look for if you suspect someone is suffering from Alzheimer\'s disease:'); ?></p>
 
 		<ul>
 			<li><?php echo t('Challenges in planning or solving problems'); ?></li>
@@ -464,38 +479,27 @@ $this->widget(
 			allowfullscreen="" class="tutorial-video"></iframe></p>
 		
 		<p class="course-buttons" style="text-align: center">
-			<a href="javascript:;" class="button left"
-				onclick="$.fancybox.prev();"><?php echo t('&laquo; Back'); ?> </a> <a
-				href="javascript:;" class="button right"
-				onClick="$.fancybox.next();"><?php echo t('Next &raquo;'); ?> </a>
+			<a href="javascript:;" class="button left" onclick="$.fancybox.prev();"><?php echo t('&laquo; Back'); ?> </a>
+			<a href="javascript:;" class="button right" onClick="$.fancybox.next();"><?php echo t('Next &raquo;'); ?> </a>
 		</p>
 	</div>
 
 	<!--  Slide #3 dementia   -->
 
 	<div id="slide-3" class="slide">
-
 		<h4 style="font-size: 2em;"><?php echo t('Dementia'); ?></h4>
 
 		<hr>	
+		
 		<p>
-			<?php echo t('Dementia refers to an acquired and progressive loss of mental
-					functions due to a brain disorder. Dementia is not a specific
-					disease. It is an overall term that describes a wide range of symptoms
-					associated with a decline in memory or other thinking skills severe
-					enough to reduce a persons ability to perform everyday activities. A
-					medical diagnosis is required to determine the underlying cause or
-					causes of symptoms.'); ?>
+			<?php echo t('Dementia refers to an acquired and progressive loss of mental functions due to a brain disorder. Dementia is not a specific
+			disease. It is an overall term that describes a wide range of symptoms associated with a decline in memory or other thinking skills severe
+			enough to reduce a persons ability to perform everyday activities. A medical diagnosis is required to determine the underlying cause or
+			causes of symptoms.'); ?>
 		</p>
-
+		<p style="font-weight: bold;" /><?php echo t('Symptoms and signs of dementia'); ?></p>
 		<p>
-			<strong> <?php echo t('Symptoms and signs of dementia'); ?>
-			</strong>
-		</p>
-
-		<p>
-			<?php echo t('While symptoms of dementia can vary greatly, at least two of the
-					following core mental functions, amongst others, must be significantly impaired to be
+			<?php echo t('While symptoms of dementia can vary greatly, at least two of the following core mental functions, amongst others, must be significantly impaired to be
 			considered dementia:'); ?>
 		</p>
 
@@ -506,21 +510,15 @@ $this->widget(
 		</ul>
 
 		<p>
-			<?php echo t('People with dementia may have problems with short-term memory,
-					keeping track of a purse or wallet, paying bills, planning and
-					preparing meals, remembering appointments or traveling out of the
-					neighborhood. Many dementias are progressive, meaning symptoms start
+			<?php echo t('People with dementia may have problems with short-term memory, keeping track of a purse or wallet, paying bills, planning and
+			preparing meals, remembering appointments or traveling out of the neighborhood. Many dementias are progressive, meaning symptoms start
 			out slowly and gradually get worse.'); ?>
 		</p>
-
-			<img src="<?php echo $this->getImagesUrl('image-men.png'); ?>"
-							style="margin: 20px 20px; width: 95%;" />
+			<img src="<?php echo $this->getImagesUrl('image-men.png'); ?>" style="margin: 20px 20px; width: 95%;" />
 
 		<p class="course-buttons" style="text-align: center">
-			<a href="javascript:;" class="button left"
-				onclick="$.fancybox.prev();"><?php echo t('&laquo; Back'); ?> </a> <a
-				href="javascript:;" class="button right"
-				onClick="$.fancybox.next();"><?php echo t('Next &raquo;'); ?> </a>
+			<a href="javascript:;" class="button left" onclick="$.fancybox.prev();"><?php echo t('&laquo; Back'); ?> </a>
+			<a href="javascript:;" class="button right" onClick="$.fancybox.next();"><?php echo t('Next &raquo;'); ?> </a>
 		</p>
 	</div>
 
@@ -661,18 +659,11 @@ $this->widget(
 				box-shadow: 0 0 10px #999;
 				height: 65px;
 				" />
-			<p>
-				<?php echo t('Alzheimer\'s disease is the most common form of dementia.'); ?>
+			<p><?php echo t('Alzheimer\'s disease is the most common form of dementia.'); ?>
 				<select>
-					<option selected="selected" value="select">
-						<?php echo t('Select'); ?>
-					</option>
-					<option value="1">
-						<?php echo t('True'); ?>
-					</option>
-					<option value="0">
-						<?php echo t('False'); ?>
-					</option>
+					<option selected="selected" value="select"><?php echo t('Select'); ?></option>
+					<option value="1"><?php echo t('True'); ?></option>
+					<option value="0"><?php echo t('False'); ?></option>
 				</select>
 			</p>
 		</div>
@@ -696,12 +687,9 @@ $this->widget(
 		</div>
 
 		<p class="course-buttons" style="text-align: center;">
-			<a href="javascript:;" class="button left"
-				onclick="$.fancybox.prev();"><?php echo t('&laquo;
-						Back'); ?> </a> <a href="javascript:;" class="button right"
-				onClick="$.fancybox.next();"><?php echo t('Next &raquo;'); ?> </a>
+			<a href="javascript:;" class="button left" onclick="$.fancybox.prev();"><?php echo t('&laquo; Back'); ?> </a>
+			<a href="javascript:;" class="button right" onClick="$.fancybox.next();"><?php echo t('Next &raquo;'); ?> </a>
 		</p>
-
 	</div>
 
 	<!--   slide 6 - closing here    -->
@@ -711,22 +699,20 @@ $this->widget(
 		<hr>
 		
 		<p><?php echo t('With such a profound impact on society, business, and potentially	on your family, understanding
-						dementia and Alzheimer\'s disease is very important. After participating in this tutorial, you
-						should now be able to understand and explaing what Alzheimer\'s disease and dementia are.'); ?></p>
-		<p>
-			<?php echo t('Thank you for participating in this tutorial course! Now that you have a
-						 	better idea on what to expect, your next step is to register and
-							begin participating in the various online courses. Please contact us if you have questions or need help.'); ?>
-		</p>	
-		<p style="font-weight: bold;" />
-			<?php echo t('Certificate of Completion (English)'); ?>
+			dementia and Alzheimer\'s disease is very important. After participating in this tutorial, you
+			should now be able to understand and explaing what Alzheimer\'s disease and dementia are.'); ?>
 		</p>
-		
-		<p><a href="/themes/onlinecourseportal/images/CourseCompletionCertificate.pdf"
-					target="_blank"><img src="/themes/onlinecourseportal/images/AcrobatReaderIcon.png" /></a></p>
-
-		<p class="course-buttons" style="text-align: center;"><a href="#" onClick="parent.jQuery.fancybox.close();"
-				class="button left"> <?php echo t('Exit'); ?></a></p>
-
+		<p>
+			<?php echo t('Thank you for participating in this tutorial course! Now that you have a better idea on what to expect, your next step is to register and
+			begin participating in the various online courses. Please contact us if you have questions or need help.'); ?>
+		</p>
+		<p style="font-weight: bold;" /><?php echo t('Certificate of Completion (English)'); ?></p>
+				
+		<p><a href="/themes/onlinecourseportal/images/CourseCompletionCertificate.pdf" target="_blank">
+			<img src="<?php echo $this->getImagesUrl('AcrobatReaderIcon.png'); ?>" /></a>
+		</p>
+		<p class="course-buttons" style="text-align: center;">
+			<a href="#" onClick="parent.jQuery.fancybox.close();" class="button left"> <?php echo t('Exit'); ?></a>
+		</p>
 	</div>
 </div>
