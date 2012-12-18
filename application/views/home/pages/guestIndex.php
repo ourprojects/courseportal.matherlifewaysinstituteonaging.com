@@ -371,14 +371,13 @@ $this->widget(
 			</p>
 			<p>
 				<?php echo t('Through conducting applied research, Mather LifeWays Institute on Aging has developed award-winning, 
-				evidence-based education programs for professionals who serve older adults. Staffed by nationally recognized 
-				researchers and educators, the Institute is a global resource for information about wellness, successful 
-				aging service innovations, and educational programming.'); ?>
+				evidence-based education programs for professionals who serve older adults. Staffed by researchers and educators, 
+				the Institute is a global resource for information about wellness, successful aging service innovations, and 
+				educational programming.'); ?>
 			</p>
 			<p>
-				<?php echo t('This tutorial is designed to help demonstrate our course model, and is meant to be a 
-						basic presentation. We will briefly explore dementia, Alzheimer\'s disease, and how they are related.
-				Please feel free to contact us if you have questions, or need help.'); ?>
+				<?php echo t('This tutorial is designed to help demonstrate our course model. We will briefly explore dementia, 
+				Alzheimer\'s disease, and how they are related.'); ?>
 			</p>
 			<p>
 			<?php echo t('Memory loss and other signs of mental decline have profound effects
@@ -429,10 +428,7 @@ $this->widget(
 			<?php echo t('Alzheimer\'s disease'); ?>
 		</h4>
 			<hr>
-			<p>
-				<?php echo t('With such a profound impact on society, business, and potentially	on your family, could 
-				you explain what Alzheimer\'s disease is? How about dementia?'); ?>
-			</p>
+			
 			<p>
 				<?php echo t('Alzheimer\'s disease is an irreversible, progressive brain disease
 					that slowly destroys memory, thinking skills, behavior, and
@@ -441,7 +437,7 @@ $this->widget(
 					disease is the most common form and cause of dementia among older people.
 					Alzheimer\'s has no current cure, but treatments for symptoms are
 					available and research continues. The disease is named after Dr.
-					Alois Alzheimer. According to the Alzheimer\'s Association (2012) (USA):'); ?>
+					Alois Alzheimer.'); ?>
 			</p>
 			<ul>
 				<li class="pull-quote"><?php echo t('5.4 million Americans are living with Alzheimer\'s disease.'); ?>
@@ -473,7 +469,7 @@ $this->widget(
 		</p>
 	</div>
 
-	<!--  dementia here    -->
+	<!--  Slide #3 dementia   -->
 
 	<div id="slide-3" class="slide">
 
@@ -593,7 +589,7 @@ $this->widget(
 		<h4 style="font-size: 2em;"><?php echo t('Assessment'); ?></h4>
 
 		<hr>
-		
+			
 		<p><?php echo t('Thinking about the material you just read, please try and correctly answer the 
 			assessment questions below without searching the Internet. Your responses are not recorded, 
 			but you will receive immediate feedback.'); ?></p>
@@ -708,16 +704,24 @@ $this->widget(
 
 	<!--   slide 6 - closing here    -->
 
-	<div id="slide-6" class="slide"><h4 style="font-size: 2em;"><?php echo t('Completion and Certificate (English)'); ?></h4>
+	<div id="slide-6" class="slide"><h4 style="font-size: 2em;"><?php echo t('Conclusion'); ?></h4>
 
 		<hr>
+		
+		<p><?php echo t('With such a profound impact on society, business, and potentially	on your family, understanding
+						dementia and Alzheimer\'s disease is very important. After participating in this tutorial, you
+						should now be able to understand and explaing what Alzheimer\'s disease and dementia are.'); ?></p>
 		<p>
 			<?php echo t('Thank you for participating in this tutorial course! Now that you have a
 						 	better idea on what to expect, your next step is to register and
-							begin participating!'); ?>
+							begin participating in the various online courses. Please contact us if you have questions or need help.'); ?>
 		</p>	
-		<p><?php echo t('Click <a href="/themes/onlinecourseportal/images/CourseCompletionCertificate.pdf"
-					target="_blank">here</a> to download your certificate.'); ?></p>
+		<p style="font-weight: bold;" />
+			<?php echo t('Certificate of Completion (English)'); ?>
+		</p>
+		
+		<p><a href="/themes/onlinecourseportal/images/CourseCompletionCertificate.pdf"
+					target="_blank"><img src="/themes/onlinecourseportal/images/AcrobatReaderIcon.png" /></a></p>
 
 		<p class="course-buttons" style="text-align: center;"><a href="#" onClick="parent.jQuery.fancybox.close();"
 				class="button left"> <?php echo t('Exit'); ?></a></p>
