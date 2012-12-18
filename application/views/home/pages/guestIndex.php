@@ -38,62 +38,27 @@ $this->widget(
 );
 
 ?>
-<div id="home-image">
-	<h1>
-		<?php echo t('Web-based Training for Caregivers'); ?>
-	</h1>
-</div>
-<div id="sidebar">
-
-	<div class="box-sidebar zero">
-		<a href="<?php echo $this->createUrl('user/register'); ?>"><?php echo t('Register'); ?>
-		</a> <a href="<?php echo $this->createUrl('home/contact'); ?>"
-			class="teal"><?php echo t('Request Information'); ?> </a> <a
-			href="#slide-1" data-fancybox-group="open-tutorial"
-			class="teal open-tutorial"> <?php echo t('Tutorial'); ?>
-		</a> <a href="#slide-2" data-fancybox-group="open-tutorial"
-			class="open-tutorial" style="display: none;"></a> <a href="#slide-3"
-			data-fancybox-group="open-tutorial" class="open-tutorial"
-			style="display: none;"></a> <a href="#slide-4"
-			data-fancybox-group="open-tutorial" class="open-tutorial"
-			style="display: none;"></a> <a href="#slide-5"
-			data-fancybox-group="open-tutorial" class="open-tutorial"
-			style="display: none;"></a> <a href="#slide-6"
-			data-fancybox-group="open-tutorial" class="open-tutorial"
-			style="display: none;"></a>
+	<div id="home-image">
+		<h1><?php echo t('Web-based Training for Caregivers'); ?></h1>
 	</div>
+	<div id="sidebar">
+		<div class="box-sidebar zero">
+			<a href="<?php echo $this->createUrl('user/register'); ?>"><?php echo t('Register'); ?> </a>
+			<a href="<?php echo $this->createUrl('home/contact'); ?>" class="teal"><?php echo t('Request Information'); ?> </a>
+			<a href="#slide-1" data-fancybox-group="open-tutorial" class="teal open-tutorial"> <?php echo t('Tutorial'); ?> </a>
+			<a href="#slide-2" data-fancybox-group="open-tutorial" class="open-tutorial" style="display: none;"></a> 
+			<a href="#slide-3" data-fancybox-group="open-tutorial" class="open-tutorial" style="display: none;"></a> 
+			<a href="#slide-4" data-fancybox-group="open-tutorial" class="open-tutorial" style="display: none;"></a> 
+			<a href="#slide-5" data-fancybox-group="open-tutorial" class="open-tutorial" style="display: none;"></a> 
+			<a href="#slide-6" data-fancybox-group="open-tutorial" class="open-tutorial" style="display: none;"></a>
+		</div>
 	
 	
 	<!-- replace sidebar 1 with this one instead and move current one down, and delete original one below
 	
 	 <div class="box-sidebar two">
-		<h3>
-			<?php echo t('Our Clients'); ?>
-		</h3>
+		<h3><?php echo t('Our Clients'); ?></h3>
 		<div id="customers">
-			<a href="http://www.ibm.com"><img
-				src="<?php echo $this->getImagesUrl('customers/ibm.png'); ?>"
-				alt="IBM" /> </a> <a href="http://www.ti.com/"><img
-				src="<?php echo $this->getImagesUrl('customers/ti.png'); ?>"
-				alt="Texas Instrument" /> </a> <a href="http://www.merck.com"><img
-				src="<?php echo $this->getImagesUrl('customers/merck.png'); ?>"
-				alt="Merck Pharmaceuticals" /> </a> <a
-				href="http://www.exxonmobil.com"><img
-				src="<?php echo $this->getImagesUrl('customers/exxon.png'); ?>"
-				alt="Merck Pharmaceuticals" /> </a> <a
-				href="http://www.deloitte.com"><img
-				src="<?php echo $this->getImagesUrl('customers/deloitte.png'); ?>"
-				alt="Deloitte" /> </a> <a href="http://matherlifeways.com/"><img
-				src="<?php echo $this->getImagesUrl('customers/mather.png'); ?>"
-				alt="Mather Lifeways" /> </a>
-		</div>
-	</div> 
-	
-	-->
-	
-	<!-- replace sidebar 2 with this one instead (newely created sidebar)
-	 <div class="box-sidebar three"><h3><?php echo t('Participating Locations'); ?></h3>
-		<div id="flags">
 			<a href="http://www.ibm.com"><img src="<?php echo $this->getImagesUrl('customers/ibm.png'); ?>" alt="IBM" /> </a> 
 			<a href="http://www.ti.com/"><img src="<?php echo $this->getImagesUrl('customers/ti.png'); ?>" alt="Texas Instrument" /> </a> 
 			<a href="http://www.merck.com"><img src="<?php echo $this->getImagesUrl('customers/merck.png'); ?>" alt="Merck Pharmaceuticals" /> </a> 
@@ -102,99 +67,81 @@ $this->widget(
 			<a href="http://matherlifeways.com/"><img src="<?php echo $this->getImagesUrl('customers/mather.png'); ?>" alt="Mather Lifeways" /> </a>
 		</div>
 	</div> 
+	
+	-->
+	
+	<!-- replace sidebar 2 with this one instead (newely created sidebar)
+	 <div class="box-sidebar three"><h3><?php echo t('Participating Locations'); ?></h3>
+		<div id="flags">
+			<img src="<?php echo $this->getImagesUrl('United-States-Flag-128.png'); ?>" alt="USA" /> </a> 
+			<img src="<?php echo $this->getImagesUrl('China-Flag-128.png'); ?>" alt="China" /> </a> 
+			<img src="<?php echo $this->getImagesUrl('Hong-Kong-Flag-128.png'); ?>" alt="Hong Kong" /> </a> 
+			<img src="<?php echo $this->getImagesUrl('Brazil-Flag-128.png'); ?>" alt="Brazil" /> </a> 
+			<img src="<?php echo $this->getImagesUrl('Mexico-Flag-128.png'); ?>" alt="Mexico" /> </a> 
+			<img src="<?php echo $this->getImagesUrl('Taiwan-Flag-128.png'); ?>" alt="Taiwan" /> </a>
+			<img src="<?php echo $this->getImagesUrl('Argentina-Flag-128.png'); ?>" alt="Argentina" /> </a>
+			<img src="<?php echo $this->getImagesUrl('England-Flag-128.png'); ?>" alt="England" /> </a>
+			<img src="<?php echo $this->getImagesUrl('Luxembourg-Flag-128.png'); ?>" alt="Luxembourg" /> </a>
+		</div>
+	</div> 
 	-->
 
 	<div class="box-sidebar one">
-		<h3>
-			<?php echo t('Statistics on Caregivers'); ?>
-		</h3>
+		<h3><?php echo t('Statistics on Caregivers'); ?></h3>
 		<div>
-			<img src="<?php echo $this->getImagesUrl('stat-two-thirds.png'); ?>"
-				style="margin-bottom: 8px;" /><br />
+			<img src="<?php echo $this->getImagesUrl('stat-two-thirds.png'); ?>" style="margin-bottom: 8px;" /><br />
 			<?php echo t('2/3 of working caregivers in the USA report conflicts between work and caregiving that result in increased
-					absenteeism, workday interruptions, reduced hours, and workload
-					shifting to other employees.'); ?>
+					absenteeism, workday interruptions, reduced hours, and workload shifting to other employees.'); ?>
 		</div>
 	</div>
 
 	<div class="box-sidebar two">
-		<h3>
-			<?php echo t('Recent Research (USA)'); ?>
-		</h3>
+		<h3><?php echo t('Recent Research (USA)'); ?></h3>
 		<div style="text-align: center">
 			<img src="<?php echo $this->getImagesUrl('metlife.jpg'); ?>" />
 		</div>
-		<p style="font-weight:bold; text-align:center;">
-			<?php echo t('Double Jeopardy for Baby Boomers Caring for Their Parents'); ?>
-			</p>
+		<p style="font-weight:bold; text-align:center;"><?php echo t('Double Jeopardy for Baby Boomers Caring for Their Parents'); ?></p>
 		<p>
-			<?php echo t('Nearly 10 million adult children over the age of 50 care for their
-					aging parents. These family caregivers are themselves aging as well
-					as providing care at a time when they also need to be planning and
-					saving for their own retirement. The study is an updated, national
-					look at adult children who work and care for their parents and the
-					impact of caregiving on their earnings and lifetime wealth.'); ?>
+			<?php echo t('Nearly 10 million adult children over the age of 50 care for their aging parents. These family caregivers are themselves aging as well
+					as providing care at a time when they also need to be planning and saving for their own retirement. The study is an updated, national
+					look at adult children who work and care for their parents and the impact of caregiving on their earnings and lifetime wealth.'); ?>
 		</p>
 		<p>
-			<a
-				href="http://www.metlife.com/assets/cao/mmi/publications/studies/2010/mmi-working-caregivers-employers-health-care-costs.pdf"
-				class="pdf"><?php echo t('The MetLife Study of Working Caregivers and
-						Employer Health Care Costs (English)'); ?> </a>
+			<a href="http://www.metlife.com/assets/cao/mmi/publications/studies/2010/mmi-working-caregivers-employers-health-care-costs.pdf"
+				class="pdf"><?php echo t('The MetLife Study of Working Caregivers and Employer Health Care Costs (English)'); ?> </a>
 		</p>
 	</div>
 
 	<div class="box-sidebar three">
-		<h3>
-			<?php echo t('Whitepapers (English)'); ?>
-		</h3>
+		<h3><?php echo t('Whitepapers (English)'); ?></h3>
 		<p>
-			<a
-				href="http://www.matherlifewaysinstituteonaging.com/wp-content/uploads/2012/03/eLearning-Maturing-Technology.pdf"
-				class="pdf"><?php echo t('e-Learning: Maturing Technology Brings Balance &amp;
-						Possibilities to Nursing Education'); ?> </a> <a
-				href="http://www.matherlifewaysinstituteonaging.com/wp-content/uploads/2012/03/How-eLearning-Can-Reduce-Expenses-and-Improve-Staff-Performance.pdf"
-				class="pdf"><?php echo t('The Bottom Line: How e-Learning Can Reduce Expenses and
-						Improve Staff Performance'); ?> </a>
+			<a href="http://www.matherlifewaysinstituteonaging.com/wp-content/uploads/2012/03/eLearning-Maturing-Technology.pdf"
+				class="pdf"><?php echo t('e-Learning: Maturing Technology Brings Balance &amp; Possibilities to Nursing Education'); ?> </a> 
+			<a href="http://www.matherlifewaysinstituteonaging.com/wp-content/uploads/2012/03/How-eLearning-Can-Reduce-Expenses-and-Improve-Staff-Performance.pdf"
+				class="pdf"><?php echo t('The Bottom Line: How e-Learning Can Reduce Expenses and Improve Staff Performance'); ?> </a>
 		</p>
 	</div>
 
 	<div class="box-sidebar four">
 
 		<h3>Aging in Action</h3>
-		<p>Aging in Action is Mather LifeWays Institute on Aging's monthly
-			e-newsletter and blog containing the latest research news in the
-			field of aging.</p>
-		<p style="text-align: center;">
-			<a href="http://twitter.com/aginginaction" target="_blank"> <img
-				src="<?php echo $this->getImagesUrl('twitter-bird.png'); ?>" />
-			</a>
-		</p>
+		<p>Aging in Action is Mather LifeWays Institute on Aging's monthly e-newsletter and blog containing the latest research news in the field of aging.</p>
+		<p style="text-align: center;"><a href="http://twitter.com/aginginaction" target="_blank"> <img src="<?php echo $this->getImagesUrl('twitter-bird.png'); ?>" /></a></p>
 		
 		<div class="clear"></div>
 	</div>
 
-	<div class="box-sidebar three">
-		<h3>
-			<?php echo t('Our Clients'); ?>
-		</h3>
+	 <div class="box-sidebar two">
+		<h3><?php echo t('Our Clients'); ?></h3>
 		<div id="customers">
-			<a href="http://www.ibm.com"><img
-				src="<?php echo $this->getImagesUrl('customers/ibm.png'); ?>"
-				alt="IBM" /> </a> <a href="http://www.ti.com/"><img
-				src="<?php echo $this->getImagesUrl('customers/ti.png'); ?>"
-				alt="Texas Instrument" /> </a> <a href="http://www.merck.com"><img
-				src="<?php echo $this->getImagesUrl('customers/merck.png'); ?>"
-				alt="Merck Pharmaceuticals" /> </a> <a
-				href="http://www.exxonmobil.com"><img
-				src="<?php echo $this->getImagesUrl('customers/exxon.png'); ?>"
-				alt="Merck Pharmaceuticals" /> </a> <a
-				href="http://www.deloitte.com"><img
-				src="<?php echo $this->getImagesUrl('customers/deloitte.png'); ?>"
-				alt="Deloitte" /> </a> <a href="http://matherlifeways.com/"><img
-				src="<?php echo $this->getImagesUrl('customers/mather.png'); ?>"
-				alt="Mather Lifeways" /> </a>
+			<a href="http://www.ibm.com"><img src="<?php echo $this->getImagesUrl('customers/ibm.png'); ?>" alt="IBM" /> </a> 
+			<a href="http://www.ti.com/"><img src="<?php echo $this->getImagesUrl('customers/ti.png'); ?>" alt="Texas Instrument" /> </a> 
+			<a href="http://www.merck.com"><img src="<?php echo $this->getImagesUrl('customers/merck.png'); ?>" alt="Merck Pharmaceuticals" /> </a> 
+			<a href="http://www.exxonmobil.com"><img src="<?php echo $this->getImagesUrl('customers/exxon.png'); ?>" alt="Merck Pharmaceuticals" /> </a> 
+			<a href="http://www.deloitte.com"><img src="<?php echo $this->getImagesUrl('customers/deloitte.png'); ?>" alt="Deloitte" /> </a> 
+			<a href="http://matherlifeways.com/"><img src="<?php echo $this->getImagesUrl('customers/mather.png'); ?>" alt="Mather Lifeways" /> </a>
 		</div>
-	</div>
+	</div> 
 
 </div>
 
