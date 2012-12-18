@@ -70,8 +70,7 @@ $this->widget(
 		<div>
 			<img src="<?php echo $this->getImagesUrl('stat-two-thirds.png'); ?>"
 				style="margin-bottom: 8px;" /><br />
-			<?php echo t('2/3 of working caregivers
-					report conflicts between work and caregiving that result in increased
+			<?php echo t('2/3 of working caregivers in the USA report conflicts between work and caregiving that result in increased
 					absenteeism, workday interruptions, reduced hours, and workload
 					shifting to other employees.'); ?>
 		</div>
@@ -79,14 +78,16 @@ $this->widget(
 
 	<div class="box-sidebar two">
 		<h3>
-			<?php echo t('Recent Research'); ?>
+			<?php echo t('Recent Research (USA)'); ?>
 		</h3>
 		<div style="text-align: center">
 			<img src="<?php echo $this->getImagesUrl('metlife.jpg'); ?>" />
 		</div>
+		<p style="font-weight:bold; text-align:center;">
+			<?php echo t('Double Jeopardy for Baby Boomers Caring for Their Parents'); ?>
+			</p>
 		<p>
-			<?php echo t('<strong>Double Jeopardy for Baby Boomers Caring for Their Parents</strong><br />
-					Nearly 10 million adult children over the age of 50 care for their
+			<?php echo t('Nearly 10 million adult children over the age of 50 care for their
 					aging parents. These family caregivers are themselves aging as well
 					as providing care at a time when they also need to be planning and
 					saving for their own retirement. The study is an updated, national
@@ -96,8 +97,8 @@ $this->widget(
 		<p>
 			<a
 				href="http://www.metlife.com/assets/cao/mmi/publications/studies/2010/mmi-working-caregivers-employers-health-care-costs.pdf"
-				class="pdf"><?php echo t('Read "The MetLife Study of Working Caregivers and
-						Employer Health Care Costs"'); ?> </a>
+				class="pdf"><?php echo t('The MetLife Study of Working Caregivers and
+						Employer Health Care Costs (English)'); ?> </a>
 		</p>
 	</div>
 
@@ -117,14 +118,6 @@ $this->widget(
 	</div>
 
 	<div class="box-sidebar four">
-		<!-- text here
-							header: 'Aging in Action'
-							text: Aging in Action is Mather LifeWays Institute on Aging's monthly 
-							e-newsletter and blog containing the latest research news in the field of aging.
-							larger twitter image here
-							link: Evanston, IL ‚àë http://www.aginginaction.com
-							
-							 -->
 
 		<h3>Aging in Action</h3>
 		<p>Aging in Action is Mather LifeWays Institute on Aging's monthly
@@ -135,9 +128,7 @@ $this->widget(
 				src="<?php echo $this->getImagesUrl('twitter-bird.png'); ?>" />
 			</a>
 		</p>
-		<p>
-			Evanston, IL &bull; <a href="http://www.aginginaction.com">www.aginginaction.com</a>
-		</p>
+		
 		<div class="clear"></div>
 	</div>
 
@@ -198,14 +189,14 @@ $this->widget(
 	</p>
 
 	<h2 class="flowers top-pad">
-		<?php echo t('A Closer Look - Lives of Caregivers (English)'); ?>
+		<?php echo t('A Closer Look - Lives of Caregivers'); ?>
 	</h2>
 
 	<p style="padding-bottom: 10px;">
 		<?php echo t( 
 				'Join us in looking at the incredible lives of several, unique caregivers, as they recall their
 				experience and emotion. Capturing various age groups and ethnicities, you will quickly relate to the
-		situation these caregivers were in.'); ?>
+		situation these caregivers were in. (English)'); ?>
 	</p>
 
 
