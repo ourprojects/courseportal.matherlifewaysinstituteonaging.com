@@ -56,7 +56,7 @@ $this->widget(
 	
 	<!-- replace sidebar 1 with this one instead and move current one down, and delete original one below
 	
-	 <div class="box-sidebar two">
+	 <div class="box-sidebar one">
 		<h3><?php echo t('Our Clients'); ?></h3>
 		<div id="customers">
 			<a href="http://www.ibm.com"><img src="<?php echo $this->getImagesUrl('customers/ibm.png'); ?>" alt="IBM" /> </a> 
@@ -71,16 +71,16 @@ $this->widget(
 	-->
 	
 	<!-- replace sidebar 2 with this one instead (newely created sidebar)
-	 <div class="box-sidebar three"><h3><?php echo t('Participating Locations'); ?></h3>
+	 <div class="box-sidebar two"><h3><?php echo t('Participating Locations'); ?></h3>
 		<div id="flags">
 			<img src="<?php echo $this->getImagesUrl('United-States-Flag-128.png'); ?>" alt="USA" /> </a> 
-			<img src="<?php echo $this->getImagesUrl('China-Flag-128.png'); ?>" alt="China" /> </a> 
+			<img src="<?php echo $this->getImagesUrl('China-Flag-128.png'); ?>" alt="China" /> </a> <br>
 			<img src="<?php echo $this->getImagesUrl('Hong-Kong-Flag-128.png'); ?>" alt="Hong Kong" /> </a> 
-			<img src="<?php echo $this->getImagesUrl('Brazil-Flag-128.png'); ?>" alt="Brazil" /> </a> 
+			<img src="<?php echo $this->getImagesUrl('Brazil-Flag-128.png'); ?>" alt="Brazil" /> </a> <br>
 			<img src="<?php echo $this->getImagesUrl('Mexico-Flag-128.png'); ?>" alt="Mexico" /> </a> 
-			<img src="<?php echo $this->getImagesUrl('Taiwan-Flag-128.png'); ?>" alt="Taiwan" /> </a>
+			<img src="<?php echo $this->getImagesUrl('Taiwan-Flag-128.png'); ?>" alt="Taiwan" /> </a><br>
 			<img src="<?php echo $this->getImagesUrl('Argentina-Flag-128.png'); ?>" alt="Argentina" /> </a>
-			<img src="<?php echo $this->getImagesUrl('England-Flag-128.png'); ?>" alt="England" /> </a>
+			<img src="<?php echo $this->getImagesUrl('England-Flag-128.png'); ?>" alt="England" /> </a><br>
 			<img src="<?php echo $this->getImagesUrl('Luxembourg-Flag-128.png'); ?>" alt="Luxembourg" /> </a>
 		</div>
 	</div> 
@@ -148,42 +148,25 @@ $this->widget(
 <div class="column-wide">
 	<h2 class="flowers">Mather LifeWays Institute on Aging</h2>
 	<p>
-		<?php echo t('Through research-based programs and innovative techniques,'); ?>
-		Mather LifeWays Institute on Aging
-		<?php echo t('is committed to advancing the field of
-				geriatric care. Cutting-edge research lays the foundation for our
-				solid solutions to senior care challenges, including recruitment,
-		mentorship, training, and retention.'); ?>
+		<?php echo t('Through research-based programs and innovative techniques,'); ?>Mather LifeWays Institute on Aging
+		<?php echo t('is committed to advancing the field of geriatric care. Cutting-edge research lays the foundation for our
+				solid solutions to senior care challenges, including recruitment, mentorship, training, and retention.'); ?>
 	</p>
 	<p>
-		<?php echo t('Used by individuals and entire organizations, our nationally
-				recognized, award-winning programs include training modules, online
-				courses, toolkits, and learning modules designed to make learning fun
-				and easy. Our programs have been shown to result in measurable
-		improvements in the quality of care provided and workforce retention.'); ?>
+		<?php echo t('Used by individuals and entire organizations, our nationally recognized, award-winning programs include training modules, online
+				courses, toolkits, and learning modules designed to make learning fun and easy. Our programs have been shown to result in measurable
+				improvements in the quality of care provided and workforce retention.'); ?>
 	</p>
 
-	<h2 class="flowers top-pad">
-		<?php echo t('Online
-				Courses for Caregivers'); ?>
-	</h2>
-	<p style="padding-bottom: 5px;">
-		<?php echo t( 
-				'We deliver online learning and web-based modalities using the latest
-				technologies to efficiently and cost-effectively empower professionals.
-				In addition, we are well-positioned to help conduct pilot studies that measure the impact
-				on both working caregivers and the bottom line for interested
-		corporations.'); ?>
+	<h2 class="flowers top-pad"><?php echo t('Online Courses for Caregivers'); ?></h2>
+	<p style="padding-bottom: 5px;"><?php echo t('We deliver online learning and web-based modalities using the latest technologies to efficiently and cost-effectively empower professionals.
+				In addition, we are well-positioned to help conduct pilot studies that measure the impact on both working caregivers and the bottom line for interested corporations.'); ?>
 	</p>
 
-	<h2 class="flowers top-pad">
-		<?php echo t('A Closer Look - Lives of Caregivers'); ?>
-	</h2>
+	<h2 class="flowers top-pad"><?php echo t('A Closer Look - Lives of Caregivers'); ?></h2>
 
 	<p style="padding-bottom: 10px;">
-		<?php echo t( 
-				'Join us in looking at the incredible lives of several, unique caregivers, as they recall their
-				experience and emotion. Capturing various age groups and ethnicities, you will quickly relate to the
+		<?php echo t('Join us in looking at the incredible lives of several, unique caregivers, as they recall their experience and emotion. Capturing various age groups and ethnicities, you will quickly relate to the
 		situation these caregivers were in. (English)'); ?>
 	</p>
 
@@ -211,32 +194,17 @@ $this->widget(
 		</div>
 	</div>
 
-	<h2 class="flowers top-pad" style="margin-top: 5px;">
-		<?php echo t('Pedagogy'); ?>
-	</h2>
+	<h2 class="flowers top-pad" style="margin-top: 5px;"><?php echo t('Pedagogy'); ?></h2>
 	<p>
-		<?php echo t('Effective online instruction depends on learning experiences
-				appropriately designed and facilitated by knowledgeable facilitators.
-				Because learners have different learning styles or a combination of
-				styles, our web-based training has been design using activities that
-				address their modes of learning in order to provide significant
-				experiences for each course user.'); ?>
+		<?php echo t('Effective online instruction depends on learning experiences appropriately designed and facilitated by knowledgeable facilitators.
+				Because learners have different learning styles or a combination of styles, our web-based training has been design using activities that
+				address their modes of learning in order to provide significant experiences for each course user.'); ?>
 	</p>
 
 
-	<p>
-		<?php echo t('Institution Wide Content Management - 25%')?>
-	</p>
-
-	<p>
-		<?php echo t('Online Course Delivery - 25%')?>
-	</p>
-
-	<p>
-		<?php echo t('Targeted Collaboration - 50%')?>
-	</p>
-
-
+	<p><?php echo t('Institution Wide Content Management - 25%')?></p>
+	<p><?php echo t('Online Course Delivery - 25%')?></p>
+	<p><?php echo t('Targeted Collaboration - 50%')?></p>
 
 	<div id="pie-chart">
 		<img src="<?php echo $this->getImagesUrl('home-chart.png'); ?>" />
@@ -280,27 +248,21 @@ $this->widget(
 			</a>
 		</p>
 	</div>
-
 </div>
 
 <div id="bottom-logos">
-
-	<h4>
-		<?php echo t('Partners'); ?>
-	</h4>
+	<h4><?php echo t('Partners'); ?></h4>
 	<a href="http://www.rushu.rush.edu" id="rush">Rush University (Chicago)</a>
-	<a href="http://www.alz.org/" id="aa" target="_blank">Alzheimer's
-		Asssociation</a> <a href="https://github.com/" id="git"
-		target="_blank">GitHub</a> <a href="http://www.yiiframework.com/"
-		id="yii" target="_blank">Yii Framework</a> <a href="http://wfd.com/"
-		id="wfd" target="_blank">WFD</a> <a
-		href="http://www.discoursellc.com/" id="discourse" target="_blank">Discourse,
-		LLC.</a> <a href="http://gladerfilmworks.com/" id="glader"
-		target="_blank">Glader Filmworks</a> <a
-		href="http://www.mediastorm.com/" id="mediastorm" target="_blank">Mediastorm</a>
+	<a href="http://www.alz.org/" id="aa" target="_blank">Alzheimer's Asssociation</a> 
+		<a href="https://github.com/" id="git" target="_blank">GitHub</a> 
+		<a href="http://www.yiiframework.com/" id="yii" target="_blank">Yii Framework</a> 
+		<a href="http://wfd.com/" id="wfd" target="_blank">WFD</a> 
+		<a href="http://www.discoursellc.com/" id="discourse" target="_blank">Discourse, LLC.</a> 
+		<a href="http://gladerfilmworks.com/" id="glader" target="_blank">Glader Filmworks</a> 
+		<a href="http://www.mediastorm.com/" id="mediastorm" target="_blank">Mediastorm</a>
 	<div class="clear"></div>
-
 </div>
+
 <div style="display: none;">
 	<?php 
 	$this->widget(
