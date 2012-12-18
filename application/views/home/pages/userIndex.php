@@ -11,16 +11,16 @@ $clientScript->registerScript('quotes_rotator', "$('#quotes').quote_rotator({ran
 	</div>
 	<div id="sidebar">
 		<div class="box-sidebar three">
-			<h3><?php echo t('Statistics on Caregivers'); ?></h3>
+			<h3><?php echo t('Statistics on Caregivers (USA)'); ?></h3>
 			<ul id="quotes">
-				<li><img src="<?php echo $this->getImagesUrl('stat-one-quarter.png'); ?>" /><?php echo t('<span>1/4</span> of US households has a family caregiver providing some form of care or service to a relative or friend, age 50+'); ?></li>
-				<li><img src="<?php echo $this->getImagesUrl('stat-two-thirds.png'); ?>" /><?php echo t('<span>2/3</span> of these family caregivers are also working'); ?></li>
-				<li><img src="<?php echo $this->getImagesUrl('stat-half.png'); ?>" /><?php echo t('<span>50%</span> of employed caregivers work full-time'); ?></li>
+				<li style="list-style-type:none;" /><img src="<?php echo $this->getImagesUrl('stat-one-quarter.png'); ?>" /><?php echo t('<span>1/4</span> of US households has a family caregiver providing some form of care or service to a relative or friend, age 50+'); ?></li>
+				<li style="list-style-type:none;" /><img src="<?php echo $this->getImagesUrl('stat-two-thirds.png'); ?>" /><?php echo t('<span>2/3</span> of these family caregivers are also working'); ?></li>
+				<li style="list-style-type:none;" /><img src="<?php echo $this->getImagesUrl('stat-half.png'); ?>" /><?php echo t('<span>50%</span> of employed caregivers work full-time'); ?></li>
 			</ul>
 		</div>
 
 		<div class="box-sidebar four">
-			<h3><a href="http://feeds.feedburner.com/pewresearch/internetandtechnology" target="_blank">Pew Research</a></h3>
+			<h3><a href="http://feeds.feedburner.com/pewresearch/internetandtechnology" target="_blank">Pew Research (USA)</a></h3>
 			<p style="text-align: center;"><img src="<?php echo $this->getImagesUrl('pew.png'); ?>" /></p>
 			<p><?php echo t('As of April 2012, 53% of American adults age 65 and older use the internet or email. 
 			Though these adults are still less likely than all other age groups to use the internet, 
@@ -29,7 +29,7 @@ $clientScript->registerScript('quotes_rotator', "$('#quotes').quote_rotator({ran
 			
 			<!-- add image for whitepaper here, like a Adobe pdf icon or something -->
 			
-			<p><a href="http://pewinternet.org/~/media//Files/Reports/2012/PIP_Older_adults_and_internet_use.pdf" class="pdf">Click to view the report</a></p>
+			<p><a href="http://pewinternet.org/~/media//Files/Reports/2012/PIP_Older_adults_and_internet_use.pdf" class="pdf"><?php echo t('Click to view the report (English)'); ?></a></p>
 			<div class="clear"></div>
 		</div>
 
@@ -42,20 +42,21 @@ $clientScript->registerScript('quotes_rotator', "$('#quotes').quote_rotator({ran
 			
 			<!--- add image for whitepaper here, like a Adobe pdf icon or something -->						
 			
-			<p><a href="http://www.alz.org/national/documents/checklist_10signs.pdf" class="pdf">Click to download the handout</a></p>
+			<p><a href="http://www.alz.org/national/documents/checklist_10signs.pdf" class="pdf"><?php echo t('Click to download the handout (English)'); ?></a></p>
 			<div class="clear"></div>
 					
 		</div>
 				
 		<div class="box-sidebar two">
-			<h3 class="two-line"><?php echo t('Medicare.gov<br />Tips &amp; Resources for Caregivers'); ?></h3>
+			<h3 class="two-line"><?php echo t('Medicare.gov - Tips &amp; Resources for Caregivers (USA)'); ?></h3>
 			<p style="text-align: center;"><img src="<?php echo $this->getImagesUrl('medicare.png'); ?>" /></p>
 			<p><?php echo t('Are you familar and/or have you visited the Medicare website? 
 			The handout below is a list of tips and resources for caregivers as suggested by Medicare.'); ?></p>
 		
 			<!-- add image for whitepaper here, like a Adobe pdf icon or something -->						
 					
-			<p><a href="http://www.medicare.gov/files/ask-medicare-what-medicare-covers.pdf" class="pdf">Click to download the handout</a></p>
+			<p><a href="http://www.medicare.gov/files/ask-medicare-what-medicare-covers.pdf" class="pdf">
+			<?php echo t('Click to download the handout (English)'); ?></a></p>
 		</div>
 
 	</div>
@@ -81,7 +82,7 @@ $clientScript->registerScript('quotes_rotator', "$('#quotes').quote_rotator({ran
 		caregivers into current training programs. In addition, we are well-positioned to help conduct pilot studies that measure the impact on both 
 		working caregivers and the bottom line for interested corporations.'); ?></p>
 
-		<h2 class="flowers top-pad">The Sandwich Generation - by Media Storm <?php echo t('(English)'); ?></h2>
+		<h2 class="flowers top-pad">The Sandwich Generation - by Media Storm</h2>
 		<p><?php echo t('Filmmaker and photographer couple Julie Winokur and Ed Kashi were busy pursuing their careers 
 		and raising two children when Winokurs 83-year-old father, Herbie, became too infirm to care for himself. At that moment they joined 
 		some twenty million other Americans who make up the sandwich generation, those who find themselves responsible for the care of both 
@@ -89,7 +90,8 @@ $clientScript->registerScript('quotes_rotator', "$('#quotes').quote_rotator({ran
 		
 		<p><?php echo t('Authors of the book '); ?>Aging in America: The Years Ahead, <?php echo t('which chronicles the countrys 
 		fastest-growing segment of the population, Winokur and Kashi decided to tell their own story as they took on the care of Winokurs 
-		father. In '); ?>The Sandwich Generation<?php echo t(', they have created an honest, intimate account of their own shifting and challenging responsibilities, as well as some of their unexpected joys.'); ?></p>
+		father. In '); ?>The Sandwich Generation<?php echo t(', they have created an honest, intimate account of their own shifting 
+		and challenging responsibilities, as well as some of their unexpected joys. (English)'); ?></p>
 		
 		<div class="box-grey">
 			<div id="TheSandwichGeneration">
