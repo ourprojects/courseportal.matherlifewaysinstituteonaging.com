@@ -594,26 +594,14 @@ $this->widget(
 			assessment questions below without searching the Internet. Your responses are not recorded, 
 			but you will receive immediate feedback.'); ?></p>
 		
-		<div id="question" style="
-				padding: 10px;
-				background: #fff;
-				margin: 10px 10px 30px 10px;
-				border-radius: 5px;
-				box-shadow: 0 0 10px #999;
-				height: 65px;
-		" />
+	<div id="question" style="padding: 10px; background: #fff; margin: 10px 10px 30px 10px; border-radius: 5px; box-shadow: 0 0 10px #999; height: 65px;" />
 		<p><?php echo t('Is dementia a disease of the brain?'); ?>
 			<select>
-					<option selected="selected" value="select">
-						<?php echo t('Select'); ?>
-					</option>
-					<option value="1">
-						<?php echo t('Yes'); ?>
-					</option>
-					<option value="0">
-						<?php echo t('No') ?>
-					</option>
-			</select></p>
+					<option selected="selected" value="select"><?php echo t('Select'); ?></option>
+					<option value="1"><?php echo t('Yes'); ?></option>
+					<option value="0"><?php echo t('No') ?></option>
+			</select>
+		</p>
 
 				<?php $clientScript->registerScript('slide-3',
 						"$('#slide-3 #question select').change(function() {
@@ -625,31 +613,18 @@ $this->widget(
 						});");
 				?>
 		
-		</div>
+	</div>
 	
-	
-		<div id="question" style="
-				padding: 10px;
-				background: #fff;
-				margin: 10px 10px 30px 10px;
-				border-radius: 5px;
-				box-shadow: 0 0 10px #999;
-				height: 65px;
-				" />
+		<div id="question" style="padding: 10px; background: #fff; margin: 10px 10px 30px 10px; border-radius: 5px; box-shadow: 0 0 10px #999; height: 65px;" />
 						
 			<p><?php echo t('Is Alzehimer\'s disease a disease of the brain?'); ?>
 				<select>
-					<option selected="selected" value="select">
-						<?php echo t('Select'); ?>
-					</option>
-					<option value="1">
-						<?php echo t('Yes'); ?>
-					</option>
-					<option value="0">
-						<?php echo t('No') ?>
-					</option>
-				</select></p>
-			</p></div>
+					<option selected="selected" value="select"><?php echo t('Select'); ?></option>
+					<option value="1"><?php echo t('Yes'); ?></option>
+					<option value="0"><?php echo t('No') ?></option>
+				</select>
+			</p>
+		</div>
 			
 				<div id="question" style="
 				padding: 10px;
