@@ -52,26 +52,20 @@ $this->widget(
 			<a href="#slide-5" data-fancybox-group="open-tutorial" class="open-tutorial" style="display: none;"></a> 
 			<a href="#slide-6" data-fancybox-group="open-tutorial" class="open-tutorial" style="display: none;"></a>
 		</div>
-	
-	
-	<!-- replace sidebar 1 with this one instead and move current one down, and delete original one below
-	
+		
 	 <div class="box-sidebar one">
 		<h3><?php echo t('Our Clients'); ?></h3>
 		<div id="customers">
-			<a href="http://www.ibm.com"><img src="<?php echo $this->getImagesUrl('customers/ibm.png'); ?>" alt="IBM" /> </a> 
-			<a href="http://www.ti.com/"><img src="<?php echo $this->getImagesUrl('customers/ti.png'); ?>" alt="Texas Instrument" /> </a> 
-			<a href="http://www.merck.com"><img src="<?php echo $this->getImagesUrl('customers/merck.png'); ?>" alt="Merck Pharmaceuticals" /> </a> 
-			<a href="http://www.exxonmobil.com"><img src="<?php echo $this->getImagesUrl('customers/exxon.png'); ?>" alt="Merck Pharmaceuticals" /> </a> 
-			<a href="http://www.deloitte.com"><img src="<?php echo $this->getImagesUrl('customers/deloitte.png'); ?>" alt="Deloitte" /> </a> 
-			<a href="http://matherlifeways.com/"><img src="<?php echo $this->getImagesUrl('customers/mather.png'); ?>" alt="Mather Lifeways" /> </a>
+			<a href="http://www.ibm.com" target="_blank"><img src="<?php echo $this->getImagesUrl('customers/ibm.png'); ?>" alt="IBM" /> </a> 
+			<a href="http://www.ti.com/" target="_blank"><img src="<?php echo $this->getImagesUrl('customers/ti.png'); ?>" alt="Texas Instrument" /> </a> 
+			<a href="http://www.merck.com" target="_blank"><img src="<?php echo $this->getImagesUrl('customers/merck.png'); ?>" alt="Merck Pharmaceuticals" /> </a> 
+			<a href="http://www.exxonmobil.com" target="_blank"><img src="<?php echo $this->getImagesUrl('customers/exxon.png'); ?>" alt="Merck Pharmaceuticals" /> </a> 
+			<a href="http://www.deloitte.com" target="_blank"><img src="<?php echo $this->getImagesUrl('customers/deloitte.png'); ?>" alt="Deloitte" /> </a> 
+			<a href="http://matherlifeways.com/" target="_blank"><img src="<?php echo $this->getImagesUrl('customers/mather.png'); ?>" alt="Mather Lifeways" /> </a>
 		</div>
 	</div> 
 	
-	-->
-	
-	<!-- replace sidebar 2 with this one instead (newely created sidebar)
-	 <div class="box-sidebar two"><h3><?php echo t('Participating Locations'); ?></h3>
+	<div class="box-sidebar one"><h3><?php echo t('Participating Locations'); ?></h3>
 		<div id="flags">
 			<img src="<?php echo $this->getImagesUrl('United-States-Flag-128.png'); ?>" alt="USA" /> </a> 
 			<img src="<?php echo $this->getImagesUrl('China-Flag-128.png'); ?>" alt="China" /> </a> <br>
@@ -80,11 +74,11 @@ $this->widget(
 			<img src="<?php echo $this->getImagesUrl('Mexico-Flag-128.png'); ?>" alt="Mexico" /> </a> 
 			<img src="<?php echo $this->getImagesUrl('Taiwan-Flag-128.png'); ?>" alt="Taiwan" /> </a><br>
 			<img src="<?php echo $this->getImagesUrl('Argentina-Flag-128.png'); ?>" alt="Argentina" /> </a>
-			<img src="<?php echo $this->getImagesUrl('England-Flag-128.png'); ?>" alt="England" /> </a><br>
+			<img src="<?php echo $this->getImagesUrl('United-Kingdom-Flag-128.png'); ?>" alt="England" /> </a><br>
 			<img src="<?php echo $this->getImagesUrl('Luxembourg-Flag-128.png'); ?>" alt="Luxembourg" /> </a>
 		</div>
 	</div> 
-	-->
+
 
 	<div class="box-sidebar one">
 		<h3><?php echo t('Statistics on Caregivers'); ?></h3>
@@ -130,18 +124,6 @@ $this->widget(
 		
 		<div class="clear"></div>
 	</div>
-
-	 <div class="box-sidebar two">
-		<h3><?php echo t('Our Clients'); ?></h3>
-		<div id="customers">
-			<a href="http://www.ibm.com"><img src="<?php echo $this->getImagesUrl('customers/ibm.png'); ?>" alt="IBM" /> </a> 
-			<a href="http://www.ti.com/"><img src="<?php echo $this->getImagesUrl('customers/ti.png'); ?>" alt="Texas Instrument" /> </a> 
-			<a href="http://www.merck.com"><img src="<?php echo $this->getImagesUrl('customers/merck.png'); ?>" alt="Merck Pharmaceuticals" /> </a> 
-			<a href="http://www.exxonmobil.com"><img src="<?php echo $this->getImagesUrl('customers/exxon.png'); ?>" alt="Merck Pharmaceuticals" /> </a> 
-			<a href="http://www.deloitte.com"><img src="<?php echo $this->getImagesUrl('customers/deloitte.png'); ?>" alt="Deloitte" /> </a> 
-			<a href="http://matherlifeways.com/"><img src="<?php echo $this->getImagesUrl('customers/mather.png'); ?>" alt="Mather Lifeways" /> </a>
-		</div>
-	</div> 
 
 </div>
 
