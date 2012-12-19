@@ -53,7 +53,7 @@ $this->widget(
 			<a href="#slide-6" data-fancybox-group="open-tutorial" class="open-tutorial" style="display: none;"></a>
 		</div>
 		
-	 <div class="box-sidebar one">
+	 <div class="box-sidebar">
 		<h3><?php echo t('Our Clients'); ?></h3>
 		<div id="customers">
 			<a href="http://www.ibm.com" target="_blank"><img src="<?php echo $this->getImagesUrl('customers/ibm.png'); ?>" alt="IBM" /> </a> 
@@ -67,15 +67,15 @@ $this->widget(
 	
 	<div class="box-sidebar one"><h3><?php echo t('Participating Locations'); ?></h3>
 		<div id="flags">
-			<img src="<?php echo $this->getImagesUrl('United-States-Flag-128.png'); ?>" alt="USA" /> </a> 
-			<img src="<?php echo $this->getImagesUrl('China-Flag-128.png'); ?>" alt="China" /> </a> <br>
-			<img src="<?php echo $this->getImagesUrl('Hong-Kong-Flag-128.png'); ?>" alt="Hong Kong" /> </a> 
-			<img src="<?php echo $this->getImagesUrl('Brazil-Flag-128.png'); ?>" alt="Brazil" /> </a> <br>
-			<img src="<?php echo $this->getImagesUrl('Mexico-Flag-128.png'); ?>" alt="Mexico" /> </a> 
-			<img src="<?php echo $this->getImagesUrl('Taiwan-Flag-128.png'); ?>" alt="Taiwan" /> </a><br>
-			<img src="<?php echo $this->getImagesUrl('Argentina-Flag-128.png'); ?>" alt="Argentina" /> </a>
-			<img src="<?php echo $this->getImagesUrl('United-Kingdom-Flag-128.png'); ?>" alt="England" /> </a><br>
-			<img src="<?php echo $this->getImagesUrl('Luxembourg-Flag-128.png'); ?>" alt="Luxembourg" /> </a>
+			<img src="<?php echo $this->getImagesUrl('United-States-Flag-64.png'); ?>" style="margin-right:25px;" alt="USA" />
+			<img src="<?php echo $this->getImagesUrl('China-Flag-64.png'); ?>" alt="China" /><br>
+			<img src="<?php echo $this->getImagesUrl('Hong-Kong-Flag-64.png'); ?>" style="margin-right:25px;" alt="Hong Kong" />
+			<img src="<?php echo $this->getImagesUrl('Brazil-Flag-64.png'); ?>" alt="Brazil" /><br>
+			<img src="<?php echo $this->getImagesUrl('Mexico-Flag-64.png'); ?>" style="margin-right:25px;" alt="Mexico" />
+			<img src="<?php echo $this->getImagesUrl('Taiwan-Flag-64.png'); ?>" alt="Taiwan" /><br>
+			<img src="<?php echo $this->getImagesUrl('Argentina-Flag-64.png'); ?>" style="margin-right:25px;" alt="Argentina" />
+			<img src="<?php echo $this->getImagesUrl('United-Kingdom-flag-64.png'); ?>" alt="England" /><br>
+			<img src="<?php echo $this->getImagesUrl('Luxembourg-Flag-64.png'); ?>" style="margin-right:25px;" alt="Luxembourg" />
 		</div>
 	</div> 
 
@@ -101,18 +101,16 @@ $this->widget(
 					look at adult children who work and care for their parents and the impact of caregiving on their earnings and lifetime wealth.'); ?>
 		</p>
 		<p>
-			<a href="http://www.metlife.com/assets/cao/mmi/publications/studies/2010/mmi-working-caregivers-employers-health-care-costs.pdf"
-				class="pdf"><?php echo t('The MetLife Study of Working Caregivers and Employer Health Care Costs (English)'); ?> </a>
+			<a href="http://www.metlife.com/assets/cao/mmi/publications/studies/2010/mmi-working-caregivers-employers-health-care-costs.pdf" class="pdf" target="_blank"><?php echo t('The MetLife Study of Working Caregivers and Employer Health Care Costs (English)'); ?> </a>
 		</p>
 	</div>
 
 	<div class="box-sidebar three">
 		<h3><?php echo t('Whitepapers (English)'); ?></h3>
 		<p>
-			<a href="http://www.matherlifewaysinstituteonaging.com/wp-content/uploads/2012/03/eLearning-Maturing-Technology.pdf"
-				class="pdf"><?php echo t('e-Learning: Maturing Technology Brings Balance &amp; Possibilities to Nursing Education'); ?> </a> 
+			<a href="http://www.matherlifewaysinstituteonaging.com/wp-content/uploads/2012/03/eLearning-Maturing-Technology.pdf" class="pdf" target="_blank"><?php echo t('e-Learning: Maturing Technology Brings Balance &amp; Possibilities to Nursing Education'); ?> </a> 
 			<a href="http://www.matherlifewaysinstituteonaging.com/wp-content/uploads/2012/03/How-eLearning-Can-Reduce-Expenses-and-Improve-Staff-Performance.pdf"
-				class="pdf"><?php echo t('The Bottom Line: How e-Learning Can Reduce Expenses and Improve Staff Performance'); ?> </a>
+				class="pdf" target="_blank"><?php echo t('The Bottom Line: How e-Learning Can Reduce Expenses and Improve Staff Performance'); ?> </a>
 		</p>
 	</div>
 
@@ -184,13 +182,20 @@ $this->widget(
 	</p>
 
 
-	<p><?php echo t('Institution Wide Content Management - 25%')?></p>
-	<p><?php echo t('Online Course Delivery - 25%')?></p>
-	<p><?php echo t('Targeted Collaboration - 50%')?></p>
-
-	<div id="pie-chart">
-		<img src="<?php echo $this->getImagesUrl('home-chart.png'); ?>" />
+				<p style="font-size:small; ">
+					<?php echo t('Institution Wide Content Management - 25%')?><br>
+					<?php echo t('Online Course Delivery - 25%')?><br>
+					<?php echo t('Targeted Collaboration - 50%')?>
+				</p>
+	
+	<div id="pie-charts">
+		<img id="pie-chart" src="<?php echo $this->getImagesUrl('home-chart.png'); ?>" />
 	</div>
+	
+
+	
+		
+
 
 	<div class="box-white">
 		<?php
