@@ -107,6 +107,12 @@ div.breadcrumbs span {
 	color: #fff;
 }
 
+#pie-charts-stats {
+	float: right;
+	padding: 115px 0 0 0;
+	line-height: 18pt;
+}
+
 /************** MENU STYLES **************/
 
 #mainmenu {
@@ -211,6 +217,9 @@ div.breadcrumbs span {
 	margin: 0 20px 20px 0;
 	float: right;
 }
+#sidebar img { 
+	max-width: 240px;
+}
 .box-sidebar {
 	padding: 0;
 	background: #eee;
@@ -286,6 +295,7 @@ div.breadcrumbs span {
 .box-sidebar li {
 	font-size: 9pt;
 	line-height: 14pt;
+	list-style-type: none;
 }
 .box-sidebar ul {
 	margin: 0;
@@ -322,6 +332,15 @@ div.breadcrumbs span {
 .box-sidebar ul.tweet_list li span, .box-sidebar ul.tweet_list li span span {
 	color: #6d6e71;
 	font-weight: normal;
+}
+
+#flags {
+	padding: 8px 0 0 13px;
+}
+#flags img {
+	float: left;
+	max-height: 45px;
+	margin: 5px 8px;
 }
 
 /************** COLUMN STYLES **************/
@@ -415,7 +434,7 @@ div.breadcrumbs span {
 /**************** STYLED BOX CLASSES ***************/
 
 .box-white {
-	padding: 10px;
+padding: 10px;
 	background: #fff;
 	margin: 10px 0 30px 0;
 	border-radius: 5px;
