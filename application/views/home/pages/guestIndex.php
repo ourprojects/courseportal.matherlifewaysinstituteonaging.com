@@ -79,7 +79,6 @@ $this->widget(
 		</div>
 	</div> 
 
-
 	<div class="box-sidebar one">
 		<h3><?php echo t('Statistics on Caregivers'); ?></h3>
 		<div>
