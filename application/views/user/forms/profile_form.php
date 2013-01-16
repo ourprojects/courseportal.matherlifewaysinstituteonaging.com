@@ -66,16 +66,7 @@
 		<?php echo $form->error($models['user_profile'], 'zip_code'); ?>
 	</div>
 	
-	<?php 
-	$this->widget(
-			'modules.surveyor.widgets.Survey', 
-			array('model' => $models['profile_questions'], 
-				  'title' => array('show' => false),
-				  'description' => array('show' => false),
-				  'form' => array('show' => false),
-				  'question' => array('htmlOptions' => array('class' => 'row')))
-		); 
-	?>
+	<?php $profileQuestions->run(); ?>
 				
 	<div class="row submit">
 		<?php echo CHtml::submitButton(t('Save Changes')); ?>

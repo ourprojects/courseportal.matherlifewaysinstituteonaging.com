@@ -17,7 +17,7 @@ class EFancyBox extends CWidget {
 	
 	// function to run the widget
     public function run() {
-    	 $this->render($this->viewName, $this->config, false);
+    	$this->render($this->viewName, $this->config, false);
 	}
 	
 	public function render($view, $data = array(), $return = false) {

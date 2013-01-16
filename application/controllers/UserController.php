@@ -138,22 +138,32 @@ class UserController extends ApiController {
 										new UserProfile : Yii::app()->getUser()->getModel()->userProfile,
 				'avatar' => Yii::app()->getUser()->getModel()->avatar === null ? 
 								new Avatar : Yii::app()->getUser()->getModel()->avatar,
-				'profile_questions' => Yii::app()->surveyor->profile->form,
 			);
 		$models['user_profile']->user_id = $models['user']->id;
 		$models['avatar']->user_id = $models['user']->id;
-		$models['profile_questions']->user_id = $models['user']->id;
+		
+		$profileQuestions = $this->createWidget(
+			'modules.surveyor.widgets.Survey', 
+			array('id' => 'profile', 
+				  'statsShown' => false,
+				  'titleShown' => false,
+				  'descriptionShown' => false,
+				  'formShown' => false,
+				  'questionHtmlOptions' => array('class' => 'row'))
+		);
+		
+		$profileQuestions->model->user_id = $models['user']->id;
 
 		// if it is ajax validation request
 		if(isset($_POST['ajax']) && $_POST['ajax'] === 'profile-form') {
 			if(isset($_POST['User']))
-				$models['user']->attributes = $_POST['User'];
+				$models['user']->setAttributes($_POST['User']);
 			if(isset($_POST['UserProfile']))
-				$models['user_profile']->attributes = $_POST['UserProfile'];
+				$models['user_profile']->setAttributes($_POST['UserProfile']);
 			if(isset($_POST['Avatar']))
-				$models['avatar']->attributes = $_POST['Avatar'];
+				$models['avatar']->setAttributes($_POST['Avatar']);
 			if(isset($_POST['Survey']['profile']))
-				$models['profile_questions']->attributes = $_POST['Survey']['profile'];
+				$profileQuestions->model->setAttributes($_POST['Survey']['profile']);
 			echo CActiveForm::validateTabular($models, null, false);
 			Yii::app()->end();
 		}
@@ -164,15 +174,15 @@ class UserController extends ApiController {
 				isset($_POST['Avatar']) &&
 				isset($_POST['Survey']['profile'])) {
 
-			$models['user']->attributes = $_POST['User'];
-			$models['user_profile']->attributes = $_POST['UserProfile'];
-			$models['avatar']->attributes = $_POST['Avatar'];
-			$models['profile_questions']->attributes = $_POST['Survey']['profile'];
+			$models['user']->setAttributes($_POST['User']);
+			$models['user_profile']->setAttributes($_POST['UserProfile']);
+			$models['avatar']->setAttributes($_POST['Avatar']);
+			$profileQuestions->model->setAttributes($_POST['Survey']['profile']);
 			$transaction = Yii::app()->db->beginTransaction();
 			try {
 				if($models['user']->save() && 
 						$models['user_profile']->save() &&
-						$models['profile_questions']->save(true, false) &&
+						$profileQuestions->model->save(true, false) &&
 						$models['avatar']->validate(array('image')) && 
 						($models['avatar']->image === null || $models['avatar']->save())) {
 					$transaction->commit();
@@ -185,7 +195,7 @@ class UserController extends ApiController {
 				throw $e;
 			}
 		}
-		$this->render('pages/profile', array('models' => $models));
+		$this->render('pages/profile', array('models' => $models, 'profileQuestions' => $profileQuestions));
 	}
 	
 	/****** START API ACTIONS ******/

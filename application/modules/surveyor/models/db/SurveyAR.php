@@ -16,32 +16,28 @@
  * @property SurveyQuestionType[] $types
  * @property SurveyAnswer[] $answers
  */
-class SurveyAR extends SActiveRecord
-{
+class SurveyAR extends SActiveRecord {
 	
     /**
      * Returns the static model of the specified AR class.
      * @param string $className active record class name.
      * @return SurveyQuestion the static model class
      */
-    public static function model($className=__CLASS__)
-    {
+    public static function model($className = __CLASS__) {
         return parent::model($className);
     }
 
     /**
      * @return string the associated database table name
      */
-    public function tableName()
-    {
+    public function tableName() {
         return '{{survey}}';
     }
 
     /**
      * @return array validation rules for model attributes.
      */
-    public function rules()
-    {
+    public function rules() {
         return array(
             array('id, name, anonymous', 'required'),
             array('id', 'numerical', 'integerOnly' => true),
@@ -56,26 +52,35 @@ class SurveyAR extends SActiveRecord
     /**
      * @return array relational rules.
      */
-    public function relations()
-    {
+    public function relations() {
         return array(
         		'questions' => array(self::HAS_MANY, 'SurveyQuestion', 'survey_id', 
         				'order' => 'questions.order ASC'),
+        		'questionCount' => array(self::STAT, 'SurveyQuestion', 'survey_id'), 
         		'options' => array(self::HAS_MANY, 'SurveyQuestionOption', array('id' => 'question_id'), 
         				'through' => 'questions',
         				'order' => 'questions.order, options.order ASC'),
         		'types' => array(self::HAS_MANY, 'SurveyQuestionType', array('type_id' => 'id'),
         				'through' => 'questions'),
-        		'answers' => array(self::HAS_MANY, 'SurveyAnswer', array('id' => 'question_id'),
-        				'through' => 'questions'),
+        		'answers' => array(self::HAS_MANY, 'SurveyAnswer', array('id' => 'question_id')),
+        		'answerCount' => array(self::STAT, 'SurveyAnswer', array('id' => 'question_id')),
         );
     }
+    
+	public function statistics() {
+		$this->getCDbCriteria()->mergeWith(array('with' => array('questions' => array('with' => 'options'))));
+		return $this;
+	}
+	
+	public function form() {
+		$this->getCDbCriteria()->mergeWith(array('with' => array('questions' => array('with' => array('options', 'type')))));
+		return $this;
+	}
 
     /**
      * @return array customized attribute labels (name=>label)
      */
-    public function attributeLabels()
-    {
+    public function attributeLabels() {
         return array(
             'id' => Surveyor::t('ID'),
             'name' => Surveyor::t('Name'),
@@ -93,9 +98,8 @@ class SurveyAR extends SActiveRecord
      * Retrieves a list of models based on the current search/filter conditions.
      * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.
      */
-    public function search()
-    {
-        $criteria=new CDbCriteria;
+    public function search() {
+        $criteria = new CDbCriteria;
 
         $criteria->compare('id', $this->id);
         $criteria->compare('title', $this->title);

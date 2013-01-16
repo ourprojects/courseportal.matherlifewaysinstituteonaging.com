@@ -31,26 +31,56 @@ class HomeController extends OnlineCoursePortalController {
 
 	public function actionIndex() {
 		if(Yii::app()->getUser()->getIsGuest()) {
-			$models = array(
-						'workingCaregiver_survey' => Yii::app()->surveyor->workingCaregiver->form,
-						'hrEmployer_survey' => Yii::app()->surveyor->hrEmployer->form,
-						'caregiver_survey' => Yii::app()->surveyor->caregiver->form,
-					);
-
-			if(isset($_POST['ajax']) && isset($models["{$_POST['ajax']}_survey"])) {
-				echo CActiveForm::validate($models["{$_POST['ajax']}_survey"]);
-				Yii::app()->end();
-			}
 			
-			if(Yii::app()->request->isPostRequest) {
-				foreach($models as $model) {
-					if(isset($_POST["{$model->name}Survey"])) {
-						$model->attributes = $_POST["{$model->name}Survey"];
-						$model->save();
-					}
-				}
-			}
-			$this->render('pages/guestIndex', array('models' => $models));
+			$workingCaregiver = $this->createWidget(
+					'modules.surveyor.widgets.Survey',
+					array(
+							'id' => 'workingCaregiver',
+							'autoProcessRequest' => true,
+							'titleHtmlOptions' => array('class' => 'flowers'),
+							'questionHtmlOptions' => array('class' => 'row'),
+							'formOptions' => array(
+												'enableAjaxValidation' => true,
+												'enableClientValidation' => true
+											),
+							'submitButtonHtmlOptions' => array('class' => 'row submit'),
+					)
+			);
+			
+			$hrEmployer = $this->createWidget(
+					'modules.surveyor.widgets.Survey',
+					array(
+							'id' => 'hrEmployer',
+							'autoProcessRequest' => true,
+							'titleHtmlOptions' => array('class' => 'flowers'),
+							'formOptions' =>
+									array(
+											'enableAjaxValidation' => true,
+											'enableClientValidation' => true
+									),
+					)
+			);
+			
+			$caregiver = $this->createWidget(
+					'modules.surveyor.widgets.Survey',
+					array(
+							'id' => 'caregiver',
+							'autoProcessRequest' => true,
+							'titleHtmlOptions' => array('class' => 'flowers'),
+							'formOptions' =>
+									array(
+											'enableAjaxValidation' => true,
+											'enableClientValidation' => true
+									),
+					)
+			);
+
+			$this->render('pages/guestIndex', array(
+												'workingCaregiverSurvey' => $workingCaregiver,
+												'hrEmployerSurvey' => $hrEmployer,
+												'caregiverSurvey' => $caregiver,
+											)
+			);
 		} else {
 			$this->render('pages/userIndex');
 		}

@@ -5,6 +5,11 @@
  * SurveyResponse handles a response to a survey. 
  */
 class SurveyForm extends CFormModel {
+	
+	const SCENARIO_NOT_COMPLETE = 'incomplete';
+	const SCENARIO_COMPLETE = 'complete';
+	
+	private $_isComplete;
 
 	private $_requiredQuestions;
 	private $_safeAttributeNames;
@@ -19,12 +24,12 @@ class SurveyForm extends CFormModel {
 		if($survey instanceof SurveyAR)
 			$this->_survey = $survey;
 		else if(is_string($survey))
-			$this->_survey = SurveyAR::model()->find('name = :name', array(':name' => $survey));
+			$this->_survey = SurveyAR::model()->with(array('questions' => array('options')))->find('name = :name', array(':name' => $survey));
 		else if(is_numeric($survey))
-			$this->_survey = SurveyAR::model()->findByPk($survey);
+			$this->_survey = SurveyAR::model()->with(array('questions' => array('options')))->findByPk($survey);
 		foreach($this->_survey->questions as $question)
 			$this->_questionAnswers[$question->id] = null;
-		parent::__construct();
+		parent::__construct(self::SCENARIO_NOT_COMPLETE);
 	}
 
 	/**
@@ -32,7 +37,7 @@ class SurveyForm extends CFormModel {
 	 */
 	public function rules() {
 		return array(
-				// @ TODO We could just set the allowEmpty based on the anonymous state of the survey.
+				// @ TODO We should just set the allowEmpty based on the anonymous state of the survey.
 				array('user_id', 'exist', 'attributeName' => 'id', 'className' => 'User', 'allowEmpty' => true),
 				array('user_id', 'checkAnonymous'),
 				array('_questionAnswers', 'validateAnswers'),
@@ -130,6 +135,15 @@ class SurveyForm extends CFormModel {
 		$this->addError($attribute, Surveyor::t('This survey is not anonymous and a user was not specified.'));
 	}
 	
+	public function isComplete() {
+		return $this->_isComplete;
+	}
+	
+	public function setScenario($scenario) {
+		$this->_isComplete = $scenario === self::SCENARIO_COMPLETE;
+		parent::setScenario($scenario);
+	}
+	
 	public function validateAnswers($attribute, $params) {
 		$answers = $this->$attribute;
 		foreach($this->_survey->questions as $question) {
@@ -138,13 +152,13 @@ class SurveyForm extends CFormModel {
 					$question->type->name != 'textfield') {
 					if(is_array($answers[$question->id])) {
 						if($question->allow_many_options) {
-							if(count(array_intersect($question->optionIds, $answers[$question->id])) != count($answers[$question->id]))
+							if(count(array_intersect(self::arrayMap($question->options, 'id'), $answers[$question->id])) !== count($answers[$question->id]))
 								$this->addError("question{$question->id}", Surveyor::t('Invalid option selected.'));
 						} else {
 							$this->addError("question{$question->id}", Surveyor::t('Only one answer is allowed.'));
 						}
 					} else {
-						if(!in_array($answers[$question->id], $question->optionIds))
+						if(!in_array($answers[$question->id], self::arrayMap($question->options, 'id')))
 							$this->addError("question{$question->id}", Surveyor::t('Invalid option selected.'));
 					}
 				}
@@ -152,6 +166,14 @@ class SurveyForm extends CFormModel {
 				$this->addError("question{$question->id}", Surveyor::t('This question is required.'));
 			}
 		}
+	}
+	
+	public static function arrayMap($data, $method) {
+		$listData = array();
+		foreach($data as $item) {
+			$listData[] = $item->$method;
+		}
+		return $listData;
 	}
 	
 	public function save($validate = true, $useTransaction = true) {
@@ -162,6 +184,7 @@ class SurveyForm extends CFormModel {
 				if($this->_save()) {
 					if($useTransaction)
 						$transaction->commit();
+					$this->setScenario(self::SCENARIO_COMPLETE);
 					return true;
 				}
 			} catch(Exception $e) {
@@ -172,6 +195,7 @@ class SurveyForm extends CFormModel {
 			if($useTransaction)
 				$transaction->rollback();
 		}
+		$this->setScenario(self::SCENARIO_NOT_COMPLETE);
 		return false;
 	}
 	

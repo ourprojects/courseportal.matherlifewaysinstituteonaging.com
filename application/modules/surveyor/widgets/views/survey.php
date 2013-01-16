@@ -1,79 +1,124 @@
 <?php 
-	echo CHtml::tag('div', $survey['htmlOptions'], false);
-	
-	if($title['show'])
-		echo CHtml::tag('div', $title['htmlOptions'], $survey['model']->getAttributeLabel('title'));
-	if($description['show'])
-		echo CHtml::tag('div', $description['htmlOptions'], "<p>{$survey['model']->getAttributeLabel('description')}</p>");
 
-	if($form['show']) {
-		$this->beginWidget('CActiveForm', $form['options']);
-		echo CHtml::errorSummary($survey['model']);
-	}
+	echo CHtml::tag('div', $surveyHtmlOptions, false);
 	
-	foreach($survey['model']->questions as $q) {
-		$question['htmlOptions']['id'] .= "_{$q->id}";
-		echo CHtml::tag('div', $question['htmlOptions'], '', false);
-		echo CHtml::activeLabelEx($survey['model'], "question{$q->id}", array('for' => CHtml::getIdByName("Survey[{$survey['model']->name}][question{$q->id}]")));
+	if($titleShown)
+		echo CHtml::tag('div', $titleHtmlOptions, $model->getAttributeLabel('title'));
+	if($descriptionShown)
+		echo CHtml::tag('div', $descriptionHtmlOptions, "<p>{$model->getAttributeLabel('description')}</p>");
+
+	if($formShown) {
+		$this->beginWidget('CActiveForm', $formOptions);
+		echo CHtml::errorSummary($model);
+	}
+	$baseId = $questionHtmlOptions['id'];
+	foreach($model->questions as $q) {
+		$questionHtmlOptions['id'] = "{$baseId}_{$q->id}";
+		echo CHtml::tag('div', $questionHtmlOptions, '', false);
+		echo CHtml::activeLabelEx($model, "question{$q->id}", array('for' => CHtml::getIdByName("Survey[{$model->name}][question{$q->id}]")));
+		if($statsShown) {
+			$this->widget('ext.highcharts.EHighcharts', array(
+					'id' => 'chart_'.$questionHtmlOptions['id'],
+					'htmlOptions' => array('style' => 'display:none;'),
+					'options' => array(
+							'chart' => array(
+									'plotBackgroundColor' => null,
+									'plotBorderWidth' => null,
+									'plotShadow' => false,
+									'margin' => array('50', '50', '50', '50'),
+									'width' => '500'
+							),
+							'title' => array('text' => null),
+							'credits' => array('enabled' => false),
+							'tooltip' => array(
+									'pointFormat' => '{series.name}: <b>{point.percentage}%</b>',
+									'percentageDecimals' => 2
+							),
+							'plotOptions' => array(
+									'pie' => array(
+											'allowPointSelect' => true,
+											'cursor' => 'pointer',
+											'dataLabels' => array(
+													'enabled' => true,
+													'color' => '#000000',
+													'connectorColor' => '#000000',
+													'formatter' => 'js:function() {
+									   						return "<b>"+ this.point.name + "</b>: " + Highcharts.numberFormat(this.percentage, 2) + " %";
+														}'
+											)
+									)
+							),
+							'series' => array(
+									array(
+											'type' => 'pie',
+											'name' => 'Share',
+									)
+							)
+					)
+				)
+			);
+		}
+		echo CHtml::tag('div', array('id' => 'options_'.$questionHtmlOptions['id']), '', false);
 		switch($q->type->name) {
 			case 'select':
 				echo CHtml::activeDropDownList(
-										$survey['model'], 
+										$model, 
 										"question{$q->id}", 
 										array_map(array('Surveyor', 't'), CHtml::listData($q->options, 'id', 'text')), 
-										array('name' => "Survey[{$survey['model']->name}][question{$q->id}]")
+										array('name' => "Survey[{$model->name}][question{$q->id}]")
 					);
 				break;
 			case 'checkbox':
 				echo CHtml::activeCheckBoxList(
-										$survey['model'], 
+										$model, 
 										"question{$q->id}", 
 										array_map(array('Surveyor', 't'), CHtml::listData($q->options, 'id', 'text')), 
-										array('name' => "Survey[{$survey['model']->name}][question{$q->id}]")
+										array('name' => "Survey[{$model->name}][question{$q->id}]")
 					);
 				break;
 			case 'radio':
 				echo CHtml::activeRadioButtonList(
-										$survey['model'],
+										$model,
 										"question{$q->id}",
 										array_map(array('Surveyor', 't'), CHtml::listData($q->options, 'id', 'text')),
-										array('name' => "Survey[{$survey['model']->name}][question{$q->id}]")
+										array('name' => "Survey[{$model->name}][question{$q->id}]")
 					);
 				break;
 			case 'textfield':
 				echo CHtml::activeTextField(
-										$survey['model'], 
+										$model, 
 										"question{$q->id}",
-										array('name' => "Survey[{$survey['model']->name}][question{$q->id}]")
+										array('name' => "Survey[{$model->name}][question{$q->id}]")
 					);
 				break;
 			case 'textarea':
 				echo CHtml::activeTextArea(
-							$survey['model'],
+							$model,
 							"question{$q->id}",
-							array('name' => "Survey[{$survey['model']->name}][question{$q->id}]")
+							array('name' => "Survey[{$model->name}][question{$q->id}]")
 						);
 				break;
 		}
+		echo '</div>';
 		echo CHtml::error(
-				 		  $survey['model'], 
+				 		  $model, 
 						  "question{$q->id}",
-						  array('name' => "Survey[{$survey['model']->name}][question{$q->id}]")
+						  array('name' => "Survey[{$model->name}][question{$q->id}]")
 						);
 		echo '</div>';
 	}
-	if($form['show']) {
-		if($submitButton['ajax']) {
-			if(!isset($submitButton['ajaxOptions']['success']))
-				$submitButton['ajaxOptions']['success'] = 
+	if($formShown) {
+		if($useAjax) {
+			if(!isset($ajaxOptions['success']))
+				$ajaxOptions['success'] = 
 				'function(data) {' . 
 					"data = $.parseJSON(data);" .
-					"if(!$.isEmptyObject(data) && data.hasOwnProperty('{$survey['model']->name}')) {" .
-						"if($.isEmptyObject(data.{$survey['model']->name})) {" .
+					"if(!$.isEmptyObject(data) && data.hasOwnProperty('{$model->name}')) {" .
+						"if($.isEmptyObject(data.{$model->name})) {" .
 							"alert('Your response has been submitted successfully!');" .
 						'} else {' . 
 							"var alertText = 'Please correct the following errors and try again.';" .
-							"$.each(data.{$survey['model']->name}, function(error, message) {" .
+							"$.each(data.{$model->name}, function(error, message) {" .
 								'alertText += "\r\n" + error + "\r\n\t" + message;' .
 							'});' .
 							'alert(alertText);' .
@@ -81,11 +126,11 @@
 						
 					'}' .
 				'}';
-			if(!isset($submitButton['ajaxOptions']['error']))
-				$submitButton['ajaxOptions']['error'] = 'function(data) { alert("A server error ocurred. Please try again later."); }';
-			echo CHtml::tag('div', array(), CHtml::ajaxSubmitButton(Surveyor::t($submitButton['label']), $form['options']['action'], $submitButton['ajaxOptions'], $submitButton['htmlOptions']));
+			if(!isset($ajaxOptions['error']))
+				$ajaxOptions['error'] = 'function(data) { alert("A server error ocurred. Please try again later."); }';
+			echo CHtml::tag('div', array(), CHtml::ajaxSubmitButton(Surveyor::t($submitButtonLabel), $formOptions['action'], $ajaxOptions, $submitButtonHtmlOptions));
 		} else {
-			echo CHtml::tag('div', array(), CHtml::submitButton(Surveyor::t($submitButton['label']), $submitButton['htmlOptions']));
+			echo CHtml::tag('div', array(), CHtml::submitButton(Surveyor::t($submitButtonLabel), $submitButtonHtmlOptions));
 		}
 		$this->endWidget();
 	}

@@ -25,7 +25,10 @@ class SurveyController extends OnlineCoursePortalController {
 	}
 	
 	public function actionStatQuestion($name, $num) {
-		echo CJSON::encode(SurveyorModule::surveyor()->$name->questions[$num]->getStatistics());
+		$survey = SurveyorModule::surveyor()->$name;
+		if($num < 0 || $num >= count($survey->questions))
+			$num = 0;
+		echo CJSON::encode($survey->questions[$num]->getStatistics());
 	}
 	
 	public function actionChart($name, $qNum = 0) {
@@ -33,6 +36,13 @@ class SurveyController extends OnlineCoursePortalController {
 		if($qNum < 0 || $qNum >= count($survey->questions))
 			$qNum = 0;
 		$this->render('chart', array('survey' => $survey, 'qNum' => $qNum));
+	}
+	
+	public function actionChartQuestion($name, $num) {
+		$survey = SurveyorModule::surveyor()->$name;
+		if($num < 0 || $num >= count($survey->questions))
+			$num = 0;
+		$this->render('chart', array('survey' => $survey, 'qNum' => $num));
 	}
 	
 }

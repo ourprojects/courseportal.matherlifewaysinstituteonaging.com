@@ -1,66 +1,141 @@
 <?php
 
 class Survey extends CWidget {
+
+	public $model;
 	
-	private $_data = 
-		array(
-			'showStats' => false,
-			'survey' => array('model' => null, 'htmlOptions' => array()), 
-			'title' => array('show' => true, 'htmlOptions' => array()),
-			'description' => array('show' => true, 'htmlOptions' => array()),
-			'form' => array('show' => true, 'options' => array()),
-			'question' => array('htmlOptions' => array()),
-			'submitButton' => array('ajax' => true, 
-									'label' => 'Submit', 
-									'ajaxOptions' => array(),
-									'htmlOptions' => array()
-								)
-	   );
+	public $autoProcessRequest = false;
+	
+	public $statsShown = true;
+	
+	public $titleShown = true;
+	
+	public $descriptionShown = true;
+	
+	public $formShown = true;
+	
+	public $useAjax = true;
+	
+	public $ajaxOptions = array();
+	
+	public $surveyHtmlOptions = array();
+	
+	public $titleHtmlOptions = array();
+	
+	public $descriptionHtmlOptions = array();
+	
+	public $formOptions = array();
+	
+	public $questionHtmlOptions = array();
+	
+	public $submitButtonLabel = 'Submit';
+	
+	public $submitButtonHtmlOptions = array();
 	
 	public function init() {
-		$assetsDir = dirname(__FILE__).DIRECTORY_SEPARATOR.'assets';
-		if(is_dir($assetsDir)) {
-			$assetsUrl = Yii::app()->assetManager->publish($assetsDir);
-			Yii::app()->getClientScript()->registerCssFile("$assetsUrl/survey/styles/survey.css");
+		Yii::import('surveyor.models.db.*');
+		Yii::import('surveyor.models.forms.*');
+		Yii::import('surveyor.controllers.*');
+		Yii::import('surveyor.components.*');
+		Yii::import('surveyor.widgets.*');
+		Yii::import('surveyor.*');
+		
+		$id = $this->getId(false);
+		if(!isset($this->model)) {
+			if(!isset($id))
+				throw new CHttpException(500, Surveyor::t('The survey model or survey name id must be specified for the survey widget.'));
+			$this->model = SurveyorModule::surveyor()->getSurveyForm($id);
+			if(!isset($this->model))
+				throw new CHttpException(404, Surveyor::t('Survey with name id {name} was not found.', array('{name}' => $id)));
+		} elseif(!isset($id)) {
+			$id = $this->model->name;
+			$this->setId($id);
+		}
+		
+		$this->loadDefaultViewParams();
+		
+		if($this->autoProcessRequest)
+			$this->processRequest();
+	}
+	
+	public function loadDefaultViewParams() {
+		$id = $this->getId();
+		if(!isset($this->formOptions['id']))
+			$this->formOptions['id'] = "form_{$this->model->name}";
+		
+		if(!isset($this->questionHtmlOptions['id']))
+			$this->questionHtmlOptions['id'] = "question_$id";
+		
+		if(!isset($this->surveyHtmlOptions['id']))
+			$this->surveyHtmlOptions['id'] = "survey_$id";
+		
+		if(!isset($this->descriptionHtmlOptions['id']))
+			$this->descriptionHtmlOptions['id'] = "description_$id";
+		
+		if(!isset($this->titleHtmlOptions['id']))
+			$this->titleHtmlOptions['id'] = "title_$id";
+		
+		if(!isset($this->submitButtonHtmlOptions['id']))
+			$this->submitButtonHtmlOptions['id'] = "submitButton_$id";
+		
+		if(!isset($this->formOptions['action']))
+			$this->formOptions['action'] = $this->getController()->createUrl('');
+		
+		if(!isset($this->ajaxOptions['success']))
+			$this->ajaxOptions['success'] = 'js:function(data, textStatus, jqXHR){
+					data = $.parseJSON(data);
+					for(question in data) {
+						highcharts["chart_" + question].series[0].setData(data[question], true);
+						$("#options_" + question).css("display", "none");
+						$("#'.$this->submitButtonHtmlOptions['id'].'").css("display", "none");
+						$("#chart_" + question).css("display", "block");
+					}
+				}';
+	}
+	
+	public function processRequest() {
+		$id = $this->getId();
+
+		if(Yii::app()->getRequest()->isPostRequest && isset($_POST['Survey'][$id])) {
+			$this->model->setAttributes($_POST['Survey'][$id]);
+			$this->model->save();
+		}
+		
+		if(Yii::app()->getRequest()->isAjaxRequest) {
+			if(isset($_POST['ajax']) && $_POST['ajax'] === $id) {
+				$this->model->validate();
+			} else if(!isset($_POST['Survey'][$id])) {
+				return;
+			}
+			if($this->model->hasErrors())
+				echo CJSON::encode($this->model->getErrors());
+			else
+				$this->run();
+			Yii::app()->end();
+		} else {
+			$assetsDir = dirname(__FILE__).DIRECTORY_SEPARATOR.'assets';
+			if(is_dir($assetsDir)) {
+				$assetsUrl = Yii::app()->assetManager->publish($assetsDir);
+				Yii::app()->getClientScript()->registerCssFile("$assetsUrl/survey/styles/survey.css");
+			}
 		}
 	}
 	
 	public function run() {
-		if($this->_data['survey']['model'] !== null) {
-			if($this->_data['survey']['model'] instanceof SurveyForm) {
-				if(!isset($this->_data['form']['options']['action']))
-					$this->_data['form']['options']['action'] = $this->getController()->createUrl('surveyor/survey/submit');
-				$this->render('survey', $this->_data);
-				return;
-			} else if($this->_data['survey']['model'] instanceof SurveyAR) {
-				$this->render('surveyStats', $this->_data);
-				return;
-			}
-		}
-		throw new CHttpException(500, Surveyor::t('survey model must be set and an instance of SurveyForm or SurveyAR.'));
-	}
-	
-	public function setModel($surveyModel) {
-		$this->_data['survey']['model'] = $surveyModel;
-		if(!isset($This->_data['form']['options']['id']))
-			$This->_data['form']['options']['id'] = "form_{$this->_data['survey']['model']->name}";
-		foreach($this->_data as $key => $val) {
-			if(isset($this->_data[$key]['htmlOptions']) && !isset($this->_data[$key]['htmlOptions']['id']))
-				$this->_data[$key]['htmlOptions']['id'] = "{$key}_{$this->_data['survey']['model']->name}";
-		}
-	}
-	
-	public function __set($name, $value) {
-		if(isset($this->_data[$name])) {
-			if(is_array($this->_data[$name])) {
-				if(!is_array($value))
-					$value = array($value);
-				$this->_data[$name] = CMap::mergeArray($this->_data[$name], $value);
-			} else {
-				$this->_data[$name] = $value;
+		if($this->model->isComplete() && $this->statsShown) {
+			if(Yii::app()->getRequest()->isAjaxRequest) {
+				$data = array();
+				foreach($this->model->questions as $question) {
+					$qData = array();
+					foreach($question->options as $option) {
+						$qData[] = array($option->text, $option->getPercentAnswered());
+					}
+					$data["{$this->questionHtmlOptions['id']}_{$question->id}"] = $qData;
+				}
+				echo CJSON::encode($data);
 			}
 		} else {
-			parent::__set($name, $value);
+			return $this->render('survey', get_object_vars($this));
 		}
 	}
 	

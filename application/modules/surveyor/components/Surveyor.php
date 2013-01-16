@@ -3,6 +3,8 @@ class Surveyor extends CApplicationComponent {
 	
 	public static $id = 'surveyor';
 	
+	private $_surveyCriteria;
+	
 	public function init() {
 		parent::init();
 		Yii::import('surveyor.models.db.*');
@@ -13,19 +15,36 @@ class Surveyor extends CApplicationComponent {
 	}
 	
 	public function __get($name) {
-		if(is_numeric($name))
-			$survey = SurveyAR::model()->findByPk($name);
-		else if(is_string($name))
-			$survey = SurveyAR::model()->find('name = :name', array(':name' => $name));
+		$survey = $this->getSurvey($name);
 		if($survey === null)
 			return parent::__get($name);
 		return $survey;
 	}
 	
+	public function getSurvey($name, $with = array()) {
+		if(is_numeric($name))
+			return SurveyAR::model()->with($with)->findByPk($name);
+		if(is_string($name))
+			return SurveyAR::model()->with($with)->find('name = :name', array(':name' => $name));
+		if($name instanceof CDbCriteria)
+			return SurveyAR::model()->with($with)->find($name);
+		if($name instanceof SurveyAR)
+			return $name;
+		return null;
+	}
+	
+	public function statistics($survey) {
+		$survey = $this->getSurvey($survey, array('questions' => array('with' => 'options')));
+		if($survey !== null) {
+			$stats = array();
+			foreach($survey->questions as $question) {
+				$stats[] = $question->getStatistics();
+			}
+		}
+	}
+	
 	public function getSurveyForm($survey) {
-		if(!$survey instanceof SurveyAR)
-			$survey = $this->$survey;
-		return $survey->form;
+		return new SurveyForm($survey);
 	}
 	
 	static function t($message, $params = array()) {

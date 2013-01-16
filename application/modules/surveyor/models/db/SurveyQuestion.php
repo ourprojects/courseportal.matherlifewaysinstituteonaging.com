@@ -17,34 +17,28 @@
  * @property SurveyQuestionOption[] $options
  * @property User[] $users
  */
-class SurveyQuestion extends SActiveRecord
-{
-	
-	private $_optionIds;
-	
+class SurveyQuestion extends SActiveRecord {
+
     /**
      * Returns the static model of the specified AR class.
      * @param string $className active record class name.
      * @return SurveyQuestion the static model class
      */
-    public static function model($className=__CLASS__)
-    {
+    public static function model($className=__CLASS__) {
         return parent::model($className);
     }
 
     /**
      * @return string the associated database table name
      */
-    public function tableName()
-    {
+    public function tableName() {
         return '{{survey_question}}';
     }
 
     /**
      * @return array validation rules for model attributes.
      */
-    public function rules()
-    {
+    public function rules() {
         return array(
             array('survey_id, type_id, text, order', 'required'),
             array('type_id, survey_id, order', 'numerical', 'integerOnly' => true),
@@ -60,25 +54,29 @@ class SurveyQuestion extends SActiveRecord
     /**
      * @return array relational rules.
      */
-    public function relations()
-    {
+    public function relations() {
         return array(
         		'type' => array(self::BELONGS_TO, 'SurveyQuestionType', 'type_id'),
         		'survey' => array(self::BELONGS_TO, 'SurveyAR', 'survey_id'),
         		'answers' => array(self::HAS_MANY, 'SurveyAnswer', 'question_id'),
+        		'answerCount' => array(self::STAT, 'SurveyAnswer', 'question_id'),
         		'options' => array(self::HAS_MANY, 'SurveyQuestionOption', 'question_id',
         						   'order' => 'options.order ASC'),
+        		'optionCount' => array(self::STAT, 'SurveyQuestionOption', 'question_id'),
         		'users' => array(self::HAS_MANY, 'User', array('user_id' => 'id'),
         				'through' => 'answers'),
-        		'answersCount' => array(self::STAT, 'SurveyAnswer', 'question_id'),
         );
+    }
+    
+    public function statistics() {
+    	$this->getCDbCriteria()->mergeWith(array('with' => 'options'));
+    	return $this;
     }
 
     /**
      * @return array customized attribute labels (name=>label)
      */
-    public function attributeLabels()
-    {
+    public function attributeLabels() {
         return array(
             'id' => Surveyor::t('ID'),
             'type_id' => Surveyor::t('Type ID'),
@@ -88,7 +86,7 @@ class SurveyQuestion extends SActiveRecord
         	'answers' => Surveyor::t('Answers'),
         	'options' => Surveyor::t('Options'),
         	'users' => Surveyor::t('Users'),
-        	'statistics' => Surveyor::t('Statistics'),
+        	'optionCount' => Surveyor::t('Option Count'),
         );
     }
 
@@ -96,34 +94,17 @@ class SurveyQuestion extends SActiveRecord
      * Retrieves a list of models based on the current search/filter conditions.
      * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.
      */
-    public function search()
-    {
-        $criteria=new CDbCriteria;
+    public function search() {
+        $criteria = new CDbCriteria;
 
-        $criteria->compare('id',$this->id);
-        $criteria->compare('type_id',$this->type_id);
-        $criteria->compare('text',$this->text,true);
+        $criteria->compare('id', $this->id);
+        $criteria->compare('type_id', $this->type_id);
+        $criteria->compare('order', $this->order);
+        $criteria->compare('text', $this->text, true);
 
         return new CActiveDataProvider($this, array(
-            'criteria'=>$criteria,
+            'criteria' => $criteria,
         ));
-    }
-    
-    public function getStatistics() {
-	    $stats = array();
-		foreach($this->options as $option) {
-			$stats[] = array($option->text, ($this->answersCount <= 0 ? 0 : $option->answersCount / $this->answersCount));
-		}
-		return $stats;
-    }
-    
-    public function getOptionIds() {
-    	if(!isset($this->_optionsIds)) {
-    		$this->_optionIds = array();
-    		foreach($this->options as $option)
-    			$this->_optionIds[] = $option->id;
-    	}
-    	return $this->_optionIds;
     }
     
 }

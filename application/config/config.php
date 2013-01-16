@@ -78,7 +78,7 @@ return array(
 												),
 						'managementAccessRules' => array(
 														array('allow',
-																'expression' => '!$user->isGuest && $user->group->name === \'admin\'',
+																'expression' => '$user->getIsAdmin()',
 														),
 														array('deny',
 																'users' => array('*'),

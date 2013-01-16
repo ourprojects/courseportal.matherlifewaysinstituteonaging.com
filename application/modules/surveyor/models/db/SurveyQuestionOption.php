@@ -14,31 +14,30 @@
  * @property SurveyAnswerOption[] $answerOptions
  * @property SurveyAnswers[] $answers
  */
-class SurveyQuestionOption extends SActiveRecord
-{
+class SurveyQuestionOption extends SActiveRecord {
+	
+	private $_percentAnswered;
+	
     /**
      * Returns the static model of the specified AR class.
      * @param string $className active record class name.
      * @return SurveySurveQuestionOption the static model class
      */
-    public static function model($className=__CLASS__)
-    {
+    public static function model($className = __CLASS__) {
         return parent::model($className);
     }
 
     /**
      * @return string the associated database table name
      */
-    public function tableName()
-    {
+    public function tableName() {
         return '{{survey_question_option}}';
     }
 
     /**
      * @return array validation rules for model attributes.
      */
-    public function rules()
-    {
+    public function rules() {
         return array(
             array('question_id, text, order', 'required'),
             array('question_id, order', 'numerical', 'integerOnly' => true),
@@ -46,29 +45,27 @@ class SurveyQuestionOption extends SActiveRecord
         	array('question_id', 'exist', 'attributeName' => 'id', 'className' => 'SurveyQuestion', 'allowEmpty' => false),
             // The following rule is used by search().
             // Please remove those attributes that should not be searched.
-            array('id, question_id, text, order', 'safe', 'on'=>'search'),
+            array('id, question_id, text, order', 'safe', 'on' => 'search'),
         );
     }
 
     /**
      * @return array relational rules.
      */
-    public function relations()
-    {
+    public function relations() {
         return array(
         		'question' => array(self::BELONGS_TO, 'SurveyQuestion', 'question_id'),
         		'answerOptions' => array(self::HAS_MANY, 'SurveyAnswerOption', 'option_id'),
+        		'answerCount' => array(self::STAT, 'SurveyAnswerOption', 'option_id'),
         		'answers' => array(self::HAS_MANY, 'SurveyAnswer', array('answer_id' => 'id'),
         				'through' => 'answerOptions'),
-        		'answersCount' => array(self::STAT, 'SurveyAnswerOption', 'option_id'),
         );
     }
 
     /**
      * @return array customized attribute labels (name=>label)
      */
-    public function attributeLabels()
-    {
+    public function attributeLabels() {
         return array(
             'id' => Surveyor::t('ID'),
             'question_id' => Surveyor::t('Question ID'),
@@ -83,17 +80,22 @@ class SurveyQuestionOption extends SActiveRecord
      * Retrieves a list of models based on the current search/filter conditions.
      * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.
      */
-    public function search()
-    {
-        $criteria=new CDbCriteria;
+    public function search() {
+        $criteria = new CDbCriteria;
 
-        $criteria->compare('id',$this->id);
-        $criteria->compare('question_id',$this->question_id);
-        $criteria->compare('text',$this->text,true);
+        $criteria->compare('id', $this->id);
+        $criteria->compare('question_id', $this->question_id);
+        $criteria->compare('text', $this->text, true);
 
         return new CActiveDataProvider($this, array(
-            'criteria'=>$criteria,
+            'criteria' => $criteria,
         ));
+    }
+    
+    public function getPercentAnswered($refresh = false) {
+    	if($refresh || !isset($this->_percentAnswered))
+    		$this->_percentAnswered = $this->getRelated('question')->answerCount <= 0 ? 0 : $this->answerCount / $this->getRelated('question')->answerCount;
+    	return $this->_percentAnswered;
     }
     
 }
