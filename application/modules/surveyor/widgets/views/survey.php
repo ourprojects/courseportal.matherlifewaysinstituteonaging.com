@@ -22,12 +22,12 @@
 					'htmlOptions' => array('style' => 'display:none;'),
 					'options' => array(
 							'chart' => array(
+									'backgroundColor' => 'rgba(255, 255, 255, 0.0)',
 									'plotBackgroundColor' => null,
 									'plotBorderWidth' => null,
 									'plotShadow' => false,
-									'margin' => array('50', '50', '50', '50'),
-									'width' => '500'
 							),
+							'exporting' => array('enabled' => false),
 							'title' => array('text' => null),
 							'credits' => array('enabled' => false),
 							'tooltip' => array(
@@ -38,10 +38,12 @@
 									'pie' => array(
 											'allowPointSelect' => true,
 											'cursor' => 'pointer',
+											'size' => '45%',
 											'dataLabels' => array(
 													'enabled' => true,
 													'color' => '#000000',
 													'connectorColor' => '#000000',
+													'style' => array('width' => '150px'),
 													'formatter' => 'js:function() {
 									   						return "<b>"+ this.point.name + "</b>: " + Highcharts.numberFormat(this.percentage, 2) + " %";
 														}'
