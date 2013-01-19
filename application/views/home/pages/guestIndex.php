@@ -127,7 +127,7 @@ $this->widget(
 <div class="column-wide">
 	<h2 class="flowers">Mather LifeWays Institute on Aging</h2>
 	<p>
-		<?php echo t('Through research-based programs and innovative techniques,'); ?>Mather LifeWays Institute on Aging
+		<?php echo t('Through research-based programs and innovative techniques, '); ?>Mather LifeWays Institute on Aging
 		<?php echo t('is committed to advancing the field of geriatric care. Cutting-edge research lays the foundation for our
 				solid solutions to senior care challenges, including recruitment, mentorship, training, and retention.'); ?>
 	</p>
@@ -435,110 +435,101 @@ $this->widget(
 
 	<!--   Slide #5 Assessment   -->
 
-	<div id="slide-5" class="slide">
+<div id="slide-5" class="slide">
+<h4 style="font-size: 2em;"><?php echo t('Assessment'); ?></h4>
+<hr>
+<p><?php echo t('Thinking about the material you just read, please try and correctly answer the assessment questions below without searching the Internet. Your responses are not recorded, and you will receive immediate feedback.'); ?></p>
 
-		<h4 style="font-size: 2em;"><?php echo t('Assessment'); ?></h4>
+<div id="question1" style="padding: 10px; background: #fff; margin: 10px 10px 30px 10px; border-radius: 5px; box-shadow: 0 0 10px #999; height: 65px;" />
+<p><?php echo t('Is dementia a disease of the brain?'); ?>
+<select>
+	<option selected="selected" value="select"><?php echo t('Select'); ?></option>
+	<option value="1"><?php echo t('Yes'); ?></option>
+	<option value="0"><?php echo t('No') ?></option>
+</select>
+</p>
+<p id="answer"></p>
+<?php $clientScript->registerScript('slide-5-question1',
+"$('#slide-5 #question1 select').change(function() {
+if($(this).val() == '1') {
+$('#slide-5 #question1 #answer').html('Great! Yes, Dementia is a disease of the brain.');
+} else {
+$('#slide-5 #question1 #answer').html('Please review this tutorial again. Dementia is a disease of the brain.');
+}
+});");
+?>
+</div>
+    
+<div id="question2" style="padding: 10px; background: #fff; margin: 10px 10px 30px 10px; border-radius: 5px; box-shadow: 0 0 10px #999; height: 65px;" />
+<p><?php echo t('Is Alzehimer\'s disease a disease of the brain?'); ?>
+<select>
+	<option selected="selected" value="select"><?php echo t('Select'); ?></option>
+	<option value="1"><?php echo t('Yes'); ?></option>
+	<option value="0"><?php echo t('No') ?></option>
+</select>
+</p>
+<p id="answer"></p>
+<?php $clientScript->registerScript('slide-5-question2',
+"$('#slide-5 #question2 select').change(function() {
+if($(this).val() == '1') {
+$('#slide-5 #question2 #answer').html('Great! Yes, Alzheimer\'s disease is a disease of the brain.');
+} else {
+$('#slide-5 #question2 #answer').html('Please review this tutorial again. Alzheimer\'s disease is a disease of the brain.');
+}
+});");
+?>
+</div>
 
-		<hr>
-			
-		<p><?php echo t('Thinking about the material you just read, please try and correctly answer the 
-			assessment questions below without searching the Internet. Your responses are not recorded, 
-			but you will receive immediate feedback.'); ?></p>
-		
-	<div id="question" style="padding: 10px; background: #fff; margin: 10px 10px 30px 10px; border-radius: 5px; box-shadow: 0 0 10px #999; height: 65px;" />
-		<p><?php echo t('Is dementia a disease of the brain?'); ?>
-			<select>
-					<option selected="selected" value="select"><?php echo t('Select'); ?></option>
-					<option value="1"><?php echo t('Yes'); ?></option>
-					<option value="0"><?php echo t('No') ?></option>
-			</select>
-		</p>
+<div id="question3" style="padding: 10px; background: #fff; margin: 10px 10px 30px 10px; border-radius: 5px; box-shadow: 0 0 10px #999; height: 65px;" />
+<p><?php echo t('Alzheimer\'s disease is the most common form of dementia.'); ?>
+<select>
+	<option selected="selected" value="select"><?php echo t('Select'); ?></option>
+	<option value="1"><?php echo t('True'); ?></option>
+	<option value="0"><?php echo t('False'); ?></option>
+</select>
+</p>
+<p id="answer"></p>
+<?php $clientScript->registerScript('slide-5-question3',
+"$('#slide-5 #question3 select').change(function() {
+if($(this).val() == '1') {
+$('#slide-5 #question3 #answer').html('Yes, Alzheimer\'s disease is the most common form of dementia.');
+} else {
+$('#slide-5 #question3 #answer').html('Please review this tutorial again. Alzheimer\'s disease is the most common form of dementia.');
+}
+});");
+?>
+</div>
 
-				<?php $clientScript->registerScript('slide-3',
-						"$('#slide-3 #question select').change(function() {
-						if($(this).val() == '1') {
-						$('#slide-3 #question p').html('Great! Yes, Dementia is a disease of the brain.');
-						} else {
-						$('#slide-3 #question p').html('Please review this slide again. Dementia is a disease of the brain.');
-						}
-						});");
-				?>
-		
-	</div>
-	
-		<div id="question" style="padding: 10px; background: #fff; margin: 10px 10px 30px 10px; border-radius: 5px; box-shadow: 0 0 10px #999; height: 65px;" />
-						
-			<p><?php echo t('Is Alzehimer\'s disease a disease of the brain?'); ?>
-				<select>
-					<option selected="selected" value="select"><?php echo t('Select'); ?></option>
-					<option value="1"><?php echo t('Yes'); ?></option>
-					<option value="0"><?php echo t('No') ?></option>
-				</select>
-			</p>
-		</div>
-			
-				<div id="question" style="
-				padding: 10px;
-				background: #fff;
-				margin: 10px 10px 30px 10px;
-				border-radius: 5px;
-				box-shadow: 0 0 10px #999;
-				height: 65px;
-				" />
-			<p><?php echo t('Alzheimer\'s disease is the most common form of dementia.'); ?>
-				<select>
-					<option selected="selected" value="select"><?php echo t('Select'); ?></option>
-					<option value="1"><?php echo t('True'); ?></option>
-					<option value="0"><?php echo t('False'); ?></option>
-				</select>
-			</p>
-		</div>
-
-			<div id="question" style="
-				padding: 10px;
-				background: #fff;
-				margin: 10px 10px 30px 10px;
-				border-radius: 5px;
-				box-shadow: 0 0 10px #999;
-				" />
-
-			<p><?php echo t('Using the search box below, find additional data and statistics on dementia and 
+<div id="question" style="padding: 10px; background: #fff; margin: 10px 10px 30px 10px; border-radius: 5px; box-shadow: 0 0 10px #999;" />
+<p><?php echo t('Using the search box below, find additional data and statistics on dementia and 
 						Alzheimer\'s disease in your area. It is important that you learn to conduct your own research.'); ?></p>
-			
-			<p><form method="get" action="http://www.google.com/search" target="_blank">
-				<input type="text" id="google-search" name="q" size="65" maxlength="255" value="" /></p>
-			<p><input type="submit" value="<?php echo t('Google Search'); ?>" class="teal" /></p>
-				</form>
-			</p>
-		</div>
-
-		<p class="course-buttons" style="text-align: center;">
-			<a href="javascript:;" class="button left" onclick="$.fancybox.prev();"><?php echo t('&laquo; Back'); ?> </a>
-			<a href="javascript:;" class="button right" onClick="$.fancybox.next();"><?php echo t('Next &raquo;'); ?> </a>
-		</p>
-	</div>
+<p>
+<form method="get" action="http://www.google.com/search" target="_blank">
+  <input type="text" id="google-search" name="q" size="65" maxlength="255" value="" />
+  </p>
+  <p>
+    <input type="submit" value="<?php echo t('Google Search'); ?>" class="teal" />
+  </p>
+</form>
+</p>
+</div>
+<p class="course-buttons" style="text-align: center;"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();"><?php echo t('&laquo; Back'); ?> </a> <a href="javascript:;" class="button right" onClick="$.fancybox.next();"><?php echo t('Next &raquo;'); ?> </a> </p>
+</div>
 
 	<!--   slide 6 - closing here    -->
 
-	<div id="slide-6" class="slide"><h4 style="font-size: 2em;"><?php echo t('Conclusion'); ?></h4>
-
-		<hr>
-		
-		<p><?php echo t('With such a profound impact on society, business, and potentially	on your family, understanding
+	<div id="slide-6" class="slide">
+  <h4 style="font-size: 2em;"><?php echo t('Conclusion'); ?></h4>
+  <hr>
+  <p><?php echo t('With such a profound impact on society, business, and potentially on your family, understanding
 			dementia and Alzheimer\'s disease is very important. After participating in this tutorial, you
-			should now be able to understand and explaing what Alzheimer\'s disease and dementia are.'); ?>
-		</p>
-		<p>
-			<?php echo t('Thank you for participating in this tutorial course! Now that you have a better idea on what to expect, your next step is to register and
-			begin participating in the various online courses. Please contact us if you have questions or need help.'); ?>
-		</p>
-		<p style="font-weight: bold;" /><?php echo t('Certificate of Completion (English)'); ?></p>
-				
-		<p><a href="/themes/onlinecourseportal/images/CourseCompletionCertificate.pdf" target="_blank">
-			<img src="<?php echo $this->getImagesUrl('AcrobatReaderIcon.png'); ?>" /></a>
-		</p>
-		<p class="course-buttons" style="text-align: center;">
-			<a href="#" onClick="parent.jQuery.fancybox.close();" class="button left"> <?php echo t('Exit'); ?></a>
-		</p>
-	</div>
+			should now be able to understand and explaing what Alzheimer\'s disease and dementia are.'); ?> </p>
+  <p> <?php echo t('Thank you for participating in this tutorial course! Now that you have a better idea on what to expect, your next step is to register and
+			begin participating in the various online courses. Please contact us if you have questions or need help.'); ?> </p>
+  <p style="font-weight: bold;" />
+  <?php echo t('Certificate of Completion (English)'); ?>
+  </p>
+  <p><a href="/themes/onlinecourseportal/images/CourseCompletionCertificate.pdf" target="_blank"> <img src="<?php echo $this->getImagesUrl('AcrobatReaderIcon.png'); ?>" /></a> </p>
+  <p class="course-buttons" style="text-align: center;"> <a href="#" onClick="parent.jQuery.fancybox.close();" class="button left"> <?php echo t('Exit'); ?></a> </p>
 </div>
+    </div>
