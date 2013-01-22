@@ -37,7 +37,6 @@ class HomeController extends OnlineCoursePortalController {
 					array(
 							'id' => 'workingCaregiver',
 							'options' => array(
-								'highcharts' => array('show' => false),
 								'autoProcess' => true,
 								'htmlOptions' => array('class' => 'box-white'),
 								'title' => array('htmlOptions' => array('class' => 'flowers')),
