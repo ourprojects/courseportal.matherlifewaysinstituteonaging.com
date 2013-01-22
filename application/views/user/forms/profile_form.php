@@ -65,8 +65,6 @@
 		<?php echo $form->textField($models['user_profile'], 'zip_code'); ?>
 		<?php echo $form->error($models['user_profile'], 'zip_code'); ?>
 	</div>
-	
-	<?php $profileQuestions->run(); ?>
 				
 	<div class="row submit">
 		<?php echo CHtml::submitButton(t('Save Changes')); ?>

@@ -1,17 +1,5 @@
 <?php
 $this->breadcrumbs = array(t('Courses'));
-$this->widget(
-		'ext.fancybox.EFancyBox',
-		array(
-				'id' => '.coming-soon',
-				'config' => array(
-						'width' => '800px',
-						'height' => '75%',
-						'autoSize' => false,
-						'scrolling' => 'no',
-				)
-		)
-);
 ?>
 <div class="small-masthead" style="background-image: url(<?php echo $this->getImagesUrl('header-courses.png'); ?>);">
 	<h1 class="bottom"><?php echo t('Courses'); ?></h1>
@@ -25,7 +13,7 @@ $this->widget(
 	<hr>
 
 	<img src="<?php echo $this->getImagesUrl('image-hands.png'); ?>" class="image-right" />
-	<h3><a href="#coming-soon" class="coming-soon"><?php echo t('Intro to Caregiving Online'); ?></a></h3>
+	<h3><a href="#coming-soon" class="coming-soon" target="_blank"><?php echo t('Intro to Caregiving Online'); ?></a></h3>
 	<p><?php echo t('Few are fully prepared for the responsibilities and tasks involved in caring for an older adult. 
 	As a caregiver, it is important to have a clear plan or guide that has multiple paths. This five-lesson online course introduces the basics 
 	of the caregiver role and explores the challenges associated with older adult care.'); ?></p>
@@ -47,7 +35,7 @@ $this->widget(
 	
 	<hr>
 	
-	<h3><a href="#coming-soon" class="coming-soon"><?php echo t('Empower Online'); ?></a></h3>
+	<h3><a href="#coming-soon" class="coming-soon" target="_blank"><?php echo t('Empower Online'); ?></a></h3>
 	<p><?php echo t('Empower Online is an in-depth, five-lesson online course that focuses on self-care for the 
 	working caregiver that was developed by Mather LifeWays Institute on Aging with the support of WFD Consulting. The program focuses on managing 
 	responsibilities while caring for loved ones with chronic medical issues and includes communicating effectively with healthcare providers 
@@ -71,7 +59,7 @@ $this->widget(
 	<hr>
 
 	<img src="<?php echo $this->getImagesUrl('image-grocery.png'); ?>" class="image-right" />
-	<h3><a href="#coming-soon" class="coming-soon"><?php echo t('CARE Coaching Online'); ?></a></h3>
+	<h3><a href="#coming-soon" class="coming-soon" target="_blank"><?php echo t('CARE Coaching Online'); ?></a></h3>
 	<p><?php echo t('CARE Coaching Online provides working caregivers with essential tools, 
 	knowledge, and skills to effectively deal with the variety of issues arising from caring for their aging parents, relatives, 
 	or loved ones. Developed by Mather LifeWays Institute on Aging, CARE Coaching Online improves working caregivers‚Äô abilities to 
@@ -94,7 +82,7 @@ $this->widget(
 	
 	<hr>
 	
-	<h3><a href="#coming-soon" class="coming-soon"><?php echo t('Making Sense of of Memory Loss (MSML) Online'); ?></a></h3>
+	<h3><a href="#coming-soon" class="coming-soon" target="_blank"><?php echo t('Making Sense of of Memory Loss (MSML) Online'); ?></a></h3>
 	<p><?php echo t('Developed by Mather LifeWays Institute on Aging and the Alzheimer‚Äôs Association, 
 	evidence-based Making Sense of Memory Loss Online helps those who care for someone in the early, middle, or late to final 
 	stages of memory loss, whether or not that individual has received a diagnosis of Alzheimers Disease or related dementia.'); ?></p>
@@ -117,7 +105,7 @@ $this->widget(
 	<hr>
 	
 	<img src="<?php echo $this->getImagesUrl('image-nurse.png'); ?>" class="image-right" />
-	<h3><a href="#coming-soon" class="coming-soon"><?php echo t('Gerontology Online program'); ?></a></h3>
+	<h3><a href="#coming-soon" class="coming-soon" target="_blank"><?php echo t('Gerontology Online program'); ?></a></h3>
 	<p><?php echo t('Gerontology Online is a web-based continuing education program designed for health care professionals 
 	who wish to enhance their knowledge and skills in the field of aging. This program will provide employees with valuable information about gerontology, 
 	helping them to stay abreast of the latest research and practices and it is also an excellent resource for new hires, providing them with a solid 

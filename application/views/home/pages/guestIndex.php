@@ -38,21 +38,21 @@ $this->widget(
 );
 
 ?>
-	<div id="home-image">
-		<h1><?php echo t('Web-based Training for Caregivers'); ?></h1>
+<div id="home-image">
+	<h1><?php echo t('Web-based Training for Caregivers'); ?></h1>
+</div>
+<div id="sidebar">
+	<div class="box-sidebar zero">
+		<a href="<?php echo $this->createUrl('user/register'); ?>"><?php echo t('Register'); ?> </a>
+		<a href="<?php echo $this->createUrl('home/contact'); ?>" class="teal"><?php echo t('Request Information'); ?> </a>
+		<a href="#slide-1" data-fancybox-group="open-tutorial" class="teal open-tutorial"> <?php echo t('Tutorial'); ?> </a>
+		<a href="#slide-2" data-fancybox-group="open-tutorial" class="open-tutorial" style="display: none;"></a> 
+		<a href="#slide-3" data-fancybox-group="open-tutorial" class="open-tutorial" style="display: none;"></a> 
+		<a href="#slide-4" data-fancybox-group="open-tutorial" class="open-tutorial" style="display: none;"></a> 
+		<a href="#slide-5" data-fancybox-group="open-tutorial" class="open-tutorial" style="display: none;"></a> 
+		<a href="#slide-6" data-fancybox-group="open-tutorial" class="open-tutorial" style="display: none;"></a>
 	</div>
-	<div id="sidebar">
-		<div class="box-sidebar zero">
-			<a href="<?php echo $this->createUrl('user/register'); ?>"><?php echo t('Register'); ?> </a>
-			<a href="<?php echo $this->createUrl('home/contact'); ?>" class="teal"><?php echo t('Request Information'); ?> </a>
-			<a href="#slide-1" data-fancybox-group="open-tutorial" class="teal open-tutorial"> <?php echo t('Tutorial'); ?> </a>
-			<a href="#slide-2" data-fancybox-group="open-tutorial" class="open-tutorial" style="display: none;"></a> 
-			<a href="#slide-3" data-fancybox-group="open-tutorial" class="open-tutorial" style="display: none;"></a> 
-			<a href="#slide-4" data-fancybox-group="open-tutorial" class="open-tutorial" style="display: none;"></a> 
-			<a href="#slide-5" data-fancybox-group="open-tutorial" class="open-tutorial" style="display: none;"></a> 
-			<a href="#slide-6" data-fancybox-group="open-tutorial" class="open-tutorial" style="display: none;"></a>
-		</div>
-		
+	
 	 <div class="box-sidebar">
 		<h3><?php echo t('Our Clients'); ?></h3>
 		<div id="customers">
@@ -93,7 +93,7 @@ $this->widget(
 		<div style="text-align: center">
 			<img src="<?php echo $this->getImagesUrl('metlife.jpg'); ?>" />
 		</div>
-		<p style="font-weight:bold; text-align:center;"><?php echo t('Double Jeopardy for Baby Boomers Caring for Their Parents'); ?></p>
+		<p style="text-align:center;"><b><?php echo t('Double Jeopardy for Baby Boomers Caring for Their Parents'); ?></b></p>
 		<p>
 			<?php echo t('Nearly 10 million adult children over the age of 50 care for their aging parents. These family caregivers are themselves aging as well
 					as providing care at a time when they also need to be planning and saving for their own retirement. The study is an updated, national
@@ -121,7 +121,6 @@ $this->widget(
 		
 		<div class="clear"></div>
 	</div>
-
 </div>
 
 <div class="column-wide">
@@ -149,54 +148,41 @@ $this->widget(
 		situation these caregivers were in. (English)'); ?>
 	</p>
 
-
-	<div class="box-grey">
-		<div id="MatherCaregivers">
-			<?php 
-			$this->widget(
-					'ext.JWplayer.JWplayer',
-					array(
-							'id' => 'MatherCaregivers',
-							'config' => array(
-									'image' => $this->createUrl('download').'/videos/MatherCaregivers/poster.jpg',
-									'width' => '540px',
-									'height' => '305px',
-									'levels' => array(
-											array('file' => $this->createUrl('download').'/videos/MatherCaregivers/video.m4v'),
-											array('file' => $this->createUrl('download').'/videos/MatherCaregivers/video.webm'),
-											array('file' => $this->createUrl('download').'/videos/MatherCaregivers/video.ogv')
-									)
-							)
-					)
-			);
-			?>
-		</div>
+	<div id="MatherCaregivers" class="box-grey">
+		<?php 
+		$this->widget(
+				'ext.JWplayer.JWplayer',
+				array(
+						'id' => 'MatherCaregivers',
+						'config' => array(
+								'image' => $this->createUrl('download').'/videos/MatherCaregivers/poster.jpg',
+								'width' => '540px',
+								'height' => '305px',
+								'levels' => array(
+										array('file' => $this->createUrl('download').'/videos/MatherCaregivers/video.m4v'),
+										array('file' => $this->createUrl('download').'/videos/MatherCaregivers/video.webm'),
+										array('file' => $this->createUrl('download').'/videos/MatherCaregivers/video.ogv')
+								)
+						)
+				)
+		);
+		?>
 	</div>
-
-	<h2 class="flowers top-pad" style="margin-top: 5px;"><?php echo t('Pedagogy'); ?></h2>
+	<h2 class="flowers top-pad" style="margin-top: 10px;"><?php echo t('Pedagogy'); ?></h2>
 	<p>
 		<?php echo t('Effective online instruction depends on learning experiences appropriately designed and facilitated by knowledgeable facilitators.
 				Because learners have different learning styles or a combination of styles, our web-based training has been design using activities that
 				address their modes of learning in order to provide significant experiences for each course user.'); ?>
 	</p>
-
-
-				<p style="font-size:small; ">
-					<?php echo t('Institution Wide Content Management - 25%')?><br>
-					<?php echo t('Online Course Delivery - 25%')?><br>
-					<?php echo t('Targeted Collaboration - 50%')?>
-				</p>
-	
+	<p style="font-size:small; ">
+		<?php echo t('Institution Wide Content Management - 25%')?><br>
+		<?php echo t('Online Course Delivery - 25%')?><br>
+		<?php echo t('Targeted Collaboration - 50%')?>
+	</p>
 	<div id="pie-charts">
 		<img id="pie-chart" src="<?php echo $this->getImagesUrl('home-chart.png'); ?>" />
 	</div>
-
-	<div class="box-white">
-		<?php
-			$workingCaregiverSurvey->run();
-		?>
-	</div>
-
+	<?php $workingCaregiverSurvey->run(); ?>
 	<div class="box-white">
 		<h2 class="flowers">
 			<?php echo t('Health status of your working caregivers'); ?>
@@ -229,25 +215,22 @@ $this->widget(
 	<div class="clear"></div>
 </div>
 
-<div style="display: none;">
-	<?php 
-	$hrEmployerSurvey->run();
-	?>
-</div>
-<div style="display: none;">
-	<?php 
-	$caregiverSurvey->run();
-	?>
-</div>
+<?php 
+$hrEmployerSurvey->run();
+$caregiverSurvey->run();
+?>
 
 <!--  start tutorial course here -->
 
 <div id="tutorial" style="display: none;">
-	<div id="slide-1" class="slide"><h2 class="flowers"><?php echo t('Tutorial'); ?></h2>
-	
-		<hr>
-				
-		<p style="text-align: center; font-weight: bold;" />THANK YOU for your interest and support!</p>
+	<div id="slide-1" class="slide">
+		<h2 class="flowers">
+			<?php echo t('Tutorial'); ?>
+		</h2>
+		<hr />
+		<p style="text-align: center;">
+		<b>THANK YOU for your interest and support!</b>
+		</p>
 		<p>
 			<?php echo t('We are Mather LifeWays, a unique, non-denominational not-for-profit organization based in Evanston, 
 			Illinois, USA, founded more than 70 years ago. We provide a continuum of living and care; make neighborhoods better 
@@ -272,104 +255,134 @@ $this->widget(
 			many family members, this involves a change in relationships and priorities. At times, the demands may seem overwhelming, but
 			understanding the type of cognitive impairment can be the first step in combating a challenging situation.'); ?>
 		</p>
-		<p style="font-weight: bold;" /><?php echo t('Objectives'); ?></p>
 		<p>
-			<ul>
-				<li><?php echo t('Describe dementia'); ?></li>
-				<li><?php echo t('Describe Alzheimer\'s disease'); ?></li>
-				<li><?php echo t('Describe the relationship between dementia and Alzheimer\'s disease'); ?>
-				</li>
-			</ul>
+		<b><?php echo t('Objectives'); ?></b>
 		</p>
-		<p style="font-size: small; font-style: italic;" /><?php echo t('Data and research have been developed or collected for this tutorial
-			course by the following:'); ?></p>
+		<p>
+		
+		
+		<ul>
+			<li><?php echo t('Describe dementia'); ?></li>
+			<li><?php echo t('Describe Alzheimer\'s disease'); ?></li>
+			<li><?php echo t('Describe the relationship between dementia and Alzheimer\'s disease'); ?></li>
+		</ul>
+		</p>
+		<p style="font-size: small;">
+			<i>
+			<?php 
+			echo t('Data and research have been developed or collected for this tutorial
+					course by the following:'); 
+			?>
+			</i>
+		</p>
 
-			<ul>
-				<li style="font-size: small; font-style: italic;" /><a href="http://www.alz.org" target="_blank">Alzheimer's
-						Association</a> <?php echo t('(USA)'); ?></li>
-				<li style="font-size: small; font-style: italic;" /><a href="http://matherlifewaysinstituteonaging.com"
-					target="_blank">Mather LifeWays Institute on Aging</a> <?php echo t('(USA)'); ?>
-				</li>
-				<li style="font-size: small; font-style: italic;" /><a href="http://www.nia.nih.gov" target="_blank">United States
-						Department of Health &amp; Human Services - National Institute on
-						Aging</a></li>
-			</ul>
-		<p class="course-buttons" style="text-align: center; "><a href="javascript:;" class="button right" onClick="$.fancybox.next();"><?php echo t('Start Tutorial &raquo;'); ?></a></p>
+		<ul id="developers">
+			<li>
+			<a href="http://www.alz.org" target="_blank">Alzheimer's Association</a>
+			<?php echo t('(USA)'); ?>
+			</li>
+			<li>
+			<a href="http://matherlifewaysinstituteonaging.com" target="_blank">Mather
+				LifeWays Institute on Aging</a>
+			<?php echo t('(USA)'); ?>
+			</li>
+			<li>
+			<a href="http://www.nia.nih.gov" target="_blank">United States
+				Department of Health &amp; Human Services - National Institute on
+				Aging</a>
+			</li>
+		</ul>
+		<p class="course-buttons" style="text-align: center;">
+			<a href="javascript:;" class="button right"
+				onClick="$.fancybox.next();"><?php echo t('Start Tutorial &raquo;'); ?>
+			</a>
+		</p>
 	</div>
 
 	<!--   Slide #2 Alzheimer's disease    -->
 
 	<div id="slide-2" class="slide">
-		<h4 style="font-size: 2em;"><?php echo t('Alzheimer\'s disease'); ?></h4>
-		
-			<hr>
-			
+		<h4>
+			<?php echo t('Alzheimer\'s disease'); ?>
+		</h4>
+		<hr />
 		<p>
 			<?php echo t('Alzheimer\'s disease is an irreversible, progressive brain disease that slowly destroys memory, thinking skills, behavior, and
 					eventually even the ability to carry out the simplest tasks of daily living. Symptoms usually develop slowly, worsen over time, and first appear after age 60. Alzheimer\'s
 					disease is the most common form and cause of dementia among older people. Alzheimer\'s has no current cure, but treatments for symptoms are
 					available and research continues. The disease is named after Dr. Alois Alzheimer.'); ?>
 		</p>
-			<ul>
-				<li class="pull-quote"><?php echo t('5.4 million Americans are living with Alzheimer\'s disease.'); ?></li>
-				<li class="pull-quote"><?php echo t('One in eight older Americans has Alzheimer\'s disease.'); ?></li>
-				<li class="pull-quote"><?php echo t('Alzheimer\'s is not a normal part of aging'); ?></li>
-			</ul>
-			<p style="font-weight: bold;" /><?php echo t('What to look for if you suspect someone is suffering from Alzheimer\'s disease:'); ?></p>
+		<ul>
+			<li class="pull-quote"><?php echo t('5.4 million Americans are living with Alzheimer\'s disease.'); ?>
+			</li>
+			<li class="pull-quote"><?php echo t('One in eight older Americans has Alzheimer\'s disease.'); ?>
+			</li>
+			<li class="pull-quote"><?php echo t('Alzheimer\'s is not a normal part of aging'); ?>
+			</li>
+		</ul>
+		<p>
+		<b><?php echo t('What to look for if you suspect someone is suffering from Alzheimer\'s disease:'); ?></b>
+		</p>
 
 		<ul>
 			<li><?php echo t('Challenges in planning or solving problems'); ?></li>
 			<li><?php echo t('Difficulty completing familiar tasks at home, at work or at leisure'); ?>
 			</li>
 			<li><?php echo t('Confusion with time or place'); ?></li>
-		</ul>	
-		<p style="font-weight:bold;" />
-			<?php echo t('Alzheimer\'s disease Facts and Figures 2012 (Video) (USA) (English)'); ?>
+		</ul>
+		<p>
+		<b><?php echo t('Alzheimer\'s disease Facts and Figures 2012 (Video) (USA) (English)'); ?></b>
 		</p>
-		  <p><iframe width="450" height="290" src="http://www.youtube.com/embed/In1IJocVor8?rel=0" frameborder="1"
-			allowfullscreen="" class="tutorial-video"></iframe></p>
-		
+		<p>
+			<iframe width="450" height="290"
+				src="http://www.youtube.com/embed/In1IJocVor8?rel=0" frameborder="1"
+				allowfullscreen="" class="tutorial-video"></iframe>
+		</p>
+
 		<p class="course-buttons" style="text-align: center">
-			<a href="javascript:;" class="button left" onclick="$.fancybox.prev();"><?php echo t('&laquo; Back'); ?> </a>
-			<a href="javascript:;" class="button right" onClick="$.fancybox.next();"><?php echo t('Next &raquo;'); ?> </a>
+			<a href="javascript:;" class="button left"
+				onclick="$.fancybox.prev();"><?php echo t('&laquo; Back'); ?> </a> <a
+				href="javascript:;" class="button right"
+				onClick="$.fancybox.next();"><?php echo t('Next &raquo;'); ?> </a>
 		</p>
 	</div>
 
 	<!--  Slide #3 dementia   -->
 
 	<div id="slide-3" class="slide">
-		<h4 style="font-size: 2em;"><?php echo t('Dementia'); ?></h4>
-
-		<hr>	
-		
+		<h4>
+			<?php echo t('Dementia'); ?>
+		</h4>
+		<hr />
 		<p>
 			<?php echo t('Dementia refers to an acquired and progressive loss of mental functions due to a brain disorder. Dementia is not a specific
 			disease. It is an overall term that describes a wide range of symptoms associated with a decline in memory or other thinking skills severe
 			enough to reduce a persons ability to perform everyday activities. A medical diagnosis is required to determine the underlying cause or
 			causes of symptoms.'); ?>
 		</p>
-		<p style="font-weight: bold;" /><?php echo t('Symptoms and signs of dementia'); ?></p>
+		<p>
+		<b><?php echo t('Symptoms and signs of dementia'); ?></b>
+		</p>
 		<p>
 			<?php echo t('While symptoms of dementia can vary greatly, at least two of the following core mental functions, amongst others, must be significantly impaired to be
 			considered dementia:'); ?>
 		</p>
-
 		<ul>
 			<li><?php echo t('Memory'); ?></li>
 			<li><?php echo t('Communication and language'); ?></li>
 			<li><?php echo t('Ability to focus and pay attention'); ?></li>
 		</ul>
-
 		<p>
 			<?php echo t('People with dementia may have problems with short-term memory, keeping track of a purse or wallet, paying bills, planning and
 			preparing meals, remembering appointments or traveling out of the neighborhood. Many dementias are progressive, meaning symptoms start
 			out slowly and gradually get worse.'); ?>
 		</p>
-			<img src="<?php echo $this->getImagesUrl('image-men.png'); ?>" style="margin: 20px 20px; width: 95%;" />
-
+		<img src="<?php echo $this->getImagesUrl('image-men.png'); ?>" style="margin: 20px 20px; width: 95%;" />
 		<p class="course-buttons" style="text-align: center">
-			<a href="javascript:;" class="button left" onclick="$.fancybox.prev();"><?php echo t('&laquo; Back'); ?> </a>
-			<a href="javascript:;" class="button right" onClick="$.fancybox.next();"><?php echo t('Next &raquo;'); ?> </a>
+			<a href="javascript:;" class="button left"
+				onclick="$.fancybox.prev();"><?php echo t('&laquo; Back'); ?> </a> <a
+				href="javascript:;" class="button right"
+				onClick="$.fancybox.next();"><?php echo t('Next &raquo;'); ?> </a>
 		</p>
 	</div>
 
@@ -377,159 +390,215 @@ $this->widget(
 
 	<div id="slide-4" class="slide">
 
-		<h4 style="font-size: 2em;"><?php echo t('The Relationship'); ?></h4>
-			<hr>
-			<p style="font-weight: bold;" />
-				<?php echo t('Dementia and Alzheimer\'s disease - How are they related?'); ?>
-			</p>
-			<p>
-				<?php echo t('Dementia is defined as the global, progressive deterioration of memory, language, thought, 
+		<h4>
+			<?php echo t('The Relationship'); ?>
+		</h4>
+		<hr />
+		<p>
+		<b><?php echo t('Dementia and Alzheimer\'s disease - How are they related?'); ?></b>
+		</p>
+		<p>
+			<?php echo t('Dementia is defined as the global, progressive deterioration of memory, language, thought, 
 				behavior and personality or mood. All or only a combination of these symptoms need to be present for a doctor 
 				to someone has dementia. Under the umbrella of dementia are specific types of dementia like Reversible Dementia, 
 				Vascular Dementia, Frontal-temporal Dementia and some diseases as well.'); ?>
-			</p>
-			<p>
-				<?php echo t('Alzheimer\'s disease, is a disease under the label of dementia. Alzheimer\'s disease
+		</p>
+		<p>
+			<?php echo t('Alzheimer\'s disease, is a disease under the label of dementia. Alzheimer\'s disease
 				 is estimated to account for 60-65% of all dementia, while reversible dementia account for 10% (2011, USA statistics).
 				 The relationship of dementia vs Alzheimers is not one of opposition. Alzheimer\'s disease is a type of dementia. 
 				 If someone has Alzheimers, they also have dementia. But if they have dementia they would have been diagnosed 
 				with a particular type of dementia or disease, like Alzheimer\'s disease.'); ?>
-			</p>
-			<p>
-				<?php echo t('Alzheimer\'s Disease results in a gradual deterioration of cognitive function over time. For this reason, Alzheimer\'s 
+		</p>
+		<p>
+			<?php echo t('Alzheimer\'s Disease results in a gradual deterioration of cognitive function over time. For this reason, Alzheimer\'s 
 				stages have been designated to refer to the amount of memory loss and function during the disease process.'); ?>
-			</p>
-			
-			<p style="font-weight: bold;" /><?php echo t('Statistics (USA)'); ?></p>
-			<p>
-				<ul>
-					<li><?php echo t('Alzheimer\'s is the sixth-leading cause of death and the only cause of death among the 
+		</p>
+
+		<p>
+		<b><?php echo t('Statistics (USA)'); ?></b>
+		</p>
+		<p>
+		
+		
+		<ul>
+			<li><?php echo t('Alzheimer\'s is the sixth-leading cause of death and the only cause of death among the 
 				top 10 in the USA that cannot be prevented, cured or even slowed.'); ?>
-					</li>
-					<li><?php echo t('A new person develops Alzheimer\'s disease every 69 seconds in the USA --
+			</li>
+			<li><?php echo t('A new person develops Alzheimer\'s disease every 69 seconds in the USA --
 							this is projected to increase to every 33 seconds by 2050.'); ?>
-					</li>
-					<li><?php echo t('<a href="http://www.alz.org/downloads/facts_figures_2012.pdf"
+			</li>
+			<li><?php echo t('<a href="http://www.alz.org/downloads/facts_figures_2012.pdf"
 							target="_blank">2012 United States Alzheimer\'s Disease Facts and
 							Figures report (English)</a>'); ?> - Alzheimer's Association (USA)
-					</li>
-			
-					<li><?php echo t('Millions of people in the USA have some degree of
+			</li>
+			<li><?php echo t('Millions of people in the USA have some degree of
 							dementia, and that number will increase over the next few decades
 							with the aging of the population.'); ?>
-					</li>
-					<li><?php echo t('In the USA, dementia affects about 1% of people aged 60-64 years and as many
+			</li>
+			<li><?php echo t('In the USA, dementia affects about 1% of people aged 60-64 years and as many
 							as 30-50% of people older than 85 years.'); ?>
-					</li>
-					<li><?php echo t('It is the leading reason for placing elderly people in
+			</li>
+			<li><?php echo t('It is the leading reason for placing elderly people in
 							institutions such as nursing homes.'); ?>
-					</li>
-				</ul>
-			</p>
-		
-			<p class="course-buttons" style="text-align: center;">
-				<a href="javascript:;" class="button left" 	onclick="$.fancybox.prev();"><?php echo t('&laquo; Back'); ?> </a>
-				<a href="javascript:;" class="button right" onClick="$.fancybox.next();"><?php echo t('Next &raquo;'); ?> </a>
-			</p>
+			</li>
+		</ul>
+		</p>
+
+		<p class="course-buttons" style="text-align: center;">
+			<a href="javascript:;" class="button left"
+				onclick="$.fancybox.prev();"><?php echo t('&laquo; Back'); ?> </a> <a
+				href="javascript:;" class="button right"
+				onClick="$.fancybox.next();"><?php echo t('Next &raquo;'); ?> </a>
+		</p>
 	</div>
 
 	<!--   Slide #5 Assessment   -->
 
-<div id="slide-5" class="slide">
-<h4 style="font-size: 2em;"><?php echo t('Assessment'); ?></h4>
-<hr>
-<p><?php echo t('Thinking about the material you just read, please try and correctly answer the assessment questions below without searching the Internet. Your responses are not recorded, and you will receive immediate feedback.'); ?></p>
+	<div id="slide-5" class="slide">
+		<h4>
+			<?php echo t('Assessment'); ?>
+		</h4>
+		<hr />
+		<p>
+			<?php echo t('Thinking about the material you just read, please try and correctly answer the assessment questions below without searching the Internet. Your responses are not recorded, and you will receive immediate feedback.'); ?>
+		</p>
 
-<div id="question1" style="padding: 10px; background: #fff; margin: 10px 10px 30px 10px; border-radius: 5px; box-shadow: 0 0 10px #999; height: 65px;" />
-<p><?php echo t('Is dementia a disease of the brain?'); ?>
-<select>
-	<option selected="selected" value="select"><?php echo t('Select'); ?></option>
-	<option value="1"><?php echo t('Yes'); ?></option>
-	<option value="0"><?php echo t('No') ?></option>
-</select>
-</p>
-<p id="answer"></p>
-<?php $clientScript->registerScript('slide-5-question1',
-"$('#slide-5 #question1 select').change(function() {
-if($(this).val() == '1') {
-$('#slide-5 #question1 #answer').html('Great! Yes, Dementia is a disease of the brain.');
+		<div id="question1" class="question">
+			<p>
+				<?php echo t('Is dementia a disease of the brain?'); ?>
+				<select>
+					<option selected="selected" value="select">
+						<?php echo t('Select'); ?>
+					</option>
+					<option value="1">
+						<?php echo t('Yes'); ?>
+					</option>
+					<option value="0">
+						<?php echo t('No') ?>
+					</option>
+				</select>
+			</p>
+			<p id="answer"></p>
+			<?php $clientScript->registerScript('slide-5-question1',
+					"$('#slide-5 #question1 select').change(function() {
+					if($(this).val() == '1') {
+					$('#slide-5 #question1 #answer').html('Great! Yes, Dementia is a disease of the brain.');
 } else {
-$('#slide-5 #question1 #answer').html('Please review this tutorial again. Dementia is a disease of the brain.');
+					$('#slide-5 #question1 #answer').html('Please review this tutorial again. Dementia is a disease of the brain.');
 }
 });");
-?>
-</div>
-    
-<div id="question2" style="padding: 10px; background: #fff; margin: 10px 10px 30px 10px; border-radius: 5px; box-shadow: 0 0 10px #999; height: 65px;" />
-<p><?php echo t('Is Alzehimer\'s disease a disease of the brain?'); ?>
-<select>
-	<option selected="selected" value="select"><?php echo t('Select'); ?></option>
-	<option value="1"><?php echo t('Yes'); ?></option>
-	<option value="0"><?php echo t('No') ?></option>
-</select>
-</p>
-<p id="answer"></p>
-<?php $clientScript->registerScript('slide-5-question2',
-"$('#slide-5 #question2 select').change(function() {
-if($(this).val() == '1') {
-$('#slide-5 #question2 #answer').html('Great! Yes, Alzheimer\'s disease is a disease of the brain.');
+			?>
+		</div>
+		<div id="question2" class="question">
+			<p>
+				<?php echo t('Is Alzehimer\'s disease a disease of the brain?'); ?>
+				<select>
+					<option selected="selected" value="select">
+						<?php echo t('Select'); ?>
+					</option>
+					<option value="1">
+						<?php echo t('Yes'); ?>
+					</option>
+					<option value="0">
+						<?php echo t('No') ?>
+					</option>
+				</select>
+			</p>
+			<p id="answer"></p>
+			<?php $clientScript->registerScript('slide-5-question2',
+					"$('#slide-5 #question2 select').change(function() {
+					if($(this).val() == '1') {
+					$('#slide-5 #question2 #answer').html('Great! Yes, Alzheimer\'s disease is a disease of the brain.');
 } else {
-$('#slide-5 #question2 #answer').html('Please review this tutorial again. Alzheimer\'s disease is a disease of the brain.');
+					$('#slide-5 #question2 #answer').html('Please review this tutorial again. Alzheimer\'s disease is a disease of the brain.');
 }
 });");
-?>
-</div>
-
-<div id="question3" style="padding: 10px; background: #fff; margin: 10px 10px 30px 10px; border-radius: 5px; box-shadow: 0 0 10px #999; height: 65px;" />
-<p><?php echo t('Alzheimer\'s disease is the most common form of dementia.'); ?>
-<select>
-	<option selected="selected" value="select"><?php echo t('Select'); ?></option>
-	<option value="1"><?php echo t('True'); ?></option>
-	<option value="0"><?php echo t('False'); ?></option>
-</select>
-</p>
-<p id="answer"></p>
-<?php $clientScript->registerScript('slide-5-question3',
-"$('#slide-5 #question3 select').change(function() {
-if($(this).val() == '1') {
-$('#slide-5 #question3 #answer').html('Yes, Alzheimer\'s disease is the most common form of dementia.');
+			?>
+		</div>
+		<div id="question3" class="question">
+			<p>
+				<?php echo t('Alzheimer\'s disease is the most common form of dementia.'); ?>
+				<select>
+					<option selected="selected" value="select">
+						<?php echo t('Select'); ?>
+					</option>
+					<option value="1">
+						<?php echo t('True'); ?>
+					</option>
+					<option value="0">
+						<?php echo t('False'); ?>
+					</option>
+				</select>
+			</p>
+			<p id="answer"></p>
+			<?php $clientScript->registerScript('slide-5-question3',
+					"$('#slide-5 #question3 select').change(function() {
+					if($(this).val() == '1') {
+					$('#slide-5 #question3 #answer').html('Yes, Alzheimer\'s disease is the most common form of dementia.');
 } else {
-$('#slide-5 #question3 #answer').html('Please review this tutorial again. Alzheimer\'s disease is the most common form of dementia.');
+					$('#slide-5 #question3 #answer').html('Please review this tutorial again. Alzheimer\'s disease is the most common form of dementia.');
 }
 });");
-?>
-</div>
+			?>
+		</div>
 
-<div id="question" style="padding: 10px; background: #fff; margin: 10px 10px 30px 10px; border-radius: 5px; box-shadow: 0 0 10px #999;" />
-<p><?php echo t('Using the search box below, find additional data and statistics on dementia and 
-						Alzheimer\'s disease in your area. It is important that you learn to conduct your own research.'); ?></p>
-<p>
-<form method="get" action="http://www.google.com/search" target="_blank">
-  <input type="text" id="google-search" name="q" size="65" maxlength="255" value="" />
-  </p>
-  <p>
-    <input type="submit" value="<?php echo t('Google Search'); ?>" class="teal" />
-  </p>
-</form>
-</p>
-</div>
-<p class="course-buttons" style="text-align: center;"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();"><?php echo t('&laquo; Back'); ?> </a> <a href="javascript:;" class="button right" onClick="$.fancybox.next();"><?php echo t('Next &raquo;'); ?> </a> </p>
-</div>
+		<div id="question" class="question">
+			<p>
+				<?php echo t('Using the search box below, find additional data and statistics on dementia and 
+						Alzheimer\'s disease in your area. It is important that you learn to conduct your own research.'); ?>
+			</p>
+			<p>
+			
+			
+			<form method="get" action="http://www.google.com/search"
+				target="_blank">
+				<input type="text" id="google-search" name="q" size="65"
+					maxlength="255" value="" />
+				</p>
+				<p>
+					<input type="submit" value="<?php echo t('Google Search'); ?>"
+						class="teal" />
+				</p>
+			</form>
+			</p>
+		</div>
+		<p class="course-buttons">
+			<a href="javascript:;" class="button left"
+				onclick="$.fancybox.prev();"><?php echo t('&laquo; Back'); ?> </a> <a
+				href="javascript:;" class="button right"
+				onClick="$.fancybox.next();"><?php echo t('Next &raquo;'); ?> </a>
+		</p>
+	</div>
 
 	<!--   slide 6 - closing here    -->
 
 	<div id="slide-6" class="slide">
-  <h4 style="font-size: 2em;"><?php echo t('Conclusion'); ?></h4>
-  <hr>
-  <p><?php echo t('With such a profound impact on society, business, and potentially on your family, understanding
-			dementia and Alzheimer\'s disease is very important. After participating in this tutorial, you
-			should now be able to understand and explaing what Alzheimer\'s disease and dementia are.'); ?> </p>
-  <p> <?php echo t('Thank you for participating in this tutorial course! Now that you have a better idea on what to expect, your next step is to register and
-			begin participating in the various online courses. Please contact us if you have questions or need help.'); ?> </p>
-  <p style="font-weight: bold;" />
-  <?php echo t('Certificate of Completion (English)'); ?>
-  </p>
-  <p><a href="/themes/onlinecourseportal/images/CourseCompletionCertificate.pdf" target="_blank"> <img src="<?php echo $this->getImagesUrl('AcrobatReaderIcon.png'); ?>" /></a> </p>
-  <p class="course-buttons" style="text-align: center;"> <a href="#" onClick="parent.jQuery.fancybox.close();" class="button left"> <?php echo t('Exit'); ?></a> </p>
+		<h4>
+			<?php echo t('Conclusion'); ?>
+		</h4>
+		<hr />
+		<p>
+			<?php echo t('With such a profound impact on society, business, and potentially on your family, understanding
+					dementia and Alzheimer\'s disease is very important. After participating in this tutorial, you
+					should now be able to understand and explaing what Alzheimer\'s disease and dementia are.'); ?>
+		</p>
+		<p>
+			<?php echo t('Thank you for participating in this tutorial course! Now that you have a better idea on what to expect, your next step is to register and
+					begin participating in the various online courses. Please contact us if you have questions or need help.'); ?>
+		</p>
+		<p>
+		<b><?php echo t('Certificate of Completion (English)'); ?></b>
+		</p>
+		<p>
+			<a href="/themes/onlinecourseportal/images/CourseCompletionCertificate.pdf" target="_blank"> 
+				<img src="<?php echo $this->getImagesUrl('AcrobatReaderIcon.png'); ?>" />
+			</a>
+		</p>
+		<p class="course-buttons">
+			<a href="#" onClick="parent.jQuery.fancybox.close();"
+				class="button left"> <?php echo t('Exit'); ?>
+			</a>
+		</p>
+	</div>
 </div>
-    </div>

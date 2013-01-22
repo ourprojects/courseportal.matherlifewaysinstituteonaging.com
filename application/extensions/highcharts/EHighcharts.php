@@ -70,7 +70,8 @@
 class EHighcharts extends CWidget {
 	
 	const ID = 'EHighcharts';
-
+	
+	public $group = self::ID;
 	public $options = array();
 	public $htmlOptions = array();
 
@@ -87,13 +88,10 @@ class EHighcharts extends CWidget {
 		if(!is_array($this->options) && is_string($this->options) && !$this->options = CJSON::decode($this->options))
 			throw new CException(Yii::t(self::ID, 'The options parameter is not an array or a valid JSON string.'));
 
-		// merge options with default values
-		$this->options = CMap::mergeArray($this->getDefaultOptions(), $this->options);
-		$this->registerScripts(__CLASS__ . "#{$this->htmlOptions['id']}", 'highcharts["'.$this->htmlOptions['id'].'"] = new Highcharts.Chart('.CJavaScript::encode($this->options).');');
-	}
-	
-	public function getDefaultOptions() {
-		return array('chart' => array('renderTo' => $this->getId()), 'exporting' => array('enabled' => true));
+		if(!isset($this->options['chart']['renderTo']))
+			$this->options['chart']['renderTo'] = $this->htmlOptions['id'];
+		
+		$this->registerScripts(__CLASS__ . "#{$this->htmlOptions['id']}", $this->group.'_highcharts_instances["'.$this->htmlOptions['id'].'"] = new Highcharts.Chart('.CJavaScript::encode($this->options).');');
 	}
 
 	/**
@@ -121,7 +119,8 @@ class EHighcharts extends CWidget {
 			if(isset($this->options['theme'])) {
 				$cs->registerScriptFile("$baseUrl/themes/{$this->options['theme']}.js");
 			}
-			$cs->registerScript('highchartsGlobalVariable', 'var highcharts = [];', CClientScript::POS_HEAD);
+			
+			$cs->registerScript($this->group.'_highcharts_instances', 'var '.$this->group.'_highcharts_instances = [];', CClientScript::POS_HEAD);
 			$cs->registerScript($id, $embeddedScript, CClientScript::POS_LOAD);
 		} else {
 			throw new CException(Yii::t(

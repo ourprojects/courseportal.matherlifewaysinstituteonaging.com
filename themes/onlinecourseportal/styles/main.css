@@ -98,19 +98,15 @@ div.breadcrumbs span {
 	box-shadow: 0 0 10px #ccc;
 	display: inline-block;
 	border: 0;
+	cursor: hand; 
+	cursor: pointer;
 }
 .button.teal, button.teal, input[type=submit].teal {
 	background: #f47b20 url(../images/bg-menu-active.jpg) bottom center repeat-x;
 }
-.button:hover {
+.button:hover, button:hover, input[type=submit]:hover {
 	background-position: top center;
 	color: #fff;
-}
-
-#pie-charts-stats {
-	float: right;
-	padding: 115px 0 0 0;
-	line-height: 18pt;
 }
 
 /************** MENU STYLES **************/

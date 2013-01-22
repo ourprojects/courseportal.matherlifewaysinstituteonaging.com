@@ -1,11 +1,17 @@
-#tutorial #question {
-	padding: 10px;
-	background: #fff;
-	margin: 30px;
-	border-radius: 5px;
-	box-shadow: 0 0 10px #999;
-	text-align: center;
-	min-height: 150px;
+#tutorial .question {
+	padding: 10px; 
+	background: #fff; 
+	margin: 10px 10px 30px 10px; 
+	border-radius: 5px; 
+	box-shadow: 0 0 10px #999; 
+	height: 65px;
+}
+#tutorial #developers {
+	font-size: small; 
+	font-style: italic;
+}
+#tutorial h4 {
+	text-size: 2em;
 }
 #tutorial h2.flowers {
 	border-bottom: 1px solid #ddd;
@@ -24,6 +30,7 @@
 	color: #b71010;
 }
 #tutorial .course-buttons {
+	text-align:center;
 	background: #ddd;
 	border-radius: 10px;
 	height: 40px;
@@ -33,25 +40,7 @@
 	left: 5px;
 	right: 5px;
 }
-#tutorial .change-slide.button.left {
-	float: left;
-}
-#tutorial .change-slide.button.right {
-	float: right;
-}
-#tutorial .box-white {
-	font-size: 12pt;
-}
-#tutorial .no-bullets {
-	list-style: none;
-}
-#tutorial .no-bullets li {
-	padding: 5px 0 5px 30px;
-}
 #tutorial .tutorial-video {
 	float: right;
 	margin: 0 0 15px 15px;
-}
-#tutorial .teal {
-	margin: 7px 0 0 0;
 }

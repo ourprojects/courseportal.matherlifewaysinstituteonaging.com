@@ -3,5 +3,8 @@
 	<h1 class="bottom"><?php echo t('Profile'); ?></h1>
 </div>
 <div id="single-column">
-<?php echo $this->renderPartial('forms/profile_form', array('models' => $models, 'profileQuestions' => $profileQuestions)); ?>
+<?php 
+	echo $this->renderPartial('forms/profile_form', array('models' => $models));
+ 	echo CHtml::link(t('Survey Questions'), $this->createUrl('profileSurvey')); 
+ ?>
 </div>

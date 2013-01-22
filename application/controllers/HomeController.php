@@ -36,14 +36,18 @@ class HomeController extends OnlineCoursePortalController {
 					'modules.surveyor.widgets.Survey',
 					array(
 							'id' => 'workingCaregiver',
-							'autoProcessRequest' => true,
-							'titleHtmlOptions' => array('class' => 'flowers'),
-							'questionHtmlOptions' => array('class' => 'row'),
-							'formOptions' => array(
-												'enableAjaxValidation' => true,
-												'enableClientValidation' => true
-											),
-							'submitButtonHtmlOptions' => array('class' => 'row submit'),
+							'options' => array(
+								'highcharts' => array('show' => false),
+								'autoProcess' => true,
+								'htmlOptions' => array('class' => 'box-white'),
+								'title' => array('htmlOptions' => array('class' => 'flowers')),
+								'questions' => array('htmlOptions' => array('class' => 'row')),
+								'form' => array('options' => array(
+													'enableAjaxValidation' => true,
+													'enableClientValidation' => true
+												)),
+								'submitButton' => array('htmlOptions' => array('class' => 'row submit')),
+							)
 					)
 			);
 			
@@ -51,13 +55,16 @@ class HomeController extends OnlineCoursePortalController {
 					'modules.surveyor.widgets.Survey',
 					array(
 							'id' => 'hrEmployer',
-							'autoProcessRequest' => true,
-							'titleHtmlOptions' => array('class' => 'flowers'),
-							'formOptions' =>
-									array(
-											'enableAjaxValidation' => true,
-											'enableClientValidation' => true
-									),
+							'options' => array(
+								'autoProcess' => true,
+								'htmlOptions' => array('style' => 'display: none;'),
+								'title' => array('htmlOptions' => array('class' => 'flowers')),
+								'form' => array('options' =>
+										array(
+												'enableAjaxValidation' => true,
+												'enableClientValidation' => true
+										)),
+							)
 					)
 			);
 			
@@ -65,13 +72,16 @@ class HomeController extends OnlineCoursePortalController {
 					'modules.surveyor.widgets.Survey',
 					array(
 							'id' => 'caregiver',
-							'autoProcessRequest' => true,
-							'titleHtmlOptions' => array('class' => 'flowers'),
-							'formOptions' =>
-									array(
-											'enableAjaxValidation' => true,
-											'enableClientValidation' => true
-									),
+							'options' => array(
+								'autoProcess' => true,
+								'htmlOptions' => array('style' => 'display: none;'),
+								'title' => array('htmlOptions' => array('class' => 'flowers')),
+								'form' => array('options' =>
+										array(
+												'enableAjaxValidation' => true,
+												'enableClientValidation' => true
+										)),
+							)
 					)
 			);
 
