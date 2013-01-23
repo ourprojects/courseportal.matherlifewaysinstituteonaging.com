@@ -62,7 +62,7 @@ $this->breadcrumbs = array(t('Courses'));
 	<h3><a href="#coming-soon" class="coming-soon" target="_blank"><?php echo t('CARE Coaching Online'); ?></a></h3>
 	<p><?php echo t('CARE Coaching Online provides working caregivers with essential tools, 
 	knowledge, and skills to effectively deal with the variety of issues arising from caring for their aging parents, relatives, 
-	or loved ones. Developed by Mather LifeWays Institute on Aging, CARE Coaching Online improves working caregivers‚Äô abilities to 
+	or loved ones. Developed by Mather LifeWays Institute on Aging, CARE Coaching Online improves working caregivers abilities to 
 	communicate, advocate, relate, and encourage their older parents or loved ones in making future plans.'); ?></p>
 	
 		<p>
@@ -82,10 +82,10 @@ $this->breadcrumbs = array(t('Courses'));
 	
 	<hr>
 	
-	<h3><a href="#coming-soon" class="coming-soon" target="_blank"><?php echo t('Making Sense of of Memory Loss (MSML) Online'); ?></a></h3>
-	<p><?php echo t('Developed by Mather LifeWays Institute on Aging and the Alzheimer‚Äôs Association, 
+	<h3><a href="#coming-soon" class="coming-soon" target="_blank"><?php echo t('Making Sense of Memory Loss (MSML) Online'); ?></a></h3>
+	<p><?php echo t('Developed by Mather LifeWays Institute on Aging and the Alzheimer\'s Association, 
 	evidence-based Making Sense of Memory Loss Online helps those who care for someone in the early, middle, or late to final 
-	stages of memory loss, whether or not that individual has received a diagnosis of Alzheimers Disease or related dementia.'); ?></p>
+	stages of memory loss, whether or not that individual has received a diagnosis of Alzheimer\'s Disease or related dementia.'); ?></p>
 	
 		<p>
 		<?php echo t('Objectives'); ?></p>
@@ -104,8 +104,8 @@ $this->breadcrumbs = array(t('Courses'));
 	
 	<hr>
 	
-	<img src="<?php echo $this->getImagesUrl('image-nurse.png'); ?>" class="image-right" />
-	<h3><a href="#coming-soon" class="coming-soon" target="_blank"><?php echo t('Gerontology Online program'); ?></a></h3>
+	<img src="<?php echo $this->getImagesUrl('image-nurse.png'); ?>" class="image-right">
+	<h3><a href="http://mather.connectedlearning.net/home/" target="_blank"><?php echo t('Gerontology Online program'); ?></a></h3>
 	<p><?php echo t('Gerontology Online is a web-based continuing education program designed for health care professionals 
 	who wish to enhance their knowledge and skills in the field of aging. This program will provide employees with valuable information about gerontology, 
 	helping them to stay abreast of the latest research and practices and it is also an excellent resource for new hires, providing them with a solid 
