@@ -67,15 +67,15 @@ $this->widget(
 	
 	<div class="box-sidebar one"><h3><?php echo t('Participating Locations'); ?></h3>
 		<div id="flags">
-			<img src="<?php echo $this->getImagesUrl('United-States-Flag-64.png'); ?>" style="margin-right:25px;" alt="USA" />
+			<img src="<?php echo $this->getImagesUrl('United-States-Flag-64.png'); ?>" style="margin-right:15px;" alt="USA" />
 			<img src="<?php echo $this->getImagesUrl('China-Flag-64.png'); ?>" alt="China" /><br>
-			<img src="<?php echo $this->getImagesUrl('Hong-Kong-Flag-64.png'); ?>" style="margin-right:25px;" alt="Hong Kong" />
+			<img src="<?php echo $this->getImagesUrl('Hong-Kong-Flag-64.png'); ?>" style="margin-right:15px;" alt="Hong Kong" />
 			<img src="<?php echo $this->getImagesUrl('Brazil-Flag-64.png'); ?>" alt="Brazil" /><br>
-			<img src="<?php echo $this->getImagesUrl('Mexico-Flag-64.png'); ?>" style="margin-right:25px;" alt="Mexico" />
+			<img src="<?php echo $this->getImagesUrl('Mexico-Flag-64.png'); ?>" style="margin-right:15px;" alt="Mexico" />
 			<img src="<?php echo $this->getImagesUrl('Taiwan-Flag-64.png'); ?>" alt="Taiwan" /><br>
-			<img src="<?php echo $this->getImagesUrl('Argentina-Flag-64.png'); ?>" style="margin-right:25px;" alt="Argentina" />
+			<img src="<?php echo $this->getImagesUrl('Argentina-Flag-64.png'); ?>" style="margin-right:15px;" alt="Argentina" />
 			<img src="<?php echo $this->getImagesUrl('United-Kingdom-flag-64.png'); ?>" alt="England" /><br>
-			<img src="<?php echo $this->getImagesUrl('Luxembourg-Flag-64.png'); ?>" style="margin-right:25px;" alt="Luxembourg" />
+			<img src="<?php echo $this->getImagesUrl('Luxembourg-Flag-64.png'); ?>" style="margin-right:15px;" alt="Luxembourg" />
 		</div>
 	</div> 
 
@@ -143,12 +143,12 @@ $this->widget(
 
 	<h2 class="flowers top-pad"><?php echo t('A Closer Look - Lives of Caregivers'); ?></h2>
 
-	<p style="padding-bottom: 10px;">
+	<p style="padding-bottom: 25px;">
 		<?php echo t('Join us in looking at the incredible lives of several, unique caregivers, as they recall their experience and emotion. Capturing various age groups and ethnicities, you will quickly relate to the
 		situation these caregivers were in. (English)'); ?>
 	</p>
-
-	<div id="MatherCaregivers" class="box-grey">
+	<div class="box-grey">
+	<div id="MatherCaregivers">
 		<?php 
 		$this->widget(
 				'ext.JWplayer.JWplayer',
@@ -168,13 +168,14 @@ $this->widget(
 		);
 		?>
 	</div>
-	<h2 class="flowers top-pad" style="margin-top: 10px;"><?php echo t('Pedagogy'); ?></h2>
+    </div>
+	<h2 class="flowers top-pad"><?php echo t('Pedagogy'); ?></h2>
 	<p>
 		<?php echo t('Effective online instruction depends on learning experiences appropriately designed and facilitated by knowledgeable facilitators.
 				Because learners have different learning styles or a combination of styles, our web-based training has been design using activities that
 				address their modes of learning in order to provide significant experiences for each course user.'); ?>
 	</p>
-	<p style="font-size:small; ">
+	<p>
 		<?php echo t('Institution Wide Content Management - 25%')?><br>
 		<?php echo t('Online Course Delivery - 25%')?><br>
 		<?php echo t('Targeted Collaboration - 50%')?>
@@ -229,20 +230,12 @@ $caregiverSurvey->run();
 		</h2>
 		<hr />
 		<p style="text-align: center;">
-		<b>THANK YOU for your interest and support!</b>
+		<b><?php echo t('Thank you for your interest and support!'); ?></b>
 		</p>
 		<p>
-			<?php echo t('We are Mather LifeWays, a unique, non-denominational not-for-profit organization based in Evanston, 
-			Illinois, USA, founded more than 70 years ago. We provide a continuum of living and care; make neighborhoods better 
-			places for older adults to live, work, learn, contribute, and play; and identify, implement, and share best practices 
-			for wellness programs, aging-in-the-workplace issues, emergency preparedness, staff development, and online education 
-			and programs empowering working family caregivers. We are committed to being an ongoing resource for older adults and 
-			our partners - continuing to introduce progressive ideas and help advance all areas of aging and living well.'); ?>
-		</p>
-		<p>
-			<?php echo t('Through conducting applied research, Mather LifeWays Institute on Aging has developed award-winning, 
+			<?php echo t('Through conducting applied research, we have developed award-winning, 
 			evidence-based education programs for professionals who serve older adults. Staffed by researchers and educators, 
-			the Institute is a global resource for information about wellness, successful aging service innovations, and 
+			we are a global resource for information about wellness, successful aging service innovations, and 
 			educational programming.'); ?>
 		</p>
 		<p>
@@ -259,8 +252,7 @@ $caregiverSurvey->run();
 		<b><?php echo t('Objectives'); ?></b>
 		</p>
 		<p>
-		
-		
+			
 		<ul>
 			<li><?php echo t('Describe dementia'); ?></li>
 			<li><?php echo t('Describe Alzheimer\'s disease'); ?></li>
@@ -277,17 +269,17 @@ $caregiverSurvey->run();
 		</p>
 
 		<ul id="developers">
-			<li>
+			<li style="font-size: small; font-style:italic;">
 			<a href="http://www.alz.org" target="_blank">Alzheimer's Association</a>
 			<?php echo t('(USA)'); ?>
 			</li>
-			<li>
+			<li style="font-size: small; font-style:italic;">
 			<a href="http://matherlifewaysinstituteonaging.com" target="_blank">Mather
 				LifeWays Institute on Aging</a>
 			<?php echo t('(USA)'); ?>
 			</li>
-			<li>
-			<a href="http://www.nia.nih.gov" target="_blank">United States
+			<li style="font-size: small; font-style:italic;">
+			<a href="http://nih.gov" target="_blank">United States
 				Department of Health &amp; Human Services - National Institute on
 				Aging</a>
 			</li>
@@ -302,20 +294,16 @@ $caregiverSurvey->run();
 	<!--   Slide #2 Alzheimer's disease    -->
 
 	<div id="slide-2" class="slide">
-		<h4>
+		<h2 class="flowers">
 			<?php echo t('Alzheimer\'s disease'); ?>
-		</h4>
+		</h2>
 		<hr />
 		<p>
 			<?php echo t('Alzheimer\'s disease is an irreversible, progressive brain disease that slowly destroys memory, thinking skills, behavior, and
-					eventually even the ability to carry out the simplest tasks of daily living. Symptoms usually develop slowly, worsen over time, and first appear after age 60. Alzheimer\'s
-					disease is the most common form and cause of dementia among older people. Alzheimer\'s has no current cure, but treatments for symptoms are
-					available and research continues. The disease is named after Dr. Alois Alzheimer.'); ?>
+					eventually even the ability to carry out the simplest tasks of daily living. Symptoms usually develop slowly, worsen over time, and first appear after age 60. Alzheimer\'s disease is the most common form and cause of dementia among older people. Alzheimer\'s has no current cure. The disease is named after Dr. Alois Alzheimer.'); ?>
 		</p>
 		<ul>
-			<li class="pull-quote"><?php echo t('5.4 million Americans are living with Alzheimer\'s disease.'); ?>
-			</li>
-			<li class="pull-quote"><?php echo t('One in eight older Americans has Alzheimer\'s disease.'); ?>
+			<li class="pull-quote"><?php echo t('Millions of Americans are living with Alzheimer\'s disease.'); ?>
 			</li>
 			<li class="pull-quote"><?php echo t('Alzheimer\'s is not a normal part of aging'); ?>
 			</li>
@@ -328,15 +316,13 @@ $caregiverSurvey->run();
 			<li><?php echo t('Challenges in planning or solving problems'); ?></li>
 			<li><?php echo t('Difficulty completing familiar tasks at home, at work or at leisure'); ?>
 			</li>
-			<li><?php echo t('Confusion with time or place'); ?></li>
 		</ul>
 		<p>
-		<b><?php echo t('Alzheimer\'s disease Facts and Figures 2012 (Video) (USA) (English)'); ?></b>
+		<b><?php echo t('Alzheimer\'s disease Facts and Figures 2012 (USA / English)'); ?></b>
 		</p>
-		<p>
-			<iframe width="450" height="290"
-				src="http://www.youtube.com/embed/In1IJocVor8?rel=0" frameborder="1"
-				allowfullscreen="" class="tutorial-video"></iframe>
+		<p>               
+                <iframe width="560" height="315" src="http://www.youtube.com/embed/In1IJocVor8?rel=0" 
+                frameborder="1" allowfullscreen class="tutorial-video"></iframe>
 		</p>
 
 		<p class="course-buttons" style="text-align: center">
@@ -350,9 +336,9 @@ $caregiverSurvey->run();
 	<!--  Slide #3 dementia   -->
 
 	<div id="slide-3" class="slide">
-		<h4>
+		<h2 class="flowers">
 			<?php echo t('Dementia'); ?>
-		</h4>
+		</h2>
 		<hr />
 		<p>
 			<?php echo t('Dementia refers to an acquired and progressive loss of mental functions due to a brain disorder. Dementia is not a specific
@@ -390,9 +376,9 @@ $caregiverSurvey->run();
 
 	<div id="slide-4" class="slide">
 
-		<h4>
+		<h2 class="flowers">
 			<?php echo t('The Relationship'); ?>
-		</h4>
+		</h2>
 		<hr />
 		<p>
 		<b><?php echo t('Dementia and Alzheimer\'s disease - How are they related?'); ?></b>
@@ -418,32 +404,22 @@ $caregiverSurvey->run();
 		<p>
 		<b><?php echo t('Statistics (USA)'); ?></b>
 		</p>
-		<p>
+	
 		
 		
 		<ul>
 			<li><?php echo t('Alzheimer\'s is the sixth-leading cause of death and the only cause of death among the 
 				top 10 in the USA that cannot be prevented, cured or even slowed.'); ?>
 			</li>
-			<li><?php echo t('A new person develops Alzheimer\'s disease every 69 seconds in the USA --
-							this is projected to increase to every 33 seconds by 2050.'); ?>
-			</li>
-			<li><?php echo t('<a href="http://www.alz.org/downloads/facts_figures_2012.pdf"
-							target="_blank">2012 United States Alzheimer\'s Disease Facts and
-							Figures report (English)</a>'); ?> - Alzheimer's Association (USA)
-			</li>
 			<li><?php echo t('Millions of people in the USA have some degree of
 							dementia, and that number will increase over the next few decades
 							with the aging of the population.'); ?>
-			</li>
-			<li><?php echo t('In the USA, dementia affects about 1% of people aged 60-64 years and as many
-							as 30-50% of people older than 85 years.'); ?>
 			</li>
 			<li><?php echo t('It is the leading reason for placing elderly people in
 							institutions such as nursing homes.'); ?>
 			</li>
 		</ul>
-		</p>
+		
 
 		<p class="course-buttons" style="text-align: center;">
 			<a href="javascript:;" class="button left"
@@ -456,15 +432,24 @@ $caregiverSurvey->run();
 	<!--   Slide #5 Assessment   -->
 
 	<div id="slide-5" class="slide">
-		<h4>
+		<h2 class="flowers">
 			<?php echo t('Assessment'); ?>
-		</h4>
+		</h2>
 		<hr />
 		<p>
 			<?php echo t('Thinking about the material you just read, please try and correctly answer the assessment questions below without searching the Internet. Your responses are not recorded, and you will receive immediate feedback.'); ?>
-		</p>
+		</p><br>
 
-		<div id="question1" class="question">
+		<div id="question1" class="question" style="
+        background-color:#FFFFFF;
+        border-radius: 15px;
+        width:75%;
+        height:65px;
+        margin-left:75px;
+        padding:10px;
+        -moz-box-shadow: 0 0 5px 5px #888;
+		-webkit-box-shadow: 0 0 5px 5px#888;
+		box-shadow: 0 0 5px 5px #888;">
 			<p>
 				<?php echo t('Is dementia a disease of the brain?'); ?>
 				<select>
@@ -490,7 +475,16 @@ $caregiverSurvey->run();
 });");
 			?>
 		</div>
-		<div id="question2" class="question">
+		<div id="question2" class="question" style="
+        background-color:#FFFFFF;
+        border-radius: 15px;
+        width:75%;
+        height:65px;
+        margin-left:75px;
+        padding:10px;
+        -moz-box-shadow: 0 0 5px 5px #888;
+		-webkit-box-shadow: 0 0 5px 5px#888;
+		box-shadow: 0 0 5px 5px #888;">
 			<p>
 				<?php echo t('Is Alzehimer\'s disease a disease of the brain?'); ?>
 				<select>
@@ -516,7 +510,16 @@ $caregiverSurvey->run();
 });");
 			?>
 		</div>
-		<div id="question3" class="question">
+		<div id="question3" class="question" style="
+         background-color:#FFFFFF;
+        border-radius: 15px;
+        width:75%;
+        height:75px;
+        margin-left:75px;
+        padding:10px;
+        -moz-box-shadow: 0 0 5px 5px #888;
+		-webkit-box-shadow: 0 0 5px 5px#888;
+		box-shadow: 0 0 5px 5px #888;">
 			<p>
 				<?php echo t('Alzheimer\'s disease is the most common form of dementia.'); ?>
 				<select>
@@ -542,29 +545,35 @@ $caregiverSurvey->run();
 });");
 			?>
 		</div>
-
-		<div id="question" class="question">
+<br><br>
+		<div id="question" class="question" style="
+         background-color:#FFFFFF;
+        border-radius: 15px;
+        width:75%;
+        height:125px;
+        margin-left:75px;
+        padding:10px;
+        -moz-box-shadow: 0 0 5px 5px #888;
+		-webkit-box-shadow: 0 0 5px 5px#888;
+		box-shadow: 0 0 5px 5px #888;">
 			<p>
 				<?php echo t('Using the search box below, find additional data and statistics on dementia and 
 						Alzheimer\'s disease in your area. It is important that you learn to conduct your own research.'); ?>
 			</p>
-			<p>
-			
-			
 			<form method="get" action="http://www.google.com/search"
 				target="_blank">
 				<input type="text" id="google-search" name="q" size="65"
 					maxlength="255" value="" />
-				</p>
-				<p>
+			
 					<input type="submit" value="<?php echo t('Google Search'); ?>"
 						class="teal" />
-				</p>
+				
 			</form>
 			</p>
 		</div>
-		<p class="course-buttons">
-			<a href="javascript:;" class="button left"
+        <br><br>
+			<p class="course-buttons" style="text-align: center;">
+   			<a href="javascript:;" class="button left"
 				onclick="$.fancybox.prev();"><?php echo t('&laquo; Back'); ?> </a> <a
 				href="javascript:;" class="button right"
 				onClick="$.fancybox.next();"><?php echo t('Next &raquo;'); ?> </a>
@@ -574,9 +583,9 @@ $caregiverSurvey->run();
 	<!--   slide 6 - closing here    -->
 
 	<div id="slide-6" class="slide">
-		<h4>
+		<h2 class="flowers">
 			<?php echo t('Conclusion'); ?>
-		</h4>
+		</h2>
 		<hr />
 		<p>
 			<?php echo t('With such a profound impact on society, business, and potentially on your family, understanding
@@ -595,7 +604,7 @@ $caregiverSurvey->run();
 				<img src="<?php echo $this->getImagesUrl('AcrobatReaderIcon.png'); ?>" />
 			</a>
 		</p>
-		<p class="course-buttons">
+		<p class="course-buttons" style="text-align: center;">
 			<a href="#" onClick="parent.jQuery.fancybox.close();"
 				class="button left"> <?php echo t('Exit'); ?>
 			</a>
