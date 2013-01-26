@@ -209,7 +209,7 @@ $caregiverSurvey->run();
 
 <!--  start tutorial course here -->
 
-<div id="tutorial" style="display: none;">
+<div id="tutorial" class="course" style="display: none;">
   <div id="slide-1" class="slide">
     <h2 class="flowers"> <?php echo t('Tutorial'); ?> </h2>
     <hr />

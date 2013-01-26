@@ -1,4 +1,4 @@
-#tutorial .question {
+.question {
 	background-color: #FFF;
     border-radius: 15px;
     width: 75%;
@@ -9,30 +9,20 @@
 	-webkit-box-shadow: 0 0 5px 5px#888;
 	box-shadow: 0 0 5px 5px #888;
 }
-#tutorial #developers {
+#developers {
 	font-size: small; 
 	font-style: italic;
 }
-#tutorial h4 {
-	text-size: 2em;
-}
-#tutorial h2.flowers {
-	border-bottom: 1px solid #ddd;
-	margin-bottom: 10px;
-}
-#tutorial .slide {
-	display: none;
+.slide {
+	display: block;
 	padding: 0 10px;
 }
-#tutorial #slide-1.slide {
-	display: block;
-}
-#tutorial .pull-quote {
+.pull-quote {
 	font-family: "Hammersmith One", Impact, sans-serif;
 	font-size: 2em;
 	color: #b71010;
 }
-#tutorial .course-buttons {
+.course-buttons {
 	text-align: center;
 	background: #ddd;
 	border-radius: 10px;
@@ -43,7 +33,7 @@
 	left: 5px;
 	right: 5px;
 }
-#tutorial .tutorial-video {
+.tutorial-video {
 	float: right;
 	margin: 0 0 15px 15px;
 }
