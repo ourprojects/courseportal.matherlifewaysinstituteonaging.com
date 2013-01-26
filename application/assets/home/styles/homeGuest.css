@@ -1,0 +1,115 @@
+#home-image {
+	background: url(../images/home-image.jpg) top center no-repeat;
+	height: 250px;
+	box-shadow: inset 0 0 10px #396caa;
+	overflow: hidden;
+}
+#home-image h1 {
+	color: #fff;
+	padding: 17px;
+	background: none;
+	font-family: "Arapey", "Times New Roman", serif;
+	font-size: 35px;
+	line-height: 40px;
+	font-weight: normal;
+	font-style: italic;
+	text-align: center;
+	opacity: .9;
+	margin-top: 4px;
+}
+#customers {
+    height: 90px;
+    width: 220px;
+    padding: 0;
+    margin: 15px auto;
+}
+#bottom-logos {
+	clear: both;
+	border-top: 1px solid #e6e6e6;
+	margin-top: 40px;
+	height: 150px;
+	position: relative;
+}
+#bottom-logos h4 {
+	color: #a6a6a6;
+	font-weight: normal;
+	font-size: 8pt;
+	letter-spacing: 2px;
+	padding: 0 0 8px 0;
+	margin: 0;
+	text-transform: uppercase;
+	text-align: center;
+}
+#bottom-logos a {
+	float: left;
+	margin: 0 6px;
+	color: transparent;
+	background: top center no-repeat;
+	position: absolute;
+}
+#bottom-logos a#rush {
+	background: url(../images/partners/rush.png) top center no-repeat;
+	width: 202px;
+	height: 35px;
+	top: 35px;
+	left: 90px;
+}
+#bottom-logos a#wfd {
+	background: url(../images/partners/wfd.png) top center no-repeat;
+	width: 35px;
+	height: 35px;
+	top: 35px;
+	left: 450px;
+}
+#bottom-logos a#aa {
+	background: url(../images/partners/aa.png) top center no-repeat;
+	width: 203px;
+	height: 35px;
+	top: 35px;
+	left: 620px;
+}
+#bottom-logos a#yii {
+	background: url(../images/partners/yii.png) top center no-repeat;
+	width: 155px;
+	height: 35px;
+	top: 88px;
+	left: 450px;
+}
+#bottom-logos a#git {
+	background: url(../images/partners/git.png) top center no-repeat;
+	width: 75px;
+	height: 35px;
+	top: 35px;
+	left: 510px;
+}
+#bottom-logos a#discourse {
+	background: url(../images/partners/discourse.png) top center no-repeat;
+	width: 128px;
+	height: 35px;
+	top: 88px;
+	left: 660px;
+}
+#bottom-logos a#glader {
+	background: url(../images/partners/glader.png) top center no-repeat;
+	width: 85px;
+	height: 85px;
+	top: 35px;
+	left: 330px;
+}
+#bottom-logos a#mediastorm {
+	background: url(../images/partners/mediastorm.png) top center no-repeat;
+	width: 163px;
+	height: 35px;
+	top: 88px;
+	left: 110px;
+}
+#bottom-logos a#rush:hover, 
+#bottom-logos a#aa:hover, 
+#bottom-logos a#git:hover, 
+#bottom-logos a#yii:hover, 
+#bottom-logos a#wfd:hover, 
+#bottom-logos a#discourse:hover, 
+#bottom-logos a#glader:hover, 
+#bottom-logos a#mediastorm:hover {
+	background-position: bottom;
+}

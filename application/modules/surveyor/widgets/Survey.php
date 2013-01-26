@@ -141,7 +141,7 @@ class Survey extends CWidget {
 					foreach($question->options as $option) {
 						$qData[] = array($option->text, $option->getPercentAnswered());
 					}
-					$data["{$this->options['questions']['htmlOptions']['id']}_{$question->id}"] = $qData;
+					$data["Survey_{$this->model->name}_question$question->id"] = $qData;
 				}
 				echo CJSON::encode($data);
 			} else {

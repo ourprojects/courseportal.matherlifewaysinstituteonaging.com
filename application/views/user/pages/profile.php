@@ -6,5 +6,5 @@
 <?php 
 	echo $this->renderPartial('forms/profile_form', array('models' => $models));
  	echo CHtml::link(t('Survey Questions'), $this->createUrl('profileSurvey')); 
- ?>
+?>
 </div>

@@ -28,13 +28,13 @@ $this->widget('zii.widgets.grid.CGridView', array(
 	<?php $form = $this->beginWidget('CActiveForm', array(
 			'id' => 'course-create-form',
 			'enableAjaxValidation' => true,
-)); ?>
+));
 	
-	<?php echo $form->errorSummary($model); ?>
+	echo $form->errorSummary($model); ?>
 	<div class="row">
-		<?php echo $form->labelEx($model, 'title'); ?>
-		<?php echo $form->textField($model, 'title'); ?>
-		<?php echo $form->error($model, 'title'); ?>
+		echo $form->labelEx($model, 'title');
+		echo $form->textField($model, 'title');
+		echo $form->error($model, 'title');
 	</div>
 
 	<div class="row submit">

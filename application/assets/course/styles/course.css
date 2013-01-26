@@ -1,0 +1,8 @@
+div.box-sidebar.two p {
+	text-align: center; 
+	font-family: 'Comic Sans MS', cursive;
+}
+div.box-sidebar.two p.title {
+	color:#900; 
+	font-size:24px;
+}

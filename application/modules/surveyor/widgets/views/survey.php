@@ -1,31 +1,23 @@
 <?php 
 
-	echo CHtml::tag('div', $htmlOptions, false);
+	echo CHtml::openTag('div', $htmlOptions);
 	
 	if($title['show'])
-		echo CHtml::tag('div', $title['htmlOptions'], $model->getAttributeLabel('title'));
+		echo CHtml::tag('p', $title['htmlOptions'], $model->getAttributeLabel('title'));
 	if($description['show'])
-		echo CHtml::tag('div', $description['htmlOptions'], "<p>{$model->getAttributeLabel('description')}</p>");
+		echo CHtml::tag('p', $description['htmlOptions'], $model->getAttributeLabel('description'));
 
 	if($form['show']) {
 		$this->beginWidget('CActiveForm', $form['options']);
 		echo CHtml::errorSummary($model);
 	}
 	
+	$baseQuestionId = $questions['htmlOptions']['id'];
 	foreach($model->questions as $q) {
-		$questionHtmlId = "{$questions['htmlOptions']['id']}_{$q->id}";
-		echo CHtml::tag('div', $questions['htmlOptions'], '', false);
+		$questions['htmlOptions']['id'] = "{$baseQuestionId}_{$q->id}";
+		echo CHtml::openTag('div', $questions['htmlOptions']);
 		echo CHtml::activeLabelEx($model, "question{$q->id}", array('for' => CHtml::getIdByName("Survey[{$model->name}][question{$q->id}]")));
-		if($highcharts['show']) {
-			$this->widget('ext.highcharts.EHighcharts', array(
-					'id' => 'chart_'.$questionHtmlId,
-					'group' => $highcharts['group'],
-					'htmlOptions' => array('style' => 'display:none;'),
-					'options' => $highcharts['options']
-				)
-			);
-		}
-		echo CHtml::tag('div', array('id' => 'options_'.$questionHtmlId), '', false);
+
 		switch($q->type->name) {
 			case 'select':
 				echo CHtml::activeDropDownList(
@@ -66,14 +58,23 @@
 						);
 				break;
 		}
-		echo '</div>';
 		echo CHtml::error(
 				 		  $model, 
 						  "question{$q->id}",
 						  array('name' => "Survey[{$model->name}][question{$q->id}]")
 						);
-		echo '</div>';
+		if($highcharts['show']) {
+			$this->widget('ext.highcharts.EHighcharts', array(
+					'id' => "chart_Survey_{$model->name}_question$q->id",
+					'group' => $highcharts['group'],
+					'htmlOptions' => array('style' => 'display:none;'),
+					'options' => $highcharts['options']
+			)
+			);
+		}
+		echo CHtml::closeTag('div');
 	}
+	$questions['htmlOptions']['id'] = $baseQuestionId;
 	if($form['show']) {
 		if($useAjax) {
 			if(!isset($submitButton['ajaxOptions']['success'])) {
@@ -83,7 +84,7 @@
 						'data = $.parseJSON(data);' .
 						'for(question in data) {' .
 							$highcharts['group'] . '_highcharts_instances["chart_" + question].series[0].setData(data[question], true);' .
-							'$("#options_" + question).css("display", "none");' .
+							'$("#" + question).css("display", "none");' .
 							'$("#'.$submitButton['htmlOptions']['id'].'").css("display", "none");' .
 							'$("#chart_" + question).css("display", "block");' .
 						'}';
@@ -105,11 +106,11 @@
 			}
 			if(!isset($submitButton['ajaxOptions']['error']))
 				$submitButton['ajaxOptions']['error'] = 'function(data) { alert("A server error ocurred. Please try again later."); }';
-			echo CHtml::tag('div', array(), CHtml::ajaxSubmitButton(Surveyor::t($submitButton['label']), $form['options']['action'], $submitButton['ajaxOptions'], $submitButton['htmlOptions']));
+			echo CHtml::ajaxSubmitButton(Surveyor::t($submitButton['label']), $form['options']['action'], $submitButton['ajaxOptions'], $submitButton['htmlOptions']);
 		} else {
-			echo CHtml::tag('div', array(), CHtml::submitButton(Surveyor::t($submitButton['label']), $submitButton['htmlOptions']));
+			echo CHtml::submitButton(Surveyor::t($submitButton['label']), $submitButton['htmlOptions']);
 		}
 		$this->endWidget();
 	}
-	echo '</div>';
+	echo CHtml::closeTag('div');
 ?>

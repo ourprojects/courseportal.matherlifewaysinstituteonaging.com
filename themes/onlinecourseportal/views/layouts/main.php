@@ -12,7 +12,6 @@
 	<?php echo CHtml::cssFile(Yii::app()->getTheme()->getStylesUrl('main.css')); ?>
 	<?php echo CHtml::cssFile(Yii::app()->getTheme()->getStylesUrl('form.css')); ?>
 	<?php Yii::app()->getClientScript()->registerScriptFile(Yii::app()->getTheme()->getScriptsUrl('main.js'), CClientScript::POS_HEAD); ?>
-	
 	<title>
 		<?php 
 		$this->pageTitle = Yii::app()->name;
@@ -31,7 +30,7 @@
 	<div class="container" id="page">
 		<div id="header">
 			<div id="logo">
-				<img src="<?php echo Yii::app()->getTheme()->getImagesUrl('logo.png'); ?>" />
+				<img src="<?php echo Yii::app()->getTheme()->getImagesUrl('logo.png'); ?>" alt="<?php echo t('Logo'); ?>" />
 			</div>
 			<div id="site-title"><?php echo Yii::app()->name; ?></div>
 			<div id="language-menu"><?php $this->widget('modules.translate.widgets.acceptedLanguage.ALSelector'); ?></div>
@@ -79,34 +78,32 @@
 	<!-- page -->
 	<div id="footer">
 		<div class="container">
-
 			<div class="logo">
 				<a href="http://www.matherlifewaysinstituteonaging.com/" title="Mather LifeWays Institute on Aging">
-					<img src="<?php echo Yii::app()->getTheme()->getImagesUrl('logo-footer.jpg'); ?>" />
+					<img src="<?php echo Yii::app()->getTheme()->getImagesUrl('logo-footer.jpg'); ?>" alt="<?php echo t('Logo'); ?>" />
 				</a>
 			</div>
 			<div id="footer-icons" class="icons">
-				<a class="twitter" href="http://twitter.com/aginginaction" rel="nofollow" target="_blank">
+				<a class="twitter" href="http://twitter.com/aginginaction" title="Twitter" rel="nofollow" target="_blank">
 					Twitter
 				</a>
-				<a class="facebook" href="http://www.facebook.com/matherlifeways" rel="nofollow" target="_blank">
+				<a class="facebook" href="http://www.facebook.com/matherlifeways" title="Facebook" rel="nofollow" target="_blank">
 					Facebook
 				</a>
-				<a class="pinterest" href="#" rel="nofollow" target="_blank">
+				<a class="pinterest" href="#" title="Pinterest" rel="nofollow" target="_blank">
 					Pinterest
 				</a>
-				<a class="youtube" href="http://www.youtube.com/matherlifeways" rel="nofollow" target="_blank">
-					Youtube
+				<a class="youtube" href="http://www.youtube.com/matherlifeways" title="YouTube" rel="nofollow" target="_blank">
+					YouTube
 				</a>
 			</div>
 			<div id="copyright">
 				<ul>
-				<li>P: (847) 492.7500 | F: (847) 492.6789</li>
-				<li>1603 Orrington Avenue; Suite 1800 | Evanston; IL 60201</li>
-				<li>&copy; Copyright 2012 Mather LifeWays&reg;</li>
+					<li>P: (847) 492.7500 | F: (847) 492.6789</li>
+					<li>1603 Orrington Avenue; Suite 1800 | Evanston; IL 60201</li>
+					<li>&copy; Copyright 2012 Mather LifeWays&reg;</li>
 				</ul>
 			</div>
-
 		</div>
 	</div>
 	<!-- footer -->

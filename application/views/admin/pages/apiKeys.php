@@ -24,13 +24,13 @@ $this->widget('zii.widgets.grid.CGridView', array(
 	<?php $form = $this->beginWidget('CActiveForm', array(
 			'id' => 'key-create-form',
 			'enableAjaxValidation' => true,
-)); ?>
+)); 
 	
-	<?php echo $form->errorSummary($model); ?>
+	echo $form->errorSummary($model); ?>
 	<div class="row">
-		<?php echo $form->labelEx($model, 'key'); ?>
-		<?php echo $form->textField($model, 'key', array('size' => 80)); ?>
-		<?php 
+		echo $form->labelEx($model, 'key');
+		echo $form->textField($model, 'key', array('size' => 80)); 
+		
 		$jqueryTextFieldSelector = "$('#{$form->id}').find('#".CHtml::activeId($model, 'key')."')";
 		echo CHtml::ajaxButton(
 					t('Generate'), 
@@ -41,9 +41,8 @@ $this->widget('zii.widgets.grid.CGridView', array(
 						'complete' => "function() { $jqueryTextFieldSelector.removeClass('loading'); }",
 						'success' => "function(data) { $jqueryTextFieldSelector.val(data); }"
 					)
-			); 
-		?>
-		<?php echo $form->error($model, 'key'); ?>
+			);
+		echo $form->error($model, 'key');
 	</div>
 
 	<div class="row submit">
