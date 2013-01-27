@@ -125,13 +125,13 @@ $this->widget(
     <div id="slide-1" class="slide">
       <h2 class="flowers"><?php echo t('CARE Coaching - Topics'); ?></h2>
       <hr />
-      <p><?php echo t('What’s CARE Coaching all about?'); ?><br>
+      <p><?php echo t('What’s CARE Coaching all about?'); ?><br />
         <?php echo t('CARE Coaching involves a method to help you as a caregiver think differently about a caregiving situation so you may better prepare and feel confident about your caregiving responsibilities and actions.'); ?></p>
-      <p><?php echo t('Self-Coaching: It all starts with me!'); ?><br>
+      <p><?php echo t('Self-Coaching: It all starts with me!'); ?><br />
         <?php echo t('Self-coaching shifts the approach from the cycling negative “internal dialogue” to help you focus on what’s important to you right now and how you may accomplish that goal.'); ?></p>
-      <p><?php echo t('Activity – Self-Awareness Survey'); ?><br>
+      <p><?php echo t('Activity – Self-Awareness Survey'); ?><br />
         <?php echo t('This activity invites you to explore and live several questions. Your responses should open up more self-awareness of what is important to you in your life.'); ?></p>
-      <p><?php echo t('Creating the Environment for Self-Coaching'); ?><br>
+      <p><?php echo t('Creating the Environment for Self-Coaching'); ?><br />
         <?php echo t('The principle behind self-coaching (and CARE Coaching for that matter!) is the revelation of solutions already inherent in each person.'); ?></p>
       <p class="buttons"> <a href="javascript:;" class="button right"
 				onclick="$.fancybox.next();"><?php echo t('Start Course &raquo;'); ?> </a> </p>
@@ -145,13 +145,13 @@ $this->widget(
     <div id="slide-2" class="slide">
         <h2 class="flowers"><?php echo t('CARE Coaching - Topics (continued)'); ?></h2>
         <hr />
-        <p><?php echo t('Video – 5 Steps to Self-Coaching'); ?><br>
+        <p><?php echo t('Video – 5 Steps to Self-Coaching'); ?><br />
         <?php echo t('Serving as an introduction to self-coaching exercises, this video outlines a simple self-coaching process can be used over and over again whenever you need it.'); ?></p>
-        <p><?php echo t('Activity – Principles of Success'); ?><br>
+        <p><?php echo t('Activity – Principles of Success'); ?><br />
         <?php echo t('This activity focuses on assessing your awareness of ten principles of success and your rating of how you presently live according to them.'); ?></p>
-        <p><?php echo t('Self-Coaching Exercise – The Power of Journaling'); ?><br>
+        <p><?php echo t('Self-Coaching Exercise – The Power of Journaling'); ?><br />
         <?php echo t('Journaling is one powerful technique to refocus the negative into positive affirmations. With consistent practice, this method can help create a more positive outlook in our own lives as well as create more positive interactions with others.'); ?></p>
-        <p><?php echo t('Self-Coaching Exercise – Focus on the Goal'); ?><br>
+        <p><?php echo t('Self-Coaching Exercise – Focus on the Goal'); ?><br />
         <?php echo t('How do we identify the goal? The goal answers the question, “What do you want that’s really important to you?” This exercise allows you to practice writing goals.'); ?></p>
         <p class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?> </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a> </p>
       </div>
@@ -408,19 +408,19 @@ $this->widget(
     <div id="slide-1" class="slide">
       <h2 class="flowers"><?php echo t('Understanding Needs and Preferences of Older Adults'); ?></h2>
       <hr />
-      <p><?php echo t('CARE Coaching: Communicating'); ?><br>
+      <p><?php echo t('CARE Coaching: Communicating'); ?><br />
         <?php echo t('Communicating in CARE Coaching is all about choice. Caregiving commonly brings up feelings of burden, confusion, and guilt for caregivers. Communicating is the first component of CARE Coaching. As a first step, using some key communication skills can relieve some of these concerns.'); ?>
-      <p>Exercise – Understanding Your Parents Needs and Preferences'); ?><br>
+      <p><?php echo t('Exercise – Understanding Your Parents Needs and Preferences'); ?><br />
         <?php echo t('This exercise is designed to help you determine what you know and do not know about your parents needs and preferences. Determining this now will help you on the road of communicating more openly about your parents’ future wishes.'); ?></p>
-      <p><?php echo t('Where to Start "The Talk"!'); ?><br>
+      <p><?php echo t('Where to Start "The Talk"!'); ?><br />
         <?php echo t('How do you start to talk to your older parents about the future? What fears do you have about bringing up this topic with them?'); ?></p>
-      <p><?php echo t('Go to the Online Topic Forum'); ?><br>
+      <p><?php echo t('Go to the Online Topic Forum'); ?><br />
         <?php echo t('So that we can share stories, ideas, questions, and issues among participants throughout the course, we have an online topic forum. This forum is for you the caregiver, so feel free to participate in the discussions, add new topics, and share information for others to learn from!'); ?></p>
-      <p><?php echo t('A Framework to Start "The Talk"'); ?><br>
+      <p><?php echo t('A Framework to Start "The Talk"'); ?><br />
         <?php echo t('A framework has been developed to help you getting the conversations going. Overall, start small while your parents are still healthy and can fully participate in the discussions about their lives and health without undue pressure.'); ?></p>
-      <p><?php echo t('Activity - Practice "The Talk"'); ?><br>
+      <p><?php echo t('Activity - Practice "The Talk"'); ?><br />
         <?php echo t('Some caregivers feel that practice sessions are valuable to "test out" the conversations in other situations. Here are some practice activities for you to try out.'); ?></p>
-      <p><?php echo t('CARE Coaching: Advocating'); ?><br>
+      <p><?php echo t('CARE Coaching: Advocating'); ?><br />
         <?php echo t('The second component of CARE Coaching is advocating. You are on the same team as your parents and want to collaborate with them as a partner in their best future.'); ?></p>
       <p class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?> </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a> </p>
     </div>
