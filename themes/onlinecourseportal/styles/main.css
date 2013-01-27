@@ -98,8 +98,10 @@ div.breadcrumbs span {
 	box-shadow: 0 0 10px #ccc;
 	display: inline-block;
 	border: 0;
-	cursor: hand; 
 	cursor: pointer;
+}
+.button.hide, button.hide, input[type=submit].hide {
+	display: none;
 }
 .button.teal, button.teal, input[type=submit].teal {
 	background: #f47b20 url(../images/bg-menu-active.jpg) bottom center repeat-x;
@@ -244,6 +246,9 @@ div.breadcrumbs span {
 	text-decoration: none;
 	box-shadow: 0 0 10px #999;
 	font-family: "Source Sans Pro", Arial, sans-serif;
+}
+.box-sidebar.zero a.hide {
+	display: none;
 }
 .box-sidebar.zero a:hover {
 	opacity: .9;
@@ -484,6 +489,9 @@ a.pdf {
 	padding: 5px 5px 5px 35px;
 	background: url(../images/icon-pdf.png) top left no-repeat;
 }
+a.pdf.hide {
+	display: none;	
+}
 div.flash-error,div.flash-notice,div.flash-success {
 	padding: .8em;
 	margin-bottom: 1em;
@@ -515,6 +523,9 @@ div.flash-success a {
 }
 div.form .rememberMe label {
 	display: inline;
+}
+div.form .rememberMe label.hide {
+	display: none;
 }
 div.view {
 	padding: 10px;
@@ -582,4 +593,7 @@ div.view {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
+}
+.block-center.hide {
+	display: none;
 }

@@ -128,7 +128,7 @@
 		<li><?php echo t('Self-paced certificate program (6 unique, online courses) completed within one-year'); ?></li>
 	</ul>
 	<div id="coming-soon"
-		style="display: none; width: 400px; height: 200px;">
+		class="hide" style="width: 400px; height: 200px;">
 		<h1 class="flowers">
 			<?php echo t('We are almost done! Please check back tomorrow.'); ?>
 		</h1>

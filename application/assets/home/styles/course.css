@@ -1,4 +1,4 @@
-.question {
+div.course-slide div.question {
 	background-color: #FFF;
     border-radius: 15px;
     width: 75%;
@@ -9,20 +9,20 @@
 	-webkit-box-shadow: 0 0 5px 5px#888;
 	box-shadow: 0 0 5px 5px #888;
 }
-#developers {
+div.course-slide ul#developers {
 	font-size: small; 
 	font-style: italic;
 }
-.slide {
+div.course-slide div.slide {
 	display: block;
 	padding: 0 10px;
 }
-.pull-quote {
+div.course-slide ul#quotes {
 	font-family: "Hammersmith One", Impact, sans-serif;
 	font-size: 2em;
 	color: #b71010;
 }
-.course-buttons {
+div.course-slide p.buttons {
 	text-align: center;
 	background: #ddd;
 	border-radius: 10px;
@@ -33,7 +33,7 @@
 	left: 5px;
 	right: 5px;
 }
-.tutorial-video {
+div.course-slide iframe.tutorial-video {
 	float: right;
 	margin: 0 0 15px 15px;
 }

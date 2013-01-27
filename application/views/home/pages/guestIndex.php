@@ -55,11 +55,11 @@ $this->widget(
     <a href="<?php echo $this->createUrl('user/register'); ?>"><?php echo t('Register'); ?></a>
     <a href="<?php echo $this->createUrl('home/contact'); ?>" class="teal"><?php echo t('Request Information'); ?></a>
     <a href="#slide-1" data-fancybox-group="open-tutorial" class="teal open-tutorial"><?php echo t('Tutorial'); ?></a>
-    <a href="#slide-2" data-fancybox-group="open-tutorial" class="open-tutorial" style="display: none;"></a>
-    <a href="#slide-3" data-fancybox-group="open-tutorial" class="open-tutorial" style="display: none;"></a>
-    <a href="#slide-4" data-fancybox-group="open-tutorial" class="open-tutorial" style="display: none;"></a>
-    <a href="#slide-5" data-fancybox-group="open-tutorial" class="open-tutorial" style="display: none;"></a>
-    <a href="#slide-6" data-fancybox-group="open-tutorial" class="open-tutorial" style="display: none;"></a>
+    <a href="#slide-2" data-fancybox-group="open-tutorial" class="hide open-tutorial" />
+    <a href="#slide-3" data-fancybox-group="open-tutorial" class="hide open-tutorial" />
+    <a href="#slide-4" data-fancybox-group="open-tutorial" class="hide open-tutorial" />
+    <a href="#slide-5" data-fancybox-group="open-tutorial" class="hide open-tutorial" />
+    <a href="#slide-6" data-fancybox-group="open-tutorial" class="hide open-tutorial" />
     
   </div>
     
@@ -209,8 +209,8 @@ $caregiverSurvey->run();
 
 <!--  start tutorial course here -->
 
-<div id="tutorial" class="course" style="display: none;">
-  <div id="slide-1" class="slide">
+<div id="tutorial" class="hide">
+  <div id="slide-1" class="course-slide">
     <h2 class="flowers"> <?php echo t('Tutorial'); ?> </h2>
     <hr />
     <p style="text-align: center;"> <b><?php echo t('Thank you for your interest and support!'); ?></b> </p>
@@ -230,7 +230,7 @@ $caregiverSurvey->run();
       <li><?php echo t('Describe Alzheimer\'s disease'); ?></li>
       <li><?php echo t('Describe the relationship between dementia and Alzheimer\'s disease'); ?></li>
     </ul>
-    <p style="font-size: small;"> 
+    <p class="small"> 
     	<i>
       	<?php 
 			echo t('Data and research have been developed or collected for this tutorial
@@ -246,20 +246,20 @@ $caregiverSurvey->run();
         Department of Health &amp; Human Services - National Institute on
         Aging</a> </li>
     </ul>
-    <p class="course-buttons"> <a href="javascript:;" class="button right"
+    <p class="buttons"> <a href="javascript:;" class="button right"
 				onclick="$.fancybox.next();"><?php echo t('Start Tutorial &raquo;'); ?> </a> </p>
   </div>
   
   <!--   Slide #2 Alzheimer's disease    -->
   
-  <div id="slide-2" class="slide">
+  <div id="slide-2" class="course-slide">
     <h2 class="flowers"> <?php echo t('Alzheimer\'s disease'); ?> </h2>
     <hr />
     <p> <?php echo t('Alzheimer\'s disease is an irreversible, progressive brain disease that slowly destroys memory, thinking skills, behavior, and
 					eventually even the ability to carry out the simplest tasks of daily living. Symptoms usually develop slowly, worsen over time, and first appear after age 60. Alzheimer\'s disease is the most common form and cause of dementia among older people. Alzheimer\'s has no current cure. The disease is named after Dr. Alois Alzheimer.'); ?> </p>
-    <ul>
-      <li class="pull-quote"><?php echo t('Millions of Americans are living with Alzheimer\'s disease.'); ?> </li>
-      <li class="pull-quote"><?php echo t('Alzheimer\'s is not a normal part of aging'); ?> </li>
+    <ul id="quotes">
+      <li><?php echo t('Millions of Americans are living with Alzheimer\'s disease.'); ?> </li>
+      <li><?php echo t('Alzheimer\'s is not a normal part of aging'); ?> </li>
     </ul>
     <p> <b><?php echo t('What to look for if you suspect someone is suffering from Alzheimer\'s disease:'); ?></b> </p>
     <ul>
@@ -271,12 +271,12 @@ $caregiverSurvey->run();
       <iframe width="560" height="315" src="http://www.youtube.com/embed/In1IJocVor8?rel=0" 
                 frameborder="1" allowfullscreen class="tutorial-video"></iframe>
     </p>
-    <p class="course-buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?> </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a> </p>
+    <p class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?> </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a> </p>
   </div>
   
   <!--  Slide #3 dementia   -->
   
-  <div id="slide-3" class="slide">
+  <div id="slide-3" class="course-slide">
     <h2 class="flowers"> <?php echo t('Dementia'); ?> </h2>
     <hr />
     <p> <?php echo t('Dementia refers to an acquired and progressive loss of mental functions due to a brain disorder. Dementia is not a specific
@@ -294,7 +294,7 @@ $caregiverSurvey->run();
 			preparing meals, remembering appointments or traveling out of the neighborhood. Many dementias are progressive, meaning symptoms start
 			out slowly and gradually get worse.'); ?> </p>
     <img src="<?php echo $this->getImagesUrl('image-men.png'); ?>" alt="" style="margin: 20px 20px; width: 95%;" />
-    <p class="course-buttons"> <a href="javascript:;" class="button left"
+    <p class="buttons"> <a href="javascript:;" class="button left"
 				onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?> </a> <a
 				href="javascript:;" class="button right"
 				onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a> </p>
@@ -302,7 +302,7 @@ $caregiverSurvey->run();
   
   <!--  Slide #4 Relationship    -->
   
-  <div id="slide-4" class="slide">
+  <div id="slide-4" class="course-slide">
     <h2 class="flowers"> <?php echo t('The Relationship'); ?> </h2>
     <hr />
     <p> <b><?php echo t('Dementia and Alzheimer\'s disease - How are they related?'); ?></b> </p>
@@ -327,12 +327,12 @@ $caregiverSurvey->run();
       <li><?php echo t('It is the leading reason for placing elderly people in
 							institutions such as nursing homes.'); ?> </li>
     </ul>
-    <p class="course-buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?> </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a> </p>
+    <p class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?> </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a> </p>
   </div>
   
   <!--   Slide #5 Assessment   -->
   
-  <div id="slide-5" class="slide">
+  <div id="slide-5" class="course-slide">
     <h2 class="flowers"><?php echo t('Assessment'); ?></h2>
     <hr />
     <p><?php echo t('Thinking about the material you just read, please try and correctly answer the assessment questions below without searching the Internet. Your responses are not recorded, and you will receive immediate feedback.'); ?></p>
@@ -406,7 +406,7 @@ $caregiverSurvey->run();
     </div>
     <br />
     <br />
-    <p class="course-buttons"> <a href="javascript:;" class="button left"
+    <p class="buttons"> <a href="javascript:;" class="button left"
 				onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?> </a> <a
 				href="javascript:;" class="button right"
 				onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo;</a> </p>
@@ -414,7 +414,7 @@ $caregiverSurvey->run();
   
   <!--   slide 6 - closing here    -->
   
-  <div id="slide-6" class="slide">
+  <div id="slide-6" class="course-slide">
     <h2 class="flowers"> <?php echo t('Conclusion'); ?> </h2>
     <hr />
     <p> <?php echo t('With such a profound impact on society, business, and potentially on your family, understanding
@@ -428,7 +428,7 @@ $caregiverSurvey->run();
     		<img src="<?php echo $this->getImagesUrl('AcrobatReaderIcon.png'); ?>" alt="<?php echo t('Course Completion Certificate'); ?>" /> 
     	</a> 
     </p>
-    <p class="course-buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();"
+    <p class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();"
 				class="button left"> <?php echo t('Exit'); ?> </a> </p>
   </div>
 </div>

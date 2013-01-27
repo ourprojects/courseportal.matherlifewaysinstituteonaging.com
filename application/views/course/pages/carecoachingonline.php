@@ -76,11 +76,11 @@ $this->widget(
   <ul>
     <li>
 		<a href="#slide-1" data-fancybox-group="open-tutorial" class="teal open-tutorial"><?php echo t('Care Coaching'); ?></a>
-		<a href="#slide-2" data-fancybox-group="open-tutorial" class="open-tutorial" style="display: none;"></a>
-		<a href="#slide-3" data-fancybox-group="open-tutorial" class="open-tutorial" style="display: none;"></a>
-		<a href="#slide-4" data-fancybox-group="open-tutorial" class="open-tutorial" style="display: none;"></a>
-		<a href="#slide-5" data-fancybox-group="open-tutorial" class="open-tutorial" style="display: none;"></a>
-		<a href="#slide-6" data-fancybox-group="open-tutorial" class="open-tutorial" style="display: none;"></a> 
+		<a href="#slide-2" data-fancybox-group="open-tutorial" class="hide open-tutorial" />
+		<a href="#slide-3" data-fancybox-group="open-tutorial" class="hide open-tutorial" />
+		<a href="#slide-4" data-fancybox-group="open-tutorial" class="hide open-tutorial" />
+		<a href="#slide-5" data-fancybox-group="open-tutorial" class="hide open-tutorial" />
+		<a href="#slide-6" data-fancybox-group="open-tutorial" class="hide open-tutorial" /> 
     </li>
     <li><a href="#"><?php echo t('Understanding Needs and Preferences of Older Adults'); ?></a></li>
     <li><a href="#"><?php echo t('Managing Health Information and Record Keeping'); ?></a></li>
@@ -95,7 +95,7 @@ $this->widget(
   <!-- Lesson #1 - Care Coaching starts here -->
   
   
-  <div id="tutorial" style="display: none;">
+  <div id="tutorial">
     <div id="slide-1" class="slide">
       <h2 class="flowers"><?php echo t('CARE Coaching Online'); ?></h2>
       <hr />
