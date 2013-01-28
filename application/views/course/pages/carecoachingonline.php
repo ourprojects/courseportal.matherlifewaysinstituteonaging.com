@@ -98,10 +98,35 @@ $this->widget(
   <a href="#slide-7" data-fancybox-group="open-tutorial" class="hide open-tutorial" /> 
   <a href="#slide-8" data-fancybox-group="open-tutorial" class="hide open-tutorial" /> 
   <a href="#slide-9" data-fancybox-group="open-tutorial" class="hide open-tutorial" /> 
+  <a href="#slide-10" data-fancybox-group="open-tutorial" class="hide open-tutorial" />
+  <a href="#slide-11" data-fancybox-group="open-tutorial" class="hide open-tutorial" /> 
+  <a href="#slide-12" data-fancybox-group="open-tutorial" class="hide open-tutorial" /> 
+  <a href="#slide-13" data-fancybox-group="open-tutorial" class="hide open-tutorial" /> 
+  <a href="#slide-14" data-fancybox-group="open-tutorial" class="hide open-tutorial" /> 
+  <a href="#slide-15" data-fancybox-group="open-tutorial" class="hide open-tutorial" /> 
+  <a href="#slide-16" data-fancybox-group="open-tutorial" class="hide open-tutorial" /> 
+  <a href="#slide-17" data-fancybox-group="open-tutorial" class="hide open-tutorial" /> 
+  <a href="#slide-18" data-fancybox-group="open-tutorial" class="hide open-tutorial" /> 
+  <a href="#slide-19" data-fancybox-group="open-tutorial" class="hide open-tutorial" />
+  <a href="#slide-20" data-fancybox-group="open-tutorial" class="hide open-tutorial" /> 
+  </li>
+  
+  <li><a href="#slide-1" data-fancybox-group="open-tutorial" class="teal open-tutorial"><?php echo t('Promoting Safety of Older Relatives and Friends in Caring for Themselves'); ?></a> 
+  <a href="#slide-2" data-fancybox-group="open-tutorial" class="hide open-tutorial" /> 
+  <a href="#slide-3" data-fancybox-group="open-tutorial" class="hide open-tutorial" /> 
+  <a href="#slide-4" data-fancybox-group="open-tutorial" class="hide open-tutorial" /> 
+  <a href="#slide-5" data-fancybox-group="open-tutorial" class="hide open-tutorial" /> 
+  <a href="#slide-6" data-fancybox-group="open-tutorial" class="hide open-tutorial" /> 
+  <a href="#slide-7" data-fancybox-group="open-tutorial" class="hide open-tutorial" /> 
+  <a href="#slide-8" data-fancybox-group="open-tutorial" class="hide open-tutorial" /> 
+  <a href="#slide-9" data-fancybox-group="open-tutorial" class="hide open-tutorial" /> 
   <a href="#slide-10" data-fancybox-group="open-tutorial" class="hide open-tutorial" /> 
   </li>
   
-  <li><a href="#"><?php echo t('Promoting Safety of Older Relatives and Friends in Caring for Themselves'); ?></a></li>
+  
+  
+  
+  
   <li><a href="#"><?php echo t('Supporting Personal Choice and Preferences of Older Adults in Health and Care Decision Making'); ?></a></li>
 </ul>
 
@@ -1051,66 +1076,274 @@ chicken for lunch today. So I think I’d like to try their fish!”'); ?></p>
 
   <!-- Lesson #5 - Relocation and Transfers by Older Adults within the Health Care System -->
   <!-- slide #11 -->
-  
-    <div id="slide-11" class="slide">
+
+  <div id="slide-11" class="slide">
   <h2 class="flowers"><?php echo t('“Aging in Place” - Planning for the Future'); ?></h2>
   <hr />
-  
-  
-  
-    <p class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></p>
+  <p><?php echo t('“Aging in place” is a term often used to describe an older adult\’s ability to stay in one location over the course of one\’s life even as their medical and personal needs change over time. That may refer to living in a senior living community that provides services and care across the aging continuum or it may refer to continuing to live in one\’s home and have services and care brought in by outside health care agencies.'); ?></p>
+  <p><?php echo t('A “Continuing Care Retirement Community (CCRC)” are different from other types of housing for older adults as they provide customized living quarters, personal care services, and health care all at one location. A benefit to older couples is the fact that if one partner\’s health begins to fail, he or she may receive required care within that same community or campus. Most CCRCs provide all three levels of service described on the previous page:'); ?></p>
+  <ul>
+      <li><?php echo t('Independent Living'); ?></li>
+      <li><?php echo t('Assisted Living'); ?></li>
+      <li><?php echo t('Long-Term Care'); ?></li>
+    </ul>
+  <p><?php echo t('“Retirement living” is changing with a greater emphasis on wellness and quality of life for residents. The next generations of older adults are redefining what they are looking for in the next phase of their lives. Read about some of these changes happening in some Tucson area senior living communities.'); ?></p>
+  <p><a href="RetirementRedefinedArticle.pdf" target="_blank"><?php echo t('Retirement Redefined'); ?></a></p>
+  <p><?php echo t('Requirements for applicants and payment options vary considerably for CCRCs. Within the current housing market, many CCRCs are offering payment plan options or assistance to older couples who may need to sell their current home prior to moving to the new community. Many CCRCs offer what is termed “life care contracting.” Life care communities provide the same continuum of care to a resident for life, but the biggest difference is this: residents who become financially unable to pay their monthly care fees are subsidized by the community, with the same access to services, and with no interruption in care or change in priority status. In other words, residents are guaranteed the same quality of care and access to care from day one through end-of-life, regardless of their personal financial situation. Additionally, most life care communities offer all health care services on the same campus. The idea is that, after qualifying through a health and financial application process, residents will never have to move again, except between levels of care as needed.'); ?></p>
+  <p><?php echo t('The following guide provides more information about types of contracts common to CCRCs. Because there are various across states in terms of these contracts, it is important that you also investigate your state’s requirements.'); ?></p>
+  <p><?php echo t('Search the Web for the Gilbert Guide – Independent Living & CCRC Evaluation Kit'); ?></p>
+  <p class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></p>
 </div>
   
     <!-- Lesson #5 - Relocation and Transfers by Older Adults within the Health Care System -->
   <!-- slide #12 -->
-  
-    <div id="slide-12" class="slide">
-  <h2 class="flowers"><?php echo t('Video – Learn about Assisted Living'); ?></h2>
+
+  <div id="slide-12" class="slide">
+  <h2 class="flowers"><?php echo t('What are Other Options for my Older Parents?'); ?></h2>
   <hr />
-  
-  
-  
-    <p class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></p>
+  <p><?php echo t('Understanding all of one’s options is important in making a big decision such as relocating. The more preplanning that can occur as well as understanding all options is key. Let’s look at some additional options for older adults.'); ?></p>
+  <p><?php echo t('Active Adult Communities'); ?></p>
+  <p><?php echo t('Active Adult Communities are one of the fastest growing segments of the housing market for older adults. Also known as “55+ communities” or “lifestyle communities,” these offer homes and community features attractive to 55+ adults. Many are master-planned communities that have a clubhouse or lifestyle center with numerous activities, pools, exercise equipment, golf courses, and more. Attractive to older adults is the option of a “maintenance free” lifestyle with “like-minded” adults who may share similar social and activity interests. Homes are often designed to be efficient and easier to get around. Security is also a benefit as a number are in gated communities.'); ?></p>
+  <p><?php echo t('View an example of a Florida Active Adult Community in the following video.'); ?></p>
+  <p class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></p>
 </div>
   
     <!-- Lesson #5 - Relocation and Transfers by Older Adults within the Health Care System -->
   <!-- slide #13 -->
-  
-    <div id="slide-13" class="slide">
-  <h2 class="flowers"><?php echo t('Video – Learn about Assisted Living'); ?></h2>
+
+  <div id="slide-13" class="slide">
+  <h2 class="flowers"><?php echo t('Video – Florida Active Adult Community'); ?></h2>
   <hr />
-  
-  
-  
-    <p class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></p>
+  <p>
+      <iframe width="480" height="360" src="http://www.youtube.com/embed/_UFQPNq2dj8?rel=0" frameborder="0" allowfullscreen></iframe>
+    </p>
+  <p><?php echo t('Affordable Senior Housing Options'); ?></p>
+  <p><?php echo t('For a number of older adults, the cost of entering an active adult community or CCRC may pose a financial barrier. What is also termed “Section 202 Housing” - named after the section of the federal legislation authorizing it – this is rental housing specifically for people over the age of 62 who have incomes under 50 percent of the area median income. According to HUD, the U.S. Department of Housing and Urban Development, the average Section 202 resident is a woman in her 70s with an annual income of less than $10,000. Section 202 residences are built and run by private, non-profit groups who have received loan incentives from HUD. HUD is not involved in day to day operations. Rents are calculated according to income, and rental assistance funds pay whatever balance remains.'); ?></p>
+  <p><?php echo t('View the following brief video about affordable senior housing.'); ?></p>
+  <p class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></p>
 </div>
   
     <!-- Lesson #5 - Relocation and Transfers by Older Adults within the Health Care System -->
   <!-- slide #14 -->
-  
-    <div id="slide-14" class="slide">
-  <h2 class="flowers"><?php echo t('Video – Learn about Assisted Living'); ?></h2>
+
+  <div id="slide-14" class="slide">
+  <h2 class="flowers"><?php echo t('Video – Affordable Senior Housing'); ?></h2>
   <hr />
-  
-  
-  
-  
-    <p class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></p>
+  <p>
+      <iframe width="480" height="360" src="http://www.youtube.com/embed/cUrdKp8MGEw?rel=0" frameborder="0" allowfullscreen></iframe>
+    </p>
+  <p class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></p>
 </div>
   
     <!-- Lesson #5 - Relocation and Transfers by Older Adults within the Health Care System -->
   <!-- slide #15 -->
- 
-    <div id="slide-15" class="slide">
-  <h2 class="flowers"><?php echo t('Video – Learn about Assisted Living'); ?></h2>
+
+  <div id="slide-15" class="slide">
+  <h2 class="flowers"><?php echo t('Exercise – Visiting a Senior Living Community'); ?></h2>
   <hr />
-  
-  
-    <p class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></p>
+  <p><?php echo t('The best way to understand senior living communities is to actually visit one in your area. Because many adult children visit senior living communities prior to having their older parents come for a tour, many senior living communities are very welcoming to adult children.'); ?></p>
+  <p>download button here</p>
+  <p class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></p>
 </div>
 
+  <!-- Lesson #5 - Relocation and Transfers by Older Adults within the Health Care System --> 
+  <!-- slide #16 -->
 
+  <div id="slide-16" class="slide">
+  <h2 class="flowers"><?php echo t('Long Distance Caregiving'); ?></h2>
+  <hr />
+  <p><?php echo t('With many grown children seeking new career opportunities or needing to relocate due to their job away from their parents and the home in which they were raised, long distance caregiving has grown as an issue in our society.'); ?></p>
+  <p><?php echo t('Here are some fast facts to consider:'); ?></p>
+  <ul>
+      <li><?php echo t('Seven million American caregivers provide 80% of the care to vulnerable or ill family members.'); ?></li>
+      <li><?php echo t('There are approximately 3.3 million long distance caregivers.'); ?></li>
+      <li><?php echo t('Caregivers live an average of 480 miles from the people for which they care.'); ?></li>
+      <li><?php echo t('Caregivers spend an average of four hours traveling to that person.'); ?></li>
+      <li><?php echo t('15 millions days are missed from work each year because of long distance caregiving.'); ?></li>
+      <li><?php echo t('The number of long distance caregivers will double over the next 15 years.'); ?></li>
+    </ul>
+  <p><?php echo t('Long distance caregiving can range from providing physical care to helping with bills or just paying a visit. The good news is that you are not on your own as a long distance caregiver. There are many resources available. Sometimes, the main issue is not the availability of resources, but acceptance by older adults to receiving outside help. Let’s start there and practice some coaching skills.'); ?></p>
+  <p class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></p>
+</div>
+
+  <!-- Lesson #5 - Relocation and Transfers by Older Adults within the Health Care System --> 
+  <!-- slide #17 -->
+
+  <div id="slide-17" class="slide">
+  <h2 class="flowers"><?php echo t('Activity – CARE Coaching through Long Distance Caregiving'); ?></h2>
+  <hr />
+  <p><?php echo t('Read the following scenario and then respond to the CARE coaching questions. We provide some initial “openers” for CARE coaching questions for you to more fully develop your own questions.'); ?></p>
+  <p>button here for download</p>
+  <p class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></p>
+</div>
+
+  <!-- Lesson #5 - Relocation and Transfers by Older Adults within the Health Care System --> 
+  <!-- slide #18 -->
   
-  <!-- need these last two divs, one is to close the tutorial id -->
+  <div id="slide-18" class="slide">
+  <h2 class="flowers"><?php echo t('Some Common Questions (and Answers) for Long Distance Caregivers'); ?></h2>
+  <hr />
+  <p><?php echo t('Long distance caregivers can be helpful regardless of the distance! Here are some common questions (and answers) for long distance caregivers.'); ?></p>
+  <p><?php echo t('What is the basic information I should have at hand as a long distance caregiver?'); ?></p>
+  <ul>
+  <li><?php echo t('Have contact information from your older parents’ neighbors. Make sure they know how to reach you in an emergency.'); ?></li>
+  <li><?php echo t('check out local resources and services (usually through a local area agency on aging, library, or senior center). Check with your parents which ones they may find helpful and check back on whether they have initiated contacts.'); ?></li>
+  <li><?php echo t('Have a current list of your parents’ medications (prescription and over-the-counter) including dosages, schedule, and reasons they
+are taking.'); ?></li>
+  <li><?php echo t('When you visit their home, be observant for changes in the environment or potential safety hazards.'); ?></li>
+  <li><?php echo t('Find out if you parents have “advanced directives” that outline their health care treatment preferences.'); ?></li>
+</ul>
+  <p><?php echo t('What can I really expect to do from a distance? I don’t feel comfortable just stepping into a situation.'); ?></p>
+  <ul>
+  <li><?php echo t('Educate yourself on what you need to know about your parents’ health care, their needs and preferences, and other pertinent information.'); ?></li>
+  <li><?php echo t('Plan your visits ahead of time. Decide on priorities they may have.'); ?></li>
+  <li><?php echo t('Everything in your visit should not just be about caregiving. Plan to actually “visit” during your visits!'); ?></li>
+  <li><?php echo t('Stay in contact and encourage your parents to do the same.'); ?></li>
+</ul>
+  <p><?php echo t('How can I feel less frustrated and angry with the caregiving situation?'); ?></p>
+  <ul>
+  <li><?php echo t('Feeling frustrated and angry is very common among caregivers regardless of distance.'); ?></li>
+  <li><?php echo t('Plan to give yourself a break and just do something for yourself.'); ?>
+  </p>
+  <p class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></p>
+  </div>
+
+
+  <!-- Lesson #5 - Relocation and Transfers by Older Adults within the Health Care System --> 
+  <!-- slide #19 -->
+  
+  <div id="slide-19" class="slide">
+  <h2 class="flowers"><?php echo t('Some Common Questions (and Answers) for Long Distance Caregivers (continued)'); ?></h2>
+  <hr />
+  <p><?php echo t('What is a geriatric care manager and how can one help?'); ?></p>
+  <ul>
+  <li><?php echo t('Geriatric care managers are licensed nurses or social workers who specialize in geriatric care.'); ?></li>
+  <li><?php echo t('The geriatric care manager is hired by a family to evaluate and assess an older parent’s needs and to coordinate care through community resources.'); ?></li>
+  <li><?php echo t('When choosing one, you want to check references as well as find out their experience, fees, and if they are a member of the National Association of Professional Geriatric Care Managers.'); ?></li>
+</ul>
+  <p><?php echo t('How can I get my mother some relief in caring for my father?'); ?></p>
+  <ul>
+  <li><?php echo t('Respite care provides one a break from caregiving responsibilities – it can be for an afternoon or for several days.'); ?></li>
+  <li><?php echo t('Care can be provided in the home, in an adult day care center, or in a senior living community.'); ?></li>
+</ul>
+  <p><?php echo t('What if my mom says, “Promise me you’ll never put me in a nursing home”?'); ?></p>
+  <ul>
+  <li><?php echo t('This request usually follows some horrendous story on the news about a nursing home death. Most of us want to stay in our own homes, to be independent, and to be cared for by relatives and friends.'); ?></li>
+  <li><?php echo t('Think carefully before making this type of promise. Assuring your parents that you will look out for them in their best interests and provide quality of care is what is really important. For some illnesses, long-term care may be the sole option. Discovering too late that such promises cannot be kept has often resulted in terrible feelings of guilt by the caregiver for many years.'); ?></li>
+  <li><?php echo t('Rather than a promise that cannot be kept, another way to respond is, “Dad, I will make sure you have the best care we can arrange. You can count on me to try and do what’s best for everyone. I can’t think of a situation where I’d walk out on you.”'); ?>
+  </p>
+  <p class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></p>
+  </div>
+  
+    <!-- Lesson #5 - Relocation and Transfers by Older Adults within the Health Care System --> 
+  <!-- slide #20 -->
+  
+  <div id="slide-20" class="slide">
+  <h2 class="flowers"><?php echo t('Some Common Questions (and Answers) for Long Distance Caregivers (continued)'); ?></h2>
+  <hr />
+  <p><?php echo t('What are some other resources for long distance caregivers?'); ?></p>
+  <ul>
+      <li><?php echo t('Obtain a free '); ?><a href="www.netofcare.org/crd/ resource_form.asp" target="_blank">Caregiver Resource Directory</a> <?php echo t('that provides resources, facts, and advice about caring for a family member as well as for yourself.'); ?><a href="www.netofcare.org/crd/ resource_form.asp" target="_blank"></li>
+      
+      
+      <li><?php echo t('Benefits Check UP is a free online service provided by the National Council on Aging which allows people to find programs that can help them meet health care costs.'); ?></li>
+      <li><?php echo t('ARCH National Respite Network and Resource Center provides resources and information including a respite locator program and information clearinghouse.'); ?></li>
+      <li><?php echo t('Eldercare Locator is a nationwide service helping identify local resources for older adults.'); ?></li>
+      <li><?php echo t('National Family Caregivers Association supports family caregivers and offers education, information, and referrals.'); ?></li>
+    </ul>
+  <p class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();"
+				class="button left"> <?php echo t('Complete Lesson'); ?></a></p>
+                
+                
+                
+  <!-- Lesson #6 - Promoting Safety of Older Relatives and Friends in Caring for Themselves --> 
+  <!-- slide #1 -->
+  
+  <div id="slide-1" class="slide">
+  <h2 class="flowers"><?php echo t('Promoting Safety of Older Relatives and Friends in Caring for Themselves'); ?></h2>
+  <hr />
+  <p><?php echo t('Knowledge Itself is Power
+When we consider how to promote safety of older adults so that they may remain independent for as long as possible, having knowledge and understanding what’s important will facilitate decision making in the future. In this section, we look at several scenarios – all of which relate to safety in some way – that are commonly faced by family caregivers and their older parents.
+
+Home Safety and Older Adults
+Regardless if your parents remain in their own home, move to a senior living community, or move in with you, home safety is an important topic for discussion. The overall goal of assessing home safety needs and making modifications as necessary is to give older adults a sense of independence in their environment.
+
+Activity – Using Your Powers of Observation
+During your next visit, use your powers of observation to note changes in several areas. You may want to make mental notes and then jot down some of your observations privately. We have included some general questions to get you started in this activity.
+
+Additional Home Safety Resources
+The U.S. Consumer Product Safety Commission estimates that over 1.5 million adults ages 65 and older are treated each year in hospital emergency rooms due to injuries from hazards in the home. The Commission believes that many of these injuries are preventable with some simple steps to correct the hazards. Here are some general recommendations and downloadable resources to consider.
+
+Considering Your Older Parents Moving in with You?
+More than 3.6 million older adults live with their children (up 67% from 2000) according to U.S. Census figures. With the economy and housing market issues, many more examples of older parents moving in with their children are coming to light.
+
+Exercise – Assessing the Situation
+This exercise provides an opportunity for you and your family to consider key questions to explore potential for having older parents move in with you. As you read through each section, we include some CARE Coaching questions to bring out your best thinking about what would be important to you.
+
+Driving Concerns and Older Adults
+According to driving statistics, older adults have more fatal car accidents than any other age group. Additionally, older adults are more at risk for death after being involved in a car accident because of their age and health condition.
+
+When to Limit or Stop Driving – Warning Signs
+AARP has developed a list of warning signs about when to limit or stop driving.
+
+CARE Coaching: Talking to Your Parents about Their Driving
+Bringing up the discussion on driving is very challenging. By using CARE Coaching methods and breaking the driving conversation with your older parents into steps, you can better draw out the issues and support your parents in their transition.
+
+Exercise Promotes Safety and Independence
+Exercise for older adults is an important contributor to safety and independence. Many studies have demonstrated the positive benefits of exercise for older adults regardless of age. As we get older exercise is incredibly important to our overall health.
+
+Activity – Resources on Exercises Designed for Older Adults
+Provided are some resources from the National Institute on Aging and exercise physiologists on exercises designed for older adults.'); ?></p>
+  
+  
+   <p class="buttons"> <a href="javascript:;" class="button right"
+				onclick="$.fancybox.next();"><?php echo t('Start Course &raquo;'); ?> </a> </p>
+</div>
+                
+                   
+     <!-- Lesson #6 - Promoting Safety of Older Relatives and Friends in Caring for Themselves --> 
+  <!-- slide #2 -->
+  
+    <!-- Lesson #6 - Promoting Safety of Older Relatives and Friends in Caring for Themselves --> 
+  <!-- slide #3 -->
+  
+  
+    <!-- Lesson #6 - Promoting Safety of Older Relatives and Friends in Caring for Themselves --> 
+  <!-- slide #4 -->
+  
+  
+    <!-- Lesson #6 - Promoting Safety of Older Relatives and Friends in Caring for Themselves --> 
+  <!-- slide #5 -->
+  
+  
+  
+    <!-- Lesson #6 - Promoting Safety of Older Relatives and Friends in Caring for Themselves --> 
+  <!-- slide #6 -->
+  
+  
+  
+  
+    <!-- Lesson #6 - Promoting Safety of Older Relatives and Friends in Caring for Themselves --> 
+  <!-- slide #7 -->
+  
+  
+  
+  
+    <!-- Lesson #6 - Promoting Safety of Older Relatives and Friends in Caring for Themselves --> 
+  <!-- slide #8 -->
+  
+  
+  
+    <!-- Lesson #6 - Promoting Safety of Older Relatives and Friends in Caring for Themselves --> 
+  <!-- slide #9 -->
+  
+  
+  
+  
+    <!-- Lesson #6 - Promoting Safety of Older Relatives and Friends in Caring for Themselves --> 
+  <!-- slide #10 -->
+                
+  
+  <!-- need these last two divs, one is to close the tutorial id --> 
 </div>
 </div>
