@@ -966,32 +966,150 @@ chicken for lunch today. So I think I’d like to try their fish!”'); ?></p>
   <!-- Lesson #5 - Relocation and Transfers by Older Adults within the Health Care System -->
   <!-- slide #5 -->
   
-  CARE Coaching: Encouraging
-  
-  The fourth and final component of CARE Coaching is that of encouraging. The decision to move to a retirement community is often a difficult one for older adults and families alike. Changes in health or other factors typically drive this decision, but being proactive and understanding how to make educated choices is key.
-
-Encouraging our older parents can take many forms. Primarily, we want to encourage them to be as independent as possible for as long as possible. Sometimes an older person experiences changes in health or mental awareness that is very gradual and that is “under the radar” of their children or friends. Older persons may learn effective “cues” to help them remember important events or when to pay bills. It may be as simple as keeping a calendar or written lists of when the past visits occurred with their doctors. We should encourage those “cues” that are effective in promoting independence.
-
-Sometimes older adults may not realize the range of options open to them if living alone seems to be challenging in some respects. Encouraging may take
-the form of providing accurate information about possible options for living arrangements. It is not uncommon today for adult children to be making the first
-visit to a retirement community to gain a better understanding of what services, programs, and amenities are being offered prior to a visit by their older parents.
-
-When the decision to move is made by your parents, encouraging their transition is important. Some retirement communities now offer “short stays” for prospective residents. This may be a way to introduce your parents to the new environment, while still being able to return home before making the move permanent.
-
-Engaging your parents in the process of choosing what furniture, household items, and personal treasures to take to their new home is important. Encouraging them to “personalize” their new home will make the transition easier. There are services available (senior move managers) across the country that focus specifically on helping older adults “downsize” from large family homes to smaller spaces. They can do everything from coordinating the entire move, packing and unpacking the home, and arranging for sales, consignment, or donation of items that would not be part of the move. Learn more about senior move managers at the professional association’s website (www.nasmm.org).
-
+   <div id="slide-5" class="slide">
+  <h2 class="flowers"><?php echo t('CARE Coaching: Encouraging'); ?></h2>
+  <hr />
+  <p><?php echo t('tThe fourth and final component of CARE Coaching is that of encouraging. The decision to move to a retirement community is often a difficult one for older adults and families alike. Changes in health or other factors typically drive this decision, but being proactive and understanding how to make educated choices is key.'); ?></p>
+  <p><?php echo t('Encouraging our older parents can take many forms. Primarily, we want to encourage them to be as independent as possible for as long as possible. Sometimes an older person experiences changes in health or mental awareness that is very gradual and that is “under the radar” of their children or friends. Older persons may learn effective “cues” to help them remember important events or when to pay bills. It may be as simple as keeping a calendar or written lists of when the past visits occurred with their doctors. We should encourage those “cues” that are effective in promoting independence.'); ?></p>
+  <p><?php echo t('Sometimes older adults may not realize the range of options open to them if living alone seems to be challenging in some respects. Encouraging may take the form of providing accurate information about possible options for living arrangements. It is not uncommon today for adult children to be making the first visit to a retirement community to gain a better understanding of what services, programs, and amenities are being offered prior to a visit by their older parents.'); ?></p>
+  <p><?php echo t('When the decision to move is made by your parents, encouraging their transition is important. Some retirement communities now offer “short stays” for prospective residents. This may be a way to introduce your parents to the new environment, while still being able to return home before making the move permanent.'); ?></p>
+  <p><?php echo t('Engaging your parents in the process of choosing what furniture, household items, and personal treasures to take to their new home is important. Encouraging them to “personalize” their new home will make the transition easier. There are services available (senior move managers) across the country that focus specifically on helping older adults “downsize” from large family homes to smaller spaces. They can do everything from coordinating the entire move, packing and unpacking the home, and arranging for sales, consignment, or donation of items that would not be part of the move. Learn more about senior move managers at the professional association’s website (www.nasmm.org).'); ?></p>
+  <p class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></p>
+</div>
 
   <!-- Lesson #5 - Relocation and Transfers by Older Adults within the Health Care System -->
   <!-- slide #6 -->
+  
+  <div id="slide-6" class="slide">
+  <h2 class="flowers"><?php echo t('Activity – Relocating Scenarios'); ?></h2>
+  <hr />
+  <p><?php echo t('How can I convince my older parents to move to a retirement community? Here are two scenarios for you to respond to.'); ?></p>
+  <p>button here for download</p>
+  <p class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></p>
+</div>
+  
   <!-- Lesson #5 - Relocation and Transfers by Older Adults within the Health Care System -->
   <!-- slide #7 -->
+  
+  <div id="slide-7" class="slide">
+  <h2 class="flowers"><?php echo t('General Indicators When It May be Time to Consider Moving'); ?></h2>
+  <hr />
+  <p><?php echo t('Although each situation is going to be very different, often medical conditions or mental awareness change warrant considering a move to a place where help with activities of daily living is available. In other cases, older adults may begin to find that tasks like cooking, housekeeping, shoveling snow, mowing the lawn, and taking care of home repairs have become a burden. Some general indicators to consider:'); ?></p>
+  <p><?php echo t('Is your older parent experiencing significant weight loss? - Cooking for one can often be a chore especially for an older adult. When you eat alone, you eat less. Well-balanced meals can often be inconvenient to prepare.'); ?>
+    <p><?php echo t('Does your older parent experience mood changes, depression, or isolation? - As we get older, we tend to isolate ourselves and depression may set in. Older adults do not always experience depression in the same ways as younger adults. Older adults tend to have physical symptoms with depression, and so depression is often difficult to diagnose. Many older adults (and their health providers unfortunately!) believe that depression is just part of getting older!'); ?></p>
+  <p><?php echo t('Do you or your older parent have concerns about safety? - A two-story home can be difficult for many people with mobility problems particularly if the bedrooms, bathrooms, and laundry are on the second floor. On average, about one-third of all older adults have a fall each year most often in their own home.'); ?></p>
+  <p><?php echo t('Do you or your older parent have concerns about security issues? - Unfortunately, criminals prey on older adults. It is not uncommon to hear about cases where older adults are taken advantage of in their home by unscrupulous vendors or even prey to home invaders who may harm the older adult in addition to robbing the home.'); ?></p>
+  <p><?php echo t('Does your older parent need help with daily tasks? - Many retirement communities offer assisted living for residents to “age in place.” Personalized plans of care are designed to help with dressing, grooming, bathing, and medications.'); ?></p>
+  <p><?php echo t('One last question to consider is, “Will moving be any easier next spring, next year, five or even ten years down the road?” In just about every case, the answer is “no.”'); ?></p>
+  
+  <p class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></p>
+</div>
+  
   <!-- Lesson #5 - Relocation and Transfers by Older Adults within the Health Care System -->
   <!-- slide #8 -->
+  
+  <div id="slide-8" class="slide">
+  <h2 class="flowers"><?php echo t('Understanding the Options: From Staying at Home to Retirement Living'); ?></h2>
+  <hr />
+  <p><?php echo t('Major life changes are seldom easy particularly when it comes to considering moving out of one’s home with all its memories. In past years, older parents had two options – either struggle to stay in one’s home, often one spouse caring for the other, or else resort to expensive (and frequently inadequate) nursing home care. The stress on the caregiving spouse can also have negative effects on his or her health and well-being.'); ?></p>
+  <p><?php echo t('Our aging population and growing consumer expectations for choice and quality in care for older adults have sparked an increasing number of options for older adults and their families. We will look at some of those choices in this next section.'); ?></p>
+  <p><?php echo t('Retirement living has many names and faces. The “industry” typically refers to “retirement living” as “senior living.” Retirement communities are referred to as “senior living communities.” There is basically three levels of care in senior living:'); ?></p>
+  <ul>
+      <li><?php echo t('Independent Living'); ?></li>
+      <li><?php echo t('Assisted Living'); ?></li>
+      <li><?php echo t('Long-Term Care/Nursing Homes'); ?></li>
+    </ul>
+  <p class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></p>
+</div>
+  
   <!-- Lesson #5 - Relocation and Transfers by Older Adults within the Health Care System -->
   <!-- slide #9 -->
+  
+  <div id="slide-9" class="slide">
+  <h2 class="flowers"><?php echo t('Understanding the Options: From Staying at Home to Retirement Living (continued)'); ?></h2>
+  <hr />
+  <p><?php echo t('Independent living communities provide services, programs, and amenities to older adults who are able to function relatively independently in their homes. Services and programs often focus on supporting independence and wellness among residents. Independent living communities generally consists of homes, condominiums, town houses, apartments, and/or mobile and motor homes where residents maintain an independent lifestyle. Some communities offer only minimal services such as building and grounds maintenance, and security. The residential units may be rented on a monthly basis or owned as condominiums or cooperatives. Basically they are no different from other residential enclaves except that there is an age restriction (over 55) or an age target. Depending on the community, residents are often able to bring in home care services or personal assistants for periods of time after an illness episode or hospitalization to aid in recuperation.'); ?></p>
+  <p><?php echo t('Assisted living communities provide care for seniors who need some help with activities of daily living yet wish to remain as independent as possible. A middle ground between independent living and nursing homes, assisted living communities aim to foster as much autonomy as the resident is capable of. Most communities offer 24-hour supervision and an array of support services, with more privacy, space, and dignity than many nursing homes at lower costs.'); ?></p>
+  <p><?php echo t('There are approximately 33,000 assisted living communities operating in the U.S. today. The number of residents living in a facility can range from several to 300, with the most common size being between 25 and 120 residents. Assisted living staff helps residents with daily personal care including bathing, dressing, eating, grooming, and getting around. Medical care is limited, but families may contract for some medical needs such as medication administration or home health care. Assisted living communities focus on what is termed a “social model” of care (e.g., promoting social engagement and supporting individual care needs).'); ?></p>
+  <p><?php echo t('To understand more about assisted living – levels of care, caring for loved ones with dementia, how to pay for one, and how to evaluate one – search the Web and download the “ Gilbert Buide - Assisted Living Evaluation and Moving Kit.”'); ?></p>
+  <p><?php echo t('Watch the following brief video to learn more about assisted living.'); ?></p>
+  <p class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></p>
+</div>
+  
   <!-- Lesson #5 - Relocation and Transfers by Older Adults within the Health Care System -->
   <!-- slide #10 -->
   
+  <div id="slide-10" class="slide">
+  <h2 class="flowers"><?php echo t('Video – Learn about Assisted Living'); ?></h2>
+  <hr />
+  <p>
+      <iframe width="480" height="360" src="http://www.youtube.com/embed/1h0CtiAybLc?rel=0" frameborder="0" allowfullscreen></iframe>
+    </p>
+  <p><?php echo t('Long-term care communities, or nursing homes, may be independent or part of a senior continuing care community, providing medical and nursing care. Residents may be there temporarily for a period of rehabilitation, or may be there for long-term care. State regulations define the services that nursing homes may provide. Registered Nurses who help provide 24-hour care to people who can no longer care for themselves due to physical, emotional, or mental conditions. A physician supervises each resident’s care and a nurse or other medical professional is almost always on the premises. Most nursing homes have two basic types of services: skilled medical care and custodial care. Nursing homes offer an array of services, in addition to the basic skilled nursing care and the custodial care. They provide a room, all meals, some social activities, personal care, 24-hour nursing supervision and access to medical services when needed.'); ?></p>
+  <p class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></p>
+</div>
+
+  <!-- Lesson #5 - Relocation and Transfers by Older Adults within the Health Care System -->
+  <!-- slide #11 -->
+  
+    <div id="slide-11" class="slide">
+  <h2 class="flowers"><?php echo t('“Aging in Place” - Planning for the Future'); ?></h2>
+  <hr />
+  
+  
+  
+    <p class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></p>
+</div>
+  
+    <!-- Lesson #5 - Relocation and Transfers by Older Adults within the Health Care System -->
+  <!-- slide #12 -->
+  
+    <div id="slide-12" class="slide">
+  <h2 class="flowers"><?php echo t('Video – Learn about Assisted Living'); ?></h2>
+  <hr />
+  
+  
+  
+    <p class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></p>
+</div>
+  
+    <!-- Lesson #5 - Relocation and Transfers by Older Adults within the Health Care System -->
+  <!-- slide #13 -->
+  
+    <div id="slide-13" class="slide">
+  <h2 class="flowers"><?php echo t('Video – Learn about Assisted Living'); ?></h2>
+  <hr />
+  
+  
+  
+    <p class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></p>
+</div>
+  
+    <!-- Lesson #5 - Relocation and Transfers by Older Adults within the Health Care System -->
+  <!-- slide #14 -->
+  
+    <div id="slide-14" class="slide">
+  <h2 class="flowers"><?php echo t('Video – Learn about Assisted Living'); ?></h2>
+  <hr />
+  
+  
+  
+  
+    <p class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></p>
+</div>
+  
+    <!-- Lesson #5 - Relocation and Transfers by Older Adults within the Health Care System -->
+  <!-- slide #15 -->
+ 
+    <div id="slide-15" class="slide">
+  <h2 class="flowers"><?php echo t('Video – Learn about Assisted Living'); ?></h2>
+  <hr />
+  
+  
+    <p class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></p>
+</div>
+
+
   
   <!-- need these last two divs, one is to close the tutorial id -->
 </div>
