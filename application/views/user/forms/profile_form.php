@@ -8,7 +8,7 @@
 			));
 	?>
 	<p class="note">
-		<?php echo t('Fields with <span class="required">*</span> are required.'); ?>
+		<span class="required">*</span><?php echo t('Required'); ?>.
 	</p>
 	<?php echo $form->errorSummary($models); ?>
 	

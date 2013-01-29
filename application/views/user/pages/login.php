@@ -7,5 +7,9 @@
 		<?php echo t('Not registered? Click'); ?>
 		<?php echo CHtml::link(t('here'), $this->createUrl('register')); ?>
 	</p>
+	<p>
+		<?php echo t('Forgot you password? Click'); ?>
+		<?php echo CHtml::link(t('here'), $this->createUrl('forgotPassword')); ?>
+	</p>
 	<?php echo $this->renderPartial('forms/login_form', array('model' => $model)); ?>
 </div>

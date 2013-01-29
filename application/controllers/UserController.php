@@ -45,6 +45,50 @@ class UserController extends ApiController {
 		$this->render('pages/login', array('model' => $user));
 	}
 
+	public function actionForgotPassword() {
+		$models = array(
+				'UserMaintenance' => new UserMaintenance,
+				'Captcha' => new Captcha
+		);
+		// if it is ajax validation request
+		if(isset($_POST['ajax']) && $_POST['ajax'] === 'user-maintenance-form') {
+			if(isset($_POST['UserMaintenance']))
+				$models['UserMaintenance']->setAttributes($_POST['UserMaintenance']);
+			if(isset($_POST['Captcha']))
+				$models['Captcha']->setAttributes($_POST['Captcha']);
+			echo CActiveForm::validate($models);
+			Yii::app()->end();
+		}
+		
+		if(isset($_POST['Captcha']) && isset($_POST['UserMaintenance'])) {
+			$models['UserMaintenance']->setAttributes($_POST['UserMaintenance']);
+			$models['Captcha']->setAttributes($_POST['Captcha']);
+			if($models['Captcha']->validate() && $models['UserMaintenance']->validate()) {
+				$user = $models['UserMaintenance']->getUser();
+				if(!$user->isActivated()) {
+					Yii::app()->getUser()->setFlash('error', t('We could not reset your password because your account has not yet been activated. To have an activation email sent to you again please click ').
+																CHtml::link(t('here'), $this->createUrl('resendActivation')));
+				} else {
+					$this->sendPasswordResetEmail($user);
+					Yii::app()->getUser()->setFlash('success', t('Instructions for resetting your password have been sent to your email.'));
+				}
+				$this->refresh();
+			}
+		}
+		$this->render('pages/forgotPassword', array('models' => $models));
+	}
+	
+	public function sendPasswordResetEmail($user) {
+		$this->loadExtension('yii-mail');
+		$message = new YiiMailMessage;
+		$message->view = 'passwordReset';
+		$message->setSubject(t('MatherLifeways Password Reset Request'));
+		$message->setBody(array('url' => $this->getPasswordResetUrl($user)), 'text/html');
+		$message->setTo($user->email);
+		$message->setFrom(Yii::app()->params['noReplyEmail']);
+		Yii::app()->mail->send($message);
+	}
+
 	/**
 	 * Displays the register page
 	 */
@@ -96,11 +140,22 @@ class UserController extends ApiController {
 		$this->render('pages/register', array('models' => $models));
 	}
 	
+	public function getActivationUrl($user) {
+		Yii::app()->loadHelper('Utilities');
+		return Yii::app()->createAbsoluteUrl('user/activate/' . urlencode($user->id) . '/' . base64_url_encode($user->session_key));
+	}
+	
+	public function getPasswordResetUrl($user) {
+		Yii::app()->loadHelper('Utilities');
+		return Yii::app()->createAbsoluteUrl('user/passwordReset/' . urlencode($user->id) . '/' . base64_url_encode($user->session_key));
+	}
+	
 	public function sendConfirmationEmail($userModel) {
+		$this->loadExtension('yii-mail');
 		$message = new YiiMailMessage;
 		$message->view = 'registrationConfirmation';
 		$message->setSubject(t('MatherLifeways Registration Confirmation'));
-		$message->setBody(array('user' => $userModel), 'text/html');
+		$message->setBody(array('url' => $this->getActivationUrl($userModel)), 'text/html');
 		$message->setTo($userModel->email);
 		$message->setFrom(Yii::app()->params['noReplyEmail']);
 		Yii::app()->mail->send($message);
@@ -108,18 +163,84 @@ class UserController extends ApiController {
 
 	public function actionActivate($id, $sessionKey) {
 		$user = User::model()->findByPk($id);
-		Yii::app()->loadHelper('Utilities');
-		$sessionKey = base64_url_decode($sessionKey);
-		if($user->session_key === $sessionKey) {
-			$user->userActivated = new UserActivated;
-			$user->userActivated->user_id = $user->id;
-			if($user->userActivated->save() && $user->login(false, false)) {
-				$user->regenerateSessionKey();
-				Yii::app()->getUser()->setFlash('success', t('Your account has been activated. Welcome {email}!', array('{email}' => Yii::app()->getUser()->name)));
-				$this->redirect(Yii::app()->homeUrl);
+		if($user !== null) {
+			Yii::app()->loadHelper('Utilities');
+			$sessionKey = base64_url_decode($sessionKey);
+			if($user->session_key === $sessionKey) {
+				$user->userActivated = new UserActivated;
+				$user->userActivated->user_id = $user->id;
+				if($user->userActivated->save() && $user->login(false, false)) {
+					$user->regenerateSessionKey();
+					Yii::app()->getUser()->setFlash('success', t('Your account has been activated. Welcome {email}!', array('{email}' => Yii::app()->getUser()->name)));
+					$this->redirect(Yii::app()->homeUrl);
+				}
 			}
 		}
 		$this->render('pages/activationFailure');
+	}
+	
+	public function actionPasswordReset($id, $sessionKey) {
+		$user = User::model()->findByPk($id);
+		if($user !== null) {
+			Yii::app()->loadHelper('Utilities');
+			$sessionKey = base64_url_decode($sessionKey);
+			if($user->session_key === $sessionKey) {
+				$user->setScenario('passwordReset');
+				
+				// if it is ajax validation request
+				if(isset($_POST['ajax']) && $_POST['ajax'] === 'password-reset-form') {
+					if(isset($_POST['User']))
+						$user->setAttributes($_POST['User']);
+					echo CActiveForm::validate($user);
+					Yii::app()->end();
+				}
+				
+				// collect user input data
+				if(isset($_POST['User'])) {
+					$user->setAttributes($_POST['User']);
+					if($user->save() && $user->login(false, false)) {
+						$user->regenerateSessionKey();
+						Yii::app()->getUser()->setFlash('success', t('Your account password has been reset. Welcome {email}!', array('{email}' => Yii::app()->getUser()->name)));
+						$this->redirect(Yii::app()->homeUrl);
+					}
+				}
+				return $this->render('pages/passwordReset', array('user' => $user));
+			}
+		}
+		throw new CHttpException(401, t('We were not able to authenticate you to perform a password reset.'));
+	}
+	
+	public function actionResendActivation() {
+		$models = array(
+				'UserMaintenance' => new UserMaintenance,
+				'Captcha' => new Captcha
+		);
+		// if it is ajax validation request
+		if(isset($_POST['ajax']) && $_POST['ajax'] === 'user-maintenance-form') {
+			if(isset($_POST['UserMaintenance']))
+				$models['UserMaintenance']->setAttributes($_POST['UserMaintenance']);
+			if(isset($_POST['Captcha']))
+				$models['Captcha']->setAttributes($_POST['Captcha']);
+			echo CActiveForm::validate($models);
+			Yii::app()->end();
+		}
+	
+		if(isset($_POST['Captcha']) && isset($_POST['UserMaintenance'])) {
+			$models['UserMaintenance']->setAttributes($_POST['UserMaintenance']);
+			$models['Captcha']->setAttributes($_POST['Captcha']);
+			if($models['Captcha']->validate() && $models['UserMaintenance']->validate()) {
+				$user = $models['UserMaintenance']->getUser();
+				if($user->isActivated()) {
+					Yii::app()->getUser()->setFlash('error', t('Your account has already been activated. If you need have forgotten your password you can reset it by clicking ') . 
+																CHtml::link(t('here'), $this->createUrl('forgotPassword')));
+				} else {
+					$this->sendConfirmationEmail($user);
+					Yii::app()->getUser()->setFlash('success', t('We have sent you an activation email. Please check your email for ') . $user->email);
+				}
+				$this->refresh();
+			}
+		}
+		$this->render('pages/resendActivation', array('models' => $models));
 	}
 
 	/**

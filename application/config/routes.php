@@ -9,8 +9,8 @@ $route[] = array('<controller>/update', 'pattern' => '<controller:\w+>/<key_id:\
 $route[] = array('<controller>/delete', 'pattern' => '<controller:\w+>/<key_id:\d+>/<key:[\w\-,_]+>', 'verb' => 'DELETE');
 $route[] = array('<controller>/options', 'pattern' => '<controller:\w+>/<key_id:\d+>/<key:[\w\-,_]+>', 'verb' => 'OPTIONS');
 
-//User activation route
-$route['<language:\w+>/user/activate/<id:\d+>/<sessionKey:[\w\-,_]+>'] = 'user/activate';
+//User activation and password reset routes
+$route['<language:\w+>/user/<action:(activate|passwordReset)>/<id:\d+>/<sessionKey:[\w\-,_]+>'] = 'user/<action>';
 
 //Standard Yii routes with language
 $route['<language:\w+>'] = '';

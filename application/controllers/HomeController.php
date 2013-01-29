@@ -105,12 +105,17 @@ class HomeController extends OnlineCoursePortalController {
 				);
 		// if it is ajax validation request
 		if(isset($_POST['ajax']) && $_POST['ajax'] === 'contact-form') {
+			if(isset($_POST['ContactUs']))
+				$models['ContactUs']->setAttributes($_POST['ContactUs']);
+			if(isset($_POST['Captcha']))
+				$models['Captcha']->setAttributes($_POST['Captcha']);
 			echo CActiveForm::validate($models);
 			Yii::app()->end();
 		}
 		
 		if(isset($_POST['Captcha']) && isset($_POST['ContactUs'])) {
-			$models['ContactUs']->attributes = $_POST['ContactUs'];
+			$models['ContactUs']->setAttributes($_POST['ContactUs']);
+			$models['Captcha']->setAttributes($_POST['Captcha']);
 			if($models['Captcha']->validate() && $models['ContactUs']->validate()) {
 				$this->loadExtension('yii-mail');
 				$message = new YiiMailMessage;

@@ -75,31 +75,31 @@ class User extends ActiveRecord implements IUserIdentity {
 			array('email, salt, session_key', 'required', 'except' => 'search'),
 			array('salt, session_key', 'ext.pbkdf2.PBKDF2validator'),
 				
-			array('password_no_hash', 'required', 'on' => 'pushedRegister, register, login'),
-			array('password_no_hash', 'type', 'allowEmpty' => false, 'on' => 'pushedRegister, register, login'),
+			array('password_no_hash', 'required', 'on' => 'pushedRegister, register, login, passwordReset'),
+			array('password_no_hash', 'type', 'allowEmpty' => false, 'on' => 'pushedRegister, register, login, passwordReset'),
 				
-			array('password_no_hash_repeat', 'required', 'on' => 'register'),
-			array('password_no_hash_repeat', 'type', 'allowEmpty' => false, 'on' => 'register'),
+			array('password_no_hash_repeat', 'required', 'on' => 'register, passwordReset'),
+			array('password_no_hash_repeat', 'type', 'allowEmpty' => false, 'on' => 'register, passwordReset'),
 			array('password_no_hash_repeat',
 					'compare',
 					'compareAttribute' => 'password_no_hash',
 					'strict' => true,
 					'message' => 'Passwords do not match.', 
-					'on' => 'register'),
+					'on' => 'register, passwordReset'),
 				
-			array('password_no_hash', 'hash', 'on' => 'pushedRegister, register'),
+			array('password_no_hash', 'hash', 'on' => 'pushedRegister, register, passwordReset'),
 				
 			array('email', 'length', 'max' => 255),
 			array('email', 'email'),
-			array('email', 'unique', 'except' => 'login, search'),
+			array('email', 'unique', 'except' => 'login, search, passwordReset'),
 			array('email', 'loadUserAttributesFromEmail', 'on' => 'login'),
 
 			array('password', 'required', 'except' => 'login, search'),
 			array('password', 'ext.pbkdf2.PBKDF2validator', 'except' => 'login, search'),
 
 			array('group_id', 'determineGroup', 'on' => 'pushedRegister, register'), 
-			array('group_id', 'exist', 'attributeName' => 'id', 'className' => 'Group', 'allowEmpty' => false),
-			array('group_id', 'required', 'except' => 'search'),
+			array('group_id', 'exist', 'attributeName' => 'id', 'className' => 'Group', 'allowEmpty' => false, 'except' => 'login, search, passwordReset'),
+			array('group_id', 'required', 'except' => 'search', 'except' => 'login, search, passwordReset'),
 				
 			array('id, group_id, email, created', 'safe', 'on' => 'search')
         );
@@ -122,13 +122,12 @@ class User extends ActiveRecord implements IUserIdentity {
 		);
 	}
 	
-	public function scopes() {
-		return array(
-			'isAdmin' => array(
-					'with' => 'group',
-					'condition' => 'group.name="admin"'
-					),
-		);
+	public function isAdmin() {
+		return $this->group instanceof Group && $this->group->name === 'admin';
+	}
+	
+	public function isActivated() {
+		return $this->userActivated instanceof UserActivated && !$record->userActivated->getIsNewRecord();
 	}
 	
 	public function hasCourse($course) {
@@ -235,6 +234,11 @@ class User extends ActiveRecord implements IUserIdentity {
 													   Group::model()->find('name = :name', array(':name' => 'paid_user'))->id;
 	}
 	
+	protected function afterFind() {
+		$this->getHasher()->iv = $this->salt;
+		return parent::afterFind();
+	}
+	
 	public function loadUserAttributesFromEmail($attribute, $params) {
 		$record = $this->find('email = :email', array(':email' => $this->$attribute));
 		if($record !== null) {
@@ -242,9 +246,10 @@ class User extends ActiveRecord implements IUserIdentity {
 			$this->getHasher()->string = $this->password_no_hash;
 		}
 		if($record === null || $record->password !== $this->getHasher()->getHash())
-			$this->addError('User', 'Incorrect email or password.');
-		else if($record->userActivated === null || $record->userActivated->getIsNewRecord())
-			$this->addError('User', 'The email and password you have entered are correct, but your account has not yet been activated.');
+			$this->addError('User', t('Incorrect email or password.'));
+		else if(!$record->isActivated())
+			$this->addError('User', t('The email and password you have entered are correct, but your account has not yet been activated. If you lost the activation email we sent you after you registered please click ') .
+										CHtml::link(t('here'), Yii::app()->createUrl('user/resendActivation')));
 		else {
 			$this->setPrimaryKey($record->getPrimaryKey());
 			$this->setIsNewRecord(false);
@@ -269,11 +274,6 @@ class User extends ActiveRecord implements IUserIdentity {
 		if($this->_pbkdf2Hasher === null) 
 			$this->_pbkdf2Hasher = Yii::createComponent('ext.pbkdf2.PBKDF2');
 		return $this->_pbkdf2Hasher;
-	}
-	
-	public function getActivationUrl() {
-		Yii::app()->loadHelper('Utilities');
-		return Yii::app()->createAbsoluteUrl('user/activate/' . urlencode($this->id) . '/' . base64_url_encode($this->session_key));
 	}
 
 	/**

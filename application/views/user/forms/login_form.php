@@ -5,7 +5,7 @@
 )); ?>
 
 	<p class="note">
-		<?php echo t('<span class="required">*</span>Required.'); ?>
+		<span class="required">*</span><?php echo t('Required'); ?>.
 	</p>
 	<?php echo $form->errorSummary($model); ?>
 	<div class="row">
