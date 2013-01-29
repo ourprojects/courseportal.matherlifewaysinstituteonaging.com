@@ -1206,7 +1206,7 @@ are taking.'); ?></li>
   <li><?php echo t('Plan to give yourself a break and just do something for yourself.'); ?>
   </p>
   <p class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></p>
-  </div>
+</div>
 
 
   <!-- Lesson #5 - Relocation and Transfers by Older Adults within the Health Care System --> 
@@ -1243,107 +1243,334 @@ are taking.'); ?></li>
   <hr />
   <p><?php echo t('What are some other resources for long distance caregivers?'); ?></p>
   <ul>
-      <li><?php echo t('Obtain a free '); ?><a href="www.netofcare.org/crd/ resource_form.asp" target="_blank">Caregiver Resource Directory</a> <?php echo t('that provides resources, facts, and advice about caring for a family member as well as for yourself.'); ?><a href="www.netofcare.org/crd/ resource_form.asp" target="_blank"></li>
-      
-      
-      <li><?php echo t('Benefits Check UP is a free online service provided by the National Council on Aging which allows people to find programs that can help them meet health care costs.'); ?></li>
-      <li><?php echo t('ARCH National Respite Network and Resource Center provides resources and information including a respite locator program and information clearinghouse.'); ?></li>
-      <li><?php echo t('Eldercare Locator is a nationwide service helping identify local resources for older adults.'); ?></li>
-      <li><?php echo t('National Family Caregivers Association supports family caregivers and offers education, information, and referrals.'); ?></li>
-    </ul>
+      <li><?php echo t('Obtain a free '); ?><a href="www.netofcare.org/crd/ resource_form.asp" target="_blank">Caregiver Resource Directory</a> <?php echo t('that provides resources, facts, and advice about caring for a family member as well as for yourself.'); ?></li>
+      <li><a href="http://www.benefitscheckup.org" target="_blank">Benefits Check UP</a> <?php echo t('is a free online service provided by the National Council on Aging which allows people to find programs that can help them meet health care costs.'); ?></li>
+      <li><a href="http://archrespite.org" target="_blank">ARCH National Respite Network and Resource Center</a> <?php echo t('provides resources and information including a respite locator program and information clearinghouse.'); ?></li>
+      <li><a href="http://www.eldercare.gov/Eldercare.NET/Public/Index.aspx" target="_blank">Eldercare Locator</a> <?php echo t('is a nationwide service helping identify local resources for older adults.'); ?></li>
+      <li><a href="http://caregiveraction.org" target="_blank">National Family Caregivers Association</a> <?php echo t('supports family caregivers and offers education, information, and referrals.'); ?></li>
+</ul>
   <p class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();"
 				class="button left"> <?php echo t('Complete Lesson'); ?></a></p>
                 
                 
-                
-  <!-- Lesson #6 - Promoting Safety of Older Relatives and Friends in Caring for Themselves --> 
+  <!-- Lesson #6 - Promoting Safety of Older Relatives and Friends in Caring for Themselves -->
   <!-- slide #1 -->
-  
   <div id="slide-1" class="slide">
   <h2 class="flowers"><?php echo t('Promoting Safety of Older Relatives and Friends in Caring for Themselves'); ?></h2>
   <hr />
-  <p><?php echo t('Knowledge Itself is Power
-When we consider how to promote safety of older adults so that they may remain independent for as long as possible, having knowledge and understanding what’s important will facilitate decision making in the future. In this section, we look at several scenarios – all of which relate to safety in some way – that are commonly faced by family caregivers and their older parents.
+  <p><?php echo t('Knowledge Itself is Power'); ?><br />
+  <?php echo t('When we consider how to promote safety of older adults so that they may remain independent for as long as possible, having knowledge and understanding what’s important will facilitate decision making in the future. In this section, we look at several scenarios – all of which relate to safety in some way – that are commonly faced by family caregivers and their older parents.'); ?></p>
+  
+  <p><?php echo t('Home Safety and Older Adults'); ?><br />
+  <?php echo t('Regardless if your parents remain in their own home, move to a senior living community, or move in with you, home safety is an important topic for discussion. The overall goal of assessing home safety needs and making modifications as necessary is to give older adults a sense of independence in their environment.'); ?></p>
+  
+  <p><?php echo t('Activity – Using Your Powers of Observation'); ?><br />
+  <?php echo t('During your next visit, use your powers of observation to note changes in several areas. You may want to make mental notes and then jot down some of your observations privately. We have included some general questions to get you started in this activity.'); ?></p>
+  
+  <p><?php echo t('Additional Home Safety Resources'); ?><br />
+  <?php echo t('The U.S. Consumer Product Safety Commission estimates that over 1.5 million adults ages 65 and older are treated each year in hospital emergency rooms due to injuries from hazards in the home. The Commission believes that many of these injuries are preventable with some simple steps to correct the hazards. Here are some general recommendations and downloadable resources to consider.'); ?></p>
+  
+  <p><?php echo t('Considering Your Older Parents Moving in with You?'); ?><br />
+  <?php echo t('More than 3.6 million older adults live with their children (up 67% from 2000) according to U.S. Census figures. With the economy and housing market issues, many more examples of older parents moving in with their children are coming to light.'); ?></p>
+  
+  <p><?php echo t('Exercise – Assessing the Situation'); ?><br />
+  <?php echo t('This exercise provides an opportunity for you and your family to consider key questions to explore potential for having older parents move in with you. As you read through each section, we include some CARE Coaching questions to bring out your best thinking about what would be important to you.'); ?></p>
 
-Home Safety and Older Adults
-Regardless if your parents remain in their own home, move to a senior living community, or move in with you, home safety is an important topic for discussion. The overall goal of assessing home safety needs and making modifications as necessary is to give older adults a sense of independence in their environment.
 
-Activity – Using Your Powers of Observation
-During your next visit, use your powers of observation to note changes in several areas. You may want to make mental notes and then jot down some of your observations privately. We have included some general questions to get you started in this activity.
-
-Additional Home Safety Resources
-The U.S. Consumer Product Safety Commission estimates that over 1.5 million adults ages 65 and older are treated each year in hospital emergency rooms due to injuries from hazards in the home. The Commission believes that many of these injuries are preventable with some simple steps to correct the hazards. Here are some general recommendations and downloadable resources to consider.
-
-Considering Your Older Parents Moving in with You?
-More than 3.6 million older adults live with their children (up 67% from 2000) according to U.S. Census figures. With the economy and housing market issues, many more examples of older parents moving in with their children are coming to light.
-
-Exercise – Assessing the Situation
-This exercise provides an opportunity for you and your family to consider key questions to explore potential for having older parents move in with you. As you read through each section, we include some CARE Coaching questions to bring out your best thinking about what would be important to you.
-
-Driving Concerns and Older Adults
-According to driving statistics, older adults have more fatal car accidents than any other age group. Additionally, older adults are more at risk for death after being involved in a car accident because of their age and health condition.
-
-When to Limit or Stop Driving – Warning Signs
-AARP has developed a list of warning signs about when to limit or stop driving.
-
-CARE Coaching: Talking to Your Parents about Their Driving
-Bringing up the discussion on driving is very challenging. By using CARE Coaching methods and breaking the driving conversation with your older parents into steps, you can better draw out the issues and support your parents in their transition.
-
-Exercise Promotes Safety and Independence
-Exercise for older adults is an important contributor to safety and independence. Many studies have demonstrated the positive benefits of exercise for older adults regardless of age. As we get older exercise is incredibly important to our overall health.
-
-Activity – Resources on Exercises Designed for Older Adults
-Provided are some resources from the National Institute on Aging and exercise physiologists on exercises designed for older adults.'); ?></p>
+  <p class="buttons"> <a href="javascript:;" class="button right"
+				onclick="$.fancybox.next();"><?php echo t('Start Course &raquo;'); ?></a></p>
+  </div>
   
   
-   <p class="buttons"> <a href="javascript:;" class="button right"
-				onclick="$.fancybox.next();"><?php echo t('Start Course &raquo;'); ?> </a> </p>
-</div>
-                
-                   
-     <!-- Lesson #6 - Promoting Safety of Older Relatives and Friends in Caring for Themselves --> 
+  <!-- Lesson #6 - Promoting Safety of Older Relatives and Friends in Caring for Themselves -->
   <!-- slide #2 -->
   
-    <!-- Lesson #6 - Promoting Safety of Older Relatives and Friends in Caring for Themselves --> 
+    <div id="slide-2" class="slide">
+  <h2 class="flowers"><?php echo t('Promoting Safety of Older Relatives and Friends in Caring for Themselves (continued)'); ?></h2>
+  <hr />
+  
+  <p><?php echo t('Driving Concerns and Older Adults'); ?><br />
+  <?php echo t('According to driving statistics, older adults have more fatal car accidents than any other age group. Additionally, older adults are more at risk for death after being involved in a car accident because of their age and health condition.'); ?></p>
+  
+  <p><?php echo t('When to Limit or Stop Driving – Warning Signs'); ?><br />
+  <?php echo t('AARP has developed a list of warning signs about when to limit or stop driving.'); ?></p>
+  
+  <p><?php echo t('CARE Coaching: Talking to Your Parents about Their Driving'); ?><br />
+  <?php echo t('Bringing up the discussion on driving is very challenging. By using CARE Coaching methods and breaking the driving conversation with your older parents into steps, you can better draw out the issues and support your parents in their transition.'); ?></p>
+  
+  <p><?php echo t('Exercise Promotes Safety and Independence'); ?><br />
+  <?php echo t('Exercise for older adults is an important contributor to safety and independence. Many studies have demonstrated the positive benefits of exercise for older adults regardless of age. As we get older exercise is incredibly important to our overall health.'); ?></p>
+  
+  <p><?php echo t('Activity – Resources on Exercises Designed for Older Adults'); ?><br />
+  <?php echo t('Provided are some resources from the National Institute on Aging and exercise physiologists on exercises designed for older adults.'); ?></p>
+  
+    <p class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></p>
+  </div>
+  
+  <!-- Lesson #6 - Promoting Safety of Older Relatives and Friends in Caring for Themselves -->
   <!-- slide #3 -->
   
+      <div id="slide-3" class="slide">
+  <h2 class="flowers"><?php echo t('Knowledge Itself is Power'); ?></h2>
+  <hr />
+  <p><?php echo t('You’ve heard this phrase many times – probably even from your parents during your education years. It was actually first documented by Sir Frances Bacon back in the 16th century. When we consider how to promote safety of older adults so that they may remain independent for as long as possible, having knowledge and understanding what’s important will facilitate decision making in the future.'); ?></p>
+  <p><?php echo t('In this section, we look at several scenarios – all of which relate to safety in some way – that are commonly faced by family caregivers and their older parents. We address several topics including:'); ?></p>
+  <ul>
+          <li><?php echo t('Home safety tips'); ?></li>
+          <li><?php echo t('Moving my parents into my home'); ?></li>
+          <li><?php echo t('The “driving” conversation'); ?></li>
+          <li><?php echo t('Importance of exercise for older adults and its impact on safety'); ?></li>
+        </ul>
+  <p class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></p>
+</div>
   
-    <!-- Lesson #6 - Promoting Safety of Older Relatives and Friends in Caring for Themselves --> 
+  
+  <!-- Lesson #6 - Promoting Safety of Older Relatives and Friends in Caring for Themselves -->
   <!-- slide #4 -->
   
+  <div id="slide-4" class="slide">
+      <h2 class="flowers"><?php echo t('Home Safety and Older Adults'); ?></h2>
+      <hr />
+      <p><?php echo t('Regardless if your parents remain in their own home, move to a senior living community, or move in with you, home safety is an important topic for discussion. The overall goal of assessing home safety needs and making modifications as necessary is to give older adults a sense of independence in their environment.'); ?></p>
+      <p><?php echo t('Accidents in the home are a major source of injury for older adults and can cause disability and sometimes death. For older adults, did you know that the vast majority of falls occurs going between the bedroom and bathroom? A simple fall that results in broken bones can develop into a serious, disabling injury limiting one’s independence. As one ages, senses of sight, hearing, touch, and smell tend to decline. Physical abilities are often reduced and certain movements that are important in daily tasks (such as stretching, lifting, and bending) are more difficult. Reaction time or judgment may slow.'); ?></p>
+      <p><?php echo t('As a result, an older person cannot respond as quickly as a younger person in all situations. These normal aging changes may make an older person more prone to accidents. Simple precautions and adjustments may ensure a safe home. There are several areas of the home to assess regarding safety issues:'); ?></p>
+      <ul>
+      <li><?php echo t('General safety (lighting, access, electrical, heating, water, medication storage)'); ?></li>
+      <li><?php echo t('Kitchen'); ?></li>
+      <li><?php echo t('Stairways and halls'); ?></li>
+      <li><?php echo t('Living room'); ?></li>
+      <li><?php echo t('Bathroom'); ?></li>
+      <li><?php echo t('Bedroom'); ?></li>
+      <li><?php echo t('Outdoor area'); ?></li>
+    </ul>
+      <p class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></p>
+</div> 
   
-    <!-- Lesson #6 - Promoting Safety of Older Relatives and Friends in Caring for Themselves --> 
+  <!-- Lesson #6 - Promoting Safety of Older Relatives and Friends in Caring for Themselves -->
   <!-- slide #5 -->
   
+  <div id="slide-5" class="slide">
+      <h2 class="flowers"><?php echo t('Home Safety and Older Adults (continued)'); ?></h2>
+      <hr />
+      <p><?php echo t('CARE Coaching Tip – Be Alert!'); ?></p>
+      <p><?php echo t('You may be a situation where your older parents are living alone and you live quite a distance away, maybe even across the country. You may not get back to visit on a regular basis, but the last time you visited, you noticed “little things” around the house that seemed “out of place” for them. You decide that on the hanksgiving holiday visit, you want to evaluate how they are doing. Remember, this should not be an inspection for purposes of judgment or criticism. Rather, think of this as a part wellness check, part well-being check, and part safety check. Things may be getting difficult to handle around the house for your older parents, and they may just be reluctant to bring them up with you because “you’ve got so much on your plate just now.”'); ?></p>
+      <p><?php echo t('You want to try to be as subtle as possible. Don’t look like you are checking up on them. Use what you notice as openings for conversations. Do it privately (not a great opener for the family Thanksgiving table conversation!).'); ?></p>
+      <p><?php echo t('“Mom, I noticed you were having a bit of trouble reading that label. What if we change the light bulbs in here?”'); ?></p>
+      <p><?php echo t('Offer to do little things around the house. Don’t always wait for a “yes” or “no” response, as they may be too proud to ask for help. Just let them know that you’d like to use some of the time to be helpful and supportive.'); ?></p>
+      <p class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></p>
+</div>
   
-  
-    <!-- Lesson #6 - Promoting Safety of Older Relatives and Friends in Caring for Themselves --> 
+  <!-- Lesson #6 - Promoting Safety of Older Relatives and Friends in Caring for Themselves -->
   <!-- slide #6 -->
   
+    <div id="slide-6" class="slide">
+      <h2 class="flowers"><?php echo t('Activity – Using Your Powers of Observation)'); ?></h2>
+      <hr />
+      
+      <p><?php echo t('During your next visit, use your powers of observation to note changes in the following areas. You may want to make mental notes and then jot down some of your observations privately. We have included some general questions to get you started. In this activity, you will add some of your own specific questions that you may want to assess during your visit.'); ?></p>
+      
+      <p>download button here</p>
+      
+      <p class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></p>
+    </div>
   
   
-  
-    <!-- Lesson #6 - Promoting Safety of Older Relatives and Friends in Caring for Themselves --> 
+  <!-- Lesson #6 - Promoting Safety of Older Relatives and Friends in Caring for Themselves -->
   <!-- slide #7 -->
   
+  <div id="slide-7" class="slide">
+      <h2 class="flowers"><?php echo t('Additional Home Safety Resources)'); ?></h2>
+      <hr />
+      <p><?php echo t('The U.S. Consumer Product Safety Commission estimates that over 1.5 million adults ages 65 and older are treated each year in hospital emergency rooms due to injuries from hazards in the home. The Commission believes that many of these injuries are preventable with some simple steps to correct the hazards. Some of these steps are valuable in your own home to prevent injuries in general.'); ?></p>
+      <p><?php echo t('Search the Web for home safety resources and list what you find on the Forum/Blog.'); ?></p>
+      <p><?php echo t('Here are links to other resources on home safety particularly in relation to older adults.'); ?></p>
+      <p><a href="http://www.homemods.org/resources/doable-home/index.shtml" target="_blank">The Do Able Renewable Home</a><?php echo t(' - This booklet is designed to help overcome problems experienced in the home as one grows older. Content was developed in collaboration with gerontologists to make the home more livable.'); ?></p>
+      <p><a href="http://www.lrc.rpi.edu/programs/lightHealth/AARP/index.asp" target="_blank">Lighting the Way: A Key to Independence</a><?php echo t(' - This resource provides a number of recommendations to help older adults see better. From home lighting to doing small tasks, many suggestions can easily be implemented with simple modifications.'); ?></p>
+      <p><a href="http://www.homesafetycouncil.org/SafetyGuide/sg_checklistgenerator_w001.asp" target="_blank">Home Safety Checklist</a><?php echo t(' - This is a simple checklist that you can use when visiting your older parents to assess safety issues in their home environment.'); ?></p>
+      <p class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></p>
+</div>  
   
-  
-  
-    <!-- Lesson #6 - Promoting Safety of Older Relatives and Friends in Caring for Themselves --> 
+  <!-- Lesson #6 - Promoting Safety of Older Relatives and Friends in Caring for Themselves -->
   <!-- slide #8 -->
   
-  
-  
-    <!-- Lesson #6 - Promoting Safety of Older Relatives and Friends in Caring for Themselves --> 
+  <div id="slide-8" class="slide">
+      <h2 class="flowers"><?php echo t('Considering Your Older Parents Moving in with You?)'); ?></h2>
+      <hr />
+      
+      <p><?php echo t('More than 3.6 million older adults live with their children (up 67% from 2000) according to U.S. Census figures. It is a growing family dynamic that is gaining national attention with President Barack Obama’s mother-in-law, Marian Robinson, moved into the White House to help with her young granddaughters. With the economy and housing market issues, many more examples of older parents moving in with their children are coming to light. Older adults who may have been planning to sell their home and use the proceeds to living in a senior living residence may be delaying their decision or realizing they will not get enough money from the house sale to make the move.'); ?></p>
+      <p><?php echo t('The children may also be facing financial difficulties of their own. “Merging” finances and obligations may benefit everyone in these types of arrangements. One son commented that he “gets to see a different side of his mother and father. They are not just parents, they’re people, and once you recognize that, you work with it and it’s fun.”'); ?></p>
+      <p><?php echo t('Interestingly, an entire new housing opportunity is developing with this “return” to multiple generations living under a single roof. Called “multigenerational housing,” these homes are often designed with a master and guest (in-law) suite on the main floor, both with private bath and walk-in closet. An open plan with lots of gathering areas and additional bedroom and recreation areas upstairs provides families with flexible living space.'); ?></p>
+      <p><?php echo t('“Giving each other space” is a valuable recommendation for those considering these living arrangements, particularly if the older parents are independent.'); ?></p>
+      <p><?php echo t('CARE Coaching Hints:'); ?></p>
+      <p><?php echo t('Hold regular family conferences to discuss issues or problems that may come up. Often, it is much easier to discuss awkward subjects when everyone is together and in the mood to talk. If your parents have health problems, set up an emergency contact system and make sure everyone knows what it is. This could be a buzzer or alarm in the bedroom or shower. Preprogram their telephones with your cell phone or pager number. Consider safety issues for children and seniors living in the same house. Make sure that medications with non-childproof bottle tops are not easily within reach, and make sure toys are left on the floor or stairs. Caregiving can take a lot of time and energy, so make sure you still put aside some quality time for yourself, and for your spouse and children. If you begin to feel overwhelmed by your family responsibilities, arrange for outside help or respite, or find a caregivers support group in your area.'); ?></p>
+      
+      <p class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></p>
+</div>
+    
+<!-- Lesson #6 - Promoting Safety of Older Relatives and Friends in Caring for Themselves -->
   <!-- slide #9 -->
   
+  <div id="slide-9" class="slide">
+      <h2 class="flowers"><?php echo t('Exercise – Assessing the Situation'); ?></h2>
+      <hr />
+      <p><?php echo t('This exercise provides an opportunity for you and your family to consider key questions to explore potential for having older parents move in with you. You may not be thinking about this at the present time, but you may have other family members or friends considering various options and so this may be helpful to them as well. These questions can serve as a guide for discussions with your family. As you read through each section, we include some CARE Coaching questions to bring out your best thinking about what would be important to you. '); ?></p>
+      <p>download button here</p>
+      
+      <p class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></p>
+</div>
   
   
-  
-    <!-- Lesson #6 - Promoting Safety of Older Relatives and Friends in Caring for Themselves --> 
+  <!-- Lesson #6 - Promoting Safety of Older Relatives and Friends in Caring for Themselves -->
   <!-- slide #10 -->
-                
   
-  <!-- need these last two divs, one is to close the tutorial id --> 
+    <div id="slide-10" class="slide">
+      <h2 class="flowers"><?php echo t('Driving Concerns and Older Adults'); ?></h2>
+      <hr />
+      <p><?php echo t('According to driving statistics, older adults have more fatal car accidents than any other age group. Additionally, older adults are more at risk for death after being involved in a car accident because of their age and health condition.'); ?></p>
+      
+      <p><?php echo t('By 2030, it is estimated that 25% of the driving population will be age 65 years and older. Currently, about 14% of all people killed in traffic accidents are older adults, and that percent is expected to increase to 25%.'); ?></p>
+      
+      <p><?php echo t('In addition to being a danger to themselves, many of these accidents result in injury or death of others.'); ?></p>
+      
+      <p><?php echo t('How does increased age impact driving ability? Several physical and cognitive changes that are part of normal aging or that are related to chronic illnesses may affect driving ability in older adults. Not all older adults experience these changes, but the following are some of the reasons older adults are more prone to car accidents:'); ?></p>
+      
+      <ul>
+      		<li><?php echo t('Slowed reaction time'); ?></li>
+            <li><?php echo t('Vision problems'); ?></li>
+            <li><?php echo t('Hearing problems'); ?></li>
+            <li><?php echo t('Decreased ability to focus'); ?></li>
+            <li><?php echo t('Changes in depth perception'); ?></li>
+            <li><?php echo t('Feeling nervous or anxious'); ?></li>
+            <li><?php echo t('Medical conditions that impact mobility'); ?></li>
+</ul>
+    
+  <!-- Lesson #6 - Promoting Safety of Older Relatives and Friends in Caring for Themselves -->
+  <!-- slide #11 -->
+  
+  <div id="slide-11" class="slide">
+        <h2 class="flowers"><?php echo t('Driving Concerns and Older Adults (continued)'); ?></h2>
+        <hr />
+        
+        <p><?php echo t('Why is driving so important to older adults? Driving for most people – and particularly for older adults – means independence. I can go where I want, when I want, without having to rely on others. Some older adults may not want to inconvenience their family or friends.'); ?></p>
+        <p><?php echo t('How can I help someone else limit or stop driving? In most cases, drivers monitor themselves and gradually limit or stop driving when they feel that a certain driving situation or driving in general is not safe. However, some people fail to recognize declining abilities, or they fear stopping to drive because it will make them permanently dependent on others for the necessities of life, and it may reduce their social and leisure activities as well. Conditions such as dementia or early stages of Alzheimer\'s disease may make some drivers unable to evaluate their driving properly.'); ?></p>
+        <p><?php echo t('Let’s look at some of the warning signs and steps you may take to address this issue with older family members or friends.'); ?></p>
+        <p class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></p>
+</div>
+    
+  <!-- Lesson #6 - Promoting Safety of Older Relatives and Friends in Caring for Themselves -->
+  <!-- slide #12 -->
+  
+  <div id="slide-12" class="slide">
+        <h2 class="flowers"><?php echo t('When to Limit or Stop Driving – Warning Signs'); ?></h2>
+        <hr />
+        <p><?php echo t('The following list of warning signs comes from the American Association of Retired People (AARP).'); ?></p>
+        <p><?php echo t('What are the warning signs when someone should begin to limit driving or stop altogether?'); ?></p>
+        <ul>
+        <li><?php echo t('Feeling uncomfortable and nervous or fearful while driving'); ?></li>
+        <li><?php echo t('Dents and scrapes on the car or on fences, mailboxes, garage doors, curbs etc.'); ?></li>
+        <li><?php echo t('Difficulty staying in the lane of travel'); ?></li>
+        <li><?php echo t('Getting lost'); ?></li>
+        <li><?php echo t('Trouble paying attention to signals, road signs and pavement markings'); ?></li>
+        <li><?php echo t('Slower response to unexpected situations'); ?></li>
+        <li><?php echo t('Medical conditions or medications that may be affecting the ability to handle the car safely'); ?></li>
+        <li><?php echo t('Frequent "close calls" (i.e. almost crashing)'); ?></li>
+        <li><?php echo t('Trouble judging gaps in traffics at intersections and on highway entrance/exit ramps'); ?></li>
+        <li><?php echo t('Other drivers honking at you and instances when you are angry at other drivers'); ?></li>
+        <li><?php echo t('Friends or relatives not wanting to drive with you'); ?></li>
+        <li><?php echo t('Difficulty seeing the sides of the road when looking straight ahead'); ?></li>
+        <li><?php echo t('Easily distracted or having a hard time concentrating while driving'); ?></li>
+        <li><?php echo t('"Having a hard time turning around to check over your shoulder while backing up or changing lanes'); ?></li>
+        <li><?php echo t('Frequent traffic tickets or "warnings" by traffic or law enforcement officers in the last year or two'); ?></li>
+      </ul>
+        <p><?php echo t('If you notice one or more of these warning signs with your older parents, you may want to have their driving assessed by a professional or have them attend a driver refresher class. You may also want to consult with their doctor if you notice unusual concentration or memory problems, or other physical symptoms that may be affecting ability to drive.'); ?></p>
+        
+        <p class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></p>
+      </div>
+	
+      <!-- Lesson #6 - Promoting Safety of Older Relatives and Friends in Caring for Themselves -->
+  <!-- slide #13 -->
+  
+    <div id="slide-13" class="slide">
+        <h2 class="flowers"><?php echo t('CARE Coaching: Talking to Your Parents about Their Driving'); ?></h2>
+        <hr />
+        <p><?php echo t('Remember what it was like when you got your first driver’s license? That sense of pride and freedom stays with you throughout your life. You certainly come to appreciate the independence driving means if you have ever been dependent on someone to drive you around even for a short time period perhaps while you were recuperating from surgery.'); ?></p>
+        <p><?php echo t('We are a mobile culture. In many areas, public transportation is scarce or unsafe for older adults. We want our older parents to be safe, but the last thing we want is for them to feel isolated, trapped, and alone in their own home.'); ?></p>
+        <p><?php echo t('Bringing up the discussion on driving is very challenging. The best way to think about this is to keep the perspective that there is a continuum of possibilities on the “continue driving” to “quit driving” scale. By using CARE Coaching methods and breaking the driving conversation with your older parents into steps, you can better draw out the issues and support your parents in their transition.'); ?></p>
+        <p><?php echo t('Step 1: Be a Coach in the Driving Discussion'); ?></p>
+        <p><?php echo t('Remember that most children wait too long for the driving discussion – either until their parents driving has deteriorated or until a major accident occurs. Consider yourself more of a coach in the discussion. Begin by letting them know how much you value their independence, judgment, and their concern for safety for themselves and for others. Let them know that this conversation will help all of you think through what happens if and when they need to retire from driving. At this point, you want them to think and imagine what that would be like for them and how they would like that process to go.'); ?></p>
+        <p class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></p>
+</div>
+  
+    <!-- Lesson #6 - Promoting Safety of Older Relatives and Friends in Caring for Themselves -->
+  <!-- slide #14 -->
+  
+  <div id="slide-14" class="slide">
+        <h2 class="flowers"><?php echo t('CARE Coaching: Talking to Your Parents about Their Driving (continued)'); ?></h2>
+        <hr />
+        
+        <p><?php echo t('CARE Coaching Questions'); ?></p>
+        <ul>
+        <li><?php echo t('How will you know when it’s time to retire from driving?'); ?></li>
+        <li><?php echo t('How do you think we should plan along the way?'); ?></li>
+        <li><?php echo t('What would you think about using some assessments along the way?'); ?></li>
+        <li><?php echo t('If you don’t notice it’s time to retire from driving, how would you like the conversation to go?'); ?></li>
+        <li><?php echo t('As we continue this discussion, can we include a plan so that you can continue to be as independent as possible?'); ?></li>
+      </ul>
+        <p><a href="DriverSelfAssessment.pdf" target="_blank"><?php echo t('Driver Self-Assessment'); ?></a><br />
+        <?php echo t('Here is a self-assessment for older adults from ElderSafety.org to help them identify what should be noticed regarding aging changes that may impact their ability to drive safely.'); ?></p>
+        <p><a href="http://www.usatoday.com/life/graphics/elderly_drivers_popup/flash.htm" target="_blank"><?php echo t('How Age Affects the Ability to Drive'); ?></a><br />
+        <?php echo t('This interactive guide from USA Today provides visual descriptions of changes that occur during normal aging that may impact one’s ability in driving.'); ?></p>
+        <p><?php echo t('Step 2: Noticing the First Changes'); ?></p>
+        <p><?php echo t('Physical and cognitive changes with aging variy considerably from very sudden and dramatic to very subtle and barely noticeable. Preparing and being willing to compensate for these changes will promote their safety and the safety of others. In many communities, finding a group of older adults who are tackling driving issues together may be a positive way to address some of those initial changes through sharing. Watch the following video to see how one church group addressed their issues through an AARP Driving Safety course.'); ?></p>
+        
+        <p class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></p>
+      </div>
+  
+    <!-- Lesson #6 - Promoting Safety of Older Relatives and Friends in Caring for Themselves -->
+  <!-- slide #15 -->
+  
+    <div id="slide-15" class="slide">
+        <h2 class="flowers"><?php echo t('Video – Senior Driving Safety'); ?></h2>
+        <hr />
+        
+        <p>
+        <iframe width="480" height="360" src="http://www.youtube.com/embed/YLW-GEJBMik?rel=0" frameborder="0" allowfullscreen></iframe>
+      </p>
+        <p><?php echo t('CARE Coaching Questions'); ?></p>
+        <ul>
+        <li><?php echo t('Begin with reviewing what you discussed last time and goals that you and your parents came up with on how to promote their independence while keeping them safe driving.'); ?></li>
+        <li><?php echo t('Taking a look at what we talked about last time, what are you wanting?'); ?></li>
+        <li><?php echo t('One of the things I found out is that there are some driving refresher courses that you may take that will often give you a nice discount on your care insurance. What would you think about that? Could we check one out together?'); ?></li>
+      </ul>
+        <p><?php echo t('Resources'); ?></p>
+        
+        Drivers Self-Assessment
+        This self-assessment at seniordrivers.org provides a quick self-assessment for older drivers to review their driving knowledge and skills.
+        
+        AARP Driver Safety Online Course
+        AARP offers an online driver safety course (about 8 hours in length) for a nominal charge. The course is designed for older drivers to learn about normal age-related changes and how to adjust driving to allow for these changes. Successful completion of the course may qualify participants for car insurance discounts (please check with your insurance company for specifics in your state).
+        
+        Step 3: Tracking Warning Signs
+        
+        It is probably not uncommon that you see some older drivers on the road who may be going much slower than traffic or seem confused making turns into busy intersections. There may be a point where professionals are needed to assess older adult’s driving abilities. The family physician is a good starting point, particularly if you have not been successful in bringing up the driving discussion on your own. As we noted earlier in this course, the physician is an authority figure to many older adults and so they may listen more closely to the doctor’s recommendations. Additionally, the physician can check for other medical conditions or medications that may need adjusting that could be altering motor functions and driving ability.
+        
+        A Driving Rehabilitation Specialist (DRS) can provide a more in depth analysis of your parent’s driving ability. The DRS can perform an initial assessment, help make recommendations for limitations on driving (such as no night driving), and plan driving routes. Driver rehabilitation classes may also be available in your area to help older adults learn alternate driving techniques to make driving safer.
+        
+        Watch the following video of a DRS working with an older adult client.'); ?>
+        </p>
+        <p class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></p>
+      </div>
+  
+    <!-- Lesson #6 - Promoting Safety of Older Relatives and Friends in Caring for Themselves -->
+  <!-- slide #16 -->
+	
+    
+            <p class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></p>
+      </div>
+	
+  
+  
+  
+  <!-- need these last two divs, one is to close the tutorial id -->
 </div>
 </div>
