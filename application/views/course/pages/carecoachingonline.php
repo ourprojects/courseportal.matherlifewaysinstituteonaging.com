@@ -212,7 +212,7 @@ $this->widget(
 <!-- slide #1 -->
 <div id="course" class="hide">
 <div id="lesson-1">
-  <div id="lesson-1-slide-1" class="slide">
+  <div id="lesson-1-slide-1" class="course-slide">
     <h2 class="flowers"><?php echo t('CARE Coaching - Topics'); ?></h2>
     <hr />
     <p><?php echo t('What’s CARE Coaching all about?'); ?><br />
@@ -230,7 +230,7 @@ $this->widget(
   <!-- Lesson #1 - Care Coaching starts here --> 
   <!-- slide #2 -->
   
-  <div id="lesson-1-slide-2" class="slide">
+  <div id="lesson-1-slide-2" class="course-slide">
     <h2 class="flowers"><?php echo t('CARE Coaching - Topics (continued)'); ?></h2>
     <hr />
     <p><?php echo t('Video – 5 Steps to Self-Coaching'); ?><br />
@@ -247,7 +247,7 @@ $this->widget(
   <!-- Lesson #1 - Care Coaching starts here --> 
   <!-- slide #3 -->
   
-  <div id="lesson-1-slide-3" class="slide">
+  <div id="lesson-1-slide-3" class="course-slide">
     <h2 class="flowers"><?php echo t('What’s CARE Coaching all about?'); ?></h2>
     <hr />
     <p><?php echo t('You are probably familiar with the term “coaching” from many aspects of our daily lives. As a parent or sibling, you may be involved in coaching little league or some other sport. Usually this form of coaching involves teams. The role of the coach is to motivate, set ground rules, and draw out the best in each player for the good of the team.'); ?></p>
@@ -265,7 +265,7 @@ $this->widget(
   <!-- Lesson #1 - Care Coaching starts here --> 
   <!-- slide #4 -->
   
-  <div id="lesson-1-slide-4" class="slide">
+  <div id="lesson-1-slide-4" class="course-slide">
     <h2 class="flowers"><?php echo t('What’s CARE Coaching all about? (continued)'); ?></h2>
     <hr />
     <p><?php echo t('As our parents age, they may suffer declining physical or cognitive health and thus have greater need for our help and understanding, and so we may become their “coach” in life. That is easier said than done in many cases! Regardless of their age, our parents always see themselves in that role in our relationship with them. We also tend to go back into old habits, communication styles, or reactions when dealing with our parents. How do you deal with a situation where your father begins to have minor car accidents or “forgets” the way home? Talking with a parent about giving up the car keys is probably one of the most challenging situations we may face as a caregiver.'); ?></p>
@@ -277,7 +277,7 @@ $this->widget(
   <!-- Lesson #1 - Care Coaching starts here --> 
   <!-- slide #5 -->
   
-  <div id="lesson-1-slide-5" class="slide">
+  <div id="lesson-1-slide-5" class="course-slide">
     <h2 class="flowers"><?php echo t('Self-Coaching: It all starts with me!'); ?></h2>
     <hr />
     <p><?php echo t('In this case, it is alright to say “it is all about me!” There is quite a bit of information published about “self-coaching.” Think about the fact that we each represent a unique individual surrounded by a myriad of things going on inside and outside of ourselves. We constantly have an “internal dialogue” going on that no one else can hear. As a caregiver, that “internal dialogue” may be reliving negative experiences:'); ?></p>
@@ -298,7 +298,7 @@ $this->widget(
   <!-- Lesson #1 - Care Coaching starts here --> 
   <!-- slide #6 -->
   
-  <div id="lesson-1-slide-6" class="slide">
+  <div id="lesson-1-slide-6" class="course-slide">
     <h2 class="flowers"><?php echo t('Self-Coaching: It all starts with me! (continued)'); ?></h2>
     <hr />
     <p><?php echo t('Now, say this out loud:'); ?></p>
@@ -315,7 +315,7 @@ $this->widget(
   <!-- Lesson #1 - Care Coaching starts here --> 
   <!-- slide #7 -->
   
-  <div id="lesson-1-slide-7" class="slide">
+  <div id="lesson-1-slide-7" class="course-slide">
     <h2 class="flowers"><?php echo t('Activity – Self-Awareness Survey'); ?></h2>
     <hr />
     <p><?php echo t('This activity invites you to explore and live several questions. Your responses should open up more self-awareness of what is important to you in your life.'); ?></p>
@@ -326,7 +326,7 @@ $this->widget(
   <!-- Lesson #1 - Care Coaching starts here --> 
   <!-- slide #8 -->
   
-  <div id="lesson-1-slide-8" class="slide">
+  <div id="lesson-1-slide-8" class="course-slide">
     <h2 class="flowers"><?php echo t('Creating the Environment for Self-Coaching'); ?></h2>
     <hr />
     <p><?php echo t('The principle behind self-coaching (and CARE Coaching for that matter!) is the revelation of solutions already inherent in each person. For those who may be fortunate to experience an external coach, their role is to facilitate the experience and create an environment for the person being coached to do their best thinking.'); ?></p>
@@ -344,7 +344,7 @@ $this->widget(
   <!-- Lesson #1 - Care Coaching starts here --> 
   <!-- slide #9 -->
   
-  <div id="lesson-1-slide-9" class="slide">
+  <div id="lesson-1-slide-9" class="course-slide">
     <h2 class="flowers"><?php echo t('Creating the Environment for Self-Coaching (continued)'); ?></h2>
     <hr />
     <ol>
@@ -358,7 +358,7 @@ $this->widget(
   <!-- Lesson #1 - Care Coaching starts here --> 
   <!-- slide #10 -->
   
-  <div id="lesson-1-slide-10" class="slide">
+  <div id="lesson-1-slide-10" class="course-slide">
     <h2 class="flowers"><?php echo t('Video – 5 Steps to Self-Coaching'); ?></h2>
     <hr />
     <p><?php echo t('View the Seven Step Breakthrough Process with Life Coach by Rebekah Simpson. This video is a new way for you to experience a self-coaching session in the comfort of your own home. Serving as an introduction to self-coaching exercises, this video outlines a simple self-coaching process can be used over and over again whenever you need it.'); ?></p>
@@ -372,7 +372,7 @@ $this->widget(
   <!-- Lesson #1 - Care Coaching starts here --> 
   <!-- slide #11 -->
   
-  <div id="lesson-1-slide-11" class="slide">
+  <div id="lesson-1-slide-11" class="course-slide">
     <h2 class="flowers"><?php echo t('Activity – Principles of Success'); ?></h2>
     <hr />
     <p><?php echo t('This activity focuses on assessing your awareness of ten principles of success and your rating of how you presently live according to them.'); ?></p>
@@ -382,7 +382,7 @@ $this->widget(
   <!-- Lesson #1 - Care Coaching starts here --> 
   <!-- slide #12 -->
   
-  <div id="lesson-1-slide-12" class="slide">
+  <div id="lesson-1-slide-12" class="course-slide">
     <h2 class="flowers"><?php echo t('Self-Coaching Exercises – The Power of Journaling'); ?></h2>
     <hr />
     <p><?php echo t('Journaling is one powerful technique to refocus the negative into positive affirmations. With consistent practice, this method can help create a more positive outlook in our own lives as well as create more positive interactions with others. Journaling facilitates positive self-talk. Positive self-talk has been demonstrated to build one’s self-esteem and self-confidence across a variety of situations.'); ?></p>
@@ -409,7 +409,7 @@ $this->widget(
   
   <!-- Lesson #1 - Care Coaching starts here --> 
   <!-- slide #13 -->
-  <div id="lesson-1-slide-13" class="slide">
+  <div id="lesson-1-slide-13" class="course-slide">
     <h2 class="flowers"><?php echo t('Self-Coaching Exercises – Focus on the Goal'); ?></h2>
     <hr />
     <p><?php echo t('Which of these sound like goals to you?'); ?></p>
@@ -457,7 +457,7 @@ $this->widget(
   <!-- Lesson #1 - Care Coaching starts here --> 
   <!-- slide #14 -->
   
-  <div id="lesson-1-slide-14" class="slide">
+  <div id="lesson-1-slide-14" class="course-slide">
     <h2 class="flowers"><?php echo t('Self-Coaching Exercises – Focus on the Goal (continued'); ?></h2>
     <hr />
     <p><?php echo t('Think of goal setting in terms of NOUNS:'); ?></p>
@@ -482,7 +482,7 @@ $this->widget(
 <!-- slide #1 -->
 
 <div id="lesson-2">
-  <div id="lesson-2-slide-1" class="slide">
+  <div id="lesson-2-slide-1" class="course-slide">
     <h2 class="flowers"><?php echo t('Understanding Needs and Preferences of Older Adults - Topics'); ?></h2>
     <hr />
     <p><?php echo t('CARE Coaching: Communicating'); ?><br />
@@ -507,7 +507,7 @@ $this->widget(
   <!-- Lesson #2 - Understanding Needs and Preferences of Older Adults --> 
   <!-- slide #2 -->
   
-  <div id="lesson-2-slide-2" class="slide">
+  <div id="lesson-2-slide-2" class="course-slide">
     <h2 class="flowers"><?php echo t('CARE Coaching: Communicating'); ?></h2>
     <hr />
     <p><?php echo t('Does this scenario sound familiar? You are in a restaurant having dinner with your older parents. Your mother has some memory problems which means she takes quite a long time to figure out what to order. The waiter is standing over your table, and your father gets frustrated waiting for her to order. He says, “Helen, just order the chicken. You like the chicken!” She says, “I guess I’ll have the chicken.”'); ?></p>
@@ -524,7 +524,7 @@ chicken for lunch today. So I think I’d like to try their fish!”'); ?></p>
   <!-- Lesson #2 - Understanding Needs and Preferences of Older Adults --> 
   <!-- slide #3 -->
   
-  <div id="lesson-2-slide-3" class="slide">
+  <div id="lesson-2-slide-3" class="course-slide">
     <h2 class="flowers"><?php echo t('CARE Coaching: Communicating (continued'); ?></h2>
     <hr />
     <p><?php echo t('Caregiving commonly brings up feelings of burden, confusion, and guilt for caregivers. As a first step, using some key communication skills can relieve some of these concerns. Where do these feelings stem from? Burden refers to emotional response to changes and demands that occur as caregivers give help and support to the older person.'); ?></p>
@@ -539,7 +539,7 @@ chicken for lunch today. So I think I’d like to try their fish!”'); ?></p>
   <!-- Lesson #2 - Understanding Needs and Preferences of Older Adults --> 
   <!-- slide #4 -->
   
-  <div id="lesson-2-slide-4" class="slide">
+  <div id="lesson-2-slide-4" class="course-slide">
     <h2 class="flowers"><?php echo t('Exercise – Understanding Your Parents\' Needs and Preferences'); ?></h2>
     <hr />
     <p><?php echo t('This exercise is designed to help you determine what you know and do not know about your parents needs and preferences. Determining this now will help you on the road of communicating more openly about your parents’ future wishes to reduce your experience of burden, confusion, and guilt as a caregiver. Everyone has a different level of knowledge when it comes to the following information, so do not feel overwhelmed if you do not recall or have not addressed some of these areas with your parents.'); ?></p>
@@ -550,7 +550,7 @@ chicken for lunch today. So I think I’d like to try their fish!”'); ?></p>
   <!-- Lesson #2 - Understanding Needs and Preferences of Older Adults --> 
   <!-- slide #5 -->
   
-  <div id="lesson-2-slide-5" class="slide">
+  <div id="lesson-2-slide-5" class="course-slide">
     <h2 class="flowers"><?php echo t('Where to Start "The Talk"!'); ?></h2>
     <hr />
     <p><?php echo t('Do not feel anxious if you had a number of "blanks" when working through the previous exercise - it is not a reflection on "bad" caregiving. Your parents have been independent through these many years and may not have felt the need to share much of these matters with "the kids."'); ?> </p>
@@ -561,7 +561,7 @@ chicken for lunch today. So I think I’d like to try their fish!”'); ?></p>
   <!-- Lesson #2 - Understanding Needs and Preferences of Older Adults --> 
   <!-- slide #6 -->
   
-  <div id="lesson-2-slide-6" class="slide">
+  <div id="lesson-2-slide-6" class="course-slide">
     <h2 class="flowers"><?php echo t('A Framework to Start "The Talk"'); ?></h2>
     <hr />
     <p><?php echo t('A framework has been developed to help you getting the conversations going. Overall, start small while your parents are still healthy and can fully participate in the discussions about their lives and health without undue pressure. Think of this paced way to communicate as "TEMPO." This acronym stands for:'); ?></p>
@@ -581,7 +581,7 @@ chicken for lunch today. So I think I’d like to try their fish!”'); ?></p>
   <!-- Lesson #2 - Understanding Needs and Preferences of Older Adults --> 
   <!-- slide #7 -->
   
-  <div id="lesson-2-slide-7" class="slide">
+  <div id="lesson-2-slide-7" class="course-slide">
     <h2 class="flowers"><?php echo t('A Framework to Start "The Talk (continued'); ?></h2>
     <hr />
     <p><?php echo t('"Mom, a colleague of mine at work just had an unfortunate experience. His father had a sudden heart attack, and it took a long time before they could notify him because his dad did not have any emergency contact information in place. Can we go over how your information is organized particularly since my office recently moved and I have new phone numbers?"'); ?></p>
@@ -595,7 +595,7 @@ chicken for lunch today. So I think I’d like to try their fish!”'); ?></p>
   <!-- Lesson #2 - Understanding Needs and Preferences of Older Adults --> 
   <!-- slide #8 -->
   
-  <div id="lesson-2-slide-8" class="slide">
+  <div id="lesson-2-slide-8" class="course-slide">
     <h2 class="flowers"><?php echo t('Activity - Practice "The Talk"'); ?></h2>
     <hr />
     <p><?php echo t('Some caregivers feel that practice sessions are valuable to "test out" the conversations in other situations. Here are some practice activities for you to try out.'); ?></p>
@@ -606,7 +606,7 @@ chicken for lunch today. So I think I’d like to try their fish!”'); ?></p>
   <!-- Lesson #2 - Understanding Needs and Preferences of Older Adults --> 
   <!-- slide #9 -->
   
-  <div id="lesson-2-slide-9" class="slide">
+  <div id="lesson-2-slide-9" class="course-slide">
     <h2 class="flowers"><?php echo t('CARE Coaching: Advocating'); ?></h2>
     <hr />
     <p><?php echo t('It’s time to bring up the second component of CARE Coaching – that of advocating. We are talking about advocating in a caring sense – that of supporting another – rather than in the legal sense – that of defending another.'); ?></p>
@@ -631,7 +631,7 @@ chicken for lunch today. So I think I’d like to try their fish!”'); ?></p>
 <!-- slide #1 -->
 
 <div id="lesson-3">
-<div id="lesson-3-slide-1" class="slide">
+<div id="lesson-3-slide-1" class="course-slide">
   <h2 class="flowers"><?php echo t('Managing Health Information and Record Keeping - Topics'); ?></h2>
   <hr />
   <p><?php echo t('What’s a Personal Health Record?'); ?><br />
@@ -649,7 +649,7 @@ chicken for lunch today. So I think I’d like to try their fish!”'); ?></p>
 <!-- Lesson #3 - Managing Health Information and Record Keeping --> 
 <!-- slide #2 -->
 
-<div id="lesson-3-slide-2" class="slide">
+<div id="lesson-3-slide-2" class="course-slide">
   <h2 class="flowers"><?php echo t('Managing Health Information and Record Keeping - Topics (continued)'); ?></h2>
   <hr />
   <p><?php echo t('Activity – Reviewing Internet-Based PHR Tools – My Family Health Portrait'); ?><br />
@@ -666,7 +666,7 @@ chicken for lunch today. So I think I’d like to try their fish!”'); ?></p>
 <!-- Lesson #3 - Managing Health Information and Record Keeping --> 
 <!-- slide #3 -->
 
-<div id="lesson-3-slide-3" class="slide">
+<div id="lesson-3-slide-3" class="course-slide">
   <h2 class="flowers"><?php echo t('What is a Personal Health Record?'); ?></h2>
   <hr />
   <p><?php echo t('In the previous section, you had the opportunity to complete the Exercise – Understanding Your Parents Needs and Preferences. In that exercise, we asked you to document some basics about what you know about your parents medical and health conditions.'); ?></p>
@@ -680,7 +680,7 @@ chicken for lunch today. So I think I’d like to try their fish!”'); ?></p>
 <!-- Lesson #3 - Managing Health Information and Record Keeping --> 
 <!-- slide #4 -->
 
-<div id="lesson-3-slide-4" class="slide">
+<div id="lesson-3-slide-4" class="course-slide">
   <h2 class="flowers"><?php echo t('Video – What People Say about Personal Health Records'); ?></h2>
   <hr />
   <p><?php echo t('Vimeo is a respectful community of creative people who are passionate about sharing the videos they make.'); ?></p>
@@ -693,7 +693,7 @@ chicken for lunch today. So I think I’d like to try their fish!”'); ?></p>
 <!-- Lesson #3 - Managing Health Information and Record Keeping --> 
 <!-- slide #5 -->
 
-<div id="lesson-3-slide-5" class="slide">
+<div id="lesson-3-slide-5" class="course-slide">
   <h2 class="flowers"><?php echo t('Video – What People Say about Personal Health Records'); ?></h2>
   <hr />
   <p><?php echo t('Vimeo is a respectful community of creative people who are passionate about sharing the videos they make.'); ?></p>
@@ -704,7 +704,7 @@ chicken for lunch today. So I think I’d like to try their fish!”'); ?></p>
 <!-- Lesson #3 - Managing Health Information and Record Keeping --> 
 <!-- slide #6 -->
 
-<div id="lesson-3-slide-6" class="slide">
+<div id="lesson-3-slide-6" class="course-slide">
 <h2 class="flowers"><?php echo t('How to Choose a Personal Health Record'); ?></h2>
 <hr />
 <p><?php echo t('Choosing a Personal Health Record (PHR) is really a matter of personal choice. A PHR is controlled by the individual and can be shared with others including family members, caregivers, and health care providers. This is different from a health care provider’s electronic or paper health records which are controlled by the provider. One can get access to one’s own health records from a provider, but family members do not have access without your permission.'); ?></p>
@@ -721,7 +721,7 @@ chicken for lunch today. So I think I’d like to try their fish!”'); ?></p>
 <!-- Lesson #3 - Managing Health Information and Record Keeping --> 
 <!-- slide #7 -->
 
-<div id="lesson-3-slide-7" class="slide">
+<div id="lesson-3-slide-7" class="course-slide">
   <h2 class="flowers"><?php echo t('Types of PHRs'); ?></h2>
   <hr />
   <p><?php echo t('PHRs may be kept as hardcopy on paper or electronically on one’s computer or on the Internet through a service provider. In considering what form may be most suitable, you should consider things like accessibility, convenience, and ease of updating.'); ?></p>
@@ -737,7 +737,7 @@ chicken for lunch today. So I think I’d like to try their fish!”'); ?></p>
 <!-- Lesson #3 - Managing Health Information and Record Keeping --> 
 <!-- slide #8 -->
 
-<div id="lesson-3-slide-8" class="slide">
+<div id="lesson-3-slide-8" class="course-slide">
   <h2 class="flowers"><?php echo t('Activity – Reviewing Internet-Based PHR Tools'); ?></h2>
   <hr />
   <p><?php echo t('My Family Health Portrait'); ?></p>
@@ -757,7 +757,7 @@ chicken for lunch today. So I think I’d like to try their fish!”'); ?></p>
 <!-- Lesson #3 - Managing Health Information and Record Keeping --> 
 <!-- slide #9 -->
 
-<div id="lesson-3-slide-9" class="slide">
+<div id="lesson-3-slide-9" class="course-slide">
   <h2 class="flowers"><?php echo t('Activity – Reviewing Internet-Based PHR Tools'); ?></h2>
   <hr />
   <p><?php echo t('Google Health - Google offers a free, secure web-based program to store and manage health information in a central place. Information is accessible anywhere and at anytime. In addition to health information, test results, x-rays, and other scans may be easily uploaded into your PHR. You may also keep track of test results and laboratory values visually to see how you progress over time. Finally, you may print a wallet card to carry your health profile with you.'); ?></p>
@@ -767,7 +767,7 @@ chicken for lunch today. So I think I’d like to try their fish!”'); ?></p>
 <!-- Lesson #3 - Managing Health Information and Record Keeping --> 
 <!-- slide #10 -->
 
-<div id="lesson-3-slide-10" class="slide">
+<div id="lesson-3-slide-10" class="course-slide">
   <h2 class="flowers"><?php echo t('Video – Introduction to Google Health'); ?></h2>
   <hr />
   <p>
@@ -788,7 +788,7 @@ chicken for lunch today. So I think I’d like to try their fish!”'); ?></p>
 <!-- Lesson #3 - Managing Health Information and Record Keeping --> 
 <!-- slide #11 -->
 
-<div id="lesson-3-slide-11" class="slide">
+<div id="lesson-3-slide-11" class="course-slide">
   <h2 class="flowers"><?php echo t('Activity – Reviewing Internet-Based PHR Tools'); ?></h2>
   <hr />
   <p><?php echo t('ProfileMD'); ?></p>
@@ -799,7 +799,7 @@ chicken for lunch today. So I think I’d like to try their fish!”'); ?></p>
 <!-- Lesson #3 - Managing Health Information and Record Keeping --> 
 <!-- slide #12 -->
 
-<div id="lesson-3-slide-12" class="slide">
+<div id="lesson-3-slide-12" class="course-slide">
   <h2 class="flowers"><?php echo t('Exercise – CARE Coaching and Selecting PHRs'); ?></h2>
   <hr />
   <p><?php echo t('Asking the right questions is key to determine which PHR product is right for you and your family. This exercise is designed to help you determine exactly that. Review the previously described internet-based tools, My Family Health Profile and ProfileMD, and respond to the following questions.'); ?></p>
@@ -811,7 +811,7 @@ chicken for lunch today. So I think I’d like to try their fish!”'); ?></p>
 <!-- Lesson #4 - Understanding the Health Care System and Utilization by Older Adults --> 
 <!-- slide #1 -->
 <div id="lesson-4">
-<div id="lesson-4-slide-1" class="slide">
+<div id="lesson-4-slide-1" class="course-slide">
   <h2 class="flowers"><?php echo t('Understanding the Health Care System and Utilization by Older Adults'); ?></h2>
   <hr />
   <p><?php echo t('Navigating the Health Care System'); ?><br />
@@ -828,7 +828,7 @@ chicken for lunch today. So I think I’d like to try their fish!”'); ?></p>
 <!-- Lesson #4 - Understanding the Health Care System and Utilization by Older Adults --> 
 <!-- slide #2 -->
 
-<div id="lesson-4-slide-2" class="slide">
+<div id="lesson-4-slide-2" class="course-slide">
   <h2 class="flowers"><?php echo t('Understanding the Health Care System and Utilization by Older Adults (continued)'); ?></h2>
   <hr />
   <p><?php echo t('Exercise – How are You with PowerPhrases?'); ?><br />
@@ -843,7 +843,7 @@ chicken for lunch today. So I think I’d like to try their fish!”'); ?></p>
 <!-- Lesson #4 - Understanding the Health Care System and Utilization by Older Adults --> 
 <!-- slide #3 -->
 
-<div id="lesson-4-slide-3" class="slide">
+<div id="lesson-4-slide-3" class="course-slide">
   <h2 class="flowers"><?php echo t('Navigating the Health Care System'); ?></h2>
   <hr />
   <p><?php echo t('Talk to anyone today about the state of health care and you will probably get an earful of complaints, “horror” stories, and head shaking. Complaints run the gamut of problems with insurance companies and Medicare, doctors who don’t spend enough time with patients, and quick hospital discharges. Here are common issues voiced by older adult patients:'); ?></p>
@@ -867,7 +867,7 @@ chicken for lunch today. So I think I’d like to try their fish!”'); ?></p>
 <!-- Lesson #4 - Understanding the Health Care System and Utilization by Older Adults --> 
 <!-- slide #4 -->
 
-<div id="lesson-4-slide-4" class="slide">
+<div id="lesson-4-slide-4" class="course-slide">
   <h2 class="flowers"><?php echo t('CARE Coaching: Relating'); ?></h2>
   <hr />
   <p><?php echo t('Over the years, the patient-doctor relationship has been defined, though rules of ethics and rules of law, as a fiduciary one, as a relationship founded in trust. When a patient seeks out a physician’s help, and the physician agrees to give that help, a special covenant is made. The patient agrees to take the physician into confidence, to reveal intimate information related to one’s health. The physician, in turn, agrees to honor that trust, and to become the patient’s advocate in all health-related matters.'); ?></p>
@@ -885,7 +885,7 @@ chicken for lunch today. So I think I’d like to try their fish!”'); ?></p>
 <!-- Lesson #4 - Understanding the Health Care System and Utilization by Older Adults --> 
 <!-- slide #5 -->
 
-<div id="lesson-4-slide-5" class="slide">
+<div id="lesson-4-slide-5" class="course-slide">
   <h2 class="flowers"><?php echo t('Video – How to Communicate with the Physician'); ?></h2>
   <hr />
   <p><?php echo t('Have you ever left a doctor\'s appoinment feeling that your questions were not answered? Or not sure what you were supposed to do next? Do not worry, you are not alone. Dr. Lori Whittaker, a family physician in Seattle, shares tips and advice for how to speak up for yourself when you are at the doctor\'s office. Good communication is a two way street, and it is up to you to make sure you get the treatment and the information you need to stay healthy. '); ?>
@@ -898,7 +898,7 @@ chicken for lunch today. So I think I’d like to try their fish!”'); ?></p>
 <!-- Lesson #4 - Understanding the Health Care System and Utilization by Older Adults --> 
 <!-- slide #6 -->
 
-<div id="lesson-4-slide-6" class="slide">
+<div id="lesson-4-slide-6" class="course-slide">
   <h2 class="flowers"><?php echo t('Helping Older Parents Talk to Medical Professionals about Health Care'); ?></h2>
   <hr />
   <p><?php echo t('Occasionally, it may be feel intimidating to speak to physicians for one reason or another. At times, the actions of the doctor may appear that he or she has little time to spend with us. At other times, we may feel “inadequate” in our knowledge and use of “medical terms,” feeling like we speak a different language than physicians.'); ?></p>
@@ -913,7 +913,7 @@ chicken for lunch today. So I think I’d like to try their fish!”'); ?></p>
 <!-- Lesson #4 - Understanding the Health Care System and Utilization by Older Adults --> 
 <!-- slide #7 -->
 
-<div id="lesson-4-slide-7" class="slide">
+<div id="lesson-4-slide-7" class="course-slide">
   <h2 class="flowers"><?php echo t('Exercise – How are You with PowerPhrases?'); ?></h2>
   <hr />
   <p><?php echo t('How familiar does this sound? George has been waiting in the exam room for his physician to come in for over 50 minutes. He has counted the floor and ceiling tiles at least six times and needs to use the bathroom out in the hall, but is unwilling to get up with just the examining gown to cover him.'); ?></p>
@@ -928,7 +928,7 @@ chicken for lunch today. So I think I’d like to try their fish!”'); ?></p>
 <!-- Lesson #4 - Understanding the Health Care System and Utilization by Older Adults --> 
 <!-- slide #8 -->
 
-<div id="lesson-4-slide-8" class="slide">
+<div id="lesson-4-slide-8" class="course-slide">
   <h2 class="flowers"><?php echo t('Activity – Practicing PowerPhrases with Your Health Provider'); ?></h2>
   <hr />
   <p><?php echo t('Now that you have assessed your PowerPhrase skill level, we will now focus on PowerPhrases related to your health care provider to ensure a positive visit. By planning specific phrases to use in advance of the appointment, the patient can impact the outcome of the visit. You may find these helpful not only for your older parents, but also for your own use when visiting your doctor.'); ?></p>
@@ -943,7 +943,7 @@ chicken for lunch today. So I think I’d like to try their fish!”'); ?></p>
 <!-- Lesson #4 - Understanding the Health Care System and Utilization by Older Adults --> 
 <!-- slide #9 -->
 
-<div id="lesson-4-slide-9" class="slide">
+<div id="lesson-4-slide-9" class="course-slide">
   <h2 class="flowers"><?php echo t('Activity – Practicing PowerPhrases with Your Health Provider (continued'); ?></h2>
   <hr />
   <p><?php echo t('Here are some starter PowerPhrases to be used in response to the doctor’s opening question “How are you doing?”:'); ?></p>
@@ -970,7 +970,7 @@ chicken for lunch today. So I think I’d like to try their fish!”'); ?></p>
 <!-- Lesson #4 - Understanding the Health Care System and Utilization by Older Adults --> 
 <!-- slide #10 -->
 
-<div id="lesson-4-slide-10" class="slide">
+<div id="lesson-4-slide-10" class="course-slide">
   <h2 class="flowers"><?php echo t('Learning What You Need to Know About the Health Care System'); ?></h2>
   <hr />
   <p><?php echo t('Learning What You Need to Know About the Health Care System'); ?></p>
@@ -988,7 +988,7 @@ chicken for lunch today. So I think I’d like to try their fish!”'); ?></p>
 <!-- Lesson #5 - Relocation and Transfers by Older Adults within the Health Care System --> 
 <!-- slide #1 -->
 <div id="lesson-5">
-<div id="lesson-5-slide-1" class="slide">
+<div id="lesson-5-slide-1" class="course-slide">
   <h2 class="flowers"><?php echo t('Relocation and Transfers by Older Adults within the Health Care System - Topics'); ?></h2>
   <hr />
   <p><?php echo t('“I Think It’s Time We Sell the House.”'); ?><br />
@@ -1008,7 +1008,7 @@ chicken for lunch today. So I think I’d like to try their fish!”'); ?></p>
   <!-- Lesson #5 - Relocation and Transfers by Older Adults within the Health Care System -->
   <!-- slide #2 -->
   
-  <div id="lesson-5-slide-2" class="slide">
+  <div id="lesson-5-slide-2" class="course-slide">
   <h2 class="flowers"><?php echo t('Relocation and Transfers by Older Adults within the Health Care System - Topics (continued)'); ?></h2>
   <hr />
   <p><?php echo t('“Aging in Place” - Planning for the Future'); ?><br />
@@ -1029,7 +1029,7 @@ chicken for lunch today. So I think I’d like to try their fish!”'); ?></p>
   <!-- Lesson #5 - Relocation and Transfers by Older Adults within the Health Care System -->
   <!-- slide #3 -->
   
-  <div id="lesson-5-slide-3" class="slide">
+  <div id="lesson-5-slide-3" class="course-slide">
     <h2 class="flowers"><?php echo t('“I Think It’s Time We Sell the House.”'); ?></h2>
     <hr />
     <p><?php echo t('In Section 2, we focused on a framework and experiences in communicating effectively with your older parents. Probably the one area that is most challenging to discuss with older parents deals with their ability to continue to live independently in their own home or apartment.'); ?></p>
@@ -1055,7 +1055,7 @@ chicken for lunch today. So I think I’d like to try their fish!”'); ?></p>
   <!-- Lesson #5 - Relocation and Transfers by Older Adults within the Health Care System --> 
   <!-- slide #4 -->
 
-  <div id="lesson-5-slide-4" class="slide">
+  <div id="lesson-5-slide-4" class="course-slide">
   <h2 class="flowers"><?php echo t('Video – Learn about Senior Living'); ?></h2>
   <hr />
   <p>
@@ -1067,7 +1067,7 @@ chicken for lunch today. So I think I’d like to try their fish!”'); ?></p>
   <!-- Lesson #5 - Relocation and Transfers by Older Adults within the Health Care System -->
   <!-- slide #5 -->
   
-   <div id="lesson-5-slide-5" class="slide">
+   <div id="lesson-5-slide-5" class="course-slide">
   <h2 class="flowers"><?php echo t('CARE Coaching: Encouraging'); ?></h2>
   <hr />
   <p><?php echo t('tThe fourth and final component of CARE Coaching is that of encouraging. The decision to move to a retirement community is often a difficult one for older adults and families alike. Changes in health or other factors typically drive this decision, but being proactive and understanding how to make educated choices is key.'); ?></p>
@@ -1081,7 +1081,7 @@ chicken for lunch today. So I think I’d like to try their fish!”'); ?></p>
   <!-- Lesson #5 - Relocation and Transfers by Older Adults within the Health Care System -->
   <!-- slide #6 -->
   
-  <div id="lesson-5-slide-6" class="slide">
+  <div id="lesson-5-slide-6" class="course-slide">
   <h2 class="flowers"><?php echo t('Activity – Relocating Scenarios'); ?></h2>
   <hr />
   <p><?php echo t('How can I convince my older parents to move to a retirement community? Here are two scenarios for you to respond to.'); ?></p>
@@ -1092,7 +1092,7 @@ chicken for lunch today. So I think I’d like to try their fish!”'); ?></p>
   <!-- Lesson #5 - Relocation and Transfers by Older Adults within the Health Care System -->
   <!-- slide #7 -->
   
-  <div id="lesson-5-slide-7" class="slide">
+  <div id="lesson-5-slide-7" class="course-slide">
   <h2 class="flowers"><?php echo t('General Indicators When It May be Time to Consider Moving'); ?></h2>
   <hr />
   <p><?php echo t('Although each situation is going to be very different, often medical conditions or mental awareness change warrant considering a move to a place where help with activities of daily living is available. In other cases, older adults may begin to find that tasks like cooking, housekeeping, shoveling snow, mowing the lawn, and taking care of home repairs have become a burden. Some general indicators to consider:'); ?></p>
@@ -1109,7 +1109,7 @@ chicken for lunch today. So I think I’d like to try their fish!”'); ?></p>
   <!-- Lesson #5 - Relocation and Transfers by Older Adults within the Health Care System -->
   <!-- slide #8 -->
   
-  <div id="lesson-5-slide-8" class="slide">
+  <div id="lesson-5-slide-8" class="course-slide">
   <h2 class="flowers"><?php echo t('Understanding the Options: From Staying at Home to Retirement Living'); ?></h2>
   <hr />
   <p><?php echo t('Major life changes are seldom easy particularly when it comes to considering moving out of one’s home with all its memories. In past years, older parents had two options – either struggle to stay in one’s home, often one spouse caring for the other, or else resort to expensive (and frequently inadequate) nursing home care. The stress on the caregiving spouse can also have negative effects on his or her health and well-being.'); ?></p>
@@ -1126,7 +1126,7 @@ chicken for lunch today. So I think I’d like to try their fish!”'); ?></p>
   <!-- Lesson #5 - Relocation and Transfers by Older Adults within the Health Care System -->
   <!-- slide #9 -->
   
-  <div id="lesson-5-slide-9" class="slide">
+  <div id="lesson-5-slide-9" class="course-slide">
   <h2 class="flowers"><?php echo t('Understanding the Options: From Staying at Home to Retirement Living (continued)'); ?></h2>
   <hr />
   <p><?php echo t('Independent living communities provide services, programs, and amenities to older adults who are able to function relatively independently in their homes. Services and programs often focus on supporting independence and wellness among residents. Independent living communities generally consists of homes, condominiums, town houses, apartments, and/or mobile and motor homes where residents maintain an independent lifestyle. Some communities offer only minimal services such as building and grounds maintenance, and security. The residential units may be rented on a monthly basis or owned as condominiums or cooperatives. Basically they are no different from other residential enclaves except that there is an age restriction (over 55) or an age target. Depending on the community, residents are often able to bring in home care services or personal assistants for periods of time after an illness episode or hospitalization to aid in recuperation.'); ?></p>
@@ -1140,7 +1140,7 @@ chicken for lunch today. So I think I’d like to try their fish!”'); ?></p>
   <!-- Lesson #5 - Relocation and Transfers by Older Adults within the Health Care System -->
   <!-- slide #10 -->
   
-  <div id="lesson-5-slide-10" class="slide">
+  <div id="lesson-5-slide-10" class="course-slide">
   <h2 class="flowers"><?php echo t('Video – Learn about Assisted Living'); ?></h2>
   <hr />
   <p>
@@ -1153,7 +1153,7 @@ chicken for lunch today. So I think I’d like to try their fish!”'); ?></p>
   <!-- Lesson #5 - Relocation and Transfers by Older Adults within the Health Care System -->
   <!-- slide #11 -->
 
-  <div id="lesson-5-slide-11" class="slide">
+  <div id="lesson-5-slide-11" class="course-slide">
   <h2 class="flowers"><?php echo t('“Aging in Place” - Planning for the Future'); ?></h2>
   <hr />
   <p><?php echo t('“Aging in place” is a term often used to describe an older adult\’s ability to stay in one location over the course of one\’s life even as their medical and personal needs change over time. That may refer to living in a senior living community that provides services and care across the aging continuum or it may refer to continuing to live in one\’s home and have services and care brought in by outside health care agencies.'); ?></p>
@@ -1174,7 +1174,7 @@ chicken for lunch today. So I think I’d like to try their fish!”'); ?></p>
     <!-- Lesson #5 - Relocation and Transfers by Older Adults within the Health Care System -->
   <!-- slide #12 -->
 
-  <div id="lesson-5-slide-12" class="slide">
+  <div id="lesson-5-slide-12" class="course-slide">
   <h2 class="flowers"><?php echo t('What are Other Options for my Older Parents?'); ?></h2>
   <hr />
   <p><?php echo t('Understanding all of one’s options is important in making a big decision such as relocating. The more preplanning that can occur as well as understanding all options is key. Let’s look at some additional options for older adults.'); ?></p>
@@ -1187,7 +1187,7 @@ chicken for lunch today. So I think I’d like to try their fish!”'); ?></p>
     <!-- Lesson #5 - Relocation and Transfers by Older Adults within the Health Care System -->
   <!-- slide #13 -->
 
-  <div id="lesson-5-slide-13" class="slide">
+  <div id="lesson-5-slide-13" class="course-slide">
   <h2 class="flowers"><?php echo t('Video – Florida Active Adult Community'); ?></h2>
   <hr />
   <p>
@@ -1202,7 +1202,7 @@ chicken for lunch today. So I think I’d like to try their fish!”'); ?></p>
     <!-- Lesson #5 - Relocation and Transfers by Older Adults within the Health Care System -->
   <!-- slide #14 -->
 
-  <div id="lesson-5-slide-14" class="slide">
+  <div id="lesson-5-slide-14" class="course-slide">
   <h2 class="flowers"><?php echo t('Video – Affordable Senior Housing'); ?></h2>
   <hr />
   <p>
@@ -1214,7 +1214,7 @@ chicken for lunch today. So I think I’d like to try their fish!”'); ?></p>
     <!-- Lesson #5 - Relocation and Transfers by Older Adults within the Health Care System -->
   <!-- slide #15 -->
 
-  <div id="lesson-5-slide-15" class="slide">
+  <div id="lesson-5-slide-15" class="course-slide">
   <h2 class="flowers"><?php echo t('Exercise – Visiting a Senior Living Community'); ?></h2>
   <hr />
   <p><?php echo t('The best way to understand senior living communities is to actually visit one in your area. Because many adult children visit senior living communities prior to having their older parents come for a tour, many senior living communities are very welcoming to adult children.'); ?></p>
@@ -1225,7 +1225,7 @@ chicken for lunch today. So I think I’d like to try their fish!”'); ?></p>
   <!-- Lesson #5 - Relocation and Transfers by Older Adults within the Health Care System --> 
   <!-- slide #16 -->
 
-  <div id="lesson-5-slide-16" class="slide">
+  <div id="lesson-5-slide-16" class="course-slide">
   <h2 class="flowers"><?php echo t('Long Distance Caregiving'); ?></h2>
   <hr />
   <p><?php echo t('With many grown children seeking new career opportunities or needing to relocate due to their job away from their parents and the home in which they were raised, long distance caregiving has grown as an issue in our society.'); ?></p>
@@ -1245,7 +1245,7 @@ chicken for lunch today. So I think I’d like to try their fish!”'); ?></p>
   <!-- Lesson #5 - Relocation and Transfers by Older Adults within the Health Care System --> 
   <!-- slide #17 -->
 
-  <div id="lesson-5-slide-17" class="slide">
+  <div id="lesson-5-slide-17" class="course-slide">
   <h2 class="flowers"><?php echo t('Activity – CARE Coaching through Long Distance Caregiving'); ?></h2>
   <hr />
   <p><?php echo t('Read the following scenario and then respond to the CARE coaching questions. We provide some initial “openers” for CARE coaching questions for you to more fully develop your own questions.'); ?></p>
@@ -1256,7 +1256,7 @@ chicken for lunch today. So I think I’d like to try their fish!”'); ?></p>
   <!-- Lesson #5 - Relocation and Transfers by Older Adults within the Health Care System --> 
   <!-- slide #18 -->
   
-  <div id="lesson-5-slide-18" class="slide">
+  <div id="lesson-5-slide-18" class="course-slide">
   <h2 class="flowers"><?php echo t('Some Common Questions (and Answers) for Long Distance Caregivers'); ?></h2>
   <hr />
   <p><?php echo t('Long distance caregivers can be helpful regardless of the distance! Here are some common questions (and answers) for long distance caregivers.'); ?></p>
@@ -1288,7 +1288,7 @@ are taking.'); ?></li>
   <!-- Lesson #5 - Relocation and Transfers by Older Adults within the Health Care System --> 
   <!-- slide #19 -->
   
-  <div id="lesson-5-slide-19" class="slide">
+  <div id="lesson-5-slide-19" class="course-slide">
   <h2 class="flowers"><?php echo t('Some Common Questions (and Answers) for Long Distance Caregivers (continued)'); ?></h2>
   <hr />
   <p><?php echo t('What is a geriatric care manager and how can one help?'); ?></p>
@@ -1314,7 +1314,7 @@ are taking.'); ?></li>
     <!-- Lesson #5 - Relocation and Transfers by Older Adults within the Health Care System --> 
   <!-- slide #20 -->
   
-  <div id="lesson-5-slide-20" class="slide">
+  <div id="lesson-5-slide-20" class="course-slide">
   <h2 class="flowers"><?php echo t('Some Common Questions (and Answers) for Long Distance Caregivers (continued)'); ?></h2>
   <hr />
   <p><?php echo t('What are some other resources for long distance caregivers?'); ?></p>
@@ -1333,7 +1333,7 @@ are taking.'); ?></li>
   <!-- Lesson #6 - Promoting Safety of Older Relatives and Friends in Caring for Themselves -->
   <!-- slide #1 -->
 <div id="lesson-6">
-  <div id="lesson-6-slide-1" class="slide">
+  <div id="lesson-6-slide-1" class="course-slide">
   <h2 class="flowers"><?php echo t('Promoting Safety of Older Relatives and Friends in Caring for Themselves'); ?></h2>
   <hr />
   <p><?php echo t('Knowledge Itself is Power'); ?><br />
@@ -1363,7 +1363,7 @@ are taking.'); ?></li>
   <!-- Lesson #6 - Promoting Safety of Older Relatives and Friends in Caring for Themselves -->
   <!-- slide #2 -->
   
-    <div id="lesson-6-slide-2" class="slide">
+    <div id="lesson-6-slide-2" class="course-slide">
   <h2 class="flowers"><?php echo t('Promoting Safety of Older Relatives and Friends in Caring for Themselves (continued)'); ?></h2>
   <hr />
   
@@ -1388,7 +1388,7 @@ are taking.'); ?></li>
   <!-- Lesson #6 - Promoting Safety of Older Relatives and Friends in Caring for Themselves -->
   <!-- slide #3 -->
   
-      <div id="lesson-6-slide-3" class="slide">
+      <div id="lesson-6-slide-3" class="course-slide">
   <h2 class="flowers"><?php echo t('Knowledge Itself is Power'); ?></h2>
   <hr />
   <p><?php echo t('You’ve heard this phrase many times – probably even from your parents during your education years. It was actually first documented by Sir Frances Bacon back in the 16th century. When we consider how to promote safety of older adults so that they may remain independent for as long as possible, having knowledge and understanding what’s important will facilitate decision making in the future.'); ?></p>
@@ -1406,7 +1406,7 @@ are taking.'); ?></li>
   <!-- Lesson #6 - Promoting Safety of Older Relatives and Friends in Caring for Themselves -->
   <!-- slide #4 -->
   
-  <div id="lesson-6-slide-4" class="slide">
+  <div id="lesson-6-slide-4" class="course-slide">
       <h2 class="flowers"><?php echo t('Home Safety and Older Adults'); ?></h2>
       <hr />
       <p><?php echo t('Regardless if your parents remain in their own home, move to a senior living community, or move in with you, home safety is an important topic for discussion. The overall goal of assessing home safety needs and making modifications as necessary is to give older adults a sense of independence in their environment.'); ?></p>
@@ -1427,7 +1427,7 @@ are taking.'); ?></li>
   <!-- Lesson #6 - Promoting Safety of Older Relatives and Friends in Caring for Themselves -->
   <!-- slide #5 -->
   
-  <div id="lesson-6-slide-5" class="slide">
+  <div id="lesson-6-slide-5" class="course-slide">
       <h2 class="flowers"><?php echo t('Home Safety and Older Adults (continued)'); ?></h2>
       <hr />
       <p><?php echo t('CARE Coaching Tip – Be Alert!'); ?></p>
@@ -1441,7 +1441,7 @@ are taking.'); ?></li>
   <!-- Lesson #6 - Promoting Safety of Older Relatives and Friends in Caring for Themselves -->
   <!-- slide #6 -->
   
-    <div id="lesson-6-slide-6" class="slide">
+    <div id="lesson-6-slide-6" class="course-slide">
       <h2 class="flowers"><?php echo t('Activity – Using Your Powers of Observation)'); ?></h2>
       <hr />
       
@@ -1456,7 +1456,7 @@ are taking.'); ?></li>
   <!-- Lesson #6 - Promoting Safety of Older Relatives and Friends in Caring for Themselves -->
   <!-- slide #7 -->
   
-  <div id="lesson-6-slide-7" class="slide">
+  <div id="lesson-6-slide-7" class="course-slide">
       <h2 class="flowers"><?php echo t('Additional Home Safety Resources)'); ?></h2>
       <hr />
       <p><?php echo t('The U.S. Consumer Product Safety Commission estimates that over 1.5 million adults ages 65 and older are treated each year in hospital emergency rooms due to injuries from hazards in the home. The Commission believes that many of these injuries are preventable with some simple steps to correct the hazards. Some of these steps are valuable in your own home to prevent injuries in general.'); ?></p>
@@ -1471,7 +1471,7 @@ are taking.'); ?></li>
   <!-- Lesson #6 - Promoting Safety of Older Relatives and Friends in Caring for Themselves -->
   <!-- slide #8 -->
   
-  <div id="lesson-6-slide-8" class="slide">
+  <div id="lesson-6-slide-8" class="course-slide">
       <h2 class="flowers"><?php echo t('Considering Your Older Parents Moving in with You?)'); ?></h2>
       <hr />
       
@@ -1488,7 +1488,7 @@ are taking.'); ?></li>
 <!-- Lesson #6 - Promoting Safety of Older Relatives and Friends in Caring for Themselves -->
   <!-- slide #9 -->
   
-  <div id="lesson-6-slide-9" class="slide">
+  <div id="lesson-6-slide-9" class="course-slide">
       <h2 class="flowers"><?php echo t('Exercise – Assessing the Situation'); ?></h2>
       <hr />
       <p><?php echo t('This exercise provides an opportunity for you and your family to consider key questions to explore potential for having older parents move in with you. You may not be thinking about this at the present time, but you may have other family members or friends considering various options and so this may be helpful to them as well. These questions can serve as a guide for discussions with your family. As you read through each section, we include some CARE Coaching questions to bring out your best thinking about what would be important to you. '); ?></p>
@@ -1501,7 +1501,7 @@ are taking.'); ?></li>
   <!-- Lesson #6 - Promoting Safety of Older Relatives and Friends in Caring for Themselves -->
   <!-- slide #10 -->
   
-    <div id="lesson-6-slide-10" class="slide">
+    <div id="lesson-6-slide-10" class="course-slide">
       <h2 class="flowers"><?php echo t('Driving Concerns and Older Adults'); ?></h2>
       <hr />
       <p><?php echo t('According to driving statistics, older adults have more fatal car accidents than any other age group. Additionally, older adults are more at risk for death after being involved in a car accident because of their age and health condition.'); ?></p>
@@ -1525,7 +1525,7 @@ are taking.'); ?></li>
   <!-- Lesson #6 - Promoting Safety of Older Relatives and Friends in Caring for Themselves -->
   <!-- slide #11 -->
   
-  <div id="lesson-6-slide-11" class="slide">
+  <div id="lesson-6-slide-11" class="course-slide">
         <h2 class="flowers"><?php echo t('Driving Concerns and Older Adults (continued)'); ?></h2>
         <hr />
         
@@ -1538,7 +1538,7 @@ are taking.'); ?></li>
   <!-- Lesson #6 - Promoting Safety of Older Relatives and Friends in Caring for Themselves -->
   <!-- slide #12 -->
   
-  <div id="lesson-6-slide-12" class="slide">
+  <div id="lesson-6-slide-12" class="course-slide">
         <h2 class="flowers"><?php echo t('When to Limit or Stop Driving – Warning Signs'); ?></h2>
         <hr />
         <p><?php echo t('The following list of warning signs comes from the American Association of Retired People (AARP).'); ?></p>
@@ -1568,7 +1568,7 @@ are taking.'); ?></li>
       <!-- Lesson #6 - Promoting Safety of Older Relatives and Friends in Caring for Themselves -->
   <!-- slide #13 -->
   
-    <div id="lesson-6-slide-13" class="slide">
+    <div id="lesson-6-slide-13" class="course-slide">
         <h2 class="flowers"><?php echo t('CARE Coaching: Talking to Your Parents about Their Driving'); ?></h2>
         <hr />
         <p><?php echo t('Remember what it was like when you got your first driver’s license? That sense of pride and freedom stays with you throughout your life. You certainly come to appreciate the independence driving means if you have ever been dependent on someone to drive you around even for a short time period perhaps while you were recuperating from surgery.'); ?></p>
@@ -1582,7 +1582,7 @@ are taking.'); ?></li>
     <!-- Lesson #6 - Promoting Safety of Older Relatives and Friends in Caring for Themselves -->
   <!-- slide #14 -->
   
-  <div id="lesson-6-slide-14" class="slide">
+  <div id="lesson-6-slide-14" class="course-slide">
         <h2 class="flowers"><?php echo t('CARE Coaching: Talking to Your Parents about Their Driving (continued)'); ?></h2>
         <hr />
         
@@ -1607,7 +1607,7 @@ are taking.'); ?></li>
     <!-- Lesson #6 - Promoting Safety of Older Relatives and Friends in Caring for Themselves -->
   <!-- slide #15 -->
   
-    <div id="lesson-6-slide-15" class="slide">
+    <div id="lesson-6-slide-15" class="course-slide">
         <h2 class="flowers"><?php echo t('Video – Senior Driving Safety'); ?></h2>
         <hr />
         

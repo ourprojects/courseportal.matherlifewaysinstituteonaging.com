@@ -6,3 +6,29 @@ div.box-sidebar.two p.title {
 	color:#900; 
 	font-size:24px;
 }
+div.course-slide div.question {
+	background-color: #FFF;
+    border-radius: 15px;
+    width: 75%;
+    height: 65px;
+    margin-left: 75px;
+    padding: 10px;
+    -moz-box-shadow: 0 0 5px 5px #888;
+	-webkit-box-shadow: 0 0 5px 5px#888;
+	box-shadow: 0 0 5px 5px #888;
+}
+div.course-slide {
+	display: block;
+	padding: 0 10px;
+}
+div.course-slide p.buttons {
+	text-align: center;
+	background: #ddd;
+	border-radius: 10px;
+	height: 40px;
+	position: absolute;
+	padding: 5px;
+	bottom: 5px;
+	left: 5px;
+	right: 5px;
+}
