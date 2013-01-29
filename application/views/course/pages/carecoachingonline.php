@@ -4,94 +4,47 @@ $this->breadcrumbs = array(t('Courses'));
 $clientScript = Yii::app()->getClientScript();
 $clientScript->registerCssFile($this->getStylesUrl('course.css'));
 
+// FancyBox configuration for all lessons
+$courseFancyboxConfig = array('width' => '90%',
+							'height' => '90%',
+							'arrows' => false,
+							'autoSize' => false,
+							'mouseWheel' => false);
+// Lesson 1 FancyBox
 $this->widget(
 		'ext.fancybox.EFancyBox',
-		array(
-				'id' => '.lesson-1',
-				'config' => array(
-						'width' => '90%',
-						'height' => '90%',
-						'arrows' => false,
-						'autoSize' => false,
-						'mouseWheel' => false,
-							
-				)
-		)
+		array('id' => '.lesson-1',
+			  'config' => $courseFancyboxConfig)
 );
-
+// Lesson 2 FancyBox
 $this->widget(
 		'ext.fancybox.EFancyBox',
-		array(
-				'id' => '.lesson-2',
-				'config' => array(
-						'width' => '90%',
-						'height' => '90%',
-						'arrows' => false,
-						'autoSize' => false,
-						'mouseWheel' => false,
-							
-				)
-		)
+		array('id' => '.lesson-2',
+			  'config' => $courseFancyboxConfig)
 );
-
+// Lesson 3 FancyBox
 $this->widget(
 		'ext.fancybox.EFancyBox',
-		array(
-				'id' => '.lesson-3',
-				'config' => array(
-						'width' => '90%',
-						'height' => '90%',
-						'arrows' => false,
-						'autoSize' => false,
-						'mouseWheel' => false,
-							
-				)
-		)
+		array('id' => '.lesson-3',
+			  'config' => $courseFancyboxConfig)
 );
-
+// Lesson 4 FancyBox
 $this->widget(
 		'ext.fancybox.EFancyBox',
-		array(
-				'id' => '.lesson-4',
-				'config' => array(
-						'width' => '90%',
-						'height' => '90%',
-						'arrows' => false,
-						'autoSize' => false,
-						'mouseWheel' => false,
-							
-				)
-		)
+		array('id' => '.lesson-4',
+			  'config' => $courseFancyboxConfig)
 );
-
+// Lesson 5 FancyBox
 $this->widget(
 		'ext.fancybox.EFancyBox',
-		array(
-				'id' => '.lesson-5',
-				'config' => array(
-						'width' => '90%',
-						'height' => '90%',
-						'arrows' => false,
-						'autoSize' => false,
-						'mouseWheel' => false,
-							
-				)
-		)
+		array('id' => '.lesson-5',
+			  'config' => $courseFancyboxConfig)
 );
-
+// Lesson 6 FancyBox
 $this->widget(
 		'ext.fancybox.EFancyBox',
-		array(
-				'id' => '.lesson-6',
-				'config' => array(
-						'width' => '90%',
-						'height' => '90%',
-						'arrows' => false,
-						'autoSize' => false,
-						'mouseWheel' => false,
-							
-				)
-		)
+		array('id' => '.lesson-6',
+			  'config' => $courseFancyboxConfig)
 );
 
 ?>
