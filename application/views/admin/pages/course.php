@@ -12,6 +12,10 @@ $this->widget('zii.widgets.grid.CGridView', array(
             'name' => 'id',
             'filter' => CHtml::listData($source, 'id', 'id'),
         ),
+		array(
+			'name'=>'name',
+			'filter' => CHtml::listData($source, 'name', 'name'),
+		),
         array(
             'name'=>'title',
             'filter' => CHtml::listData($source, 'title', 'title'),
@@ -32,9 +36,18 @@ $this->widget('zii.widgets.grid.CGridView', array(
 	
 	echo $form->errorSummary($model); ?>
 	<div class="row">
+	<?php
+		echo $form->labelEx($model, 'name');
+		echo $form->textField($model, 'name');
+		echo $form->error($model, 'name');
+	?>
+	</div>
+	<div class="row">
+	<?php
 		echo $form->labelEx($model, 'title');
 		echo $form->textField($model, 'title');
 		echo $form->error($model, 'title');
+	?>
 	</div>
 
 	<div class="row submit">

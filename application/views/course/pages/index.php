@@ -14,6 +14,9 @@
 				manage their loved one\'s needs, and learn how to effectively practice self-care, Mather LifeWays Institute on Aging has developed
 	online programs that are designed to educate caregivers while fitting into any schedule.'); ?>
 	</p>
+	
+<!-- Everything below this line could be generated automatically simply by storing the description and objectives information in the database for each course -->
+	
 	<hr />
 	<img src="<?php echo $this->getImagesUrl('image-hands.png'); ?>"
 		class="image-right" />
