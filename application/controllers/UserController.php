@@ -52,6 +52,7 @@ class UserController extends ApiController {
 		);
 		// if it is ajax validation request
 		if(isset($_POST['ajax']) && $_POST['ajax'] === 'user-maintenance-form') {
+			$models['UserMaintenance']->setScenario('ajax');
 			if(isset($_POST['UserMaintenance']))
 				$models['UserMaintenance']->setAttributes($_POST['UserMaintenance']);
 			if(isset($_POST['Captcha']))
@@ -217,6 +218,7 @@ class UserController extends ApiController {
 		);
 		// if it is ajax validation request
 		if(isset($_POST['ajax']) && $_POST['ajax'] === 'user-maintenance-form') {
+			$models['UserMaintenance']->setScenario('ajax');
 			if(isset($_POST['UserMaintenance']))
 				$models['UserMaintenance']->setAttributes($_POST['UserMaintenance']);
 			if(isset($_POST['Captcha']))

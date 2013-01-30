@@ -12,7 +12,7 @@ class UserMaintenance extends CFormModel {
 		return array(
 				array('email', 'required'),
 				array('email', 'email'),
-				array('email', 'exist', 'allowEmpty' => false, 'className' => 'User'),
+				array('email', 'exist', 'allowEmpty' => false, 'className' => 'User', 'except' => 'ajax'),
 		);
 	}
 	
