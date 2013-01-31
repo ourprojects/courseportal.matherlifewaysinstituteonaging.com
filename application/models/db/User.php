@@ -127,7 +127,7 @@ class User extends ActiveRecord implements IUserIdentity {
 	}
 	
 	public function isActivated() {
-		return $this->userActivated instanceof UserActivated && !$record->userActivated->getIsNewRecord();
+		return $this->userActivated instanceof UserActivated && !$this->userActivated->getIsNewRecord();
 	}
 	
 	public function hasCourse($course) {
