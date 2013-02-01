@@ -1606,43 +1606,169 @@ are taking.'); ?></li>
   <!-- slide #15 -->
   
     <div id="lesson-6-slide-15" class="course-slide"><div class="content">
-        <h2 class="flowers"><?php echo t('Video – Senior Driving Safety'); ?></h2>
+        <h2 class="flowers"><?php echo t('CARE Coaching: Talking to Your Parents about Their Driving (continued)'); ?></h2>
         <hr />
         
-        <p>
-        <iframe width="480" height="360" src="http://www.youtube.com/embed/YLW-GEJBMik?rel=0" frameborder="0" allowfullscreen></iframe>
-      </p>
-        <p><?php echo t('CARE Coaching Questions'); ?></p>
-        <ul>
-        <li><?php echo t('Begin with reviewing what you discussed last time and goals that you and your parents came up with on how to promote their independence while keeping them safe driving.'); ?></li>
-        <li><?php echo t('Taking a look at what we talked about last time, what are you wanting?'); ?></li>
-        <li><?php echo t('One of the things I found out is that there are some driving refresher courses that you may take that will often give you a nice discount on your care insurance. What would you think about that? Could we check one out together?'); ?></li>
-      </ul>
-        <p><?php echo t('Resources'); ?></p>
-        <p>
-        Drivers Self-Assessment
-        This self-assessment at seniordrivers.org provides a quick self-assessment for older drivers to review their driving knowledge and skills.
+        <p><?php echo t('Video – Senior Driving Safety'); ?></p>
         
-        AARP Driver Safety Online Course
-        AARP offers an online driver safety course (about 8 hours in length) for a nominal charge. The course is designed for older drivers to learn about normal age-related changes and how to adjust driving to allow for these changes. Successful completion of the course may qualify participants for car insurance discounts (please check with your insurance company for specifics in your state).
+<p><iframe width="420" height="315" src="http://www.youtube.com/embed/YLW-GEJBMik?rel=0" frameborder="0" allowfullscreen></iframe></p>
+
+	<p><?php echo t('CARE Coaching Questions'); ?></p>
+    
+    	<ul>
+        	<li><?php echo t('Begin with reviewing what you discussed last time and goals that you and your parents came up with on how to promote their independence while keeping them safe driving.'); ?></li>
+            <li><?php echo t('Taking a look at what we talked about last time, what are you wanting?'); ?></li>
+            <li><?php echo t('One of the things I found out is that there are some driving refresher courses that you may take that will often give you a nice discount on your care insurance.  What would you think about that?  Could we check one out together?'); ?></li>
+         </ul>
+         
+         <p><?php echo t('Resources'); ?></p>
+         
+         	<p><a href="http://www.seniordrivers.org/driving/driving.cfm?button=quiz&quiz=2" target="_blank"><?php echo t('Drivers Self-Assessment'); ?></a><br />
+            <p><?php echo t('This self-assessment at seniordrivers.org provides a quick self-assessment for older drivers to review their driving knowledge and skills.'); ?></p>
+            
+            <p><a href="http://www.aarp.org/families/driver_safety/driver_safety_online_course.html" target="_blank"><?php echo t('AARP Driver Safety Online Course'); ?><br />
+            <p><?php echo t('AARP offers an online driver safety course (about 8 hours in length) for a nominal charge.  The course is designed for older drivers to learn about normal age-related changes and how to adjust driving to allow for these changes.  Successful completion of the course may qualify participants for car insurance discounts (please check with your insurance company for specifics in your state).'); ?></p>
+     
         
-        Step 3: Tracking Warning Signs
-        
-        It is probably not uncommon that you see some older drivers on the road who may be going much slower than traffic or seem confused making turns into busy intersections. There may be a point where professionals are needed to assess older adult’s driving abilities. The family physician is a good starting point, particularly if you have not been successful in bringing up the driving discussion on your own. As we noted earlier in this course, the physician is an authority figure to many older adults and so they may listen more closely to the doctor’s recommendations. Additionally, the physician can check for other medical conditions or medications that may need adjusting that could be altering motor functions and driving ability.
-        
-        A Driving Rehabilitation Specialist (DRS) can provide a more in depth analysis of your parent’s driving ability. The DRS can perform an initial assessment, help make recommendations for limitations on driving (such as no night driving), and plan driving routes. Driver rehabilitation classes may also be available in your area to help older adults learn alternate driving techniques to make driving safer.
-        
-        Watch the following video of a DRS working with an older adult client.
-        </p>
         </div><div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo;</a></div>
       </div>
   
     <!-- Lesson #6 - Promoting Safety of Older Relatives and Friends in Caring for Themselves -->
   <!-- slide #16 -->
-	
+  
+      <div id="lesson-6-slide-16" class="course-slide"><div class="content">
+        <h2 class="flowers"><?php echo t('CARE Coaching: Talking to Your Parents about Their Driving (continued)'); ?></h2>
+        <hr />
+        
+        <p><?php echo t('Step 3: Tracking Warning Signs'); ?></p>
+        
+        <p><?php echo t('It is probably not uncommon that you see some older drivers on the road who may be going much slower than traffic or seem confused making turns into busy intersections.  There may be a point where professionals are needed to assess older adult’s driving abilities.  The family physician is a good starting point, particularly if you have not been successful in bringing up the driving discussion on your own.  As we noted earlier in this course, the physician is an authority figure to many older adults and so they may listen more closely to the doctor’s recommendations.  Additionally, the physician can check for other medical conditions or medications that may need adjusting that could be altering motor functions and driving ability.'); ?></p>
+        
+        <p><?php echo t('A Driving Rehabilitation Specialist (DRS) can provide a more in depth analysis of your parent’s driving ability.  The DRS can perform an initial assessment, help make recommendations for limitations on driving (such as no night driving), and plan driving routes.  Driver rehabilitation classes may also be available in your area to help older adults learn alternate driving techniques to make driving safer.'); ?></p>
+        
+        <p><?php echo t('Watch the following video of a DRS working with an older adult client.'); ?></p>
+        
+        <p><?php echo t('Video – Driving Rehabilitation Specialist'); ?></p>
+        
+        <p><iframe width="420" height="315" src="http://www.youtube.com/embed/6GpNJ-zh1rc?rel=0" frameborder="0" allowfullscreen></iframe></p>	
     
             </div><div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo;</a></div>
       </div>
+      
+          <!-- Lesson #6 - Promoting Safety of Older Relatives and Friends in Caring for Themselves -->
+  <!-- slide #17 -->
+  
+      <div id="lesson-6-slide-17" class="course-slide"><div class="content">
+        <h2 class="flowers"><?php echo t('CARE Coaching: Talking to Your Parents about Their Driving (continued)'); ?></h2>
+        <hr />
+        
+        <p><?php echo t('CARE Coaching Questions'); ?></p>
+        
+        <ul>
+        	<li><?php echo t('I have noticed you seem more tense behind the wheel.  What situations really get to you when you’re driving?'); ?></li>
+            <li><?php echo t('I’m concerned that something medical or your medications may be affecting your driving.  Can we make an appointment to see your doctor to help correct things that may be interfering with your driving?'); ?></li>
+            <li><?php echo t('What would you think about working out a plan with a professional to help make sure that you can keep driving safely?'); ?></li>
+         </ul>
+         
+         <p><?php echo t('Resources'); ?></p>
+         
+         <p><a href="#" target="_blank"><?php echo t('Warning Signs for Older Drivers'); ?></a><br />
+         <?php echo t('This checklist is for families to track potential warning signs for older drivers so that patterns may be identified early on.'); ?></p>
+    
+            </div><div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo;</a></div>
+      </div>
+      
+      
+          <!-- Lesson #6 - Promoting Safety of Older Relatives and Friends in Caring for Themselves -->
+  <!-- slide #18 -->
+  
+      <div id="lesson-6-slide-18" class="course-slide"><div class="content">
+        <h2 class="flowers"><?php echo t('CARE Coaching: Talking to Your Parents about Their Driving (continued)'); ?></h2>
+        <hr />
+        
+        <p><?php echo t('Step 4:  When It’s Time to Retire from Driving'); ?></p>
+        
+        <p><?php echo t('Retiring from driving is one of the most difficult moments in your older parent’s life.  In the ideal world, there has been time to prepare for this transition and your parents are part (if not taking the lead) on this decision.  No matter how much preparation went into planning, giving up driving is a major loss needing time to grieve and adjust.  There are a number of families with older parents who are no longer driving, but just keeping the car in the garage as a “symbol” of independence for that older parent is not that uncommon.'); ?></p>
+        
+        <p><?php echo t('Rather than saying, “time to take away the keys,” the goal should be that your parents are in the position to say, “It’s time to retire from driving.”'); ?></p>
+        
+        <p><?php echo t('CARE Coaching Questions'); ?></p>
+        
+        <ul>
+        	<li><?php echo t('It seems that driving is becoming more of a struggle for you.  What do you think?'); ?></li>
+            <li><?php echo t('We’ve tried several things along the way (review what those were).  It seems like those things are not keeping you as safe anymore.  Considering this, what stands out for you?'); ?></li>
+            <li><?php echo t('Your safety and freedom are what’s most important to both of us.  If we can map out alternate plans to get you everywhere you need to go and try that out for a couple of weeks, what would you think about trying that plan?'); ?></li>
+         </ul>
+         
+         <p><?php echo t('Resources'); ?></p>
+         
+         <p><a href="http://www.driver-ed.org/custom/directory-cdrs/?pageid=320&showTitle=1" target="_blank"><?php echo t('Finding a Certified Driving Rehabilitation Specialist'); ?></a><br />
+         
+         <?php echo t('Click on this link to search for a certified Driving Rehabilitation Specialist in your area.'); ?></p>	
+    
+            </div><div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo;</a></div>
+      </div>
+      
+      
+          <!-- Lesson #6 - Promoting Safety of Older Relatives and Friends in Caring for Themselves -->
+  <!-- slide #19 -->
+  
+      <div id="lesson-6-slide-19" class="course-slide"><div class="content">
+        <h2 class="flowers"><?php echo t('CARE Coaching: Talking to Your Parents about Their Driving (continued)'); ?></h2>
+        <hr />
+        
+        <p><?php echo t('Step 5:  Promoting Independence Post-Driving'); ?></p>
+		
+		<p><?php echo t('Post-driving, it is very important to help your older parents remain independent so they do not become isolated and depressed, trapped in their own home.  They may need some help from you to create a plan to promote their freedom.   The plan should respond to the following questions:'); ?></p>
+        
+        <ul>
+        	<li><?php echo t('Where do your parents need to go on a weekly basis? (like the grocery store, hairdresser, church services, etc.)'); ?></li>
+            <li><?php echo t('Where do your parents need to go other than weekly? (like the doctor’s office, banking, other appointments)'); ?></li>
+            <li><?php echo t('Where do your parents enjoy going for socializing? for entertainment?'); ?></li>
+            <li><?php echo t('Who are their resources for alternatives to transportation? (neighbors/friends attending the same event; transportation for older adults offered through their community or church)'); ?></li>
+            <li><?php echo t('Which of these alternatives are realistic and reliable?'); ?></li>
+            <li><?php echo t('What public transportation options are available and acceptable?'); ?></li>
+            <li><?php echo t('Where are the gaps?'); ?></li>
+         </ul>
+         
+       <p><?php echo t('Resources'); ?></p>
+       
+       <p><a href="http://www.seniordrivers.org/notdriving/notdriving.cfm?button=profiles" target="_blank"><?php echo t('Supplemental Transportation Programs (STPs)'); ?></a><br />
+       <?php echo t('The purpose of STPs is to provide alternative transportation to older adults who have limitations to their driving or are no longer driving.  They are designed to be more flexible than other forms of transportation.  Some include “door-to-door” service to assure the older adult arrives safely to their destination and back.  All drivers are screened and trained.'); ?></p>
+       
+       <p><a href="http://itnamerica.org" target="_blank"><?php echo t('Independent Transportation Network (ITN)'); ?><br />
+	   <?php echo t('A newer program that is in limited numbers of areas is the ITN which combines creative transportation alternatives for older adults, but coordinates volunteers, community services and agency connections to make it work.  Find an affiliate program on their website.'); ?></a>	
+    
+            </div><div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo;</a></div>
+      </div>     
+          
+          <!-- Lesson #6 - Promoting Safety of Older Relatives and Friends in Caring for Themselves -->
+  <!-- slide #20 -->
+  
+      <div id="lesson-6-slide-20" class="course-slide"><div class="content">
+        <h2 class="flowers"><?php echo t('Exercise Promotes Safety and Independence'); ?></h2>
+        <hr />
+        
+        <p><?php echo t('Exercise for older adults is an important contributor to safety and independence.  Many studies have demonstrated the positive benefits of exercise for older adults regardless of age.  As we get older exercise is incredibly important to our overall health. Watch the following video with active older people talking about how physical activity has enhanced their lives and experts giving their advice.'); ?></p>
+        
+        <p><?php echo t('Video – Older Adults and Exercise'); ?></p>
+        
+        <p><iframe width="420" height="315" src="http://www.youtube.com/embed/Y1Uoce6hfyc?rel=0" frameborder="0" allowfullscreen></iframe></p>
+        
+        <p><?php echo t('Before beginning an exercise program, it is important that your parents consult their physician.'); ?></p>
+        
+        <p><?php echo t('Where to Start?'); ?></p>
+        
+        <p><?php echo t('It is important to wear loose, comfortable clothing and well-fitting, sturdy shoes.  Shoes should have a good arch support, and an elevated and cushioned heel to absorb shock.'); ?></p>
+        
+        <p><?php echo t('If not already active, one should begin slowly.  Starting slowly makes it less likely that injury will occur.  Starting slowly also helps prevent soreness from "overdoing" it.  The saying "no pain, no gain" is not true for older or elderly adults.  One does not have to exercise at a high intensity to get most health benefits.'); ?></p>
+        
+        <p><?php echo t('Walking, for example, is an excellent activity to start.  As one gets used to exercising, or if  already active, a person can slowly increase the intensity of the exercise program.'); ?></p>      
+      
+              </div><div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo;</a></div>
+      </div>
+      
+      
 	  
 </div>
 </div>
