@@ -90,7 +90,7 @@
 				<a class="facebook" href="http://www.facebook.com/matherlifeways" title="Facebook" rel="nofollow" target="_blank">
 					Facebook
 				</a>
-				<a class="pinterest" href="#" title="Pinterest" rel="nofollow" target="_blank">
+				<a class="pinterest" href="http://pinterest.com/" title="Pinterest" rel="nofollow" target="_blank">
 					Pinterest
 				</a>
 				<a class="youtube" href="http://www.youtube.com/matherlifeways" title="YouTube" rel="nofollow" target="_blank">
