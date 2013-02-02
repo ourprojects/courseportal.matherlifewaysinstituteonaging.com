@@ -269,23 +269,23 @@ class MPTranslate extends CApplicationComponent {
 	public function getLocaleDisplayNames($language = null, $category = 'language') {
 		if($language === null)
 			$language = Yii::app()->getLanguage();
+		$category = strtolower($category);
 		$cacheKey = self::ID . "cache-i18n-$category-$language";
 	
 		if(!isset($this->_cache[$cacheKey])) {
 			if(($cache = Yii::app()->getCache()) === null || ($languages = $cache->get($cacheKey)) === false) {
 				$method = 'get' . ucfirst($category);
-				$idMethod = "{$method}ID";
-				if(!method_exists(Yii::app()->getLocale(), $method) || !method_exists(Yii::app()->getLocale(), $idMethod)) {
+				$idMethod = $method . 'ID';
+				$locale = Yii::app()->getLocale();
+				if(!method_exists($locale, $method) || !method_exists($locale, $idMethod)) {
 					Yii::log(TranslateModule::t('Failed to query Yii locale DB. Possibly invalid category requested {category}', 
 							array('{category}' => $category)));
 					return false;
 				}
 				foreach(CLocale::getLocaleIds() as $id) {
-					$id = Yii::app()->getLocale()->$idMethod($id);
-					if($id !== null) {
-						$item = Yii::app()->getLocale()->$method($id);
-						$languages[$id] = $item === null ? $id : $item;
-					}
+					$item = $locale->$method($id);
+					$id = $locale->$idMethod($id) or $locale->getCanonicalID($id) or $id; 
+					$languages[$id] = $item === null ? $id : $item;
 				}
 				asort($languages, SORT_LOCALE_STRING);
 				if($cache !== null)
@@ -584,23 +584,22 @@ class MPTranslate extends CApplicationComponent {
     
     public function getFormatByType($format_type, $format_id, $datetime_format=false) {
     	$res = false;
-    
-    	$datetime_format = (!empty($datetime_format) ?
-    			$datetime_format : Yii::app()->getLocale()->getDateTimeFormat());
+    	$locale = Yii::app()->getLocale();
+    	$datetime_format = (!empty($datetime_format) ? $datetime_format : $locale->getDateTimeFormat());
     
     	switch ($format_type) {
     		case 'date': {
-    			$res =Yii::app()->getLocale()->getDateFormat($format_id);
+    			$res =$locale->getDateFormat($format_id);
     		} break;
     		case 'time': {
-    			$res =Yii::app()->getLocale()->getTimeFormat($format_id);
+    			$res =$locale->getTimeFormat($format_id);
     		} break;
     		case 'datetime': {
     			$res =strtr(
     					$datetime_format,
     					array(
-    							"{0}" => Yii::app()->getLocale()->getTimeFormat($format_id),
-    							"{1}" => Yii::app()->getLocale()->getDateFormat($format_id),
+    							"{0}" => $locale->getTimeFormat($format_id),
+    							"{1}" => $locale->getDateFormat($format_id),
     					)
     			);
     		} break;
