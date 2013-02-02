@@ -72,7 +72,6 @@ $clientScript->registerCssFile($this->getStylesUrl('homeUser.css'));
 		father. In '); ?>The Sandwich Generation<?php echo t(', they have created an honest, intimate account of their own shifting 
 		and challenging responsibilities, as well as some of their unexpected joys. (English)'); ?></p>
   <div class="box-grey">
-    <div id="TheSandwichGeneration">
       <?php 
 			$this->widget(
 					'ext.JWplayer.JWplayer',
@@ -91,6 +90,5 @@ $clientScript->registerCssFile($this->getStylesUrl('homeUser.css'));
 					)
 			);
 			?>
-    </div>
   </div>
 </div>
