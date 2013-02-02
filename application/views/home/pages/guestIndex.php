@@ -203,6 +203,17 @@ $caregiverSurvey->run();
 <!--  start tutorial course here -->
 
 <div id="tutorial" class="hide">
+<?php $clientScript->registerScript('question-answer-handler',
+					"$('.course-slide .question').change(function() {".
+						"if($(this).find('select').val() == '1') {".
+							"$(this).find('.right-answer').removeClass('hide');".
+							"$(this).find('.wrong-answer').addClass('hide');".
+						"} else {".
+							"$(this).find('.right-answer').addClass('hide');".
+							"$(this).find('.wrong-answer').removeClass('hide');".
+						"}".
+					"});");
+			?>
   <div id="slide-1" class="course-slide"><div class="content">
     <h2 class="flowers"> <?php echo t('Tutorial'); ?> </h2>
     <hr />
@@ -342,16 +353,12 @@ $caregiverSurvey->run();
           <option value="0"> <?php echo t('No') ?> </option>
         </select>
       </p>
-      <p class="answer"></p>
-      <?php $clientScript->registerScript('slide-5-question1',
-					"$('#slide-5 #question1 select').change(function() {
-					if($(this).val() == '1') {
-					$('#slide-5 #question1 p.answer').html('Great! Yes, Dementia is a disease of the brain.');
-} else {
-					$('#slide-5 #question1 p.answer').html('Please review this tutorial again. Dementia is a disease of the brain.');
-}
-});");
-			?>
+      <p class="right-answer hide">
+      	<?php echo t('Great! Yes, Dementia is a disease of the brain.'); ?>
+      </p>
+      <p class="wrong-answer hide">
+      	<?php echo t('Please review this tutorial again. Dementia is a disease of the brain.'); ?>
+      </p>
     </div>
     <div id="question2" class="question">
       <p> <?php echo t('Is Alzehimer\'s disease a disease of the brain?'); ?>
@@ -361,16 +368,12 @@ $caregiverSurvey->run();
           <option value="0"> <?php echo t('No') ?> </option>
         </select>
       </p>
-      <p class="answer"></p>
-      <?php $clientScript->registerScript('slide-5-question2',
-					"$('#slide-5 #question2 select').change(function() {
-					if($(this).val() == '1') {
-					$('#slide-5 #question2 p.answer').html('Great! Yes, Alzheimer\'s disease is a disease of the brain.');
-} else {
-					$('#slide-5 #question2 p.answer').html('Please review this tutorial again. Alzheimer\'s disease is a disease of the brain.');
-}
-});");
-			?>
+      <p class="right-answer hide">
+      	<?php echo t("Great! Yes, Alzheimer's disease is a disease of the brain."); ?>
+      </p>
+      <p class="wrong-answer hide">
+      	<?php echo t("Please review this tutorial again. Alzheimer's disease is a disease of the brain."); ?>
+      </p>
     </div>
     <div id="question3" class="question">
       <p> <?php echo t('Alzheimer\'s disease is the most common form of dementia.'); ?>
@@ -380,16 +383,12 @@ $caregiverSurvey->run();
           <option value="0"> <?php echo t('False'); ?> </option>
         </select>
       </p>
-      <p class="answer"></p>
-      <?php $clientScript->registerScript('slide-5-question3',
-					"$('#slide-5 #question3 select').change(function() {
-					if($(this).val() == '1') {
-					$('#slide-5 #question3 p.answer').html('Yes, Alzheimer\'s disease is the most common form of dementia.');
-} else {
-					$('#slide-5 #question3 p.answer').html('Please review this tutorial again. Alzheimer\'s disease is the most common form of dementia.');
-}
-});");
-			?>
+      <p class="right-answer hide">
+      	<?php echo t("Yes, Alzheimer's disease is the most common form of dementia.");?>
+      </p>
+      <p class="wrong-answer hide">
+      	<?php echo t("Please review this tutorial again. Alzheimer's disease is the most common form of dementia.")?>
+      </p>
     </div>
     <br />
     <br />
