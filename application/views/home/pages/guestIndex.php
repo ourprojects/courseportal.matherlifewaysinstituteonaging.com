@@ -4,21 +4,22 @@ $this->pageTitle = Yii::app()->name . ' - '.t('Guest');
 $clientScript = Yii::app()->getClientScript();
 $clientScript->registerCssFile($this->getStylesUrl('homeGuest.css'));
 $clientScript->registerCssFile($this->getStylesUrl('course.css'));
-$clientScript->registerScriptFile($this->getScriptsUrl('jquery.cycle.js'), CClientScript::POS_HEAD);
-$clientScript->registerScript('customers_cycle', "$('#customers').cycle({ fx: 'fade' });");
+$clientScript->registerScriptFile($this->getScriptsUrl('jquery.cycle.all.js'), CClientScript::POS_HEAD);
+$clientScript->registerScript('customers_cycle', "$('#customers').cycle();");
+
+$fancyBoxConfig = array(
+						'width' => '90%',
+						'height' => '90%',
+						'arrows' => false,
+						'autoSize' => false,
+						'mouseWheel' => false,
+				);
 
 $this->widget(
 		'ext.fancybox.EFancyBox',
 		array(
 				'id' => '.open-tutorial',
-				'config' => array(
-						'width' => '1024px',
-						'height' => '768px',
-						'arrows' => false,
-						'autoSize' => false,
-						'mouseWheel' => false,
-							
-				)
+				'config' => $fancyBoxConfig
 		)
 );
 
@@ -26,13 +27,7 @@ $this->widget(
 		'ext.fancybox.EFancyBox',
 		array(
 				'id' => '.survey',
-				'config' => array(
-						'width' => '1024px',
-						'height' => '768px',
-						'arrows' => false,
-						'autoSize' => false,
-						'mouseWheel' => false,
-				)
+				'config' => $fancyBoxConfig
 		)
 );
 
@@ -68,12 +63,12 @@ $this->widget(
   <div class="box-sidebar">
     <h3><?php echo t('Our Clients'); ?></h3>
     <div id="customers">
-    <a href="http://www.ibm.com" target="_blank"><img src="<?php echo $this->getImagesUrl('customers/ibm.png'); ?>" alt="IBM" /></a>
-    <a href="http://www.ti.com/" target="_blank"><img src="<?php echo $this->getImagesUrl('customers/ti.png'); ?>" alt="Texas Instrument" /></a>
-    <a href="http://www.merck.com" target="_blank"><img src="<?php echo $this->getImagesUrl('customers/merck.png'); ?>" alt="Merck Pharmaceuticals" /></a> 
-    <a href="http://www.exxonmobil.com" target="_blank"><img src="<?php echo $this->getImagesUrl('customers/exxon.png'); ?>" alt="Merck Pharmaceuticals" /></a>
-    <a href="http://www.deloitte.com" target="_blank"><img src="<?php echo $this->getImagesUrl('customers/deloitte.png'); ?>" alt="Deloitte" /></a>
-    <a href="http://matherlifeways.com/" target="_blank"><img src="<?php echo $this->getImagesUrl('customers/mather.png'); ?>" alt="Mather Lifeways" /></a>
+	    <a href="http://www.ibm.com" target="_blank"><img src="<?php echo $this->getImagesUrl('customers/ibm.png'); ?>" alt="IBM" /></a>
+	    <a href="http://www.ti.com/" target="_blank"><img src="<?php echo $this->getImagesUrl('customers/ti.png'); ?>" alt="Texas Instrument" /></a>
+	    <a href="http://www.merck.com" target="_blank"><img src="<?php echo $this->getImagesUrl('customers/merck.png'); ?>" alt="Merck Pharmaceuticals" /></a> 
+	    <a href="http://www.exxonmobil.com" target="_blank"><img src="<?php echo $this->getImagesUrl('customers/exxon.png'); ?>" alt="Merck Pharmaceuticals" /></a>
+	    <a href="http://www.deloitte.com" target="_blank"><img src="<?php echo $this->getImagesUrl('customers/deloitte.png'); ?>" alt="Deloitte" /></a>
+	    <a href="http://matherlifeways.com/" target="_blank"><img src="<?php echo $this->getImagesUrl('customers/mather.png'); ?>" alt="Mather Lifeways" /></a>
   	</div>
   </div>
   
@@ -149,7 +144,6 @@ $this->widget(
   <p style="padding-bottom: 25px;"> <?php echo t('Join us in looking at the incredible lives of several, unique caregivers, as they recall their experience and emotion. Capturing various age groups and ethnicities, you will quickly relate to the
 		situation these caregivers were in. (English)'); ?> </p>
   <div class="box-grey">
-    <div id="MatherCaregivers">
       <?php 
 		$this->widget(
 				'ext.JWplayer.JWplayer',
@@ -168,7 +162,6 @@ $this->widget(
 				)
 		);
 		?>
-    </div>
   </div>
   <h2 class="flowers top-pad"><?php echo t('Pedagogy'); ?></h2>
   <p> <?php echo t('Effective online instruction depends on learning experiences appropriately designed and facilitated by knowledgeable facilitators.
@@ -210,7 +203,7 @@ $caregiverSurvey->run();
 <!--  start tutorial course here -->
 
 <div id="tutorial" class="hide">
-  <div id="slide-1" class="course-slide">
+  <div id="slide-1" class="course-slide"><div class="content">
     <h2 class="flowers"> <?php echo t('Tutorial'); ?> </h2>
     <hr />
     <p style="text-align: center;"> <b><?php echo t('Thank you for your interest and support!'); ?></b> </p>
@@ -246,13 +239,14 @@ $caregiverSurvey->run();
         Department of Health &amp; Human Services - National Institute on
         Aging</a> </li>
     </ul>
-    <p class="buttons"> <a href="javascript:;" class="button right"
-				onclick="$.fancybox.next();"><?php echo t('Start Tutorial &raquo;'); ?> </a> </p>
+    </div>
+    <div class="buttons"><a href="javascript:;" class="button right"
+				onclick="$.fancybox.next();"><?php echo t('Start Tutorial &raquo;'); ?> </a></div>
   </div>
   
   <!--   Slide #2 Alzheimer's disease    -->
   
-  <div id="slide-2" class="course-slide">
+  <div id="slide-2" class="course-slide"><div class="content">
     <h2 class="flowers"> <?php echo t('Alzheimer\'s disease'); ?> </h2>
     <hr />
     <p> <?php echo t('Alzheimer\'s disease is an irreversible, progressive brain disease that slowly destroys memory, thinking skills, behavior, and
@@ -271,12 +265,13 @@ $caregiverSurvey->run();
       <iframe width="560" height="315" src="http://www.youtube.com/embed/In1IJocVor8?rel=0" 
                 frameborder="1" allowfullscreen class="tutorial-video"></iframe>
     </p>
-    <p class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?> </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a> </p>
+    </div>
+    <div class="buttons"><a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?> </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
   </div>
   
   <!--  Slide #3 dementia   -->
   
-  <div id="slide-3" class="course-slide">
+  <div id="slide-3" class="course-slide"><div class="content">
     <h2 class="flowers"> <?php echo t('Dementia'); ?> </h2>
     <hr />
     <p> <?php echo t('Dementia refers to an acquired and progressive loss of mental functions due to a brain disorder. Dementia is not a specific
@@ -294,15 +289,16 @@ $caregiverSurvey->run();
 			preparing meals, remembering appointments or traveling out of the neighborhood. Many dementias are progressive, meaning symptoms start
 			out slowly and gradually get worse.'); ?> </p>
     <img src="<?php echo $this->getImagesUrl('image-men.png'); ?>" alt="" style="margin: 20px 20px; width: 95%;" />
-    <p class="buttons"> <a href="javascript:;" class="button left"
+    </div>
+    <div class="buttons"><a href="javascript:;" class="button left"
 				onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?> </a> <a
 				href="javascript:;" class="button right"
-				onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a> </p>
+				onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
   </div>
   
   <!--  Slide #4 Relationship    -->
   
-  <div id="slide-4" class="course-slide">
+  <div id="slide-4" class="course-slide"><div class="content">
     <h2 class="flowers"> <?php echo t('The Relationship'); ?> </h2>
     <hr />
     <p> <b><?php echo t('Dementia and Alzheimer\'s disease - How are they related?'); ?></b> </p>
@@ -327,12 +323,13 @@ $caregiverSurvey->run();
       <li><?php echo t('It is the leading reason for placing elderly people in
 							institutions such as nursing homes.'); ?> </li>
     </ul>
-    <p class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?> </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a> </p>
+    </div>
+    <div class="buttons"><a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?> </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
   </div>
   
   <!--   Slide #5 Assessment   -->
   
-  <div id="slide-5" class="course-slide">
+  <div id="slide-5" class="course-slide"><div class="content">
     <h2 class="flowers"><?php echo t('Assessment'); ?></h2>
     <hr />
     <p><?php echo t('Thinking about the material you just read, please try and correctly answer the assessment questions below without searching the Internet. Your responses are not recorded, and you will receive immediate feedback.'); ?></p>
@@ -404,17 +401,16 @@ $caregiverSurvey->run();
         <input type="submit" value="<?php echo t('Google Search'); ?>" class="teal" />
       </form>
     </div>
-    <br />
-    <br />
-    <p class="buttons"> <a href="javascript:;" class="button left"
+    </div>
+    <div class="buttons"><a href="javascript:;" class="button left"
 				onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?> </a> <a
 				href="javascript:;" class="button right"
-				onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo;</a> </p>
+				onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo;</a> </div>
   </div>
   
   <!--   slide 6 - closing here    -->
   
-  <div id="slide-6" class="course-slide">
+  <div id="slide-6" class="course-slide"><div class="content">
     <h2 class="flowers"> <?php echo t('Conclusion'); ?> </h2>
     <hr />
     <p> <?php echo t('With such a profound impact on society, business, and potentially on your family, understanding
@@ -428,7 +424,8 @@ $caregiverSurvey->run();
     		<img src="<?php echo $this->getImagesUrl('AcrobatReaderIcon.png'); ?>" alt="<?php echo t('Course Completion Certificate'); ?>" /> 
     	</a> 
     </p>
-    <p class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();"
-				class="button left"> <?php echo t('Exit'); ?> </a> </p>
+    </div>
+    <div class="buttons"><a href="#" onclick="parent.jQuery.fancybox.close();"
+				class="button left"> <?php echo t('Exit'); ?> </a> </div>
   </div>
 </div>

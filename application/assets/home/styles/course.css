@@ -1,39 +1,53 @@
-div.course-slide div.question {
-	background-color: #FFF;
-    border-radius: 15px;
-    width: 75%;
-    height: 65px;
-    margin-left: 75px;
-    padding: 10px;
-    -moz-box-shadow: 0 0 5px 5px #888;
-	-webkit-box-shadow: 0 0 5px 5px#888;
-	box-shadow: 0 0 5px 5px #888;
-}
 div.course-slide ul#developers {
 	font-size: small; 
 	font-style: italic;
-}
-div.course-slide {
-	display: block;
-	padding: 0 10px;
 }
 div.course-slide ul#quotes {
 	font-family: "Hammersmith One", Impact, sans-serif;
 	font-size: 2em;
 	color: #b71010;
 }
-div.course-slide p.buttons {
+div.course-slide iframe.tutorial-video {
+	float: right;
+	margin: 0 0 15px 15px;
+}
+div.box-sidebar.two p {
+	text-align: center; 
+	font-family: 'Comic Sans MS', cursive;
+}
+div.box-sidebar.two p.title {
+	color:#900; 
+	font-size:24px;
+}
+div.course-slide {
+	min-height: 100%;
+	position: relative;
+}
+div.course-slide div.question {
+	background-color: #FFF;
+    border-radius: 15px;
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
+    -moz-box-shadow: 0 0 5px 5px #888;
+	-webkit-box-shadow: 0 0 5px 5px#888;
+	box-shadow: 0 0 5px 5px #888;
+}
+div.course-slide div.content {
+	padding-top: 10px;
+	padding-bottom: 55px;
+}
+div.course-slide div.buttons {
 	text-align: center;
 	background: #ddd;
 	border-radius: 10px;
 	height: 40px;
-	position: absolute;
 	padding: 5px;
-	bottom: 5px;
+	position: absolute;
 	left: 5px;
 	right: 5px;
-}
-div.course-slide iframe.tutorial-video {
-	float: right;
-	margin: 0 0 15px 15px;
+	bottom: 5px;
 }
