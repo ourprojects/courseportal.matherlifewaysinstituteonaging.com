@@ -12,6 +12,7 @@ class JWplayer extends CWidget {
 	const DEFAULT_TYPE = 'player';
 
 	public $type = self::DEFAULT_TYPE;
+	public $htmlOptions = array();
 	public $target;
 	public $config = array();
 	private $_assetsUrl;
@@ -22,11 +23,15 @@ class JWplayer extends CWidget {
 	
 	public function run() {
 		$id = $this->getId();
+		$this->htmlOptions['id'] = $id;
+		echo CHtml::openTag('div', $this->htmlOptions);
+		echo CHtml::closeTag('div');
 		switch($this->type) {
 			case 'player':
 				Yii::app()->getClientScript()->registerScript(
 					__CLASS__ . $id, 
-					'jwplayer.key="9kexJkklndg+FRZpAoCLNc7YxWP3J0HN32gVgg==";jwplayer("'.$id.'").setup('.CJavaScript::encode($this->config).');'
+					'jwplayer.key="9kexJkklndg+FRZpAoCLNc7YxWP3J0HN32gVgg==";'.
+					'jwplayer("'.$id.'").setup('.CJavaScript::encode($this->config).');'
 				);
 				break;
 			case 'imagerotator':
@@ -50,6 +55,7 @@ class JWplayer extends CWidget {
 			switch($this->type) {
 				case 'player':
 					Yii::app()->getClientScript()->registerScriptFile("$this->_assetsUrl/player/jwplayer.js", CClientScript::POS_HEAD);
+					Yii::app()->getClientScript()->registerScriptFile("$this->_assetsUrl/player/jwplayer.html5.js", CClientScript::POS_HEAD);
 					if(!isset($this->config['flashplayer']))
 						$this->config['flashplayer'] = "$this->_assetsUrl/player/jwplayer.flash.swf";
 					break;

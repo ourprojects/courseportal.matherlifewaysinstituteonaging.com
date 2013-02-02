@@ -1519,6 +1519,8 @@ are taking.'); ?></li>
             <li><?php echo t('Feeling nervous or anxious'); ?></li>
             <li><?php echo t('Medical conditions that impact mobility'); ?></li>
 </ul>
+        </div><div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo;</a></div>
+</div>
     
   <!-- Lesson #6 - Promoting Safety of Older Relatives and Friends in Caring for Themselves -->
   <!-- slide #11 -->
@@ -1768,7 +1770,5 @@ are taking.'); ?></li>
               </div><div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo;</a></div>
       </div>
       
-      
-	  
 </div>
 </div>
