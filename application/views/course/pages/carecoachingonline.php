@@ -197,12 +197,38 @@ $this->widget(
 	  <a href="#lesson-6-slide-7" data-fancybox-group="lesson-6" class="hide lesson-6" /> 
 	  <a href="#lesson-6-slide-8" data-fancybox-group="lesson-6" class="hide lesson-6" /> 
 	  <a href="#lesson-6-slide-9" data-fancybox-group="lesson-6" class="hide lesson-6" /> 
-	  <a href="#lesson-6-slide-10" data-fancybox-group="lesson-6" class="hide lesson-6" /> 
+	  <a href="#lesson-6-slide-10" data-fancybox-group="lesson-6" class="hide lesson-6" />
+      <a href="#lesson-6-slide-11" data-fancybox-group="lesson-6" class="hide lesson-6" />
+      <a href="#lesson-6-slide-12" data-fancybox-group="lesson-6" class="hide lesson-6" />
+      <a href="#lesson-6-slide-13" data-fancybox-group="lesson-6" class="hide lesson-6" />
+      <a href="#lesson-6-slide-14" data-fancybox-group="lesson-6" class="hide lesson-6" />
+      <a href="#lesson-6-slide-15" data-fancybox-group="lesson-6" class="hide lesson-6" />
+      <a href="#lesson-6-slide-16" data-fancybox-group="lesson-6" class="hide lesson-6" />
+      <a href="#lesson-6-slide-17" data-fancybox-group="lesson-6" class="hide lesson-6" />
+      <a href="#lesson-6-slide-18" data-fancybox-group="lesson-6" class="hide lesson-6" />
+      <a href="#lesson-6-slide-19" data-fancybox-group="lesson-6" class="hide lesson-6" />
+      <a href="#lesson-6-slide-20" data-fancybox-group="lesson-6" class="hide lesson-6" />
+      <a href="#lesson-6-slide-21" data-fancybox-group="lesson-6" class="hide lesson-6" />
+      <a href="#lesson-6-slide-22" data-fancybox-group="lesson-6" class="hide lesson-6" />
+      <a href="#lesson-6-slide-23" data-fancybox-group="lesson-6" class="hide lesson-6" />
+      <a href="#lesson-6-slide-24" data-fancybox-group="lesson-6" class="hide lesson-6" />
+      <a href="#lesson-6-slide-25" data-fancybox-group="lesson-6" class="hide lesson-6" />
   </li>
   <li>
-  <a href="#">
+    <a href="#lesson-7-slide-1" data-fancybox-group="lesson-7" class="teal lesson-7">
   <?php echo t('Supporting Personal Choice and Preferences of Older Adults in Health and Care Decision Making'); ?>
   </a>
+  		<a href="#lesson-7-slide-2" data-fancybox-group="lesson-7" class="teal lesson-7">
+        <a href="#lesson-7-slide-3" data-fancybox-group="lesson-7" class="teal lesson-7">
+        <a href="#lesson-7-slide-4" data-fancybox-group="lesson-7" class="teal lesson-7">
+        <a href="#lesson-7-slide-5" data-fancybox-group="lesson-7" class="teal lesson-7">
+        <a href="#lesson-7-slide-6" data-fancybox-group="lesson-7" class="teal lesson-7">
+        <a href="#lesson-7-slide-7" data-fancybox-group="lesson-7" class="teal lesson-7">
+        <a href="#lesson-7-slide-8" data-fancybox-group="lesson-7" class="teal lesson-7">
+        <a href="#lesson-7-slide-9" data-fancybox-group="lesson-7" class="teal lesson-7">
+        <a href="#lesson-7-slide-10" data-fancybox-group="lesson-7" class="teal lesson-7">
+        <a href="#lesson-7-slide-11" data-fancybox-group="lesson-7" class="teal lesson-7">
+        <a href="#lesson-7-slide-12" data-fancybox-group="lesson-7" class="teal lesson-7">
   </li>
 </ul>
 </div>
@@ -1769,6 +1795,198 @@ are taking.'); ?></li>
       
               </div><div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo;</a></div>
       </div>
+      
+       <!-- Lesson #6 - Promoting Safety of Older Relatives and Friends in Caring for Themselves -->
+  <!-- slide #21 -->
+  
+      <div id="lesson-6-slide-21" class="course-slide"><div class="content">
+        <h2 class="flowers"><?php echo t('Exercise Promotes Safety and Independence (continued)'); ?></h2>
+        <hr />
+        
+        <p><?php echo t('What Types of Exercises are Good for Older Adults?'); ?></p>
+        
+        <p><?php echo t('There are several types of exercise that are effective for older adults.  At least 30 minutes of aerobic activity is recommended daily.  Examples are walking, swimming, and bicycling.  Resistance or strength training is recommended twice a week.'); ?></p>
+        
+        <p><?php echo t('Warm up for five minutes before each exercise session.  Walking slowly and stretching are good warm-up activities.  After finishing exercising, cool down with more stretching for five minutes.  Cool down longer in warmer weather.'); ?></p>
+        
+        <p><?php echo t('What are Some Safety Tips for Older Adults Related to Exercise?'); ?></p>
+        
+        <ul>
+        	<li><?php echo t('Wait at least 2 hours after you eat to start your exercise routine.'); ?></li>
+            <li><?php echo t('Do not exercise if you have a fever.'); ?></li>
+            <li><?php echo t('Do not exercise if you have high blood pressure and have not consulted your doctor for your limits.'); ?></li>
+            <li><?php echo t('If your knee or elbow or ankle is swollen, painful and warm to the touch DO NOT exercise, see a doctor.'); ?></li>
+            <li><?php echo t('If you have osteoporosis, talk to your doctor about any exercises that would be safe. Exercise that involves stretching or flexing the spine should be approved directly by your doctor.'); ?></li>
+            <li><?php echo t('Do not exercise if you develop a new pain or symptom. Swelling, shortness of breath, extreme tiredness and you should get your parents to the doctor.'); ?></li>
+         </ul>
+           
+      
+              </div><div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo;</a></div>
+      </div>
+
+      <!-- Lesson #6 - Promoting Safety of Older Relatives and Friends in Caring for Themselves --> 
+      <!-- slide #22 -->
+
+      <div id="lesson-6-slide-22" class="course-slide">
+      <div class="content">
+          <h2 class="flowers"><?php echo t('Activity – Resources on Exercises Designed for Older Adults'); ?></h2>
+          <hr />
+          <p><?php echo t('The National Institutes on Aging has developed an online guide for older adults.  A number of example exercises are presented with easy to follow steps and pictures.  Exercises focus on areas including endurance, flexibility, balance, and strength training.  Click on the following link to access the guide:'); ?></p>
+          <p><a href="http://www.nia.nih.gov/HealthInformation/Publications/ExerciseGuide/default.htm" target="_blank"><?php echo t('Exercise & Physical Activity: Your Everyday Guide from the National Institute on Aging'); ?></a></p>
+          <p><?php echo t('Exercise Videos'); ?></p>
+          <p><?php echo t('These are meant to be example exercises and do not constitute a complete exercise regimen.'); ?></p>
+          <p><?php echo t('Video – Chair Stand Strengthening'); ?></p>
+          <p>
+          <iframe width="420" height="315" src="http://www.youtube.com/embed/ukJnjYM9LeA?rel=0" frameborder="0" allowfullscreen></iframe>
+        </p>
+          </p>
+        </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo;</a></div>
+    </div>
+    
+          <!-- Lesson #6 - Promoting Safety of Older Relatives and Friends in Caring for Themselves --> 
+      <!-- slide #23 -->
+
+      <div id="lesson-6-slide-23" class="course-slide">
+      <div class="content">
+          <h2 class="flowers"><?php echo t('Activity – Resources on Exercises Designed for Older Adults (continued)'); ?></h2>
+          <hr />
+          <p><?php echo t('Video – Seated Chair Leg Stretch'); ?></p>
+          
+          <p><iframe width="560" height="315" src="http://www.youtube.com/embed/ueHKUenfLtY?rel=0" frameborder="0" allowfullscreen></iframe></p>
+          
+          <p><?php echo t('Video – Seated Knee Extensions'); ?></p>
+          
+          <p><iframe width="420" height="315" src="http://www.youtube.com/embed/q7b7HgPYQN8?rel=0" frameborder="0" allowfullscreen></iframe></p>
+        </div>
+        
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo;</a></div>
+    </div>
+
+      <!-- Lesson #6 - Promoting Safety of Older Relatives and Friends in Caring for Themselves --> 
+      <!-- slide #24 -->
+
+      <div id="lesson-6-slide-24" class="course-slide">
+      <div class="content">
+          <h2 class="flowers"><?php echo t('Activity – Resources on Exercises Designed for Older Adults (continued)'); ?></h2>
+          <hr />
+          <p><?php echo t('Video – Calf Muscle Exercise'); ?></p>
+          <p>
+          <iframe width="420" height="315" src="http://www.youtube.com/embed/rEfS6AfIgS4?rel=0" frameborder="0" allowfullscreen></iframe>
+        </p>
+          <p><?php echo t('Video – Shoulder Strengthening'); ?></p>
+          <p>
+          <iframe width="420" height="315" src="http://www.youtube.com/embed/SUWH6Tf6bNk?rel=0" frameborder="0" allowfullscreen></iframe>
+        </p>
+        </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo;</a></div>
+    </div>
+    
+          <!-- Lesson #6 - Promoting Safety of Older Relatives and Friends in Caring for Themselves --> 
+      <!-- slide #25 -->
+
+      <div id="lesson-6-slide-25" class="course-slide">
+      <div class="content">
+          <h2 class="flowers"><?php echo t('Activity – Resources on Exercises Designed for Older Adults (continued)'); ?></h2>
+          <hr />
+          <p><?php echo t('Video – Bicep Curls'); ?></p>
+          <p><iframe width="420" height="315" src="http://www.youtube.com/embed/7NqpW_TWEi0?rel=0" frameborder="0" allowfullscreen></iframe></p>
+        </div>
+      </div><div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();"
+				class="button left"> <?php echo t('Complete Lesson'); ?></a></div>
+
+      <!-- Lesson #7 - Supporting Personal Choice and Preferences of Older Adults in Health and Care Decision Making --> 
+      <!-- slide #1 -->
+
+      <div id="lesson-7-slide-1" class="course-slide">
+      <div class="content">
+          <h2 class="flowers"><?php echo t('Supporting Personal Choice and Preferences of Older Adults in Health and Care Decision Making'); ?></h2>
+          <hr />
+          <p><?php echo t('It’s All about Choice'); ?><br />
+          <?php echo t('Self-determination means having the freedom to be in charge of one’s own life, choosing where you live, who you spend time with, and what you do every day.  It means having the resources you need to create a good life and to make responsible decisions.  We all want to feel that we have choices in our daily lives.'); ?></p>
+          <p><?php echo t('Exercise – Identifying Solutions to Support Choice and Preferences'); ?><br />
+          <?php echo t('Every caregiving situation is unique.  Many factors come into play when considering the best possible solutions about your parents and their future.  In this exercise, we provide several questions for you to use as a framework to “interview” your parents regarding their choices and preferences for their future.'); ?></p>
+          <p><?php echo t('Are You a “Sandwich Generation” Caregiver?'); ?><br />
+          <?php echo t('If you are between the ages of 35 to 54 and are caring for both younger ones such as children and older parents or other family members and probably employed at the same time, you may be a “sandwich generation” caregivers.  You are not alone as approximately 20 million American fit this description.'); ?></p>
+          <p><?php echo t('Activity – Ways to Manage Your Own Stress'); ?><br />
+          <?php echo t('The American Psychological Association offers several strategies to help those in the “sandwich generation” manage their stress.  In managing stress, journaling can also be a very effective tool to help identify what situations or events trigger stressful feelings, how you deal (or don’t deal) with stress, and how you may manage stress.  In this activity, you focus on journaling to help manage stress.'); ?></p>
+          <p><?php echo t('Family Communication: When Siblings Attack!'); ?><br />
+          <?php echo t('Family dynamics can be very complex.  We have been talking about your caregiving throughout this course in relation to your older parents.  We cannot forget that, in many families, family dynamics also include siblings – whether they are yours or your parents.  We continue to relive relationships with siblings and other members of our extended families that began in childhood.'); ?></p>
+          <p><?php echo t('Exercise – Developing an Ecomap'); ?><br />
+          <?php echo t('Ecomaps are used to evaluate a person’s environment and connections to provide an opportunity to consider his or her unique situation.  This exercise allows further insight into existing and potential resources in your loved one’s environment.'); ?></p>
+          <p><?php echo t('CARE Coaching Review: Talking wih Your Older Parents'); ?><br />
+          <?php echo t('Let’s just take a moment to review the core components of CARE Coaching in relation to talking with your older parents.'); ?></p>
+        </div>
+      <div class="buttons"> <a href="javascript:;" class="button right"
+				onclick="$.fancybox.next();"><?php echo t('Start Course &raquo;'); ?> </a></div>
+    </div>
+    
+    
+<!-- Lesson #7 - Supporting Personal Choice and Preferences of Older Adults in Health and Care Decision Making --> 
+      <!-- slide #2 -->
+
+      <div id="lesson-7-slide-2" class="course-slide">
+      <div class="content">
+          <h2 class="flowers"><?php echo t('It’s All about Choice'); ?></h2>
+          <hr />
+          <p><?php echo t('Self-determination means having the freedom to be in charge of one’s own life, choosing where you live, who you spend time with, and what you do every day.  It means having the resources you need to create a good life and to make responsible decisions.  It also means choosing where, when, and how you get help for any problems you might have.'); ?></p>
+          
+          <p><?php echo t('We all want to feel that we have choices in our daily lives.  At times, the choices our older parents may want may not be choices we would want for them particularly if their safety or health may be at risk.  At other times, we as caregivers are tempted to want to immediately rise to the occasion and take action.  This may be because you want to help find a solution to a problem quickly.  Imposing a solution may actually make a situation more of a problem.'); ?></p>
+          
+          <p><?php echo t('If you were to walk into your supervisor’s office with a problem – say that your project is 50% over budget – and your supervisor tells you to immediately cut five of your key staff, how would you feel?  Probably shocked that your supervisor did not want to discuss the situation, examine several reasons for the overage, and come up with a couple of options – all in collaboration with you as project manager.'); ?></p>
+          
+          <p><?php echo t('The same should apply with your older parents.  You may notice that one or both are starting to forget things.  Immediately, you jump to the conclusion that they have Alzheimer’s Disease.  There are many causes of memory loss including poor nutrition, sleep problems, medications, or one’s emotional state.  You would want to take a measured approach to this issue in your discussions with your parents.'); ?></p>       
+          
+        </div>
+        
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo;</a></div>
+    </div>   
+    
+     
+      <!-- Lesson #7 - Supporting Personal Choice and Preferences of Older Adults in Health and Care Decision Making --> 
+      <!-- slide #3 -->
+
+      <div id="lesson-7-slide-3" class="course-slide">
+      <div class="content">
+          <h2 class="flowers"><?php echo t('It’s All about Choice (continued)'); ?></h2>
+          <hr />
+          <p><?php echo t('Some general Do\'s and Don\'ts:'); ?></p>
+          
+          <p><?php echo t('Do:'); ?></p>
+          
+          <ul>
+          	<li><?php echo t('Assess the situation thoroughly'); ?></li>
+            <li><?php echo t('Look for signs of changes (physical and mental)'); ?></li>
+            <li><?php echo t('Keep notes or a record of what changes you observe'); ?></li>
+          </ul>
+          
+          <p><?php echo t('Don\'t:'); ?></p>
+          
+          <ul>
+          	<li><?php echo t('Immediately jump to conclusions'); ?></li>
+            <li><?php echo t('Rush to make a judgment'); ?></li>
+            <li><?php echo t('Immediately make the assumption'); ?></li>
+          </ul>
+          
+          <p>
+
+Exercise – Identifying Solutions to Support Choice and Preferences
+
+Throughout this course, you have had several opportunities to gain more understanding regarding your older parents’ needs and preferences.  Every caregiving situation is unique.  Many factors come into play when considering the best possible solutions about your parents and their future.  These factors may include: your parents’ health and functional abilities, mobility, values and beliefs, and family and community support systems. 
+
+In this exercise, we provide several questions for you to use as a framework to “interview” your parents regarding their choices and preferences for their future.  This exercise is broken into two parts.  Please complete all of Part 1 before moving onto Part 2.
+
+Click here to access the Exercise – Identifying Solutions to Support Choice and Preferences
+(insert hyperlink to Exercise file – Identifying Solutions to Support Choice and Preferences)
+
+          
+          </p>       
+          
+        </div>
+        
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo;</a></div>
+    </div>  
+      
       
 </div>
 </div>
