@@ -137,9 +137,16 @@ $this->widget(
   <p> <?php echo t('Used by individuals and entire organizations, our nationally recognized, award-winning programs include training modules, online
 				courses, toolkits, and learning modules designed to make learning fun and easy. Our programs have been shown to result in measurable
 				improvements in the quality of care provided and workforce retention.'); ?> </p>
-  <h2 class="flowers top-pad"><?php echo t('Online Courses for Caregivers'); ?></h2>
-  <p style="padding-bottom: 5px;"><?php echo t('We deliver online learning and web-based modalities using the latest technologies to efficiently and cost-effectively empower professionals.
-				In addition, we are well-positioned to help conduct pilot studies that measure the impact on both working caregivers and the bottom line for interested corporations.'); ?> </p>
+                
+                <!-- online courses for caregivers div here -->
+                
+  <h2 class="flowers top-pad"><?php echo t('Digital Workforce Solutions'); ?></h2>
+  <p style="padding-bottom: 5px;"><?php echo t('We deliver online learning and web-based modalities using the latest technologies to efficiently and cost-effectively empower professionals in the workplace.'); ?></p>
+  
+  	<p><?php echo t('In addition, we are well-positioned to help conduct pilot studies that measure the impact on both working caregivers and the bottom line for interested corporations. We provide practical solutions in the form of online courses, workplace toolkits, and workforce surveys.'); ?> </p>
+  
+  <!-- video and text here div -->
+  
   <h2 class="flowers top-pad"><?php echo t('A Closer Look - Lives of Caregivers'); ?></h2>
   <p style="padding-bottom: 25px;"> <?php echo t('Join us in looking at the incredible lives of several, unique caregivers, as they recall their experience and emotion. Capturing various age groups and ethnicities, you will quickly relate to the
 		situation these caregivers were in. (English)'); ?> </p>
@@ -234,22 +241,15 @@ $caregiverSurvey->run();
       <li><?php echo t('Describe Alzheimer\'s disease'); ?></li>
       <li><?php echo t('Describe the relationship between dementia and Alzheimer\'s disease'); ?></li>
     </ul>
-    <p class="small"> 
-    	<i>
-      	<?php 
-			echo t('Data and research have been developed or collected for this tutorial
-					course by the following:'); 
-		?>
-    	</i> 
-    </p>
+    <p class="small"> <i> <?php echo t('Data and research have been developed or collected for this tutorial course by the following:'); ?> </i> </p>    
     <ul id="developers">
-      <li> <a href="http://www.alz.org" target="_blank">Alzheimer's Association</a> <?php echo t('(USA)'); ?> </li>
-      <li> <a href="http://matherlifewaysinstituteonaging.com" target="_blank">Mather
-        LifeWays Institute on Aging</a> <?php echo t('(USA)'); ?> </li>
-      <li> <a href="http://nih.gov" target="_blank">United States
+      <li class="small"> <i> <a href="http://www.alz.org" target="_blank">Alzheimer's Association</a> <?php echo t('(USA)'); ?> </i></li>
+      <li style="font-size:small;"> <i> <a href="http://matherlifewaysinstituteonaging.com" target="_blank">Mather LifeWays Institute on Aging</a> <?php echo t('(USA)'); ?> </i></li>
+      <li style="font-size:small;"> <i> <a href="http://nih.gov" target="_blank">United States
         Department of Health &amp; Human Services - National Institute on
-        Aging</a> </li>
+        Aging</a> </i></li>
     </ul>
+  
     </div>
     <div class="buttons"><a href="javascript:;" class="button right"
 				onclick="$.fancybox.next();"><?php echo t('Start Tutorial &raquo;'); ?> </a></div>
