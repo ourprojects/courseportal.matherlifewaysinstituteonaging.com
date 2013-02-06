@@ -8,6 +8,6 @@
   
   <!-- disclaimer text here --> 
   
-  <?php echo t('Once logged on to the course portal, no refund is available.'); ?>
+  <p> <?php echo t('Once logged on to the course portal, no refund is available.'); ?>
   </p>
   <?php echo $this->renderPartial('forms/register_form', array('models' => $models)); ?> </div>
