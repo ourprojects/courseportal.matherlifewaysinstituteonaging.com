@@ -4,7 +4,7 @@
   <h1 class="bottom"> <?php echo t('Courses'); ?> </h1>
 </div>
 <div id="single-column">
-  <h2 class="flowers"> <?php echo t('Online Courses'); ?> </h2>
+  <h2 class="flowers"> <?php echo t('Online Workforce Support'); ?> </h2>
   <p> <?php echo t('To help individual caregivers transition into their new role, be better prepared to 
 				manage their loved one\'s needs, and learn how to effectively practice self-care, Mather LifeWays Institute on Aging has developed
 	online programs that are designed to educate caregivers while fitting into any schedule.'); ?> </p>
@@ -70,6 +70,7 @@ description and objectives information in the database for each course -->
     <li><?php echo t('Explore resources available for those with memory loss'); ?></li>
     <li><?php echo t('Explore national data and statistics related to memory-loss'); ?></li>
   </ul>
+  <h2 class="flowers"> <?php echo t('Online Education'); ?> </h2>
   <hr />
   <img src="<?php echo $this->getImagesUrl('image-nurse.png'); ?>"
 		class="image-right" />
@@ -80,9 +81,6 @@ description and objectives information in the database for each course -->
 				foundation while saving employers time and money by reducing training hours and ensuring employees have a basic skill set upon hiring. This program
 				is offered by Mather LifeWays Institute on Aging in collaboration with Rush University College of Nursing. Development was partially supported by
 	funding from the Bureau of Health Professionals division of the Department of Health and Human Services.'); ?> </p>
-  
-  <!-- add in 4 header areas: Online Workforce Support, Online Education, Toolkits, Online Workforce Surveys -->
-  
   <p> <?php echo t('Objectives'); ?> </p>
   <ul>
     <li><?php echo t('Explore the latest in aging research'); ?></li>
@@ -91,4 +89,8 @@ description and objectives information in the database for each course -->
     <li><?php echo t('Explore best practices that can be integrated into practice and/or teaching'); ?></li>
     <li><?php echo t('Self-paced certificate program (6 unique, online courses) completed within one-year'); ?></li>
   </ul>
+  <h2 class="flowers"> <?php echo t('Online Workforce Surveys'); ?> </h2>
+  <p><?php echo t('Coming Soon!'); ?></p>
+  <h2 class="flowers"> <?php echo t('Toolkits'); ?> </h2>
+  <p><?php echo t('Coming Soon!'); ?></p>
 </div>
