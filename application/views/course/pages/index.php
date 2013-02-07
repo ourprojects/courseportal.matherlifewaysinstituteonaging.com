@@ -88,26 +88,13 @@ description and objectives information in the database for each course -->
     <li><?php echo t('Self-paced certificate program (6 unique, online courses) completed within one-year'); ?></li>
   </ul>
   <hr />
-  <h3> <a href="<?php echo $this->createUrl('#'); ?>"> <?php echo t('Brain Fitness Online'); ?> </a> </h3>
-  <p> <?php echo t('Coming Soon!'); ?> </p>
+  <h3> <a href="<?php echo $this->createUrl('#'); ?>"> <?php echo t('Spencer Powell Brain Fitness Program'); ?> </a> </h3>
+  <p> <?php echo t('The Spencer Powell Brain Fitness Program is designed to promote cognitive health and healthy lifestyle changes.  The course provides information on how lifestyle factors such as physical activity and cognitive engagement affect your brain and your risk for dementia. Practical strategies are suggested for maintaining memory over time. In addition, the course includes memory training such as chunking, the story method, and mnemonic techniques.'); ?> </p>
   <p> <?php echo t('Objectives'); ?> </p>
   <ul>
-    <li><?php echo t('Coming Soon!'); ?></li>
-    <li><?php echo t('Coming Soon!'); ?></li>
-    <li><?php echo t('Coming Soon!'); ?></li>
-    <li><?php echo t('Coming Soon!'); ?></li>
-    <li><?php echo t('Coming Soon!'); ?></li>
-  </ul>
-  <hr />
-  <h3> <a href="<?php echo $this->createUrl('#'); ?>"> <?php echo t('Spencer Powell Online'); ?> </a> </h3>
-  <p> <?php echo t('Coming Soon!'); ?> </p>
-  <p> <?php echo t('Objectives'); ?> </p>
-  <ul>
-    <li><?php echo t('Coming Soon!'); ?></li>
-    <li><?php echo t('Coming Soon!'); ?></li>
-    <li><?php echo t('Coming Soon!'); ?></li>
-    <li><?php echo t('Coming Soon!'); ?></li>
-    <li><?php echo t('Coming Soon!'); ?></li>
+    <li><?php echo t('Increase participants’ knowledge of “brain healthy” behaviors.'); ?></li>
+    <li><?php echo t('Improve self-rated memory and mindfulness/attention'); ?></li>
+    <li><?php echo t('Increase participants’ knowledge of memory techniques useful in everyday tasks and activities.'); ?></li>
   </ul>
   <hr />
   <h2 class="flowers"> <?php echo t('Online Workforce Surveys'); ?> </h2>
