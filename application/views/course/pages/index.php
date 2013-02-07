@@ -70,17 +70,15 @@ description and objectives information in the database for each course -->
     <li><?php echo t('Explore resources available for those with memory loss'); ?></li>
     <li><?php echo t('Explore national data and statistics related to memory-loss'); ?></li>
   </ul>
+  <hr />
   <h2 class="flowers"> <?php echo t('Online Education'); ?> </h2>
   <hr />
   <img src="<?php echo $this->getImagesUrl('image-nurse.png'); ?>"
 		class="image-right" />
   <h3> <a href="http://mather.connectedlearning.net/home/" target="_blank"><?php echo t('Gerontology Online program'); ?> </a> </h3>
-  <p> <?php echo t('Gerontology Online is a web-based continuing education program designed for health care professionals 
-				who wish to enhance their knowledge and skills in the field of aging. This program will provide employees with valuable information about gerontology,
-				helping them to stay abreast of the latest research and practices and it is also an excellent resource for new hires, providing them with a solid
-				foundation while saving employers time and money by reducing training hours and ensuring employees have a basic skill set upon hiring. This program
-				is offered by Mather LifeWays Institute on Aging in collaboration with Rush University College of Nursing. Development was partially supported by
-	funding from the Bureau of Health Professionals division of the Department of Health and Human Services.'); ?> </p>
+  <p> <?php echo t('Gerontology Online is a web-based continuing education program designed for health care professionals who wish to enhance their knowledge and skills in the field of aging. This program will provide employees with valuable information about gerontology, helping them to stay abreast of the latest research and practices and it is also an excellent resource for new hires, providing them with a solid foundation while saving employers time and money by reducing training hours and ensuring employees have a basic skill set upon hiring.'); ?></p>
+  
+  <p><?php echo t('This program is offered by Mather LifeWays Institute on Aging in collaboration with Rush University College of Nursing. Development was partially supported by funding from the Bureau of Health Professionals division of the Department of Health and Human Services.'); ?> </p>
   <p> <?php echo t('Objectives'); ?> </p>
   <ul>
     <li><?php echo t('Explore the latest in aging research'); ?></li>
