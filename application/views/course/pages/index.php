@@ -115,9 +115,12 @@ description and objectives information in the database for each course -->
   <h2 class="flowers"> <?php echo t('Online Workforce Surveys'); ?> </h2>
   <hr />
   <p><?php echo t('Coming Soon!'); ?></p>
+  <p><?php echo t('Aging in the Workplace Survey'); ?></p>
   <hr />
   <h2 class="flowers"> <?php echo t('Toolkits'); ?> </h2>
   <hr />
   <p><?php echo t('Coming Soon!'); ?></p>
+  <p><?php echo t('Making Sense of Memory Loss'); ?></p>
+  <p><?php echo t('Aging in the Workplace'); ?></p>
   <hr />
 </div>
