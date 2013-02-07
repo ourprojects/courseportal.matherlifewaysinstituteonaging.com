@@ -1,7 +1,7 @@
 <?php $this->breadcrumbs = array(t('Courses')); ?>
 
 <div class="small-masthead" style="background-image: url(<?php echo $this->getImagesUrl('header-courses.png'); ?>);">
-  <h1 class="bottom"> <?php echo t('Courses'); ?> </h1>
+  <h1 class="bottom"> <?php echo t('Courses, Surveys, &amp; Toolkits'); ?> </h1>
 </div>
 <div id="single-column">
   <h2 class="flowers"> <?php echo t('Online Workforce Support'); ?> </h2>
@@ -89,8 +89,35 @@ description and objectives information in the database for each course -->
     <li><?php echo t('Explore best practices that can be integrated into practice and/or teaching'); ?></li>
     <li><?php echo t('Self-paced certificate program (6 unique, online courses) completed within one-year'); ?></li>
   </ul>
+  <hr />
+  <h3> <a href="<?php echo $this->createUrl('#'); ?>"> <?php echo t('Brain Fitness Online'); ?> </a> </h3>
+  <p> <?php echo t('Coming Soon!'); ?> </p>
+  <p> <?php echo t('Objectives'); ?> </p>
+  <ul>
+    <li><?php echo t('Coming Soon!'); ?></li>
+    <li><?php echo t('Coming Soon!'); ?></li>
+    <li><?php echo t('Coming Soon!'); ?></li>
+    <li><?php echo t('Coming Soon!'); ?></li>
+    <li><?php echo t('Coming Soon!'); ?></li>
+  </ul>
+  <hr />
+  <h3> <a href="<?php echo $this->createUrl('#'); ?>"> <?php echo t('Spencer Powell Online'); ?> </a> </h3>
+  <p> <?php echo t('Coming Soon!'); ?> </p>
+  <p> <?php echo t('Objectives'); ?> </p>
+  <ul>
+    <li><?php echo t('Coming Soon!'); ?></li>
+    <li><?php echo t('Coming Soon!'); ?></li>
+    <li><?php echo t('Coming Soon!'); ?></li>
+    <li><?php echo t('Coming Soon!'); ?></li>
+    <li><?php echo t('Coming Soon!'); ?></li>
+  </ul>
+  <hr />
   <h2 class="flowers"> <?php echo t('Online Workforce Surveys'); ?> </h2>
+  <hr />
   <p><?php echo t('Coming Soon!'); ?></p>
+  <hr />
   <h2 class="flowers"> <?php echo t('Toolkits'); ?> </h2>
+  <hr />
   <p><?php echo t('Coming Soon!'); ?></p>
+  <hr />
 </div>
