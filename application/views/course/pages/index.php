@@ -70,7 +70,10 @@ description and objectives information in the database for each course -->
     <li><?php echo t('Explore resources available for those with memory loss'); ?></li>
     <li><?php echo t('Explore national data and statistics related to memory-loss'); ?></li>
   </ul>
-  <hr />
+
+<br /><br />
+
+
   <h2 class="flowers"> <?php echo t('Online Education'); ?> </h2>
   <hr />
   <img src="<?php echo $this->getImagesUrl('image-nurse.png'); ?>"
@@ -88,7 +91,7 @@ description and objectives information in the database for each course -->
     <li><?php echo t('Self-paced certificate program (6 unique, online courses) completed within one-year'); ?></li>
   </ul>
   <hr />
-  <h3> <a href="<?php echo $this->createUrl('#'); ?>"> <?php echo t('Spencer Powell Brain Fitness Program'); ?> </a> </h3>
+  <h3> <a href="<?php echo $this->createUrl('#'); ?>"> <?php echo t('Spencer Powell Brain Fitness Program '); ?> </a><?php echo t(' - Coming Summer 2013'); ?> </h3>
   <p> <?php echo t('The Spencer Powell Brain Fitness Program is designed to promote cognitive health and healthy lifestyle changes.  The course provides information on how lifestyle factors such as physical activity and cognitive engagement affect your brain and your risk for dementia. Practical strategies are suggested for maintaining memory over time. In addition, the course includes memory training such as chunking, the story method, and mnemonic techniques.'); ?> </p>
   <p> <?php echo t('Objectives'); ?> </p>
   <ul>
@@ -96,16 +99,46 @@ description and objectives information in the database for each course -->
     <li><?php echo t('Improve self-rated memory and mindfulness/attention'); ?></li>
     <li><?php echo t('Increase participants’ knowledge of memory techniques useful in everyday tasks and activities.'); ?></li>
   </ul>
-  <hr />
+<br /><br />
   <h2 class="flowers"> <?php echo t('Online Workforce Surveys'); ?> </h2>
   <hr />
-  <p><?php echo t('Coming Soon!'); ?></p>
-  <p><?php echo t('Aging in the Workplace Survey'); ?></p>
-  <hr />
-  <h2 class="flowers"> <?php echo t('Toolkits'); ?> </h2>
-  <hr />
-  <p><?php echo t('Coming Soon!'); ?></p>
-  <p><?php echo t('Making Sense of Memory Loss'); ?></p>
-  <p><?php echo t('Aging in the Workplace'); ?></p>
-  <hr />
+    <h3> <a href="<?php echo $this->createUrl('#'); ?>"> <?php echo t('Aging in the Workplace '); ?> </a><?php echo t(' - Coming Summer 2013'); ?> </h3>
+    <p><?php echo t('The Aging in the Workplace toolkits and survey are designed to provide employers with strategic aging-related workforce management information. With a large percent of the 78 million boomers planning to remain in the workforce past traditional retirement age, organizations in the nonprofit, private, and public sectors will need tools and resources to make the best use of their knowledge and skills in order to increase organizational effectiveness and business performance.'); ?></p>
+    
+    
+    <br /><br />
+    <h2 class="flowers"> <?php echo t('Toolkits'); ?> </h2>
+    <hr />
+    
+    <!-- Making Sense of Memory Loss -->
+    
+  <h3> <a href="<?php echo $this->createUrl('#'); ?>"> <?php echo t('Making Sense of Memory Loss (MSML) '); ?> </a><?php echo t(' - Coming Summer 2013'); ?> </h3>
+  
+  <p><?php echo t('Developed by Mather LifeWays Institute on Aging and the Alzheimer’s Association, evidence-based Making Sense of Memory Loss Online helps those who care for someone in the early, middle, or late to final stages of memory loss, whether or not that individual has received a diagnosis of Alzheimer\'s Disease or related dementia.'); ?></p>
+  
+  <p><?php echo t('Making Sense of Memory Loss Online helps family caregivers recognize and understand the needs and symptoms of the loved ones in the early, middle, and late stages of the disease.  In the early stages, family caregivers need help understanding memory loss, impaired judgment, changes in their relationships and roles, and coming to terms with the diagnosis.  In middle and late stages, family caregivers may need to deal with behavior changes, deteriorating physical condition, and decisions about long-term care.'); ?> </p>
+  
+    <p> <?php echo t('Objectives'); ?> </p>
+  <ul>
+    <li><?php echo t('Causes and course of memory loss related to dementia'); ?></li>
+    <li><?php echo t('Understanding a diagnosis of dementia or Alzheimer’s Disease'); ?></li>
+    <li><?php echo t('Communicating with persons experiencing dementia or Alzheimer’s Disease'); ?></li>
+    <li><?php echo t('Dealing with one’s own feelings about changing roles and relationships'); ?></li>
+    <li><?php echo t('Making decisions and planning for the future'); ?></li>
+  </ul>
+  
+    <hr />
+    <h3> <a href="<?php echo $this->createUrl('#'); ?>"> <?php echo t('Aging in the Workplace '); ?> </a><?php echo t(' - Coming Summer 2013'); ?> </h3>
+    <p><?php echo t('The Aging in the Workplace toolkits and survey are designed to provide employers with strategic aging-related workforce management information. With a large percent of the 78 million boomers planning to remain in the workforce past traditional retirement age, organizations in the nonprofit, private, and public sectors will need tools and resources to make the best use of their knowledge and skills in order to increase organizational effectiveness and business performance.'); ?></p>
+    <p><?php echo t('The toolkit provides valuable information and resources for human resource professionals, managers, and employed caregivers.'); ?></p>
+    <p><?php echo t('Toolkit Includes:'); ?></p>
+    <ul>
+    <li><?php echo t('Tools to diagnose the prevalence of caregiving in your workplace'); ?></li>
+    <li><?php echo t('Team activities to support the development of a caregiver-friendly workplace'); ?></li>
+    <li><?php echo t('A list of organizational best practices in elder care policies and employee benefits'); ?></li>
+    <li><?php echo t('Case studies'); ?></li>
+    <li><?php echo t('Information and resources for employed caregivers'); ?></li>
+    <li><?php echo t('Aging in the Workplace Survey*'); ?> </li>
+  </ul>
+    </p>
 </div>
