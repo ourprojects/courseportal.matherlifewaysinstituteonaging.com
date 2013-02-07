@@ -8,8 +8,8 @@ $clientScript->registerScriptFile($this->getScriptsUrl('jquery.cycle.all.js'), C
 $clientScript->registerScript('customers_cycle', "$('#customers').cycle();");
 
 $fancyBoxConfig = array(
-						'width' => '75%',
-						'height' => '65%',
+						'width' => '80%',
+						'height' => '70%',
 						'arrows' => false,
 						'autoSize' => false,
 						'mouseWheel' => false,
