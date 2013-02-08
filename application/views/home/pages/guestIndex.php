@@ -224,7 +224,6 @@ $caregiverSurvey->run();
   <div id="slide-1" class="course-slide"><div class="content">
     <h2 class="flowers"> <?php echo t('Tutorial'); ?> </h2>
     <hr />
-    <p style="text-align: center;"> <b><?php echo t('Thank you for your interest and support!'); ?></b> </p>
     <p> <?php echo t('Through conducting applied research, we have developed award-winning, 
 			evidence-based education programs for professionals who serve older adults. Staffed by researchers and educators, 
 			we are a global resource for information about wellness, successful aging service innovations, and 
@@ -241,14 +240,15 @@ $caregiverSurvey->run();
       <li><?php echo t('Describe Alzheimer\'s disease'); ?></li>
       <li><?php echo t('Describe the relationship between dementia and Alzheimer\'s disease'); ?></li>
     </ul>
-    <p class="small"> <i> <?php echo t('Data and research have been developed or collected for this tutorial course by the following:'); ?> </i> </p>    
-    <ul id="developers">
-      <li class="small"> <i> <a href="http://www.alz.org" target="_blank">Alzheimer's Association</a> <?php echo t('(USA)'); ?> </i></li>
-      <li style="font-size:small;"> <i> <a href="http://matherlifewaysinstituteonaging.com" target="_blank">Mather LifeWays Institute on Aging</a> <?php echo t('(USA)'); ?> </i></li>
-      <li style="font-size:small;"> <i> <a href="http://nih.gov" target="_blank">United States
-        Department of Health &amp; Human Services - National Institute on
-        Aging</a> </i></li>
-    </ul>
+    
+    <!-- removed <p class="small"> <i> could not find in css folder structure -->
+    <p style="font-size:x-small;"> <?php echo t('Data and research have been developed or collected for this tutorial course by the following organizations in the USA: '); ?> 
+    <!-- removed <ul id="developers"> cold not find in css folder structure -->
+    <!-- removed <li class="small"> cold not find in css folder structure -->  
+      <a href="http://www.alz.org" target="_blank">Alzheimer's Association, </a>
+      <a href="http://matherlifewaysinstituteonaging.com" target="_blank">Mather LifeWays Institute on Aging, </a><?php echo t('and the'); ?>
+      <a href="http://nih.gov" target="_blank">United States Department of Health &amp; Human Services - National Institute on Aging.</a></p>
+  
   
     </div>
     <div class="buttons"><a href="javascript:;" class="button right"
@@ -260,22 +260,33 @@ $caregiverSurvey->run();
   <div id="slide-2" class="course-slide"><div class="content">
     <h2 class="flowers"> <?php echo t('Alzheimer\'s disease'); ?> </h2>
     <hr />
+     
+     
+      <p  style="float:right; margin: 0px 15px;"><iframe width="400" height="225" src="http://www.youtube.com/embed/In1IJocVor8?rel=0" frameborder="0" allowfullscreen></iframe></p>   
+     
     <p> <?php echo t('Alzheimer\'s disease is an irreversible, progressive brain disease that slowly destroys memory, thinking skills, behavior, and
 					eventually even the ability to carry out the simplest tasks of daily living. Symptoms usually develop slowly, worsen over time, and first appear after age 60. Alzheimer\'s disease is the most common form and cause of dementia among older people. Alzheimer\'s has no current cure. The disease is named after Dr. Alois Alzheimer.'); ?> </p>
-    <ul id="quotes">
+                    
+   <!-- <ul id="quotes"> -->
+   
+   <ul>
       <li><?php echo t('Millions of Americans are living with Alzheimer\'s disease.'); ?> </li>
       <li><?php echo t('Alzheimer\'s is not a normal part of aging'); ?> </li>
     </ul>
-    <p> <b><?php echo t('What to look for if you suspect someone is suffering from Alzheimer\'s disease:'); ?></b> </p>
+    
+    <p> <b> <?php echo t('What to look for if you suspect someone is suffering from Alzheimer\'s disease:'); ?> </b> </p>
+    
     <ul>
       <li><?php echo t('Challenges in planning or solving problems'); ?></li>
       <li><?php echo t('Difficulty completing familiar tasks at home, at work or at leisure'); ?> </li>
     </ul>
-    <p> <b><?php echo t('Alzheimer\'s disease Facts and Figures 2012 (USA / English)'); ?></b> </p>
-    <p>
-      <iframe width="560" height="315" src="http://www.youtube.com/embed/In1IJocVor8?rel=0" 
-                frameborder="1" allowfullscreen class="tutorial-video"></iframe>
-    </p>
+    
+    <!-- 
+    <p><?php echo t('Alzheimer\'s disease Facts and Figures 2012 (USA / English)'); ?></p>
+    	-->
+    
+   
+   
     </div>
     <div class="buttons"><a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?> </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
   </div>
@@ -406,23 +417,28 @@ $caregiverSurvey->run();
 				href="javascript:;" class="button right"
 				onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo;</a> </div>
   </div>
-  
+
   <!--   slide 6 - closing here    -->
-  
-  <div id="slide-6" class="course-slide"><div class="content">
-    <h2 class="flowers"> <?php echo t('Conclusion'); ?> </h2>
-    <hr />
-    <p> <?php echo t('With such a profound impact on society, business, and potentially on your family, understanding
+
+  <div id="slide-6" class="course-slide">
+    <div class="content">
+      <h2 class="flowers"> <?php echo t('Conclusion'); ?> </h2>
+      <hr />
+      <p> <?php echo t('With such a profound impact on society, business, and potentially on your family, understanding
 					dementia and Alzheimer\'s disease is very important. After participating in this tutorial, you
 					should now be able to understand and explaing what Alzheimer\'s disease and dementia are.'); ?> </p>
-    <p> <?php echo t('Thank you for participating in this tutorial course! Now that you have a better idea on what to expect, your next step is to register and
+      <p> <?php echo t('Thank you for participating in this tutorial course! Now that you have a better idea on what to expect, your next step is to register and
 					begin participating in the various online courses. Please contact us if you have questions or need help.'); ?> </p>
-    <p> <b><?php echo t('Certificate of Completion (English)'); ?></b> </p>
-    <p> 
-    	<a href="/themes/onlinecourseportal/images/CourseCompletionCertificate.pdf" title="<?php echo t('Course Completion Certificate'); ?>" target="_blank"> 
-    		<img src="<?php echo $this->getImagesUrl('AcrobatReaderIcon.png'); ?>" alt="<?php echo t('Course Completion Certificate'); ?>" /> 
-    	</a> 
-    </p>
+      <br />
+      <br />
+      <br />
+      
+      <!-- Certificate of Completion here -->
+      
+      <p style="text-align:center; font-size:36px;"> <a href="<?php echo $this->getImagesUrl('CourseCompletionCertificate.pdf'); ?>" target="_blank" alt="Certificate of Completion"> <?php echo t('Certificate of Completion '); ?></a> </p>
+	  
+	  
+	 <p style="font-size:small; text-align:center;"> <?php echo t('(English)'); ?> </p>
     </div>
     <div class="buttons"><a href="#" onclick="parent.jQuery.fancybox.close();"
 				class="button left"> <?php echo t('Exit'); ?> </a> </div>
