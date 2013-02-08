@@ -6,9 +6,23 @@
 <div id="single-column">
   <h2 class="flowers"><?php echo t('Making Sense of Memory Loss (MSML) Online'); ?></h2>
   <hr />
-  <p><?php echo t('Developed by Mather LifeWays Institute on Aging and the Alzheimer\'s Association, evidence-based Making Sense of Memory Loss Online helps those who care for someone in the early, middle, or late to final stages of memory loss, whether or not that individual has received a diagnosis of Alzheimer\'s Disease or related dementia.'); ?></p>
-  <img src="<?php echo $this->getImagesUrl('image-grocery.png'); ?>" class="image-right" />
-  <p><?php echo t('Making Sense of Memory Loss Online helps family caregivers recognize and understand the needs and symptoms of the loved ones in the early, middle, and late stages of the disease.  In the early stages, family caregivers need help understanding memory loss, impaired judgment, changes in their relationships and roles, and coming to terms with the diagnosis.  In middle and late stages, family caregivers may need to deal with behavior changes, deteriorating physical condition, and decisions about long-term care'); ?></p>
-  <p><?php echo t('Objectives'); ?></p>
-  <p><?php echo t('Please check back later'); ?></p>
+  <p> <?php echo t('Developed by Mather LifeWays Institute on Aging and the Alzheimer\'s Association, 
+  			evidence-based Making Sense of Memory Loss Online helps those who care for someone in the early, middle, or late to final
+	stages of memory loss, whether or not that individual has received a diagnosis of Alzheimer\'s Disease or related dementia.'); ?> </p>
+  <p> <?php echo t('Objectives'); ?> </p>
+  <ul>
+    <li><?php echo t('Increase knowledge about the causes of memory loss and to promote a medical evaluation'); ?></li>
+    <li><?php echo t('Assist in adjusting their attitudes and behaviors in relation to the person with memory loss'); ?></li>
+    <li><?php echo t('Increase self-efficacy with respect to present and future caregiving tasks'); ?></li>
+    <li><?php echo t('Explore resources available for those with memory loss'); ?></li>
+    <li><?php echo t('Explore national data and statistics related to memory-loss'); ?></li>
+  </ul>
+  <h2><?php echo t('Course Lessons'); ?></h2>
+  <ul>
+    <li><?php echo t('Overview of Memory Loss'); ?></li>
+    <li><?php echo t('Communication Strategies'); ?></li>
+    <li><?php echo t('Making Decisions'); ?></li>
+    <li><?php echo t('Planning for the Future'); ?></li>
+    <li><?php echo t('Effective Ways of Coping'); ?></li>
+  </ul>
 </div>
