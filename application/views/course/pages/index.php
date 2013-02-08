@@ -60,7 +60,7 @@ description and objectives information in the database for each course -->
   <hr />
   <h3> <a href="<?php echo $this->createUrl('msmlonline'); ?>"> <?php echo t('Making Sense of Memory Loss (MSML) Online'); ?> </a> </h3>
   <p> <?php echo t('Developed by Mather LifeWays Institute on Aging and the Alzheimer\'s Association, 
-				evidence-based Making Sense of Memory Loss Online helps those who care for someone in the early, middle, or late to final
+				evidence-based Making Sense of Memory Loss helps those who care for someone in the early, middle, or late to final
 	stages of memory loss, whether or not that individual has received a diagnosis of Alzheimer\'s Disease or related dementia.'); ?> </p>
   <p> <?php echo t('Objectives'); ?> </p>
   <ul>
@@ -114,9 +114,8 @@ description and objectives information in the database for each course -->
     
   <h3> <a href="<?php echo $this->createUrl('#'); ?>"> <?php echo t('Making Sense of Memory Loss (MSML) '); ?> </a><?php echo t(' - Coming Summer 2013'); ?> </h3>
   
-  <p><?php echo t('Developed by Mather LifeWays Institute on Aging and the Alzheimer’s Association, evidence-based Making Sense of Memory Loss Online helps those who care for someone in the early, middle, or late to final stages of memory loss, whether or not that individual has received a diagnosis of Alzheimer\'s Disease or related dementia.'); ?></p>
+  <p><?php echo t('Making Sense of Memory Loss is a five-part training program for professionals interested in educating families and staff about caring for persons with memory loss in regards to its causes and treatments, as well as effective ways of coping now and in the future. In light of the growing trend toward earlier diagnosis of Alzheimer\'s Disease and related dementias, Making Sense of Memory Loss is for anyone who cares for someone in the early stages of memory loss, whether or not that the person has received a diagnosis.'); ?></p>
   
-  <p><?php echo t('Making Sense of Memory Loss Online helps family caregivers recognize and understand the needs and symptoms of the loved ones in the early, middle, and late stages of the disease.  In the early stages, family caregivers need help understanding memory loss, impaired judgment, changes in their relationships and roles, and coming to terms with the diagnosis.  In middle and late stages, family caregivers may need to deal with behavior changes, deteriorating physical condition, and decisions about long-term care.'); ?> </p>
   
     <p> <?php echo t('Objectives'); ?> </p>
   <ul>
