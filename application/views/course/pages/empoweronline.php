@@ -6,17 +6,24 @@
 <div id="single-column">
   <h2 class="flowers"><?php echo t('Empower Online'); ?></h2>
   <hr />
-  <p><?php echo t('Empower Online is an in-depth, five-lesson online course that focuses on self-care for the working caregiver that was developed by Mather LifeWays Institute on Aging with the support of the American Business Collaboration for Quality Dependent Care (ABC). The program focuses on managing responsibilities while caring for loved ones with chronic medical issues and includes communicating effectively with healthcare providers and locating additional caregiver resources.'); ?></p>
-  <img src="<?php echo $this->getImagesUrl('image-grocery.png'); ?>" class="image-right" />
-  <p><?php echo t('Empower Online provides working caregivers with the knowledge and tools to both manage responsibilities of caring for older relatives or friends and address their own physical, mental, and emotional health needs.'); ?></p>
-  <p><?php echo t('Empower Online focuses on the following key topics:'); ?></p>
+  <p> <?php echo t('Empower Online is an in-depth, five-lesson online course that focuses on self-care for the 
+  			working caregiver that was developed by Mather LifeWays Institute on Aging with the support of WFD Consulting. The program focuses on managing
+				responsibilities while caring for loved ones with chronic medical issues and includes communicating effectively with healthcare providers
+	and locating additional caregiver resources.'); ?> </p>
+  <p> <?php echo t('Objectives'); ?> </p>
   <ul>
-    <li><?php echo t('Improving and maintaining one’s own health through self-care'); ?></li>
-    <li><?php echo t('Effectively managing caregiver stress'); ?></li>
-    <li><?php echo t('Managing caregiver transitions as loved ones’ health needs change'); ?></li>
-    <li><?php echo t('Meeting caregiver responsibilities long distance'); ?></li>
-    <li><?php echo t('Making care-related decisions for loved ones'); ?></li>
+    <li><?php echo t('Explore and introduce self-care'); ?></li>
+    <li><?php echo t('Explore caregiver stress'); ?></li>
+    <li><?php echo t('Explore caregiving transitions'); ?></li>
+    <li><?php echo t('Explore and discuss the challenges associated with long-distance caregiving'); ?></li>
+    <li><?php echo t('Explore various decisions associated with the caregiver role'); ?></li>
   </ul>
-  <p><?php echo t('Objectives'); ?></p>
-  <p><?php echo t('Please check back later'); ?></p>
+  <h2><?php echo t('Course Lessons'); ?></h2>
+  <ul>
+    <li><?php echo t('Taking Care of You'); ?></li>
+    <li><?php echo t('Reducing Personal Stress'); ?></li>
+    <li><?php echo t('Communicating Effectively in Challenging Situations'); ?></li>
+    <li><?php echo t('Normal & Abnormal Aging Changes'); ?></li>
+    <li><?php echo t('Financial & Legal Issues'); ?></li>
+  </ul>
 </div>
