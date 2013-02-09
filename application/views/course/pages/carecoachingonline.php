@@ -47,6 +47,13 @@ $this->widget(
 			  'config' => $courseFancyboxConfig)
 );
 
+// Lesson 7 FancyBox
+$this->widget(
+		'ext.fancybox.EFancyBox',
+		array('id' => '.lesson-7',
+			  'config' => $courseFancyboxConfig)
+);
+
 ?>
 
 <div class="small-masthead" style="background-image: url(<?php echo $this->getImagesUrl('header-courses.png'); ?>);">
