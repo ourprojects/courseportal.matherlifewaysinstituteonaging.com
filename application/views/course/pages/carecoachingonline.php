@@ -530,8 +530,7 @@ $this->widget(
         </ul>
         <p><?php echo t('For this exercise, look back at your responses to the two activities in this module.  In the Self-Awareness Survey, you explored what is important to you in your life.  In the Principles of Success activity, you rated yourself against these principles. Based on these results, develop three statements of goals for yourself. Remember that goals should be stated in terms of nouns.  Goals also answer the question, “What do you want that’s really important to you?”'); ?></p>
       </div>
-      <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();"
-				class="button left"> <?php echo t('Complete Lesson'); ?> </a></div>
+      <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> <?php echo t('Complete Lesson'); ?> </a></div>
     </div>
   </div>
   
@@ -558,8 +557,7 @@ $this->widget(
         <p><?php echo t('CARE Coaching: Advocating'); ?><br />
           <?php echo t('The second component of CARE Coaching is advocating. You are on the same team as your parents and want to collaborate with them as a partner in their best future.'); ?></p>
       </div>
-      <div class="buttons"> <a href="javascript:;" class="button right"
-				onclick="$.fancybox.next();"><?php echo t('Start Course &raquo;'); ?> </a></div>
+      <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Start Course &raquo;'); ?> </a></div>
     </div>
     
     <!-- Lesson #2 - Understanding Needs and Preferences of Older Adults --> 
@@ -696,8 +694,7 @@ chicken for lunch today. So I think I’d like to try their fish!”'); ?></p>
         <p><?php echo t('You may need to reassure them that you are on the same team and you want to be a partner in their best future. Your goal is to collaborate with them to uphold their needs, beliefs, and values. It is not your intention to switch to a “parenting” role so as not to diminish their independence.'); ?></p>
         <p><?php echo t('Self-Coaching Hint: As reinforcement, you need to make sure your intentions are clear. You are not trying to subtly coerce them or manipulate them in some way. You intend to make every action and word worthy of trust. Practice holding that intention in your mind and heart, and it will make a difference in how you listen and influence what you say!'); ?></p>
       </div>
-      <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();"
-				class="button left"> <?php echo t('Complete Lesson'); ?> </a></div>
+      <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> <?php echo t('Complete Lesson'); ?> </a></div>
     </div>
   </div>
   
@@ -718,8 +715,7 @@ chicken for lunch today. So I think I’d like to try their fish!”'); ?></p>
         <p><?php echo t('Types of PHRs'); ?><br />
           <?php echo t('PHRs may be kept as hard copy on paper or electronically on one’s computer or on the Internet through a service provider. In considering what form may be most suitable, you should consider things like accessibility, convenience, and ease of updating.'); ?></p>
       </div>
-      <div class="buttons"> <a href="javascript:;" class="button right"
-				onclick="$.fancybox.next();"><?php echo t('Start Course &raquo;'); ?> </a></div>
+      <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Start Course &raquo;'); ?> </a></div>
     </div>
     
     <!-- Lesson #3 - Managing Health Information and Record Keeping --> 
@@ -901,8 +897,7 @@ chicken for lunch today. So I think I’d like to try their fish!”'); ?></p>
         <p><?php echo t('Asking the right questions is key to determine which PHR product is right for you and your family. This exercise is designed to help you determine exactly that. Review the previously described internet-based tools, My Family Health Profile and ProfileMD, and respond to the following questions.'); ?></p>
         <p>down laod acvitity button here</p>
       </div>
-      <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();"
-				class="button left"> <?php echo t('Complete Lesson'); ?> </a></div>
+      <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> <?php echo t('Complete Lesson'); ?> </a></div>
     </div>
   </div>
   <!-- Lesson #4 - Understanding the Health Care System and Utilization by Older Adults --> 
@@ -921,8 +916,7 @@ chicken for lunch today. So I think I’d like to try their fish!”'); ?></p>
         <p><?php echo t('Helping Older Parents Talk to Medical Professionals about Health Care'); ?><br />
           <?php echo t('Older adults may especially loath to question physicians because they were raised in a generation where doctors were considered to be above reproach. In planning for your discussions with your older parents and their physicians, remember that as their caregiver, you have an obligation to understand your parents’ medical care.'); ?></p>
       </div>
-      <div class="buttons"> <a href="javascript:;" class="button right"
-				onclick="$.fancybox.next();"><?php echo t('Start Course &raquo;'); ?> </a></div>
+      <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Start Course &raquo;'); ?> </a></div>
     </div>
     
     <!-- Lesson #4 - Understanding the Health Care System and Utilization by Older Adults --> 
@@ -1097,8 +1091,7 @@ chicken for lunch today. So I think I’d like to try their fish!”'); ?></p>
         </ul>
         <p>download button here </p>
       </div>
-      <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();"
-				class="button left"> <?php echo t('Complete Lesson'); ?></a></div>
+      <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> <?php echo t('Complete Lesson'); ?></a></div>
     </div>
   </div>
   <!-- Lesson #5 - Relocation and Transfers by Older Adults within the Health Care System --> 
@@ -1119,8 +1112,7 @@ chicken for lunch today. So I think I’d like to try their fish!”'); ?></p>
         <p><?php echo t('Understanding the Options: From Staying at Home to Retirement Living'); ?><br />
           <?php echo t('Major life changes are seldom easy particularly when it comes to considering moving out of one’s home with all its memories. Our aging population and growing consumer expectations for choice and quality in care for older adults have sparked an increasing number of options for older adults and their families. We will look at some of those choices in this next section.'); ?></p>
       </div>
-      <div class="buttons"> <a href="javascript:;" class="button right"
-				onclick="$.fancybox.next();"><?php echo t('Start Course &raquo;'); ?> </a></div>
+      <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Start Course &raquo;'); ?> </a></div>
     </div>
     
     <!-- Lesson #5 - Relocation and Transfers by Older Adults within the Health Care System --> 
@@ -1476,8 +1468,7 @@ are taking.'); ?></li>
           <li><a href="http://caregiveraction.org" target="_blank">National Family Caregivers Association</a> <?php echo t('supports family caregivers and offers education, information, and referrals.'); ?></li>
         </ul>
       </div>
-      <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();"
-				class="button left"> <?php echo t('Complete Lesson'); ?></a></div>
+      <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> <?php echo t('Complete Lesson'); ?></a></div>
     </div>
   </div>
   <!-- Lesson #6 - Promoting Safety of Older Relatives and Friends in Caring for Themselves --> 
@@ -1500,8 +1491,7 @@ are taking.'); ?></li>
         <p><?php echo t('Exercise – Assessing the Situation'); ?><br />
           <?php echo t('This exercise provides an opportunity for you and your family to consider key questions to explore potential for having older parents move in with you. As you read through each section, we include some CARE Coaching questions to bring out your best thinking about what would be important to you.'); ?></p>
       </div>
-      <div class="buttons"> <a href="javascript:;" class="button right"
-				onclick="$.fancybox.next();"><?php echo t('Start Course &raquo;'); ?></a></div>
+      <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Start Course &raquo;'); ?></a></div>
     </div>
     
     <!-- Lesson #6 - Promoting Safety of Older Relatives and Friends in Caring for Themselves --> 
@@ -1983,8 +1973,7 @@ are taking.'); ?></li>
         </p>
       </div>
     </div>
-    <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();"
-				class="button left"> <?php echo t('Complete Lesson'); ?></a></div>
+    <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> <?php echo t('Complete Lesson'); ?></a></div>
     
     <!-- Lesson #7 - Supporting Personal Choice and Preferences of Older Adults in Health and Care Decision Making --> 
     <!-- slide #1 -->
@@ -2008,8 +1997,7 @@ are taking.'); ?></li>
         <p><?php echo t('CARE Coaching Review: Talking wih Your Older Parents'); ?><br />
           <?php echo t('Let’s just take a moment to review the core components of CARE Coaching in relation to talking with your older parents.'); ?></p>
       </div>
-      <div class="buttons"> <a href="javascript:;" class="button right"
-				onclick="$.fancybox.next();"><?php echo t('Start Course &raquo;'); ?> </a></div>
+      <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Start Course &raquo;'); ?> </a></div>
     </div>
     
     <!-- Lesson #7 - Supporting Personal Choice and Preferences of Older Adults in Health and Care Decision Making --> 
@@ -2176,8 +2164,7 @@ are taking.'); ?></li>
         <p><?php echo t('Encourage'); ?></p>
         <p><?php echo t('As the final component of CARE Coaching, encouraging can take on many forms.  Showing appreciation for your parents, letting them know that you realize that they tried to do the best they could.  It is not uncommon for older parents to look back and say, “I wish I could have been a better parent” or “if only I could have given you more when you were growing up.”  That is a great opportunity for you to acknowledge the characteristics that they passed on to you and the valuable things you learned from them.'); ?></p>
       </div>
-      <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();"
-				class="button left"> <?php echo t('Complete Lesson'); ?></a></div>
+      <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> <?php echo t('Complete Lesson'); ?></a></div>
     </div>
   </div>
 </div>
