@@ -48,31 +48,29 @@ $this->widget(
 </div>
 
 <!-- Start sidebar here -->
+
 <div id="sidebar">
   <div class="box-sidebar one"> 
     
     <!-- sidebar #1 here -->
-    <h3><?php echo t('Working Caregivers in America'); ?></h3>
-    <img class="block-center" src="<?php echo $this->getImagesUrl('286x366_Grafix_69pc.png'); ?>" />
-    <p><?php echo t('69% of working caregivers report having to rearrange their work schedule, decrease their hours, or take an 
-	unpaid leave of absence to meet their care-giving responsibilities.'); ?></p>
+    
+    <h3>Alzheimer's Association: behaviors</h3>
+    <p><img class="block-center" src="<?php echo $this->getImagesUrl('alz.png'); ?>" /></p>
+    <p><a href="http://www.alz.org/national/documents/brochure_behaviors.pdf" target="_blank"><img class="block-center" src="<?php echo $this->getImagesUrl('cover_behaviors.jpg'); ?>" /> </a> </p>
+    <hr />
+    <p><?php echo t('How to respond when dementia causes unpredictable behaviors (English)'); ?></p>
   </div>
   
   <!-- sidebar #2 here -->
   
-  <div class="box-sidebar two">
-    <h3><?php echo t('Magnitude - Informal Caregivers'); ?></h3>
-    <p><a href="http://www.caregiver.org/caregiver/jsp/home.jsp" target="_blank">FAMILY CAREGIVER ALLIANCE</a><br />
-      <?php echo t('National Center on Caregiving (USA)'); ?></p>
-    <p class="title">65.7 million</p>
-    <p><?php echo t('caregivers make up 29% of the U.S. adult population providing care to someone who is ill, disabled or aged'); ?></p>
+  <div class="box-sidebar one">
+    <h3><?php echo t('Caregivers\' Resources'); ?></h3>
+    <p> <a href="http://www.usa.gov/Citizen/Topics/Health/caregivers.shtml#Government_Benefits" target="_blank"> <img class="block-center" src="<?php echo $this->getImagesUrl('usagov_logo.gif'); ?>" /> </a> </p>
     <hr />
-    <p class="title">52 million</p>
-    <p><?php echo t('caregivers provide care to adults (aged 18+) with a disability or illness'); ?></p>
-    <hr />
-    <p class="title">14.9 million</p>
-    <p><?php echo t('care for someone who has Alzheimer\'s disease or other dementia'); ?></p>
+    <p><?php echo t('Find a nursing home, assisted living, or hospice; check your eligibility for benefits; get resources for long-distance caregiving; review legal issues; and find support for caregivers.'); ?></p>
   </div>
+  
+<!-- need this final closing div for 'sidebar' -->
 </div>
 
 <!-- start main content here -->
@@ -207,6 +205,8 @@ $this->widget(
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?> </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
     </div>
+    
+    
     
     <!-- 2 divs needed, closes 'lesson' and closes 'course' --> 
   </div>
