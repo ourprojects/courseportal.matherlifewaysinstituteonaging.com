@@ -95,7 +95,7 @@ $this->widget(
 <p><?php echo t('CARE: Communicate, Advocate, Relate, Encourage'); ?></p>
 <p><?php echo t('--Balancing work and family caregiver responsibilities'); ?></p>
 <p><?php echo t('CARE Coaching Online provides working caregivers with essential tools, knowledge, and skills to effectively deal with the variety of issues arising from caring for their aging parents, relatives, or loved ones. Developed by Mather LifeWays Institute on Aging, CARE Coaching Online improves working caregivers abilities to communicate, advocate, relate, and encourage their older parents or loved ones in making future plans.'); ?></p>
-<h2><?php echo t('Objectives'); ?></h2>
+<p><?php echo t('Objectives'); ?></p>
 <ul>
   <li><?php echo t('Identify, understand, and support needs and preferences of older adults'); ?></li>
   <li><?php echo t('Manage health information and record keeping'); ?></li>
