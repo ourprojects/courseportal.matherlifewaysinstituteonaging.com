@@ -100,6 +100,11 @@ $this->widget(
 	  <a href="#lesson-1-slide-8" data-fancybox-group="lesson-1" class="hide lesson-1" /> 
 	  <a href="#lesson-1-slide-9" data-fancybox-group="lesson-1" class="hide lesson-1" />
 	  <a href="#lesson-1-slide-10" data-fancybox-group="lesson-1" class="hide lesson-1" /> 
+      <a href="#lesson-1-slide-11" data-fancybox-group="lesson-1" class="hide lesson-1" /> 
+      <a href="#lesson-1-slide-12" data-fancybox-group="lesson-1" class="hide lesson-1" /> 
+      <a href="#lesson-1-slide-13" data-fancybox-group="lesson-1" class="hide lesson-1" /> 
+      <a href="#lesson-1-slide-14" data-fancybox-group="lesson-1" class="hide lesson-1" /> 
+      <a href="#lesson-1-slide-15" data-fancybox-group="lesson-1" class="hide lesson-1" /> 
   </li>
   <li>
 	 	<a href="#lesson-2-slide-1" data-fancybox-group="lesson-2" class="teal lesson-2"><?php echo t('Reducing Personal Stress'); ?></a> 
@@ -1411,17 +1416,236 @@ $this->widget(
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?> </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
     </div>
     
-    Taking Time for Yourself
+       <!-- Lesson 1 Slide 8 -->
+       
+       <div id="lesson-1-slide-8" class="course-slide">
+      <div class="content">
+           <h2 class="flowers"><?php echo t('Managing Self-Care (continued)'); ?></h2>
+           <hr />
+           <p><?php echo t('Taking Time for Yourself'); ?></p>
+           <p><?php echo t('Do you value yourself and your personal needs? What do you do for personal renewal? Do you save some time for yourself out of each day? Do you take occasional extended breaks? Or are you so involved with caregiving tasks that you have little or no time for yourself?'); ?></p>
+           <p><?php echo t('What activities do you enjoy? What would you like to do that would give you a lift? When was the last time you gave yourself a treat?'); ?></p>
+           <p><?php echo t('Breaks in caregiving are a must. They are as important to health as diet, sleep, rest, and exercise. It is important not to lose sight of your personal needs and interests. Studies show that sacrificing yourself in the care of another and removing pleasurable events from your life can lead to emotional exhaustion, depression, and physical illness. You have a right-even a responsibility-to take some time away from caregiving.'); ?></p>
+           <p><?php echo t('Regular breaks from the tasks of caregiving are essential. Decide on the time, date, and activity-then follow through. Breaks do not have to be long to make a positive difference. It is important to plan some time for yourself in every day, even if that time is only for 15 minutes or half an hour. Most important is to do something that "fills your cup" and helps you to feel better and thrive. If you have difficulty taking breaks for yourself, consider taking them for your family member. Care receivers also benefit from caregivers getting breaks.'); ?></p>
+         </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?> </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
+    </div>
+    
+<!-- Lesson 1 Slide 9 -->
 
-Do you value yourself and your personal needs? What do you do for personal renewal? Do you save some time for yourself out of each day? Do you take occasional extended breaks? Or are you so involved with caregiving tasks that you have little or no time for yourself?
+<div id="lesson-1-slide-9" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('Setting Goals'); ?></h2>
+        <hr />
+        <p><?php echo t('An important tool in taking care of yourself is setting goals. A goal is something you would like to accomplish in the next three to six months: What would you like to do to take better care of yourself and to help yourself to thrive? This might be to get a break from caregiving for a week, get help with caregiving tasks, be able to walk three miles, or quit feeling guilty.'); ?></p>
+        <p><?php echo t('Goals often are difficult to accomplish because they may seem like dreams or they may be overwhelming. As a result, we may not even try to accomplish them or we may give up shortly after we get started. We will address this problem shortly.'); ?></p>
+        <p><?php echo t('For now, take a moment and write at least 3 goals on the Forum. Put an asterisk (*) next to the goal you would like to work on first. After identifying a goal, the first step is to brainstorm all of the different things you might do to reach your goal. Identify and write down all possible options on the Forum as a separate posting.'); ?></p>
+        <p><?php echo t('The second step is to evaluate the options you have identified. Which options seem like possibilities to you? It is important not to assume that an option is unworkable or does not exist until you have thoroughly investigated it or given it a try. Assumptions are major self-care enemies. Put an asterisk (*) next to two or three options you would like to try. Select one to try. The third step is to turn your option into a short-term plan, which we call making an action plan.'); ?></p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?> </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
+    </div>
 
-What activities do you enjoy? What would you like to do that would give you a lift? When was the last time you gave yourself a treat?
+    <!-- Lesson 1 Slide 10 -->
 
-Breaks in caregiving are a must. They are as important to health as diet, sleep, rest, and exercise. It's important not to lose sight of your personal needs and interests. Studies show that sacrificing yourself in the care of another and removing pleasurable events from your life can lead to emotional exhaustion, depression, and physical illness. You have a right-even a responsibility-to take some time away from caregiving.
-
-Regular breaks from the tasks of caregiving are essential. Decide on the time, date, and activity-then follow through. Breaks don't have to be long to make a positive difference. It's important to plan some time for yourself in every day, even if that time is only for 15 minutes or half an hour. Most important is to do something that "fills your cup" and helps you to feel better and thrive. If you have difficulty taking breaks for yourself, consider taking them for your family member. Care receivers also benefit from caregivers getting breaks.
+    <div id="lesson-1-slide-10" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('Making Action Plans'); ?></h2>
+        <hr />
+        <p><?php echo t('An action plan is a specific action that you are confident you can accomplish within the next week. It is an agreement or contract with yourself.'); ?></p>
+        <p><?php echo t('Action plans are one of your most important self-care tools. An action. plan is a step toward reaching your long-term goal. It is to be something you want to do. It is not to be something you feel you should do, have to do, or need to do. The intent of making an action plan is to help you to feel better and to take better care of yourself. Remember, an action plan is a "want to do." Here are the five steps for making an action plan: '); ?></p>
+        <ul>
+          <li><?php echo t('Decide what you want to do.'); ?></li>
+          <li><?php echo t('Make your plan behavior-specific.'); ?></li>
+          <li><?php echo t('Make a specific plan.'); ?></li>
+          <li><?php echo t('Determine your confidence level.'); ?></li>
+          <li><?php echo t('Write down your action plan.'); ?></li>
+        </ul>
+        <p><?php echo t('Decide What You Want To Do'); ?></p>
+        <p><?php echo t('Think about what is realistic for you to accomplish within the next week. It is important that an action plan is reachable; otherwise, you are likely to experience frustration. An action plan is to help you experience success-not frustration, increased stress, or failure. An action plan starts with the words, "I will ... " If you find yourself saying "I will try to ... ," "I have to ... ," or "I should ... ," then re-examine your action plan. It probably is not something that you truly want to do.'); ?></p>
+        <p><?php echo t('Make Your Plan Behavior-Specific'); ?></p>
+        <p><?php echo t('The more specific your action plan, the greater your chances of accomplishing it. For example, "taking better care of myself" is not a specific behavior. However, making an appointment for a physical check-up, walking three times a week, getting a massage on Thursday afternoon, or asking someone to stay with your family member for one morning are all specific behaviors. "I will relax" also is not a specific behavior; however, reading a book, listening to your favorite music, or puttering in the garden are specific behaviors.'); ?></p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?> </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
+    </div>
     
     
-<!-- 2 divs needed, closes 'lesson' and closes 'course' --> 
+      <!-- Lesson 1 Slide 11 -->
+      
+      <div id="lesson-1-slide-11" class="course-slide">
+      <div class="content">
+          <h2 class="flowers"><?php echo t('Making Action Plans (continued)'); ?></h2>
+          <hr />
+          <p><?php echo t('Make a Specific Plan'); ?></p>
+          <p><?php echo t('Making a specific plan is often difficult, yet it is the most important part of making an action plan. A specific plan answers these four questions:'); ?></p>
+          <ol>
+          <li><?php echo t('What are you going to do? - Examples: I will read (book name) for pleasure. Or, I will walk.'); ?></li>
+          <li><?php echo t('How much will you do? - Examples: Will you read one chapter or will you read for a half hour? Will you walk two blocks or for 20 minutes?'); ?></li>
+          <li><?php echo t('When will you do this? Examples: Will you read the first thing in the morning when you awaken, before you go to bed, when the care receiver is sleeping, or ... ? If your plan is to walk, when during the day will you do it?'); ?></li>
+          <li><?php echo t('How often will you do this activity? Example: Three times a week on Monday, Wednesday, and Friday.'); ?></li>
+        </ol>
+          <p><?php echo t('A common mistake is to make an action plan that is unreachable within the time frame. For example, if you plan to do something every day, you might fail. Caregiving, and life in general, has its surprises. Although well-intentioned, it is often not possible to do something every day. It is better to plan to do something once or twice a week and exceed your action plan than to plan to do something every day and fail because you only did it six days, rather than seven. Remember, an action plan is meant to help you to take better care of yourself and to experience success. The last thing you need is additional pressure, disappointment, and stress.'); ?></p>
+          <p><?php echo t('Here are two recommendations for writing an action plan that can help you achieve success.'); ?></p>
+          <p><?php echo t('Start where you are or start slowly. If there is a book you have been wanting to read, but just have not found the time, it may not be realistic to expect to read the entire book in the next week. Instead, try reading for a half hour twice during the week If you have not been physically active, it may be unrealistic to make an action plan· to start walking three miles. It is better to make your action plan for something that you believe you can accomplish. For example, make your plan for walking three blocks or a half mile, rather than three miles.'); ?></p>
+          <p><?php echo t('Give yourself time off. We all have days when we do not feel like doing anything. That is the advantage of saying you will do something three days a week, rather than every day. That way, if you do not feel like doing something on one day, or something develops that prevents you from doing it, you can still achieve your action plan.'); ?></p>
+        </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
+    </div>
+
+      <!-- Lesson 1 Slide 12 -->
+
+      <div id="lesson-1-slide-12" class="course-slide">
+      <div class="content">
+          <h2 class="flowers"><?php echo t('Making Action Plans (continued)'); ?></h2>
+          <hr />
+          <p><?php echo t('Determine Your Confidence Level'); ?></p>
+          <p><?php echo t('Once you have made your action plan, ask yourself the following question: On a scale of 0 to 10, with 0 being not at all confident and 10 being totally confident, how confident am I that I can complete my action plan? If your answer is 7 or above, your action plan is probably realistic and reachable. However, if your answer is 6 or below, it is important to take another look at your action plan. Something probably needs to be adjusted.'); ?></p>
+          <p><?php echo t('Ask yourself: What makes me uncertain about accomplishing my action plan? What problems do I foresee? Then, see if you either find a solution to the problems you identified or change your action plan to a new one in which you feel greater confidence.'); ?></p>
+          <p><?php echo t('Write Down Your Action Plan'); ?></p>
+          <p><?php echo t('Once you are satisfied with your action plan, write it down. Putting an action plan in writing helps us to remember, keep track of, and accomplish the agreement we have made with ourselves. Keep track of how you are doing. Write down the problems you encounter in carrying out your action plan. Check off activities as you accomplish them. If you made an adjustment in your action plan, make a note of what you did.'); ?></p>
+          <p><?php echo t('At the end of the week, review your action plan. Ask yourself, "Am l nearer to accomplishing my goal?" "How do I feel about what I did?" What obstacles or problems, if any, did I encounter?" Taking stock is important. If you are having problems, this is the time to seek solutions.'); ?></p>
+        </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
+    </div>
+    
+          <!-- Lesson 1 Slide 13 -->
+          
+          <div id="lesson-1-slide-13" class="course-slide">
+      <div class="content">
+              <h2 class="flowers"><?php echo t('Problem-Solving: A Solution-Seeking Approach'); ?></h2>
+              <hr />
+              <p><?php echo t('Sometimes you may find that your action plan is not workable. You may encounter unusual circumstances that week and need to give the plan a try for at least another week or you may need to make adjustments in your original plan. The following solution seeking approach can help you identify solutions to problems.'); ?></p>
+              <ul>
+          <li><?php echo t('Clearly identify the problem. This is the first and most important step in the solution-seeking approach. It also can be the most difficult step.'); ?></li>
+          <li><?php echo t('List ideas to solve the problem. Family, friends, and others may be helpful in giving ideas. When you ask for ideas, just listen to each suggestion. It is best not to respond as to why an idea is or is not likely to work. Just focus on getting the ideas.'); ?></li>
+          <li><?php echo t('Select one to try. When trying a new idea, give it a fair trial before deciding that it will not work.'); ?></li>
+          <li><?php echo t('Assess the results. Ask yourself, "How well did what I chose work?" If all went well, congratulate yourself for finding a solution to the identified problem. If the first idea did not work, try another idea. Sometimes an idea just needs fine-tuning. It is important not to give up on an idea just because it did not work the first time. If you have difficulty finding a solution that works, utilize other resources. Share your problem with family, friends, and professionals and ask them for possible ideas. If you still find that suggested solutions do not work, you may need to accept that the problem is not solvable right now.'); ?></li>
+        </ul>
+              <p><?php echo t('Remember, just because there does not seem to be a workable solution right now does not mean that a problem can not be solved later, or that other problems can not be solved in the same way. It may be helpful to go back to the first step and consider if the problem needs to be redefined. For example, a caregiver had thought that her problem was "I am tired all of the time." However, the real problem was the caregiver\'s beliefs that "No one can care for John like I can," and "I have to do everything myself." As a result of these beliefs, the caregiver was doing everything herself and getting worn out. When she redefined the problem and focused on changing her beliefs and view of the caregiving situation, she found a workable solution. Sometimes, too, a problem may be easier to work on if you break it down into smaller problems.'); ?></p>
+              <p><?php echo t('Most of the time if you follow these steps, you will find a solution that solves the problem. It is important to avoid making the mistake of jumping from step l to step 7 and thinking "nothing can be done."'); ?></p>
+            </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
+    </div>
+    
+     <!-- Lesson 1 Slide 14 -->
+     
+     <div id="lesson-1-slide-14" class="course-slide">
+      <div class="content">
+         <h2 class="flowers"><?php echo t('Reward Yourself'); ?></h2>
+         <hr />
+         <p><?php echo t('Accomplishing action plans is often a reward in itself. However, it is also important to find healthy pleasures that add enjoyment to your life. Rewards do not have to be fancy or expensive or take a lot of time. One caregiver; for example, regularly goes to a movie or a play as a gift to herself from her husband. She said:'); ?></p>
+         <p><?php echo t('When my husband was well, he would take me out Friday nights to a movie or a play at least twice a month. Because of his medical condition, he is no longer able to do so. Now a friend and I go to a movie or a play at least once a month. I consider this is a treat that my husband is still giving to me.'); ?></p>
+         <p><?php echo t('Another caregiver said:'); ?></p>
+         <p><?php echo t('Before my wife\'s illness, I would go golfing with my buddies on Saturday morning. When Carmela needed more care, I quit golfing. I now treat myself to Saturday golfing, while my daughter or a friend visits with Carmela. This gives me something to look forward to each week and I feel more alive when I return home. I am also finding I am more patient with Carmela. My daughter says I am always happier and calmer when I return home. So, I look at Saturday golfing as my treat not only to me, but also to Carmela.'); ?></p>
+</div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
+</div>
+
+     <!-- Lesson 1 Slide 15 -->
+
+     <div id="lesson-1-slide-15" class="course-slide">
+      <div class="content">
+         <h2 class="flowers"><?php echo t('My Action Plan'); ?></h2>
+         <hr />
+         <p><?php echo t('In review, a caregiver who practices selfcare does the following:'); ?></p>
+         <ol>
+          <li><?php echo t('Sets goals.'); ?></li>
+          <li><?php echo t('Identifies a variety of options for reaching a goal'); ?></li>
+          <li><?php echo t('Makes an action plan toward accomplishing the goal.'); ?></li>
+          <li><?php echo t('Carries out the action plan.'); ?></li>
+          <li><?php echo t('Assesses how well the action plan is working.'); ?></li>
+          <li><?php echo t('Makes adjustments, as necessary, in the action plan.'); ?></li>
+          <li><?php echo t('Rewards himself or herself.'); ?></li>
+        </ol>
+         <p><?php echo t('Not all goals are achievable. Sometimes we must accept that what we want to do is not possible at this time, and we must let go of the idea. Be realistic about goals and do not dwell on what can not be done.'); ?></p>
+         <p><?php echo t('Consider what is likely to happen to the caregiver who is driven by a goal to make her mother happy. Given her mother\'s personality, this goal may be completely unachievable. Such a goal creates a heavy burden and a caregiver is not likely to achieve it. However, an achievable goal might be to provide a pleasurable activity for her mother at least once a week perhaps taking her to get her hair done, visiting a friend, watching a comedy on television, or working together on a project her mother enjoys.'); ?></p>
+         <p><?php echo t('Remember, what is important in caregiving is not just to survive, but to thrive!'); ?></p>
+         <p><?php echo t('Action Plan Template'); ?> BUTTON HERE</p>
+       </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
+    </div>
+    
+    <!-- need this final div here to close lesson-1 -->
+    </div>
+    
+    
+    <!-- Lesson 2 Slide 1 -->
+    
+    <div id="lesson-2">
+    <div id="lesson-2-slide-1" class="course-slide">
+        <div class="content">
+        <h2 class="flowers"><?php echo t('Reducing Personal Stress'); ?></h2>
+        <hr />
+        <p><?php echo t('This lesson contains two main sections:'); ?></p>
+        <ul>
+            <li><?php echo t('The Stress of Caregiving'); ?></li>
+            <li><?php echo t('Steps to Maintain Health & Avoid Stress'); ?></li>
+          </ul>
+        <p><?php echo t('This lesson explores the stress of caregiving. It will help you identify and understand your particular stressors, challenges, and strengths. You can then plan strategies that help you cope, change, and reduce stress. A basic premise of this chapter is that each of us has a reservoir of strength. The challenge is to identify our strengths build on them.'); ?></p>
+      </div>
+        <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Start Course &raquo;'); ?></a></div>
+      </div>
+      
+       <!-- Lesson 2 Slide 2 -->
+      
+      
+      
+    
+    <!-- need this final div here to close lesson-2 --> 
   </div>
+      
+    <!-- Lesson 3 Slide 1 -->
+    
+       <div id="lesson-3">
+    <div id="lesson-3-slide-1" class="course-slide">
+        <div class="content">
+        <h2 class="flowers"><?php echo t(''); ?></h2>
+        <hr />
+        <p><?php echo t(''); ?></p>
+      </div>
+        <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Start Course &raquo;'); ?></a></div>
+      </div>
+      
+      
+          <!-- need this final div here to close lesson-3 --> 
+  </div>
+    
+    
+    <!-- Lesson 4 Slide 1 -->
+    
+    
+       <div id="lesson-4">
+    <div id="lesson-4-slide-1" class="course-slide">
+        <div class="content">
+        <h2 class="flowers"><?php echo t(''); ?></h2>
+        <hr />
+        <p><?php echo t(''); ?></p>
+      </div>
+        <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Start Course &raquo;'); ?></a></div>
+      </div>
+    
+    
+        <!-- need this final div here to close lesson-4 --> 
+  </div>
+    
+    
+    <!-- Lesson 5 Slide 1 -->
+    
+    
+       <div id="lesson-5">
+    <div id="lesson-5-slide-1" class="course-slide">
+        <div class="content">
+        <h2 class="flowers"><?php echo t(''); ?></h2>
+        <hr />
+        <p><?php echo t(''); ?></p>
+      </div>
+        <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Start Course &raquo;'); ?></a></div>
+      </div>
+      
+      
+    
+    <!-- need this final div here to close lesson-5 --> 
+    </div>
+
+<!-- need this final div here to close the course -->
+
 </div>
