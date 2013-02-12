@@ -1718,7 +1718,7 @@ $this->widget(
           <li><?php echo t('Identify what you can and cannot change.'); ?></li>
           <li><?php echo t('Take action to manage your stress.'); ?></li>
         </ol>
-        <p><?php echo t'(Each of these steps will be discussed in detail.'); ?></p>
+        <p><?php echo t('Each of these steps will be discussed in detail.'); ?></p>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
     </div>
@@ -1908,7 +1908,7 @@ $this->widget(
         <p><?php echo t('When making changes it is necessary, but not always easy; to accept reality. We often deny things that hurt, and that can keep us from seeing a situation as it really is. Jane heard the doctor tell Joe that he had a serious illness. He also told Joe he would need more rest and help with certain daily activities. Still, Jane found herself feeling annoyed when Joe took frequent naps, especially since she was taking on more responsibility for managing things at home. It took time for Jane to stop denying, and start accepting, the full impact of the disease. It was then that she was able to see realistically what could and could not be changed.'); ?></p>
         <p><?php echo t('Jane is coping in a more adaptive way. However, Joe\'s mother denied the seriousness of the disease long after Jane came to terms with it. Family members may take different lengths of time to accept reality, which can add to the stress of caregiving.'); ?></p>
         <p><?php echo t('Educate yourself about the care receiver\'s disease'); ?></p>
-        <p><?php echo t('You will be better able to identify what you can and cannot change when you understand the disease. For example, without knowledge about the communication abilities of someone with Alzheimer\'s disease, you may try to reason with the person or expect him to tell someone something you consider easy to remember. This will probably frustrate both of you. There are many sources of information about specific diseases, including your personal physician, medical libraries, and associations related to specific diseases, such as Alzheimer's and Parkinson's disease. If you have access to a computer that is linked to the Internet, you can find a wealth of current information on diseases and disease-related associations.'); ?></p>
+        <p><?php echo t('You will be better able to identify what you can and cannot change when you understand the disease. For example, without knowledge about the communication abilities of someone with Alzheimer\'s disease, you may try to reason with the person or expect him to tell someone something you consider easy to remember. This will probably frustrate both of you. There are many sources of information about specific diseases, including your personal physician, medical libraries, and associations related to specific diseases, such as Alzheimer\'s and Parkinson\'s disease. If you have access to a computer that is linked to the Internet, you can find a wealth of current information on diseases and disease-related associations.'); ?></p>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
     </div>
@@ -1936,7 +1936,7 @@ $this->widget(
         <hr />
         <p><?php echo t('Let go of what cannot be changed'); ?></p>
         <p><?php echo t('It is natural to want to hold on to things as they were. But letting go of what you cannot change is accepting the situation as it is. It releases you from the need to control what you cannot change. Letting go is a way to cooperate with the inevitable. It releases new energy for accepting reality and seeing new possibilities. Sam is a prime example of someone who is learning to let go.'); ?></p>
-        <p><?php echo t('Sam had always been an intense athletic competitor, and sports had been the driving force in his life. At age 45 he had a slight stroke which left him mildly affected. Sam's problem wasn't that he had a stroke; the problem was that he could not let go of wishing that he had not had one. He continuously wanted things to be as they had been. This made him feel angry and frustrated. Fortunately, Sam reached a point of wanting to learn to live with the stroke and to let go of wanting life to be as it had been before.'); ?></p>
+        <p><?php echo t('Sam had always been an intense athletic competitor, and sports had been the driving force in his life. At age 45 he had a slight stroke which left him mildly affected. Sam\'s problem wasn\'t that he had a stroke; the problem was that he could not let go of wishing that he had not had one. He continuously wanted things to be as they had been. This made him feel angry and frustrated. Fortunately, Sam reached a point of wanting to learn to live with the stroke and to let go of wanting life to be as it had been before.'); ?></p>
         <p><?php echo t('Sam was unable to live in the present until he let go of his desire for things to be as they were. The "if onlys" and "what ifs" were a source of suffering. When Sam let go, he learned to live with the stroke and made changes that helped him develop a satisfying life. What Sam learned also applies to caregivers, as shown in the case of Marsha and Bud.'); ?></p>
         <p><?php echo t('Marsha was the caregiver for her husband, Bud, who had Parkinson\'s disease. Buds condition worsened and he and Marsha were unable to do any of the things they had done in the past. Marsha continually wanted things to be the way they had been. "If only" became her constant thought: "If only Bud could dress himself," "If only we could go dancing like we used to," "If only Bud had more energy," "If only he could still drive us places." Marsha\'s unhappiness caused a strain in their relationship. It was only when she and Bud were having a good time playing cards with friends one day that she realized how much valuable time she was wasting by constantly wanting things to be different. She began to let go of "if only" and to accept "what is." In letting go, she found acceptance and peace of mind.'); ?></p>
         <p><?php echo t('As you reflect on your challenges as a caregiver, consider these questions. What can I change? What must I accept? What can I improve?'); ?></p>
@@ -1968,7 +1968,7 @@ $this->widget(
           <li><?php echo t('A caregiver who puts the situation into a religious or philosophical framework, such as "This is happening because God is angry with me" versus taking the view that "God is giving me an opportunity to learn and grow."'); ?></li>
         </ul>
         <p><?php echo t('People who are able to reframe difficult situations generally feel less burden and more in control. Feeling a greater degree of control often leads to acting in control. Clara is a good example. Clara had difficulty taking breaks from caregiving. Before becoming a caregiver, she had worked in a demanding position and had realized the importance of taking weekends off and vacations to refresh herself and cope better with work demands. When she started to view caregiving as a job, it made a difference in how she viewed breaks in caregiving. They became not only more acceptable, but a necessity.'); ?></p>
-        <p><?php echo t('Julie also found that reframing a difficult situation reduced her stress and helped her act in new ways. Julie felt resentful and burdened with the increasing demands of caring for her mother. She had no help, feeling that as a good, dutiful daughter she should do it all. A social worker told her about available resources and suggested she think of herself as a personal care manager as a way to find help in caregiving. Julie gained a sense of control over the situation once she realized she didn't have to provide all of the care herself, but could oversee her mother's care.'); ?></p>
+        <p><?php echo t('Julie also found that reframing a difficult situation reduced her stress and helped her act in new ways. Julie felt resentful and burdened with the increasing demands of caring for her mother. She had no help, feeling that as a good, dutiful daughter she should do it all. A social worker told her about available resources and suggested she think of herself as a personal care manager as a way to find help in caregiving. Julie gained a sense of control over the situation once she realized she didn\'t have to provide all of the care herself, but could oversee her mother\'s care.'); ?></p>
         <p><?php echo t('As a caregiver, you may feel overwhelmed and burned out, especially if you are assuming responsibility for most of the caregiving. Changing your perception of your role from a caregiver to care manager is a way of reframing. As a care manager you still get the job done, but you do not have to provide all the care yourself. The role of care manager means that you:'); ?></p>
         <ul>
           <li><?php echo t('coordinate and supervise another\'s care needs. This includes using available support.'); ?></li>
@@ -2004,7 +2004,7 @@ $this->widget(
         </ul>
         <p><?php echo t('You want your self-talk to work for you, not against you. If your self-talk is negative or unhelpful, challenge it. Learn to change the negative things you say to yourself into positive statements, such as affirmations.'); ?></p>
         <p>
-          <?php ecoh t('Affirmations are positive, supportive statements that counteract the effects of negative thinking. When positive statements are repeated several times a day, they begin to replace negative thoughts. This helps to change one\'s attitude, promote relaxation, and reduce stress. Karen\'s story is an example of changing negative self-talk to positive self-talk with the use of affirmations:'); ?>
+          <?php echo t('Affirmations are positive, supportive statements that counteract the effects of negative thinking. When positive statements are repeated several times a day, they begin to replace negative thoughts. This helps to change one\'s attitude, promote relaxation, and reduce stress. Karen\'s story is an example of changing negative self-talk to positive self-talk with the use of affirmations:'); ?>
         </p>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
@@ -2014,7 +2014,7 @@ $this->widget(
       <div class="content">
         <h2 class="flowers"><?php echo t('Steps to Maintain Health & Avoid Stress (continued)'); ?></h2>
         <hr />
-        <p><?php echo t('Karen felt angry and discouraged when her mother did not eat the tasty, nutritious meals she prepared for her. She didn't accept the fact that her mother\'s lack of appetite was caused by the illness. Karen constantly told herself, "No matter what I cook, it is never good enough for mother."'); ?></p>
+        <p><?php echo t('Karen felt angry and discouraged when her mother did not eat the tasty, nutritious meals she prepared for her. She didn\'t accept the fact that her mother\'s lack of appetite was caused by the illness. Karen constantly told herself, "No matter what I cook, it is never good enough for mother."'); ?></p>
         <p><?php echo t('This is an example of negative self-talk. Karen became aware that she often thought she was not doing good enough, especially in caring for her mother. These thoughts made her feel like a failure. With determination, patience, and practice, you can change your self-talk from negative to positive. The following steps lead to change:'); ?></p>
         <ul>
           <li><?php echo t('Identify your negative thoughts. Listen to what you say to yourself, especially during difficult times.'); ?></li>
@@ -2267,7 +2267,7 @@ $this->widget(
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
     </div>
     <!-- Lesson 2 Slide 22 -->
-    <div id="lesson-2-slide-22" class="course-slide"> div class="content">
+    <div id="lesson-2-slide-22" class="course-slide"> <div class="content">
       <h2 class="flowers"><?php echo t('Steps to Maintain Health & Avoid Stress (continued)'); ?></h2>
       <hr />
       <p><?php echo t('Developing action plans -'); ?></p>
@@ -2282,7 +2282,7 @@ $this->widget(
     <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
   </div>
   <!-- Lesson 2 Slide 23 -->
-  <div id="lesson-2-slide-23" class="course-slide"> div class="content">
+  <div id="lesson-2-slide-23" class="course-slide"> <div class="content">
     <h2 class="flowers"><?php echo t('Steps to Maintain Health & Avoid Stress (continued)'); ?></h2>
     <hr />
     <p><?php echo t('REFRAMING YOUR STRESS'); ?></p>
@@ -2305,12 +2305,12 @@ $this->widget(
 
 <!-- Lesson 2 Slide 24 -->
 
-<div id="lesson-2-slide-24" class="course-slide"> div class="content">
+<div id="lesson-2-slide-24" class="course-slide"> <div class="content">
   <h2 class="flowers"><?php echo t('Steps to Maintain Health & Avoid Stress (continued)'); ?></h2>
   <hr />
   <p><?php echo t('Like Frankl, it is hopeful to believe that meaning can be found in difficult and painful experiences. Hope and meaning play a large part in the following story of Margaret and Tim.'); ?></p>
   <p><?php echo t('Tim\'s frequent visits to his elderly mother, Margaret, in the nursing home, were meaningful to him. Years ago, when Margaret was healthy; she shared some of her beliefs with Tim. She had told him, "If there comes a time when I am not able to recognize you because of Alzheimer\'s disease, or for any other reason, I want you to know what I believe to be true. I believe that my true essence, my spirit, will always be present, even though my physical body and mind may not be the person you remember. Please know that I am with you. We may not be able to talk with each other as we did in the past, but if you play my favorite music, read poetry, hold my hand, or just be with me, I will feel your love and you will feel mine for you."'); ?></p>
-  <p><?php echo t('In sharing her beliefs, Margaret gave Tim the gift of finding meaning in what can be a most difficult and challenging situation. Meaning is all around us. It is the "stuff'' of life. Meaning is personal. It is up to each persc1n to find his or her own meaning.'); ?></p>
+  <p><?php echo t('In sharing her beliefs, Margaret gave Tim the gift of finding meaning in what can be a most difficult and challenging situation. Meaning is all around us. It is the "stuff" of life. Meaning is personal. It is up to each persc1n to find his or her own meaning.'); ?></p>
   <p><?php echo t('SUMMARY'); ?></p>
   <p><?php echo t('Are you better acquainted with your stress? Have you identified what you can do to reduce at least one stressor? Do you realize the potential strength in considering your needs and in practicing self-care? Can you find meaning in difficult experiences? Have you learned that often the compassion and care you give to another comes back to you as a gift of meaning?'); ?></p>
   <p><?php echo t('Remember that your response to a situation will affect the situation itself. As much as possible, make it be what you want it to be.'); ?></p>
