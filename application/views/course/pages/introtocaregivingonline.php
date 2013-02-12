@@ -99,6 +99,8 @@ $this->widget(
     <li><?php echo t('Explore the impact on businesses and the economy'); ?></li>
     <li><?php echo t('Explore and discuss the future of caregiving'); ?></li>
   </ul>
+  
+   <p id="surveynotify"><?php echo t('Please complete the PRE-COURSE SURVEY before participating. It can be accessed via the PROFILE page.'); ?></p>
 
 <h2><?php echo t('Course Lessons'); ?></h2> 
   
@@ -162,7 +164,10 @@ $this->widget(
 	<a href="#lesson-5-slide-7" data-fancybox-group="lesson-5" class="hide lesson-5" /> 
    </li>
 </ul>
+
 </div>
+
+
 
 <!-- Lesson 1 - slide #1 -->
 
@@ -946,6 +951,8 @@ $this->widget(
       <p><?php echo t('Two-way video connections adapted for the elder’s level of physical and cognitive ability can engage the elder in social and cognitive stimulation. Intelligent assistive technology such as activity cueing, autominders, televideo monitoring or a ComputerLinks network could assist in remote wellness checking, providing information and decision-support, and address distance caregiving needs to assess changes in health or functional status. Telecommunication innovations could bridge some of the socialization and communication gaps imposed by distance and assist the caregiver in assessing and enhancing the elder’s functional status. The use of family portraits, ambient displays, and customized two-way video and computers offer methods to connect and represent a way of feeling presence across distance.'); ?></p>
       <p><?php echo t('Using technology to communicate and interact with elders offers avenues for novel approaches to care and opens new areas of exploration. The challenge to using advanced technology-based interventions is to match these technological capabilities to actual caregiving needs, understand how people prefer to interact with technology, and learn how it fits into caregivers’ and elders’ lives without introducing new burdens associated with technology use.'); ?></p>
       <p><?php echo t('How has technology changed your caregiving situation? What web-based tools do you use to communicate with others, besides e-mail?'); ?></p>
+      <p><?php echo t('THANK YOU for participating and completing this course. Please complete the POST-COURSE SURVEY once you have completed the final lesson. It can be accessed via the PROFILE page.'); ?></p>
+
     </div>
     <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> <?php echo t('Complete Lesson'); ?></a></div>
   </div>
