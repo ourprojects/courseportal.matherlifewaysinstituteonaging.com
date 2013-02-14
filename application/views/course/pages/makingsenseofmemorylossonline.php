@@ -283,4 +283,15 @@ $this->widget(
     </div>
   </div>
 </div>
+
+<!-- final div needed to close course -->
+
+</div>
+
+<!-- white box under course lesson links, had to re-add div column-wide here again, need better coding for this situation -->
+<div class="column-wide">
+<div class="box-white">
+  <h2 class="flowers"> <?php echo t('Resources'); ?> </h2>
+  <p>resource list here</p>
+</div>
 </div>
