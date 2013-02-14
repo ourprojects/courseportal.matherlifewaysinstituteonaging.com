@@ -69,8 +69,6 @@ $this->widget(
     <p><a href="http://www.nia.nih.gov/alzheimers/publication/2011-2012-alzheimers-disease-progress-report" target="_blank"><img class="block-center" src="<?php echo $this->getImagesUrl('adpr-front.png'); ?>" /></a></p>
     <p><?php echo t('A summary of Alzheimer\'s disease research, infrastructure, and funding supported by the NIH.'); ?> </p>
   </div>
-  
-  
 </div>
 
 
@@ -153,11 +151,14 @@ $this->widget(
    </li>
 </ul>
 </div>
+
+
+
 <div id="course" class="hide">
   <div id="lesson-1">
     <div id="lesson-1-slide-1" class="course-slide">
       <div class="content">
-        <h2 class="flowers"><?php echo t('Defining, Describing & Understanding Caregiving'); ?></h2>
+        <h2 class="flowers"><?php echo t('Overview of Memory Loss and Related Symptoms'); ?></h2>
         <p><?php echo t('Please check back later.'); ?></p>
       </div>
     </div>
