@@ -292,6 +292,8 @@ $this->widget(
 <div class="column-wide">
 <div class="box-white">
   <h2 class="flowers"> <?php echo t('Resources'); ?> </h2>
-  <p>resource list here</p>
+ <p><?php echo t('Please use these listed resources in the completion of this online course. Pleaes contact your instructor or the program director if you have additional resources you would like to see added here.'); ?></p>
+ 
+ <p><?php echo t('Under Construction'); ?></p>
 </div>
 </div>
