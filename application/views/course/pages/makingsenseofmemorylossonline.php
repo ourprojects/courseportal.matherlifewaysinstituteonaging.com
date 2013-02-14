@@ -165,69 +165,122 @@ $this->widget(
 <!-- start course content here -->
 
 <div id="course" class="hide">
-  <div id="lesson-1">
-    <div id="lesson-1-slide-1" class="course-slide">
-      <div class="content">
-        <h2 class="flowers"><?php echo t('Overview of Memory Loss and Related Symptoms'); ?></h2>
-        <hr />
-        <p><?php echo t('We are delighted that you are interested in MSML Online. This five-lesson course is intended to help family members of someone in the early stages of memory loss to meet the challenges they face now and in the future. Research evaluation has shown that participation in this course increases family members’ knowledge and improves coping skills with respect to their relatives’ memory and behavior changes.'); ?></p>
-        <p><?php echo t('Lesson Objectives'); ?></p>
-        <ul>
-          <li><?php echo t('To introduce participants and give an overview of the course.');?></li>
-          <li><?php echo t('To explain major medical causes of memory loss.'); ?></li>
-          <li><?php echo t('To ensure that a medical evaluation is done to explore reasons for memory loss.'); ?></li>
-          <li><?php echo t('To explain symptoms of Alzheimer’s disease and related dementias.'); ?></li>
-          <li><?php echo t('To describe current and proposed medical treatments.'); ?></li>
-          <li><?php echo t('To describe research efforts to treat or prevent memory loss.'); ?></li>
-        </ul>
-        <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Start Course &raquo;'); ?></a></div>
-      </div>
+<div id="lesson-1">
+  <div id="lesson-1-slide-1" class="course-slide">
+    <div class="content">
+      <h2 class="flowers"><?php echo t('Overview of Memory Loss and Related Symptoms'); ?></h2>
+      <hr />
+      <p><?php echo t('We are delighted that you are interested in MSML Online. This five-lesson course is intended to help family members of someone in the early stages of memory loss to meet the challenges they face now and in the future. Research evaluation has shown that participation in this course increases family members’ knowledge and improves coping skills with respect to their relatives’ memory and behavior changes.'); ?></p>
+      <p><?php echo t('Lesson Objectives:'); ?></p>
+      <ul>
+        <li><?php echo t('To introduce participants and give an overview of the course.');?></li>
+        <li><?php echo t('To explain major medical causes of memory loss.'); ?></li>
+        <li><?php echo t('To ensure that a medical evaluation is done to explore reasons for memory loss.'); ?></li>
+        <li><?php echo t('To explain symptoms of Alzheimer’s disease and related dementias.'); ?></li>
+        <li><?php echo t('To describe current and proposed medical treatments.'); ?></li>
+        <li><?php echo t('To describe research efforts to treat or prevent memory loss.'); ?></li>
+      </ul>
+      <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Start Course &raquo;'); ?></a></div>
     </div>
   </div>
-  <div id="lesson-2">
-    <div id="lesson-2-slide-2" class="course-slide">
-      <div class="content">
-        <h2 class="flowers"><?php echo t('Communication Strategies'); ?></h2>
-        <hr />
-        <p><?php echo t('Lesson Objectives'); ?></p>
-        <ul>
-        	<li><?php echo t('To give an overview of communication changes typical in early memory loss.'); ?></li>
-            <li><?php echo t('To familiarize participants with general principles for maintaining communication with a person experiencing early memory loss.'); ?></li>
-            <li><?php echo t('To describe several ways to encourage verbal expression.'); ?></li>
-            <li><?php echo t('To review common communication pitfalls, and how to avoid them.'); ?></li>
-	</ul>
-        <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Start Course &raquo;'); ?></a></div>
-      </div>
+</div>
+<div id="lesson-2">
+  <div id="lesson-2-slide-2" class="course-slide">
+    <div class="content">
+      <h2 class="flowers"><?php echo t('Communication Strategies'); ?></h2>
+      <hr />
+      <p><?php echo t('Lesson Objectives:'); ?></p>
+      <ul>
+        <li><?php echo t('To give an overview of communication changes typical in early memory loss.'); ?></li>
+        <li><?php echo t('To familiarize participants with general principles for maintaining communication with a person experiencing early memory loss.'); ?></li>
+        <li><?php echo t('To describe several ways to encourage verbal expression.'); ?></li>
+        <li><?php echo t('To review common communication pitfalls, and how to avoid them.'); ?></li>
+      </ul>
+      <p><?php echo t('Welcome Back!'); ?></p>
+      <p><?php echo t('Welcome to the second lesson of MSML Online. One of the more frustrating and difficult aspects of memory loss is that the person\'s ability to communicate may be compromised. In this class, we will discuss how to adapt to these changes. We will cover these general topics and get into specifics along the way:'); ?></p>
+      <p><?php echo t('Agenda for Lesson 2'); ?></p>
+      <ul>
+        <li><?php echo t('Communication changes in early stages of memory loss'); ?></li>
+        <li><?php echo t('General principles for enhancing communication'); ?></li>
+        <li><?php echo t('Ways to encourage verbal expression'); ?></li>
+        <li><?php echo t('Avoiding communication pitfalls'); ?></li>
+      </ul>
+      <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Start Course &raquo;'); ?></a></div>
     </div>
   </div>
-  <div id="lesson-3">
-    <div id="lesson-3-slide-3" class="course-slide">
-      <div class="content">
-        <h2 class="flowers"><?php echo t('Making Decisions'); ?></h2>
-        <hr />
-        <p><?php echo t('Please check back later.'); ?></p>
-        <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Start Course &raquo;'); ?></a></div>
-      </div>
+</div>
+<div id="lesson-3">
+  <div id="lesson-3-slide-3" class="course-slide">
+    <div class="content">
+      <h2 class="flowers"><?php echo t('Making Decisions'); ?></h2>
+      <hr />
+      <p><?php echo t('Lesson Objectives:'); ?></p>
+      <ul>
+        <li><?php echo t('Understand the shifting balance of power in the relationship,'); ?></li>
+        <li><?php echo t('Address practical issues in everyday life such as driving a car, handling health & financial decisions or managing household tasks,'); ?></li>
+        <li><?php echo t('Share the diagnosis and involved others in helping out.'); ?></li>
+      </ul>
+      <p><?php echo t('Welcome Back!'); ?></p>
+      <p><?php echo t('Welcome to the third lesson of MSML Online.'); ?></p>
+      <p><?php echo t('Before you begin, please email your Instructor or post to the Forum/Blog any questions or comments related to last week\'s lesson on Communication.'); ?></p>
+      <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Start Course &raquo;'); ?></a></div>
     </div>
   </div>
-  <div id="lesson-4">
-    <div id="lesson-4-slide-4" class="course-slide">
-      <div class="content">
-        <h2 class="flowers"><?php echo t('Planning for the Future'); ?></h2>
-        <hr />
-        <p><?php echo t('Please check back later.'); ?></p>
-        <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Start Course &raquo;'); ?></a></div>
-      </div>
+</div>
+<div id="lesson-4">
+<div id="lesson-4-slide-4" class="course-slide">
+<div class="content">
+<h2 class="flowers"><?php echo t('Planning for the Future'); ?></h2>
+<hr />
+<p><?php echo t('Lesson Objectives:'); ?></p>
+<p><?php echo t('To familiarize participants with effective ways for communicating with health care professionals.'); ?></p>
+<ul>
+  <li><?php echo t('To provide an overview on advance directives and legal planning.'); ?></li>
+  <li><?php echo t('To explain the difference between Medicare and Medicaid.'); ?></li>
+  <li><?php echo t('To explain respite options, including community-based programs and services.'); ?></li>
+  <li><?php echo t('To discuss the impact of a move on an individual with memory loss, highlighting types of residential care. '); ?></li>
+</ul>
+<p><?php echo t('Welcome Back!'); ?></p>
+<p><?php echo t('Welcome to the fourth lesson of MSML Online. The title of this lesson is “Planning for the Future.” In our previous lessones we have touched on changes that will impact the person experiencing memory loss, as well as challenges to those providing care: family members, friends and professionals.'); ?></p>
+<p><?php echo t('We have a great deal of information to cover in this lesson. To best utilize time, be sure that your information needs and questions are addressed, please message the Forum/Blog if you are interested in learning more about:'); ?></p>
+<ul>
+<li><?php echo t('strategies to effectively communicate with health care professionals,'); ?></li>
+<li><?php echo t('advanced directives and legal planning,'); ?></li>
+<li><?php echo t('Medicare and Medicaid,'); ?></li>
+<li><?php echo t('respite options including community-based programs and services,'); ?></li>
+<li><?php echo t('impact of a move on an individual with memory loss,'); ?></li>
+<li><?php echo t('residential care options, including how to decide/choose residential care.'); ?>
+  </p>
+  <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Start Course &raquo;'); ?></a></div>
+</div>
+</div>
+</div>
+<div id="lesson-5">
+  <div id="lesson-5-slide-5" class="course-slide">
+    <div class="content">
+      <h2 class="flowers"><?php echo t('Effective Ways of Coping and Caring'); ?></h2>
+      <hr />
+      <p><?php echo t('Lesson Objectives:'); ?></p>
+      <ul>
+        <li><?php echo t('To discuss the importance of “doing things,”'); ?></li>
+        <li><?php echo t('To consider the impact that the environment can have on participation in activities and tasks for a person experiencing memory loss,'); ?></li>
+        <li><?php echo t('To learn how to analyze and adapt tasks and activities, and'); ?></li>
+        <li><?php echo t('To review key points of the Making Sense of Memory Loss program.'); ?></li>
+      </ul>
+      <p><?php echo t('Welcome!');?></p>
+      <p><?php echo t('Welcome to the final lesson of MSML Online.'); ?></p>
+      <p><?php echo t('Effective Ways of Coping and Caring'); ?></p>
+      <p><?php echo t('In this lesson, we will focus on effective ways of coping and caring. We’ll first learn about one of the most effective ways of coping and that is activity. In its purest form, “activity” means “doing.” In particular, for the first half of the lesson we will:'); ?></p>
+      <ul>
+        <li><?php echo t('Discuss the importance of “doing”'); ?></li>
+        <li><?php echo t('Consider the importance of activities and tasks among persons with memory loss'); ?></li>
+        <li><?php echo t('Learn how to analyze and adapt tasks'); ?></li>
+      </ul>
+      <p><?php echo t('Recognize the importance of “doing” in your life and in the life of your family member.'); ?></p>
+      <p><?php echo t('Think about when you meet someone new. What do you talk about? The first thing you do is probably to exchange names and a few pleasantries. As the conversation continues, however, you probably begin to talk about what you do – your occupation, your hobbies and interests. What we do is important to us, and helps other people understand us.'); ?></p>
+      <p><?php echo t('Think of your own life. What things do you enjoy doing?'); ?></p>
+      <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Start Course &raquo;'); ?></a></div>
     </div>
   </div>
-  <div id="lesson-5">
-    <div id="lesson-5-slide-5" class="course-slide">
-      <div class="content">
-        <h2 class="flowers"><?php echo t('Effective Ways of Coping and Caring'); ?></h2>
-        <hr />
-        <p><?php echo t('Please check back later.'); ?></p>
-        <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Start Course &raquo;'); ?></a></div>
-      </div>
-    </div>
-  </div>
+</div>
 </div>
