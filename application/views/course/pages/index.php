@@ -58,7 +58,7 @@ description and objectives information in the database for each course -->
     <li><?php echo t('Promote the safety of older relatives and friends in caring for themselves'); ?></li>
   </ul>
   <hr />
-  <h3> <a href="<?php echo $this->createUrl('msmlonline'); ?>"> <?php echo t('Making Sense of Memory Loss (MSML) Online'); ?> </a> </h3>
+  <h3> <a href="<?php echo $this->createUrl('makingsenseofmemorylossonline'); ?>"> <?php echo t('Making Sense of Memory Loss (MSML) Online'); ?> </a> </h3>
   <p> <?php echo t('Developed by Mather LifeWays Institute on Aging and the Alzheimer\'s Association, 
 				evidence-based Making Sense of Memory Loss helps those who care for someone in the early, middle, or late to final
 	stages of memory loss, whether or not that individual has received a diagnosis of Alzheimer\'s Disease or related dementia.'); ?> </p>
