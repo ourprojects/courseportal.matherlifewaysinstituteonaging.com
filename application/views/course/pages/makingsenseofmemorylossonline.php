@@ -185,7 +185,7 @@ $this->widget(
   </div>
 </div>
 <div id="lesson-2">
-  <div id="lesson-2-slide-2" class="course-slide">
+  <div id="lesson-2-slide-1" class="course-slide">
     <div class="content">
       <h2 class="flowers"><?php echo t('Communication Strategies'); ?></h2>
       <hr />
@@ -210,7 +210,7 @@ $this->widget(
   </div>
 </div>
 <div id="lesson-3">
-  <div id="lesson-3-slide-3" class="course-slide">
+  <div id="lesson-3-slide-1" class="course-slide">
     <div class="content">
       <h2 class="flowers"><?php echo t('Making Decisions'); ?></h2>
       <hr />
@@ -228,7 +228,7 @@ $this->widget(
   </div>
 </div>
 <div id="lesson-4">
-<div id="lesson-4-slide-4" class="course-slide">
+<div id="lesson-4-slide-1" class="course-slide">
 <div class="content">
 <h2 class="flowers"><?php echo t('Planning for the Future'); ?></h2>
 <hr />
@@ -256,7 +256,7 @@ $this->widget(
 </div>
 </div>
 <div id="lesson-5">
-  <div id="lesson-5-slide-5" class="course-slide">
+  <div id="lesson-5-slide-1" class="course-slide">
     <div class="content">
       <h2 class="flowers"><?php echo t('Effective Ways of Coping and Caring'); ?></h2>
       <hr />
