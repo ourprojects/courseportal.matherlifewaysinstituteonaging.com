@@ -169,7 +169,18 @@ $this->widget(
     <div id="lesson-1-slide-1" class="course-slide">
       <div class="content">
         <h2 class="flowers"><?php echo t('Overview of Memory Loss and Related Symptoms'); ?></h2>
-        <p><?php echo t('Please check back later.'); ?></p>
+        <hr />
+        <p><?php echo t('We are delighted that you are interested in MSML Online. This five-lesson course is intended to help family members of someone in the early stages of memory loss to meet the challenges they face now and in the future. Research evaluation has shown that participation in this course increases family members’ knowledge and improves coping skills with respect to their relatives’ memory and behavior changes.'); ?></p>
+        <p><?php echo t('Lesson Objectives'); ?></p>
+        <ul>
+          <li><?php echo t('To introduce participants and give an overview of the course.');?></li>
+          <li><?php echo t('To explain major medical causes of memory loss.'); ?></li>
+          <li><?php echo t('To ensure that a medical evaluation is done to explore reasons for memory loss.'); ?></li>
+          <li><?php echo t('To explain symptoms of Alzheimer’s disease and related dementias.'); ?></li>
+          <li><?php echo t('To describe current and proposed medical treatments.'); ?></li>
+          <li><?php echo t('To describe research efforts to treat or prevent memory loss.'); ?></li>
+        </ul>
+        <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Start Course &raquo;'); ?></a></div>
       </div>
     </div>
   </div>
@@ -177,7 +188,15 @@ $this->widget(
     <div id="lesson-2-slide-2" class="course-slide">
       <div class="content">
         <h2 class="flowers"><?php echo t('Communication Strategies'); ?></h2>
-        <p><?php echo t('Please check back later.'); ?></p>
+        <hr />
+        <p><?php echo t('Lesson Objectives'); ?></p>
+        <ul>
+        	<li><?php echo t('To give an overview of communication changes typical in early memory loss.'); ?></li>
+            <li><?php echo t('To familiarize participants with general principles for maintaining communication with a person experiencing early memory loss.'); ?></li>
+            <li><?php echo t('To describe several ways to encourage verbal expression.'); ?></li>
+            <li><?php echo t('To review common communication pitfalls, and how to avoid them.'); ?></li>
+	</ul>
+        <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Start Course &raquo;'); ?></a></div>
       </div>
     </div>
   </div>
@@ -185,7 +204,9 @@ $this->widget(
     <div id="lesson-3-slide-3" class="course-slide">
       <div class="content">
         <h2 class="flowers"><?php echo t('Making Decisions'); ?></h2>
+        <hr />
         <p><?php echo t('Please check back later.'); ?></p>
+        <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Start Course &raquo;'); ?></a></div>
       </div>
     </div>
   </div>
@@ -193,7 +214,9 @@ $this->widget(
     <div id="lesson-4-slide-4" class="course-slide">
       <div class="content">
         <h2 class="flowers"><?php echo t('Planning for the Future'); ?></h2>
+        <hr />
         <p><?php echo t('Please check back later.'); ?></p>
+        <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Start Course &raquo;'); ?></a></div>
       </div>
     </div>
   </div>
@@ -201,7 +224,9 @@ $this->widget(
     <div id="lesson-5-slide-5" class="course-slide">
       <div class="content">
         <h2 class="flowers"><?php echo t('Effective Ways of Coping and Caring'); ?></h2>
+        <hr />
         <p><?php echo t('Please check back later.'); ?></p>
+        <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Start Course &raquo;'); ?></a></div>
       </div>
     </div>
   </div>
