@@ -17,10 +17,10 @@ class Survey extends CWidget {
 		$id = $this->getId(false);
 		if(!isset($this->model)) {
 			if(!isset($id))
-				throw new CException(500, Surveyor::t('The survey model or survey name id must be specified for the survey widget.'));
+				throw new CException(Surveyor::t('The survey model or survey name or model must be specified for a survey widget.'));
 			$this->model = SurveyorModule::surveyor()->getSurveyForm($id);
 			if(!isset($this->model))
-				throw new CHttpException(404, Surveyor::t('Survey with name id {name} was not found.', array('{name}' => $id)));
+				throw new CException(Surveyor::t('Survey with name {name} was not found.', array('{name}' => $id)));
 		} elseif(!isset($id)) {
 			$id = $this->model->name;
 			$this->setId($id);

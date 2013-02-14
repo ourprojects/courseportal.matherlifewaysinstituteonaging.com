@@ -15,10 +15,7 @@ class Surveyor extends CApplicationComponent {
 	}
 	
 	public function __get($name) {
-		$survey = $this->getSurvey($name);
-		if($survey === null)
-			return parent::__get($name);
-		return $survey;
+		return $this->getSurvey($name) or parent::__get($name);
 	}
 	
 	public function getSurvey($name, $with = array()) {
@@ -44,7 +41,10 @@ class Surveyor extends CApplicationComponent {
 	}
 	
 	public function getSurveyForm($survey) {
-		return new SurveyForm($survey);
+		$survey = $this->getSurvey($survey);
+		if(isset($survey))
+			return new SurveyForm($survey);
+		return null;
 	}
 	
 	static function t($message, $params = array()) {

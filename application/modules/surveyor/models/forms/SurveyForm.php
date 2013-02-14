@@ -27,8 +27,13 @@ class SurveyForm extends CFormModel {
 			$this->_survey = SurveyAR::model()->with(array('questions' => array('options')))->find('name = :name', array(':name' => $survey));
 		else if(is_numeric($survey))
 			$this->_survey = SurveyAR::model()->with(array('questions' => array('options')))->findByPk($survey);
+		
+		if(!isset($this->_survey))
+			throw new CException(Surveyor::t('Invalid survey parameter when constructing SurveyForm. A valid Survey name, id, or ActiveRecord object is required.'));
+		
 		foreach($this->_survey->questions as $question)
 			$this->_questionAnswers[$question->id] = null;
+		
 		parent::__construct(self::SCENARIO_NOT_COMPLETE);
 	}
 

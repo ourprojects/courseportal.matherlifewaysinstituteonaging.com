@@ -26,7 +26,7 @@ $this->widget(
 $this->widget(
 		'ext.fancybox.EFancyBox',
 		array(
-				'id' => '.survey',
+				'id' => 'a[id^="survey_link_"]',
 				'config' => $fancyBoxConfig
 		)
 );
@@ -41,20 +41,42 @@ $this->widget(
 
 <!-- Begin sidebar -->
 
-<div id="sidebar"> 
-  
-  <!-- Sidebar #1 with 3 buttons here -->
-  
-  <div class="box-sidebar zero"> <a href="<?php echo $this->createUrl('user/register'); ?>"><?php echo t('Register'); ?></a> <a href="<?php echo $this->createUrl('home/contact'); ?>" class="teal"><?php echo t('Request Information'); ?></a> <a href="#slide-1" data-fancybox-group="open-tutorial" class="teal open-tutorial"><?php echo t('Tutorial'); ?></a> <a href="#slide-2" data-fancybox-group="open-tutorial" class="hide open-tutorial" /> <a href="#slide-3" data-fancybox-group="open-tutorial" class="hide open-tutorial" /> <a href="#slide-4" data-fancybox-group="open-tutorial" class="hide open-tutorial" /> <a href="#slide-5" data-fancybox-group="open-tutorial" class="hide open-tutorial" /> <a href="#slide-6" data-fancybox-group="open-tutorial" class="hide open-tutorial" /> </div>
-  
-  <!-- Clients sidebar here -->
-  
-  <div class="box-sidebar one">
-    <h3><?php echo t('Our Clients'); ?></h3>
-    <div id="customers"> <a href="http://www.ibm.com" target="_blank"><img src="<?php echo $this->getImagesUrl('customers/ibm.png'); ?>" alt="IBM" /></a> <a href="http://www.ti.com/" target="_blank"><img src="<?php echo $this->getImagesUrl('customers/ti.png'); ?>" alt="Texas Instrument" /></a> <a href="http://www.merck.com" target="_blank"><img src="<?php echo $this->getImagesUrl('customers/merck.png'); ?>" alt="Merck Pharmaceuticals" /></a> <a href="http://www.exxonmobil.com" target="_blank"><img src="<?php echo $this->getImagesUrl('customers/exxon.png'); ?>" alt="Merck Pharmaceuticals" /></a> <a href="http://www.deloitte.com" target="_blank"><img src="<?php echo $this->getImagesUrl('customers/deloitte.png'); ?>" alt="Deloitte" /></a> <a href="http://matherlifeways.com/" target="_blank"><img src="<?php echo $this->getImagesUrl('customers/mather.png'); ?>" alt="Mather Lifeways" /></a> </div>
-  </div>
-  
-  <!-- sidebar for Participating locations here -->
+<div id="sidebar">
+	<!-- Sidebar #1 with 3 buttons here -->
+	<div class="box-sidebar zero">
+		<a href="<?php echo $this->createUrl('user/register'); ?>"><?php echo t('Register'); ?> </a> <a
+			href="<?php echo $this->createUrl('home/contact'); ?>" class="teal"
+		><?php echo t('Request Information'); ?> </a> 
+		<a href="#slide-1" data-fancybox-group="open-tutorial" class="teal open-tutorial">
+		<?php echo t('Tutorial'); ?>
+		</a> 
+		<a href="#slide-2" data-fancybox-group="open-tutorial" class="hide open-tutorial" /> 
+		<a href="#slide-3" data-fancybox-group="open-tutorial" class="hide open-tutorial" /> 
+		<a href="#slide-4" data-fancybox-group="open-tutorial" class="hide open-tutorial" /> 
+		<a href="#slide-5" data-fancybox-group="open-tutorial" class="hide open-tutorial" /> 
+		<a href="#slide-6" data-fancybox-group="open-tutorial" class="hide open-tutorial" />
+	</div>
+	<!-- Clients sidebar here -->
+	<div class="box-sidebar one">
+		<h3>
+			<?php echo t('Our Clients'); ?>
+		</h3>
+		<div id="customers">
+			<a href="http://www.ibm.com" target="_blank"><img src="<?php echo $this->getImagesUrl('customers/ibm.png'); ?>" alt="IBM" /> </a>
+			<a href="http://www.ti.com/" target="_blank"><img src="<?php echo $this->getImagesUrl('customers/ti.png'); ?>"
+				alt="Texas Instrument"
+			/> </a> <a href="http://www.merck.com" target="_blank"><img src="<?php echo $this->getImagesUrl('customers/merck.png'); ?>"
+				alt="Merck Pharmaceuticals"
+			/> </a> <a href="http://www.exxonmobil.com" target="_blank"><img src="<?php echo $this->getImagesUrl('customers/exxon.png'); ?>"
+				alt="Merck Pharmaceuticals"
+			/> </a> <a href="http://www.deloitte.com" target="_blank"><img src="<?php echo $this->getImagesUrl('customers/deloitte.png'); ?>"
+				alt="Deloitte"
+			/> </a> <a href="http://matherlifeways.com/" target="_blank"><img src="<?php echo $this->getImagesUrl('customers/mather.png'); ?>"
+				alt="Mather Lifeways"
+			/> </a>
+		</div>
+	</div>
+	<!-- sidebar for Participating locations here -->
   
   <div class="box-sidebar one">
     <h3><?php echo t('Participating Locations'); ?></h3>
@@ -161,18 +183,28 @@ $this->widget(
     <h2 class="flowers"> <?php echo t('Health status of your working caregivers'); ?> </h2>
     <p> <?php echo t('Please choose one of the surveys below to take. Depending on your position, employer 
 			or employee, submit this voluntary survey and view aggregate feedback from all previous users.'); ?> </p>
-    <p> <a id="hrEmployerSurvey" href="#survey_hrEmployer"
-				class="survey button" title="<?php echo t('HR/Employer Survey'); ?>"><?php echo t('HR/Employer Survey'); ?> </a> <a id="caregiverSurvey" href="#survey_caregiver"
-				class="survey button" title="<?php echo t('Caregiver Survey'); ?>"><?php echo t('Caregiver Survey'); ?> </a> </p>
+    <p> 
+    <?php foreach($hiddenSurveys as $survey): ?>
+  		<a id="survey_link_<?php echo $survey->getId(); ?>" href="#survey_<?php echo $survey->getId(); ?>" class="button" title="<?php echo $survey->model->title; ?>"><?php echo $survey->model->title; ?></a>
+  	<?php 
+  	endforeach;
+  	foreach($hiddenSurveys as $survey)
+  		$survey->run();
+  	?>
+	</p>
   </div>
 </div>
 <div id="bottom-logos">
   <h4><?php echo t('Partners'); ?></h4>
-  <a href="http://www.rushu.rush.edu" id="rush">Rush University (Chicago)</a> <a href="http://www.alz.org/" id="aa" target="_blank">Alzheimer's Asssociation</a> <a href="https://github.com/" id="git" target="_blank">GitHub</a> <a href="http://www.yiiframework.com/" id="yii" target="_blank">Yii Framework</a> <a href="http://wfd.com/" id="wfd" target="_blank">WFD</a> <a href="http://www.discoursellc.com/" id="discourse" target="_blank">Discourse, LLC.</a> <a href="http://gladerfilmworks.com/" id="glader" target="_blank">Glader Filmworks</a> <a href="http://www.mediastorm.com/" id="mediastorm" target="_blank">Mediastorm</a> </div>
-<?php 
-$hrEmployerSurvey->run();
-$caregiverSurvey->run();
-?>
+  <a href="http://www.rushu.rush.edu" id="rush">Rush University (Chicago)</a> 
+  <a href="http://www.alz.org/" id="aa" target="_blank">Alzheimer's Asssociation</a> 
+  <a href="https://github.com/" id="git" target="_blank">GitHub</a> 
+  <a href="http://www.yiiframework.com/" id="yii" target="_blank">Yii Framework</a> 
+  <a href="http://wfd.com/" id="wfd" target="_blank">WFD</a> 
+  <a href="http://www.discoursellc.com/" id="discourse" target="_blank">Discourse, LLC.</a> 
+  <a href="http://gladerfilmworks.com/" id="glader" target="_blank">Glader Filmworks</a> 
+  <a href="http://www.mediastorm.com/" id="mediastorm" target="_blank">Mediastorm</a> 
+</div>
 
 <!--  start tutorial course here -->
 
@@ -394,7 +426,7 @@ $caregiverSurvey->run();
       
       <!-- Certificate of Completion here -->
       
-      <p style="text-align:center; font-size:36px;"> <a href="<?php echo $this->getImagesUrl('CourseCompletionCertificate.pdf'); ?>" target="_blank" alt="Certificate of Completion"> <?php echo t('Certificate of Completion '); ?></a> </p>
+      <p style="text-align:center; font-size:36px;"> <a href="<?php echo $this->getImagesUrl('CourseCompletionCertificate.pdf'); ?>" target="_blank"> <?php echo t('Certificate of Completion '); ?></a> </p>
       <p style="font-size:small; text-align:center;"> <?php echo t('(English)'); ?> </p>
     </div>
     <div class="buttons"><a href="#" onclick="parent.jQuery.fancybox.close();"

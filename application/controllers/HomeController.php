@@ -31,64 +31,60 @@ class HomeController extends OnlineCoursePortalController {
 
 	public function actionIndex() {
 		if(Yii::app()->getUser()->getIsGuest()) {
-			
-			$workingCaregiver = $this->createWidget(
-					'modules.surveyor.widgets.Survey',
-					array(
-							'id' => 'workingCaregiver',
-							'options' => array(
-								'autoProcess' => true,
-								'htmlOptions' => array('class' => 'box-white'),
-								'title' => array('htmlOptions' => array('class' => 'flowers')),
-								'questions' => array('htmlOptions' => array('class' => 'row')),
-								'form' => array('options' => array(
-													'enableAjaxValidation' => true,
-													'enableClientValidation' => true
-												)),
-								'submitButton' => array('htmlOptions' => array('class' => 'row submit')),
+			$this->render('pages/guestIndex',
+				array(
+					'workingCaregiverSurvey' => $this->createWidget(
+							'modules.surveyor.widgets.Survey',
+							array(
+									'id' => 'workingCaregiver',
+									'options' => array(
+										'autoProcess' => true,
+										'htmlOptions' => array('class' => 'box-white'),
+										'title' => array('htmlOptions' => array('class' => 'flowers')),
+										'questions' => array('htmlOptions' => array('class' => 'row')),
+										'form' => array('options' => array(
+															'enableAjaxValidation' => true,
+															'enableClientValidation' => true
+														)),
+										'submitButton' => array('htmlOptions' => array('class' => 'row submit')),
+									)
 							)
+					),
+					'hiddenSurveys' => array(
+						$this->createWidget(
+								'modules.surveyor.widgets.Survey',
+								array(
+										'id' => 'hrEmployer',
+										'options' => array(
+											'autoProcess' => true,
+											'htmlOptions' => array('style' => 'display:none;'),
+											'title' => array('htmlOptions' => array('class' => 'flowers')),
+											'form' => array('options' =>
+													array(
+															'enableAjaxValidation' => true,
+															'enableClientValidation' => true
+													)),
+										)
+								)
+						),
+						$this->createWidget(
+								'modules.surveyor.widgets.Survey',
+								array(
+										'id' => 'caregiver',
+										'options' => array(
+											'autoProcess' => true,
+											'htmlOptions' => array('style' => 'display:none;'),
+											'title' => array('htmlOptions' => array('class' => 'flowers')),
+											'form' => array('options' =>
+													array(
+															'enableAjaxValidation' => true,
+															'enableClientValidation' => true
+													)),
+										)
+								)
+						)
 					)
-			);
-			
-			$hrEmployer = $this->createWidget(
-					'modules.surveyor.widgets.Survey',
-					array(
-							'id' => 'hrEmployer',
-							'options' => array(
-								'autoProcess' => true,
-								'htmlOptions' => array('style' => 'display: none;'),
-								'title' => array('htmlOptions' => array('class' => 'flowers')),
-								'form' => array('options' =>
-										array(
-												'enableAjaxValidation' => true,
-												'enableClientValidation' => true
-										)),
-							)
-					)
-			);
-			
-			$caregiver = $this->createWidget(
-					'modules.surveyor.widgets.Survey',
-					array(
-							'id' => 'caregiver',
-							'options' => array(
-								'autoProcess' => true,
-								'htmlOptions' => array('style' => 'display: none;'),
-								'title' => array('htmlOptions' => array('class' => 'flowers')),
-								'form' => array('options' =>
-										array(
-												'enableAjaxValidation' => true,
-												'enableClientValidation' => true
-										)),
-							)
-					)
-			);
-
-			$this->render('pages/guestIndex', array(
-												'workingCaregiverSurvey' => $workingCaregiver,
-												'hrEmployerSurvey' => $hrEmployer,
-												'caregiverSurvey' => $caregiver,
-											)
+				)
 			);
 		} else {
 			$this->render('pages/userIndex');

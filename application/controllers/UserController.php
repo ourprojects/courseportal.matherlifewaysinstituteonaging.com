@@ -265,6 +265,31 @@ class UserController extends ApiController {
 		$models['user_profile']->user_id = $models['user']->id;
 		$models['avatar']->user_id = $models['user']->id;
 
+		$surveys = array();
+		foreach(array(
+				'profile', 
+				'precourse', 
+				'postcourse', 
+				'spencerpowell') as $surveyName) {
+			$surveys[] = $this->createWidget(
+					'modules.surveyor.widgets.Survey',
+					array(
+							'id' => $surveyName, 
+							'options' => array(
+								'autoProcess' => true,
+								'htmlOptions' => array('style' => 'display:none;'),
+								'title' => array('htmlOptions' => array('class' => 'flowers')),
+								'form' => array('options' =>
+										array(
+												'enableAjaxValidation' => true,
+												'enableClientValidation' => true
+										)),
+							)
+					)
+			);
+			end($surveys)->model->user_id = $models['user']->id;
+		}
+
 		// if it is ajax validation request
 		if(isset($_POST['ajax']) && $_POST['ajax'] === 'profile-form') {
 			if(isset($_POST['User']))
@@ -304,25 +329,7 @@ class UserController extends ApiController {
 				throw $e;
 			}
 		}
-		$this->render('pages/profile', array('models' => $models));
-	}
-	
-	public function actionProfileSurvey() {
-		$profileQuestions = $this->createWidget(
-				'modules.surveyor.widgets.Survey',
-				array('id' => 'profile',
-						'options' => array(
-							'highcharts' => array('show' => false),
-							'autoProcess' => true,
-							'description' => array('show' => false),
-							'questions' => array('htmlOptions' => array('class' => 'row'))
-						)
-					)
-		);
-		
-		$profileQuestions->model->user_id = Yii::app()->getUser()->getModel()->id;
-		
-		$this->render('pages/profileSurvey', array('survey' => $profileQuestions));
+		$this->render('pages/profile', array('models' => $models, 'surveys' => $surveys));
 	}
 	
 	/****** START API ACTIONS ******/
