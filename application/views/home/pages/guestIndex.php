@@ -68,7 +68,7 @@ $this->widget(
 			/> </a> <a href="http://www.merck.com" target="_blank"><img src="<?php echo $this->getImagesUrl('customers/merck.png'); ?>"
 				alt="Merck Pharmaceuticals"
 			/> </a> <a href="http://www.exxonmobil.com" target="_blank"><img src="<?php echo $this->getImagesUrl('customers/exxon.png'); ?>"
-				alt="Merck Pharmaceuticals"
+				alt="Exxon"
 			/> </a> <a href="http://www.deloitte.com" target="_blank"><img src="<?php echo $this->getImagesUrl('customers/deloitte.png'); ?>"
 				alt="Deloitte"
 			/> </a> <a href="http://matherlifeways.com/" target="_blank"><img src="<?php echo $this->getImagesUrl('customers/mather.png'); ?>"
@@ -186,12 +186,12 @@ $this->widget(
     <p> 
     <?php foreach($hiddenSurveys as $survey): ?>
   		<a id="survey_link_<?php echo $survey->getId(); ?>" href="#survey_<?php echo $survey->getId(); ?>" class="button" title="<?php echo $survey->model->title; ?>"><?php echo $survey->model->title; ?></a>
-  	<?php 
-  	endforeach;
-  	foreach($hiddenSurveys as $survey)
-  		$survey->run();
-  	?>
+  	<?php endforeach; ?>
 	</p>
+	<?php 
+	  	foreach($hiddenSurveys as $survey)
+  			$survey->run();
+  	?>
   </div>
 </div>
 <div id="bottom-logos">

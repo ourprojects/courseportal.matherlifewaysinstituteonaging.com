@@ -41,12 +41,10 @@ class HomeController extends OnlineCoursePortalController {
 										'autoProcess' => true,
 										'htmlOptions' => array('class' => 'box-white'),
 										'title' => array('htmlOptions' => array('class' => 'flowers')),
-										'questions' => array('htmlOptions' => array('class' => 'row')),
 										'form' => array('options' => array(
 															'enableAjaxValidation' => true,
 															'enableClientValidation' => true
 														)),
-										'submitButton' => array('htmlOptions' => array('class' => 'row submit')),
 									)
 							)
 					),

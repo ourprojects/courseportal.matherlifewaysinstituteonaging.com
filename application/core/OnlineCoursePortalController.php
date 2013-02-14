@@ -31,6 +31,8 @@ abstract class OnlineCoursePortalController extends CController {
 	
 	public function init() {
 		$this->menuAttrs = $this->getMenuAttributes();
+		
+		CHtml::$afterRequiredLabel = '&nbsp;<span class="required">*</span>';
 	}
 	
 	/**
