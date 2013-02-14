@@ -87,8 +87,6 @@ $this->widget(
   </ul>
   <p id="surveynotify"><?php echo t('Please complete the PRE-COURSE SURVEY before participating. It can be accessed via the PROFILE page.'); ?></p>
   <h2><?php echo t('Course Lessons'); ?></h2>
-
-  
   
    <ul>
   <li> 
@@ -99,6 +97,11 @@ $this->widget(
 	  <a href="#lesson-1-slide-3" data-fancybox-group="lesson-1" class="hide lesson-1" /> 
 	  <a href="#lesson-1-slide-4" data-fancybox-group="lesson-1" class="hide lesson-1" /> 
 	  <a href="#lesson-1-slide-5" data-fancybox-group="lesson-1" class="hide lesson-1" /> 
+      <a href="#lesson-1-slide-6" data-fancybox-group="lesson-1" class="hide lesson-1" /> 
+      <a href="#lesson-1-slide-7" data-fancybox-group="lesson-1" class="hide lesson-1" /> 
+      <a href="#lesson-1-slide-8" data-fancybox-group="lesson-1" class="hide lesson-1" /> 
+      <a href="#lesson-1-slide-9" data-fancybox-group="lesson-1" class="hide lesson-1" /> 
+      <a href="#lesson-1-slide-10" data-fancybox-group="lesson-1" class="hide lesson-1" /> 
   </li>
   <li>
 	 	<a href="#lesson-2-slide-1" data-fancybox-group="lesson-2" class="teal lesson-2">
@@ -111,6 +114,8 @@ $this->widget(
 	  	<a href="#lesson-2-slide-6" data-fancybox-group="lesson-2" class="hide lesson-2" /> 
 	  	<a href="#lesson-2-slide-7" data-fancybox-group="lesson-2" class="hide lesson-2" /> 
 	  	<a href="#lesson-2-slide-8" data-fancybox-group="lesson-2" class="hide lesson-2" /> 
+        <a href="#lesson-2-slide-9" data-fancybox-group="lesson-2" class="hide lesson-2" />
+        <a href="#lesson-2-slide-10" data-fancybox-group="lesson-2" class="hide lesson-2" />
   </li>
   <li>
 	  	<a href="#lesson-3-slide-1" data-fancybox-group="lesson-3" class="teal lesson-3">
@@ -121,7 +126,10 @@ $this->widget(
 	  	<a href="#lesson-3-slide-4" data-fancybox-group="lesson-3" class="hide lesson-3" /> 
 	  	<a href="#lesson-3-slide-5" data-fancybox-group="lesson-3" class="hide lesson-3" /> 
 	  	<a href="#lesson-3-slide-6" data-fancybox-group="lesson-3" class="hide lesson-3" /> 
-	  	<a href="#lesson-3-slide-7" data-fancybox-group="lesson-3" class="hide lesson-3" /> 
+	  	<a href="#lesson-3-slide-7" data-fancybox-group="lesson-3" class="hide lesson-3" />
+        <a href="#lesson-3-slide-8" data-fancybox-group="lesson-3" class="hide lesson-3" />
+        <a href="#lesson-3-slide-9" data-fancybox-group="lesson-3" class="hide lesson-3" />
+        <a href="#lesson-3-slide-10" data-fancybox-group="lesson-3" class="hide lesson-3" />
   </li>
   <li>
 	  <a href="#lesson-4-slide-1" data-fancybox-group="lesson-4" class="teal lesson-4">
@@ -136,7 +144,6 @@ $this->widget(
 	  <a href="#lesson-4-slide-8" data-fancybox-group="lesson-4" class="hide lesson-4" /> 
 	  <a href="#lesson-4-slide-9" data-fancybox-group="lesson-4" class="hide lesson-4" /> 
 	 <a href="#lesson-4-slide-10" data-fancybox-group="lesson-4" class="hide lesson-4" /> 
-     <a href="#lesson-4-slide-11" data-fancybox-group="lesson-4" class="hide lesson-4" />
   </li>
   <li>
     <a href="#lesson-5-slide-1" data-fancybox-group="lesson-5" class="teal lesson-5">
@@ -147,18 +154,53 @@ $this->widget(
 	<a href="#lesson-5-slide-4" data-fancybox-group="lesson-5" class="hide lesson-5" /> 
 	<a href="#lesson-5-slide-5" data-fancybox-group="lesson-5" class="hide lesson-5" /> 
 	<a href="#lesson-5-slide-6" data-fancybox-group="lesson-5" class="hide lesson-5" /> 
-	<a href="#lesson-5-slide-7" data-fancybox-group="lesson-5" class="hide lesson-5" /> 
+	<a href="#lesson-5-slide-7" data-fancybox-group="lesson-5" class="hide lesson-5" />
+    <a href="#lesson-5-slide-8" data-fancybox-group="lesson-5" class="hide lesson-5" />
+    <a href="#lesson-5-slide-9" data-fancybox-group="lesson-5" class="hide lesson-5" />
+    <a href="#lesson-5-slide-10" data-fancybox-group="lesson-5" class="hide lesson-5" />
    </li>
 </ul>
 </div>
 
-
+<!-- start course content here -->
 
 <div id="course" class="hide">
   <div id="lesson-1">
     <div id="lesson-1-slide-1" class="course-slide">
       <div class="content">
         <h2 class="flowers"><?php echo t('Overview of Memory Loss and Related Symptoms'); ?></h2>
+        <p><?php echo t('Please check back later.'); ?></p>
+      </div>
+    </div>
+  </div>
+  <div id="lesson-2">
+    <div id="lesson-2-slide-2" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('Communication Strategies'); ?></h2>
+        <p><?php echo t('Please check back later.'); ?></p>
+      </div>
+    </div>
+  </div>
+  <div id="lesson-3">
+    <div id="lesson-3-slide-3" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('Making Decisions'); ?></h2>
+        <p><?php echo t('Please check back later.'); ?></p>
+      </div>
+    </div>
+  </div>
+  <div id="lesson-4">
+    <div id="lesson-4-slide-4" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('Planning for the Future'); ?></h2>
+        <p><?php echo t('Please check back later.'); ?></p>
+      </div>
+    </div>
+  </div>
+  <div id="lesson-5">
+    <div id="lesson-5-slide-5" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('Effective Ways of Coping and Caring'); ?></h2>
         <p><?php echo t('Please check back later.'); ?></p>
       </div>
     </div>
