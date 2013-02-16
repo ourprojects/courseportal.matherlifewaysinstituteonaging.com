@@ -1,6 +1,6 @@
 <?php
 
-$this->breadcrumbs = array(t('Courses'));
+$this->breadcrumbs = array(t('Courses') => $this->createUrl('course/'), t($course->title));
 $clientScript = Yii::app()->getClientScript();
 $clientScript->registerCssFile($this->getStylesUrl('course.css'));
 
@@ -23,7 +23,7 @@ foreach(array(
 ?>
 
 <div class="small-masthead" style="background-image: url(<?php echo $this->getImagesUrl('header-courses.png'); ?>);">
-  <h1 class="bottom"><?php echo t('Empower Online'); ?></h1>
+  <h1 class="bottom"><?php echo t($course->title); ?></h1>
 </div>
 
 <!-- Start sidebar here -->
@@ -55,15 +55,14 @@ foreach(array(
 <!-- start main content here -->
 
 <div class="column-wide">
-  <h2 class="flowers"><?php echo t('Empower Online'); ?></h2>
-  <p> <?php echo t('Empower Online is an in-depth, five-lesson online course that focuses on self-care for the working caregiver that was developed by '); ?><a href="http://matherlifewaysinstituteonaging.com" target="_blank">Mather LifeWays Institute on Aging</a> <?php echo t(' with the support of '); ?><a href="https://www.wfd.com" target="_blank">WFD Consulting</a>. <?php echo t('The program focuses on managing responsibilities while caring for loved ones with chronic medical issues and includes communicating effectively with healthcare providers and locating additional caregiver resources.'); ?> </p>
-  <p> <?php echo t('Objectives'); ?> </p>
+  <h2 class="flowers"><?php echo t($course->title); ?></h2>
+  <p><?php echo t($course->description); ?></p>
+  <h4><?php echo t('Objectives'); ?></h4>
   <ul>
-    <li><?php echo t('Explore and introduce self-care'); ?></li>
-    <li><?php echo t('Explore caregiver stress'); ?></li>
-    <li><?php echo t('Explore caregiving transitions'); ?></li>
-    <li><?php echo t('Explore and discuss the challenges associated with long-distance caregiving'); ?></li>
-    <li><?php echo t('Explore various decisions associated with the caregiver role'); ?></li>
+  <?php 
+  foreach($course->objectives as $objective)
+  	echo '<li>' . t($objective->text) . '</li>';
+  ?>
   </ul>
   <h2><?php echo t('Course Lessons'); ?></h2>
 

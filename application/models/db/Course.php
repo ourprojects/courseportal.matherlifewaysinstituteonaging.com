@@ -7,6 +7,7 @@ class Course extends ActiveRecord {
 	 * The followings are the available columns in table 'course':
 	 * @property integer $id
 	 * @property string $name
+	 * @property integer $rank
 	 * @property string $title
 	 * @property string $description
 	 *
@@ -39,6 +40,8 @@ class Course extends ActiveRecord {
 				array('name, title', 'required'),
 				array('name', 'length', 'max' => 255),
 				array('name', 'unique', 'allowEmpty' => false),
+				array('rank', 'numerical', 'integerOnly' => true),
+				array('rank', 'unique'),
 				array('title', 'length', 'max' => 255),
 				array('description', 'length', 'max' => 65535),
 	
@@ -77,6 +80,7 @@ class Course extends ActiveRecord {
 		return array(
 				'id' => t('ID'),
 				'name' => t('Unique Name'),
+				'rank' => t('Rank'),
 				'title' => t('Title'),
 				'description' => t('Description'),
 				'userCourses' => t('User Courses'),
@@ -92,8 +96,10 @@ class Course extends ActiveRecord {
 	
 		$criteria = new CDbCriteria;
 	
+		$criteria->order = '`t`.`rank`';
 		$criteria->compare('id', $this->id);
 		$criteria->compare('name', $this->name, true);
+		$criteria->compare('rank', $this->rank, true);
 		$criteria->compare('title', $this->title, true);
 		$criteria->compare('description', $this->description, true);
 	

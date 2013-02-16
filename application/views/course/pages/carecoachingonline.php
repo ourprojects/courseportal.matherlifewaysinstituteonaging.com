@@ -1,6 +1,6 @@
 <?php
 
-$this->breadcrumbs = array(t('Courses'));
+$this->breadcrumbs = array(t('Courses') => $this->createUrl('course/'), t($course->title));
 $clientScript = Yii::app()->getClientScript();
 $clientScript->registerCssFile($this->getStylesUrl('course.css'));
 
@@ -25,7 +25,7 @@ foreach(array(
 ?>
 
 <div class="small-masthead" style="background-image: url(<?php echo $this->getImagesUrl('header-courses.png'); ?>);">
-<h1 class="bottom"><?php echo t('Care Coaching Online'); ?></h1>
+<h1 class="bottom"><?php echo t($course->title); ?></h1>
 </div>
 
 <!-- Start sidebar here -->
@@ -59,18 +59,15 @@ foreach(array(
 <!-- Start main content here -->
 
 <div class="column-wide">
-<h2 class="flowers"><?php echo t('CARE Coaching Online'); ?></h2>
-<p><?php echo t('CARE: Communicate, Advocate, Relate, Encourage'); ?></p>
-<p><?php echo t('--Balancing work and family caregiver responsibilities'); ?></p>
-<p><?php echo t('CARE Coaching Online provides working caregivers with essential tools, knowledge, and skills to effectively deal with the variety of issues arising from caring for their aging parents, relatives, or loved ones. Developed by Mather LifeWays Institute on Aging, CARE Coaching Online improves working caregivers abilities to communicate, advocate, relate, and encourage their older parents or loved ones in making future plans.'); ?></p>
-<p><?php echo t('Objectives'); ?></p>
-<ul>
-  <li><?php echo t('Identify, understand, and support needs and preferences of older adults'); ?></li>
-  <li><?php echo t('Manage health information and record keeping'); ?></li>
-  <li><?php echo t('Understand aspects of the health care system and utilization by older adults'); ?></li>
-  <li><?php echo t('Better prepare for potential relocation of older adults'); ?></li>
-  <li><?php echo t('Promote the safety of older relatives and friends in caring for themselves'); ?></li>
-</ul>
+  <h2 class="flowers"><?php echo t($course->title); ?></h2>
+  <p><?php echo t($course->description); ?></p>
+  <h4><?php echo t('Objectives'); ?></h4>
+  <ul>
+  <?php 
+  foreach($course->objectives as $objective)
+  	echo '<li>' . t($objective->text) . '</li>';
+  ?>
+  </ul>
 <h2><?php echo t('Course Lessons'); ?></h2>
 
 <!-- Bullet points start here for course lessons, hyperlinks to FancyBox -->

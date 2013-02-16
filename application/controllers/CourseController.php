@@ -26,16 +26,16 @@ class CourseController extends OnlineCoursePortalController {
 	}
 	
 	public function filterVerifyUserCourse($filterChain) {
-		if(Yii::app()->getUser()->getIsAdmin())
-			return $filterChain->run();
-		$course = Course::model()->find(array(
-				'select' => 'id',
+		$course = Course::model()->with('objectives')->find(array(
 				'condition' => 'name=:name', 
 				'params' => array(':name' => $filterChain->action->getId()))
 		);
-		if($course === null ||
+		if($course === null)
+			return $filterChain->run();
+		if(Yii::app()->getUser()->getIsAdmin() ||
 				UserCourse::model()->exists('course_id=:course_id AND user_id=:user_id', 
 						array(':course_id' => $course->id, ':user_id' => Yii::app()->getUser()->id))) {
+			$filterChain->action->renderData['course'] = $course;
 			return $filterChain->run();
 		}
 		$this->redirect(array('notRegistered', 'id' => $course->id));
@@ -53,7 +53,7 @@ class CourseController extends OnlineCoursePortalController {
 	}
 	
 	public function actionIndex() {
-		$this->render('pages/index', array('courses' => Course::model()->with('objectives')->findAll()));
+		$this->render('pages/index', array('courses' => Course::model()->with('objectives')->findAll(array('order' => '`t`.`rank`'))));
 	}
 	
 }

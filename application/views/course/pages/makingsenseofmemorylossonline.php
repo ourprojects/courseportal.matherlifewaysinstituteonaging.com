@@ -1,6 +1,6 @@
 <?php
 
-$this->breadcrumbs = array(t('Courses'));
+$this->breadcrumbs = array(t('Courses') => $this->createUrl('course/'), t($course->title));
 $clientScript = Yii::app()->getClientScript();
 $clientScript->registerCssFile($this->getStylesUrl('course.css'));
 
@@ -23,7 +23,7 @@ foreach(array(
 ?>
 
 <div class="small-masthead" style="background-image: url(<?php echo $this->getImagesUrl('header-courses.png'); ?>);">
-  <h1 class="bottom"><?php echo t('Making Sense of Memory Loss (MSML) Online'); ?></h1>
+  <h1 class="bottom"><?php echo t($course->title); ?></h1>
 </div>
 
 <!-- SIDEBAR 1 -->
@@ -52,17 +52,14 @@ foreach(array(
 
 
 <div class="column-wide">
-  <h2 class="flowers"><?php echo t('Making Sense of Memory Loss Online'); ?></h2>
-  <p> <?php echo t('Developed by Mather LifeWays Institute on Aging and the Alzheimer\'s Association, 
-				evidence-based Making Sense of Memory Loss Online helps those who care for someone in the early, middle, or late to final
-	stages of memory loss, whether or not that individual has received a diagnosis of Alzheimer\'s Disease or related dementia.'); ?> </p>
-  <p> <?php echo t('Objectives'); ?> </p>
+  <h2 class="flowers"><?php echo t($course->title); ?></h2>
+  <p><?php echo t($course->description); ?></p>
+  <h4><?php echo t('Objectives'); ?></h4>
   <ul>
-    <li><?php echo t('Increase knowledge about the causes of memory loss and to promote a medical evaluation'); ?></li>
-    <li><?php echo t('Assist in adjusting their attitudes and behaviors in relation to the person with memory loss'); ?></li>
-    <li><?php echo t('Increase self-efficacy with respect to present and future caregiving tasks'); ?></li>
-    <li><?php echo t('Explore resources available for those with memory loss'); ?></li>
-    <li><?php echo t('Explore national data and statistics related to memory-loss'); ?></li>
+  <?php 
+  foreach($course->objectives as $objective)
+  	echo '<li>' . t($objective->text) . '</li>';
+  ?>
   </ul>
   <p id="surveynotify"><?php echo t('Please complete the PRE-COURSE SURVEY before participating. It can be accessed via the PROFILE page.'); ?></p>
   <h2><?php echo t('Course Lessons'); ?></h2>
@@ -228,8 +225,8 @@ foreach(array(
 <li><?php echo t('Medicare and Medicaid,'); ?></li>
 <li><?php echo t('respite options including community-based programs and services,'); ?></li>
 <li><?php echo t('impact of a move on an individual with memory loss,'); ?></li>
-<li><?php echo t('residential care options, including how to decide/choose residential care.'); ?>
-  </p>
+<li><?php echo t('residential care options, including how to decide/choose residential care.'); ?></li>
+  </ul>
   <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Start Course &raquo;'); ?></a></div>
 </div>
 </div>

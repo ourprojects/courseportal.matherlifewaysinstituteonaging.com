@@ -10,8 +10,19 @@
 	online programs that are designed to educate caregivers while fitting into any schedule.'); ?> </p>
   
   <hr />
-  <?php foreach($courses as $course): ?>
-  <h3><a href="<?php echo $this->createUrl($course->name); ?>" title="<?php echo t($course->title); ?>"><?php echo t($course->title); ?></a></h3>
+  <?php foreach($courses as $course): 
+  
+  	// The following 2 if statements are a BAD HACK!!! Need to find a better way here.
+  	if($course->name === 'introtocaregivingonline')
+		echo CHtml::image($this->getImagesUrl('image-hands.png'), t('hands'), array('class' => 'image-right'));
+  	elseif($course->name === 'carecoachingonline')
+  		echo CHtml::image($this->getImagesUrl('image-grocery.png'), t('groceries'), array('class' => 'image-right'));
+  ?>
+  <h3>
+  	<a href="<?php echo $this->createUrl($course->name); ?>" title="<?php echo t($course->title); ?>">
+  		<?php echo t($course->title); ?>
+  	</a>
+  </h3>
   <p><?php echo t($course->description); ?></p>
   <h4><?php echo t('Objectives'); ?></h4>
   <ul>

@@ -45,6 +45,8 @@ class ViewAction extends CAction {
 	 */
 	public $renderAsText = false;
 	
+	public $renderData = array();
+	
 	private $_viewPath;
 
 	public function __construct($controller, $id) {
@@ -120,7 +122,7 @@ class ViewAction extends CAction {
 				$controller->renderText($text);
 			}
 			else
-				$controller->render($this->view);
+				$controller->render($this->view, $this->renderData);
 			$this->onAfterRender(new CEvent($this));
 		}
 

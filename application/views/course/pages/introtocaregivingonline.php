@@ -1,6 +1,6 @@
 <?php
 
-$this->breadcrumbs = array(t('Courses'));
+$this->breadcrumbs = array(t('Courses') => $this->createUrl('course/'), t($course->title));
 $clientScript = Yii::app()->getClientScript();
 $clientScript->registerCssFile($this->getStylesUrl('course.css'));
 
@@ -25,7 +25,7 @@ foreach(array(
 ?>
 
 <div class="small-masthead" style="background-image: url(<?php echo $this->getImagesUrl('header-courses.png'); ?>);">
-  <h1 class="bottom"><?php echo t('Intro to Caregiving Online'); ?></h1>
+  <h1 class="bottom"><?php echo t($course->title); ?></h1>
 </div>
 
 <!-- SIDEBAR 1 -->
@@ -42,13 +42,11 @@ foreach(array(
   <div class="box-sidebar two">
     <h3>Pew Internet: Health (Feb 1, 2013)</h3>
     <p><a href="http://pewinternet.org/experts/~/link.aspx?_id=E26587FE8FDB443A8610ECB87E635F94&_z=z" target="_blank"><img class="block-center" src="<?php echo $this->getImagesUrl('pew.png'); ?>" /></a></p>
+   	<!-- Use CSS if you want horizontal rules between each list item -->
     <ul>
       <li><?php echo t('39% of U.S. adults provided care for a loved one in the past 12 months, which could include helping with personal needs, household chores, finances, or simply visiting to check in.'); ?></li>
-      <hr />
       <li><?php echo t('36% of U.S. adults care for an adult or multiple adults.'); ?></li>
-      <hr />
       <li><?php echo t('8% of U.S. adults care for a child with a medical, behavioral, or other condition or disability.'); ?></li>
-      <hr />
       <li><?php echo t('Eight in ten caregivers (79%) have access to the internet. Of those, 88% look online for health information, outpacing other internet users on every health topic included in our survey, from looking up certain treatments to hospital ratings to end-of-life decisions.'); ?></li>
     </ul>
   </div>
@@ -57,15 +55,14 @@ foreach(array(
 <!-- Start main content here -->
 
 <div class="column-wide">
-  <h2 class="flowers"> <?php echo t('Introduction to Caregiving Online'); ?> </h2>
-  <p> <?php echo t('Few are fully prepared for the responsibilities and tasks involved in caring for an older adult. As a caregiver, it is important to have a clear plan or guide that has multiple paths. This five-lesson online course introduces the basics of the caregiver role and explores the challenges associated with older adult care.'); ?> </p>
-  <p> <?php echo t('Objectives'); ?> </p>
+  <h2 class="flowers"><?php echo t($course->title); ?></h2>
+  <p><?php echo t($course->description); ?></p>
+  <h4><?php echo t('Objectives'); ?></h4>
   <ul>
-    <li><?php echo t('Explore, define, describe, and understand caregiving'); ?></li>
-    <li><?php echo t('Explore current data, trends, and research'); ?></li>
-    <li><?php echo t('Explore general challenges associated with caregiving'); ?></li>
-    <li><?php echo t('Explore the impact on businesses and the economy'); ?></li>
-    <li><?php echo t('Explore and discuss the future of caregiving'); ?></li>
+  <?php 
+  foreach($course->objectives as $objective)
+  	echo '<li>' . t($objective->text) . '</li>';
+  ?>
   </ul>
   
    <p id="surveynotify"><?php echo t('Please complete the PRE-COURSE SURVEY before participating. It can be accessed via the PROFILE page.'); ?></p>
@@ -321,8 +318,8 @@ foreach(array(
 <li><?php echo t('64% of working parents caring for a special needs child believe that caregiving responsibility has negatively impacted their work performance.'); ?></li>
 <li><?php echo t('American businesses can lose as much as $34 billion each year due to employees\' need to care for loved ones 50 years of age and older.'); ?></li>
 <li><?php echo t('Caregivers caring for elderly loved ones cost employers 8% more in health care costs estimated to be worth $13.4 billion per year.'); ?></li>
-<li><?php echo t('Over 65% of employers believe that health benefits improve employees\' health. Sixty percent (60%) believe it increases moral and 39% believe it increases productivity.'); ?>
-  </p>
+<li><?php echo t('Over 65% of employers believe that health benefits improve employees\' health. Sixty percent (60%) believe it increases moral and 39% believe it increases productivity.'); ?></li>
+</ul>
 </div>
 <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
 </div>
@@ -434,8 +431,8 @@ foreach(array(
 <ul>
 <li><?php echo t('Locate and explore general challenges associated with caregiving'); ?></li>
 <li><?php echo t('Locate and explore various local and regional resources for caregivers'); ?></li>
-<li><?php echo t('Discss long-distance caregiving and potential solutions'); ?>
-  </p>
+<li><?php echo t('Discss long-distance caregiving and potential solutions'); ?></li>
+  </ul>
 </div>
 <div class="buttons"> <a href="javascript:;" class="button right"	onclick="$.fancybox.next();"><?php echo t('Start Course &raquo;'); ?></a></div>
 </div>
@@ -590,8 +587,8 @@ foreach(array(
 <ul>
 <li><?php echo t('Explore and discuss the impact caregiving has on the economy'); ?></li>
 <li><?php echo t('Examine the impact caregiving has on the workplace'); ?></li>
-<li><?php echo t('Explore and discuss how employers have responded to the needs of working caregivers '); ?>
-  </p>
+<li><?php echo t('Explore and discuss how employers have responded to the needs of working caregivers '); ?></li>
+</ul>
 </div>
 <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Start Course &raquo;'); ?></a></div>
 </div>

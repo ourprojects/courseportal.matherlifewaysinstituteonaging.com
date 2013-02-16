@@ -14,6 +14,11 @@
 	        	'htmlOptions' => array('width' => '40'),
 	        ),
 			array(
+				'name' => 'rank',
+				'filter' => CHtml::listData($source, 'rank', 'rank'),
+				'htmlOptions' => array('width' => '40'),
+			),
+			array(
 				'name' => 'name',
 				'filter' => CHtml::listData($source, 'name', 'name'),
 				'htmlOptions' => array('width' => '100'),

@@ -14,7 +14,7 @@ $this->breadcrumbs = array(
 		$form = $this->beginWidget('CActiveForm', 
 				array(
 					'id' => 'course-form',
-					'enableAjaxValidation' => false,
+					'enableAjaxValidation' => true,
 					'enableClientValidation' => true,
 				)
 		);
@@ -22,6 +22,11 @@ $this->breadcrumbs = array(
 		<p class="note">
 			<?php echo t('Fields with {required} are required.', array('{required}' => '<span class="required">*</span>')); ?>
 		</p>
+		<div class="row">
+	        <?php echo $form->labelEx($course, 'rank'); ?>
+	        <?php echo $form->numberField($course, 'rank'); ?>
+	        <?php echo $form->error($course,'rank'); ?>
+	    </div>
 	    <div class="row">
 	        <?php echo $form->labelEx($course, 'name'); ?>
 	        <?php echo $form->textField($course, 'name'); ?>
