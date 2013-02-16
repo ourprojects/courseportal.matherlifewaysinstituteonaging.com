@@ -9,68 +9,19 @@
 				manage their loved one\'s needs, and learn how to effectively practice self-care, Mather LifeWays Institute on Aging has developed
 	online programs that are designed to educate caregivers while fitting into any schedule.'); ?> </p>
   
-  <!-- Everything below this line could be generated automatically simply by storing the 
-description and objectives information in the database for each course -->
-  
   <hr />
-  <img src="<?php echo $this->getImagesUrl('image-hands.png'); ?>"
-		class="image-right" />
-  <h3> <a href="<?php echo $this->createUrl('introtocaregivingonline'); ?>"> <?php echo t('Introduction to Caregiving Online'); ?> </a> </h3>
-  <p> <?php echo t('Few are fully prepared for the responsibilities and tasks involved in caring for an older adult. 
-				As a caregiver, it is important to have a clear plan or guide that has multiple paths. This five-lesson online course introduces the basics
-	of the caregiver role and explores the challenges associated with older adult care.'); ?> </p>
-  <p> <?php echo t('Objectives'); ?> </p>
+  <?php foreach($courses as $course): ?>
+  <h3><a href="<?php echo $this->createUrl($course->name); ?>" title="<?php echo t($course->title); ?>"><?php echo t($course->title); ?></a></h3>
+  <p><?php echo t($course->description); ?></p>
+  <h4><?php echo t('Objectives'); ?></h4>
   <ul>
-    <li><?php echo t('Explore, define, describe, and understand caregiving'); ?></li>
-    <li><?php echo t('Explore current data, trends, and research'); ?></li>
-    <li><?php echo t('Explore general challenges associated with caregiving'); ?></li>
-    <li><?php echo t('Explore the impact on businesses and the economy'); ?></li>
-    <li><?php echo t('Explore and discuss the future of caregiving'); ?></li>
+  <?php 
+  foreach($course->objectives as $objective)
+  	echo '<li>' . t($objective->text) . '</li>';
+  ?>
   </ul>
   <hr />
-  <h3> <a href="<?php echo $this->createUrl('empoweronline'); ?>"><?php echo t('Empower Online'); ?> </a> </h3>
-  <p> <?php echo t('Empower Online is an in-depth, five-lesson online course that focuses on self-care for the 
-				working caregiver that was developed by Mather LifeWays Institute on Aging with the support of WFD Consulting. The program focuses on managing
-				responsibilities while caring for loved ones with chronic medical issues and includes communicating effectively with healthcare providers
-	and locating additional caregiver resources.'); ?> </p>
-  <p> <?php echo t('Objectives'); ?> </p>
-  <ul>
-    <li><?php echo t('Explore and introduce self-care'); ?></li>
-    <li><?php echo t('Explore caregiver stress'); ?></li>
-    <li><?php echo t('Explore caregiving transitions'); ?></li>
-    <li><?php echo t('Explore and discuss the challenges associated with long-distance caregiving'); ?></li>
-    <li><?php echo t('Explore various decisions associated with the caregiver role'); ?></li>
-  </ul>
-  <hr />
-  <img src="<?php echo $this->getImagesUrl('image-grocery.png'); ?>"
-		class="image-right" />
-  <h3> <a href="<?php echo $this->createUrl('carecoachingonline'); ?>"><?php echo t('CARE Coaching Online'); ?> </a> </h3>
-  <p> <?php echo t('CARE Coaching Online provides working caregivers with essential tools, 
-				knowledge, and skills to effectively deal with the variety of issues arising from caring for their aging parents, relatives,
-				or loved ones. Developed by Mather LifeWays Institute on Aging, CARE Coaching Online improves working caregivers abilities to
-	communicate, advocate, relate, and encourage their older parents or loved ones in making future plans.'); ?> </p>
-  <p> <?php echo t('Objectives'); ?> </p>
-  <ul>
-    <li><?php echo t('Identify, understand, and support needs and preferences of older adults'); ?></li>
-    <li><?php echo t('Manage health information and record keeping'); ?></li>
-    <li><?php echo t('Understand aspects of the health care system and utilization by older adults'); ?></li>
-    <li><?php echo t('Better prepare for potential relocation of older adults'); ?></li>
-    <li><?php echo t('Promote the safety of older relatives and friends in caring for themselves'); ?></li>
-  </ul>
-  <hr />
-  <h3> <a href="<?php echo $this->createUrl('makingsenseofmemorylossonline'); ?>"> <?php echo t('Making Sense of Memory Loss (MSML) Online'); ?> </a> </h3>
-  <p> <?php echo t('Developed by Mather LifeWays Institute on Aging and the Alzheimer\'s Association, 
-				evidence-based Making Sense of Memory Loss helps those who care for someone in the early, middle, or late to final
-	stages of memory loss, whether or not that individual has received a diagnosis of Alzheimer\'s Disease or related dementia.'); ?> </p>
-  <p> <?php echo t('Objectives'); ?> </p>
-  <ul>
-    <li><?php echo t('Increase knowledge about the causes of memory loss and to promote a medical evaluation'); ?></li>
-    <li><?php echo t('Assist in adjusting their attitudes and behaviors in relation to the person with memory loss'); ?></li>
-    <li><?php echo t('Increase self-efficacy with respect to present and future caregiving tasks'); ?></li>
-    <li><?php echo t('Explore resources available for those with memory loss'); ?></li>
-    <li><?php echo t('Explore national data and statistics related to memory-loss'); ?></li>
-  </ul>
-
+  <?php endforeach; ?>
 <br /><br />
 
 
@@ -108,23 +59,6 @@ description and objectives information in the database for each course -->
     
     <br /><br />
     <h2 class="flowers"> <?php echo t('Toolkits'); ?> </h2>
-    <hr />
-    
-    <!-- Making Sense of Memory Loss -->
-    
-  <h3> <a href="<?php echo $this->createUrl('#'); ?>"> <?php echo t('Making Sense of Memory Loss (MSML) '); ?> </a><?php echo t(' - Coming Summer 2013'); ?> </h3>
-  
-  <p><?php echo t('Making Sense of Memory Loss is a five-part training program for professionals interested in educating families and staff about caring for persons with memory loss in regards to its causes and treatments, as well as effective ways of coping now and in the future. In light of the growing trend toward earlier diagnosis of Alzheimer\'s Disease and related dementias, Making Sense of Memory Loss is for anyone who cares for someone in the early stages of memory loss, whether or not that the person has received a diagnosis.'); ?></p>
-  
-  
-    <p> <?php echo t('Objectives'); ?> </p>
-  <ul>
-    <li><?php echo t('Causes and course of memory loss related to dementia'); ?></li>
-    <li><?php echo t('Understanding a diagnosis of dementia or Alzheimer’s Disease'); ?></li>
-    <li><?php echo t('Communicating with persons experiencing dementia or Alzheimer’s Disease'); ?></li>
-    <li><?php echo t('Dealing with one’s own feelings about changing roles and relationships'); ?></li>
-    <li><?php echo t('Making decisions and planning for the future'); ?></li>
-  </ul>
   
     <hr />
     <h3> <a href="<?php echo $this->createUrl('#'); ?>"> <?php echo t('Aging in the Workplace '); ?> </a><?php echo t(' - Coming Summer 2013'); ?> </h3>
@@ -139,5 +73,4 @@ description and objectives information in the database for each course -->
     <li><?php echo t('Information and resources for employed caregivers'); ?></li>
     <li><?php echo t('Aging in the Workplace Survey*'); ?> </li>
   </ul>
-    </p>
 </div>

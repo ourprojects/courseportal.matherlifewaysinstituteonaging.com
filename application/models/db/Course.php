@@ -8,9 +8,12 @@ class Course extends ActiveRecord {
 	 * @property integer $id
 	 * @property string $name
 	 * @property string $title
+	 * @property string $description
 	 *
 	 * The followings are the available model relations:
 	 * @property User[] $users
+	 * @property UserCourse[] $userCourses
+	 * @property CourseObjective[] $objectives
 	 */
 	
 	/**
@@ -33,12 +36,13 @@ class Course extends ActiveRecord {
 	 */
 	public function rules() {
 		return array(
-				array('title', 'required'),
+				array('name, title', 'required'),
 				array('name', 'length', 'max' => 255),
 				array('name', 'unique', 'allowEmpty' => false),
 				array('title', 'length', 'max' => 255),
+				array('description', 'length', 'max' => 65535),
 	
-				array('id, title', 'safe', 'on'=>'search'),
+				array('id, name, title', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -47,6 +51,7 @@ class Course extends ActiveRecord {
 	 */
 	public function relations() {
 		return array(
+				'objectives' => array(self::HAS_MANY, 'CourseObjective', 'course_id'),
 				'userCourses' => array(self::HAS_MANY, 'UserCourse', 'course_id'),
 				'users' => array(self::HAS_MANY, 'User', array('user_id' => 'id'), 'through' => 'userCourses'),
 		);
@@ -73,6 +78,7 @@ class Course extends ActiveRecord {
 				'id' => t('ID'),
 				'name' => t('Unique Name'),
 				'title' => t('Title'),
+				'description' => t('Description'),
 				'userCourses' => t('User Courses'),
 				'users' => t('Users'),
 		);
@@ -89,6 +95,7 @@ class Course extends ActiveRecord {
 		$criteria->compare('id', $this->id);
 		$criteria->compare('name', $this->name, true);
 		$criteria->compare('title', $this->title, true);
+		$criteria->compare('description', $this->description, true);
 	
 		return new CActiveDataProvider($this, array(
 				'criteria' => $criteria,

@@ -52,4 +52,8 @@ class CourseController extends OnlineCoursePortalController {
 		$this->render('pages/notRegistered', array('course' => $course));
 	}
 	
+	public function actionIndex() {
+		$this->render('pages/index', array('courses' => Course::model()->with('objectives')->findAll()));
+	}
+	
 }

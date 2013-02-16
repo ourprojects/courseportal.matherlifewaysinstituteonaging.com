@@ -83,32 +83,14 @@ class AdminController extends OnlineCoursePortalController {
 	}
 	
 	public function actionCourse() {
-		$models = array(
-				'searchModel' => new Course('search'), 
-				'model' => new Course, 
-		);
+		$searchModel = new Course('search');
 		
-		if(isset($_POST['ajax'])) {
-			if($_POST['ajax'] === 'course-create-form') {
-				echo CActiveForm::validate($models['model']);
-				Yii::app()->end();
-			}
-		}
-		
-		$models['searchModel']->unsetAttributes();
+		$searchModel->unsetAttributes();
 		
 		if(isset($_GET['Course']))
-			$models['searchModel']->attributes = $_GET['Course'];
+			$searchModel->attributes = $_GET['Course'];
 		
-		if(isset($_POST['Course'])) {
-			$models['model']->attributes = $_POST['Course'];
-			if($models['model']->save())
-				Yii::app()->getUser()->setFlash('success', t('Course saved successfully.'));
-			else
-				Yii::app()->getUser()->setFlash('error', t('Course could not be saved.'));
-		}
-		
-		$this->render('pages/course', $models);
+		$this->render('pages/course', array('searchModel' => $searchModel));
 	}
 	
 	public function actionCourseDelete($id) {
@@ -130,5 +112,75 @@ class AdminController extends OnlineCoursePortalController {
         	$this->redirect(Yii::app()->getRequest()->getUrlReferrer());
         }
 	}
+	
+    public function actionCourseView($id = null) {
+    	$models = isset($id) ? array(
+    			'course' => Course::model()->findByPk($id),
+    			'objectiveSearchModel' => new CourseObjective('search'),
+    			'courseObjective' => new CourseObjective
+    	) : array(
+    			'course' => new Course,
+    	);
+    	
+    	if(!$models['course']->getIsNewRecord()) {
+	    	$models['objectiveSearchModel']->unsetAttributes();
+	    	
+	    	$models['objectiveSearchModel']->course_id = $id;
+	    	$models['courseObjective']->course_id = $id;
+    	}
+    	
+    	if(isset($_POST['ajax'])) {
+    		if($_POST['ajax'] === 'course-form') {
+    			echo CActiveForm::validate($models['course']);
+    			Yii::app()->end();
+    		} elseif(!$models['course']->getIsNewRecord() && $_POST['ajax'] === 'course-objective-form') {
+    			echo CActiveForm::validate($models['courseObjective']);
+    			Yii::app()->end();
+    		}
+    	}	
+    	
+    	if(isset($_POST['Course'])) {
+    		$wasNew = $models['course']->getIsNewRecord();
+    		$models['course']->attributes = $_POST['Course'];
+    		if($models['course']->save()) {
+    			Yii::app()->getUser()->setFlash('success', t('Course saved successfully.'));
+    			if($wasNew)
+    				$this->redirect($this->createUrl('courseView', array('id' => $models['course']->id)));
+    		} else {
+    			Yii::app()->getUser()->setFlash('error', t('Course could not be saved.'));
+    		}
+    	} elseif(!$models['course']->getIsNewRecord() && isset($_POST['CourseObjective'])) {
+    		$models['courseObjective']->attributes = $_POST['CourseObjective'];
+    		if($models['courseObjective']->save())
+    			Yii::app()->getUser()->setFlash('success', t('Course objective saved successfully.'));
+    		else
+    			Yii::app()->getUser()->setFlash('error', t('Course objective could not be saved.'));
+    	} elseif(!$models['course']->getIsNewRecord() && isset($_GET['CourseObjective'])) {
+    		$models['objectiveSearchModel']->attributes = $_GET['CourseObjective'];
+    	}
+    	
+    	$this->render('pages/courseView', $models);
+    }
+    
+    
+    public function actionCourseObjectiveDelete($id) {
+    	$model = CourseObjective::model()->findByPk($id);
+    	 
+    	if($model === null)
+    		throw new CHttpException(404, t('Course objective with ID {id} not found.', array('{id}' => $id)));
+    	 
+    	if($model->delete()) {
+    		$response = array('result' => 'success', 'message' => t('Course objective deleted successfully.'));
+    	} else {
+    		$response = array('result' => 'error', 'message' => t('Course objective could not be deleted.'));
+    	}
+    	 
+    	if(Yii::app()->getRequest()->getIsAjaxRequest()) {
+    		echo $response['message'];
+    	} else {
+    		Yii::app()->getUser()->setFlash($response['result'], $response['message']);
+    		$this->redirect(Yii::app()->getRequest()->getUrlReferrer());
+    	}
+    }
 
 }

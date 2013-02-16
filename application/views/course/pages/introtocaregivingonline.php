@@ -4,55 +4,23 @@ $this->breadcrumbs = array(t('Courses'));
 $clientScript = Yii::app()->getClientScript();
 $clientScript->registerCssFile($this->getStylesUrl('course.css'));
 
-// FancyBox configuration for all lessons
-$courseFancyboxConfig = array('width' => '90%',
-							'height' => '90%',
-							'arrows' => false,
-							'autoSize' => false,
-							'mouseWheel' => false);
-// Lesson 1 FancyBox
-$this->widget(
-		'ext.fancybox.EFancyBox',
-		array('id' => '.lesson-1',
-			  'config' => $courseFancyboxConfig)
-);
-// Lesson 2 FancyBox
-$this->widget(
-		'ext.fancybox.EFancyBox',
-		array('id' => '.lesson-2',
-			  'config' => $courseFancyboxConfig)
-);
-// Lesson 3 FancyBox
-$this->widget(
-		'ext.fancybox.EFancyBox',
-		array('id' => '.lesson-3',
-			  'config' => $courseFancyboxConfig)
-);
-// Lesson 4 FancyBox
-$this->widget(
-		'ext.fancybox.EFancyBox',
-		array('id' => '.lesson-4',
-			  'config' => $courseFancyboxConfig)
-);
-// Lesson 5 FancyBox
-$this->widget(
-		'ext.fancybox.EFancyBox',
-		array('id' => '.lesson-5',
-			  'config' => $courseFancyboxConfig)
-);
-// Lesson 6 FancyBox
-$this->widget(
-		'ext.fancybox.EFancyBox',
-		array('id' => '.lesson-6',
-			  'config' => $courseFancyboxConfig)
-);
-
-// Lesson 7 FancyBox
-$this->widget(
-		'ext.fancybox.EFancyBox',
-		array('id' => '.lesson-7',
-			  'config' => $courseFancyboxConfig)
-);
+foreach(array(
+		'.lesson-1', 
+		'.lesson-2', 
+		'.lesson-3', 
+		'.lesson-4', 
+		'.lesson-5',
+		'.lesson-6',
+		'.lesson-7') as $lesson)
+	$this->widget(
+			'ext.fancybox.EFancyBox',
+			array('id' => $lesson,
+				  'config' => array('width' => '90%',
+									'height' => '90%',
+									'arrows' => false,
+									'autoSize' => false,
+									'mouseWheel' => false))
+	);
 
 ?>
 
@@ -109,59 +77,59 @@ $this->widget(
 	  <a href="#lesson-1-slide-1" data-fancybox-group="lesson-1" class="teal lesson-1">
 	  	<?php echo t('Defining, Describing & Understanding Caregiving'); ?>
 	  </a> 
-	  <a href="#lesson-1-slide-2" data-fancybox-group="lesson-1" class="hide lesson-1" /> 
-	  <a href="#lesson-1-slide-3" data-fancybox-group="lesson-1" class="hide lesson-1" /> 
-	  <a href="#lesson-1-slide-4" data-fancybox-group="lesson-1" class="hide lesson-1" /> 
-	  <a href="#lesson-1-slide-5" data-fancybox-group="lesson-1" class="hide lesson-1" /> 
+	  <a href="#lesson-1-slide-2" data-fancybox-group="lesson-1" class="hide lesson-1"></a> 
+	  <a href="#lesson-1-slide-3" data-fancybox-group="lesson-1" class="hide lesson-1"></a> 
+	  <a href="#lesson-1-slide-4" data-fancybox-group="lesson-1" class="hide lesson-1"></a> 
+	  <a href="#lesson-1-slide-5" data-fancybox-group="lesson-1" class="hide lesson-1"></a> 
   </li>
   <li>
 	 	<a href="#lesson-2-slide-1" data-fancybox-group="lesson-2" class="teal lesson-2">
 	  		<?php echo t('Current Data, Trends & Research on US Caregivers'); ?>
 	  	</a> 
-	  	<a href="#lesson-2-slide-2" data-fancybox-group="lesson-2" class="hide lesson-2" /> 
-	  	<a href="#lesson-2-slide-3" data-fancybox-group="lesson-2" class="hide lesson-2" /> 
-	  	<a href="#lesson-2-slide-4" data-fancybox-group="lesson-2" class="hide lesson-2" /> 
-	  	<a href="#lesson-2-slide-5" data-fancybox-group="lesson-2" class="hide lesson-2" /> 
-	  	<a href="#lesson-2-slide-6" data-fancybox-group="lesson-2" class="hide lesson-2" /> 
-	  	<a href="#lesson-2-slide-7" data-fancybox-group="lesson-2" class="hide lesson-2" /> 
-	  	<a href="#lesson-2-slide-8" data-fancybox-group="lesson-2" class="hide lesson-2" /> 
+	  	<a href="#lesson-2-slide-2" data-fancybox-group="lesson-2" class="hide lesson-2"></a> 
+	  	<a href="#lesson-2-slide-3" data-fancybox-group="lesson-2" class="hide lesson-2"></a> 
+	  	<a href="#lesson-2-slide-4" data-fancybox-group="lesson-2" class="hide lesson-2"></a> 
+	  	<a href="#lesson-2-slide-5" data-fancybox-group="lesson-2" class="hide lesson-2"></a> 
+	  	<a href="#lesson-2-slide-6" data-fancybox-group="lesson-2" class="hide lesson-2"></a> 
+	  	<a href="#lesson-2-slide-7" data-fancybox-group="lesson-2" class="hide lesson-2"></a> 
+	  	<a href="#lesson-2-slide-8" data-fancybox-group="lesson-2" class="hide lesson-2"></a> 
   </li>
   <li>
 	  	<a href="#lesson-3-slide-1" data-fancybox-group="lesson-3" class="teal lesson-3">
 	  		<?php echo t('General Challenges Associated with Caregiving'); ?>
 	  	</a> 
-	  	<a href="#lesson-3-slide-2" data-fancybox-group="lesson-3" class="hide lesson-3" /> 
-	  	<a href="#lesson-3-slide-3" data-fancybox-group="lesson-3" class="hide lesson-3" /> 
-	  	<a href="#lesson-3-slide-4" data-fancybox-group="lesson-3" class="hide lesson-3" /> 
-	  	<a href="#lesson-3-slide-5" data-fancybox-group="lesson-3" class="hide lesson-3" /> 
-	  	<a href="#lesson-3-slide-6" data-fancybox-group="lesson-3" class="hide lesson-3" /> 
-	  	<a href="#lesson-3-slide-7" data-fancybox-group="lesson-3" class="hide lesson-3" /> 
+	  	<a href="#lesson-3-slide-2" data-fancybox-group="lesson-3" class="hide lesson-3"></a> 
+	  	<a href="#lesson-3-slide-3" data-fancybox-group="lesson-3" class="hide lesson-3"></a> 
+	  	<a href="#lesson-3-slide-4" data-fancybox-group="lesson-3" class="hide lesson-3"></a> 
+	  	<a href="#lesson-3-slide-5" data-fancybox-group="lesson-3" class="hide lesson-3"></a> 
+	  	<a href="#lesson-3-slide-6" data-fancybox-group="lesson-3" class="hide lesson-3"></a> 
+	  	<a href="#lesson-3-slide-7" data-fancybox-group="lesson-3" class="hide lesson-3"></a> 
   </li>
   <li>
 	  <a href="#lesson-4-slide-1" data-fancybox-group="lesson-4" class="teal lesson-4">
 	  <?php echo t('Impact on the Workplace & the Economy'); ?>
 	  </a> 
-	  <a href="#lesson-4-slide-2" data-fancybox-group="lesson-4" class="hide lesson-4" /> 
-	  <a href="#lesson-4-slide-3" data-fancybox-group="lesson-4" class="hide lesson-4" /> 
-	  <a href="#lesson-4-slide-4" data-fancybox-group="lesson-4" class="hide lesson-4" /> 
-	  <a href="#lesson-4-slide-5" data-fancybox-group="lesson-4" class="hide lesson-4" /> 
-	  <a href="#lesson-4-slide-6" data-fancybox-group="lesson-4" class="hide lesson-4" /> 
-	  <a href="#lesson-4-slide-7" data-fancybox-group="lesson-4" class="hide lesson-4" /> 
-	  <a href="#lesson-4-slide-8" data-fancybox-group="lesson-4" class="hide lesson-4" /> 
-	  <a href="#lesson-4-slide-9" data-fancybox-group="lesson-4" class="hide lesson-4" /> 
-	 <a href="#lesson-4-slide-10" data-fancybox-group="lesson-4" class="hide lesson-4" /> 
-     <a href="#lesson-4-slide-11" data-fancybox-group="lesson-4" class="hide lesson-4" />
+	  <a href="#lesson-4-slide-2" data-fancybox-group="lesson-4" class="hide lesson-4"></a> 
+	  <a href="#lesson-4-slide-3" data-fancybox-group="lesson-4" class="hide lesson-4"></a> 
+	  <a href="#lesson-4-slide-4" data-fancybox-group="lesson-4" class="hide lesson-4"></a> 
+	  <a href="#lesson-4-slide-5" data-fancybox-group="lesson-4" class="hide lesson-4"></a> 
+	  <a href="#lesson-4-slide-6" data-fancybox-group="lesson-4" class="hide lesson-4"></a> 
+	  <a href="#lesson-4-slide-7" data-fancybox-group="lesson-4" class="hide lesson-4"></a> 
+	  <a href="#lesson-4-slide-8" data-fancybox-group="lesson-4" class="hide lesson-4"></a> 
+	  <a href="#lesson-4-slide-9" data-fancybox-group="lesson-4" class="hide lesson-4"></a> 
+	 <a href="#lesson-4-slide-10" data-fancybox-group="lesson-4" class="hide lesson-4"></a> 
+     <a href="#lesson-4-slide-11" data-fancybox-group="lesson-4" class="hide lesson-4"></a>
   </li>
   <li>
     <a href="#lesson-5-slide-1" data-fancybox-group="lesson-5" class="teal lesson-5">
     <?php echo t('The Future of Caregiving in the US'); ?>
     </a> 
-	<a href="#lesson-5-slide-2" data-fancybox-group="lesson-5" class="hide lesson-5" /> 
-	<a href="#lesson-5-slide-3" data-fancybox-group="lesson-5" class="hide lesson-5" /> 
-	<a href="#lesson-5-slide-4" data-fancybox-group="lesson-5" class="hide lesson-5" /> 
-	<a href="#lesson-5-slide-5" data-fancybox-group="lesson-5" class="hide lesson-5" /> 
-	<a href="#lesson-5-slide-6" data-fancybox-group="lesson-5" class="hide lesson-5" /> 
-	<a href="#lesson-5-slide-7" data-fancybox-group="lesson-5" class="hide lesson-5" /> 
+	<a href="#lesson-5-slide-2" data-fancybox-group="lesson-5" class="hide lesson-5"></a> 
+	<a href="#lesson-5-slide-3" data-fancybox-group="lesson-5" class="hide lesson-5"></a> 
+	<a href="#lesson-5-slide-4" data-fancybox-group="lesson-5" class="hide lesson-5"></a> 
+	<a href="#lesson-5-slide-5" data-fancybox-group="lesson-5" class="hide lesson-5"></a> 
+	<a href="#lesson-5-slide-6" data-fancybox-group="lesson-5" class="hide lesson-5"></a> 
+	<a href="#lesson-5-slide-7" data-fancybox-group="lesson-5" class="hide lesson-5"></a> 
    </li>
 </ul>
 
