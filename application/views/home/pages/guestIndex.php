@@ -50,11 +50,11 @@ $this->widget(
 		<a href="#slide-1" data-fancybox-group="open-tutorial" class="teal open-tutorial">
 		<?php echo t('Tutorial'); ?>
 		</a> 
-		<a href="#slide-2" data-fancybox-group="open-tutorial" class="hide open-tutorial" /> 
-		<a href="#slide-3" data-fancybox-group="open-tutorial" class="hide open-tutorial" /> 
-		<a href="#slide-4" data-fancybox-group="open-tutorial" class="hide open-tutorial" /> 
-		<a href="#slide-5" data-fancybox-group="open-tutorial" class="hide open-tutorial" /> 
-		<a href="#slide-6" data-fancybox-group="open-tutorial" class="hide open-tutorial" />
+		<a href="#slide-2" data-fancybox-group="open-tutorial" class="hide open-tutorial"></a> 
+		<a href="#slide-3" data-fancybox-group="open-tutorial" class="hide open-tutorial"></a> 
+		<a href="#slide-4" data-fancybox-group="open-tutorial" class="hide open-tutorial"></a> 
+		<a href="#slide-5" data-fancybox-group="open-tutorial" class="hide open-tutorial"></a> 
+		<a href="#slide-6" data-fancybox-group="open-tutorial" class="hide open-tutorial"></a>
 	</div>
 	<!-- Clients sidebar here -->
 	<div class="box-sidebar one">
