@@ -25,6 +25,10 @@ echo $this->renderPartial('forms/profile_form', array('models' => $models));
 ?>
   </p>
   <hr />
+  
+   <h2 class="flowers"> <?php echo t('Resources'); ?> </h2>
+  <p><?php echo t('Our surveys are designed to help us obtain information that help with decision-making.'); ?></p>
+  <p><?php echo t('Our goal is to help better educate our participants by creating a client touch-point, a feedback system, and means to better understanding the shifting needs of the field.'); ?></p>
   <ul>
   <?php 
   	foreach($surveys as $survey): ?>
