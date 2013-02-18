@@ -28,18 +28,28 @@ foreach(array(
   <h1 class="bottom"><?php echo t($course->title); ?></h1>
 </div>
 
-<!-- SIDEBAR 1 -->
-
 <div id="sidebar">
+
+ <!-- sidebar #1 here -->
+  <div class="box-sidebar one">
+    <h3>Pre-Course Survey</h3>
+    <br />
+    <p id="surveynotify"><?php echo t('Complete the Pre-Course survey BEFORE participating. (Profile Page)'); ?></p>
+    <br />
+  </div>
+
+<!-- SIDEBAR 2 -->
+
+
   <div class="box-sidebar one">
     <h3><?php echo t('Caregiving and its challenges'); ?></h3>
     <img class="block-center" src="<?php echo $this->getImagesUrl('286x231_Grafix_Pie2-3.png'); ?>" />
     <p><?php echo t('2/3 of working caregivers report conflicts between work and caregiving that result in increased absenteeism, workday interruptions, reduced hours, and workload shifting to other employees.'); ?></p>
   </div>
   
-  <!-- SIDEBAR 2 -->
+  <!-- SIDEBAR 3 -->
   
-  <div class="box-sidebar two">
+  <div class="box-sidebar three">
     <h3>Pew Internet: Health (Feb 1, 2013)</h3>
     <p><a href="http://pewinternet.org/experts/~/link.aspx?_id=E26587FE8FDB443A8610ECB87E635F94&_z=z" target="_blank"><img class="block-center" src="<?php echo $this->getImagesUrl('pew.png'); ?>" /></a></p>
    	<!-- Use CSS if you want horizontal rules between each list item -->
@@ -65,9 +75,8 @@ foreach(array(
   ?>
   </ul>
   
-   <p id="surveynotify"><?php echo t('Please complete the PRE-COURSE SURVEY before participating. It can be accessed via the PROFILE page.'); ?></p>
 
-<h2><?php echo t('Course Lessons'); ?></h2> 
+<h4><?php echo t('Course Lessons'); ?></h4> 
   
   <ul>
   <li> 
@@ -130,15 +139,40 @@ foreach(array(
    </li>
 </ul>
 
- <h2><?php echo t('Length'); ?></h2>
-  <p><?php echo t('You will have 8 weeks to complete this online course, but full access for one-year. After your intitial 8-week period ends, you will not have access to your Facilitator. This course was designed to be completed in 8-weeks, completing one-lesson each week. Each Lesson is designed to take 2-3 hours.'); ?></p>
-  <h2><?php echo t('Facilitators &amp; Course Developers'); ?></h2>
-  <p><a href="mailto:lindahollinger-smith@matherlifeways.com"><?php echo t('Content Designer: Linda Hollinger-Smith, PhD - '); ?></a></p>
-  <p><?php echo t('Dr. Hollinger-Smith is a doctorally prepared registered nurse focusing her research in gerontology, workforce development, and quality improvement. She has more than 28 years of experience working with older adults in senior living, long-term care settings, in the community, and in acute care settings in various staff and managerial positions. Her past positions include Assistant Dean of the Rush University College of Nursing, Nursing Director of the Rush Primary Care Institute, and Associate Chairperson of the Department of Adult Health Nursing at Rush University College of Nursing.'); ?></p>
+  <br />
+  <br />
   
-  <p><?php echo t('She has served as Principal Investigator for multiple national research projects totaling more than $4.5 million in support, targeting nursing workforce development and retention, falls reduction, and caregiver support issues. She has published over 50 journal articles, book chapters and research abstracts and has presented on national and international levels on various topics related to aging. In her current position, Dr. Hollinger-Smith leads a team of applied researchers and staff responsible for developing and expanding the Mather LifeWays applied research agenda.'); ?></p>
-  <p><a href="mailto:jwoodall@matherlifeways.com"><?php echo t('Course Developer: Jon Woodall - '); ?></a></p>
-  <p><?php echo t('Mr. Woodall is responsible for all MLIA corporate workforce wellness programs related to design, implementation, publication, and evaluation. Additionally, he seeks new grant funding to support or extend current grants related to corporate workforce wellness programs. '); ?></p>
+  <div class="box-white">
+    <h4><?php echo t('Length'); ?></h4>
+    <p><?php echo t('* Participant Access - 1 Year'); ?><br />
+      <?php echo t('* Recommended Completion - 8 Weeks'); ?><br />
+      <?php echo t('* Weekly Commitment - 1 Lesson @ 2 to 3 Hours'); ?></p>
+  </div>
+  <div class="box-white">
+    <h4> <?php echo t('Resources'); ?></h4>
+    <p><?php echo t('Please use these listed resources in the completion of this online course. Pleaes contact your instructor or the program director if you have additional resources you would like to see added here.'); ?></p>
+    <p><a href="http://www.alz.org" target="_blank">Alzheimer's Association</a></p>
+    <p><a href="http://www.nih.gov" target="_blank">National Intitute on Health (NIH)</a></p>
+    <p><a href="http://www.webmd.com" target="_blank">WebMD website</a></p>
+  </div>
+  <div class="box-white">
+    <div id="developers">
+      <h4><?php echo t('Facilitators &amp; Course Developers'); ?></h4>
+      <p><?php echo t('Content Designer: '); ?><a href="mailto:lindahollinger-smith@matherlifeways.com"><?php echo t('Linda Hollinger-Smith, PhD'); ?></a><br />
+      <?php echo t('Dr. Hollinger-Smith is a doctorally prepared registered nurse focusing her research in gerontology, workforce development, and quality improvement. She has more than 28 years of experience working with older adults in senior living, long-term care settings, in the community, and in acute care settings in various staff and managerial positions. Her past positions include Assistant Dean of the Rush University College of Nursing, Nursing Director of the Rush Primary Care Institute, and Associate Chairperson of the Department of Adult Health Nursing at Rush University College of Nursing.'); ?></p>
+      <p><?php echo t('She has served as Principal Investigator for multiple national research projects totaling more than $4.5 million in support, targeting nursing workforce development and retention, falls reduction, and caregiver support issues. She has published over 50 journal articles, book chapters and research abstracts and has presented on national and international levels on various topics related to aging. In her current position, Dr. Hollinger-Smith leads a team of applied researchers and staff responsible for developing and expanding the Mather LifeWays applied research agenda.'); ?></p>
+      <p><?php echo t('Course Developer: '); ?><a href="mailto:jwoodall@matherlifeways.com">Jon Woodall</a><br />
+        <?php echo t('Mr. Woodall is responsible for all MLIA corporate workforce wellness programs related to design, implementation, publication, and evaluation. Additionally, he seeks new grant funding to support or extend current grants related to corporate workforce wellness programs. '); ?></p>
+      <p><?php echo t('Facilitator: '); ?><a href="mailto:jwoodall@matherlifeways.com">Jon Woodall</a><br />
+        <?php echo t('Mr. Woodall is responsible for all MLIA corporate workforce wellness programs related to design, implementation, publication, and evaluation. Additionally, he seeks new grant funding to support or extend current grants related to corporate workforce wellness programs. '); ?></p>
+    </div>
+    </div>
+ 
+ 
+ 
+ 
+ 
+ 
 
 </div>
 
