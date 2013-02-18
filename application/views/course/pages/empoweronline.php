@@ -69,88 +69,88 @@ foreach(array(
 <ul>
   <li> 
 	  <a href="#lesson-1-slide-1" data-fancybox-group="lesson-1" class="teal lesson-1"><?php echo t('Taking Care of You'); ?></a> 
-	  <a href="#lesson-1-slide-2" data-fancybox-group="lesson-1" class="hide lesson-1" /> 
-	  <a href="#lesson-1-slide-3" data-fancybox-group="lesson-1" class="hide lesson-1" /> 
-	  <a href="#lesson-1-slide-4" data-fancybox-group="lesson-1" class="hide lesson-1" /> 
-	  <a href="#lesson-1-slide-5" data-fancybox-group="lesson-1" class="hide lesson-1" /> 
-	  <a href="#lesson-1-slide-6" data-fancybox-group="lesson-1" class="hide lesson-1" /> 
-	  <a href="#lesson-1-slide-7" data-fancybox-group="lesson-1" class="hide lesson-1" /> 
-	  <a href="#lesson-1-slide-8" data-fancybox-group="lesson-1" class="hide lesson-1" /> 
-	  <a href="#lesson-1-slide-9" data-fancybox-group="lesson-1" class="hide lesson-1" />
-	  <a href="#lesson-1-slide-10" data-fancybox-group="lesson-1" class="hide lesson-1" /> 
-      <a href="#lesson-1-slide-11" data-fancybox-group="lesson-1" class="hide lesson-1" /> 
-      <a href="#lesson-1-slide-12" data-fancybox-group="lesson-1" class="hide lesson-1" /> 
-      <a href="#lesson-1-slide-13" data-fancybox-group="lesson-1" class="hide lesson-1" /> 
-      <a href="#lesson-1-slide-14" data-fancybox-group="lesson-1" class="hide lesson-1" /> 
-      <a href="#lesson-1-slide-15" data-fancybox-group="lesson-1" class="hide lesson-1" />
-      <a href="#lesson-1-slide-16" data-fancybox-group="lesson-1" class="hide lesson-1" /> 
-      <a href="#lesson-1-slide-17" data-fancybox-group="lesson-1" class="hide lesson-1" /> 
-      <a href="#lesson-1-slide-18" data-fancybox-group="lesson-1" class="hide lesson-1" /> 
-      <a href="#lesson-1-slide-19" data-fancybox-group="lesson-1" class="hide lesson-1" /> 
-      <a href="#lesson-1-slide-20" data-fancybox-group="lesson-1" class="hide lesson-1" /> 
-      <a href="#lesson-1-slide-21" data-fancybox-group="lesson-1" class="hide lesson-1" /> 
-      <a href="#lesson-1-slide-22" data-fancybox-group="lesson-1" class="hide lesson-1" /> 
-      <a href="#lesson-1-slide-23" data-fancybox-group="lesson-1" class="hide lesson-1" /> 
-      <a href="#lesson-1-slide-24" data-fancybox-group="lesson-1" class="hide lesson-1" /> 
-      <a href="#lesson-1-slide-25" data-fancybox-group="lesson-1" class="hide lesson-1" />
-      <a href="#lesson-1-slide-26" data-fancybox-group="lesson-1" class="hide lesson-1" /> 
+	  <a href="#lesson-1-slide-2" data-fancybox-group="lesson-1" class="hide lesson-1"></a> 
+	  <a href="#lesson-1-slide-3" data-fancybox-group="lesson-1" class="hide lesson-1"></a> 
+	  <a href="#lesson-1-slide-4" data-fancybox-group="lesson-1" class="hide lesson-1"></a> 
+	  <a href="#lesson-1-slide-5" data-fancybox-group="lesson-1" class="hide lesson-1"></a> 
+	  <a href="#lesson-1-slide-6" data-fancybox-group="lesson-1" class="hide lesson-1"></a> 
+	  <a href="#lesson-1-slide-7" data-fancybox-group="lesson-1" class="hide lesson-1"></a> 
+	  <a href="#lesson-1-slide-8" data-fancybox-group="lesson-1" class="hide lesson-1"></a> 
+	  <a href="#lesson-1-slide-9" data-fancybox-group="lesson-1" class="hide lesson-1"></a>
+	  <a href="#lesson-1-slide-10" data-fancybox-group="lesson-1" class="hide lesson-1"></a> 
+      <a href="#lesson-1-slide-11" data-fancybox-group="lesson-1" class="hide lesson-1"></a> 
+      <a href="#lesson-1-slide-12" data-fancybox-group="lesson-1" class="hide lesson-1"></a> 
+      <a href="#lesson-1-slide-13" data-fancybox-group="lesson-1" class="hide lesson-1"></a> 
+      <a href="#lesson-1-slide-14" data-fancybox-group="lesson-1" class="hide lesson-1"></a> 
+      <a href="#lesson-1-slide-15" data-fancybox-group="lesson-1" class="hide lesson-1"></a>
+      <a href="#lesson-1-slide-16" data-fancybox-group="lesson-1" class="hide lesson-1"></a> 
+      <a href="#lesson-1-slide-17" data-fancybox-group="lesson-1" class="hide lesson-1"></a> 
+      <a href="#lesson-1-slide-18" data-fancybox-group="lesson-1" class="hide lesson-1"></a> 
+      <a href="#lesson-1-slide-19" data-fancybox-group="lesson-1" class="hide lesson-1"></a> 
+      <a href="#lesson-1-slide-20" data-fancybox-group="lesson-1" class="hide lesson-1"></a> 
+      <a href="#lesson-1-slide-21" data-fancybox-group="lesson-1" class="hide lesson-1"></a> 
+      <a href="#lesson-1-slide-22" data-fancybox-group="lesson-1" class="hide lesson-1"></a> 
+      <a href="#lesson-1-slide-23" data-fancybox-group="lesson-1" class="hide lesson-1"></a> 
+      <a href="#lesson-1-slide-24" data-fancybox-group="lesson-1" class="hide lesson-1"></a> 
+      <a href="#lesson-1-slide-25" data-fancybox-group="lesson-1" class="hide lesson-1"></a>
+      <a href="#lesson-1-slide-26" data-fancybox-group="lesson-1" class="hide lesson-1"></a> 
 
   </li>
   <li>
 	 	<a href="#lesson-2-slide-1" data-fancybox-group="lesson-2" class="teal lesson-2"><?php echo t('Reducing Personal Stress'); ?></a> 
-	  	<a href="#lesson-2-slide-2" data-fancybox-group="lesson-2" class="hide lesson-2" /> 
-	  	<a href="#lesson-2-slide-3" data-fancybox-group="lesson-2" class="hide lesson-2" /> 
-	  	<a href="#lesson-2-slide-4" data-fancybox-group="lesson-2" class="hide lesson-2" /> 
-	  	<a href="#lesson-2-slide-5" data-fancybox-group="lesson-2" class="hide lesson-2" /> 
-	  	<a href="#lesson-2-slide-6" data-fancybox-group="lesson-2" class="hide lesson-2" /> 
-	  	<a href="#lesson-2-slide-7" data-fancybox-group="lesson-2" class="hide lesson-2" /> 
-	  	<a href="#lesson-2-slide-8" data-fancybox-group="lesson-2" class="hide lesson-2" /> 
-	  	<a href="#lesson-2-slide-9" data-fancybox-group="lesson-2" class="hide lesson-2" />
-        <a href="#lesson-2-slide-10" data-fancybox-group="lesson-2" class="hide lesson-2" /> 
+	  	<a href="#lesson-2-slide-2" data-fancybox-group="lesson-2" class="hide lesson-2"></a> 
+	  	<a href="#lesson-2-slide-3" data-fancybox-group="lesson-2" class="hide lesson-2"></a> 
+	  	<a href="#lesson-2-slide-4" data-fancybox-group="lesson-2" class="hide lesson-2"></a> 
+	  	<a href="#lesson-2-slide-5" data-fancybox-group="lesson-2" class="hide lesson-2"></a> 
+	  	<a href="#lesson-2-slide-6" data-fancybox-group="lesson-2" class="hide lesson-2"></a> 
+	  	<a href="#lesson-2-slide-7" data-fancybox-group="lesson-2" class="hide lesson-2"></a> 
+	  	<a href="#lesson-2-slide-8" data-fancybox-group="lesson-2" class="hide lesson-2"></a> 
+	  	<a href="#lesson-2-slide-9" data-fancybox-group="lesson-2" class="hide lesson-2"></a>
+        <a href="#lesson-2-slide-10" data-fancybox-group="lesson-2" class="hide lesson-2"></a> 
   </li>
   <li>
 	  	<a href="#lesson-3-slide-1" data-fancybox-group="lesson-3" class="teal lesson-3">
 	  		<?php echo t('Communicating Effectively in Challenging Situations'); ?>
 	  	</a> 
-	  	<a href="#lesson-3-slide-2" data-fancybox-group="lesson-3" class="hide lesson-3" /> 
-	  	<a href="#lesson-3-slide-3" data-fancybox-group="lesson-3" class="hide lesson-3" /> 
-	  	<a href="#lesson-3-slide-4" data-fancybox-group="lesson-3" class="hide lesson-3" /> 
-	  	<a href="#lesson-3-slide-5" data-fancybox-group="lesson-3" class="hide lesson-3" /> 
-	  	<a href="#lesson-3-slide-6" data-fancybox-group="lesson-3" class="hide lesson-3" /> 
-	  	<a href="#lesson-3-slide-7" data-fancybox-group="lesson-3" class="hide lesson-3" /> 
-	  	<a href="#lesson-3-slide-8" data-fancybox-group="lesson-3" class="hide lesson-3" /> 
-	  	<a href="#lesson-3-slide-9" data-fancybox-group="lesson-3" class="hide lesson-3" /> 
-	  	<a href="#lesson-3-slide-10" data-fancybox-group="lesson-3" class="hide lesson-3" /> 
+	  	<a href="#lesson-3-slide-2" data-fancybox-group="lesson-3" class="hide lesson-3"></a> 
+	  	<a href="#lesson-3-slide-3" data-fancybox-group="lesson-3" class="hide lesson-3"></a> 
+	  	<a href="#lesson-3-slide-4" data-fancybox-group="lesson-3" class="hide lesson-3"></a> 
+	  	<a href="#lesson-3-slide-5" data-fancybox-group="lesson-3" class="hide lesson-3"></a> 
+	  	<a href="#lesson-3-slide-6" data-fancybox-group="lesson-3" class="hide lesson-3"></a> 
+	  	<a href="#lesson-3-slide-7" data-fancybox-group="lesson-3" class="hide lesson-3"></a> 
+	  	<a href="#lesson-3-slide-8" data-fancybox-group="lesson-3" class="hide lesson-3"></a> 
+	  	<a href="#lesson-3-slide-9" data-fancybox-group="lesson-3" class="hide lesson-3"></a> 
+	  	<a href="#lesson-3-slide-10" data-fancybox-group="lesson-3" class="hide lesson-3"></a> 
   </li>
   <li>
 	  <a href="#lesson-4-slide-1" data-fancybox-group="lesson-4" class="teal lesson-4">
 	  <?php echo t('Normal &amp; Abnormal Aging Changes'); ?>
 	  </a> 
-	  <a href="#lesson-4-slide-2" data-fancybox-group="lesson-4" class="hide lesson-4" /> 
-	  <a href="#lesson-4-slide-3" data-fancybox-group="lesson-4" class="hide lesson-4" /> 
-	  <a href="#lesson-4-slide-4" data-fancybox-group="lesson-4" class="hide lesson-4" /> 
-	  <a href="#lesson-4-slide-5" data-fancybox-group="lesson-4" class="hide lesson-4" /> 
-	  <a href="#lesson-4-slide-6" data-fancybox-group="lesson-4" class="hide lesson-4" /> 
-	  <a href="#lesson-4-slide-7" data-fancybox-group="lesson-4" class="hide lesson-4" /> 
-	  <a href="#lesson-4-slide-8" data-fancybox-group="lesson-4" class="hide lesson-4" /> 
-	  <a href="#lesson-4-slide-9" data-fancybox-group="lesson-4" class="hide lesson-4" /> 
-	  <a href="#lesson-4-slide-10" data-fancybox-group="lesson-4" class="hide lesson-4" /> 
+	  <a href="#lesson-4-slide-2" data-fancybox-group="lesson-4" class="hide lesson-4"></a> 
+	  <a href="#lesson-4-slide-3" data-fancybox-group="lesson-4" class="hide lesson-4"></a> 
+	  <a href="#lesson-4-slide-4" data-fancybox-group="lesson-4" class="hide lesson-4"></a> 
+	  <a href="#lesson-4-slide-5" data-fancybox-group="lesson-4" class="hide lesson-4"></a> 
+	  <a href="#lesson-4-slide-6" data-fancybox-group="lesson-4" class="hide lesson-4"></a> 
+	  <a href="#lesson-4-slide-7" data-fancybox-group="lesson-4" class="hide lesson-4"></a> 
+	  <a href="#lesson-4-slide-8" data-fancybox-group="lesson-4" class="hide lesson-4"></a> 
+	  <a href="#lesson-4-slide-9" data-fancybox-group="lesson-4" class="hide lesson-4"></a> 
+	  <a href="#lesson-4-slide-10" data-fancybox-group="lesson-4" class="hide lesson-4"></a> 
   </li>
   <li>
     <a href="#lesson-5-slide-1" data-fancybox-group="lesson-5" class="teal lesson-5">
     <?php echo t('Financial &amp; Legal Issues'); ?>
     </a> 
-	<a href="#lesson-5-slide-2" data-fancybox-group="lesson-5" class="hide lesson-5" /> 
-	<a href="#lesson-5-slide-3" data-fancybox-group="lesson-5" class="hide lesson-5" /> 
-	<a href="#lesson-5-slide-4" data-fancybox-group="lesson-5" class="hide lesson-5" /> 
-	<a href="#lesson-5-slide-5" data-fancybox-group="lesson-5" class="hide lesson-5" /> 
-	<a href="#lesson-5-slide-6" data-fancybox-group="lesson-5" class="hide lesson-5" /> 
-	<a href="#lesson-5-slide-7" data-fancybox-group="lesson-5" class="hide lesson-5" /> 
-	<a href="#lesson-5-slide-8" data-fancybox-group="lesson-5" class="hide lesson-5" /> 
-	<a href="#lesson-5-slide-9" data-fancybox-group="lesson-5" class="hide lesson-5" /> 
-	<a href="#lesson-5-slide-10" data-fancybox-group="lesson-5" class="hide lesson-5" />
-  	<a href="#lesson-5-slide-11" data-fancybox-group="lesson-5" class="hide lesson-5" />	
-    <a href="#lesson-5-slide-12" data-fancybox-group="lesson-5" class="hide lesson-5" />	
+	<a href="#lesson-5-slide-2" data-fancybox-group="lesson-5" class="hide lesson-5"></a> 
+	<a href="#lesson-5-slide-3" data-fancybox-group="lesson-5" class="hide lesson-5"></a> 
+	<a href="#lesson-5-slide-4" data-fancybox-group="lesson-5" class="hide lesson-5"></a> 
+	<a href="#lesson-5-slide-5" data-fancybox-group="lesson-5" class="hide lesson-5"></a> 
+	<a href="#lesson-5-slide-6" data-fancybox-group="lesson-5" class="hide lesson-5"></a> 
+	<a href="#lesson-5-slide-7" data-fancybox-group="lesson-5" class="hide lesson-5"></a> 
+	<a href="#lesson-5-slide-8" data-fancybox-group="lesson-5" class="hide lesson-5"></a> 
+	<a href="#lesson-5-slide-9" data-fancybox-group="lesson-5" class="hide lesson-5"></a> 
+	<a href="#lesson-5-slide-10" data-fancybox-group="lesson-5" class="hide lesson-5"></a>
+  	<a href="#lesson-5-slide-11" data-fancybox-group="lesson-5" class="hide lesson-5"></a>	
+    <a href="#lesson-5-slide-12" data-fancybox-group="lesson-5" class="hide lesson-5"></a>	
 
   </li>
  
@@ -2621,7 +2621,7 @@ foreach(array(
       <li><?php echo t('Doctor charges (not routine physical exams)'); ?></li>
       <li><?php echo t('Medically necessary ambulance services'); ?></li>
       <li><?php echo t('Physical, speech, and occupational therapy'); ?></li>
-      <li><?php echo t(('Home health care services (physician certification is necessary)');?></li>
+      <li><?php echo t('Home health care services (physician certification is necessary)'); ?></li>
       <li><?php echo t('Medical supplies and equipment such as wheelchairs, hospital beds, oxygen, and walkers'); ?></li>
       <li><?php echo t('Transfusion of blood and blood components provided on an outpatient basis'); ?></li>
       <li><?php echo t('Outpatient medical/surgical supplies and services'); ?></li>
@@ -2647,7 +2647,7 @@ foreach(array(
   <ul>
   <li><?php echo t('Part D, as of January 2006, covers prescription drugs.'); ?></li>
   <li>
-      <?php ech ot('Depending on your income, you pay a monthly premium and part of the prescription cost.'); ?>
+      <?php echo t('Depending on your income, you pay a monthly premium and part of the prescription cost.'); ?>
     </li>
 </ul>
   <p><?php echo t('Medicare Coverage of Skilled Nursing Care Facilities'); ?></p>
@@ -2661,9 +2661,9 @@ foreach(array(
   <li><?php echo t('The condition must be one that can be improved.'); ?></li>
   <li><?php echo t('The facility must be Medicare-certified.'); ?></li>
   <li><?php echo t('The patient\'s doctor must write a care plan. The care plan must be carried out by the skilled nursing facility. (Once the skilled needs are met, Medicare will no longer pay for services.)'); ?></li>
+  </ul>
   </div>
   <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
-  </div>
 
   <!-- Lesson 5 Slide 6 -->
 
@@ -2811,7 +2811,7 @@ foreach(array(
       <h2 class="flowers"><?php echo t('Legal Issues for Caregivers (continued)'); ?></h2>
       <hr />
       <p>
-      <?php ech t('Living will'); ?>
+      <?php echo t('Living will'); ?>
     </p>
       <p><?php echo t('A living will allows the person to state -- in advance -- what kind of medical care he or she desires to receive and what life-support procedures he or she would like to withhold. This document is used if a person becomes terminally ill and unable to make his wishes known or if he becomes permanently unconscious. A terminal illness is defined as one from which a person\'s doctor believes there is no chance of recovery. Living wills can also be used if a person becomes permanently unconscious. To be considered permanently unconscious, two physicians must determine that the patient has no reasonable possibility of regaining consciousness or decision-making ability. Laws on living wills vary from state to state.'); ?></p>
       <p><?php echo t('Living trust'); ?></p>
