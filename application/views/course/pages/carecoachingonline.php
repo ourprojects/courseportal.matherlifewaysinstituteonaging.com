@@ -23,25 +23,32 @@ foreach(array(
 	);
 
 ?>
-
 <div class="small-masthead" style="background-image: url(<?php echo $this->getImagesUrl('header-courses.png'); ?>);">
-<h1 class="bottom"><?php echo t($course->title); ?></h1>
+  <h1 class="bottom"><?php echo t($course->title); ?></h1>
 </div>
 
 <!-- Start sidebar here -->
-<div id="sidebar">
-  <div class="box-sidebar one"> 
-    
-    <!-- sidebar #1 here -->
+<div id="sidebar"> 
+  
+  <!-- sidebar #1 here -->
+  <div class="box-sidebar one">
+    <h3>Pre-Course Survey</h3>
+    <br />
+    <p id="surveynotify"><?php echo t('Complete the Pre-Course survey BEFORE participating. (Profile Page)'); ?></p>
+    <br />
+  </div>
+  <!-- sidebar #2 here -->
+  
+  <div class="box-sidebar one">
     <h3><?php echo t('Working Caregivers in America'); ?></h3>
     <img class="block-center" src="<?php echo $this->getImagesUrl('286x366_Grafix_69pc.png'); ?>" />
     <p><?php echo t('69% of working caregivers report having to rearrange their work schedule, decrease their hours, or take an 
 	unpaid leave of absence to meet their care-giving responsibilities.'); ?></p>
   </div>
   
-  <!-- sidebar #2 here -->
+  <!-- sidebar #3 here -->
   
-  <div class="box-sidebar two">
+  <div class="box-sidebar three">
     <h3><?php echo t('Magnitude - Informal Caregivers'); ?></h3>
     <p><a href="http://www.caregiver.org/caregiver/jsp/home.jsp" target="_blank">FAMILY CAREGIVER ALLIANCE</a><br />
       <?php echo t('National Center on Caregiving (USA)'); ?></p>
@@ -55,7 +62,6 @@ foreach(array(
     <p><?php echo t('care for someone who has Alzheimer\'s disease or other dementia'); ?></p>
   </div>
 </div>
-
 <!-- Start main content here -->
 
 <div class="column-wide">
@@ -68,7 +74,7 @@ foreach(array(
   	echo '<li>' . t($objective->text) . '</li>';
   ?>
   </ul>
-<h2><?php echo t('Course Lessons'); ?></h2>
+<h4><?php echo t('Course Lessons'); ?></h4>
 
 <!-- Bullet points start here for course lessons, hyperlinks to FancyBox -->
 <ul>
@@ -202,17 +208,39 @@ foreach(array(
   </li>
 </ul>
 
- <h2><?php echo t('Length'); ?></h2>
-  <p><?php echo t('You will have 8 weeks to complete this online course, but full access for one-year. After your intitial 8-week period ends, you will not have access to your Facilitator. This course was designed to be completed in 8-weeks, completing one-lesson each week. Each Lesson is designed to take 2-3 hours.'); ?></p>
-  <h2><?php echo t('Facilitators &amp; Course Developers'); ?></h2>
-  <p><a href="mailto:lindahollinger-smith@matherlifeways.com"><?php echo t('Content Designer: Linda Hollinger-Smith, PhD - '); ?></a></p>
-  <p><?php echo t('Dr. Hollinger-Smith is a doctorally prepared registered nurse focusing her research in gerontology, workforce development, and quality improvement. She has more than 28 years of experience working with older adults in senior living, long-term care settings, in the community, and in acute care settings in various staff and managerial positions. Her past positions include Assistant Dean of the Rush University College of Nursing, Nursing Director of the Rush Primary Care Institute, and Associate Chairperson of the Department of Adult Health Nursing at Rush University College of Nursing.'); ?></p>
-  
-  <p><?php echo t('She has served as Principal Investigator for multiple national research projects totaling more than $4.5 million in support, targeting nursing workforce development and retention, falls reduction, and caregiver support issues. She has published over 50 journal articles, book chapters and research abstracts and has presented on national and international levels on various topics related to aging. In her current position, Dr. Hollinger-Smith leads a team of applied researchers and staff responsible for developing and expanding the Mather LifeWays applied research agenda.'); ?></p>
-  <p><a href="mailto:jwoodall@matherlifeways.com"><?php echo t('Course Developer: Jon Woodall - '); ?></a></p>
-  <p><?php echo t('Mr. Woodall is responsible for all MLIA corporate workforce wellness programs related to design, implementation, publication, and evaluation. Additionally, he seeks new grant funding to support or extend current grants related to corporate workforce wellness programs. '); ?></p>
- 
 
+
+ <br />
+  <br />
+  
+  <div class="box-white">
+    <h4><?php echo t('Length'); ?></h4>
+    <p><?php echo t('* Participant Access - 1 Year'); ?><br />
+      <?php echo t('* Recommended Completion - 8 Weeks'); ?><br />
+      <?php echo t('* Weekly Commitment - 1 Lesson @ 2 to 3 Hours'); ?></p>
+  </div>
+  <div class="box-white">
+    <h4> <?php echo t('Resources'); ?></h4>
+    <p><?php echo t('Please use these listed resources in the completion of this online course. Pleaes contact your instructor or the program director if you have additional resources you would like to see added here.'); ?></p>
+    <p><a href="http://www.alz.org" target="_blank">Alzheimer's Association</a></p>
+    <p><a href="http://www.nih.gov" target="_blank">National Intitute on Health (NIH)</a></p>
+    <p><a href="http://www.webmd.com" target="_blank">WebMD website</a></p>
+  </div>
+  <div class="box-white">
+    <div id="developers">
+      <h4><?php echo t('Facilitators &amp; Course Developers'); ?></h4>
+      <p><?php echo t('Content Designer: '); ?><a href="mailto:lindahollinger-smith@matherlifeways.com"><?php echo t('Linda Hollinger-Smith, PhD'); ?></a><br />
+      <?php echo t('Dr. Hollinger-Smith is a doctorally prepared registered nurse focusing her research in gerontology, workforce development, and quality improvement. She has more than 28 years of experience working with older adults in senior living, long-term care settings, in the community, and in acute care settings in various staff and managerial positions. Her past positions include Assistant Dean of the Rush University College of Nursing, Nursing Director of the Rush Primary Care Institute, and Associate Chairperson of the Department of Adult Health Nursing at Rush University College of Nursing.'); ?></p>
+      <p><?php echo t('She has served as Principal Investigator for multiple national research projects totaling more than $4.5 million in support, targeting nursing workforce development and retention, falls reduction, and caregiver support issues. She has published over 50 journal articles, book chapters and research abstracts and has presented on national and international levels on various topics related to aging. In her current position, Dr. Hollinger-Smith leads a team of applied researchers and staff responsible for developing and expanding the Mather LifeWays applied research agenda.'); ?></p>
+      <p><?php echo t('Course Developer: '); ?><a href="mailto:jwoodall@matherlifeways.com">Jon Woodall</a><br />
+        <?php echo t('Mr. Woodall is responsible for all MLIA corporate workforce wellness programs related to design, implementation, publication, and evaluation. Additionally, he seeks new grant funding to support or extend current grants related to corporate workforce wellness programs. '); ?></p>
+      <p><?php echo t('Facilitator: '); ?><a href="mailto:jwoodall@matherlifeways.com">Jon Woodall</a><br />
+        <?php echo t('Mr. Woodall is responsible for all MLIA corporate workforce wellness programs related to design, implementation, publication, and evaluation. Additionally, he seeks new grant funding to support or extend current grants related to corporate workforce wellness programs. '); ?></p>
+    </div>
+    </div>
+
+
+  
 </div>
 
 <!-- Lesson #1 - Care Coaching starts here --> 
