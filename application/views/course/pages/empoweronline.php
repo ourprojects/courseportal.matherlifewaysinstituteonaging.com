@@ -144,25 +144,28 @@ foreach(array(
 	<a href="#lesson-5-slide-3" data-fancybox-group="lesson-5" class="hide lesson-5" /> 
 	<a href="#lesson-5-slide-4" data-fancybox-group="lesson-5" class="hide lesson-5" /> 
 	<a href="#lesson-5-slide-5" data-fancybox-group="lesson-5" class="hide lesson-5" /> 
-	  <a href="#lesson-5-slide-6" data-fancybox-group="lesson-5" class="hide lesson-5" /> 
-	  <a href="#lesson-5-slide-7" data-fancybox-group="lesson-5" class="hide lesson-5" /> 
-	  <a href="#lesson-5-slide-8" data-fancybox-group="lesson-5" class="hide lesson-5" /> 
-	  <a href="#lesson-5-slide-9" data-fancybox-group="lesson-5" class="hide lesson-5" /> 
-	  <a href="#lesson-5-slide-10" data-fancybox-group="lesson-5" class="hide lesson-5" />	
+	<a href="#lesson-5-slide-6" data-fancybox-group="lesson-5" class="hide lesson-5" /> 
+	<a href="#lesson-5-slide-7" data-fancybox-group="lesson-5" class="hide lesson-5" /> 
+	<a href="#lesson-5-slide-8" data-fancybox-group="lesson-5" class="hide lesson-5" /> 
+	<a href="#lesson-5-slide-9" data-fancybox-group="lesson-5" class="hide lesson-5" /> 
+	<a href="#lesson-5-slide-10" data-fancybox-group="lesson-5" class="hide lesson-5" />
+  	<a href="#lesson-5-slide-11" data-fancybox-group="lesson-5" class="hide lesson-5" />	
+    <a href="#lesson-5-slide-12" data-fancybox-group="lesson-5" class="hide lesson-5" />	
+
   </li>
  
 </ul>
 
+<h2><?php echo t('Length'); ?></h2>
+<p><?php echo t('You will have 8 weeks to complete this online course, but full access for one-year. After your intitial 8-week period ends, you will not have access to your Facilitator. This course was designed to be completed in 8-weeks, completing one-lesson each week. Each Lesson is designed to take 2-3 hours.'); ?></p>
+<h2><?php echo t('Facilitators &amp; Course Developers'); ?></h2>
+<p><a href="mailto:lindahollinger-smith@matherlifeways.com"><?php echo t('Content Designer: Linda Hollinger-Smith, PhD - '); ?></a></p>
+<p><?php echo t('Dr. Hollinger-Smith is a doctorally prepared registered nurse focusing her research in gerontology, workforce development, and quality improvement. She has more than 28 years of experience working with older adults in senior living, long-term care settings, in the community, and in acute care settings in various staff and managerial positions. Her past positions include Assistant Dean of the Rush University College of Nursing, Nursing Director of the Rush Primary Care Institute, and Associate Chairperson of the Department of Adult Health Nursing at Rush University College of Nursing.'); ?></p>
+<p><?php echo t('She has served as Principal Investigator for multiple national research projects totaling more than $4.5 million in support, targeting nursing workforce development and retention, falls reduction, and caregiver support issues. She has published over 50 journal articles, book chapters and research abstracts and has presented on national and international levels on various topics related to aging. In her current position, Dr. Hollinger-Smith leads a team of applied researchers and staff responsible for developing and expanding the Mather LifeWays applied research agenda.'); ?></p>
+<p><a href="mailto:jwoodall@matherlifeways.com"><?php echo t('Course Developer: Jon Woodall - '); ?></a></p>
+<p><?php echo t('Mr. Woodall is responsible for all MLIA corporate workforce wellness programs related to design, implementation, publication, and evaluation. Additionally, he seeks new grant funding to support or extend current grants related to corporate workforce wellness programs. '); ?></p>
 
- <h2><?php echo t('Length'); ?></h2>
-  <p><?php echo t('You will have 8 weeks to complete this online course, but full access for one-year. After your intitial 8-week period ends, you will not have access to your Facilitator. This course was designed to be completed in 8-weeks, completing one-lesson each week. Each Lesson is designed to take 2-3 hours.'); ?></p>
-  <h2><?php echo t('Facilitators &amp; Course Developers'); ?></h2>
-  <p><a href="mailto:lindahollinger-smith@matherlifeways.com"><?php echo t('Content Designer: Linda Hollinger-Smith, PhD - '); ?></a></p>
-  <p><?php echo t('Dr. Hollinger-Smith is a doctorally prepared registered nurse focusing her research in gerontology, workforce development, and quality improvement. She has more than 28 years of experience working with older adults in senior living, long-term care settings, in the community, and in acute care settings in various staff and managerial positions. Her past positions include Assistant Dean of the Rush University College of Nursing, Nursing Director of the Rush Primary Care Institute, and Associate Chairperson of the Department of Adult Health Nursing at Rush University College of Nursing.'); ?></p>
-  
-  <p><?php echo t('She has served as Principal Investigator for multiple national research projects totaling more than $4.5 million in support, targeting nursing workforce development and retention, falls reduction, and caregiver support issues. She has published over 50 journal articles, book chapters and research abstracts and has presented on national and international levels on various topics related to aging. In her current position, Dr. Hollinger-Smith leads a team of applied researchers and staff responsible for developing and expanding the Mather LifeWays applied research agenda.'); ?></p>
-  <p><a href="mailto:jwoodall@matherlifeways.com"><?php echo t('Course Developer: Jon Woodall - '); ?></a></p>
-  <p><?php echo t('Mr. Woodall is responsible for all MLIA corporate workforce wellness programs related to design, implementation, publication, and evaluation. Additionally, he seeks new grant funding to support or extend current grants related to corporate workforce wellness programs. '); ?></p>
+
 </div>
 
 <!-- start course content here --> 
@@ -2393,6 +2396,7 @@ foreach(array(
   </div>
   <!-- need this final div here to close lesson-3 -->
   </div>
+
   <!-- Lesson 4 Slide 1 -->
   <div id="lesson-4">
   <div id="lesson-4-slide-1" class="course-slide">
@@ -2409,89 +2413,172 @@ foreach(array(
     </div>
       <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Start Course &raquo;'); ?></a></div>
     </div>
+  
+  <!-- Lesson 4 Slide 2 -->
+  
+  <div id="lesson-4-slide-2" class="course-slide">
+      <div class="content">
+      <h2 class="flowers"><?php echo t('Myths and Realities of Aging'); ?></h2>
+      <hr />
+      <p><?php echo t('Images of aging in our society are not very positive. For example, let us look at some of our stereotypes about older adults:'); ?></p>
+      <ul>
+          <li><?php echo t('Old people can not learn new things.'); ?></li>
+          <li><?php echo t('Old people are close-minded, set in their ways.'); ?></li>
+          <li><?php echo t('Old people are cantankerous, crabby.'); ?></li>
+          <li><?php echo t('Old people are slow.'); ?></li>
+          <li><?php echo t('The elderly do not pull their own weight.'); ?></li>
+          <li><?php echo t('Old people are always sick.'); ?></li>
+        </ul>
     
+      <p><?php echo t('Dr. Erdman Palmore developed a “Facts on Aging” quiz to measure perceptions (and misperceptions) about aging. Dr. Palmore\’s quiz is a good way to look at our concepts of aging. Let\’s look at some of these items and see how you score them:'); ?></p>
+      <p><?php echo t('The majority of older people are senile, have a defective memory, or are disoriented.'); ?></p>
+      
+      <!-- need to add all these questions soon 
+    <p>
+      <input name="True" type="submit" id="True" onClick="MM_popupMsg('Ccorrect!')" value="True">
+      <input name="True2" type="submit" id="True2" onClick="MM_popupMsg('Incorrect!')" value="False">
+    </p>
+    <p> All five senses (sight, smell, hearing, taste, and touch) tend to decline in old age.</p>
+    <p>
+      <input name="True7" type="submit" id="True11" onClick="MM_popupMsg('Incorrect!')" value="True">
+      <input name="True7" type="submit" id="True12" onClick="MM_popupMsg('Correct!')" value="False">
+    </p>
+    <p> The majority of older people say they are miserable most of the time.</p>
+    <p>
+      <input name="True3" type="submit" id="True3" onClick="MM_popupMsg('Incorrect!')" value="True">
+      <input name="True3" type="submit" id="True4" onClick="MM_popupMsg('Correct!')" value="False">
+    </p>
+    <p> Older workers usually cannot work as effectively as younger workers.</p>
+    <p>
+      <input name="True4" type="submit" id="True5" onClick="MM_popupMsg('Incorrect!')" value="True">
+      <input name="True4" type="submit" id="True6" onClick="MM_popupMsg('Correct!')" value="False">
+    </p>
+    <p> Over three-fourths of older people say they are healthy enough to carry out normal activities.</p>
+    <p>
+      <input name="True8" type="submit" id="True13" onClick="MM_popupMsg('Incorrect!')" value="True">
+      <input name="True8" type="submit" id="True14" onClick="MM_popupMsg('Correct!')" value="False">
+    </p>
+    <p> The majority of older people say they are lonely.</p>
+    <p>
+      <input name="True5" type="submit" id="True7" onClick="MM_popupMsg('Incorrect!')" value="True">
+      <input name="True5" type="submit" id="True8" onClick="MM_popupMsg('Correct!')" value="False">
+    </p>
+    <p> Older workers have fewer accidents than younger workers.</p>
+    <p>
+      <input name="True9" type="submit" id="True15" onClick="MM_popupMsg('Incorrect!')" value="True">
+      <input name="True9" type="submit" id="True16" onClick="MM_popupMsg('Correct!')" value="False">
+    </p>
+    <p> Older people tend to react more slowly than younger people.</p>
+    <p>
+      <input name="True10" type="submit" id="True17" onClick="MM_popupMsg('Incorrect!')" value="True">
+      <input name="True10" type="submit" id="True18" onClick="MM_popupMsg('Correct!')" value="False">
+    </p>
+    <p> The majority of older people are working, or say they would like to have some kind of work to   
+      do, including work around the house and volunteer work.</p>
+    <p>
+      <input name="True11" type="submit" id="True19" onClick="MM_popupMsg('Incorrect!')" value="True">
+      <input name="True11" type="submit" id="True20" onClick="MM_popupMsg('Correct!')" value="False">
+      <br>
+    </p>
+    <p>Older people tend to become more religious as they age.</p>
+    <p>
+      <input name="True6" type="submit" id="True9" onClick="MM_popupMsg('Incorrect!')" value="True">
+      <input name="True6" type="submit" id="True10" onClick="MM_popupMsg('Correct!')" value="False">
+    </p>
     
-    <!-- Lesson 4 Slide 2 -->
-<div id="lesson-4-slide-2" class="course-slide">
+    --> 
+      
+    </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> 
+      <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
+    </div>
+  
+  <!-- Lesson 4 Slide 3 -->
+  
+  <div id="lesson-4-slide-3" class="course-slide">
   <div class="content">
-    <h2 class="flowers"><?php echo t('Myths and Realities of Aging'); ?></h2>
-    <hr />
-    <p><?php echo t('Images of aging in our society are not very positive. For example, let’s look at some of our stereotypes about older adults:'); ?></p>
-    
-    <ul>
-    	<li><?php echo t('Old people can’t learn new things.'); ?></li>
-        <li><?php echo t('Old people are close-minded, set in their ways.'); ?></li>
-        <li><?php echo t('Old people are cantankerous, crabby.'); ?></li>
-        <li><?php echo t('Old people are slow.'); ?></li>
-        <li><?php echo t('The elderly don’t pull their own weight.'); ?></li>
-        <li><?php echo t('Old people are always sick.'); ?></li>
-     </ul>
-     
-     <p><?php echo t('Dr. Erdman Palmore developed a “Facts on Aging” quiz to measure perceptions (and misperceptions) about aging. Dr. Palmore’s quiz is a good way to look at our concepts of aging. Let’s look at some of these items and see how you score them:'); ?></p>
-     
-     <p><?php echo t('The majority of older people are senile, have a defective memory, or are disoriented.'); ?></p>
+  <h2 class="flowers"><?php echo t('Myths and Realities of Aging (continued)'); ?></h2>
+  <hr />
+  <p><?php echo t('Realities of Aging'); ?></p>
+  <p><?php echo t('So, if the stereotype of older adults as slow, sick, and/or senile is false, what is the reality of aging in America? The National Council on the Aging and AARP published the resource, American Perceptions of Aging in the 21st Century, a longitudinal study that began in 1974. In 2002 a follow-up study compared results from the original 1974 study with contemporary findings. Here are some highlights about the realities of aging:'); ?></p>
+  <ul>
+  <li><?php echo t('58% of older adults were very happy with growing older'); ?></li>
+  <li><?php echo t('88% felt that social relationships were very important to a meaningful, vital life'); ?></li>
+  <li><?php echo t('32% felt that new learning was very important to a meaningful, vital life'); ?></li>
+  <li><?php echo t('47% felt their overall health was excellent to very good'); ?></li>
+  <li><?php echo t('60% were very or somewhat worried about memory loss as they aged'); ?></li>
+  </ul>
+  <p><?php echo t('How about a few more realities of aging. A survey of key trends in aging conducted by Mather LifeWays Institute on Aging documented the following facts about older adults:'); ?></p>
+  <ul>
+  <li><?php echo t('The educational level of the older adult population is increasing.'); ?></li>
+  <li><?php echo t('Almost half of older adults currently do volunteer work.'); ?></li>
+  <li><?php echo t('More than 75% of older adults say old age should be defined by a decline in physical or mental functioning rather than a specific age.'); ?></li>
+  <li><?php echo t('Only 8% of older adults say they are very old.'); ?></li>
+  <li><?php echo t('Almost 40% of older adults work part-time.'); ?></li>
+  <li><?php echo t('Older Americans age 65+ comprise 16.3% of the US labor force.'); ?></li>
+  </ul>
+  </div>
+  <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> 
+  <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
+  </div>
+  
+   <!-- Lesson 4 Slide 4 -->
+  
+  <div id="lesson-4-slide-4" class="course-slide">
+  <div class="content">
+  <h2 class="flowers"><?php echo t('test'); ?></h2>
+  <hr />
+  <p><?php echo t('test'); ?></p>
   </div>
   <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> <?php echo t('Complete Lesson'); ?></a></div>
-</div>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+  </div>
+  
   <!-- need this final div here to close lesson-4 --> 
 </div>
   <!-- Lesson 5 Slide 1 -->
   <div id="lesson-5">
   <div id="lesson-5-slide-1" class="course-slide">
-      <div class="content">
+  <div class="content">
       <h2 class="flowers"><?php echo t('Finances & Legal Issues'); ?></h2>
       <hr />
       <p><?php echo t('This lesson contains four main sections:'); ?></p>
       <ul>
-          <li><?php echo t('Financial Planning Issues and Key Topics for Caregivers'); ?></li>
-          <li><?php echo t('Understanding Key Aspects of Medicare'); ?></li>
-          <li><?php echo t('Understanding Key Aspects of Medicaid'); ?></li>
-          <li><?php echo t('Legal Issues for Caregivers'); ?></li>
-        </ul>
+      <li><?php echo t('Financial Planning Issues and Key Topics for Caregivers'); ?></li>
+      <li><?php echo t('Understanding Key Aspects of Medicare'); ?></li>
+      <li><?php echo t('Understanding Key Aspects of Medicaid'); ?></li>
+      <li><?php echo t('Legal Issues for Caregivers'); ?></li>
+    </ul>
     </div>
-      <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Start Course &raquo;'); ?></a></div>
-    </div>
-    
-    <!-- Lesson 5 Slide 2 -->
-
-<div id="lesson-5-slide-2" class="course-slide">
-  <div class="content">
-    <h2 class="flowers"><?php echo t('Financial Planning Issues and Key Topics for Caregivers'); ?></h2>
-    <hr />
-    <p><?php echo t('As a caregiver, you will need to evaluate the long-term care needs of your loved one. In making this evaluation, it is important to consider financial options. Long-term financial planning is important for everyone, but it is essential when you are coping with the expense of chronic illnesses such as Alzheimer\'s or Dementia.'); ?></p>
-    <p><?php echo t('Developing a Plan'); ?></p>
-    <p><?php echo t('For the security of the caregiver and the patient, long-term financial planning is very important for all parties involved. Planning ahead is essential. Long-term financial planning is very important for the security of the caregiver and the patient. If you wish to handle your loved one\'s finances, you must receive written authorization to do so. This authorization can be obtained through documents such as a power of attorney.'); ?></p>
-    <p><?php echo t('When considering a financial plan, you may contact professional financial managers and/or medical lawyers who deal with financial planning for people facing chronic or progressive illnesses. Consider an attorney who practices the specialty of “elder law.” '); ?><a href="http://www.naela.org" target="_blank">The National Academy of Elder Law Attorneys (NAELA)</a><?php echo t('is a professional organization that publishes an “Experience Registry” of members who specialize in various aspects of elder law.'); ?></p>
-    <p><?php echo t('You also may want to talk to a social worker and investigate other resources, such as those available on the Internet. Ask your loved one\'s doctor for a referral, or speak with a national association or support group to find reputable professionals in your region.'); ?></p>
-    <p><?php echo t('Understanding Medical Coverage'); ?></p>
-    <ul>
-        <li><?php echo t('If your loved one is insured, either through his or her employer or retirement policy, read all of the policies pertaining to chronic/progressive illnesses. If you are unsure about the language or terms, contact the personnel department or your financial planner.'); ?></li>
-        <li><?php echo t('If your loved one is unemployed and does not have coverage, look for the highest level of affordable coverage.'); ?></li>
-        <li><?php echo t('If your loved one is 65 or over, he or she qualifies for Medicare. This insurance can be supplemented with a "Medigap" policy available through a private insurer. Many states also have prescription assistance/reimbursement programs for low-income senior citizens.'); ?></li>
-        <li><?php echo t('If your loved one is disabled but does not qualify for Social Security, he or she may be eligible to receive a form of Medicare for the disabled.'); ?></li>
-        <li><?php echo t('If your loved one cannot get insurance and his or her income is low, he or she may qualify for Medicaid, a government "safety net" program that pays for medical costs that exceed a person\'s ability to pay.'); ?></li>
-      </ul>
+  <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Start Course &raquo;'); ?></a></div>
 </div>
+
+  <!-- Lesson 5 Slide 2 -->
+
+  <div id="lesson-5-slide-2" class="course-slide">
+  <div class="content">
+      <h2 class="flowers"><?php echo t('Financial Planning Issues and Key Topics for Caregivers'); ?></h2>
+      <hr />
+      <p><?php echo t('As a caregiver, you will need to evaluate the long-term care needs of your loved one. In making this evaluation, it is important to consider financial options. Long-term financial planning is important for everyone, but it is essential when you are coping with the expense of chronic illnesses such as Alzheimer\'s or Dementia.'); ?></p>
+      <p><?php echo t('Developing a Plan'); ?></p>
+      <p><?php echo t('For the security of the caregiver and the patient, long-term financial planning is very important for all parties involved. Planning ahead is essential. Long-term financial planning is very important for the security of the caregiver and the patient. If you wish to handle your loved one\'s finances, you must receive written authorization to do so. This authorization can be obtained through documents such as a power of attorney.'); ?></p>
+      <p><?php echo t('When considering a financial plan, you may contact professional financial managers and/or medical lawyers who deal with financial planning for people facing chronic or progressive illnesses. Consider an attorney who practices the specialty of “elder law.” '); ?><a href="http://www.naela.org" target="_blank">The National Academy of Elder Law Attorneys (NAELA)</a><?php echo t('is a professional organization that publishes an “Experience Registry” of members who specialize in various aspects of elder law.'); ?></p>
+      <p><?php echo t('You also may want to talk to a social worker and investigate other resources, such as those available on the Internet. Ask your loved one\'s doctor for a referral, or speak with a national association or support group to find reputable professionals in your region.'); ?></p>
+      <p><?php echo t('Understanding Medical Coverage'); ?></p>
+      <ul>
+      <li><?php echo t('If your loved one is insured, either through his or her employer or retirement policy, read all of the policies pertaining to chronic/progressive illnesses. If you are unsure about the language or terms, contact the personnel department or your financial planner.'); ?></li>
+      <li><?php echo t('If your loved one is unemployed and does not have coverage, look for the highest level of affordable coverage.'); ?></li>
+      <li><?php echo t('If your loved one is 65 or over, he or she qualifies for Medicare. This insurance can be supplemented with a "Medigap" policy available through a private insurer. Many states also have prescription assistance/reimbursement programs for low-income senior citizens.'); ?></li>
+      <li><?php echo t('If your loved one is disabled but does not qualify for Social Security, he or she may be eligible to receive a form of Medicare for the disabled.'); ?></li>
+      <li><?php echo t('If your loved one cannot get insurance and his or her income is low, he or she may qualify for Medicaid, a government "safety net" program that pays for medical costs that exceed a person\'s ability to pay.'); ?></li>
+    </ul>
+    </div>
   <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
 </div>
 
-<!-- Lesson 5 Slide 3 -->
+  <!-- Lesson 5 Slide 3 -->
 
-<div id="lesson-5-slide-3" class="course-slide">
-      <div class="content">
+  <div id="lesson-5-slide-3" class="course-slide">
+  <div class="content">
       <h2 class="flowers"><?php echo t('Financial Planning Issues and Key Topics for Caregivers (continued)'); ?></h2>
       <hr />
       <p><?php echo t('Investigating Long- and Short-Term Disability Insurance'); ?></p>
@@ -2501,93 +2588,92 @@ foreach(array(
       <p><?php echo t('Activity 1 - Financial Planning issues & topics for Caregivers'); ?></p>
       <p><?php echo t('After reading the section material, do you have a plan for your loved-one in place currently and is so what does it consist of? If not, where would you find a template or where would you look to know where to start.'); ?></p>
       <ul>
-          <li><?php echo t('Coverage options'); ?></li>
-          <li><?php echo t('Coverage of skilled nursing care facilities'); ?></li>
-          <li><?php echo t('Coverage of Home Care'); ?></li>
-        </ul>
+      <li><?php echo t('Coverage options'); ?></li>
+      <li><?php echo t('Coverage of skilled nursing care facilities'); ?></li>
+      <li><?php echo t('Coverage of Home Care'); ?></li>
+    </ul>
     </div>
-      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
+  <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
+</div>
+
+  <!-- Lesson 5 Slide 4 -->
+
+  <div id="lesson-5-slide-4" class="course-slide">
+  <div class="content">
+      <h2 class="flowers"><?php echo t('Understanding Key Aspects of Medicare'); ?></h2>
+      <hr />
+      <p><?php echo t('Medicare is a federal health insurance program providing healthcare benefits to Americans 65 and older, as well as to some disabled individuals under age 65, and people of any age with permanent kidney failure requiring dialysis or kidney transplant. Eligibility for Medicare is linked to Social Security and railroad retirement benefits.');?></p>
+      <p><?php echo t('Medicare has co-payments and deductibles. A deductible is an initial amount the patient is responsible for paying before Medicare coverage begins. A co-payment is a percentage of the amount of covered expense the patient is required to pay.'); ?></p>
+      <p><?php echo t('What Are Medicare\'s Coverage Options?'); ?></p>
+      <p><?php echo t('Medicare has several parts:'); ?></p>
+      <p><?php echo t('Part A Medicare covers hospital bills and includes:'); ?></p>
+      <ul>
+      <li><?php echo t('Inpatient hospital care'); ?></li>
+      <li><?php echo t('Skilled nursing facility care (not custodial or long-term care)'); ?></li>
+      <li><?php echo t('Home health services, including a visiting nurse, or a physical, occupational, or speech therapist'); ?></li>
+      <li><?php echo t('Blood that you receive at a hospital or skilled nursing facility during a covered stay'); ?></li>
+      <li><?php echo t('Medical supplies'); ?></li>
+      <li><?php echo t('Hospice services'); ?></li>
+      <li><?php echo t('Mental health care given in a hospital'); ?></li>
+    </ul>
+      <p><?php echo t('Part B Medicare deals with doctors\' bills and includes:'); ?></p>
+      <ul>
+      <li><?php echo t('Doctor charges (not routine physical exams)'); ?></li>
+      <li><?php echo t('Medically necessary ambulance services'); ?></li>
+      <li><?php echo t('Physical, speech, and occupational therapy'); ?></li>
+      <li><?php echo t(('Home health care services (physician certification is necessary)');?></li>
+      <li><?php echo t('Medical supplies and equipment such as wheelchairs, hospital beds, oxygen, and walkers'); ?></li>
+      <li><?php echo t('Transfusion of blood and blood components provided on an outpatient basis'); ?></li>
+      <li><?php echo t('Outpatient medical/surgical supplies and services'); ?></li>
+      <li><?php echo t('Outpatient mental health'); ?></li>
+      <li><?php echo t('Part B Medicare benefits require payment of a monthly premium. A patient must also be entitled to Part A benefits in order to receive Part B benefits.'); ?></li>
+    </ul>
     </div>
-    
-    
-    <!-- Lesson 5 Slide 4 -->
+  <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
+</div>
 
-    <div id="lesson-5-slide-4" class="course-slide">
-      <div class="content">
-        <h2 class="flowers"><?php echo t('Understanding Key Aspects of Medicare'); ?></h2>
-        <hr />
-        <p><?php echo t('Medicare is a federal health insurance program providing healthcare benefits to Americans 65 and older, as well as to some disabled individuals under age 65, and people of any age with permanent kidney failure requiring dialysis or kidney transplant. Eligibility for Medicare is linked to Social Security and railroad retirement benefits.');?></p>
-        <p><?php echo t('Medicare has co-payments and deductibles. A deductible is an initial amount the patient is responsible for paying before Medicare coverage begins. A co-payment is a percentage of the amount of covered expense the patient is required to pay.'); ?></p>
-        <p><?php echo t('What Are Medicare\'s Coverage Options?'); ?></p>
-        <p><?php echo t('Medicare has several parts:'); ?></p>
-        <p><?php echo t('Part A Medicare covers hospital bills and includes:'); ?></p>
-        <ul>
-          <li><?php echo t('Inpatient hospital care'); ?></li>
-          <li><?php echo t('Skilled nursing facility care (not custodial or long-term care)'); ?></li>
-          <li><?php echo t('Home health services, including a visiting nurse, or a physical, occupational, or speech therapist'); ?></li>
-          <li><?php echo t('Blood that you receive at a hospital or skilled nursing facility during a covered stay'); ?></li>
-          <li><?php echo t('Medical supplies'); ?></li>
-          <li><?php echo t('Hospice services'); ?></li>
-          <li><?php echo t('Mental health care given in a hospital'); ?></li>
-        </ul>
-        <p><?php echo t('Part B Medicare deals with doctors\' bills and includes:'); ?></p>
-        <ul>
-          <li><?php echo t('Doctor charges (not routine physical exams)'); ?></li>
-          <li><?php echo t('Medically necessary ambulance services'); ?></li>
-          <li><?php echo t('Physical, speech, and occupational therapy'); ?></li>
-          <li><?php echo t(('Home health care services (physician certification is necessary)');?></li>
-          <li><?php echo t('Medical supplies and equipment such as wheelchairs, hospital beds, oxygen, and walkers'); ?></li>
-          <li><?php echo t('Transfusion of blood and blood components provided on an outpatient basis'); ?></li>
-          <li><?php echo t('Outpatient medical/surgical supplies and services'); ?></li>
-          <li><?php echo t('Outpatient mental health'); ?></li>
-          <li><?php echo t('Part B Medicare benefits require payment of a monthly premium. A patient must also be entitled to Part A benefits in order to receive Part B benefits.'); ?></li>
-        </ul>
-      </div>
-      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
-    </div>
+  <!-- Lesson 5 Slide 5 -->
 
-    <!-- Lesson 5 Slide 4 -->
-
-    <div id="lesson-5-slide-4" class="course-slide">
-    <div class="content">
-    <h2 class="flowers"><?php echo t('Understanding Key Aspects of Medicare (continued)'); ?></h2>
-    <hr />
-    <p><?php echo t('Part C is the Medicare Advantage Plans:'); ?></p>
-    <ul>
+  <div id="lesson-5-slide-5" class="course-slide">
+  <div class="content">
+  <h2 class="flowers"><?php echo t('Understanding Key Aspects of Medicare (continued)'); ?></h2>
+  <hr />
+  <p><?php echo t('Part C is the Medicare Advantage Plans:'); ?></p>
+  <ul>
   <li><?php echo t('Part C refers to Medicare Advantage, which are managed care insurance plans you can buy from private insurers to replace your traditional Medicare coverage.'); ?></li>
   <li><?php echo t('They include Medicare HMOs, Medicare PPOs, Medicare Special Needs Plans, and Medicare Private Fee-for-Service Plans.'); ?></li>
 </ul>
-    <p><?php echo t('Part D is the Prescription Insurance Plan:'); ?></p>
-    <ul>
+  <p><?php echo t('Part D is the Prescription Insurance Plan:'); ?></p>
+  <ul>
   <li><?php echo t('Part D, as of January 2006, covers prescription drugs.'); ?></li>
   <li>
-        <?php ech ot('Depending on your income, you pay a monthly premium and part of the prescription cost.'); ?>
-      </li>
+      <?php ech ot('Depending on your income, you pay a monthly premium and part of the prescription cost.'); ?>
+    </li>
 </ul>
-    <p><?php echo t('Medicare Coverage of Skilled Nursing Care Facilities'); ?></p>
-    <p><?php echo t('If nursing home care becomes necessary, your loved one may be eligible for Medicare. In order to receive care in a skilled nursing home under Medicare:'); ?></p>
-    <ul>
-    <li><?php echo t('Most patients\' HMO plans require them to have had a three-day hospital stay prior to admission into the skilled nursing facility. There are exceptions, however, and the patient\'s insurance provider should be consulted to determine whether these restrictions apply.'); ?></li>
-    <li><?php echo t('The patient must meet specific criteria to receive treatment. The patient\'s doctor or nurse will help him or her to determine if the criteria are met.'); ?></li>
-    <li><?php echo t('The patient must be admitted into the skilled nursing facility within 30 days of discharge from the hospital.'); ?></li>
-    <li><?php echo t('The patient must enter the skilled nursing facility for treatment of the same condition for which he or she was hospitalized.'); ?></li>
-    <li><?php echo t('The patient must require daily skilled care.'); ?></li>
-    <li><?php echo t('The condition must be one that can be improved.'); ?></li>
-    <li><?php echo t('The facility must be Medicare-certified.'); ?></li>
-    <li><?php echo t('The patient\'s doctor must write a care plan. The care plan must be carried out by the skilled nursing facility. (Once the skilled needs are met, Medicare will no longer pay for services.)'); ?></li>
-    </div>
-    <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
-    </div>
+  <p><?php echo t('Medicare Coverage of Skilled Nursing Care Facilities'); ?></p>
+  <p><?php echo t('If nursing home care becomes necessary, your loved one may be eligible for Medicare. In order to receive care in a skilled nursing home under Medicare:'); ?></p>
+  <ul>
+  <li><?php echo t('Most patients\' HMO plans require them to have had a three-day hospital stay prior to admission into the skilled nursing facility. There are exceptions, however, and the patient\'s insurance provider should be consulted to determine whether these restrictions apply.'); ?></li>
+  <li><?php echo t('The patient must meet specific criteria to receive treatment. The patient\'s doctor or nurse will help him or her to determine if the criteria are met.'); ?></li>
+  <li><?php echo t('The patient must be admitted into the skilled nursing facility within 30 days of discharge from the hospital.'); ?></li>
+  <li><?php echo t('The patient must enter the skilled nursing facility for treatment of the same condition for which he or she was hospitalized.'); ?></li>
+  <li><?php echo t('The patient must require daily skilled care.'); ?></li>
+  <li><?php echo t('The condition must be one that can be improved.'); ?></li>
+  <li><?php echo t('The facility must be Medicare-certified.'); ?></li>
+  <li><?php echo t('The patient\'s doctor must write a care plan. The care plan must be carried out by the skilled nursing facility. (Once the skilled needs are met, Medicare will no longer pay for services.)'); ?></li>
+  </div>
+  <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
+  </div>
 
-    <!-- Lesson 5 Slide 5 -->
+  <!-- Lesson 5 Slide 6 -->
 
-    <div id="lesson-5-slide-5" class="course-slide">
+  <div id="lesson-5-slide-6" class="course-slide">
   <div class="content">
-        <h2 class="flowers"><?php echo t('Understanding Key Aspects of Medicare (continued)'); ?></h2>
-        <hr />
-        <p><?php echo t('Medicare Coverage of Home Care'); ?></p>
-        <p><?php echo t('In order to receive home care under Medicare:'); ?></p>
-        <ul>
+      <h2 class="flowers"><?php echo t('Understanding Key Aspects of Medicare (continued)'); ?></h2>
+      <hr />
+      <p><?php echo t('Medicare Coverage of Home Care'); ?></p>
+      <p><?php echo t('In order to receive home care under Medicare:'); ?></p>
+      <ul>
       <li><?php echo t('The patient must be homebound.'); ?></li>
       <li><?php echo t('The doctor must certify a plan of care.'); ?></li>
       <li><?php echo t('Care must be needed on an intermittent (not continuous) basis.'); ?></li>
@@ -2595,61 +2681,58 @@ foreach(array(
       <li><?php echo t('Physical or speech therapy must be provided on a "necessary and reasonable" basis. There are no restrictions on the number of days or hours per week of these therapies.'); ?></li>
       <li><?php echo t('If a person qualifies for home health care, he or she is entitled to a home health aide to provide some personal care.'); ?></li>
     </ul>
-        <p><?php echo t('Activity 2 - Discuss Medicare'); ?></p>
-        <p><?php echo t('Please locate 3 website that you find that have relevant, updated information on Medicare in your area and write them down in a safe place you will remember for your records.'); ?></p>
-        <p><?php echo t('Medicare Coverage for Prescription Drugs (Medicare Part D)'); ?></p>
-        <p><?php echo t('Medicare prescription drug coverage is insurance that covers both brand-name and generic prescription drugs at participating pharmacies. Medicare prescription drug coverage provides protection for people who have very high drug costs or from unexpected prescription drug bills in the future.'); ?></p>
-        <p><?php echo t('Everyone with Medicare is eligible for this coverage, regardless of income and resources, health status, or current prescription expenses. Someone may sign up when one is first eligible for Medicare (three months before the month one turns age 65 until three months after turning age 65). If one gets Medicare due to a disability, he or she can join from three months before to three months after the 25th month of cash disability payments. If someone does not sign up when first eligible, a penalty may be assessed. There is an annual open enrollment period from November 15, 2009 to December 31, 2009.'); ?></p>
-        <p><?php echo t('The decision about Medicare prescription drug coverage depends on the kind of health care coverage one now has. There are two ways to get Medicare prescription drug coverage. One can join a Medicare prescription drug plan or one can join a Medicare Advantage Plan or other Medicare Health Plan that offers drug coverage. Whatever plan chosen, Medicare drug coverage will help cover brand-name and generic drugs at pharmacies that are convenient.'); ?></p>
-      </div>
+      <p><?php echo t('Activity 2 - Discuss Medicare'); ?></p>
+      <p><?php echo t('Please locate 3 website that you find that have relevant, updated information on Medicare in your area and write them down in a safe place you will remember for your records.'); ?></p>
+      <p><?php echo t('Medicare Coverage for Prescription Drugs (Medicare Part D)'); ?></p>
+      <p><?php echo t('Medicare prescription drug coverage is insurance that covers both brand-name and generic prescription drugs at participating pharmacies. Medicare prescription drug coverage provides protection for people who have very high drug costs or from unexpected prescription drug bills in the future.'); ?></p>
+      <p><?php echo t('Everyone with Medicare is eligible for this coverage, regardless of income and resources, health status, or current prescription expenses. Someone may sign up when one is first eligible for Medicare (three months before the month one turns age 65 until three months after turning age 65). If one gets Medicare due to a disability, he or she can join from three months before to three months after the 25th month of cash disability payments. If someone does not sign up when first eligible, a penalty may be assessed. There is an annual open enrollment period from November 15, 2009 to December 31, 2009.'); ?></p>
+      <p><?php echo t('The decision about Medicare prescription drug coverage depends on the kind of health care coverage one now has. There are two ways to get Medicare prescription drug coverage. One can join a Medicare prescription drug plan or one can join a Medicare Advantage Plan or other Medicare Health Plan that offers drug coverage. Whatever plan chosen, Medicare drug coverage will help cover brand-name and generic drugs at pharmacies that are convenient.'); ?></p>
+    </div>
   <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
 </div>
 
-    <!-- Lesson 5 Slide 6 -->
+  <!-- Lesson 5 Slide 7 -->
 
-    <div id="lesson-5-slide-6" class="course-slide">
+  <div id="lesson-5-slide-7" class="course-slide">
   <div class="content">
-        <h2 class="flowers"><?php echo t('Understanding Key Aspects of Medicare (continued)'); ?></h2>
-        <hr />
-        <p><?php echo t('Like other insurance, there is a monthly premium, which varies by plan, and a yearly deductible. One will also pay a part of the cost of prescriptions, including a copayment or coinsurance. Costs will vary depending on which drug plan is chosen. Some plans may offer more coverage and additional drugs for a higher monthly premium. If someone has limited income and resources, and qualify for extra help, one may not have to pay a premium or deductible. To get more information about the extra help, please visit the Social Security webpage: '); ?><a href="http://www.socialsecurity.gov/" target="_blank">www.socialsecurity.gov</a>.</p>
-		
-		<p><?php echo t('Medicare prescription drug coverage provides greater peace of mind by protecting older adults from unexpected drug expenses. Even if someone does not use a lot of prescription drugs now, he or she should still consider joining. As we age, most people need prescription drugs to stay healthy. For most people, joining now means protection from unexpected prescription drug bills in the future.'); ?></p>
-        <p><?php echo t('There is extra financial help for people with limited income and resources. If someone qualifies for extra help, Medicare will pay for almost all prescription drug costs. One can apply or get more information about the extra help by visiting the Social Security webpage.'); ?></p>
-        
-        <p><a href="https://www.medicare.gov/find-a-plan/questions/home.aspx?AspxAutoDetectCookieSupport=1" target="_blank">Medicare Prescription Drug Plan Finder</a></p>
-        
-        <p><?php echo t('Medicare has a valuable interactive tool that allows you to narrow your search for a Medicare prescription drug plan based on your personal preferences such as cost, drugs covered and participating pharmacies. Click on the above link to access the tool.'); ?></p>
-      </div>
+      <h2 class="flowers"><?php echo t('Understanding Key Aspects of Medicare (continued)'); ?></h2>
+      <hr />
+      <p><?php echo t('Like other insurance, there is a monthly premium, which varies by plan, and a yearly deductible. One will also pay a part of the cost of prescriptions, including a copayment or coinsurance. Costs will vary depending on which drug plan is chosen. Some plans may offer more coverage and additional drugs for a higher monthly premium. If someone has limited income and resources, and qualify for extra help, one may not have to pay a premium or deductible. To get more information about the extra help, please visit the Social Security webpage: '); ?><a href="http://www.socialsecurity.gov/" target="_blank">www.socialsecurity.gov</a>.</p>
+      <p><?php echo t('Medicare prescription drug coverage provides greater peace of mind by protecting older adults from unexpected drug expenses. Even if someone does not use a lot of prescription drugs now, he or she should still consider joining. As we age, most people need prescription drugs to stay healthy. For most people, joining now means protection from unexpected prescription drug bills in the future.'); ?></p>
+      <p><?php echo t('There is extra financial help for people with limited income and resources. If someone qualifies for extra help, Medicare will pay for almost all prescription drug costs. One can apply or get more information about the extra help by visiting the Social Security webpage.'); ?></p>
+      <p><a href="https://www.medicare.gov/find-a-plan/questions/home.aspx?AspxAutoDetectCookieSupport=1" target="_blank">Medicare Prescription Drug Plan Finder</a></p>
+      <p><?php echo t('Medicare has a valuable interactive tool that allows you to narrow your search for a Medicare prescription drug plan based on your personal preferences such as cost, drugs covered and participating pharmacies. Click on the above link to access the tool.'); ?></p>
+    </div>
   <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
 </div>
 
-    <!-- Lesson 5 Slide 7 -->
+  <!-- Lesson 5 Slide 8 -->
 
-    <div id="lesson-5-slide-7" class="course-slide">
+  <div id="lesson-5-slide-8" class="course-slide">
   <div class="content">
-        <h2 class="flowers"><?php echo t('Understanding Key Aspects of Medicare (continued)'); ?></h2>
-        <hr />
-        <p><?php echo t('Medicare Coverage of Hospice'); ?></p>
-        <p><?php echo t('Hospice is the philosophy and practice of caring for those at their end-of-life. Hospice care focuses on enhancing the quality of life for those final months, weeks, or days of life.'); ?></p>
-        <p><?php echo t('There are more than 2,200 hospice organizations across the country. Most provide home care services and respite care for family caregivers. The hospice team consists of physicians, nurses, home health aides, social workers, counselors, nutritionists, speech and physical therapists, clergy, and volunteers who focus on the needs of the dying person and the family. Hospice staffs is usually available on a 24-hour basis. Hospice may be provided in the older adult’s home, a senior living or long-term care community, or in special hospice units in some hospitals or nursing homes if more extensive medical care to control pain or other symptoms is needed to provide peace and comfort.'); ?></p>
-        <p><?php echo t('The goal of hospice is not to cure or rehabilitate. Nor is it to hasten death. Rather, hospice care focuses on supportive comfort care, aiming at relieving pain, nausea, dizziness, or constipation.'); ?></p>
-        <p>p<?php echo t('For the caregiver, it is important to choose a hospice agency that is certified by Medicare to provide hospice care. Almost all hospice services are covered by Medicare as long as the agency is certified.'); ?></p>
-        <p><?php echo t('Hospice care is given in “periods of care.” For example, initial hospice care usually begins with two 90-day periods (6 months total). After than period, if the hospice medical director determines the person still would benefit from hospice, they would be “recertified” for additional 60-day periods. Recertification continues every 60-days. If the hospice medical director deems the person is doing well and does not need hospice, the care would revert back to the original Medicare coverage. If later, the person again needs hospice, the medical director can recertify the person to return to hospice care.'); ?></p>
-        <p><?php echo t('The following is a resource from Medicare regarding explanation of the Medicare Hospice Benefit.'); ?></p>
-      </div>
+      <h2 class="flowers"><?php echo t('Understanding Key Aspects of Medicare (continued)'); ?></h2>
+      <hr />
+      <p><?php echo t('Medicare Coverage of Hospice'); ?></p>
+      <p><?php echo t('Hospice is the philosophy and practice of caring for those at their end-of-life. Hospice care focuses on enhancing the quality of life for those final months, weeks, or days of life.'); ?></p>
+      <p><?php echo t('There are more than 2,200 hospice organizations across the country. Most provide home care services and respite care for family caregivers. The hospice team consists of physicians, nurses, home health aides, social workers, counselors, nutritionists, speech and physical therapists, clergy, and volunteers who focus on the needs of the dying person and the family. Hospice staffs is usually available on a 24-hour basis. Hospice may be provided in the older adult’s home, a senior living or long-term care community, or in special hospice units in some hospitals or nursing homes if more extensive medical care to control pain or other symptoms is needed to provide peace and comfort.'); ?></p>
+      <p><?php echo t('The goal of hospice is not to cure or rehabilitate. Nor is it to hasten death. Rather, hospice care focuses on supportive comfort care, aiming at relieving pain, nausea, dizziness, or constipation.'); ?></p>
+      <p>p<?php echo t('For the caregiver, it is important to choose a hospice agency that is certified by Medicare to provide hospice care. Almost all hospice services are covered by Medicare as long as the agency is certified.'); ?></p>
+      <p><?php echo t('Hospice care is given in “periods of care.” For example, initial hospice care usually begins with two 90-day periods (6 months total). After than period, if the hospice medical director determines the person still would benefit from hospice, they would be “recertified” for additional 60-day periods. Recertification continues every 60-days. If the hospice medical director deems the person is doing well and does not need hospice, the care would revert back to the original Medicare coverage. If later, the person again needs hospice, the medical director can recertify the person to return to hospice care.'); ?></p>
+      <p><?php echo t('The following is a resource from Medicare regarding explanation of the Medicare Hospice Benefit.'); ?></p>
+    </div>
   <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
 </div>
 
-    <!-- Lesson 5 Slide 8 -->
+  <!-- Lesson 5 Slide 9 -->
 
-    <div id="lesson-5-slide-8" class="course-slide">
+  <div id="lesson-5-slide-9" class="course-slide">
   <div class="content">
-        <h2 class="flowers"><?php echo t('Understanding Key Aspects of Medicaid'); ?></h2>
-        <hr />
-        <p><?php echo t('Medicaid is a joint federal-state health insurance program providing medical assistance primarily to low-income Americans who have limited resources. It is also available to people under 65 if they are blind or disabled. The purpose of Medicaid is to provide preventive, therapeutic, and remedial health services and supplies that are essential to attain an optimum level of well-being.'); ?></p>
-        <p><?php echo t('How Do People Receive Medicaid Benefits?'); ?></p>
-        <p><?php echo t('There are two ways to receive Medicaid:'); ?></p>
-        <ul>
+      <h2 class="flowers"><?php echo t('Understanding Key Aspects of Medicaid'); ?></h2>
+      <hr />
+      <p><?php echo t('Medicaid is a joint federal-state health insurance program providing medical assistance primarily to low-income Americans who have limited resources. It is also available to people under 65 if they are blind or disabled. The purpose of Medicaid is to provide preventive, therapeutic, and remedial health services and supplies that are essential to attain an optimum level of well-being.'); ?></p>
+      <p><?php echo t('How Do People Receive Medicaid Benefits?'); ?></p>
+      <p><?php echo t('There are two ways to receive Medicaid:'); ?></p>
+      <ul>
       <li><?php echo t('Supplemental Security Income (SSI) -- People who receive a cash grant under SSI and Aid to Dependent Children are automatically eligible for Medicaid benefits.') ;?></li>
       <li><?php echo t('Medicaid &quot;spend-down&quot; -- This is similar to a deductible or a co-payment that a patient must 
         pay every month. Once the patient meets his &quot;spend-down&quot; amount, the patient is eligible for'); ?></li>
@@ -2658,37 +2741,37 @@ foreach(array(
       <li><?php echo t('Medicaid eligibility requirements depend on financial need, low income, and minimal assets.'); ?></li>
       <li><?php echo t('In determining Medicaid eligibility, officials do not review rent, car payments, or food costs.'); ?></li>
       <li><?php echo t('Officials only review medical expenses, which include:'); ?>
-            <ul>
+          <ul>
           <li><?php echo t('Care from hospitals, doctors, clinics, nurses, dentists, podiatrists, and chiropractors'); ?> </li>
           <li><?php echo t('Medications'); ?> </li>
           <li><?php echo t('Medical supplies and equipment'); ?> </li>
           <li><?php echo t('Health insurance premiums'); ?> </li>
           <li><?php echo t('Transportation to get medical care'); ?> </li>
         </ul>
-          </li>
+        </li>
       <li><?php echo t('The four eligibility tests required to receive Medicaid include:'); ?>
-            <ul>
+          <ul>
           <li><?php echo t('Categorical -- A patient must be age 65, blind, or disabled.'); ?> </li>
           <li><?php echo t('Non-financial -- A patient must be a U.S. citizen and a state resident. A patient also must have a Social Security number.'); ?> </li>
           <li><?php echo t('Financial -- A patient\'s total gross income, personal assets, and property will be evaluated and must meet a certain standard. This amount varies from state to state.'); ?> </li>
           <li><?php echo t('Procedural -- A patient must complete and sign an application and have a personal interview with a Medicaid official.'); ?> </li>
         </ul>
-          </li>
+        </li>
       <li><?php echo t('Each eligible Medicaid recipient receives a monthly Medical Identification card. The card is valid for one month only.'); ?></li>
     </ul>
-      </div>
+    </div>
   <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
 </div>
 
-    <!-- Lesson 5 Slide 9 -->
+  <!-- Lesson 5 Slide 10 -->
 
-    <div id="lesson-5-slide-9" class="course-slide">
+  <div id="lesson-5-slide-10" class="course-slide">
   <div class="content">
-        <h2 class="flowers"><?php echo t('Understanding Key Aspects of Medicaid (continued)'); ?></h2>
-        <hr />
-        <p><?php echo t('Medicaid Coverage'); ?></p>
-        <p><?php echo t('Medicaid coverage varies from state to state. For specific coverage guidelines, contact your state\'s Department of Human Services. Generally, Medicaid benefits include:'); ?></p>
-        <ul>
+      <h2 class="flowers"><?php echo t('Understanding Key Aspects of Medicaid (continued)'); ?></h2>
+      <hr />
+      <p><?php echo t('Medicaid Coverage'); ?></p>
+      <p><?php echo t('Medicaid coverage varies from state to state. For specific coverage guidelines, contact your state\'s Department of Human Services. Generally, Medicaid benefits include:'); ?></p>
+      <ul>
       <li><?php echo t('Transportation -- This may include ambulance services when other means of transportation are detrimental to the patient\'s health or may include transportation to and from the hospital at time of admission or discharge when required by the patient\'s condition. Transportation also may cover trips to and from a hospital, outpatient clinic, doctor\'s office, or other facility when the doctor certifies the need for this service.'); ?></li>
       <li><?php echo t('Ambulatory Centers -- Ambulatory health care centers are private corporations or public agencies that are not part of a hospital. They provide preventive, diagnostic, therapeutic, and rehabilitative services under the direction of a physician. Ambulatory services covered by Medicaid include dental, pharmaceutical, diagnostic, and vision care.'); ?></li>
       <li><?php echo t('Hospital Services -- These services include inpatient hospital care up to 60 days for an illness. Private hospital rooms are covered only when the illness requires the patient to be isolated for his or her own health or the health of others. Outpatient preventive, therapeutic, and rehabilitative services also are covered. So are professional, laboratory and radiology services.'); ?></li>
@@ -2697,52 +2780,52 @@ foreach(array(
       <li><?php echo t('Skilled Nursing Facilities -- Skilled nursing facilities and intermediate care facilities (providing short-term care for a patient whose condition is stable or reversible) are covered through'); ?></li>
       <li><?php echo t('Medicaid with a doctor\'s authorization.'); ?></li>
     </ul>
-        <p><?php echo t('Activity 3 - Discuss Medicaid'); ?></p>
-        <p><?php echo t('Email your Instructor and explain the major differences between Medicare and Medicaid as you see it and if you understand it.'); ?></p>
-      </div>
+      <p><?php echo t('Activity 3 - Discuss Medicaid'); ?></p>
+      <p><?php echo t('Email your Instructor and explain the major differences between Medicare and Medicaid as you see it and if you understand it.'); ?></p>
+    </div>
   <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
 </div>
 
-    <!-- Lesson 5 Slide 10 -->
+  <!-- Lesson 5 Slide 11 -->
 
-    <div id="lesson-5-slide-10" class="course-slide">
+  <div id="lesson-5-slide-11" class="course-slide">
   <div class="content">
-        <h2 class="flowers"><?php echo t('Legal Issues for Caregivers'); ?></h2>
-        <hr />
-        <p><?php echo t('As a caregiver, you should begin making legal preparations soon after your loved one has been diagnosed with a serious illness. People with Alzheimer\'s disease and other long-term illnesses may have the capacity to manage their own legal and financial affairs right now. But as these diseases advance, they will need to rely on others to act in their best interests. This transition is never easy. However, advance planning allows people with a long-term disease and their families to make decisions together for what may come.'); ?>
+      <h2 class="flowers"><?php echo t('Legal Issues for Caregivers'); ?></h2>
+      <hr />
+      <p><?php echo t('As a caregiver, you should begin making legal preparations soon after your loved one has been diagnosed with a serious illness. People with Alzheimer\'s disease and other long-term illnesses may have the capacity to manage their own legal and financial affairs right now. But as these diseases advance, they will need to rely on others to act in their best interests. This transition is never easy. However, advance planning allows people with a long-term disease and their families to make decisions together for what may come.'); ?>
     <p><?php echo t('Legal Documents for Caregivers'); ?></p>
-        <p><?php echo t('Clearly written legal documents that outline your loved one\'s wishes and decisions are essential for caregivers. These documents can authorize another person to make healthcare and financial decisions, including plans for long-term care. If the person being cared for has the legal capacity -- the level of mental functioning necessary to sign official documents -- he or she should actively participate in legal planning.'); ?></p>
-        <p><?php echo t('To give your loved one the best care possible, obtain legal advice and services from an attorney. If the person you are caring for is age 65 or older, consider hiring an attorney who practices elder law, a specialized area of law focusing on issues that typically affect the elderly. As you plan for the future, ask the attorney about the following documents (more detailed information is provided in the section “Long-term Care Planning and Advanced Directives):'); ?></p>
-        <p><?php echo t('Power of attorney'); ?></p>
-        <p><?php echo t('This document gives a person (the principal) an opportunity to authorize an agent (usually a trusted family member or friend) to make legal decisions when he or she is no longer competent. There is no standard power of attorney; thus, each one must be geared toward an individual\'s situation. It is important for the caregiver to be very familiar with the terms of power of attorney because they spell out what authority the caregiver does and does not have. The agent should make multiple copies of the document and give one to each company with which the principal does business.'); ?></p>
-        <p><?php echo t('Durable power of attorney for health care (also known as health care proxy)'); ?></p>
-        <p><?php echo t('This document appoints an agent to make all decisions regarding health care, including choices regarding health care providers, medical treatment, and, in the later stages of the disease, end- of-life decisions. This means that the agent may authorize or refuse any medical treatment for the principal. This power only goes into effect once the principal is unable to make decisions for himself and is activated by the principal\'s attending physician.'); ?></p>
-      </div>
+      <p><?php echo t('Clearly written legal documents that outline your loved one\'s wishes and decisions are essential for caregivers. These documents can authorize another person to make healthcare and financial decisions, including plans for long-term care. If the person being cared for has the legal capacity -- the level of mental functioning necessary to sign official documents -- he or she should actively participate in legal planning.'); ?></p>
+      <p><?php echo t('To give your loved one the best care possible, obtain legal advice and services from an attorney. If the person you are caring for is age 65 or older, consider hiring an attorney who practices elder law, a specialized area of law focusing on issues that typically affect the elderly. As you plan for the future, ask the attorney about the following documents (more detailed information is provided in the section “Long-term Care Planning and Advanced Directives):'); ?></p>
+      <p><?php echo t('Power of attorney'); ?></p>
+      <p><?php echo t('This document gives a person (the principal) an opportunity to authorize an agent (usually a trusted family member or friend) to make legal decisions when he or she is no longer competent. There is no standard power of attorney; thus, each one must be geared toward an individual\'s situation. It is important for the caregiver to be very familiar with the terms of power of attorney because they spell out what authority the caregiver does and does not have. The agent should make multiple copies of the document and give one to each company with which the principal does business.'); ?></p>
+      <p><?php echo t('Durable power of attorney for health care (also known as health care proxy)'); ?></p>
+      <p><?php echo t('This document appoints an agent to make all decisions regarding health care, including choices regarding health care providers, medical treatment, and, in the later stages of the disease, end- of-life decisions. This means that the agent may authorize or refuse any medical treatment for the principal. This power only goes into effect once the principal is unable to make decisions for himself and is activated by the principal\'s attending physician.'); ?></p>
+    </div>
   <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
 </div>
 
-    <!-- Lesson 5 Slide 10 -->
+  <!-- Lesson 5 Slide 12 -->
 
-    <div id="lesson-5-slide-10" class="course-slide">
+  <div id="lesson-5-slide-12" class="course-slide">
   <div class="content">
-        <h2 class="flowers"><?php echo t('Legal Issues for Caregivers (continued)'); ?></h2>
-        <hr />
-        <p>
+      <h2 class="flowers"><?php echo t('Legal Issues for Caregivers (continued)'); ?></h2>
+      <hr />
+      <p>
       <?php ech t('Living will'); ?>
     </p>
-        <p><?php echo t('A living will allows the person to state -- in advance -- what kind of medical care he or she desires to receive and what life-support procedures he or she would like to withhold. This document is used if a person becomes terminally ill and unable to make his wishes known or if he becomes permanently unconscious. A terminal illness is defined as one from which a person\'s doctor believes there is no chance of recovery. Living wills can also be used if a person becomes permanently unconscious. To be considered permanently unconscious, two physicians must determine that the patient has no reasonable possibility of regaining consciousness or decision-making ability. Laws on living wills vary from state to state.'); ?></p>
-        <p><?php echo t('Living trust'); ?></p>
-        <p><?php echo t('This document enables a person (called a grantor or trustor) to create a trust and appoint a trustee to carefully invest and manage trust assets once the grantor is no longer able to manage finances. A person can appoint another individual or a financial institution to be the trustee.'); ?></p>
-        <p><?php echo t('Will'); ?></p>
-        <p><?php echo t('A will is a document created by an individual that names an executor (the person who will manage the estate) and beneficiaries (those who will receive the estate at the time of the person\'s death).'); ?></p>
-        <p><?php echo t('If you cannot afford an attorney, legal forms can be accessed through resources including books and the Internet. Legal issues may be discussed with a social worker or clergy free of charge.') ?></p>
-        <p><?php echo t('Guardian/Conservator'); ?></p>
-        <p><?php echo t('A caregiver of an individual who no longer has the legal capacity to execute powers of attorney or trusts may have to become that individual\'s guardian or conservator. A guardian has the legal authority to make decisions about the lifestyle and well-being of another person. The decisions a guardian may make include where a person may live, what care and medical treatment will be provided, and what religious and educational activities will be made available. A conservator has legal authority to manage another person\'s financial affairs.'); ?></p>
-      </div>
-  <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
+      <p><?php echo t('A living will allows the person to state -- in advance -- what kind of medical care he or she desires to receive and what life-support procedures he or she would like to withhold. This document is used if a person becomes terminally ill and unable to make his wishes known or if he becomes permanently unconscious. A terminal illness is defined as one from which a person\'s doctor believes there is no chance of recovery. Living wills can also be used if a person becomes permanently unconscious. To be considered permanently unconscious, two physicians must determine that the patient has no reasonable possibility of regaining consciousness or decision-making ability. Laws on living wills vary from state to state.'); ?></p>
+      <p><?php echo t('Living trust'); ?></p>
+      <p><?php echo t('This document enables a person (called a grantor or trustor) to create a trust and appoint a trustee to carefully invest and manage trust assets once the grantor is no longer able to manage finances. A person can appoint another individual or a financial institution to be the trustee.'); ?></p>
+      <p><?php echo t('Will'); ?></p>
+      <p><?php echo t('A will is a document created by an individual that names an executor (the person who will manage the estate) and beneficiaries (those who will receive the estate at the time of the person\'s death).'); ?></p>
+      <p><?php echo t('If you cannot afford an attorney, legal forms can be accessed through resources including books and the Internet. Legal issues may be discussed with a social worker or clergy free of charge.') ?></p>
+      <p><?php echo t('Guardian/Conservator'); ?></p>
+      <p><?php echo t('A caregiver of an individual who no longer has the legal capacity to execute powers of attorney or trusts may have to become that individual\'s guardian or conservator. A guardian has the legal authority to make decisions about the lifestyle and well-being of another person. The decisions a guardian may make include where a person may live, what care and medical treatment will be provided, and what religious and educational activities will be made available. A conservator has legal authority to manage another person\'s financial affairs.'); ?></p>
+    </div>
+  <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> <?php echo t('Complete Lesson'); ?></a></div>
 </div>
 
-    <!-- need this final div here to close lesson-5 -->
-    </div>
-    <!-- need this final div here to close the course -->
-    </div>
+  <!-- need this final div here to close lesson-5 -->
+  </div>
+  <!-- need this final div here to close the course -->
+  </div>
