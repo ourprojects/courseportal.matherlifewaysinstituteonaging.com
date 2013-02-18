@@ -1,10 +1,10 @@
 div.box-sidebar.two p {
-	text-align: center; 
+	text-align: center;
 	font-family: 'Comic Sans MS', cursive;
 }
 div.box-sidebar.two p.title {
-	color:#900; 
-	font-size:24px;
+	color: #900;
+	font-size: 24px;
 }
 div.course-slide {
 	min-height: 100%;
@@ -12,12 +12,12 @@ div.course-slide {
 }
 div.course-slide div.question {
 	background-color: #FFF;
-    border-radius: 15px;
-    width: 75%;
-    height: 65px;
-    margin-left: 75px;
-    padding: 10px;
-    -moz-box-shadow: 0 0 5px 5px #888;
+	border-radius: 15px;
+	width: 75%;
+	height: 65px;
+	margin-left: 75px;
+	padding: 10px;
+	-moz-box-shadow: 0 0 5px 5px #888;
 	-webkit-box-shadow: 0 0 5px 5px#888;
 	box-shadow: 0 0 5px 5px #888;
 }
@@ -37,5 +37,11 @@ div.course-slide div.buttons {
 	bottom: 5px;
 }
 #surveynotify {
-	color:#F00;	
+	color: #F00;
+	line-height:normal;
+	font-size: 30px;
+	text-align:center;
+}
+#developers p {
+	font-size: small;
 }
