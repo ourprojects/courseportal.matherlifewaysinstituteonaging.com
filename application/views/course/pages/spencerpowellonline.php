@@ -24,7 +24,7 @@ foreach(array(
 
 ?>
 
-<div class="small-masthead" style="background-image: url(<?php echo $this->getImagesUrl('header-courses.png'); ?>);">
+<div class="small-masthead" style="background-image: url(<?php echo $this->getImagesUrl('126945521r.jpeg'); ?>);">
   <h1 class="bottom"><?php echo t($course->title); ?></h1>
 </div>
 <div id="sidebar"> 
@@ -130,23 +130,30 @@ foreach(array(
         <hr />
         <h4><?php echo t('THANK YOU!'); ?></h4>
         <p><?php echo t('Welcome and thank you for your interest and participation in the Spencer Powell Brain Fitness Program online course. We are excited to have your participation and look forward to our interactions! Please contact us if you need help, have questions, or suggestions for course improvements.'); ?></p>
-        
-        <p><?php echo t(' text here '); ?></p>
-        
+        <p><?php echo t('A growing body of research suggests that cognitive health is not entirely genetic – that the way our brains age is not fixed, but malleable. Mather LifeWays announces its partnership with Dakim, a company which has pioneered interactive cognitive tools, as part of its multi-pronged Spencer Powell brain fitness initiative to promote cognitive health and healthy lifestyle choices among older adults.'); ?></p>
         <h5><?php echo t('Before we get started...'); ?></h5>
-        
         <p><?php echo t('To the best of your ability, and without searching the Internet, please answer the following quetions. There are no wrong answers, and your feedback is anonoymous.'); ?></p>
-        
         <div id="question1" class="question">
-          <p><?php echo t('Are you prepared to take this online course?'); ?>
+          <p><?php echo t('Do you feel you have adequate computer and Interent skills to participat in this online course?'); ?>
             <select>
               <option selected="selected" value="select"> <?php echo t('Select'); ?> </option>
               <option value="1"> <?php echo t('Yes'); ?> </option>
               <option value="0"> <?php echo t('No') ?> </option>
             </select>
           </p>
-          <p class="right-answer hide" style="color:#000;"> <?php echo t('Great! Please begin. Good luck!'); ?> </p>
-          <p class="wrong-answer hide"> <?php echo t('Please search the web for best practices in participating in a online course.'); ?> </p>
+          <p class="right-answer hide" style="color:#090;"> <?php echo t('Great! Please begin. Good luck!'); ?> </p>
+          <p class="wrong-answer hide" style="color:#F00;"> <?php echo t('Please search the web for best practices in participating in a online course.'); ?> </p>
+        </div>
+        <div id="question1" class="question">
+          <p><?php echo t('Are you being paid to participate in this online course?'); ?>
+            <select>
+              <option selected="selected" value="select"> <?php echo t('Select'); ?> </option>
+              <option value="1"> <?php echo t('Yes'); ?> </option>
+              <option value="0"> <?php echo t('No') ?> </option>
+            </select>
+          </p>
+          <p class="right-answer hide" style="color:#090;"> <?php echo t('Please STOP and contact the Program Director.'); ?> </p>
+          <p class="wrong-answer hide" style="color:#F00;"> <?php echo t('Great! Please begin. Good luck!'); ?> </p>
         </div>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Start Course &raquo;'); ?></a></div>
@@ -158,7 +165,7 @@ foreach(array(
       <div class="content">
         <h2 class="flowers"><?php echo t('Overview of Brain Health'); ?></h2>
         <hr />
-        <h2><?php echo t('Lesson Objectives'); ?></h2>
+        <h4><?php echo t('Lesson Objectives'); ?></h4>
         <ul>
           <li><?php echo t('Overview of - '); ?></li>
           <ol>
@@ -171,7 +178,7 @@ foreach(array(
           <li><?php echo t('Memory Exercise'); ?></li>
           <li><?php echo t('Goal Setting'); ?></li>
         </ul>
-        <h2><?php echo t('Brain Health new and Later'); ?></h2>
+        <h4><?php echo t('Brain Health Now and Later'); ?></h4>
         <p><?php echo t('The world of brain health has exploded over the past decade with many new programs and applications emerging to help people think and perform better both now in their daily lives at work or at home and later in life as people age.  Maintaining independence later in life is a concern for many people, especially older adults, but even for younger people this can be a nagging concern.  Through the course of this program you will learn how investing in your brain health now can pay dividends both immediately and as you age.'); ?></p>
         <p><?php echo t('To describe some of the key concepts underlying the field of brain health, we will start by talking a bit about how to protect brain health as you age.'); ?></p>
       </div>
@@ -184,11 +191,12 @@ foreach(array(
       <div class="content">
         <h2 class="flowers"><?php echo t('Dementia and Cognitive Reserve'); ?></h2>
         <hr />
+        <img src="<?php echo $this->getImagesUrl('DementiaNotInevitableImage.png'); ?>" width="400px" height="268px" />
         <p><?php echo t('Many people think that dementia is a normal part of the aging process and that losing ones memory is just part of getting older. While some cognitive skills, such as reaction time and our ability to access words at times (what we think of as “senior moments”), do decline naturally with age, “dementia” is a decline in cognitive ability beyond the normal aging process, most likely due to disease or injury.'); ?></p>
         <p><?php echo t('Many people also think that if dementia is in their family they are destined to develop it at some point in their lives.  However, brain research is showing that the way people live their lives actually seems to account for as much or more of the risk for dementia than family history.  In fact for the typical late-onset form of Alzheimer’s disease, genes seem to only account for about 30% of the risk (that’s in contrast to early-onset Alzheimer’s, which occurs before age 65 and has a much stronger genetic component).  The rest of that 70% is made up of some other things that we can’t control such as environmental toxins, but within that 70% area there are a lot of things that we can control.'); ?></p>
         <p><?php echo t('This information is leading some doctors and scientists to start thinking of dementia as a preventable disease, similar to how we think of heart disease, cancer and Type II diabetes as preventable.
 '); ?></p>
-        <img src="<?php echo $this->getImagesUrl('DementiaNotInevitableImage.png'); ?>" width="400px" height="268px" /> </div>
+      </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
     </div>
     
