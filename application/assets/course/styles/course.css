@@ -15,7 +15,7 @@ div.course-slide div.question {
 	border-radius: 15px;
 	width: 75%;
 	height: 65px;
-	margin-left: 75px;
+	margin: 10px 0 25px 25px;
 	padding: 10px;
 	-moz-box-shadow: 0 0 5px 5px #888;
 	-webkit-box-shadow: 0 0 5px 5px#888;
@@ -38,10 +38,15 @@ div.course-slide div.buttons {
 }
 #surveynotify {
 	color: #F00;
-	line-height:normal;
+	line-height: normal;
 	font-size: 30px;
-	text-align:center;
+	text-align: center;
 }
 #developers p {
 	font-size: small;
+}
+img {
+	float: right;
+	margin: 0 15px 15px 15px;
+	border: none;
 }
