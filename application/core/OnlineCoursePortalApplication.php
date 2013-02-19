@@ -42,9 +42,10 @@ class OnlineCoursePortalApplication extends CWebApplication {
     	
     	$this->name = t($this->name);
 		$controller = parent::createController($route, $owner);
-		if(!is_subclass_of($controller, 'OnlineCoursePortalController') &&
+		if(((is_array($controller) && !is_subclass_of($controller[0], 'OnlineCoursePortalController')) || 
+				(!is_array($controller) && !is_subclass_of($controller, 'OnlineCoursePortalController'))) &&
 				Yii::app()->getUrlManager()->hasPathInfoSegments()) {
-			$route .= Yii::app()->getUrlManager()->popPathInfoSegment();
+			$route .= Yii::app()->getUrlManager()->popPathInfoSegment() . '/';
 			Yii::app()->getUrlManager()->parsePathInfoSegments();
 			return parent::createController($route, $owner);
 		}
