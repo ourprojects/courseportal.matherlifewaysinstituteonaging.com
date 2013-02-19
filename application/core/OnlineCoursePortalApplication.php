@@ -36,12 +36,19 @@ class OnlineCoursePortalApplication extends CWebApplication {
      * @param string $route the route of the current request. See {@link createController} for more details.
      * @throws CHttpException if the controller could not be created.
      */
-    public function runController($route) {
+    public function createController($route, $owner = NULL) {
     	// Process the request through the translation system
     	Yii::app()->translate->processRequest($route);
-
+    	
     	$this->name = t($this->name);
-		parent::runController($route);
+		$controller = parent::createController($route, $owner);
+		if(!is_subclass_of($controller, 'OnlineCoursePortalController') &&
+				Yii::app()->getUrlManager()->hasPathInfoSegments()) {
+			$route .= Yii::app()->getUrlManager()->popPathInfoSegment();
+			Yii::app()->getUrlManager()->parsePathInfoSegments();
+			return parent::createController($route, $owner);
+		}
+		return $controller;
     }
     
     public function setComponents($components, $merge = true) {

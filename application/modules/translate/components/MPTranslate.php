@@ -103,7 +103,7 @@ class MPTranslate extends CApplicationComponent {
 		// If the language is not recognized maybe the user didn't add the language part of the address.
 		// Redirect to the same uri with the source language set.
 		if(!$this->isAdminAcceptedLanguage(Yii::app()->getLocale()->getLanguageID($language))) {
-			Yii::app()->getRequest()->redirect(Yii::app()->createUrl(Yii::app()->getRequest()->getRequestUri(), array('language' => Yii::app()->sourceLanguage)));
+			Yii::app()->getRequest()->redirect(Yii::app()->createUrl(Yii::app()->getRequest()->getPathInfo(), array('language' => Yii::app()->sourceLanguage)));
 		}
 		
 		$this->setLanguage($language);
