@@ -118,22 +118,19 @@ $this->widget(
 </div>
 <div class="column-wide">
   <h2 class="flowers">Mather LifeWays Institute on Aging</h2>
-  <p> <?php echo t('Through research-based programs and innovative techniques, '); ?>Mather LifeWays Institute on Aging <?php echo t('is committed to advancing the field of geriatric care. Cutting-edge research lays the foundation for our
-				solid solutions to senior care challenges, including recruitment, mentorship, training, and retention.'); ?> </p>
-  <p> <?php echo t('Used by individuals and entire organizations, our nationally recognized, award-winning programs include training modules, online
-				courses, toolkits, and learning modules designed to make learning fun and easy. Our programs have been shown to result in measurable
-				improvements in the quality of care provided and workforce retention.'); ?> </p>
+  <p> <?php echo t('Through research-based programs and innovative techniques, Mather LifeWays Institute on Aging is committed to advancing the field of eldercare. Used by individuals and entire organizations, our nationally recognized, award-winning programs include training modules, online
+				courses, toolkits, and learning modules designed to make learning fun and easy.'); ?> </p>
   
   <!-- online courses for caregivers div here -->
   
   <h2 class="flowers top-pad"><?php echo t('Digital Workforce Solutions'); ?></h2>
-  <p style="padding-bottom: 5px;"><?php echo t('We deliver online learning and web-based modalities using the latest technologies to efficiently and cost-effectively empower professionals in the workplace.'); ?></p>
-  <p><?php echo t('In addition, we are well-positioned to help conduct pilot studies that measure the impact on both working caregivers and the bottom line for interested corporations. We provide practical solutions in the form of online courses, workplace toolkits, and workforce surveys.'); ?> </p>
+  <p style="padding-bottom: 5px;"><?php echo t('We deliver online learning and web-based modalities using the latest technologies to efficiently and cost-effectively empower professionals in the workplace. In addition, we are well-positioned to help conduct pilot studies that measure the impact on both working caregivers and the bottom line for interested corporations. We provide practical solutions in the form of online courses, workplace toolkits, and workforce surveys.'); ?></p>
   
   <!-- text for ROI here for program use  -->
   
   <h2 class="flowers top-pad"><?php echo t('Benefits of Participation'); ?></h2>
-  <p style="padding-bottom: 5px;"><?php echo t('Why participate? Past participation has yieled many benfits for our clients, including, but not limited to: '); ?></p>
+  <p style="padding-bottom: 5px;"><?php echo t('Why participate? Our programs have been shown to result in measurable
+				improvements in the quality of care provided and workforce retention. Past participation has yieled many benfits for our clients, including, but not limited to: '); ?></p>
   <ul>
     <li><?php echo t('Increased employee morale due to greater self-efficacy.'); ?></li>
     <li><?php echo t('Improved employee to employer, and employee to family relations.'); ?></li>
