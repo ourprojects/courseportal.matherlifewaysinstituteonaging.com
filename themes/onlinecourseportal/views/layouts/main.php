@@ -26,7 +26,7 @@
 	</title>
 </head>
 <body>
-	<?php $this->widget('ext.LDGoogleAnalytics.LDGoogleAnalytics', array('accountID' => 'UA-36363866-1')); ?>
+	<?php $this->widget('ext.LDGoogleAnalytics.LDGoogleAnalytics', Yii::app()->params['googleAnalytics']); ?>
 	<div class="container" id="page">
 		<div id="header">
 			<div id="logo">
@@ -34,7 +34,7 @@
 			</div>
 			<div id="site-title"><?php echo Yii::app()->name; ?></div>
 			<div id="language-menu"><?php $this->widget('modules.translate.widgets.acceptedLanguage.ALSelector'); ?></div>
-			<?php if(!empty(MPTranslate::$messages) && Yii::app()->getUser()->isAdmin()): ?>
+			<?php if(!empty(MPTranslate::$messages) && Yii::app()->getUser()->getIsAdmin()): ?>
 				<div id="translate-button">
 					<?php echo Yii::app()->translate->translateLink('Missing Translations on Page', 'button'); ?>	
 				</div>
