@@ -1,7 +1,6 @@
 /**************** GOOGLE WEBFONTS ***************/
 
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Arapey:400italic,400|Hammersmith+One:400);
-
 /**************** MAIN STYLES ***************/
 body {
 	margin: 0;
@@ -33,7 +32,14 @@ h4 {
 	line-height: 16pt;
 	font-weight: bold;
 }
-
+h5 {
+	color: #666;
+	margin: 0;
+	padding: 10px 0 10px 0;
+	font-weight: bold;
+	line-height: normal;
+	font-size: 12pt;
+}
 /**************** BASE STYLES ***************/
 
 #page {
@@ -110,7 +116,6 @@ div.breadcrumbs span {
 	background-position: top center;
 	color: #fff;
 }
-
 /************** MENU STYLES **************/
 
 #mainmenu {
@@ -146,30 +151,65 @@ div.breadcrumbs span {
 	width: 100%;
 	height: 100%;
 }
-#mainmenu ul li a #menu-home {	background: url(../images/icon-home.png) top center no-repeat; }
-#mainmenu ul li a:hover #menu-home { background: url(../images/icon-home.png) bottom center no-repeat; }
-#mainmenu ul li a #menu-contact {	background: url(../images/icon-contact.png) top center no-repeat; }
-#mainmenu ul li a:hover #menu-contact { background: url(../images/icon-contact.png) bottom center no-repeat; }
-#mainmenu ul li a #menu-profile {	background: url(../images/icon-profile.png) top center no-repeat; }
-#mainmenu ul li a:hover #menu-profile { background: url(../images/icon-profile.png) bottom center no-repeat; }
-#mainmenu ul li a #menu-forum {	background: url(../images/icon-forum.png) top center no-repeat; }
-#mainmenu ul li a:hover #menu-forum { background: url(../images/icon-forum.png) bottom center no-repeat; }
-#mainmenu ul li a #menu-courses {	background: url(../images/icon-courses.png) top center no-repeat; }
-#mainmenu ul li a:hover #menu-courses { background: url(../images/icon-courses.png) bottom center no-repeat; }
-#mainmenu ul li a #menu-admin {	background: url(../images/icon-admin.png) top center no-repeat; }
-#mainmenu ul li a:hover #menu-admin { background: url(../images/icon-admin.png) bottom center no-repeat; }
-#mainmenu ul li a #menu-logout {	background: url(../images/icon-logout.png) top center no-repeat; }
-#mainmenu ul li a:hover #menu-logout { background: url(../images/icon-logout.png) bottom center no-repeat; }
-#mainmenu ul li a #menu-login {	background: url(../images/icon-login.png) top center no-repeat; }
-#mainmenu ul li a:hover #menu-login { background: url(../images/icon-login.png) bottom center no-repeat; }
-#mainmenu ul li a #menu-register {	background: url(../images/icon-register.png) top center no-repeat; }
-#mainmenu ul li a:hover #menu-register { background: url(../images/icon-register.png) bottom center no-repeat; }
+#mainmenu ul li a #menu-home {
+	background: url(../images/icon-home.png) top center no-repeat;
+}
+#mainmenu ul li a:hover #menu-home {
+	background: url(../images/icon-home.png) bottom center no-repeat;
+}
+#mainmenu ul li a #menu-contact {
+	background: url(../images/icon-contact.png) top center no-repeat;
+}
+#mainmenu ul li a:hover #menu-contact {
+	background: url(../images/icon-contact.png) bottom center no-repeat;
+}
+#mainmenu ul li a #menu-profile {
+	background: url(../images/icon-profile.png) top center no-repeat;
+}
+#mainmenu ul li a:hover #menu-profile {
+	background: url(../images/icon-profile.png) bottom center no-repeat;
+}
+#mainmenu ul li a #menu-forum {
+	background: url(../images/icon-forum.png) top center no-repeat;
+}
+#mainmenu ul li a:hover #menu-forum {
+	background: url(../images/icon-forum.png) bottom center no-repeat;
+}
+#mainmenu ul li a #menu-courses {
+	background: url(../images/icon-courses.png) top center no-repeat;
+}
+#mainmenu ul li a:hover #menu-courses {
+	background: url(../images/icon-courses.png) bottom center no-repeat;
+}
+#mainmenu ul li a #menu-admin {
+	background: url(../images/icon-admin.png) top center no-repeat;
+}
+#mainmenu ul li a:hover #menu-admin {
+	background: url(../images/icon-admin.png) bottom center no-repeat;
+}
+#mainmenu ul li a #menu-logout {
+	background: url(../images/icon-logout.png) top center no-repeat;
+}
+#mainmenu ul li a:hover #menu-logout {
+	background: url(../images/icon-logout.png) bottom center no-repeat;
+}
+#mainmenu ul li a #menu-login {
+	background: url(../images/icon-login.png) top center no-repeat;
+}
+#mainmenu ul li a:hover #menu-login {
+	background: url(../images/icon-login.png) bottom center no-repeat;
+}
+#mainmenu ul li a #menu-register {
+	background: url(../images/icon-register.png) top center no-repeat;
+}
+#mainmenu ul li a:hover #menu-register {
+	background: url(../images/icon-register.png) bottom center no-repeat;
+}
 #mainmenu ul li a:hover {
 	color: #fff;
 	background: #f47b20 url(../images/bg-menu.jpg) top center repeat-x;
 	text-decoration: none;
 }
-
 #mainmenu ul li.active a {
 	color: #fff;
 	background: #f47b20 url(../images/bg-menu-active.jpg) bottom center repeat-x;
@@ -181,7 +221,6 @@ div.breadcrumbs span {
 	background: #f47b20 url(../images/bg-menu-active.jpg) top center repeat-x;
 	text-decoration: none;
 }
-
 #language {
 	width: 120px;
 	padding: 4px;
@@ -207,7 +246,6 @@ div.breadcrumbs span {
 	padding: 3px 6px;
 	font-size: 10pt;
 }
-
 /************** SIDEBAR STYLES **************/
 
 #sidebar {
@@ -215,7 +253,7 @@ div.breadcrumbs span {
 	margin: 0 20px 20px 0;
 	float: right;
 }
-#sidebar img { 
+#sidebar img {
 	max-width: 240px;
 }
 .box-sidebar {
@@ -334,7 +372,6 @@ div.breadcrumbs span {
 	color: #6d6e71;
 	font-weight: normal;
 }
-
 #flags {
 	padding: 8px 0 0 13px;
 }
@@ -343,7 +380,6 @@ div.breadcrumbs span {
 	max-height: 45px;
 	margin: 5px 8px;
 }
-
 /************** COLUMN STYLES **************/
 
 .column-wide {
@@ -358,7 +394,6 @@ div.breadcrumbs span {
 	padding: 10px 2%;
 	float: left;
 }
-
 /************** FOOTER **************/
 
 #footer {
@@ -417,7 +452,6 @@ div.breadcrumbs span {
 #footer #footer-icons a:hover {
 	background-position: top;
 }
-
 .small-masthead {
 	background: url(../images/home-image.jpg) top left no-repeat;
 	height: 80px;
@@ -431,7 +465,6 @@ div.breadcrumbs span {
 	background: none;
 	opacity: .9;
 }
-
 /**************** STYLED BOX CLASSES ***************/
 
 .box-white {
@@ -469,7 +502,6 @@ div.breadcrumbs span {
 	border-radius: 5px;
 	box-shadow: 0 0 10px #999;
 }
-
 /**************** GENERAL CLASSES ***************/
 
 .flowers {
@@ -490,9 +522,9 @@ a.pdf {
 	background: url(../images/icon-pdf.png) top left no-repeat;
 }
 a.pdf.hide {
-	display: none;	
+	display: none;
 }
-div.flash-error,div.flash-notice,div.flash-success {
+div.flash-error, div.flash-notice, div.flash-success {
 	padding: .8em;
 	margin-bottom: 1em;
 	border: 2px solid #ddd;
@@ -533,18 +565,17 @@ div.view {
 	border: 1px solid #C9E0ED;
 }
 .loading {
-    background-color: #eee;
-    background-image: url('../images/loading.gif');
-    background-position: center center;
-    background-repeat: no-repeat;
-    opacity: 1;
+	background-color: #eee;
+	background-image: url('../images/loading.gif');
+	background-position: center center;
+	background-repeat: no-repeat;
+	opacity: 1;
 }
 .align_top {
 	vertical-align: top;
 	margin-top: 0;
 }
 .portlet {
-	
 }
 .portlet-decoration {
 	padding: 3px 8px;
