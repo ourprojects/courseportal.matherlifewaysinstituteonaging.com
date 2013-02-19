@@ -27,14 +27,24 @@ foreach(array(
 <div class="small-masthead" style="background-image: url(<?php echo $this->getImagesUrl('header-courses.png'); ?>);">
   <h1 class="bottom"><?php echo t($course->title); ?></h1>
 </div>
-
-<!-- SIDEBAR 1 -->
-
-<div id="sidebar">
+<div id="sidebar"> 
+  
+  <!-- SIDEBAR 1 -->
+  
+  <div class="box-sidebar one">
+    <h3>Pre-Course Survey</h3>
+    <br />
+    <p id="surveynotify"><?php echo t('Complete the Pre-Course survey BEFORE participating. (Profile Page)'); ?></p>
+    <br />
+  </div>
+  
+  <!-- SIDEBAR 2 -->
+  
   <div class="box-sidebar one">
     <h3>National Institute of Health (NIH)</h3>
-    <p style="text-align:center;"><b><a href="http://trans.nih.gov/CEHP/" target="_blank"><?php echo t('Cognitive and Emotioinal Health Project: The Healthy Brain'); ?></a></b></p><br />
-        <img class="block-center" src="<?php echo $this->getImagesUrl('nihlogo.gif'); ?>" />
+    <p style="text-align:center;"><b><a href="http://trans.nih.gov/CEHP/" target="_blank"><?php echo t('Cognitive and Emotioinal Health Project: The Healthy Brain'); ?></a></b></p>
+    <br />
+    <img class="block-center" src="<?php echo $this->getImagesUrl('nihlogo.gif'); ?>" />
     <hr />
     <p><?php echo t('Three Institutes, the National Institute on Aging (NIA), the National Institute of Mental Health (NIMH) and the National Institute of Neurological Disorders and Stroke (NINDS), have joined efforts to launch a new trans-NIH initiative, Cognitive and Emotional Health Project: The Healthy Brain.'); ?>
     <p><?php echo t('There are now about 45 million Americans over age 60 and 117 million over age 40. Current evidence indicates that a large number of them are at substantial risk for cognitive impairment from many causes as they age. The same is true for emotional disorders.'); ?></p>
@@ -42,21 +52,16 @@ foreach(array(
   
   <!-- SIDEBAR 2 -->
   
-  <div class="box-sidebar one">
+  <div class="box-sidebar three">
     <h3>Pew Internet</h3>
     <p style="text-align:center;"><b><a href="http://www.pewinternet.org/Reports/2002/Vital-Decisions-A-Pew-Internet-Health-Report/Main-Report.aspx?view=all" target="_blank"><?php echo t('Main Report: The search for online medical help'); ?></a></b></p>
-    
     <p><img class="block-center" src="<?php echo $this->getImagesUrl('pew.png'); ?>" /></p>
     <hr />
-	<p><?php echo t('Vital Decisions: A Pew Internet Health Report'); ?></p>
- 	<p><?php echo t('Tens of millions of Americans turn to the Internet when they need help with health problems.  Health professionals are often apprehensive about the reliability of online health information and wonder how consumers can possibly find good advice in the untamed wilderness of the Internet.'); ?></p>
-    
+    <p><?php echo t('Vital Decisions: A Pew Internet Health Report'); ?></p>
+    <p><?php echo t('Tens of millions of Americans turn to the Internet when they need help with health problems.  Health professionals are often apprehensive about the reliability of online health information and wonder how consumers can possibly find good advice in the untamed wilderness of the Internet.'); ?></p>
     <p><?php echo t('In an environment where any quack can create a credible-looking Web site and promote all manner of questionable “cures,” how can Internet users know what information will most benefit them? What signals of quality should they seek?'); ?></p>
   </div>
 </div>
-
-
-
 
 <!-- Start main content here -->
 
@@ -65,95 +70,49 @@ foreach(array(
   <p><?php echo t($course->description); ?></p>
   <h4><?php echo t('Objectives'); ?></h4>
   <ul>
-  <?php 
+    <?php 
   foreach($course->objectives as $objective)
   	echo '<li>' . t($objective->text) . '</li>';
   ?>
   </ul>
-  
-   <p id="surveynotify"><?php echo t('Please complete the PRE-COURSE SURVEY before participating. It can be accessed via the PROFILE page.'); ?></p>
-
-<h2><?php echo t('Course Lessons'); ?></h2> 
-  
+  <h4><?php echo t('Course Lessons'); ?></h4>
   <ul>
-  <li> 
-	  <a href="#lesson-1-slide-1" data-fancybox-group="lesson-1" class="teal lesson-1">
-	  	<?php echo t('Overview of Brain Health'); ?>
-	  </a> 
-	  <a href="#lesson-1-slide-2" data-fancybox-group="lesson-1" class="hide lesson-1"></a> 
-	  <a href="#lesson-1-slide-3" data-fancybox-group="lesson-1" class="hide lesson-1"></a> 
-	  <a href="#lesson-1-slide-4" data-fancybox-group="lesson-1" class="hide lesson-1"></a> 
-	  <a href="#lesson-1-slide-5" data-fancybox-group="lesson-1" class="hide lesson-1"></a>
-      <a href="#lesson-1-slide-6" data-fancybox-group="lesson-1" class="hide lesson-1"></a> 
-	  <a href="#lesson-1-slide-7" data-fancybox-group="lesson-1" class="hide lesson-1"></a> 
-	  <a href="#lesson-1-slide-8" data-fancybox-group="lesson-1" class="hide lesson-1"></a> 
-	  <a href="#lesson-1-slide-9" data-fancybox-group="lesson-1" class="hide lesson-1"></a> 
-	  <a href="#lesson-1-slide-10" data-fancybox-group="lesson-1" class="hide lesson-1"></a> 
-      <a href="#lesson-1-slide-11" data-fancybox-group="lesson-1" class="hide lesson-1"></a> 
-	  <a href="#lesson-1-slide-12" data-fancybox-group="lesson-1" class="hide lesson-1"></a> 
-	  <a href="#lesson-1-slide-13" data-fancybox-group="lesson-1" class="hide lesson-1"></a> 
-	  <a href="#lesson-1-slide-14" data-fancybox-group="lesson-1" class="hide lesson-1"></a> 
-	  <a href="#lesson-1-slide-15" data-fancybox-group="lesson-1" class="hide lesson-1"></a> 
-	  <a href="#lesson-1-slide-16" data-fancybox-group="lesson-1" class="hide lesson-1"></a> 
-	  <a href="#lesson-1-slide-17" data-fancybox-group="lesson-1" class="hide lesson-1"></a> 
-
-
-  </li>
-  <li>
-	 	<a href="#lesson-2-slide-1" data-fancybox-group="lesson-2" class="teal lesson-2">
-	  		<?php echo t('Coming Soon'); ?>
-	  	</a> 
-	  	<a href="#lesson-2-slide-2" data-fancybox-group="lesson-2" class="hide lesson-2"></a> 
-	  	<a href="#lesson-2-slide-3" data-fancybox-group="lesson-2" class="hide lesson-2"></a> 
-	  	<a href="#lesson-2-slide-4" data-fancybox-group="lesson-2" class="hide lesson-2"></a> 
-	  	<a href="#lesson-2-slide-5" data-fancybox-group="lesson-2" class="hide lesson-2"></a> 
-  </li>
-  <li>
-	  	<a href="#lesson-3-slide-1" data-fancybox-group="lesson-3" class="teal lesson-3">
-	  		<?php echo t('Coming Soon'); ?>
-	  	</a> 
-	  	<a href="#lesson-3-slide-2" data-fancybox-group="lesson-3" class="hide lesson-3"></a> 
-	  	<a href="#lesson-3-slide-3" data-fancybox-group="lesson-3" class="hide lesson-3"></a> 
-	  	<a href="#lesson-3-slide-4" data-fancybox-group="lesson-3" class="hide lesson-3"></a> 
-	  	<a href="#lesson-3-slide-5" data-fancybox-group="lesson-3" class="hide lesson-3"></a> 
-  </li>
-  <li>
-	  <a href="#lesson-4-slide-1" data-fancybox-group="lesson-4" class="teal lesson-4">
-	  <?php echo t('Coming Soon'); ?>
-	  </a> 
-	  <a href="#lesson-4-slide-2" data-fancybox-group="lesson-4" class="hide lesson-4"></a> 
-	  <a href="#lesson-4-slide-3" data-fancybox-group="lesson-4" class="hide lesson-4"></a> 
-	  <a href="#lesson-4-slide-4" data-fancybox-group="lesson-4" class="hide lesson-4"></a> 
-	  <a href="#lesson-4-slide-5" data-fancybox-group="lesson-4" class="hide lesson-4"></a> 
-  </li>
-  <li>
-    <a href="#lesson-5-slide-1" data-fancybox-group="lesson-5" class="teal lesson-5">
-    <?php echo t('Coming Soon'); ?>
-    </a> 
-	<a href="#lesson-5-slide-2" data-fancybox-group="lesson-5" class="hide lesson-5"></a> 
-	<a href="#lesson-5-slide-3" data-fancybox-group="lesson-5" class="hide lesson-5"></a> 
-	<a href="#lesson-5-slide-4" data-fancybox-group="lesson-5" class="hide lesson-5"></a> 
-	<a href="#lesson-5-slide-5" data-fancybox-group="lesson-5" class="hide lesson-5"></a> 
-   </li>
-</ul>
-
-
-
-  <h2><?php echo t('Length'); ?></h2>
-  <p><?php echo t('You will have 8 weeks to complete this online course, but full access for one-year. After your intitial 8-week period ends, you will not have access to your Facilitator. This course was designed to be completed in 8-weeks, completing one-lesson each week. Each Lesson is designed to take 2-3 hours.'); ?></p>
-  <h2><?php echo t('Facilitators &amp; Course Developers'); ?></h2>
-  <p><a href="mailto:cobrien@matherlifeways.com"><?php echo t('Content Designer: Cate O\'Brien - '); ?></a></p>
-  <p><?php echo t('Ms. O’Brien has worked in a research capacity for Mather LifeWays Institute on Aging since 2005. She has been responsible for designing and overseeing large-scale multi-year evaluations for grant-funded projects relating to the field of aging. As a Project Director on grant funded research projects, she has been responsible for forging collaborations with aging services organizations nationwide, and for recruiting older adults into various studies.'); ?></p>
-  <p><a href="mailto:jwoodall@matherlifeways.com"><?php echo t('Course Developer: Jon Woodall - '); ?></a></p>
-  <p><?php echo t('Mr. Woodall is responsible for all MLIA corporate workforce wellness programs related to design, implementation, publication, and evaluation. Additionally, he seeks new grant funding to support or extend current grants related to corporate workforce wellness programs. '); ?></p>
-  <p><a href="mailto:sall@cogwellness.com"><?php echo t('Course Facilitator: Sherrie All, PhD - '); ?></a></p>
-  <p><?php echo t('Licensed clinical neuropsychologist specializing in brain fitness, healthy aging and cognitive enhancement. She is building a private practice in clinical neuropsychological assessment combined with interventions aimed at enhancing cognition and promoting healthy aging. And has specialties in Neuropsychological Assessment, Individual and Group Psychotherapy, Brain Fitness and Healthy Aging Thearpy and Coaching'); ?></p>
+    <li> <a href="#lesson-1-slide-1" data-fancybox-group="lesson-1" class="teal lesson-1"> <?php echo t('Overview of Brain Health'); ?> </a> <a href="#lesson-1-slide-2" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-3" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-4" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-5" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-6" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-7" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-8" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-9" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-10" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-11" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-12" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-13" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-14" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-15" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-16" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-17" data-fancybox-group="lesson-1" class="hide lesson-1"></a> </li>
+    <li> <a href="#lesson-2-slide-1" data-fancybox-group="lesson-2" class="teal lesson-2"> <?php echo t('Coming Soon'); ?> </a> <a href="#lesson-2-slide-2" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-3" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-4" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-5" data-fancybox-group="lesson-2" class="hide lesson-2"></a> </li>
+    <li> <a href="#lesson-3-slide-1" data-fancybox-group="lesson-3" class="teal lesson-3"> <?php echo t('Coming Soon'); ?> </a> <a href="#lesson-3-slide-2" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-3" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-4" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-5" data-fancybox-group="lesson-3" class="hide lesson-3"></a> </li>
+    <li> <a href="#lesson-4-slide-1" data-fancybox-group="lesson-4" class="teal lesson-4"> <?php echo t('Coming Soon'); ?> </a> <a href="#lesson-4-slide-2" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-3" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-4" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-5" data-fancybox-group="lesson-4" class="hide lesson-4"></a> </li>
+    <li> <a href="#lesson-5-slide-1" data-fancybox-group="lesson-5" class="teal lesson-5"> <?php echo t('Coming Soon'); ?> </a> <a href="#lesson-5-slide-2" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-3" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-4" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-5" data-fancybox-group="lesson-5" class="hide lesson-5"></a> </li>
+  </ul>
+  <br />
+  <br />
+  <div class="box-white">
+    <h4><?php echo t('Length'); ?></h4>
+    <p><?php echo t('* Participant Access - 1 Year'); ?><br />
+      <?php echo t('* Recommended Completion - 8 Weeks'); ?><br />
+      <?php echo t('* Weekly Commitment - 1 Lesson @ 2 to 3 Hours'); ?></p>
+  </div>
+  <div class="box-white">
+    <h4> <?php echo t('Resources'); ?></h4>
+    <p><?php echo t('Please use these listed resources in the completion of this online course. Pleaes contact your instructor or the program director if you have additional resources you would like to see added here.'); ?></p>
+    <p><a href="http://www.alz.org" target="_blank">Alzheimer's Association</a></p>
+    <p><a href="http://www.nih.gov" target="_blank">National Intitute on Health (NIH)</a></p>
+    <p><a href="http://www.webmd.com" target="_blank">WebMD website</a></p>
+  </div>
+  <div class="box-white">
+    <h4><?php echo t('Facilitators &amp; Course Developers'); ?></h4>
+    <h5><?php echo t('Content Designer: '); ?><a href="mailto:cobrien@matherlifeways.com"><?php echo t('Cate O\'Brien'); ?></a></h5>
+    <p><?php echo t('Ms. O’Brien has worked in a research capacity for Mather LifeWays Institute on Aging since 2005. She has been responsible for designing and overseeing large-scale multi-year evaluations for grant-funded projects relating to the field of aging. As a Project Director on grant funded research projects, she has been responsible for forging collaborations with aging services organizations nationwide, and for recruiting older adults into various studies.'); ?></p>
+    <h5><?php echo t('Course Developer: '); ?><a href="mailto:jwoodall@matherlifeways.com"><?php echo t('Jon Woodall'); ?></a></h5>
+    <p><?php echo t('Mr. Woodall is responsible for all MLIA corporate workforce wellness programs related to design, implementation, publication, and evaluation. Additionally, he seeks new grant funding to support or extend current grants related to corporate workforce wellness programs. '); ?></p>
+    <h5><?php echo t('Course Facilitator: '); ?><a href="mailto:sall@cogwellness.com"><?php echo t('Sherrie All, PhD'); ?></a></h5>
+    <p><?php echo t('Licensed clinical neuropsychologist specializing in brain fitness, healthy aging and cognitive enhancement. She is building a private practice in clinical neuropsychological assessment combined with interventions aimed at enhancing cognition and promoting healthy aging. And has specialties in Neuropsychological Assessment, Individual and Group Psychotherapy, Brain Fitness and Healthy Aging Thearpy and Coaching'); ?></p>
+  </div>
 </div>
 
 <!-- Lesson 1 - slide #1 -->
 
 <div id="course" class="hide">
-<?php $clientScript->registerScript('question-answer-handler',
+  <?php $clientScript->registerScript('question-answer-handler',
 					"$('.course-slide .question').change(function() {".
 						"if($(this).find('select').val() == '1') {".
 							"$(this).find('.right-answer').removeClass('hide');".
@@ -164,30 +123,31 @@ foreach(array(
 						"}".
 					"});");
 			?>
-
-
   <div id="lesson-1">
     <div id="lesson-1-slide-1" class="course-slide">
       <div class="content">
         <h2 class="flowers"><?php echo t('Spencer Powell Brain Fitness Program online'); ?></h2>
         <hr />
-        <h2><?php echo t('THANK YOU!'); ?></h2>
+        <h4><?php echo t('THANK YOU!'); ?></h4>
         <p><?php echo t('Welcome and thank you for your interest and participation in the Spencer Powell Brain Fitness Program online course. We are excited to have your participation and look forward to our interactions! Please contact us if you need help, have questions, or suggestions for course improvements.'); ?></p>
         
-          <div id="question1" class="question">
-        <p><?php echo t('Are you prepared to take this online course?'); ?>
-          <select>
-            <option selected="selected" value="select"> <?php echo t('Select'); ?> </option>
-            <option value="1"> <?php echo t('Yes'); ?> </option>
-            <option value="0"> <?php echo t('No') ?> </option>
-          </select>
-        </p>
-        <p class="right-answer hide"> <?php echo t('Great! Please begin. Good luck!'); ?> </p>
-        <p class="wrong-answer hide"> <?php echo t('Please search the web for best practices in participating in a online course.'); ?> </p>
-      </div>
+        <p><?php echo t(' text here '); ?></p>
         
+        <h5><?php echo t('Before we get started...'); ?></h5>
         
+        <p><?php echo t('To the best of your ability, and without searching the Internet, please answer the following quetions. There are no wrong answers, and your feedback is anonoymous.'); ?></p>
         
+        <div id="question1" class="question">
+          <p><?php echo t('Are you prepared to take this online course?'); ?>
+            <select>
+              <option selected="selected" value="select"> <?php echo t('Select'); ?> </option>
+              <option value="1"> <?php echo t('Yes'); ?> </option>
+              <option value="0"> <?php echo t('No') ?> </option>
+            </select>
+          </p>
+          <p class="right-answer hide" style="color:#000;"> <?php echo t('Great! Please begin. Good luck!'); ?> </p>
+          <p class="wrong-answer hide"> <?php echo t('Please search the web for best practices in participating in a online course.'); ?> </p>
+        </div>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Start Course &raquo;'); ?></a></div>
     </div>
@@ -382,16 +342,16 @@ foreach(array(
     
     <div id="lesson-1-slide-15" class="course-slide">
       <div class="content">
-<h2 class="flowers"><?php echo t('Program Format'); ?></h2>
-<hr />
-<p><?php echo t('During each of the next few weeks, you will learn the details of how each of these five areas of wellness affect your risk for dementia.  You will learn the science supporting the connection between your brain health and each area of wellness.'); ?></p>
-<p><?php echo t('We aim to help you identify areas of your lifestyle where you could increase your investment in your Cognitive Reserve, diversifying your “Brain Portfolio.”'); ?></p>
-<img src="<?php echo $this->getImagesUrl('SpencerLesson1Slides/SpencerLesson1Slide15.png'); ?>" width="500px" height="276px" /> </div>
+        <h2 class="flowers"><?php echo t('Program Format'); ?></h2>
+        <hr />
+        <p><?php echo t('During each of the next few weeks, you will learn the details of how each of these five areas of wellness affect your risk for dementia.  You will learn the science supporting the connection between your brain health and each area of wellness.'); ?></p>
+        <p><?php echo t('We aim to help you identify areas of your lifestyle where you could increase your investment in your Cognitive Reserve, diversifying your “Brain Portfolio.”'); ?></p>
+        <img src="<?php echo $this->getImagesUrl('SpencerLesson1Slides/SpencerLesson1Slide15.png'); ?>" width="500px" height="276px" /> </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
-</div>
-
+    </div>
+    
     <!-- Lesson 1 - slide #16 -->
-
+    
     <div id="lesson-1-slide-16" class="course-slide">
       <div class="content">
         <h2 class="flowers"><?php echo t('Memory Strategy Exercise'); ?></h2>
@@ -400,9 +360,9 @@ foreach(array(
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
     </div>
-
+    
     <!-- Lesson 1 - slide #17 -->
-
+    
     <div id="lesson-1-slide-17" class="course-slide">
       <div class="content">
         <h2 class="flowers"><?php echo t('Setting Goals'); ?></h2>
@@ -411,9 +371,9 @@ foreach(array(
       </div>
       <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> <?php echo t('Complete Lesson'); ?></a></div>
     </div>
-
+    
     <!-- this div is needed to close the final lesson --> 
-    </div>
-
-  <!-- need this final div to close the full course --> 
   </div>
+  
+  <!-- need this final div to close the full course --> 
+</div>
