@@ -41,29 +41,15 @@ $this->widget(
 
 <!-- Begin sidebar -->
 
-<div id="sidebar">
-	<!-- Sidebar #1 with 3 buttons here -->
-	<div class="box-sidebar zero">
-		<a href="<?php echo $this->createUrl('user/register'); ?>"><?php echo t('Register'); ?> </a> <a
+<div id="sidebar"> 
+  <!-- Sidebar #1 with 3 buttons here -->
+  <div class="box-sidebar zero"> <a href="<?php echo $this->createUrl('user/register'); ?>"><?php echo t('Register'); ?> </a> <a
 			href="<?php echo $this->createUrl('home/contact'); ?>" class="teal"
-		><?php echo t('Request Information'); ?> </a> 
-		<a href="#slide-1" data-fancybox-group="open-tutorial" class="teal open-tutorial">
-		<?php echo t('Tutorial'); ?>
-		</a> 
-		<a href="#slide-2" data-fancybox-group="open-tutorial" class="hide open-tutorial"></a> 
-		<a href="#slide-3" data-fancybox-group="open-tutorial" class="hide open-tutorial"></a> 
-		<a href="#slide-4" data-fancybox-group="open-tutorial" class="hide open-tutorial"></a> 
-		<a href="#slide-5" data-fancybox-group="open-tutorial" class="hide open-tutorial"></a> 
-		<a href="#slide-6" data-fancybox-group="open-tutorial" class="hide open-tutorial"></a>
-	</div>
-	<!-- Clients sidebar here -->
-	<div class="box-sidebar one">
-		<h3>
-			<?php echo t('Our Clients'); ?>
-		</h3>
-		<div id="customers">
-			<a href="http://www.ibm.com" target="_blank"><img src="<?php echo $this->getImagesUrl('customers/ibm.png'); ?>" alt="IBM" /> </a>
-			<a href="http://www.ti.com/" target="_blank"><img src="<?php echo $this->getImagesUrl('customers/ti.png'); ?>"
+		><?php echo t('Request Information'); ?> </a> <a href="#slide-1" data-fancybox-group="open-tutorial" class="teal open-tutorial"> <?php echo t('Tutorial'); ?> </a> <a href="#slide-2" data-fancybox-group="open-tutorial" class="hide open-tutorial"></a> <a href="#slide-3" data-fancybox-group="open-tutorial" class="hide open-tutorial"></a> <a href="#slide-4" data-fancybox-group="open-tutorial" class="hide open-tutorial"></a> <a href="#slide-5" data-fancybox-group="open-tutorial" class="hide open-tutorial"></a> <a href="#slide-6" data-fancybox-group="open-tutorial" class="hide open-tutorial"></a> </div>
+  <!-- Clients sidebar here -->
+  <div class="box-sidebar one">
+    <h3> <?php echo t('Our Clients'); ?> </h3>
+    <div id="customers"> <a href="http://www.ibm.com" target="_blank"><img src="<?php echo $this->getImagesUrl('customers/ibm.png'); ?>" alt="IBM" /> </a> <a href="http://www.ti.com/" target="_blank"><img src="<?php echo $this->getImagesUrl('customers/ti.png'); ?>"
 				alt="Texas Instrument"
 			/> </a> <a href="http://www.merck.com" target="_blank"><img src="<?php echo $this->getImagesUrl('customers/merck.png'); ?>"
 				alt="Merck Pharmaceuticals"
@@ -73,10 +59,9 @@ $this->widget(
 				alt="Deloitte"
 			/> </a> <a href="http://matherlifeways.com/" target="_blank"><img src="<?php echo $this->getImagesUrl('customers/mather.png'); ?>"
 				alt="Mather Lifeways"
-			/> </a>
-		</div>
-	</div>
-	<!-- sidebar for Participating locations here -->
+			/> </a> </div>
+  </div>
+  <!-- sidebar for Participating locations here -->
   
   <div class="box-sidebar one">
     <h3><?php echo t('Participating Locations'); ?></h3>
@@ -145,6 +130,16 @@ $this->widget(
   <p style="padding-bottom: 5px;"><?php echo t('We deliver online learning and web-based modalities using the latest technologies to efficiently and cost-effectively empower professionals in the workplace.'); ?></p>
   <p><?php echo t('In addition, we are well-positioned to help conduct pilot studies that measure the impact on both working caregivers and the bottom line for interested corporations. We provide practical solutions in the form of online courses, workplace toolkits, and workforce surveys.'); ?> </p>
   
+  <!-- text for ROI here for program use  -->
+  
+  <h2 class="flowers top-pad"><?php echo t('Benefits of Participation'); ?></h2>
+  <p style="padding-bottom: 5px;"><?php echo t('Why participate? Past participation has yieled many benfits for our clients, including, but not limited to: '); ?></p>
+  <ul>
+    <li><?php echo t('Increased employee morale due to greater self-efficacy.'); ?></li>
+    <li><?php echo t('Improved employee to employer, and employee to family relations.'); ?></li>
+    <li><?php echo t('Reduced employee absenteeism which leads to increased productvity.'); ?></li>
+  </ul>
+  
   <!-- video and text here div -->
   
   <h2 class="flowers top-pad"><?php echo t('A Closer Look - Lives of Caregivers'); ?></h2>
@@ -183,12 +178,12 @@ $this->widget(
     <h2 class="flowers"> <?php echo t('Health status of your working caregivers'); ?> </h2>
     <p> <?php echo t('Please choose one of the surveys below to take. Depending on your position, employer 
 			or employee, submit this voluntary survey and view aggregate feedback from all previous users.'); ?> </p>
-    <p> 
-    <?php foreach($hiddenSurveys as $survey): ?>
-  		<a id="survey_link_<?php echo $survey->getId(); ?>" href="#survey_<?php echo $survey->getId(); ?>" class="button" title="<?php echo $survey->model->title; ?>"><?php echo $survey->model->title; ?></a>
-  	<?php endforeach; ?>
-	</p>
-	<?php 
+    <p>
+      <?php foreach($hiddenSurveys as $survey): ?>
+      <a id="survey_link_<?php echo $survey->getId(); ?>" href="#survey_<?php echo $survey->getId(); ?>" class="button" title="<?php echo $survey->model->title; ?>"><?php echo $survey->model->title; ?></a>
+      <?php endforeach; ?>
+    </p>
+    <?php 
 	  	foreach($hiddenSurveys as $survey)
   			$survey->run();
   	?>
@@ -196,15 +191,7 @@ $this->widget(
 </div>
 <div id="bottom-logos">
   <h4><?php echo t('Partners'); ?></h4>
-  <a href="http://www.rushu.rush.edu" id="rush">Rush University (Chicago)</a> 
-  <a href="http://www.alz.org/" id="aa" target="_blank">Alzheimer's Asssociation</a> 
-  <a href="https://github.com/" id="git" target="_blank">GitHub</a> 
-  <a href="http://www.yiiframework.com/" id="yii" target="_blank">Yii Framework</a> 
-  <a href="http://wfd.com/" id="wfd" target="_blank">WFD</a> 
-  <a href="http://www.discoursellc.com/" id="discourse" target="_blank">Discourse, LLC.</a> 
-  <a href="http://gladerfilmworks.com/" id="glader" target="_blank">Glader Filmworks</a> 
-  <a href="http://www.mediastorm.com/" id="mediastorm" target="_blank">Mediastorm</a> 
-</div>
+  <a href="http://www.rushu.rush.edu" id="rush">Rush University (Chicago)</a> <a href="http://www.alz.org/" id="aa" target="_blank">Alzheimer's Asssociation</a> <a href="https://github.com/" id="git" target="_blank">GitHub</a> <a href="http://www.yiiframework.com/" id="yii" target="_blank">Yii Framework</a> <a href="http://wfd.com/" id="wfd" target="_blank">WFD</a> <a href="http://www.discoursellc.com/" id="discourse" target="_blank">Discourse, LLC.</a> <a href="http://gladerfilmworks.com/" id="glader" target="_blank">Glader Filmworks</a> <a href="http://www.mediastorm.com/" id="mediastorm" target="_blank">Mediastorm</a> </div>
 
 <!--  start tutorial course here -->
 
@@ -343,7 +330,6 @@ $this->widget(
         <li><?php echo t('It is the leading reason for placing elderly people in
 							institutions such as nursing homes.'); ?> </li>
       </ul>
-      
       <br />
       <br />
       <br />
