@@ -49,4 +49,7 @@ div.course-slide img {
 	float: right;
 	margin: 0 15px 15px 15px;
 	border: none;
+	-moz-border-radius: 7px;
+	-webkit-border-radius: 7px;
+	border-radius: 7px;
 }
