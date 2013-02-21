@@ -54,10 +54,10 @@ foreach(array(
     <p><a href="http://pewinternet.org/experts/~/link.aspx?_id=E26587FE8FDB443A8610ECB87E635F94&_z=z" target="_blank"><img class="block-center" src="<?php echo $this->getImagesUrl('pew.png'); ?>" /></a></p>
    	<!-- Use CSS if you want horizontal rules between each list item -->
     <ul>
-      <li><?php echo t('39% of U.S. adults provided care for a loved one in the past 12 months, which could include helping with personal needs, household chores, finances, or simply visiting to check in.'); ?></li>
-      <li><?php echo t('36% of U.S. adults care for an adult or multiple adults.'); ?></li>
-      <li><?php echo t('8% of U.S. adults care for a child with a medical, behavioral, or other condition or disability.'); ?></li>
-      <li><?php echo t('Eight in ten caregivers (79%) have access to the internet. Of those, 88% look online for health information, outpacing other internet users on every health topic included in our survey, from looking up certain treatments to hospital ratings to end-of-life decisions.'); ?></li>
+      <li><img src="<?php echo $this->getImagesUrl('23.png'); ?>" width="16px" height="16px" /> <?php echo t('39% of U.S. adults provided care for a loved one in the past 12 months, which could include helping with personal needs, household chores, finances, or simply visiting to check in.'); ?></li><br />
+      <li><img src="<?php echo $this->getImagesUrl('23.png'); ?>" width="16px" height="16px" /> <?php echo t('36% of U.S. adults care for an adult or multiple adults.'); ?></li><br />
+      <li><img src="<?php echo $this->getImagesUrl('23.png'); ?>" width="16px" height="16px" /> <?php echo t('8% of U.S. adults care for a child with a medical, behavioral, or other condition or disability.'); ?></li><br />
+      <li><img src="<?php echo $this->getImagesUrl('23.png'); ?>" width="16px" height="16px" /> <?php echo t('Eight in ten caregivers (79%) have access to the internet. Of those, 88% look online for health information, outpacing other internet users on every health topic included in our survey, from looking up certain treatments to hospital ratings to end-of-life decisions.'); ?></li>
     </ul>
   </div>
 </div>
@@ -145,7 +145,7 @@ foreach(array(
   <div class="box-white">
     <h4><?php echo t('Length'); ?></h4>
     <p><?php echo t('* Participant Access - 1 Year'); ?><br />
-      <?php echo t('* Recommended Completion - 8 Weeks'); ?><br />
+      <?php echo t('* Recommended Completion - 5 Weeks'); ?><br />
       <?php echo t('* Weekly Commitment - 1 Lesson @ 2 to 3 Hours'); ?></p>
   </div>
   <div class="box-white">
