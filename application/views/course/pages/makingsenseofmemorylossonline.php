@@ -36,7 +36,17 @@ foreach(array(
     <br />
   </div>
   
-  <!-- SIDEBAR 2 -->
+   <!-- SIDEBAR 2 -->
+
+  <div class="box-sidebar one">
+    <h3><?php echo t('Statistics'); ?></h3>
+    <br />
+    <img class="block-center" src="<?php echo $this->getImagesUrl('286x352_Grafix_1in5.png'); ?>" />
+    <p><?php echo t('One in five caregivers report having had some degree of training, but continue to seek additional resources.'); ?></p>
+    <br />
+  </div>
+  
+  <!-- SIDEBAR 3 -->
   
   
   <div class="box-sidebar one">
@@ -49,7 +59,7 @@ foreach(array(
     <p><?php echo t('Memory loss that disrupts daily life may be a symptom of Alzheimer\'s or another dementia. Alzheimer\'s is a brain disease that causes a slow decline in memory, thinking and reasoning skills. There are 10 warning signs and symptoms. Every individual may experience one or more of these signs in different degrees. If you notice any of them, please see a doctor.'); ?></p>
   </div>
   
-  <!-- SIDEBAR 3 -->
+  <!-- SIDEBAR 4 -->
   
   <div class="box-sidebar three">
     <h3>U.S. Dept. of Health &amp; Human Srvc.</h3>
