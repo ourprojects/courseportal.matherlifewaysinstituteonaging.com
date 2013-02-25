@@ -126,6 +126,10 @@ class User extends ActiveRecord implements IUserIdentity {
 		return $this->group instanceof Group && $this->group->name === 'admin';
 	}
 	
+	public function isEmployee() {
+		return $this->group instanceof Group && $this->group->name === 'employee_user';
+	}
+	
 	public function isActivated() {
 		return $this->userActivated instanceof UserActivated && !$this->userActivated->getIsNewRecord();
 	}

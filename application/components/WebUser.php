@@ -8,6 +8,10 @@ class WebUser extends CWebUser {
 		return ($model = $this->getModel()) !== null && $model->isAdmin();
 	}
 	
+	public function getIsEmployee() {
+		return ($model = $this->getModel()) !== null && $model->isEmployee();
+	}
+	
 	public function getModel($id = null) {
 		if($id === null)
 			$id = $this->getId();

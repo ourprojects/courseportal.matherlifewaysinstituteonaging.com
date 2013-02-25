@@ -43,10 +43,7 @@ class UserProfile extends ActiveRecord {
         return array(
             array('user_id',
             		'required', 'except' => 'search'),
-        	array('firstname, 
-            		lastname, 
-            		country_iso',
-        			'required', 'except' => 'insert'),
+        	array('firstname, lastname', 'required'),
         	
             array('firstname, lastname, city', 'length', 'max' => 255),
         		

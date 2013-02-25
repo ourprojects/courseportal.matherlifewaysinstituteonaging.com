@@ -51,7 +51,7 @@ $this->widget(
   <div class="box-white">
     <p>
       <?php 
-echo $this->renderPartial('forms/profile_form', array('models' => $models));
+echo $this->renderPartial('forms/profile_form', $models);
 ?>
     </p>
   </div>

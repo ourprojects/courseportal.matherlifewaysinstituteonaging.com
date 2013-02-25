@@ -10,60 +10,60 @@
 	<p class="note">
 		<span class="required">*</span><?php echo t('Required'); ?>.
 	</p>
-	<?php echo $form->errorSummary($models); ?>
+	<?php echo $form->errorSummary(array($avatar, $user, $user_profile)); ?>
 	
 	<div class="row">
-		<?php echo $form->labelEx($models['avatar'], 'image'); ?>
-		<?php echo CHtml::image($this->createUrl("avatar/{$models['avatar']->user_id}"), $models['avatar']->getAttributeLabel('image')); ?>
-		<?php echo $form->fileField($models['avatar'], 'image'); ?>
-		<?php echo $form->error($models['avatar'], 'image'); ?>
-	</div>
-	
-	<div class="row">
-		<?php echo $form->labelEx($models['user'], 'email'); ?>
-		<?php echo $form->emailField($models['user'], 'email'); ?>
-		<?php echo $form->error($models['user'], 'email'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($models['user_profile'], 'firstname'); ?>
-		<?php echo $form->textField($models['user_profile'], 'firstname'); ?>
-		<?php echo $form->error($models['user_profile'], 'firstname'); ?>
+		<?php echo $form->labelEx($avatar, 'image'); ?>
+		<?php echo CHtml::image($this->createUrl("avatar/{$avatar->user_id}"), $avatar->getAttributeLabel('image')); ?>
+		<?php echo $form->fileField($avatar, 'image'); ?>
+		<?php echo $form->error($avatar, 'image'); ?>
 	</div>
 	
 	<div class="row">
-		<?php echo $form->labelEx($models['user_profile'], 'lastname'); ?>
-		<?php echo $form->textField($models['user_profile'], 'lastname'); ?>
-		<?php echo $form->error($models['user_profile'], 'lastname'); ?>
+		<?php echo $form->labelEx($user, 'email'); ?>
+		<?php echo $form->emailField($user, 'email'); ?>
+		<?php echo $form->error($user, 'email'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($models['user_profile'], 'country_iso'); ?>
-		<?php echo $form->dropDownList($models['user_profile'], 'country_iso', Yii::app()->translate->getTerritoryDisplayNames()); ?>
-		<?php echo $form->error($models['user_profile'], 'country_iso'); ?>
+		<?php echo $form->labelEx($user_profile, 'firstname'); ?>
+		<?php echo $form->textField($user_profile, 'firstname'); ?>
+		<?php echo $form->error($user_profile, 'firstname'); ?>
+	</div>
+	
+	<div class="row">
+		<?php echo $form->labelEx($user_profile, 'lastname'); ?>
+		<?php echo $form->textField($user_profile, 'lastname'); ?>
+		<?php echo $form->error($user_profile, 'lastname'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($models['user_profile'], 'city'); ?>
-		<?php echo $form->textField($models['user_profile'], 'city'); ?>
-		<?php echo $form->error($models['user_profile'], 'city'); ?>
+		<?php echo $form->labelEx($user_profile, 'country_iso'); ?>
+		<?php echo $form->dropDownList($user_profile, 'country_iso', Yii::app()->translate->getTerritoryDisplayNames()); ?>
+		<?php echo $form->error($user_profile, 'country_iso'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($models['user_profile'], 'state_id'); ?>
-		<?php echo $form->dropDownList($models['user_profile'], 'state_id', 
+		<?php echo $form->labelEx($user_profile, 'city'); ?>
+		<?php echo $form->textField($user_profile, 'city'); ?>
+		<?php echo $form->error($user_profile, 'city'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($user_profile, 'state_id'); ?>
+		<?php echo $form->dropDownList($user_profile, 'state_id', 
 				CHtml::listData(
 					States::model()->findAll(), 'id', 'name'),
 					array('prompt' => 'Select a State')
 					); 
 		?>
-		<?php echo $form->error($models['user_profile'], 'state_id'); ?>
+		<?php echo $form->error($user_profile, 'state_id'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($models['user_profile'], 'zip_code'); ?>
-		<?php echo $form->textField($models['user_profile'], 'zip_code'); ?>
-		<?php echo $form->error($models['user_profile'], 'zip_code'); ?>
+		<?php echo $form->labelEx($user_profile, 'zip_code'); ?>
+		<?php echo $form->textField($user_profile, 'zip_code'); ?>
+		<?php echo $form->error($user_profile, 'zip_code'); ?>
 	</div>
 				
 	<div class="row submit">

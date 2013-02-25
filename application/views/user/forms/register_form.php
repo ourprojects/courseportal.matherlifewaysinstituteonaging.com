@@ -10,47 +10,47 @@
 	<p class="note">
 		<span class="required">*</span><?php echo t('Required'); ?>.
 	</p>
-	<?php echo $form->errorSummary($models); ?>
+	<?php echo $form->errorSummary(array($user, $user_profile, $captcha)); ?>
 	
 	<div class="row">
-		<?php echo $form->labelEx($models['user'], 'email'); ?>
-		<?php echo $form->emailField($models['user'], 'email', array('class' => 'wide_200px')); ?>
-		<?php echo $form->error($models['user'], 'email'); ?>
+		<?php echo $form->labelEx($user, 'email'); ?>
+		<?php echo $form->emailField($user, 'email'); ?>
+		<?php echo $form->error($user, 'email'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($models['user'], 'password_no_hash'); ?>
-		<?php echo $form->passwordField($models['user'], 'password_no_hash', array('class' => 'wide_200px')); ?>
-		<?php echo $form->error($models['user'], 'password_no_hash'); ?>
+		<?php echo $form->labelEx($user, 'password_no_hash'); ?>
+		<?php echo $form->passwordField($user, 'password_no_hash'); ?>
+		<?php echo $form->error($user, 'password_no_hash'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($models['user'], 'password_no_hash_repeat'); ?>
-		<?php echo $form->passwordField($models['user'], 'password_no_hash_repeat', array('class' => 'wide_200px')); ?>
-		<?php echo $form->error($models['user'], 'password_no_hash_repeat'); ?>
+		<?php echo $form->labelEx($user, 'password_no_hash_repeat'); ?>
+		<?php echo $form->passwordField($user, 'password_no_hash_repeat'); ?>
+		<?php echo $form->error($user, 'password_no_hash_repeat'); ?>
 	</div>
 
 	<div class="row">
-		<label for="UserProfile_firstname" class="required">First Name <span class="required">*</span></label>
-		<?php echo $form->textField($models['user_profile'], 'firstname', array('class' => 'wide_200px')); ?>
-		<?php echo $form->error($models['user_profile'], 'firstname'); ?>
+		<?php echo $form->labelEx($user_profile, 'firstname'); ?>
+		<?php echo $form->textField($user_profile, 'firstname'); ?>
+		<?php echo $form->error($user_profile, 'firstname'); ?>
 	</div>
 	
 	<div class="row">
-		<label for="UserProfile_lastname" class="required">Last Name <span class="required">*</span></label>
-		<?php echo $form->textField($models['user_profile'], 'lastname', array('class' => 'wide_200px')); ?>
-		<?php echo $form->error($models['user_profile'], 'lastname'); ?>
+		<?php echo $form->labelEx($user_profile, 'lastname'); ?>
+		<?php echo $form->textField($user_profile, 'lastname'); ?>
+		<?php echo $form->error($user_profile, 'lastname'); ?>
 	</div>
 	
 	<div class="row">
 		<?php 
-		echo $form->labelEx($models['captcha'], 'captcha');
+		echo $form->labelEx($captcha, 'captcha');
 		$this->widget('ext.recaptcha.EReCaptcha',
-				array('model' => $models['captcha'], 
+				array('model' => $captcha, 
 						'attribute' => 'captcha',
 						'language' => Yii::app()->getLanguage())
 				);
-		echo $form->error($models['captcha'], 'captcha');
+		echo $form->error($captcha, 'captcha');
 		?>
 	</div>
 				

@@ -32,7 +32,8 @@ class CourseController extends OnlineCoursePortalController {
 		);
 		if($course === null)
 			return $filterChain->run();
-		if(Yii::app()->getUser()->getIsAdmin() ||
+		if(Yii::app()->getUser()->getIsEmployee() || 
+				Yii::app()->getUser()->getIsAdmin() ||
 				UserCourse::model()->exists('course_id=:course_id AND user_id=:user_id', 
 						array(':course_id' => $course->id, ':user_id' => Yii::app()->getUser()->id))) {
 			$filterChain->action->renderData['course'] = $course;
