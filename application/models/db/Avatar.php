@@ -132,8 +132,9 @@ class Avatar extends ActiveRecord {
 	}
 
 	protected function afterSave() {
-		if(!file_exists($this->getPath()) || $this->image instanceof SimpleImage)
-			$this->image->save($this->getPath());
+		$path = Yii::getPathOfAlias(self::AVATARS_PATH_ALIAS) . DIRECTORY_SEPARATOR . $this->name;
+		if(!file_exists($path) || $this->image instanceof SimpleImage)
+			$this->image->save($path);
 		parent::afterSave();
 	}
 
