@@ -71,7 +71,7 @@ foreach(array(
   <p><?php echo t($course->description); ?></p>
   <h4><?php echo t('Objectives'); ?></h4>
   <ul>
-  <?php 
+    <?php 
   foreach($course->objectives as $objective)
   	echo '<li>' . t($objective->text) . '</li>';
   ?>
@@ -79,10 +79,9 @@ foreach(array(
   
   <!-- Course Lesson list starts here -->
   
-  
   <h4><?php echo t('Course Lessons'); ?></h4>
-
-<ul>
+  
+  <ul>
   <li> 
 	  <a href="#lesson-1-slide-1" data-fancybox-group="lesson-1" class="teal lesson-1"><?php echo t('Taking Care of You'); ?></a> 
 	  <a href="#lesson-1-slide-2" data-fancybox-group="lesson-1" class="hide lesson-1"></a> 
@@ -137,6 +136,25 @@ foreach(array(
 	  	<a href="#lesson-3-slide-8" data-fancybox-group="lesson-3" class="hide lesson-3"></a> 
 	  	<a href="#lesson-3-slide-9" data-fancybox-group="lesson-3" class="hide lesson-3"></a> 
 	  	<a href="#lesson-3-slide-10" data-fancybox-group="lesson-3" class="hide lesson-3"></a> 
+        <a href="#lesson-3-slide-11" data-fancybox-group="lesson-3" class="hide lesson-3"></a>
+        <a href="#lesson-3-slide-12" data-fancybox-group="lesson-3" class="hide lesson-3"></a>
+        <a href="#lesson-3-slide-13" data-fancybox-group="lesson-3" class="hide lesson-3"></a>
+        <a href="#lesson-3-slide-14" data-fancybox-group="lesson-3" class="hide lesson-3"></a>
+        <a href="#lesson-3-slide-15" data-fancybox-group="lesson-3" class="hide lesson-3"></a>
+        <a href="#lesson-3-slide-16" data-fancybox-group="lesson-3" class="hide lesson-3"></a>
+        <a href="#lesson-3-slide-17" data-fancybox-group="lesson-3" class="hide lesson-3"></a>
+        <a href="#lesson-3-slide-18" data-fancybox-group="lesson-3" class="hide lesson-3"></a>
+        <a href="#lesson-3-slide-19" data-fancybox-group="lesson-3" class="hide lesson-3"></a>
+        <a href="#lesson-3-slide-20" data-fancybox-group="lesson-3" class="hide lesson-3"></a>
+        <a href="#lesson-3-slide-21" data-fancybox-group="lesson-3" class="hide lesson-3"></a>
+        <a href="#lesson-3-slide-22" data-fancybox-group="lesson-3" class="hide lesson-3"></a>
+        <a href="#lesson-3-slide-23" data-fancybox-group="lesson-3" class="hide lesson-3"></a>
+        <a href="#lesson-3-slide-24" data-fancybox-group="lesson-3" class="hide lesson-3"></a>
+        <a href="#lesson-3-slide-25" data-fancybox-group="lesson-3" class="hide lesson-3"></a>
+        <a href="#lesson-3-slide-26" data-fancybox-group="lesson-3" class="hide lesson-3"></a>
+        <a href="#lesson-3-slide-27" data-fancybox-group="lesson-3" class="hide lesson-3"></a>
+        <a href="#lesson-3-slide-28" data-fancybox-group="lesson-3" class="hide lesson-3"></a>
+        <a href="#lesson-3-slide-29" data-fancybox-group="lesson-3" class="hide lesson-3"></a>
   </li>
   <li>
 	  <a href="#lesson-4-slide-1" data-fancybox-group="lesson-4" class="teal lesson-4">
@@ -181,20 +199,18 @@ foreach(array(
   </li>
  
 </ul>
-<br />
-<br />
-
-
-<div class="box-white">
+  <br />
+  <br />
+  <div class="box-white">
     <h4><?php echo t('Length'); ?></h4>
     <p><?php echo t('* Participant Access - 1 Year'); ?><br />
       <?php echo t('* Recommended Completion - 8 Weeks'); ?><br />
       <?php echo t('* Weekly Commitment - 1 Lesson @ 2 to 3 Hours'); ?></p>
   </div>
-
-<!-- Resources div white box here -->
-
-<div class="box-white">
+  
+  <!-- Resources div white box here -->
+  
+  <div class="box-white">
     <h4> <?php echo t('Resources'); ?></h4>
     <p><?php echo t('Please use these listed resources in the completion of this online course. Pleaes contact your instructor or the program director if you have additional resources you would like to see added here.'); ?></p>
     <table>
@@ -215,24 +231,26 @@ foreach(array(
       </tr>
     </table>
   </div>
-
-<!-- Developers div white box here -->
-
-<div class="box-white">
+  
+  <!-- Developers div white box here -->
+  
+  <div class="box-white">
     <div id="developers">
-    <h4><?php echo t('Facilitators &amp; Course Developers'); ?></h4>
-    <h5><?php echo t('Content Designer: '); ?><a href="mailto:lhollinger-smith@matherlifeways.com"><?php echo t('Linda Hollinger-Smith, PhD'); ?></a></h5>
-    <p><?php echo t('Dr. Hollinger-Smith is a doctorally prepared registered nurse focusing her research in gerontology, workforce development, and quality improvement. She has more than 28 years of experience working with older adults in senior living, long-term care settings, in the community, and in acute care settings in various staff and managerial positions. Her past positions include Assistant Dean of the Rush University College of Nursing, Nursing Director of the Rush Primary Care Institute, and Associate Chairperson of the Department of Adult Health Nursing at Rush University College of Nursing.'); ?></p>
-    <p><?php echo t('She has served as Principal Investigator for multiple national research projects totaling more than $4.5 million in support, targeting nursing workforce development and retention, falls reduction, and caregiver support issues. She has published over 50 journal articles, book chapters and research abstracts and has presented on national and international levels on various topics related to aging. In her current position, Dr. Hollinger-Smith leads a team of applied researchers and staff responsible for developing and expanding the Mather LifeWays applied research agenda.'); ?></p>
-    <h5><?php echo t('Course Developer: '); ?><a href="mailto:jwoodall@matherlifeways.com">Jon Woodall</a></h5>
-    <?php echo t('Mr. Woodall is responsible for all MLIA corporate workforce wellness programs related to design, implementation, publication, and evaluation. Additionally, he seeks new grant funding to support or extend current grants related to corporate workforce wellness programs. '); ?></p>
-    <h5><?php echo t('Facilitator: '); ?><a href="mailto:jwoodall@matherlifeways.com">Jon Woodall</a></h5>
-    <?php echo t('Mr. Woodall is responsible for all MLIA corporate workforce wellness programs related to design, implementation, publication, and evaluation. Additionally, he seeks new grant funding to support or extend current grants related to corporate workforce wellness programs. '); ?></p>
+      <h4><?php echo t('Facilitators &amp; Course Developers'); ?></h4>
+      <h5><?php echo t('Content Designer: '); ?><a href="mailto:lhollinger-smith@matherlifeways.com"><?php echo t('Linda Hollinger-Smith, PhD'); ?></a></h5>
+      <p><?php echo t('Dr. Hollinger-Smith is a doctorally prepared registered nurse focusing her research in gerontology, workforce development, and quality improvement. She has more than 28 years of experience working with older adults in senior living, long-term care settings, in the community, and in acute care settings in various staff and managerial positions. Her past positions include Assistant Dean of the Rush University College of Nursing, Nursing Director of the Rush Primary Care Institute, and Associate Chairperson of the Department of Adult Health Nursing at Rush University College of Nursing.'); ?></p>
+      <p><?php echo t('She has served as Principal Investigator for multiple national research projects totaling more than $4.5 million in support, targeting nursing workforce development and retention, falls reduction, and caregiver support issues. She has published over 50 journal articles, book chapters and research abstracts and has presented on national and international levels on various topics related to aging. In her current position, Dr. Hollinger-Smith leads a team of applied researchers and staff responsible for developing and expanding the Mather LifeWays applied research agenda.'); ?></p>
+      <h5><?php echo t('Course Developer: '); ?><a href="mailto:jwoodall@matherlifeways.com">Jon Woodall</a></h5>
+      <?php echo t('Mr. Woodall is responsible for all MLIA corporate workforce wellness programs related to design, implementation, publication, and evaluation. Additionally, he seeks new grant funding to support or extend current grants related to corporate workforce wellness programs. '); ?>
+      </p>
+      <h5><?php echo t('Facilitator: '); ?><a href="mailto:jwoodall@matherlifeways.com">Jon Woodall</a></h5>
+      <?php echo t('Mr. Woodall is responsible for all MLIA corporate workforce wellness programs related to design, implementation, publication, and evaluation. Additionally, he seeks new grant funding to support or extend current grants related to corporate workforce wellness programs. '); ?>
+      </p>
     </div>
   </div>
 </div>
 
-<!-- start course content here --> 
+<!-- start course content here -->
 
 <!-- Lesson 1 Slide 1 -->
 
@@ -1586,6 +1604,8 @@ foreach(array(
   </div>
   <!-- need this final div here to close lesson-1 --> 
 </div>
+
+
 <!-- Lesson 2 Slide 1 -->
 <div id="lesson-2">
   <div id="lesson-2-slide-1" class="course-slide">
@@ -2424,45 +2444,15 @@ foreach(array(
   </div>
   <!-- need this final div here to close lesson-2 --> 
 </div>
-<!-- Lesson 3 Slide 1 -->
-<div id="lesson-3">
-<div id="lesson-3-slide-1" class="course-slide">
-<div class="content">
-<h2 class="flowers"><?php echo t('Communicating Effectively in Challenging Situations'); ?></h2>
-<hr />
-<p><?php echo t('This lesson contains four main sections:'); ?></p>
-<ul>
-  <li><?php echo t('Communicating to Take Care of You'); ?></li>
-  <li><?php echo t('Expressing Yourself Under Special Circumstances'); ?></li>
-  <li><?php echo t('Challenging Communication Styles'); ?></li>
-  <li><?php echo t('Setting your Goals and Making Action Plans'); ?></li>
-</ul>
-<p><?php echo t('Many caregivers say one of their biggest challenges involves uttering the word No. The feeling is that saying no is somehow not permissible. If you feel this way, ask yourself:'); ?></p>
-<ul>
-  <li><?php echo t('Is there courage and nobility in saying nothing and burning out?'); ?></li>
-  <li><?php echo t('Or does true courage and nobility lie in taking care of yourself so you can be a caring helper longer?'); ?></li>
-</ul>
-<p><?php echo t('Keep those questions in mind as we discuss in this lesson tools for dealing with these caregiving challenges:'); ?></p>
-<ul>
-  <li><?php echo t('setting limits'); ?></li>
-  <li><?php echo t('asking for help'); ?></li>
-  <li><?php echo t('expressing and responding to criticism'); ?></li>
-  <li><?php echo t('expressing anger'); ?></li>
-</ul>
-<p><?php echo t('We will also discuss how to communicate more effectively under special circumstances and with people who use the following communication styles:');?></p>
-<ul>
-<li><?php echo t('Passive/peacekeeping'); ?></li>
-<li><?php echo t('Aggressive/pitbull'); ?></li>
-<li><?php echo t('Factual/computer'); ?>
-  </p>
-</li>
-</div>
-<div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Start Course &raquo;'); ?></a></div>
-</div>
-<!-- need this final div here to close lesson-3 -->
-</div>
+
+
+
+
+
+
 
 <!-- Lesson 4 Slide 1 -->
+
 <div id="lesson-4">
 <div id="lesson-4-slide-1" class="course-slide">
   <div class="content">
@@ -2735,8 +2725,6 @@ foreach(array(
 </div>
 <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
 </div>
-
- 
 
 <!-- Lesson 4 Slide 10 -->
 
@@ -3031,13 +3019,8 @@ foreach(array(
 
 
 
-
-		
-
-
-
-
 <!-- Lesson 5 Slide 1 -->
+
 <div id="lesson-5">
   <div id="lesson-5-slide-1" class="course-slide">
     <div class="content">
@@ -3326,5 +3309,7 @@ foreach(array(
   
   <!-- need this final div here to close lesson-5 --> 
 </div>
+
+
 <!-- need this final div here to close the course -->
 </div>
