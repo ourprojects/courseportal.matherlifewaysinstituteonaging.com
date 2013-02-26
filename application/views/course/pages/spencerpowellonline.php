@@ -87,8 +87,8 @@ foreach(array(
   <br />
   <div class="box-white">
     <h4><?php echo t('Length'); ?></h4>
-    <p><?php echo t('* Participant Access - 1 Year'); ?><br />
-      <?php echo t('* Recommended Completion - 8 Weeks'); ?><br />
+    <p><?php echo t('* Participant Access - 3 months'); ?><br />
+      <?php echo t('* Recommended Completion - 5 Weeks'); ?><br />
       <?php echo t('* Weekly Commitment - 1 Lesson @ 2 to 3 Hours'); ?></p>
   </div>
   <div class="box-white">
@@ -97,6 +97,8 @@ foreach(array(
     <p><a href="http://www.alz.org" target="_blank">Alzheimer's Association</a></p>
     <p><a href="http://www.nih.gov" target="_blank">National Intitute on Health (NIH)</a></p>
     <p><a href="http://www.webmd.com" target="_blank">WebMD website</a></p>
+    <p><a href="http://www.sharpbrains.com" target="_blank">SharpBrains</a></p>
+    <p><a href="#" target="_blank">Other</a></p>
   </div>
   <div class="box-white">
     <h4><?php echo t('Facilitators &amp; Course Developers'); ?></h4>
@@ -152,8 +154,8 @@ foreach(array(
               <option value="0"> <?php echo t('No') ?> </option>
             </select>
           </p>
-          <p class="right-answer hide" style="color:#090;"> <?php echo t('Please STOP and contact the Program Director.'); ?> </p>
-          <p class="wrong-answer hide" style="color:#F00;"> <?php echo t('Great! Please begin. Good luck!'); ?> </p>
+          <p class="right-answer hide" style="color:#F00;"> <?php echo t('Please STOP and contact the Program Director.'); ?> </p>
+          <p class="wrong-answer hide" style="color:#090"> <?php echo t('Great! Please begin. Good luck!'); ?> </p>
         </div>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Start Course &raquo;'); ?></a></div>
@@ -206,11 +208,12 @@ foreach(array(
       <div class="content">
         <h2 class="flowers"><?php echo t('Dementia'); ?></h2>
         <hr />
+         <img src="<?php echo $this->getImagesUrl('SpencerLesson1Slides/SpencerLesson1Slide5.png'); ?>" width="500px" height="243px" />
         <p><?php echo t('People often ask, “what is the difference between Alzheimer’s disease and dementia?”  Before we get too far, we should clarify that Alzheimer’s disease is a TYPE of dementia.  Dementia is an umbrella term used to describe any type of stable decline in cognitive abilities, severe enough to interrupt a person’s ability to function independently.  Dementia describes the observable symptoms of a brain disease or injury.'); ?></p>
         <p><?php echo t('Alzheimer’s is a disease process – a medical condition – that causes the cognitive changes that produce dementia.  There are many other medical conditions that cause dementia as well.'); ?></p>
         <p><?php echo t('The second most common disease that causes dementia is what we call cerebrovascular disease, which causes vascular dementia.  This includes any type of injury to the brain caused by a problem with the brain’s blood supply, most notably a stroke.  There are varying degrees of strokes, however.  You may have heard of TIA’s (or Transient Ischemic Attacks) or mini strokes.  The stroke process can also occur without any identifiable symptoms, causing what we call silent strokes.  You will learn more about these in the next session.'); ?></p>
         <p><?php echo t('Head trauma, Parkinson’s disease, Huntington Disease, Pick’s disease, infections such as HIV and CJD (Creutzfeldt-Jakob Disease – the human form of mad cow disease), substance abuse and environmental toxins can also cause dementia.'); ?></p>
-        <img src="<?php echo $this->getImagesUrl('SpencerLesson1Slides/SpencerLesson1Slide5.png'); ?>" width="500px" height="243px" /> </div>
+        </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
     </div>
     
@@ -220,8 +223,9 @@ foreach(array(
       <div class="content">
         <h2 class="flowers"><?php echo t('Risk Factors are Interactive'); ?></h2>
         <hr />
+        <img src="<?php echo $this->getImagesUrl('SpencerLesson1Slides/SpencerLesson1Slide6.png'); ?>" width="500px" height="276px" />
         <p><?php echo t('We are also learning that most people who develop dementia tend to have more than one type of risk factor and may even have more than one disease process affecting their brains.  It may also be the case that one disease process, such as diabetes, may play a role in the formation of another disease process such as Alzheimer’s.  We know that hypertension (high blood pressure) is a common result of the pressure that diabetes puts on the vascular system.  We still have a lot to learn in this area, but we mention it here because there are a lot of things that we can do to lessen the effects of many of these disease conditions on our aging brains, which may help us ward off or delay the clinical symptoms of dementia.'); ?></p>
-        <img src="<?php echo $this->getImagesUrl('SpencerLesson1Slides/SpencerLesson1Slide6.png'); ?>" width="500px" height="276px" /> </div>
+         </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
     </div>
     
@@ -325,8 +329,9 @@ foreach(array(
       <div class="content">
         <h2 class="flowers"><?php echo t('Peak Performance!'); ?></h2>
         <hr />
+          <img src="<?php echo $this->getImagesUrl('SpencerLesson1Slides/SpencerLesson1Slide14.png'); ?>" width="500px" height="276px" /> 
         <p><?php echo t('We’ve talked a lot today about protecting your brain from dementia, but this program will also focus on helping you get the most out of your brain today, which can help you both at work and at home.  You will be learning strategies to remember things better, to be more organized, to pay closer attention and to regulate your emotions.  Some of the strategies will come to you directly through the memory tips that you will learn in sessions 2-7 and the lifestyle demonstrations we will present each week.  Other strategies will come to you indirectly as you practice the exercises included in both the program homework assignments and the brain training software we are providing.'); ?></p>
-        <img src="<?php echo $this->getImagesUrl('SpencerLesson1Slides/SpencerLesson1Slide14.png'); ?>" width="500px" height="276px" /> </div>
+      </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
     </div>
     
@@ -336,13 +341,14 @@ foreach(array(
       <div class="content">
         <h2 class="flowers"><?php echo t('Let’s Give Ourselves a Break'); ?></h2>
         <hr />
+         <img src="<?php echo $this->getImagesUrl('SpencerLesson1Slides/SpencerLesson1Slide15.png'); ?>" width="500px" height="276px" /> 
         <p><?php echo t('Before we get into the specifics of what you will be doing for the next few weeks, let’s take a moment to give ourselves a little break. Not an actual break from the session, but rather let’s take a moment to go over some myths and misconceptions that older adults tend to have about their memories.'); ?></p>
         <p><?php echo t('Because dementia is such a great concern among older adults, many people forget that it’s normal to forget things. You’ve been forgetting things all your life! It’s just that when you were 25 years old, you didn’t care so much because you didn’t interpret the forgetting as a signal that you may be on the path to losing your independence.'); ?></p>
         <p><?php echo t('It is also a myth that people can remember everything.  You may have heard of these “memory champions” who can remember several decks of cards just by seeing them flipped over one at a time or about people with photographic memories.  Well the memory champions train like professional athletes, hours on end, day after day for months to develop their craft, but it doesn’t really seem to help them get better at much of anything else.  And most of the people with photographic memories are savants whose incredible gifts are often accompanied by severe handicaps in other areas of day-to-day living.'); ?></p>
         <p><?php echo t('So let’s all just have reasonable expectations of our memories.  If you forget something, try and relax.  That may even help you remember since, as you will learn in a few weeks, being upset can arrest our thinking.'); ?></p>
         <p><?php echo t('Over the next few weeks you will be working on some techniques to remember things better, and with a fair amount of effort and practice you can improve your thinking, but there is no magic bullet, no miracle cure, and no special pill to give us perfect thinking.'); ?></p>
         <p><?php echo t('Nor is it likely that your memory is really as bad as you think.  On that note, however, if you really are concerned about your thinking, we encourage you to talk with your doctor if you have not done so already.'); ?></p>
-        <img src="<?php echo $this->getImagesUrl('SpencerLesson1Slides/SpencerLesson1Slide15.png'); ?>" width="500px" height="276px" /> </div>
+       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
     </div>
     
@@ -352,9 +358,10 @@ foreach(array(
       <div class="content">
         <h2 class="flowers"><?php echo t('Program Format'); ?></h2>
         <hr />
+         <img src="<?php echo $this->getImagesUrl('SpencerLesson1Slides/SpencerLesson1Slide15.png'); ?>" width="500px" height="276px" /> 
         <p><?php echo t('During each of the next few weeks, you will learn the details of how each of these five areas of wellness affect your risk for dementia.  You will learn the science supporting the connection between your brain health and each area of wellness.'); ?></p>
         <p><?php echo t('We aim to help you identify areas of your lifestyle where you could increase your investment in your Cognitive Reserve, diversifying your “Brain Portfolio.”'); ?></p>
-        <img src="<?php echo $this->getImagesUrl('SpencerLesson1Slides/SpencerLesson1Slide15.png'); ?>" width="500px" height="276px" /> </div>
+       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
     </div>
     
