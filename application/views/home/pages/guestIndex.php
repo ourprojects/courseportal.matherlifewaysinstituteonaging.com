@@ -208,6 +208,12 @@ $this->widget(
     <div class="content">
       <h2 class="flowers"> <?php echo t('Tutorial'); ?> </h2>
       <hr />
+      <h4 style="text-align:center;"><?php echo t('THANK YOU! We appeciate your support and interest in Mather LifeWays Institute on Aging.'); ?></h4><br />
+        <br />
+          <img width="300" height="450" src="<?php echo $this->getImagesUrl('116777136.jpg'); ?>" alt="<?php echo t('Tutorial'); ?>" />
+
+
+
       <p> <?php echo t('Through conducting applied research, we have developed award-winning, 
 			evidence-based education programs for professionals who serve older adults. Staffed by researchers and educators, 
 			we are a global resource for information about wellness, successful aging service innovations, and 
@@ -232,6 +238,8 @@ $this->widget(
         * <a href="http://www.alz.org" target="_blank">Alzheimer's Association </a><br />
         * <a href="http://matherlifewaysinstituteonaging.com" target="_blank">Mather LifeWays Institute on Aging </a><br />
         * <a href="http://nih.gov" target="_blank">U.S. Department of Health &amp; Human Services - National Institute on Aging </a></p>
+        
+        <br /><br />
     </div>
     <div class="buttons"><a href="javascript:;" class="button right"
 				onclick="$.fancybox.next();"><?php echo t('Start Tutorial &raquo;'); ?> </a></div>
@@ -278,6 +286,9 @@ $this->widget(
     <div class="content">
       <h2 class="flowers"> <?php echo t('Dementia'); ?> </h2>
       <hr />
+    
+            <img width="400" height="267" src="<?php echo $this->getImagesUrl('78634274.jpg'); ?>" /> 
+
       <p> <?php echo t('Dementia refers to an acquired and progressive loss of mental functions due to a brain disorder. Dementia is not a specific
 			disease. It is an overall term that describes a wide range of symptoms associated with a decline in memory or other thinking skills 
 			severe enough to reduce a persons ability to perform everyday activities. A medical diagnosis is required to determine the underlying 			cause or causes of symptoms.'); ?> </p>
@@ -292,7 +303,7 @@ $this->widget(
       <p> <?php echo t('People with dementia may have problems with short-term memory, keeping track of a purse or wallet, paying bills, planning and
 			preparing meals, remembering appointments or traveling out of the neighborhood. Many dementias are progressive, meaning symptoms start
 			out slowly and gradually get worse.'); ?> </p>
-      <img src="<?php echo $this->getImagesUrl('image-men.png'); ?>" alt="" style="margin: 20px 20px; width: 95%;" /> </div>
+      </div>
     <div class="buttons"><a href="javascript:;" class="button left"
 				onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?> </a> <a
 				href="javascript:;" class="button right"
@@ -328,6 +339,17 @@ $this->widget(
 							institutions such as nursing homes.'); ?> </li>
       </ul>
       <br />
+       <div id="question1" class="question">
+        <p style="font-weight:bold;"><?php echo t('Is dementia a disease of the brain?'); ?>
+          <select>
+            <option selected="selected" value="select"> <?php echo t('Select'); ?> </option>
+            <option value="1"> <?php echo t('Yes'); ?> </option>
+            <option value="0"> <?php echo t('No') ?> </option>
+          </select>
+        </p>
+        <p class="right-answer hide" style="color:#060; font-weight:bold;"> <?php echo t('Great! Yes, Dementia is a disease of the brain.'); ?> </p>
+        <p class="wrong-answer hide" style="color:#C00; font-weight:bold;"> <?php echo t('Please ensure you understand what dementia is. Dementia is a disease of the brain.'); ?> </p>
+      </div>
       <br />
       <br />
     </div>
@@ -340,51 +362,42 @@ $this->widget(
     <div class="content">
       <h2 class="flowers"><?php echo t('Assessment'); ?></h2>
       <hr />
+      <p><?php echo t('It is important that you are assessed after each topic to ensure you are learning the material. If you feel you are not ready to complete this assessment, please review this tutorial again.'); ?></p>
       <p><?php echo t('Thinking about the material you just read, please try and correctly answer the assessment questions below without searching the Internet. Your responses are not recorded, and you will receive immediate feedback.'); ?></p>
       <br />
+     
       <div id="question1" class="question">
-        <p><?php echo t('Is dementia a disease of the brain?'); ?>
+        <p  style="font-weight:bold;"><?php echo t('Is Alzehimer\'s disease a disease of the brain?'); ?>
           <select>
             <option selected="selected" value="select"> <?php echo t('Select'); ?> </option>
             <option value="1"> <?php echo t('Yes'); ?> </option>
             <option value="0"> <?php echo t('No') ?> </option>
           </select>
         </p>
-        <p class="right-answer hide"> <?php echo t('Great! Yes, Dementia is a disease of the brain.'); ?> </p>
-        <p class="wrong-answer hide"> <?php echo t('Please review this tutorial again. Dementia is a disease of the brain.'); ?> </p>
+        <p class="right-answer hide" style="color:#060; font-weight:bold;"> <?php echo t("Great! Yes, Alzheimer's disease is a disease of the brain."); ?> </p>
+        <p class="wrong-answer hide" style="color:#C00; font-weight:bold;"> <?php echo t("Please review this tutorial again. Alzheimer's disease is a disease of the brain."); ?> </p>
       </div>
       <div id="question2" class="question">
-        <p> <?php echo t('Is Alzehimer\'s disease a disease of the brain?'); ?>
-          <select>
-            <option selected="selected" value="select"> <?php echo t('Select'); ?> </option>
-            <option value="1"> <?php echo t('Yes'); ?> </option>
-            <option value="0"> <?php echo t('No') ?> </option>
-          </select>
-        </p>
-        <p class="right-answer hide"> <?php echo t("Great! Yes, Alzheimer's disease is a disease of the brain."); ?> </p>
-        <p class="wrong-answer hide"> <?php echo t("Please review this tutorial again. Alzheimer's disease is a disease of the brain."); ?> </p>
-      </div>
-      <div id="question3" class="question">
-        <p> <?php echo t('Alzheimer\'s disease is the most common form of dementia.'); ?>
+        <p style="font-weight:bold;"> <?php echo t('Alzheimer\'s disease is the most common form of dementia.'); ?>
           <select>
             <option selected="selected" value="select"> <?php echo t('Select'); ?> </option>
             <option value="1"> <?php echo t('True'); ?> </option>
             <option value="0"> <?php echo t('False'); ?> </option>
           </select>
         </p>
-        <p class="right-answer hide"> <?php echo t("Yes, Alzheimer's disease is the most common form of dementia.");?> </p>
-        <p class="wrong-answer hide"> <?php echo t("Please review this tutorial again. Alzheimer's disease is the most common form of dementia.")?> </p>
+        <p class="right-answer hide" style="color:#060; font-weight:bold;"> <?php echo t("Yes, Alzheimer's disease is the most common form of dementia.");?> </p>
+        <p class="wrong-answer hide" style="color:#C00; font-weight:bold;"> <?php echo t("Please review this tutorial again. Alzheimer's disease is the most common form of dementia.")?> </p>
       </div>
-      <br />
-      <br />
+   
+    
       <div id="question" class="question">
-        <p> <?php echo t('Using the search box below, find additional data and statistics on dementia and 
-						Alzheimer\'s disease in your area. It is important that you learn to conduct your own research.'); ?> </p>
+        <p> <?php echo t('Please find additional data on dementia and Alzheimer\'s disease. Try and conduct your own research.'); ?> </p>
         <form method="get" action="http://www.google.com/search" target="_blank">
           <input type="text" id="google-search" name="q" size="65" maxlength="255" value="" />
           <input type="submit" value="<?php echo t('Google Search'); ?>" class="teal" />
         </form>
       </div>
+      <br /><br />
     </div>
     <div class="buttons"><a href="javascript:;" class="button left"
 				onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?> </a> <a
