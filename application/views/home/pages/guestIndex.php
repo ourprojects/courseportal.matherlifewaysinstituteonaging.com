@@ -208,7 +208,7 @@ $this->widget(
     <div class="content">
       <h2 class="flowers"> <?php echo t('Tutorial'); ?> </h2>
       <hr />
-      <h4 style="text-align:center;"><?php echo t('THANK YOU! We appeciate your support and interest in Mather LifeWays Institute on Aging.'); ?></h4><br />
+      <h4 style="text-align:center;"><?php echo t('THANK YOU! We appreciate your support and interest in Mather LifeWays Institute on Aging.'); ?></h4><br />
         <br />
           <img src="<?php echo $this->getImagesUrl('116777136r.jpeg'); ?>" alt="<?php echo t('Tutorial'); ?>" />
 
