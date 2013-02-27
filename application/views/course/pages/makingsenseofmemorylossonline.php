@@ -28,46 +28,46 @@ foreach(array(
 
 <!-- SIDEBAR 1 -->
 
-<div id="sidebar">
-  <div class="box-sidebar one">
-    <h3>Pre-Course Survey</h3>
-    <br />
-    <p id="surveynotify"><?php echo t('Complete the Pre-Course survey BEFORE participating. (Profile Page)'); ?></p>
-    <br />
-  </div>
-  
-   <!-- SIDEBAR 2 -->
+<div class="box-sidebar one">
+  <h3><?php echo t('Pre-Course Survey'); ?></h3>
+  <br />
+  <a href="<?php echo $this->createUrl('user/profile'); ?>"><img class="block-center" width="125" height="147" src="<?php echo $this->getImagesUrl('survey_icon2.png'); ?>" alt="" /></a>
+  <hr />
+  <p id="surveynotify"><?php echo t('Complete the<br />Pre-Course Survey'); ?></p>
+  <br />
+</div>
 
-  <div class="box-sidebar one">
-    <h3><?php echo t('Statistics'); ?></h3>
-    <br />
-    <img class="block-center" src="<?php echo $this->getImagesUrl('286x352_Grafix_1in5.png'); ?>" />
-    <p><?php echo t('One in five caregivers report having had some degree of training, but continue to seek additional resources.'); ?></p>
-    <br />
-  </div>
-  
-  <!-- SIDEBAR 3 -->
-  
-  
-  <div class="box-sidebar one">
-    <h3>Alzheimer's Association</h3>
-    <br />
-    <p> <b> <?php echo t('10 Early Signs and Symptoms of Alzheimer\'s'); ?> </b> </p>
-    <br />
-    <a href="https://www.alz.org/alzheimers_disease_10_signs_of_alzheimers.asp" target="_blank"><img class="block-center" src="<?php echo $this->getImagesUrl('alz.png'); ?>" /></a>
-    <hr />
-    <p><?php echo t('Memory loss that disrupts daily life may be a symptom of Alzheimer\'s or another dementia. Alzheimer\'s is a brain disease that causes a slow decline in memory, thinking and reasoning skills. There are 10 warning signs and symptoms. Every individual may experience one or more of these signs in different degrees. If you notice any of them, please see a doctor.'); ?></p>
-  </div>
-  
-  <!-- SIDEBAR 4 -->
-  
-  <div class="box-sidebar three">
-    <h3>U.S. Dept. of Health &amp; Human Srvc.</h3>
-    <br />
-    <p> <b> <?php echo t('2011 - 2012 Alzheimer\'s Disease Progress Report'); ?> </b> </p>
-    <p><a href="http://www.nia.nih.gov/alzheimers/publication/2011-2012-alzheimers-disease-progress-report" target="_blank"><img class="block-center" src="<?php echo $this->getImagesUrl('adpr-front.png'); ?>" /></a></p>
-    <p><?php echo t('A summary of Alzheimer\'s disease research, infrastructure, and funding supported by the NIH.'); ?> </p>
-  </div>
+<!-- SIDEBAR 2 -->
+
+<div class="box-sidebar one">
+  <h3><?php echo t('Statistics'); ?></h3>
+  <br />
+  <img class="block-center" src="<?php echo $this->getImagesUrl('286x352_Grafix_1in5.png'); ?>" />
+  <p><?php echo t('One in five caregivers report having had some degree of training, but continue to seek additional resources.'); ?></p>
+  <br />
+</div>
+
+<!-- SIDEBAR 3 -->
+
+<div class="box-sidebar one">
+  <h3>Alzheimer's Association</h3>
+  <br />
+  <p> <b> <?php echo t('10 Early Signs and Symptoms of Alzheimer\'s'); ?> </b> </p>
+  <br />
+  <a href="https://www.alz.org/alzheimers_disease_10_signs_of_alzheimers.asp" target="_blank"><img class="block-center" src="<?php echo $this->getImagesUrl('alz.png'); ?>" /></a>
+  <hr />
+  <p><?php echo t('Memory loss that disrupts daily life may be a symptom of Alzheimer\'s or another dementia. Alzheimer\'s is a brain disease that causes a slow decline in memory, thinking and reasoning skills. There are 10 warning signs and symptoms. Every individual may experience one or more of these signs in different degrees. If you notice any of them, please see a doctor.'); ?></p>
+</div>
+
+<!-- SIDEBAR 4 -->
+
+<div class="box-sidebar three">
+  <h3>U.S. Dept. of Health &amp; Human Srvc.</h3>
+  <br />
+  <p> <b> <?php echo t('2011 - 2012 Alzheimer\'s Disease Progress Report'); ?> </b> </p>
+  <p><a href="http://www.nia.nih.gov/alzheimers/publication/2011-2012-alzheimers-disease-progress-report" target="_blank"><img class="block-center" src="<?php echo $this->getImagesUrl('adpr-front.png'); ?>" /></a></p>
+  <p><?php echo t('A summary of Alzheimer\'s disease research, infrastructure, and funding supported by the NIH.'); ?> </p>
+</div>
 </div>
 
 <!-- start main content section here -->
@@ -114,9 +114,11 @@ foreach(array(
       <p><a href="http://www.alz.org/illinois/" target="_blank">Greater Illinois Chapter | Alzheimer's Association</a><br />
         <?php echo t('The Alzheimer’s Association, Greater Illinois Chapter serves 68 counties in Illinois with offices in Bloomington, Carbondale, Chicago, Joliet, Rockford and Springfield. Since 1980, the Chapter has provided reliable information and care consultation; created supportive services for families; increased funding for dementia research; and influenced public policy changes. Today, the Greater Illinois Chapter serves the more than a half million Illinois residents affected by Alzheimer’s disease throughout our chapter area, including 210,000 people with the disease.'); ?></p>
       <h5><?php echo t('Course Developer: '); ?><a href="mailto:jwoodall@matherlifeways.com">Jon Woodall</a></h5>
-        <?php echo t('Mr. Woodall is responsible for all MLIA corporate workforce wellness programs related to design, implementation, publication, and evaluation. Additionally, he seeks new grant funding to support or extend current grants related to corporate workforce wellness programs. '); ?></p>
+      <?php echo t('Mr. Woodall is responsible for all MLIA corporate workforce wellness programs related to design, implementation, publication, and evaluation. Additionally, he seeks new grant funding to support or extend current grants related to corporate workforce wellness programs. '); ?>
+      </p>
       <h5><?php echo t('Facilitator: '); ?><a href="mailto:jwoodall@matherlifeways.com">Jon Woodall</a></h5>
-        <?php echo t('Mr. Woodall is responsible for all MLIA corporate workforce wellness programs related to design, implementation, publication, and evaluation. Additionally, he seeks new grant funding to support or extend current grants related to corporate workforce wellness programs. '); ?></p>
+      <?php echo t('Mr. Woodall is responsible for all MLIA corporate workforce wellness programs related to design, implementation, publication, and evaluation. Additionally, he seeks new grant funding to support or extend current grants related to corporate workforce wellness programs. '); ?>
+      </p>
     </div>
   </div>
 </div>
@@ -137,8 +139,8 @@ foreach(array(
           <li><?php echo t('To describe current and proposed medical treatments.'); ?></li>
           <li><?php echo t('To describe research efforts to treat or prevent memory loss.'); ?></li>
         </ul>
-        <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Start Course &raquo;'); ?></a></div>
       </div>
+      <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Start Course &raquo;'); ?></a></div>
     </div>
   </div>
   <div id="lesson-2">
@@ -162,8 +164,8 @@ foreach(array(
           <li><?php echo t('Ways to encourage verbal expression'); ?></li>
           <li><?php echo t('Avoiding communication pitfalls'); ?></li>
         </ul>
-        <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Start Course &raquo;'); ?></a></div>
       </div>
+      <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Start Course &raquo;'); ?></a></div>
     </div>
   </div>
   <div id="lesson-3">
@@ -180,8 +182,8 @@ foreach(array(
         <p><?php echo t('Welcome Back!'); ?></p>
         <p><?php echo t('Welcome to the third lesson of MSML Online.'); ?></p>
         <p><?php echo t('Before you begin, please email your Instructor or post to the Forum/Blog any questions or comments related to last week\'s lesson on Communication.'); ?></p>
-        <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Start Course &raquo;'); ?></a></div>
       </div>
+      <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Start Course &raquo;'); ?></a></div>
     </div>
   </div>
   <div id="lesson-4">
@@ -208,8 +210,8 @@ foreach(array(
           <li><?php echo t('impact of a move on an individual with memory loss,'); ?></li>
           <li><?php echo t('residential care options, including how to decide/choose residential care.'); ?></li>
         </ul>
-        <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Start Course &raquo;'); ?></a></div>
       </div>
+      <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Start Course &raquo;'); ?></a></div>
     </div>
   </div>
   <div id="lesson-5">
@@ -236,8 +238,9 @@ foreach(array(
         <p><?php echo t('Recognize the importance of “doing” in your life and in the life of your family member.'); ?></p>
         <p><?php echo t('Think about when you meet someone new. What do you talk about? The first thing you do is probably to exchange names and a few pleasantries. As the conversation continues, however, you probably begin to talk about what you do – your occupation, your hobbies and interests. What we do is important to us, and helps other people understand us.'); ?></p>
         <p><?php echo t('Think of your own life. What things do you enjoy doing?'); ?></p>
-        <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Start Course &raquo;'); ?></a></div>
       </div>
+      <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Start Course &raquo;'); ?></a></div>
     </div>
   </div>
-  <!-- final div needed to close course --> </div>
+  <!-- final div needed to close course --> 
+</div>
