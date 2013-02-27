@@ -210,7 +210,7 @@ $this->widget(
       <hr />
       <h4 style="text-align:center;"><?php echo t('THANK YOU! We appeciate your support and interest in Mather LifeWays Institute on Aging.'); ?></h4><br />
         <br />
-          <img width="300" height="450" src="<?php echo $this->getImagesUrl('116777136.jpg'); ?>" alt="<?php echo t('Tutorial'); ?>" />
+          <img src="<?php echo $this->getImagesUrl('116777136r.jpeg'); ?>" alt="<?php echo t('Tutorial'); ?>" />
 
 
 
@@ -287,7 +287,7 @@ $this->widget(
       <h2 class="flowers"> <?php echo t('Dementia'); ?> </h2>
       <hr />
     
-            <img width="400" height="267" src="<?php echo $this->getImagesUrl('78634274.jpg'); ?>" /> 
+            <img src="<?php echo $this->getImagesUrl('78634274r.jpeg'); ?>" alt="<?php echo t('Tutorial'); ?>" /> 
 
       <p> <?php echo t('Dementia refers to an acquired and progressive loss of mental functions due to a brain disorder. Dementia is not a specific
 			disease. It is an overall term that describes a wide range of symptoms associated with a decline in memory or other thinking skills 
@@ -404,9 +404,9 @@ $this->widget(
 				href="javascript:;" class="button right"
 				onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo;</a> </div>
   </div>
-  
+
   <!--   slide 6 - closing here    -->
-  
+
   <div id="slide-6" class="course-slide">
     <div class="content">
       <h2 class="flowers"> <?php echo t('Conclusion'); ?> </h2>
