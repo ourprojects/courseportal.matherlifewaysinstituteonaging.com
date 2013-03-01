@@ -208,12 +208,10 @@ $this->widget(
     <div class="content">
       <h2 class="flowers"> <?php echo t('Tutorial'); ?> </h2>
       <hr />
-      <h4 style="text-align:center;"><?php echo t('THANK YOU! We appreciate your support and interest in Mather LifeWays Institute on Aging.'); ?></h4><br />
-        <br />
-          <img src="<?php echo $this->getImagesUrl('116777136r.jpeg'); ?>" alt="<?php echo t('Tutorial'); ?>" />
-
-
-
+      <h4 style="text-align:center;"><?php echo t('THANK YOU! We appreciate your support and interest in Mather LifeWays Institute on Aging.'); ?></h4>
+      <br />
+      <br />
+      <img src="<?php echo $this->getImagesUrl('116777136r.jpeg'); ?>" alt="<?php echo t('Tutorial'); ?>" />
       <p> <?php echo t('Through conducting applied research, we have developed award-winning, 
 			evidence-based education programs for professionals who serve older adults. Staffed by researchers and educators, 
 			we are a global resource for information about wellness, successful aging service innovations, and 
@@ -238,8 +236,8 @@ $this->widget(
         * <a href="http://www.alz.org" target="_blank">Alzheimer's Association </a><br />
         * <a href="http://matherlifewaysinstituteonaging.com" target="_blank">Mather LifeWays Institute on Aging </a><br />
         * <a href="http://nih.gov" target="_blank">U.S. Department of Health &amp; Human Services - National Institute on Aging </a></p>
-        
-        <br /><br />
+      <br />
+      <br />
     </div>
     <div class="buttons"><a href="javascript:;" class="button right"
 				onclick="$.fancybox.next();"><?php echo t('Start Tutorial &raquo;'); ?> </a></div>
@@ -286,9 +284,7 @@ $this->widget(
     <div class="content">
       <h2 class="flowers"> <?php echo t('Dementia'); ?> </h2>
       <hr />
-    
-            <img src="<?php echo $this->getImagesUrl('78634274r.jpeg'); ?>" alt="<?php echo t('Tutorial'); ?>" /> 
-
+      <img src="<?php echo $this->getImagesUrl('78634274r.jpeg'); ?>" alt="<?php echo t('Tutorial'); ?>" />
       <p> <?php echo t('Dementia refers to an acquired and progressive loss of mental functions due to a brain disorder. Dementia is not a specific
 			disease. It is an overall term that describes a wide range of symptoms associated with a decline in memory or other thinking skills 
 			severe enough to reduce a persons ability to perform everyday activities. A medical diagnosis is required to determine the underlying 			cause or causes of symptoms.'); ?> </p>
@@ -303,7 +299,9 @@ $this->widget(
       <p> <?php echo t('People with dementia may have problems with short-term memory, keeping track of a purse or wallet, paying bills, planning and
 			preparing meals, remembering appointments or traveling out of the neighborhood. Many dementias are progressive, meaning symptoms start
 			out slowly and gradually get worse.'); ?> </p>
-      </div>
+      <br />
+      <br />
+    </div>
     <div class="buttons"><a href="javascript:;" class="button left"
 				onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?> </a> <a
 				href="javascript:;" class="button right"
@@ -339,7 +337,7 @@ $this->widget(
 							institutions such as nursing homes.'); ?> </li>
       </ul>
       <br />
-       <div id="question1" class="question">
+      <div id="question1" class="question">
         <p style="font-weight:bold;"><?php echo t('Is dementia a disease of the brain?'); ?>
           <select>
             <option selected="selected" value="select"> <?php echo t('Select'); ?> </option>
@@ -365,7 +363,6 @@ $this->widget(
       <p><?php echo t('It is important that you are assessed after each topic to ensure you are learning the material. If you feel you are not ready to complete this assessment, please review this tutorial again.'); ?></p>
       <p><?php echo t('Thinking about the material you just read, please try and correctly answer the assessment questions below without searching the Internet. Your responses are not recorded, and you will receive immediate feedback.'); ?></p>
       <br />
-     
       <div id="question1" class="question">
         <p  style="font-weight:bold;"><?php echo t('Is Alzehimer\'s disease a disease of the brain?'); ?>
           <select>
@@ -388,8 +385,6 @@ $this->widget(
         <p class="right-answer hide" style="color:#060; font-weight:bold;"> <?php echo t("Yes, Alzheimer's disease is the most common form of dementia.");?> </p>
         <p class="wrong-answer hide" style="color:#C00; font-weight:bold;"> <?php echo t("Please review this tutorial again. Alzheimer's disease is the most common form of dementia.")?> </p>
       </div>
-   
-    
       <div id="question" class="question">
         <p> <?php echo t('Please find additional data on dementia and Alzheimer\'s disease. Try and conduct your own research.'); ?> </p>
         <form method="get" action="http://www.google.com/search" target="_blank">
@@ -397,33 +392,35 @@ $this->widget(
           <input type="submit" value="<?php echo t('Google Search'); ?>" class="teal" />
         </form>
       </div>
-      <br /><br />
+      <br />
+      <br />
     </div>
     <div class="buttons"><a href="javascript:;" class="button left"
 				onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?> </a> <a
 				href="javascript:;" class="button right"
 				onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo;</a> </div>
   </div>
-
+  
   <!--   slide 6 - closing here    -->
-
+  
   <div id="slide-6" class="course-slide">
     <div class="content">
       <h2 class="flowers"> <?php echo t('Conclusion'); ?> </h2>
       <hr />
+      <img src="<?php echo $this->getImagesUrl('56677551r.jpeg'); ?>" width="250" height="375" alt="<?php echo t('Thank You'); ?>" />
       <p> <?php echo t('With such a profound impact on society, business, and potentially on your family, understanding
 					dementia and Alzheimer\'s disease is very important. After participating in this tutorial, you
 					should now be able to understand and explaing what Alzheimer\'s disease and dementia are.'); ?> </p>
+      
+      <!-- Certificate of Completion here -->
+      
+      <h4><?php echo t('Certificate of Completion'); ?></h4>
+      <p><?php echo t('Upon successful completion of each online course, you will have the opportunity to download your custom Certificate of Completion. Click on the icon below to access a example Certificate.'); ?></p>
+      <a href="<?php echo $this->getImagesUrl('CourseCompletionCertificate.pdf'); ?>" target="_blank"><img class="normal" src="<?php echo $this->getImagesUrl('ArtworkCertificate.png'); ?>" alt="<?php echo t('Certificate'); ?>" /></a>
       <p> <?php echo t('Thank you for participating in this tutorial course! Now that you have a better idea on what to expect, your next step is to register and
 					begin participating in the various online courses. Please contact us if you have questions or need help.'); ?> </p>
       <br />
       <br />
-      <br />
-      
-      <!-- Certificate of Completion here -->
-      
-      <p style="text-align:center; font-size:36px;"> <a href="<?php echo $this->getImagesUrl('CourseCompletionCertificate.pdf'); ?>" target="_blank"> <?php echo t('Certificate of Completion '); ?></a> </p>
-      <p style="font-size:small; text-align:center;"> <?php echo t('(English)'); ?> </p>
     </div>
     <div class="buttons"><a href="#" onclick="parent.jQuery.fancybox.close();"
 				class="button left"> <?php echo t('Exit'); ?> </a> </div>
