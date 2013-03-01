@@ -188,7 +188,11 @@ $this->widget(
 </div>
 <div id="bottom-logos">
   <h4><?php echo t('Partners'); ?></h4>
-  <a href="http://www.rushu.rush.edu" id="rush">Rush University (Chicago)</a> <a href="http://www.alz.org/" id="aa" target="_blank">Alzheimer's Asssociation</a> <a href="https://github.com/" id="git" target="_blank">GitHub</a> <a href="http://www.yiiframework.com/" id="yii" target="_blank">Yii Framework</a> <a href="http://wfd.com/" id="wfd" target="_blank">WFD</a> <a href="http://www.discoursellc.com/" id="discourse" target="_blank">Discourse, LLC.</a> <a href="http://gladerfilmworks.com/" id="glader" target="_blank">Glader Filmworks</a> <a href="http://www.mediastorm.com/" id="mediastorm" target="_blank">Mediastorm</a> </div>
+  <a href="http://www.rushu.rush.edu" id="rush">Rush University (Chicago)</a> 
+  <a href="http://www.alz.org/" id="aa" target="_blank">Alzheimer's Asssociation</a> 
+  <a href="http://wfd.com/" id="wfd" target="_blank">WFD</a> 
+  <a href="http://gladerfilmworks.com/" id="glader" target="_blank">Glader Filmworks</a> 
+  <a href="http://www.mediastorm.com/" id="mediastorm" target="_blank">Mediastorm</a> </div>
 
 <!--  start tutorial course here -->
 
