@@ -26,15 +26,34 @@ $this->widget(
   <!-- sidebar #1 here -->
   
   <div class="box-sidebar one">
-    <h3><?php echo t('Profile of the Month'); ?></h3>
+    <h3><?php echo t('Surveys'); ?></h3>
     <br />
-    <p><?php echo t('Profile of the Month is a short highlight of a participant who has testified to their increased self-efficacy becuase of these online courses.'); ?></p>
-    <p><?php echo t('COMING SOON! PLEASE CHECK BACK LATER.'); ?></p>
+    <p><?php echo t('Our surveys are designed to help us obtain information that help with decision-making. Our goal is to help better educate our participants by creating a client touch-point, a feedback system, and means to better understanding the shifting needs of the field.'); ?></p>
+    <img class="block-center" width="125" height="147" src="<?php echo $this->getImagesUrl('survey_icon2.png'); ?>" alt="" />
+    <hr />
+    <ul>
+      <?php 
+  	foreach($surveys as $survey): ?>
+      <li> <a id="survey_link_<?php echo $survey->getId(); ?>" href="#survey_<?php echo $survey->getId(); ?>" title="<?php echo $survey->model->title; ?>"><?php echo $survey->model->title; ?></a>
+        <?php $survey->run(); ?>
+      </li>
+      <?php endforeach; ?>
+    </ul>
   </div>
   
   <!-- sidebar #2 here -->
   <div class="box-sidebar one">
-    <h3><?php echo t('Profile Page Meta-Data'); ?></h3>
+    <h3><?php echo t('Collection of Metadata'); ?></h3>
+    <p><?php echo t('Metadata - Metadata is data about data. Metadata describes how and when and by whom a particular set of data was collected, and how the data is formatted. Metadata is essential for understanding information stored in our database and has become increasingly important in our XML-based Web applications.'); ?></p>
+    <p><?php echo t('Metadata (metacontent describing the details we collect) are defined as the data providing information about one or more aspects of the data, such as:'); ?></p>
+    <ul>
+      <li><?php echo t('* Means of creation of the data'); ?></li>
+      <li><?php echo t('* Purpose of the data'); ?></li>
+      <li><?php echo t('* Time and date of creation'); ?></li>
+      <li><?php echo t('* Creator or author of the data'); ?></li>
+      <li><?php echo t('* Location on a computer network where the data were created'); ?></li>
+      <li><?php echo t('* Standards used'); ?></li>
+    </ul>
     <p><?php echo t('The information you provide us, via your profile, is used for research purposes only. We do not sell, distribute, or use your information for any other purpose than helping make these online courses better.'); ?></p>
   </div>
   <!-- sidebar #3 here -->
@@ -55,14 +74,4 @@ echo $this->renderPartial('forms/profile_form', $models);
 ?>
     </p>
   </div>
-  <h2 class="flowers"> <?php echo t('Surveys'); ?> </h2>
-  <p><?php echo t('Our surveys are designed to help us obtain information that help with decision-making. Our goal is to help better educate our participants by creating a client touch-point, a feedback system, and means to better understanding the shifting needs of the field.'); ?></p>
-  <ul>
-    <?php 
-  	foreach($surveys as $survey): ?>
-    <li> <a id="survey_link_<?php echo $survey->getId(); ?>" href="#survey_<?php echo $survey->getId(); ?>" title="<?php echo $survey->model->title; ?>"><?php echo $survey->model->title; ?></a>
-      <?php $survey->run(); ?>
-    </li>
-    <?php endforeach; ?>
-  </ul>
 </div>
