@@ -8,8 +8,8 @@ $clientScript->registerScriptFile($this->getScriptsUrl('jquery.cycle.all.js'), C
 $clientScript->registerScript('customers_cycle', "$('#customers').cycle();");
 
 $fancyBoxConfig = array(
-						'width' => '80%',
-						'height' => '70%',
+						'width' => '90%',
+						'height' => '90%',
 						'arrows' => false,
 						'autoSize' => false,
 						'mouseWheel' => false,
@@ -188,11 +188,7 @@ $this->widget(
 </div>
 <div id="bottom-logos">
   <h4><?php echo t('Partners'); ?></h4>
-  <a href="http://www.rushu.rush.edu" id="rush">Rush University (Chicago)</a> 
-  <a href="http://www.alz.org/" id="aa" target="_blank">Alzheimer's Asssociation</a> 
-  <a href="http://wfd.com/" id="wfd" target="_blank">WFD</a> 
-  <a href="http://gladerfilmworks.com/" id="glader" target="_blank">Glader Filmworks</a> 
-  <a href="http://www.mediastorm.com/" id="mediastorm" target="_blank">Mediastorm</a> </div>
+  <a href="http://www.rushu.rush.edu" id="rush">Rush University (Chicago)</a> <a href="http://www.alz.org/" id="aa" target="_blank">Alzheimer's Asssociation</a> <a href="http://wfd.com/" id="wfd" target="_blank">WFD</a> <a href="http://gladerfilmworks.com/" id="glader" target="_blank">Glader Filmworks</a> <a href="http://www.mediastorm.com/" id="mediastorm" target="_blank">Mediastorm</a> </div>
 
 <!--  start tutorial course here -->
 
@@ -270,14 +266,10 @@ $this->widget(
         <li><?php echo t('Challenges in planning or solving problems'); ?></li>
         <li><?php echo t('Difficulty completing familiar tasks at home, at work or at leisure'); ?> </li>
       </ul>
-      <br />
-      <br />
-      <br />
-      
-      <!-- 
-    <p><?php echo t('Alzheimer\'s disease Facts and Figures 2012 (USA / English)'); ?></p>
-    	--> 
-      
+      <p class="link"><?php echo t('Alzheimer\'s disease Facts and Figures 2012 (USA / English) - '); ?></p>
+      <p><a href="http://www.alz.org/downloads/facts_figures_2012.pdf" target="_blank"><img class="normal" src="<?php echo $this->GetImagesURL('pdf-icon.png'); ?>" alt="<?php echo t('.pdf icon'); ?>" /></a> </p>
+  <p> &nbsp;  </p>
+  <p>&nbsp;</p>
     </div>
     <div class="buttons"><a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?> </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
   </div>
