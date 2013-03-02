@@ -4,7 +4,5 @@
   <h1 class="bottom"><?php echo t('Login'); ?></h1>
 </div>
 <div id="single-column">
-  <p> <?php echo t('Not registered? Click'); ?> <?php echo CHtml::link(t('here'), $this->createUrl('register')); ?> </p>
-  <p class="style: font-size:small;"> <i> <?php echo t('Once logged on to the course portal, no refund is available.'); ?> </i> </p>
-  <p> <?php echo t('Forgot you password? Click'); ?> <?php echo CHtml::link(t('here'), $this->createUrl('forgotPassword')); ?> </p>
+  <p> <?php echo CHtml::link(t('Not registered?'), $this->createUrl('register')); ?> <?php echo t('  - OR -  '); ?> <?php echo CHtml::link(t('Forgot Password?'), $this->createUrl('forgotPassword')); ?> </p>
   <?php echo $this->renderPartial('forms/login_form', array('model' => $model)); ?> </div>
