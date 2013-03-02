@@ -23,26 +23,19 @@ class AvatarController extends OnlineCoursePortalController {
 		);
 	}
 	
-	public function actionAdd() {
-		
-	}
-	
 	public function actionView($id) {
 		$this->loadExtension('HTTP_Download');
 		$avatar = Yii::app()->getUser()->getModel()->avatar;
-		if($avatar !== null) {
-			HTTP_Download::staticSend(array(
+		$sendParams = isset($avatar) ? array(
 					'file'               => $avatar->getPath(),
-					'contenttype'		 => $avatar->mime_type,
-					'contentdisposition' => array(HTTP_DOWNLOAD_ATTACHMENT, $avatar->name),
-			), false);
-		} else {
-			HTTP_Download::staticSend(array(
+					'contenttype'		 => $avatar->mime,
+					'contentdisposition' => array(HTTP_Download::ATTACHMENT, $avatar->name),
+			) : array(
 					'file'               => Avatar::getDefaultPath(),
 					'contenttype'		 => Avatar::DEFAULT_MIME,
-					'contentdisposition' => array(HTTP_DOWNLOAD_ATTACHMENT, Avatar::DEFAULT_NAME),
-			), false);
-		}
+					'contentdisposition' => array(HTTP_Download::ATTACHMENT, Avatar::DEFAULT_NAME),
+			);
+		HTTP_Download::staticSend($sendParams, false);
 	}
 	
 }

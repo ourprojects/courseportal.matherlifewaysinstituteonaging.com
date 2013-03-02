@@ -62,17 +62,6 @@ class OnlineCoursePortalApplication extends CWebApplication {
     }
 
     /**
-    * Loads a helper
-    *
-    * @access public
-    * @param string $helper
-    * @return void
-    */
-    public function loadHelper($helper) {
-        Yii::import("helpers.$helper", true);
-    }
-
-    /**
     * Loads an extension
     *
     * @access public

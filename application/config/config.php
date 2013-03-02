@@ -101,6 +101,14 @@ return array(
 						'dryRun' => false,
 				),
 				
+				'image' => array(
+						'class' => 'ext.image.CImageComponent',
+						// GD or ImageMagick
+						'driver' => 'GD',
+						// ImageMagick setup path
+						//'params' => array('directory' => '/opt/local/bin'),
+				),
+				
 				'db' => require('db.php'),
 				
 				'urlManager' => array(

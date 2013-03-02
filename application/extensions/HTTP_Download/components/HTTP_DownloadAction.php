@@ -70,7 +70,6 @@ class HTTP_DownloadAction extends CAction {
 			if(!empty($_GET[$this->fileParam])) {
 				$this->_filePath = implode(DIRECTORY_SEPARATOR, array_filter(explode('/', $_GET[$this->fileParam]), array(new PregMatch($this->pathEscapeRegex), 'match')));
 			} else if(!empty($_GET)) {
-				Yii::app()->loadHelper('Utilities');
 				$this->_filePath = implode(DIRECTORY_SEPARATOR, array_filter(array_flatten($_GET), array(new PregMatch($this->pathEscapeRegex), 'match')));
 			}
 			if(empty($this->_filePath)) {

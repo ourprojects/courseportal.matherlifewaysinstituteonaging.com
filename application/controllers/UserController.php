@@ -142,12 +142,10 @@ class UserController extends ApiController {
 	}
 	
 	public function getActivationUrl($user) {
-		Yii::app()->loadHelper('Utilities');
 		return Yii::app()->createAbsoluteUrl('user/activate/' . urlencode($user->id) . '/' . base64_url_encode($user->session_key));
 	}
 	
 	public function getPasswordResetUrl($user) {
-		Yii::app()->loadHelper('Utilities');
 		return Yii::app()->createAbsoluteUrl('user/passwordReset/' . urlencode($user->id) . '/' . base64_url_encode($user->session_key));
 	}
 	
@@ -165,7 +163,6 @@ class UserController extends ApiController {
 	public function actionActivate($id, $sessionKey) {
 		$user = User::model()->findByPk($id);
 		if($user !== null) {
-			Yii::app()->loadHelper('Utilities');
 			$sessionKey = base64_url_decode($sessionKey);
 			if($user->session_key === $sessionKey) {
 				$user->userActivated = new UserActivated;
@@ -183,7 +180,6 @@ class UserController extends ApiController {
 	public function actionPasswordReset($id, $sessionKey) {
 		$user = User::model()->findByPk($id);
 		if($user !== null) {
-			Yii::app()->loadHelper('Utilities');
 			$sessionKey = base64_url_decode($sessionKey);
 			if($user->session_key === $sessionKey) {
 				$user->setScenario('passwordReset');

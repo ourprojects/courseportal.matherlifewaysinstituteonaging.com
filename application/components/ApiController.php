@@ -46,7 +46,6 @@ abstract class ApiController extends OnlineCoursePortalController {
 	}
 	
 	protected function renderApiResponse($statusCode = 200, $data = array(), $additionalHeaders = null) {
-		Yii::app()->loadHelper('HttpStatusCodes');
 		header("HTTP/1.1 $statusCode " . getHttpMessage($statusCode));
 		
 		if(is_array($additionalHeaders))

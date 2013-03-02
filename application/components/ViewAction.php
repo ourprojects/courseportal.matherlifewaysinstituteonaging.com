@@ -71,7 +71,6 @@ class ViewAction extends CAction {
 			if(!empty($_GET[$this->viewParam])) {
 				$this->_viewPath = implode(DIRECTORY_SEPARATOR, array_filter(explode('/', $_GET[$this->viewParam]), array(new PregMatch($this->pathEscapeRegex), 'match')));
 			} else if(!empty($_GET)) {
-				Yii::app()->loadHelper('Utilities');
 				$this->_viewPath = implode(DIRECTORY_SEPARATOR, array_filter(array_flatten($_GET), array(new PregMatch($this->pathEscapeRegex), 'match')));
 			} else {
 				$this->_viewPath = $this->defaultView;

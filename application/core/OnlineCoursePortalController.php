@@ -115,17 +115,6 @@ abstract class OnlineCoursePortalController extends CController {
 		return $action;
 	}
 
-	/**
-	 * Loads a helper
-	 *
-	 * @access public
-	 * @param string $helper
-	 * @return void
-	 */
-	public function loadHelper($helper) {
-		Yii::app()->loadHelper($helper);
-	}
-
     /**
     * Loads an extension
     *

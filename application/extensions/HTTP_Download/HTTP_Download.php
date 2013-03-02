@@ -27,52 +27,6 @@ require_once 'PEAR.php';
 require_once 'HTTP/Header.php';
 // }}}
 
-// {{{ constants
-/**#@+ Use with HTTP_Download::setContentDisposition() **/
-/**
- * Send data as attachment
- */
-define('HTTP_DOWNLOAD_ATTACHMENT', 'attachment');
-/**
- * Send data inline
- */
-define('HTTP_DOWNLOAD_INLINE', 'inline');
-/**#@-**/
-
-/**#@+ Use with HTTP_Download::sendArchive() **/
-/**
- * Send as uncompressed tar archive
- */
-define('HTTP_DOWNLOAD_TAR', 'TAR');
-/**
- * Send as gzipped tar archive
- */
-define('HTTP_DOWNLOAD_TGZ', 'TGZ');
-/**
- * Send as bzip2 compressed tar archive
- */
-define('HTTP_DOWNLOAD_BZ2', 'BZ2');
-/**
- * Send as zip archive
- */
-define('HTTP_DOWNLOAD_ZIP', 'ZIP');
-/**#@-**/
-
-/**#@+
- * Error constants
- */
-define('HTTP_DOWNLOAD_E_HEADERS_SENT',          -1);
-define('HTTP_DOWNLOAD_E_NO_EXT_ZLIB',           -2);
-define('HTTP_DOWNLOAD_E_NO_EXT_MMAGIC',         -3);
-define('HTTP_DOWNLOAD_E_INVALID_FILE',          -4);
-define('HTTP_DOWNLOAD_E_INVALID_PARAM',         -5);
-define('HTTP_DOWNLOAD_E_INVALID_RESOURCE',      -6);
-define('HTTP_DOWNLOAD_E_INVALID_REQUEST',       -7);
-define('HTTP_DOWNLOAD_E_INVALID_CONTENT_TYPE',  -8);
-define('HTTP_DOWNLOAD_E_INVALID_ARCHIVE_TYPE',  -9);
-/**#@-**/
-// }}}
-
 /**
  * Send HTTP Downloads/Responses.
  *
@@ -90,6 +44,53 @@ define('HTTP_DOWNLOAD_E_INVALID_ARCHIVE_TYPE',  -9);
  */
 class HTTP_Download
 {
+	
+	// {{{ constants
+	/**#@+ Use with HTTP_Download::setContentDisposition( **/
+	/**
+	 * Send data as attachment
+	 */
+	const ATTACHMENT = 'attachment';
+	/**
+	 * Send data inline
+	*/
+	const INLINE = 'inline';
+	/**#@-**/
+	
+	/**#@+ Use with HTTP_Download::sendArchive( **/
+	/**
+	 * Send as uncompressed tar archive
+	*/
+	const TAR = 'TAR';
+	/**
+	 * Send as gzipped tar archive
+	*/
+	const TGZ = 'TGZ';
+	/**
+	 * Send as bzip2 compressed tar archive
+	*/
+	const BZ2 = 'BZ2';
+	/**
+	 * Send as zip archive
+	*/
+	const ZIP = 'ZIP';
+	/**#@-**/
+	
+	/**#@+
+	 * Error constants
+	*/
+	const E_HEADERS_SENT =          -1;
+	const E_NO_EXT_ZLIB =           -2;
+	const E_NO_EXT_MMAGIC =         -3;
+	const E_INVALID_FILE =          -4;
+	const E_INVALID_PARAM =         -5;
+	const E_INVALID_RESOURCE =      -6;
+	const E_INVALID_REQUEST =       -7;
+	const E_INVALID_CONTENT_TYPE =  -8;
+	const E_INVALID_ARCHIVE_TYPE =  -9;
+	/**#@-**/
+	// }}}
+	
     // {{{ protected member variables
     /**
      * Path to file for download
@@ -278,7 +279,7 @@ class HTTP_Download
             if (!method_exists($this, $method)) {
                 return PEAR::raiseError(
                     "Method '$method' doesn't exist.",
-                    HTTP_DOWNLOAD_E_INVALID_PARAM
+                    self::E_INVALID_PARAM
                 );
             }
 
@@ -295,7 +296,7 @@ class HTTP_Download
      * Set path to file for download
      *
      * The Last-Modified header will be set to files filemtime(), actually.
-     * Returns PEAR_Error (HTTP_DOWNLOAD_E_INVALID_FILE) if file doesn't exist.
+     * Returns PEAR_Error (self::E_INVALID_FILE) if file doesn't exist.
      * Sends HTTP 404 or 403 status if $send_error is set to true.
      *
      * @access  public
@@ -317,7 +318,7 @@ class HTTP_Download
             }
             return PEAR::raiseError(
                 "File '$file' not found.",
-                HTTP_DOWNLOAD_E_INVALID_FILE
+                self::E_INVALID_FILE
             );
         }
         if (!is_readable($file)) {
@@ -326,7 +327,7 @@ class HTTP_Download
             }
             return PEAR::raiseError(
                 "Cannot read file '$file'.",
-                HTTP_DOWNLOAD_E_INVALID_FILE
+                self::E_INVALID_FILE
             );
         }
         $this->setLastModified(filemtime($file));
@@ -354,7 +355,7 @@ class HTTP_Download
      * Set resource for download
      *
      * The resource handle supplied will be closed after sending the download.
-     * Returns a PEAR_Error (HTTP_DOWNLOAD_E_INVALID_RESOURCE) if $handle
+     * Returns a PEAR_Error (self::E_INVALID_RESOURCE) if $handle
      * is no valid resource. Set $handle to null if you want to unset this.
      *
      * @access  public
@@ -383,14 +384,14 @@ class HTTP_Download
 
         return PEAR::raiseError(
             "Handle '$handle' is no valid resource.",
-            HTTP_DOWNLOAD_E_INVALID_RESOURCE
+            self::E_INVALID_RESOURCE
         );
     }
 
     /**
      * Whether to gzip the download
      *
-     * Returns a PEAR_Error (HTTP_DOWNLOAD_E_NO_EXT_ZLIB)
+     * Returns a PEAR_Error (self::E_NO_EXT_ZLIB)
      * if ext/zlib is not available/loadable.
      *
      * @access  public
@@ -406,7 +407,7 @@ class HTTP_Download
         if ($gzip && !PEAR::loadExtension('zlib')){
             return PEAR::raiseError(
                 'GZIP compression (ext/zlib) not available.',
-                HTTP_DOWNLOAD_E_NO_EXT_ZLIB
+                self::E_NO_EXT_ZLIB
             );
         }
         $this->gzip = (bool) $gzip;
@@ -480,7 +481,7 @@ class HTTP_Download
      * you set a very low buffer size that the actual file size may grow
      * due to added gzip headers for each sent chunk of the specified size.
      *
-     * Returns PEAR_Error (HTTP_DOWNLOAD_E_INVALID_PARAM) if $size is not
+     * Returns PEAR_Error (self::E_INVALID_PARAM) if $size is not
      * greater than 0 bytes.
      *
      * @access  public
@@ -496,7 +497,7 @@ class HTTP_Download
         if (0 >= $bytes) {
             return PEAR::raiseError(
                 'Buffer size must be greater than 0 bytes ('. $bytes .' given)',
-                HTTP_DOWNLOAD_E_INVALID_PARAM);
+                self::E_INVALID_PARAM);
         }
         $this->bufferSize = abs($bytes);
         return true;
@@ -563,12 +564,12 @@ class HTTP_Download
      * <b>Example:</b>
      * <code>
      * $HTTP_Download->setContentDisposition(
-     *   HTTP_DOWNLOAD_ATTACHMENT,
+     *   self::ATTACHMENT,
      *   'download.tgz'
      * );
      * </code>
      */
-    function setContentDisposition( $disposition    = HTTP_DOWNLOAD_ATTACHMENT,
+    function setContentDisposition( $disposition    = self::ATTACHMENT,
                                     $file_name      = null)
     {
         $cd = $disposition;
@@ -584,7 +585,7 @@ class HTTP_Download
      * Set content type of the download
      *
      * Default content type of the download will be 'application/x-octetstream'.
-     * Returns PEAR_Error (HTTP_DOWNLOAD_E_INVALID_CONTENT_TYPE) if
+     * Returns PEAR_Error (self::E_INVALID_CONTENT_TYPE) if
      * $content_type doesn't seem to be valid.
      *
      * @access  public
@@ -600,7 +601,7 @@ class HTTP_Download
         if (!preg_match('/^[a-z]+\w*\/[a-z]+[\w.;= -]*$/', $content_type)) {
             return PEAR::raiseError(
                 "Invalid content type '$content_type' supplied.",
-                HTTP_DOWNLOAD_E_INVALID_CONTENT_TYPE
+                self::E_INVALID_CONTENT_TYPE
             );
         }
         $this->headers['Content-Type'] = $content_type;
@@ -615,12 +616,12 @@ class HTTP_Download
      *
      * Returns PEAR_Error if:
      *      o if PEAR::MIME_Type failed to detect a proper content type
-     *        (HTTP_DOWNLOAD_E_INVALID_CONTENT_TYPE)
+     *        (self::E_INVALID_CONTENT_TYPE)
      *      o ext/magic.mime is not installed, or not properly configured
-     *        (HTTP_DOWNLOAD_E_NO_EXT_MMAGIC)
+     *        (self::E_NO_EXT_MMAGIC)
      *      o mime_content_type() couldn't guess content type or returned
      *        a content type considered to be bogus by setContentType()
-     *        (HTTP_DOWNLOAD_E_INVALID_CONTENT_TYPE)
+     *        (self::E_INVALID_CONTENT_TYPE)
      *
      * @access  public
      * @return  mixed   Returns true on success or PEAR_Error on failure.
@@ -634,26 +635,26 @@ class HTTP_Download
         if (class_exists('MIME_Type') || @include_once 'MIME/Type.php') {
             if (PEAR::isError($mime_type = MIME_Type::autoDetect($this->file))) {
                 return PEAR::raiseError($mime_type->getMessage(),
-                    HTTP_DOWNLOAD_E_INVALID_CONTENT_TYPE);
+                    self::E_INVALID_CONTENT_TYPE);
             }
             return $this->setContentType($mime_type);
         }
         if (!function_exists('mime_content_type')) {
             return PEAR::raiseError(
                 'This feature requires ext/mime_magic!',
-                HTTP_DOWNLOAD_E_NO_EXT_MMAGIC
+                self::E_NO_EXT_MMAGIC
             );
         }
         if (!is_file(ini_get('mime_magic.magicfile'))) {
             return PEAR::raiseError(
                 'ext/mime_magic is loaded but not properly configured!',
-                HTTP_DOWNLOAD_E_NO_EXT_MMAGIC
+                self::E_NO_EXT_MMAGIC
             );
         }
         if (!$content_type = @mime_content_type($this->file)) {
             return PEAR::raiseError(
                 'Couldn\'t guess content type with mime_content_type().',
-                HTTP_DOWNLOAD_E_INVALID_CONTENT_TYPE
+                self::E_INVALID_CONTENT_TYPE
             );
         }
         return $this->setContentType($content_type);
@@ -663,8 +664,8 @@ class HTTP_Download
      * Send
      *
      * Returns PEAR_Error if:
-     *   o HTTP headers were already sent (HTTP_DOWNLOAD_E_HEADERS_SENT)
-     *   o HTTP Range was invalid (HTTP_DOWNLOAD_E_INVALID_REQUEST)
+     *   o HTTP headers were already sent (self::E_HEADERS_SENT)
+     *   o HTTP Range was invalid (self::E_INVALID_REQUEST)
      *
      * @access  public
      * @return  mixed   Returns true on success or PEAR_Error on failure.
@@ -680,7 +681,7 @@ class HTTP_Download
         if (headers_sent()) {
             return PEAR::raiseError(
                 'Headers already sent.',
-                HTTP_DOWNLOAD_E_HEADERS_SENT
+                self::E_HEADERS_SENT
             );
         }
 
@@ -786,7 +787,7 @@ class HTTP_Download
      *  HTTP_Download::sendArchive(
      *      'myArchive.tgz',
      *      '/var/ftp/pub/mike',
-     *      HTTP_DOWNLOAD_TGZ,
+     *      self::TGZ,
      *      '',
      *      '/var/ftp/pub'
      *  );
@@ -805,7 +806,7 @@ class HTTP_Download
      */
     function sendArchive(   $name,
                             $files,
-                            $type       = HTTP_DOWNLOAD_TGZ,
+                            $type       = self::TGZ,
                             $add_path   = '',
                             $strip_path = '')
     {
@@ -1002,7 +1003,7 @@ class HTTP_Download
         // response with a status of 416 (Requested range not satisfiable).
         if (!$satisfiable) {
             $error = PEAR::raiseError('Error processing range request',
-                                      HTTP_DOWNLOAD_E_INVALID_REQUEST);
+                                      self::E_INVALID_REQUEST);
             return $error;
         }
         //$this->sortChunks($parts);

@@ -44,6 +44,7 @@ class User extends ActiveRecord implements IUserIdentity {
 	public $password_no_hash_repeat = null;
 
 	public function init() {
+		
 		if($this->isNewRecord) {
 			$this->salt = $this->getHasher()->getIV();
 			$this->session_key = $this->getHasher()->generateIV();
