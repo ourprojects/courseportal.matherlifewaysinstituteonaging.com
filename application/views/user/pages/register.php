@@ -6,7 +6,7 @@
 <div id="single-column">
   <h2 class="flowers"><?php echo t('Register'); ?></h2>
   <hr />
-  <p><?php echo t('Please register here to access this site. After completing the fields below, you will be sent a verification email to authenticate your email adddress. If you are a EMPLOYEE at one of the following COMPANIES, YOU MUST use your EMPLOYEE EMAIL address TO REGISTER:'); ?></p>
+  <p><?php echo t('Please register here to access this site. After completing the fields below, you will be sent a verification email to authenticate your email address. If you are a EMPLOYEE at one of the following COMPANIES, YOU MUST use your EMPLOYEE EMAIL address TO REGISTER:'); ?></p>
   <ul>
     <li>IBM</li>
     <li>ExxonMobil</li>
