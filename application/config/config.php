@@ -21,6 +21,7 @@ return array(
 				'application.models.db.*',
 				'application.models.forms.*',
 				'application.components.*',
+				'application.helpers.*',
 				'ext.yii-mail.*',
 				'modules.translate.*',
 		),
