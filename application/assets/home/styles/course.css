@@ -53,3 +53,11 @@ div.course-slide img {
 	-webkit-border-radius: 7px;
 	border-radius: 7px;
 }
+div.course-slide img.normal {
+	float: left;
+	margin-left: 25px;
+	border: none;
+}
+div.course-slide p.link {
+	color: #36F;
+}
