@@ -74,6 +74,7 @@ class User extends ActiveRecord implements IUserIdentity {
 		return array(
 			array('password, salt, session_key, group_id', 'unsafe'),
 			array('email, salt, session_key', 'required', 'except' => 'search'),
+			array('name', 'filter', 'filter' => array($this, 'generateName'), 'on' => 'pushedRegister'),
 			array('name', 'required', 'except' => 'login, search, passwordReset'),
 			array('salt, session_key', 'ext.pbkdf2.PBKDF2validator'),
 				
@@ -96,7 +97,7 @@ class User extends ActiveRecord implements IUserIdentity {
 			array('email', 'unique', 'except' => 'login, search, passwordReset'),
 			array('email', 'loadUserAttributesFromEmail', 'on' => 'login'),
 				
-			array('name', 'length', 'max' => 127),
+			array('name', 'length', 'max' => 63),
 			array('name', 'unique', 'except' => 'login, search, passwordReset'),
 
 			array('password', 'required', 'except' => 'login, search'),
@@ -204,6 +205,15 @@ class User extends ActiveRecord implements IUserIdentity {
 		return new CActiveDataProvider($this, array(
 				'criteria' => $this->getSearchCriteria(),
 		));
+	}
+	
+	public function generateName($name) {
+		if(!isset($name)) {
+			do {
+				$name = uniqid('temp_username_');
+			} while(self::model()->exists('name = :name', array(':name' => $name)));
+		}
+		return $name;
 	}
 
 	/**
