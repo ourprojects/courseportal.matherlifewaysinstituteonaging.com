@@ -69,9 +69,9 @@ class ViewAction extends CAction {
 	public function getRequestedView() {
 		if($this->_viewPath === null) {
 			if(!empty($_GET[$this->viewParam])) {
-				$this->_viewPath = implode(DIRECTORY_SEPARATOR, array_filter(explode('/', $_GET[$this->viewParam]), array(new PregMatch($this->pathEscapeRegex), 'match')));
+				$this->_viewPath = implode(DIRECTORY_SEPARATOR, array_filter(explode('/', $_GET[$this->viewParam]), array(new CPregMatch($this->pathEscapeRegex), 'match')));
 			} else if(!empty($_GET)) {
-				$this->_viewPath = implode(DIRECTORY_SEPARATOR, array_filter(array_flatten($_GET), array(new PregMatch($this->pathEscapeRegex), 'match')));
+				$this->_viewPath = implode(DIRECTORY_SEPARATOR, array_filter(CArray::array_flatten($_GET), array(new CPregMatch($this->pathEscapeRegex), 'match')));
 			} else {
 				$this->_viewPath = $this->defaultView;
 			}

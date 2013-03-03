@@ -142,11 +142,11 @@ class UserController extends ApiController {
 	}
 	
 	public function getActivationUrl($user) {
-		return Yii::app()->createAbsoluteUrl('user/activate/' . urlencode($user->id) . '/' . base64_url_encode($user->session_key));
+		return Yii::app()->createAbsoluteUrl('user/activate/' . urlencode($user->id) . '/' . CBase64::urlEncode($user->session_key));
 	}
 	
 	public function getPasswordResetUrl($user) {
-		return Yii::app()->createAbsoluteUrl('user/passwordReset/' . urlencode($user->id) . '/' . base64_url_encode($user->session_key));
+		return Yii::app()->createAbsoluteUrl('user/passwordReset/' . urlencode($user->id) . '/' . CBase64::urlEncode($user->session_key));
 	}
 	
 	public function sendConfirmationEmail($userModel) {
@@ -163,7 +163,7 @@ class UserController extends ApiController {
 	public function actionActivate($id, $sessionKey) {
 		$user = User::model()->findByPk($id);
 		if($user !== null) {
-			$sessionKey = base64_url_decode($sessionKey);
+			$sessionKey = CBase64::urlDecode($sessionKey);
 			if($user->session_key === $sessionKey) {
 				$user->userActivated = new UserActivated;
 				$user->userActivated->user_id = $user->id;
@@ -180,7 +180,7 @@ class UserController extends ApiController {
 	public function actionPasswordReset($id, $sessionKey) {
 		$user = User::model()->findByPk($id);
 		if($user !== null) {
-			$sessionKey = base64_url_decode($sessionKey);
+			$sessionKey = CBase64::urlDecode($sessionKey);
 			if($user->session_key === $sessionKey) {
 				$user->setScenario('passwordReset');
 				

@@ -20,6 +20,12 @@
 	</div>
 	
 	<div class="row">
+		<?php echo $form->labelEx($user, 'name'); ?>
+		<?php echo $form->textField($user, 'name'); ?>
+		<?php echo $form->error($user, 'name'); ?>
+	</div>
+	
+	<div class="row">
 		<?php echo $form->labelEx($user, 'email'); ?>
 		<?php echo $form->emailField($user, 'email'); ?>
 		<?php echo $form->error($user, 'email'); ?>

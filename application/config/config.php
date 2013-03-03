@@ -32,6 +32,7 @@ return array(
 		        'password'=>'abcd',
 		        'ipFilters'=>array('*'),
 		    ),*/
+			'phpbb',
 			'translate',
 			'surveyor',
 		),
@@ -93,6 +94,11 @@ return array(
 						'loginUrl' => array('user/login'),
 				),
 				
+				'phpBB' => array(
+						'class' => 'phpbb.extensions.phpBB.phpBB',
+						'path' => 'webroot.phpBB',
+				),
+				
 				'mail' => array(
 						'class' => 'ext.yii-mail.YiiMail',
 						'transportType' => 'php',
@@ -109,7 +115,12 @@ return array(
 						//'params' => array('directory' => '/opt/local/bin'),
 				),
 				
+				'file' => array(
+						'class' => 'ext.file.CFile',
+				),
+				
 				'db' => require('db.php'),
+				'dbPhpBB' => require('dbPhpBB.php'),
 				
 				'urlManager' => array(
 						'class'=>'UrlManager',

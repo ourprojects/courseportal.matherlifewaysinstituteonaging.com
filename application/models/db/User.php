@@ -8,6 +8,7 @@
  * @property string $salt
  * @property integer $group_id
  * @property string $email
+ * @property string $name
  * @property string $session_key
  * @property string $created
  *
@@ -44,7 +45,6 @@ class User extends ActiveRecord implements IUserIdentity {
 	public $password_no_hash_repeat = null;
 
 	public function init() {
-		
 		if($this->isNewRecord) {
 			$this->salt = $this->getHasher()->getIV();
 			$this->session_key = $this->getHasher()->generateIV();
@@ -74,6 +74,7 @@ class User extends ActiveRecord implements IUserIdentity {
 		return array(
 			array('password, salt, session_key, group_id', 'unsafe'),
 			array('email, salt, session_key', 'required', 'except' => 'search'),
+			array('name', 'required', 'except' => 'login, search, passwordReset'),
 			array('salt, session_key', 'ext.pbkdf2.PBKDF2validator'),
 				
 			array('password_no_hash', 'required', 'on' => 'pushedRegister, register, login, passwordReset'),
@@ -94,6 +95,9 @@ class User extends ActiveRecord implements IUserIdentity {
 			array('email', 'email'),
 			array('email', 'unique', 'except' => 'login, search, passwordReset'),
 			array('email', 'loadUserAttributesFromEmail', 'on' => 'login'),
+				
+			array('name', 'length', 'max' => 127),
+			array('name', 'unique', 'except' => 'login, search, passwordReset'),
 
 			array('password', 'required', 'except' => 'login, search'),
 			array('password', 'ext.pbkdf2.PBKDF2validator', 'except' => 'login, search'),
@@ -164,6 +168,7 @@ class User extends ActiveRecord implements IUserIdentity {
             'salt' => t('Salt'),
             'group_id' => t('Group ID'),
             'email' => t('Email'),
+			'name' => t('Username'),
             'session_key' => t('Session Key'),
             'created' => t('Created'),
 			'referees' => t('Referees'),
@@ -185,6 +190,7 @@ class User extends ActiveRecord implements IUserIdentity {
 		$criteria->compare('id', $this->id);
 		$criteria->compare('group_id',$this->group_id);
 		$criteria->compare('email', $this->email, true);
+		$criteria->compare('name', $this->name, true);
 		$criteria->compare('created', $this->created, true);
 		
 		return $criteria;
@@ -296,7 +302,7 @@ class User extends ActiveRecord implements IUserIdentity {
 	 * The default implementation simply returns empty string.
 	 */
 	public function getName() {
-		return $this->email;
+		return $this->name;
 	}
 
 	/**

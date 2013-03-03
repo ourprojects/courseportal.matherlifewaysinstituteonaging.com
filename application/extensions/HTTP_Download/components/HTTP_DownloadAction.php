@@ -68,9 +68,9 @@ class HTTP_DownloadAction extends CAction {
 	public function getRequestedFile() {
 		if($this->_filePath === null) {
 			if(!empty($_GET[$this->fileParam])) {
-				$this->_filePath = implode(DIRECTORY_SEPARATOR, array_filter(explode('/', $_GET[$this->fileParam]), array(new PregMatch($this->pathEscapeRegex), 'match')));
+				$this->_filePath = implode(DIRECTORY_SEPARATOR, array_filter(explode('/', $_GET[$this->fileParam]), array(new CPregMatch($this->pathEscapeRegex), 'match')));
 			} else if(!empty($_GET)) {
-				$this->_filePath = implode(DIRECTORY_SEPARATOR, array_filter(array_flatten($_GET), array(new PregMatch($this->pathEscapeRegex), 'match')));
+				$this->_filePath = implode(DIRECTORY_SEPARATOR, array_filter(CArray::array_flatten($_GET), array(new CPregMatch($this->pathEscapeRegex), 'match')));
 			}
 			if(empty($this->_filePath)) {
 				if(!empty($this->defaultFile))
@@ -122,7 +122,7 @@ class HTTP_DownloadAction extends CAction {
 					array(
 						'file' => $this->file,
 						'contenttype' => $this->contentType,
-						'contentdisposition' => array(HTTP_DOWNLOAD_ATTACHMENT, $this->fileName),
+						'contentdisposition' => array(HTTP_Download::ATTACHMENT, $this->fileName),
 					), 
 					false);
 			$this->onAfterDownload(new CEvent($this));

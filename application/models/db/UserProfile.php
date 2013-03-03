@@ -41,8 +41,7 @@ class UserProfile extends ActiveRecord {
      */
     public function rules() {
         return array(
-            array('user_id',
-            		'required', 'except' => 'search'),
+            array('user_id', 'required', 'except' => 'search'),
         	array('firstname, lastname', 'required'),
         	
             array('firstname, lastname, city', 'length', 'max' => 255),
