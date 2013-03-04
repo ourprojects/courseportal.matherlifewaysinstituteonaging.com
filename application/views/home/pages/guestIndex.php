@@ -206,7 +206,6 @@ $this->widget(
       <hr />
       <h4 style="text-align:center;"><?php echo t('THANK YOU! We appreciate your support and interest in Mather LifeWays Institute on Aging.'); ?></h4>
       <br />
-      <br />
       <img src="<?php echo $this->getImagesUrl('116777136r.jpeg'); ?>" alt="<?php echo t('Tutorial'); ?>" />
       <p> <?php echo t('Through conducting applied research, we have developed award-winning, 
 			evidence-based education programs for professionals who serve older adults. Staffed by researchers and educators, 
@@ -214,24 +213,30 @@ $this->widget(
 			educational programming.'); ?> </p>
       <p> <?php echo t('This tutorial is designed to help demonstrate our course model. We will briefly explore dementia, 
 			Alzheimer\'s disease, and how they are related.'); ?> </p>
-      <p> <?php echo t('Memory loss and other signs of mental decline have profound effects on the lives of individuals and families. But we are
-			convinced that a good quality of life can still be maintained for all concerned by learning to make changes in lifestyle and outlook. For
-			many family members, this involves a change in relationships and priorities. At times, the demands may seem overwhelming, but
-			understanding the type of cognitive impairment can be the first step in combating a challenging situation.'); ?> </p>
-      <p> <b><?php echo t('Objectives'); ?></b> </p>
-      <ul>
-        <li><?php echo t('Describe dementia'); ?></li>
-        <li><?php echo t('Describe Alzheimer\'s disease'); ?></li>
-        <li><?php echo t('Describe the relationship between dementia and Alzheimer\'s disease'); ?></li>
-      </ul>
-      
-      <!-- removed <p class="small"> <i> could not find in css folder structure -->
-      <p style="font-size:x-small;"> <?php echo t('Data and research have been developed or collected for this tutorial course by the following organizations in the USA: '); ?> <br />
-        <!-- removed <ul id="developers"> cold not find in css folder structure --> 
-        <!-- removed <li class="small"> cold not find in css folder structure --> 
-        * <a href="http://www.alz.org" target="_blank">Alzheimer's Association </a><br />
-        * <a href="http://matherlifewaysinstituteonaging.com" target="_blank">Mather LifeWays Institute on Aging </a><br />
-        * <a href="http://nih.gov" target="_blank">U.S. Department of Health &amp; Human Services - National Institute on Aging </a></p>
+      <h5><?php echo t('Tutorial Requirements'); ?></h5>
+      <div class="box-white"> 
+        
+        <!-- tutorial requirements start here -->
+        
+        <p><?php echo t('You will need the following applications to successfully complete this tutorial:'); ?></p>
+        <table width="100%" border="0">
+          <tr>
+            <td width="25%"><p><?php echo t('Word Processor'); ?></p>
+              <p><img class="normal" width="64" height="64" src="<?php echo $this-> getImagesUrl('word.png'); ?>" alt="<?php echo t('Word Processor'); ?>" /></p></td>
+            <td width="25%"><p><?php echo t('Spreadsheet Processor'); ?></p>
+              <p><img class="normal" width="64" height="64" src="<?php echo $this-> getImagesUrl('spreadsheet.png'); ?>" alt="<?php echo t('Spreadsheet Processor'); ?>" /></p></td>
+            <td width="25%"><p><?php echo t('Email Client'); ?></p>
+              <p><img class="normal" width="64" height="64" src="<?php echo $this-> getImagesUrl('email.png'); ?>" alt="<?php echo t('(Email Client'); ?>" /></p></td>
+            <td width="25%"><p><a href="http://get.adobe.com/reader/" target="_blank" /><?php echo t('Adobe Reader'); ?></a></p>
+              <p><a href="http://get.adobe.com/reader/" target="_blank" /><img class="normal" width="64" height="64" src="<?php echo $this-> getImagesUrl('pdf-icon.png'); ?>" alt="<?php echo t('Adobe Reader'); ?>" /></a></p></td>
+          </tr>
+        </table>
+        <p><?php echo t('The following software packages are compatible with this Tutorial\'s requirements: '); ?> <a href="http://www.openoffice.org" target="_blank" />Apache Open Office</a>, <a href="http://www.apple.com/iwork/" target="_blank" />Apple iWork</a>, <a href="http://office.microsoft.com" target="_blank" />Microsoft Office</a>.</p>
+      </div>
+      <h5><?php echo t('Tutorial Facilitator'); ?></h5>
+      <p><?php echo t('The Tutorial and/or Course Facilitators can be accessed by clicking on the "Email Client" icon'); ?></p>
+      <img style="float:left;" width="64" height="64" src="<?php echo $this->getImagesUrl('skd182124sdcr.png'); ?>" alt="" />
+      <p><?php echo t('Jon Woodall - is responsible for all MLIA corporate workforce wellness programs related to design, implementation, publication, and evaluation. Additionally, he seeks new grant funding to support or extend current grants related to corporate workforce wellness programs. He is alos one of several online course facilitators.'); ?></p>
       <br />
       <br />
     </div>
@@ -248,6 +253,15 @@ $this->widget(
       <p  style="float:right; margin: 0px 15px;">
         <iframe width="400" height="225" src="http://www.youtube.com/embed/In1IJocVor8?rel=0" frameborder="0" allowfullscreen></iframe>
       </p>
+      <p> <?php echo t('Memory loss and other signs of mental decline have profound effects on the lives of individuals and families. But we are
+			convinced that a good quality of life can still be maintained for all concerned by learning to make changes in lifestyle and outlook. For
+			many family members, this involves a change in relationships and priorities. At times, the demands may seem overwhelming, but
+			understanding the type of cognitive impairment can be the first step in combating a challenging situation.'); ?> </p>
+      <p> <b><?php echo t('Tutorial Objectives'); ?></b> </p>
+      <ul>
+        <li><?php echo t('Describe Alzheimer\'s disease amd dementia'); ?></li>
+        <li><?php echo t('Describe the relationship between Alzheimer\'s disease and dementia'); ?></li>
+      </ul>
       <p> <?php echo t('Alzheimer\'s disease is an irreversible, progressive brain disease that slowly destroys memory, thinking skills, behavior, and
 					eventually even the ability to carry out the simplest tasks of daily living. Symptoms usually develop slowly, worsen over time, and first appear after age 60. Alzheimer\'s disease is the most common form and cause of dementia among older people. Alzheimer\'s has no current cure. The disease is named after Dr. Alois Alzheimer.'); ?> </p>
       
@@ -263,7 +277,7 @@ $this->widget(
         <li><?php echo t('Difficulty completing familiar tasks at home, at work or at leisure'); ?> </li>
       </ul>
       <p class="link"><?php echo t('Alzheimer\'s disease Facts and Figures 2012 (USA / English) - '); ?></p>
-      <p><a href="http://www.alz.org/downloads/facts_figures_2012.pdf" target="_blank"><img class="normal" src="<?php echo $this->GetImagesURL('pdf-icon.png'); ?>" alt="<?php echo t('.pdf icon'); ?>" /></a> </p>
+      <p><a href="http://www.alz.org/downloads/facts_figures_2012.pdf" target="_blank"><img class="normal" width="64" height="64" src="<?php echo $this->GetImagesURL('pdf-icon.png'); ?>" alt="<?php echo t('.pdf icon'); ?>" /></a> </p>
       <p>&nbsp; </p>
       <p>&nbsp;</p>
     </div>
@@ -291,6 +305,22 @@ $this->widget(
       <p> <?php echo t('People with dementia may have problems with short-term memory, keeping track of a purse or wallet, paying bills, planning and
 			preparing meals, remembering appointments or traveling out of the neighborhood. Many dementias are progressive, meaning symptoms start
 			out slowly and gradually get worse.'); ?> </p>
+      <p><?php echo t('Using your word or spreadsheet processor, please search the Interent for additional symptomes and signs of dementia that have not been mentioned here and list them. Once completed, please email your Facilitator the attachment by clicking on the "Email Client" icon.'); ?></p>
+      <div>
+        <p>
+        <ul>
+          <li style="float:left; margin-left:20px; list-style-type:none;" />
+          <img width="64" height="64" src="<?php echo $this->getImagesUrl('word.png'); ?>" />
+          </li>
+          <li style="float:left; margin-left:20px; list-style-type:none;" />
+          <img width="64" height="64" src="<?php echo $this->getImagesUrl('spreadsheet.png'); ?>" />
+          </li>
+          <li style="float:left; margin-left:20px; list-style-type:none;" />
+          <a href="mailto:jwoodall@matherlifeways.com" /> <img width="64" height="64" src="<?php echo $this->getImagesUrl('email.png'); ?>" /></a>
+          </li>
+        </ul>
+        </p>
+      </div>
       <br />
       <br />
     </div>
@@ -400,17 +430,25 @@ $this->widget(
       <h2 class="flowers"> <?php echo t('Conclusion'); ?> </h2>
       <hr />
       <img src="<?php echo $this->getImagesUrl('56677551r.jpeg'); ?>" width="250" height="375" alt="<?php echo t('Thank You'); ?>" />
-      <p> <?php echo t('With such a profound impact on society, business, and potentially on your family, understanding
-					dementia and Alzheimer\'s disease is very important. After participating in this tutorial, you
-					should now be able to understand and explaing what Alzheimer\'s disease and dementia are.'); ?> </p>
+      <p> <?php echo t('With such a profound impact on society, business, and potentially your family, understanding dementia and Alzheimer\'s disease is very important. After participating in this tutorial, you should now understand and be able to explain what Alzheimer\'s disease and dementia are. If necessary, please review this tutorial again.'); ?> </p>
       
       <!-- Certificate of Completion here -->
       
       <h4><?php echo t('Certificate of Completion'); ?></h4>
-      <p><?php echo t('Upon successful completion of each online course, you will have the opportunity to download your custom Certificate of Completion. Click on the icon below to access a example Certificate.'); ?></p>
+      <p><?php echo t('Upon successful completion of each online course, you will have the opportunity to download your custom Certificate of Completion. Once accessed, you will be able to type your name and date into the form-fillable certificate. The course title and seal will automatically be applied to the certificate upon successful participation in all of the available course lessons. Certificates will NOT be accessible by those users who DO NOT participate in all of the available lessons. Click on the icon below to access the example.'); ?></p>
       <a href="<?php echo $this->getImagesUrl('CourseCompletionCertificate.pdf'); ?>" target="_blank"><img class="normal" src="<?php echo $this->getImagesUrl('ArtworkCertificate.png'); ?>" alt="<?php echo t('Certificate'); ?>" /></a>
-      <p> <?php echo t('Thank you for participating in this tutorial course! Now that you have a better idea on what to expect, your next step is to register and
-					begin participating in the various online courses. Please contact us if you have questions or need help.'); ?> </p>
+      <p> <?php echo t('Thank you for participating in this tutorial! Now that you have a better idea on what to expect, your next step is to register and begin participating in the various online courses that are available.'); ?> </p>
+      
+      <!-- removed <p class="small"> <i> could not find in css folder structure --> 
+      <!-- removed <ul id="developers"> cold not find in css folder structure --> 
+      <!-- removed <li class="small"> cold not find in css folder structure -->
+      <p><?php echo t('Please contact us if you have questions or need help.'); ?></p>
+      <p><?php echo t('Data and research have been developed or collected for this tutorial course by the following organizations in the USA:'); ?></p>
+      <ul>
+        <li><a href="http://www.alz.org" target="_blank">Alzheimer's Association </a></li>
+        <li><a href="http://matherlifewaysinstituteonaging.com" target="_blank">Mather LifeWays Institute on Aging </a></li>
+        <li><a href="http://nih.gov" target="_blank">U.S. Department of Health &amp; Human Services - National Institute on Aging </a></li>
+      </ul>
       <br />
       <br />
     </div>
