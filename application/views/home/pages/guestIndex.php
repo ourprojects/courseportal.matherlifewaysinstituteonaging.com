@@ -49,14 +49,10 @@ $this->widget(
   <!-- Clients sidebar here -->
   <div class="box-sidebar one">
     <h3> <?php echo t('Our Clients'); ?> </h3>
-    <div id="customers"> <a href="http://www.ibm.com" target="_blank"><img src="<?php echo $this->getImagesUrl('customers/ibm.png'); ?>" alt="IBM" /> </a> <a href="http://www.ti.com/" target="_blank"><img src="<?php echo $this->getImagesUrl('customers/ti.png'); ?>"
-				alt="Texas Instrument"
-			/> </a> <a href="http://www.merck.com" target="_blank"><img src="<?php echo $this->getImagesUrl('customers/merck.png'); ?>"
+    <div id="customers"> <a href="http://www.ibm.com" target="_blank"><img src="<?php echo $this->getImagesUrl('customers/ibm.png'); ?>" alt="IBM" /> </a> <a href="http://www.merck.com" target="_blank"><img src="<?php echo $this->getImagesUrl('customers/merck.png'); ?>"
 				alt="Merck Pharmaceuticals"
 			/> </a> <a href="http://www.exxonmobil.com" target="_blank"><img src="<?php echo $this->getImagesUrl('customers/exxon.png'); ?>"
 				alt="Exxon"
-			/> </a> <a href="http://www.deloitte.com" target="_blank"><img src="<?php echo $this->getImagesUrl('customers/deloitte.png'); ?>"
-				alt="Deloitte"
 			/> </a> <a href="http://matherlifeways.com/" target="_blank"><img src="<?php echo $this->getImagesUrl('customers/mather.png'); ?>"
 				alt="Mather Lifeways"
 			/> </a> </div>
@@ -268,8 +264,8 @@ $this->widget(
       </ul>
       <p class="link"><?php echo t('Alzheimer\'s disease Facts and Figures 2012 (USA / English) - '); ?></p>
       <p><a href="http://www.alz.org/downloads/facts_figures_2012.pdf" target="_blank"><img class="normal" src="<?php echo $this->GetImagesURL('pdf-icon.png'); ?>" alt="<?php echo t('.pdf icon'); ?>" /></a> </p>
-  <p> &nbsp;  </p>
-  <p>&nbsp;</p>
+      <p>&nbsp; </p>
+      <p>&nbsp;</p>
     </div>
     <div class="buttons"><a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?> </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
   </div>
