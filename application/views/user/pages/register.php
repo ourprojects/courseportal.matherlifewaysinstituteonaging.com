@@ -11,10 +11,7 @@
     <li>IBM</li>
     <li>ExxonMobil</li>
     <li>Merck</li>
-    <li>Texas Instruments</li>
-    <li>Deloitte</li>
-    <li>XTO Energy</li>
-    <li>Schering-Plough</li>
+    <li>Mather LifeWays</li>
   </ul>
   <div class="box-white"> <?php echo $this->renderPartial('forms/register_form', $models); ?></div>
   <p> <?php echo CHtml::link(t('Resend Activation Email'), $this->createUrl('resendActivation')); ?> </p>
