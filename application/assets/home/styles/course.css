@@ -61,3 +61,11 @@ div.course-slide img.normal {
 div.course-slide p.link {
 	color: #36F;
 }
+div.course-slide div.box-white {
+	padding: 10px;
+	background: #fff;
+	margin: 10px 0 30px 10px;
+	border-radius: 5px;
+	box-shadow: 0 0 10px #999;
+	width: 60%;
+}
