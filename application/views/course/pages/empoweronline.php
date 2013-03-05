@@ -32,10 +32,13 @@ foreach(array(
   
   <!-- sidebar #1 here -->
   
-  <div class="box-sidebar one">
-    <h3>Pre-Course Survey</h3>
+    <div class="box-sidebar one">
+    <h3><?php echo t('Pre-Course Survey'); ?></h3>
     <br />
-    <p id="surveynotify"><?php echo t('Complete the Pre-Course survey BEFORE participating. (Profile Page)'); ?></p>
+    <a href="<?php echo $this->createUrl('user/profile'); ?>" target="_self" /><img class="block-center" width="125" height="147" src="<?php echo $this->getImagesUrl('survey_icon2.png'); ?>" alt="" /></a>
+       
+    <hr />
+    <p id="surveynotify"><?php echo t('Complete the<br />Pre-Course Survey'); ?></p>
     <br />
   </div>
   
