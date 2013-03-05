@@ -9,7 +9,7 @@ foreach(array(
 		'.lesson-2', 
 		'.lesson-3', 
 		'.lesson-4', 
-		'.lesson-5') as $lesson)
+		'.lesson-5',) as $lesson)
 	$this->widget(
 			'ext.fancybox.EFancyBox',
 			array('id' => $lesson,
@@ -25,49 +25,60 @@ foreach(array(
 <div class="small-masthead" style="background-image: url(<?php echo $this->getImagesUrl('header-courses.png'); ?>);">
   <h1 class="bottom"><?php echo t($course->title); ?></h1>
 </div>
-
-<!-- SIDEBAR 1 -->
-
-<div class="box-sidebar one">
-  <h3><?php echo t('Pre-Course Survey'); ?></h3>
-  <br />
-  <a href="<?php echo $this->createUrl('user/profile'); ?>"><img class="block-center" width="125" height="147" src="<?php echo $this->getImagesUrl('survey_icon2.png'); ?>" alt="" /></a>
-  <hr />
-  <p id="surveynotify"><?php echo t('Complete the<br />Pre-Course Survey'); ?></p>
-  <br />
-</div>
-
-<!-- SIDEBAR 2 -->
-
-<div class="box-sidebar one">
-  <h3><?php echo t('Statistics'); ?></h3>
-  <br />
-  <img class="block-center" src="<?php echo $this->getImagesUrl('286x352_Grafix_1in5.png'); ?>" />
-  <p><?php echo t('One in five caregivers report having had some degree of training, but continue to seek additional resources.'); ?></p>
-  <br />
-</div>
-
-<!-- SIDEBAR 3 -->
-
-<div class="box-sidebar one">
-  <h3>Alzheimer's Association</h3>
-  <br />
-  <p> <b> <?php echo t('10 Early Signs and Symptoms of Alzheimer\'s'); ?> </b> </p>
-  <br />
-  <a href="https://www.alz.org/alzheimers_disease_10_signs_of_alzheimers.asp" target="_blank"><img class="block-center" src="<?php echo $this->getImagesUrl('alz.png'); ?>" /></a>
-  <hr />
-  <p><?php echo t('Memory loss that disrupts daily life may be a symptom of Alzheimer\'s or another dementia. Alzheimer\'s is a brain disease that causes a slow decline in memory, thinking and reasoning skills. There are 10 warning signs and symptoms. Every individual may experience one or more of these signs in different degrees. If you notice any of them, please see a doctor.'); ?></p>
-</div>
-
-<!-- SIDEBAR 4 -->
-
-<div class="box-sidebar three">
-  <h3>U.S. Dept. of Health &amp; Human Srvc.</h3>
-  <br />
-  <p> <b> <?php echo t('2011 - 2012 Alzheimer\'s Disease Progress Report'); ?> </b> </p>
-  <p><a href="http://www.nia.nih.gov/alzheimers/publication/2011-2012-alzheimers-disease-progress-report" target="_blank"><img class="block-center" src="<?php echo $this->getImagesUrl('adpr-front.png'); ?>" /></a></p>
-  <p><?php echo t('A summary of Alzheimer\'s disease research, infrastructure, and funding supported by the NIH.'); ?> </p>
-</div>
+<div id="sidebar"> 
+  
+  <!-- sidebar #1 here -->
+  <div class="box-sidebar one">
+    <h3><?php echo t('Pre-Course Survey'); ?></h3>
+    <br />
+    <p><?php echo t('Please complete the Pre-Course Survey before beginning this course. Your response are anonymous and are used to help improve your experience.'); ?></p>
+    <a href="<?php echo $this->createUrl('user/profile'); ?>" target="_self" /><img class="block-center" width="96" height="113" src="<?php echo $this->getImagesUrl('survey_icon2.png'); ?>" alt="" /></a>
+    <hr />
+    <p id="surveynotify"><?php echo t('Complete the<br />Pre-Course Survey'); ?></p>
+    <br />
+  </div>
+  
+  <!-- sidebar #2 here -->
+  <div class="box-sidebar one">
+    <h3><?php echo t('Course Requirements'); ?></h3>
+    <p><b><?php echo t('Required Applications'); ?></b></p>
+    <p><a href="http://get.adobe.com/flashplayer/" target="_blank" /><img src="<?php echo $this->getImagesUrl('160x41_get_flashplayer.gif'); ?>" alt="<?php echo t('Adobe Flash Player'); ?>" /></a></p>
+    <p><a href="http://get.adobe.com/shockwave/" target="_blank" /><img src="<?php echo $this->getImagesUrl('get_shockwave-tn.gif'); ?>" alt="<?php echo t('Adobe ShockWave Player'); ?>" /></a></p>
+    <p><a href="http://get.adobe.com/reader/" target="_blank" /><img src="<?php echo $this->getImagesUrl('get_adobe_reader.png'); ?>" alt="<?php echo t('Adobe Reader'); ?>" /></a></p>
+    <hr />
+    <p><b><?php echo t('Required Software Suites'); ?></b></p>
+    <p><a href="http://office.microsoft.com" target="_blank" /> <?php echo t('Microsoft Office'); ?></a></p>
+    <p> <?php echo t('- OR - '); ?></p>
+    <p><a href="http://www.apple.com/iwork/" target="_blank" /><?php echo t('Apple iWork'); ?></a></p>
+    <p> <?php echo t('- OR - '); ?></p>
+    <p><a href="http://www.openoffice.org" target="_blank" /><?php echo t('Apache OpenOffice'); ?></a></p>
+  </div>
+  
+  <!-- SIDEBAR 3 -->
+  
+  <div class="box-sidebar one">
+    <h3><?php echo t('Statistics'); ?></h3>
+    <img width="50" height="50" src="<?php echo $this->getImagesUrl('286x352_Grafix_1in5.png'); ?>" />
+    <p><?php echo t('One in five caregivers report having had some degree of training, but continue to seek additional resources.'); ?></p>
+  </div>
+  
+  <!-- SIDEBAR 4 -->
+  
+  <div class="box-sidebar one">
+    <h3>Alzheimer's Association</h3>
+    <p> <b> <?php echo t('10 Early Signs and Symptoms of Alzheimer\'s'); ?> </b> </p>
+    <a href="https://www.alz.org/alzheimers_disease_10_signs_of_alzheimers.asp" target="_blank"><img width="50" height="50" src="<?php echo $this->getImagesUrl('alz.png'); ?>" /></a>
+    <p><?php echo t('Memory loss that disrupts daily life may be a symptom of Alzheimer\'s or another dementia. Alzheimer\'s is a brain disease that causes a slow decline in memory, thinking and reasoning skills. There are 10 warning signs and symptoms. Every individual may experience one or more of these signs in different degrees. If you notice any of them, please see a doctor.'); ?></p>
+  </div>
+  
+  <!-- SIDEBAR 5 -->
+  
+  <div class="box-sidebar one">
+    <h3>U.S. Dept. of Health &amp; Human Srvc.</h3>
+    <p> <b> <?php echo t('2011 - 2012 Alzheimer\'s Disease Progress Report'); ?> </b> </p>
+    <p><a href="http://www.nia.nih.gov/alzheimers/publication/2011-2012-alzheimers-disease-progress-report" target="_blank"><img width="50" height="50" src="<?php echo $this->getImagesUrl('adpr-front.png'); ?>" /></a></p>
+    <p><?php echo t('A summary of Alzheimer\'s disease research, infrastructure, and funding supported by the NIH.'); ?> </p>
+  </div>
 </div>
 
 <!-- start main content section here -->
@@ -93,19 +104,6 @@ foreach(array(
   <br />
   <br />
   <div class="box-white">
-    <h4><?php echo t('Length'); ?></h4>
-    <p><?php echo t('* Participant Access - 1 Year'); ?><br />
-      <?php echo t('* Recommended Completion - 8 Weeks'); ?><br />
-      <?php echo t('* Weekly Commitment - 1 Lesson @ 2 to 3 Hours'); ?></p>
-  </div>
-  <div class="box-white">
-    <h4> <?php echo t('Resources'); ?></h4>
-    <p><?php echo t('Please use these listed resources in the completion of this online course. Pleaes contact your instructor or the program director if you have additional resources you would like to see added here.'); ?></p>
-    <p><a href="http://www.alz.org" target="_blank">Alzheimer's Association</a></p>
-    <p><a href="http://www.nih.gov" target="_blank">National Intitute on Health (NIH)</a></p>
-    <p><a href="http://www.webmd.com" target="_blank">WebMD website</a></p>
-  </div>
-  <div class="box-white">
     <div id="developers">
       <h4><?php echo t('Facilitators &amp; Course Developers'); ?></h4>
       <h5><?php echo t('Content Designer:'); ?></a></h5>
@@ -117,11 +115,11 @@ foreach(array(
       <?php echo t('Mr. Woodall is responsible for all MLIA corporate workforce wellness programs related to design, implementation, publication, and evaluation. Additionally, he seeks new grant funding to support or extend current grants related to corporate workforce wellness programs. '); ?>
       </p>
       <h5><?php echo t('Facilitator: '); ?><a href="mailto:jwoodall@matherlifeways.com">Jon Woodall</a></h5>
-      <?php echo t('Mr. Woodall is responsible for all MLIA corporate workforce wellness programs related to design, implementation, publication, and evaluation. Additionally, he seeks new grant funding to support or extend current grants related to corporate workforce wellness programs. '); ?>
-      </p>
+      <p><?php echo t('Mr. Woodall is responsible for all MLIA corporate workforce wellness programs related to design, implementation, publication, and evaluation. Additionally, he seeks new grant funding to support or extend current grants related to corporate workforce wellness programs. '); ?> </p>
     </div>
   </div>
 </div>
+
 <!-- start course content here -->
 <div id="course" class="hide">
   <div id="lesson-1">
