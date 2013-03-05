@@ -204,35 +204,29 @@ $this->widget(
     <div class="content">
       <h2 class="flowers"> <?php echo t('Tutorial'); ?> </h2>
       <hr />
-      <h4 style="text-align:center;"><?php echo t('THANK YOU! We appreciate your support and interest in Mather LifeWays Institute on Aging.'); ?></h4>
-      <br />
       <img src="<?php echo $this->getImagesUrl('116777136r.jpeg'); ?>" alt="<?php echo t('Tutorial'); ?>" />
-      <p> <?php echo t('Through conducting applied research, we have developed award-winning, 
+      <h4><?php echo t('THANK YOU!'); ?></h4>
+      <p><?php echo t('We appreciate your support and interest in Mather LifeWays Institute on Aging. Through conducting applied research, we have developed award-winning, 
 			evidence-based education programs for professionals who serve older adults. Staffed by researchers and educators, 
 			we are a global resource for information about wellness, successful aging service innovations, and 
 			educational programming.'); ?> </p>
       <p> <?php echo t('This tutorial is designed to help demonstrate our course model. We will briefly explore dementia, 
 			Alzheimer\'s disease, and how they are related.'); ?> </p>
       <h5><?php echo t('Tutorial Requirements'); ?></h5>
-      <div class="box-white"> 
-        
-        <!-- tutorial requirements start here -->
-        
-        <p><?php echo t('You will need the following applications to successfully complete this tutorial:'); ?></p>
-        <table width="100%" border="0">
-          <tr>
-            <td width="25%"><p><?php echo t('Word Processor'); ?></p>
-              <p><img class="normal" width="64" height="64" src="<?php echo $this-> getImagesUrl('word.png'); ?>" alt="<?php echo t('Word Processor'); ?>" /></p></td>
-            <td width="25%"><p><?php echo t('Spreadsheet Processor'); ?></p>
-              <p><img class="normal" width="64" height="64" src="<?php echo $this-> getImagesUrl('spreadsheet.png'); ?>" alt="<?php echo t('Spreadsheet Processor'); ?>" /></p></td>
-            <td width="25%"><p><?php echo t('Email Client'); ?></p>
-              <p><img class="normal" width="64" height="64" src="<?php echo $this-> getImagesUrl('email.png'); ?>" alt="<?php echo t('(Email Client'); ?>" /></p></td>
-            <td width="25%"><p><a href="http://get.adobe.com/reader/" target="_blank" /><?php echo t('Adobe Reader'); ?></a></p>
-              <p><a href="http://get.adobe.com/reader/" target="_blank" /><img class="normal" width="64" height="64" src="<?php echo $this-> getImagesUrl('pdf-icon.png'); ?>" alt="<?php echo t('Adobe Reader'); ?>" /></a></p></td>
-          </tr>
-        </table>
-        <p><?php echo t('The following software packages are compatible with this Tutorial\'s requirements: '); ?> <a href="http://www.openoffice.org" target="_blank" />Apache Open Office</a>, <a href="http://www.apple.com/iwork/" target="_blank" />Apple iWork</a>, <a href="http://office.microsoft.com" target="_blank" />Microsoft Office</a>.</p>
-      </div>
+      
+      <!-- tutorial requirements start here -->
+      
+      <p><?php echo t('You will need the following applications to successfully complete this tutorial:'); ?></p>
+      <p>
+      <ul>
+        <li style="display:inline"> <img class="normal" width="64" height="64" src="<?php echo $this-> getImagesUrl('word.png'); ?>" alt="<?php echo t('Word Processor'); ?>" /></li>
+        <li style="display:inline"> <img class="normal" width="64" height="64" src="<?php echo $this-> getImagesUrl('spreadsheet.png'); ?>" alt="<?php echo t('Spreadsheet Processor'); ?>" /></li>
+        <li style="display:inline"> <a href="mailto:jwoodall@matherlifeways.com" /><img class="normal" width="64" height="64" src="<?php echo $this-> getImagesUrl('email.png'); ?>" alt="<?php echo t('(Email Client'); ?>" /></a></li>
+        <li style="display:inline"> <a href="http://get.adobe.com/reader/" target="_blank" /> <img class="normal" width="64" height="64" src="<?php echo $this-> getImagesUrl('pdf-icon.png'); ?>" alt="<?php echo t('Adobe Reader'); ?>" /></a></li>
+      </ul>
+      </p><br /><br />
+      <br />
+      <p><?php echo t('The following software packages are compatible with this Tutorial\'s requirements: '); ?> <a href="http://www.openoffice.org" target="_blank" />Apache Open Office</a>, <a href="http://www.apple.com/iwork/" target="_blank" />Apple iWork</a>, <a href="http://office.microsoft.com" target="_blank" />Microsoft Office</a>.</p>
       <h5><?php echo t('Tutorial Facilitator'); ?></h5>
       <p><?php echo t('The Tutorial and/or Course Facilitators can be accessed by clicking on the "Email Client" icon'); ?></p>
       <img style="float:left;" width="64" height="64" src="<?php echo $this->getImagesUrl('skd182124sdcr.png'); ?>" alt="" />
@@ -293,7 +287,7 @@ $this->widget(
       <img src="<?php echo $this->getImagesUrl('78634274r.jpeg'); ?>" alt="<?php echo t('Tutorial'); ?>" />
       <p> <?php echo t('Dementia refers to an acquired and progressive loss of mental functions due to a brain disorder. Dementia is not a specific
 			disease. It is an overall term that describes a wide range of symptoms associated with a decline in memory or other thinking skills 
-			severe enough to reduce a persons ability to perform everyday activities. A medical diagnosis is required to determine the underlying 			cause or causes of symptoms.'); ?> </p>
+			severe enough to reduce a person\'s ability to perform everyday activities. A medical diagnosis is required to determine the underlying 			cause or causes of symptoms.'); ?> </p>
       <p> <b><?php echo t('Symptoms and signs of dementia'); ?></b> </p>
       <p> <?php echo t('While symptoms of dementia can vary greatly, at least two of the following core mental functions, amongst others, must be significantly impaired to be
 			considered dementia:'); ?> </p>
@@ -305,22 +299,20 @@ $this->widget(
       <p> <?php echo t('People with dementia may have problems with short-term memory, keeping track of a purse or wallet, paying bills, planning and
 			preparing meals, remembering appointments or traveling out of the neighborhood. Many dementias are progressive, meaning symptoms start
 			out slowly and gradually get worse.'); ?> </p>
-      <p><?php echo t('Using your word or spreadsheet processor, please search the Interent for additional symptomes and signs of dementia that have not been mentioned here and list them. Once completed, please email your Facilitator the attachment by clicking on the "Email Client" icon.'); ?></p>
-      <div>
-        <p>
-        <ul>
-          <li style="float:left; margin-left:20px; list-style-type:none;" />
-          <img width="64" height="64" src="<?php echo $this->getImagesUrl('word.png'); ?>" />
-          </li>
-          <li style="float:left; margin-left:20px; list-style-type:none;" />
-          <img width="64" height="64" src="<?php echo $this->getImagesUrl('spreadsheet.png'); ?>" />
-          </li>
-          <li style="float:left; margin-left:20px; list-style-type:none;" />
-          <a href="mailto:jwoodall@matherlifeways.com" /> <img width="64" height="64" src="<?php echo $this->getImagesUrl('email.png'); ?>" /></a>
-          </li>
-        </ul>
-        </p>
-      </div>
+      <p><?php echo t('Using your word or spreadsheet processor, please search the Internet for additional symptoms and signs of dementia that have not been mentioned here and list them. Once completed, please email your Facilitator the attachment by clicking on the "Email Client" icon.'); ?></p>
+      <p>
+      <ul>
+        <li style="display: list-item; list-style-type:none;" />
+        <img class="normal" width="64" height="64" src="<?php echo $this->getImagesUrl('word.png'); ?>" />
+        </li>
+        <li style="display:list-item; list-style-type:none; margin-left:20px;" />
+        <img class="normal" width="64" height="64" src="<?php echo $this->getImagesUrl('spreadsheet.png'); ?>" />
+        </li>
+        <li style="display:list-item; list-style-type:none; margin-left:20px;" />
+        <a href="mailto:jwoodall@matherlifeways.com" /> <img class="normal" width="64" height="64" src="<?php echo $this->getImagesUrl('email.png'); ?>" /></a>
+        </li>
+      </ul>
+      </p>
       <br />
       <br />
     </div>
@@ -442,13 +434,7 @@ $this->widget(
       <!-- removed <p class="small"> <i> could not find in css folder structure --> 
       <!-- removed <ul id="developers"> cold not find in css folder structure --> 
       <!-- removed <li class="small"> cold not find in css folder structure -->
-      <p><?php echo t('Please contact us if you have questions or need help.'); ?></p>
-      <p><?php echo t('Data and research have been developed or collected for this tutorial course by the following organizations in the USA:'); ?></p>
-      <ul>
-        <li><a href="http://www.alz.org" target="_blank">Alzheimer's Association </a></li>
-        <li><a href="http://matherlifewaysinstituteonaging.com" target="_blank">Mather LifeWays Institute on Aging </a></li>
-        <li><a href="http://nih.gov" target="_blank">U.S. Department of Health &amp; Human Services - National Institute on Aging </a></li>
-      </ul>
+      <p><?php echo t('Please contact us if you have questions or need help. Data and research have been developed or collected for this tutorial course by the following organizations in the USA: '); ?> <a href="http://www.alz.org" target="_blank">Alzheimer's Association</a>, <a href="http://matherlifewaysinstituteonaging.com" target="_blank">Mather LifeWays Institute on Aging</a>, <a href="http://nih.gov" target="_blank">U.S. Department of Health &amp; Human Services - National Institute on Aging</a>.</p>
       <br />
       <br />
     </div>
