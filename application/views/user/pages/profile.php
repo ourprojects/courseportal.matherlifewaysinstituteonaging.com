@@ -29,7 +29,7 @@ $this->widget(
     <h3><?php echo t('Surveys'); ?></h3>
     <br />
     <p><?php echo t('Our surveys are designed to help us obtain information that help with decision-making. Our goal is to help better educate our participants by creating a client touch-point, a feedback system, and means to better understanding the shifting needs of the field.'); ?></p>
-    <img class="block-center" width="125" height="147" src="<?php echo $this->getImagesUrl('survey_icon2.png'); ?>" alt="" />
+    <img class="block-center" width="96" height="113" src="<?php echo $this->getImagesUrl('survey_icon2.png'); ?>" alt="" />
     <hr />
     <ul>
       <?php 
