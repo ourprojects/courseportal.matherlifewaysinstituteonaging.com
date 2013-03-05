@@ -29,25 +29,31 @@ foreach(array(
 </div>
 <div id="sidebar"> 
   
-  <!-- SIDEBAR 1 -->
-  
+  <!-- sidebar #1 here -->
   <div class="box-sidebar one">
-    <h3>Pre-Course Survey</h3>
+    <h3><?php echo t('Pre-Course Survey'); ?></h3>
     <br />
-    <p id="surveynotify"><?php echo t('Complete the Pre-Course survey BEFORE participating. (Profile Page)'); ?></p>
+    <p><?php echo t('Please complete the Pre-Course Survey before beginning this course. Your response are anonymous and are used to help improve your experience.'); ?></p>
+    <a href="<?php echo $this->createUrl('user/profile'); ?>" target="_self" /><img class="block-center" width="96" height="113" src="<?php echo $this->getImagesUrl('survey_icon2.png'); ?>" alt="" /></a>
+    <hr />
+    <p id="surveynotify"><?php echo t('Complete the<br />Pre-Course Survey'); ?></p>
     <br />
   </div>
   
-  <!-- SIDEBAR 2 -->
-  
+  <!-- sidebar #2 here -->
   <div class="box-sidebar one">
-    <h3>National Institute of Health (NIH)</h3>
-    <p style="text-align:center;"><b><a href="http://trans.nih.gov/CEHP/" target="_blank"><?php echo t('Cognitive and Emotioinal Health Project: The Healthy Brain'); ?></a></b></p>
-    <br />
-    <img class="block-center" src="<?php echo $this->getImagesUrl('nihlogo.gif'); ?>" />
+    <h3><?php echo t('Course Requirements'); ?></h3>
+    <p><b><?php echo t('Required Applications'); ?></b></p>
+    <p><a href="http://get.adobe.com/flashplayer/" target="_blank" /><img src="<?php echo $this->getImagesUrl('160x41_get_flashplayer.gif'); ?>" alt="<?php echo t('Adobe Flash Player'); ?>" /></a></p>
+    <p><a href="http://get.adobe.com/shockwave/" target="_blank" /><img src="<?php echo $this->getImagesUrl('get_shockwave-tn.gif'); ?>" alt="<?php echo t('Adobe ShockWave Player'); ?>" /></a></p>
+    <p><a href="http://get.adobe.com/reader/" target="_blank" /><img src="<?php echo $this->getImagesUrl('get_adobe_reader.png'); ?>" alt="<?php echo t('Adobe Reader'); ?>" /></a></p>
     <hr />
-    <p><?php echo t('Three Institutes, the National Institute on Aging (NIA), the National Institute of Mental Health (NIMH) and the National Institute of Neurological Disorders and Stroke (NINDS), have joined efforts to launch a new trans-NIH initiative, Cognitive and Emotional Health Project: The Healthy Brain.'); ?>
-    <p><?php echo t('There are now about 45 million Americans over age 60 and 117 million over age 40. Current evidence indicates that a large number of them are at substantial risk for cognitive impairment from many causes as they age. The same is true for emotional disorders.'); ?></p>
+    <p><b><?php echo t('Required Software Suites'); ?></b></p>
+    <p><a href="http://office.microsoft.com" target="_blank" /> <?php echo t('Microsoft Office'); ?></a></p>
+    <p> <?php echo t('- OR - '); ?></p>
+    <p><a href="http://www.apple.com/iwork/" target="_blank" /><?php echo t('Apple iWork'); ?></a></p>
+    <p> <?php echo t('- OR - '); ?></p>
+    <p><a href="http://www.openoffice.org" target="_blank" /><?php echo t('Apache OpenOffice'); ?></a></p>
   </div>
   
   <!-- SIDEBAR 2 -->
@@ -57,7 +63,7 @@ foreach(array(
     <p style="text-align:center;"><b><a href="http://www.pewinternet.org/Reports/2002/Vital-Decisions-A-Pew-Internet-Health-Report/Main-Report.aspx?view=all" target="_blank"><?php echo t('Main Report: The search for online medical help'); ?></a></b></p>
     <p><img class="block-center" src="<?php echo $this->getImagesUrl('pew.png'); ?>" /></p>
     <hr />
-    <p><?php echo t('Vital Decisions: A Pew Internet Health Report'); ?></p>
+    <p><b><?php echo t('Vital Decisions: A Pew Internet Health Report'); ?></b></p>
     <p><?php echo t('Tens of millions of Americans turn to the Internet when they need help with health problems.  Health professionals are often apprehensive about the reliability of online health information and wonder how consumers can possibly find good advice in the untamed wilderness of the Internet.'); ?></p>
     <p><?php echo t('In an environment where any quack can create a credible-looking Web site and promote all manner of questionable “cures,” how can Internet users know what information will most benefit them? What signals of quality should they seek?'); ?></p>
   </div>
@@ -91,6 +97,28 @@ foreach(array(
       <?php echo t('* Recommended Completion - 5 Weeks'); ?><br />
       <?php echo t('* Weekly Commitment - 1 Lesson @ 2 to 3 Hours'); ?></p>
   </div>
+  
+  <!-- 'Key' white box starts here -->
+  
+  <div class="box-white">
+    <h4><?php echo t('Key'); ?></h4>
+    <p><?php echo t('The following Key will help you navigate the course and it\'s requirements.'); ?></p>
+    <br />
+    <table width="100%" border="0">
+      <tr>
+        <td width="20%"><?php echo t('Word Processor'); ?><br />
+          <img width="64" height="64" src="<?php echo $this->getImagesUrl('word.png'); ?>" alt="<?php echo t('Word Processor'); ?>" /></td>
+        <td width="20%"><?php echo t('Spreadsheet Processor'); ?><br />
+          <img width="64" height="64" src="<?php echo $this->getImagesUrl('spreadsheet.png'); ?>" alt="<?php echo t('Spreadsheet Processor'); ?>" /></td>
+        <td width="20%"><?php echo t('Email Client'); ?><br />
+          <img width="64" height="64" src="<?php echo $this->getImagesUrl('email.png'); ?>" alt="<?php echo t('Email Client'); ?>" /></td>
+        <td width="20%"><?php echo t('Adobe Reader'); ?><br />
+          <img width="64" height="64" src="<?php echo $this->getImagesUrl('pdf-icon.png'); ?>" alt="<?php echo t('Adobe Reader'); ?>" /></td>
+        <td width="20%"><?php echo t('You Tube'); ?><br />
+          <img width="64" height="64" src="<?php echo $this->getImagesUrl('YouTubeIcon.png'); ?>" alt="<?php echo t('You Tube'); ?>" /></td>
+      </tr>
+    </table>
+  </div>
   <div class="box-white">
     <h4> <?php echo t('Resources'); ?></h4>
     <p><?php echo t('Please use these listed resources in the completion of this online course. Pleaes contact your instructor or the program director if you have additional resources you would like to see added here.'); ?></p>
@@ -98,7 +126,6 @@ foreach(array(
     <p><a href="http://www.nih.gov" target="_blank">National Intitute on Health (NIH)</a></p>
     <p><a href="http://www.webmd.com" target="_blank">WebMD website</a></p>
     <p><a href="http://www.sharpbrains.com" target="_blank">SharpBrains</a></p>
-    <p><a href="#" target="_blank">Other</a></p>
   </div>
   <div class="box-white">
     <h4><?php echo t('Facilitators &amp; Course Developers'); ?></h4>
@@ -208,12 +235,12 @@ foreach(array(
       <div class="content">
         <h2 class="flowers"><?php echo t('Dementia'); ?></h2>
         <hr />
-         <img src="<?php echo $this->getImagesUrl('SpencerLesson1Slides/SpencerLesson1Slide5.png'); ?>" width="500px" height="243px" />
+        <img src="<?php echo $this->getImagesUrl('SpencerLesson1Slides/SpencerLesson1Slide5.png'); ?>" width="500px" height="243px" />
         <p><?php echo t('People often ask, “what is the difference between Alzheimer’s disease and dementia?”  Before we get too far, we should clarify that Alzheimer’s disease is a TYPE of dementia.  Dementia is an umbrella term used to describe any type of stable decline in cognitive abilities, severe enough to interrupt a person’s ability to function independently.  Dementia describes the observable symptoms of a brain disease or injury.'); ?></p>
         <p><?php echo t('Alzheimer’s is a disease process – a medical condition – that causes the cognitive changes that produce dementia.  There are many other medical conditions that cause dementia as well.'); ?></p>
         <p><?php echo t('The second most common disease that causes dementia is what we call cerebrovascular disease, which causes vascular dementia.  This includes any type of injury to the brain caused by a problem with the brain’s blood supply, most notably a stroke.  There are varying degrees of strokes, however.  You may have heard of TIA’s (or Transient Ischemic Attacks) or mini strokes.  The stroke process can also occur without any identifiable symptoms, causing what we call silent strokes.  You will learn more about these in the next session.'); ?></p>
         <p><?php echo t('Head trauma, Parkinson’s disease, Huntington Disease, Pick’s disease, infections such as HIV and CJD (Creutzfeldt-Jakob Disease – the human form of mad cow disease), substance abuse and environmental toxins can also cause dementia.'); ?></p>
-        </div>
+      </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
     </div>
     
@@ -225,7 +252,7 @@ foreach(array(
         <hr />
         <img src="<?php echo $this->getImagesUrl('SpencerLesson1Slides/SpencerLesson1Slide6.png'); ?>" width="500px" height="276px" />
         <p><?php echo t('We are also learning that most people who develop dementia tend to have more than one type of risk factor and may even have more than one disease process affecting their brains.  It may also be the case that one disease process, such as diabetes, may play a role in the formation of another disease process such as Alzheimer’s.  We know that hypertension (high blood pressure) is a common result of the pressure that diabetes puts on the vascular system.  We still have a lot to learn in this area, but we mention it here because there are a lot of things that we can do to lessen the effects of many of these disease conditions on our aging brains, which may help us ward off or delay the clinical symptoms of dementia.'); ?></p>
-         </div>
+      </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
     </div>
     
@@ -329,7 +356,7 @@ foreach(array(
       <div class="content">
         <h2 class="flowers"><?php echo t('Peak Performance!'); ?></h2>
         <hr />
-          <img src="<?php echo $this->getImagesUrl('SpencerLesson1Slides/SpencerLesson1Slide14.png'); ?>" width="500px" height="276px" /> 
+        <img src="<?php echo $this->getImagesUrl('SpencerLesson1Slides/SpencerLesson1Slide14.png'); ?>" width="500px" height="276px" />
         <p><?php echo t('We’ve talked a lot today about protecting your brain from dementia, but this program will also focus on helping you get the most out of your brain today, which can help you both at work and at home.  You will be learning strategies to remember things better, to be more organized, to pay closer attention and to regulate your emotions.  Some of the strategies will come to you directly through the memory tips that you will learn in sessions 2-7 and the lifestyle demonstrations we will present each week.  Other strategies will come to you indirectly as you practice the exercises included in both the program homework assignments and the brain training software we are providing.'); ?></p>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
@@ -341,14 +368,14 @@ foreach(array(
       <div class="content">
         <h2 class="flowers"><?php echo t('Let’s Give Ourselves a Break'); ?></h2>
         <hr />
-         <img src="<?php echo $this->getImagesUrl('SpencerLesson1Slides/SpencerLesson1Slide15.png'); ?>" width="500px" height="276px" /> 
+        <img src="<?php echo $this->getImagesUrl('SpencerLesson1Slides/SpencerLesson1Slide15.png'); ?>" width="500px" height="276px" />
         <p><?php echo t('Before we get into the specifics of what you will be doing for the next few weeks, let’s take a moment to give ourselves a little break. Not an actual break from the session, but rather let’s take a moment to go over some myths and misconceptions that older adults tend to have about their memories.'); ?></p>
         <p><?php echo t('Because dementia is such a great concern among older adults, many people forget that it’s normal to forget things. You’ve been forgetting things all your life! It’s just that when you were 25 years old, you didn’t care so much because you didn’t interpret the forgetting as a signal that you may be on the path to losing your independence.'); ?></p>
         <p><?php echo t('It is also a myth that people can remember everything.  You may have heard of these “memory champions” who can remember several decks of cards just by seeing them flipped over one at a time or about people with photographic memories.  Well the memory champions train like professional athletes, hours on end, day after day for months to develop their craft, but it doesn’t really seem to help them get better at much of anything else.  And most of the people with photographic memories are savants whose incredible gifts are often accompanied by severe handicaps in other areas of day-to-day living.'); ?></p>
         <p><?php echo t('So let’s all just have reasonable expectations of our memories.  If you forget something, try and relax.  That may even help you remember since, as you will learn in a few weeks, being upset can arrest our thinking.'); ?></p>
         <p><?php echo t('Over the next few weeks you will be working on some techniques to remember things better, and with a fair amount of effort and practice you can improve your thinking, but there is no magic bullet, no miracle cure, and no special pill to give us perfect thinking.'); ?></p>
         <p><?php echo t('Nor is it likely that your memory is really as bad as you think.  On that note, however, if you really are concerned about your thinking, we encourage you to talk with your doctor if you have not done so already.'); ?></p>
-       </div>
+      </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
     </div>
     
@@ -358,10 +385,10 @@ foreach(array(
       <div class="content">
         <h2 class="flowers"><?php echo t('Program Format'); ?></h2>
         <hr />
-         <img src="<?php echo $this->getImagesUrl('SpencerLesson1Slides/SpencerLesson1Slide15.png'); ?>" width="500px" height="276px" /> 
+        <img src="<?php echo $this->getImagesUrl('SpencerLesson1Slides/SpencerLesson1Slide15.png'); ?>" width="500px" height="276px" />
         <p><?php echo t('During each of the next few weeks, you will learn the details of how each of these five areas of wellness affect your risk for dementia.  You will learn the science supporting the connection between your brain health and each area of wellness.'); ?></p>
         <p><?php echo t('We aim to help you identify areas of your lifestyle where you could increase your investment in your Cognitive Reserve, diversifying your “Brain Portfolio.”'); ?></p>
-       </div>
+      </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
     </div>
     
