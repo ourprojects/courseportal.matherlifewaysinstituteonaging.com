@@ -1,5 +1,5 @@
 <?php
-$this->breadcrumbs = array(t('Profile')); 
+$this->breadcrumbs = array(t('Profile & Surveys')); 
 $this->widget(
 		'ext.fancybox.EFancyBox',
 		array(
@@ -16,7 +16,7 @@ $this->widget(
 ?>
 
 <div class="small-masthead" style="background-image: url(<?php echo $this->getImagesUrl('header-register.png'); ?>);">
-  <h1 class="bottom"><?php echo t('Profile'); ?></h1>
+  <h1 class="bottom"><?php echo t('Profile &amp; Surveys'); ?></h1>
 </div>
 
 <!-- Start sidebar here -->
@@ -31,6 +31,25 @@ $this->widget(
     <p><?php echo t('Our surveys are designed to help us obtain information that help with decision-making. Our goal is to help better educate our participants by creating a client touch-point, a feedback system, and means to better understanding the shifting needs of the field.'); ?></p>
     <img class="block-center" width="96" height="113" src="<?php echo $this->getImagesUrl('survey_icon2.png'); ?>" alt="" />
     <hr />
+    <p><b><?php echo t('Profile Surveys'); ?></b></p>
+    <ul>
+      <?php 
+  	foreach($surveys as $survey): ?>
+      <li> <a id="survey_link_<?php echo $survey->getId(); ?>" href="#survey_<?php echo $survey->getId(); ?>" title="<?php echo $survey->model->title; ?>"><?php echo $survey->model->title; ?></a>
+        <?php $survey->run(); ?>
+      </li>
+      <?php endforeach; ?>
+    </ul>
+    <p><b><?php echo t('Online Workforce Support Surveys'); ?></b></p>
+    <ul>
+      <?php 
+  	foreach($surveys as $survey): ?>
+      <li> <a id="survey_link_<?php echo $survey->getId(); ?>" href="#survey_<?php echo $survey->getId(); ?>" title="<?php echo $survey->model->title; ?>"><?php echo $survey->model->title; ?></a>
+        <?php $survey->run(); ?>
+      </li>
+      <?php endforeach; ?>
+    </ul>
+    <p><b><?php echo t('Spencer Powell Surveys'); ?></b></p>
     <ul>
       <?php 
   	foreach($surveys as $survey): ?>
@@ -56,12 +75,8 @@ $this->widget(
     </ul>
     <p><?php echo t('The information you provide us, via your profile, is used for research purposes only. We do not sell, distribute, or use your information for any other purpose than helping make these online courses better.'); ?></p>
   </div>
-  <!-- sidebar #3 here -->
+  <!-- sidebar #3 here --> 
   
-  <div class="box-sidebar three">
-    <h3><?php echo t('Disclaimer'); ?></h3>
-    <p><?php echo t('Please check back later as we update our Disclaimer. Thank you!'); ?></p>
-  </div>
 </div>
 <div class="column-wide">
   <h2 class="flowers"><?php echo t('Profile'); ?></h2>
