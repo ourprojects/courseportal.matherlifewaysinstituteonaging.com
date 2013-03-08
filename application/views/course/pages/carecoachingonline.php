@@ -9,24 +9,23 @@ foreach(array(
 		'.lesson-2', 
 		'.lesson-3', 
 		'.lesson-4', 
-		'.lesson-5') as $lesson)
+		'.lesson-5',
+		'.lesson-6',
+		'.lesson-7') as $lesson)
 	$this->widget(
 			'ext.fancybox.EFancyBox',
 			array('id' => $lesson,
 				  'config' => array('width' => '90%',
-							'height' => '90%',
-							'arrows' => false,
-							'autoSize' => false,
-							'mouseWheel' => false))
+									'height' => '90%',
+									'arrows' => false,
+									'autoSize' => false,
+									'mouseWheel' => false))
 	);
 
 ?>
-
-<div class="small-masthead" style="background-image: url(<?php echo $this->getImagesUrl('86503244r.png'); ?>);">
+<div class="small-masthead" style="background-image: url(<?php echo $this->getImagesUrl('78458492r.png'); ?>);">
   <h1 class="bottom"><?php echo t($course->title); ?></h1>
 </div>
-
-<!-- Start sidebar here -->
 
 <div id="sidebar"> 
   
@@ -59,48 +58,49 @@ foreach(array(
   <!-- sidebar #3 here -->
   
   <div class="box-sidebar one">
-    <h3>Alzheimer's Association: behaviors</h3>
-    <p><img class="block-center" src="<?php echo $this->getImagesUrl('alz.png'); ?>" /></p>
-    <p><a href="http://www.alz.org/national/documents/brochure_behaviors.pdf" target="_blank"><img class="block-center" src="<?php echo $this->getImagesUrl('cover_behaviors.jpg'); ?>" /> </a> </p>
-    <hr />
-    <p><?php echo t('How to respond when dementia causes unpredictable behaviors (English)'); ?></p>
-    <br />
-    <br />
+    <h3><?php echo t('Working Caregivers in America'); ?></h3>
+    <img class="block-center" src="<?php echo $this->getImagesUrl('286x366_Grafix_69pc.png'); ?>" />
+    <p><?php echo t('69% of working caregivers report having to rearrange their work schedule, decrease their hours, or take an 
+	unpaid leave of absence to meet their care-giving responsibilities.'); ?></p>
   </div>
   
   <!-- sidebar #4 here -->
   
-  <div class="box-sidebar three">
-    <h3><?php echo t('Caregivers\' Resources'); ?></h3>
-    <p> <a href="http://www.usa.gov/Citizen/Topics/Health/caregivers.shtml#Government_Benefits" target="_blank"> <img class="block-center" src="<?php echo $this->getImagesUrl('usagov_logo.gif'); ?>" /> </a> </p>
+  <div class="box-sidebar two">
+    <h3><?php echo t('Magnitude - Informal Caregivers'); ?></h3>
+    <p><a href="http://www.caregiver.org/caregiver/jsp/home.jsp" target="_blank">FAMILY CAREGIVER ALLIANCE</a></p>
+    <p><b>
+      <?php echo t('National Center on Caregiving (USA)'); ?></b></p>
+    <p class="title"><?php echo t('65.7 million'); ?></p>
+    <p><?php echo t('caregivers make up 29% of the U.S. adult population providing care to someone who is ill, disabled or aged'); ?></p>
     <hr />
-    <p><?php echo t('Find a nursing home, assisted living, or hospice; check your eligibility for benefits; get resources for long-distance caregiving; review legal issues; and find support for caregivers. (English)'); ?></p>
-    <br />
-    <br />
+    <p class="title"><?php echo t('52 million'); ?></p>
+    <p><?php echo t('caregivers provide care to adults (aged 18+) with a disability or illness'); ?></p>
+    <hr />
+    <p class="title"><?php echo t('14.9 million'); ?></p>
+    <p><?php echo t('care for someone who has Alzheimer\'s disease or other dementia'); ?></p>
   </div>
-  
-  <!-- need this final closing div for 'sidebar' --> 
 </div>
-<!-- start main content here -->
+<!-- Start main content here -->
 
 <div class="column-wide">
   <h2 class="flowers"><?php echo t($course->title); ?></h2>
   <p><?php echo t($course->description); ?></p>
   <h4><?php echo t('Objectives'); ?></h4>
   <ul>
-    <?php 
+  <?php 
   foreach($course->objectives as $objective)
   	echo '<li>' . t($objective->text) . '</li>';
   ?>
   </ul>
-  
-  <!-- Course Lesson list starts here -->
-  
-  <h4><?php echo t('Course Lessons'); ?></h4>
-  
-  <ul>
+<h4><?php echo t('Course Lessons'); ?></h4>
+
+<!-- Bullet points start here for course lessons, hyperlinks to FancyBox -->
+<ul>
   <li> 
-	  <a href="#lesson-1-slide-1" data-fancybox-group="lesson-1" class="teal lesson-1"><?php echo t('Taking Care of You'); ?></a> 
+	  <a href="#lesson-1-slide-1" data-fancybox-group="lesson-1" class="teal lesson-1">
+	  	<?php echo t('Care Coaching'); ?>
+	  </a> 
 	  <a href="#lesson-1-slide-2" data-fancybox-group="lesson-1" class="hide lesson-1"></a> 
 	  <a href="#lesson-1-slide-3" data-fancybox-group="lesson-1" class="hide lesson-1"></a> 
 	  <a href="#lesson-1-slide-4" data-fancybox-group="lesson-1" class="hide lesson-1"></a> 
@@ -110,26 +110,15 @@ foreach(array(
 	  <a href="#lesson-1-slide-8" data-fancybox-group="lesson-1" class="hide lesson-1"></a> 
 	  <a href="#lesson-1-slide-9" data-fancybox-group="lesson-1" class="hide lesson-1"></a>
 	  <a href="#lesson-1-slide-10" data-fancybox-group="lesson-1" class="hide lesson-1"></a> 
-      <a href="#lesson-1-slide-11" data-fancybox-group="lesson-1" class="hide lesson-1"></a> 
-      <a href="#lesson-1-slide-12" data-fancybox-group="lesson-1" class="hide lesson-1"></a> 
-      <a href="#lesson-1-slide-13" data-fancybox-group="lesson-1" class="hide lesson-1"></a> 
-      <a href="#lesson-1-slide-14" data-fancybox-group="lesson-1" class="hide lesson-1"></a> 
-      <a href="#lesson-1-slide-15" data-fancybox-group="lesson-1" class="hide lesson-1"></a>
-      <a href="#lesson-1-slide-16" data-fancybox-group="lesson-1" class="hide lesson-1"></a> 
-      <a href="#lesson-1-slide-17" data-fancybox-group="lesson-1" class="hide lesson-1"></a> 
-      <a href="#lesson-1-slide-18" data-fancybox-group="lesson-1" class="hide lesson-1"></a> 
-      <a href="#lesson-1-slide-19" data-fancybox-group="lesson-1" class="hide lesson-1"></a> 
-      <a href="#lesson-1-slide-20" data-fancybox-group="lesson-1" class="hide lesson-1"></a> 
-      <a href="#lesson-1-slide-21" data-fancybox-group="lesson-1" class="hide lesson-1"></a> 
-      <a href="#lesson-1-slide-22" data-fancybox-group="lesson-1" class="hide lesson-1"></a> 
-      <a href="#lesson-1-slide-23" data-fancybox-group="lesson-1" class="hide lesson-1"></a> 
-      <a href="#lesson-1-slide-24" data-fancybox-group="lesson-1" class="hide lesson-1"></a> 
-      <a href="#lesson-1-slide-25" data-fancybox-group="lesson-1" class="hide lesson-1"></a>
-      <a href="#lesson-1-slide-26" data-fancybox-group="lesson-1" class="hide lesson-1"></a> 
-
+	  <a href="#lesson-1-slide-11" data-fancybox-group="lesson-1" class="hide lesson-1"></a> 
+	  <a href="#lesson-1-slide-12" data-fancybox-group="lesson-1" class="hide lesson-1"></a> 
+	  <a href="#lesson-1-slide-13" data-fancybox-group="lesson-1" class="hide lesson-1"></a> 
+	  <a href="#lesson-1-slide-14" data-fancybox-group="lesson-1" class="hide lesson-1"></a> 
   </li>
   <li>
-	 	<a href="#lesson-2-slide-1" data-fancybox-group="lesson-2" class="teal lesson-2"><?php echo t('Reducing Personal Stress'); ?></a> 
+	 	<a href="#lesson-2-slide-1" data-fancybox-group="lesson-2" class="teal lesson-2">
+	  		<?php echo t('Understanding Needs and Preferences of Older Adults'); ?>
+	  	</a> 
 	  	<a href="#lesson-2-slide-2" data-fancybox-group="lesson-2" class="hide lesson-2"></a> 
 	  	<a href="#lesson-2-slide-3" data-fancybox-group="lesson-2" class="hide lesson-2"></a> 
 	  	<a href="#lesson-2-slide-4" data-fancybox-group="lesson-2" class="hide lesson-2"></a> 
@@ -137,12 +126,11 @@ foreach(array(
 	  	<a href="#lesson-2-slide-6" data-fancybox-group="lesson-2" class="hide lesson-2"></a> 
 	  	<a href="#lesson-2-slide-7" data-fancybox-group="lesson-2" class="hide lesson-2"></a> 
 	  	<a href="#lesson-2-slide-8" data-fancybox-group="lesson-2" class="hide lesson-2"></a> 
-	  	<a href="#lesson-2-slide-9" data-fancybox-group="lesson-2" class="hide lesson-2"></a>
-        <a href="#lesson-2-slide-10" data-fancybox-group="lesson-2" class="hide lesson-2"></a> 
+	  	<a href="#lesson-2-slide-9" data-fancybox-group="lesson-2" class="hide lesson-2"></a> 
   </li>
   <li>
 	  	<a href="#lesson-3-slide-1" data-fancybox-group="lesson-3" class="teal lesson-3">
-	  		<?php echo t('Communicating Effectively in Challenging Situations'); ?>
+	  		<?php echo t('Managing Health Information and Record Keeping'); ?>
 	  	</a> 
 	  	<a href="#lesson-3-slide-2" data-fancybox-group="lesson-3" class="hide lesson-3"></a> 
 	  	<a href="#lesson-3-slide-3" data-fancybox-group="lesson-3" class="hide lesson-3"></a> 
@@ -153,29 +141,12 @@ foreach(array(
 	  	<a href="#lesson-3-slide-8" data-fancybox-group="lesson-3" class="hide lesson-3"></a> 
 	  	<a href="#lesson-3-slide-9" data-fancybox-group="lesson-3" class="hide lesson-3"></a> 
 	  	<a href="#lesson-3-slide-10" data-fancybox-group="lesson-3" class="hide lesson-3"></a> 
-        <a href="#lesson-3-slide-11" data-fancybox-group="lesson-3" class="hide lesson-3"></a>
-        <a href="#lesson-3-slide-12" data-fancybox-group="lesson-3" class="hide lesson-3"></a>
-        <a href="#lesson-3-slide-13" data-fancybox-group="lesson-3" class="hide lesson-3"></a>
-        <a href="#lesson-3-slide-14" data-fancybox-group="lesson-3" class="hide lesson-3"></a>
-        <a href="#lesson-3-slide-15" data-fancybox-group="lesson-3" class="hide lesson-3"></a>
-        <a href="#lesson-3-slide-16" data-fancybox-group="lesson-3" class="hide lesson-3"></a>
-        <a href="#lesson-3-slide-17" data-fancybox-group="lesson-3" class="hide lesson-3"></a>
-        <a href="#lesson-3-slide-18" data-fancybox-group="lesson-3" class="hide lesson-3"></a>
-        <a href="#lesson-3-slide-19" data-fancybox-group="lesson-3" class="hide lesson-3"></a>
-        <a href="#lesson-3-slide-20" data-fancybox-group="lesson-3" class="hide lesson-3"></a>
-        <a href="#lesson-3-slide-21" data-fancybox-group="lesson-3" class="hide lesson-3"></a>
-        <a href="#lesson-3-slide-22" data-fancybox-group="lesson-3" class="hide lesson-3"></a>
-        <a href="#lesson-3-slide-23" data-fancybox-group="lesson-3" class="hide lesson-3"></a>
-        <a href="#lesson-3-slide-24" data-fancybox-group="lesson-3" class="hide lesson-3"></a>
-        <a href="#lesson-3-slide-25" data-fancybox-group="lesson-3" class="hide lesson-3"></a>
-        <a href="#lesson-3-slide-26" data-fancybox-group="lesson-3" class="hide lesson-3"></a>
-        <a href="#lesson-3-slide-27" data-fancybox-group="lesson-3" class="hide lesson-3"></a>
-        <a href="#lesson-3-slide-28" data-fancybox-group="lesson-3" class="hide lesson-3"></a>
-        <a href="#lesson-3-slide-29" data-fancybox-group="lesson-3" class="hide lesson-3"></a>
+	  	<a href="#lesson-3-slide-11" data-fancybox-group="lesson-3" class="hide lesson-3"></a> 
+	  	<a href="#lesson-3-slide-12" data-fancybox-group="lesson-3" class="hide lesson-3"></a> 
   </li>
   <li>
 	  <a href="#lesson-4-slide-1" data-fancybox-group="lesson-4" class="teal lesson-4">
-	  <?php echo t('Normal &amp; Abnormal Aging Changes'); ?>
+	  <?php echo t('Understanding the Health Care System and Utilization by Older Adults'); ?>
 	  </a> 
 	  <a href="#lesson-4-slide-2" data-fancybox-group="lesson-4" class="hide lesson-4"></a> 
 	  <a href="#lesson-4-slide-3" data-fancybox-group="lesson-4" class="hide lesson-4"></a> 
@@ -186,44 +157,84 @@ foreach(array(
 	  <a href="#lesson-4-slide-8" data-fancybox-group="lesson-4" class="hide lesson-4"></a> 
 	  <a href="#lesson-4-slide-9" data-fancybox-group="lesson-4" class="hide lesson-4"></a> 
 	  <a href="#lesson-4-slide-10" data-fancybox-group="lesson-4" class="hide lesson-4"></a> 
-      <a href="#lesson-4-slide-11" data-fancybox-group="lesson-4" class="hide lesson-4"></a> 
-	  <a href="#lesson-4-slide-12" data-fancybox-group="lesson-4" class="hide lesson-4"></a> 
-	  <a href="#lesson-4-slide-13" data-fancybox-group="lesson-4" class="hide lesson-4"></a> 
-	  <a href="#lesson-4-slide-14" data-fancybox-group="lesson-4" class="hide lesson-4"></a> 
-	  <a href="#lesson-4-slide-15" data-fancybox-group="lesson-4" class="hide lesson-4"></a> 
-	  <a href="#lesson-4-slide-16" data-fancybox-group="lesson-4" class="hide lesson-4"></a> 
-	  <a href="#lesson-4-slide-17" data-fancybox-group="lesson-4" class="hide lesson-4"></a> 
-	  <a href="#lesson-4-slide-18" data-fancybox-group="lesson-4" class="hide lesson-4"></a> 
-	  <a href="#lesson-4-slide-19" data-fancybox-group="lesson-4" class="hide lesson-4"></a> 
-
   </li>
   <li>
     <a href="#lesson-5-slide-1" data-fancybox-group="lesson-5" class="teal lesson-5">
-    <?php echo t('Financial &amp; Legal Issues'); ?>
+    <?php echo t('Relocation and Transfers by Older Adults within the Health Care System'); ?>
     </a> 
 	<a href="#lesson-5-slide-2" data-fancybox-group="lesson-5" class="hide lesson-5"></a> 
 	<a href="#lesson-5-slide-3" data-fancybox-group="lesson-5" class="hide lesson-5"></a> 
 	<a href="#lesson-5-slide-4" data-fancybox-group="lesson-5" class="hide lesson-5"></a> 
 	<a href="#lesson-5-slide-5" data-fancybox-group="lesson-5" class="hide lesson-5"></a> 
-	<a href="#lesson-5-slide-6" data-fancybox-group="lesson-5" class="hide lesson-5"></a> 
-	<a href="#lesson-5-slide-7" data-fancybox-group="lesson-5" class="hide lesson-5"></a> 
-	<a href="#lesson-5-slide-8" data-fancybox-group="lesson-5" class="hide lesson-5"></a> 
-	<a href="#lesson-5-slide-9" data-fancybox-group="lesson-5" class="hide lesson-5"></a> 
-	<a href="#lesson-5-slide-10" data-fancybox-group="lesson-5" class="hide lesson-5"></a>
-  	<a href="#lesson-5-slide-11" data-fancybox-group="lesson-5" class="hide lesson-5"></a>	
-    <a href="#lesson-5-slide-12" data-fancybox-group="lesson-5" class="hide lesson-5"></a>	
-
+	  <a href="#lesson-5-slide-6" data-fancybox-group="lesson-5" class="hide lesson-5"></a> 
+	  <a href="#lesson-5-slide-7" data-fancybox-group="lesson-5" class="hide lesson-5"></a> 
+	  <a href="#lesson-5-slide-8" data-fancybox-group="lesson-5" class="hide lesson-5"></a> 
+	  <a href="#lesson-5-slide-9" data-fancybox-group="lesson-5" class="hide lesson-5"></a> 
+	  <a href="#lesson-5-slide-10" data-fancybox-group="lesson-5" class="hide lesson-5"></a>
+	  <a href="#lesson-5-slide-11" data-fancybox-group="lesson-5" class="hide lesson-5"></a> 
+	  <a href="#lesson-5-slide-12" data-fancybox-group="lesson-5" class="hide lesson-5"></a> 
+	  <a href="#lesson-5-slide-13" data-fancybox-group="lesson-5" class="hide lesson-5"></a> 
+	  <a href="#lesson-5-slide-14" data-fancybox-group="lesson-5" class="hide lesson-5"></a> 
+	  <a href="#lesson-5-slide-15" data-fancybox-group="lesson-5" class="hide lesson-5"></a> 
+	  <a href="#lesson-5-slide-16" data-fancybox-group="lesson-5" class="hide lesson-5"></a> 
+	  <a href="#lesson-5-slide-17" data-fancybox-group="lesson-5" class="hide lesson-5"></a> 
+	  <a href="#lesson-5-slide-18" data-fancybox-group="lesson-5" class="hide lesson-5"></a> 
+	  <a href="#lesson-5-slide-19" data-fancybox-group="lesson-5" class="hide lesson-5"></a>
+	  <a href="#lesson-5-slide-20" data-fancybox-group="lesson-5" class="hide lesson-5"></a> 
   </li>
- 
+  <li>
+	  <a href="#lesson-6-slide-1" data-fancybox-group="lesson-6" class="teal lesson-6">
+	  <?php echo t('Promoting Safety of Older Relatives and Friends in Caring for Themselves'); ?>
+	  </a> 
+	  <a href="#lesson-6-slide-2" data-fancybox-group="lesson-6" class="hide lesson-6"></a> 
+	  <a href="#lesson-6-slide-3" data-fancybox-group="lesson-6" class="hide lesson-6"></a> 
+	  <a href="#lesson-6-slide-4" data-fancybox-group="lesson-6" class="hide lesson-6"></a> 
+	  <a href="#lesson-6-slide-5" data-fancybox-group="lesson-6" class="hide lesson-6"></a> 
+	  <a href="#lesson-6-slide-6" data-fancybox-group="lesson-6" class="hide lesson-6"></a> 
+	  <a href="#lesson-6-slide-7" data-fancybox-group="lesson-6" class="hide lesson-6"></a> 
+	  <a href="#lesson-6-slide-8" data-fancybox-group="lesson-6" class="hide lesson-6"></a> 
+	  <a href="#lesson-6-slide-9" data-fancybox-group="lesson-6" class="hide lesson-6"></a> 
+	  <a href="#lesson-6-slide-10" data-fancybox-group="lesson-6" class="hide lesson-6"></a>
+      <a href="#lesson-6-slide-11" data-fancybox-group="lesson-6" class="hide lesson-6"></a>
+      <a href="#lesson-6-slide-12" data-fancybox-group="lesson-6" class="hide lesson-6"></a>
+      <a href="#lesson-6-slide-13" data-fancybox-group="lesson-6" class="hide lesson-6"></a>
+      <a href="#lesson-6-slide-14" data-fancybox-group="lesson-6" class="hide lesson-6"></a>
+      <a href="#lesson-6-slide-15" data-fancybox-group="lesson-6" class="hide lesson-6"></a>
+      <a href="#lesson-6-slide-16" data-fancybox-group="lesson-6" class="hide lesson-6"></a>
+      <a href="#lesson-6-slide-17" data-fancybox-group="lesson-6" class="hide lesson-6"></a>
+      <a href="#lesson-6-slide-18" data-fancybox-group="lesson-6" class="hide lesson-6"></a>
+      <a href="#lesson-6-slide-19" data-fancybox-group="lesson-6" class="hide lesson-6"></a>
+      <a href="#lesson-6-slide-20" data-fancybox-group="lesson-6" class="hide lesson-6"></a>
+      <a href="#lesson-6-slide-21" data-fancybox-group="lesson-6" class="hide lesson-6"></a>
+      <a href="#lesson-6-slide-22" data-fancybox-group="lesson-6" class="hide lesson-6"></a>
+      <a href="#lesson-6-slide-23" data-fancybox-group="lesson-6" class="hide lesson-6"></a>
+      <a href="#lesson-6-slide-24" data-fancybox-group="lesson-6" class="hide lesson-6"></a>
+      <a href="#lesson-6-slide-25" data-fancybox-group="lesson-6" class="hide lesson-6"></a>
+  </li>
+  <li>
+    <a href="#lesson-7-slide-1" data-fancybox-group="lesson-7" class="teal lesson-7">
+  <?php echo t('Supporting Personal Choice and Preferences of Older Adults in Health and Care Decision Making'); ?>
+  </a>
+  		<a href="#lesson-7-slide-2" data-fancybox-group="lesson-7" class="teal lesson-7"></a>
+        <a href="#lesson-7-slide-3" data-fancybox-group="lesson-7" class="teal lesson-7"></a>
+        <a href="#lesson-7-slide-4" data-fancybox-group="lesson-7" class="teal lesson-7"></a>
+        <a href="#lesson-7-slide-5" data-fancybox-group="lesson-7" class="teal lesson-7"></a>
+        <a href="#lesson-7-slide-6" data-fancybox-group="lesson-7" class="teal lesson-7"></a>
+        <a href="#lesson-7-slide-7" data-fancybox-group="lesson-7" class="teal lesson-7"></a>
+        <a href="#lesson-7-slide-8" data-fancybox-group="lesson-7" class="teal lesson-7"></a>
+        <a href="#lesson-7-slide-9" data-fancybox-group="lesson-7" class="teal lesson-7"></a>
+		<a href="#lesson-7-slide-10" data-fancybox-group="lesson-7" class="teal lesson-7"></a>
+  </li>
 </ul>
-  <br />
-  <br />
-  <div class="box-white">
+<br />
+<br />
+<div class="box-white">
     <h4><?php echo t('Length'); ?></h4>
     <p><?php echo t('* Participant Access - 1 Year'); ?><br />
-      <?php echo t('* Recommended Completion - 5 Weeks'); ?><br />
+      <?php echo t('* Recommended Completion - 7 Weeks'); ?><br />
       <?php echo t('* Weekly Commitment - 1 Lesson @ 2 to 3 Hours'); ?></p>
   </div>
+  
   
    <div class="box-white">
     <h4><?php echo t('Key'); ?></h4>
@@ -245,3110 +256,1957 @@ foreach(array(
     </table>
   </div>
   
-  <!-- Resources div white box here -->
   
-  <div class="box-white">
+<div class="box-white">
     <h4> <?php echo t('Resources'); ?></h4>
-    <p><?php echo t('Please click on your countries flag to access resources that may be required to complete this online course. Pleaes contact your instructor or the program director if you have additional resources you would like to see added to your geographical location.'); ?></p>
-    <table>
-      <tr>
-        <td><a href="#"><img src="<?php echo $this->getImagesUrl('flags/United-States-Flag-64.png'); ?>" alt="<?php echo t('USA'); ?>" /></a></td>
-        <td><a href="#"><img src="<?php echo $this->getImagesUrl('flags/China-Flag-64.png'); ?>" alt="<?php echo t('China'); ?>" /></a></td>
-        <td><a href="#"><img src="<?php echo $this->getImagesUrl('flags/Hong-Kong-Flag-64.png'); ?>" alt="<?php echo t('Hong Kong'); ?>" /></a></td>
-      </tr>
-      <tr>
-        <td><a href="#"><img src="<?php echo $this->getImagesUrl('flags/Brazil-Flag-64.png'); ?>" alt="<?php echo t('Brazil'); ?>" /></a></td>
-        <td><a href="#"><img src="<?php echo $this->getImagesUrl('flags/Mexico-Flag-64.png'); ?>" alt="<?php echo t('Mexico'); ?>" /></a></td>
-        <td><a href="#"><img src="<?php echo $this->getImagesUrl('flags/Taiwan-Flag-64.png'); ?>" alt="<?php echo t('Taiwan'); ?>" /></a></td>
-      </tr>
-      <tr>
-        <td><a href="#"><img src="<?php echo $this->getImagesUrl('flags/Argentina-Flag-64.png'); ?>" alt="<?php echo t('Argentina'); ?>" /></a></td>
-        <td><a href="#"><img src="<?php echo $this->getImagesUrl('flags/United-Kingdom-flag-64.png'); ?>" alt="<?php echo t('England'); ?>" /></a></td>
-        <td><a href="#"><img src="<?php echo $this->getImagesUrl('flags/Luxembourg-Flag-64.png'); ?>" alt="<?php echo t('Luxembourg'); ?>" /></a></td>
-      </tr>
-    </table>
+    <p><?php echo t('Please use these listed resources in the completion of this online course. Pleaes contact your instructor or the program director if you have additional resources you would like to see added here.'); ?></p>
+    <p><a href="http://www.alz.org" target="_blank">Alzheimer's Association</a></p>
+    <p><a href="http://www.nih.gov" target="_blank">National Intitute on Health (NIH)</a></p>
+    <p><a href="http://www.webmd.com" target="_blank">WebMD website</a></p>
   </div>
-  
-  <!-- Developers div white box here -->
-  
-  <div class="box-white">
+<div class="box-white">
     <div id="developers">
       <h4><?php echo t('Facilitators &amp; Course Developers'); ?></h4>
-      <h5><?php echo t('Content Designer: '); ?><a href="mailto:lhollinger-smith@matherlifeways.com">Linda Hollinger-Smith, PhD</a></h5>
-      <p><?php echo t('Dr. Hollinger-Smith is a doctorally prepared registered nurse focusing her research in gerontology, workforce development, and quality improvement. She has more than 28 years of experience working with older adults in senior living, long-term care settings, in the community, and in acute care settings in various staff and managerial positions. Her past positions include Assistant Dean of the Rush University College of Nursing, Nursing Director of the Rush Primary Care Institute, and Associate Chairperson of the Department of Adult Health Nursing at Rush University College of Nursing.'); ?></p>
+      <h5><?php echo t('Content Designer: '); ?><a href="mailto:lindahollinger-smith@matherlifeways.com"><?php echo t('Linda Hollinger-Smith, PhD'); ?></a></h5>
+     <p> <?php echo t('Dr. Hollinger-Smith is a doctorally prepared registered nurse focusing her research in gerontology, workforce development, and quality improvement. She has more than 28 years of experience working with older adults in senior living, long-term care settings, in the community, and in acute care settings in various staff and managerial positions. Her past positions include Assistant Dean of the Rush University College of Nursing, Nursing Director of the Rush Primary Care Institute, and Associate Chairperson of the Department of Adult Health Nursing at Rush University College of Nursing.'); ?>
+      </p>
       <h5><?php echo t('Course Developer: '); ?><a href="mailto:jwoodall@matherlifeways.com">Jon Woodall</a></h5>
-      <?php echo t('Mr. Woodall is responsible for all MLIA corporate workforce wellness programs related to design, implementation, publication, and evaluation. Additionally, he seeks new grant funding to support or extend current grants related to corporate workforce wellness programs. '); ?>
+      <p><?php echo t('Mr. Woodall is responsible for all MLIA corporate workforce wellness programs related to design, implementation, publication, and evaluation. Additionally, he seeks new grant funding to support or extend current grants related to corporate workforce wellness programs. '); ?>
       </p>
-      <h5><?php echo t('Facilitator (English / Spanish / Portuguese): '); ?><a href="mailto:efoss@matherlifeways.com">Elise Foss</a></h5>
-     <p><?php echo t('Ms. Foss has been facilitating online courses for Mather LifeWays Institute on Aging since 2004. Currently, she is the Fitness Coordinator for a Mather LifeWays Senior Living community. Originally from Venezula, and educated in Brazil, Elise is fluent in English, Spanish and Portuguese, and travels to family in Brazil each year.'); ?>
-      </p>
-         <h5><?php echo t('Facilitator (Chinese): '); ?><a href="mailto:yin_li_juan@hotmail.com">LiJuan Yin</a></h5>
-     <p><?php echo t('Mrs. Lin is currently a PhD student at the University of Illinois at Chicago (UIC), studying Public Health. She has helped reserarch, develop, and facilitate online courses for Mather LifeWays Institute on aging for the past 3 years. '); ?>
+      <h5><?php echo t('Facilitator: '); ?><a href="mailto:eziegemeier@yahoo.com">Ellen Ziegemeier</a></h5>
+      <p><?php echo t('Ms. Ziegemeier has been facilitating online courses for Mather LifeWays Institute on Aging since 2004. She earned her Masters in Anthropology, and has worked locally and abroad -  Latin America and South America for various aging services. She is fluent in English and Spanish, and has a strong passion for caregiver training. '); ?>
       </p>
     </div>
   </div>
 </div>
 
-<!-- start course content here -->
-
-<!-- Lesson 1 Slide 1 -->
+<!-- Lesson #1 - Care Coaching starts here --> 
+<!-- slide #1 -->
 
 <div id="course" class="hide">
-<div id="lesson-1">
-  <div id="lesson-1-slide-1" class="course-slide">
-    <div class="content">
-      <h2 class="flowers"><?php echo t('Taking Care of You'); ?></h2>
-      <hr />
-      <p><?php echo t('This lesson contains several main sections:'); ?></p>
-      <ul>
-        <li><?php echo t('Caregiver Resources'); ?></li>
-        <li><?php echo t('Managing Self-Care'); ?></li>
-        <li><?php echo t('Setting Goals'); ?></li>
-        <li><?php echo t('Making Action Plans'); ?></li>
-        <li><?php echo t('Problem-Solving: A Solution-Seeking Approach'); ?></li>
-        <li><?php echo t('Reward Yourself'); ?></li>
-        <li><?php echo t('My Action Plan'); ?></li>
-      </ul>
+  <div id="lesson-1">
+    <div id="lesson-1-slide-1" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('CARE Coaching - Topics'); ?></h2>
+        <hr />
+        <p><?php echo t('What’s CARE Coaching all about?'); ?><br />
+          <?php echo t('CARE Coaching involves a method to help you as a caregiver think differently about a caregiving situation so you may better prepare and feel confident about your caregiving responsibilities and actions.'); ?></p>
+        <p><?php echo t('Self-Coaching: It all starts with me!'); ?><br />
+          <?php echo t('Self-coaching shifts the approach from the cycling negative “internal dialogue” to help you focus on what’s important to you right now and how you may accomplish that goal.'); ?></p>
+        <p><?php echo t('Activity – Self-Awareness Survey'); ?><br />
+          <?php echo t('This activity invites you to explore and live several questions. Your responses should open up more self-awareness of what is important to you in your life.'); ?></p>
+        <p><?php echo t('Creating the Environment for Self-Coaching'); ?><br />
+          <?php echo t('The principle behind self-coaching (and CARE Coaching for that matter!) is the revelation of solutions already inherent in each person.'); ?></p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Start Course &raquo;'); ?></a></div>
     </div>
-    <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Start Course &raquo;'); ?></a></div>
-  </div>
-  <!-- Lesson 1 Slide 2 -->
-  <div id="lesson-1-slide-2" class="course-slide">
-    <div class="content">
-      <h2 class="flowers"><?php echo t('Caregiver Resources'); ?></h2>
-      <hr />
-      <p><?php echo t('Caregiving involves many challenges. You often need to master new skills and gain support. You may need to develop new ways of relating to a family member if his or her ability to communicate or remember is compromised by illness. You may have to make tough decisions. But often one of the greatest challenges is taking care of yourself.'); ?></p>
-      <p><?php echo t('Too often caregivers neglect their own health and well-being, and put their own needs on the back burner. Sometimes caregivers become a second victim of the disease that afflicts their family member. It is sad when someone says, My mother was the ill person, but her illness destroyed my father. Usually, we cannot stop the impact of a chronic illness on a family member. However, we are responsible for our own self-care.'); ?></p>
-      <p><?php echo t('When you board an airplane, the flight attendant gives several safety instructions. One of them is, If oxygen masks drop down, put on your oxygen mask first before helping others. This is because if you do not take care of yourself first, you may not be able to help those who need your help. It is the same thing with caregiving. When you take care of yourself, everyone benefits. Ignoring your own needs is not only potentially detrimental to you, but it can also be harmful to the person who depends on you.'); ?></p>
-      <p><?php echo t('The Resource section was designed to give you additional details in order to help you maintain personal well-being while providing quality care to your family member. Many focus on tools to help you to take care of you. These tools will help you'); ?></p>
-      <ul>
-        <li><?php echo t('set goals and make action plans;'); ?></li>
-        <li><?php echo t('identify and reduce personal stress;'); ?></li>
-        <li><?php echo t('make your thoughts and feelings work for you, not against you;'); ?></li>
-        <li><?php echo t('communicate your feelings, needs, and concerns in positive ways;'); ?></li>
-        <li><?php echo t('cope with difficult situations, including asking for help and setting limits;'); ?></li>
-        <li><?php echo t('deal with emotions, especially feelings of anger, guilt, and depression; and'); ?></li>
-        <li><?php echo t('make tough caregiving decisions.'); ?></li>
-      </ul>
+    
+    <!-- Lesson #1 - Care Coaching starts here --> 
+    <!-- slide #2 -->
+    
+    <div id="lesson-1-slide-2" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('CARE Coaching - Topics (continued)'); ?></h2>
+        <hr />
+        <p><?php echo t('Video – 5 Steps to Self-Coaching'); ?><br />
+          <?php echo t('Serving as an introduction to self-coaching exercises, this video outlines a simple self-coaching process can be used over and over again whenever you need it.'); ?></p>
+        <p><?php echo t('Activity – Principles of Success'); ?><br />
+          <?php echo t('This activity focuses on assessing your awareness of ten principles of success and your rating of how you presently live according to them.'); ?></p>
+        <p><?php echo t('Self-Coaching Exercise – The Power of Journaling'); ?><br />
+          <?php echo t('Journaling is one powerful technique to refocus the negative into positive affirmations. With consistent practice, this method can help create a more positive outlook in our own lives as well as create more positive interactions with others.'); ?></p>
+        <p><?php echo t('Self-Coaching Exercise – Focus on the Goal'); ?><br />
+          <?php echo t('How do we identify the goal? The goal answers the question, “What do you want that’s really important to you?” This exercise allows you to practice writing goals.'); ?></p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?> </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
     </div>
-    <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?> </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
-  </div>
-  <!-- Lesson 1 Slide 3 -->
-  <div id="lesson-1-slide-3" class="course-slide">
-    <div class="content">
-      <h2 class="flowers"><?php echo t('Caregiver Resources (continued)'); ?></h2>
-      <hr />
-      <p><?php echo t('Additional resources will address special concerns and decisions you may face as a caregiver. These include what to do when a family member is no longer a safe driver, hiring in-home help, using community services, how to communicate with and respond to a family member who is memory impaired, options available when a family member is having problems managing his money; coping with depression, and making a decision about a care facility. You can turn to resources for guidance and direction when you face a specific decision or concern.'); ?></p>
-      <p><?php echo t('How Much Support Do You Have?'); ?></p>
-      <p><?php echo t('Mark the box in the scale to show how much support you feel from each resource. After you have completed the survey, think about what you can do to gain more support from these individuals. Again, this is simply a visual, and is not meant to be printed.'); ?></p>
-      <p><?php echo t('Family'); ?></p>
-      <table>
-        <tr>
-          <td><div align="center">Type of Support</div></td>
-          <td><div align="center">None</div></td>
-          <td><div align="center">Little</div></td>
-          <td><div align="center">Some</div></td>
-          <td><div align="center">A lot</div></td>
-          <td><div align="center">As Much As I Need</div></td>
-        </tr>
-        <tr>
-          <td><div align="left">Understanding</div></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio" value="radio">
-            </div>
-            <label for="radio"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio2" value="radio">
-            </div>
-            <label for="radio2"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio3" value="radio">
-            </div>
-            <label for="radio3"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio4" value="radio">
-            </div>
-            <label for="radio4"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio5" value="radio">
-            </div>
-            <label for="radio5"></label></td>
-        </tr>
-        <tr>
-          <td><div align="left">Respect</div></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio" value="radio">
-            </div>
-            <label for="radio"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio2" value="radio">
-            </div>
-            <label for="radio2"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio3" value="radio">
-            </div>
-            <label for="radio3"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio4" value="radio">
-            </div>
-            <label for="radio4"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio5" value="radio">
-            </div>
-            <label for="radio5"></label></td>
-        </tr>
-        <tr>
-          <td><div align="left">Encouragement</div></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio" value="radio">
-            </div>
-            <label for="radio"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio2" value="radio">
-            </div>
-            <label for="radio2"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio3" value="radio">
-            </div>
-            <label for="radio3"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio4" value="radio">
-            </div>
-            <label for="radio4"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio5" value="radio">
-            </div>
-            <label for="radio5"></label></td>
-        </tr>
-        <tr>
-          <td><div align="left">Help me feel good about myself</div></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio" value="radio">
-            </div>
-            <label for="radio"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio2" value="radio">
-            </div>
-            <label for="radio2"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio3" value="radio">
-            </div>
-            <label for="radio3"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio4" value="radio">
-            </div>
-            <label for="radio4"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio5" value="radio">
-            </div>
-            <label for="radio5"></label></td>
-        </tr>
-        <tr>
-          <td><div align="left">Listen to me</div></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio" value="radio">
-            </div>
-            <label for="radio"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio2" value="radio">
-            </div>
-            <label for="radio2"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio3" value="radio">
-            </div>
-            <label for="radio3"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio4" value="radio">
-            </div>
-            <label for="radio4"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio5" value="radio">
-            </div>
-            <label for="radio5"></label></td>
-        </tr>
-        <tr>
-          <td><div align="left">Are there for me</div></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio" value="radio">
-            </div>
-            <label for="radio"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio2" value="radio">
-            </div>
-            <label for="radio2"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio3" value="radio">
-            </div>
-            <label for="radio3"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio4" value="radio">
-            </div>
-            <label for="radio4"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio5" value="radio">
-            </div>
-            <label for="radio5"></label></td>
-        </tr>
-        <tr>
-          <td><div align="left">Offer spiritual support</div></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio" value="radio">
-            </div>
-            <label for="radio"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio2" value="radio">
-            </div>
-            <label for="radio2"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio3" value="radio">
-            </div>
-            <label for="radio3"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio4" value="radio">
-            </div>
-            <label for="radio4"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio5" value="radio">
-            </div>
-            <label for="radio5"></label></td>
-        </tr>
-        <tr>
-          <td><div align="left">Cooperation</div></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio" value="radio">
-            </div>
-            <label for="radio"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio2" value="radio">
-            </div>
-            <label for="radio2"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio3" value="radio">
-            </div>
-            <label for="radio3"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio4" value="radio">
-            </div>
-            <label for="radio4"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio5" value="radio">
-            </div>
-            <label for="radio5"></label></td>
-        </tr>
-        <tr>
-          <td><div align="left">Care for me when I'm sick</div></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio" value="radio">
-            </div>
-            <label for="radio"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio2" value="radio">
-            </div>
-            <label for="radio2"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio3" value="radio">
-            </div>
-            <label for="radio3"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio4" value="radio">
-            </div>
-            <label for="radio4"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio5" value="radio">
-            </div>
-            <label for="radio5"></label></td>
-        </tr>
-        <tr>
-          <td><div align="left">Give/loan me money when I need it</div></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio" value="radio">
-            </div>
-            <label for="radio"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio2" value="radio">
-            </div>
-            <label for="radio2"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio3" value="radio">
-            </div>
-            <label for="radio3"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio4" value="radio">
-            </div>
-            <label for="radio4"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio5" value="radio">
-            </div>
-            <label for="radio5"></label></td>
-        </tr>
-        <tr>
-          <td><div align="left">Babysit</div></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio" value="radio">
-            </div>
-            <label for="radio"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio2" value="radio">
-            </div>
-            <label for="radio2"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio3" value="radio">
-            </div>
-            <label for="radio3"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio4" value="radio">
-            </div>
-            <label for="radio4"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio5" value="radio">
-            </div>
-            <label for="radio5"></label></td>
-        </tr>
-        <tr>
-          <td><div align="left">Help with transportation</div></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio" value="radio">
-            </div>
-            <label for="radio"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio2" value="radio">
-            </div>
-            <label for="radio2"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio3" value="radio">
-            </div>
-            <label for="radio3"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio4" value="radio">
-            </div>
-            <label for="radio4"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio5" value="radio">
-            </div>
-            <label for="radio5"></label></td>
-        </tr>
-        <tr>
-          <td><div align="left">Help take care of ill/elderly family member</div></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio" value="radio">
-            </div>
-            <label for="radio"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio2" value="radio">
-            </div>
-            <label for="radio2"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio3" value="radio">
-            </div>
-            <label for="radio3"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio4" value="radio">
-            </div>
-            <label for="radio4"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio5" value="radio">
-            </div>
-            <label for="radio5"></label></td>
-        </tr>
-        <tr>
-          <td><div align="left">Physcial affection (hugs)</div></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio" value="radio">
-            </div>
-            <label for="radio"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio2" value="radio">
-            </div>
-            <label for="radio2"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio3" value="radio">
-            </div>
-            <label for="radio3"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio4" value="radio">
-            </div>
-            <label for="radio4"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio5" value="radio">
-            </div>
-            <label for="radio5"></label></td>
-        </tr>
-        <tr>
-          <td><div align="left">Helps cook and clean</div></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio" value="radio">
-            </div>
-            <label for="radio"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio2" value="radio">
-            </div>
-            <label for="radio2"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio3" value="radio">
-            </div>
-            <label for="radio3"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio4" value="radio">
-            </div>
-            <label for="radio4"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio5" value="radio">
-            </div>
-            <label for="radio5"></label></td>
-        </tr>
-      </table>
-      <p>FRIENDS &amp; COWORKERS</p>
-      <table>
-        <tr>
-          <td><div align="center">Type of Support</div></td>
-          <td><div align="center">None</div></td>
-          <td><div align="center">Little</div></td>
-          <td><div align="center">Some</div></td>
-          <td><div align="center">A lot</div></td>
-          <td><div align="center">As Much As I Need</div></td>
-        </tr>
-        <tr>
-          <td><div align="left">Understanding</div></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio6" value="radio">
-            </div>
-            <label for="radio6"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio7" value="radio">
-            </div>
-            <label for="radio7"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio8" value="radio">
-            </div>
-            <label for="radio8"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio9" value="radio">
-            </div>
-            <label for="radio9"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio10" value="radio">
-            </div>
-            <label for="radio10"></label></td>
-        </tr>
-        <tr>
-          <td><div align="left">Respect</div></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio6" value="radio">
-            </div>
-            <label for="radio6"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio7" value="radio">
-            </div>
-            <label for="radio7"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio8" value="radio">
-            </div>
-            <label for="radio8"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio9" value="radio">
-            </div>
-            <label for="radio9"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio10" value="radio">
-            </div>
-            <label for="radio10"></label></td>
-        </tr>
-        <tr>
-          <td><div align="left">Encouragement</div></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio6" value="radio">
-            </div>
-            <label for="radio6"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio7" value="radio">
-            </div>
-            <label for="radio7"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio8" value="radio">
-            </div>
-            <label for="radio8"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio9" value="radio">
-            </div>
-            <label for="radio9"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio10" value="radio">
-            </div>
-            <label for="radio10"></label></td>
-        </tr>
-        <tr>
-          <td><div align="left">Help me feel good about myself</div></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio6" value="radio">
-            </div>
-            <label for="radio6"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio7" value="radio">
-            </div>
-            <label for="radio7"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio8" value="radio">
-            </div>
-            <label for="radio8"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio9" value="radio">
-            </div>
-            <label for="radio9"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio10" value="radio">
-            </div>
-            <label for="radio10"></label></td>
-        </tr>
-        <tr>
-          <td><div align="left">Listen to me</div></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio6" value="radio">
-            </div>
-            <label for="radio6"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio7" value="radio">
-            </div>
-            <label for="radio7"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio8" value="radio">
-            </div>
-            <label for="radio8"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio9" value="radio">
-            </div>
-            <label for="radio9"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio10" value="radio">
-            </div>
-            <label for="radio10"></label></td>
-        </tr>
-        <tr>
-          <td><div align="left">Are there for me</div></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio6" value="radio">
-            </div>
-            <label for="radio6"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio7" value="radio">
-            </div>
-            <label for="radio7"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio8" value="radio">
-            </div>
-            <label for="radio8"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio9" value="radio">
-            </div>
-            <label for="radio9"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio10" value="radio">
-            </div>
-            <label for="radio10"></label></td>
-        </tr>
-        <tr>
-          <td><div align="left">Offer spiritual support</div></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio6" value="radio">
-            </div>
-            <label for="radio6"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio7" value="radio">
-            </div>
-            <label for="radio7"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio8" value="radio">
-            </div>
-            <label for="radio8"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio9" value="radio">
-            </div>
-            <label for="radio9"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio10" value="radio">
-            </div>
-            <label for="radio10"></label></td>
-        </tr>
-        <tr>
-          <td><div align="left">Cooperation</div></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio6" value="radio">
-            </div>
-            <label for="radio6"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio7" value="radio">
-            </div>
-            <label for="radio7"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio8" value="radio">
-            </div>
-            <label for="radio8"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio9" value="radio">
-            </div>
-            <label for="radio9"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio10" value="radio">
-            </div>
-            <label for="radio10"></label></td>
-        </tr>
-        <tr>
-          <td><div align="left">Care for me when I'm sick</div></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio6" value="radio">
-            </div>
-            <label for="radio6"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio7" value="radio">
-            </div>
-            <label for="radio7"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio8" value="radio">
-            </div>
-            <label for="radio8"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio9" value="radio">
-            </div>
-            <label for="radio9"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio10" value="radio">
-            </div>
-            <label for="radio10"></label></td>
-        </tr>
-        <tr>
-          <td><div align="left">Give/loan me money when I need it</div></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio6" value="radio">
-            </div>
-            <label for="radio6"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio7" value="radio">
-            </div>
-            <label for="radio7"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio8" value="radio">
-            </div>
-            <label for="radio8"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio9" value="radio">
-            </div>
-            <label for="radio9"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio10" value="radio">
-            </div>
-            <label for="radio10"></label></td>
-        </tr>
-        <tr>
-          <td><div align="left">Babysit</div></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio6" value="radio">
-            </div>
-            <label for="radio6"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio7" value="radio">
-            </div>
-            <label for="radio7"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio8" value="radio">
-            </div>
-            <label for="radio8"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio9" value="radio">
-            </div>
-            <label for="radio9"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio10" value="radio">
-            </div>
-            <label for="radio10"></label></td>
-        </tr>
-        <tr>
-          <td><div align="left">Help with transportation</div></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio6" value="radio">
-            </div>
-            <label for="radio6"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio7" value="radio">
-            </div>
-            <label for="radio7"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio8" value="radio">
-            </div>
-            <label for="radio8"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio9" value="radio">
-            </div>
-            <label for="radio9"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio10" value="radio">
-            </div>
-            <label for="radio10"></label></td>
-        </tr>
-        <tr>
-          <td><div align="left">Help take care of ill/elderly family member</div></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio6" value="radio">
-            </div>
-            <label for="radio6"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio7" value="radio">
-            </div>
-            <label for="radio7"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio8" value="radio">
-            </div>
-            <label for="radio8"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio9" value="radio">
-            </div>
-            <label for="radio9"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio10" value="radio">
-            </div>
-            <label for="radio10"></label></td>
-        </tr>
-        <tr>
-          <td><div align="left">Physcial affection (hugs)</div></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio6" value="radio">
-            </div>
-            <label for="radio6"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio7" value="radio">
-            </div>
-            <label for="radio7"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio8" value="radio">
-            </div>
-            <label for="radio8"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio9" value="radio">
-            </div>
-            <label for="radio9"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio10" value="radio">
-            </div>
-            <label for="radio10"></label></td>
-        </tr>
-        <tr>
-          <td><div align="left">Helps cook and clean</div></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio6" value="radio">
-            </div>
-            <label for="radio6"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio7" value="radio">
-            </div>
-            <label for="radio7"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio8" value="radio">
-            </div>
-            <label for="radio8"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio9" value="radio">
-            </div>
-            <label for="radio9"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio10" value="radio">
-            </div>
-            <label for="radio10"></label></td>
-        </tr>
-      </table>
+    
+    <!-- Lesson #1 - Care Coaching starts here --> 
+    <!-- slide #3 -->
+    
+    <div id="lesson-1-slide-3" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('What’s CARE Coaching all about?'); ?></h2>
+        <hr />
+        <p><?php echo t('You are probably familiar with the term “coaching” from many aspects of our daily lives. As a parent or sibling, you may be involved in coaching little league or some other sport. Usually this form of coaching involves teams. The role of the coach is to motivate, set ground rules, and draw out the best in each player for the good of the team.'); ?></p>
+        <p><?php echo t('In the work environment, coaching may also involve the work team or individual. Coaching the work team may involve looking at ways to turn barriers into opportunities for the good of the team and company. An organization may bring in a professional coach to build sustainable, high-performance work teams and thus build the company’s competitive advantage over other organizations. At the individual level, a coach may focus on leadership development showing the company’s commitment to build a strong base of effective leaders.'); ?></p>
+        <p><?php echo t('As a current or future caregiver, you may be feeling as if you are in a “reversed role” to an elderly parent, other relative, or friend. When we are young, we look up to parents or others as a “coach” in many respects. Though it may have been difficult at times for all of us growing up, the effective parent “coach” had the following skill set:'); ?></p>
+        <ul>
+          <li><?php echo t('They respected us, so we listened to them.'); ?></li>
+          <li><?php echo t('They listened to us, so we felt understood.'); ?></li>
+          <li><?php echo t('They appreciated us, so we felt supported.'); ?></li>
+        </ul>
+        <p><?php echo t('They supported us when we tried new things, so we grew more responsible.'); ?></p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?> </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
     </div>
-    <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?> </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
-  </div>
-  <!-- Lesson 1 Slide 4 -->
-  <div id="lesson-1-slide-4" class="course-slide">
-    <div class="content">
-      <h2 class="flowers"><?php echo t('Caregiver Resources (continued)'); ?></h2>
-      <hr />
-      <p><?php echo t('Friend\'s and Coworkers'); ?></p>
-      <table>
-        <tr>
-          <td><div align="center">Type of Support</div></td>
-          <td><div align="center">None</div></td>
-          <td><div align="center">Little</div></td>
-          <td><div align="center">Some</div></td>
-          <td><div align="center">A lot</div></td>
-          <td><div align="center">As Much As I Need</div></td>
-        </tr>
-        <tr>
-          <td><div align="left">Understanding</div></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio6" value="radio">
-            </div>
-            <label for="radio6"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio7" value="radio">
-            </div>
-            <label for="radio7"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio8" value="radio">
-            </div>
-            <label for="radio8"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio9" value="radio">
-            </div>
-            <label for="radio9"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio10" value="radio">
-            </div>
-            <label for="radio10"></label></td>
-        </tr>
-        <tr>
-          <td><div align="left">Respect</div></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio6" value="radio">
-            </div>
-            <label for="radio6"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio7" value="radio">
-            </div>
-            <label for="radio7"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio8" value="radio">
-            </div>
-            <label for="radio8"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio9" value="radio">
-            </div>
-            <label for="radio9"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio10" value="radio">
-            </div>
-            <label for="radio10"></label></td>
-        </tr>
-        <tr>
-          <td><div align="left">Encouragement</div></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio6" value="radio">
-            </div>
-            <label for="radio6"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio7" value="radio">
-            </div>
-            <label for="radio7"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio8" value="radio">
-            </div>
-            <label for="radio8"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio9" value="radio">
-            </div>
-            <label for="radio9"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio10" value="radio">
-            </div>
-            <label for="radio10"></label></td>
-        </tr>
-        <tr>
-          <td><div align="left">Help me feel good about myself</div></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio6" value="radio">
-            </div>
-            <label for="radio6"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio7" value="radio">
-            </div>
-            <label for="radio7"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio8" value="radio">
-            </div>
-            <label for="radio8"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio9" value="radio">
-            </div>
-            <label for="radio9"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio10" value="radio">
-            </div>
-            <label for="radio10"></label></td>
-        </tr>
-        <tr>
-          <td><div align="left">Listen to me</div></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio6" value="radio">
-            </div>
-            <label for="radio6"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio7" value="radio">
-            </div>
-            <label for="radio7"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio8" value="radio">
-            </div>
-            <label for="radio8"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio9" value="radio">
-            </div>
-            <label for="radio9"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio10" value="radio">
-            </div>
-            <label for="radio10"></label></td>
-        </tr>
-        <tr>
-          <td><div align="left">Are there for me</div></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio6" value="radio">
-            </div>
-            <label for="radio6"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio7" value="radio">
-            </div>
-            <label for="radio7"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio8" value="radio">
-            </div>
-            <label for="radio8"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio9" value="radio">
-            </div>
-            <label for="radio9"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio10" value="radio">
-            </div>
-            <label for="radio10"></label></td>
-        </tr>
-        <tr>
-          <td><div align="left">Offer spiritual support</div></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio6" value="radio">
-            </div>
-            <label for="radio6"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio7" value="radio">
-            </div>
-            <label for="radio7"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio8" value="radio">
-            </div>
-            <label for="radio8"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio9" value="radio">
-            </div>
-            <label for="radio9"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio10" value="radio">
-            </div>
-            <label for="radio10"></label></td>
-        </tr>
-        <tr>
-          <td><div align="left">Cooperation</div></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio6" value="radio">
-            </div>
-            <label for="radio6"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio7" value="radio">
-            </div>
-            <label for="radio7"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio8" value="radio">
-            </div>
-            <label for="radio8"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio9" value="radio">
-            </div>
-            <label for="radio9"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio10" value="radio">
-            </div>
-            <label for="radio10"></label></td>
-        </tr>
-        <tr>
-          <td><div align="left">Care for me when I'm sick</div></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio6" value="radio">
-            </div>
-            <label for="radio6"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio7" value="radio">
-            </div>
-            <label for="radio7"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio8" value="radio">
-            </div>
-            <label for="radio8"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio9" value="radio">
-            </div>
-            <label for="radio9"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio10" value="radio">
-            </div>
-            <label for="radio10"></label></td>
-        </tr>
-        <tr>
-          <td><div align="left">Give/loan me money when I need it</div></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio6" value="radio">
-            </div>
-            <label for="radio6"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio7" value="radio">
-            </div>
-            <label for="radio7"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio8" value="radio">
-            </div>
-            <label for="radio8"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio9" value="radio">
-            </div>
-            <label for="radio9"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio10" value="radio">
-            </div>
-            <label for="radio10"></label></td>
-        </tr>
-        <tr>
-          <td><div align="left">Babysit</div></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio6" value="radio">
-            </div>
-            <label for="radio6"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio7" value="radio">
-            </div>
-            <label for="radio7"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio8" value="radio">
-            </div>
-            <label for="radio8"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio9" value="radio">
-            </div>
-            <label for="radio9"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio10" value="radio">
-            </div>
-            <label for="radio10"></label></td>
-        </tr>
-        <tr>
-          <td><div align="left">Help with transportation</div></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio6" value="radio">
-            </div>
-            <label for="radio6"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio7" value="radio">
-            </div>
-            <label for="radio7"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio8" value="radio">
-            </div>
-            <label for="radio8"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio9" value="radio">
-            </div>
-            <label for="radio9"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio10" value="radio">
-            </div>
-            <label for="radio10"></label></td>
-        </tr>
-        <tr>
-          <td><div align="left">Help take care of ill/elderly family member</div></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio6" value="radio">
-            </div>
-            <label for="radio6"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio7" value="radio">
-            </div>
-            <label for="radio7"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio8" value="radio">
-            </div>
-            <label for="radio8"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio9" value="radio">
-            </div>
-            <label for="radio9"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio10" value="radio">
-            </div>
-            <label for="radio10"></label></td>
-        </tr>
-        <tr>
-          <td><div align="left">Physcial affection (hugs)</div></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio6" value="radio">
-            </div>
-            <label for="radio6"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio7" value="radio">
-            </div>
-            <label for="radio7"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio8" value="radio">
-            </div>
-            <label for="radio8"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio9" value="radio">
-            </div>
-            <label for="radio9"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio10" value="radio">
-            </div>
-            <label for="radio10"></label></td>
-        </tr>
-        <tr>
-          <td><div align="left">Helps cook and clean</div></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio6" value="radio">
-            </div>
-            <label for="radio6"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio7" value="radio">
-            </div>
-            <label for="radio7"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio8" value="radio">
-            </div>
-            <label for="radio8"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio9" value="radio">
-            </div>
-            <label for="radio9"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio10" value="radio">
-            </div>
-            <label for="radio10"></label></td>
-        </tr>
-      </table>
+    
+    <!-- Lesson #1 - Care Coaching starts here --> 
+    <!-- slide #4 -->
+    
+    <div id="lesson-1-slide-4" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('What’s CARE Coaching all about? (continued)'); ?></h2>
+        <hr />
+        <p><?php echo t('As our parents age, they may suffer declining physical or cognitive health and thus have greater need for our help and understanding, and so we may become their “coach” in life. That is easier said than done in many cases! Regardless of their age, our parents always see themselves in that role in our relationship with them. We also tend to go back into old habits, communication styles, or reactions when dealing with our parents. How do you deal with a situation where your father begins to have minor car accidents or “forgets” the way home? Talking with a parent about giving up the car keys is probably one of the most challenging situations we may face as a caregiver.'); ?></p>
+        <p><?php echo t('CARE Coaching involves a method to help you as a caregiver think differently about a caregiving situation so you may better prepare and feel confident about your caregiving responsibilities and actions. Learning what is important to older parents – and learning how to draw that out – often bringing to light new information about what is important to them in terms of their own health and care. CARE Coaching will provide your tools, resources, and experiences targeted towards strengthening your caregiving abilities to Communicate, Advocate, Relate, and Encourage older parents or other loved ones. Throughout this course, we will highlight these terms and provide examples and activities to help you on this journey.'); ?></p>
+        <p><?php echo t('In this course, we’ll usually talk about “older parents,” but we realize that caregivers may be involved in caring for older siblings, other relatives, friends, or neighbors. For the purposes of this course, we will use “older parents” as our “short-hand” descriptor of any older adult that you may be caring for! Before we can start coaching others, let’s consider our skills related to coaching ourselves!'); ?></p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?> </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
     </div>
-    <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?> </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
-  </div>
-  <!-- Lesson 1 Slide 5 -->
-  <div id="lesson-1-slide-5" class="course-slide">
-    <div class="content">
-      <h2 class="flowers"><?php echo t('Managing Self-Care'); ?></h2>
-      <hr />
-      <p><?php echo t('Managing our self-care means that as caregivers we:'); ?></p>
-      <ul>
-        <li><?php echo t('Take responsibility - We realize we are responsible for our personal well-being and for getting our needs met. This includes maintaining activities and relationships that are meaningful to us.'); ?></li>
-        <li><?php echo t('Have realistic expectations - We fully understand our family member\'s medical condition and we are realistic about what our family member can and cannot do. The more you know about your family member\'s medical condition, the better you will be able to plan successful caregiving strategies. Knowledge is power. It is also important to look at your definition of a good caregiver. Unrealistic expectations can set you up for feelings of failure, resentment, and guilt. Placing burdensome expectations on yourself does not make you a better caregiver. In fact, you are much more likely to become an exhausted, irritable, and resentful caregiver... and then to feel guilty!'); ?></li>
-        <li><?php echo t('Focus on what we can do - It is important to be clear about what you can and cannot change. For example, you will not be able to change a person who has always been demanding and inflexible, but you can control how you respond to that person\'s demands. You can accept and let-go of-the things you cannot change. Managing your self-care also means you seek solutions to what you can change.'); ?></li>
-        <li><?php echo t('Communicate effectively with others - These include family members, friends, health care professionals, and the care receiver. Do not expect others to know what you need. Recognize it is your responsibility to tell others about your needs and concerns. Communicate in ways that are positive and avoid being demanding, manipulative, or guilt provoking when you make requests.'); ?></li>
-        <li><?php echo t('Learn from our emotions - Realize there will be emotional ups and downs. Listen to your emotions and what they are telling you. Do not bottle up your emotions. Repressing or denying feelings decreases energy, causes irritability, depression, and physical problems, and affects your judgment and ability to make the best decisions. Also, do not strike out at others. You are in control of your emotions, your emotions do not control you.'); ?></li>
-        <li><?php echo t('Get help when needed - An important part of self-care is knowing when you need help and how to find it. Help can be from community resources, family and friends, or professionals. Most important is that you do not wait until you are hanging at the end of your rope before you get help. Do not wait until you are overwhelmed or exhausted, or your health fails. Reaching out for help, when needed, is a sign of personal strength.'); ?></li>
-        <li><?php echo t('Set goals and work toward them - Be realistic in the goals that you set and take steps toward reaching those goals. Seek solutions to the problems that you experience. Changes do not need to be major to make a significant difference. In summary, self-care means that you seek ways to take better care of yourself. As a caregiver, you do not just survive. You thrive!'); ?></li>
-      </ul>
+    
+    <!-- Lesson #1 - Care Coaching starts here --> 
+    <!-- slide #5 -->
+    
+    <div id="lesson-1-slide-5" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('Self-Coaching: It all starts with me!'); ?></h2>
+        <hr />
+        <p><?php echo t('In this case, it is alright to say “it is all about me!” There is quite a bit of information published about “self-coaching.” Think about the fact that we each represent a unique individual surrounded by a myriad of things going on inside and outside of ourselves. We constantly have an “internal dialogue” going on that no one else can hear. As a caregiver, that “internal dialogue” may be reliving negative experiences:'); ?></p>
+        <ul>
+          <li><?php echo t('“If only my mother listened to me and moved in with us years ago, she would not have fallen, broken her hip, and wound up in that terrible nursing home!”'); ?></li>
+          <li><?php echo t('“I just can not take on more responsibility for my dad\’s care. I already work 50 to 60 hours a week and have family responsibilities. But if I do not, who will?”'); ?></li>
+          <li><?php echo t('“How am I going to bring up the issue of long-term care planning with my parents? They always shut me off when I bring up questions about their finances.”'); ?></li>
+        </ul>
+        <p><?php echo t('Going over and over these types of thoughts and questions in our minds does not get to problem solving. Self-coaching shifts the approach from the cycling negative “internal dialogue” to help you focus on what’s important to you right now and how you may accomplish that goal. Say this to yourself:'); ?></p>
+        <ul>
+          <li><?php echo t('I am going to accomplish something.'); ?></li>
+          <li><?php echo t('I am going to figure it out.'); ?></li>
+          <li><?php echo t('I am going to do my best thinking, because I want to get to what’s important.'); ?></li>
+        </ul>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?> </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
     </div>
-    <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?> </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
-  </div>
-  <!-- Lesson 1 Slide 6 -->
-  <div id="lesson-1-slide-6" class="course-slide">
-    <div class="content">
-      <h2 class="flowers"><?php echo t('Managing Self-Care (continued)'); ?></h2>
-      <hr />
-      <div>
-        <p>Ask yourself the following questions about your caregiving:</p>
+    
+    <!-- Lesson #1 - Care Coaching starts here --> 
+    <!-- slide #6 -->
+    
+    <div id="lesson-1-slide-6" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('Self-Coaching: It all starts with me! (continued)'); ?></h2>
+        <hr />
+        <p><?php echo t('Now, say this out loud:'); ?></p>
+        <ul>
+          <li><?php echo t('I am going to accomplish something.'); ?></li>
+          <li><?php echo t('I am going to figure it out.'); ?></li>
+          <li><?php echo t('I am going to do my best thinking, because I want to get to what is important.'); ?></li>
+        </ul>
+        <p><?php echo t('This is just a simple exercise in positive self-talk. Our internal voice and thoughts have the capability to create our reality, and so it is our daily challenge to move aside the negative, cyclical thinking and focus on positive steps we may take to move forward. Focusing on the many skills you already have inside of yourself not only will benefit your own health, success, and self-esteem, but will be of great aide to your caregiving responsibilities.'); ?></p>
+        <p><?php echo t('Let us first assess where you currently are related to your readiness and awareness for self-coaching, and then we will move into some self-coaching exercises that you may continue as often as you feel it would be helpful to you.'); ?></p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?> </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
+    </div>
+    
+    <!-- Lesson #1 - Care Coaching starts here --> 
+    <!-- slide #7 -->
+    
+    <div id="lesson-1-slide-7" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('Activity – Self-Awareness Survey'); ?></h2>
+        <hr />
+        <p><?php echo t('This activity invites you to explore and live several questions. Your responses should open up more self-awareness of what is important to you in your life.'); ?></p>
+        <p>insert button for activity here</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?> </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
+    </div>
+    
+    <!-- Lesson #1 - Care Coaching starts here --> 
+    <!-- slide #8 -->
+    
+    <div id="lesson-1-slide-8" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('Creating the Environment for Self-Coaching'); ?></h2>
+        <hr />
+        <p><?php echo t('The principle behind self-coaching (and CARE Coaching for that matter!) is the revelation of solutions already inherent in each person. For those who may be fortunate to experience an external coach, their role is to facilitate the experience and create an environment for the person being coached to do their best thinking.'); ?></p>
+        <p><?php echo t('Self-coaching can work in the same way for many individuals who commit some time and effort into the process. We have included several exercises throughout this course that will help you practice coaching skills that will be valuable when coaching yourself or communicating in your caregiving role with older parents.'); ?></p>
+        <p><?php echo t('What is necessary to create an effective self-coaching experience?'); ?></p>
+        <ol>
+          <li><?php echo t('You are aware of the need for change and are prepared to accept that you cannot blame others or circumstances of a situation. In other words, you are willing to be open to choices and you are willing to make those choices. It would be most like stepping outside of your situation and viewing it as impartially as possible.'); ?></li>
+          <li><?php echo t('You are prepared to ask yourself some difficult questions and not avoid answering them. Imagine that you are in some tough discussions with your father and siblings about dad’s lack of caring for himself living alone. Dad has grown more isolated day by day. When visiting one day, you are shocked to find empty food containers and spoiled food in the refrigerator. There is a stack of unpaid bills on the kitchen counter next to a jar of various pills mixed together. You bring this up with your siblings, but their reaction is, “Dad is fine. He wants to stay in his house, and it’s not our place to kick him out!” Your dad says, “I just haven’t gotten around to some things…and I’d thank you to stay out of my business!”'); ?></li>
+          <li><?php echo t('Are your prepared to ask yourself some key questions like…”Am I an effective caregiver? Why do I think that I am not getting the response I need from my dad or siblings? What response should I expect? Why do I believe that I should expect it? Is it realistic and upon what observations do I base the perception?”'); ?></li>
+          <li><?php echo t('Most importantly, “When I think about being a good caregiver, what’s important to me?”'); ?></li>
+        </ol>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?> </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
+    </div>
+    
+    <!-- Lesson #1 - Care Coaching starts here --> 
+    <!-- slide #9 -->
+    
+    <div id="lesson-1-slide-9" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('Creating the Environment for Self-Coaching (continued)'); ?></h2>
+        <hr />
+        <ol>
+          <li><?php echo t('You accept that through self-coaching, you are going to persist until you identify a solution and set of actions that you will then commit to implementing. It may take some time to achieve results, but you need to stick to your goal.'); ?></li>
+          <li><?php echo t('Be willing to “let it go.” We’ve all been in the situation where something just nags at us. Things always seem worse when we pay too much attention to them. If I feel anxious, overwhelmed, or depressed and focus on those feelings, I become it. By letting go, I turn away from it. I don’t feed those problems any longer. It is sort of like flipping to another television channel. You may not be able to stop a thought from “percolating” in your mind, but you can say “no!” to thoughts that result in anxiety or depression. We always have choices. In this case, we have the choice not be become a victim of negative thoughts or insecurities.'); ?></li>
+          <li><?php echo t('Set a time frame for the self-coaching session. The focus of self-coaching is to identify your goal, commit to your actions, and then move on to do something else. Sometimes your best thinking goes on when you do move onto something else and then come back to your goal.'); ?></li>
+        </ol>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?> </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
+    </div>
+    
+    <!-- Lesson #1 - Care Coaching starts here --> 
+    <!-- slide #10 -->
+    
+    <div id="lesson-1-slide-10" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('Video – 5 Steps to Self-Coaching'); ?></h2>
+        <hr />
+        <p><?php echo t('View the Seven Step Breakthrough Process with Life Coach by Rebekah Simpson. This video is a new way for you to experience a self-coaching session in the comfort of your own home. Serving as an introduction to self-coaching exercises, this video outlines a simple self-coaching process can be used over and over again whenever you need it.'); ?></p>
+        <p><?php echo t('Life Coach Self-Coaching 7 Step Breakthrough'); ?></p>
         <p>
-          <input type="checkbox" name="Yes" id="Yes">
-          <label for="Yes">Yes</label>
-          <input type="checkbox" name="No" id="No">
-          <label for="No"> No</label>
-          | Do you ever find yourself trying "to do it all?&quot;</p>
-        <p>
-          <input type="checkbox" name="Yes2" id="Yes2">
-          <label for="Yes2">Yes</label>
-          <input type="checkbox" name="No2" id="No2">
-          <label for="No2"> No</label>
-          | Do you ever say to yourself "I should be able to ... ," "I can never. .. ," or similar statements?</p>
-        <p>
-          <input type="checkbox" name="Yes3" id="Yes3">
-          <label for="Yes3">Yes</label>
-          <input type="checkbox" name="No3" id="No3">
-          <label for="No3"> No</label>
-          | Do you ever ignore your feelings or find that they are overwhelming?</p>
-        <p>
-          <input type="checkbox" name="Yes4" id="Yes4">
-          <label for="Yes4">Yes</label>
-          <input type="checkbox" name="No4" id="No4">
-          <label for="No4"> No</label>
-          | Do you ever get frustrated because of something you can't change or someone who won't change?</p>
-        <p>
-          <input type="checkbox" name="Yes5" id="Yes5">
-          <label for="Yes5">Yes</label>
-          <input type="checkbox" name="No5" id="No5">
-          <label for="No5"> No</label>
-          | Do you resist seeking, asking for, or accepting help?</p>
-        <p>
-          <input type="checkbox" name="Yes6" id="Yes6">
-          <label for="Yes6">Yes</label>
-          <input type="checkbox" name="No6" id="No6">
-          <label for="No6"> No</label>
-          | Do you feel that your family or others just don't understand what you are going through as a caregiver?</p>
-        <p>
-          <input name="Submit" type="submit" id="Submit" onClick="MM_popupMsg('A \'Yes\' answer to any of these questions indicates an area of self-care you might want to work on.')" value="Submit">
+          <iframe width="420" height="315" src="http://www.youtube.com/embed/a3QihYtaCR0" frameborder="0" allowfullscreen></iframe>
         </p>
       </div>
-      <p><?php echo t('Trying To Do It All'); ?></p>
-      <p><?php echo t('One problem that caregivers frequently experience is trying to do it all and doing it all alone. Is it possible to do it all? The answer to the question can be both yes and no. It really depends on you. What is critical is how you define what it means to do it all and, whether or not your definition of doing it all includes taking care of yourself so that you thrive, and not just survive.'); ?></p>
-      <p><?php echo t('To Maxine, the answer to the question "Is it possible to do it all?" was "no." She says, "Mother\'s needs are endless and no matter what I do, I can never make her happy." Yet, at the same time, Maxine was trying to do it all. Her mother\'s care dominated Maxine\'s life. Another caregiver, Maria, answered "yes" to the question, "Is it possible to do it all?" She explained that "All that needed to be done for my mother was done."'); ?></p>
-      <p><?php echo t('A major difference between Maxine and Maria was the rules by which they operated. Maxine operated by the rule, "I must do everything for my mother." The rule had become, "I must help Mama at all costs." As a result, her relationships with other family members suffered and Maxine found herself becoming increasingly resentful. Maxine\'s feelings of wanting to do everything is legitimate, but the actions associated with her feelings usually are impossible to carry out.'); ?></p>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?> </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
     </div>
-    <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?> </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
-  </div>
-  <!-- Lesson 1 Slide 7 -->
-  <div id="lesson-1-slide-7" class="course-slide">
-    <div class="content">
-      <h2 class="flowers"><?php echo t('Managing Self-Care (continued)'); ?></h2>
-      <hr />
-      <p><?php echo t('As a result, Maxine experiences feelings of failure and lack of success. Maria was more realistic. She recognized that the things she wanted to be done whether they were her desires, her mother\'s desires, or the desires of others-were not the same as the things that needed to be done. Maria\'s goal was to make her mother as comfortable as possible, without sacrificing herself and the other important relationships in her life. She also got help from family and a community agency in meeting her mother\'s needs. Maria said:'); ?></p>
-      <p><?php echo t('To some degree I recognized that caregiving was like a job and my goal was to find the best way to get the job done. A friend also told me that doing any job well-including the job of caregiving requires four things:'); ?></p>
-      <ol>
-        <li><?php echo t('Recognizing you can not do everything yourself-you work with others.'); ?></li>
-        <li><?php echo t('Taking daily breaks.'); ?></li>
-        <li><?php echo t('Taking vacations to renew oneself.'); ?></li>
-        <li><?php echo t('Being realistic about what you can do...'); ?></li>
-      </ol>
-      <p><?php echo t('There was another difference between Maxine and Maria. Maxine felt it was selfish to think of herself. Maria, on the other hand, viewed that if she was going to be there for the long haul, she must take care of herself, and make sure that she had pleasurable moments in her life.'); ?></p>
-      <p><?php echo t('As a caregiver, you are more likely to "be there" for your family member who needs your care and to be a more loving and patient caregiver when you meet some of your own needs. It is important to "fill your own cup" and not allow it to "run dry." It is not being selfish to focus on your own needs and desires when you are a caregiver to a family member who has a chronic ·or progressive illness. It is important to ask yourself, "If my health deteriorates, or I die, what will happen to the person I provide care for? If I get emotionally drained, become deprived of sleep, or become isolated because I am trying to do it all, how loving am I likely to be to my family member?"'); ?></p>
+    
+    <!-- Lesson #1 - Care Coaching starts here --> 
+    <!-- slide #11 -->
+    
+    <div id="lesson-1-slide-11" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('Activity – Principles of Success'); ?></h2>
+        <hr />
+        <p><?php echo t('This activity focuses on assessing your awareness of ten principles of success and your rating of how you presently live according to them.'); ?></p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?> </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
     </div>
-    <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?> </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
-  </div>
-  <!-- Lesson 1 Slide 8 -->
-  <div id="lesson-1-slide-8" class="course-slide">
-    <div class="content">
-      <h2 class="flowers"><?php echo t('Managing Self-Care (continued)'); ?></h2>
-      <hr />
-      <p><?php echo t('Taking Time for Yourself'); ?></p>
-      <p><?php echo t('Do you value yourself and your personal needs? What do you do for personal renewal? Do you save some time for yourself out of each day? Do you take occasional extended breaks? Or are you so involved with caregiving tasks that you have little or no time for yourself?'); ?></p>
-      <p><?php echo t('What activities do you enjoy? What would you like to do that would give you a lift? When was the last time you gave yourself a treat?'); ?></p>
-      <p><?php echo t('Breaks in caregiving are a must. They are as important to health as diet, sleep, rest, and exercise. It is important not to lose sight of your personal needs and interests. Studies show that sacrificing yourself in the care of another and removing pleasurable events from your life can lead to emotional exhaustion, depression, and physical illness. You have a right-even a responsibility-to take some time away from caregiving.'); ?></p>
-      <p><?php echo t('Regular breaks from the tasks of caregiving are essential. Decide on the time, date, and activity-then follow through. Breaks do not have to be long to make a positive difference. It is important to plan some time for yourself in every day, even if that time is only for 15 minutes or half an hour. Most important is to do something that "fills your cup" and helps you to feel better and thrive. If you have difficulty taking breaks for yourself, consider taking them for your family member. Care receivers also benefit from caregivers getting breaks.'); ?></p>
+    
+    <!-- Lesson #1 - Care Coaching starts here --> 
+    <!-- slide #12 -->
+    
+    <div id="lesson-1-slide-12" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('Self-Coaching Exercises – The Power of Journaling'); ?></h2>
+        <hr />
+        <p><?php echo t('Journaling is one powerful technique to refocus the negative into positive affirmations. With consistent practice, this method can help create a more positive outlook in our own lives as well as create more positive interactions with others. Journaling facilitates positive self-talk. Positive self-talk has been demonstrated to build one’s self-esteem and self-confidence across a variety of situations.'); ?></p>
+        <p><?php echo t('Journaling requires a time commitment to have an impact on one’s self-confidence. We recommend that you commit 30 days to this exercise to see a difference. Because journaling is a private experience, you can create your own unique experience!'); ?></p>
+        <ol>
+          <li><?php echo t('Begin with getting yourself an inexpensive notebook or journal for your entries.'); ?></li>
+          <li><?php echo t('Make daily entries about your accomplishments – no matter how big or small. They may be accomplishments in relation to either work or your personal life.'); ?></li>
+          <li><?php echo t('Answer these questions:'); ?></li>
+          <li><?php echo t('What makes me unique?'); ?></li>
+          <li><?php echo t('In what areas of my life do I appear most satisfied or content?'); ?></li>
+          <li><?php echo t('In which areas do I appear to be struggling or unfulfilled?'); ?></li>
+          <li><?php echo t('What are my strengths? (look back at your “Principles of Success” ratings for ideas)'); ?></li>
+          <li><?php echo t('How have these strengths helped me in the past?'); ?></li>
+          <li><?php echo t('How do these strengths now help me?'); ?></li>
+          <li><?php echo t('Review your journal entries of recent accomplishments to connect with your values and talents.'); ?></li>
+          <li><?php echo t('What can you truly brag about?'); ?></li>
+          <li><?php echo t('What do your successes say about you?'); ?></li>
+          <li><?php echo t('Create a personal “bragging” statement. Be authentic and positive in your statement. Print out the statement and keep it visible so that you can refer to it often.'); ?></li>
+          <li><?php echo t('Recite it out loud daily, saying, “This is me….This is what makes me special.”'); ?></li>
+        </ol>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?> </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
     </div>
-    <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?> </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
-  </div>
-  <!-- Lesson 1 Slide 9 -->
-  <div id="lesson-1-slide-9" class="course-slide">
-    <div class="content">
-      <h2 class="flowers"><?php echo t('Setting Goals'); ?></h2>
-      <hr />
-      <p><?php echo t('An important tool in taking care of yourself is setting goals. A goal is something you would like to accomplish in the next three to six months: What would you like to do to take better care of yourself and to help yourself to thrive? This might be to get a break from caregiving for a week, get help with caregiving tasks, be able to walk three miles, or quit feeling guilty.'); ?></p>
-      <p><?php echo t('Goals often are difficult to accomplish because they may seem like dreams or they may be overwhelming. As a result, we may not even try to accomplish them or we may give up shortly after we get started. We will address this problem shortly.'); ?></p>
-      <p><?php echo t('For now, take a moment and write at least 3 goals on the Forum. Put an asterisk (*) next to the goal you would like to work on first. After identifying a goal, the first step is to brainstorm all of the different things you might do to reach your goal. Identify and write down all possible options on the Forum as a separate posting.'); ?></p>
-      <p><?php echo t('The second step is to evaluate the options you have identified. Which options seem like possibilities to you? It is important not to assume that an option is unworkable or does not exist until you have thoroughly investigated it or given it a try. Assumptions are major self-care enemies. Put an asterisk (*) next to two or three options you would like to try. Select one to try. The third step is to turn your option into a short-term plan, which we call making an action plan.'); ?></p>
+    
+    <!-- Lesson #1 - Care Coaching starts here --> 
+    <!-- slide #13 -->
+    <div id="lesson-1-slide-13" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('Self-Coaching Exercises – Focus on the Goal'); ?></h2>
+        <hr />
+        <p><?php echo t('Which of these sound like goals to you?'); ?></p>
+        <ul>
+          <li><?php echo t('I want to lose 30 pounds.'); ?></li>
+          <li><?php echo t('I want to get better at negotiating.'); ?></li>
+          <li><?php echo t('I want to get my mother to start considering her long-term care options.'); ?></li>
+        </ul>
+        <p><?php echo t('None of these are goals – these are strategies towards goals.  Strategies are important, as they focus on the “how to get to” goals. It is easy to focus on strategies rather than goals because strategies seem to focus on actions.'); ?></p>
+        <p><?php echo t('How do we identify the goal?  The goal answers the question: “What do you want that is really important to you?”'); ?></p>
+        <p><?php echo t('Another way to differentiate between setting goals and identifying strategies is to look at differences between goal setting and problem solving. Here are some different terms that describe the two:'); ?></p>
+        <table>
+          <tr>
+            <td>Goal Setting</td>
+            <td>Identifying Strategies</td>
+          </tr>
+          <tr>
+            <td>Proactive</td>
+            <td>Reactive</td>
+          </tr>
+          <tr>
+            <td>Finding what is possible</td>
+            <td>Finding what is wrong</td>
+          </tr>
+          <tr>
+            <td>Developing</td>
+            <td>Fixing</td>
+          </tr>
+          <tr>
+            <td>Identifying priorities</td>
+            <td>Addressing crises</td>
+          </tr>
+          <tr>
+            <td>Dynamic</td>
+            <td>Static</td>
+          </tr>
+          <tr>
+            <td>Working with the whole</td>
+            <td>Working with parts</td>
+          </tr>
+        </table>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?> </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
     </div>
-    <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?> </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
-  </div>
-  <!-- Lesson 1 Slide 10 -->
-  <div id="lesson-1-slide-10" class="course-slide">
-    <div class="content">
-      <h2 class="flowers"><?php echo t('Making Action Plans'); ?></h2>
-      <hr />
-      <p><?php echo t('An action plan is a specific action that you are confident you can accomplish within the next week. It is an agreement or contract with yourself.'); ?></p>
-      <p><?php echo t('Action plans are one of your most important self-care tools. An action. plan is a step toward reaching your long-term goal. It is to be something you want to do. It is not to be something you feel you should do, have to do, or need to do. The intent of making an action plan is to help you to feel better and to take better care of yourself. Remember, an action plan is a "want to do." Here are the five steps for making an action plan: '); ?></p>
-      <ul>
-        <li><?php echo t('Decide what you want to do.'); ?></li>
-        <li><?php echo t('Make your plan behavior-specific.'); ?></li>
-        <li><?php echo t('Make a specific plan.'); ?></li>
-        <li><?php echo t('Determine your confidence level.'); ?></li>
-        <li><?php echo t('Write down your action plan.'); ?></li>
-      </ul>
-      <p><?php echo t('Decide What You Want To Do'); ?></p>
-      <p><?php echo t('Think about what is realistic for you to accomplish within the next week. It is important that an action plan is reachable; otherwise, you are likely to experience frustration. An action plan is to help you experience success-not frustration, increased stress, or failure. An action plan starts with the words, "I will ... " If you find yourself saying "I will try to ... ," "I have to ... ," or "I should ... ," then re-examine your action plan. It probably is not something that you truly want to do.'); ?></p>
-      <p><?php echo t('Make Your Plan Behavior-Specific'); ?></p>
-      <p><?php echo t('The more specific your action plan, the greater your chances of accomplishing it. For example, "taking better care of myself" is not a specific behavior. However, making an appointment for a physical check-up, walking three times a week, getting a massage on Thursday afternoon, or asking someone to stay with your family member for one morning are all specific behaviors. "I will relax" also is not a specific behavior; however, reading a book, listening to your favorite music, or puttering in the garden are specific behaviors.'); ?></p>
+    
+    <!-- Lesson #1 - Care Coaching starts here --> 
+    <!-- slide #14 -->
+    
+    <div id="lesson-1-slide-14" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('Self-Coaching Exercises – Focus on the Goal (continued'); ?></h2>
+        <hr />
+        <p><?php echo t('Think of goal setting in terms of NOUNS:'); ?></p>
+        <ul>
+          <li><?php echo t('“I want more confidence dealing with my parents.”'); ?></li>
+          <li><?php echo t('“I want a more positive attitude about my caregiving responsibilities.”'); ?></li>
+          <li><?php echo t('“I want better health for myself.”'); ?></li>
+        </ul>
+        <p><?php echo t('Compare these to strategies which are usually stated in terms of VERBS:'); ?></p>
+        <ul>
+          <li><?php echo t('I want to lose 30 pounds.'); ?></li>
+          <li><?php echo t('I want to get better at negotiating.'); ?></li>
+          <li><?php echo t('I want to get my mother to start considering her long-term care options.'); ?></li>
+        </ul>
+        <p><?php echo t('For this exercise, look back at your responses to the two activities in this module.  In the Self-Awareness Survey, you explored what is important to you in your life.  In the Principles of Success activity, you rated yourself against these principles. Based on these results, develop three statements of goals for yourself. Remember that goals should be stated in terms of nouns.  Goals also answer the question, “What do you want that’s really important to you?”'); ?></p>
+      </div>
+      <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> <?php echo t('Complete Lesson'); ?> </a></div>
     </div>
-    <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?> </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
   </div>
-  <!-- Lesson 1 Slide 11 -->
-  <div id="lesson-1-slide-11" class="course-slide">
-    <div class="content">
-      <h2 class="flowers"><?php echo t('Making Action Plans (continued)'); ?></h2>
-      <hr />
-      <p><?php echo t('Make a Specific Plan'); ?></p>
-      <p><?php echo t('Making a specific plan is often difficult, yet it is the most important part of making an action plan. A specific plan answers these four questions:'); ?></p>
-      <ol>
-        <li><?php echo t('What are you going to do? - Examples: I will read (book name) for pleasure. Or, I will walk.'); ?></li>
-        <li><?php echo t('How much will you do? - Examples: Will you read one chapter or will you read for a half hour? Will you walk two blocks or for 20 minutes?'); ?></li>
-        <li><?php echo t('When will you do this? Examples: Will you read the first thing in the morning when you awaken, before you go to bed, when the care receiver is sleeping, or ... ? If your plan is to walk, when during the day will you do it?'); ?></li>
-        <li><?php echo t('How often will you do this activity? Example: Three times a week on Monday, Wednesday, and Friday.'); ?></li>
-      </ol>
-      <p><?php echo t('A common mistake is to make an action plan that is unreachable within the time frame. For example, if you plan to do something every day, you might fail. Caregiving, and life in general, has its surprises. Although well-intentioned, it is often not possible to do something every day. It is better to plan to do something once or twice a week and exceed your action plan than to plan to do something every day and fail because you only did it six days, rather than seven. Remember, an action plan is meant to help you to take better care of yourself and to experience success. The last thing you need is additional pressure, disappointment, and stress.'); ?></p>
-      <p><?php echo t('Here are two recommendations for writing an action plan that can help you achieve success.'); ?></p>
-      <p><?php echo t('Start where you are or start slowly. If there is a book you have been wanting to read, but just have not found the time, it may not be realistic to expect to read the entire book in the next week. Instead, try reading for a half hour twice during the week If you have not been physically active, it may be unrealistic to make an action plan· to start walking three miles. It is better to make your action plan for something that you believe you can accomplish. For example, make your plan for walking three blocks or a half mile, rather than three miles.'); ?></p>
-      <p><?php echo t('Give yourself time off. We all have days when we do not feel like doing anything. That is the advantage of saying you will do something three days a week, rather than every day. That way, if you do not feel like doing something on one day, or something develops that prevents you from doing it, you can still achieve your action plan.'); ?></p>
+  
+  <!-- Lesson #2 - Understanding Needs and Preferences of Older Adults starts here --> 
+  <!-- slide #1 -->
+  
+  <div id="lesson-2">
+    <div id="lesson-2-slide-1" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('Understanding Needs and Preferences of Older Adults - Topics'); ?></h2>
+        <hr />
+        <p><?php echo t('CARE Coaching: Communicating'); ?><br />
+          <?php echo t('Communicating in CARE Coaching is all about choice. Caregiving commonly brings up feelings of burden, confusion, and guilt for caregivers. Communicating is the first component of CARE Coaching. As a first step, using some key communication skills can relieve some of these concerns.'); ?>
+        <p><?php echo t('Exercise – Understanding Your Parents Needs and Preferences'); ?><br />
+          <?php echo t('This exercise is designed to help you determine what you know and do not know about your parents needs and preferences. Determining this now will help you on the road of communicating more openly about your parents’ future wishes.'); ?></p>
+        <p><?php echo t('Where to Start "The Talk"!'); ?><br />
+          <?php echo t('How do you start to talk to your older parents about the future? What fears do you have about bringing up this topic with them?'); ?></p>
+        <p><?php echo t('Go to the Online Topic Forum'); ?><br />
+          <?php echo t('So that we can share stories, ideas, questions, and issues among participants throughout the course, we have an online topic forum. This forum is for you the caregiver, so feel free to participate in the discussions, add new topics, and share information for others to learn from!'); ?></p>
+        <p><?php echo t('A Framework to Start "The Talk"'); ?><br />
+          <?php echo t('A framework has been developed to help you getting the conversations going. Overall, start small while your parents are still healthy and can fully participate in the discussions about their lives and health without undue pressure.'); ?></p>
+        <p><?php echo t('Activity - Practice "The Talk"'); ?><br />
+          <?php echo t('Some caregivers feel that practice sessions are valuable to "test out" the conversations in other situations. Here are some practice activities for you to try out.'); ?></p>
+        <p><?php echo t('CARE Coaching: Advocating'); ?><br />
+          <?php echo t('The second component of CARE Coaching is advocating. You are on the same team as your parents and want to collaborate with them as a partner in their best future.'); ?></p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Start Course &raquo;'); ?> </a></div>
     </div>
-    <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
-  </div>
-  <!-- Lesson 1 Slide 12 -->
-  <div id="lesson-1-slide-12" class="course-slide">
-    <div class="content">
-      <h2 class="flowers"><?php echo t('Making Action Plans (continued)'); ?></h2>
-      <hr />
-      <p><?php echo t('Determine Your Confidence Level'); ?></p>
-      <p><?php echo t('Once you have made your action plan, ask yourself the following question: On a scale of 0 to 10, with 0 being not at all confident and 10 being totally confident, how confident am I that I can complete my action plan? If your answer is 7 or above, your action plan is probably realistic and reachable. However, if your answer is 6 or below, it is important to take another look at your action plan. Something probably needs to be adjusted.'); ?></p>
-      <p><?php echo t('Ask yourself: What makes me uncertain about accomplishing my action plan? What problems do I foresee? Then, see if you either find a solution to the problems you identified or change your action plan to a new one in which you feel greater confidence.'); ?></p>
-      <p><?php echo t('Write Down Your Action Plan'); ?></p>
-      <p><?php echo t('Once you are satisfied with your action plan, write it down. Putting an action plan in writing helps us to remember, keep track of, and accomplish the agreement we have made with ourselves. Keep track of how you are doing. Write down the problems you encounter in carrying out your action plan. Check off activities as you accomplish them. If you made an adjustment in your action plan, make a note of what you did.'); ?></p>
-      <p><?php echo t('At the end of the week, review your action plan. Ask yourself, "Am l nearer to accomplishing my goal?" "How do I feel about what I did?" What obstacles or problems, if any, did I encounter?" Taking stock is important. If you are having problems, this is the time to seek solutions.'); ?></p>
+    
+    <!-- Lesson #2 - Understanding Needs and Preferences of Older Adults --> 
+    <!-- slide #2 -->
+    
+    <div id="lesson-2-slide-2" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('CARE Coaching: Communicating'); ?></h2>
+        <hr />
+        <p><?php echo t('Does this scenario sound familiar? You are in a restaurant having dinner with your older parents. Your mother has some memory problems which means she takes quite a long time to figure out what to order. The waiter is standing over your table, and your father gets frustrated waiting for her to order. He says, “Helen, just order the chicken. You like the chicken!” She says, “I guess I’ll have the chicken.”'); ?></p>
+        <p><?php echo t('After the waiter leaves (and in front of your mother), he says, “She takes too long to order. She’s distracted with other things going on. She can’t figure it out, so it’s easy for her if I just tell her, and all she has to do is repeat it.” Your mother subsequently doesn’t say much through the rest of the evening. The mood around the table is not much better.'); ?></p>
+        <p><?php echo t('Communicating in CARE Coaching is all about choice. Your father’s response is based on his own perceptions and feelings about what’s going on with your mother rather than supporting her remaining potential to make choices. Perhaps her memory problems do interfere with her capacity to make choices, but being able to “modify” the situation can maximize Helen’s remaining capacities.'); ?></p>
+        <p><?php echo t('Here’s an example:'); ?></p>
+        <p><?php echo t('Back at the restaurant, the waiter is ready to take the order. You say, “Mom, this restaurant is really well known for their delicious chicken and fish dishes, just the way you like them. What do you have a taste for today – chicken or fish?” Your mother says, “Well, I just don’t know. I had
+chicken for lunch today. So I think I’d like to try their fish!”'); ?></p>
+        <p><?php echo t('So what is different in the two approaches? In your approach, you are taking a CARE Coaching approach by asking a version of “What do you want?” through your conversation. Taking into consideration your mother’s limitations, you have supported her remaining abilities to participate in daily life activities.'); ?></p>
+        <p><?php echo t('You may not yet be in a “caregiving” role for your older parents or other loved ones (or you may not consider what you now do for them as “caregiving”), but this course is designed to help you think about the future. People may find themselves “plunged” into the caregiving role at a time in life when they themselves are facing challenges such as mid-career transitions, their own health issues, or before retirement. Additionally, they may be contending with raising their own children simultaneously.'); ?></p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?> </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
     </div>
-    <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
-  </div>
-  <!-- Lesson 1 Slide 13 -->
-  <div id="lesson-1-slide-13" class="course-slide">
-    <div class="content">
-      <h2 class="flowers"><?php echo t('Problem-Solving: A Solution-Seeking Approach'); ?></h2>
-      <hr />
-      <p><?php echo t('Sometimes you may find that your action plan is not workable. You may encounter unusual circumstances that week and need to give the plan a try for at least another week or you may need to make adjustments in your original plan. The following solution seeking approach can help you identify solutions to problems.'); ?></p>
-      <ul>
-        <li><?php echo t('Clearly identify the problem. This is the first and most important step in the solution-seeking approach. It also can be the most difficult step.'); ?></li>
-        <li><?php echo t('List ideas to solve the problem. Family, friends, and others may be helpful in giving ideas. When you ask for ideas, just listen to each suggestion. It is best not to respond as to why an idea is or is not likely to work. Just focus on getting the ideas.'); ?></li>
-        <li><?php echo t('Select one to try. When trying a new idea, give it a fair trial before deciding that it will not work.'); ?></li>
-        <li><?php echo t('Assess the results. Ask yourself, "How well did what I chose work?" If all went well, congratulate yourself for finding a solution to the identified problem. If the first idea did not work, try another idea. Sometimes an idea just needs fine-tuning. It is important not to give up on an idea just because it did not work the first time. If you have difficulty finding a solution that works, utilize other resources. Share your problem with family, friends, and professionals and ask them for possible ideas. If you still find that suggested solutions do not work, you may need to accept that the problem is not solvable right now.'); ?></li>
-      </ul>
-      <p><?php echo t('Remember, just because there does not seem to be a workable solution right now does not mean that a problem can not be solved later, or that other problems can not be solved in the same way. It may be helpful to go back to the first step and consider if the problem needs to be redefined. For example, a caregiver had thought that her problem was "I am tired all of the time." However, the real problem was the caregiver\'s beliefs that "No one can care for John like I can," and "I have to do everything myself." As a result of these beliefs, the caregiver was doing everything herself and getting worn out. When she redefined the problem and focused on changing her beliefs and view of the caregiving situation, she found a workable solution. Sometimes, too, a problem may be easier to work on if you break it down into smaller problems.'); ?></p>
-      <p><?php echo t('Most of the time if you follow these steps, you will find a solution that solves the problem. It is important to avoid making the mistake of jumping from step l to step 7 and thinking "nothing can be done."'); ?></p>
+    
+    <!-- Lesson #2 - Understanding Needs and Preferences of Older Adults --> 
+    <!-- slide #3 -->
+    
+    <div id="lesson-2-slide-3" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('CARE Coaching: Communicating (continued'); ?></h2>
+        <hr />
+        <p><?php echo t('Caregiving commonly brings up feelings of burden, confusion, and guilt for caregivers. As a first step, using some key communication skills can relieve some of these concerns. Where do these feelings stem from? Burden refers to emotional response to changes and demands that occur as caregivers give help and support to the older person.'); ?></p>
+        <p><?php echo t('We have developed a Caregiver Burden Assessment to help you identify aspects of your life that may or may not be impacted by caregiving at this time. Click on the following to access the tool.'); ?></p>
+        <p>button here</p>
+        <p><?php echo t('Confusion about the healthcare system and utilization of those services by older adults is a universal experience for caregivers. Later in this course, we will address important ways for you to better understand the key roles and responsibilities of care providers as well as where concise, accurate information may be found to also share with your older parents.'); ?></p>
+        <p><?php echo t('Guilt is often an ongoing feeling for many caregivers. Sometimes caregivers get so focused on their frail, older parent that they feel guilty focusing on someone else – including themselves. Empower Online addresses these issues for caregivers and provides tools focused on self-care of the caregiver.'); ?></p>
+        <p><?php echo t('As a first step to better communication with your older parents about their needs and preferences, it is important that you have a clear understanding of what you may know and do not know about these needs and preferences. The next exercise will help you determine your level of knowledge as well as your own feelings about your parents’ future planning.'); ?></p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?> </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
     </div>
-    <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
-  </div>
-  <!-- Lesson 1 Slide 14 -->
-  <div id="lesson-1-slide-14" class="course-slide">
-    <div class="content">
-      <h2 class="flowers"><?php echo t('Reward Yourself'); ?></h2>
-      <hr />
-      <p><?php echo t('Accomplishing action plans is often a reward in itself. However, it is also important to find healthy pleasures that add enjoyment to your life. Rewards do not have to be fancy or expensive or take a lot of time. One caregiver; for example, regularly goes to a movie or a play as a gift to herself from her husband. She said:'); ?></p>
-      <p><?php echo t('When my husband was well, he would take me out Friday nights to a movie or a play at least twice a month. Because of his medical condition, he is no longer able to do so. Now a friend and I go to a movie or a play at least once a month. I consider this is a treat that my husband is still giving to me.'); ?></p>
-      <p><?php echo t('Another caregiver said:'); ?></p>
-      <p><?php echo t('Before my wife\'s illness, I would go golfing with my buddies on Saturday morning. When Carmela needed more care, I quit golfing. I now treat myself to Saturday golfing, while my daughter or a friend visits with Carmela. This gives me something to look forward to each week and I feel more alive when I return home. I am also finding I am more patient with Carmela. My daughter says I am always happier and calmer when I return home. So, I look at Saturday golfing as my treat not only to me, but also to Carmela.'); ?></p>
+    
+    <!-- Lesson #2 - Understanding Needs and Preferences of Older Adults --> 
+    <!-- slide #4 -->
+    
+    <div id="lesson-2-slide-4" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('Exercise – Understanding Your Parents\' Needs and Preferences'); ?></h2>
+        <hr />
+        <p><?php echo t('This exercise is designed to help you determine what you know and do not know about your parents needs and preferences. Determining this now will help you on the road of communicating more openly about your parents’ future wishes to reduce your experience of burden, confusion, and guilt as a caregiver. Everyone has a different level of knowledge when it comes to the following information, so do not feel overwhelmed if you do not recall or have not addressed some of these areas with your parents.'); ?></p>
+        <p>button here</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?> </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
     </div>
-    <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
+    
+    <!-- Lesson #2 - Understanding Needs and Preferences of Older Adults --> 
+    <!-- slide #5 -->
+    
+    <div id="lesson-2-slide-5" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('Where to Start "The Talk"!'); ?></h2>
+        <hr />
+        <p><?php echo t('Do not feel anxious if you had a number of "blanks" when working through the previous exercise - it is not a reflection on "bad" caregiving. Your parents have been independent through these many years and may not have felt the need to share much of these matters with "the kids."'); ?> </p>
+        <p><?php echo t('How do you start to talk to your older parents about the future? What fears do you have about bringing up this topic with them? So that we can share stories, ideas, questions, and issues among participants throughout the course, we have an online topic forum. This forum is for you the caregiver, so feel free to participate in the discussions, add new topics, and share information for others to learn from!'); ?></p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?> </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
+    </div>
+    
+    <!-- Lesson #2 - Understanding Needs and Preferences of Older Adults --> 
+    <!-- slide #6 -->
+    
+    <div id="lesson-2-slide-6" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('A Framework to Start "The Talk"'); ?></h2>
+        <hr />
+        <p><?php echo t('A framework has been developed to help you getting the conversations going. Overall, start small while your parents are still healthy and can fully participate in the discussions about their lives and health without undue pressure. Think of this paced way to communicate as "TEMPO." This acronym stands for:'); ?></p>
+        <ul>
+          <li><?php echo t('Timing'); ?></li>
+          <li><?php echo t('Experience'); ?></li>
+          <li><?php echo t('Motivation'); ?></li>
+          <li><?php echo t('Place'); ?></li>
+          <li><?php echo t('Outcome'); ?></li>
+        </ul>
+        <p><?php echo t('Timing - Plan to set aside time for conversations with your parents. Be respectful and ask them when would be the best time for them to have these conversations. In turn, make sure you have time to listen. No ringing cell phones at this time! Above all, be patient. Your parents may feel uncomfortable at first with the idea of these conversations and may want to put them off for some time.'); ?></p>
+        <p><?php echo t('Experience - A good approach to bringing up these difficult topics is to relate it to your experiences. Some openers sound like this:'); ?></p>
+        <p><?php echo t('"Dad, I just came from my attorney\'s office. We finished updating my will. I was wondering when the last time you took a look at yours?"'); ?></p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?> </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
+    </div>
+    
+    <!-- Lesson #2 - Understanding Needs and Preferences of Older Adults --> 
+    <!-- slide #7 -->
+    
+    <div id="lesson-2-slide-7" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('A Framework to Start "The Talk (continued'); ?></h2>
+        <hr />
+        <p><?php echo t('"Mom, a colleague of mine at work just had an unfortunate experience. His father had a sudden heart attack, and it took a long time before they could notify him because his dad did not have any emergency contact information in place. Can we go over how your information is organized particularly since my office recently moved and I have new phone numbers?"'); ?></p>
+        <p><?php echo t('"It is really gotten to be a challenge driving out there. I am on the road all day and see quite a few bad drivers, especially those on their cell phones. I am concerned about how you are feelings about driving these days."'); ?></p>
+        <p><?php echo t('Motivation - Be clear about your motive for having the conversation. The motivating factors should be related to safety, quality of life, and well-being - both theirs and yours. Their best interests are prime consideration, but your life and the lives of your family also matters.'); ?></p>
+        <p><?php echo t('Place - The place where these conversations take place needs to be a "safe space" as your parents would define that. It may not necessarily be in their home. Some of these topics are sensitive and so one parent may feel more comfortable taking the lead in the conversations.'); ?></p>
+        <p><?php echo t('Outcome - One conversation is not going to address all the important topics that need to be discussed. The initial conversations may be laying the groundwork for you to better understand your parents’ feelings. Not only do you want to get information, but you also want to share information.'); ?></p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?> </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
+    </div>
+    
+    <!-- Lesson #2 - Understanding Needs and Preferences of Older Adults --> 
+    <!-- slide #8 -->
+    
+    <div id="lesson-2-slide-8" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('Activity - Practice "The Talk"'); ?></h2>
+        <hr />
+        <p><?php echo t('Some caregivers feel that practice sessions are valuable to "test out" the conversations in other situations. Here are some practice activities for you to try out.'); ?></p>
+        <p>button here for download</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?> </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
+    </div>
+    
+    <!-- Lesson #2 - Understanding Needs and Preferences of Older Adults --> 
+    <!-- slide #9 -->
+    
+    <div id="lesson-2-slide-9" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('CARE Coaching: Advocating'); ?></h2>
+        <hr />
+        <p><?php echo t('It’s time to bring up the second component of CARE Coaching – that of advocating. We are talking about advocating in a caring sense – that of supporting another – rather than in the legal sense – that of defending another.'); ?></p>
+        <p><?php echo t('Caregivers often view their parents as “stubborn” or “resistant” to their help:'); ?></p>
+        <p><?php echo t('“I just can’t get them to listen to me!”'); ?></p>
+        <p><?php echo t('“They just won’t talk to me about their problem, even though I’ve got the answer!”'); ?></p>
+        <p><?php echo t('“They never take my advice – even though it’s for their own good!”'); ?></p>
+        <p><?php echo t('Sounds like some things your parents may have said to you growing up? In these situations, the caregiver is thinking more like the parent, and we remember from our early experiences hearing these – how much did they work when your parents were saying these words to you?'); ?></p>
+        <p><?php echo t('Consider this comparison:'); ?></p>
+        <ul>
+          <li><?php echo t('In the role of PARENT – you are in charge, make the rules, and set the agenda. Negotiating is unnecessary. You are a “teller of information.”'); ?></li>
+          <li><?php echo t('In the role of PARTNER – you have a common goal, mutual interests, and work towards collaborating on common goals. You are a “listener for information.”'); ?></li>
+        </ul>
+        <p><?php echo t('You may need to reassure them that you are on the same team and you want to be a partner in their best future. Your goal is to collaborate with them to uphold their needs, beliefs, and values. It is not your intention to switch to a “parenting” role so as not to diminish their independence.'); ?></p>
+        <p><?php echo t('Self-Coaching Hint: As reinforcement, you need to make sure your intentions are clear. You are not trying to subtly coerce them or manipulate them in some way. You intend to make every action and word worthy of trust. Practice holding that intention in your mind and heart, and it will make a difference in how you listen and influence what you say!'); ?></p>
+      </div>
+      <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> <?php echo t('Complete Lesson'); ?> </a></div>
+    </div>
   </div>
-  <!-- Lesson 1 Slide 15 -->
-  <div id="lesson-1-slide-15" class="course-slide">
-    <div class="content">
-      <h2 class="flowers"><?php echo t('My Action Plan'); ?></h2>
-      <hr />
-      <p><?php echo t('In review, a caregiver who practices selfcare does the following:'); ?></p>
-      <ol>
-        <li><?php echo t('Sets goals.'); ?></li>
-        <li><?php echo t('Identifies a variety of options for reaching a goal'); ?></li>
-        <li><?php echo t('Makes an action plan toward accomplishing the goal.'); ?></li>
-        <li><?php echo t('Carries out the action plan.'); ?></li>
-        <li><?php echo t('Assesses how well the action plan is working.'); ?></li>
-        <li><?php echo t('Makes adjustments, as necessary, in the action plan.'); ?></li>
-        <li><?php echo t('Rewards himself or herself.'); ?></li>
-      </ol>
-      <p><?php echo t('Not all goals are achievable. Sometimes we must accept that what we want to do is not possible at this time, and we must let go of the idea. Be realistic about goals and do not dwell on what can not be done.'); ?></p>
-      <p><?php echo t('Consider what is likely to happen to the caregiver who is driven by a goal to make her mother happy. Given her mother\'s personality, this goal may be completely unachievable. Such a goal creates a heavy burden and a caregiver is not likely to achieve it. However, an achievable goal might be to provide a pleasurable activity for her mother at least once a week perhaps taking her to get her hair done, visiting a friend, watching a comedy on television, or working together on a project her mother enjoys.'); ?></p>
-      <p><?php echo t('Remember, what is important in caregiving is not just to survive, but to thrive!'); ?></p>
-      <p><?php echo t('Action Plan Template'); ?> BUTTON HERE</p>
+  
+  <!-- Lesson #3 - Managing Health Information and Record Keeping --> 
+  <!-- slide #1 -->
+  
+  <div id="lesson-3">
+    <div id="lesson-3-slide-1" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('Managing Health Information and Record Keeping - Topics'); ?></h2>
+        <hr />
+        <p><?php echo t('What’s a Personal Health Record?'); ?><br />
+          <?php echo t('Personal Health Records (PHR) have become an easy-to-use tools to help manage health information in a single place. Having a PHR can help provide more complete information to health care providers or other family members.'); ?></p>
+        <p><?php echo t('Video – What People Say about Personal Health Records'); ?><br />
+          <?php echo t('View a brief video on what people say about their experiences with Personal Health Records.'); ?></p>
+        <p><?php echo t('How to Choose a Personal Health Record'); ?><br />
+          <?php echo t('Choosing a Personal Health Record (PHR) is really a matter of personal choice. A PHR is controlled by the individual and can be shared with others including family members, caregivers, and health care providers.'); ?></p>
+        <p><?php echo t('Types of PHRs'); ?><br />
+          <?php echo t('PHRs may be kept as hard copy on paper or electronically on one’s computer or on the Internet through a service provider. In considering what form may be most suitable, you should consider things like accessibility, convenience, and ease of updating.'); ?></p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Start Course &raquo;'); ?> </a></div>
+    </div>
+    
+    <!-- Lesson #3 - Managing Health Information and Record Keeping --> 
+    <!-- slide #2 -->
+    
+    <div id="lesson-3-slide-2" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('Managing Health Information and Record Keeping - Topics (continued)'); ?></h2>
+        <hr />
+        <p><?php echo t('Activity – Reviewing Internet-Based PHR Tools – My Family Health Portrait'); ?><br />
+          <?php echo t('My Family Health Portrait is a web-based program developed from the U.S. Department of Health and Human Services, Family History Initiative. This initiative is designed to encourage families to learn more about their family health history.'); ?></p>
+        <p><?php echo t('Activity – Reviewing Internet-Based PHR Tools – Google Health'); ?><br />
+          <?php echo t('Google Health is a free, secure web-based program to store and manage health information in a central place. Information is accessible anywhere and at anytime.'); ?></p>
+        <p><?php echo t('Activity – Reviewing Internet-Based PHR Tools - ProfileMD'); ?><br />
+          <?php echo t('ProfileMD is a freeware PHR that allows immediate access to medical health history and information via your smartphone or PDA.'); ?></p>
+        <p><?php echo t('Exercise – CARE Coaching and Selecting PHRs'); ?><br />
+          <?php echo t('Asking the right questions is key to determine which PHR product is right for you and your family. Review the previously described internet-based tools, My Family Health Profile and ProfileMD, and complete the self-learning exercise.'); ?></p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?> </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
+    </div>
+    
+    <!-- Lesson #3 - Managing Health Information and Record Keeping --> 
+    <!-- slide #3 -->
+    
+    <div id="lesson-3-slide-3" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('What is a Personal Health Record?'); ?></h2>
+        <hr />
+        <p><?php echo t('In the previous section, you had the opportunity to complete the Exercise – Understanding Your Parents Needs and Preferences. In that exercise, we asked you to document some basics about what you know about your parents medical and health conditions.'); ?></p>
+        <p><?php echo t('Information like: the name and phone numbers of physicians, lists of their medical conditions and past surgeries, current lists of medications, allergies, and reactions to certain drugs or foods, advanced directives, physical functioning level, cognition, and diet requirements are basic questions asked in the emergency room – and unfortunately – usually repeated by every physician or surgeon you may see during a hospital stay!'); ?></p>
+        <p><?php echo t('It is often difficult to keep all this information straight, particularly in an emergency situation.'); ?></p>
+        <p><?php echo t('To address this problem, Personal Health Records (PHR) have become an easy-to- use tools to help manage health information in a single place. Having a PHR can help provide more complete information to health care providers or other family members. Unnecessary procedures or tests may be avoided if they have been documented in a PHR. Additionally, critical information about ones health in an emergency situation would easily be accessed.'); ?></p>
+        <p><?php echo t('You will learn about several different types of PHRs and have the chance to test some of these out for your own use or for your older parents.'); ?></p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?> </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
+    </div>
+    
+    <!-- Lesson #3 - Managing Health Information and Record Keeping --> 
+    <!-- slide #4 -->
+    
+    <div id="lesson-3-slide-4" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('Video – What People Say about Personal Health Records'); ?></h2>
+        <hr />
+        <p><?php echo t('Vimeo is a respectful community of creative people who are passionate about sharing the videos they make.'); ?></p>
+        <p>
+          <iframe src="http://player.vimeo.com/video/5001493?title=0&amp;byline=0&amp;portrait=0" width="400" height="270" frameborder="0" webkitAllowFullScreen allowFullScreen></iframe>
+        </p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?> </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
+    </div>
+    
+    <!-- Lesson #3 - Managing Health Information and Record Keeping --> 
+    <!-- slide #5 -->
+    
+    <div id="lesson-3-slide-5" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('Video – What People Say about Personal Health Records'); ?></h2>
+        <hr />
+        <p><?php echo t('Vimeo is a respectful community of creative people who are passionate about sharing the videos they make.'); ?></p>
+        <p><a href="http://vimeo.com/5001493">PHR Video</a> from <a href="http://vimeo.com/ahima">AHIMA</a> on <a href="http://vimeo.com">Vimeo</a>.</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?> </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
+    </div>
+    
+    <!-- Lesson #3 - Managing Health Information and Record Keeping --> 
+    <!-- slide #6 -->
+    
+    <div id="lesson-3-slide-6" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('How to Choose a Personal Health Record'); ?></h2>
+        <hr />
+        <p><?php echo t('Choosing a Personal Health Record (PHR) is really a matter of personal choice. A PHR is controlled by the individual and can be shared with others including family members, caregivers, and health care providers. This is different from a health care provider’s electronic or paper health records which are controlled by the provider. One can get access to one’s own health records from a provider, but family members do not have access without your permission.'); ?></p>
+        <p><?php echo t('This can be challenging in the caregiving situation if you as the caregiver do not have permission to access your parents’ health records, and you may need to provide information to a health care provider in an emergency situation. If one of your parents was hospitalized and unable to speak for himself or herself, did you know that the hospital cannot legally provide any information to you as a child without previous permission of your parent?'); ?></p>
+        <p><?php echo t('Ideally, a PHR contains a fairly complete summary of one’s medical and health history based on data from a number of sources. PHRs are available from a number of sources:'); ?></p>
+        <ul>
+          <li><?php echo t('From health insurance plans for members'); ?></li>
+          <li><?php echo t('By health care providers for their patients'); ?></li>
+          <li><?php echo t('From various vendors who have security in place to receive and store personal information'); ?></li>
+        </ul>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?> </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
+    </div>
+    
+    <!-- Lesson #3 - Managing Health Information and Record Keeping --> 
+    <!-- slide #7 -->
+    
+    <div id="lesson-3-slide-7" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('Types of PHRs'); ?></h2>
+        <hr />
+        <p><?php echo t('PHRs may be kept as hardcopy on paper or electronically on one’s computer or on the Internet through a service provider. In considering what form may be most suitable, you should consider things like accessibility, convenience, and ease of updating.'); ?></p>
+        <p><?php echo t('Paper versions can range from a formal document to a file folder with information from health care providers, insurance companies and hospitals. This is at least a good starting point for most people to get a snapshot of one’s health history. The difficulties come in when trying to keep all the information current as well as having emergency access to the information.'); ?></p>
+        <p><?php echo t('The greatest risk of keeping health information on paper can easily be understood when considering the saga of Hurricane Katrina. The risks of keeping health information on paper were fully exposed when hundreds of thousands of evacuees sought care in new medical communities across the country. Evacuees lacked even the most basic personal health information, such as their medications and dosages. Most of their paper records were destroyed in the muck of hurricane-caused flooding, and many medical practices and hospitals were shut down for weeks, perhaps forever. Out of necessity, a program called'); ?> <a href="http://www.katrinahealth.org" target="_blank">KatrinaHealth</a> <?php echo t('was created to rapidly develop electronic health records for those displaced by the hurricane. Since then, the American Association of Family Practitioners (AAFP) has collaborated with the city of New Orleans and Intel, among others, to provide digital PHRs to every New Orleans resident who wants one, and to transfer these to medical practices and hospitals in the displaced residents\' current location for follow-up care.'); ?></p>
+        <p><a href="http://www.ahima.org/" target="_blank">The American Health Information Management Association (AHIMA)</a> <?php echo t('created a PHR form that is available on their website.'); ?></p>
+        <p><?php echo t('Software versions of PHRs are stored on personal computers. Information is inputted directly into electronic forms or by scanning documents from health care providers. A hardcopy can then be easily printed. The user controls access to the information. The major drawback is the lack of accessibility in case of an emergency unless one carries a copy of the records on a flash drive or on a data card. Most software versions of PHRs are available at a cost to consumers.'); ?></p>
+        <p><?php echo t('Internet versions of PHRs are very new having just been developed over the past 1-2 years. Through the web, consumers may access their private PHR accounts by connecting to the Internet and logging in with their username and password. Information may easily be updated, and consumers may elect to share information with specific individuals of their choosing. The major advantage is the access and availability of information in emergency situations – all one needs is Internet connection and logon information.'); ?></p>
+        <p><?php echo t('If you are looking at an internet-based PHR, it is very important that the provider describes security and privacy standards that are in place to protect the information being stored. We will look at a few examples in the next section.'); ?></p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?> </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
+    </div>
+    
+    <!-- Lesson #3 - Managing Health Information and Record Keeping --> 
+    <!-- slide #8 -->
+    
+    <div id="lesson-3-slide-8" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('Activity – Reviewing Internet-Based PHR Tools'); ?></h2>
+        <hr />
+        <p><?php echo t('My Family Health Portrait'); ?></p>
+        <p><?php echo t('My Family Health Portrait is a web-based program developed from the U.S. Department of Health and Human Services, Family History Initiative. This initiative is designed to encourage families to learn more about their family health history. Because health providers have long understood that common illnesses can run in families (like high blood pressure, diabetes, and heart disease – to name a few), tracing illnesses experienced by your parents, grandparents, and other blood relatives may help your physician predict disorders to which you may be at risk and take preventive action.'); ?></p>
+        <p><?php echo t('My Family Health Portrait website helps users organize family history information, save it to their own computer, and print a hard copy to take to the physician’s visit. Additionally, users may grant permission for other family members to view information on their website.'); ?></p>
+        <p><?php echo t('Read the section, “Learn More About My Family Health Portrait” to answer the following questions.'); ?></p>
+        <ul>
+          <li><?php echo t('*Why is completing a family health history important?'); ?></li>
+          <li><?php echo t('*What is done to assure that my information is private that I enter in My Family Health Portrait?'); ?></li>
+          <li><?php echo t('*What does it mean that this tool is EHR (Electronic Health Record) ready? How does this benefit me?'); ?></li>
+          <li><?php echo t('*What is “clinical decision support”? How does it benefit me?'); ?></li>
+        </ul>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo;</a></div>
+    </div>
+    
+    <!-- Lesson #3 - Managing Health Information and Record Keeping --> 
+    <!-- slide #9 -->
+    
+    <div id="lesson-3-slide-9" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('Activity – Reviewing Internet-Based PHR Tools'); ?></h2>
+        <hr />
+        <p><?php echo t('Google Health - Google offers a free, secure web-based program to store and manage health information in a central place. Information is accessible anywhere and at anytime. In addition to health information, test results, x-rays, and other scans may be easily uploaded into your PHR. You may also keep track of test results and laboratory values visually to see how you progress over time. Finally, you may print a wallet card to carry your health profile with you.'); ?></p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo;</a></div>
+    </div>
+    
+    <!-- Lesson #3 - Managing Health Information and Record Keeping --> 
+    <!-- slide #10 -->
+    
+    <div id="lesson-3-slide-10" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('Video – Introduction to Google Health'); ?></h2>
+        <hr />
+        <p>
+          <iframe width="640" height="360" src="http://www.youtube.com/embed/yNe6-p4G7Ik?rel=0" frameborder="0" allowfullscreen></iframe>
+        </p>
+        <p><?php echo t('To summarize aspects of Google Health:'); ?></p>
+        <ul>
+          <li><?php echo t('Store and manage all health information securely.'); ?></li>
+          <li><?php echo t('Create and save a health profile and link to numerous resources to learn more about symptoms, causes, and treatments.'); ?></li>
+          <li><?php echo t('Import medical record files and prescription history through links with partners such as hospitals, labs, pharmacies, and insurance companies.'); ?></li>
+          <li><?php echo t('Track your medical history to keep your physician updated.'); ?></li>
+          <li><?php echo t('Learn how medications may interact through an integrated program that checks for potential problems between drugs.'); ?></li>
+          <li><?php echo t('Select those with whom you want to share key medical information.'); ?></li>
+        </ul>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo;</a></div>
+    </div>
+    
+    <!-- Lesson #3 - Managing Health Information and Record Keeping --> 
+    <!-- slide #11 -->
+    
+    <div id="lesson-3-slide-11" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('Activity – Reviewing Internet-Based PHR Tools'); ?></h2>
+        <hr />
+        <p><?php echo t('ProfileMD'); ?></p>
+        <p><?php echo t('The final PHR tool we will review is one of the latest Internet-based programs designed for Smartphones or PalmOS PDA (personal digital assistant). ProfileMD is a freeware PHR that allows immediate access to medical health history and information via your smartphone or PDA. Search the Web and download the software to your computer and sync with your handheld device.'); ?></p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo;</a></div>
+    </div>
+    
+    <!-- Lesson #3 - Managing Health Information and Record Keeping --> 
+    <!-- slide #12 -->
+    
+    <div id="lesson-3-slide-12" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('Exercise – CARE Coaching and Selecting PHRs'); ?></h2>
+        <hr />
+        <p><?php echo t('Asking the right questions is key to determine which PHR product is right for you and your family. This exercise is designed to help you determine exactly that. Review the previously described internet-based tools, My Family Health Profile and ProfileMD, and respond to the following questions.'); ?></p>
+        <p>down laod acvitity button here</p>
+      </div>
+      <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> <?php echo t('Complete Lesson'); ?> </a></div>
+    </div>
+  </div>
+  <!-- Lesson #4 - Understanding the Health Care System and Utilization by Older Adults --> 
+  <!-- slide #1 -->
+  <div id="lesson-4">
+    <div id="lesson-4-slide-1" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('Understanding the Health Care System and Utilization by Older Adults'); ?></h2>
+        <hr />
+        <p><?php echo t('Navigating the Health Care System'); ?><br />
+          <?php echo t('The goal for any patient in the health care system should be to optimize your chances of achieving a good outcome when health care is needed. Taking charge of one’s health care is key.'); ?></p>
+        <p><?php echo t('CARE Coaching: Relating'); ?><br />
+          <?php echo t('The third component of CARE Coaching is that of relating. The most important factor in the patient-doctor relationship is communicating or relating.'); ?></p>
+        <p><?php echo t('Video – How to Communicate with the Physician'); ?><br />
+          <?php echo t('Dr. Lori Whittaker, a family physician in Seattle, shares tips and advice for how to speak up for yourself when you are at the doctor\'s office.'); ?></p>
+        <p><?php echo t('Helping Older Parents Talk to Medical Professionals about Health Care'); ?><br />
+          <?php echo t('Older adults may especially loath to question physicians because they were raised in a generation where doctors were considered to be above reproach. In planning for your discussions with your older parents and their physicians, remember that as their caregiver, you have an obligation to understand your parents’ medical care.'); ?></p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Start Course &raquo;'); ?> </a></div>
+    </div>
+    
+    <!-- Lesson #4 - Understanding the Health Care System and Utilization by Older Adults --> 
+    <!-- slide #2 -->
+    
+    <div id="lesson-4-slide-2" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('Understanding the Health Care System and Utilization by Older Adults (continued)'); ?></h2>
+        <hr />
+        <p><?php echo t('Exercise – How are You with PowerPhrases?'); ?><br />
+          <?php echo t('Test your skills at PowerPhrases!'); ?></p>
+        <p><?php echo t('Activity – Practicing PowerPhrases with Your Health Provider'); ?><br />
+          <?php echo t('Now that you have assessed your PowerPhrase skill level, we will now focus on PowerPhrases related to your health care provider to ensure a positive visit. By planning specific phrases to use in advance of the appointment, the patient can impact the outcome of the visit.'); ?></p>
+        <p><?php echo t('Learning What You Need to Know About the Health Care System'); ?><br />
+          <?php echo t('Learning what you need to know about the health care system can seem a daunting task. We break down some of the core components that are key for you to understand as caregivers for older parents.'); ?></p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo;</a></div>
+    </div>
+    
+    <!-- Lesson #4 - Understanding the Health Care System and Utilization by Older Adults --> 
+    <!-- slide #3 -->
+    
+    <div id="lesson-4-slide-3" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('Navigating the Health Care System'); ?></h2>
+        <hr />
+        <p><?php echo t('Talk to anyone today about the state of health care and you will probably get an earful of complaints, “horror” stories, and head shaking. Complaints run the gamut of problems with insurance companies and Medicare, doctors who don’t spend enough time with patients, and quick hospital discharges. Here are common issues voiced by older adult patients:'); ?></p>
+        <ul>
+          <li><?php echo t('They cannot get an accurate diagnosis, understand they need treatment, and need someone to help them find physicians, or get tests, that can help them.'); ?></li>
+          <li><?php echo t('They are seeing too many specialists who are not coordinating their care. They need someone who will take a look at their reams of medical records to help them sort out their treatment.'); ?></li>
+          <li><?php echo t('They are having trouble with their insurer, who isn’t paying as promised, or who is denying them care.'); ?></li>
+          <li><?php echo t('They have received doctor or hospital bills that they cannot sort out or decipher. They believe they have been billed for services they did not receive. They have read that up to 80% of hospital bills are incorrect, and they want someone to help them negotiate with whoever has billed them.'); ?></li>
+        </ul>
+        <p><?php echo t('Some of our parents may fondly remember the days when doctors took time with their patients or even came to the home for a visit! We may not be able to “fix” all the problems with the health care system, but what we can do is focus on two things:'); ?></p>
+        <ul>
+          <li><?php echo t('Learning to communicate effectively with health care providers – particularly with physicians – to manage relationships with providers, and'); ?></li>
+          <li><?php echo t('Becoming empowered with knowledge to better understanding health care and roles of providers'); ?></li>
+        </ul>
+        <p><?php echo t('Particularly for many older adults, the experience of the patient-doctor relationship is really what’s missing in much of today’s health care experience. We can use CARE Coaching techniques to help build that relationship.'); ?></p>
+        <p><?php echo t('The goal for any patient in the health care system should be to optimize your chances of achieving a good outcome when health care is needed. Taking charge of one’s health care is key. For older parents who may not be used to or feel comfortable “taking charge of their health care,” this may be a difficult concept for them. We’ll look at some CARE Coaching techniques to help your parents feel comfortable being in charge.'); ?></p>
+        <p><?php echo t('This section will also reinforce your important role as “advocate” that we introduced in Lesson 2. So let’s begin with that all important “patient-doctor” relationship.'); ?></p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo;</a></div>
+    </div>
+    
+    <!-- Lesson #4 - Understanding the Health Care System and Utilization by Older Adults --> 
+    <!-- slide #4 -->
+    
+    <div id="lesson-4-slide-4" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('CARE Coaching: Relating'); ?></h2>
+        <hr />
+        <p><?php echo t('Over the years, the patient-doctor relationship has been defined, though rules of ethics and rules of law, as a fiduciary one, as a relationship founded in trust. When a patient seeks out a physician’s help, and the physician agrees to give that help, a special covenant is made. The patient agrees to take the physician into confidence, to reveal intimate information related to one’s health. The physician, in turn, agrees to honor that trust, and to become the patient’s advocate in all health-related matters.'); ?></p>
+        <p><?php echo t('As a caregiver, you are probably stepping into a situation where your older parents already are seeing one or more physicians for various ailments. Stepping into those relationships can often make you feel like the “third wheel” initially. We are not suggesting that you go to every office visit with your older parents, but in the future, your caregiving role may include and require this so that you may best advocate for you parents.'); ?></p>
+        <p><?php echo t('This brings us to the third component of CARE Coaching, that of relating. The most important factor in the patient-doctor relationship is communicating or relating. It fairly obvious that if a patient cannot communicate well with his or her physician, that’s a problem. How do you know that your older parents’ doctor is relating? Here are some questions to asking your parents:'); ?></p>
+        <ul>
+          <li><?php echo t('Is your doctor listening to what you are saying?'); ?></li>
+          <li><?php echo t('Does your doctor show understanding about your concerns by responding meaningfully to them?'); ?></li>
+          <li><?php echo t('When your doctor explains medical issues to you, are they made to be understandable?'); ?></li>
+          <li><?php echo t('Is your doctor patient with you and willing to draw out questions you may have?'); ?></li>
+        </ul>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo;</a></div>
+    </div>
+    
+    <!-- Lesson #4 - Understanding the Health Care System and Utilization by Older Adults --> 
+    <!-- slide #5 -->
+    
+    <div id="lesson-4-slide-5" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('Video – How to Communicate with the Physician'); ?></h2>
+        <hr />
+        <p><?php echo t('Have you ever left a doctor\'s appoinment feeling that your questions were not answered? Or not sure what you were supposed to do next? Do not worry, you are not alone. Dr. Lori Whittaker, a family physician in Seattle, shares tips and advice for how to speak up for yourself when you are at the doctor\'s office. Good communication is a two way street, and it is up to you to make sure you get the treatment and the information you need to stay healthy. '); ?>
+        <p>
+          <iframe width="480" height="360" src="http://www.youtube.com/embed/rEt8xfQ9z1U?rel=0" frameborder="0" allowfullscreen></iframe>
+        </p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo;</a></div>
+    </div>
+    
+    <!-- Lesson #4 - Understanding the Health Care System and Utilization by Older Adults --> 
+    <!-- slide #6 -->
+    
+    <div id="lesson-4-slide-6" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('Helping Older Parents Talk to Medical Professionals about Health Care'); ?></h2>
+        <hr />
+        <p><?php echo t('Occasionally, it may be feel intimidating to speak to physicians for one reason or another. At times, the actions of the doctor may appear that he or she has little time to spend with us. At other times, we may feel “inadequate” in our knowledge and use of “medical terms,” feeling like we speak a different language than physicians.'); ?></p>
+        <p><?php echo t('Older adults may especially loath to question physicians because they were raised in a generation where doctors were considered to be above reproach. Many of today’s generation of health care professionals encourage questions and want their patients to play a role in their health care.'); ?></p>
+        <p><?php echo t('In planning for your discussions with your older parents and their physicians, remember that as their caregiver, you have an obligation to understand your parents’ medical care.'); ?></p>
+        <p><?php echo t('Another important consideration for you as the caregiver to understand relates to patient privacy requirements and rights. If you are not the medical guardian (or power of attorney) for your parents, they must give consent for you to get information about their health care.'); ?></p>
+        <p><?php echo t('On the other hand, if you are the medical guardian of your parents and they are either too young, too old or too sick to speak about their medical history themselves, it is perfectly reasonable for you to take that role with health care professionals. Remember to be especially diplomatic with older adults who may take offense at being “spoken for.” Try to work out who will be the chief medical historian and speaker before you enter the doctor’s office.'); ?></p>
+        <p><?php echo t('The next exercise will coach you through learning to use “PowerPhrases” – short, specific expressions that get results by saying what it means and meaning what it says. By planning some specific phrases to use in advance of a doctor’s appointment, older adults find that they can impact the outcome of the interaction.'); ?></p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo;</a></div>
+    </div>
+    
+    <!-- Lesson #4 - Understanding the Health Care System and Utilization by Older Adults --> 
+    <!-- slide #7 -->
+    
+    <div id="lesson-4-slide-7" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('Exercise – How are You with PowerPhrases?'); ?></h2>
+        <hr />
+        <p><?php echo t('How familiar does this sound? George has been waiting in the exam room for his physician to come in for over 50 minutes. He has counted the floor and ceiling tiles at least six times and needs to use the bathroom out in the hall, but is unwilling to get up with just the examining gown to cover him.'); ?></p>
+        <p><?php echo t('When George’s physician entered, he seemed rush and distracted. He glanced at George’s file and talked rapidly throughout the brief exam. George has several questions that he wanted to discuss that were very personal. Because the physician seemed so rushed, George was not comfortable asking his questions.'); ?></p>
+        <p><?php echo t('The physician told George that his blood pressure was high and he was going to give him a prescription for something (he didn’t say what!). The physician walked out. A few minutes later, a nurse walked in and handed George a prescription telling him that he may get dressed now. George figured that he would just have to ask his pharmacist the questions.'); ?></p>
+        <p><?php echo t('Given the pressures of managed care, it is common for physicians to space appointments 15 minutes apart. The need for expediency can result in communication breakdowns that may result in inadequate care or serious consequences.'); ?></p>
+        <p><?php echo t('A “PowerPhrase” is a short, specific expression that gets results by saying what it means and meaning what it says (without being mean!). By planning specific phrases to use prior to an appointment, the results can be much more favorable to the patient. Let’s do an exercise to see your current “PowerPhrase” skill level. '); ?></p>
+        <p>button here</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo;</a></div>
+    </div>
+    
+    <!-- Lesson #4 - Understanding the Health Care System and Utilization by Older Adults --> 
+    <!-- slide #8 -->
+    
+    <div id="lesson-4-slide-8" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('Activity – Practicing PowerPhrases with Your Health Provider'); ?></h2>
+        <hr />
+        <p><?php echo t('Now that you have assessed your PowerPhrase skill level, we will now focus on PowerPhrases related to your health care provider to ensure a positive visit. By planning specific phrases to use in advance of the appointment, the patient can impact the outcome of the visit. You may find these helpful not only for your older parents, but also for your own use when visiting your doctor.'); ?></p>
+        <p><?php echo t('Here is another typical scenario. You are visiting your mother one Sunday afternoon. You notice that she appears to be limping and favoring one side when she walks. You say, “Mom, I noticed you are limping. Are you having some difficulty walking?” She says, “Yes, my left shin is very painful. It’s been like this for about a week.” You ask to see her shin and you notice that there is redness and swelling. She tells you that she will be seeing her doctor this Thursday. You offer to accompany her, and she agrees.'); ?></p>
+        <p><?php echo t('On Thursday, you take her to her appointment and accompany her to the exam room. Dr. Palmer enters and asks your mom how she is feeling. Your mom replies, “Fine, thank you.” Dr. Palmer reviews the laboratory results and says, “Your iron level is a bit low. I’ll give you a B12 injection and you’ll feel as good as new!” “Thank you, doctor,” replies your mom. With that the doctor exits to see his next patient.'); ?></p>
+        <p><?php echo t('What just happened here? Unfortunately for many older adults, this is a typical office visit. Without some preplanning for the visit and selection of PowerPhrases, that potentially serious problems may go unaddressed.'); ?></p>
+        <p><?php echo t('Think of PowerPhrases as the means to tell the doctor exactly what he or she needs to know. You or your older parent should not leave the visit until all your questions are answered.'); ?></p>
+        <p>download button here</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo;</a></div>
+    </div>
+    
+    <!-- Lesson #4 - Understanding the Health Care System and Utilization by Older Adults --> 
+    <!-- slide #9 -->
+    
+    <div id="lesson-4-slide-9" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('Activity – Practicing PowerPhrases with Your Health Provider (continued'); ?></h2>
+        <hr />
+        <p><?php echo t('Here are some starter PowerPhrases to be used in response to the doctor’s opening question “How are you doing?”:'); ?></p>
+        <ul>
+          <li><?php echo t('“I have a pain in my…..that started about……”'); ?></li>
+          <li><?php echo t('“My symptoms are….”'); ?></li>
+        </ul>
+        <p><?php echo t('With these simple prompts, the doctor can begin the exam with the understanding of “what brought you here today.” It is important that your older parent brings a list of pertinent information to readily provide the doctor with details that may be important. It is also an opportunity to learn more about potential issues that may arise, say from drug interactions. Some PowerPhrases include:'); ?></p>
+        <p><?php echo t('“These are the medications I am currently taking…..” “These are the vitamins and herbs I take….Which of these may interact with my medications?” “What does this drug do?”'); ?></p>
+        <p><?php echo t('At times, you or your older parent may feel rushed. It is essential that you or your older parent feels comfortable saying so to the doctor. This one may take practice! Some PowerPhrases are:'); ?></p>
+        <ul>
+          <li><?php echo t('“I am aware that you are busy. However, I am feeling rushed and I need to be sure that my questions are answered. Please give me the time I need.”'); ?></li>
+          <li><?php echo t('“I’m not comfortable with how fast you are talking. I need you to slow down and help me understand.”'); ?></li>
+          <li><?php echo t('“I understand that you are busy. However, I want to make sure you understand my symptoms and that I learn everything you can teach me about my condition and care.”'); ?></li>
+        </ul>
+        <p><?php echo t('For this activity, you will prepare for the doctor’s visit and practice PowerPhrases. You may want to practice with your older parent or you may role play with your spouse, relative, or friend.'); ?></p>
+        <p><?php echo t('Self-Coaching Hint: Be assertive but not aggressive in communicating with your parent’s doctors. Most doctors and other health care professionals today want to ask questions and be asked about health care issues by their patients.'); ?></p>
+        <p>download button here</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo;</a></div>
+    </div>
+    
+    <!-- Lesson #4 - Understanding the Health Care System and Utilization by Older Adults --> 
+    <!-- slide #10 -->
+    
+    <div id="lesson-4-slide-10" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('Learning What You Need to Know About the Health Care System'); ?></h2>
+        <hr />
+        <p><?php echo t('Learning What You Need to Know About the Health Care System'); ?></p>
+        <p><?php echo t('Learning what you need to know about the health care system can seem a daunting task. We break down some of the core components that are key for you to understand as caregivers for older parents. This information is not meant to be comprehensive, but provides you a starting point to better understand the complexities that are today’s health care system.'); ?></p>
+        <ul>
+          <li><?php echo t('People (add hyperlink)'); ?></li>
+          <li><?php echo t('Places (add hyperlink)'); ?></li>
+          <li><?php echo t('Things and More Things (add hyperlink)'); ?></li>
+        </ul>
+        <p>download button here </p>
+      </div>
+      <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> <?php echo t('Complete Lesson'); ?></a></div>
+    </div>
+  </div>
+  <!-- Lesson #5 - Relocation and Transfers by Older Adults within the Health Care System --> 
+  <!-- slide #1 -->
+  <div id="lesson-5">
+    <div id="lesson-5-slide-1" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('Relocation and Transfers by Older Adults within the Health Care System - Topics'); ?></h2>
+        <hr />
+        <p><?php echo t('“I Think It’s Time We Sell the House.”'); ?><br />
+        <p><?php echo t('In Section 2, we focused on a framework and experiences in communicating effectively with your older parents. Probably the one area that is most challenging to discuss with older parents deals with their ability to continue to live independently in their own home or apartment.'); ?></p>
+        <p><?php echo t('CARE Coaching: Encouraging'); ?><br />
+          <?php echo t('The fourth and final component of CARE Coaching is that of encouraging. The decision to move to a retirement community is often a difficult one for older adults and families alike. Changes in health or other factors typically drive this decision, but being proactive and understanding how to make educated choices is key.'); ?></p>
+        <p><?php echo t('Activity – Relocating Scenarios'); ?><br />
+          <?php echo t('How can I convince my older parents to move to a retirement community? Here are two scenarios for you to respond to.'); ?></p>
+        <p><?php echo t('General Indicators When It May be Time to Consider Moving'); ?><br />
+          <?php echo t('Although each situation is going to be very different, often medical conditions or mental awareness change warrant considering a move to a place where help with activities of daily living is available. In other cases, older adults may begin to find that tasks like cooking, housekeeping, shoveling snow, mowing the lawn, and taking care of home repairs have become a burden. Here are some general indicators to consider.'); ?></p>
+        <p><?php echo t('Understanding the Options: From Staying at Home to Retirement Living'); ?><br />
+          <?php echo t('Major life changes are seldom easy particularly when it comes to considering moving out of one’s home with all its memories. Our aging population and growing consumer expectations for choice and quality in care for older adults have sparked an increasing number of options for older adults and their families. We will look at some of those choices in this next section.'); ?></p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Start Course &raquo;'); ?> </a></div>
+    </div>
+    
+    <!-- Lesson #5 - Relocation and Transfers by Older Adults within the Health Care System --> 
+    <!-- slide #2 -->
+    
+    <div id="lesson-5-slide-2" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('Relocation and Transfers by Older Adults within the Health Care System - Topics (continued)'); ?></h2>
+        <hr />
+        <p><?php echo t('“Aging in Place” - Planning for the Future'); ?><br />
+          <?php echo t('“Aging in place” is a term often used to describe an older adult’s ability to stay in one location over the course of one’s life even as their medical and personal needs change over time. That may refer to living in a senior living community that provides services and care across the aging continuum or it may refer to continuing to live in one’s home and have services and care brought in by outside health care agencies.'); ?></p>
+        <p><?php echo t('What are Other Options for my Older Parents?'); ?><br />
+          <?php echo t('Understanding all of one’s options is important in making a big decision such as relocating. The more preplanning that can occur as well as understanding all options is key. Let’s look at some additional options for older adults.'); ?></p>
+        <p><?php echo t('Exercise – Visiting a Senior Living Community'); ?><br />
+          <?php echo t('The best way to understand senior living communities is to actually visit one in your area. We have developed the following checklist that you may print and take with you on your visit. We recommend visiting a CCRC so that you may get an idea of the different levels of services and care that are available to residents.'); ?></p>
+        <p><?php echo t('Long Distance Caregiving'); ?><br />
+          <?php echo t('With many grown children seeking new career opportunities or needing to relocate due to their job away from their parents and the home in which they were raised, long distance caregiving has grown as an issue in our society. Here are some fast facts.'); ?></p>
+        <p><?php echo t('Activity – CARE Coaching through Long Distance Caregiving') ?><br />
+          <?php echo t('Read the following scenario and then respond to the CARE coaching questions. We provide some initial “openers” for CARE coaching questions for you to more fully develop your own questions.'); ?></p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo;</a></div>
+    </div>
+    
+    <!-- Lesson #5 - Relocation and Transfers by Older Adults within the Health Care System --> 
+    <!-- slide #3 -->
+    
+    <div id="lesson-5-slide-3" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('“I Think It’s Time We Sell the House.”'); ?></h2>
+        <hr />
+        <p><?php echo t('In Section 2, we focused on a framework and experiences in communicating effectively with your older parents. Probably the one area that is most challenging to discuss with older parents deals with their ability to continue to live independently in their own home or apartment.'); ?></p>
+        <p><?php echo t('In the “perfect world,” your parents call you one day and say, “Your father and I were talking today about how difficult it is for us to keep up the house. All the housework, lawn upkeep, snow shoveling. So we’ve decided to sell the house and move to that new retirement community in the next town.”'); ?></p>
+        <p><?php echo t('Your response, “Whew! Thanks mom and dad for making this decision!”'); ?></p>
+        <p><?php echo t('In reality, the discussion of potential relocation can be challenging – not just with your parents, but siblings and other relatives may have different viewpoints. Additionally, there are so many more choices in senior living options today even compared to ten years ago. We address some of those options in this section.'); ?></p>
+        <p><?php echo t('Probably more important than the question, “Where will they live?” is the question, “How will they live?” For their quality of life to be enhanced, discussion questions must extend beyond health and safety issues (although these are important as well!). These are some of the types of questions to explore with your older parents:'); ?></p>
+        <ul>
+          <li><?php echo t('How do you want to live?'); ?></li>
+          <li><?php echo t('What’s most important to you?'); ?></li>
+          <li><?php echo t('What do you enjoy?'); ?></li>
+          <li><?php echo t('What do you hope for?'); ?></li>
+          <li><?php echo t('What gives you the greatest pleasure?'); ?></li>
+          <li><?php echo t('What do you want more of in your lives?'); ?></li>
+          <li><?php echo t('What gives meaning to your lives?'); ?></li>
+          <li><?php echo t('What give you joy in your lives?'); ?></li>
+        </ul>
+        <p><?php echo t('Watch the following brief video to introduce yourself to senior living options.'); ?></p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo;</a></div>
+    </div>
+    
+    <!-- Lesson #5 - Relocation and Transfers by Older Adults within the Health Care System --> 
+    <!-- slide #4 -->
+    
+    <div id="lesson-5-slide-4" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('Video – Learn about Senior Living'); ?></h2>
+        <hr />
+        <p>
+          <iframe width="640" height="360" src="http://www.youtube.com/embed/qZctOf7pHlo?rel=0" frameborder="0" allowfullscreen></iframe>
+        </p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo;</a></div>
+    </div>
+    
+    <!-- Lesson #5 - Relocation and Transfers by Older Adults within the Health Care System --> 
+    <!-- slide #5 -->
+    
+    <div id="lesson-5-slide-5" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('CARE Coaching: Encouraging'); ?></h2>
+        <hr />
+        <p><?php echo t('tThe fourth and final component of CARE Coaching is that of encouraging. The decision to move to a retirement community is often a difficult one for older adults and families alike. Changes in health or other factors typically drive this decision, but being proactive and understanding how to make educated choices is key.'); ?></p>
+        <p><?php echo t('Encouraging our older parents can take many forms. Primarily, we want to encourage them to be as independent as possible for as long as possible. Sometimes an older person experiences changes in health or mental awareness that is very gradual and that is “under the radar” of their children or friends. Older persons may learn effective “cues” to help them remember important events or when to pay bills. It may be as simple as keeping a calendar or written lists of when the past visits occurred with their doctors. We should encourage those “cues” that are effective in promoting independence.'); ?></p>
+        <p><?php echo t('Sometimes older adults may not realize the range of options open to them if living alone seems to be challenging in some respects. Encouraging may take the form of providing accurate information about possible options for living arrangements. It is not uncommon today for adult children to be making the first visit to a retirement community to gain a better understanding of what services, programs, and amenities are being offered prior to a visit by their older parents.'); ?></p>
+        <p><?php echo t('When the decision to move is made by your parents, encouraging their transition is important. Some retirement communities now offer “short stays” for prospective residents. This may be a way to introduce your parents to the new environment, while still being able to return home before making the move permanent.'); ?></p>
+        <p><?php echo t('Engaging your parents in the process of choosing what furniture, household items, and personal treasures to take to their new home is important. Encouraging them to “personalize” their new home will make the transition easier. There are services available (senior move managers) across the country that focus specifically on helping older adults “downsize” from large family homes to smaller spaces. They can do everything from coordinating the entire move, packing and unpacking the home, and arranging for sales, consignment, or donation of items that would not be part of the move. Learn more about senior move managers at the professional association’s website (www.nasmm.org).'); ?></p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo;</a></div>
+    </div>
+    
+    <!-- Lesson #5 - Relocation and Transfers by Older Adults within the Health Care System --> 
+    <!-- slide #6 -->
+    
+    <div id="lesson-5-slide-6" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('Activity – Relocating Scenarios'); ?></h2>
+        <hr />
+        <p><?php echo t('How can I convince my older parents to move to a retirement community? Here are two scenarios for you to respond to.'); ?></p>
+        <p>button here for download</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo;</a></div>
+    </div>
+    
+    <!-- Lesson #5 - Relocation and Transfers by Older Adults within the Health Care System --> 
+    <!-- slide #7 -->
+    
+    <div id="lesson-5-slide-7" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('General Indicators When It May be Time to Consider Moving'); ?></h2>
+        <hr />
+        <p><?php echo t('Although each situation is going to be very different, often medical conditions or mental awareness change warrant considering a move to a place where help with activities of daily living is available. In other cases, older adults may begin to find that tasks like cooking, housekeeping, shoveling snow, mowing the lawn, and taking care of home repairs have become a burden. Some general indicators to consider:'); ?></p>
+        <p><?php echo t('Is your older parent experiencing significant weight loss? - Cooking for one can often be a chore especially for an older adult. When you eat alone, you eat less. Well-balanced meals can often be inconvenient to prepare.'); ?>
+        <p><?php echo t('Does your older parent experience mood changes, depression, or isolation? - As we get older, we tend to isolate ourselves and depression may set in. Older adults do not always experience depression in the same ways as younger adults. Older adults tend to have physical symptoms with depression, and so depression is often difficult to diagnose. Many older adults (and their health providers unfortunately!) believe that depression is just part of getting older!'); ?></p>
+        <p><?php echo t('Do you or your older parent have concerns about safety? - A two-story home can be difficult for many people with mobility problems particularly if the bedrooms, bathrooms, and laundry are on the second floor. On average, about one-third of all older adults have a fall each year most often in their own home.'); ?></p>
+        <p><?php echo t('Do you or your older parent have concerns about security issues? - Unfortunately, criminals prey on older adults. It is not uncommon to hear about cases where older adults are taken advantage of in their home by unscrupulous vendors or even prey to home invaders who may harm the older adult in addition to robbing the home.'); ?></p>
+        <p><?php echo t('Does your older parent need help with daily tasks? - Many retirement communities offer assisted living for residents to “age in place.” Personalized plans of care are designed to help with dressing, grooming, bathing, and medications.'); ?></p>
+        <p><?php echo t('One last question to consider is, “Will moving be any easier next spring, next year, five or even ten years down the road?” In just about every case, the answer is “no.”'); ?></p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo;</a></div>
+    </div>
+    
+    <!-- Lesson #5 - Relocation and Transfers by Older Adults within the Health Care System --> 
+    <!-- slide #8 -->
+    
+    <div id="lesson-5-slide-8" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('Understanding the Options: From Staying at Home to Retirement Living'); ?></h2>
+        <hr />
+        <p><?php echo t('Major life changes are seldom easy particularly when it comes to considering moving out of one’s home with all its memories. In past years, older parents had two options – either struggle to stay in one’s home, often one spouse caring for the other, or else resort to expensive (and frequently inadequate) nursing home care. The stress on the caregiving spouse can also have negative effects on his or her health and well-being.'); ?></p>
+        <p><?php echo t('Our aging population and growing consumer expectations for choice and quality in care for older adults have sparked an increasing number of options for older adults and their families. We will look at some of those choices in this next section.'); ?></p>
+        <p><?php echo t('Retirement living has many names and faces. The “industry” typically refers to “retirement living” as “senior living.” Retirement communities are referred to as “senior living communities.” There is basically three levels of care in senior living:'); ?></p>
+        <ul>
+          <li><?php echo t('Independent Living'); ?></li>
+          <li><?php echo t('Assisted Living'); ?></li>
+          <li><?php echo t('Long-Term Care/Nursing Homes'); ?></li>
+        </ul>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo;</a></div>
+    </div>
+    
+    <!-- Lesson #5 - Relocation and Transfers by Older Adults within the Health Care System --> 
+    <!-- slide #9 -->
+    
+    <div id="lesson-5-slide-9" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('Understanding the Options: From Staying at Home to Retirement Living (continued)'); ?></h2>
+        <hr />
+        <p><?php echo t('Independent living communities provide services, programs, and amenities to older adults who are able to function relatively independently in their homes. Services and programs often focus on supporting independence and wellness among residents. Independent living communities generally consists of homes, condominiums, town houses, apartments, and/or mobile and motor homes where residents maintain an independent lifestyle. Some communities offer only minimal services such as building and grounds maintenance, and security. The residential units may be rented on a monthly basis or owned as condominiums or cooperatives. Basically they are no different from other residential enclaves except that there is an age restriction (over 55) or an age target. Depending on the community, residents are often able to bring in home care services or personal assistants for periods of time after an illness episode or hospitalization to aid in recuperation.'); ?></p>
+        <p><?php echo t('Assisted living communities provide care for seniors who need some help with activities of daily living yet wish to remain as independent as possible. A middle ground between independent living and nursing homes, assisted living communities aim to foster as much autonomy as the resident is capable of. Most communities offer 24-hour supervision and an array of support services, with more privacy, space, and dignity than many nursing homes at lower costs.'); ?></p>
+        <p><?php echo t('There are approximately 33,000 assisted living communities operating in the U.S. today. The number of residents living in a facility can range from several to 300, with the most common size being between 25 and 120 residents. Assisted living staff helps residents with daily personal care including bathing, dressing, eating, grooming, and getting around. Medical care is limited, but families may contract for some medical needs such as medication administration or home health care. Assisted living communities focus on what is termed a “social model” of care (e.g., promoting social engagement and supporting individual care needs).'); ?></p>
+        <p><?php echo t('To understand more about assisted living – levels of care, caring for loved ones with dementia, how to pay for one, and how to evaluate one – search the Web and download the “ Gilbert Buide - Assisted Living Evaluation and Moving Kit.”'); ?></p>
+        <p><?php echo t('Watch the following brief video to learn more about assisted living.'); ?></p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo;</a></div>
+    </div>
+    
+    <!-- Lesson #5 - Relocation and Transfers by Older Adults within the Health Care System --> 
+    <!-- slide #10 -->
+    
+    <div id="lesson-5-slide-10" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('Video – Learn about Assisted Living'); ?></h2>
+        <hr />
+        <p>
+          <iframe width="480" height="360" src="http://www.youtube.com/embed/1h0CtiAybLc?rel=0" frameborder="0" allowfullscreen></iframe>
+        </p>
+        <p><?php echo t('Long-term care communities, or nursing homes, may be independent or part of a senior continuing care community, providing medical and nursing care. Residents may be there temporarily for a period of rehabilitation, or may be there for long-term care. State regulations define the services that nursing homes may provide. Registered Nurses who help provide 24-hour care to people who can no longer care for themselves due to physical, emotional, or mental conditions. A physician supervises each resident’s care and a nurse or other medical professional is almost always on the premises. Most nursing homes have two basic types of services: skilled medical care and custodial care. Nursing homes offer an array of services, in addition to the basic skilled nursing care and the custodial care. They provide a room, all meals, some social activities, personal care, 24-hour nursing supervision and access to medical services when needed.'); ?></p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo;</a></div>
+    </div>
+    
+    <!-- Lesson #5 - Relocation and Transfers by Older Adults within the Health Care System --> 
+    <!-- slide #11 -->
+    
+    <div id="lesson-5-slide-11" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('“Aging in Place” - Planning for the Future'); ?></h2>
+        <hr />
+        <p><?php echo t('“Aging in place” is a term often used to describe an older adult\’s ability to stay in one location over the course of one\’s life even as their medical and personal needs change over time. That may refer to living in a senior living community that provides services and care across the aging continuum or it may refer to continuing to live in one\’s home and have services and care brought in by outside health care agencies.'); ?></p>
+        <p><?php echo t('A “Continuing Care Retirement Community (CCRC)” are different from other types of housing for older adults as they provide customized living quarters, personal care services, and health care all at one location. A benefit to older couples is the fact that if one partner\’s health begins to fail, he or she may receive required care within that same community or campus. Most CCRCs provide all three levels of service described on the previous page:'); ?></p>
+        <ul>
+          <li><?php echo t('Independent Living'); ?></li>
+          <li><?php echo t('Assisted Living'); ?></li>
+          <li><?php echo t('Long-Term Care'); ?></li>
+        </ul>
+        <p><?php echo t('“Retirement living” is changing with a greater emphasis on wellness and quality of life for residents. The next generations of older adults are redefining what they are looking for in the next phase of their lives. Read about some of these changes happening in some Tucson area senior living communities.'); ?></p>
+        <p><a href="RetirementRedefinedArticle.pdf" target="_blank"><?php echo t('Retirement Redefined'); ?></a></p>
+        <p><?php echo t('Requirements for applicants and payment options vary considerably for CCRCs. Within the current housing market, many CCRCs are offering payment plan options or assistance to older couples who may need to sell their current home prior to moving to the new community. Many CCRCs offer what is termed “life care contracting.” Life care communities provide the same continuum of care to a resident for life, but the biggest difference is this: residents who become financially unable to pay their monthly care fees are subsidized by the community, with the same access to services, and with no interruption in care or change in priority status. In other words, residents are guaranteed the same quality of care and access to care from day one through end-of-life, regardless of their personal financial situation. Additionally, most life care communities offer all health care services on the same campus. The idea is that, after qualifying through a health and financial application process, residents will never have to move again, except between levels of care as needed.'); ?></p>
+        <p><?php echo t('The following guide provides more information about types of contracts common to CCRCs. Because there are various across states in terms of these contracts, it is important that you also investigate your state’s requirements.'); ?></p>
+        <p><?php echo t('Search the Web for the Gilbert Guide – Independent Living & CCRC Evaluation Kit'); ?></p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo;</a></div>
+    </div>
+    
+    <!-- Lesson #5 - Relocation and Transfers by Older Adults within the Health Care System --> 
+    <!-- slide #12 -->
+    
+    <div id="lesson-5-slide-12" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('What are Other Options for my Older Parents?'); ?></h2>
+        <hr />
+        <p><?php echo t('Understanding all of one’s options is important in making a big decision such as relocating. The more preplanning that can occur as well as understanding all options is key. Let’s look at some additional options for older adults.'); ?></p>
+        <p><?php echo t('Active Adult Communities'); ?></p>
+        <p><?php echo t('Active Adult Communities are one of the fastest growing segments of the housing market for older adults. Also known as “55+ communities” or “lifestyle communities,” these offer homes and community features attractive to 55+ adults. Many are master-planned communities that have a clubhouse or lifestyle center with numerous activities, pools, exercise equipment, golf courses, and more. Attractive to older adults is the option of a “maintenance free” lifestyle with “like-minded” adults who may share similar social and activity interests. Homes are often designed to be efficient and easier to get around. Security is also a benefit as a number are in gated communities.'); ?></p>
+        <p><?php echo t('View an example of a Florida Active Adult Community in the following video.'); ?></p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo;</a></div>
+    </div>
+    
+    <!-- Lesson #5 - Relocation and Transfers by Older Adults within the Health Care System --> 
+    <!-- slide #13 -->
+    
+    <div id="lesson-5-slide-13" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('Video – Florida Active Adult Community'); ?></h2>
+        <hr />
+        <p>
+          <iframe width="480" height="360" src="http://www.youtube.com/embed/_UFQPNq2dj8?rel=0" frameborder="0" allowfullscreen></iframe>
+        </p>
+        <p><?php echo t('Affordable Senior Housing Options'); ?></p>
+        <p><?php echo t('For a number of older adults, the cost of entering an active adult community or CCRC may pose a financial barrier. What is also termed “Section 202 Housing” - named after the section of the federal legislation authorizing it – this is rental housing specifically for people over the age of 62 who have incomes under 50 percent of the area median income. According to HUD, the U.S. Department of Housing and Urban Development, the average Section 202 resident is a woman in her 70s with an annual income of less than $10,000. Section 202 residences are built and run by private, non-profit groups who have received loan incentives from HUD. HUD is not involved in day to day operations. Rents are calculated according to income, and rental assistance funds pay whatever balance remains.'); ?></p>
+        <p><?php echo t('View the following brief video about affordable senior housing.'); ?></p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo;</a></div>
+    </div>
+    
+    <!-- Lesson #5 - Relocation and Transfers by Older Adults within the Health Care System --> 
+    <!-- slide #14 -->
+    
+    <div id="lesson-5-slide-14" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('Video – Affordable Senior Housing'); ?></h2>
+        <hr />
+        <p>
+          <iframe width="480" height="360" src="http://www.youtube.com/embed/cUrdKp8MGEw?rel=0" frameborder="0" allowfullscreen></iframe>
+        </p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo;</a></div>
+    </div>
+    
+    <!-- Lesson #5 - Relocation and Transfers by Older Adults within the Health Care System --> 
+    <!-- slide #15 -->
+    
+    <div id="lesson-5-slide-15" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('Exercise – Visiting a Senior Living Community'); ?></h2>
+        <hr />
+        <p><?php echo t('The best way to understand senior living communities is to actually visit one in your area. Because many adult children visit senior living communities prior to having their older parents come for a tour, many senior living communities are very welcoming to adult children.'); ?></p>
+        <p>download button here</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo;</a></div>
+    </div>
+    
+    <!-- Lesson #5 - Relocation and Transfers by Older Adults within the Health Care System --> 
+    <!-- slide #16 -->
+    
+    <div id="lesson-5-slide-16" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('Long Distance Caregiving'); ?></h2>
+        <hr />
+        <p><?php echo t('With many grown children seeking new career opportunities or needing to relocate due to their job away from their parents and the home in which they were raised, long distance caregiving has grown as an issue in our society.'); ?></p>
+        <p><?php echo t('Here are some fast facts to consider:'); ?></p>
+        <ul>
+          <li><?php echo t('Seven million American caregivers provide 80% of the care to vulnerable or ill family members.'); ?></li>
+          <li><?php echo t('There are approximately 3.3 million long distance caregivers.'); ?></li>
+          <li><?php echo t('Caregivers live an average of 480 miles from the people for which they care.'); ?></li>
+          <li><?php echo t('Caregivers spend an average of four hours traveling to that person.'); ?></li>
+          <li><?php echo t('15 millions days are missed from work each year because of long distance caregiving.'); ?></li>
+          <li><?php echo t('The number of long distance caregivers will double over the next 15 years.'); ?></li>
+        </ul>
+        <p><?php echo t('Long distance caregiving can range from providing physical care to helping with bills or just paying a visit. The good news is that you are not on your own as a long distance caregiver. There are many resources available. Sometimes, the main issue is not the availability of resources, but acceptance by older adults to receiving outside help. Let’s start there and practice some coaching skills.'); ?></p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo;</a></div>
+    </div>
+    
+    <!-- Lesson #5 - Relocation and Transfers by Older Adults within the Health Care System --> 
+    <!-- slide #17 -->
+    
+    <div id="lesson-5-slide-17" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('Activity – CARE Coaching through Long Distance Caregiving'); ?></h2>
+        <hr />
+        <p><?php echo t('Read the following scenario and then respond to the CARE coaching questions. We provide some initial “openers” for CARE coaching questions for you to more fully develop your own questions.'); ?></p>
+        <p>button here for download</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo;</a></div>
+    </div>
+    
+    <!-- Lesson #5 - Relocation and Transfers by Older Adults within the Health Care System --> 
+    <!-- slide #18 -->
+    
+    <div id="lesson-5-slide-18" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('Some Common Questions (and Answers) for Long Distance Caregivers'); ?></h2>
+        <hr />
+        <p><?php echo t('Long distance caregivers can be helpful regardless of the distance! Here are some common questions (and answers) for long distance caregivers.'); ?></p>
+        <p><?php echo t('What is the basic information I should have at hand as a long distance caregiver?'); ?></p>
+        <ul>
+          <li><?php echo t('Have contact information from your older parents’ neighbors. Make sure they know how to reach you in an emergency.'); ?></li>
+          <li><?php echo t('check out local resources and services (usually through a local area agency on aging, library, or senior center). Check with your parents which ones they may find helpful and check back on whether they have initiated contacts.'); ?></li>
+          <li><?php echo t('Have a current list of your parents’ medications (prescription and over-the-counter) including dosages, schedule, and reasons they
+are taking.'); ?></li>
+          <li><?php echo t('When you visit their home, be observant for changes in the environment or potential safety hazards.'); ?></li>
+          <li><?php echo t('Find out if you parents have “advanced directives” that outline their health care treatment preferences.'); ?></li>
+        </ul>
+        <p><?php echo t('What can I really expect to do from a distance? I don’t feel comfortable just stepping into a situation.'); ?></p>
+        <ul>
+          <li><?php echo t('Educate yourself on what you need to know about your parents’ health care, their needs and preferences, and other pertinent information.'); ?></li>
+          <li><?php echo t('Plan your visits ahead of time. Decide on priorities they may have.'); ?></li>
+          <li><?php echo t('Everything in your visit should not just be about caregiving. Plan to actually “visit” during your visits!'); ?></li>
+          <li><?php echo t('Stay in contact and encourage your parents to do the same.'); ?></li>
+        </ul>
+        <p><?php echo t('How can I feel less frustrated and angry with the caregiving situation?'); ?></p>
+        <ul>
+          <li><?php echo t('Feeling frustrated and angry is very common among caregivers regardless of distance.'); ?></li>
+          <li><?php echo t('Plan to give yourself a break and just do something for yourself.'); ?></li>
+        </ul>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo;</a></div>
+    </div>
+    
+    <!-- Lesson #5 - Relocation and Transfers by Older Adults within the Health Care System --> 
+    <!-- slide #19 -->
+    
+    <div id="lesson-5-slide-19" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('Some Common Questions (and Answers) for Long Distance Caregivers (continued)'); ?></h2>
+        <hr />
+        <p><?php echo t('What is a geriatric care manager and how can one help?'); ?></p>
+        <ul>
+          <li><?php echo t('Geriatric care managers are licensed nurses or social workers who specialize in geriatric care.'); ?></li>
+          <li><?php echo t('The geriatric care manager is hired by a family to evaluate and assess an older parent’s needs and to coordinate care through community resources.'); ?></li>
+          <li><?php echo t('When choosing one, you want to check references as well as find out their experience, fees, and if they are a member of the National Association of Professional Geriatric Care Managers.'); ?></li>
+        </ul>
+        <p><?php echo t('How can I get my mother some relief in caring for my father?'); ?></p>
+        <ul>
+          <li><?php echo t('Respite care provides one a break from caregiving responsibilities – it can be for an afternoon or for several days.'); ?></li>
+          <li><?php echo t('Care can be provided in the home, in an adult day care center, or in a senior living community.'); ?></li>
+        </ul>
+        <p><?php echo t('What if my mom says, “Promise me you’ll never put me in a nursing home”?'); ?></p>
+        <ul>
+          <li><?php echo t('This request usually follows some horrendous story on the news about a nursing home death. Most of us want to stay in our own homes, to be independent, and to be cared for by relatives and friends.'); ?></li>
+          <li><?php echo t('Think carefully before making this type of promise. Assuring your parents that you will look out for them in their best interests and provide quality of care is what is really important. For some illnesses, long-term care may be the sole option. Discovering too late that such promises cannot be kept has often resulted in terrible feelings of guilt by the caregiver for many years.'); ?></li>
+          <li><?php echo t('Rather than a promise that cannot be kept, another way to respond is, “Dad, I will make sure you have the best care we can arrange. You can count on me to try and do what’s best for everyone. I can’t think of a situation where I’d walk out on you.”'); ?></li>
+        </ul>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo;</a></div>
+    </div>
+    
+    <!-- Lesson #5 - Relocation and Transfers by Older Adults within the Health Care System --> 
+    <!-- slide #20 -->
+    
+    <div id="lesson-5-slide-20" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('Some Common Questions (and Answers) for Long Distance Caregivers (continued)'); ?></h2>
+        <hr />
+        <p><?php echo t('What are some other resources for long distance caregivers?'); ?></p>
+        <ul>
+          <li><?php echo t('Obtain a free '); ?><a href="www.netofcare.org/crd/ resource_form.asp" target="_blank">Caregiver Resource Directory</a> <?php echo t('that provides resources, facts, and advice about caring for a family member as well as for yourself.'); ?></li>
+          <li><a href="http://www.benefitscheckup.org" target="_blank">Benefits Check UP</a> <?php echo t('is a free online service provided by the National Council on Aging which allows people to find programs that can help them meet health care costs.'); ?></li>
+          <li><a href="http://archrespite.org" target="_blank">ARCH National Respite Network and Resource Center</a> <?php echo t('provides resources and information including a respite locator program and information clearinghouse.'); ?></li>
+          <li><a href="http://www.eldercare.gov/Eldercare.NET/Public/Index.aspx" target="_blank">Eldercare Locator</a> <?php echo t('is a nationwide service helping identify local resources for older adults.'); ?></li>
+          <li><a href="http://caregiveraction.org" target="_blank">National Family Caregivers Association</a> <?php echo t('supports family caregivers and offers education, information, and referrals.'); ?></li>
+        </ul>
+      </div>
+      <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> <?php echo t('Complete Lesson'); ?></a></div>
+    </div>
+  </div>
+  <!-- Lesson #6 - Promoting Safety of Older Relatives and Friends in Caring for Themselves --> 
+  <!-- slide #1 -->
+  <div id="lesson-6">
+    <div id="lesson-6-slide-1" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('Promoting Safety of Older Relatives and Friends in Caring for Themselves'); ?></h2>
+        <hr />
+        <p><?php echo t('Knowledge Itself is Power'); ?><br />
+          <?php echo t('When we consider how to promote safety of older adults so that they may remain independent for as long as possible, having knowledge and understanding what’s important will facilitate decision making in the future. In this section, we look at several scenarios – all of which relate to safety in some way – that are commonly faced by family caregivers and their older parents.'); ?></p>
+        <p><?php echo t('Home Safety and Older Adults'); ?><br />
+          <?php echo t('Regardless if your parents remain in their own home, move to a senior living community, or move in with you, home safety is an important topic for discussion. The overall goal of assessing home safety needs and making modifications as necessary is to give older adults a sense of independence in their environment.'); ?></p>
+        <p><?php echo t('Activity – Using Your Powers of Observation'); ?><br />
+          <?php echo t('During your next visit, use your powers of observation to note changes in several areas. You may want to make mental notes and then jot down some of your observations privately. We have included some general questions to get you started in this activity.'); ?></p>
+        <p><?php echo t('Additional Home Safety Resources'); ?><br />
+          <?php echo t('The U.S. Consumer Product Safety Commission estimates that over 1.5 million adults ages 65 and older are treated each year in hospital emergency rooms due to injuries from hazards in the home. The Commission believes that many of these injuries are preventable with some simple steps to correct the hazards. Here are some general recommendations and downloadable resources to consider.'); ?></p>
+        <p><?php echo t('Considering Your Older Parents Moving in with You?'); ?><br />
+          <?php echo t('More than 3.6 million older adults live with their children (up 67% from 2000) according to U.S. Census figures. With the economy and housing market issues, many more examples of older parents moving in with their children are coming to light.'); ?></p>
+        <p><?php echo t('Exercise – Assessing the Situation'); ?><br />
+          <?php echo t('This exercise provides an opportunity for you and your family to consider key questions to explore potential for having older parents move in with you. As you read through each section, we include some CARE Coaching questions to bring out your best thinking about what would be important to you.'); ?></p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Start Course &raquo;'); ?></a></div>
+    </div>
+    
+    <!-- Lesson #6 - Promoting Safety of Older Relatives and Friends in Caring for Themselves --> 
+    <!-- slide #2 -->
+    
+    <div id="lesson-6-slide-2" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('Promoting Safety of Older Relatives and Friends in Caring for Themselves (continued)'); ?></h2>
+        <hr />
+        <p><?php echo t('Driving Concerns and Older Adults'); ?><br />
+          <?php echo t('According to driving statistics, older adults have more fatal car accidents than any other age group. Additionally, older adults are more at risk for death after being involved in a car accident because of their age and health condition.'); ?></p>
+        <p><?php echo t('When to Limit or Stop Driving – Warning Signs'); ?><br />
+          <?php echo t('AARP has developed a list of warning signs about when to limit or stop driving.'); ?></p>
+        <p><?php echo t('CARE Coaching: Talking to Your Parents about Their Driving'); ?><br />
+          <?php echo t('Bringing up the discussion on driving is very challenging. By using CARE Coaching methods and breaking the driving conversation with your older parents into steps, you can better draw out the issues and support your parents in their transition.'); ?></p>
+        <p><?php echo t('Exercise Promotes Safety and Independence'); ?><br />
+          <?php echo t('Exercise for older adults is an important contributor to safety and independence. Many studies have demonstrated the positive benefits of exercise for older adults regardless of age. As we get older exercise is incredibly important to our overall health.'); ?></p>
+        <p><?php echo t('Activity – Resources on Exercises Designed for Older Adults'); ?><br />
+          <?php echo t('Provided are some resources from the National Institute on Aging and exercise physiologists on exercises designed for older adults.'); ?></p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo;</a></div>
+    </div>
+    
+    <!-- Lesson #6 - Promoting Safety of Older Relatives and Friends in Caring for Themselves --> 
+    <!-- slide #3 -->
+    
+    <div id="lesson-6-slide-3" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('Knowledge Itself is Power'); ?></h2>
+        <hr />
+        <p><?php echo t('You’ve heard this phrase many times – probably even from your parents during your education years. It was actually first documented by Sir Frances Bacon back in the 16th century. When we consider how to promote safety of older adults so that they may remain independent for as long as possible, having knowledge and understanding what’s important will facilitate decision making in the future.'); ?></p>
+        <p><?php echo t('In this section, we look at several scenarios – all of which relate to safety in some way – that are commonly faced by family caregivers and their older parents. We address several topics including:'); ?></p>
+        <ul>
+          <li><?php echo t('Home safety tips'); ?></li>
+          <li><?php echo t('Moving my parents into my home'); ?></li>
+          <li><?php echo t('The “driving” conversation'); ?></li>
+          <li><?php echo t('Importance of exercise for older adults and its impact on safety'); ?></li>
+        </ul>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo;</a></div>
+    </div>
+    
+    <!-- Lesson #6 - Promoting Safety of Older Relatives and Friends in Caring for Themselves --> 
+    <!-- slide #4 -->
+    
+    <div id="lesson-6-slide-4" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('Home Safety and Older Adults'); ?></h2>
+        <hr />
+        <p><?php echo t('Regardless if your parents remain in their own home, move to a senior living community, or move in with you, home safety is an important topic for discussion. The overall goal of assessing home safety needs and making modifications as necessary is to give older adults a sense of independence in their environment.'); ?></p>
+        <p><?php echo t('Accidents in the home are a major source of injury for older adults and can cause disability and sometimes death. For older adults, did you know that the vast majority of falls occurs going between the bedroom and bathroom? A simple fall that results in broken bones can develop into a serious, disabling injury limiting one’s independence. As one ages, senses of sight, hearing, touch, and smell tend to decline. Physical abilities are often reduced and certain movements that are important in daily tasks (such as stretching, lifting, and bending) are more difficult. Reaction time or judgment may slow.'); ?></p>
+        <p><?php echo t('As a result, an older person cannot respond as quickly as a younger person in all situations. These normal aging changes may make an older person more prone to accidents. Simple precautions and adjustments may ensure a safe home. There are several areas of the home to assess regarding safety issues:'); ?></p>
+        <ul>
+          <li><?php echo t('General safety (lighting, access, electrical, heating, water, medication storage)'); ?></li>
+          <li><?php echo t('Kitchen'); ?></li>
+          <li><?php echo t('Stairways and halls'); ?></li>
+          <li><?php echo t('Living room'); ?></li>
+          <li><?php echo t('Bathroom'); ?></li>
+          <li><?php echo t('Bedroom'); ?></li>
+          <li><?php echo t('Outdoor area'); ?></li>
+        </ul>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo;</a></div>
+    </div>
+    
+    <!-- Lesson #6 - Promoting Safety of Older Relatives and Friends in Caring for Themselves --> 
+    <!-- slide #5 -->
+    
+    <div id="lesson-6-slide-5" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('Home Safety and Older Adults (continued)'); ?></h2>
+        <hr />
+        <p><?php echo t('CARE Coaching Tip – Be Alert!'); ?></p>
+        <p><?php echo t('You may be a situation where your older parents are living alone and you live quite a distance away, maybe even across the country. You may not get back to visit on a regular basis, but the last time you visited, you noticed “little things” around the house that seemed “out of place” for them. You decide that on the hanksgiving holiday visit, you want to evaluate how they are doing. Remember, this should not be an inspection for purposes of judgment or criticism. Rather, think of this as a part wellness check, part well-being check, and part safety check. Things may be getting difficult to handle around the house for your older parents, and they may just be reluctant to bring them up with you because “you’ve got so much on your plate just now.”'); ?></p>
+        <p><?php echo t('You want to try to be as subtle as possible. Don’t look like you are checking up on them. Use what you notice as openings for conversations. Do it privately (not a great opener for the family Thanksgiving table conversation!).'); ?></p>
+        <p><?php echo t('“Mom, I noticed you were having a bit of trouble reading that label. What if we change the light bulbs in here?”'); ?></p>
+        <p><?php echo t('Offer to do little things around the house. Don’t always wait for a “yes” or “no” response, as they may be too proud to ask for help. Just let them know that you’d like to use some of the time to be helpful and supportive.'); ?></p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo;</a></div>
+    </div>
+    
+    <!-- Lesson #6 - Promoting Safety of Older Relatives and Friends in Caring for Themselves --> 
+    <!-- slide #6 -->
+    
+    <div id="lesson-6-slide-6" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('Activity – Using Your Powers of Observation)'); ?></h2>
+        <hr />
+        <p><?php echo t('During your next visit, use your powers of observation to note changes in the following areas. You may want to make mental notes and then jot down some of your observations privately. We have included some general questions to get you started. In this activity, you will add some of your own specific questions that you may want to assess during your visit.'); ?></p>
+        <p>download button here</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo;</a></div>
+    </div>
+    
+    <!-- Lesson #6 - Promoting Safety of Older Relatives and Friends in Caring for Themselves --> 
+    <!-- slide #7 -->
+    
+    <div id="lesson-6-slide-7" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('Additional Home Safety Resources)'); ?></h2>
+        <hr />
+        <p><?php echo t('The U.S. Consumer Product Safety Commission estimates that over 1.5 million adults ages 65 and older are treated each year in hospital emergency rooms due to injuries from hazards in the home. The Commission believes that many of these injuries are preventable with some simple steps to correct the hazards. Some of these steps are valuable in your own home to prevent injuries in general.'); ?></p>
+        <p><?php echo t('Search the Web for home safety resources and list what you find on the Forum/Blog.'); ?></p>
+        <p><?php echo t('Here are links to other resources on home safety particularly in relation to older adults.'); ?></p>
+        <p><a href="http://www.homemods.org/resources/doable-home/index.shtml" target="_blank">The Do Able Renewable Home</a><?php echo t(' - This booklet is designed to help overcome problems experienced in the home as one grows older. Content was developed in collaboration with gerontologists to make the home more livable.'); ?></p>
+        <p><a href="http://www.lrc.rpi.edu/programs/lightHealth/AARP/index.asp" target="_blank">Lighting the Way: A Key to Independence</a><?php echo t(' - This resource provides a number of recommendations to help older adults see better. From home lighting to doing small tasks, many suggestions can easily be implemented with simple modifications.'); ?></p>
+        <p><a href="http://www.homesafetycouncil.org/SafetyGuide/sg_checklistgenerator_w001.asp" target="_blank">Home Safety Checklist</a><?php echo t(' - This is a simple checklist that you can use when visiting your older parents to assess safety issues in their home environment.'); ?></p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo;</a></div>
+    </div>
+    
+    <!-- Lesson #6 - Promoting Safety of Older Relatives and Friends in Caring for Themselves --> 
+    <!-- slide #8 -->
+    
+    <div id="lesson-6-slide-8" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('Considering Your Older Parents Moving in with You?)'); ?></h2>
+        <hr />
+        <p><?php echo t('More than 3.6 million older adults live with their children (up 67% from 2000) according to U.S. Census figures. It is a growing family dynamic that is gaining national attention with President Barack Obama’s mother-in-law, Marian Robinson, moved into the White House to help with her young granddaughters. With the economy and housing market issues, many more examples of older parents moving in with their children are coming to light. Older adults who may have been planning to sell their home and use the proceeds to living in a senior living residence may be delaying their decision or realizing they will not get enough money from the house sale to make the move.'); ?></p>
+        <p><?php echo t('The children may also be facing financial difficulties of their own. “Merging” finances and obligations may benefit everyone in these types of arrangements. One son commented that he “gets to see a different side of his mother and father. They are not just parents, they’re people, and once you recognize that, you work with it and it’s fun.”'); ?></p>
+        <p><?php echo t('Interestingly, an entire new housing opportunity is developing with this “return” to multiple generations living under a single roof. Called “multigenerational housing,” these homes are often designed with a master and guest (in-law) suite on the main floor, both with private bath and walk-in closet. An open plan with lots of gathering areas and additional bedroom and recreation areas upstairs provides families with flexible living space.'); ?></p>
+        <p><?php echo t('“Giving each other space” is a valuable recommendation for those considering these living arrangements, particularly if the older parents are independent.'); ?></p>
+        <p><?php echo t('CARE Coaching Hints:'); ?></p>
+        <p><?php echo t('Hold regular family conferences to discuss issues or problems that may come up. Often, it is much easier to discuss awkward subjects when everyone is together and in the mood to talk. If your parents have health problems, set up an emergency contact system and make sure everyone knows what it is. This could be a buzzer or alarm in the bedroom or shower. Preprogram their telephones with your cell phone or pager number. Consider safety issues for children and seniors living in the same house. Make sure that medications with non-childproof bottle tops are not easily within reach, and make sure toys are left on the floor or stairs. Caregiving can take a lot of time and energy, so make sure you still put aside some quality time for yourself, and for your spouse and children. If you begin to feel overwhelmed by your family responsibilities, arrange for outside help or respite, or find a caregivers support group in your area.'); ?></p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo;</a></div>
+    </div>
+    
+    <!-- Lesson #6 - Promoting Safety of Older Relatives and Friends in Caring for Themselves --> 
+    <!-- slide #9 -->
+    
+    <div id="lesson-6-slide-9" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('Exercise – Assessing the Situation'); ?></h2>
+        <hr />
+        <p><?php echo t('This exercise provides an opportunity for you and your family to consider key questions to explore potential for having older parents move in with you. You may not be thinking about this at the present time, but you may have other family members or friends considering various options and so this may be helpful to them as well. These questions can serve as a guide for discussions with your family. As you read through each section, we include some CARE Coaching questions to bring out your best thinking about what would be important to you. '); ?></p>
+        <p>download button here</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo;</a></div>
+    </div>
+    
+    <!-- Lesson #6 - Promoting Safety of Older Relatives and Friends in Caring for Themselves --> 
+    <!-- slide #10 -->
+    
+    <div id="lesson-6-slide-10" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('Driving Concerns and Older Adults'); ?></h2>
+        <hr />
+        <p><?php echo t('According to driving statistics, older adults have more fatal car accidents than any other age group. Additionally, older adults are more at risk for death after being involved in a car accident because of their age and health condition.'); ?></p>
+        <p><?php echo t('By 2030, it is estimated that 25% of the driving population will be age 65 years and older. Currently, about 14% of all people killed in traffic accidents are older adults, and that percent is expected to increase to 25%.'); ?></p>
+        <p><?php echo t('In addition to being a danger to themselves, many of these accidents result in injury or death of others.'); ?></p>
+        <p><?php echo t('How does increased age impact driving ability? Several physical and cognitive changes that are part of normal aging or that are related to chronic illnesses may affect driving ability in older adults. Not all older adults experience these changes, but the following are some of the reasons older adults are more prone to car accidents:'); ?></p>
+        <ul>
+          <li><?php echo t('Slowed reaction time'); ?></li>
+          <li><?php echo t('Vision problems'); ?></li>
+          <li><?php echo t('Hearing problems'); ?></li>
+          <li><?php echo t('Decreased ability to focus'); ?></li>
+          <li><?php echo t('Changes in depth perception'); ?></li>
+          <li><?php echo t('Feeling nervous or anxious'); ?></li>
+          <li><?php echo t('Medical conditions that impact mobility'); ?></li>
+        </ul>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo;</a></div>
+    </div>
+    
+    <!-- Lesson #6 - Promoting Safety of Older Relatives and Friends in Caring for Themselves --> 
+    <!-- slide #11 -->
+    
+    <div id="lesson-6-slide-11" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('Driving Concerns and Older Adults (continued)'); ?></h2>
+        <hr />
+        <p><?php echo t('Why is driving so important to older adults? Driving for most people – and particularly for older adults – means independence. I can go where I want, when I want, without having to rely on others. Some older adults may not want to inconvenience their family or friends.'); ?></p>
+        <p><?php echo t('How can I help someone else limit or stop driving? In most cases, drivers monitor themselves and gradually limit or stop driving when they feel that a certain driving situation or driving in general is not safe. However, some people fail to recognize declining abilities, or they fear stopping to drive because it will make them permanently dependent on others for the necessities of life, and it may reduce their social and leisure activities as well. Conditions such as dementia or early stages of Alzheimer\'s disease may make some drivers unable to evaluate their driving properly.'); ?></p>
+        <p><?php echo t('Let’s look at some of the warning signs and steps you may take to address this issue with older family members or friends.'); ?></p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo;</a></div>
+    </div>
+    
+    <!-- Lesson #6 - Promoting Safety of Older Relatives and Friends in Caring for Themselves --> 
+    <!-- slide #12 -->
+    
+    <div id="lesson-6-slide-12" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('When to Limit or Stop Driving – Warning Signs'); ?></h2>
+        <hr />
+        <p><?php echo t('The following list of warning signs comes from the American Association of Retired People (AARP).'); ?></p>
+        <p><?php echo t('What are the warning signs when someone should begin to limit driving or stop altogether?'); ?></p>
+        <ul>
+          <li><?php echo t('Feeling uncomfortable and nervous or fearful while driving'); ?></li>
+          <li><?php echo t('Dents and scrapes on the car or on fences, mailboxes, garage doors, curbs etc.'); ?></li>
+          <li><?php echo t('Difficulty staying in the lane of travel'); ?></li>
+          <li><?php echo t('Getting lost'); ?></li>
+          <li><?php echo t('Trouble paying attention to signals, road signs and pavement markings'); ?></li>
+          <li><?php echo t('Slower response to unexpected situations'); ?></li>
+          <li><?php echo t('Medical conditions or medications that may be affecting the ability to handle the car safely'); ?></li>
+          <li><?php echo t('Frequent "close calls" (i.e. almost crashing)'); ?></li>
+          <li><?php echo t('Trouble judging gaps in traffics at intersections and on highway entrance/exit ramps'); ?></li>
+          <li><?php echo t('Other drivers honking at you and instances when you are angry at other drivers'); ?></li>
+          <li><?php echo t('Friends or relatives not wanting to drive with you'); ?></li>
+          <li><?php echo t('Difficulty seeing the sides of the road when looking straight ahead'); ?></li>
+          <li><?php echo t('Easily distracted or having a hard time concentrating while driving'); ?></li>
+          <li><?php echo t('"Having a hard time turning around to check over your shoulder while backing up or changing lanes'); ?></li>
+          <li><?php echo t('Frequent traffic tickets or "warnings" by traffic or law enforcement officers in the last year or two'); ?></li>
+        </ul>
+        <p><?php echo t('If you notice one or more of these warning signs with your older parents, you may want to have their driving assessed by a professional or have them attend a driver refresher class. You may also want to consult with their doctor if you notice unusual concentration or memory problems, or other physical symptoms that may be affecting ability to drive.'); ?></p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo;</a></div>
+    </div>
+    
+    <!-- Lesson #6 - Promoting Safety of Older Relatives and Friends in Caring for Themselves --> 
+    <!-- slide #13 -->
+    
+    <div id="lesson-6-slide-13" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('CARE Coaching: Talking to Your Parents about Their Driving'); ?></h2>
+        <hr />
+        <p><?php echo t('Remember what it was like when you got your first driver’s license? That sense of pride and freedom stays with you throughout your life. You certainly come to appreciate the independence driving means if you have ever been dependent on someone to drive you around even for a short time period perhaps while you were recuperating from surgery.'); ?></p>
+        <p><?php echo t('We are a mobile culture. In many areas, public transportation is scarce or unsafe for older adults. We want our older parents to be safe, but the last thing we want is for them to feel isolated, trapped, and alone in their own home.'); ?></p>
+        <p><?php echo t('Bringing up the discussion on driving is very challenging. The best way to think about this is to keep the perspective that there is a continuum of possibilities on the “continue driving” to “quit driving” scale. By using CARE Coaching methods and breaking the driving conversation with your older parents into steps, you can better draw out the issues and support your parents in their transition.'); ?></p>
+        <p><?php echo t('Step 1: Be a Coach in the Driving Discussion'); ?></p>
+        <p><?php echo t('Remember that most children wait too long for the driving discussion – either until their parents driving has deteriorated or until a major accident occurs. Consider yourself more of a coach in the discussion. Begin by letting them know how much you value their independence, judgment, and their concern for safety for themselves and for others. Let them know that this conversation will help all of you think through what happens if and when they need to retire from driving. At this point, you want them to think and imagine what that would be like for them and how they would like that process to go.'); ?></p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo;</a></div>
+    </div>
+    
+    <!-- Lesson #6 - Promoting Safety of Older Relatives and Friends in Caring for Themselves --> 
+    <!-- slide #14 -->
+    
+    <div id="lesson-6-slide-14" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('CARE Coaching: Talking to Your Parents about Their Driving (continued)'); ?></h2>
+        <hr />
+        <p><?php echo t('CARE Coaching Questions'); ?></p>
+        <ul>
+          <li><?php echo t('How will you know when it’s time to retire from driving?'); ?></li>
+          <li><?php echo t('How do you think we should plan along the way?'); ?></li>
+          <li><?php echo t('What would you think about using some assessments along the way?'); ?></li>
+          <li><?php echo t('If you don’t notice it’s time to retire from driving, how would you like the conversation to go?'); ?></li>
+          <li><?php echo t('As we continue this discussion, can we include a plan so that you can continue to be as independent as possible?'); ?></li>
+        </ul>
+        <p><a href="DriverSelfAssessment.pdf" target="_blank"><?php echo t('Driver Self-Assessment'); ?></a><br />
+          <?php echo t('Here is a self-assessment for older adults from ElderSafety.org to help them identify what should be noticed regarding aging changes that may impact their ability to drive safely.'); ?></p>
+        <p><a href="http://www.usatoday.com/life/graphics/elderly_drivers_popup/flash.htm" target="_blank"><?php echo t('How Age Affects the Ability to Drive'); ?></a><br />
+          <?php echo t('This interactive guide from USA Today provides visual descriptions of changes that occur during normal aging that may impact one’s ability in driving.'); ?></p>
+        <p><?php echo t('Step 2: Noticing the First Changes'); ?></p>
+        <p><?php echo t('Physical and cognitive changes with aging variy considerably from very sudden and dramatic to very subtle and barely noticeable. Preparing and being willing to compensate for these changes will promote their safety and the safety of others. In many communities, finding a group of older adults who are tackling driving issues together may be a positive way to address some of those initial changes through sharing. Watch the following video to see how one church group addressed their issues through an AARP Driving Safety course.'); ?></p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo;</a></div>
+    </div>
+    
+    <!-- Lesson #6 - Promoting Safety of Older Relatives and Friends in Caring for Themselves --> 
+    <!-- slide #15 -->
+    
+    <div id="lesson-6-slide-15" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('CARE Coaching: Talking to Your Parents about Their Driving (continued)'); ?></h2>
+        <hr />
+        <p><?php echo t('Video – Senior Driving Safety'); ?></p>
+        <p>
+          <iframe width="420" height="315" src="http://www.youtube.com/embed/YLW-GEJBMik?rel=0" frameborder="0" allowfullscreen></iframe>
+        </p>
+        <p><?php echo t('CARE Coaching Questions'); ?></p>
+        <ul>
+          <li><?php echo t('Begin with reviewing what you discussed last time and goals that you and your parents came up with on how to promote their independence while keeping them safe driving.'); ?></li>
+          <li><?php echo t('Taking a look at what we talked about last time, what are you wanting?'); ?></li>
+          <li><?php echo t('One of the things I found out is that there are some driving refresher courses that you may take that will often give you a nice discount on your care insurance.  What would you think about that?  Could we check one out together?'); ?></li>
+        </ul>
+        <p><?php echo t('Resources'); ?></p>
+        <p><a href="http://www.seniordrivers.org/driving/driving.cfm?button=quiz&quiz=2" target="_blank"><?php echo t('Drivers Self-Assessment'); ?></a><br />
+        <p><?php echo t('This self-assessment at seniordrivers.org provides a quick self-assessment for older drivers to review their driving knowledge and skills.'); ?></p>
+        <a href="http://www.aarp.org/families/driver_safety/driver_safety_online_course.html" target="_blank"><?php echo t('AARP Driver Safety Online Course'); ?><br />
+        <p><?php echo t('AARP offers an online driver safety course (about 8 hours in length) for a nominal charge.  The course is designed for older drivers to learn about normal age-related changes and how to adjust driving to allow for these changes.  Successful completion of the course may qualify participants for car insurance discounts (please check with your insurance company for specifics in your state).'); ?></p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo;</a></div>
+    </div>
+    
+    <!-- Lesson #6 - Promoting Safety of Older Relatives and Friends in Caring for Themselves --> 
+    <!-- slide #16 -->
+    
+    <div id="lesson-6-slide-16" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('CARE Coaching: Talking to Your Parents about Their Driving (continued)'); ?></h2>
+        <hr />
+        <p><?php echo t('Step 3: Tracking Warning Signs'); ?></p>
+        <p><?php echo t('It is probably not uncommon that you see some older drivers on the road who may be going much slower than traffic or seem confused making turns into busy intersections.  There may be a point where professionals are needed to assess older adult’s driving abilities.  The family physician is a good starting point, particularly if you have not been successful in bringing up the driving discussion on your own.  As we noted earlier in this course, the physician is an authority figure to many older adults and so they may listen more closely to the doctor’s recommendations.  Additionally, the physician can check for other medical conditions or medications that may need adjusting that could be altering motor functions and driving ability.'); ?></p>
+        <p><?php echo t('A Driving Rehabilitation Specialist (DRS) can provide a more in depth analysis of your parent’s driving ability.  The DRS can perform an initial assessment, help make recommendations for limitations on driving (such as no night driving), and plan driving routes.  Driver rehabilitation classes may also be available in your area to help older adults learn alternate driving techniques to make driving safer.'); ?></p>
+        <p><?php echo t('Watch the following video of a DRS working with an older adult client.'); ?></p>
+        <p><?php echo t('Video – Driving Rehabilitation Specialist'); ?></p>
+        <p>
+          <iframe width="420" height="315" src="http://www.youtube.com/embed/6GpNJ-zh1rc?rel=0" frameborder="0" allowfullscreen></iframe>
+        </p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo;</a></div>
+    </div>
+    
+    <!-- Lesson #6 - Promoting Safety of Older Relatives and Friends in Caring for Themselves --> 
+    <!-- slide #17 -->
+    
+    <div id="lesson-6-slide-17" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('CARE Coaching: Talking to Your Parents about Their Driving (continued)'); ?></h2>
+        <hr />
+        <p><?php echo t('CARE Coaching Questions'); ?></p>
+        <ul>
+          <li><?php echo t('I have noticed you seem more tense behind the wheel.  What situations really get to you when you’re driving?'); ?></li>
+          <li><?php echo t('I’m concerned that something medical or your medications may be affecting your driving.  Can we make an appointment to see your doctor to help correct things that may be interfering with your driving?'); ?></li>
+          <li><?php echo t('What would you think about working out a plan with a professional to help make sure that you can keep driving safely?'); ?></li>
+        </ul>
+        <p><?php echo t('Resources'); ?></p>
+        <p><a href="#" target="_blank"><?php echo t('Warning Signs for Older Drivers'); ?></a><br />
+          <?php echo t('This checklist is for families to track potential warning signs for older drivers so that patterns may be identified early on.'); ?></p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo;</a></div>
+    </div>
+    
+    <!-- Lesson #6 - Promoting Safety of Older Relatives and Friends in Caring for Themselves --> 
+    <!-- slide #18 -->
+    
+    <div id="lesson-6-slide-18" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('CARE Coaching: Talking to Your Parents about Their Driving (continued)'); ?></h2>
+        <hr />
+        <p><?php echo t('Step 4:  When It’s Time to Retire from Driving'); ?></p>
+        <p><?php echo t('Retiring from driving is one of the most difficult moments in your older parent’s life.  In the ideal world, there has been time to prepare for this transition and your parents are part (if not taking the lead) on this decision.  No matter how much preparation went into planning, giving up driving is a major loss needing time to grieve and adjust.  There are a number of families with older parents who are no longer driving, but just keeping the car in the garage as a “symbol” of independence for that older parent is not that uncommon.'); ?></p>
+        <p><?php echo t('Rather than saying, “time to take away the keys,” the goal should be that your parents are in the position to say, “It’s time to retire from driving.”'); ?></p>
+        <p><?php echo t('CARE Coaching Questions'); ?></p>
+        <ul>
+          <li><?php echo t('It seems that driving is becoming more of a struggle for you.  What do you think?'); ?></li>
+          <li><?php echo t('We’ve tried several things along the way (review what those were).  It seems like those things are not keeping you as safe anymore.  Considering this, what stands out for you?'); ?></li>
+          <li><?php echo t('Your safety and freedom are what’s most important to both of us.  If we can map out alternate plans to get you everywhere you need to go and try that out for a couple of weeks, what would you think about trying that plan?'); ?></li>
+        </ul>
+        <p><?php echo t('Resources'); ?></p>
+        <p><a href="http://www.driver-ed.org/custom/directory-cdrs/?pageid=320&showTitle=1" target="_blank"><?php echo t('Finding a Certified Driving Rehabilitation Specialist'); ?></a><br />
+          <?php echo t('Click on this link to search for a certified Driving Rehabilitation Specialist in your area.'); ?></p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo;</a></div>
+    </div>
+    
+    <!-- Lesson #6 - Promoting Safety of Older Relatives and Friends in Caring for Themselves --> 
+    <!-- slide #19 -->
+    
+    <div id="lesson-6-slide-19" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('CARE Coaching: Talking to Your Parents about Their Driving (continued)'); ?></h2>
+        <hr />
+        <p><?php echo t('Step 5:  Promoting Independence Post-Driving'); ?></p>
+        <p><?php echo t('Post-driving, it is very important to help your older parents remain independent so they do not become isolated and depressed, trapped in their own home.  They may need some help from you to create a plan to promote their freedom.   The plan should respond to the following questions:'); ?></p>
+        <ul>
+          <li><?php echo t('Where do your parents need to go on a weekly basis? (like the grocery store, hairdresser, church services, etc.)'); ?></li>
+          <li><?php echo t('Where do your parents need to go other than weekly? (like the doctor’s office, banking, other appointments)'); ?></li>
+          <li><?php echo t('Where do your parents enjoy going for socializing? for entertainment?'); ?></li>
+          <li><?php echo t('Who are their resources for alternatives to transportation? (neighbors/friends attending the same event; transportation for older adults offered through their community or church)'); ?></li>
+          <li><?php echo t('Which of these alternatives are realistic and reliable?'); ?></li>
+          <li><?php echo t('What public transportation options are available and acceptable?'); ?></li>
+          <li><?php echo t('Where are the gaps?'); ?></li>
+        </ul>
+        <p><?php echo t('Resources'); ?></p>
+        <p><a href="http://www.seniordrivers.org/notdriving/notdriving.cfm?button=profiles" target="_blank"><?php echo t('Supplemental Transportation Programs (STPs)'); ?></a><br />
+          <?php echo t('The purpose of STPs is to provide alternative transportation to older adults who have limitations to their driving or are no longer driving.  They are designed to be more flexible than other forms of transportation.  Some include “door-to-door” service to assure the older adult arrives safely to their destination and back.  All drivers are screened and trained.'); ?></p>
+        <p><a href="http://itnamerica.org" target="_blank"><?php echo t('Independent Transportation Network (ITN)'); ?><br />
+          <?php echo t('A newer program that is in limited numbers of areas is the ITN which combines creative transportation alternatives for older adults, but coordinates volunteers, community services and agency connections to make it work.  Find an affiliate program on their website.'); ?></a> 
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo;</a></div>
+    </div>
+    
+    <!-- Lesson #6 - Promoting Safety of Older Relatives and Friends in Caring for Themselves --> 
+    <!-- slide #20 -->
+    
+    <div id="lesson-6-slide-20" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('Exercise Promotes Safety and Independence'); ?></h2>
+        <hr />
+        <p><?php echo t('Exercise for older adults is an important contributor to safety and independence.  Many studies have demonstrated the positive benefits of exercise for older adults regardless of age.  As we get older exercise is incredibly important to our overall health. Watch the following video with active older people talking about how physical activity has enhanced their lives and experts giving their advice.'); ?></p>
+        <p><?php echo t('Video – Older Adults and Exercise'); ?></p>
+        <p>
+          <iframe width="420" height="315" src="http://www.youtube.com/embed/Y1Uoce6hfyc?rel=0" frameborder="0" allowfullscreen></iframe>
+        </p>
+        <p><?php echo t('Before beginning an exercise program, it is important that your parents consult their physician.'); ?></p>
+        <p><?php echo t('Where to Start?'); ?></p>
+        <p><?php echo t('It is important to wear loose, comfortable clothing and well-fitting, sturdy shoes.  Shoes should have a good arch support, and an elevated and cushioned heel to absorb shock.'); ?></p>
+        <p><?php echo t('If not already active, one should begin slowly.  Starting slowly makes it less likely that injury will occur.  Starting slowly also helps prevent soreness from "overdoing" it.  The saying "no pain, no gain" is not true for older or elderly adults.  One does not have to exercise at a high intensity to get most health benefits.'); ?></p>
+        <p><?php echo t('Walking, for example, is an excellent activity to start.  As one gets used to exercising, or if  already active, a person can slowly increase the intensity of the exercise program.'); ?></p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo;</a></div>
+    </div>
+    
+    <!-- Lesson #6 - Promoting Safety of Older Relatives and Friends in Caring for Themselves --> 
+    <!-- slide #21 -->
+    
+    <div id="lesson-6-slide-21" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('Exercise Promotes Safety and Independence (continued)'); ?></h2>
+        <hr />
+        <p><?php echo t('What Types of Exercises are Good for Older Adults?'); ?></p>
+        <p><?php echo t('There are several types of exercise that are effective for older adults.  At least 30 minutes of aerobic activity is recommended daily.  Examples are walking, swimming, and bicycling.  Resistance or strength training is recommended twice a week.'); ?></p>
+        <p><?php echo t('Warm up for five minutes before each exercise session.  Walking slowly and stretching are good warm-up activities.  After finishing exercising, cool down with more stretching for five minutes.  Cool down longer in warmer weather.'); ?></p>
+        <p><?php echo t('What are Some Safety Tips for Older Adults Related to Exercise?'); ?></p>
+        <ul>
+          <li><?php echo t('Wait at least 2 hours after you eat to start your exercise routine.'); ?></li>
+          <li><?php echo t('Do not exercise if you have a fever.'); ?></li>
+          <li><?php echo t('Do not exercise if you have high blood pressure and have not consulted your doctor for your limits.'); ?></li>
+          <li><?php echo t('If your knee or elbow or ankle is swollen, painful and warm to the touch DO NOT exercise, see a doctor.'); ?></li>
+          <li><?php echo t('If you have osteoporosis, talk to your doctor about any exercises that would be safe. Exercise that involves stretching or flexing the spine should be approved directly by your doctor.'); ?></li>
+          <li><?php echo t('Do not exercise if you develop a new pain or symptom. Swelling, shortness of breath, extreme tiredness and you should get your parents to the doctor.'); ?></li>
+        </ul>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo;</a></div>
+    </div>
+    
+    <!-- Lesson #6 - Promoting Safety of Older Relatives and Friends in Caring for Themselves --> 
+    <!-- slide #22 -->
+    
+    <div id="lesson-6-slide-22" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('Activity – Resources on Exercises Designed for Older Adults'); ?></h2>
+        <hr />
+        <p><?php echo t('The National Institutes on Aging has developed an online guide for older adults.  A number of example exercises are presented with easy to follow steps and pictures.  Exercises focus on areas including endurance, flexibility, balance, and strength training.  Click on the following link to access the guide:'); ?></p>
+        <p><a href="http://www.nia.nih.gov/HealthInformation/Publications/ExerciseGuide/default.htm" target="_blank"><?php echo t('Exercise & Physical Activity: Your Everyday Guide from the National Institute on Aging'); ?></a></p>
+        <p><?php echo t('Exercise Videos'); ?></p>
+        <p><?php echo t('These are meant to be example exercises and do not constitute a complete exercise regimen.'); ?></p>
+        <p><?php echo t('Video – Chair Stand Strengthening'); ?></p>
+        <p>
+          <iframe width="420" height="315" src="http://www.youtube.com/embed/ukJnjYM9LeA?rel=0" frameborder="0" allowfullscreen></iframe>
+        </p>
+        </p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo;</a></div>
+    </div>
+    
+    <!-- Lesson #6 - Promoting Safety of Older Relatives and Friends in Caring for Themselves --> 
+    <!-- slide #23 -->
+    
+    <div id="lesson-6-slide-23" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('Activity – Resources on Exercises Designed for Older Adults (continued)'); ?></h2>
+        <hr />
+        <p><?php echo t('Video – Seated Chair Leg Stretch'); ?></p>
+        <p>
+          <iframe width="560" height="315" src="http://www.youtube.com/embed/ueHKUenfLtY?rel=0" frameborder="0" allowfullscreen></iframe>
+        </p>
+        <p><?php echo t('Video – Seated Knee Extensions'); ?></p>
+        <p>
+          <iframe width="420" height="315" src="http://www.youtube.com/embed/q7b7HgPYQN8?rel=0" frameborder="0" allowfullscreen></iframe>
+        </p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo;</a></div>
+    </div>
+    
+    <!-- Lesson #6 - Promoting Safety of Older Relatives and Friends in Caring for Themselves --> 
+    <!-- slide #24 -->
+    
+    <div id="lesson-6-slide-24" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('Activity – Resources on Exercises Designed for Older Adults (continued)'); ?></h2>
+        <hr />
+        <p><?php echo t('Video – Calf Muscle Exercise'); ?></p>
+        <p>
+          <iframe width="420" height="315" src="http://www.youtube.com/embed/rEfS6AfIgS4?rel=0" frameborder="0" allowfullscreen></iframe>
+        </p>
+        <p><?php echo t('Video – Shoulder Strengthening'); ?></p>
+        <p>
+          <iframe width="420" height="315" src="http://www.youtube.com/embed/SUWH6Tf6bNk?rel=0" frameborder="0" allowfullscreen></iframe>
+        </p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo;</a></div>
+    </div>
+    
+    <!-- Lesson #6 - Promoting Safety of Older Relatives and Friends in Caring for Themselves --> 
+    <!-- slide #25 -->
+    
+    <div id="lesson-6-slide-25" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('Activity – Resources on Exercises Designed for Older Adults (continued)'); ?></h2>
+        <hr />
+        <p><?php echo t('Video – Bicep Curls'); ?></p>
+        <p>
+          <iframe width="420" height="315" src="http://www.youtube.com/embed/7NqpW_TWEi0?rel=0" frameborder="0" allowfullscreen></iframe>
+        </p>
+      </div>
     </div>
     <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> <?php echo t('Complete Lesson'); ?></a></div>
-  </div>
-  <!-- need this final div here to close lesson-1 --> 
-</div>
-
-
-<!-- Lesson 2 Slide 1 -->
-<div id="lesson-2">
-  <div id="lesson-2-slide-1" class="course-slide">
-    <div class="content">
-      <h2 class="flowers"><?php echo t('Reducing Personal Stress'); ?></h2>
-      <hr />
-      <p><?php echo t('This lesson contains two main sections:'); ?></p>
-      <ul>
-        <li><?php echo t('The Stress of Caregiving'); ?></li>
-        <li><?php echo t('Steps to Maintain Health & Avoid Stress'); ?></li>
-      </ul>
-      <p><?php echo t('This lesson explores the stress of caregiving. It will help you identify and understand your particular stressors, challenges, and strengths. You can then plan strategies that help you cope, change, and reduce stress. A basic premise of this chapter is that each of us has a reservoir of strength. The challenge is to identify our strengths build on them.'); ?></p>
+    
+    <!-- Lesson #7 - Supporting Personal Choice and Preferences of Older Adults in Health and Care Decision Making --> 
+    <!-- slide #1 -->
+    
+    <div id="lesson-7-slide-1" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('Supporting Personal Choice and Preferences of Older Adults in Health and Care Decision Making'); ?></h2>
+        <hr />
+        <p><?php echo t('It’s All about Choice'); ?><br />
+          <?php echo t('Self-determination means having the freedom to be in charge of one’s own life, choosing where you live, who you spend time with, and what you do every day.  It means having the resources you need to create a good life and to make responsible decisions.  We all want to feel that we have choices in our daily lives.'); ?></p>
+        <p><?php echo t('Exercise – Identifying Solutions to Support Choice and Preferences'); ?><br />
+          <?php echo t('Every caregiving situation is unique.  Many factors come into play when considering the best possible solutions about your parents and their future.  In this exercise, we provide several questions for you to use as a framework to “interview” your parents regarding their choices and preferences for their future.'); ?></p>
+        <p><?php echo t('Are You a “Sandwich Generation” Caregiver?'); ?><br />
+          <?php echo t('If you are between the ages of 35 to 54 and are caring for both younger ones such as children and older parents or other family members and probably employed at the same time, you may be a “sandwich generation” caregivers.  You are not alone as approximately 20 million American fit this description.'); ?></p>
+        <p><?php echo t('Activity – Ways to Manage Your Own Stress'); ?><br />
+          <?php echo t('The American Psychological Association offers several strategies to help those in the “sandwich generation” manage their stress.  In managing stress, journaling can also be a very effective tool to help identify what situations or events trigger stressful feelings, how you deal (or don’t deal) with stress, and how you may manage stress.  In this activity, you focus on journaling to help manage stress.'); ?></p>
+        <p><?php echo t('Family Communication: When Siblings Attack!'); ?><br />
+          <?php echo t('Family dynamics can be very complex.  We have been talking about your caregiving throughout this course in relation to your older parents.  We cannot forget that, in many families, family dynamics also include siblings – whether they are yours or your parents.  We continue to relive relationships with siblings and other members of our extended families that began in childhood.'); ?></p>
+        <p><?php echo t('Exercise – Developing an Ecomap'); ?><br />
+          <?php echo t('Ecomaps are used to evaluate a person’s environment and connections to provide an opportunity to consider his or her unique situation.  This exercise allows further insight into existing and potential resources in your loved one’s environment.'); ?></p>
+        <p><?php echo t('CARE Coaching Review: Talking wih Your Older Parents'); ?><br />
+          <?php echo t('Let’s just take a moment to review the core components of CARE Coaching in relation to talking with your older parents.'); ?></p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Start Course &raquo;'); ?> </a></div>
     </div>
-    <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Start Course &raquo;'); ?></a></div>
-  </div>
-  <!-- Lesson 2 Slide 2 -->
-  <div id="lesson-2-slide-2" class="course-slide">
-    <div class="content">
-      <h2 class="flowers"><?php echo t('The Stress of Caregiving'); ?></h2>
-      <hr />
-      <p><?php echo t('There has been so much written about stress it has become a household word. Studies show that a certain amount of stress is helpful. It can challenge us to change and motivate us to do things we might not do otherwise. However, when the amount of stress overwhelms our ability to cope with it, we feel \'distress\' or \'burnout.\''); ?></p>
-      <p><?php echo t('Distress is \'suffering of mind or body; severe physical or mental strain.\' As a caregiver, you no doubt have increased stress in your life, whether you are caring for a mother with early Parkinson\'s disease, who is still able to care for her personal needs, or a spouse who does not recognize you because of advanced Alzheimer\'s disease.'); ?></p>
-      <p><?php echo t('Please think about the last time you were under distress.'); ?></p>
-      <p><?php echo t('Each caregiving situation is unique. What is stressful for you may not be stressful for someone else. In his book The Survivor Personality, AI Siebert says, "there is no stress until you feel a strain." Since the feeling of stress is subjective and unique to each individual, it is difficult to define objectively. The stress you feel is not only the result of your caregiving situation, it is all of your perception of it. Your stress will increase or decrease depending on how you perceive your circumstances. And your perception will affect how you respond.'); ?></p>
-      <p><?php echo t('Factors That Affect Stress'); ?></p>
-      <p><?php echo t('Your level of stress is influenced by many factors, including:'); ?></p>
-      <ul>
-        <li><?php echo t('whether your caregiving is voluntary or not;'); ?></li>
-        <li><?php echo t('your relationship with the care receiver;'); ?></li>
-        <li><?php echo t('your coping abilities;'); ?></li>
-        <li><?php echo t('your caregiving situation; and'); ?></li>
-        <li><?php echo t('whether support is available.'); ?></li>
-      </ul>
+    
+    <!-- Lesson #7 - Supporting Personal Choice and Preferences of Older Adults in Health and Care Decision Making --> 
+    <!-- slide #2 -->
+    
+    <div id="lesson-7-slide-2" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('It’s All about Choice'); ?></h2>
+        <hr />
+        <p><?php echo t('Self-determination means having the freedom to be in charge of one’s own life, choosing where you live, who you spend time with, and what you do every day.  It means having the resources you need to create a good life and to make responsible decisions.  It also means choosing where, when, and how you get help for any problems you might have.'); ?></p>
+        <p><?php echo t('We all want to feel that we have choices in our daily lives.  At times, the choices our older parents may want may not be choices we would want for them particularly if their safety or health may be at risk.  At other times, we as caregivers are tempted to want to immediately rise to the occasion and take action.  This may be because you want to help find a solution to a problem quickly.  Imposing a solution may actually make a situation more of a problem.'); ?></p>
+        <p><?php echo t('If you were to walk into your supervisor’s office with a problem – say that your project is 50% over budget – and your supervisor tells you to immediately cut five of your key staff, how would you feel?  Probably shocked that your supervisor did not want to discuss the situation, examine several reasons for the overage, and come up with a couple of options – all in collaboration with you as project manager.'); ?></p>
+        <p><?php echo t('The same should apply with your older parents.  You may notice that one or both are starting to forget things.  Immediately, you jump to the conclusion that they have Alzheimer’s Disease.  There are many causes of memory loss including poor nutrition, sleep problems, medications, or one’s emotional state.  You would want to take a measured approach to this issue in your discussions with your parents.'); ?></p>
+        <p><?php echo t('Some general Do\'s and Don\'ts:'); ?></p>
+        <p><?php echo t('Do:'); ?></p>
+        <ul>
+          <li><?php echo t('Assess the situation thoroughly'); ?></li>
+          <li><?php echo t('Look for signs of changes (physical and mental)'); ?></li>
+          <li><?php echo t('Keep notes or a record of what changes you observe'); ?></li>
+        </ul>
+        <p><?php echo t('Don\'ts:'); ?></p>
+        <ul>
+          <li><?php echo t('Immediately jump to conclusions'); ?></li>
+          <li><?php echo t('Rush to make a judgment'); ?></li>
+          <li><?php echo t('Immediately make the assumption'); ?></li>
+        </ul>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo;</a></div>
     </div>
-    <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
-  </div>
-  <!-- Lesson 2 Slide 3 -->
-  <div id="lesson-2-slide-3" class="course-slide">
-    <div class="content">
-      <h2 class="flowers"><?php echo t('The Stress of Caregiving (continued)'); ?></h2>
-      <hr />
-      <p><?php echo t('Whether your caregiving is voluntary or not - '); ?></p>
-      <p><?php echo t('Many people become caregivers voluntarily. Others acquire the role because no one else is available. When you become a caregiver voluntarily, you are making a choice. However, if you "inherited" the job and feel you had no choice, the chances are greater for experiencing strain, distress, and resentment. Nancy became a caregiver because no one else was available.'); ?></p>
-      <p><?php echo t('Nancy could not have been more surprised when the visiting nurse asked her if she was the primary caregiver for her mother in-law, Joan. Nancy was fond of Joan. She called and stopped by frequently to see how Joan was managing, but had not thought of herself as the primary caregiver. It was apparent that Joan\'s medical condition was worsening and she was becoming increasingly weak Nancy realized there were no other children or relatives available, so she agreed, although somewhat reluctantly, to be Joan\'s caregiver. Nancy felt anxious and uncertain about what it meant to be a primary caregiver and whether she had the necessary skills to perform the role.'); ?></p>
-      <p><?php echo t('Luckily, Nancy and Joan had a good relationship and they were able to communicate openly, minimizing some of the potential for stress. You can not always think about a caregiving relationship in advance, but if you can, it has greater potential for success.'); ?></p>
-      <p><?php echo t('Your relationship with the care receiver - '); ?></p>
-      <p><?php echo t('If your relationship with the care receiver has been difficult, becoming a caregiver is more of a challenge. If the care receiver has always been demanding and controlling, you will probably feel more stress, anger, and resentment. Sometimes people are caregiving with the hope of healing a relationship. The healing may or may not happen. If healing does not happen, the caregiver may feel regret, depressed, and discouraged. A professional counselor, spiritual advisor, or trusted friend can help deal with such feelings and emotions.'); ?></p>
-      <p><?php echo t('Your coping abilities - '); ?></p>
-      <p><?php echo t('How you have coped with stress in the past predicts how you will cope now. Did you find constructive ways to manage your stress? Perhaps you were able to find time to exercise regularly and generally take care of yourself. Or did you rely on alcohol or drugs to help you cope? Sometimes people rely on medications and alcohol in times of stress, which only makes matters worse. It is important to identify your current coping strengths and build on them. Learning new coping skills also will help make your caregiving situation less stressful.'); ?> 
+    
+    <!-- Lesson #7 - Supporting Personal Choice and Preferences of Older Adults in Health and Care Decision Making --> 
+    <!-- slide #3 -->
+    
+    <div id="lesson-7-slide-3" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('Exercise – Identifying Solutions to Support Choice and Preferences'); ?></h2>
+        <hr />
+        <p><?php echo t('Throughout this course, you have had several opportunities to gain more understanding regarding your older parents’ needs and preferences.  Every caregiving situation is unique.  Many factors come into play when considering the best possible solutions about your parents and their future.  These factors may include: your parents’ health and functional abilities, mobility, values and beliefs, and family and community support systems.'); ?></p>
+        <p><?php echo t('In this exercise, we provide several questions for you to use as a framework to “interview” your parents regarding their choices and preferences for their future.  This exercise is broken into two parts.  Please complete all of Part 1 before moving onto Part 2.'); ?></p>
+        <p><a href="#" target="_blank"><?php echo t('Click here to access the Exercise – Identifying Solutions to Support Choice and Preferences'); ?></a></p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo;</a></div>
     </div>
-    <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
-  </div>
-  <!-- Lesson 2 Slide 4 -->
-  <div id="lesson-2-slide-4" class="course-slide">
-    <div class="content">
-      <h2 class="flowers"><?php echo t('The Stress of Caregiving (continued)'); ?></h2>
-      <hr />
-      <p><?php echo t('The caregiving situation - '); ?></p>
-      <p><?php echo t('What does your caregiving situation require of you? Does it require 24-hour-aday availability? Or do you just need to make an occasional telephone call to check on the person? What disease does the care receiver have? Does he have a mental or physical disability, or both? Certain caregiving situations are more stressful than others. For example, caring for someone who has a dementia such as Alzheimer\'s disease is often more stressful than caring for someone with a physical limitation. Also, stress tends to be highest when:'); ?></p>
-      <ul>
-        <li><?php echo t('the caregiving situation continues for a long time.'); ?></li>
-        <li><?php echo t('the care receiver\'s needs gradually increase.'); ?></li>
-        <li><?php echo t('caregivers feel they have limited or no support.'); ?></li>
-        <li><?php echo t('caregivers have their own health/physical problems.'); ?></li>
-      </ul>
-      <p><?php echo t('Whether support is available - '); ?></p>
-      <p><?php echo t('Caregivers who feel isolated and without adequate support usually experience a higher level of stress. Support may be lacking for several reasons:'); ?></p>
-      <ul>
-        <li><?php echo t('The caregiver may resist accepting help, even when he or she needs it.'); ?></li>
-        <li><?php echo t('Others may be willing to help but do not offer because they are uncomfortable around the ill person, frightened of the illness, or do not know what they can do.'); ?></li>
-        <li><?php echo t('Others do not want to interfere, especially if the caregiver seems to have everything under control and has refused help in the past.'); ?></li>
-      </ul>
-      <p><?php echo t('Caregiver stress is influenced by many factors, including the need to adapt to ongoing changes and losses caused by the care receiver\'s illness. These changes cause you to redefine your life. What was normal has changed. You are living with a new reality.'); ?> 
-    </div>
-    <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
-  </div>
-  <!-- Lesson 2 Slide 5 -->
-  <div id="lesson-2-slide-5" class="course-slide">
-    <div class="content">
-      <h2 class="flowers"><?php echo t('The Stress of Caregiving (continued)'); ?></h2>
-      <hr />
-      <p><?php echo t('Signs of Stress'); ?></p>
-      <p><?php echo t('Here is a checklist of some common signs of stress: '); ?>
-      <table>
-        <tr>
-          <td>Physical</td>
-          <td>Mental/Emotional</td>
-          <td>Behavioral </td>
-        </tr>
-        <tr>
-          <td><p>
-              <input type="checkbox" name="checkbox" id="checkbox">
-              Headache</p>
-            <p>
-              <input type="checkbox" name="checkbox2" id="checkbox2">
-              Muscle tension and aches</p>
-            <p>
-              <input type="checkbox" name="checkbox3" id="checkbox3">
-              Nausea, diarrhea, heartburn</p>
-            <p>
-              <input type="checkbox" name="checkbox4" id="checkbox4">
-              Rapid heartbeat, palpitations</p>
-            <p>
-              <input type="checkbox" name="checkbox5" id="checkbox5">
-              Shortness of breath, dizziness</p>
-            <p>
-              <input type="checkbox" name="checkbox6" id="checkbox6">
-              Constant fatigue, energy loss</p>
-            <p>
-              <input type="checkbox" name="checkbox7" id="checkbox7">
-              Change in appetite</p>
-            <p>
-              <input type="checkbox" name="checkbox8" id="checkbox8">
-              Weight gain or loss</p>
-            <p>
-              <input type="checkbox" name="checkbox9" id="checkbox9">
-              Frequent illnesses</p></td>
-          <td><p>
-              <input type="checkbox" name="checkbox10" id="checkbox10">
-              Anxiety</p>
-            <p>
-              <input type="checkbox" name="checkbox11" id="checkbox11">
-              Constant worrying </p>
-            <p>
-              <input type="checkbox" name="checkbox12" id="checkbox12">
-              Depression, sadness</p>
-            <p>
-              <input type="checkbox" name="checkbox13" id="checkbox13">
-              Inability to concentrate</p>
-            <p>
-              <input type="checkbox" name="checkbox14" id="checkbox14">
-              Moodiness, irritability</p>
-            <p>
-              <input type="checkbox" name="checkbox15" id="checkbox15">
-              Restlessness, agitation</p>
-            <p>
-              <input type="checkbox" name="checkbox16" id="checkbox16">
-              Feeling overwhelmed </p>
-            <p>
-              <input type="checkbox" name="checkbox17" id="checkbox17">
-              Racing thoughts</p>
-            <p>
-              <input type="checkbox" name="checkbox18" id="checkbox18">
-              Forgetfulness, confusion</p></td>
-          <td><p>
-              <input type="checkbox" name="checkbox19" id="checkbox19">
-              Sleeping too much or too little</p>
-            <p>
-              <input type="checkbox" name="checkbox20" id="checkbox20">
-              Short temper </p>
-            <p>
-              <input type="checkbox" name="checkbox21" id="checkbox21">
-              Difficulty making decisions</p>
-            <p>
-              <input type="checkbox" name="checkbox22" id="checkbox22">
-              Poor nutrition</p>
-            <p>
-              <input type="checkbox" name="checkbox23" id="checkbox23">
-              Too much smoking, drinking</p>
-            <p>
-              <input type="checkbox" name="checkbox24" id="checkbox24">
-              Tooth grinding</p>
-            <p>
-              <input type="checkbox" name="checkbox25" id="checkbox25">
-              Neglecting responsibilities</p>
-            <p>
-              <input type="checkbox" name="checkbox26" id="checkbox26">
-              Social isolation</p>
-            <p>
-              <input type="checkbox" name="checkbox27" id="checkbox27">
-              Nervous habits fidgeting</p></td>
-        </tr>
-      </table>
-    </div>
-    <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
-  </div>
-  <!-- Lesson 2 Slide 6 -->
-  <div id="lesson-2-slide-6" class="course-slide">
-    <div class="content">
-      <h2 class="flowers"><?php echo t('Steps to Maintain Health & Avoid Stress'); ?></h2>
-      <hr />
-      <p><?php echo t('Whatever causes stress in your life, too much of it can lower your resistance to disease and lead to "burnout." Current research shows that there is a _close connection between stress and health. Unrelieved stress is on,e of many factors that cause illness. Research also shows that thoughts and emotions affect the immune system, which is the first line of defense against disease. It is possible to strengthen the immune system by reducing stress. The following four steps will help you maintain your health and avoid distress:'); ?></p>
-      <ol>
-        <li><?php echo t('Recognize your warning signs of stress.'); ?></li>
-        <li><?php echo t('Identify your sources of stress.'); ?></li>
-        <li><?php echo t('Identify what you can and cannot change.'); ?></li>
-        <li><?php echo t('Take action to manage your stress.'); ?></li>
-      </ol>
-      <p><?php echo t('Each of these steps will be discussed in detail.'); ?></p>
-    </div>
-    <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
-  </div>
-  <!-- Lesson 2 Slide 7 -->
-  <div id="lesson-2-slide-6" class="course-slide">
-    <div class="content">
-      <h2 class="flowers"><?php echo t('Steps to Maintain Health & Avoid Stress (continued)'); ?></h2>
-      <hr />
-      <p><?php echo t('Step 1: Recognize Your Warning Signs of Stress -') ;?></p>
-      <p><?php echo t('The first step in managing stress is to be aware of how it affects you. What are your warning signs and symptoms of stress? The following are signs that may occur when you experience an unusual amount of stress. Answering these questions can help you identify your own warning signs. What is usually your earliest sign of stress? It is important to recognize stress early and do something about it, before it causes you serious problems. For one caregiver, the early sign might be increased irritability. For another, it might be lying awake for hours before falling asleep. For another, it might be fatigue and a lack of energy.'); ?></p>
-      <p><?php echo t('Sometimes, too, when we are involved in a situation, we may not listen to our early warning signs, but they are voiced in the words of others: "You look so tired," "You get upset so easily lately," "Why are you snapping at me?" If you hear such statements, it is a "red light" warning sign. Just as a flashing red light on your car\'s dashboard warns you that something is wrong with your car, we also display warning signals. What happens if we ignore the early red flashing light on the car\'s dashboard? What happens if we ignore our personal early warning signals?'); ?></p>
-      <p><?php echo t('Do you listen to your early warning signals? What are they? And what do you do about them? Warning signs usually mean we need to stop, valuate what is happening, and make some changes. The earlier warning signals are recognized, the greater the chance of avoiding or reducing the destructive effects of stress.'); ?></p>
-      <div class="question">
+    
+    <!-- Lesson #7 - Supporting Personal Choice and Preferences of Older Adults in Health and Care Decision Making --> 
+    <!-- slide #4 -->
+    
+    <div id="lesson-7-slide-4" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('Are You a “Sandwich Generation” Caregiver?'); ?></h2>
+        <hr />
+        <p><?php echo t('If you are between the ages of 35 to 54 and are caring for both younger ones such as children and older parents or other family members and probably employed at the same time, you may be a “sandwich generation” caregivers.  You are not alone as approximately 20 million American fit this description.'); ?></p>
+        <p><?php echo t('A survey by the American Psychological Association reported that women in the “sandwich generation” feel more stress than any other age group as they have to balance the demands of caregiving two generations.  Nearly 40% of them report “extreme levels” of stress which takes a toll on both their personal relationships but also on their own well-being as they may often put their own health on the “backburner.”'); ?></p>
+        <p><?php echo t('Watch the following video to see one family’s experience.'); ?></p>
+        <p><?php echo t('Video – Part of the Sandwich Generation'); ?></p>
         <p>
-          <input type="checkbox" name="Yes" id="Yes">
-          <label for="Yes">Yes</label>
-          <input type="checkbox" name="No" id="No">
-          <label for="No">No</label>
-          | Do you feel a loss of energy or zest for life?</p>
-        <p>
-          <input type="checkbox" name="Yes2" id="Yes2">
-          <label for="Yes2">Yes</label>
-          <input type="checkbox" name="No2" id="No2">
-          <label for="No2">No</label>
-          | Do you feel tired or exhausted much of the time?</p>
-        <p>
-          <input type="checkbox" name="Yes3" id="Yes3">
-          <label for="Yes3">Yes</label>
-          <input type="checkbox" name="No3" id="No3">
-          <label for="No3">No</label>
-          | Do you feel out of control, exhibiting uncharacteristic emotions or actions?</p>
-        <p>
-          <input type="checkbox" name="Yes4" id="Yes4">
-          <label for="Yes4">Yes</label>
-          <input type="checkbox" name="No4" id="No4">
-          <label for="No4">No</label>
-          | Do you feel tense, nervous, or anxious much of the time?</p>
-        <p>
-          <input type="checkbox" name="Yes5" id="Yes5">
-          <label for="Yes5">Yes</label>
-          <input type="checkbox" name="No5" id="No5">
-          <label for="No5">No</label>
-          | Do you lack interest in people or things that were formerly pleasurable?</p>
-        <p>
-          <input type="checkbox" name="Yes6" id="Yes6">
-          <label for="Yes6">Yes</label>
-          <input type="checkbox" name="No6" id="No6">
-          <label for="No6">No</label>
-          | Are you becoming increasingly isolated?</p>
-        <p>
-          <input type="checkbox" name="Yes7" id="Yes7">
-          <label for="Yes7">Yes</label>
-          <input type="checkbox" name="No7" id="No7">
-          <label for="No7">No</label>
-          | Are you consuming more sleeping pills, medicating, alcohol, caffeine, or
-          cigarettes?</p>
-        <p>
-          <input type="checkbox" name="Yes8" id="Yes8">
-          <label for="Yes8">Yes</label>
-          <input type="checkbox" name="No8" id="No8">
-          <label for="No8">No</label>
-          | Are you having increased health problems: ie, high blood pressure headaches, ulcers, upset stomach, or other difficulties with digestion?</p>
-        <p>
-          <input type="checkbox" name="Yes14" id="Yes14">
-          <label for="Yes14">Yes</label>
-          <input type="checkbox" name="No14" id="No14">
-          <label for="No14">No</label>
-          | Do you have sleep problems, such as
-          difficulty falling asleep at night,
-          awakening early, or sleeping excessively?</p>
-        <p>
-          <input type="checkbox" name="Yes13" id="Yes13">
-          <label for="Yes13">Yes</label>
-          <input type="checkbox" name="No13" id="No13">
-          <label for="No13">No</label>
-          | Are you experiencing appetite changes?</p>
-        <p>
-          <input type="checkbox" name="Yes12" id="Yes12">
-          <label for="Yes12">Yes</label>
-          <input type="checkbox" name="No12" id="No12">
-          <label for="No12">No</label>
-          | Do you have problems with concentration
-          or memory?</p>
-        <p>
-          <input type="checkbox" name="Yes11" id="Yes11">
-          <label for="Yes11">Yes</label>
-          <input type="checkbox" name="No11" id="No11">
-          <label for="No11">No</label>
-          | Are you increasingly irritable or
-          impatient with others?</p>
-        <p>
-          <input type="checkbox" name="Yes10" id="Yes10">
-          <label for="Yes10">Yes</label>
-          <input type="checkbox" name="No10" id="No10">
-          <label for="No10">No</label>
-          | Do you have feelings of helplessness or
-          hopelessness?</p>
-        <p>
-          <input type="checkbox" name="Yes9" id="Yes9">
-          <label for="Yes9">Yes</label>
-          <input type="checkbox" name="No9" id="No9">
-          <label for="No9">No</label>
-          | Are you abusing or neglecting to provide care to the care receiver?</p>
-        <p>
-          <input type="checkbox" name="Yes15">
-          <label for="Yes15">Yes</label>
-          <input type="checkbox" name="No15">
-          <label for="No15">No</label>
-          Do you have thoughts of suicide?</p>
-        <p>
-          <input name="button" type="submit" id="button" onClick="MM_popupMsg('A \&quot;yes\&quot; answer to even one or two of these questions can indicate stress that has become debilitating.')" value="Submit">
+          <iframe width="560" height="315" src="http://www.youtube.com/embed/55UCToPajd4?rel=0" frameborder="0" allowfullscreen></iframe>
         </p>
       </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo;</a></div>
     </div>
-    <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
-  </div>
-  <!-- Lesson 2 Slide 8 -->
-  <div id="lesson-2-slide-8" class="course-slide">
-    <div class="content">
-      <h2 class="flowers"><?php echo t('Steps to Maintain Health & Avoid Stress (continued)'); ?></h2>
-      <hr />
-      <p><?php echo t('Step 2: Identify Your Sources of Caregiving Stress -'); ?></p>
-      <p><?php echo t('The second step in managing stress is to recognize what causes your stress. Not all stressors are the result of caregiving. Other sources can affect your ability to be a caregiver. The following questions include many common sources of stress. Thinking about these questions can help you recognize some of your own sources.'); ?></p>
-      <ol>
-        <li><?php echo t('Are you experiencing many demands on your time, energy, or money? What are they?'); ?></li>
-        <li><?php echo t('Do you feel you have conflicting responsibilities? Which ones?'); ?></li>
-        <li><?php echo t('Are there differences in expectations between your family, your boss, the care receiver, and yourself? What are they?'); ?></li>
-        <li><?php echo t('Do you feel others do not understand the care receiver\'s mental or physical condition?'); ?></li>
-        <li><?php echo t('Do you have difficulty meeting the care receiver\'s physical or emotional needs?'); ?></li>
-        <li><?php echo t('Are you pressured by financial decisions and lack of resources?'); ?></li>
-        <li><?php echo t('Do you feel a loss of freedom, to the point of feeling trapped?'); ?></li>
-        <li><?php echo t('Is there disagreement among family members?'); ?></li>
-        <li><?php echo t('Do you feel that other family members are not doing their share?'); ?></li>
-        <li><?php echo t('Does the care receiver place unrealistic demands and expectations on you?'); ?></li>
-        <li><?php echo t('Is there a lack of open communication between you and the care receiver?'); ?></li>
-        <li><?php echo t('Do other family members have negative attitudes that create difficulty for you?'); ?></li>
-        <li><?php echo t('Is it painful to watch the care receiver\'s condition get worse?'); ?></li>
-        <li><?php echo t('Are there other problems with children, marriage, job, finances, or health? What are they?'); ?></li>
-      </ol>
-      <p><?php echo t('Consider your "yes" answers carefully. The sources of stress you have identified are indicators for change. Use the awareness you have gained in the first two steps to make helpful changes.'); ?></p>
-    </div>
-    <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
-  </div>
-  <!-- Lesson 2 Slide 9 -->
-  <div id="lesson-2-slide-9" class="course-slide">
-    <div class="content">
-      <h2 class="flowers"><?php echo t('Steps to Maintain Health & Avoid Stress (continued)'); ?></h2>
-      <hr />
-      <p><?php echo t('The following story is an example of a caregiver who recognized the source of her distress and made changes to better manage the situation.'); ?></p>
-      <p><?php echo t('Ernestine was increasingly fatigued, irritable, and depressed with the responsibility of caring for her husband, Richard, who had Parkinson\'s disease. Richard\'s condition was steadily getting worse. He was bed-bound and needed help with many functions. Other family members had not offered to help, and Ernestine felt abandoned, alone, angry, and overwhelmed. A few friends and neighbors had offered to help but Ernestine refused. When she started having health problems, it became clear that something had to change. She had to have help.'); ?></p>
-      <p><?php echo t('Because Ernestine had difficulty asking for help, she devised a simple plan that would give others an opportunity to help without having to be asked. She made a list of tasks she needed help with and posted it on the refrigerator. The list included such things as vacuuming the living room, grocery shopping, staying with Richard so she could go to church, weeding the garden, picking up audio books at the library, picking up medications at the pharmacy, and preparing food. When visitors offered to help, Ernestine referred them to the list, suggesting they choose a task that suited them. This proved to be a successful plan for everyone.'); ?></p>
-      <p><?php echo t('It is important to identify the causes of your stress before they overwhelm you. Do not wait until you develop health problems, as Ernestine did. Many caregivers keep going until they become ill. You can only be an effective caregiver if you are healthy. Self-sacrifice to the point of illness benefits no one and is not required or recommended.'); ?></p>
-    </div>
-    <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
-  </div>
-  <!-- Lesson 2 Slide 10 -->
-  <div id="lesson-2-slide-10" class="course-slide">
-    <div class="content">
-      <h2 class="flowers"><?php echo t('Steps to Maintain Health & Avoid Stress (continued)'); ?></h2>
-      <hr />
-      <p><?php echo t('Step 3: Identify What You Can and Cannot Change - '); ?></p>
-      <p><?php echo t('A major challenge of caregiving is to not only survive, but to rebuild your life and thrive. This is possible once you know the sources and signs of your stress. Then you can determine those you can do something about and those that are beyond your control. Step three is to identify what you can and cannot change'); ?></p>
-      <p><?php echo t('Identifying what you can change gives you a sense of control over events. However, it is not easy to determine what can and cannot be changed. Too often people try to change things they have no control over. For example, someone who focuses on trying to change another person usually ends up more frustrated. The only person you can change is yourself. You may be able to change a situation, how you respond to it, or your perception of it, but you can not change another person. It wastes valuable time and energy trying to change what is outside of your control. Some situations can not be changed. However, you may be able to manage them better if you change your outlook about a situation, or decide to \'roll with the punches.\''); ?></p>
-      <p><?php echo t('The frustration and hopelessness that result from trying to change the unchangeable are self-defeating and can adversely affect a relationship, as in the case of Hal and Sue.'); ?></p>
-      <p><?php echo t('Sue and Hal had been a socially active couple. Sue was diagnosed with early Parkinson\'s disease and gradually started backing out of social plans because she did not feel up to it. Since the beginning of the disease Sue has been on a roller coaster of having good days and bad days. Hal encourages Sue to go out when she does not feel like it, urging her to \'snap out of it.\' He wants things to remain as they were.'); ?></p>
-      <p><?php echo t('Hal is frustrated in his attempts to change the effect of the disease on their lives. By not accepting Sue\'s feelings, he is adding stress to their relationship. But recently he has learned more about Parkinson\'s disease and is trying to be more realistic and flexible about what he can and cannot change. Flexibility is crucial. A Japanese saying is:'); ?></p>
-      <p><?php echo t('\'In a storm, it is the bamboo, the flexible tree, that can bend with the wind and survive. The rigid tree that resists the wind falls, victim of its own insistence on control.\''); ?></p>
-      <p><?php echo t('Bending with the wind is crucial to surviving the winds of change, including those involved in caregiving. At times, both you and the care receiver may feel a loss of control over your lives. While feeling in control is important, sometimes it can be me a problem because the more we try to control, the less control we seem to have. Being flexible can help us keep a positive attitude, despite hardships.'); ?></p>
-    </div>
-    <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
-  </div>
-  <!-- Lesson 2 Slide 11 -->
-  <div id="lesson-2-slide-11" class="course-slide">
-    <div class="content">
-      <h2 class="flowers"><?php echo t('Steps to Maintain Health & Avoid Stress (continued)'); ?></h2>
-      <hr />
-      <p><?php echo t('Use the following guidelines to look at your situation and to determine what can and cannot be changed:'); ?></p>
-      <ol>
-        <li><?php echo t('Accept the reality of your caregiving situation.'); ?></li>
-        <li><?php echo t('Educate yourself about the care receiver\'s disease.'); ?></li>
-        <li><?php echo t('Identify unrealistic expectations, especially your own.'); ?></li>
-        <li><?php echo t('Seek and accept support.'); ?></li>
-        <li><?php echo t('Identify what you still have, rather than focus on what is lost.'); ?></li>
-        <li><?php echo t('Let go of what cannot be changed.'); ?></li>
-      </ol>
-      <p><?php echo t('Accept the reality of your caregiving situation'); ?></p>
-      <p><?php echo t('When making changes it is necessary, but not always easy; to accept reality. We often deny things that hurt, and that can keep us from seeing a situation as it really is. Jane heard the doctor tell Joe that he had a serious illness. He also told Joe he would need more rest and help with certain daily activities. Still, Jane found herself feeling annoyed when Joe took frequent naps, especially since she was taking on more responsibility for managing things at home. It took time for Jane to stop denying, and start accepting, the full impact of the disease. It was then that she was able to see realistically what could and could not be changed.'); ?></p>
-      <p><?php echo t('Jane is coping in a more adaptive way. However, Joe\'s mother denied the seriousness of the disease long after Jane came to terms with it. Family members may take different lengths of time to accept reality, which can add to the stress of caregiving.'); ?></p>
-      <p><?php echo t('Educate yourself about the care receiver\'s disease'); ?></p>
-      <p><?php echo t('You will be better able to identify what you can and cannot change when you understand the disease. For example, without knowledge about the communication abilities of someone with Alzheimer\'s disease, you may try to reason with the person or expect him to tell someone something you consider easy to remember. This will probably frustrate both of you. There are many sources of information about specific diseases, including your personal physician, medical libraries, and associations related to specific diseases, such as Alzheimer\'s and Parkinson\'s disease. If you have access to a computer that is linked to the Internet, you can find a wealth of current information on diseases and disease-related associations.'); ?></p>
-    </div>
-    <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
-  </div>
-  <!-- Lesson 2 Slide 12 -->
-  <div id="lesson-2-slide-12" class="course-slide">
-    <div class="content">
-      <h2 class="flowers"><?php echo t('Steps to Maintain Health & Avoid Stress (continued)'); ?></h2>
-      <hr />
-      <p><?php echo t('Identify unrealistic expectations, especially your own'); ?></p>
-      <p><?php echo t('You can make changes successfully only when your expectations are realistic. How realistic are yours? Do you often feel anxious because you expect more of yourself than you can achieve? Many caregivers listen only to the \'shoulds\' they have been raised with. Women, especially, often believe they "should" be able to do everything themselves, and when that is not possible, they feel guilty or depressed. If you have unrealistic expectations of yourself, then your expectations of what can be changed probably will be unrealistic also. The following story is an example of a caregiver, Rosa, who with her husband, Dean, made constructive changes in what was a difficult, stressful situation.'); ?></p>
-      <p><?php echo t('Rosa was devastated when Dean, her husband of 40 years, suffered a sudden, severe stroke that left him partially paralyzed on one side of his body and unable to speak. The stroke was a shock. Rosa\'s initial response was to become overly protective and do everything for Dean. She was afraid to leave him alone for fear something terrible would happen. Before the stroke, Rosa and Dean had been making retirement plans, which included extensive travel. Those plans were forsaken as they both felt increasingly overwhelmed, fearful, isolated, and depressed. Rosa became extremely fatigued and irritable as Dean became increasingly dependent on her. The visiting nurse talked with them about what Dean could and could not do for himself. She emphasized the importance of Dean maintaining as much independence as possible. It became apparent that Dean could do many things for himself, including writing letters to family and friends. Dean felt better as he became more independent. Rosa was able to be more realistic in her expectations. She realized that Dean\'s dependence on her was detrimental to their relationship.'); ?></p>
-      <p><?php echo t('As Rosa and Dean gradually adapted to living with the stroke, they became less fearful and more hopeful. They began looking at the quality of their remaining life together. They wanted, more than anything, to travel together and decided to take a short trip to see how it would go. The first trip was successful and they felt encouraged to travel more. Rosa found a travel agent who helped them plan trips that accommodated Dean\'s disabilities. They enjoyed several trips before Dean\'s death 12 years later. Rosa and Dean responded to this challenge by gaining an understanding of the disease, accepting reality; setting realistic expectations, and changing what could be changed.'); ?></p>
-      <p><?php echo t('Seek and accept support'); ?></p>
-      <p><?php echo t('Many caregivers find it difficult to ask for help. Rosa initially refused help from friends and neighbors. She did everything herself until she started feeling distressed. The expectations she had for herself were overwhelming and unrealistic. It was not until she began seeking support from the visiting nurse, travel agent, and others that she was able to find a way to make changes. Often you can make changes only with the help of others. Seeking and accepting support may be the single most important factor in making constructive changes.'); ?></p>
-      <p><?php echo t('Identify what you still have, rather than focus on what is lost'); ?></p>
-      <p><?php echo t('When Rosa and Dean decided to look for "what remained" in their situation, they hoped that they still had quality in their life together. They looked at what they still had, rather than focusing on what had been lost, and they made changes that were still possible.'); ?></p>
-      <p><?php echo t('They found an unexpected \'gift\' as they made changes and adapted to the illness. Rosa said, \'I never would have asked for the stroke to happen, but it was because of it that Dean and I learned what love was all about. I am a different person than I was. I am more understanding, patient, caring, and sensitive to the pain of others. Many caregivers, as they learn more about themselves, experience personal growth. That is the \'gift\' that can often be found in difficult times.'); ?></p>
-    </div>
-    <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
-  </div>
-  <!-- Lesson 2 Slide 13 -->
-  <div id="lesson-2-slide-13" class="course-slide">
-    <div class="content">
-      <h2 class="flowers"><?php echo t('Steps to Maintain Health & Avoid Stress (continued)'); ?></h2>
-      <hr />
-      <p><?php echo t('Let go of what cannot be changed'); ?></p>
-      <p><?php echo t('It is natural to want to hold on to things as they were. But letting go of what you cannot change is accepting the situation as it is. It releases you from the need to control what you cannot change. Letting go is a way to cooperate with the inevitable. It releases new energy for accepting reality and seeing new possibilities. Sam is a prime example of someone who is learning to let go.'); ?></p>
-      <p><?php echo t('Sam had always been an intense athletic competitor, and sports had been the driving force in his life. At age 45 he had a slight stroke which left him mildly affected. Sam\'s problem wasn\'t that he had a stroke; the problem was that he could not let go of wishing that he had not had one. He continuously wanted things to be as they had been. This made him feel angry and frustrated. Fortunately, Sam reached a point of wanting to learn to live with the stroke and to let go of wanting life to be as it had been before.'); ?></p>
-      <p><?php echo t('Sam was unable to live in the present until he let go of his desire for things to be as they were. The "if onlys" and "what ifs" were a source of suffering. When Sam let go, he learned to live with the stroke and made changes that helped him develop a satisfying life. What Sam learned also applies to caregivers, as shown in the case of Marsha and Bud.'); ?></p>
-      <p><?php echo t('Marsha was the caregiver for her husband, Bud, who had Parkinson\'s disease. Buds condition worsened and he and Marsha were unable to do any of the things they had done in the past. Marsha continually wanted things to be the way they had been. "If only" became her constant thought: "If only Bud could dress himself," "If only we could go dancing like we used to," "If only Bud had more energy," "If only he could still drive us places." Marsha\'s unhappiness caused a strain in their relationship. It was only when she and Bud were having a good time playing cards with friends one day that she realized how much valuable time she was wasting by constantly wanting things to be different. She began to let go of "if only" and to accept "what is." In letting go, she found acceptance and peace of mind.'); ?></p>
-      <p><?php echo t('As you reflect on your challenges as a caregiver, consider these questions. What can I change? What must I accept? What can I improve?'); ?></p>
-      <p><?php echo t('Step 4: Take Action to Manage Your Stress'); ?></p>
-      <p><?php echo t('The fourth step points the way for you to manage and reduce your stress. There are many different tools for managing stress. But you must find what is most effective for you. Proven ways to manage and reduce stress include:'); ?></p>
-      <ul>
-        <li><?php echo t('managing your thoughts, beliefs, and perceptions.'); ?></li>
-        <li><?php echo t('practicing self-care.'); ?></li>
-        <li><?php echo t('getting social support.'); ?></li>
-        <li><?php echo t('using techniques that lower stress.'); ?></li>
-        <li><?php echo t('developing plans of action.'); ?></li>
-        <li><?php echo t('finding hope and meaning.'); ?></li>
-      </ul>
-    </div>
-    <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
-  </div>
-  <!-- Lesson 2 Slide 14 -->
-  <div id="lesson-2-slide-14" class="course-slide">
-    <div class="content">
-      <h2 class="flowers"><?php echo t('Steps to Maintain Health & Avoid Stress (continued)'); ?></h2>
-      <hr />
-      <p><?php echo t('Managing your thoughts, beliefs, and perceptions'); ?></p>
-      <p><?php echo t('Thoughts and beliefs are the foundation of experience. They are not only reactions to events but our thoughts and beliefs can also influence events. What we think and believe affects what happens. Managing our thoughts means we have control over how we view things. As a caregiver, there may be times when the only thing you can change is how you view a situation. There are several tools for managing thoughts, beliefs, and perceptions. Two that can be helpful are reframing and self-talk.'); ?></p>
-      <p><?php echo t('Reframing - '); ?></p>
-      <p><?php echo t('Your frame of reference is the window through which you view the world. It gives meaning to your world. You see things one way, but someone else sees the same circumstances differently. Situations become more stressful when you view them in a negative way. Reframing is learning to look at things in a different way, for example, finding something positive about a difficult situation. Some examples of reframing include:'); ?></p>
-      <ul>
-        <li><?php echo t('A caregiver who views the behavior of someone with Alzheimer\'s disease as "purposefully behaving that way to get to me" versus taking the view that "the behavior is a part of the disease."'); ?></li>
-        <li><?php echo t('A caregiver who is angry at her brother for helping only once a month versus taking the view that "any help, no matter how little, will lighten my load."'); ?></li>
-        <li><?php echo t('A caregiver who puts the situation into a religious or philosophical framework, such as "This is happening because God is angry with me" versus taking the view that "God is giving me an opportunity to learn and grow."'); ?></li>
-      </ul>
-      <p><?php echo t('People who are able to reframe difficult situations generally feel less burden and more in control. Feeling a greater degree of control often leads to acting in control. Clara is a good example. Clara had difficulty taking breaks from caregiving. Before becoming a caregiver, she had worked in a demanding position and had realized the importance of taking weekends off and vacations to refresh herself and cope better with work demands. When she started to view caregiving as a job, it made a difference in how she viewed breaks in caregiving. They became not only more acceptable, but a necessity.'); ?></p>
-      <p><?php echo t('Julie also found that reframing a difficult situation reduced her stress and helped her act in new ways. Julie felt resentful and burdened with the increasing demands of caring for her mother. She had no help, feeling that as a good, dutiful daughter she should do it all. A social worker told her about available resources and suggested she think of herself as a personal care manager as a way to find help in caregiving. Julie gained a sense of control over the situation once she realized she didn\'t have to provide all of the care herself, but could oversee her mother\'s care.'); ?></p>
-      <p><?php echo t('As a caregiver, you may feel overwhelmed and burned out, especially if you are assuming responsibility for most of the caregiving. Changing your perception of your role from a caregiver to care manager is a way of reframing. As a care manager you still get the job done, but you do not have to provide all the care yourself. The role of care manager means that you:'); ?></p>
-      <ul>
-        <li><?php echo t('coordinate and supervise another\'s care needs. This includes using available support.'); ?></li>
-        <li><?php echo t('are aware of available community resources.'); ?></li>
-        <li><?php echo t('plan and prioritize care.'); ?></li>
-        <li><?php echo t('understand the disease of the care receiver and what to expect.'); ?></li>
-        <li><?php echo t('participate as an equal partner with other health care professionals.'); ?></li>
-        <li><?php echo t('are knowledgeable about the health care system.'); ?></li>
-      </ul>
-      <p><?php echo t('As a care manager you assume an active role and reach beyond giving hands-on care, to planning and coordinating care and using available resources. You will feel an increased sense of mastery as a successful care manager.'); ?></p>
-    </div>
-    <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
-  </div>
-  <!-- Lesson 2 Slide 15 -->
-  <div id="lesson-2-slide-15" class="course-slide">
-    <div class="content">
-      <h2 class="flowers"><?php echo t('Steps to Maintain Health & Avoid Stress (continued)'); ?></h2>
-      <hr />
-      <p><?php echo t('Self-talk -'); ?></p>
-      <p><?php echo t('Most stress management courses include learning how to use self-talk to promote health. Self-talk is what we say to ourselves. As Ralph Waldo Emerson said, "A man is what he thinks about all day long." What do you think about all day long? What do you say to yourself? Is especially important to notice your self-talk when you suffer setbacks and when you feel anxious, angry, discouraged, or distressed. Negative self-talk statements often begin with the following phrases:'); ?></p>
-      <ul>
-        <li><?php echo t('I just can not do...'); ?></li>
-        <li><?php echo t('If only I could (or did not) do...'); ?></li>
-        <li><?php echo t('I could never...'); ?></li>
-        <li><?php echo t('I should not have done...'); ?></li>
-        <li><?php echo t('I should have...'); ?></li>
-      </ul>
-      <p><?php echo t('Negative self-talk is defeating. It can lead to depression and a sense of failure, because with negative self-talk we tend to focus on:'); ?></p>
-      <ul>
-        <li><?php echo t('what we did not do versus what we have done.'); ?></li>
-        <li><?php echo t('what we cant do versus what we can do.'); ?></li>
-        <li><?php echo t('Our mistakes and failures versus our successes.'); ?></li>
-      </ul>
-      <p><?php echo t('You want your self-talk to work for you, not against you. If your self-talk is negative or unhelpful, challenge it. Learn to change the negative things you say to yourself into positive statements, such as affirmations.'); ?></p>
-      <p> <?php echo t('Affirmations are positive, supportive statements that counteract the effects of negative thinking. When positive statements are repeated several times a day, they begin to replace negative thoughts. This helps to change one\'s attitude, promote relaxation, and reduce stress. Karen\'s story is an example of changing negative self-talk to positive self-talk with the use of affirmations:'); ?> </p>
-    </div>
-    <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
-  </div>
-  <!-- Lesson 2 Slide 16 -->
-  <div id="lesson-2-slide-16" class="course-slide">
-    <div class="content">
-      <h2 class="flowers"><?php echo t('Steps to Maintain Health & Avoid Stress (continued)'); ?></h2>
-      <hr />
-      <p><?php echo t('Karen felt angry and discouraged when her mother did not eat the tasty, nutritious meals she prepared for her. She didn\'t accept the fact that her mother\'s lack of appetite was caused by the illness. Karen constantly told herself, "No matter what I cook, it is never good enough for mother."'); ?></p>
-      <p><?php echo t('This is an example of negative self-talk. Karen became aware that she often thought she was not doing good enough, especially in caring for her mother. These thoughts made her feel like a failure. With determination, patience, and practice, you can change your self-talk from negative to positive. The following steps lead to change:'); ?></p>
-      <ul>
-        <li><?php echo t('Identify your negative thoughts. Listen to what you say to yourself, especially during difficult times.'); ?></li>
-        <li><?php echo t('Write your negative thoughts down on paper. This helps to identify and clarify them.'); ?></li>
-        <li><?php echo t('Challenge your negative thoughts. Give them a good argument.'); ?></li>
-        <li><?php echo t('Write a simple, positive statement for each thought you want to change.'); ?></li>
-        <li><?php echo t('Memorize and repeat the chosen statements. This helps establish the habit of positive self-talk.'); ?></li>
-        <li><?php echo t('Put your written-statements where you see them frequently. This is a helpful visual reminder.'); ?></li>
-      </ul>
-      <p><?php echo t('Karen chose the affirmation , "I am preparing nutritious food. That is enough." In fact, the statements, "I am doing my best. It is good enough," became her frequent affirmation and counteracted her negative thoughts of "not doing good enough."'); ?></p>
-      <p><?php echo t('These statements have the dual. purpose of affirming what Karen is doing and helping her let go of the idea that she has control over her mother\'s appetite. Accepting that . was important. Telling herself that she is doing her best and it is enough is a positive way of saying she is changing what she can and letting go of what she cannot change. Karen\'s expectations for herself have become more realistic.'); ?></p>
-      <p><?php echo t('Practice over time will change negative, habitual thinking. Repeat this activity frequently to identify other negative self-talk Remember, thoughts and attitudes create your reality. Changing your negative thoughts will help you focus on the positive things in your life, rather than on what you do not have.'); ?> </p>
-    </div>
-    <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
-  </div>
-  <!-- Lesson 2 Slide 17 -->
-  <div id="lesson-2-slide-17" class="course-slide">
-    <div class="content">
-      <h2 class="flowers"><?php echo t('Steps to Maintain Health & Avoid Stress (continued)'); ?></h2>
-      <hr />
-      <p><?php echo t('CHALLENGING YOUR SELF-TALK'); ?></p>
-      <p><?php echo t('Identify an example of your negative self-talk and the situation when it is most likely to occur.'); ?></p>
-      <ol>
-        <li><?php echo t('My negative statement:'); ?></li>
-        <li><?php echo t('I say this to myself when:'); ?></li>
-        <li><?php echo t('I will replace the negative thought with this positive statement:'); ?></li>
-        <li><?php echo t('Repeat the chosen affirmation whenever the above situation occurs.'); ?></li>
-      </ol>
-      <p><?php echo t('There will be times when you will find it hard to shake off negative thoughts. This is normal. However, paying attention to the frequency and content of these thoughts is the beginning of self-awareness and the possibility of change.'); ?></p>
-      <p><?php echo t('Practicing self-care -'); ?></p>
-      <p><?php echo t('To be an effective caregiver you need to maintain your own health and spirit, and to nurture yourself. All too often caregivers put their own needs last. Studies show that sacrificing yourself in giving care to another can lead to emotional exhaustion, depression, and illness.'); ?></p>
-      <p><?php echo t('Maintaining your health and spirit can reduce your level of stress. It is critical to find activities that help you to stay healthy and nurture yourself. These activities are different for each individual. What works for one person may not work for another. You must find stress-reducing methods that work best for you.'); ?></p>
-      <p><?php echo t('We can learn a lot from a self-care program in Florida called "Getting Well." This is a group of people who are supporting each other in learning to live and feel better. They take part in life-affirming activities such as "laughing, juggling, playing, meditating, painting, journal writing, exercising, and eating nutritiously" They demonstrate the necessity of associating with others who help you maintain your spirit and help you feel loved and supported. To manage stress, it is essential to take breaks from caregiving. Plan them into your schedule, starting immediately; if you have not done so already. Studies show that caregivers often do not take breaks until they are at the "end of their rope" or "burned out."'); ?></p>
-      <p><?php echo t('This serves no one\'s best interest as your ability to function can be seriously affected. To avoid problems, it is your responsibility to take time off from caregiving to refresh yourself. It is important to the well-being of care receivers that you take breaks. If you do not, they may become increasingly dependent on you. If you take breaks, they will be less isolated and will benefit from having contact with other people. They also need breaks from you. (This is an example of reframing your perception of a situation.)'); ?> </p>
-    </div>
-    <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
-  </div>
-  <!-- Lesson 2 Slide 18 -->
-  <div id="lesson-2-slide-18" class="course-slide">
-    <div class="content">
-      <h2 class="flowers"><?php echo t('Steps to Maintain Health & Avoid Stress (continued)'); ?></h2>
-      <hr />
-      <p><?php echo t('You are responsible for your own self-care. Practicing self-care means that you:'); ?></p>
-      <ul>
-        <li><?php echo t('learn and use stress reduction techniques;'); ?></li>
-        <li><?php echo t('attend to your own health care needs;'); ?></li>
-        <li><?php echo t('get proper rest and nutrition;'); ?></li>
-        <li><?php echo t('exercise regularly;'); ?></li>
-        <li><?php echo t('take time off without feeling guilty;'); ?></li>
-        <li><?php echo t('participate in pleasant, nurturing activities;'); ?></li>
-        <li><?php echo t('reward yourself...;'); ?></li>
-        <li><?php echo t('seek and accept the support of others;'); ?></li>
-        <li><?php echo t('seek supportive counseling when you need to, or talk with a trusted counselor, religious advisor, or friend;'); ?></li>
-        <li><?php echo t('identify and acknowledge your feelings;'); ?></li>
-        <li><?php echo t('tell others what you need. Do not assume "they should know;"'); ?></li>
-        <li><?php echo t('change the negative ways you view situations; and'); ?></li>
-        <li><?php echo t('set goals and prioritize.'); ?></li>
-      </ul>
-      <div class="question">
-        <p>ARE YOU TAKING CARE OF YOURSELF?</p>
-        <p>
-          <input type="checkbox" name="Yes18" id="Yes18">
-          <label for="Yes18">Yes</label>
-          <input type="checkbox" name="No18" id="No18">
-          <label for="No18">No</label>
-          |  Are you uncomfortable putting
-          yourself first at times?</p>
-        <p>
-          <input type="checkbox" name="Yes15" id="Yes15">
-          <label for="Yes15">Yes</label>
-          <input type="checkbox" name="No15" id="No15">
-          <label for="No15">No</label>
-          |  Do you think you should always meet
-          the needs of other people before your
-          own?</p>
-        <p>
-          <input type="checkbox" name="Yes16" id="Yes16">
-          <label for="Yes16">Yes</label>
-          <input type="checkbox" name="No16" id="No16">
-          <label for="No16">No</label>
-          |  Do you feel you should be a "perfect
-          caregiver"?</p>
-        <p>
-          <input type="checkbox" name="Yes17" id="Yes17">
-          <label for="Yes17">Yes</label>
-          <input type="checkbox" name="No17" id="No17">
-          <label for="No17">No</label>
-          |  Do you minimize or deny that you
-          have needs</p>
-        <p>
-          <input name="button2" type="submit" id="button2" onClick="MM_popupMsg('If you answered \&quot;yes\&quot; to any of these questions, you may be ignoring your own needs.')" value="Submit">
-        </p>
+    
+    <!-- Lesson #7 - Supporting Personal Choice and Preferences of Older Adults in Health and Care Decision Making --> 
+    <!-- slide #5 -->
+    
+    <div id="lesson-7-slide-5" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('Activity – Ways to Manage Your Own Stress'); ?></h2>
+        <hr />
+        <p><?php echo t('The American Psychological Association offers several strategies to help those in the “sandwich generation” manage their stress.  In Section 1, we address the power of journaling as a self-coaching exercise to help create positive self-talk.  In managing stress, journaling can also be a very effective tool to help identify what situations or events trigger stressful feelings, how you deal (or don’t deal) with stress, and how you may manage stress.'); ?></p>
+        <p><?php echo t('Click here to access the Activity (insert hyperlink to Activity – Ways to Manage Your Own Stress)'); ?></p>
       </div>
-      <p><?php echo t('Reflect on what it means to practice selfcare. Consider the items above. How do you fare? Are you caring for yourself as well as you are caring for another? Remember, it is only when we love and nurture ourselves that we are able to love and nurture another. As a caregiver, appreciation and "thank yous" for what you do may be lacking. For example, a person with Alzheimer\'s disease may be unable to show appreciation for what is done. Everyone has a need for approval. It motivates us to keep going. If you do not receive appreciation from other people, find a way to give it to yourself.'); ?></p>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo;</a></div>
     </div>
-    <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
-  </div>
-  <!-- Lesson 2 Slide 19 -->
-  <div id="lesson-2-slide-19" class="course-slide">
-    <div class="content">
-      <h2 class="flowers"><?php echo t('Steps to Maintain Health & Avoid Stress (continued)'); ?></h2>
-      <hr />
-      <p><?php echo t('What would be helpful for you? Consider the following suggestions:'); ?></p>
-      <ul>
-        <li><?php echo t('Acknowledge and take satisfaction in those things you do well.'); ?></li>
-        <li><?php echo t('Reward yourself on a regular basis.'); ?></li>
-        <li><?php echo t('Involve yourself in an activity that will provide positive feedback.'); ?></li>
-      </ul>
-      <p><?php echo t('Carol found a creative way to reward herself for a job well done when her mother could no longer express appreciation. Carol\'s mother, Irene, had Alzheimer\'s disease. Irene often expressed frustration and anger at Carol, in spite of the fact that Carol was her mainstay Carol understood the disease process and successfully avoided taking her mother\'s attacks personally. To give herself a gift of appreciation, Carol bought flowers regularly. She said, "I considered the flowers a gift from Mom to me. It is something she would have done for me if she were well."'); ?></p>
-      <p><?php echo t('Memories of past generosity and love from her mother sustained Carol. In buying herself flowers she reminded herself weekly that the gift of love and caring she gave to her mother had first been given to her. At a difficult time she found a way to nurture herself.'); ?></p>
-      <p><?php echo t('What are you doing to nurture yourself? Are you choosing healthy activities? Or are you relying on drugs, alcohol, cigarettes, and tranquilizers to handle the emotional and physical burdens of caregiving? According to the National Institute on Drug Abuse, millions of people abuse these drugs to reduce tension and to relax. It is in your best interest to choose healthy, nurturing ways of coping with the difficulties of caregiving.'); ?></p>
-      <p><?php echo t('Getting social support - '); ?></p>
-      <p><?php echo t('Caregiving can be a lonely experience. According to the National Family Caregivers Association, caregivers often · report that they feel alone and isolated. Support from family, friends, and others is an important stress buffer. Something as simple as a two-minute telephone call can make you feel cared about and supported. It helps to share your experiences and burdens with a person you trust-a friend, family member, counselor, religious advisor, or support group member-who will listen and understand.'); ?></p>
-      <p><?php echo t('Support groups can be helpful when you are going through a difficult time. Sharing with others who are going through similar experiences is a way to give and receive support, and take time out from caregiving duties. You can learn new ways of coping from others in the group, which may include learning to look at the light side of difficult situations with a bit of humor. Sharing lightens the load. A support group is a place to express thoughts and feelings in a confidential setting. Most important, you learn that you are not alone. This can be a wonderful relief. Support groups are available for caregivers and for people with various chronic illnesses. Local hospitals and disease-related associations often have groups available.'); ?></p>
-      <p><?php echo t('Using techniques that lower stress -'); ?></p>
-      <p><?php echo t('It is of little help to identify your stressors if you do not take action early to reduce them. Recognize obstacles to taking action. These may include:'); ?></p>
-      <ul>
-        <li><?php echo t('Not giving yourself permission to take care of yourself.'); ?></li>
-        <li><?php echo t('Lacking awareness of stress-reduction techniques.'); ?></li>
-        <li><?php echo t('Choosing unrealistic stress-reduction techniques for example, those that are too complicated, lengthy, or difficult for you.'); ?></li>
-        <li><?php echo t('Delaying or postponing a stress-reduction activity. For example, planning a break or trip too far into the future to be of help now, when you need it.'); ?></li>
-      </ul>
-      <p><?php echo t('Take care of yourself daily Use "tried and true" stress reduction tools that work for you. In addition, learn and incorporate new stress-reducing techniques into your life. There are many worthwhile techniques available. We offer some quick and easy ones that you can fit into your busy life.'); ?></p>
-    </div>
-    <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
-  </div>
-  <!-- Lesson 2 Slide 20 -->
-  <div id="lesson-2-slide-20" class="course-slide">
-    <div class="content">
-      <h2 class="flowers"><?php echo t('Steps to Maintain Health & Avoid Stress (continued)'); ?></h2>
-      <hr />
-      <p><?php echo t('Basic wellness practices -'); ?></p>
-      <div class="question">
-        <p>It is vital to maintain your health and well-being. Ask yourself the questions in the box below.</p>
-        <p>
-          <input type="checkbox" name="Yes19" id="Yes19">
-          <label for="Yes19">Yes</label>
-          <input type="checkbox" name="No19" id="No19">
-          <label for="No19">No</label>
-          |  Do you participate in physical
-          activity at least three times a week?</p>
-        <p>
-          <input type="checkbox" name="Yes20" id="Yes20">
-          <label for="Yes20">Yes</label>
-          <input type="checkbox" name="No20" id="No20">
-          <label for="No20">No</label>
-          |  Do you get enough sleep daily so
-          that you feel rested in the morning?</p>
-        <p>
-          <input type="checkbox" name="Yes21" id="Yes21">
-          <label for="Yes21">Yes</label>
-          <input type="checkbox" name="No21" id="No21">
-          <label for="No21">No</label>
-          |  Do you eat balanced, nutritious
-          meals?</p>
-        <p>
-          <input type="checkbox" name="Yes22" id="Yes22">
-          <label for="Yes22">Yes</label>
-          <input type="checkbox" name="No22" id="No22">
-          <label for="No22">No</label>
-          |  Do you take time to sit down and
-          eat your meals?</p>
-        <p>
-          <input type="checkbox" name="Yes23" id="Yes23">
-          <label for="Yes23">Yes</label>
-          <input type="checkbox" name="No23" id="No23">
-          <label for="No23">No</label>
-          |  Do you take care of your own
-          physical health (e.g., get regular
-          medical check-ups and take care of
-          yourself when you are ill)? </p>
-        <p>
-          <input type="checkbox" name="Yes24" id="Yes24">
-          <label for="Yes24">Yes</label>
-          <input type="checkbox" name="No24" id="No24">
-          <label for="No24">No</label>
-          |  Do you participate regularly in
-          recreational/leisure activities?</p>
-        <p>
-          <input type="checkbox" name="Yes25" id="Yes25">
-          <label for="Yes25">Yes</label>
-          <input type="checkbox" name="No25" id="No25">
-          <label for="No25">No</label>
-          |  Do you drink at least eight glasses
-          of Water or other liquid daily?</p>
-        <p>
-          <input type="checkbox" name="Yes26" id="Yes26">
-          <label for="Yes26">Yes</label>
-          <input type="checkbox" name="No26" id="No26">
-          <label for="No26">No</label>
-          |  Do you limit alcoholic beverages
-          to no more than two drinks a day?
-          (One drink is 1.5 oz. of hard liquor,
-          l2 oz. of beer, or 4 oz. of wine.) </p>
-        <p>
-          <input type="checkbox" name="Yes27" id="Yes27">
-          <label for="Yes27">Yes</label>
-          <input type="checkbox" name="No27" id="No27">
-          <label for="No27">No</label>
-          |  Do you avoid using alcohol,
-          medications/drugs, or cigarettes to
-          calm your nerves?</p>
-        <p>
-          <input type="checkbox" name="Yes28" id="Yes28">
-          <label for="Yes28">Yes</label>
-          <input type="checkbox" name="No28" id="No28">
-          <label for="No28">No</label>
-          |   Do you maintain a healthy weight?</p>
-        <p>
-          <input name="button3" type="submit" id="button3" onClick="MM_popupMsg('If you answered \&quot;yes\&quot; to all of these questions, congratulate yourself. A \&quot;no\&quot; response reflects areas to work on for better health.')" value="Submit">
-        </p>
+    
+    <!-- Lesson #7 - Supporting Personal Choice and Preferences of Older Adults in Health and Care Decision Making --> 
+    <!-- slide #6 -->
+    
+    <div id="lesson-7-slide-6" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('Family Communication: When Siblings Attack!'); ?></h2>
+        <hr />
+        <p><?php echo t('Family dynamics can be very complex.  We have been talking about your caregiving throughout this course in relation to your older parents.  We cannot forget that, in many families, family dynamics also include siblings – whether they are yours or your parents.  We continue to relive relationships with siblings and other members of our extended families that began in childhood.  These may include both positive and negative experiences.'); ?></p>
+        <p><?php echo t('Based on those past and present relationships, siblings may have their own feelings about planning decisions involving your parents.  In these situations, not including siblings in family discussions may prove potentially difficult.  Family communications may be fraught with pitfalls and landmines.  Family communications may need to focus on negotiating “delicate issues” about care of older parents and financial issues while unresolved sibling hostilities or rivalries begin to boil up.  Siblings may be more concerned with “doing things my way – because that’s the right way” rather than really listening to hear what older parents really want and need.'); ?></p>
+        <p><?php echo t('In some families, persistent conflicts may cause older parents to be reluctant or avoid discussions about their needs or concerns.  They may not want to discuss issues such as identifying a health care power of attorney for fear of starting or reviving old conflicts.'); ?></p>
+        <p><?php echo t('Effective communication among family members may take time because old patterns of communication have been ingrained over a lifetime.  Focusing on CARE Coaching approaches – and being patient and persistent – can facilitate listening and communicating to focus on what’s important.'); ?></p>
       </div>
-      <p><?php echo t('Proper diet, adequate sleep, and regular exercise are necessary for all of us, and even more so when we are caregivers. These lifestyle factors increase our resistance to illness and our ability to cope with stressful situations.'); ?></p>
-      <p><?php echo t('Exercise promotes better sleep, reduces tension and depression, and increases energy and alertness. If finding time to exercise is a problem, try to incorporate it into your usual day Perhaps the person receiving care can walk or do stretching exercises with you. If necessary do frequent short exercises instead of using large blocks of time. Find activities you enjoy. Walking is considered one of the best and easiest exercises. It helps to reduce psychological tension as well as having physical benefits.'); ?></p>
-      <p><?php echo t('Walking 20 minutes a day, three times a week, is very beneficial. If you can not be away 20 minutes, 10-minute walks twice a day or even a five-minute walk are beneficial. Work walking into your life. Walk whenever and wherever you can. Perhaps it is easiest to walk around your block, at the mall, or a nearby park. The next time a friend or family member comes to visit, take time for a short walk. When the care receiver is getting therapy, take a walk around the medical facility.'); ?></p>
-      <p><?php echo t('Breathing for relaxation - '); ?></p>
-      <p><?php echo t('Stressful situations or memories of those situations can cause changes in our breathing. Often the more tense we feel, the more shallow our breathing becomes. · Stress management tools usually include a focus on breathing. The following breathing exercise takes only one or two minutes and you can easily do it anywhere. Use it often to lower stress.'); ?></p>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo;</a></div>
     </div>
-    <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
-  </div>
-  <!-- Lesson 2 Slide 21 -->
-  <div id="lesson-2-slide-21" class="course-slide">
-    <div class="content">
-      <h2 class="flowers"><?php echo t('Steps to Maintain Health & Avoid Stress (continued)'); ?></h2>
-      <hr />
-      <p><?php echo t(' Meditation -'); ?></p>
-      <p><?php echo t('The word "meditation" comes from the Sanskrit word medha which, when taken literally, means "doing the wisdom." Meditation aids in relaxation and in achieving physical and mental well-being. Meditation is keeping your attention focused in the moment to quiet the mind and hear your body\'s inner wisdom. You, too, can learn to meditate. See the "Process of Meditation" box on the next page.'); ?></p>
-      <p><?php echo t('Music -'); ?></p>
-      <p><?php echo t('Music is another tool for reducing stress. It can alter the body and the mind. It can induce deep relaxation, act as a stimulant, and take you into other states of consciousness. Music is often used specifically for healing and decreasing stress and tension. Use the following steps as a guideline.'); ?></p>
-      <ol>
-        <li><?php echo t('Choose soothing music you like.'); ?></li>
-        <li><?php echo t('Relax and close your eyes.'); ?></li>
-        <li><?php echo t('Breathe deeply and easily.'); ?></li>
-        <li><?php echo t('Lose yourself in the music, listening with your body, not your mind.'); ?></li>
-        <li><?php echo t('After the music is finished, open your eyes and notice how you feel.'); ?></li>
-      </ol>
-      <p><?php echo t('Music is a universal language. Listening to music can be healing for both you and the care receiver, either together or alone. People with dementia, especially, respond to music when they may respond to little else.'); ?></p>
-      <p><?php echo t('Humor -'); ?></p>
-      <p><?php echo t('Caregivers who maintain and foster their sense of humor do better. It is , often hard to find much that is humorous in caregiving, but the secret to succeeding as a caregiver is to find humor in your daily routine. Finding humor does not deny the fact that, at times, your heart is heavy with the pain and sadness of caregiving. Those times will exist, but they can co-exist with laughter and humor.'); ?></p>
-      <p><?php echo t('Tears and laughter are closely related. They each offer a release of tension and are often intermingled. Humor does not minimize the seriousness of a situation; rather, it helps you embrace it. Humor can be a helpful tool in many ways, from making us laugh at our shortcomings and impossible situations, reducing anxiety and stress. Laughter relaxes and helps calm emotions, allowing us to regain emotional balance and think more clearly. If you want to laugh, or want someone else to laugh, you may have to find a reason, as George and Alma do.'); ?></p>
-      <p><?php echo t('George and Alma watch their favorite comedy show on television every weeknight at 7 P.M. They look forward to it and anticipate laughing together. In addition, Alma and George look for humorous cartoons and jokes to share with each other. The fact that Alma has a disabling medical condition does not mean they can not appreciate laughter.'); ?></p>
-      <p><?php echo t('In his book Anatomy of an Illness, Norman Cousins wrote of his fight against a crippling disease. He credited his recovery to the use of laughter. He intentionally sought healing through watching videotapes of comedies, reading joke books, and listening to people tell jokes. He had read about the effects of stress and emotions on illness. He understood that disease was caused by chemical changes in the body, due to the stress of strong emotions such as fear and anger. He concluded that perhaps love, laughter, hope, and the will to live would counteract those effects. He was right in his belief. Recent studies show that laughter helps to stimulate breathing, muscular activity; and heart rate. This serves to reduce stress and strengthen the immune system.'); ?></p>
-      <p><?php echo t('Humor is important to health. It lifts the spirit and provides a way to connect with others. The following suggestions can help · you make laughter and humor a larger part of your life:'); ?></p>
-      <ul>
-        <li><?php echo t('Seek out humor. Humorous tapes and books can be found at video stores and libraries. Spend time with friends or family members you enjoy and can laugh with.'); ?> </li>
-        <li><?php echo t('Surround yourself with humor. Put jokes, cartoons, funny pictures, and humorous sayings on the refrigerator or bulletin board where others can enjoy them with you.'); ?></li>
-        <li><?php echo t('Laugh at yourself. Do not take yourself too seriously Poke fun at yourself by making light of your shortcomings (which we all have).'); ?></li>
-      </ul>
-    </div>
-    <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
-  </div>
-  <!-- Lesson 2 Slide 22 -->
-  <div id="lesson-2-slide-22" class="course-slide">
-    <div class="content">
-      <h2 class="flowers"><?php echo t('Steps to Maintain Health & Avoid Stress (continued)'); ?></h2>
-      <hr />
-      <p><?php echo t('Developing action plans -'); ?></p>
-      <p><?php echo t('Action plans are tools for change. They can be a useful way to identify and plan specific activities for reducing stress and making change: Feelings of accomplishment are necessary for thriving as a caregiver. Action plans can help you achieve these feelings. Even the smallest action can make a big difference. This was true for Evelyn.'); ?></p>
-      <p><?php echo t('Evelyn needed more time for herself during the day She made a plan to take a leisurely; warm tub bath four times a week instead of the always-hurried shower. Evelyn settled her father to watch the news on TV when she took her baths. This worked well for both of them and became an accepted part of their routine. Accomplishing the action plan encouraged Evelyn to make other action plans that made a big difference to her.'); ?></p>
-      <p><?php echo t('Feelings of mastery and confidence are usually the result of developing new ways of coping. Use the information presented in this chapter to help you identify your stressors, and improve coping skills. The activity in the box on the next page can be a useful tool for managing stress. This activity can be useful on a regular basis. It will help you assess and cope with current stressors. Since your caregiving situation and stressors continually change, it is important to be aware of when you feel stress and to use stress-reducing tools that work for you. Most important, build stress reduction and nurturing activities into daily life to prevent distress. Be proactive and remember, what is good for you is good for the person receiving care!'); ?></p>
-      <p><?php echo t('Finding hope and meaning -'); ?></p>
-      <p><?php echo t('The ability to find hope and meaning in the caregiving situation enables you not only to survive, but to thrive. Finding meaning and hope are what keeps us going. It is a way to make sense of our circumstances.'); ?></p>
-      <p><?php echo t('In his book Mans Search For Meaning, psychiatrist Viktor Frankl tells of his experience as a long-time prisoner in a prisoner of war camp during World War II. Many of his family members died in the camps. In spite of the fact that he faced death constantly and suffered severe punishment, Dr. Frankl was able to find meaning and hope in his life. He noted that the prisoners who were able to sustain even a flicker of hope were better able to survive the terrible circumstances than those who felt hopeless. He concluded that what did remain, when all else was taken away; was "the last of the human freedoms," the ability to "choose one\'s attitude in a given set of circumstances." Out of that experience, Frankl\'s guiding philosophy was born: "To live is to suffer, to survive is to find meaning in the suffering." He also believed that man\'s need for meaning is universal.'); ?></p>
-      <p><?php echo t('The need to find hope and meaning is also important when you are a caregiver for a person with a chronic illness. Uncertainty; loss, and suffering may shake your foundation. After all, you have much at stake. Your world, as you have known it, has changed drastically and you may be left with questions such as, "Why me?" and perhaps, "Where is God?" Questioning often leads to a search for meaning. No one else can tell you what the meaning is for you. It can be a lonely journey.'); ?></p>
-    </div>
-    <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
-  </div>
-  <!-- Lesson 2 Slide 23 -->
-  <div id="lesson-2-slide-23" class="course-slide">
-    <div class="content">
-      <h2 class="flowers"><?php echo t('Steps to Maintain Health & Avoid Stress (continued)'); ?></h2>
-      <hr />
-      <p><?php echo t('REFRAMING YOUR STRESS'); ?></p>
-      <p><?php echo t('Make a list of those things that you find most difficult or stressful. Be specific. Write at least two (more if you can).'); ?></p>
-      <p><?php echo t('Answer the following questions in relation to each item on your list. Can I ignore this? Or can I let it go?'); ?></p>
-      <p><?php echo t('Can I change anything about this? If so, how can I change it?'); ?></p>
-      <p><?php echo t('If it can not be changed, can I change my perception of it? If so, how? What is a more helpful perception?'); ?></p>
-      <p><?php echo t('Select one stressor from your list to work on first. The stressor is: Develop an action plan for addressing this stressor. Be specific and realistic.'); ?></p>
-      <p><?php echo t('A search for meaning can be a conscious choice. There are ways to stimulate your search. The following can be helpful:'); ?></p>
-      <ul>
-        <li><?php echo t('Ask yourself questions like "What am I to learn from this?" What good can come from this? Am I a better person now? These types of questions can help you open up to possibilities for finding meaning.'); ?></li>
-        <li><?php echo t('Reflect .. Periods of quiet reflection, especially after a difficult time, are important and offer opportunities to learn from the experience.'); ?></li>
-        <li><?php echo t('Talk with a trusted person. Whether this person is a counselor, religious advisor, or friend, sharing can help clarify your thoughts and feelings. As you tell your story; it often takes on meaning.'); ?></li>
-        <li><?php echo t('Write. This is also a way to clarify your thinking. Writing is a way to bring out your thoughts and feelings. Write freely and spontaneously. Do not concern yourself with proper sentence structure or punctuation. Writing is a way to talk to yourself. Re-reading your journal over time provides an understanding of where you were when you started and where you are now. You will probably see changes and find new understanding and meaning.'); ?></li>
-        <li><?php echo t('Seek spiritual renewal. This is especially important when you are facing difficult times. Many caregivers report that faith and prayer help them find comfort, purpose, and meaning. It may be that even when you feel anger because of suffering and sorrow, your need for meaning is greatest.'); ?></li>
-      </ul>
-    </div>
-    <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
-  </div>
-  
-  <!-- Lesson 2 Slide 24 -->
-  
-  <div id="lesson-2-slide-24" class="course-slide">
-    <div class="content">
-      <h2 class="flowers"><?php echo t('Steps to Maintain Health & Avoid Stress (continued)'); ?></h2>
-      <hr />
-      <p><?php echo t('Like Frankl, it is hopeful to believe that meaning can be found in difficult and painful experiences. Hope and meaning play a large part in the following story of Margaret and Tim.'); ?></p>
-      <p><?php echo t('Tim\'s frequent visits to his elderly mother, Margaret, in the nursing home, were meaningful to him. Years ago, when Margaret was healthy; she shared some of her beliefs with Tim. She had told him, "If there comes a time when I am not able to recognize you because of Alzheimer\'s disease, or for any other reason, I want you to know what I believe to be true. I believe that my true essence, my spirit, will always be present, even though my physical body and mind may not be the person you remember. Please know that I am with you. We may not be able to talk with each other as we did in the past, but if you play my favorite music, read poetry, hold my hand, or just be with me, I will feel your love and you will feel mine for you."'); ?></p>
-      <p><?php echo t('In sharing her beliefs, Margaret gave Tim the gift of finding meaning in what can be a most difficult and challenging situation. Meaning is all around us. It is the "stuff" of life. Meaning is personal. It is up to each persc1n to find his or her own meaning.'); ?></p>
-      <p><?php echo t('SUMMARY'); ?></p>
-      <p><?php echo t('Are you better acquainted with your stress? Have you identified what you can do to reduce at least one stressor? Do you realize the potential strength in considering your needs and in practicing self-care? Can you find meaning in difficult experiences? Have you learned that often the compassion and care you give to another comes back to you as a gift of meaning?'); ?></p>
-      <p><?php echo t('Remember that your response to a situation will affect the situation itself. As much as possible, make it be what you want it to be.'); ?></p>
-    </div>
-    <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
-  </div>
-  
-  <!-- Lesson 2 Slide 25 -->
-  
-  <div id="lesson-2-slide-25" class="course-slide">
-    <div class="content">
-      <h2 class="flowers"><?php echo t('Tips for Overcoming Negative Emotions & Reducing Stress'); ?></h2>
-      <hr />
-      <p><?php echo t('A Wide variety of mental activities can help caregivers overcome negative emotions and reduce stress. Think about how you might use some of these ideas in your own life.'); ?></p>
-      <ul>
-        <li><?php echo t('Become aware of harmful thought patterns. That is a first step in taking positive action to care for yourself.'); ?></li>
-        <li><?php echo t('Pay attention to shallow breathing because it often adds to physical stress.'); ?></li>
-        <li><?php echo t('Imagine washing away the stresses of the day during a shower.'); ?></li>
-        <li><?php echo t('Change clothes as a way to shed the day\'s concerns'); ?></li>
-        <li><?php echo t('Create a stress diary where you record information about the stresses you are experiencing so you can analyze them and take steps to manage them. In your diary, record how much time you feel depressed, in control, emotionally stable, had enough energy, and were satisfied with life.'); ?></li>
-        <li><?php echo t('Think about, and write a list of, the problems you face and the options you have available. using a scale of 1-7, prioritize the problems you want to tackle first.'); ?></li>
-        <li><?php echo t('Think about, and write a list of, the changes you could make in your daily life. Then prioritize the changes. The first changes to tackle are the ones that have the highest priorities.'); ?></li>
-        <li><?php echo t('Visit the Mind Tools website for more information and tools that will help you with decision making, positive thinking, managing stress, and finding balance in your life.'); ?></li>
-        <li><?php echo t('Read about what others are doing to reduce stress.'); ?></li>
-      </ul>
-    </div>
-    <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
-  </div>
-  <!-- Lesson 2 Slide 26 -->
-  <div id="lesson-2-slide-26" class="course-slide">
-    <div class="content">
-      <h2 class="flowers"><?php echo t('Tips for Overcoming Negative Emotions & Reducing Stress: Simple Pleasures'); ?></h2>
-      <hr />
-      <p><?php echo t('Even tiny bursts of simple pleasures may improve your physical and mental health. Some researchers say that it is the frequency of the positive feelings that come from these small pleasures that is most important in determining happiness. On the Internet, people are posting their simple pleasures such as those listed below. When you are sitting quietly in a comfortable place, list simple pleasures that help you get through your caregiving days.'); ?></p>
-      <ul>
-        <li><?php echo t('Looking at old pictures'); ?></li>
-        <li><?php echo t('Soft pajamas'); ?></li>
-        <li><?php echo t('Seeing winter\'s first snowfall on a bright moonlit night'); ?></li>
-        <li><?php echo t('Chocolate'); ?></li>
-        <li><?php echo t('Watching the sun set'); ?></li>
-        <li><?php echo t('The smell of freshly cut grass, and the air right after it rains'); ?></li>
-        <li><?php echo t('Clean skin on clean sheets'); ?></li>
-        <li><?php echo t('The smell of freshly cut grass, and the air right after it rains'); ?></li>
-        <li><?php echo t('Falling asleep in the spring sun'); ?></li>
-        <li><?php echo t('Looking to the birds sing early in the morning'); ?></li>
-        <li><?php echo t('Sitting in bed with a cup of tea doing crossword puzzles'); ?></li>
-        <li><?php echo t('Eating a spoonful of peanut butter'); ?></li>
-        <li><?php echo t('An unexpected breeze on a hot summer\'s day'); ?></li>
-        <li><?php echo t('Having an attached garage... and it is raining'); ?></li>
-      </ul>
-      <p><?php echo t('Make and post a 1-5 minute video to You Tube of your simple pleasures.'); ?></p>
-    </div>
-    <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> <?php echo t('Complete Lesson'); ?></a></div>
-  </div>
-  <!-- need this final div here to close lesson-2 --> 
-</div>
-
-
-
-
-
-
-
-<!-- Lesson 4 Slide 1 -->
-
-<div id="lesson-4">
-<div id="lesson-4-slide-1" class="course-slide">
-  <div class="content">
-    <h2 class="flowers"><?php echo t('Normal & Abnormal Aging Changes'); ?></h2>
-    <hr />
-    <p><?php echo t('This lesson contains four main sections:'); ?></p>
-    <ul>
-      <li><?php echo t('Myths and Realities of Aging'); ?></li>
-      <li><?php echo t('Focusing on Healthy Aging'); ?></li>
-      <li><?php echo t('Normal Aging Changes'); ?></li>
-      <li><?php echo t('Aging Well'); ?></li>
-    </ul>
-  </div>
-  <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Start Course &raquo;'); ?></a></div>
-</div>
-
-<!-- Lesson 4 Slide 2 -->
-
-<div id="lesson-4-slide-2" class="course-slide">
-  <div class="content">
-    <h2 class="flowers"><?php echo t('Myths and Realities of Aging'); ?></h2>
-    <hr />
-    <p><?php echo t('Images of aging in our society are not very positive. For example, let us look at some of our stereotypes about older adults:'); ?></p>
-    <ul>
-      <li><?php echo t('Old people can not learn new things.'); ?></li>
-      <li><?php echo t('Old people are close-minded, set in their ways.'); ?></li>
-      <li><?php echo t('Old people are cantankerous, crabby.'); ?></li>
-      <li><?php echo t('Old people are slow.'); ?></li>
-      <li><?php echo t('The elderly do not pull their own weight.'); ?></li>
-      <li><?php echo t('Old people are always sick.'); ?></li>
-    </ul>
-    <p><?php echo t('Dr. Erdman Palmore developed a “Facts on Aging” quiz to measure perceptions (and misperceptions) about aging. Dr. Palmore\’s quiz is a good way to look at our concepts of aging. Let\’s look at some of these items and see how you score them:'); ?></p>
-    <p><?php echo t('The majority of older people are senile, have a defective memory, or are disoriented.'); ?></p>
     
-    <!-- need to add all these questions soon 
-    <p>
-      <input name="True" type="submit" id="True" onClick="MM_popupMsg('Ccorrect!')" value="True">
-      <input name="True2" type="submit" id="True2" onClick="MM_popupMsg('Incorrect!')" value="False">
-    </p>
-    <p> All five senses (sight, smell, hearing, taste, and touch) tend to decline in old age.</p>
-    <p>
-      <input name="True7" type="submit" id="True11" onClick="MM_popupMsg('Incorrect!')" value="True">
-      <input name="True7" type="submit" id="True12" onClick="MM_popupMsg('Correct!')" value="False">
-    </p>
-    <p> The majority of older people say they are miserable most of the time.</p>
-    <p>
-      <input name="True3" type="submit" id="True3" onClick="MM_popupMsg('Incorrect!')" value="True">
-      <input name="True3" type="submit" id="True4" onClick="MM_popupMsg('Correct!')" value="False">
-    </p>
-    <p> Older workers usually cannot work as effectively as younger workers.</p>
-    <p>
-      <input name="True4" type="submit" id="True5" onClick="MM_popupMsg('Incorrect!')" value="True">
-      <input name="True4" type="submit" id="True6" onClick="MM_popupMsg('Correct!')" value="False">
-    </p>
-    <p> Over three-fourths of older people say they are healthy enough to carry out normal activities.</p>
-    <p>
-      <input name="True8" type="submit" id="True13" onClick="MM_popupMsg('Incorrect!')" value="True">
-      <input name="True8" type="submit" id="True14" onClick="MM_popupMsg('Correct!')" value="False">
-    </p>
-    <p> The majority of older people say they are lonely.</p>
-    <p>
-      <input name="True5" type="submit" id="True7" onClick="MM_popupMsg('Incorrect!')" value="True">
-      <input name="True5" type="submit" id="True8" onClick="MM_popupMsg('Correct!')" value="False">
-    </p>
-    <p> Older workers have fewer accidents than younger workers.</p>
-    <p>
-      <input name="True9" type="submit" id="True15" onClick="MM_popupMsg('Incorrect!')" value="True">
-      <input name="True9" type="submit" id="True16" onClick="MM_popupMsg('Correct!')" value="False">
-    </p>
-    <p> Older people tend to react more slowly than younger people.</p>
-    <p>
-      <input name="True10" type="submit" id="True17" onClick="MM_popupMsg('Incorrect!')" value="True">
-      <input name="True10" type="submit" id="True18" onClick="MM_popupMsg('Correct!')" value="False">
-    </p>
-    <p> The majority of older people are working, or say they would like to have some kind of work to   
-      do, including work around the house and volunteer work.</p>
-    <p>
-      <input name="True11" type="submit" id="True19" onClick="MM_popupMsg('Incorrect!')" value="True">
-      <input name="True11" type="submit" id="True20" onClick="MM_popupMsg('Correct!')" value="False">
-      <br>
-    </p>
-    <p>Older people tend to become more religious as they age.</p>
-    <p>
-      <input name="True6" type="submit" id="True9" onClick="MM_popupMsg('Incorrect!')" value="True">
-      <input name="True6" type="submit" id="True10" onClick="MM_popupMsg('Correct!')" value="False">
-    </p>
+    <!-- Lesson #7 - Supporting Personal Choice and Preferences of Older Adults in Health and Care Decision Making --> 
+    <!-- slide #7 -->
     
-    --> 
+    <div id="lesson-7-slide-7" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('Family Communication: When Siblings Attack! (continued)'); ?></h2>
+        <hr />
+        <p><?php echo t('CARE Coaching Tip – Family Communications: The Right Place, the Right Time'); ?></p>
+        <p><?php echo t('When addressing issues with your siblings about your older parents, try to focus on the following:'); ?></p>
+        <ul>
+          <li><?php echo t('Choose a time and place to broach such issues when and where you will not be interrupted.'); ?></li>
+          <li><?php echo t('Maintain focus on your parent’s needs, concerns, and issues.  Your parents should be the ones voicing or expressing themselves.'); ?></li>
+          <li><?php echo t('Really listen to your parents wishes – even if your mind is already made up.'); ?></li>
+          <li><?php echo t('Word your questions or feelings as questions and make sure your parents are part of the decision making process.'); ?></li>
+          <li><?php echo t('Be honest about your own concerns.  Try to draw out those feelings in your siblings as well.'); ?></li>
+          <li><?php echo t('Try not to bring up too many issues at once.  Sometimes this may be challenging in the situation where siblings may have come from long distance and this may be the only chance for you all to talk together.'); ?></li>
+        </ul>
+        <p><?php echo t('CARE Coaching Tip – Dealing with Resentful Siblings'); ?></p>
+        <p><?php echo t('Family relationships and communications may suffer when one sibling “takes over” conversations or is the main caregiver for an older parent.  In many cultures, caregiving is done by the oldest sibling while in other traditions, the youngest sibling may be the primary caregiver.'); ?></p>
+        <p><?php echo t('Family disagreements about care and decisions (particularly when finances come into the mix) often drive a wedge among siblings.  The caregiving sibling may feel resentment if they feel burdened by their responsibilities and other siblings take a backseat to caregiving.'); ?></p>
+        <p><?php echo t('To keep lines of communication open with siblings:'); ?></p>
+        <ul>
+          <li><?php echo t('Identify specific areas where siblings can be involved.  Even if siblings live out-of-state, make it a point to involve them in issues and decision making.'); ?></li>
+          <li><?php echo t('Be in communication as often as possible with siblings.  In many cases, it is a crisis that brings siblings together.  With everyone under stress, it is often difficult for siblings to focus on wants important.'); ?></li>
+          <li><?php echo t('If one sibling (other than you) is the primary caregiver, offer to help in any way you can.    Acknowledge and recognize the care that your sibling is providing your older parents as the primary caregiver.'); ?></li>
+        </ul>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo;</a></div>
+    </div>
     
-  </div>
-  <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
-</div>
-
-<!-- Lesson 4 Slide 3 -->
-
-<div id="lesson-4-slide-3" class="course-slide">
-  <div class="content">
-    <h2 class="flowers"><?php echo t('Myths and Realities of Aging (continued)'); ?></h2>
-    <hr />
-    <p><?php echo t('Realities of Aging'); ?></p>
-    <p><?php echo t('So, if the stereotype of older adults as slow, sick, and/or senile is false, what is the reality of aging in America? The National Council on the Aging and AARP published the resource, American Perceptions of Aging in the 21st Century, a longitudinal study that began in 1974. In 2002 a follow-up study compared results from the original 1974 study with contemporary findings. Here are some highlights about the realities of aging:'); ?></p>
-    <ul>
-      <li><?php echo t('58% of older adults were very happy with growing older'); ?></li>
-      <li><?php echo t('88% felt that social relationships were very important to a meaningful, vital life'); ?></li>
-      <li><?php echo t('32% felt that new learning was very important to a meaningful, vital life'); ?></li>
-      <li><?php echo t('47% felt their overall health was excellent to very good'); ?></li>
-      <li><?php echo t('60% were very or somewhat worried about memory loss as they aged'); ?></li>
-    </ul>
-    <p><?php echo t('How about a few more realities of aging. A survey of key trends in aging conducted by Mather LifeWays Institute on Aging documented the following facts about older adults:'); ?></p>
-    <ul>
-      <li><?php echo t('The educational level of the older adult population is increasing.'); ?></li>
-      <li><?php echo t('Almost half of older adults currently do volunteer work.'); ?></li>
-      <li><?php echo t('More than 75% of older adults say old age should be defined by a decline in physical or mental functioning rather than a specific age.'); ?></li>
-      <li><?php echo t('Only 8% of older adults say they are very old.'); ?></li>
-      <li><?php echo t('Almost 40% of older adults work part-time.'); ?></li>
-      <li><?php echo t('Older Americans age 65+ comprise 16.3% of the US labor force.'); ?></li>
-    </ul>
-    <p><?php echo t('First of all, how do we define healthy aging? The National Council on the Aging gives this definition:'); ?></p>
-    <p><?php echo t('“Healthy aging is a broad concept that is more than just physical health status or absence of disease. It encompasses all of the intellectual, emotional, social, and spiritual facts of our being. While healthy aging is driven by internal dimensions such as our beliefs, attitudes, and intentions about our health, it also depends on external supports including our social networks, community services, public policies, and the built and natural environment. These dimensions are interrelated, affecting behavior and lifestyle choices.”'); ?></p>
-  </div>
-  <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
-</div>
-
-<!-- Lesson 4 Slide 4 -->
-
-<div id="lesson-4-slide-4" class="course-slide">
-  <div class="content">
-    <h2 class="flowers"><?php echo t('Focusing on Healthy Aging'); ?></h2>
-    <hr />
-    <h4><?php echo t('Maintaining Physical Health'); ?></h4>
-    <p><?php echo t('Research shows that older adults can attain healthy vital old age through simple health promotion and disease prevention initiatives. The MacArthur Foundation study identified several lifestyle changes that clearly proved to benefit older adults:'); ?></p>
-    <ul>
-      <li><?php echo t('Exercise and physical activity'); ?></li>
-      <li><?php echo t('Early detection of cancer'); ?></li>
-      <li><?php echo t('Reducing risk of heart disease'); ?></li>
-      <li><?php echo t('Vaccinations'); ?></li>
-    </ul>
-    <h5><?php echo t('Exercise and physical activity'); ?></h5>
-    <p><?php echo t('Exercise can help prevent heart disease, high blood pressure, and tendency toward diabetes, osteoporosis, and risk for falls. A regular, moderate program of aerobic and strength training for older adults is both safe and effective in improving physical function.'); ?></p>
-    <h5><?php echo t('Early detection of cancer'); ?></h5>
-    <p><?php echo t('With early detection, many forms of cancer are treatable and have a high survival rate. Fortunately, screening tests for early detection of cancer have become very effective and commonly available. In addition, research suggests that promoting a healthy diet may also decrease the risk of certain types of cancer.'); ?></p>
-    <h5><?php echo t('Heart disease'); ?></h5>
-    <p><?php echo t('Heart disease is a major killer of men at all ages and of older women. Education about reducing risk factors (high cholesterol, smoking, hypertension) is vitally important for older adults.'); ?></p>
-    <h5><?php echo t('Vaccinations'); ?></h5>
-    <p><?php echo t('Among the greatest advances in health promotion and disease prevention in older adults had been the development of safe and effective vaccines. Among non-vaccinated older adults, disease can sweep through the population rapidly and can be very dangerous.'); ?></p>
-  </div>
-  <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
-</div>
-
-<!-- Lesson 4 Slide 5 -->
-
-<div id="lesson-4-slide-5" class="course-slide">
-  <div class="content">
-    <h2 class="flowers"><?php echo t('Focusing on Healthy Aging (continued)'); ?></h2>
-    <hr />
-    <h4><?php echo t('Maintaining High Cognitive and Physical Function'); ?></h4>
-    <p><?php echo t('Fear of cognitive loss, and especially of Alzheimer’s disease are widespread among older adults, and with good reason. Such losses place great burden on both the older adult and his/ her caregivers. Fortunately, research shows that even though the proportion of older adults in the population is increasing, the usual pattern is that most older adults retain a good portion of their independence and mental sharpness.'); ?></p>
-    <p><?php echo t('The MacArthur Foundation study documented a number of ways that older adults sustain mental ability as they age. Many of the study’s “successful agers” reported that such activities as reading, conversation, crosswords and other word puzzles, card games, and other similar activities kept their minds alert and active. The study also shows that the strongest predictors of sustained cognitive function include:'); ?></p>
-    <ul>
-      <li><?php echo t('Education'); ?></li>
-      <li><?php echo t('Physical activity'); ?></li>
-      <li><?php echo t('High “self-efficacy”'); ?></li>
-    </ul>
-    <h5><?php echo t('Education'); ?></h5>
-    <p><?php echo t('People with more years of education were more likely to maintain high cognitive function. The study that education early in life may have a direct beneficial effect of brain circuitry, and education may set a pattern of intellectual pursuits, including reading and puzzle solving, which maintains lifelong exercise of cognitive function.'); ?></p>
-    <h5><?php echo t('Physical Activity'); ?></h5>
-    <p><?php echo t('The study found that older adults who engaged in strenuous physical activity were much more likely to maintain high cognitive function. One possible answer for this is that exercise releases chemicals in the brain which promote the growth of new brain cells.'); ?></p>
-    <h5><?php echo t('Self-efficacy'); ?></h5>
-    <p><?php echo t('Self-efficacy, or self-esteem, is a person\’s belief in his or her ability to handle various situations. Many studies show that a strong sense of self-efficacy leads to improved performance in solving cognitive problems. Older adults with strong self-efficacy are more likely to view memory as a set of skills that can be learned and improved.'); ?></p>
-  </div>
-  <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
-</div>
-
-<!-- Lesson 4 Slide 6 -->
-
-<div id="lesson-4-slide-6" class="course-slide">
-  <div class="content">
-    <h2 class="flowers"><?php echo t('Focusing on Healthy Aging (continued)'); ?></h2>
-    <hr />
-    <h4><?php echo t('Engagement in Productive Relationships and Behaviors'); ?></h4>
-    <p><?php echo t('The MacArthur research showed that “happy activities” are essential to successful aging. The two most important areas they identified that contribute to successful aging are:'); ?></p>
-    <ul>
-      <li><?php echo t('Relating to others'); ?></li>
-      <li><?php echo t('Continuing productive activity.'); ?></li>
-    </ul>
-    <p><?php echo t('Relating to Others Being part of a social network of family and friends contributes significantly to successful aging.'); ?></p>
-    <p><?php echo t('Continuing Productive Activity Most people equate being productive with earning money. However, there are many activities, both paid and unpaid, which can be considered productive.'); ?></p>
-  </div>
-  <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
-</div>
-
-<!-- Lesson 4 Slide 7 -->
-
-<div id="lesson-4-slide-7" class="course-slide">
-  <div class="content">
-    <h2 class="flowers"><?php echo t('Normal Aging Changes'); ?></h2>
-    <hr />
-    <h4><?php echo t('Hearing Changes'); ?></h4>
-    <p><?php echo t('More than half of people aged 60 or over are hard of hearing or deaf. Presbycusis is the most common form of hearing loss and is thought to be due to the combined effects of aging of the peripheral or central auditory systems, and the accumulated effects of wear-and-tear.'); ?></p>
-    <p><?php echo t('Older adults may compensate for hearing loss by using hearing aids. However, some older adults don’t recognize their problem and some deny they have problems and thus don’t take actions to correct hearing impairments resulting in potential communication problems. These communication problems can lead to social isolation.'); ?></p>
-    <h5><?php echo t('Strategies for Compensating for Hearing Changes'); ?></h5>
-    <ul>
-      <li><?php echo t('Stand or sit in front of the older adult; get the older adult’s attention.'); ?></li>
-      <li><?php echo t('Speak up but do not shout.'); ?></li>
-      <li><?php echo t('Use lower-pitched tones. They are heard more easily than higher ones.'); ?></li>
-      <li><?php echo t('Speak slowly and clearly, and emphasize only key words.'); ?></li>
-      <li><?php echo t('Cut out as much background noise as possible.'); ?></li>
-      <li><?php echo t('Keep your mouth in clear view, and maintain eye contact if possible.'); ?></li>
-      <li><?php echo t('Rephrase rather than repeat a misunderstood sentence. Allow a few seconds pause after every few sentences to allow for processing and to allow the listener to formulate questions.'); ?></li>
-    </ul>
-  </div>
-  <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
-</div>
-
-<!-- Lesson 4 Slide 8 -->
-
-<div id="lesson-4-slide-8" class="course-slide">
-  <div class="content">
-    <h2 class="flowers"><?php echo t('Normal Aging Changes (continued)'); ?></h2>
-    <hr />
-    <h4><?php echo t('Vision Changes'); ?></h4>
-    <p><?php echo t('About 7.3 million or 21% of persons age 65 and over report some form of vision impairment. As baby boomers age, this number will reach 8.3 million in the year 2010, 11.3 million in 2020, and 14.8 million in 2030.'); ?></p>
-    <h5><?php echo t('Vision loss may be due to: '); ?></h5>
-    <ul>
-      <li><?php echo t('Decreased pupil size and accommodation which alter visual accuracy'); ?></li>
-      <li><?php echo t('Macular degeneration which impedes central vision'); ?></li>
-      <li><?php echo t('Glaucoma which impeded peripheral vision'); ?></li>
-      <li><?php echo t('Cataracts which cloud vision.'); ?></li>
-    </ul>
-    <h5><?php echo t('Strategies for Compensating for Vision Changes'); ?></h5>
-    <p><?php echo t('To accommodate older adults with visual impairments, it is important to make give clear verbal cues to assist the older adult.'); ?></p>
-    <ul>
-      <li><?php echo t('If you are entering a room with someone who is visually impaired, describe the room layout, other people who are in the room, and what is happening.'); ?></li>
-      <li><?php echo t('Tell the person if you are leaving. Let him/her know if others will remain in the room or if he/she will be alone.'); ?></li>
-      <li><?php echo t('Allow the person to take your arm for guidance.') ?></li>
-      <li><?php echo t('When you speak, let the person know whom you are addressing;'); ?></li>
-      <li><?php echo t('Ask how you may help: increasing the light, reading the menu, describing where things are, or in some other way.'); ?></li>
-      <li><?php echo t('Call out the person’s name before touching; touching lets a person know that you are listening.'); ?></li>
-      <li><?php echo t('Treat him/her like a sighted person as much as possible.'); ?></li>
-      <li><?php echo t('Explain what you are doing as you are doing it.'); ?></li>
-      <li><?php echo t('Leave things where they are unless the person asks you to move something.'); ?></li>
-    </ul>
-  </div>
-  <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
-</div>
-
-<!-- Lesson 4 Slide 9 -->
-
-<div id="lesson-4-slide-9" class="course-slide">
-<div class="content">
-<h2 class="flowers"><?php echo t('Normal Aging Changes (continued)'); ?></h2>
-<hr />
-<h4><?php echo t('Changes in Smell and Taste'); ?></h4>
-<p><?php echo t('Decline in smell and taste are also normal aging sensory changes. Older adults recognize and identify common odors less well. Loss of taste and smell are common and result from:'); ?></p>
-<ul>
-  <li><?php echo t('Normal aging from the degeneration of the taste buds, and decreased saliva production'); ?></li>
-  <li><?php echo t('Certain disease states, such as Alzheimer’s disease'); ?></li>
-  <li><?php echo t('Medications'); ?></li>
-  <li><?php echo t('Surgical interventions'); ?></li>
-  <li><?php echo t('Environmental exposure'); ?></li>
-</ul>
-<h5><?php echo t('Sensory losses of taste and smell can cause:'); ?></h5>
-<ul>
-<li><?php echo t('Reluctance to talk about food'); ?></li>
-<li><?php echo t('Reduced pleasure and comfort from food affecting the socialization that accompanies eating'); ?></li>
-<li><?php echo t('Increased nutritional and immune deficiencies'); ?></li>
-<li><?php echo t('Reduced adherence to dietary regimen.'); ?></li>
-</li>
-<p><?php echo t('Older adults should be encouraged to have routine oral care and dental visits and to use dentures regularly. To accommodate declines in smell and taste, meals should have pleasing colors, textures, and flavorings to make them look and taste more appealing.'); ?></p>
-</div>
-<div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
-</div>
-
-<!-- Lesson 4 Slide 10 -->
-
-<div id="lesson-4-slide-10" class="course-slide">
-  <div class="content">
-    <h2 class="flowers"><?php echo t('Normal Aging Changes (continued)'); ?></h2>
-    <hr />
-    <h4><?php echo t('Common Health Issues of Older Adults'); ?></h4>
-    <p><?php echo t('According to Older Americans 2008: Key Indicators of Well-Being, published by the Federal Interagency Forum on Age Related Statistics, about 80% of older adults have at least one age- related chronic health condition and 50% have at least two. The most prevalent include:'); ?></p>
-    <ul>
-      <li><?php echo t('Arthritis'); ?></li>
-      <li><?php echo t('Hypertension'); ?></li>
-      <li><?php echo t('Heart Disease'); ?></li>
-      <li><?php echo t('Stroke'); ?></li>
-      <li><?php echo t('Diabetes'); ?></li>
-      <li><?php echo t('Cancer'); ?></li>
-      <li><?php echo t('Osteoporosis'); ?></li>
-      <li><?php echo t('Alzheimer’s Disease'); ?></li>
-    </ul>
-    <p><?php echo t('Arthritis encompasses more than 100 diseases and conditions that affect joints, surrounding tissues, and other connective tissues. It is the leading cause of disability among older adults. Approximately 43% of all men and 54% of all women over the age of 65 have some level of arthritis.'); ?></p>
-    <p><?php echo t('Hypertension is also prevalent among older adults and can lead to activity limitations. 52% of all men and 54% of all women over the age of 65 suffer from hypertension.'); ?></p>
-    <p><?php echo t('Heart Disease and Stroke. Although older women are more likely to have hypertension than older men, the prevalence of heart disease and stroke is higher among older men. 37% of men and 26% of older women have heart disease, while 10% of older men and 8% of older women have suffered a stroke.'); ?></p>
-    <p><?php echo t('Diabetes also affects the health of older adults and limits their ability to perform normal activities. 19% of men and 17% of women over the age of 65 suffer from diabetes.'); ?></p>
-    <p><?php echo t('Cancer. Older men are at a greater risk of cancer than older women, 24% of older men and 19% of older women having some form of cancer. For men, the most commonly diagnosed cancers included prostate, lung, colon, and rectum. Among women, cancers of the breast, colon, and rectum were the most common.'); ?></p>
-    <p><?php echo t('Osteoporosis, another common chronic ailment among older adults, reduces bone density and raises the risk for potential disabling fractures. Although women are four times more likely than men to experience bone loss, recent research suggests that the prevalence of osteoporosis among men has been significantly under-diagnosed and under-reported.'); ?></p>
-    <p><?php echo t('Alzheimer’s Disease is a progressive, degenerative disease that causes gradual but irreversible loss of brain cells. It currently affects an estimated 4.5 million Americans, with the vast majority of sufferers being 65 and older. The group of people who are at the highest risk for Alzheimer’s Disease are those age 85 and older, also the fastest growing segment of the population.'); ?></p>
-    <p><?php echo t('All statistics are taken from Older Americans 2008: Key Indicators of Well-Being, published by the Federal Interagency Forum on Age Related Statistics. Search the Web for this specific report.'); ?></p>
-  </div>
-  <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
-</div>
-
-<!-- Lesson 4 Slide 11 -->
-
-<div id="lesson-4-slide-11" class="course-slide">
-  <div class="content">
-    <h2 class="flowers"><?php echo t('Normal Aging Changes (continued)'); ?></h2>
-    <hr />
-    <h4><?php echo t('Emotional and Personality Changes') ;?></h4>
-    <p><?php echo t('As we get older, our more dominant personality traits become more pronounced. You may notice that some older people whom you know become “more difficult” to get along with while others become “more mellow” as they age. Some older people may become more concerned about death. Others may feel that they have reached a certain age that their “wisdom” should be respected by everyone and they take offense if someone disagrees or challenges them on an issue.'); ?></p>
-    <p><?php echo t('As a caregiver, being aware and understanding of some of these changes is important. Showing empathy and compassion to older adults when they may be coping with multiple changes or losses will benefit both the older person and you as caregiver.'); ?></p>
-    <p><?php echo t('Emotional, behavioral, and mental change may include depression, memory lapses, inability ot concentrate, or disorientation. It is important to remember that memory lapses are not automatically a sign of dementia or Alzheimer’s Disease! These changes may be caused by a number of factors including:'); ?></p>
-    <ul>
-      <li><?php echo t('Thickening of artery walls'); ?></li>
-      <li><?php echo t('Poor nutrition'); ?></li>
-      <li><?php echo t('Action of medications'); ?></li>
-      <li><?php echo t('Loss of a spouse or death among friends/relatives'); ?></li>
-      <li><?php echo t('Reduced physical strength and endurance'); ?></li>
-      <li><?php echo t('Fears of illness'); ?></li>
-      <li><?php echo t('Major life changes such as moving from one’s home to another setting'); ?></li>
-    </ul>
-    <p><?php echo t('If the change is sudden and impacts the ability of the older adult to function on a daily basis, it is important to consult with the physician as there may be an underlying cause that could be addressed by medical care.'); ?></p>
-  </div>
-  <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
-</div>
-
-<!-- Lesson 4 Slide 12 -->
-
-<div id="lesson-4-slide-12" class="course-slide">
-  <div class="content">
-    <h2 class="flowers"><?php echo t('Normal Aging Changes (continued)'); ?></h2>
-    <hr />
-    <h4><?php echo t('Memory Changes'); ?></h4>
-    <p><?php echo t('A major concern of people as they or their loved ones age is “What is normal memory loss and what is abnormal?”'); ?></p>
-    <p><?php echo t('By the time a person reaches 70 to 80 years of age, the brain loses 10% of its original size. Some people’s memory remains sharp throughout old age while others are mildly affected by memory loss.'); ?></p>
-    <p><?php echo t('As many as 50% of older adults have trouble remembering things, a situation called benign forgetfulness. Some loss of short-term memory is common with older adults, yet they often can easily remember life events and experiences from the past. It is also common that older adults tell and retell information. This is not so much a situation that the older adult does not remember telling the story, but it is a way to “lock in” the story into their short-term memory “bank.”'); ?></p>
-    <p><?php echo t('As the caregiver, rather than responding in an aggravated tone, “Mom, don’t you remember you just told me that story!”, it is better to just listen and then engage mom in more discussion about that story – maybe ask some questions about the situation or relate it back to a past similar experience. It will help mom “bank” that information, as well as you may learn something you did not know about your mom’s life experiences from the past!'); ?></p>
-    <h4><?php echo t('Other Changes'); ?></h4>
-    <p><?php echo t('Because it takes longer for the older brain to process information, it takes longer for an older person to react. The performance of routine tasks takes longer. Combined with normal slowing of movement, ordinary tasks may become more difficult and frustrating for both the older person and their caregiver.'); ?></p>
-  </div>
-  <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
-</div>
-
-<!-- Lesson 4 Slide 13 -->
-
-<div id="lesson-4-slide-13" class="course-slide">
-  <div class="content">
-    <h2 class="flowers"><?php echo t('Aging Well'); ?></h2>
-    <hr />
-    <h4><?php echo t('Encouraging Health and Wellness'); ?></h4>
-    <p><?php echo t('Wellness means striving to achieve the optimum state of health and well-being that you are capable of achieving. The whole-person wellness model, which emphasizes personal choice, self-responsibility, optimism, and self-direction comprises six dimensions of wellness:'); ?></p>
-    <ul>
-      <li><?php echo t('Physical'); ?></li>
-      <li><?php echo t('Social'); ?></li>
-      <li><?php echo t('Emotional'); ?></li>
-      <li><?php echo t('Spiritual'); ?></li>
-      <li><?php echo t('Vocational'); ?></li>
-      <li><?php echo t('Intellectual'); ?></li>
-    </ul>
-    <p><?php echo t('Physical Wellness includes living an active lifestyle, participating in regular physical activity, eating nutritious foods, and practicing proper self-care. Some ideas for maintaining physical wellness?'); ?></p>
-    <ul>
-      <li><?php echo t('Getting regular physical exams, including dental and eye'); ?></li>
-      <li><?php echo t('Maintaining current immunizations'); ?></li>
-      <li><?php echo t('Eating balanced, nutritious meals'); ?></li>
-      <li><?php echo t('Getting regular exercise'); ?></li>
-      <li><?php echo t('Joining a health club'); ?></li>
-      <li><?php echo t('Limiting or avoiding alcohol and tobacco'); ?></li>
-    </ul>
-    <p><?php echo t('Can you think of other ways to maintain physical wellness? How can you help older adult friends or relatives incorporate physical wellness into their lives?'); ?></p>
-  </div>
-  <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
-</div>
-
-<!-- Lesson 4 Slide 14 -->
-
-<div id="lesson-4-slide-14" class="course-slide">
-  <div class="content">
-    <h2 class="flowers"><?php echo t('Aging Well (continued)'); ?></h2>
-    <hr />
-    <p><?php echo t('Social Wellness is promoted through creating and maintaining relationships with others through talking and sharing interests. What are ways to promote social wellness?'); ?></p>
-    <ul>
-      <li><?php echo t('Church groups'); ?></li>
-      <li><?php echo t('Neighborhood networks'); ?></li>
-      <li><?php echo t('Meals, gatherings, or outings with friends'); ?></li>
-      <li><?php echo t('Clubs to expand your social network'); ?></li>
-      <li><?php echo t('Classes to meet people with similar interests'); ?></li>
-      <li><?php echo t('Volunteering'); ?></li>
-    </ul>
-    <p><?php echo t('Do you know of activities to promote social wellness that currently exist in your community? Are there ways to promote participation by older friends/relatives?'); ?></p>
-    <p><?php echo t('Emotional Wellness refers to successfully understanding, managing, and expressing personal feelings. Here are some ways to foster emotional wellness:'); ?></p>
-    <ul>
-      <li><?php echo t('Recognize that your emotions affect your body'); ?></li>
-      <li><?php echo t('Express needs, feelings, and opinions appropriately'); ?></li>
-      <li><?php echo t('Use humor to lighten negative thoughts or situations'); ?></li>
-      <li><?php echo t('Keep a diary to express your thoughts and how they made you feel'); ?></li>
-      <li><?php echo t('Talk to trusted friends or family members and practice open communication to relieve stress'); ?></li>
-      <li><?php echo t('Build self-esteem by respecting and taking care of yourself'); ?></li>
-    </ul>
-    <p><?php echo t('What are some ways to help older friends/relatives cope with change and improve emotional wellness? What are some ways you may better manage your own emotional wellness?'); ?></p>
-  </div>
-  <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
-</div>
-
-<!-- Lesson 4 Slide 15 -->
-
-<div id="lesson-4-slide-15" class="course-slide">
-  <div class="content">
-    <h2 class="flowers"><?php echo t('Aging Well (continued)'); ?></h2>
-    <hr />
-    <p><?php echo t('Spiritual Wellness builds on personal values to find meaning and purpose in life and discover a peaceful harmony with the world. While faith means different things to different people, spiritual wellness means having hope, guidance, and purpose to help us understand ourselves better. Some methods of achieving spiritual wellness include:'); ?></p>
-    <ul>
-      <li><?php echo t('Embracing personal beliefs, morals, and/or religion'); ?></li>
-      <li><?php echo t('Develop connections with ourselves and others'); ?></li>
-      <li><?php echo t('Develop a philosophy of life'); ?></li>
-      <li><?php echo t('Explore teachings that appeal to you'); ?></li>
-      <li><?php echo t('Practice relaxation techniques such as meditation or yoga'); ?></li>
-    </ul>
-    <p> <?php echo t('What are some ways you can explore spiritual wellness?'); ?> </p>
-    <p><?php echo t('Vocational Wellness encompasses experiencing personal growth and satisfaction from service to others and learning or improving skills through occupational and other life experiences. While most people equate vocation with paid work, there are many options for pursuing vocational wellness other than employment. How about:'); ?></p>
-    <ul>
-      <li><?php echo t('Volunteering'); ?></li>
-      <li><?php echo t('Mentoring'); ?></li>
-      <li><?php echo t('Babysitting'); ?></li>
-      <li><?php echo t('Caregiving'); ?></li>
-      <li><?php echo t('Resident Committees'); ?></li>
-      <li><?php echo t('Seasonal work (e.g., tax preparation)'); ?></li>
-    </ul>
-    <p><?php echo t('What are some other ways you can use your own skills to pursue vocational wellness? What about for older friends/relatives?');?></p>
-  </div>
-  <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
-</div>
-
-<!-- Lesson 4 Slide 16 -->
-
-<div id="lesson-4-slide-16" class="course-slide">
-  <div class="content">
-    <h2 class="flowers"><?php echo t('Aging Well (continued)'); ?></h2>
-    <hr />
-    <p><?php echo t('Intellectual Wellness promotes expansion of personal knowledge through learning opportunities, creative pursuits, and stimulating discussions with others. There are numerous ways of pursuing intellectual wellness, many of which may intersect with other wellness categories. How about:');?></p>
-    <ul>
-      <li><?php echo t('Joining clubs that explore areas of interest to you'); ?></li>
-      <li><?php echo t('Taking classes on subjects that interest you'); ?></li>
-      <li><?php echo t('Pursuing creative hobbies'); ?></li>
-      <li><?php echo t('Attending plays or musical performances'); ?></li>
-      <li><?php echo t('Reading books, newspapers, magazines'); ?></li>
-      <li><?php echo t('Participating in “mental aerobics” (art, puzzles, sensory stimulation techniques) to strengthen, improve, and maintain mental and memory capabilities'); ?></li>
-    </ul>
-    <h2 class="flowers"><?php echo t('Aging Well (continued)'); ?></h2>
-    <p><?php echo t('You can probably think of many other ways to promote intellectual wellness. How can you implement those ideas to stimulate intellectual wellness for your older friends/relatives?'); ?></p>
-    <h4><?php echo t('Lifelong Learning'); ?></h4>
-    <p><?php echo t('New learning by older adults should be linked to experiences or activities they are familiar with or have enjoyed, particularly those with a social component. Here are some key facts about older adults and lifelong learning:'); ?></p>
-    <ul>
-      <li><?php echo t('Older people can learn new information, and new skills.'); ?></li>
-      <li><?php echo t('Sometimes older people feel less confidence in learning new things, but often this is because they haven’t been in a classroom in a long time, or because they are aware of the stereotype and fall into a self-fulfilling prophesy.'); ?></li>
-      <li><?php echo t('Perhaps the best-documented loss in aging is that it takes longer to understand and think about what is being learned. This just means that learning situations for older people should be self-paced without time pressure.'); ?></li>
-      <li><?php echo t('For older learners, active, participatory learning may be more beneficial (and enjoyable) than traditional, lecture-based learning.'); ?></li>
-      <li><?php echo t('Older learners already know more than when they were young. This can be an advantage if they are given the opportunity to reflect on new information to see how it integrates with what they already know.'); ?></li>
-      <li><?php echo t('A supportive learning environment, with positive feedback and encouragement, is beneficial, provided that older learners are treated like adults.'); ?></li>
-    </ul>
-    <p><?php echo t('How can you apply these lifelong learning strategies to foster wellness?'); ?></p>
-  </div>
-  <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
-</div>
-
-<!-- Lesson 4 Slide 17 -->
-
-<div id="lesson-4-slide-17" class="course-slide">
-  <div class="content">
-    <h2 class="flowers"><?php echo t('Aging Well (continued)'); ?></h2>
-    <hr />
-    <h4><?php echo t('Creativity'); ?></h4>
-    <p><?php echo t('Creativity is defined as the skill of producing a work of thought or imagination.'); ?></p>
-    <p><?php echo t('In his book, The Creative Age: Awakening Human Potential in the Second Half of Life (2000), Gene D. Cohen, MD, PhD, provided striking evidence that the human potential for creativity continues well into old age.'); ?></p>
-    <p><?php echo t('So, what are some ways to encourage creativity among older friends/relatives? Here are some excerpts from a creative energy workshop.'); ?></p>
-    <p><?php echo t('You may want to try out this workshop with your older friends, relatives, or even yourself. Sometimes, we all need to revisit our creative side!'); ?></p>
-    <p><?php echo t('Begin by thinking about your interests and desires. This may include goals you want to achieve, projects you want to implement, or dreams you want to make real. By going through this exercise, you will begin to realize inner strengths you already have that will help you achieve your potential.'); ?></p>
-  </div>
-  <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
-</div>
-
-<!-- Lesson 4 Slide 18 -->
-
-<div id="lesson-4-slide-18" class="course-slide">
-  <div class="content">
-    <h2 class="flowers"><?php echo t('Aging Well (continued)'); ?></h2>
-    <hr />
-    <ol>
-      <li><?php echo t('Do you wish to build on what you have already done, or do you wish to take your work to a higher level?'); ?></li>
-      <ul>
-        <li><?php echo t('What do you need to do to grow?'); ?> </li>
-        <li><?php echo t('Do you know others who do related work and whose achievements you want to  mirror? They may be agreeable to become your coach or mentor!'); ?> </li>
-        <li><?php echo t('Search for new resources that will help you achieve your goals. Network with others  who may be of help to you.'); ?> </li>
-        <li><?php echo t('Look for inspiration around you. Seek out success stories.'); ?> </li>
-      </ul>
-      </li>
-      <li><?php echo t('Do you want to change direction in your work or activities?'); ?>
-        <ul>
-          <li><?php echo t('Look to strengths or interests you have that are untapped.'); ?> </li>
-          <li><?php echo t('Start exploring the new area. You do not need to make a commitment yet.'); ?> </li>
-          <li><?php echo t('Experiment just as if you were vacationing to a new area or testing new recipes.'); ?> </li>
-          <li><?php echo t('Empower yourself. Be confident that you can learn and growth in a new area.'); ?> </li>
-          <li><?php echo t('Guess what – you are not the first to make a change. If others can, so can you!'); ?> </li>
-        </ul>
-      </li>
-      <li><?php echo t('Time to test your capacity for starting creativity.'); ?>
-        <ul>
-          <li><?php echo t('Continuously putting off something new needs to end.'); ?> </li>
-          <li><?php echo t('Look at ordinary experiences as new opportunities for self-discovery.'); ?>
-        </ul>
-      </li>
-      <li><?php echo t('Consider collaborative creativity.'); ?>
-        <ul>
-          <li><?php echo t('Look for others who may be interested in starting a new project with you.'); ?>
-            </p>
-          </li>
-          <li><?php echo t('Consider volunteering in your community for a project as a way to meet new contacts and expand your experiences.'); ?> </li>
-        </ul>
-      </li>
-      <li><?php echo t('Is your circle of friends intergenerational?'); ?>
-        <ul>
-          <li><?php echo t('Look at ways to bring intergenerational activities into your life. You will be surprised at the variety of perceptions about the same topics.'); ?> </li>
-          <li><?php echo t('Spend more time with your older relatives and friends to learn about their history. Along with strengthening family ties, you may learn something new about your older  relatives and friends!'); ?> </li>
-        </ul>
-      </li>
-      <li><?php echo t('Are you seeking a sense of personal satisfaction or purpose?'); ?>
-        <ul>
-          <li><?php echo t('Recognize the power of small changes.'); ?> </li>
-          <li><?php echo t('Purposively change your language to “positive speak”. For example, a “problem” can become an “opportunity” or “challenge”. You will notice that your positive tone will gradually influence others in the same directions!'); ?> </li>
-        </ul>
-      </li>
-      <li><?php echo t('Do you want to focus on public creativity?'); ?> </li>
-      <ul>
-        <li><?php echo t('Look for ways you may become a volunteer or activist for your community.'); ?> </li>
-        <li><?php echo t('Consider that many of your skills or knowledge are already valuable assets to your community. Seek ways to share those skills or knowledge.'); ?> </li>
-      </ul>
-      <li><?php echo t('Are you now asking, “Am I really creative enough?”'); ?>
-        <ul>
-          <li><?php echo t('Everyone has more potential than they know.'); ?> </li>
-          <li><?php echo t('Creativity does not need to be something grand or dramatic.'); ?> </li>
-          <li><?php echo t('Creativity takes many forms and can be as simple as a pleasant social interaction where two friends explore something new about each other or their mutual interests'); ?> </li>
-        </ul>
-    </ol>
-  </div>
-  <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
-</div>
-
-<!-- Lesson 4 Slide 19 -->
-
-<div id="lesson-4-slide-19" class="course-slide">
-  <div class="content">
-    <h2 class="flowers"><?php echo t('Aging Well (continued)'); ?></h2>
-    <hr />
-    <iframe width="420" height="315" src="http://www.youtube.com/embed/SBH9dkCZsXQ?rel=0" frameborder="0" allowfullscreen></iframe>
-    <h4><?php echo t('Technology and the Future of Caregiving'); ?></h4>
-    <p><?php echo t('The way we care for older adults today cannot scale to meet the looming age wave, and before long we’ll face a fullblown national crisis. We have an obligation to our parents—indeed to the next generation of older adults—to ensure they get the best possible care and that they receive it in a place they want to call home.'); ?></p>
-    <p><?php echo t('New technology solutions offer great promise to improve quality of care while reducing healthcare costs. Technology already has transformed our lives—from email to MP3s and from online shopping to cell phones. It is time now for technology to transform the experience of aging.'); ?></p>
-    <p><?php echo t('Fortunately, exciting new technologies coming in the next 5 to 10 years offer the potential to dramatically improve the quality of care we can provide. Watch this video to learn the possibilities!'); ?></p>
-  </div>
-  <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> <?php echo t('Complete Lesson'); ?></a> </div>
-  
-  <!-- need this final div here to close lesson-4 --> 
-</div>
-
-
-
-<!-- Lesson 5 Slide 1 -->
-
-<div id="lesson-5">
-  <div id="lesson-5-slide-1" class="course-slide">
-    <div class="content">
-      <h2 class="flowers"><?php echo t('Finances & Legal Issues'); ?></h2>
-      <hr />
-      <p><?php echo t('This lesson contains four main sections:'); ?></p>
-      <ul>
-        <li><?php echo t('Financial Planning Issues and Key Topics for Caregivers'); ?></li>
-        <li><?php echo t('Understanding Key Aspects of Medicare'); ?></li>
-        <li><?php echo t('Understanding Key Aspects of Medicaid'); ?></li>
-        <li><?php echo t('Legal Issues for Caregivers'); ?></li>
-      </ul>
+    <!-- Lesson #7 - Supporting Personal Choice and Preferences of Older Adults in Health and Care Decision Making --> 
+    <!-- slide #8 -->
+    
+    <div id="lesson-7-slide-8" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('Activity – Ways to Manage Your Own Stress'); ?></h2>
+        <hr />
+        <p><?php echo t('Exercise – Developing an Ecomap'); ?></p>
+        <p><?php echo t('Ecomaps are used to evaluate a person’s environment and connections to provide an opportunity to consider his or her unique situation.  This exercise allows further insight into existing and potential resources in your loved one’s environment.'); ?></p>
+        <p><?php echo t('Click here to view the Exercise – Developing an Ecomap (insert hyperlink to Exercise – Developing an Ecomap)'); ?></p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo;</a></div>
     </div>
-    <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Start Course &raquo;'); ?></a></div>
-  </div>
-  
-  <!-- Lesson 5 Slide 2 -->
-  
-  <div id="lesson-5-slide-2" class="course-slide">
-    <div class="content">
-      <h2 class="flowers"><?php echo t('Financial Planning Issues and Key Topics for Caregivers'); ?></h2>
-      <hr />
-      <p><?php echo t('As a caregiver, you will need to evaluate the long-term care needs of your loved one. In making this evaluation, it is important to consider financial options. Long-term financial planning is important for everyone, but it is essential when you are coping with the expense of chronic illnesses such as Alzheimer\'s or Dementia.'); ?></p>
-      <p><?php echo t('Developing a Plan'); ?></p>
-      <p><?php echo t('For the security of the caregiver and the patient, long-term financial planning is very important for all parties involved. Planning ahead is essential. Long-term financial planning is very important for the security of the caregiver and the patient. If you wish to handle your loved one\'s finances, you must receive written authorization to do so. This authorization can be obtained through documents such as a power of attorney.'); ?></p>
-      <p><?php echo t('When considering a financial plan, you may contact professional financial managers and/or medical lawyers who deal with financial planning for people facing chronic or progressive illnesses. Consider an attorney who practices the specialty of “elder law.” '); ?><a href="http://www.naela.org" target="_blank">The National Academy of Elder Law Attorneys (NAELA)</a><?php echo t('is a professional organization that publishes an “Experience Registry” of members who specialize in various aspects of elder law.'); ?></p>
-      <p><?php echo t('You also may want to talk to a social worker and investigate other resources, such as those available on the Internet. Ask your loved one\'s doctor for a referral, or speak with a national association or support group to find reputable professionals in your region.'); ?></p>
-      <p><?php echo t('Understanding Medical Coverage'); ?></p>
-      <ul>
-        <li><?php echo t('If your loved one is insured, either through his or her employer or retirement policy, read all of the policies pertaining to chronic/progressive illnesses. If you are unsure about the language or terms, contact the personnel department or your financial planner.'); ?></li>
-        <li><?php echo t('If your loved one is unemployed and does not have coverage, look for the highest level of affordable coverage.'); ?></li>
-        <li><?php echo t('If your loved one is 65 or over, he or she qualifies for Medicare. This insurance can be supplemented with a "Medigap" policy available through a private insurer. Many states also have prescription assistance/reimbursement programs for low-income senior citizens.'); ?></li>
-        <li><?php echo t('If your loved one is disabled but does not qualify for Social Security, he or she may be eligible to receive a form of Medicare for the disabled.'); ?></li>
-        <li><?php echo t('If your loved one cannot get insurance and his or her income is low, he or she may qualify for Medicaid, a government "safety net" program that pays for medical costs that exceed a person\'s ability to pay.'); ?></li>
-      </ul>
+    
+    <!-- Lesson #7 - Supporting Personal Choice and Preferences of Older Adults in Health and Care Decision Making --> 
+    <!-- slide #9 -->
+    
+    <div id="lesson-7-slide-9" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('CARE Coaching Review: Talking wih Your Older Parents'); ?></h2>
+        <hr />
+        <p><?php echo t('Let us review the core components of CARE Coaching in relation to talking with your older parents.'); ?></p>
+        <p><?php echo t('Communicate'); ?></p>
+        <p><?php echo t('Effective communication is essential to any relationship, particularly so in caregiving situations.  It is not so much what you say, but how you say it that influences how your messages are received.'); ?></p>
+        <p><?php echo t('Listening is probably more important that talking when we use CARE Coaching.  Active listening requires giving your full attention, being open and receptive.  Listen to what they are saying and use CARE Coaching techniques to understand and draw out what’s important to them.'); ?></p>
+        <p><?php echo t('Advocate'); ?></p>
+        <p><?php echo t('In terms of CARE Coaching, advocating means supporting one another rather than in the legal sense of defending someone.'); ?></p>
+        <p><?php echo t('Reflect back feelings to show that you are hearing and understanding their situation.  Be comfortable with silence as that is the time when the best thinking may be going on.  To make sure that you are clear on what is being said, you may want to say, “I think what you are telling me is….”'); ?></p>
+        <p><?php echo t('Setting boundaries is also important.  You can still be an advocate even on the occasion when you need to say “no” to them.  A request may not be reasonable or in your circumstance, you may not be able to comply at this time.  Complying with something but then complaining about it just sets the tone for resentment.'); ?></p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo;</a></div>
     </div>
-    <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
-  </div>
-  
-  <!-- Lesson 5 Slide 3 -->
-  
-  <div id="lesson-5-slide-3" class="course-slide">
-    <div class="content">
-      <h2 class="flowers"><?php echo t('Financial Planning Issues and Key Topics for Caregivers (continued)'); ?></h2>
-      <hr />
-      <p><?php echo t('Investigating Long- and Short-Term Disability Insurance'); ?></p>
-      <p><?php echo t('If your loved one is employed, have him check to see if his employer has private disability insurance. He or she should contact his employer\'s human resources to investigate eligibility, the cost of enrolling, and how much of his/her salary it will cover.'); ?></p>
-      <p><?php echo t('If your loved one is not working, he or she may want to apply for Social Security. If they do not qualify for Social Security, state-run disability programs may be considered.'); ?></p>
-      <p><?php echo t('If their total income is below a certain level, he or she may qualify for federally subsidized Supplemental Security Income (SSI). If an individual collects SSI, he or she is a candidate for Medicaid regardless of age.'); ?></p>
-      <p><?php echo t('Activity 1 - Financial Planning issues & topics for Caregivers'); ?></p>
-      <p><?php echo t('After reading the section material, do you have a plan for your loved-one in place currently and is so what does it consist of? If not, where would you find a template or where would you look to know where to start.'); ?></p>
-      <ul>
-        <li><?php echo t('Coverage options'); ?></li>
-        <li><?php echo t('Coverage of skilled nursing care facilities'); ?></li>
-        <li><?php echo t('Coverage of Home Care'); ?></li>
-      </ul>
+    
+    <!-- Lesson #7 - Supporting Personal Choice and Preferences of Older Adults in Health and Care Decision Making --> 
+    <!-- slide #10 -->
+    
+    <div id="lesson-7-slide-10" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('CARE Coaching Review: Talking wih Your Older Parents (continued)'); ?></h2>
+        <hr />
+        <p><?php echo t('Relate'); ?></p>
+        <p><?php echo t('It is often helpful when we think about relating to try to put yourself in “someone elses shoes.”   Think before responding to them – don’t try to relate when you are angry or upset about something.  Practice a conversation, particularly if it will be a difficult one, and try to have alternatives ready depending on the response.'); ?></p>
+        <p><?php echo t('Just as important as verbal communication, your nonverbal communication – or body language – may speak volumes.  Try to use body language that would be viewed as open and positive – use eye contact, touch, and an open body stance.'); ?></p>
+        <p><?php echo t('Encourage'); ?></p>
+        <p><?php echo t('As the final component of CARE Coaching, encouraging can take on many forms.  Showing appreciation for your parents, letting them know that you realize that they tried to do the best they could.  It is not uncommon for older parents to look back and say, “I wish I could have been a better parent” or “if only I could have given you more when you were growing up.”  That is a great opportunity for you to acknowledge the characteristics that they passed on to you and the valuable things you learned from them.'); ?></p>
+      </div>
+      <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> <?php echo t('Complete Lesson'); ?></a></div>
     </div>
-    <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
   </div>
-  
-  <!-- Lesson 5 Slide 4 -->
-  
-  <div id="lesson-5-slide-4" class="course-slide">
-    <div class="content">
-      <h2 class="flowers"><?php echo t('Understanding Key Aspects of Medicare'); ?></h2>
-      <hr />
-      <p><?php echo t('Medicare is a federal health insurance program providing healthcare benefits to Americans 65 and older, as well as to some disabled individuals under age 65, and people of any age with permanent kidney failure requiring dialysis or kidney transplant. Eligibility for Medicare is linked to Social Security and railroad retirement benefits.');?></p>
-      <p><?php echo t('Medicare has co-payments and deductibles. A deductible is an initial amount the patient is responsible for paying before Medicare coverage begins. A co-payment is a percentage of the amount of covered expense the patient is required to pay.'); ?></p>
-      <p><?php echo t('What Are Medicare\'s Coverage Options?'); ?></p>
-      <p><?php echo t('Medicare has several parts:'); ?></p>
-      <p><?php echo t('Part A Medicare covers hospital bills and includes:'); ?></p>
-      <ul>
-        <li><?php echo t('Inpatient hospital care'); ?></li>
-        <li><?php echo t('Skilled nursing facility care (not custodial or long-term care)'); ?></li>
-        <li><?php echo t('Home health services, including a visiting nurse, or a physical, occupational, or speech therapist'); ?></li>
-        <li><?php echo t('Blood that you receive at a hospital or skilled nursing facility during a covered stay'); ?></li>
-        <li><?php echo t('Medical supplies'); ?></li>
-        <li><?php echo t('Hospice services'); ?></li>
-        <li><?php echo t('Mental health care given in a hospital'); ?></li>
-      </ul>
-      <p><?php echo t('Part B Medicare deals with doctors\' bills and includes:'); ?></p>
-      <ul>
-        <li><?php echo t('Doctor charges (not routine physical exams)'); ?></li>
-        <li><?php echo t('Medically necessary ambulance services'); ?></li>
-        <li><?php echo t('Physical, speech, and occupational therapy'); ?></li>
-        <li><?php echo t('Home health care services (physician certification is necessary)'); ?></li>
-        <li><?php echo t('Medical supplies and equipment such as wheelchairs, hospital beds, oxygen, and walkers'); ?></li>
-        <li><?php echo t('Transfusion of blood and blood components provided on an outpatient basis'); ?></li>
-        <li><?php echo t('Outpatient medical/surgical supplies and services'); ?></li>
-        <li><?php echo t('Outpatient mental health'); ?></li>
-        <li><?php echo t('Part B Medicare benefits require payment of a monthly premium. A patient must also be entitled to Part A benefits in order to receive Part B benefits.'); ?></li>
-      </ul>
-    </div>
-    <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
-  </div>
-  
-  <!-- Lesson 5 Slide 5 -->
-  
-  <div id="lesson-5-slide-5" class="course-slide">
-    <div class="content">
-      <h2 class="flowers"><?php echo t('Understanding Key Aspects of Medicare (continued)'); ?></h2>
-      <hr />
-      <p><?php echo t('Part C is the Medicare Advantage Plans:'); ?></p>
-      <ul>
-        <li><?php echo t('Part C refers to Medicare Advantage, which are managed care insurance plans you can buy from private insurers to replace your traditional Medicare coverage.'); ?></li>
-        <li><?php echo t('They include Medicare HMOs, Medicare PPOs, Medicare Special Needs Plans, and Medicare Private Fee-for-Service Plans.'); ?></li>
-      </ul>
-      <p><?php echo t('Part D is the Prescription Insurance Plan:'); ?></p>
-      <ul>
-        <li><?php echo t('Part D, as of January 2006, covers prescription drugs.'); ?></li>
-        <li> <?php echo t('Depending on your income, you pay a monthly premium and part of the prescription cost.'); ?> </li>
-      </ul>
-      <p><?php echo t('Medicare Coverage of Skilled Nursing Care Facilities'); ?></p>
-      <p><?php echo t('If nursing home care becomes necessary, your loved one may be eligible for Medicare. In order to receive care in a skilled nursing home under Medicare:'); ?></p>
-      <ul>
-        <li><?php echo t('Most patients\' HMO plans require them to have had a three-day hospital stay prior to admission into the skilled nursing facility. There are exceptions, however, and the patient\'s insurance provider should be consulted to determine whether these restrictions apply.'); ?></li>
-        <li><?php echo t('The patient must meet specific criteria to receive treatment. The patient\'s doctor or nurse will help him or her to determine if the criteria are met.'); ?></li>
-        <li><?php echo t('The patient must be admitted into the skilled nursing facility within 30 days of discharge from the hospital.'); ?></li>
-        <li><?php echo t('The patient must enter the skilled nursing facility for treatment of the same condition for which he or she was hospitalized.'); ?></li>
-        <li><?php echo t('The patient must require daily skilled care.'); ?></li>
-        <li><?php echo t('The condition must be one that can be improved.'); ?></li>
-        <li><?php echo t('The facility must be Medicare-certified.'); ?></li>
-        <li><?php echo t('The patient\'s doctor must write a care plan. The care plan must be carried out by the skilled nursing facility. (Once the skilled needs are met, Medicare will no longer pay for services.)'); ?></li>
-      </ul>
-    </div>
-    <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
-  </div>
-  
-  <!-- Lesson 5 Slide 6 -->
-  
-  <div id="lesson-5-slide-6" class="course-slide">
-    <div class="content">
-      <h2 class="flowers"><?php echo t('Understanding Key Aspects of Medicare (continued)'); ?></h2>
-      <hr />
-      <p><?php echo t('Medicare Coverage of Home Care'); ?></p>
-      <p><?php echo t('In order to receive home care under Medicare:'); ?></p>
-      <ul>
-        <li><?php echo t('The patient must be homebound.'); ?></li>
-        <li><?php echo t('The doctor must certify a plan of care.'); ?></li>
-        <li><?php echo t('Care must be needed on an intermittent (not continuous) basis.'); ?></li>
-        <li><?php echo t('Care cannot exceed 35 hours per week or 8 hours per day.'); ?></li>
-        <li><?php echo t('Physical or speech therapy must be provided on a "necessary and reasonable" basis. There are no restrictions on the number of days or hours per week of these therapies.'); ?></li>
-        <li><?php echo t('If a person qualifies for home health care, he or she is entitled to a home health aide to provide some personal care.'); ?></li>
-      </ul>
-      <p><?php echo t('Activity 2 - Discuss Medicare'); ?></p>
-      <p><?php echo t('Please locate 3 website that you find that have relevant, updated information on Medicare in your area and write them down in a safe place you will remember for your records.'); ?></p>
-      <p><?php echo t('Medicare Coverage for Prescription Drugs (Medicare Part D)'); ?></p>
-      <p><?php echo t('Medicare prescription drug coverage is insurance that covers both brand-name and generic prescription drugs at participating pharmacies. Medicare prescription drug coverage provides protection for people who have very high drug costs or from unexpected prescription drug bills in the future.'); ?></p>
-      <p><?php echo t('Everyone with Medicare is eligible for this coverage, regardless of income and resources, health status, or current prescription expenses. Someone may sign up when one is first eligible for Medicare (three months before the month one turns age 65 until three months after turning age 65). If one gets Medicare due to a disability, he or she can join from three months before to three months after the 25th month of cash disability payments. If someone does not sign up when first eligible, a penalty may be assessed. There is an annual open enrollment period from November 15, 2009 to December 31, 2009.'); ?></p>
-      <p><?php echo t('The decision about Medicare prescription drug coverage depends on the kind of health care coverage one now has. There are two ways to get Medicare prescription drug coverage. One can join a Medicare prescription drug plan or one can join a Medicare Advantage Plan or other Medicare Health Plan that offers drug coverage. Whatever plan chosen, Medicare drug coverage will help cover brand-name and generic drugs at pharmacies that are convenient.'); ?></p>
-    </div>
-    <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
-  </div>
-  
-  <!-- Lesson 5 Slide 7 -->
-  
-  <div id="lesson-5-slide-7" class="course-slide">
-    <div class="content">
-      <h2 class="flowers"><?php echo t('Understanding Key Aspects of Medicare (continued)'); ?></h2>
-      <hr />
-      <p><?php echo t('Like other insurance, there is a monthly premium, which varies by plan, and a yearly deductible. One will also pay a part of the cost of prescriptions, including a copayment or coinsurance. Costs will vary depending on which drug plan is chosen. Some plans may offer more coverage and additional drugs for a higher monthly premium. If someone has limited income and resources, and qualify for extra help, one may not have to pay a premium or deductible. To get more information about the extra help, please visit the Social Security webpage: '); ?><a href="http://www.socialsecurity.gov/" target="_blank">www.socialsecurity.gov</a>.</p>
-      <p><?php echo t('Medicare prescription drug coverage provides greater peace of mind by protecting older adults from unexpected drug expenses. Even if someone does not use a lot of prescription drugs now, he or she should still consider joining. As we age, most people need prescription drugs to stay healthy. For most people, joining now means protection from unexpected prescription drug bills in the future.'); ?></p>
-      <p><?php echo t('There is extra financial help for people with limited income and resources. If someone qualifies for extra help, Medicare will pay for almost all prescription drug costs. One can apply or get more information about the extra help by visiting the Social Security webpage.'); ?></p>
-      <p><a href="https://www.medicare.gov/find-a-plan/questions/home.aspx?AspxAutoDetectCookieSupport=1" target="_blank">Medicare Prescription Drug Plan Finder</a></p>
-      <p><?php echo t('Medicare has a valuable interactive tool that allows you to narrow your search for a Medicare prescription drug plan based on your personal preferences such as cost, drugs covered and participating pharmacies. Click on the above link to access the tool.'); ?></p>
-    </div>
-    <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
-  </div>
-  
-  <!-- Lesson 5 Slide 8 -->
-  
-  <div id="lesson-5-slide-8" class="course-slide">
-    <div class="content">
-      <h2 class="flowers"><?php echo t('Understanding Key Aspects of Medicare (continued)'); ?></h2>
-      <hr />
-      <p><?php echo t('Medicare Coverage of Hospice'); ?></p>
-      <p><?php echo t('Hospice is the philosophy and practice of caring for those at their end-of-life. Hospice care focuses on enhancing the quality of life for those final months, weeks, or days of life.'); ?></p>
-      <p><?php echo t('There are more than 2,200 hospice organizations across the country. Most provide home care services and respite care for family caregivers. The hospice team consists of physicians, nurses, home health aides, social workers, counselors, nutritionists, speech and physical therapists, clergy, and volunteers who focus on the needs of the dying person and the family. Hospice staffs is usually available on a 24-hour basis. Hospice may be provided in the older adult’s home, a senior living or long-term care community, or in special hospice units in some hospitals or nursing homes if more extensive medical care to control pain or other symptoms is needed to provide peace and comfort.'); ?></p>
-      <p><?php echo t('The goal of hospice is not to cure or rehabilitate. Nor is it to hasten death. Rather, hospice care focuses on supportive comfort care, aiming at relieving pain, nausea, dizziness, or constipation.'); ?></p>
-      <p>p<?php echo t('For the caregiver, it is important to choose a hospice agency that is certified by Medicare to provide hospice care. Almost all hospice services are covered by Medicare as long as the agency is certified.'); ?></p>
-      <p><?php echo t('Hospice care is given in “periods of care.” For example, initial hospice care usually begins with two 90-day periods (6 months total). After than period, if the hospice medical director determines the person still would benefit from hospice, they would be “recertified” for additional 60-day periods. Recertification continues every 60-days. If the hospice medical director deems the person is doing well and does not need hospice, the care would revert back to the original Medicare coverage. If later, the person again needs hospice, the medical director can recertify the person to return to hospice care.'); ?></p>
-      <p><?php echo t('The following is a resource from Medicare regarding explanation of the Medicare Hospice Benefit.'); ?></p>
-    </div>
-    <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
-  </div>
-  
-  <!-- Lesson 5 Slide 9 -->
-  
-  <div id="lesson-5-slide-9" class="course-slide">
-    <div class="content">
-      <h2 class="flowers"><?php echo t('Understanding Key Aspects of Medicaid'); ?></h2>
-      <hr />
-      <p><?php echo t('Medicaid is a joint federal-state health insurance program providing medical assistance primarily to low-income Americans who have limited resources. It is also available to people under 65 if they are blind or disabled. The purpose of Medicaid is to provide preventive, therapeutic, and remedial health services and supplies that are essential to attain an optimum level of well-being.'); ?></p>
-      <p><?php echo t('How Do People Receive Medicaid Benefits?'); ?></p>
-      <p><?php echo t('There are two ways to receive Medicaid:'); ?></p>
-      <ul>
-        <li><?php echo t('Supplemental Security Income (SSI) -- People who receive a cash grant under SSI and Aid to Dependent Children are automatically eligible for Medicaid benefits.') ;?></li>
-        <li><?php echo t('Medicaid &quot;spend-down&quot; -- This is similar to a deductible or a co-payment that a patient must 
-        pay every month. Once the patient meets his &quot;spend-down&quot; amount, the patient is eligible for'); ?></li>
-        <li><?php echo t('Medicaid for the remainder of the month.'); ?></li>
-        <li><?php echo t('Who Is Eligible for Medicaid?'); ?></li>
-        <li><?php echo t('Medicaid eligibility requirements depend on financial need, low income, and minimal assets.'); ?></li>
-        <li><?php echo t('In determining Medicaid eligibility, officials do not review rent, car payments, or food costs.'); ?></li>
-        <li><?php echo t('Officials only review medical expenses, which include:'); ?>
-          <ul>
-            <li><?php echo t('Care from hospitals, doctors, clinics, nurses, dentists, podiatrists, and chiropractors'); ?> </li>
-            <li><?php echo t('Medications'); ?> </li>
-            <li><?php echo t('Medical supplies and equipment'); ?> </li>
-            <li><?php echo t('Health insurance premiums'); ?> </li>
-            <li><?php echo t('Transportation to get medical care'); ?> </li>
-          </ul>
-        </li>
-        <li><?php echo t('The four eligibility tests required to receive Medicaid include:'); ?>
-          <ul>
-            <li><?php echo t('Categorical -- A patient must be age 65, blind, or disabled.'); ?> </li>
-            <li><?php echo t('Non-financial -- A patient must be a U.S. citizen and a state resident. A patient also must have a Social Security number.'); ?> </li>
-            <li><?php echo t('Financial -- A patient\'s total gross income, personal assets, and property will be evaluated and must meet a certain standard. This amount varies from state to state.'); ?> </li>
-            <li><?php echo t('Procedural -- A patient must complete and sign an application and have a personal interview with a Medicaid official.'); ?> </li>
-          </ul>
-        </li>
-        <li><?php echo t('Each eligible Medicaid recipient receives a monthly Medical Identification card. The card is valid for one month only.'); ?></li>
-      </ul>
-    </div>
-    <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
-  </div>
-  
-  <!-- Lesson 5 Slide 10 -->
-  
-  <div id="lesson-5-slide-10" class="course-slide">
-    <div class="content">
-      <h2 class="flowers"><?php echo t('Understanding Key Aspects of Medicaid (continued)'); ?></h2>
-      <hr />
-      <p><?php echo t('Medicaid Coverage'); ?></p>
-      <p><?php echo t('Medicaid coverage varies from state to state. For specific coverage guidelines, contact your state\'s Department of Human Services. Generally, Medicaid benefits include:'); ?></p>
-      <ul>
-        <li><?php echo t('Transportation -- This may include ambulance services when other means of transportation are detrimental to the patient\'s health or may include transportation to and from the hospital at time of admission or discharge when required by the patient\'s condition. Transportation also may cover trips to and from a hospital, outpatient clinic, doctor\'s office, or other facility when the doctor certifies the need for this service.'); ?></li>
-        <li><?php echo t('Ambulatory Centers -- Ambulatory health care centers are private corporations or public agencies that are not part of a hospital. They provide preventive, diagnostic, therapeutic, and rehabilitative services under the direction of a physician. Ambulatory services covered by Medicaid include dental, pharmaceutical, diagnostic, and vision care.'); ?></li>
-        <li><?php echo t('Hospital Services -- These services include inpatient hospital care up to 60 days for an illness. Private hospital rooms are covered only when the illness requires the patient to be isolated for his or her own health or the health of others. Outpatient preventive, therapeutic, and rehabilitative services also are covered. So are professional, laboratory and radiology services.'); ?></li>
-        <li><?php echo t('Medical Supplies and Medications -- These include general medical supplies (when prescribed by a physician), as well as medications prescribed by a physician, dentist, or podiatrist. Durable medical equipment (such as hospital beds, wheelchairs, side rails, oxygen administration apparatus, and special safety aids, etc.) also is covered.'); ?></li>
-        <li><?php echo t('Home Health Care -- These services include those provided by a visiting nurse, home health aide, or physical therapist.'); ?></li>
-        <li><?php echo t('Skilled Nursing Facilities -- Skilled nursing facilities and intermediate care facilities (providing short-term care for a patient whose condition is stable or reversible) are covered through'); ?></li>
-        <li><?php echo t('Medicaid with a doctor\'s authorization.'); ?></li>
-      </ul>
-      <p><?php echo t('Activity 3 - Discuss Medicaid'); ?></p>
-      <p><?php echo t('Email your Instructor and explain the major differences between Medicare and Medicaid as you see it and if you understand it.'); ?></p>
-    </div>
-    <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
-  </div>
-  
-  <!-- Lesson 5 Slide 11 -->
-  
-  <div id="lesson-5-slide-11" class="course-slide">
-    <div class="content">
-      <h2 class="flowers"><?php echo t('Legal Issues for Caregivers'); ?></h2>
-      <hr />
-      <p><?php echo t('As a caregiver, you should begin making legal preparations soon after your loved one has been diagnosed with a serious illness. People with Alzheimer\'s disease and other long-term illnesses may have the capacity to manage their own legal and financial affairs right now. But as these diseases advance, they will need to rely on others to act in their best interests. This transition is never easy. However, advance planning allows people with a long-term disease and their families to make decisions together for what may come.'); ?>
-      <p><?php echo t('Legal Documents for Caregivers'); ?></p>
-      <p><?php echo t('Clearly written legal documents that outline your loved one\'s wishes and decisions are essential for caregivers. These documents can authorize another person to make healthcare and financial decisions, including plans for long-term care. If the person being cared for has the legal capacity -- the level of mental functioning necessary to sign official documents -- he or she should actively participate in legal planning.'); ?></p>
-      <p><?php echo t('To give your loved one the best care possible, obtain legal advice and services from an attorney. If the person you are caring for is age 65 or older, consider hiring an attorney who practices elder law, a specialized area of law focusing on issues that typically affect the elderly. As you plan for the future, ask the attorney about the following documents (more detailed information is provided in the section “Long-term Care Planning and Advanced Directives):'); ?></p>
-      <p><?php echo t('Power of attorney'); ?></p>
-      <p><?php echo t('This document gives a person (the principal) an opportunity to authorize an agent (usually a trusted family member or friend) to make legal decisions when he or she is no longer competent. There is no standard power of attorney; thus, each one must be geared toward an individual\'s situation. It is important for the caregiver to be very familiar with the terms of power of attorney because they spell out what authority the caregiver does and does not have. The agent should make multiple copies of the document and give one to each company with which the principal does business.'); ?></p>
-      <p><?php echo t('Durable power of attorney for health care (also known as health care proxy)'); ?></p>
-      <p><?php echo t('This document appoints an agent to make all decisions regarding health care, including choices regarding health care providers, medical treatment, and, in the later stages of the disease, end- of-life decisions. This means that the agent may authorize or refuse any medical treatment for the principal. This power only goes into effect once the principal is unable to make decisions for himself and is activated by the principal\'s attending physician.'); ?></p>
-    </div>
-    <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
-  </div>
-  
-  <!-- Lesson 5 Slide 12 -->
-  
-  <div id="lesson-5-slide-12" class="course-slide">
-    <div class="content">
-      <h2 class="flowers"><?php echo t('Legal Issues for Caregivers (continued)'); ?></h2>
-      <hr />
-      <p> <?php echo t('Living will'); ?> </p>
-      <p><?php echo t('A living will allows the person to state -- in advance -- what kind of medical care he or she desires to receive and what life-support procedures he or she would like to withhold. This document is used if a person becomes terminally ill and unable to make his wishes known or if he becomes permanently unconscious. A terminal illness is defined as one from which a person\'s doctor believes there is no chance of recovery. Living wills can also be used if a person becomes permanently unconscious. To be considered permanently unconscious, two physicians must determine that the patient has no reasonable possibility of regaining consciousness or decision-making ability. Laws on living wills vary from state to state.'); ?></p>
-      <p><?php echo t('Living trust'); ?></p>
-      <p><?php echo t('This document enables a person (called a grantor or trustor) to create a trust and appoint a trustee to carefully invest and manage trust assets once the grantor is no longer able to manage finances. A person can appoint another individual or a financial institution to be the trustee.'); ?></p>
-      <p><?php echo t('Will'); ?></p>
-      <p><?php echo t('A will is a document created by an individual that names an executor (the person who will manage the estate) and beneficiaries (those who will receive the estate at the time of the person\'s death).'); ?></p>
-      <p><?php echo t('If you cannot afford an attorney, legal forms can be accessed through resources including books and the Internet. Legal issues may be discussed with a social worker or clergy free of charge.') ?></p>
-      <p><?php echo t('Guardian/Conservator'); ?></p>
-      <p><?php echo t('A caregiver of an individual who no longer has the legal capacity to execute powers of attorney or trusts may have to become that individual\'s guardian or conservator. A guardian has the legal authority to make decisions about the lifestyle and well-being of another person. The decisions a guardian may make include where a person may live, what care and medical treatment will be provided, and what religious and educational activities will be made available. A conservator has legal authority to manage another person\'s financial affairs.'); ?></p>
-    </div>
-    <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> <?php echo t('Complete Lesson'); ?></a></div>
-  </div>
-  
-  <!-- need this final div here to close lesson-5 --> 
-</div>
-
-
-<!-- need this final div here to close the course -->
 </div>
