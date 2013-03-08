@@ -36,6 +36,7 @@ $this->widget(
       <li> <a id="survey_link_<?php echo $survey->getId(); ?>" href="#survey_<?php echo $survey->getId(); ?>" title="<?php echo $survey->model->title; ?>"><?php echo $survey->model->title; ?></a>
         <?php $survey->run(); ?>
       </li>
+      <br />
       <?php endforeach; ?>
     </ul>
     <br />
