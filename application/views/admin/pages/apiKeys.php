@@ -28,6 +28,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
 	
 	echo $form->errorSummary($model); ?>
 	<div class="row">
+		<?php 
 		echo $form->labelEx($model, 'key');
 		echo $form->textField($model, 'key', array('size' => 80)); 
 		
@@ -43,6 +44,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
 					)
 			);
 		echo $form->error($model, 'key');
+		?>
 	</div>
 
 	<div class="row submit">
