@@ -48,5 +48,12 @@
     <br />
     <h2><?php echo CHtml::link('phpBB', Yii::app()->request->baseUrl . '/phpBB'); ?></h2>
     <p>Open Source Bulletin Board Software</p>
+    <br />
+    <h2><?php echo CHtml::link(t('User / Register Table'), $this->createUrl('UserRegisterTable')); ?></h2>
+    <p>Course Portal User/Register Table</p>
+    <br />
+    <h2><?php echo CHtml::link(t('HostMySite CPanel Login'), $this->createUrl('https://my.hostmysite.com/single.html')); ?></h2>
+    <p>HostMySite CPanel Login</p>
+    <br />
   </div>
 </div>
