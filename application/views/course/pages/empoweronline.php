@@ -22,7 +22,7 @@ foreach(array(
 
 ?>
 
-<div class="small-masthead" style="background-image: url(<?php echo $this->getImagesUrl('header-courses.png'); ?>);">
+<div class="small-masthead" style="background-image: url(<?php echo $this->getImagesUrl('86503244r.png'); ?>);">
   <h1 class="bottom"><?php echo t($course->title); ?></h1>
 </div>
 
@@ -31,18 +31,32 @@ foreach(array(
 <div id="sidebar"> 
   
   <!-- sidebar #1 here -->
-  
-    <div class="box-sidebar one">
+  <div class="box-sidebar one">
     <h3><?php echo t('Pre-Course Survey'); ?></h3>
     <br />
-    <a href="<?php echo $this->createUrl('user/profile'); ?>" target="_self" /><img class="block-center" width="125" height="147" src="<?php echo $this->getImagesUrl('survey_icon2.png'); ?>" alt="" /></a>
-       
+    <p><?php echo t('Please complete the Pre-Course Survey before beginning this course. Your response are anonymous and are used to help improve your experience.'); ?></p>
+    <a href="<?php echo $this->createUrl('user/profile'); ?>" target="_self" /><img class="block-center" width="96" height="113" src="<?php echo $this->getImagesUrl('survey_icon2.png'); ?>" alt="" /></a>
     <hr />
     <p id="surveynotify"><?php echo t('Complete the<br />Pre-Course Survey'); ?></p>
     <br />
   </div>
   
   <!-- sidebar #2 here -->
+  <div class="box-sidebar one">
+    <h3><?php echo t('Course Requirements'); ?></h3>
+    <p><b><?php echo t('Required Applications'); ?></b></p>
+    <p><a href="http://get.adobe.com/flashplayer/" target="_blank" /><img src="<?php echo $this->getImagesUrl('160x41_get_flashplayer.gif'); ?>" alt="<?php echo t('Adobe Flash Player'); ?>" /></a></p>
+    <p><a href="http://get.adobe.com/shockwave/" target="_blank" /><img src="<?php echo $this->getImagesUrl('get_shockwave-tn.gif'); ?>" alt="<?php echo t('Adobe ShockWave Player'); ?>" /></a></p>
+    <p><a href="http://get.adobe.com/reader/" target="_blank" /><img src="<?php echo $this->getImagesUrl('get_adobe_reader.png'); ?>" alt="<?php echo t('Adobe Reader'); ?>" /></a></p>
+    <hr />
+    <p><b><?php echo t('Required Software Suites'); ?></b></p>
+    <p><a href="http://office.microsoft.com" target="_blank" /> <?php echo t('Microsoft Office'); ?></a></p>
+    <p> <?php echo t('- OR - '); ?></p>
+    <p><a href="http://www.apple.com/iwork/" target="_blank" /><?php echo t('Apple iWork'); ?></a></p>
+    <p> <?php echo t('- OR - '); ?></p>
+    <p><a href="http://www.openoffice.org" target="_blank" /><?php echo t('Apache OpenOffice'); ?></a></p>
+  </div>
+  <!-- sidebar #3 here -->
   
   <div class="box-sidebar one">
     <h3>Alzheimer's Association: behaviors</h3>
@@ -54,13 +68,13 @@ foreach(array(
     <br />
   </div>
   
-  <!-- sidebar #3 here -->
+  <!-- sidebar #4 here -->
   
   <div class="box-sidebar three">
     <h3><?php echo t('Caregivers\' Resources'); ?></h3>
     <p> <a href="http://www.usa.gov/Citizen/Topics/Health/caregivers.shtml#Government_Benefits" target="_blank"> <img class="block-center" src="<?php echo $this->getImagesUrl('usagov_logo.gif'); ?>" /> </a> </p>
     <hr />
-    <p><?php echo t('Find a nursing home, assisted living, or hospice; check your eligibility for benefits; get resources for long-distance caregiving; review legal issues; and find support for caregivers.'); ?></p>
+    <p><?php echo t('Find a nursing home, assisted living, or hospice; check your eligibility for benefits; get resources for long-distance caregiving; review legal issues; and find support for caregivers. (English)'); ?></p>
     <br />
     <br />
   </div>
@@ -207,15 +221,35 @@ foreach(array(
   <div class="box-white">
     <h4><?php echo t('Length'); ?></h4>
     <p><?php echo t('* Participant Access - 1 Year'); ?><br />
-      <?php echo t('* Recommended Completion - 8 Weeks'); ?><br />
+      <?php echo t('* Recommended Completion - 5 Weeks'); ?><br />
       <?php echo t('* Weekly Commitment - 1 Lesson @ 2 to 3 Hours'); ?></p>
+  </div>
+  
+   <div class="box-white">
+    <h4><?php echo t('Key'); ?></h4>
+    <p><?php echo t('The following Key will help you navigate the course and it\'s requirements.'); ?></p>
+    <br />
+    <table width="100%" border="0">
+      <tr>
+        <td width="20%"><?php echo t('Word Processor'); ?><br />
+          <img width="64" height="64" src="<?php echo $this->getImagesUrl('word.png'); ?>" alt="<?php echo t('Word Processor'); ?>" /></td>
+        <td width="20%"><?php echo t('Spreadsheet Processor'); ?><br />
+          <img width="64" height="64" src="<?php echo $this->getImagesUrl('spreadsheet.png'); ?>" alt="<?php echo t('Spreadsheet Processor'); ?>" /></td>
+        <td width="20%"><?php echo t('Email Client'); ?><br />
+          <img width="64" height="64" src="<?php echo $this->getImagesUrl('email.png'); ?>" alt="<?php echo t('Email Client'); ?>" /></td>
+        <td width="20%"><?php echo t('Adobe Reader'); ?><br />
+          <img width="64" height="64" src="<?php echo $this->getImagesUrl('pdf-icon.png'); ?>" alt="<?php echo t('Adobe Reader'); ?>" /></td>
+        <td width="20%"><?php echo t('You Tube'); ?><br />
+          <img width="64" height="64" src="<?php echo $this->getImagesUrl('YouTubeIcon.png'); ?>" alt="<?php echo t('You Tube'); ?>" /></td>
+      </tr>
+    </table>
   </div>
   
   <!-- Resources div white box here -->
   
   <div class="box-white">
     <h4> <?php echo t('Resources'); ?></h4>
-    <p><?php echo t('Please use these listed resources in the completion of this online course. Pleaes contact your instructor or the program director if you have additional resources you would like to see added here.'); ?></p>
+    <p><?php echo t('Please click on your countries flag to access resources that may be required to complete this online course. Pleaes contact your instructor or the program director if you have additional resources you would like to see added to your geographical location.'); ?></p>
     <table>
       <tr>
         <td><a href="#"><img src="<?php echo $this->getImagesUrl('flags/United-States-Flag-64.png'); ?>" alt="<?php echo t('USA'); ?>" /></a></td>
@@ -240,14 +274,16 @@ foreach(array(
   <div class="box-white">
     <div id="developers">
       <h4><?php echo t('Facilitators &amp; Course Developers'); ?></h4>
-      <h5><?php echo t('Content Designer: '); ?><a href="mailto:lhollinger-smith@matherlifeways.com"><?php echo t('Linda Hollinger-Smith, PhD'); ?></a></h5>
+      <h5><?php echo t('Content Designer: '); ?><a href="mailto:lhollinger-smith@matherlifeways.com">Linda Hollinger-Smith, PhD</a></h5>
       <p><?php echo t('Dr. Hollinger-Smith is a doctorally prepared registered nurse focusing her research in gerontology, workforce development, and quality improvement. She has more than 28 years of experience working with older adults in senior living, long-term care settings, in the community, and in acute care settings in various staff and managerial positions. Her past positions include Assistant Dean of the Rush University College of Nursing, Nursing Director of the Rush Primary Care Institute, and Associate Chairperson of the Department of Adult Health Nursing at Rush University College of Nursing.'); ?></p>
-      <p><?php echo t('She has served as Principal Investigator for multiple national research projects totaling more than $4.5 million in support, targeting nursing workforce development and retention, falls reduction, and caregiver support issues. She has published over 50 journal articles, book chapters and research abstracts and has presented on national and international levels on various topics related to aging. In her current position, Dr. Hollinger-Smith leads a team of applied researchers and staff responsible for developing and expanding the Mather LifeWays applied research agenda.'); ?></p>
       <h5><?php echo t('Course Developer: '); ?><a href="mailto:jwoodall@matherlifeways.com">Jon Woodall</a></h5>
       <?php echo t('Mr. Woodall is responsible for all MLIA corporate workforce wellness programs related to design, implementation, publication, and evaluation. Additionally, he seeks new grant funding to support or extend current grants related to corporate workforce wellness programs. '); ?>
       </p>
-      <h5><?php echo t('Facilitator: '); ?><a href="mailto:jwoodall@matherlifeways.com">Jon Woodall</a></h5>
-      <?php echo t('Mr. Woodall is responsible for all MLIA corporate workforce wellness programs related to design, implementation, publication, and evaluation. Additionally, he seeks new grant funding to support or extend current grants related to corporate workforce wellness programs. '); ?>
+      <h5><?php echo t('Facilitator (English / Spanish / Portuguese): '); ?><a href="mailto:efoss@matherlifeways.com">Elise Foss</a></h5>
+     <p><?php echo t('Ms. Foss has been facilitating online courses for Mather LifeWays Institute on Aging since 2004. Currently, she is the Fitness Coordinator for a Mather LifeWays Senior Living community. Originally from Venezula, and educated in Brazil, Elise is fluent in English, Spanish and Portuguese, and travels to family in Brazil each year.'); ?>
+      </p>
+         <h5><?php echo t('Facilitator (Chinese): '); ?><a href="mailto:yin_li_juan@hotmail.com">LiJuan Yin</a></h5>
+     <p><?php echo t('Mrs. Lin is currently a PhD student at the University of Illinois at Chicago (UIC), studying Public Health. She has helped reserarch, develop, and facilitate online courses for Mather LifeWays Institute on aging for the past 3 years. '); ?>
       </p>
     </div>
   </div>
