@@ -1644,7 +1644,6 @@ foreach(array(
   <!-- need this final div here to close lesson-1 --> 
 </div>
 
-
 <!-- Lesson 2 Slide 1 -->
 <div id="lesson-2">
   <div id="lesson-2-slide-1" class="course-slide">
@@ -2487,9 +2486,6 @@ foreach(array(
 
 
 
-
-
-
 <!-- Lesson 4 Slide 1 -->
 
 <div id="lesson-4">
@@ -3052,6 +3048,7 @@ foreach(array(
     <p><?php echo t('Fortunately, exciting new technologies coming in the next 5 to 10 years offer the potential to dramatically improve the quality of care we can provide. Watch this video to learn the possibilities!'); ?></p>
   </div>
   <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> <?php echo t('Complete Lesson'); ?></a> </div>
+  </div>
   
   <!-- need this final div here to close lesson-4 --> 
 </div>
@@ -3349,6 +3346,6 @@ foreach(array(
   <!-- need this final div here to close lesson-5 --> 
 </div>
 
-
-<!-- need this final div here to close the course -->
+<!-- need this final div to close the course -->
 </div>
+
