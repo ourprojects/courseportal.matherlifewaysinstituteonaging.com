@@ -22,7 +22,7 @@ foreach(array(
 
 ?>
 
-<div class="small-masthead" style="background-image: url(<?php echo $this->getImagesUrl('header-courses.png'); ?>);">
+<div class="small-masthead" style="background-image: url(<?php echo $this->getImagesUrl('154418413r.png'); ?>);">
   <h1 class="bottom"><?php echo t($course->title); ?></h1>
 </div>
 <div id="sidebar"> 
@@ -41,6 +41,7 @@ foreach(array(
   <!-- sidebar #2 here -->
   <div class="box-sidebar one">
     <h3><?php echo t('Course Requirements'); ?></h3>
+       <br />
     <p><b><?php echo t('Required Applications'); ?></b></p>
     <p><a href="http://get.adobe.com/flashplayer/" target="_blank" /><img src="<?php echo $this->getImagesUrl('160x41_get_flashplayer.gif'); ?>" alt="<?php echo t('Adobe Flash Player'); ?>" /></a></p>
     <p><a href="http://get.adobe.com/shockwave/" target="_blank" /><img src="<?php echo $this->getImagesUrl('get_shockwave-tn.gif'); ?>" alt="<?php echo t('Adobe ShockWave Player'); ?>" /></a></p>
@@ -51,24 +52,26 @@ foreach(array(
     <p> <?php echo t('- OR - '); ?></p>
     <p><a href="http://www.apple.com/iwork/" target="_blank" /><?php echo t('Apple iWork'); ?></a></p>
     <p> <?php echo t('- OR - '); ?></p>
-    <p><a href="http://www.openoffice.org" target="_blank" /><?php echo t('Apache OpenOffice'); ?></a></p>
+    <p><a href="http://www.openoffice.org" target="_blank" /><?php echo t('Apache OpenOffice'); ?></a></p>   <br />
   </div>
   
   <!-- SIDEBAR 3 -->
   
   <div class="box-sidebar one">
     <h3><?php echo t('Statistics'); ?></h3>
-    <img width="50" height="50" src="<?php echo $this->getImagesUrl('286x352_Grafix_1in5.png'); ?>" />
-    <p><?php echo t('One in five caregivers report having had some degree of training, but continue to seek additional resources.'); ?></p>
+    <br />
+    <img class="block-center" src="<?php echo $this->getImagesUrl('286x352_Grafix_1in5.png'); ?>" />
+    <p><?php echo t('One in five caregivers report having had some degree of training, but continue to seek additional resources.'); ?></p>   <br />
   </div>
   
   <!-- SIDEBAR 4 -->
   
   <div class="box-sidebar one">
     <h3>Alzheimer's Association</h3>
+       <br />
     <p> <b> <?php echo t('10 Early Signs and Symptoms of Alzheimer\'s'); ?> </b> </p>
-    <a href="https://www.alz.org/alzheimers_disease_10_signs_of_alzheimers.asp" target="_blank"><img width="50" height="50" src="<?php echo $this->getImagesUrl('alz.png'); ?>" /></a>
-    <p><?php echo t('Memory loss that disrupts daily life may be a symptom of Alzheimer\'s or another dementia. Alzheimer\'s is a brain disease that causes a slow decline in memory, thinking and reasoning skills. There are 10 warning signs and symptoms. Every individual may experience one or more of these signs in different degrees. If you notice any of them, please see a doctor.'); ?></p>
+   <p> <a href="https://www.alz.org/alzheimers_disease_10_signs_of_alzheimers.asp" target="_blank"><img class="block-center" src="<?php echo $this->getImagesUrl('alz.png'); ?>" /></a></p>
+    <p><?php echo t('Memory loss that disrupts daily life may be a symptom of Alzheimer\'s or another dementia. Alzheimer\'s is a brain disease that causes a slow decline in memory, thinking and reasoning skills. There are 10 warning signs and symptoms. Every individual may experience one or more of these signs in different degrees. If you notice any of them, please see a doctor.'); ?></p>   <br />
   </div>
   
   <!-- SIDEBAR 5 -->
@@ -76,8 +79,8 @@ foreach(array(
   <div class="box-sidebar one">
     <h3>U.S. Dept. of Health &amp; Human Srvc.</h3>
     <p> <b> <?php echo t('2011 - 2012 Alzheimer\'s Disease Progress Report'); ?> </b> </p>
-    <p><a href="http://www.nia.nih.gov/alzheimers/publication/2011-2012-alzheimers-disease-progress-report" target="_blank"><img width="50" height="50" src="<?php echo $this->getImagesUrl('adpr-front.png'); ?>" /></a></p>
-    <p><?php echo t('A summary of Alzheimer\'s disease research, infrastructure, and funding supported by the NIH.'); ?> </p>
+    <p><a href="http://www.nia.nih.gov/alzheimers/publication/2011-2012-alzheimers-disease-progress-report" target="_blank"><img class="block-center" src="<?php echo $this->getImagesUrl('adpr-front.png'); ?>" /></a></p>
+    <p><?php echo t('A summary of Alzheimer\'s disease research, infrastructure, and funding supported by the NIH.'); ?> </p>   <br />
   </div>
 </div>
 
@@ -103,6 +106,45 @@ foreach(array(
   </ul>
   <br />
   <br />
+  
+   <div class="box-white">
+    <h4><?php echo t('Length'); ?></h4>
+    <p><?php echo t('* Participant Access - 1 Year'); ?><br />
+      <?php echo t('* Recommended Completion - 5 Weeks'); ?><br />
+      <?php echo t('* Weekly Commitment - 1 Lesson @ 2 to 3 Hours'); ?></p>
+  </div>
+  
+  
+  
+   <div class="box-white">
+    <h4><?php echo t('Key'); ?></h4>
+    <p><?php echo t('The following Key will help you navigate the course and it\'s requirements.'); ?></p>
+    <br />
+    <table width="100%" border="0">
+      <tr>
+        <td width="20%"><?php echo t('Word Processor'); ?><br />
+          <img width="64" height="64" src="<?php echo $this->getImagesUrl('word.png'); ?>" alt="<?php echo t('Word Processor'); ?>" /></td>
+        <td width="20%"><?php echo t('Spreadsheet Processor'); ?><br />
+          <img width="64" height="64" src="<?php echo $this->getImagesUrl('spreadsheet.png'); ?>" alt="<?php echo t('Spreadsheet Processor'); ?>" /></td>
+        <td width="20%"><?php echo t('Email Client'); ?><br />
+          <img width="64" height="64" src="<?php echo $this->getImagesUrl('email.png'); ?>" alt="<?php echo t('Email Client'); ?>" /></td>
+        <td width="20%"><?php echo t('Adobe Reader'); ?><br />
+          <img width="64" height="64" src="<?php echo $this->getImagesUrl('pdf-icon.png'); ?>" alt="<?php echo t('Adobe Reader'); ?>" /></td>
+        <td width="20%"><?php echo t('You Tube'); ?><br />
+          <img width="64" height="64" src="<?php echo $this->getImagesUrl('YouTubeIcon.png'); ?>" alt="<?php echo t('You Tube'); ?>" /></td>
+      </tr>
+    </table>
+  </div>
+  
+  <div class="box-white">
+    <h4> <?php echo t('Resources'); ?></h4>
+    <p><?php echo t('Please use these listed resources in the completion of this online course. Pleaes contact your instructor or the program director if you have additional resources you would like to see added here.'); ?></p>
+    <p><a href="http://www.alz.org" target="_blank">Alzheimer's Association</a></p>
+    <p><a href="http://www.nih.gov" target="_blank">National Intitute on Health (NIH)</a></p>
+    <p><a href="http://pewinternet.org" target="_blank">Pew Internet &amp; American Life Project</a></p>
+  </div>
+  
+  
   <div class="box-white">
     <div id="developers">
       <h4><?php echo t('Facilitators &amp; Course Developers'); ?></h4>
@@ -112,10 +154,11 @@ foreach(array(
       <p><a href="http://www.alz.org/illinois/" target="_blank">Greater Illinois Chapter | Alzheimer's Association</a><br />
         <?php echo t('The Alzheimer’s Association, Greater Illinois Chapter serves 68 counties in Illinois with offices in Bloomington, Carbondale, Chicago, Joliet, Rockford and Springfield. Since 1980, the Chapter has provided reliable information and care consultation; created supportive services for families; increased funding for dementia research; and influenced public policy changes. Today, the Greater Illinois Chapter serves the more than a half million Illinois residents affected by Alzheimer’s disease throughout our chapter area, including 210,000 people with the disease.'); ?></p>
       <h5><?php echo t('Course Developer: '); ?><a href="mailto:jwoodall@matherlifeways.com">Jon Woodall</a></h5>
-      <?php echo t('Mr. Woodall is responsible for all MLIA corporate workforce wellness programs related to design, implementation, publication, and evaluation. Additionally, he seeks new grant funding to support or extend current grants related to corporate workforce wellness programs. '); ?>
+      <p><?php echo t('Mr. Woodall is responsible for all MLIA corporate workforce wellness programs related to design, implementation, publication, and evaluation. Additionally, he seeks new grant funding to support or extend current grants related to corporate workforce wellness programs. '); ?>
       </p>
-      <h5><?php echo t('Facilitator: '); ?><a href="mailto:jwoodall@matherlifeways.com">Jon Woodall</a></h5>
-      <p><?php echo t('Mr. Woodall is responsible for all MLIA corporate workforce wellness programs related to design, implementation, publication, and evaluation. Additionally, he seeks new grant funding to support or extend current grants related to corporate workforce wellness programs. '); ?> </p>
+     <h5><?php echo t('Facilitator: '); ?><a href="mailto:eziegemeier@yahoo.com">Ellen Ziegemeier</a></h5>
+      <p><?php echo t('Ms. Ziegemeier has been facilitating online courses for Mather LifeWays Institute on Aging since 2004. She earned her Masters in Anthropology, and has worked locally and abroad -  Latin America and South America for various aging services. She is fluent in English and Spanish, and has a strong passion for caregiver training. '); ?>
+      </p>
     </div>
   </div>
 </div>
