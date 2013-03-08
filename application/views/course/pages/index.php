@@ -26,6 +26,7 @@
   	echo '<li>' . t($objective->text) . '</li>';
   ?>
   </ul>
+  <hr />
   <?php endforeach; ?>
   <br />
   <br />
@@ -44,6 +45,7 @@
     <li><?php echo t('Explore best practices that can be integrated into practice and/or teaching'); ?></li>
     <li><?php echo t('Self-paced certificate program (6 unique, online courses) completed within one-year'); ?></li>
   </ul>
+  <hr />
   <br />
   <br />
   <h2 class="flowers"> <?php echo t('Online Workforce Surveys & Toolkits'); ?> </h2>
