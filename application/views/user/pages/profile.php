@@ -28,10 +28,8 @@ $this->widget(
   <div class="box-sidebar one">
     <h3><?php echo t('Surveys'); ?></h3>
     <br />
-    <p><?php echo t('Our surveys are designed to help us obtain information that help with decision-making. Our goal is to help better educate our participants by creating a client touch-point, a feedback system, and means to better understanding the shifting needs of the field.'); ?></p>
-    <img class="block-center" width="96" height="113" src="<?php echo $this->getImagesUrl('survey_icon2.png'); ?>" alt="" />
+    <p> <img style="float:right; margin:15px;" width="48" height="57" src="<?php echo $this->getImagesUrl('survey_icon2.png'); ?>" alt="" /> <?php echo t('Our surveys are designed to help us obtain information that help with decision-making. Our goal is to help better educate our participants by creating a client touch-point, a feedback system, and means to better understanding the shifting needs of the field.'); ?></p>
     <hr />
-    <p><b><?php echo t('Profile Surveys'); ?></b></p>
     <ul>
       <?php 
   	foreach($surveys as $survey): ?>
@@ -40,24 +38,7 @@ $this->widget(
       </li>
       <?php endforeach; ?>
     </ul>
-    <p><b><?php echo t('Online Workforce Support Surveys'); ?></b></p>
-    <ul>
-      <?php 
-  	foreach($surveys as $survey): ?>
-      <li> <a id="survey_link_<?php echo $survey->getId(); ?>" href="#survey_<?php echo $survey->getId(); ?>" title="<?php echo $survey->model->title; ?>"><?php echo $survey->model->title; ?></a>
-        <?php $survey->run(); ?>
-      </li>
-      <?php endforeach; ?>
-    </ul>
-    <p><b><?php echo t('Spencer Powell Surveys'); ?></b></p>
-    <ul>
-      <?php 
-  	foreach($surveys as $survey): ?>
-      <li> <a id="survey_link_<?php echo $survey->getId(); ?>" href="#survey_<?php echo $survey->getId(); ?>" title="<?php echo $survey->model->title; ?>"><?php echo $survey->model->title; ?></a>
-        <?php $survey->run(); ?>
-      </li>
-      <?php endforeach; ?>
-    </ul>
+    <br />
   </div>
   
   <!-- sidebar #2 here -->
