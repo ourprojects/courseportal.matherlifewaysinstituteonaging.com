@@ -12,21 +12,21 @@ $clientScript->registerCssFile($this->getStylesUrl('homeUser.css'));
   <h1 class="bottom"><?php echo t('Welcome!'); ?></h1>
 </div>
 <div id="sidebar">
+  <div class="box-sidebar one">
+    <h3><?php echo t('Course Requirements'); ?></h3>
+    <p><b><?php echo t('Required Applications'); ?></b></p>
+    <p><?php echo t('You will need the following applications to participate:'); ?></p>
+    <hr />
+    <p><a href="http://get.adobe.com/flashplayer/" target="_blank" /><?php echo t('Adobe Flash Player'); ?></a></p>
+    <p><a href="http://get.adobe.com/reader/" target="_blank" /><?php echo t('Adobe Reader'); ?></a></p>
+    <p><a href="http://office.microsoft.com" target="_blank" />Microsoft Office</a>, <a href="http://www.apple.com/iwork/" target="_blank" />Apple iWork</a> <?php echo t('or,'); ?> <a href="http://www.openoffice.org" target="_blank" /><?php echo t('Apache OpenOffice'); ?></a></p>
+  </div>
   <div class="box-sidebar three statistics">
     <h3><?php echo t('Statistics on Caregivers (USA)'); ?></h3>
     <ul id="quotes">
-      <li>
-      <img src="<?php echo $this->getImagesUrl('stat-one-quarter.png'); ?>" />
-      <span>1/4</span>&nbsp;<?php echo t('of US households has a family caregiver providing some form of care or service to a relative or friend, age 50+'); ?>
-      </li>
-      <li>
-      <img src="<?php echo $this->getImagesUrl('stat-two-thirds.png'); ?>" />
-      <span>2/3</span>&nbsp;<?php echo t('of these family caregivers are also working'); ?>
-      </li>
-      <li>
-      <img src="<?php echo $this->getImagesUrl('stat-half.png'); ?>" />
-      <span>50%</span>&nbsp;<?php echo t('of employed caregivers work full-time'); ?>
-      </li>
+      <li> <img src="<?php echo $this->getImagesUrl('stat-one-quarter.png'); ?>" /> <span>1/4</span>&nbsp;<?php echo t('of US households has a family caregiver providing some form of care or service to a relative or friend, age 50+'); ?> </li>
+      <li> <img src="<?php echo $this->getImagesUrl('stat-two-thirds.png'); ?>" /> <span>2/3</span>&nbsp;<?php echo t('of these family caregivers are also working'); ?> </li>
+      <li> <img src="<?php echo $this->getImagesUrl('stat-half.png'); ?>" /> <span>50%</span>&nbsp;<?php echo t('of employed caregivers work full-time'); ?> </li>
     </ul>
   </div>
   <div class="box-sidebar four">
@@ -72,7 +72,7 @@ $clientScript->registerCssFile($this->getStylesUrl('homeUser.css'));
 		father. In '); ?>The Sandwich Generation<?php echo t(', they have created an honest, intimate account of their own shifting 
 		and challenging responsibilities, as well as some of their unexpected joys. (English)'); ?></p>
   <div class="box-grey">
-      <?php 
+    <?php 
 			$this->widget(
 					'ext.JWplayer.JWplayer',
 					array(
