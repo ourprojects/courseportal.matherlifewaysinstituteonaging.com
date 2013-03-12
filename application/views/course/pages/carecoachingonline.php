@@ -132,7 +132,6 @@ foreach(array(
 	  	<a href="#lesson-3-slide-9" data-fancybox-group="lesson-3" class="hide lesson-3"></a> 
 	  	<a href="#lesson-3-slide-10" data-fancybox-group="lesson-3" class="hide lesson-3"></a> 
 	  	<a href="#lesson-3-slide-11" data-fancybox-group="lesson-3" class="hide lesson-3"></a> 
-	  	<a href="#lesson-3-slide-12" data-fancybox-group="lesson-3" class="hide lesson-3"></a> 
   </li>
   <li>
 	  <a href="#lesson-4-slide-1" data-fancybox-group="lesson-4" class="teal lesson-4">
@@ -717,20 +716,22 @@ AARP provides various articles of interest and resources for family caregivers. 
       <div class="content">
         <h2 class="flowers"><?php echo t('Understanding Needs and Preferences of Older Adults - Topics'); ?></h2>
         <hr />
-        <p><?php echo t('CARE Coaching: Communicating'); ?><br />
-          <?php echo t('Communicating in CARE Coaching is all about choice. Caregiving commonly brings up feelings of burden, confusion, and guilt for caregivers. Communicating is the first component of CARE Coaching. As a first step, using some key communication skills can relieve some of these concerns.'); ?>
-        <p><?php echo t('Exercise – Understanding Your Parents Needs and Preferences'); ?><br />
-          <?php echo t('This exercise is designed to help you determine what you know and do not know about your parents needs and preferences. Determining this now will help you on the road of communicating more openly about your parents’ future wishes.'); ?></p>
-        <p><?php echo t('Where to Start "The Talk"!'); ?><br />
-          <?php echo t('How do you start to talk to your older parents about the future? What fears do you have about bringing up this topic with them?'); ?></p>
-        <p><?php echo t('Go to the Online Topic Forum'); ?><br />
+        <h4><?php echo t('CARE Coaching: Communicating'); ?></h4>
+        <p><?php echo t('Communicating in CARE Coaching is all about choice. Caregiving commonly brings up feelings of burden, confusion, and guilt for caregivers. Communicating is the first component of CARE Coaching. As a first step, using some key communication skills can relieve some of these concerns.'); ?>
+        <h4><?php echo t('Exercise – Understanding Your Parents Needs and Preferences'); ?></h4>
+       <p><?php echo t('This exercise is designed to help you determine what you know and do not know about your parents needs and preferences. Determining this now will help you on the road of communicating more openly about your parents’ future wishes.'); ?></p>
+        <h4><?php echo t('Where to Start "The Talk"!'); ?></h4>
+        <p><?php echo t('How do you start to talk to your older parents about the future? What fears do you have about bringing up this topic with them?'); ?></p>
+        <h4><?php echo t('Go to the Online Topic Forum'); ?></h4>
+        <p>
           <?php echo t('So that we can share stories, ideas, questions, and issues among participants throughout the course, we have an online topic forum. This forum is for you the caregiver, so feel free to participate in the discussions, add new topics, and share information for others to learn from!'); ?></p>
-        <p><?php echo t('A Framework to Start "The Talk"'); ?><br />
-          <?php echo t('A framework has been developed to help you getting the conversations going. Overall, start small while your parents are still healthy and can fully participate in the discussions about their lives and health without undue pressure.'); ?></p>
-        <p><?php echo t('Activity - Practice "The Talk"'); ?><br />
-          <?php echo t('Some caregivers feel that practice sessions are valuable to "test out" the conversations in other situations. Here are some practice activities for you to try out.'); ?></p>
-        <p><?php echo t('CARE Coaching: Advocating'); ?><br />
-          <?php echo t('The second component of CARE Coaching is advocating. You are on the same team as your parents and want to collaborate with them as a partner in their best future.'); ?></p>
+          <h4><?php echo t('A Framework to Start "The Talk"'); ?></h4>
+          <p><?php echo t('A framework has been developed to help you getting the conversations going. Overall, start small while your parents are still healthy and can fully participate in the discussions about their lives and health without undue pressure.'); ?></p>
+        <h4><?php echo t('Activity - Practice "The Talk"'); ?></h4>
+        <p><?php echo t('Some caregivers feel that practice sessions are valuable to "test out" the conversations in other situations. Here are some practice activities for you to try out.'); ?></p>
+        <h4><?php echo t('CARE Coaching: Advocating'); ?></h4>
+        <p><?php echo t('The second component of CARE Coaching is advocating. You are on the same team as your parents and want to collaborate with them as a partner in their best future.'); ?></p>
+        <br /><br />
       </div>
       <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Start Course &raquo;'); ?> </a></div>
     </div>
@@ -742,14 +743,19 @@ AARP provides various articles of interest and resources for family caregivers. 
       <div class="content">
         <h2 class="flowers"><?php echo t('CARE Coaching: Communicating'); ?></h2>
         <hr />
-        <p><?php echo t('Does this scenario sound familiar? You are in a restaurant having dinner with your older parents. Your mother has some memory problems which means she takes quite a long time to figure out what to order. The waiter is standing over your table, and your father gets frustrated waiting for her to order. He says, “Helen, just order the chicken. You like the chicken!” She says, “I guess I’ll have the chicken.”'); ?></p>
-        <p><?php echo t('After the waiter leaves (and in front of your mother), he says, “She takes too long to order. She’s distracted with other things going on. She can’t figure it out, so it’s easy for her if I just tell her, and all she has to do is repeat it.” Your mother subsequently doesn’t say much through the rest of the evening. The mood around the table is not much better.'); ?></p>
-        <p><?php echo t('Communicating in CARE Coaching is all about choice. Your father’s response is based on his own perceptions and feelings about what’s going on with your mother rather than supporting her remaining potential to make choices. Perhaps her memory problems do interfere with her capacity to make choices, but being able to “modify” the situation can maximize Helen’s remaining capacities.'); ?></p>
-        <p><?php echo t('Here’s an example:'); ?></p>
-        <p><?php echo t('Back at the restaurant, the waiter is ready to take the order. You say, “Mom, this restaurant is really well known for their delicious chicken and fish dishes, just the way you like them. What do you have a taste for today – chicken or fish?” Your mother says, “Well, I just don’t know. I had
-chicken for lunch today. So I think I’d like to try their fish!”'); ?></p>
-        <p><?php echo t('So what is different in the two approaches? In your approach, you are taking a CARE Coaching approach by asking a version of “What do you want?” through your conversation. Taking into consideration your mother’s limitations, you have supported her remaining abilities to participate in daily life activities.'); ?></p>
-        <p><?php echo t('You may not yet be in a “caregiving” role for your older parents or other loved ones (or you may not consider what you now do for them as “caregiving”), but this course is designed to help you think about the future. People may find themselves “plunged” into the caregiving role at a time in life when they themselves are facing challenges such as mid-career transitions, their own health issues, or before retirement. Additionally, they may be contending with raising their own children simultaneously.'); ?></p>
+        
+        <img width="350" height="350" src="<?php echo $this->getImagesUrl('CARECoachingOnlineImages/9146129-1386x1386.jpg'); ?>" />
+        <p><?php echo t('Does this scenario sound familiar?'); ?> <i><?php echo t('You are in a restaurant having dinner with your older parents. Your mother has some memory problems which means she takes quite a long time to figure out what to order. The waiter is standing over your table, and your father gets frustrated waiting for her to order. He says, “Helen, just order the chicken. You like the chicken!” She says, “I guess I’ll have the chicken.”'); ?></i></p>
+        <p><i><?php echo t('After the waiter leaves (and in front of your mother), he says, “She takes too long to order. She’s distracted with other things going on. She can’t figure it out, so it’s easy for her if I just tell her, and all she has to do is repeat it.” Your mother subsequently doesn’t say much through the rest of the evening. The mood around the table is not much better.'); ?></i></p>
+        <p><?php echo t('<b>Communicating</b> in CARE Coaching is all about choice. Your father’s response is based on his own perceptions and feelings about what’s going on with your mother rather than supporting her remaining potential to make choices. Perhaps her memory problems do interfere with her capacity to make choices, but being able to “modify” the situation can maximize Helen’s remaining capacities.'); ?></p>
+        
+        
+        
+        
+        
+        
+        
+        
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?> </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
     </div>
@@ -759,40 +765,54 @@ chicken for lunch today. So I think I’d like to try their fish!”'); ?></p>
     
     <div id="lesson-2-slide-3" class="course-slide">
       <div class="content">
-        <h2 class="flowers"><?php echo t('CARE Coaching: Communicating (continued'); ?></h2>
+        <h2 class="flowers"><?php echo t('CARE Coaching: Communicating (continued)'); ?></h2>
         <hr />
+        <img width="400" height="279" src="<?php echo $this->getImagesUrl('CARECoachingOnlineImages/9869154-578x830.jpg'); ?>" />
+        <p><?php echo t('Here’s an example:'); ?></p>
+        <p><i><?php echo t('Back at the restaurant, the waiter is ready to take the order. You say, “Mom, this restaurant is really well known for their delicious chicken and fish dishes, just the way you like them. What do you have a taste for today – chicken or fish?” Your mother says, “Well, I just don’t know. I had
+chicken for lunch today. So I think I’d like to try their fish!”'); ?></i></p>
+        <p><?php echo t('So what is different in the two approaches? In your approach, you are taking a CARE Coaching approach by asking a version of “What do you want?” through your conversation. Taking into consideration your mother’s limitations, you have supported her remaining abilities to participate in daily life activities.'); ?></p>
+        <p><?php echo t('You may not yet be in a “caregiving” role for your older parents or other loved ones (or you may not consider what you now do for them as “caregiving”), but this course is designed to help you think about the future. People may find themselves “plunged” into the caregiving role at a time in life when they themselves are facing challenges such as mid-career transitions, their own health issues, or before retirement. Additionally, they may be contending with raising their own children simultaneously.'); ?></p>
+        
         <p><?php echo t('Caregiving commonly brings up feelings of burden, confusion, and guilt for caregivers. As a first step, using some key communication skills can relieve some of these concerns. Where do these feelings stem from? Burden refers to emotional response to changes and demands that occur as caregivers give help and support to the older person.'); ?></p>
-        <p><?php echo t('We have developed a Caregiver Burden Assessment to help you identify aspects of your life that may or may not be impacted by caregiving at this time. Click on the following to access the tool.'); ?></p>
-        <p>button here</p>
-        <p><?php echo t('Confusion about the healthcare system and utilization of those services by older adults is a universal experience for caregivers. Later in this course, we will address important ways for you to better understand the key roles and responsibilities of care providers as well as where concise, accurate information may be found to also share with your older parents.'); ?></p>
-        <p><?php echo t('Guilt is often an ongoing feeling for many caregivers. Sometimes caregivers get so focused on their frail, older parent that they feel guilty focusing on someone else – including themselves. Empower Online addresses these issues for caregivers and provides tools focused on self-care of the caregiver.'); ?></p>
-        <p><?php echo t('As a first step to better communication with your older parents about their needs and preferences, it is important that you have a clear understanding of what you may know and do not know about these needs and preferences. The next exercise will help you determine your level of knowledge as well as your own feelings about your parents’ future planning.'); ?></p>
+        
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?> </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
     </div>
     
-    <!-- Lesson #2 - Understanding Needs and Preferences of Older Adults --> 
+    
+       <!-- Lesson #2 - Understanding Needs and Preferences of Older Adults --> 
     <!-- slide #4 -->
     
     <div id="lesson-2-slide-4" class="course-slide">
       <div class="content">
-        <h2 class="flowers"><?php echo t('Exercise – Understanding Your Parents\' Needs and Preferences'); ?></h2>
+        <h2 class="flowers"><?php echo t('CARE Coaching: Communicating (continued)'); ?></h2>
         <hr />
-        <p><?php echo t('This exercise is designed to help you determine what you know and do not know about your parents needs and preferences. Determining this now will help you on the road of communicating more openly about your parents’ future wishes to reduce your experience of burden, confusion, and guilt as a caregiver. Everyone has a different level of knowledge when it comes to the following information, so do not feel overwhelmed if you do not recall or have not addressed some of these areas with your parents.'); ?></p>
-        <p>button here</p>
-      </div>
+        
+        <p>
+		<a href="<?php echo $this->getImagesUrl('CARECoachingOnlineImages/CaregiverBurdenAssessmentTool.pdf'); ?>" target="_blank" /><img class="normal" width="48" height="48" src="<?php echo $this->getImagesUrl('pdf-icon.png'); ?>" /></a>
+		<?php echo t('We have developed a Caregiver Burden Assessment to help you identify aspects of your life that may or may not be impacted by caregiving at this time.  Click on the icon to access the <b>Caregiver Burden Assessment</b> tool.'); ?></p>
+        
+        <p><?php echo t('<i>Confusion</i> about the healthcare system and utilization of those services by older adults is a universal experience for caregivers.  Later in this course, we will address important ways for you to better understand the key roles and responsibilities of care providers as well as where concise, accurate information may be found to also share with your older parents.'); ?></p>
+        
+        <p><?php echo t('<i>Guilt</i> is often an ongoing feeling for many caregivers.  Sometimes caregivers get so focused on their frail, older parent that they feel guilty focusing on someone else – including themselves.  Empower Online addresses these issues for caregivers and provides tools focused on self-care of the caregiver.'); ?></p>
+        
+        <p><?php echo t('As a first step to better communication with your older parents about their needs and preferences, it is important that you have a clear understanding of what you may know and do not know about these needs and preferences.  The next exercise will help you determine your level of knowledge as well as your own feelings about your parents’ future planning.'); ?></p>       
+             </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?> </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
     </div>
+    
+    
     
     <!-- Lesson #2 - Understanding Needs and Preferences of Older Adults --> 
     <!-- slide #5 -->
     
     <div id="lesson-2-slide-5" class="course-slide">
       <div class="content">
-        <h2 class="flowers"><?php echo t('Where to Start "The Talk"!'); ?></h2>
+        <h2 class="flowers"><?php echo t('Exercise – Understanding Your Parents\' Needs and Preferences'); ?></h2>
         <hr />
-        <p><?php echo t('Do not feel anxious if you had a number of "blanks" when working through the previous exercise - it is not a reflection on "bad" caregiving. Your parents have been independent through these many years and may not have felt the need to share much of these matters with "the kids."'); ?> </p>
-        <p><?php echo t('How do you start to talk to your older parents about the future? What fears do you have about bringing up this topic with them? So that we can share stories, ideas, questions, and issues among participants throughout the course, we have an online topic forum. This forum is for you the caregiver, so feel free to participate in the discussions, add new topics, and share information for others to learn from!'); ?></p>
+        <p><?php echo t('This exercise is designed to help you determine what you know and do not know about your parents needs and preferences.  Determining this now will help you on the road of communicating more openly about your parents’ future wishes to reduce your experience of burden, confusion, and guilt as a caregiver.  Everyone has a different level of knowledge when it comes to the following information, so do not feel overwhelmed if you do not recall or have not addressed some of these areas with your parents.'); ?></p>
+     <p><a href="<?php echo $this->getImagesUrl('CARECoachingOnlineImages/ExerciseUnderstandingNeedsandPreferences.pdf'); ?>" target="_blank" /><img class="normal" width="48" height="48" src="<?php echo $this->getImagesUrl('pdf-icon.png'); ?>" /></a>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?> </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
     </div>
@@ -802,19 +822,12 @@ chicken for lunch today. So I think I’d like to try their fish!”'); ?></p>
     
     <div id="lesson-2-slide-6" class="course-slide">
       <div class="content">
-        <h2 class="flowers"><?php echo t('A Framework to Start "The Talk"'); ?></h2>
+        <h2 class="flowers"><?php echo t('Where to Start "The Talk"!'); ?></h2>
         <hr />
-        <p><?php echo t('A framework has been developed to help you getting the conversations going. Overall, start small while your parents are still healthy and can fully participate in the discussions about their lives and health without undue pressure. Think of this paced way to communicate as "TEMPO." This acronym stands for:'); ?></p>
-        <ul>
-          <li><?php echo t('Timing'); ?></li>
-          <li><?php echo t('Experience'); ?></li>
-          <li><?php echo t('Motivation'); ?></li>
-          <li><?php echo t('Place'); ?></li>
-          <li><?php echo t('Outcome'); ?></li>
-        </ul>
-        <p><?php echo t('Timing - Plan to set aside time for conversations with your parents. Be respectful and ask them when would be the best time for them to have these conversations. In turn, make sure you have time to listen. No ringing cell phones at this time! Above all, be patient. Your parents may feel uncomfortable at first with the idea of these conversations and may want to put them off for some time.'); ?></p>
-        <p><?php echo t('Experience - A good approach to bringing up these difficult topics is to relate it to your experiences. Some openers sound like this:'); ?></p>
-        <p><?php echo t('"Dad, I just came from my attorney\'s office. We finished updating my will. I was wondering when the last time you took a look at yours?"'); ?></p>
+        <p><?php echo t('Do not feel anxious if you had a number of "blanks" when working through the previous exercise - it is not a reflection on "bad" caregiving. Your parents have been independent through these many years and may not have felt the need to share much of these matters with "the kids."'); ?> </p>
+        <p><?php echo t('How do you start to talk to your older parents about the future? What fears do you have about bringing up this topic with them?'); ?></p>
+        
+        <p><?php echo t('So that we can share stories, ideas, questions, and issues among participants throughout the course, we have an online topic forum. This forum is for you the caregiver, so feel free to participate in the discussions, add new topics, and share information for others to learn from!'); ?></p>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?> </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
     </div>
@@ -824,16 +837,33 @@ chicken for lunch today. So I think I’d like to try their fish!”'); ?></p>
     
     <div id="lesson-2-slide-7" class="course-slide">
       <div class="content">
-        <h2 class="flowers"><?php echo t('A Framework to Start "The Talk (continued'); ?></h2>
+        <h2 class="flowers"><?php echo t('A Framework to Start "The Talk"'); ?></h2>
         <hr />
-        <p><?php echo t('"Mom, a colleague of mine at work just had an unfortunate experience. His father had a sudden heart attack, and it took a long time before they could notify him because his dad did not have any emergency contact information in place. Can we go over how your information is organized particularly since my office recently moved and I have new phone numbers?"'); ?></p>
+        
+        <img width="400" height="267" src="<?php echo $this->getImagesUrl('CARECoachingOnlineImages/11829067-533x800.jpg'); ?>" />
+        <p><?php echo t('A framework has been developed to help you getting the conversations going. Overall, start small while your parents are still healthy and can fully participate in the discussions about their lives and health without undue pressure.'); ?></p>
+        
+        <p><?php echo t('Think of this paced way to communicate as "<b>TEMPO</b>." This acronym stands for:'); ?></p>
+        <ul>
+          <li><?php echo t('Timing'); ?></li>
+          <li><?php echo t('Experience'); ?></li>
+          <li><?php echo t('Motivation'); ?></li>
+          <li><?php echo t('Place'); ?></li>
+          <li><?php echo t('Outcome'); ?></li>
+        </ul>
+        <p><?php echo t('<b>Timing</b> - Plan to set aside time for conversations with your parents. Be respectful and ask them when would be the best time for them to have these conversations. In turn, make sure you have time to listen. No ringing cell phones at this time! Above all, be patient. Your parents may feel uncomfortable at first with the idea of these conversations and may want to put them off for some time.'); ?></p>
+        <p><?php echo t('<b>Experience</b> - A good approach to bringing up these difficult topics is to relate it to your experiences. Some openers sound like this:'); ?></p>
+        <p><i><?php echo t('"Dad, I just came from my attorney\'s office. We finished updating my will. I was wondering when the last time you took a look at yours?"'); ?></i></p>
+         <p><i><?php echo t('"Mom, a colleague of mine at work just had an unfortunate experience. His father had a sudden heart attack, and it took a long time before they could notify him because his dad did not have any emergency contact information in place. Can we go over how your information is organized particularly since my office recently moved and I have new phone numbers?"'); ?></i></p>
         <p><?php echo t('"It is really gotten to be a challenge driving out there. I am on the road all day and see quite a few bad drivers, especially those on their cell phones. I am concerned about how you are feelings about driving these days."'); ?></p>
-        <p><?php echo t('Motivation - Be clear about your motive for having the conversation. The motivating factors should be related to safety, quality of life, and well-being - both theirs and yours. Their best interests are prime consideration, but your life and the lives of your family also matters.'); ?></p>
-        <p><?php echo t('Place - The place where these conversations take place needs to be a "safe space" as your parents would define that. It may not necessarily be in their home. Some of these topics are sensitive and so one parent may feel more comfortable taking the lead in the conversations.'); ?></p>
-        <p><?php echo t('Outcome - One conversation is not going to address all the important topics that need to be discussed. The initial conversations may be laying the groundwork for you to better understand your parents’ feelings. Not only do you want to get information, but you also want to share information.'); ?></p>
+        <p><?php echo t('<b>Motivation</b> - Be clear about your motive for having the conversation. The motivating factors should be related to safety, quality of life, and well-being - both theirs and yours. Their best interests are prime consideration, but your life and the lives of your family also matters.'); ?></p>
+        <p><?php echo t('<b>Place</b> - The place where these conversations take place needs to be a "safe space" as your parents would define that. It may not necessarily be in their home. Some of these topics are sensitive and so one parent may feel more comfortable taking the lead in the conversations.'); ?></p>
+        <p><?php echo t('<b>Outcome</b> - One conversation is not going to address all the important topics that need to be discussed. The initial conversations may be laying the groundwork for you to better understand your parents’ feelings. Not only do you want to get information, but you also want to share information.'); ?></p>
+        <br /><br />
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?> </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
     </div>
+   
     
     <!-- Lesson #2 - Understanding Needs and Preferences of Older Adults --> 
     <!-- slide #8 -->
@@ -842,8 +872,12 @@ chicken for lunch today. So I think I’d like to try their fish!”'); ?></p>
       <div class="content">
         <h2 class="flowers"><?php echo t('Activity - Practice "The Talk"'); ?></h2>
         <hr />
-        <p><?php echo t('Some caregivers feel that practice sessions are valuable to "test out" the conversations in other situations. Here are some practice activities for you to try out.'); ?></p>
-        <p>button here for download</p>
+        <p>
+		
+		<a href="<?php echo $this->getImagesUrl('CARECoachingOnlineImages/ActivityPracticetheTalk.pdf'); ?>" target="_blank" /><img class="normal" width="48" height="48" src="<?php echo $this->getImagesUrl('pdf-icon.png'); ?>" /></a>
+		<?php echo t('Some caregivers feel that practice sessions are valuable to "test out" the conversations in other situations. Here are some practice activities for you to try out.'); ?></p>
+        
+        
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?> </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
     </div>
@@ -855,6 +889,9 @@ chicken for lunch today. So I think I’d like to try their fish!”'); ?></p>
       <div class="content">
         <h2 class="flowers"><?php echo t('CARE Coaching: Advocating'); ?></h2>
         <hr />
+
+		<img width="400" height="266" src="<?php echo $this->getImagesUrl('CARECoachingOnlineImages/11829138-533x800.jpg'); ?>" />
+
         <p><?php echo t('It’s time to bring up the second component of CARE Coaching – that of advocating. We are talking about advocating in a caring sense – that of supporting another – rather than in the legal sense – that of defending another.'); ?></p>
         <p><?php echo t('Caregivers often view their parents as “stubborn” or “resistant” to their help:'); ?></p>
         <p><?php echo t('“I just can’t get them to listen to me!”'); ?></p>
@@ -863,11 +900,12 @@ chicken for lunch today. So I think I’d like to try their fish!”'); ?></p>
         <p><?php echo t('Sounds like some things your parents may have said to you growing up? In these situations, the caregiver is thinking more like the parent, and we remember from our early experiences hearing these – how much did they work when your parents were saying these words to you?'); ?></p>
         <p><?php echo t('Consider this comparison:'); ?></p>
         <ul>
-          <li><?php echo t('In the role of PARENT – you are in charge, make the rules, and set the agenda. Negotiating is unnecessary. You are a “teller of information.”'); ?></li>
-          <li><?php echo t('In the role of PARTNER – you have a common goal, mutual interests, and work towards collaborating on common goals. You are a “listener for information.”'); ?></li>
+          <li><?php echo t('In the role of <i>PARENT</i> – you are in charge, make the rules, and set the agenda. Negotiating is unnecessary. You are a “teller of information.”'); ?></li>
+          <li><?php echo t('In the role of <i>PARTNER</i> – you have a common goal, mutual interests, and work towards collaborating on common goals. You are a “listener for information.”'); ?></li>
         </ul>
         <p><?php echo t('You may need to reassure them that you are on the same team and you want to be a partner in their best future. Your goal is to collaborate with them to uphold their needs, beliefs, and values. It is not your intention to switch to a “parenting” role so as not to diminish their independence.'); ?></p>
-        <p><?php echo t('Self-Coaching Hint: As reinforcement, you need to make sure your intentions are clear. You are not trying to subtly coerce them or manipulate them in some way. You intend to make every action and word worthy of trust. Practice holding that intention in your mind and heart, and it will make a difference in how you listen and influence what you say!'); ?></p>
+        <p><?php echo t('<i>Self-Coaching Hint</i>: As reinforcement, you need to make sure your intentions are clear. You are not trying to subtly coerce them or manipulate them in some way. You intend to make every action and word worthy of trust. Practice holding that intention in your mind and heart, and it will make a difference in how you listen and influence what you say!'); ?></p>
+        <br /><br />
       </div>
       <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> <?php echo t('Complete Lesson'); ?> </a></div>
     </div>
@@ -881,44 +919,39 @@ chicken for lunch today. So I think I’d like to try their fish!”'); ?></p>
       <div class="content">
         <h2 class="flowers"><?php echo t('Managing Health Information and Record Keeping - Topics'); ?></h2>
         <hr />
-        <p><?php echo t('What’s a Personal Health Record?'); ?><br />
-          <?php echo t('Personal Health Records (PHR) have become an easy-to-use tools to help manage health information in a single place. Having a PHR can help provide more complete information to health care providers or other family members.'); ?></p>
-        <p><?php echo t('Video – What People Say about Personal Health Records'); ?><br />
-          <?php echo t('View a brief video on what people say about their experiences with Personal Health Records.'); ?></p>
-        <p><?php echo t('How to Choose a Personal Health Record'); ?><br />
-          <?php echo t('Choosing a Personal Health Record (PHR) is really a matter of personal choice. A PHR is controlled by the individual and can be shared with others including family members, caregivers, and health care providers.'); ?></p>
-        <p><?php echo t('Types of PHRs'); ?><br />
-          <?php echo t('PHRs may be kept as hard copy on paper or electronically on one’s computer or on the Internet through a service provider. In considering what form may be most suitable, you should consider things like accessibility, convenience, and ease of updating.'); ?></p>
+        <h4><?php echo t('What’s a Personal Health Record?'); ?></h4>
+        <p><?php echo t('Personal Health Records (PHR) have become an easy-to-use tools to help manage health information in a single place. Having a PHR can help provide more complete information to health care providers or other family members.'); ?></p>
+        <h4><?php echo t('Video – What People Say about Personal Health Records'); ?></h4>
+        <p><?php echo t('View a brief video on what people say about their experiences with Personal Health Records.'); ?></p>
+        <h4><?php echo t('How to Choose a Personal Health Record'); ?></h4>
+        <p><?php echo t('Choosing a Personal Health Record (PHR) is really a matter of personal choice. A PHR is controlled by the individual and can be shared with others including family members, caregivers, and health care providers.'); ?></p>
+        <h4><?php echo t('Types of PHRs'); ?></h4>
+        <p><?php echo t('PHRs may be kept as hard copy on paper or electronically on one’s computer or on the Internet through a service provider. In considering what form may be most suitable, you should consider things like accessibility, convenience, and ease of updating.'); ?></p>
+          
+          <h4><?php echo t('Activity – Reviewing Internet-Based PHR Tools – My Family Health Portrait'); ?></h4>
+          <p><?php echo t('My Family Health Portrait is a web-based program developed from the U.S. Department of Health and Human Services, Family History Initiative. This initiative is designed to encourage families to learn more about their family health history.'); ?></p>
+          <h4><?php echo t('Activity – Reviewing Internet-Based PHR Tools – Google Health'); ?></h4>
+          <p><?php echo t('Google Health is a free, secure web-based program to store and manage health information in a central place. Information is accessible anywhere and at anytime.'); ?></p>
+        <h4><?php echo t('Activity – Reviewing Internet-Based PHR Tools - ProfileMD'); ?></h4>
+        <p>  <?php echo t('ProfileMD is a freeware PHR that allows immediate access to medical health history and information via your smartphone or PDA.'); ?></p>
+        <h4><?php echo t('Exercise – CARE Coaching and Selecting PHRs'); ?></h4>
+        <p><?php echo t('Asking the right questions is key to determine which PHR product is right for you and your family. Review the previously described internet-based tools, My Family Health Profile and ProfileMD, and complete the self-learning exercise.'); ?></p>
+          <br /><br />
       </div>
       <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Start Course &raquo;'); ?> </a></div>
     </div>
+    
     
     <!-- Lesson #3 - Managing Health Information and Record Keeping --> 
     <!-- slide #2 -->
     
     <div id="lesson-3-slide-2" class="course-slide">
       <div class="content">
-        <h2 class="flowers"><?php echo t('Managing Health Information and Record Keeping - Topics (continued)'); ?></h2>
-        <hr />
-        <p><?php echo t('Activity – Reviewing Internet-Based PHR Tools – My Family Health Portrait'); ?><br />
-          <?php echo t('My Family Health Portrait is a web-based program developed from the U.S. Department of Health and Human Services, Family History Initiative. This initiative is designed to encourage families to learn more about their family health history.'); ?></p>
-        <p><?php echo t('Activity – Reviewing Internet-Based PHR Tools – Google Health'); ?><br />
-          <?php echo t('Google Health is a free, secure web-based program to store and manage health information in a central place. Information is accessible anywhere and at anytime.'); ?></p>
-        <p><?php echo t('Activity – Reviewing Internet-Based PHR Tools - ProfileMD'); ?><br />
-          <?php echo t('ProfileMD is a freeware PHR that allows immediate access to medical health history and information via your smartphone or PDA.'); ?></p>
-        <p><?php echo t('Exercise – CARE Coaching and Selecting PHRs'); ?><br />
-          <?php echo t('Asking the right questions is key to determine which PHR product is right for you and your family. Review the previously described internet-based tools, My Family Health Profile and ProfileMD, and complete the self-learning exercise.'); ?></p>
-      </div>
-      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?> </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
-    </div>
-    
-    <!-- Lesson #3 - Managing Health Information and Record Keeping --> 
-    <!-- slide #3 -->
-    
-    <div id="lesson-3-slide-3" class="course-slide">
-      <div class="content">
         <h2 class="flowers"><?php echo t('What is a Personal Health Record?'); ?></h2>
         <hr />
+        
+        <img width="400" height="267" src="<?php echo $this->getImagesUrl('CARECoachingOnlineImages/11829178-533x800.jpg'); ?>" />
+        
         <p><?php echo t('In the previous section, you had the opportunity to complete the Exercise – Understanding Your Parents Needs and Preferences. In that exercise, we asked you to document some basics about what you know about your parents medical and health conditions.'); ?></p>
         <p><?php echo t('Information like: the name and phone numbers of physicians, lists of their medical conditions and past surgeries, current lists of medications, allergies, and reactions to certain drugs or foods, advanced directives, physical functioning level, cognition, and diet requirements are basic questions asked in the emergency room – and unfortunately – usually repeated by every physician or surgeon you may see during a hospital stay!'); ?></p>
         <p><?php echo t('It is often difficult to keep all this information straight, particularly in an emergency situation.'); ?></p>
@@ -929,41 +962,35 @@ chicken for lunch today. So I think I’d like to try their fish!”'); ?></p>
     </div>
     
     <!-- Lesson #3 - Managing Health Information and Record Keeping --> 
-    <!-- slide #4 -->
+    <!-- slide #3 -->
     
-    <div id="lesson-3-slide-4" class="course-slide">
+    <div id="lesson-3-slide-3" class="course-slide">
       <div class="content">
         <h2 class="flowers"><?php echo t('Video – What People Say about Personal Health Records'); ?></h2>
         <hr />
+        
+        <p><?php echo t('Click on the following link to view a brief video on some personal experiences with PHRs.'); ?></p>
         <p><?php echo t('Vimeo is a respectful community of creative people who are passionate about sharing the videos they make.'); ?></p>
         <p>
-          <iframe src="http://player.vimeo.com/video/5001493?title=0&amp;byline=0&amp;portrait=0" width="400" height="270" frameborder="0" webkitAllowFullScreen allowFullScreen></iframe>
+
+<iframe src="http://player.vimeo.com/video/5001493" width="500" height="338" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe> <p><a href="http://vimeo.com/5001493">PHR Video</a> from <a href="http://vimeo.com/ahima">AHIMA</a> on <a href="http://vimeo.com">Vimeo</a>.</p>
         </p>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?> </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
     </div>
     
+       
     <!-- Lesson #3 - Managing Health Information and Record Keeping --> 
-    <!-- slide #5 -->
+    <!-- slide #4 -->
     
-    <div id="lesson-3-slide-5" class="course-slide">
-      <div class="content">
-        <h2 class="flowers"><?php echo t('Video – What People Say about Personal Health Records'); ?></h2>
-        <hr />
-        <p><?php echo t('Vimeo is a respectful community of creative people who are passionate about sharing the videos they make.'); ?></p>
-        <p><a href="http://vimeo.com/5001493">PHR Video</a> from <a href="http://vimeo.com/ahima">AHIMA</a> on <a href="http://vimeo.com">Vimeo</a>.</p>
-      </div>
-      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?> </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
-    </div>
-    
-    <!-- Lesson #3 - Managing Health Information and Record Keeping --> 
-    <!-- slide #6 -->
-    
-    <div id="lesson-3-slide-6" class="course-slide">
+    <div id="lesson-3-slide-4" class="course-slide">
       <div class="content">
         <h2 class="flowers"><?php echo t('How to Choose a Personal Health Record'); ?></h2>
         <hr />
-        <p><?php echo t('Choosing a Personal Health Record (PHR) is really a matter of personal choice. A PHR is controlled by the individual and can be shared with others including family members, caregivers, and health care providers. This is different from a health care provider’s electronic or paper health records which are controlled by the provider. One can get access to one’s own health records from a provider, but family members do not have access without your permission.'); ?></p>
+        
+        <img width="267" height="325" src="<?php echo $this->getImagesUrl('CARECoachingOnlineImages/11848241-1528x1256.jpg'); ?>" />
+        
+        <p><?php echo t('Choosing a Personal Health Record (PHR) is really a matter of personal choice. A PHR is controlled by the individual and can be shared with others including family members, caregivers, and health care providers. This is different from a health care provider’s electronic or paper health records, which are controlled by the provider. One can get access to one’s own health records from a provider, but family members do not have access without your permission.'); ?></p>
         <p><?php echo t('This can be challenging in the caregiving situation if you as the caregiver do not have permission to access your parents’ health records, and you may need to provide information to a health care provider in an emergency situation. If one of your parents was hospitalized and unable to speak for himself or herself, did you know that the hospital cannot legally provide any information to you as a child without previous permission of your parent?'); ?></p>
         <p><?php echo t('Ideally, a PHR contains a fairly complete summary of one’s medical and health history based on data from a number of sources. PHRs are available from a number of sources:'); ?></p>
         <ul>
@@ -976,21 +1003,66 @@ chicken for lunch today. So I think I’d like to try their fish!”'); ?></p>
     </div>
     
     <!-- Lesson #3 - Managing Health Information and Record Keeping --> 
-    <!-- slide #7 -->
+    <!-- slide #5 -->
     
-    <div id="lesson-3-slide-7" class="course-slide">
+    <div id="lesson-3-slide-5" class="course-slide">
       <div class="content">
         <h2 class="flowers"><?php echo t('Types of PHRs'); ?></h2>
         <hr />
+        <img width="400" height="269" src="<?php echo $this->getImagesUrl('CARECoachingOnlineImages/12051072-578x831.jpg'); ?>" />
+        
         <p><?php echo t('PHRs may be kept as hardcopy on paper or electronically on one’s computer or on the Internet through a service provider. In considering what form may be most suitable, you should consider things like accessibility, convenience, and ease of updating.'); ?></p>
         <p><?php echo t('Paper versions can range from a formal document to a file folder with information from health care providers, insurance companies and hospitals. This is at least a good starting point for most people to get a snapshot of one’s health history. The difficulties come in when trying to keep all the information current as well as having emergency access to the information.'); ?></p>
         <p><?php echo t('The greatest risk of keeping health information on paper can easily be understood when considering the saga of Hurricane Katrina. The risks of keeping health information on paper were fully exposed when hundreds of thousands of evacuees sought care in new medical communities across the country. Evacuees lacked even the most basic personal health information, such as their medications and dosages. Most of their paper records were destroyed in the muck of hurricane-caused flooding, and many medical practices and hospitals were shut down for weeks, perhaps forever. Out of necessity, a program called'); ?> <a href="http://www.katrinahealth.org" target="_blank">KatrinaHealth</a> <?php echo t('was created to rapidly develop electronic health records for those displaced by the hurricane. Since then, the American Association of Family Practitioners (AAFP) has collaborated with the city of New Orleans and Intel, among others, to provide digital PHRs to every New Orleans resident who wants one, and to transfer these to medical practices and hospitals in the displaced residents\' current location for follow-up care.'); ?></p>
-        <p><a href="http://www.ahima.org/" target="_blank">The American Health Information Management Association (AHIMA)</a> <?php echo t('created a PHR form that is available on their website.'); ?></p>
+        
+         </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?> </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
+    </div>
+        
+           <!-- Lesson #3 - Managing Health Information and Record Keeping --> 
+    <!-- slide #6 -->
+    
+    <div id="lesson-3-slide-6" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('Types of PHRs'); ?></h2>
+        <hr />
+               
+      
+        <a href="<?php echo $this->getImagesUrl('CARECoachingOnlineImages/PHRForm.pdf'); ?>" target="_blank" /><img class="normal" width="48" height="48" src="<?php echo $this->getImagesUrl('pdf-icon.png'); ?>" /></a>
+          <p>
+        <a href="http://www.ahima.org/" target="_blank">The American Health Information Management Association (AHIMA)</a> <?php echo t('created a PHR form that is downloadable here.'); ?></p>
         <p><?php echo t('Software versions of PHRs are stored on personal computers. Information is inputted directly into electronic forms or by scanning documents from health care providers. A hardcopy can then be easily printed. The user controls access to the information. The major drawback is the lack of accessibility in case of an emergency unless one carries a copy of the records on a flash drive or on a data card. Most software versions of PHRs are available at a cost to consumers.'); ?></p>
         <p><?php echo t('Internet versions of PHRs are very new having just been developed over the past 1-2 years. Through the web, consumers may access their private PHR accounts by connecting to the Internet and logging in with their username and password. Information may easily be updated, and consumers may elect to share information with specific individuals of their choosing. The major advantage is the access and availability of information in emergency situations – all one needs is Internet connection and logon information.'); ?></p>
         <p><?php echo t('If you are looking at an internet-based PHR, it is very important that the provider describes security and privacy standards that are in place to protect the information being stored. We will look at a few examples in the next section.'); ?></p>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?> </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
+    </div>
+    
+    <!-- Lesson #3 - Managing Health Information and Record Keeping --> 
+    <!-- slide #7 -->
+    
+    <div id="lesson-3-slide-7" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('Activity – Reviewing Internet-Based PHR Tools'); ?></h2>
+        <hr />
+        <h5><?php echo t('My Family Health Portrait'); ?></h5>
+        
+        <p><?php echo t('<i>My Family Health Portrait</i> is a web-based program developed from the U.S. Department of Health and Human Services, Family History Initiative. This initiative is designed to encourage families to learn more about their family health history. Because health providers have long understood that common illnesses can run in families (like high blood pressure, diabetes, and heart disease – to name a few), tracing illnesses experienced by your parents, grandparents, and other blood relatives may help your physician predict disorders to which you may be at risk and take preventive action.'); ?></p>
+        
+        <p><?php echo t('<i>My Family Health Portrait</i> website helps users organize family history information, save it to their own computer, and print a hard copy to take to the physician’s visit. Additionally, users may grant permission for other family members to view information on their website.'); ?></p>
+        
+      <p><a href="https://familyhistory.hhs.gov/fhh-web/home.action" target="_blank" /><?php echo t('Click here to access My Family Health Portrait website.'); ?></a></p>
+        
+        <p><?php echo t('Read the section, “<i>Learn More About My Family Health Portrait</i>” to answer the following questions.'); ?></p>
+        <ul>
+          <li><?php echo t('*Why is completing a family health history important?'); ?></li>
+          <li><?php echo t('*What is done to assure that my information is private that I enter in My Family Health Portrait?'); ?></li>
+          <li><?php echo t('*What does it mean that this tool is EHR (Electronic Health Record) ready? How does this benefit me?'); ?></li>
+          <li><?php echo t('*What is “clinical decision support”? How does it benefit me?'); ?></li>
+        </ul>
+        <br /><br />
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo;</a></div>
     </div>
     
     <!-- Lesson #3 - Managing Health Information and Record Keeping --> 
@@ -1000,16 +1072,11 @@ chicken for lunch today. So I think I’d like to try their fish!”'); ?></p>
       <div class="content">
         <h2 class="flowers"><?php echo t('Activity – Reviewing Internet-Based PHR Tools'); ?></h2>
         <hr />
-        <p><?php echo t('My Family Health Portrait'); ?></p>
-        <p><?php echo t('My Family Health Portrait is a web-based program developed from the U.S. Department of Health and Human Services, Family History Initiative. This initiative is designed to encourage families to learn more about their family health history. Because health providers have long understood that common illnesses can run in families (like high blood pressure, diabetes, and heart disease – to name a few), tracing illnesses experienced by your parents, grandparents, and other blood relatives may help your physician predict disorders to which you may be at risk and take preventive action.'); ?></p>
-        <p><?php echo t('My Family Health Portrait website helps users organize family history information, save it to their own computer, and print a hard copy to take to the physician’s visit. Additionally, users may grant permission for other family members to view information on their website.'); ?></p>
-        <p><?php echo t('Read the section, “Learn More About My Family Health Portrait” to answer the following questions.'); ?></p>
-        <ul>
-          <li><?php echo t('*Why is completing a family health history important?'); ?></li>
-          <li><?php echo t('*What is done to assure that my information is private that I enter in My Family Health Portrait?'); ?></li>
-          <li><?php echo t('*What does it mean that this tool is EHR (Electronic Health Record) ready? How does this benefit me?'); ?></li>
-          <li><?php echo t('*What is “clinical decision support”? How does it benefit me?'); ?></li>
-        </ul>
+        <h5><?php echo t('Google Health'); ?></h5>
+        
+        <p><?php echo t('Google offers a free, secure web-based program to store and manage health information in a central place.  Information is accessible anywhere and at anytime.  In addition to health information, test results, x-rays, and other scans may be easily uploaded into your PHR.  You may also keep track of test results and laboratory values visually to see how you progress over time.  Finally, you may print a wallet card to carry your health profile with you.'); ?></p>
+        
+ 
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo;</a></div>
     </div>
@@ -1019,23 +1086,13 @@ chicken for lunch today. So I think I’d like to try their fish!”'); ?></p>
     
     <div id="lesson-3-slide-9" class="course-slide">
       <div class="content">
-        <h2 class="flowers"><?php echo t('Activity – Reviewing Internet-Based PHR Tools'); ?></h2>
-        <hr />
-        <p><?php echo t('Google Health - Google offers a free, secure web-based program to store and manage health information in a central place. Information is accessible anywhere and at anytime. In addition to health information, test results, x-rays, and other scans may be easily uploaded into your PHR. You may also keep track of test results and laboratory values visually to see how you progress over time. Finally, you may print a wallet card to carry your health profile with you.'); ?></p>
-      </div>
-      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo;</a></div>
-    </div>
-    
-    <!-- Lesson #3 - Managing Health Information and Record Keeping --> 
-    <!-- slide #10 -->
-    
-    <div id="lesson-3-slide-10" class="course-slide">
-      <div class="content">
         <h2 class="flowers"><?php echo t('Video – Introduction to Google Health'); ?></h2>
         <hr />
+        
+               <p><?php echo t('Click on the following link to view a brief video taking you on a tour of Google Health.
+'); ?></p>
         <p>
-          <iframe width="640" height="360" src="http://www.youtube.com/embed/yNe6-p4G7Ik?rel=0" frameborder="0" allowfullscreen></iframe>
-        </p>
+<iframe width="560" height="315" src="http://www.youtube.com/embed/yNe6-p4G7Ik?rel=0" frameborder="0" allowfullscreen></iframe>        </p>
         <p><?php echo t('To summarize aspects of Google Health:'); ?></p>
         <ul>
           <li><?php echo t('Store and manage all health information securely.'); ?></li>
@@ -1045,6 +1102,27 @@ chicken for lunch today. So I think I’d like to try their fish!”'); ?></p>
           <li><?php echo t('Learn how medications may interact through an integrated program that checks for potential problems between drugs.'); ?></li>
           <li><?php echo t('Select those with whom you want to share key medical information.'); ?></li>
         </ul>
+        
+        <br /><br />
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo;</a></div>
+    </div>
+    
+    <!-- Lesson #3 - Managing Health Information and Record Keeping --> 
+    <!-- slide #10 -->
+    
+    <div id="lesson-3-slide-10" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('Activity – Reviewing Internet-Based PHR Tools'); ?></h2>
+        <hr />
+        <h5><?php echo t('ProfileMD'); ?></h5>
+        
+        <p><?php echo t('The final PHR tool we will review is one of the latest Internet-based programs designed for Smartphones.  ProfileMD is a freeware PHR that allows immediate access to medical health history and information via your smartphone or PDA.'); ?></p>
+        
+        <p><?php echo t('Download the software to your computer and sync with your handheld device.'); ?></p>
+               
+       <p><a href="http://www.e-medtools.com/profilemd.html" target="_blank" /><?php echo t('Download Site for ProfileMD'); ?></a></p>
+        
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo;</a></div>
     </div>
@@ -1054,23 +1132,17 @@ chicken for lunch today. So I think I’d like to try their fish!”'); ?></p>
     
     <div id="lesson-3-slide-11" class="course-slide">
       <div class="content">
-        <h2 class="flowers"><?php echo t('Activity – Reviewing Internet-Based PHR Tools'); ?></h2>
-        <hr />
-        <p><?php echo t('ProfileMD'); ?></p>
-        <p><?php echo t('The final PHR tool we will review is one of the latest Internet-based programs designed for Smartphones or PalmOS PDA (personal digital assistant). ProfileMD is a freeware PHR that allows immediate access to medical health history and information via your smartphone or PDA. Search the Web and download the software to your computer and sync with your handheld device.'); ?></p>
-      </div>
-      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo;</a></div>
-    </div>
-    
-    <!-- Lesson #3 - Managing Health Information and Record Keeping --> 
-    <!-- slide #12 -->
-    
-    <div id="lesson-3-slide-12" class="course-slide">
-      <div class="content">
         <h2 class="flowers"><?php echo t('Exercise – CARE Coaching and Selecting PHRs'); ?></h2>
         <hr />
-        <p><?php echo t('Asking the right questions is key to determine which PHR product is right for you and your family. This exercise is designed to help you determine exactly that. Review the previously described internet-based tools, My Family Health Profile and ProfileMD, and respond to the following questions.'); ?></p>
-        <p>down laod acvitity button here</p>
+        		<a href="<?php echo $this->getImagesUrl('CARECoachingOnlineImages/ExerciseCARECoachingandSelectingPHRs.pdf'); ?>" target="_blank" /><img class="normal" width="48" height="48" src="<?php echo $this->getImagesUrl('pdf-icon.png'); ?>" /></a>
+
+        <p>
+		
+		<?php echo t('Asking the right questions is key to determine which PHR product is right for you and your family. This exercise is designed to help you determine exactly that. Review the previously described internet-based tools, My Family Health Profile and ProfileMD, and respond to the following questions.'); ?></p>
+
+
+
+
       </div>
       <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> <?php echo t('Complete Lesson'); ?> </a></div>
     </div>
@@ -1082,14 +1154,22 @@ chicken for lunch today. So I think I’d like to try their fish!”'); ?></p>
       <div class="content">
         <h2 class="flowers"><?php echo t('Understanding the Health Care System and Utilization by Older Adults'); ?></h2>
         <hr />
-        <p><?php echo t('Navigating the Health Care System'); ?><br />
-          <?php echo t('The goal for any patient in the health care system should be to optimize your chances of achieving a good outcome when health care is needed. Taking charge of one’s health care is key.'); ?></p>
-        <p><?php echo t('CARE Coaching: Relating'); ?><br />
-          <?php echo t('The third component of CARE Coaching is that of relating. The most important factor in the patient-doctor relationship is communicating or relating.'); ?></p>
-        <p><?php echo t('Video – How to Communicate with the Physician'); ?><br />
-          <?php echo t('Dr. Lori Whittaker, a family physician in Seattle, shares tips and advice for how to speak up for yourself when you are at the doctor\'s office.'); ?></p>
-        <p><?php echo t('Helping Older Parents Talk to Medical Professionals about Health Care'); ?><br />
-          <?php echo t('Older adults may especially loath to question physicians because they were raised in a generation where doctors were considered to be above reproach. In planning for your discussions with your older parents and their physicians, remember that as their caregiver, you have an obligation to understand your parents’ medical care.'); ?></p>
+        <h4><?php echo t('Navigating the Health Care System'); ?></h4>
+        <p><?php echo t('The goal for any patient in the health care system should be to optimize your chances of achieving a good outcome when health care is needed. Taking charge of one’s health care is key.'); ?></p>
+        <h4><?php echo t('CARE Coaching: Relating'); ?></h4>
+        <p><?php echo t('The third component of CARE Coaching is that of relating. The most important factor in the patient-doctor relationship is communicating or relating.'); ?></p>
+        <h4><?php echo t('Video – How to Communicate with the Physician'); ?></h4>
+        <p><?php echo t('Dr. Lori Whittaker, a family physician in Seattle, shares tips and advice for how to speak up for yourself when you are at the doctor\'s office.'); ?></p>
+        <h4><?php echo t('Helping Older Parents Talk to Medical Professionals about Health Care'); ?></h4>
+        <p><?php echo t('Older adults may especially loath to question physicians because they were raised in a generation where doctors were considered to be above reproach. In planning for your discussions with your older parents and their physicians, remember that as their caregiver, you have an obligation to understand your parents’ medical care.'); ?></p>
+           <h4><?php echo t('Exercise – How are You with PowerPhrases?'); ?></h4>
+           <p><?php echo t('Test your skills at PowerPhrases!'); ?></p>
+        <h4><?php echo t('Activity – Practicing PowerPhrases with Your Health Provider'); ?></h4>
+        <p><?php echo t('Now that you have assessed your PowerPhrase skill level, we will now focus on PowerPhrases related to your health care provider to ensure a positive visit. By planning specific phrases to use in advance of the appointment, the patient can impact the outcome of the visit.'); ?></p>
+        <h4><?php echo t('Learning What You Need to Know About the Health Care System'); ?></h4>
+        <p><?php echo t('Learning what you need to know about the health care system can seem a daunting task. We break down some of the core components that are key for you to understand as caregivers for older parents.'); ?></p>
+        
+        <br /><br />
       </div>
       <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Start Course &raquo;'); ?> </a></div>
     </div>
@@ -1101,12 +1181,8 @@ chicken for lunch today. So I think I’d like to try their fish!”'); ?></p>
       <div class="content">
         <h2 class="flowers"><?php echo t('Understanding the Health Care System and Utilization by Older Adults (continued)'); ?></h2>
         <hr />
-        <p><?php echo t('Exercise – How are You with PowerPhrases?'); ?><br />
-          <?php echo t('Test your skills at PowerPhrases!'); ?></p>
-        <p><?php echo t('Activity – Practicing PowerPhrases with Your Health Provider'); ?><br />
-          <?php echo t('Now that you have assessed your PowerPhrase skill level, we will now focus on PowerPhrases related to your health care provider to ensure a positive visit. By planning specific phrases to use in advance of the appointment, the patient can impact the outcome of the visit.'); ?></p>
-        <p><?php echo t('Learning What You Need to Know About the Health Care System'); ?><br />
-          <?php echo t('Learning what you need to know about the health care system can seem a daunting task. We break down some of the core components that are key for you to understand as caregivers for older parents.'); ?></p>
+        <p><?php echo t('Plaese check back shortly'); ?></p>
+       
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo;</a></div>
     </div>
@@ -1276,16 +1352,36 @@ chicken for lunch today. So I think I’d like to try their fish!”'); ?></p>
       <div class="content">
         <h2 class="flowers"><?php echo t('Relocation and Transfers by Older Adults within the Health Care System - Topics'); ?></h2>
         <hr />
-        <p><?php echo t('“I Think It’s Time We Sell the House.”'); ?><br />
+        <h4><?php echo t('“I Think It’s Time We Sell the House.”'); ?></h4>
         <p><?php echo t('In Section 2, we focused on a framework and experiences in communicating effectively with your older parents. Probably the one area that is most challenging to discuss with older parents deals with their ability to continue to live independently in their own home or apartment.'); ?></p>
-        <p><?php echo t('CARE Coaching: Encouraging'); ?><br />
+       <h4><?php echo t('CARE Coaching: Encouraging'); ?></h4>
+       <p>
           <?php echo t('The fourth and final component of CARE Coaching is that of encouraging. The decision to move to a retirement community is often a difficult one for older adults and families alike. Changes in health or other factors typically drive this decision, but being proactive and understanding how to make educated choices is key.'); ?></p>
-        <p><?php echo t('Activity – Relocating Scenarios'); ?><br />
+       <h4><?php echo t('Activity – Relocating Scenarios'); ?></h4>
+       <p>
           <?php echo t('How can I convince my older parents to move to a retirement community? Here are two scenarios for you to respond to.'); ?></p>
-        <p><?php echo t('General Indicators When It May be Time to Consider Moving'); ?><br />
+        <h4><?php echo t('General Indicators When It May be Time to Consider Moving'); ?></h4>
+        <p>
           <?php echo t('Although each situation is going to be very different, often medical conditions or mental awareness change warrant considering a move to a place where help with activities of daily living is available. In other cases, older adults may begin to find that tasks like cooking, housekeeping, shoveling snow, mowing the lawn, and taking care of home repairs have become a burden. Here are some general indicators to consider.'); ?></p>
-        <p><?php echo t('Understanding the Options: From Staying at Home to Retirement Living'); ?><br />
+       <h4><?php echo t('Understanding the Options: From Staying at Home to Retirement Living'); ?></h4>
+       <p>
           <?php echo t('Major life changes are seldom easy particularly when it comes to considering moving out of one’s home with all its memories. Our aging population and growing consumer expectations for choice and quality in care for older adults have sparked an increasing number of options for older adults and their families. We will look at some of those choices in this next section.'); ?></p>
+          <h4><?php echo t('“Aging in Place” - Planning for the Future'); ?></h4>
+          <p>
+          <?php echo t('“Aging in place” is a term often used to describe an older adult’s ability to stay in one location over the course of one’s life even as their medical and personal needs change over time. That may refer to living in a senior living community that provides services and care across the aging continuum or it may refer to continuing to live in one’s home and have services and care brought in by outside health care agencies.'); ?></p>
+      <h4><?php echo t('What are Other Options for my Older Parents?'); ?></h4>
+      <p>
+          <?php echo t('Understanding all of one’s options is important in making a big decision such as relocating. The more preplanning that can occur as well as understanding all options is key. Let’s look at some additional options for older adults.'); ?></p>
+      <h4><?php echo t('Exercise – Visiting a Senior Living Community'); ?></h4>
+      <p>
+          <?php echo t('The best way to understand senior living communities is to actually visit one in your area. We have developed the following checklist that you may print and take with you on your visit. We recommend visiting a CCRC so that you may get an idea of the different levels of services and care that are available to residents.'); ?></p>
+      <h4><?php echo t('Long Distance Caregiving'); ?></h4>
+      <p>
+          <?php echo t('With many grown children seeking new career opportunities or needing to relocate due to their job away from their parents and the home in which they were raised, long distance caregiving has grown as an issue in our society. Here are some fast facts.'); ?></p>
+       <h4><?php echo t('Activity – CARE Coaching through Long Distance Caregiving') ?></h4>
+       <p>
+          <?php echo t('Read the following scenario and then respond to the CARE coaching questions. We provide some initial “openers” for CARE coaching questions for you to more fully develop your own questions.'); ?></p>
+          <br /><br />
       </div>
       <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Start Course &raquo;'); ?> </a></div>
     </div>
@@ -1297,16 +1393,8 @@ chicken for lunch today. So I think I’d like to try their fish!”'); ?></p>
       <div class="content">
         <h2 class="flowers"><?php echo t('Relocation and Transfers by Older Adults within the Health Care System - Topics (continued)'); ?></h2>
         <hr />
-        <p><?php echo t('“Aging in Place” - Planning for the Future'); ?><br />
-          <?php echo t('“Aging in place” is a term often used to describe an older adult’s ability to stay in one location over the course of one’s life even as their medical and personal needs change over time. That may refer to living in a senior living community that provides services and care across the aging continuum or it may refer to continuing to live in one’s home and have services and care brought in by outside health care agencies.'); ?></p>
-        <p><?php echo t('What are Other Options for my Older Parents?'); ?><br />
-          <?php echo t('Understanding all of one’s options is important in making a big decision such as relocating. The more preplanning that can occur as well as understanding all options is key. Let’s look at some additional options for older adults.'); ?></p>
-        <p><?php echo t('Exercise – Visiting a Senior Living Community'); ?><br />
-          <?php echo t('The best way to understand senior living communities is to actually visit one in your area. We have developed the following checklist that you may print and take with you on your visit. We recommend visiting a CCRC so that you may get an idea of the different levels of services and care that are available to residents.'); ?></p>
-        <p><?php echo t('Long Distance Caregiving'); ?><br />
-          <?php echo t('With many grown children seeking new career opportunities or needing to relocate due to their job away from their parents and the home in which they were raised, long distance caregiving has grown as an issue in our society. Here are some fast facts.'); ?></p>
-        <p><?php echo t('Activity – CARE Coaching through Long Distance Caregiving') ?><br />
-          <?php echo t('Read the following scenario and then respond to the CARE coaching questions. We provide some initial “openers” for CARE coaching questions for you to more fully develop your own questions.'); ?></p>
+        <p><?php echo t('Please check back shortly'); ?></p>
+       
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo;</a></div>
     </div>
@@ -1653,18 +1741,24 @@ are taking.'); ?></li>
       <div class="content">
         <h2 class="flowers"><?php echo t('Promoting Safety of Older Relatives and Friends in Caring for Themselves'); ?></h2>
         <hr />
-        <p><?php echo t('Knowledge Itself is Power'); ?><br />
+        <h4><?php echo t('Knowledge Itself is Power'); ?></h4>
+        <p>
           <?php echo t('When we consider how to promote safety of older adults so that they may remain independent for as long as possible, having knowledge and understanding what’s important will facilitate decision making in the future. In this section, we look at several scenarios – all of which relate to safety in some way – that are commonly faced by family caregivers and their older parents.'); ?></p>
-        <p><?php echo t('Home Safety and Older Adults'); ?><br />
+        <h4><?php echo t('Home Safety and Older Adults'); ?></h4>
+        <p>
           <?php echo t('Regardless if your parents remain in their own home, move to a senior living community, or move in with you, home safety is an important topic for discussion. The overall goal of assessing home safety needs and making modifications as necessary is to give older adults a sense of independence in their environment.'); ?></p>
-        <p><?php echo t('Activity – Using Your Powers of Observation'); ?><br />
+        <h4><?php echo t('Activity – Using Your Powers of Observation'); ?></h4>
+        <p>
           <?php echo t('During your next visit, use your powers of observation to note changes in several areas. You may want to make mental notes and then jot down some of your observations privately. We have included some general questions to get you started in this activity.'); ?></p>
-        <p><?php echo t('Additional Home Safety Resources'); ?><br />
+        <h4><?php echo t('Additional Home Safety Resources'); ?></h4>
+        <p>
           <?php echo t('The U.S. Consumer Product Safety Commission estimates that over 1.5 million adults ages 65 and older are treated each year in hospital emergency rooms due to injuries from hazards in the home. The Commission believes that many of these injuries are preventable with some simple steps to correct the hazards. Here are some general recommendations and downloadable resources to consider.'); ?></p>
-        <p><?php echo t('Considering Your Older Parents Moving in with You?'); ?><br />
+        <h4><?php echo t('Considering Your Older Parents Moving in with You?'); ?></h4>
+        <p>
           <?php echo t('More than 3.6 million older adults live with their children (up 67% from 2000) according to U.S. Census figures. With the economy and housing market issues, many more examples of older parents moving in with their children are coming to light.'); ?></p>
-        <p><?php echo t('Exercise – Assessing the Situation'); ?><br />
+        <h4><?php echo t('Exercise – Assessing the Situation'); ?></h4>
           <?php echo t('This exercise provides an opportunity for you and your family to consider key questions to explore potential for having older parents move in with you. As you read through each section, we include some CARE Coaching questions to bring out your best thinking about what would be important to you.'); ?></p>
+          <br /><br />
       </div>
       <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Start Course &raquo;'); ?></a></div>
     </div>
@@ -1676,16 +1770,22 @@ are taking.'); ?></li>
       <div class="content">
         <h2 class="flowers"><?php echo t('Promoting Safety of Older Relatives and Friends in Caring for Themselves (continued)'); ?></h2>
         <hr />
-        <p><?php echo t('Driving Concerns and Older Adults'); ?><br />
+        <h4><?php echo t('Driving Concerns and Older Adults'); ?></h4>
+        <p>
           <?php echo t('According to driving statistics, older adults have more fatal car accidents than any other age group. Additionally, older adults are more at risk for death after being involved in a car accident because of their age and health condition.'); ?></p>
-        <p><?php echo t('When to Limit or Stop Driving – Warning Signs'); ?><br />
+        <h4><?php echo t('When to Limit or Stop Driving – Warning Signs'); ?></h4>
+        <p>
           <?php echo t('AARP has developed a list of warning signs about when to limit or stop driving.'); ?></p>
-        <p><?php echo t('CARE Coaching: Talking to Your Parents about Their Driving'); ?><br />
+        <h4><?php echo t('CARE Coaching: Talking to Your Parents about Their Driving'); ?></h4>
+        <p>
           <?php echo t('Bringing up the discussion on driving is very challenging. By using CARE Coaching methods and breaking the driving conversation with your older parents into steps, you can better draw out the issues and support your parents in their transition.'); ?></p>
-        <p><?php echo t('Exercise Promotes Safety and Independence'); ?><br />
+        <h4><?php echo t('Exercise Promotes Safety and Independence'); ?></h4>
+        <p>
           <?php echo t('Exercise for older adults is an important contributor to safety and independence. Many studies have demonstrated the positive benefits of exercise for older adults regardless of age. As we get older exercise is incredibly important to our overall health.'); ?></p>
-        <p><?php echo t('Activity – Resources on Exercises Designed for Older Adults'); ?><br />
+        <h4><?php echo t('Activity – Resources on Exercises Designed for Older Adults'); ?></h4>
+        <p>
           <?php echo t('Provided are some resources from the National Institute on Aging and exercise physiologists on exercises designed for older adults.'); ?></p>
+          <br /><br />
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo;</a></div>
     </div>
@@ -2157,20 +2257,29 @@ are taking.'); ?></li>
       <div class="content">
         <h2 class="flowers"><?php echo t('Supporting Personal Choice and Preferences of Older Adults in Health and Care Decision Making'); ?></h2>
         <hr />
-        <p><?php echo t('It’s All about Choice'); ?><br />
+        <h4><?php echo t('It’s All about Choice'); ?></h4>
+        <p>
           <?php echo t('Self-determination means having the freedom to be in charge of one’s own life, choosing where you live, who you spend time with, and what you do every day.  It means having the resources you need to create a good life and to make responsible decisions.  We all want to feel that we have choices in our daily lives.'); ?></p>
-        <p><?php echo t('Exercise – Identifying Solutions to Support Choice and Preferences'); ?><br />
+        <h4><?php echo t('Exercise – Identifying Solutions to Support Choice and Preferences'); ?></h4>
+        <p>
           <?php echo t('Every caregiving situation is unique.  Many factors come into play when considering the best possible solutions about your parents and their future.  In this exercise, we provide several questions for you to use as a framework to “interview” your parents regarding their choices and preferences for their future.'); ?></p>
-        <p><?php echo t('Are You a “Sandwich Generation” Caregiver?'); ?><br />
+        <h4><?php echo t('Are You a “Sandwich Generation” Caregiver?'); ?></h4>
+        <p>
           <?php echo t('If you are between the ages of 35 to 54 and are caring for both younger ones such as children and older parents or other family members and probably employed at the same time, you may be a “sandwich generation” caregivers.  You are not alone as approximately 20 million American fit this description.'); ?></p>
-        <p><?php echo t('Activity – Ways to Manage Your Own Stress'); ?><br />
+        <h4><?php echo t('Activity – Ways to Manage Your Own Stress'); ?></h4>
+        <p>
           <?php echo t('The American Psychological Association offers several strategies to help those in the “sandwich generation” manage their stress.  In managing stress, journaling can also be a very effective tool to help identify what situations or events trigger stressful feelings, how you deal (or don’t deal) with stress, and how you may manage stress.  In this activity, you focus on journaling to help manage stress.'); ?></p>
-        <p><?php echo t('Family Communication: When Siblings Attack!'); ?><br />
+        <h4><?php echo t('Family Communication: When Siblings Attack!'); ?></h4>
+        
+        <p>
           <?php echo t('Family dynamics can be very complex.  We have been talking about your caregiving throughout this course in relation to your older parents.  We cannot forget that, in many families, family dynamics also include siblings – whether they are yours or your parents.  We continue to relive relationships with siblings and other members of our extended families that began in childhood.'); ?></p>
-        <p><?php echo t('Exercise – Developing an Ecomap'); ?><br />
+        <h4><?php echo t('Exercise – Developing an Ecomap'); ?></h4>
+        <p>
           <?php echo t('Ecomaps are used to evaluate a person’s environment and connections to provide an opportunity to consider his or her unique situation.  This exercise allows further insight into existing and potential resources in your loved one’s environment.'); ?></p>
-        <p><?php echo t('CARE Coaching Review: Talking wih Your Older Parents'); ?><br />
+        <h4><?php echo t('CARE Coaching Review: Talking wih Your Older Parents'); ?></h4>
+        <p>
           <?php echo t('Let’s just take a moment to review the core components of CARE Coaching in relation to talking with your older parents.'); ?></p>
+          <br /><br />
       </div>
       <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Start Course &raquo;'); ?> </a></div>
     </div>
