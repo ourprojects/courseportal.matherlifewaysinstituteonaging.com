@@ -205,7 +205,6 @@ $this->widget(
       <h2 class="flowers"> <?php echo t('Tutorial'); ?> </h2>
       <hr />
       <img src="<?php echo $this->getImagesUrl('116777136r.jpeg'); ?>" alt="<?php echo t('Tutorial'); ?>" />
-      <h4><?php echo t('THANK YOU!'); ?></h4>
       <p><?php echo t('We appreciate your support and interest in Mather LifeWays Institute on Aging. Through conducting applied research, we have developed award-winning, 
 			evidence-based education programs for professionals who serve older adults. Staffed by researchers and educators, 
 			we are a global resource for information about wellness, successful aging service innovations, and 
@@ -219,16 +218,18 @@ $this->widget(
       <p><?php echo t('You will need the following applications to successfully complete this tutorial:'); ?></p>
       <p>
       <ul>
-        <li style="display:inline"> <img class="normal" width="64" height="64" src="<?php echo $this-> getImagesUrl('word.png'); ?>" alt="<?php echo t('Word Processor'); ?>" /></li>
-        <li style="display:inline"> <img class="normal" width="64" height="64" src="<?php echo $this-> getImagesUrl('spreadsheet.png'); ?>" alt="<?php echo t('Spreadsheet Processor'); ?>" /></li>
-        <li style="display:inline"> <a href="mailto:jwoodall@matherlifeways.com" /><img class="normal" width="64" height="64" src="<?php echo $this-> getImagesUrl('email.png'); ?>" alt="<?php echo t('(Email Client'); ?>" /></a></li>
-        <li style="display:inline"> <a href="http://get.adobe.com/reader/" target="_blank" /> <img class="normal" width="64" height="64" src="<?php echo $this-> getImagesUrl('pdf-icon.png'); ?>" alt="<?php echo t('Adobe Reader'); ?>" /></a></li>
+        <li style="display:inline"> <img class="normal" width="48" height="48" src="<?php echo $this-> getImagesUrl('word.png'); ?>" alt="<?php echo t('Word Processor'); ?>" /></li>
+        <li style="display:inline"> <img class="normal" width="48" height="48" src="<?php echo $this-> getImagesUrl('spreadsheet.png'); ?>" alt="<?php echo t('Spreadsheet Processor'); ?>" /></li>
+        <li style="display:inline"> <a href="mailto:jwoodall@matherlifeways.com" /><img class="normal" width="48" height="48" src="<?php echo $this-> getImagesUrl('email.png'); ?>" alt="<?php echo t('(Email Client'); ?>" /></a></li>
+        <li style="display:inline"> <a href="http://get.adobe.com/reader/" target="_blank" /> <img class="normal" width="48" height="48" src="<?php echo $this-> getImagesUrl('pdf-icon.png'); ?>" alt="<?php echo t('Adobe Reader'); ?>" /></a></li>
       </ul>
-      </p><br /><br />
+      </p>
       <br />
-      <p><?php echo t('The following software packages are compatible with this Tutorial\'s requirements: '); ?> <a href="http://www.openoffice.org" target="_blank" />Apache Open Office</a>, <a href="http://www.apple.com/iwork/" target="_blank" />Apple iWork</a>, <a href="http://office.microsoft.com" target="_blank" />Microsoft Office</a>.</p>
+      <br />
+      <br />
+      <p><?php echo t('The following software packages are compatible with this Tutorial\'s requirements: '); ?> <a href="http://www.openoffice.org" target="_blank" />Apache Open Office</a>, <a href="http://www.apple.com/iwork/" target="_blank" />Apple iWork</a>, <?php echo t('or'); ?> <a href="http://office.microsoft.com" target="_blank" />Microsoft Office</a>.</p>
       <h5><?php echo t('Tutorial Facilitator'); ?></h5>
-      <p><?php echo t('The Tutorial and/or Course Facilitators can be accessed by clicking on the "Email Client" icon'); ?></p>
+      <p><?php echo t('Your course facilitator can be accessed by clicking on the "Email Client" icon'); ?></p>
       <img style="float:left;" width="64" height="64" src="<?php echo $this->getImagesUrl('skd182124sdcr.png'); ?>" alt="" />
       <p><?php echo t('Jon Woodall - is responsible for all MLIA corporate workforce wellness programs related to design, implementation, publication, and evaluation. Additionally, he seeks new grant funding to support or extend current grants related to corporate workforce wellness programs. He is alos one of several online course facilitators.'); ?></p>
       <br />
@@ -244,9 +245,6 @@ $this->widget(
     <div class="content">
       <h2 class="flowers"> <?php echo t('Alzheimer\'s disease'); ?> </h2>
       <hr />
-      <p  style="float:right; margin: 0px 15px;">
-        <iframe width="400" height="225" src="http://www.youtube.com/embed/In1IJocVor8?rel=0" frameborder="0" allowfullscreen></iframe>
-      </p>
       <p> <?php echo t('Memory loss and other signs of mental decline have profound effects on the lives of individuals and families. But we are
 			convinced that a good quality of life can still be maintained for all concerned by learning to make changes in lifestyle and outlook. For
 			many family members, this involves a change in relationships and priorities. At times, the demands may seem overwhelming, but
@@ -265,6 +263,9 @@ $this->widget(
         <li><?php echo t('Millions of Americans are living with Alzheimer\'s disease.'); ?> </li>
         <li><?php echo t('Alzheimer\'s is not a normal part of aging'); ?> </li>
       </ul>
+      <p>
+        <iframe width="400" height="225" src="http://www.youtube.com/embed/In1IJocVor8?rel=0" frameborder="0" allowfullscreen></iframe>
+      </p>
       <p> <b> <?php echo t('What to look for if you suspect someone is suffering from Alzheimer\'s disease:'); ?> </b> </p>
       <ul>
         <li><?php echo t('Challenges in planning or solving problems'); ?></li>
@@ -289,8 +290,7 @@ $this->widget(
 			disease. It is an overall term that describes a wide range of symptoms associated with a decline in memory or other thinking skills 
 			severe enough to reduce a person\'s ability to perform everyday activities. A medical diagnosis is required to determine the underlying 			cause or causes of symptoms.'); ?> </p>
       <p> <b><?php echo t('Symptoms and signs of dementia'); ?></b> </p>
-      <p> <?php echo t('While symptoms of dementia can vary greatly, at least two of the following core mental functions, amongst others, must be significantly impaired to be
-			considered dementia:'); ?> </p>
+      <p> <?php echo t('While symptoms of dementia can vary greatly, at least two of the following core mental functions, amongst others, must be significantly impaired to be onsidered dementia:'); ?> </p>
       <ul>
         <li><?php echo t('Memory'); ?></li>
         <li><?php echo t('Communication and language'); ?></li>
@@ -299,20 +299,8 @@ $this->widget(
       <p> <?php echo t('People with dementia may have problems with short-term memory, keeping track of a purse or wallet, paying bills, planning and
 			preparing meals, remembering appointments or traveling out of the neighborhood. Many dementias are progressive, meaning symptoms start
 			out slowly and gradually get worse.'); ?> </p>
-      <p><?php echo t('Using your word or spreadsheet processor, please search the Internet for additional symptoms and signs of dementia that have not been mentioned here and list them. Once completed, please email your Facilitator the attachment by clicking on the "Email Client" icon.'); ?></p>
-      <p>
-      <ul>
-        <li style="display: list-item; list-style-type:none;" />
-        <img class="normal" width="64" height="64" src="<?php echo $this->getImagesUrl('word.png'); ?>" />
-        </li>
-        <li style="display:list-item; list-style-type:none; margin-left:20px;" />
-        <img class="normal" width="64" height="64" src="<?php echo $this->getImagesUrl('spreadsheet.png'); ?>" />
-        </li>
-        <li style="display:list-item; list-style-type:none; margin-left:20px;" />
-        <a href="mailto:jwoodall@matherlifeways.com" /> <img class="normal" width="64" height="64" src="<?php echo $this->getImagesUrl('email.png'); ?>" /></a>
-        </li>
-      </ul>
-      </p>
+      <p> <?php echo t('Using your spreadsheet processor, please search the Internet for additional symptoms and signs of dementia that have not been mentioned here and list them. Once completed, please email your Facilitator the attachment.'); ?></p>
+      <p><img class="normal" width="48" height="48" src="<?php echo $this->getImagesUrl('spreadsheet.png'); ?>" /><a href="mailto:jwoodall@matherlifeways.com" /> <img class="normal" width="48" height="48" src="<?php echo $this->getImagesUrl('email.png'); ?>" /></a></p>
       <br />
       <br />
     </div>
