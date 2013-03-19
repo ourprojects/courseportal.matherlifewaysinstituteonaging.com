@@ -109,7 +109,7 @@ $this->widget(
   </div>
   <div class="box-sidebar four">
     <h3>Aging in Action</h3>
-    <p>Aging in Action is Mather LifeWays Institute on Aging's monthly e-newsletter and blog containing the latest research news in the field of aging.</p>
+    <p><?php echo t('Aging in Action is Mather LifeWays Institute on Aging\'s monthly e-newsletter and blog containing the latest research news in the field of aging.'); ?></p>
     <a href="http://twitter.com/aginginaction" target="_blank"> <img class="block-center" src="<?php echo $this->getImagesUrl('twitter-bird.png'); ?>" alt="Twitter" /></a> </div>
 </div>
 <div class="column-wide">
