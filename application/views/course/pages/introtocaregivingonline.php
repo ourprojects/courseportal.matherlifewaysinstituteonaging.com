@@ -159,9 +159,10 @@ foreach(array(
       <div class="content">
         <h2 class="flowers"><?php echo t('Defining, Describing & Understanding Caregiving'); ?></h2>
         <hr />
-        <h4 style="text-align:center;"><?php echo t('Thank You! We appreciate your support and interest in Mather LifeWays Institute on Aging.'); ?></h4>
+                <img src="<?php echo $this->getImagesUrl('116777136r.jpeg'); ?>" alt="<?php echo t('Tutorial'); ?>" />
+
+        <h4><?php echo t('Thank You! We appreciate your support and interest in Mather LifeWays Institute on Aging.'); ?></h4>
         <br />
-        <img src="<?php echo $this->getImagesUrl('116777136r.jpeg'); ?>" alt="<?php echo t('Tutorial'); ?>" />
         <p><?php echo t('Few are fully prepared for the responsibilities and tasks involved in caring for an older adult. As a caregiver, it is important to have a clear plan or guide that has multiple paths. This five-lesson online course introduces the basics of the caregiver role and explores the challenges associated with older adult care.'); ?></p>
         <p><?php echo t('We hope you enjoy and learn from this course and would appreciate any feedback along the way. Best of luck!'); ?></p>
         <h5><?php echo t('In this lesson, we will:'); ?></h5>
@@ -197,12 +198,13 @@ foreach(array(
         <p><?php echo t('The AARP Public Policy Institute reported that in 2009, about 42.1 million family caregivers in the United States provided care to an adult with limitations in daily activities at any given point in time, and about 61.6 million provided care at some time during the year. The estimated economic value of their unpaid contributions was approximately $450 billion in 2009, up from an estimated $375 billion in 2007. That is a lot of money and a lot of caregivers!'); ?></p>
         <p><?php echo t('Please search the Interent for the following reports to get a better understanding of "caregiving:"'); ?></p>
         <ul>
-          <li>Double Jeopardy for Baby Boomers Caring for Their Parents</li>
-          <li>The e-Connected Family Caregiver</li>
-          <li>Caregivers of Veterans – Serving on the Homefront</li>
-          <li>Caregiving in the U.S. 2009</li>
+          <li><i>Double Jeopardy for Baby Boomers Caring for Their Parents</i></li>
+          <li><i>The e-Connected Family Caregiver</i></li>
+          <li><i>Caregivers of Veterans – Serving on the Homefront</i></li>
+          <li><i>Caregiving in the U.S. 2009</i></li>
         </ul>
-        <p><?php echo t('After learning how several organzitions define caregiving, would you consider yourself a caregiver and why? Please email your Facilitator your response. '); ?><a href="mailto:jwoodall@matherlifeways.com"><?php echo t('Email Facilitator'); ?></a></p>
+        <p>
+		<a href="mailto:jwoodall@matherlifeways.com" target="_blank"><img class="normal" src="<?php echo $this->getImagesUrl('email.png'); ?>" /></a><?php echo t('After learning how several organzitions define caregiving, would you consider yourself a caregiver and why? Please email your Facilitator your response. '); ?></p>
         <br />
         <br />
       </div>
@@ -232,7 +234,7 @@ foreach(array(
           <li><?php echo t('Self-esteem needs, and'); ?></li>
           <li><?php echo t('Self- actualization needs'); ?></li>
         </ul>
-        <p><?php echo t('Please search the Internet for detailed information on these topics.'); ?></p>
+        <p><?php echo t('Please search the Internet for detailed information on these topics, and post your findings on the Forum'); ?></p>
         <br />
         <br />
       </div>
@@ -265,14 +267,14 @@ foreach(array(
         <p><?php echo t('While many consider careing for a parent and/or grandparent the summation of the term \'caregiving,\' there are many more roles that are included when defining caregiving. As you have read in the reports listed above, careing for those other than our parents and/or grandparents also puts you in a caregiving role.'); ?></p>
         <p><?php echo t('As reported by the '); ?>Caregiver Network Resource, <?php echo t('caregiveres are wives, husbands, parents, children, friends, employees… Types of caregivers include:'); ?></p>
         <ul>
-          <li><?php echo t('Crisis Caregiver: Your family member manages most of the time on their own until there is an emergency.'); ?></li>
-          <li><?php echo t('Primary Caregiver: Your family member depends on you for regular assistance for two or more activities in their life. You make decisions that directly affect them. You may act as their representative in situations. You provide hands-on assistance with basic daily tasks (bathing, dressing, transportation, money matters, etc.)'); ?></li>
-          <li><?php echo t('Secondary Caregiver: Your parent, sibling, spouse, etc. functions as the primary caregiver and you provide assistance to them.'); ?></li>
-          <li><?php echo ('Working Caregiver: You hold a part-time or full-time job and provide physical or financial support to someone who depends upon your care.'); ?></li>
-          <li><?php echo t('Long Distance Caregiver: You live at least an hour’s drive away and you provide much of your assistance by telephone. You depend on others to assist in caring for your relative.'); ?></li>
-          <li><?php echo t('Occasional Caregiver: You provide one or more services for someone on an irregular basis such as furnish transportation, assist with major household chores, balance the checkbook, etc.'); ?></li>
-          <li><?php echo t('Community Caregiver: You give a cheerful greeting or make personal contact while making deliveries, passing by or making a special call to check on the status of someone receiving care.'); ?></li>
-          <li><?php echo t('Future Caregiver: You are not a caregiver now, but have friends or relatives who will probably need care in the years ahead.'); ?></li>
+          <li><?php echo t('<b>Crisis Caregiver</b>: Your family member manages most of the time on their own until there is an emergency.'); ?></li>
+          <li><?php echo t('<b>Primary Caregiver</b>: Your family member depends on you for regular assistance for two or more activities in their life. You make decisions that directly affect them. You may act as their representative in situations. You provide hands-on assistance with basic daily tasks (bathing, dressing, transportation, money matters, etc.)'); ?></li>
+          <li><?php echo t('<b>Secondary Caregiver</b>: Your parent, sibling, spouse, etc. functions as the primary caregiver and you provide assistance to them.'); ?></li>
+          <li><?php echo ('<b>Working Caregiver</b>: You hold a part-time or full-time job and provide physical or financial support to someone who depends upon your care.'); ?></li>
+          <li><?php echo t('<b>Long Distance Caregiver</b>: You live at least an hour’s drive away and you provide much of your assistance by telephone. You depend on others to assist in caring for your relative.'); ?></li>
+          <li><?php echo t('<b>Occasional Caregiver</b>: You provide one or more services for someone on an irregular basis such as furnish transportation, assist with major household chores, balance the checkbook, etc.'); ?></li>
+          <li><?php echo t('<b>Community Caregiver</b>: You give a cheerful greeting or make personal contact while making deliveries, passing by or making a special call to check on the status of someone receiving care.'); ?></li>
+          <li><?php echo t('<b>Future Caregiver</b>: You are not a caregiver now, but have friends or relatives who will probably need care in the years ahead.'); ?></li>
         </ul>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
@@ -286,10 +288,20 @@ foreach(array(
         <hr />
         <img width="350" height="234" src="<?php echo $this->getImagesUrl('82152160.jpg'); ?>" alt="<?php echo t('Tutorial'); ?>" />
         <p><?php echo t('Whether you are an informal caregiver caring for a relative, or a professional caregiver - all caregivers share certain experiences. For many people, caregiving is not a job or a duty. It is doing what is right for a loved one. Caregiving is an unspoken promise that so many of us make in our relationships, to be there for our loved ones when they need us. Unfortunately, few people have the time, resources or ability to care for their aging or disabled loved one without any help. It is important as a caregiver to know your limits, take care of yourself, know your resources in the community, and understand the wants and needs of the person needing care.'); ?></p>
-        <p><?php echo('Please think about what type of caregiver you are, and email your Facilitator.'); ?><a href="mailto:jwoodall@matherlifeways.com"><?php echo t(' Email Facilitator'); ?></a></p>
-        <p><?php echo('Please search YouTube for postings that people have left explaining their caregiving situation. If possible, record and post your own video and monitor the responses over the next 8 weeks and send your Facilitator a email with the URL.'); ?></p>
+        
+        
+        <p>
+        <a href="mailto:jwoodall@matherlifeways.com" target="_blank"><img class="normal" src="<?php echo $this->getImagesUrl('email.png'); ?>" /></a><?php echo('Please think about what type of caregiver you are, and email your Facilitator.'); ?></p>
+        <br /><br />
+        
+        
+        <p>
+		<a href="http://www.youtube.com/" target="_blank" /><img class="normal" src="<?php echo $this->getImagesUrl('YouTubeIcon.png'); ?>" /></a><?php echo('Please search YouTube for postings that people have left explaining their caregiving situation. Then, record and post your own video and email your Facilitator the URL. We will review this video at the end of this course.'); ?></p>
+        
+        <br /><br />
+        
         <h4><?php echo t('Thank You!'); ?></h4>
-        <p><?php echo t('We want to thank you once again for your interest and participation. Now that you have commpleted this first Lesson, please feel free to email any comments or suggestions. We hope you have learned a lot and are looking forward to our continued interactions.'); ?></p>
+        <p><?php echo t('We want to thank you once again for your interest and participation. Now that you have commpleted this first Lesson, please feel free to email your Facilitator your comments or suggestions. We hope you have learned a lot and are looking forward to our continued interactions.'); ?></p>
       </div>
       <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> <?php echo t('Complete Lesson'); ?></a></div>
     </div>
