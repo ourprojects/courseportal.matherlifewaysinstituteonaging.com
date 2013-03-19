@@ -36,15 +36,6 @@ div.course-slide div.buttons {
 	right: 5px;
 	bottom: 5px;
 }
-#surveynotify {
-	color: #F00;
-	line-height: normal;
-	font-size: 22px;
-	text-align:center;
-}
-#developers p {
-	font-size: small;
-}
 div.course-slide img {
 	float: right;
 	margin: 0 15px 15px 15px;
@@ -53,7 +44,6 @@ div.course-slide img {
 	-webkit-border-radius: 7px;
 	border-radius: 7px;
 }
-
 div.course-slide img.normal {
 	float: left;
 	margin-left: 25px;
@@ -68,5 +58,21 @@ div.course-slide div.box-white {
 	width: 60%;
 }
 div.course-slide table {
-		border:solid;
-		width:65%;
+	border: solid;
+	width: 65%;
+}
+div.course-slide p.subtopic {
+	font-style: italic;
+	text-decoration: underline;
+}
+/* all non-slide css3 */
+
+#surveynotify {
+	color: #F00;
+	line-height: normal;
+	font-size: 22px;
+	text-align: center;
+}
+#developers p {
+	font-size: small;
+}
