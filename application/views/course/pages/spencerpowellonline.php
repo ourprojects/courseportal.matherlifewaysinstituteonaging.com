@@ -34,28 +34,13 @@ foreach(array(
     <h3><?php echo t('Pre-Course Survey'); ?></h3>
     <br />
     <p><?php echo t('Please complete the Pre-Course Survey before beginning this course. Your response are anonymous and are used to help improve your experience.'); ?></p>
-    <a href="<?php echo $this->createUrl('user/profile'); ?>" target="_self" /><img class="block-center" width="96" height="113" src="<?php echo $this->getImagesUrl('survey_icon2.png'); ?>" alt="" /></a>
+    <a href="<?php echo $this->createUrl('user/profile'); ?>" target="_self" /><img class="block-center" src="<?php echo $this->getImagesUrl('survey_icon2.png'); ?>" alt="" /></a>
     <hr />
     <p id="surveynotify"><?php echo t('Complete the<br />Pre-Course Survey'); ?></p>
     <br />
   </div>
   
-  <!-- sidebar #2 here -->
-  <div class="box-sidebar one">
-    <h3><?php echo t('Course Requirements'); ?></h3>
-    <p><b><?php echo t('Required Applications'); ?></b></p>
-    <p><a href="http://get.adobe.com/flashplayer/" target="_blank" /><img src="<?php echo $this->getImagesUrl('160x41_get_flashplayer.gif'); ?>" alt="<?php echo t('Adobe Flash Player'); ?>" /></a></p>
-    <p><a href="http://get.adobe.com/shockwave/" target="_blank" /><img src="<?php echo $this->getImagesUrl('get_shockwave-tn.gif'); ?>" alt="<?php echo t('Adobe ShockWave Player'); ?>" /></a></p>
-    <p><a href="http://get.adobe.com/reader/" target="_blank" /><img src="<?php echo $this->getImagesUrl('get_adobe_reader.png'); ?>" alt="<?php echo t('Adobe Reader'); ?>" /></a></p>
-    <hr />
-    <p><b><?php echo t('Required Software Suites'); ?></b></p>
-    <p><a href="http://office.microsoft.com" target="_blank" /> <?php echo t('Microsoft Office'); ?></a></p>
-    <p> <?php echo t('- OR - '); ?></p>
-    <p><a href="http://www.apple.com/iwork/" target="_blank" /><?php echo t('Apple iWork'); ?></a></p>
-    <p> <?php echo t('- OR - '); ?></p>
-    <p><a href="http://www.openoffice.org" target="_blank" /><?php echo t('Apache OpenOffice'); ?></a></p>
-  </div>
-  
+    
   <!-- SIDEBAR 2 -->
   
   <div class="box-sidebar three">
