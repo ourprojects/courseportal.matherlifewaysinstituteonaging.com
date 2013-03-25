@@ -170,21 +170,21 @@ class PhpBBUserBehavior extends CActiveRecordBehavior
         {
             $originalFile = $this->avatarPath . DIRECTORY_SEPARATOR . $model->{$this->avatarAttribute};
 
-            $file = Yii::app()->file->set($originalFile);   /* @var $file CFile */
             $orig = Yii::app()->image->load($originalFile); /* @var $orig CImageHandler */
 
             $this->_deleteAvatar($user);
 
-            $forumFileName = $this->forumAvatarSalt . '_' . $user->getPrimaryKey() . '.' . $file->getExtension();
-            $forumFile = $this->forumAvatarPath . DIRECTORY_SEPARATOR . $forumFileName;
-
-            $thumb = $orig->thumb($this->forumAvatarWidth, 5000)->save($forumFile, false, 100);
-
-            $user->user_avatar = $user->getPrimaryKey() . '_' . time()  . '.' . $file->getExtension();
-            $user->user_avatar_type = 1;
-            $user->user_avatar_width = $thumb->getWidth();
-            $user->user_avatar_height = $thumb->getHeight();
-            $user->save();
+            $forumFileName = $this->getForumAvatarSalt() . '_' . $user->getPrimaryKey() . '.' . $orig->ext;
+            $forumFile = $this->getForumAvatarPath() . DIRECTORY_SEPARATOR . $forumFileName;
+            
+            $thumb = $orig->resize($this->getForumAvatarWidth(), $this->getForumAvatarHeight());
+            if($thumb->save($forumFile)) {
+	            $user->user_avatar = $user->getPrimaryKey() . '_' . time()  . '.' . $orig->ext;
+	            $user->user_avatar_type = 1;
+	            $user->user_avatar_width = $thumb->width;
+	            $user->user_avatar_height = $thumb->height;
+	            $user->save();
+            }
         }
         else
         {
@@ -228,6 +228,11 @@ class PhpBBUserBehavior extends CActiveRecordBehavior
     protected function getForumAvatarWidth()
     {
         return $this->getConfigValue('avatar_max_width');
+    }
+    
+    protected function getForumAvatarHeight()
+    {
+    	return $this->getConfigValue('avatar_max_height');
     }
 
     protected $_configData = array();

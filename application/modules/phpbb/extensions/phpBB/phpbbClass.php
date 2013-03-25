@@ -40,7 +40,7 @@ class phpbbClass
 	{
 		global $phpbb_root_path, $phpEx, $db, $config, $user, $auth, $cache, $template, $_SID;
 		//fail presumption
-		$phpbb_result = "FAIL";
+		$phpbb_result = false;
 
 		//general info
 		$this->init(true);
@@ -55,7 +55,7 @@ class phpbbClass
 		//validate and authenticate
 		$validation = login_db($phpbb_vars["username"], $phpbb_vars["password"]);
 		if($validation['status'] == 3 && $auth->login($phpbb_vars["username"], $phpbb_vars["password"], $phpbb_vars["autologin"], $phpbb_vars["viewonline"], $phpbb_vars["admin"]))
-			$phpbb_result = "SUCCESS";
+			$phpbb_result = true;
 
 		//login issue noticed by Ezequiel Rabinovich (thanks)
 		$_SESSION['sid'] = $_SID;
@@ -67,8 +67,6 @@ class phpbbClass
 	public function user_logout()
 	{
 		global $phpbb_root_path, $phpEx, $db, $config, $user, $auth, $cache, $template;
-		//fail presumption
-		$phpbb_result = "FAIL";
 
 		//general info
 		$this->init(true);
@@ -82,10 +80,10 @@ class phpbbClass
 		{
 			$user->session_kill();
 			$user->session_begin();
-			$phpbb_result = "SUCCESS";
+			return true;
 		}
 
-		return $phpbb_result;
+		return false;
 	}
 
 	//user_loggedin
@@ -93,7 +91,7 @@ class phpbbClass
 	{
 		global $phpbb_root_path, $phpEx, $db, $config, $user, $auth, $cache, $template;
 		//fail presumtion
-		$phpbb_result = "FAIL";
+		$phpbb_result = false;
 
 		//general info
 		$this->init(false);
@@ -102,10 +100,7 @@ class phpbbClass
 		$user->session_begin();
 
 		//anonymous fix by John Issac (thanks)
-		if(is_array($user->data) && isset($user->data["user_id"]) && $user->data["user_id"] != ANONYMOUS && $user->data["user_id"] > 0)
-			$phpbb_result = "SUCCESS";
-
-		return $phpbb_result;
+		return is_array($user->data) && isset($user->data["user_id"]) && $user->data["user_id"] != ANONYMOUS && $user->data["user_id"] > 0;
 	}
 
 	//user_add
@@ -113,7 +108,7 @@ class phpbbClass
 	{
 		global $phpbb_root_path, $phpEx, $db, $config, $user, $auth, $cache, $template;
 		//fail presumtion
-		$phpbb_result = "FAIL";
+		$phpbb_result = false;
 
 		//if the mandatory parameters are not given fail
 		if(trim(@$phpbb_vars['username']) == '' || !isset($phpbb_vars['group_id']) || !isset($phpbb_vars['user_email']))
@@ -146,7 +141,7 @@ class phpbbClass
 		//foreach($user_row as $key => $value) if(isset($phpbb_vars[$key])) $user_row[$key] = $phpbb_vars[$key];
 		//register user
 		if($phpbb_user_id = user_add($user_row))
-			$phpbb_result = "SUCCESS";
+			$phpbb_result = true;
 
 		//update the rest of the fields
 		$this->user_update($phpbb_vars);
@@ -159,7 +154,7 @@ class phpbbClass
 	{
 		global $phpbb_root_path, $phpEx, $db, $config, $user, $auth, $cache, $template;
 		//fail presumtion
-		$phpbb_result = "FAIL";
+		$phpbb_result = false;
 
 		//general info
 		$this->init(false);
@@ -174,7 +169,7 @@ class phpbbClass
 
 		//delete user (always returns false)
 		user_delete("remove", $phpbb_vars["user_id"]);
-		$phpbb_result = "SUCCESS";
+		$phpbb_result = true;
 
 		return $phpbb_result;
 	}
@@ -184,7 +179,7 @@ class phpbbClass
 	{
 		global $phpbb_root_path, $phpEx, $db, $config, $user, $auth, $cache, $template;
 		//fail presumtion
-		$phpbb_result = "FAIL";
+		$phpbb_result = false;
 
 		//general info
 		$this->init(false);
@@ -214,7 +209,7 @@ class phpbbClass
 		if(strlen($sql) != 0)
 		{
 			$db->sql_query("UPDATE " . USERS_TABLE . " SET " . substr($sql, 2) . " WHERE user_id = '" . $phpbb_vars["user_id"] . "'");
-			$phpbb_result = "SUCCESS";
+			$phpbb_result = true;
 		}
 
 		return $phpbb_result;
@@ -225,7 +220,7 @@ class phpbbClass
 	{
 		global $phpbb_root_path, $phpEx, $db, $config, $user, $auth, $cache, $template;
 		//fail presumtion
-		$phpbb_result = "FAIL";
+		$phpbb_result = false;
 
 		//general info
 		$this->init(false);
@@ -239,7 +234,7 @@ class phpbbClass
 				return $phpbb_result;
 
 		$db->sql_query("UPDATE " . USERS_TABLE . " SET user_password = '" . phpbb_hash($phpbb_vars["password"]) . "' WHERE user_id = '" . $phpbb_vars["user_id"] . "'");
-		$phpbb_result = "SUCCESS";
+		$phpbb_result = true;
 
 		return $phpbb_result;
 	}

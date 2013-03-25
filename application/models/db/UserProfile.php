@@ -13,7 +13,7 @@
  * @property string $country_iso
  *
  * The followings are the available model relations:
- * @property User $user
+ * @property CPUser $user
  * @property States $state
  * @property QuestionAnswer[] $questionAnswers
  * 
@@ -51,7 +51,7 @@ class UserProfile extends ActiveRecord {
             array('zip_code', 'length', 'max' => 10),
         		
         	array('state_id', 'exist', 'attributeName' => 'id', 'className' => 'States', 'allowEmpty' => true),
-        	array('user_id', 'exist', 'attributeName' => 'id', 'className' => 'User', 'allowEmpty' => false),
+        	array('user_id', 'exist', 'attributeName' => 'id', 'className' => 'CPUser', 'allowEmpty' => false),
         		
         	array('user_id, firstname, lastname, city, zip_code, state_id, country_iso', 'safe', 'on' => 'search')
         );
@@ -62,7 +62,7 @@ class UserProfile extends ActiveRecord {
      */
     public function relations() {
         return array(
-            'user' => array(self::BELONGS_TO, 'User', 'user_id'),
+            'user' => array(self::BELONGS_TO, 'CPUser', 'user_id'),
         	'state' => array(self::BELONGS_TO, 'State', 'state_id'),
         	'questionAnswers' => array(self::HAS_MANY, 'QuestionAnswer', 'user_id'),
         );

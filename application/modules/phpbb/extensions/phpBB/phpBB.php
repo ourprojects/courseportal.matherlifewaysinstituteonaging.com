@@ -64,7 +64,7 @@ class phpBB extends CApplicationComponent
 	 * Login in phpBB
 	 * @param string $username
 	 * @param string $password
-	 * @return string 'FAIL' or 'SUCCESS'
+	 * @return boolean false on failure or true on success
 	 */
 	public function login($username, $password)
 	{
@@ -76,7 +76,7 @@ class phpBB extends CApplicationComponent
 
 	/**
 	 * Logout in phpBB
-	 * @return string 'FAIL' or 'SUCCESS'
+	 * @return boolean false on failure or true on success
 	 */
 	public function logout()
 	{
@@ -89,7 +89,7 @@ class phpBB extends CApplicationComponent
 	 * @param string $password
 	 * @param string $email
 	 * @param int $group_id
-	 * @return string 'FAIL' or 'SUCCESS'
+	 * @return boolean false on failure or true on success
 	 */
 	public function userAdd($username, $password, $email, $group_id = 2)
 	{
@@ -104,7 +104,7 @@ class phpBB extends CApplicationComponent
 	/**
 	 * Delete phpBB user
 	 * @param mixed $user integer userid or string username
-	 * @return string 'FAIL' or 'SUCCESS'
+	 * @return boolean false on failure or true on success
 	 */
 	public function userDelete($user)
 	{
@@ -119,7 +119,7 @@ class phpBB extends CApplicationComponent
 	 * Change user password
 	 * @param mixed $user integer userid or string username
 	 * @param string $password new password
-	 * @return string 'FAIL' or 'SUCCESS'
+	 * @return boolean false on failure or true on success
 	 */
 	public function changePassword($user, $password)
 	{
@@ -134,7 +134,7 @@ class phpBB extends CApplicationComponent
 
 	/**
 	 * Test if user is logged in phpBB
-	 * @return string 'FAIL' or 'SUCCESS'
+	 * @return boolean false on failure or true on success
 	 */
 	public function loggedin()
 	{
@@ -150,7 +150,7 @@ class phpBB extends CApplicationComponent
      *      // ...
      * );
 	 * @param array $phpbb_vars
-	 * @return string 'FAIL' or 'SUCCESS'
+	 * @return boolean false on failure or true on success
 	 */
 	public function user_update($phpbb_vars)
 	{

@@ -24,7 +24,7 @@ class UserController extends ApiController {
 	 * Displays the login page
 	 */
 	public function actionLogin() {
-		$user = new User('login');
+		$user = new CPUser('login');
 
 		// if it is ajax validation request
 		if(isset($_POST['ajax']) && $_POST['ajax'] === 'login-form') {
@@ -33,8 +33,8 @@ class UserController extends ApiController {
 		}
 
 		// collect user input data
-		if(isset($_POST['User'])) {
-			$user->attributes = $_POST['User'];
+		if(isset($_POST['CPUser'])) {
+			$user->attributes = $_POST['CPUser'];
 			// validate user input and redirect to the previous page if valid
 			if($user->login(isset($_POST['remember_me']))) {
 				Yii::app()->getUser()->setFlash('success', t('Welcome {email}!', array('{email}' => Yii::app()->getUser()->name)));
@@ -95,14 +95,14 @@ class UserController extends ApiController {
 	 */
 	public function actionRegister() {
 		$models = array(
-					'user' => new User('register'),
+					'user' => new CPUser('register'),
 					'user_profile' => new UserProfile,
 					'captcha' => new Captcha,
 				);
 		// if it is ajax validation request
 		if(isset($_POST['ajax']) && $_POST['ajax'] === 'register-form') {
-			if(isset($_POST['User']))
-				$models['user']->setAttributes($_POST['User']);
+			if(isset($_POST['CPUser']))
+				$models['user']->setAttributes($_POST['CPUser']);
 			if(isset($_POST['UserProfile']))
 				$models['user_profile']->setAttributes($_POST['UserProfile']);
 			if(isset($_POST['Captcha']))
@@ -112,10 +112,10 @@ class UserController extends ApiController {
 		}
 		
 		// collect user input data
-		if(isset($_POST['User']) && 
+		if(isset($_POST['CPUser']) && 
 				isset($_POST['UserProfile']) && 
 				isset($_POST['Captcha'])) {
-			$models['user']->setAttributes($_POST['User']);
+			$models['user']->setAttributes($_POST['CPUser']);
 			$models['user_profile']->setAttributes($_POST['UserProfile']);
 			$models['captcha']->setAttributes($_POST['Captcha']);
 			if($models['captcha']->validate() && $models['user']->validate()) {
@@ -161,7 +161,7 @@ class UserController extends ApiController {
 	}
 
 	public function actionActivate($id, $sessionKey) {
-		$user = User::model()->findByPk($id);
+		$user = CPUser::model()->findByPk($id);
 		if($user !== null) {
 			$sessionKey = CBase64::urlDecode($sessionKey);
 			if($user->session_key === $sessionKey) {
@@ -178,7 +178,7 @@ class UserController extends ApiController {
 	}
 	
 	public function actionPasswordReset($id, $sessionKey) {
-		$user = User::model()->findByPk($id);
+		$user = CPUser::model()->findByPk($id);
 		if($user !== null) {
 			$sessionKey = CBase64::urlDecode($sessionKey);
 			if($user->session_key === $sessionKey) {
@@ -186,15 +186,15 @@ class UserController extends ApiController {
 				
 				// if it is ajax validation request
 				if(isset($_POST['ajax']) && $_POST['ajax'] === 'password-reset-form') {
-					if(isset($_POST['User']))
-						$user->setAttributes($_POST['User']);
+					if(isset($_POST['CPUser']))
+						$user->setAttributes($_POST['CPUser']);
 					echo CActiveForm::validate($user);
 					Yii::app()->end();
 				}
 				
 				// collect user input data
-				if(isset($_POST['User'])) {
-					$user->setAttributes($_POST['User']);
+				if(isset($_POST['CPUser'])) {
+					$user->setAttributes($_POST['CPUser']);
 					if($user->save() && $user->login(false, false)) {
 						$user->regenerateSessionKey();
 						Yii::app()->getUser()->setFlash('success', t('Your account password has been reset. Welcome {email}!', array('{email}' => Yii::app()->getUser()->name)));
@@ -288,8 +288,8 @@ class UserController extends ApiController {
 
 		// if it is ajax validation request
 		if(isset($_POST['ajax']) && $_POST['ajax'] === 'profile-form') {
-			if(isset($_POST['User']))
-				$models['user']->setAttributes($_POST['User']);
+			if(isset($_POST['CPUser']))
+				$models['user']->setAttributes($_POST['CPUser']);
 			if(isset($_POST['UserProfile']))
 				$models['user_profile']->setAttributes($_POST['UserProfile']);
 			if(isset($_POST['Avatar']))
@@ -299,11 +299,11 @@ class UserController extends ApiController {
 		}
 
 		// collect user input data
-		if(isset($_POST['User']) && 
+		if(isset($_POST['CPUser']) && 
 				isset($_POST['UserProfile']) && 
 				isset($_POST['Avatar'])) {
 
-			$models['user']->setAttributes($_POST['User']);
+			$models['user']->setAttributes($_POST['CPUser']);
 			$models['user_profile']->setAttributes($_POST['UserProfile']);
 			$models['avatar']->setAttributes($_POST['Avatar']);
 			
@@ -332,20 +332,20 @@ class UserController extends ApiController {
 	
 	public function actionCreate() {
 		$models = array(
-				'User' => new User('pushedRegister'),
+				'CPUser' => new CPUser('pushedRegister'),
 				'UserProfile' => new UserProfile,
 		);
-		$models['User']->attributes = $_POST;
+		$models['CPUser']->attributes = $_POST;
 		$models['UserProfile']->attributes = $_POST;
 	
-		if($models['User']->validate()) {
+		if($models['CPUser']->validate()) {
 			$transaction = Yii::app()->db->beginTransaction();
 			try {
-				if($models['User']->save(false)) {
-					$models['UserProfile']->user_id = $models['User']->id;
+				if($models['CPUser']->save(false)) {
+					$models['UserProfile']->user_id = $models['CPUser']->id;
 					if($models['UserProfile']->save()) {
 						$transaction->commit();
-						$this->sendConfirmationEmail($models['User']);
+						$this->sendConfirmationEmail($models['CPUser']);
 					} else {
 						$transaction->rollback();
 					}
@@ -363,7 +363,7 @@ class UserController extends ApiController {
 		}
 	
 		if(empty($errors)) {
-			$this->renderApiResponse(200, $models['User']->toArray(array('id', 'email')));
+			$this->renderApiResponse(200, $models['CPUser']->toArray(array('id', 'email')));
 		} else {
 			$this->renderApiResponse(400, $errors);
 		}
@@ -371,16 +371,16 @@ class UserController extends ApiController {
 	
 	public function actionRead() {
 		$models = array(
-				'User' => new User('search'),
+				'CPUser' => new CPUser('search'),
 				'UserProfile' => new UserProfile('search'),
 		);
 		foreach($models as $name => $model) {
 			if(isset($_GET[$name]))
 				$model->attributes = $_GET[$name];
 		}
-		$criteria = $models['User']->getSearchCriteria();
+		$criteria = $models['CPUser']->getSearchCriteria();
 		$criteria->mergeWith($models['UserProfile']->getSearchCriteria());
-		$users = $models['User']->with(array('group', 'userProfile'))->findAll($criteria);
+		$users = $models['CPUser']->with(array('group', 'userProfile'))->findAll($criteria);
 		$data = array();
 		foreach($users as $user) {
 			$data[] = $user->toArray($user->getSafeAttributeNames(), array('group' => 'name', 'userProfile' => $models['UserProfile']->getSafeAttributeNames())); 
@@ -400,17 +400,17 @@ class UserController extends ApiController {
 		}
 
 		$models = array(
-			'User' => User::model()->findByPk($requestVars['id']),
+			'CPUser' => CPUser::model()->findByPk($requestVars['id']),
 			'UserProfile' => UserProfile::model()->findByPk($requestVars['id']),
 		);
 		
-		$models['User']->attributes = $requestVars;
+		$models['CPUser']->attributes = $requestVars;
 		$models['UserProfile']->attributes = $requestVars;
 	
-		if($models['User']->validate()) {
+		if($models['CPUser']->validate()) {
 			$transaction = Yii::app()->db->beginTransaction();
 			try {
-				if($models['User']->save(false)) {
+				if($models['CPUser']->save(false)) {
 					if($models['UserProfile']->save())
 						$transaction->commit();
 					else
@@ -442,7 +442,7 @@ class UserController extends ApiController {
 		}
 
 		$result = array(
-			'User' => array('rows_deleted' => User::model()->deleteByPk($requestVars['id'])),
+			'CPUser' => array('rows_deleted' => CPUser::model()->deleteByPk($requestVars['id'])),
 			'UserProfile' => array('rows_deleted' => UserProfile::model()->deleteByPk($requestVars['id'])),
 		);
 
@@ -450,7 +450,7 @@ class UserController extends ApiController {
 	}
 	
 	public function actionOptions() {
-		$models['User'] = new User('search');
+		$models['CPUser'] = new CPUser('search');
 		$models['UserProfile'] = new UserProfile('search');
 		foreach($models as $name => $model) {
 			$attributes[$name] = $model->getOptionalAttributes();
@@ -469,7 +469,7 @@ class UserController extends ApiController {
 		}
 		$response['POST'] =
 						array(
-							'returns' => array('User' => array('id', 'email')),
+							'returns' => array('CPUser' => array('id', 'email')),
 							'optional' => $attributes,
 							'required' => $attributesRequired,
 						);
@@ -486,7 +486,7 @@ class UserController extends ApiController {
 		$response['DELETE'] = array(
 							'returns' => t('Number of rows effected'),
 							'optional' => array(),
-							'required' => array('User' => array('id'), 'UserProfile' => array('id')),
+							'required' => array('CPUser' => array('id'), 'UserProfile' => array('id')),
 						);
 		$this->renderApiResponse(200, $response);
 	}

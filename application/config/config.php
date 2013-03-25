@@ -26,7 +26,7 @@ return array(
 				'modules.translate.*',
 		),
 		
-		'modules'=>array(
+		'modules' => array(
 			/*'gii'=>array(
 		        'class'=>'system.gii.GiiModule',
 		        'password'=>'abcd',
@@ -96,7 +96,7 @@ return array(
 				
 				'phpBB' => array(
 						'class' => 'phpbb.extensions.phpBB.phpBB',
-						'path' => 'webroot.phpBB',
+						'path' => 'webroot.forum',
 				),
 				
 				'mail' => array(
@@ -120,7 +120,7 @@ return array(
 				),
 				
 				'db' => require('db.php'),
-				'dbPhpBB' => require('dbPhpBB.php'),
+				'forumDb' => require('dbPhpBB.php'),
 				
 				'urlManager' => array(
 						'class'=>'UrlManager',

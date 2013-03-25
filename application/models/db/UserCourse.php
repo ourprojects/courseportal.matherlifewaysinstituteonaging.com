@@ -9,7 +9,7 @@ class UserCourse extends ActiveRecord {
 	 * @property integer $user_id
 	 *
 	 * The followings are the available model relations:
-	 * @property User $user
+	 * @property CPUser $user
 	 * @property Course $course
 	 */
 
@@ -35,7 +35,7 @@ class UserCourse extends ActiveRecord {
 		return array(
 				array('user_id, course_id', 'required'),
 
-				array('user_id', 'exist', 'attributeName' => 'id', 'className' => 'User', 'allowEmpty' => false),
+				array('user_id', 'exist', 'attributeName' => 'id', 'className' => 'CPUser', 'allowEmpty' => false),
 				array('course_id', 'exist', 'attributeName' => 'id', 'className' => 'Course', 'allowEmpty' => false),
 				
 				array('course_id', 
@@ -57,7 +57,7 @@ class UserCourse extends ActiveRecord {
 	 */
 	public function relations() {
 		return array(
-				'user' => array(self::BELONGS_TO, 'User', 'user_id'),
+				'user' => array(self::BELONGS_TO, 'CPUser', 'user_id'),
 				'course' => array(self::BELONGS_TO, 'Course', 'course_id'),
 		);
 	}

@@ -12,7 +12,7 @@ class Course extends ActiveRecord {
 	 * @property string $description
 	 *
 	 * The followings are the available model relations:
-	 * @property User[] $users
+	 * @property CPUser[] $users
 	 * @property UserCourse[] $userCourses
 	 * @property CourseObjective[] $objectives
 	 */
@@ -56,7 +56,7 @@ class Course extends ActiveRecord {
 		return array(
 				'objectives' => array(self::HAS_MANY, 'CourseObjective', 'course_id'),
 				'userCourses' => array(self::HAS_MANY, 'UserCourse', 'course_id'),
-				'users' => array(self::HAS_MANY, 'User', array('user_id' => 'id'), 'through' => 'userCourses'),
+				'users' => array(self::HAS_MANY, 'CPUser', array('user_id' => 'id'), 'through' => 'userCourses'),
 		);
 	}
 	
@@ -67,7 +67,7 @@ class Course extends ActiveRecord {
 					'condition' => 'userCourses.user_id=:user_id',
 					'params' => array(':user_id' => $user)
 			));
-		} else if($user instanceof User) {
+		} else if($user instanceof CPUser) {
 			return $this->hasUser($user->id);
 		}
 		return $this;

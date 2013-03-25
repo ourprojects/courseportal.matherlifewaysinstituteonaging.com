@@ -63,7 +63,7 @@ class SurveyQuestion extends SActiveRecord {
         		'options' => array(self::HAS_MANY, 'SurveyQuestionOption', 'question_id',
         						   'order' => 'options.order ASC'),
         		'optionCount' => array(self::STAT, 'SurveyQuestionOption', 'question_id'),
-        		'users' => array(self::HAS_MANY, 'User', array('user_id' => 'id'),
+        		'users' => array(self::HAS_MANY, Yii::app()->params['userModelClassName'], array('user_id' => 'id'),
         				'through' => 'answers'),
         );
     }

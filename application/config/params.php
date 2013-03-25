@@ -2,6 +2,7 @@
 
 $params = array();
 
+$params['userModelClassName'] = 'CPUser';
 $params['title'] = 'Mather LifeWays Institute on Aging Online Course Portal';
 $params['adminEmail'] = 'admin@courseportal.matherlifewaysinstituteonaging.com';
 $params['supportEmail'] = 'support@courseportal.matherlifewaysinstituteonaging.com';

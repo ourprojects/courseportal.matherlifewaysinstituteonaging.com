@@ -2,6 +2,7 @@
 
 $dbConf = array();
 
+$dbConf['class'] = 'CDbConnection';
 $dbConf['connectionString'] = 'mysql:host=localhost;dbname=courseportal';
 $dbConf['emulatePrepare'] = true;
 $dbConf['username'] = 'c145190-h222718';

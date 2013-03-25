@@ -13,10 +13,11 @@ class WebUser extends CWebUser {
 	}
 	
 	public function getModel($id = null) {
-		if($id === null)
-			$id = $this->getId();
-		if($this->_model === null && $id !== null)
-			$this->_model = User::model()->findByPk($id);
+		if($this->_model === null) {
+			if($id === null)
+				$id = $this->getId();
+			$this->_model = CPUser::model()->findByPk($id);
+		}
 		return $this->_model;
 	}
 	
@@ -38,12 +39,28 @@ class WebUser extends CWebUser {
 		}
 		return false;
 	}
+	
+	protected function afterLogin($fromCookie) {
+		$user = $this->getModel();
+		if($user !== null) {
+			if(!Yii::app()->phpBB->login($user->name, $user->password)) {
+				Yii::app()->phpBB->userAdd($user->name, $user->password, $user->email);
+				Yii::app()->phpBB->login($user->name, $user->password);
+			}
+		}
+		parent::afterLogin($fromCookie);
+	}
 
 	protected function beforeLogout() {
 		$user = $this->getModel();
 		if($user !== null)
 			$user->regenerateSessionKey();
 		return parent::beforeLogout();
+	}
+	
+	protected function afterLogout() {
+		Yii::app()->phpBB->logout();
+		parent::afterLogout();
 	}
 
 }

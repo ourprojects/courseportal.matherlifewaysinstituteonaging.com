@@ -40,7 +40,7 @@ class Avatar extends ActiveRecord {
 	public function rules() {
 		return array(
 				array('user_id, mime, name', 'unsafe'),
-				array('user_id', 'exist', 'attributeName' => 'id', 'className' => 'User', 'allowEmpty' => false),
+				array('user_id', 'exist', 'attributeName' => 'id', 'className' => 'CPUser', 'allowEmpty' => false),
 				array('image', 'file', 
 								'allowEmpty' => true,
 								'maxFiles' => 1,
@@ -63,7 +63,7 @@ class Avatar extends ActiveRecord {
 	 */
 	public function relations() {
         return array(
-            'user' => array(self::BELONGS_TO, 'User', 'user_id'),
+            'user' => array(self::BELONGS_TO, 'CPUser', 'user_id'),
         );
 	}
 	
@@ -120,6 +120,10 @@ class Avatar extends ActiveRecord {
 		if(file_exists($this->getPath()))
 			unlink($this->getPath());
 		parent::afterDelete();
+	}
+	
+	public function __toString() {
+		return $this->name;
 	}
 
 }

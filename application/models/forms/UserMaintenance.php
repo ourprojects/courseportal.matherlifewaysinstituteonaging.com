@@ -12,7 +12,7 @@ class UserMaintenance extends CFormModel {
 		return array(
 				array('email', 'required'),
 				array('email', 'email'),
-				array('email', 'exist', 'allowEmpty' => false, 'className' => 'User', 'except' => 'ajax'),
+				array('email', 'exist', 'allowEmpty' => false, 'className' => 'CPUser', 'except' => 'ajax'),
 		);
 	}
 	
@@ -28,7 +28,7 @@ class UserMaintenance extends CFormModel {
 	
 	public function getUser() {
 		if(!isset($this->_user) || ($this->_user->email !== $this->email && isset($this->email)))
-			$this->_user = User::model()->find('email=:email', array(':email' => $this->email));
+			$this->_user = CPUser::model()->find('email=:email', array(':email' => $this->email));
 		return $this->_user;
 	}
 

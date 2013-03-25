@@ -9,8 +9,8 @@
  * @property integer $referee
  *
  * The followings are the available model relations:
- * @property User $referee0
- * @property User $referrer0
+ * @property CPUser $referee0
+ * @property CPUser $referrer0
  */
 class Referral extends ActiveRecord
 {
@@ -56,8 +56,8 @@ class Referral extends ActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'referee0' => array(self::BELONGS_TO, 'User', 'referee'),
-			'referrer0' => array(self::BELONGS_TO, 'User', 'referrer'),
+			'referee0' => array(self::BELONGS_TO, 'CPUser', 'referee'),
+			'referrer0' => array(self::BELONGS_TO, 'CPUser', 'referrer'),
 		);
 	}
 

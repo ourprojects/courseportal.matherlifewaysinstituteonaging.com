@@ -9,7 +9,7 @@ class Group extends ActiveRecord {
 	 * @property string $name
 	 *
 	 * The followings are the available model relations:
-	 * @property User[] $users
+	 * @property CPUser[] $users
 	 */
 
 	const ADMIN = 'admin';
@@ -38,7 +38,7 @@ class Group extends ActiveRecord {
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-				'users' => array(self::HAS_MANY, 'User', 'group_id'),
+				'users' => array(self::HAS_MANY, 'CPUser', 'group_id'),
 		);
 	}
 

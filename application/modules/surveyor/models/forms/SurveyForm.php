@@ -43,7 +43,7 @@ class SurveyForm extends CFormModel {
 	public function rules() {
 		return array(
 				// @ TODO We should just set the allowEmpty based on the anonymous state of the survey.
-				array('user_id', 'exist', 'attributeName' => 'id', 'className' => 'User', 'allowEmpty' => true),
+				array('user_id', 'exist', 'attributeName' => 'id', 'className' => Yii::app()->params['userModelClassName'], 'allowEmpty' => true),
 				array('user_id', 'checkAnonymous'),
 				array('_questionAnswers', 'validateAnswers'),
 		);

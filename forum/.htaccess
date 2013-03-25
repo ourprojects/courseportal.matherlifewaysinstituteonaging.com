@@ -17,3 +17,10 @@ Deny from All
 Order Allow,Deny
 Deny from All
 </Files>
+
+<IfModule mod_rewrite.c>
+	RewriteEngine On
+	RewriteCond %{REQUEST_URI}  ^/forum/ucp\.php$
+	RewriteCond %{QUERY_STRING} ^mode=(register|login|logout)
+	RewriteRule ^(.*)$ /user/%1 [L,R=301]
+</IfModule>

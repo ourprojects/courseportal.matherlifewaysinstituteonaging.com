@@ -7,7 +7,7 @@
  * @property integer $user_id
  *
  * The followings are the available model relations:
- * @property User $user
+ * @property CPUser $user
  */
 class UserActivated extends ActiveRecord {
     /**
@@ -34,7 +34,7 @@ class UserActivated extends ActiveRecord {
             array('user_id', 'required'),
             array('user_id', 'numerical', 'integerOnly'=>true),
         		
-        	array('user_id', 'exist', 'attributeName' => 'id', 'className' => 'User'),
+        	array('user_id', 'exist', 'attributeName' => 'id', 'className' => 'CPUser'),
         );
     }
 
@@ -45,7 +45,7 @@ class UserActivated extends ActiveRecord {
         // NOTE: you may need to adjust the relation name and the related
         // class name for the relations automatically generated below.
         return array(
-            'user' => array(self::BELONGS_TO, 'User', 'user_id'),
+            'user' => array(self::BELONGS_TO, 'CPUser', 'user_id'),
         );
     }
 

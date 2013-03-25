@@ -41,7 +41,7 @@ class SurveyAnswer extends SActiveRecord
         return array(
             array('question_id', 'required'),
         	array('user_id', 'unsafe'),
-        	array('user_id', 'exist', 'attributeName' => 'id', 'className' => 'User', 'allowEmpty' => true),
+        	array('user_id', 'exist', 'attributeName' => 'id', 'className' => Yii::app()->params['userModelClassName'], 'allowEmpty' => true),
         	array('question_id', 'exist', 'attributeName' => 'id', 'className' => 'SurveyQuestion', 'allowEmpty' => false),
             // The following rule is used by search().
             // Please remove those attributes that should not be searched.
@@ -55,7 +55,7 @@ class SurveyAnswer extends SActiveRecord
     public function relations()
     {
         return array(
-        		'user' => array(self::BELONGS_TO, 'User', 'user_id'),
+        		'user' => array(self::BELONGS_TO, Yii::app()->params['userModelClassName'], 'user_id'),
         		'question' => array(self::BELONGS_TO, 'SurveyQuestion', 'question_id'),
         		'answerText' => array(self::HAS_MANY, 'SurveyAnswerText', 'answer_id'),
         		'answerOptions' => array(self::HAS_MANY, 'SurveyAnswerOption', 'answer_id'),

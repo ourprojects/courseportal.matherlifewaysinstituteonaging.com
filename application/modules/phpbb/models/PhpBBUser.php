@@ -120,7 +120,7 @@ class PhpBBUser extends CActiveRecord
     public function relations()
     {
         return array(
-            'user'=>array(self::HAS_ONE, 'User', array('username'=>'username')),
+            'user'=>array(self::HAS_ONE, Yii::app()->params['userModelClassName'], array('username'=>'username')),
             'friends'=>array(self::MANY_MANY, 'PhpBBUser', '{{zebra}}(user_id, zebra_id)', 'condition'=>'friend=1'),
         );
     }

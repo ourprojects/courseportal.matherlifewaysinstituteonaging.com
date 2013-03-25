@@ -24,7 +24,7 @@
  * @property UserProfile $userProfile
  */
 
-class User extends ActiveRecord implements IUserIdentity {
+class CPUser extends ActiveRecord implements IUserIdentity {
 
 	const ERROR_NONE = 0;
 	const ERROR_EMAIL_INVALID = 1;
@@ -110,11 +110,33 @@ class User extends ActiveRecord implements IUserIdentity {
 			array('id, group_id, email, created', 'safe', 'on' => 'search')
         );
 	}
+	
+	public function behaviors() {
+		return array(
+				'PhpBBUserBehavior' => array(
+						'class' => 'phpbb.components.PhpBBUserBehavior',
+						'usernameAttribute' => 'name',
+						'newPasswordAttribute' => 'password',
+						'emailAttribute' => 'email',
+						'avatarAttribute' => 'avatar',
+						'avatarPath' => Yii::getPathOfAlias(Avatar::AVATARS_PATH_ALIAS),
+						'forumDbConnection' => 'forumDb',
+						/*'syncAttributes' => array(
+								'site' => 'user_website',
+								'icq' => 'user_icq',
+								'from' => 'user_from',
+								'occ' => 'user_occ',
+								'interests' => 'user_interests',
+						)*/
+				),
+		);
+	}
 
 	/**
 	 * @return array relational rules.
 	 */
 	public function relations() {
+		Yii::import('phpbb.models.*');
 		return array(
 			'avatar' => array(self::HAS_ONE, 'Avatar', 'user_id'),
             'referees' => array(self::HAS_MANY, 'Referral', 'referee'),
@@ -125,6 +147,7 @@ class User extends ActiveRecord implements IUserIdentity {
 			'userProfile' => array(self::HAS_ONE, 'UserProfile', 'user_id'),
 			'userCourses' => array(self::HAS_MANY, 'UserCourse', 'user_id'),
 			'courses' => array(self::HAS_MANY, 'Course', array('course_id' => 'id'), 'through' => 'userCourses'),
+			'phpBbUser' => array(self::HAS_ONE, 'PhpBBUser', array('username' => 'username')),
 		);
 	}
 	

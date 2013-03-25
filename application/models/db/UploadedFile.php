@@ -14,7 +14,7 @@
  * @property file $file
  *
  * The followings are the available model relations:
- * @property User $user
+ * @property CPUser $user
  */
 class UploadedFile extends ActiveRecord {
 	
@@ -52,7 +52,7 @@ class UploadedFile extends ActiveRecord {
 				array('local_name', 'match', 'pattern' => '/[\da-fA-F]{1,4}/'),
 				array('local_name', 'unique'),
 				array('user_id, local_name, size, name', 'unsafe'),
-				array('user_id', 'exist', 'attributeName' => 'id', 'className' => 'User', 'allowEmpty' => false),
+				array('user_id', 'exist', 'attributeName' => 'id', 'className' => 'CPUser', 'allowEmpty' => false),
 		);
 	}
 
@@ -61,7 +61,7 @@ class UploadedFile extends ActiveRecord {
 	 */
 	public function relations() {
 		return array(
-				'user' => array(self::BELONGS_TO, 'User', 'user_id'),
+				'user' => array(self::BELONGS_TO, 'CPUser', 'user_id'),
 		);
 	}
 
