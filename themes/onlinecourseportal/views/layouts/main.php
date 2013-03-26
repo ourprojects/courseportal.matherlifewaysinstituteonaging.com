@@ -27,7 +27,10 @@
 </head>
 <body>
 	<?php $this->widget('ext.LDGoogleAnalytics.LDGoogleAnalytics', Yii::app()->params['googleAnalytics']); ?>
+
 	<div class="container" id="page">
+		<div id="flowersLeft"></div>
+		<div id="flowersRight"></div>
 		<div id="header">
 			<div id="logo">
 				<img src="<?php echo Yii::app()->getTheme()->getImagesUrl('logo.png'); ?>" alt="<?php echo t('Logo'); ?>" />

@@ -6,7 +6,7 @@ body {
 	margin: 0;
 	padding: 0;
 	color: #6d6e71;
-	background: #ededed url(../images/bg-body.jpg) top repeat-x;
+	background: #ededed url(../images/bg.jpg) top repeat;
 }
 h1 {
 	background: url(../images/bg-teal-bar.png) top right no-repeat;
@@ -48,6 +48,30 @@ h5 {
 	padding: 0 0 20px 0;
 	overflow: hidden;
 }
+#flowersLeft {
+	background: url(../images/bgleft.png);
+	background-position: right -50px bottom;
+	background-repeat: no-repeat;
+	z-index: -1;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	width: 50%;
+	min-height: 800px;
+}
+#flowersRight {
+	background: url(../images/bgright.png);
+	background-position: left -50px bottom;
+	background-repeat: no-repeat;
+	z-index: -1;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	width: 50%;
+	min-height: 800px;
+}
 #header {
 	margin: 0;
 	padding: 0;
@@ -83,6 +107,7 @@ h5 {
 	font-style: italic;
 	color: #999;
 }
+
 .breadcrumbs {
 	margin: 0 0 15px 0;
 	padding: 20px 0 0 20px;
