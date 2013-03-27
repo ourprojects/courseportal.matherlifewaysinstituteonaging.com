@@ -76,5 +76,9 @@ class States extends ActiveRecord {
             'criteria' => $criteria,
         ));
     }
+    
+    public function __toString() {
+    	return $this->name;
+    }
 }
 ?>

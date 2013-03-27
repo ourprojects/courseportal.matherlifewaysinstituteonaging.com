@@ -32,26 +32,29 @@
 // The class extends your own WebUser class if it exists
 // Inheritance: PhpBBWebUser -> WebUser -> CWebUser
 
-class PhpBBWebUser extends WebUser
-{
+class PhpBBWebUser extends WebUser {
+	
     private $_identity;
 
-    public function login($identity, $duration=0)
-    {
+    public function login($identity, $duration=0) {
         $this->_identity = $identity;
         return parent::login($identity, $duration);
     }
 
-    protected function afterLogin($fromCookie)
-    {
-        if ($this->_identity !== null)
-            Yii::app()->phpBB->login($this->_identity->username, $this->_identity->password);
-
+    protected function afterLogin($fromCookie) {
+		if($this->_identity !== null) {
+			if(!Yii::app()->phpBB->login($this->_identity->name, $this->_identity->password_no_hash)) {
+				Yii::app()->phpBB->userAdd($this->_identity->name, 
+											$this->_identity->password_no_hash, 
+											$this->_identity->email,
+											$this->_identity->group->name);
+				Yii::app()->phpBB->login($this->_identity->name, $this->_identity->password_no_hash);
+			}
+		}
         parent::afterLogin($fromCookie);
     }
 
-    protected function afterLogout()
-    {
+    protected function afterLogout() {
         Yii::app()->phpBB->logout();
         parent::afterLogout();
     }

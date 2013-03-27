@@ -12,9 +12,10 @@ class Group extends ActiveRecord {
 	 * @property CPUser[] $users
 	 */
 
-	const ADMIN = 'admin';
-	const GUEST = 'guest';
-	const USER = 'user';
+	const ADMIN = 'ADMINISTRATORS';
+	const GUEST = 'GUESTS';
+	const USER = 'REGISTERED';
+	const EMPLOYEE = 'Employees';
 	const DEFAULT_GROUP = self::USER;
 	/**
 	 * Returns the static model of the specified AR class.
@@ -29,6 +30,22 @@ class Group extends ActiveRecord {
 	 */
 	public function tableName() {
 		return '{{group}}';
+	}
+	
+	public function getIsAdmin() {
+		return $this->name === self::ADMIN;
+	}
+	
+	public function getIsGuest() {
+		return $this->name === self::GUEST;
+	}
+	
+	public function getIsUser() {
+		return $this->name === self::USER;
+	}
+	
+	public function getIsEmployee() {
+		return $this->name === self::EMPLOYEE;
 	}
 
 	/**
@@ -70,6 +87,10 @@ class Group extends ActiveRecord {
 		return new CActiveDataProvider($this, array(
 				'criteria' => $criteria,
 		));
+	}
+	
+	public function __toString() {
+		return $this->name;
 	}
 
 }

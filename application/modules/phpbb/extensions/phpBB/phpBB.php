@@ -93,11 +93,16 @@ class phpBB extends CApplicationComponent
 	 */
 	public function userAdd($username, $password, $email, $group_id = 2)
 	{
+		if(is_string($group_id)) {
+			$group_id = PhpBBGroup::model()->findByName($group_id);
+		} elseif(is_numeric($group_id)) {
+			$group_id = PhpBBGroup::model()->findByPk(group_id);
+		}
 		return $this->_phpbb->user_add(array(
 			"username" => $username,
 			"user_password" => $password,
 			"user_email" => $email,
-			"group_id" => $group_id,
+			"group_id" => $group_id === null ? 2 : $group_id->group_id,
 		));
 	}
 

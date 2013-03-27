@@ -63,7 +63,7 @@ class UserProfile extends ActiveRecord {
     public function relations() {
         return array(
             'user' => array(self::BELONGS_TO, 'CPUser', 'user_id'),
-        	'state' => array(self::BELONGS_TO, 'State', 'state_id'),
+        	'state' => array(self::BELONGS_TO, 'States', 'state_id'),
         	'questionAnswers' => array(self::HAS_MANY, 'QuestionAnswer', 'user_id'),
         );
     }
@@ -88,12 +88,12 @@ class UserProfile extends ActiveRecord {
     	$criteria = new CDbCriteria;
     	
     	$criteria->compare('user_id', $this->user_id);
-    	$criteria->compare('firstname', $this->firstname,true);
-    	$criteria->compare('lastname', $this->lastname,true);
-    	$criteria->compare('city', $this->city,true);
-    	$criteria->compare('zip_code', $this->zip_code,true);
-    	$criteria->compare('state_id', $this->state_id,true);
-    	$criteria->compare('country_iso', $this->country_iso,true);
+    	$criteria->compare('firstname', $this->firstname, true);
+    	$criteria->compare('lastname', $this->lastname, true);
+    	$criteria->compare('city', $this->city, true);
+    	$criteria->compare('zip_code', $this->zip_code, true);
+    	$criteria->compare('state_id', $this->state_id, true);
+    	$criteria->compare('country_iso', $this->country_iso, true);
     	
     	return $criteria;
     }

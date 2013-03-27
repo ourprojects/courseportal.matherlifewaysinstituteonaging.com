@@ -89,7 +89,7 @@ return array(
 				),
 				
 				'user' => array(
-						'class' => 'WebUser',
+						'class' => 'phpbb.components.PhpBBWebUser',
 						'allowAutoLogin' => true,
 						'loginUrl' => array('user/login'),
 				),

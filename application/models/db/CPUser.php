@@ -104,7 +104,11 @@ class CPUser extends ActiveRecord implements IUserIdentity {
 			array('password', 'ext.pbkdf2.PBKDF2validator', 'except' => 'login, search'),
 
 			array('group_id', 'determineGroup', 'on' => 'pushedRegister, register'), 
-			array('group_id', 'exist', 'attributeName' => 'id', 'className' => 'Group', 'allowEmpty' => false, 'except' => 'login, search, passwordReset'),
+			array('group_id', 'exist', 
+					'attributeName' => 'id', 
+					'className' => 'Group', 
+					'allowEmpty' => false, 
+					'except' => 'login, search, passwordReset'),
 			array('group_id', 'required', 'except' => 'search', 'except' => 'login, search, passwordReset'),
 				
 			array('id, group_id, email, created', 'safe', 'on' => 'search')
@@ -116,18 +120,14 @@ class CPUser extends ActiveRecord implements IUserIdentity {
 				'PhpBBUserBehavior' => array(
 						'class' => 'phpbb.components.PhpBBUserBehavior',
 						'usernameAttribute' => 'name',
-						'newPasswordAttribute' => 'password',
+						'newPasswordAttribute' => 'password_no_hash',
 						'emailAttribute' => 'email',
 						'avatarAttribute' => 'avatar',
 						'avatarPath' => Yii::getPathOfAlias(Avatar::AVATARS_PATH_ALIAS),
 						'forumDbConnection' => 'forumDb',
-						/*'syncAttributes' => array(
-								'site' => 'user_website',
-								'icq' => 'user_icq',
-								'from' => 'user_from',
-								'occ' => 'user_occ',
-								'interests' => 'user_interests',
-						)*/
+						'syncAttributes' => array(
+								'location' => 'user_from',
+						)
 				),
 		);
 	}
@@ -151,15 +151,24 @@ class CPUser extends ActiveRecord implements IUserIdentity {
 		);
 	}
 	
-	public function isAdmin() {
-		return $this->group instanceof Group && $this->group->name === 'admin';
+	public function getLocation() {
+		return $this->userProfile->city . 
+		($this->userProfile->state === null ? '' : ', '.$this->userProfile->state); 
 	}
 	
-	public function isEmployee() {
-		return $this->group instanceof Group && $this->group->name === 'employee_user';
+	public function getIsGuest() {
+		return $this->group instanceof Group && $this->group->getIsGuest();
 	}
 	
-	public function isActivated() {
+	public function getIsAdmin() {
+		return $this->group instanceof Group && $this->group->getIsAdmin();
+	}
+	
+	public function getIsEmployee() {
+		return $this->group instanceof Group && $this->group->getIsEmployee();
+	}
+	
+	public function getIsActivated() {
 		return $this->userActivated instanceof UserActivated && !$this->userActivated->getIsNewRecord();
 	}
 	
@@ -274,8 +283,8 @@ class CPUser extends ActiveRecord implements IUserIdentity {
 	
 	public function determineGroup($attribute, $params) {
 		$this->group_id = EmployerDomain::model()->exists('name = :name', array(':name' => array_pop(explode('@', $this->email)))) ?
-													   Group::model()->find('name = :name', array(':name' => 'employee_user'))->id :
-													   Group::model()->find('name = :name', array(':name' => 'paid_user'))->id;
+													   Group::model()->find('name = :name', array(':name' => Group::EMPLOYEES))->id :
+													   Group::model()->find('name = :name', array(':name' => Group::REGISTERED))->id;
 	}
 	
 	protected function afterFind() {
@@ -291,7 +300,7 @@ class CPUser extends ActiveRecord implements IUserIdentity {
 		}
 		if($record === null || $record->password !== $this->getHasher()->getHash())
 			$this->addError('User', t('Incorrect email or password.'));
-		else if(!$record->isActivated())
+		else if(!$record->getIsActivated())
 			$this->addError('User', t('The email and password you have entered are correct, but your account has not yet been activated. If you lost the activation email we sent you after you registered please click ') .
 										CHtml::link(t('here'), Yii::app()->createUrl('user/resendActivation')));
 		else {
