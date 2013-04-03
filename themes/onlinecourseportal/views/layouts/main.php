@@ -27,88 +27,89 @@
 </head>
 <body>
 	<?php $this->widget('ext.LDGoogleAnalytics.LDGoogleAnalytics', Yii::app()->params['googleAnalytics']); ?>
-
-	<div class="container" id="page">
-		<div id="flowersLeft"></div>
-		<div id="flowersRight"></div>
-		<div id="header">
-			<div id="logo">
-				<img src="<?php echo Yii::app()->getTheme()->getImagesUrl('logo.png'); ?>" alt="<?php echo t('Logo'); ?>" />
-			</div>
-			<div id="site-title"><?php echo Yii::app()->name; ?></div>
-			<div id="language-menu"><?php $this->widget('modules.translate.widgets.acceptedLanguage.ALSelector'); ?></div>
-			<?php if(!empty(MPTranslate::$messages) && Yii::app()->getUser()->getIsAdmin()): ?>
-				<div id="translate-button">
-					<?php echo Yii::app()->translate->translateLink('Missing Translations on Page', 'button'); ?>	
+	<div id="page">
+		<div class="container">
+			<div id="flowersLeft"></div>
+			<div id="flowersRight"></div>
+			<div id="header">
+				<div id="logo">
+					<img src="<?php echo Yii::app()->getTheme()->getImagesUrl('logo.png'); ?>" alt="<?php echo t('Logo'); ?>" />
 				</div>
-			<?php endif; ?>
-			<div id="mainmenu">
-				<?php $this->widget('zii.widgets.CMenu', $this->menuAttrs); ?>
+				<div id="site-title"><?php echo Yii::app()->name; ?></div>
+				<div id="language-menu"><?php $this->widget('modules.translate.widgets.acceptedLanguage.ALSelector'); ?></div>
+				<?php if(!empty(MPTranslate::$messages) && Yii::app()->getUser()->getIsAdmin()): ?>
+					<div id="translate-button">
+						<?php echo Yii::app()->translate->translateLink('Missing Translations on Page', 'button'); ?>	
+					</div>
+				<?php endif; ?>
+				<div id="mainmenu">
+					<?php $this->widget('zii.widgets.CMenu', $this->menuAttrs); ?>
+				</div>
 			</div>
-		</div>
-		<!-- header -->
-		<div id="content">
-			<?php 
-			$this->widget('zii.widgets.CBreadcrumbs', 
-					array_merge(
-						array('links' => $this->breadcrumbs), 
-						$this->getModule() === null ? array() : 
-							array('homeLink' => CHtml::link(t('Home'), $this->createUrl($this->getModule()->defaultController.'/')))
-					)
-			); 
-			?>
-			<!-- breadcrumbs -->
-			<?php if(Yii::app()->getUser()->hasFlash('success')): ?>
-					<div class="flash-success">
-						<?php echo Yii::app()->getUser()->getFlash('success'); ?>
-					</div>
-			<?php endif; ?>		
-			<?php if(Yii::app()->getUser()->hasFlash('notice')): ?>
-					<div class="flash-notice">
-						<?php echo Yii::app()->getUser()->getFlash('notice'); ?>
-					</div>
-			<?php endif; ?>
-			<?php if(Yii::app()->getUser()->hasFlash('error')): ?>
-					<div class="flash-error">
-						<?php echo Yii::app()->getUser()->getFlash('error'); ?>
-					</div>
-			<?php endif; ?>
-			<?php echo $content; ?>
+			<!-- header -->
+			<div id="content">
+				<?php 
+				$this->widget('zii.widgets.CBreadcrumbs', 
+						array_merge(
+							array('links' => $this->breadcrumbs), 
+							$this->getModule() === null ? array() : 
+								array('homeLink' => CHtml::link(t('Home'), $this->createUrl($this->getModule()->defaultController.'/')))
+						)
+				); 
+				?>
+				<!-- breadcrumbs -->
+				<?php if(Yii::app()->getUser()->hasFlash('success')): ?>
+						<div class="flash-success">
+							<?php echo Yii::app()->getUser()->getFlash('success'); ?>
+						</div>
+				<?php endif; ?>		
+				<?php if(Yii::app()->getUser()->hasFlash('notice')): ?>
+						<div class="flash-notice">
+							<?php echo Yii::app()->getUser()->getFlash('notice'); ?>
+						</div>
+				<?php endif; ?>
+				<?php if(Yii::app()->getUser()->hasFlash('error')): ?>
+						<div class="flash-error">
+							<?php echo Yii::app()->getUser()->getFlash('error'); ?>
+						</div>
+				<?php endif; ?>
+				<?php echo $content; ?>
+				<div class="clear"></div>
+			</div>
 			<div class="clear"></div>
 		</div>
-		<div class="clear"></div>
-	</div>
-	<!-- page -->
-	<div id="footer">
-		<div class="container">
-			<div class="logo">
-				<a href="http://www.matherlifewaysinstituteonaging.com/" title="Mather LifeWays Institute on Aging">
-					<img src="<?php echo Yii::app()->getTheme()->getImagesUrl('logo-footer.jpg'); ?>" alt="<?php echo t('Logo'); ?>" />
-				</a>
-			</div>
-			<div id="footer-icons" class="icons">
-				<a class="twitter" href="http://twitter.com/aginginaction" title="Twitter" rel="nofollow" target="_blank">
-					Twitter
-				</a>
-				<a class="facebook" href="http://www.facebook.com/matherlifeways" title="Facebook" rel="nofollow" target="_blank">
-					Facebook
-				</a>
-				<a class="pinterest" href="http://pinterest.com/" title="Pinterest" rel="nofollow" target="_blank">
-					Pinterest
-				</a>
-				<a class="youtube" href="http://www.youtube.com/matherlifeways" title="YouTube" rel="nofollow" target="_blank">
-					YouTube
-				</a>
-			</div>
-			<div id="copyright">
-				<ul>
-					<li>P: (847) 492.7500 | F: (847) 492.6789</li>
-					<li>1603 Orrington Avenue; Suite 1800 | Evanston; IL 60201</li>
-					<li>&copy; Copyright 2012 Mather LifeWays&reg;</li>
-				</ul>
+		<!-- page -->
+		<div id="footer">
+			<div class="container">
+				<div class="logo">
+					<a href="http://www.matherlifewaysinstituteonaging.com/" title="Mather LifeWays Institute on Aging">
+						<img src="<?php echo Yii::app()->getTheme()->getImagesUrl('logo-footer.jpg'); ?>" alt="<?php echo t('Logo'); ?>" />
+					</a>
+				</div>
+				<div id="footer-icons" class="icons">
+					<a class="twitter" href="http://twitter.com/aginginaction" title="Twitter" rel="nofollow" target="_blank">
+						Twitter
+					</a>
+					<a class="facebook" href="http://www.facebook.com/matherlifeways" title="Facebook" rel="nofollow" target="_blank">
+						Facebook
+					</a>
+					<a class="pinterest" href="http://pinterest.com/" title="Pinterest" rel="nofollow" target="_blank">
+						Pinterest
+					</a>
+					<a class="youtube" href="http://www.youtube.com/matherlifeways" title="YouTube" rel="nofollow" target="_blank">
+						YouTube
+					</a>
+				</div>
+				<div id="copyright">
+					<ul>
+						<li>P: (847) 492.7500 | F: (847) 492.6789</li>
+						<li>1603 Orrington Avenue; Suite 1800 | Evanston; IL 60201</li>
+						<li>&copy; Copyright 2012 Mather LifeWays&reg;</li>
+					</ul>
+				</div>
 			</div>
 		</div>
+		<!-- footer -->
 	</div>
-	<!-- footer -->
 </body>
 </html>
