@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') or exit('No direct script access allowed');  
+<?php 
 
 class HTTP_DownloadAction extends CAction {
 	

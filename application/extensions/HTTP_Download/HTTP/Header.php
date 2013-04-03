@@ -323,7 +323,7 @@ class HTTP_Header extends HTTP
      *                  seem to be a valid GMT date.
      * @param   string  $date The GMT date.
      */
-    function dateToTimestamp($date)
+    static function dateToTimestamp($date)
     {
         static $months = array(
             null => 0, 'Jan' => 1, 'Feb' => 2, 'Mar' => 3, 'Apr' => 4,
@@ -367,7 +367,7 @@ class HTTP_Header extends HTTP
      *                  value is fetched from $GLOBALS[$value]
      * @param   bool    $session Whether the session name/id should be added
      */
-    function redirect($url = null, $param = array(), $session = false)
+    static function redirect($url = null, $param = array(), $session = false)
     {
         if (!isset($url)) {
             $url = $_SERVER['PHP_SELF'];

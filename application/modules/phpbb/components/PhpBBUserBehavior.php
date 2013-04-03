@@ -166,31 +166,27 @@ class PhpBBUserBehavior extends CActiveRecordBehavior
         $user = $this->_loadBBUserModel($model->{$this->usernameAttribute});
         if (!$user) return;
 
-        if ($model->{$this->avatarAttribute})
-        {
+        $this->_deleteAvatar($user);
+        
+        if($model->{$this->avatarAttribute}) {
             $originalFile = $this->avatarPath . DIRECTORY_SEPARATOR . $model->{$this->avatarAttribute};
+			if(file_exists($originalFile)) {
+	            $orig = Yii::app()->image->load($originalFile); /* @var $orig CImageHandler */
 
-            $orig = Yii::app()->image->load($originalFile); /* @var $orig CImageHandler */
-
-            $this->_deleteAvatar($user);
-
-            $forumFileName = $this->getForumAvatarSalt() . '_' . $user->getPrimaryKey() . '.' . $orig->ext;
-            $forumFile = $this->getForumAvatarPath() . DIRECTORY_SEPARATOR . $forumFileName;
-            
-            $thumb = $orig->resize($this->getForumAvatarWidth(), $this->getForumAvatarHeight());
-            if($thumb->save($forumFile)) {
-	            $user->user_avatar = $user->getPrimaryKey() . '_' . time()  . '.' . $orig->ext;
-	            $user->user_avatar_type = 1;
-	            $user->user_avatar_width = $thumb->width;
-	            $user->user_avatar_height = $thumb->height;
-	            $user->save();
-            }
+	            $forumFileName = $this->getForumAvatarSalt() . '_' . $user->getPrimaryKey() . '.' . $orig->ext;
+	            $forumFile = $this->getForumAvatarPath() . DIRECTORY_SEPARATOR . $forumFileName;
+	            
+	            $thumb = $orig->resize($this->getForumAvatarWidth(), $this->getForumAvatarHeight());
+	            if($thumb->save($forumFile)) {
+		            $user->user_avatar = $user->getPrimaryKey() . '_' . time()  . '.' . $orig->ext;
+		            $user->user_avatar_type = 1;
+		            $user->user_avatar_width = $thumb->width;
+		            $user->user_avatar_height = $thumb->height;
+	            }
+	            
+			}
         }
-        else
-        {
-            $this->_deleteAvatar($user);
-            $user->save();
-        }
+        $user->save();
     }
 
     protected function _loadBBUserModel($username)

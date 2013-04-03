@@ -35,6 +35,19 @@ require_once 'System.php';
  */
 class HTTP_Download_Archive
 {
+	
+	// {{{ static PEAR instance
+	static $PEAR;
+	
+	static function getPEARInstance() {
+		if(is_null(HTTP_Download_Archive::$PEAR)) {
+			require_once 'PEAR.php';
+			HTTP_Download_Archive::$PEAR = new PEAR();
+		}
+		return HTTP_Download_Archive::$PEAR;
+	}
+	// }}}
+	
     /**
      * Send a bunch of files or directories as an archive
      * 
@@ -60,7 +73,7 @@ class HTTP_Download_Archive
      * @param   string  $add_path   path that should be prepended to the files
      * @param   string  $strip_path path that should be stripped from the files
      */
-    function send($name, $files, $type = HTTP_DOWNLOAD_TGZ, $add_path = '', $strip_path = '')
+    static function send($name, $files, $type = HTTP_DOWNLOAD_TGZ, $add_path = '', $strip_path = '')
     {
         $tmp = System::mktemp();
         
@@ -91,7 +104,7 @@ class HTTP_Download_Archive
             break;
             
             default:
-                return PEAR::raiseError(
+                return HTTP_Download_Archive::getPEARInstance()->raiseError(
                     'Archive type not supported: ' . $type,
                     HTTP_DOWNLOAD_E_INVALID_ARCHIVE_TYPE
                 );
@@ -101,13 +114,13 @@ class HTTP_Download_Archive
             $options = array(   'add_path' => $add_path, 
                                 'remove_path' => $strip_path);
             if (!$arc->create($files, $options)) {
-                return PEAR::raiseError('Archive creation failed.');
+                return HTTP_Download_Archive::getPEARInstance()->raiseError('Archive creation failed.');
             }
         } else {
             if (!$e = $arc->createModify($files, $add_path, $strip_path)) {
-                return PEAR::raiseError('Archive creation failed.');
+                return HTTP_Download_Archive::getPEARInstance()->raiseError('Archive creation failed.');
             }
-            if (PEAR::isError($e)) {
+            if (HTTP_Download_Archive::getPEARInstance()->isError($e)) {
                 return $e;
             }
         }

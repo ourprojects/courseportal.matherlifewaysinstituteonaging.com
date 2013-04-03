@@ -43,6 +43,17 @@
  */
 class HTTP
 {
+	
+	static $PEAR;
+	
+	static function getPEARInstance() {
+		if(is_null(HTTP::$PEAR)) {
+			require_once 'PEAR.php';
+			HTTP::$PEAR = new PEAR();
+		}
+		return HTTP::$PEAR;
+	}
+	
     /**
      * Formats a RFC compliant GMT date HTTP header.  This function honors the
      * "y2k_compliance" php.ini directive and formats the GMT date corresponding
@@ -54,7 +65,7 @@ class HTTP
      * @access public
      * @static
      */
-    function Date($time = null)
+    static function Date($time = null)
     {
         if (!isset($time)) {
             $time = time();
@@ -101,7 +112,7 @@ class HTTP
      * @static
      * @access public
      */
-    function negotiateLanguage($supported, $default = 'en-US')
+    static function negotiateLanguage($supported, $default = 'en-US')
     {
         $supp = array();
         foreach ($supported as $lang => $isSupported) {
@@ -157,7 +168,7 @@ class HTTP
      * @access public
      * @since  1.4.1
      */
-    function negotiateCharset($supported, $default = 'ISO-8859-1')
+    static function negotiateCharset($supported, $default = 'ISO-8859-1')
     {
         $supp = array();
         foreach ($supported as $charset) {
@@ -206,7 +217,7 @@ class HTTP
      * @access public
      * @since  1.4.1
      */
-    function negotiateMimeType($supported, $default)
+    static function negotiateMimeType($supported, $default)
     {
         $supp = array();
         foreach ($supported as $type) {
@@ -255,7 +266,7 @@ class HTTP
      * @access private
      * @static
      */
-    function _matchAccept($header, $supported)
+    static function _matchAccept($header, $supported)
     {
         $matches = HTTP::_sortAccept($header);
         foreach ($matches as $key => $q) {
@@ -279,7 +290,7 @@ class HTTP
      * @access private
      * @static
      */
-    function _sortAccept($header)
+    static function _sortAccept($header)
     {
         $matches = array();
         foreach (explode(',', $header) as $option) {
@@ -333,7 +344,7 @@ class HTTP
      * @see HTTP_Client::head()
      * @see HTTP_Request
      */
-    function head($url, $timeout = 10)
+    static function head($url, $timeout = 10)
     {
         $p = parse_url($url);
         if (!isset($p['scheme'])) {
@@ -392,7 +403,7 @@ class HTTP
      * @static
      * @access public
      */
-    function redirect($url, $exit = true, $rfc2616 = false)
+    static function redirect($url, $exit = true, $rfc2616 = false)
     {
         if (headers_sent()) {
             return false;
@@ -443,7 +454,7 @@ location.replace("'.str_replace('"', '\\"', $url).'");
      * @static
      * @access public
      */
-    function absoluteURI($url = null, $protocol = null, $port = null)
+    static function absoluteURI($url = null, $protocol = null, $port = null)
     {
         // filter CR/LF
         $url = str_replace(array("\r", "\n"), ' ', $url);
@@ -538,10 +549,9 @@ location.replace("'.str_replace('"', '\\"', $url).'");
      * @static
      * @access protected
      */
-    function raiseError($error = null, $code = null)
+    static function raiseError($error = null, $code = null)
     {
-        include_once 'PEAR.php';
-        return PEAR::raiseError($error, $code);
+        return HTTP::getPEARInstance()->raiseError($error, $code);
     }
 }
 

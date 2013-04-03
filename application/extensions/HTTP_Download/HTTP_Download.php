@@ -17,11 +17,6 @@
 
 // {{{ includes
 /**
- * Requires PEAR
- */
-require_once 'PEAR.php';
-
-/**
  * Requires HTTP_Header
  */
 require_once 'HTTP/Header.php';
@@ -89,6 +84,18 @@ class HTTP_Download
 	const E_INVALID_CONTENT_TYPE =  -8;
 	const E_INVALID_ARCHIVE_TYPE =  -9;
 	/**#@-**/
+	// }}}
+	
+	// {{{ static PEAR instance
+	static $PEAR;
+	
+	static function getPEARInstance() {
+		if(is_null(HTTP_Download::$PEAR)) {
+			require_once 'PEAR.php';
+			HTTP_Download::$PEAR = new PEAR();
+		}
+		return HTTP_Download::$PEAR;
+	}
 	// }}}
 	
     // {{{ protected member variables
@@ -277,7 +284,7 @@ class HTTP_Download
             $method = 'set'. $param;
 
             if (!method_exists($this, $method)) {
-                return PEAR::raiseError(
+                return HTTP_Download::getPEARInstance()->raiseError(
                     "Method '$method' doesn't exist.",
                     self::E_INVALID_PARAM
                 );
@@ -285,7 +292,7 @@ class HTTP_Download
 
             $e = call_user_func_array(array(&$this, $method), (array) $value);
 
-            if (PEAR::isError($e)) {
+            if (HTTP_Download::getPEARInstance()->isError($e)) {
                 return $e;
             }
         }
@@ -316,7 +323,7 @@ class HTTP_Download
             if ($send_error) {
                 $this->HTTP->sendStatusCode(404);
             }
-            return PEAR::raiseError(
+            return HTTP_Download::getPEARInstance()->raiseError(
                 "File '$file' not found.",
                 self::E_INVALID_FILE
             );
@@ -325,7 +332,7 @@ class HTTP_Download
             if ($send_error) {
                 $this->HTTP->sendStatusCode(403);
             }
-            return PEAR::raiseError(
+            return HTTP_Download::getPEARInstance()->raiseError(
                 "Cannot read file '$file'.",
                 self::E_INVALID_FILE
             );
@@ -382,7 +389,7 @@ class HTTP_Download
             return true;
         }
 
-        return PEAR::raiseError(
+        return HTTP_Download::getPEARInstance()->raiseError(
             "Handle '$handle' is no valid resource.",
             self::E_INVALID_RESOURCE
         );
@@ -404,8 +411,8 @@ class HTTP_Download
         if ($error !== null) {
             return $error;
         }
-        if ($gzip && !PEAR::loadExtension('zlib')){
-            return PEAR::raiseError(
+        if ($gzip && !HTTP_Download::getPEARInstance()->loadExtension('zlib')){
+            return HTTP_Download::getPEARInstance()->raiseError(
                 'GZIP compression (ext/zlib) not available.',
                 self::E_NO_EXT_ZLIB
             );
@@ -495,7 +502,7 @@ class HTTP_Download
             return $error;
         }
         if (0 >= $bytes) {
-            return PEAR::raiseError(
+            return HTTP_Download::getPEARInstance()->raiseError(
                 'Buffer size must be greater than 0 bytes ('. $bytes .' given)',
                 self::E_INVALID_PARAM);
         }
@@ -599,7 +606,7 @@ class HTTP_Download
             return $error;
         }
         if (!preg_match('/^[a-z]+\w*\/[a-z]+[\w.;= -]*$/', $content_type)) {
-            return PEAR::raiseError(
+            return HTTP_Download::getPEARInstance()->raiseError(
                 "Invalid content type '$content_type' supplied.",
                 self::E_INVALID_CONTENT_TYPE
             );
@@ -633,26 +640,26 @@ class HTTP_Download
             return $error;
         }
         if (class_exists('MIME_Type') || @include_once 'MIME/Type.php') {
-            if (PEAR::isError($mime_type = MIME_Type::autoDetect($this->file))) {
-                return PEAR::raiseError($mime_type->getMessage(),
+            if (HTTP_Download::getPEARInstance()->isError($mime_type = MIME_Type::autoDetect($this->file))) {
+                return HTTP_Download::getPEARInstance()->raiseError($mime_type->getMessage(),
                     self::E_INVALID_CONTENT_TYPE);
             }
             return $this->setContentType($mime_type);
         }
         if (!function_exists('mime_content_type')) {
-            return PEAR::raiseError(
+            return HTTP_Download::getPEARInstance()->raiseError(
                 'This feature requires ext/mime_magic!',
                 self::E_NO_EXT_MMAGIC
             );
         }
         if (!is_file(ini_get('mime_magic.magicfile'))) {
-            return PEAR::raiseError(
+            return HTTP_Download::getPEARInstance()->raiseError(
                 'ext/mime_magic is loaded but not properly configured!',
                 self::E_NO_EXT_MMAGIC
             );
         }
         if (!$content_type = @mime_content_type($this->file)) {
-            return PEAR::raiseError(
+            return HTTP_Download::getPEARInstance()->raiseError(
                 'Couldn\'t guess content type with mime_content_type().',
                 self::E_INVALID_CONTENT_TYPE
             );
@@ -679,7 +686,7 @@ class HTTP_Download
             return $error;
         }
         if (headers_sent()) {
-            return PEAR::raiseError(
+            return HTTP_Download::getPEARInstance()->raiseError(
                 'Headers already sent.',
                 self::E_HEADERS_SENT
             );
@@ -726,7 +733,7 @@ class HTTP_Download
                 $this->HTTP->sendStatusCode(200);
                 $chunks = array(array(0, $end));
 
-            } elseif (PEAR::isError($chunks)) {
+            } elseif (HTTP_Download::getPEARInstance()->isError($chunks)) {
                 ob_end_clean();
                 $this->HTTP->sendStatusCode(416);
                 return $chunks;
@@ -762,16 +769,16 @@ class HTTP_Download
      * @param   bool    $guess      whether HTTP_Download::guessContentType()
      *                               should be called
      */
-    function staticSend($params, $guess = false)
+    static function staticSend($params, $guess = false)
     {
         $d = new HTTP_Download();
         $e = $d->setParams($params);
-        if (PEAR::isError($e)) {
+        if (HTTP_Download::getPEARInstance()->isError($e)) {
             return $e;
         }
         if ($guess) {
             $e = $d->guessContentType();
-            if (PEAR::isError($e)) {
+            if (HTTP_Download::getPEARInstance()->isError($e)) {
                 return $e;
             }
         }
@@ -804,7 +811,7 @@ class HTTP_Download
      * @param   string  $add_path   path that should be prepended to the files
      * @param   string  $strip_path path that should be stripped from the files
      */
-    function sendArchive(   $name,
+    static function sendArchive(   $name,
                             $files,
                             $type       = self::TGZ,
                             $add_path   = '',
@@ -1002,7 +1009,7 @@ class HTTP_Download
         // If the byte-range-set is unsatisfiable, the server SHOULD return a
         // response with a status of 416 (Requested range not satisfiable).
         if (!$satisfiable) {
-            $error = PEAR::raiseError('Error processing range request',
+            $error = HTTP_Download::getPEARInstance()->raiseError('Error processing range request',
                                       self::E_INVALID_REQUEST);
             return $error;
         }
@@ -1020,7 +1027,7 @@ class HTTP_Download
      * @static
      * @author Philippe Jausions <jausions@php.net>
      */
-    function sortChunks(&$chunks)
+    static function sortChunks(&$chunks)
     {
         $sortFunc = create_function('$a,$b',
             'if ($a[0] == $b[0]) {
@@ -1046,7 +1053,7 @@ class HTTP_Download
      * @static
      * @author Philippe Jausions <jausions@php.net>
      */
-    function mergeChunks($chunks)
+    static function mergeChunks($chunks)
     {
         do {
             $count = count($chunks);
@@ -1233,7 +1240,7 @@ class HTTP_Download
     function _getError()
     {
         $error = null;
-        if (PEAR::isError($this->_error)) {
+        if (HTTP_Download::getPEARInstance()->isError($this->_error)) {
             $error = $this->_error;
             $this->_error = null;
         }
