@@ -282,7 +282,7 @@ class CPUser extends ActiveRecord implements IUserIdentity {
 	}
 	
 	public function determineGroup($attribute, $params) {
-		$this->group_id = EmployerDomain::model()->exists('name = :name', array(':name' => array_pop(explode('@', $this->email)))) ?
+		$this->group_id = EmployerDomain::model()->exists(':name RLIKE name', array(':name' => $this->email)) ?
 													   Group::model()->find('name = :name', array(':name' => Group::EMPLOYEES))->id :
 													   Group::model()->find('name = :name', array(':name' => Group::REGISTERED))->id;
 	}
