@@ -87,8 +87,6 @@ class MPTranslate extends CApplicationComponent {
 		if(isset($_GET['language'])) {
 			$language = $_GET['language'];
 			unset($_GET['language']);
-		} else if (Yii::app()->getSession()->contains('language')) {
-			$language = Yii::app()->getSession()->itemAt('language');
 		} else if (Yii::app()->getUser()->hasState('language')) {
 			$language = Yii::app()->getUser()->getState('language');
 		} else if(Yii::app()->getRequest()->getCookies()->contains('language')) {
@@ -113,7 +111,6 @@ class MPTranslate extends CApplicationComponent {
 		Yii::app()->setLanguage($language);
 		setLocale(LC_ALL, $language.'.'.Yii::app()->charset);
 		
-		Yii::app()->getSession()->add('language', $language);
 		Yii::app()->getUser()->setState('language', $language);
 		
 		// Set cookie if not set.

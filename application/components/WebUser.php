@@ -4,9 +4,11 @@ class WebUser extends CWebUser {
 
 	private $_model;
 	
-	public function getModel() {
-		if($this->_model === null && ($id = $this->getId()) !== null)
-			$this->_model = CPUser::model()->findByPk($id);
+	public function getModel($id = null) {
+		if($this->_model === null) {
+			if($id !== null || ($id = $this->getId()) !== null)
+				$this->_model = CPUser::model()->findByPk($id);
+		}
 		return $this->_model;
 	}
 	
@@ -28,15 +30,14 @@ class WebUser extends CWebUser {
 	}
 
 	protected function beforeLogin($id, $states, $fromCookie) {
-		if($this->getModel() !== null) {
-			if($fromCookie) {
-				if(isset($states['sk']) && $this->getModel()->session_key === $states['sk'])
-					return parent::beforeLogin($id, $states, $fromCookie);
-			} else {
-				return parent::beforeLogin($id, $states, $fromCookie);
-			}
-		}
-		return false;
+		return $this->getModel($id) !== null && 
+				(!$fromCookie || (isset($states['sk']) && $this->getModel()->session_key === $states['sk'])) &&
+				parent::beforeLogin($id, $states, $fromCookie);
+	}
+	
+	protected function afterLogin($fromCookie) {
+		parent::afterLogin($fromCookie);
+		var_dump($_SESSION);
 	}
 
 	protected function beforeLogout() {
