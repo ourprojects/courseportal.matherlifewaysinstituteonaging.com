@@ -103,6 +103,20 @@
 	top: 88px;
 	left: 110px;
 }
+#bottom-logos a#eapassociation {
+	background: url(../images/partners/eapassociation.png) top center no-repeat;
+	width: 120px;
+	height: 76px;
+	top: 88px;
+	left: 110px;
+}
+#bottom-logos a#rosalyncarter {
+	background: url(../images/partners/rosalyncarter.png) top center no-repeat;
+	width: 140px;
+	height: 114px;
+	top: 88px;
+	left: 110px;
+}
 #bottom-logos a#rush:hover, 
 #bottom-logos a#aa:hover, 
 #bottom-logos a#git:hover, 
@@ -110,6 +124,8 @@
 #bottom-logos a#wfd:hover, 
 #bottom-logos a#discourse:hover, 
 #bottom-logos a#glader:hover, 
-#bottom-logos a#mediastorm:hover {
+#bottom-logos a#mediastorm:hover 
+#bottom-logos a#eapassociation:hover
+#bottom-logos a#rosalyncarter:hover {
 	background-position: bottom;
 }
