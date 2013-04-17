@@ -87,4 +87,6 @@
     <li><?php echo t('Planning for the future'); ?></li>
     <li><?php echo t('Coping and caring strategies'); ?></li>
   </ul>
+  <hr>
+  <p>&nbsp;</p>
 </div>
