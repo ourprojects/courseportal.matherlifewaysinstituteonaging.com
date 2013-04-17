@@ -92,18 +92,19 @@ foreach(array(
   <br />
   <br />
   
-   <div class="box-white">
+  <div class="box-white">
     <h4><?php echo t('Length'); ?></h4>
-    <p><?php echo t('* Participant Access - 1 Year'); ?><br />
-      <?php echo t('* Recommended Completion - 5 Weeks'); ?><br />
-      <?php echo t('* Weekly Commitment - 1 Lesson @ 2 to 3 Hours'); ?></p>
+    <h5><?php echo t('Participant Access'); ?></h5>
+    <p><?php echo t('You will have access for one-year from the day you registered.'); ?></p>
+    <h5><?php echo t('Recommended Completion'); ?></h5>
+    <p><?php echo t('This course was designed to be completed within five weeks.'); ?></p>
   </div>
   
   
   
    <div class="box-white">
     <h4><?php echo t('Key'); ?></h4>
-    <p><?php echo t('The following Key will help you navigate the course and it\'s requirements.'); ?></p>
+    <p><?php echo t('The will need access to the following applications to participate in this course.'); ?></p>
     <br />
     <table width="100%" border="0">
       <tr>
