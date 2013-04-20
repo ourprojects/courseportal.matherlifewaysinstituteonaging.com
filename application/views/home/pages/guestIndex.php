@@ -46,7 +46,20 @@ $this->widget(
   <div class="box-sidebar zero"> <a href="<?php echo $this->createUrl('user/register'); ?>"><?php echo t('Register'); ?> </a> <a
 			href="<?php echo $this->createUrl('home/contact'); ?>" class="teal"
 		><?php echo t('Request Information'); ?> </a> <a href="#slide-1" data-fancybox-group="open-tutorial" class="teal open-tutorial"> <?php echo t('Tutorial'); ?> </a> <a href="#slide-2" data-fancybox-group="open-tutorial" class="hide open-tutorial"></a> <a href="#slide-3" data-fancybox-group="open-tutorial" class="hide open-tutorial"></a> <a href="#slide-4" data-fancybox-group="open-tutorial" class="hide open-tutorial"></a> <a href="#slide-5" data-fancybox-group="open-tutorial" class="hide open-tutorial"></a> <a href="#slide-6" data-fancybox-group="open-tutorial" class="hide open-tutorial"></a> </div>
-  <!-- Clients sidebar here -->
+
+  <!-- EACC pending approval sidebar here -->
+
+  <div class="box-sidebar one">
+    <h3><?php echo t('EACC'); ?></h3>
+    <h5 style="text-align:center;"><?php echo t('Course Approvals<br />Pending Application'); ?></h5>
+    <p style="font-weight:bold;"> <a href="http://www.eapassn.org/files/public/EACCroster2012.pdf" target="_blank"><?php echo t('Employee Assistance Certification Commission (EACC)'); ?></a></p>
+    <p><?php echo t('Established in 1986, the EACC is the credentialing governance body responsible for upholding all professional standards, policies, and procedures concerning the Certified Employee Assistance Professional (CEAP) credential.'); ?></p>
+    
+    <p><a href="http://www.eapassn.org/" target="_blank"><img src="<?php echo $this->getImagesUrl('EAPlogo.png'); ?>" style="display:block; margin-left:auto; margin-right:auto;" alt="EAP Assocation Logo"></a></p>
+      </div>
+  
+  
+<!-- Clients sidebar here -->
   <div class="box-sidebar one">
     <h3> <?php echo t('Our Clients'); ?> </h3>
     <div id="customers"> <a href="http://www.ibm.com" target="_blank"><img src="<?php echo $this->getImagesUrl('customers/ibm.png'); ?>" alt="IBM" /> </a> <a href="http://www.merck.com" target="_blank"><img src="<?php echo $this->getImagesUrl('customers/merck.png'); ?>"
