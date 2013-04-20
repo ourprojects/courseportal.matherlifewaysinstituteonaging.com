@@ -18,10 +18,10 @@
 	margin-top: 4px;
 }
 #customers {
-    height: 90px;
-    width: 220px;
-    padding: 0;
-    margin: 15px auto;
+	height: 90px;
+	width: 220px;
+	padding: 0;
+	margin: 15px auto;
 }
 #bottom-logos {
 	clear: both;
@@ -68,27 +68,6 @@
 	top: 35px;
 	left: 620px;
 }
-#bottom-logos a#yii {
-	background: url(../images/partners/yii.png) top center no-repeat;
-	width: 155px;
-	height: 35px;
-	top: 88px;
-	left: 450px;
-}
-#bottom-logos a#git {
-	background: url(../images/partners/git.png) top center no-repeat;
-	width: 75px;
-	height: 35px;
-	top: 35px;
-	left: 510px;
-}
-#bottom-logos a#discourse {
-	background: url(../images/partners/discourse.png) top center no-repeat;
-	width: 128px;
-	height: 35px;
-	top: 88px;
-	left: 660px;
-}
 #bottom-logos a#glader {
 	background: url(../images/partners/glader.png) top center no-repeat;
 	width: 85px;
@@ -103,29 +82,6 @@
 	top: 88px;
 	left: 110px;
 }
-#bottom-logos a#eapassociation {
-	background: url(../images/partners/eapassociation.png) top center no-repeat;
-	width: 120px;
-	height: 76px;
-	top: 88px;
-	left: 110px;
-}
-#bottom-logos a#rosalyncarter {
-	background: url(../images/partners/rosalyncarter.png) top center no-repeat;
-	width: 140px;
-	height: 114px;
-	top: 88px;
-	left: 110px;
-}
-#bottom-logos a#rush:hover, 
-#bottom-logos a#aa:hover, 
-#bottom-logos a#git:hover, 
-#bottom-logos a#yii:hover, 
-#bottom-logos a#wfd:hover, 
-#bottom-logos a#discourse:hover, 
-#bottom-logos a#glader:hover, 
-#bottom-logos a#mediastorm:hover 
-#bottom-logos a#eapassociation:hover
-#bottom-logos a#rosalyncarter:hover {
+#bottom-logos a#rush:hover, #bottom-logos a#aa:hover, #bottom-logos a#wfd:hover, #bottom-logos a#glader:hover, #bottom-logos a#mediastorm:hover {
 	background-position: bottom;
 }
