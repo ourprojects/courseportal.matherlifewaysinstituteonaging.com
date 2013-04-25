@@ -115,7 +115,8 @@ Find help providing care, government agencies, long-distance caregiving, and sup
   <p><a href="http://www.aarp.org/home-family/caregiving/" target="_blank"><?php echo t('Caregiving Resources from AARP'); ?></a></p>
   <!-- 
 AARP provides various articles of interest and resources for family caregivers. -->
-  
+  <br />
+  <br />
   <div class="box-white">
     <div id="developers">
       <h4><?php echo t('Facilitators &amp; Course Developers'); ?></h4>
