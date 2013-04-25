@@ -141,6 +141,7 @@ foreach(array(
     <div class="content">
       <h2 class="flowers"><?php echo t('Overview of Memory Loss and Related Symptoms'); ?></h2>
       <hr />
+           <img src="<?php echo $this->getImagesUrl('msml/154418413.jpg'); ?>" alt="image" style="width:500; height:391;">
       <p><?php echo t('We are delighted that you are interested in MSML Online. This five-lesson course is intended to help family members of someone in the early stages of memory loss to meet the challenges they face now and in the future. Research evaluation has shown that participation in this course increases family members’ knowledge and improves coping skills with respect to their relatives’ memory and behavior changes.'); ?></p>
       <p><?php echo t('Lesson Objectives:'); ?></p>
       <ul>
@@ -151,6 +152,10 @@ foreach(array(
         <li><?php echo t('To describe current and proposed medical treatments.'); ?></li>
         <li><?php echo t('To describe research efforts to treat or prevent memory loss.'); ?></li>
       </ul>
+      
+ 
+      
+      
     </div>
     <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Start Course &raquo;'); ?></a></div>
   </div>
@@ -664,14 +669,24 @@ foreach(array(
       <div class="content">
         <h2 class="flowers"><?php echo t('Communication Strategies'); ?></h2>
         <hr />
-        <p><?php echo t('Lesson Objectives:'); ?></p>
+        <p><?php echo t('Objectives:'); ?></p>
         <ul>
           <li><?php echo t('To give an overview of communication changes typical in early memory loss.'); ?></li>
           <li><?php echo t('To familiarize participants with general principles for maintaining communication with a person experiencing early memory loss.'); ?></li>
           <li><?php echo t('To describe several ways to encourage verbal expression.'); ?></li>
           <li><?php echo t('To review common communication pitfalls, and how to avoid them.'); ?></li>
         </ul>
-        <p><?php echo t('Welcome Back!'); ?></p>
+            </div>
+      <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Start Course &raquo;'); ?></a></div>
+    </div>
+        
+        
+        
+            <div id="lesson-2-slide-2" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('Welcome Back!'); ?></h2>
+        
+        
         <p><?php echo t('Welcome to the second lesson of MSML Online. One of the more frustrating and difficult aspects of memory loss is that the person\'s ability to communicate may be compromised. In this class, we will discuss how to adapt to these changes. We will cover these general topics and get into specifics along the way:'); ?></p>
         <p><?php echo t('Agenda for Lesson 2'); ?></p>
         <ul>
@@ -683,7 +698,19 @@ foreach(array(
       </div>
       <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Start Course &raquo;'); ?></a></div>
     </div>
+    
+    
   </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   <div id="lesson-3">
     <div id="lesson-3-slide-1" class="course-slide">
       <div class="content">
