@@ -29,29 +29,32 @@ foreach(array(
 </div>
 <div id="sidebar"> 
   
-  <!-- sidebar #1 here -->
+  
   
   <div class="box-sidebar one">
-    <h3><?php echo t('Pre-Course Survey'); ?></h3>
-    <br />
-    <p><?php echo t('Please complete the Pre-Course Survey before beginning this course. Your response are anonymous and are used to help improve your experience.'); ?></p>
-    <a href="<?php echo $this->createUrl('user/profile'); ?>" target="_self"><img class="block-center" src="<?php echo $this->getImagesUrl('survey_icon2.png'); ?>" alt="" /></a>
+    <h3>Sharp Brains - Market Research</h3>
+    <h5><?php echo t('Tracking Brain Health Innovations: News, Research, Trech, Trends'); ?></h5>
+    <p><a href="http://sharpbrains.com/index.php" target="_blank"><img class="block-center" src="<?php echo $this->getImagesUrl('spencer/SharpBrainsLogo.gif'); ?>" alt="image"></a></p>
     <hr />
-    <p id="surveynotify"><?php echo t('Complete the<br />Pre-Course Survey'); ?></p>
-    <br />
+    <p><?php echo t('Sharp­Brains is an independent market research firm and think tank helping organizations and individuals navigate the emerging brain fitness and applied neuroscience field. We maintain an annual state-of-the-market report series, publish consumer guides to inform decision-making, produce an annual global and virtual professional conference.'); ?></p>
   </div>
   
-  <!-- SIDEBAR 2 -->
-  
-  <div class="box-sidebar three">
-    <h3>Pew Internet</h3>
-    <p style="text-align:center; font-weight:bold;"><a href="http://www.pewinternet.org/Reports/2002/Vital-Decisions-A-Pew-Internet-Health-Report/Main-Report.aspx?view=all" target="_blank"><?php echo t('Main Report: The search for online medical help'); ?></a></p>
-    <p><img class="block-center" src="<?php echo $this->getImagesUrl('pew.png'); ?>" alt="image"></p>
+    <div class="box-sidebar two">
+    <h3>Go4Life</h3>
+    <h5><?php echo t('from the National Institute on Aging at NIH'); ?></h5>
+    <p><a href="http://sharpbrains.com/index.php" target="_blank"><img class="block-center" src="<?php echo $this->getImagesUrl('spencer/Go4lifeScreenShot.png'); ?>" style="width:200; height:142;" alt="image"></a></p>
     <hr />
-    <p style="font-weight:bold;"><?php echo t('Vital Decisions: A Pew Internet Health Report'); ?></p>
-    <p><?php echo t('Tens of millions of Americans turn to the Internet when they need help with health problems.  Health professionals are often apprehensive about the reliability of online health information and wonder how consumers can possibly find good advice in the untamed wilderness of the Internet.'); ?></p>
-    <p><?php echo t('In an environment where any quack can create a credible-looking Web site and promote all manner of questionable "cures," how can Internet users know what information will most benefit them? What signals of quality should they seek?'); ?></p>
+    <p><?php echo t('Go4Life, an exercise and physical activity campaign from the National Institute on Aging at NIH, is designed to help you fit exercise and physical activity into your daily life. Motivating older adults to become physically active for the first time, return to exercise after a break in their routines, or build more exercise and physical activity into weekly routines are the essential elements of Go4Life.'); ?></p>
   </div>
+  
+   <div class="box-sidebar three">
+    <h3>Coming Soon!</h3>
+    <p><?php echo t('Coming Soon'); ?></p>
+    <hr />
+    <p><?php echo t('Coming Soon!'); ?></p>
+  </div>
+  
+  
 </div>
 
 <!-- start main content -->
@@ -68,6 +71,7 @@ foreach(array(
   </ul>
   <!-- course lesson list start here -->
   <h4><?php echo t('Course Lessons'); ?></h4>
+  <p><a href="#"><?php echo t('Pre-Course Survey'); ?></a></p>
   <ul>
     <li> <a href="#lesson-1-slide-1" data-fancybox-group="lesson-1" class="teal lesson-1"> <?php echo t('Introduction'); ?></a> <a href="#lesson-1-slide-2" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-3" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-4" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-5" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-6" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-7" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-8" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-9" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-10" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-11" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-12" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-13" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-14" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-15" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-16" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-17" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-18" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-19" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-20" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-21" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-22" data-fancybox-group="lesson-1" class="hide lesson-1"></a></li>
    
@@ -109,46 +113,15 @@ foreach(array(
     <li> <a href="#lesson-5-slide-1" data-fancybox-group="lesson-5" class="teal lesson-5"> <?php echo t('Emotional'); ?></a> <a href="#lesson-5-slide-2" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-3" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-4" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-5" data-fancybox-group="lesson-5" class="hide lesson-5"></a></li>
     <li> <a href="#lesson-5-slide-1" data-fancybox-group="lesson-5" class="teal lesson-5"> <?php echo t('Closing'); ?></a> <a href="#lesson-5-slide-2" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-3" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-4" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-5" data-fancybox-group="lesson-5" class="hide lesson-5"></a></li>
   </ul>
-  <br />
-  <br />
-  <div class="box-white">
-    <h4><?php echo t('Length'); ?></h4>
-    <h5><?php echo t('Participant Access'); ?></h5>
-    <p><?php echo t('You will have access for one-year from the day you registered.'); ?></p>
-    <h5><?php echo t('Recommended Completion'); ?></h5>
-    <p><?php echo t('This course was designed to be completed within five weeks.'); ?></p>
-  </div>
+  <p><a href="#"><?php echo t('Post-Course Survey'); ?></a></p>
+
   
+  
+  
+    
   <!-- Key white box starts here -->
   
-  <div class="box-white">
-    <h4><?php echo t('Key'); ?></h4>
-    <p><?php echo t('The will need access to the following applications to participate in this course.'); ?></p>
-    <br />
-    <table style="width:100%; border:none;">
-      <tr>
-        <td style="width:20%;"><?php echo t('Word Processor'); ?><br />
-          <img width="64" height="64" src="<?php echo $this->getImagesUrl('word.png'); ?>" alt="<?php echo t('Word Processor'); ?>"></td>
-        <td style="width:20%;"><?php echo t('Spreadsheet Processor'); ?><br />
-          <img width="64" height="64" src="<?php echo $this->getImagesUrl('spreadsheet.png'); ?>" alt="<?php echo t('Spreadsheet Processor'); ?>"></td>
-        <td style="width:20%;"><?php echo t('Email Client'); ?><br />
-          <img width="64" height="64" src="<?php echo $this->getImagesUrl('email.png'); ?>" alt="<?php echo t('Email Client'); ?>"></td>
-        <td style="width:20%;"><?php echo t('Adobe Reader'); ?><br />
-          <img width="64" height="64" src="<?php echo $this->getImagesUrl('pdf-icon.png'); ?>" alt="<?php echo t('Adobe Reader'); ?>"></td>
-        <td style="width: 20%;"><?php echo t('You Tube'); ?><br />
-          <img width="64" height="64" src="<?php echo $this->getImagesUrl('YouTubeIcon.png'); ?>" alt="<?php echo t('You Tube'); ?>"></td>
-      </tr>
-    </table>
-  </div>
-  <div class="box-white">
-    <h4> <?php echo t('Resources'); ?></h4>
-    <p><?php echo t('Please use these listed resources in the completion of this online course. Pleaes contact your instructor or the program director if you have additional resources you would like to see added here.'); ?></p>
-    <p><a href="http://www.alz.org" target="_blank">Alzheimer's Association</a></p>
-    <p><a href="http://www.nih.gov" target="_blank">National Intitute on Health (NIH)</a></p>
-    <p><a href="http://www.webmd.com" target="_blank">WebMD website</a></p>
-    <p><a href="http://www.sharpbrains.com" target="_blank">SharpBrains</a></p>
-  </div>
-  <div class="box-white">
+
     <h4><?php echo t('Facilitators &amp; Course Developers'); ?></h4>
     <h5><?php echo t('Content Designer: '); ?><a href="mailto:cobrien@matherlifeways.com"><?php echo t('Cate O\'Brien'); ?></a></h5>
     <p><?php echo t('Ms. O’Brien has worked in a research capacity for Mather LifeWays Institute on Aging since 2005. She has been responsible for designing and overseeing large-scale multi-year evaluations for grant-funded projects relating to the field of aging. As a Project Director on grant funded research projects, she has been responsible for forging collaborations with aging services organizations nationwide, and for recruiting older adults into various studies.'); ?></p>
@@ -156,7 +129,7 @@ foreach(array(
     <p><?php echo t('Mr. Woodall is responsible for all MLIA corporate workforce wellness programs related to design, implementation, publication, and evaluation. Additionally, he seeks new grant funding to support or extend current grants related to corporate workforce wellness programs. '); ?></p>
     <h5><?php echo t('Course Facilitator: '); ?><a href="mailto:sall@cogwellness.com"><?php echo t('Sherrie All, PhD'); ?></a></h5>
     <p><?php echo t('Licensed clinical neuropsychologist specializing in brain fitness, healthy aging and cognitive enhancement. She is building a private practice in clinical neuropsychological assessment combined with interventions aimed at enhancing cognition and promoting healthy aging. And has specialties in Neuropsychological Assessment, Individual and Group Psychotherapy, Brain Fitness and Healthy Aging Thearpy and Coaching'); ?></p>
-  </div>
+
 </div>
 
 <!-- Lesson 1 slide #1 -->
