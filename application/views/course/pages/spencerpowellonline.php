@@ -27,101 +27,62 @@ foreach(array(
 <div class="small-masthead" style="background-image: url(<?php echo $this->getImagesUrl('126945521r.jpeg'); ?>);">
   <h1 class="bottom"><?php echo t($course->title); ?></h1>
 </div>
-<div id="sidebar"> 
-  
-  
-  
+<div id="sidebar">
   <div class="box-sidebar one">
     <h3>Sharp Brains - Market Research</h3>
-    <h5><?php echo t('Tracking Brain Health Innovations: News, Research, Trech, Trends'); ?></h5>
+    <p><?php echo t('Tracking Brain Health Innovations: News, Research, Trech, Trends'); ?></p>
     <p><a href="http://sharpbrains.com/index.php" target="_blank"><img class="block-center" src="<?php echo $this->getImagesUrl('spencer/SharpBrainsLogo.gif'); ?>" alt="image"></a></p>
     <hr />
     <p><?php echo t('Sharp­Brains is an independent market research firm and think tank helping organizations and individuals navigate the emerging brain fitness and applied neuroscience field. We maintain an annual state-of-the-market report series, publish consumer guides to inform decision-making, produce an annual global and virtual professional conference.'); ?></p>
   </div>
-  
-    <div class="box-sidebar two">
+  <div class="box-sidebar two">
     <h3>Go4Life</h3>
-    <h5><?php echo t('from the National Institute on Aging at NIH'); ?></h5>
+    <p><?php echo t('from the National Institute on Aging at NIH'); ?></p>
     <p><a href="http://sharpbrains.com/index.php" target="_blank"><img class="block-center" src="<?php echo $this->getImagesUrl('spencer/Go4lifeScreenShot.png'); ?>" style="width:200; height:142;" alt="image"></a></p>
     <hr />
     <p><?php echo t('Go4Life, an exercise and physical activity campaign from the National Institute on Aging at NIH, is designed to help you fit exercise and physical activity into your daily life. Motivating older adults to become physically active for the first time, return to exercise after a break in their routines, or build more exercise and physical activity into weekly routines are the essential elements of Go4Life.'); ?></p>
   </div>
-  
-   <div class="box-sidebar three">
+  <div class="box-sidebar three">
     <h3>Coming Soon!</h3>
     <p><?php echo t('Coming Soon'); ?></p>
     <hr />
     <p><?php echo t('Coming Soon!'); ?></p>
   </div>
-  
-  
 </div>
 
 <!-- start main content -->
 
 <div class="column-wide">
-  <h2 class="flowers"><?php echo t($course->title); ?></h2>
-  <p><?php echo t($course->description); ?></p>
-  <h4><?php echo t('Objectives'); ?></h4>
-  <ul>
-    <?php 
+<h2 class="flowers"><?php echo t($course->title); ?></h2>
+<p><?php echo t($course->description); ?></p>
+<h5>
+<?php echo t('Access - 1 year / Completion - 8 weeks (recommended)'); ?>
+<h4><?php echo t('Objectives'); ?></h4>
+<ul>
+  <?php 
   foreach($course->objectives as $objective)
   	echo '<li>' . t($objective->text) . '</li>';
   ?>
-  </ul>
-  <!-- course lesson list start here -->
-  <h4><?php echo t('Course Lessons'); ?></h4>
-  <p><a href="#"><?php echo t('Pre-Course Survey'); ?></a></p>
-  <ul>
-    <li> <a href="#lesson-1-slide-1" data-fancybox-group="lesson-1" class="teal lesson-1"> <?php echo t('Introduction'); ?></a> <a href="#lesson-1-slide-2" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-3" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-4" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-5" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-6" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-7" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-8" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-9" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-10" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-11" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-12" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-13" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-14" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-15" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-16" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-17" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-18" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-19" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-20" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-21" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-22" data-fancybox-group="lesson-1" class="hide lesson-1"></a></li>
-   
-   
-    <li> 
-    <a href="#lesson-2-slide-1" data-fancybox-group="lesson-2" class="teal lesson-2"> <?php echo t('Physical Activity'); ?></a> 
-    <a href="#lesson-2-slide-2" data-fancybox-group="lesson-2" class="hide lesson-2"></a> 
-    <a href="#lesson-2-slide-3" data-fancybox-group="lesson-2" class="hide lesson-2"></a> 
-    <a href="#lesson-2-slide-4" data-fancybox-group="lesson-2" class="hide lesson-2"></a> 
-    <a href="#lesson-2-slide-5" data-fancybox-group="lesson-2" class="hide lesson-2"></a>
-    <a href="#lesson-2-slide-6" data-fancybox-group="lesson-2" class="hide lesson-2"></a> 
-    <a href="#lesson-2-slide-7" data-fancybox-group="lesson-2" class="hide lesson-2"></a> 
-    <a href="#lesson-2-slide-8" data-fancybox-group="lesson-2" class="hide lesson-2"></a> 
-    <a href="#lesson-2-slide-9" data-fancybox-group="lesson-2" class="hide lesson-2"></a>
-    <a href="#lesson-2-slide-10" data-fancybox-group="lesson-2" class="hide lesson-2"></a> 
-    <a href="#lesson-2-slide-11" data-fancybox-group="lesson-2" class="hide lesson-2"></a> 
-    <a href="#lesson-2-slide-12" data-fancybox-group="lesson-2" class="hide lesson-2"></a> 
-    <a href="#lesson-2-slide-13" data-fancybox-group="lesson-2" class="hide lesson-2"></a>
-    <a href="#lesson-2-slide-14" data-fancybox-group="lesson-2" class="hide lesson-2"></a> 
-    <a href="#lesson-2-slide-15" data-fancybox-group="lesson-2" class="hide lesson-2"></a> 
-    <a href="#lesson-2-slide-16" data-fancybox-group="lesson-2" class="hide lesson-2"></a> 
-    <a href="#lesson-2-slide-17" data-fancybox-group="lesson-2" class="hide lesson-2"></a>
-    <a href="#lesson-2-slide-18" data-fancybox-group="lesson-2" class="hide lesson-2"></a> 
-    <a href="#lesson-2-slide-19" data-fancybox-group="lesson-2" class="hide lesson-2"></a> 
-    <a href="#lesson-2-slide-20" data-fancybox-group="lesson-2" class="hide lesson-2"></a> 
-    <a href="#lesson-2-slide-21" data-fancybox-group="lesson-2" class="hide lesson-2"></a>
-    <a href="#lesson-2-slide-22" data-fancybox-group="lesson-2" class="hide lesson-2"></a> 
-    <a href="#lesson-2-slide-23" data-fancybox-group="lesson-2" class="hide lesson-2"></a> 
-  
-    </li>
-   
-   
-   
-   
-    <li> <a href="#lesson-3-slide-1" data-fancybox-group="lesson-3" class="teal lesson-3"> <?php echo t('Emotional'); ?></a> <a href="#lesson-3-slide-2" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-3" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-4" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-5" data-fancybox-group="lesson-3" class="hide lesson-3"></a></li>
-    <li> <a href="#lesson-4-slide-1" data-fancybox-group="lesson-4" class="teal lesson-4"> <?php echo t('Intellectual'); ?></a> <a href="#lesson-4-slide-2" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-3" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-4" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-5" data-fancybox-group="lesson-4" class="hide lesson-4"></a></li>
-    <li> <a href="#lesson-5-slide-1" data-fancybox-group="lesson-5" class="teal lesson-5"> <?php echo t('Nutritional'); ?></a> <a href="#lesson-5-slide-2" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-3" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-4" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-5" data-fancybox-group="lesson-5" class="hide lesson-5"></a></li>
-    <li> <a href="#lesson-5-slide-1" data-fancybox-group="lesson-5" class="teal lesson-5"> <?php echo t('Spiritual'); ?></a> <a href="#lesson-5-slide-2" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-3" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-4" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-5" data-fancybox-group="lesson-5" class="hide lesson-5"></a></li>
-    <li> <a href="#lesson-5-slide-1" data-fancybox-group="lesson-5" class="teal lesson-5"> <?php echo t('Emotional'); ?></a> <a href="#lesson-5-slide-2" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-3" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-4" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-5" data-fancybox-group="lesson-5" class="hide lesson-5"></a></li>
-    <li> <a href="#lesson-5-slide-1" data-fancybox-group="lesson-5" class="teal lesson-5"> <?php echo t('Closing'); ?></a> <a href="#lesson-5-slide-2" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-3" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-4" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-5" data-fancybox-group="lesson-5" class="hide lesson-5"></a></li>
-  </ul>
-  <p><a href="#"><?php echo t('Post-Course Survey'); ?></a></p>
+</ul>
 
-  
-  
-  
-    
-  <!-- Key white box starts here -->
-  
-
+<!-- course lesson list start here -->
+<h4><?php echo t('Sections'); ?></h4>
+<p><a href="#"><?php echo t('Pre-Course Survey'); ?></a></p>
+<ul>
+  <li> <a href="#lesson-1-slide-1" data-fancybox-group="lesson-1" class="teal lesson-1"> <?php echo t('Introduction'); ?></a> <a href="#lesson-1-slide-2" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-3" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-4" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-5" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-6" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-7" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-8" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-9" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-10" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-11" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-12" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-13" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-14" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-15" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-16" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-17" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-18" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-19" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-20" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-21" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-22" data-fancybox-group="lesson-1" class="hide lesson-1"></a></li>
+  <li> <a href="#lesson-2-slide-1" data-fancybox-group="lesson-2" class="teal lesson-2"> <?php echo t('Physical Activity'); ?></a> <a href="#lesson-2-slide-2" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-3" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-4" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-5" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-6" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-7" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-8" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-9" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-10" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-11" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-12" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-13" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-14" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-15" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-16" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-17" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-18" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-19" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-20" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-21" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-22" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-23" data-fancybox-group="lesson-2" class="hide lesson-2"></a> </li>
+  <li> <a href="#lesson-3-slide-1" data-fancybox-group="lesson-3" class="teal lesson-3"> <?php echo t('Emotional'); ?></a> <a href="#lesson-3-slide-2" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-3" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-4" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-5" data-fancybox-group="lesson-3" class="hide lesson-3"></a></li>
+  <li> <a href="#lesson-4-slide-1" data-fancybox-group="lesson-4" class="teal lesson-4"> <?php echo t('Intellectual'); ?></a> <a href="#lesson-4-slide-2" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-3" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-4" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-5" data-fancybox-group="lesson-4" class="hide lesson-4"></a></li>
+  <li> <a href="#lesson-5-slide-1" data-fancybox-group="lesson-5" class="teal lesson-5"> <?php echo t('Nutritional'); ?></a> <a href="#lesson-5-slide-2" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-3" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-4" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-5" data-fancybox-group="lesson-5" class="hide lesson-5"></a></li>
+  <li> <a href="#lesson-5-slide-1" data-fancybox-group="lesson-5" class="teal lesson-5"> <?php echo t('Spiritual'); ?></a> <a href="#lesson-5-slide-2" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-3" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-4" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-5" data-fancybox-group="lesson-5" class="hide lesson-5"></a></li>
+  <li> <a href="#lesson-5-slide-1" data-fancybox-group="lesson-5" class="teal lesson-5"> <?php echo t('Emotional'); ?></a> <a href="#lesson-5-slide-2" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-3" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-4" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-5" data-fancybox-group="lesson-5" class="hide lesson-5"></a></li>
+  <li> <a href="#lesson-5-slide-1" data-fancybox-group="lesson-5" class="teal lesson-5"> <?php echo t('Closing'); ?></a> <a href="#lesson-5-slide-2" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-3" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-4" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-5" data-fancybox-group="lesson-5" class="hide lesson-5"></a></li>
+</ul>
+<p><a href="#"><?php echo t('Post-Course Survey'); ?></a></p>
+<br />
+<br />
+<div class="box-white">
+  <div id="developers">
     <h4><?php echo t('Facilitators &amp; Course Developers'); ?></h4>
     <h5><?php echo t('Content Designer: '); ?><a href="mailto:cobrien@matherlifeways.com"><?php echo t('Cate O\'Brien'); ?></a></h5>
     <p><?php echo t('Ms. O’Brien has worked in a research capacity for Mather LifeWays Institute on Aging since 2005. She has been responsible for designing and overseeing large-scale multi-year evaluations for grant-funded projects relating to the field of aging. As a Project Director on grant funded research projects, she has been responsible for forging collaborations with aging services organizations nationwide, and for recruiting older adults into various studies.'); ?></p>
@@ -129,8 +90,14 @@ foreach(array(
     <p><?php echo t('Mr. Woodall is responsible for all MLIA corporate workforce wellness programs related to design, implementation, publication, and evaluation. Additionally, he seeks new grant funding to support or extend current grants related to corporate workforce wellness programs. '); ?></p>
     <h5><?php echo t('Course Facilitator: '); ?><a href="mailto:sall@cogwellness.com"><?php echo t('Sherrie All, PhD'); ?></a></h5>
     <p><?php echo t('Licensed clinical neuropsychologist specializing in brain fitness, healthy aging and cognitive enhancement. She is building a private practice in clinical neuropsychological assessment combined with interventions aimed at enhancing cognition and promoting healthy aging. And has specialties in Neuropsychological Assessment, Individual and Group Psychotherapy, Brain Fitness and Healthy Aging Thearpy and Coaching'); ?></p>
+  </div>
+</div>
 
 </div>
+
+
+
+
 
 <!-- Lesson 1 slide #1 -->
 
@@ -534,7 +501,6 @@ Rewards
   -->
         
         <p><?php echo t('Please discuss how you plan to remember your goals and rewards and how you plan to track your progress on the Forum.'); ?></p>
-        
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
     </div>
@@ -561,8 +527,6 @@ Rewards
           <li><?php echo t('Is multi-tasking more efficient than doing one thing at a time?'); ?></li>
           <li><?php echo t('What are your goals for this week?'); ?></li>
         </ul>
-        
-        
       </div>
       <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> <?php echo t('Complete Lesson'); ?></a></div>
     </div>
@@ -570,69 +534,102 @@ Rewards
     <!-- this div is needed to close the  lesson --> 
   </div>
   
-  
   <!-- Lesson 2 slide #1 -->
-
-<div id="course" class="hide">
-  <div id="lesson-2">
-    <div id="lesson-2-slide-1" class="course-slide">
-      <div class="content">
-        <h2 class="flowers"><?php echo t('Spencer Powell Brain Fitness Program online'); ?></h2>
-        <hr />
-        <h4><?php echo t('Section 2'); ?></h4>
-        <p><?php echo t('test'); ?></p>
+  
+    <div id="lesson-2">
+      <div id="lesson-2-slide-1" class="course-slide">
+        <div class="content">
+          <h2 class="flowers"><?php echo t('Spencer Powell Brain Fitness Program online'); ?></h2>
+          <hr />
+          <h4><?php echo t('Section 2'); ?></h4>
+          <p><?php echo t('test'); ?></p>
+        </div>
+        <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Start Course &raquo;'); ?></a></div>
       </div>
-      <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Start Course &raquo;'); ?></a></div>
+      
+      <!-- Lesson 2 slide #2 -->
+      
+      <div id="lesson-2-slide-2" class="course-slide">
+        <div class="content">
+          <h2 class="flowers"><?php echo t('Section Outline'); ?></h2>
+          <hr />
+          <ol>
+            <li>
+              <h4>Check-in and Review</h4>
+            </li>
+            <li>
+              <h4>Benefits of Physical Activity</h4>
+            </li>
+            <li>
+              <h4>Memory Exercise</h4>
+            </li>
+            <li>
+              <h4>Goal Setting</h4>
+            </li>
+          </ol>
+        </div>
+        <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"> <?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
+      </div>
+      
+      
+         <!-- Lesson 2 slide #3 -->
+      
+      <div id="lesson-2-slide-3" class="course-slide">
+        <div class="content">
+          <h2 class="flowers"><?php echo t('Check-in'); ?></h2>
+          <hr />
+          <ul>
+          	<li><?php echo t('How did your week go?'); ?></li>
+            <li><?php echo t('Did you think about anything you learned last week?'); ?></li>
+            <li><?php echo t('Did you log your activities?'); ?></li>
+            <li><?php echo t('Any questions about the CR Contribution Logs?'); ?></li>
+            <li><?php echo t('What is Cognitive Reserve?'); ?></li>
+            <li><?php echo t('How can knowing about this theory help you?'); ?></li>
+            <li><?php echo t('What was the Memory Strategy that you learned last week?'); ?></li>
+            <li><?php echo t('Did you have a chance to use it?'); ?></li>
+         </ul>
+
+
+        </div>
+        <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"> <?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
+      </div>
+      
+      <!-- Lesson 2 slide #23 -->
+      
+      <div id="lesson-2-slide-23" class="course-slide">
+        <div class="content">
+          <h2 class="flowers"><?php echo t('Recap'); ?></h2>
+          <hr />
+          <h4><?php echo t('Forum Postings'); ?></h4>
+          <p><?php echo t('Please answer the following questions on the Forum. You can use the same thread to response to all of these questions.'); ?></p>
+          <p><?php echo t('Attempt to respond to these questions using the knowledge you gained from this Section. Please do not use the Internet or other sources to create your responses.'); ?></p>
+          <ul>
+            <li><?php echo t('What are some benefits of physical activity?
+'); ?></li>
+            <li><?php echo t('How does physical activity help your brain?
+'); ?></li>
+            <li><?php echo t('What are white dots?
+'); ?></li>
+            <li><?php echo t('Name 3 direct ways that physical activity seems to directly improve cognition.
+'); ?></li>
+            <li><?php echo t('What is the Memory Strategy for this week?
+'); ?></li>
+            <li><?php echo t('What are your goals for this week?
+'); ?></li>
+          </ul>
+        </div>
+        <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> <?php echo t('Complete Lesson'); ?></a></div>
+      </div>
+    
+    
+    
+    
+    
+      
+      <!-- this div is needed to close the  lesson --> 
     </div>
     
-  
-  <!-- Lesson 2 slide #2 -->
-
-  
-  <div id="lesson-2-slide-2" class="course-slide">
-      <div class="content">
-        <h2 class="flowers"><?php echo t('Section Outline'); ?></h2>
-        <hr />
-        <ol>
-          <li><h4>Check-in and Review</h4></li>
-          <li><h4>Benefits of Physical Activity</h4></li>
-          <li><h4>Memory Exercise</h4></li>
-          <li><h4>Goal Setting</h4></li>
-         </ol>
-         
-      </div>
-      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"> <?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
-    </div>
-
-  <!-- Lesson 2 slide #23 -->
-
-  <div id="lesson-2-slide-3" class="course-slide">
-      <div class="content">
-        <h2 class="flowers"><?php echo t('Recap'); ?></h2>
-        <hr />
-        <h4><?php echo t('Forum Postings'); ?></h4>
-        <p><?php echo t('Please answer the following questions on the Forum. You can use the same thread to response to all of these questions.'); ?></p>
-        <p><?php echo t('Attempt to respond to these questions using the knowledge you gained from this Section. Please do not use the Internet or other sources to create your responses.'); ?></p>
-        <ul>
-          <li><?php echo t('What are some benefits of physical activity?
-'); ?></li>
-          <li><?php echo t('How does physical activity help your brain?
-'); ?></li>
-          <li><?php echo t('What are white dots?
-'); ?></li>
-          <li><?php echo t('Name 3 direct ways that physical activity seems to directly improve cognition.
-'); ?></li>
-          <li><?php echo t('What is the Memory Strategy for this week?
-'); ?></li>
-          <li><?php echo t('What are your goals for this week?
-'); ?></li>
-        </ul>
-      </div>
-      <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> <?php echo t('Complete Lesson'); ?></a></div>
-    </div>
-    
-       <!-- this div is needed to close the  lesson --> 
+    <!-- need this final div to close the full course --> 
   </div>
-  
-  <!-- need this final div to close the full course --> 
-</div>
+
+
