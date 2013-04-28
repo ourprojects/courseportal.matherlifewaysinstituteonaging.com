@@ -8,4 +8,4 @@
   <hr />
   <p> <?php echo t('Please enter the email you used to register with us. Once you have submitted your request, instructions will be sent to the email provided describing how to reset your password.'); ?> </p>
   <p> <?php echo CHtml::link(t('Not registered?'), $this->createUrl('register')); ?> </p>
-  <?php echo $this->renderPartial('forms/user_maintenance_form', array('models' => $models)); ?> </div>
+  <?php echo $this->renderPartial('forms/username_form', $models); ?> </div>

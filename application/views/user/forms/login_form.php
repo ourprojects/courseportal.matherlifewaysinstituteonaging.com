@@ -2,27 +2,29 @@
 	<?php $form = $this->beginWidget('CActiveForm', array(
 			'id' => 'login-form',
 			'enableAjaxValidation' => true,
+			'enableClientValidation' => true,
 )); ?>
 
 	<p class="note">
 		<span class="required">*</span><?php echo t('Required'); ?>.
 	</p>
-	<?php echo $form->errorSummary($model); ?>
+	<?php echo $form->errorSummary($Login); ?>
 	<div class="row">
-		<?php echo $form->labelEx($model,'email'); ?>
-		<?php echo $form->textField($model,'email'); ?>
-		<?php echo $form->error($model,'email'); ?>
+		<?php echo $form->labelEx($Login,'username_email'); ?>
+		<?php echo $form->textField($Login,'username_email'); ?>
+		<?php echo $form->error($Login,'username_email'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'password_no_hash'); ?>
-		<?php echo $form->passwordField($model,'password_no_hash'); ?>
-		<?php echo $form->error($model,'password_no_hash'); ?>
+		<?php echo $form->labelEx($Login,'password'); ?>
+		<?php echo $form->passwordField($Login,'password'); ?>
+		<?php echo $form->error($Login,'password'); ?>
 	</div>
 
 	<div class="row remember_me">
-		<?php echo CHtml::checkBox('remember_me'); ?>
-		<?php echo CHtml::label(t('Remember me next time.'),'remember_me'); ?>
+		<?php echo $form->labelEx($Login,'remember_me'); ?>
+		<?php echo $form->checkbox($Login,'remember_me'); ?>
+		<?php echo $form->error($Login,'remember_me'); ?>
 	</div>
 
 	<div class="row submit">

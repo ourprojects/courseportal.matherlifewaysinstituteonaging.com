@@ -74,7 +74,7 @@ abstract class OnlineCoursePortalController extends CController {
 	
 	public function actions() {
 		return array(
-				'static' => 'ViewAction',
+				'static' => 'application.components.ViewAction',
 				'download' => 'ext.HTTP_Download.components.HTTP_DownloadAction',
 		);
 	}

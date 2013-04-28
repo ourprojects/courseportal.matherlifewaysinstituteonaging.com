@@ -1,6 +1,5 @@
 <?php
 
-$this->pageTitle = Yii::app()->name . ' - '.t('Guest');
 $clientScript = Yii::app()->getClientScript();
 $clientScript->registerCssFile($this->getStylesUrl('homeGuest.css'));
 $clientScript->registerCssFile($this->getStylesUrl('course.css'));

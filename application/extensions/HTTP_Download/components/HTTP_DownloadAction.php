@@ -23,6 +23,8 @@ class HTTP_DownloadAction extends CAction {
 	public $defaultFile;
 
 	public $file;
+	
+	public $data;
 	/**
 	 * @var string the name of the file to be sent in client download. This property will be set
 	 * once the user requested file is resolved if it has not already been set.
@@ -102,8 +104,7 @@ class HTTP_DownloadAction extends CAction {
 			if(!isset($this->contentType))
 				$this->contentType = CFileHelper::getMimeType($this->file, '/usr/share/misc/magic.mgc');
 		} else {
-			throw new CHttpException(404, Yii::t('HTTP_Download', 'File "{file}" does not exist.', 
-				array('{file}' => $filePath)));
+			throw new CHttpException(404, Yii::t('HTTP_Download', 'File "{file}" does not exist.', array('{file}' => $filePath)));
 		}
 	}
 
@@ -113,18 +114,25 @@ class HTTP_DownloadAction extends CAction {
 	 * @throws CHttpException if the file is invalid
 	 */
 	public function run() {
-		$this->resolveFile($this->getRequestedFile());
+		if(!isset($this->data))
+			$this->resolveFile($this->getRequestedFile());
 		
 		$this->onBeforeDownload($event = new CEvent($this));
 		if(!$event->handled) {
 			Yii::import('ext.HTTP_Download.HTTP_Download', true);
-			HTTP_Download::staticSend(
-					array(
-						'file' => $this->file,
-						'contenttype' => $this->contentType,
-						'contentdisposition' => array(HTTP_Download::ATTACHMENT, $this->fileName),
-					), 
-					false);
+			$params = array(
+					'contenttype' => $this->contentType,
+					'contentdisposition' => array(HTTP_Download::ATTACHMENT, $this->fileName),
+				);
+			if(isset($this->data))
+			{
+				$params['data'] = $this->data;
+			}
+			else
+			{
+				$params['file'] = $this->file;
+			}
+			HTTP_Download::staticSend($params, false);
 			$this->onAfterDownload(new CEvent($this));
 		}
 	}
@@ -143,7 +151,7 @@ class HTTP_DownloadAction extends CAction {
 	 * Raised right after the action invokes the render method.
 	 * @param CEvent $event event parameter
 	 */
-	public function onAfterAfter($event) {
+	public function onAfterDownload($event) {
 		$this->raiseEvent('onAfterDownload',$event);
 	}
 

@@ -19,7 +19,9 @@ class PBKDF2Validator extends CValidator {
 			$this->addError($object, $attribute, $message);
 			return false;
 		}
-		if(empty($object->$attribute) && !$this->allowEmpty) {
+		if(empty($object->$attribute)) {
+			if($this->allowEmpty)
+				return true;
 			$message = $this->message !== null ? $this->message : Yii::t('yii','{attribute} cannot be blank.', array('{attribute}' => $attribute));
 			$this->addError($object, $attribute, $message);
 			return false;

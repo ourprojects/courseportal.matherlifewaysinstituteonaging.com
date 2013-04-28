@@ -8,7 +8,7 @@
  * @property string $value
  * @property string $salt
  */
-class Key extends ActiveRecord {
+class Key extends CActiveRecord {
 	
 	private $_pbkdf2Hasher = null;
 	public $key = null;
@@ -44,6 +44,14 @@ class Key extends ActiveRecord {
     public function tableName() {
         return '{{key}}';
     }
+    
+    public function behaviors() {
+    	return array_merge(parent::behaviors(),
+    			array(
+    					'toArray' => array('class' => 'behaviors.EArrayBehavior'),
+    					'extendedFeatures' => array('class' => 'behaviors.EModelBehaviors')
+    			));
+    }
 
     /**
      * @return array validation rules for model attributes.
@@ -52,8 +60,11 @@ class Key extends ActiveRecord {
         return array(
         	array('key', 'safe'),
         	array('key', 'hash'),
+        		
             array('value, salt', 'required'),
         	array('value', 'ext.pbkdf2.PBKDF2validator'),
+        		
+        	array('id', 'numerical', 'integerOnly' => true),
         		
         	array('id', 'safe', 'on' => 'search'),
         );

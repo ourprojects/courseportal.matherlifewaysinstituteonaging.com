@@ -1,6 +1,6 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed');  
 
-class Group extends ActiveRecord {
+class Group extends CActiveRecord {
 	/**
 	 * This is the model class for table "group".
 	 *
@@ -14,9 +14,9 @@ class Group extends ActiveRecord {
 
 	const ADMIN = 'ADMINISTRATORS';
 	const GUEST = 'GUESTS';
-	const USER = 'REGISTERED';
+	const REGISTERED = 'REGISTERED';
 	const EMPLOYEE = 'Employees';
-	const DEFAULT_GROUP = self::USER;
+	const DEFAULT_GROUP = self::REGISTERED;
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @return CActiveRecord the static model class
@@ -32,6 +32,14 @@ class Group extends ActiveRecord {
 		return '{{group}}';
 	}
 	
+	public function behaviors() {
+		return array_merge(parent::behaviors(),
+				array(
+						'toArray' => array('class' => 'behaviors.EArrayBehavior'),
+						'extendedFeatures' => array('class' => 'behaviors.EModelBehaviors')
+				));
+	}
+	
 	public function getIsAdmin() {
 		return $this->name === self::ADMIN;
 	}
@@ -40,12 +48,22 @@ class Group extends ActiveRecord {
 		return $this->name === self::GUEST;
 	}
 	
-	public function getIsUser() {
-		return $this->name === self::USER;
+	public function getIsRegistered() {
+		return $this->name === self::REGISTERED;
 	}
 	
 	public function getIsEmployee() {
 		return $this->name === self::EMPLOYEE;
+	}
+	
+	public function rules()
+	{
+		return array(
+				array('name', 'required'),
+				
+				array('id', 'unsafe', 'except' => 'search'),
+				array('id', 'numerical', 'integerOnly' => true),
+		);
 	}
 
 	/**

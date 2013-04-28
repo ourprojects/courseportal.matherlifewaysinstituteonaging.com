@@ -14,7 +14,7 @@ class MessageSource extends CActiveRecord {
 	public function rules() {
 		return array(
             array('category, message', 'required'),
-			array('id', 'numerical', 'integerOnly' => true, 'allowEmpty' => true),
+			array('id', 'numerical', 'integerOnly' => true),
 			array('id', 'unique'),
 			array('category', 'length', 'max' => 32),
 			array('category, message', 'safe'),

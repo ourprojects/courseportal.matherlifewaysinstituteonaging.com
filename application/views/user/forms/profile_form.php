@@ -10,7 +10,7 @@
 	<p class="note">
 		<span class="required">*</span><?php echo t('Required'); ?>.
 	</p>
-	<?php echo $form->errorSummary(array($avatar, $user, $user_profile)); ?>
+	<?php echo $form->errorSummary(array($avatar, $Profile)); ?>
 	
 	<div class="row">
 		<?php echo $form->labelEx($avatar, 'image'); ?>
@@ -20,58 +20,41 @@
 	</div>
 	
 	<div class="row">
-		<?php echo $form->labelEx($user, 'name'); ?>
-		<?php echo $form->textField($user, 'name'); ?>
-		<?php echo $form->error($user, 'name'); ?>
+		<?php echo $form->labelEx($Profile, 'name'); ?>
+		<?php echo $form->textField($Profile, 'name'); ?>
+		<?php echo $form->error($Profile, 'name'); ?>
 	</div>
 	
 	<div class="row">
-		<?php echo $form->labelEx($user, 'email'); ?>
-		<?php echo $form->emailField($user, 'email'); ?>
-		<?php echo $form->error($user, 'email'); ?>
+		<?php echo $form->labelEx($Profile, 'email'); ?>
+		<?php echo $form->emailField($Profile, 'email'); ?>
+		<?php echo $form->error($Profile, 'email'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($user_profile, 'firstname'); ?>
-		<?php echo $form->textField($user_profile, 'firstname'); ?>
-		<?php echo $form->error($user_profile, 'firstname'); ?>
+		<?php echo $form->labelEx($Profile, 'firstname'); ?>
+		<?php echo $form->textField($Profile, 'firstname'); ?>
+		<?php echo $form->error($Profile, 'firstname'); ?>
 	</div>
 	
 	<div class="row">
-		<?php echo $form->labelEx($user_profile, 'lastname'); ?>
-		<?php echo $form->textField($user_profile, 'lastname'); ?>
-		<?php echo $form->error($user_profile, 'lastname'); ?>
+		<?php echo $form->labelEx($Profile, 'lastname'); ?>
+		<?php echo $form->textField($Profile, 'lastname'); ?>
+		<?php echo $form->error($Profile, 'lastname'); ?>
+	</div>
+	
+	<div class="row">
+		<?php echo $form->labelEx($Profile, 'location'); ?>
+		<?php echo $form->textField($Profile, 'location'); ?>
+		<?php echo $form->error($Profile, 'location'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($user_profile, 'country_iso'); ?>
-		<?php echo $form->dropDownList($user_profile, 'country_iso', Yii::app()->translate->getTerritoryDisplayNames()); ?>
-		<?php echo $form->error($user_profile, 'country_iso'); ?>
+		<?php echo $form->labelEx($Profile, 'country_iso'); ?>
+		<?php echo $form->dropDownList($Profile, 'country_iso', Yii::app()->translate->getTerritoryDisplayNames()); ?>
+		<?php echo $form->error($Profile, 'country_iso'); ?>
 	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($user_profile, 'city'); ?>
-		<?php echo $form->textField($user_profile, 'city'); ?>
-		<?php echo $form->error($user_profile, 'city'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($user_profile, 'state_id'); ?>
-		<?php echo $form->dropDownList($user_profile, 'state_id', 
-				CHtml::listData(
-					States::model()->findAll(), 'id', 'name'),
-					array('prompt' => 'Select a State')
-					); 
-		?>
-		<?php echo $form->error($user_profile, 'state_id'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($user_profile, 'zip_code'); ?>
-		<?php echo $form->textField($user_profile, 'zip_code'); ?>
-		<?php echo $form->error($user_profile, 'zip_code'); ?>
-	</div>
-				
+			
 	<div class="row submit">
 		<?php echo CHtml::submitButton(t('Save Changes')); ?>
 	</div>

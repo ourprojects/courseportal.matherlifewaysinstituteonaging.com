@@ -16,7 +16,7 @@ class AcceptedLanguage extends CActiveRecord {
 		return array(
             array('id', 'required'),
 			array('id', 'unique'),
-			array('id', 'length', 'max' => 3),
+			array('id', 'length', 'max' => 12),
 			array('id', 'safe')
 		);
 	}

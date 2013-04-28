@@ -12,7 +12,7 @@
  * @property CPUser $referee0
  * @property CPUser $referrer0
  */
-class Referral extends ActiveRecord
+class Referral extends CActiveRecord
 {
 	/**
 	 * Returns the static model of the specified AR class.
@@ -31,6 +31,14 @@ class Referral extends ActiveRecord
 	{
 		return '{{referral}}';
 	}
+	
+	public function behaviors() {
+		return array_merge(parent::behaviors(),
+				array(
+						'toArray' => array('class' => 'behaviors.EArrayBehavior'),
+						'extendedFeatures' => array('class' => 'behaviors.EModelBehaviors')
+				));
+	}
 
 	/**
 	 * @return array validation rules for model attributes.
@@ -41,10 +49,10 @@ class Referral extends ActiveRecord
 		// will receive user inputs.
 		return array(
 			array('id, referrer, referee', 'required'),
-			array('id, referrer, referee', 'numerical', 'integerOnly'=>true),
+			array('id, referrer, referee', 'numerical', 'integerOnly' => true),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, referrer, referee', 'safe', 'on'=>'search'),
+			array('id, referrer, referee', 'safe', 'on' => 'search'),
 		);
 	}
 

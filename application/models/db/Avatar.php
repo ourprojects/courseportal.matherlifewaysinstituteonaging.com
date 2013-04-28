@@ -7,7 +7,7 @@
  * @property string $mime
  * @property string $name
  */
-class Avatar extends ActiveRecord {
+class Avatar extends CActiveRecord {
 
 	const DEFAULT_MIME = 'image/png';
 	const DEFAULT_NAME = 'default.png';
@@ -33,6 +33,14 @@ class Avatar extends ActiveRecord {
 	public function tableName() {
 		return '{{avatar}}';
 	}
+	
+	public function behaviors() {
+		return array_merge(parent::behaviors(), 
+				array(
+						'toArray' => array('class' => 'behaviors.EArrayBehavior'),
+						'extendedFeatures' => array('class' => 'behaviors.EModelBehaviors')
+					));
+	}
 
 	/**
 	 * @return array validation rules for model attributes.
@@ -40,20 +48,13 @@ class Avatar extends ActiveRecord {
 	public function rules() {
 		return array(
 				array('user_id, mime, name', 'unsafe'),
-				array('user_id', 'exist', 'attributeName' => 'id', 'className' => 'CPUser', 'allowEmpty' => false),
-				array('image', 'file', 
-								'allowEmpty' => true,
-								'maxFiles' => 1,
-								'maxSize' => self::MAX_FILE_SIZE,
-								'types' => self::ALLOWED_TYPES,
-								'tooLarge' => 'The image must be less than 1MB in size.',
-								'tooMany' => 'Only 1 image may be uploaded at a time',
-								'wrongType' => 'File type is not allowed. tiff, jpg, gif, or png type images only.'),
-				array('image', 'loadFile'),
-				array('image', 'filter', 'filter' => array($this, 'formatImage')),
-				array('mime', 'length', 'max' => 10, 'allowEmpty' => false),
+				array('user_id, mime', 'required'),
+				array('image', 'required', 'on' => 'new'),
+				array('user_id', 'numerical', 'integerOnly' => true),
+				array('user_id', 'exist', 'attributeName' => 'id', 'className' => 'CPUser'),
+				array('mime', 'length', 'max' => 10),
 				array('name', 'filter', 'filter' => array($this, 'generateUniqueName')),
-				array('name', 'length', 'is' => 40, 'allowEmpty' => false),
+				array('name', 'length', 'is' => 40),
 				array('name', 'match', 'pattern' => '/[\da-fA-F]{1,4}/'),
 		);
 	}
@@ -88,16 +89,37 @@ class Avatar extends ActiveRecord {
 		);
 	}
 	
-	public function loadFile($attribute, $params) {
-		$this->$attribute = CUploadedFile::getInstance($this, $attribute);
-	}
-	
-	public function formatImage($image) {
-		if(isset($image)) {
-			$image = Yii::app()->getComponent('image')->load($image->getTempName())->resize(self::MAX_WIDTH, self::MAX_HEIGHT);
-			$this->mime = $image->mime;
+	public function loadUploadedImage($inputName = null, $validator = null) {
+		if(empty($inputName))
+			$inputName = get_class($this);
+		if(isset($_POST[$inputName]['image'])) {
+			$this->image = $_POST[$inputName]['image'];
+			if(!isset($validator))
+				$validator = CValidator::createValidator(
+						'file',
+						$this,
+						'image',
+						array('allowEmpty' => true,
+								'maxFiles' => 1,
+								'maxSize' => self::MAX_FILE_SIZE,
+								'types' => self::ALLOWED_TYPES,
+								'tooLarge' => 'The image must be less than 1MB in size.',
+								'tooMany' => 'Only 1 image may be uploaded at a time',
+								'wrongType' => 'File type is not allowed. tiff, jpg, gif, or png type images only.'));
+			$validator->validate($this);
+			if(!$this->hasErrors())
+			{
+				$this->image = CUploadedFile::getInstance($this, 'image');
+				if(isset($this->image))
+				{
+					$this->image = Yii::app()->getComponent('image')->load($this->image->getTempName())->resize(self::MAX_WIDTH, self::MAX_HEIGHT);
+					$this->mime = $this->image->mime;
+					return true;
+				}
+			}
 		}
-		return $image;
+
+		return false;
 	}
 	
 	public function generateUniqueName($name) {

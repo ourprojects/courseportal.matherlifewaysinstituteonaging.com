@@ -10,6 +10,13 @@ class ContactUs extends CFormModel {
 	public $email;
 	public $subject;
 	public $body;
+	
+	public function behaviors() {
+		return array_merge(parent::behaviors(),
+				array(
+						'extendedFeatures' => array('class' => 'behaviors.EModelBehaviors')
+				));
+	}
 
 	/**
 	 * Declares the validation rules.

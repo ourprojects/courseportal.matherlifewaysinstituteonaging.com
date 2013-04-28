@@ -1,5 +1,4 @@
 <?php
-$this->pageTitle = Yii::app()->name . ' - ' . t('User');
 
 $clientScript = Yii::app()->getClientScript();
 $clientScript->registerScriptFile($this->getScriptsUrl('jquery.quote.js'), CClientScript::POS_HEAD);

@@ -5,11 +5,12 @@
  *
  * The followings are the available columns in table 'user_activated':
  * @property integer $user_id
+ * @property string $date
  *
  * The followings are the available model relations:
  * @property CPUser $user
  */
-class UserActivated extends ActiveRecord {
+class UserActivated extends CActiveRecord {
     /**
      * Returns the static model of the specified AR class.
      * @param string $className active record class name.
@@ -25,6 +26,14 @@ class UserActivated extends ActiveRecord {
     public function tableName() {
         return '{{user_activated}}';
     }
+    
+    public function behaviors() {
+    	return array_merge(parent::behaviors(),
+    			array(
+    					'toArray' => array('class' => 'behaviors.EArrayBehavior'),
+    					'extendedFeatures' => array('class' => 'behaviors.EModelBehaviors')
+    			));
+    }
 
     /**
      * @return array validation rules for model attributes.
@@ -32,9 +41,10 @@ class UserActivated extends ActiveRecord {
     public function rules() {
         return array(
             array('user_id', 'required'),
-            array('user_id', 'numerical', 'integerOnly'=>true),
-        		
+            array('user_id', 'numerical', 'integerOnly' => true),
         	array('user_id', 'exist', 'attributeName' => 'id', 'className' => 'CPUser'),
+        		
+        	array('date', 'date', 'format' => 'yyyy-M-d H:m:s'),
         );
     }
 

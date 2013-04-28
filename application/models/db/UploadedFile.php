@@ -16,7 +16,7 @@
  * The followings are the available model relations:
  * @property CPUser $user
  */
-class UploadedFile extends ActiveRecord {
+class UploadedFile extends CActiveRecord {
 	
 	const FILES_PATH_ALIAS = 'uploads.files';
 	const MAX_FILE_SIZE = 17179869184;
@@ -36,6 +36,14 @@ class UploadedFile extends ActiveRecord {
 	 */
 	public function tableName() {
 		return '{{uploaded_file}}';
+	}
+	
+	public function behaviors() {
+		return array_merge(parent::behaviors(),
+				array(
+						'toArray' => array('class' => 'behaviors.EArrayBehavior'),
+						'extendedFeatures' => array('class' => 'behaviors.EModelBehaviors')
+				));
 	}
 
 	/**

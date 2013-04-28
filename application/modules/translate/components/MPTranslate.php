@@ -84,23 +84,33 @@ class MPTranslate extends CApplicationComponent {
 		}
 		
 		// Set the application language if provided by GET, session or cookie
-		if(isset($_GET['language'])) {
+		if(isset($_GET['language'])) 
+		{
 			$language = $_GET['language'];
 			unset($_GET['language']);
-		} else if (Yii::app()->getUser()->hasState('language')) {
+		} 
+		else if (Yii::app()->getUser()->hasState('language')) 
+		{
 			$language = Yii::app()->getUser()->getState('language');
-		} else if(Yii::app()->getRequest()->getCookies()->contains('language')) {
+		}
+		else if(Yii::app()->getRequest()->getCookies()->contains('language')) 
+		{
 			$language = Yii::app()->getRequest()->getCookies()->itemAt('language')->value;
-		} else if(Yii::app()->getRequest()->getPreferredLanguage() !== false && 
-				$this->isAdminAcceptedLanguage(Yii::app()->getLocale()->getLanguageID(Yii::app()->getRequest()->getPreferredLanguage()))) {
+		} 
+		else if(Yii::app()->getRequest()->getPreferredLanguage() !== false &&
+				$this->isAdminAcceptedLanguage(Yii::app()->getLocale()->getLanguageID(Yii::app()->getRequest()->getPreferredLanguage()))) 
+		{
 			$language = Yii::app()->getRequest()->getPreferredLanguage();
-		} else {
+		} 
+		else 
+		{
 			$language = Yii::app()->getLanguage();
 		}
 		 
 		// If the language is not recognized maybe the user didn't add the language part of the address.
 		// Redirect to the same uri with the source language set.
-		if(!$this->isAdminAcceptedLanguage(Yii::app()->getLocale()->getLanguageID($language))) {
+		if(!$this->isAdminAcceptedLanguage(Yii::app()->getLocale()->getLanguageID($language))) 
+		{
 			Yii::app()->getRequest()->redirect(Yii::app()->createUrl(Yii::app()->getRequest()->getPathInfo(), array('language' => Yii::app()->sourceLanguage)));
 		}
 		
@@ -215,14 +225,18 @@ class MPTranslate extends CApplicationComponent {
 		if($language === null)
 			$language = Yii::app()->getLanguage();
 		$id = Yii::app()->getLocale()->getScriptID($language);
-		return $id === null ? Yii::app()->getLanguage() : $id;
+		if($id === null && $language !== Yii::app()->getLanguage())
+			return $this->getScriptID(Yii::app()->getLanguage());
+		return $id;
 	}
 	
 	public function getTerritoryID($language = null) {
 		if($language === null)
 			$language = Yii::app()->getLanguage();
 		$id = Yii::app()->getLocale()->getTerritoryID($language);
-		return $id === null ? Yii::app()->getLanguage() : $id;
+		if($id === null && $language !== Yii::app()->getLanguage())
+			return $this->getTerritoryID(Yii::app()->getLanguage());
+		return $id;
 	}
 	
 	public function getLanguageDisplayName($id = null, $language = null) {
@@ -256,7 +270,8 @@ class MPTranslate extends CApplicationComponent {
 					array('{category}' => $category)));
 			return false;
 		}
-		$id = $this->$idMethod($id);
+		if(!isset($id))
+			$id = $this->$idMethod();
 		$localeDisplayNames = $this->getLocaleDisplayNames($language, $category);
 		if($localeDisplayNames !== false && array_key_exists($id, $localeDisplayNames))
 			return $localeDisplayNames[$id];

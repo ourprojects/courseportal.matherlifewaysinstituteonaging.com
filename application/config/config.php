@@ -20,6 +20,7 @@ return array(
 				'application.core.*',
 				'application.models.db.*',
 				'application.models.forms.*',
+				'application.auth.*',
 				'application.components.*',
 				'application.helpers.*',
 				'ext.yii-mail.*',
@@ -89,9 +90,9 @@ return array(
 				),
 				
 				'user' => array(
-						'class' => 'phpbb.components.PhpBBWebUser',
+						'class' => 'application.auth.WebUser',
 						'allowAutoLogin' => true,
-						'loginUrl' => array('user/login'),
+						'loginUrl' => array('user/login')
 				),
 				
 				'phpBB' => array(
@@ -103,7 +104,7 @@ return array(
 						'class' => 'ext.yii-mail.YiiMail',
 						'transportType' => 'php',
 						'viewPath' => 'application.views.mail',
-						'logging' => false,
+						'logging' => true,
 						'dryRun' => false,
 				),
 				
@@ -132,18 +133,24 @@ return array(
 				'log' => array(
 						'class' => 'CLogRouter',
 						'routes' => array(
-								// Error Logging
+								// System Logging
 								array(
 										'class' => 'CFileLogRoute',
-										'levels' => 'error, warning',
+										'except' => 'system.db.*',
+										'logFile' => 'application.log'
 								),
 								// DB logging
-								/*array(
+								array(
 										'class' => 'CFileLogRoute',
-										'levels' => 'trace, log, error, warning',
-										'categories' => 'system.db.CDbCommand',
+										'categories' => 'system.db.*',
 										'logFile' => 'db.log',
-								),*/
+								),
+								// phpBB logging
+								array(
+										'class' => 'CFileLogRoute',
+										'categories' => 'phpBB',
+										'logFile' => 'phpbb.log'
+								),
 						),
 				),
 

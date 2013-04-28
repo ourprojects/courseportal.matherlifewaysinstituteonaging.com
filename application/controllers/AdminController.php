@@ -48,8 +48,6 @@ class AdminController extends OnlineCoursePortalController {
 				Yii::app()->getUser()->setFlash('success', t('Key saved successfully.'));
 			else
 				Yii::app()->getUser()->setFlash('error', t('Key could not be saved.'));
-			
-			var_dump($models['model']); die;
 		}
 		
 		$this->render('pages/apiKeys', $models);

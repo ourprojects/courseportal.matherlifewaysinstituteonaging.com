@@ -2,54 +2,51 @@
 
 class PBKDF2 extends CComponent {
 	
-	public $hashAlgorithm = 'sha256';
+	const DEFAULT_HASH_ALGORITHM = 'sha256';
+	const DEFAULT_ITERATIONS = 1024;
+	const DEFAULT_SALT_BYTES = 32;
+	const DEFAULT_HASH_BYTES = 32;
+	const DEFAULT_STATIC_SALT = 'aPzMkl7y99vUDZWWyoflnYGkBi8ZoSCXDiDo/7MH+Iw=';
 	
-	public $iterations = 1024;
+	protected $_hashAlgorithm;
 	
-	public $saltBytes = 32;
+	protected $_iterations;
 	
-	public $hashBytes = 32;
+	protected $_saltBytes;
 	
-	public $staticSalt = 'aPzMkl7y99vUDZWWyoflnYGkBi8ZoSCXDiDo/7MH+Iw=';
+	protected $_hashBytes;
 	
-	public $string = null;
+	protected $_staticSalt;
 	
-	private $_hash = null;
-	private $_iv = null;
 	
-	public function setIV($value) {
-		$this->_iv = $value;
+	public function __construct(
+			$hashAlgorithm = self::DEFAULT_HASH_ALGORITHM, 
+			$iterations = self::DEFAULT_ITERATIONS, 
+			$saltBytes = self::DEFAULT_SALT_BYTES, 
+			$hashBytes = self::DEFAULT_HASH_BYTES, 
+			$staticSalt = self::DEFAULT_STATIC_SALT) {
+
+		$this->_hashAlgorithm = $hashAlgorithm;
+		$this->_iterations = $iterations;
+		$this->_saltBytes = $saltBytes;
+		$this->_hashBytes = $hashBytes;
+		$this->_staticSalt = $staticSalt;
+		
 	}
 	
-	public function getIV($generateIvIfNull = true) {
-		if($generateIvIfNull && $this->_iv === null)
-			$this->_iv = $this->generateIV();
-		return $this->_iv;
-	}
-	
-	public function getHash($string = null) {
-		if($string !== null)
-			$this->string = $string;
-		if($this->string === null)
-			$this->_hash = null;
-		else if($string !== null || $this->_hash === null)
-			$this->_hash = base64_encode($this->runPBKDF2Algorithm(
-							$this->hashAlgorithm,
-							$this->string,
-							$this->getIV(),
-							$this->iterations,
-							$this->hashBytes,
+	public function hash($string, $iv) {
+		return base64_encode($this->runPBKDF2Algorithm(
+							$this->_hashAlgorithm,
+							$string,
+							$iv,
+							$this->_iterations,
+							$this->_hashBytes,
 							true
 					));
-		return $this->_hash;
-	}
-	
-	public function verifyHash($hash) {
-		return $this->getHash() === $hash;
 	}
 	
 	public function generateIV() {
-		return base64_encode(mcrypt_create_iv($this->saltBytes, MCRYPT_DEV_URANDOM));
+		return base64_encode(mcrypt_create_iv($this->_saltBytes, MCRYPT_DEV_URANDOM));
 	}
 	
 	/**
@@ -89,10 +86,10 @@ class PBKDF2 extends CComponent {
 		$output = '';
 		for($i = 1; $i <= $block_count; $i++) {
 			// $i encoded as 4 bytes, big endian.
-			$last = $iv . $this->staticSalt . pack('N', $i);
+			$last = $iv . $this->_staticSalt . pack('N', $i);
 			// first iteration
 			$last = $xorsum = hash_hmac($algorithm, $last, $password, true);
-			// perform the other $count - 1 iterations
+			// perform the other $count - 1 _iterations
 			for ($j = 1; $j < $count; $j++) {
 				$xorsum ^= ($last = hash_hmac($algorithm, $last, $password, true));
 			}

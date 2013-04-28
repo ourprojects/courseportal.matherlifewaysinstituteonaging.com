@@ -10,7 +10,7 @@ $route[] = array('<controller>/delete', 'pattern' => '<controller:\w+>/<key_id:\
 $route[] = array('<controller>/options', 'pattern' => '<controller:\w+>/<key_id:\d+>/<key:[\w\-,_]+>', 'verb' => 'OPTIONS');
 
 //User activation and password reset routes
-$route['<language:\w+>/user/<action:(activate|passwordReset)>/<id:\d+>/<sessionKey:[\w\-,_]+>'] = 'user/<action>';
+$route['<language:\w+>/user/<action:(activate|passwordChange)>/<id:\d+>/<sessionKey:[\w\-,_]+>'] = 'user/<action>';
 
 //Standard Yii routes with language
 $route['<language:\w+>'] = '';

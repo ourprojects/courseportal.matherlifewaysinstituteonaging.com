@@ -76,20 +76,20 @@
 
 class PhpBBUserBehavior extends CActiveRecordBehavior
 {
+	
+	const ID = 'phpBB';
+	/**
+	 * @var string The name of the phpBB component variable
+	 */
+	public $phpBBComponentName = 'phpBB';
     /**
-     * @var string User username attribute
-     */
-    public $usernameAttribute = 'username';
-    /**
-     * @var string User attribute witch contains new password
+     * @var string User attribute which contains a plain text password
      */
     public $newPasswordAttribute = 'new_password';
+    
+    public $groupAttribute = 'group';
     /**
-     * @var string User email
-     */
-    public $emailAttribute = 'email';
-    /**
-     * @var string User attribute witch contains filename with extension
+     * @var string User attribute which contains filename with extension
      */
     public $avatarAttribute = '';
     /**
@@ -101,104 +101,200 @@ class PhpBBUserBehavior extends CActiveRecordBehavior
      */
     public $forumDbConnection = 'forumDb';
     /**
-     * @var array attributes
+     * @var array attributes to sync with forum record in the form of "model attribute => forum attribute"
      */
-    public $syncAttributes = array();
-
+    private $_yiiToPhpBBAttributes = array();
+    
+    private $_phpBBToYiiAttributes = array();
+    
+    private $_attributeAudit = array();
+    
+    private $_avatarAudit = null;
+    
+    public function __construct()
+    {
+    	$this->setSyncAttributes(array('username' => 'username', 'email' => 'user_email'));
+    }
+    
+    public function setSyncAttributes($attributes)
+    {
+    	foreach($attributes as $yiiAttr => $phpBBAttr)
+    	{
+    		if(isset($this->_yiiToPhpBBAttributes[$yiiAttr]))
+		    	unset($this->_phpBBToYiiAttributes[$this->_yiiToPhpBBAttributes[$yiiAttr]]);
+    		if(isset($this->_phpBBToYiiAttributes[$phpBBAttr]))
+    			unset($this->_yiiToPhpBBAttributes[$this->_phpBBToYiiAttributes[$phpBBAttr]]);
+		    	 
+		    $this->_phpBBToYiiAttributes[$phpBBAttr] = $yiiAttr;
+		    $this->_yiiToPhpBBAttributes[$yiiAttr] = $phpBBAttr;
+    	}
+    }
+    
+    public function yiiToPhpBBAttribute($yiiAttribute)
+    {
+    	return $this->_yiiToPhpBBAttributes[$yiiAttribute];
+    }
+    
+    public function phpBBToYiiAttribute($phpBBattribute)
+    {
+    	return $this->_phpBBToYiiAttributes[$phpBBattribute];
+    }
+    
+    public function afterConstruct($event)
+    {
+    	$this->_auditAttributes();
+    }
+    
+    public function afterFind($event)
+    {
+    	$this->_auditAttributes();
+    }
+    
+    public function beforeValidate($event)
+    {
+    	$user = $this->getOwner();
+    	
+    	if($user->getIsNewRecord() && 
+    			Yii::app()->{$this->phpBBComponentName}->getUserIdFromName($user->{$this->_phpBBToYiiAttributes['username']}) !== false)
+    	{
+    		$user->addError($this->_phpBBToYiiAttributes['username'], Yii::t(self::ID, 'The username {username} has already been taken.', array('{username}' => $user->{$this->_phpBBToYiiAttributes['username']})));
+    	}
+    }
+    
     public function afterSave($event)
     {
-        $this->_updatePassword();
-        $this->_updateAttributes();
-        $this->_updateAvatar();
-    }
+    	$user = $this->getOwner();
+    	
+    	if($user->getIsNewRecord())
+    		$this->phpBBAddUser();
+    	else
+    		$this->phpBBUpdateAttributes();
 
+    	if(isset($this->_avatarAudit) && 
+    			$this->_avatarAudit !== (array_key_exists($this->avatarAttribute, $user->relations()) ? $user->getRelated($this->avatarAttribute, true) : $user->{$this->avatarAttribute}))
+    	{
+    		$this->phpBBUpdateAvatar();
+    	}
+    }
+    
     public function afterDelete($event)
     {
-        $model = $this->getOwner();
-        if (isset(Yii::app()->phpBB))
-            Yii::app()->phpBB->userDelete($model->{$this->usernameAttribute});
+    	Yii::app()->{$this->phpBBComponentName}->userDelete($this->getOwner()->{$this->_phpBBToYiiAttributes['username']});
+    }
+    
+    protected function _auditAttributes()
+    {
+    	$user = $this->getOwner();
+    	
+    	if(isset($this->avatarAttribute) && isset($this->avatarPath))
+    		$this->_avatarAudit = $user->{$this->avatarAttribute};
+    	
+    	foreach($this->_phpBBToYiiAttributes as $yiiAttribute)
+    	{
+    		$this->_attributeAudit[$yiiAttribute] = $user->{$yiiAttribute};
+    	}
+    }
+    
+    public function phpBBAddUser($plainTextPassword = '')
+    {
+    	$user = $this->getOwner();
+    	
+    	if(empty($plainTextPassword))
+    			$plainTextPassword = $user->{$this->newPasswordAttribute};
+    	
+    	if(!empty($plainTextPassword))
+    	{
+    		$additional_attributes = array();
+    		
+    		foreach($this->_yiiToPhpBBAttributes as $yiiAttribute => $phpBBAttribute)
+    			$additional_attributes[$phpBBAttribute] = $user->{$yiiAttribute};
+    		
+    		return Yii::app()->{$this->phpBBComponentName}->userAdd(
+			    		$user->{$this->_phpBBToYiiAttributes['username']},
+			    		$plainTextPassword,
+			    		$user->{$this->_phpBBToYiiAttributes['email']},
+    					$user->canGetProperty($this->groupAttribute) ? $user->{$this->groupAttribute} : 'REGISTERED',
+			    		$additional_attributes
+		    		);
+    	}
+    	
+    	return false;
     }
 
-    protected function _updatePassword()
+    public function phpBBUpdateAttributes()
     {
-        $model = $this->getOwner();
-
-        if ($model->{$this->newPasswordAttribute})
+        $user = $this->getOwner();
+        
+        $attrs = array();
+        
+        foreach($this->_attributeAudit as $attribute => $oldValue)
         {
-            if (isset(Yii::app()->phpBB))
-            {
-                if ($model->getIsNewRecord())
-                    Yii::app()->phpBB->userAdd($model->{$this->usernameAttribute}, $model->{$this->newPasswordAttribute}, $model->{$this->emailAttribute}, 2);
-                else
-                    Yii::app()->phpBB->changePassword($model->{$this->usernameAttribute}, $model->{$this->newPasswordAttribute});
-            }
+        	if($oldValue !== (array_key_exists($attribute, $user->relations()) ? $user->getRelated($attribute, true) : $user->$attribute))
+        		$attrs[$this->_yiiToPhpBBAttributes[$attribute]] = $user->{$attribute};
         }
-    }
-
-    protected function _updateAttributes()
-    {
-        $model = $this->getOwner();
-
-        $user = $this->_loadBBUserModel($model->{$this->usernameAttribute});
-        if (!$user) return;
-
-        $attrs = array(
-            'user_id' => $user->getPrimaryKey(),
-            'username' => $model->{$this->usernameAttribute},
-            'user_email' => $model->{$this->emailAttribute},
-        );
-
-        foreach ($this->syncAttributes as $attribute => $forumAttribute)
+        
+        if(!empty($user->{$this->newPasswordAttribute}))
         {
-            $attrs[$forumAttribute] = $model->{$attribute};
+        	$attrs['user_password'] = $user->{$this->newPasswordAttribute};
+        }
+        
+        if(!empty($attrs))
+        {
+        	$attrs['user_id'] = Yii::app()->{$this->phpBBComponentName}->getUserIdFromName(isset($attrs['username']) ? $this->_attributeAudit[$this->_phpBBToYiiAttributes['username']] : $user->{$this->_phpBBToYiiAttributes['username']});
+        }
+        else
+        {
+        	return true;
         }
 
-        Yii::app()->phpBB->user_update($attrs);
+        return Yii::app()->{$this->phpBBComponentName}->userUpdate($attrs);
     }
 
-    protected function _updateAvatar()
+    public function phpBBUpdateAvatar()
     {
-        if (!$this->avatarAttribute || !$this->avatarPath)
+        if(!isset($this->avatarAttribute) || !isset($this->avatarPath))
             return;
 
-        $model = $this->getOwner();
+        $yiiUser = $this->getOwner();
 
-        $user = $this->_loadBBUserModel($model->{$this->usernameAttribute});
-        if (!$user) return;
+        $user = $this->phpBBGetUserModel($yiiUser->{$this->_phpBBToYiiAttributes['username']});
+        if (!$user) 
+        	return;
 
         $this->_deleteAvatar($user);
-        
-        if($model->{$this->avatarAttribute}) {
-            $originalFile = $this->avatarPath . DIRECTORY_SEPARATOR . $model->{$this->avatarAttribute};
-			if(file_exists($originalFile)) {
+        if(isset($yiiUser->{$this->avatarAttribute})) 
+        {
+            $originalFile = $this->avatarPath . DIRECTORY_SEPARATOR . $yiiUser->{$this->avatarAttribute};
+			if(file_exists($originalFile)) 
+			{
 	            $orig = Yii::app()->image->load($originalFile); /* @var $orig CImageHandler */
 
-	            $forumFileName = $this->getForumAvatarSalt() . '_' . $user->getPrimaryKey() . '.' . $orig->ext;
+	            $forumFileName = $this->getForumConfigValue('avatar_salt') . '_' . $user->getPrimaryKey() . '.' . $orig->ext;
 	            $forumFile = $this->getForumAvatarPath() . DIRECTORY_SEPARATOR . $forumFileName;
 	            
-	            $thumb = $orig->resize($this->getForumAvatarWidth(), $this->getForumAvatarHeight());
-	            if($thumb->save($forumFile)) {
+	            $thumb = $orig->resize($this->getForumConfigValue('avatar_max_width'), $this->getForumConfigValue('avatar_max_height'));
+	            if($thumb->save($forumFile)) 
+	            {
 		            $user->user_avatar = $user->getPrimaryKey() . '_' . time()  . '.' . $orig->ext;
 		            $user->user_avatar_type = 1;
 		            $user->user_avatar_width = $thumb->width;
 		            $user->user_avatar_height = $thumb->height;
 	            }
-	            
 			}
         }
         $user->save();
     }
 
-    protected function _loadBBUserModel($username)
+    public function phpBBGetUserModel($username)
     {
         return PhpBBUser::model()->findByName($username);
     }
 
-    protected function _deleteAvatar($user)
+    protected function _deleteAvatar(&$user)
     {
-        if ($user->user_avatar)
+        if($user->user_avatar)
         {
-            $oldForumFile = $this->forumAvatarPath . DIRECTORY_SEPARATOR . $this->forumAvatarSalt . '_' . $user->user_avatar;
+            $oldForumFile = $this->getForumAvatarPath() . DIRECTORY_SEPARATOR . $this->getForumConfigValue('avatar_salt') . '_' . $user->user_avatar;
             @unlink($oldForumFile);
         }
 
@@ -212,28 +308,13 @@ class PhpBBUserBehavior extends CActiveRecordBehavior
     protected function getForumAvatarPath()
     {
         if ($this->_avatarPath === null)
-            $this->_avatarPath = Yii::getPathOfAlias(Yii::app()->phpBB->path) . DIRECTORY_SEPARATOR . $this->getConfigValue('avatar_path');
+            $this->_avatarPath = Yii::getPathOfAlias(Yii::app()->{$this->phpBBComponentName}->path) . DIRECTORY_SEPARATOR . $this->getForumConfigValue('avatar_path');
         return $this->_avatarPath;
-    }
-
-    protected function getForumAvatarSalt()
-    {
-        return $this->getConfigValue('avatar_salt');
-    }
-
-    protected function getForumAvatarWidth()
-    {
-        return $this->getConfigValue('avatar_max_width');
-    }
-    
-    protected function getForumAvatarHeight()
-    {
-    	return $this->getConfigValue('avatar_max_height');
     }
 
     protected $_configData = array();
 
-    protected function getConfigValue($param)
+    protected function getForumConfigValue($param)
     {
         if (!isset($this->_configData[$param]))
             $this->_configData[$param] =  Yii::app()->{$this->forumDbConnection}->createCommand('SELECT `config_value` FROM {{config}} WHERE `config_name`=:param')->queryScalar(array(':param'=>$param));

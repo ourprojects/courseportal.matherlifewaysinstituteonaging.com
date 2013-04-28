@@ -15,7 +15,7 @@ class Message extends CActiveRecord {
 		return array(
             array('id, language, translation', 'required'),
 			array('id', 'numerical', 'integerOnly' => true),
-			array('language', 'length', 'max' => 3),
+			array('language', 'length', 'max' => 12),
 			array('id',
 					'unique',
 					'caseSensitive' => false,

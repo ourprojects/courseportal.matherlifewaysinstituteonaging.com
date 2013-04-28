@@ -1,64 +1,10 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed');  
 
-class ViewAction extends CAction {
-	
-	/**
-	 * @var string regex used to clean requested view. Matches any string starting
-	 * with a word character containing any number of word characters, dots or dashes in the middle, and
-	 * ending with a word cahracter. If view name requirments are too strict change this in configuration.
-	 */
-	public $pathEscapeRegex = '/^\w([\w\.\-]*\w\z)?$/';
-	/**
-	 * @var string the name of the GET parameter that contains the requested view name. Defaults to 'view'.
-	 */
-	public $viewParam = 'view';
-	/**
-	 * @var string the name of the default view when {@link viewParam} GET parameter is not provided by user. Defaults to 'index'.
-	 * This should be in the format of 'path.to.view', similar to that given in
-	 * the GET parameter.
-	 * @see basePath
-	 */
-	public $defaultView = 'index';
-	/**
-	 * @var string the name of the view to be rendered. This property will be set
-	 * once the user requested view is resolved.
-	 */
-	public $view;
-	/**
-	 * @var string the base path for the views. Defaults to 'pages'.
-	 * The base path will be prefixed to any user-specified page view.
-	 * For example, if a user requests for <code>tutorial.chap1</code>, the corresponding view name will
-	 * be <code>pages/tutorial/chap1</code>, assuming the base path is <code>pages</code>.
-	 * The actual view file is determined by {@link CController::getViewFile}.
-	 * @see CController::getViewFile
-	 */
-	public $basePath = 'pages';
-	/**
-	 * @var mixed the name of the layout to be applied to the views.
-	 * This will be assigned to {@link CController::layout} before the view is rendered.
-	 * Defaults to null, meaning the controller's layout will be used.
-	 * If false, no layout will be applied.
-	 */
-	public $layout;
-	/**
-	 * @var boolean whether the view should be rendered as PHP script or static text. Defaults to false.
-	 */
-	public $renderAsText = false;
+class ViewAction extends CViewAction {
 	
 	public $renderData = array();
 	
 	private $_viewPath;
-
-	public function __construct($controller, $id) {
-		parent::__construct($controller, $id);
-	}
-	
-	/**
-	 * @return string id of this action
-	 */
-	public function getId() {
-		return $this->getRequestedView();
-	}
 	
 	/**
 	 * Returns the name of the view requested by the user.
@@ -68,13 +14,11 @@ class ViewAction extends CAction {
 	 */
 	public function getRequestedView() {
 		if($this->_viewPath === null) {
-			if(!empty($_GET[$this->viewParam])) {
-				$this->_viewPath = implode(DIRECTORY_SEPARATOR, array_filter(explode('/', $_GET[$this->viewParam]), array(new CPregMatch($this->pathEscapeRegex), 'match')));
-			} else if(!empty($_GET)) {
-				$this->_viewPath = implode(DIRECTORY_SEPARATOR, array_filter(CArray::array_flatten($_GET), array(new CPregMatch($this->pathEscapeRegex), 'match')));
-			} else {
-				$this->_viewPath = $this->defaultView;
-			}
+			$this->_viewPath = parent::getRequestedView();
+			if($this->_viewPath === $this->defaultView && !empty($_GET))
+				$this->_viewPath = implode('.', CArray::array_flatten($_GET));
+			$this->_viewPath = preg_replace('/[\/]+/', '.', $this->_viewPath);
+			$this->_viewPath = trim($this->_viewPath, '.');
 		}
 		return $this->_viewPath;
 	}
@@ -88,7 +32,7 @@ class ViewAction extends CAction {
 	protected function resolveView($viewPath) {
 		// start with a word char and have word chars, dots and dashes only
 		if(preg_match('/^\w[\w\.\-\/]*$/', $viewPath)) {
-			$view = strtr($viewPath, array('.' => DIRECTORY_SEPARATOR, '/' => DIRECTORY_SEPARATOR));
+			$view = preg_replace('/[.]+/', DIRECTORY_SEPARATOR, $viewPath);
 			if(!empty($this->basePath))
 				$view = $this->basePath . DIRECTORY_SEPARATOR . $view;
 
@@ -106,17 +50,21 @@ class ViewAction extends CAction {
 	 * This method displays the view requested by the user.
 	 * @throws CHttpException if the view is invalid
 	 */
-	public function run() {
+	public function run() 
+	{
 		$this->resolveView($this->getRequestedView());
 		$controller = $this->getController();
-		if($this->layout !== null) {
+		if($this->layout !== null) 
+		{
 			$layout = $controller->layout;
 			$controller->layout = $this->layout;
 		}
 
 		$this->onBeforeRender($event = new CEvent($this));
-		if(!$event->handled) {
-			if($this->renderAsText) {
+		if(!$event->handled) 
+		{
+			if($this->renderAsText) 
+			{
 				$text=file_get_contents($controller->getViewFile($this->view));
 				$controller->renderText($text);
 			}
@@ -127,24 +75,6 @@ class ViewAction extends CAction {
 
 		if($this->layout !== null)
 			$controller->layout=$layout;
-	}
-
-	/**
-	 * Raised right before the action invokes the render method.
-	 * Event handlers can set the {@link CEvent::handled} property
-	 * to be true to stop further view rendering.
-	 * @param CEvent $event event parameter
-	 */
-	public function onBeforeRender($event) {
-		$this->raiseEvent('onBeforeRender',$event);
-	}
-
-	/**
-	 * Raised right after the action invokes the render method.
-	 * @param CEvent $event event parameter
-	 */
-	public function onAfterRender($event) {
-		$this->raiseEvent('onAfterRender',$event);
 	}
 
 }

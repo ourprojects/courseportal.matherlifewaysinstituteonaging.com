@@ -1,6 +1,6 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed');  
 
-class Course extends ActiveRecord {
+class Course extends CActiveRecord {
 	/**
 	 * This is the model class for table "course".
 	 *
@@ -32,6 +32,14 @@ class Course extends ActiveRecord {
 		return '{{course}}';
 	}
 	
+	public function behaviors() {
+		return array_merge(parent::behaviors(),
+				array(
+						'toArray' => array('class' => 'behaviors.EArrayBehavior'),
+						'extendedFeatures' => array('class' => 'behaviors.EModelBehaviors')
+				));
+	}
+	
 	/**
 	 * @return array validation rules for model attributes.
 	 */
@@ -39,13 +47,12 @@ class Course extends ActiveRecord {
 		return array(
 				array('name, title', 'required'),
 				array('name', 'length', 'max' => 255),
-				array('name', 'unique', 'allowEmpty' => false),
-				array('rank', 'numerical', 'integerOnly' => true),
-				array('rank', 'unique'),
+				array('id, rank', 'numerical', 'integerOnly' => true),
+				array('name, rank', 'unique'),
 				array('title', 'length', 'max' => 255),
 				array('description', 'length', 'max' => 65535),
 	
-				array('id, name, title', 'safe', 'on'=>'search'),
+				array('id, name, rank, title, description', 'safe', 'on'=>'search'),
 		);
 	}
 

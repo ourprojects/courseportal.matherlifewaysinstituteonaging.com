@@ -60,6 +60,33 @@ class OnlineCoursePortalApplication extends CWebApplication {
     		}
     	}
     }
+    
+    public function setLanguage($language)
+    {
+    	parent::setLanguage($language);
+    	$user = $this->getUser()->getModel();
+    	if($user != null && $user->language != $language)
+    	{
+    		$user->language = $language;
+    	}
+    }
+    
+    public function onEndRequest($event)
+    {
+    	parent::onEndRequest($event);
+    	if(($user = $this->getUser()->getModel()) != null)
+    	{
+    		if(!$user->getIsNewRecord())
+    		{
+    			$user->last_ip = Yii::app()->getRequest()->getUserHostAddress();
+    			$agent = Yii::app()->getRequest()->getUserAgent();
+    			$user->last_agent = strlen($agent) > 255 ? substr($agent, 0, 255) : $agent;
+    			$route = $this->getController()->getRoute();
+    			$user->last_route = strlen($route) > 255 ? substr($route, 0, 255) : $route;
+    			$user->save();
+    		}
+    	}
+    }
 
     /**
     * Loads an extension

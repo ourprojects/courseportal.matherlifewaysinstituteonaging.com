@@ -3,6 +3,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=<?php echo Yii::app()->charset; ?>" />
 	<meta name="language" content="<?php echo Yii::app()->getLanguage(); ?>" />
+	<link rel="shortcut icon" href="<?php echo Yii::app()->getTheme()->getImagesUrl('favicon.ico'); ?>" />
 	<!-- blueprint CSS framework -->
 	<?php echo CHtml::cssFile(Yii::app()->getTheme()->getStylesUrl('screen.css'), 'screen, projection'); ?>
 	<?php echo CHtml::cssFile(Yii::app()->getTheme()->getStylesUrl('print.css'), 'print'); ?>

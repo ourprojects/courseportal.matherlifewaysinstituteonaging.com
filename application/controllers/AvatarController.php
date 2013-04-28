@@ -26,7 +26,7 @@ class AvatarController extends OnlineCoursePortalController {
 	public function actionView($id) {
 		$this->loadExtension('HTTP_Download');
 		$avatar = Yii::app()->getUser()->getModel()->avatar;
-		$sendParams = !is_null($avatar) && file_exists($avatar->getPath()) ? array(
+		$sendParams = isset($avatar) && file_exists($avatar->getPath()) ? array(
 					'file'               => $avatar->getPath(),
 					'contenttype'		 => $avatar->mime,
 					'contentdisposition' => array(HTTP_Download::ATTACHMENT, $avatar->name),

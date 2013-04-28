@@ -4,59 +4,69 @@
 			array(
 					'id' => 'register-form',
 					'enableAjaxValidation' => true,
+					'enableClientValidation' => true,
 					'htmlOptions' => array('enctype' => 'multipart/form-data'),
 			));
 	?>
 	<p class="note">
 		<span class="required">*</span><?php echo t('Required'); ?>.
 	</p>
-	<?php echo $form->errorSummary(array($user, $user_profile, $captcha)); ?>
+	<?php echo $form->errorSummary(array($Register, $Captcha)); ?>
 	
 	<div class="row">
-		<?php echo $form->labelEx($user, 'email'); ?>
-		<?php echo $form->textField($user, 'email'); ?>
-		<?php echo $form->error($user, 'email'); ?>
-	</div>
-	
-	<div class="row">
-		<?php echo $form->labelEx($user, 'name'); ?>
-		<?php echo $form->emailField($user, 'name'); ?>
-		<?php echo $form->error($user, 'name'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($user, 'password_no_hash'); ?>
-		<?php echo $form->passwordField($user, 'password_no_hash'); ?>
-		<?php echo $form->error($user, 'password_no_hash'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($user, 'password_no_hash_repeat'); ?>
-		<?php echo $form->passwordField($user, 'password_no_hash_repeat'); ?>
-		<?php echo $form->error($user, 'password_no_hash_repeat'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($user_profile, 'firstname'); ?>
-		<?php echo $form->textField($user_profile, 'firstname'); ?>
-		<?php echo $form->error($user_profile, 'firstname'); ?>
+		<?php echo $form->labelEx($Register, 'email'); ?>
+		<?php echo $form->emailField($Register, 'email'); ?>
+		<?php echo $form->error($Register, 'email'); ?>
 	</div>
 	
 	<div class="row">
-		<?php echo $form->labelEx($user_profile, 'lastname'); ?>
-		<?php echo $form->textField($user_profile, 'lastname'); ?>
-		<?php echo $form->error($user_profile, 'lastname'); ?>
+		<?php echo $form->labelEx($Register, 'name'); ?>
+		<?php echo $form->textField($Register, 'name'); ?>
+		<?php echo $form->error($Register, 'name'); ?>
 	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($Register, 'new_password'); ?>
+		<?php echo $form->passwordField($Register, 'new_password'); ?>
+		<?php echo $form->error($Register, 'new_password'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($Register, 'new_password_repeat'); ?>
+		<?php echo $form->passwordField($Register, 'new_password_repeat'); ?>
+		<?php echo $form->error($Register, 'new_password_repeat'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($Register, 'firstname'); ?>
+		<?php echo $form->textField($Register, 'firstname'); ?>
+		<?php echo $form->error($Register, 'firstname'); ?>
+	</div>
+	
+	<div class="row">
+		<?php echo $form->labelEx($Register, 'lastname'); ?>
+		<?php echo $form->textField($Register, 'lastname'); ?>
+		<?php echo $form->error($Register, 'lastname'); ?>
+	</div>
+	
+	<?php if(isset($Register->agreement_id)): ?>
+	<div class="row">
+		<?php echo $form->labelEx($Register, 'agree'); ?>
+		<?php echo $form->checkBox($Register, 'agree'); ?>
+		<?php echo $form->error($Register, 'agree'); ?>
+		<?php echo CHtml::link(t('View details'), $this->createUrl('/agreement/' . $Register->agreement_id), array('target' => '_blank')); ?>
+	</div>
+	<?php endif; ?>
 	
 	<div class="row">
 		<?php 
-		echo $form->labelEx($captcha, 'captcha');
+		echo $form->labelEx($Captcha, 'captcha');
 		$this->widget('ext.recaptcha.EReCaptcha',
-				array('model' => $captcha, 
+				array('model' => $Captcha, 
 						'attribute' => 'captcha',
 						'language' => Yii::app()->getLanguage())
 				);
-		echo $form->error($captcha, 'captcha');
+		echo $form->error($Captcha, 'captcha');
 		?>
 	</div>
 				

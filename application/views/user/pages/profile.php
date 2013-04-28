@@ -65,10 +65,22 @@ $this->widget(
   <p><?php echo t('Please complete your profile. This information helps us track your participation and helps us compile important geographical data, so we have better information when updating course content.'); ?></p>
   <br />
   <div class="box-white">
-    <p>
-      <?php 
-echo $this->renderPartial('forms/profile_form', $models);
-?>
-    </p>
+	<?php echo $this->renderPartial('forms/profile_form', $models); ?>
+  </div>
+  <div class="box-white">
+  	<p><?php echo t('Your agreements');?></p>
+  	<br />
+  	<?php 
+  	$agreements = Yii::app()->getUser()->getModel()->agreements;
+  	if(empty($agreements))
+  	{
+  		echo t('None');
+  	}
+  	else 
+	{
+	  	foreach($agreements as $agreement)
+	  		echo CHtml::link(t($agreement->name), $this->createUrl('/agreement/' . $agreement->id), array('target' => '_blank'));
+	}
+  	?>
   </div>
 </div>

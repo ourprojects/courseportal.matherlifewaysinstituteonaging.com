@@ -53,7 +53,7 @@ class phpBB extends CApplicationComponent
 	public function init()
 	{
 		if(!$this->path)
-			throw new CException("Don't set forum path");
+			throw new CException('Must set path to phpBB forum.');
 
         Yii::import($this->path . '.includes.utf.utf_normalizer');
 
@@ -62,11 +62,11 @@ class phpBB extends CApplicationComponent
 
 	/**
 	 * Login in phpBB
-	 * @param string $username
+	 * @param mixed $username unique username string or Yii IUserIdentity instance
 	 * @param string $password
 	 * @return boolean false on failure or true on success
 	 */
-	public function login($username, $password)
+	public function login($username = '', $password = '')
 	{
 		return $this->_phpbb->user_login(array(
 			"username" => $username,
@@ -89,21 +89,29 @@ class phpBB extends CApplicationComponent
 	 * @param string $password
 	 * @param string $email
 	 * @param int $group_id
+	 * @param int $user_type
 	 * @return boolean false on failure or true on success
 	 */
-	public function userAdd($username, $password, $email, $group_id = 2)
+	public function userAdd($username, $password, $email, $group_id, $additional_attributes = array())
 	{
 		if(is_string($group_id)) {
 			$group_id = PhpBBGroup::model()->findByName($group_id);
 		} elseif(is_numeric($group_id)) {
-			$group_id = PhpBBGroup::model()->findByPk(group_id);
+			$group_id = PhpBBGroup::model()->findByPk($group_id);
 		}
-		return $this->_phpbb->user_add(array(
-			"username" => $username,
-			"user_password" => $password,
-			"user_email" => $email,
-			"group_id" => $group_id === null ? 2 : $group_id->group_id,
-		));
+		
+		if($group_id === null)
+		{
+			throw new CException('Unable to add user, an invalid group was specified.');
+		}
+
+		return $this->_phpbb->user_add(array_merge(array(
+			'username' 		=> $username,
+			'user_password' => $password,
+			'user_email' 	=> $email,
+			'group_id' 		=> $group_id->group_id
+			),
+			$additional_attributes));
 	}
 
 	/**
@@ -157,8 +165,13 @@ class phpBB extends CApplicationComponent
 	 * @param array $phpbb_vars
 	 * @return boolean false on failure or true on success
 	 */
-	public function user_update($phpbb_vars)
+	public function userUpdate($phpbb_vars)
 	{
 		return $this->_phpbb->user_update($phpbb_vars);
+	}
+	
+	public function getUserIdFromName($username) 
+	{
+		return $this->_phpbb->get_user_id_from_name($username, true);
 	}
 }

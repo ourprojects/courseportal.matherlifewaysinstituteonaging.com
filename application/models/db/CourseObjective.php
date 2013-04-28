@@ -1,6 +1,6 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed');  
 
-class CourseObjective extends ActiveRecord {
+class CourseObjective extends CActiveRecord {
 	/**
 	 * This is the model class for table "course".
 	 *
@@ -25,18 +25,30 @@ class CourseObjective extends ActiveRecord {
 	/**
 	 * @return string the associated database table name
 	 */
-	public function tableName() {
+	public function tableName() 
+	{
 		return '{{course_objective}}';
+	}
+	
+	public function behaviors() 
+	{
+		return array_merge(parent::behaviors(),
+				array(
+						'toArray' => array('class' => 'behaviors.EArrayBehavior'),
+						'extendedFeatures' => array('class' => 'behaviors.EModelBehaviors')
+				));
 	}
 	
 	/**
 	 * @return array validation rules for model attributes.
 	 */
-	public function rules() {
+	public function rules() 
+	{
 		return array(
-				array('rank, text', 'required'),
+				array('id, course_id', 'unsafe', 'except' => 'search'),
+				array('course_id, rank, text', 'required'),
+				array('id, course_id, rank', 'numerical', 'integerOnly' => true),
 				array('course_id', 'exist', 'attributeName' => 'id', 'className' => 'Course', 'allowEmpty' => false),
-				array('rank', 'numerical', 'integerOnly' => true),
 				array('rank',
 						'unique',
 						'caseSensitive' => false,
@@ -48,14 +60,15 @@ class CourseObjective extends ActiveRecord {
 				),
 				array('text', 'length', 'max' => 65535),
 	
-				array('id, course_id, text', 'safe', 'on'=>'search'),
+				array('id, course_id, rank, text', 'safe', 'on' => 'search'),
 		);
 	}
 
 	/**
 	 * @return array relational rules.
 	 */
-	public function relations() {
+	public function relations() 
+	{
 		return array(
 				'course' => array(self::BELONGS_TO, 'Course', 'course_id'),
 		);
@@ -64,7 +77,8 @@ class CourseObjective extends ActiveRecord {
 	/**
 	 * @return array customized attribute labels (name => label)
 	 */
-	public function attributeLabels() {
+	public function attributeLabels() 
+	{
 		return array(
 				'id' => t('ID'),
 				'course_id' => t('Course ID'),
@@ -78,8 +92,8 @@ class CourseObjective extends ActiveRecord {
 	 * Retrieves a list of models based on the current search/filter conditions.
 	 * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.
 	 */
-	public function search() {
-	
+	public function search() 
+	{
 		$criteria = new CDbCriteria;
 	
 		$criteria->order = 'rank';

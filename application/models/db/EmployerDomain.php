@@ -7,11 +7,11 @@
  * @property integer $id
  * @property string $domain
  */
-class EmployerDomain extends ActiveRecord
+class EmployerDomain extends CActiveRecord
 {
 	/**
 	 * Returns the static model of the specified AR class.
-	 * @param string $className active record class name.
+	 * @param string $className active record class regex.
 	 * @return EmployerDomain the static model class
 	 */
 	public static function model($className=__CLASS__)
@@ -20,11 +20,20 @@ class EmployerDomain extends ActiveRecord
 	}
 
 	/**
-	 * @return string the associated database table name
+	 * @return string the associated database table regex
 	 */
 	public function tableName()
 	{
 		return '{{employer_domain}}';
+	}
+	
+	public function behaviors() 
+	{
+		return array_merge(parent::behaviors(),
+				array(
+						'toArray' => array('class' => 'behaviors.EArrayBehavior'),
+						'extendedFeatures' => array('class' => 'behaviors.EModelBehaviors')
+				));
 	}
 
 	/**
@@ -32,14 +41,12 @@ class EmployerDomain extends ActiveRecord
 	 */
 	public function rules()
 	{
-		// NOTE: you should only define rules for those attributes that
-		// will receive user inputs.
 		return array(
-			array('domain', 'required'),
-			array('domain', 'length', 'max'=>255),
-			// The following rule is used by search().
-			// Please remove those attributes that should not be searched.
-			array('id, domain', 'safe', 'on'=>'search'),
+			array('regex', 'required'),
+			array('regex', 'length', 'max' => 255),
+			
+			array('id', 'numerical', 'integerOnly' => true),
+			array('id, regex', 'safe', 'on' => 'search'),
 		);
 	}
 
@@ -48,20 +55,18 @@ class EmployerDomain extends ActiveRecord
 	 */
 	public function relations()
 	{
-		// NOTE: you may need to adjust the relation name and the related
-		// class name for the relations automatically generated below.
 		return array(
 		);
 	}
 
 	/**
-	 * @return array customized attribute labels (name=>label)
+	 * @return array customized attribute labels (regex=>label)
 	 */
 	public function attributeLabels()
 	{
 		return array(
 			'id' => t('ID'),
-			'domain' => t('Domain'),
+			'regex' => t('Regular expression'),
 		);
 	}
 
@@ -71,16 +76,13 @@ class EmployerDomain extends ActiveRecord
 	 */
 	public function search()
 	{
-		// Warning: Please modify the following code to remove attributes that
-		// should not be searched.
+		$criteria = new CDbCriteria;
 
-		$criteria=new CDbCriteria;
-
-		$criteria->compare('id',$this->id);
-		$criteria->compare('domain',$this->domain,true);
+		$criteria->compare('id', $this->id);
+		$criteria->compare('regex', $this->regex, true);
 
 		return new CActiveDataProvider($this, array(
-			'criteria'=>$criteria,
+			'criteria' => $criteria,
 		));
 	}
 }
