@@ -104,7 +104,7 @@ return array(
 						'class' => 'ext.yii-mail.YiiMail',
 						'transportType' => 'php',
 						'viewPath' => 'application.views.mail',
-						'logging' => true,
+						'logging' => false,
 						'dryRun' => false,
 				),
 				
@@ -136,20 +136,8 @@ return array(
 								// System Logging
 								array(
 										'class' => 'CFileLogRoute',
-										'except' => 'system.db.*',
+										'levels' => 'error, warning',
 										'logFile' => 'application.log'
-								),
-								// DB logging
-								array(
-										'class' => 'CFileLogRoute',
-										'categories' => 'system.db.*',
-										'logFile' => 'db.log',
-								),
-								// phpBB logging
-								array(
-										'class' => 'CFileLogRoute',
-										'categories' => 'phpBB',
-										'logFile' => 'phpbb.log'
 								),
 						),
 				),
@@ -158,7 +146,7 @@ return array(
 		
 		'config' => array(
 				'debug' => array(
-						'level' => E_ALL,
+						'level' => 0,
 						'yiiTraceLevel' => 3,
 				),
 		),
