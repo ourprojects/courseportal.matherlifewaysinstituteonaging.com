@@ -54,9 +54,7 @@ class AdminController extends OnlineCoursePortalController {
 	}
 	
 	public function actionKeyGenerate() {
-		if(Yii::app()->getRequest()->getIsAjaxRequest()) {
-			echo CBase64::urlEncode(Key::model()->generateKey());
-		}
+		echo CBase64::urlEncode(Key::model()->generateIV());
 	}
 	
 	public function actionKeyDelete($id) {
