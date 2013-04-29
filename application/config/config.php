@@ -98,6 +98,7 @@ return array(
 				'phpBB' => array(
 						'class' => 'phpbb.extensions.phpBB.phpBB',
 						'path' => 'webroot.forum',
+						'webPath' => 'forum'
 				),
 				
 				'mail' => array(
