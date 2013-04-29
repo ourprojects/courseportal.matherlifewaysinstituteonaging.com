@@ -127,6 +127,11 @@ class CPUser extends CActiveRecord {
 		);
 	}
 	
+	public function getCountry()
+	{
+		return isset($this->country_iso) ? Yii::app()->translate->getTerritoryDisplayName($this->country_iso) : '';
+	}
+	
 	public function getFullLocation() {
 		if(isset($this->location))
 		{
