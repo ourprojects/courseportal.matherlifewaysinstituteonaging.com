@@ -82,7 +82,7 @@ class CPUser extends CActiveRecord {
 				'PhpBBUserBehavior' => array(
 						'class' => 'phpbb.components.PhpBBUserBehavior',
 						'newPasswordAttribute' => 'new_password',
-						'groupAttribute' => 'group_id',
+						'groupAttribute' => 'group',
 						'avatarAttribute' => 'avatar',
 						'avatarPath' => Yii::getPathOfAlias(Avatar::AVATARS_PATH_ALIAS),
 						'forumDbConnection' => 'forumDb',

@@ -77,7 +77,6 @@
 class PhpBBUserBehavior extends CActiveRecordBehavior
 {
 	
-	const ID = 'phpBB';
 	/**
 	 * @var string The name of the phpBB component variable
 	 */
@@ -87,15 +86,15 @@ class PhpBBUserBehavior extends CActiveRecordBehavior
      */
     public $newPasswordAttribute = 'new_password';
     
-    public $groupAttribute = 'group';
+    public $groupAttribute = null;
     /**
      * @var string User attribute which contains filename with extension
      */
-    public $avatarAttribute = '';
+    public $avatarAttribute = null;
     /**
      * @var string path like 'webroot.upload.avatars'
      */
-    public $avatarPath = '';
+    public $avatarPath = null;
     /**
      * @var string CDbConnection component
      */
@@ -157,7 +156,7 @@ class PhpBBUserBehavior extends CActiveRecordBehavior
     	if($user->getIsNewRecord() && 
     			Yii::app()->{$this->phpBBComponentName}->getUserIdFromName($user->{$this->_phpBBToYiiAttributes['username']}) !== false)
     	{
-    		$user->addError($this->_phpBBToYiiAttributes['username'], Yii::t(self::ID, 'The username {username} has already been taken.', array('{username}' => $user->{$this->_phpBBToYiiAttributes['username']})));
+    		$user->addError($this->_phpBBToYiiAttributes['username'], Yii::t(phpBB::ID, 'The username {username} has already been taken.', array('{username}' => $user->{$this->_phpBBToYiiAttributes['username']})));
     	}
     }
     
@@ -200,7 +199,7 @@ class PhpBBUserBehavior extends CActiveRecordBehavior
     	$user = $this->getOwner();
     	
     	if(empty($plainTextPassword))
-    			$plainTextPassword = $user->{$this->newPasswordAttribute};
+    		$plainTextPassword = $user->{$this->newPasswordAttribute};
     	
     	if(!empty($plainTextPassword))
     	{
@@ -213,7 +212,7 @@ class PhpBBUserBehavior extends CActiveRecordBehavior
 			    		$user->{$this->_phpBBToYiiAttributes['username']},
 			    		$plainTextPassword,
 			    		$user->{$this->_phpBBToYiiAttributes['email']},
-    					$user->canGetProperty($this->groupAttribute) ? $user->{$this->groupAttribute} : 'REGISTERED',
+    					isset($this->groupAttribute) ? $user->{$this->groupAttribute} : 'REGISTERED',
 			    		$additional_attributes
 		    		);
     	}
