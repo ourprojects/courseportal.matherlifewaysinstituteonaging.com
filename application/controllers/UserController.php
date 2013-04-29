@@ -334,7 +334,7 @@ class UserController extends ApiController {
 				$transaction = Yii::app()->db->beginTransaction();
 				$exception = null;
 				try {
-					if((!isset($models['avatar']->image) || ($user->avatar->delete() && $models['avatar']->save())) && $user->save())
+					if((!isset($models['avatar']->image) || (($user->avatar === null || $user->avatar->delete()) && $models['avatar']->save())) && $user->save())
 					{
 						$transaction->commit();
 					}
