@@ -50,7 +50,7 @@
     <h2><?php echo CHtml::link('phpBB', Yii::app()->phpBB->getForumUrl()); ?></h2>
     <p><?php echo t('Open Source Bulletin Board Software'); ?></p>
     <br />
-    <h2><?php echo CHtml::link(t('Users'), $this->createUrl('UserRegisterTable')); ?></h2>
+    <h2><?php echo CHtml::link(t('Users'), $this->createUrl('users')); ?></h2>
     <p><?php echo t('Course Portal Users'); ?></p>
     <br />
     <h2><?php echo CHtml::link(t('HostMySite CPanel Login'), 'https://my.hostmysite.com/single.html'); ?></h2>

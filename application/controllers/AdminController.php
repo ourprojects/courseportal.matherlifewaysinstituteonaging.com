@@ -177,5 +177,50 @@ class AdminController extends OnlineCoursePortalController {
     		$this->redirect(Yii::app()->getRequest()->getUrlReferrer());
     	}
     }
+    
+    public function actionUsers()
+    {
+    	$models = array(
+    			'searchModel' => new CPUser('search'),
+    	);
+    	
+    	$models['searchModel']->unsetAttributes();
+    	
+    	if(isset($_GET['CPUser']))
+    		$models['searchModel']->attributes = $_GET['CPUser'];
+    	
+    	$this->render('pages/users', $models);
+    }
+    
+    public function actionUserDelete($id) {
+    	if(is_numeric($id))
+    	{
+    		$model = CPUser::model()->findByPk($id);
+    	}
+    	elseif(is_string($id))
+    	{
+    		$model = CPUser::model()->find('name = :name OR email = :name', array(':name' => $id));
+    	}
+    	else
+    	{
+    		throw new CException(t('Invalid user identifier specified.'));
+    	}
+    
+    	if($model === null)
+    		throw new CHttpException(404, t('User {id} could not be found.', array('{id}' => $id)));
+    
+    	if($model->delete()) {
+    		$response = array('result' => 'success', 'message' => t('User {id} deleted successfully.', array('{id}' => $id)));
+    	} else {
+    		$response = array('result' => 'error', 'message' => t('User {id} could not be deleted.', array('{id}' => $id)));
+    	}
+    
+    	if(Yii::app()->getRequest()->getIsAjaxRequest()) {
+    		echo $response['message'];
+    	} else {
+    		Yii::app()->getUser()->setFlash($response['result'], $response['message']);
+    		$this->redirect(Yii::app()->getRequest()->getUrlReferrer());
+    	}
+    }
 
 }
