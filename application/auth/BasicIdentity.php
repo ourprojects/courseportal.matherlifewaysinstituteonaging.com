@@ -24,7 +24,7 @@ class BasicIdentity extends CoursePortalUserIdentity
 		{
 			$this->errorCode = self::ERROR_USERNAME_INVALID;
 		} 
-		else if(!$this->_model->verifyPassword($this->password)) 
+		else if(!$this->_model->verify($this->password)) 
 		{
 			$this->errorCode = self::ERROR_PASSWORD_INVALID;
 		}
