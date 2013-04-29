@@ -10,8 +10,7 @@
  */
 class Key extends CActiveRecord {
 	
-	private $_pbkdf2Hasher = null;
-	public $key = null;
+	public $key;
 	
     /**
      * Returns the static model of the specified AR class.
@@ -20,22 +19,6 @@ class Key extends CActiveRecord {
      */
     public static function model($className = __CLASS__) {
         return parent::model($className);
-    }
-    
-    public function init() {
-    	if($this->isNewRecord) {
-    		$this->salt = $this->getHasher()->getIV();
-    	}
-    }
-    
-    public function getHasher() {
-    	if($this->_pbkdf2Hasher === null)
-    		$this->_pbkdf2Hasher = Yii::createComponent('ext.pbkdf2.PBKDF2');
-    	return $this->_pbkdf2Hasher;
-    }
-
-    public function generateKey() {
-    	return $this->getHasher()->getHash($this->getHasher()->generateIV());
     }
     
     /**
@@ -49,7 +32,14 @@ class Key extends CActiveRecord {
     	return array_merge(parent::behaviors(),
     			array(
     					'toArray' => array('class' => 'behaviors.EArrayBehavior'),
-    					'extendedFeatures' => array('class' => 'behaviors.EModelBehaviors')
+    					'extendedFeatures' => array('class' => 'behaviors.EModelBehaviors'),
+						'PBKDF2Behavior' => array(
+								'class' => 'ext.pbkdf2.PBKDF2Behavior',
+								'saltAttribute' => 'salt',
+								'hashAttribute' => 'value',
+								'newValueAttribute' => 'key',
+								'clearNewValueAfterSave' => true
+						)
     			));
     }
 
@@ -58,28 +48,14 @@ class Key extends CActiveRecord {
      */
     public function rules() {
         return array(
-        	array('key', 'safe'),
-        	array('key', 'hash'),
-        		
-            array('value, salt', 'required'),
-        	array('value', 'ext.pbkdf2.PBKDF2validator'),
+            array('key, value, salt', 'required'),
+        	array('value, salt', 'ext.pbkdf2.PBKDF2validator'),
         		
         	array('id', 'numerical', 'integerOnly' => true),
         		
+        	array('key', 'safe'),
         	array('id', 'safe', 'on' => 'search'),
         );
-    }
-    
-    public function hash($attribute = 'key', $params = array()) {
-    	if($this->$attribute !== null)
-    		$this->value = $this->getHasher()->getHash($this->$attribute);
-    }
-
-    /**
-     * @return array relational rules.
-     */
-    public function relations() {
-        return array();
     }
 
     /**
