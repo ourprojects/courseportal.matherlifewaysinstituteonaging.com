@@ -960,7 +960,6 @@ div.colborder {
 hr {
 	background: #ddd;
 	color: #ddd;
-	clear: both;
 	float: none;
 	width: 100%;
 	height: 1px;
