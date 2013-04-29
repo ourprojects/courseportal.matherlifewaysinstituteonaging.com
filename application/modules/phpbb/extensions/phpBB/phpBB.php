@@ -36,6 +36,8 @@ Yii::import('phpbb.extensions.phpBB.phpbbClass');
 
 class phpBB extends CApplicationComponent
 {
+	
+	const ID = 'phpBB';
 	/**
 	 * Path to forum
 	 * @var string
@@ -94,15 +96,15 @@ class phpBB extends CApplicationComponent
 	 */
 	public function userAdd($username, $password, $email, $group_id, $additional_attributes = array())
 	{
-		if(is_string($group_id)) {
-			$group_id = PhpBBGroup::model()->findByName($group_id);
-		} elseif(is_numeric($group_id)) {
+		if(is_numeric($group_id)) {
 			$group_id = PhpBBGroup::model()->findByPk($group_id);
+		} elseif(!$group_id instanceof PhpBBGroup) {
+			$group_id = PhpBBGroup::model()->findByName(strval($group_id));
 		}
 		
 		if($group_id === null)
 		{
-			throw new CException('Unable to add user, an invalid group was specified.');
+			throw new CException(Yii::t(self::ID, 'Unable to add user, an invalid group was specified.'));
 		}
 
 		return $this->_phpbb->user_add(array_merge(array(
