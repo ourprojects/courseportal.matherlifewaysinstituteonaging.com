@@ -81,8 +81,11 @@ class OnlineCoursePortalApplication extends CWebApplication {
     			$user->last_ip = Yii::app()->getRequest()->getUserHostAddress();
     			$agent = Yii::app()->getRequest()->getUserAgent();
     			$user->last_agent = strlen($agent) > 255 ? substr($agent, 0, 255) : $agent;
-    			$route = $this->getController()->getRoute();
-    			$user->last_route = strlen($route) > 255 ? substr($route, 0, 255) : $route;
+    			if($this->getController() !== null)
+    			{
+    				$route = $this->getController()->getRoute();
+    				$user->last_route = strlen($route) > 255 ? substr($route, 0, 255) : $route;
+    			}
     			$user->save();
     		}
     	}
