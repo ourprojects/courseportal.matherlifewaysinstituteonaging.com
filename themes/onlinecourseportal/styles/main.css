@@ -143,7 +143,7 @@ div.breadcrumbs span {
     background: linear-gradient(to bottom, rgb(112,181,242) 0%,rgb(84,164,238) 49%,rgb(54,144,240) 50%,rgb(26,97,219) 100%); /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#70b5f2', endColorstr='#1a61db',GradientType=0 ); /* IE6-9 */
 
-    color: #eee;
+    color: #fff;
     font-size: medium;
     font-family: Arial, sans-serif;
     text-decoration: none;
@@ -191,7 +191,7 @@ div.breadcrumbs span {
     transition: background 1s ease-out
 }
 .button:hover, button:hover, input[type=submit]:hover {
-	color: #222;
+	color: #e8e8e8;
 	
     background: rgb(137,201,249); /* Old browsers */
     background: -moz-linear-gradient(top, rgb(137,201,249) 0%, rgb(89,175,249) 50%, rgb(58,156,255) 51%, rgb(29,110,242) 100%); /* FF3.6+ */
@@ -203,7 +203,7 @@ div.breadcrumbs span {
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#89c9f9', endColorstr='#1d6ef2',GradientType=0 ); /* IE6-9 */
 }
 .button:active, button:active, input[type=submit]:active {
-	color: #444;
+	color: #bfbfbf;
     top: 4px;
  
     -moz-box-shadow:    inset 0px 4px 5px rgba(255,255,255,0.4),

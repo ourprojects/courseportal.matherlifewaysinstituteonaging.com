@@ -70,7 +70,7 @@ class CPUser extends CActiveRecord {
 			array('email', 'email'),
 			array('email, name', 'unique', 'except' => 'search'),
 
-			array('group_id', 'defaultGroupID', 'setOnEmpty' => true),
+			array('group_id', 'setDefaultGroupID', 'setOnEmpty' => true),
 			array('group_id', 'exist', 'attributeName' => 'id', 'className' => 'Group'),
 			
 			array('name, new_password, email, firstname, lastname, location, country_iso', 'safe'),
@@ -102,6 +102,7 @@ class CPUser extends CActiveRecord {
 						'saltAttribute' => 'salt',
 						'hashAttribute' => 'password',
 						'newValueAttribute' => 'new_password',
+						'generateSaltOnNewRecord' => true,
 						'clearNewValueAfterSave' => false
 				)
 		));
@@ -198,17 +199,19 @@ class CPUser extends CActiveRecord {
 		return $this;
 	}
 	
-	public function defaultGroupID($attribute, $params)
+	public function setDefaultGroupID($attribute, $params)
 	{
-		if(isset($this->$attribute) && $params['setOnEmpty'])
-			return;
-		$this->$attribute = Group::model()->find(
-				'name = :name',
-				array(':name' => EmployerDomain::model()->exists(
-						':email RLIKE regex',
-						array(':email' => $this->email)) ? Group::EMPLOYEES : Group::REGISTERED
-				)
-		)->id;
+		if(!$params['setOnEmpty'] || empty($this->$attribute))
+		{
+			if($emailGroup = GroupRegularExpression::model()->find(':email RLIKE regex', array(':email' => $this->email)))
+			{
+				$this->$attribute = $emailGroup->group_id;
+			}
+			else
+			{
+				$this->$attribute = Group::model()->find('name=:name', array(':name' => Group::DEFAULT_GROUP))->id;
+			}
+		}
 	}
 
 	/**
