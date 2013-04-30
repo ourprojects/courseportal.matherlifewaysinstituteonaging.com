@@ -29,18 +29,12 @@ div.course-slide div.buttons {
 	bottom: 5px;
 }
 div.course-slide img {
-	float: right;
-	margin: 0 15px 15px 15px;
 	border: none;
 	-moz-border-radius: 7px;
 	-webkit-border-radius: 7px;
 	border-radius: 7px;
 }
-div.course-slide img.normal {
-	float: left;
-	margin-left: 25px;
-	border: none;
-}
+
 div.course-slide div.box-white {
 	padding: 10px;
 	background: #fff;
