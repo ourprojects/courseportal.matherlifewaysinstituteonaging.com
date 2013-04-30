@@ -1,0 +1,12 @@
+#categories {
+	width: 100%;
+}
+#categories li {
+	list-style: none;
+}
+#categories a {
+	display: block;
+	width: 50%;
+	margin-left: auto;
+	margin-right: auto;
+}
