@@ -74,6 +74,7 @@ class Group extends CActiveRecord {
 		// class name for the relations automatically generated below.
 		return array(
 				'users' => array(self::HAS_MANY, 'CPUser', 'group_id'),
+				'regularExpressions' => array(self::HAS_MANY, 'GroupRegularExpression', 'group_id'),
 		);
 	}
 

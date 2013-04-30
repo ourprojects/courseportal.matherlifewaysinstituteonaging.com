@@ -21,6 +21,8 @@ class PBKDF2Behavior extends CActiveRecordBehavior
 
     public $newValueAttribute = 'new_value';
     
+    public $generateSaltOnNewRecord = true;
+    
     public $clearNewValueAfterSave = true;
     
     protected $_saltAudit;
@@ -54,7 +56,7 @@ class PBKDF2Behavior extends CActiveRecordBehavior
     public function afterConstruct($event)
     {
     	$model = $this->getOwner();
-    	if($model->getIsNewRecord() && !empty($model->{$this->saltAttribute}))
+    	if($this->generateSaltOnNewRecord && $model->getIsNewRecord())
     		$model->{$this->saltAttribute} = $this->generateIV();
     }
     
