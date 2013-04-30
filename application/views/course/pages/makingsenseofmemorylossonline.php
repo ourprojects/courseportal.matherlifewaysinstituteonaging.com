@@ -104,7 +104,7 @@ foreach(array(
       <div class="content">
         <h2 class="flowers"><?php echo t('Overview of Memory Loss and Related Symptoms'); ?></h2>
         <hr />
-        <img src="<?php echo $this->getImagesUrl('msml/154418413.png'); ?>" alt="image" style="margin-left:auto; margin-right:auto;">
+        <img src="<?php echo $this->getImagesUrl('msml/154418413.png'); ?>" alt="image" style="margin: 0 auto 25px auto;">
         <p><?php echo t('We are delighted that you are interested in MSML Online. This five-lesson course is intended to help family members of someone in the early stages of memory loss to meet the challenges they face now and in the future. Research evaluation has shown that participation in this course increases family members’ knowledge and improves coping skills with respect to their relatives’ memory and behavior changes.'); ?></p>
         <p><?php echo t('Lesson Objectives:'); ?></p>
         <ul>
@@ -144,7 +144,7 @@ foreach(array(
         <p><?php echo t('Filmmaker-photographer couple Julie Winokur and Ed Kashi were busy pursuing their careers and raising two children when Winokur\'s 83-year-old father, Herbie, became too infirm to care for himself.'); ?></p>
         <br />
         <br />
-        <div style="width:400px;">
+        <div style="width:400px; margin:0 auto 0 auto;">
           <div style="height:340px;"><script type="text/javascript" src="http://mediastorm.com/player/embed.php?id=e5178ce9beaabc886268&w=400&h=340&amp;lang=none"></script></div>
           <div style="padding:10px; font-family:Helvetica, Arial, sans-serif; font-size:12px; line-height:16px; color:#999999; background-color:#000000;">Millions of middle-aged Americans are caring for their children as well as their aging parents. When filmmaker-photographer pair Julie Winokur and Ed Kashi took in Winokur's 83-year-old father, they decided to document their own story. See the project at <a href="http://mediastorm.com/publication/the-sandwich-generation" target="_blank" style="color:#0083c5;">http://mediastorm.com/publication/the-sandwich-generation</a></div>
         </div>
