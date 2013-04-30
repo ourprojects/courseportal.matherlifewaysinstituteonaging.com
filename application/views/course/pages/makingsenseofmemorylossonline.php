@@ -104,7 +104,7 @@ foreach(array(
       <div class="content">
         <h2 class="flowers"><?php echo t('Overview of Memory Loss and Related Symptoms'); ?></h2>
         <hr />
-        <img src="<?php echo $this->getImagesUrl('msml/154418413.png'); ?>" alt="image" style="width:500; height:391;">
+        <img src="<?php echo $this->getImagesUrl('msml/154418413.png'); ?>" alt="image" style="margin-left:auto; margin-right:auto;">
         <p><?php echo t('We are delighted that you are interested in MSML Online. This five-lesson course is intended to help family members of someone in the early stages of memory loss to meet the challenges they face now and in the future. Research evaluation has shown that participation in this course increases family members’ knowledge and improves coping skills with respect to their relatives’ memory and behavior changes.'); ?></p>
         <p><?php echo t('Lesson Objectives:'); ?></p>
         <ul>
@@ -124,7 +124,6 @@ foreach(array(
         <hr />
         <p><?php echo t('Welcome to the first lesson of MSML Online. We want to encourage everyone to participate via the Forum/Blog. However, at the same time we wish to protect everyone’s privacy. Therefore, we ask that confidentiality be maintained. Simply put, whatever is said here must stay here.'); ?></p>
         <h4><?php echo t('Introductions'); ?></h4>
-        <img src="<?php echo $this->getImagesUrl('msml/161938682.png'); ?>" class="normal" alt="image">
         <p><?php echo t('We will begin by asking you to say something about who you are and what brings you here. Please answer these questions on the Forum/Blog:'); ?></p>
         <ul>
           <li><?php echo t('What is your name?'); ?></li>
@@ -132,6 +131,9 @@ foreach(array(
           <li><?php echo t('How long have you noticed the problem with memory or thinking?'); ?></li>
           <li><?php echo t('What is the name of the medical condition or diagnosis, if known, that accounts for the problem?'); ?></li>
         </ul>
+        
+                <img src="<?php echo $this->getImagesUrl('msml/161938682.png'); ?>" alt="image">
+
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
     </div>
