@@ -47,14 +47,14 @@ class PBKDF2Behavior extends CActiveRecordBehavior
     	{
 	    	$this->_saltAudit = $model->{$this->saltAttribute};
 	    	$this->_newValueAudit = $model->{$this->newValueAttribute};
-	    	$model->{$this->hashAttribute} = $this->hash($this->_saltAudit, $this->_newValueAudit);
+	    	$model->{$this->hashAttribute} = $this->hash($this->_newValueAudit, $this->_saltAudit);
     	}
     }
     
     public function afterConstruct($event)
     {
     	$model = $this->getOwner();
-    	if($model->getIsNewRecord())
+    	if($model->getIsNewRecord() && !empty($model->{$this->saltAttribute}))
     		$model->{$this->saltAttribute} = $this->generateIV();
     }
     
