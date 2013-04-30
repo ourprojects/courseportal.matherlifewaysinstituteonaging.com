@@ -48,7 +48,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
 	</div>
 
 	<div class="row submit">
-		<h3><?php echo t('Be sure to write down your key and ID once created. It cannot be recovered.'); ?></h3>
+		<h3><?php echo t('Be sure to write down your key and ID once created. The values cannot be recovered after they are saved.'); ?></h3>
 		<?php echo CHtml::submitButton(t('Add Key')); ?>
 	</div>
 

@@ -43,7 +43,13 @@ class phpBB extends CApplicationComponent
 	 * @var string
 	 */
 	public $path;
-
+	
+	/**
+	 * Web path to forum
+	 * @var string
+	 */
+	public $webPath = '';
+	
 	/**
 	 * PHP file extentions
 	 * @var string
@@ -60,6 +66,11 @@ class phpBB extends CApplicationComponent
         Yii::import($this->path . '.includes.utf.utf_normalizer');
 
 		$this->_phpbb = new phpbbClass(Yii::getPathOfAlias($this->path) . DIRECTORY_SEPARATOR, $this->php);
+	}
+
+	public function getForumUrl()
+	{
+		return Yii::app()->getBaseUrl(true) . '/' . $this->webPath;
 	}
 
 	/**

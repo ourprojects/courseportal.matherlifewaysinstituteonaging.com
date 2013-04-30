@@ -37,7 +37,7 @@ div.form {
 	margin: 0;
 }
 
-div.form input, div.form textarea, div.form select {
+div.form input:not([type='submit']), div.form textarea, div.form select {
 	margin: 0.2em 0 0.5em 0;
 	padding: 5px 8px;
 	font-size: 12pt;
@@ -49,7 +49,7 @@ div.form textarea {
 	height: 110px;
 }
 
-div.form input[type=submit] {
+/*div.form input[type=submit] {
 	background: #bf1111;
 	color: #fff;
 	border: 0;
@@ -61,7 +61,7 @@ div.form input[type=submit] {
 }
 div.form input[type=submit]:hover {
 	opacity: .9;
-}
+}*/
 
 div.form fieldset {
 	border: 1px solid #DDD;

@@ -55,7 +55,7 @@ abstract class OnlineCoursePortalController extends CController {
 									'url' => Yii::app()->createAbsoluteUrl('user/profile'),
 									'visible' => !$user->getIsGuest()),
 							array('label' => '<span id="menu-forum" title="'.t('Forum').'"></span>',
-									'url' => Yii::app()->getBaseUrl(true) . '/forum',
+									'url' => Yii::app()->phpBB->getForumUrl(),
 									'linkOptions' => array('target' => '_blank'),
 									'visible' => !$user->getIsGuest()),
 							array('label' => '<span id="menu-courses" title="'.t('Courses').'"></span>',

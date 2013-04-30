@@ -6,6 +6,11 @@ class ViewAction extends CViewAction {
 	
 	private $_viewPath;
 	
+	public function getId()
+	{
+		return $this->getRequestedView();
+	}
+	
 	/**
 	 * Returns the name of the view requested by the user.
 	 * If the user doesn't specify any view, the {@link defaultView} will be returned.
@@ -41,8 +46,7 @@ class ViewAction extends CViewAction {
 				return;
 			}
 		}
-		throw new CHttpException(404, Yii::t('yii','The requested view "{name}" was not found.',
-			array('{name}' => $viewPath)));
+		throw new CHttpException(404, Yii::t('yii','The requested view "{name}" was not found.', array('{name}' => $viewPath)));
 	}
 
 	/**

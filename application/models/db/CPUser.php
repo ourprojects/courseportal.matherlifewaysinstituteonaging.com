@@ -56,7 +56,8 @@ class CPUser extends CActiveRecord {
 			array('session_key', 'default', 'value' => $this->generateIV(), 'setOnEmpty' => true),
 			array('email, name, session_key, firstname, lastname', 'required', 'except' => 'search'),
 			array('new_password', 'required', 'on' => 'new'),
-			array('session_key', 'ext.pbkdf2.PBKDF2validator', 'except' => 'search'),
+			array('password', 'ext.pbkdf2.PBKDF2validator', 'allowEmpty' => true),
+			array('salt, session_key', 'ext.pbkdf2.PBKDF2validator', 'except' => 'search'),
 				
 			array('firstname, lastname, location, last_route, last_agent', 'length', 'max' => 255),
 			array('created', 'date', 'format' => 'yyyy-M-d H:m:s'),
@@ -96,12 +97,12 @@ class CPUser extends CActiveRecord {
 				),
 				'toArray' => array('class' => 'behaviors.EArrayBehavior'),
 				'extendedFeatures' => array('class' => 'behaviors.EModelBehaviors'),
-				'PBKDF2UserBehovior' => array(
-						'class' => 'ext.pbkdf2.PBKDF2UserBehavior',
+				'PBKDF2Behavior' => array(
+						'class' => 'ext.pbkdf2.PBKDF2Behavior',
 						'saltAttribute' => 'salt',
-						'passwordAttribute' => 'password',
-						'newPasswordAttribute' => 'new_password',
-						'clearNewPasswordAfterSave' => false
+						'hashAttribute' => 'password',
+						'newValueAttribute' => 'new_password',
+						'clearNewValueAfterSave' => false
 				)
 		));
 	}
@@ -124,6 +125,11 @@ class CPUser extends CActiveRecord {
 			'userAgreements' => array(self::HAS_MANY, 'UserAgreement', 'user_id'),
 			'agreements' => array(self::HAS_MANY, 'Agreement', array('agreement_id' => 'id'), 'through' => 'userAgreements'),
 		);
+	}
+	
+	public function getCountry()
+	{
+		return isset($this->country_iso) ? Yii::app()->translate->getTerritoryDisplayName($this->country_iso) : '';
 	}
 	
 	public function getFullLocation() {

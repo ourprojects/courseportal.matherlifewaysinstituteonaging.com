@@ -34,7 +34,7 @@ class PBKDF2 extends CComponent {
 		
 	}
 	
-	public function hash($string, $iv) {
+	public function hash($string, $iv = '') {
 		return base64_encode($this->runPBKDF2Algorithm(
 							$this->_hashAlgorithm,
 							$string,
