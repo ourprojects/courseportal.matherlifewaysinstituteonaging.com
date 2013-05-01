@@ -30,7 +30,23 @@ abstract class CoursePortalUserIdentity extends CBaseUserIdentity
 			$this->setState(self::SESSION_KEY_INDEX, $this->_model->session_key);
 			$this->setState('language', $this->_model->language);
 		}
-		return $this->errorCode === self::ERROR_NONE;
+		switch($this->errorCode)
+		{
+			case self::ERROR_USERNAME_INVALID:
+				Yii::log('Failed login attempt. reason:[invalid username] ip:[' . (($request = Yii::app()->getRequest()) ? $request->getUserHostAddress() : 'unknown') . ']', 'warning', 'application.auth');
+				break;
+			case self::ERROR_PASSWORD_INVALID:
+				Yii::log('Failed login attempt. reason:[invalid password] ip:[' . (($request = Yii::app()->getRequest()) ? $request->getUserHostAddress() : 'unknown') . ']', 'warning', 'application.auth');
+				break;
+			case self::ERROR_NOT_ACTIVATED:
+				Yii::log('Failed login attempt. reason:[user not activated] ip:[' . (($request = Yii::app()->getRequest()) ? $request->getUserHostAddress() : 'unknown') . ']', 'warning', 'application.auth');
+				break;
+			case self::ERROR_NONE:
+				Yii::log('Successful login. ip:[' . (($request = Yii::app()->getRequest()) ? $request->getUserHostAddress() : 'unknown') . ']', 'info', 'application.auth');
+				return true;
+			
+		}
+		return false;
 	}
 	
 }

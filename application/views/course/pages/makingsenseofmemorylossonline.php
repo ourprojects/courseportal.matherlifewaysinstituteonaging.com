@@ -104,7 +104,7 @@ foreach(array(
       <div class="content">
         <h2 class="flowers"><?php echo t('Overview of Memory Loss and Related Symptoms'); ?></h2>
         <hr />
-        <img src="<?php echo $this->getImagesUrl('msml/154418413.png'); ?>" alt="image" style="width:500; height:391;">
+        <img src="<?php echo $this->getImagesUrl('msml/154418413.png'); ?>" alt="image" style="margin: 0 auto 25px auto;">
         <p><?php echo t('We are delighted that you are interested in MSML Online. This five-lesson course is intended to help family members of someone in the early stages of memory loss to meet the challenges they face now and in the future. Research evaluation has shown that participation in this course increases family members’ knowledge and improves coping skills with respect to their relatives’ memory and behavior changes.'); ?></p>
         <p><?php echo t('Lesson Objectives:'); ?></p>
         <ul>
@@ -124,7 +124,6 @@ foreach(array(
         <hr />
         <p><?php echo t('Welcome to the first lesson of MSML Online. We want to encourage everyone to participate via the Forum/Blog. However, at the same time we wish to protect everyone’s privacy. Therefore, we ask that confidentiality be maintained. Simply put, whatever is said here must stay here.'); ?></p>
         <h4><?php echo t('Introductions'); ?></h4>
-        <img src="<?php echo $this->getImagesUrl('msml/161938682.png'); ?>" class="normal" alt="image">
         <p><?php echo t('We will begin by asking you to say something about who you are and what brings you here. Please answer these questions on the Forum/Blog:'); ?></p>
         <ul>
           <li><?php echo t('What is your name?'); ?></li>
@@ -132,6 +131,9 @@ foreach(array(
           <li><?php echo t('How long have you noticed the problem with memory or thinking?'); ?></li>
           <li><?php echo t('What is the name of the medical condition or diagnosis, if known, that accounts for the problem?'); ?></li>
         </ul>
+        
+                <img src="<?php echo $this->getImagesUrl('msml/161938682.png'); ?>" alt="image">
+
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
     </div>
@@ -142,7 +144,7 @@ foreach(array(
         <p><?php echo t('Filmmaker-photographer couple Julie Winokur and Ed Kashi were busy pursuing their careers and raising two children when Winokur\'s 83-year-old father, Herbie, became too infirm to care for himself.'); ?></p>
         <br />
         <br />
-        <div style="width:400px;">
+        <div style="width:400px; margin:0 auto 0 auto;">
           <div style="height:340px;"><script type="text/javascript" src="http://mediastorm.com/player/embed.php?id=e5178ce9beaabc886268&w=400&h=340&amp;lang=none"></script></div>
           <div style="padding:10px; font-family:Helvetica, Arial, sans-serif; font-size:12px; line-height:16px; color:#999999; background-color:#000000;">Millions of middle-aged Americans are caring for their children as well as their aging parents. When filmmaker-photographer pair Julie Winokur and Ed Kashi took in Winokur's 83-year-old father, they decided to document their own story. See the project at <a href="http://mediastorm.com/publication/the-sandwich-generation" target="_blank" style="color:#0083c5;">http://mediastorm.com/publication/the-sandwich-generation</a></div>
         </div>
