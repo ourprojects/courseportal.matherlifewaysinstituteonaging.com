@@ -72,15 +72,18 @@ $this->widget(
   	<br />
   	<?php 
   	$agreements = Yii::app()->getUser()->getModel()->agreements;
-  	if(empty($agreements))
-  	{
-  		echo t('None');
-  	}
-  	else 
-	{
-	  	foreach($agreements as $agreement)
-	  		echo CHtml::link(t($agreement->name), $this->createUrl('/agreement/' . $agreement->id), array('target' => '_blank'));
-	}
-  	?>
+  	if(empty($agreements)): ?>
+  	<ul>
+  		<?php foreach($agreements as $agreement): ?>
+  		<li>
+  			<a href="<?php echo $this->createUrl('/agreement/' . $agreement->id) ?>" target='_blank'><?php echo t($agreement->name); ?></a>
+  		</li>
+  		<?php endforeach; ?>
+  	</ul>
+  	<?php 
+  	else:
+		echo t('None');
+	endif; 
+	?>
   </div>
 </div>

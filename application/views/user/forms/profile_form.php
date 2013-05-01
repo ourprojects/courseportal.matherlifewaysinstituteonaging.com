@@ -4,6 +4,7 @@
 			array(
 					'id' => 'profile-form',
 					'enableAjaxValidation' => true,
+					'enableClientValidation' => true,
 					'htmlOptions' => array('enctype' => 'multipart/form-data'),
 			));
 	?>
