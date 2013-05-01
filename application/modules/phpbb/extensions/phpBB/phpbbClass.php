@@ -4,7 +4,9 @@ class phpbbClass
 {
 
 	//various table fields
-	var $table_fields = array();
+	protected $table_fields = array();
+	
+	private $_initialized = false;
 
 	//constructor
 	public function __construct($path, $php_extension = 'php')
@@ -19,20 +21,26 @@ class phpbbClass
 	//initialize phpbb
 	function init($prepare_for_login = false)
 	{
-		global $phpbb_root_path, $phpEx, $db, $config, $user, $auth, $cache, $template;
-		
 		if($prepare_for_login && !defined('IN_LOGIN'))
 		{
 			define('IN_LOGIN', true);
+		} 
+		else if($this->_initialized)
+		{
+			return;
 		}
+		
+		global $phpbb_root_path, $phpEx, $db, $config, $user, $auth, $cache, $template;
 		
 		require_once("{$phpbb_root_path}common.{$phpEx}");
 		
-		if($prepare_for_login && (!isset($config['auth_method']) || $config['auth_method'] != 'yii'))
+		if($prepare_for_login && (!isset($config['auth_method']) || $config['auth_method'] !== 'yii'))
 			set_config('auth_method', 'yii');
 
 		$user->session_begin();
 		$auth->acl($user->data);
+		
+		$this->_initialized = true;
 	}
 
 	//user_login
@@ -252,14 +260,11 @@ class phpbbClass
 	}
 
 	//get user id if we know username
-	public function get_user_id_from_name($username, $init = false)
+	public function get_user_id_from_name($username)
 	{
 		global $phpbb_root_path, $phpEx, $db, $config, $user, $auth, $cache, $template;
 
-		if($init)
-		{
-			$this->init();
-		}
+		$this->init();
 		
 		//user functions
 		require_once("{$phpbb_root_path}includes/functions_user.{$phpEx}");
@@ -273,6 +278,17 @@ class phpbbClass
 		}
 		
 		return false;
+	}
+	
+	public function append_sid($url, $params = false, $is_amp = true)
+	{
+		global $phpbb_root_path, $phpEx, $user;
+		
+		$this->init();
+		
+		require_once("{$phpbb_root_path}includes/functions.{$phpEx}");
+		
+		return append_sid($url, $params, $is_amp, $user->session_id);
 	}
 
 }
