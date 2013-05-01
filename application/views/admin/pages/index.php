@@ -19,7 +19,7 @@ $this->breadcrumbs = array(t('Admin'));
       <h2><?php echo CHtml::link(t('Translations &amp; Languages'), $this->createUrl('/translate/translate'), array('class' => 'button')); ?></h2>
     </li>
     <li>
-      <h2><?php echo CHtml::link('phpBB', Yii::app()->phpBB->getForumUrl(), array('class' => 'button')); ?></h2>
+      <h2><?php echo CHtml::link('phpBB Administration Control Panel', Yii::app()->phpBB->getACPUrl(), array('class' => 'button')); ?></h2>
     </li>
     <li>
       <h2><?php echo CHtml::link(t('Users'), $this->createUrl('users'), array('class' => 'button')); ?></h2>

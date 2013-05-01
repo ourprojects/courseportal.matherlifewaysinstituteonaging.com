@@ -50,7 +50,7 @@ class AdminController extends OnlineCoursePortalController {
 				Yii::app()->getUser()->setFlash('error', t('Key could not be saved.'));
 		}
 		
-		$this->render('pages/apiKeys', $models);
+		$this->render('api/keys', $models);
 	}
 	
 	public function actionKeyGenerate() {
@@ -85,7 +85,7 @@ class AdminController extends OnlineCoursePortalController {
 		if(isset($_GET['Course']))
 			$searchModel->attributes = $_GET['Course'];
 		
-		$this->render('pages/course', array('searchModel' => $searchModel));
+		$this->render('course/index', array('searchModel' => $searchModel));
 	}
 	
 	public function actionCourseDelete($id) {
@@ -154,7 +154,7 @@ class AdminController extends OnlineCoursePortalController {
     		$models['objectiveSearchModel']->attributes = $_GET['CourseObjective'];
     	}
     	
-    	$this->render('pages/courseView', $models);
+    	$this->render('course/view', $models);
     }
     
     
@@ -189,7 +189,7 @@ class AdminController extends OnlineCoursePortalController {
     	if(isset($_GET['CPUser']))
     		$models['searchModel']->attributes = $_GET['CPUser'];
     	
-    	$this->render('pages/users', $models);
+    	$this->render('user/index', $models);
     }
     
     public function actionUserDelete($id) {
