@@ -13,7 +13,6 @@
  * @property string $created
  * @property string $last_ip
  * @property string $last_login
- * @property string $last_route
  * @property string $language
  *
  * The followings are the available model relations:
@@ -52,14 +51,14 @@ class CPUser extends CActiveRecord {
 	 */
 	public function rules() {
 		return array(
-			array('password, salt, session_key, group_id, last_ip, last_login, last_route, language', 'unsafe'),
+			array('password, salt, session_key, group_id, last_ip, last_login, language', 'unsafe'),
 			array('session_key', 'default', 'value' => $this->generateIV(), 'setOnEmpty' => true),
 			array('email, name, session_key, firstname, lastname', 'required', 'except' => 'search'),
 			array('new_password', 'required', 'on' => 'new'),
 			array('password', 'ext.pbkdf2.PBKDF2validator', 'allowEmpty' => true),
 			array('salt, session_key', 'ext.pbkdf2.PBKDF2validator', 'except' => 'search'),
 				
-			array('firstname, lastname, location, last_route, last_agent', 'length', 'max' => 255),
+			array('firstname, lastname, location, last_agent', 'length', 'max' => 255),
 			array('created', 'date', 'format' => 'yyyy-M-d H:m:s'),
 			array('last_login', 'date', 'format' => 'yyyy-M-d H:m:s'),
 			array('last_ip', 'length', 'max' => 40),
@@ -74,7 +73,7 @@ class CPUser extends CActiveRecord {
 			array('group_id', 'exist', 'attributeName' => 'id', 'className' => 'Group'),
 			
 			array('name, new_password, email, firstname, lastname, location, country_iso', 'safe'),
-			array('id, group_id, created, last_ip, last_login, last_agent, last_route, language', 'safe', 'on' => 'search')
+			array('id, group_id, created, last_ip, last_login, last_agent, language', 'safe', 'on' => 'search')
         );
 	}
 
@@ -240,7 +239,6 @@ class CPUser extends CActiveRecord {
 			'location' 		 => t('Location'),
 			'fullLocation' 	 => t('Full Location'),
 			'country_iso' 	 => t('Country'),
-			'last_route' 	 => t('Last Route Requested'),
 			'last_login' 	 => t('Last Login'),
 			'last_ip' 		 => t('Last IP Address'),
 			'last_agent'	 => t('Last Agent'),
@@ -263,7 +261,6 @@ class CPUser extends CActiveRecord {
 		$criteria->compare('location', $this->location, true);
 		$criteria->compare('country_iso', $this->country_iso, true);
 		$criteria->compare('last_login', $this->last_login, true);
-		$criteria->compare('last_route', $this->last_route, true);
 		$criteria->compare('last_ip', $this->last_ip, true);
 		$criteria->compare('last_agent', $this->last_agent, true);
 		

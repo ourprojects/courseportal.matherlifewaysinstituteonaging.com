@@ -31,6 +31,11 @@ class OnlineCoursePortalApplication extends CWebApplication {
     	parent::preinit();
     }
     
+    protected function init()
+    {
+    	$this->onEndRequest = array($this, 'saveUserState');
+    }
+    
     /**
      * Creates the controller and performs the specified action.
      * @param string $route the route of the current request. See {@link createController} for more details.
@@ -61,32 +66,37 @@ class OnlineCoursePortalApplication extends CWebApplication {
     	}
     }
     
-    public function setLanguage($language)
+    public function saveUserState()
     {
-    	parent::setLanguage($language);
-    	$user = $this->getUser()->getModel();
-    	if($user != null && $user->language != $language)
+        if(($user = $this->getUser()->getModel()) && !$user->getIsNewRecord())
     	{
-    		$user->language = $language;
-    	}
-    }
-    
-    public function onEndRequest($event)
-    {
-    	parent::onEndRequest($event);
-    	if(($user = $this->getUser()->getModel()) != null)
-    	{
-    		if(!$user->getIsNewRecord())
+    		$updated = array();
+    		if($request = Yii::app()->getRequest())
     		{
-    			$user->last_ip = Yii::app()->getRequest()->getUserHostAddress();
-    			$agent = Yii::app()->getRequest()->getUserAgent();
-    			$user->last_agent = strlen($agent) > 255 ? substr($agent, 0, 255) : $agent;
-    			if($this->getController() !== null)
-    			{
-    				$route = $this->getController()->getRoute();
-    				$user->last_route = strlen($route) > 255 ? substr($route, 0, 255) : $route;
-    			}
-    			$user->save();
+	    		$var = $request->getUserHostAddress();
+	    		if($var != $user->last_ip)
+	    		{
+	    			$updated[] = 'last_ip';
+	    			$user->last_ip = $var;
+	    		}
+	    				
+	    		$var = $request->getUserAgent();
+	    		$var = strlen($var) > 255 ? substr($var, 0, 255) : $var;
+	    		if($var != $user->last_agent)
+	    		{
+	    			$updated[] = 'last_agent';
+	    			$user->last_agent = $var;
+	    		}
+    		}
+    		$var = $this->getLanguage();
+    		if($user->language != $var)
+    		{
+    			$updated[] = 'language';
+    			$user->language = $var;
+    		}
+    		if(!empty($updated))
+    		{
+    			$user->save(true, $updated);
     		}
     	}
     }
