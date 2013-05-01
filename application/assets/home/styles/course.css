@@ -69,3 +69,11 @@ div.course-slide div.box-white {
 	box-shadow: 0 0 10px #999;
 	width: 60%;
 }
+div.course-slide .right-answer {
+	color:#060; 
+	font-weight:bold;
+}
+div.course-slide .wrong-answer {
+	color:#C00; 
+	font-weight:bold;
+}
