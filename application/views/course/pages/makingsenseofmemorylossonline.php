@@ -104,7 +104,7 @@ foreach(array(
       <div class="content">
         <h2 class="flowers"><?php echo t('Overview of Memory Loss and Related Symptoms'); ?></h2>
         <hr />
-        <img src="<?php echo $this->getImagesUrl('msml/154418413.png'); ?>" alt="image" style="margin: 0 auto 25px auto;">
+        <img src="<?php echo $this->getImagesUrl('msml/154418413.png'); ?>" alt="image" style="margin: 0 auto 0 auto;">
         <p><?php echo t('We are delighted that you are interested in MSML Online. This five-lesson course is intended to help family members of someone in the early stages of memory loss to meet the challenges they face now and in the future. Research evaluation has shown that participation in this course increases family members’ knowledge and improves coping skills with respect to their relatives’ memory and behavior changes.'); ?></p>
         <p><?php echo t('Lesson Objectives:'); ?></p>
         <ul>
@@ -131,10 +131,10 @@ foreach(array(
           <li><?php echo t('How long have you noticed the problem with memory or thinking?'); ?></li>
           <li><?php echo t('What is the name of the medical condition or diagnosis, if known, that accounts for the problem?'); ?></li>
         </ul>
+        <img src="<?php echo $this->getImagesUrl('msml/forum_icon.png'); ?>" alt="image" style="width:250px; height:186px; margin-left:auto; margin-right:auto;">
         
-                <img src="<?php echo $this->getImagesUrl('msml/161938682.png'); ?>" alt="image">
-
-      </div>
+        
+        </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
     </div>
     <div id="lesson-1-slide-3" class="course-slide">
@@ -185,9 +185,13 @@ foreach(array(
       <div class="content">
         <h2 class="flowers"><?php echo t('Definition of Dementia'); ?></h2>
         <hr />
-        <p><?php echo t('Deterioration of at least two brain functions, including memory.'); ?></p>
-        <p><?php echo t('A syndrome, not a diagnosis.'); ?></p>
-        <p><?php echo t('In the past, referred to as senility or “hardening of the arteries.”'); ?></p>
+        
+        <img src="<?php echo $this->getImagesUrl('msml/135095760.png'); ?>" alt="image" style="margin:0 auto 0 auto;">
+        <ul>
+        	<li><?php echo t('Deterioration of at least two brain functions, including memory.'); ?></li>
+            <li><?php echo t('A syndrome, not a diagnosis.'); ?></li>
+            <li><?php echo t('In the past, referred to as senility or “hardening of the arteries.”'); ?></li>
+         </ul>
         <p><?php echo t('Dementia refers to an acquired and progressive loss of mental functions due to a brain disorder. Memory loss is typically the first symptom shown by someone with dementia. This is not a normal part of the aging process, even though the vast majority of persons who experience a dementia are over 65 years of age. A medical diagnosis is required to determine the underlying cause or causes of symptoms. In the past, terms like “senility” and “hardening of the arteries” were commonly used to describe dementia but do not accurately explain the disease process at work.'); ?></p>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
