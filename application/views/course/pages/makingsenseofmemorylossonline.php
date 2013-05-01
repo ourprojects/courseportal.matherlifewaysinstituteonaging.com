@@ -210,8 +210,9 @@ foreach(array(
           <li><?php echo t('Ability to perform tasks in sequence'); ?></li>
         </ul>
         <p><?php echo t('Dementia typically unfolds gradually over a period of many years but it can begin suddenly or unexpectedly in rare cases. It affects some or all of these brain functions. Search the Web for examples and greater explanations on these topics.'); ?></p>
-        <p><?php echo t('Did you ever forget a name or forget an appointment or get lost? What did it feel like at the time?'); ?></p>
+        <p><?php echo t('On the Forum, comment on if you ever forget a name or forget an appointment or get lost, and what did it feel like at the time?'); ?></p>
         <p><?php echo t('Imagine how difficult it would be to experience this type of problem on a regular basis. We will address the experience of living dementia during the next section.'); ?></p>
+          <img src="<?php echo $this->getImagesUrl('msml/forum_icon.png'); ?>" alt="image" style="width:250px; height:186px; margin-left:auto; margin-right:auto;">
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
     </div>
@@ -219,22 +220,28 @@ foreach(array(
       <div class="content">
         <h2 class="flowers"><?php echo t('Dementia'); ?></h2>
         <hr />
-        <h5><?php echo t('Reversible Dementias'); ?></h5>
-        <ul>
-          <li><?php echo t('Toxic Effects of Medications'); ?></li>
-          <li><?php echo t('Infections'); ?></li>
-          <li><?php echo t('Metabolic disorders'); ?></li>
-          <li><?php echo t('Major depression'); ?></li>
-          <li><?php echo t('Brain tumors'); ?></li>
-        </ul>
-        <h5><?php echo t('Irreversible Dementias'); ?></h5>
-        <ul>
-          <li><?php echo t('Alzheimer’s Disease'); ?></li>
-          <li><?php echo t('Multi-infarct/Vascular'); ?></li>
-          <li><?php echo t('Parkinson’s Disease'); ?></li>
-          <li><?php echo t('Lewy Body Disease'); ?></li>
-          <li><?php echo t('Over 50 rare types'); ?></li>
-        </ul>
+        <table style="width:100%;">
+          <tr>
+            <th><h5><?php echo t('Reversible Dementias'); ?></h5></th>
+            <th><h5><?php echo t('Irreversible Dementias'); ?></h5></th>
+          </tr>
+          <tr>
+            <td><ul>
+                <li><?php echo t('Toxic Effects of Medications'); ?></li>
+                <li><?php echo t('Infections'); ?></li>
+                <li><?php echo t('Metabolic disorders'); ?></li>
+                <li><?php echo t('Major depression'); ?></li>
+                <li><?php echo t('Brain tumors'); ?></li>
+              </ul></td>
+            <td><ul>
+                <li><?php echo t('Alzheimer’s Disease'); ?></li>
+                <li><?php echo t('Multi-infarct/Vascular'); ?></li>
+                <li><?php echo t('Parkinson’s Disease'); ?></li>
+                <li><?php echo t('Lewy Body Disease'); ?></li>
+                <li><?php echo t('Over 50 rare types'); ?></li>
+              </ul></td>
+          </tr>
+        </table>
         <p><?php echo t('As you can see, dementia is an umbrella term that includes reversible and irreversible conditions. Search the Web for examples and greater explanations on these topics.'); ?></p>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
