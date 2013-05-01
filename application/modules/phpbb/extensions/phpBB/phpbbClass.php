@@ -83,7 +83,6 @@ class phpbbClass
 	//user_loggedin
 	function user_loggedin()
 	{
-		Yii::trace('phpbbClass.user_tracegedin called', 'phpBB');
 		global $phpbb_root_path, $phpEx, $db, $config, $user, $auth, $cache, $template;
 		
 		//general info
@@ -91,7 +90,6 @@ class phpbbClass
 
 		//session management
 		$user->session_begin();
-		Yii::trace('user session started from within phpbbClass.user_loggedin', 'phpBB');
 		
 		// anonymous fix by John Issac (thanks)
 		return is_array($user->data) && isset($user->data['user_id']) && $user->data['user_id'] != ANONYMOUS && $user->data['user_id'] > 0;
