@@ -27,7 +27,7 @@ $this->breadcrumbs = array(
   </div>
 </div>
 <div class="column-wide">
-  <h2><?php echo t('Viewing User #') . $user->id; ?></h2>
+  <h1><?php echo t('Viewing User ') . $user->id; ?></h1>
   <br />
   <div class="box-white">
 	<div class="form">
@@ -43,7 +43,7 @@ $this->breadcrumbs = array(
 		<p class="note">
 			<span class="required">*</span><?php echo t('Required'); ?>.
 		</p>
-		<?php echo $form->errorSummary(array($Avatar, $Profile)); ?>
+		<?php echo $form->errorSummary(array($Avatar, $user)); ?>
 		
 		<div class="row">
 			<?php echo $form->labelEx($Avatar, 'image'); ?>
@@ -53,39 +53,51 @@ $this->breadcrumbs = array(
 		</div>
 		
 		<div class="row">
-			<?php echo $form->labelEx($Profile, 'name'); ?>
-			<?php echo $form->textField($Profile, 'name'); ?>
-			<?php echo $form->error($Profile, 'name'); ?>
+			<?php echo $form->labelEx($user, 'name'); ?>
+			<?php echo $form->textField($user, 'name'); ?>
+			<?php echo $form->error($user, 'name'); ?>
 		</div>
 		
 		<div class="row">
-			<?php echo $form->labelEx($Profile, 'email'); ?>
-			<?php echo $form->emailField($Profile, 'email'); ?>
-			<?php echo $form->error($Profile, 'email'); ?>
+			<?php echo $form->labelEx($user, 'email'); ?>
+			<?php echo $form->emailField($user, 'email'); ?>
+			<?php echo $form->error($user, 'email'); ?>
+		</div>
+		
+		<div class="row">
+			<?php echo $form->labelEx($user, 'group_id'); ?>
+			<?php echo $form->dropDownList($user, 'group_id', CHtml::listData(Group::model()->findAll(), 'id', 'name')); ?>
+			<?php echo $form->error($user, 'group_id'); ?>
+		</div>
+		
+		<div class="row">
+			<?php echo $form->labelEx($user, 'language'); ?>
+			<?php echo CHTML::dropDownList('language', Yii::app()->translate->getLanguageID($user->language), Yii::app()->translate->getLocaleDisplayNames()); ?>
+			<?php echo $form->error($user, 'language'); ?>
 		</div>
 	
 		<div class="row">
-			<?php echo $form->labelEx($Profile, 'firstname'); ?>
-			<?php echo $form->textField($Profile, 'firstname'); ?>
-			<?php echo $form->error($Profile, 'firstname'); ?>
+			<?php echo $form->labelEx($user, 'firstname'); ?>
+			<?php echo $form->textField($user, 'firstname'); ?>
+			<?php echo $form->error($user, 'firstname'); ?>
 		</div>
 		
 		<div class="row">
-			<?php echo $form->labelEx($Profile, 'lastname'); ?>
-			<?php echo $form->textField($Profile, 'lastname'); ?>
-			<?php echo $form->error($Profile, 'lastname'); ?>
+			<?php echo $form->labelEx($user, 'lastname'); ?>
+			<?php echo $form->textField($user, 'lastname'); ?>
+			<?php echo $form->error($user, 'lastname'); ?>
 		</div>
 		
 		<div class="row">
-			<?php echo $form->labelEx($Profile, 'location'); ?>
-			<?php echo $form->textField($Profile, 'location'); ?>
-			<?php echo $form->error($Profile, 'location'); ?>
+			<?php echo $form->labelEx($user, 'location'); ?>
+			<?php echo $form->textField($user, 'location'); ?>
+			<?php echo $form->error($user, 'location'); ?>
 		</div>
 
 		<div class="row">
-			<?php echo $form->labelEx($Profile, 'country_iso'); ?>
-			<?php echo $form->dropDownList($Profile, 'country_iso', Yii::app()->translate->getTerritoryDisplayNames()); ?>
-			<?php echo $form->error($Profile, 'country_iso'); ?>
+			<?php echo $form->labelEx($user, 'country_iso'); ?>
+			<?php echo $form->dropDownList($user, 'country_iso', Yii::app()->translate->getTerritoryDisplayNames()); ?>
+			<?php echo $form->error($user, 'country_iso'); ?>
 		</div>
 				
 		<div class="row submit">

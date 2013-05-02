@@ -227,7 +227,7 @@ class CPUser extends CActiveRecord {
 			'new_password' 	 => t('New Password'),
             'password' 		 => t('Password'),
             'salt' 			 => t('Salt'),
-            'group_id' 		 => t('Group ID'),
+            'group_id' 		 => t('Group'),
             'email' 		 => t('Email'),
 			'name' 			 => t('Username'),
             'session_key' 	 => t('Session Key'),
@@ -247,7 +247,7 @@ class CPUser extends CActiveRecord {
 			'last_login' 	 => t('Last Login'),
 			'last_ip' 		 => t('Last IP Address'),
 			'last_agent'	 => t('Last Agent'),
-			'language' 		 => t('Language'),
+			'language' 		 => t('Preferred Language'),
 			'userAgreements' => t('User Agreements'),
 			'agreements' 	 => t('Agreements')
 		);
