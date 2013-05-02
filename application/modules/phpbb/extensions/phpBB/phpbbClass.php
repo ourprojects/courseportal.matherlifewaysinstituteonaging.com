@@ -3,73 +3,73 @@
 class phpbbClass
 {
 
-	//various table fields
-	var $table_fields = array();
+	protected $phpbb_root_path;
+	protected $php_extension;
+	
+	protected $table_fields = array();
+	
+	private $_initialized = false;
 
-	//constructor
 	public function __construct($path, $php_extension = 'php')
 	{
-		global $phpbb_root_path, $phpEx, $db, $config, $user, $auth, $cache, $template;
+		global $phpbb_root_path, $phpEx;
 		
 		define('IN_PHPBB', true);
 		$phpbb_root_path = $path;
 		$phpEx = $php_extension;
+		
+		$this->phpbb_root_path = &$phpbb_root_path;
+		$this->phpbb_extension = &$phpEx;
 	}
 
-	//initialize phpbb
-	function init($prepare_for_login = false)
+	public function init($prepare_for_login = false)
 	{
-		global $phpbb_root_path, $phpEx, $db, $config, $user, $auth, $cache, $template;
-		
 		if($prepare_for_login && !defined('IN_LOGIN'))
 		{
 			define('IN_LOGIN', true);
+		} 
+		else if($this->_initialized)
+		{
+			return;
 		}
+		
+		global $phpbb_root_path, $phpEx, $db, $config, $user, $auth, $cache, $template;
 		
 		require_once("{$phpbb_root_path}common.{$phpEx}");
 		
-		if($prepare_for_login && (!isset($config['auth_method']) || $config['auth_method'] != 'yii'))
+		if($prepare_for_login && (!isset($config['auth_method']) || $config['auth_method'] !== 'yii'))
 			set_config('auth_method', 'yii');
 
 		$user->session_begin();
 		$auth->acl($user->data);
+		
+		$this->_initialized = true;
 	}
 
-	//user_login
 	public function user_login($phpbb_vars)
 	{
-		global $phpbb_root_path, $phpEx, $db, $config, $user, $auth, $cache, $template, $_SID;
+		global $auth, $_SID;
 
-		//general info
 		$this->init(true);
 
-		//authenticate
 		$login = $auth->login(
 				$phpbb_vars['username'], 
 				$phpbb_vars['password'], 
 				isset($phpbb_vars['autologin']) ? $phpbb_vars['autologin'] : false, 
 				isset($phpbb_vars['viewonline']) ? $phpbb_vars['viewonline'] : 1, 
-				isset($phpbb_vars['admin']) ? $phpbb_vars['admin'] : 0
-		);
+				isset($phpbb_vars['admin']) ? $phpbb_vars['admin'] : 0);
 		
 		$_SESSION['sid'] = $_SID;
 
 		return $login['status'] == LOGIN_SUCCESS;
 	}
 
-	//user_logout
 	public function user_logout()
 	{
-		global $phpbb_root_path, $phpEx, $db, $config, $user, $auth, $cache, $template;
-
-		//general info
+		global $user, $auth;
+		
 		$this->init(true);
 
-		//session management
-		$user->session_begin();
-		$auth->acl($user->data);
-
-		//destroy session if needed
 		if($user->data['user_id'] != ANONYMOUS)
 		{
 			$user->session_kill();
@@ -80,29 +80,17 @@ class phpbbClass
 		return false;
 	}
 
-	//user_loggedin
 	function user_loggedin()
 	{
-		Yii::trace('phpbbClass.user_tracegedin called', 'phpBB');
-		global $phpbb_root_path, $phpEx, $db, $config, $user, $auth, $cache, $template;
+		global $user;
 		
-		//general info
 		$this->init();
 
-		//session management
-		$user->session_begin();
-		Yii::trace('user session started from within phpbbClass.user_loggedin', 'phpBB');
-		
-		// anonymous fix by John Issac (thanks)
 		return is_array($user->data) && isset($user->data['user_id']) && $user->data['user_id'] != ANONYMOUS && $user->data['user_id'] > 0;
 	}
 
-	//user_add
 	public function user_add($phpbb_vars)
 	{
-		global $phpbb_root_path, $phpEx, $db, $config, $user, $auth, $cache, $template;
-
-		//if the mandatory parameters are not given fail
 		if(empty($phpbb_vars['username']) || 
 				!isset($phpbb_vars['user_password']) ||
 				!isset($phpbb_vars['group_id']) || 
@@ -111,13 +99,10 @@ class phpbbClass
 			return false;
 		}
 
-		//general info
 		$this->init();
 
-		//user functions
-		require_once("{$phpbb_root_path}includes/functions_user.{$phpEx}");
+		require_once("{$this->phpbb_root_path}includes/functions_user.{$this->phpbb_extension}");
 
-		//default user info
 		$user_row = array(
 			'username' 		=> $phpbb_vars['username'],
 			'user_password' => phpbb_hash($phpbb_vars['user_password']),
@@ -126,9 +111,7 @@ class phpbbClass
 			'user_type' 	=> isset($phpbb_vars['user_type']) ? $phpbb_vars['user_type'] : '0',
 		);
 
-		//register user
 		if($phpbb_user_id = user_add($user_row)) {
-			//update the rest of the fields
 			$this->user_update($phpbb_vars);
 			return true;
 		}
@@ -136,21 +119,14 @@ class phpbbClass
 		return false;
 	}
 
-	//user_delete
 	public function user_delete($phpbb_vars)
 	{
-		global $phpbb_root_path, $phpEx, $db, $config, $user, $auth, $cache, $template;
-
-		//general info
 		$this->init();
 
-		//user functions
-		require_once("{$phpbb_root_path}includes/functions_user.{$phpEx}");
+		require_once("{$this->phpbb_root_path}includes/functions_user.{$this->phpbb_extension}");
 
-		//get user_id if possible
 		if(isset($phpbb_vars['user_id']) || $phpbb_vars['user_id'] = $this->get_user_id_from_name($phpbb_vars['username']))
 		{
-			//delete user (always returns false)
 			user_delete('remove', $phpbb_vars['user_id']);
 			return true;
 		}
@@ -158,18 +134,14 @@ class phpbbClass
 		return false;
 	}
 
-	//user_update
 	public function user_update($phpbb_vars)
 	{
-		global $phpbb_root_path, $phpEx, $db, $config, $user, $auth, $cache, $template;
+		global $db;
 
-		//general info
 		$this->init();
 
-		//user functions
-		require_once("{$phpbb_root_path}includes/functions_user.{$phpEx}");
+		require_once("{$this->phpbb_root_path}includes/functions_user.{$this->phpbb_extension}");
 
-		//get user_id if possible
 		if(!isset($phpbb_vars['user_id']))
 		{
 			if(isset($phpbb_vars['username']))
@@ -186,8 +158,8 @@ class phpbbClass
 			$phpbb_vars['user_password'] = phpbb_hash($phpbb_vars['user_password']);
 		if(isset($phpbb_vars['user_newpasswd']))
 			$phpbb_vars['user_newpasswd'] = phpbb_hash($phpbb_vars['user_newpasswd']);
+		
 		$sql = '';
-		//generate sql
 		for($i = 0; $i < count($this->table_fields[USERS_TABLE]); $i++)
 		{
 			if(isset($phpbb_vars[$this->table_fields[USERS_TABLE][$i]]) && $this->table_fields[USERS_TABLE][$i] != 'user_id')
@@ -205,18 +177,14 @@ class phpbbClass
 		return false;
 	}
 
-	//user_change_password
 	public function user_change_password($phpbb_vars)
 	{
-		global $phpbb_root_path, $phpEx, $db, $config, $user, $auth, $cache, $template;
+		global $db;
 
-		//general info
 		$this->init();
 
-		//user functions
-		require_once("{$phpbb_root_path}includes/functions_user.{$phpEx}");
+		require_once("{$this->phpbb_root_path}includes/functions_user.{$this->phpbb_extension}");
 
-		//get user_id if possible
 		if(isset($phpbb_vars['user_id']) || $phpbb_vars['user_id'] = $this->get_user_id_from_name($phpbb_vars['username'])) 
 		{
 			$db->sql_query("UPDATE " . USERS_TABLE . " SET user_password = '" . phpbb_hash($phpbb_vars['password']) . "' WHERE user_id = '" . $phpbb_vars['user_id'] . "'");
@@ -228,20 +196,17 @@ class phpbbClass
 
 	private function get_table_fields($table)
 	{
-		//if already got table fields once
 		if(isset($this->table_fields[$table]))
 		{
 			return true;
 		}
 
-		global $phpbb_root_path, $phpEx, $db, $config, $user, $auth, $cache, $template;
+		global $db;
 
-		//general info
 		$this->init();
 
 		if($result = $db->sql_query("SHOW FIELDS FROM $table"))
 		{
-			//get table fields
 			$this->table_fields[$table] = array();
 			while($row = $db->sql_fetchrow($result))
 				$this->table_fields[$table][] = $row['Field'];
@@ -253,18 +218,11 @@ class phpbbClass
 		return false;
 	}
 
-	//get user id if we know username
-	public function get_user_id_from_name($username, $init = false)
+	public function get_user_id_from_name($username)
 	{
-		global $phpbb_root_path, $phpEx, $db, $config, $user, $auth, $cache, $template;
-
-		if($init)
-		{
-			$this->init();
-		}
+		$this->init();
 		
-		//user functions
-		require_once("{$phpbb_root_path}includes/functions_user.{$phpEx}");
+		require_once("{$this->phpbb_root_path}includes/functions_user.{$this->phpbb_extension}");
 
 		if(isset($username))
 		{
@@ -275,6 +233,17 @@ class phpbbClass
 		}
 		
 		return false;
+	}
+	
+	public function append_sid($url, $params = false, $is_amp = true)
+	{
+		global $user;
+		
+		$this->init();
+		
+		require_once("{$this->phpbb_root_path}includes/functions.{$this->phpbb_extension}");
+		
+		return append_sid($url, $params, $is_amp, $user->session_id);
 	}
 
 }

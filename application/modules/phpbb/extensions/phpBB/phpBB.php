@@ -72,6 +72,11 @@ class phpBB extends CApplicationComponent
 	{
 		return Yii::app()->getBaseUrl(true) . '/' . $this->webPath;
 	}
+	
+	public function getACPurl()
+	{
+		return $this->_phpbb->append_sid($this->getForumUrl() . '/adm/index.' . $this->php);
+	}
 
 	/**
 	 * Login in phpBB
@@ -185,6 +190,6 @@ class phpBB extends CApplicationComponent
 	
 	public function getUserIdFromName($username) 
 	{
-		return $this->_phpbb->get_user_id_from_name($username, true);
+		return $this->_phpbb->get_user_id_from_name($username);
 	}
 }

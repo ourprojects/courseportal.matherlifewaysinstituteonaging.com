@@ -192,6 +192,57 @@ class AdminController extends OnlineCoursePortalController {
     	$this->render('user/index', $models);
     }
     
+    public function actionUserView($id)
+    {
+		$models = array('user' => CPUser::model()->findByPk($id));
+		
+		if($models['user'] === null)
+			throw new CHttpException(404, t('A User with ID {id} could not be found.', array('{id}' => $id)));
+		
+		$models['Profile'] = new UserProfile;
+		$models['Avatar'] = new Avatar;
+		
+		$models['Profile']->setAttributes($models['user']->getAttributes());
+		$models['Avatar']->user_id = $models['user']->id;
+		
+		// if it is ajax validation request
+		if(isset($_POST['ajax']) && $_POST['ajax'] === 'profile-form') {
+			echo CActiveForm::validateTabular($models);
+			Yii::app()->end();
+		}
+		
+		// collect user input data
+		if($models['Profile']->loadAttributes() && $models['Profile']->validate())
+		{
+			$models['user']->setAttributes($models['Profile']->getAttributes());
+				
+			if($models['user']->validate() && (!$models['Avatar']->loadUploadedImage() || $models['Avatar']->validate(null, false)))
+			{
+				$transaction = Yii::app()->db->beginTransaction();
+				$exception = null;
+				try {
+					if((!isset($models['Avatar']->image) || (($models['user']->avatar === null || $models['user']->avatar->delete()) && $models['Avatar']->save())) && $models['user']->save())
+					{
+						$transaction->commit();
+					}
+					$models['Profile']->addErrors($models['user']->getErrors());
+				} catch(Exception $e) {
+					$exception = $e;
+				}
+				if($models['Profile']->hasErrors() || $models['Avatar']->hasErrors() || isset($exception))
+				{
+					if(!$models['Avatar']->getIsNewRecord())
+						$models['Avatar']->delete();
+					$transaction->rollback();
+					if(isset($exception))
+						throw $exception;
+				}
+			}
+		}
+    	 
+    	$this->render('user/view', $models);
+    }
+    
     public function actionUserDelete($id) {
     	if(is_numeric($id))
     	{

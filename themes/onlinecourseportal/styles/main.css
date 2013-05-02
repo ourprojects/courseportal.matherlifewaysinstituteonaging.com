@@ -737,11 +737,3 @@ div.view {
 .opacity-hover:hover {
 	opacity: 1;
 }
-.block-center {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-}
-.block-center.hide {
-	display: none;
-}

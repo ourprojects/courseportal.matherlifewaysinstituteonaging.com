@@ -33,7 +33,7 @@ foreach(array(
   
   <div class="box-sidebar one">
     <h3><?php echo t('Working Caregivers in America'); ?></h3>
-    <img src="<?php echo $this->getImagesUrl('286x366_Grafix_69pc.png'); ?>" alt="image" class="block-center" />
+    <img src="<?php echo $this->getImagesUrl('286x366_Grafix_69pc.png'); ?>" alt="image" class="block center" />
     <p><?php echo t('69% of working caregivers report having to rearrange their work schedule, decrease their hours, or take an 
 	unpaid leave of absence to meet their care-giving responsibilities.'); ?></p>
   </div>

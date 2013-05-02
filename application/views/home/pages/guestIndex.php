@@ -50,11 +50,11 @@ $this->widget(
 
   <div class="box-sidebar one">
     <h3><?php echo t('EACC'); ?></h3>
-    <h5 style="text-align:center;"><?php echo t('Course Approvals<br />Pending Application'); ?></h5>
-    <p style="font-weight:bold;"> <a href="http://www.eapassn.org/files/public/EACCroster2012.pdf" target="_blank"><?php echo t('Employee Assistance Certification Commission (EACC)'); ?></a></p>
+    <h5 class="text-center"><?php echo t('Course Approvals<br />Pending Application'); ?></h5>
+    <p><b><a href="http://www.eapassn.org/files/public/EACCroster2012.pdf" target="_blank"><?php echo t('Employee Assistance Certification Commission (EACC)'); ?></a></b></p>
     <p><?php echo t('Established in 1986, the EACC is the credentialing governance body responsible for upholding all professional standards, policies, and procedures concerning the Certified Employee Assistance Professional (CEAP) credential.'); ?></p>
     
-    <p><a href="http://www.eapassn.org/" target="_blank"><img src="<?php echo $this->getImagesUrl('EAPlogo.png'); ?>" style="display:block; margin-left:auto; margin-right:auto;" alt="EAP Assocation Logo"></a></p>
+    <p><a href="http://www.eapassn.org/" target="_blank"><img class="block center" src="<?php echo $this->getImagesUrl('EAPlogo.png'); ?>" alt="EAP Assocation Logo"></a></p>
       </div>
   
   
@@ -107,8 +107,8 @@ $this->widget(
   
   <div class="box-sidebar two">
     <h3><?php echo t('Recent Research (USA)'); ?></h3>
-    <img class="block-center" src="<?php echo $this->getImagesUrl('metlife.jpg'); ?>" alt="MetLife" />
-    <p style="text-align:center;"><b><?php echo t('Double Jeopardy for Baby Boomers Caring for Their Parents'); ?></b></p>
+    <img class="block center" src="<?php echo $this->getImagesUrl('metlife.jpg'); ?>" alt="MetLife" />
+    <p class="text-center"><b><?php echo t('Double Jeopardy for Baby Boomers Caring for Their Parents'); ?></b></p>
     <p> <?php echo t('Nearly 10 million adult children over the age of 50 care for their aging parents. These family caregivers are themselves aging as well
 					as providing care at a time when they also need to be planning and saving for their own retirement. The study is an updated, national
 					look at adult children who work and care for their parents and the impact of caregiving on their earnings and lifetime wealth.'); ?> </p>
@@ -122,7 +122,7 @@ $this->widget(
   <div class="box-sidebar four">
     <h3>Aging in Action</h3>
     <p><?php echo t('Aging in Action is Mather LifeWays Institute on Aging\'s monthly e-newsletter and blog containing the latest research news in the field of aging.'); ?></p>
-    <a href="http://twitter.com/aginginaction" target="_blank"> <img class="block-center" src="<?php echo $this->getImagesUrl('twitter-bird.png'); ?>" alt="Twitter" /></a> </div>
+    <a href="http://twitter.com/aginginaction" target="_blank"> <img class="block center" src="<?php echo $this->getImagesUrl('twitter-bird.png'); ?>" alt="Twitter" /></a> </div>
 </div>
 <div class="column-wide">
   <h2 class="flowers">Mather LifeWays Institute on Aging</h2>
@@ -177,7 +177,7 @@ $this->widget(
   <p> <?php echo t('Institution Wide Content Management - 25%')?><br />
     <?php echo t('Online Course Delivery - 25%')?><br />
     <?php echo t('Targeted Collaboration - 50%')?> </p>
-  <img id="pie-chart" class="block-center" height="300" src="<?php echo $this->getImagesUrl('home-chart.png'); ?>" alt="<?php echo t('Pie chart'); ?>" />
+  <img id="pie-chart" class="block center" height="300" src="<?php echo $this->getImagesUrl('home-chart.png'); ?>" alt="<?php echo t('Pie chart'); ?>" />
   <?php $workingCaregiverSurvey->run(); ?>
   <div class="box-white">
     <h2 class="flowers"> <?php echo t('Health status of your working caregivers'); ?> </h2>
@@ -230,10 +230,10 @@ $this->widget(
       <p><?php echo t('You will need the following applications to successfully complete this tutorial:'); ?></p>
       <p>
       <ul>
-        <li style="display:inline"> <img class="normal" width="48" height="48" src="<?php echo $this-> getImagesUrl('word.png'); ?>" alt="<?php echo t('Word Processor'); ?>" /></li>
-        <li style="display:inline"> <img class="normal" width="48" height="48" src="<?php echo $this-> getImagesUrl('spreadsheet.png'); ?>" alt="<?php echo t('Spreadsheet Processor'); ?>" /></li>
-        <li style="display:inline"> <a href="mailto:jwoodall@matherlifeways.com" /><img class="normal" width="48" height="48" src="<?php echo $this-> getImagesUrl('email.png'); ?>" alt="<?php echo t('(Email Client'); ?>" /></a></li>
-        <li style="display:inline"> <a href="http://get.adobe.com/reader/" target="_blank" /> <img class="normal" width="48" height="48" src="<?php echo $this-> getImagesUrl('pdf-icon.png'); ?>" alt="<?php echo t('Adobe Reader'); ?>" /></a></li>
+        <li class="inline"> <img class="normal" width="48" height="48" src="<?php echo $this-> getImagesUrl('word.png'); ?>" alt="<?php echo t('Word Processor'); ?>" /></li>
+        <li class="inline"> <img class="normal" width="48" height="48" src="<?php echo $this-> getImagesUrl('spreadsheet.png'); ?>" alt="<?php echo t('Spreadsheet Processor'); ?>" /></li>
+        <li class="inline"> <a href="mailto:jwoodall@matherlifeways.com" /><img class="normal" width="48" height="48" src="<?php echo $this-> getImagesUrl('email.png'); ?>" alt="<?php echo t('(Email Client'); ?>" /></a></li>
+        <li class="inline"> <a href="http://get.adobe.com/reader/" target="_blank" /> <img class="normal" width="48" height="48" src="<?php echo $this-> getImagesUrl('pdf-icon.png'); ?>" alt="<?php echo t('Adobe Reader'); ?>" /></a></li>
       </ul>
       </p>
       <br />
@@ -352,15 +352,15 @@ $this->widget(
       </ul>
       <br />
       <div id="question1" class="question">
-        <p style="font-weight:bold;"><?php echo t('Is dementia a disease of the brain?'); ?>
+        <p><b><?php echo t('Is dementia a disease of the brain?'); ?></b>
           <select>
             <option selected="selected" value="select"> <?php echo t('Select'); ?> </option>
             <option value="1"> <?php echo t('Yes'); ?> </option>
             <option value="0"> <?php echo t('No') ?> </option>
           </select>
         </p>
-        <p class="right-answer hide" style="color:#060; font-weight:bold;"> <?php echo t('Great! Yes, Dementia is a disease of the brain.'); ?> </p>
-        <p class="wrong-answer hide" style="color:#C00; font-weight:bold;"> <?php echo t('Please ensure you understand what dementia is. Dementia is a disease of the brain.'); ?> </p>
+        <p class="right-answer hide"> <?php echo t('Great! Yes, Dementia is a disease of the brain.'); ?> </p>
+        <p class="wrong-answer hide"> <?php echo t('Please ensure you understand what dementia is. Dementia is a disease of the brain.'); ?> </p>
       </div>
       <br />
       <br />
@@ -378,26 +378,26 @@ $this->widget(
       <p><?php echo t('Thinking about the material you just read, please try and correctly answer the assessment questions below without searching the Internet. Your responses are not recorded, and you will receive immediate feedback.'); ?></p>
       <br />
       <div id="question1" class="question">
-        <p  style="font-weight:bold;"><?php echo t('Is Alzehimer\'s disease a disease of the brain?'); ?>
+        <p><b><?php echo t('Is Alzehimer\'s disease a disease of the brain?'); ?></b>
           <select>
             <option selected="selected" value="select"> <?php echo t('Select'); ?> </option>
             <option value="1"> <?php echo t('Yes'); ?> </option>
             <option value="0"> <?php echo t('No') ?> </option>
           </select>
         </p>
-        <p class="right-answer hide" style="color:#060; font-weight:bold;"> <?php echo t("Great! Yes, Alzheimer's disease is a disease of the brain."); ?> </p>
-        <p class="wrong-answer hide" style="color:#C00; font-weight:bold;"> <?php echo t("Please review this tutorial again. Alzheimer's disease is a disease of the brain."); ?> </p>
+        <p class="right-answer hide"> <?php echo t("Great! Yes, Alzheimer's disease is a disease of the brain."); ?> </p>
+        <p class="wrong-answer hide"> <?php echo t("Please review this tutorial again. Alzheimer's disease is a disease of the brain."); ?> </p>
       </div>
       <div id="question2" class="question">
-        <p style="font-weight:bold;"> <?php echo t('Alzheimer\'s disease is the most common form of dementia.'); ?>
+        <p><b><?php echo t('Alzheimer\'s disease is the most common form of dementia.'); ?></b>
           <select>
             <option selected="selected" value="select"> <?php echo t('Select'); ?> </option>
             <option value="1"> <?php echo t('True'); ?> </option>
             <option value="0"> <?php echo t('False'); ?> </option>
           </select>
         </p>
-        <p class="right-answer hide" style="color:#060; font-weight:bold;"> <?php echo t("Yes, Alzheimer's disease is the most common form of dementia.");?> </p>
-        <p class="wrong-answer hide" style="color:#C00; font-weight:bold;"> <?php echo t("Please review this tutorial again. Alzheimer's disease is the most common form of dementia.")?> </p>
+        <p class="right-answer hide"> <?php echo t("Yes, Alzheimer's disease is the most common form of dementia.");?> </p>
+        <p class="wrong-answer hide"> <?php echo t("Please review this tutorial again. Alzheimer's disease is the most common form of dementia.")?> </p>
       </div>
       <div id="question" class="question">
         <p> <?php echo t('Please find additional data on dementia and Alzheimer\'s disease. Try and conduct your own research.'); ?> </p>

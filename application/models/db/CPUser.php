@@ -4,16 +4,21 @@
  *
  * The followings are the available columns in table 'user':
  * @property integer $id
- * @property string $password
- * @property string $salt
+ * @property string  $password
+ * @property string  $salt
  * @property integer $group_id
- * @property string $email
- * @property string $name
- * @property string $session_key
- * @property string $created
- * @property string $last_ip
- * @property string $last_login
- * @property string $language
+ * @property string  $email
+ * @property string  $name
+ * @property string  $session_key
+ * @property string  $created
+ * @property string  $last_ip
+ * @property string  $last_agent
+ * @property string  $last_login
+ * @property string  $language
+ * @property string  $firstname
+ * @property string  $lastname
+ * @property string  $location
+ * @property string  $country_iso
  *
  * The followings are the available model relations:
  * @property Avatar $avatar
@@ -222,7 +227,7 @@ class CPUser extends CActiveRecord {
 			'new_password' 	 => t('New Password'),
             'password' 		 => t('Password'),
             'salt' 			 => t('Salt'),
-            'group_id' 		 => t('Group ID'),
+            'group_id' 		 => t('Group'),
             'email' 		 => t('Email'),
 			'name' 			 => t('Username'),
             'session_key' 	 => t('Session Key'),
@@ -242,7 +247,7 @@ class CPUser extends CActiveRecord {
 			'last_login' 	 => t('Last Login'),
 			'last_ip' 		 => t('Last IP Address'),
 			'last_agent'	 => t('Last Agent'),
-			'language' 		 => t('Language'),
+			'language' 		 => t('Preferred Language'),
 			'userAgreements' => t('User Agreements'),
 			'agreements' 	 => t('Agreements')
 		);
