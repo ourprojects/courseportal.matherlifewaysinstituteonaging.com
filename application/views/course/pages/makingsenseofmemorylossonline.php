@@ -136,8 +136,9 @@ foreach(array(
         <p><?php echo t('Welcome to the first lesson of MSML Online. We want to encourage everyone to participate via the Forum/Blog. However, at the same time we wish to protect everyone’s privacy. Therefore, we ask that confidentiality be maintained. Simply put, whatever is said here must stay here.'); ?></p>
         <h4><?php echo t('Introductions'); ?></h4>
         <p class="forum">
-        <p><?php echo t('We will begin by asking you to say something about who you are and what brings you here. Please answer these questions on the Forum/Blog:'); ?></p>
-        <ul>
+        <p><?php echo t('We will begin by asking you to say something about who you are and what brings you here.'); ?></p>
+        <p class="forum"><?php echo t('Please answer these questions on the Forum/Blog:'); ?></p>
+        <ul class="forum">
           <li><?php echo t('What is your name?'); ?></li>
           <li><?php echo t('What is your relationship with the person who is experiencing memory loss?'); ?></li>
           <li><?php echo t('How long have you noticed the problem with memory or thinking?'); ?></li>
@@ -152,7 +153,7 @@ foreach(array(
         <h2 class="flowers">Media Storm</h2>
         <hr />
         <p><?php echo t('Filmmaker-photographer couple Julie Winokur and Ed Kashi were busy pursuing their careers and raising two children when Winokur\'s 83-year-old father, Herbie, became too infirm to care for himself.'); ?></p>
-        <div style="width:400px;">
+        <div id="video" style="width:400px;">
           <div style="height:340px;"><script type="text/javascript" src="http://mediastorm.com/player/embed.php?id=e5178ce9beaabc886268&w=400&h=340&amp;lang=none"></script></div>
           <div style="padding:10px; font-family:Helvetica, Arial, sans-serif; font-size:12px; line-height:16px; color:#999999; background-color:#000000;">Millions of middle-aged Americans are caring for their children as well as their aging parents. When filmmaker-photographer pair Julie Winokur and Ed Kashi took in Winokur's 83-year-old father, they decided to document their own story. See the project at <a href="http://mediastorm.com/publication/the-sandwich-generation" target="_blank" style="color:#0083c5;">http://mediastorm.com/publication/the-sandwich-generation</a></div>
         </div>
@@ -231,18 +232,14 @@ foreach(array(
         It affects some or all of these brain functions. Search the Alzheimer\'s Association <a href="http://www.alz.org" target="_blank">website</a> for examples and greater explanations on each of these topics.'); ?></p>
         <p class="forum"><?php echo t('On the Forum, comment on if you ever forget a name or forget an appointment or get lost, and what did it feel like at the time?'); ?></p>
         <p><?php echo t('Imagine how difficult it would be to experience this type of problem on a regular basis. We will address the experience of living dementia during the next section.'); ?></p>
-        <img src="<?php echo $this->getImagesUrl('msml/forum_icon.png'); ?>" alt="image" style="width:250px; height:186px; margin-left:auto; margin-right:auto;"> </div>
+        <img src="<?php echo $this->getImagesUrl('msml/forum_icon.png'); ?>" alt="image" style="width:250px; height:186px;"> </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
     </div>
     <div id="lesson-1-slide-8" class="course-slide">
       <div class="content">
         <h2 class="flowers"><?php echo t('Dementia'); ?></h2>
         <hr />
-        
-                <img src="<?php echo $this->getImagesUrl('msml/151645089.png'); ?>" alt="image" style="margin:0 auto 0 auto;">
-
-        
-        
+        <img src="<?php echo $this->getImagesUrl('msml/151645089.png'); ?>" alt="image" style="margin:0 auto 0 auto;">
         <table>
           <tr>
             <th><p><?php echo t('Reversible Dementias'); ?></p></th>
@@ -283,8 +280,22 @@ foreach(array(
           <li><?php echo t('Only if indicated: Psychological testing, HIV test, Brain biopsy, PET scan, Lumbar puncture, EEG'); ?></li>
         </ul>
         <p><?php echo t('A medical evaluation is always needed to clarify the diagnosis so that both reversible and irreversible conditions can be identified, treated, and understood by all concerned.'); ?></p>
-        <p><?php echo t('Basic elements of a medical evaluation by a doctor consist of the following: an accurate history of the symptoms, a brief mental status test, a physical examination, blood tests (Complete Blood Count, Chemistry profile, thyroid function, syphilis serology, Vitamin B12, and Folate) and brain imaging though either a CT scan or MRI scan.'); ?></p>
+        <p><?php echo t('Basic elements of a medical evaluation by a doctor consist of the following: an accurate history of the symptoms, a brief mental status test, a physical examination, blood tests (Complete Blood Count, Chemistry profile, thyroid function, syphilis serology, Vitamin B12, and Folate) and brain imaging through either a CT scan or MRI scan.'); ?></p>
         <p><?php echo t('Sometimes additional tests are ordered for the sake of thoroughness in diagnosing the exact type of dementia. There is no single test, such as a blood test, available to diagnose AD, as is the case with diabetes, for example. However, when other disorders have been ruled out and common symptoms of AD such as progressive loss of memory have been documented, there is a high probability for obtaining an accurate diagnosis by an experienced physician.'); ?></p>
+        
+          <div id="question1" class="question">
+          <p><b><?php echo t('Is Dementia a specific disease?'); ?></b>
+            <select>
+              <option selected="selected" value="select"> <?php echo t('Select'); ?> </option>
+              <option value="1"> <?php echo t('No'); ?> </option>
+              <option value="0"> <?php echo t('Yes') ?> </option>
+            </select>
+          </p>
+          <p class="right-answer hide"> <?php echo t('Correct! Dementia is NOT a specific disease.'); ?> </p>
+          <p class="wrong-answer hide"> <?php echo t('Dementia is NOT a specific disease.') ?> </p>
+        </div>
+        
+        
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
     </div>
@@ -292,6 +303,10 @@ foreach(array(
       <div class="content">
         <h2 class="flowers"><?php echo t('Criteria for Probable Alzheimer’s Disease'); ?></h2>
         <hr />
+        
+        <img src="<?php echo $this->getImagesUrl('msml/120921047.png'); ?>" alt="image">
+        
+        
         <ul>
           <li><?php echo t('Dementia is evident without other disorders to account it.'); ?></li>
           <li><?php echo t('Deficits in at least two areas of cognition.'); ?></li>
@@ -305,10 +320,37 @@ foreach(array(
       <div class="content">
         <h2 class="flowers"><?php echo t('Prevalence of Alzheimer’s Disease by Age'); ?></h2>
         <hr />
-        <p><?php echo t('Download and read the 2011 Alzheimer’s Disease Facts and Figures Report from The Alzheimer\'s Association website.'); ?></p>
-        <a href="http://www.alz.org/downloads/facts_figures_2011.pdf" target="_blank"><img src="<?php echo $this->getImagesUrl('pdf-icon.png'); ?>" alt="pdf icon"></a>
-        <p><?php echo t('How many Americans have AD today? How many people in your state are estimated to have AD? Can you guess how many people are expected to have AD 40 years from now?'); ?></p>
+        
+        
+        
+        
+        <p><?php echo t('Read the  <a href="http://www.alz.org/downloads/facts_figures_2013.pdf" target="_blank">2013 Alzheimer’s Disease Facts and Figures Report</a> from the Alzheimer\'s Association website.'); ?></p>       
+        
+         <div id="question1" class="question">
+          <p><b><?php echo t('The demands of caregiving may cause declines in the caregivers\' own health.'); ?></b>
+            <select>
+              <option selected="selected" value="select"> <?php echo t('Select'); ?> </option>
+              <option value="1"> <?php echo t('True'); ?> </option>
+              <option value="0"> <?php echo t('False') ?> </option>
+            </select>
+          </p>
+          <p class="right-answer hide"> <?php echo t('Correct!'); ?> </p>
+          <p class="wrong-answer hide"> <?php echo t('Please review the <a href="http://www.alz.org/downloads/facts_figures_2013.pdf" target="_blank">2013 Alzheimer’s Disease Facts and Figures Report</a> ') ?> </p>
+        </div>
+       
+        
+        
+        
+        <p class="forum"><?php echo t('On the Forum, please respond to the following questions:'); ?></p>
+      <ul class="forum">
+	  <li><?php echo t('How many Americans have AD today?'); ?></li>
+      <li><?php echo t('How many people in your state are estimated to have AD?'); ?></li>
+      <li><?php echo t('Can you guess how many people are expected to have AD 40 years from now?'); ?></li>
+      
+      </ul>
         <p><?php echo t('Based on projections of the older population in the coming decades, it is expected that the numbers of Americans with AD will grow dramatically.'); ?></p>
+        
+        <img src="<?php echo $this->getImagesUrl('msml/forum_icon.png'); ?>" alt="image">
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
     </div>
@@ -316,7 +358,12 @@ foreach(array(
       <div class="content">
         <h2 class="flowers"><?php echo t('Dr. Alois Alzheimer'); ?></h2>
         <hr />
-        <p><?php echo t('Alzheimer\'s disease was first described in 1906 by Dr. Alois Alzheimer, a German neurologist and pathologist. He was the first scientist to describe the symptoms in a female patient and connect them to damaged areas in her brain. Following her death, Dr. Alzheimer performed an autopsy and found shrinkage of the brain as well as tiny abnormalities he referred to as tangles and amyloid plaques. Search the Web for facts and a picture of Dr. Alois Alzheimer.'); ?></p>
+        
+        <img src="<?php echo $this->getImagesUrl('msml/122568932.png'); ?>" alt="image">
+        
+        <p><?php echo t('Alzheimer\'s disease was first described in 1906 by Dr. Alois Alzheimer, a German neurologist and pathologist. He was the first scientist to describe the symptoms in a female patient and connect them to damaged areas in her brain.'); ?></p>
+        
+        <p><?php echo t('Following her death, Dr. Alzheimer performed an autopsy and found shrinkage of the brain as well as tiny abnormalities he referred to as tangles and amyloid plaques.'); ?></p>
         <p><?php echo t('Experts today agree that what is called “early stage” AD is probably the result of many years of the disease slowly developing in the brain. In the late 1990s, researchers began to identify “mild cognitive impairment” or “MCI” as a very early sign of AD in many people. Persons with this condition show evidence of recent memory loss on formal testing but show no other brain impairments such as disorientation. Recent studies indicate that about half of people with MCI develop early stage AD within 5 years and most of them develop AD within 10 years. In other words, in addition to memory loss, another brain function will begin to show signs of deterioration.'); ?></p>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>

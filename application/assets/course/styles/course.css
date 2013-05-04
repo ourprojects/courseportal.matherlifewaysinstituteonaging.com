@@ -24,7 +24,7 @@ div.course-slide div.buttons {
 div.course-slide img {
 	border: none;
 	display: block;
-	margin: 0 auto;
+	margin: 0 auto 10px auto;
 	border-radius: 5px;
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
@@ -48,9 +48,19 @@ div.course-slide div.box-white {
 	box-shadow: 0 0 10px #999;
 	width: 60%;
 }
-div.course-slide p.forum {
+div.course-slide div#video {
+	display: block;
+	margin: 0 auto;
+}
+.forum {
 	font-family: 'Swanky and Moo Moo', cursive;
 	color: #F00;
+	font-size: 22px;
+}
+ul.forum li {
+	font-family: 'Swanky and Moo Moo', cursive;
+	color: #F00;
+	font-size: 22px;
 }
 /* course-slide table properties */
 
@@ -67,12 +77,11 @@ div.course-slide table th {
 div.course-slide table td {
 	background-color: #666;
 	color: #FFF;
-	text-align:center;
+	text-align: center;
 }
-div.course-slide table td ul li{
-	list-style-type:none;
-	list-style-image:none;
-	
+div.course-slide table td ul li {
+	list-style-type: none;
+	list-style-image: none;
 }
 /* all non-slide css3 */
 
