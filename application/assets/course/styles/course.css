@@ -7,8 +7,8 @@ div.course-slide {
 	position: relative;
 }
 div.course-slide div.content {
-	padding-top: 10px;
-	padding-bottom: 55px;
+	padding: 5px 0px 50px 0px;
+	margin: 0;
 }
 div.course-slide div.buttons {
 	text-align: center;
@@ -23,9 +23,11 @@ div.course-slide div.buttons {
 }
 div.course-slide img {
 	border: none;
-	-moz-border-radius: 7px;
-	-webkit-border-radius: 7px;
-	border-radius: 7px;
+	display: block;
+	margin: 0 auto;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
 }
 div.course-slide div.question {
 	background-color: #FFF;
@@ -46,12 +48,34 @@ div.course-slide div.box-white {
 	box-shadow: 0 0 10px #999;
 	width: 60%;
 }
+div.course-slide p.forum {
+	font-family: 'Swanky and Moo Moo', cursive;
+	color: #F00;
+}
+/* course-slide table properties */
+
+div.course-slide table {
+	width: 100%;
+	margin: 10px auto 10px auto;
+	border: none;
+}
+div.course-slide table th {
+	background-color: #008080;
+	color: #FFF;
+	text-align: center;
+}
+div.course-slide table td {
+	background-color: #666;
+	color: #FFF;
+	text-align:center;
+}
+div.course-slide table td ul li{
+	list-style-type:none;
+	list-style-image:none;
+	
+}
 /* all non-slide css3 */
 
 #developers p {
 	font-size: small;
-}
-div.course-slide p.forum {
-	font-family: 'Swanky and Moo Moo', cursive;
-	color:#F00;
 }
