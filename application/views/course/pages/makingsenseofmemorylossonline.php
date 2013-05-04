@@ -14,7 +14,7 @@ foreach(array(
 			'ext.fancybox.EFancyBox',
 			array('id' => $lesson,
 				  'config' => array('width' => '720',
-									'height' => '720',
+									'height' => '95%',
 									'arrows' => false,
 									'autoSize' => false,
 									'mouseWheel' => false))
@@ -99,6 +99,20 @@ foreach(array(
 <!-- start course content here -->
 
 <div id="course" class="hide">
+
+ <?php $clientScript->registerScript('question-answer-handler',
+					"$('.course-slide .question').change(function() {".
+						"if($(this).find('select').val() == '1') {".
+							"$(this).find('.right-answer').removeClass('hide');".
+							"$(this).find('.wrong-answer').addClass('hide');".
+						"} else {".
+							"$(this).find('.right-answer').addClass('hide');".
+							"$(this).find('.wrong-answer').removeClass('hide');".
+						"}".
+					"});");
+			?>
+            
+            
   <div id="lesson-1">
     <div id="lesson-1-slide-1" class="course-slide">
       <div class="content">
@@ -124,6 +138,7 @@ foreach(array(
         <hr />
         <p><?php echo t('Welcome to the first lesson of MSML Online. We want to encourage everyone to participate via the Forum/Blog. However, at the same time we wish to protect everyone’s privacy. Therefore, we ask that confidentiality be maintained. Simply put, whatever is said here must stay here.'); ?></p>
         <h4><?php echo t('Introductions'); ?></h4>
+        <p class="forum">
         <p><?php echo t('We will begin by asking you to say something about who you are and what brings you here. Please answer these questions on the Forum/Blog:'); ?></p>
         <ul>
           <li><?php echo t('What is your name?'); ?></li>
@@ -131,7 +146,8 @@ foreach(array(
           <li><?php echo t('How long have you noticed the problem with memory or thinking?'); ?></li>
           <li><?php echo t('What is the name of the medical condition or diagnosis, if known, that accounts for the problem?'); ?></li>
         </ul>
-        <img src="<?php echo $this->getImagesUrl('msml/forum_icon.png'); ?>" alt="image" style="width:250px; height:186px; margin-left:auto; margin-right:auto;">
+        </p>
+        <img src="<?php echo $this->getImagesUrl('msml/forum_icon.png'); ?>" alt="image" style="width:250px; height:186px;">
         
         
         </div>
@@ -142,9 +158,7 @@ foreach(array(
         <h2 class="flowers">Media Storm</h2>
         <hr />
         <p><?php echo t('Filmmaker-photographer couple Julie Winokur and Ed Kashi were busy pursuing their careers and raising two children when Winokur\'s 83-year-old father, Herbie, became too infirm to care for himself.'); ?></p>
-        <br />
-        <br />
-        <div style="width:400px; margin:0 auto 0 auto;">
+        <div style="width:400px;">
           <div style="height:340px;"><script type="text/javascript" src="http://mediastorm.com/player/embed.php?id=e5178ce9beaabc886268&w=400&h=340&amp;lang=none"></script></div>
           <div style="padding:10px; font-family:Helvetica, Arial, sans-serif; font-size:12px; line-height:16px; color:#999999; background-color:#000000;">Millions of middle-aged Americans are caring for their children as well as their aging parents. When filmmaker-photographer pair Julie Winokur and Ed Kashi took in Winokur's 83-year-old father, they decided to document their own story. See the project at <a href="http://mediastorm.com/publication/the-sandwich-generation" target="_blank" style="color:#0083c5;">http://mediastorm.com/publication/the-sandwich-generation</a></div>
         </div>
@@ -193,6 +207,22 @@ foreach(array(
             <li><?php echo t('In the past, referred to as senility or “hardening of the arteries.”'); ?></li>
          </ul>
         <p><?php echo t('Dementia refers to an acquired and progressive loss of mental functions due to a brain disorder. Memory loss is typically the first symptom shown by someone with dementia. This is not a normal part of the aging process, even though the vast majority of persons who experience a dementia are over 65 years of age. A medical diagnosis is required to determine the underlying cause or causes of symptoms. In the past, terms like “senility” and “hardening of the arteries” were commonly used to describe dementia but do not accurately explain the disease process at work.'); ?></p>
+        
+          <div id="question1" class="question">
+        <p><b><?php echo t('Is Dementia a syndrome, or diagnosis?'); ?></b>
+          <select>
+            <option selected="selected" value="select"> <?php echo t('Select'); ?> </option>
+            <option value="1"> <?php echo t('Syndrome'); ?> </option>
+            <option value="0"> <?php echo t('Diagnosis') ?> </option>
+          </select>
+        </p>
+        <p class="right-answer hide"> <?php echo t("Dementia is a syndrome."); ?> </p>
+        <p class="wrong-answer hide"> <?php echo t("Dementia is a syndrome, NOT a diagnosis."); ?> </p>
+      </div>
+        
+        
+        
+        
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
     </div>
@@ -210,7 +240,7 @@ foreach(array(
           <li><?php echo t('Ability to perform tasks in sequence'); ?></li>
         </ul>
         <p><?php echo t('Dementia typically unfolds gradually over a period of many years but it can begin suddenly or unexpectedly in rare cases. It affects some or all of these brain functions. Search the Web for examples and greater explanations on these topics.'); ?></p>
-        <p><?php echo t('On the Forum, comment on if you ever forget a name or forget an appointment or get lost, and what did it feel like at the time?'); ?></p>
+        <p class="forum"><?php echo t('On the Forum, comment on if you ever forget a name or forget an appointment or get lost, and what did it feel like at the time?'); ?></p>
         <p><?php echo t('Imagine how difficult it would be to experience this type of problem on a regular basis. We will address the experience of living dementia during the next section.'); ?></p>
           <img src="<?php echo $this->getImagesUrl('msml/forum_icon.png'); ?>" alt="image" style="width:250px; height:186px; margin-left:auto; margin-right:auto;">
       </div>

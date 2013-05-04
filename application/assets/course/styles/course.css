@@ -1,17 +1,10 @@
+@charset "UTF-8";
+/* CSS Document */
+
+@import url(http://fonts.googleapis.com/css?family=Swanky+and+Moo+Moo);
 div.course-slide {
 	min-height: 100%;
 	position: relative;
-}
-div.course-slide div.question {
-	background-color: #FFF;
-	border-radius: 15px;
-	width: 75%;
-	height: 85px;
-	margin: 10px 0 25px 25px;
-	padding: 10px;
-	-moz-box-shadow: 0 0 5px 5px #888;
-	-webkit-box-shadow: 0 0 5px 5px#888;
-	box-shadow: 0 0 5px 5px #888;
 }
 div.course-slide div.content {
 	padding-top: 10px;
@@ -34,6 +27,17 @@ div.course-slide img {
 	-webkit-border-radius: 7px;
 	border-radius: 7px;
 }
+div.course-slide div.question {
+	background-color: #FFF;
+	border-radius: 15px;
+	width: 90%;
+	height: 65px;
+	margin: 10px auto 10px auto;
+	padding: 10px;
+	-moz-box-shadow: 0 0 5px 5px #888;
+	-webkit-box-shadow: 0 0 5px 5px#888;
+	box-shadow: 0 0 5px 5px #888;
+}
 div.course-slide div.box-white {
 	padding: 10px;
 	background: #fff;
@@ -42,22 +46,12 @@ div.course-slide div.box-white {
 	box-shadow: 0 0 10px #999;
 	width: 60%;
 }
-div.course-slide table {
-	border: solid;
-	width: 65%;
-}
-div.course-slide p.subtopic {
-	font-style: italic;
-	text-decoration: underline;
-}
 /* all non-slide css3 */
 
-#surveynotify {
-	color: #F00;
-	line-height: normal;
-	font-size: 22px;
-	text-align: center;
-}
 #developers p {
 	font-size: small;
+}
+div.course-slide p.forum {
+	font-family: 'Swanky and Moo Moo', cursive;
+	color:#F00;
 }
