@@ -2,7 +2,7 @@
 Yii::app()->getClientScript()->registerCssFile($this->getStylesUrl('index.css')); 
 $this->breadcrumbs = array(t('Admin'));
 ?>
-<div class="small-masthead" style="background-image: url(<?php echo $this->getImagesUrl('159325162r.png'); ?>);">
+<div class="small-masthead" style="background-image: url(<?php echo $this->getImagesUrl('images/159325162.png'); ?>);">
   <h1 class="bottom"><?php echo t('Administrator'); ?></h1>
 </div>
 <div class="column-wide">
