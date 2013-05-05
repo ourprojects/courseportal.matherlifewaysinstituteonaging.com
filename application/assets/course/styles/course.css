@@ -88,3 +88,11 @@ div.course-slide table td ul li {
 #developers p {
 	font-size: small;
 }
+div.box-sidebar img {
+	border: none;
+	display: block;
+	margin: 0 auto 10px auto;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+}

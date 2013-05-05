@@ -29,7 +29,7 @@ foreach(array(
   <div class="box-sidebar one">
     <h3><?php echo t('Statistics'); ?></h3>
     <br />
-    <img class="block-center" src="<?php echo $this->getImagesUrl('286x352_Grafix_1in5.png'); ?>" alt="image" />
+    <img src="<?php echo $this->getImagesUrl('286x352_Grafix_1in5.png'); ?>" alt="image" />
     <p><?php echo t('One in five caregivers report having had some degree of training, but continue to seek additional resources.'); ?></p>
     <br />
   </div>
@@ -145,7 +145,7 @@ foreach(array(
           <li><?php echo t('What is the name of the medical condition or diagnosis, if known, that accounts for the problem?'); ?></li>
         </ul>
         </p>
-        <img src="<?php echo $this->getImagesUrl('msml/forum_icon.png'); ?>" alt="image" style="width:250px; height:186px;"> </div>
+        <img src="<?php echo $this->getImagesUrl('msml/forum_icon.png'); ?>" alt="image"> </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
     </div>
     <div id="lesson-1-slide-3" class="course-slide">
@@ -232,14 +232,13 @@ foreach(array(
         It affects some or all of these brain functions. Search the Alzheimer\'s Association <a href="http://www.alz.org" target="_blank">website</a> for examples and greater explanations on each of these topics.'); ?></p>
         <p class="forum"><?php echo t('On the Forum, comment on if you ever forget a name or forget an appointment or get lost, and what did it feel like at the time?'); ?></p>
         <p><?php echo t('Imagine how difficult it would be to experience this type of problem on a regular basis. We will address the experience of living dementia during the next section.'); ?></p>
-        <img src="<?php echo $this->getImagesUrl('msml/forum_icon.png'); ?>" alt="image" style="width:250px; height:186px;"> </div>
+        <img src="<?php echo $this->getImagesUrl('msml/forum_icon.png'); ?>" alt="image"> </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
     </div>
     <div id="lesson-1-slide-8" class="course-slide">
       <div class="content">
         <h2 class="flowers"><?php echo t('Dementia'); ?></h2>
         <hr />
-        <img src="<?php echo $this->getImagesUrl('msml/151645089.png'); ?>" alt="image" style="margin:0 auto 0 auto;">
         <table>
           <tr>
             <th><p><?php echo t('Reversible Dementias'); ?></p></th>
@@ -262,8 +261,23 @@ foreach(array(
               </ul></td>
           </tr>
         </table>
-        <p><?php echo t('As you can see, dementia is an umbrella term that includes reversible and irreversible conditions. 
-        Search the Alzheimer\'s Association <a href="http://www.alz.org" target="_blank">website</a> for additional details on these topics.'); ?></p>
+        <p><?php echo t('As you can see, dementia is an umbrella term that includes reversible and irreversible conditions.'); ?></p>
+        
+        
+        <div id="question1" class="question">
+          <p><b><?php echo t('Have you ever visited the Alzheimer\'s Assocation website?'); ?></b>
+            <select>
+              <option selected="selected" value="select"> <?php echo t('Select'); ?> </option>
+              <option value="1"> <?php echo t('Yes'); ?> </option>
+              <option value="0"> <?php echo t('No') ?> </option>
+            </select>
+          </p>
+          <p class="right-answer hide"> <?php echo t("Great! We will use this resource throughout this course."); ?> </p>
+          <p class="wrong-answer hide"> <?php echo t("Please familiarize yourself with their website."); ?> </p>
+        </div>
+        
+       <p><?php echo t('Search the Alzheimer\'s Association <a href="http://www.alz.org" target="_blank">website</a> for additional details on these topics listed above.'); ?></p>
+        
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
     </div>
@@ -282,8 +296,7 @@ foreach(array(
         <p><?php echo t('A medical evaluation is always needed to clarify the diagnosis so that both reversible and irreversible conditions can be identified, treated, and understood by all concerned.'); ?></p>
         <p><?php echo t('Basic elements of a medical evaluation by a doctor consist of the following: an accurate history of the symptoms, a brief mental status test, a physical examination, blood tests (Complete Blood Count, Chemistry profile, thyroid function, syphilis serology, Vitamin B12, and Folate) and brain imaging through either a CT scan or MRI scan.'); ?></p>
         <p><?php echo t('Sometimes additional tests are ordered for the sake of thoroughness in diagnosing the exact type of dementia. There is no single test, such as a blood test, available to diagnose AD, as is the case with diabetes, for example. However, when other disorders have been ruled out and common symptoms of AD such as progressive loss of memory have been documented, there is a high probability for obtaining an accurate diagnosis by an experienced physician.'); ?></p>
-        
-          <div id="question1" class="question">
+        <div id="question1" class="question">
           <p><b><?php echo t('Is Dementia a specific disease?'); ?></b>
             <select>
               <option selected="selected" value="select"> <?php echo t('Select'); ?> </option>
@@ -294,8 +307,6 @@ foreach(array(
           <p class="right-answer hide"> <?php echo t('Correct! Dementia is NOT a specific disease.'); ?> </p>
           <p class="wrong-answer hide"> <?php echo t('Dementia is NOT a specific disease.') ?> </p>
         </div>
-        
-        
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
     </div>
@@ -303,10 +314,7 @@ foreach(array(
       <div class="content">
         <h2 class="flowers"><?php echo t('Criteria for Probable Alzheimer’s Disease'); ?></h2>
         <hr />
-        
         <img src="<?php echo $this->getImagesUrl('msml/120921047.png'); ?>" alt="image">
-        
-        
         <ul>
           <li><?php echo t('Dementia is evident without other disorders to account it.'); ?></li>
           <li><?php echo t('Deficits in at least two areas of cognition.'); ?></li>
@@ -320,13 +328,8 @@ foreach(array(
       <div class="content">
         <h2 class="flowers"><?php echo t('Prevalence of Alzheimer’s Disease by Age'); ?></h2>
         <hr />
-        
-        
-        
-        
-        <p><?php echo t('Read the  <a href="http://www.alz.org/downloads/facts_figures_2013.pdf" target="_blank">2013 Alzheimer’s Disease Facts and Figures Report</a> from the Alzheimer\'s Association website.'); ?></p>       
-        
-         <div id="question1" class="question">
+        <p><?php echo t('Read the  <a href="http://www.alz.org/downloads/facts_figures_2013.pdf" target="_blank">2013 Alzheimer’s Disease Facts and Figures Report</a> from the Alzheimer\'s Association website.'); ?></p>
+        <div id="question1" class="question">
           <p><b><?php echo t('The demands of caregiving may cause declines in the caregivers\' own health.'); ?></b>
             <select>
               <option selected="selected" value="select"> <?php echo t('Select'); ?> </option>
@@ -337,32 +340,22 @@ foreach(array(
           <p class="right-answer hide"> <?php echo t('Correct!'); ?> </p>
           <p class="wrong-answer hide"> <?php echo t('Please review the <a href="http://www.alz.org/downloads/facts_figures_2013.pdf" target="_blank">2013 Alzheimer’s Disease Facts and Figures Report</a> ') ?> </p>
         </div>
-       
-        
-        
-        
         <p class="forum"><?php echo t('On the Forum, please respond to the following questions:'); ?></p>
-      <ul class="forum">
-	  <li><?php echo t('How many Americans have AD today?'); ?></li>
-      <li><?php echo t('How many people in your state are estimated to have AD?'); ?></li>
-      <li><?php echo t('Can you guess how many people are expected to have AD 40 years from now?'); ?></li>
-      
-      </ul>
+        <ul class="forum">
+          <li><?php echo t('How many Americans have AD today?'); ?></li>
+          <li><?php echo t('How many people in your state are estimated to have AD?'); ?></li>
+          <li><?php echo t('Can you guess how many people are expected to have AD 40 years from now?'); ?></li>
+        </ul>
         <p><?php echo t('Based on projections of the older population in the coming decades, it is expected that the numbers of Americans with AD will grow dramatically.'); ?></p>
-        
-        <img src="<?php echo $this->getImagesUrl('msml/forum_icon.png'); ?>" alt="image">
-      </div>
+        <img src="<?php echo $this->getImagesUrl('msml/forum_icon.png'); ?>" alt="image"> </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
     </div>
     <div id="lesson-1-slide-12" class="course-slide">
       <div class="content">
         <h2 class="flowers"><?php echo t('Dr. Alois Alzheimer'); ?></h2>
         <hr />
-        
         <img src="<?php echo $this->getImagesUrl('msml/122568932.png'); ?>" alt="image">
-        
         <p><?php echo t('Alzheimer\'s disease was first described in 1906 by Dr. Alois Alzheimer, a German neurologist and pathologist. He was the first scientist to describe the symptoms in a female patient and connect them to damaged areas in her brain.'); ?></p>
-        
         <p><?php echo t('Following her death, Dr. Alzheimer performed an autopsy and found shrinkage of the brain as well as tiny abnormalities he referred to as tangles and amyloid plaques.'); ?></p>
         <p><?php echo t('Experts today agree that what is called “early stage” AD is probably the result of many years of the disease slowly developing in the brain. In the late 1990s, researchers began to identify “mild cognitive impairment” or “MCI” as a very early sign of AD in many people. Persons with this condition show evidence of recent memory loss on formal testing but show no other brain impairments such as disorientation. Recent studies indicate that about half of people with MCI develop early stage AD within 5 years and most of them develop AD within 10 years. In other words, in addition to memory loss, another brain function will begin to show signs of deterioration.'); ?></p>
       </div>
@@ -374,36 +367,29 @@ foreach(array(
         <hr />
         <h5><?php echo t('Early Stage'); ?></h5>
         <p><?php echo t('AD is slowly progressive and may last three to twenty years. The rate of progression varies from person to person. The disease tends to advance according to stages of severity but people can remain in the early stages for five years or longer. AD unfolds in subtle ways, not unlike normal absent-mindedness, except with daily regularity. Early stage symptoms may not be noticed until the affected person or family realizes that a pattern has developed. Something may occur that makes symptoms more evident, such as an acute illness.'); ?></p>
-        <p><?php echo t('Based on your experience, do any of these early stage symptoms or signs look familiar to you? What were the first signs you noticed in your relative? Please record your responses on the Forum.'); ?></p>
+        <p class="forum"><?php echo t('Based on your experience, do any of these early stage symptoms or signs look familiar to you? What were the first signs you noticed in your relative? Please record your responses on the Forum.'); ?></p>
         <p><?php echo t('Forgetting appointments, misplacing things, difficulty managing a checkbook, word finding problems, and loss of initiative are typical changes at this stage. Symptoms may be inconsistent, with "good days" and "bad days" making life unpredictable for all concerned. One’s ability to manage self-care tasks is still intact at this point but reminders and supervision are needed with activities of daily living (ADLs) such as cooking, shopping, and paying bills.'); ?></p>
-        <p><?php echo t('After searching the Internet, describe the remaining stages of AD, in detail, on the Forum:'); ?></p>
-        <ul>
-          <li>
-            <h5><?php echo t('Middle Stage'); ?></h5>
-          </li>
-          <li>
-            <h5><?php echo t('Late Stage'); ?></h5>
-          </li>
-          <li>
-            <h5><?php echo t('Final Stage'); ?></h5>
-          </li>
+        <p class="forum"><?php echo t('Search the Alzheimer\'s Association website to help you describe the remaining stages of AD, in detail, on the Forum:'); ?></p>
+        <ul class="forum">
+          <li> <?php echo t('Middle Stage'); ?> </li>
+          <li> <?php echo t('Late Stage'); ?> </li>
+          <li> <?php echo t('Final Stage'); ?> </li>
         </ul>
-      </div>
+        <img src="<?php echo $this->getImagesUrl('msml/forum_icon.png'); ?>" alt="image"> </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
     </div>
     <div id="lesson-1-slide-14" class="course-slide">
       <div class="content">
         <h2 class="flowers"><?php echo t('Changes in the Brain'); ?></h2>
         <hr />
+        <img src="<?php echo $this->getImagesUrl('msml/160330106.png'); ?>" alt="image">
         <ul>
           <li><?php echo t('Key chemicals malfunction, disrupting communication among cells'); ?> </li>
           <li><?php echo t('Tiny abnormalities form: plaques &amp; tangles'); ?> </li>
           <li><?php echo t('Communication between nerve cells is disrupted'); ?> </li>
-          <li><?php echo t('Brain cells die and brain shrinks'); ?></li>
         </ul>
-        <p><?php echo t('Most people think of the nervous system as the body’s electrical wiring. This is correct up to a point. Nerve cells transmit impulses much like wires transmit electricity. But unlike wires, which are connected at all times, brain cells do not touch one another. They have microscopic gaps between them called synapses. Nerve impulses must jump these gaps along the way and communicate with other brain cells. They do it with the help of chemicals called neurotransmitters. In AD, many brain chemicals are either insufficient or overabundant for reasons that are not well understood.'); ?></p>
-        <p><?php echo t('The tangles and plaques formed by AD represent the death of cells throughout the brain. The brain shrinks in size, losing as much as one-third of its weight. Tangles consist of abnormal collections of twisted threads found within brain cells. Plaques consist of an abnormal deposit of a protein between brain cells called amyloid.'); ?></p>
-        <p><?php echo t('Although most changes due to the disease can only be seen at the microscopic level, in advanced cases of the disease, some abnormalities can be seen with the naked eye.'); ?></p>
+        <p><?php echo t('Most people think of the nervous system as the body\'s electrical wiring. This is correct up to a point. Nerve cells transmit impulses much like wires transmit electricity. But unlike wires, which are connected at all times, brain cells do not touch one another. They have microscopic gaps between them called synapses. Nerve impulses must jump these gaps along the way and communicate with other brain cells. They do it with the help of chemicals called neurotransmitters. In AD, many brain chemicals are either insufficient or overabundant for reasons that are not well understood.'); ?></p>
+        <p><?php echo t('The tangles and plaques formed by AD represent the death of cells throughout the brain. The brain shrinks in size, losing as much as one-third of its weight. Tangles consist of abnormal collections of twisted threads found within brain cells. Plaques consist of an abnormal deposit of a protein between brain cells called amyloid. Although most changes due to the disease can only be seen at the microscopic level, in advanced cases of the disease, some abnormalities can be seen with the naked eye.'); ?></p>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
     </div>
@@ -414,7 +400,7 @@ foreach(array(
         <p><?php echo t('MediaStorm is an award-winning interactive design and video production studio that works with top visual storytellers, interactive designers and global organizations to create cinematic narratives that speak to the heart of the human condition.'); ?></p>
         <br />
         <br />
-        <div style="width:400px;">
+        <div style="width:400px;" id="video">
           <div style="height:340px;"><script type="text/javascript" src="http://mediastorm.com/player/embed.php?id=e5178ccd9bb6ef492263&w=400&h=340&amp;lang=none"></script></div>
           <div style="padding:10px; font-family:Helvetica, Arial, sans-serif; font-size:12px; line-height:16px; color:#999999; background-color:#000000;">With humor as well as unflinching honesty, <i>It Ain't Television... It's Brain Surgery</i> is Ray Farkas's first-person account of his own brain surgery, which he underwent in hopes of reducing the debilitating symptoms of Parkinson's Disease. See the project at <a href="http://mediastorm.com/publication/it-aint-television-its-brain-surgery" target="_blank" style="color:#0083c5;">http://mediastorm.com/publication/it-aint-television-its-brain-surgery</a></div>
         </div>
@@ -430,20 +416,18 @@ foreach(array(
           <li><?php echo t('Increasing age'); ?> </li>
           <li><?php echo t('Heart disease'); ?> </li>
           <li><?php echo t('Diabetes'); ?> </li>
-          <li><?php echo t('Down Syndrome'); ?> </li>
-          <li><?php echo t('Race'); ?> </li>
-          <li><?php echo t('Family history; genetics'); ?></li>
         </ul>
         <p><?php echo t('Circumstances that put one at risk for diseases are referred to as risk factors. For example, inhaling tobacco smoke is known to increase one’s risk of getting lung and heart diseases. High blood pressure, high cholesterol levels, and obesity significantly increase one’s chances for heart disease. Identification of these risk factors has led to  advances in prevention, treatments, and cures.'); ?></p>
-        <p><?php echo t('After searching the Internet, post other factors that are not already listed, on the Forum.'); ?></p>
+        <p class="forum"><?php echo t('Search the Alzheimer\'s Association website and post other risk factors that are not already listed above, on the Forum.'); ?></p>
         <p><?php echo t('It should be kept in mind that many conditions such as stroke, diabetes, cancer, and heart disease also tend to run in families. However, just because one’s parent had a certain disease does not mean that his or her children are destined to get it too. Other factors such as environmental risks must be considered.'); ?></p>
-      </div>
+        <img src="<?php echo $this->getImagesUrl('msml/forum_icon.png'); ?>" alt="image"> </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
     </div>
     <div id="lesson-1-slide-17" class="course-slide">
       <div class="content">
         <h2 class="flowers"><?php echo t('Possible Risk Factors for AD'); ?></h2>
         <hr />
+        <img src="<?php echo $this->getImagesUrl('msml/145920735.png'); ?>" alt="image">
         <ul>
           <li><?php echo t('Environmental toxins'); ?></li>
           <li><?php echo t('Low formal education &amp; low occupational attainment'); ?> </li>
@@ -459,6 +443,9 @@ foreach(array(
       <div class="content">
         <h2 class="flowers"><?php echo t('Strategies for Medical Treatment'); ?></h2>
         <hr />
+        
+        <img src="<?php echo $this->getImagesUrl('msml/151645089.png'); ?>" alt="image">
+        
         <ul>
           <li><?php echo t('Prevention of disease'); ?> </li>
           <li><?php echo t('Delay onset'); ?> </li>
@@ -466,8 +453,8 @@ foreach(array(
           <li><?php echo t('Treat primary symptoms (cognitive)'); ?> </li>
           <li><?php echo t('Treat secondary symptoms (behavioral)'); ?></li>
         </ul>
-        <p><?php echo t('After searching the Internet, list other strategies for medical treatment on the Forum'); ?></p>
-      </div>
+        <p class="forum"><?php echo t('Aside from the Alzheimer\'s Association website, list at least three additional websites that you found helpful in providing other strategies for medical treatment, on the Forum.'); ?></p>
+        <img src="<?php echo $this->getImagesUrl('msml/forum_icon.png'); ?>" alt="image"> </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
     </div>
     <div id="lesson-1-slide-19" class="course-slide">
@@ -509,36 +496,43 @@ foreach(array(
       <div class="content">
         <h2 class="flowers"><?php echo t('Potential Treatments/ Prevention'); ?></h2>
         <hr />
+        <img src="<?php echo $this->getImagesUrl('msml/134389167.png'); ?>" alt="image">
         <ul>
           <li><?php echo t('Anti-Inflammatory Drugs'); ?></li>
           <li><?php echo t('Antioxidant Agents'); ?> </li>
           <li><?php echo t('Statin drugs'); ?> </li>
-          <li><?php echo t('Alternative Medicine'); ?> </li>
-          <li><?php echo t('A Vaccine?'); ?></li>
         </ul>
         <p><?php echo t('Many other drugs are in various stages of testing. Meanwhile, several other approaches  to treating and preventing AD are under investigation.'); ?></p>
-        <p><?php echo t('After searching the Internet, list other potential treatments and preventions on the Forum'); ?></p>
-      </div>
+        <p class="forum"><?php echo t('Search the Alzheimer\'s Assocatin website, and list other potential treatments and/or preventions, not alraeady listed above, on the forum.'); ?></p>
+        <img src="<?php echo $this->getImagesUrl('msml/forum_icon.png'); ?>" alt="image"> </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
     </div>
     <div id="lesson-1-slide-22" class="course-slide">
       <div class="content">
         <h2 class="flowers"><?php echo t('Other Ways to Reduce Risk?'); ?></h2>
         <hr />
+        
+        <img src="<?php echo $this->getImagesUrl('msml/91318735.png'); ?>" alt="image">
+        
         <ul>
-          <li><?php echo t('Physical Exercise'); ?> </li>
-          <li><?php echo t('“Use It or Lose It”'); ?> </li>
-          <li><?php echo t('Diet'); ?></li>
+          <li><?php echo t('Regular exercise
+
+'); ?> </li>
+          <li><?php echo t('Mental stimulation'); ?> </li>
+          <li><?php echo t('Healthy diet'); ?></li>
         </ul>
-        <p><?php echo t('After searching the Internet, list other ways to reduce risk on the Forum'); ?></p>
-      </div>
+        <p class="forum"><?php echo t('Search the Alzheimer\'s Assocatin website, and list other ways to reduce risk not alraeady listed above, on the forum.'); ?></p>
+        <img src="<?php echo $this->getImagesUrl('msml/forum_icon.png'); ?>" alt="image"> </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
     </div>
     <div id="lesson-1-slide-23" class="course-slide">
       <div class="content">
         <h2 class="flowers"><?php echo t('Air Chamber Cure for Reagan\'s Alzheimer\'s!'); ?></h2>
         <hr />
-        <p><?php echo t('This is a <a href="http://books.google.com/books?id=9_EDAAAAMBAJ&pg=PA3&lpg=PA3&dq=%22Air+Chamber+Cure+for+Reagan%E2%80%99s+Alzheimer%E2%80%99s!%22&source=bl&ots=45LsmPZfRl&sig=eDj68E8i5G76vpCUD2Bx8GIy0Ow&hl=en&ei=J0qnTqbAE6KMiAK89NHhDQ&sa=X&oi=book_result&ct=result&resnum=1&ved=0CCwQ6AEwAA#v=onepage&q=%22Air%20Chamber%20Cure%20for%20Reagan%E2%80%99s%20Alzheimer%E2%80%99s!%22&f=false" target="_blank">clipping</a> from a national tabloid. Like so many other headlines in those  newspapers, this one is not really true. There are many things advertised as potential cures or treatment for AD that have no scientific basis. One must be careful to scrutinize  these claims and not waste time and money on the equivalent of snake oil. At times,  there are reputable people selling phony potions. The bottom line here is: Buyer  Beware! Be sure to consult with your physician before trying any new treatment.'); ?></p>
+        
+        <img src="<?php echo $this->getImagesUrl('msml/ReaganAirChamber.png'); ?>" alt="image">
+        
+        <p><?php echo t('This is a <a href="http://books.google.com/books?id=9_EDAAAAMBAJ&pg=PA3&lpg=PA3&dq=%22Air+Chamber+Cure+for+Reagan%E2%80%99s+Alzheimer%E2%80%99s!%22&source=bl&ots=45LsmPZfRl&sig=eDj68E8i5G76vpCUD2Bx8GIy0Ow&hl=en&ei=J0qnTqbAE6KMiAK89NHhDQ&sa=X&oi=book_result&ct=result&resnum=1&ved=0CCwQ6AEwAA#v=onepage&q=%22Air%20Chamber%20Cure%20for%20Reagan%E2%80%99s%20Alzheimer%E2%80%99s!%22&f=false" target="_blank">clipping</a> from a national tabloid. Like so many other headlines in those  newspapers, this one is not really true. There are many things advertised as potential cures or treatment for AD that have no scientific basis. One must be careful to scrutinize  these claims and not waste time and money. At times, there are reputable people selling phony potions. The bottom line here is to be sure to consult with your physician before trying any new treatment.'); ?></p>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
     </div>
@@ -553,10 +547,7 @@ foreach(array(
         <p><?php echo t('Pinpointing biological markers for AD and finding other ways of detecting the disease as early as possible have enormous implications for prevention, diagnosis, and treatment.'); ?></p>
         <h5><?php echo t('Develop better treatments'); ?></h5>
         <p><?php echo t('More effective drugs for treating AD include cholinesterase inhibitors as well as new approaches to treating its symptoms.'); ?></p>
-        <h5><?php echo t('Improve approaches to care'); ?></h5>
-        <p><?php echo t('There are non-medical approaches that promote the well-being of persons with memory  loss. For example, the therapeutic uses of music and physical exercise are not yet fully  known but researchers are examining them.'); ?></p>
-        <h5><?php echo t('Reduce distress of families'); ?></h5>
-        <p><?php echo t('Families provide the bulk of care to people with memory loss. The role of providing care  to a disabled relative is filled with risks to one’s psychological, social, and financial wellbeing.  Social research is focusing on ways to reduce the negative outcomes associated with caring for a relative with memory loss.'); ?></p>
+       <p><?php echo t('Please serach the Internet to further farmilarize your with other directions for research.'); ?></p>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
     </div>
@@ -564,6 +555,8 @@ foreach(array(
       <div class="content">
         <h2 class="flowers"><?php echo t('Good Sources of Information'); ?></h2>
         <hr />
+        
+        <img src="<?php echo $this->getImagesUrl('msml/200322624-001.png'); ?>" alt="image">
         <ul>
           <li><?php echo t('Speaking Our Minds: Personal Reflections from Individuals with     Alzheimer’s by Lisa Snyder. Baltimore: Health Professions Press, 2009.'); ?></li>
           <li><?php echo t('A Dignified Life by David Troxel &amp; Virginia Bell. Deerfield Beach, FL:     Health Communications, 2002.'); ?></li>
@@ -576,8 +569,10 @@ foreach(array(
       <div class="content">
         <h2 class="flowers"><?php echo t('Closing'); ?></h2>
         <hr />
+        <img src="<?php echo $this->getImagesUrl('msml/AmazonScreenshot.png'); ?>" alt="image">
+        
         <p><?php echo t('Before closing, we want to note that this first lesson is the most technical in nature.  Although there were not many opportunities for sharing your ideas, the remaining four  lessons will offer plenty of time for your input. Facts about the medical causes and  treatments for memory loss are important. However, we will spend the remaining lessons  talking about how to cope with the practical, day-to-day challenges of living with someone with memory loss.'); ?></p>
-        <p><?php echo t('Finally, we wish to introduce the book, <a href="http://www.amazon.com/Alzheimers-Early-Stages-Friends-Caregivers/dp/0897933974" target="_blank">Alzheimer’s Early Stages: First steps for family,  friends and caregivers. The</a> book was written by one of the  developers of this course. It is a useful companion guide to the material we cover in  these classes. For example, chapters 1 to 4 cover the information shared today in  greater detail. We highly recommend that you purchase it today and read those first 4  chapters. We will be recommending other chapters in the weeks ahead that reinforce  key points covered in these lessons.'); ?></p>
+        <p><?php echo t('Finally, we wish to introduce the book, <a href="http://www.amazon.com/Alzheimers-Early-Stages-Friends-Caregivers/dp/0897933974" target="_blank">Alzheimer’s Early Stages: First steps for family,  friends and caregivers</a>. The book was written by one of the  developers of this course. It is a useful companion guide to the material we cover in  these classes. For example, chapters 1 to 4 cover the information shared today in  greater detail. We highly recommend that you purchase it today and read those first 4  chapters. We will be recommending other chapters in the weeks ahead that reinforce  key points covered in these lessons.'); ?></p>
       </div>
       <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> <?php echo t('Complete Lesson'); ?></a></div>
     </div>
