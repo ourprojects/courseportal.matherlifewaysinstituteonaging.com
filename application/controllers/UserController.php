@@ -87,7 +87,7 @@ class UserController extends ApiController {
 				else 
 				{	
 					$this->loadExtension('yii-mail');
-					$message = new YiiMailMessage;
+					$message = Yii::app()->mail->getNewMessageInstance();
 					$message->view = 'passwordReset';
 					$message->setSubject(t('MatherLifeways Password Reset Request'));
 					$message->setBody(array('url' => $user->encodeUrl('user/changePassword')), 'text/html');
@@ -270,7 +270,7 @@ class UserController extends ApiController {
 		$message->setSubject(t('MatherLifeways Registration Confirmation'));
 		$message->setBody(array('user' => $userModel), 'text/html');
 		$message->setTo($userModel->email);
-		//$message->setBcc('amcivor@MatherLifeways.com');
+		$message->setBcc('amcivor@MatherLifeways.com');
 		$message->setFrom(Yii::app()->params['noReplyEmail']);
 		Yii::app()->mail->send($message);
 	}

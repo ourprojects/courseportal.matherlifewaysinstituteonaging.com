@@ -3,5 +3,5 @@
 	<h1 class="bottom"><?php echo t('Contact Us'); ?></h1>
 </div>
 <div id="single-column">
-<?php echo $this->renderPartial('forms/contact', array('models' => $models)); ?>
+<?php echo $this->renderPartial('forms/contact', $models); ?>
 </div>

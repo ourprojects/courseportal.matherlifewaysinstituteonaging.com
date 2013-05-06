@@ -99,28 +99,26 @@ class HomeController extends OnlineCoursePortalController {
 				);
 		// if it is ajax validation request
 		if(isset($_POST['ajax']) && $_POST['ajax'] === 'contact-form') {
-			if(isset($_POST['ContactUs']))
-				$models['ContactUs']->setAttributes($_POST['ContactUs']);
-			if(isset($_POST['Captcha']))
-				$models['Captcha']->setAttributes($_POST['Captcha']);
 			echo CActiveForm::validate($models);
 			Yii::app()->end();
 		}
 		
-		if(isset($_POST['Captcha']) && isset($_POST['ContactUs'])) {
-			$models['ContactUs']->setAttributes($_POST['ContactUs']);
-			$models['Captcha']->setAttributes($_POST['Captcha']);
-			if($models['Captcha']->validate() && $models['ContactUs']->validate()) {
-				$this->loadExtension('yii-mail');
-				$message = new YiiMailMessage;
-				$message->setBody($models['ContactUs']->body, 'text/html');
-				$message->subject = $models['ContactUs']->subject;
-				$message->addTo(Yii::app()->params['contactEmail']);
-				$message->from = $models['ContactUs']->email;
-				Yii::app()->mail->send($message);
-				Yii::app()->getUser()->setFlash('success', t('Thank you for contacting us. We will respond to you as soon as possible.'));
-				$this->refresh();
-			}
+		if($models['Captcha']->loadAttributes() && $models['ContactUs']->loadAttributes()
+				&& $models['Captcha']->validate() && $models['ContactUs']->validate()) 
+		{
+			$message = Yii::app()->mail->getNewMessageInstance();
+			$message->setBody($models['ContactUs']->body, 'text/plain');
+			$message->setSubject($models['ContactUs']->subject);
+			$message->setTo(Yii::app()->params['contactEmail']);
+			$message->setFrom($models['ContactUs']->email);
+			Yii::app()->mail->send($message);
+			
+			Yii::app()->getUser()->setFlash('success', t('Thank you for contacting us. We will respond to your inquiry as soon as possible.'));
+			
+			$models = array(
+					'ContactUs' => new ContactUs,
+					'Captcha' => new Captcha
+				);
 		}
 		$this->render('pages/contact', array('models' => $models));
 	}
