@@ -99,12 +99,23 @@ class YiiMail extends CApplicationComponent
 
 	private static $registeredScripts = false;
 
-	/**
-	 * Calls the {@link registerScripts()} method.
-	 */
 	public function init() {
-		$this->registerScripts();
+		if(!self::$registeredScripts)
+		{
+			self::$registeredScripts = true;
+			require_once(dirname(__FILE__).'/vendors/swiftMailer/classes/Swift.php');
+			Yii::registerAutoloader(array('Swift','autoload'));
+			require_once(dirname(__FILE__).'/vendors/swiftMailer/swift_init.php');
+
+			$preferences->setCharset(Yii::app()->charset);
+		}
 		parent::init();
+	}
+	
+	public function getNewMessageInstance($subject = null, $body = null, $contentType = null, $charset = null)
+	{
+		require_once('YiiMailMessage.php');
+		return new YiiMailMessage($subject, $body, $contentType, $charset);
 	}
 
 	/**
@@ -229,14 +240,4 @@ class YiiMail extends CApplicationComponent
 		return $this->mailer;
 	}
 
-	/**
-	 * Registers swiftMailer autoloader and includes the required files
-	 */
-	public function registerScripts() {
-		if (self::$registeredScripts) return;
-		self::$registeredScripts = true;
-		require dirname(__FILE__).'/vendors/swiftMailer/classes/Swift.php';
-		Yii::registerAutoloader(array('Swift','autoload'));
-		require dirname(__FILE__).'/vendors/swiftMailer/swift_init.php';
-	}
 }
