@@ -232,7 +232,7 @@ $this->widget(
       <ul>
         <li class="inline"> <img class="normal" width="48" height="48" src="<?php echo $this-> getImagesUrl('word.png'); ?>" alt="<?php echo t('Word Processor'); ?>" /></li>
         <li class="inline"> <img class="normal" width="48" height="48" src="<?php echo $this-> getImagesUrl('spreadsheet.png'); ?>" alt="<?php echo t('Spreadsheet Processor'); ?>" /></li>
-        <li class="inline"> <a href="mailto:jwoodall@matherlifeways.com" /><img class="normal" width="48" height="48" src="<?php echo $this-> getImagesUrl('email.png'); ?>" alt="<?php echo t('(Email Client'); ?>" /></a></li>
+        <li class="inline"> <a href="mailto:jwoodall@matherlifeways.com" /><img class="normal" width="48" height="48" src="<?php echo $this-> getImagesUrl('email.png'); ?>" alt="<?php echo t('Email Client'); ?>" /></a></li>
         <li class="inline"> <a href="http://get.adobe.com/reader/" target="_blank" /> <img class="normal" width="48" height="48" src="<?php echo $this-> getImagesUrl('pdf-icon.png'); ?>" alt="<?php echo t('Adobe Reader'); ?>" /></a></li>
       </ul>
       </p>

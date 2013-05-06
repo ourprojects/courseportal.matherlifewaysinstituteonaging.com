@@ -28,7 +28,7 @@ $this->widget(
   <div class="box-sidebar one">
     <h3><?php echo t('Surveys'); ?></h3>
     <br />
-    <p> <img style="float:right; margin:15px;" width="48" height="57" src="<?php echo $this->getImagesUrl('survey_icon2.png'); ?>" alt="" /> <?php echo t('Our surveys are designed to help us obtain information that help with decision-making. Our goal is to help better educate our participants by creating a client touch-point, a feedback system, and means to better understanding the shifting needs of the field.'); ?></p>
+    <p> <?php echo t('Our surveys are designed to help us obtain information that help with decision-making. Our goal is to help better educate our participants by creating a client touch-point, a feedback system, and means to better understanding the shifting needs of the field.'); ?></p>
     <hr />
     <ul>
       <?php 
@@ -44,7 +44,7 @@ $this->widget(
   
   <!-- sidebar #2 here -->
   <div class="box-sidebar one">
-    <h3><?php echo t('Collection of Metadata'); ?></h3>
+    <h3><?php echo t('Metadata'); ?></h3>
     <p><?php echo t('Metadata - Metadata is data about data. Metadata describes how and when and by whom a particular set of data was collected, and how the data is formatted. Metadata is essential for understanding information stored in our database and has become increasingly important in our XML-based Web applications.'); ?></p>
     <p><?php echo t('Metadata (metacontent describing the details we collect) are defined as the data providing information about one or more aspects of the data, such as:'); ?></p>
     <ul>

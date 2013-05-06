@@ -2,7 +2,7 @@
 Yii::app()->getClientScript()->registerCssFile($this->getStylesUrl('index.css')); 
 $this->breadcrumbs = array(t('Admin'));
 ?>
-<div class="small-masthead" style="background-image: url(<?php echo $this->getImagesUrl('159325162r.png'); ?>);">
+<div class="small-masthead" style="background-image: url(<?php echo $this->getImagesUrl('159325162.png'); ?>);">
   <h1 class="bottom"><?php echo t('Administrator'); ?></h1>
 </div>
 <div class="column-wide">
@@ -10,22 +10,22 @@ $this->breadcrumbs = array(t('Admin'));
   <hr />
   <ul id="categories">
     <li>
-      <h2><?php echo CHtml::link(t('API Keys'), $this->createUrl('apiKeys'), array('class' => 'button')); ?></h2>
+      <a href="<?php echo $this->createUrl('apiKeys'); ?>" class="button"><?php echo t('API Keys'); ?></a>
     </li>
     <li>
-      <h2><?php echo CHtml::link(t('Courses'), $this->createUrl('course'), array('class' => 'button')); ?></h2>
+      <a href="<?php echo $this->createUrl('course'); ?>" class="button"><?php echo t('Courses'); ?></a>
     </li>
     <li>
-      <h2><?php echo CHtml::link(t('Translations &amp; Languages'), $this->createUrl('/translate/translate'), array('class' => 'button')); ?></h2>
+      <a href="<?php echo $this->createUrl('/translate/translate'); ?>" class="button"><?php echo t('Translations &amp; Languages'); ?></a>
     </li>
     <li>
-      <h2><?php echo CHtml::link('phpBB Administration Control Panel', Yii::app()->phpBB->getACPUrl(), array('class' => 'button')); ?></h2>
+      <a href="<?php echo Yii::app()->phpBB->getACPUrl(); ?>" class="button"><?php echo t('phpBB Administration Control Panel'); ?></a>
     </li>
     <li>
-      <h2><?php echo CHtml::link(t('Users'), $this->createUrl('users'), array('class' => 'button')); ?></h2>
+      <a href="<?php echo $this->createUrl('users'); ?>" class="button"><?php echo t('Users'); ?></a>
     </li>
     <li>
-      <h2><?php echo CHtml::link(t('HostMySite CPanel Login'), 'https://my.hostmysite.com/single.html', array('class' => 'button')); ?></h2>
+      <a href="https://my.hostmysite.com/single.html" class="button"><?php echo t('HostMySite Control Panel'); ?></a>
     </li>
   </ul>
 </div>

@@ -35,6 +35,8 @@
  */
 class YiiMailMessage extends CComponent {
 
+	public $layout;
+	
 	/**
 	 * @var string the view to use for rendering the body, null if no view is
 	 * used.  An extra variable $mail will be passed to the view .which you may
@@ -109,7 +111,6 @@ class YiiMailMessage extends CComponent {
 	 * @return Swift_Mime_Message
 	 */
 	public function __construct($subject = null, $body = null, $contentType = null, $charset = null) {
-		Yii::app()->mail->registerScripts();
 		$this->message = Swift_Message::newInstance($subject, $body, $contentType, $charset);
 	}
 
@@ -127,7 +128,8 @@ class YiiMailMessage extends CComponent {
 	 */
 	public function setBody($body = '', $contentType = null, $charset = null) {
 		if ($this->view !== null) {
-			if (!is_array($body)) $body = array('body'=>$body);
+			if (!is_array($body)) 
+				$body = array('body' => $body);
 				
 			// if Yii::app()->controller doesn't exist create a dummy
 			// controller to render the view (needed in the console app)
@@ -140,7 +142,9 @@ class YiiMailMessage extends CComponent {
 			// renderInternal - this requires that we use an actual path to the
 			// view rather than the usual alias
 			$viewPath = Yii::getPathOfAlias(Yii::app()->mail->viewPath.'.'.$this->view).'.php';
-			$body = $controller->renderInternal($viewPath, array_merge($body, array('mail'=>$this)), true);
+			$body = $controller->renderFile($viewPath, array_merge($body, array('mail' => $this)), true);
+			if(isset($this->layout) && ($layoutFile = $controller->getLayoutFile($this->layout)) !== false)
+				$body = $controller->renderFile($layoutFile, array('mail' => $this, 'content' => $body), true);
 		}
 		return $this->message->setBody($body, $contentType, $charset);
 	}

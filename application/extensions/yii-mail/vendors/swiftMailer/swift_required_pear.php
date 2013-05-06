@@ -2,21 +2,31 @@
 
 /*
  * This file is part of SwiftMailer.
-* (c) 2004-2009 Chris Corbyn
-*
-* For the full copyright and license information, please view the LICENSE
-* file that was distributed with this source code.
-*/
+ * (c) 2004-2009 Chris Corbyn
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 
 /*
  * Autoloader and dependency injection initialization for Swift Mailer.
-*/
+ */
+
+if (defined('SWIFT_REQUIRED_LOADED')) {
+    return;
+}
+
+define('SWIFT_REQUIRED_LOADED', true);
 
 //Load Swift utility class
-require_once dirname(__FILE__) . '/Swift.php';
+require dirname(__FILE__) . '/Swift.php';
 
-//Start the autoloader
-Swift::registerAutoload();
+if (!function_exists('_swiftmailer_init')) {
+    function _swiftmailer_init()
+    {
+        require dirname(__FILE__) . '/swift_init.php';
+    }
+}
 
-//Load the init script to set up dependency injection
-require_once dirname(__FILE__) . '/swift_init.php';
+//Start the autoloader and lazy-load the init script to set up dependency injection
+Swift::registerAutoload('_swiftmailer_init');

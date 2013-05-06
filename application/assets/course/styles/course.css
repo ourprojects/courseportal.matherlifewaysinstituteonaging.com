@@ -1,21 +1,14 @@
+@charset "UTF-8";
+/* CSS Document */
+
+@import url(http://fonts.googleapis.com/css?family=Swanky+and+Moo+Moo);
 div.course-slide {
 	min-height: 100%;
 	position: relative;
 }
-div.course-slide div.question {
-	background-color: #FFF;
-	border-radius: 15px;
-	width: 75%;
-	height: 85px;
-	margin: 10px 0 25px 25px;
-	padding: 10px;
-	-moz-box-shadow: 0 0 5px 5px #888;
-	-webkit-box-shadow: 0 0 5px 5px#888;
-	box-shadow: 0 0 5px 5px #888;
-}
 div.course-slide div.content {
-	padding-top: 10px;
-	padding-bottom: 55px;
+	padding: 5px 0px 50px 0px;
+	margin: 0;
 }
 div.course-slide div.buttons {
 	text-align: center;
@@ -30,9 +23,22 @@ div.course-slide div.buttons {
 }
 div.course-slide img {
 	border: none;
-	-moz-border-radius: 7px;
-	-webkit-border-radius: 7px;
-	border-radius: 7px;
+	display: block;
+	margin: 0 auto 10px auto;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
+div.course-slide div.question {
+	background-color: #FFF;
+	border-radius: 15px;
+	width: 90%;
+	height: 85px;
+	margin: 10px auto 10px auto;
+	padding: 10px;
+	-moz-box-shadow: 0 0 5px 5px #888;
+	-webkit-box-shadow: 0 0 5px 5px#888;
+	box-shadow: 0 0 5px 5px #888;
 }
 div.course-slide div.box-white {
 	padding: 10px;
@@ -42,22 +48,51 @@ div.course-slide div.box-white {
 	box-shadow: 0 0 10px #999;
 	width: 60%;
 }
-div.course-slide table {
-	border: solid;
-	width: 65%;
+div.course-slide div#video {
+	display: block;
+	margin: 0 auto;
 }
-div.course-slide p.subtopic {
-	font-style: italic;
-	text-decoration: underline;
+.forum {
+	font-family: 'Swanky and Moo Moo', cursive;
+	color: #F00;
+	font-size: 22px;
+}
+ul.forum li {
+	font-family: 'Swanky and Moo Moo', cursive;
+	color: #F00;
+	font-size: 22px;
+}
+/* course-slide table properties */
+
+div.course-slide table {
+	width: 100%;
+	margin: 10px auto 10px auto;
+	border: none;
+}
+div.course-slide table th {
+	background-color: #008080;
+	color: #FFF;
+	text-align: center;
+}
+div.course-slide table td {
+	background-color: #666;
+	color: #FFF;
+	text-align: center;
+}
+div.course-slide table td ul li {
+	list-style-type: none;
+	list-style-image: none;
 }
 /* all non-slide css3 */
 
-#surveynotify {
-	color: #F00;
-	line-height: normal;
-	font-size: 22px;
-	text-align: center;
-}
 #developers p {
 	font-size: small;
+}
+div.box-sidebar img {
+	border: none;
+	display: block;
+	margin: 0 auto 10px auto;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
 }
