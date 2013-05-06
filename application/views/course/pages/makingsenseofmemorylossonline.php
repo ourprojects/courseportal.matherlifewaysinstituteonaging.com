@@ -26,6 +26,15 @@ foreach(array(
   <h1 class="bottom"><?php echo t($course->title); ?></h1>
 </div>
 <div id="sidebar">
+  <div class="box-sidebar one" style="background-color:#FFF;">
+    <h3><?php echo t('Survey'); ?></h3>
+    <br />
+    <p><a href="#"><?php echo t('MSML Online Pre-Course Survey'); ?></a></p>
+    <p><a href="#"><?php echo t('MSML Online Post-Course Survey'); ?></a></p>
+    <p><a href="#"><?php echo t('MSML Online Post-Post Course Survey'); ?></a></p>
+    <p><a href="#"><?php echo t('MSML Online One-Year Survey'); ?></a></p>
+    <br />
+    <img src="<?php echo $this->getImagesUrl('msml/153075496.png'); ?>" alt="image"> </div>
   <div class="box-sidebar one">
     <h3><?php echo t('Statistics'); ?></h3>
     <br />
@@ -64,7 +73,6 @@ foreach(array(
   ?>
   </ul>
   <h4><?php echo t('Course Lessons'); ?></h4>
-  <h5><a href="#"><?php echo t('Pre-Course Survey'); ?></a></h5>
   <ul>
     <li> <a href="#lesson-1-slide-1" data-fancybox-group="lesson-1" class="teal lesson-1"> <?php echo t('Overview of Memory Loss'); ?></a> <a href="#lesson-1-slide-2" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-3" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-4" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-5" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-6" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-7" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-8" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-9" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-10" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-11" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-12" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-13" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-14" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-15" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-16" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-17" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-18" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-19" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-20" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-21" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-22" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-23" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-24" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-25" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-26" data-fancybox-group="lesson-1" class="hide lesson-1"></a> </li>
     <li> <a href="#lesson-2-slide-1" data-fancybox-group="lesson-2" class="teal lesson-2"> <?php echo t('Communication Strategies'); ?></a> <a href="#lesson-2-slide-2" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-3" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-4" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-5" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-6" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-7" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-8" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-9" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-10" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-11" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-12" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-13" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-14" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-15" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-16" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-17" data-fancybox-group="lesson-2" class="hide lesson-2"></a> </li>
@@ -72,7 +80,6 @@ foreach(array(
     <li> <a href="#lesson-4-slide-1" data-fancybox-group="lesson-4" class="teal lesson-4"> <?php echo t('Planning for the Future'); ?></a> <a href="#lesson-4-slide-2" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-3" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-4" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-5" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-6" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-7" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-8" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-9" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-10" data-fancybox-group="lesson-4" class="hide lesson-4"></a></li>
     <li> <a href="#lesson-5-slide-1" data-fancybox-group="lesson-5" class="teal lesson-5"> <?php echo t('Effective Ways of Coping'); ?></a> <a href="#lesson-5-slide-2" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-3" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-4" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-5" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-6" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-7" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-8" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-9" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-10" data-fancybox-group="lesson-5" class="hide lesson-5"></a></li>
   </ul>
-  <h5><a href="#"><?php echo t('Post-Course Survey'); ?></a></h5>
   <h4> <?php echo t('Resources'); ?></h4>
   <p><?php echo t('Please use these listed resources in the completion of this online course. Pleaes contact your instructor or the program director if you have additional resources you would like to see added here.'); ?></p>
   <p><a href="http://www.alz.org" target="_blank">Alzheimer's Association</a></p>
@@ -117,7 +124,7 @@ foreach(array(
         <hr />
         <img src="<?php echo $this->getImagesUrl('msml/154418413.png'); ?>" alt="image">
         <p><?php echo t('We are delighted that you are interested in MSML Online. This five-lesson course is intended to help family members of someone in the early stages of memory loss to meet the challenges they face now and in the future. Research evaluation has shown that participation in this course increases family members’ knowledge and improves coping skills with respect to their relatives’ memory and behavior changes.'); ?></p>
-        <p><?php echo t('Lesson Objectives:'); ?></p>
+        <h4><?php echo t('Lesson Objectives:'); ?></h4>
         <ul>
           <li><?php echo t('To introduce participants and give an overview of the course.');?></li>
           <li><?php echo t('To explain major medical causes of memory loss.'); ?></li>
@@ -262,8 +269,6 @@ foreach(array(
           </tr>
         </table>
         <p><?php echo t('As you can see, dementia is an umbrella term that includes reversible and irreversible conditions.'); ?></p>
-        
-        
         <div id="question1" class="question">
           <p><b><?php echo t('Have you ever visited the Alzheimer\'s Assocation website?'); ?></b>
             <select>
@@ -275,9 +280,7 @@ foreach(array(
           <p class="right-answer hide"> <?php echo t("Great! We will use this resource throughout this course."); ?> </p>
           <p class="wrong-answer hide"> <?php echo t("Please familiarize yourself with their website."); ?> </p>
         </div>
-        
-       <p><?php echo t('Search the Alzheimer\'s Association <a href="http://www.alz.org" target="_blank">website</a> for additional details on these topics listed above.'); ?></p>
-        
+        <p><?php echo t('Search the Alzheimer\'s Association <a href="http://www.alz.org" target="_blank">website</a> for additional details on these topics listed above.'); ?></p>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
     </div>
@@ -443,9 +446,7 @@ foreach(array(
       <div class="content">
         <h2 class="flowers"><?php echo t('Strategies for Medical Treatment'); ?></h2>
         <hr />
-        
         <img src="<?php echo $this->getImagesUrl('msml/151645089.png'); ?>" alt="image">
-        
         <ul>
           <li><?php echo t('Prevention of disease'); ?> </li>
           <li><?php echo t('Delay onset'); ?> </li>
@@ -511,9 +512,7 @@ foreach(array(
       <div class="content">
         <h2 class="flowers"><?php echo t('Other Ways to Reduce Risk?'); ?></h2>
         <hr />
-        
         <img src="<?php echo $this->getImagesUrl('msml/91318735.png'); ?>" alt="image">
-        
         <ul>
           <li><?php echo t('Regular exercise
 
@@ -529,9 +528,7 @@ foreach(array(
       <div class="content">
         <h2 class="flowers"><?php echo t('Air Chamber Cure for Reagan\'s Alzheimer\'s!'); ?></h2>
         <hr />
-        
         <img src="<?php echo $this->getImagesUrl('msml/ReaganAirChamber.png'); ?>" alt="image">
-        
         <p><?php echo t('This is a <a href="http://books.google.com/books?id=9_EDAAAAMBAJ&pg=PA3&lpg=PA3&dq=%22Air+Chamber+Cure+for+Reagan%E2%80%99s+Alzheimer%E2%80%99s!%22&source=bl&ots=45LsmPZfRl&sig=eDj68E8i5G76vpCUD2Bx8GIy0Ow&hl=en&ei=J0qnTqbAE6KMiAK89NHhDQ&sa=X&oi=book_result&ct=result&resnum=1&ved=0CCwQ6AEwAA#v=onepage&q=%22Air%20Chamber%20Cure%20for%20Reagan%E2%80%99s%20Alzheimer%E2%80%99s!%22&f=false" target="_blank">clipping</a> from a national tabloid. Like so many other headlines in those  newspapers, this one is not really true. There are many things advertised as potential cures or treatment for AD that have no scientific basis. One must be careful to scrutinize  these claims and not waste time and money. At times, there are reputable people selling phony potions. The bottom line here is to be sure to consult with your physician before trying any new treatment.'); ?></p>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
@@ -547,7 +544,7 @@ foreach(array(
         <p><?php echo t('Pinpointing biological markers for AD and finding other ways of detecting the disease as early as possible have enormous implications for prevention, diagnosis, and treatment.'); ?></p>
         <h5><?php echo t('Develop better treatments'); ?></h5>
         <p><?php echo t('More effective drugs for treating AD include cholinesterase inhibitors as well as new approaches to treating its symptoms.'); ?></p>
-       <p><?php echo t('Please serach the Internet to further farmilarize your with other directions for research.'); ?></p>
+        <p><?php echo t('Please serach the Internet to further farmilarize your with other directions for research.'); ?></p>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
     </div>
@@ -555,7 +552,6 @@ foreach(array(
       <div class="content">
         <h2 class="flowers"><?php echo t('Good Sources of Information'); ?></h2>
         <hr />
-        
         <img src="<?php echo $this->getImagesUrl('msml/200322624-001.png'); ?>" alt="image">
         <ul>
           <li><?php echo t('Speaking Our Minds: Personal Reflections from Individuals with     Alzheimer’s by Lisa Snyder. Baltimore: Health Professions Press, 2009.'); ?></li>
@@ -570,7 +566,6 @@ foreach(array(
         <h2 class="flowers"><?php echo t('Closing'); ?></h2>
         <hr />
         <img src="<?php echo $this->getImagesUrl('msml/AmazonScreenshot.png'); ?>" alt="image">
-        
         <p><?php echo t('Before closing, we want to note that this first lesson is the most technical in nature.  Although there were not many opportunities for sharing your ideas, the remaining four  lessons will offer plenty of time for your input. Facts about the medical causes and  treatments for memory loss are important. However, we will spend the remaining lessons  talking about how to cope with the practical, day-to-day challenges of living with someone with memory loss.'); ?></p>
         <p><?php echo t('Finally, we wish to introduce the book, <a href="http://www.amazon.com/Alzheimers-Early-Stages-Friends-Caregivers/dp/0897933974" target="_blank">Alzheimer’s Early Stages: First steps for family,  friends and caregivers</a>. The book was written by one of the  developers of this course. It is a useful companion guide to the material we cover in  these classes. For example, chapters 1 to 4 cover the information shared today in  greater detail. We highly recommend that you purchase it today and read those first 4  chapters. We will be recommending other chapters in the weeks ahead that reinforce  key points covered in these lessons.'); ?></p>
       </div>
@@ -582,7 +577,10 @@ foreach(array(
       <div class="content">
         <h2 class="flowers"><?php echo t('Communication Strategies'); ?></h2>
         <hr />
-        <p><?php echo t('Objectives:'); ?></p>
+        
+        <img src="<?php echo $this->getImagesUrl('msml/135810412.png'); ?>" alt="image">
+        
+        <h4><?php echo t('Lesson Objectives:'); ?></h4>
         <ul>
           <li><?php echo t('To give an overview of communication changes typical in early memory loss.'); ?></li>
           <li><?php echo t('To familiarize participants with general principles for maintaining communication with a person experiencing early memory loss.'); ?></li>
@@ -596,7 +594,9 @@ foreach(array(
       <div class="content">
         <h2 class="flowers"><?php echo t('Welcome Back!'); ?></h2>
         <hr />
-        <p><?php echo t('Welcome to the second lesson of MSML Online. One of the more frustrating and difficult aspects of memory loss is that the person\'s ability to communicate may be compromised. In this class, we will discuss how to adapt to these changes. We will cover these general topics and get into specifics along the way:'); ?></p>
+        <img src="<?php echo $this->getImagesUrl('msml/135545925.png'); ?>" alt="image">
+        
+        <p><?php echo t('Welcome to the second lesson of MSML Online. One of the more frustrating and difficult aspects of memory loss is that the person\'s ability to communicate may be compromised. In this section, we will discuss how to adapt to these changes. We will cover these general topics and get into specifics along the way.'); ?></p>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
     </div>
@@ -611,8 +611,11 @@ foreach(array(
         <li><?php echo t('Ways to encourage verbal expression'); ?></li>
         <li><?php echo t('Avoiding communication pitfalls'); ?></li>
       </ul>
-      <p><?php echo t('"What we see depends upon where we sit." - This quote speaks to the fact that your perception is crucial in making necessary accommodations to the challenges of caring for someone with memory loss. It also speaks to the fact that your relative often sees things in a much different way than you do. This is important to remember as we discuss the memory changes your family member may be experiencing and how this may affect his/her ability to communicate.'); ?></p>
-      <img src="here" alt="image">
+      
+      <h5 style="text-align:center;"><?php echo t('"What we see depends upon where we sit."'); ?></h5>
+      
+      <p><?php echo t('This quote speaks to the fact that your perception is crucial in making necessary accommodations to the challenges of caring for someone with memory loss. It also speaks to the fact that your relative often sees things in a much different way than you do. This is important to remember as we discuss the memory changes your family member may be experiencing and how this may affect his/her ability to communicate.'); ?></p>
+      <img src="<?php echo $this->getImagesurl('msml/2012693_f260.jpg'); ?>" alt="image">
       <p><?php echo t('Do you see the old woman or the young woman in this drawing? Can you see both women?'); ?></p>
       <p><?php echo t('Some people can only see one or the other but both are right! This drawing illustrates the fact that different people can see the same reality but in different ways. This may hold true in your situation as well. You and the person with memory loss may be experiencing the same reality but in different ways. For example, your relative may not be as upset with the changes in memory and communication as you might be. You can easily remember your relative as a completely capable individual whereas he or she may have slowly adapted to the changes in memory and thinking over time. It is typical for that person to lack insight into all of the changes that have taken place.');?></p>
     </div>
@@ -622,14 +625,14 @@ foreach(array(
     <div class="content">
       <h2 class="flowers"><?php echo t('The Person\'s Level of Awareness'); ?></h2>
       <hr />
-      <h4><?php echo t('Role of Denial'); ?></h4>
+      <h5><?php echo t('Role of Denial'); ?></h5>
       <p><?php echo t('Denial is a term familiar to most of us. It refers to the human tendency to deny that a painful reality is occurring despite the hard times at hand. It seems reasonable to assume that anyone with memory loss would downplay or deny the presence or the severity of his/her problem. However, it appears that denial is less of an issue than we might expect. Instead of denying the presence or severity of symptoms, persons with memory loss have varying degrees of insight or awareness into their difficulties.');?></p>
       <p><?php echo t('Some people with AD, for example, have little or no awareness, while others may have much awareness. Still others may have awareness now and then but do not dwell upon the implications of their disease. Scientists are just beginning to understand how damage to certain parts of the brain is associated with personal insight or awareness. The damage to the brain itself may be responsible for these "degrees" of awareness. ');?></p>
-      <h4><?php echo t('No awareness'); ?></h4>
+      <h5><?php echo t('No awareness'); ?></h5>
       <p><?php echo t('Some persons seem to forget that they are forgetful. They have no appreciation of their limitations. They reject offers of help by others since they do not perceive any need. Getting their cooperation with respect to any need for care or oversight is virtually impossible in light of their resistance. They are not in a state of "denial." They simply lack insight due to impairment in the brain.');?></p>
-      <h4><?php echo t('Partial awareness'); ?></h4>
+      <h5><?php echo t('Partial awareness'); ?></h5>
       <p><?php echo t('Most people with memory loss have some awareness into their deficits, especially whenthey are put in demanding situations that tax their memory and thinking. On the other hand, they may not dwell on their problems. The experience of "living in the moment" is often their outlook.');?></p>
-      <h4><?php echo t('Much awareness'); ?></h4>
+      <h5><?php echo t('Much awareness'); ?></h5>
       <p><?php echo t('Those who have a high degree of awareness appear to be the ones most prone to suffering from reactive depression. They may grieve over their past losses and worry about the future in ways that we can not understand. Fortunately, only a minority of people with memory loss seems acutely aware of the true nature of their impairments.');?></p>
       <p><?php echo t('Understanding where your family member is in terms of awareness of his/her situation can be helpful as you think about communication and how it has been affected by their memory loss. There may be some communication issues that are very distressing to you but that do not particularly upset your family member. Likewise, there may be some communication issues that are problematic for your family member but that you do not consider problematic.');?></p>
     </div>
@@ -643,14 +646,12 @@ foreach(array(
         <li><?php echo t('Sending and receiving messages'); ?></li>
         <li><?php echo t('Speaking and listening'); ?></li>
         <li><?php echo t('Reading and writing'); ?></li>
-        <li><?php echo t('Gestures, facial expression, body language'); ?></li>
       </ul>
       <h4><?php echo t('Communication'); ?></h4>
       <p><?php echo t('Communication is the exchange of information, ideas and emotions. It is how we convey our thoughts, wishes, and feelings. In order for communication to occur, the message needs to be not only sent, but received. We need to not only hear but to also understand the message – otherwise, communication has not really occurred. We have all had experiences where we thought we made ourselves clear, only to find that the other person interpreted the message differently than we intended! (Search the Web for excercises in Communication) ');?></p>
       <p><?php echo t('Communication is complicated! It involves not just speaking our minds, but also listening to the other person. As your exercises teach, it entails speaking, listening, and watching others for cues.');?></p>
       <p><?php echo t('Listening is not as easy as it seems. To truly listen, we need to be completely attentive to the other person. Often, we may think we are listening to the other person when we are actually distracted. Maybe we aree distracted by something else that we are doing, like driving a car or trying to decide which kind of soup to buy at the grocery store. Maybe we are distracted because we are thinking about something else while the person is talking, or because we are busy thinking about what our response to the person will be. It is hard to truly listen – and it takes practice. (Search the Web for excercises in Listening)');?></p>
       <p><?php echo t('Reading and writing are forms of communication. Some of us respond better to messages that are received in writing than we do to verbal messages. Some of us may find that it helps us to write things down as a way of thinking them through. Sometimes we have trouble communicating because our preferred way of communicating may not be the other person\'s. For example, maybe you like to write notes or send e-mails to someone who prefers to talk face-to-face or over the telephone. So we need to be sensitive to how we communicate, to make sure we communicate is appropriately.');?></p>
-      <p><?php echo t('Body language is another important component of communication. Gestures, facial expressions and body posture are often just as important in communication (if not more important) as are the words we use to express an idea.');?></p>
     </div>
     <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
   </div>
@@ -667,8 +668,22 @@ foreach(array(
         <li><?php echo t('Episodic memory'); ?></li>
         <li><?php echo t('Procedural memory'); ?></li>
       </ul>
-      <p><?php echo t('Search the Web for examples and greater explanations of these topics.'); ?></p>
+      
+        <p><?php echo t('Search the Alzheimer\'s Association <a href="http://www.alz.org" target="_blank">website</a> for examples and greater explanations on each of these topics listed above.'); ?></p>
+      
       <p><?php echo t('It is important to understand the different types of memory, so that we can see how impairment in these may affect one\'s ability to communicate. Note that people with early stage memory loss tend to have more problems with working and short term memory than with long term, episodic and procedural memory. When having a conversation with someone with memory loss, it is important to remember that they may have difficulty recalling recent events or may need more time to retrieve the information. Next, we are going to look at some of the changes that may occur with communication as memory becomes impaired.'); ?></p>
+        <div id="question1" class="question">
+          <p><b><?php echo t('Short-term memory is the information we are currently aware of or thinking about.'); ?></b>
+            <select>
+              <option selected="selected" value="select"> <?php echo t('Select'); ?> </option>
+              <option value="1"> <?php echo t('True'); ?> </option>
+              <option value="0"> <?php echo t('False') ?> </option>
+            </select>
+          </p>
+          <p class="right-answer hide"> <?php echo t('Correct!'); ?> </p>
+          <p class="wrong-answer hide"> <?php echo t('Please understand these various types of memory before moving forward.') ?> </p>
+        </div>
+      
     </div>
     <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
   </div>
@@ -679,15 +694,15 @@ foreach(array(
       <ul>
         <li><?php echo t('Word finding'); ?></li>
         <li><?php echo t('Comprehending'); ?></li>
-        <li><?php echo t('Digressing and repeating'); ?></li>
         <li><?php echo t('Reading and writing'); ?></li>
-        <li><?php echo t('Difficulty understanding abstract concepts'); ?></li>
       </ul>
       <p><?php echo t('Word finding refers to that "tip of the tongue" phenomenon that we all experience from time to time. We know what we want to say but just cannot find the word right away. People who have memory loss experience this phenomenon to a degree that it interferes with their ability to communicate.'); ?></p>
       <p><?php echo t('Comprehension often becomes impaired. The person may have a difficult time tracking conversations or following instructions that have more than one step to them. The person with memory loss is more likely to digress during conversations – jumping from the original topic to another, related one. Once the person digresses, they may have a difficult time remembering the original topic of conversation; they may get "off track" easily. Because of changes in memory, it is also common for the person with memory loss to repeat himself/herself because he or she may forget what has already been said.'); ?></p>
       <p><?php echo t('Reading and writing may be affected. The person may have difficulty in understanding written material, or may not be able to communicate clearly in writing.'); ?></p>
-      <p><?php echo t('People with memory loss often have difficulty with abstract concepts. Many people have trouble with talking on the telephone since the person may rely more on body language and facial expressions of others when communicating. The person may have a difficult time comprehending the conversation, may not remember to whom he is speaking or and may not recall the conversation later.'); ?></p>
-      <p><?php echo t('Has anyone started to notice communication challenges with your relative?'); ?></p>
+     
+      <p class="forum"><?php echo t('Has anyone started to notice communication challenges with your relative? Please describe your observations on the Forum.'); ?></p>
+            <img src="<?php echo $this->getImagesUrl('msml/forum_icon.png'); ?>" alt="image">
+
     </div>
     <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
   </div>
@@ -700,14 +715,18 @@ foreach(array(
         <li><?php echo t('Fear of making mistakes'); ?></li>
         <li><?php echo t('Attention problem that may appear to be hearing loss'); ?></li>
       </ul>
-      <h4><?php echo t('More distracted by noise, motion:'); ?></h4>
+      <h5><?php echo t('More distracted by noise, motion:'); ?></h5>
       <p><?php echo t('As memory becomes impaired, the person with memory loss may find that he has to concentrate very hard in order to follow conversations. Anything that interferes with the ability to concentrate – noise, movement, etc. – may make it even more difficult for the person.'); ?></p>
-      <p><?php echo ('If you want to have a conversation with a person with memory loss and you sense that he becomes easily distracted, what could you do?'); ?></p>
-      <h4><?php echo t('Fear of making mistakes:'); ?></h4>
+      <p class="forum"><?php echo ('If you want to have a conversation with a person with memory loss and you sense that he becomes easily distracted, what could you do?'); ?></p>
+      <h5><?php echo t('Fear of making mistakes:'); ?></h5>
       <p><?php echo t('Has anyone here had the experience of burning something on the stove or the oven?'); ?></p>
       <p><?php echo ('If you do something wrong like that, others tend to write it off to having a bad day or being distracted, right? But if a person with memory loss does the same thing, it is looked at differently – and the person may no longer be allowed to cook. The stakes are much higher, so the fear of making mistakes is greater. You may need to adjust to this by giving the person with memory loss more time to do things, and be as patient as possible.'); ?></p>
-      <p><?php echo t('Attention problem that may appear to be hearing loss: People who are distracted or who have difficulty concentrating may sometimes miss bits and pieces of a conversation. This may sometimes make it seem as though the person has a hearing problem when in fact this is not the case. On the other hand, do not rule out hearing loss as a possible issue if the person is having problems hearing when the conversation is happening in a place with few distractions.'); ?></p>
-      <h4><?php echo t('So, what can we do to help overcome these challenges?'); ?></h4>
+      <h5><?php echo t('Attention problem that may appear to be hearing loss'); ?></h5>
+	  
+	  <p><?php echo t('People who are distracted or who have difficulty concentrating may sometimes miss bits and pieces of a conversation. This may sometimes make it seem as though the person has a hearing problem when in fact this is not the case. On the other hand, do not rule out hearing loss as a possible issue if the person is having problems hearing when the conversation is happening in a place with few distractions.'); ?></p>
+      <p class="forum"><?php echo t('So, what can we do to help overcome these challenges?'); ?></p>
+      
+      <img src="<?php echo $this->getImagesUrl('msml/forum_icon.png'); ?>" alt="image">
     </div>
     <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
   </div>
@@ -716,21 +735,19 @@ foreach(array(
       <h2 class="flowers"><?php echo t('Communication Tips'); ?></h2>
       <hr />
       <p><?php echo t('These tips may help us to remove some barriers to good communication.'); ?></p>
-      <h4><?php echo t('Eliminate distractions'); ?></h4>
+      <h5><?php echo t('Eliminate distractions'); ?></h5>
       <p><?php echo t('Think about a time when you have tried to carry on a conversation in a noisy place. It is hard to concentrate on what another person is saying when you are also trying hard simply to hear them through the noise. Because people with memory loss have a difficult time filtering out distractions, it is a good idea to make sure that the surroundings are quiet and calm before you have a conversation. Distractions in the environment, such as the television or radio, loud conversations, or competing activities may take the person\'s attention away from you. So it is a good idea to move to a quieter, calmer area to have a conversation with a person with memory loss.'); ?></p>
-      <h4><?php echo t('Gain the person\'s attention.'); ?></h4>
+      <h5><?php echo t('Gain the person\'s attention.'); ?></h5>
       <p><?php echo t('This may seem obvious, but we do not always do this. Think about times when you have had one sided conversations with family or friends whose attention was divided between what you were saying and what they were doing – watching a game on TV, reading the newspaper, concentrating on driving, etc. Or perhaps you have been in the situation where you were busy with a task and were not able to give someone else your undivided attention. This is even more important when having a conversation with a person with memory loss, who can be easily distracted.'); ?></p>
-      <h4><?php echo t('Give reassurance.'); ?></h4>
+      <h5><?php echo t('Give reassurance.'); ?></h5>
       <p><?php echo t('Sometimes the person with memory loss may feel embarrassed at his communication problems. He may get lost in the middle of a conversation, not be able to remember the word he is looking for, or have a difficult time comprehending what you are telling him. As frustrating as this may be for you, it is even more frustrating for the person experiencing the problems. At times like these, reassurances like, "I know this must be hard for you" or even a statement like "I am not sure what you are trying to say, but please know that I will help you any way I can" may help to calm the person and make them feel that you do understand him, even if you do not understand his words at that moment.'); ?></p>
-      <h4><?php echo t('Be a patient and active listener.'); ?></h4>
-      <p><?php echo t('Listen carefully to what the person has to say, even if her comments seem to be confused. Allow the person time to speak. It may take a little longer for the person to collect her thoughts, but the extra time is worth it if the person feels that you care about what she has to say. Active listening takes practice. It means taking the time to really listen to what the other person has to say. This means listening not just to the words that the person says, but to the feelings that she expresses. It also means being alert as to the person\'s body language, facial expression, and nonverbal forms of communication.'); ?></p>
-      <h4><?php echo t('Be an astute observer.'); ?></h4>
-      <p><?php echo t('We can look for nonverbal cues, body language, or gestures to assist us in understanding what the person is feeling. The person who is fidgety and keeps looking at her watch may be saying, "I want to leave now," "How much longer will this take?" "I do not want to miss my television program," or even, "I really need to go to the bathroom!"'); ?></p>
-      <h4><?php echo t('Avoid challenging or correcting mistakes.'); ?></h4>
-      <p><?php echo t('No one likes to be corrected, particularly in front of other people. This reaction on our part may lead to embarrassment or anger in the other person.'); ?></p>
-      <h4><?php echo t('Maintain a sense of humor.'); ?></h4>
-      <p><?php echo t('This can be tricky! You want to be able to enjoy the humor in a situation without making the person with memory loss think you are laughing at him. But we can laugh together at some of the silly misunderstandings that we have, or at the situations in which we find ourselves. Memory loss is not funny, and many of the things that we experience as family or friends of people with memory loss can be very difficult. But there is still life after memory loss, and even laughter. Your sense of humor can help to keep you, and your family member, sane through this difficult journey.'); ?></p>
-      <p><?php echo t('Does anyone have an example or a story to share? (If not, give a personal example.)'); ?></p>
+      
+      <p class="forum"><?php echo t('On the forum please share an example or a story'); ?></p>
+      
+      <img src="<?php echo $this->getImagesUrl('msml/forum_icon.png'); ?>" alt="image">
+      
+      
+      
     </div>
     <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
   </div>
@@ -742,11 +759,13 @@ foreach(array(
         <li><?php echo t('Tone of voice'); ?></li>
         <li><?php echo t('Body language'); ?></li>
         <li><?php echo t('Facial expressions'); ?></li>
-        <li><?php echo t('Gestures'); ?></li>
       </ul>
-      <p><?php echo t('"It is often not what you say, but how you say it." As we discussed at the beginning of the lesson, nonverbal communication refers to the things that we do in addition to what we say. The most basic of these are tone of voice, body language, and facial expressions We are all familiar with the saying, "it is not what you say, but also how you say it." We have all had experiences where we were put off by a person\'s tone of voice or facial expression, even if what they said was not really all that offensive. Nonverbal communication can be very important when having conversation with people with memory loss. We are going to take a little time to discuss this, because it is so important.'); ?></p>
-      <h4><?php echo t('Nonverbal Communication'); ?></h4>
-      <ul>
+      <h5><?php echo t('"It is often not what you say, but how you say it."'); ?></h5>
+      <p><?php echo t('As we discussed at the beginning of the lesson, nonverbal communication refers to the things that we do in addition to what we say. The most basic of these are tone of voice, body language, and facial expressions We are all familiar with the saying, <i>"it is not what you say, but also how you say it."</i> We have all had experiences where we were put off by a person\'s tone of voice or facial expression, even if what they said was not really all that offensive. Nonverbal communication can be very important when having conversation with people with memory loss. We are going to take a little time to discuss this, because it is so important.'); ?></p>
+      <h5><?php echo t('Nonverbal Communication'); ?></h5>
+      
+      <p class="forum"><?php echo t('On the Forum, answer the following questions:'); ?></p>
+      <ul class="forum">
         <li><?php echo t('Can you think of times when someone’s nonverbal communication spoke louder than their words?'); ?></li>
         <li><?php echo t('Do you know anyone who “talks with their hands” or whose face is very expressive?'); ?></li>
         <li><?php echo t('What are some ways that nonverbal communication both enhances and detracts from conversations?'); ?></li>

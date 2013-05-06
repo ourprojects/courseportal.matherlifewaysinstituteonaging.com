@@ -28,6 +28,15 @@ foreach(array(
   <h1 class="bottom"><?php echo t($course->title); ?></h1>
 </div>
 <div id="sidebar">
+<div class="box-sidebar one" style="background-color:#FFF;">
+    <h3><?php echo t('Survey'); ?></h3>
+    <br />
+    <p><a href="#"><?php echo t('Intro to Caregiving Online Pre-Course Survey'); ?></a></p>
+    <p><a href="#"><?php echo t('Intro to Caregiving Online Post-Course Survey'); ?></a></p>
+    <p><a href="#"><?php echo t('Intro to Caregiving Online Post-Post Course Survey'); ?></a></p>
+    <p><a href="#"><?php echo t('Intro to Caregiving Online One-Year Survey'); ?></a></p>
+    <br />
+    <img src="<?php echo $this->getImagesUrl('msml/153075496.png'); ?>" alt="image"> </div>
   <div class="box-sidebar one">
     <h3><?php echo t('Caregiving and its challenges'); ?></h3>
     <img class="block-center" src="<?php echo $this->getImagesUrl('286x231_Grafix_Pie2-3.png'); ?>" />
@@ -63,7 +72,6 @@ foreach(array(
   ?>
   </ul>
   <h4><?php echo t('Course Lessons'); ?></h4>
-  <h5><a href="#"><?php echo t('Pre-Course Survey'); ?></a></h5>
   <ul>
     <li> <a href="#lesson-1-slide-1" data-fancybox-group="lesson-1" class="teal lesson-1"> <?php echo t('Defining, Describing & Understanding Caregiving'); ?> </a> <a href="#lesson-1-slide-2" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-3" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-4" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-5" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-6" data-fancybox-group="lesson-1" class="hide lesson-1"></a></li>
     <li> <a href="#lesson-2-slide-1" data-fancybox-group="lesson-2" class="teal lesson-2"> <?php echo t('Current Data, Trends & Research on US Caregivers'); ?> </a> <a href="#lesson-2-slide-2" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-3" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-4" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-5" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-6" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-7" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-8" data-fancybox-group="lesson-2" class="hide lesson-2"></a> </li>
@@ -71,7 +79,6 @@ foreach(array(
     <li> <a href="#lesson-4-slide-1" data-fancybox-group="lesson-4" class="teal lesson-4"> <?php echo t('Impact on the Workplace & the Economy'); ?> </a> <a href="#lesson-4-slide-2" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-3" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-4" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-5" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-6" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-7" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-8" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-9" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-10" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-11" data-fancybox-group="lesson-4" class="hide lesson-4"></a> </li>
     <li> <a href="#lesson-5-slide-1" data-fancybox-group="lesson-5" class="teal lesson-5"> <?php echo t('The Future of Caregiving in the US'); ?> </a> <a href="#lesson-5-slide-2" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-3" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-4" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-5" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-6" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-7" data-fancybox-group="lesson-5" class="hide lesson-5"></a> </li>
   </ul>
-  <h5><a href="#"><?php echo t('Post-Course Survey'); ?></a></h5>
   <h4> <?php echo t('Resources'); ?></h4>
   <p><?php echo t('Please use these listed resources in the completion of this online course. Pleaes contact your instructor or the program director if you have additional resources you would like to see added here.'); ?></p>
   <p><a href="http://www.alz.org" target="_blank">Alzheimer's Association</a></p>
