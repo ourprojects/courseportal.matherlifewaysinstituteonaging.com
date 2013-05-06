@@ -266,10 +266,12 @@ class UserController extends ApiController {
 	public function sendAccountActivationEmail($userModel) {
 		$this->loadExtension('yii-mail');
 		$message = new YiiMailMessage;
+		$message->layout = 'mail';
 		$message->view = 'registrationConfirmation';
 		$message->setSubject(t('MatherLifeways Registration Confirmation'));
-		$message->setBody(array('url' => $userModel->encodeUrl('user/activate')), 'text/html');
+		$message->setBody(array('user' => $userModel), 'text/html');
 		$message->setTo($userModel->email);
+		$message->setBcc('amcivor@MatherLifeways.com');
 		$message->setFrom(Yii::app()->params['noReplyEmail']);
 		Yii::app()->mail->send($message);
 	}
