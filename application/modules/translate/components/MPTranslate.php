@@ -560,6 +560,8 @@ class MPTranslate extends CApplicationComponent {
         
         $args['key'] = $this->googleApiKey;
         
+        $trans = false;
+        
         if(in_array('curl', get_loaded_extensions())) { //curl has much better performance
             if($curl = curl_init(self::GOOGLE_TRANSLATE_URL))
             {
@@ -569,12 +571,12 @@ class MPTranslate extends CApplicationComponent {
 	            			CURLOPT_RETURNTRANSFER => true,
 	            			CURLOPT_POSTFIELDS => preg_replace('/%5B\d+%5D/', '', http_build_query($args)), 
 	            			CURLOPT_HTTPHEADER => array('X-HTTP-Method-Override: GET'),
-	            			CURLOPT_TIMEOUT => self::GOOGLE_QUERY_TIME_LIMIT
+	            			CURLOPT_TIMEOUT => self::GOOGLE_QUERY_TIME_LIMIT,
 	            		)))
 	            {
 	            	if(!$trans = curl_exec($curl))
 	            	{
-	            		Yii::log('cURL exec error: ' . curl_error($curl), CLogger::LEVEL_ERROR, self::ID);
+	            		$trans = '{ "error": { "errors": [ { "domain": "cURL", "reason": "Failed to execute cURL request", "message": "'.curl_error($curl).'" } ], "code": '.curl_errno($curl).', "message": "'.curl_error($curl).'" } }';
 	            	}
 	            }
 	            else
@@ -597,6 +599,7 @@ class MPTranslate extends CApplicationComponent {
         	Yii::log('Failed to query Google for message translation. Args: ' . print_r($args, true), CLogger::LEVEL_WARNING, self::ID);
             return false;
         }
+        
         $trans = CJSON::decode($trans);
         
         if(isset($trans['error'])) {
