@@ -153,7 +153,7 @@ class MPTranslate extends CApplicationComponent {
 			if(($cache = Yii::app()->getCache()) === null || ($languages = $cache->get($cacheKey)) === false) {
 				$queryLanguages = $this->queryGoogle(array(), 'languages');
 				if($queryLanguages === false) {
-					Yii::log(TranslateModule::t('Failed to query Google\'s accepted languages.'));
+					Yii::log('Failed to query Google\'s accepted languages.', CLogger::LEVEL_ERROR, self::ID);
 					return false;
 				}
 				foreach($queryLanguages->languages as $language) {
@@ -266,8 +266,7 @@ class MPTranslate extends CApplicationComponent {
 	public function getLocaleDisplayName($id = null, $language = null, $category = 'language') {
 		$idMethod = 'get' . ucfirst(strtolower($category)) . 'ID';
 		if(!method_exists($this, $idMethod)) {
-			Yii::log(TranslateModule::t('Failed to query Yii locale DB. Possibly invalid category requested {category}', 
-					array('{category}' => $category)));
+			Yii::log('Failed to query Yii locale DB. Possibly invalid category requested: ' . $category, CLogger::LEVEL_ERROR, self::ID);
 			return false;
 		}
 		if(!isset($id))
@@ -290,8 +289,7 @@ class MPTranslate extends CApplicationComponent {
 				$idMethod = $method . 'ID';
 				$locale = Yii::app()->getLocale();
 				if(!method_exists($locale, $method) || !method_exists($locale, $idMethod)) {
-					Yii::log(TranslateModule::t('Failed to query Yii locale DB. Possibly invalid category requested {category}', 
-							array('{category}' => $category)));
+					Yii::log('Failed to query Yii locale DB. Possibly invalid category requested: ' . $category, CLogger::LEVEL_ERROR, self::ID);
 					return false;
 				}
 				foreach(CLocale::getLocaleIds() as $id) {
@@ -334,8 +332,7 @@ class MPTranslate extends CApplicationComponent {
         	$model->attributes = $attributes;
 
         	if(!$model->save()) {
-        		Yii::log(TranslateModule::t('Message {message} could not be added to messageSource table',
-        				array('{message}' => $attributes['message'])));
+        		Yii::log('Message "'.$attributes['message'].'" could not be added to messageSource table', CLogger::LEVEL_ERROR, self::ID);
         		return false;
         	}
 
@@ -372,15 +369,12 @@ class MPTranslate extends CApplicationComponent {
         				return true;
         			}
 
-        			Yii::log(TranslateModule::t('Translation {translation} could not be added to message table',
-        					array('{translation}' => $attributes['translation'])));
+        			Yii::log('Translation "'.$attributes['translation'].'" could not be added to message table', CLogger::LEVEL_ERROR, self::ID);
         		} else {
-        			Yii::log(TranslateModule::t('Message {message} could not be translated by Google translate.',
-        					array('{message}' => $event->message)));
+        			Yii::log('Message "'.$event->message.'" could not be translated by Google translate.', CLogger::LEVEL_ERROR, self::ID);
         		}
         	} else {
-        		Yii::log(TranslateModule::t('A translation for message {message} could not be found.',
-        				array('{message}' => $event->message)));
+        		Yii::log('A translation for message "'.$event->message.'" could not be found.', CLogger::LEVEL_WARNING, self::ID);
         	}
         } else {
         	$event->message = $messageModel->translation;
@@ -548,7 +542,7 @@ class MPTranslate extends CApplicationComponent {
     				$translated[] = $translation->translatedText;
     		}
     	}
-    	
+
     	return $translated;
     }
 
@@ -564,33 +558,55 @@ class MPTranslate extends CApplicationComponent {
         if(empty($this->googleApiKey))
             throw new CException(TranslateModule::t('You must provide your google api key in option googleApiKey'));
         
-        set_time_limit(self::GOOGLE_QUERY_TIME_LIMIT);
-        
         $args['key'] = $this->googleApiKey;
         
         if(in_array('curl', get_loaded_extensions())) { //curl has much better performance
-            $curl = curl_init(self::GOOGLE_TRANSLATE_URL);
-            curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-            curl_setopt($curl, CURLOPT_POSTFIELDS, preg_replace('/%5B\d+%5D/', '', http_build_query($args)));
-            curl_setopt($curl, CURLOPT_HTTPHEADER, array('X-HTTP-Method-Override: GET'));
-            $trans = curl_exec($curl);
-            curl_close($curl);
+            if($curl = curl_init(self::GOOGLE_TRANSLATE_URL))
+            {
+	            if(curl_setopt_array(
+	            	$curl, 
+	            	array(
+	            			CURLOPT_RETURNTRANSFER => true,
+	            			CURLOPT_POSTFIELDS => preg_replace('/%5B\d+%5D/', '', http_build_query($args)), 
+	            			CURLOPT_HTTPHEADER => array('X-HTTP-Method-Override: GET'),
+	            			CURLOPT_TIMEOUT => self::GOOGLE_QUERY_TIME_LIMIT
+	            		)))
+	            {
+	            	if(!$trans = curl_exec($curl))
+	            	{
+	            		Yii::log('cURL exec error: ' . curl_error($curl), CLogger::LEVEL_ERROR, self::ID);
+	            	}
+	            }
+	            else
+	            {
+	            	Yii::log('Failed to set cURL options.', CLogger::LEVEL_ERROR, self::ID);
+	            }
+	            curl_close($curl);
+            }
+            else
+            {
+            	Yii::log('Failed to initialize cURL.', CLogger::LEVEL_ERROR, self::ID);
+            }
         } else {
+        	Yii::log('cURL extension not found. Falling back to file_get_contents() to read Google translation query response.', CLogger::LEVEL_INFO, self::ID);
             $trans = file_get_contents($url);
         }
-        
+
         if(!$trans)
+        {
+        	Yii::log('Failed to query Google for message translation. Args: ' . print_r($args, true), CLogger::LEVEL_WARNING, self::ID);
             return false;
-        $trans = json_decode($trans);
+        }
+        $trans = CJSON::decode($trans);
         
-        if(isset($trans->error)) {
-            Yii::log('Google translate error:'.$trans->error->code.'. '.$trans->error->message, CLogger::LEVEL_ERROR,'translate');
+        if(isset($trans['error'])) {
+            Yii::log('Google translate error: '.$trans['error']['code'].'. '.$trans['error']['message'], CLogger::LEVEL_ERROR, self::ID);
             return false;
-        } elseif(!isset($trans->data)) {
-            Yii::log('Google translate error:'.print_r($trans, true), CLogger::LEVEL_ERROR,'translate');
+        } elseif(!isset($trans['data'])) {
+            Yii::log('Google translate error: '.print_r($trans, true), CLogger::LEVEL_ERROR, self::ID);
             return false;
         } else {
-            return $trans->data;
+            return $trans['data'];
         }
     }
     
