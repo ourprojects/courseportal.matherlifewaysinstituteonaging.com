@@ -8,6 +8,10 @@ $this->widget('zii.widgets.grid.CGridView', array(
 	'filter' => $searchModel,
 	'columns' => array(
         'id', 'group', 'email', 'name', 'firstname', 'lastname', 'location', 'country', 'created', 'last_login', 'last_ip',
+		array(
+				'name' => 'activated',
+				'value' => '$data->activated === null ? "No" : $data->activated->date'
+		),
         array(
             'class' => 'CButtonColumn',
             'template' => '{view}{delete}',

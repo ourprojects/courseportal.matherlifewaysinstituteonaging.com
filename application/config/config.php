@@ -1,21 +1,21 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed');  
 
-// uncomment the following to define a path alias
-// Yii::setPathOfAlias('local','path/to/local-folder');
-
-// This is the main Web application configuration. Any writable
-// CWebApplication properties can be configured here.
+// This is the main Web application configuration.
 
 return array(
 		'basePath' => APPPATH,
 		'name' => 'Online Course Portal',
 		'sourceLanguage' => 'en_us',
 		'charset' => 'UTF-8',
+		'defaultController' => 'home',
+		'theme' => 'onlinecourseportal',
 
-		// preloading 'log' component
-		'preload' => array('log'),
+		// preloaded components
+		'preload' => array(
+				'log'
+		),
 
-		// autoloading model, component and form classes
+		// autoloaded files
 		'import' => array(
 				'application.core.*',
 				'application.models.db.*',
@@ -27,6 +27,7 @@ return array(
 				'modules.translate.*',
 		),
 		
+		// configured modules
 		'modules' => array(
 			/*'gii'=>array(
 		        'class'=>'system.gii.GiiModule',
@@ -37,9 +38,13 @@ return array(
 			'translate',
 			'surveyor',
 		),
-
-		'defaultController' => 'home',
-		'theme' => 'onlinecourseportal',
+		
+		'config' => array(
+				'debug' => array(
+						'level' => E_ALL,
+						'yiiTraceLevel' => 3,
+				),
+		),
 
 		// application components
 		'components' => array(
@@ -95,6 +100,13 @@ return array(
 						'loginUrl' => array('user/login')
 				),
 				
+				'session' => array(
+						'class' => 'DbHttpSession',
+						'connectionID' => 'db',
+						'autoCreateSessionTable' => defined('YII_DEBUG'),
+						'sessionTableName' => '{{yii_session}}'
+				),
+				
 				'phpBB' => array(
 						'class' => 'phpbb.extensions.phpBB.phpBB',
 						'path' => 'webroot.forum',
@@ -105,7 +117,7 @@ return array(
 						'class' => 'ext.yii-mail.YiiMail',
 						'transportType' => 'php',
 						'viewPath' => 'application.views.mail',
-						'logging' => true,
+						'logging' => defined('YII_DEBUG'),
 						'dryRun' => false,
 				),
 				
@@ -122,6 +134,7 @@ return array(
 				),
 				
 				'db' => require('db.php'),
+				
 				'forumDb' => require('dbPhpBB.php'),
 				
 				'urlManager' => array(
@@ -138,30 +151,19 @@ return array(
 								array(
 										'class' => 'CFileLogRoute',
 										'except' => 'system.db.*',
-										'logFile' => 'application.log'
+										'logFile' => 'application.log',
+										'levels' => defined('YII_DEBUG') ? '' : 'error, warning',
 								),
 								// DB logging
 								array(
 										'class' => 'CFileLogRoute',
 										'categories' => 'system.db.*',
 										'logFile' => 'db.log',
-								),
-								// phpBB logging
-								array(
-										'class' => 'CFileLogRoute',
-										'categories' => 'phpBB',
-										'logFile' => 'phpbb.log'
+										'levels' => defined('YII_DEBUG') ? '' : 'error, warning',
 								),
 						),
 				),
 
-		),
-		
-		'config' => array(
-				'debug' => array(
-						'level' => E_ALL,
-						'yiiTraceLevel' => 3,
-				),
 		),
 		
 		'params' => require('params.php'),

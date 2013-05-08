@@ -1,17 +1,20 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed');  
 
-$params = array();
+return array(
+		'userModelClassName' => 'CPUser',
+		'title' => 'Mather LifeWays Institute on Aging Online Course Portal',
+		'adminEmail' => 'admin@courseportal.matherlifewaysinstituteonaging.com',
+		'supportEmail' => 'support@courseportal.matherlifewaysinstituteonaging.com',
+		'noReplyEmail' => 'NO-REPLY@courseportal.matherlifewaysinstituteonaging.com',
+		
+		'googleAnalytics' => array(
+					'accountID' => 'UA-36363866-1',
+				),
+		
+		'reCaptcha' => array(
+					'privateKey' => '6LfoftgSAAAAAA0U102uNfbQ-FmJraQ1-PahYn5h',
+					'publicKey' => '6LfoftgSAAAAADPNNNQh_50aIjqXayHiEy3uqOwk'
+				)
+);
 
-$params['userModelClassName'] = 'CPUser';
-$params['title'] = 'Mather LifeWays Institute on Aging Online Course Portal';
-$params['adminEmail'] = 'admin@courseportal.matherlifewaysinstituteonaging.com';
-$params['supportEmail'] = 'support@courseportal.matherlifewaysinstituteonaging.com';
-$params['noReplyEmail'] = 'NO-REPLY@courseportal.matherlifewaysinstituteonaging.com';
-
-$params['googleAnalytics']['accountID'] = 'UA-36363866-1';
-
-$params['reCaptcha']['privateKey'] = '6LfoftgSAAAAAA0U102uNfbQ-FmJraQ1-PahYn5h';
-$params['reCaptcha']['publicKey'] = '6LfoftgSAAAAADPNNNQh_50aIjqXayHiEy3uqOwk';
-
-return $params;
 ?>

@@ -1,18 +1,28 @@
-<?php
+<?php defined('BASEPATH') or exit('No direct script access allowed');
 
-$dbConf = array();
-
-$dbConf['connectionString'] = 'mysql:host=localhost;dbname=courseportal_development';
-$dbConf['emulatePrepare'] = true;
-$dbConf['username'] = 'c145190-h2227182';
-$dbConf['password'] = 'Mj93f6d42b!';
-$dbConf['charset'] = 'utf8';
-$dbConf['tablePrefix'] = 'onlinecourseportal_';
-
-// DB profiling and logging
-$dbConf['enableProfiling'] = true;
-$dbConf['enableParamLogging'] = true;
-
-return $dbConf;
+if(defined('YII_DEBUG'))
+{
+	return array(
+			'connectionString' => 'mysql:host=localhost;dbname=courseportal_development',
+			'emulatePrepare' => true,
+			'username' => 'c145190-h2227182',
+			'password' => 'Mj93f6d42b!',
+			'charset' => 'utf8',
+			'tablePrefix' => 'onlinecourseportal_',
+			'enableProfiling' => true,
+			'enableParamLogging' => true);
+}
+else 
+{
+	return array(
+			'connectionString' => 'mysql:host=localhost;dbname=courseportal',
+			'emulatePrepare' => true,
+			'username' => 'c145190-h222718',
+			'password' => 'Mj93f6d42b!',
+			'charset' => 'utf8',
+			'tablePrefix' => 'onlinecourseportal_',
+			'enableProfiling' => false,
+			'enableParamLogging' => false);
+}
 
 ?>

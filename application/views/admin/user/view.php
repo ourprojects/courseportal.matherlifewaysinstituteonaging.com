@@ -15,6 +15,9 @@ $this->breadcrumbs = array(
   			<th><?php echo t('User Since:'); ?></th><td><?php echo $user->created; ?></td>
   		</tr>
   		<tr>
+  			<th><?php echo t('Activated:'); ?></th><td><?php echo $user->activated === null ? 'No' : $user->activated->date; ?></td>
+  		</tr>
+  		<tr>
   			<th><?php echo t('Last Seen:'); ?></th><td><?php echo $user->last_login; ?></td>
   		</tr>
   		<tr>

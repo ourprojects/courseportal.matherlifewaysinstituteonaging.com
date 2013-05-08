@@ -30,7 +30,7 @@ $clientScript->registerCssFile($this->getStylesUrl('homeUser.css'));
   </div>
   <div class="box-sidebar four">
     <h3><a href="http://feeds.feedburner.com/pewresearch/internetandtechnology" target="_blank">Pew Research (USA)</a></h3>
-    <img class="block-center" src="<?php echo $this->getImagesUrl('pew.png'); ?>" />
+    <img src="<?php echo $this->getImagesUrl('pew.png'); ?>" />
     <p><?php echo t('As of April 2012, 53% of American adults age 65 and older use the internet or email. 
 			Though these adults are still less likely than all other age groups to use the internet, 
 			the latest data represent the first time that half of seniors are going online. After 
@@ -39,14 +39,14 @@ $clientScript->registerCssFile($this->getStylesUrl('homeUser.css'));
   </div>
   <div class="box-sidebar one">
     <h3><?php echo t('Alzheimer\'s Assocation (USA)'); ?></h3>
-    <img class="block-center" src="<?php echo $this->getImagesUrl('partners/alz.png'); ?>" />
+    <img src="<?php echo $this->getImagesUrl('partners/alz.png'); ?>" />
     <p><?php echo t('There are 10 warning signs of Alzheimer\'s. If you or someone you know is experiencing 
 			any of the signs, please see a doctor. Early diagnosis gives you a chance to seek treatment and plan for the future.'); ?></p>
     <p><a href="http://www.alz.org/national/documents/checklist_10signs.pdf" class="pdf"><?php echo t('Click to download the handout (English)'); ?></a></p>
   </div>
   <div class="box-sidebar two">
     <h3 class="two-line"><?php echo t('Medicare.gov - Tips &amp; Resources for Caregivers (USA)'); ?></h3>
-    <img class="block-center" src="<?php echo $this->getImagesUrl('medicare.png'); ?>" />
+    <img src="<?php echo $this->getImagesUrl('medicare.png'); ?>" />
     <p><?php echo t('Are you familar and/or have you visited the Medicare website? 
 			The handout below is a list of tips and resources for caregivers as suggested by Medicare.'); ?></p>
     <p><a href="http://www.medicare.gov/files/ask-medicare-what-medicare-covers.pdf" class="pdf"> <?php echo t('Click to download the handout (English)'); ?></a></p>

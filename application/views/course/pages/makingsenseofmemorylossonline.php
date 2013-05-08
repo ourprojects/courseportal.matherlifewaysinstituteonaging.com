@@ -14,7 +14,7 @@ foreach(array(
 			'ext.fancybox.EFancyBox',
 			array('id' => $lesson,
 				  'config' => array('width' => '720',
-									'height' => '95%',
+									'height' => '1000',
 									'arrows' => false,
 									'autoSize' => false,
 									'mouseWheel' => false))
@@ -64,7 +64,7 @@ foreach(array(
 <div class="column-wide">
   <h2 class="flowers"><?php echo t($course->title); ?></h2>
   <p><?php echo t($course->description); ?></p>
-  <h5><?php echo t('Access - 1 year / Completion - 8 weeks (recommended)'); ?></h5>
+  <h5><?php echo t('Access - 1 year / Completion - 5 weeks (recommended)'); ?></h5>
   <h4><?php echo t('Objectives'); ?></h4>
   <ul>
     <?php 
@@ -80,26 +80,26 @@ foreach(array(
     <li> <a href="#lesson-4-slide-1" data-fancybox-group="lesson-4" class="teal lesson-4"> <?php echo t('Planning for the Future'); ?></a> <a href="#lesson-4-slide-2" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-3" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-4" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-5" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-6" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-7" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-8" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-9" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-10" data-fancybox-group="lesson-4" class="hide lesson-4"></a></li>
     <li> <a href="#lesson-5-slide-1" data-fancybox-group="lesson-5" class="teal lesson-5"> <?php echo t('Effective Ways of Coping'); ?></a> <a href="#lesson-5-slide-2" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-3" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-4" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-5" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-6" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-7" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-8" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-9" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-10" data-fancybox-group="lesson-5" class="hide lesson-5"></a></li>
   </ul>
-  <h4> <?php echo t('Resources'); ?></h4>
-  <p><?php echo t('Please use these listed resources in the completion of this online course. Pleaes contact your instructor or the program director if you have additional resources you would like to see added here.'); ?></p>
-  <p><a href="http://www.alz.org" target="_blank">Alzheimer's Association</a></p>
-  <p><a href="http://www.nih.gov" target="_blank">National Intitute on Health (NIH)</a></p>
-  <p><a href="http://pewinternet.org" target="_blank">Pew Internet &amp; American Life Project</a></p>
-  <br />
-  <br />
-  <div class="box-white">
-    <div id="developers">
-      <h4><?php echo t('Facilitators &amp; Course Developers'); ?></h4>
-      <h5><?php echo t('Content Designer:'); ?></h5>
-      <p><a href="http://matherlifewaysinstituteonaging.com" target="_blank">Mather LifeWays Institute on Aging</a><br />
-        <?php echo t('Through research-based programs and innovative techniques, Mather LifeWays Institute on Aging is committed to advancing the field of geriatric care. Cutting-edge research lays the foundation for our solid solutions to senior care challenges, including recruitment, mentorship, training, and retention. Used by individuals and entire organizations, our nationally recognized, award-winning programs include training modules, online courses, toolkits, and learning modules designed to make learning fun and easy. Our programs have been shown to result in measurable improvements in the quality of care provided and workforce retention.'); ?></p>
-      <p><a href="http://www.alz.org/illinois/" target="_blank">Greater Illinois Chapter | Alzheimer's Association</a><br />
-        <?php echo t('The Alzheimer’s Association, Greater Illinois Chapter serves 68 counties in Illinois with offices in Bloomington, Carbondale, Chicago, Joliet, Rockford and Springfield. Since 1980, the Chapter has provided reliable information and care consultation; created supportive services for families; increased funding for dementia research; and influenced public policy changes. Today, the Greater Illinois Chapter serves the more than a half million Illinois residents affected by Alzheimer’s disease throughout our chapter area, including 210,000 people with the disease.'); ?></p>
-      <h5><?php echo t('Course Developer: '); ?><a href="mailto:jwoodall@matherlifeways.com">Jon Woodall</a></h5>
-      <p><?php echo t('Mr. Woodall is responsible for all MLIA corporate workforce wellness programs related to design, implementation, publication, and evaluation. Additionally, he seeks new grant funding to support or extend current grants related to corporate workforce wellness programs. '); ?> </p>
-      <h5><?php echo t('Facilitator: '); ?><a href="mailto:eziegemeier@yahoo.com">Ellen Ziegemeier</a></h5>
-      <p><?php echo t('Ms. Ziegemeier has been facilitating online courses for Mather LifeWays Institute on Aging since 2004. She earned her Masters in Anthropology, and has worked locally and abroad -  Latin America and South America for various aging services. She is fluent in English and Spanish, and has a strong passion for caregiver training. '); ?> </p>
-    </div>
+  <div class="box-white" id="resources">
+    <h4> <?php echo t('Resources'); ?></h4>
+    <p><?php echo t('Please use these listed resources in the completion of this online course. Please contact your instructor or the program director if you have additional resources you would like to see added here.'); ?></p>
+    <ul>
+      <li><a href="http://www.alz.org" target="_blank">Alzheimer's Association</a></li>
+      <li><a href="http://www.nih.gov" target="_blank">National Intitute on Health (NIH)</a></li>
+      <li><a href="http://pewinternet.org" target="_blank">Pew Internet &amp; American Life Project</a></li>
+    </ul>
+  </div>
+  <div class="box-white" id="developers">
+    <h4><?php echo t('Facilitators &amp; Course Developers'); ?></h4>
+    <h5><?php echo t('Content Designer:'); ?></h5>
+    <p><a href="http://matherlifewaysinstituteonaging.com" target="_blank">Mather LifeWays Institute on Aging</a><br />
+      <?php echo t('Through research-based programs and innovative techniques, Mather LifeWays Institute on Aging is committed to advancing the field of geriatric care. Cutting-edge research lays the foundation for our solid solutions to senior care challenges, including recruitment, mentorship, training, and retention. Used by individuals and entire organizations, our nationally recognized, award-winning programs include training modules, online courses, toolkits, and learning modules designed to make learning fun and easy. Our programs have been shown to result in measurable improvements in the quality of care provided and workforce retention.'); ?></p>
+    <p><a href="http://www.alz.org/illinois/" target="_blank">Greater Illinois Chapter | Alzheimer's Association</a><br />
+      <?php echo t('The Alzheimer’s Association, Greater Illinois Chapter serves 68 counties in Illinois with offices in Bloomington, Carbondale, Chicago, Joliet, Rockford and Springfield. Since 1980, the Chapter has provided reliable information and care consultation; created supportive services for families; increased funding for dementia research; and influenced public policy changes. Today, the Greater Illinois Chapter serves the more than a half million Illinois residents affected by Alzheimer’s disease throughout our chapter area, including 210,000 people with the disease.'); ?></p>
+    <span class="h5"><?php echo t('Course Developer: '); ?></span><span class="name">Jon Woodall</span>
+    <p><?php echo t('Mr. Woodall is responsible for all MLIA corporate workforce wellness programs related to design, implementation, publication, and evaluation. Additionally, he seeks new grant funding to support or extend current grants related to corporate workforce wellness programs. '); ?> </p>
+    <span class="h5"><?php echo t('Facilitator: '); ?></span><span class="name">Ellen Ziegemeier</span>
+    <p><?php echo t('Ms. Ziegemeier has been facilitating online courses for Mather LifeWays Institute on Aging since 2004. She earned her Masters in Anthropology, and has worked locally and abroad -  Latin America and South America for various aging services. She is fluent in English and Spanish, and has a strong passion for caregiver training. '); ?> </p>
   </div>
 </div>
 
@@ -577,9 +577,7 @@ foreach(array(
       <div class="content">
         <h2 class="flowers"><?php echo t('Communication Strategies'); ?></h2>
         <hr />
-        
         <img src="<?php echo $this->getImagesUrl('msml/135810412.png'); ?>" alt="image">
-        
         <h4><?php echo t('Lesson Objectives:'); ?></h4>
         <ul>
           <li><?php echo t('To give an overview of communication changes typical in early memory loss.'); ?></li>
@@ -595,7 +593,6 @@ foreach(array(
         <h2 class="flowers"><?php echo t('Welcome Back!'); ?></h2>
         <hr />
         <img src="<?php echo $this->getImagesUrl('msml/135545925.png'); ?>" alt="image">
-        
         <p><?php echo t('Welcome to the second lesson of MSML Online. One of the more frustrating and difficult aspects of memory loss is that the person\'s ability to communicate may be compromised. In this section, we will discuss how to adapt to these changes. We will cover these general topics and get into specifics along the way.'); ?></p>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
@@ -611,9 +608,7 @@ foreach(array(
         <li><?php echo t('Ways to encourage verbal expression'); ?></li>
         <li><?php echo t('Avoiding communication pitfalls'); ?></li>
       </ul>
-      
       <h5 style="text-align:center;"><?php echo t('"What we see depends upon where we sit."'); ?></h5>
-      
       <p><?php echo t('This quote speaks to the fact that your perception is crucial in making necessary accommodations to the challenges of caring for someone with memory loss. It also speaks to the fact that your relative often sees things in a much different way than you do. This is important to remember as we discuss the memory changes your family member may be experiencing and how this may affect his/her ability to communicate.'); ?></p>
       <img src="<?php echo $this->getImagesurl('msml/2012693_f260.jpg'); ?>" alt="image">
       <p><?php echo t('Do you see the old woman or the young woman in this drawing? Can you see both women?'); ?></p>
@@ -668,22 +663,19 @@ foreach(array(
         <li><?php echo t('Episodic memory'); ?></li>
         <li><?php echo t('Procedural memory'); ?></li>
       </ul>
-      
-        <p><?php echo t('Search the Alzheimer\'s Association <a href="http://www.alz.org" target="_blank">website</a> for examples and greater explanations on each of these topics listed above.'); ?></p>
-      
+      <p><?php echo t('Search the Alzheimer\'s Association <a href="http://www.alz.org" target="_blank">website</a> for examples and greater explanations on each of these topics listed above.'); ?></p>
       <p><?php echo t('It is important to understand the different types of memory, so that we can see how impairment in these may affect one\'s ability to communicate. Note that people with early stage memory loss tend to have more problems with working and short term memory than with long term, episodic and procedural memory. When having a conversation with someone with memory loss, it is important to remember that they may have difficulty recalling recent events or may need more time to retrieve the information. Next, we are going to look at some of the changes that may occur with communication as memory becomes impaired.'); ?></p>
-        <div id="question1" class="question">
-          <p><b><?php echo t('Short-term memory is the information we are currently aware of or thinking about.'); ?></b>
-            <select>
-              <option selected="selected" value="select"> <?php echo t('Select'); ?> </option>
-              <option value="1"> <?php echo t('True'); ?> </option>
-              <option value="0"> <?php echo t('False') ?> </option>
-            </select>
-          </p>
-          <p class="right-answer hide"> <?php echo t('Correct!'); ?> </p>
-          <p class="wrong-answer hide"> <?php echo t('Please understand these various types of memory before moving forward.') ?> </p>
-        </div>
-      
+      <div id="question1" class="question">
+        <p><b><?php echo t('Short-term memory is the information we are currently aware of or thinking about.'); ?></b>
+          <select>
+            <option selected="selected" value="select"> <?php echo t('Select'); ?> </option>
+            <option value="1"> <?php echo t('True'); ?> </option>
+            <option value="0"> <?php echo t('False') ?> </option>
+          </select>
+        </p>
+        <p class="right-answer hide"> <?php echo t('Correct!'); ?> </p>
+        <p class="wrong-answer hide"> <?php echo t('Please understand these various types of memory before moving forward.') ?> </p>
+      </div>
     </div>
     <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
   </div>
@@ -699,11 +691,8 @@ foreach(array(
       <p><?php echo t('Word finding refers to that "tip of the tongue" phenomenon that we all experience from time to time. We know what we want to say but just cannot find the word right away. People who have memory loss experience this phenomenon to a degree that it interferes with their ability to communicate.'); ?></p>
       <p><?php echo t('Comprehension often becomes impaired. The person may have a difficult time tracking conversations or following instructions that have more than one step to them. The person with memory loss is more likely to digress during conversations – jumping from the original topic to another, related one. Once the person digresses, they may have a difficult time remembering the original topic of conversation; they may get "off track" easily. Because of changes in memory, it is also common for the person with memory loss to repeat himself/herself because he or she may forget what has already been said.'); ?></p>
       <p><?php echo t('Reading and writing may be affected. The person may have difficulty in understanding written material, or may not be able to communicate clearly in writing.'); ?></p>
-     
       <p class="forum"><?php echo t('Has anyone started to notice communication challenges with your relative? Please describe your observations on the Forum.'); ?></p>
-            <img src="<?php echo $this->getImagesUrl('msml/forum_icon.png'); ?>" alt="image">
-
-    </div>
+      <img src="<?php echo $this->getImagesUrl('msml/forum_icon.png'); ?>" alt="image"> </div>
     <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
   </div>
   <div id="lesson-2-slide-8" class="course-slide">
@@ -722,12 +711,9 @@ foreach(array(
       <p><?php echo t('Has anyone here had the experience of burning something on the stove or the oven?'); ?></p>
       <p><?php echo ('If you do something wrong like that, others tend to write it off to having a bad day or being distracted, right? But if a person with memory loss does the same thing, it is looked at differently – and the person may no longer be allowed to cook. The stakes are much higher, so the fear of making mistakes is greater. You may need to adjust to this by giving the person with memory loss more time to do things, and be as patient as possible.'); ?></p>
       <h5><?php echo t('Attention problem that may appear to be hearing loss'); ?></h5>
-	  
-	  <p><?php echo t('People who are distracted or who have difficulty concentrating may sometimes miss bits and pieces of a conversation. This may sometimes make it seem as though the person has a hearing problem when in fact this is not the case. On the other hand, do not rule out hearing loss as a possible issue if the person is having problems hearing when the conversation is happening in a place with few distractions.'); ?></p>
+      <p><?php echo t('People who are distracted or who have difficulty concentrating may sometimes miss bits and pieces of a conversation. This may sometimes make it seem as though the person has a hearing problem when in fact this is not the case. On the other hand, do not rule out hearing loss as a possible issue if the person is having problems hearing when the conversation is happening in a place with few distractions.'); ?></p>
       <p class="forum"><?php echo t('So, what can we do to help overcome these challenges?'); ?></p>
-      
-      <img src="<?php echo $this->getImagesUrl('msml/forum_icon.png'); ?>" alt="image">
-    </div>
+      <img src="<?php echo $this->getImagesUrl('msml/forum_icon.png'); ?>" alt="image"> </div>
     <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
   </div>
   <div id="lesson-2-slide-9" class="course-slide">
@@ -741,14 +727,8 @@ foreach(array(
       <p><?php echo t('This may seem obvious, but we do not always do this. Think about times when you have had one sided conversations with family or friends whose attention was divided between what you were saying and what they were doing – watching a game on TV, reading the newspaper, concentrating on driving, etc. Or perhaps you have been in the situation where you were busy with a task and were not able to give someone else your undivided attention. This is even more important when having a conversation with a person with memory loss, who can be easily distracted.'); ?></p>
       <h5><?php echo t('Give reassurance.'); ?></h5>
       <p><?php echo t('Sometimes the person with memory loss may feel embarrassed at his communication problems. He may get lost in the middle of a conversation, not be able to remember the word he is looking for, or have a difficult time comprehending what you are telling him. As frustrating as this may be for you, it is even more frustrating for the person experiencing the problems. At times like these, reassurances like, "I know this must be hard for you" or even a statement like "I am not sure what you are trying to say, but please know that I will help you any way I can" may help to calm the person and make them feel that you do understand him, even if you do not understand his words at that moment.'); ?></p>
-      
       <p class="forum"><?php echo t('On the forum please share an example or a story'); ?></p>
-      
-      <img src="<?php echo $this->getImagesUrl('msml/forum_icon.png'); ?>" alt="image">
-      
-      
-      
-    </div>
+      <img src="<?php echo $this->getImagesUrl('msml/forum_icon.png'); ?>" alt="image"> </div>
     <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
   </div>
   <div id="lesson-2-slide-10" class="course-slide">
@@ -763,7 +743,6 @@ foreach(array(
       <h5><?php echo t('"It is often not what you say, but how you say it."'); ?></h5>
       <p><?php echo t('As we discussed at the beginning of the lesson, nonverbal communication refers to the things that we do in addition to what we say. The most basic of these are tone of voice, body language, and facial expressions We are all familiar with the saying, <i>"it is not what you say, but also how you say it."</i> We have all had experiences where we were put off by a person\'s tone of voice or facial expression, even if what they said was not really all that offensive. Nonverbal communication can be very important when having conversation with people with memory loss. We are going to take a little time to discuss this, because it is so important.'); ?></p>
       <h5><?php echo t('Nonverbal Communication'); ?></h5>
-      
       <p class="forum"><?php echo t('On the Forum, answer the following questions:'); ?></p>
       <ul class="forum">
         <li><?php echo t('Can you think of times when someone’s nonverbal communication spoke louder than their words?'); ?></li>

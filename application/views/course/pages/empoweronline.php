@@ -29,20 +29,18 @@ foreach(array(
 <!-- Start sidebar here -->
 
 <div id="sidebar"> 
-  
-  <!-- sidebar #1 here -->
-  <div class="box-sidebar one">
-    <h3><?php echo t('Pre-Course Survey'); ?></h3>
+ <div class="box-sidebar one" style="background-color:#FFF;">
+    <h3><?php echo t('Survey'); ?></h3>
     <br />
-    <p><?php echo t('Please complete the Pre-Course Survey before beginning this course. Your response are anonymous and are used to help improve your experience.'); ?></p>
-    <a href="<?php echo $this->createUrl('user/profile'); ?>" target="_self" /><img class="block-center" width="64" height="76" src="<?php echo $this->getImagesUrl('survey_icon2.png'); ?>" alt="" /></a>
-    <hr />
-    <p id="surveynotify"><?php echo t('Complete the<br />Pre-Course Survey'); ?></p>
+    <p><a href="#"><?php echo t('Empower Online Pre-Course Survey'); ?></a></p>
+    <p><a href="#"><?php echo t('Empower Online Post-Course Survey'); ?></a></p>
+    <p><a href="#"><?php echo t('Empower Online Post-Post Course Survey'); ?></a></p>
+    <p><a href="#"><?php echo t('Empower Online One-Year Survey'); ?></a></p>
     <br />
-  </div>
+    <img src="<?php echo $this->getImagesUrl('msml/153075496.png'); ?>" alt="image"> </div>
   
   
-  <!-- sidebar #2 here -->
+  
   
   <div class="box-sidebar one">
     <h3>Alzheimer's Association: behaviors</h3>
@@ -54,11 +52,10 @@ foreach(array(
     <br />
   </div>
   
-  <!-- sidebar #4 here -->
   
   <div class="box-sidebar three">
     <h3><?php echo t('Caregivers\' Resources'); ?></h3>
-    <p> <a href="http://www.usa.gov/Citizen/Topics/Health/caregivers.shtml#Government_Benefits" target="_blank"> <img class="block-center" src="<?php echo $this->getImagesUrl('usagov_logo.gif'); ?>" /> </a> </p>
+    <p><a href="http://www.usa.gov/Citizen/Topics/Health/caregivers.shtml#Government_Benefits" target="_blank"><img src="<?php echo $this->getImagesUrl('usagov_logo.gif'); ?>" alt="image"></a> </p>
     <hr />
     <p><?php echo t('Find a nursing home, assisted living, or hospice; check your eligibility for benefits; get resources for long-distance caregiving; review legal issues; and find support for caregivers. (English)'); ?></p>
     <br />
@@ -72,6 +69,7 @@ foreach(array(
 <div class="column-wide">
   <h2 class="flowers"><?php echo t($course->title); ?></h2>
   <p><?php echo t($course->description); ?></p>
+   <h5><?php echo t('Access - 1 year / Completion - 5 weeks (recommended)'); ?></h5>
   <h4><?php echo t('Objectives'); ?></h4>
   <ul>
     <?php 
@@ -202,39 +200,14 @@ foreach(array(
   </li>
  
 </ul>
-  <br />
-  <br />
-  <div class="box-white">
-    <h4><?php echo t('Length'); ?></h4>
-    <h5><?php echo t('Participant Access'); ?></h5>
-    <p><?php echo t('You will have access for one-year from the day you registered.'); ?></p>
-    <h5><?php echo t('Recommended Completion'); ?></h5>
-    <p><?php echo t('This course was designed to be completed within five weeks.'); ?></p>
-  </div>
+ 
+
   
-   <div class="box-white">
-    <h4><?php echo t('Key'); ?></h4>
-    <p><?php echo t('The will need access to the following applications to participate in this course.'); ?></p>
-    <br />
-    <table width="100%" border="0">
-      <tr>
-        <td width="20%"><?php echo t('Word Processor'); ?><br />
-          <img width="64" height="64" src="<?php echo $this->getImagesUrl('word.png'); ?>" alt="<?php echo t('Word Processor'); ?>" /></td>
-        <td width="20%"><?php echo t('Spreadsheet Processor'); ?><br />
-          <img width="64" height="64" src="<?php echo $this->getImagesUrl('spreadsheet.png'); ?>" alt="<?php echo t('Spreadsheet Processor'); ?>" /></td>
-        <td width="20%"><?php echo t('Email Client'); ?><br />
-          <img width="64" height="64" src="<?php echo $this->getImagesUrl('email.png'); ?>" alt="<?php echo t('Email Client'); ?>" /></td>
-        <td width="20%"><?php echo t('Adobe Reader'); ?><br />
-          <img width="64" height="64" src="<?php echo $this->getImagesUrl('pdf-icon.png'); ?>" alt="<?php echo t('Adobe Reader'); ?>" /></td>
-        <td width="20%"><?php echo t('You Tube'); ?><br />
-          <img width="64" height="64" src="<?php echo $this->getImagesUrl('YouTubeIcon.png'); ?>" alt="<?php echo t('You Tube'); ?>" /></td>
-      </tr>
-    </table>
-  </div>
+  
   
   <!-- Resources div white box here -->
   
-  <div class="box-white">
+  <div class="box-white" id="resources">
     <h4> <?php echo t('Resources'); ?></h4>
     <p><?php echo t('Please click on your countries flag to access resources that may be required to complete this online course. Pleaes contact your instructor or the program director if you have additional resources you would like to see added to your geographical location.'); ?></p>
     <table>
@@ -258,21 +231,22 @@ foreach(array(
   
   <!-- Developers div white box here -->
   
-  <div class="box-white">
-    <div id="developers">
+   <div class="box-white" id="developers">
       <h4><?php echo t('Facilitators &amp; Course Developers'); ?></h4>
-      <h5><?php echo t('Content Designer: '); ?><a href="mailto:lhollinger-smith@matherlifeways.com">Linda Hollinger-Smith, PhD</a></h5>
-      <p><?php echo t('Dr. Hollinger-Smith is a doctorally prepared registered nurse focusing her research in gerontology, workforce development, and quality improvement. She has more than 28 years of experience working with older adults in senior living, long-term care settings, in the community, and in acute care settings in various staff and managerial positions. Her past positions include Assistant Dean of the Rush University College of Nursing, Nursing Director of the Rush Primary Care Institute, and Associate Chairperson of the Department of Adult Health Nursing at Rush University College of Nursing.'); ?></p>
-      <h5><?php echo t('Course Developer: '); ?><a href="mailto:jwoodall@matherlifeways.com">Jon Woodall</a></h5>
-      <?php echo t('Mr. Woodall is responsible for all MLIA corporate workforce wellness programs related to design, implementation, publication, and evaluation. Additionally, he seeks new grant funding to support or extend current grants related to corporate workforce wellness programs. '); ?>
-      </p>
-      <h5><?php echo t('Facilitator (English / Spanish / Portuguese): '); ?><a href="mailto:efoss@matherlifeways.com">Elise Foss</a></h5>
+      <br />
+      <SPAN class="h5"><?php echo t('Content Designer: '); ?></SPAN><span class="name">Linda Hollinger-Smith, PhD</SPAN>
+      <p> <?php echo t('Dr. Hollinger-Smith is a doctorally prepared registered nurse focusing her research in gerontology, workforce development, and quality improvement. She has more than 28 years of experience working with older adults in senior living, long-term care settings, in the community, and in acute care settings in various staff and managerial positions. Her past positions include Assistant Dean of the Rush University College of Nursing, Nursing Director of the Rush Primary Care Institute, and Associate Chairperson of the Department of Adult Health Nursing at Rush University College of Nursing.'); ?> </p>
+      <span class="h5"><?php echo t('Course Developer: '); ?></span><span class="name">Jon Woodall</span>
+      <p><?php echo t('Mr. Woodall is responsible for all MLIA corporate workforce wellness programs related to design, implementation, publication, and evaluation. Additionally, he seeks new grant funding to support or extend current grants related to corporate workforce wellness programs. '); ?> </p>
+      
+      
+      <span class="h5"><?php echo t('Facilitator (English / Spanish / Portuguese): '); ?></span><span class="name">Elise Foss</span>
      <p><?php echo t('Ms. Foss has been facilitating online courses for Mather LifeWays Institute on Aging since 2004. Currently, she is the Fitness Coordinator for a Mather LifeWays Senior Living community. Originally from Venezula, and educated in Brazil, Elise is fluent in English, Spanish and Portuguese, and travels to family in Brazil each year.'); ?>
       </p>
-         <h5><?php echo t('Facilitator (Chinese): '); ?><a href="mailto:yin_li_juan@hotmail.com">LiJuan Yin</a></h5>
+         <span class="h5"><?php echo t('Facilitator (Chinese): '); ?></span><span class="name">LiJuan Yin</span>
      <p><?php echo t('Mrs. Lin is currently a PhD student at the University of Illinois at Chicago (UIC), studying Public Health. She has helped reserarch, develop, and facilitate online courses for Mather LifeWays Institute on aging for the past 3 years. '); ?>
       </p>
-    </div>
+    
   </div>
 </div>
 

@@ -27,19 +27,22 @@ foreach(array(
 <div class="small-masthead" style="background-image: url(<?php echo $this->getImagesUrl('78458492r.png'); ?>);">
   <h1 class="bottom"><?php echo t($course->title); ?></h1>
 </div>
-<div id="sidebar"> 
-  
-  <!-- sidebar #2 here -->
-  
+<div id="sidebar">
+  <div class="box-sidebar one" style="background-color:#FFF;">
+    <h3><?php echo t('Survey'); ?></h3>
+    <br />
+    <p><a href="#"><?php echo t('CARE Coaching Online Pre-Course Survey'); ?></a></p>
+    <p><a href="#"><?php echo t('CARE Coaching Online Post-Course Survey'); ?></a></p>
+    <p><a href="#"><?php echo t('CARE Coaching Online Post-Post Course Survey'); ?></a></p>
+    <p><a href="#"><?php echo t('CARE Coaching Online One-Year Survey'); ?></a></p>
+    <br />
+    <img src="<?php echo $this->getImagesUrl('msml/153075496.png'); ?>" alt="image"> </div>
   <div class="box-sidebar one">
     <h3><?php echo t('Working Caregivers in America'); ?></h3>
     <img src="<?php echo $this->getImagesUrl('286x366_Grafix_69pc.png'); ?>" alt="image" class="block center" />
     <p><?php echo t('69% of working caregivers report having to rearrange their work schedule, decrease their hours, or take an 
 	unpaid leave of absence to meet their care-giving responsibilities.'); ?></p>
   </div>
-  
-  <!-- sidebar #4 here -->
-  
   <div class="box-sidebar two">
     <h3><?php echo t('Magnitude - Informal Caregivers'); ?></h3>
     <p><a href="http://www.caregiver.org/caregiver/jsp/home.jsp" target="_blank">FAMILY CAREGIVER ALLIANCE</a></p>
@@ -59,6 +62,7 @@ foreach(array(
 <div class="column-wide">
   <h2 class="flowers"><?php echo t($course->title); ?></h2>
   <p><?php echo t($course->description); ?></p>
+   <h5><?php echo t('Access - 1 year / Completion - 7 weeks (recommended)'); ?></h5>
   <h4><?php echo t('Objectives'); ?></h4>
   <ul>
     <?php 
@@ -69,7 +73,6 @@ foreach(array(
   <h5><?php echo t('Course Agenda'); ?></h5>
   <a href="<?php echo $this->getImagesUrl('CCOAssets/CARECoachingSyllabus.pdf'); ?>" target="_blank"><img src="<?php echo $this->getImagesUrl('pdf-icon.png'); ?>" alt="<?php echo t('Course Syllabus'); ?>" /></a> <br />
   <h4><?php echo t('Course Lessons'); ?></h4>
-  <h5><a href="#"><?php echo t('Pre-Course Survey'); ?></a></h5>
   
   <!-- Bullet points start here for course lessons, hyperlinks to FancyBox -->
   <ul>
@@ -81,52 +84,48 @@ foreach(array(
     <li> <a href="#lesson-6-slide-1" data-fancybox-group="lesson-6" class="teal lesson-6"> <?php echo t('Promoting Safety of Older Relatives and Friends in Caring for Themselves'); ?> </a> <a href="#lesson-6-slide-2" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-3" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-4" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-5" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-6" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-7" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-8" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-9" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-10" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-11" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-12" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-13" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-14" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-15" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-16" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-17" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-18" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-19" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-20" data-fancybox-group="lesson-6" class="hide lesson-6"></a> </li>
     <li> <a href="#lesson-7-slide-1" data-fancybox-group="lesson-7" class="teal lesson-7"> <?php echo t('Supporting Personal Choice and Preferences of Older Adults in Health and Care Decision Making'); ?> </a> <a href="#lesson-7-slide-2" data-fancybox-group="lesson-7" class="teal lesson-7"></a> <a href="#lesson-7-slide-3" data-fancybox-group="lesson-7" class="teal lesson-7"></a> <a href="#lesson-7-slide-4" data-fancybox-group="lesson-7" class="teal lesson-7"></a> <a href="#lesson-7-slide-5" data-fancybox-group="lesson-7" class="teal lesson-7"></a> <a href="#lesson-7-slide-6" data-fancybox-group="lesson-7" class="teal lesson-7"></a> <a href="#lesson-7-slide-7" data-fancybox-group="lesson-7" class="teal lesson-7"></a> <a href="#lesson-7-slide-8" data-fancybox-group="lesson-7" class="teal lesson-7"></a> </li>
   </ul>
-  <h5><a href="#"><?php echo t('Post-Course Survey'); ?></a></h5>
+  
+  <div class="box-white" id="resources">
   <h4> <?php echo t('Resources'); ?></h4>
-  <p><?php echo t('Please use these listed resources in the completion of this online course. Pleaes contact your instructor or the program director if you have additional resources you would like to see added here.'); ?></p>
-  <p><a href="http://www.nlm.nih.gov/medlineplus/talkingwithyourdoctor.html" target="_blank"><?php echo t('Talking with Your Doctor'); ?></a></p>
-  <!-- 
-From the National Library of Medicine's MedlinePlus consumer health website.  Links to online brochures from the federal government and national health organizations on obtaining a second opinion, talking to your doctor, informed consent, being an active participant in your healthcare, and related communication topics. -->
-  
-  <p><a href="http://www.aarp.org/health/doctors-hospitals/info-09-2010/finding_your_way_how_to_talk_to_8212_and_understand_8212_your_doctor.html" target="_blank"><?php echo t('How To Talk To Your Doctor'); ?></a></p>
-  <!--
-Emphasis on the importance of building a "successful partnership with your doctor." Suggestions for preparing for a productive office visit.  Questions to ask your doctor to assure that you have a clear understanding of your diagnosis, the treatment recommended, and other treatment options.  On the website of the American Association of Retired Persons. -->
-  
-  <p><a href="http://www.encouragingcoach.com/projects-selfcare-quiz.htm" target="_blank"><?php echo t('Self-Care Quiz'); ?></a></p>
-  <!-- 
-How good are you at taking care of yourself?  Take this brief quiz to get some ideas! -->
-  
-  <p><a href="http://www.meditationsociety.com/108meds.html" target="_blank"><?php echo t('Meditation Exercises'); ?></a></p>
-  <!-- 
-The Meditation Society of America provides a free resource of over 100 meditation activities for you to try via the web.   -->
-  
-  <p><a href="http://www.allaboutdepression.com/relax/" target="_blank"><?php echo t('Guided Imagery'); ?></a></p>
-  <!-- 
-Guided imagery is an effective relaxation technique to reduce stress.  There are many benefits to being able to induce the "relaxation response" in your own body.  Some benefits include a reduction of generalized anxiety, prevention of cumulative stress, increased energy, improved concentration, reduction of some physical problems, and increased self-confidence. -->
-  
-  <p><a href="http://www.caregiverslibrary.org/home.aspx" target="_blank"><?php echo t('National Caregiver Library'); ?></a></p>
-  <!-- 
-Provides state-by-state information and resources for caregivers.  -->
-  
-  <p><a href="http://www.usa.gov/Citizen/Topics/Health/caregivers.shtml" target="_blank"><?php echo t('Caregiver Resources on USA.gov'); ?></a></p>
-  <!-- 
-Find help providing care, government agencies, long-distance caregiving, and support for caregivers on this valuable website. -->
-  
-  <p><a href="http://www.aarp.org/home-family/caregiving/" target="_blank"><?php echo t('Caregiving Resources from AARP'); ?></a></p>
-  <!-- 
-AARP provides various articles of interest and resources for family caregivers. -->
-  <br />
-  <br />
-  <div class="box-white">
-    <div id="developers">
+    <p><?php echo t('Please use these listed resources in the completion of this online course. Pleaes contact your instructor or the program director if you have additional resources you would like to see added here.'); ?></p>
+    <ul>
+      <li><a href="http://www.nlm.nih.gov/medlineplus/talkingwithyourdoctor.html" target="_blank"><?php echo t('Talking with Your Doctor'); ?></a> 
+        <!-- 
+From the National Library of Medicine's MedlinePlus consumer health website.  Links to online brochures from the federal government and national health organizations on obtaining a second opinion, talking to your doctor, informed consent, being an active participant in your healthcare, and related communication topics. --></li>
+      <li><a href="http://www.aarp.org/health/doctors-hospitals/info-09-2010/finding_your_way_how_to_talk_to_8212_and_understand_8212_your_doctor.html" target="_blank"><?php echo t('How To Talk To Your Doctor'); ?></a> 
+        <!--
+Emphasis on the importance of building a "successful partnership with your doctor." Suggestions for preparing for a productive office visit.  Questions to ask your doctor to assure that you have a clear understanding of your diagnosis, the treatment recommended, and other treatment options.  On the website of the American Association of Retired Persons. --></li>
+      <li><a href="http://www.encouragingcoach.com/projects-selfcare-quiz.htm" target="_blank"><?php echo t('Self-Care Quiz'); ?></a> 
+        <!-- 
+How good are you at taking care of yourself?  Take this brief quiz to get some ideas! --></li>
+      <li><a href="http://www.meditationsociety.com/108meds.html" target="_blank"><?php echo t('Meditation Exercises'); ?></a> 
+        <!-- 
+The Meditation Society of America provides a free resource of over 100 meditation activities for you to try via the web.   --></li>
+      <li><a href="http://www.allaboutdepression.com/relax/" target="_blank"><?php echo t('Guided Imagery'); ?></a> 
+        <!-- 
+Guided imagery is an effective relaxation technique to reduce stress.  There are many benefits to being able to induce the "relaxation response" in your own body.  Some benefits include a reduction of generalized anxiety, prevention of cumulative stress, increased energy, improved concentration, reduction of some physical problems, and increased self-confidence. --></li>
+      <li><a href="http://www.caregiverslibrary.org/home.aspx" target="_blank"><?php echo t('National Caregiver Library'); ?></a> 
+        <!-- 
+Provides state-by-state information and resources for caregivers.  --></li>
+      <li><a href="http://www.usa.gov/Citizen/Topics/Health/caregivers.shtml" target="_blank"><?php echo t('Caregiver Resources on USA.gov'); ?></a> 
+        <!-- 
+Find help providing care, government agencies, long-distance caregiving, and support for caregivers on this valuable website. --></li>
+      <li><a href="http://www.aarp.org/home-family/caregiving/" target="_blank"><?php echo t('Caregiving Resources from AARP'); ?></a> 
+        <!-- 
+AARP provides various articles of interest and resources for family caregivers. --> </li>
+    </ul>
+  </div>
+
+  <div class="box-white" id="developers">
       <h4><?php echo t('Facilitators &amp; Course Developers'); ?></h4>
-      <h5><?php echo t('Content Designer: '); ?><a href="mailto:lindahollinger-smith@matherlifeways.com"><?php echo t('Linda Hollinger-Smith, PhD'); ?></a></h5>
+      <br />
+      <SPAN class="h5"><?php echo t('Content Designer: '); ?></SPAN><span class="name">Linda Hollinger-Smith, PhD</SPAN>
       <p> <?php echo t('Dr. Hollinger-Smith is a doctorally prepared registered nurse focusing her research in gerontology, workforce development, and quality improvement. She has more than 28 years of experience working with older adults in senior living, long-term care settings, in the community, and in acute care settings in various staff and managerial positions. Her past positions include Assistant Dean of the Rush University College of Nursing, Nursing Director of the Rush Primary Care Institute, and Associate Chairperson of the Department of Adult Health Nursing at Rush University College of Nursing.'); ?> </p>
-      <h5><?php echo t('Course Developer: '); ?><a href="mailto:jwoodall@matherlifeways.com">Jon Woodall</a></h5>
+      <span class="h5"><?php echo t('Course Developer: '); ?></span><span class="name">Jon Woodall</span>
       <p><?php echo t('Mr. Woodall is responsible for all MLIA corporate workforce wellness programs related to design, implementation, publication, and evaluation. Additionally, he seeks new grant funding to support or extend current grants related to corporate workforce wellness programs. '); ?> </p>
-      <h5><?php echo t('Facilitator: '); ?><a href="mailto:eziegemeier@yahoo.com">Ellen Ziegemeier</a></h5>
+      <span class="h5"><?php echo t('Facilitator: '); ?></span><span class="name">Ellen Ziegemeier</span>
       <p><?php echo t('Ms. Ziegemeier has been facilitating online courses for Mather LifeWays Institute on Aging since 2004. She earned her Masters in Anthropology, and has worked locally and abroad -  Latin America and South America for various aging services. She is fluent in English and Spanish, and has a strong passion for caregiver training. '); ?> </p>
-    </div>
+ 
   </div>
 </div>
 

@@ -214,10 +214,10 @@ class UserController extends ApiController {
 		if($userIdentity->authenticate()) 
 		{
 			$user = $userIdentity->getModel();
-			$user->userActivated = new UserActivated;
-			$user->userActivated->user_id = $id;
+			$user->activated = new UserActivated;
+			$user->activated->user_id = $id;
 		
-			if($user->userActivated->save()) 
+			if($user->activated->save()) 
 			{
 				Yii::app()->getUser()->login($userIdentity, 0);
 				$user->regenerateSessionKey();
