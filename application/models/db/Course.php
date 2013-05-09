@@ -63,7 +63,7 @@ class Course extends CActiveRecord {
 		return array(
 				'objectives' => array(self::HAS_MANY, 'CourseObjective', 'course_id'),
 				'userCourses' => array(self::HAS_MANY, 'UserCourse', 'course_id'),
-				'users' => array(self::HAS_MANY, 'CPUser', array('user_id' => 'id'), 'through' => 'userCourses'),
+				'users' => array(self::MANY_MANY, 'CPUser', '{{user_course}}(course_id, user_id)'),
 		);
 	}
 	

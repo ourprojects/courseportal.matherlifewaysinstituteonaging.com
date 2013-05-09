@@ -125,10 +125,14 @@ class CPUser extends CActiveRecord {
             'group' => array(self::BELONGS_TO, 'Group', 'group_id'),
 			'activated' => array(self::HAS_ONE, 'UserActivated', 'user_id'),
 			'userCourses' => array(self::HAS_MANY, 'UserCourse', 'user_id'),
-			'courses' => array(self::HAS_MANY, 'Course', array('course_id' => 'id'), 'through' => 'userCourses'),
+			'courses' => array(self::MANY_MANY, 'Course', '{{user_course}}(user_id, course_id)'),
 			'phpBbUser' => array(self::HAS_ONE, 'PhpBBUser', array('username' => 'username')),
 			'userAgreements' => array(self::HAS_MANY, 'UserAgreement', 'user_id'),
-			'agreements' => array(self::HAS_MANY, 'Agreement', array('agreement_id' => 'id'), 'through' => 'userAgreements'),
+			'agreements' => array(self::MANY_MANY, 'Agreement', '{{user_agreement}}(user_id, agreement_id)'),
+			'userActivities' => array(self::HAS_MANY, 'UserActivity', 'user_id'),
+			'activities' => array(self::MANY_MANY, 'Activity', '{{spencer_powell_user_activity}}(user_id, activity_id)'),
+			'activityLogEntries' => array(self::HAS_MANY, 'UserLogEntry', array('id' => 'user_activity_id'), 'through' => 'activities'),
+			'activityLogEntryDimensions' => array(self::HAS_MANY, 'UserLogEntryDimension', array('id' => 'user_log_entry_id'), 'through' => 'activityLogEntries'),
 		);
 	}
 	

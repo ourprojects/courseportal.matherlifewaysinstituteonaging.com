@@ -46,7 +46,7 @@ class Agreement extends CActiveRecord {
     public function relations() {
         return array(
 				'userAgreements' => array(self::HAS_MANY, 'UserAgreement', 'agreement_id'),
-				'users' => array(self::HAS_MANY, 'CPUser', array('user_id' => 'id'), 'through' => 'userAgreements'),
+				'users' => array(self::MANY_MANY, 'CPUser', '{{user_agreement}}(agreement_id, user_id)'),
         );
     }
 
