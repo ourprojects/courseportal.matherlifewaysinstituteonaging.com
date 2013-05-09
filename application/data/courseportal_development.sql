@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost:3306
--- Generation Time: May 09, 2013 at 10:16 AM
+-- Generation Time: May 09, 2013 at 10:23 AM
 -- Server version: 5.1.67
 -- PHP Version: 5.3.10
 
@@ -20,27 +20,28 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `courseportal`
+-- Database: `courseportal_development`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `onlinecourseportal_accepted_language`
+-- Table structure for table `courseportal_accepted_language`
 --
--- Creation: Apr 10, 2013 at 09:43 PM
+-- Creation: May 09, 2013 at 03:18 PM
 --
 
-CREATE TABLE IF NOT EXISTS `onlinecourseportal_accepted_language` (
+DROP TABLE IF EXISTS `courseportal_accepted_language`;
+CREATE TABLE IF NOT EXISTS `courseportal_accepted_language` (
   `id` varchar(3) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `onlinecourseportal_accepted_language`
+-- Dumping data for table `courseportal_accepted_language`
 --
 
-INSERT INTO `onlinecourseportal_accepted_language` (`id`) VALUES
+INSERT INTO `courseportal_accepted_language` (`id`) VALUES
 ('de'),
 ('en'),
 ('es'),
@@ -52,12 +53,13 @@ INSERT INTO `onlinecourseportal_accepted_language` (`id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `onlinecourseportal_agreement`
+-- Table structure for table `courseportal_agreement`
 --
--- Creation: Apr 28, 2013 at 11:11 PM
+-- Creation: May 09, 2013 at 03:18 PM
 --
 
-CREATE TABLE IF NOT EXISTS `onlinecourseportal_agreement` (
+DROP TABLE IF EXISTS `courseportal_agreement`;
+CREATE TABLE IF NOT EXISTS `courseportal_agreement` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(511) COLLATE utf8_unicode_ci NOT NULL,
   `created_by` int(11) NOT NULL,
@@ -69,27 +71,28 @@ CREATE TABLE IF NOT EXISTS `onlinecourseportal_agreement` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
 
 --
--- RELATIONS FOR TABLE `onlinecourseportal_agreement`:
+-- RELATIONS FOR TABLE `courseportal_agreement`:
 --   `created_by`
---       `onlinecourseportal_user` -> `id`
+--       `courseportal_user` -> `id`
 --
 
 --
--- Dumping data for table `onlinecourseportal_agreement`
+-- Dumping data for table `courseportal_agreement`
 --
 
-INSERT INTO `onlinecourseportal_agreement` (`id`, `name`, `created_by`, `created_on`, `text`, `date_format`) VALUES
+INSERT INTO `courseportal_agreement` (`id`, `name`, `created_by`, `created_on`, `text`, `date_format`) VALUES
 (1, 'Confidentiality 2012', 72, '2013-04-21 23:07:16', '<div style="text-align:center"><u><b><i>NON-DISCLOSURE AGREEMENT</i></b></u></div>\r\n<br/>\r\n<p>This NON-DISCLOSURE AGREEMENT (hereinafter "Agreement") is entered into as of {date}, by and between Mather LifeWays Institute on Aging, LLC (hereinafter "Disclosing Party or Discloser"), and the undersigned (hereinafter "Recipient") entered into on {date}. Mather and {fullname} are the only "Parties" to this Agreement. Both parties should consult with legal counsel before entering into this Agreement.</p>\r\n<br/>\r\n<div style="text-align:center"><u><b><i>RECITALS</i></b></u></div>\r\n<br/>\r\n<p>WHEREAS the Recipient has a need for Information from Disclosing Party in connection with consideration of a possible or contemplated transaction or relationship (hereinafter "relationship") between itself and Disclosing Party; and</p>\r\n<p>WHEREAS, in the course of consideration of the relationship, Disclosing Party may disclose to Recipient confidential, important, proprietary, and/or trade secret information (hereinafter " Information") concerning Disclosing Party and his/its activities;  and therefore the Parties agree to enter into this Agreement with respect to the disclosure by Disclosing Party to Recipient of Information.</p>\r\n<br/>\r\n<div style="text-align:center"><u><b><i>AGREEMENT</i></b></u></div>\r\n<br/>\r\n<p>The Parties herein agree that the following purposes of this Agreement these definitions govern the subject matter of this Agreement.</p>\r\n<ol>\r\n<li><p><u>Definitions.</u>  "Information" shall include all data, documents, media, conversations, or materials of any kind that has or could have commercial value or other utility in the business or prospective business of Disclosing Party.  Information also includes identities of either party, and all of the described herein, whether written or oral, which unauthorized disclosure could be detrimental to the interests of Disclosing Party whether or not such Information is identified as Confidential Information by Disclosing Party.  By example and without limitation, Information that is the subject matter of this Agreement includes, but is not limited to, the following:	</p>\r\n<blockquote style="color:red"><u>All content, materials, and development related to the design, publication and maintenance of the Mather Lifeways Institute on Aging Online Course Portal and all past, current, and future content, procedures, processes, materials, development, and design.</u></blockquote>\r\n<p>"Disclosing Party" or "Discloser" shall include the Disclosing Party, or Discloser, the company he or she represents, and all affiliates, subsidiaries, subcontractors, attorneys, Board of Directors and Officers, and related companies of Disclosing Party. For purposes of this Agreement, the term "Representative" shall include Disclosing Party''s directors, officers, employees, agents, and financial, legal and other advisors.</p>\r\n<p>"Recipient" shall include Recipient, the company he or she represents, and all affiliates, subsidiaries, subcontractors, attorneys, Board of Directors and Officers, and related companies of Recipient.  For purposes of this Agreement, the term "Representative" shall include Recipient''s directors, officers, employees, agents, and financial, legal, and other advisors.</p></li>\r\n<li><p><u>Exclusions.</u>  Information that is not subject matter of this Agreement include whatever the Recipient can demonstrate:  (a) was in Recipient''s possession prior to its being furnished to Recipient under the terms of this Agreement, provided its source  was not known by Recipient to be bound by any non-disclosure or confidentiality Agreement with or other continual, legal or fiduciary obligation of confidentiality to Disclosing Party; (b) is now, or hereafter becomes, through no act or failure to act on the part of Recipient, generally known to the public; (c) is rightfully obtained by Recipient from a third party, without breach of any obligation to Disclosing Party; or (d) is independently developed by Recipient without use of or reference to the Information described in section 1.</li></p>\r\n<li><p><u>Confidentiality and Indemnification.</u>  Both Recipient and Disclosing Party and their Representatives shall not disclose any of the Information in any manner whatsoever, except as provided in paragraphs 4 and 5 of this Agreement, and shall hold and maintain the Confidential Information in strictest confidence.  Both Recipient and Disclosing Party hereby mutually agree to indemnify the other party against any and all losses, damages, claims, expenses, and attorneys'' fees incurred or suffered by the other party as a result of a breach of this Agreement by Recipient, or Disclosing Party or their Representatives.</li></p>\r\n<li><p><u>Permitted Disclosures.</u>  Recipient may disclose Disclosing Party''s Information to Recipient''s responsible Representatives with a bona fide need to know such Information, but only to the extent necessary to evaluate, assess, or carry out a relationship with Disclosing Party and only if such employees are advised of the confidential nature of the Information and the terms of this Agreement and affirm they are bound to the terms of this Agreement or by any legally enforceable code of professional responsibility to protect the confidentiality of such Information.</li></p>\r\n<li><p><u>Required Disclosures.</u>  Recipient may disclose Disclosing Party''s Information if and to the extent that such disclosure is required by court order, provided that Recipient provides Disclosing Party immediate notification and a reasonable opportunity to review the disclosure before it is made and to participate in all proceedings related to the Information.</li></p>\r\n<li><p><u>Use.</u>  Recipient and its Representatives shall use the Information solely for the purpose of evaluating and assessing whether or not to proceed with a relationship with Disclosing Party and shall not in any way use the Information to the detriment of Disclosing Party.  Nothing in this Agreement shall be construed as granting any rights to Recipient, by license or otherwise, to any of Disclosing Party''s Information.</li></p>\r\n<li><p><u>Return of Documents.</u>  If the Parties do not proceed as anticipated by this transaction''s subject matter, the deciding party shall notify the other of that decision and shall, at that time or at any time upon the request of Disclosing Party for any reason, return to Disclosing Party any and all records, notes, and other written, printed, electronic, or other tangible materials in its possession pertaining to the Information immediately on the written request of Disclosing Party.  The returning of Information shall not relieve Recipient from compliance with other terms and conditions of this Agreement.</li></p>\r\n<li><p><u>No Additional Agreements.</u>  Neither the holding of discussions nor the exchange of Information shall be construed as an obligation of Disclosing Party to enter into any other Agreement with Recipient or prohibit Disclosing Party from providing the same or similar Information to other Parties and entering into Agreements with other Parties.  Disclosing Party reserves the right, in its sole discretion, to reject any and all proposals made by Recipient or its Representatives with regard to a transaction between Recipient and Disclosing Party and to terminate discussions and negotiations with Recipient at any time.  Additional Agreements of the Parties, if any, shall be in writing signed by Disclosing Party and Recipient.</li></p>\r\n<li><p><u>Irreparable Harm.</u>  Recipient understands and acknowledges that any disclosure or misappropriation of any of the Information in violation of this Agreement may cause Disclosing Party irreparable harm, the amount of which may be difficult to ascertain, and therefore agrees that Disclosing Party shall have the right to apply to a court of competent jurisdiction for specific performance and/or an order restraining and enjoining any such further disclosure or breach and for such other relief as Disclosing Party shall deem appropriate.  Such right of Disclosing Party is to be in addition to the remedies otherwise available to Disclosing Party at law or in equity, or in accordance with this Agreement as to the terms of mediation and binding arbitration.   Recipient expressly waives the defense that a remedy in damages will be adequate and any requirement in an action for specific performance or injunction for the posting of a bond by Disclosing Party.</li></p>\r\n<li><p><u>Survival.</u>  This Agreement shall continue in full force and effect at all times.</li></p>\r\n<li><p><u>Successors and Assigns.</u>  This Agreement and each party''s obligations hereunder shall be binding on the representatives, assigns, and successors of such party and shall inure to the benefit of the assigns and successors of such party. However, "Mather" signor below may assign this Agreement without prior authorization or notice to the other Party to this Agreement. The other or non-Mather Party shall have no right to assign this Agreement.</li></p>\r\n<li><p><u>Governing Law.</u>  This Agreement shall be governed by and construed in accordance with the laws of the State of Illinois.  The Parties hereby irrevocably consent to the jurisdiction of the state and federal courts located in Chicago, Illinois, in any action arising out of or relating to this Agreement, and waive any other venue to which either party might be entitled by domicile or otherwise.</li></p>\r\n<li><p><u>Attorney''s Fees.</u>  All actions to interpret the provisions of this Agreement are to be brought before an Arbitrator only discussed below and the prevailing party in such action shall be awarded its attorneys'' fees and costs incurred.</li></p>\r\n<li><p><u>Counterparts and Right.</u>  This Agreement may be signed in counterparts, which together shall constitute one Agreement.  The individuals signing on behalf of Disclosing Party and Recipient represents that he or she has the right and power to execute this Agreement.</li></p>\r\n<li><p><u>Term and Termination.</u> The obligations of this Agreement shall be continuing until the Information disclosed to Recipient is no longer confidential</li></p>\r\n<li><p><u>Entire Agreement.</u>  This Agreement expresses the full and complete understanding of the Parties with respect to the subject matter herein and supersedes all prior or contemporaneous proposals, Agreements, representations and understandings, whether written or oral, with respect to the subject matter.  This Agreement is not, however, to limit any rights that Disclosing Party may have under trade secret, copyright, patent or other laws that may be available to Disclosing Party.  This Agreement may not be amended or modified except in writing signed by each of the Parties to the Agreement.</li></p>\r\n<li><p><b><i><u>MEDIATION.</u> The Parties agree that any claim or dispute relating to this Agreement, or any other matters, disputes, or claims between us, shall be subject to non-binding mediation if agreed to by you and us within 30 days of you or us making a request to the other by letter. Any such mediation will be held in the federal judicial district in which you reside, and shall be conducted according to the mediation rules of the National Arbitration Forum.</i></b></li></p>\r\n<li><p><b><i><u>ARBITRATION.</u> Whether or not mediation is requested by any party, any claim, dispute or controversy between us or arising from or relating to this agreement or the relationships which result from this agreement, including the validity of this arbitration clause or the entire agreement, including any that remain unresolved 120 days after an agreement for mediation, shall be resolved by binding arbitration by the American Arbitration Association or National Arbitration Forum, under the Code of Procedure then in effect. Any award of the arbitrator(s) may be entered as a judgment in any court having jurisdiction. In the event a court having jurisdiction finds any portion of this agreement unenforceable, that portion shall not be effective and the remainder of the agreement shall remain effective. Information may be obtained and claims may be filed at any office of the National Arbitration Forum, www.arbitration-forum.com, or at P.O. Box 50191, Minneapolis, MN 55405. This agreement shall be governed by and interpreted under the Federal Arbitration Act, 9 U.S.C. Sections 1-16. The Parties acknowledge that they had a right or opportunity to litigate disputes through a court in front of a judge or jury, but that they preferred to resolve any disputes through arbitration. The Parties acknowledge that all disputes will be final and binding as to each of them as a result of any arbitration decision.</i></b></li></p>\r\n<li><p><u>Notices.</u>  All notices necessary to be given to either party shall be delivered by certified mail to the address below unless another address is supplied during the term of this Agreement.</li></p>\r\n<ol>', 'Y-m-d');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `onlinecourseportal_avatar`
+-- Table structure for table `courseportal_avatar`
 --
--- Creation: Apr 10, 2013 at 09:43 PM
+-- Creation: May 09, 2013 at 03:18 PM
 --
 
-CREATE TABLE IF NOT EXISTS `onlinecourseportal_avatar` (
+DROP TABLE IF EXISTS `courseportal_avatar`;
+CREATE TABLE IF NOT EXISTS `courseportal_avatar` (
   `user_id` int(11) NOT NULL,
   `mime` varchar(16) COLLATE utf8_unicode_ci NOT NULL,
   `name` char(40) COLLATE utf8_unicode_ci NOT NULL,
@@ -97,27 +100,28 @@ CREATE TABLE IF NOT EXISTS `onlinecourseportal_avatar` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- RELATIONS FOR TABLE `onlinecourseportal_avatar`:
+-- RELATIONS FOR TABLE `courseportal_avatar`:
 --   `user_id`
---       `onlinecourseportal_user` -> `id`
+--       `courseportal_user` -> `id`
 --
 
 --
--- Dumping data for table `onlinecourseportal_avatar`
+-- Dumping data for table `courseportal_avatar`
 --
 
-INSERT INTO `onlinecourseportal_avatar` (`user_id`, `mime`, `name`) VALUES
+INSERT INTO `courseportal_avatar` (`user_id`, `mime`, `name`) VALUES
 (4, 'image/gif', '7e9b3041466ab342f3231fb483b4b98082e1454d');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `onlinecourseportal_course`
+-- Table structure for table `courseportal_course`
 --
--- Creation: Apr 10, 2013 at 09:43 PM
+-- Creation: May 09, 2013 at 03:18 PM
 --
 
-CREATE TABLE IF NOT EXISTS `onlinecourseportal_course` (
+DROP TABLE IF EXISTS `courseportal_course`;
+CREATE TABLE IF NOT EXISTS `courseportal_course` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `rank` int(11) NOT NULL,
@@ -128,10 +132,10 @@ CREATE TABLE IF NOT EXISTS `onlinecourseportal_course` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=14 ;
 
 --
--- Dumping data for table `onlinecourseportal_course`
+-- Dumping data for table `courseportal_course`
 --
 
-INSERT INTO `onlinecourseportal_course` (`id`, `name`, `rank`, `title`, `description`) VALUES
+INSERT INTO `courseportal_course` (`id`, `name`, `rank`, `title`, `description`) VALUES
 (6, 'empoweronline', 2, 'Empower Online', 'Empower Online is an in-depth, five-lesson online course that focuses on self-care for the working caregiver that was developed by Mather LifeWays Institute on Aging. The program focuses on managing responsibilities while caring for loved ones with chronic medical issues and includes communicating effectively with healthcare providers and locating additional caregiver resources.'),
 (7, 'introtocaregivingonline', 1, 'Intro to Caregiving Online', 'Few are fully prepared for the responsibilities and tasks involved in caring for an older adult. As a caregiver, it is important to have a clear plan or guide that has multiple paths. This five-lesson online course introduces the basics of the caregiver role and explores the challenges associated with older adult care.'),
 (8, 'makingsenseofmemorylossonline', 4, 'Making Sense of Memory Loss Online', 'Developed by Mather LifeWays Institute on Aging and the Alzheimer''s Association, evidence-based Making Sense of Memory Loss helps those who care for someone in the early, middle, or late to final stages of memory loss, whether or not that individual has received a diagnosis of Alzheimer''s Disease or related dementia.'),
@@ -141,12 +145,13 @@ INSERT INTO `onlinecourseportal_course` (`id`, `name`, `rank`, `title`, `descrip
 -- --------------------------------------------------------
 
 --
--- Table structure for table `onlinecourseportal_course_objective`
+-- Table structure for table `courseportal_course_objective`
 --
--- Creation: Apr 10, 2013 at 09:43 PM
+-- Creation: May 09, 2013 at 03:18 PM
 --
 
-CREATE TABLE IF NOT EXISTS `onlinecourseportal_course_objective` (
+DROP TABLE IF EXISTS `courseportal_course_objective`;
+CREATE TABLE IF NOT EXISTS `courseportal_course_objective` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `course_id` int(11) NOT NULL,
   `rank` int(11) NOT NULL,
@@ -156,16 +161,16 @@ CREATE TABLE IF NOT EXISTS `onlinecourseportal_course_objective` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=26 ;
 
 --
--- RELATIONS FOR TABLE `onlinecourseportal_course_objective`:
+-- RELATIONS FOR TABLE `courseportal_course_objective`:
 --   `course_id`
---       `onlinecourseportal_course` -> `id`
+--       `courseportal_course` -> `id`
 --
 
 --
--- Dumping data for table `onlinecourseportal_course_objective`
+-- Dumping data for table `courseportal_course_objective`
 --
 
-INSERT INTO `onlinecourseportal_course_objective` (`id`, `course_id`, `rank`, `text`) VALUES
+INSERT INTO `courseportal_course_objective` (`id`, `course_id`, `rank`, `text`) VALUES
 (1, 7, 1, 'Explore, define, describe, and understand caregiving'),
 (2, 7, 2, 'Explore current data, trends, and research'),
 (3, 7, 3, 'Explore general challenges associated with caregiving'),
@@ -193,12 +198,13 @@ INSERT INTO `onlinecourseportal_course_objective` (`id`, `course_id`, `rank`, `t
 -- --------------------------------------------------------
 
 --
--- Table structure for table `onlinecourseportal_group`
+-- Table structure for table `courseportal_group`
 --
--- Creation: Apr 10, 2013 at 09:43 PM
+-- Creation: May 09, 2013 at 03:18 PM
 --
 
-CREATE TABLE IF NOT EXISTS `onlinecourseportal_group` (
+DROP TABLE IF EXISTS `courseportal_group`;
+CREATE TABLE IF NOT EXISTS `courseportal_group` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(128) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`),
@@ -206,10 +212,10 @@ CREATE TABLE IF NOT EXISTS `onlinecourseportal_group` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=6 ;
 
 --
--- Dumping data for table `onlinecourseportal_group`
+-- Dumping data for table `courseportal_group`
 --
 
-INSERT INTO `onlinecourseportal_group` (`id`, `name`) VALUES
+INSERT INTO `courseportal_group` (`id`, `name`) VALUES
 (1, 'ADMINISTRATORS'),
 (2, 'Employees'),
 (5, 'GUESTS'),
@@ -218,12 +224,13 @@ INSERT INTO `onlinecourseportal_group` (`id`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `onlinecourseportal_group_regular_expression`
+-- Table structure for table `courseportal_group_regular_expression`
 --
--- Creation: Apr 30, 2013 at 09:57 PM
+-- Creation: May 09, 2013 at 03:18 PM
 --
 
-CREATE TABLE IF NOT EXISTS `onlinecourseportal_group_regular_expression` (
+DROP TABLE IF EXISTS `courseportal_group_regular_expression`;
+CREATE TABLE IF NOT EXISTS `courseportal_group_regular_expression` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `group_id` int(11) NOT NULL,
@@ -233,16 +240,16 @@ CREATE TABLE IF NOT EXISTS `onlinecourseportal_group_regular_expression` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=8 ;
 
 --
--- RELATIONS FOR TABLE `onlinecourseportal_group_regular_expression`:
+-- RELATIONS FOR TABLE `courseportal_group_regular_expression`:
 --   `group_id`
---       `onlinecourseportal_group` -> `id`
+--       `courseportal_group` -> `id`
 --
 
 --
--- Dumping data for table `onlinecourseportal_group_regular_expression`
+-- Dumping data for table `courseportal_group_regular_expression`
 --
 
-INSERT INTO `onlinecourseportal_group_regular_expression` (`id`, `name`, `group_id`) VALUES
+INSERT INTO `courseportal_group_regular_expression` (`id`, `name`, `group_id`) VALUES
 (1, '^(.*(\\.|@))?ibm.com$', 2),
 (2, '^(.*(\\.|@))?ti.com$', 2),
 (3, '^(.*(\\.|@))?merck.com$', 2),
@@ -252,12 +259,13 @@ INSERT INTO `onlinecourseportal_group_regular_expression` (`id`, `name`, `group_
 -- --------------------------------------------------------
 
 --
--- Table structure for table `onlinecourseportal_key`
+-- Table structure for table `courseportal_key`
 --
--- Creation: Apr 10, 2013 at 09:43 PM
+-- Creation: May 09, 2013 at 03:18 PM
 --
 
-CREATE TABLE IF NOT EXISTS `onlinecourseportal_key` (
+DROP TABLE IF EXISTS `courseportal_key`;
+CREATE TABLE IF NOT EXISTS `courseportal_key` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `value` char(44) COLLATE utf8_unicode_ci NOT NULL,
   `salt` char(44) COLLATE utf8_unicode_ci NOT NULL,
@@ -265,21 +273,22 @@ CREATE TABLE IF NOT EXISTS `onlinecourseportal_key` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=5 ;
 
 --
--- Dumping data for table `onlinecourseportal_key`
+-- Dumping data for table `courseportal_key`
 --
 
-INSERT INTO `onlinecourseportal_key` (`id`, `value`, `salt`) VALUES
+INSERT INTO `courseportal_key` (`id`, `value`, `salt`) VALUES
 (4, 'a+h4kqWLjsoHPyh1MDRK14nOQjJVT5ten0g3GH7UgmI=', 'BUE3/ajwFqaT6C8eaGQ/7m4q+uLGCAut9dZTSTJ1LjY=');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `onlinecourseportal_message`
+-- Table structure for table `courseportal_message`
 --
--- Creation: Apr 10, 2013 at 09:43 PM
+-- Creation: May 09, 2013 at 03:18 PM
 --
 
-CREATE TABLE IF NOT EXISTS `onlinecourseportal_message` (
+DROP TABLE IF EXISTS `courseportal_message`;
+CREATE TABLE IF NOT EXISTS `courseportal_message` (
   `id` int(11) NOT NULL DEFAULT '0',
   `language` varchar(3) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   `translation` mediumtext COLLATE utf8_unicode_ci,
@@ -287,16 +296,16 @@ CREATE TABLE IF NOT EXISTS `onlinecourseportal_message` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- RELATIONS FOR TABLE `onlinecourseportal_message`:
+-- RELATIONS FOR TABLE `courseportal_message`:
 --   `id`
---       `onlinecourseportal_message_source` -> `id`
+--       `courseportal_message_source` -> `id`
 --
 
 --
--- Dumping data for table `onlinecourseportal_message`
+-- Dumping data for table `courseportal_message`
 --
 
-INSERT INTO `onlinecourseportal_message` (`id`, `language`, `translation`) VALUES
+INSERT INTO `courseportal_message` (`id`, `language`, `translation`) VALUES
 (1, 'ar', 'عبر الإنترنت دراسة البوابة'),
 (1, 'bn', 'অনলাইন কোর্স পোর্টাল'),
 (1, 'de', 'Online-Portal'),
@@ -750,8 +759,7 @@ INSERT INTO `onlinecourseportal_message` (`id`, `language`, `translation`) VALUE
 (62, 'ar', 'منظمتكم تقديم أدلة المستندة إلى برامج لدعم الموظفين الذين هم الآن، أو يمكن أن رعاية أفراد الأسرة من كبار السن أو الأصدقاء؟'),
 (62, 'de', 'Bietet Ihre Organisation Evidenzbasierte Programme für Mitarbeiter, die jetzt oder für ältere Familienmitglieder oder Freunde werden Pflege unterstützen?'),
 (62, 'es', '¿Su organización proporciona programas basados ​​en evidencias para apoyar a los empleados que están ahora o se puede cuidar a los miembros mayores de la familia o amigos?'),
-(62, 'it', 'La vostra organizzazione fornire elementi di prova basati su programmi di sostegno ai lavoratori che oggi sono o possono essere la cura per i membri più anziani della famiglia o amici?');
-INSERT INTO `onlinecourseportal_message` (`id`, `language`, `translation`) VALUES
+(62, 'it', 'La vostra organizzazione fornire elementi di prova basati su programmi di sostegno ai lavoratori che oggi sono o possono essere la cura per i membri più anziani della famiglia o amici?'),
 (62, 'ja', 'あなたの組織が今ある以上の家族や友人の世話をすることができる従業員をサポートする証拠ベースのプログラムを提供していますか？'),
 (62, 'pt', 'A sua organização fornecer evidências baseadas em programas para apoiar os empregados, que agora estão ou podem ser cuidar dos membros mais velhos da família ou amigos?'),
 (62, 'ru', 'Предоставляет ли ваша организация на основе фактических данных программ поддержки работников, которые в настоящее время или могут быть забота о старших членов семьи или друзей?'),
@@ -1191,10 +1199,10 @@ INSERT INTO `onlinecourseportal_message` (`id`, `language`, `translation`) VALUE
 (123, 'de', 'Ressourcen, mir zu helfen mit meinem pflegerischen Aufgaben und richte meinen eigenen körperlichen, geistigen und emotionalen Gesundheit Bedürfnisse'),
 (123, 'es', 'Recursos para ayudarme a manejar mis responsabilidades de cuidado y dirigir mi propio bienestar físico, mental y necesidades de salud emocional'),
 (123, 'it', 'Risorse per aiutarmi a gestire le mie responsabilità di accudimento e rivolgo il mio fisico, mentale, emotivo e bisogni di salute'),
-(123, 'pt', 'Recursos para me ajudar a administrar as minhas responsabilidades de cuidar e tratar do meu próprio físico, mental, emocional e necessidades de saúde');
-INSERT INTO `onlinecourseportal_message` (`id`, `language`, `translation`) VALUES
+(123, 'pt', 'Recursos para me ajudar a administrar as minhas responsabilidades de cuidar e tratar do meu próprio físico, mental, emocional e necessidades de saúde'),
 (123, 'ru', 'Ресурсы, чтобы помочь мне управлять моей заботы обязанности и решать свои физические, умственные и эмоциональные потребности в области здравоохранения'),
-(123, 'zh', '资源，帮助我管理我的照顾责任，并解决我自己的身体，心理和情绪健康的需求，'),
+(123, 'zh', '资源，帮助我管理我的照顾责任，并解决我自己的身体，心理和情绪健康的需求，');
+INSERT INTO `courseportal_message` (`id`, `language`, `translation`) VALUES
 (124, 'ar', 'أدوات لتحقيق التوازن بين تقديم الرعاية مساعدتي بلدي ومسؤوليات العمل'),
 (124, 'de', 'Werkzeuge, mir zu helfen Gleichgewicht meiner Pflege und berufliche Verantwortung'),
 (124, 'es', 'Herramientas para ayudarme a equilibrar mi cuidado y las responsabilidades del trabajo'),
@@ -1874,8 +1882,7 @@ INSERT INTO `onlinecourseportal_message` (`id`, `language`, `translation`) VALUE
 (258, 'es', 'Explora los retos asociados con la prestación de cuidados generales'),
 (258, 'ja', '介護に関連した一般的な課題を探る'),
 (258, 'pt', 'Explorar desafios gerais associadas cuidar'),
-(258, 'zh', '探索一般的挑战与照顾');
-INSERT INTO `onlinecourseportal_message` (`id`, `language`, `translation`) VALUES
+(258, 'zh', '探索一般的挑战与照顾'),
 (259, 'es', 'Explorar el impacto sobre las empresas y la economía'),
 (259, 'ja', '事業への影響、経済性を探る'),
 (259, 'pt', 'Explore o impacto sobre as empresas ea economia'),
@@ -2349,9 +2356,9 @@ INSERT INTO `onlinecourseportal_message` (`id`, `language`, `translation`) VALUE
 (375, 'pt', 'Você já fez um curso online antes?'),
 (375, 'ru', 'Вы когда-либо онлайн-курс раньше?'),
 (375, 'zh', '你有没有采取网上课程吗？'),
-(376, 'es', 'La demencia se refiere a una pérdida adquirida y progresiva de las funciones mentales debido a un trastorno del cerebro. La demencia no es una enfermedad específica. Es un término general que describe una amplia gama de síntomas asociados con una disminución de la memoria o de otras habilidades de pensamiento lo suficientemente graves como para reducir la capacidad de una persona para realizar las actividades diarias. Un diagnóstico médico está obligado a determinar la causa o causas subyacentes de los síntomas.');
-INSERT INTO `onlinecourseportal_message` (`id`, `language`, `translation`) VALUES
-(376, 'ja', '認知症は、脳の障害による精神機能の取得および進行性の喪失を意味します。認知症は、特定の病気ではありません。それは、記憶力の低下や日常の活動を行う人の能力を低下させるほど厳しい他の思考スキルと関連した症状の広い範囲を説明し全体的な用語です。医療診断が根本的な原因や症状の原因を特定するために必要です。'),
+(376, 'es', 'La demencia se refiere a una pérdida adquirida y progresiva de las funciones mentales debido a un trastorno del cerebro. La demencia no es una enfermedad específica. Es un término general que describe una amplia gama de síntomas asociados con una disminución de la memoria o de otras habilidades de pensamiento lo suficientemente graves como para reducir la capacidad de una persona para realizar las actividades diarias. Un diagnóstico médico está obligado a determinar la causa o causas subyacentes de los síntomas.'),
+(376, 'ja', '認知症は、脳の障害による精神機能の取得および進行性の喪失を意味します。認知症は、特定の病気ではありません。それは、記憶力の低下や日常の活動を行う人の能力を低下させるほど厳しい他の思考スキルと関連した症状の広い範囲を説明し全体的な用語です。医療診断が根本的な原因や症状の原因を特定するために必要です。');
+INSERT INTO `courseportal_message` (`id`, `language`, `translation`) VALUES
 (376, 'pt', 'Dementia refere-se a uma perda adquirida e progressiva das funções mentais devido a uma desordem cerebral. Demência não é uma doença específica. É um termo geral que descreve uma ampla gama de sintomas associados a um declínio na memória ou outras habilidades mentais graves o suficiente para reduzir a habilidade das pessoas para realizar atividades cotidianas. Um diagnóstico médico é necessário para determinar a causa ou causas dos sintomas.'),
 (376, 'ru', 'Деменция относится к приобретенной и прогрессирующей потерей психических функций из-за заболевания головного мозга. Деменция является не конкретное заболевание. Это общий термин, который описывает широкий спектр симптомов, связанных со снижением памяти или другие навыки мышления достаточно серьезным, чтобы уменьшить лиц способность выполнять повседневную деятельность. Медицинского диагноза необходимо определить основную причину или причины симптомов.'),
 (376, 'zh', '老年痴呆症是指收购和由于一种大脑功能紊乱的心理功能逐渐丧失。老年痴呆症是不是一个特定的疾病。这是一个整体的术语，描述了一个范围广泛的症状与记忆体或其他严重到足以降低一个人的能力，进行日常活动的思维能力下降。医生诊断是必需的，以确定根本原因或症状的原因。'),
@@ -2664,8 +2671,7 @@ INSERT INTO `onlinecourseportal_message` (`id`, `language`, `translation`) VALUE
 (609, 'es', 'Es la razón principal para colocar a las personas de edad avanzada en instituciones como hogares de ancianos.'),
 (609, 'pt', 'É a razão principal para colocar idosos em instituições como lares de idosos.'),
 (609, 'zh', '它是全球领先的机构，如养老院老人的原因。'),
-(610, 'es', 'Pensando en el material que usted acaba de leer, por favor trate de responder correctamente a las preguntas de evaluación a continuación sin buscar en Internet. Sus respuestas no se registran, pero usted recibirá una respuesta inmediata.');
-INSERT INTO `onlinecourseportal_message` (`id`, `language`, `translation`) VALUES
+(610, 'es', 'Pensando en el material que usted acaba de leer, por favor trate de responder correctamente a las preguntas de evaluación a continuación sin buscar en Internet. Sus respuestas no se registran, pero usted recibirá una respuesta inmediata.'),
 (610, 'pt', 'Pensando sobre o material que você acabou de ler, por favor, tente responder corretamente as perguntas de avaliação abaixo, sem pesquisar na Internet. Suas respostas não são registrados, mas você vai receber feedback imediato.'),
 (610, 'zh', '你刚才读的，请尽量正确地回答下面的评估问题，而在互联网上搜索有关材料的思考。您的回答不会被记录，但你会得到即时的反馈。'),
 (611, 'es', 'Es una enfermedad de demencia en el cerebro?'),
@@ -2958,11 +2964,11 @@ INSERT INTO `onlinecourseportal_message` (`id`, `language`, `translation`) VALUE
 (746, 'pt', 'Este programa é oferecido por modos de vida Mather Instituto do Envelhecimento, em colaboração com o Rush University College de Enfermagem. Desenvolvimento foi parcialmente financiado por fundos do Bureau de divisão Profissionais de Saúde do Departamento de Saúde e Serviços Humanos.'),
 (747, 'pt', 'Exames em linha Workforce'),
 (748, 'pt', 'Envelhecimento no Trabalho'),
-(749, 'pt', '- Verão Vindo 2013');
-INSERT INTO `onlinecourseportal_message` (`id`, `language`, `translation`) VALUES
+(749, 'pt', '- Verão Vindo 2013'),
 (750, 'es', 'El envejecimiento en el lugar de trabajo y herramientas de encuestas están diseñadas para proporcionar a los empleadores con el envejecimiento estratégico información relacionada con la administración de personal. Con un gran por ciento de los 78 millones de baby boomers que planean permanecer en la fuerza de trabajo más allá de la edad tradicional de jubilación, las organizaciones de los sectores sin fines de lucro, privadas y públicas se necesitan herramientas y recursos para hacer el mejor uso de sus conocimientos y habilidades con el fin de incrementar la organización la eficacia y el rendimiento empresarial.'),
 (750, 'pt', 'O envelhecimento nos kits de ferramentas no local de trabalho e pesquisa são projetados para fornecer aos empregadores estratégica de gestão da informação relacionadas com o envelhecimento da força de trabalho. Com uma grande porcentagem dos 78 milhões de baby boomers que planejam permanecer no mercado de trabalho após a idade de aposentadoria tradicionais, as organizações sem fins lucrativos nos setores, privado e público a necessidade de ferramentas e recursos para fazer o melhor uso de seus conhecimentos e habilidades, a fim de aumentar organizacional eficácia e desempenho dos negócios.'),
-(751, 'pt', 'Toolkits'),
+(751, 'pt', 'Toolkits');
+INSERT INTO `courseportal_message` (`id`, `language`, `translation`) VALUES
 (752, 'es', 'La herramienta ofrece información y recursos valiosos para los profesionales de recursos humanos, gerentes, empleados y cuidadores.'),
 (752, 'pt', 'O kit de ferramentas fornece informações valiosas e recursos para profissionais de recursos humanos, gestores, trabalhadores e cuidadores.'),
 (753, 'es', 'Kit de herramientas incluye:'),
@@ -3201,8 +3207,7 @@ INSERT INTO `onlinecourseportal_message` (`id`, `language`, `translation`) VALUE
 (941, 'pt', 'E-mail ou senha incorretos.'),
 (942, 'es', '¡GRACIAS!'),
 (942, 'pt', 'OBRIGADO!'),
-(943, 'es', 'Gracias por su apoyo e interés en los estilos de vida Mather Institute on Aging. A través de la realización de la investigación aplicada, hemos desarrollado premiados, basadas en evidencia los programas de educación para los profesionales que atienden a los adultos mayores. Integrada por investigadores y educadores, somos un recurso global de información sobre innovaciones exitosas de servicios de salud, el envejecimiento y la programación educativa.');
-INSERT INTO `onlinecourseportal_message` (`id`, `language`, `translation`) VALUES
+(943, 'es', 'Gracias por su apoyo e interés en los estilos de vida Mather Institute on Aging. A través de la realización de la investigación aplicada, hemos desarrollado premiados, basadas en evidencia los programas de educación para los profesionales que atienden a los adultos mayores. Integrada por investigadores y educadores, somos un recurso global de información sobre innovaciones exitosas de servicios de salud, el envejecimiento y la programación educativa.'),
 (943, 'pt', 'Nós apreciamos o seu apoio e interesse em modos de vida Mather Instituto do Envelhecimento. Através da realização de pesquisa aplicada, temos desenvolvido premiados, programas baseados em evidências de educação para profissionais que atendem adultos mais velhos. Formada por pesquisadores e educadores, somos um recurso global para obter informações sobre bem-estar, bem-sucedidas inovações de serviços de envelhecimento, e programação educacional.'),
 (944, 'es', 'Requisitos Tutorial'),
 (944, 'pt', 'Requisitos do Tutorial'),
@@ -3446,8 +3451,7 @@ INSERT INTO `onlinecourseportal_message` (`id`, `language`, `translation`) VALUE
 (1136, 'pt', 'Empregadores resposta às necessidades dos cuidadores de trabalho'),
 (1137, 'pt', 'A resposta da empresa para os cuidadores de funcionários'),
 (1138, 'pt', 'Em reconhecimento dos efeitos negativos que pode ter de cuidar sobre os trabalhadores e seu trabalho, alguns empregadores norte-americanos iniciaram vários trabalhos bases de apoio para seus funcionários com responsabilidades de idosos. Na realidade, há uma longa história em os EUA de preocupação empregador para trabalhadores individuais e suas circunstâncias familiares. Especificamente, de cariz familiar benefícios na data dos EUA de volta para a revolução industrial, quando as mulheres (e crianças) começou a trabalhar fora de casa nas primeiras fábricas e moinhos. Foi durante este tempo, em 1825, que Robert Owen, um empresário Inglês, estabeleceu o primeiro patrocinado pelo empregador creche em os EUA, em New Harmony, Indiana.'),
-(1139, 'pt', 'Normalmente, no entanto, a preocupação empregador tem sido manifesta apenas durante os períodos de nossa história, quando as mulheres eram necessários no local de trabalho, e prestação empregador de cuidar da criança foi visto como uma estratégia para atrair e reter os trabalhadores necessários. Exceto para os anos durante as duas Guerras Mundiais, quando as mulheres foram recrutados para preencher as vagas deixadas pelos homens no serviço militar, para a maioria dos séculos 19 e 20 que gerem o cruzamento de trabalho e família foi vista como a única responsabilidade dos próprios trabalhadores . Isso começou a mudar no final dos anos 1970 e 1980, como um número crescente de mulheres começaram a entrar e permanecer no mercado de trabalho. A crença predominante de que a vida familiar e as responsabilidades familiares devem e podem ser deixados em casa foi desafiado pela realidade que enfrentam os trabalhadores enquanto eles lutavam para equilibrar trabalho e obrigações familiares.');
-INSERT INTO `onlinecourseportal_message` (`id`, `language`, `translation`) VALUES
+(1139, 'pt', 'Normalmente, no entanto, a preocupação empregador tem sido manifesta apenas durante os períodos de nossa história, quando as mulheres eram necessários no local de trabalho, e prestação empregador de cuidar da criança foi visto como uma estratégia para atrair e reter os trabalhadores necessários. Exceto para os anos durante as duas Guerras Mundiais, quando as mulheres foram recrutados para preencher as vagas deixadas pelos homens no serviço militar, para a maioria dos séculos 19 e 20 que gerem o cruzamento de trabalho e família foi vista como a única responsabilidade dos próprios trabalhadores . Isso começou a mudar no final dos anos 1970 e 1980, como um número crescente de mulheres começaram a entrar e permanecer no mercado de trabalho. A crença predominante de que a vida familiar e as responsabilidades familiares devem e podem ser deixados em casa foi desafiado pela realidade que enfrentam os trabalhadores enquanto eles lutavam para equilibrar trabalho e obrigações familiares.'),
 (1140, 'pt', 'Aumentar a conscientização das mudanças demográficas e sociais que afetam a força de trabalho criou uma mudança na filosofia de empregadores e empregados sobre a &quot;adequação&quot; de envolvimento empregador nos aspectos relacionadas com a família de vida dos funcionários e estimulou o desenvolvimento de profissionais e familiares benefícios e programas . Neste momento, os benefícios de cuidados infantis e programas tornou-se mais disponível para os trabalhadores americanos. Em meados dos anos 1980, os empregadores americanos começaram a introduzir a programação de atendimento aos idosos a sua variedade de programas de trabalho-família. Estes programas foram formados após os programas de cuidados infantis que incluem recursos e serviços de referência. Pesquisar na Web para aa linha do tempo do desenvolvimento de programas de trabalho de atendimento aos idosos.'),
 (1141, 'pt', 'Empregadores resposta às necessidades dos cuidadores de Trabalho (continuação)'),
 (1142, 'pt', 'Fatores que contribuem para o crescimento do trabalho com base em programas de cuidados de pessoa idosa'),
@@ -3457,7 +3461,8 @@ INSERT INTO `onlinecourseportal_message` (`id`, `language`, `translation`) VALUE
 (1146, 'pt', 'resultados da investigação sobre as consequências potenciais e reais negativos da prestação de cuidados de funcionários e de seu trabalho;'),
 (1147, 'pt', 'o envolvimento do trabalho organizado;'),
 (1148, 'pt', 'preocupações sobre a retenção e recrutamento de trabalhador, e'),
-(1149, 'pt', 'os objetivos de manter a competitividade e melhorar o moral.'),
+(1149, 'pt', 'os objetivos de manter a competitividade e melhorar o moral.');
+INSERT INTO `courseportal_message` (`id`, `language`, `translation`) VALUES
 (1150, 'pt', 'Os primeiros programas de ancião cuidados desenvolvidos em meados de 1980 foram iniciadas em grande parte como resultado de uma pesquisa sobre o número de cuidadores de trabalho e do imperativo demográfico de uma América envelhecimento. O Seguro de viajantes conduziu um dos levantamentos no local de trabalho de funcionários de cuidar primeiro, e as pesquisas no local de trabalho várias seguido rapidamente. Entre 23% e 32% dos funcionários que responderam a essas pesquisas relataram ter pelo menos alguns deveres ancião cuidados e &quot;a estimativa de prevalência de 25% tornou-se referência para os empregadores, que iniciaram programas de trabalho para ajudar os seus funcionários de cuidado&quot;. No entanto, como relatado em Kossek, DeMarr, Backman, e Kollar (1993), de âmbito nacional IBM mais velho de serviço de referência de cuidados, que foi um dos primeiros programas &quot;, foi desenvolvido não como uma resposta à demanda do empregado, mas sim uma resposta pró-ativa para inegáveis ​​tendências demográficas &quot;.'),
 (1151, 'pt', 'Além do impulso dado pela pesquisa documentar o número de cuidadores de trabalho, os empregadores foram incentivados a desenvolver programas de cuidados formais ancião de muitos estudos que tentaram quantificar os custos a eles de cuidadores de trabalho. Uma estimativa inicial desses custos sugeriu que empresas sem programas de cuidados formais mais velhos podem perder cerca de US $ 2.500 por ano, por empregado cuidar em perda de produtividade. Estimativas mais recentes sugerem que esses custos podem ser tão elevado quanto $ 3.142. Análises MetLife vários estimam que os custos agregados da prestação de cuidados empregados para os empregadores em todo o país variou em bilhões por ano.'),
 (1152, 'pt', 'O trabalho organizado também tem desempenhado um papel significativo no desenvolvimento de políticas e programas de cuidados de idosos, tanto por meio de negociação coletiva e por meio da educação sobre a importância do trabalho-família benefícios e políticas. Os contratos de CWA, IBEW e AT &amp; T negociados em 1990 representou um marco significativo para os trabalhadores sindicalizados. Este último contrato resultou no Fundo de Desenvolvimento da Família Cuidados de AT &amp; T, que forneceu financiamento para serviços específicos de rede de envelhecimento que beneficiam membros de sindicatos e de melhoria da qualidade dos programas de atendimento disponíveis mais velhos (ou seja, dia de serviço adulto e centros de idosos).'),
@@ -3610,8 +3615,7 @@ INSERT INTO `onlinecourseportal_message` (`id`, `language`, `translation`) VALUE
 (1283, 'es', 'Los científicos se preguntaron si podría haber algo diferente en la forma en que estas personas habían vivido sus vidas que les permitió resistir los efectos de la enfermedad de Alzheimer patología que habían crecido en sus cerebros. Resultó que estas personas habían sido más activos intelectualmente, socialmente y físicamente a lo largo de su vida adulta de las personas en el otro grupo.'),
 (1284, 'es', 'El cerebro adulto crece nuevas células'),
 (1285, 'es', 'Unos 10 años después de que el estudio de autopsia, otro grupo de investigadores estudiaron los cerebros de personas que habían sobrevivido al cáncer a través de la radioterapia. Resulta que la gente después de pasar por el tratamiento de radiación, parte de la información genética en las células de sus cambios. Mediante la aplicación de un tinte especial que sólo es atraído a las células con esta nueva información genética, los investigadores pueden ver que las células habían formado después del cáncer. Aplicaron este colorante en el tejido cerebral en la autopsia y se sorprendieron al encontrar células en el cerebro que aceptó el tinte. Esto significa que estas células se habían desarrollado después de la radioterapia. Algunas de las personas en este estudio, así como en sus años 80, cuando recibieron el tratamiento del cáncer, por lo que parece que las nuevas células del cerebro están creciendo bien en su vida posterior. Esta evidencia se combina con otros estudios, ya que este ha cambiado la forma en que pensamos sobre el cerebro adulto, ahora aceptamos que el cerebro adulto crece nuevas células cerebrales!'),
-(1286, 'es', 'Ahora bien, esta emoción se tiene que moderar un poco porque las células cerebrales no crecen a la misma tasa que dicen que las células de la piel o los huesos, por lo que es aún más difícil para el cerebro para recuperarse de una lesión.');
-INSERT INTO `onlinecourseportal_message` (`id`, `language`, `translation`) VALUES
+(1286, 'es', 'Ahora bien, esta emoción se tiene que moderar un poco porque las células cerebrales no crecen a la misma tasa que dicen que las células de la piel o los huesos, por lo que es aún más difícil para el cerebro para recuperarse de una lesión.'),
 (1287, 'es', 'Sin embargo, es emocionante saber que todavía podemos crecer nuevas células cerebrales. En realidad, esto puede ser uno de los mecanismos por los cuales podemos aprender cosas nuevas ya que la región del cerebro donde las células cerebrales nuevas crecer - llamada hipocampo - es el área responsable de la formación de nuevos recuerdos.'),
 (1288, 'es', 'La palabra clave para aprender de esto es &quot;neurogénesis&quot;, es decir, el crecimiento de nuevas células cerebrales.'),
 (1289, 'es', 'Estructuras cerebrales también crecer con la experiencia'),
@@ -3973,14 +3977,14 @@ INSERT INTO `onlinecourseportal_message` (`id`, `language`, `translation`) VALUE
 (1512, 'pt', 'O que você vai fazer? - Exemplos: Vou ler (nome do livro) para o prazer. Ou, eu vou andar.'),
 (1513, 'pt', 'Quanto você vai fazer? - Exemplos: Você vai ler um capítulo ou você vai ler por meia hora? Você vai andar dois quarteirões ou para 20 minutos?'),
 (1514, 'pt', 'Quando você vai fazer isso? Exemplos: Você vai ler a primeira coisa de manhã, quando você acordar, antes de ir para a cama, quando o receptor de cuidados está dormindo, ou ... ? Se o seu plano é andar, quando, durante o dia você vai fazer isso?'),
-(1515, 'pt', 'Quantas vezes você vai fazer esta atividade? Exemplo: Três vezes por semana, às segundas, quartas e sextas.');
-INSERT INTO `onlinecourseportal_message` (`id`, `language`, `translation`) VALUES
+(1515, 'pt', 'Quantas vezes você vai fazer esta atividade? Exemplo: Três vezes por semana, às segundas, quartas e sextas.'),
 (1516, 'pt', 'Um erro comum é fazer um plano de ação que está inacessível dentro do prazo. Por exemplo, se você planeja fazer algo todos os dias, você pode falhar. Cuidado, e da vida em geral, tem suas surpresas. Apesar de bem-intencionado, que muitas vezes não é possível fazer algo todos os dias. É melhor se planejar para fazer alguma coisa uma ou duas vezes por semana e ultrapassar o seu plano de acção do que pretende fazer algo todos os dias e não porque você só fez isso seis dias, em vez de sete. Lembre-se, um plano de acção destina-se a ajudar você a cuidar melhor de si mesmo e de experimentar o sucesso. A última coisa que você precisa é uma pressão adicional, decepção e estresse.'),
 (1517, 'pt', 'Aqui estão duas recomendações para escrever um plano de ação que pode ajudá-lo a alcançar o sucesso.'),
 (1518, 'pt', 'Comece onde você está ou começar devagar. Se há um livro que você tem vontade de ler, mas apenas não ter encontrado a tempo, pode não ser realista esperar para ler o livro inteiro na próxima semana. Em vez disso, tente ler por meia hora duas vezes por semana Se você não foi fisicamente ativo, pode ser irrealista para fazer um plano de acção · para começar a andar três quilômetros. É melhor fazer o seu plano de acção para algo que você acredita que pode realizar. Por exemplo, fazer o seu plano para andar três quarteirões ou uma milha meia, em vez de três quilômetros.'),
 (1519, 'pt', 'Dê-se um tempo. Todos nós temos dias em que não tenho vontade de fazer nada. Essa é a vantagem de dizer que você vai fazer alguma coisa, três dias por semana, em vez de todos os dias. Dessa forma, se você não tem vontade de fazer algo em um dia, ou algo se desenvolve que o impede de fazê-lo, você ainda pode alcançar o seu plano de acção.'),
 (1520, 'pt', 'Determinar seu nível de confiança'),
-(1521, 'pt', 'Depois de ter feito o seu plano de acção, pergunte a si mesmo a seguinte pergunta: Em uma escala de 0 a 10, com 0 não estar em todos confiantes e 10 totalmente confiável, como eu estou confiante de que eu possa concluir o meu plano de ação? Se a sua resposta é de 7 ou acima, seu plano de ação é, provavelmente, realista e alcançável. No entanto, se sua resposta é de 6 ou abaixo, é importante ter um outro olhar para o seu plano de acção. Algo provavelmente precisa de ser ajustada.'),
+(1521, 'pt', 'Depois de ter feito o seu plano de acção, pergunte a si mesmo a seguinte pergunta: Em uma escala de 0 a 10, com 0 não estar em todos confiantes e 10 totalmente confiável, como eu estou confiante de que eu possa concluir o meu plano de ação? Se a sua resposta é de 7 ou acima, seu plano de ação é, provavelmente, realista e alcançável. No entanto, se sua resposta é de 6 ou abaixo, é importante ter um outro olhar para o seu plano de acção. Algo provavelmente precisa de ser ajustada.');
+INSERT INTO `courseportal_message` (`id`, `language`, `translation`) VALUES
 (1522, 'pt', 'Pergunte-se: O que me deixa dúvidas sobre a realização do meu plano de ação? Quais os problemas que eu prevejo? Então, veja se você quer encontrar uma solução para os problemas que você identificou ou alterar o seu plano de acção para um novo em que você se sente mais confiança.'),
 (1523, 'pt', 'Anote o seu Plano de Acção'),
 (1524, 'pt', 'Quando estiver satisfeito com o seu plano de acção, anotá-la. Colocar um plano de ação por escrito nos ajuda a lembrar, acompanhar e realizar o acordo que fizemos com nós mesmos. Mantenha o controle de como você está fazendo. Anote os problemas encontrados na execução de seu plano de ação. Marque atividades como você realizá-las. Se você fez um ajuste em seu plano de acção, fazer uma nota do que você fez.'),
@@ -4182,8 +4186,7 @@ INSERT INTO `onlinecourseportal_message` (`id`, `language`, `translation`) VALUE
 (1716, 'pt', 'Manutenção da sua saúde e do espírito pode reduzir o nível de estresse. É fundamental encontrar atividades que ajudam você a se manter saudável e cuidar de si mesmo. Essas atividades são diferentes para cada indivíduo. O que funciona para uma pessoa pode não funcionar para outra. Você deve encontrar para reduzir o stress métodos que funcionam melhor para você.'),
 (1717, 'pt', 'Podemos aprender muito com um programa de auto-cuidado na Flórida chamado &quot;Começar Bem&quot;. Este é um grupo de pessoas que estão a apoiar o outro em aprender a viver e se sentir melhor. Tomam parte na afirmação de vida atividades como &quot;rindo, malabarismo, tocando, meditando pintura, a escrita do jornal, fazer exercícios, comer e nutritiva&quot; Eles demonstram a necessidade de se associar com outras pessoas que ajudam você a manter seu espírito e ajudá-lo a sentir-se amado e suportada. Para gerenciar o estresse, é fundamental fazer pausas de cuidado. Planejá-los em sua programação, começando imediatamente, se você não tiver feito isso. Estudos mostram que os cuidadores muitas vezes não fazer pausas até que eles estão no &quot;fim da linha&quot; ou &quot;queimado&quot;.'),
 (1718, 'pt', 'Isso serve melhor interesse de ninguém como sua capacidade de funcionar pode ser seriamente afetado. Para evitar problemas, é sua a responsabilidade de tirar uma folga do cuidador para se refrescar. É importante para o bem-estar dos receptores de cuidados que você faça pausas. Se você não fizer isso, eles podem se tornar cada vez mais dependente de você. Se você tomar pausas, eles serão menos isolado e se beneficiará de ter contato com outras pessoas. Eles também precisam de pausas de você. (Este é um exemplo de reformulação sua percepção de uma situação.)'),
-(1719, 'pt', 'Você é responsável por sua própria auto-cuidado. Prática de auto-cuidado significa que você:');
-INSERT INTO `onlinecourseportal_message` (`id`, `language`, `translation`) VALUES
+(1719, 'pt', 'Você é responsável por sua própria auto-cuidado. Prática de auto-cuidado significa que você:'),
 (1720, 'pt', 'aprender e usar técnicas de redução de estresse;'),
 (1721, 'pt', 'atender às suas necessidades de cuidados de saúde próprios;'),
 (1722, 'pt', 'obter o devido repouso e nutrição;'),
@@ -4480,8 +4483,7 @@ INSERT INTO `onlinecourseportal_message` (`id`, `language`, `translation`) VALUE
 (2013, 'pt', 'Bem-estar espiritual baseia-se em valores pessoais para encontrar significado e propósito na vida e descobrir uma harmonia pacífica com o mundo. Enquanto a fé significa coisas diferentes para pessoas diferentes, de bem-estar espiritual significa ter esperança, orientação e propósito de nos ajudar a compreender-nos melhor. Alguns métodos de obtenção de bem-estar espiritual incluem:'),
 (2014, 'pt', 'Abraçando crenças pessoais, morais e / ou religião'),
 (2015, 'pt', 'Desenvolver conexões com nós mesmos e os outros'),
-(2016, 'pt', 'Desenvolver uma filosofia de vida');
-INSERT INTO `onlinecourseportal_message` (`id`, `language`, `translation`) VALUES
+(2016, 'pt', 'Desenvolver uma filosofia de vida'),
 (2017, 'pt', 'Explore ensinamentos que apelar para você'),
 (2018, 'pt', 'Praticar técnicas de relaxamento, como a meditação ou yoga'),
 (2019, 'pt', 'Quais são algumas maneiras que você pode explorar bem-estar espiritual?'),
@@ -4502,7 +4504,8 @@ INSERT INTO `onlinecourseportal_message` (`id`, `language`, `translation`) VALUE
 (2034, 'pt', 'Você provavelmente pode pensar em muitas outras maneiras de promover bem-estar intelectual. Como você pode implementar essas idéias para estimular bem-estar intelectual para seus amigos / parentes mais velhos?'),
 (2035, 'pt', 'Aprendizagem ao Longo da Vida'),
 (2036, 'pt', 'Novo aprendizado por adultos mais velhos devem ser ligados a experiências ou actividades que estão familiarizados com ou tenham gostado, especialmente aqueles com um componente social. Aqui estão alguns fatos importantes sobre os adultos mais velhos e de aprendizagem ao longo da vida:'),
-(2037, 'pt', 'As pessoas mais velhas podem aprender novas informações e novas habilidades.'),
+(2037, 'pt', 'As pessoas mais velhas podem aprender novas informações e novas habilidades.');
+INSERT INTO `courseportal_message` (`id`, `language`, `translation`) VALUES
 (2038, 'pt', 'Às vezes, as pessoas mais velhas sentem menos confiança em aprender coisas novas, mas muitas vezes isso é porque eles não foram em uma sala de aula em um longo tempo, ou porque estão conscientes do estereótipo e cair em uma profecia auto-realizável.'),
 (2039, 'pt', 'Talvez a perda mais bem documentado no envelhecimento é que é preciso mais tempo para entender e pensar sobre o que está sendo aprendido. Isto apenas significa que as situações de aprendizagem para os idosos deve ser individualizado, sem pressão de tempo.'),
 (2040, 'pt', 'Para os alunos mais velhos, a aprendizagem activa e participativa pode ser mais benéfica (e agradável) do que o tradicional, a aprendizagem baseada em palestra.'),
@@ -4710,12 +4713,13 @@ INSERT INTO `onlinecourseportal_message` (`id`, `language`, `translation`) VALUE
 -- --------------------------------------------------------
 
 --
--- Table structure for table `onlinecourseportal_message_source`
+-- Table structure for table `courseportal_message_source`
 --
--- Creation: Apr 10, 2013 at 09:43 PM
+-- Creation: May 09, 2013 at 03:18 PM
 --
 
-CREATE TABLE IF NOT EXISTS `onlinecourseportal_message_source` (
+DROP TABLE IF EXISTS `courseportal_message_source`;
+CREATE TABLE IF NOT EXISTS `courseportal_message_source` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `category` varchar(32) COLLATE utf8_unicode_ci DEFAULT NULL,
   `message` mediumtext COLLATE utf8_unicode_ci,
@@ -4723,10 +4727,10 @@ CREATE TABLE IF NOT EXISTS `onlinecourseportal_message_source` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2262 ;
 
 --
--- Dumping data for table `onlinecourseportal_message_source`
+-- Dumping data for table `courseportal_message_source`
 --
 
-INSERT INTO `onlinecourseportal_message_source` (`id`, `category`, `message`) VALUES
+INSERT INTO `courseportal_message_source` (`id`, `category`, `message`) VALUES
 (1, 'onlinecourseportal', 'Online Course Portal'),
 (2, 'onlinecourseportal', 'Home'),
 (3, 'onlinecourseportal', 'Contact Us'),
@@ -5176,8 +5180,7 @@ INSERT INTO `onlinecourseportal_message_source` (`id`, `category`, `message`) VA
 (560, 'onlinecourseportal', 'Thank you for contacting us. We will respond to you as soon as possible.'),
 (563, 'translate', 'Message {message} could not be added to messageSource table'),
 (565, 'onlinecourseportal', 'Coming Soon: Testomonial Page and Forum'),
-(566, 'onlinecourseportal', 'Please visit this website at a later date. We are creating a testimonials page and forum for users and visitors.');
-INSERT INTO `onlinecourseportal_message_source` (`id`, `category`, `message`) VALUES
+(566, 'onlinecourseportal', 'Please visit this website at a later date. We are creating a testimonials page and forum for users and visitors.'),
 (567, 'onlinecourseportal', 'Welcome! This tutorial is designed to help demonstrate our course model, and is meant to be a \n			basic presentation. We will briefly explore dementia, Alzheimer''s disease, and how they are related. \n			Please feel free to contact us if you have questions, or need help.'),
 (568, 'onlinecourseportal', 'With such a profound impact on society, business, and potentially	on your family, could \n			you explain what Alzheimer''s disease is? How about dementia?'),
 (569, 'onlinecourseportal', 'Statistics and other Data (USA / English)'),
@@ -5465,9 +5468,9 @@ INSERT INTO `onlinecourseportal_message_source` (`id`, `category`, `message`) VA
 (851, 'onlinecourseportal', 'As reported by the National Family Caregivers Association (NFCA), here is a snopshot of statistics on family caregivers and family caregiving:'),
 (852, 'onlinecourseportal', 'Caregiving Population'),
 (853, 'onlinecourseportal', 'More than 65 million people, 29% of the U.S. population, provide care for a chronically ill, disabled or aged family member or friend during any given year and spend an average of 20 hours per week providing care for their loved one.'),
-(854, 'onlinecourseportal', 'The value of the services family caregivers provide for "free," when caring for older adults, is estimated to be $375 billion a year. That is almost twice as much as is actually spent on homecare and nursing home services combined ($158 billion).');
-INSERT INTO `onlinecourseportal_message_source` (`id`, `category`, `message`) VALUES
-(855, 'onlinecourseportal', 'The typical family caregiver is a 49-year-old woman caring for her widowed 69-year-old mother who does not live with her. She is married and employed. Approximately 66% of family caregivers are women. More than 37% have children or grandchildren under 18 years old living with them.'),
+(854, 'onlinecourseportal', 'The value of the services family caregivers provide for "free," when caring for older adults, is estimated to be $375 billion a year. That is almost twice as much as is actually spent on homecare and nursing home services combined ($158 billion).'),
+(855, 'onlinecourseportal', 'The typical family caregiver is a 49-year-old woman caring for her widowed 69-year-old mother who does not live with her. She is married and employed. Approximately 66% of family caregivers are women. More than 37% have children or grandchildren under 18 years old living with them.');
+INSERT INTO `courseportal_message_source` (`id`, `category`, `message`) VALUES
 (856, 'onlinecourseportal', '1.4 million children ages 8 to 18 provide care for an adult relative; 72% are caring for a parent or grandparent; and 64% live in the same household as their care recipient. Fortunately, most are not the sole caregiver.'),
 (857, 'onlinecourseportal', '20 hours per week is the average number of hours family caregivers spend caring for their loved ones while 13% of family caregivers are providing 40 hours of care a week or more.'),
 (858, 'onlinecourseportal', 'November 2009 Family caregivers are the foundation of long-term care nationwide exceeding Medicaid long-term care spending in all states.'),
@@ -5703,8 +5706,7 @@ INSERT INTO `onlinecourseportal_message_source` (`id`, `category`, `message`) VA
 (1088, 'onlinecourseportal', 'Ultimately, providing an organized support system for these employees may prove to be a fruitful investment for businesses, given the high percentages of working caregivers who would like to work more if they could. Many working caregivers are likely interested in seeking support in work-life balance to help them meet their responsibilities as caregivers and employees alike, and the accessibility to assistance could potentially go a long way toward greater productivity in the U.S. workplace.'),
 (1089, 'onlinecourseportal', 'Family caregivers provide about 80 percent of all long-term care services in the U.S. (Source: Metlife Mature Market Institute, 2001).'),
 (1090, 'onlinecourseportal', 'Many caregivers work either full or part time while providing care (59 percent). (Source: National Alliance for Caregiving with AARP and MetLife, 2004).'),
-(1091, 'onlinecourseportal', 'More than half of working caregivers (57 percent) say they have to go into work late, leave early or take time off during the day to provide care. (Source: National Alliance for Caregiving with AARP and MetLife, 2004).');
-INSERT INTO `onlinecourseportal_message_source` (`id`, `category`, `message`) VALUES
+(1091, 'onlinecourseportal', 'More than half of working caregivers (57 percent) say they have to go into work late, leave early or take time off during the day to provide care. (Source: National Alliance for Caregiving with AARP and MetLife, 2004).'),
 (1092, 'onlinecourseportal', 'For some adults with heavy caregiving responsibilities, the impact on their ability to work is significant. According to a major study by AARP and the National Alliance for Caregiving, some working caregivers reported having to take a leave of absence (17 percent), shift from full-time to part-time work (10 percent), quit work entirely (6 percent), lose job benefits (5 percent), turn down a promotion (4 percent), or choose early retirement (3 percent). (Source: National Alliance for Caregiving with AARP and MetLife, 2004).'),
 (1093, 'onlinecourseportal', 'Over the course of a caregiving “career,” family caregivers who provide intense personal care can lose as much as $659,000 in wages, pensions, and Social Security. (Source: Dimensions of Family Caregiving: A Look Into the Future; Metlife Mature Market Institute, 2000).'),
 (1094, 'onlinecourseportal', 'American businesses lose between $11 billion and $29 billion a year in reduced productivity costs related to caregiving responsibilities. This includes workplace disruptions, scheduled and unscheduled absences, leaves of absence, reduction from full- to part-time work, early retirements, and leaving work entirely to care for a loved one. (Source: Metropolitan Life Insurance Company, 1997).'),
@@ -5877,9 +5879,9 @@ INSERT INTO `onlinecourseportal_message_source` (`id`, `category`, `message`) VA
 (1261, 'onlinecourseportal', 'Introduction to Program Format'),
 (1262, 'onlinecourseportal', 'Memory Exercise'),
 (1263, 'onlinecourseportal', 'Goal Setting'),
-(1264, 'onlinecourseportal', 'The world of brain health has exploded over the past decade with many new programs and applications emerging to help people think and perform better both now in their daily lives at work or at home and later in life as people age.  Maintaining independence later in life is a concern for many people, especially older adults, but even for younger people this can be a nagging concern.  Through the course of this program you will learn how investing in your brain health now can pay dividends both immediately and as you age.');
-INSERT INTO `onlinecourseportal_message_source` (`id`, `category`, `message`) VALUES
-(1265, 'onlinecourseportal', 'To describe some of the key concepts underlying the field of brain health, we will start by talking a bit about how to protect brain health as you age.'),
+(1264, 'onlinecourseportal', 'The world of brain health has exploded over the past decade with many new programs and applications emerging to help people think and perform better both now in their daily lives at work or at home and later in life as people age.  Maintaining independence later in life is a concern for many people, especially older adults, but even for younger people this can be a nagging concern.  Through the course of this program you will learn how investing in your brain health now can pay dividends both immediately and as you age.'),
+(1265, 'onlinecourseportal', 'To describe some of the key concepts underlying the field of brain health, we will start by talking a bit about how to protect brain health as you age.');
+INSERT INTO `courseportal_message_source` (`id`, `category`, `message`) VALUES
 (1266, 'onlinecourseportal', 'Many people think that dementia is a normal part of the aging process and that losing ones memory is just part of getting older. While some cognitive skills, such as reaction time and our ability to access words at times (what we think of as “senior moments”), do decline naturally with age, “dementia” is a decline in cognitive ability beyond the normal aging process, most likely due to disease or injury.'),
 (1267, 'onlinecourseportal', 'Many people also think that if dementia is in their family they are destined to develop it at some point in their lives.  However, brain research is showing that the way people live their lives actually seems to account for as much or more of the risk for dementia than family history.  In fact for the typical late-onset form of Alzheimer’s disease, genes seem to only account for about 30% of the risk (that’s in contrast to early-onset Alzheimer’s, which occurs before age 65 and has a much stronger genetic component).  The rest of that 70% is made up of some other things that we can’t control such as environmental toxins, but within that 70% area there are a lot of things that we can control.'),
 (1268, 'onlinecourseportal', 'This information is leading some doctors and scientists to start thinking of dementia as a preventable disease, similar to how we think of heart disease, cancer and Type II diabetes as preventable.\n'),
@@ -6144,8 +6146,7 @@ INSERT INTO `onlinecourseportal_message_source` (`id`, `category`, `message`) VA
 (1527, 'onlinecourseportal', 'Clearly identify the problem. This is the first and most important step in the solution-seeking approach. It also can be the most difficult step.'),
 (1528, 'onlinecourseportal', 'List ideas to solve the problem. Family, friends, and others may be helpful in giving ideas. When you ask for ideas, just listen to each suggestion. It is best not to respond as to why an idea is or is not likely to work. Just focus on getting the ideas.'),
 (1529, 'onlinecourseportal', 'Select one to try. When trying a new idea, give it a fair trial before deciding that it will not work.'),
-(1530, 'onlinecourseportal', 'Assess the results. Ask yourself, "How well did what I chose work?" If all went well, congratulate yourself for finding a solution to the identified problem. If the first idea did not work, try another idea. Sometimes an idea just needs fine-tuning. It is important not to give up on an idea just because it did not work the first time. If you have difficulty finding a solution that works, utilize other resources. Share your problem with family, friends, and professionals and ask them for possible ideas. If you still find that suggested solutions do not work, you may need to accept that the problem is not solvable right now.');
-INSERT INTO `onlinecourseportal_message_source` (`id`, `category`, `message`) VALUES
+(1530, 'onlinecourseportal', 'Assess the results. Ask yourself, "How well did what I chose work?" If all went well, congratulate yourself for finding a solution to the identified problem. If the first idea did not work, try another idea. Sometimes an idea just needs fine-tuning. It is important not to give up on an idea just because it did not work the first time. If you have difficulty finding a solution that works, utilize other resources. Share your problem with family, friends, and professionals and ask them for possible ideas. If you still find that suggested solutions do not work, you may need to accept that the problem is not solvable right now.'),
 (1531, 'onlinecourseportal', 'Remember, just because there does not seem to be a workable solution right now does not mean that a problem can not be solved later, or that other problems can not be solved in the same way. It may be helpful to go back to the first step and consider if the problem needs to be redefined. For example, a caregiver had thought that her problem was "I am tired all of the time." However, the real problem was the caregiver''s beliefs that "No one can care for John like I can," and "I have to do everything myself." As a result of these beliefs, the caregiver was doing everything herself and getting worn out. When she redefined the problem and focused on changing her beliefs and view of the caregiving situation, she found a workable solution. Sometimes, too, a problem may be easier to work on if you break it down into smaller problems.'),
 (1532, 'onlinecourseportal', 'Most of the time if you follow these steps, you will find a solution that solves the problem. It is important to avoid making the mistake of jumping from step l to step 7 and thinking "nothing can be done."'),
 (1533, 'onlinecourseportal', 'Accomplishing action plans is often a reward in itself. However, it is also important to find healthy pleasures that add enjoyment to your life. Rewards do not have to be fancy or expensive or take a lot of time. One caregiver; for example, regularly goes to a movie or a play as a gift to herself from her husband. She said:'),
@@ -6370,10 +6371,10 @@ INSERT INTO `onlinecourseportal_message_source` (`id`, `category`, `message`) VA
 (1752, 'onlinecourseportal', 'Proper diet, adequate sleep, and regular exercise are necessary for all of us, and even more so when we are caregivers. These lifestyle factors increase our resistance to illness and our ability to cope with stressful situations.'),
 (1753, 'onlinecourseportal', 'Exercise promotes better sleep, reduces tension and depression, and increases energy and alertness. If finding time to exercise is a problem, try to incorporate it into your usual day Perhaps the person receiving care can walk or do stretching exercises with you. If necessary do frequent short exercises instead of using large blocks of time. Find activities you enjoy. Walking is considered one of the best and easiest exercises. It helps to reduce psychological tension as well as having physical benefits.'),
 (1754, 'onlinecourseportal', 'Walking 20 minutes a day, three times a week, is very beneficial. If you can not be away 20 minutes, 10-minute walks twice a day or even a five-minute walk are beneficial. Work walking into your life. Walk whenever and wherever you can. Perhaps it is easiest to walk around your block, at the mall, or a nearby park. The next time a friend or family member comes to visit, take time for a short walk. When the care receiver is getting therapy, take a walk around the medical facility.'),
-(1755, 'onlinecourseportal', 'Breathing for relaxation - ');
-INSERT INTO `onlinecourseportal_message_source` (`id`, `category`, `message`) VALUES
+(1755, 'onlinecourseportal', 'Breathing for relaxation - '),
 (1756, 'onlinecourseportal', 'Stressful situations or memories of those situations can cause changes in our breathing. Often the more tense we feel, the more shallow our breathing becomes. · Stress management tools usually include a focus on breathing. The following breathing exercise takes only one or two minutes and you can easily do it anywhere. Use it often to lower stress.'),
-(1757, 'onlinecourseportal', ' Meditation -'),
+(1757, 'onlinecourseportal', ' Meditation -');
+INSERT INTO `courseportal_message_source` (`id`, `category`, `message`) VALUES
 (1758, 'onlinecourseportal', 'The word "meditation" comes from the Sanskrit word medha which, when taken literally, means "doing the wisdom." Meditation aids in relaxation and in achieving physical and mental well-being. Meditation is keeping your attention focused in the moment to quiet the mind and hear your body''s inner wisdom. You, too, can learn to meditate. See the "Process of Meditation" box on the next page.'),
 (1759, 'onlinecourseportal', 'Music -'),
 (1760, 'onlinecourseportal', 'Music is another tool for reducing stress. It can alter the body and the mind. It can induce deep relaxation, act as a stimulant, and take you into other states of consciousness. Music is often used specifically for healing and decreasing stress and tension. Use the following steps as a guideline.'),
@@ -6694,8 +6695,7 @@ INSERT INTO `onlinecourseportal_message_source` (`id`, `category`, `message`) VA
 (2075, 'onlinecourseportal', 'Consider that many of your skills or knowledge are already valuable assets to your community. Seek ways to share those skills or knowledge.'),
 (2076, 'onlinecourseportal', 'Are you now asking, “Am I really creative enough?”'),
 (2077, 'onlinecourseportal', 'Everyone has more potential than they know.'),
-(2078, 'onlinecourseportal', 'Creativity does not need to be something grand or dramatic.');
-INSERT INTO `onlinecourseportal_message_source` (`id`, `category`, `message`) VALUES
+(2078, 'onlinecourseportal', 'Creativity does not need to be something grand or dramatic.'),
 (2079, 'onlinecourseportal', 'Creativity takes many forms and can be as simple as a pleasant social interaction where two friends explore something new about each other or their mutual interests'),
 (2080, 'onlinecourseportal', 'Technology and the Future of Caregiving'),
 (2081, 'onlinecourseportal', 'The way we care for older adults today cannot scale to meet the looming age wave, and before long we’ll face a fullblown national crisis. We have an obligation to our parents—indeed to the next generation of older adults—to ensure they get the best possible care and that they receive it in a place they want to call home.'),
@@ -6883,12 +6883,13 @@ INSERT INTO `onlinecourseportal_message_source` (`id`, `category`, `message`) VA
 -- --------------------------------------------------------
 
 --
--- Table structure for table `onlinecourseportal_referral`
+-- Table structure for table `courseportal_referral`
 --
--- Creation: Apr 10, 2013 at 09:43 PM
+-- Creation: May 09, 2013 at 03:18 PM
 --
 
-CREATE TABLE IF NOT EXISTS `onlinecourseportal_referral` (
+DROP TABLE IF EXISTS `courseportal_referral`;
+CREATE TABLE IF NOT EXISTS `courseportal_referral` (
   `id` int(11) NOT NULL,
   `referrer` int(11) NOT NULL,
   `referee` int(11) NOT NULL,
@@ -6899,22 +6900,23 @@ CREATE TABLE IF NOT EXISTS `onlinecourseportal_referral` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- RELATIONS FOR TABLE `onlinecourseportal_referral`:
+-- RELATIONS FOR TABLE `courseportal_referral`:
 --   `referrer`
---       `onlinecourseportal_user` -> `id`
+--       `courseportal_user` -> `id`
 --   `referee`
---       `onlinecourseportal_user` -> `id`
+--       `courseportal_user` -> `id`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `onlinecourseportal_survey`
+-- Table structure for table `courseportal_survey`
 --
--- Creation: Apr 10, 2013 at 09:43 PM
+-- Creation: May 09, 2013 at 03:18 PM
 --
 
-CREATE TABLE IF NOT EXISTS `onlinecourseportal_survey` (
+DROP TABLE IF EXISTS `courseportal_survey`;
+CREATE TABLE IF NOT EXISTS `courseportal_survey` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `title` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
@@ -6925,10 +6927,10 @@ CREATE TABLE IF NOT EXISTS `onlinecourseportal_survey` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=11 ;
 
 --
--- Dumping data for table `onlinecourseportal_survey`
+-- Dumping data for table `courseportal_survey`
 --
 
-INSERT INTO `onlinecourseportal_survey` (`id`, `name`, `title`, `description`, `anonymous`) VALUES
+INSERT INTO `courseportal_survey` (`id`, `name`, `title`, `description`, `anonymous`) VALUES
 (1, 'profile', 'Extended Profile Survey', '<p>Please complete the following survey to help us learn more about our users. Your responses will be kept confidential.</p>\r\n\r\n<hr />', 0),
 (2, 'workingCaregiver', 'Caregiver and Working?', 'There are many challenges to being a caregiver and working full-time. With millions of households in the US caring for a elderly person, among their workplace responsibilities, it is difficult to juggle both.', 1),
 (3, 'hrEmployer', 'HR/Employer Survey', 'The many challenges caregiving workers so often face can have a negative impact on both the employee and the organization—encumbering your company’s workflow and productivity, and threatening your employees’ retirement plans and financial security. Employee caregivers cost American businesses approximately $34 billion in lost productivity each year. In addition to the financial impact, the stress associated with caring for an older adult takes a considerable physical and psychological toll on their adult children. As a result, caregivers are far more likely to have fair-to-poor health, resulting in higher health care costs to companies.\r\nPlease complete the brief survey.', 1),
@@ -6943,12 +6945,13 @@ INSERT INTO `onlinecourseportal_survey` (`id`, `name`, `title`, `description`, `
 -- --------------------------------------------------------
 
 --
--- Table structure for table `onlinecourseportal_survey_answer`
+-- Table structure for table `courseportal_survey_answer`
 --
--- Creation: Apr 10, 2013 at 09:43 PM
+-- Creation: May 09, 2013 at 03:18 PM
 --
 
-CREATE TABLE IF NOT EXISTS `onlinecourseportal_survey_answer` (
+DROP TABLE IF EXISTS `courseportal_survey_answer`;
+CREATE TABLE IF NOT EXISTS `courseportal_survey_answer` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) DEFAULT NULL,
   `question_id` int(11) NOT NULL,
@@ -6959,18 +6962,18 @@ CREATE TABLE IF NOT EXISTS `onlinecourseportal_survey_answer` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=449 ;
 
 --
--- RELATIONS FOR TABLE `onlinecourseportal_survey_answer`:
+-- RELATIONS FOR TABLE `courseportal_survey_answer`:
 --   `user_id`
---       `onlinecourseportal_user` -> `id`
+--       `courseportal_user` -> `id`
 --   `question_id`
---       `onlinecourseportal_survey_question` -> `id`
+--       `courseportal_survey_question` -> `id`
 --
 
 --
--- Dumping data for table `onlinecourseportal_survey_answer`
+-- Dumping data for table `courseportal_survey_answer`
 --
 
-INSERT INTO `onlinecourseportal_survey_answer` (`id`, `user_id`, `question_id`) VALUES
+INSERT INTO `courseportal_survey_answer` (`id`, `user_id`, `question_id`) VALUES
 (74, NULL, 6),
 (75, NULL, 6),
 (76, NULL, 6),
@@ -7353,12 +7356,13 @@ INSERT INTO `onlinecourseportal_survey_answer` (`id`, `user_id`, `question_id`) 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `onlinecourseportal_survey_answer_option`
+-- Table structure for table `courseportal_survey_answer_option`
 --
--- Creation: Apr 10, 2013 at 09:43 PM
+-- Creation: May 09, 2013 at 03:18 PM
 --
 
-CREATE TABLE IF NOT EXISTS `onlinecourseportal_survey_answer_option` (
+DROP TABLE IF EXISTS `courseportal_survey_answer_option`;
+CREATE TABLE IF NOT EXISTS `courseportal_survey_answer_option` (
   `answer_id` int(11) NOT NULL,
   `option_id` int(11) NOT NULL,
   PRIMARY KEY (`answer_id`,`option_id`),
@@ -7366,18 +7370,18 @@ CREATE TABLE IF NOT EXISTS `onlinecourseportal_survey_answer_option` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- RELATIONS FOR TABLE `onlinecourseportal_survey_answer_option`:
+-- RELATIONS FOR TABLE `courseportal_survey_answer_option`:
 --   `answer_id`
---       `onlinecourseportal_survey_answer` -> `id`
+--       `courseportal_survey_answer` -> `id`
 --   `option_id`
---       `onlinecourseportal_survey_question_option` -> `id`
+--       `courseportal_survey_question_option` -> `id`
 --
 
 --
--- Dumping data for table `onlinecourseportal_survey_answer_option`
+-- Dumping data for table `courseportal_survey_answer_option`
 --
 
-INSERT INTO `onlinecourseportal_survey_answer_option` (`answer_id`, `option_id`) VALUES
+INSERT INTO `courseportal_survey_answer_option` (`answer_id`, `option_id`) VALUES
 (119, 2),
 (21, 3),
 (78, 4),
@@ -7878,32 +7882,34 @@ INSERT INTO `onlinecourseportal_survey_answer_option` (`answer_id`, `option_id`)
 -- --------------------------------------------------------
 
 --
--- Table structure for table `onlinecourseportal_survey_answer_text`
+-- Table structure for table `courseportal_survey_answer_text`
 --
--- Creation: Apr 10, 2013 at 09:43 PM
+-- Creation: May 09, 2013 at 03:18 PM
 --
 
-CREATE TABLE IF NOT EXISTS `onlinecourseportal_survey_answer_text` (
+DROP TABLE IF EXISTS `courseportal_survey_answer_text`;
+CREATE TABLE IF NOT EXISTS `courseportal_survey_answer_text` (
   `answer_id` int(11) NOT NULL,
   `text` mediumtext COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`answer_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- RELATIONS FOR TABLE `onlinecourseportal_survey_answer_text`:
+-- RELATIONS FOR TABLE `courseportal_survey_answer_text`:
 --   `answer_id`
---       `onlinecourseportal_survey_answer` -> `id`
+--       `courseportal_survey_answer` -> `id`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `onlinecourseportal_survey_question`
+-- Table structure for table `courseportal_survey_question`
 --
--- Creation: Apr 10, 2013 at 09:43 PM
+-- Creation: May 09, 2013 at 03:18 PM
 --
 
-CREATE TABLE IF NOT EXISTS `onlinecourseportal_survey_question` (
+DROP TABLE IF EXISTS `courseportal_survey_question`;
+CREATE TABLE IF NOT EXISTS `courseportal_survey_question` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `survey_id` int(11) NOT NULL,
   `type_id` int(11) NOT NULL,
@@ -7918,18 +7924,18 @@ CREATE TABLE IF NOT EXISTS `onlinecourseportal_survey_question` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=80 ;
 
 --
--- RELATIONS FOR TABLE `onlinecourseportal_survey_question`:
+-- RELATIONS FOR TABLE `courseportal_survey_question`:
 --   `survey_id`
---       `onlinecourseportal_survey` -> `id`
+--       `courseportal_survey` -> `id`
 --   `type_id`
---       `onlinecourseportal_survey_question_type` -> `id`
+--       `courseportal_survey_question_type` -> `id`
 --
 
 --
--- Dumping data for table `onlinecourseportal_survey_question`
+-- Dumping data for table `courseportal_survey_question`
 --
 
-INSERT INTO `onlinecourseportal_survey_question` (`id`, `survey_id`, `type_id`, `text`, `order`, `allow_many_options`, `required`) VALUES
+INSERT INTO `courseportal_survey_question` (`id`, `survey_id`, `type_id`, `text`, `order`, `allow_many_options`, `required`) VALUES
 (1, 1, 3, '1. What is your age?', 1, 0, 1),
 (2, 1, 3, '2. How would you describe your current role as a family caregiver?', 2, 0, 1),
 (3, 1, 3, '3. If you are currently a caregiver for an older parent, relative, or friend, about how many hours a week do you spend caregiving or providing some type of help to this person?', 3, 0, 1),
@@ -8013,12 +8019,13 @@ INSERT INTO `onlinecourseportal_survey_question` (`id`, `survey_id`, `type_id`, 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `onlinecourseportal_survey_question_option`
+-- Table structure for table `courseportal_survey_question_option`
 --
--- Creation: Apr 10, 2013 at 09:43 PM
+-- Creation: May 09, 2013 at 03:18 PM
 --
 
-CREATE TABLE IF NOT EXISTS `onlinecourseportal_survey_question_option` (
+DROP TABLE IF EXISTS `courseportal_survey_question_option`;
+CREATE TABLE IF NOT EXISTS `courseportal_survey_question_option` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `question_id` int(11) NOT NULL,
   `text` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
@@ -8029,16 +8036,16 @@ CREATE TABLE IF NOT EXISTS `onlinecourseportal_survey_question_option` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=345 ;
 
 --
--- RELATIONS FOR TABLE `onlinecourseportal_survey_question_option`:
+-- RELATIONS FOR TABLE `courseportal_survey_question_option`:
 --   `question_id`
---       `onlinecourseportal_survey_question` -> `id`
+--       `courseportal_survey_question` -> `id`
 --
 
 --
--- Dumping data for table `onlinecourseportal_survey_question_option`
+-- Dumping data for table `courseportal_survey_question_option`
 --
 
-INSERT INTO `onlinecourseportal_survey_question_option` (`id`, `question_id`, `text`, `order`) VALUES
+INSERT INTO `courseportal_survey_question_option` (`id`, `question_id`, `text`, `order`) VALUES
 (2, 1, 'Under 21', 1),
 (3, 1, '21-30', 2),
 (4, 1, '31-40', 3),
@@ -8366,12 +8373,13 @@ INSERT INTO `onlinecourseportal_survey_question_option` (`id`, `question_id`, `t
 -- --------------------------------------------------------
 
 --
--- Table structure for table `onlinecourseportal_survey_question_type`
+-- Table structure for table `courseportal_survey_question_type`
 --
--- Creation: Apr 10, 2013 at 09:43 PM
+-- Creation: May 09, 2013 at 03:18 PM
 --
 
-CREATE TABLE IF NOT EXISTS `onlinecourseportal_survey_question_type` (
+DROP TABLE IF EXISTS `courseportal_survey_question_type`;
+CREATE TABLE IF NOT EXISTS `courseportal_survey_question_type` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(64) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`),
@@ -8379,10 +8387,10 @@ CREATE TABLE IF NOT EXISTS `onlinecourseportal_survey_question_type` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=6 ;
 
 --
--- Dumping data for table `onlinecourseportal_survey_question_type`
+-- Dumping data for table `courseportal_survey_question_type`
 --
 
-INSERT INTO `onlinecourseportal_survey_question_type` (`id`, `name`) VALUES
+INSERT INTO `courseportal_survey_question_type` (`id`, `name`) VALUES
 (2, 'checkbox'),
 (3, 'radio'),
 (1, 'select'),
@@ -8392,12 +8400,13 @@ INSERT INTO `onlinecourseportal_survey_question_type` (`id`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `onlinecourseportal_uploaded_file`
+-- Table structure for table `courseportal_uploaded_file`
 --
--- Creation: Apr 10, 2013 at 09:43 PM
+-- Creation: May 09, 2013 at 03:18 PM
 --
 
-CREATE TABLE IF NOT EXISTS `onlinecourseportal_uploaded_file` (
+DROP TABLE IF EXISTS `courseportal_uploaded_file`;
+CREATE TABLE IF NOT EXISTS `courseportal_uploaded_file` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) NOT NULL,
   `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -8410,20 +8419,21 @@ CREATE TABLE IF NOT EXISTS `onlinecourseportal_uploaded_file` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
 
 --
--- RELATIONS FOR TABLE `onlinecourseportal_uploaded_file`:
+-- RELATIONS FOR TABLE `courseportal_uploaded_file`:
 --   `user_id`
---       `onlinecourseportal_user` -> `id`
+--       `courseportal_user` -> `id`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `onlinecourseportal_user`
+-- Table structure for table `courseportal_user`
 --
--- Creation: Apr 28, 2013 at 11:19 PM
+-- Creation: May 09, 2013 at 03:18 PM
 --
 
-CREATE TABLE IF NOT EXISTS `onlinecourseportal_user` (
+DROP TABLE IF EXISTS `courseportal_user`;
+CREATE TABLE IF NOT EXISTS `courseportal_user` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `password` char(44) COLLATE utf8_unicode_ci NOT NULL,
   `salt` char(44) COLLATE utf8_unicode_ci NOT NULL,
@@ -8449,17 +8459,17 @@ CREATE TABLE IF NOT EXISTS `onlinecourseportal_user` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=296 ;
 
 --
--- RELATIONS FOR TABLE `onlinecourseportal_user`:
+-- RELATIONS FOR TABLE `courseportal_user`:
 --   `group_id`
---       `onlinecourseportal_group` -> `id`
+--       `courseportal_group` -> `id`
 --
 
 --
--- Dumping data for table `onlinecourseportal_user`
+-- Dumping data for table `courseportal_user`
 --
 
-INSERT INTO `onlinecourseportal_user` (`id`, `password`, `salt`, `group_id`, `email`, `name`, `session_key`, `created`, `last_ip`, `last_agent`, `last_login`, `last_route`, `last_page`, `language`, `firstname`, `lastname`, `location`, `country_iso`) VALUES
-(4, 'DHq2uOG6ntWZOSsvWziPEaz+bNuZpFRT7QLgHs7IgXo=', 'nG42gK97c7hKwAyv++VQ2P9iTNmv5RhpLfb/81Vczgw=', 1, 'l.daprato@gmail.com', 'l.daprato', 'Tx44wFF7E7xpM6p5YOjmbl1Xd8Tvnhr2GihxcprDyTg=', '2012-08-22 06:36:45', '98.253.33.44', 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.64 Safari/537.31', '2013-04-30 17:12:48', 'user/login', '', 'en_us', 'Louis', 'DaPrato', 'Glenview', 'us'),
+INSERT INTO `courseportal_user` (`id`, `password`, `salt`, `group_id`, `email`, `name`, `session_key`, `created`, `last_ip`, `last_agent`, `last_login`, `last_route`, `last_page`, `language`, `firstname`, `lastname`, `location`, `country_iso`) VALUES
+(4, 'DHq2uOG6ntWZOSsvWziPEaz+bNuZpFRT7QLgHs7IgXo=', 'nG42gK97c7hKwAyv++VQ2P9iTNmv5RhpLfb/81Vczgw=', 1, 'l.daprato@gmail.com', 'l.daprato', 'fMYmImYhVNqJReN0HqghgPr/PgZQULvBMlI7khdADs4=', '2012-08-22 06:36:45', '98.253.33.44', 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.64 Safari/537.31', '2013-04-30 17:12:48', 'user/login', '', 'en_us', 'Louis', 'DaPrato', 'Glenview', 'us'),
 (72, 'qxC8vQi9m5Hi2o3NMNeBBBg2Un4YTqNpij45OmLc2M8=', 'IXmqmaSJoz5/Gc0kCOEYUxGy4IvZj8cZH7abJfI4kSw=', 1, 'jwoodall@matherlifeways.com', 'jwoodall', 'xd++cU9jPHTEbu8M5ZU0MoxXoWDWyRandV4pwQrLe+4=', '2012-08-27 17:08:11', '107.1.175.138', 'Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; Trident/6.0)', '2013-04-30 15:33:26', 'user/logout', '', 'en', 'JON', 'WOODALL', 'EVANSTON', 'us'),
 (75, 'U6aKLqF/mBHZFc8ZgY5wVW7oIo7mDgJroDX5AMfrCus=', 'QXozcQtePlULwf70nFzwgaLfJu9SjtRMawnCwlwG4do=', 1, 'yin_li_juan@hotmail.com', 'yin_li_juan', 'ek0HffubKvL8x+0D6xlQIQHaMAVATZCKJxjG+6m8Rk4=', '2012-08-27 23:32:10', '', '', '2012-08-27 18:32:10', '', '', NULL, 'LiJuan', 'Yin', 'Arlington Heights', 'us'),
 (96, 'puF0IFm/F8VGdmZUxYBalkcPtSrAvCEIr2v4hhaKNAU=', 'ENtVcSM8H9zZJZD+VxtlbqLFOx8hJBHuneYcLZB/fCg=', 1, 'eziegemeier@yahoo.com', 'eziegemeier', '7+v/UryXcrb8ITbamfziLm+hOOzN3NbbVwNPc2X7v9k=', '2012-10-19 05:00:15', '', '', '2012-10-19 00:00:15', '', '', NULL, 'Ellen ', 'Ziegemeier', 'St. Peters', 'us'),
@@ -8634,28 +8644,29 @@ INSERT INTO `onlinecourseportal_user` (`id`, `password`, `salt`, `group_id`, `em
 -- --------------------------------------------------------
 
 --
--- Table structure for table `onlinecourseportal_user_activated`
+-- Table structure for table `courseportal_user_activated`
 --
--- Creation: Apr 30, 2013 at 07:31 PM
+-- Creation: May 09, 2013 at 03:18 PM
 --
 
-CREATE TABLE IF NOT EXISTS `onlinecourseportal_user_activated` (
+DROP TABLE IF EXISTS `courseportal_user_activated`;
+CREATE TABLE IF NOT EXISTS `courseportal_user_activated` (
   `user_id` int(11) NOT NULL,
   `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- RELATIONS FOR TABLE `onlinecourseportal_user_activated`:
+-- RELATIONS FOR TABLE `courseportal_user_activated`:
 --   `user_id`
---       `onlinecourseportal_user` -> `id`
+--       `courseportal_user` -> `id`
 --
 
 --
--- Dumping data for table `onlinecourseportal_user_activated`
+-- Dumping data for table `courseportal_user_activated`
 --
 
-INSERT INTO `onlinecourseportal_user_activated` (`user_id`, `date`) VALUES
+INSERT INTO `courseportal_user_activated` (`user_id`, `date`) VALUES
 (4, '2012-08-22 06:36:45'),
 (72, '2012-08-27 17:08:11'),
 (75, '2012-08-27 23:32:10'),
@@ -8795,12 +8806,13 @@ INSERT INTO `onlinecourseportal_user_activated` (`user_id`, `date`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `onlinecourseportal_user_agreement`
+-- Table structure for table `courseportal_user_agreement`
 --
--- Creation: Apr 28, 2013 at 11:11 PM
+-- Creation: May 09, 2013 at 03:18 PM
 --
 
-CREATE TABLE IF NOT EXISTS `onlinecourseportal_user_agreement` (
+DROP TABLE IF EXISTS `courseportal_user_agreement`;
+CREATE TABLE IF NOT EXISTS `courseportal_user_agreement` (
   `user_id` int(11) NOT NULL,
   `agreement_id` int(11) NOT NULL,
   `agreed_on` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -8808,10 +8820,10 @@ CREATE TABLE IF NOT EXISTS `onlinecourseportal_user_agreement` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `onlinecourseportal_user_agreement`
+-- Dumping data for table `courseportal_user_agreement`
 --
 
-INSERT INTO `onlinecourseportal_user_agreement` (`user_id`, `agreement_id`, `agreed_on`) VALUES
+INSERT INTO `courseportal_user_agreement` (`user_id`, `agreement_id`, `agreed_on`) VALUES
 (4, 1, '2013-04-22 21:51:47'),
 (289, 1, '2013-04-26 23:07:30'),
 (290, 1, '2013-04-30 19:20:31'),
@@ -8824,12 +8836,13 @@ INSERT INTO `onlinecourseportal_user_agreement` (`user_id`, `agreement_id`, `agr
 -- --------------------------------------------------------
 
 --
--- Table structure for table `onlinecourseportal_user_course`
+-- Table structure for table `courseportal_user_course`
 --
--- Creation: Apr 10, 2013 at 09:43 PM
+-- Creation: May 09, 2013 at 03:18 PM
 --
 
-CREATE TABLE IF NOT EXISTS `onlinecourseportal_user_course` (
+DROP TABLE IF EXISTS `courseportal_user_course`;
+CREATE TABLE IF NOT EXISTS `courseportal_user_course` (
   `user_id` int(11) NOT NULL,
   `course_id` int(11) NOT NULL,
   PRIMARY KEY (`user_id`,`course_id`),
@@ -8837,22 +8850,42 @@ CREATE TABLE IF NOT EXISTS `onlinecourseportal_user_course` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- RELATIONS FOR TABLE `onlinecourseportal_user_course`:
+-- RELATIONS FOR TABLE `courseportal_user_course`:
 --   `user_id`
---       `onlinecourseportal_user` -> `id`
+--       `courseportal_user` -> `id`
 --   `course_id`
---       `onlinecourseportal_course` -> `id`
+--       `courseportal_course` -> `id`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `courseportal_yii_session`
+--
+-- Creation: May 09, 2013 at 03:19 PM
+-- Last update: May 09, 2013 at 03:22 PM
+--
+
+DROP TABLE IF EXISTS `courseportal_yii_session`;
+CREATE TABLE IF NOT EXISTS `courseportal_yii_session` (
+  `id` char(32) COLLATE utf8_unicode_ci NOT NULL,
+  `user_id` int(11) DEFAULT NULL,
+  `expire` int(11) DEFAULT NULL,
+  `data` longblob,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
 --
 -- Table structure for table `phpbb_acl_groups`
 --
--- Creation: Apr 10, 2013 at 09:43 PM
--- Last update: Apr 30, 2013 at 06:42 PM
+-- Creation: May 09, 2013 at 03:18 PM
+-- Last update: May 09, 2013 at 03:18 PM
+-- Last check: May 09, 2013 at 03:18 PM
 --
 
+DROP TABLE IF EXISTS `phpbb_acl_groups`;
 CREATE TABLE IF NOT EXISTS `phpbb_acl_groups` (
   `group_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
   `forum_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
@@ -8981,10 +9014,11 @@ INSERT INTO `phpbb_acl_groups` (`group_id`, `forum_id`, `auth_option_id`, `auth_
 --
 -- Table structure for table `phpbb_acl_options`
 --
--- Creation: Apr 10, 2013 at 09:43 PM
--- Last update: Apr 10, 2013 at 09:43 PM
+-- Creation: May 09, 2013 at 03:18 PM
+-- Last update: May 09, 2013 at 03:18 PM
 --
 
+DROP TABLE IF EXISTS `phpbb_acl_options`;
 CREATE TABLE IF NOT EXISTS `phpbb_acl_options` (
   `auth_option_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
   `auth_option` varchar(50) COLLATE utf8_bin NOT NULL DEFAULT '',
@@ -9123,10 +9157,11 @@ INSERT INTO `phpbb_acl_options` (`auth_option_id`, `auth_option`, `is_global`, `
 --
 -- Table structure for table `phpbb_acl_roles`
 --
--- Creation: Apr 10, 2013 at 09:43 PM
--- Last update: Apr 10, 2013 at 09:43 PM
+-- Creation: May 09, 2013 at 03:18 PM
+-- Last update: May 09, 2013 at 03:18 PM
 --
 
+DROP TABLE IF EXISTS `phpbb_acl_roles`;
 CREATE TABLE IF NOT EXISTS `phpbb_acl_roles` (
   `role_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
   `role_name` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '',
@@ -9173,11 +9208,12 @@ INSERT INTO `phpbb_acl_roles` (`role_id`, `role_name`, `role_description`, `role
 --
 -- Table structure for table `phpbb_acl_roles_data`
 --
--- Creation: Apr 10, 2013 at 09:43 PM
--- Last update: Apr 10, 2013 at 09:43 PM
--- Last check: Apr 10, 2013 at 09:43 PM
+-- Creation: May 09, 2013 at 03:18 PM
+-- Last update: May 09, 2013 at 03:18 PM
+-- Last check: May 09, 2013 at 03:18 PM
 --
 
+DROP TABLE IF EXISTS `phpbb_acl_roles_data`;
 CREATE TABLE IF NOT EXISTS `phpbb_acl_roles_data` (
   `role_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
   `auth_option_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
@@ -9587,10 +9623,11 @@ INSERT INTO `phpbb_acl_roles_data` (`role_id`, `auth_option_id`, `auth_setting`)
 --
 -- Table structure for table `phpbb_acl_users`
 --
--- Creation: Apr 10, 2013 at 09:43 PM
--- Last update: Apr 10, 2013 at 09:43 PM
+-- Creation: May 09, 2013 at 03:18 PM
+-- Last update: May 09, 2013 at 03:18 PM
 --
 
+DROP TABLE IF EXISTS `phpbb_acl_users`;
 CREATE TABLE IF NOT EXISTS `phpbb_acl_users` (
   `user_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
   `forum_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
@@ -9607,10 +9644,11 @@ CREATE TABLE IF NOT EXISTS `phpbb_acl_users` (
 --
 -- Table structure for table `phpbb_attachments`
 --
--- Creation: Apr 10, 2013 at 09:43 PM
--- Last update: May 03, 2013 at 09:30 PM
+-- Creation: May 09, 2013 at 03:18 PM
+-- Last update: May 09, 2013 at 03:18 PM
 --
 
+DROP TABLE IF EXISTS `phpbb_attachments`;
 CREATE TABLE IF NOT EXISTS `phpbb_attachments` (
   `attach_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
   `post_msg_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
@@ -9649,10 +9687,11 @@ INSERT INTO `phpbb_attachments` (`attach_id`, `post_msg_id`, `topic_id`, `in_mes
 --
 -- Table structure for table `phpbb_banlist`
 --
--- Creation: Apr 10, 2013 at 09:43 PM
--- Last update: Apr 10, 2013 at 09:43 PM
+-- Creation: May 09, 2013 at 03:18 PM
+-- Last update: May 09, 2013 at 03:18 PM
 --
 
+DROP TABLE IF EXISTS `phpbb_banlist`;
 CREATE TABLE IF NOT EXISTS `phpbb_banlist` (
   `ban_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
   `ban_userid` mediumint(8) unsigned NOT NULL DEFAULT '0',
@@ -9675,10 +9714,11 @@ CREATE TABLE IF NOT EXISTS `phpbb_banlist` (
 --
 -- Table structure for table `phpbb_bbcodes`
 --
--- Creation: Apr 10, 2013 at 09:43 PM
--- Last update: Apr 10, 2013 at 09:43 PM
+-- Creation: May 09, 2013 at 03:18 PM
+-- Last update: May 09, 2013 at 03:18 PM
 --
 
+DROP TABLE IF EXISTS `phpbb_bbcodes`;
 CREATE TABLE IF NOT EXISTS `phpbb_bbcodes` (
   `bbcode_id` smallint(4) unsigned NOT NULL DEFAULT '0',
   `bbcode_tag` varchar(16) COLLATE utf8_bin NOT NULL DEFAULT '',
@@ -9699,10 +9739,11 @@ CREATE TABLE IF NOT EXISTS `phpbb_bbcodes` (
 --
 -- Table structure for table `phpbb_bookmarks`
 --
--- Creation: Apr 10, 2013 at 09:43 PM
--- Last update: Apr 10, 2013 at 09:43 PM
+-- Creation: May 09, 2013 at 03:18 PM
+-- Last update: May 09, 2013 at 03:18 PM
 --
 
+DROP TABLE IF EXISTS `phpbb_bookmarks`;
 CREATE TABLE IF NOT EXISTS `phpbb_bookmarks` (
   `topic_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
   `user_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
@@ -9714,10 +9755,11 @@ CREATE TABLE IF NOT EXISTS `phpbb_bookmarks` (
 --
 -- Table structure for table `phpbb_bots`
 --
--- Creation: Apr 10, 2013 at 09:43 PM
--- Last update: Apr 10, 2013 at 09:43 PM
+-- Creation: May 09, 2013 at 03:18 PM
+-- Last update: May 09, 2013 at 03:18 PM
 --
 
+DROP TABLE IF EXISTS `phpbb_bots`;
 CREATE TABLE IF NOT EXISTS `phpbb_bots` (
   `bot_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
   `bot_active` tinyint(1) unsigned NOT NULL DEFAULT '1',
@@ -9791,11 +9833,12 @@ INSERT INTO `phpbb_bots` (`bot_id`, `bot_active`, `bot_name`, `user_id`, `bot_ag
 --
 -- Table structure for table `phpbb_config`
 --
--- Creation: Apr 10, 2013 at 09:43 PM
--- Last update: May 08, 2013 at 09:59 PM
--- Last check: Apr 10, 2013 at 09:43 PM
+-- Creation: May 09, 2013 at 03:18 PM
+-- Last update: May 09, 2013 at 03:22 PM
+-- Last check: May 09, 2013 at 03:18 PM
 --
 
+DROP TABLE IF EXISTS `phpbb_config`;
 CREATE TABLE IF NOT EXISTS `phpbb_config` (
   `config_name` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '',
   `config_value` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '',
@@ -10064,8 +10107,8 @@ INSERT INTO `phpbb_config` (`config_name`, `config_value`, `is_dynamic`) VALUES
 ('num_posts', '63', 1),
 ('num_topics', '61', 1),
 ('num_users', '20', 1),
-('rand_seed', '8dac29d8f01530278fe6ac2e7d87467d', 1),
-('rand_seed_last_update', '1368050351', 1),
+('rand_seed', '541cbf70e1477059b7e43cdccc983192', 1),
+('rand_seed_last_update', '1368112934', 1),
 ('record_online_date', '1366564788', 1),
 ('record_online_users', '3', 1),
 ('search_indexing_state', '', 1),
@@ -10082,10 +10125,11 @@ INSERT INTO `phpbb_config` (`config_name`, `config_value`, `is_dynamic`) VALUES
 --
 -- Table structure for table `phpbb_confirm`
 --
--- Creation: Apr 10, 2013 at 09:43 PM
--- Last update: Apr 29, 2013 at 01:17 AM
+-- Creation: May 09, 2013 at 03:18 PM
+-- Last update: May 09, 2013 at 03:18 PM
 --
 
+DROP TABLE IF EXISTS `phpbb_confirm`;
 CREATE TABLE IF NOT EXISTS `phpbb_confirm` (
   `confirm_id` char(32) COLLATE utf8_bin NOT NULL DEFAULT '',
   `session_id` char(32) COLLATE utf8_bin NOT NULL DEFAULT '',
@@ -10102,10 +10146,11 @@ CREATE TABLE IF NOT EXISTS `phpbb_confirm` (
 --
 -- Table structure for table `phpbb_disallow`
 --
--- Creation: Apr 10, 2013 at 09:43 PM
--- Last update: Apr 10, 2013 at 09:43 PM
+-- Creation: May 09, 2013 at 03:18 PM
+-- Last update: May 09, 2013 at 03:18 PM
 --
 
+DROP TABLE IF EXISTS `phpbb_disallow`;
 CREATE TABLE IF NOT EXISTS `phpbb_disallow` (
   `disallow_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
   `disallow_username` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '',
@@ -10117,10 +10162,11 @@ CREATE TABLE IF NOT EXISTS `phpbb_disallow` (
 --
 -- Table structure for table `phpbb_drafts`
 --
--- Creation: Apr 10, 2013 at 09:43 PM
--- Last update: Apr 10, 2013 at 09:43 PM
+-- Creation: May 09, 2013 at 03:18 PM
+-- Last update: May 09, 2013 at 03:18 PM
 --
 
+DROP TABLE IF EXISTS `phpbb_drafts`;
 CREATE TABLE IF NOT EXISTS `phpbb_drafts` (
   `draft_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
   `user_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
@@ -10146,10 +10192,11 @@ INSERT INTO `phpbb_drafts` (`draft_id`, `user_id`, `topic_id`, `forum_id`, `save
 --
 -- Table structure for table `phpbb_extensions`
 --
--- Creation: Apr 10, 2013 at 09:43 PM
--- Last update: Apr 10, 2013 at 09:43 PM
+-- Creation: May 09, 2013 at 03:18 PM
+-- Last update: May 09, 2013 at 03:18 PM
 --
 
+DROP TABLE IF EXISTS `phpbb_extensions`;
 CREATE TABLE IF NOT EXISTS `phpbb_extensions` (
   `extension_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
   `group_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
@@ -10234,10 +10281,11 @@ INSERT INTO `phpbb_extensions` (`extension_id`, `group_id`, `extension`) VALUES
 --
 -- Table structure for table `phpbb_extension_groups`
 --
--- Creation: Apr 10, 2013 at 09:43 PM
--- Last update: Apr 10, 2013 at 09:43 PM
+-- Creation: May 09, 2013 at 03:18 PM
+-- Last update: May 09, 2013 at 03:18 PM
 --
 
+DROP TABLE IF EXISTS `phpbb_extension_groups`;
 CREATE TABLE IF NOT EXISTS `phpbb_extension_groups` (
   `group_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
   `group_name` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '',
@@ -10271,10 +10319,11 @@ INSERT INTO `phpbb_extension_groups` (`group_id`, `group_name`, `cat_id`, `allow
 --
 -- Table structure for table `phpbb_forums`
 --
--- Creation: Apr 10, 2013 at 09:43 PM
--- Last update: May 03, 2013 at 09:31 PM
+-- Creation: May 09, 2013 at 03:18 PM
+-- Last update: May 09, 2013 at 03:18 PM
 --
 
+DROP TABLE IF EXISTS `phpbb_forums`;
 CREATE TABLE IF NOT EXISTS `phpbb_forums` (
   `forum_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
   `parent_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
@@ -10358,10 +10407,11 @@ INSERT INTO `phpbb_forums` (`forum_id`, `parent_id`, `left_id`, `right_id`, `for
 --
 -- Table structure for table `phpbb_forums_access`
 --
--- Creation: Apr 10, 2013 at 09:43 PM
--- Last update: Apr 10, 2013 at 09:43 PM
+-- Creation: May 09, 2013 at 03:18 PM
+-- Last update: May 09, 2013 at 03:18 PM
 --
 
+DROP TABLE IF EXISTS `phpbb_forums_access`;
 CREATE TABLE IF NOT EXISTS `phpbb_forums_access` (
   `forum_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
   `user_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
@@ -10374,10 +10424,11 @@ CREATE TABLE IF NOT EXISTS `phpbb_forums_access` (
 --
 -- Table structure for table `phpbb_forums_track`
 --
--- Creation: Apr 10, 2013 at 09:43 PM
--- Last update: May 03, 2013 at 09:31 PM
+-- Creation: May 09, 2013 at 03:18 PM
+-- Last update: May 09, 2013 at 03:18 PM
 --
 
+DROP TABLE IF EXISTS `phpbb_forums_track`;
 CREATE TABLE IF NOT EXISTS `phpbb_forums_track` (
   `user_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
   `forum_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
@@ -10411,10 +10462,11 @@ INSERT INTO `phpbb_forums_track` (`user_id`, `forum_id`, `mark_time`) VALUES
 --
 -- Table structure for table `phpbb_forums_watch`
 --
--- Creation: Apr 10, 2013 at 09:43 PM
--- Last update: Apr 10, 2013 at 09:43 PM
+-- Creation: May 09, 2013 at 03:18 PM
+-- Last update: May 09, 2013 at 03:18 PM
 --
 
+DROP TABLE IF EXISTS `phpbb_forums_watch`;
 CREATE TABLE IF NOT EXISTS `phpbb_forums_watch` (
   `forum_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
   `user_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
@@ -10429,10 +10481,11 @@ CREATE TABLE IF NOT EXISTS `phpbb_forums_watch` (
 --
 -- Table structure for table `phpbb_groups`
 --
--- Creation: Apr 10, 2013 at 09:43 PM
--- Last update: Apr 10, 2013 at 09:43 PM
+-- Creation: May 09, 2013 at 03:18 PM
+-- Last update: May 09, 2013 at 03:18 PM
 --
 
+DROP TABLE IF EXISTS `phpbb_groups`;
 CREATE TABLE IF NOT EXISTS `phpbb_groups` (
   `group_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
   `group_type` tinyint(4) NOT NULL DEFAULT '1',
@@ -10478,10 +10531,11 @@ INSERT INTO `phpbb_groups` (`group_id`, `group_type`, `group_founder_manage`, `g
 --
 -- Table structure for table `phpbb_icons`
 --
--- Creation: Apr 10, 2013 at 09:43 PM
--- Last update: Apr 10, 2013 at 09:43 PM
+-- Creation: May 09, 2013 at 03:18 PM
+-- Last update: May 09, 2013 at 03:18 PM
 --
 
+DROP TABLE IF EXISTS `phpbb_icons`;
 CREATE TABLE IF NOT EXISTS `phpbb_icons` (
   `icons_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
   `icons_url` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '',
@@ -10514,10 +10568,11 @@ INSERT INTO `phpbb_icons` (`icons_id`, `icons_url`, `icons_width`, `icons_height
 --
 -- Table structure for table `phpbb_lang`
 --
--- Creation: Apr 10, 2013 at 09:43 PM
--- Last update: Apr 10, 2013 at 09:43 PM
+-- Creation: May 09, 2013 at 03:18 PM
+-- Last update: May 09, 2013 at 03:18 PM
 --
 
+DROP TABLE IF EXISTS `phpbb_lang`;
 CREATE TABLE IF NOT EXISTS `phpbb_lang` (
   `lang_id` tinyint(4) NOT NULL AUTO_INCREMENT,
   `lang_iso` varchar(30) COLLATE utf8_bin NOT NULL DEFAULT '',
@@ -10549,11 +10604,12 @@ INSERT INTO `phpbb_lang` (`lang_id`, `lang_iso`, `lang_dir`, `lang_english_name`
 --
 -- Table structure for table `phpbb_log`
 --
--- Creation: Apr 10, 2013 at 09:43 PM
--- Last update: May 02, 2013 at 06:01 PM
--- Last check: Apr 10, 2013 at 09:43 PM
+-- Creation: May 09, 2013 at 03:18 PM
+-- Last update: May 09, 2013 at 03:18 PM
+-- Last check: May 09, 2013 at 03:18 PM
 --
 
+DROP TABLE IF EXISTS `phpbb_log`;
 CREATE TABLE IF NOT EXISTS `phpbb_log` (
   `log_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
   `log_type` tinyint(4) NOT NULL DEFAULT '0',
@@ -10860,8 +10916,7 @@ INSERT INTO `phpbb_log` (`log_id`, `log_type`, `user_id`, `forum_id`, `topic_id`
 (280, 0, 2, 0, 0, 0, '107.1.175.138', 1363900474, 0x4c4f475f464f52554d5f414444, 0x613a313a7b693a303b733a393a2253656374696f6e2034223b7d),
 (281, 0, 2, 0, 0, 0, '107.1.175.138', 1363900474, 0x4c4f475f464f52554d5f434f504945445f5045524d495353494f4e53, 0x613a323a7b693a303b733a32303a224341524520436f616368696e67204f6e6c696e65223b693a313b733a393a2253656374696f6e2034223b7d),
 (282, 0, 2, 0, 0, 0, '107.1.175.138', 1363900482, 0x4c4f475f464f52554d5f414444, 0x613a313a7b693a303b733a393a2253656374696f6e2035223b7d),
-(283, 0, 2, 0, 0, 0, '107.1.175.138', 1363900482, 0x4c4f475f464f52554d5f434f504945445f5045524d495353494f4e53, 0x613a323a7b693a303b733a32303a224341524520436f616368696e67204f6e6c696e65223b693a313b733a393a2253656374696f6e2035223b7d);
-INSERT INTO `phpbb_log` (`log_id`, `log_type`, `user_id`, `forum_id`, `topic_id`, `reportee_id`, `log_ip`, `log_time`, `log_operation`, `log_data`) VALUES
+(283, 0, 2, 0, 0, 0, '107.1.175.138', 1363900482, 0x4c4f475f464f52554d5f434f504945445f5045524d495353494f4e53, 0x613a323a7b693a303b733a32303a224341524520436f616368696e67204f6e6c696e65223b693a313b733a393a2253656374696f6e2035223b7d),
 (284, 0, 2, 0, 0, 0, '107.1.175.138', 1363900490, 0x4c4f475f464f52554d5f414444, 0x613a313a7b693a303b733a393a2253656374696f6e2036223b7d),
 (285, 0, 2, 0, 0, 0, '107.1.175.138', 1363900490, 0x4c4f475f464f52554d5f434f504945445f5045524d495353494f4e53, 0x613a323a7b693a303b733a32303a224341524520436f616368696e67204f6e6c696e65223b693a313b733a393a2253656374696f6e2036223b7d),
 (286, 0, 2, 0, 0, 0, '107.1.175.138', 1363900503, 0x4c4f475f464f52554d5f414444, 0x613a313a7b693a303b733a393a2253656374696f6e2037223b7d),
@@ -11118,10 +11173,11 @@ INSERT INTO `phpbb_log` (`log_id`, `log_type`, `user_id`, `forum_id`, `topic_id`
 --
 -- Table structure for table `phpbb_login_attempts`
 --
--- Creation: Apr 10, 2013 at 09:43 PM
--- Last update: May 08, 2013 at 09:52 PM
+-- Creation: May 09, 2013 at 03:18 PM
+-- Last update: May 09, 2013 at 03:19 PM
 --
 
+DROP TABLE IF EXISTS `phpbb_login_attempts`;
 CREATE TABLE IF NOT EXISTS `phpbb_login_attempts` (
   `attempt_ip` varchar(40) COLLATE utf8_bin NOT NULL DEFAULT '',
   `attempt_browser` varchar(150) COLLATE utf8_bin NOT NULL DEFAULT '',
@@ -11165,17 +11221,19 @@ INSERT INTO `phpbb_login_attempts` (`attempt_ip`, `attempt_browser`, `attempt_fo
 ('98.253.33.44', 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.64 Safari/537.31', '', 1367876244, 71, 'l.daprato', 'l.daprato'),
 ('107.1.175.138', 'Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; Trident/6.0)', '', 1367866194, 73, 'lhollinger-smith@matherlifeways.com', 'lhollinger-smith@matherlifeways.com'),
 ('23.25.2.241', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.64 Safari/537.31', '', 1367864508, 74, 'kadams', 'kadams'),
-('107.1.175.138', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_3) AppleWebKit/536.29.13 (KHTML, like Gecko) Version/6.0.4 Safari/536.29.13', '', 1367862984, 67, 'jwoodall', 'jwoodall');
+('107.1.175.138', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_3) AppleWebKit/536.29.13 (KHTML, like Gecko) Version/6.0.4 Safari/536.29.13', '', 1367862984, 67, 'jwoodall', 'jwoodall'),
+('98.253.33.44', 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.64 Safari/537.31', '', 1368112777, 71, 'l.daprato', 'l.daprato');
 
 -- --------------------------------------------------------
 
 --
 -- Table structure for table `phpbb_moderator_cache`
 --
--- Creation: Apr 30, 2013 at 06:42 PM
--- Last update: Apr 10, 2013 at 09:43 PM
+-- Creation: May 09, 2013 at 03:18 PM
+-- Last update: May 09, 2013 at 03:18 PM
 --
 
+DROP TABLE IF EXISTS `phpbb_moderator_cache`;
 CREATE TABLE IF NOT EXISTS `phpbb_moderator_cache` (
   `forum_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
   `user_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
@@ -11192,11 +11250,12 @@ CREATE TABLE IF NOT EXISTS `phpbb_moderator_cache` (
 --
 -- Table structure for table `phpbb_modules`
 --
--- Creation: Apr 10, 2013 at 09:43 PM
--- Last update: Apr 10, 2013 at 09:43 PM
--- Last check: Apr 10, 2013 at 09:43 PM
+-- Creation: May 09, 2013 at 03:18 PM
+-- Last update: May 09, 2013 at 03:18 PM
+-- Last check: May 09, 2013 at 03:18 PM
 --
 
+DROP TABLE IF EXISTS `phpbb_modules`;
 CREATE TABLE IF NOT EXISTS `phpbb_modules` (
   `module_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
   `module_enabled` tinyint(1) unsigned NOT NULL DEFAULT '1',
@@ -11424,10 +11483,11 @@ INSERT INTO `phpbb_modules` (`module_id`, `module_enabled`, `module_display`, `m
 --
 -- Table structure for table `phpbb_poll_options`
 --
--- Creation: Apr 10, 2013 at 09:43 PM
--- Last update: Apr 10, 2013 at 09:43 PM
+-- Creation: May 09, 2013 at 03:18 PM
+-- Last update: May 09, 2013 at 03:18 PM
 --
 
+DROP TABLE IF EXISTS `phpbb_poll_options`;
 CREATE TABLE IF NOT EXISTS `phpbb_poll_options` (
   `poll_option_id` tinyint(4) NOT NULL DEFAULT '0',
   `topic_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
@@ -11442,10 +11502,11 @@ CREATE TABLE IF NOT EXISTS `phpbb_poll_options` (
 --
 -- Table structure for table `phpbb_poll_votes`
 --
--- Creation: Apr 10, 2013 at 09:43 PM
--- Last update: Apr 10, 2013 at 09:43 PM
+-- Creation: May 09, 2013 at 03:18 PM
+-- Last update: May 09, 2013 at 03:18 PM
 --
 
+DROP TABLE IF EXISTS `phpbb_poll_votes`;
 CREATE TABLE IF NOT EXISTS `phpbb_poll_votes` (
   `topic_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
   `poll_option_id` tinyint(4) NOT NULL DEFAULT '0',
@@ -11461,10 +11522,11 @@ CREATE TABLE IF NOT EXISTS `phpbb_poll_votes` (
 --
 -- Table structure for table `phpbb_posts`
 --
--- Creation: Apr 10, 2013 at 09:43 PM
--- Last update: May 03, 2013 at 09:31 PM
+-- Creation: May 09, 2013 at 03:18 PM
+-- Last update: May 09, 2013 at 03:18 PM
 --
 
+DROP TABLE IF EXISTS `phpbb_posts`;
 CREATE TABLE IF NOT EXISTS `phpbb_posts` (
   `post_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
   `topic_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
@@ -11576,10 +11638,11 @@ INSERT INTO `phpbb_posts` (`post_id`, `topic_id`, `forum_id`, `poster_id`, `icon
 --
 -- Table structure for table `phpbb_privmsgs`
 --
--- Creation: Apr 10, 2013 at 09:43 PM
--- Last update: Apr 10, 2013 at 09:43 PM
+-- Creation: May 09, 2013 at 03:18 PM
+-- Last update: May 09, 2013 at 03:18 PM
 --
 
+DROP TABLE IF EXISTS `phpbb_privmsgs`;
 CREATE TABLE IF NOT EXISTS `phpbb_privmsgs` (
   `msg_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
   `root_level` mediumint(8) unsigned NOT NULL DEFAULT '0',
@@ -11615,10 +11678,11 @@ CREATE TABLE IF NOT EXISTS `phpbb_privmsgs` (
 --
 -- Table structure for table `phpbb_privmsgs_folder`
 --
--- Creation: Apr 10, 2013 at 09:43 PM
--- Last update: Apr 10, 2013 at 09:43 PM
+-- Creation: May 09, 2013 at 03:18 PM
+-- Last update: May 09, 2013 at 03:18 PM
 --
 
+DROP TABLE IF EXISTS `phpbb_privmsgs_folder`;
 CREATE TABLE IF NOT EXISTS `phpbb_privmsgs_folder` (
   `folder_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
   `user_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
@@ -11633,10 +11697,11 @@ CREATE TABLE IF NOT EXISTS `phpbb_privmsgs_folder` (
 --
 -- Table structure for table `phpbb_privmsgs_rules`
 --
--- Creation: Apr 10, 2013 at 09:43 PM
--- Last update: Apr 10, 2013 at 09:43 PM
+-- Creation: May 09, 2013 at 03:18 PM
+-- Last update: May 09, 2013 at 03:18 PM
 --
 
+DROP TABLE IF EXISTS `phpbb_privmsgs_rules`;
 CREATE TABLE IF NOT EXISTS `phpbb_privmsgs_rules` (
   `rule_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
   `user_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
@@ -11656,10 +11721,11 @@ CREATE TABLE IF NOT EXISTS `phpbb_privmsgs_rules` (
 --
 -- Table structure for table `phpbb_privmsgs_to`
 --
--- Creation: Apr 10, 2013 at 09:43 PM
--- Last update: Apr 10, 2013 at 09:43 PM
+-- Creation: May 09, 2013 at 03:18 PM
+-- Last update: May 09, 2013 at 03:18 PM
 --
 
+DROP TABLE IF EXISTS `phpbb_privmsgs_to`;
 CREATE TABLE IF NOT EXISTS `phpbb_privmsgs_to` (
   `msg_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
   `user_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
@@ -11681,10 +11747,11 @@ CREATE TABLE IF NOT EXISTS `phpbb_privmsgs_to` (
 --
 -- Table structure for table `phpbb_profile_fields`
 --
--- Creation: Apr 10, 2013 at 09:43 PM
--- Last update: Apr 10, 2013 at 09:43 PM
+-- Creation: May 09, 2013 at 03:18 PM
+-- Last update: May 09, 2013 at 03:18 PM
 --
 
+DROP TABLE IF EXISTS `phpbb_profile_fields`;
 CREATE TABLE IF NOT EXISTS `phpbb_profile_fields` (
   `field_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
   `field_name` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '',
@@ -11715,10 +11782,11 @@ CREATE TABLE IF NOT EXISTS `phpbb_profile_fields` (
 --
 -- Table structure for table `phpbb_profile_fields_data`
 --
--- Creation: Apr 10, 2013 at 09:43 PM
--- Last update: Apr 10, 2013 at 09:43 PM
+-- Creation: May 09, 2013 at 03:18 PM
+-- Last update: May 09, 2013 at 03:18 PM
 --
 
+DROP TABLE IF EXISTS `phpbb_profile_fields_data`;
 CREATE TABLE IF NOT EXISTS `phpbb_profile_fields_data` (
   `user_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`user_id`)
@@ -11729,10 +11797,11 @@ CREATE TABLE IF NOT EXISTS `phpbb_profile_fields_data` (
 --
 -- Table structure for table `phpbb_profile_fields_lang`
 --
--- Creation: Apr 10, 2013 at 09:43 PM
--- Last update: Apr 10, 2013 at 09:43 PM
+-- Creation: May 09, 2013 at 03:18 PM
+-- Last update: May 09, 2013 at 03:18 PM
 --
 
+DROP TABLE IF EXISTS `phpbb_profile_fields_lang`;
 CREATE TABLE IF NOT EXISTS `phpbb_profile_fields_lang` (
   `field_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
   `lang_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
@@ -11747,10 +11816,11 @@ CREATE TABLE IF NOT EXISTS `phpbb_profile_fields_lang` (
 --
 -- Table structure for table `phpbb_profile_lang`
 --
--- Creation: Apr 10, 2013 at 09:43 PM
--- Last update: Apr 10, 2013 at 09:43 PM
+-- Creation: May 09, 2013 at 03:18 PM
+-- Last update: May 09, 2013 at 03:18 PM
 --
 
+DROP TABLE IF EXISTS `phpbb_profile_lang`;
 CREATE TABLE IF NOT EXISTS `phpbb_profile_lang` (
   `field_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
   `lang_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
@@ -11765,10 +11835,11 @@ CREATE TABLE IF NOT EXISTS `phpbb_profile_lang` (
 --
 -- Table structure for table `phpbb_ranks`
 --
--- Creation: Apr 10, 2013 at 09:43 PM
--- Last update: Apr 10, 2013 at 09:43 PM
+-- Creation: May 09, 2013 at 03:18 PM
+-- Last update: May 09, 2013 at 03:18 PM
 --
 
+DROP TABLE IF EXISTS `phpbb_ranks`;
 CREATE TABLE IF NOT EXISTS `phpbb_ranks` (
   `rank_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
   `rank_title` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '',
@@ -11790,10 +11861,11 @@ INSERT INTO `phpbb_ranks` (`rank_id`, `rank_title`, `rank_min`, `rank_special`, 
 --
 -- Table structure for table `phpbb_reports`
 --
--- Creation: Apr 10, 2013 at 09:43 PM
--- Last update: Apr 10, 2013 at 09:43 PM
+-- Creation: May 09, 2013 at 03:18 PM
+-- Last update: May 09, 2013 at 03:18 PM
 --
 
+DROP TABLE IF EXISTS `phpbb_reports`;
 CREATE TABLE IF NOT EXISTS `phpbb_reports` (
   `report_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
   `reason_id` smallint(4) unsigned NOT NULL DEFAULT '0',
@@ -11814,10 +11886,11 @@ CREATE TABLE IF NOT EXISTS `phpbb_reports` (
 --
 -- Table structure for table `phpbb_reports_reasons`
 --
--- Creation: Apr 10, 2013 at 09:43 PM
--- Last update: Apr 10, 2013 at 09:43 PM
+-- Creation: May 09, 2013 at 03:18 PM
+-- Last update: May 09, 2013 at 03:18 PM
 --
 
+DROP TABLE IF EXISTS `phpbb_reports_reasons`;
 CREATE TABLE IF NOT EXISTS `phpbb_reports_reasons` (
   `reason_id` smallint(4) unsigned NOT NULL AUTO_INCREMENT,
   `reason_title` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '',
@@ -11841,10 +11914,11 @@ INSERT INTO `phpbb_reports_reasons` (`reason_id`, `reason_title`, `reason_descri
 --
 -- Table structure for table `phpbb_search_results`
 --
--- Creation: Apr 10, 2013 at 09:43 PM
--- Last update: Apr 17, 2013 at 08:16 PM
+-- Creation: May 09, 2013 at 03:18 PM
+-- Last update: May 09, 2013 at 03:18 PM
 --
 
+DROP TABLE IF EXISTS `phpbb_search_results`;
 CREATE TABLE IF NOT EXISTS `phpbb_search_results` (
   `search_key` varchar(32) COLLATE utf8_bin NOT NULL DEFAULT '',
   `search_time` int(11) unsigned NOT NULL DEFAULT '0',
@@ -11858,11 +11932,12 @@ CREATE TABLE IF NOT EXISTS `phpbb_search_results` (
 --
 -- Table structure for table `phpbb_search_wordlist`
 --
--- Creation: Apr 10, 2013 at 09:43 PM
--- Last update: May 03, 2013 at 09:31 PM
--- Last check: Apr 10, 2013 at 09:43 PM
+-- Creation: May 09, 2013 at 03:18 PM
+-- Last update: May 09, 2013 at 03:18 PM
+-- Last check: May 09, 2013 at 03:18 PM
 --
 
+DROP TABLE IF EXISTS `phpbb_search_wordlist`;
 CREATE TABLE IF NOT EXISTS `phpbb_search_wordlist` (
   `word_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
   `word_text` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '',
@@ -12217,11 +12292,12 @@ INSERT INTO `phpbb_search_wordlist` (`word_id`, `word_text`, `word_common`, `wor
 --
 -- Table structure for table `phpbb_search_wordmatch`
 --
--- Creation: Apr 10, 2013 at 09:43 PM
--- Last update: May 03, 2013 at 09:31 PM
--- Last check: Apr 10, 2013 at 09:43 PM
+-- Creation: May 09, 2013 at 03:18 PM
+-- Last update: May 09, 2013 at 03:18 PM
+-- Last check: May 09, 2013 at 03:18 PM
 --
 
+DROP TABLE IF EXISTS `phpbb_search_wordmatch`;
 CREATE TABLE IF NOT EXISTS `phpbb_search_wordmatch` (
   `post_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
   `word_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
@@ -13426,10 +13502,11 @@ INSERT INTO `phpbb_search_wordmatch` (`post_id`, `word_id`, `title_match`) VALUE
 --
 -- Table structure for table `phpbb_sessions`
 --
--- Creation: Apr 10, 2013 at 09:43 PM
--- Last update: May 08, 2013 at 09:59 PM
+-- Creation: May 09, 2013 at 03:18 PM
+-- Last update: May 09, 2013 at 03:22 PM
 --
 
+DROP TABLE IF EXISTS `phpbb_sessions`;
 CREATE TABLE IF NOT EXISTS `phpbb_sessions` (
   `session_id` char(32) COLLATE utf8_bin NOT NULL DEFAULT '',
   `session_user_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
@@ -13509,17 +13586,21 @@ INSERT INTO `phpbb_sessions` (`session_id`, `session_user_id`, `session_forum_id
 ('3e38db33a215dce9873e838e342270cf', 71, 0, 1367694485, 1368049084, 1368049084, '98.253.33.44', 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.64 Safari/537.31', '', '../index.php', 1, 0, 0),
 ('b9af0220b7e1ffa702136ba3c77eacf5', 74, 0, 1367939963, 1368049972, 1368049972, '23.25.2.241', 'Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)', '', '../index.php', 1, 0, 0),
 ('99cb226c641ae9b83f1e6f575b958533', 1, 0, 1368050351, 1368050351, 1368050351, '23.25.2.241', 'Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)', '', '../index.php', 1, 0, 0),
-('49d0c763283314fb96bc01cd7393ecec', 1, 0, 1368050351, 1368050351, 1368050351, '23.25.2.241', 'Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)', '', '../index.php', 1, 0, 0);
+('49d0c763283314fb96bc01cd7393ecec', 1, 0, 1368050351, 1368050351, 1368050351, '23.25.2.241', 'Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)', '', '../index.php', 1, 0, 0),
+('17794391e0484d93212d07cb087d5656', 71, 0, 1367694485, 1368112776, 1368112776, '98.253.33.44', 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.64 Safari/537.31', '', '../index.php', 1, 0, 0),
+('08e84ea630a859ed991b5427a4877bf7', 1, 0, 1368112934, 1368112934, 1368112934, '98.253.33.44', 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.64 Safari/537.31', '', '../index.php', 1, 0, 0),
+('b89f69c7c0d365b567efc72f680d51a4', 1, 0, 1368112934, 1368112934, 1368112934, '98.253.33.44', 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.64 Safari/537.31', '', '../index.php', 1, 0, 0);
 
 -- --------------------------------------------------------
 
 --
 -- Table structure for table `phpbb_sessions_keys`
 --
--- Creation: Apr 10, 2013 at 09:43 PM
--- Last update: Apr 10, 2013 at 09:43 PM
+-- Creation: May 09, 2013 at 03:18 PM
+-- Last update: May 09, 2013 at 03:18 PM
 --
 
+DROP TABLE IF EXISTS `phpbb_sessions_keys`;
 CREATE TABLE IF NOT EXISTS `phpbb_sessions_keys` (
   `key_id` char(32) COLLATE utf8_bin NOT NULL DEFAULT '',
   `user_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
@@ -13534,10 +13615,11 @@ CREATE TABLE IF NOT EXISTS `phpbb_sessions_keys` (
 --
 -- Table structure for table `phpbb_sitelist`
 --
--- Creation: Apr 10, 2013 at 09:43 PM
--- Last update: Apr 10, 2013 at 09:43 PM
+-- Creation: May 09, 2013 at 03:18 PM
+-- Last update: May 09, 2013 at 03:18 PM
 --
 
+DROP TABLE IF EXISTS `phpbb_sitelist`;
 CREATE TABLE IF NOT EXISTS `phpbb_sitelist` (
   `site_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
   `site_ip` varchar(40) COLLATE utf8_bin NOT NULL DEFAULT '',
@@ -13551,10 +13633,11 @@ CREATE TABLE IF NOT EXISTS `phpbb_sitelist` (
 --
 -- Table structure for table `phpbb_smilies`
 --
--- Creation: Apr 10, 2013 at 09:43 PM
--- Last update: Apr 10, 2013 at 09:43 PM
+-- Creation: May 09, 2013 at 03:18 PM
+-- Last update: May 09, 2013 at 03:18 PM
 --
 
+DROP TABLE IF EXISTS `phpbb_smilies`;
 CREATE TABLE IF NOT EXISTS `phpbb_smilies` (
   `smiley_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
   `code` varchar(50) COLLATE utf8_bin NOT NULL DEFAULT '',
@@ -13621,10 +13704,11 @@ INSERT INTO `phpbb_smilies` (`smiley_id`, `code`, `emotion`, `smiley_url`, `smil
 --
 -- Table structure for table `phpbb_styles`
 --
--- Creation: Apr 10, 2013 at 09:43 PM
--- Last update: Apr 10, 2013 at 09:43 PM
+-- Creation: May 09, 2013 at 03:18 PM
+-- Last update: May 09, 2013 at 03:18 PM
 --
 
+DROP TABLE IF EXISTS `phpbb_styles`;
 CREATE TABLE IF NOT EXISTS `phpbb_styles` (
   `style_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
   `style_name` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '',
@@ -13652,10 +13736,11 @@ INSERT INTO `phpbb_styles` (`style_id`, `style_name`, `style_copyright`, `style_
 --
 -- Table structure for table `phpbb_styles_imageset`
 --
--- Creation: Apr 10, 2013 at 09:43 PM
--- Last update: Apr 10, 2013 at 09:43 PM
+-- Creation: May 09, 2013 at 03:18 PM
+-- Last update: May 09, 2013 at 03:18 PM
 --
 
+DROP TABLE IF EXISTS `phpbb_styles_imageset`;
 CREATE TABLE IF NOT EXISTS `phpbb_styles_imageset` (
   `imageset_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
   `imageset_name` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '',
@@ -13677,11 +13762,12 @@ INSERT INTO `phpbb_styles_imageset` (`imageset_id`, `imageset_name`, `imageset_c
 --
 -- Table structure for table `phpbb_styles_imageset_data`
 --
--- Creation: Apr 10, 2013 at 09:43 PM
--- Last update: Apr 10, 2013 at 09:43 PM
--- Last check: Apr 10, 2013 at 09:43 PM
+-- Creation: May 09, 2013 at 03:18 PM
+-- Last update: May 09, 2013 at 03:18 PM
+-- Last check: May 09, 2013 at 03:18 PM
 --
 
+DROP TABLE IF EXISTS `phpbb_styles_imageset_data`;
 CREATE TABLE IF NOT EXISTS `phpbb_styles_imageset_data` (
   `image_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
   `image_name` varchar(200) COLLATE utf8_bin NOT NULL DEFAULT '',
@@ -13863,10 +13949,11 @@ INSERT INTO `phpbb_styles_imageset_data` (`image_id`, `image_name`, `image_filen
 --
 -- Table structure for table `phpbb_styles_template`
 --
--- Creation: Apr 10, 2013 at 09:43 PM
--- Last update: Apr 10, 2013 at 09:43 PM
+-- Creation: May 09, 2013 at 03:18 PM
+-- Last update: May 09, 2013 at 03:18 PM
 --
 
+DROP TABLE IF EXISTS `phpbb_styles_template`;
 CREATE TABLE IF NOT EXISTS `phpbb_styles_template` (
   `template_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
   `template_name` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '',
@@ -13892,10 +13979,11 @@ INSERT INTO `phpbb_styles_template` (`template_id`, `template_name`, `template_c
 --
 -- Table structure for table `phpbb_styles_template_data`
 --
--- Creation: Apr 10, 2013 at 09:43 PM
--- Last update: Apr 10, 2013 at 09:43 PM
+-- Creation: May 09, 2013 at 03:18 PM
+-- Last update: May 09, 2013 at 03:18 PM
 --
 
+DROP TABLE IF EXISTS `phpbb_styles_template_data`;
 CREATE TABLE IF NOT EXISTS `phpbb_styles_template_data` (
   `template_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
   `template_filename` varchar(100) COLLATE utf8_bin NOT NULL DEFAULT '',
@@ -13911,10 +13999,11 @@ CREATE TABLE IF NOT EXISTS `phpbb_styles_template_data` (
 --
 -- Table structure for table `phpbb_styles_theme`
 --
--- Creation: Apr 10, 2013 at 09:43 PM
--- Last update: Apr 10, 2013 at 09:43 PM
+-- Creation: May 09, 2013 at 03:18 PM
+-- Last update: May 09, 2013 at 03:18 PM
 --
 
+DROP TABLE IF EXISTS `phpbb_styles_theme`;
 CREATE TABLE IF NOT EXISTS `phpbb_styles_theme` (
   `theme_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
   `theme_name` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '',
@@ -13939,10 +14028,11 @@ INSERT INTO `phpbb_styles_theme` (`theme_id`, `theme_name`, `theme_copyright`, `
 --
 -- Table structure for table `phpbb_topics`
 --
--- Creation: Apr 10, 2013 at 09:43 PM
--- Last update: May 03, 2013 at 09:31 PM
+-- Creation: May 09, 2013 at 03:18 PM
+-- Last update: May 09, 2013 at 03:18 PM
 --
 
+DROP TABLE IF EXISTS `phpbb_topics`;
 CREATE TABLE IF NOT EXISTS `phpbb_topics` (
   `topic_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
   `forum_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
@@ -14059,10 +14149,11 @@ INSERT INTO `phpbb_topics` (`topic_id`, `forum_id`, `icon_id`, `topic_attachment
 --
 -- Table structure for table `phpbb_topics_posted`
 --
--- Creation: Apr 10, 2013 at 09:43 PM
--- Last update: May 03, 2013 at 09:31 PM
+-- Creation: May 09, 2013 at 03:18 PM
+-- Last update: May 09, 2013 at 03:18 PM
 --
 
+DROP TABLE IF EXISTS `phpbb_topics_posted`;
 CREATE TABLE IF NOT EXISTS `phpbb_topics_posted` (
   `user_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
   `topic_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
@@ -14143,10 +14234,11 @@ INSERT INTO `phpbb_topics_posted` (`user_id`, `topic_id`, `topic_posted`) VALUES
 --
 -- Table structure for table `phpbb_topics_track`
 --
--- Creation: Apr 10, 2013 at 09:43 PM
--- Last update: May 03, 2013 at 09:31 PM
+-- Creation: May 09, 2013 at 03:18 PM
+-- Last update: May 09, 2013 at 03:18 PM
 --
 
+DROP TABLE IF EXISTS `phpbb_topics_track`;
 CREATE TABLE IF NOT EXISTS `phpbb_topics_track` (
   `user_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
   `topic_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
@@ -14162,10 +14254,11 @@ CREATE TABLE IF NOT EXISTS `phpbb_topics_track` (
 --
 -- Table structure for table `phpbb_topics_watch`
 --
--- Creation: Apr 10, 2013 at 09:43 PM
--- Last update: Apr 10, 2013 at 09:43 PM
+-- Creation: May 09, 2013 at 03:18 PM
+-- Last update: May 09, 2013 at 03:18 PM
 --
 
+DROP TABLE IF EXISTS `phpbb_topics_watch`;
 CREATE TABLE IF NOT EXISTS `phpbb_topics_watch` (
   `topic_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
   `user_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
@@ -14180,10 +14273,11 @@ CREATE TABLE IF NOT EXISTS `phpbb_topics_watch` (
 --
 -- Table structure for table `phpbb_users`
 --
--- Creation: Apr 10, 2013 at 09:43 PM
--- Last update: May 08, 2013 at 09:59 PM
+-- Creation: May 09, 2013 at 03:18 PM
+-- Last update: May 09, 2013 at 03:22 PM
 --
 
+DROP TABLE IF EXISTS `phpbb_users`;
 CREATE TABLE IF NOT EXISTS `phpbb_users` (
   `user_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
   `user_type` tinyint(2) NOT NULL DEFAULT '0',
@@ -14273,7 +14367,7 @@ CREATE TABLE IF NOT EXISTS `phpbb_users` (
 --
 
 INSERT INTO `phpbb_users` (`user_id`, `user_type`, `group_id`, `user_permissions`, `user_perm_from`, `user_ip`, `user_regdate`, `username`, `username_clean`, `user_password`, `user_passchg`, `user_pass_convert`, `user_email`, `user_email_hash`, `user_birthday`, `user_lastvisit`, `user_lastmark`, `user_lastpost_time`, `user_lastpage`, `user_last_confirm_key`, `user_last_search`, `user_warnings`, `user_last_warning`, `user_login_attempts`, `user_inactive_reason`, `user_inactive_time`, `user_posts`, `user_lang`, `user_timezone`, `user_dst`, `user_dateformat`, `user_style`, `user_rank`, `user_colour`, `user_new_privmsg`, `user_unread_privmsg`, `user_last_privmsg`, `user_message_rules`, `user_full_folder`, `user_emailtime`, `user_topic_show_days`, `user_topic_sortby_type`, `user_topic_sortby_dir`, `user_post_show_days`, `user_post_sortby_type`, `user_post_sortby_dir`, `user_notify`, `user_notify_pm`, `user_notify_type`, `user_allow_pm`, `user_allow_viewonline`, `user_allow_viewemail`, `user_allow_massemail`, `user_options`, `user_avatar`, `user_avatar_type`, `user_avatar_width`, `user_avatar_height`, `user_sig`, `user_sig_bbcode_uid`, `user_sig_bbcode_bitfield`, `user_from`, `user_icq`, `user_aim`, `user_yim`, `user_msnm`, `user_jabber`, `user_website`, `user_occ`, `user_interests`, `user_actkey`, `user_newpasswd`, `user_form_salt`, `user_new`, `user_reminded`, `user_reminded_time`) VALUES
-(1, 2, 1, 0x30303030303030303030336b687261336e6b0a0a0a0a0a0a0a6931636a796f3030303030300a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a6931636a796f3030303030300a6931636a796f3030303030300a6931636a796f3030303030300a0a6931636a796f3030303030300a6931636a796f3030303030300a6931636a796f3030303030300a6931636a796f3030303030300a6931636a796f3030303030300a6931636a796f3030303030300a6931636a796f3030303030300a0a6931636a796f3030303030300a6931636a796f3030303030300a6931636a796f3030303030300a6931636a796f3030303030300a6931636a796f3030303030300a6931636a796f3030303030300a6931636a796f3030303030300a6931636a796f3030303030300a6931636a796f3030303030300a6931636a796f3030303030300a6931636a796f3030303030300a6931636a796f3030303030300a6931636a796f303030303030, 0, '', 1346462145, 'Anonymous', 'anonymous', '', 0, 0, '', 0, '', 0, 0, 0, '', '', 0, 0, 0, 0, 0, 0, 0, 'en', 0.00, 0, 'd M Y H:i', 1, 0, '', 0, 0, 0, 0, -3, 0, 0, 't', 'd', 0, 't', 'a', 0, 1, 0, 1, 1, 1, 0, 230271, '', 0, 0, 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '4ddd08d039dabeda', 1, 0, 0),
+(1, 2, 1, 0x30303030303030303030336b687261336e6b0a0a0a0a0a0a0a6931636a796f3030303030300a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a6931636a796f3030303030300a6931636a796f3030303030300a6931636a796f3030303030300a0a6931636a796f3030303030300a6931636a796f3030303030300a6931636a796f3030303030300a6931636a796f3030303030300a6931636a796f3030303030300a6931636a796f3030303030300a6931636a796f3030303030300a0a6931636a796f3030303030300a6931636a796f3030303030300a6931636a796f3030303030300a6931636a796f3030303030300a6931636a796f3030303030300a6931636a796f3030303030300a6931636a796f3030303030300a6931636a796f3030303030300a6931636a796f3030303030300a6931636a796f3030303030300a6931636a796f3030303030300a6931636a796f3030303030300a6931636a796f303030303030, 0, '', 1346462145, 'Anonymous', 'anonymous', '', 0, 0, '', 0, '', 0, 0, 0, '', '', 0, 0, 0, 0, 0, 0, 0, 'en', 0.00, 0, 'd M Y H:i', 1, 0, '', 0, 0, 0, 0, -3, 0, 0, 't', 'd', 0, 't', 'a', 0, 1, 0, 1, 1, 1, 0, 230271, '', 0, 0, 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '2b07c5a3cb6a6ef7', 1, 0, 0),
 (73, 0, 8, '', 0, '', 1363206288, 'lhollinger-smith@matherlifeways.com', 'lhollinger-smith@matherlifeways.com', '$H$9UHr.j1SIsS7rC.kC6NATk2LUgZC8k/', 1367329642, 0, 'lhollinger-smith@matherlifeways.com', 87337724635, '', 1368020930, 1367329642, 0, 'index.php', '', 0, 0, 0, 0, 0, 0, 0, 'en_us', -6.00, 1, 'D M d, Y g:i a', 1, 0, '', 0, 0, 0, 0, -3, 0, 0, 't', 'd', 0, 't', 'a', 0, 1, 0, 1, 1, 1, 1, 230271, '', 0, 0, 0, '', '', '', 'Evanston, ', '', '', '', '', '', '', '', '', '', '', 'b033af654d367c20', 0, 0, 0),
 (74, 0, 5, 0x30303434373373356a77667a7a696b3078730a0a0a0a0a0a0a7a696b307a693030303030300a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a0a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a0a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a69303030303030, 0, '', 1360358733, 'kadams', 'kadams', '$H$9gE8OACsjZ1UE.yATlQYVMyQLbE2jI.', 1367337883, 0, 'kadams@matherlifeways.com', 290014838525, '', 1368049972, 1367337883, 0, '../index.php', '', 0, 0, 0, 0, 0, 0, 0, 'en_us', -6.00, 1, 'D M d, Y g:i a', 1, 0, 'AA0000', 0, 0, 0, 0, -3, 0, 0, 't', 'd', 0, 't', 'a', 0, 1, 0, 1, 1, 1, 1, 230271, '', 0, 0, 0, '', '', '', 'Evanston, United States', '', '', '', '', '', '', '', '', '', '', '7e3df62176bb0b61', 0, 0, 0),
 (75, 0, 5, 0x30303434373373356a77667a7a696b3078730a0a0a0a0a0a0a7a696b307a693030303030300a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a0a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a0a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a69303030303030, 0, '', 1361992707, 'efoss', 'efoss', '$H$9/DiR5WOG6BwJYW/xNADCrptPRCM4e.', 1367345366, 0, 'efoss@matherlifeways.com', 59132202124, '', 1367517973, 1367345366, 0, 'adm/index.php?i=forums&icat=7&mode=manage&parent_id=82', '', 0, 0, 0, 0, 0, 0, 0, 'en_us', -6.00, 1, 'D M d, Y g:i a', 1, 0, 'AA0000', 0, 0, 0, 0, -3, 0, 0, 't', 'd', 0, 't', 'a', 0, 1, 0, 1, 1, 1, 1, 230271, '', 0, 0, 0, '', '', '', 'Rio de Janerio, ', '', '', '', '', '', '', '', '', '', '', '657b5f26be1b205d', 0, 0, 0),
@@ -14330,7 +14424,7 @@ INSERT INTO `phpbb_users` (`user_id`, `user_type`, `group_id`, `user_permissions
 (52, 2, 6, '', 0, '', 1346462156, 'Yahoo [Bot]', 'yahoo [bot]', '', 1346462156, 0, '', 0, '', 0, 1346462156, 0, '', '', 0, 0, 0, 0, 0, 0, 0, 'en', 0.00, 0, 'D M d, Y g:i a', 1, 0, '9E8DA7', 0, 0, 0, 0, -3, 0, 0, 't', 'd', 0, 't', 'a', 0, 1, 0, 1, 1, 1, 0, 230271, '', 0, 0, 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '7a86c30f2db9ceb0', 0, 0, 0),
 (53, 2, 6, '', 0, '', 1346462156, 'YahooSeeker [Bot]', 'yahooseeker [bot]', '', 1346462156, 0, '', 0, '', 0, 1346462156, 0, '', '', 0, 0, 0, 0, 0, 0, 0, 'en', 0.00, 0, 'D M d, Y g:i a', 1, 0, '9E8DA7', 0, 0, 0, 0, -3, 0, 0, 't', 'd', 0, 't', 'a', 0, 1, 0, 1, 1, 1, 0, 230271, '', 0, 0, 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '7742d52abf29c7e9', 0, 0, 0),
 (79, 0, 8, '', 0, '', 1367507082, 'sall', 'sall', '$H$9ysd2XpHbhUoY8YR1zh9oGIsfUcDmo1', 1367507082, 0, 'sall@matherlifeways.com', 13744466723, '', 1367507165, 1367507082, 0, '../index.php', '', 0, 0, 0, 0, 0, 0, 0, 'en_us', -6.00, 1, 'D M d, Y g:i a', 1, 0, '', 0, 0, 0, 0, -3, 0, 0, 't', 'd', 0, 't', 'a', 0, 1, 0, 1, 1, 1, 1, 230271, '', 0, 0, 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '1ab0f4b7a58c81c7', 0, 0, 0),
-(71, 0, 5, 0x30303434373373356a77667a7a696b3078730a0a0a0a0a0a0a7a696b307a693030303030300a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a0a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a0a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a69303030303030, 0, '', 1345617405, 'l.daprato', 'l.daprato', '$H$9qlq8Hfq8NaU8tVuZcGjo2cYuPlcrF0', 1367192388, 0, 'l.daprato@gmail.com', 349063817719, '', 1367694485, 1367192388, 0, 'index.php', '', 0, 0, 0, 0, 0, 0, 0, 'en_us', -6.00, 1, 'D M d, Y g:i a', 1, 0, 'AA0000', 0, 0, 0, 0, -3, 0, 0, 't', 'd', 0, 't', 'a', 0, 1, 0, 1, 1, 1, 1, 230271, '71_1367352176.gif', 0, 0, 0, '', '', '', 'Glenview, United States', '', '', '', '', '', '', '', '', '', '', '971439161fa27588', 0, 0, 0),
+(71, 0, 5, 0x30303434373373356a77667a7a696b3078730a0a0a0a0a0a0a7a696b307a693030303030300a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a0a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a0a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a69303030303030, 0, '', 1345617405, 'l.daprato', 'l.daprato', '$H$9qlq8Hfq8NaU8tVuZcGjo2cYuPlcrF0', 1367192388, 0, 'l.daprato@gmail.com', 349063817719, '', 1368112776, 1367192388, 0, 'index.php', '', 0, 0, 0, 0, 0, 0, 0, 'en_us', -6.00, 1, 'D M d, Y g:i a', 1, 0, 'AA0000', 0, 0, 0, 0, -3, 0, 0, 't', 'd', 0, 't', 'a', 0, 1, 0, 1, 1, 1, 1, 230271, '71_1367352176.gif', 0, 0, 0, '', '', '', 'Glenview, United States', '', '', '', '', '', '', '', '', '', '', 'f1fa50427de2679b', 0, 0, 0),
 (78, 0, 5, 0x30303434373373356a77667a7a696b3078730a0a0a0a0a0a0a7a696b307a693030303030300a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a0a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a0a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a69303030303030, 0, '', 1362190729, 'bobbyb987', 'bobbyb987', '$H$9p.KE6IE8aidyeNQL4QKKxj4dTIT1g1', 1367366534, 0, 'bobbyb987@gmail.com', 72228544319, '', 1367368477, 1367366534, 1367367762, 'index.php', '', 0, 0, 0, 0, 0, 0, 1, 'en_us', -6.00, 1, 'D M d, Y g:i a', 1, 0, 'AA0000', 0, 0, 0, 0, -3, 0, 0, 't', 'd', 0, 't', 'a', 0, 1, 0, 1, 1, 1, 1, 230271, '', 0, 0, 0, '', '', '', 'chicago, United States', '', '', '', '', '', '', '', '', '', '', '2fccba590529f44e', 0, 0, 0),
 (80, 0, 8, '', 0, '', 1367598585, 'ashleigh', 'ashleigh', '$H$92OsX4f8vnYduDIjf8QFCBOO4nSiUR1', 1367598585, 0, 'amcivor@matherlifeways.com', 57192650726, '', 1367599568, 1367598585, 0, '../index.php', '', 0, 0, 0, 0, 0, 0, 0, 'en_us', -6.00, 1, 'D M d, Y g:i a', 1, 0, '', 0, 0, 0, 0, -3, 0, 0, 't', 'd', 0, 't', 'a', 0, 1, 0, 1, 1, 1, 1, 230271, '', 0, 0, 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '7b55985142dfd231', 0, 0, 0),
 (81, 0, 8, '', 0, '', 1367954195, 'Adriana', 'adriana', '$H$9uGyFgqDnsMPamiVM8GffwiMEuWSev1', 1367954195, 0, 'dricf@br.ibm.com', 69765825416, '', 0, 1367954195, 0, '', '', 0, 0, 0, 0, 0, 0, 0, 'en_us', -6.00, 1, 'D M d, Y g:i a', 1, 0, '', 0, 0, 0, 0, -3, 0, 0, 't', 'd', 0, 't', 'a', 0, 1, 0, 1, 1, 1, 1, 230271, '', 0, 0, 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '2f9b746cc49b8c0f', 0, 0, 0),
@@ -14341,10 +14435,11 @@ INSERT INTO `phpbb_users` (`user_id`, `user_type`, `group_id`, `user_permissions
 --
 -- Table structure for table `phpbb_user_group`
 --
--- Creation: Apr 10, 2013 at 09:43 PM
--- Last update: May 07, 2013 at 07:16 PM
+-- Creation: May 09, 2013 at 03:18 PM
+-- Last update: May 09, 2013 at 03:18 PM
 --
 
+DROP TABLE IF EXISTS `phpbb_user_group`;
 CREATE TABLE IF NOT EXISTS `phpbb_user_group` (
   `group_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
   `user_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
@@ -14437,10 +14532,11 @@ INSERT INTO `phpbb_user_group` (`group_id`, `user_id`, `group_leader`, `user_pen
 --
 -- Table structure for table `phpbb_warnings`
 --
--- Creation: Apr 10, 2013 at 09:43 PM
--- Last update: Apr 10, 2013 at 09:43 PM
+-- Creation: May 09, 2013 at 03:18 PM
+-- Last update: May 09, 2013 at 03:18 PM
 --
 
+DROP TABLE IF EXISTS `phpbb_warnings`;
 CREATE TABLE IF NOT EXISTS `phpbb_warnings` (
   `warning_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
   `user_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
@@ -14455,10 +14551,11 @@ CREATE TABLE IF NOT EXISTS `phpbb_warnings` (
 --
 -- Table structure for table `phpbb_words`
 --
--- Creation: Apr 10, 2013 at 09:43 PM
--- Last update: Apr 10, 2013 at 09:43 PM
+-- Creation: May 09, 2013 at 03:18 PM
+-- Last update: May 09, 2013 at 03:18 PM
 --
 
+DROP TABLE IF EXISTS `phpbb_words`;
 CREATE TABLE IF NOT EXISTS `phpbb_words` (
   `word_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
   `word` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '',
@@ -14471,10 +14568,11 @@ CREATE TABLE IF NOT EXISTS `phpbb_words` (
 --
 -- Table structure for table `phpbb_zebra`
 --
--- Creation: Apr 10, 2013 at 09:43 PM
--- Last update: Apr 10, 2013 at 09:43 PM
+-- Creation: May 09, 2013 at 03:18 PM
+-- Last update: May 09, 2013 at 03:18 PM
 --
 
+DROP TABLE IF EXISTS `phpbb_zebra`;
 CREATE TABLE IF NOT EXISTS `phpbb_zebra` (
   `user_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
   `zebra_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
@@ -14488,99 +14586,99 @@ CREATE TABLE IF NOT EXISTS `phpbb_zebra` (
 --
 
 --
--- Constraints for table `onlinecourseportal_agreement`
+-- Constraints for table `courseportal_agreement`
 --
-ALTER TABLE `onlinecourseportal_agreement`
-  ADD CONSTRAINT `onlinecourseportal_agreement_ibfk_3` FOREIGN KEY (`created_by`) REFERENCES `onlinecourseportal_user` (`id`);
+ALTER TABLE `courseportal_agreement`
+  ADD CONSTRAINT `courseportal_agreement_ibfk_3` FOREIGN KEY (`created_by`) REFERENCES `courseportal_user` (`id`);
 
 --
--- Constraints for table `onlinecourseportal_avatar`
+-- Constraints for table `courseportal_avatar`
 --
-ALTER TABLE `onlinecourseportal_avatar`
-  ADD CONSTRAINT `onlinecourseportal_avatar_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `onlinecourseportal_user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `courseportal_avatar`
+  ADD CONSTRAINT `courseportal_avatar_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `courseportal_user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `onlinecourseportal_course_objective`
+-- Constraints for table `courseportal_course_objective`
 --
-ALTER TABLE `onlinecourseportal_course_objective`
-  ADD CONSTRAINT `onlinecourseportal_course_objective_ibfk_1` FOREIGN KEY (`course_id`) REFERENCES `onlinecourseportal_course` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `courseportal_course_objective`
+  ADD CONSTRAINT `courseportal_course_objective_ibfk_1` FOREIGN KEY (`course_id`) REFERENCES `courseportal_course` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `onlinecourseportal_group_regular_expression`
+-- Constraints for table `courseportal_group_regular_expression`
 --
-ALTER TABLE `onlinecourseportal_group_regular_expression`
-  ADD CONSTRAINT `onlinecourseportal_group_regular_expression_ibfk_1` FOREIGN KEY (`group_id`) REFERENCES `onlinecourseportal_group` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `courseportal_group_regular_expression`
+  ADD CONSTRAINT `courseportal_group_regular_expression_ibfk_1` FOREIGN KEY (`group_id`) REFERENCES `courseportal_group` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `onlinecourseportal_message`
+-- Constraints for table `courseportal_message`
 --
-ALTER TABLE `onlinecourseportal_message`
-  ADD CONSTRAINT `onlinecourseportal_message_ibfk_1` FOREIGN KEY (`id`) REFERENCES `onlinecourseportal_message_source` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `courseportal_message`
+  ADD CONSTRAINT `courseportal_message_ibfk_1` FOREIGN KEY (`id`) REFERENCES `courseportal_message_source` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `onlinecourseportal_referral`
+-- Constraints for table `courseportal_referral`
 --
-ALTER TABLE `onlinecourseportal_referral`
-  ADD CONSTRAINT `onlinecourseportal_referral_ibfk_1` FOREIGN KEY (`referrer`) REFERENCES `onlinecourseportal_user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `onlinecourseportal_referral_ibfk_2` FOREIGN KEY (`referee`) REFERENCES `onlinecourseportal_user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `courseportal_referral`
+  ADD CONSTRAINT `courseportal_referral_ibfk_1` FOREIGN KEY (`referrer`) REFERENCES `courseportal_user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `courseportal_referral_ibfk_2` FOREIGN KEY (`referee`) REFERENCES `courseportal_user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `onlinecourseportal_survey_answer`
+-- Constraints for table `courseportal_survey_answer`
 --
-ALTER TABLE `onlinecourseportal_survey_answer`
-  ADD CONSTRAINT `onlinecourseportal_survey_answer_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `onlinecourseportal_user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `onlinecourseportal_survey_answer_ibfk_2` FOREIGN KEY (`question_id`) REFERENCES `onlinecourseportal_survey_question` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `courseportal_survey_answer`
+  ADD CONSTRAINT `courseportal_survey_answer_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `courseportal_user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `courseportal_survey_answer_ibfk_2` FOREIGN KEY (`question_id`) REFERENCES `courseportal_survey_question` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `onlinecourseportal_survey_answer_option`
+-- Constraints for table `courseportal_survey_answer_option`
 --
-ALTER TABLE `onlinecourseportal_survey_answer_option`
-  ADD CONSTRAINT `onlinecourseportal_survey_answer_option_ibfk_1` FOREIGN KEY (`answer_id`) REFERENCES `onlinecourseportal_survey_answer` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `onlinecourseportal_survey_answer_option_ibfk_2` FOREIGN KEY (`option_id`) REFERENCES `onlinecourseportal_survey_question_option` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `courseportal_survey_answer_option`
+  ADD CONSTRAINT `courseportal_survey_answer_option_ibfk_1` FOREIGN KEY (`answer_id`) REFERENCES `courseportal_survey_answer` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `courseportal_survey_answer_option_ibfk_2` FOREIGN KEY (`option_id`) REFERENCES `courseportal_survey_question_option` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `onlinecourseportal_survey_answer_text`
+-- Constraints for table `courseportal_survey_answer_text`
 --
-ALTER TABLE `onlinecourseportal_survey_answer_text`
-  ADD CONSTRAINT `onlinecourseportal_survey_answer_text_ibfk_1` FOREIGN KEY (`answer_id`) REFERENCES `onlinecourseportal_survey_answer` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `courseportal_survey_answer_text`
+  ADD CONSTRAINT `courseportal_survey_answer_text_ibfk_1` FOREIGN KEY (`answer_id`) REFERENCES `courseportal_survey_answer` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `onlinecourseportal_survey_question`
+-- Constraints for table `courseportal_survey_question`
 --
-ALTER TABLE `onlinecourseportal_survey_question`
-  ADD CONSTRAINT `onlinecourseportal_survey_question_ibfk_1` FOREIGN KEY (`survey_id`) REFERENCES `onlinecourseportal_survey` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `onlinecourseportal_survey_question_ibfk_2` FOREIGN KEY (`type_id`) REFERENCES `onlinecourseportal_survey_question_type` (`id`);
+ALTER TABLE `courseportal_survey_question`
+  ADD CONSTRAINT `courseportal_survey_question_ibfk_1` FOREIGN KEY (`survey_id`) REFERENCES `courseportal_survey` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `courseportal_survey_question_ibfk_2` FOREIGN KEY (`type_id`) REFERENCES `courseportal_survey_question_type` (`id`);
 
 --
--- Constraints for table `onlinecourseportal_survey_question_option`
+-- Constraints for table `courseportal_survey_question_option`
 --
-ALTER TABLE `onlinecourseportal_survey_question_option`
-  ADD CONSTRAINT `onlinecourseportal_survey_question_option_ibfk_1` FOREIGN KEY (`question_id`) REFERENCES `onlinecourseportal_survey_question` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `courseportal_survey_question_option`
+  ADD CONSTRAINT `courseportal_survey_question_option_ibfk_1` FOREIGN KEY (`question_id`) REFERENCES `courseportal_survey_question` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `onlinecourseportal_uploaded_file`
+-- Constraints for table `courseportal_uploaded_file`
 --
-ALTER TABLE `onlinecourseportal_uploaded_file`
-  ADD CONSTRAINT `onlinecourseportal_uploaded_file_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `onlinecourseportal_user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `courseportal_uploaded_file`
+  ADD CONSTRAINT `courseportal_uploaded_file_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `courseportal_user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `onlinecourseportal_user`
+-- Constraints for table `courseportal_user`
 --
-ALTER TABLE `onlinecourseportal_user`
-  ADD CONSTRAINT `onlinecourseportal_user_ibfk_1` FOREIGN KEY (`group_id`) REFERENCES `onlinecourseportal_group` (`id`);
+ALTER TABLE `courseportal_user`
+  ADD CONSTRAINT `courseportal_user_ibfk_1` FOREIGN KEY (`group_id`) REFERENCES `courseportal_group` (`id`);
 
 --
--- Constraints for table `onlinecourseportal_user_activated`
+-- Constraints for table `courseportal_user_activated`
 --
-ALTER TABLE `onlinecourseportal_user_activated`
-  ADD CONSTRAINT `onlinecourseportal_user_activated_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `onlinecourseportal_user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `courseportal_user_activated`
+  ADD CONSTRAINT `courseportal_user_activated_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `courseportal_user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `onlinecourseportal_user_course`
+-- Constraints for table `courseportal_user_course`
 --
-ALTER TABLE `onlinecourseportal_user_course`
-  ADD CONSTRAINT `onlinecourseportal_user_course_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `onlinecourseportal_user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `onlinecourseportal_user_course_ibfk_2` FOREIGN KEY (`course_id`) REFERENCES `onlinecourseportal_course` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `courseportal_user_course`
+  ADD CONSTRAINT `courseportal_user_course_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `courseportal_user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `courseportal_user_course_ibfk_2` FOREIGN KEY (`course_id`) REFERENCES `courseportal_course` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 SET FOREIGN_KEY_CHECKS=1;
 COMMIT;
 

@@ -8,7 +8,7 @@ if(defined('YII_DEBUG'))
 			'username' => 'c145190-h2227182',
 			'password' => 'Mj93f6d42b!',
 			'charset' => 'utf8',
-			'tablePrefix' => 'onlinecourseportal_',
+			'tablePrefix' => 'courseportal_',
 			'enableProfiling' => true,
 			'enableParamLogging' => true);
 }
@@ -20,7 +20,7 @@ else
 			'username' => 'c145190-h222718',
 			'password' => 'Mj93f6d42b!',
 			'charset' => 'utf8',
-			'tablePrefix' => 'onlinecourseportal_',
+			'tablePrefix' => 'courseportal_',
 			'enableProfiling' => false,
 			'enableParamLogging' => false);
 }
