@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost:3306
--- Generation Time: May 09, 2013 at 10:23 AM
+-- Generation Time: May 09, 2013 at 06:39 PM
 -- Server version: 5.1.67
 -- PHP Version: 5.3.10
 
@@ -759,7 +759,8 @@ INSERT INTO `courseportal_message` (`id`, `language`, `translation`) VALUES
 (62, 'ar', 'منظمتكم تقديم أدلة المستندة إلى برامج لدعم الموظفين الذين هم الآن، أو يمكن أن رعاية أفراد الأسرة من كبار السن أو الأصدقاء؟'),
 (62, 'de', 'Bietet Ihre Organisation Evidenzbasierte Programme für Mitarbeiter, die jetzt oder für ältere Familienmitglieder oder Freunde werden Pflege unterstützen?'),
 (62, 'es', '¿Su organización proporciona programas basados ​​en evidencias para apoyar a los empleados que están ahora o se puede cuidar a los miembros mayores de la familia o amigos?'),
-(62, 'it', 'La vostra organizzazione fornire elementi di prova basati su programmi di sostegno ai lavoratori che oggi sono o possono essere la cura per i membri più anziani della famiglia o amici?'),
+(62, 'it', 'La vostra organizzazione fornire elementi di prova basati su programmi di sostegno ai lavoratori che oggi sono o possono essere la cura per i membri più anziani della famiglia o amici?');
+INSERT INTO `courseportal_message` (`id`, `language`, `translation`) VALUES
 (62, 'ja', 'あなたの組織が今ある以上の家族や友人の世話をすることができる従業員をサポートする証拠ベースのプログラムを提供していますか？'),
 (62, 'pt', 'A sua organização fornecer evidências baseadas em programas para apoiar os empregados, que agora estão ou podem ser cuidar dos membros mais velhos da família ou amigos?'),
 (62, 'ru', 'Предоставляет ли ваша организация на основе фактических данных программ поддержки работников, которые в настоящее время или могут быть забота о старших членов семьи или друзей?'),
@@ -1199,10 +1200,10 @@ INSERT INTO `courseportal_message` (`id`, `language`, `translation`) VALUES
 (123, 'de', 'Ressourcen, mir zu helfen mit meinem pflegerischen Aufgaben und richte meinen eigenen körperlichen, geistigen und emotionalen Gesundheit Bedürfnisse'),
 (123, 'es', 'Recursos para ayudarme a manejar mis responsabilidades de cuidado y dirigir mi propio bienestar físico, mental y necesidades de salud emocional'),
 (123, 'it', 'Risorse per aiutarmi a gestire le mie responsabilità di accudimento e rivolgo il mio fisico, mentale, emotivo e bisogni di salute'),
-(123, 'pt', 'Recursos para me ajudar a administrar as minhas responsabilidades de cuidar e tratar do meu próprio físico, mental, emocional e necessidades de saúde'),
-(123, 'ru', 'Ресурсы, чтобы помочь мне управлять моей заботы обязанности и решать свои физические, умственные и эмоциональные потребности в области здравоохранения'),
-(123, 'zh', '资源，帮助我管理我的照顾责任，并解决我自己的身体，心理和情绪健康的需求，');
+(123, 'pt', 'Recursos para me ajudar a administrar as minhas responsabilidades de cuidar e tratar do meu próprio físico, mental, emocional e necessidades de saúde');
 INSERT INTO `courseportal_message` (`id`, `language`, `translation`) VALUES
+(123, 'ru', 'Ресурсы, чтобы помочь мне управлять моей заботы обязанности и решать свои физические, умственные и эмоциональные потребности в области здравоохранения'),
+(123, 'zh', '资源，帮助我管理我的照顾责任，并解决我自己的身体，心理和情绪健康的需求，'),
 (124, 'ar', 'أدوات لتحقيق التوازن بين تقديم الرعاية مساعدتي بلدي ومسؤوليات العمل'),
 (124, 'de', 'Werkzeuge, mir zu helfen Gleichgewicht meiner Pflege und berufliche Verantwortung'),
 (124, 'es', 'Herramientas para ayudarme a equilibrar mi cuidado y las responsabilidades del trabajo'),
@@ -1882,7 +1883,8 @@ INSERT INTO `courseportal_message` (`id`, `language`, `translation`) VALUES
 (258, 'es', 'Explora los retos asociados con la prestación de cuidados generales'),
 (258, 'ja', '介護に関連した一般的な課題を探る'),
 (258, 'pt', 'Explorar desafios gerais associadas cuidar'),
-(258, 'zh', '探索一般的挑战与照顾'),
+(258, 'zh', '探索一般的挑战与照顾');
+INSERT INTO `courseportal_message` (`id`, `language`, `translation`) VALUES
 (259, 'es', 'Explorar el impacto sobre las empresas y la economía'),
 (259, 'ja', '事業への影響、経済性を探る'),
 (259, 'pt', 'Explore o impacto sobre as empresas ea economia'),
@@ -2356,9 +2358,9 @@ INSERT INTO `courseportal_message` (`id`, `language`, `translation`) VALUES
 (375, 'pt', 'Você já fez um curso online antes?'),
 (375, 'ru', 'Вы когда-либо онлайн-курс раньше?'),
 (375, 'zh', '你有没有采取网上课程吗？'),
-(376, 'es', 'La demencia se refiere a una pérdida adquirida y progresiva de las funciones mentales debido a un trastorno del cerebro. La demencia no es una enfermedad específica. Es un término general que describe una amplia gama de síntomas asociados con una disminución de la memoria o de otras habilidades de pensamiento lo suficientemente graves como para reducir la capacidad de una persona para realizar las actividades diarias. Un diagnóstico médico está obligado a determinar la causa o causas subyacentes de los síntomas.'),
-(376, 'ja', '認知症は、脳の障害による精神機能の取得および進行性の喪失を意味します。認知症は、特定の病気ではありません。それは、記憶力の低下や日常の活動を行う人の能力を低下させるほど厳しい他の思考スキルと関連した症状の広い範囲を説明し全体的な用語です。医療診断が根本的な原因や症状の原因を特定するために必要です。');
+(376, 'es', 'La demencia se refiere a una pérdida adquirida y progresiva de las funciones mentales debido a un trastorno del cerebro. La demencia no es una enfermedad específica. Es un término general que describe una amplia gama de síntomas asociados con una disminución de la memoria o de otras habilidades de pensamiento lo suficientemente graves como para reducir la capacidad de una persona para realizar las actividades diarias. Un diagnóstico médico está obligado a determinar la causa o causas subyacentes de los síntomas.');
 INSERT INTO `courseportal_message` (`id`, `language`, `translation`) VALUES
+(376, 'ja', '認知症は、脳の障害による精神機能の取得および進行性の喪失を意味します。認知症は、特定の病気ではありません。それは、記憶力の低下や日常の活動を行う人の能力を低下させるほど厳しい他の思考スキルと関連した症状の広い範囲を説明し全体的な用語です。医療診断が根本的な原因や症状の原因を特定するために必要です。'),
 (376, 'pt', 'Dementia refere-se a uma perda adquirida e progressiva das funções mentais devido a uma desordem cerebral. Demência não é uma doença específica. É um termo geral que descreve uma ampla gama de sintomas associados a um declínio na memória ou outras habilidades mentais graves o suficiente para reduzir a habilidade das pessoas para realizar atividades cotidianas. Um diagnóstico médico é necessário para determinar a causa ou causas dos sintomas.'),
 (376, 'ru', 'Деменция относится к приобретенной и прогрессирующей потерей психических функций из-за заболевания головного мозга. Деменция является не конкретное заболевание. Это общий термин, который описывает широкий спектр симптомов, связанных со снижением памяти или другие навыки мышления достаточно серьезным, чтобы уменьшить лиц способность выполнять повседневную деятельность. Медицинского диагноза необходимо определить основную причину или причины симптомов.'),
 (376, 'zh', '老年痴呆症是指收购和由于一种大脑功能紊乱的心理功能逐渐丧失。老年痴呆症是不是一个特定的疾病。这是一个整体的术语，描述了一个范围广泛的症状与记忆体或其他严重到足以降低一个人的能力，进行日常活动的思维能力下降。医生诊断是必需的，以确定根本原因或症状的原因。'),
@@ -2671,7 +2673,8 @@ INSERT INTO `courseportal_message` (`id`, `language`, `translation`) VALUES
 (609, 'es', 'Es la razón principal para colocar a las personas de edad avanzada en instituciones como hogares de ancianos.'),
 (609, 'pt', 'É a razão principal para colocar idosos em instituições como lares de idosos.'),
 (609, 'zh', '它是全球领先的机构，如养老院老人的原因。'),
-(610, 'es', 'Pensando en el material que usted acaba de leer, por favor trate de responder correctamente a las preguntas de evaluación a continuación sin buscar en Internet. Sus respuestas no se registran, pero usted recibirá una respuesta inmediata.'),
+(610, 'es', 'Pensando en el material que usted acaba de leer, por favor trate de responder correctamente a las preguntas de evaluación a continuación sin buscar en Internet. Sus respuestas no se registran, pero usted recibirá una respuesta inmediata.');
+INSERT INTO `courseportal_message` (`id`, `language`, `translation`) VALUES
 (610, 'pt', 'Pensando sobre o material que você acabou de ler, por favor, tente responder corretamente as perguntas de avaliação abaixo, sem pesquisar na Internet. Suas respostas não são registrados, mas você vai receber feedback imediato.'),
 (610, 'zh', '你刚才读的，请尽量正确地回答下面的评估问题，而在互联网上搜索有关材料的思考。您的回答不会被记录，但你会得到即时的反馈。'),
 (611, 'es', 'Es una enfermedad de demencia en el cerebro?'),
@@ -2964,11 +2967,11 @@ INSERT INTO `courseportal_message` (`id`, `language`, `translation`) VALUES
 (746, 'pt', 'Este programa é oferecido por modos de vida Mather Instituto do Envelhecimento, em colaboração com o Rush University College de Enfermagem. Desenvolvimento foi parcialmente financiado por fundos do Bureau de divisão Profissionais de Saúde do Departamento de Saúde e Serviços Humanos.'),
 (747, 'pt', 'Exames em linha Workforce'),
 (748, 'pt', 'Envelhecimento no Trabalho'),
-(749, 'pt', '- Verão Vindo 2013'),
+(749, 'pt', '- Verão Vindo 2013');
+INSERT INTO `courseportal_message` (`id`, `language`, `translation`) VALUES
 (750, 'es', 'El envejecimiento en el lugar de trabajo y herramientas de encuestas están diseñadas para proporcionar a los empleadores con el envejecimiento estratégico información relacionada con la administración de personal. Con un gran por ciento de los 78 millones de baby boomers que planean permanecer en la fuerza de trabajo más allá de la edad tradicional de jubilación, las organizaciones de los sectores sin fines de lucro, privadas y públicas se necesitan herramientas y recursos para hacer el mejor uso de sus conocimientos y habilidades con el fin de incrementar la organización la eficacia y el rendimiento empresarial.'),
 (750, 'pt', 'O envelhecimento nos kits de ferramentas no local de trabalho e pesquisa são projetados para fornecer aos empregadores estratégica de gestão da informação relacionadas com o envelhecimento da força de trabalho. Com uma grande porcentagem dos 78 milhões de baby boomers que planejam permanecer no mercado de trabalho após a idade de aposentadoria tradicionais, as organizações sem fins lucrativos nos setores, privado e público a necessidade de ferramentas e recursos para fazer o melhor uso de seus conhecimentos e habilidades, a fim de aumentar organizacional eficácia e desempenho dos negócios.'),
-(751, 'pt', 'Toolkits');
-INSERT INTO `courseportal_message` (`id`, `language`, `translation`) VALUES
+(751, 'pt', 'Toolkits'),
 (752, 'es', 'La herramienta ofrece información y recursos valiosos para los profesionales de recursos humanos, gerentes, empleados y cuidadores.'),
 (752, 'pt', 'O kit de ferramentas fornece informações valiosas e recursos para profissionais de recursos humanos, gestores, trabalhadores e cuidadores.'),
 (753, 'es', 'Kit de herramientas incluye:'),
@@ -3207,7 +3210,8 @@ INSERT INTO `courseportal_message` (`id`, `language`, `translation`) VALUES
 (941, 'pt', 'E-mail ou senha incorretos.'),
 (942, 'es', '¡GRACIAS!'),
 (942, 'pt', 'OBRIGADO!'),
-(943, 'es', 'Gracias por su apoyo e interés en los estilos de vida Mather Institute on Aging. A través de la realización de la investigación aplicada, hemos desarrollado premiados, basadas en evidencia los programas de educación para los profesionales que atienden a los adultos mayores. Integrada por investigadores y educadores, somos un recurso global de información sobre innovaciones exitosas de servicios de salud, el envejecimiento y la programación educativa.'),
+(943, 'es', 'Gracias por su apoyo e interés en los estilos de vida Mather Institute on Aging. A través de la realización de la investigación aplicada, hemos desarrollado premiados, basadas en evidencia los programas de educación para los profesionales que atienden a los adultos mayores. Integrada por investigadores y educadores, somos un recurso global de información sobre innovaciones exitosas de servicios de salud, el envejecimiento y la programación educativa.');
+INSERT INTO `courseportal_message` (`id`, `language`, `translation`) VALUES
 (943, 'pt', 'Nós apreciamos o seu apoio e interesse em modos de vida Mather Instituto do Envelhecimento. Através da realização de pesquisa aplicada, temos desenvolvido premiados, programas baseados em evidências de educação para profissionais que atendem adultos mais velhos. Formada por pesquisadores e educadores, somos um recurso global para obter informações sobre bem-estar, bem-sucedidas inovações de serviços de envelhecimento, e programação educacional.'),
 (944, 'es', 'Requisitos Tutorial'),
 (944, 'pt', 'Requisitos do Tutorial'),
@@ -3451,7 +3455,8 @@ INSERT INTO `courseportal_message` (`id`, `language`, `translation`) VALUES
 (1136, 'pt', 'Empregadores resposta às necessidades dos cuidadores de trabalho'),
 (1137, 'pt', 'A resposta da empresa para os cuidadores de funcionários'),
 (1138, 'pt', 'Em reconhecimento dos efeitos negativos que pode ter de cuidar sobre os trabalhadores e seu trabalho, alguns empregadores norte-americanos iniciaram vários trabalhos bases de apoio para seus funcionários com responsabilidades de idosos. Na realidade, há uma longa história em os EUA de preocupação empregador para trabalhadores individuais e suas circunstâncias familiares. Especificamente, de cariz familiar benefícios na data dos EUA de volta para a revolução industrial, quando as mulheres (e crianças) começou a trabalhar fora de casa nas primeiras fábricas e moinhos. Foi durante este tempo, em 1825, que Robert Owen, um empresário Inglês, estabeleceu o primeiro patrocinado pelo empregador creche em os EUA, em New Harmony, Indiana.'),
-(1139, 'pt', 'Normalmente, no entanto, a preocupação empregador tem sido manifesta apenas durante os períodos de nossa história, quando as mulheres eram necessários no local de trabalho, e prestação empregador de cuidar da criança foi visto como uma estratégia para atrair e reter os trabalhadores necessários. Exceto para os anos durante as duas Guerras Mundiais, quando as mulheres foram recrutados para preencher as vagas deixadas pelos homens no serviço militar, para a maioria dos séculos 19 e 20 que gerem o cruzamento de trabalho e família foi vista como a única responsabilidade dos próprios trabalhadores . Isso começou a mudar no final dos anos 1970 e 1980, como um número crescente de mulheres começaram a entrar e permanecer no mercado de trabalho. A crença predominante de que a vida familiar e as responsabilidades familiares devem e podem ser deixados em casa foi desafiado pela realidade que enfrentam os trabalhadores enquanto eles lutavam para equilibrar trabalho e obrigações familiares.'),
+(1139, 'pt', 'Normalmente, no entanto, a preocupação empregador tem sido manifesta apenas durante os períodos de nossa história, quando as mulheres eram necessários no local de trabalho, e prestação empregador de cuidar da criança foi visto como uma estratégia para atrair e reter os trabalhadores necessários. Exceto para os anos durante as duas Guerras Mundiais, quando as mulheres foram recrutados para preencher as vagas deixadas pelos homens no serviço militar, para a maioria dos séculos 19 e 20 que gerem o cruzamento de trabalho e família foi vista como a única responsabilidade dos próprios trabalhadores . Isso começou a mudar no final dos anos 1970 e 1980, como um número crescente de mulheres começaram a entrar e permanecer no mercado de trabalho. A crença predominante de que a vida familiar e as responsabilidades familiares devem e podem ser deixados em casa foi desafiado pela realidade que enfrentam os trabalhadores enquanto eles lutavam para equilibrar trabalho e obrigações familiares.');
+INSERT INTO `courseportal_message` (`id`, `language`, `translation`) VALUES
 (1140, 'pt', 'Aumentar a conscientização das mudanças demográficas e sociais que afetam a força de trabalho criou uma mudança na filosofia de empregadores e empregados sobre a &quot;adequação&quot; de envolvimento empregador nos aspectos relacionadas com a família de vida dos funcionários e estimulou o desenvolvimento de profissionais e familiares benefícios e programas . Neste momento, os benefícios de cuidados infantis e programas tornou-se mais disponível para os trabalhadores americanos. Em meados dos anos 1980, os empregadores americanos começaram a introduzir a programação de atendimento aos idosos a sua variedade de programas de trabalho-família. Estes programas foram formados após os programas de cuidados infantis que incluem recursos e serviços de referência. Pesquisar na Web para aa linha do tempo do desenvolvimento de programas de trabalho de atendimento aos idosos.'),
 (1141, 'pt', 'Empregadores resposta às necessidades dos cuidadores de Trabalho (continuação)'),
 (1142, 'pt', 'Fatores que contribuem para o crescimento do trabalho com base em programas de cuidados de pessoa idosa'),
@@ -3461,8 +3466,7 @@ INSERT INTO `courseportal_message` (`id`, `language`, `translation`) VALUES
 (1146, 'pt', 'resultados da investigação sobre as consequências potenciais e reais negativos da prestação de cuidados de funcionários e de seu trabalho;'),
 (1147, 'pt', 'o envolvimento do trabalho organizado;'),
 (1148, 'pt', 'preocupações sobre a retenção e recrutamento de trabalhador, e'),
-(1149, 'pt', 'os objetivos de manter a competitividade e melhorar o moral.');
-INSERT INTO `courseportal_message` (`id`, `language`, `translation`) VALUES
+(1149, 'pt', 'os objetivos de manter a competitividade e melhorar o moral.'),
 (1150, 'pt', 'Os primeiros programas de ancião cuidados desenvolvidos em meados de 1980 foram iniciadas em grande parte como resultado de uma pesquisa sobre o número de cuidadores de trabalho e do imperativo demográfico de uma América envelhecimento. O Seguro de viajantes conduziu um dos levantamentos no local de trabalho de funcionários de cuidar primeiro, e as pesquisas no local de trabalho várias seguido rapidamente. Entre 23% e 32% dos funcionários que responderam a essas pesquisas relataram ter pelo menos alguns deveres ancião cuidados e &quot;a estimativa de prevalência de 25% tornou-se referência para os empregadores, que iniciaram programas de trabalho para ajudar os seus funcionários de cuidado&quot;. No entanto, como relatado em Kossek, DeMarr, Backman, e Kollar (1993), de âmbito nacional IBM mais velho de serviço de referência de cuidados, que foi um dos primeiros programas &quot;, foi desenvolvido não como uma resposta à demanda do empregado, mas sim uma resposta pró-ativa para inegáveis ​​tendências demográficas &quot;.'),
 (1151, 'pt', 'Além do impulso dado pela pesquisa documentar o número de cuidadores de trabalho, os empregadores foram incentivados a desenvolver programas de cuidados formais ancião de muitos estudos que tentaram quantificar os custos a eles de cuidadores de trabalho. Uma estimativa inicial desses custos sugeriu que empresas sem programas de cuidados formais mais velhos podem perder cerca de US $ 2.500 por ano, por empregado cuidar em perda de produtividade. Estimativas mais recentes sugerem que esses custos podem ser tão elevado quanto $ 3.142. Análises MetLife vários estimam que os custos agregados da prestação de cuidados empregados para os empregadores em todo o país variou em bilhões por ano.'),
 (1152, 'pt', 'O trabalho organizado também tem desempenhado um papel significativo no desenvolvimento de políticas e programas de cuidados de idosos, tanto por meio de negociação coletiva e por meio da educação sobre a importância do trabalho-família benefícios e políticas. Os contratos de CWA, IBEW e AT &amp; T negociados em 1990 representou um marco significativo para os trabalhadores sindicalizados. Este último contrato resultou no Fundo de Desenvolvimento da Família Cuidados de AT &amp; T, que forneceu financiamento para serviços específicos de rede de envelhecimento que beneficiam membros de sindicatos e de melhoria da qualidade dos programas de atendimento disponíveis mais velhos (ou seja, dia de serviço adulto e centros de idosos).'),
@@ -3615,7 +3619,8 @@ INSERT INTO `courseportal_message` (`id`, `language`, `translation`) VALUES
 (1283, 'es', 'Los científicos se preguntaron si podría haber algo diferente en la forma en que estas personas habían vivido sus vidas que les permitió resistir los efectos de la enfermedad de Alzheimer patología que habían crecido en sus cerebros. Resultó que estas personas habían sido más activos intelectualmente, socialmente y físicamente a lo largo de su vida adulta de las personas en el otro grupo.'),
 (1284, 'es', 'El cerebro adulto crece nuevas células'),
 (1285, 'es', 'Unos 10 años después de que el estudio de autopsia, otro grupo de investigadores estudiaron los cerebros de personas que habían sobrevivido al cáncer a través de la radioterapia. Resulta que la gente después de pasar por el tratamiento de radiación, parte de la información genética en las células de sus cambios. Mediante la aplicación de un tinte especial que sólo es atraído a las células con esta nueva información genética, los investigadores pueden ver que las células habían formado después del cáncer. Aplicaron este colorante en el tejido cerebral en la autopsia y se sorprendieron al encontrar células en el cerebro que aceptó el tinte. Esto significa que estas células se habían desarrollado después de la radioterapia. Algunas de las personas en este estudio, así como en sus años 80, cuando recibieron el tratamiento del cáncer, por lo que parece que las nuevas células del cerebro están creciendo bien en su vida posterior. Esta evidencia se combina con otros estudios, ya que este ha cambiado la forma en que pensamos sobre el cerebro adulto, ahora aceptamos que el cerebro adulto crece nuevas células cerebrales!'),
-(1286, 'es', 'Ahora bien, esta emoción se tiene que moderar un poco porque las células cerebrales no crecen a la misma tasa que dicen que las células de la piel o los huesos, por lo que es aún más difícil para el cerebro para recuperarse de una lesión.'),
+(1286, 'es', 'Ahora bien, esta emoción se tiene que moderar un poco porque las células cerebrales no crecen a la misma tasa que dicen que las células de la piel o los huesos, por lo que es aún más difícil para el cerebro para recuperarse de una lesión.');
+INSERT INTO `courseportal_message` (`id`, `language`, `translation`) VALUES
 (1287, 'es', 'Sin embargo, es emocionante saber que todavía podemos crecer nuevas células cerebrales. En realidad, esto puede ser uno de los mecanismos por los cuales podemos aprender cosas nuevas ya que la región del cerebro donde las células cerebrales nuevas crecer - llamada hipocampo - es el área responsable de la formación de nuevos recuerdos.'),
 (1288, 'es', 'La palabra clave para aprender de esto es &quot;neurogénesis&quot;, es decir, el crecimiento de nuevas células cerebrales.'),
 (1289, 'es', 'Estructuras cerebrales también crecer con la experiencia'),
@@ -3977,14 +3982,14 @@ INSERT INTO `courseportal_message` (`id`, `language`, `translation`) VALUES
 (1512, 'pt', 'O que você vai fazer? - Exemplos: Vou ler (nome do livro) para o prazer. Ou, eu vou andar.'),
 (1513, 'pt', 'Quanto você vai fazer? - Exemplos: Você vai ler um capítulo ou você vai ler por meia hora? Você vai andar dois quarteirões ou para 20 minutos?'),
 (1514, 'pt', 'Quando você vai fazer isso? Exemplos: Você vai ler a primeira coisa de manhã, quando você acordar, antes de ir para a cama, quando o receptor de cuidados está dormindo, ou ... ? Se o seu plano é andar, quando, durante o dia você vai fazer isso?'),
-(1515, 'pt', 'Quantas vezes você vai fazer esta atividade? Exemplo: Três vezes por semana, às segundas, quartas e sextas.'),
+(1515, 'pt', 'Quantas vezes você vai fazer esta atividade? Exemplo: Três vezes por semana, às segundas, quartas e sextas.');
+INSERT INTO `courseportal_message` (`id`, `language`, `translation`) VALUES
 (1516, 'pt', 'Um erro comum é fazer um plano de ação que está inacessível dentro do prazo. Por exemplo, se você planeja fazer algo todos os dias, você pode falhar. Cuidado, e da vida em geral, tem suas surpresas. Apesar de bem-intencionado, que muitas vezes não é possível fazer algo todos os dias. É melhor se planejar para fazer alguma coisa uma ou duas vezes por semana e ultrapassar o seu plano de acção do que pretende fazer algo todos os dias e não porque você só fez isso seis dias, em vez de sete. Lembre-se, um plano de acção destina-se a ajudar você a cuidar melhor de si mesmo e de experimentar o sucesso. A última coisa que você precisa é uma pressão adicional, decepção e estresse.'),
 (1517, 'pt', 'Aqui estão duas recomendações para escrever um plano de ação que pode ajudá-lo a alcançar o sucesso.'),
 (1518, 'pt', 'Comece onde você está ou começar devagar. Se há um livro que você tem vontade de ler, mas apenas não ter encontrado a tempo, pode não ser realista esperar para ler o livro inteiro na próxima semana. Em vez disso, tente ler por meia hora duas vezes por semana Se você não foi fisicamente ativo, pode ser irrealista para fazer um plano de acção · para começar a andar três quilômetros. É melhor fazer o seu plano de acção para algo que você acredita que pode realizar. Por exemplo, fazer o seu plano para andar três quarteirões ou uma milha meia, em vez de três quilômetros.'),
 (1519, 'pt', 'Dê-se um tempo. Todos nós temos dias em que não tenho vontade de fazer nada. Essa é a vantagem de dizer que você vai fazer alguma coisa, três dias por semana, em vez de todos os dias. Dessa forma, se você não tem vontade de fazer algo em um dia, ou algo se desenvolve que o impede de fazê-lo, você ainda pode alcançar o seu plano de acção.'),
 (1520, 'pt', 'Determinar seu nível de confiança'),
-(1521, 'pt', 'Depois de ter feito o seu plano de acção, pergunte a si mesmo a seguinte pergunta: Em uma escala de 0 a 10, com 0 não estar em todos confiantes e 10 totalmente confiável, como eu estou confiante de que eu possa concluir o meu plano de ação? Se a sua resposta é de 7 ou acima, seu plano de ação é, provavelmente, realista e alcançável. No entanto, se sua resposta é de 6 ou abaixo, é importante ter um outro olhar para o seu plano de acção. Algo provavelmente precisa de ser ajustada.');
-INSERT INTO `courseportal_message` (`id`, `language`, `translation`) VALUES
+(1521, 'pt', 'Depois de ter feito o seu plano de acção, pergunte a si mesmo a seguinte pergunta: Em uma escala de 0 a 10, com 0 não estar em todos confiantes e 10 totalmente confiável, como eu estou confiante de que eu possa concluir o meu plano de ação? Se a sua resposta é de 7 ou acima, seu plano de ação é, provavelmente, realista e alcançável. No entanto, se sua resposta é de 6 ou abaixo, é importante ter um outro olhar para o seu plano de acção. Algo provavelmente precisa de ser ajustada.'),
 (1522, 'pt', 'Pergunte-se: O que me deixa dúvidas sobre a realização do meu plano de ação? Quais os problemas que eu prevejo? Então, veja se você quer encontrar uma solução para os problemas que você identificou ou alterar o seu plano de acção para um novo em que você se sente mais confiança.'),
 (1523, 'pt', 'Anote o seu Plano de Acção'),
 (1524, 'pt', 'Quando estiver satisfeito com o seu plano de acção, anotá-la. Colocar um plano de ação por escrito nos ajuda a lembrar, acompanhar e realizar o acordo que fizemos com nós mesmos. Mantenha o controle de como você está fazendo. Anote os problemas encontrados na execução de seu plano de ação. Marque atividades como você realizá-las. Se você fez um ajuste em seu plano de acção, fazer uma nota do que você fez.'),
@@ -4186,7 +4191,8 @@ INSERT INTO `courseportal_message` (`id`, `language`, `translation`) VALUES
 (1716, 'pt', 'Manutenção da sua saúde e do espírito pode reduzir o nível de estresse. É fundamental encontrar atividades que ajudam você a se manter saudável e cuidar de si mesmo. Essas atividades são diferentes para cada indivíduo. O que funciona para uma pessoa pode não funcionar para outra. Você deve encontrar para reduzir o stress métodos que funcionam melhor para você.'),
 (1717, 'pt', 'Podemos aprender muito com um programa de auto-cuidado na Flórida chamado &quot;Começar Bem&quot;. Este é um grupo de pessoas que estão a apoiar o outro em aprender a viver e se sentir melhor. Tomam parte na afirmação de vida atividades como &quot;rindo, malabarismo, tocando, meditando pintura, a escrita do jornal, fazer exercícios, comer e nutritiva&quot; Eles demonstram a necessidade de se associar com outras pessoas que ajudam você a manter seu espírito e ajudá-lo a sentir-se amado e suportada. Para gerenciar o estresse, é fundamental fazer pausas de cuidado. Planejá-los em sua programação, começando imediatamente, se você não tiver feito isso. Estudos mostram que os cuidadores muitas vezes não fazer pausas até que eles estão no &quot;fim da linha&quot; ou &quot;queimado&quot;.'),
 (1718, 'pt', 'Isso serve melhor interesse de ninguém como sua capacidade de funcionar pode ser seriamente afetado. Para evitar problemas, é sua a responsabilidade de tirar uma folga do cuidador para se refrescar. É importante para o bem-estar dos receptores de cuidados que você faça pausas. Se você não fizer isso, eles podem se tornar cada vez mais dependente de você. Se você tomar pausas, eles serão menos isolado e se beneficiará de ter contato com outras pessoas. Eles também precisam de pausas de você. (Este é um exemplo de reformulação sua percepção de uma situação.)'),
-(1719, 'pt', 'Você é responsável por sua própria auto-cuidado. Prática de auto-cuidado significa que você:'),
+(1719, 'pt', 'Você é responsável por sua própria auto-cuidado. Prática de auto-cuidado significa que você:');
+INSERT INTO `courseportal_message` (`id`, `language`, `translation`) VALUES
 (1720, 'pt', 'aprender e usar técnicas de redução de estresse;'),
 (1721, 'pt', 'atender às suas necessidades de cuidados de saúde próprios;'),
 (1722, 'pt', 'obter o devido repouso e nutrição;'),
@@ -4483,7 +4489,8 @@ INSERT INTO `courseportal_message` (`id`, `language`, `translation`) VALUES
 (2013, 'pt', 'Bem-estar espiritual baseia-se em valores pessoais para encontrar significado e propósito na vida e descobrir uma harmonia pacífica com o mundo. Enquanto a fé significa coisas diferentes para pessoas diferentes, de bem-estar espiritual significa ter esperança, orientação e propósito de nos ajudar a compreender-nos melhor. Alguns métodos de obtenção de bem-estar espiritual incluem:'),
 (2014, 'pt', 'Abraçando crenças pessoais, morais e / ou religião'),
 (2015, 'pt', 'Desenvolver conexões com nós mesmos e os outros'),
-(2016, 'pt', 'Desenvolver uma filosofia de vida'),
+(2016, 'pt', 'Desenvolver uma filosofia de vida');
+INSERT INTO `courseportal_message` (`id`, `language`, `translation`) VALUES
 (2017, 'pt', 'Explore ensinamentos que apelar para você'),
 (2018, 'pt', 'Praticar técnicas de relaxamento, como a meditação ou yoga'),
 (2019, 'pt', 'Quais são algumas maneiras que você pode explorar bem-estar espiritual?'),
@@ -4504,8 +4511,7 @@ INSERT INTO `courseportal_message` (`id`, `language`, `translation`) VALUES
 (2034, 'pt', 'Você provavelmente pode pensar em muitas outras maneiras de promover bem-estar intelectual. Como você pode implementar essas idéias para estimular bem-estar intelectual para seus amigos / parentes mais velhos?'),
 (2035, 'pt', 'Aprendizagem ao Longo da Vida'),
 (2036, 'pt', 'Novo aprendizado por adultos mais velhos devem ser ligados a experiências ou actividades que estão familiarizados com ou tenham gostado, especialmente aqueles com um componente social. Aqui estão alguns fatos importantes sobre os adultos mais velhos e de aprendizagem ao longo da vida:'),
-(2037, 'pt', 'As pessoas mais velhas podem aprender novas informações e novas habilidades.');
-INSERT INTO `courseportal_message` (`id`, `language`, `translation`) VALUES
+(2037, 'pt', 'As pessoas mais velhas podem aprender novas informações e novas habilidades.'),
 (2038, 'pt', 'Às vezes, as pessoas mais velhas sentem menos confiança em aprender coisas novas, mas muitas vezes isso é porque eles não foram em uma sala de aula em um longo tempo, ou porque estão conscientes do estereótipo e cair em uma profecia auto-realizável.'),
 (2039, 'pt', 'Talvez a perda mais bem documentado no envelhecimento é que é preciso mais tempo para entender e pensar sobre o que está sendo aprendido. Isto apenas significa que as situações de aprendizagem para os idosos deve ser individualizado, sem pressão de tempo.'),
 (2040, 'pt', 'Para os alunos mais velhos, a aprendizagem activa e participativa pode ser mais benéfica (e agradável) do que o tradicional, a aprendizagem baseada em palestra.'),
@@ -5180,7 +5186,8 @@ INSERT INTO `courseportal_message_source` (`id`, `category`, `message`) VALUES
 (560, 'onlinecourseportal', 'Thank you for contacting us. We will respond to you as soon as possible.'),
 (563, 'translate', 'Message {message} could not be added to messageSource table'),
 (565, 'onlinecourseportal', 'Coming Soon: Testomonial Page and Forum'),
-(566, 'onlinecourseportal', 'Please visit this website at a later date. We are creating a testimonials page and forum for users and visitors.'),
+(566, 'onlinecourseportal', 'Please visit this website at a later date. We are creating a testimonials page and forum for users and visitors.');
+INSERT INTO `courseportal_message_source` (`id`, `category`, `message`) VALUES
 (567, 'onlinecourseportal', 'Welcome! This tutorial is designed to help demonstrate our course model, and is meant to be a \n			basic presentation. We will briefly explore dementia, Alzheimer''s disease, and how they are related. \n			Please feel free to contact us if you have questions, or need help.'),
 (568, 'onlinecourseportal', 'With such a profound impact on society, business, and potentially	on your family, could \n			you explain what Alzheimer''s disease is? How about dementia?'),
 (569, 'onlinecourseportal', 'Statistics and other Data (USA / English)'),
@@ -5468,9 +5475,9 @@ INSERT INTO `courseportal_message_source` (`id`, `category`, `message`) VALUES
 (851, 'onlinecourseportal', 'As reported by the National Family Caregivers Association (NFCA), here is a snopshot of statistics on family caregivers and family caregiving:'),
 (852, 'onlinecourseportal', 'Caregiving Population'),
 (853, 'onlinecourseportal', 'More than 65 million people, 29% of the U.S. population, provide care for a chronically ill, disabled or aged family member or friend during any given year and spend an average of 20 hours per week providing care for their loved one.'),
-(854, 'onlinecourseportal', 'The value of the services family caregivers provide for "free," when caring for older adults, is estimated to be $375 billion a year. That is almost twice as much as is actually spent on homecare and nursing home services combined ($158 billion).'),
-(855, 'onlinecourseportal', 'The typical family caregiver is a 49-year-old woman caring for her widowed 69-year-old mother who does not live with her. She is married and employed. Approximately 66% of family caregivers are women. More than 37% have children or grandchildren under 18 years old living with them.');
+(854, 'onlinecourseportal', 'The value of the services family caregivers provide for "free," when caring for older adults, is estimated to be $375 billion a year. That is almost twice as much as is actually spent on homecare and nursing home services combined ($158 billion).');
 INSERT INTO `courseportal_message_source` (`id`, `category`, `message`) VALUES
+(855, 'onlinecourseportal', 'The typical family caregiver is a 49-year-old woman caring for her widowed 69-year-old mother who does not live with her. She is married and employed. Approximately 66% of family caregivers are women. More than 37% have children or grandchildren under 18 years old living with them.'),
 (856, 'onlinecourseportal', '1.4 million children ages 8 to 18 provide care for an adult relative; 72% are caring for a parent or grandparent; and 64% live in the same household as their care recipient. Fortunately, most are not the sole caregiver.'),
 (857, 'onlinecourseportal', '20 hours per week is the average number of hours family caregivers spend caring for their loved ones while 13% of family caregivers are providing 40 hours of care a week or more.'),
 (858, 'onlinecourseportal', 'November 2009 Family caregivers are the foundation of long-term care nationwide exceeding Medicaid long-term care spending in all states.'),
@@ -5706,7 +5713,8 @@ INSERT INTO `courseportal_message_source` (`id`, `category`, `message`) VALUES
 (1088, 'onlinecourseportal', 'Ultimately, providing an organized support system for these employees may prove to be a fruitful investment for businesses, given the high percentages of working caregivers who would like to work more if they could. Many working caregivers are likely interested in seeking support in work-life balance to help them meet their responsibilities as caregivers and employees alike, and the accessibility to assistance could potentially go a long way toward greater productivity in the U.S. workplace.'),
 (1089, 'onlinecourseportal', 'Family caregivers provide about 80 percent of all long-term care services in the U.S. (Source: Metlife Mature Market Institute, 2001).'),
 (1090, 'onlinecourseportal', 'Many caregivers work either full or part time while providing care (59 percent). (Source: National Alliance for Caregiving with AARP and MetLife, 2004).'),
-(1091, 'onlinecourseportal', 'More than half of working caregivers (57 percent) say they have to go into work late, leave early or take time off during the day to provide care. (Source: National Alliance for Caregiving with AARP and MetLife, 2004).'),
+(1091, 'onlinecourseportal', 'More than half of working caregivers (57 percent) say they have to go into work late, leave early or take time off during the day to provide care. (Source: National Alliance for Caregiving with AARP and MetLife, 2004).');
+INSERT INTO `courseportal_message_source` (`id`, `category`, `message`) VALUES
 (1092, 'onlinecourseportal', 'For some adults with heavy caregiving responsibilities, the impact on their ability to work is significant. According to a major study by AARP and the National Alliance for Caregiving, some working caregivers reported having to take a leave of absence (17 percent), shift from full-time to part-time work (10 percent), quit work entirely (6 percent), lose job benefits (5 percent), turn down a promotion (4 percent), or choose early retirement (3 percent). (Source: National Alliance for Caregiving with AARP and MetLife, 2004).'),
 (1093, 'onlinecourseportal', 'Over the course of a caregiving “career,” family caregivers who provide intense personal care can lose as much as $659,000 in wages, pensions, and Social Security. (Source: Dimensions of Family Caregiving: A Look Into the Future; Metlife Mature Market Institute, 2000).'),
 (1094, 'onlinecourseportal', 'American businesses lose between $11 billion and $29 billion a year in reduced productivity costs related to caregiving responsibilities. This includes workplace disruptions, scheduled and unscheduled absences, leaves of absence, reduction from full- to part-time work, early retirements, and leaving work entirely to care for a loved one. (Source: Metropolitan Life Insurance Company, 1997).'),
@@ -5879,9 +5887,9 @@ INSERT INTO `courseportal_message_source` (`id`, `category`, `message`) VALUES
 (1261, 'onlinecourseportal', 'Introduction to Program Format'),
 (1262, 'onlinecourseportal', 'Memory Exercise'),
 (1263, 'onlinecourseportal', 'Goal Setting'),
-(1264, 'onlinecourseportal', 'The world of brain health has exploded over the past decade with many new programs and applications emerging to help people think and perform better both now in their daily lives at work or at home and later in life as people age.  Maintaining independence later in life is a concern for many people, especially older adults, but even for younger people this can be a nagging concern.  Through the course of this program you will learn how investing in your brain health now can pay dividends both immediately and as you age.'),
-(1265, 'onlinecourseportal', 'To describe some of the key concepts underlying the field of brain health, we will start by talking a bit about how to protect brain health as you age.');
+(1264, 'onlinecourseportal', 'The world of brain health has exploded over the past decade with many new programs and applications emerging to help people think and perform better both now in their daily lives at work or at home and later in life as people age.  Maintaining independence later in life is a concern for many people, especially older adults, but even for younger people this can be a nagging concern.  Through the course of this program you will learn how investing in your brain health now can pay dividends both immediately and as you age.');
 INSERT INTO `courseportal_message_source` (`id`, `category`, `message`) VALUES
+(1265, 'onlinecourseportal', 'To describe some of the key concepts underlying the field of brain health, we will start by talking a bit about how to protect brain health as you age.'),
 (1266, 'onlinecourseportal', 'Many people think that dementia is a normal part of the aging process and that losing ones memory is just part of getting older. While some cognitive skills, such as reaction time and our ability to access words at times (what we think of as “senior moments”), do decline naturally with age, “dementia” is a decline in cognitive ability beyond the normal aging process, most likely due to disease or injury.'),
 (1267, 'onlinecourseportal', 'Many people also think that if dementia is in their family they are destined to develop it at some point in their lives.  However, brain research is showing that the way people live their lives actually seems to account for as much or more of the risk for dementia than family history.  In fact for the typical late-onset form of Alzheimer’s disease, genes seem to only account for about 30% of the risk (that’s in contrast to early-onset Alzheimer’s, which occurs before age 65 and has a much stronger genetic component).  The rest of that 70% is made up of some other things that we can’t control such as environmental toxins, but within that 70% area there are a lot of things that we can control.'),
 (1268, 'onlinecourseportal', 'This information is leading some doctors and scientists to start thinking of dementia as a preventable disease, similar to how we think of heart disease, cancer and Type II diabetes as preventable.\n'),
@@ -6146,7 +6154,8 @@ INSERT INTO `courseportal_message_source` (`id`, `category`, `message`) VALUES
 (1527, 'onlinecourseportal', 'Clearly identify the problem. This is the first and most important step in the solution-seeking approach. It also can be the most difficult step.'),
 (1528, 'onlinecourseportal', 'List ideas to solve the problem. Family, friends, and others may be helpful in giving ideas. When you ask for ideas, just listen to each suggestion. It is best not to respond as to why an idea is or is not likely to work. Just focus on getting the ideas.'),
 (1529, 'onlinecourseportal', 'Select one to try. When trying a new idea, give it a fair trial before deciding that it will not work.'),
-(1530, 'onlinecourseportal', 'Assess the results. Ask yourself, "How well did what I chose work?" If all went well, congratulate yourself for finding a solution to the identified problem. If the first idea did not work, try another idea. Sometimes an idea just needs fine-tuning. It is important not to give up on an idea just because it did not work the first time. If you have difficulty finding a solution that works, utilize other resources. Share your problem with family, friends, and professionals and ask them for possible ideas. If you still find that suggested solutions do not work, you may need to accept that the problem is not solvable right now.'),
+(1530, 'onlinecourseportal', 'Assess the results. Ask yourself, "How well did what I chose work?" If all went well, congratulate yourself for finding a solution to the identified problem. If the first idea did not work, try another idea. Sometimes an idea just needs fine-tuning. It is important not to give up on an idea just because it did not work the first time. If you have difficulty finding a solution that works, utilize other resources. Share your problem with family, friends, and professionals and ask them for possible ideas. If you still find that suggested solutions do not work, you may need to accept that the problem is not solvable right now.');
+INSERT INTO `courseportal_message_source` (`id`, `category`, `message`) VALUES
 (1531, 'onlinecourseportal', 'Remember, just because there does not seem to be a workable solution right now does not mean that a problem can not be solved later, or that other problems can not be solved in the same way. It may be helpful to go back to the first step and consider if the problem needs to be redefined. For example, a caregiver had thought that her problem was "I am tired all of the time." However, the real problem was the caregiver''s beliefs that "No one can care for John like I can," and "I have to do everything myself." As a result of these beliefs, the caregiver was doing everything herself and getting worn out. When she redefined the problem and focused on changing her beliefs and view of the caregiving situation, she found a workable solution. Sometimes, too, a problem may be easier to work on if you break it down into smaller problems.'),
 (1532, 'onlinecourseportal', 'Most of the time if you follow these steps, you will find a solution that solves the problem. It is important to avoid making the mistake of jumping from step l to step 7 and thinking "nothing can be done."'),
 (1533, 'onlinecourseportal', 'Accomplishing action plans is often a reward in itself. However, it is also important to find healthy pleasures that add enjoyment to your life. Rewards do not have to be fancy or expensive or take a lot of time. One caregiver; for example, regularly goes to a movie or a play as a gift to herself from her husband. She said:'),
@@ -6371,10 +6380,10 @@ INSERT INTO `courseportal_message_source` (`id`, `category`, `message`) VALUES
 (1752, 'onlinecourseportal', 'Proper diet, adequate sleep, and regular exercise are necessary for all of us, and even more so when we are caregivers. These lifestyle factors increase our resistance to illness and our ability to cope with stressful situations.'),
 (1753, 'onlinecourseportal', 'Exercise promotes better sleep, reduces tension and depression, and increases energy and alertness. If finding time to exercise is a problem, try to incorporate it into your usual day Perhaps the person receiving care can walk or do stretching exercises with you. If necessary do frequent short exercises instead of using large blocks of time. Find activities you enjoy. Walking is considered one of the best and easiest exercises. It helps to reduce psychological tension as well as having physical benefits.'),
 (1754, 'onlinecourseportal', 'Walking 20 minutes a day, three times a week, is very beneficial. If you can not be away 20 minutes, 10-minute walks twice a day or even a five-minute walk are beneficial. Work walking into your life. Walk whenever and wherever you can. Perhaps it is easiest to walk around your block, at the mall, or a nearby park. The next time a friend or family member comes to visit, take time for a short walk. When the care receiver is getting therapy, take a walk around the medical facility.'),
-(1755, 'onlinecourseportal', 'Breathing for relaxation - '),
-(1756, 'onlinecourseportal', 'Stressful situations or memories of those situations can cause changes in our breathing. Often the more tense we feel, the more shallow our breathing becomes. · Stress management tools usually include a focus on breathing. The following breathing exercise takes only one or two minutes and you can easily do it anywhere. Use it often to lower stress.'),
-(1757, 'onlinecourseportal', ' Meditation -');
+(1755, 'onlinecourseportal', 'Breathing for relaxation - ');
 INSERT INTO `courseportal_message_source` (`id`, `category`, `message`) VALUES
+(1756, 'onlinecourseportal', 'Stressful situations or memories of those situations can cause changes in our breathing. Often the more tense we feel, the more shallow our breathing becomes. · Stress management tools usually include a focus on breathing. The following breathing exercise takes only one or two minutes and you can easily do it anywhere. Use it often to lower stress.'),
+(1757, 'onlinecourseportal', ' Meditation -'),
 (1758, 'onlinecourseportal', 'The word "meditation" comes from the Sanskrit word medha which, when taken literally, means "doing the wisdom." Meditation aids in relaxation and in achieving physical and mental well-being. Meditation is keeping your attention focused in the moment to quiet the mind and hear your body''s inner wisdom. You, too, can learn to meditate. See the "Process of Meditation" box on the next page.'),
 (1759, 'onlinecourseportal', 'Music -'),
 (1760, 'onlinecourseportal', 'Music is another tool for reducing stress. It can alter the body and the mind. It can induce deep relaxation, act as a stimulant, and take you into other states of consciousness. Music is often used specifically for healing and decreasing stress and tension. Use the following steps as a guideline.'),
@@ -6695,7 +6704,8 @@ INSERT INTO `courseportal_message_source` (`id`, `category`, `message`) VALUES
 (2075, 'onlinecourseportal', 'Consider that many of your skills or knowledge are already valuable assets to your community. Seek ways to share those skills or knowledge.'),
 (2076, 'onlinecourseportal', 'Are you now asking, “Am I really creative enough?”'),
 (2077, 'onlinecourseportal', 'Everyone has more potential than they know.'),
-(2078, 'onlinecourseportal', 'Creativity does not need to be something grand or dramatic.'),
+(2078, 'onlinecourseportal', 'Creativity does not need to be something grand or dramatic.');
+INSERT INTO `courseportal_message_source` (`id`, `category`, `message`) VALUES
 (2079, 'onlinecourseportal', 'Creativity takes many forms and can be as simple as a pleasant social interaction where two friends explore something new about each other or their mutual interests'),
 (2080, 'onlinecourseportal', 'Technology and the Future of Caregiving'),
 (2081, 'onlinecourseportal', 'The way we care for older adults today cannot scale to meet the looming age wave, and before long we’ll face a fullblown national crisis. We have an obligation to our parents—indeed to the next generation of older adults—to ensure they get the best possible care and that they receive it in a place they want to call home.'),
@@ -6905,6 +6915,136 @@ CREATE TABLE IF NOT EXISTS `courseportal_referral` (
 --       `courseportal_user` -> `id`
 --   `referee`
 --       `courseportal_user` -> `id`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `courseportal_spencer_powell_activity`
+--
+-- Creation: May 09, 2013 at 06:16 PM
+--
+
+DROP TABLE IF EXISTS `courseportal_spencer_powell_activity`;
+CREATE TABLE IF NOT EXISTS `courseportal_spencer_powell_activity` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `description` mediumtext COLLATE utf8_unicode_ci NOT NULL,
+  `dose` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `cr` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `name` (`name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `courseportal_spencer_powell_dimension`
+--
+-- Creation: May 09, 2013 at 06:17 PM
+--
+
+DROP TABLE IF EXISTS `courseportal_spencer_powell_dimension`;
+CREATE TABLE IF NOT EXISTS `courseportal_spencer_powell_dimension` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `description` mediumtext COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `name` (`name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `courseportal_spencer_powell_recommended_activity_dimension`
+--
+-- Creation: May 09, 2013 at 06:19 PM
+--
+
+DROP TABLE IF EXISTS `courseportal_spencer_powell_recommended_activity_dimension`;
+CREATE TABLE IF NOT EXISTS `courseportal_spencer_powell_recommended_activity_dimension` (
+  `activity_id` int(11) NOT NULL,
+  `dimension_id` int(11) NOT NULL,
+  PRIMARY KEY (`activity_id`,`dimension_id`),
+  KEY `dimension_id` (`dimension_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- RELATIONS FOR TABLE `courseportal_spencer_powell_recommended_activity_dimension`:
+--   `activity_id`
+--       `courseportal_spencer_powell_activity` -> `id`
+--   `dimension_id`
+--       `courseportal_spencer_powell_dimension` -> `id`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `courseportal_spencer_powell_user_activity`
+--
+-- Creation: May 09, 2013 at 06:41 PM
+--
+
+DROP TABLE IF EXISTS `courseportal_spencer_powell_user_activity`;
+CREATE TABLE IF NOT EXISTS `courseportal_spencer_powell_user_activity` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `activity_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`,`user_id`,`activity_id`),
+  KEY `user_id` (`user_id`),
+  KEY `activity_id` (`activity_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+
+--
+-- RELATIONS FOR TABLE `courseportal_spencer_powell_user_activity`:
+--   `activity_id`
+--       `courseportal_spencer_powell_activity` -> `id`
+--   `user_id`
+--       `courseportal_user` -> `id`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `courseportal_spencer_powell_user_log_entry`
+--
+-- Creation: May 09, 2013 at 06:47 PM
+--
+
+DROP TABLE IF EXISTS `courseportal_spencer_powell_user_log_entry`;
+CREATE TABLE IF NOT EXISTS `courseportal_spencer_powell_user_log_entry` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_activity_id` int(11) NOT NULL,
+  `datetime` datetime NOT NULL,
+  `comment` text COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `user_activity_id` (`user_activity_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `courseportal_spencer_powell_user_log_entry_dimension`
+--
+-- Creation: May 09, 2013 at 07:32 PM
+--
+
+DROP TABLE IF EXISTS `courseportal_spencer_powell_user_log_entry_dimension`;
+CREATE TABLE IF NOT EXISTS `courseportal_spencer_powell_user_log_entry_dimension` (
+  `user_log_entry_id` int(11) NOT NULL,
+  `dimension_id` int(11) NOT NULL,
+  `primary` tinyint(4) NOT NULL,
+  PRIMARY KEY (`user_log_entry_id`,`dimension_id`),
+  UNIQUE KEY `unique_user_log_entry_primary_idx` (`user_log_entry_id`,`primary`),
+  KEY `dimension_id` (`dimension_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- RELATIONS FOR TABLE `courseportal_spencer_powell_user_log_entry_dimension`:
+--   `dimension_id`
+--       `courseportal_spencer_powell_dimension` -> `id`
+--   `user_log_entry_id`
+--       `courseportal_spencer_powell_user_log_entry` -> `id`
 --
 
 -- --------------------------------------------------------
@@ -8470,7 +8610,7 @@ CREATE TABLE IF NOT EXISTS `courseportal_user` (
 
 INSERT INTO `courseportal_user` (`id`, `password`, `salt`, `group_id`, `email`, `name`, `session_key`, `created`, `last_ip`, `last_agent`, `last_login`, `last_route`, `last_page`, `language`, `firstname`, `lastname`, `location`, `country_iso`) VALUES
 (4, 'DHq2uOG6ntWZOSsvWziPEaz+bNuZpFRT7QLgHs7IgXo=', 'nG42gK97c7hKwAyv++VQ2P9iTNmv5RhpLfb/81Vczgw=', 1, 'l.daprato@gmail.com', 'l.daprato', 'fMYmImYhVNqJReN0HqghgPr/PgZQULvBMlI7khdADs4=', '2012-08-22 06:36:45', '98.253.33.44', 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.64 Safari/537.31', '2013-04-30 17:12:48', 'user/login', '', 'en_us', 'Louis', 'DaPrato', 'Glenview', 'us'),
-(72, 'qxC8vQi9m5Hi2o3NMNeBBBg2Un4YTqNpij45OmLc2M8=', 'IXmqmaSJoz5/Gc0kCOEYUxGy4IvZj8cZH7abJfI4kSw=', 1, 'jwoodall@matherlifeways.com', 'jwoodall', 'xd++cU9jPHTEbu8M5ZU0MoxXoWDWyRandV4pwQrLe+4=', '2012-08-27 17:08:11', '107.1.175.138', 'Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; Trident/6.0)', '2013-04-30 15:33:26', 'user/logout', '', 'en', 'JON', 'WOODALL', 'EVANSTON', 'us'),
+(72, 'qxC8vQi9m5Hi2o3NMNeBBBg2Un4YTqNpij45OmLc2M8=', 'IXmqmaSJoz5/Gc0kCOEYUxGy4IvZj8cZH7abJfI4kSw=', 1, 'jwoodall@matherlifeways.com', 'jwoodall', 'xd++cU9jPHTEbu8M5ZU0MoxXoWDWyRandV4pwQrLe+4=', '2012-08-27 17:08:11', '98.227.169.26', 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:20.0) Gecko/20100101 Firefox/20.0', '2013-04-30 15:33:26', 'user/logout', '', 'en', 'JON', 'WOODALL', 'EVANSTON', 'us'),
 (75, 'U6aKLqF/mBHZFc8ZgY5wVW7oIo7mDgJroDX5AMfrCus=', 'QXozcQtePlULwf70nFzwgaLfJu9SjtRMawnCwlwG4do=', 1, 'yin_li_juan@hotmail.com', 'yin_li_juan', 'ek0HffubKvL8x+0D6xlQIQHaMAVATZCKJxjG+6m8Rk4=', '2012-08-27 23:32:10', '', '', '2012-08-27 18:32:10', '', '', NULL, 'LiJuan', 'Yin', 'Arlington Heights', 'us'),
 (96, 'puF0IFm/F8VGdmZUxYBalkcPtSrAvCEIr2v4hhaKNAU=', 'ENtVcSM8H9zZJZD+VxtlbqLFOx8hJBHuneYcLZB/fCg=', 1, 'eziegemeier@yahoo.com', 'eziegemeier', '7+v/UryXcrb8ITbamfziLm+hOOzN3NbbVwNPc2X7v9k=', '2012-10-19 05:00:15', '', '', '2012-10-19 00:00:15', '', '', NULL, 'Ellen ', 'Ziegemeier', 'St. Peters', 'us'),
 (102, 'it/tCjQpDm1NaZz7uMsyCP5IcoIUBElbHsoT9VDvhvE=', 'OMAUafm36iRx8u0tjOfWv3LWSXNHI4KAiLvDkKM04s8=', 4, 'mejbmelo@optonline.net', 'mejbmelo', '74ZYQytBlSG8WTwv97eGepGDbZJPBdCI3E9+nKgTiDI=', '2012-11-05 01:54:17', '', '', '2012-11-04 19:54:17', '', '', NULL, 'Ellen', 'Melo', 'N Massapequa', 'us'),
@@ -8862,8 +9002,7 @@ CREATE TABLE IF NOT EXISTS `courseportal_user_course` (
 --
 -- Table structure for table `courseportal_yii_session`
 --
--- Creation: May 09, 2013 at 03:19 PM
--- Last update: May 09, 2013 at 03:22 PM
+-- Creation: May 09, 2013 at 05:40 PM
 --
 
 DROP TABLE IF EXISTS `courseportal_yii_session`;
@@ -8872,8 +9011,25 @@ CREATE TABLE IF NOT EXISTS `courseportal_yii_session` (
   `user_id` int(11) DEFAULT NULL,
   `expire` int(11) DEFAULT NULL,
   `data` longblob,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  PRIMARY KEY (`id`),
+  KEY `expire` (`expire`),
+  KEY `user_id` (`user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- RELATIONS FOR TABLE `courseportal_yii_session`:
+--   `user_id`
+--       `courseportal_user` -> `id`
+--
+
+--
+-- Dumping data for table `courseportal_yii_session`
+--
+
+INSERT INTO `courseportal_yii_session` (`id`, `user_id`, `expire`, `data`) VALUES
+('098um89bem1krp2jrisff0ibp4', NULL, 1368143072, 0x63653761346236323161346237353961366664353534636532343766666266616c616e67756167657c733a323a22656e223b63653761346236323161346237353961366664353534636532343766666266615f5f69647c733a323a223732223b63653761346236323161346237353961366664353534636532343766666266615f5f6e616d657c733a383a226a776f6f64616c6c223b636537613462363231613462373539613666643535346365323437666662666173657373696f6e5f6b65797c733a34343a2278642b2b6355396a504854456275384d355a55304d6f78586f5744577952616e645634707751724c652b343d223b63653761346236323161346237353961366664353534636532343766666266615f5f7374617465737c613a323a7b733a31313a2273657373696f6e5f6b6579223b623a313b733a383a226c616e6775616765223b623a313b7d7369647c733a33323a226134623634323136383234663239623030333831633937326538646535643863223b),
+('9bp2ssdko3jl4okbh6mrkmi5h4', NULL, 1368143462, 0x63653761346236323161346237353961366664353534636532343766666266616c616e67756167657c733a353a22656e5f7573223b63653761346236323161346237353961366664353534636532343766666266615f5f69647c733a313a2234223b63653761346236323161346237353961366664353534636532343766666266615f5f6e616d657c733a393a226c2e6461707261746f223b636537613462363231613462373539613666643535346365323437666662666173657373696f6e5f6b65797c733a34343a22664d596d496d5968564e714a52654e30487167686750722f50675a51554c76424d6c49376b6864414473343d223b63653761346236323161346237353961366664353534636532343766666266615f5f7374617465737c613a323a7b733a31313a2273657373696f6e5f6b6579223b623a313b733a383a226c616e6775616765223b623a313b7d7369647c733a33323a223331366334643461666266633761623339396563646334336234623861653764223b),
+('sd9oc4irsn0cpa37halvv1tok2', NULL, 1368142584, 0x63653761346236323161346237353961366664353534636532343766666266616c616e67756167657c733a353a22656e5f7573223b);
 
 -- --------------------------------------------------------
 
@@ -9834,7 +9990,7 @@ INSERT INTO `phpbb_bots` (`bot_id`, `bot_active`, `bot_name`, `user_id`, `bot_ag
 -- Table structure for table `phpbb_config`
 --
 -- Creation: May 09, 2013 at 03:18 PM
--- Last update: May 09, 2013 at 03:22 PM
+-- Last update: May 09, 2013 at 11:20 PM
 -- Last check: May 09, 2013 at 03:18 PM
 --
 
@@ -10107,8 +10263,8 @@ INSERT INTO `phpbb_config` (`config_name`, `config_value`, `is_dynamic`) VALUES
 ('num_posts', '63', 1),
 ('num_topics', '61', 1),
 ('num_users', '20', 1),
-('rand_seed', '541cbf70e1477059b7e43cdccc983192', 1),
-('rand_seed_last_update', '1368112934', 1),
+('rand_seed', '9c1b6b983e3f335ac9d3fd615b9328e3', 1),
+('rand_seed_last_update', '1368141617', 1),
 ('record_online_date', '1366564788', 1),
 ('record_online_users', '3', 1),
 ('search_indexing_state', '', 1),
@@ -10916,7 +11072,8 @@ INSERT INTO `phpbb_log` (`log_id`, `log_type`, `user_id`, `forum_id`, `topic_id`
 (280, 0, 2, 0, 0, 0, '107.1.175.138', 1363900474, 0x4c4f475f464f52554d5f414444, 0x613a313a7b693a303b733a393a2253656374696f6e2034223b7d),
 (281, 0, 2, 0, 0, 0, '107.1.175.138', 1363900474, 0x4c4f475f464f52554d5f434f504945445f5045524d495353494f4e53, 0x613a323a7b693a303b733a32303a224341524520436f616368696e67204f6e6c696e65223b693a313b733a393a2253656374696f6e2034223b7d),
 (282, 0, 2, 0, 0, 0, '107.1.175.138', 1363900482, 0x4c4f475f464f52554d5f414444, 0x613a313a7b693a303b733a393a2253656374696f6e2035223b7d),
-(283, 0, 2, 0, 0, 0, '107.1.175.138', 1363900482, 0x4c4f475f464f52554d5f434f504945445f5045524d495353494f4e53, 0x613a323a7b693a303b733a32303a224341524520436f616368696e67204f6e6c696e65223b693a313b733a393a2253656374696f6e2035223b7d),
+(283, 0, 2, 0, 0, 0, '107.1.175.138', 1363900482, 0x4c4f475f464f52554d5f434f504945445f5045524d495353494f4e53, 0x613a323a7b693a303b733a32303a224341524520436f616368696e67204f6e6c696e65223b693a313b733a393a2253656374696f6e2035223b7d);
+INSERT INTO `phpbb_log` (`log_id`, `log_type`, `user_id`, `forum_id`, `topic_id`, `reportee_id`, `log_ip`, `log_time`, `log_operation`, `log_data`) VALUES
 (284, 0, 2, 0, 0, 0, '107.1.175.138', 1363900490, 0x4c4f475f464f52554d5f414444, 0x613a313a7b693a303b733a393a2253656374696f6e2036223b7d),
 (285, 0, 2, 0, 0, 0, '107.1.175.138', 1363900490, 0x4c4f475f464f52554d5f434f504945445f5045524d495353494f4e53, 0x613a323a7b693a303b733a32303a224341524520436f616368696e67204f6e6c696e65223b693a313b733a393a2253656374696f6e2036223b7d),
 (286, 0, 2, 0, 0, 0, '107.1.175.138', 1363900503, 0x4c4f475f464f52554d5f414444, 0x613a313a7b693a303b733a393a2253656374696f6e2037223b7d),
@@ -11174,7 +11331,7 @@ INSERT INTO `phpbb_log` (`log_id`, `log_type`, `user_id`, `forum_id`, `topic_id`
 -- Table structure for table `phpbb_login_attempts`
 --
 -- Creation: May 09, 2013 at 03:18 PM
--- Last update: May 09, 2013 at 03:19 PM
+-- Last update: May 09, 2013 at 11:20 PM
 --
 
 DROP TABLE IF EXISTS `phpbb_login_attempts`;
@@ -11222,7 +11379,10 @@ INSERT INTO `phpbb_login_attempts` (`attempt_ip`, `attempt_browser`, `attempt_fo
 ('107.1.175.138', 'Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; Trident/6.0)', '', 1367866194, 73, 'lhollinger-smith@matherlifeways.com', 'lhollinger-smith@matherlifeways.com'),
 ('23.25.2.241', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.64 Safari/537.31', '', 1367864508, 74, 'kadams', 'kadams'),
 ('107.1.175.138', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_3) AppleWebKit/536.29.13 (KHTML, like Gecko) Version/6.0.4 Safari/536.29.13', '', 1367862984, 67, 'jwoodall', 'jwoodall'),
-('98.253.33.44', 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.64 Safari/537.31', '', 1368112777, 71, 'l.daprato', 'l.daprato');
+('98.253.33.44', 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.64 Safari/537.31', '', 1368112777, 71, 'l.daprato', 'l.daprato'),
+('98.253.33.44', 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.64 Safari/537.31', '', 1368128356, 71, 'l.daprato', 'l.daprato'),
+('98.253.33.44', 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.64 Safari/537.31', '', 1368141174, 71, 'l.daprato', 'l.daprato'),
+('98.227.169.26', 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:20.0) Gecko/20100101 Firefox/20.0', '', 1368141617, 67, 'jwoodall', 'jwoodall');
 
 -- --------------------------------------------------------
 
@@ -13503,7 +13663,7 @@ INSERT INTO `phpbb_search_wordmatch` (`post_id`, `word_id`, `title_match`) VALUE
 -- Table structure for table `phpbb_sessions`
 --
 -- Creation: May 09, 2013 at 03:18 PM
--- Last update: May 09, 2013 at 03:22 PM
+-- Last update: May 09, 2013 at 11:26 PM
 --
 
 DROP TABLE IF EXISTS `phpbb_sessions`;
@@ -13589,7 +13749,12 @@ INSERT INTO `phpbb_sessions` (`session_id`, `session_user_id`, `session_forum_id
 ('49d0c763283314fb96bc01cd7393ecec', 1, 0, 1368050351, 1368050351, 1368050351, '23.25.2.241', 'Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)', '', '../index.php', 1, 0, 0),
 ('17794391e0484d93212d07cb087d5656', 71, 0, 1367694485, 1368112776, 1368112776, '98.253.33.44', 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.64 Safari/537.31', '', '../index.php', 1, 0, 0),
 ('08e84ea630a859ed991b5427a4877bf7', 1, 0, 1368112934, 1368112934, 1368112934, '98.253.33.44', 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.64 Safari/537.31', '', '../index.php', 1, 0, 0),
-('b89f69c7c0d365b567efc72f680d51a4', 1, 0, 1368112934, 1368112934, 1368112934, '98.253.33.44', 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.64 Safari/537.31', '', '../index.php', 1, 0, 0);
+('6b8d6ca22d1f50c1975a67218bd86da1', 71, 0, 1368112776, 1368128356, 1368128356, '98.253.33.44', 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.64 Safari/537.31', '', '../index.php', 1, 0, 0),
+('82c435f868515ad36fb1d60019721eef', 71, 0, 1368112776, 1368128356, 1368128356, '98.253.33.44', 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.64 Safari/537.31', '', '../index.php', 1, 0, 0),
+('262e39f3152d3b965a6e14eb32a91467', 71, 0, 1368112776, 1368141174, 1368141174, '98.253.33.44', 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.64 Safari/537.31', '', '../index.php', 1, 0, 0),
+('316c4d4afbfc7ab399ecdc43b4b8ae7d', 71, 0, 1368112776, 1368141174, 1368142011, '98.253.33.44', 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.64 Safari/537.31', '', '../index.php', 1, 0, 0),
+('824cad431200dbbf2f16462be53c6176', 67, 0, 1368026887, 1368141617, 1368141617, '98.227.169.26', 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:20.0) Gecko/20100101 Firefox/20.0', '', '../index.php', 1, 0, 0),
+('a4b64216824f29b00381c972e8de5d8c', 67, 0, 1368026887, 1368141617, 1368141617, '98.227.169.26', 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:20.0) Gecko/20100101 Firefox/20.0', '', '../index.php', 1, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -14274,7 +14439,7 @@ CREATE TABLE IF NOT EXISTS `phpbb_topics_watch` (
 -- Table structure for table `phpbb_users`
 --
 -- Creation: May 09, 2013 at 03:18 PM
--- Last update: May 09, 2013 at 03:22 PM
+-- Last update: May 09, 2013 at 11:20 PM
 --
 
 DROP TABLE IF EXISTS `phpbb_users`;
@@ -14372,7 +14537,7 @@ INSERT INTO `phpbb_users` (`user_id`, `user_type`, `group_id`, `user_permissions
 (74, 0, 5, 0x30303434373373356a77667a7a696b3078730a0a0a0a0a0a0a7a696b307a693030303030300a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a0a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a0a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a69303030303030, 0, '', 1360358733, 'kadams', 'kadams', '$H$9gE8OACsjZ1UE.yATlQYVMyQLbE2jI.', 1367337883, 0, 'kadams@matherlifeways.com', 290014838525, '', 1368049972, 1367337883, 0, '../index.php', '', 0, 0, 0, 0, 0, 0, 0, 'en_us', -6.00, 1, 'D M d, Y g:i a', 1, 0, 'AA0000', 0, 0, 0, 0, -3, 0, 0, 't', 'd', 0, 't', 'a', 0, 1, 0, 1, 1, 1, 1, 230271, '', 0, 0, 0, '', '', '', 'Evanston, United States', '', '', '', '', '', '', '', '', '', '', '7e3df62176bb0b61', 0, 0, 0),
 (75, 0, 5, 0x30303434373373356a77667a7a696b3078730a0a0a0a0a0a0a7a696b307a693030303030300a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a0a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a0a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a69303030303030, 0, '', 1361992707, 'efoss', 'efoss', '$H$9/DiR5WOG6BwJYW/xNADCrptPRCM4e.', 1367345366, 0, 'efoss@matherlifeways.com', 59132202124, '', 1367517973, 1367345366, 0, 'adm/index.php?i=forums&icat=7&mode=manage&parent_id=82', '', 0, 0, 0, 0, 0, 0, 0, 'en_us', -6.00, 1, 'D M d, Y g:i a', 1, 0, 'AA0000', 0, 0, 0, 0, -3, 0, 0, 't', 'd', 0, 't', 'a', 0, 1, 0, 1, 1, 1, 1, 230271, '', 0, 0, 0, '', '', '', 'Rio de Janerio, ', '', '', '', '', '', '', '', '', '', '', '657b5f26be1b205d', 0, 0, 0),
 (77, 0, 8, '', 0, '', 1367365704, 'username123', 'username123', '$H$9JxOnO156Pm3x3YT2Uhqm1T5XnyhyD1', 1367365704, 0, 'email@email.com', 388178843915, '', 0, 1367365704, 0, '', '', 0, 0, 0, 0, 0, 0, 0, 'en_us', -6.00, 1, 'D M d, Y g:i a', 1, 0, '', 0, 0, 0, 0, -3, 0, 0, 't', 'd', 0, 't', 'a', 0, 1, 0, 1, 1, 1, 1, 230271, '', 0, 0, 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '00a60a805ae76afd', 0, 0, 0),
-(67, 0, 5, 0x30303434373373356a77667a7a696b3078730a0a0a0a0a0a0a7a696b307a693030303030300a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a0a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a0a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a69303030303030, 0, '', 1346087291, 'jwoodall', 'jwoodall', '$H$9dPx9Qq55JmKS54BVDg88SvAHTdFl/.', 1367192530, 0, 'jwoodall@matherlifeways.com', 424732528927, '', 1368026887, 1367192530, 1367616666, '../index.php', '', 0, 0, 0, 0, 0, 0, 24, 'en', -6.00, 1, 'D M d, Y g:i a', 1, 0, 'AA0000', 0, 0, 0, 0, -3, 0, 0, 't', 'd', 0, 't', 'a', 0, 1, 0, 1, 1, 1, 1, 230271, '', 0, 0, 0, '', '', '', 'EVANSTON, Estados Unidos', '', '', '', '', '', '', '', '', '', '', 'b27ff35834b0c6f7', 0, 0, 0),
+(67, 0, 5, 0x30303434373373356a77667a7a696b3078730a0a0a0a0a0a0a7a696b307a693030303030300a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a0a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a0a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a69303030303030, 0, '', 1346087291, 'jwoodall', 'jwoodall', '$H$9dPx9Qq55JmKS54BVDg88SvAHTdFl/.', 1367192530, 0, 'jwoodall@matherlifeways.com', 424732528927, '', 1368026887, 1367192530, 1367616666, '../index.php', '', 0, 0, 0, 0, 0, 0, 24, 'en', -6.00, 1, 'D M d, Y g:i a', 1, 0, 'AA0000', 0, 0, 0, 0, -3, 0, 0, 't', 'd', 0, 't', 'a', 0, 1, 0, 1, 1, 1, 1, 230271, '', 0, 0, 0, '', '', '', 'EVANSTON, Estados Unidos', '', '', '', '', '', '', '', '', '', '', '5f35a72d55092312', 0, 0, 0),
 (4, 2, 6, '', 0, '', 1346462155, 'Alexa [Bot]', 'alexa [bot]', '', 1346462155, 0, '', 0, '', 0, 1346462155, 0, '', '', 0, 0, 0, 0, 0, 0, 0, 'en', 0.00, 0, 'D M d, Y g:i a', 1, 0, '9E8DA7', 0, 0, 0, 0, -3, 0, 0, 't', 'd', 0, 't', 'a', 0, 1, 0, 1, 1, 1, 0, 230271, '', 0, 0, 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '9d02b18144edbf17', 0, 0, 0),
 (5, 2, 6, '', 0, '', 1346462155, 'Alta Vista [Bot]', 'alta vista [bot]', '', 1346462155, 0, '', 0, '', 0, 1346462155, 0, '', '', 0, 0, 0, 0, 0, 0, 0, 'en', 0.00, 0, 'D M d, Y g:i a', 1, 0, '9E8DA7', 0, 0, 0, 0, -3, 0, 0, 't', 'd', 0, 't', 'a', 0, 1, 0, 1, 1, 1, 0, 230271, '', 0, 0, 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '665405a69a650494', 0, 0, 0),
 (6, 2, 6, '', 0, '', 1346462155, 'Ask Jeeves [Bot]', 'ask jeeves [bot]', '', 1346462155, 0, '', 0, '', 0, 1346462155, 0, '', '', 0, 0, 0, 0, 0, 0, 0, 'en', 0.00, 0, 'D M d, Y g:i a', 1, 0, '9E8DA7', 0, 0, 0, 0, -3, 0, 0, 't', 'd', 0, 't', 'a', 0, 1, 0, 1, 1, 1, 0, 230271, '', 0, 0, 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'fdca8031cec1b0ad', 0, 0, 0),
@@ -14424,7 +14589,7 @@ INSERT INTO `phpbb_users` (`user_id`, `user_type`, `group_id`, `user_permissions
 (52, 2, 6, '', 0, '', 1346462156, 'Yahoo [Bot]', 'yahoo [bot]', '', 1346462156, 0, '', 0, '', 0, 1346462156, 0, '', '', 0, 0, 0, 0, 0, 0, 0, 'en', 0.00, 0, 'D M d, Y g:i a', 1, 0, '9E8DA7', 0, 0, 0, 0, -3, 0, 0, 't', 'd', 0, 't', 'a', 0, 1, 0, 1, 1, 1, 0, 230271, '', 0, 0, 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '7a86c30f2db9ceb0', 0, 0, 0),
 (53, 2, 6, '', 0, '', 1346462156, 'YahooSeeker [Bot]', 'yahooseeker [bot]', '', 1346462156, 0, '', 0, '', 0, 1346462156, 0, '', '', 0, 0, 0, 0, 0, 0, 0, 'en', 0.00, 0, 'D M d, Y g:i a', 1, 0, '9E8DA7', 0, 0, 0, 0, -3, 0, 0, 't', 'd', 0, 't', 'a', 0, 1, 0, 1, 1, 1, 0, 230271, '', 0, 0, 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '7742d52abf29c7e9', 0, 0, 0),
 (79, 0, 8, '', 0, '', 1367507082, 'sall', 'sall', '$H$9ysd2XpHbhUoY8YR1zh9oGIsfUcDmo1', 1367507082, 0, 'sall@matherlifeways.com', 13744466723, '', 1367507165, 1367507082, 0, '../index.php', '', 0, 0, 0, 0, 0, 0, 0, 'en_us', -6.00, 1, 'D M d, Y g:i a', 1, 0, '', 0, 0, 0, 0, -3, 0, 0, 't', 'd', 0, 't', 'a', 0, 1, 0, 1, 1, 1, 1, 230271, '', 0, 0, 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '1ab0f4b7a58c81c7', 0, 0, 0),
-(71, 0, 5, 0x30303434373373356a77667a7a696b3078730a0a0a0a0a0a0a7a696b307a693030303030300a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a0a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a0a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a69303030303030, 0, '', 1345617405, 'l.daprato', 'l.daprato', '$H$9qlq8Hfq8NaU8tVuZcGjo2cYuPlcrF0', 1367192388, 0, 'l.daprato@gmail.com', 349063817719, '', 1368112776, 1367192388, 0, 'index.php', '', 0, 0, 0, 0, 0, 0, 0, 'en_us', -6.00, 1, 'D M d, Y g:i a', 1, 0, 'AA0000', 0, 0, 0, 0, -3, 0, 0, 't', 'd', 0, 't', 'a', 0, 1, 0, 1, 1, 1, 1, 230271, '71_1367352176.gif', 0, 0, 0, '', '', '', 'Glenview, United States', '', '', '', '', '', '', '', '', '', '', 'f1fa50427de2679b', 0, 0, 0),
+(71, 0, 5, 0x30303434373373356a77667a7a696b3078730a0a0a0a0a0a0a7a696b307a693030303030300a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a0a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a0a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a69303030303030, 0, '', 1345617405, 'l.daprato', 'l.daprato', '$H$9qlq8Hfq8NaU8tVuZcGjo2cYuPlcrF0', 1367192388, 0, 'l.daprato@gmail.com', 349063817719, '', 1368112776, 1367192388, 0, 'index.php', '', 0, 0, 0, 0, 0, 0, 0, 'en_us', -6.00, 1, 'D M d, Y g:i a', 1, 0, 'AA0000', 0, 0, 0, 0, -3, 0, 0, 't', 'd', 0, 't', 'a', 0, 1, 0, 1, 1, 1, 1, 230271, '71_1367352176.gif', 0, 0, 0, '', '', '', 'Glenview, United States', '', '', '', '', '', '', '', '', '', '', '0d9179732373b84a', 0, 0, 0),
 (78, 0, 5, 0x30303434373373356a77667a7a696b3078730a0a0a0a0a0a0a7a696b307a693030303030300a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a0a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a0a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a693030303030300a7a696b307a69303030303030, 0, '', 1362190729, 'bobbyb987', 'bobbyb987', '$H$9p.KE6IE8aidyeNQL4QKKxj4dTIT1g1', 1367366534, 0, 'bobbyb987@gmail.com', 72228544319, '', 1367368477, 1367366534, 1367367762, 'index.php', '', 0, 0, 0, 0, 0, 0, 1, 'en_us', -6.00, 1, 'D M d, Y g:i a', 1, 0, 'AA0000', 0, 0, 0, 0, -3, 0, 0, 't', 'd', 0, 't', 'a', 0, 1, 0, 1, 1, 1, 1, 230271, '', 0, 0, 0, '', '', '', 'chicago, United States', '', '', '', '', '', '', '', '', '', '', '2fccba590529f44e', 0, 0, 0),
 (80, 0, 8, '', 0, '', 1367598585, 'ashleigh', 'ashleigh', '$H$92OsX4f8vnYduDIjf8QFCBOO4nSiUR1', 1367598585, 0, 'amcivor@matherlifeways.com', 57192650726, '', 1367599568, 1367598585, 0, '../index.php', '', 0, 0, 0, 0, 0, 0, 0, 'en_us', -6.00, 1, 'D M d, Y g:i a', 1, 0, '', 0, 0, 0, 0, -3, 0, 0, 't', 'd', 0, 't', 'a', 0, 1, 0, 1, 1, 1, 1, 230271, '', 0, 0, 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '7b55985142dfd231', 0, 0, 0),
 (81, 0, 8, '', 0, '', 1367954195, 'Adriana', 'adriana', '$H$9uGyFgqDnsMPamiVM8GffwiMEuWSev1', 1367954195, 0, 'dricf@br.ibm.com', 69765825416, '', 0, 1367954195, 0, '', '', 0, 0, 0, 0, 0, 0, 0, 'en_us', -6.00, 1, 'D M d, Y g:i a', 1, 0, '', 0, 0, 0, 0, -3, 0, 0, 't', 'd', 0, 't', 'a', 0, 1, 0, 1, 1, 1, 1, 230271, '', 0, 0, 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '2f9b746cc49b8c0f', 0, 0, 0),
@@ -14623,6 +14788,27 @@ ALTER TABLE `courseportal_referral`
   ADD CONSTRAINT `courseportal_referral_ibfk_2` FOREIGN KEY (`referee`) REFERENCES `courseportal_user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
+-- Constraints for table `courseportal_spencer_powell_recommended_activity_dimension`
+--
+ALTER TABLE `courseportal_spencer_powell_recommended_activity_dimension`
+  ADD CONSTRAINT `courseportal_spencer_powell_recommended_activity_dimension_ibfk_2` FOREIGN KEY (`dimension_id`) REFERENCES `courseportal_spencer_powell_dimension` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `courseportal_spencer_powell_recommended_activity_dimension_ibfk_1` FOREIGN KEY (`activity_id`) REFERENCES `courseportal_spencer_powell_activity` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `courseportal_spencer_powell_user_activity`
+--
+ALTER TABLE `courseportal_spencer_powell_user_activity`
+  ADD CONSTRAINT `courseportal_spencer_powell_user_activity_ibfk_2` FOREIGN KEY (`activity_id`) REFERENCES `courseportal_spencer_powell_activity` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `courseportal_spencer_powell_user_activity_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `courseportal_user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `courseportal_spencer_powell_user_log_entry_dimension`
+--
+ALTER TABLE `courseportal_spencer_powell_user_log_entry_dimension`
+  ADD CONSTRAINT `courseportal_spencer_powell_user_log_entry_dimension_ibfk_2` FOREIGN KEY (`dimension_id`) REFERENCES `courseportal_spencer_powell_dimension` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `courseportal_spencer_powell_user_log_entry_dimension_ibfk_1` FOREIGN KEY (`user_log_entry_id`) REFERENCES `courseportal_spencer_powell_user_log_entry` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
 -- Constraints for table `courseportal_survey_answer`
 --
 ALTER TABLE `courseportal_survey_answer`
@@ -14679,6 +14865,12 @@ ALTER TABLE `courseportal_user_activated`
 ALTER TABLE `courseportal_user_course`
   ADD CONSTRAINT `courseportal_user_course_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `courseportal_user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `courseportal_user_course_ibfk_2` FOREIGN KEY (`course_id`) REFERENCES `courseportal_course` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `courseportal_yii_session`
+--
+ALTER TABLE `courseportal_yii_session`
+  ADD CONSTRAINT `courseportal_yii_session_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `courseportal_user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 SET FOREIGN_KEY_CHECKS=1;
 COMMIT;
 
