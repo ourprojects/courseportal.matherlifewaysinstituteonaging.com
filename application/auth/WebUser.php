@@ -26,7 +26,7 @@ class WebUser extends CWebUser {
 	}
 	
 	public function login($identity, $duration = 0) {
-		if(!$identity->authenticate())
+		if(!$identity->getIsAuthenticated() && !$identity->authenticate())
 		{
 			return false;
 		}

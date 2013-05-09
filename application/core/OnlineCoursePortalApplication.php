@@ -68,7 +68,9 @@ class OnlineCoursePortalApplication extends CWebApplication {
     
     public function saveUserState()
     {
-        if(($user = $this->getUser()->getModel()) && !$user->getIsNewRecord())
+        if(($user = $this->getUser()) && 
+        		$user->canGetProperty('model') && 
+        		($user = $user->getModel()) && !$user->getIsNewRecord())
     	{
     		$updated = array();
     		if($request = Yii::app()->getRequest())
