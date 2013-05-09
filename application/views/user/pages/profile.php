@@ -72,7 +72,9 @@ $this->widget(
   	<br />
   	<?php 
   	$agreements = Yii::app()->getUser()->getModel()->agreements;
-  	if(empty($agreements)): ?>
+  	if(empty($agreements)): 
+  		echo t('None');
+  	else:?>
   	<ul>
   		<?php foreach($agreements as $agreement): ?>
   		<li>
@@ -80,9 +82,7 @@ $this->widget(
   		</li>
   		<?php endforeach; ?>
   	</ul>
-  	<?php 
-  	else:
-		echo t('None');
+  	<?php
 	endif; 
 	?>
   </div>
