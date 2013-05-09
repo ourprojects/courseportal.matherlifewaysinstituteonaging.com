@@ -44,13 +44,13 @@ class DbHttpSession extends CDbHttpSession
 			if($db->createCommand()->select('id')->from($this->sessionTableName)->where('id=:id',array(':id'=>$id))->queryScalar()===false)
 				$db->createCommand()->insert($this->sessionTableName,array(
 					'id'=>$id,
-					'user_id'=>isset($user) ? $user->getId() : null,
+					'user_id'=> $user instanceof CoursePortalUserIdentity ? $user->getId() : null,
 					'data'=>$data,
 					'expire'=>$expire,
 				));
 			else
 				$db->createCommand()->update($this->sessionTableName,array(
-					'user_id'=>isset($user) ? $user->getId() : null,
+					'user_id'=> $user instanceof CoursePortalUserIdentity ? $user->getId() : null,
 					'data'=>$data,
 					'expire'=>$expire
 				),'id=:id',array(':id'=>$id));
