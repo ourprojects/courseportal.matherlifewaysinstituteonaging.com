@@ -74,7 +74,13 @@ foreach(array(
   </ul>
   <h4><?php echo t('Course Lessons'); ?></h4>
   <ul>
-    <li> <a href="#lesson-1-slide-1" data-fancybox-group="lesson-1" class="teal lesson-1"> <?php echo t('Overview of Memory Loss'); ?></a> <a href="#lesson-1-slide-2" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-3" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-4" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-5" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-6" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-7" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-8" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-9" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-10" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-11" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-12" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-13" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-14" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-15" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-16" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-17" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-18" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-19" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-20" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-21" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-22" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-23" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-24" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-25" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-26" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-27" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-28" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-29" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-30" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-31" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-32" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-33" data-fancybox-group="lesson-1" class="hide lesson-1"></a> </li>
+    <li> <a href="#lesson-1-slide-1" data-fancybox-group="lesson-1" class="teal lesson-1"> <?php echo t('Overview of Memory Loss'); ?></a> <a href="#lesson-1-slide-2" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-3" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-4" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-5" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-6" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-7" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-8" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-9" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-10" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-11" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-12" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-13" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-14" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-15" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-16" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-17" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-18" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-19" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-20" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-21" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-22" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-23" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-24" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-25" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-26" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-27" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-28" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-29" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-30" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-31" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-32" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-33" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-34" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-35" data-fancybox-group="lesson-1" class="hide lesson-1"></a> 
+    
+    <a href="#lesson-1-slide-36" data-fancybox-group="lesson-1" class="hide lesson-1"></a>
+    
+    
+    
+     </li>
     <li> <a href="#lesson-2-slide-1" data-fancybox-group="lesson-2" class="teal lesson-2"> <?php echo t('Communication Strategies'); ?></a> <a href="#lesson-2-slide-2" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-3" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-4" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-5" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-6" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-7" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-8" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-9" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-10" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-11" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-12" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-13" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-14" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-15" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-16" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-17" data-fancybox-group="lesson-2" class="hide lesson-2"></a> </li>
     <li> <a href="#lesson-3-slide-1" data-fancybox-group="lesson-3" class="teal lesson-3"> <?php echo t('Making Decisions'); ?></a> <a href="#lesson-3-slide-2" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-3" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-4" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-5" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-6" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-7" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-8" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-9" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-10" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-11" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-12" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-13" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-14" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-15" data-fancybox-group="lesson-3" class="hide lesson-3"></a> </li>
     <li> <a href="#lesson-4-slide-1" data-fancybox-group="lesson-4" class="teal lesson-4"> <?php echo t('Planning for the Future'); ?></a> <a href="#lesson-4-slide-2" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-3" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-4" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-5" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-6" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-7" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-8" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-9" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-10" data-fancybox-group="lesson-4" class="hide lesson-4"></a></li>
@@ -472,9 +478,7 @@ accurate diagnosis by an experienced physician.'); ?></p>
         <h2 class="flowers">Media Storm</h2>
         <hr />
         <p><?php echo t('MediaStorm is an award-winning interactive design and video production studio that works with top visual storytellers, interactive designers and global organizations to create cinematic narratives that speak to the heart of the human condition.'); ?></p>
-        <br />
-        <br />
-        <div style="width:400px;" id="video">
+               <div style="width:400px;" id="video">
           <div style="height:340px;"><script type="text/javascript" src="http://mediastorm.com/player/embed.php?id=e5178ccd9bb6ef492263&w=400&h=340&amp;lang=none"></script></div>
           <div style="padding:10px; font-family:Helvetica, Arial, sans-serif; font-size:12px; line-height:16px; color:#999999; background-color:#000000;">With humor as well as unflinching honesty, <i>It Ain't Television... It's Brain Surgery</i> is Ray Farkas's first-person account of his own brain surgery, which he underwent in hopes of reducing the debilitating symptoms of Parkinson's Disease. See the project at <a href="http://mediastorm.com/publication/it-aint-television-its-brain-surgery" target="_blank" style="color:#0083c5;">http://mediastorm.com/publication/it-aint-television-its-brain-surgery</a></div>
         </div>
@@ -536,6 +540,22 @@ Americans with AD will grow dramatically.'); ?></p>
 pathologist. He was the first scientist to describe the symptoms in a female patient and connect them to
 damaged areas in her brain. Following her death, Dr. Alzheimer performed an autopsy and found
 shrinkage of the brain as well as tiny abnormalities he referred to as tangles and amyloid plaques.'); ?></p>
+
+
+ <div id="question1" class="question">
+          <p><b><?php echo t('Is a medical evaluation necessary to clarify the diagnosis of a reversible or irreversible dementia?'); ?></b>
+            <select>
+              <option selected="selected" value="select"> <?php echo t('Select'); ?> </option>
+              <option value="1"> <?php echo t('Yes'); ?> </option>
+              <option value="0"> <?php echo t('No') ?> </option>
+            </select>
+          </p>
+          <p class="right-answer hide"> <?php echo t("Correct! A medical evaluation is always needed to clarify the diagnosis."); ?> </p>
+          <p class="wrong-answer hide"> <?php echo t("Incorrect. Please review the content above again."); ?> </p>
+        </div>
+
+
+
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
     </div>
@@ -834,6 +854,202 @@ In doctors\' offices and other clinical settings, genetic testing is used for pe
 early‐onset Alzheimer\'s disease. However, it is not generally recommended for people at risk of late‐onset
 Alzheimer\'s.'); ?></p>
       </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
+    </div>
+    <div id="lesson-1-slide-29" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('Possbie Risk Factors for AD'); ?></h2>
+        <hr />
+        <ul>
+          <li><?php echo t('Environmental toxins'); ?></li>
+          <li><?php echo t('Low formal educaiton &amp; low occupational attainment'); ?></li>
+          <li><?php echo t('Previous head trauma'); ?></li>
+          <li><?php echo t('Cerebrovascular disease'); ?></li>
+          <li><?php echo t('Dietary factors'); ?></li>
+        </ul>
+        <p><?php echo t('Possible risk factors are those suspected of being somehow linked to AD, but the linkage has not been
+proven. Weak or strong associations with AD may be attributed to a complex number of factors still
+unidentified. Possible risk for AD has been associated with the areas listed above.'); ?></p>
+        <p class="forum"><?php echo t('Search the Internet, and locate additional risk factors for AD and report your findings on the Forum'); ?></p>
+        <img src="<?php echo $this->getImagesUrl('msml/forum_icon.png'); ?>" alt="image"> </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
+    </div>
+    <div id="lesson-1-slide-30" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('Strategies for Medical Treatment'); ?></h2>
+        <hr />
+        <img src="<?php echo $this->getImagesUrl('msml/134501532.png'); ?>" alt="image">
+        <ul>
+          <li><?php echo t('Prevention of disease'); ?></li>
+          <li><?php echo t('Delay onset'); ?></li>
+          <li><?php echo t('Slow rate of progression'); ?></li>
+          <li><?php echo t('Treat primary symptoms (cognitive)'); ?></li>
+          <li><?php echo t('secondary symptoms (behavioral)'); ?></li>
+        </ul>
+        <p class="forum"><?php echo t('Search the Internet for a detail explanation how how these strategies are used as medical treatments. Post your responses to the Forum 
+		  
+		  
+		  '); ?></p>
+        <img src="<?php echo $this->getImagesUrl('msml/forum_icon.png'); ?>" alt="image"> </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
+    </div>
+    <div id="lesson-1-slide-31" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('FDA-Approved Treatments for Alzheimer\'s'); ?></h2>
+        <hr />
+        <h5><?php echo t('Cholinesterase Inhibitors'); ?></h5>
+        <ul>
+          <li><?php echo t('Donepezil'); ?></li>
+          <li><?php echo t('Rivastigmine'); ?></li>
+          <li><?php echo t('Tacrine'); ?></li>
+          <li><?php echo t('Galantamine'); ?></li>
+        </ul>
+        <p><?php echo t('While there is no cure for Alzheimer\'s disease, there are five prescription drugs approved by the U.S. Food
+and Drug Administration (FDA) to treat its symptoms.'); ?></p>
+        <p><?php echo t('Donepezil, galantamine, rivastigmine and tacrine are called "cholinesterase inhibitors." These drugs
+prevent the breakdown of a chemical messenger in the brain important for learning and memory. The fifth
+drug, memanatine, regulates the activity of a different chemical messenger in the brain that is also
+important for learning and memory. Both types of drugs help manage symptoms but work in different
+ways.'); ?></p>
+        <p><?php echo t('
+Understanding available treatment options can help you and the person with the disease cope with
+symptoms and improve quality of life.'); ?></p>
+        <h5><?php echo t('What are cholinesterase inhibitors?'); ?></h5>
+        <p><?php echo t('Cholinesterase inhibitors are prescribed to treat symptoms related to memory, thinking, language,
+judgment and other thought processes. Three different cholinesterase inhibitors are commonly
+prescribed:'); ?></p>
+        <ul>
+          <li><?php echo t('Donepezil (marketed as Aricept), which is approved to treat all stages of Alzheimer\'s disease'); ?></li>
+          <li><?php echo t('Galantamine (marketed as Razadyne), approved for mild to moderate stages.'); ?></li>
+          <li><?php echo t('Rivastigmine (marketed as Exelon), approved for mild to moderate Alzhe1nler\'s.'); ?></li>
+        </ul>
+        <p><?php echo t('
+Tacrine (Cognex), the first cholinesterase inhibitor, was approved in 1993 but is rarely prescribed today
+because of associated side effects, including possible liver damage.
+        '); ?></p>
+        <p class="forum"><?php echo t('Search the Internet to learn how cholinesterase inhibitors work, and post your findings on the Forum. Also, search and post the benefits of memantine and the common side effects of memantine.'); ?></p>
+        <h5><?php echo t('On the horizon'); ?></h5>
+        <p><?php echo t('
+Scientists have made remarkable progress in understanding how Alzheimer\'s affects the brain. Their
+insights point toward promising new treatments to slow or stop the disease. Ultimately, the path to
+effective therapies is through clinical studies.'); ?></p>
+        <img src="<?php echo $this->getImagesUrl('msml/forum_icon.png'); ?>" alt="image"> </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
+    </div>
+    <div id="lesson-1-slide-32" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('Participating in Research'); ?></h2>
+        <hr />
+        <ul>
+          <li><?php echo t('Experimental medications'); ?></li>
+          <li><?php echo t('Adventurous attitude required'); ?></li>
+          <li><?php echo t('Creteria for inclusion and exclusoin'); ?></li>
+          <li><?php echo t('Informed consent'); ?></li>
+          <li><?php echo t('Other types of research studies'); ?></li>
+        </ul>
+        <p><?php echo t(' All of the medications just mentioned underwent a rigorous testing process for many years prior to
+approval by the FDA. Testing first takes place with animals and then a small number of people to ensure
+safety and potential effectiveness. The next phase involves a large number of human subjects to
+determine whether or not a medication is effective. Volunteers are always needed to participate in this
+effort.'); ?></p>
+        <p><?php echo t('An adventurous attitude is required since it is not known if these experimental drugs are truly effective—that is the purpose of the research. Such drug studies require close cooperation among volunteers, their
+families, and medical staff. In spite of one’s willingness to participate in a given study, there is always a
+strict set of inclusion and exclusion criteria so that many people do not qualify for a variety of reasons.'); ?></p>
+        <p><?php echo t('All eligible participants in any research study must sign a consent form that spells out the risks and benefits of participation. Apart from drug studies, researchers conduct a wide variety of studies into the nature of
+AD and its treatment or prevention. Again, all such studies are subject to informed consent so that the
+rights of participants are protected.'); ?></p>
+        <p><?php echo t('If interested in exploring participation in drug studies or other research studies your local area, the
+Alzheimer’s Disease Education and Referral Center lists all current studies on it is website.'); ?></p>
+        <p><?php echo t('Many research studies now in progress are aiming to prevent or slow down the progression of AD. As
+mentioned earlier, some people exhibit persistent forgetfulness but lack any other symptoms of AD. They
+are referred to as having mild cognitive impairment and many develop additional symptoms of AD over
+time. Many drug trials today are aiming to slowly the course of AD in such persons.'); ?></p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
+    </div>
+    <div id="lesson-1-slide-33" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('Potential Treatments / Prevention'); ?></h2>
+        <hr />
+        <img src="<?php echo $this->getImagesUrl('msml/134389167.png'); ?>" alt="image">
+        <ul>
+          <li><?php echo t('Anti-Inflammatory Drugs'); ?></li>
+          <li><?php echo t('Antioxidant Agents'); ?></li>
+          <li><?php echo t('Statin drugs'); ?></li>
+          <li><?php echo t('Alternative Medicine'); ?></li>
+          <li><?php echo t('Vaccines'); ?></li>
+        </ul>
+        <p><?php echo t('These are drugs in various stages of testing. Several other approaches to treating and preventing AD are under investigation.'); ?></p>
+        <p class="forum"><?php echo t('Search the Internet for explanations on each of these listed treatments / preventions, and post your findings on the Forum.'); ?></p>
+        <img src="<?php echo $this->getImagesUrl('msml/forum_icon.png'); ?>" alt="image"> </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
+    </div>
+    <div id="lesson-1-slide-34" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('Other Ways to Reduce Risk'); ?></h2>
+        <hr />
+        <ul>
+          <li><?php echo t('Physical Exercise'); ?></li>
+          <li><?php echo t('<i>Use it or Lose It</i>'); ?></li>
+          <li><?php echo t('Diet'); ?></li>
+        </ul>
+        <h5><?php echo t('Physical Exercise'); ?></h5>
+        <p><?php echo t('
+        
+        
+Several recent studies have shown that physical exercise may prevent or slow cognitive decline among
+otherwise healthy people. In this regard, walking just a few times weekly has been shown to be helpful
+compared to little or no activity. The benefits of exercise for people with AD have not been fully explored.'); ?></p>
+        <h5><?php echo t('Use it or Lose it'); ?></h5>
+        <p><?php echo t('Use it or lose it refers to the notion that keeping one’s brain active with intellectual, physical, and social
+pursuits may help prevent AD. There is growing evidence that keeping mentally active may reduce the risk
+of developing AD. Regardless of the actual benefit of this approach, it certainly cannot hurt to keep active.
+There are no bad side effects! Even if activities like reading books, attending lectures, or playing games
+such bridge or chess slightly reduce the odds of developing AD, they may be worthwhile.'); ?></p>
+        <h5><?php echo t('Diet'); ?></h5>
+        <p><?php echo t('
+As already mentioned, there is growing evidence that what may be good for the heart may also be good
+for the brain. Eating nutritious foods may be essential for a healthy heart and a healthy brain. Participants
+in one large study, who consumed fish once per week or more, had 60 percent less risk of AD compared
+with those who rarely or never ate fish. Total intake of n‐3 polyunsaturated fatty acids was also associated
+with reduced risk of AD. In a study of Chicago residents, eating foods rich with Vitamin E such as green
+leafy vegetables was associated with lower risk of AD. Future research will shed more light on types of
+food to take or avoid as ways to reduce the risk of AD.'); ?></p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
+    </div>
+    <div id="lesson-1-slide-35" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('Directions for Research'); ?></h2>
+        <hr />
+        <ul>
+          <li><?php echo t('Further identify risk factors for memory loss and underlying causes'); ?></li>
+          <li><?php echo t('Improve diagnostic tools'); ?></li>
+          <li><?php echo t('Develop better treatments'); ?></li>
+          <li><?php echo t('Improve approaches to caring for people'); ?></li>
+          <li><?php echo t('Reduce distress of families'); ?></li>
+        </ul>
+        <p><?php echo t('Despite huge increases in research funding over the past two decades aimed at finding the root causes of AD and other brain diseases, scientific progress usually occurs at a slow pace. Yet there is reason to hope
+for breakthroughs as thousands of researchers worldwide are working in several major areas.'); ?></p>
+        <p class="forum"><?php echo t('Search the Internet for additional details on these listed research directions, and post your findings on the Forum.'); ?></p>
+        <img src="<?php echo $this->getImagesUrl('msml/forum_icon.png'); ?>" alt="image"> </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
+    </div>
+    <div id="lesson-1-slide-36" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('Good Sources of Information'); ?></h2>
+        <hr />
+        <h4><?php echo t('Closing'); ?></h4>
+        <p><?php echo t('Please know that this first class is the most technical in nature. Although there were not many
+opportunities for sharing your ideas, the remaining four classes offer plenty of time for your input. Facts
+about the medical causes and treatments for memory loss are important. However, we will spend the
+remaining weeks talking about how to cope with the practical, day‐to‐day challenges of living with
+someone with memory loss.'); ?></p>
+        <p><?php echo t('Finally, we wish to introduce the companion book, Alzheimer’s Early Stages: First Steps for Family, Friends
+and Caregivers. We recommend that you purchase it, as we will be recommending specific that reinforce
+key points covered in these classes.'); ?></p>
+        <p class="forum"><?php echo t('Post your questions about this module to the Forum.'); ?></p>
+        <img src="<?php echo $this->getImagesUrl('msml/forum_icon.png'); ?>" alt="image"> </div>
       <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> <?php echo t('Complete Lesson'); ?></a></div>
     </div>
   </div>
