@@ -85,8 +85,27 @@ div.course-slide table td ul li {
 }
 /* all non-slide css3 */
 
-#developers p {
+div#resources p {
 	font-size: small;
+}
+div#resources ul li {
+	font-size: small;
+}
+div#developers p {
+	font-size: small;
+}
+.h5 {
+	color: #666;
+	margin: 0;
+	padding: 10px 0 10px 0;
+	font-weight: bold;
+	line-height: normal;
+	font-size: 12pt;
+}
+.name {
+	font-family: 'Swanky and Moo Moo', cursive;
+	color: #F00;
+	font-size: 18px;
 }
 div.box-sidebar img {
 	border: none;
