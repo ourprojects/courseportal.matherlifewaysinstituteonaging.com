@@ -120,39 +120,53 @@ foreach(array(
   <div id="lesson-1">
     <div id="lesson-1-slide-1" class="course-slide">
       <div class="content">
-        <h2 class="flowers"><?php echo t('Overview of Memory Loss and Related Symptoms'); ?></h2>
+        <h2 class="flowers"><?php echo t('Making Sense of Memory Loss (MSML) Online'); ?></h2>
         <hr />
         <img src="<?php echo $this->getImagesUrl('msml/154418413.png'); ?>" alt="image">
-        <p><?php echo t('We are delighted that you are interested in MSML Online. This five-lesson course is intended to help family members of someone in the early stages of memory loss to meet the challenges they face now and in the future. Research evaluation has shown that participation in this course increases family members’ knowledge and improves coping skills with respect to their relatives’ memory and behavior changes.'); ?></p>
-        <h4><?php echo t('Lesson Objectives:'); ?></h4>
-        <ul>
-          <li><?php echo t('To introduce participants and give an overview of the course.');?></li>
-          <li><?php echo t('To explain major medical causes of memory loss.'); ?></li>
-          <li><?php echo t('To ensure that a medical evaluation is done to explore reasons for memory loss.'); ?></li>
-          <li><?php echo t('To explain symptoms of Alzheimer’s disease and related dementias.'); ?></li>
-          <li><?php echo t('To describe current and proposed medical treatments.'); ?></li>
-          <li><?php echo t('To describe research efforts to treat or prevent memory loss.'); ?></li>
-        </ul>
+        <h4><?php echo t('Developers'); ?></h4>
+        <p><?php echo t('This educational program was jointly developed by:'); ?></p>
+        <h5><a href="http://matherlifewaysinstituteonaging.com" target="_blank">Mather LifeWays Institute on Aging</a></h5>
+        <p><?php echo t('Mather LifeWays Institute on Aging creates Ways to Age Well for older adults by conducting translational
+research and education for professionals who serve them.'); ?></p>
+
+<h5><a href="http://www.alz.org" target="_blank">Alzheimer's Association ‐ Greater Illinois Chapter</a></h5>
+<p><?php echo t('The Alzheimer\'s Association is the leading, global voluntary health organization in Alzheimer\'s care and
+support, and the largest private, nonprofit funder of Alzheimer\'s research.'); ?></p>
+<h4><?php echo t('Use of Information'); ?></h4>
+<p><?php echo t('Any person is hereby authorized to view the information available from this guide for informational
+purposes only. No part of the information on this guide can be redistributed, copied, or reproduced
+without prior written consent of Mather LifeWays Institute on Aging.'); ?></p>
+<h4><?php echo t('Copyright'); ?></h4>
+<p><?php echo t('Information and materials of Mather LifeWays Institute on Aging included in its guides are protected by
+the copyright laws of the United States and international treaties.'); ?></p>
+		
+		
+		
       </div>
       <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Start Course &raquo;'); ?></a></div>
     </div>
     <div id="lesson-1-slide-2" class="course-slide">
       <div class="content">
-        <h2 class="flowers"><?php echo t('Welcome!'); ?></h2>
+        <h2 class="flowers"><?php echo t('Welcome'); ?></h2>
         <hr />
-        <p><?php echo t('Welcome to the first lesson of MSML Online. We want to encourage everyone to participate via the Forum/Blog. However, at the same time we wish to protect everyone’s privacy. Therefore, we ask that confidentiality be maintained. Simply put, whatever is said here must stay here.'); ?></p>
-        <h4><?php echo t('Introductions'); ?></h4>
-        <p class="forum">
-        <p><?php echo t('We will begin by asking you to say something about who you are and what brings you here.'); ?></p>
-        <p class="forum"><?php echo t('Please answer these questions on the Forum/Blog:'); ?></p>
-        <ul class="forum">
-          <li><?php echo t('What is your name?'); ?></li>
-          <li><?php echo t('What is your relationship with the person who is experiencing memory loss?'); ?></li>
-          <li><?php echo t('How long have you noticed the problem with memory or thinking?'); ?></li>
-          <li><?php echo t('What is the name of the medical condition or diagnosis, if known, that accounts for the problem?'); ?></li>
-        </ul>
-        </p>
-        <img src="<?php echo $this->getImagesUrl('msml/forum_icon.png'); ?>" alt="image"> </div>
+        
+        <img src="<?php echo $this->getImagesUrl('msml/135545925.png'); ?>" alt="image">
+        <p><?php echo t('We are delighted that you are interested in MSML Online. This five‐part
+online course is intended to help family members of someone in the early stages of memory loss to
+meet the challenges they face now and in the future. Research evaluation has shown that participation in
+this online course increases family members’ knowledge and improves coping skills with respect to their
+relatives’ memory and behavior changes.'); ?></p>
+<p><?php echo t('MSML Online is primarily intended to educate families with a relative who has been
+diagnosed with the early stages of Alzheimer\'s disease or a related dementia. Families with a relative who
+has not yet been diagnosed with one of these conditions may also benefit from participation. Individuals
+and families facing the later stages of dementia should be directed to programs that better suit their
+needs. Likewise, persons with memory loss should be encouraged to attend education and support
+programs specifically suited to them.'); ?></p>
+
+<p><?php echo t('It is our experience that this course is essential for your success in acquiring
+knowledge and coping skills.'); ?></p>
+		
+		</div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
     </div>
     <div id="lesson-1-slide-3" class="course-slide">
@@ -169,80 +183,286 @@ foreach(array(
     </div>
     <div id="lesson-1-slide-4" class="course-slide">
       <div class="content">
-        <h2 class="flowers"><?php echo t('Who We Are - Name / Relationship / How Long Ago Problem was Noted? / Diagnosis?'); ?></h2>
+        <h2 class="flowers"><?php echo t('Course Overview'); ?></h2>
         <hr />
-        <h4><?php echo t('Goals of the course'); ?></h4>
-        <p><?php echo t('This five-week series of lessons is intended to help you meet the current challenges of caring for someone in the early stages of memory loss. This condition is usually due to a medical condition such as Alzheimer’s disease or a related dementia. Therefore, this first session focuses on medical reasons for memory loss and its treatments. If your relative has not had a thorough medical evaluation yet, we hope this information will encourage you to seek one right away. This first lesson is also intended to give you other medical information whereas the remaining lessons will provide other types of information and guidance for coping with your relative’s memory loss.'); ?></p>
-        <p><?php echo t('Memory loss and other signs of mental decline have profound effects on the lives of individuals and families. Nevertheless, we are convinced that a good quality of life can still be maintained for all concerned by learning to make changes in lifestyle and outlook. For many family members, this involves a change in relationships and priorities. At times the demands may seem overwhelming. This course is aimed at helping you make decisions about how and when to make changes in your lifestyle, both now and in the future.'); ?></p>
-        <p><?php echo t('In writing the content for these classes, the developers spent many years talking to countless people with memory loss and their family members. They believe that there is no single way of coping successfully. Everyone must find ways that suit their own particular needs or situation, but it can be done. Those who have met the challenges of memory loss have taught us about the need for flexibility, patience, humor, faith, and friendship. Such qualities are developed over time. It is our sincere hope that a solid understanding of memory loss in the early stages will assist you in this process.'); ?></p>
+        <p><?php echo t('The course is divided into five modules. Each module is approximately two to three hours. Modules build upon each other, so it is recommended that the agenda be followed as prescribed.'); ?></p>
+
+<p><?php echo t('Module One ‐ Overview of Memory Loss and Related Symptoms, is an introduction of class leaders and
+participants. Discussion of the medical aspects of memory loss, causes of memory loss, the need for a
+medical evaluation, drug treatments, and the current state of research.'); ?></p>
+
+<p><?php echo t('Module Two ‐ Communication Strategies, is an overview of communication changes typical in early memory
+loss. Familiarize participants with general principles for maintaining communication with a person
+experiencing early memory loss.'); ?></p>
+
+<p><?php echo t('Module Three ‐ Making Decisions, addresses practical issues in everyday life such as driving a car, handling health and financial decisions, or managing household tasks.'); ?></p>
+<p><?php echo t('Module Four ‐ Planning for the Future, addresses a number of ways to prepare for changes that are likely to
+occur over the course of progressive memory loss. The need for legal and financial planning and other
+community resources are covered.'); ?></p>
+<p><?php echo t('Module Five ‐ Effective Ways of Coping and Caring, addresses how to involve the person with memory loss in
+a variety of activities and discusses ways for family members to take care of themselves.'); ?></p>
+
+<h4><?php echo t('Companion Book'); ?></h4>
+<p><a href="http://www.amazon.com/Alzheimers-Early-Stages-Friends-Caregivers/dp/0897933974" target="_blank"><?php echo t('Alzheimer’s Early Stages: First steps for family, friends and caregivers.'); ?></a></p>
+<p><?php echo t('We recommend you read this book while participating in MSML Online. Recommended chapters at the start of the course reinforce the course content.'); ?></p>
+<img src="<?php echo $this->getImagesUrl('msml/logo04.jpg'); ?>" alt="image">
+
+
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
     </div>
     <div id="lesson-1-slide-5" class="course-slide">
       <div class="content">
-        <h2 class="flowers"><?php echo t('AGENDA - Making Sense of Memory Loss Online'); ?></h2>
+        <h2 class="flowers"><?php echo t('Course Components'); ?></h2>
         <hr />
-        <p><?php echo t('The agenda for the five lessons includes these general topics. We strongly encourage you to complete all five lessons as the information of each class flows into the next one. In this first lesson, an overview of memory loss and a host of brain diseases known as dementias will be given. Again, this information is mainly medical in nature.'); ?></p>
-        <p><?php echo t('Lesson number two covers communication skills that will help you and others in caring for your relative. Lesson number three prepares you for the major decisions that will need to be made as memory loss progresses such as when to stop driving and health and financial decisions. In lesson number four, planning for the future is the focus.'); ?></p>
-        <p><?php echo t('Finally, in lesson number five we will talk about how to keep your relative engaged in meaningful activities and the need to take steps to care for yourself. It is our belief that if you take good care of yourself, your relative with memory loss will be better off too.'); ?></p>
-        <p><?php echo t('To make sure that we address your questions, please tell us what questions you have. We may not be able to answer all of these questions immediately, but as the course goes along, we will refer back to your questions to make sure we respond to them. Feel free to ask more questions as we go along or jot down notes for future reference.'); ?></p>
-        <p><?php echo t('In this first lesson, we will address the following questions:'); ?></p>
-        <ul>
-          <li><?php echo t('What causes memory loss?'); ?></li>
-          <li><?php echo t('How are brain diseases diagnosed?'); ?></li>
-          <li><?php echo t('What are the symptoms and stages of Alzheimer\'s disease?'); ?></li>
-          <li><?php echo t('How is memory loss treated?'); ?></li>
-          <li><?php echo t('What is being done in the area of medical research?'); ?></li>
-        </ul>
+        <img src="<?php echo $this->getImagesUrl('msml/153539296.png'); ?>" alt="image">
+        <p><?php echo t('It is important to note that every effort has been made to include accurate information, but sometimes health care professionals have differing opinions. Also, future scientific advances may make some of this
+information outdated. The developers of this course will make periodic revisions as needed. We want to encourage participants to address their specific concerns with licensed professionals. We can offer general information and guidance for participants to seek out solutions to their unique challenges.'); ?></p>
+
+<p><?php echo t('This program was developed as an overview for families on what to expect as early memory loss
+progresses. Each module is meant to provide basic information only. Following this course, you may wish to
+locate content experts who can address specific issues such as legal and financial planning.'); ?></p>
+
+
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
     </div>
     <div id="lesson-1-slide-6" class="course-slide">
       <div class="content">
-        <h2 class="flowers"><?php echo t('Definition of Dementia'); ?></h2>
+        <h2 class="flowers"><?php echo t('Course Effectiveness'); ?></h2>
         <hr />
-        <img src="<?php echo $this->getImagesUrl('msml/135095760.png'); ?>" alt="image" style="margin:0 auto 0 auto;">
-        <ul>
-          <li><?php echo t('Deterioration of at least two brain functions, including memory.'); ?></li>
-          <li><?php echo t('A syndrome, not a diagnosis.'); ?></li>
-          <li><?php echo t('In the past, referred to as senility or “hardening of the arteries.”'); ?></li>
-        </ul>
-        <p><?php echo t('Dementia refers to an acquired and progressive loss of mental functions due to a brain disorder. Memory loss is typically the first symptom shown by someone with dementia. This is not a normal part of the aging process, even though the vast majority of persons who experience a dementia are over 65 years of age. A medical diagnosis is required to determine the underlying cause or causes of symptoms. In the past, terms like “senility” and “hardening of the arteries” were commonly used to describe dementia but do not accurately explain the disease process at work.'); ?></p>
-        <div id="question1" class="question">
-          <p><b><?php echo t('Is Dementia a syndrome, or diagnosis?'); ?></b>
-            <select>
-              <option selected="selected" value="select"> <?php echo t('Select'); ?> </option>
-              <option value="1"> <?php echo t('Syndrome'); ?> </option>
-              <option value="0"> <?php echo t('Diagnosis') ?> </option>
-            </select>
-          </p>
-          <p class="right-answer hide"> <?php echo t("Dementia is a syndrome."); ?> </p>
-          <p class="wrong-answer hide"> <?php echo t("Dementia is a syndrome, NOT a diagnosis."); ?> </p>
-        </div>
+        
+        <p><?php echo t('MSML Online has undergone numerous revisions. The program it is based on, MSML, went through several formal evaluations to demonstrate its effectiveness.'); ?></p>
+        
+        <p><?php echo t('Research evaluation was conducted among more than 200 participants in the original program. In one study, good outcomes were reported in terms of increased knowledge and improved coping skills at post‐course and six months later (Kuhn and Mendes de Leon, 2001). Similar positive outcomes plus improved self‐confidence were reported by another group (Kuhn and Fulton, 2004). Likewise, when the education program was implemented in nine chapters of the
+Alzheimer’s Association, participants reported improvements in their knowledge and coping skills.'); ?></p>
+
+<p><?php echo t('Outcome measures used in this original research included:'); ?></p>
+<ol>
+	<li><?php echo t('A 15‐item Knowledge about Memory Loss and Care Test, (Kuhn, King, and Fulton, 2005);'); ?></li>
+    <li><?php echo t('A 10‐item Measure of Self‐Efficacy (Fulton and Kuhn, 2004) and;'); ?></li>
+    <li><?php echo t('The 7‐item memory sub‐scale of the Revised Memory and Behavior Problems Checklist (Teri et al., 1992).'); ?></li>
+ </ol>
+
+
+<h5><?php echo t('References'); ?></h5>
+<ul>
+	<li>Kuhn D, Mendes de Leon, C. (2001). Evaluation of an educational intervention with relatives of persons in
+the early stage of Alzheimer’s disease. Research on Social Work Practice, 11, 531‐548.</li>
+<li>Kuhn D., Fulton BR. (2004). Efficacy of an educational program for relatives of persons in the early stages
+of Alzheimer’s disease. Journal of Gerontological Social Work, 42(3), 109‐130.</li>
+<li>Kuhn D, King SP, Fulton BF. (2005). Development of the Knowledge about Memory Loss and Care test.
+American Journal of Alzheimer’s Disease, 20(1):41‐49.</li>
+<li>Teri, L., Truax, P., Logsdon, R., Uomoto, J., Zarit, S., and Vilatiano, P.P. (1992). Assessment of behavioral
+problems in dementia: The Revised Memory and Behavior Problems Checklist. Psychology and Aging, 7,
+622‐631.</li>
+</ul>
+     
+     
+     
+     
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
     </div>
     <div id="lesson-1-slide-7" class="course-slide">
       <div class="content">
-        <h2 class="flowers"><?php echo t('Brain Functions'); ?></h2>
+        <h2 class="flowers"><?php echo t('Module 1: Overview of Memory Loss & Related Symptoms'); ?></h2>
         <hr />
+        
+        <img src="<?php echo $this->getImagesUrl('msml/164088989.png'); ?>" alt="image">
+        
+        <h4><?php echo t('Purposes'); ?></h4>
         <ul>
-          <li><?php echo t('Memory'); ?></li>
-          <li><?php echo t('Orientation'); ?></li>
-          <li><?php echo t('Language'); ?></li>
-          <li><?php echo t('Judgment'); ?></li>
-          <li><?php echo t('Perception'); ?></li>
-          <li><?php echo t('Attention'); ?></li>
-          <li><?php echo t('Ability to perform tasks in sequence'); ?></li>
-        </ul>
-        <p><?php echo t('Dementia typically unfolds gradually over a period of many years but it can begin suddenly or unexpectedly in rare cases. 
-        It affects some or all of these brain functions. Search the Alzheimer\'s Association <a href="http://www.alz.org" target="_blank">website</a> for examples and greater explanations on each of these topics.'); ?></p>
-        <p class="forum"><?php echo t('On the Forum, comment on if you ever forget a name or forget an appointment or get lost, and what did it feel like at the time?'); ?></p>
-        <p><?php echo t('Imagine how difficult it would be to experience this type of problem on a regular basis. We will address the experience of living dementia during the next section.'); ?></p>
-        <img src="<?php echo $this->getImagesUrl('msml/forum_icon.png'); ?>" alt="image"> </div>
+        	<li><?php echo t('Introduce Class Leader(s) and participants and give an overview of the course'); ?></li>
+            <li><?php echo t('Explain major medical causes of memory loss'); ?></li>
+            <li><?php echo t('Ensure that a medical evaluation is done to explore reasons for memory loss'); ?></li>
+            <li><?php echo t('Explain symptoms of Alzheimer’s disease and related dementias'); ?></li>
+            <li><?php echo t('Describe current and proposed medical treatments'); ?></li>
+            <li><?php echo t('Describe research efforts to treat or prevent memory loss'); ?></li>
+         </ul>
+       
+       
+       
+        </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
     </div>
     <div id="lesson-1-slide-8" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('Introductions'); ?></h2>
+        <hr />
+        
+        <img src="<?php echo $this->getImagesUrl('msml/72968269.png'); ?>" alt="image">
+        
+        <p class="forum"><?php echo t('We will begin by asking you to say something about who you are and what brings you here. Please answer these questions on the Forum:'); ?></p>
+        
+        <ul class="forum">	
+            <li><?php echo t('What is your relationship with the person who is experiencing memory loss?'); ?></li>
+            <li><?php echo t('How long have you noticed their problem with memory or thinking?'); ?></li>
+            <li><?php echo t('What is the name of the medical condition or diagnosis, if known, that accounts for the problem?'); ?></li>
+         </ul>
+         
+         <img src="<?php echo $this->getImagesUrl('msml/forum_icon.png'); ?>" alt="image">
+        
+        <!-- 
+        
+       
+        <p><?php echo t('As you can see, dementia is an umbrella term that includes reversible and irreversible conditions.'); ?></p>
+        <div id="question1" class="question">
+          <p><b><?php echo t('Have you ever visited the Alzheimer\'s Assocation website?'); ?></b>
+            <select>
+              <option selected="selected" value="select"> <?php echo t('Select'); ?> </option>
+              <option value="1"> <?php echo t('Yes'); ?> </option>
+              <option value="0"> <?php echo t('No') ?> </option>
+            </select>
+          </p>
+          <p class="right-answer hide"> <?php echo t("Great! We will use this resource throughout this course."); ?> </p>
+          <p class="wrong-answer hide"> <?php echo t("Please familiarize yourself with their website."); ?> </p>
+        </div>
+         -->
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
+    </div>
+    <div id="lesson-1-slide-9" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('Who We Are'); ?></h2>
+        <hr />
+        <ul>
+          <li><?php echo t('Name'); ?></li>
+          <li><?php echo t('Relationship'); ?></li>
+          <li><?php echo t('How Long Ago was Noted?'); ?></li>
+          <li><?php echo t('Diagnosis'); ?></li>
+         </ul>
+         
+         <h4><?php echo t('Goals of the Program'); ?></h4>
+         <p><?php echo t('This five‐week series of classes is intended to help you meet the current challenges of caring for someone in the early stages of memory loss. This condition is usually due to a medical condition such as Alzheimer’s
+disease or a related dementia. Therefore, this first session focuses on medical reasons for memory loss and
+its treatments. If your relative has not had a thorough medical evaluation yet, we hope this information
+will encourage you to seek one right away. This first class is also intended to give you other medical
+information. The remaining classes provide other types of information and guidance for coping with your
+relative’s memory loss.'); ?></p>
+<p><?php echo t('Memory loss and other signs of mental decline have profound effects on the lives of individuals and
+families. Nevertheless, we are convinced that a good quality of life can still be maintained for all concerned
+by learning to make changes in lifestyle and outlook. For many family members, this involves a change in
+relationships and priorities. At times the demands may seem overwhelming. This educational series is
+aimed at helping you make decisions about how and when to make changes in your lifestyle, both now and
+in the future.'); ?></p>
+
+<p><?php echo t('In writing the content for these classes, the developers spent many years talking to countless people with
+memory loss and their family members. They believe that there is no single way of coping successfully.
+Everyone must find ways that suit their own particular needs or situation, but it can be done. Those who
+have met the challenges of memory loss have taught us about the need for flexibility, patience, humor,
+faith, and friendship. Such qualities are developed over time. It is our sincere hope that a solid
+understanding of memory loss in the early stages will assist you in this process.'); ?></p>
+          
+          
+          
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
+    </div>
+    <div id="lesson-1-slide-10" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('Agenda: MSML Online'); ?></h2>
+        <hr />
+        
+        <ul>
+        	<li><?php echo t('Module 1: Overview of Memory Loss &amp; Related Symptoms'); ?></li>
+            <li><?php echo t('Module 2: Communications Strategies'); ?></li>
+            <li><?php echo t('Module 3: Making Decisions'); ?></li>
+            <li><?php echo t('Module 4: Planning for the Future'); ?></li>
+            <li><?php echo t('Module 5: Effective Ways of Coping &amp; Caring'); ?></li>
+         </ul>
+         
+         <p><?php echo t('The agenda for these five modules include these general topics. We strongly encourage you to participate in all five modules as the information of each class flows into the next one. In this first module, an overview of memory loss and a host of brain diseases known as dementias will be given. Again, this information is mainly medical in nature.'); ?></p>
+         
+         <p><?php echo t('Module number two covers communication skills that will help you and others in caring for your relative. Module three prepares you for the major decisions that need to be made as memory loss progresses: when
+to stop driving; health; and financial decisions. In module number four, planning for the future is the focus.'); ?></p>
+
+<p><?php echo t('Finally, in module five we talk about how to keep your relative engaged in meaningful activities and the need
+to take steps to care for yourself. It is our belief that if you take good care of yourself, your relative with
+memory loss will be better off too.'); ?></p>
+
+<p class="forum"><?php echo t('To make sure that we address your questions, please tell us what questions you have on the Forum.'); ?></p>
+
+<p><?php echo t('In this first class, we will address the following questions:'); ?></p>
+<ul>
+	<li><?php echo t('What causes memory loss?'); ?></li>
+    <li><?php echo t('How are brain diseases diagnosed?'); ?></li>
+    <li><?php echo t('What are the symptoms and stages of Alzheimer\'s disease?'); ?></li>
+    <li><?php echo t('How is memory loss treated?'); ?></li>
+    <li><?php echo t('What is being done in the area of medical research?'); ?></li>
+ </ul>
+        
+        <img src="<?php echo $this->getImagesUrl('msml/forum_icon.png'); ?>" alt="image">
+        
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
+    </div>
+    <div id="lesson-1-slide-11" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('Definition of Dementia'); ?></h2>
+        <hr />
+        
+        <img src="<?php echo $this->getImagesUrl('msml/135095760.png'); ?>" alt="image">
+        
+        <ul>
+        	<li><?php echo t('Deterioration of at least two brain functions, including memory'); ?></li>
+            <li><?php echo t('A syndrome, not a diagnosis'); ?></li>
+            <li><?php echo t('In the past, referred to as senility or <i>hardening or the arteries</i>'); ?></li>
+         </ul>
+         
+         <p><?php echo t('Dementia is not a specific disease. It is an overall term that describes a wide range of symptoms associated with a decline in memory or other thinking skills severe enough to reduce a person\'s ability to perform
+everyday activities. Alzheimer\'s disease accounts for 60 to 80% of cases. Vascular dementia, which occurs
+after a stroke, is the second most common dementia type. But there are many other conditions that can
+cause symptoms of dementia, including some that are reversible, such as thyroid problems and vitamin
+deficiencies.'); ?></p>
+
+<p><?php echo t('Dementia is often incorrectly referred to as senility or senile dementia, which reflects the formerly
+widespread but incorrect belief that serious mental decline is a normal part of aging.'); ?></p>
+       
+       
+       
+       
+       
+        </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
+    </div>
+    <div id="lesson-1-slide-12" class="course-slide">
+      <div class="content">
+        <h2 class="flowers"><?php echo t('Brain Functions'); ?></h2>
+        <hr />
+        <ul>
+        	<li><?php echo t('Memory'); ?></li>
+            <li><?php echo t('Orientation'); ?></li>
+            <li><?php echo t('Language'); ?></li>
+            <li><?php echo t('Judgement'); ?></li>
+            <li><?php echo t('Perception'); ?></li>
+            <li><?php echo t('Attention'); ?></li>
+            <li><?php echo t('Ability to peform tasks in sequence'); ?></li>
+         </ul>
+       
+       <p><?php echo t('Dementia typically unfolds gradually over a period of many years but it can begin suddenly or
+unexpectedly. It affects some or all of these brain functions listed below.'); ?></p>
+
+<p class="forum"><?php echo t('Search the Internet for examples of how dementia affects some of these brain functions listed above, and report your findings on the Forum.'); ?></p>
+
+<p class="forum"><?php echo t('Did you ever forget a name or forget an appointment or get lost? What did it feel like at the time? Please describe those experinces on the Forum'); ?></p>
+
+<p><?php echo t('Imagine how difficult it would be to experience this type of problem on a regular basis. We address the
+experience of living dementia during the next module.'); ?></p>
+
+<p><?php echo t('Is everyone familiar with terms like congestive heart failure, liver failure and kidney failure? When the
+brain fails to do its work, dementia is the appropriate medical term.'); ?></p>
+
+<img src="<?php echo $this->getImagesUrl('msml/forum_icon.png'); ?>" alt="image">
+
+
+       
+       
+       
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
+    </div>
+    <div id="lesson-1-slide-13" class="course-slide">
       <div class="content">
         <h2 class="flowers"><?php echo t('Dementia'); ?></h2>
         <hr />
@@ -268,117 +488,14 @@ foreach(array(
               </ul></td>
           </tr>
         </table>
+        
         <p><?php echo t('As you can see, dementia is an umbrella term that includes reversible and irreversible conditions.'); ?></p>
-        <div id="question1" class="question">
-          <p><b><?php echo t('Have you ever visited the Alzheimer\'s Assocation website?'); ?></b>
-            <select>
-              <option selected="selected" value="select"> <?php echo t('Select'); ?> </option>
-              <option value="1"> <?php echo t('Yes'); ?> </option>
-              <option value="0"> <?php echo t('No') ?> </option>
-            </select>
-          </p>
-          <p class="right-answer hide"> <?php echo t("Great! We will use this resource throughout this course."); ?> </p>
-          <p class="wrong-answer hide"> <?php echo t("Please familiarize yourself with their website."); ?> </p>
-        </div>
-        <p><?php echo t('Search the Alzheimer\'s Association <a href="http://www.alz.org" target="_blank">website</a> for additional details on these topics listed above.'); ?></p>
-      </div>
-      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
-    </div>
-    <div id="lesson-1-slide-9" class="course-slide">
-      <div class="content">
-        <h2 class="flowers"><?php echo t('Medical Evaluation of Dementia'); ?></h2>
-        <hr />
-        <ul>
-          <li><?php echo t('History from the individual and relative or friend'); ?></li>
-          <li><?php echo t('Mental status test'); ?></li>
-          <li><?php echo t('Clinical exam'); ?></li>
-          <li><?php echo t('Blood work'); ?></li>
-          <li><?php echo t('Brain scan'); ?></li>
-          <li><?php echo t('Only if indicated: Psychological testing, HIV test, Brain biopsy, PET scan, Lumbar puncture, EEG'); ?></li>
-        </ul>
-        <p><?php echo t('A medical evaluation is always needed to clarify the diagnosis so that both reversible and irreversible conditions can be identified, treated, and understood by all concerned.'); ?></p>
-        <p><?php echo t('Basic elements of a medical evaluation by a doctor consist of the following: an accurate history of the symptoms, a brief mental status test, a physical examination, blood tests (Complete Blood Count, Chemistry profile, thyroid function, syphilis serology, Vitamin B12, and Folate) and brain imaging through either a CT scan or MRI scan.'); ?></p>
-        <p><?php echo t('Sometimes additional tests are ordered for the sake of thoroughness in diagnosing the exact type of dementia. There is no single test, such as a blood test, available to diagnose AD, as is the case with diabetes, for example. However, when other disorders have been ruled out and common symptoms of AD such as progressive loss of memory have been documented, there is a high probability for obtaining an accurate diagnosis by an experienced physician.'); ?></p>
-        <div id="question1" class="question">
-          <p><b><?php echo t('Is Dementia a specific disease?'); ?></b>
-            <select>
-              <option selected="selected" value="select"> <?php echo t('Select'); ?> </option>
-              <option value="1"> <?php echo t('No'); ?> </option>
-              <option value="0"> <?php echo t('Yes') ?> </option>
-            </select>
-          </p>
-          <p class="right-answer hide"> <?php echo t('Correct! Dementia is NOT a specific disease.'); ?> </p>
-          <p class="wrong-answer hide"> <?php echo t('Dementia is NOT a specific disease.') ?> </p>
-        </div>
-      </div>
-      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
-    </div>
-    <div id="lesson-1-slide-10" class="course-slide">
-      <div class="content">
-        <h2 class="flowers"><?php echo t('Criteria for Probable Alzheimer’s Disease'); ?></h2>
-        <hr />
-        <img src="<?php echo $this->getImagesUrl('msml/120921047.png'); ?>" alt="image">
-        <ul>
-          <li><?php echo t('Dementia is evident without other disorders to account it.'); ?></li>
-          <li><?php echo t('Deficits in at least two areas of cognition.'); ?></li>
-          <li><?php echo t('Progressive worsening of recent memory and other functions.'); ?></li>
-        </ul>
-        <p><?php echo t('Criteria have been established to guide physicians in making the diagnosis. In most cases, these criteria are useful to differentiate between AD and other types of dementia. Any doubts about the accuracy of the diagnosis should be checked by a second opinion from a medical specialist such as a neurologist. Most people who experience progressive loss of memory have AD. Therefore, the major focus of the rest of today’s class will be on this particular condition.'); ?></p>
-      </div>
-      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
-    </div>
-    <div id="lesson-1-slide-11" class="course-slide">
-      <div class="content">
-        <h2 class="flowers"><?php echo t('Prevalence of Alzheimer’s Disease by Age'); ?></h2>
-        <hr />
-        <p><?php echo t('Read the  <a href="http://www.alz.org/downloads/facts_figures_2013.pdf" target="_blank">2013 Alzheimer’s Disease Facts and Figures Report</a> from the Alzheimer\'s Association website.'); ?></p>
-        <div id="question1" class="question">
-          <p><b><?php echo t('The demands of caregiving may cause declines in the caregivers\' own health.'); ?></b>
-            <select>
-              <option selected="selected" value="select"> <?php echo t('Select'); ?> </option>
-              <option value="1"> <?php echo t('True'); ?> </option>
-              <option value="0"> <?php echo t('False') ?> </option>
-            </select>
-          </p>
-          <p class="right-answer hide"> <?php echo t('Correct!'); ?> </p>
-          <p class="wrong-answer hide"> <?php echo t('Please review the <a href="http://www.alz.org/downloads/facts_figures_2013.pdf" target="_blank">2013 Alzheimer’s Disease Facts and Figures Report</a> ') ?> </p>
-        </div>
-        <p class="forum"><?php echo t('On the Forum, please respond to the following questions:'); ?></p>
-        <ul class="forum">
-          <li><?php echo t('How many Americans have AD today?'); ?></li>
-          <li><?php echo t('How many people in your state are estimated to have AD?'); ?></li>
-          <li><?php echo t('Can you guess how many people are expected to have AD 40 years from now?'); ?></li>
-        </ul>
-        <p><?php echo t('Based on projections of the older population in the coming decades, it is expected that the numbers of Americans with AD will grow dramatically.'); ?></p>
-        <img src="<?php echo $this->getImagesUrl('msml/forum_icon.png'); ?>" alt="image"> </div>
-      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
-    </div>
-    <div id="lesson-1-slide-12" class="course-slide">
-      <div class="content">
-        <h2 class="flowers"><?php echo t('Dr. Alois Alzheimer'); ?></h2>
-        <hr />
-        <img src="<?php echo $this->getImagesUrl('msml/122568932.png'); ?>" alt="image">
-        <p><?php echo t('Alzheimer\'s disease was first described in 1906 by Dr. Alois Alzheimer, a German neurologist and pathologist. He was the first scientist to describe the symptoms in a female patient and connect them to damaged areas in her brain.'); ?></p>
-        <p><?php echo t('Following her death, Dr. Alzheimer performed an autopsy and found shrinkage of the brain as well as tiny abnormalities he referred to as tangles and amyloid plaques.'); ?></p>
-        <p><?php echo t('Experts today agree that what is called “early stage” AD is probably the result of many years of the disease slowly developing in the brain. In the late 1990s, researchers began to identify “mild cognitive impairment” or “MCI” as a very early sign of AD in many people. Persons with this condition show evidence of recent memory loss on formal testing but show no other brain impairments such as disorientation. Recent studies indicate that about half of people with MCI develop early stage AD within 5 years and most of them develop AD within 10 years. In other words, in addition to memory loss, another brain function will begin to show signs of deterioration.'); ?></p>
-      </div>
-      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
-    </div>
-    <div id="lesson-1-slide-13" class="course-slide">
-      <div class="content">
-        <h2 class="flowers"><?php echo t('Stages of AD'); ?></h2>
-        <hr />
-        <h5><?php echo t('Early Stage'); ?></h5>
-        <p><?php echo t('AD is slowly progressive and may last three to twenty years. The rate of progression varies from person to person. The disease tends to advance according to stages of severity but people can remain in the early stages for five years or longer. AD unfolds in subtle ways, not unlike normal absent-mindedness, except with daily regularity. Early stage symptoms may not be noticed until the affected person or family realizes that a pattern has developed. Something may occur that makes symptoms more evident, such as an acute illness.'); ?></p>
-        <p class="forum"><?php echo t('Based on your experience, do any of these early stage symptoms or signs look familiar to you? What were the first signs you noticed in your relative? Please record your responses on the Forum.'); ?></p>
-        <p><?php echo t('Forgetting appointments, misplacing things, difficulty managing a checkbook, word finding problems, and loss of initiative are typical changes at this stage. Symptoms may be inconsistent, with "good days" and "bad days" making life unpredictable for all concerned. One’s ability to manage self-care tasks is still intact at this point but reminders and supervision are needed with activities of daily living (ADLs) such as cooking, shopping, and paying bills.'); ?></p>
-        <p class="forum"><?php echo t('Search the Alzheimer\'s Association website to help you describe the remaining stages of AD, in detail, on the Forum:'); ?></p>
-        <ul class="forum">
-          <li> <?php echo t('Middle Stage'); ?> </li>
-          <li> <?php echo t('Late Stage'); ?> </li>
-          <li> <?php echo t('Final Stage'); ?> </li>
-        </ul>
-        <img src="<?php echo $this->getImagesUrl('msml/forum_icon.png'); ?>" alt="image"> </div>
+        
+        
+        
+        
+        
+         </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
     </div>
     <div id="lesson-1-slide-14" class="course-slide">
@@ -760,84 +877,36 @@ foreach(array(
     <div class="content">
       <h2 class="flowers"><?php echo t('Encouraging Verbal Expression'); ?></h2>
       <hr />
-      <h4><?php echo t('Encouraging Verbal Expression'); ?></h4>
       <p><?php echo t('Communication is difficult, and especially so when you are dealing with memory loss.'); ?></p>
-      <h4><?php echo t('Allow circumlocution'); ?></h4>
+      <h5><?php echo t('Allow circumlocution'); ?></h5>
       <p><?php echo t('Circumlocution refers to "talking around" or "talking in circles." People with memory loss sometimes "talk around" a subject before they are able to pinpoint it. Though this may seem annoying to us at times, for the person with memory loss it is actually a useful coping tool. Avoid rushing the person to the point, and allow them time to do this. It will help them to get their thoughts out, and will also serve to give you extra cues as to their thoughts or needs.'); ?></p>
-      <h4><?php echo t('Allow time for processing'); ?></h4>
+      <h5><?php echo t('Allow time for processing'); ?></h5>
       <p><?php echo t('A person who is experiencing memory loss may have trouble following a conversation, particularly a conversation between several people. In these cases, her reaction time may be delayed while she tries to "catch up" with what is being said. If the person has been asked a question, allow her a little extra time to give a response. If she seems to be confused about how she is to respond, then you can either restate the question or narrow the possible answers – "Mom, Joe asked how you haveve been feeling" or "Mom, Joe wants to know if you are over your cold?"'); ?></p>
-      <h4><?php echo ('Keep conversations on track'); ?></h4>
+      <h5><?php echo ('Keep conversations on track'); ?></h5>
       <p><?php echo t('If the conversation gets too far off track, use gentle reminders to get the person back to the main point: "We did have a good time at Mary\'s birthday party. Joe was just asking how you are feeling today?" Remember, some circumlocution is helpful, but if the person gets too far off track, the train of thought may be lost entirely.'); ?></p>
-      <h4><?php echo t('Enable ventilation'); ?></h4>
-      <p><?php echo t('Memory loss, and the communication problems that go along with it, can be very frustrating. Sometimes, we want so much to make our family members feel comfortable that we may not listen to them as well as we could. It is hard to let the person really "let off steam" about their anger and sadness and frustration over what is happening to them, because it is hard for us to hear, too. But it can be very helpful to allow this to happen, and to just listen. This can be hard – but it can ultimately bring you and your family member even closer by letting him know that you are there despite the memory loss, and that you are willing to "hang in there" with him in the future.'); ?></p>
-      <h4><?php echo t('Offer limited choices if needed'); ?></h4>
-      <p><?php echo t('Sometimes people with memory loss have trouble answering open-ended questions. Open-ended questions can be hard because there are so many choices to make in order to answer the question. Giving limited choices may make it easier for the person to answer. For example, "What is your favorite color?" is an open-ended question. Let us think about all of the choices that we actually make when we answer this question. First of all, we need to remember the meaning of the word "color." Then, we need to remember what it means to have a "favorite" color. Next, we need to think of the whole palette of colors until we come to the one we like the best, and we need to identify its name. So actually, this can be a more complex process than you might imagine at first glance. What seems like a simple question, in fact, has many layers of decisions and things to think through in order to answer it correctly.'); ?></p>
-      <h4><?php echo t('How can we simplify this question?'); ?></h4>
-      <p><?php echo t('If the person seems to be struggling with this question, we can give limited choices. "Which color do you like better? Blue, yellow or red?" Since we are naming the primary colors, it helps to narrow what color the person has to choose from. Maybe the person really likes red – then we have narrowed it down well. But if the person likes orange, they may say, "it is like red but lighter" and we can guess from there. So offering limited choices and giving the person a chance to get more detailed from there may be a good strategy.'); ?></p>
+     
     </div>
     <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
   </div>
+ 
+ 
   <div id="lesson-2-slide-12" class="course-slide">
-    <div class="content">
-      <h2 class="flowers"><?php echo t('Elements of Nonverbal Communication'); ?></h2>
-      <hr />
-      <ul>
-        <li><?php echo t('Tone of voice'); ?></li>
-        <li><?php echo t('Body language'); ?></li>
-        <li><?php echo t('Facial expressions'); ?></li>
-        <li><?php echo t('Gestures'); ?></li>
-      </ul>
-      <p><?php echo t('"It is often not what you say, but how you say it." As we discussed at the beginning of the lesson, nonverbal communication refers to the things that we do in addition to what we say. The most basic of these are tone of voice, body language, and facial expressions We are all familiar with the saying, "it is not what you say, but also how you say it." We have all had experiences where we were put off by a person\'s tone of voice or facial expression, even if what they said was not really all that offensive. Nonverbal communication can be very important when having conversation with people with memory loss. We are going to take a little time to discuss this, because it is so important.'); ?></p>
-      <h4><?php echo t('Nonverbal Communication'); ?></h4>
-      <ul>
-        <li><?php echo t('Can you think of times when someone’s nonverbal communication spoke louder than their words?'); ?></li>
-        <li><?php echo t('Do you know anyone who “talks with their hands” or whose face is very expressive?'); ?></li>
-        <li><?php echo t('What are some ways that nonverbal communication both enhances and detracts from conversations?'); ?></li>
-        <li><?php echo t('Has anyone in the group had an experience in which someone’s nonverbal communication either hindered the conversation or helped the conversation?'); ?></li>
-      </ul>
-      <p><?php echo t('Nonverbal communication becomes especially important when having a conversation with someone with memory loss. A calm tone of voice can reassure a person who is frustrated or anxious. It can also help to keep us calm. Our own anxiety and anger escalates when our voices get louder, and of course the person to whom we are talking becomes upset as well. As hard as it can be to do, keeping your voice tone calm, low, and reassuring can help to keep situations from getting out of control.'); ?></p>
-      <p><?php echo t('Body language and facial expressions are other concerns. If your words are calm but your body language is tense or your facial expression does not match what you are saying, the message will be mixed. The person with memory loss may react not to what you are saying, but perhaps at the look on your face or your body language.'); ?></p>
-      <p><?php echo t('As an example of all of the above, think of a time when you talked to someone that you knew was not telling the truth. Their words may have been convincing, but somehow you knew something was not right. How did you know this? What gave them away? The saying, "It is not what you say, but how you say it" is important to remember in all forms of communication, but especially when talking to someone with memory loss.'); ?></p>
-    </div>
-    <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
-  </div>
-  <div id="lesson-2-slide-13" class="course-slide">
-    <div class="content">
-      <h2 class="flowers"><?php echo t('Encouraging Verbal Expression'); ?></h2>
-      <hr />
-      <p><?php echo t('Communication is difficult, and especially so when you are dealing with memory loss.'); ?></p>
-      <h4><?php echo t('Allow circumlocution'); ?></h4>
-      <p><?php echo t('Circumlocution refers to "talking around" or "talking in circles." People with memory loss sometimes "talk around" a subject before they are able to pinpoint it. Though this may seem annoying to us at times, for the person with memory loss it is actually a useful coping tool. Avoid rushing the person to the point, and allow them time to do this. It will help them to get their thoughts out, and will also serve to give you extra cues as to their thoughts or needs.'); ?></p>
-      <h4><?php echo t('Allow time for processing'); ?></h4>
-      <p><?php echo t('A person who is experiencing memory loss may have trouble following a conversation, particularly a conversation between several people. In these cases, her reaction time may be delayed while she tries to "catch up" with what is being said. If the person has been asked a question, allow her a little extra time to give a response. If she seems to be confused about how she is to respond, then you can either restate the question or narrow the possible answers – "Mom, Joe asked how you have been feeling" or "Mom, Joe wants to know if you are over your cold?"'); ?></p>
-      <h4><?php echo t('Keep conversations on track'); ?></h4>
-      <p><?php echo t('If the conversation gets too far off track, use gentle reminders to get the person back to the main point: "We did have a good time at Mary\'s birthday party. Joe was just asking how you are feeling today?" Remember, some circumlocution is helpful, but if the person gets too far off track, the train of thought may be lost entirely.'); ?></p>
-      <h4><?php echo t('Enable ventilation'); ?></h4>
-      <p><?php echo t('Memory loss, and the communication problems that go along with it, can be very frustrating. Sometimes, we want so much to make our family members feel comfortable that we may not listen to them as well as we could. It is hard to let the person really "let off steam" about their anger and sadness and frustration over what is happening to them, because it is hard for us to hear, too. But it can be very helpful to allow this to happen, and to just listen. This can be hard – but it can ultimately bring you and your family member even closer by letting him know that you are there despite the memory loss, and that you are willing to "hang in there" with him in the future.'); ?></p>
-      <h4><?php echo t('Offer limited choices if needed'); ?></h4>
-      <p><?php echo t('Sometimes people with memory loss have trouble answering open-ended questions. Open-ended questions can be hard because there are so many choices to make in order to answer the question. Giving limited choices may make it easier for the person to answer. For example, "What is your favorite color?" is an open-ended question. Let us think about all of the choices that we actually make when we answer this question. First of all, we need to remember the meaning of the word "color." Then, we need to remember what it means to have a "favorite" color. Next, we need to think of the whole palette of colors until we come to the one we like the best, and we need to identify its name. So actually, this can be a more complex process than you might imagine at first glance. What seems like a simple question, in fact, has many layers of decisions and things to think through in order to answer it correctly.'); ?></p>
-      <h4><?php echo t('How can we simplify this question?'); ?></h4>
-      <p><?php echo t('If the person seems to be struggling with this question, we can give limited choices. "Which color do you like better? Blue, yellow or red?" Since we are naming the primary colors, it helps to narrow what color the person has to choose from. Maybe the person really likes red – then we have narrowed it down well. But if the person likes orange, they may say, "it is like red but lighter" and we can guess from there. So offering limited choices and giving the person a chance to get more detailed from there may be a good strategy.'); ?></p>
-    </div>
-    <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
-  </div>
-  <div id="lesson-2-slide-14" class="course-slide">
     <div class="content">
       <h2 class="flowers"><?php echo t('Avoid These Common Pitfalls…'); ?></h2>
       <hr />
-      <h4><?php echo t('Arguing'); ?></h4>
+      <h5><?php echo t('Arguing'); ?></h5>
       <p><?php echo t('It is hard to win an argument with someone who is experiencing memory loss, because his or her view of things may be very different from yours. Let us say that your Aunt Mae can not remember having gone to a restaurant the day before, and is upset over the doggie bag in the refrigerator because she claims, "I did not put that there, and I am not going to eat someone else\'s leftovers!"'); ?></p>
       <p><?php echo t('Our natural inclination is to set things right and use facts to prove our point. But if the person truly does not remember the experience of going to the restaurant, no amount of facts will change their mind. It won\'t help to pull out the calendar to show Aunt Mae that she wrote down "6 pm - dinner at Andy\'s Restaurant with Susan" or showing her the receipt, or even showing her a matchbook from the restaurant. Aunt Mae does not remember the experience – for her it simply never happened.'); ?></p>
       <p><?php echo t('So arguing with her that it did is just going to frustrate the both of you. Before arguing about something like this, you need to stand back and ask yourself, "Is this really worth it?" If a person\'s safety is at stake, the answer might be "yes." But in a situation like this one, it may be better to just say, "Well, then, I will just take this out of your refrigerator then." You will have avoided a needless argument.'); ?></p>
-      <h4><?php echo t('Giving orders'); ?></h4>
+      <h5><?php echo t('Giving orders'); ?></h5>
       <p><?php echo t('No one likes to be told what to do – especially by our spouses or other family members. There is a world of difference between "Joe! Will you take out the trash already?" and "Joe, I would really appreciate it if you would take out the trash."'); ?></p>
       <p><?php echo t('Sometimes, people with memory loss do not respond to our requests the way we would like because the task seems too difficult. We will talk about this more in Section 5, but breaking tasks down into smaller steps may be the key. Maybe Joe does not take out the trash because he can not remember all of the steps involved in this task. He used to be in charge of recycling and separating everything and now he gets confused by all of the containers. As a result, he now avoids having anything to do with the trash. If you sense this is the problem, you may need to give Joe a smaller task to accomplish. For instance, just ask him to stack the newspapers and put them in the recycling bin rather than being responsible for separating and carrying out all of the trash.'); ?></p>
-      <h4><?php echo t('Oversimplifying'); ?></h4>
+      <h5><?php echo t('Oversimplifying'); ?></h5>
       <p><?php echo t('The goal is to simplify only if needed, and without being condescending. In other words, simplify only when necessary and do not "dumb down." People with early memory loss may be very sensitive to the feeling that they are being treated as a child, or disrespectfully.'); ?></p>
     </div>
     <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
   </div>
-  <div id="lesson-2-slide-15" class="course-slide">
+  <div id="lesson-2-slide-13" class="course-slide">
     <div class="content">
       <h2 class="flowers"><?php echo t('Share What You Know with Others'); ?></h2>
       <hr />
@@ -852,7 +921,7 @@ foreach(array(
     </div>
     <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
   </div>
-  <div id="lesson-2-slide-16" class="course-slide">
+  <div id="lesson-2-slide-14" class="course-slide">
     <div class="content">
       <h2 class="flowers"><?php echo t('Good Sources of Information'); ?></h2>
       <hr />
@@ -862,7 +931,7 @@ foreach(array(
     </div>
     <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
   </div>
-  <div id="lesson-2-slide-17" class="course-slide">
+  <div id="lesson-2-slide-15" class="course-slide">
     <div class="content">
       <h2 class="flowers"><?php echo t('Closing'); ?></h2>
       <hr />
