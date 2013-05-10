@@ -54,12 +54,12 @@ div.course-slide div#video {
 }
 .forum {
 	font-family: 'Swanky and Moo Moo', cursive;
-	color: #F00;
+	color: #000;
 	font-size: 22px;
 }
 ul.forum li {
 	font-family: 'Swanky and Moo Moo', cursive;
-	color: #F00;
+	color: #000;
 	font-size: 22px;
 }
 /* course-slide table properties */
