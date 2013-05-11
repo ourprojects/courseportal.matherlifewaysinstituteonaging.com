@@ -1,4 +1,5 @@
 <?php
+
 class Surveyor extends CApplicationComponent {
 	
 	public static $id = 'surveyor';

@@ -2,29 +2,29 @@
 
 class SurveyorModule extends CWebModule {
 	
-	public static $surveyorComponentId = 'surveyor';
+	public static $componentId = 'surveyor';
 
 	public function init(){
         $this->defaultController = 'Surveyor';
 		$this->setImport(array(
-            'surveyor.models.db.*',
-			'surveyor.models.forms.*',
-            'surveyor.controllers.*',
-            'surveyor.components.*',
-			'surveyor.widgets.*',
+            self::$componentId . '.models.db.*',
+			self::$componentId . '.models.forms.*',
+            self::$componentId . '.controllers.*',
+            self::$componentId . '.components.*',
+			self::$componentId . '.widgets.*',
         ));
         return parent::init();
 	}
 	
 	public static function surveyor() {
-		$component = Yii::app()->getComponent(self::$surveyorComponentId);
+		$component = Yii::app()->getComponent(self::$componentId);
 		if($component === null)
-			throw new CException('Surveyor component must be defined');
+			throw new CException(self::$componentId . ' component must be defined');
 		return $component;
 	}
 	
 	public static function __callStatic($method, $args) {
-		return call_user_func_array(array(self::getSurveyorComponent(), $method), $args);
+		return call_user_func_array(array(self::surveyor(), $method), $args);
 	}
 	
 	/**
@@ -35,7 +35,7 @@ class SurveyorModule extends CWebModule {
 	 * @return string translated message
 	 */
 	static function t($message, $params = array()) {
-		return Yii::t(self::$surveyorComponentId, $message, $params);
+		return Yii::t(self::$componentId, $message, $params);
 	}
 	
 	public function beforeControllerAction($controller, $action) {
