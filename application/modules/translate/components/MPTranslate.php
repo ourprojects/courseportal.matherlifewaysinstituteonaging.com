@@ -133,6 +133,19 @@ class MPTranslate extends CApplicationComponent {
 		}
 	}
 	
+	public function translateOutput(&$output)
+	{
+		$output = preg_replace_callback('/\{t\}(.*?)\{\/t\}/s', array(&$this, '_translateOutputCallback'), $output);
+	}
+	
+	protected function _translateOutputCallback(&$matches)
+	{
+		$text = trim($matches[1]);
+		if(!empty($text))
+			$text = Yii::t($this->messageCategory, $text, array(), null, null);
+		return $text;
+	}
+	
 	public function canUseGoogleTranslate() {
 		return !empty($this->googleApiKey);
 	}
@@ -316,7 +329,7 @@ class MPTranslate extends CApplicationComponent {
         if($event === null)
         	return false;
 
-        $sourceLanguage = $event->category === TranslateModule::translateComponentId ? 'en' : TranslateModule::translator()->getSourceLanguageId();
+        $sourceLanguage = $event->category === TranslateModule::$componentId ? 'en' : TranslateModule::translator()->getSourceLanguageId();
         
         if(TranslateModule::translator()->getLanguageID($event->language) === $sourceLanguage && !Yii::app()->getMessages()->forceTranslation)
         	return false;

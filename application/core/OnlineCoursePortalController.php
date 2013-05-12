@@ -114,6 +114,14 @@ abstract class OnlineCoursePortalController extends CController {
 		}
 		return $action;
 	}
+	
+	protected function afterRender($view, &$output)
+	{
+		parent::afterRender($view, $output);
+		
+		if($translator = Yii::app()->getComponent('translate'))
+			$translator->translateOutput($output);
+	}
 
     /**
     * Loads an extension
