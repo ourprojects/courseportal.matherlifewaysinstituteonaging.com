@@ -133,19 +133,6 @@ class MPTranslate extends CApplicationComponent {
 		}
 	}
 	
-	public function translateOutput(&$output)
-	{
-		$output = preg_replace_callback('/\{t\}(.*?)\{\/t\}/s', array(&$this, '_translateOutputCallback'), $output);
-	}
-	
-	protected function _translateOutputCallback(&$matches)
-	{
-		$text = trim($matches[1]);
-		if(!empty($text))
-			$text = Yii::t($this->messageCategory, $text, array(), null, null);
-		return $text;
-	}
-	
 	public function canUseGoogleTranslate() {
 		return !empty($this->googleApiKey);
 	}

@@ -7,7 +7,7 @@ $this->breadcrumbs = array(
 		t('Course ' . $action)
 );
 ?>
-<h1><?php echo t("$action Course") . ($course->getIsNewRecord() ? '' : " - $course->title"); ?></h1>
+<h1>{t}$action Course") . ($course->getIsNewRecord() ? '' : " - $course->title{/t}</h1>
 <div id="single-column">
 	<div id="course" class="form">
 		<?php 
@@ -20,10 +20,10 @@ $this->breadcrumbs = array(
 		);
 		?>
 		<p class="note">
-			<?php echo t('Fields with {required} are required.', array('{required}' => '<span class="required">*</span>')); ?>
+			{t}Fields with {required} are required.', array('{required}' => '<span class="required">*</span>')); ?>
 		</p>
 		<div class="row">
-	        <?php echo $form->labelEx($course, 'rank'); ?>
+	        <?php echo $form->labelEx($course, 'rank{/t}
 	        <?php echo $form->numberField($course, 'rank'); ?>
 	        <?php echo $form->error($course,'rank'); ?>
 	    </div>
@@ -72,7 +72,7 @@ $this->breadcrumbs = array(
 		        )
 			),
 		)); ?>
-		<h2><?php echo t('Create New Objective'); ?></h2>
+		<h2>{t}Create New Objective{/t}</h2>
 		<div class="form">
 			<?php $form = $this->beginWidget('CActiveForm', array(
 					'id' => 'course-objective-form',

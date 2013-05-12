@@ -6,7 +6,7 @@
 )); ?>
 
 	<p class="note">
-		<span class="required">*</span><?php echo t('Required'); ?>.
+		<span class="required">*</span>{t}Required{/t}.
 	</p>
 	<?php echo $form->errorSummary($Login); ?>
 	<div class="row">

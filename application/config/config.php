@@ -94,6 +94,10 @@ return array(
 												),
 				),
 				
+				'viewRenderer' => array(
+					'class' => 'modules.translate.components.TViewRenderer'
+				),
+				
 				'user' => array(
 						'class' => 'application.auth.WebUser',
 						'allowAutoLogin' => true,

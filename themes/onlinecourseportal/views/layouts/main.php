@@ -35,7 +35,7 @@
 			<div id="flowersRight"></div>
 			<div id="header">
 				<div id="logo">
-					<img src="<?php echo Yii::app()->getTheme()->getImagesUrl('logo.png'); ?>" alt="<?php echo t('Logo'); ?>" />
+					<img src="<?php echo Yii::app()->getTheme()->getImagesUrl('logo.png'); ?>" alt="{t}Logo{/t}" />
 				</div>
 				<div id="site-title"><?php echo Yii::app()->name; ?></div>
 				<div id="language-menu"><?php $this->widget('modules.translate.widgets.acceptedLanguage.ALSelector'); ?></div>
@@ -85,7 +85,7 @@
 			<div class="container">
 				<div class="logo">
 					<a href="http://www.matherlifewaysinstituteonaging.com/" title="Mather LifeWays Institute on Aging">
-						<img src="<?php echo Yii::app()->getTheme()->getImagesUrl('logo-footer.jpg'); ?>" alt="<?php echo t('Logo'); ?>" />
+						<img src="<?php echo Yii::app()->getTheme()->getImagesUrl('logo-footer.jpg'); ?>" alt="{t}Logo{/t}" />
 					</a>
 				</div>
 				<div id="footer-icons" class="icons">

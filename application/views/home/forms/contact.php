@@ -1,4 +1,4 @@
-<p><?php echo t('Please complete this form to contact us.'); ?></p>
+<p>{t}Please complete this form to contact us.{/t}</p>
 
 <div class="form">
 
@@ -8,7 +8,7 @@
 			'enableClientValidation' => true)); ?>
 
 	<p class="note">
-		<span class="required">*</span><?php echo t('Required'); ?>.
+		<span class="required">*</span>{t}Required{/t}.
 	</p>
 
 	<?php echo $form->errorSummary(array($ContactUs, $Captcha)); ?>
