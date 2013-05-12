@@ -1,5 +1,5 @@
 <?php $this->breadcrumbs = array(t('Admin') => Yii::app()->createUrl('admin'), t('Users')); ?>
-<h1>{t}Users{/t}</h1>
+<h1><?php echo t('Users'); ?></h1>
 <div id="single-column">
 <?php 
 $this->widget('zii.widgets.grid.CGridView', array(

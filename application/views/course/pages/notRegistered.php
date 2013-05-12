@@ -2,7 +2,7 @@
 
 <div class="small-masthead" style="background-image: url(<?php echo $this->getImagesUrl('header-courses.png'); ?>);">
 	<h1 class="bottom">
-		{t}Courses{/t}
+		<?php echo t('Courses'); ?>
 	</h1>
 </div>
 <div id="single-column">
@@ -10,6 +10,6 @@
 		<?php echo t($course->title); ?>
 	</h2>
 	<p>
-		{t}You have not registered for this course yet.{/t}
+		<?php echo t('You have not registered for this course yet.'); ?>
 	</p>
 </div>
