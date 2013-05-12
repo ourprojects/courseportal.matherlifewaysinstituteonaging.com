@@ -6,12 +6,13 @@ class SurveyorModule extends CWebModule {
 
 	public function init(){
         $this->defaultController = 'Surveyor';
+        $dirname = trim(dirname(__FILE__), '/');
 		$this->setImport(array(
-            self::$componentId . '.models.db.*',
-			self::$componentId . '.models.forms.*',
-            self::$componentId . '.controllers.*',
-            self::$componentId . '.components.*',
-			self::$componentId . '.widgets.*',
+            $dirname . '.models.db.*',
+			$dirname . '.models.forms.*',
+            $dirname . '.controllers.*',
+            $dirname . '.components.*',
+			$dirname . '.widgets.*',
         ));
         return parent::init();
 	}
