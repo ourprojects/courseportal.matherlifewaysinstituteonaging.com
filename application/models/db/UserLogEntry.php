@@ -40,6 +40,7 @@ class UserLogEntry extends CActiveRecord
 		return array(
 			array('user_activity_id, datetime, comment', 'required'),
 			array('user_activity_id', 'numerical', 'integerOnly' => true),
+			array('comment', 'length', 'max' => 65535),
 			array('datetime', 'date', 'format' => 'yyyy-M-d H:m:s'),
 			array('user_activity_id', 'exist', 'attributeName' => 'id', 'className' => 'UserActivity', 'except' => 'search'),
 				
