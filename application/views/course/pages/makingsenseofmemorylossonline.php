@@ -2471,16 +2471,9 @@ from the first class.'); ?></p>
       <div class="content">
         <h2 class="flowers"><?php echo t('Your supplemental readingfor this class in thecompanion book includesChapters 10 and 11.'); ?></h2>
         <hr />
-        <p><?php echo t('       
-        To end the course, I would like to share with you one last message that conveys the feeling of caring for
+        <p><?php echo t('To end the course, I would like to share with you one last message that conveys the feeling of caring for
 someone with memory loss and invite you to remember this quote from Helen Keller.'); ?></p>
-      </div>
-      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;<?php echo t('Back'); ?></a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"><?php echo t('Next'); ?>&nbsp;&raquo; </a></div>
-    </div>
-    <div id="lesson-5-slide-22" class="course-slide">
-      <div class="content">
-        <h2 class="flowers"><?php echo t('The best and most beautifulthings in the world cannotbe seen or even touched.They must be felt withinthe heart. --Helen Keller'); ?></h2>
-        <hr />
+        <p><i><?php echo t('The best and most beautifulthings in the world cannotbe seen or even touched.They must be felt withinthe heart. --Helen Keller'); ?></i></p>
         <p><?php echo t('We have really enjoyed getting to know you. Best wishes as you carry on in the future!'); ?></p>
         <h5><a href="#" target="_blank"><?php echo t('Certificates of Completion'); ?></a></h5>
         <h4><?php echo t('Evaluation (optional)'); ?></h4>
