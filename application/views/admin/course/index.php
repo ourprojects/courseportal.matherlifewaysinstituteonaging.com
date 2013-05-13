@@ -1,5 +1,5 @@
 <?php $this->breadcrumbs = array(t('Admin') => Yii::app()->createUrl('admin'), t('Courses')); ?>
-<h1 class="bottom">{t}Courses{/t}</h1>
+<h1 class="bottom"><?php echo t('Courses'); ?></h1>
 <div id="single-column">
 	<?php 
 	$source = Course::model()->findAll();
