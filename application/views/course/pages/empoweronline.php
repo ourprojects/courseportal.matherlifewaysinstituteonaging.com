@@ -1802,8 +1802,8 @@ foreach(array(
     <div class="content">
       <h2 class="flowers">{t}Steps to Maintain Health & Avoid Stress (continued){/t}</h2>
       <hr />
-      <p>{t}Step 1: Recognize Your Warning Signs of Stress -') ;?></p>
-      <p><?php echo t('The first step in managing stress is to be aware of how it affects you. What are your warning signs and symptoms of stress? The following are signs that may occur when you experience an unusual amount of stress. Answering these questions can help you identify your own warning signs. What is usually your earliest sign of stress? It is important to recognize stress early and do something about it, before it causes you serious problems. For one caregiver, the early sign might be increased irritability. For another, it might be lying awake for hours before falling asleep. For another, it might be fatigue and a lack of energy.{/t}</p>
+      <p>{t}Step 1: Recognize Your Warning Signs of Stress{/t} -</p>
+      <p>{t}The first step in managing stress is to be aware of how it affects you. What are your warning signs and symptoms of stress? The following are signs that may occur when you experience an unusual amount of stress. Answering these questions can help you identify your own warning signs. What is usually your earliest sign of stress? It is important to recognize stress early and do something about it, before it causes you serious problems. For one caregiver, the early sign might be increased irritability. For another, it might be lying awake for hours before falling asleep. For another, it might be fatigue and a lack of energy.{/t}</p>
       <p>{t}Sometimes, too, when we are involved in a situation, we may not listen to our early warning signs, but they are voiced in the words of others: "You look so tired," "You get upset so easily lately," "Why are you snapping at me?" If you hear such statements, it is a "red light" warning sign. Just as a flashing red light on your car\'s dashboard warns you that something is wrong with your car, we also display warning signals. What happens if we ignore the early red flashing light on the car\'s dashboard? What happens if we ignore our personal early warning signals?{/t}</p>
       <p>{t}Do you listen to your early warning signals? What are they? And what do you do about them? Warning signs usually mean we need to stop, valuate what is happening, and make some changes. The earlier warning signals are recognized, the greater the chance of avoiding or reducing the destructive effects of stress.{/t}</p>
       <div class="question">
@@ -2758,8 +2758,8 @@ foreach(array(
   <div class="content">
     <h2 class="flowers">{t}Normal Aging Changes (continued){/t}</h2>
     <hr />
-    <h4>{t}Emotional and Personality Changes') ;?></h4>
-    <p><?php echo t('As we get older, our more dominant personality traits become more pronounced. You may notice that some older people whom you know become “more difficult” to get along with while others become “more mellow” as they age. Some older people may become more concerned about death. Others may feel that they have reached a certain age that their “wisdom” should be respected by everyone and they take offense if someone disagrees or challenges them on an issue.{/t}</p>
+    <h4>{t}Emotional and Personality Changes{/t}</h4>
+    <p>{t}As we get older, our more dominant personality traits become more pronounced. You may notice that some older people whom you know become “more difficult” to get along with while others become “more mellow” as they age. Some older people may become more concerned about death. Others may feel that they have reached a certain age that their “wisdom” should be respected by everyone and they take offense if someone disagrees or challenges them on an issue.{/t}</p>
     <p>{t}As a caregiver, being aware and understanding of some of these changes is important. Showing empathy and compassion to older adults when they may be coping with multiple changes or losses will benefit both the older person and you as caregiver.{/t}</p>
     <p>{t}Emotional, behavioral, and mental change may include depression, memory lapses, inability ot concentrate, or disorientation. It is important to remember that memory lapses are not automatically a sign of dementia or Alzheimer’s Disease! These changes may be caused by a number of factors including:{/t}</p>
     <ul>
@@ -3214,8 +3214,8 @@ foreach(array(
       <p>{t}How Do People Receive Medicaid Benefits?{/t}</p>
       <p>{t}There are two ways to receive Medicaid:{/t}</p>
       <ul>
-        <li>{t}Supplemental Security Income (SSI) -- People who receive a cash grant under SSI and Aid to Dependent Children are automatically eligible for Medicaid benefits.') ;?></li>
-        <li><?php echo t('Medicaid &quot;spend-down&quot; -- This is similar to a deductible or a co-payment that a patient must 
+        <li>{t}Supplemental Security Income (SSI) -- People who receive a cash grant under SSI and Aid to Dependent Children are automatically eligible for Medicaid benefits.{/t}</li>
+        <li>{t}Medicaid &quot;spend-down&quot; -- This is similar to a deductible or a co-payment that a patient must 
         pay every month. Once the patient meets his &quot;spend-down&quot; amount, the patient is eligible for{/t}</li>
         <li>{t}Medicaid for the remainder of the month.{/t}</li>
         <li>{t}Who Is Eligible for Medicaid?{/t}</li>
