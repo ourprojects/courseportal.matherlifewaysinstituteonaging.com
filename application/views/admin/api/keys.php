@@ -1,5 +1,5 @@
 <?php $this->breadcrumbs = array(t('Admin') => Yii::app()->createUrl('admin'), t('API Keys')); ?>
-<h1><?php echo t('API Keys'); ?></h1>
+<h1>{t}API Keys{/t}</h1>
 <div id="single-column">
 <?php 
 $source = Key::model()->findAll();
@@ -19,7 +19,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
         )
 	),
 )); ?>
-<h2><?php echo t('Create New'); ?></h2>
+<h2>{t}Create New{/t}</h2>
 <div class="form">
 	<?php $form = $this->beginWidget('CActiveForm', array(
 			'id' => 'key-create-form',
@@ -48,7 +48,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
 	</div>
 
 	<div class="row submit">
-		<h3><?php echo t('Be sure to write down your key and ID once created. The values cannot be recovered after they are saved.'); ?></h3>
+		<h3>{t}Be sure to write down your key and ID once created. The values cannot be recovered after they are saved.{/t}</h3>
 		<?php echo CHtml::submitButton(t('Add Key')); ?>
 	</div>
 

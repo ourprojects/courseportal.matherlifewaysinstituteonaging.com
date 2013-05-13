@@ -9,28 +9,28 @@ $this->breadcrumbs = array(
   <div class="box-sidebar">
   	<table>
   		<tr>
-  			<th><?php echo t('Statistics'); ?></th>
+  			<th>{t}Statistics{/t}</th>
   		</tr>
   		<tr>
-  			<th><?php echo t('User Since:'); ?></th><td><?php echo $user->created; ?></td>
+  			<th>{t}User Since:{/t}</th><td><?php echo $user->created; ?></td>
   		</tr>
   		<tr>
-  			<th><?php echo t('Activated:'); ?></th><td><?php echo $user->activated === null ? 'No' : $user->activated->date; ?></td>
+  			<th>{t}Activated:{/t}</th><td><?php echo $user->activated === null ? 'No' : $user->activated->date; ?></td>
   		</tr>
   		<tr>
-  			<th><?php echo t('Last Seen:'); ?></th><td><?php echo $user->last_login; ?></td>
+  			<th>{t}Last Seen:{/t}</th><td><?php echo $user->last_login; ?></td>
   		</tr>
   		<tr>
-  			<th><?php echo t('Last Agent:'); ?></th><td><?php echo $user->last_agent; ?></td>
+  			<th>{t}Last Agent:{/t}</th><td><?php echo $user->last_agent; ?></td>
   		</tr>
   		<tr>
-  			<th><?php echo t('Last IP:'); ?></th><td><?php echo $user->last_ip; ?></td>
+  			<th>{t}Last IP:{/t}</th><td><?php echo $user->last_ip; ?></td>
   		</tr>
   	</table>
   </div>
 </div>
 <div class="column-wide">
-  <h1><?php echo t('Viewing User ') . $user->id; ?></h1>
+  <h1>{t}Viewing User ') . $user->id; ?></h1>
   <br />
   <div class="box-white">
 	<div class="form">
@@ -44,7 +44,7 @@ $this->breadcrumbs = array(
 				));
 		?>
 		<p class="note">
-			<span class="required">*</span><?php echo t('Required'); ?>.
+			<span class="required">*</span><?php echo t('Required{/t}.
 		</p>
 		<?php echo $form->errorSummary(array($Avatar, $user)); ?>
 		
@@ -111,7 +111,7 @@ $this->breadcrumbs = array(
 	</div>
   </div>
   <div class="box-white">
-  	<p><?php echo t('Agreements Made');?></p>
+  	<p>{t}Agreements Made{/t}</p>
   	<br />
   	<?php 
   	$agreements = $user->agreements;
