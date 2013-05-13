@@ -16,7 +16,7 @@ class TranslateModule extends CWebModule {
 	 */
 	public function init() {
         $this->defaultController = 'Translate';
-        $dirname = trim(dirname(__FILE__), '/');
+        $dirname = basename(dirname(__FILE__));
 		$this->setImport(array(
             $dirname . '.models.*',
             $dirname . '.controllers.*',

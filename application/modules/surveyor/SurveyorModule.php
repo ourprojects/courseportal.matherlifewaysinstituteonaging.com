@@ -6,7 +6,7 @@ class SurveyorModule extends CWebModule {
 
 	public function init(){
         $this->defaultController = 'Surveyor';
-        $dirname = trim(dirname(__FILE__), '/');
+        $dirname = basename(dirname(__FILE__));
 		$this->setImport(array(
             $dirname . '.models.db.*',
 			$dirname . '.models.forms.*',
