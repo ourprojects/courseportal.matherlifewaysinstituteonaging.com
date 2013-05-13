@@ -41,7 +41,7 @@ return array(
 		
 		'config' => array(
 				'debug' => array(
-						'level' => E_ALL,
+						'level' => 0,
 						'yiiTraceLevel' => 3,
 				),
 		),
@@ -107,7 +107,7 @@ return array(
 				'session' => array(
 						'class' => 'DbHttpSession',
 						'connectionID' => 'db',
-						'autoCreateSessionTable' => defined('YII_DEBUG'),
+						'autoCreateSessionTable' => defined('YII_DEBUG') && YII_DEBUG,
 						'sessionTableName' => '{{yii_session}}'
 				),
 				
@@ -121,7 +121,7 @@ return array(
 						'class' => 'ext.yii-mail.YiiMail',
 						'transportType' => 'php',
 						'viewPath' => 'application.views.mail',
-						'logging' => defined('YII_DEBUG'),
+						'logging' => defined('YII_DEBUG') && YII_DEBUG,
 						'dryRun' => false,
 				),
 				
@@ -156,14 +156,14 @@ return array(
 										'class' => 'CFileLogRoute',
 										'except' => 'system.db.*',
 										'logFile' => 'application.log',
-										'levels' => defined('YII_DEBUG') ? '' : 'error, warning',
+										'levels' => defined('YII_DEBUG') && YII_DEBUG ? '' : 'error, warning',
 								),
 								// DB logging
 								array(
 										'class' => 'CFileLogRoute',
 										'categories' => 'system.db.*',
 										'logFile' => 'db.log',
-										'levels' => defined('YII_DEBUG') ? '' : 'error, warning',
+										'levels' => defined('YII_DEBUG') && YII_DEBUG ? '' : 'error, warning',
 								),
 						),
 				),

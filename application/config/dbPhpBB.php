@@ -1,6 +1,6 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed');
 
-if(defined('YII_DEBUG'))
+if(defined('YII_DEBUG') && YII_DEBUG)
 {
 	return array(
 			'class' => 'CDbConnection',
