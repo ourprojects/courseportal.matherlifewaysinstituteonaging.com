@@ -41,7 +41,7 @@ return array(
 		
 		'config' => array(
 				'debug' => array(
-						'level' => 0,
+						'level' => E_ALL,
 						'yiiTraceLevel' => 3,
 				),
 		),
