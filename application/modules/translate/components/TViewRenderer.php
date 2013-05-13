@@ -21,7 +21,7 @@ class TViewRenderer extends CViewRenderer
 		file_put_contents(
 			$viewFile, 
 			preg_replace_callback(
-				'/\{t\s+(?:category\s*=\s*(\w+?))?\}(.+?)\{\/t\}/s', 
+				'/\{t(?:\s+category\s*=\s*(\w+?))?\}(.+?)\{\/t\}/s', 
 				array(&$this, 'pregReplaceCallback'), 
 				file_get_contents($sourceFile)
 			)
