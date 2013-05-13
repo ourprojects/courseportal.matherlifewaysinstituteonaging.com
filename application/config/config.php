@@ -145,6 +145,7 @@ return array(
 						'class'=>'UrlManager',
 						'urlFormat' => 'path',
 						'showScriptName' => false,
+						'translateComponentId' => 'translate',
 						'rules' => require('routes.php'),
 				),
 				

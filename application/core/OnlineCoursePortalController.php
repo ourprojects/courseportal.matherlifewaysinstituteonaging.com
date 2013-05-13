@@ -14,7 +14,14 @@ abstract class OnlineCoursePortalController extends CController {
 	 */
 	public $breadcrumbs = array();
 	
-	private $_assetsUrl = '';
+	public $defaultMissingAction = 'static';
+	
+	public $defaultMissingActionConfig = array(
+			'class' => 'application.components.ViewAction', 
+			'viewParam' => 'view'
+	);
+	
+	private $_assetsUrl;
 	
 	/**
 	 * Basic initialiser to the base controller class
@@ -73,46 +80,43 @@ abstract class OnlineCoursePortalController extends CController {
 	}
 	
 	public function actions() {
-		return array(
-				'static' => 'application.components.ViewAction',
+		$actions = array_merge(array(
 				'download' => 'ext.HTTP_Download.components.HTTP_DownloadAction',
-		);
+		));
+		if(isset($this->defaultMissingAction))
+		{
+			$actions = array_merge($actions, array($this->defaultMissingAction => $this->defaultMissingActionConfig));
+		}
+		return $actions;
 	}
 	
-	public function run($actionID) {
-		if(($action = $this->createAction($actionID)) !== null) {
-			if(($parent = $this->getModule()) === null)
-				$parent = Yii::app();
-			Yii::app()->getUrlManager()->parsePathInfoSegments();
-			if($parent->beforeControllerAction($this, $action)) {
-				if($this->getModule() === null) {
-					$assetsDir = Yii::getPathOfAlias('application.assets.' . $this->getId());
-					if(is_dir($assetsDir))
-						$this->_assetsUrl = Yii::app()->assetManager->publish($assetsDir, false, -1, YII_DEBUG);
-				}
-				$this->runActionWithFilters($action, $this->filters());
-				$parent->afterControllerAction($this, $action);
-			}
+	public function missingAction($actionID)
+	{
+		if(!isset($this->defaultMissingAction) || $actionID === $this->defaultMissingAction)
+		{
+			parent::missingAction($actionID);
 		}
 		else
-			$this->missingAction($actionID);
+		{
+			if(isset($this->defaultMissingActionConfig['viewParam']))
+			{
+				$_GET[$this->defaultMissingActionConfig['viewParam']] = CArray::array_flatten($_GET);
+				array_unshift($_GET[$this->defaultMissingActionConfig['viewParam']], $actionID);
+			}
+			$this->run($this->defaultMissingAction);
+		}
 	}
 	
-	public function createAction($actionID, $missingAction = 'static') {
-		if($this->getModule() !== null && 
-				$actionID === '' && 
-				Yii::app()->getUrlManager()->hasPathInfoSegments() &&
-				($action = parent::createAction(Yii::app()->getUrlManager()->peekPathInfoSegment())) !== null) {
-			Yii::app()->getUrlManager()->popPathInfoSegment();
-			return $action;
+	public function getAssetsUrl()
+	{
+		if(!isset($this->_assetsUrl) && $this->getModule() === null) {
+			$assetsDir = Yii::getPathOfAlias('application.assets.' . $this->getId());
+			if(is_dir($assetsDir))
+				$this->_assetsUrl = Yii::app()->assetManager->publish($assetsDir, false, -1, YII_DEBUG);
+			else
+				$this->_assetsUrl = '';
 		}
-		$action = parent::createAction($actionID);
-		if($action === null) {
-			$action = parent::createAction($missingAction);	
-			if($action !== null)
-				Yii::app()->getUrlManager()->pushPathInfoSegment($actionID);
-		}
-		return $action;
+		return $this->_assetsUrl;
 	}
 
     /**
@@ -127,20 +131,16 @@ abstract class OnlineCoursePortalController extends CController {
         Yii::import("ext.$extension.$className", true);
     }
     
-    public function getAssetsUrl() {
-    	return $this->_assetsUrl;
-    }
-    
     public function getStylesUrl($file = '') {
-    	return "{$this->_assetsUrl}/styles/$file";
+    	return $this->getAssetsUrl() . '/styles/' . $file;
     }
     
     public function getScriptsUrl($file = '') {
-    	return "{$this->_assetsUrl}/scripts/$file";
+    	return $this->getAssetsUrl() . '/scripts/' . $file;
     }
     
     public function getImagesUrl($file = '') {
-    	return "{$this->_assetsUrl}/images/$file";
+    	return $this->getAssetsUrl() . '/images/' . $file;
     }
     
     /**
