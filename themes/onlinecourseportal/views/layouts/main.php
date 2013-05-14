@@ -15,14 +15,19 @@
 	<?php echo CHtml::cssFile(Yii::app()->getTheme()->getStylesUrl('main.css')); ?>
 	<?php Yii::app()->getClientScript()->registerScriptFile(Yii::app()->getTheme()->getScriptsUrl('main.js'), CClientScript::POS_HEAD); ?>
 	<title>
-		<?php 
-		$this->pageTitle = Yii::app()->name;
-		foreach($this->breadcrumbs as $label => $url) {
+		<?php
+		$this->pageTitle = t(Yii::app()->name);
+		
+		$breadcrumbs = property_exists($this, 'breadcrumbs') ? $this->breadcrumbs : array();
+		
+		foreach($breadcrumbs as $label => $url) 
+		{
 			if(is_string($label))
 				$this->pageTitle .= " - $label";
 			else if(is_string($url))
 				$this->pageTitle .= " - $url";
 		}
+		
 		echo CHtml::encode($this->pageTitle); 
 		?>
 	</title>
@@ -37,15 +42,50 @@
 				<div id="logo">
 					<img src="<?php echo Yii::app()->getTheme()->getImagesUrl('logo.png'); ?>" alt="{t}Logo{/t}" />
 				</div>
-				<div id="site-title"><?php echo Yii::app()->name; ?></div>
+				<div id="site-title"><?php echo t(Yii::app()->name); ?></div>
 				<div id="language-menu"><?php $this->widget('modules.translate.widgets.acceptedLanguage.ALSelector'); ?></div>
 				<?php if(!empty(MPTranslate::$messages) && Yii::app()->getUser()->getIsAdmin()): ?>
 					<div id="translate-button">
-						<?php echo Yii::app()->translate->translateLink('Missing Translations on Page', 'button'); ?>	
+						<?php echo Yii::app()->getComponent('translate')->translateLink('Missing Translations on Page', 'button'); ?>	
 					</div>
 				<?php endif; ?>
 				<div id="mainmenu">
-					<?php $this->widget('zii.widgets.CMenu', $this->menuAttrs); ?>
+					<?php 
+						$user = Yii::app()->getUser();
+						$this->widget(
+								'zii.widgets.CMenu', 
+								array('items' => array(
+										array('label' => '<span id="menu-home" title="'.t('Home').'"></span>',
+												'url' => Yii::app()->createAbsoluteUrl('home/index')),
+										array('label' => '<span id="menu-contact" title="'.t('Contact Us').'"></span>',
+												'url' => Yii::app()->createAbsoluteUrl('home/contact')),
+										array('label' => '<span id="menu-register" title="'.t('Register').'"></span>',
+												'url' => Yii::app()->createAbsoluteUrl('user/register'),
+												'visible' => $user->getIsGuest()),
+										array('label' => '<span id="menu-login" title="'.t('Login').'"></span>',
+												'url' => Yii::app()->createAbsoluteUrl('user/login'),
+												'visible' => $user->getIsGuest()),
+										array('label' => '<span id="menu-profile" title="'.t('Profile / Files').'"></span>',
+												'url' => Yii::app()->createAbsoluteUrl('user/profile'),
+												'visible' => !$user->getIsGuest()),
+										array('label' => '<span id="menu-forum" title="'.t('Forum').'"></span>',
+												'url' => Yii::app()->getComponent('phpBB')->getForumUrl(),
+												'linkOptions' => array('target' => '_blank'),
+												'visible' => !$user->getIsGuest()),
+										array('label' => '<span id="menu-courses" title="'.t('Courses').'"></span>',
+												'url' => Yii::app()->createAbsoluteUrl('course/index'),
+												'visible' => !$user->getIsGuest()),
+										array('label' => '<span id="menu-admin" title="'.t('Admin').'"></span>',
+												'url' => Yii::app()->createAbsoluteUrl('admin/index'),
+												'visible' => $user->getIsAdmin()),
+										array('label' => '<span id="menu-logout" title="'.t('Logout').'"></span>',
+												'url' => Yii::app()->createAbsoluteUrl('user/logout'),
+												'visible' => !$user->getIsGuest())
+									),
+									'encodeLabel' => false
+								)
+						); 
+					?>
 				</div>
 			</div>
 			<!-- header -->
@@ -53,7 +93,7 @@
 				<?php 
 				$this->widget('zii.widgets.CBreadcrumbs', 
 						array_merge(
-							array('links' => $this->breadcrumbs), 
+							array('links' => $breadcrumbs), 
 							$this->getModule() === null ? array() : 
 								array('homeLink' => CHtml::link(t('Home'), $this->createUrl($this->getModule()->defaultController.'/')))
 						)

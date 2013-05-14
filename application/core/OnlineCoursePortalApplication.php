@@ -15,10 +15,10 @@ class OnlineCoursePortalApplication extends CWebApplication {
     * @return void
     */
     public function __construct($config = null) {
-    	if(is_string($config))
-    		$this->config = require $config;
-    	else
+    	if(is_array($config))
     		$this->config = $config;
+    	else if(isset($config))
+    		$this->config = require strval($config);
         parent::__construct($this->config);
     }
     
