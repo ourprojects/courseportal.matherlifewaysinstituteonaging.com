@@ -93,9 +93,9 @@
 						'data = $.parseJSON(data);' .
 						"if($.isEmptyObject(data)) {" .
 							'$("#'.$submitButton['htmlOptions']['id'].'").css("display", "none");' .
-							'alert("Your response has been submitted successfully!");' .
+							'alert("'.Surveyor::t('Your response has been submitted successfully!').'");' .
 						'} else {' .
-							'var alertText = "Please correct the following errors and try again.";' .
+							'var alertText = "'.Surveyor::t('Please correct the following errors and try again.').'";' .
 							"$.each(data, function(error, message) {" .
 								'alertText += "\r\n" + error + "\r\n\t" + message;' .
 							'});' .
@@ -105,10 +105,10 @@
 				$submitButton['ajaxOptions']['success'] .= '}';
 			}
 			if(!isset($submitButton['ajaxOptions']['error']))
-				$submitButton['ajaxOptions']['error'] = 'function(data) { alert("A server error ocurred. Please try again later."); }';
-			echo CHtml::ajaxSubmitButton(Surveyor::t($submitButton['label']), $form['options']['action'], $submitButton['ajaxOptions'], $submitButton['htmlOptions']);
+				$submitButton['ajaxOptions']['error'] = 'function(data) { alert("'.Surveyor::t('A server error ocurred. Please try again later.').'"); }';
+			echo CHtml::ajaxSubmitButton($submitButton['label'], $form['options']['action'], $submitButton['ajaxOptions'], $submitButton['htmlOptions']);
 		} else {
-			echo CHtml::submitButton(Surveyor::t($submitButton['label']), $submitButton['htmlOptions']);
+			echo CHtml::submitButton($submitButton['label'], $submitButton['htmlOptions']);
 		}
 		$this->endWidget();
 	}
