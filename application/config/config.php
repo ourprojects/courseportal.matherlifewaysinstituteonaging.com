@@ -66,9 +66,9 @@ return array(
 						'class' => 'DbMessageSource',
 						'forceTranslation' => false,
 						'onMissingTranslation' => array('MPTranslate', 'missingTranslation'),
-						'acceptedLanguageTable' => '{{accepted_language}}',
-						'sourceMessageTable' => '{{message_source}}',
-						'translatedMessageTable' => '{{message}}',
+						'acceptedLanguageTable' => '{{translate_accepted_language}}',
+						'sourceMessageTable' => '{{translate_message_source}}',
+						'translatedMessageTable' => '{{translate_message}}',
 				),
 				
 				'surveyor' => array(
@@ -164,6 +164,13 @@ return array(
 										'class' => 'CFileLogRoute',
 										'categories' => 'system.db.*',
 										'logFile' => 'db.log',
+										'levels' => defined('YII_DEBUG') && YII_DEBUG ? '' : 'error, warning',
+								),
+								// Translation logging
+								array(
+										'class' => 'CFileLogRoute',
+										'categories' => 'module.translate.*',
+										'logFile' => 'translate.log',
 										'levels' => defined('YII_DEBUG') && YII_DEBUG ? '' : 'error, warning',
 								),
 						),
