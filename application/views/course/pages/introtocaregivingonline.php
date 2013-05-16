@@ -128,7 +128,7 @@ foreach(array(
         <p>{t}We hope you enjoy and learn from this course and would appreciate any feedback along the way. Best of luck!{/t}</p>
         <h5>{t}In this lesson, we will:{/t}</h5>
         <ul>
-          <li>{t}Locate, define and summarize caregiving and it\'s characteristics{/t}</li>
+          <li>{t}Locate, define and summarize caregiving and it's characteristics{/t}</li>
           <li>{t}Describe the caregiver role{/t}</li>
           <li>{t}Eplore different types of US caregivers{/t}</li>
         </ul>
@@ -147,7 +147,7 @@ foreach(array(
       <div class="content">
         <h2 class="flowers">{t}Defining Caregiving{/t}</h2>
         <hr />
-        <p>{t}Cargiving is a person who provides direct care (children, elderly people, the chronically ill). The Family Caregiver Alliance defines the term caregiver as "anyone who provides assistance to someone else who is, to some degree, incapacitated and needs help performing the daily tasks essential to living a normal life." This would include persons providing care for: a husband who has suffered a stroke, a wife with Parkinson\'s disease, a mother-in-law with cancer, a grandfather with Alzheimer\'s disease, a loved one with traumatic brain injury, a friend with AIDS, or a child with muscular dystrophy.{/t}</p>
+        <p>{t}Cargiving is a person who provides direct care (children, elderly people, the chronically ill). The Family Caregiver Alliance defines the term caregiver as "anyone who provides assistance to someone else who is, to some degree, incapacitated and needs help performing the daily tasks essential to living a normal life." This would include persons providing care for: a husband who has suffered a stroke, a wife with Parkinson's disease, a mother-in-law with cancer, a grandfather with Alzheimer's disease, a loved one with traumatic brain injury, a friend with AIDS, or a child with muscular dystrophy.{/t}</p>
         <p>{t}For our purposes, a caregiver is an unpaid family member, friend, or neighbor who provides care to an individual who has an acute or chronic condition and needs assistance to manage a variety of tasks, from bathing, to medication administration, to symptom monitoring.{/t}</p>
         <div id="question" class="question">
           <p> {t}Please conduct your own search for other definitions of "caregiving" on the Internet.{/t} </p>
@@ -209,8 +209,8 @@ foreach(array(
         <hr />
         <p>{t}The caregiver must be able to listen and focus on these needs through verbal and nonverbal messages of the person receiving care. They must develop a strategy over the years, keeping in mind the caregiver at all times, maintaining respect and understanding cultural and religious differences. Caregivers contribute more than any other member of the health team to the physical, psychological, spiritual, and most important, social aspects of a person’s care. Now, let us look at a real-life caregiving sitiuation and see how one family copes.{/t}</p>
         <h5>MediaStorm.com Publications</h5>
-        <p>{t}Filmmaker-photographer couple Julie Winokur and Ed Kashi were busy pursuing their careers and raising two children when Winokur\'s 83-year-old father, Herbie, became too infirm to care for himself. At that moment they joined some twenty million other Americans who make up the sandwich generation, those who find themselves responsible for the care of both their children and their aging parents.{/t}</p>
-        <p>{t}Authors of the book{/t}"Aging in America: The Years Ahead,"{t}which chronicles the country\'s fastest-growing segment of the population, Winokur and Kashi decided to tell their own story as they took on the care of Winokur\'s father. In The Sandwich Generation, they have created an honest, intimate account of their own shifting — and challenging — responsibilities, as well as some of their unexpected joys.{/t}</p>
+        <p>{t}Filmmaker-photographer couple Julie Winokur and Ed Kashi were busy pursuing their careers and raising two children when Winokur's 83-year-old father, Herbie, became too infirm to care for himself. At that moment they joined some twenty million other Americans who make up the sandwich generation, those who find themselves responsible for the care of both their children and their aging parents.{/t}</p>
+        <p>{t}Authors of the book{/t}"Aging in America: The Years Ahead,"{t}which chronicles the country's fastest-growing segment of the population, Winokur and Kashi decided to tell their own story as they took on the care of Winokur's father. In The Sandwich Generation, they have created an honest, intimate account of their own shifting — and challenging — responsibilities, as well as some of their unexpected joys.{/t}</p>
         <p style="width:400px; height:340px; margin-left:25px;"><script type="text/javascript" src="http://mediastorm.com/player/embed.php?id=e4eb092b527c88685918&w=400&h=340&amp;lang=none"></script></p>
         <br />
         <br />
@@ -224,7 +224,7 @@ foreach(array(
       <div class="content">
         <h2 class="flowers">{t}Types of Caregivers in the US{/t}</h2>
         <hr />
-        <p>{t}While many consider careing for a parent and/or grandparent the summation of the term \'caregiving,\' there are many more roles that are included when defining caregiving. As you have read in the reports listed above, careing for those other than our parents and/or grandparents also puts you in a caregiving role.{/t}</p>
+        <p>{t}While many consider careing for a parent and/or grandparent the summation of the term 'caregiving,' there are many more roles that are included when defining caregiving. As you have read in the reports listed above, careing for those other than our parents and/or grandparents also puts you in a caregiving role.{/t}</p>
         <p>{t}As reported by the{/t}Caregiver Network Resource, {t}caregiveres are wives, husbands, parents, children, friends, employees… Types of caregivers include:{/t}</p>
         <ul>
           <li>{t}<b>Crisis Caregiver</b>: Your family member manages most of the time on their own until there is an emergency.{/t}</li>
@@ -318,25 +318,25 @@ foreach(array(
           <li>{t}47% of working caregivers indicate an increase in caregiving expenses has caused them to use up ALL or MOST of their savings.{/t}</li>
           <li>{t}The average family caregiver for someone 50 years or older spends $5,531 per year on out of pocket caregiving expenses in 2007 which was more than 10% of the median income for a family caregiver that year.{/t}</li>
         </ul>
-        <p>{t}Impact on Family Caregiver\'s Health{/t}</p>
+        <p>{t}Impact on Family Caregiver's Health{/t}</p>
         <ul>
           <li>{t}23% of family caregivers caring for loved ones for 5 years or more report their health is fair or poor.{/t}</li>
-          <li>{t}Stress of family caregiving for persons with dementia has been shown to impact a person\'s immune system for up to three years after their caregiving ends thus increasing their chances of developing a chronic illness themselves.{/t}</li>
+          <li>{t}Stress of family caregiving for persons with dementia has been shown to impact a person's immune system for up to three years after their caregiving ends thus increasing their chances of developing a chronic illness themselves.{/t}</li>
           <li>{t}Nearly three quarters (72%) of family caregivers report not going to the doctor as often as they should and 55% say they skip doctor appointments for themselves. 63% of caregivers report having poor eating habits than non-caregivers and 58% indicate worse exercise habits than before caregiving responsibilities.{/t}</li>
           <li>{t}20% of employed female caregivers over 50 years old report symptoms of depression compared to 8% of their non-caregiving peers.{/t}</li>
           <li>{t}40% to 70% of family caregivers have clinically significant symptoms of depression with approximately a quarter to half of these caregivers meet the diagnostic criteria for major depression.{/t}</li>
           <li>{t}More than 1 in 10 (11%) of family caregivers report that caregiving has caused their physical health to deteriorate.{/t}</li>
-          <li>{t}A wife\'s hospitalization increased her husband\'s chances of dying within a month by 35%. A husband\'s hospitalization boosted his wife\'s mortality risk by 44%.{/t}</li>
-          <li>{t}Family caregivers experiencing extreme stress have been shown to age prematurely. This level of stress can take as much as 10 years off a family caregiver\'s life.{/t}</li>
+          <li>{t}A wife's hospitalization increased her husband's chances of dying within a month by 35%. A husband's hospitalization boosted his wife's mortality risk by 44%.{/t}</li>
+          <li>{t}Family caregivers experiencing extreme stress have been shown to age prematurely. This level of stress can take as much as 10 years off a family caregiver's life.{/t}</li>
         </ul>
         <p>{t}Caregiving and Work{/t}</p>
         <ul>
           <li>{t}Six in 10 family caregivers are employed.{/t}</li>
           <li>{t}73% of family caregivers who care for someone over the age of 18 either work or have worked while providing care; 66% have had to make some adjustments to their work life, from reporting late to work to giving up work entirely; and 1 in 5 family caregivers have had to take a leave of absence.{/t}</li>
           <li>{t}64% of working parents caring for a special needs child believe that caregiving responsibility has negatively impacted their work performance.{/t}</li>
-          <li>{t}American businesses can lose as much as $34 billion each year due to employees\' need to care for loved ones 50 years of age and older.{/t}</li>
+          <li>{t}American businesses can lose as much as $34 billion each year due to employees' need to care for loved ones 50 years of age and older.{/t}</li>
           <li>{t}Caregivers caring for elderly loved ones cost employers 8% more in health care costs estimated to be worth $13.4 billion per year.{/t}</li>
-          <li>{t}Over 65% of employers believe that health benefits improve employees\' health. Sixty percent (60%) believe it increases moral and 39% believe it increases productivity.{/t}</li>
+          <li>{t}Over 65% of employers believe that health benefits improve employees' health. Sixty percent (60%) believe it increases moral and 39% believe it increases productivity.{/t}</li>
         </ul>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
@@ -353,12 +353,12 @@ foreach(array(
         <p>{t}Caregiving Self-Awareness{/t}</p>
         <ul>
           <li>{t}Over 90% of family caregivers become more proactive about seeking resources and skills they need to assist their care recipient after they have self-identified.{/t}</li>
-          <li>{t}83% of self-identified family caregivers believe their self-awareness led to increased confidence when talking to healthcare professionals about their loved one\'s care.{/t}</li>
+          <li>{t}83% of self-identified family caregivers believe their self-awareness led to increased confidence when talking to healthcare professionals about their loved one's care.{/t}</li>
           <li>{t}For over 75% of family caregivers it was the act of helping their loved one with personal care that contributed to their self-identification.{/t}</li>
-          <li>{t}For 60% of family caregivers, their loved one\'s diagnosis and their interaction with the health care system made them aware that they were family caregivers.{/t}</li>
+          <li>{t}For 60% of family caregivers, their loved one's diagnosis and their interaction with the health care system made them aware that they were family caregivers.{/t}</li>
         </ul>
         <p>{t}State by State Statistics{/t}</p>
-        <p>{t}The economic value of family caregiving is detailed here in a state-by-state comparison of the number of family caregivers in the country, the number of hours they spend on caregiving responsibilities, and the market value of those services. As noted above the most recent estimate of the value of family caregivers\' services is $306 billion annually. This report is based on the state-by-state statistics for 2004 and prepared in August of 2006 by NFCA and the Family Caregiver Alliance\'s National Center of Caregiving in conjunction with Peter S. Arno, PhD, Department of Epidemiology and Population Health, Montefiore Medical Center, Albert Einstein College of Medicine. The data and methodology are based on Dr. Arno\'s previous study, Economic Value of Informal Caregiving: 2004.{/t}</p>
+        <p>{t}The economic value of family caregiving is detailed here in a state-by-state comparison of the number of family caregivers in the country, the number of hours they spend on caregiving responsibilities, and the market value of those services. As noted above the most recent estimate of the value of family caregivers' services is $306 billion annually. This report is based on the state-by-state statistics for 2004 and prepared in August of 2006 by NFCA and the Family Caregiver Alliance's National Center of Caregiving in conjunction with Peter S. Arno, PhD, Department of Epidemiology and Population Health, Montefiore Medical Center, Albert Einstein College of Medicine. The data and methodology are based on Dr. Arno's previous study, Economic Value of Informal Caregiving: 2004.{/t}</p>
         <p>{t}Search the Web for additional details or for greater explanations of these topics. Also, search and download and read the following report from the Web: 2011 Alzheimer’s Disease Facts and Figures.{/t}</p>
         <p>{t}While these published statistics are a great resource for caregivers, they can be easily and quickly get out-dated. Search the Web, and post to the Forum, any updated data and/or statistics for the US or your State/Region.{/t}</p>
       </div>
@@ -466,7 +466,7 @@ foreach(array(
         <p>{t}Types of Challenges{/t}</p>
         <p>{t}Physical -{/t}</p>
         <p>{t}Elder care provides a number of unique opportunities as well as challenges to adult children, family members and friends. Challenges to providing in home care may range from the physical to the emotional to the mental.{/t}</p>
-        <p>{t}You may be physically fit, but mentally unable to provide special care for an individual diagnosed with late-stage Alzheimer\'s disease. Or, you may be emotionally and mentally able to care for the needs of an elderly person, but be physically weak in body, which may lead to less than quality of in home care and as such safe care for your loved one.{/t}</p>
+        <p>{t}You may be physically fit, but mentally unable to provide special care for an individual diagnosed with late-stage Alzheimer's disease. Or, you may be emotionally and mentally able to care for the needs of an elderly person, but be physically weak in body, which may lead to less than quality of in home care and as such safe care for your loved one.{/t}</p>
         <p>{t}Understanding the unique challenges that face in home care givers today will help you make educated, safe and effective decisions regarding care for your parent, grandparent, or other elderly loved one.{/t}</p>
         <p>{t}More people today are providing in home care of elderly relatives rather than placing them in long-term care or nursing facilities due to increasing health care costs. However, the convenience of caring for an elderly person in their own home, or moving them into yours, should always be balanced with safety and quality care.{/t}</p>
         <p>{t}If you are a 125-pound middle aged caregiver to an elderly parent who weighs more than you do, you may regularly face physical challenges to providing safe and effective care. The same goes for a physically strong person who must continually care for even frail individuals who weigh 100 pounds or less. For example, the strain of transferring, lifting, turning and helping with the physical needs of an individual incapable of bearing part or all of their own weight is difficult even in the best of circumstances.{/t}</p>
@@ -547,7 +547,7 @@ foreach(array(
       <div class="content">
         <h2 class="flowers">{t}Long Distance Caregiver - Challenges and Solutions{/t}</h2>
         <hr />
-        <p>{t}Families who struggle to care for a parent across the miles have a unique disadvantage. They cannot be there to know what is really happening. It is often difficult and frustrating to reach doctors or social service agencies and to be able to coordinate the needed care. The older parent may forget what the doctor has told them, or choose not to “burden” their child with problematic information. Indeed, many adult children are not aware that there is a problem until a visit is made, and they see the changes in the parent\'s physical, mental or emotional functioning. Situations that might occur would involve the following scenarios:{/t}</p>
+        <p>{t}Families who struggle to care for a parent across the miles have a unique disadvantage. They cannot be there to know what is really happening. It is often difficult and frustrating to reach doctors or social service agencies and to be able to coordinate the needed care. The older parent may forget what the doctor has told them, or choose not to “burden” their child with problematic information. Indeed, many adult children are not aware that there is a problem until a visit is made, and they see the changes in the parent's physical, mental or emotional functioning. Situations that might occur would involve the following scenarios:{/t}</p>
         <ul>
           <li>{t}The older parent is a danger to himself{/t}</li>
           <li>{t}There are safety issues in the home environment{/t}</li>
@@ -658,8 +658,8 @@ foreach(array(
         <h2 class="flowers">{t}Impact on the workplace{/t}</h2>
         <hr />
         <p>{t}Increasingly, American workers can expect to be ground between two millstones. The graying of the population means that more workers will have an elderly relative or friend to care for at the same time as they are juggling work and other family responsibilities. According to the 2009 national caregiver survey conducted by the National Alliance for Caregiving and AARP, 65 million people, 29% of the US population, provides care for someone. Nearly two-thirds of family caregivers work full or part-time, and over half of these caregivers report that they have had to make some sort of workplace accommodation, such as coming in late to work or leaving early, dropping back to part-time, turning down a promotion, choosing early retirement, or giving up work entirely.{/t}</p>
-        <p>{t}What are the implications of these workplace accommodations? More and more employees will be faced with caregiving responsibilities that will affect their finances and their health, and their employers\' bottom line. It is estimated that working caregivers’ accommodations cost U.S. employers billions of dollars per year in lost productivity and the average family caregiver for someone 50 years or older spends $5,531 per year on out of pocket caregiving expenses in 2007 which was more than 10% of the median income for a family caregiver that year.{/t}</p>
-        <p>{t}Caregivers\' ability to stay in the workforce{/t}</p>
+        <p>{t}What are the implications of these workplace accommodations? More and more employees will be faced with caregiving responsibilities that will affect their finances and their health, and their employers' bottom line. It is estimated that working caregivers’ accommodations cost U.S. employers billions of dollars per year in lost productivity and the average family caregiver for someone 50 years or older spends $5,531 per year on out of pocket caregiving expenses in 2007 which was more than 10% of the median income for a family caregiver that year.{/t}</p>
+        <p>{t}Caregivers' ability to stay in the workforce{/t}</p>
         <p>{t}Caregiving for someone with significant disabilities can place great demands on a caregiver’s time. Therefore, it is not surprising that there are working-age individuals who leave the labor force to care for a loved one. Yet other working-age individuals are able to continue to work while providing care. To better understand this, two questions are asked:{/t}</p>
         <ol>
           <li>{t}What factors make it possible for a caregiver to remain in the workforce, even when providing significant care to a disabled individual?{/t}</li>
@@ -783,7 +783,7 @@ foreach(array(
       <div class="content">
         <h2 class="flowers">{t}Employers Response to the Needs of Working Caregivers (continued){/t}</h2>
         <hr />
-        <p>{t}Underlying all of these factors has been a concern with productivity and profitability. In fact, concern with the “bottom line” has been the primary catalyst for employer response to employees\' family-related needs. Changes in personnel practices are motivated less by concerns about the personal and family lives of employees than by specific business problems, such as absenteeism and tardiness, difficulties in recruiting and retaining employees, employee reluctance to relocate, poor labor-management relations, or rising benefit costs. The quality of care available for children and elders has also been of concern to employers, for similar reasons: To the extent that care provided by non-family members is substandard, employees may decide to quit work to provide care themselves, jeopardizing the productivity of American business.{/t}</p>
+        <p>{t}Underlying all of these factors has been a concern with productivity and profitability. In fact, concern with the “bottom line” has been the primary catalyst for employer response to employees' family-related needs. Changes in personnel practices are motivated less by concerns about the personal and family lives of employees than by specific business problems, such as absenteeism and tardiness, difficulties in recruiting and retaining employees, employee reluctance to relocate, poor labor-management relations, or rising benefit costs. The quality of care available for children and elders has also been of concern to employers, for similar reasons: To the extent that care provided by non-family members is substandard, employees may decide to quit work to provide care themselves, jeopardizing the productivity of American business.{/t}</p>
         <p>{t}Despite the evidence provided by research in regard to the prevalence and costs of elder care among employees, work-based programs addressing employees’ elder care needs continue to lag behind child care programs in the workplace. Moreover, large employers are much more likely than smaller employers to offer elder care programs at work. One current estimate of access to elder care programming is that one in four companies with more than 100 employees offer such programs. Smaller employers are considerably less likely to have formal elder care programs in place for their employees, and most workers in the U.S. are employed by small businesses. For example, 87% of American employers have fewer than 20 employees. At the same time, small and mid-sized companies are more likely to have informal policies that support working caregivers. For example, sometimes supervisors will allow workers to take time off during the day when needed to handle their family caregiving responsibilities and then make that time up later.{/t}</p>
         <p>{t}Types of formal caregiving programs that employers offer{/t}</p>
         <p>{t}Organizations offer a variety of workplace supports to help their employees manage their work and family responsibilities. Some, such as flexible work schedules, job sharing, leave policies, flexible benefits plans, and employer-sponsored group long term care insurance, are not intended specifically or exclusively for employees who have elder care responsibilities, but they can be extremely beneficial to working caregivers. The feasible approaches for a particular organization vary with the size and culture of the organization.{/t}</p>
@@ -794,7 +794,7 @@ foreach(array(
           <li>{t}family leave (preferably paid),{/t}</li>
           <li>{t}exercise facilities/wellness programs/or club memberships at reduced cost (as employees who have elder-care responsibilities often do not take the time to look after their own health needs),{/t}</li>
           <li>{t}avoidance of mandated overtime, and{/t}</li>
-          <li>{t}minimizing required transfers, but when they are necessary, assisting in the search for elder care resources and providing job-finding services for the employee\'s spouse in the new location.{/t}</li>
+          <li>{t}minimizing required transfers, but when they are necessary, assisting in the search for elder care resources and providing job-finding services for the employee's spouse in the new location.{/t}</li>
         </ul>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo;</a></div>
@@ -828,7 +828,7 @@ foreach(array(
         <ul>
           <li>{t}Quickly describe the past and discuss a possible future for caregivers{/t}</li>
           <li>{t}Discuss the upcoming generation of caregivers{/t}</li>
-          <li>{t}Explore and discuss how the \'Technology Revolution\' will impact US caregiving{/t}</li>
+          <li>{t}Explore and discuss how the 'Technology Revolution' will impact US caregiving{/t}</li>
         </ul>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button right"	onclick="$.fancybox.next();">{t}Start Course &raquo;{/t}</a></div>
@@ -876,7 +876,7 @@ foreach(array(
         <h2 class="flowers">{t}The Next Caregiver Generation{/t}</h2>
         <hr />
         <p>{t}Seventy-six million American children were born between 1945 and 1964, representing a cohort that is significant on account of its size alone. A baby boomer is a person who was born during the demographic Post-World War II baby boom and who grew up during the period between 1945 and 1964. The term "baby boomer" is sometimes used in a cultural context. Therefore, it is impossible to achieve broad consensus of a precise definition, even within a given territory. Different groups, organizations, individuals, and scholars may have widely varying opinions on what constitutes a baby boomer, both technically and culturally{/t}</p>
-        <p>{t}The words "sandwich generation" today are a new term in society\'s long history of the written language. This term is now found in the latest editions of the Oxford English Dictionary and the Webster\'s Collegiate Dictionary. These "Sandwich Generationers," are those sandwiched between aging parents and their own children. As more baby boomers become both sandwich generationers and seniors, the need to understand aging dynamics and family relationships increases dramatically. It is not easy to become elderly or a parent to your parent(s). After all, our society "says" adults should be able to take care of themselves. But, as more live well into their 80s and 90s and families are dispersed across the country, everyone is going to be involved somehow, some way, in elder care. If not today, then tomorrow.{/t}</p>
+        <p>{t}The words "sandwich generation" today are a new term in society's long history of the written language. This term is now found in the latest editions of the Oxford English Dictionary and the Webster's Collegiate Dictionary. These "Sandwich Generationers," are those sandwiched between aging parents and their own children. As more baby boomers become both sandwich generationers and seniors, the need to understand aging dynamics and family relationships increases dramatically. It is not easy to become elderly or a parent to your parent(s). After all, our society "says" adults should be able to take care of themselves. But, as more live well into their 80s and 90s and families are dispersed across the country, everyone is going to be involved somehow, some way, in elder care. If not today, then tomorrow.{/t}</p>
         <p>{t}With so many baby boomers entering the market each year, careing for their parents, we must also remember that they too will need care at some point in the future. This is a large concern and responsibility for the baby boomers, but also a large responsibility for the generation right behind the baby boomers. As reported by a national survey from 1998 by The National Caregiving Alliance:{/t}</p>
         <ul>
           <li>{t}Over half of the caregivers feel relatively unprepared for their own possible long term care. That is, they feel only a little or not at all prepared. Only six percent feel very well prepared, and 42 percent feel somewhat prepared.{/t}</li>

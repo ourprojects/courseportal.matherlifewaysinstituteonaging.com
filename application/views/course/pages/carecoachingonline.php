@@ -565,7 +565,7 @@ chicken for lunch today. So I think I’d like to try their fish!”{/t}</i></p>
     
     <div id="lesson-2-slide-5" class="course-slide">
       <div class="content">
-        <h2 class="flowers">{t}Exercise – Understanding Your Parents\' Needs and Preferences{/t}</h2>
+        <h2 class="flowers">{t}Exercise – Understanding Your Parents' Needs and Preferences{/t}</h2>
         <hr />
         <p> <a href="<?php echo $this->getImagesUrl('CCO/Assets/ExerciseUnderstandingNeedsandPreferences.pdf'); ?>" target="_blank"><img src="<?php echo $this->getImagesUrl('pdf-icon.png'); ?>" alt="image" class="normal" /></a> {t}This exercise is designed to help you determine what you know and do not know about your parents needs and preferences.  Determining this now will help you on the road of communicating more openly about your parents’ future wishes to reduce your experience of burden, confusion, and guilt as a caregiver.  Everyone has a different level of knowledge when it comes to the following information, so do not feel overwhelmed if you do not recall or have not addressed some of these areas with your parents.{/t}</p>
       </div>
@@ -603,7 +603,7 @@ chicken for lunch today. So I think I’d like to try their fish!”{/t}</i></p>
         </ul>
         <p>{t}<b>Timing</b> - Plan to set aside time for conversations with your parents. Be respectful and ask them when would be the best time for them to have these conversations. In turn, make sure you have time to listen. No ringing cell phones at this time! Above all, be patient. Your parents may feel uncomfortable at first with the idea of these conversations and may want to put them off for some time.{/t}</p>
         <p>{t}<b>Experience</b> - A good approach to bringing up these difficult topics is to relate it to your experiences. Some openers sound like this:{/t}</p>
-        <p><i>{t}"Dad, I just came from my attorney\'s office. We finished updating my will. I was wondering when the last time you took a look at yours?"{/t}</i></p>
+        <p><i>{t}"Dad, I just came from my attorney's office. We finished updating my will. I was wondering when the last time you took a look at yours?"{/t}</i></p>
         <p><i>{t}"Mom, a colleague of mine at work just had an unfortunate experience. His father had a sudden heart attack, and it took a long time before they could notify him because his dad did not have any emergency contact information in place. Can we go over how your information is organized particularly since my office recently moved and I have new phone numbers?"{/t}</i></p>
         <p>{t}"It is really gotten to be a challenge driving out there. I am on the road all day and see quite a few bad drivers, especially those on their cell phones. I am concerned about how you are feelings about driving these days."{/t}</p>
         <p>{t}<b>Motivation</b> - Be clear about your motive for having the conversation. The motivating factors should be related to safety, quality of life, and well-being - both theirs and yours. Their best interests are prime consideration, but your life and the lives of your family also matters.{/t}</p>
@@ -747,7 +747,7 @@ chicken for lunch today. So I think I’d like to try their fish!”{/t}</i></p>
         <img src="<?php echo $this->getImagesUrl('12051072r.jpg'); ?>" alt="image" />
         <p>{t}PHRs may be kept as hardcopy on paper or electronically on one’s computer or on the Internet through a service provider. In considering what form may be most suitable, you should consider things like accessibility, convenience, and ease of updating.{/t}</p>
         <p>{t}Paper versions can range from a formal document to a file folder with information from health care providers, insurance companies and hospitals. This is at least a good starting point for most people to get a snapshot of one’s health history. The difficulties come in when trying to keep all the information current as well as having emergency access to the information.{/t}</p>
-        <p>{t}The greatest risk of keeping health information on paper can easily be understood when considering the saga of Hurricane Katrina. The risks of keeping health information on paper were fully exposed when hundreds of thousands of evacuees sought care in new medical communities across the country. Evacuees lacked even the most basic personal health information, such as their medications and dosages. Most of their paper records were destroyed in the muck of hurricane-caused flooding, and many medical practices and hospitals were shut down for weeks, perhaps forever. Out of necessity, a program called{/t} <a href="http://www.katrinahealth.org" target="_blank">KatrinaHealth</a> {t}was created to rapidly develop electronic health records for those displaced by the hurricane. Since then, the American Association of Family Practitioners (AAFP) has collaborated with the city of New Orleans and Intel, among others, to provide digital PHRs to every New Orleans resident who wants one, and to transfer these to medical practices and hospitals in the displaced residents\' current location for follow-up care.{/t}</p>
+        <p>{t}The greatest risk of keeping health information on paper can easily be understood when considering the saga of Hurricane Katrina. The risks of keeping health information on paper were fully exposed when hundreds of thousands of evacuees sought care in new medical communities across the country. Evacuees lacked even the most basic personal health information, such as their medications and dosages. Most of their paper records were destroyed in the muck of hurricane-caused flooding, and many medical practices and hospitals were shut down for weeks, perhaps forever. Out of necessity, a program called{/t} <a href="http://www.katrinahealth.org" target="_blank">KatrinaHealth</a> {t}was created to rapidly develop electronic health records for those displaced by the hurricane. Since then, the American Association of Family Practitioners (AAFP) has collaborated with the city of New Orleans and Intel, among others, to provide digital PHRs to every New Orleans resident who wants one, and to transfer these to medical practices and hospitals in the displaced residents' current location for follow-up care.{/t}</p>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t} </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
@@ -872,7 +872,7 @@ chicken for lunch today. So I think I’d like to try their fish!”{/t}</i></p>
         <h4>{t}CARE Coaching: Relating{/t}</h4>
         <p>{t}The third component of CARE Coaching is that of relating. The most important factor in the patient-doctor relationship is communicating or relating.{/t}</p>
         <h4>{t}Video – How to Communicate with the Physician{/t}</h4>
-        <p>{t}Dr. Lori Whittaker, a family physician in Seattle, shares tips and advice for how to speak up for yourself when you are at the doctor\'s office.{/t}</p>
+        <p>{t}Dr. Lori Whittaker, a family physician in Seattle, shares tips and advice for how to speak up for yourself when you are at the doctor's office.{/t}</p>
         <h4>{t}Helping Older Parents Talk to Medical Professionals about Health Care{/t}</h4>
         <p>{t}Older adults may especially loath to question physicians because they were raised in a generation where doctors were considered to be above reproach. In planning for your discussions with your older parents and their physicians, remember that as their caregiver, you have an obligation to understand your parents’ medical care.{/t}</p>
         <h4>{t}Exercise – How are You with PowerPhrases?{/t}</h4>
@@ -944,7 +944,7 @@ chicken for lunch today. So I think I’d like to try their fish!”{/t}</i></p>
       <div class="content">
         <h2 class="flowers">{t}Video – How to Communicate with the Physician{/t}</h2>
         <hr />
-        <p>{t}Have you ever left a doctor\'s appoinment feeling that your questions were not answered? Or not sure what you were supposed to do next? Do not worry, you are not alone. Dr. Lori Whittaker, a family physician in Seattle, shares tips and advice for how to speak up for yourself when you are at the doctor\'s office. Good communication is a two way street, and it is up to you to make sure you get the treatment and the information you need to stay healthy.{/t}
+        <p>{t}Have you ever left a doctor's appoinment feeling that your questions were not answered? Or not sure what you were supposed to do next? Do not worry, you are not alone. Dr. Lori Whittaker, a family physician in Seattle, shares tips and advice for how to speak up for yourself when you are at the doctor's office. Good communication is a two way street, and it is up to you to make sure you get the treatment and the information you need to stay healthy.{/t}
         <p>
           <iframe width="420" height="315" src="http://www.youtube.com/embed/rEt8xfQ9z1U?rel=0" frameborder="0" allowfullscreen></iframe>
         </p>
@@ -1264,7 +1264,7 @@ chicken for lunch today. So I think I’d like to try their fish!”{/t}</i></p>
       <div class="content">
         <h2 class="flowers">{t}What are Other Options for my Older Parents?{/t}</h2>
         <hr />
-        <p>{t}Understanding all of one\'s options is important in making a big decision such as relocating. The more preplanning that can occur as well as understanding all options is key. Let’s look at some additional options for older adults.{/t}</p>
+        <p>{t}Understanding all of one's options is important in making a big decision such as relocating. The more preplanning that can occur as well as understanding all options is key. Let’s look at some additional options for older adults.{/t}</p>
         <p><i>{t}Active Adult Communities{/t}</i></p>
         <p>{t}Active Adult Communities are one of the fastest growing segments of the housing market for older adults. Also known as “55+ communities” or “lifestyle communities,” these offer homes and community features attractive to 55+ adults. Many are master-planned communities that have a clubhouse or lifestyle center with numerous activities, pools, exercise equipment, golf courses, and more. Attractive to older adults is the option of a “maintenance free” lifestyle with “like-minded” adults who may share similar social and activity interests. Homes are often designed to be efficient and easier to get around. Security is also a benefit as a number are in gated communities.{/t}</p>
         <p>{t}View an example of a Florida Active Adult Community in the following video.{/t}</p>
@@ -1730,7 +1730,7 @@ are taking.{/t}</li>
             <li>{t}Medical conditions that impact mobility{/t}</li>
           </ul>
           <p>{t}<i>Why is driving so important to older adults</i>? Driving for most people – and particularly for older adults – means independence. I can go where I want, when I want, without having to rely on others. Some older adults may not want to inconvenience their family or friends.{/t}</p>
-          <p>{t}<i>How can I help someone else limit or stop driving</i>? In most cases, drivers monitor themselves and gradually limit or stop driving when they feel that a certain driving situation or driving in general is not safe. However, some people fail to recognize declining abilities, or they fear stopping to drive because it will make them permanently dependent on others for the necessities of life, and it may reduce their social and leisure activities as well. Conditions such as dementia or early stages of Alzheimer\'s disease may make some drivers unable to evaluate their driving properly.{/t}</p>
+          <p>{t}<i>How can I help someone else limit or stop driving</i>? In most cases, drivers monitor themselves and gradually limit or stop driving when they feel that a certain driving situation or driving in general is not safe. However, some people fail to recognize declining abilities, or they fear stopping to drive because it will make them permanently dependent on others for the necessities of life, and it may reduce their social and leisure activities as well. Conditions such as dementia or early stages of Alzheimer's disease may make some drivers unable to evaluate their driving properly.{/t}</p>
           <p>{t}Let’s look at some of the warning signs and steps you may take to address this issue with older family members or friends.{/t}</p>
         </div>
         <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo;</a></div>
@@ -2046,14 +2046,14 @@ are taking.{/t}</li>
         <p>{t}We all want to feel that we have choices in our daily lives.  At times, the choices our older parents may want may not be choices we would want for them particularly if their safety or health may be at risk.  At other times, we as caregivers are tempted to want to immediately rise to the occasion and take action.  This may be because you want to help find a solution to a problem quickly.  Imposing a solution may actually make a situation more of a problem.{/t}</p>
         <p>{t}If you were to walk into your supervisor’s office with a problem – say that your project is 50% over budget – and your supervisor tells you to immediately cut five of your key staff, how would you feel?  Probably shocked that your supervisor did not want to discuss the situation, examine several reasons for the overage, and come up with a couple of options – all in collaboration with you as project manager.{/t}</p>
         <p>{t}The same should apply with your older parents.  You may notice that one or both are starting to forget things.  Immediately, you jump to the conclusion that they have Alzheimer’s Disease.  There are many causes of memory loss including poor nutrition, sleep problems, medications, or one’s emotional state.  You would want to take a measured approach to this issue in your discussions with your parents.{/t}</p>
-        <p>{t}Some general <b>Do\'s</b> and <b>Dont\'s</b>:{/t}</p>
+        <p>{t}Some general <b>Do's</b> and <b>Dont's</b>:{/t}</p>
         <p><b>{t}Do:{/t}</b></p>
         <ul>
           <li>{t}Assess the situation thoroughly{/t}</li>
           <li>{t}Look for signs of changes (physical and mental){/t}</li>
           <li>{t}Keep notes or a record of what changes you observe{/t}</li>
         </ul>
-        <p><b>{t}Don\'ts:{/t}</b></p>
+        <p><b>{t}Don'ts:{/t}</b></p>
         <ul>
           <li>{t}Immediately jump to conclusions{/t}</li>
           <li>{t}Rush to make a judgment{/t}</li>

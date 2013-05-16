@@ -45,16 +45,16 @@ foreach(array(
   <div class="box-sidebar one">
     <h3>Alzheimer's Association</h3>
     <br />
-    <p>{t}10 Early Signs and Symptoms of Alzheimer\'s{/t}</p>
+    <p>{t}10 Early Signs and Symptoms of Alzheimer's{/t}</p>
     <p> <a href="https://www.alz.org/alzheimers_disease_10_signs_of_alzheimers.asp" target="_blank"><img class="block-center" src="<?php echo $this->getImagesUrl('alz.png'); ?>" alt="image" /></a></p>
-    <p>{t}Memory loss that disrupts daily life may be a symptom of Alzheimer\'s or another dementia. Alzheimer\'s is a brain disease that causes a slow decline in memory, thinking and reasoning skills. There are 10 warning signs and symptoms. Every individual may experience one or more of these signs in different degrees. If you notice any of them, please see a doctor.{/t}</p>
+    <p>{t}Memory loss that disrupts daily life may be a symptom of Alzheimer's or another dementia. Alzheimer's is a brain disease that causes a slow decline in memory, thinking and reasoning skills. There are 10 warning signs and symptoms. Every individual may experience one or more of these signs in different degrees. If you notice any of them, please see a doctor.{/t}</p>
     <br />
   </div>
   <div class="box-sidebar one">
     <h3>U.S. Dept. of Health &amp; Human Srvc.</h3>
-    <p>{t}2011 - 2012 Alzheimer\'s Disease Progress Report{/t}</p>
+    <p>{t}2011 - 2012 Alzheimer's Disease Progress Report{/t}</p>
     <p><a href="http://www.nia.nih.gov/alzheimers/publication/2011-2012-alzheimers-disease-progress-report" target="_blank"><img class="block-center" src="<?php echo $this->getImagesUrl('msml/adpr-front.png'); ?>" style="width:150px; height: 95px;" alt="image" /></a></p>
-    <p>{t}A summary of Alzheimer\'s disease research, infrastructure, and funding supported by the NIH.{/t} </p>
+    <p>{t}A summary of Alzheimer's disease research, infrastructure, and funding supported by the NIH.{/t} </p>
     <br />
   </div>
 </div>
@@ -129,8 +129,8 @@ foreach(array(
         <p>{t}Mather LifeWays Institute on Aging creates Ways to Age Well for older adults by conducting translational
 research and education for professionals who serve them.{/t}</p>
         <h5><a href="http://www.alz.org" target="_blank">Alzheimer's Association ‐ Greater Illinois Chapter</a></h5>
-        <p>{t}The Alzheimer\'s Association is the leading, global voluntary health organization in Alzheimer\'s care and
-support, and the largest private, nonprofit funder of Alzheimer\'s research.{/t}</p>
+        <p>{t}The Alzheimer's Association is the leading, global voluntary health organization in Alzheimer's care and
+support, and the largest private, nonprofit funder of Alzheimer's research.{/t}</p>
         <h4>{t}Use of Information{/t}</h4>
         <p>{t}Any person is hereby authorized to view the information available from this guide for informational
 purposes only. No part of the information on this guide can be redistributed, copied, or reproduced
@@ -152,7 +152,7 @@ meet the challenges they face now and in the future. Research evaluation has sho
 this online course increases family members’ knowledge and improves coping skills with respect to their
 relatives’ memory and behavior changes.{/t}</p>
         <p>{t}MSML Online is primarily intended to educate families with a relative who has been
-diagnosed with the early stages of Alzheimer\'s disease or a related dementia. Families with a relative who
+diagnosed with the early stages of Alzheimer's disease or a related dementia. Families with a relative who
 has not yet been diagnosed with one of these conditions may also benefit from participation. Individuals
 and families facing the later stages of dementia should be directed to programs that better suit their
 needs. Likewise, persons with memory loss should be encouraged to attend education and support
@@ -166,7 +166,7 @@ knowledge and coping skills.{/t}</p>
       <div class="content">
         <h2 class="flowers">Media Storm</h2>
         <hr />
-        <p>{t}Filmmaker-photographer couple Julie Winokur and Ed Kashi were busy pursuing their careers and raising two children when Winokur\'s 83-year-old father, Herbie, became too infirm to care for himself.{/t}</p>
+        <p>{t}Filmmaker-photographer couple Julie Winokur and Ed Kashi were busy pursuing their careers and raising two children when Winokur's 83-year-old father, Herbie, became too infirm to care for himself.{/t}</p>
         <div id="video" style="width:400px;">
           <div style="height:340px;"><script type="text/javascript" src="http://mediastorm.com/player/embed.php?id=e5178ce9beaabc886268&w=400&h=340&amp;lang=none"></script></div>
           <div style="padding:10px; font-family:Helvetica, Arial, sans-serif; font-size:12px; line-height:16px; color:#999999; background-color:#000000;">Millions of middle-aged Americans are caring for their children as well as their aging parents. When filmmaker-photographer pair Julie Winokur and Ed Kashi took in Winokur's 83-year-old father, they decided to document their own story. See the project at <a href="http://mediastorm.com/publication/the-sandwich-generation" target="_blank" style="color:#0083c5;">http://mediastorm.com/publication/the-sandwich-generation</a></div>
@@ -275,7 +275,7 @@ Alzheimer’s Association, participants reported improvements in their knowledge
        
         <p>{t}As you can see, dementia is an umbrella term that includes reversible and irreversible conditions.{/t}</p>
         <div id="question1" class="question">
-          <p><b>{t}Have you ever visited the Alzheimer\'s Assocation website?{/t}</b>
+          <p><b>{t}Have you ever visited the Alzheimer's Assocation website?{/t}</b>
             <select>
               <option selected="selected" value="select"> {t}Select{/t} </option>
               <option value="1"> {t}Yes{/t} </option>
@@ -343,7 +343,7 @@ memory loss will be better off too.{/t}</p>
         <ul>
           <li>{t}What causes memory loss?{/t}</li>
           <li>{t}How are brain diseases diagnosed?{/t}</li>
-          <li>{t}What are the symptoms and stages of Alzheimer\'s disease?{/t}</li>
+          <li>{t}What are the symptoms and stages of Alzheimer's disease?{/t}</li>
           <li>{t}How is memory loss treated?{/t}</li>
           <li>{t}What is being done in the area of medical research?{/t}</li>
         </ul>
@@ -360,8 +360,8 @@ memory loss will be better off too.{/t}</p>
           <li>{t}A syndrome, not a diagnosis{/t}</li>
           <li>{t}In the past, referred to as senility or <i>hardening or the arteries</i>{/t}</li>
         </ul>
-        <p>{t}Dementia is not a specific disease. It is an overall term that describes a wide range of symptoms associated with a decline in memory or other thinking skills severe enough to reduce a person\'s ability to perform
-everyday activities. Alzheimer\'s disease accounts for 60 to 80% of cases. Vascular dementia, which occurs
+        <p>{t}Dementia is not a specific disease. It is an overall term that describes a wide range of symptoms associated with a decline in memory or other thinking skills severe enough to reduce a person's ability to perform
+everyday activities. Alzheimer's disease accounts for 60 to 80% of cases. Vascular dementia, which occurs
 after a stroke, is the second most common dementia type. But there are many other conditions that can
 cause symptoms of dementia, including some that are reversible, such as thyroid problems and vitamin
 deficiencies.{/t}</p>
@@ -423,12 +423,12 @@ brain fails to do its work, dementia is the appropriate medical term.{/t}</p>
         <p>{t}As you can see, dementia is an umbrella term that includes reversible and irreversible conditions.{/t}</p>
         <h5>{t}Reversible Dementias{/t}</h5>
         <p>{t}On the left hand side of this slide is a list of more common reversible conditions that sometime mimic
-irreversible conditions such as Alzheimer\'s.{/t}</p>
+irreversible conditions such as Alzheimer's.{/t}</p>
         <h5>{t}Irreversible Dementias{/t}</h5>
         <p>{t}Most dementias are irreversible in nature. Sometimes two or more types of these dementias may occur
 together as a "mixed dementia." There are several dozen types of dementia and the major types can be
 found on the Internet.{/t}</p>
-        <p class="forum">{t}Search the Alzheimer\'s Association\'s website for greater explanations for these types of reversible and irreversible dementias. Choose one from each category, and provide a description for each one on the Forum.{/t}</p>
+        <p class="forum">{t}Search the Alzheimer's Association's website for greater explanations for these types of reversible and irreversible dementias. Choose one from each category, and provide a description for each one on the Forum.{/t}</p>
         <img src="<?php echo $this->getImagesUrl('msml/forum_icon.png'); ?>" alt="image"> </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
@@ -484,7 +484,7 @@ accurate diagnosis by an experienced physician.{/t}</p>
     </div>
     <div id="lesson-1-slide-16" class="course-slide">
       <div class="content">
-        <h2 class="flowers">{t}Criteria for probable Alzheimer\'s disease{/t}</h2>
+        <h2 class="flowers">{t}Criteria for probable Alzheimer's disease{/t}</h2>
         <hr />
         <img src="<?php echo $this->getImagesUrl('msml/160330106.png'); ?>" alt="image">
         <ul>
@@ -503,13 +503,13 @@ today’s class will be on this particular condition.{/t}</p>
     </div>
     <div id="lesson-1-slide-17" class="course-slide">
       <div class="content">
-        <h2 class="flowers">{t}Prevalence of Alzheimer\'s disease by Age{/t}</h2>
+        <h2 class="flowers">{t}Prevalence of Alzheimer's disease by Age{/t}</h2>
         <hr />
         <img src="<?php echo $this->getImagesUrl('msml/121113384.png'); ?>" alt="image">
-        <p>{t}AD is rather common among the older population. According to the Alzheimer\'s
-Association, an estimated 5.4 million Americans of all ages had Alzheimer\'s disease in 2012. This figure
+        <p>{t}AD is rather common among the older population. According to the Alzheimer's
+Association, an estimated 5.4 million Americans of all ages had Alzheimer's disease in 2012. This figure
 includes 5.2 million people age 65 and older, and 200,000 individuals under age 65 who have youngeronset
-Alzheimer\'s.{/t}</p>
+Alzheimer's.{/t}</p>
         <p class="forum">{t}Taking into account the figures above, can you guess how many Americans have AD today? How many
 people in our state are estimated to have AD? Can you guess how many people are expected to have AD
 40 years from now? Search the Internet to help with your answers, and post them to the Forum.{/t}</p>
@@ -518,12 +518,12 @@ people in our state are estimated to have AD? Can you guess how many people are 
     </div>
     <div id="lesson-1-slide-18" class="course-slide">
       <div class="content">
-        <h2 class="flowers">{t}Projected Growth of Persons with Alzheimer\'s disease{/t}</h2>
+        <h2 class="flowers">{t}Projected Growth of Persons with Alzheimer's disease{/t}</h2>
         <hr />
         <img src="<?php echo $this->getImagesUrl('msml/AAscreenshot.png'); ?>" alt="image">
         <p>{t}Based on projections of the older population in the coming decades, it is expected that the number of
 Americans with AD will grow dramatically.{/t}</p>
-        <p class="forum">{t}Search the Alzheimer\'s Association\'s website for the most current facts on figurs on the growth of AD. Record your findings on the Forum{/t}</p>
+        <p class="forum">{t}Search the Alzheimer's Association's website for the most current facts on figurs on the growth of AD. Record your findings on the Forum{/t}</p>
         <img src="<?php echo $this->getImagesUrl('msml/forum_icon.png'); ?>" alt="image"> </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
@@ -537,7 +537,7 @@ pathologist. He was the first scientist to describe the symptoms in a female pat
 damaged areas in her brain. Following her death, Dr. Alzheimer performed an autopsy and found
 shrinkage of the brain as well as tiny abnormalities he referred to as tangles and amyloid plaques.{/t}</p>
         <div id="question1" class="question">
-          <p><b>{t}Alzheimer\'s disease is an irreversible, progressive brain disease that slowly destroys memory and thinking skills, and eventually even the ability to carry out the simplest tasks.{/t}</b>
+          <p><b>{t}Alzheimer's disease is an irreversible, progressive brain disease that slowly destroys memory and thinking skills, and eventually even the ability to carry out the simplest tasks.{/t}</b>
             <select>
               <option selected="selected" value="select"> {t}Select{/t} </option>
               <option value="1"> {t}True{/t} </option>
@@ -545,14 +545,14 @@ shrinkage of the brain as well as tiny abnormalities he referred to as tangles a
             </select>
           </p>
           <p class="right-answer hide"> {t}Correct!{/t} </p>
-          <p class="wrong-answer hide"> {t}Incorrect. Please ensure you understand what Alzheimer\'s disease is before continuing.{/t} </p>
+          <p class="wrong-answer hide"> {t}Incorrect. Please ensure you understand what Alzheimer's disease is before continuing.{/t} </p>
         </div>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
     <div id="lesson-1-slide-20" class="course-slide">
       <div class="content">
-        <h2 class="flowers">{t}Normal{/t} -> {t}Mild Cognitive Impairment{/t} -> {t}Alzheimer\'s disease{/t}</h2>
+        <h2 class="flowers">{t}Normal{/t} -> {t}Mild Cognitive Impairment{/t} -> {t}Alzheimer's disease{/t}</h2>
         <hr />
         <img src="<?php echo $this->getImagesUrl('msml/118564579.png'); ?>" alt="image">
         <p>{t}Experts today agree that what is called “early stage” AD is probably the result of many years of the disease
@@ -763,7 +763,7 @@ in mind when you sometimes wonder why a person with memory loss is acting in a p
     </div>
     <div id="lesson-1-slide-27" class="course-slide">
       <div class="content">
-        <h2 class="flowers">{t}Definite Risk Factors for Alzheimer\'s disease{/t}</h2>
+        <h2 class="flowers">{t}Definite Risk Factors for Alzheimer's disease{/t}</h2>
         <hr />
         <ul>
           <li>{t}Increasing age{/t}</li>
@@ -787,7 +787,7 @@ her children are destined to get it too. Other factors such as environmental ris
     </div>
     <div id="lesson-1-slide-28" class="course-slide">
       <div class="content">
-        <h2 class="flowers">{t}Genetics &amp; Alzheimer\'s disease{/t}</h2>
+        <h2 class="flowers">{t}Genetics &amp; Alzheimer's disease{/t}</h2>
         <hr />
         <ul>
           <li>{t}Under age 65{/t}</li>
@@ -807,16 +807,16 @@ The ApoE gene comes in three varieties, called alleles: e2, e3, and e4. Everyone
 alleles, one inherited from each parent, so there are six possible combinations in any individual’s DNA. One
 e4 allele approximately doubles risk of AD and two e4 alleles boosts risk 8 to 10‐fold.{/t}</p>
         <p>{t}Although a blood test can identify which APOE alleles a person has, it cannot predict who will or will not
-develop Alzheimer\'s disease. It is unlikely that genetic testing will ever be able to predict the disease with
+develop Alzheimer's disease. It is unlikely that genetic testing will ever be able to predict the disease with
 100 percent accuracy because too many other factors may influence its development and progression.{/t}</p>
         <p>{t}At present, APOE testing is used in research settings to identify study participants who may have an
-increased risk of developing Alzheimer\'s. This knowledge helps scientists look for early brain changes in
+increased risk of developing Alzheimer's. This knowledge helps scientists look for early brain changes in
 participants and compare the effectiveness of treatments for people with different APOE profiles. Most
-researchers believe that APOE testing is useful for studying Alzheimer\'s disease risk in large groups of
-people but not for determining any one person\'s specific risk.{/t}</p>
-        <p>{t}In doctors\' offices and other clinical settings, genetic testing is used for people with a family history of
-early‐onset Alzheimer\'s disease. However, it is not generally recommended for people at risk of late‐onset
-Alzheimer\'s.{/t}</p>
+researchers believe that APOE testing is useful for studying Alzheimer's disease risk in large groups of
+people but not for determining any one person's specific risk.{/t}</p>
+        <p>{t}In doctors' offices and other clinical settings, genetic testing is used for people with a family history of
+early‐onset Alzheimer's disease. However, it is not generally recommended for people at risk of late‐onset
+Alzheimer's.{/t}</p>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
@@ -836,7 +836,7 @@ Alzheimer\'s.{/t}</p>
 proven. Weak or strong associations with AD may be attributed to a complex number of factors still
 unidentified. Possible risk for AD has been associated with the areas listed above.{/t}</p>
         <div id="question1" class="question">
-          <p><b>{t}The greatest known risk factor for Alzheimer\'s is advancing age.{/t}</b>
+          <p><b>{t}The greatest known risk factor for Alzheimer's is advancing age.{/t}</b>
             <select>
               <option selected="selected" value="select"> {t}Select{/t} </option>
               <option value="1"> {t}True{/t} </option>
@@ -844,7 +844,7 @@ unidentified. Possible risk for AD has been associated with the areas listed abo
             </select>
           </p>
           <p class="right-answer hide"> {t}Correct!{/t} </p>
-          <p class="wrong-answer hide"> {t}Incorrect. Search the Alzheimer\'s Association website for AD risk factors.{/t} </p>
+          <p class="wrong-answer hide"> {t}Incorrect. Search the Alzheimer's Association website for AD risk factors.{/t} </p>
         </div>
         <p class="forum">{t}Search the Internet, and locate additional risk factors for AD and report your findings on the Forum{/t}</p>
         <img src="<?php echo $this->getImagesUrl('msml/forum_icon.png'); ?>" alt="image"> </div>
@@ -868,7 +868,7 @@ unidentified. Possible risk for AD has been associated with the areas listed abo
     </div>
     <div id="lesson-1-slide-31" class="course-slide">
       <div class="content">
-        <h2 class="flowers">{t}FDA-Approved Treatments for Alzheimer\'s{/t}</h2>
+        <h2 class="flowers">{t}FDA-Approved Treatments for Alzheimer's{/t}</h2>
         <hr />
         <h5>{t}Cholinesterase Inhibitors{/t}</h5>
         <ul>
@@ -877,7 +877,7 @@ unidentified. Possible risk for AD has been associated with the areas listed abo
           <li>{t}Tacrine{/t}</li>
           <li>{t}Galantamine{/t}</li>
         </ul>
-        <p>{t}While there is no cure for Alzheimer\'s disease, there are five prescription drugs approved by the U.S. Food
+        <p>{t}While there is no cure for Alzheimer's disease, there are five prescription drugs approved by the U.S. Food
 and Drug Administration (FDA) to treat its symptoms.{/t}</p>
         <p>{t}Donepezil, galantamine, rivastigmine and tacrine are called "cholinesterase inhibitors." These drugs
 prevent the breakdown of a chemical messenger in the brain important for learning and memory. The fifth
@@ -891,15 +891,15 @@ symptoms and improve quality of life.{/t}</p>
 judgment and other thought processes. Three different cholinesterase inhibitors are commonly
 prescribed:{/t}</p>
         <ul>
-          <li>{t}Donepezil (marketed as Aricept), which is approved to treat all stages of Alzheimer\'s disease{/t}</li>
+          <li>{t}Donepezil (marketed as Aricept), which is approved to treat all stages of Alzheimer's disease{/t}</li>
           <li>{t}Galantamine (marketed as Razadyne), approved for mild to moderate stages.{/t}</li>
-          <li>{t}Rivastigmine (marketed as Exelon), approved for mild to moderate Alzhe1nler\'s.{/t}</li>
+          <li>{t}Rivastigmine (marketed as Exelon), approved for mild to moderate Alzhe1nler's.{/t}</li>
         </ul>
         <p>{t}Tacrine (Cognex), the first cholinesterase inhibitor, was approved in 1993 but is rarely prescribed today
 because of associated side effects, including possible liver damage.{/t}</p>
         <p class="forum">{t}Search the Internet to learn how cholinesterase inhibitors work, and post your findings on the Forum. Also, search and post the benefits of memantine and the common side effects of memantine.{/t}</p>
         <h5>{t}On the horizon{/t}</h5>
-        <p>{t}Scientists have made remarkable progress in understanding how Alzheimer\'s affects the brain. Their
+        <p>{t}Scientists have made remarkable progress in understanding how Alzheimer's affects the brain. Their
 insights point toward promising new treatments to slow or stop the disease. Ultimately, the path to
 effective therapies is through clinical studies.{/t}</p>
         <img src="<?php echo $this->getImagesUrl('msml/forum_icon.png'); ?>" alt="image"> </div>
@@ -1032,14 +1032,14 @@ key points covered in these classes.{/t}</p>
           <li>{t}To review common communication pitfalls, and how to avoid them.{/t}</li>
         </ul>
         <div id="question1" class="question">
-          <p><b>{t}Does Alzheimer\'s disease affect communication?{/t}</b>
+          <p><b>{t}Does Alzheimer's disease affect communication?{/t}</b>
             <select>
               <option selected="selected" value="select"> {t}Select{/t} </option>
               <option value="1"> {t}Yes{/t} </option>
               <option value="0"> {t}No{/t} </option>
             </select>
           </p>
-          <p class="right-answer hide"> {t}Correct! People with Alzheimer\'s lose particular communication abilities during the early, middle, and late stages of the disease.{/t} </p>
+          <p class="right-answer hide"> {t}Correct! People with Alzheimer's lose particular communication abilities during the early, middle, and late stages of the disease.{/t} </p>
           <p class="wrong-answer hide"> {t}Incorrect. Please review Module One.{/t} </p>
         </div>
       </div>
@@ -1050,7 +1050,7 @@ key points covered in these classes.{/t}</p>
         <h2 class="flowers">{t}Welcome Back!{/t}</h2>
         <hr />
         <img src="<?php echo $this->getImagesUrl('msml/135545925.png'); ?>" alt="image">
-        <p>{t}Welcome to the second module of MSML Online. One of the more frustrating and difficult aspects of memory loss is that the person\'s ability to communicate may be compromised. In this section, we will discuss how to adapt to these changes. We will cover these general topics and get into specifics along the way.{/t}</p>
+        <p>{t}Welcome to the second module of MSML Online. One of the more frustrating and difficult aspects of memory loss is that the person's ability to communicate may be compromised. In this section, we will discuss how to adapt to these changes. We will cover these general topics and get into specifics along the way.{/t}</p>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
@@ -1087,7 +1087,7 @@ into all of the changes that have taken place.{/t}</p>
     </div>
     <div id="lesson-2-slide-5" class="course-slide">
       <div class="content">
-        <h2 class="flowers">{t}The Person\'s Level of Awareness{/t}</h2>
+        <h2 class="flowers">{t}The Person's Level of Awareness{/t}</h2>
         <hr />
         <img src="<?php echo $this->getImagesUrl('msml/153742771.png'); ?>" alt="image">
         </ul>
@@ -1244,7 +1244,7 @@ conversation is happening in a place with few distractions.{/t}</p>
         <img src="<?php echo $this->getImagesUrl('msml/138282407.png'); ?>" alt="image">
         <ul>
           <li>{t}Eliminate distractions{/t}</li>
-          <li>{t}Gain the person\'s attention{/t}</li>
+          <li>{t}Gain the person's attention{/t}</li>
           <li>{t}Give reassurance{/t}</li>
           <li>{t}Be a patient and active listener{/t}</li>
           <li>{t}Be an astute observer{/t}</li>
@@ -1267,7 +1267,7 @@ conversation is happening in a place with few distractions.{/t}</p>
         </ul>
         <h5>{t}"It is often not what you say, but how you say it."{/t}</h5>
         <p>{t}As we discussed at the beginning of the lesson, nonverbal communication refers to the things that we do in addition to what we say. The most basic of these are tone of voice, body language, and facial expressions.{/t}</p>
-        <p>{t}We are all familiar with the saying, <i>"it is not what you say, but also how you say it."</i> We have all had experiences where we were put off by a person\'s tone of voice or facial expression, even if what they said was not really all that offensive.{/t}</p>
+        <p>{t}We are all familiar with the saying, <i>"it is not what you say, but also how you say it."</i> We have all had experiences where we were put off by a person's tone of voice or facial expression, even if what they said was not really all that offensive.{/t}</p>
         <p>{t}Nonverbal communication can be very important when having conversation with people with memory loss.{/t}</p>
         <p>{t}We are going to take a little time to discuss this, because it is so important.{/t}</p>
         <p class="forum">{t}On the Forum, please post your responses to the following questions.{/t}</p>
@@ -1320,9 +1320,9 @@ color. Then, we need to remember what it means to have a favorite color. Next, w
         </ul>
         <h5>{t}Arguing{/t}</h5>
         <p>{t}It is hard to win an argument with someone who is experiencing memory loss, because his or her view of
-things may be very different from yours. Let\'s say that your Aunt Mae can’t remember having gone to a restaurant the day before, and is upset over the doggie bag in the refrigerator because she claims, “I did not put that there, and I’m not going to eat someone else’s leftovers!”{/t}</p>
+things may be very different from yours. Let's say that your Aunt Mae can’t remember having gone to a restaurant the day before, and is upset over the doggie bag in the refrigerator because she claims, “I did not put that there, and I’m not going to eat someone else’s leftovers!”{/t}</p>
         <p>{t}Our natural inclination is to set things right and use facts to prove our point. But if the person truly does
-not remember the experience of going to the restaurant, no amount of facts will change her mind. It won\'t help to pull out the calendar to show Aunt Mae that she wrote down 6 pm ‐ dinner at Andy’s Restaurant with Susan or showing her the receipt, or even showing her a matchbook from the restaurant. Aunt Mae does not remember the experience. For her it simply never happened.{/t}</p>
+not remember the experience of going to the restaurant, no amount of facts will change her mind. It won't help to pull out the calendar to show Aunt Mae that she wrote down 6 pm ‐ dinner at Andy’s Restaurant with Susan or showing her the receipt, or even showing her a matchbook from the restaurant. Aunt Mae does not remember the experience. For her it simply never happened.{/t}</p>
         <p>{t}So arguing with her is going to frustrate both of you. Before arguing about something like this, you need to
 stand back and ask yourself, Is this really worth it? If a person’s safety is at stake, the answer might be yes. But in a situation like this one, it may be better to say, I’ll just take this out of your refrigerator. You will have avoided a needless argument.{/t}</p>
         <h5>{t}Giving orders{/t}</h5>
@@ -1345,7 +1345,7 @@ in the recycling bin, rather than being responsible for separating and carrying 
           <li>{t}Model and give feedback{/t}</li>
         </ul>
         <p>{t}Last but not least, make sure that you share this information with your friends and other family members. Friends and other family members may not understand the extent of the difficulties you and your loved one are facing. Do not be afraid to let them know about what is going on. They may be able to better support you and your family member if they understand the situation, and they are more likely to get involved if they are informed about what is happening.{/t}</p>
-        <p>{t}Do not assume that everyone will automatically know how to deal with your family member\'s memory loss. They will not. Presume that they do not know and teach them what you have learned. Some people may be uncomfortable or may react in an unusual way. So provide information for your family and friends about what works and what does not. Give them tips on how to communicate with your family member. Model what works so that they can learn from you. Give them feedback about how they are doing, especially when they are doing a good job. Tell them about Alzheimer\'s Association\'s educational programs and support groups so that they can learn more if they prefer. Give them a brochure or book to read.{/t}</p>
+        <p>{t}Do not assume that everyone will automatically know how to deal with your family member's memory loss. They will not. Presume that they do not know and teach them what you have learned. Some people may be uncomfortable or may react in an unusual way. So provide information for your family and friends about what works and what does not. Give them tips on how to communicate with your family member. Model what works so that they can learn from you. Give them feedback about how they are doing, especially when they are doing a good job. Tell them about Alzheimer's Association's educational programs and support groups so that they can learn more if they prefer. Give them a brochure or book to read.{/t}</p>
         <p>{t}Above all, do not give up, and do not allow yourself to get too frustrated. You will occasionally lose patience with your family member. No one is perfect. Learn to forgive yourself for your bad days or bad moments just as you forgive your family member for hers. Here are some resources that may assist you in understanding what a person with memory loss is experiencing, and how you may be able to assist them.{/t}</p>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
@@ -1367,7 +1367,7 @@ in the recycling bin, rather than being responsible for separating and carrying 
           <li>{t}Ways to encourage verbal expression, and{/t}</li>
           <li>{t}How to avoid communication pitfalls.{/t}</li>
         </ul>
-        <p>{t}For more ideas about communication strategies, please refer to chapters 5 and 8 of the book, <i>Alzheimer\'s Early Stages</i>. Chapter 5 is especially helpful in understanding the communication challenges faced by persons with memory loss. If possible, read these chapters during the coming week.{/t}</p>
+        <p>{t}For more ideas about communication strategies, please refer to chapters 5 and 8 of the book, <i>Alzheimer's Early Stages</i>. Chapter 5 is especially helpful in understanding the communication challenges faced by persons with memory loss. If possible, read these chapters during the coming week.{/t}</p>
       </div>
       <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Complete Lesson{/t}</a></div>
     </div>
@@ -1471,7 +1471,7 @@ loss may appear childlike at times, adults are not children and should be respec
 has a long personal history and is accustomed to making choices independently. To the extent possible,
 choices must be given so that conflicts can be prevented.{/t}</p>
         <p class="forum">{t}How might this particular scenario have been played out differently? Take a few minutes for ideas, and post your response to the Forum.{/t}</p>
-        <p>{t}Now let\'s turn to handling some practical issues…{/t}</p>
+        <p>{t}Now let's turn to handling some practical issues…{/t}</p>
         <img src="<?php echo $this->getImagesUrl('msml/forum_icon.png'); ?>" alt="image"> </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
@@ -1522,12 +1522,12 @@ issue of personal freedom versus public safety must be carefully weighed.{/t}</p
 memory loss. Assessing when and how to intervene is difficult unless the person with memory loss
 voluntarily gives up this authority.{/t}</p>
         <h5>{t}Personal freedom versus risks{/t}</h5>
-        <p>{t}As memory loss advances over time, the risks of continuing to manage one\'s own affairs will become more obvious to others, but in the early stage there may be legitimate differences of opinion about the person’s ability to handle these affairs alone.{/t}</p>
-        <p>{t}Nevertheless, due to the person\'s impaired memory and judgment, someone else must be in a position of
+        <p>{t}As memory loss advances over time, the risks of continuing to manage one's own affairs will become more obvious to others, but in the early stage there may be legitimate differences of opinion about the person’s ability to handle these affairs alone.{/t}</p>
+        <p>{t}Nevertheless, due to the person's impaired memory and judgment, someone else must be in a position of
 monitoring risks. Otherwise, problems such as failing to pay important bills can emerge.{/t}</p>
         <h5>{t}Mismanagement of finances and medical compliance{/t}</h5>
         <p>{t}What are some of the risks? Persons with memory loss can lose track of money or stop paying bills. They may also be at risk of exploitation by others. They can forget to take their medication(s), take too much or too often, all of which can lead to a health crisis.{/t}</p>
-        <p>{t}It is fairly easy to assess if someone with memory loss is having trouble with managing finances or taking medication. It is important to raise these issues in a delicate manner in order to maintain trust and enlist the person\'s cooperation.{/t}</p>
+        <p>{t}It is fairly easy to assess if someone with memory loss is having trouble with managing finances or taking medication. It is important to raise these issues in a delicate manner in order to maintain trust and enlist the person's cooperation.{/t}</p>
         <p class="forum">{t}Please share a story on this topic by posting it to the Forum.{/t}</p>
         <h5>{t}Means to share or give up authority{/t}</h5>
         <p>{t}At the next class, we will discuss legal steps such as Powers of Attorney in order to ensure that someone is responsible for handling financial and health care decisions.{/t}</p>
@@ -1634,7 +1634,7 @@ action or gladly accept assigned duties whereas others might refuse to help.{/t}
                 <li>{t}Put everyone concerned at ease{/t}</li>
               </ul></td>
             <td><ul>
-                <li>{t}<i>“What they do not know won\'t hurt them”</i>{/t}</li>
+                <li>{t}<i>“What they do not know won't hurt them”</i>{/t}</li>
                 <li>{t}Negative stereotypes associated with Alzheimer’s disease{/t}</li>
                 <li>{t}Risk of social isolation{/t}</li>
               </ul></td>
@@ -1720,14 +1720,14 @@ way. These statements appear to be signs of healthy coping.{/t}</p>
         <h2 class="flowers">{t}Good Sources of Information{/t}</h2>
         <hr />
         <ul>
-          <li>{t}Dancing on Quicksand: A Gift of Friendship in the Age of Alzheimer\'s by Marilyn Mitchell. Boulder, CO: Johnson Books, 2002.{/t}</li>
-          <li>{t}Learning To Speak Alzheimer\'s by Joanne Koenig Coste, New York: Houghton Miflin Co., 2003.{/t}</li>
-          <li>{t}The Majesty of Your Loving: A Couple\'s Journey through Alzheimer\'s by Olivia Hoblitzelle. Lyndonville, VT: Green Mountain Books, 2008.{/t}</li>
+          <li>{t}Dancing on Quicksand: A Gift of Friendship in the Age of Alzheimer's by Marilyn Mitchell. Boulder, CO: Johnson Books, 2002.{/t}</li>
+          <li>{t}Learning To Speak Alzheimer's by Joanne Koenig Coste, New York: Houghton Miflin Co., 2003.{/t}</li>
+          <li>{t}The Majesty of Your Loving: A Couple's Journey through Alzheimer's by Olivia Hoblitzelle. Lyndonville, VT: Green Mountain Books, 2008.{/t}</li>
         </ul>
         <h4>{t}Closing{/t}</h4>
         <p>{t}We have just finished module three{/t}</p>
         <p class="forum">{t}Please post any questions about this module to the Forum.{/t}</p>
-        <p>{t}Contact your class leader in order to address specific issues that did not get answered on the Forum. Chapters 6 and 7 in the book, <i>Alzheimer\'s Early Stages</i>, relate to this class. Please read those chapters for more information about the issues we covered today. Next module will focus on planning for the future. Thanks your for participating.{/t}</p>
+        <p>{t}Contact your class leader in order to address specific issues that did not get answered on the Forum. Chapters 6 and 7 in the book, <i>Alzheimer's Early Stages</i>, relate to this class. Please read those chapters for more information about the issues we covered today. Next module will focus on planning for the future. Thanks your for participating.{/t}</p>
         <img src="<?php echo $this->getImagesUrl('msml/forum_icon.png'); ?>" alt="image"> </div>
       <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Complete Lesson{/t}</a></div>
     </div>
@@ -1768,7 +1768,7 @@ will allow you the freedom to provide an update on any changes you wish to discu
         <p>{t}Ask questions about the disease, medications, or other instructions that are unclear to you.{/t}</p>
         <p class="forum">{t}Forum Posting: What kind of questions might you be interested in having answered? Take a few minutes befor you respond.{/t}</p>
         <h5>{t}Shop around if dissatisfied{/t}</h5>
-        <p>{t}Unfortunately, not all physicians are knowledgeable about AD and related dementias. The Alzheimer\'s Association or other organizations can assist you in finding a specialist.{/t}</p>
+        <p>{t}Unfortunately, not all physicians are knowledgeable about AD and related dementias. The Alzheimer's Association or other organizations can assist you in finding a specialist.{/t}</p>
         <img src="<?php echo $this->getImagesUrl('msml/forum_icon.png'); ?>" alt="image"> </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
@@ -1910,7 +1910,7 @@ expand coverage before this date.{/t}</p>
         <p>{t}An adult daughter shared her story of the struggles she encountered in getting her father to attend an
 adult day center. Each morning, her father would grumble, curse, and occasionally become combative.
 When she would pick her father up at the end of the day, he was often agitated.{/t}</p>
-        <p>{t}She would ask, <i>“How was your day, Dad?”</i> and he would reply with disparaging remarks about the program and staff. However, when she would speak with the staff she would receive a positive and reassuring account of the day\'s activities. Her father would take part in activities, including baking with a majority of female participants, and would sing along with an exuberant voice whenever guests came to play the guitar or piano.{/t}</p>
+        <p>{t}She would ask, <i>“How was your day, Dad?”</i> and he would reply with disparaging remarks about the program and staff. However, when she would speak with the staff she would receive a positive and reassuring account of the day's activities. Her father would take part in activities, including baking with a majority of female participants, and would sing along with an exuberant voice whenever guests came to play the guitar or piano.{/t}</p>
         <p>{t}With this in mind, she was able to feel much better about bringing her father to the center each day. Has anyone had the experience of enrolling a relative in an adult day program?{/t}</p>
         <img src="<?php echo $this->getImagesUrl('msml/forum_icon.png'); ?>" alt="image"> </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
@@ -1945,9 +1945,9 @@ When she would pick her father up at the end of the day, he was often agitated.{
       <div class="content">
         <h2 class="flowers">{t}Community-Based Programs and Services{/t}</h2>
         <hr />
-        <h5>{t}Alzheimer\'s Association -{/t}</h5>
-        <p>{t}The Alzheimer\'s Association works on a global, national and local level to enhance care and support for all those affected by Alzheimer\'s and related dementias.{/t}</p>
-        <p>{t}The Alzheimer\'s Association works on a global, national and local level to enhance care and support for all
+        <h5>{t}Alzheimer's Association -{/t}</h5>
+        <p>{t}The Alzheimer's Association works on a global, national and local level to enhance care and support for all those affected by Alzheimer's and related dementias.{/t}</p>
+        <p>{t}The Alzheimer's Association works on a global, national and local level to enhance care and support for all
 those affected by Alzheimer’s and related dementias. Their mission is to eliminate Alzheimer’s disease
 through the advancement of research; to provide and enhance care and support for all affected; and to
 reduce the risk of dementia through the promotion of brain health.{/t}</p>
@@ -1957,22 +1957,22 @@ reduce the risk of dementia through the promotion of brain health.{/t}</p>
           <li>{t}They run more than 4,500 support groups throughout the country and connect people across the
 globe through our online message boards.{/t}</li>
           <li>{t}They provide caregivers and families with comprehensive online resources and information
-through our Alzheimer\'s and Dementia Caregiver Center, which features sections on early‐stage,
+through our Alzheimer's and Dementia Caregiver Center, which features sections on early‐stage,
 middle‐stage and late‐stage caregiving.{/t}</li>
           <li>{t}They help people find clinical trials through our free service Alzheimer’s Association TrialMatch,
 which makes it easy to search opportunities based on personal criteria.{/t}</li>
           <li>{t}They deliver 20,000 education programs annually and offer online information in 17 languages.{/t}</li>
-          <li>{t}Their free online tool, Alzheimer\'s Navigator, provides individuals with Alzheimer\'s and their
+          <li>{t}Their free online tool, Alzheimer's Navigator, provides individuals with Alzheimer's and their
 caregivers with step‐by‐step guidance and customized action plans, and our online Community Resource Finder provides instant access to community resources and services.{/t}</li>
-          <li>{t}They house the Alzheimer\'s Association Green‐Field Library, the nation\'s largest library and
-resource center devoted to increasing knowledge about Alzheimer\'s disease and related dementias.{/t}</li>
+          <li>{t}They house the Alzheimer's Association Green‐Field Library, the nation's largest library and
+resource center devoted to increasing knowledge about Alzheimer's disease and related dementias.{/t}</li>
           <li>{t}Their safety services, Comfort Zone and MedicAlert® + Alzheimer’s Association Safe Return®,
 provide location management for people with Alzheimer’s who wander.{/t}</li>
-          <li>{t}Their annual Walk to End Alzheimer\'s is the nation\'s largest event to raise awareness and funds
-for Alzheimer\'s care, support and research.{/t}</li>
+          <li>{t}Their annual Walk to End Alzheimer's is the nation's largest event to raise awareness and funds
+for Alzheimer's care, support and research.{/t}</li>
         </ul>
         <p class="forum">{t}Search the Internet for your local chapter and contact information. This information can be found
-on the Alzheimer\'s Association’s website. Also, there may be other organizations in your area that offer similar programs and services. Post your findings on the Forum.{/t}</p>
+on the Alzheimer's Association’s website. Also, there may be other organizations in your area that offer similar programs and services. Post your findings on the Forum.{/t}</p>
         <img src="<?php echo $this->getImagesUrl('msml/forum_icon.png'); ?>" alt="image"> </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
@@ -2023,10 +2023,10 @@ more than 100 cemeteries throughout the United States.{/t}</p>
           <li>{t}Weigh advantages and disadvantages{/t}</li>
           <li>{t}Preparing the person with memory loss{/t}</li>
         </ul>
-        <p>{t}In their book, <a href="http://www.amazon.com/Moving-Relative-With-Memory-Loss/dp/0970760914" target="_blank">Moving a Relative with Memory Loss: A Family Caregiver\'s Guide</a>, authors Laurie White and Beth Spencer share their many years of experience working with families struggling with the decision to move a family member.{/t}</p>
+        <p>{t}In their book, <a href="http://www.amazon.com/Moving-Relative-With-Memory-Loss/dp/0970760914" target="_blank">Moving a Relative with Memory Loss: A Family Caregiver's Guide</a>, authors Laurie White and Beth Spencer share their many years of experience working with families struggling with the decision to move a family member.{/t}</p>
         <img src="<?php echo $this->getImagesUrl('msml/logo04.jpg'); ?>" alt="image">
         <p>{t}Making the decision to move a family member with memory loss to a new home, whether it is your home,
-an assisted living facility, or nursing home, is not easy. An emergency situation or crisis often opens our eyes to a loved one\'s increased care needs. Even if you do not think that a move is imminent, looking into different residential care options now is a good idea. That way, if and when the time comes for a move, you have done your homework and will have an idea of what places would be a good fit for your family member. If possible, taking your family member on the tours is helpful, as he/she can offer their opinions of the places you are considering.{/t}</p>
+an assisted living facility, or nursing home, is not easy. An emergency situation or crisis often opens our eyes to a loved one's increased care needs. Even if you do not think that a move is imminent, looking into different residential care options now is a good idea. That way, if and when the time comes for a move, you have done your homework and will have an idea of what places would be a good fit for your family member. If possible, taking your family member on the tours is helpful, as he/she can offer their opinions of the places you are considering.{/t}</p>
         <p>{t}Of course, your family may decide that you would prefer to keep your family member in his/her home as long as possible. There are advantages and disadvantages to this.{/t}</p>
         <p class="forum">{t}Can you think for a moment about some advantages and disadvantages? List your responses on the Forum{/t}</p>
         <p>{t}It is important for families to weigh the advantages and disadvantages, while keeping in mind the best interest of the person with memory loss.{/t}</p>
@@ -2107,7 +2107,7 @@ exchange names and a few pleasantries. As the conversation continues, however, y
         <hr />
         <img src="<?php echo $this->getImagesUrl('msml/113558101.png'); ?>" alt="image">
         <p>{t}Activity, or doing things, is an important consideration in terms of quality of life for all people, but
-particularly for people with memory loss. Memory loss may interfere with a person\'s ability to fully engage
+particularly for people with memory loss. Memory loss may interfere with a person's ability to fully engage
 in the activities that he or she always enjoyed. The person may remember what they liked to do but may
 have difficulty getting organized enough to do it, or may find the activity too complex. So, the person may
 simply stop doing the activities they enjoyed doing and may experience some of the feelings listed here.{/t}</p>
@@ -2135,7 +2135,7 @@ familiarity and comfort.{/t}</p>
 something that you do as a routine, having a cup of coffee in the morning before going to work, or taking a
 walk every evening. Ask the group to think about activities that they engage in every day as a routine –
 activities that they miss when they are unable to get to them. Discuss how unsettling it can feel when
-one\'s timetable is interrupted through illness, scheduling difficulties, or travel. Remind the group that a
+one's timetable is interrupted through illness, scheduling difficulties, or travel. Remind the group that a
 person with memory loss may have a particularly difficult time with a change in routine.{/t}</p>
         <p>{t}Some people with early memory loss describe the difficulty they have in changing their routines or
 switching from one activity or event to another. The person may feel that she needs to finish the first
@@ -2150,9 +2150,9 @@ to be important to your family member/friend, and what do you do to accommodate 
         <h2 class="flowers">{t}5. Find a Confidante{/t}</h2>
         <hr />
         <p>{t}Life does not end when a family member is diagnosed with a memory disorder. There are still plenty of
-opportunities for you and your family member/friend to enjoy one another\'s company, and yes, even have fun!{/t}</p>
+opportunities for you and your family member/friend to enjoy one another's company, and yes, even have fun!{/t}</p>
         <p>{t}Families and friends may want to make note of situations and events that the person with memory loss enjoys. If the person with memory loss is able to have a successful experience, then you can make every effort to include that experience in his or her routine. On the other hand, if the person clearly cannot tolerate an activity, make a note to avoid that situation in the future. For example, a person who once loved large family get‐togethers may find these overwhelming; a better option may be to visit with family and friends in smaller, more intimate groups.{/t}</p>
-        <p class="forum">{t}Let\'s take a moment to think about this. On the Forum create a two columns posting. On one side, post a few things that your family member enjoys doing on his/her own. On the other side, post down a few things that you enjoy doing together. Ater that, post your response to the following questions:{/t}</p>
+        <p class="forum">{t}Let's take a moment to think about this. On the Forum create a two columns posting. On one side, post a few things that your family member enjoys doing on his/her own. On the other side, post down a few things that you enjoy doing together. Ater that, post your response to the following questions:{/t}</p>
         <ul class="forum">
           <li>{t}How often are you able to do these things?{/t}</li>
           <li>{t}What opportunities does your family member/friend have to engage in his/her preferred activities?{/t}</li>
@@ -2195,7 +2195,7 @@ experiencing memory loss may have difficulty remembering all of the steps or may
           <li>{t}Look for new alternatives{/t}</li>
         </ul>
         <p>{t}Sometimes we may find that a person with memory loss has difficulty doing activities that she used to enjoy. This does not necessarily mean they need to stop engaging in that activity altogether – adapting the activity may be a better alternative.{/t}</p>
-        <p>{t}Let\'s take Ted as an example. Ted always enjoyed gardening. Last week his wife, Mary, found Ted in the
+        <p>{t}Let's take Ted as an example. Ted always enjoyed gardening. Last week his wife, Mary, found Ted in the
 shed, staring at his garden tools and looking confused. Mary asked Ted <i>what was wrong</i> and he said, <i>I
 need to pull weeds but I do not remember what I am supposed to use to do that.</i>{/t}</p>
         <p>{t}When Mary looks at the garden, she notices that Ted has pulled out three small tomato plants, mistaking
@@ -2216,7 +2216,7 @@ individuals do the things they have always liked to do, while considering adapta
         <p>{t}We have covered a lot of information in these past five modules. We are going to take a bit of time now to
 review and discuss a few new ideas that you may want to consider as you continue on this journey.{/t}</p>
         <div id="question1" class="question">
-          <p><b>{t}Could you describe dementia, Alheimer\'s disease, Medicare and its various parts?{/t}</b>
+          <p><b>{t}Could you describe dementia, Alheimer's disease, Medicare and its various parts?{/t}</b>
             <select>
               <option selected="selected" value="select"> {t}Select{/t} </option>
               <option value="1"> {t}Yes{/t} </option>
@@ -2238,9 +2238,9 @@ review and discuss a few new ideas that you may want to consider as you continue
 and years ahead. By enrolling in this course, you have taken the first step in finding out what you need to
 know about memory loss. As time goes on, you will find that the needs of your family member will change,
 and you will need additional information.{/t}</p>
-        <p>{t}The Alzheimer\'s Association is a good resource. Other resources include hospitals and medical centers,
+        <p>{t}The Alzheimer's Association is a good resource. Other resources include hospitals and medical centers,
 particularly those with neurology or memory loss clinics, research or educational organizations, and online
-resources like the Alzheimer\'s Disease Education and Referral Center (ADEAR) and the National
+resources like the Alzheimer's Disease Education and Referral Center (ADEAR) and the National
 Institutes of Health.{/t}</p>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
@@ -2253,7 +2253,7 @@ Institutes of Health.{/t}</p>
         <p>{t}It is very important to find a physician you can trust. You will have many questions as time goes on, and
         you will certainly want to keep up with current treatment options. If your physician does not understand
         memory loss, does not appear to be familiar with current treatments, or minimizes the seriousness of your
-        relative’s symptoms, you should consider changing physicians. Contact the Alzheimer\'s Association for
+        relative’s symptoms, you should consider changing physicians. Contact the Alzheimer's Association for
         referrals to physicians who are sensitive to the needs of persons experiencing memory loss.{/t}</p>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
@@ -2262,7 +2262,7 @@ Institutes of Health.{/t}</p>
       <div class="content">
         <h2 class="flowers">{t}Cartoon --{/t}</h2>
         <hr />
-        <h5>{t}Please don\'t waste the doctor\'s time with questions!{/t}</h5>
+        <h5>{t}Please don't waste the doctor's time with questions!{/t}</h5>
         <img src="<?php echo $this->getImagesUrl('msml/168733398.png'); ?>" alt="image"> </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
@@ -2315,7 +2315,7 @@ nonjudgmental way and offer you emotional support and assistance.{/t}</p>
         <p>{t}What do you like to do? Do you like to go for long walks? Do you like to read? Whatever your interest, it is
 important that you get into the habit of taking time for yourself. This may sound selfish and frivolous, but
 in reality it is necessary if you want to continue being able to care for your family member.{/t}</p>
-        <p>{t}As your family member\'s memory loss progresses, they will need more and more of your attention. If you
+        <p>{t}As your family member's memory loss progresses, they will need more and more of your attention. If you
 do not take time for yourself, you may find that you feel stressed out, tired and impatient. Worse, you may
 begin to experience stress‐related illnesses. So caring for yourself is not selfish, it is essential.{/t}</p>
       </div>
@@ -2351,7 +2351,7 @@ For more information about community resources, contact the local Area Agency on
         <p>{t}Memory loss is nothing to laugh at. But life is full of absurdities. Funny things can and do happen! Learn to
 enjoy these moments.{/t}</p>
         <p>{t}Memory loss does not mean an end to the relationship you enjoyed with your family member. The
-relationship may change, but it is not over. You can still enjoy one another\'s company and do fun things
+relationship may change, but it is not over. You can still enjoy one another's company and do fun things
 together. And yes, you can still have moments of joy, despite the memory loss.{/t}</p>
         <p>{t}A woman who cared for her husband with memory loss tells the story of having a long, protracted
 argument with him about putting on his pajamas to go to bed, because he wanted to sleep in his clothes.
