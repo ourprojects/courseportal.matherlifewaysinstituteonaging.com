@@ -16,7 +16,7 @@ foreach(array(
 			'ext.fancybox.EFancyBox',
 			array('id' => $lesson,
 				  'config' => array('width' => '720px',
-									'height' => '720px',
+									'height' => '1000px',
 									'arrows' => false,
 									'autoSize' => false,
 									'mouseWheel' => false))
@@ -28,76 +28,82 @@ foreach(array(
   <h1 class="bottom"><?php echo t($course->title); ?></h1>
 </div>
 <div id="sidebar">
+  <div class="box-sidebar one" style="background-color:#FFF;">
+    <h3>{t}Survey{/t}</h3>
+    <br />
+    <p><a href="#">{t}Spencer Online Pre-Course Survey{/t}</a></p>
+    <p><a href="#">{t}Spencer Online Post-Course Survey{/t}</a></p>
+    <p><a href="#">{t}Spencer Online Post-Post Course Survey{/t}</a></p>
+    <p><a href="#">{t}Spencer Online One-Year Survey{/t}</a></p>
+    <br />
+    <img src="<?php echo $this->getImagesUrl('msml/153075496.png'); ?>" alt="image"> </div>
   <div class="box-sidebar one">
     <h3>Sharp Brains - Market Research</h3>
     <p>{t}Tracking Brain Health Innovations: News, Research, Trech, Trends{/t}</p>
-    <p><a href="http://sharpbrains.com/index.php" target="_blank"><img class="block-center" src="<?php echo $this->getImagesUrl('spencer/SharpBrainsLogo.gif'); ?>" alt="image"></a></p>
+    <p><a href="http://sharpbrains.com/index.php" target="_blank"><img src="<?php echo $this->getImagesUrl('spencer/sharpbrainslogo.gif'); ?>" alt="image"></a></p>
     <hr />
     <p>{t}Sharp­Brains is an independent market research firm and think tank helping organizations and individuals navigate the emerging brain fitness and applied neuroscience field. We maintain an annual state-of-the-market report series, publish consumer guides to inform decision-making, produce an annual global and virtual professional conference.{/t}</p>
   </div>
   <div class="box-sidebar two">
     <h3>Go4Life</h3>
     <p>{t}from the National Institute on Aging at NIH{/t}</p>
-    <p><a href="http://sharpbrains.com/index.php" target="_blank"><img class="block-center" src="<?php echo $this->getImagesUrl('spencer/Go4lifeScreenShot.png'); ?>" style="width:200; height:142;" alt="image"></a></p>
+    <p><a href="http://sharpbrains.com/index.php" target="_blank"><img src="<?php echo $this->getImagesUrl('spencer/litejazz_logo.png'); ?>" style="width:200; height:142;" alt="image"></a></p>
     <hr />
     <p>{t}Go4Life, an exercise and physical activity campaign from the National Institute on Aging at NIH, is designed to help you fit exercise and physical activity into your daily life. Motivating older adults to become physically active for the first time, return to exercise after a break in their routines, or build more exercise and physical activity into weekly routines are the essential elements of Go4Life.{/t}</p>
-  </div>
-  <div class="box-sidebar three">
-    <h3>Coming Soon!</h3>
-    <p>{t}Coming Soon{/t}</p>
-    <hr />
-    <p>{t}Coming Soon!{/t}</p>
   </div>
 </div>
 
 <!-- start main content -->
 
 <div class="column-wide">
-<h2 class="flowers"><?php echo t($course->title); ?></h2>
-<p><?php echo t($course->description); ?></p>
-<h5>
-{t}Access - 1 year / Completion - 8 weeks (recommended){/t}
-<h4>{t}Objectives{/t}</h4>
-<ul>
-  <?php 
+  <h2 class="flowers"><?php echo t($course->title); ?></h2>
+  <p><?php echo t($course->description); ?></p>
+  <h5>
+  {t}Access - 1 year / Completion - 8 weeks (recommended){/t}
+  <h4>{t}Objectives{/t}</h4>
+  <ul>
+    <?php 
   foreach($course->objectives as $objective)
   	echo '<li>' . t($objective->text) . '</li>';
   ?>
-</ul>
-
-<!-- course lesson list start here -->
-<h4>{t}Sections{/t}</h4>
-<p><a href="#">{t}Pre-Course Survey{/t}</a></p>
-<ul>
-  <li> <a href="#lesson-1-slide-1" data-fancybox-group="lesson-1" class="teal lesson-1"> {t}Introduction{/t}</a> <a href="#lesson-1-slide-2" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-3" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-4" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-5" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-6" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-7" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-8" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-9" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-10" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-11" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-12" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-13" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-14" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-15" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-16" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-17" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-18" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-19" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-20" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-21" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-22" data-fancybox-group="lesson-1" class="hide lesson-1"></a></li>
-  <li> <a href="#lesson-2-slide-1" data-fancybox-group="lesson-2" class="teal lesson-2"> {t}Physical Activity{/t}</a> <a href="#lesson-2-slide-2" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-3" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-4" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-5" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-6" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-7" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-8" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-9" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-10" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-11" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-12" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-13" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-14" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-15" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-16" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-17" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-18" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-19" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-20" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-21" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-22" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-23" data-fancybox-group="lesson-2" class="hide lesson-2"></a> </li>
-  <li> <a href="#lesson-3-slide-1" data-fancybox-group="lesson-3" class="teal lesson-3"> {t}Emotional{/t}</a> <a href="#lesson-3-slide-2" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-3" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-4" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-5" data-fancybox-group="lesson-3" class="hide lesson-3"></a></li>
-  <li> <a href="#lesson-4-slide-1" data-fancybox-group="lesson-4" class="teal lesson-4"> {t}Intellectual{/t}</a> <a href="#lesson-4-slide-2" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-3" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-4" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-5" data-fancybox-group="lesson-4" class="hide lesson-4"></a></li>
-  <li> <a href="#lesson-5-slide-1" data-fancybox-group="lesson-5" class="teal lesson-5"> {t}Nutritional{/t}</a> <a href="#lesson-5-slide-2" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-3" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-4" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-5" data-fancybox-group="lesson-5" class="hide lesson-5"></a></li>
-  <li> <a href="#lesson-5-slide-1" data-fancybox-group="lesson-5" class="teal lesson-5"> {t}Spiritual{/t}</a> <a href="#lesson-5-slide-2" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-3" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-4" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-5" data-fancybox-group="lesson-5" class="hide lesson-5"></a></li>
-  <li> <a href="#lesson-5-slide-1" data-fancybox-group="lesson-5" class="teal lesson-5"> {t}Emotional{/t}</a> <a href="#lesson-5-slide-2" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-3" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-4" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-5" data-fancybox-group="lesson-5" class="hide lesson-5"></a></li>
-  <li> <a href="#lesson-5-slide-1" data-fancybox-group="lesson-5" class="teal lesson-5"> {t}Closing{/t}</a> <a href="#lesson-5-slide-2" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-3" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-4" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-5" data-fancybox-group="lesson-5" class="hide lesson-5"></a></li>
-</ul>
-<p><a href="#">{t}Post-Course Survey{/t}</a></p>
-<br />
-<br />
-<div class="box-white">
-  <div id="developers">
+  </ul>
+  
+  <!-- course lesson list start here -->
+  <h4>{t}Sections{/t}</h4>
+  <ul>
+    <li> <a href="#lesson-1-slide-1" data-fancybox-group="lesson-1" class="teal lesson-1"> {t}Introduction{/t}</a> <a href="#lesson-1-slide-2" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-3" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-4" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-5" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-6" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-7" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-8" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-9" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-10" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-11" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-12" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-13" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-14" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-15" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-16" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-17" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-18" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-19" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-20" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-21" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-22" data-fancybox-group="lesson-1" class="hide lesson-1"></a></li>
+    <li> <a href="#lesson-2-slide-1" data-fancybox-group="lesson-2" class="teal lesson-2"> {t}Physical Activity{/t}</a> <a href="#lesson-2-slide-2" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-3" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-4" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-5" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-6" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-7" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-8" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-9" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-10" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-11" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-12" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-13" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-14" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-15" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-16" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-17" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-18" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-19" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-20" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-21" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-22" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-23" data-fancybox-group="lesson-2" class="hide lesson-2"></a> </li>
+    <li> <a href="#lesson-3-slide-1" data-fancybox-group="lesson-3" class="teal lesson-3"> {t}Emotional{/t}</a> <a href="#lesson-3-slide-2" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-3" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-4" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-5" data-fancybox-group="lesson-3" class="hide lesson-3"></a></li>
+    <li> <a href="#lesson-4-slide-1" data-fancybox-group="lesson-4" class="teal lesson-4"> {t}Intellectual{/t}</a> <a href="#lesson-4-slide-2" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-3" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-4" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-5" data-fancybox-group="lesson-4" class="hide lesson-4"></a></li>
+    <li> <a href="#lesson-5-slide-1" data-fancybox-group="lesson-5" class="teal lesson-5"> {t}Nutritional{/t}</a> <a href="#lesson-5-slide-2" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-3" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-4" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-5" data-fancybox-group="lesson-5" class="hide lesson-5"></a></li>
+    <li> <a href="#lesson-5-slide-1" data-fancybox-group="lesson-5" class="teal lesson-5"> {t}Spiritual{/t}</a> <a href="#lesson-5-slide-2" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-3" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-4" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-5" data-fancybox-group="lesson-5" class="hide lesson-5"></a></li>
+    <li> <a href="#lesson-5-slide-1" data-fancybox-group="lesson-5" class="teal lesson-5"> {t}Emotional{/t}</a> <a href="#lesson-5-slide-2" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-3" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-4" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-5" data-fancybox-group="lesson-5" class="hide lesson-5"></a></li>
+    <li> <a href="#lesson-5-slide-1" data-fancybox-group="lesson-5" class="teal lesson-5"> {t}Closing{/t}</a> <a href="#lesson-5-slide-2" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-3" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-4" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-5" data-fancybox-group="lesson-5" class="hide lesson-5"></a></li>
+  </ul>
+  <div class="box-white" id="resources">
+    <h4> {t}Resources{/t}</h4>
+    <p>{t}Please use these listed resources in the completion of this online course. Please contact your instructor or the program director if you have additional resources you would like to see added here.{/t}</p>
+    <ul>
+      <li><a href="http://www.mindful.org/" target="_blank">mindful - taking time for what matters</a></li>
+      <li><a href="http://www.psychologytoday.com/basics/mindfulness" target="_blank">Psychologytoday</a></li>
+      <li><a href=" http://www.ncbi.nlm.nih.gov/pubmedhealth/PMH0008821/" target="_blank">PubMed Health</a></li>
+      <li><a href="http://www.bis.gov.uk/foresight/our-work/projects/published-projects/mental-capital-and-wellbeing/reports-and-publications
+" target="_blank">Foresight</a></li>
+      <li><a href="http://cognitivetherapyonline.com/" target="_blank">Cognitive Therapy Online</a></li>
+      <li><a href="http://www.cognitivebehavioraltherapyonline.com/index.php" target="_blank">FixMyThinking.com</a></li>
+      <li><a href="http://www.nih.gov/health/wellness/" target="_blank">National Institutes of Health</a></li>
+    </ul>
+  </div>
+  <div class="box-white" id="developers">
     <h4>{t}Facilitators &amp; Course Developers{/t}</h4>
-    <h5>{t}Content Designer:{/t}<a href="mailto:cobrien@matherlifeways.com">{t}Cate O\'Brien{/t}</a></h5>
+    <h5>{t}Content Designer:{/t} <span class="name">Cate O'Brien</span></h5>
     <p>{t}Ms. O’Brien has worked in a research capacity for Mather LifeWays Institute on Aging since 2005. She has been responsible for designing and overseeing large-scale multi-year evaluations for grant-funded projects relating to the field of aging. As a Project Director on grant funded research projects, she has been responsible for forging collaborations with aging services organizations nationwide, and for recruiting older adults into various studies.{/t}</p>
-    <h5>{t}Course Developer:{/t}<a href="mailto:jwoodall@matherlifeways.com">{t}Jon Woodall{/t}</a></h5>
+    <span class="h5">{t}Course Developer:{/t}</span> <span class="name">Jon Woodall</span>
     <p>{t}Mr. Woodall is responsible for all MLIA corporate workforce wellness programs related to design, implementation, publication, and evaluation. Additionally, he seeks new grant funding to support or extend current grants related to corporate workforce wellness programs.{/t}</p>
-    <h5>{t}Course Facilitator:{/t}<a href="mailto:sall@cogwellness.com">{t}Sherrie All, PhD{/t}</a></h5>
+    <span class="h5">{t}Course Facilitator:{/t}</span> <span class="name">Sherrie All, PhD</span></a>
     <p>{t}Licensed clinical neuropsychologist specializing in brain fitness, healthy aging and cognitive enhancement. She is building a private practice in clinical neuropsychological assessment combined with interventions aimed at enhancing cognition and promoting healthy aging. And has specialties in Neuropsychological Assessment, Individual and Group Psychotherapy, Brain Fitness and Healthy Aging Thearpy and Coaching{/t}</p>
   </div>
 </div>
-
-</div>
-
-
-
-
 
 <!-- Lesson 1 slide #1 -->
 
@@ -160,8 +166,8 @@ foreach(array(
         <h2 class="flowers">{t}Brain Health{/t}</h2>
         <hr />
         <p>{t}The world of brain health has exploded over the past decade with many new programs and applications emerging to help people think and perform better both now in their daily lives at work or at home and later in life as people age.  Maintaining independence later in life is a concern for many people, especially older adults, but even for younger people this can be a nagging concern.  Through the course of this program you will learn how investing in your brain health now can pay dividends both immediately and as you age.
- 
-To describe some of the key concepts underlying the field of brain health, we will start by talking a bit about how to protect brain health as you age.{/t}</p>
+          
+          To describe some of the key concepts underlying the field of brain health, we will start by talking a bit about how to protect brain health as you age.{/t}</p>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
@@ -534,94 +540,84 @@ Rewards
   
   <!-- Lesson 2 slide #1 -->
   
-    <div id="lesson-2">
-      <div id="lesson-2-slide-1" class="course-slide">
-        <div class="content">
-          <h2 class="flowers">{t}Spencer Powell Brain Fitness Program online{/t}</h2>
-          <hr />
-          <h4>{t}Section 2{/t}</h4>
-          <p>{t}test{/t}</p>
-        </div>
-        <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Start Course &raquo;{/t}</a></div>
+  <div id="lesson-2">
+    <div id="lesson-2-slide-1" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Spencer Powell Brain Fitness Program online{/t}</h2>
+        <hr />
+        <h4>{t}Section 2{/t}</h4>
+        <p>{t}test{/t}</p>
       </div>
-      
-      <!-- Lesson 2 slide #2 -->
-      
-      <div id="lesson-2-slide-2" class="course-slide">
-        <div class="content">
-          <h2 class="flowers">{t}Section Outline{/t}</h2>
-          <hr />
-          <ol>
-            <li>
-              <h4>Check-in and Review</h4>
-            </li>
-            <li>
-              <h4>Benefits of Physical Activity</h4>
-            </li>
-            <li>
-              <h4>Memory Exercise</h4>
-            </li>
-            <li>
-              <h4>Goal Setting</h4>
-            </li>
-          </ol>
-        </div>
-        <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"> {t}Next{/t}&nbsp;&raquo; </a></div>
-      </div>
-      
-      
-         <!-- Lesson 2 slide #3 -->
-      
-      <div id="lesson-2-slide-3" class="course-slide">
-        <div class="content">
-          <h2 class="flowers">{t}Check-in{/t}</h2>
-          <hr />
-          <ul>
-          	<li>{t}How did your week go?{/t}</li>
-            <li>{t}Did you think about anything you learned last week?{/t}</li>
-            <li>{t}Did you log your activities?{/t}</li>
-            <li>{t}Any questions about the CR Contribution Logs?{/t}</li>
-            <li>{t}What is Cognitive Reserve?{/t}</li>
-            <li>{t}How can knowing about this theory help you?{/t}</li>
-            <li>{t}What was the Memory Strategy that you learned last week?{/t}</li>
-            <li>{t}Did you have a chance to use it?{/t}</li>
-         </ul>
-
-
-        </div>
-        <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"> {t}Next{/t}&nbsp;&raquo; </a></div>
-      </div>
-      
-      <!-- Lesson 2 slide #23 -->
-      
-      <div id="lesson-2-slide-23" class="course-slide">
-        <div class="content">
-          <h2 class="flowers">{t}Recap{/t}</h2>
-          <hr />
-          <h4>{t}Forum Postings{/t}</h4>
-          <p>{t}Please answer the following questions on the Forum. You can use the same thread to response to all of these questions.{/t}</p>
-          <p>{t}Attempt to respond to these questions using the knowledge you gained from this Section. Please do not use the Internet or other sources to create your responses.{/t}</p>
-          <ul>
-            <li>{t}What are some benefits of physical activity?{/t}</li>
-            <li>{t}How does physical activity help your brain?{/t}</li>
-            <li>{t}What are white dots?{/t}</li>
-            <li>{t}Name 3 direct ways that physical activity seems to directly improve cognition.{/t}</li>
-            <li>{t}What is the Memory Strategy for this week?{/t}</li>
-            <li>{t}What are your goals for this week?{/t}</li>
-          </ul>
-        </div>
-        <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Complete Lesson{/t}</a></div>
-      </div>
-    
-    
-    
-    
-    
-      
-      <!-- this div is needed to close the  lesson --> 
+      <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Start Course &raquo;{/t}</a></div>
     </div>
     
-    <!-- need this final div to close the full course --> 
+    <!-- Lesson 2 slide #2 -->
+    
+    <div id="lesson-2-slide-2" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Section Outline{/t}</h2>
+        <hr />
+        <ol>
+          <li>
+            <h4>Check-in and Review</h4>
+          </li>
+          <li>
+            <h4>Benefits of Physical Activity</h4>
+          </li>
+          <li>
+            <h4>Memory Exercise</h4>
+          </li>
+          <li>
+            <h4>Goal Setting</h4>
+          </li>
+        </ol>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"> {t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
+    
+    <!-- Lesson 2 slide #3 -->
+    
+    <div id="lesson-2-slide-3" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Check-in{/t}</h2>
+        <hr />
+        <ul>
+          <li>{t}How did your week go?{/t}</li>
+          <li>{t}Did you think about anything you learned last week?{/t}</li>
+          <li>{t}Did you log your activities?{/t}</li>
+          <li>{t}Any questions about the CR Contribution Logs?{/t}</li>
+          <li>{t}What is Cognitive Reserve?{/t}</li>
+          <li>{t}How can knowing about this theory help you?{/t}</li>
+          <li>{t}What was the Memory Strategy that you learned last week?{/t}</li>
+          <li>{t}Did you have a chance to use it?{/t}</li>
+        </ul>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"> {t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
+    
+    <!-- Lesson 2 slide #23 -->
+    
+    <div id="lesson-2-slide-23" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Recap{/t}</h2>
+        <hr />
+        <h4>{t}Forum Postings{/t}</h4>
+        <p>{t}Please answer the following questions on the Forum. You can use the same thread to response to all of these questions.{/t}</p>
+        <p>{t}Attempt to respond to these questions using the knowledge you gained from this Section. Please do not use the Internet or other sources to create your responses.{/t}</p>
+        <ul>
+          <li>{t}What are some benefits of physical activity?{/t}</li>
+          <li>{t}How does physical activity help your brain?{/t}</li>
+          <li>{t}What are white dots?{/t}</li>
+          <li>{t}Name 3 direct ways that physical activity seems to directly improve cognition.{/t}</li>
+          <li>{t}What is the Memory Strategy for this week?{/t}</li>
+          <li>{t}What are your goals for this week?{/t}</li>
+        </ul>
+      </div>
+      <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Complete Lesson{/t}</a></div>
+    </div>
+    
+    <!-- this div is needed to close the  lesson --> 
   </div>
-
-
+  
+  <!-- need this final div to close the full course --> 
+</div>

@@ -96,9 +96,9 @@ foreach(array(
       {t}Through research-based programs and innovative techniques, Mather LifeWays Institute on Aging is committed to advancing the field of geriatric care. Cutting-edge research lays the foundation for our solid solutions to senior care challenges, including recruitment, mentorship, training, and retention. Used by individuals and entire organizations, our nationally recognized, award-winning programs include training modules, online courses, toolkits, and learning modules designed to make learning fun and easy. Our programs have been shown to result in measurable improvements in the quality of care provided and workforce retention.{/t}</p>
     <p><a href="http://www.alz.org/illinois/" target="_blank">Greater Illinois Chapter | Alzheimer's Association</a><br />
       {t}The Alzheimer’s Association, Greater Illinois Chapter serves 68 counties in Illinois with offices in Bloomington, Carbondale, Chicago, Joliet, Rockford and Springfield. Since 1980, the Chapter has provided reliable information and care consultation; created supportive services for families; increased funding for dementia research; and influenced public policy changes. Today, the Greater Illinois Chapter serves the more than a half million Illinois residents affected by Alzheimer’s disease throughout our chapter area, including 210,000 people with the disease.{/t}</p>
-    <span class="h5">{t}Course Developer:{/t}</span><span class="name">Jon Woodall</span>
+    <span class="h5">{t}Course Developer: {/t}</span><span class="name">Jon Woodall</span>
     <p>{t}Mr. Woodall is responsible for all MLIA corporate workforce wellness programs related to design, implementation, publication, and evaluation. Additionally, he seeks new grant funding to support or extend current grants related to corporate workforce wellness programs.{/t} </p>
-    <span class="h5">{t}Facilitator:{/t}</span><span class="name">Ellen Ziegemeier</span>
+    <span class="h5">{t}Facilitator: {/t}</span><span class="name">Ellen Ziegemeier</span>
     <p>{t}Ms. Ziegemeier has been facilitating online courses for Mather LifeWays Institute on Aging since 2004. She earned her Masters in Anthropology, and has worked locally and abroad -  Latin America and South America for various aging services. She is fluent in English and Spanish, and has a strong passion for caregiver training.{/t} </p>
   </div>
 </div>
@@ -2395,36 +2395,45 @@ Thinking about what we need to do, and the smaller steps that it may take in get
 the long run. It is easier and more rewarding to achieve smaller goals, working our way up to the larger
 ones. Instead of setting a goal of walking five miles every day, a more realistic and achievable goal may be
 to walk around the block three times a week.{/t}</p>
-        <p>{t}Thank you all for participating in Making Sense of Memory Loss. We hope that you have learned some tips
+        <p>{t}Thank you all for participating in Making Sense of Memory Loss Online. We hope that you have learned some tips
 and techniques that will assist you in the future.{/t}</p>
-        <p>{t}As a summary and to make sure we have answered all of your questions let’s review our chart of questions
-from the first class.{/t}</p>
-        <p>{t}While moving down the chart read each question aloud and ask:{/t}</p>
-        <ul>
-          <li>{t}Do you feel like this has been covered during the five weeks?{/t}</li>
-          <li>{t}Answer any remaining questions.{/t}</li>
+        <p>{t}As a summary and to make sure we have answered all of your questions, please review the Forum, and contact your facilitator, via email, with any final concerns.  {/t}</p>
+        <p class="forum">{t}On the Forum, please post your final responses to these questions:{/t}</p>
+        <ul class="forum">
+          <li>{t}Do you feel like enough informaiton has been covered during these five modules?{/t}</li>
+          <li>{t}And, please answer any remaining questions from all five modules.{/t}</li>
         </ul>
+        
+        <img src="<?php echo $this->getImagesUrl('msml/forum_icon.png'); ?>" alt="image">
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
     <div id="lesson-5-slide-21" class="course-slide">
       <div class="content">
-        <h2 class="flowers">{t}Your supplemental readingfor this class in thecompanion book includesChapters 10 and 11.{/t}</h2>
+        <h2 class="flowers">{t}Thank You! Good Luck!{/t}</h2>
         <hr />
+       <p>{t}Your supplemental readingfor this class in thecompanion book includesChapters 10 and 11.{/t}</p>
+        
         <p>{t}To end the course, I would like to share with you one last message that conveys the feeling of caring for
 someone with memory loss and invite you to remember this quote from Helen Keller.{/t}</p>
         <p><i>{t}The best and most beautifulthings in the world cannotbe seen or even touched.They must be felt withinthe heart. --Helen Keller{/t}</i></p>
         <p>{t}We have really enjoyed getting to know you. Best wishes as you carry on in the future!{/t}</p>
-        <h5><a href="#" target="_blank">{t}Certificates of Completion{/t}</a></h5>
+        <h5 style="text-align:center;"><a href="#" target="_blank">{t}Certificates of Completion{/t}</a></h5>
+        <img src="<?php echo $this->getImagesUrl('msml/ArtworkCertificate.png'); ?>" alt="image">
+        
         <h4>{t}Evaluation (optional){/t}</h4>
         <p>{t}Please complete the Post-Course Evaluation. It is acceissble via the course page, in the sidebar.{/t}</p>
         <p>{t}Your feedback is greatly appreciated, and will help us to better serve family members in the future. We ask that you
         complete it before you exit the course. You do not have to include your name on the evaluation. It is completely
         confidential.{/t}</p>
-      </div>
-      <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Start Course &raquo;{/t}</a></div>
+         </div>
+      <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Complete Course{/t}</a></div>
     </div>
   </div>
+        
+        
+        
+ 
   
   <!-- close course --> 
 </div>

@@ -46,15 +46,16 @@ foreach(array(
   <div class="box-sidebar two">
     <h3>{t}Magnitude - Informal Caregivers{/t}</h3>
     <p><a href="http://www.caregiver.org/caregiver/jsp/home.jsp" target="_blank">FAMILY CAREGIVER ALLIANCE</a></p>
-    <p><b> {t}National Center on Caregiving (USA){/t}</b></p>
-    <p class="title">{t}65.7 million{/t}</p>
+    <p style="text-align:center;"><b> {t}National Center on Caregiving (USA){/t}</b></p>
+    <p style="text-align:center; font-weight:bold; font-style:italic;">{t}65.7 million{/t}</p>
     <p>{t}caregivers make up 29% of the U.S. adult population providing care to someone who is ill, disabled or aged{/t}</p>
-    <hr />
-    <p class="title">{t}52 million{/t}</p>
-    <p>{t}caregivers provide care to adults (aged 18+) with a disability or illness{/t}</p>
-    <hr />
-    <p class="title">{t}14.9 million{/t}</p>
-    <p>{t}care for someone who has Alzheimer\'s disease or other dementia{/t}</p>
+        <hr />
+        
+        <img src="<?php echo $this->getImagesUrl('care/piechart.png'); ?>" alt="image">
+        <p style="text-align:center;"><a href="http://www.caregiver.org/caregiver/jsp/content_node.jsp?nodeid=439" target="_blank">more statistics...</a></p>
+
+
+   
   </div>
 </div>
 <!-- Start main content here -->
@@ -119,11 +120,11 @@ AARP provides various articles of interest and resources for family caregivers. 
   <div class="box-white" id="developers">
       <h4>{t}Facilitators &amp; Course Developers{/t}</h4>
       <br />
-      <SPAN class="h5">{t}Content Designer:{/t}</SPAN><span class="name">Linda Hollinger-Smith, PhD</SPAN>
+      <SPAN class="h5">{t}Content Designer:{/t} </SPAN><span class="name">Linda Hollinger-Smith, PhD</SPAN>
       <p> {t}Dr. Hollinger-Smith is a doctorally prepared registered nurse focusing her research in gerontology, workforce development, and quality improvement. She has more than 28 years of experience working with older adults in senior living, long-term care settings, in the community, and in acute care settings in various staff and managerial positions. Her past positions include Assistant Dean of the Rush University College of Nursing, Nursing Director of the Rush Primary Care Institute, and Associate Chairperson of the Department of Adult Health Nursing at Rush University College of Nursing.{/t} </p>
-      <span class="h5">{t}Course Developer:{/t}</span><span class="name">Jon Woodall</span>
+      <span class="h5">{t}Course Developer:{/t} </span><span class="name">Jon Woodall</span>
       <p>{t}Mr. Woodall is responsible for all MLIA corporate workforce wellness programs related to design, implementation, publication, and evaluation. Additionally, he seeks new grant funding to support or extend current grants related to corporate workforce wellness programs.{/t} </p>
-      <span class="h5">{t}Facilitator:{/t}</span><span class="name">Ellen Ziegemeier</span>
+      <span class="h5">{t}Facilitator:{/t}</span> <span class="name">Ellen Ziegemeier</span>
       <p>{t}Ms. Ziegemeier has been facilitating online courses for Mather LifeWays Institute on Aging since 2004. She earned her Masters in Anthropology, and has worked locally and abroad -  Latin America and South America for various aging services. She is fluent in English and Spanish, and has a strong passion for caregiver training.{/t} </p>
  
   </div>

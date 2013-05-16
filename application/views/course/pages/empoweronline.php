@@ -54,8 +54,8 @@ foreach(array(
   
   
   <div class="box-sidebar three">
-    <h3>{t}Caregivers\' Resources{/t}</h3>
-    <p><a href="http://www.usa.gov/Citizen/Topics/Health/caregivers.shtml#Government_Benefits" target="_blank"><img src="<?php echo $this->getImagesUrl('usagov_logo.gif'); ?>" alt="image"></a> </p>
+    <h3>{t}Caregiver Resources{/t}</h3>
+    <p><a href="http://www.usa.gov/Citizen/Topics/Health/caregivers.shtml#Government_Benefits" target="_blank"><img src="<?php echo $this->getImagesUrl('empower/usagov_logo.gif'); ?>" alt="image"></a> </p>
     <hr />
     <p>{t}Find a nursing home, assisted living, or hospice; check your eligibility for benefits; get resources for long-distance caregiving; review legal issues; and find support for caregivers. (English){/t}</p>
     <br />
@@ -234,16 +234,16 @@ foreach(array(
    <div class="box-white" id="developers">
       <h4>{t}Facilitators &amp; Course Developers{/t}</h4>
       <br />
-      <SPAN class="h5">{t}Content Designer:{/t}</SPAN><span class="name">Linda Hollinger-Smith, PhD</SPAN>
+      <SPAN class="h5">{t}Content Designer:{/t}</SPAN> <span class="name">Linda Hollinger-Smith, PhD</SPAN>
       <p> {t}Dr. Hollinger-Smith is a doctorally prepared registered nurse focusing her research in gerontology, workforce development, and quality improvement. She has more than 28 years of experience working with older adults in senior living, long-term care settings, in the community, and in acute care settings in various staff and managerial positions. Her past positions include Assistant Dean of the Rush University College of Nursing, Nursing Director of the Rush Primary Care Institute, and Associate Chairperson of the Department of Adult Health Nursing at Rush University College of Nursing.{/t} </p>
-      <span class="h5">{t}Course Developer:{/t}</span><span class="name">Jon Woodall</span>
+      <span class="h5">{t}Course Developer:{/t}</span> <span class="name">Jon Woodall</span>
       <p>{t}Mr. Woodall is responsible for all MLIA corporate workforce wellness programs related to design, implementation, publication, and evaluation. Additionally, he seeks new grant funding to support or extend current grants related to corporate workforce wellness programs.{/t} </p>
       
       
-      <span class="h5">{t}Facilitator (English / Spanish / Portuguese):{/t}</span><span class="name">Elise Foss</span>
+      <span class="h5">{t}Facilitator (English / Spanish / Portuguese):{/t}</span> <span class="name">Elise Foss</span>
      <p>{t}Ms. Foss has been facilitating online courses for Mather LifeWays Institute on Aging since 2004. Currently, she is the Fitness Coordinator for a Mather LifeWays Senior Living community. Originally from Venezula, and educated in Brazil, Elise is fluent in English, Spanish and Portuguese, and travels to family in Brazil each year.{/t}
       </p>
-         <span class="h5">{t}Facilitator (Chinese):{/t}</span><span class="name">LiJuan Yin</span>
+         <span class="h5">{t}Facilitator (Chinese):{/t}</span> <span class="name">LiJuan Yin</span>
      <p>{t}Mrs. Lin is currently a PhD student at the University of Illinois at Chicago (UIC), studying Public Health. She has helped reserarch, develop, and facilitate online courses for Mather LifeWays Institute on aging for the past 3 years.{/t}
       </p>
     

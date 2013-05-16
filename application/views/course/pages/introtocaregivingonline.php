@@ -92,11 +92,11 @@ foreach(array(
   <div class="box-white" id="developers">
       <h4>{t}Facilitators &amp; Course Developers{/t}</h4>
       <br />
-      <SPAN class="h5">{t}Content Designer:{/t}</SPAN><span class="name">Linda Hollinger-Smith, PhD</SPAN>
+      <SPAN class="h5">{t}Content Designer:{/t}</SPAN> <span class="name">Linda Hollinger-Smith, PhD</SPAN>
       <p> {t}Dr. Hollinger-Smith is a doctorally prepared registered nurse focusing her research in gerontology, workforce development, and quality improvement. She has more than 28 years of experience working with older adults in senior living, long-term care settings, in the community, and in acute care settings in various staff and managerial positions. Her past positions include Assistant Dean of the Rush University College of Nursing, Nursing Director of the Rush Primary Care Institute, and Associate Chairperson of the Department of Adult Health Nursing at Rush University College of Nursing.{/t} </p>
-      <span class="h5">{t}Course Developer:{/t}</span><span class="name">Jon Woodall</span>
+      <span class="h5">{t}Course Developer:{/t}</span> <span class="name">Jon Woodall</span>
       <p>{t}Mr. Woodall is responsible for all MLIA corporate workforce wellness programs related to design, implementation, publication, and evaluation. Additionally, he seeks new grant funding to support or extend current grants related to corporate workforce wellness programs.{/t} </p>
-      <span class="h5">{t}Course Developer:{/t}</span><span class="name">Jon Woodall</span>
+      <span class="h5">{t}Course Developer:{/t}</span> <span class="name">Jon Woodall</span>
       <p>{t}Mr. Woodall is responsible for all MLIA corporate workforce wellness programs related to design, implementation, publication, and evaluation. Additionally, he seeks new grant funding to support or extend current grants related to corporate workforce wellness programs.{/t} </p>
    
   </div>
