@@ -82,7 +82,8 @@ class MPTranslate extends CApplicationComponent {
 	
 	public function processRequest($route) {
 		// If there is a post-request, redirect the application to the provided url of the selected language
-		if(isset($_POST['language'])) {
+		if(isset($_POST['language'])) 
+		{
 			Yii::app()->getRequest()->redirect(Yii::app()->createUrl($route, array('language' => $_POST['language'])));
 		}
 		
@@ -124,20 +125,8 @@ class MPTranslate extends CApplicationComponent {
 	{
 		Yii::app()->setLanguage($language);
 		setLocale(LC_ALL, $language.'.'.Yii::app()->charset);
-		
 		Yii::app()->getUser()->setState('language', $language);
-		
-		// Set cookie if not set.
-		$cookies = Yii::app()->getRequest()->getCookies();
-		if(!$cookies->contains('language')) 
-		{
-			$cookies->add('language', new CHttpCookie('language', $language, array('expire' => time() + $this->cookieExpire)));
-		} 
-		else if($cookies->itemAt('language')->value !== $language) 
-		{
-			$cookies->itemAt('language')->value = $language;
-			$cookies->itemAt('language')->expire = time() + $this->cookieExpire;
-		}
+		Yii::app()->getRequest()->getCookies()->add('language', new CHttpCookie('language', $language, array('expire' => time() + $this->cookieExpire)));
 	}
 	
 	public function hasMissingTranslations()

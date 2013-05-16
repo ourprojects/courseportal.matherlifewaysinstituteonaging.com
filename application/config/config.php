@@ -29,11 +29,11 @@ return array(
 		
 		// configured modules
 		'modules' => array(
-			/*'gii'=>array(
+			'gii'=>array(
 		        'class'=>'system.gii.GiiModule',
 		        'password'=>'abcd',
 		        'ipFilters'=>array('*'),
-		    ),*/
+		    ),
 			'phpbb',
 			'translate',
 			'surveyor',
@@ -96,8 +96,7 @@ return array(
 				),
 				
 				'viewRenderer' => array(
-					'class' => 'modules.translate.components.TViewRenderer',
-					'cacheDuration' => defined('YII_DEBUG') && YII_DEBUG ? 0 : 43200
+					'class' => 'modules.translate.components.TViewRenderer'
 				),
 				
 				'user' => array(
