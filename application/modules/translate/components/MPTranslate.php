@@ -5,18 +5,13 @@ class MPTranslate extends CApplicationComponent {
 	/**
 	 * @const string ID an unique key to be used in many situations
 	 * */
-	const ID = 'mp-translate';
+	const ID = 'module.translate';
 	
 	const GOOGLE_QUERY_TIME_LIMIT = 30;
 	
 	const GOOGLE_TRANSLATE_MAX_CHARS = 5000;
 	
 	const GOOGLE_TRANSLATE_URL = 'https://www.googleapis.com/language/translate/v2';
-
-    /**
-     * @staticvar array $messages contains the untranslated messages found
-     * */
-    static $messages = array();
     
     /**
      * @var $dialogOptions options of the dialog
@@ -53,6 +48,8 @@ class MPTranslate extends CApplicationComponent {
     
     public $cookieExpire = 63072000; // 2 Years in seconds.
     
+    public $source = 'messages';
+    
     private $_sourceLanguageId = null;
     
     private $_sourceScriptId = null;
@@ -60,7 +57,12 @@ class MPTranslate extends CApplicationComponent {
     private $_sourceTerritoryId = null;
     
     /**
-     * @var array $_cache will contain variables
+     * @var array $_messages contains the untranslated messages found during the current request
+     * */
+    private $_messages = array();
+    
+    /**
+     * @var array $_cache will contain cached variables
      * */
     private $_cache = array();
     
@@ -71,7 +73,8 @@ class MPTranslate extends CApplicationComponent {
 		Yii::import('translate.models.*');
 
         function t($message, $params = array()) {
-        	return Yii::t(TranslateModule::translator()->messageCategory, $message, $params, null, null);
+        	$translator = TranslateModule::translator();
+        	return Yii::t($translator->messageCategory, $message, $params, $translator->source);
         }
         
         return parent::init();
@@ -117,7 +120,8 @@ class MPTranslate extends CApplicationComponent {
 		$this->setLanguage($language);
 	}
 	
-	public function setLanguage($language) {
+	public function setLanguage($language) 
+	{
 		Yii::app()->setLanguage($language);
 		setLocale(LC_ALL, $language.'.'.Yii::app()->charset);
 		
@@ -125,19 +129,29 @@ class MPTranslate extends CApplicationComponent {
 		
 		// Set cookie if not set.
 		$cookies = Yii::app()->getRequest()->getCookies();
-		if(!$cookies->contains('language')) {
+		if(!$cookies->contains('language')) 
+		{
 			$cookies->add('language', new CHttpCookie('language', $language, array('expire' => time() + $this->cookieExpire)));
-		} else if($cookies->itemAt('language')->value !== $language) {
+		} 
+		else if($cookies->itemAt('language')->value !== $language) 
+		{
 			$cookies->itemAt('language')->value = $language;
 			$cookies->itemAt('language')->expire = time() + $this->cookieExpire;
 		}
 	}
 	
-	public function canUseGoogleTranslate() {
+	public function hasMissingTranslations()
+	{
+		return !empty($this->_messages);
+	}
+	
+	public function canUseGoogleTranslate() 
+	{
 		return !empty($this->googleApiKey);
 	}
 	
-	public function getYiiAcceptedLocales() {
+	public function getYiiAcceptedLocales() 
+	{
 		return CLocale::getLocaleIds();
 	}
 	
@@ -147,16 +161,21 @@ class MPTranslate extends CApplicationComponent {
 	 * @param string $targetLanguage
 	 * @return array
 	 */
-	public function getGoogleAcceptedLanguages() {
+	public function getGoogleAcceptedLanguages() 
+	{
 		$cacheKey = self::ID . '-cache-google-accepted-languages';
-		if(!isset($this->_cache[$cacheKey])) {
-			if(($cache = Yii::app()->getCache()) === null || ($languages = $cache->get($cacheKey)) === false) {
+		if(!isset($this->_cache[$cacheKey])) 
+		{
+			if(($cache = Yii::app()->getCache()) === null || ($languages = $cache->get($cacheKey)) === false) 
+			{
 				$queryLanguages = $this->queryGoogle(array(), 'languages');
-				if($queryLanguages === false) {
+				if($queryLanguages === false) 
+				{
 					Yii::log('Failed to query Google\'s accepted languages.', CLogger::LEVEL_ERROR, self::ID);
 					return false;
 				}
-				foreach($queryLanguages->languages as $language) {
+				foreach($queryLanguages->languages as $language) 
+				{
 					$languages[$language->language] = isset($language->name) ? $language->name : $language->language;
 				}
 				asort($languages, SORT_LOCALE_STRING);
@@ -168,10 +187,13 @@ class MPTranslate extends CApplicationComponent {
 		return $this->_cache[$cacheKey];
 	}
 	
-	public function getAdminAcceptedLanguages() {
+	public function getAdminAcceptedLanguages() 
+	{
 		$cacheKey = self::ID . '-cache-admin-accepted-languages-' . Yii::app()->getLanguage();
-		if(!isset($this->_cache[$cacheKey])) {
-			if(($cache = Yii::app()->getCache()) === null || ($languages = $cache->get($cacheKey)) === false) {
+		if(!isset($this->_cache[$cacheKey])) 
+		{
+			if(($cache = Yii::app()->getCache()) === null || ($languages = $cache->get($cacheKey)) === false) 
+			{
 				$languageDisplayNames = $this->getLanguageDisplayNames();
 				$languages[$this->getSourceLanguageId()] = isset($languageDisplayNames[$this->getSourceLanguageId()]) ? $languageDisplayNames[$this->getSourceLanguageId()] : $this->getSourceLanguageId();
 				foreach(AcceptedLanguage::model()->findAll() as $lang)
@@ -185,43 +207,51 @@ class MPTranslate extends CApplicationComponent {
 		return $this->_cache[$cacheKey];
 	}
 	
-	public function isYiiAcceptedLocale($id) {
+	public function isYiiAcceptedLocale($id) 
+	{
 		return in_array($id, $this->getYiiAcceptedLocales());
 	}
 	
-	public function isGoogleAcceptedLanguage($id) {
+	public function isGoogleAcceptedLanguage($id) 
+	{
 		return array_key_exists(Yii::app()->getLocale()->getLanguageID($id), $this->getGoogleAcceptedLanguages());
 	}
 	
-	public function isAdminAcceptedLanguage($id) {
+	public function isAdminAcceptedLanguage($id) 
+	{
 		return array_key_exists(Yii::app()->getLocale()->getLanguageID($id), $this->getAdminAcceptedLanguages());
 	}
 	
-	public function getSourceLanguageID() {
+	public function getSourceLanguageID() 
+	{
 		if($this->_sourceLanguageId === null)
 			$this->_sourceLanguageId = $this->getLanguageID(Yii::app()->sourceLanguage);
 		return $this->_sourceLanguageId;
 	}
 	
-	public function getSourceScriptID() {
+	public function getSourceScriptID() 
+	{
 		if($this->_sourceScriptId === null)
 			$this->_sourceScriptId = $this->getScriptID(Yii::app()->sourceScript);
 		return $this->_sourceScriptId;
 	}
 	
-	public function getSourceTerritoryID() {
+	public function getSourceTerritoryID() 
+	{
 		if($this->_sourceTerritoryId === null)
 			$this->_sourceTerritoryId = $this->getTerritoryID(Yii::app()->sourceTerritory);
 		return $this->_sourceTerritoryId;
 	}
 	
-	public function getLanguageID($language = null) {
+	public function getLanguageID($language = null) 
+	{
 		if($language === null)
 			$language = Yii::app()->getLanguage();
 		return Yii::app()->getLocale()->getLanguageID($language);
 	}
 	
-	public function getScriptID($language = null) {
+	public function getScriptID($language = null) 
+	{
 		if($language === null)
 			$language = Yii::app()->getLanguage();
 		$id = Yii::app()->getLocale()->getScriptID($language);
@@ -230,7 +260,8 @@ class MPTranslate extends CApplicationComponent {
 		return $id;
 	}
 	
-	public function getTerritoryID($language = null) {
+	public function getTerritoryID($language = null) 
+	{
 		if($language === null)
 			$language = Yii::app()->getLanguage();
 		$id = Yii::app()->getLocale()->getTerritoryID($language);
@@ -239,31 +270,38 @@ class MPTranslate extends CApplicationComponent {
 		return $id;
 	}
 	
-	public function getLanguageDisplayName($id = null, $language = null) {
+	public function getLanguageDisplayName($id = null, $language = null) 
+	{
 		return $this->getLocaleDisplayName($id, $language);
 	}
 	
-	public function getLanguageDisplayNames($language = null) {
+	public function getLanguageDisplayNames($language = null) 
+	{
 		return $this->getLocaleDisplayNames($language);
 	}
 	
-	public function getScriptDisplayName($id = null, $language = null) {
+	public function getScriptDisplayName($id = null, $language = null) 
+	{
 		return $this->getLocaleDisplayName($id, $language, 'script');
 	}
 	
-	public function getScriptDisplayNames($language = null) {
+	public function getScriptDisplayNames($language = null) 
+	{
 		return $this->getLocaleDisplayNames($language, 'script');
 	}
 	
-	public function getTerritoryDisplayName($id = null, $language = null) {
+	public function getTerritoryDisplayName($id = null, $language = null) 
+	{
 		return $this->getLocaleDisplayName($id, $language, 'territory');
 	}
 	
-	public function getTerritoryDisplayNames($language = null) {
+	public function getTerritoryDisplayNames($language = null) 
+	{
 		return $this->getLocaleDisplayNames($language, 'territory');
 	}
 	
-	public function getLocaleDisplayName($id = null, $language = null, $category = 'language') {
+	public function getLocaleDisplayName($id = null, $language = null, $category = 'language') 
+	{
 		$idMethod = 'get' . ucfirst(strtolower($category)) . 'ID';
 		if(!method_exists($this, $idMethod)) {
 			Yii::log('Failed to query Yii locale DB. Possibly invalid category requested: ' . $category, CLogger::LEVEL_ERROR, self::ID);
@@ -277,22 +315,27 @@ class MPTranslate extends CApplicationComponent {
 		return false;
 	}
 	
-	public function getLocaleDisplayNames($language = null, $category = 'language') {
+	public function getLocaleDisplayNames($language = null, $category = 'language') 
+	{
 		if($language === null)
 			$language = Yii::app()->getLanguage();
 		$category = strtolower($category);
 		$cacheKey = self::ID . "cache-i18n-$category-$language";
 	
-		if(!isset($this->_cache[$cacheKey])) {
-			if(($cache = Yii::app()->getCache()) === null || ($languages = $cache->get($cacheKey)) === false) {
+		if(!isset($this->_cache[$cacheKey])) 
+		{
+			if(($cache = Yii::app()->getCache()) === null || ($languages = $cache->get($cacheKey)) === false) 
+			{
 				$method = 'get' . ucfirst($category);
 				$idMethod = $method . 'ID';
 				$locale = Yii::app()->getLocale();
-				if(!method_exists($locale, $method) || !method_exists($locale, $idMethod)) {
+				if(!method_exists($locale, $method) || !method_exists($locale, $idMethod)) 
+				{
 					Yii::log('Failed to query Yii locale DB. Possibly invalid category requested: ' . $category, CLogger::LEVEL_ERROR, self::ID);
 					return false;
 				}
-				foreach(CLocale::getLocaleIds() as $id) {
+				foreach(CLocale::getLocaleIds() as $id) 
+				{
 					$item = $locale->$method($id);
 					$id = $locale->$idMethod($id) or $locale->getCanonicalID($id) or $id; 
 					$languages[$id] = $item === null ? $id : $item;
@@ -312,35 +355,46 @@ class MPTranslate extends CApplicationComponent {
      * @param CMissingTranslationEvent $event
      * @return string the message to translate or the translated message if option autoTranslate is set to true
      */
-    public function missingTranslation($event) {
+    public function missingTranslation($event) 
+    {
         if($event === null)
         	return false;
 
-        $sourceLanguage = $event->category === TranslateModule::$componentId ? 'en' : TranslateModule::translator()->getSourceLanguageId();
-        
-        if(TranslateModule::translator()->getLanguageID($event->language) === $sourceLanguage && !Yii::app()->getMessages()->forceTranslation)
-        	return false;
-        
+        if($event->category === TranslateModule::$componentId)
+        {
+        	$sourceLanguage = 'en';
+        	if($this->getLanguageID($event->language) === $sourceLanguage && !Yii::app()->getComponent($this->source)->forceTranslation)
+        		return false;
+        }
+        else
+        {
+        	$sourceLanguage = Yii::app()->sourceLanguage;
+        }
+
         if(is_numeric($event->message))
         	return true;
 
-        Yii::import('translate.models.MessageSource');
         $attributes = array('category' => $event->category, 'message' => $event->message);
-        if(($model = MessageSource::model()->find('message = :message AND category = :category', $attributes)) === null) {
+        if(($model = MessageSource::model()->find('message = :message AND category = :category', $attributes)) === null) 
+        {
 
         	$model = new MessageSource;
         	$model->attributes = $attributes;
+        	$model->last_use = time();
 
-        	if(!$model->save()) {
+        	if(!$model->save()) 
+        	{
         		Yii::log('Message "'.$attributes['message'].'" could not be added to messageSource table', CLogger::LEVEL_ERROR, self::ID);
         		return false;
         	}
 
         }
-        Yii::import('translate.models.Message');
+        
         $attributes = array('id' => $model->id, 'language' => $event->language);
-        if(($messageModel = Message::model()->find('id = :id AND language = :language', $attributes)) === null) {
-        	if(TranslateModule::translator()->autoTranslate) {
+        if(($messageModel = Message::model()->find('id = :id AND language = :language', $attributes)) === null) 
+        {
+        	if($this->autoTranslate) 
+        	{
 
         		$attributes['translation'] = $event->message;
 
@@ -349,13 +403,14 @@ class MPTranslate extends CApplicationComponent {
         		for($i = 0; $i < count($matches); $i++)
         			$attributes['translation'] = str_replace($matches[$i], "_{$i}_", $attributes['translation']);
         		 
-        		$attributes['translation'] = TranslateModule::translator()->googleTranslate(
+        		$attributes['translation'] = $this->googleTranslate(
         				$attributes['translation'],
         				$attributes['language'],
         				$sourceLanguage
         		);
         		 
-        		if($attributes['translation'] !== false) {
+        		if($attributes['translation'] !== false) 
+        		{
 
         			$attributes['translation'] = $attributes['translation'][0];
         			for($i = 0; $i < count($matches); $i++)
@@ -364,84 +419,33 @@ class MPTranslate extends CApplicationComponent {
         			$messageModel = new Message;
         			$messageModel->attributes = $attributes;
 
-        			if($messageModel->save()) {
+        			if($messageModel->save()) 
+        			{
         				$event->message = $attributes['translation'];
         				return true;
         			}
 
         			Yii::log('Translation "'.$attributes['translation'].'" could not be added to message table', CLogger::LEVEL_ERROR, self::ID);
-        		} else {
-        			Yii::log('Message "'.$event->message.'" could not be translated by Google translate.', CLogger::LEVEL_ERROR, self::ID);
+        		} 
+        		else 
+        		{
+        			Yii::log('Message "'.$event->message.'" could not be translated to "'.$event->language.'" by Google translate.', CLogger::LEVEL_ERROR, self::ID);
         		}
-        	} else {
-        		Yii::log('A translation for message "'.$event->message.'" could not be found.', CLogger::LEVEL_WARNING, self::ID);
+        	} 
+        	else 
+        	{
+        		Yii::log('A translation for message "'.$event->message.'" to "'.$event->language.'" could not be found and automatic translations are disabled.', CLogger::LEVEL_WARNING, self::ID);
         	}
-        } else {
+        } 
+        else 
+        {
         	$event->message = $messageModel->translation;
         	return true;
         }
 
-        self::$messages[$model->id] = array('language' => $event->language, 'message' => $event->message, 'category' => $event->category);
+        $this->_messages[$model->id] = array('language' => $event->language, 'message' => $event->message, 'category' => $event->category);
         
         return false;
-    }
-    
-    /**
-     * generates a link or button to the page where you translate the missing translations found in this page
-     * 
-     * @param string $label label of the link
-     * @param string $type accepted types are : link and button
-     * @return string
-     */
-    public function translateLink($label = 'Translate', $type = 'link') {
-    	$label = TranslateModule::t($label);
-        $form = CHtml::form(Yii::app()->getController()->createUrl('/translate/translate/missingOnPage'));
-        foreach(self::$messages as $index => $message)
-            foreach($message as $name => $value)
-                $form .= CHtml::hiddenField(self::ID."-missing[$index][$name]", $value);
-        if($type === 'button')
-            $form .= CHtml::submitButton($label);
-        else
-            $form .= CHtml::linkButton($label);
-        $form .= CHtml::endForm();
-        return $form;
-    }
-    
-    /**
-     * generates a link or button that generates a dialog to the page where you translate the missing translations found in this page
-     * 
-     * @param string $label label of the link
-     * @param mixed $title title of the popup
-     * @param string $type accepted types are : link and button
-     * @return string
-     */
-    public function translateDialogLink($label='Translate',$title=null,$type='link'){
-    	$label = TranslateModule::t($label);
-        return $this->ajaxDialog($label,'translate/translate/missingOnPage',$title,$type,array('data'=>array(self::ID.'-missing'=>self::$messages)));
-    }
-    
-    private function ajaxDialog($label, $url, $title=null, $type='link', $ajaxOptions=array()){
-        
-        $id=self::ID.'-dialog';
-        
-        $ajaxOptions=array_merge(array(
-            'update'=> "#$id",
-            'type'=>'post',
-            'complete'=>"function(){ $('#{$id}').dialog('option', 'position', 'center').dialog('open');}",
-        ),$ajaxOptions);
-        
-        $url=Yii::app()->getController()->createUrl($url);
-        
-        if($type==='button')
-            $content=CHtml::ajaxButton($label,$url,$ajaxOptions);
-        else
-            $content=CHtml::ajaxLink($label,$url,$ajaxOptions);
-        
-        $content.=Yii::app()->getController()->widget('zii.widgets.jui.CJuiDialog',array(
-            'options'=>array_merge($this->dialogOptions,array('title'=>$title)),
-            'id'=>$id
-        ),true);
-        return $content;
     }
 
     /**
@@ -452,7 +456,8 @@ class MPTranslate extends CApplicationComponent {
      * @param mixed $sourceLanguage language that the message is written in, if null it will use the application source language
      * @return string translated message
      */
-    public function googleTranslate($message, $targetLanguage = null, $sourceLanguage = null) {
+    public function googleTranslate($message, $targetLanguage = null, $sourceLanguage = null) 
+    {
         if($targetLanguage === null)
             $targetLanguage = $this->getLanguageId();
         
@@ -465,16 +470,17 @@ class MPTranslate extends CApplicationComponent {
         if($targetLanguage === $sourceLanguage)
             throw new CException(TranslateModule::t('targetLanguage must be different than sourceLanguage'));
         
-        if(is_array($message)) {
-        	
+        if(is_array($message)) 
+        {	
         	$translated = array();
         	$messageChunk = array();
         	$messageLength = 0;
-        	foreach($message as $m) {
+        	foreach($message as $m) 
+        	{
         		$m = strval($m);
         		$messageLength += strlen($m);
-        		if($messageLength > self::GOOGLE_TRANSLATE_MAX_CHARS) {
-        			
+        		if($messageLength > self::GOOGLE_TRANSLATE_MAX_CHARS) 
+        		{
         			if(empty($messageChunk))
 						$this->_throwCharLimitException($messageLength, self::GOOGLE_TRANSLATE_MAX_CHARS);
         			
@@ -485,12 +491,15 @@ class MPTranslate extends CApplicationComponent {
         			
         			$messageLength = 0;
         			$messageChunk = array();
-        		} else {
+        		} 
+        		else 
+        		{
         			$messageChunk[] = $m;
         		}
         	}
 
-        	if(!empty($messageChunk)) {
+        	if(!empty($messageChunk)) 
+        	{
         		$query = $this->_googleTranslate($messageChunk, $targetLanguage, $sourceLanguage);
         		if($query === false)
         			return false;
@@ -498,7 +507,9 @@ class MPTranslate extends CApplicationComponent {
         		$translated = CMap::mergeArray($translated, $query);
         	}
         	
-        } else {
+        } 
+        else 
+        {
         	
         	$message = strval($message);
 			if(strlen($message) > self::GOOGLE_TRANSLATE_MAX_CHARS)
@@ -511,32 +522,44 @@ class MPTranslate extends CApplicationComponent {
         return $translated;
     }
     
-    protected function _throwCharLimitException($charsInRequest, $maxChars) {
+    protected function _throwCharLimitException($charsInRequest, $maxChars) 
+    {
     	throw new CException(TranslateModule::t(
-    			'The message is {messageLength} characters long. A maximum of {characters} characters is allowed.',
+    			'The message requested to be translated is {messageLength} characters long. A maximum of {characters} characters is allowed.',
     			array('{characters}' => $maxChars, '{messageLength}' => $charsInRequest)));
     }
     
-    protected function _googleTranslate($messages, $targetLanguage = null, $sourceLanguage = null) {
-    	if(is_array($targetLanguage)) {
+    protected function _googleTranslate($messages, $targetLanguage = null, $sourceLanguage = null) 
+    {
+    	if(is_array($targetLanguage)) 
+    	{
     		$translated = array();
-    		foreach($targetLanguage as $language) {
+    		foreach($targetLanguage as $language) 
+    		{
     			$language = strval($language);
     			$query = $this->queryGoogle(array('q' => $messages, 'source' => $sourceLanguage, 'target' => $language));
     	
-    			if($query === false) {
+    			if($query === false) 
+    			{
     				$translated[$language] = false;
-    			} else {
+    			} 
+    			else 
+    			{
     				foreach($query->translations as $translation)
     					$translated[$language][] = $translation->translatedText;
     			}
     		}
-    	} else {
+    	} 
+    	else 
+    	{
     		$query = $this->queryGoogle(array('q' => $messages, 'source' => $sourceLanguage, 'target' => $targetLanguage));
     	
-    		if($query === false) {
+    		if($query === false) 
+    		{
     			$translated = false;
-    		} else {
+    		} 
+    		else 
+    		{
     			$translated = array();
     			foreach($query->translations as $translation)
     				$translated[] = $translation->translatedText;
@@ -554,7 +577,8 @@ class MPTranslate extends CApplicationComponent {
      * accepted values are null(translate), "languages" and "detect"
      * @return stdClass the google response object
      */
-    protected function queryGoogle($args = array()) {
+    protected function queryGoogle($args = array()) 
+    {
         if(empty($this->googleApiKey))
             throw new CException(TranslateModule::t('You must provide your google api key in option googleApiKey'));
         
@@ -562,7 +586,8 @@ class MPTranslate extends CApplicationComponent {
         
         $trans = false;
         
-        if(in_array('curl', get_loaded_extensions())) { //curl has much better performance
+        if(in_array('curl', get_loaded_extensions())) 
+        {
             if($curl = curl_init(self::GOOGLE_TRANSLATE_URL))
             {
 	            if(curl_setopt_array(
@@ -589,7 +614,9 @@ class MPTranslate extends CApplicationComponent {
             {
             	Yii::log('Failed to initialize cURL.', CLogger::LEVEL_ERROR, self::ID);
             }
-        } else {
+        } 
+        else 
+        {
         	Yii::log('cURL extension not found. Falling back to file_get_contents() to read Google translation query response.', CLogger::LEVEL_INFO, self::ID);
             $trans = file_get_contents($url);
         }
@@ -602,15 +629,82 @@ class MPTranslate extends CApplicationComponent {
         
         $trans = CJSON::decode($trans);
         
-        if(isset($trans['error'])) {
+        if(isset($trans['error'])) 
+        {
             Yii::log('Google translate error: '.$trans['error']['code'].'. '.$trans['error']['message'], CLogger::LEVEL_ERROR, self::ID);
             return false;
-        } elseif(!isset($trans['data'])) {
+        } 
+        elseif(!isset($trans['data'])) 
+        {
             Yii::log('Google translate error: '.print_r($trans, true), CLogger::LEVEL_ERROR, self::ID);
             return false;
-        } else {
+        } 
+        else 
+        {
             return $trans['data'];
         }
+    }
+    
+    /**
+     * generates a link or button to the page where you translate the missing translations found in this page
+     *
+     * @param string $label label of the link
+     * @param string $type accepted types are : link and button
+     * @return string
+     */
+    public function translateLink($label = 'Translate', $type = 'link')
+    {
+    	$form = CHtml::form(Yii::app()->getController()->createUrl('/translate/translate/missingOnPage'));
+    	foreach($this->_messages as $index => $message)
+    	{
+    		foreach($message as $name => $value)
+    		{
+    			$form .= CHtml::hiddenField(self::ID."-missing[$index][$name]", $value);
+    		}
+    	}
+    	if($type === 'button')
+    		$form .= CHtml::submitButton(TranslateModule::t($label));
+    	else
+    		$form .= CHtml::linkButton(TranslateModule::t($label));
+    	$form .= CHtml::endForm();
+    	return $form;
+    }
+
+    /**
+     * generates a link or button that generates a dialog to the page where you translate the missing translations found in this page
+     *
+     * @param string $label label of the link
+     * @param mixed $title title of the popup
+     * @param string $type accepted types are : link and button
+     * @return string
+     */
+    public function translateDialogLink($label = 'Translate', $title = null, $type = 'link')
+    {
+    	return $this->_ajaxDialog(TranslateModule::t($label), 'translate/translate/missingOnPage', $title, $type, array('data' => array(self::ID.'-missing' => $this->_messages)));
+    }
+    
+    private function _ajaxDialog($label, $url, $title = null, $type = 'link', $ajaxOptions = array())
+    {
+    	$id = self::ID.'-dialog';
+    
+    	$ajaxOptions = array_merge(array(
+    			'update' => "#$id",
+    			'type' => 'post',
+    			'complete' => "function(){ $('#{$id}').dialog('option', 'position', 'center').dialog('open');}",
+    	), $ajaxOptions);
+    
+    	$url = Yii::app()->getController()->createUrl($url);
+    
+    	if($type === 'button')
+    		$content = CHtml::ajaxButton($label, $url, $ajaxOptions);
+    	else
+    		$content = CHtml::ajaxLink($label, $url, $ajaxOptions);
+    
+    	$content.=Yii::app()->getController()->widget('zii.widgets.jui.CJuiDialog', array(
+    			'options' => array_merge($this->dialogOptions,array('title' => $title)),
+    			'id' => $id
+    	), true);
+    	return $content;
     }
     
     public function getFormatByType($format_type, $format_id, $datetime_format=false) {
@@ -834,8 +928,8 @@ class MPTranslate extends CApplicationComponent {
      * @param mixed $args
      * @return mixed
      */
-    static function __callStatic($method,$args){
-        return call_user_func_array(array(TranslateModule::translator(),$method),$args);
+    static function __callStatic($method, $args){
+        return call_user_func_array(array(TranslateModule::translator(), $method), $args);
     }
     
 }

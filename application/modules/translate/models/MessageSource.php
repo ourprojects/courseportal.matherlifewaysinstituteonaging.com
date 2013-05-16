@@ -13,12 +13,13 @@ class MessageSource extends CActiveRecord {
 
 	public function rules() {
 		return array(
-            array('category, message', 'required'),
-			array('id', 'numerical', 'integerOnly' => true),
+            array('category, message', 'required', 'except' => 'search'),
+			array('id, last_use', 'numerical', 'integerOnly' => true),
 			array('id', 'unique'),
 			array('category', 'length', 'max' => 32),
-			array('category, message', 'safe'),
-			array('id', 'safe', 'on' => 'search'),
+			array('category, message, last_use', 'safe'),
+			array('created', 'date', 'format' => 'yyyy-M-d H:m:s'),
+			array('id, created', 'safe', 'on' => 'search'),
 		);
 	}
 	
@@ -27,6 +28,8 @@ class MessageSource extends CActiveRecord {
 				'id' => TranslateModule::t('ID'),
 				'category' => TranslateModule::t('Category'),
 				'message' => TranslateModule::t('Message'),
+				'created' => TranslateModule::t('Created'),
+				'last_use' => TranslateModule::t('Last Used'),
 		);
 	}
     
@@ -95,6 +98,11 @@ class MessageSource extends CActiveRecord {
 		$criteria->addSearchCondition('t.message', $this->message);
 		
 		return $this;
+	}
+	
+	public function getFormattedLastUse($format = 'Y-m-d, H:i:s')
+	{
+		return date($format, $this->last_use);
 	}
 	
 	public function __toString() {

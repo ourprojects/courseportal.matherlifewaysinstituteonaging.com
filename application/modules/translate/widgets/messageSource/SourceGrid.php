@@ -36,18 +36,27 @@ class SourceGrid extends CGridView {
 		$this->columns = array(
 			array(
 	            'name' => 'id',
+				'htmlOptions' => array('width' => '30'),
 	        ),
+			array(
+				'name' => 'created',
+			),
+			array(
+				'name' => 'last_use',
+				'value' => '$data->last_use == 0 ? "Never" : $data->getFormattedLastUse()'
+			),
 			array(
 				'name' => 'category',
 			),
 	        array(
 	            'name' => 'message',
-	        	'htmlOptions' => array('width' => '600'),
+	        	'htmlOptions' => array('width' => '400'),
 	        ),
 			array(
-				'header' => TranslateModule::t('Missing Translations?'),
+				'header' => TranslateModule::t('Missing Translation'),
 				'type' => 'boolean',
 				'value' => '$data->isMissingTranslations()',
+				'htmlOptions' => array('width' => '25'),
 			),
 	        array(
 	            'class' => 'CButtonColumn',

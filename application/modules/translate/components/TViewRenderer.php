@@ -2,6 +2,12 @@
 
 class TViewRenderer extends CViewRenderer
 {
+	
+	const CACHE_DURATION_INFINITY = -1;
+	
+	const CACHE_DURATION_NEVER = 0;
+	
+	public $cacheDuration = self::CACHE_DURATION_NEVER;
 
 	private $_translator;
 	
@@ -31,6 +37,21 @@ class TViewRenderer extends CViewRenderer
 	private function pregReplaceCallback($matches)
 	{
 		return Yii::t($matches[1] === '' ? $this->_translator->messageCategory : $matches[1], $matches[2], array(), null, null);
+	}
+	
+	public function renderFile($context, $sourceFile, $data, $return)
+	{
+		if(!is_file($sourceFile) || ($file = realpath($sourceFile)) === false)
+			throw new CException(Yii::t('yii','View file "{file}" does not exist.', array('{file}' => $sourceFile)));
+		$viewFile = $this->getViewFile($sourceFile);
+		if($this->cacheDuration === self::CACHE_DURATION_NEVER || 
+				@filemtime($sourceFile) > ($viewFileModifiedTime = @filemtime($viewFile)) || 
+				($this->cacheDuration !== self::CACHE_DURATION_INFINITY && ($viewFileModifiedTime + $this->cacheDuration) < time()))
+		{
+			$this->generateViewFile($sourceFile, $viewFile);
+			@chmod($viewFile, $this->filePermission);
+		}
+		return $context->renderInternal($viewFile, $data, $return);
 	}
 	
 	/**

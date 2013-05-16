@@ -18,9 +18,12 @@ class TranslateController extends TController {
 		}
 	}
 	
-	public function actionMissingOnPage() {
-        if(isset($_POST['Message'])) {
-            foreach($_POST['Message'] as $id => $message){
+	public function actionMissingOnPage() 
+	{
+        if(isset($_POST['Message'])) 
+        {
+            foreach($_POST['Message'] as $id => $message)
+            {
                 if(empty($message['translation']))
                     continue;
                 $model = new Message();
@@ -30,29 +33,30 @@ class TranslateController extends TController {
             }
             $this->redirect(Yii::app()->getUser()->getReturnUrl());
         }
-        if(($referer = Yii::app()->getRequest()->getUrlReferrer()) && $referer !== $this->createUrl('index'))
-            Yii::app()->getUser()->setReturnUrl($referer);
-        $translator = TranslateModule::translator();
-        $key = $translator::ID."-missing";
-        $postMissing = array();
+
+        $key = str_replace('.', '_', MPTranslate::ID) . '-missing';
+        $missing = array();
         if(isset($_POST[$key]))
-            $postMissing = $_POST[$key];
+        {
+            $missing = $_POST[$key];
+        }
         else if(Yii::app()->getUser()->hasState($key))
-            $postMissing = Yii::app()->getUser()->getState($key);
-        $models = array();
-        if(count($postMissing)) {
-            Yii::app()->getUser()->setState($key, $postMissing); 
-            $cont = 0;
-            foreach($postMissing as $id => $message){
-                $models[$cont] = new Message;
-                $models[$cont]->setAttributes(array('id' => $id, 'language' => $message['language']));
-                $cont++;
-            }
+        {
+            $missing = Yii::app()->getUser()->getState($key);
         }
         
-        $data = array('messages' => $postMissing, 'models' => $models);
-        
-        $this->render('missing', $data);
+        $messages = array();
+        if(!empty($missing)) 
+        {
+            Yii::app()->getUser()->setState($key, $missing); 
+            foreach($missing as $id => $message)
+            {
+                $messages[] = new Message;
+                end($messages)->setAttributes(array('id' => $id, 'language' => $message['language']));
+            }
+        }
+
+        $this->render('missing', array('missing' => $missing, 'messages' => $messages));
 	}
 	
     public function actionGoogleTranslate($message, $targetLanguage = null, $sourceLanguage = null) {

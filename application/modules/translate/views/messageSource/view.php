@@ -2,19 +2,31 @@
 <h1><?php echo TranslateModule::t('Message Details'); ?></h1>
 <div id="sourceMessage">
 	<div id="id">
-		<h2><?php echo TranslateModule::t('ID:'); ?></h2>
+		<h2><?php echo $source->getAttributeLabel('id'); ?></h2>
 		<p>
 			<?php echo $source->id; ?>
 		</p>
 	</div>
 	<div id="category">
-		<h2><?php echo TranslateModule::t('Category:'); ?></h2>
+		<h2><?php echo $source->getAttributeLabel('category'); ?></h2>
 		<p>
 			<?php echo $source->category; ?>
 		</p>
 	</div>
+	<div id="created">
+		<h2><?php echo $source->getAttributeLabel('created'); ?></h2>
+		<p>
+			<?php echo $source->created; ?>
+		</p>
+	</div>
+	<div id="last_use">
+		<h2><?php echo $source->getAttributeLabel('last_use'); ?></h2>
+		<p>
+			<?php echo $source->getFormattedLastUse(); ?>
+		</p>
+	</div>
 	<div id="message">
-		<h2><?php echo TranslateModule::t('Message:'); ?></h2>
+		<h2><?php echo $source->getAttributeLabel('message'); ?></h2>
 		<p>
 			<?php echo $source->message; ?>
 		</p>
