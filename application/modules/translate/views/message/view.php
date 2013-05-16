@@ -36,7 +36,7 @@ $form = $this->beginWidget('CActiveForm',
     </div>
     <div class="row">
         <?php echo $form->label($message->source, 'message'); ?>
-        <?php echo $form->textField($message->source, 'message', array('disabled' => 'disabled')); ?>
+        <?php echo $form->textArea($message->source, 'message', array('disabled' => 'disabled', 'rows' => 3, 'cols' => 90)); ?>
     </div>
 	<div class="row">
 		<?php echo $form->labelEx($message, 'translation'); ?>

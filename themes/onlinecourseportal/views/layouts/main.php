@@ -44,7 +44,7 @@
 				</div>
 				<div id="site-title"><?php echo t(Yii::app()->name); ?></div>
 				<div id="language-menu"><?php $this->widget('modules.translate.widgets.acceptedLanguage.ALSelector'); ?></div>
-				<?php if(!empty(MPTranslate::$messages) && Yii::app()->getUser()->getIsAdmin()): ?>
+				<?php if(Yii::app()->getUser()->getIsAdmin() && Yii::app()->getComponent('translate')->hasMissingTranslations()): ?>
 					<div id="translate-button">
 						<?php echo Yii::app()->getComponent('translate')->translateLink('Missing Translations on Page', 'button'); ?>	
 					</div>

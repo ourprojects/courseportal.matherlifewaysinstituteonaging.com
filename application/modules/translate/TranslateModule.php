@@ -30,8 +30,10 @@ class TranslateModule extends CWebModule {
      * 
      * @return MPTranslate
      */
-    static function translator() {
-    	if(self::$_translator === null) {
+    public static function translator() 
+    {
+    	if(self::$_translator === null) 
+    	{
         	self::$_translator = Yii::app()->getComponent(self::$componentId);
 	        if(self::$_translator === null)
 	            throw new CException('Translate component must be defined');
@@ -39,17 +41,11 @@ class TranslateModule extends CWebModule {
         return self::$_translator;
     }
     
-    static function __callStatic($method, $args) {
-        return call_user_func_array(array(self::translator(), $method), $args);
-    }
-    
-    static function missingTranslation($event) {
+    public static function missingTranslation($event) 
+    {
         return self::translator()->missingTranslation($event);
     }
-    
-    static function cDbCriteriaInstance($data = array()) {
-    	return new CDbCriteria($data);
-    }
+
     /**
      * translate some message using the module configuration
      * 
@@ -57,7 +53,8 @@ class TranslateModule extends CWebModule {
      * @param array $params
      * @return string translated message
      */
-    static function t($message, $params = array()) {
+    public static function t($message, $params = array()) 
+    {
         return Yii::t(self::$componentId, $message, $params);
     }
 }

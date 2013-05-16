@@ -63,12 +63,13 @@ return array(
 				),
 				
 				'messages' => array(
-						'class' => 'DbMessageSource',
+						'class' => 'modules.translate.components.DbMessageSource',
 						'forceTranslation' => false,
-						'onMissingTranslation' => array('MPTranslate', 'missingTranslation'),
+						'onMissingTranslation' => array('TranslateModule', 'missingTranslation'),
 						'acceptedLanguageTable' => '{{translate_accepted_language}}',
 						'sourceMessageTable' => '{{translate_message_source}}',
 						'translatedMessageTable' => '{{translate_message}}',
+						'cachingDuration' => defined('YII_DEBUG') && YII_DEBUG ? 0 : 3600
 				),
 				
 				'surveyor' => array(
@@ -95,7 +96,8 @@ return array(
 				),
 				
 				'viewRenderer' => array(
-					'class' => 'modules.translate.components.TViewRenderer'
+					'class' => 'modules.translate.components.TViewRenderer',
+					'cacheDuration' => defined('YII_DEBUG') && YII_DEBUG ? 0 : 43200
 				),
 				
 				'user' => array(
