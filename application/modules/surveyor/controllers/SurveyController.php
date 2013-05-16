@@ -1,6 +1,6 @@
 <?php
 
-class SurveyController extends OnlineCoursePortalController {
+class SurveyController extends CController {
 	
 	public function actionSubmit() {
 		if(isset($_POST['Survey'])) {

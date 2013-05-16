@@ -26,20 +26,22 @@ class CourseController extends OnlineCoursePortalController {
 	}
 	
 	public function filterVerifyUserCourse($filterChain) {
-		$course = Course::model()->with('objectives')->find(array(
-				'condition' => 'name=:name', 
-				'params' => array(':name' => $filterChain->action->getId()))
-		);
-		if($course === null)
-			return $filterChain->run();
-		if(Yii::app()->getUser()->getIsEmployee() || 
-				Yii::app()->getUser()->getIsAdmin() ||
-				UserCourse::model()->exists('course_id=:course_id AND user_id=:user_id', 
-						array(':course_id' => $course->id, ':user_id' => Yii::app()->getUser()->id))) {
-			$filterChain->action->renderData['course'] = $course;
-			return $filterChain->run();
+		if($filterChain->action->getId() === $this->defaultMissingAction)
+		{
+			$course = Course::model()->with('objectives')->find(array(
+					'condition' => 'name=:name', 
+					'params' => array(':name' => $filterChain->action->getRequestedView()))
+			);
+			if(Yii::app()->getUser()->getIsEmployee() ||
+					Yii::app()->getUser()->getIsAdmin() ||
+					UserCourse::model()->exists('course_id=:course_id AND user_id=:user_id',
+							array(':course_id' => $course->id, ':user_id' => Yii::app()->getUser()->id))) {
+				$filterChain->action->renderData['course'] = $course;
+				return $filterChain->run();
+			}
+			$this->redirect(array('notRegistered', 'id' => $course->id));
 		}
-		$this->redirect(array('notRegistered', 'id' => $course->id));
+		return $filterChain->run();
 	}
 	
 	public function createCourseUrl($course) {

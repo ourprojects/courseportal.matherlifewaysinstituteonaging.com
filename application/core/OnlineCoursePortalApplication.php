@@ -15,10 +15,10 @@ class OnlineCoursePortalApplication extends CWebApplication {
     * @return void
     */
     public function __construct($config = null) {
-    	if(is_string($config))
-    		$this->config = require $config;
-    	else
+    	if(is_array($config))
     		$this->config = $config;
+    	else if(isset($config))
+    		$this->config = require strval($config);
         parent::__construct($this->config);
     }
     
@@ -34,36 +34,6 @@ class OnlineCoursePortalApplication extends CWebApplication {
     protected function init()
     {
     	$this->onEndRequest = array($this, 'saveUserState');
-    }
-    
-    /**
-     * Creates the controller and performs the specified action.
-     * @param string $route the route of the current request. See {@link createController} for more details.
-     * @throws CHttpException if the controller could not be created.
-     */
-    public function createController($route, $owner = NULL) {
-    	// Process the request through the translation system
-    	Yii::app()->translate->processRequest($route);
-    	
-    	$this->name = t($this->name);
-		$controller = parent::createController($route, $owner);
-		if(((is_array($controller) && !is_subclass_of($controller[0], 'OnlineCoursePortalController')) || 
-				(!is_array($controller) && !is_subclass_of($controller, 'OnlineCoursePortalController'))) &&
-				Yii::app()->getUrlManager()->hasPathInfoSegments()) {
-			$route .= Yii::app()->getUrlManager()->popPathInfoSegment() . '/';
-			Yii::app()->getUrlManager()->parsePathInfoSegments();
-			return parent::createController($route, $owner);
-		}
-		return $controller;
-    }
-    
-    public function setComponents($components, $merge = true) {
-    	parent::setComponents($components, $merge);
-    	foreach($components as $id => $component) {
-    		if(!($component instanceof IApplicationComponent)) {
-    			$this->setComponent($id, null);
-    		}
-    	}
     }
     
     public function saveUserState()

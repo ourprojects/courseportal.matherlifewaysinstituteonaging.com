@@ -5,26 +5,38 @@ class ViewAction extends CViewAction {
 	public $renderData = array();
 	
 	private $_viewPath;
-	
-	public function getId()
-	{
-		return $this->getRequestedView();
-	}
-	
+
 	/**
 	 * Returns the name of the view requested by the user.
 	 * If the user doesn't specify any view, the {@link defaultView} will be returned.
 	 * @return string the name of the view requested by the user.
 	 * This is in the format of 'path.to.view'.
 	 */
-	public function getRequestedView() {
-		if($this->_viewPath === null) {
-			$this->_viewPath = parent::getRequestedView();
-			if($this->_viewPath === $this->defaultView && !empty($_GET))
-				$this->_viewPath = implode('.', CArray::array_flatten($_GET));
-			$this->_viewPath = preg_replace('/[\/]+/', '.', $this->_viewPath);
-			$this->_viewPath = trim($this->_viewPath, '.');
+	public function getRequestedView()
+	{
+		if(!isset($this->_viewPath))
+		{
+			if(!isset($_GET[$this->viewParam]))
+			{
+				$_GET[$this->viewParam] = CArray::array_flatten($_GET);
+			}
+			
+			if(empty($_GET[$this->viewParam]))
+			{
+				unset($_GET[$this->viewParam]);
+			} 
+			else if(is_array($_GET[$this->viewParam]))
+			{
+				$_GET[$this->viewParam] = implode('.', $_GET[$this->viewParam]);
+			}
+			else if(!is_string($_GET[$this->viewParam]))
+			{
+				$_GET[$this->viewParam] = strval($_GET[$this->viewParam]);
+			}
+			
+			$this->_viewPath = trim(preg_replace('/[\\\\\/]+/', '.', parent::getRequestedView()), '.');
 		}
+		
 		return $this->_viewPath;
 	}
 
@@ -36,7 +48,7 @@ class ViewAction extends CViewAction {
 	 */
 	protected function resolveView($viewPath) {
 		// start with a word char and have word chars, dots and dashes only
-		if(preg_match('/^\w[\w\.\-\/]*$/', $viewPath)) {
+		if(preg_match('/^\w[\w\.\-]*$/', $viewPath)) {
 			$view = preg_replace('/[.]+/', DIRECTORY_SEPARATOR, $viewPath);
 			if(!empty($this->basePath))
 				$view = $this->basePath . DIRECTORY_SEPARATOR . $view;
@@ -78,7 +90,7 @@ class ViewAction extends CViewAction {
 		}
 
 		if($this->layout !== null)
-			$controller->layout=$layout;
+			$controller->layout = $layout;
 	}
 
 }
