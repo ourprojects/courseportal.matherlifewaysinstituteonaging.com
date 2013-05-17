@@ -35,6 +35,8 @@ class MessageSource extends CActiveRecord {
     
 	public function relations() {
 		return array(
+			'compiledViewMessageSources' => array(self::HAS_MANY, 'CompiledViewMessage', 'message_source_id'),
+			'compiledViews' => array(self::MANY_MANY, 'CompiledView', '{{translate_compiled_view_message}}(message_source_id, compiled_view_id)'),
             'translations' => array(self::HAS_MANY, 'Message', 'id', 'joinType' => 'INNER JOIN'),
 			'acceptedLanguages' => array(self::HAS_MANY, 'AcceptedLanguage', array('id' => 'language'), 'through' => 'translations')
 		);

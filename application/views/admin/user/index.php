@@ -18,7 +18,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
         	'viewButtonLabel' => TranslateModule::t('View User Details'),
         	'viewButtonUrl' => 'Yii::app()->getController()->createUrl("userView", array("id" => $data->id))',
             'deleteButtonUrl' => 'Yii::app()->getController()->createUrl("userDelete", array("id" => $data->id))',
-        	'deleteConfirmation' => t('Are you sure you would like to delete this user? All of this user\'s data will be lost forever.')
+        	'deleteConfirmation' => t('Are you sure you would like to delete this user? All of this user's data will be lost forever.')
         )
 	),
 )); ?>

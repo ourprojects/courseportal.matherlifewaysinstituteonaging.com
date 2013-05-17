@@ -191,7 +191,7 @@ foreach(array(
       <div class="content">
         <h2 class="flowers">{t}Dementia{/t}</h2>
         <hr />
-        <p>{t}People often ask, “what is the difference between Alzheimer\'s disease and dementia?”  Before we get too far, we should clarify that Alzheimer’s disease is a TYPE of dementia. Dementia is an umbrella term used to describe any type of stable decline in cognitive abilities, severe enough to interrupt a person’s ability to function independently. Dementia describes the observable symptoms of a brain disease or injury.{/t}</p>
+        <p>{t}People often ask, “what is the difference between Alzheimer's disease and dementia?”  Before we get too far, we should clarify that Alzheimer’s disease is a TYPE of dementia. Dementia is an umbrella term used to describe any type of stable decline in cognitive abilities, severe enough to interrupt a person’s ability to function independently. Dementia describes the observable symptoms of a brain disease or injury.{/t}</p>
         <p>{t}Alzheimer’s is a disease process – a medical condition – that causes the cognitive changes that produce dementia.  There are many other medical conditions that cause dementia as well.{/t}</p>
         <p>{t}The second most common disease that causes dementia is what we call cerebrovascular disease, which causes vascular dementia.  This includes any type of injury to the brain caused by a problem with the brain’s blood supply, most notably a stroke.  There are varying degrees of strokes, however.  You may have heard of TIA’s (or Transient Ischemic Attacks) or mini strokes.  The stroke process can also occur without any identifiable symptoms, causing what we call silent strokes.  You will learn more about these in the next session.{/t}</p>
         <p>{t}Head trauma, Parkinson’s disease, Huntington Disease, Pick’s disease, infections such as HIV and CJD (Creutzfeldt-Jakob Disease – the human form of mad cow disease), substance abuse and environmental toxins can also cause dementia.{/t}</p>
@@ -214,7 +214,7 @@ foreach(array(
     
     <div id="lesson-1-slide-7" class="course-slide">
       <div class="content">
-        <h2 class="flowers">{t}Cognitive Reserve: Your Brain\'s 401K Account{/t}</h2>
+        <h2 class="flowers">{t}Cognitive Reserve: Your Brain's 401K Account{/t}</h2>
         <hr />
         <p>{t}One key way that we can lower our risk for dementia is through understanding and utilizing a theory that is central to this area of science, called the Theory of Cognitive Reserve.  You can think of this as your brain’s 401k or retirement account.{/t}</p>
         <p>{t}Simply put, the Theory of Cognitive Reserve is based on observations that no 2 brains respond to injury or illness in exactly the same way.  There are people who can sustain a small amount of damage to their brains and lose a lot of brain function, and there are people who can sustain large amounts of damage and never develop dementia.  What seems to differentiate these types of people is the amount of brain reserve that they have “stored in the bank” that can make up for the losses.{/t}</p>
@@ -478,7 +478,7 @@ After about 10-15 minutes of practice, have participants talk briefly about thei
     
     <div id="lesson-1-slide-21" class="course-slide">
       <div class="content">
-        <h2 class="flowers">{t}This Week\'s Goals Steps{/t}</h2>
+        <h2 class="flowers">{t}This Week's Goals Steps{/t}</h2>
         <hr />
         <p>{t}Allow 5 minutes for this activity{/t}</p>
         <p>{t}Ensure that you record a goal and a reward on your handout.{/t}</p>

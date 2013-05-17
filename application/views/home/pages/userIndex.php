@@ -38,9 +38,9 @@ $clientScript->registerCssFile($this->getStylesUrl('homeUser.css'));
     <p><a href="http://pewinternet.org/~/media//Files/Reports/2012/PIP_Older_adults_and_internet_use.pdf" class="pdf">{t}Click to view the report (English){/t}</a></p>
   </div>
   <div class="box-sidebar one">
-    <h3>{t}Alzheimer\'s Assocation (USA){/t}</h3>
+    <h3>{t}Alzheimer's Assocation (USA){/t}</h3>
     <img src="<?php echo $this->getImagesUrl('partners/alz.png'); ?>" />
-    <p>{t}There are 10 warning signs of Alzheimer\'s. If you or someone you know is experiencing 
+    <p>{t}There are 10 warning signs of Alzheimer's. If you or someone you know is experiencing 
 			any of the signs, please see a doctor. Early diagnosis gives you a chance to seek treatment and plan for the future.{/t}</p>
     <p><a href="http://www.alz.org/national/documents/checklist_10signs.pdf" class="pdf">{t}Click to download the handout (English){/t}</a></p>
   </div>
@@ -66,7 +66,7 @@ $clientScript->registerCssFile($this->getStylesUrl('homeUser.css'));
 		and raising two children when Winokurs 83-year-old father, Herbie, became too infirm to care for himself. At that moment they joined 
 		some twenty million other Americans who make up the sandwich generation, those who find themselves responsible for the care of both 
 		their children and their aging parents.{/t}</p>
-  <p>{t}Authors of the book{/t}Aging in America: The Years Ahead, {t}which chronicles the country\'s 
+  <p>{t}Authors of the book{/t}Aging in America: The Years Ahead, {t}which chronicles the country's 
 		fastest-growing segment of the population, Winokur and Kashi decided to tell their own story as they took on the care of Winokurs 
 		father. In{/t}The Sandwich Generation{t}, they have created an honest, intimate account of their own shifting 
 		and challenging responsibilities, as well as some of their unexpected joys. (English){/t}</p>

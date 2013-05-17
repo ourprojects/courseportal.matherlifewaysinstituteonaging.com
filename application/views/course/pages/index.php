@@ -6,7 +6,7 @@
 <div id="single-column">
   <h2 class="flowers"> {t}Online Workforce Support{/t} </h2>
   <p> {t}To help individual caregivers transition into their new role, be better prepared to 
-				manage their loved one\'s needs, and learn how to effectively practice self-care, Mather LifeWays Institute on Aging has developed
+				manage their loved one's needs, and learn how to effectively practice self-care, Mather LifeWays Institute on Aging has developed
 	online programs that are designed to educate caregivers while fitting into any schedule.{/t} </p>
   <hr />
   <?php foreach($courses as $course): 
@@ -78,7 +78,7 @@
   </ul>
   <hr />
   <h3><a href="http://matherlifewaysinstituteonaging.com/products"> {t}Making Sense of Memory Loss Class Leader Toolkit{/t} </a> </h3>
-  <p>{t}Making Sense of Memory Loss is a five-part training program for professionals interested in educating families and staff about caring for persons with memory loss in regards to its causes and treatments, as well as effective ways of coping now and in the future. In light of the growing trend toward earlier diagnosis of Alzheimer\'s Disease and related dementias, Making Sense of Memory Loss is for anyone who cares for someone in the early stages of memory loss, whether or not that the person has received a diagnosis.{/t}</p>
+  <p>{t}Making Sense of Memory Loss is a five-part training program for professionals interested in educating families and staff about caring for persons with memory loss in regards to its causes and treatments, as well as effective ways of coping now and in the future. In light of the growing trend toward earlier diagnosis of Alzheimer's Disease and related dementias, Making Sense of Memory Loss is for anyone who cares for someone in the early stages of memory loss, whether or not that the person has received a diagnosis.{/t}</p>
   <p>{t}Developed by the Alzheimer’s Association—Greater Illinois Chapter and Mather LifeWays Institute on Aging, this evidence-based training program covers these topics:{/t}</p>
   <ul>
     <li>{t}Memory loss and related symptoms{/t}</li>
