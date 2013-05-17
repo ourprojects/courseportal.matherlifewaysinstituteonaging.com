@@ -48,7 +48,7 @@ class MPTranslate extends CApplicationComponent {
     
     public $cookieExpire = 63072000; // 2 Years in seconds.
     
-    public $source = 'messages';
+    public $useLocaleSpecificTranslations = false;
     
     private $_sourceLanguageId = null;
     
@@ -73,8 +73,7 @@ class MPTranslate extends CApplicationComponent {
 		Yii::import('translate.models.*');
 
         function t($message, $params = array()) {
-        	$translator = TranslateModule::translator();
-        	return Yii::t($translator->messageCategory, $message, $params, $translator->source);
+        	return Yii::t(TranslateModule::translator()->messageCategory, $message, $params);
         }
         
         return parent::init();
@@ -348,82 +347,76 @@ class MPTranslate extends CApplicationComponent {
     {
         if($event === null)
         	return false;
-
-        if($event->category === TranslateModule::$componentId)
-        {
-        	$sourceLanguage = 'en';
-        	if($this->getLanguageID($event->language) === $sourceLanguage && !Yii::app()->getComponent($this->source)->forceTranslation)
-        		return false;
-        }
-        else
-        {
-        	$sourceLanguage = Yii::app()->sourceLanguage;
-        }
-
+        
         if(is_numeric($event->message))
         	return true;
-
-        $attributes = array('category' => $event->category, 'message' => $event->message);
-        if(($model = MessageSource::model()->find('message = :message AND category = :category', $attributes)) === null) 
+        
+        $sourceLanguage = $event->category === TranslateModule::$componentId ? 'en_us' : Yii::app()->getMessages()->getLanguage();
+        $requestedLanguage = $event->language;
+        
+        if(!$this->useLocaleSpecificTranslations)
         {
+        	$sourceLanguage = $this->getLanguageID($sourceLanguage);
+        	$requestedLanguage = $this->getLanguageID($requestedLanguage);
+        }
 
+        if($requestedLanguage === $sourceLanguage && !Yii::app()->getMessages()->forceTranslation)
+        	return false;
+
+        if(($model = MessageSource::model()->find('message = :message AND category = :category', $attributes = array('category' => $event->category, 'message' => $event->message))) === null) 
+        {
         	$model = new MessageSource;
-        	$model->attributes = $attributes;
-        	$model->last_use = time();
+        	$model->setAttributes($attributes);
 
         	if(!$model->save()) 
         	{
         		Yii::log('Message "'.$attributes['message'].'" could not be added to messageSource table', CLogger::LEVEL_ERROR, self::ID);
         		return false;
         	}
-
         }
         
-        $attributes = array('id' => $model->id, 'language' => $event->language);
-        if(($messageModel = Message::model()->find('id = :id AND language = :language', $attributes)) === null) 
+        if(($messageModel = Message::model()->find('id = :id AND language = :language', array(':id' => $model->id, ':language' => $requestedLanguage))) === null) 
         {
         	if($this->autoTranslate) 
         	{
+        		$translation = $event->message;
 
-        		$attributes['translation'] = $event->message;
-
-        		preg_match_all('/\{(.*?)\}/', $attributes['translation'], $matches);
+        		$matchCount = preg_match_all('/\{(?:.*?)\}/s', $translation, $matches);
         		$matches = $matches[0];
-        		for($i = 0; $i < count($matches); $i++)
-        			$attributes['translation'] = str_replace($matches[$i], "_{$i}_", $attributes['translation']);
+        		for($i = 0; $i < $matchCount; $i++)
+        			$translation = str_replace($matches[$i], "_{$i}_", $translation);
         		 
-        		$attributes['translation'] = $this->googleTranslate(
-        				$attributes['translation'],
-        				$attributes['language'],
+        		$translation = $this->googleTranslate(
+        				$translation,
+        				$requestedLanguage,
         				$sourceLanguage
         		);
         		 
-        		if($attributes['translation'] !== false) 
+        		if($translation !== false) 
         		{
-
-        			$attributes['translation'] = $attributes['translation'][0];
-        			for($i = 0; $i < count($matches); $i++)
-        				$attributes['translation'] = str_replace("_{$i}_", $matches[$i], $attributes['translation']);
+        			$translation = $translation[0];
+        			for($i = 0; $i < $matchCount; $i++)
+        				$translation = str_replace("_{$i}_", $matches[$i], $translation);
 
         			$messageModel = new Message;
-        			$messageModel->attributes = $attributes;
+        			$messageModel->setAttributes(array('id' => $model->id, 'language' => $requestedLanguage, 'translation' => $translation));
 
         			if($messageModel->save()) 
         			{
-        				$event->message = $attributes['translation'];
+        				$event->message = $translation;
         				return true;
         			}
 
-        			Yii::log('Translation "'.$attributes['translation'].'" could not be added to message table', CLogger::LEVEL_ERROR, self::ID);
+        			Yii::log('Translation "'.$translation.'" could not be added to message table', CLogger::LEVEL_ERROR, self::ID);
         		} 
         		else 
         		{
-        			Yii::log('Message "'.$event->message.'" could not be translated to "'.$event->language.'" by Google translate.', CLogger::LEVEL_ERROR, self::ID);
+        			Yii::log('Message "'.$event->message.'" could not be translated to "'.$requestedLanguage.'" by Google translate.', CLogger::LEVEL_ERROR, self::ID);
         		}
         	} 
         	else 
         	{
-        		Yii::log('A translation for message "'.$event->message.'" to "'.$event->language.'" could not be found and automatic translations are disabled.', CLogger::LEVEL_WARNING, self::ID);
+        		Yii::log('A translation for message "'.$event->message.'" to "'.$requestedLanguage.'" could not be found and automatic translations are disabled.', CLogger::LEVEL_WARNING, self::ID);
         	}
         } 
         else 
@@ -432,7 +425,7 @@ class MPTranslate extends CApplicationComponent {
         	return true;
         }
 
-        $this->_messages[$model->id] = array('language' => $event->language, 'message' => $event->message, 'category' => $event->category);
+        $this->_messages[$model->id] = array('language' => $requestedLanguage, 'message' => $event->message, 'category' => $event->category);
         
         return false;
     }
@@ -534,8 +527,8 @@ class MPTranslate extends CApplicationComponent {
     			} 
     			else 
     			{
-    				foreach($query->translations as $translation)
-    					$translated[$language][] = $translation->translatedText;
+    				foreach($query['translations'] as $translation)
+    					$translated[$language][] = $translation['translatedText'];
     			}
     		}
     	} 
@@ -550,8 +543,8 @@ class MPTranslate extends CApplicationComponent {
     		else 
     		{
     			$translated = array();
-    			foreach($query->translations as $translation)
-    				$translated[] = $translation->translatedText;
+    			foreach($query['translations'] as $translation)
+    				$translated[] = $translation['translatedText'];
     		}
     	}
 

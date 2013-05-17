@@ -16,6 +16,7 @@ class Message extends CActiveRecord {
             array('id, language, translation', 'required'),
 			array('id', 'numerical', 'integerOnly' => true),
 			array('language', 'length', 'max' => 12),
+			array('last_modified', 'date', 'format' => 'yyyy-M-d H:m:s'),
 			array('id',
 					'unique',
 					'caseSensitive' => false,
@@ -27,7 +28,7 @@ class Message extends CActiveRecord {
 			),
 			array('id', 'exist', 'attributeName' => 'id', 'className' => 'MessageSource', 'allowEmpty' => false),
 			array('id, language, translation', 'safe'),
-			array('id, language, category, message', 'safe', 'on' => 'search'),
+			array('id, language, category, message, last_modified', 'safe', 'on' => 'search'),
 		);
 	}
     

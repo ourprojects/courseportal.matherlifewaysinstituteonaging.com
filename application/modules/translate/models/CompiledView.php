@@ -39,8 +39,9 @@ class CompiledView extends CActiveRecord
 	public function rules()
 	{
 		return array(
-			array('source_path, compiled_path, language, created', 'required'),
-			array('id, created', 'numerical', 'integerOnly' => true),
+			array('source_path, compiled_path, language', 'required'),
+			array('created', 'date', 'format' => 'yyyy-M-d H:m:s'),
+			array('id', 'numerical', 'integerOnly' => true),
 			array('source_path, compiled_path', 'length', 'max' => 255),
 			array('language', 'length', 'max' => 3),
 

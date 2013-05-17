@@ -33,7 +33,7 @@ $this->widget(
     <ul>
       <?php 
   	foreach($surveys as $survey): ?>
-      <li> <a id="survey_link_<?php echo $survey->getId(); ?>" href="#survey_<?php echo $survey->getId(); ?>" title="<?php echo $survey->model->title; ?>"><?php echo $survey->model->title; ?></a>
+      <li> <a id="survey_link_<?php echo $survey->getId(); ?>" href="#survey_<?php echo $survey->getId(); ?>" title="<?php echo t($survey->model->title); ?>"><?php echo t($survey->model->title); ?></a>
         <?php $survey->run(); ?>
       </li>
       <br />

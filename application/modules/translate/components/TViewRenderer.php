@@ -2,8 +2,6 @@
 
 class TViewRenderer extends CViewRenderer
 {
-
-	public $connectionID = 'db';
 	
 	public $compiledViewTable = '{{translate_compiled_view}}';
 	
@@ -17,15 +15,15 @@ class TViewRenderer extends CViewRenderer
 	
 	private $_insertCompiledViewMessageCommand;
 	
-	private $_insertedViewMessages;
+	private $_compiledViewMessageExistsCommand;
+	
+	private $_messageIDs = array();
 	
 	public function init()
 	{
 		$this->_translator = TranslateModule::translator();
 	}
-	
-	
-	
+
 	/**
 	 * Returns the DB connection used for the message source.
 	 * @return CDbConnection the DB connection used for the message source.
@@ -34,10 +32,7 @@ class TViewRenderer extends CViewRenderer
 	{
 		if($this->_db === null)
 		{
-			$this->_db = Yii::app()->getComponent($this->connectionID);
-			if(!$this->_db instanceof CDbConnection)
-				throw new CException(Yii::t('yii','TViewRenderer.connectionID is invalid. Please make sure "{id}" refers to a valid database application component.',
-						array('{id}' => $this->connectionID)));
+			$this->_db = Yii::app()->getMessages()->getDbConnection();
 		}
 		return $this->_db;
 	}
@@ -50,18 +45,19 @@ class TViewRenderer extends CViewRenderer
 	 */
 	protected function generateViewFile($sourceFile, $viewFile)
 	{
-		$messageSource = Yii::app()->getComponent($this->_translator->source);
+		$this->_selectMessageIdCommand = $this->getDbConnection()->createCommand(
+				'SELECT id FROM ' . Yii::app()->getMessages()->sourceMessageTable . ' ' . 
+				'WHERE (category=:category AND message=:message)');
 		
-		$this->_selectMessageIdCommand = $this->getDbConnection()->createCommand()
-				->select('id')
-				->from($messageSource->sourceMessageTable)
-				->where(array('and', 'category=:category', 'message=:message'));
-		
-		$this->_insertCompiledViewMessageCommand = $this->getDbConnection()->createCommand(
-				"INSERT INTO {$this->compiledViewMessageTable} (message_source_id, compiled_view_id) VALUES (:message_source_id, :compiled_view_id)")
+		$this->_compiledViewMessageExistsCommand = $this->getDbConnection()->createCommand(
+				"SELECT COUNT(*) FROM $this->compiledViewMessageTable " .
+				'WHERE (message_source_id=:message_source_id AND compiled_view_id=:compiled_view_id)')
 				->bindValue(':compiled_view_id', $viewFile['id']);
 		
-		$this->_insertedViewMessages = array();
+		$this->_insertCompiledViewMessageCommand = $this->getDbConnection()->createCommand(
+				"INSERT INTO $this->compiledViewMessageTable " .
+				'(message_source_id, compiled_view_id) VALUES (:message_source_id, :compiled_view_id)')
+				->bindValue(':compiled_view_id', $viewFile['id']);
 		
 		file_put_contents(
 			$viewFile['compiled_path'], 
@@ -72,7 +68,7 @@ class TViewRenderer extends CViewRenderer
 			)
 		);
 		
-		$this->_insertedViewMessages = null;
+		$this->getDbConnection()->createCommand()->update($this->compiledViewTable, array('created' => date('Y-m-d H:i:s')), 'id=:id', array(':id' => $viewFile['id']));
 	}
 
 	private function pregReplaceCallback($matches)
@@ -80,12 +76,31 @@ class TViewRenderer extends CViewRenderer
 		$category = $matches[1] === '' ? $this->_translator->messageCategory : $matches[1];
 		$message = $matches[2];
 		$translation = Yii::t($category, $message, array(), null, null);
-		$message_id = $this->_selectMessageIdCommand->queryScalar(array(':category' => $category, ':message' => $message));
-		if(!isset($this->_insertedViewMessages[$message_id]))
+		
+		if(isset($this->_messageIDs[$message]))
+			$messageId = $this->_messageIDs[$message];
+		else
+			$messageId = $this->_messageIDs[$message] = $this->_selectMessageIdCommand->bindValues(array(':category' => $category, ':message' => $message))->queryScalar();
+		
+		if($messageId === false)
 		{
-			$this->_insertCompiledViewMessageCommand->bindValue(':message_source_id', $message_id)->execute();
-			$this->_insertedViewMessages[$message_id] = true;
+			$model = new MessageSource;
+			$model->setAttribute('category', $category);
+			$model->setAttribute('message', $message);
+			
+			if(!$model->save())
+			{
+				Yii::log("Message '$message' could not be added to messageSource table", CLogger::LEVEL_ERROR, MPTranslate::ID.'.'.get_class($this));
+				return $translation;
+			}
+			$messageId = $model->id;
 		}
+		
+		if(!$this->_compiledViewMessageExistsCommand->bindValue(':message_source_id', $messageId)->queryScalar())
+		{
+			$this->_insertCompiledViewMessageCommand->bindValue(':message_source_id', $messageId)->execute();
+		}
+		
 		return $translation;
 	}
 	
@@ -94,14 +109,15 @@ class TViewRenderer extends CViewRenderer
 		if(!is_file($sourceFile) || ($file = realpath($sourceFile)) === false)
 			throw new CException(Yii::t('yii', 'View file "{file}" does not exist.', array('{file}' => $sourceFile)));
 		
-		$messageSource = Yii::app()->getComponent($this->_translator->source);
+		$messageSource = Yii::app()->getMessages();
 		
-		$command = $this->getDbConnection()->createCommand()
-			->select(array($this->compiledViewTable.'.id AS id', $this->compiledViewTable.'.compiled_path AS compiled_path', $this->compiledViewTable.'.created AS created', 'MAX('.$messageSource->translatedMessageTable.'.last_modified) AS last_modified'))
-			->from($this->compiledViewTable)
-			->join($this->compiledViewMessageTable, $this->compiledViewTable.'.id='.$this->compiledViewMessageTable.'.compiled_view_id')
-			->join($messageSource->translatedMessageTable, array('and', $this->compiledViewMessageTable.'.message_source_id='.$messageSource->translatedMessageTable.'.id', $this->compiledViewTable.'.language='.$messageSource->translatedMessageTable.'.language'))
-			->where(array('and', $this->compiledViewTable.'.source_path=:source_path', $this->compiledViewTable.'.language=:language'), array(':source_path' => $sourceFile, ':language' => $this->_translator->getLanguageID()));
+		$command = $this->getDbConnection()->createCommand(
+			"SELECT $this->compiledViewTable.id AS id, $this->compiledViewTable.compiled_path AS compiled_path, $this->compiledViewTable.created AS created, MAX($messageSource->translatedMessageTable.last_modified) AS last_modified " .
+			"FROM $this->compiledViewTable " .
+			"INNER JOIN $this->compiledViewMessageTable ON ($this->compiledViewTable.id=$this->compiledViewMessageTable.compiled_view_id) " .
+			"INNER JOIN $messageSource->translatedMessageTable ON ($this->compiledViewMessageTable.message_source_id=$messageSource->translatedMessageTable.id AND $this->compiledViewTable.language=$messageSource->translatedMessageTable.language) " .
+			"WHERE ($this->compiledViewTable.source_path=:source_path AND $this->compiledViewTable.language=:language)")
+			->bindValues(array(':source_path' => $sourceFile, ':language' => $this->_translator->getLanguageID()));
 
 		$transaction = $this->getDbConnection()->beginTransaction();
 		try
@@ -110,10 +126,20 @@ class TViewRenderer extends CViewRenderer
 			
 			if($viewFile === false || $viewFile['id'] === null)
 			{
-				$viewFile = array('compiled_path' => $this->getViewFile($sourceFile));
-				$this->getDbConnection()->createCommand()->insert($this->compiledViewTable, array('source_path' => $sourceFile, 'compiled_path' => $viewFile['compiled_path'], 'language' => $this->_translator->getLanguageID()));
-				$viewFile['id'] = $this->getDbConnection()->lastInsertID;
-				$viewFile['created'] = $viewFile['last_modified'] = time();
+				$viewFile['compiled_path'] = $this->getViewFile($sourceFile);
+				$model = new CompiledView;
+				$model->setAttributes(array('source_path' => $sourceFile, 'compiled_path' => $viewFile['compiled_path'], 'language' => $this->_translator->getLanguageID()));
+				
+				if(!$model->save())
+				{
+					Yii::log("A compiled view for source file '$sourceFile' using language '{$this->_translator->getLanguageID()}' could not be added to the database.", CLogger::LEVEL_ERROR, MPTranslate::ID.'.'.get_class($this));
+					$viewFile['compiled_path'] = $sourceFile;
+				}
+				else
+				{
+					$viewFile['id'] = $model->id;
+					$viewFile['created'] = $viewFile['last_modified'] = $model->created;
+				}
 			}
 			else
 			{
@@ -129,8 +155,11 @@ class TViewRenderer extends CViewRenderer
 			
 			if($viewFile['last_modified'] >= $viewFile['created'] || @filemtime($sourceFile) >= $viewFile['created'])
 			{
-				$this->generateViewFile($sourceFile, $viewFile);
-				@chmod($viewFile, $this->filePermission);
+				if($viewFile['id'] !== null)
+				{
+					$this->generateViewFile($sourceFile, $viewFile);
+					@chmod($viewFile, $this->filePermission);
+				}	
 			}
 			$transaction->commit();
 		}
