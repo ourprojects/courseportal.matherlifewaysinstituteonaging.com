@@ -351,6 +351,7 @@ class MPTranslate extends CApplicationComponent {
         if(is_numeric($event->message))
         	return true;
         
+        $event->message = trim($event->message);
         $sourceLanguage = $event->category === TranslateModule::$componentId ? 'en_us' : Yii::app()->getMessages()->getLanguage();
         $requestedLanguage = $event->language;
         

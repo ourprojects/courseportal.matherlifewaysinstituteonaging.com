@@ -15,7 +15,7 @@ class TViewRenderer extends CViewRenderer
 	
 	private $_insertCompiledViewMessageCommand;
 	
-	private $_compiledViewMessageExistsCommand;
+	private $_compiledViewMessageNotExistsCommand;
 	
 	private $_messageIDs = array();
 	
@@ -45,20 +45,24 @@ class TViewRenderer extends CViewRenderer
 	 */
 	protected function generateViewFile($sourceFile, $viewFile)
 	{
+		$ignore_user_abort = ini_get('ignore_user_abort');
+		if(!$ignore_user_abort)
+			ignore_user_abort(true);
+		
 		$this->_selectMessageIdCommand = $this->getDbConnection()->createCommand(
 				'SELECT id FROM ' . Yii::app()->getMessages()->sourceMessageTable . ' ' . 
 				'WHERE (category=:category AND message=:message)');
 		
-		$this->_compiledViewMessageExistsCommand = $this->getDbConnection()->createCommand(
-				"SELECT COUNT(*) FROM $this->compiledViewMessageTable " .
-				'WHERE (message_source_id=:message_source_id AND compiled_view_id=:compiled_view_id)')
+		$this->_compiledViewMessageNotExistsCommand = $this->getDbConnection()->createCommand(
+				"SELECT NOT EXISTS(SELECT 1 FROM $this->compiledViewMessageTable " .
+				'WHERE (message_source_id=:message_source_id AND compiled_view_id=:compiled_view_id))')
 				->bindValue(':compiled_view_id', $viewFile['id']);
 		
 		$this->_insertCompiledViewMessageCommand = $this->getDbConnection()->createCommand(
 				"INSERT INTO $this->compiledViewMessageTable " .
 				'(message_source_id, compiled_view_id) VALUES (:message_source_id, :compiled_view_id)')
 				->bindValue(':compiled_view_id', $viewFile['id']);
-		
+
 		file_put_contents(
 			$viewFile['compiled_path'], 
 			preg_replace_callback(
@@ -69,6 +73,9 @@ class TViewRenderer extends CViewRenderer
 		);
 		
 		$this->getDbConnection()->createCommand()->update($this->compiledViewTable, array('created' => date('Y-m-d H:i:s')), 'id=:id', array(':id' => $viewFile['id']));
+		
+		if(!$ignore_user_abort)
+			ignore_user_abort($ignore_user_abort);
 	}
 
 	private function pregReplaceCallback($matches)
@@ -88,15 +95,18 @@ class TViewRenderer extends CViewRenderer
 			$model->setAttribute('category', $category);
 			$model->setAttribute('message', $message);
 			
-			if(!$model->save())
+			if($model->save())
 			{
-				Yii::log("Message '$message' could not be added to messageSource table", CLogger::LEVEL_ERROR, MPTranslate::ID.'.'.get_class($this));
+				$messageId = $this->_messageIDs[$message] = $model->id;
+			}
+			else
+			{
+				Yii::log("Message '$message' in category '$category' could not be added to source message table", CLogger::LEVEL_ERROR, MPTranslate::ID.'.'.get_class($this));
 				return $translation;
 			}
-			$messageId = $model->id;
 		}
 		
-		if(!$this->_compiledViewMessageExistsCommand->bindValue(':message_source_id', $messageId)->queryScalar())
+		if($this->_compiledViewMessageNotExistsCommand->bindValue(':message_source_id', $messageId)->queryScalar() === 1)
 		{
 			$this->_insertCompiledViewMessageCommand->bindValue(':message_source_id', $messageId)->execute();
 		}
@@ -124,21 +134,20 @@ class TViewRenderer extends CViewRenderer
 		{
 			$viewFile = $command->queryRow();
 			
-			if($viewFile === false || $viewFile['id'] === null)
+			if(empty($viewFile) || $viewFile['id'] === null)
 			{
-				$viewFile['compiled_path'] = $this->getViewFile($sourceFile);
 				$model = new CompiledView;
-				$model->setAttributes(array('source_path' => $sourceFile, 'compiled_path' => $viewFile['compiled_path'], 'language' => $this->_translator->getLanguageID()));
+				$model->setAttributes(array('source_path' => $sourceFile, 'compiled_path' => $this->getViewFile($sourceFile), 'language' => $this->_translator->getLanguageID()));
 				
-				if(!$model->save())
+				if($model->save())
 				{
-					Yii::log("A compiled view for source file '$sourceFile' using language '{$this->_translator->getLanguageID()}' could not be added to the database.", CLogger::LEVEL_ERROR, MPTranslate::ID.'.'.get_class($this));
-					$viewFile['compiled_path'] = $sourceFile;
+					$viewFile['id'] = $model->getAttribute('id');
+					$viewFile['compiled_path'] = $model->getAttribute('compiled_path');
+					$viewFile['created'] = $viewFile['last_modified'] = $model->getAttribute('created');
 				}
 				else
 				{
-					$viewFile['id'] = $model->id;
-					$viewFile['created'] = $viewFile['last_modified'] = $model->created;
+					Yii::log("A compiled view for source file '$sourceFile' using language '{$this->_translator->getLanguageID()}' could not be added to the database.", CLogger::LEVEL_ERROR, MPTranslate::ID.'.'.get_class($this));
 				}
 			}
 			else
@@ -147,21 +156,27 @@ class TViewRenderer extends CViewRenderer
 				$viewFile['created'] = strtotime($viewFile['created']);
 			}
 			
-			if(!is_file($viewFile['compiled_path']))
+			if(isset($viewFile['compiled_path']))
 			{
-				@mkdir(dirname($viewFile['compiled_path']), $this->filePermission, true);
-				$viewFile['last_modified'] = time();
-			}
-			
-			if($viewFile['last_modified'] >= $viewFile['created'] || @filemtime($sourceFile) >= $viewFile['created'])
-			{
-				if($viewFile['id'] !== null)
+				if(!is_file($viewFile['compiled_path']))
+				{
+					@mkdir(dirname($viewFile['compiled_path']), $this->filePermission, true);
+					$viewFile['last_modified'] = time();
+				}
+				
+				if($viewFile['last_modified'] >= $viewFile['created'] || @filemtime($sourceFile) >= $viewFile['created'])
 				{
 					$this->generateViewFile($sourceFile, $viewFile);
 					@chmod($viewFile, $this->filePermission);
-				}	
+				}
+				$transaction->commit();
 			}
-			$transaction->commit();
+			else
+			{
+				$viewFile['compiled_path'] = $sourceFile;
+				Yii::log("A compiled view for source file '$sourceFile' using language '{$this->_translator->getLanguageID()}' could not be found.", CLogger::LEVEL_ERROR, MPTranslate::ID.'.'.get_class($this));
+				$transaction->rollback();
+			}
 		}
 		catch(Exception $e)
 		{
