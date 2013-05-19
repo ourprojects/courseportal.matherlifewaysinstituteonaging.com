@@ -8,7 +8,7 @@ $clientScript->registerScript('customers_cycle', "$('#customers').cycle();");
 
 $fancyBoxConfig = array(
 						'width' => '720px',
-						'height' => '1000px',
+						'height' => '900px',
 						'arrows' => false,
 						'autoSize' => false,
 						'mouseWheel' => false,
@@ -218,7 +218,8 @@ $this->widget(
       <img src="<?php echo $this->getImagesUrl('tutorial/127032880.png'); ?>" alt="image" />
       <h4>{t}Caregiving in America{/t}</h4>
       <p>{t}Caring for a person with Alzheimer’s disease is physically, emotionally, and financially challenging. The demands of day-to-day care, changing family roles, and difficult decisions about placement in a care facility can be hard to handle. Researchers have learned much about Alzheimer’s caregiving, and studies are testing new ways to support caregivers.{/t}</p>
-      <p id="data">{t}+<b>40 million Americans</b> provide care for someone with a chronic illness such as dementia.{/t}</p>
+      <p id="data">{t}+<b>40 million Americans</b><br />
+        provide care for someone with a chronic illness such as dementia.{/t}</p>
       <p>{t}Becoming well-informed about the disease is one important long-term strategy. <a href="http://www.matherlifewaysinstituteonaging.com" target="_blank">Mather LifeWays Institute on Aging</a> provides these courses to teach families about the various stages of Alzheimer’s and about flexible and practical strategies for dealing with difficult caregiving situations. We provide vital training and online education to those who care for people with Alzheimer’s and other related conditions.{/t}</p>
       <div id="question1" class="question">
         <p><b>{t}Estimated cost to employers for employees with caregiving responsibilities is in the billions of dollars.{/t}</b><br />
@@ -236,20 +237,25 @@ $this->widget(
   </div>
   <div id="slide-2" class="course-slide">
     <div class="content">
-      <h2 class="flowers"> {t}Finding Balance{/t} </h2>
+      <h2 class="flowers"> {t}The Need to Finding Balance{/t} </h2>
       <hr />
-      <p> {t}<b>Caregiving is not just a social issue, it is a critical workplace issue</b>. Caregiving for a relative with a chronic condition or for an elderly person is usually provided by a family member, and typcially these family members are employed.{/t}</p>
-      <p>{t}According to the <a href="http://www.alz.org/downloads/facts_figures_2012.pdf" target="_blank">Alzheimer's disease Facts and Figures (2012)</a> report, a large percentage of the American workforce is estimated to be involved in caregiving. And, as the number of elderly Americans grows, the number of employed caregivers—and the billions in annual cost to business, in addition to the billions associated with health care costs — is likely to continue upwards.{/t}</p>
-      
+      <p> {t}<b>Caregiving is not just a social issue, it is a critical workplace issue</b>. Caregiving for an elderly person is usually provided by a family member, and typcially these family members are employed. According to the <a href="http://www.alz.org/downloads/facts_figures_2012.pdf" target="_blank">Alzheimer's disease Facts and Figures (2012)</a> report, a large percentage of the American workforce is estimated to be involved in caregiving. And, as the number of elderly Americans grows, the number of employed caregivers—and the billions in annual cost to business, in addition to the billions associated with health care costs — is likely to continue upwards.{/t}</p>
       <p>{t}In fact, as reported, in the <b>next two decades</b>, the <b>number of older Americans will more than double</b>. The fastest growing segment of the population are those age 85 and older, a segment that is most likely to be frail and have chronic conditions. Given rising healthcare costs and shorter hospital stays, the care of these older Americans will increasingly fall on their children, friends, and other relatives — unpaid caregivers who are, for the most part, still in the workforce. Many of them are at the peak of their careers.{/t}</p>
-      
-      <p>{t}The current figures are already staggering. Today, <b>millions of caregivers provide assistance to people age 50 and older</b>, and nearly all of the care of older adults is provided by family and friends. Meanwhile, more than <b>half of the nation’s unpaid caregivers are in the workforce</b>.{/t}</p>      
-      
-        <p>
+      <p align="center">
         <iframe width="400" height="225" src="http://www.youtube.com/embed/In1IJocVor8?rel=0" frameborder="0" allowfullscreen></iframe>
       </p>
-     
-
+      <p>{t}The current figures are already staggering. Today, <b>millions of caregivers provide assistance to people age 50 and older</b>, and nearly all of the care of older adults is provided by family and friends. Meanwhile, more than <b>half of the nation’s unpaid caregivers are in the workforce</b>.{/t}</p>
+      <div id="question1" class="question">
+        <p><b>{t}The Alzheimer's Association is the world's leading voluntary health organization in Alzheimer's care, support and research.{/t}</b><br />
+          <select>
+            <option selected="selected" value="select"> {t}Select{/t} </option>
+            <option value="1"> {t}True{/t} </option>
+            <option value="0"> {t}False{/t} </option>
+          </select>
+        </p>
+        <p class="right-answer hide"> {t}Correct!. Please familarize yourself with the <a href="http://www.alz.org" target="_blank">Alzheimer's Association's website</a>.{/t} </p>
+        <p class="wrong-answer hide"> {t}Please familarize yourself with the <a href="http://www.alz.org" target="_blank">Alzheimer's Association's website</a> before continuing.{/t} </p>
+      </div>
     </div>
     <div class="buttons"><a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t} </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
   </div>
@@ -258,26 +264,21 @@ $this->widget(
       <h2 class="flowers">{t}Demographics{/t}</h2>
       <hr />
       <img src="<?php echo $this->getImagesUrl('tutorial/133300753.png'); ?>" alt="{t}image{/t}" />
-     
-     <p>{t}Various surveys show caregivers include all ages, races, and both genders. In 2009, the National Alliance for Caregiving and AARP, along with Census figures and other reports, developed a study entitled Caregiving in the U.S., found the following:{/t}</p>
-     
-     <ul>
-     	<li>{t}About 87 percent of caregivers provide care to someone over age 50, and 60 percent of those caregivers work full time.{/t}</li>
-        <li>About 15 percent of caregivers provide care to someone who lives more than an hour away.{/t}</li>
-        <li>More than a third have children or grandchildren under the age of 18 inthe household.{/t}</li>
+      <p>{t}Various surveys show caregivers include all ages, races, and both genders. In 2009, the <a href="http://www.caregiving.org" target="_blank">National Alliance for Caregiving</a> and <a href="http://www.aarp.org" target="_blank">AARP</a>, along with Census figures and other reports, developed a study entitled <a href="http://www.caregiving.org/data/Caregiving_in_the_US_2009_full_report.pdf" target="_blank">Caregiving in the U.S.</a>, found the following:{/t}</p>
+      <ul>
+        <li>{t}About 87 percent of caregivers provide care to someone over age 50, and 60 percent of those caregivers work full time.{/t}</li>
+        <li>{t}About 15 percent of caregivers provide care to someone who lives more than an hour away.{/t}</li>
+        <li>{t}More than a third have children or grandchildren under the age of 18 inthe household.{/t}</li>
       </ul>
-      
-       <div id="question" class="question">
-        <p> {t}Search the Internet to find out how many caregivers are in your state or region.{/t} </p>
+      <div id="question" class="question">
+        <p>{t}Search the Internet to find out how many caregivers are in your state or region.{/t}</p>
         <form method="get" action="http://www.google.com/search" target="_blank">
           <input type="text" id="google-search" name="q" size="65" maxlength="255" value="" />
           <input type="submit" value="{t}Google Search{/t}" class="teal" />
         </form>
       </div>
-     
-     
-     
-    </div>
+      <p><b>{t}Forum Posting{/t}</b> - {t}(Access to the Forum is only available to registered users...){/t}</p>
+      <img src="<?php echo $this->getImagesUrl('tutorial/ForumScreenShot.png'); ?>" alt="{t}image{/t}"> </div>
     <div class="buttons"><a href="javascript:;" class="button left"
 				onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t} </a> <a
 				href="javascript:;" class="button right"
@@ -285,59 +286,36 @@ $this->widget(
   </div>
   <div id="slide-4" class="course-slide">
     <div class="content">
-      <h2 class="flowers"> {t}The Sandwich Generation{/t} </h2>
+      <h2 class="flowers"> {t}The Sandwich Generation - MediaStorm{/t}</h2>
       <hr />
-    
-      <h4>{t}Media Storm{/t}</h4>
-      <p>{t}Filmmaker-photographer couple Julie Winokur and Ed Kashi were busy pursuing their careers and raising two children when Winokur's 83-year-old father, Herbie, became too infirm to care for himself.{t}</p>
-      
-      <p>{t}At that moment they joined some twenty million other Americans who make up the sandwich generation, those who find themselves responsible for the care of both their children and their aging parents.{/t}</p>
-      <div style="width:400px;">
+      <p>{t}Filmmaker-photographer couple Julie Winokur and Ed Kashi were busy pursuing their careers and raising two children when Winokur's 83-year-old father, Herbie, became too infirm to care for himself. At that moment they joined some twenty million other Americans who make up the sandwich generation, those who find themselves responsible for the care of both their children and their aging parents.{/t}</p>
+      <div style="width:400px;" id="video">
         <div style="height:340px;"><script type="text/javascript" src="http://mediastorm.com/player/embed.php?id=e51981bc412802480288&w=400&h=340&amp;lang=none"></script></div>
-        <div style="padding:10px; font-family:Helvetica, Arial, sans-serif; font-size:12px; line-height:16px; color:#999999; background-color:#000000;">Millions of middle-aged Americans are caring for their children as well as their aging parents. When filmmaker-photographer pair Julie Winokur and Ed Kashi took in Winokur's 83-year-old father, they decided to document their own story. See the project at <a href="http://mediastorm.com/publication/the-sandwich-generation" target="_blank" style="color:#0083c5;">http://mediastorm.com/publication/the-sandwich-generation</a></div>
+        <div style="padding:10px; font-family:Helvetica, Arial, sans-serif; font-size:12px; line-height:16px; color:#999999; background-color:#000000;">Millions of middle-aged Americans are caring for their children as well as their aging parents. When filmmaker-photographer pair Julie Winokur and Ed Kashi took in Winokur's 83-year-old father, they decided to document their own story.</div>
       </div>
-    
-    </div>
+      <p><b>{t}Forum Posting{/t}</b> - {t}(Access to the Forum is only available to registered users...){/t}</p>
+      <img src="<?php echo $this->getImagesUrl('tutorial/ForumScreenShot.png'); ?>" alt="{t}image{/t}"> </div>
     <div class="buttons"><a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t} </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
   </div>
   <div id="slide-5" class="course-slide">
     <div class="content">
       <h2 class="flowers">{t}Impact of Caregiving on Employee Health{/t}</h2>
       <hr />
-      <p>{t}It is important that you are assessed after each topic to ensure you are learning the material. If you feel you are not ready to complete this assessment, please review this tutorial again.{/t}</p>
-      <p>{t}Thinking about the material you just read, please try and correctly answer the assessment questions below without searching the Internet. Your responses are not recorded, and you will receive immediate feedback.{/t}</p>
-      <br />
+      <img src="<?php echo $this->getImagesUrl('tutorial/153236274.png'); ?>" alt="{t}image{/t}" />
+      <p>{t}In general, individuals responsible for caregiving — including employee caregivers — have more health-related problems than employees who are non-caregivers. A survey from <a href="http://www.commonwealthfund.org/Surveys/2005/2005-Commonwealth-Fund-International-Health-Policy-Survey-of-Sicker-Adults.aspx" target="_blank">The Commonwealth Fund (2005)</a> found that 45 percent of caregivers had one or more chronic conditions, compared to 24 percent of those with no caregiving responsibilities.{/t}</p>
+      <p>{t}Caregivers (whether working or not) have higher levels of depression, heart disease, blood pressure and immune function, and are more likely to die earlier than non-caregivers. In 2010, the <a href="https://www.metlife.com/assets/cao/mmi/publications/studies/2011/mmi-caregiving-costs-working-caregivers.pdf" target="_blank">National Alliance for Caregiving and MetLife</a>, found that employee caregivers have a higher incidence of diabetes.{/t}</p>
+      <p>{t}Among female employees age 50 and older providing eldercare, 17 percent reported fair or poor health compared to 9 percent of noncaregivers, the MetLife report showed. Further, 10 percent of caregivers had missed at least one day of work over a two week period because of health issues compared to 9 percent for non-caregivers.{/t}</p>
       <div id="question1" class="question">
-        <p><b>{t}Is Alzehimer's disease a disease of the brain?{/t}</b>
-          <select>
-            <option selected="selected" value="select"> {t}Select{/t} </option>
-            <option value="1"> {t}Yes{/t} </option>
-            <option value="0"> {t}No{/t} </option>
-          </select>
-        </p>
-        <p class="right-answer hide"> {t}Great! Yes, Alzheimer's disease is a disease of the brain.{/t} </p>
-        <p class="wrong-answer hide"> {t}Please review this tutorial again. Alzheimer's disease is a disease of the brain.{/t} </p>
-      </div>
-      <div id="question2" class="question">
-        <p><b>{t}Alzheimer's disease is the most common form of dementia.{/t}</b>
+        <p><b>{t}Workers with caregiving responsibility report more difficulty than non-caregivers in taking care of their health.{/t}</b><br />
           <select>
             <option selected="selected" value="select"> {t}Select{/t} </option>
             <option value="1"> {t}True{/t} </option>
             <option value="0"> {t}False{/t} </option>
           </select>
         </p>
-        <p class="right-answer hide"> {t}Yes, Alzheimer's disease is the most common form of dementia.{/t} </p>
-        <p class="wrong-answer hide"> {t}Please review this tutorial again. Alzheimer's disease is the most common form of dementia.{/t} </p>
+        <p class="right-answer hide"> {t}Correct!. According to the <a href="https://www.metlife.com/assets/cao/mmi/publications/studies/2011/mmi-caregiving-costs-working-caregivers.pdf" target="_blank">MetLife study</a>, workers do report more difficulty.{/t} </p>
+        <p class="wrong-answer hide"> {t}Incorrect. Please review the <a href="https://www.metlife.com/assets/cao/mmi/publications/studies/2011/mmi-caregiving-costs-working-caregivers.pdf" target="_blank">MetLife study</a> for current statistics.{/t} </p>
       </div>
-      <div id="question" class="question">
-        <p> {t}Please find additional data on dementia and Alzheimer's disease. Try and conduct your own research.{/t} </p>
-        <form method="get" action="http://www.google.com/search" target="_blank">
-          <input type="text" id="google-search" name="q" size="65" maxlength="255" value="" />
-          <input type="submit" value="{t}Google Search{/t}" class="teal" />
-        </form>
-      </div>
-      <br />
-      <br />
     </div>
     <div class="buttons"><a href="javascript:;" class="button left"
 				onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t} </a> <a
@@ -348,24 +326,37 @@ $this->widget(
     <div class="content">
       <h2 class="flowers"> {t}Cost on Business{/t} </h2>
       <hr />
-      <img src="<?php echo $this->getImagesUrl('78634274r.jpeg'); ?>" alt="{t}Tutorial{/t}" />
-      <p> {t}Dementia refers to an acquired and progressive loss of mental functions due to a brain disorder. Dementia is not a specific
-        disease. It is an overall term that describes a wide range of symptoms associated with a decline in memory or other thinking skills 
-        severe enough to reduce a person's ability to perform everyday activities. A medical diagnosis is required to determine the underlying 			cause or causes of symptoms.{/t} </p>
-      <p> <b>{t}Symptoms and signs of dementia{/t}</b> </p>
-      <p> {t}While symptoms of dementia can vary greatly, at least two of the following core mental functions, amongst others, must be significantly impaired to be onsidered dementia:{/t} </p>
+      <img src="<?php echo $this->getImagesUrl('tutorial/157666002.png'); ?>" alt="{t}Tutorial{/t}" />
+      <p>{t}In a <a href="https://www.metlife.com/assets/cao/mmi/publications/studies/2010/mmi-working-caregivers-employers-health-care-costs.pdf" target="_blank">report</a> evaluating more than 17,000 employees at a large American corporation, those caring for elderly people cost employers 8 percent more in medical costs than those without caregiving responsibilities. The authors estimated that the additional medical costs to U.S. employers of caregiving employees are $13.4 billion a year.{/t}</p>
+      
+      <!--
+      MetLife Mature Market Institute, National Alliance for
+Caregiving, & University of Pittsburgh Institute on Aging.
+(2010). The MetLife study of working caregivers and
+employer health care costs: New insights and innovations
+for reducing health care costs for employers. New York,
+NY: Metropolitan Life Insurance Company.
+ -->
+      
+      <h5>{t}Signs of eldercare work/family conflicts{/t}</h5>
       <ul>
-        <li>{t}Memory{/t}</li>
-        <li>{t}Communication and language{/t}</li>
-        <li>{t}Ability to focus and pay attention{/t}</li>
+        <li>{t}Excessive personal phone use during office hours.{/t}</li>
+        <li>{t}Tardiness and absenteeism that far exceed company standards.{/t}</li>
+        <li>{t}Claims for sickness benefits at a much higher than usual rate.{/t}</li>
       </ul>
-      <p> {t}People with dementia may have problems with short-term memory, keeping track of a purse or wallet, paying bills, planning and
-        preparing meals, remembering appointments or traveling out of the neighborhood. Many dementias are progressive, meaning symptoms start
-        out slowly and gradually get worse.{/t} </p>
-      <p> {t}Using your spreadsheet processor, please search the Internet for additional symptoms and signs of dementia that have not been mentioned here and list them. Once completed, please email your Facilitator the attachment.{/t}</p>
-      <p><img class="normal" width="48" height="48" src="<?php echo $this->getImagesUrl('spreadsheet.png'); ?>" /><a href="mailto:jwoodall@matherlifeways.com" /> <img class="normal" width="48" height="48" src="<?php echo $this->getImagesUrl('email.png'); ?>" /></a></p>
-      <br />
-      <br />
+      <h5>{t}Lost productivity{/t}</h5>
+      <p>{t}When surveyed, 66 percent of caregivers in a 2009 analysis from the National Alliance for Caregiving reported that they arrived later and/or left earlier to provide care—nearly 10 percent more than who reported such workday changes just five years earlier.{/t}</p>
+      <div id="question1" class="question">
+        <p><b>{t}Workers with caregiving responsibility report more difficulty than non-caregivers in taking care of their health.{/t}</b><br />
+          <select>
+            <option selected="selected" value="select"> {t}Select{/t} </option>
+            <option value="1"> {t}True{/t} </option>
+            <option value="0"> {t}False{/t} </option>
+          </select>
+        </p>
+        <p class="right-answer hide"> {t}Correct!. According to the <a href="https://www.metlife.com/assets/cao/mmi/publications/studies/2011/mmi-caregiving-costs-working-caregivers.pdf" target="_blank">MetLife study</a>, workers do report more difficulty.{/t} </p>
+        <p class="wrong-answer hide"> {t}Incorrect. Please review the <a href="https://www.metlife.com/assets/cao/mmi/publications/studies/2011/mmi-caregiving-costs-working-caregivers.pdf" target="_blank">MetLife study</a> for current statistics.{/t} </p>
+      </div>
     </div>
     <div class="buttons"><a href="javascript:;" class="button left"
 				onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t} </a> <a
@@ -376,16 +367,20 @@ $this->widget(
     <div class="content">
       <h2 class="flowers"> {t}Conclusions{/t} </h2>
       <hr />
-      <img src="<?php echo $this->getImagesUrl('56677551r.jpeg'); ?>" width="250" height="375" alt="{t}Thank You{/t}" />
-      <p> {t}With such a profound impact on society, business, and potentially your family, understanding dementia and Alzheimer's disease is very important. After participating in this tutorial, you should now understand and be able to explain what Alzheimer's disease and dementia are. If necessary, please review this tutorial again.{/t} </p>
+      <img src="<?php echo $this->getImagesUrl('tutorial/168357025.png'); ?>" alt="{t}Image{/t}">
+      <p>{t}
+        When it comes to caregiving programs, employees say they want:21
+        • One phone number to call to look for care (consolidated service)
+        • A way to find information on caregiver rights, elder rights, caregiving
+        services and their costs
+        • Help balancing their work and family responsibilities
+        • Support to manage their emotional and physical stress
+        
+        
+        {/t} </p>
       <h4>{t}Certificate of Completion{/t}</h4>
       <p>{t}Upon successful completion of each online course, you will have the opportunity to download your custom Certificate of Completion. Once accessed, you will be able to type your name and date into the form-fillable certificate. The course title and seal will automatically be applied to the certificate upon successful participation in all of the available course lessons. Certificates will NOT be accessible by those users who DO NOT participate in all of the available lessons. Click on the icon below to access the example.{/t}</p>
-      <a href="<?php echo $this->getImagesUrl('CourseCompletionCertificate.pdf'); ?>" target="_blank"><img class="normal" src="<?php echo $this->getImagesUrl('ArtworkCertificate.png'); ?>" alt="{t}Certificate{/t}" /></a>
-      <p> {t}Thank you for participating in this tutorial! Now that you have a better idea on what to expect, your next step is to register and begin participating in the various online courses that are available.{/t} </p>
-      <p>{t}Please contact us if you have questions or need help. Data and research have been developed or collected for this tutorial course by the following organizations in the USA: {/t} <a href="http://www.alz.org" target="_blank">Alzheimer's Association</a>, <a href="http://matherlifewaysinstituteonaging.com" target="_blank">Mather LifeWays Institute on Aging</a>, <a href="http://nih.gov" target="_blank">U.S. Department of Health &amp; Human Services - National Institute on Aging</a>.</p>
-      <br />
-      <br />
-    </div>
+      <a href="<?php echo $this->getImagesUrl('tutorial/CourseCompletionCertificate.pdf'); ?>" target="_blank"><img class="normal" src="<?php echo $this->getImagesUrl('ArtworkCertificate.png'); ?>" alt="{t}Certificate{/t}" /></a> </div>
     <div class="buttons"><a href="#" onclick="parent.jQuery.fancybox.close();"
 				class="button left"> {t}End Tutorial{/t} </a> </div>
   </div>

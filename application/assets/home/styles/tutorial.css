@@ -3,8 +3,9 @@
 
 @import url(http://fonts.googleapis.com/css?family=Swanky+and+Moo+Moo);
 @import url(http://fonts.googleapis.com/css?family=Happy+Monkey);
+@import url(http://fonts.googleapis.com/css?family=Finger+Paint);
 div.course-slide {
-	min-height: 720px;
+	min-height: 900px;
 	position: relative;
 }
 div.course-slide div.content {
@@ -14,9 +15,12 @@ div.course-slide div.content {
 div.course-slide div.content p {
 	font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif;
 }
+div.course-slide div.content ul li {
+	font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif;
+}
 div.course-slide div.buttons {
 	text-align: center;
-	background: #ddd;
+	background: #333;
 	border-radius: 10px;
 	height: 40px;
 	padding: 5px;
@@ -55,11 +59,11 @@ div.course-slide p a:active {
 }
 div.course-slide p#data {
 	text-align: center;
-	font-family: 'Happy Monkey', cursive;
+	font-family: 'Finger Paint', cursive;
 	color: #F00;
 }
 div.course-slide div.question {
-	text-align:center;
+	text-align: center;
 	font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif;
 	font-size: 14px;
 	background-color: #FFF;
@@ -77,11 +81,19 @@ div.course-slide p.right-answer {
 	color: #030;
 	font-size: 13px;
 	font-family: 'Swanky and Moo Moo', cursive;
-	text-align:left;
+	text-align: left;
 }
 div.course-slide p.wrong-answer {
 	color: #600;
 	font-size: 13px;
 	font-family: 'Swanky and Moo Moo', cursive;
-	text-align:left;
+	text-align: left;
+}
+div.course-slide div#video {
+	display: block;
+	margin: 20px auto;
+	background-color: #FFF;
+	-moz-box-shadow: 0 0 5px 5px #888;
+	-webkit-box-shadow: 0 0 5px 5px#888;
+	box-shadow: 0 0 5px 5px #888;
 }
