@@ -34,12 +34,12 @@ div.course-slide img {
 	-webkit-border-radius: 5px;
 }
 div.course-slide p a:link {
-	color: #36F;
+	color: #03F;
 	font-family: 'Happy Monkey', cursive;
 	font-size: 16px;
 }
 div.course-slide p a:visited {
-	color: #000;
+	color: #03F;
 	font-family: 'Happy Monkey', cursive;
 	font-size: 16px;
 }
@@ -49,14 +49,14 @@ div.course-slide p a:hoover {
  font-size: 16px;
 }
 div.course-slide p a:active {
-	color: #00C;
+	color: #39F;
 	font-family: 'Happy Monkey', cursive;
 	font-size: 16px;
 }
 div.course-slide p#data {
 	text-align: center;
 	font-family: 'Happy Monkey', cursive;
-	color: #900;
+	color: #F00;
 }
 div.course-slide div.question {
 	text-align:center;
@@ -75,13 +75,13 @@ div.course-slide div.question {
 }
 div.course-slide p.right-answer {
 	color: #030;
-	font-size: 14px;
+	font-size: 13px;
 	font-family: 'Swanky and Moo Moo', cursive;
 	text-align:left;
 }
 div.course-slide p.wrong-answer {
 	color: #600;
-	font-size: 14px;
+	font-size: 13px;
 	font-family: 'Swanky and Moo Moo', cursive;
-	text-align:right;
+	text-align:left;
 }
