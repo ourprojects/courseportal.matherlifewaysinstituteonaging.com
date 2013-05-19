@@ -15,8 +15,8 @@ foreach(array(
 	$this->widget(
 			'ext.fancybox.EFancyBox',
 			array('id' => $lesson,
-				  'config' => array('width' => '90%',
-									'height' => '90%',
+				  'config' => array('width' => '700px',
+									'height' => '1000px',
 									'arrows' => false,
 									'autoSize' => false,
 									'mouseWheel' => false))
