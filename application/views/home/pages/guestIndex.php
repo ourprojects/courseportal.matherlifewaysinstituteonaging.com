@@ -34,7 +34,6 @@ $this->widget(
 
 <!-- index page main image -->
 
-
 <div id="home-image">
   <h1>{t}Web-based Training for Caregivers{/t}</h1>
 </div>
@@ -217,27 +216,21 @@ $this->widget(
       <h2 class="flowers"> {t}Caregiving - Impact on the Workplace{/t} </h2>
       <hr />
       <img src="<?php echo $this->getImagesUrl('tutorial/127032880.png'); ?>" alt="image" />
-      
       <h4>{t}Caregiving in America{/t}</h4>
-      <p>{t}More than 40 million Americans provide care for relatives or friends with a chronic illness such as dementia, stroke, or Parkinson’s disease. This takes an enormous physical and emotional toll on caregivers.{/t}</p>
-      
       <p>{t}Caring for a person with Alzheimer’s disease is physically, emotionally, and financially challenging. The demands of day-to-day care, changing family roles, and difficult decisions about placement in a care facility can be hard to handle. Researchers have learned much about Alzheimer’s caregiving, and studies are testing new ways to support caregivers.{/t}</p>
-      
-      <p>{t}Becoming well-informed about the disease is one important long-term strategy. <a href="http://www.matherlifewaysinstituteonaging.com" target="_blank">Mather LifeWays Institute on Aging</a> provides these courses to teach families about the various stages of Alzheimer’s and about flexible and practical strategies for dealing with difficult caregiving situations. We provide vital help to those who care for people with Alzheimer’s and other related conditions.{/t}</p>
-      
-         <div id="question1" class="question">
-        <p><b>{t}here{/t}</b>
+      <p id="data">{t}More than <b>40 million Americans provide care</b> for relatives or friends with a chronic illness such as dementia, stroke, or Parkinson’s disease.{/t}</p>
+      <p>{t}Becoming well-informed about the disease is one important long-term strategy. <a href="http://www.matherlifewaysinstituteonaging.com" target="_blank">Mather LifeWays Institute on Aging</a> provides these courses to teach families about the various stages of Alzheimer’s and about flexible and practical strategies for dealing with difficult caregiving situations. We provide vital training and online education to those who care for people with Alzheimer’s and other related conditions.{/t}</p>
+      <div id="question1" class="question">
+        <p><b>{t}Estimated cost to employers for employees with caregiving responsibilities is in the billions of dollars.{/t}</b><br />
           <select>
             <option selected="selected" value="select"> {t}Select{/t} </option>
-            <option value="1"> {t}Yes{/t} </option>
-            <option value="0"> {t}No{/t} </option>
+            <option value="1"> {t}True{/t} </option>
+            <option value="0"> {t}False{/t} </option>
           </select>
         </p>
-        <p class="right-answer hide"> {t}Great! Yes, Dementia is a disease of the brain.{/t} </p>
-        <p class="wrong-answer hide"> {t}Please ensure you understand what dementia is. Dementia is a disease of the brain.{/t} </p>
+        <p class="right-answer hide"> {t}Correct! According to the The MetLife Caregiving Cost Study (2013), the costs are in the billions of dollars.{/t} </p>
+        <p class="wrong-answer hide"> {t}The costs associated are in the billions of dollars. Please review the {/t} </p>
       </div>
-      
-      
     </div>
     <div class="buttons"><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Begin Tutorial &raquo;{/t} </a></div>
   </div>
@@ -307,16 +300,15 @@ $this->widget(
     <div class="content">
       <h2 class="flowers"> {t}The Sandwich Generation{/t} </h2>
       <hr />
-      
-      <h4>{t}Media Storm{/t}
-      
+      <h4>
+      {t}Media Storm{/t}
       <p>{t}Filmmaker-photographer couple Julie Winokur and Ed Kashi were busy pursuing their careers and raising two children when Winokur's 83-year-old father, Herbie, became too infirm to care for himself.{t}
-
-{t}At that moment they joined some twenty million other Americans who make up the sandwich generation, those who find themselves responsible for the care of both their children and their aging parents.{/t}
-     
-     <div style="width:400px;"><div style="height:340px;"><script type="text/javascript" src="http://mediastorm.com/player/embed.php?id=e51981bc412802480288&w=400&h=340&amp;lang=none"></script></div><div style="padding:10px; font-family:Helvetica, Arial, sans-serif; font-size:12px; line-height:16px; color:#999999; background-color:#000000;">Millions of middle-aged Americans are caring for their children as well as their aging parents. When filmmaker-photographer pair Julie Winokur and Ed Kashi took in Winokur's 83-year-old father, they decided to document their own story. See the project at <a href="http://mediastorm.com/publication/the-sandwich-generation" target="_blank" style="color:#0083c5;">http://mediastorm.com/publication/the-sandwich-generation</a></div></div>
-     
-     
+        
+        {t}At that moment they joined some twenty million other Americans who make up the sandwich generation, those who find themselves responsible for the care of both their children and their aging parents.{/t}
+      <div style="width:400px;">
+        <div style="height:340px;"><script type="text/javascript" src="http://mediastorm.com/player/embed.php?id=e51981bc412802480288&w=400&h=340&amp;lang=none"></script></div>
+        <div style="padding:10px; font-family:Helvetica, Arial, sans-serif; font-size:12px; line-height:16px; color:#999999; background-color:#000000;">Millions of middle-aged Americans are caring for their children as well as their aging parents. When filmmaker-photographer pair Julie Winokur and Ed Kashi took in Winokur's 83-year-old father, they decided to document their own story. See the project at <a href="http://mediastorm.com/publication/the-sandwich-generation" target="_blank" style="color:#0083c5;">http://mediastorm.com/publication/the-sandwich-generation</a></div>
+      </div>
       <div id="question1" class="question">
         <p><b>{t}Is dementia a disease of the brain?{/t}</b>
           <select>
@@ -328,8 +320,6 @@ $this->widget(
         <p class="right-answer hide"> {t}Great! Yes, Dementia is a disease of the brain.{/t} </p>
         <p class="wrong-answer hide"> {t}Please ensure you understand what dementia is. Dementia is a disease of the brain.{/t} </p>
       </div>
- 
- 
     </div>
     <div class="buttons"><a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t} </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
   </div>

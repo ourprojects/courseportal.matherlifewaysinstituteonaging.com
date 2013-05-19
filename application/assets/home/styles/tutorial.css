@@ -1,29 +1,18 @@
-div.course-slide iframe.tutorial-video {
-	float: right;
-	margin: 0 0 15px 15px;
-}
-div.box-sidebar.two p.title {
-	color: #900;
-	font-size: 24px;
-}
+@charset "UTF-8";
+/* CSS Document */
+
+@import url(http://fonts.googleapis.com/css?family=Swanky+and+Moo+Moo);
+@import url(http://fonts.googleapis.com/css?family=Happy+Monkey);
 div.course-slide {
-	min-height: 1000px;
+	min-height: 720px;
 	position: relative;
-}
-div.course-slide div.question {
-	background-color: #FFF;
-	border-radius: 15px;
-	width: 90%;
-	height: 85px;
-	margin: 10px auto 10px auto;
-	padding: 10px;
-	-moz-box-shadow: 0 0 5px 5px #888;
-	-webkit-box-shadow: 0 0 5px 5px#888;
-	box-shadow: 0 0 5px 5px #888;
 }
 div.course-slide div.content {
 	padding-top: 10px;
 	padding-bottom: 55px;
+}
+div.course-slide div.content p {
+	font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif;
 }
 div.course-slide div.buttons {
 	text-align: center;
@@ -44,22 +33,55 @@ div.course-slide img {
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
 }
-div.course-slide p.link {
+div.course-slide p a:link {
 	color: #36F;
+	font-family: 'Happy Monkey', cursive;
+	font-size: 16px;
 }
-div.course-slide div.box-white {
+div.course-slide p a:visited {
+	color: #000;
+	font-family: 'Happy Monkey', cursive;
+	font-size: 16px;
+}
+div.course-slide p a:hoover {
+ color: #C60;
+ font-family: 'Happy Monkey', cursive;
+ font-size: 16px;
+}
+div.course-slide p a:active {
+	color: #00C;
+	font-family: 'Happy Monkey', cursive;
+	font-size: 16px;
+}
+div.course-slide p#data {
+	text-align: center;
+	font-family: 'Happy Monkey', cursive;
+	color: #900;
+}
+div.course-slide div.question {
+	text-align:center;
+	font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif;
+	font-size: 14px;
+	background-color: #FFF;
+	border-radius: 15px;
+	width: 90%;
+	height: 100px;
+	margin: 10px auto 10px auto;
 	padding: 10px;
-	background: #fff;
-	margin: 10px 0 30px 10px;
-	border-radius: 5px;
-	box-shadow: 0 0 10px #999;
-	width: 100%;
+	-moz-box-shadow: 0 0 5px 5px #888;
+	-webkit-box-shadow: 0 0 5px 5px#888;
+	box-shadow: 0 0 5px 5px #888;
+	color: #000;
 }
-div.course-slide .right-answer {
-	color: #060;
-	font-weight: bold;
+div.course-slide p.right-answer {
+	color: #030;
+	font-size: 14px;
+	font-family: 'Swanky and Moo Moo', cursive;
+	text-align:left;
 }
-div.course-slide .wrong-answer {
-	color: #C00;
-	font-weight: bold;
+div.course-slide p.wrong-answer {
+	color: #600;
+	font-size: 14px;
+	font-family: 'Swanky and Moo Moo', cursive;
+	text-align:right;
 }
