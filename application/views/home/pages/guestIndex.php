@@ -44,16 +44,15 @@ $this->widget(
 </div>
 -->
 
-<div>
+
+
+<div id="Stage" class="EDGE-4473686">
+
 
   <h1>{t}Web-based Training for Caregivers{/t}</h1>
   
  
-    <script type="text/javascript" charset="utf-8" src="homeslideshow_edgePreload.js"></script>
-    <style>
-        .edgeLoad-EDGE-4473686 { visibility:hidden; }
-    </style>
-
+  
 </div>
 
 
