@@ -34,9 +34,19 @@ $this->widget(
 
 <!-- index page main image -->
 
+<!-- testing slide show here
 <div id="home-image">
   <h1>{t}Web-based Training for Caregivers{/t}</h1>
 </div>
+
+-->
+<div>
+<img src="<?php ?>
+  <h1>{t}Web-based Training for Caregivers{/t}</h1>
+
+</div>
+
+
 
 <!-- Begin sidebar -->
 
