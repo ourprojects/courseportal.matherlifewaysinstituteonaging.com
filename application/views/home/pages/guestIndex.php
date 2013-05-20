@@ -34,18 +34,22 @@ $this->widget(
 
 <!-- index page main image -->
 
-<!-- testing slide show here
 <div id="home-image">
   <h1>{t}Web-based Training for Caregivers{/t}</h1>
 </div>
 
--->
+<!-- 
 <div>
-<!-- need to add javascript file with include -->
+need to add javascript file with include 
   <h1>{t}Web-based Training for Caregivers{/t}</h1>
+  
+    <script type="text/javascript" charset="utf-8" src="homeslideshow_edgePreload.js"></script>
+    <style>
+        .edgeLoad-EDGE-4473686 { visibility:hidden; }
+    </style>
 
 </div>
-
+-->
 
 
 <!-- Begin sidebar -->
