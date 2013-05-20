@@ -6,7 +6,7 @@ $clientScript->registerCssFile($this->getStylesUrl('tutorial.css'));
 $clientScript->registerScriptFile($this->getScriptsUrl('jquery.cycle.all.js'), CClientScript::POS_HEAD);
 $clientScript->registerScript('customers_cycle', "$('#customers').cycle();");
 
-$clientScript->registerScriptFile($this->getScriptsUrl('homeslideshow_edgePreload.js'), CClientScript::POS_END);
+$clientScript->registerScriptFile($this->getScriptsUrl('homeslideshow_edgePreload.js'), CClientScript::POS_HEAD);
 
 // set to POS_END - hopefully this will load faster.. not sure though
 
