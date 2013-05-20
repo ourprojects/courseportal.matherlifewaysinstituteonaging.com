@@ -41,7 +41,7 @@ $this->widget(
 
 -->
 <div>
-<img src="<?php ?>
+<!-- need to add javascript file with include -->
   <h1>{t}Web-based Training for Caregivers{/t}</h1>
 
 </div>
