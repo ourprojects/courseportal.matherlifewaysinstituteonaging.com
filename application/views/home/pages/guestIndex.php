@@ -304,7 +304,7 @@ $this->widget(
       <img src="<?php echo $this->getImagesUrl('tutorial/153236274.png'); ?>" alt="{t}image{/t}" />
       <p>{t}In general, individuals responsible for caregiving — including employee caregivers — have more health-related problems than employees who are non-caregivers. A survey from <a href="http://www.commonwealthfund.org/Surveys/2005/2005-Commonwealth-Fund-International-Health-Policy-Survey-of-Sicker-Adults.aspx" target="_blank">The Commonwealth Fund (2005)</a> found that 45 percent of caregivers had one or more chronic conditions, compared to 24 percent of those with no caregiving responsibilities.{/t}</p>
       <p>{t}Caregivers (whether working or not) have higher levels of depression, heart disease, blood pressure and immune function, and are more likely to die earlier than non-caregivers. In 2010, the <a href="https://www.metlife.com/assets/cao/mmi/publications/studies/2011/mmi-caregiving-costs-working-caregivers.pdf" target="_blank">National Alliance for Caregiving and MetLife</a>, found that employee caregivers have a higher incidence of diabetes.{/t}</p>
-      <p>{t}Among female employees age 50 and older providing eldercare, 17 percent reported fair or poor health compared to 9 percent of noncaregivers, the MetLife report showed. Further, 10 percent of caregivers had missed at least one day of work over a two week period because of health issues compared to 9 percent for non-caregivers.{/t}</p>
+      <p>{t}Among female employees age 50 and older providing eldercare, 17 percent reported fair or poor health compared to 9 percent of noncaregivers, the <a href="https://www.metlife.com/assets/cao/mmi/publications/studies/2011/mmi-caregiving-costs-working-caregivers.pdf" target="_blank">MetLife report</a> showed. Further, 10 percent of caregivers had missed at least one day of work over a two week period because of health issues compared to 9 percent for non-caregivers.{/t}</p>
       <div id="question1" class="question">
         <p><b>{t}Workers with caregiving responsibility report more difficulty than non-caregivers in taking care of their health.{/t}</b><br />
           <select>
@@ -345,7 +345,7 @@ NY: Metropolitan Life Insurance Company.
         <li>{t}Claims for sickness benefits at a much higher than usual rate.{/t}</li>
       </ul>
       <h5>{t}Lost productivity{/t}</h5>
-      <p>{t}When surveyed, 66 percent of caregivers in a 2009 analysis from the National Alliance for Caregiving reported that they arrived later and/or left earlier to provide care—nearly 10 percent more than who reported such workday changes just five years earlier.{/t}</p>
+      <p>{t}When surveyed, 66 percent of caregivers in a <a href="http://assets.aarp.org/rgcenter/il/caregiving_09.pdf" target="_blank">2009 analysis from the National Alliance for Caregiving</a> reported that they arrived later and/or left earlier to provide care—nearly 10 percent more than who reported such workday changes just five years earlier.{/t}</p>
       <div id="question1" class="question">
         <p><b>{t}Workers with caregiving responsibility report more difficulty than non-caregivers in taking care of their health.{/t}</b><br />
           <select>
@@ -368,18 +368,16 @@ NY: Metropolitan Life Insurance Company.
       <h2 class="flowers"> {t}Conclusions{/t} </h2>
       <hr />
       <img src="<?php echo $this->getImagesUrl('tutorial/168357025.png'); ?>" alt="{t}Image{/t}">
-      <p>{t}
-        When it comes to caregiving programs, employees say they want:21
-        • One phone number to call to look for care (consolidated service)
-        • A way to find information on caregiver rights, elder rights, caregiving
-        services and their costs
-        • Help balancing their work and family responsibilities
-        • Support to manage their emotional and physical stress
-        
-        
-        {/t} </p>
+      <p>{t}According to the Health Advocate, their report <a href="http://www.healthadvocate.com/downloads/webinars/caregiving.pdf" target="_blank">Caregiving: Impact on the Workplace</a>, when it comes to caregiving programs, employees say they want:{/t}</p>
+      <ul>
+        <li>{t}A way to find information on caregiver rights, elder rights, caregiving services and their costs{/t}</li>
+        <li>{t}Help balancing their work and family responsibilities{/t}</li>
+        <li>{t}Support to manage their emotional and physical stress{/t}</li>
+      </ul>
+      <h5>{t}Workplace Support{/t}</h5>
+      <p>{t}Additionally, the good news is that research shows that providing support, ranging from simple information and referral to the more substantial, such as counseling, respite care, education and training to caregivers, can reduce the negative health and work-related effects of caregiving and improve overall wellbeing.{/t}</p>
       <h4>{t}Certificate of Completion{/t}</h4>
-      <p>{t}Upon successful completion of each online course, you will have the opportunity to download your custom Certificate of Completion. Once accessed, you will be able to type your name and date into the form-fillable certificate. The course title and seal will automatically be applied to the certificate upon successful participation in all of the available course lessons. Certificates will NOT be accessible by those users who DO NOT participate in all of the available lessons. Click on the icon below to access the example.{/t}</p>
+      <p>{t}Upon successful completion ( participation in all of the available course lessons) of each online course, you will have the opportunity to download your custom Certificate of Completion. Once accessed, you will be able to type your name and date into the form-fillable certificate.{/t}</p>
       <a href="<?php echo $this->getImagesUrl('tutorial/CourseCompletionCertificate.pdf'); ?>" target="_blank"><img class="normal" src="<?php echo $this->getImagesUrl('ArtworkCertificate.png'); ?>" alt="{t}Certificate{/t}" /></a> </div>
     <div class="buttons"><a href="#" onclick="parent.jQuery.fancybox.close();"
 				class="button left"> {t}End Tutorial{/t} </a> </div>
