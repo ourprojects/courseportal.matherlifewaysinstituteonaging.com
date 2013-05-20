@@ -2312,12 +2312,8 @@ nonjudgmental way and offer you emotional support and assistance.{/t}</p>
         <h2 class="flowers">{t}6. Take Time for Yourself{/t}</h2>
         <hr />
         <img src="<?php echo $this->getImagesUrl('msml/94403180.png'); ?>" alt="image">
-        <p>{t}What do you like to do? Do you like to go for long walks? Do you like to read? Whatever your interest, it is
-important that you get into the habit of taking time for yourself. This may sound selfish and frivolous, but
-in reality it is necessary if you want to continue being able to care for your family member.{/t}</p>
-        <p>{t}As your family member's memory loss progresses, they will need more and more of your attention. If you
-do not take time for yourself, you may find that you feel stressed out, tired and impatient. Worse, you may
-begin to experience stress‐related illnesses. So caring for yourself is not selfish, it is essential.{/t}</p>
+        <p>{t}What do you like to do? Do you like to go for long walks? Do you like to read? Whatever your interest, it is important that you get into the habit of taking time for yourself. This may sound selfish and frivolous, but in reality it is necessary if you want to continue being able to care for your family member.{/t}</p>
+        <p>{t}As your family member's memory loss progresses, they will need more and more of your attention. If you do not take time for yourself, you may find that you feel stressed out, tired and impatient. Worse, you may begin to experience stress‐related illnesses. So caring for yourself is not selfish, it is essential.{/t}</p>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
@@ -2326,20 +2322,10 @@ begin to experience stress‐related illnesses. So caring for yourself is not se
         <h2 class="flowers">{t}7. Use Community Resources{/t}</h2>
         <hr />
         <img src="<?php echo $this->getImagesUrl('msml/94403180.png'); ?>" alt="image">
-        <p>{t}As we discussed in class four, there are a number of resources in your community that can assist you as
-you care for a family member with memory loss. Knowing what resources are available is the first step, the
-second is recognizing when it is time to begin utilizing these resources.{/t}</p>
-        <p>{t}Some people have a good support network of family and friends, and are able to handle the majority of
-the care of the person experiencing memory loss. Others do not have the same support and may need to
-utilize community resources earlier on in the disease process.{/t}</p>
-        <p>{t}Seeking assistance is nothing to be ashamed of. It is very healthy. By seeking outside assistance, you are
-able to give yourself a break from your role as caregiver.{/t}</p>
-        <p>{t}Options like adult day programs not only give you a break, but also have the benefit of keeping your family
-member active socially, physically and cognitively. Sitting at home in an unstructured environment may
-not provide the stimulation that your family member needs in order to function at his or her highest
-possible potential. Day programs provide structured activities and opportunities for socialization in a
-supportive environment that recognizes and adapts to the needs of a person with memory loss.
-For more information about community resources, contact the local Area Agency on Aging.{/t}</p>
+        <p>{t}As we discussed in module four, there are a number of resources in your community that can assist you as you care for a family member with memory loss. Knowing what resources are available is the first step, the second is recognizing when it is time to begin utilizing these resources.{/t}</p>
+        <p>{t}Some people have a good support network of family and friends, and are able to handle the majority of the care of the person experiencing memory loss. Others do not have the same support and may need to utilize community resources earlier on in the disease process.{/t}</p>
+        <p>{t}Seeking assistance is nothing to be ashamed of. It is very healthy. By seeking outside assistance, you are able to give yourself a break from your role as caregiver.{/t}</p>
+        <p>{t}Options like adult day programs not only give you a break, but also have the benefit of keeping your family member active socially, physically and cognitively. Sitting at home in an unstructured environment may not provide the stimulation that your family member needs in order to function at his or her highest possible potential. Day programs provide structured activities and opportunities for socialization in a supportive environment that recognizes and adapts to the needs of a person with memory loss. For more information about community resources, contact the local Area Agency on Aging.{/t}</p>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
@@ -2348,17 +2334,9 @@ For more information about community resources, contact the local Area Agency on
         <h2 class="flowers">{t}8. Maintain a Sense of Humor{/t}</h2>
         <hr />
         <img src="<?php echo $this->getImagesUrl('msml/94403180.png'); ?>" alt="image">
-        <p>{t}Memory loss is nothing to laugh at. But life is full of absurdities. Funny things can and do happen! Learn to
-enjoy these moments.{/t}</p>
-        <p>{t}Memory loss does not mean an end to the relationship you enjoyed with your family member. The
-relationship may change, but it is not over. You can still enjoy one another's company and do fun things
-together. And yes, you can still have moments of joy, despite the memory loss.{/t}</p>
-        <p>{t}A woman who cared for her husband with memory loss tells the story of having a long, protracted
-argument with him about putting on his pajamas to go to bed, because he wanted to sleep in his clothes.
-After a long, difficult struggle, he finally put on his pajamas. As he lay down to go to sleep, he looked at his
-wife and said, was that really worth it? She laughs about this now and tells this story to caregivers as an
-illustration of, how first of all, we need to choose our battles wisely, but secondly, that there is humor to
-be found even in the difficult moments.{/t}</p>
+        <p>{t}Memory loss is nothing to laugh at. But life is full of absurdities. Funny things can and do happen! Learn to enjoy these moments.{/t}</p>
+        <p>{t}Memory loss does not mean an end to the relationship you enjoyed with your family member. The relationship may change, but it is not over. You can still enjoy one another's company and do fun things together. And yes, you can still have moments of joy, despite the memory loss.{/t}</p>
+        <p>{t}A woman who cared for her husband with memory loss tells the story of having a long, protracted argument with him about putting on his pajamas to go to bed, because he wanted to sleep in his clothes. After a long, difficult struggle, he finally put on his pajamas. As he lay down to go to sleep, he looked at his wife and said, <i>was that really worth it?</i> She laughs about this now and tells this story to caregivers as an illustration of, how first of all, we need to choose our battles wisely, but secondly, that there is humor to be found even in the difficult moments.{/t}</p>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
@@ -2418,8 +2396,9 @@ and techniques that will assist you in the future.{/t}</p>
 someone with memory loss and invite you to remember this quote from Helen Keller.{/t}</p>
         <p><i>{t}The best and most beautifulthings in the world cannotbe seen or even touched.They must be felt withinthe heart. --Helen Keller{/t}</i></p>
         <p>{t}We have really enjoyed getting to know you. Best wishes as you carry on in the future!{/t}</p>
-        <h5 style="text-align:center;"><a href="#" target="_blank">{t}Certificates of Completion{/t}</a></h5>
-        <img src="<?php echo $this->getImagesUrl('msml/ArtworkCertificate.png'); ?>" alt="image">
+        
+        <h4>     {t}Certificates of Completion{/t}</h4>
+        <a href="<?php echo $this->getImagesUrl('msml/CourseCompletionCertificate.pdf'); ?>" target="_blank"><img src="<?php echo $this->getImagesUrl('msml/ArtworkCertificate.png'); ?>" alt="image"></a>
         
         <h4>{t}Evaluation (optional){/t}</h4>
         <p>{t}Please complete the Post-Course Evaluation. It is acceissble via the course page, in the sidebar.{/t}</p>
