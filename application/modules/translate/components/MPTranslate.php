@@ -56,6 +56,12 @@ class MPTranslate extends CApplicationComponent {
     
     private $_sourceTerritoryId = null;
     
+    
+    
+    private $_insertSourceMessageCommand;
+    
+    private $_insertMessageCommand;
+    
     /**
      * @var array $_messages contains the untranslated messages found during the current request
      * */
@@ -404,7 +410,7 @@ class MPTranslate extends CApplicationComponent {
 
         			if($messageModel->save()) 
         			{
-        				$event->message = $translation;
+        				$event->message = trim($translation);
         				return true;
         			}
 

@@ -63,7 +63,7 @@ return array(
 				),
 				
 				'messages' => array(
-						'class' => 'modules.translate.components.DbMessageSource',
+						'class' => 'modules.translate.components.TMessageSource',
 						'forceTranslation' => false,
 						'onMissingTranslation' => array('TranslateModule', 'missingTranslation'),
 						'acceptedLanguageTable' => '{{translate_accepted_language}}',
@@ -97,6 +97,10 @@ return array(
 				
 				'viewRenderer' => array(
 					'class' => 'modules.translate.components.TViewRenderer'
+				),
+				
+				'cache' => array(
+					'class' => 'system.caching.CApcCache'
 				),
 				
 				'user' => array(
