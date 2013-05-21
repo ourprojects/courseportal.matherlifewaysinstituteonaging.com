@@ -24,7 +24,7 @@ foreach(array(
 
 ?>
 
-<div class="small-masthead" style="background-image: url(<?php echo $this->getImagesUrl('78458492r.png'); ?>);">
+<div class="small-masthead" style="background-image: url(<?php echo $this->getImagesUrl('care/78458492r.png'); ?>);">
   <h1 class="bottom"><?php echo t($course->title); ?></h1>
 </div>
 <div id="sidebar">

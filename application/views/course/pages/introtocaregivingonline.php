@@ -24,7 +24,7 @@ foreach(array(
 
 ?>
 
-<div class="small-masthead" style="background-image: url(<?php echo $this->getImagesUrl('99931457r.png'); ?>);">
+<div class="small-masthead" style="background-image: url(<?php echo $this->getImagesUrl('intro/99931457r.png'); ?>);">
   <h1 class="bottom"><?php echo t($course->title); ?></h1>
 </div>
 <div id="sidebar">
@@ -36,25 +36,23 @@ foreach(array(
     <p><a href="#">{t}Intro to Caregiving Online Post-Post Course Survey{/t}</a></p>
     <p><a href="#">{t}Intro to Caregiving Online One-Year Survey{/t}</a></p>
     <br />
-    <img src="<?php echo $this->getImagesUrl('msml/153075496.png'); ?>" alt="image"> </div>
+    <img src="<?php echo $this->getImagesUrl('intro/153075496.png'); ?>" alt="image"> </div>
   <div class="box-sidebar one">
     <h3>{t}Caregiving and its challenges{/t}</h3>
-    <img class="block-center" src="<?php echo $this->getImagesUrl('286x231_Grafix_Pie2-3.png'); ?>" />
+    <img class="block-center" src="<?php echo $this->getImagesUrl('intro/286x231_Grafix_Pie2-3.png'); ?>" />
     <p>{t}2/3 of working caregivers report conflicts between work and caregiving that result in increased absenteeism, workday interruptions, reduced hours, and workload shifting to other employees.{/t}</p>
   </div>
   <div class="box-sidebar three">
     <h3>Pew Internet: Health (Feb 1, 2013)</h3>
-    <p><a href="http://pewinternet.org/experts/~/link.aspx?_id=E26587FE8FDB443A8610ECB87E635F94&_z=z" target="_blank"><img class="block-center" src="<?php echo $this->getImagesUrl('pew.png'); ?>" /></a></p>
-    <ul>
+    <p><a href="http://pewinternet.org/experts/~/link.aspx?_id=E26587FE8FDB443A8610ECB87E635F94&_z=z" target="_blank"><img class="block-center" src="<?php echo $this->getImagesUrl('intro/pew.png'); ?>" /></a></p>
+ 
       <hr />
-      <li>{t}39% of U.S. adults provided care for a loved one in the past 12 months, which could include helping with personal needs, household chores, finances, or simply visiting to check in.{/t}</li>
-      <hr />
-      <li>{t}36% of U.S. adults care for an adult or multiple adults.{/t}</li>
-      <hr />
-      <li>{t}8% of U.S. adults care for a child with a medical, behavioral, or other condition or disability.{/t}</li>
-      <hr />
-      <li>{t}Eight in ten caregivers (79%) have access to the internet. Of those, 88% look online for health information, outpacing other internet users on every health topic included in our survey, from looking up certain treatments to hospital ratings to end-of-life decisions.{/t}</li>
-    </ul>
+   <p>{t}36% of U.S. adults care for an adult or multiple adults.{/t}</p>
+   <hr />
+ 	<p>{t}Eight in ten caregivers (79%) have access to the internet. Of those, 88% look online for health information, outpacing other internet users on every health topic included in our survey, from looking up certain treatments to hospital ratings to end-of-life decisions.{/t}</p>
+        <img src="<?php echo $this->getImagesUrl('intro/piechart.png'); ?>" alt="image">
+
+
   </div>
 </div>
 
@@ -119,24 +117,15 @@ foreach(array(
   <div id="lesson-1">
     <div id="lesson-1-slide-1" class="course-slide">
       <div class="content">
-        <h2 class="flowers">{t}Defining, Describing & Understanding Caregiving{/t}</h2>
+        <h2 class="flowers">{t}Introduction to Caregiving Online{/t}</h2>
         <hr />
-        <img src="<?php echo $this->getImagesUrl('116777136r.jpeg'); ?>" alt="{t}Tutorial{/t}" />
-        <h4>{t}Thank You! We appreciate your support and interest in Mather LifeWays Institute on Aging.{/t}</h4>
-        <br />
-        <p>{t}Few are fully prepared for the responsibilities and tasks involved in caring for an older adult. As a caregiver, it is important to have a clear plan or guide that has multiple paths. This five-lesson online course introduces the basics of the caregiver role and explores the challenges associated with older adult care.{/t}</p>
-        <p>{t}We hope you enjoy and learn from this course and would appreciate any feedback along the way. Best of luck!{/t}</p>
-        <h5>{t}In this lesson, we will:{/t}</h5>
-        <ul>
-          <li>{t}Locate, define and summarize caregiving and it's characteristics{/t}</li>
-          <li>{t}Describe the caregiver role{/t}</li>
-          <li>{t}Eplore different types of US caregivers{/t}</li>
-        </ul>
-        <h5>{t}Facilitator - Jon Woodall{/t}</h5>
-        <p>{t}Mr. Woodall is responsible for all MLIA corporate workforce wellness programs related to design, implementation, publication, and evaluation. Additionally, he seeks new grant funding to support or extend current grants related to corporate workforce wellness programs. He also facilitates several online courses.{/t}</p>
-        <h5>{t}Pre-Course Survey{/t}</h5>
-        <p>{t}Please ensure you have completed the Pre-Course Survey before you begin participating in this online course. All Surveys can be accessed via the Profile page.{/t}</p>
-        <br />
+        <img src="<?php echo $this->getImagesUrl('intro/78365380.png'); ?>" alt="{t}Tutorial{/t}" />
+        <h4>{t}here{/t}</h4>
+        
+        <p>{t}Few are fully prepared for the responsibilities and tasks involved in caring for the elderly. As a caregiver, it is important to have a clear plan or guide that has multiple paths. This in-depth, five-lesson online course introduces the basics of the caregiver role and explorers the challenges and experiences associated with elder-care. Topics will include; understanding caregiving, current data and research related to caregiving, describing the caregiver role and the challenges associated with it.{/t}</p>
+        
+        
+        
       </div>
       <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Start Course &raquo;{/t}</a></div>
     </div>
