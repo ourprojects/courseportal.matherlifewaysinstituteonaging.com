@@ -1,0 +1,19 @@
+Subject: Zure "{SITENAME}"(e)ko kontua berriro gaitzea
+
+Gaur egun, zure kontua ezgaiturik dago. Foroko administrariren batek kontua berriro gaitu dezazula eskatu du. 
+Mesedez, jarrai itzazu hemen zehazten zaizkizun pausuak kontua berriro gaitzeko.
+
+Mesedez, gorde ezazu e-mail hau gerorako zure kontuari buruzko informazio garrantzitsua bait du: 
+
+----------------------------
+Erabiltzaile izena: {USERNAME}
+----------------------------
+
+Pasahitza era seguruan gorde da gure datubaseetan eta ezin da berriro lortu. Ahazten baldin baduzu, helbide elektronikoa erabiliz ezarri zenezake berria.
+
+Kontua berriro gaitzeko jarraitu hurrengo lotura:
+
+{U_ACTIVATE}
+
+
+{EMAIL_SIG}

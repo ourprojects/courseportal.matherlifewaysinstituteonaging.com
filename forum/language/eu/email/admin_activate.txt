@@ -1,0 +1,14 @@
+Subject: Erabiltzaile kontua gaitu.
+
+Kaixo,
+
+"{USERNAME}"(r)en kontua ezgaitua edo berriki sortua izan da, erabiltzaile honen xehetasunak aztertu (beharrezkoa baldin bada) eta dagokion moduan kudeatu beharko zenuke.
+
+Lotura hau jarrai ezazu erabiltzailearen profila ikusteko:
+{U_USER_DETAILS}
+
+Lotura hau jarrai ezazu kontua gaitzeko:
+{U_ACTIVATE}
+
+
+{EMAIL_SIG}

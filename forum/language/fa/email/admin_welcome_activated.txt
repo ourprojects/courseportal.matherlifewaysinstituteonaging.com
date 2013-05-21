@@ -1,0 +1,13 @@
+Subject: عضویت شما در {SITENAME} فعال شد
+
+{USERNAME}, سلام
+
+عضویت شما در {SITENAME} توسط یکی از مدیران تایید شد.
+هم اکنون می توانید به سایت وارد شوید.
+
+
+{EMAIL_SIG}
+
+Powered by : www.Maghsad.com phpBB3 Farsi
+
+For getting or making your own FREE forum,visit www.phpBB.Maghsad.com !

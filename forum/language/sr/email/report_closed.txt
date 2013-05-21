@@ -1,0 +1,8 @@
+Subject: Izveštaj zatvoren — “{POST_SUBJECT}”
+
+Zdravo {USERNAME},
+
+Dobili ste ovo obaveštenje zato što je izveštaj koji ste popunili u postu “{POST_SUBJECT}” u “{TOPIC_TITLE}” na forumu “{SITENAME}” menjao moderator ili administrator. Izveštaj je do daljnjeg zatvoren. Ako imate nekih pitanja kontaktirajte {CLOSER_NAME}.
+
+
+{EMAIL_SIG}

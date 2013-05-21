@@ -1,0 +1,8 @@
+Subject: Berri-emate itxia - "{POST_SUBJECT}"
+
+Kaixo {USERNAME},
+
+Mezu hau jaso duzu "{SITENAME}"(e)ko "{TOPIC_TITLE}" gaira bidalitako "{POST_SUBJECT}" mezuari buruz bidali zenuen berri-ematea moderadore edo foroko administrariren batek kudeatu egin duelako. Berri-ematea itxi egin da. Prozedurari buruzko zalantzarik izanez gero, jar zaitez {CLOSER_NAME}(r)ekin kontaktuan mezu pertsonalen bat bidaliz.
+
+
+{EMAIL_SIG}

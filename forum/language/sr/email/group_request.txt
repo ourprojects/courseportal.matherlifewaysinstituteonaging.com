@@ -1,0 +1,10 @@
+Subject: Zahtev za pridruživanje grupi
+
+Dragi {USERNAME},
+
+Korisnik je zahtevao da se pridruži grupi “{GROUP_NAME}” koju vi uređujete na forumu “{SITENAME}”.
+Da bi odobrili ili odbili ovaj zahtev molimo vas da posetite sledeći link:
+
+{U_PENDING}
+
+{EMAIL_SIG}

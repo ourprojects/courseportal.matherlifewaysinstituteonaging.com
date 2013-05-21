@@ -1,0 +1,17 @@
+Subject: “{SITENAME}” — Email za prijatelja
+
+Zdravo {TO_USERNAME},
+
+Ovaj email je poslat sa foruma “{SITENAME}” od {FROM_USERNAME} jer je pomislio(la) da ćete biti zaiteresovani za temu:
+
+{TOPIC_NAME}
+
+Temu mođete pogledati klikom na sledeći link:
+
+{U_TOPIC}
+
+Poruka od {FROM_USERNAME} je prikazana ispod. Znajte da ovu poruku nije pregledao ili odobrio administrator. Ukoliko želite da se žalite zbog prijema ove poruke molimo vas da kontaktirate administratora na {BOARD_EMAIL}. Priključite i ovu poruku uz vaš email a naročito zaglavlje mail-a kada ukoliko priložite žalbu administratoru.
+
+----------
+
+{MESSAGE}

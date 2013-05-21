@@ -1,0 +1,11 @@
+Subject: Dodati ste u korisničku grupu
+
+Čestitamo,
+
+Dodati ste u “{GROUP_NAME}” grupu na forumu “{SITENAME}”.
+Ovu akciju je sproveo moderator grupe ili administrator sajta, kontaktirajte ih za više informacija.
+
+Možete videti informacije o grupi klikom na link:
+{U_GROUP}
+
+{EMAIL_SIG}

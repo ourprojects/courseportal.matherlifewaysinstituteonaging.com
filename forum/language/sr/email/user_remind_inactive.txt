@@ -1,0 +1,11 @@
+Subject: Podsetnik zbog neaktivnog naloga
+
+Zdravo {USERNAME},
+
+{REGISTER_DATE} registrovali ste nov nalog na forumu “{SITENAME}”. Do sada niste aktivirali ovaj nalog, a morate ovo da uradite pre nego što ćete biti u mogućnosti da se prijavite. Link za aktivaciju naloga je ispod.
+ 
+{U_ACTIVATE}
+
+Hvala vam što ste se registrovali na forumu  “{SITENAME}”.
+
+{EMAIL_SIG}

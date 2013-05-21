@@ -1,0 +1,11 @@
+Subject: Odobrena tema — “{TOPIC_TITLE}”
+
+Zdravo {USERNAME},
+
+Dobili ste ovo obaveštenje zato što je vašu temu “{TOPIC_TITLE}” na forumu “{SITENAME}” odobrio moderator ili administrator.
+
+Ako želite da pogledate temu, kliknite na link ispod:
+{U_VIEW_TOPIC}
+
+
+{EMAIL_SIG}
