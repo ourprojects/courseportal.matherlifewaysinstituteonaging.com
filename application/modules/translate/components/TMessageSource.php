@@ -30,6 +30,11 @@ class TMessageSource extends CDbMessageSource
 			$this->_translator = TranslateModule::translator();
 		return $this->_translator;
 	}
+	
+	public function getLanguage()
+	{
+		return $this->useLocaleSpecificTranslations ? parent::getLanguage() : $this->getTranslator()->getLanguageID(parent::getLanguage());
+	}
 
 	/**
 	 * Loads the message translation for the specified language and category.
@@ -84,21 +89,12 @@ class TMessageSource extends CDbMessageSource
 	 * @param string $language the target language. If null (default), the {@link CApplication::getLanguage application language} will be used.
 	 * @return string the translated message (or the original message if translation is not needed)
 	 */
-	public function translate($category, $message, $language = null, $sourceLanguage = null)
+	public function translate($category, $message, $language = null)
 	{
 		if($language === null)
-			$language = Yii::app()->getLanguage();
+			$language = $this->useLocaleSpecificTranslations ? Yii::app()->getLanguage() : $this->getTranslator()->getLanguageID(Yii::app()->getLanguage());
 		
-		if($sourceLanguage === null)
-			$sourceLanguage = $this->getLanguage();
-		
-		if(!$this->useLocaleSpecificTranslations)
-		{
-			$language = $this->getTranslator()->getLanguageID($language);
-			$sourceLanguage = $this->getTranslator()->getLanguageID($sourceLanguage);
-		}
-		
-		if($this->forceTranslation || $language !== $sourceLanguage)
+		if($this->forceTranslation || $language !== $this->getLanguage())
 			return $this->translateMessage($category, $message, $language);
 		else
 			return $message;
@@ -115,7 +111,7 @@ class TMessageSource extends CDbMessageSource
 	 */
 	protected function translateMessage($category, $message, $language)
 	{
-		$key = $language === null ? $category : $language.'.'.$category;
+		$key = $language.'.'.$category;
 		
 		if(!isset($this->_messages[$key]))
 			$this->_messages[$key] = $this->loadMessages($category, $language);

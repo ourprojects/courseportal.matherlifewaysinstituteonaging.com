@@ -1,19 +1,15 @@
 <?php
 
 /**
- * This is the model class for table "{{translate_compiled_view}}".
+ * This is the model class for table "{{translate_view}}".
  *
- * The followings are the available columns in table '{{translate_compiled_view}}':
+ * The followings are the available columns in table '{{translate_view}}':
  * @property integer $id
- * @property string $source_path
- * @property string $compiled_path
  * @property string $language
+ * @property string $path
  * @property integer $created
- *
- * The followings are the available model relations:
- * @property MessageSource[] $courseportalTranslateMessageSources
  */
-class CompiledView extends CActiveRecord
+class View extends CActiveRecord
 {
 	/**
 	 * Returns the static model of the specified AR class.
@@ -30,7 +26,7 @@ class CompiledView extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return '{{translate_compiled_view}}';
+		return '{{translate_view}}';
 	}
 
 	/**
@@ -39,13 +35,13 @@ class CompiledView extends CActiveRecord
 	public function rules()
 	{
 		return array(
-			array('source_path, compiled_path, language', 'required'),
+			array('id, language, path', 'required'),
 			array('created', 'date', 'format' => 'yyyy-M-d H:m:s'),
 			array('id', 'numerical', 'integerOnly' => true),
-			array('source_path, compiled_path', 'length', 'max' => 255),
+			array('path', 'length', 'max' => 255),
 			array('language', 'length', 'max' => 3),
 
-			array('id, source_path, compiled_path, language, created', 'safe', 'on' => 'search'),
+			array('id, language, path, created', 'safe', 'on' => 'search'),
 		);
 	}
 
@@ -55,8 +51,7 @@ class CompiledView extends CActiveRecord
 	public function relations()
 	{
 		return array(
-			'compiledViewMessageSources' => array(self::HAS_MANY, 'CompiledViewMessage', 'compiled_view_id'),
-			'messageSources' => array(self::MANY_MANY, 'MessageSource', '{{translate_compiled_view_message}}(compiled_view_id, message_source_id)'),
+			'viewSource' => array(self::BELONGS_TO, 'ViewSource', 'id'),
 		);
 	}
 
@@ -67,8 +62,7 @@ class CompiledView extends CActiveRecord
 	{
 		return array(
 			'id' => TranslateModule::t('ID'),
-			'source_path' => TranslateModule::t('Source Path'),
-			'compiled_path' => TranslateModule::t('Compiled Path'),
+			'path' => TranslateModule::t('Path'),
 			'language' => TranslateModule::t('Language'),
 			'created' => TranslateModule::t('Created'),
 		);
@@ -83,8 +77,7 @@ class CompiledView extends CActiveRecord
 		$criteria = new CDbCriteria;
 
 		$criteria->compare('id', $this->id);
-		$criteria->compare('source_path', $this->source_path, true);
-		$criteria->compare('compiled_path', $this->compiled_path, true);
+		$criteria->compare('path', $this->path, true);
 		$criteria->compare('language', $this->language, true);
 		$criteria->compare('created', $this->created);
 

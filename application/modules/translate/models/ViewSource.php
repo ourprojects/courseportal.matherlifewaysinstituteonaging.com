@@ -1,18 +1,22 @@
 <?php
 
 /**
- * This is the model class for table "{{translate_compiled_view_message}}".
+ * This is the model class for table "{{translate_view_source}}".
  *
- * The followings are the available columns in table '{{translate_compiled_view_message}}':
- * @property integer $message_source_id
- * @property integer $compiled_view_id
+ * The followings are the available columns in table '{{translate_view_source}}':
+ * @property integer $id
+ * @property string $source_path
+ * @property string $compiled_path
+ * @property string $language
+ * @property integer $created
+ * 
  */
-class CompiledViewMessage extends CActiveRecord
+class ViewSource extends CActiveRecord
 {
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
-	 * @return CompiledViewMessage the static model class
+	 * @return CompiledView the static model class
 	 */
 	public static function model($className = __CLASS__)
 	{
@@ -24,7 +28,7 @@ class CompiledViewMessage extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return '{{translate_compiled_view_message}}';
+		return '{{translate_view_source}}';
 	}
 
 	/**
@@ -33,10 +37,11 @@ class CompiledViewMessage extends CActiveRecord
 	public function rules()
 	{
 		return array(
-			array('message_source_id, compiled_view_id', 'required'),
-			array('message_source_id, compiled_view_id', 'numerical', 'integerOnly' => true),
-				
-			array('message_source_id, compiled_view_id', 'safe', 'on' => 'search'),
+			array('path', 'required'),
+			array('id', 'numerical', 'integerOnly' => true),
+			array('path', 'length', 'max' => 255),
+
+			array('id, path', 'safe', 'on' => 'search'),
 		);
 	}
 
@@ -46,8 +51,9 @@ class CompiledViewMessage extends CActiveRecord
 	public function relations()
 	{
 		return array(
-				'messageSource' => array(self::BELONGS_TO, 'MessageSource', 'message_source_id'),
-				'compiledView' => array(self::BELONGS_TO, 'CompiledView', 'compiled_view_id'),
+			'viewMessageSources' => array(self::HAS_MANY, 'ViewMessage', 'view_id'),
+			'messageSources' => array(self::MANY_MANY, 'MessageSource', '{{translate_view_message}}(view_id, message_id)'),
+			'views' => array(self::HAS_MANY, 'View', 'id'),
 		);
 	}
 
@@ -57,8 +63,8 @@ class CompiledViewMessage extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'message_source_id' => 'Message Source',
-			'compiled_view_id' => 'Compiled View',
+			'id' => TranslateModule::t('ID'),
+			'path' => TranslateModule::t('Path'),
 		);
 	}
 
@@ -70,8 +76,8 @@ class CompiledViewMessage extends CActiveRecord
 	{
 		$criteria = new CDbCriteria;
 
-		$criteria->compare('message_source_id', $this->message_source_id);
-		$criteria->compare('compiled_view_id', $this->compiled_view_id);
+		$criteria->compare('id', $this->id);
+		$criteria->compare('path', $this->path, true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria' => $criteria,

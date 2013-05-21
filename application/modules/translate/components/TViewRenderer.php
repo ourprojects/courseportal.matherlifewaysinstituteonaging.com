@@ -2,10 +2,11 @@
 
 class TViewRenderer extends CViewRenderer
 {
+	public $viewSourceTable = '{{translate_view_source}}';
 	
-	public $compiledViewTable = '{{translate_compiled_view}}';
+	public $viewTable = '{{translate_view}}';
 	
-	public $compiledViewMessageTable = '{{translate_compiled_view_message}}';
+	public $viewMessageTable = '{{translate_view_message}}';
 	
 	private $_db;
 	
@@ -13,11 +14,13 @@ class TViewRenderer extends CViewRenderer
 	
 	private $_translatedMessageTable;
 	
-	private $_selectCompiledViewWithLastModifiedCommand;
+	private $_selectViewWithLastModifiedCommand;
 	
-	private $_selectCompiledViewIdCommand;
+	private $_selectViewIdCommand;
 	
-	private $_insertCompiledViewCommand;
+	private $_insertViewCommand;
+	
+	private $_insertViewSourceCommand;
 
 	private $_translator;
 	
@@ -55,7 +58,7 @@ class TViewRenderer extends CViewRenderer
 	public function getViewCompiler()
 	{
 		if(!isset($this->_viewCompiler))
-			$this->_viewCompiler = new ViewCompiler($this->getDbConnection(), $this->getSourceMessageTable(), $this->compiledViewTable, $this->compiledViewMessageTable);
+			$this->_viewCompiler = new ViewCompiler($this->getDbConnection(), $this->getSourceMessageTable(), $this->viewTable, $this->viewMessageTable);
 		return $this->_viewCompiler;
 	}
 	
@@ -73,40 +76,50 @@ class TViewRenderer extends CViewRenderer
 		return $this->_db;
 	}
 	
-	public function getSelectCompiledViewWithLastModifiedCommand()
+	public function getSelectViewWithLastModifiedCommand()
 	{
-		if(!isset($this->_selectCompiledViewWithLastModifiedCommand))
+		if(!isset($this->_selectViewWithLastModifiedCommand))
 		{
-			$this->_selectCompiledViewWithLastModifiedCommand = $this->getDbConnection()->createCommand(
-				"SELECT $this->compiledViewTable.id AS id, $this->compiledViewTable.compiled_path AS compiled_path, $this->compiledViewTable.created AS created, MAX({$this->getTranslatedMessageTable()}.last_modified) AS last_modified " .
-				"FROM $this->compiledViewTable " .
-				"INNER JOIN $this->compiledViewMessageTable ON ($this->compiledViewTable.id=$this->compiledViewMessageTable.compiled_view_id) " .
-				"INNER JOIN {$this->getTranslatedMessageTable()} ON ($this->compiledViewMessageTable.message_source_id={$this->getTranslatedMessageTable()}.id AND $this->compiledViewTable.language={$this->getTranslatedMessageTable()}.language) " .
-				"WHERE ($this->compiledViewTable.source_path=:source_path AND $this->compiledViewTable.language=:language)");
+			$this->_selectViewWithLastModifiedCommand = $this->getDbConnection()->createCommand(
+				"SELECT $this->viewSourceTable.id AS id, $this->viewTable.path AS path, $this->viewTable.created AS created, COALESCE(MAX({$this->getTranslatedMessageTable()}.last_modified),'0') AS last_modified " . 
+				"FROM $this->viewSourceTable " . 
+				"LEFT JOIN $this->viewTable ON $this->viewSourceTable.id=$this->viewTable.id AND $this->viewTable.language=:language " . 
+				"JOIN $this->viewMessageTable ON $this->viewSourceTable.id=$this->viewMessageTable.view_id " . 
+				"JOIN {$this->getTranslatedMessageTable()} ON $this->viewMessageTable.message_id={$this->getTranslatedMessageTable()}.id AND {$this->getTranslatedMessageTable()}.language=:language " . 
+				"WHERE $this->viewSourceTable.path=:source_path");
 		}
-		return $this->_selectCompiledViewWithLastModifiedCommand; 
+		return $this->_selectViewWithLastModifiedCommand; 
 	}
 	
-	public function getSelectCompiledViewIdCommand()
+	public function getSelectViewIdCommand()
 	{
-		if(!isset($this->_selectCompiledViewWithIdCommand))
+		if(!isset($this->_selectViewWithIdCommand))
 		{
-			$this->_selectCompiledViewWithIdCommand = $this->getDbConnection()->createCommand(
-				"SELECT $this->compiledViewTable.id AS id " .
-				"FROM $this->compiledViewTable " .
-				"WHERE ($this->compiledViewTable.source_path=:source_path AND $this->compiledViewTable.compiled_path=:compiled_path)");
+			$this->_selectViewWithIdCommand = $this->getDbConnection()->createCommand(
+				"SELECT $this->viewSourceTable.id AS id " .
+				"FROM $this->viewSourceTable " .
+				"JOIN $this->viewTable ON $this->viewSourceTable.id=$this->viewTable.id " .
+				"WHERE $this->viewSourceTable.path=:source_path AND $this->viewTable.path=:compiled_path");
 		}
-		return $this->_selectCompiledViewWithIdCommand;
+		return $this->_selectViewWithIdCommand;
 	}
 	
-	public function getInsertCompiledViewCommand()
+	public function getInsertViewCommand()
 	{
-		if(!isset($this->_insertCompiledViewCommand))
+		if(!isset($this->_insertViewCommand))
 		{
-			$this->_insertCompiledViewCommand = $this->getDbConnection()->createCommand(
-					"INSERT INTO $this->compiledViewTable (source_path, compiled_path, language) VALUES (:source_path, :compiled_path, :language)");
+			$this->_insertViewCommand = $this->getDbConnection()->createCommand("INSERT INTO $this->viewTable (id, path, language) VALUES (:id, :path, :language)");
 		}
-		return $this->_insertCompiledViewCommand;
+		return $this->_insertViewCommand;
+	}
+	
+	public function getInsertViewSourceCommand()
+	{
+		if(!isset($this->_insertViewSourceCommand))
+		{
+			$this->_insertViewSourceCommand = $this->getDbConnection()->createCommand("INSERT INTO $this->viewSourceTable (path) VALUES (:path)");
+		}
+		return $this->_insertViewSourceCommand;
 	}
 
 	/**
@@ -117,26 +130,19 @@ class TViewRenderer extends CViewRenderer
 	 */
 	protected function generateViewFile($sourceFile, $viewFile)
 	{
-		$viewId = $this->getSelectCompiledViewIdCommand()->queryScalar(array(':source_path' => $sourceFile, ':compiled_path' => $viewFile));
+		$viewId = $this->getSelectViewIdCommand()->queryScalar(array(':source_path' => $sourceFile, ':compiled_path' => $viewFile));
 		
 		if($viewId === false)
-			throw new CException(Yii::t(MPTranslate::ID.'.'.get_class($this), 'Database entry for view with source path "{source_file}" and compiled path "{compiled_file}" does not exist.', array('{source_file}' => $sourceFile, '{compiled_file}' => $viewFile)));
+			throw new CException(Yii::t(MPTranslate::ID.'.'.__CLASS__, 'Database entry for view with source path "{source_file}" and compiled path "{compiled_file}" does not exist.', array('{source_file}' => $sourceFile, '{compiled_file}' => $viewFile)));
 		
 		$this->_generateViewFile($sourceFile, $viewFile, $viewId);
 	}
 	
 	protected function _generateViewFile($sourcePath, $compiledPath, $id)
 	{
-		$ignore_user_abort = ini_get('ignore_user_abort');
-		if(!$ignore_user_abort)
-			ignore_user_abort(true);
-		
 		$this->getViewCompiler()->compileView($sourcePath, $compiledPath, $id);
 		
 		@chmod($compiledPath, $this->filePermission);
-		
-		if(!$ignore_user_abort)
-			ignore_user_abort($ignore_user_abort);
 	}
 	
 	public function renderFile($context, $sourceFile, $data, $return)
@@ -144,40 +150,50 @@ class TViewRenderer extends CViewRenderer
 		if(!is_file($sourceFile) || ($file = realpath($sourceFile)) === false)
 			throw new CException(Yii::t(MPTranslate::ID.'.'.get_class($this), 'View file "{file}" does not exist.', array('{file}' => $sourceFile)));
 
+		$language = Yii::app()->getMessages()->useLocaleSpecificTranslations ? Yii::app()->getLanguage() : $this->getTranslator()->getLanguageID();
+		
 		$transaction = $this->getDbConnection()->beginTransaction();
 		try
 		{
-			$viewFile = $this->getSelectCompiledViewWithLastModifiedCommand()->bindValues(array(':source_path' => $sourceFile, ':language' => $this->getTranslator()->getLanguageID()))->queryRow();
+			$viewFile = $this->getSelectViewWithLastModifiedCommand()->bindValues(array(':source_path' => $sourceFile, ':language' => $language))->queryRow();
 			
-			if(empty($viewFile) || $viewFile['id'] === null)
+			if($viewFile['id'] === null)
 			{
-				$viewFile['compiled_path'] = $this->getViewFile($sourceFile);
-				$viewFile['created'] = $viewFile['last_modified'] = time();
-				$rowsAffected = $this->getInsertCompiledViewCommand()->bindValues(array(':source_path' => $sourceFile, ':compiled_path' => $this->getViewFile($sourceFile), ':language' => $this->getTranslator()->getLanguageID()))->execute();
+				$rowsAffected = $this->getInsertViewSourceCommand()->bindValues(array(':path' => $sourceFile))->execute();
 				
 				if($rowsAffected === 0)
 				{
-					Yii::log("A compiled view for source file '$sourceFile' using language '{$this->getTranslator()->getLanguageID()}' could not be added to the database. A temporary view will be generated instead.", CLogger::LEVEL_ERROR, MPTranslate::ID.'.'.__CLASS__);
+					throw new CException(Yii::t(MPTranslate::ID.'.'.__CLASS__, "The source file '{file}' was not found in the database and could not be added to it.", array('{file}' => $sourceFile)));
 				}
 				else
 				{
 					$viewFile['id'] = $this->getDbConnection()->getLastInsertID();
 				}
 			}
-			else
+			
+			if($viewFile['path'] === null)
 			{
-				$viewFile['last_modified'] = strtotime($viewFile['last_modified']);
-				$viewFile['created'] = strtotime($viewFile['created']);
+				$viewFile['path'] = $this->getViewFile($file);
+				
+				$rowsAffected = $this->getInsertViewCommand()->bindValues(array(':id' => $viewFile['id'], ':path' => $viewFile['path'], ':language' => $language))->execute();
+				
+				if($rowsAffected === 0)
+				{
+					Yii::log("The source file '$sourceFile' compiled to '{$viewFile['path']}' could not be added to the database. The view will be recompiled for each request until this problem is fixed.", CLogger::LEVEL_ERROR, MPTranslate::ID.'.'.__CLASS__);
+				}
 			}
 			
-			if(!is_file($viewFile['compiled_path']))
+			$viewFile['created'] = $viewFile['created'] === null ? time() : strtotime($viewFile['created']);
+			$viewFile['last_modified'] = $viewFile['last_modified'] === null ? time() : strtotime($viewFile['last_modified']);
+			
+			if(!is_file($viewFile['path']))
 			{
-				@mkdir(dirname($viewFile['compiled_path']), $this->filePermission, true);
-				$this->_generateViewFile($sourceFile, $viewFile['compiled_path'], $viewFile['id']);
+				@mkdir(dirname($viewFile['path']), $this->filePermission, true);
+				$this->_generateViewFile($sourceFile, $viewFile['path'], $viewFile['id']);
 			}
 			elseif($viewFile['last_modified'] >= $viewFile['created'] || @filemtime($sourceFile) >= $viewFile['created'])
 			{
-				$this->_generateViewFile($sourceFile, $viewFile['compiled_path'], $viewFile['id']);
+				$this->_generateViewFile($sourceFile, $viewFile['path'], $viewFile['id']);
 			}
 			
 			$transaction->commit();
@@ -188,7 +204,7 @@ class TViewRenderer extends CViewRenderer
 			throw $e;
 		}
 
-		return $context->renderInternal($viewFile['compiled_path'], $data, $return);
+		return $context->renderInternal($viewFile['path'], $data, $return);
 	}
 	
 	/**

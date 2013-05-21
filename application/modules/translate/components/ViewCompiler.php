@@ -25,15 +25,15 @@ class ViewCompiler extends CComponent
 
 	private $_sourceMessageTable;
 	
-	private $_compiledViewTable;
+	private $_viewTable;
 	
-	private $_compiledViewMessageTable;
+	private $_viewMessageTable;
 	
 	private $_selectMessageIdCommand;
 	
 	private $_insertMessageCommand;
 
-	private $_insertCompiledViewMessageCommand;
+	private $_insertViewMessageCommand;
 
 	private $_messages = array();
 
@@ -51,20 +51,20 @@ class ViewCompiler extends CComponent
 	public function __construct(
 			$db,
 			$sourceMessageTable,
-			$compiledViewTable,
-			$compiledViewMessageTable)
+			$viewTable,
+			$viewMessageTable)
 	{
 		$this->defaultMessageCategory = TranslateModule::translator()->messageCategory;
 		
 		$this->_db = $db;
 		
 		$this->_sourceMessageTable = $sourceMessageTable;
-		$this->_compiledViewTable = $compiledViewTable;
-		$this->_compiledViewMessageTable = $compiledViewMessageTable;
+		$this->_viewTable = $viewTable;
+		$this->_viewMessageTable = $viewMessageTable;
 		
 		$this->_selectMessageIdCommand = $this->_db->createCommand("SELECT id FROM $sourceMessageTable WHERE (category=:category AND message=:message)");
 		$this->_insertMessageCommand = $this->_db->createCommand("INSERT INTO $sourceMessageTable (category, message) VALUES (:category, :message)");
-		$this->_insertCompiledViewMessageCommand = $this->_db->createCommand("INSERT INTO $compiledViewMessageTable (message_source_id, compiled_view_id) VALUES (:message_source_id, :compiled_view_id)");
+		$this->_insertViewMessageCommand = $this->_db->createCommand("INSERT INTO $viewMessageTable (view_id, message_id) VALUES (:view_id, :message_id)");
 	}
 
 	protected function getCache()
@@ -103,9 +103,9 @@ class ViewCompiler extends CComponent
 		$command = $this->_db->createCommand(
 				"SELECT $this->_sourceMessageTable.id AS id, $this->_sourceMessageTable.message AS message " .
 				"FROM $this->_sourceMessageTable " .
-				"INNER JOIN $this->_compiledViewMessageTable ON $this->_compiledViewMessageTable.message_source_id=$this->_sourceMessageTable.id " .
-				"WHERE $this->_compiledViewMessageTable.compiled_view_id=:compiled_view_id")
-				->bindValue(':compiled_view_id', $viewId);
+				"INNER JOIN $this->_viewMessageTable ON $this->_viewMessageTable.message_id=$this->_sourceMessageTable.id " .
+				"WHERE $this->_viewMessageTable.view_id=:view_id")
+				->bindValue(':view_id', $viewId);
 
 		foreach($command->queryAll() as $row)
 			$messages[$row['message']] = $row['id'];
@@ -115,7 +115,7 @@ class ViewCompiler extends CComponent
 
 	public function compileView($sourcePath, $compiledPath, $id)
 	{
-		$this->_insertCompiledViewMessageCommand->bindValue(':compiled_view_id', $id);
+		$this->_insertViewMessageCommand->bindValue(':view_id', $id);
 
 		if(!isset($this->_messages[$id]))
 			$this->_messages[$id] = $this->loadViewMessages($id);
@@ -137,7 +137,7 @@ class ViewCompiler extends CComponent
 			$cache->delete($this->getCacheKey($id));
 		}
 
-		$this->_db->createCommand()->update($this->_compiledViewTable, array('created' => date('Y-m-d H:i:s')), 'id=:id', array(':id' => $id));
+		$this->_db->createCommand()->update($this->_viewTable, array('created' => date('Y-m-d H:i:s')), 'id=:id', array(':id' => $id));
 	}
 
 	protected function pregReplaceCallback($matches)
@@ -149,7 +149,7 @@ class ViewCompiler extends CComponent
 		if(!isset($this->_messages[$this->_currentViewId][$message]))
 		{
 			$messageId = $this->_selectMessageIdCommand->bindValues(array(':category' => $category, ':message' => $message))->queryScalar();
-			
+
 			if($messageId === false)
 			{
 				if($this->_insertMessageCommand->bindValues(array(':category' => $category, ':message' => $message))->execute() === 0)
@@ -159,10 +159,10 @@ class ViewCompiler extends CComponent
 				}
 				$messageId = $this->_db->getLastInsertID();	
 			}
-
-			if($this->_insertCompiledViewMessageCommand->bindValue(':message_source_id', $messageId)->execute() === 0)
+					
+			if($this->_insertViewMessageCommand->bindValue(':message_id', $messageId)->execute() === 0)
 			{
-				Yii::log("The view with ID '$this->_currentViewId' could nto be associated with source message with ID '$messageId'.", CLogger::LEVEL_ERROR, self::getID());
+				Yii::log("The view with ID '$this->_currentViewId' could not be associated with source message with ID '$messageId'.", CLogger::LEVEL_ERROR, self::getID());
 				return $translation;
 			}
 
