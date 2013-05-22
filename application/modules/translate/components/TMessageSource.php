@@ -3,37 +3,25 @@
 class TMessageSource extends CDbMessageSource
 {
 	
-	private static $_ID;
+	const ID = 'module.translate.TMessageSource';
 	
-	public $acceptedLanguageTable;
+	public $acceptedLanguageTable = '{{translate_accepted_language}}';
 
-	public $useLocaleSpecificTranslations;
+	public $useLocaleSpecificTranslations = false;
 	
-	private $_translator;
-
-	private $_language;
+	/**
+	 * @var string $messageCategory
+	 * The default category used to identify messages.
+	 */
+	public $messageCategory = self::ID;
 	
 	private $_messages = array();
 	
 	private $_cacheInvalidated = true;
 	
-	public static function getID()
-	{
-		if(!isset(self::$_ID))
-			self::$_ID = MPTranslate::ID . '.' . __CLASS__;
-		return self::$_ID;
-	}
-	
-	public function getTranslator()
-	{
-		if(!isset($this->_translator))
-			$this->_translator = TranslateModule::translator();
-		return $this->_translator;
-	}
-	
 	public function getLanguage()
 	{
-		return $this->useLocaleSpecificTranslations ? parent::getLanguage() : $this->getTranslator()->getLanguageID(parent::getLanguage());
+		return $this->useLocaleSpecificTranslations ? parent::getLanguage() : TranslateModule::translator()->getLanguageID(parent::getLanguage());
 	}
 
 	/**
@@ -70,7 +58,7 @@ class TMessageSource extends CDbMessageSource
 	
 	protected function getCacheKey($category, $language)
 	{
-		return self::getID().'.messages.'.$category.'.'.$language;
+		return self::ID.'.messages.'.$category.'.'.$language;
 	}
 
 	/**
@@ -91,8 +79,11 @@ class TMessageSource extends CDbMessageSource
 	 */
 	public function translate($category, $message, $language = null)
 	{
+		if($category === null)
+			$category = $this->messageCategory;
+		
 		if($language === null)
-			$language = $this->useLocaleSpecificTranslations ? Yii::app()->getLanguage() : $this->getTranslator()->getLanguageID(Yii::app()->getLanguage());
+			$language = $this->useLocaleSpecificTranslations ? Yii::app()->getLanguage() : TranslateModule::translator()->getLanguageID(Yii::app()->getLanguage());
 		
 		if($this->forceTranslation || $language !== $this->getLanguage())
 			return $this->translateMessage($category, $message, $language);

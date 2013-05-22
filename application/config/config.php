@@ -69,7 +69,8 @@ return array(
 						'acceptedLanguageTable' => '{{translate_accepted_language}}',
 						'sourceMessageTable' => '{{translate_message_source}}',
 						'translatedMessageTable' => '{{translate_message}}',
-						'cachingDuration' => defined('YII_DEBUG') && YII_DEBUG ? 0 : 3600
+						'cachingDuration' => defined('YII_DEBUG') && YII_DEBUG ? 0 : 3600,
+						'messageCategory' => 'onlinecourseportal',
 				),
 				
 				'surveyor' => array(
@@ -80,7 +81,6 @@ return array(
 						'class' => 'modules.translate.components.MPTranslate',
 						'googleApiKey' => 'AIzaSyD5Xxt_4VKM13pF9uQdcULK4eHuTe7w940',
 						'autoTranslate' => true,
-						'messageCategory' => 'onlinecourseportal',
 						'managementActionFilters' => array(
 														array('filters.HttpsFilter'),
 														'accessControl',
