@@ -109,7 +109,7 @@ class HomeController extends OnlineCoursePortalController {
 			$message = Yii::app()->mail->getNewMessageInstance();
 			$message->setBody($models['ContactUs']->body, 'text/plain');
 			$message->setSubject($models['ContactUs']->subject);
-			$message->setTo(Yii::app()->params['contactEmail']);
+			$message->setTo(Yii::app()->params['supportEmail']);
 			$message->setFrom($models['ContactUs']->email);
 			Yii::app()->mail->send($message);
 			
