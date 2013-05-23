@@ -257,7 +257,7 @@ class ViewCompiler extends CComponent
 
 			if($messageId === false)
 			{
-				$messageId = $this->dal->insertMessage($category, $message);
+				$messageId = $this->dal->translateDal->insertSourceMessage($category, $message);
 			}
 			
 			if($messageId === null)
