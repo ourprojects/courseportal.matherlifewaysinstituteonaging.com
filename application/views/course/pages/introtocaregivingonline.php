@@ -28,7 +28,7 @@ foreach(array(
   <h1 class="bottom"><?php echo t($course->title); ?></h1>
 </div>
 <div id="sidebar">
-<div class="box-sidebar one" style="background-color:#FFF;">
+  <div class="box-sidebar one" style="background-color:#FFF;">
     <h3>{t}Survey{/t}</h3>
     <br />
     <p><a href="#">{t}Intro to Caregiving Online Pre-Course Survey{/t}</a></p>
@@ -45,15 +45,11 @@ foreach(array(
   <div class="box-sidebar three">
     <h3>Pew Internet: Health (Feb 1, 2013)</h3>
     <p><a href="http://pewinternet.org/experts/~/link.aspx?_id=E26587FE8FDB443A8610ECB87E635F94&_z=z" target="_blank"><img class="block-center" src="<?php echo $this->getImagesUrl('intro/pew.png'); ?>" /></a></p>
- 
-      <hr />
-   <p>{t}36% of U.S. adults care for an adult or multiple adults.{/t}</p>
-   <hr />
- 	<p>{t}Eight in ten caregivers (79%) have access to the internet. Of those, 88% look online for health information, outpacing other internet users on every health topic included in our survey, from looking up certain treatments to hospital ratings to end-of-life decisions.{/t}</p>
-        <img src="<?php echo $this->getImagesUrl('intro/piechart.png'); ?>" alt="image">
-
-
-  </div>
+    <hr />
+    <p>{t}36% of U.S. adults care for an adult or multiple adults.{/t}</p>
+    <hr />
+    <p>{t}Eight in ten caregivers (79%) have access to the internet. Of those, 88% look online for health information, outpacing other internet users on every health topic included in our survey, from looking up certain treatments to hospital ratings to end-of-life decisions.{/t}</p>
+    <img src="<?php echo $this->getImagesUrl('intro/piechart.png'); ?>" alt="image"> </div>
 </div>
 
 <!-- Start main content here -->
@@ -61,7 +57,7 @@ foreach(array(
 <div class="column-wide">
   <h2 class="flowers"><?php echo t($course->title); ?></h2>
   <p><?php echo t($course->description); ?></p>
-    <h5>{t}Access - 1 year / Completion - 5 weeks (recommended){/t}</h5>
+  <h5>{t}Access - 1 year / Completion - 5 weeks (recommended){/t}</h5>
   <h4>{t}Objectives{/t}</h4>
   <ul>
     <?php 
@@ -78,25 +74,23 @@ foreach(array(
     <li> <a href="#lesson-5-slide-1" data-fancybox-group="lesson-5" class="teal lesson-5"> {t}The Future of Caregiving in the US{/t} </a> <a href="#lesson-5-slide-2" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-3" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-4" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-5" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-6" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-7" data-fancybox-group="lesson-5" class="hide lesson-5"></a> </li>
   </ul>
   <div class="box-white" id="resources">
-  <h4> {t}Resources{/t}</h4>
-  <p>{t}Please use these listed resources in the completion of this online course. Pleaes contact your instructor or the program director if you have additional resources you would like to see added here.{/t}</p>
-  
-  <ul>
-  	<li><a href="http://www.alz.org" target="_blank">Alzheimer's Association</a></li>
-    <li><a href="http://www.nih.gov" target="_blank">National Intitute on Health (NIH)</a></li>
-    <li><a href="http://pewinternet.org" target="_blank">Pew Internet &amp; American Life Project</a></li>
-  </ul>
- </div>
+    <h4> {t}Resources{/t}</h4>
+    <p>{t}Please use these listed resources in the completion of this online course. Pleaes contact your instructor or the program director if you have additional resources you would like to see added here.{/t}</p>
+    <ul>
+      <li><a href="http://www.alz.org" target="_blank">Alzheimer's Association</a></li>
+      <li><a href="http://www.nih.gov" target="_blank">National Intitute on Health (NIH)</a></li>
+      <li><a href="http://pewinternet.org" target="_blank">Pew Internet &amp; American Life Project</a></li>
+    </ul>
+  </div>
   <div class="box-white" id="developers">
-      <h4>{t}Facilitators &amp; Course Developers{/t}</h4>
-      <br />
-      <SPAN class="h5">{t}Content Designer:{/t}</SPAN> <span class="name">Linda Hollinger-Smith, PhD</SPAN>
-      <p> {t}Dr. Hollinger-Smith is a doctorally prepared registered nurse focusing her research in gerontology, workforce development, and quality improvement. She has more than 28 years of experience working with older adults in senior living, long-term care settings, in the community, and in acute care settings in various staff and managerial positions. Her past positions include Assistant Dean of the Rush University College of Nursing, Nursing Director of the Rush Primary Care Institute, and Associate Chairperson of the Department of Adult Health Nursing at Rush University College of Nursing.{/t} </p>
-      <span class="h5">{t}Course Developer:{/t}</span> <span class="name">Jon Woodall</span>
-      <p>{t}Mr. Woodall is responsible for all MLIA corporate workforce wellness programs related to design, implementation, publication, and evaluation. Additionally, he seeks new grant funding to support or extend current grants related to corporate workforce wellness programs.{/t} </p>
-      <span class="h5">{t}Course Developer:{/t}</span> <span class="name">Jon Woodall</span>
-      <p>{t}Mr. Woodall is responsible for all MLIA corporate workforce wellness programs related to design, implementation, publication, and evaluation. Additionally, he seeks new grant funding to support or extend current grants related to corporate workforce wellness programs.{/t} </p>
-   
+    <h4>{t}Facilitators &amp; Course Developers{/t}</h4>
+    <br />
+    <SPAN class="h5">{t}Content Designer:{/t}</SPAN> <span class="name">Linda Hollinger-Smith, PhD</SPAN>
+    <p> {t}Dr. Hollinger-Smith is a doctorally prepared registered nurse focusing her research in gerontology, workforce development, and quality improvement. She has more than 28 years of experience working with older adults in senior living, long-term care settings, in the community, and in acute care settings in various staff and managerial positions. Her past positions include Assistant Dean of the Rush University College of Nursing, Nursing Director of the Rush Primary Care Institute, and Associate Chairperson of the Department of Adult Health Nursing at Rush University College of Nursing.{/t} </p>
+    <span class="h5">{t}Course Developer:{/t}</span> <span class="name">Jon Woodall</span>
+    <p>{t}Mr. Woodall is responsible for all MLIA corporate workforce wellness programs related to design, implementation, publication, and evaluation. Additionally, he seeks new grant funding to support or extend current grants related to corporate workforce wellness programs.{/t} </p>
+    <span class="h5">{t}Course Developer:{/t}</span> <span class="name">Jon Woodall</span>
+    <p>{t}Mr. Woodall is responsible for all MLIA corporate workforce wellness programs related to design, implementation, publication, and evaluation. Additionally, he seeks new grant funding to support or extend current grants related to corporate workforce wellness programs.{/t} </p>
   </div>
 </div>
 
@@ -120,19 +114,50 @@ foreach(array(
         <h2 class="flowers">{t}Introduction to Caregiving Online{/t}</h2>
         <hr />
         <img src="<?php echo $this->getImagesUrl('intro/78365380.png'); ?>" alt="{t}Tutorial{/t}" />
-        <h4>{t}here{/t}</h4>
-        
-        <p>{t}Few are fully prepared for the responsibilities and tasks involved in caring for the elderly. As a caregiver, it is important to have a clear plan or guide that has multiple paths. This in-depth, five-lesson online course introduces the basics of the caregiver role and explorers the challenges and experiences associated with elder-care. Topics will include; understanding caregiving, current data and research related to caregiving, describing the caregiver role and the challenges associated with it.{/t}</p>
-        
-        
-        
+        <h4>{t}Welcome{/t}</h4>
+        <p>{t}Few are fully prepared for the responsibilities and tasks involved in caring for the elderly. As a caregiver, it is important to have a clear plan or guide that has multiple paths. This in-depth, five-module online course introduces the basics of the caregiver role and explorers the challenges and experiences associated with elder-care. Topics will include; understanding caregiving, current data and research related to caregiving, describing the caregiver role and the challenges associated with it.{/t}</p>
+        <h4>Objectives</h4>
+        <ol>
+          <li>Summarize the role and purpose of a caregiver</li>
+          <li>Locate and analyze current data and trends related to US caregivers</li>
+          <li>Identify challenges related to caregiving</li>
+        </ol>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Start Course &raquo;{/t}</a></div>
     </div>
-    
-    <!-- Lesson 1 - slide #2 -->
-    
     <div id="lesson-1-slide-2" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Modules{/t}</h2>
+        <hr />
+   
+        <img src="<?php echo $this->getImagesUrl('intro/157999502.png'); ?>" alt="{t}Tutorial{/t}" />
+        
+  
+        <ol>
+          <li>Defining, Describing &amp; Understanding Caregiving</li>
+          <li>Current Data, Trends &amp; Research on US Caregivers</li>
+          <li>General Challenges Associated with Caregiving</li>
+          <li>Impact on the Workplace &amp; the Economy</li>
+          <li>The Future of Caregiving in the US</li>
+        </ol>
+        <h4>Snapshot</h4>
+        <h5>Caregiver Population - </h5>
+        <p>Millions of people in the U.S. provide care for a chronically ill, disabled or aged family member or friend during any given year and spend many hours per week providing care for their loved one.</p>
+        
+           <p class="forum">Seach the Internet for current data on the number of people in your country that provide care to an older adult, and post your findings on the Forum.</p>
+           <!--
+        <div id="question" class="question">
+          <p class="forum">Seach the Internet for current data on the number of people in your country that provide care to an older adult, and post your findings on the Forum.</p>
+          <form method="get" action="http://www.google.com/search" target="_blank">
+            <input type="text" id="google-search" name="q" size="65" maxlength="255" value="" />
+            <input type="submit" value="{t}Google Search{/t}" class="teal" />
+          </form>
+        </div>
+        -->
+        <img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}"> </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
+    <div id="lesson-1-slide-3" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}Defining Caregiving{/t}</h2>
         <hr />
@@ -159,10 +184,7 @@ foreach(array(
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
-    
-    <!-- Lesson 1 - slide #3 -->
-    
-    <div id="lesson-1-slide-3" class="course-slide">
+    <div id="lesson-1-slide-4" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}The Caregiver Role{/t}</h2>
         <hr />
