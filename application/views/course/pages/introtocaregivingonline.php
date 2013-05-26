@@ -67,8 +67,8 @@ foreach(array(
   </ul>
   <h4>{t}Course Lessons{/t}</h4>
   <ul>
-    <li> <a href="#lesson-1-slide-1" data-fancybox-group="lesson-1" class="teal lesson-1"> {t}Defining, Describing & Understanding Caregiving{/t} </a> <a href="#lesson-1-slide-2" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-3" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-4" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-5" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-6" data-fancybox-group="lesson-1" class="hide lesson-1"></a></li>
-    <li> <a href="#lesson-2-slide-1" data-fancybox-group="lesson-2" class="teal lesson-2"> {t}Current Data, Trends & Research on US Caregivers{/t} </a> <a href="#lesson-2-slide-2" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-3" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-4" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-5" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-6" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-7" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-8" data-fancybox-group="lesson-2" class="hide lesson-2"></a> </li>
+    <li> <a href="#lesson-1-slide-1" data-fancybox-group="lesson-1" class="teal lesson-1"> {t}Defining, Describing & Understanding Caregiving{/t} </a> <a href="#lesson-1-slide-2" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-3" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-4" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-5" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-6" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-7" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-8" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-9" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-10" data-fancybox-group="lesson-1" class="hide lesson-1"></a> </li>
+    <li> <a href="#lesson-2-slide-1" data-fancybox-group="lesson-2" class="teal lesson-2"> {t}Current Data, Trends & Research on US Caregivers{/t} </a> <a href="#lesson-2-slide-2" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-3" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-4" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-5" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-6" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-7" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-8" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-9" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-10" data-fancybox-group="lesson-2" class="hide lesson-2"></a> </li>
     <li> <a href="#lesson-3-slide-1" data-fancybox-group="lesson-3" class="teal lesson-3"> {t}General Challenges Associated with Caregiving{/t} </a> <a href="#lesson-3-slide-2" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-3" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-4" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-5" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-6" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-7" data-fancybox-group="lesson-3" class="hide lesson-3"></a> </li>
     <li> <a href="#lesson-4-slide-1" data-fancybox-group="lesson-4" class="teal lesson-4"> {t}Impact on the Workplace & the Economy{/t} </a> <a href="#lesson-4-slide-2" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-3" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-4" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-5" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-6" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-7" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-8" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-9" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-10" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-11" data-fancybox-group="lesson-4" class="hide lesson-4"></a> </li>
     <li> <a href="#lesson-5-slide-1" data-fancybox-group="lesson-5" class="teal lesson-5"> {t}The Future of Caregiving in the US{/t} </a> <a href="#lesson-5-slide-2" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-3" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-4" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-5" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-6" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-7" data-fancybox-group="lesson-5" class="hide lesson-5"></a> </li>
@@ -116,11 +116,11 @@ foreach(array(
         <img src="<?php echo $this->getImagesUrl('intro/78365380.png'); ?>" alt="{t}Tutorial{/t}" />
         <h4>{t}Welcome{/t}</h4>
         <p>{t}Few are fully prepared for the responsibilities and tasks involved in caring for the elderly. As a caregiver, it is important to have a clear plan or guide that has multiple paths. This in-depth, five-module online course introduces the basics of the caregiver role and explorers the challenges and experiences associated with elder-care. Topics will include; understanding caregiving, current data and research related to caregiving, describing the caregiver role and the challenges associated with it.{/t}</p>
-        <h4>Objectives</h4>
+        <h4>{t}Course Objectives{/t}</h4>
         <ol>
-          <li>Summarize the role and purpose of a caregiver</li>
-          <li>Locate and analyze current data and trends related to US caregivers</li>
-          <li>Identify challenges related to caregiving</li>
+          <li>{t}Summarize the role and purpose of a caregiver{/t}</li>
+          <li>{t}Locate and analyze current data and trends related to US caregivers{/t}</li>
+          <li>{t}Identify challenges related to caregiving{/t}</li>
         </ol>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Start Course &raquo;{/t}</a></div>
@@ -129,23 +129,19 @@ foreach(array(
       <div class="content">
         <h2 class="flowers">{t}Modules{/t}</h2>
         <hr />
-   
         <img src="<?php echo $this->getImagesUrl('intro/157999502.png'); ?>" alt="{t}Tutorial{/t}" />
-        
-  
         <ol>
-          <li>Defining, Describing &amp; Understanding Caregiving</li>
-          <li>Current Data, Trends &amp; Research on US Caregivers</li>
-          <li>General Challenges Associated with Caregiving</li>
-          <li>Impact on the Workplace &amp; the Economy</li>
-          <li>The Future of Caregiving in the US</li>
+          <li>{t}Defining, Describing &amp; Understanding Caregiving{/t}</li>
+          <li>{t}Current Data, Trends &amp; Research on US Caregivers{/t}</li>
+          <li>{t}General Challenges Associated with Caregiving{/t}</li>
+          <li>{t}Impact on the Workplace &amp; the Economy{/t}</li>
+          <li>{t}The Future of Caregiving in the US{/t}</li>
         </ol>
-        <h4>Snapshot</h4>
-        <h5>Caregiver Population - </h5>
-        <p>Millions of people in the U.S. provide care for a chronically ill, disabled or aged family member or friend during any given year and spend many hours per week providing care for their loved one.</p>
-        
-           <p class="forum">Seach the Internet for current data on the number of people in your country that provide care to an older adult, and post your findings on the Forum.</p>
-           <!--
+        <h4>{t}Snapshot{/t}</h4>
+        <h5>{t}Caregiver Population{/t} - </h5>
+        <p>{t}Millions of people in the U.S. provide care for a chronically ill, disabled or aged family member or friend during any given year and spend many hours per week providing care for their loved one.{/t}</p>
+        <p class="forum">{t}Seach the Internet for current data on the number of people in your country that provide care to an older adult, and post your findings on the Forum.{/t}</p>
+        <!--
         <div id="question" class="question">
           <p class="forum">Seach the Internet for current data on the number of people in your country that provide care to an older adult, and post your findings on the Forum.</p>
           <form method="get" action="http://www.google.com/search" target="_blank">
@@ -153,51 +149,66 @@ foreach(array(
             <input type="submit" value="{t}Google Search{/t}" class="teal" />
           </form>
         </div>
-        -->
+        --> 
         <img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}"> </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
     <div id="lesson-1-slide-3" class="course-slide">
       <div class="content">
-        <h2 class="flowers">{t}Defining Caregiving{/t}</h2>
+        <h2 class="flowers">{t}Defining, Describing &amp; Understanding Caregiving{/t}</h2>
         <hr />
-        <p>{t}Cargiving is a person who provides direct care (children, elderly people, the chronically ill). The Family Caregiver Alliance defines the term caregiver as "anyone who provides assistance to someone else who is, to some degree, incapacitated and needs help performing the daily tasks essential to living a normal life." This would include persons providing care for: a husband who has suffered a stroke, a wife with Parkinson's disease, a mother-in-law with cancer, a grandfather with Alzheimer's disease, a loved one with traumatic brain injury, a friend with AIDS, or a child with muscular dystrophy.{/t}</p>
-        <p>{t}For our purposes, a caregiver is an unpaid family member, friend, or neighbor who provides care to an individual who has an acute or chronic condition and needs assistance to manage a variety of tasks, from bathing, to medication administration, to symptom monitoring.{/t}</p>
-        <div id="question" class="question">
-          <p> {t}Please conduct your own search for other definitions of "caregiving" on the Internet.{/t} </p>
-          <form method="get" action="http://www.google.com/search" target="_blank">
-            <input type="text" id="google-search" name="q" size="65" maxlength="255" value="" />
-            <input type="submit" value="{t}Google Search{/t}" class="teal" />
-          </form>
-        </div>
-        <p>{t}The AARP Public Policy Institute reported that in 2009, about 42.1 million family caregivers in the United States provided care to an adult with limitations in daily activities at any given point in time, and about 61.6 million provided care at some time during the year. The estimated economic value of their unpaid contributions was approximately $450 billion in 2009, up from an estimated $375 billion in 2007. That is a lot of money and a lot of caregivers!{/t}</p>
-        <p>{t}Please search the Interent for the following reports to get a better understanding of "caregiving:"{/t}</p>
+        <img src="<?php echo $this->getImagesUrl('intro/147800069.png'); ?>" alt="{t}Tutorial{/t}" />
+        <p>{t}In this module, we will:{/t}</p>
         <ul>
-          <li><i>Double Jeopardy for Baby Boomers Caring for Their Parents</i></li>
-          <li><i>The e-Connected Family Caregiver</i></li>
-          <li><i>Caregivers of Veterans – Serving on the Homefront</i></li>
-          <li><i>Caregiving in the U.S. 2009</i></li>
+          <li>{t}Locate, define and summarize caregiving and it's characteristics{/t}</li>
+          <li>{t}Describe the  caregiver role{/t}</li>
+          <li>{t}Eplore different types of US caregivers{/t}</li>
         </ul>
-        <p> <a href="mailto:jwoodall@matherlifeways.com" target="_blank"><img class="normal" src="<?php echo $this->getImagesUrl('email.png'); ?>" /></a>{t}After learning how several organzitions define caregiving, would you consider yourself a caregiver and why? Please email your Facilitator your response.{/t}</p>
-        <br />
-        <br />
-      </div>
+        <h5>{t}Your Definition of Caregiving{/t}</h5>
+        <p class="forum">{t}Create your own definition or description of caregiving, and post your response on the Forum. Please use the Internet to help create your definition.{/t}</p>
+        <img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}"> </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
     <div id="lesson-1-slide-4" class="course-slide">
       <div class="content">
+        <h2 class="flowers">{t}Defining Caregiving{/t}</h2>
+        <hr />
+        <p>{t}<a href="http://www.merriam-webster.com/dictionary/caregiving" target="_blank">Merriam-Webster's</a> dictionary defines <i>cargiving</i> as a person who provides direct care (as for children, elderly people, or the chronically ill). <a href="http://www.caregiver.org/caregiver/jsp/content_node.jsp?nodeid=439" target="_blank">The Family Caregiver Alliance</a> defines the term caregiver as anyone who provides assistance to someone else who is, to some degree, incapacitated and needs help performing the daily tasks essential to living a normal life. This would include persons providing care for: a husband who has suffered a stroke, a wife with Parkinson's disease, a mother-in-law with cancer, a grandfather with Alzheimer's disease, a loved one with traumatic brain injury, a friend with AIDS, a child with muscular dystrophy, an elder who is very frail.{/t}</p>
+        <p>{t}More specifically, A a caregiver is an unpaid family member, friend, or neighbor who provides care to an individual who has an acute or chronic condition and needs assistance to manage a variety of tasks, from bathing, to medication administration, to symptom monitoring. For our purposes, a caregiver is an unpaid individual (a spouse, significant other, family member, friend, or neighbor) involved in assisting others who are unable to perform certain activities on their own.{/t}</p>
+        <p>{t}<a href="http://www.aarp.org/research/ppi/" target="_blank">The AARP Public Policy Institute</a> reports that in 2009, about 42.1 million family caregivers in the United States provided care to an adult with limitations in daily activities at any given point in time, and about 61.6 million provided care at some time during the year. The estimated economic value of their unpaid contributions was approximately $450 billion in 2009, up from an estimated $375 billion in 2007. That's a lot of money and a lot of caregivers!{/t}</p>
+        <p>{t}Please search the Internet and read the following reports to get a better understanding of <i>caregiving</i>:{/t}</p>
+        <ul>
+          <li>{t}The MetLife Study of Caregiving Costs to Working Caregivers - Double Jeopardy for Baby Boomers Caring for Their Parents{/t}</li>
+          <li>{t}A study by the National Alliance for Caregiving and UnitedHealthcare - The e-Connected Family Caregiver{/t}</li>
+          <li>{t}Conducted by the National Alliance for Caregiving and Funded by the UnitedHealth Foundation Caregivers of Veterans – Serving on the Homefront{/t}</li>
+          <li>{t}National Alliance for Caregiving in Collaboration with AARP; Funded by The MetLife Foundation - Caregiving in the U.S. 2009{/t}</li>
+        </ul>
+        <p class="forum">{t}After learning how several organzitions define caregiving, would you consider yourself a caregiver and why?{/t}</p>
+        <img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}"> </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
+    <div id="lesson-1-slide-5" class="course-slide">
+      <div class="content">
         <h2 class="flowers">{t}The Caregiver Role{/t}</h2>
         <hr />
-        <img src="<?php echo $this->getImagesUrl('78634274r.jpeg'); ?>" alt="{t}Tutorial{/t}" />
         <p>{t}Being in the caregiver role does not only mean taking care of people, but communicating with the people you care for and the rest of their health team in an effective way. As a caregiver, nonverbal communication is a big deal, certain body language and gestures need to be avoided in order not to give people the wrong idea of a caregiver. Inappropriate, accidental, or improper gestures in a nonverbal manner can cause a negative environment for all parties involved and can cause a lack of trust, resulting in a breakdown in the communication process. Through communication, we have to offer the presence of caring, comfort, support, and respect.{/t}</p>
         <p>{t}Caregivers must quickly develop strategies for active, critical, and empathic listening, recognizing how words have the power to create and affect attitudes, behavior, and perception, and finally, understanding how perceptions, emotions, and nonverbal expressions affect relationships.{/t}</p>
-        <p><?php echo('Developing these strategies (for active, critical, and empathic listening, three types of listening) are important in communication because listening and responding appropriately results in better care and can build a better relationship between the caregiver and the person receiving care.'); ?>
-        <ul>
-          <li>{t}Active listening is being mentally engaged in the needs of what the person is expressing.{/t}</li>
-          <li>{t}Critical listening is observing the steps that the caregiver will take in carrying out the needs the person is expressing.{/t}</li>
-          <li>{t}Empathic listening is understanding what the person is saying from their perspective and repeating back to them the importance of their needs being taken care of. Empathic listening is important because caregivers have to show the person being cared for caring and compassion. In order for the person receiving care to get the best care possible, caregivers need to listen and make sure the correct care is received.{/t}</li>
-        </ul>
-        <p>{t}More importantly, care recievers need to be secure in knowing that the caregiver can perform the persons basic needs, since they can no longer do it for themselves. Those needs may include:{/t}</p>
+        <p>{t}Developing these strategies (for active, critical, and empathic listening, three types of listening) are important in communication because listening and responding appropriately results in better care and can build a better relationship between the caregiver and the person receiving care.{/t}</p>
+        <h5>{t}Active listening{/t} - </h5>
+        <p>{t}is being mentally engaged in the needs of what the person is expressing.{/t}</p>
+        <h5>{t}Critical listening{/t} - </h5>
+        <p>{t}is observing the steps that the caregiver will take in carrying out the needs the person is expressing.{/t}</p>
+        <h5>{t}Empathic listening{/t} - </h5>
+        <p>{t}is understanding what the person is saying from their perspective and repeating back to them the importance of their needs being taken care of. Empathic listening is important because caregivers have to show the person being cared for caring and compassion. In order for the person receiving care to get the best care possible, caregivers need to listen and make sure the correct care is received.{/t}</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
+    <div id="lesson-1-slide-6" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}The Caregiver Role (continued){/t}</h2>
+        <hr />
+        <img src="<?php echo $this->getImagesUrl('intro/76946582.png'); ?>" alt="{t}Tutorial{/t}" />
+        <p>{t}More importantly, care recievers need to be secure in knowing that the caregiver can perform the persons' basic needs, since they can no longer do it for themselves. Those needs may include:{/t}</p>
         <ul>
           <li>{t}Physical needs{/t}</li>
           <li>{t}Safety and security needs{/t}</li>
@@ -205,80 +216,76 @@ foreach(array(
           <li>{t}Self-esteem needs, and{/t}</li>
           <li>{t}Self- actualization needs{/t}</li>
         </ul>
-        <p>{t}Please search the Internet for detailed information on these topics, and post your findings on the Forum{/t}</p>
-        <br />
-        <br />
-      </div>
+        <p class="forum">{t}Please search the Internet for detailed information and descriptions on these topics listed above, and post your findings on the Forum.{/t}</p>
+        <p>{t}The caregiver must be able to listen and focus on these needs through verbal and nonverbal messages of the person receiving care. They must develop a strategy over the years, keeping in mind the caregiver at all times, maintaining respect and understanding cultural and religious differences. Caregivers contribute more than any other member of the health team to the physical, psychological, spiritual, and most important, social aspects of a person’s care. Now, let's look at a real-life caregiving sitiuation and see how one family copes.{/t}</p>
+        <img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}Tutorial{/t}" /> </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
-    
-    <!-- Lesson 1 - slide #4 -->
-    
-    <div id="lesson-1-slide-4" class="course-slide">
+    <div id="lesson-1-slide-7" class="course-slide">
       <div class="content">
-        <h2 class="flowers">{t}The Caregiver Role (continued){/t}</h2>
+        <h2 class="flowers">{t}The Sandwih Generation - MediaStorm{/t}</h2>
         <hr />
-        <p>{t}The caregiver must be able to listen and focus on these needs through verbal and nonverbal messages of the person receiving care. They must develop a strategy over the years, keeping in mind the caregiver at all times, maintaining respect and understanding cultural and religious differences. Caregivers contribute more than any other member of the health team to the physical, psychological, spiritual, and most important, social aspects of a person’s care. Now, let us look at a real-life caregiving sitiuation and see how one family copes.{/t}</p>
-        <h5>MediaStorm.com Publications</h5>
         <p>{t}Filmmaker-photographer couple Julie Winokur and Ed Kashi were busy pursuing their careers and raising two children when Winokur's 83-year-old father, Herbie, became too infirm to care for himself. At that moment they joined some twenty million other Americans who make up the sandwich generation, those who find themselves responsible for the care of both their children and their aging parents.{/t}</p>
-        <p>{t}Authors of the book{/t}"Aging in America: The Years Ahead,"{t}which chronicles the country's fastest-growing segment of the population, Winokur and Kashi decided to tell their own story as they took on the care of Winokur's father. In The Sandwich Generation, they have created an honest, intimate account of their own shifting — and challenging — responsibilities, as well as some of their unexpected joys.{/t}</p>
-        <p style="width:400px; height:340px; margin-left:25px;"><script type="text/javascript" src="http://mediastorm.com/player/embed.php?id=e4eb092b527c88685918&w=400&h=340&amp;lang=none"></script></p>
-        <br />
-        <br />
+        <p>{t}Authors of the book <i>Aging in America: The Years Ahead</i>, which chronicles the country's fastest-growing segment of the population, Winokur and Kashi decided to tell their own story as they took on the care of Winokur's father. In The Sandwich Generation, they have created an honest, intimate account of their own shifting — and challenging — responsibilities, as well as some of their unexpected joys.{/t}</p>
+        <div style="width:400px;" id="video">
+          <div style="height:340px;"><script type="text/javascript" src="http://mediastorm.com/player/embed.php?id=e4eb092b527c88685918&w=400&h=340&amp;lang=none"></script></div>
+          <div style="padding:10px; font-family:Helvetica, Arial, sans-serif; font-size:12px; line-height:16px; color:#999999; background-color:#000000;">Millions of middle-aged Americans are caring for their children as well as their aging parents. When filmmaker-photographer pair Julie Winokur and Ed Kashi took in Winokur's 83-year-old father, they decided to document their own story. See the project at <a href="http://mediastorm.com/publication/the-sandwich-generation" target="_blank" style="color:#0083c5;">http://mediastorm.com/publication/the-sandwich-generation</a></div>
+        </div>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
-    
-    <!-- Lesson 1 - slide #5 -->
-    
-    <div id="lesson-1-slide-5" class="course-slide">
+    <div id="lesson-1-slide-8" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}Types of Caregivers in the US{/t}</h2>
         <hr />
-        <p>{t}While many consider careing for a parent and/or grandparent the summation of the term 'caregiving,' there are many more roles that are included when defining caregiving. As you have read in the reports listed above, careing for those other than our parents and/or grandparents also puts you in a caregiving role.{/t}</p>
-        <p>{t}As reported by the{/t}Caregiver Network Resource, {t}caregiveres are wives, husbands, parents, children, friends, employees… Types of caregivers include:{/t}</p>
+        <p>While many consider careing for a parent and/or grandparent the summation of the term <i>caregiving</i>, there are many more roles that are included when defining caregiving. As you have read in the reports listed above, careing for those other than our parents and/or grandparents also puts you in a caregiving role. </p>
+        <p>As reported by the <a href="http://www.caregiverresource.net" target="_blank">Caregiver Network Resource</a>, caregiveres are wives, husbands, parents, children, friends, employees…  Types of caregivers include:</p>
         <ul>
-          <li>{t}<b>Crisis Caregiver</b>: Your family member manages most of the time on their own until there is an emergency.{/t}</li>
-          <li>{t}<b>Primary Caregiver</b>: Your family member depends on you for regular assistance for two or more activities in their life. You make decisions that directly affect them. You may act as their representative in situations. You provide hands-on assistance with basic daily tasks (bathing, dressing, transportation, money matters, etc.){/t}</li>
-          <li>{t}<b>Secondary Caregiver</b>: Your parent, sibling, spouse, etc. functions as the primary caregiver and you provide assistance to them.{/t}</li>
-          <li><?php echo ('<b>Working Caregiver</b>: You hold a part-time or full-time job and provide physical or financial support to someone who depends upon your care.'); ?></li>
-          <li>{t}<b>Long Distance Caregiver</b>: You live at least an hour’s drive away and you provide much of your assistance by telephone. You depend on others to assist in caring for your relative.{/t}</li>
-          <li>{t}<b>Occasional Caregiver</b>: You provide one or more services for someone on an irregular basis such as furnish transportation, assist with major household chores, balance the checkbook, etc.{/t}</li>
-          <li>{t}<b>Community Caregiver</b>: You give a cheerful greeting or make personal contact while making deliveries, passing by or making a special call to check on the status of someone receiving care.{/t}</li>
-          <li>{t}<b>Future Caregiver</b>: You are not a caregiver now, but have friends or relatives who will probably need care in the years ahead.{/t}</li>
+          <li>{t}<b>Crisis Caregiver</b>:  Your family member manages most of the time on their own until there is an emergency.{/t}</li>
+          <li>Primary Caregiver:  Your family member depends on you for regular assistance for two or more activities in their life. You make decisions that directly affect them.  You may act as their representative in situations.  You provide hands-on assistance with basic daily tasks (bathing, dressing, transportation, money matters, etc.)</li>
+          <li>Secondary Caregiver:  Your parent, sibling, spouse, etc. functions as the primary caregiver and you provide assistance to them. </li>
         </ul>
-      </div>
+        <p class="forum">{t}Search the Internet and research other types of caregivers. Post your findings on the Forum{/t}</p>
+        <p>{t}Whether you are an informal caregiver caring for a relative, or a professional caregiver - all caregivers share certain experiences. For many people, caregiving isn't a job or a duty. It is doing what is right for a loved one. Caregiving is an unspoken promise that so many of us make in our relationships, to be there for our loved ones when they need us. Unfortunately, few people have the time, resources or ability to care for their aging or disabled loved one without any help. It is important as a caregiver to know your limits, take care of yourself, know your resources in the community, and understand the wants and needs of the person needing care.{/t}</p>
+        <p class="forum">{t}On the Forum, post what type of caregiver you are and explain your caregiving situation. Search You Tube for postings that people have left explaining their caregiving situation. If possible, record and post your own video and monitor the responses over the next 5 weeks.{/t}</p>
+        <img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}Tutorial{/t}" /> </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
-    
-    <!-- Lesson 1 - slide #6 -->
-    
-    <div id="lesson-1-slide-6" class="course-slide">
+    <div id="lesson-1-slide-9" class="course-slide">
       <div class="content">
-        <h2 class="flowers">{t}Types of Caregivers in the US (continued){/t}</h2>
+        <h2 class="flowers">{t}Closing{/t}</h2>
         <hr />
-        <img width="350" height="234" src="<?php echo $this->getImagesUrl('82152160.jpg'); ?>" alt="{t}Tutorial{/t}" />
-        <p>{t}Whether you are an informal caregiver caring for a relative, or a professional caregiver - all caregivers share certain experiences. For many people, caregiving is not a job or a duty. It is doing what is right for a loved one. Caregiving is an unspoken promise that so many of us make in our relationships, to be there for our loved ones when they need us. Unfortunately, few people have the time, resources or ability to care for their aging or disabled loved one without any help. It is important as a caregiver to know your limits, take care of yourself, know your resources in the community, and understand the wants and needs of the person needing care.{/t}</p>
-        <p> <a href="mailto:jwoodall@matherlifeways.com" target="_blank"><img class="normal" src="<?php echo $this->getImagesUrl('email.png'); ?>" /></a><?php echo('Please think about what type of caregiver you are, and email your Facilitator.'); ?></p>
-        <br />
-        <br />
-        <p> <a href="http://www.youtube.com/" target="_blank" /><img class="normal" src="<?php echo $this->getImagesUrl('YouTubeIcon.png'); ?>" /></a><?php echo('Please search YouTube for postings that people have left explaining their caregiving situation. Then, record and post your own video and email your Facilitator the URL. We will review this video at the end of this course.'); ?></p>
-        <br />
-        <br />
-        <h4>{t}Thank You!{/t}</h4>
-        <p>{t}We want to thank you once again for your interest and participation. Now that you have commpleted this first Lesson, please feel free to email your Facilitator your comments or suggestions. We hope you have learned a lot and are looking forward to our continued interactions.{/t}</p>
+        <img src="<?php echo $this->getImagesUrl('intro/imsis530-020.png'); ?>" alt="{t}Tutorial{/t}" />
+        <p>{t}Whether you are an informal caregiver caring for a relative, or a professional caregiver - all caregivers share certain experiences. For many people, caregiving is not a job or a duty. It is doing what is right for a loved one.{/t{</p>
+        
+        <p>{t}Caregiving is an unspoken promise that so many of us make in our relationships, to be there for our loved ones when they need us. Unfortunately, few people have the time, resources or ability to care for their aging or disabled loved one without any help. It is important as a caregiver to know your limits, take care of yourself, know your resources in the community, and understand the wants and needs of the person needing care.{/t}</p>
+        <div id="question1" class="question">
+          <p><b>{t}Listening and responding appropriately results in better care and can build a better relationship.{/t}</b><br />
+            <select>
+              <option selected="selected" value="select"> {t}Select{/t} </option>
+              <option value="1"> {t}Yes{/t} </option>
+              <option value="0"> {t}No{/t} </option>
+            </select>
+          </p>
+          <p class="right-answer hide"> {t}Correct! Strategies for active, critical, and empathic listening are important.{/t} </p>
+          <p class="wrong-answer hide"> {t}Please review this module again, and understand the caregiver role before continuing.{/t} </p>
+        </div>
+        
+        <p>{t}Search You Tube for postings that people have left explaining their caregiving situation. If possible, record and post your own video and monitor the responses over the next 5 weeks.{/t}</p>
+        
       </div>
-      <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Complete Lesson{/t}</a></div>
+      <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Complete Module{/t}</a></div>
     </div>
   </div>
-  
-  <!-- Lesson 2 - slide #1 -->
   <div id="lesson-2">
     <div id="lesson-2-slide-1" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}Current Data, Trends & Research{/t}</h2>
         <hr />
-        <p>{t}In this week’s lesson, we will:{/t}</p>
+        
+                <img src="<?php echo $this->getImagesUrl('intro/157743677.png'); ?>" alt="{t}Tutorial{/t}" />
+
+        <p>{t}In this module, we will:{/t}</p>
         <ul>
           <li>{t}Locate and explore current data on US caregivers{/t}</li>
           <li>{t}Locate and explore current trends on US caregivers{/t}</li>
@@ -287,9 +294,6 @@ foreach(array(
       </div>
       <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Start Course &raquo;{/t}</a></div>
     </div>
-    
-    <!-- Lesson 2 - slide #2 -->
-    
     <div id="lesson-2-slide-2" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}Data on US Caregivers{/t}</h2>
