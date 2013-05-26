@@ -257,7 +257,6 @@ foreach(array(
         <hr />
         <img src="<?php echo $this->getImagesUrl('intro/imsis530-020.png'); ?>" alt="{t}Tutorial{/t}" />
         <p>{t}Whether you are an informal caregiver caring for a relative, or a professional caregiver - all caregivers share certain experiences. For many people, caregiving is not a job or a duty. It is doing what is right for a loved one.{/t{</p>
-        
         <p>{t}Caregiving is an unspoken promise that so many of us make in our relationships, to be there for our loved ones when they need us. Unfortunately, few people have the time, resources or ability to care for their aging or disabled loved one without any help. It is important as a caregiver to know your limits, take care of yourself, know your resources in the community, and understand the wants and needs of the person needing care.{/t}</p>
         <div id="question1" class="question">
           <p><b>{t}Listening and responding appropriately results in better care and can build a better relationship.{/t}</b><br />
@@ -270,9 +269,7 @@ foreach(array(
           <p class="right-answer hide"> {t}Correct! Strategies for active, critical, and empathic listening are important.{/t} </p>
           <p class="wrong-answer hide"> {t}Please review this module again, and understand the caregiver role before continuing.{/t} </p>
         </div>
-        
         <p>{t}Search You Tube for postings that people have left explaining their caregiving situation. If possible, record and post your own video and monitor the responses over the next 5 weeks.{/t}</p>
-        
       </div>
       <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Complete Module{/t}</a></div>
     </div>
@@ -282,15 +279,25 @@ foreach(array(
       <div class="content">
         <h2 class="flowers">{t}Current Data, Trends & Research{/t}</h2>
         <hr />
-        
-                <img src="<?php echo $this->getImagesUrl('intro/157743677.png'); ?>" alt="{t}Tutorial{/t}" />
-
+        <img src="<?php echo $this->getImagesUrl('intro/157743677.png'); ?>" alt="{t}Tutorial{/t}" />
         <p>{t}In this module, we will:{/t}</p>
         <ul>
           <li>{t}Locate and explore current data on US caregivers{/t}</li>
           <li>{t}Locate and explore current trends on US caregivers{/t}</li>
           <li>{t}Locate and explore current research on US caregivers{/t}</li>
         </ul>
+        <div id="question1" class="question">
+          <p><b>{t}According to the Administration on Aging, in 2030, all <i>baby boomers</i> will be at least 65 years old; this age group is projected to be 71 million.{/t}</b><br />
+            <select>
+              <option selected="selected" value="select"> {t}Select{/t} </option>
+              <option value="1"> {t}Yes{/t} </option>
+              <option value="0"> {t}No{/t} </option>
+            </select>
+          </p>
+          <p class="right-answer hide"> {t}Correct! According the AoA website, by 2030 all <i>baby boomers</i> will be at least 65.{/t} </p>
+          <p class="wrong-answer hide"> {t}Please review this module again, and understand the caregiver role before continuing.{/t} </p>
+        </div>
+        <p>{t}The information supplied by the <a href="http://www.aoa.gov" target="_blank">Administration on Aging</a> website is a great reference and resource for current and future caregivers. There vision is to serve a growning senior population, ensuring the continuation of a veibrant aging services network at State, Territory, local and Tribal levels through funding of lower-cost, non-medical services and supports that provide the means by which many more seniors can maintain their independence.{/t}</p>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Start Course &raquo;{/t}</a></div>
     </div>
@@ -298,22 +305,15 @@ foreach(array(
       <div class="content">
         <h2 class="flowers">{t}Data on US Caregivers{/t}</h2>
         <hr />
-        <p>{t}The older population--persons 65 years or older--numbered 39.6 million in 2009 (the latest year for which data is available). They represented 12.9% of the U.S. population, about one in every eight Americans. By 2030, there will be about 72.1 million older persons, more than twice their number in 2000. People 65+ represented 12.4% of the population in the year 2000 but are expected to grow to be 19% of the population by 2030.{/t}</p>
-        <p>{t}The information supplied by the Administration on Aging website is a great reference and resource for current and future caregivers. There vision is to serve a growning senior population, ensuring the continuation of a veibrant aging services network at State, Territory, local and Tribal levels through funding of lower-cost, non-medical services and supports that provide the means by which many more seniors can maintain their independence.{/t}</p>
-        <p>{t}Search the Internet and find other websites that provide data on US caregivers.{/t}</p>
-        <p>{t}As reported by the National Family Caregivers Association (NFCA), here is a snopshot of statistics on family caregivers and family caregiving:{/t}</p>
-        <p>{t}Caregiving Population{/t}</p>
+        <p>{t}The older population--persons 65 years or older -- are a large portion of the US population. They represent more than 10% of Americans. By 2030, there will be more than 70 million older persons, more than twice their number in 2000. People 65+ represented more than 10% of the population in the year 2000 but are expected to grow to be approxmiatley 20% of the population by 2030.{/t}</p>
+        <p class="forum">{t}Search the following website to research data on the number of US caregivers, and post your findings to the Forum: National Institutes of Health, Alzheimer's Association, and National Alliance for Caregivers.{/t}</p>
+        <img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}Tutorial{/t}" />
+        <p>{t}As reported by the <a href="http://caregiveraction.org" target="_blank">National Family Caregivers Association (NFCA)</a>, here is a snopshot of statistics on family caregivers and family caregiving:{/t}</p>
+        <h5>{t}Caregiving Population{/t}</h5>
         <ul>
           <li>{t}More than 65 million people, 29% of the U.S. population, provide care for a chronically ill, disabled or aged family member or friend during any given year and spend an average of 20 hours per week providing care for their loved one.{/t}</li>
           <li>{t}The value of the services family caregivers provide for "free," when caring for older adults, is estimated to be $375 billion a year. That is almost twice as much as is actually spent on homecare and nursing home services combined ($158 billion).{/t}</li>
           <li>{t}The typical family caregiver is a 49-year-old woman caring for her widowed 69-year-old mother who does not live with her. She is married and employed. Approximately 66% of family caregivers are women. More than 37% have children or grandchildren under 18 years old living with them.{/t}</li>
-          <li>{t}1.4 million children ages 8 to 18 provide care for an adult relative; 72% are caring for a parent or grandparent; and 64% live in the same household as their care recipient. Fortunately, most are not the sole caregiver.{/t}</li>
-          <li>{t}20 hours per week is the average number of hours family caregivers spend caring for their loved ones while 13% of family caregivers are providing 40 hours of care a week or more.{/t}</li>
-          <li>{t}November 2009 Family caregivers are the foundation of long-term care nationwide exceeding Medicaid long-term care spending in all states.{/t}</li>
-          <li>{t}51% of care recipients live in their own home, 29% live with their family caregiver, and 4% live in nursing homes and assisted living.{/t}</li>
-          <li>{t}36% of family caregivers care for a parent and 7 out of 10 caregivers are caring for loved ones over 50 years old.{/t}</li>
-          <li>{t}14% of family caregivers care for a special needs child with an estimated 16.8 million caring for special needs children under 18 years old. 55% of these caregivers are caring for their own children.{/t}</li>
-          <li>{t}78% of adults living in the community and in need of long-term care depend on family and friends as their only source of help{/t}</li>
         </ul>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
@@ -323,65 +323,54 @@ foreach(array(
     
     <div id="lesson-2-slide-3" class="course-slide">
       <div class="content">
-        <h2 class="flowers">{t}Data on US Caregivers (continued{/t}</h2>
+        <h2 class="flowers">{t}Additional Data{/t}</h2>
         <hr />
-        <p>{t}Economics Of Caregiving{/t}</p>
+        <h5>{t}Economics Of Caregiving{/t}</h5>
         <ul>
           <li>{t}Women who are family caregivers are 2.5 times more likely than non-caregivers to live in poverty and five times more likely to receive Supplemental Security Income (SSI).{/t}</li>
           <li>{t}Caregiving families (families in which one member has a disability) have median incomes that are more than 15% lower than non-caregiving families. In every state and DC the poverty rate is higher among families with members with a disability than among families without.{/t}</li>
           <li>{t}During the 2009 economic downturn, 1 in 5 family caregivers had to move into the same home with their loved ones to cut expenses.{/t}</li>
-          <li>{t}47% of working caregivers indicate an increase in caregiving expenses has caused them to use up ALL or MOST of their savings.{/t}</li>
-          <li>{t}The average family caregiver for someone 50 years or older spends $5,531 per year on out of pocket caregiving expenses in 2007 which was more than 10% of the median income for a family caregiver that year.{/t}</li>
         </ul>
-        <p>{t}Impact on Family Caregiver's Health{/t}</p>
+        <h5>{t}Impact on Family Caregiver's Health{/t}</h5>
         <ul>
           <li>{t}23% of family caregivers caring for loved ones for 5 years or more report their health is fair or poor.{/t}</li>
           <li>{t}Stress of family caregiving for persons with dementia has been shown to impact a person's immune system for up to three years after their caregiving ends thus increasing their chances of developing a chronic illness themselves.{/t}</li>
           <li>{t}Nearly three quarters (72%) of family caregivers report not going to the doctor as often as they should and 55% say they skip doctor appointments for themselves. 63% of caregivers report having poor eating habits than non-caregivers and 58% indicate worse exercise habits than before caregiving responsibilities.{/t}</li>
-          <li>{t}20% of employed female caregivers over 50 years old report symptoms of depression compared to 8% of their non-caregiving peers.{/t}</li>
-          <li>{t}40% to 70% of family caregivers have clinically significant symptoms of depression with approximately a quarter to half of these caregivers meet the diagnostic criteria for major depression.{/t}</li>
-          <li>{t}More than 1 in 10 (11%) of family caregivers report that caregiving has caused their physical health to deteriorate.{/t}</li>
-          <li>{t}A wife's hospitalization increased her husband's chances of dying within a month by 35%. A husband's hospitalization boosted his wife's mortality risk by 44%.{/t}</li>
-          <li>{t}Family caregivers experiencing extreme stress have been shown to age prematurely. This level of stress can take as much as 10 years off a family caregiver's life.{/t}</li>
         </ul>
-        <p>{t}Caregiving and Work{/t}</p>
+        <h5>{t}Caregiving and Work{/t}</h5>
         <ul>
           <li>{t}Six in 10 family caregivers are employed.{/t}</li>
           <li>{t}73% of family caregivers who care for someone over the age of 18 either work or have worked while providing care; 66% have had to make some adjustments to their work life, from reporting late to work to giving up work entirely; and 1 in 5 family caregivers have had to take a leave of absence.{/t}</li>
           <li>{t}64% of working parents caring for a special needs child believe that caregiving responsibility has negatively impacted their work performance.{/t}</li>
-          <li>{t}American businesses can lose as much as $34 billion each year due to employees' need to care for loved ones 50 years of age and older.{/t}</li>
-          <li>{t}Caregivers caring for elderly loved ones cost employers 8% more in health care costs estimated to be worth $13.4 billion per year.{/t}</li>
-          <li>{t}Over 65% of employers believe that health benefits improve employees' health. Sixty percent (60%) believe it increases moral and 39% believe it increases productivity.{/t}</li>
         </ul>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
-    
-    <!-- Lesson 2 - slide #4 -->
-    
     <div id="lesson-2-slide-4" class="course-slide">
       <div class="content">
-        <h2 class="flowers">{t}Data on US Caregivers (continued){/t}</h2>
+        <h2 class="flowers">{t}Additional Data{/t}</h2>
         <hr />
-        <p>{t}Caregiving and Health Care{/t}</p>
+        <h4>{t}Caregiving and Health Care{/t}</h4>
         <p>{t}22% of family caregivers say they need help communicating with physicians. Focus group research suggests that family caregivers do not recognize that public policy has a direct impact on their day-to-day lives. Many are uncomfortable even thinking there might be a connection.{/t}</p>
-        <p>{t}Caregiving Self-Awareness{/t}</p>
+        <h5>{t}Caregiving Self-Awareness{/t}</h5>
         <ul>
           <li>{t}Over 90% of family caregivers become more proactive about seeking resources and skills they need to assist their care recipient after they have self-identified.{/t}</li>
           <li>{t}83% of self-identified family caregivers believe their self-awareness led to increased confidence when talking to healthcare professionals about their loved one's care.{/t}</li>
           <li>{t}For over 75% of family caregivers it was the act of helping their loved one with personal care that contributed to their self-identification.{/t}</li>
-          <li>{t}For 60% of family caregivers, their loved one's diagnosis and their interaction with the health care system made them aware that they were family caregivers.{/t}</li>
         </ul>
-        <p>{t}State by State Statistics{/t}</p>
-        <p>{t}The economic value of family caregiving is detailed here in a state-by-state comparison of the number of family caregivers in the country, the number of hours they spend on caregiving responsibilities, and the market value of those services. As noted above the most recent estimate of the value of family caregivers' services is $306 billion annually. This report is based on the state-by-state statistics for 2004 and prepared in August of 2006 by NFCA and the Family Caregiver Alliance's National Center of Caregiving in conjunction with Peter S. Arno, PhD, Department of Epidemiology and Population Health, Montefiore Medical Center, Albert Einstein College of Medicine. The data and methodology are based on Dr. Arno's previous study, Economic Value of Informal Caregiving: 2004.{/t}</p>
-        <p>{t}Search the Web for additional details or for greater explanations of these topics. Also, search and download and read the following report from the Web: 2011 Alzheimer’s Disease Facts and Figures.{/t}</p>
-        <p>{t}While these published statistics are a great resource for caregivers, they can be easily and quickly get out-dated. Search the Web, and post to the Forum, any updated data and/or statistics for the US or your State/Region.{/t}</p>
-      </div>
+        <h5>{t}State by State Statistics{/t}</h5>
+        <p>{t}There are many reports that detail the economic value of family caregiving in a state-by-state comparison of the number of family caregivers in the country, the number of hours they spend on caregiving responsibilities, and the market value of those services. Also reported, the most recent estimate of the value of family caregivers' services can reach hundreds of billions of US dollars, annually.{/t}</p>
+        <div id="question" class="question">
+          <p class="forum">Seach the Internet and read the most current report titled: Economic Value of Informal Caregiving. </p>
+          <form method="get" action="http://www.google.com/search" target="_blank">
+            <input type="text" id="google-search" name="q" size="65" maxlength="255" value="" />
+            <input type="submit" value="{t}Google Search{/t}" class="teal" />
+          </form>
+        </div>
+        <p class="forum">{t}Search the Internet, and read the most up-to-date report titled: Alzheimer’s Disease Facts and Figures. Post your thoughts and any statistical data about your region or state to the Forum.</p>
+        <img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}"> </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
-    
-    <!-- Lesson 2 - slide #5 -->
-    
     <div id="lesson-2-slide-5" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}Trends on US Caregivers{/t}</h2>
@@ -391,81 +380,99 @@ foreach(array(
           <li>{t}the aging of the American population,{/t}</li>
           <li>{t}the aging of the American workforce,{/t}</li>
           <li>{t}an increasing number of women in the workforce,{/t}</li>
-          <li>{t}changes in family size and composition, and{/t}</li>
-          <li>{t}rising health care costs and the informalization of care.{/t}</li>
         </ul>
-        <p>{t}The American population is aging{/t}</p>
+        <h5>{t}The American population is aging{/t}</h5>
         <p>{t}Over the last century, the proportion of older Americans tripled. This aging of the population resulted not only from increases in life expectancy, but also because of a decline in the birth rate. In 2000, there were about 35 million Americans over the age of 65 representing 12.4% of the American population. By 2020, persons aged 65 or older are expected to comprise 20% of the U.S. population. And by 2030, older Americans are projected to outnumber children under the age of 18.{/t}</p>
-        <p>{t}There are more than 13 million Americans with long-term care needs in the U.S., more than half of whom are over the age of 65. Over the next 25 years, as the Baby Boom generation ages, some have estimated that the number of persons requiring long-term care may double. Among the older adult population, those 85 years of age and older showed the highest percentage increase between 1990 and 2000, growing by 38%. Although the disability rates of older adults have declined, advanced age remains associated with an increased risk of chronic illness and need for assistance in performing activities of daily living. In fact, almost half of people aged 85+ need assistance with the activities of daily living. In addition, increased longevity may mean that there will be longer periods of dependency on middle-aged or older adult children for older people, and that adult children may become responsible for the care of family members from two older generations, either sequentially or simultaneously.{/t}</p>
+        <p>{t}There are more than 13 million Americans with long-term care needs in the U.S., more than half of whom are over the age of 65. Over the next 25 years, as the Baby Boom generation ages, some have estimated that the number of persons requiring long-term care may double. Among the older adult population, those 85 years of age and older showed the highest percentage increase between 1990 and 2000, growing by 38%. Although the disability rates of older adults have declined, advanced age remains associated with an increased risk of chronic illness and need for assistance in performing activities of daily living. In fact, almost half of people aged 85+ need assistance with the activities of daily living.{/t}</p>
+        <p>{t}In addition, increased longevity may mean that there will be longer periods of dependency on middle-aged or older adult children for older people, and that adult children may become responsible for the care of family members from two older generations, either sequentially or simultaneously.{/t}</p>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
-    
-    <!-- Lesson 2 - slide #6 -->
-    
     <div id="lesson-2-slide-6" class="course-slide">
       <div class="content">
-        <h2 class="flowers">{t}Trends on US Caregivers (continued){/t}</h2>
+        <h2 class="flowers">{t}Additional Trends{/t}</h2>
         <hr />
-        <p>{t}The combination of an aging workforce and a declining birth rate suggests that support for the growing older population will be limited -{/t}</p>
+        <img src="<?php echo $this->getImagesUrl('intro/92963839.png'); ?>" alt="{t}image{/t}">
+        <h5>{t}The combination of an aging workforce and a declining birth rate suggests that support for the growing older population will be limited -{/t}</h5>
         <p>{t}This is supported by the decrease in family members available to help, and because public health care dollars generated through income taxes will be diminished due to the smaller workforce. In 1978, the median age of the labor force was 34.8. In 1988, it was 35.9. In 2008 it was 41.2, and it is projected to be 42.3 by 2018. Contributing to this trend is the decrease in early retirement and an increase in post-retirement work. A recent survey of Baby Boomers, by the Committee for Economic Development, found that 70% intend to work at least part-time after retirement. As the average age of the workforce increases, elder care and other issues related to this aging workforce are likely to overshadow childcare in importance for workers and for employers who need to retain valued workers.{/t}</p>
-        <p>{t}More women are in the workforce -{/t}</p>
+        <h5>{t}More women are in the workforce -{/t}</h5>
         <p>{t}Ginzberg called the entry of women into the paid labor force "the single most important phenomenon of the mid-twentieth century," affecting every aspect of society. Today, women comprise about 46% of the workforce, compared to about 37% in 1970. From 1986 to 1996, the number of women in the workforce increased by 18%; from 1996 to 2006, this number is expected to increase by an additional 14%. Nearly 80% of women between the ages of 25 and 54 are in the labor force today. Between 1988 and 2000, almost two-thirds of new entrants into the workforce were expected to be women, and this trend is expected to continue. As female labor participation has grown, so too has concern for the groups traditionally cared for by women: elders as well as children.{/t}</p>
-        <p>{t}Family size and composition are changing -{/t}</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
+    <div id="lesson-2-slide-7" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Additional Trends{/t}</h2>
+        <hr />
+        <img src="<?php echo $this->getImagesUrl('intro/92963839.png'); ?>" alt="{t}image{/t}">
+        <h5>{t}Family size and composition are changing -{/t}</h5>
         <p>{t}The previously dominant family type of a sole wage-earner father with a wife/mother who stayed at home to raise children has been replaced by the dual-earner or the single-parent household. Couples often cohabitate without formally marrying, and in most couples, both partners work. Marriages occur later and are less enduring, and births are later and fewer in number. Most children have mothers who work. The number of single-parent families has skyrocketed. Many families today are “blended” families, with stepchildren and stepparents. And many families have multiple responsibilities for children and elders who are either living with the families or apart. The number of three-generation households is growing, and the number of grandparents raising grandchildren is increasing. Finally, geographic mobility of families has increased, with more adult children living at a distance from their elders needing care. This latter trend has resulted in approximately seven million Americans involved in long-distance caregiving.{/t}</p>
         <p>{t}Moreover, as the primary household configuration has changed, and with the increased proportion of women in the paid labor force, life styles have been altered and there is a trend toward redistribution of traditional gender role responsibilities. Men now play a larger role, either forced or desired, in child-rearing, performance of household tasks, and elder care. Although the general caregiving literature reports that women comprise about 72% of the primary caregivers to elders, a different pattern emerges when working populations are surveyed. For example, in an early study of 9,573 employees in 33 organizations, Neal, Chapman and Ingersoll-Dayton found that 63% of the caregivers to elders were women, and 37% were men. In the 1997 National Study of the Changing Workforce, found that as many men as women in the workplace reported that they had caregiving responsibilities for an older adult.{/t}</p>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
-    
-    <!-- Lesson 2 - slide #7 -->
-    
-    <div id="lesson-2-slide-7" class="course-slide">
-      <div class="content">
-        <h2 class="flowers">{t}Trends on US Caregivers (continued){/t}</h2>
-        <hr />
-        <p>{t}Health care costs have risen dramatically -{/t}</p>
-        <p>{t}This key trend has resulted in the implementation of cost containment measures and the further informalization of care, that is, increased reliance on family and friends to provide informal care to substitute for formal health care services. Older adults who, in the past, remained in the hospital for most of their recovery period from an illness or accident are today sent home after considerably fewer days and with less “formal” support. Family members and other informal supports are left to manage the overall care of an elder and to perform sometimes very complicated health care tasks. This often comes at great personal expense and frequently with little or no training or resources from health care professionals.{/t}</p>
-        <p>{t}Taken together, these aging, workforce, family, and health care-related trends mean that there are growing numbers of people who must juggle the demands of their work with those of their families. The cost of replacing the work of these informal caregivers with paid home care has been estimated to range from $45-75 billion to $196 billion dollars per year. This latter figure represents about 18% of total national health care spending per year. Although the American family continues to perform the basic family functions of socialization, care and nurturing of its members, the ways in which family functions are performed now differ. It is clear that for most families today, reliance on a stay-at-home spouse to handle family responsibilities is not an option. Also, increasingly there will be fewer children to care for aging parents. The implications of these trends for caregiving in the future are that there will be more elders who need care, fewer women who can devote their full attention to providing this care due to their paid work responsibilities, more men who will be involved in caregiving, more care provided by non-relatives, and more caregivers who will also be engaged in paid work. Conflicts between work and family are becoming more common and are of concern to employers and workers alike. So, who are these working caregivers, and how many of them are there?{/t}</p>
-        <p>{t}List other trends you may find in the US on the Forum. Also, comment on these listed trends and if you can see signs of these trends in your perosnal life. Finally, search the Web and post to the Forum how many caregivers are in your State/Region and what, in general, are their biggest challenges.{/t}</p>
-      </div>
-      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
-    </div>
-    
-    <!-- Lesson 2 - slide #8 -->
-    
     <div id="lesson-2-slide-8" class="course-slide">
       <div class="content">
-        <h2 class="flowers">{t}Current Research on US Caregivers{/t}</h2>
+        <h2 class="flowers">{t}Additional Trends{/t}</h2>
         <hr />
-        <p>{t}The first national profile of caregivers was Caregiving in the US, published in 1997. The study was updated in 2004. In 2009, the National Alliance for Caregiving in collaboration with the AARP completed the most comprehensive examination to date of caregiving in America.{/t}</p>
-        <p>{t}The 2009 study, funded by The MetLife Foundation, reveals that:{/t}</p>
+        <h5>{t}Health care costs have risen dramatically -{/t}</h5>
+        <p>{t}This key trend has resulted in the implementation of cost containment measures and the further informalization of care, that is, increased reliance on family and friends to provide informal care to substitute for formal health care services. Older adults who, in the past, remained in the hospital for most of their recovery period from an illness or accident are today sent home after considerably fewer days and with less <i>formal</i> support. Family members and other informal supports are left to manage the overall care of an elder and to perform sometimes very complicated health care tasks. This often comes at great personal expense and frequently with little or no training or resources from health care professionals.{/t}</p>
+        <p>{t}Taken together, these aging, workforce, family, and health care-related trends mean that there are growing numbers of people who must juggle the demands of their work with those of their families. The cost of replacing the work of these informal caregivers with paid home care has been estimated to range from $45 - 75 billion to $196 billion dollars per year. This latter figure represents about 18% of total national health care spending per year. Although the American family continues to perform the basic family functions of socialization, care and nurturing of its members, the ways in which family functions are performed now differ. It is clear that for most families today, reliance on a stay-at-home spouse to handle family responsibilities is not an option. Also, increasingly there will be fewer children to care for aging parents.{/t}</p>
+        <p>{t}The implications of these trends for caregiving in the future are that there will be more elders who need care, fewer women who can devote their full attention to providing this care due to their paid work responsibilities, more men who will be involved in caregiving, more care provided by non-relatives, and more caregivers who will also be engaged in paid work. Conflicts between work and family are becoming more common and are of concern to employers and workers alike. So, who are these working caregivers, and how many of them are there?{/t}</p>
+        <p class="forum">{t}Search the Internet for other trends you may find in the US, and post your findings on the Forum. As you comment on these listed trends, also share if you can see signs of these trends in your perosnal life. Finally, search the Internet and post to the Forum how many caregivers are in your State/Region and what, in general, are their biggest challenges.{/t}</p>
+        <img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}"> </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
+    <div id="lesson-2-slide-9" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Research on US Caregivers{/t}</h2>
+        <hr />
+        <img src="<?php echo $this->getImagesUrl('intro/118562621.png'); ?>" alt="{t}image{/t}">
+        <p>{t}One of the first national profiles of caregivers was <a href="http://assets.aarp.org/rgcenter/il/caregiving_97.pdf" target="_blank">Family Caregiving in the US</a>, published in 1997. The study has been updated since then. In 2009, the <a href="http://www.caregiving.org" target="_blank">National Alliance for Caregiving</a> (NAC) in collaboration with the <a href="http://www.aarp.org" target="_blank">AARP</a> completed the most comprehensive examination to date of caregiving in America: <a href="https://www.metlife.com/assets/cao/mmi/publications/studies/2010/mmi-working-caregivers-employers-health-care-costs.pdf" target="_blank">The MetLife Study of Working Caregivers and Employer Health Care Costs</a>.{/t}</p>
+        <p>{t}Funded by The MetLife Foundation, the study reveals that:{/t}</p>
         <ul>
           <li>{t}29% of the U.S. adult population are caregivers.{/t}</li>
           <li>{t}On average, they provide 20 hours of care per week.{/t}</li>
           <li>{t}Of those 65.7 million people, approximately three-fourths of caregivers are or were working while providing care.{/t}</li>
-          <li>{t}That there has been an increase in the proportion of those working caregivers who say they have had to make a workplace accommodation because of caregiving.{/t}</li>
         </ul>
-        <p>{t}Search the Web, download and read the Caregiving in the US, Executive Summary, funded by The MetLife Foundation.{/t}</p>
-        <p>{t}Search the Web for 2011, research in-place, about US caregivers and post it to the Forum.{/t}</p>
+        <p class="forum">{t}Search the Internet and downlaod at least two recent studies associated with the financial impact caregiving has on businesses, and attach them to a posting on the Forum.{/t}</p>
+        
+        <img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}">
       </div>
       <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Complete Lesson{/t}</a></div>
     </div>
   </div>
-  
-  <!-- Lesson #3 - slide #1 -->
-  
   <div id="lesson-3">
     <div id="lesson-3-slide-1" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}General Challenges Associated with Caregiving{/t}</h2>
         <hr />
-        <p>{t}In this week’s lesson, we will:{/t}</p>
+        
+                <img src="<?php echo $this->getImagesUrl('intro/sb10069456i-001.png'); ?>" alt="{t}image{/t}">
+
+        
+        <p>{t}In this module, we will:{/t}</p>
         <ul>
           <li>{t}Locate and explore general challenges associated with caregiving{/t}</li>
           <li>{t}Locate and explore various local and regional resources for caregivers{/t}</li>
           <li>{t}Discss long-distance caregiving and potential solutions{/t}</li>
         </ul>
+        
+        <p>{t}Caring for others is filled with many mixed and varied emotions such as feelings of love, loss, anger, affection, sadness, frustration, and guilt. It’s not uncommon for family caregivers to feel lonely and isolated. It takes a lot of physical, mental, spiritual, and emotional energy to care for a loved one.{/t}</p>
+        
+        <p>{t}No one can ever be fully prepared for the challenges of caregiving. The tasks and responsibilities involved can be demanding, even more so when caregivers themselves are frail, have been thrust into their role unexpectedly or reluctantly, or must care for someone who is uncooperative or combative.{/t}</p>
+        
+         <div id="question1" class="question">
+          <p><b>{t}Caregivers often experience a higher rate of stress, anxiety, and depression than those who are not caregivers.{/t}</b><br />
+            <select>
+              <option selected="selected" value="select"> {t}Select{/t} </option>
+              <option value="1"> {t}True{/t} </option>
+              <option value="0"> {t}False{/t} </option>
+            </select>
+          </p>
+          <p class="right-answer hide"> {t}Correct! Caregivers experience a higher rate of stress, anxiety, and depression than those who are not caregivers.{/t} </p>
+          <p class="wrong-answer hide"> {t}Incorrect. This module will help you learn more about the challenges associted ith caregiving.{/t} </p>
+        </div>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button right"	onclick="$.fancybox.next();">{t}Start Course &raquo;{/t}</a></div>
     </div>
@@ -476,10 +483,9 @@ foreach(array(
       <div class="content">
         <h2 class="flowers">{t}Challenges Associated with Caregiving{/t}</h2>
         <hr />
-        <p>{t}Caring for others is filled with many mixed and varied emotions such as feelings of love, loss, anger, affection, sadness, frustration, and guilt. It’s not uncommon for family caregivers to feel lonely and isolated. It takes a lot of physical, mental, spiritual, and emotional energy to care for a loved one.{/t}</p>
-        <p>{t}No one can ever be fully prepared for the challenges of caregiving. The tasks and responsibilities involved can be demanding, even more so when caregivers themselves are frail, have been thrust into their role unexpectedly or reluctantly, or must care for someone who is uncooperative or combative.{/t}</p>
-        <p>{t}Types of Challenges{/t}</p>
-        <p>{t}Physical -{/t}</p>
+    
+        <h4>{t}Types of Challenges{/t}</h4>
+        <h5>{t}Physical -{/t}</h5>
         <p>{t}Elder care provides a number of unique opportunities as well as challenges to adult children, family members and friends. Challenges to providing in home care may range from the physical to the emotional to the mental.{/t}</p>
         <p>{t}You may be physically fit, but mentally unable to provide special care for an individual diagnosed with late-stage Alzheimer's disease. Or, you may be emotionally and mentally able to care for the needs of an elderly person, but be physically weak in body, which may lead to less than quality of in home care and as such safe care for your loved one.{/t}</p>
         <p>{t}Understanding the unique challenges that face in home care givers today will help you make educated, safe and effective decisions regarding care for your parent, grandparent, or other elderly loved one.{/t}</p>
