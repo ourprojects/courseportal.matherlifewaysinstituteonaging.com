@@ -1393,9 +1393,13 @@ foreach(array(
         <p class="right-answer hide"> {t}Correct!{/t} </p>
         <p class="wrong-answer hide"> {t}Incorrect. Please review module two.{/t} </p>
       </div>
+      
+      
     </div>
     <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Start Module &raquo;{/t}</a></div>
   </div>
+  
+  
   <div id="lesson-3-slide-2" class="course-slide">
     <div class="content">
       <h2 class="flowers">{t}Welcome Back!{/t}</h2>
@@ -1403,22 +1407,28 @@ foreach(array(
       <img src="<?php echo $this->getImagesUrl('msml/135545925.png'); ?>" alt="image">
       <p>{t}Welcome to the third module of MSML Online.{/t}</p>
       <p class="forum">{t}Before you begin, post any questions or comments related to module two, "Communication Strategies", to the Forum.{/t}</p>
-      <img src="<?php echo $this->getImagesUrl('msml/forum_icon.png'); ?>" alt="image"> </div>
+      <img src="<?php echo $this->getImagesUrl('msml/forum_icon.png'); ?>" alt="image">
+      
+       </div>
     <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
   </div>
+  
+  
   <div id="lesson-3-slide-3" class="course-slide">
     <div class="content">
       <h2 class="flowers">{t}Module Three: Making Decisions{/t}</h2>
       <hr />
+      
       <img src="<?php echo $this->getImagesUrl('msml/100640358.png'); ?>" alt="image">
       <h5><i>{t}"Not to decide is to decide."{/t}</i></h5>
-      <p>{t}In this module, we go into depth about the changes that occur in the relationship between you and your
-        relative as a result of memory loss. Your role gradually must change so that you become the chief decision maker
-        in the relationship.{/t}</p>
+      <p>{t}In this module, we go into depth about the changes that occur in the relationship between you and your relative as a result of memory loss. Your role gradually must change so that you become the chief decision maker in the relationship.{/t}</p>
       <p class="forum">{t}Are you the cheif decision maker in your household? Post your response to the Forum{/t}</p>
-      <img src="<?php echo $this->getImagesUrl('msml/forum_icon.png'); ?>" alt="image"> </div>
+      <img src="<?php echo $this->getImagesUrl('msml/forum_icon.png'); ?>" alt="image"> 
+      </div>
     <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
   </div>
+  
+  
   <div id="lesson-3-slide-4" class="course-slide">
     <div class="content">
       <h2 class="flowers">{t}Shifting the Balance of Power{/t}</h2>
@@ -1429,33 +1439,16 @@ foreach(array(
         <li>{t}Quietly take the lead as if a great dancer{/t}</li>
       </ul>
       <h5>{t}Preserve independence and meet dependence{/t}</h5>
-      <p>{t}When you begin to recognize the limits of your relative’s memory and thinking abilities, you become
-        better equipped to address his or her needs in practical decisions such as driving a car, handling money,
-        and the like. These decisions require your active involvement. Helping someone to make such decisions
-        may seem uncomfortable at first, especially if he or she does not recognize limits with memory and
-        thinking. Unfortunately, he or she no longer has the capacity to be fully self‐sufficient although many
-        abilities remain intact. The balance of power must begin to shift. You must decide how and when to keep a
-        delicate balance between honoring the person’s need for independence versus the legitimate need for
-        dependence. This requires much tact and patience in making decisions.{/t}</p>
+      <p>{t}When you begin to recognize the limits of your relative’s memory and thinking abilities, you become better equipped to address his or her needs in practical decisions such as driving a car, handling money, and the like. These decisions require your active involvement. Helping someone to make such decisions may seem uncomfortable at first, especially if he or she does not recognize limits with memory and thinking. Unfortunately, he or she no longer has the capacity to be fully self‐sufficient although many abilities remain intact. The balance of power must begin to shift. You must decide how and when to keep a delicate balance between honoring the person’s need for independence versus the legitimate need for dependence. This requires much tact and patience in making decisions.{/t}</p>
       <p class="forum">{t}Let’s consider the following example:{/t}</p>
-      <p class="forum">{t}Your 81‐year‐old mother has Alzheimer’s disease and lives alone. One day she says that you are
-        responsible for managing her finances, after you found out that her bills were overdue. She is now upset
-        because she feels you are trying to control her life. You make all the decisions because you think you know
-        what is best for me. I’m not a child just because I can’t do what I used to do.{/t}</p>
+      <p class="forum">{t}Your 81‐year‐old mother has Alzheimer’s disease and lives alone. One day she says that you are responsible for managing her finances, after you found out that her bills were overdue. She is now upset because she feels you are trying to control her life. You make all the decisions because you think you know what is best for me. I am not a child just because I can’t do what I used to do.{/t}</p>
       <p class="forum">{t}How might you address her complaint? Take about 5 minutes to brainstorm a solution that is satisfactory to both parties, and post your response to the Forum.{/t}</p>
       <img src="<?php echo $this->getImagesUrl('msml/forum_icon.png'); ?>" alt="image">
       <h5>{t}Making decisions – alone or together{/t}</h5>
-      <p>{t}Instead of involving someone with memory loss in every decision and run the risk of causing confusion, it is
-        best to narrow the choices. For example, if a big decision, such as a move, is looming, it would be chaotic
-        to involve the person with memory loss. However, it would be appropriate to involve the person with
-        decisions like what furniture to keep or discard.{/t}</p>
+      <p>{t}Instead of involving someone with memory loss in every decision and run the risk of causing confusion, it is best to narrow the choices. For example, if a big decision, such as a move, is looming, it would be chaotic to involve the person with memory loss. However, it would be appropriate to involve the person with decisions like what furniture to keep or discard.{/t}</p>
       <h5>{t}Quietly take the lead as if a great dancer{/t}</h5>
-      <p>{t}One way to visualize the lead role you must now take is to consider a couple engaged in ballroom dancing.
-        Although the man takes the lead, the woman who is his partner is actively responding to his cues and
-        steps. This is done in a spirit of cooperation but it requires that each person accepts an agreed upon role.
-        You must now learn how to take the lead in the relationship, but to the extent possible, seek the
-        cooperation of the other person.{/t}</p>
-      /div>
+      <p>{t}One way to visualize the lead role you must now take is to consider a couple engaged in ballroom dancing. Although the man takes the lead, the woman who is his partner is actively responding to his cues and steps. This is done in a spirit of cooperation but it requires that each person accepts an agreed upon role. You must now learn how to take the lead in the relationship, but to the extent possible, seek the cooperation of the other person.{/t}</p>
+   </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
     <div id="lesson-3-slide-5" class="course-slide">
@@ -2340,3 +2333,4 @@ foreach(array(
     </div>
   </div>
 </div>
+<!-- used this div below to correct open div with no closing somewhere above -->
