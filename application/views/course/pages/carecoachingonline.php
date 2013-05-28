@@ -39,7 +39,7 @@ foreach(array(
     <img src="<?php echo $this->getImagesUrl('msml/153075496.png'); ?>" alt="image"> </div>
   <div class="box-sidebar one">
     <h3>{t}Working Caregivers in America{/t}</h3>
-    <img src="<?php echo $this->getImagesUrl('286x366_Grafix_69pc.png'); ?>" alt="image" class="block center" />
+    <img src="<?php echo $this->getImagesUrl('care/286x366_Grafix_69pc.png'); ?>" alt="image" class="block center" />
     <p>{t}69% of working caregivers report having to rearrange their work schedule, decrease their hours, or take an 
 	unpaid leave of absence to meet their care-giving responsibilities.{/t}</p>
   </div>
@@ -73,7 +73,7 @@ foreach(array(
   </ul>
   <h5>{t}Course Agenda{/t}</h5>
   <a href="<?php echo $this->getImagesUrl('CCOAssets/CARECoachingSyllabus.pdf'); ?>" target="_blank"><img src="<?php echo $this->getImagesUrl('pdf-icon.png'); ?>" alt="{t}Course Syllabus{/t}" /></a> <br />
-  <h4>{t}Course Lessons{/t}</h4>
+  <h4>{t}Course Modules{/t}</h4>
   
   <!-- Bullet points start here for course lessons, hyperlinks to FancyBox -->
   <ul>
