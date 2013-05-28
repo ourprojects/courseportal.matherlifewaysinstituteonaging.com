@@ -15,8 +15,8 @@ foreach(array(
 	$this->widget(
 			'ext.fancybox.EFancyBox',
 			array('id' => $lesson,
-				  'config' => array('width' => '90%',
-									'height' => '90%',
+				  'config' => array('width' => '720',
+									'height' => '1000',
 									'arrows' => false,
 									'autoSize' => false,
 									'mouseWheel' => false))
@@ -130,15 +130,13 @@ AARP provides various articles of interest and resources for family caregivers. 
   </div>
 </div>
 
-<!-- Care Coaching -->
-
 <div id="course" class="hide">
   <div id="lesson-1">
     <div id="lesson-1-slide-1" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}Welcome to CARE Coaching Online!{/t}</h2>
         <hr />
-        <img src="<?php echo $this->getImagesUrl('3223247r.jpg'); ?>" alt="image" />
+        <img src="<?php echo $this->getImagesUrl('care/3223247-531x800.png'); ?>" alt="image" />
         <p>{t}We are so pleased you can participate in this online course. This online course is 7 weeks in length. The class moves forward on interval units to encourage discussion about specific topics each week. You may log on any time during the week for a few hours by reading the content and participating.  Please note: participation will enhance what you get out of this course and will create a successful experience for you and others.{/t}</p>
         <h4>{t}Technical Requirements{/t}</h4>
         <p>{t}There are minimal technical requirements for participation in CARE Coaching Online, such as Internet access and e-mail.  Special software and hardware are not needed, and plug-ins are available at no cost; if needed, plug-ins can be found at blue skeleton.  Support is available 24 hours a day via a toll-free telephone number or via email. Just click on the ‘Help” icon in the top toolbar.{/t}</p>
@@ -162,7 +160,6 @@ AARP provides various articles of interest and resources for family caregivers. 
       <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Start Course &raquo;{/t}</a></div>
     </div>
     
-    <!-- Care Coaching -->
     
     <div id="lesson-1-slide-2" class="course-slide">
       <div class="content">
@@ -190,13 +187,12 @@ AARP provides various articles of interest and resources for family caregivers. 
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t} </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
     
-    <!-- Care Coaching -->
-    
+
     <div id="lesson-1-slide-3" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}What’s CARE Coaching all about?{/t}</h2>
         <hr />
-        <img src="<?php echo $this->getImagesUrl('3663024r.png'); ?>" alt="image" />
+        <img src="<?php echo $this->getImagesUrl('care/3663024-532x800.png'); ?>" alt="image" />
         <p>{t}You are probably familiar with the term “coaching” from many aspects of our daily lives.{/t}</p>
         <p>{t}As a parent or sibling, you may be involved in coaching little league or some other sport.  Usually this form of coaching involves teams.  The role of the coach is to motivate, set ground rules, and draw out the best in each player for the good of the team.{/t}</p>
         <p>{t}In the work environment, coaching may also involve the work team or individual.  Coaching the work team may involve looking at ways to turn barriers into opportunities for the good of the team and company.  An organization may bring in a professional coach to build sustainable, high-performance work teams and thus build the company’s competitive advantage over other organizations.  At the individual level, a coach may focus on leadership development showing the company’s commitment to build a strong base of effective leaders.{/t}</p>
