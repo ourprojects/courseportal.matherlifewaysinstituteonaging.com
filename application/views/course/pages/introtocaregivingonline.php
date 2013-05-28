@@ -69,7 +69,7 @@ foreach(array(
   <ul>
     <li> <a href="#lesson-1-slide-1" data-fancybox-group="lesson-1" class="teal lesson-1"> {t}Defining, Describing & Understanding Caregiving{/t} </a> <a href="#lesson-1-slide-2" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-3" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-4" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-5" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-6" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-7" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-8" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-9" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-10" data-fancybox-group="lesson-1" class="hide lesson-1"></a> </li>
     <li> <a href="#lesson-2-slide-1" data-fancybox-group="lesson-2" class="teal lesson-2"> {t}Current Data, Trends & Research on US Caregivers{/t} </a> <a href="#lesson-2-slide-2" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-3" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-4" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-5" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-6" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-7" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-8" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-9" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-10" data-fancybox-group="lesson-2" class="hide lesson-2"></a> </li>
-    <li> <a href="#lesson-3-slide-1" data-fancybox-group="lesson-3" class="teal lesson-3"> {t}General Challenges Associated with Caregiving{/t} </a> <a href="#lesson-3-slide-2" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-3" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-4" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-5" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-6" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-7" data-fancybox-group="lesson-3" class="hide lesson-3"></a> </li>
+    <li> <a href="#lesson-3-slide-1" data-fancybox-group="lesson-3" class="teal lesson-3"> {t}General Challenges Associated with Caregiving{/t} </a> <a href="#lesson-3-slide-2" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-3" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-4" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-5" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-6" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-7" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-8" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-9" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-10" data-fancybox-group="lesson-3" class="hide lesson-3"></a> </li>
     <li> <a href="#lesson-4-slide-1" data-fancybox-group="lesson-4" class="teal lesson-4"> {t}Impact on the Workplace & the Economy{/t} </a> <a href="#lesson-4-slide-2" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-3" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-4" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-5" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-6" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-7" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-8" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-9" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-10" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-11" data-fancybox-group="lesson-4" class="hide lesson-4"></a> </li>
     <li> <a href="#lesson-5-slide-1" data-fancybox-group="lesson-5" class="teal lesson-5"> {t}The Future of Caregiving in the US{/t} </a> <a href="#lesson-5-slide-2" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-3" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-4" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-5" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-6" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-7" data-fancybox-group="lesson-5" class="hide lesson-5"></a> </li>
   </ul>
@@ -436,9 +436,7 @@ foreach(array(
           <li>{t}Of those 65.7 million people, approximately three-fourths of caregivers are or were working while providing care.{/t}</li>
         </ul>
         <p class="forum">{t}Search the Internet and downlaod at least two recent studies associated with the financial impact caregiving has on businesses, and attach them to a posting on the Forum.{/t}</p>
-        
-        <img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}">
-      </div>
+        <img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}"> </div>
       <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Complete Lesson{/t}</a></div>
     </div>
   </div>
@@ -447,22 +445,16 @@ foreach(array(
       <div class="content">
         <h2 class="flowers">{t}General Challenges Associated with Caregiving{/t}</h2>
         <hr />
-        
-                <img src="<?php echo $this->getImagesUrl('intro/sb10069456i-001.png'); ?>" alt="{t}image{/t}">
-
-        
+        <img src="<?php echo $this->getImagesUrl('intro/sb10069456i-001.png'); ?>" alt="{t}image{/t}">
         <p>{t}In this module, we will:{/t}</p>
         <ul>
           <li>{t}Locate and explore general challenges associated with caregiving{/t}</li>
           <li>{t}Locate and explore various local and regional resources for caregivers{/t}</li>
           <li>{t}Discss long-distance caregiving and potential solutions{/t}</li>
         </ul>
-        
         <p>{t}Caring for others is filled with many mixed and varied emotions such as feelings of love, loss, anger, affection, sadness, frustration, and guilt. It’s not uncommon for family caregivers to feel lonely and isolated. It takes a lot of physical, mental, spiritual, and emotional energy to care for a loved one.{/t}</p>
-        
         <p>{t}No one can ever be fully prepared for the challenges of caregiving. The tasks and responsibilities involved can be demanding, even more so when caregivers themselves are frail, have been thrust into their role unexpectedly or reluctantly, or must care for someone who is uncooperative or combative.{/t}</p>
-        
-         <div id="question1" class="question">
+        <div id="question1" class="question">
           <p><b>{t}Caregivers often experience a higher rate of stress, anxiety, and depression than those who are not caregivers.{/t}</b><br />
             <select>
               <option selected="selected" value="select"> {t}Select{/t} </option>
@@ -476,14 +468,10 @@ foreach(array(
       </div>
       <div class="buttons"> <a href="javascript:;" class="button right"	onclick="$.fancybox.next();">{t}Start Course &raquo;{/t}</a></div>
     </div>
-    
-    <!-- Lesson #3 - slide #2 -->
-    
     <div id="lesson-3-slide-2" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}Challenges Associated with Caregiving{/t}</h2>
         <hr />
-    
         <h4>{t}Types of Challenges{/t}</h4>
         <h5>{t}Physical -{/t}</h5>
         <p>{t}Elder care provides a number of unique opportunities as well as challenges to adult children, family members and friends. Challenges to providing in home care may range from the physical to the emotional to the mental.{/t}</p>
@@ -496,74 +484,60 @@ foreach(array(
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
-    
-    <!-- Lesson #3 - slide #3 -->
-    
     <div id="lesson-3-slide-3" class="course-slide">
       <div class="content">
-        <h2 class="flowers">{t}Challenges Associated with Caregiving (continued){/t}</h2>
+        <h2 class="flowers">{t}Additional Challenges{/t}</h2>
         <hr />
-        <p>{t}Emotional -{/t}</p>
+        <h5>{t}Emotional -{/t}</h5>
         <p>{t}Caring for others is filled with many mixed and varied emotions such as feelings of love, loss, anger, affection, sadness, frustration, and guilt. It’s not uncommon for family caregivers to feel lonely and isolated. It takes a lot of physical, mental, spiritual, and emotional energy to care for a loved one. Caregivers often experience a higher rate of stress, anxiety, and depression than those who are not caregivers. You have probably heard it before – you need to take care of yourself! That can seem overwhelming and often requires energy and support to help make some changes.{/t}</p>
         <p>{t}It is important for you to feel emotionally supported. Current research is clear that those who get emotional support while caregiving fare far better and provide care longer than those who don’t. Family and friends, while a valuable emotional support system for some, may not always be available or particularly helpful now. This is not unusual. Changing family roles, unresolved past family dynamics, and stress brought on by your loved one’s health, can strain even the best of support systems and relationships.{/t}</p>
-        <p>{t}You may need more or a different kind of emotional support than your current support network can offer. What could help you feel more supported?{/t}</p>
+        <p>{t}You may need more or a different kind of emotional support than your current support network can offer. Think about what could help you feel more supported?{/t}</p>
         <ul>
           <li>{t}A few hours for yourself?{/t}</li>
           <li>{t}More information about your loved one’s disease or condition?{/t}</li>
           <li>{t}Getting some help solving caregiving problems?{/t}</li>
-          <li>{t}A sympathetic ear … someone who can listen without judging?{/t}</li>
-          <li>{t}Spending time with others, especially those in similar situations?{/t}</li>
         </ul>
         <p>{t}If any of these things would help you feel more supported, there is good news. A variety of family caregiver support services offer this kind of emotional support, information, and knowledgeable advice.{/t}</p>
-        <p>{t}Post to the Forum any emotional support you may have{/t}</p>
-      </div>
+        <p class="forum">{t}Post to the Forum any emotional support you may have. If you do not have any, please post the support you would like to have.{/t}</p>
+        <img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}"> </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
-    
-    <!-- Lesson #3 - slide #4 -->
-    
     <div id="lesson-3-slide-4" class="course-slide">
       <div class="content">
-        <h2 class="flowers">{t}Challenges Associated with Caregiving (continued){/t}</h2>
+        <h2 class="flowers">{t}Additional Challenges{/t}</h2>
         <hr />
-        <p>{t}Spiritual -{/t}</p>
+        <h5>{t}Spiritual -{/t}</h5>
         <p>{t}As a caregiver, your first priority and natural inclination is to be an advocate for your loved one’s physical health. Each day you make sure that your loved has everything he or she needs to be healthy. You administer medications, you help prepare meals, you help with housekeeping chores, and you make sure your loved one gets to each of his doctor’s appointments on time. It’s a lot of responsibility all on its own. However, for people who spend the majority of their lives engaged in spiritual activities, it is also important to help them find a way to stay spiritually connected. As a caregiver, there are several things you can do to nurture your elderly loved one’s spiritual needs.{/t}</p>
         <p>{t}Take them to worship. It might not always be possible to take your loved one to worship services, but getting them to their house of worship even a few times a year can go a long way in helping the elderly get a spiritual tune-up. Many churches, synagogues, and other places of worship have transportation available for elderly members. Seeing old friends and meeting with spiritual leaders can help encourage socialization and ward off depression.{/t}</p>
         <p>{t}Bring worship to them. Another option may be to bring religious studies to your loved one. This is a particularly beneficial option when several seniors can meet at the same home or facility. See if someone you know is willing to hold a book study or other group meeting on a regular basis at a location outside. It doesn’t have to be at traditional worship times. Any time of week that works for all involved can be a special time for spiritual activities.{/t}</p>
         <p>{t}Give them books to read. It is probably a good idea to look for large print editions. However, in lieu of that you might find audio books, too. Also, if you, another family member or a friend are willing to read aloud and discuss a religious text, it can help your loved one stay spiritually connected.{/t}</p>
         <p>{t}Have a spiritual conversation. Talking with like-minded people about spiritual questions, ideas, and convictions is another way that the elderly can have their spiritual needs met. It doesn’t have to be a formal service or a weekly meeting; just an impromptu conversation can be enough to meet your loved ones’ basic spiritual needs. How you and your loved one choose to meet the spiritual challenges of caregiving will depend largely on your loved one’s overall health, specific faith, and general worship practices. The point is that there are several options available, and sometimes all it takes is to be able to think outside the box.{/t}</p>
-        <p>{t}Please think about any spiritual support you may have{/t}</p>
-      </div>
+        <p class="forum">{t}Post to the Forum any spiritual support you may have.{/t}</p>
+        <img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}"> </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
-    
-    <!-- Lesson #3 - slide #5 -->
-    
     <div id="lesson-3-slide-5" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}Resources for Caregivers{/t}</h2>
         <hr />
         <p>{t}The Web has a ocean of information for caregivers. While it can be intimidating, part of this online course is to teach you how to use the Web to your advantage. Entering your caregiving role can be complicated enough, but you can use the Web as a first-stop for many of your questions and as your main research tools. Useful tools and resources like checklists for doctor visits, online education, links to resources, phone numbers, and answers to frequently asked questions are readily available on the Web for those who use it.{/t}</p>
-        <p>{t}At the course home page, there is a icon at the bottom of the page which provides hyper links to many caregivers resources. While this is a small list, it does provide you with many national and local resources.{/t}</p>
-        <p>{t}Do a Web search for caregiver resources and post to the Forum at least 3 new resources that are not already listed in the Resource section.{/t}</p>
-        <p>{t}To give you some more direction, visit the following Websites and/or search the web and download these reports to get a feel for the type of information that is readily available on the Internet for caregivers:{/t}</p>
+        <p>{t}On the home page for this course, there is list of hyperlinks to various caregiver resources. While this is a small list, it does provide you with several resources.{/t}</p>
+        <p class="forum">{t}Search the Internet for caregiver resources and post to the Forum at least 3 new hyperlinks that are not already listed on this course's home page under the <i>Resource</i> section.{/t}</p>
+        <img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}">
+        <p>{t}To give you some more direction, familarize yourself with the following websites:{/t}</p>
         <ul>
-          <li><a href="http://www.aoa.gov/" target="_blank">Administration on Aging</a></li>
-          <li><a href="http://www.alz.org/" target="_blank">Alzheimer's Association</a></li>
-          <li><a href="http://www.nfcacares.org/" target="_blank">National Family Caregiver's Association</a></li>
-          <li>The MetLife Study of Caregiving Costs to Working Caregivers - Double Jeopardy for Baby Boomers Caring for Their Parents June 2011</li>
+          <li>{t}<a href="http://www.aoa.gov/" target="_blank">Administration on Aging</a>{/t}</li>
+          <li>{t}<a href="http://www.alz.org/" target="_blank">Alzheimer's Association</a>{/t}</li>
+          <li>{t}<a href="http://www.nfcacares.org/" target="_blank">National Family Caregiver's Association</a>{/t}</li>
         </ul>
         <p>{t}Please think about whether or not you use the Internet as a tool when looking for caregiver resources.{/t}</p>
-        <p>{t}Video - Community Resources for Caregivers{/t}</p>
+        <h5>{t}Video - Community Resources for Caregivers{/t}</h5>
         <p>
           <iframe width="480" height="360" src="http://www.youtube.com/embed/bqefVGjaqB8?rel=0" frameborder="0" allowfullscreen></iframe>
         </p>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
-    
-    <!-- Lesson #3 - slide #6 -->
-    
     <div id="lesson-3-slide-6" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}Long Distance Caregiver - Challenges and Solutions{/t}</h2>
@@ -573,159 +547,180 @@ foreach(array(
           <li>{t}The older parent is a danger to himself{/t}</li>
           <li>{t}There are safety issues in the home environment{/t}</li>
           <li>{t}The older parent is wandering and is confused{/t}</li>
-          <li>{t}Short-term memory is getting worse{/t}</li>
-          <li>{t}Other people in the community may be taking advantage of the older person, either financially or emotionally{/t}</li>
         </ul>
         <p>{t}There are a number of challenges that the adult child faces when dealing with long-distance care of an older parent. These include the following:{/t}</p>
         <ul>
-          <li>{t}When phone conversations are held, everything sounds fine. “No need to worry dear. I am doing fine on my own,” when you know in your gut that everything is not fine.{/t}</li>
+          <li>{t}When phone conversations are held, everything sounds fine. <i>No need to worry dear. I am doing fine on my own</i>, when you know in your gut that everything is not fine.{/t}</li>
           <li>{t}Trusting someone else with the day-to-day care when you think you should be the one to provide the care.{/t}</li>
         </ul>
         <p>{t}Dealing with the various emotions often associated with caregiving, such as:{/t}</p>
         <ul>
           <li>{t}Guilt - over the fact that you are not able to be physically present all the time{/t}</li>
           <li>{t}Grief - over your relative\’s decline in health{/t}</li>
-          <li>{t}Resentment - over the fact that you don’t live closer and that others are doing more{/t}</li>
-          <li>{t}Sadness -since your relative is showing signs of decline{/t}</li>
-          <li>{t}Anxiety - at having to rush back and forth to visit and manage care from a geographical distance, and not knowing what tomorrow will bring{/t}</li>
-          <li>{t}Frustration - since you can’t be there all the time{/t}</li>
           <li>{t}Anger - at the whole situation{/t}</li>
-          <li>{t}Fear - of the unknown{/t}</li>
         </ul>
-      </div>
+        <p class="forum">{t}List other emotions that you have expereinced on the Forum.{/t}</p>
+        <img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}"> </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
-    
-    <!-- Lesson #3 - slide #7 -->
-    
     <div id="lesson-3-slide-7" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}Types of PHRs{/t}</h2>
         <hr />
-        <p>{t}Often, adult children are also faced with a demanding relative who wants to know why you just can’t drop “everything” and spend time caring for them.{/t}</p>
+        <img src="<?php echo $this->getImagesUrl('intro/140009937.png'); ?>" alt="{t}image{/t}">
+        <p>{t}Often, adult children are also faced with a demanding relative who wants to know why you just can not drop <i>everything</i> and spend time caring for them.{/t}</p>
         <p>{t}What can adult children do to be better aware of and be able to manage care for their older relative when there is a physical distance between them? The following strategies might be utilized:{/t}</p>
-        <p>{t}If there is a neighbor or close friend who lives near to the older relative, entrust them to check up and visit on a regular basis. Make sure that you are contacted if there are any serious changes that occur.{/t}</p>
-        <p>{t}Make contacts with formal services that are appropriate with the older person’s care. These services might include visiting nurses, senior centers, adult day care or a meals program. Keep in regular contact with these agencies and make sure that the older relative is receiving the care that is needed.{/t}</p>
-        <p>{t}Keep in regular contact with the older relative’s physician. Call and speak to the physician directly. If you feel comfortable, have the physician send you regular, updated notes on the visits and tests that are administered.{/t}</p>
-        <p>{t}Hire a private care manager. There are professionals throughout the country who are trained and experienced in the assessment, coordination, monitoring and direct service delivery of services to the elderly and their families. Many people hire private care managers to serve as their “eyes and ears” in relation to the status of their older relative’s condition. Private care managers can also assist families with implementing and monitoring a long-term care plan. Family members are relieved to know that someone is watching over their loved one, and is keeping them informed if a problem arises.{/t}</p>
-        <p>{t}A private care manager helps to reassure the family regarding the care that the older person is receiving. Another role is to assist in helping family members deal with emotional concerns, such as not being able to be physically present to provide care or dealing with guilt over the past relationship and emotional distance that might still be felt toward the older parent.{/t}</p>
+        <ul>
+          <li>{t}If there is a neighbor or close friend who lives near to the older relative, entrust them to check up and visit on a regular basis. Make sure that you are contacted if there are any serious changes that occur.{/t}</li>
+          <li>{t}Make contacts with formal services that are appropriate with the older person’s care. These services might include visiting nurses, senior centers, adult day care or a meals program. Keep in regular contact with these agencies and make sure that the older relative is receiving the care that is needed.{/t}</li>
+          <li>{t}Keep in regular contact with the older relative’s physician. Call and speak to the physician directly. If you feel comfortable, have the physician send you regular, updated notes on the visits and tests that are administered.{/t}</li>
+        </ul>
+        <p class="forum">{t}What other strategies can be used, when there is a physical distance between you and the person you are caring for? List your responses on the Forum.{/t}</p>
+        <img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}"> </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
+    <div id="lesson-3-slide-8" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Closing{/t}</h2>
+        <hr />
+        <img src="<?php echo $this->getImagesUrl('intro/86505302.png'); ?>" alt="{t}image{/t}">
         <p>{t}When you are not able to be around to oversee the day-to-day care of your older relative due to geographical distance, it is comforting to know that there are strategies that can be used to plan and to monitor your relative’s situation. Customizing a caregiving network will make your life much easier, which will lead to decreased stress and both you and your older relative will reap the benefit of the care that is provided.{/t}</p>
-      </div>
+        <p class="forum">{t}Please list any questions or concerns you have on the Forum. Also list any content additions or corrections you would like to suggest.{/t}</p>
+        <img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}"> </div>
       <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Complete Lesson{/t}</a></div>
     </div>
   </div>
-  
-  <!-- Lesson #4 - slide #1 -->
-  
   <div id="lesson-4">
     <div id="lesson-4-slide-1" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}Impact on the Workplace & the Economy{/t}</h2>
         <hr />
-        <p>{t}In this week’s lesson, we will:{/t}</p>
+        <img src="<?php echo $this->getImagesUrl('intro/80707212.png'); ?>" alt="{t}image{/t}">
+        <p>{t}In this module, we will:{/t}</p>
         <ul>
           <li>{t}Explore and discuss the impact caregiving has on the economy{/t}</li>
           <li>{t}Examine the impact caregiving has on the workplace{/t}</li>
           <li>{t}Explore and discuss how employers have responded to the needs of working caregivers{/t}</li>
         </ul>
+        <h4>{t}Working American Caregivers{/t}</h4>
+        <p>{t}Those who work at least 15 hours per week and help care for an aging family member, relative, or friend -- report that their caregiving obligations significantly affect their work life. The majority of caregivers say that caregiving has at least some impact on their performance at work.{/t}</p>
+        <ul>
+          <li>{t}Based on a five-point scale, where five is a great impact and one is no impact, 10% of caregivers choose five and 44% pick somewhere between two and four.{/t}</li>
+          <li>{t}Additionally, 24% of caregivers say that providing care to an aging family member, relative, or friend keeps them from being able to work more.{/t}</li>
+          <li>{t}Thirty-six percent report missing one to five days per year because of caregiving duties, while 30% say they missed six or more days in the past year. {/t}</li>
+        </ul>
+        <div id="question1" class="question">
+          <p><b>{t}Caregivers who are in more intensive caregiving situations, seem to be at greater risk for adverse financial impacts.{/t}</b><br />
+            <select>
+              <option selected="selected" value="select"> {t}Select{/t} </option>
+              <option value="1"> {t}True{/t} </option>
+              <option value="0"> {t}False{/t} </option>
+            </select>
+          </p>
+          <p class="right-answer hide"> {t}Correct! Intensive caregiving situations may require additional financial support.{/t} </p>
+          <p class="wrong-answer hide"> {t}Incorrect. This module will help you learn more about the financial impacts of caregiving.{/t} </p>
+        </div>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Start Course &raquo;{/t}</a></div>
     </div>
-    
-    <!-- Lesson #4 - slide #2 -->
-    
     <div id="lesson-4-slide-2" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}Impact on the Economy{/t}</h2>
         <hr />
-        <p>{t}Working American caregivers -- those who work at least 15 hours per week and help care for an aging family member, relative, or friend -- report that their caregiving obligations significantly affect their work life. The majority of caregivers say that caregiving has at least some impact on their performance at work. Based on a five-point scale, where five is a great impact and one is no impact, 10% of caregivers choose five and 44% pick somewhere between two and four. Additionally, 24% of caregivers say that providing care to an aging family member, relative, or friend keeps them from being able to work more. Most caregivers also report missing entire workdays as a result of their caregiving responsibilities. Thirty-six percent report missing one to five days per year because of caregiving duties, while 30% say they missed six or more days in the past year.{/t}</p>
+        <img src="<?php echo $this->getImagesUrl('intro/121371451.png'); ?>" alt="{t}image{/t}">
         <p>{t}Overall, caregivers reporting missing an average of 6.6 workdays per year. With approximately 17% of the American full-time workforce acting as caregivers, this amounts to a combined 126 million missed workdays each year. This absenteeism costs the U.S. economy an estimated $25.2 billion in lost productivity per year. Including caregivers who work part time in the equation would cause absenteeism costs to climb even higher.{/t}</p>
-        <p>{t}These findings are from a special survey of Americans who self-identified as caregivers in Gallup-Healthways Well-Being Index surveys throughout 2010. Gallup recontacted those self-identified caregivers and interviewed 2,805 who were also employed at least 15 hours per week for a Pfizer-ReACT/Gallup poll specifically about caregiving. All respondents answered affirmatively to the question, "Do you currently help care for an elderly family member, relative, or friend, or not?"{/t}</p>
-        <p>{t}Most Working Caregivers in Professional Roles{/t}</p>
-        <p>{t}Nearly one-third of all working caregivers are in a professional occupation, with another 12% each in service and management roles. Less than 5% of caregivers work in other professions such as installation/repair, transportation, and construction.{/t}</p>
-        <p>{t}Most caregivers (71%) indicate that their employer is aware of their caregiving status, but another 28% believe that their employer is unaware. Furthermore, an analysis of knowledge of workplace support programs shows that about one-quarter or less of working caregivers have access to support groups, ask-a-nurse-type services, financial/legal advisors, and assisted living counselors through their respective workplaces.{/t}</p>
-      </div>
+        <p>{t}These findings are from a special survey of Americans who self-identified as caregivers in <a href="http://www.well-beingindex.com" target="_blank">Gallup-Healthways Well-Being Index</a> surveys throughout 2010. Gallup recontacted those self-identified caregivers and interviewed 2,805 who were also employed at least 15 hours per week for a Pfizer-ReACT/Gallup poll specifically about caregiving.{/t}</p>
+        <p>{t}All respondents answered affirmatively to the question, <i>Do you currently help care for an elderly family member, relative, or friend, or not?</i>{/t}</p>
+        <p class="forum">Search the Internet and find at least two additional statistics that show how caregiving impacts the economy, and post your findings to the Forum.{/t}</p>
+        <img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}"> </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo;</a></div>
     </div>
-    
-    <!-- Lesson #4 - slide #3 -->
-    
     <div id="lesson-4-slide-3" class="course-slide">
       <div class="content">
-        <h2 class="flowers">{t}Impact on the Economy (continued){/t}</h2>
+        <h2 class="flowers">{t}Additional Impacts{/t}</h2>
         <hr />
-        <p>{t}Implications{/t}</p>
+        <img src="<?php echo $this->getImagesUrl('intro/76755074.png'); ?>" alt="{t}image{/t}">
+        <h5>{t}Most Working Caregivers in Professional Roles{/t}</h5>
+        <p>{t}Nearly one-third of all working caregivers are in a professional occupation, with another 12% each in service and management roles. Less than 5% of caregivers work in other professions such as installation/repair, transportation, and construction.{/t}</p>
+        <p>{t}Most caregivers (71%) indicate that their employer is aware of their caregiving status, but another 28% believe that their employer is unaware. Furthermore, an analysis of knowledge of workplace support programs shows that about one-quarter or less of working caregivers have access to support groups, ask-a-nurse-type services, financial/legal advisors, and assisted living counselors through their respective workplaces.{/t}</p>
+        <p class="forum">{t}Is your employer aware of your caregiving status? Post your response to the Forum.{/t}</p>
+        <img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}"> </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo;</a></div>
+    </div>
+    <div id="lesson-4-slide-4" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Additional Impacts{/t}</h2>
+        <hr />
+        <h5>{t}Implications{/t}</h5>
         <p>{t}Many caregivers face significant physical and emotional challenges on a routine basis. Given the significant effect that caregiving can have on workplace absenteeism, business leaders should be mindful of the unique realities that caregivers encounter.{/t}</p>
         <p>{t}Ultimately, providing an organized support system for these employees may prove to be a fruitful investment for businesses, given the high percentages of working caregivers who would like to work more if they could. Many working caregivers are likely interested in seeking support in work-life balance to help them meet their responsibilities as caregivers and employees alike, and the accessibility to assistance could potentially go a long way toward greater productivity in the U.S. workplace.{/t}</p>
         <ul>
-          <li>{t}Family caregivers provide about 80 percent of all long-term care services in the U.S. (Source: Metlife Mature Market Institute, 2001).{/t}</li>
-          <li>{t}Many caregivers work either full or part time while providing care (59 percent). (Source: National Alliance for Caregiving with AARP and MetLife, 2004).{/t}</li>
-          <li>{t}More than half of working caregivers (57 percent) say they have to go into work late, leave early or take time off during the day to provide care. (Source: National Alliance for Caregiving with AARP and MetLife, 2004).{/t}</li>
-          <li>{t}For some adults with heavy caregiving responsibilities, the impact on their ability to work is significant. According to a major study by AARP and the National Alliance for Caregiving, some working caregivers reported having to take a leave of absence (17 percent), shift from full-time to part-time work (10 percent), quit work entirely (6 percent), lose job benefits (5 percent), turn down a promotion (4 percent), or choose early retirement (3 percent). (Source: National Alliance for Caregiving with AARP and MetLife, 2004).{/t}</li>
-          <li>{t}Over the course of a caregiving “career,” family caregivers who provide intense personal care can lose as much as $659,000 in wages, pensions, and Social Security. (Source: Dimensions of Family Caregiving: A Look Into the Future; Metlife Mature Market Institute, 2000).{/t}</li>
-          <li>{t}American businesses lose between $11 billion and $29 billion a year in reduced productivity costs related to caregiving responsibilities. This includes workplace disruptions, scheduled and unscheduled absences, leaves of absence, reduction from full- to part-time work, early retirements, and leaving work entirely to care for a loved one. (Source: Metropolitan Life Insurance Company, 1997).{/t}</li>
-          <li>{t}The value of caregiving services to the U.S. economy is estimated at $306 billion a year, more than twice what is spent nationwide on nursing homes and paid home care combined. (Source: Presentation by Peter S. Arno, Ph.D., Albert Einstein College of Medicine, January 2006).{/t}</li>
+          <li>{t}Family caregivers provide more than half of all long-term care services in the U.S.{/t}</li>
+          <li>{t}More than half of all caregivers in the U.S. work either full or part time while providing care.{/t}</li>
+          <li>{t}More than half of working caregivers say they have to go into work late, leave early or take time off during the day to provide care.{/t}</li>
         </ul>
-        <p>{t}Search the Internet for additinal data caregiving has on the US economy.{/t}</p>
-        <p>{t}Think about the financial impact your caregiving situation has had on your household.{/t}</p>
-      </div>
+        <p class="forum">{t}Search the Internet and find related or additional statistics to those listed above. Post your findings to the Forum. Also think about the financial impact your caregiving situation has had on your household, and post your thoughts to the Forum as well.{/t}</p>
+        <img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}"> </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo;</a></div>
     </div>
-    
-    <!-- Lesson #4 - slide #4 -->
-    
-    <div id="lesson-4-slide-4" class="course-slide">
+    <div id="lesson-4-slide-5" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}Impact on the workplace{/t}</h2>
         <hr />
-        <p>{t}Increasingly, American workers can expect to be ground between two millstones. The graying of the population means that more workers will have an elderly relative or friend to care for at the same time as they are juggling work and other family responsibilities. According to the 2009 national caregiver survey conducted by the National Alliance for Caregiving and AARP, 65 million people, 29% of the US population, provides care for someone. Nearly two-thirds of family caregivers work full or part-time, and over half of these caregivers report that they have had to make some sort of workplace accommodation, such as coming in late to work or leaving early, dropping back to part-time, turning down a promotion, choosing early retirement, or giving up work entirely.{/t}</p>
-        <p>{t}What are the implications of these workplace accommodations? More and more employees will be faced with caregiving responsibilities that will affect their finances and their health, and their employers' bottom line. It is estimated that working caregivers’ accommodations cost U.S. employers billions of dollars per year in lost productivity and the average family caregiver for someone 50 years or older spends $5,531 per year on out of pocket caregiving expenses in 2007 which was more than 10% of the median income for a family caregiver that year.{/t}</p>
-        <p>{t}Caregivers' ability to stay in the workforce{/t}</p>
+        <img src="<?php echo $this->getImagesUrl('intro/78327070.png'); ?>" alt="{t}image{/t}">
+        <p>{t}Increasingly, American workers can expect to be ground between two millstones. The graying of the population means that more workers will have an elderly relative or friend to care for at the same time as they are juggling work and other family responsibilities. According to the <a href="http://assets.aarp.org/rgcenter/il/caregiving_09_es.pdf" target="_blank">2009 national caregiver survey</a> conducted by the <a href="http://www.caregiving.org" target="_blank">National Alliance for Caregiving</a> and <a href="http://www.aarp.org" target="_blank">AARP</a>, 65 million people, 29% of the US population, provides care for someone. Nearly two-thirds of family caregivers work full or part-time, and over half of these caregivers report that they have had to make some sort of workplace accommodation, such as coming in late to work or leaving early, dropping back to part-time, turning down a promotion, choosing early retirement, or giving up work entirely.{/t}</p>
+        <p class="forum">{t}What are the implications of these workplace accommodations? Search the Internet for help; and post your response to the Forum.{/t}</p>
+        <img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}">
+        <p>{t}More and more employees will be faced with caregiving responsibilities that will affect their finances and their health, and their employers' bottom line. It is estimated that working caregivers’ accommodations cost U.S. employers billions of dollars per year in lost productivity and the average family caregiver for someone 50 years or older spends $5,531 per year on out of pocket caregiving expenses in 2007 which was more than 10% of the median income for a family caregiver that year.{/t}</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo;</a></div>
+    </div>
+    <div id="lesson-4-slide-6" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Additional Impacts{/t}</h2>
+        <hr />
+        <h5>{t}Caregivers' ability to stay in the workforce{/t}</h5>
         <p>{t}Caregiving for someone with significant disabilities can place great demands on a caregiver’s time. Therefore, it is not surprising that there are working-age individuals who leave the labor force to care for a loved one. Yet other working-age individuals are able to continue to work while providing care. To better understand this, two questions are asked:{/t}</p>
         <ol>
           <li>{t}What factors make it possible for a caregiver to remain in the workforce, even when providing significant care to a disabled individual?{/t}</li>
           <li>{t}And, will there be a positive effect on a caregiver’s ability to continue working if the care recipient has private long term care insurance?{/t}</li>
         </ol>
-      </div>
-      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo;</a></div>
-    </div>
-    
-    <!-- Lesson #4 - slide #5 -->
-    
-    <div id="lesson-4-slide-5" class="course-slide">
-      <div class="content">
-        <h2 class="flowers">{t}Impact on the workplace (continued){/t}</h2>
-        <hr />
         <p>{t}To explore these questions, we must consider the effect of caregiver and care recipient characteristics — including whether a care recipient is insured — on the probability of being in the workplace. Estimates are calculated based on the average value of each of the specific characteristics (e.g., gender, age, insurance status, income, etc.) of caregivers and care recipients observed in this sample. The following are factors related to a caregiver’s ability to work:{/t}</p>
         <ul>
           <li>{t}Disability Status (Frailty) of Care Recipient - Caregivers for more disabled older people are less likely to be able to work. This is not surprising given the increasing care needs associated with greater levels of disability.{/t}</li>
           <li>{t}Relationship to Care Recipient - A caregiver who is not a spouse is much more likely to be in the workforce than a caregiver who is a spouse. In fact, a nonspousal caregiver is 2.4 times more likely to be in the labor force as is a spousal caregiver.{/t}</li>
           <li>{t}Education Level - College educated caregivers are more likely to be in the workplace than those without college education. Caregivers with less than a college education are only half as likely to be in the workforce. This finding mirrors trends in the general population relating to labor force participation.{/t}</li>
-          <li>{t}Length of Time Caregiving - Caregivers providing care for more than two years are only half as likely to be in the workforce as those who are providing care for fewer years. This may be because the older person gets progressively sicker and requires more care over time. Or it may be that either the caregiver or the employer is no longer comfortable with having to make multiple workplace accommodations in order to meet caregiving responsibilities.{/t}</li>
-          <li>{t}Insurance Status of Care Recipient - Those caring for disabled elders with private LTCI are nearly two times more likely to be able to work than are those caring for non-insured individuals. The presence of private insurance enables families to purchase paid help, which complements the help provided by family caregivers.{/t}</li>
         </ul>
-        <p>{t}Factors influencing job disruption among working caregivers{/t}</p>
+        <p class="forum">{t}Why would educational levels influence the type of care that could be provided to a faimly member or friend? Search the Internet for help, and post your responses to the Forum.{/t}</p>
+        <img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}"> </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo;</a></div>
+    </div>
+    <div id="lesson-4-slide-7" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Impact on the workplace (continued){/t}</h2>
+        <hr />
+        <h4>{t}Factors influencing job disruption among working caregivers{/t}</h4>
         <p>{t}Even a family caregiver who remains in the workforce may need to take time off without pay or work fewer hours due to caregiving. At the extreme, he or she may even have to quit a job. Furthermore, the demands of caregiving may keep caregivers not currently in the labor force from looking for work outside of the home or accepting a job they would otherwise have taken. Long-term care insurance reduced the following job disruptions:{/t}</p>
         
         <ul>
           <li>{t}Working Fewer Hours Than Desired - A family caregiver caring for a privately insured severely disabled elder (for example, one with three or more ADL limitations and at least five or more IADL limitations) is less likely to have to work fewer hours than desired than if the recipient had no LTCI. On the other hand, family caregivers assisting moderately disabled insured individuals are more likely to work less than they want than caregivers of non-privately insured and moderately disabled elders. This suggests that the insurance has its most positive impact on caregivers of the more seriously disabled.{/t}</li>
           <li>{t}Taking Time Off From Work Without Pay - Sandwich Generation caregivers, those who also have children in the home under the age of 18, are most relieved from the necessity of taking time off without pay if they are caring for someone with private LTCI. Sandwich Generation caregivers of insured care recipients are only 26% as likely to have to take leave without pay as are those of non-privately insured disabled elders. Though not statistically significant, the study also found that caregivers of the privately insured take 16 days off without pay whereas those assisting the non-privately insured take 26 days off without pay.{/t}</li>
         </ul>
-      </div>
-      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo;</a></div>
-    </div>
-    
-    <!-- Lesson #4 - slide #6 -->
-    
-    <div id="lesson-4-slide-6" class="course-slide">
-      <div class="content">
-        <h2 class="flowers">{t}Impact on the workplace (continued){/t}</h2>
-        <hr />
-        <p>{t}On the other hand, LTCI did not appear to have an effect on the following disruptions:{/t}</p>
+        
+         <p>{t}On the other hand, LTCI did not appear to have an effect on the following disruptions:{/t}</p>
         <ul>
           <li>{t}Being Kept from Looking for a Job - Individuals who are no longer in the workforce may continue to have work-related caregiving issues. About 15% of the caregivers in the sample indicated that they had been kept from looking for a job because of their caregiving responsibilities, a figure unaffected by the insurance status of the care recipient.{/t}</li>
           <li>{t}Turning Down a Job Due to Caregiving - Only a relatively small percentage of caregivers reported having to turn down a job because of their caregiving activities. The insurance status of the care recipient did not influence the probability of this happening.{/t}</li>
         </ul>
+        
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo;</a></div>
+    </div>
+    <div id="lesson-4-slide-8" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Impact on the workplace (continued){/t}</h2>
+        <hr />
+       
         <p>{t}Factors influencing stress among working caregivers{/t}</p>
         <p>{t}Providing care to a disabled elderly friend or relative can have profound effects on the caregiver’s physical and emotional health. Caregiving can be a significant risk factor for some people in developing depression. Also, recent research suggests that mental or emotional strain experienced by the caregiver is an independent risk factor for mortality, particularly among elderly spousal caregivers of people with Alzheimer’s disease.{/t}</p>
         <p>{t}In a 1999 study, most caregivers (68%) felt that the presence of insurance-financed benefits for the care recipient had reduced the stress level due to family caregiving. 9 In this study, researchers focused on working caregivers and gauged caregiver stress by asking respondents whether they agreed or disagreed with the following five statements:{/t}</p>

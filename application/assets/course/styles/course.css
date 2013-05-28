@@ -31,9 +31,9 @@ div.course-slide img {
 }
 div.course-slide div.question {
 	background-color: #FFF;
-	border-radius: 15px;
+	border-radius: 10px;
 	width: 90%;
-	height: 85px;
+	height: 100px;
 	margin: 10px auto 10px auto;
 	padding: 10px;
 	-moz-box-shadow: 0 0 5px 5px #888;
