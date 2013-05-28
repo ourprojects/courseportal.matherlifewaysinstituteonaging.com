@@ -70,8 +70,8 @@ foreach(array(
     <li> <a href="#lesson-1-slide-1" data-fancybox-group="lesson-1" class="teal lesson-1"> {t}Defining, Describing & Understanding Caregiving{/t} </a> <a href="#lesson-1-slide-2" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-3" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-4" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-5" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-6" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-7" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-8" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-9" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-10" data-fancybox-group="lesson-1" class="hide lesson-1"></a> </li>
     <li> <a href="#lesson-2-slide-1" data-fancybox-group="lesson-2" class="teal lesson-2"> {t}Current Data, Trends & Research on US Caregivers{/t} </a> <a href="#lesson-2-slide-2" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-3" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-4" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-5" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-6" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-7" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-8" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-9" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-10" data-fancybox-group="lesson-2" class="hide lesson-2"></a> </li>
     <li> <a href="#lesson-3-slide-1" data-fancybox-group="lesson-3" class="teal lesson-3"> {t}General Challenges Associated with Caregiving{/t} </a> <a href="#lesson-3-slide-2" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-3" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-4" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-5" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-6" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-7" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-8" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-9" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-10" data-fancybox-group="lesson-3" class="hide lesson-3"></a> </li>
-    <li> <a href="#lesson-4-slide-1" data-fancybox-group="lesson-4" class="teal lesson-4"> {t}Impact on the Workplace & the Economy{/t} </a> <a href="#lesson-4-slide-2" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-3" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-4" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-5" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-6" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-7" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-8" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-9" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-10" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-11" data-fancybox-group="lesson-4" class="hide lesson-4"></a> </li>
-    <li> <a href="#lesson-5-slide-1" data-fancybox-group="lesson-5" class="teal lesson-5"> {t}The Future of Caregiving in the US{/t} </a> <a href="#lesson-5-slide-2" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-3" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-4" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-5" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-6" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-7" data-fancybox-group="lesson-5" class="hide lesson-5"></a> </li>
+    <li> <a href="#lesson-4-slide-1" data-fancybox-group="lesson-4" class="teal lesson-4"> {t}Impact on the Workplace & the Economy{/t} </a> <a href="#lesson-4-slide-2" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-3" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-4" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-5" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-6" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-7" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-8" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-9" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-10" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-11" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-12" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-13" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-14" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-15" data-fancybox-group="lesson-4" class="hide lesson-4"></a> </li>
+    <li> <a href="#lesson-5-slide-1" data-fancybox-group="lesson-5" class="teal lesson-5"> {t}The Future of Caregiving in the US{/t} </a> <a href="#lesson-5-slide-2" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-3" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-4" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-5" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-6" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-7" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-8" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-9" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-10" data-fancybox-group="lesson-5" class="hide lesson-5"></a> </li>
   </ul>
   <div class="box-white" id="resources">
     <h4> {t}Resources{/t}</h4>
@@ -299,7 +299,7 @@ foreach(array(
         </div>
         <p>{t}The information supplied by the <a href="http://www.aoa.gov" target="_blank">Administration on Aging</a> website is a great reference and resource for current and future caregivers. There vision is to serve a growning senior population, ensuring the continuation of a veibrant aging services network at State, Territory, local and Tribal levels through funding of lower-cost, non-medical services and supports that provide the means by which many more seniors can maintain their independence.{/t}</p>
       </div>
-      <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Start Course &raquo;{/t}</a></div>
+      <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Start Module &raquo;{/t}</a></div>
     </div>
     <div id="lesson-2-slide-2" class="course-slide">
       <div class="content">
@@ -318,9 +318,6 @@ foreach(array(
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
-    
-    <!-- Lesson 2 - slide #3 -->
-    
     <div id="lesson-2-slide-3" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}Additional Data{/t}</h2>
@@ -466,7 +463,7 @@ foreach(array(
           <p class="wrong-answer hide"> {t}Incorrect. This module will help you learn more about the challenges associted ith caregiving.{/t} </p>
         </div>
       </div>
-      <div class="buttons"> <a href="javascript:;" class="button right"	onclick="$.fancybox.next();">{t}Start Course &raquo;{/t}</a></div>
+      <div class="buttons"> <a href="javascript:;" class="button right"	onclick="$.fancybox.next();">{t}Start Module &raquo;{/t}</a></div>
     </div>
     <div id="lesson-3-slide-2" class="course-slide">
       <div class="content">
@@ -621,7 +618,7 @@ foreach(array(
           <p class="wrong-answer hide"> {t}Incorrect. This module will help you learn more about the financial impacts of caregiving.{/t} </p>
         </div>
       </div>
-      <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Start Course &raquo;{/t}</a></div>
+      <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Start Module &raquo;{/t}</a></div>
     </div>
     <div id="lesson-4-slide-2" class="course-slide">
       <div class="content">
@@ -697,33 +694,30 @@ foreach(array(
     </div>
     <div id="lesson-4-slide-7" class="course-slide">
       <div class="content">
-        <h2 class="flowers">{t}Impact on the workplace (continued){/t}</h2>
+        <h2 class="flowers">{t}Additional Impacts{/t}</h2>
         <hr />
         <h4>{t}Factors influencing job disruption among working caregivers{/t}</h4>
         <p>{t}Even a family caregiver who remains in the workforce may need to take time off without pay or work fewer hours due to caregiving. At the extreme, he or she may even have to quit a job. Furthermore, the demands of caregiving may keep caregivers not currently in the labor force from looking for work outside of the home or accepting a job they would otherwise have taken. Long-term care insurance reduced the following job disruptions:{/t}</p>
         
-        <ul>
-          <li>{t}Working Fewer Hours Than Desired - A family caregiver caring for a privately insured severely disabled elder (for example, one with three or more ADL limitations and at least five or more IADL limitations) is less likely to have to work fewer hours than desired than if the recipient had no LTCI. On the other hand, family caregivers assisting moderately disabled insured individuals are more likely to work less than they want than caregivers of non-privately insured and moderately disabled elders. This suggests that the insurance has its most positive impact on caregivers of the more seriously disabled.{/t}</li>
-          <li>{t}Taking Time Off From Work Without Pay - Sandwich Generation caregivers, those who also have children in the home under the age of 18, are most relieved from the necessity of taking time off without pay if they are caring for someone with private LTCI. Sandwich Generation caregivers of insured care recipients are only 26% as likely to have to take leave without pay as are those of non-privately insured disabled elders. Though not statistically significant, the study also found that caregivers of the privately insured take 16 days off without pay whereas those assisting the non-privately insured take 26 days off without pay.{/t}</li>
-        </ul>
-        
-         <p>{t}On the other hand, LTCI did not appear to have an effect on the following disruptions:{/t}</p>
-        <ul>
-          <li>{t}Being Kept from Looking for a Job - Individuals who are no longer in the workforce may continue to have work-related caregiving issues. About 15% of the caregivers in the sample indicated that they had been kept from looking for a job because of their caregiving responsibilities, a figure unaffected by the insurance status of the care recipient.{/t}</li>
-          <li>{t}Turning Down a Job Due to Caregiving - Only a relatively small percentage of caregivers reported having to turn down a job because of their caregiving activities. The insurance status of the care recipient did not influence the probability of this happening.{/t}</li>
-        </ul>
-        
+        <h5>{t}Working Fewer Hours Than Desired - {/t}</h5>
+        <p>{t}A family caregiver caring for a privately insured severely disabled elder (for example, one with three or more ADL limitations and at least five or more IADL limitations) is less likely to have to work fewer hours than desired than if the recipient had no LTCI. On the other hand, family caregivers assisting moderately disabled insured individuals are more likely to work less than they want than caregivers of non-privately insured and moderately disabled elders. This suggests that the insurance has its most positive impact on caregivers of the more seriously disabled.{/t}</p>
+        <h5>{t}Taking Time Off From Work Without Pay - {/t}</h5>
+        <p>{t}<i>Sandwich Generation</i> caregivers, those who also have children in the home under the age of 18, are most relieved from the necessity of taking time off without pay if they are caring for someone with private LTCI. <i>Sandwich Generation</i> caregivers of insured care recipients are only 26% as likely to have to take leave without pay as are those of non-privately insured disabled elders. Though not statistically significant, the study also found that caregivers of the privately insured take 16 days off without pay whereas those assisting the non-privately insured take 26 days off without pay.{/t}</p>
+        <p>{t}On the other hand, LTCI did not appear to have an effect on the following disruptions:{/t}</p>
+        <h5>{t}Being Kept from Looking for a Job - {/t}</h5>
+        <p>{t}Individuals who are no longer in the workforce may continue to have work-related caregiving issues. About 15% of the caregivers in the sample indicated that they had been kept from looking for a job because of their caregiving responsibilities, a figure unaffected by the insurance status of the care recipient.{/t}</p>
+        <h5>{t}Turning Down a Job Due to Caregiving - {/t}</h5>
+        <p>{t}Only a relatively small percentage of caregivers reported having to turn down a job because of their caregiving activities. The insurance status of the care recipient did not influence the probability of this happening.{/t}</p>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo;</a></div>
     </div>
     <div id="lesson-4-slide-8" class="course-slide">
       <div class="content">
-        <h2 class="flowers">{t}Impact on the workplace (continued){/t}</h2>
+        <h2 class="flowers">{t}Additional Impacts{/t}</h2>
         <hr />
-       
-        <p>{t}Factors influencing stress among working caregivers{/t}</p>
+        <h4>{t}Factors influencing stress among working caregivers{/t}</h4>
         <p>{t}Providing care to a disabled elderly friend or relative can have profound effects on the caregiver’s physical and emotional health. Caregiving can be a significant risk factor for some people in developing depression. Also, recent research suggests that mental or emotional strain experienced by the caregiver is an independent risk factor for mortality, particularly among elderly spousal caregivers of people with Alzheimer’s disease.{/t}</p>
-        <p>{t}In a 1999 study, most caregivers (68%) felt that the presence of insurance-financed benefits for the care recipient had reduced the stress level due to family caregiving. 9 In this study, researchers focused on working caregivers and gauged caregiver stress by asking respondents whether they agreed or disagreed with the following five statements:{/t}</p>
+        <p>{t}In a 1999 study, most caregivers (68%) felt that the presence of insurance-financed benefits for the care recipient had reduced the stress level due to family caregiving. In this study, researchers focused on working caregivers and gauged caregiver stress by asking respondents whether they agreed or disagreed with the following five statements:{/t}</p>
         <ol>
           <li>{t}Taking care of him/her is hard on me emotionally.{/t}</li>
           <li>{t}I have to take care of him/her when I don’t feel well myself.{/t}</li>
@@ -731,52 +725,49 @@ foreach(array(
           <li>{t}I have to give him/her my constant attention.{/t}</li>
           <li>{t}Taking care of him/her has caused my health to get worse.{/t}</li>
         </ol>
-      </div>
-      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo;</a></div>
-    </div>
-    
-    <!-- Lesson #4 - slide #7 -->
-    
-    <div id="lesson-4-slide-7" class="course-slide">
-      <div class="content">
-        <h2 class="flowers">{t}Impact on the workplace (continued){/t}</h2>
-        <hr />
         <p>{t}If a caregiver agreed with three or more of these statements, he or she was considered to have severe social stress. The 1999 study found that, controlling for other important factors related to caregiving stress (e.g., the level of disability of the care recipient, living arrangement, work status, amount of work disruption), the working caregivers of disabled elders with private insurance are less likely to agree with statements 2, 3, and 4.{/t}</p>
-        <p>{t}The present study found the following characteristics associated with severe social stress among all family caregivers:{/t}</p>
-        <ul>
-          <li>{t}Gender of the Caregiver - Women are about 1.8 times more likely to experience three or more stressors than men.{/t}</li>
-          <li>{t}Co-Residence - When caregivers and care recipients live in the same household, there is a much greater likelihood that the caregiver will experience severe social stress.{/t}</li>
-          <li>{t}Hours of Care - Caregivers reporting more than 20 hours of caregiving per week are slightly more than twice as likely to experience severe stress as are those providing less care.{/t}</li>
-          <li>{t}Job Disruptions - To the extent that working caregivers experience job disruptions (e.g., having to rearrange their schedule, take time off, or having had to quit a previous job for caregiving), they are three times more likely than working caregivers who do not have job disruptions to experience severe stress.{/t}</li>
-          <li>{t}Disability Status (Frailty), Cognitive and Health Status of Care Recipient - As the care recipient requires assistance in more Activities of Daily Living, the stress level of the caregiver rises. A caregiver providing assistance to a person with Alzheimer’s disease or respiratory ailments is 1.7 times more likely to experience severe social stress than caregivers of people without these illnesses.{/t}</li>
-          <li>{t}Insurance Status of Care Recipient - Caring for an elderly disabled person can be stressful to those who juggle work and family responsibilities. A working caregiver who provides assistance to a disabled elder with LTCI is slightly less likely to experience severe stress than a working caregiver of a non-insured individual, even if the insured older person is more disabled.{/t}</li>
-        </ul>
-        <p>{t}Please think about ways caregiving has affected your workplace.{/t}</p>
+        <div id="question" class="question">
+          <p class="forum">Search for and read the study: The MetLife Juggling Act Study - Balancing Caregiving with Work and the Costs Involved.</p>
+          <form method="get" action="http://www.google.com/search" target="_blank">
+            <input type="text" id="google-search" name="q" size="65" maxlength="255" value="" />
+            <input type="submit" value="{t}Google Search{/t}" class="teal" />
+          </form>
+        </div>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo;</a></div>
     </div>
-    
-    <!-- Lesson 4 - slide #8 -->
-    
-    <div id="lesson-4-slide-8" class="course-slide">
+    <div id="lesson-4-slide-9" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Additional Impacts{/t}</h2>
+        <hr />
+        <img src="<?php echo $this->getImagesUrl('intro/164649179.png'); ?>" alt="{t}image{/t}">
+        <p>{t}Recent studies show the following characteristics associated with severe social stress among all family caregivers:{/t}</p>
+        <ul>
+          <li>{t}<b>Gender of the Caregiver - </b>Women are about 1.8 times more likely to experience three or more stressors than men.{/t}</li>
+          <li>{t}<b>Co-Residence - </b>When caregivers and care recipients live in the same household, there is a much greater likelihood that the caregiver will experience severe social stress.{/t}</li>
+          <li>{t}<b>Hours of Care - </b>Caregivers reporting more than 20 hours of caregiving per week are slightly more than twice as likely to experience severe stress as are those providing less care.{/t}</li>
+          <li>{t}<b>Job Disruptions - </b>To the extent that working caregivers experience job disruptions (e.g., having to rearrange their schedule, take time off, or having had to quit a previous job for caregiving), they are three times more likely than working caregivers who do not have job disruptions to experience severe stress.{/t}</li>
+        </ul>
+        <p class="forum">{t}Please think about ways caregiving has affected your workplac, and post your responses to the Forum.{/t}</p>
+        <img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}"> </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo;</a></div>
+    </div>
+    <div id="lesson-4-slide-10" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}Employers Response to the Needs of Working Caregivers{/t}</h2>
         <hr />
-        <p>{t}The corporate response to employee caregivers{/t}</p>
+        <h5>{t}The corporate response to employee caregivers{/t}</h5>
         <p>{t}In recognition of the negative effects that caregiving can have on employees and their work, some U.S. employers have initiated various work-based supports for their employees with elder care responsibilities. In actuality, there is a long history in the U.S. of employer concern for individual employees and their familial circumstances. Specifically, family-oriented benefits in the U.S. date back to the industrial revolution, when women (and children) began to work outside the home in the first factories and mills. It was during this time, in 1825, that Robert Owen, an English businessman, established the first employer-sponsored child-care center in the U.S., in New Harmony, Indiana.{/t}</p>
         <p>{t}Typically, however, employer concern has been manifest only during periods of our history when women were needed in the workplace, and employer provision of child care was seen as a strategy to attract and retain needed workers. Except for the years during the two World Wars, when women were recruited to fill jobs left by men serving in the military, for most of the 19th and 20th centuries managing the intersection of work and family was seen as the sole responsibility of the workers themselves. This began to change in the late 1970’s and 1980’s, as increasing numbers of women began to enter and remain in the workforce. The prevailing belief that family life and family responsibilities should and could be left at home was challenged by the realities facing workers as they struggled to balance work and family obligations.{/t}</p>
-        <p>{t}Increasing awareness of the demographic and social changes affecting the workforce created a shift in the philosophy of both employers and employees regarding the “appropriateness” of employer involvement in the family-related aspects of employees lives and spurred the development of work and family benefits and programs. At this time, child care benefits and programs became more available to American workers. In the mid-1980s, American employers began to introduce elder care programming to its array of work-family programs. These programs were fashioned after the child care programs that included resource and referral services. Search the Web for a a timeline of the development of workplace elder care programs.{/t}</p>
+        <p>{t}Increasing awareness of the demographic and social changes affecting the workforce created a shift in the philosophy of both employers and employees regarding the <i>appropriateness</i> of employer involvement in the family-related aspects of employees lives and spurred the development of work and family benefits and programs. At this time, child care benefits and programs became more available to American workers. In the mid-1980s, American employers began to introduce elder care programming to its array of work-family programs. These programs were fashioned after the child care programs that included resource and referral services. Search the Web for a a timeline of the development of workplace elder care programs.{/t}</p>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo;</a></div>
     </div>
-    
-    <!-- Lesson 4 - slide #9 -->
-    
-    <div id="lesson-4-slide-9" class="course-slide">
+    <div id="lesson-4-slide-11" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}Employers Response to the Needs of Working Caregivers (continued){/t}</h2>
         <hr />
-        <p>{t}Factors contributing to the growth of work-based elder-care programs{/t}</p>
+        <h5>{t}Factors contributing to the growth of work-based elder-care programs{/t}</h5>
         <p>{t}Several inter-related factors provided the impetus for employers concern for working caregivers and the growth of work-based elder care programs. These factors included:{/t}</p>
         <ol>
           <li>{t}the recognition of the growing numbers of workers who were providing assistance to an older family member or friend;{/t}</li>
@@ -786,128 +777,126 @@ foreach(array(
           <li>{t}concerns about worker retention and recruitment; and{/t}</li>
           <li>{t}the goals of remaining competitive and improving morale.{/t}</li>
         </ol>
-        <p>{t}The early elder care programs developed in the mid-1980s were begun largely as a result of research on the numbers of working caregivers and the demographic imperative of an aging America. The Travelers Insurance conducted one of the first workplace surveys of caregiving employees, and several workplace surveys quickly followed. Between 23% and 32% of the employees responding to these surveys reported having at least some elder care duties and “the prevalence estimate of 25% became a benchmark for employers, who initiated workplace programs to assist their caregiving employees”. However, as reported in Kossek, DeMarr, Backman, and Kollar (1993), IBM’s nationwide elder care referral service, which was one of the first such programs, “was developed not as a response to employee demand, but rather a proactive response to undeniable demographic trends”.{/t}</p>
+        <p>{t}The early elder care programs developed in the mid-1980s were begun largely as a result of research on the numbers of working caregivers and the demographic imperative of an aging America. The Travelers Insurance conducted one of the first workplace surveys of caregiving employees, and several workplace surveys quickly followed. Between 23% and 32% of the employees responding to these surveys reported having at least some elder care duties and <i>the prevalence estimate of 25% became a benchmark for employers, who initiated workplace programs to assist their caregiving employees</i>.{/t}</p>
+        <p>{t}However, as reported in Kossek, DeMarr, Backman, and Kollar (1993), IBM’s nationwide elder care referral service, which was one of the first such programs, <i>was developed not as a response to employee demand, but rather a proactive response to undeniable demographic trends</i>.{/t}</p>
         <p>{t}In addition to the impetus provided by research documenting the numbers of working caregivers, employers were encouraged to develop formal elder care programs by several studies that attempted to quantify the costs to them of working caregivers. One early estimate of these costs suggested that companies without formal elder care programs could lose about $2,500 a year per caregiving employee in lost productivity. More recent estimates suggest these costs might be as high as $3,142. Various MetLife analyses estimate that the aggregated costs of caregiving employees to employers nationwide ranged in the billions per year.{/t}</p>
         <p>{t}Organized labor also has played a significant role in the development of elder care policies and programs, both through collective bargaining and through education regarding the importance of work-family benefits and policies. The CWA, IBEW and AT&T contracts negotiated in 1990 represented a significant milestone for unionized workers. This latter contract resulted in the Family Care Development Fund of AT&T, which provided funding for specific aging network services that benefit union members and enhancement of the quality of available elder care programs (i.e., adult day service and senior centers).{/t}</p>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo;</a></div>
     </div>
-    
-    <!-- Lesson 4 - slide #10 -->
-    
-    <div id="lesson-4-slide-10" class="course-slide">
+    <div id="lesson-4-slide-12" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}Employers Response to the Needs of Working Caregivers (continued){/t}</h2>
         <hr />
-        <p>{t}Underlying all of these factors has been a concern with productivity and profitability. In fact, concern with the “bottom line” has been the primary catalyst for employer response to employees' family-related needs. Changes in personnel practices are motivated less by concerns about the personal and family lives of employees than by specific business problems, such as absenteeism and tardiness, difficulties in recruiting and retaining employees, employee reluctance to relocate, poor labor-management relations, or rising benefit costs. The quality of care available for children and elders has also been of concern to employers, for similar reasons: To the extent that care provided by non-family members is substandard, employees may decide to quit work to provide care themselves, jeopardizing the productivity of American business.{/t}</p>
-        <p>{t}Despite the evidence provided by research in regard to the prevalence and costs of elder care among employees, work-based programs addressing employees’ elder care needs continue to lag behind child care programs in the workplace. Moreover, large employers are much more likely than smaller employers to offer elder care programs at work. One current estimate of access to elder care programming is that one in four companies with more than 100 employees offer such programs. Smaller employers are considerably less likely to have formal elder care programs in place for their employees, and most workers in the U.S. are employed by small businesses. For example, 87% of American employers have fewer than 20 employees. At the same time, small and mid-sized companies are more likely to have informal policies that support working caregivers. For example, sometimes supervisors will allow workers to take time off during the day when needed to handle their family caregiving responsibilities and then make that time up later.{/t}</p>
-        <p>{t}Types of formal caregiving programs that employers offer{/t}</p>
+        <img src="<?php echo $this->getImagesUrl('intro/137597454.png'); ?>" alt="{t}image{/t}">
+        <p>{t}Underlying all of these factors has been a concern with productivity and profitability. In fact, concern with the <i>bottom line</i> has been the primary catalyst for employer response to employees' family-related needs. Changes in personnel practices are motivated less by concerns about the personal and family lives of employees than by specific business problems, such as absenteeism and tardiness, difficulties in recruiting and retaining employees, employee reluctance to relocate, poor labor-management relations, or rising benefit costs.{/t}</p>
+        <p>{t}The quality of care available for children and elders has also been of concern to employers, for similar reasons: To the extent that care provided by non-family members is substandard, employees may decide to quit work to provide care themselves, jeopardizing the productivity of American business.{/t}</p>
+        <p>{t}Despite the evidence provided by research in regard to the prevalence and costs of elder care among employees, work-based programs addressing employees’ elder care needs continue to lag behind child care programs in the workplace. Moreover, large employers are much more likely than smaller employers to offer elder care programs at work. One current estimate of access to elder care programming is that one in four companies with more than 100 employees offer such programs.{/t}</p>
+        <p>{t}Smaller employers are considerably less likely to have formal elder care programs in place for their employees, and most workers in the U.S. are employed by small businesses. For example, 87% of American employers have fewer than 20 employees. At the same time, small and mid-sized companies are more likely to have informal policies that support working caregivers. For example, sometimes supervisors will allow workers to take time off during the day when needed to handle their family caregiving responsibilities and then make that time up later.{/t}</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo;</a></div>
+    </div>
+    <div id="lesson-4-slide-13" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Employers Response to the Needs of Working Caregivers (continued){/t}</h2>
+        <hr />
+        <h5>{t}Types of formal caregiving programs that employers offer{/t}</h5>
         <p>{t}Organizations offer a variety of workplace supports to help their employees manage their work and family responsibilities. Some, such as flexible work schedules, job sharing, leave policies, flexible benefits plans, and employer-sponsored group long term care insurance, are not intended specifically or exclusively for employees who have elder care responsibilities, but they can be extremely beneficial to working caregivers. The feasible approaches for a particular organization vary with the size and culture of the organization.{/t}</p>
         <p>{t}Examples of non-caregiving-specific employer-provided supports that may be especially useful to working caregivers include:{/t}</p>
         <ul>
           <li>{t}flexible work schedules,{/t}</li>
           <li>{t}telecommuting,{/t}</li>
           <li>{t}family leave (preferably paid),{/t}</li>
-          <li>{t}exercise facilities/wellness programs/or club memberships at reduced cost (as employees who have elder-care responsibilities often do not take the time to look after their own health needs),{/t}</li>
-          <li>{t}avoidance of mandated overtime, and{/t}</li>
-          <li>{t}minimizing required transfers, but when they are necessary, assisting in the search for elder care resources and providing job-finding services for the employee's spouse in the new location.{/t}</li>
         </ul>
+        <p>{t}Employers can also provide employees access to telephones both on and off-site, (e.g., cell phones), pagers, and the like to reduce stress for employees who are concerned about their elders or the elders’ care providers not being able to reach them in a crisis. Finally, the provision (directly or through contracting) of concierge services (e.g., running errands for employees, such as picking up or dropping off dry cleaning, taking cars to the mechanic, and shopping) can allow working caregivers to spend more time at work, on caregiving tasks, or taking care of themselves.{/t}</p>
+        <div id="question1" class="question">
+          <p><b>{t}Your employer is NOT legally obligated to provide you with benefits that specifically relate to caregiving.{/t}</b><br />
+            <select>
+              <option selected="selected" value="select"> {t}Select{/t} </option>
+              <option value="1"> {t}True{/t} </option>
+              <option value="0"> {t}False{/t} </option>
+            </select>
+          </p>
+          <p class="right-answer hide"> {t}Correct! In general, companies are not legally obligated to provide specific benefits related to caregiving in the U.S.{/t} </p>
+          <p class="wrong-answer hide"> {t}Incorrect. Companies have no legal obligation to offer benefits specically related to caregiving in the U.S.{/t} </p>
+        </div>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo;</a></div>
     </div>
-    
-    <!-- Lesson 4 - slide #11 -->
-    
-    <div id="lesson-4-slide-11" class="course-slide">
+    <div id="lesson-4-slide-14" class="course-slide">
       <div class="content">
-        <h2 class="flowers">{t}Employers Response to the Needs of Working Caregivers (continued){/t}</h2>
+        <h2 class="flowers">{t}Closing{/t}</h2>
         <hr />
-        <p>{t}Employers can also provide employees access to telephones both on and off-site, (e.g., cell phones), pagers, and the like to reduce stress for employees who are concerned about their elders or the elders’ care providers not being able to reach them in a crisis. Finally, the provision (directly or through contracting) of concierge services (e.g., running errands for employees, such as picking up or dropping off dry cleaning, taking cars to the mechanic, and shopping) can allow working caregivers to spend more time at work, on caregiving tasks, or taking care of themselves.{/t}</p>
-        <p>{t}With regard to work-based programs specifically for working caregivers of elders, corporate America has experimented with a range of such programs for the past 17 years. Despite the lack of systematic evaluation, formal elder care supports have been modified, enhanced, and reformulated based primarily upon demand from employees. For example, in an early effort by Stride-Rite, few workers were helped by on-site adult day services, and the center became more of a community resource than an employee-driven service. Counseling services have also had a mixed response, with some groups of employees (e.g., women, non-management) more likely than others to attend counseling sessions or support groups. Today, the most common form of elder care-specific work-based programming is a resource and referral service that offers a telephone linkage to needed community services and is supplemented by educational information and resources.{/t}</p>
-        <p>{t}For the most part, the large employer-based programs in place today were put in place by private vendors of services, not the aging network. This has meant that the aging network has not benefited from this corporate investment in elder care. Two exceptions are the New York City Department on Aging, an early aging network pioneer, and a more recent developer of programs, Atlanta Regional Commission’s Area Agency on Aging. Both of these agencies contract with certain employers to provide services directly to their employees.{/t}</p>
+        <p>{t}With regard to work-based programs specifically for working caregivers of elders, corporate America has experimented with a range of such programs for the past twenty or more years. Despite the lack of systematic evaluation, formal elder care supports have been modified, enhanced, and reformulated based primarily upon demand from employees. For example, in an early effort by Stride-Rite, few workers were helped by on-site adult day services, and the center became more of a community resource than an employee-driven service. Counseling services have also had a mixed response, with some groups of employees (e.g., women, non-management) more likely than others to attend counseling sessions or support groups.{/t}</p>
+        <p>{t}Today, the most common form of elder care-specific work-based programming is a resource and referral service that offers a telephone linkage to needed community services and is supplemented by educational information and resources.{/t}</p>
+        <p>{t}For the most part, the large employer-based programs in place today were put in place by private vendors of services, not the aging network. This has meant that the aging network has not benefited from this corporate investment in elder care. Two exceptions are the <a href="http://www.nyc.gov/html/dfta/html/home/home.shtml" target="_blank">New York City Department on Aging</a>, an early aging network pioneer, and a more recent developer of programs, <a href="http://www.atlantaregional.com" target="_blank">Atlanta Regional Commission’s Area Agency on Aging</a>. Both of these agencies contract with certain employers to provide services directly to their employees.{/t}</p>
         <p>{t}Despite this lack of direct financial benefit through business partnerships with employers, the aging network has gained financial support through employer investment in community services. Such support has come through individual employers’ support of local services as a component of their overall community investment strategy and through coalitions of businesses formed to invest funds in local services that benefit their employees and which support quality improvement in selected aging services. An example is the American Business Collaboration for Quality Dependent Care (ABC), a consortium of 137 companies, including 11 large corporations (e.g., IBM, AT&T). The ABC has as its goal the enhanced quality of and access to child care and elder care.{/t}</p>
         <p>{t}New approaches to work-based elder care programs are currently being developed. This next generation of formal elder care programs has been referred to as decision-support services. Rather than relying solely upon resource and referral models, these programs strategically address key needs of working caregivers - enhanced information and resources through geriatric care professionals, information on legal and financial matters, and help with insurance paperwork.{/t}</p>
-        <p>{t}Think of any benefits your employer offers you as a employee caregiver.{/t}</p>
-      </div>
+        <p class="forum">{t}Reearch any benefits your employer offers you as a employee caregiver, and post your findings to the Forum.{/t}</p>
+        <img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}"> </div>
       <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Complete Lesson{/t}</a></div>
     </div>
   </div>
-  
-  <!-- Lesson 5 - slide #1 -->
-  
   <div id="lesson-5">
     <div id="lesson-5-slide-1" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}The Future of Caregiving{/t}</h2>
         <hr />
-        <p>{t}In this week’s lesson, we will:{/t}</p>
+        <img src="<?php echo $this->getImagesUrl('intro/119032857.png'); ?>" alt="{t}image{/t}">
+        <p>{t}In this module, we will:{/t}</p>
         <ul>
           <li>{t}Quickly describe the past and discuss a possible future for caregivers{/t}</li>
           <li>{t}Discuss the upcoming generation of caregivers{/t}</li>
-          <li>{t}Explore and discuss how the 'Technology Revolution' will impact US caregiving{/t}</li>
+          <li>{t}Explore and discuss how the <i>Technology Revolution</i> will impact US caregiving{/t}</li>
         </ul>
-      </div>
-      <div class="buttons"> <a href="javascript:;" class="button right"	onclick="$.fancybox.next();">{t}Start Course &raquo;{/t}</a></div>
+        <p>{t}While today’s average baby boomer has one of the highest overall income and wealth levels ever, creative financing will be a big priority as they move into their golden years. Because pension funds and overall savings are predicted not to keep up with rising medical costs, things like reverse mortgages will become even more popular. Employers will also continue to restructure daily work schedules and family leave policies. Family leave policies often created for families taking time off for the birth or adoption of a child will now be changed to also add time off policies for dealing with a sick family member. Because of the growing concern facing more family members, employers will also begin to offer seminars and other resources for their working caregiver employees. Flexibility will be the key in the future.{/t}</p>
+        <p class="forum">How do you think technology will impact caregiving in the U.S. in the future? Post your feedback to the Forum.{/t}</p>
+        <img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}"> </div>
+      <div class="buttons"> <a href="javascript:;" class="button right"	onclick="$.fancybox.next();">{t}Start Module &raquo;{/t}</a></div>
     </div>
-    
-    <!-- Lesson 5 - slide #2 -->
-    
     <div id="lesson-5-slide-2" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}The Past and Future of Caregiving{/t}</h2>
         <hr />
-        <p>{t}While today’s average baby boomer has one of the highest overall income and wealth levels ever, creative financing will be a big priority as they move into their golden years. Because pension funds and overall savings are predicted not to keep up with rising medical costs, things like reverse mortgages will become even more popular. Employers will also continue to restructure daily work schedules and family leave policies. Family leave policies often created for families taking time off for the birth or adoption of a child will now be changed to also add time off policies for dealing with a sick family member. Because of the growing concern facing more family members, employers will also begin to offer seminars and other resources for their working caregiver employees. Flexibility will be the key in the future.{/t}</p>
-        <p>{t}The trend from hospital to community based care also puts an increased emphasis on the role of caregivers. Health care specialists, family members, friends and community health care workers now spend more hours in “at home” caregiving. As well, social expectations regarding the division of responsibility for elder-care keep moving the onus of care:{/t}</p>
+        <p>{t}The trend from hospital to community based care also puts an increased emphasis on the role of caregivers. Health care specialists, family members, friends and community health care workers now spend more hours in <i>at home</i> caregiving. As well, social expectations regarding the division of responsibility for elder-care keep moving the onus of care:{/t}</p>
         <ol>
           <li>{t}How much should the state provide?{/t}</li>
           <li>{t}How much should families and the informal system provide?{/t}</li>
         </ol>
-        <p>{t}While the jury is still out on this issue, seniors themselves are clear. They insist on “aging in place” — staying in their homes for as long as possible. Because of love, duty, necessity, or a mix of these, informal caregivers, family and friends continue to provide substantial support to seniors. Estimates are that between 75 percent and 85 percent of care received by seniors in the community is provided by family members and friends.{/t}</p>
-        <p>{t}Many informal caregivers feel pressured by the demands of caregiving, yet also speak of its “rewards.” If factors such as higher divorce rates, and smaller and more geographically dispersed families further reduce the capacity of the informal system to meet the growing demand for assistance, the benefits to seniors and their caregivers may become burdens. How will seniors cope? How will caregivers fare? In times of change, informal caregivers and formal caregivers — i.e., persons who are specially trained to provide care within institutions or the community — may need to redefine their role and involvement in care.{/t}</p>
-        <p>{t}On the Forum, describe your caregiver situation next year and then in 2 years, if applicable.{/t}</p>
-      </div>
+        <p>{t}While the jury is still out on this issue, seniors themselves are clear. They insist on <i>aging in place</i> — staying in their homes for as long as possible. Because of love, duty, necessity, or a mix of these, informal caregivers, family and friends continue to provide substantial support to seniors. Estimates are that between 75 percent and 85 percent of care received by seniors in the community is provided by family members and friends.{/t}</p>
+        <p>{t}Many informal caregivers feel pressured by the demands of caregiving, yet also speak of its <i>rewards</i>. If factors such as higher divorce rates, and smaller and more geographically dispersed families further reduce the capacity of the informal system to meet the growing demand for assistance, the benefits to seniors and their caregivers may become burdens. How will seniors cope? How will caregivers fare? In times of change, informal caregivers and formal caregivers — i.e., persons who are specially trained to provide care within institutions or the community — may need to redefine their role and involvement in care.{/t}</p>
+        <p class="forum">{t}On the Forum, describe your caregiver situation next year and then in 2 years, if applicable. Research and try and anticipate changes in technology and how your caregiving role will be effected.{/t}</p>
+        <img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}"> </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo;</a></div>
     </div>
-    
-    <!-- Lesson 5 - slide #3 -->
-    
     <div id="lesson-5-slide-3" class="course-slide">
       <div class="content">
-        <h2 class="flowers">{t}The Past and Future of Caregiving (continued){/t}</h2>
+        <h2 class="flowers">{t}Times have changed{/t}</h2>
         <hr />
-        <p>{t}Times have changed{/t}</p>
-        <p>{t}The twentieth century has witnessed significant changes in attitudes towards seniors and elder-care practices. In the early 1900s, assistance was thought to “foster indolence and dependency,” but by the mid-century there was growing acceptance of the public responsibility for health and social services. In response, a system of formal care for seniors was developed which included residential care for frail seniors, with services provided by health professionals with a range of technical expertise. States soon realized that this model of care was not appropriate for a growing number of seniors: not only were long-term care beds costly, but seniors and their advocates were demanding more and more care in a community setting.{/t}</p>
-        <p>{t}Today, there is an increasing emphasis on keeping seniors in the community and helping them to keep up connections with their informal networks of friends and family. A variety of community-based services are in place to help people maintain or regain a maximum degree of autonomy by addressing their physical, mental or social needs. These services include information and referral, coordination and the services of health professionals and seniors advocacy groups, as well as a range of other support services (personal and social support, housing services, health promotion, respite services and transportation). Generally less costly than hospitalization or long-term institutional care, community based services contribute to seniors’ quality of life by preventing or delaying institutionalization, promoting social integration, responding to changing health needs in a flexible manner, and providing support to informal caregivers. Plans in health care reform reinforce this shift from institutional to community-based care, at the same time assuring a continuum of care that includes institutional care. In Canada, The National Advisory Council on Aging (NACA) has observed that provincial trends limiting the growth of long-term care facilities may result in insufficient accommodation for those who are too disabled to remain in the community. If, as expected, more and more older people — and their caregivers — reach a point at which institutionalization becomes appropriate, suitable accommodation must be made available.{/t}</p>
+        <p>{t}The twentieth century has witnessed significant changes in attitudes towards seniors and elder-care practices. In the early 1900s, assistance was thought to <i>foster indolence and dependency</i>, but by the mid-century there was growing acceptance of the public responsibility for health and social services. In response, a system of formal care for seniors was developed which included residential care for frail seniors, with services provided by health professionals with a range of technical expertise. States soon realized that this model of care was not appropriate for a growing number of seniors: not only were long-term care beds costly, but seniors and their advocates were demanding more and more care in a community setting.{/t}</p>
+        <p>{t}Today, there is an increasing emphasis on keeping seniors in the community and helping them to keep up connections with their informal networks of friends and family. A variety of community-based services are in place to help people maintain or regain a maximum degree of autonomy by addressing their physical, mental or social needs. These services include information and referral, coordination and the services of health professionals and seniors advocacy groups, as well as a range of other support services (personal and social support, housing services, health promotion, respite services and transportation).{/t}</p>
+        <p>{t}Generally less costly than hospitalization or long-term institutional care, community based services contribute to seniors’ quality of life by preventing or delaying institutionalization, promoting social integration, responding to changing health needs in a flexible manner, and providing support to informal caregivers. Plans in health care reform reinforce this shift from institutional to community-based care, at the same time assuring a continuum of care that includes institutional care.{/t}</p>
+        <p>{t}In Canada, <a href="http://www.elderweb.com/organization/canada-national-advisory-council-aging" target="_blank">The National Advisory Council on Aging (NACA)</a> has observed that provincial trends limiting the growth of long-term care facilities may result in insufficient accommodation for those who are too disabled to remain in the community. If, as expected, more and more older people — and their caregivers — reach a point at which institutionalization becomes appropriate, suitable accommodation must be made available.{/t}</p>
         <p>{t}A dynamic partnership between formal and informal care is the cornerstone of new policies of care being adopted for frail seniors. According to this view, elders, family and friends collaborate with a variety of paid workers to provide the range of services required by the client. In fact, most states have been shifting the focus of long-term care to the community and to families as the main caregivers, with some support from home care workers. Seniors themselves are viewed as clients who have an important decision-making role in their care, rather than as the passive recipients of services.{/t}</p>
-        <p>{t}Search the Web for national-level changes in the past 10 years that were specifically aimed at protecting seniors.{/t}</p>
-        <p>{t}Considering your caregiving situation, what changes do you expect to see in the near future, in the form of support and available services, from the State and Federal level, if any?{/t}</p>
-      </div>
+        <p class="forum">{t}Search the Internet for national-level changes in the past 10 years that were specifically aimed at protecting seniors, and post your findgins to the Forum. Next, considering your caregiving situation, what changes do you expect to see in the near future, in the form of support and available services, from the State and Federal level, if any? And post your response to the Forum.{/t}</p>
+        <img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}"> </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo;</a></div>
     </div>
-    
-    <!-- Lesson 5 - slide #4 -->
-    
     <div id="lesson-5-slide-4" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}The Next Caregiver Generation{/t}</h2>
         <hr />
-        <p>{t}Seventy-six million American children were born between 1945 and 1964, representing a cohort that is significant on account of its size alone. A baby boomer is a person who was born during the demographic Post-World War II baby boom and who grew up during the period between 1945 and 1964. The term "baby boomer" is sometimes used in a cultural context. Therefore, it is impossible to achieve broad consensus of a precise definition, even within a given territory. Different groups, organizations, individuals, and scholars may have widely varying opinions on what constitutes a baby boomer, both technically and culturally{/t}</p>
-        <p>{t}The words "sandwich generation" today are a new term in society's long history of the written language. This term is now found in the latest editions of the Oxford English Dictionary and the Webster's Collegiate Dictionary. These "Sandwich Generationers," are those sandwiched between aging parents and their own children. As more baby boomers become both sandwich generationers and seniors, the need to understand aging dynamics and family relationships increases dramatically. It is not easy to become elderly or a parent to your parent(s). After all, our society "says" adults should be able to take care of themselves. But, as more live well into their 80s and 90s and families are dispersed across the country, everyone is going to be involved somehow, some way, in elder care. If not today, then tomorrow.{/t}</p>
-        <p>{t}With so many baby boomers entering the market each year, careing for their parents, we must also remember that they too will need care at some point in the future. This is a large concern and responsibility for the baby boomers, but also a large responsibility for the generation right behind the baby boomers. As reported by a national survey from 1998 by The National Caregiving Alliance:{/t}</p>
+        <p>{t}Seventy-six million American children were born between 1945 and 1964, representing a cohort that is significant on account of its size alone. A baby boomer is a person who was born during the demographic Post-World War II baby boom and who grew up during the period between 1945 and 1964. The term <i>baby boomer</i> is sometimes used in a cultural context. Therefore, it is impossible to achieve broad consensus of a precise definition, even within a given territory. Different groups, organizations, individuals, and scholars may have widely varying opinions on what constitutes a baby boomer, both technically and culturally{/t}</p>
+        <p>{t}The words <i>sandwich generation</i> today are a new term in society's long history of the written language. This term is now found in the latest editions of the <a href="http://www.oed.com" target="_blank">Oxford English Dictionary</a> and the <a href="http://www.merriam-webster.com/cgi-bin/book.pl?c11.htm&1" target="_blank">Webster's Collegiate Dictionary</a>. These <i>Sandwich Generationers</i>, are those sandwiched between aging parents and their own children. As more baby boomers become both sandwich generationers and seniors, the need to understand aging dynamics and family relationships increases dramatically. It is not easy to become elderly or a parent to your parent(s). After all, our society "says" adults should be able to take care of themselves. But, as more live well into their 80s and 90s and families are dispersed across the country, everyone is going to be involved somehow, some way, in elder care. If not today, then tomorrow.{/t}</p>
+        <p>{t}With so many baby boomers entering the market each year, careing for their parents, we must also remember that they too will need care at some point in the future. This is a large concern and responsibility for the baby boomers, but also a large responsibility for the generation right behind the baby boomers. As reported by various surveys and reports:{/t}</p>
         <ul>
-          <li>{t}Over half of the caregivers feel relatively unprepared for their own possible long term care. That is, they feel only a little or not at all prepared. Only six percent feel very well prepared, and 42 percent feel somewhat prepared.{/t}</li>
+          <li>{t}Most caregivers feel relatively unprepared for their own possible long term care. That is, they feel only a little or not at all prepared.{/t}</li>
           <li>{t}Caregivers report thinking more about saving money to meet their needs as a result of their caregiving experience. They also think about the adequacy of their insurance and the need to plan.{/t}</li>
           <li>{t}Over one-third of the caregivers say they have taken some specific actions to plan for their own possible long term care, mostly by increasing their investments or by obtaining more insurance.{/t}</li>
-          <li>{t}Thinking ahead to the information they will need about long term care, more respondents name a health professional as the most valuable source than any other.{/t}</li>
-          <li>{t}Although only three percent say a financial advisor would be the most valuable source of information, one-quarter says financial information would be the most valuable type of information to help them prepare for their own possible long term care.{/t}</li>
-          <li>{t}The respondents believe that their own long term care will be paid by private insurance, savings and investments or government insurance such as Medicare or Medicaid{/t}</li>
         </ul>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo;</a></div>
     </div>
-    
-    <!-- Lesson 5 - slide #5 -->
-    
     <div id="lesson-5-slide-5" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}The Next Caregiver Generation (continued){/t}</h2>
@@ -916,43 +905,66 @@ foreach(array(
         <p>
           <iframe width="480" height="360" src="http://www.youtube.com/embed/nHzxbfKr_Wc?rel=0" frameborder="0" allowfullscreen></iframe>
         </p>
-        <p>{t}Post to the Forum your thoughts on the level of care expected by the Baby Boomer generation, considering their achievement and success over current and previous generations.{/t}</p>
-      </div>
+        <p class="forum">{t}Post to the Forum your thoughts on the level of care expected by the Baby Boomer generation, considering their achievement and success over current and previous generations.{/t}</p>
+        <img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}"> </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo;</a></div>
     </div>
-    
-    <!-- Lesson 5 - slide #6 -->
-    
     <div id="lesson-5-slide-6" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}The Technology Revolution and Caregiving{/t}</h2>
         <hr />
-        <p>{t}The technology revolution is upon us. In recent years there have been many triumphs in technology. Now more than ever, people are able to communicate over thousands of miles with the greatest of ease. Wireless communication is much to thank for the ease of communication. What used to take weeks threw mail, now takes seconds over the Internet. But just like any revolution there are social consequences, especially when the revolution takes place around the globe. Since the world does not evolve at the same pace, lesser developed countries as well as minorities in developed countries have not even come close to reaping the benefits of a world connected at the touch of a button. The social argument is that as this revolution proceeds, the gap between the haves and have-nots will widen to the point of ill repute. Others argue that because of technological advances the world is a much better place. This seems to be the debate at hand.{/t}</p>
-        <p>{t}Family caregivers are responsible for the home care of millions of older adults in the US. For many, the elder family member lives more than an hour’s distance away. Distance caregiving is a growing alternative to more familiar models where:{/t}</p>
+        <img src="<?php echo $this->getImagesUrl('intro/114258929.png'); ?>" alt="{t}image{/t}">
+        <p>{t}The technology revolution is upon us. Now more than ever, people are able to communicate over thousands of miles with the greatest of ease. Wireless communication is much to thank for the ease of communication. But just like any revolution there are social consequences, especially when the revolution takes place around the globe.{/t}</p>
+        <p>{t}Since the world does not evolve at the same pace, lesser developed countries as well as minorities in developed countries have not even come close to reaping the benefits of a world connected at the touch of a button. The social argument is that as this revolution proceeds, the gap between the haves and have-nots will widen to the point of ill repute. Others argue that because of technological advances the world is a much better place. This seems to be the debate at hand.{/t}</p>
+        <p>{t}Family caregivers are responsible for the home care of millions of older adults in the U.S. For many, the elder family member lives more than an hour’s distance away. Distance caregiving is a growing alternative to more familiar models where:{/t}</p>
         <ol>
           <li>{t}the elder and the family caregiver(s) may reside in the same household; or{/t}</li>
           <li>{t}the family caregiver may live nearby but not in the same household as the elder.{/t}</li>
         </ol>
-        <p>{t}The distance caregiving model involves elders and their family caregivers who live at some distance, defined as more than a 60-minute commute, from one another. Evidence suggests that distance caregiving is a distinct phenomenon, differs substantially from on-site family caregiving, and requires additional assistance to support the physical, social, and contextual dimensions of the caregiving process. Technology-based assists could virtually connect the caregiver and elder and provide strong support that addresses the elder’s physical, social, cognitive, and/or sensory impairments. Therefore, in today’s era of high technology, it is surprising that so few affordable innovations are being marketed for distance caregiving. This part of the lesson addresses distance caregiving, proposes the use of technology innovation to support caregiving, and we will then discuss suggested research agenda to better inform policy decisions related to the unique needs of this situation.{/t}</p>
-        <p>{t}When the physical location of the caregiver and elder are at a geographic distance, additional assists are required to support the physical, social, and contextual dimensions of the caregiving process. Numerous technological assists, including enabling, automation, and tele-health technologies, have potential for providing this type of caregiver support. Technology-based interventions that include computer and communication technology offer potentially strong support in the areas of prevention and detection, managing everyday life, social connectedness, and identity affirmation.{/t} </p>
+        <p>{t}The distance caregiving model involves elders and their family caregivers who live at some distance, defined as more than a 60-minute commute, from one another. Evidence suggests that distance caregiving is a distinct phenomenon, differs substantially from on-site family caregiving, and requires additional assistance to support the physical, social, and contextual dimensions of the caregiving process. Technology-based assists could virtually connect the caregiver and elder and provide strong support that addresses the elder’s physical, social, cognitive, and/or sensory impairments.{/t}</p>
+        <p>{t}Therefore, in today’s era of high technology, it is surprising that so few affordable innovations are being marketed for distance caregiving.{/t}</p>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo;</a></div>
     </div>
-    
-    <!-- Lesson 5 - slide #7 -->
-    
     <div id="lesson-5-slide-7" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}The Technology Revolution and Caregiving (continued){/t}</h2>
         <hr />
-        <p>{t}Therefore, in today’s era of high technology, it is surprising that so few affordable innovations are being marketed for distance caregiving. One explanation for this gap in application may be the lack of understanding about the relationship between technology and caregiving activities. Technology-based interventions could virtually connect the caregiver and elder and provide strong support for distance caregiving that addresses the elder’s physical, social, cognitive, and/or sensory impairments. A possible solution to acceptable application of technology into the homes of elders is through ubiquitous computing. This approach integrates computer technology into the environment, rather than having computers that are distinct objects. Ubiquitous computing and embedded technology are emerging as assists in the home environments. Weiser (1996), who coined the term, reflected, “Ubiquitous computing names the third wave in computing, just now beginning.{/t}</p>
-        <p>{t}First there were mainframes, each shared by lots of people. Now we are in the personal computing era, person and machine staring uneasily at each other across the desktop. Next comes ubiquitous computing, or the age of calm technology, when technology recedes into the background of our lives.” For those with cognitive decline, Morris and Lundell (2003) identify four principles to guide the use of calm technology solutions including assessing while helping, adapting assistance to variability in cognitive abilities, catalyzing instead of replacing social interactions, and leveraging familiar interfaces. These needs are embodied in the technology-based solutions that are being proposed for the caregiver/elder dyad. Technologies for adaptive aging include: wireless broadband; biosensors and bodily diagnostics; activity sensors and behavioral diagnostics; information fusion; personal health informatics; ambient displays and actuator networks; agents, assistants, coaches, and companions; adaptive, distributed interfaces; and remote community and collaboration.{/t}</p>
+        <p>{t}This final part of the module addresses distance caregiving, proposes the use of technology innovation to support caregiving, and we will then discuss suggested research agenda to better inform policy decisions related to the unique needs of this situation.{/t}</p>
+        <p>{t}When the physical location of the caregiver and elder are at a geographic distance, additional assists are required to support the physical, social, and contextual dimensions of the caregiving process. Numerous technological assists, including enabling, automation, and tele-health technologies, have potential for providing this type of caregiver support. Technology-based interventions that include computer and communication technology offer potentially strong support in the areas of prevention and detection, managing everyday life, social connectedness, and identity affirmation.{/t} </p>
+        <p>{t}Therefore, in today’s era of high technology, it is surprising that so few affordable innovations are being marketed for distance caregiving. One explanation for this gap in application may be the lack of understanding about the relationship between technology and caregiving activities. Technology-based interventions could virtually connect the caregiver and elder and provide strong support for distance caregiving that addresses the elder’s physical, social, cognitive, and/or sensory impairments. A possible solution to acceptable application of technology into the homes of elders is through ubiquitous computing. This approach integrates computer technology into the environment, rather than having computers that are distinct objects. Ubiquitous computing and embedded technology are emerging as assists in the home environments. Weiser (1996), who coined the term, reflected, <i>Ubiquitous</i> computing names the third wave in computing, just now beginning.{/t}</p>
+        <p class="forum">{t}As you consider technology and caregiving, what limits do you anticipate or think should be governed when it comes to caregiving assistance? Post your feedback on the Forum.{/t}</p>
+        <img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}"> </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo;</a></div>
+    </div>
+    <div id="lesson-5-slide-8" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}The Technology Revolution and Caregiving (continued){/t}</h2>
+        <hr />
+        <p>{t}First there were mainframes, each shared by lots of people. Now we are in the personal computing era, person and machine staring uneasily at each other across the desktop. Next comes ubiquitous computing, or the age of <i>calm technology</i>, when technology <i>recedes into the background of our lives</i>.{/t}</p>
+        <p>{t}For those with cognitive decline, Morris and Lundell (2003) identify four principles to guide the use of calm technology solutions including assessing while helping, adapting assistance to variability in cognitive abilities, catalyzing instead of replacing social interactions, and leveraging familiar interfaces. These needs are embodied in the technology-based solutions that are being proposed for the caregiver/elder dyad.{/t}</p>
+        <p>{t}Technologies for adaptive aging include: wireless broadband; biosensors and bodily diagnostics; activity sensors and behavioral diagnostics; information fusion; personal health informatics; ambient displays and actuator networks; agents, assistants, coaches, and companions; adaptive, distributed interfaces; and remote community and collaboration.{/t}</p>
         <p>{t}Two-way video connections adapted for the elder’s level of physical and cognitive ability can engage the elder in social and cognitive stimulation. Intelligent assistive technology such as activity cueing, autominders, televideo monitoring or a ComputerLinks network could assist in remote wellness checking, providing information and decision-support, and address distance caregiving needs to assess changes in health or functional status. Telecommunication innovations could bridge some of the socialization and communication gaps imposed by distance and assist the caregiver in assessing and enhancing the elder’s functional status. The use of family portraits, ambient displays, and customized two-way video and computers offer methods to connect and represent a way of feeling presence across distance.{/t}</p>
         <p>{t}Using technology to communicate and interact with elders offers avenues for novel approaches to care and opens new areas of exploration. The challenge to using advanced technology-based interventions is to match these technological capabilities to actual caregiving needs, understand how people prefer to interact with technology, and learn how it fits into caregivers’ and elders’ lives without introducing new burdens associated with technology use.{/t}</p>
-        <p>{t}How has technology changed your caregiving situation? What web-based tools do you use to communicate with others, besides e-mail?{/t}</p>
-        <p>{t}THANK YOU for participating and completing this course. Please complete the POST-COURSE SURVEY once you have completed the final lesson. It can be accessed via the PROFILE page.{/t}</p>
+        <p class="forum">{t}How has technology changed your caregiving situation? What web-based tools do you use to communicate with others, besides e-mail? Post your responses to the Forum.{/t}</p>
+        <img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}"> </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo;</a></div>
+    </div>
+    <div id="lesson-5-slide-9" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Closing{/t}</h2>
+        <hr />
+        <img src="<?php echo $this->getImagesUrl('intro/160382234.png'); ?>" alt="{t}image{/t}">
+        <p>{t}We have really enjoyed getting to know you, and hope this course was helpful. Please post any final thoughts, questions, or concerns to the Forum before you close out this final module. Best wishes as you carry on in the future!{/t}</p>
+        <h4 style="text-align:center;">{t}Certificates of Completion{/t}</h4>
+        <a href="<?php echo $this->getImagesUrl('intro/CourseCompletionCertificate.pdf'); ?>" target="_blank"><img src="<?php echo $this->getImagesUrl('intro/ArtworkCertificate.png'); ?>" alt="image"></a>
+        <h4>{t}Evaluation (optional){/t}</h4>
+        <p>{t}Please complete the Post-Course Evaluation. It is acceissble via the course page, in the sidebar.{/t}</p>
+        <p>{t}Your feedback is greatly appreciated, and will help us to better serve family members in the future. We ask that you
+          complete it before you exit the course. You do not have to include your name on the evaluation. It is completely
+          confidential.{/t}</p>
       </div>
-      <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Complete Lesson{/t}</a></div>
+      <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}End Course{/t}</a></div>
     </div>
   </div>
 </div>

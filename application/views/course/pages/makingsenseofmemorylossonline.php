@@ -2397,7 +2397,7 @@ someone with memory loss and invite you to remember this quote from Helen Keller
         <p><i>{t}The best and most beautifulthings in the world cannotbe seen or even touched.They must be felt withinthe heart. --Helen Keller{/t}</i></p>
         <p>{t}We have really enjoyed getting to know you. Best wishes as you carry on in the future!{/t}</p>
         
-        <h4>     {t}Certificates of Completion{/t}</h4>
+        <h4 style="text-align:center;">{t}Certificates of Completion{/t}</h4>
         <a href="<?php echo $this->getImagesUrl('msml/CourseCompletionCertificate.pdf'); ?>" target="_blank"><img src="<?php echo $this->getImagesUrl('msml/ArtworkCertificate.png'); ?>" alt="image"></a>
         
         <h4>{t}Evaluation (optional){/t}</h4>
