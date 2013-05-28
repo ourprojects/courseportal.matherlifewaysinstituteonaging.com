@@ -45,8 +45,8 @@ foreach(array(
   
   <div class="box-sidebar one">
     <h3>Alzheimer's Association: behaviors</h3>
-    <p><img class="block-center" src="<?php echo $this->getImagesUrl('alz.png'); ?>" /></p>
-    <p><a href="http://www.alz.org/national/documents/brochure_behaviors.pdf" target="_blank"><img class="block-center" src="<?php echo $this->getImagesUrl('cover_behaviors.jpg'); ?>" /> </a> </p>
+    <p><img src="<?php echo $this->getImagesUrl('empower/alz.png'); ?>" /></p>
+    <p><a href="http://www.alz.org/national/documents/brochure_behaviors.pdf" target="_blank"><img src="<?php echo $this->getImagesUrl('empower/cover_behaviors.jpg'); ?>" /> </a> </p>
     <hr />
     <p>{t}How to respond when dementia causes unpredictable behaviors (English){/t}</p>
     <br />

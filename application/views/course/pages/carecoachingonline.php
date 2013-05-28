@@ -36,7 +36,7 @@ foreach(array(
     <p><a href="#">{t}CARE Coaching Online Post-Post Course Survey{/t}</a></p>
     <p><a href="#">{t}CARE Coaching Online One-Year Survey{/t}</a></p>
     <br />
-    <img src="<?php echo $this->getImagesUrl('msml/153075496.png'); ?>" alt="image"> </div>
+    <img src="<?php echo $this->getImagesUrl('care/153075496.png'); ?>" alt="image"> </div>
   <div class="box-sidebar one">
     <h3>{t}Working Caregivers in America{/t}</h3>
     <img src="<?php echo $this->getImagesUrl('care/286x366_Grafix_69pc.png'); ?>" alt="image" class="block center" />
@@ -72,7 +72,7 @@ foreach(array(
   ?>
   </ul>
   <h5>{t}Course Agenda{/t}</h5>
-  <a href="<?php echo $this->getImagesUrl('CCOAssets/CARECoachingSyllabus.pdf'); ?>" target="_blank"><img src="<?php echo $this->getImagesUrl('pdf-icon.png'); ?>" alt="{t}Course Syllabus{/t}" /></a> <br />
+  <a href="<?php echo $this->getImagesUrl('care/CARECoachingSyllabus.pdf'); ?>" target="_blank"><img src="<?php echo $this->getImagesUrl('care/pdf-icon.png'); ?>" alt="{t}Course Syllabus{/t}" /></a> <br />
   <h4>{t}Course Modules{/t}</h4>
   
   <!-- Bullet points start here for course lessons, hyperlinks to FancyBox -->
@@ -215,7 +215,7 @@ AARP provides various articles of interest and resources for family caregivers. 
       <div class="content">
         <h2 class="flowers">{t}What’s CARE Coaching all about? (continued){/t}</h2>
         <hr />
-        <img src="<?php echo $this->getImagesUrl('4909913r.png'); ?>" alt="image" />
+        <img src="<?php echo $this->getImagesUrl('care/4909913.png'); ?>" alt="image" />
         <p>{t}As our parents age, they may suffer declining physical or cognitive health and thus have greater need for our help and understanding, and so we may become their “coach” in life.  That is easier said than done in many cases!  Regardless of their age, our parents always see themselves in that role in our relationship with them.{/t}</p>
         <p>{t}We also tend to go back into old habits, communication styles, or reactions when dealing with our parents.  How do you deal with a situation where your father begins to have minor car accidents or “forgets” the way home?  Talking with a parent about giving up the car keys is probably one of the most challenging situations we may face as a caregiver.{/t}</p>
         <p>{t}CARE Coaching involves a method to help you as a caregiver think differently about a caregiving situation so you may better prepare and feel confident about your caregiving responsibilities and actions.  Learning what is important to older parents – and learning how to draw that out – often bringing to light new information about what is important to them in terms of their own health and care.{/t}</p>
