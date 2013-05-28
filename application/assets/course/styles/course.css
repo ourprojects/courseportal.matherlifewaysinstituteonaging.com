@@ -2,6 +2,8 @@
 /* CSS Document */
 
 @import url(http://fonts.googleapis.com/css?family=Swanky+and+Moo+Moo);
+@import url(http://fonts.googleapis.com/css?family=Happy+Monkey);
+@import url(http://fonts.googleapis.com/css?family=Finger+Paint);
 div.course-slide {
 	min-height: 100%;
 	position: relative;
@@ -51,11 +53,10 @@ div.course-slide div.box-white {
 div.course-slide div#video {
 	display: block;
 	margin: 20px auto;
-	background-color:#FFF;
+	background-color: #FFF;
 	-moz-box-shadow: 0 0 5px 5px #888;
 	-webkit-box-shadow: 0 0 5px 5px#888;
 	box-shadow: 0 0 5px 5px #888;
-	
 }
 .forum {
 	font-family: 'Swanky and Moo Moo', cursive;
