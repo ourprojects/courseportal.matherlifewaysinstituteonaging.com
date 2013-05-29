@@ -206,6 +206,11 @@ foreach(array(
         <li>{t}Reward Yourself{/t}</li>
         <li>{t}My Action Plan{/t}</li>
       </ul>
+      
+      <p>{t}Caregiving involves many challenges. You often need to master new skills and gain support. You may need to develop new ways of relating to a family member if his or her ability to communicate or remember is compromised by illness. You may have to make tough decisions. But often one of the greatest challenges is taking care of yourself.{/t}</p>
+      
+      
+      
       <div id="question1" class="question">
         <p><b>{t}Caregivers providing on-going care, typically are under a lot stress, which may lead to mental and/or physical health problems.{/t}</b>
           <select>
@@ -224,10 +229,9 @@ foreach(array(
     <div class="content">
       <h2 class="flowers">{t}Caregiver Resources{/t}</h2>
       <hr />
-      <p>{t}Caregiving involves many challenges. You often need to master new skills and gain support. You may need to develop new ways of relating to a family member if his or her ability to communicate or remember is compromised by illness. You may have to make tough decisions. But often one of the greatest challenges is taking care of yourself.{/t}</p>
-      <p>{t}Too often caregivers neglect their own health and well-being, and put their own needs on the back burner. Sometimes caregivers become a second victim of the disease that afflicts their family member. It is sad when someone says, My mother was the ill person, but her illness destroyed my father. Usually, we cannot stop the impact of a chronic illness on a family member. However, we are responsible for our own self-care.{/t}</p>
-      <p>{t}When you board an airplane, the flight attendant gives several safety instructions. One of them is, If oxygen masks drop down, put on your oxygen mask first before helping others. This is because if you do not take care of yourself first, you may not be able to help those who need your help. It is the same thing with caregiving. When you take care of yourself, everyone benefits. Ignoring your own needs is not only potentially detrimental to you, but it can also be harmful to the person who depends on you.{/t}</p>
-      <p>{t}The Resource section was designed to give you additional details in order to help you maintain personal well-being while providing quality care to your family member. Many focus on tools to help you to take care of you. These tools will help you{/t}</p>
+      <p>{t}Too often caregivers neglect their own health and well-being, and put their own needs <i>on the back burner</i>. Sometimes caregivers become a second victim of the disease that afflicts their family member. It is sad when someone says, <i>my mother was the ill person, but her illness destroyed my father</i>. Usually, we cannot stop the impact of a chronic illness on a family member. However, we are responsible for our own self-care.{/t}</p>
+      <p>{t}When you board an airplane, the flight attendant gives several safety instructions. One of them is, <i>if oxygen masks drop down, put on your oxygen mask first before helping others</i>. This is because if you do not take care of yourself first, you may not be able to help those who need your help. It is the same thing with caregiving. When you take care of yourself, everyone benefits. Ignoring your own needs is not only potentially detrimental to you, but it can also be harmful to the person who depends on you.{/t}</p>
+      <p>{t}The Resource section, on this course's home page, was designed to give you additional resources in order to help you maintain personal well-being while providing quality care to your family member. Many focus on tools to help you to take care of you. These tools will help you:{/t}</p>
       <ul>
         <li>{t}set goals and make action plans;{/t}</li>
         <li>{t}identify and reduce personal stress;{/t}</li>
@@ -237,17 +241,32 @@ foreach(array(
         <li>{t}deal with emotions, especially feelings of anger, guilt, and depression; and{/t}</li>
         <li>{t}make tough caregiving decisions.{/t}</li>
       </ul>
+      
+            <p>{t}Additional resources will address special concerns and decisions you may face as a caregiver. These include what to do when a family member is no longer a safe driver, hiring in-home help, using community services, how to communicate with and respond to a family member who is memory impaired, options available when a family member is having problems managing his money; coping with depression, and making a decision about a care facility. You can turn to resources for guidance and direction when you face a specific decision or concern.{/t}</p>
+
     </div>
     <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t} </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
   </div>
   <div id="lesson-1-slide-5" class="course-slide">
     <div class="content">
-      <h2 class="flowers">{t}Caregiver Resources (continued){/t}</h2>
+      <h2 class="flowers">{t}Additional Resources{/t}</h2>
       <hr />
-      <p>{t}Additional resources will address special concerns and decisions you may face as a caregiver. These include what to do when a family member is no longer a safe driver, hiring in-home help, using community services, how to communicate with and respond to a family member who is memory impaired, options available when a family member is having problems managing his money; coping with depression, and making a decision about a care facility. You can turn to resources for guidance and direction when you face a specific decision or concern.{/t}</p>
-      <p>{t}How Much Support Do You Have?{/t}</p>
+      <h4>{t}How Much Support Do You Have?{/t}</h4>
+      
+      <p>{t}Even if you’re the primary family caregiver, you can’t do everything on your own, especially if you’re caregiving from a distance (more than an hour’s drive from your family member). You’ll need help from friends, siblings, and other family members, as well as health professionals. If you don’t get the support you need, you'll quickly burn out—which will compromise your ability to provide care.{/t}</p>
+
+
+      
       <p>{t}Mark the box in the scale to show how much support you feel from each resource. After you have completed the survey, think about what you can do to gain more support from these individuals. Again, this is simply a visual, and is not meant to be printed.{/t}</p>
-      <p>{t}Family{/t}</p>
+      
+      <ul>
+      	<li><a href="#" target="_blank">{t}Family{/t}</a></li>
+        <li><a href="#" target="_blank">{t}Friends and/or Coworkers{/t}</a></li>        
+      </ul>
+      
+      <!--
+      
+      
       <table>
         <tr>
           <td><div align="center">Type of Support</div></td>
@@ -959,6 +978,10 @@ foreach(array(
             <label for="radio10"></label></td>
         </tr>
       </table>
+      
+      -->
+      
+      
     </div>
     <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t} </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
   </div>
