@@ -29,8 +29,8 @@ foreach(array(
 
 <!-- Start sidebar here -->
 
-<div id="sidebar"> 
- <div class="box-sidebar one" style="background-color:#FFF;">
+<div id="sidebar">
+  <div class="box-sidebar one" style="background-color:#FFF;">
     <h3>{t}Survey{/t}</h3>
     <br />
     <p><a href="#">{t}Empower Online Pre-Course Survey{/t}</a></p>
@@ -39,10 +39,6 @@ foreach(array(
     <p><a href="#">{t}Empower Online One-Year Survey{/t}</a></p>
     <br />
     <img src="<?php echo $this->getImagesUrl('msml/153075496.png'); ?>" alt="image"> </div>
-  
-  
-  
-  
   <div class="box-sidebar one">
     <h3>Alzheimer's Association: behaviors</h3>
     <p><img src="<?php echo $this->getImagesUrl('empower/alz.png'); ?>" /></p>
@@ -52,8 +48,6 @@ foreach(array(
     <br />
     <br />
   </div>
-  
-  
   <div class="box-sidebar three">
     <h3>{t}Caregiver Resources{/t}</h3>
     <p><a href="http://www.usa.gov/Citizen/Topics/Health/caregivers.shtml#Government_Benefits" target="_blank"><img src="<?php echo $this->getImagesUrl('empower/usagov_logo.gif'); ?>" alt="image"></a> </p>
@@ -70,7 +64,7 @@ foreach(array(
 <div class="column-wide">
   <h2 class="flowers"><?php echo t($course->title); ?></h2>
   <p><?php echo t($course->description); ?></p>
-   <h5>{t}Access - 1 year / Completion - 5 weeks (recommended){/t}</h5>
+  <h5>{t}Access - 1 year / Completion - 5 weeks (recommended){/t}</h5>
   <h4>{t}Objectives{/t}</h4>
   <ul>
     <?php 
@@ -82,129 +76,13 @@ foreach(array(
   <!-- Course Lesson list starts here -->
   
   <h4>{t}Course Lessons{/t}</h4>
-  
   <ul>
-  <li> 
-	  <a href="#lesson-1-slide-1" data-fancybox-group="lesson-1" class="teal lesson-1">{t}Taking Care of You{/t}</a> 
-	  <a href="#lesson-1-slide-2" data-fancybox-group="lesson-1" class="hide lesson-1"></a> 
-	  <a href="#lesson-1-slide-3" data-fancybox-group="lesson-1" class="hide lesson-1"></a> 
-	  <a href="#lesson-1-slide-4" data-fancybox-group="lesson-1" class="hide lesson-1"></a> 
-	  <a href="#lesson-1-slide-5" data-fancybox-group="lesson-1" class="hide lesson-1"></a> 
-	  <a href="#lesson-1-slide-6" data-fancybox-group="lesson-1" class="hide lesson-1"></a> 
-	  <a href="#lesson-1-slide-7" data-fancybox-group="lesson-1" class="hide lesson-1"></a> 
-	  <a href="#lesson-1-slide-8" data-fancybox-group="lesson-1" class="hide lesson-1"></a> 
-	  <a href="#lesson-1-slide-9" data-fancybox-group="lesson-1" class="hide lesson-1"></a>
-	  <a href="#lesson-1-slide-10" data-fancybox-group="lesson-1" class="hide lesson-1"></a> 
-      <a href="#lesson-1-slide-11" data-fancybox-group="lesson-1" class="hide lesson-1"></a> 
-      <a href="#lesson-1-slide-12" data-fancybox-group="lesson-1" class="hide lesson-1"></a> 
-      <a href="#lesson-1-slide-13" data-fancybox-group="lesson-1" class="hide lesson-1"></a> 
-      <a href="#lesson-1-slide-14" data-fancybox-group="lesson-1" class="hide lesson-1"></a> 
-      <a href="#lesson-1-slide-15" data-fancybox-group="lesson-1" class="hide lesson-1"></a>
-      <a href="#lesson-1-slide-16" data-fancybox-group="lesson-1" class="hide lesson-1"></a> 
-      <a href="#lesson-1-slide-17" data-fancybox-group="lesson-1" class="hide lesson-1"></a> 
-      <a href="#lesson-1-slide-18" data-fancybox-group="lesson-1" class="hide lesson-1"></a> 
-      <a href="#lesson-1-slide-19" data-fancybox-group="lesson-1" class="hide lesson-1"></a> 
-      <a href="#lesson-1-slide-20" data-fancybox-group="lesson-1" class="hide lesson-1"></a> 
-      <a href="#lesson-1-slide-21" data-fancybox-group="lesson-1" class="hide lesson-1"></a> 
-      <a href="#lesson-1-slide-22" data-fancybox-group="lesson-1" class="hide lesson-1"></a> 
-      <a href="#lesson-1-slide-23" data-fancybox-group="lesson-1" class="hide lesson-1"></a> 
-      <a href="#lesson-1-slide-24" data-fancybox-group="lesson-1" class="hide lesson-1"></a> 
-      <a href="#lesson-1-slide-25" data-fancybox-group="lesson-1" class="hide lesson-1"></a>
-      <a href="#lesson-1-slide-26" data-fancybox-group="lesson-1" class="hide lesson-1"></a> 
-
-  </li>
-  <li>
-	 	<a href="#lesson-2-slide-1" data-fancybox-group="lesson-2" class="teal lesson-2">{t}Reducing Personal Stress{/t}</a> 
-	  	<a href="#lesson-2-slide-2" data-fancybox-group="lesson-2" class="hide lesson-2"></a> 
-	  	<a href="#lesson-2-slide-3" data-fancybox-group="lesson-2" class="hide lesson-2"></a> 
-	  	<a href="#lesson-2-slide-4" data-fancybox-group="lesson-2" class="hide lesson-2"></a> 
-	  	<a href="#lesson-2-slide-5" data-fancybox-group="lesson-2" class="hide lesson-2"></a> 
-	  	<a href="#lesson-2-slide-6" data-fancybox-group="lesson-2" class="hide lesson-2"></a> 
-	  	<a href="#lesson-2-slide-7" data-fancybox-group="lesson-2" class="hide lesson-2"></a> 
-	  	<a href="#lesson-2-slide-8" data-fancybox-group="lesson-2" class="hide lesson-2"></a> 
-	  	<a href="#lesson-2-slide-9" data-fancybox-group="lesson-2" class="hide lesson-2"></a>
-        <a href="#lesson-2-slide-10" data-fancybox-group="lesson-2" class="hide lesson-2"></a> 
-  </li>
-  <li>
-	  	<a href="#lesson-3-slide-1" data-fancybox-group="lesson-3" class="teal lesson-3">
-	  		{t}Communicating Effectively in Challenging Situations{/t}
-	  	</a> 
-	  	<a href="#lesson-3-slide-2" data-fancybox-group="lesson-3" class="hide lesson-3"></a> 
-	  	<a href="#lesson-3-slide-3" data-fancybox-group="lesson-3" class="hide lesson-3"></a> 
-	  	<a href="#lesson-3-slide-4" data-fancybox-group="lesson-3" class="hide lesson-3"></a> 
-	  	<a href="#lesson-3-slide-5" data-fancybox-group="lesson-3" class="hide lesson-3"></a> 
-	  	<a href="#lesson-3-slide-6" data-fancybox-group="lesson-3" class="hide lesson-3"></a> 
-	  	<a href="#lesson-3-slide-7" data-fancybox-group="lesson-3" class="hide lesson-3"></a> 
-	  	<a href="#lesson-3-slide-8" data-fancybox-group="lesson-3" class="hide lesson-3"></a> 
-	  	<a href="#lesson-3-slide-9" data-fancybox-group="lesson-3" class="hide lesson-3"></a> 
-	  	<a href="#lesson-3-slide-10" data-fancybox-group="lesson-3" class="hide lesson-3"></a> 
-        <a href="#lesson-3-slide-11" data-fancybox-group="lesson-3" class="hide lesson-3"></a>
-        <a href="#lesson-3-slide-12" data-fancybox-group="lesson-3" class="hide lesson-3"></a>
-        <a href="#lesson-3-slide-13" data-fancybox-group="lesson-3" class="hide lesson-3"></a>
-        <a href="#lesson-3-slide-14" data-fancybox-group="lesson-3" class="hide lesson-3"></a>
-        <a href="#lesson-3-slide-15" data-fancybox-group="lesson-3" class="hide lesson-3"></a>
-        <a href="#lesson-3-slide-16" data-fancybox-group="lesson-3" class="hide lesson-3"></a>
-        <a href="#lesson-3-slide-17" data-fancybox-group="lesson-3" class="hide lesson-3"></a>
-        <a href="#lesson-3-slide-18" data-fancybox-group="lesson-3" class="hide lesson-3"></a>
-        <a href="#lesson-3-slide-19" data-fancybox-group="lesson-3" class="hide lesson-3"></a>
-        <a href="#lesson-3-slide-20" data-fancybox-group="lesson-3" class="hide lesson-3"></a>
-        <a href="#lesson-3-slide-21" data-fancybox-group="lesson-3" class="hide lesson-3"></a>
-        <a href="#lesson-3-slide-22" data-fancybox-group="lesson-3" class="hide lesson-3"></a>
-        <a href="#lesson-3-slide-23" data-fancybox-group="lesson-3" class="hide lesson-3"></a>
-        <a href="#lesson-3-slide-24" data-fancybox-group="lesson-3" class="hide lesson-3"></a>
-        <a href="#lesson-3-slide-25" data-fancybox-group="lesson-3" class="hide lesson-3"></a>
-        <a href="#lesson-3-slide-26" data-fancybox-group="lesson-3" class="hide lesson-3"></a>
-        <a href="#lesson-3-slide-27" data-fancybox-group="lesson-3" class="hide lesson-3"></a>
-        <a href="#lesson-3-slide-28" data-fancybox-group="lesson-3" class="hide lesson-3"></a>
-        <a href="#lesson-3-slide-29" data-fancybox-group="lesson-3" class="hide lesson-3"></a>
-  </li>
-  <li>
-	  <a href="#lesson-4-slide-1" data-fancybox-group="lesson-4" class="teal lesson-4">
-	  {t}Normal &amp; Abnormal Aging Changes{/t}
-	  </a> 
-	  <a href="#lesson-4-slide-2" data-fancybox-group="lesson-4" class="hide lesson-4"></a> 
-	  <a href="#lesson-4-slide-3" data-fancybox-group="lesson-4" class="hide lesson-4"></a> 
-	  <a href="#lesson-4-slide-4" data-fancybox-group="lesson-4" class="hide lesson-4"></a> 
-	  <a href="#lesson-4-slide-5" data-fancybox-group="lesson-4" class="hide lesson-4"></a> 
-	  <a href="#lesson-4-slide-6" data-fancybox-group="lesson-4" class="hide lesson-4"></a> 
-	  <a href="#lesson-4-slide-7" data-fancybox-group="lesson-4" class="hide lesson-4"></a> 
-	  <a href="#lesson-4-slide-8" data-fancybox-group="lesson-4" class="hide lesson-4"></a> 
-	  <a href="#lesson-4-slide-9" data-fancybox-group="lesson-4" class="hide lesson-4"></a> 
-	  <a href="#lesson-4-slide-10" data-fancybox-group="lesson-4" class="hide lesson-4"></a> 
-      <a href="#lesson-4-slide-11" data-fancybox-group="lesson-4" class="hide lesson-4"></a> 
-	  <a href="#lesson-4-slide-12" data-fancybox-group="lesson-4" class="hide lesson-4"></a> 
-	  <a href="#lesson-4-slide-13" data-fancybox-group="lesson-4" class="hide lesson-4"></a> 
-	  <a href="#lesson-4-slide-14" data-fancybox-group="lesson-4" class="hide lesson-4"></a> 
-	  <a href="#lesson-4-slide-15" data-fancybox-group="lesson-4" class="hide lesson-4"></a> 
-	  <a href="#lesson-4-slide-16" data-fancybox-group="lesson-4" class="hide lesson-4"></a> 
-	  <a href="#lesson-4-slide-17" data-fancybox-group="lesson-4" class="hide lesson-4"></a> 
-	  <a href="#lesson-4-slide-18" data-fancybox-group="lesson-4" class="hide lesson-4"></a> 
-	  <a href="#lesson-4-slide-19" data-fancybox-group="lesson-4" class="hide lesson-4"></a> 
-
-  </li>
-  <li>
-    <a href="#lesson-5-slide-1" data-fancybox-group="lesson-5" class="teal lesson-5">
-    {t}Financial &amp; Legal Issues{/t}
-    </a> 
-	<a href="#lesson-5-slide-2" data-fancybox-group="lesson-5" class="hide lesson-5"></a> 
-	<a href="#lesson-5-slide-3" data-fancybox-group="lesson-5" class="hide lesson-5"></a> 
-	<a href="#lesson-5-slide-4" data-fancybox-group="lesson-5" class="hide lesson-5"></a> 
-	<a href="#lesson-5-slide-5" data-fancybox-group="lesson-5" class="hide lesson-5"></a> 
-	<a href="#lesson-5-slide-6" data-fancybox-group="lesson-5" class="hide lesson-5"></a> 
-	<a href="#lesson-5-slide-7" data-fancybox-group="lesson-5" class="hide lesson-5"></a> 
-	<a href="#lesson-5-slide-8" data-fancybox-group="lesson-5" class="hide lesson-5"></a> 
-	<a href="#lesson-5-slide-9" data-fancybox-group="lesson-5" class="hide lesson-5"></a> 
-	<a href="#lesson-5-slide-10" data-fancybox-group="lesson-5" class="hide lesson-5"></a>
-  	<a href="#lesson-5-slide-11" data-fancybox-group="lesson-5" class="hide lesson-5"></a>	
-    <a href="#lesson-5-slide-12" data-fancybox-group="lesson-5" class="hide lesson-5"></a>	
-
-  </li>
- 
-</ul>
- 
-
-  
-  
+    <li> <a href="#lesson-1-slide-1" data-fancybox-group="lesson-1" class="teal lesson-1">{t}Taking Care of You{/t}</a> <a href="#lesson-1-slide-2" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-3" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-4" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-5" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-6" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-7" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-8" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-9" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-10" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-11" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-12" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-13" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-14" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-15" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-16" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-17" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-18" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-19" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-20" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-21" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-22" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-23" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-24" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-25" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-26" data-fancybox-group="lesson-1" class="hide lesson-1"></a> </li>
+    <li> <a href="#lesson-2-slide-1" data-fancybox-group="lesson-2" class="teal lesson-2">{t}Reducing Personal Stress{/t}</a> <a href="#lesson-2-slide-2" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-3" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-4" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-5" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-6" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-7" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-8" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-9" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-10" data-fancybox-group="lesson-2" class="hide lesson-2"></a> </li>
+    <li> <a href="#lesson-3-slide-1" data-fancybox-group="lesson-3" class="teal lesson-3"> {t}Communicating Effectively in Challenging Situations{/t} </a> <a href="#lesson-3-slide-2" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-3" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-4" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-5" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-6" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-7" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-8" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-9" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-10" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-11" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-12" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-13" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-14" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-15" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-16" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-17" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-18" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-19" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-20" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-21" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-22" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-23" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-24" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-25" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-26" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-27" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-28" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-29" data-fancybox-group="lesson-3" class="hide lesson-3"></a> </li>
+    <li> <a href="#lesson-4-slide-1" data-fancybox-group="lesson-4" class="teal lesson-4"> {t}Normal &amp; Abnormal Aging Changes{/t} </a> <a href="#lesson-4-slide-2" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-3" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-4" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-5" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-6" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-7" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-8" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-9" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-10" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-11" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-12" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-13" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-14" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-15" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-16" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-17" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-18" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-19" data-fancybox-group="lesson-4" class="hide lesson-4"></a> </li>
+    <li> <a href="#lesson-5-slide-1" data-fancybox-group="lesson-5" class="teal lesson-5"> {t}Financial &amp; Legal Issues{/t} </a> <a href="#lesson-5-slide-2" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-3" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-4" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-5" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-6" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-7" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-8" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-9" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-10" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-11" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-12" data-fancybox-group="lesson-5" class="hide lesson-5"></a> </li>
+  </ul>
   
   <!-- Resources div white box here -->
   
@@ -232,36 +110,93 @@ foreach(array(
   
   <!-- Developers div white box here -->
   
-   <div class="box-white" id="developers">
-      <h4>{t}Facilitators &amp; Course Developers{/t}</h4>
-      <br />
-      <SPAN class="h5">{t}Content Designer:{/t}</SPAN> <span class="name">Linda Hollinger-Smith, PhD</SPAN>
-      <p> {t}Dr. Hollinger-Smith is a doctorally prepared registered nurse focusing her research in gerontology, workforce development, and quality improvement. She has more than 28 years of experience working with older adults in senior living, long-term care settings, in the community, and in acute care settings in various staff and managerial positions. Her past positions include Assistant Dean of the Rush University College of Nursing, Nursing Director of the Rush Primary Care Institute, and Associate Chairperson of the Department of Adult Health Nursing at Rush University College of Nursing.{/t} </p>
-      <span class="h5">{t}Course Developer:{/t}</span> <span class="name">Jon Woodall</span>
-      <p>{t}Mr. Woodall is responsible for all MLIA corporate workforce wellness programs related to design, implementation, publication, and evaluation. Additionally, he seeks new grant funding to support or extend current grants related to corporate workforce wellness programs.{/t} </p>
-      
-      
-      <span class="h5">{t}Facilitator (English / Spanish / Portuguese):{/t}</span> <span class="name">Elise Foss</span>
-     <p>{t}Ms. Foss has been facilitating online courses for Mather LifeWays Institute on Aging since 2004. Currently, she is the Fitness Coordinator for a Mather LifeWays Senior Living community. Originally from Venezula, and educated in Brazil, Elise is fluent in English, Spanish and Portuguese, and travels to family in Brazil each year.{/t}
-      </p>
-         <span class="h5">{t}Facilitator (Chinese):{/t}</span> <span class="name">LiJuan Yin</span>
-     <p>{t}Mrs. Lin is currently a PhD student at the University of Illinois at Chicago (UIC), studying Public Health. She has helped reserarch, develop, and facilitate online courses for Mather LifeWays Institute on aging for the past 3 years.{/t}
-      </p>
-    
+  <div class="box-white" id="developers">
+    <h4>{t}Facilitators &amp; Course Developers{/t}</h4>
+    <br />
+    <SPAN class="h5">{t}Content Designer:{/t}</SPAN> <span class="name">Linda Hollinger-Smith, PhD</SPAN>
+    <p> {t}Dr. Hollinger-Smith is a doctorally prepared registered nurse focusing her research in gerontology, workforce development, and quality improvement. She has more than 28 years of experience working with older adults in senior living, long-term care settings, in the community, and in acute care settings in various staff and managerial positions. Her past positions include Assistant Dean of the Rush University College of Nursing, Nursing Director of the Rush Primary Care Institute, and Associate Chairperson of the Department of Adult Health Nursing at Rush University College of Nursing.{/t} </p>
+    <span class="h5">{t}Course Developer:{/t}</span> <span class="name">Jon Woodall</span>
+    <p>{t}Mr. Woodall is responsible for all MLIA corporate workforce wellness programs related to design, implementation, publication, and evaluation. Additionally, he seeks new grant funding to support or extend current grants related to corporate workforce wellness programs.{/t} </p>
+    <span class="h5">{t}Facilitator (English / Spanish / Portuguese):{/t}</span> <span class="name">Elise Foss</span>
+    <p>{t}Ms. Foss has been facilitating online courses for Mather LifeWays Institute on Aging since 2004. Currently, she is the Fitness Coordinator for a Mather LifeWays Senior Living community. Originally from Venezula, and educated in Brazil, Elise is fluent in English, Spanish and Portuguese, and travels to family in Brazil each year.{/t} </p>
+    <span class="h5">{t}Facilitator (Chinese):{/t}</span> <span class="name">LiJuan Yin</span>
+    <p>{t}Mrs. Lin is currently a PhD student at the University of Illinois at Chicago (UIC), studying Public Health. She has helped reserarch, develop, and facilitate online courses for Mather LifeWays Institute on aging for the past 3 years.{/t} </p>
   </div>
 </div>
 
 <!-- start course content here -->
 
-<!-- Lesson 1 Slide 1 -->
-
 <div id="course" class="hide">
+<?php $clientScript->registerScript('question-answer-handler',
+					"$('.course-slide .question').change(function() {".
+						"if($(this).find('select').val() == '1') {".
+							"$(this).find('.right-answer').removeClass('hide');".
+							"$(this).find('.wrong-answer').addClass('hide');".
+						"} else {".
+							"$(this).find('.right-answer').addClass('hide');".
+							"$(this).find('.wrong-answer').removeClass('hide');".
+						"}".
+					"});");
+			?>
 <div id="lesson-1">
   <div id="lesson-1-slide-1" class="course-slide">
     <div class="content">
+      <h2 class="flowers">{t}Empower Online{/t}</h2>
+      <hr />
+      <img src="<?php echo $this->getImagesUrl('empower/104651788.png'); ?>" alt="{t}image{/t}">
+      <h4>{t}Self care for the working family caregiver{/t}</h4>
+      <p>{t}<a href="http://www.matherlifewaysinstituteonaging.com/family-caregivers/empower-online/" target="_blank">Empower Online</a> is an in-depth, five-lesson online course that focuses on self-care for the working caregiver that was developed by <a href="http://www.matherlifewaysinstituteonaging.com" target="_blank">Mather LifeWays Institute on Aging</a> with the support of the <a href="http://www.abcdependentcare.com/docs/" target="_blank">American Business Collaboration for Quality Dependent Care (ABC)</a>. The program focuses on managing responsibilities while caring for loved ones with chronic medical issues and includes communicating effectively with healthcare providers and locating additional caregiver resources.{/t}</p>
+      <p>{t}Empower Online provides working caregivers with the knowledge and tools to both manage responsibilities of caring for older relatives or friends and address their own physical, mental, and emotional health needs.{/t}</p>
+      <p>{t}A research study conducted by Mather LifeWays Institute on Aging found that an online self-care program for working caregivers had multiple benefits.  As a result of participating in the online self-care program, working caregivers reported:{/t}</p>
+      <ul>
+        <li>{t}Increased participation in exercise and leisure activities;{/t}</li>
+        <li>{t}Improved self-reported health;{/t}</li>
+        <li>{t}Reduced job stress and feelings of burnout; and{/t}</li>
+        <li>{t}Increased positive feelings about their skills in caregiving.{/t}</li>
+      </ul>
+      <h5>{t}Empower Online focuses on the following key topics:{/t}</h5>
+      <ul>
+        <li>{t}Improving and maintaining one’s own health through self-care{/t}</li>
+        <li>{t}Effectively managing caregiver stress{/t}</li>
+        <li>{t}Managing caregiver transitions as loved ones’ health needs change{/t}</li>
+        <li>{t}Meeting caregiver responsibilities long distance{/t}</li>
+        <li>{t}Making care-related decisions for loved ones{/t}</li>
+      </ul>
+    </div>
+    <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Start Course &raquo;{/t}</a></div>
+  </div>
+  <div id="lesson-1-slide-2" class="course-slide">
+    <div class="content">
+      <h2 class="flowers">{t}Course Agenda{/t}</h2>
+      <hr />
+      <img src="<?php echo $this->getImagesUrl('empower/160910502.png'); ?>" alt="{t}image{/t}">
+      <h4>{t}Course Objectives{/t}</h4>
+      <ul>
+        <li>{t}Manage the ambiguities of self‐care while in the caregiver role{/t}</li>
+        <li>{t}Manage stress and emotions{/t}</li>
+        <li>{t}Communicating effectively with healthcare providers and coworkers{/t}</li>
+        <li>{t}Locate caregiver resources{/t}</li>
+      </ul>
+      <h4>{t}Course Modules{/t}</h4>
+      <ul>
+        <li>{t}Taking Care of You{/t}</li>
+        <li>{t}Reducing Personal Stress{/t}</li>
+        <li>{t}Communicating Effectively in Challenging Situations{/t}</li>
+        <li>{t}Normal & Abnormal Aging Changes{/t}</li>
+        <li>{t}Financial & Legal Issues{/t}</li>
+      </ul>
+      <h4>{t}Resources{/t}</h4>
+      <p>{t}Specific resources have been identified here because they relate to the course content. These resources will help you get greater detail about specific topics and ideas presented in this course. These resources can be accessed via the course homme page, by country or region.{/t}</p>
+      <p class="forum">{t}Please feel free to post your own resources on the Forum throughout this course.{/t}</p>
+      <img src="<?php echo $this->getImagesUrl('empower/forum_icon.png'); ?>" alt="{t}image{/t}"> </div>
+    <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t} </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+  </div>
+  <div id="lesson-1-slide-3" class="course-slide">
+    <div class="content">
       <h2 class="flowers">{t}Taking Care of You{/t}</h2>
       <hr />
-      <p>{t}This lesson contains several main sections:{/t}</p>
+      <img src="<?php echo $this->getImagesUrl('empower/80617788.png'); ?>" alt="{t}image{/t}">
+      <p>{t}This module contains several main sections:{/t}</p>
       <ul>
         <li>{t}Caregiver Resources{/t}</li>
         <li>{t}Managing Self-Care{/t}</li>
@@ -271,11 +206,21 @@ foreach(array(
         <li>{t}Reward Yourself{/t}</li>
         <li>{t}My Action Plan{/t}</li>
       </ul>
+      <div id="question1" class="question">
+        <p><b>{t}Caregivers providing on-going care, typically are under a lot stress, which may lead to mental and/or physical health problems.{/t}</b>
+          <select>
+            <option selected="selected" value="select"> {t}Select{/t} </option>
+            <option value="1"> {t}True{/t} </option>
+            <option value="0"> {t}False{/t} </option>
+          </select>
+        </p>
+        <p class="right-answer hide"> {t}Correct! Stress from caregiving can lead to many health problems./t} </p>
+        <p class="wrong-answer hide"> {t}Stress from caregiving can lead to many health problems. This module covers this specific topic.{/t} </p>
+      </div>
     </div>
-    <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Start Course &raquo;{/t}</a></div>
+    <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t} </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
   </div>
-  <!-- Lesson 1 Slide 2 -->
-  <div id="lesson-1-slide-2" class="course-slide">
+  <div id="lesson-1-slide-4" class="course-slide">
     <div class="content">
       <h2 class="flowers">{t}Caregiver Resources{/t}</h2>
       <hr />
@@ -295,8 +240,7 @@ foreach(array(
     </div>
     <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t} </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
   </div>
-  <!-- Lesson 1 Slide 3 -->
-  <div id="lesson-1-slide-3" class="course-slide">
+  <div id="lesson-1-slide-5" class="course-slide">
     <div class="content">
       <h2 class="flowers">{t}Caregiver Resources (continued){/t}</h2>
       <hr />
@@ -2445,9 +2389,6 @@ foreach(array(
   <!-- need this final div here to close lesson-2 --> 
 </div>
 
-
-
-
 <!-- Lesson 4 Slide 1 -->
 
 <div id="lesson-4">
@@ -3010,12 +2951,10 @@ foreach(array(
     <p>{t}Fortunately, exciting new technologies coming in the next 5 to 10 years offer the potential to dramatically improve the quality of care we can provide. Watch this video to learn the possibilities!{/t}</p>
   </div>
   <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Complete Lesson{/t}</a> </div>
-  </div>
-  
-  <!-- need this final div here to close lesson-4 --> 
 </div>
 
-
+<!-- need this final div here to close lesson-4 -->
+</div>
 
 <!-- Lesson 5 Slide 1 -->
 
@@ -3217,7 +3156,7 @@ foreach(array(
       <ul>
         <li>{t}Supplemental Security Income (SSI) -- People who receive a cash grant under SSI and Aid to Dependent Children are automatically eligible for Medicaid benefits.{/t}</li>
         <li>{t}Medicaid &quot;spend-down&quot; -- This is similar to a deductible or a co-payment that a patient must 
-        pay every month. Once the patient meets his &quot;spend-down&quot; amount, the patient is eligible for{/t}</li>
+          pay every month. Once the patient meets his &quot;spend-down&quot; amount, the patient is eligible for{/t}</li>
         <li>{t}Medicaid for the remainder of the month.{/t}</li>
         <li>{t}Who Is Eligible for Medicaid?{/t}</li>
         <li>{t}Medicaid eligibility requirements depend on financial need, low income, and minimal assets.{/t}</li>
@@ -3310,5 +3249,3 @@ foreach(array(
 
 <!-- need this final div to close the course -->
 </div>
-
-	
