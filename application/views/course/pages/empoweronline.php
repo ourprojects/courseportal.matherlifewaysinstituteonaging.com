@@ -195,7 +195,7 @@ foreach(array(
     <div class="content">
       <h2 class="flowers">{t}Taking Care of You{/t}</h2>
       <hr />
-      <img src="<?php echo $this->getImagesUrl('empower/80617788.png'); ?>" alt="{t}image{/t}">
+      <img src="<?php echo $this->getImagesUrl('empower/105817205.png'); ?>" alt="{t}image{/t}">
       <p>{t}This module contains several main sections:{/t}</p>
       <ul>
         <li>{t}Caregiver Resources{/t}</li>
@@ -206,11 +206,7 @@ foreach(array(
         <li>{t}Reward Yourself{/t}</li>
         <li>{t}My Action Plan{/t}</li>
       </ul>
-      
       <p>{t}Caregiving involves many challenges. You often need to master new skills and gain support. You may need to develop new ways of relating to a family member if his or her ability to communicate or remember is compromised by illness. You may have to make tough decisions. But often one of the greatest challenges is taking care of yourself.{/t}</p>
-      
-      
-      
       <div id="question1" class="question">
         <p><b>{t}Caregivers providing on-going care, typically are under a lot stress, which may lead to mental and/or physical health problems.{/t}</b>
           <select>
@@ -241,9 +237,7 @@ foreach(array(
         <li>{t}deal with emotions, especially feelings of anger, guilt, and depression; and{/t}</li>
         <li>{t}make tough caregiving decisions.{/t}</li>
       </ul>
-      
-            <p>{t}Additional resources will address special concerns and decisions you may face as a caregiver. These include what to do when a family member is no longer a safe driver, hiring in-home help, using community services, how to communicate with and respond to a family member who is memory impaired, options available when a family member is having problems managing his money; coping with depression, and making a decision about a care facility. You can turn to resources for guidance and direction when you face a specific decision or concern.{/t}</p>
-
+      <p>{t}Additional resources will address special concerns and decisions you may face as a caregiver. These include what to do when a family member is no longer a safe driver, hiring in-home help, using community services, how to communicate with and respond to a family member who is memory impaired, options available when a family member is having problems managing his money; coping with depression, and making a decision about a care facility. You can turn to resources for guidance and direction when you face a specific decision or concern.{/t}</p>
     </div>
     <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t} </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
   </div>
@@ -252,18 +246,12 @@ foreach(array(
       <h2 class="flowers">{t}Additional Resources{/t}</h2>
       <hr />
       <h4>{t}How Much Support Do You Have?{/t}</h4>
-      
       <p>{t}Even if you’re the primary family caregiver, you can’t do everything on your own, especially if you’re caregiving from a distance (more than an hour’s drive from your family member). You’ll need help from friends, siblings, and other family members, as well as health professionals. If you don’t get the support you need, you'll quickly burn out—which will compromise your ability to provide care.{/t}</p>
-
-
-      
       <p>{t}Take the surveys below to visually see how much support you feel from each resource. After you have completed the survey, think about what you can do to gain more support from these individuals. Again, this is simply a visual, and is not meant to be printed.{/t}</p>
-      
       <ul>
-      	<li><a href="#" target="_blank">{t}Family{/t}</a></li>
-    
-      
-      <!--
+        <li><a href="#" target="_blank">{t}Family{/t}</a></li>
+        
+        <!--
       
       
       <table>
@@ -979,13 +967,8 @@ foreach(array(
       </table>
       
       -->
-      
-      
-      
-      
-      
-      
-          <li><a href="#" target="_blank">{t}Friends and/or Coworkers{/t}</a></li>        
+        
+        <li><a href="#" target="_blank">{t}Friends and/or Coworkers{/t}</a></li>
       </ul>
       
       <!--
@@ -1347,25 +1330,24 @@ foreach(array(
         </tr>
       </table>
       
-      -->
-      
+      --> 
       
     </div>
     <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t} </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
   </div>
   <div id="lesson-1-slide-6" class="course-slide">
     <div class="content">
-           <h2 class="flowers">{t}Managing Self-Care{/t}</h2>
+      <h2 class="flowers">{t}Managing Self-Care{/t}</h2>
       <hr />
       <h5>{t}Managing our self-care means that as caregivers we:{/t}</h5>
       <ul>
-        <li>{t}Take responsibility - We realize we are responsible for our personal well-being and for getting our needs met. This includes maintaining activities and relationships that are meaningful to us.{/t}</li>
-        <li>{t}Have realistic expectations - We fully understand our family member's medical condition and we are realistic about what our family member can and cannot do. The more you know about your family member's medical condition, the better you will be able to plan successful caregiving strategies. Knowledge is power. It is also important to look at your definition of a good caregiver. Unrealistic expectations can set you up for feelings of failure, resentment, and guilt. Placing burdensome expectations on yourself does not make you a better caregiver. In fact, you are much more likely to become an exhausted, irritable, and resentful caregiver... and then to feel guilty!{/t}</li>
-        <li>{t}Focus on what we can do - It is important to be clear about what you can and cannot change. For example, you will not be able to change a person who has always been demanding and inflexible, but you can control how you respond to that person's demands. You can accept and let-go of-the things you cannot change. Managing your self-care also means you seek solutions to what you can change.{/t}</li>
-        <li>{t}Communicate effectively with others - These include family members, friends, health care professionals, and the care receiver. Do not expect others to know what you need. Recognize it is your responsibility to tell others about your needs and concerns. Communicate in ways that are positive and avoid being demanding, manipulative, or guilt provoking when you make requests.{/t}</li>
-        <li>{t}Learn from our emotions - Realize there will be emotional ups and downs. Listen to your emotions and what they are telling you. Do not bottle up your emotions. Repressing or denying feelings decreases energy, causes irritability, depression, and physical problems, and affects your judgment and ability to make the best decisions. Also, do not strike out at others. You are in control of your emotions, your emotions do not control you.{/t}</li>
-        <li>{t}Get help when needed - An important part of self-care is knowing when you need help and how to find it. Help can be from community resources, family and friends, or professionals. Most important is that you do not wait until you are hanging at the end of your rope before you get help. Do not wait until you are overwhelmed or exhausted, or your health fails. Reaching out for help, when needed, is a sign of personal strength.{/t}</li>
-        <li>{t}Set goals and work toward them - Be realistic in the goals that you set and take steps toward reaching those goals. Seek solutions to the problems that you experience. Changes do not need to be major to make a significant difference. In summary, self-care means that you seek ways to take better care of yourself. As a caregiver, you do not just survive. You thrive!{/t}</li>
+        <li>{t}<b>Take responsibility</b> - We realize we are responsible for our personal well-being and for getting our needs met. This includes maintaining activities and relationships that are meaningful to us.{/t}</li>
+        <li>{t}<b>Have realistic expectations</b> - We fully understand our family member's medical condition and we are realistic about what our family member can and cannot do. The more you know about your family member's medical condition, the better you will be able to plan successful caregiving strategies. Knowledge is power. It is also important to look at your definition of a good caregiver. Unrealistic expectations can set you up for feelings of failure, resentment, and guilt. Placing burdensome expectations on yourself does not make you a better caregiver. In fact, you are much more likely to become an exhausted, irritable, and resentful caregiver... and then to feel guilty!{/t}</li>
+        <li>{t}<b>Focus on what we can do</b> - It is important to be clear about what you can and cannot change. For example, you will not be able to change a person who has always been demanding and inflexible, but you can control how you respond to that person's demands. You can accept and let-go of-the things you cannot change. Managing your self-care also means you seek solutions to what you can change.{/t}</li>
+        <li>{t}<b>Communicate effectively with others</b> - These include family members, friends, health care professionals, and the care receiver. Do not expect others to know what you need. Recognize it is your responsibility to tell others about your needs and concerns. Communicate in ways that are positive and avoid being demanding, manipulative, or guilt provoking when you make requests.{/t}</li>
+        <li>{t}<b>Learn from our emotions</b> - Realize there will be emotional ups and downs. Listen to your emotions and what they are telling you. Do not bottle up your emotions. Repressing or denying feelings decreases energy, causes irritability, depression, and physical problems, and affects your judgment and ability to make the best decisions. Also, do not strike out at others. You are in control of your emotions, your emotions do not control you.{/t}</li>
+        <li>{t}<b>Get help when needed</b> - An important part of self-care is knowing when you need help and how to find it. Help can be from community resources, family and friends, or professionals. Most important is that you do not wait until you are hanging at the end of your rope before you get help. Do not wait until you are overwhelmed or exhausted, or your health fails. Reaching out for help, when needed, is a sign of personal strength.{/t}</li>
+        <li>{t}<b>Set goals and work toward them</b> - Be realistic in the goals that you set and take steps toward reaching those goals. Seek solutions to the problems that you experience. Changes do not need to be major to make a significant difference. In summary, self-care means that you seek ways to take better care of yourself. As a caregiver, you do not just survive. You thrive!{/t}</li>
       </ul>
     </div>
     <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t} </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
@@ -1374,8 +1356,16 @@ foreach(array(
     <div class="content">
       <h2 class="flowers">{t}Managing Self-Care (continued){/t}</h2>
       <hr />
-      <div>
+      <div style="background-color: #FFF;
+	border-radius: 10px;
+	width:90%;
+	margin: 10px auto 10px auto;
+	padding: 10px;
+	-moz-box-shadow: 0 0 5px 5px #888;
+	-webkit-box-shadow: 0 0 5px 5px#888;
+	box-shadow: 0 0 5px 5px #888;">
         <p>Ask yourself the following questions about your caregiving:</p>
+        <hr />
         <p>
           <input type="checkbox" name="Yes" id="Yes">
           <label for="Yes">Yes</label>
@@ -1412,14 +1402,14 @@ foreach(array(
           <input type="checkbox" name="No6" id="No6">
           <label for="No6"> No</label>
           | Do you feel that your family or others just don't understand what you are going through as a caregiver?</p>
-        <p>
+        <p style="text-align:center;">
           <input name="Submit" type="submit" id="Submit" onClick="MM_popupMsg('A 'Yes' answer to any of these questions indicates an area of self-care you might want to work on.')" value="Submit">
         </p>
       </div>
-      <p>{t}Trying To Do It All{/t}</p>
+      <h5>{t}Trying To Do It All{/t}</h5>
       <p>{t}One problem that caregivers frequently experience is trying to do it all and doing it all alone. Is it possible to do it all? The answer to the question can be both yes and no. It really depends on you. What is critical is how you define what it means to do it all and, whether or not your definition of doing it all includes taking care of yourself so that you thrive, and not just survive.{/t}</p>
-      <p>{t}To Maxine, the answer to the question "Is it possible to do it all?" was "no." She says, "Mother's needs are endless and no matter what I do, I can never make her happy." Yet, at the same time, Maxine was trying to do it all. Her mother's care dominated Maxine's life. Another caregiver, Maria, answered "yes" to the question, "Is it possible to do it all?" She explained that "All that needed to be done for my mother was done."{/t}</p>
-      <p>{t}A major difference between Maxine and Maria was the rules by which they operated. Maxine operated by the rule, "I must do everything for my mother." The rule had become, "I must help Mama at all costs." As a result, her relationships with other family members suffered and Maxine found herself becoming increasingly resentful. Maxine's feelings of wanting to do everything is legitimate, but the actions associated with her feelings usually are impossible to carry out.{/t}</p>
+      <p>{t}To Maxine, the answer to the question <em>is it possible to do it all</em>? was <em>no</em>. She says, <em>Mother's needs are endless and no matter what I do, I can never make her happy.</em> Yet, at the same time, Maxine was trying to do it all. Her mother's care dominated Maxine's life. Another caregiver, Maria, answered <em>yes</em> to the question, <em>is it possible to do it all</em>? She explained that "<em>all that needed to be done for my mother was done.</em>"{/t}</p>
+      <p>{t}A major difference between Maxine and Maria was the rules by which they operated. Maxine operated by the rule, <em>I must do everything for my mother</em>. The rule had become, <em>I must help Mama at all costs</em>. As a result, her relationships with other family members suffered and Maxine found herself becoming increasingly resentful. Maxine's feelings of wanting to do everything is legitimate, but the actions associated with her feelings usually are impossible to carry out.{/t}</p>
     </div>
     <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t} </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
   </div>
@@ -1444,7 +1434,7 @@ foreach(array(
     <div class="content">
       <h2 class="flowers">{t}Managing Self-Care (continued){/t}</h2>
       <hr />
-      <p>{t}Taking Time for Yourself{/t}</p>
+      <h5>{t}Taking Time for Yourself{/t}</h5>
       <p>{t}Do you value yourself and your personal needs? What do you do for personal renewal? Do you save some time for yourself out of each day? Do you take occasional extended breaks? Or are you so involved with caregiving tasks that you have little or no time for yourself?{/t}</p>
       <p>{t}What activities do you enjoy? What would you like to do that would give you a lift? When was the last time you gave yourself a treat?{/t}</p>
       <p>{t}Breaks in caregiving are a must. They are as important to health as diet, sleep, rest, and exercise. It is important not to lose sight of your personal needs and interests. Studies show that sacrificing yourself in the care of another and removing pleasurable events from your life can lead to emotional exhaustion, depression, and physical illness. You have a right-even a responsibility-to take some time away from caregiving.{/t}</p>
@@ -1579,7 +1569,10 @@ foreach(array(
     <div class="content">
       <h2 class="flowers">{t}Reducing Personal Stress{/t}</h2>
       <hr />
-      <p>{t}This lesson contains two main sections:{/t}</p>
+      <img src="<?php echo #this->getImagesurl('empower/here.png'); ?>" alt="{t}image{/t}"
+      
+      
+      <p>{t}This module two main sections:{/t}</p>
       <ul>
         <li>{t}The Stress of Caregiving{/t}</li>
         <li>{t}Steps to Maintain Health & Avoid Stress{/t}</li>
@@ -2419,7 +2412,8 @@ foreach(array(
   <div class="content">
     <h2 class="flowers">{t}Normal & Abnormal Aging Changes{/t}</h2>
     <hr />
-    <p>{t}This lesson contains four main sections:{/t}</p>
+    <img src="<?php echo $this->getImagesUrl('164010920/here.png'); ?>" alt="{t}image{/t}">
+    <p>{t}This module contains four main sections:{/t}</p>
     <ul>
       <li>{t}Myths and Realities of Aging{/t}</li>
       <li>{t}Focusing on Healthy Aging{/t}</li>
@@ -2973,10 +2967,8 @@ foreach(array(
     <p>{t}New technology solutions offer great promise to improve quality of care while reducing healthcare costs. Technology already has transformed our lives—from email to MP3s and from online shopping to cell phones. It is time now for technology to transform the experience of aging.{/t}</p>
     <p>{t}Fortunately, exciting new technologies coming in the next 5 to 10 years offer the potential to dramatically improve the quality of care we can provide. Watch this video to learn the possibilities!{/t}</p>
   </div>
-  <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Complete Lesson{/t}</a> </div>
+  <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Complete Module{/t}</a> </div>
 </div>
-
-<!-- need this final div here to close lesson-4 -->
 </div>
 
 <!-- Lesson 5 Slide 1 -->
@@ -2986,7 +2978,8 @@ foreach(array(
     <div class="content">
       <h2 class="flowers">{t}Finances & Legal Issues{/t}</h2>
       <hr />
-      <p>{t}This lesson contains four main sections:{/t}</p>
+      <img src="<?php echo $this->getImagesUrl('empower/147041673.png'); ?>" alt="{t}image{/t}">
+      <p>{t}This module contains four main sections:{/t}</p>
       <ul>
         <li>{t}Financial Planning Issues and Key Topics for Caregivers{/t}</li>
         <li>{t}Understanding Key Aspects of Medicare{/t}</li>
@@ -3264,7 +3257,21 @@ foreach(array(
       <p>{t}Guardian/Conservator{/t}</p>
       <p>{t}A caregiver of an individual who no longer has the legal capacity to execute powers of attorney or trusts may have to become that individual's guardian or conservator. A guardian has the legal authority to make decisions about the lifestyle and well-being of another person. The decisions a guardian may make include where a person may live, what care and medical treatment will be provided, and what religious and educational activities will be made available. A conservator has legal authority to manage another person's financial affairs.{/t}</p>
     </div>
-    <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Complete Lesson{/t}</a></div>
+    <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+  </div>
+  <div id="lesson-5-slide-13" class="course-slide">
+    <div class="content">
+      <h2 class="flowers">{t}Closing{/t}</h2>
+      <hr />
+      <h4>{t}Thank You!{/t}</h4>
+      <p>{t}We have really enjoyed getting to know you. Best wishes as you carry on in the future!{/t}</p>
+      <h4 style="text-align:center;">{t}Certificates of Completion{/t}</h4>
+      <a href="<?php echo $this->getImagesUrl('msml/CourseCompletionCertificate.pdf'); ?>" target="_blank"><img src="<?php echo $this->getImagesUrl('msml/ArtworkCertificate.png'); ?>" alt="image"></a>
+      <h4>{t}Evaluation (optional){/t}</h4>
+      <p>{t}Please complete the Post-Course Evaluation. It is acceissble via the course page, in the sidebar.{/t}</p>
+      <p>{t}Your feedback is greatly appreciated, and will help us to better serve family members in the future. We ask that you complete it before you exit the course. You do not have to include your name on the evaluation. It is completely confidential.{/t}</p>
+    </div>
+    <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Complete Course{/t}</a></div>
   </div>
   
   <!-- need this final div here to close lesson-5 --> 
