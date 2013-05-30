@@ -257,12 +257,11 @@ foreach(array(
 
 
       
-      <p>{t}Mark the box in the scale to show how much support you feel from each resource. After you have completed the survey, think about what you can do to gain more support from these individuals. Again, this is simply a visual, and is not meant to be printed.{/t}</p>
+      <p>{t}Take the surveys below to visually see how much support you feel from each resource. After you have completed the survey, think about what you can do to gain more support from these individuals. Again, this is simply a visual, and is not meant to be printed.{/t}</p>
       
       <ul>
       	<li><a href="#" target="_blank">{t}Family{/t}</a></li>
-        <li><a href="#" target="_blank">{t}Friends and/or Coworkers{/t}</a></li>        
-      </ul>
+    
       
       <!--
       
@@ -982,15 +981,16 @@ foreach(array(
       -->
       
       
-    </div>
-    <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t} </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
-  </div>
-  <!-- Lesson 1 Slide 4 -->
-  <div id="lesson-1-slide-4" class="course-slide">
-    <div class="content">
-      <h2 class="flowers">{t}Caregiver Resources (continued){/t}</h2>
-      <hr />
-      <p>{t}Friend's and Coworkers{/t}</p>
+      
+      
+      
+      
+          <li><a href="#" target="_blank">{t}Friends and/or Coworkers{/t}</a></li>        
+      </ul>
+      
+      <!--
+      
+       <p>{t}Friend's and Coworkers{/t}</p>
       <table>
         <tr>
           <td><div align="center">Type of Support</div></td>
@@ -1346,15 +1346,18 @@ foreach(array(
             <label for="radio10"></label></td>
         </tr>
       </table>
+      
+      -->
+      
+      
     </div>
     <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t} </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
   </div>
-  <!-- Lesson 1 Slide 5 -->
-  <div id="lesson-1-slide-5" class="course-slide">
+  <div id="lesson-1-slide-6" class="course-slide">
     <div class="content">
-      <h2 class="flowers">{t}Managing Self-Care{/t}</h2>
+           <h2 class="flowers">{t}Managing Self-Care{/t}</h2>
       <hr />
-      <p>{t}Managing our self-care means that as caregivers we:{/t}</p>
+      <h5>{t}Managing our self-care means that as caregivers we:{/t}</h5>
       <ul>
         <li>{t}Take responsibility - We realize we are responsible for our personal well-being and for getting our needs met. This includes maintaining activities and relationships that are meaningful to us.{/t}</li>
         <li>{t}Have realistic expectations - We fully understand our family member's medical condition and we are realistic about what our family member can and cannot do. The more you know about your family member's medical condition, the better you will be able to plan successful caregiving strategies. Knowledge is power. It is also important to look at your definition of a good caregiver. Unrealistic expectations can set you up for feelings of failure, resentment, and guilt. Placing burdensome expectations on yourself does not make you a better caregiver. In fact, you are much more likely to become an exhausted, irritable, and resentful caregiver... and then to feel guilty!{/t}</li>
@@ -1367,8 +1370,7 @@ foreach(array(
     </div>
     <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t} </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
   </div>
-  <!-- Lesson 1 Slide 6 -->
-  <div id="lesson-1-slide-6" class="course-slide">
+  <div id="lesson-1-slide-7" class="course-slide">
     <div class="content">
       <h2 class="flowers">{t}Managing Self-Care (continued){/t}</h2>
       <hr />
@@ -1421,8 +1423,7 @@ foreach(array(
     </div>
     <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t} </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
   </div>
-  <!-- Lesson 1 Slide 7 -->
-  <div id="lesson-1-slide-7" class="course-slide">
+  <div id="lesson-1-slide-8" class="course-slide">
     <div class="content">
       <h2 class="flowers">{t}Managing Self-Care (continued){/t}</h2>
       <hr />
@@ -1439,8 +1440,7 @@ foreach(array(
     </div>
     <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t} </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
   </div>
-  <!-- Lesson 1 Slide 8 -->
-  <div id="lesson-1-slide-8" class="course-slide">
+  <div id="lesson-1-slide-9" class="course-slide">
     <div class="content">
       <h2 class="flowers">{t}Managing Self-Care (continued){/t}</h2>
       <hr />
