@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') or exit('No direct script access allowed');
+<?php 
 
 if(defined('YII_DEBUG') && YII_DEBUG)
 {

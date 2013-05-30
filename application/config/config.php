@@ -1,9 +1,9 @@
-<?php defined('BASEPATH') or exit('No direct script access allowed');  
+<?php   
 
 // This is the main Web application configuration.
 
 return array(
-		'basePath' => APPPATH,
+		'basePath' => APP_DIR,
 		'name' => 'Online Course Portal',
 		'sourceLanguage' => 'en_us',
 		'charset' => 'UTF-8',
@@ -13,6 +13,14 @@ return array(
 		// preloaded components
 		'preload' => array(
 				'log'
+		),
+		
+		'aliases' => array(
+				'modules' => APP_DIR . DIRECTORY_SEPARATOR . 'modules',
+				'helpers' => APP_DIR . DIRECTORY_SEPARATOR . 'helpers',
+				'filters' => APP_DIR . DIRECTORY_SEPARATOR . 'filters',
+				'uploads' => APP_DIR . DIRECTORY_SEPARATOR . 'uploads',
+				'behaviors' => APP_DIR . DIRECTORY_SEPARATOR . 'behaviors',
 		),
 
 		// autoloaded files
@@ -37,13 +45,6 @@ return array(
 			'phpbb',
 			'translate',
 			'surveyor',
-		),
-		
-		'config' => array(
-				'debug' => array(
-						'level' => E_ALL,
-						'yiiTraceLevel' => 3,
-				),
 		),
 
 		// application components
@@ -73,6 +74,16 @@ return array(
 						'messageCategory' => 'onlinecourseportal',
 				),
 				
+				/*'views' => array(
+						'class' => 'modules.translate.components.TViewSource',
+						'onMissingViewTranslation' => array('TranslateModule', 'missingViewTranslation'),
+						'viewRouteTable' => '{{translate_view_route}}',
+						'viewSourceTable' => '{{translate_view_source}}',
+						'viewTable' => '{{translate_view}}',
+						'viewMessageTable' => '{{translate_view_message}}',
+						'cachingDuration' => defined('YII_DEBUG') && YII_DEBUG ? 0 : 3600,
+				),*/
+				
 				'surveyor' => array(
 						'class' => 'modules.surveyor.components.Surveyor',		
 				),
@@ -96,7 +107,8 @@ return array(
 				),
 				
 				'viewRenderer' => array(
-					'class' => 'modules.translate.components.TViewRenderer'
+					'class' => 'modules.translate.components.TViewRenderer',
+					//'viewSource' => 'views'
 				),
 				
 				'cache' => array(
@@ -177,6 +189,12 @@ return array(
 										'categories' => 'module.translate.*',
 										'logFile' => 'translate.log',
 										'levels' => defined('YII_DEBUG') && YII_DEBUG ? '' : 'error, warning',
+								),
+								// Profiler logging
+								array(
+										'class' => 'CProfileLogRoute',
+										'report' => 'summary',
+										'enabled' => defined('YII_DEBUG') && YII_DEBUG
 								),
 						),
 				),

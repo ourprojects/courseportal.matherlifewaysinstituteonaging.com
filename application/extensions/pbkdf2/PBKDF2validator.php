@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') or exit('No direct script access allowed');  
+<?php   
 
 class PBKDF2Validator extends CValidator {
 	
