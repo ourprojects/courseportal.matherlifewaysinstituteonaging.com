@@ -11,19 +11,20 @@ class EConsoleRunner extends CComponent
     private $_bootstrapPath;
     
     /**
-     * Constructor which takes the name of the bootstrap file 
-     * and an optional base directory to look for the console application file.
+     * Constructor which takes the an optional name of the bootstrap file to use 
+     * and an optional base directory to find the bootstrap file.
      * The base directory defaults to the directory above the one returned by Yii::app()->basePath
-     * @param string $BootstrapFile filename for console application
-     * @param string $basePath path to directory to look for console application file
+     * @param string $bootstrapFile path to bootstrap file that will launch the application. Defaults to null meaning use the bootstrap file packaged with this extension.
      */
-    public function __construct($bootstrapFile, $basePath = null) {
-        if($basePath === null)
-        	$basePath = Yii::app()->getBasePath() . DIRECTORY_SEPARATOR . 'commands';
-
-        $this->_bootstrapPath = realpath(rtrim($basePath, DIRECTORY_SEPARATOR) . DIRECTORY_SEPARATOR . trim($bootstrapFile, DIRECTORY_SEPARATOR));
-        if($this->_bootstrapPath === false || !is_file($this->_bootstrapPath))
-        	throw new CException(Yii::t(self::ID, 'Bootstrap file "{path}" does not exist.', array('{path}' => $this->_bootstrapPath)));
+    public function __construct($bootstrapPath = null) {
+        if($bootstrapPath === null)
+        	$bootstrapPath = dirname(__FILE__) . DIRECTORY_SEPARATOR . 'console.php';
+        
+        $bootstrapPath = realpath($bootstrapPath);
+        if($bootstrapPath === false || !is_file($bootstrapPath))
+        	throw new CException(Yii::t(self::ID, 'Bootstrap file "{path}" is invalid or does not exist.', array('{path}' => $bootstrapPath)));
+        
+		$this->_bootstrapPath = $bootstrapPath;
     }
     
     /**
@@ -39,7 +40,7 @@ class EConsoleRunner extends CComponent
      * Run console command in background
      * @param string $cmd arguments that will be passed to the console application via the command line.
      * @param boolean $background if true the application will be ran in the background.
-     * @return integer The termination status of the process that was run. In case of an error then -1 is returned.
+     * @return mixed If ran in the background the termination status of the process that was run will be returned. In case of an error then -1 is returned. Otherwise the output of the command will be returned.
      */
     public function run($cmd, $background = true)
     {
@@ -50,9 +51,14 @@ class EConsoleRunner extends CComponent
     			$cmd = 'start /b ' . $cmd;
     		else
     			$cmd .= ' /dev/null &';
-        	
+    		return pclose(popen($cmd, 'r'));
     	}
-    	return pclose(popen($cmd, 'r'));
+    	$stdout = popen($cmd, 'r');
+    	$data = '';
+    	while(!feof($stdout))
+    		$data .= fread($stdout, 1024);
+    	pclose($stdout);
+    	return $data;
     }
 
 }
