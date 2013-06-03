@@ -134,15 +134,14 @@ defined('YII_ENABLE_ERROR_HANDLER') or define('YII_ENABLE_ERROR_HANDLER', $confi
 require_once(YII_BOOTSTRAP);
 
 // Resolve application class if it doesn't exist
-if(!class_exists($config['application']['classname'], false))
+if(!class_exists(APP_CLASS_NAME, false))
 {
 	// Resolve application's class path
-	$classpath = realpath(APP_DIR . DIRECTORY_SEPARATOR . $config['application']['path'] . DIRECTORY_SEPARATOR . $config['application']['classname'] . EXT);
-	if($classpath === false || !is_file($classpath))
+	$classpath = realpath(APP_DIR . DIRECTORY_SEPARATOR . $config['application']['path'] . DIRECTORY_SEPARATOR . APP_CLASS_NAME . EXT);
+	if($classpath !== false && is_file($classpath))
 	{
-		exit('Your application path or filename does not appear to be set correctly.');
+		require_once($classpath);
 	}
-	require_once($classpath);
 	unset($classpath);
 }
 
