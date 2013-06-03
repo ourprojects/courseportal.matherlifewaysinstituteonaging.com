@@ -5,7 +5,7 @@ class MPTranslate extends CApplicationComponent {
 	/**
 	 * @const string ID an unique key to be used in many situations
 	 * */
-	const ID = 'module.translate';
+	const ID = 'modules.translate';
 	
 	const GOOGLE_QUERY_TIME_LIMIT = 30;
 	
@@ -51,8 +51,6 @@ class MPTranslate extends CApplicationComponent {
     private $_sourceTerritoryId = null;
     
     private $_source;
-    
-    private $_dal;
     
     /**
      * @var array $_messages contains the untranslated messages found during the current request
@@ -183,7 +181,7 @@ class MPTranslate extends CApplicationComponent {
 			{
 				$languageDisplayNames = $this->getLanguageDisplayNames();
 				$languages[$this->getSourceLanguageId()] = isset($languageDisplayNames[$this->getSourceLanguageId()]) ? $languageDisplayNames[$this->getSourceLanguageId()] : $this->getSourceLanguageId();
-				foreach($this->getDal()->selectAcceptedLanguages() as $lang)
+				foreach($this->getMessageSource()->getAcceptedLanguages() as $lang)
 					$languages[$lang['id']] = isset($languageDisplayNames[$lang['id']]) ? $languageDisplayNames[$lang['id']] : $lang['id'];
 				asort($languages, SORT_LOCALE_STRING);
 				if($cache !== null)
@@ -336,22 +334,13 @@ class MPTranslate extends CApplicationComponent {
 		return $this->_cache[$cacheKey];
 	}
 	
-	public function getDal()
-	{
-		if(!isset($this->_dal))
-		{
-			$this->_dal = new TranslateDAL($this->getSource());
-		}
-		return $this->_dal;
-	}
-	
-	public function getSource()
+	public function getMessageSource()
 	{
 		if(!isset($this->_source))
 		{
 			$this->_source = Yii::app()->getMessages();
 			if(!$this->_source instanceof TMessageSource)
-				throw new CException(__CLASS__.' is only compatible with message source of type TMessageSource.');
+				throw new CException(self::ID.' is only compatible with message source of type TMessageSource.');
 		}
 		return $this->_source;
 	}
@@ -360,39 +349,53 @@ class MPTranslate extends CApplicationComponent {
      * method that handles the on missing translation event
      * 
      * @param CMissingTranslationEvent $event
-     * @return string the message to translate or the translated message if option autoTranslate is set to true
+     * @return boolean true if message was successfully translated, false otherwise.
      */
     public function missingTranslation($event) 
     {
         if($event === null)
+        {
+        	Yii::log("The missing translation event cannot be null.", CLogger::LEVEL_ERROR, self::ID);
         	return false;
-        
-        if(is_numeric($event->message))
-        	return true;
+        }
+        elseif($event->message === null)
+        {
+        	Yii::log("Message cannot be translated because the message was null.", CLogger::LEVEL_ERROR, self::ID);
+        	return false;
+        }
+        elseif($event->language === null)
+        {
+        	Yii::log("Message cannot be translated because the requested language was null.", CLogger::LEVEL_ERROR, self::ID);
+        	return false;
+        }
         
         $event->message = trim($event->message);
-        $sourceLanguage = $event->category === TranslateModule::$componentId ? 'en_us' : Yii::app()->getMessages()->getLanguage();
-        $requestedLanguage = $event->language;
         
-        if(!$this->getSource()->useLocaleSpecificTranslations)
+        if(empty($event->message))
+        	return true;
+
+        $sourceLanguage = $event->category === TranslateModule::$componentId ? 'en_us' : $this->getMessageSource()->getLanguage();
+        $requestedLanguage = trim($event->language);
+        
+        if(!$this->getMessageSource()->useLocaleSpecificTranslations)
         {
         	$sourceLanguage = $this->getLanguageID($sourceLanguage);
         	$requestedLanguage = $this->getLanguageID($requestedLanguage);
         }
 
-        if($requestedLanguage === $sourceLanguage && !Yii::app()->getMessages()->forceTranslation)
+        if($requestedLanguage === $sourceLanguage && !$this->getMessageSource()->forceTranslation)
         	return false;
 
-        $dal = $this->getDal();
+        $source = $this->getMessageSource();
         
-        $message = $dal->selectTranslation($event->category, $event->message, $requestedLanguage);
+        $message = $source->getTranslationFromDb($event->category, $event->message, $requestedLanguage);
         if($message['id'] === null) 
         {
-			$message['id'] = $dal->insertSourceMessage($event->category, $event->message);
+			$message['id'] = $source->addSourceMessage($event->category, $event->message);
 			
 			if($message['id'] === null)
 			{
-				Yii::log("Message '$event->message' in category '$event->category' could not be inserted into the database table '{$this->getSource()->sourceMessageTable}'", CLogger::LEVEL_ERROR, self::ID);
+				Yii::log("Message '$event->message' in category '$event->category' could not be inserted into the database table '{$this->getMessageSource()->sourceMessageTable}'", CLogger::LEVEL_ERROR, self::ID);
 				return false;
 			}
         }
@@ -403,10 +406,10 @@ class MPTranslate extends CApplicationComponent {
         	{
         		$message['translation'] = $event->message;
 
-        		$matchCount = preg_match_all('/\{(?:.*?)\}/s', $message['translation'], $matches);
+        		preg_match_all('/\{(?:.*?)\}/s', $message['translation'], $matches);
         		$matches = $matches[0];
-        		for($i = 0; $i < $matchCount; $i++)
-        			$message['translation'] = str_replace($matches[$i], "_{$i}_", $message['translation']);
+        		foreach($matches as $key => $match)
+        			$message['translation'] = str_replace($match, "_{$key}_", $message['translation']);
         		 
         		$message['translation'] = $this->googleTranslate(
         				$message['translation'],
@@ -417,12 +420,12 @@ class MPTranslate extends CApplicationComponent {
         		if($message['translation'] !== false) 
         		{
         			$message['translation'] = trim($message['translation'][0]);
-        			for($i = 0; $i < $matchCount; $i++)
-        				$message['translation'] = str_replace("_{$i}_", $matches[$i], $message['translation']);
+        			foreach($matches as $key => $match)
+        				$message['translation'] = str_replace("_{$key}_", $match, $message['translation']);
 
-        			if($dal->insertMessage($message['id'], $requestedLanguage, $message['translation']) !== null) 
+        			if($source->addTranslation($message['id'], $requestedLanguage, $message['translation']) > 0) 
         			{
-        				$event->message = $message['translation'];
+        				$event->message = &$message['translation'];
         				return true;
         			}
 
@@ -457,7 +460,7 @@ class MPTranslate extends CApplicationComponent {
      * @param mixed $sourceLanguage language that the message is written in, if null it will use the application source language
      * @return string translated message
      */
-    public function googleTranslate($message, $targetLanguage = null, $sourceLanguage = null) 
+    public function googleTranslate(&$message, &$targetLanguage = null, &$sourceLanguage = null) 
     {
         if($targetLanguage === null)
             $targetLanguage = $this->getLanguageId();
@@ -511,13 +514,11 @@ class MPTranslate extends CApplicationComponent {
         } 
         else 
         {
-        	
-        	$message = strval($message);
-			if(strlen($message) > self::GOOGLE_TRANSLATE_MAX_CHARS)
-				$this->_throwCharLimitException(strlen($message), self::GOOGLE_TRANSLATE_MAX_CHARS);
+        	$msg = strval($message);
+			if(strlen($msg) > self::GOOGLE_TRANSLATE_MAX_CHARS)
+				$this->_throwCharLimitException(strlen($msg), self::GOOGLE_TRANSLATE_MAX_CHARS);
 			
-			$translated = $this->_googleTranslate($message, $targetLanguage, $sourceLanguage);
-			
+			$translated = $this->_googleTranslate($msg, $targetLanguage, $sourceLanguage);
         }
         
         return $translated;
@@ -530,7 +531,7 @@ class MPTranslate extends CApplicationComponent {
     			array('{characters}' => $maxChars, '{messageLength}' => $charsInRequest)));
     }
     
-    protected function _googleTranslate($messages, $targetLanguage = null, $sourceLanguage = null) 
+    protected function _googleTranslate(&$messages, &$targetLanguage = null, &$sourceLanguage = null) 
     {
     	if(is_array($targetLanguage)) 
     	{
@@ -578,12 +579,14 @@ class MPTranslate extends CApplicationComponent {
      * accepted values are null(translate), "languages" and "detect"
      * @return stdClass the google response object
      */
-    protected function queryGoogle($args = array()) 
+    protected function queryGoogle(&$args = array()) 
     {
-        if(empty($this->googleApiKey))
-            throw new CException(TranslateModule::t('You must provide your google api key in option googleApiKey'));
-        
-        $args['key'] = $this->googleApiKey;
+        if(!isset($args['key']))
+        {
+        	if(empty($this->googleApiKey))
+            	throw new CException(TranslateModule::t('You must provide your google api key in option googleApiKey'));
+        	$args['key'] = $this->googleApiKey;
+        }
         
         $trans = false;
         
@@ -933,111 +936,4 @@ class MPTranslate extends CApplicationComponent {
         return call_user_func_array(array(TranslateModule::translator(), $method), $args);
     }
     
-}
-
-class TranslateDAL
-{
-	
-	public $sourceMessageTableSchema;
-	
-	public $messageTableSchema;
-	
-	public $acceptedLanguageTableSchema;
-	
-	public $dbConn;
-	
-	private $_selectTranslationCmd;
-	
-	private $_insertSourceMessageCmd;
-	
-	private $_insertMessageCmd;
-	
-	private $_selectAcceptedLanguagesCmd;
-	
-	public function __construct($source)
-	{
-		if(!$source instanceof TMessageSource)
-			throw new CException(__CLASS__.' is only compatible with message source of type TMessageSource.');
-
-		$this->dbConn = $source->getDbConnection();
-		$sourceDbSchema = $this->dbConn->getSchema();
-		$this->sourceMessageTableSchema = $sourceDbSchema->getTable($source->sourceMessageTable);
-		
-		if($this->sourceMessageTableSchema === null)
-			throw new CDbException("The table '$source->sourceMessageTable' cannot be found in the database.");
-		
-		$this->messageTableSchema = $sourceDbSchema->getTable($source->translatedMessageTable);
-		
-		if($this->messageTableSchema === null)
-			throw new CDbException("The table '$source->translatedMessageTable' cannot be found in the database.");
-		
-		$this->acceptedLanguageTableSchema = $sourceDbSchema->getTable($source->acceptedLanguageTable);
-		
-		if($this->acceptedLanguageTableSchema === null)
-			throw new CDbException("The table '$source->acceptedLanguageTable' cannot be found in the database.");
-	}
-	
-	public function selectTranslation($category, $message, $language)
-	{
-		if(!isset($this->_selectTranslationCmd))
-			$this->_selectTranslationCmd = $this->generateSelectTranslationCmd();
-		
-		return $this->_selectTranslationCmd->bindValues(array(':category' => $category, ':message' => $message, ':language' => $language))->queryRow();
-	}
-	
-	public function selectAcceptedLanguages()
-	{
-		if(!isset($this->_selectAcceptedLanguagesCmd))
-			$this->_selectAcceptedLanguagesCmd = $this->generateSelectAcceptedLanguagesCmd();
-	
-		return $this->_selectAcceptedLanguagesCmd->queryAll();
-	}
-	
-	public function insertSourceMessage($category, $message)
-	{
-		if(!isset($this->_insertSourceMessageCmd))
-			$this->_insertSourceMessageCmd = $this->generateInsertSourceMessageCmd();
-		
-		if($this->_insertSourceMessageCmd->bindValues(array(':category' => $category, ':message' => $message))->execute() === 0)
-			return null;
-		
-		return $this->sourceMessageTableSchema->sequenceName === null ? null : $this->dbConn->getLastInsertID($this->sourceMessageTableSchema->sequenceName);
-	}
-	
-	public function insertMessage($id, $language, $translation)
-	{
-		if(!isset($this->_insertMessageCmd))
-			$this->_insertMessageCmd = $this->generateInsertMessageCmd();
-		
-		if($this->_insertMessageCmd->bindValues(array(':id' => $id, ':language' => $language, ':translation' => $translation))->execute() === 0)
-			return null;
-	
-		return array('id' => $id, 'language' => $language);
-	}
-	
-	protected function generateSelectTranslationCmd()
-	{
-		return $this->dbConn->createCommand(
-				"SELECT MIN({$this->sourceMessageTableSchema->name}.id) AS id, {$this->messageTableSchema->name}.translation AS translation " .
-				"FROM {$this->sourceMessageTableSchema->name} " .
-				"LEFT JOIN {$this->messageTableSchema->name} ON {$this->sourceMessageTableSchema->name}.id={$this->messageTableSchema->name}.id AND {$this->messageTableSchema->name}.language=:language " .
-				"WHERE {$this->sourceMessageTableSchema->name}.category=:category AND {$this->sourceMessageTableSchema->name}.message=:message"
-		);
-	}
-	
-	protected function generateSelectAcceptedLanguagesCmd()
-	{
-		return $this->dbConn->createCommand("SELECT * FROM {$this->acceptedLanguageTableSchema->name} WHERE 1");
-	}
-	
-	protected function generateInsertSourceMessageCmd()
-	{
-		return $this->dbConn->createCommand("INSERT INTO {$this->sourceMessageTableSchema->name} (category, message) VALUES (:category, :message)");
-	}
-	
-	protected function generateInsertMessageCmd()
-	{
-		return $this->dbConn->createCommand("INSERT INTO {$this->messageTableSchema->name} (id, language, translation) VALUES (:id, :language, :translation)");
-	}
-	
 }

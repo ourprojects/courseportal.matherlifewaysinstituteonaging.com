@@ -74,15 +74,16 @@ return array(
 						'messageCategory' => 'onlinecourseportal',
 				),
 				
-				/*'views' => array(
+				'views' => array(
 						'class' => 'modules.translate.components.TViewSource',
 						'onMissingViewTranslation' => array('TranslateModule', 'missingViewTranslation'),
-						'viewRouteTable' => '{{translate_view_route}}',
+						'routeTable' => '{{translate_route}}',
+						'routeViewTable' => '{{translate_route_view}}',
 						'viewSourceTable' => '{{translate_view_source}}',
 						'viewTable' => '{{translate_view}}',
 						'viewMessageTable' => '{{translate_view_message}}',
 						'cachingDuration' => defined('YII_DEBUG') && YII_DEBUG ? 0 : 3600,
-				),*/
+				),
 				
 				'surveyor' => array(
 						'class' => 'modules.surveyor.components.Surveyor',		
@@ -108,7 +109,7 @@ return array(
 				
 				'viewRenderer' => array(
 					'class' => 'modules.translate.components.TViewRenderer',
-					//'viewSource' => 'views'
+					'viewSource' => 'views'
 				),
 				
 				'cache' => array(

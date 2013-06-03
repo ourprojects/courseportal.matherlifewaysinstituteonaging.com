@@ -13,7 +13,7 @@ class Message extends CActiveRecord {
 
 	public function rules() {
 		return array(
-            array('id, language, translation', 'required'),
+            array('id, language, translation', 'required', 'except' => 'search'),
 			array('id', 'numerical', 'integerOnly' => true),
 			array('language', 'length', 'max' => 12),
 			array('last_modified', 'date', 'format' => 'yyyy-M-d H:m:s'),
@@ -25,10 +25,11 @@ class Message extends CActiveRecord {
 							'params' => array(':language' => $this->language),
 					),
 					'message' => 'Source message {attribute} "{value}" has already been translated to '.$this->language.' ('.TranslateModule::translator()->getLanguageDisplayName($this->language).').',
+					'except' => 'search'
 			),
-			array('id', 'exist', 'attributeName' => 'id', 'className' => 'MessageSource', 'allowEmpty' => false),
-			array('id, language, translation', 'safe'),
-			array('id, language, category, message, last_modified', 'safe', 'on' => 'search'),
+			array('id', 'exist', 'attributeName' => 'id', 'className' => 'MessageSource', 'except' => 'search'),
+			
+			array('id, language, category, translation', 'safe', 'on' => 'search'),
 		);
 	}
     
@@ -54,28 +55,28 @@ class Message extends CActiveRecord {
 	public function missingTranslations($sourceMessageId = null) {
 		if($sourceMessageId === null) {
 			$this->getDbCriteria()->mergeWith(array(
-					'select' => '`t`.`language`',
-					'condition' => '`t`.`id` NOT IN
+					'select' => 't.language',
+					'condition' => 't.id NOT IN
 						(
-								SELECT `tt`.`id` FROM `'.Message::model()->tableName().'` `tt`
-								WHERE (`tt`.`language` = `t`.`language`) AND `tt`.`id` NOT IN
+								SELECT tt.id FROM '.Message::model()->tableName().' tt
+								WHERE (tt.language = t.language) AND tt.id NOT IN
 								(
-										SELECT `m`.`id` FROM `'.MessageSource::model()->tableName().'` `m`
-										WHERE (`m`.`id` = `tt`.`id`)
+										SELECT m.id FROM '.MessageSource::model()->tableName().' m
+										WHERE (m.id = tt.id)
 								)
 						)',
-					'group' => '`t`.`language`'
+					'group' => 't.language'
 			));
 		} else {
 			$this->getDbCriteria()->mergeWith(array(
-					'select' => '`t`.`language`',
+					'select' => 't.language',
 					'params' => array(':sourceMessageId' => $sourceMessageId),
-					'condition' => '`t`.`language` NOT IN 
+					'condition' => 't.language NOT IN 
 						(
-							SELECT `m`.`language` FROM `'.MessageSource::model()->tableName().'` `sm` 
-							INNER JOIN `'.Message::model()->tableName().'` `m` ON ((`sm`.`id` = `m`.`id`) AND (`sm`.`id` = :sourceMessageId))
+							SELECT m.language FROM '.MessageSource::model()->tableName().' sm 
+							INNER JOIN '.Message::model()->tableName().' m ON ((sm.id = m.id) AND (sm.id = :sourceMessageId))
 						)',
-					'group' => '`t`.`language`'
+					'group' => 't.language'
 			));
 		}
 		return $this;
@@ -93,14 +94,14 @@ class Message extends CActiveRecord {
 		$criteria = $this->getDbCriteria();
 		
 		$criteria->compare('t.id', $this->id);
-		$criteria->addSearchCondition('t.language', $this->language);
-		$criteria->addSearchCondition('t.translation', $this->translation);
+		$criteria->compare('t.language', $this->language, true);
+		$criteria->compare('t.translation', $this->translation, true);
 	
 		return $this;
 	}
 	
 	public function __toString() {
-		return isset($this->translation) ? strval($this->translation) : strval($this->language);
+		return isset($this->translation) ? strval($this->translation) : '';
 	}
 
 }

@@ -1,18 +1,19 @@
 <?php
 
 /**
- * This is the model class for table "{{translate_view_message}}".
+ * This is the model class for table "{{translate_route_view}}".
  *
- * The followings are the available columns in table '{{translate_view_message}}':
- * @property integer $message_id
+ * The followings are the available columns in table '{{translate_route_view}}':
+ * @property integer $route_id
  * @property integer $view_id
+ * 
  */
-class ViewMessage extends CActiveRecord
+class RouteView extends CActiveRecord
 {
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
-	 * @return ViewMessage the static model class
+	 * @return RouteView the static model class
 	 */
 	public static function model($className = __CLASS__)
 	{
@@ -24,7 +25,7 @@ class ViewMessage extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return '{{translate_view_message}}';
+		return '{{translate_route_view}}';
 	}
 
 	/**
@@ -33,12 +34,12 @@ class ViewMessage extends CActiveRecord
 	public function rules()
 	{
 		return array(
-			array('message_id, view_id', 'required', 'except' => 'search'),
-			array('message_id, view_id', 'numerical', 'integerOnly' => true),
-			array('message_id', 'exist', 'attributeName' => 'id', 'className' => 'MessageSource', 'except' => 'search'),
+			array('route_id, view_id', 'required', 'except' => 'search'),
+			array('route_id, view_id', 'numerical', 'integerOnly' => true),
+			array('route_id', 'exist', 'attributeName' => 'id', 'className' => 'Route', 'except' => 'search'),
 			array('view_id', 'exist', 'attributeName' => 'id', 'className' => 'ViewSource', 'except' => 'search'),
 				
-			array('message_id, view_id', 'safe', 'on' => 'search'),
+			array('route_id, view_id', 'safe', 'on' => 'search')
 		);
 	}
 
@@ -48,8 +49,8 @@ class ViewMessage extends CActiveRecord
 	public function relations()
 	{
 		return array(
-				'messageSource' => array(self::BELONGS_TO, 'MessageSource', 'message_id'),
-				'viewSource' => array(self::BELONGS_TO, 'ViewSource', 'view_id'),
+			'route' => array(self::BELONGS_TO, 'Route', 'route_id'),
+			'viewSource' => array(self::BELONGS_TO, 'ViewSource', 'view_id'),
 		);
 	}
 
@@ -59,7 +60,7 @@ class ViewMessage extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'message_id' => TranslateModule::t('Message ID'),
+			'route_id' => TranslateModule::t('Route ID'),
 			'view_id' => TranslateModule::t('View ID'),
 		);
 	}
@@ -72,7 +73,7 @@ class ViewMessage extends CActiveRecord
 	{
 		$criteria = new CDbCriteria;
 
-		$criteria->compare('message_id', $this->message_id);
+		$criteria->compare('route_id', $this->route_id);
 		$criteria->compare('view_id', $this->view_id);
 
 		return new CActiveDataProvider($this, array(

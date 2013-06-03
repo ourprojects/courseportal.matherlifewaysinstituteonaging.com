@@ -9,6 +9,8 @@ class TranslateModule extends CWebModule {
     
     private static $_translator = null;
     
+    private static $_viewRenderer = null;
+    
 	/**
 	 * TranslateModule::init()
 	 * 
@@ -44,6 +46,22 @@ class TranslateModule extends CWebModule {
     public static function missingTranslation($event) 
     {
         return self::translator()->missingTranslation($event);
+    }
+    
+    public static function viewRenderer()
+    {
+    	if(self::$_viewRenderer === null)
+    	{
+    		self::$_viewRenderer = Yii::app()->getViewRenderer();
+    		if(!self::$_viewRenderer instanceof TViewRenderer)
+    			throw new CException('View renderer component must be defined and an instance of TViewRenderer.');
+    	}
+    	return self::$_viewRenderer;
+    }
+    
+    public static function missingViewTranslation($event)
+    {
+    	return self::viewRenderer()->missingViewTranslation($event);
     }
 
     /**

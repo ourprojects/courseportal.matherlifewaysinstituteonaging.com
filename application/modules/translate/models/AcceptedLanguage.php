@@ -14,10 +14,11 @@ class AcceptedLanguage extends CActiveRecord {
 
 	public function rules() {
 		return array(
-            array('id', 'required'),
-			array('id', 'unique'),
+            array('id', 'required', 'exxcept' => 'search'),
+			array('id', 'unique', 'exxcept' => 'search'),
 			array('id', 'length', 'max' => 12),
-			array('id', 'safe')
+				
+			array('id', 'safe', 'on' => 'search')
 		);
 	}
 	
@@ -37,23 +38,23 @@ class AcceptedLanguage extends CActiveRecord {
 	public function missingTranslations($sourceMessageId = null) {
 		if($sourceMessageId === null) {
 			$this->getDbCriteria()->mergeWith(array(
-					'condition' => '`t`.`id` NOT IN
+					'condition' => 't.id NOT IN
 						(
-							SELECT `tt`.`language` FROM `'.Message::model()->tableName().'` `tt`
-							WHERE (`tt`.`language` = `t`.`id`) AND `tt`.`id` NOT IN
+							SELECT tt.language FROM '.Message::model()->tableName().' tt
+							WHERE (tt.language = t.id) AND tt.id NOT IN
 							(
-								SELECT `m`.`id` FROM `'.MessageSource::model()->tableName().'` `m`
-								WHERE (`m`.`id` = `tt`.`id`)
+								SELECT m.id FROM '.MessageSource::model()->tableName().' m
+								WHERE (m.id = tt.id)
 							)
 						)'
 			));
 		} else {
 			$this->getDbCriteria()->mergeWith(array(
 					'params' => array(':sourceMessageId' => $sourceMessageId),
-					'condition' => '`t`.`id` NOT IN 
+					'condition' => 't.id NOT IN 
 						(
-							SELECT `m`.`language` FROM `'.MessageSource::model()->tableName().'` `sm` 
-							INNER JOIN `'.Message::model()->tableName().'` `m` ON ((`sm`.`id` = `m`.`id`) AND (`sm`.`id` = :sourceMessageId))
+							SELECT m.language FROM '.MessageSource::model()->tableName().' sm 
+							INNER JOIN '.Message::model()->tableName().' m ON ((sm.id = m.id) AND (sm.id = :sourceMessageId))
 						)'
 			));
 		}
@@ -69,7 +70,11 @@ class AcceptedLanguage extends CActiveRecord {
 	
 	public function getName() {
 		if(!isset($this->_name) && isset($this->id))
+		{
 			$this->_name = TranslateModule::translator()->getLanguageDisplayName($this->id);
+			if($this->_name === false)
+				$this->_name = strval($this->id);
+		}
 		return $this->_name;
 	}
 	
@@ -82,8 +87,7 @@ class AcceptedLanguage extends CActiveRecord {
 	}
 	
 	public function __toString() {
-		$displayName = TranslateModule::translator()->getLanguageDisplayName($this->id);
-		return $displayName === false ? strval($this->id) : $displayName;
+		return $this->getName();
 	}
 
 }

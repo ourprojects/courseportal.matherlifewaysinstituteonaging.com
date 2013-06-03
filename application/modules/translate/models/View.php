@@ -14,7 +14,7 @@ class View extends CActiveRecord
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
-	 * @return CompiledView the static model class
+	 * @return View the static model class
 	 */
 	public static function model($className = __CLASS__)
 	{
@@ -35,11 +35,22 @@ class View extends CActiveRecord
 	public function rules()
 	{
 		return array(
-			array('id, language, path', 'required'),
+			array('id, language, path', 'required', 'except' => 'search'),
 			array('created', 'date', 'format' => 'yyyy-M-d H:m:s'),
-			array('id', 'numerical', 'integerOnly' => true),
 			array('path', 'length', 'max' => 255),
 			array('language', 'length', 'max' => 3),
+			array('id', 'numerical', 'integerOnly' => true),
+			array('id', 'exist', 'attributeName' => 'id', 'className' => 'ViewSource', 'except' => 'search'),
+			array('id',
+					'unique',
+					'caseSensitive' => false,
+					'criteria' => array(
+							'condition' => 'language = :language',
+							'params' => array(':language' => $this->language),
+					),
+					'message' => 'Source view {attribute} "{value}" has already been translated to "'.$this->language.'" ("'.TranslateModule::translator()->getLanguageDisplayName($this->language).'").',
+					'except' => 'search'
+			),
 
 			array('id, language, path, created', 'safe', 'on' => 'search'),
 		);
@@ -79,7 +90,7 @@ class View extends CActiveRecord
 		$criteria->compare('id', $this->id);
 		$criteria->compare('path', $this->path, true);
 		$criteria->compare('language', $this->language, true);
-		$criteria->compare('created', $this->created);
+		$criteria->compare('created', $this->created, true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria' => $criteria,

@@ -1,19 +1,19 @@
 <?php
 
 /**
- * This is the model class for table "{{translate_view_source}}".
+ * This is the model class for table "{{translate_route}}".
  *
- * The followings are the available columns in table '{{translate_view_source}}':
+ * The followings are the available columns in table '{{translate_route}}':
  * @property integer $id
- * @property string $path
+ * @property string $route
  * 
  */
-class ViewSource extends CActiveRecord
+class Route extends CActiveRecord
 {
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
-	 * @return ViewSource the static model class
+	 * @return Route the static model class
 	 */
 	public static function model($className = __CLASS__)
 	{
@@ -25,7 +25,7 @@ class ViewSource extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return '{{translate_view_source}}';
+		return '{{translate_route}}';
 	}
 
 	/**
@@ -34,12 +34,12 @@ class ViewSource extends CActiveRecord
 	public function rules()
 	{
 		return array(
-			array('path', 'required', 'except' => 'search'),
+			array('route', 'required', 'except' => 'search'),
 			array('id', 'numerical', 'integerOnly' => true),
-			array('path', 'length', 'max' => 255),
-			array('id, path', 'unique', 'except' => 'search'),
+			array('route', 'length', 'max' => 255),
+			array('id, route', 'unique', 'except' => 'search'),
 
-			array('id, path', 'safe', 'on' => 'search'),
+			array('id, route', 'safe', 'on' => 'search'),
 		);
 	}
 
@@ -49,9 +49,8 @@ class ViewSource extends CActiveRecord
 	public function relations()
 	{
 		return array(
-			'viewMessageSources' => array(self::HAS_MANY, 'ViewMessage', 'view_id'),
-			'messageSources' => array(self::MANY_MANY, 'MessageSource', '{{translate_view_message}}(view_id, message_id)'),
-			'views' => array(self::HAS_MANY, 'View', 'id'),
+			'routeViews' => array(self::HAS_MANY, 'RouteView', 'route_id'),
+			'viewSources' => array(self::MANY_MANY, 'ViewSource', '{{translate_view_source}}(route_id, view_id)'),
 		);
 	}
 
@@ -62,7 +61,7 @@ class ViewSource extends CActiveRecord
 	{
 		return array(
 			'id' => TranslateModule::t('ID'),
-			'path' => TranslateModule::t('Path'),
+			'route' => TranslateModule::t('Route'),
 		);
 	}
 
@@ -75,7 +74,7 @@ class ViewSource extends CActiveRecord
 		$criteria = new CDbCriteria;
 
 		$criteria->compare('id', $this->id);
-		$criteria->compare('path', $this->path, true);
+		$criteria->compare('route', $this->route, true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria' => $criteria,
