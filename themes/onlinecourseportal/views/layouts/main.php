@@ -34,112 +34,115 @@
 </head>
 <body>
 	<?php $this->widget('ext.LDGoogleAnalytics.LDGoogleAnalytics', Yii::app()->params['googleAnalytics']); ?>
+	<!-- BEGIN PAGE -->
 	<div id="page">
-		<div class="container">
-			<div id="flowersLeft"></div>
-			<div id="flowersRight"></div>
-			<div id="header">
-				<div id="logo">
-					<img src="<?php echo Yii::app()->getTheme()->getImagesUrl('logo.png'); ?>" alt="{t}Logo{/t}" />
-				</div>
-				<div id="site-title"><?php echo t(Yii::app()->name); ?></div>
-				<div id="language-menu"><?php $this->widget('modules.translate.widgets.acceptedLanguage.ALSelector'); ?></div>
-				<?php if(Yii::app()->getUser()->getIsAdmin() && Yii::app()->getComponent('translate')->hasMissingTranslations()): ?>
-					<div id="translate-button">
-						<?php echo Yii::app()->getComponent('translate')->translateLink('Missing Translations on Page', 'button'); ?>	
-					</div>
-				<?php endif; ?>
-				<div id="mainmenu">
-					<?php 
-						$user = Yii::app()->getUser();
-						$this->widget(
-								'zii.widgets.CMenu', 
-								array('items' => array(
-										array('label' => '<span id="menu-home" title="'.t('Home').'"></span>',
-												'url' => Yii::app()->createAbsoluteUrl('home/index')),
-										array('label' => '<span id="menu-contact" title="'.t('Contact Us').'"></span>',
-												'url' => Yii::app()->createAbsoluteUrl('home/contact')),
-										array('label' => '<span id="menu-register" title="'.t('Register').'"></span>',
-												'url' => Yii::app()->createAbsoluteUrl('user/register'),
-												'visible' => $user->getIsGuest()),
-										array('label' => '<span id="menu-login" title="'.t('Login').'"></span>',
-												'url' => Yii::app()->createAbsoluteUrl('user/login'),
-												'visible' => $user->getIsGuest()),
-										array('label' => '<span id="menu-profile" title="'.t('Profile / Files').'"></span>',
-												'url' => Yii::app()->createAbsoluteUrl('user/profile'),
-												'visible' => !$user->getIsGuest()),
-										array('label' => '<span id="menu-forum" title="'.t('Forum').'"></span>',
-												'url' => Yii::app()->getComponent('phpBB')->getForumUrl(),
-												'linkOptions' => array('target' => '_blank'),
-												'visible' => !$user->getIsGuest()),
-										array('label' => '<span id="menu-courses" title="'.t('Courses').'"></span>',
-												'url' => Yii::app()->createAbsoluteUrl('course/index'),
-												'visible' => !$user->getIsGuest()),
-										array('label' => '<span id="menu-admin" title="'.t('Admin').'"></span>',
-												'url' => Yii::app()->createAbsoluteUrl('admin/index'),
-												'visible' => $user->getIsAdmin()),
-										array('label' => '<span id="menu-logout" title="'.t('Logout').'"></span>',
-												'url' => Yii::app()->createAbsoluteUrl('user/logout'),
-												'visible' => !$user->getIsGuest())
-									),
-									'encodeLabel' => false
-								)
-						); 
-					?>
-				</div>
+		<div id="flowersLeft" style="background-image: url('<?php echo Yii::app()->getTheme()->getImagesUrl('bgleft.png'); ?>');"></div>
+		<div id="flowersRight" style="background-image: url('<?php echo Yii::app()->getTheme()->getImagesUrl('bgright.png'); ?>');"></div>
+		<!-- BEGIN HEADER -->
+		<div id="header" class="container">
+			<div id="logo">
+				<img src="<?php echo Yii::app()->getTheme()->getImagesUrl('logo.png'); ?>" alt="{t}Logo{/t}" />
 			</div>
-			<!-- header -->
-			<div id="content">
+			<div id="site-title">
+				<?php echo t(Yii::app()->name); ?>
+			</div>
+			<div id="language-menu">
+				<?php $this->widget('modules.translate.widgets.acceptedLanguage.ALSelector'); ?>
+			</div>
+			<?php if(Yii::app()->getUser()->getIsAdmin() && Yii::app()->getComponent('translate')->hasMissingTranslations()): ?>
+				<div id="translate-button">
+					<?php echo Yii::app()->getComponent('translate')->translateLink('Missing Translations on Page', 'button'); ?>	
+				</div>
+			<?php endif; ?>
+			<div id="mainmenu">
 				<?php 
-				$this->widget('zii.widgets.CBreadcrumbs', 
-						array_merge(
-							array('links' => $breadcrumbs), 
-							$this->getModule() === null ? array() : 
-								array('homeLink' => CHtml::link(t('Home'), $this->createUrl($this->getModule()->defaultController.'/')))
-						)
-				); 
+					$user = Yii::app()->getUser();
+					$this->widget(
+							'zii.widgets.CMenu', 
+							array('items' => array(
+									array('label' => '<span id="menu-home" title="'.t('Home').'"></span>',
+											'url' => Yii::app()->createAbsoluteUrl('home/index')),
+									array('label' => '<span id="menu-contact" title="'.t('Contact Us').'"></span>',
+											'url' => Yii::app()->createAbsoluteUrl('home/contact')),
+									array('label' => '<span id="menu-register" title="'.t('Register').'"></span>',
+											'url' => Yii::app()->createAbsoluteUrl('user/register'),
+											'visible' => $user->getIsGuest()),
+									array('label' => '<span id="menu-login" title="'.t('Login').'"></span>',
+											'url' => Yii::app()->createAbsoluteUrl('user/login'),
+											'visible' => $user->getIsGuest()),
+									array('label' => '<span id="menu-profile" title="'.t('Profile / Files').'"></span>',
+											'url' => Yii::app()->createAbsoluteUrl('user/profile'),
+											'visible' => !$user->getIsGuest()),
+									array('label' => '<span id="menu-forum" title="'.t('Forum').'"></span>',
+											'url' => Yii::app()->getComponent('phpBB')->getForumUrl(),
+											'linkOptions' => array('target' => '_blank'),
+											'visible' => !$user->getIsGuest()),
+									array('label' => '<span id="menu-courses" title="'.t('Courses').'"></span>',
+											'url' => Yii::app()->createAbsoluteUrl('course/index'),
+											'visible' => !$user->getIsGuest()),
+									array('label' => '<span id="menu-admin" title="'.t('Admin').'"></span>',
+											'url' => Yii::app()->createAbsoluteUrl('admin/index'),
+											'visible' => $user->getIsAdmin()),
+									array('label' => '<span id="menu-logout" title="'.t('Logout').'"></span>',
+											'url' => Yii::app()->createAbsoluteUrl('user/logout'),
+											'visible' => !$user->getIsGuest())
+								),
+								'encodeLabel' => false
+							)
+					); 
 				?>
-				<!-- breadcrumbs -->
-				<?php if(Yii::app()->getUser()->hasFlash('success')): ?>
-						<div class="flash-success">
-							<?php echo Yii::app()->getUser()->getFlash('success'); ?>
-						</div>
-				<?php endif; ?>		
-				<?php if(Yii::app()->getUser()->hasFlash('notice')): ?>
-						<div class="flash-notice">
-							<?php echo Yii::app()->getUser()->getFlash('notice'); ?>
-						</div>
-				<?php endif; ?>
-				<?php if(Yii::app()->getUser()->hasFlash('error')): ?>
-						<div class="flash-error">
-							<?php echo Yii::app()->getUser()->getFlash('error'); ?>
-						</div>
-				<?php endif; ?>
-				<?php echo $content; ?>
-				<div class="clear"></div>
 			</div>
-			<div class="clear"></div>
 		</div>
-		<!-- page -->
-		<div id="footer">
+		<!-- END HEADER -->
+		<!-- BEGIN CONTENT -->
+		<div id="content" class="container">
+			<?php 
+			$this->widget('zii.widgets.CBreadcrumbs', 
+					array_merge(
+						array('links' => $breadcrumbs), 
+						$this->getModule() === null ? array() : 
+							array('homeLink' => CHtml::link(t('Home'), $this->createUrl($this->getModule()->defaultController.'/')))
+					)
+			); 
+			?>
+			<?php if(Yii::app()->getUser()->hasFlash('success')): ?>
+					<div class="flash-success">
+						<?php echo Yii::app()->getUser()->getFlash('success'); ?>
+					</div>
+			<?php endif; ?>		
+			<?php if(Yii::app()->getUser()->hasFlash('notice')): ?>
+					<div class="flash-notice">
+						<?php echo Yii::app()->getUser()->getFlash('notice'); ?>
+					</div>
+			<?php endif; ?>
+			<?php if(Yii::app()->getUser()->hasFlash('error')): ?>
+					<div class="flash-error">
+						<?php echo Yii::app()->getUser()->getFlash('error'); ?>
+					</div>
+			<?php endif; ?>
+			<?php echo $content; ?>
+		</div>
+		<!-- END CONTENT -->
+		<!-- BEGIN FOOTER -->
+		<div id="footer" style="background-image: url('<?php echo Yii::app()->getTheme()->getImagesUrl('bg-foot.jpg'); ?>');">
 			<div class="container">
-				<div class="logo">
+				<div id="logo">
 					<a href="http://www.matherlifewaysinstituteonaging.com/" title="Mather LifeWays Institute on Aging">
 						<img src="<?php echo Yii::app()->getTheme()->getImagesUrl('logo-footer.jpg'); ?>" alt="{t}Logo{/t}" />
 					</a>
 				</div>
-				<div id="footer-icons" class="icons">
-					<a class="twitter" href="http://twitter.com/aginginaction" title="Twitter" rel="nofollow" target="_blank">
-						Twitter
+				<div id="icons">
+					<a class="twitter" href="http://twitter.com/aginginaction" title="{t}Twitter{/t}" rel="nofollow" target="_blank"
+						style="background-image: url('<?php echo Yii::app()->getTheme()->getImagesUrl('icon-twitter.png'); ?>');">
 					</a>
-					<a class="facebook" href="http://www.facebook.com/matherlifeways" title="Facebook" rel="nofollow" target="_blank">
-						Facebook
+					<a class="facebook" href="http://www.facebook.com/matherlifeways" title="{t}Facebook{/t}" rel="nofollow" target="_blank"
+						style="background-image: url('<?php echo Yii::app()->getTheme()->getImagesUrl('icon-facebook.png'); ?>');">
 					</a>
-					<a class="pinterest" href="http://pinterest.com/" title="Pinterest" rel="nofollow" target="_blank">
-						Pinterest
+					<a class="pinterest" href="http://pinterest.com/" title="{t}Pinterest{/t}" rel="nofollow" target="_blank" 
+						style="background-image: url('<?php echo Yii::app()->getTheme()->getImagesUrl('icon-pinterest.png'); ?>');">
 					</a>
-					<a class="youtube" href="http://www.youtube.com/matherlifeways" title="YouTube" rel="nofollow" target="_blank">
-						YouTube
+					<a class="youtube" href="http://www.youtube.com/matherlifeways" title="{t}YouTube{/t}" rel="nofollow" target="_blank" 
+						style="background-image: url('<?php echo Yii::app()->getTheme()->getImagesUrl('icon-youtube.png'); ?>');">
 					</a>
 				</div>
 				<div id="copyright">
@@ -151,7 +154,8 @@
 				</div>
 			</div>
 		</div>
-		<!-- footer -->
+		<!-- END FOOTER -->
 	</div>
+	<!-- END PAGE -->
 </body>
 </html>

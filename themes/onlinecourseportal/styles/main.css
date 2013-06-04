@@ -1,7 +1,9 @@
 /**************** GOOGLE WEBFONTS ***************/
 
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Arapey:400italic,400|Hammersmith+One:400);
-/**************** MAIN STYLES ***************/
+
+/**************** MAIN ***************/
+
 html {
 	height: 100%;
 }
@@ -48,14 +50,14 @@ h5 {
 }
 
 /**************** BASE STYLES ***************/
+
 #page {
-	margin-top: 90px;
 	overflow: hidden;
 	min-height: 100%;
+	min-width: 100%;
 	position: relative;
 }
 #flowersLeft {
-	background: url(../images/bgleft.png);
 	background-position: right bottom;
 	background-repeat: no-repeat;
 	z-index: -1;
@@ -66,7 +68,6 @@ h5 {
 	width: 50%;
 }
 #flowersRight {
-	background: url(../images/bgright.png);
 	background-position: left bottom;
 	background-repeat: no-repeat;
 	z-index: -1;
@@ -77,25 +78,23 @@ h5 {
 	width: 50%;
 }
 #header {
-	margin: 0;
-	padding: 0;
 	position: fixed;
 	top: 0;
-	height: 95px;
+	left: 50%;
+	margin-left: -500px;
+	height: 100px;
+	width: 1000px;
 	z-index: 100;
 	background: #fff;
-	width: 960px;
 	box-shadow: 0 0 10px #999;
 	border-bottom-right-radius: 5px;
 	border-bottom-left-radius: 5px;
 	border: 1px solid #fff;
 }
-.container {
-	height:100%
-}
 #content {
 	padding: 0 0 20px 0;
-	margin: 0 17px 140px 17px;
+	margin-top: 95px;
+	margin-bottom: 140px;
 	background: #fff;
 	box-shadow: 0 0 10px #999;
 	height: 100%;
@@ -115,6 +114,61 @@ h5 {
 	color: #999;
 }
 
+/************** FOOTER **************/
+
+#footer {
+	margin: 0;
+	padding: 5px 0px;
+	font-size: 12px;
+	background-color: #464547;
+	background-position: top center;
+	background-repeat: repeat-x;
+	color: #fff;
+	min-height: 130px;
+	text-align: center;
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+}
+#footer #logo {
+	float: left;
+	margin-top: 10px;
+}
+#footer #copyright {
+	color: #fff;
+	float: left;
+	margin-top: 60px;
+	margin-left: 5px;
+	text-align: left;
+}
+#footer #copyright ul {
+	list-style: none;
+	margin-left: 0px;
+	padding-left: 0px;
+}
+#footer #copyright ul li {
+	font-size: 8pt;
+	line-height: 12pt;
+}
+#footer #icons {
+	float: right;
+	margin-top: 15px;
+}
+#footer #icons a {
+	float: left;
+	height: 48px;
+	width: 48px;
+	margin: 0 3px 0 0;
+	color: transparent;
+	background-position: bottom left;
+	background-repeat: no-repeat;
+}
+#footer #icons a:hover {
+	background-position: top;
+}
+
+/************** BREADCRUMBS **************/
+
 .breadcrumbs {
 	margin: 0 0 15px 0;
 	padding: 20px 0 0 20px;
@@ -124,6 +178,9 @@ h5 {
 div.breadcrumbs span {
 	font-weight: bold;
 }
+
+/************** BUTTONS **************/
+
 .button, button, input[type=submit] {
 	cursor: pointer;
 	cursor: hand;
@@ -230,7 +287,8 @@ div.breadcrumbs span {
 .button.hide, button.hide, input[type=submit].hide {
 	display: none;
 }
-/************** MENU STYLES **************/
+
+/************** MENUS **************/
 
 #mainmenu {
 	position: absolute;
@@ -335,6 +393,9 @@ div.breadcrumbs span {
 	background: #f47b20 url(../images/bg-menu-active.jpg) top center repeat-x;
 	text-decoration: none;
 }
+
+/************** TRANSLATION COMPONENTS **************/
+
 #language {
 	width: 120px;
 	padding: 4px;
@@ -360,8 +421,17 @@ div.breadcrumbs span {
 	padding: 3px 6px;
 	font-size: 10pt;
 }
+#missing-view-translations {
+	padding: .8em;
+	margin-bottom: 1em;
+	border: 2px solid #ddd;
+	background: #FFF6BF;
+	color: #514721;
+	border-color: #FFD324;
+}
 
-/************** SIDEBAR STYLES **************/
+/************** SIDEBARS **************/
+
 #sidebar {
 	width: 270px;
 	margin: 0 20px 20px 0;
@@ -495,7 +565,7 @@ div.breadcrumbs span {
 	margin: 5px 8px;
 }
 
-/************** COLUMN STYLES **************/
+/************** COLUMNS **************/
 .column-wide {
 	width: 560px;
 	padding: 30px 0 30px 40px;
@@ -509,80 +579,7 @@ div.breadcrumbs span {
 	float: left;
 }
 
-/************** FOOTER **************/
-#footer {
-	margin: 0px 0 0 0;
-	padding: 5px 20px;
-	font-size: 12px;
-	background: #464547 url(../images/bg-foot.jpg) top center repeat-x;
-	color: #fff;
-	min-height: 130px;
-	text-align: center;
-	width: 100%;
-	position: absolute;
-	bottom: 0;
-}
-#footer .logo {
-	position: absolute;
-	left: 0;
-	top: 10px;
-}
-#footer #copyright {
-	color: #fff;
-	float: left;
-	padding: 60px 0 10px 0;
-	text-align: left;
-}
-#footer #copyright ul {
-	list-style: none;
-	margin: 0;
-	padding: 0;
-}
-#footer #copyright ul li {
-	font-size: 8pt;
-	line-height: 12pt;
-}
-#footer #footer-icons {
-	position: absolute;
-	top: 15px;
-	right: 0;
-}
-#footer #footer-icons a {
-	float: left;
-	height: 48px;
-	width: 48px;
-	margin: 0 3px 0 0;
-	color: transparent;
-}
-#footer #footer-icons a.pinterest {
-	background: url(../images/icon-pinterest.png) bottom left no-repeat;
-}
-#footer #footer-icons a.facebook {
-	background: url(../images/icon-facebook.png) bottom left no-repeat;
-}
-#footer #footer-icons a.twitter {
-	background: url(../images/icon-twitter.png) bottom left no-repeat;
-}
-#footer #footer-icons a.youtube {
-	background: url(../images/icon-youtube.png) bottom left no-repeat;
-}
-#footer #footer-icons a:hover {
-	background-position: top;
-}
-.small-masthead {
-	background: url(../images/home-image.jpg) top left no-repeat;
-	height: 80px;
-	box-shadow: inset 0 0 10px #222;
-	overflow: hidden;
-}
-.small-masthead h1 {
-	font-family: "Source Sans Pro", Arial, sans-serif;
-	color: #fff;
-	padding: 30px 40px;
-	background: none;
-	opacity: .9;
-}
-/**************** STYLED BOX CLASSES ***************/
+/**************** BOXES ***************/
 
 .box-white {
 	padding: 10px;
@@ -619,28 +616,22 @@ div.breadcrumbs span {
 	border-radius: 5px;
 	box-shadow: 0 0 10px #999;
 }
-/**************** GENERAL CLASSES ***************/
-
-.flowers {
-	background: url(../images/bg-flower.png) top left no-repeat;
+.small-masthead {
+	background: url(../images/home-image.jpg) top left no-repeat;
+	height: 80px;
+	box-shadow: inset 0 0 10px #222;
+	overflow: hidden;
+}
+.small-masthead h1 {
 	font-family: "Source Sans Pro", Arial, sans-serif;
-	color: #008c99;
-	padding: 15px 0 7px 45px;
-	font-size: 28px;
-	line-height: 28px;
-	margin: 0;
+	color: #fff;
+	padding: 30px 40px;
+	background: none;
+	opacity: .9;
 }
-.flowers.top-pad {
-	margin: 40px 0 0;
-}
-a.pdf {
-	display: block;
-	padding: 5px 5px 5px 35px;
-	background: url(../images/icon-pdf.png) top left no-repeat;
-}
-a.pdf.hide {
-	display: none;
-}
+
+/**************** FLASH MESSAGES ***************/
+
 div.flash-error, div.flash-notice, div.flash-success {
 	padding: .8em;
 	margin-bottom: 1em;
@@ -676,22 +667,9 @@ div.form .rememberMe label {
 div.form .rememberMe label.hide {
 	display: none;
 }
-div.view {
-	padding: 10px;
-	margin: 10px 0;
-	border: 1px solid #C9E0ED;
-}
-.loading {
-	background-color: #eee;
-	background-image: url('../images/loading.gif');
-	background-position: center center;
-	background-repeat: no-repeat;
-	opacity: 1;
-}
-.align_top {
-	vertical-align: top;
-	margin-top: 0;
-}
+
+/**************** PORTLETS ***************/
+
 .portlet {
 }
 .portlet-decoration {
@@ -720,6 +698,46 @@ div.view {
 	margin: 0;
 	padding: 0;
 }
+
+/**************** GENERAL CLASSES ***************/
+
+.flowers {
+	background: url(../images/bg-flower.png) top left no-repeat;
+	font-family: "Source Sans Pro", Arial, sans-serif;
+	color: #008c99;
+	padding: 15px 0 7px 45px;
+	font-size: 28px;
+	line-height: 28px;
+	margin: 0;
+}
+.flowers.top-pad {
+	margin: 40px 0 0;
+}
+a.pdf {
+	display: block;
+	padding: 5px 5px 5px 35px;
+	background: url(../images/icon-pdf.png) top left no-repeat;
+}
+a.pdf.hide {
+	display: none;
+}
+div.view {
+	padding: 10px;
+	margin: 10px 0;
+	border: 1px solid #C9E0ED;
+}
+.loading {
+	background-color: #eee;
+	background-image: url('../images/loading.gif');
+	background-position: center center;
+	background-repeat: no-repeat;
+	opacity: 1;
+}
+.align_top {
+	vertical-align: top;
+	margin-top: 0;
+}
+
 .portlet-content li {
 	padding: 2px 0 4px 0px;
 }
