@@ -182,8 +182,8 @@ foreach(array(
         <li>{t}Taking Care of You{/t}</li>
         <li>{t}Reducing Personal Stress{/t}</li>
         <li>{t}Communicating Effectively in Challenging Situations{/t}</li>
-        <li>{t}Normal & Abnormal Aging Changes{/t}</li>
-        <li>{t}Financial & Legal Issues{/t}</li>
+        <li>{t}Normal &amp; Abnormal Aging Changes{/t}</li>
+        <li>{t}Financial &amp; Legal Issues{/t}</li>
       </ul>
       <h4>{t}Resources{/t}</h4>
       <p>{t}Specific resources have been identified here because they relate to the course content. These resources will help you get greater detail about specific topics and ideas presented in this course. These resources can be accessed via the course homme page, by country or region.{/t}</p>
@@ -1403,7 +1403,7 @@ foreach(array(
           <label for="No6"> No</label>
           | Do you feel that your family or others just don't understand what you are going through as a caregiver?</p>
         <p style="text-align:center;">
-          <input name="Submit" type="submit" id="Submit" onClick="MM_popupMsg('A 'Yes' answer to any of these questions indicates an area of self-care you might want to work on.')" value="Submit">
+          <input name="Submit" type="submit" id="Submit" onClick="MM_popupMsg('A \'Yes\' answer to any of these questions indicates an area of self-care you might want to work on.')" value="Submit">
         </p>
       </div>
       <h5>{t}Trying To Do It All{/t}</h5>
@@ -1569,13 +1569,11 @@ foreach(array(
     <div class="content">
       <h2 class="flowers">{t}Reducing Personal Stress{/t}</h2>
       <hr />
-      <img src="<?php echo #this->getImagesurl('empower/here.png'); ?>" alt="{t}image{/t}"
-      
-      
+      <img src="<?php echo $this->getImagesUrl('empower/here.png'); ?>" alt="{t}image{/t}" />
       <p>{t}This module two main sections:{/t}</p>
       <ul>
         <li>{t}The Stress of Caregiving{/t}</li>
-        <li>{t}Steps to Maintain Health & Avoid Stress{/t}</li>
+        <li>{t}Steps to Maintain Health &amp; Avoid Stress{/t}</li>
       </ul>
       <p>{t}This lesson explores the stress of caregiving. It will help you identify and understand your particular stressors, challenges, and strengths. You can then plan strategies that help you cope, change, and reduce stress. A basic premise of this chapter is that each of us has a reservoir of strength. The challenge is to identify our strengths build on them.{/t}</p>
     </div>
@@ -1745,7 +1743,7 @@ foreach(array(
   <!-- Lesson 2 Slide 6 -->
   <div id="lesson-2-slide-6" class="course-slide">
     <div class="content">
-      <h2 class="flowers">{t}Steps to Maintain Health & Avoid Stress{/t}</h2>
+      <h2 class="flowers">{t}Steps to Maintain Health &amp; Avoid Stress{/t}</h2>
       <hr />
       <p>{t}Whatever causes stress in your life, too much of it can lower your resistance to disease and lead to "burnout." Current research shows that there is a _close connection between stress and health. Unrelieved stress is on,e of many factors that cause illness. Research also shows that thoughts and emotions affect the immune system, which is the first line of defense against disease. It is possible to strengthen the immune system by reducing stress. The following four steps will help you maintain your health and avoid distress:{/t}</p>
       <ol>
@@ -1761,7 +1759,7 @@ foreach(array(
   <!-- Lesson 2 Slide 7 -->
   <div id="lesson-2-slide-6" class="course-slide">
     <div class="content">
-      <h2 class="flowers">{t}Steps to Maintain Health & Avoid Stress (continued){/t}</h2>
+      <h2 class="flowers">{t}Steps to Maintain Health &amp; Avoid Stress (continued){/t}</h2>
       <hr />
       <p>{t}Step 1: Recognize Your Warning Signs of Stress{/t} -</p>
       <p>{t}The first step in managing stress is to be aware of how it affects you. What are your warning signs and symptoms of stress? The following are signs that may occur when you experience an unusual amount of stress. Answering these questions can help you identify your own warning signs. What is usually your earliest sign of stress? It is important to recognize stress early and do something about it, before it causes you serious problems. For one caregiver, the early sign might be increased irritability. For another, it might be lying awake for hours before falling asleep. For another, it might be fatigue and a lack of energy.{/t}</p>
@@ -1874,7 +1872,7 @@ foreach(array(
   <!-- Lesson 2 Slide 8 -->
   <div id="lesson-2-slide-8" class="course-slide">
     <div class="content">
-      <h2 class="flowers">{t}Steps to Maintain Health & Avoid Stress (continued){/t}</h2>
+      <h2 class="flowers">{t}Steps to Maintain Health &amp; Avoid Stress (continued){/t}</h2>
       <hr />
       <p>{t}Step 2: Identify Your Sources of Caregiving Stress -{/t}</p>
       <p>{t}The second step in managing stress is to recognize what causes your stress. Not all stressors are the result of caregiving. Other sources can affect your ability to be a caregiver. The following questions include many common sources of stress. Thinking about these questions can help you recognize some of your own sources.{/t}</p>
@@ -1901,7 +1899,7 @@ foreach(array(
   <!-- Lesson 2 Slide 9 -->
   <div id="lesson-2-slide-9" class="course-slide">
     <div class="content">
-      <h2 class="flowers">{t}Steps to Maintain Health & Avoid Stress (continued){/t}</h2>
+      <h2 class="flowers">{t}Steps to Maintain Health &amp; Avoid Stress (continued){/t}</h2>
       <hr />
       <p>{t}The following story is an example of a caregiver who recognized the source of her distress and made changes to better manage the situation.{/t}</p>
       <p>{t}Ernestine was increasingly fatigued, irritable, and depressed with the responsibility of caring for her husband, Richard, who had Parkinson's disease. Richard's condition was steadily getting worse. He was bed-bound and needed help with many functions. Other family members had not offered to help, and Ernestine felt abandoned, alone, angry, and overwhelmed. A few friends and neighbors had offered to help but Ernestine refused. When she started having health problems, it became clear that something had to change. She had to have help.{/t}</p>
@@ -1913,7 +1911,7 @@ foreach(array(
   <!-- Lesson 2 Slide 10 -->
   <div id="lesson-2-slide-10" class="course-slide">
     <div class="content">
-      <h2 class="flowers">{t}Steps to Maintain Health & Avoid Stress (continued){/t}</h2>
+      <h2 class="flowers">{t}Steps to Maintain Health &amp; Avoid Stress (continued){/t}</h2>
       <hr />
       <p>{t}Step 3: Identify What You Can and Cannot Change -{/t}</p>
       <p>{t}A major challenge of caregiving is to not only survive, but to rebuild your life and thrive. This is possible once you know the sources and signs of your stress. Then you can determine those you can do something about and those that are beyond your control. Step three is to identify what you can and cannot change{/t}</p>
@@ -1929,7 +1927,7 @@ foreach(array(
   <!-- Lesson 2 Slide 11 -->
   <div id="lesson-2-slide-11" class="course-slide">
     <div class="content">
-      <h2 class="flowers">{t}Steps to Maintain Health & Avoid Stress (continued){/t}</h2>
+      <h2 class="flowers">{t}Steps to Maintain Health &amp; Avoid Stress (continued){/t}</h2>
       <hr />
       <p>{t}Use the following guidelines to look at your situation and to determine what can and cannot be changed:{/t}</p>
       <ol>
@@ -1951,7 +1949,7 @@ foreach(array(
   <!-- Lesson 2 Slide 12 -->
   <div id="lesson-2-slide-12" class="course-slide">
     <div class="content">
-      <h2 class="flowers">{t}Steps to Maintain Health & Avoid Stress (continued){/t}</h2>
+      <h2 class="flowers">{t}Steps to Maintain Health &amp; Avoid Stress (continued){/t}</h2>
       <hr />
       <p>{t}Identify unrealistic expectations, especially your own{/t}</p>
       <p>{t}You can make changes successfully only when your expectations are realistic. How realistic are yours? Do you often feel anxious because you expect more of yourself than you can achieve? Many caregivers listen only to the 'shoulds' they have been raised with. Women, especially, often believe they "should" be able to do everything themselves, and when that is not possible, they feel guilty or depressed. If you have unrealistic expectations of yourself, then your expectations of what can be changed probably will be unrealistic also. The following story is an example of a caregiver, Rosa, who with her husband, Dean, made constructive changes in what was a difficult, stressful situation.{/t}</p>
@@ -1968,7 +1966,7 @@ foreach(array(
   <!-- Lesson 2 Slide 13 -->
   <div id="lesson-2-slide-13" class="course-slide">
     <div class="content">
-      <h2 class="flowers">{t}Steps to Maintain Health & Avoid Stress (continued){/t}</h2>
+      <h2 class="flowers">{t}Steps to Maintain Health &amp; Avoid Stress (continued){/t}</h2>
       <hr />
       <p>{t}Let go of what cannot be changed{/t}</p>
       <p>{t}It is natural to want to hold on to things as they were. But letting go of what you cannot change is accepting the situation as it is. It releases you from the need to control what you cannot change. Letting go is a way to cooperate with the inevitable. It releases new energy for accepting reality and seeing new possibilities. Sam is a prime example of someone who is learning to let go.{/t}</p>
@@ -1992,7 +1990,7 @@ foreach(array(
   <!-- Lesson 2 Slide 14 -->
   <div id="lesson-2-slide-14" class="course-slide">
     <div class="content">
-      <h2 class="flowers">{t}Steps to Maintain Health & Avoid Stress (continued){/t}</h2>
+      <h2 class="flowers">{t}Steps to Maintain Health &amp; Avoid Stress (continued){/t}</h2>
       <hr />
       <p>{t}Managing your thoughts, beliefs, and perceptions{/t}</p>
       <p>{t}Thoughts and beliefs are the foundation of experience. They are not only reactions to events but our thoughts and beliefs can also influence events. What we think and believe affects what happens. Managing our thoughts means we have control over how we view things. As a caregiver, there may be times when the only thing you can change is how you view a situation. There are several tools for managing thoughts, beliefs, and perceptions. Two that can be helpful are reframing and self-talk.{/t}</p>
@@ -2021,7 +2019,7 @@ foreach(array(
   <!-- Lesson 2 Slide 15 -->
   <div id="lesson-2-slide-15" class="course-slide">
     <div class="content">
-      <h2 class="flowers">{t}Steps to Maintain Health & Avoid Stress (continued){/t}</h2>
+      <h2 class="flowers">{t}Steps to Maintain Health &amp; Avoid Stress (continued){/t}</h2>
       <hr />
       <p>{t}Self-talk -{/t}</p>
       <p>{t}Most stress management courses include learning how to use self-talk to promote health. Self-talk is what we say to ourselves. As Ralph Waldo Emerson said, "A man is what he thinks about all day long." What do you think about all day long? What do you say to yourself? Is especially important to notice your self-talk when you suffer setbacks and when you feel anxious, angry, discouraged, or distressed. Negative self-talk statements often begin with the following phrases:{/t}</p>
@@ -2046,7 +2044,7 @@ foreach(array(
   <!-- Lesson 2 Slide 16 -->
   <div id="lesson-2-slide-16" class="course-slide">
     <div class="content">
-      <h2 class="flowers">{t}Steps to Maintain Health & Avoid Stress (continued){/t}</h2>
+      <h2 class="flowers">{t}Steps to Maintain Health &amp; Avoid Stress (continued){/t}</h2>
       <hr />
       <p>{t}Karen felt angry and discouraged when her mother did not eat the tasty, nutritious meals she prepared for her. She didn't accept the fact that her mother's lack of appetite was caused by the illness. Karen constantly told herself, "No matter what I cook, it is never good enough for mother."{/t}</p>
       <p>{t}This is an example of negative self-talk. Karen became aware that she often thought she was not doing good enough, especially in caring for her mother. These thoughts made her feel like a failure. With determination, patience, and practice, you can change your self-talk from negative to positive. The following steps lead to change:{/t}</p>
@@ -2067,7 +2065,7 @@ foreach(array(
   <!-- Lesson 2 Slide 17 -->
   <div id="lesson-2-slide-17" class="course-slide">
     <div class="content">
-      <h2 class="flowers">{t}Steps to Maintain Health & Avoid Stress (continued){/t}</h2>
+      <h2 class="flowers">{t}Steps to Maintain Health &amp; Avoid Stress (continued){/t}</h2>
       <hr />
       <p>{t}CHALLENGING YOUR SELF-TALK{/t}</p>
       <p>{t}Identify an example of your negative self-talk and the situation when it is most likely to occur.{/t}</p>
@@ -2089,7 +2087,7 @@ foreach(array(
   <!-- Lesson 2 Slide 18 -->
   <div id="lesson-2-slide-18" class="course-slide">
     <div class="content">
-      <h2 class="flowers">{t}Steps to Maintain Health & Avoid Stress (continued){/t}</h2>
+      <h2 class="flowers">{t}Steps to Maintain Health &amp; Avoid Stress (continued){/t}</h2>
       <hr />
       <p>{t}You are responsible for your own self-care. Practicing self-care means that you:{/t}</p>
       <ul>
@@ -2149,7 +2147,7 @@ foreach(array(
   <!-- Lesson 2 Slide 19 -->
   <div id="lesson-2-slide-19" class="course-slide">
     <div class="content">
-      <h2 class="flowers">{t}Steps to Maintain Health & Avoid Stress (continued){/t}</h2>
+      <h2 class="flowers">{t}Steps to Maintain Health &amp; Avoid Stress (continued){/t}</h2>
       <hr />
       <p>{t}What would be helpful for you? Consider the following suggestions:{/t}</p>
       <ul>
@@ -2178,7 +2176,7 @@ foreach(array(
   <!-- Lesson 2 Slide 20 -->
   <div id="lesson-2-slide-20" class="course-slide">
     <div class="content">
-      <h2 class="flowers">{t}Steps to Maintain Health & Avoid Stress (continued){/t}</h2>
+      <h2 class="flowers">{t}Steps to Maintain Health &amp; Avoid Stress (continued){/t}</h2>
       <hr />
       <p>{t}Basic wellness practices -{/t}</p>
       <div class="question">
@@ -2272,7 +2270,7 @@ foreach(array(
   <!-- Lesson 2 Slide 21 -->
   <div id="lesson-2-slide-21" class="course-slide">
     <div class="content">
-      <h2 class="flowers">{t}Steps to Maintain Health & Avoid Stress (continued){/t}</h2>
+      <h2 class="flowers">{t}Steps to Maintain Health &amp; Avoid Stress (continued){/t}</h2>
       <hr />
       <p>{t}Meditation -{/t}</p>
       <p>{t}The word "meditation" comes from the Sanskrit word medha which, when taken literally, means "doing the wisdom." Meditation aids in relaxation and in achieving physical and mental well-being. Meditation is keeping your attention focused in the moment to quiet the mind and hear your body's inner wisdom. You, too, can learn to meditate. See the "Process of Meditation" box on the next page.{/t}</p>
@@ -2303,7 +2301,7 @@ foreach(array(
   <!-- Lesson 2 Slide 22 -->
   <div id="lesson-2-slide-22" class="course-slide">
     <div class="content">
-      <h2 class="flowers">{t}Steps to Maintain Health & Avoid Stress (continued){/t}</h2>
+      <h2 class="flowers">{t}Steps to Maintain Health &amp; Avoid Stress (continued){/t}</h2>
       <hr />
       <p>{t}Developing action plans -{/t}</p>
       <p>{t}Action plans are tools for change. They can be a useful way to identify and plan specific activities for reducing stress and making change: Feelings of accomplishment are necessary for thriving as a caregiver. Action plans can help you achieve these feelings. Even the smallest action can make a big difference. This was true for Evelyn.{/t}</p>
@@ -2319,7 +2317,7 @@ foreach(array(
   <!-- Lesson 2 Slide 23 -->
   <div id="lesson-2-slide-23" class="course-slide">
     <div class="content">
-      <h2 class="flowers">{t}Steps to Maintain Health & Avoid Stress (continued){/t}</h2>
+      <h2 class="flowers">{t}Steps to Maintain Health &amp; Avoid Stress (continued){/t}</h2>
       <hr />
       <p>{t}REFRAMING YOUR STRESS{/t}</p>
       <p>{t}Make a list of those things that you find most difficult or stressful. Be specific. Write at least two (more if you can).{/t}</p>
@@ -2343,7 +2341,7 @@ foreach(array(
   
   <div id="lesson-2-slide-24" class="course-slide">
     <div class="content">
-      <h2 class="flowers">{t}Steps to Maintain Health & Avoid Stress (continued){/t}</h2>
+      <h2 class="flowers">{t}Steps to Maintain Health &amp; Avoid Stress (continued){/t}</h2>
       <hr />
       <p>{t}Like Frankl, it is hopeful to believe that meaning can be found in difficult and painful experiences. Hope and meaning play a large part in the following story of Margaret and Tim.{/t}</p>
       <p>{t}Tim's frequent visits to his elderly mother, Margaret, in the nursing home, were meaningful to him. Years ago, when Margaret was healthy; she shared some of her beliefs with Tim. She had told him, "If there comes a time when I am not able to recognize you because of Alzheimer's disease, or for any other reason, I want you to know what I believe to be true. I believe that my true essence, my spirit, will always be present, even though my physical body and mind may not be the person you remember. Please know that I am with you. We may not be able to talk with each other as we did in the past, but if you play my favorite music, read poetry, hold my hand, or just be with me, I will feel your love and you will feel mine for you."{/t}</p>
@@ -2359,7 +2357,7 @@ foreach(array(
   
   <div id="lesson-2-slide-25" class="course-slide">
     <div class="content">
-      <h2 class="flowers">{t}Tips for Overcoming Negative Emotions & Reducing Stress{/t}</h2>
+      <h2 class="flowers">{t}Tips for Overcoming Negative Emotions &amp; Reducing Stress{/t}</h2>
       <hr />
       <p>{t}A Wide variety of mental activities can help caregivers overcome negative emotions and reduce stress. Think about how you might use some of these ideas in your own life.{/t}</p>
       <ul>
@@ -2379,7 +2377,7 @@ foreach(array(
   <!-- Lesson 2 Slide 26 -->
   <div id="lesson-2-slide-26" class="course-slide">
     <div class="content">
-      <h2 class="flowers">{t}Tips for Overcoming Negative Emotions & Reducing Stress: Simple Pleasures{/t}</h2>
+      <h2 class="flowers">{t}Tips for Overcoming Negative Emotions &amp; Reducing Stress: Simple Pleasures{/t}</h2>
       <hr />
       <p>{t}Even tiny bursts of simple pleasures may improve your physical and mental health. Some researchers say that it is the frequency of the positive feelings that come from these small pleasures that is most important in determining happiness. On the Internet, people are posting their simple pleasures such as those listed below. When you are sitting quietly in a comfortable place, list simple pleasures that help you get through your caregiving days.{/t}</p>
       <ul>
@@ -2410,7 +2408,7 @@ foreach(array(
 <div id="lesson-4">
 <div id="lesson-4-slide-1" class="course-slide">
   <div class="content">
-    <h2 class="flowers">{t}Normal & Abnormal Aging Changes{/t}</h2>
+    <h2 class="flowers">{t}Normal &amp; Abnormal Aging Changes{/t}</h2>
     <hr />
     <img src="<?php echo $this->getImagesUrl('164010920/here.png'); ?>" alt="{t}image{/t}">
     <p>{t}This module contains four main sections:{/t}</p>
@@ -2663,19 +2661,19 @@ foreach(array(
 <h4>{t}Changes in Smell and Taste{/t}</h4>
 <p>{t}Decline in smell and taste are also normal aging sensory changes. Older adults recognize and identify common odors less well. Loss of taste and smell are common and result from:{/t}</p>
 <ul>
-  <li>{t}Normal aging from the degeneration of the taste buds, and decreased saliva production{/t}</li>
-  <li>{t}Certain disease states, such as Alzheimer’s disease{/t}</li>
-  <li>{t}Medications{/t}</li>
-  <li>{t}Surgical interventions{/t}</li>
-  <li>{t}Environmental exposure{/t}</li>
+	<li>{t}Normal aging from the degeneration of the taste buds, and decreased saliva production{/t}</li>
+	<li>{t}Certain disease states, such as Alzheimer’s disease{/t}</li>
+	<li>{t}Medications{/t}</li>
+	<li>{t}Surgical interventions{/t}</li>
+	<li>{t}Environmental exposure{/t}</li>
 </ul>
 <h5>{t}Sensory losses of taste and smell can cause:{/t}</h5>
 <ul>
-<li>{t}Reluctance to talk about food{/t}</li>
-<li>{t}Reduced pleasure and comfort from food affecting the socialization that accompanies eating{/t}</li>
-<li>{t}Increased nutritional and immune deficiencies{/t}</li>
-<li>{t}Reduced adherence to dietary regimen.{/t}</li>
-</li>
+	<li>{t}Reluctance to talk about food{/t}</li>
+	<li>{t}Reduced pleasure and comfort from food affecting the socialization that accompanies eating{/t}</li>
+	<li>{t}Increased nutritional and immune deficiencies{/t}</li>
+	<li>{t}Reduced adherence to dietary regimen.{/t}</li>
+</ul>
 <p>{t}Older adults should be encouraged to have routine oral care and dental visits and to use dentures regularly. To accommodate declines in smell and taste, meals should have pleasing colors, textures, and flavorings to make them look and taste more appealing.{/t}</p>
 </div>
 <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
@@ -2896,13 +2894,13 @@ foreach(array(
     <h2 class="flowers">{t}Aging Well (continued){/t}</h2>
     <hr />
     <ol>
-      <li>{t}Do you wish to build on what you have already done, or do you wish to take your work to a higher level?{/t}</li>
-      <ul>
-        <li>{t}What do you need to do to grow?{/t} </li>
-        <li>{t}Do you know others who do related work and whose achievements you want to  mirror? They may be agreeable to become your coach or mentor!{/t} </li>
-        <li>{t}Search for new resources that will help you achieve your goals. Network with others  who may be of help to you.{/t} </li>
-        <li>{t}Look for inspiration around you. Seek out success stories.{/t} </li>
-      </ul>
+      <li>{t}Do you wish to build on what you have already done, or do you wish to take your work to a higher level?{/t}
+	      <ul>
+	        <li>{t}What do you need to do to grow?{/t} </li>
+	        <li>{t}Do you know others who do related work and whose achievements you want to  mirror? They may be agreeable to become your coach or mentor!{/t} </li>
+	        <li>{t}Search for new resources that will help you achieve your goals. Network with others  who may be of help to you.{/t} </li>
+	        <li>{t}Look for inspiration around you. Seek out success stories.{/t} </li>
+	      </ul>
       </li>
       <li>{t}Do you want to change direction in your work or activities?{/t}
         <ul>
@@ -2922,7 +2920,6 @@ foreach(array(
       <li>{t}Consider collaborative creativity.{/t}
         <ul>
           <li>{t}Look for others who may be interested in starting a new project with you.{/t}
-            </p>
           </li>
           <li>{t}Consider volunteering in your community for a project as a way to meet new contacts and expand your experiences.{/t} </li>
         </ul>
@@ -2939,11 +2936,12 @@ foreach(array(
           <li>{t}Purposively change your language to “positive speak”. For example, a “problem” can become an “opportunity” or “challenge”. You will notice that your positive tone will gradually influence others in the same directions!{/t} </li>
         </ul>
       </li>
-      <li>{t}Do you want to focus on public creativity?{/t} </li>
-      <ul>
-        <li>{t}Look for ways you may become a volunteer or activist for your community.{/t} </li>
-        <li>{t}Consider that many of your skills or knowledge are already valuable assets to your community. Seek ways to share those skills or knowledge.{/t} </li>
-      </ul>
+      <li>{t}Do you want to focus on public creativity?{/t} 
+	      <ul>
+	        <li>{t}Look for ways you may become a volunteer or activist for your community.{/t} </li>
+	        <li>{t}Consider that many of your skills or knowledge are already valuable assets to your community. Seek ways to share those skills or knowledge.{/t} </li>
+	      </ul>
+      </li>
       <li>{t}Are you now asking, “Am I really creative enough?”{/t}
         <ul>
           <li>{t}Everyone has more potential than they know.{/t} </li>
@@ -2976,7 +2974,7 @@ foreach(array(
 <div id="lesson-5">
   <div id="lesson-5-slide-1" class="course-slide">
     <div class="content">
-      <h2 class="flowers">{t}Finances & Legal Issues{/t}</h2>
+      <h2 class="flowers">{t}Finances &amp; Legal Issues{/t}</h2>
       <hr />
       <img src="<?php echo $this->getImagesUrl('empower/147041673.png'); ?>" alt="{t}image{/t}">
       <p>{t}This module contains four main sections:{/t}</p>
@@ -3023,7 +3021,7 @@ foreach(array(
       <p>{t}If your loved one is employed, have him check to see if his employer has private disability insurance. He or she should contact his employer's human resources to investigate eligibility, the cost of enrolling, and how much of his/her salary it will cover.{/t}</p>
       <p>{t}If your loved one is not working, he or she may want to apply for Social Security. If they do not qualify for Social Security, state-run disability programs may be considered.{/t}</p>
       <p>{t}If their total income is below a certain level, he or she may qualify for federally subsidized Supplemental Security Income (SSI). If an individual collects SSI, he or she is a candidate for Medicaid regardless of age.{/t}</p>
-      <p>{t}Activity 1 - Financial Planning issues & topics for Caregivers{/t}</p>
+      <p>{t}Activity 1 - Financial Planning issues &amp; topics for Caregivers{/t}</p>
       <p>{t}After reading the section material, do you have a plan for your loved-one in place currently and is so what does it consist of? If not, where would you find a template or where would you look to know where to start.{/t}</p>
       <ul>
         <li>{t}Coverage options{/t}</li>
