@@ -79,10 +79,11 @@ class TViewCompileCommand extends CConsoleCommand
 			);
 			@chmod($compiledPath, $filePermission);
 	
-			$this->getViewSource()->deleteViewMessages(
-					$viewId,
-					array_filter(array_map(create_function('$message', 'return $message["id"];'), $viewMessages), create_function('$id', 'return isset($id)'))
-			);
+			foreach($this->_currentViewMessages as $message => $messageInfo)
+				if($messageInfo['confirmed'])
+					unset($this->_currentViewMessages[$message]);
+			
+			$this->getViewSource()->deleteViewMessages($id, $this->_currentViewMessages);
 			$this->getViewSource()->updateViewCreated($id, $language);
 			if(isset($transaction))
 				$transaction->commit();
@@ -99,7 +100,8 @@ class TViewCompileCommand extends CConsoleCommand
 
 	protected function compileViewCallback($matches)
 	{
-		$category = $matches[1] === '' ? $this->getMessageSource()->messageCategory : $matches[1];
+		$messageSource = $this->getMessageSource();
+		$category = $matches[1] === '' ? $messageSource->messageCategory : $matches[1];
 		$message = $matches[2];
 		$translation = Yii::t($category, $message, array(), null, null);
 
@@ -109,16 +111,16 @@ class TViewCompileCommand extends CConsoleCommand
 		}
 		else
 		{
-			$messageId = $this->getMessageSource()->getMessageId($category, $message);
+			$messageId = $messageSource->getMessageId($category, $message);
 		
 			if($messageId === false)
 			{
-				$messageId = $this->getMessageSource()->addSourceMessage($category, $message);
+				$messageId = $messageSource->addSourceMessage($category, $message);
 			}
 		
 			if($messageId === null)
 			{
-				Yii::log("The source message '$message' could not be found in or added to the database table '{$this->dal->messageSourceTableSchema->name}'.", CLogger::LEVEL_ERROR, self::ID);
+				Yii::log("The source message '$message' could not be found in or added to the database table '{$messageSource->messageSourceTable}'.", CLogger::LEVEL_ERROR, self::ID);
 			}
 			elseif($this->getViewSource()->addViewMessage($this->_currentViewId, $messageId) === null)
 			{

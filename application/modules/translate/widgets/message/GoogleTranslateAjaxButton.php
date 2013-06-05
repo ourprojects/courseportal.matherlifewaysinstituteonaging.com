@@ -32,7 +32,7 @@ class GoogleTranslateAjaxButton extends CWidget {
 		}
 		
 		if(!isset($this->sourceLanguage))
-			$this->sourceLanguage = TranslateModule::translator()->getSourceLanguageId();
+			$this->sourceLanguage = Yii::app()->sourceLanguage;
 		
 		if(!isset($this->target))
 			$this->target = $this->getId();

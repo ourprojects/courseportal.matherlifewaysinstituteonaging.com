@@ -129,16 +129,13 @@ class TViewSource extends CApplicationComponent
 
 	public function getViewMessages($viewId)
 	{
-		$cmd = $this->getCommandBuilder()->createSqlCommand(
-				"SELECT mt.id id, mt.message message " .
-				"FROM {$this->getMessageSource()->sourceMessageTable} mt " .
-				"JOIN $this->viewMessageTable vmt ON (vmt.message_id=mt.id) " .
+		return $this->getCommandBuilder()->createSqlCommand(
+				"SELECT smt.id id, smt.message message " .
+				"FROM {$this->getMessageSource()->sourceMessageTable} smt " .
+				"JOIN $this->viewMessageTable vmt ON (vmt.message_id=smt.id) " .
 				"WHERE (vmt.view_id=:view_id)", 
-				array(':view_id' => $viewId));
-		$viewMessages = array();
-		foreach($cmd->queryAll() as $row)
-			$viewMessages[$row['message']] = $row['id'];
-		return $viewMessages;
+				array(':view_id' => $viewId))
+			->queryAll();
 	}
 	
 	public function getView($route, $sourcePath, $language)
@@ -179,7 +176,10 @@ class TViewSource extends CApplicationComponent
 
 	public function addView($id, $path, $language)
 	{
-		return $this->getCommandBuilder()->createInsertCommand($this->viewTable, array('id' => $id, 'path' => $path, 'language' => $language))->execute();
+		$args = array('id' => $id, 'path' => $path, 'language' => $language);
+		if($this->getCommandBuilder()->createInsertCommand($this->viewTable, $args)->execute() > 0)
+			return $args;
+		return null;
 	}
 
 	public function addViewSource($path)
@@ -200,12 +200,18 @@ class TViewSource extends CApplicationComponent
 	
 	public function addViewRoute($routeId, $viewId)
 	{
-		return $this->getCommandBuilder()->createInsertCommand($this->routeViewTable, array('view_id' => $viewId, 'route_id' => $routeId))->execute();
+		$args = array('route_id' => $routeId, 'view_id' => $viewId);
+		if($this->getCommandBuilder()->createInsertCommand($this->routeViewTable, $args)->execute() > 0)
+			return $args;
+		return null;
 	}
 
 	public function addViewMessage($viewId, $messageId)
 	{
-		return $this->getCommandBuilder()->createInsertCommand($this->viewMessageTable, array('view_id' => $viewId, 'message_id' => $messageId))->execute();
+		$args = array('view_id' => $viewId, 'message_id' => $messageId);
+		if($this->getCommandBuilder()->createInsertCommand($this->viewMessageTable, $args)->execute() > 0)
+			return $args;
+		return null;
 	}
 	
 	public function deleteViewMessages($viewId, $messageIds)
@@ -252,9 +258,6 @@ class TViewSource extends CApplicationComponent
 		
 		if($language === null)
 			$language = Yii::app()->getLanguage();
-		
-		if(!$this->getMessageSource()->useLocaleSpecificTranslations)
-			$language = TranslateModule::translator()->getLanguageID($language);
 		
 		if($context instanceof CWidget)
 			$context = $context->getController();

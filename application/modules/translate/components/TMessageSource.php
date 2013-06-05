@@ -6,8 +6,10 @@ class TMessageSource extends CDbMessageSource
 	const ID = 'modules.translate.TMessageSource';
 	
 	public $acceptedLanguageTable = '{{translate_accepted_language}}';
-
-	public $useLocaleSpecificTranslations = false;
+	
+	public $categoryTable = '{{translate_category}}';
+	
+	public $categoryMessageTable = '{{translate_category_message}}';
 	
 	/**
 	 * @var string $messageCategory
@@ -26,11 +28,6 @@ class TMessageSource extends CDbMessageSource
 	public function getCommandBuilder()
 	{
 		return $this->getDbConnection()->getSchema()->getCommandBuilder();
-	}
-	
-	public function getLanguage()
-	{
-		return $this->useLocaleSpecificTranslations ? parent::getLanguage() : TranslateModule::translator()->getLanguageID(parent::getLanguage());
 	}
 
 	protected function getCache()
@@ -81,10 +78,12 @@ class TMessageSource extends CDbMessageSource
 	protected function loadMessagesFromDb($category, $language)
 	{
 		$cmd = $this->getCommandBuilder()->createSqlCommand(
-				"SELECT t1.message message, t2.translation translation " .
-				"FROM $this->sourceMessageTable t1 " .
-				"JOIN $this->translatedMessageTable t2 ON (t1.id=t2.id AND t2.language=:language) ".
-				"WHERE (t1.category=:category)", 
+					"SELECT smt.message message, tmt.translation translation " .
+					"FROM $this->categoryTable ct " .
+					"JOIN $this->categoryMessageTable cmt ON (ct.id=cmt.category_id)" .
+					"JOIN $this->sourceMessageTable smt ON (cmt.message_id=smt.id)" .
+					"JOIN $this->translatedMessageTable tmt ON (smt.id=tmt.id AND tmt.language=:language) " .
+					"WHERE (ct.category=:category)", 
 				array(':category' => $category, ':language' => $language));
 		
 		$messages = array();
@@ -107,20 +106,53 @@ class TMessageSource extends CDbMessageSource
 		return null;
 	}
 	
+	public function addCategory($category)
+	{
+		$builder = $this->getCommandBuilder();
+		if($builder->createInsertCommand($this->categoryTable, array('category' => $category))->execute())
+			return $builder->getLastInsertID($this->categoryTable);
+		return null;
+	}
+	
+	public function addMessageCategory($categoryId, $messageId)
+	{
+		$args = array('category_id' => $categoryId, 'message_id' => $viewId);
+		if($this->getCommandBuilder()->createInsertCommand($this->categoryMessageTable, $args)->execute() > 0)
+			return $args;
+		return null;
+	}
+	
 	public function addTranslation($sourceMessageId, $language, $translation)
 	{
-		return $this->getCommandBuilder()->createInsertCommand($this->messageTable, array('id' => $sourceMessageId, 'language' => $language, 'translation' => $translation))->execute();
+		$args = array('id' => $sourceMessageId, 'language' => $language, 'translation' => $translation);
+		if($this->getCommandBuilder()->createInsertCommand($this->translatedMessageTable, $args)->execute() > 0)
+			return $args;
+		return null;
 	}
 	
 	public function getMessageId($category, $message)
 	{
 		if($category === null)
 			$category = $this->messageCategory;
-		
+	
 		return $this->getCommandBuilder()->createSqlCommand(
-				"SELECT id FROM $this->sourceMessageTable WHERE (category=:category AND message=:message)", 
-				array(':category' => $category, ':message' => $message))
-			->queryScalar();
+						"SELECT ct.id " .
+						"FROM $this->categoryTable ct " .
+						"JOIN $this->categoryMessageTable cmt ON (ct.id=cmt.id) " .
+						"JOIN $this->sourceMessageTable smt ON (cmt.message_id=smt.id AND message=:message) " .
+						"WHERE (category=:category)",
+					array(':category' => $category, ':message' => $message))
+				->queryScalar();
+	}
+	
+	public function getCategoryId($category)
+	{
+		return $this->getCommandBuilder()->createSqlCommand(
+					"SELECT id " .
+					"FROM $this->categoryTable " .
+					"WHERE (category=:category)",
+					array(':category' => $category))
+				->queryScalar();
 	}
 	
 	public function getTranslationFromDb($category, $message, $language = null)
@@ -130,15 +162,14 @@ class TMessageSource extends CDbMessageSource
 		
 		if($language === null)
 			$language = Yii::app()->getLanguage();
-		
-		if($this->useLocaleSpecificTranslations)
-			$language = TranslateModule::translator()->getLanguageID($language);
-		
+
 		return $this->getCommandBuilder()->createSqlCommand(
-				"SELECT MIN(t1.id) id, t2.translation translation " .
-				"FROM $this->sourceMessageTable t1 " .
-				"LEFT JOIN $this->translatedMessageTable t2 ON (t1.id=t2.id AND t2.language=:language) " .
-				"WHERE (t1.category=:category AND t1.message=:message)",
+				"SELECT ct.id category_id, MIN(smt.id) id, tmt.translation translation " .
+				"FROM $this->categoryTable ct " .
+				"JOIN $this->categoryMessageTable cmt ON (ct.id=cmt.category_id) " .
+				"JOIN $this->sourceMessageTable smt ON (cmt.message_id=smt.id AND smt.message=:message) " .
+				"LEFT JOIN $this->translatedMessageTable tmt ON (smt.id=tmt.id AND tmt.language=:language) " .
+				"WHERE (ct.category=:category)",
 				array(':category' => $category, ':message' => $message, ':language' => $language))
 			->queryRow();
 	}
@@ -167,9 +198,6 @@ class TMessageSource extends CDbMessageSource
 		
 		if($language === null)
 			$language = Yii::app()->getLanguage();
-		
-		if($this->useLocaleSpecificTranslations)
-			$language = TranslateModule::translator()->getLanguageID($language);
 		
 		if($this->forceTranslation || $language !== $this->getLanguage())
 			$translation = $this->translateMessage($category, $message, $language);

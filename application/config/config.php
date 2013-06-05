@@ -97,7 +97,8 @@ return array(
 				
 				'viewRenderer' => array(
 					'class' => 'modules.translate.components.TViewRenderer',
-					'viewSource' => 'views'
+					'viewSource' => 'views',
+					'compileInBackground' => false
 				),
 				
 				'cache' => array(

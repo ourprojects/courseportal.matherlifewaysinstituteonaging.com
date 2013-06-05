@@ -44,11 +44,11 @@ class MPTranslate extends CApplicationComponent {
     
     public $defineGlobalTranslateFunction = true;
     
-    private $_sourceLanguageId = null;
+    public $useTransactions = true;
     
-    private $_sourceScriptId = null;
+    public $languageRequestVarName = 'language';
     
-    private $_sourceTerritoryId = null;
+    public $localeGeneric = true;
     
     private $_source;
     
@@ -66,6 +66,10 @@ class MPTranslate extends CApplicationComponent {
 	 * handles the initialization parameters of the components
 	 */
 	public function init() {
+		if($this->localeGeneric)
+		{
+			Yii::app()->sourceLanguage = Yii::app()->getLocale()->getLanguageID(Yii::app()->sourceLanguage);
+		}
 		if($this->defineGlobalTranslateFunction)
 		{
 	        function t($message, $params = array(), $category = null) 
@@ -76,44 +80,64 @@ class MPTranslate extends CApplicationComponent {
         return parent::init();
 	}
 	
-	public function processRequest($route) {
-		// If there is a post-request, redirect the application to the provided url of the selected language
-		if(isset($_POST['language'])) 
-		{
-			Yii::app()->getRequest()->redirect(Yii::app()->createUrl($route, array('language' => $_POST['language'])));
-		}
+	public function processRequest($route) 
+	{
+		// Determine request's preferred language by:
 		
-		// Set the application language if provided by GET, session or cookie
-		if(isset($_GET['language'])) 
+		// Post parameter
+		if(isset($_POST[$this->languageRequestVarName]))
 		{
-			$language = $_GET['language'];
-			unset($_GET['language']);
+			$language = $_POST[$this->languageRequestVarName];
 		} 
-		else if (Yii::app()->getUser()->hasState('language')) 
+		// Get parameter
+		else if(isset($_GET[$this->languageRequestVarName])) 
 		{
-			$language = Yii::app()->getUser()->getState('language');
+			$language = $_GET[$this->languageRequestVarName];
+			unset($_GET[$this->languageRequestVarName]);
+			unset($_REQUEST[$this->languageRequestVarName]);
 		}
-		else if(Yii::app()->getRequest()->getCookies()->contains('language')) 
+		// Session
+		else if(Yii::app()->getUser()->hasState($this->languageRequestVarName)) 
 		{
-			$language = Yii::app()->getRequest()->getCookies()->itemAt('language')->value;
-		} 
-		else if(Yii::app()->getRequest()->getPreferredLanguage() !== false &&
-				$this->isAdminAcceptedLanguage(Yii::app()->getLocale()->getLanguageID(Yii::app()->getRequest()->getPreferredLanguage()))) 
+			$language = Yii::app()->getUser()->getState($this->languageRequestVarName);
+		}
+		// Cookie
+		else if(Yii::app()->getRequest()->getCookies()->contains($this->languageRequestVarName)) 
+		{
+			$language = Yii::app()->getRequest()->getCookies()->itemAt($this->languageRequestVarName)->value;
+		}
+		// Client's preferred language setting
+		else if(Yii::app()->getRequest()->getPreferredLanguage() !== false) 
 		{
 			$language = Yii::app()->getRequest()->getPreferredLanguage();
 		} 
-		else 
+		// Application's default language
+		else
 		{
 			$language = Yii::app()->getLanguage();
 		}
-		 
-		// If the language is not recognized maybe the user didn't add the language part of the address.
-		// Redirect to the same uri with the source language set.
-		if(!$this->isAdminAcceptedLanguage(Yii::app()->getLocale()->getLanguageID($language))) 
+		
+		// Process language:
+		
+		// Canonicalize the language if we don't care about the locale portion
+		if($this->localeGeneric)
 		{
-			Yii::app()->getRequest()->redirect(Yii::app()->createUrl(Yii::app()->getRequest()->getPathInfo(), array('language' => Yii::app()->sourceLanguage)));
+			$language = Yii::app()->getLocale()->getLanguageID($language);
+		}
+
+		// If the language is not acceptable set it to the application's default language. 
+		if(!$this->isAcceptedLanguage($language)) 
+		{
+			$language = $this->localeGeneric ? Yii::app()->getLocale()->getLanguageID(Yii::app()->getLanguage()) : Yii::app()->getLanguage();
 		}
 		
+		// If the language part of the requested url is missing redirect to the same url with the language part inserted.
+		if(preg_match('/^\w+/', Yii::app()->getRequest()->getPathinfo(), $matches) !== 1 || $matches[0] !== $language)
+		{
+			Yii::app()->getRequest()->redirect(Yii::app()->createUrl($route, array($this->languageRequestVarName => $language)));
+		}
+		
+		// Set application's current language to derived language.
 		$this->setLanguage($language);
 	}
 	
@@ -121,8 +145,8 @@ class MPTranslate extends CApplicationComponent {
 	{
 		Yii::app()->setLanguage($language);
 		setLocale(LC_ALL, $language.'.'.Yii::app()->charset);
-		Yii::app()->getUser()->setState('language', $language);
-		Yii::app()->getRequest()->getCookies()->add('language', new CHttpCookie('language', $language, array('expire' => time() + $this->cookieExpire)));
+		Yii::app()->getUser()->setState($this->languageRequestVarName, $language);
+		Yii::app()->getRequest()->getCookies()->add($this->languageRequestVarName, new CHttpCookie($this->languageRequestVarName, $language, array('expire' => time() + $this->cookieExpire)));
 	}
 	
 	public function hasMissingTranslations()
@@ -172,17 +196,17 @@ class MPTranslate extends CApplicationComponent {
 		return $this->_cache[$cacheKey];
 	}
 	
-	public function getAdminAcceptedLanguages() 
+	public function getAcceptedLanguages() 
 	{
-		$cacheKey = self::ID . '-cache-admin-accepted-languages-' . Yii::app()->getLanguage();
+		$cacheKey = self::ID . '-cache-admin-accepted-languages-' . Yii::app()->sourceLanguage;
 		if(!isset($this->_cache[$cacheKey])) 
 		{
 			if(($cache = Yii::app()->getCache()) === null || ($languages = $cache->get($cacheKey)) === false) 
 			{
 				$languageDisplayNames = $this->getLanguageDisplayNames();
-				$languages[$this->getSourceLanguageId()] = isset($languageDisplayNames[$this->getSourceLanguageId()]) ? $languageDisplayNames[$this->getSourceLanguageId()] : $this->getSourceLanguageId();
+				$languages[Yii::app()->sourceLanguage] = isset($languageDisplayNames[Yii::app()->sourceLanguage]) ? $languageDisplayNames[Yii::app()->sourceLanguage] : Yii::app()->sourceLanguage;
 				foreach($this->getMessageSource()->getAcceptedLanguages() as $lang)
-					$languages[$lang['id']] = isset($languageDisplayNames[$lang['id']]) ? $languageDisplayNames[$lang['id']] : $lang['id'];
+					$languages[$lang['id']] = $languageDisplayNames[$lang['id']];
 				asort($languages, SORT_LOCALE_STRING);
 				if($cache !== null)
 					$cache->set($cacheKey, $languages);
@@ -199,33 +223,12 @@ class MPTranslate extends CApplicationComponent {
 	
 	public function isGoogleAcceptedLanguage($id) 
 	{
-		return array_key_exists(Yii::app()->getLocale()->getLanguageID($id), $this->getGoogleAcceptedLanguages());
+		return array_key_exists($id, $this->getGoogleAcceptedLanguages());
 	}
 	
-	public function isAdminAcceptedLanguage($id) 
+	public function isAcceptedLanguage($id) 
 	{
-		return array_key_exists(Yii::app()->getLocale()->getLanguageID($id), $this->getAdminAcceptedLanguages());
-	}
-	
-	public function getSourceLanguageID() 
-	{
-		if($this->_sourceLanguageId === null)
-			$this->_sourceLanguageId = $this->getLanguageID(Yii::app()->sourceLanguage);
-		return $this->_sourceLanguageId;
-	}
-	
-	public function getSourceScriptID() 
-	{
-		if($this->_sourceScriptId === null)
-			$this->_sourceScriptId = $this->getScriptID(Yii::app()->sourceScript);
-		return $this->_sourceScriptId;
-	}
-	
-	public function getSourceTerritoryID() 
-	{
-		if($this->_sourceTerritoryId === null)
-			$this->_sourceTerritoryId = $this->getTerritoryID(Yii::app()->sourceTerritory);
-		return $this->_sourceTerritoryId;
+		return array_key_exists($id, $this->getAcceptedLanguages());
 	}
 	
 	public function getLanguageID($language = null) 
@@ -288,12 +291,15 @@ class MPTranslate extends CApplicationComponent {
 	public function getLocaleDisplayName($id = null, $language = null, $category = 'language') 
 	{
 		$idMethod = 'get' . ucfirst(strtolower($category)) . 'ID';
-		if(!method_exists($this, $idMethod)) {
-			Yii::log('Failed to query Yii locale DB. Possibly invalid category requested: ' . $category, CLogger::LEVEL_ERROR, self::ID);
+		if(!method_exists($this, $idMethod)) 
+		{
+			Yii::log("Failed to query Yii locale DB. Category '$category' is invalid.", CLogger::LEVEL_ERROR, self::ID);
 			return false;
 		}
 		if(!isset($id))
+		{
 			$id = $this->$idMethod();
+		}
 		$localeDisplayNames = $this->getLocaleDisplayNames($language, $category);
 		if($localeDisplayNames !== false && array_key_exists($id, $localeDisplayNames))
 			return $localeDisplayNames[$id];
@@ -305,7 +311,7 @@ class MPTranslate extends CApplicationComponent {
 		if($language === null)
 			$language = Yii::app()->getLanguage();
 		$category = strtolower($category);
-		$cacheKey = self::ID . "cache-i18n-$category-$language";
+		$cacheKey = self::ID . ".cache-i18n-$category-$language";
 	
 		if(!isset($this->_cache[$cacheKey])) 
 		{
@@ -316,7 +322,7 @@ class MPTranslate extends CApplicationComponent {
 				$locale = Yii::app()->getLocale();
 				if(!method_exists($locale, $method) || !method_exists($locale, $idMethod)) 
 				{
-					Yii::log('Failed to query Yii locale DB. Possibly invalid category requested: ' . $category, CLogger::LEVEL_ERROR, self::ID);
+					Yii::log("Failed to query Yii locale DB. Category '$category' is invalid.", CLogger::LEVEL_ERROR, self::ID);
 					return false;
 				}
 				foreach(CLocale::getLocaleIds() as $id) 
@@ -353,42 +359,22 @@ class MPTranslate extends CApplicationComponent {
      */
     public function missingTranslation($event) 
     {
-        if($event === null)
-        {
-        	Yii::log("The missing translation event cannot be null.", CLogger::LEVEL_ERROR, self::ID);
-        	return false;
-        }
-        elseif($event->message === null)
-        {
-        	Yii::log("Message cannot be translated because the message was null.", CLogger::LEVEL_ERROR, self::ID);
-        	return false;
-        }
-        elseif($event->language === null)
-        {
-        	Yii::log("Message cannot be translated because the requested language was null.", CLogger::LEVEL_ERROR, self::ID);
-        	return false;
-        }
-        
         $event->message = trim($event->message);
         
         if(empty($event->message))
         	return true;
-
-        $sourceLanguage = $event->category === TranslateModule::$componentId ? 'en_us' : $this->getMessageSource()->getLanguage();
-        $requestedLanguage = trim($event->language);
         
-        if(!$this->getMessageSource()->useLocaleSpecificTranslations)
-        {
-        	$sourceLanguage = $this->getLanguageID($sourceLanguage);
-        	$requestedLanguage = $this->getLanguageID($requestedLanguage);
-        }
+        $source = $this->getMessageSource();
 
-        if($requestedLanguage === $sourceLanguage && !$this->getMessageSource()->forceTranslation)
+        $sourceLanguage = $event->category === TranslateModule::$componentId ? 'en' : $source->getLanguage();
+        $requestedLanguage = trim($event->language);
+
+        if($requestedLanguage === $sourceLanguage && !$source->forceTranslation)
         	return false;
 
-        $source = $this->getMessageSource();
-        
         $message = $source->getTranslationFromDb($event->category, $event->message, $requestedLanguage);
+        
+        // If the source message does not exists add it.
         if($message['id'] === null) 
         {
 			$message['id'] = $source->addSourceMessage($event->category, $event->message);
@@ -400,6 +386,31 @@ class MPTranslate extends CApplicationComponent {
 			}
         }
         
+        // If the category does not exist or has not been associated with the source message add it and/or associate it with the source message.
+    	if($message['category_id'] === null)
+		{
+			$message['category_id'] = $source->getCategoryId($category);
+		
+			if($message['category_id'] === false)
+			{
+				$message['category_id'] = $source->addCategory($category);
+						
+				if($message['category_id'] === null)
+				{
+					Yii::log("The category '$event->category' was not found and could not be added to the database.", CLogger::LEVEL_ERROR, self::ID);
+					return false;
+				}
+			}
+		
+			if($source->addCategoryMessage($message['category_id'], $message['message_id']) === null)
+			{
+				Yii::log("The message with id '{$message['id']}' could not be associated with category id '{$message['category_id']}'.", CLogger::LEVEL_ERROR, self::ID);
+				return false;
+			}
+		}
+        
+		// If the translation of the source message does not exist use google translate, if autotranslate is enabled, and add the translation.
+		// Otherwise if autotranslate is disabled or google translate was not successful add the source message to the missing messages.
         if($message['translation'] === null) 
         {
         	if($this->autoTranslate)
@@ -423,7 +434,7 @@ class MPTranslate extends CApplicationComponent {
         			foreach($matches as $key => $match)
         				$message['translation'] = str_replace("_{$key}_", $match, $message['translation']);
 
-        			if($source->addTranslation($message['id'], $requestedLanguage, $message['translation']) > 0) 
+        			if($source->addTranslation($message['id'], $requestedLanguage, $message['translation']) !== null) 
         			{
         				$event->message = &$message['translation'];
         				return true;
@@ -443,7 +454,7 @@ class MPTranslate extends CApplicationComponent {
         } 
         else 
         {
-        	$event->message = $message['translation'];
+        	$event->message = &$message['translation'];
         	return true;
         }
 
@@ -456,17 +467,20 @@ class MPTranslate extends CApplicationComponent {
      * translate some message from $sourceLanguage to $targetLanguage using google translate api
      * googleApiKey must be defined to use this service
      * @param string $message to be translated
-     * @param string $targetLanguage language to translate the message to, if null it will use the current language in use
-     * @param mixed $sourceLanguage language that the message is written in, if null it will use the application source language
+     * @param mixed $targetLanguage language to translate the message to, 
+     * if null it will use the current language in use, 
+     * if an array then the message will be translated into each language and an associative array of translations in the form of language=>translation will be returned.
+     * @param mixed $sourceLanguage language that the message is written in, 
+     * if null it will use the application source language
      * @return string translated message
      */
     public function googleTranslate(&$message, &$targetLanguage = null, &$sourceLanguage = null) 
     {
         if($targetLanguage === null)
-            $targetLanguage = $this->getLanguageId();
+            $targetLanguage = Yii::app()->getLanguage();
         
         if($sourceLanguage === null)
-            $sourceLanguage = $this->getSourceLanguageId();
+            $sourceLanguage = Yii::app()->sourceLanguage;
         
         if(empty($sourceLanguage))
             throw new CException(TranslateModule::t('Source language must be defined'));
@@ -579,7 +593,7 @@ class MPTranslate extends CApplicationComponent {
      * accepted values are null(translate), "languages" and "detect"
      * @return stdClass the google response object
      */
-    protected function queryGoogle(&$args = array()) 
+    protected function queryGoogle($args = array()) 
     {
         if(!isset($args['key']))
         {

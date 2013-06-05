@@ -17,18 +17,9 @@ class TViewRenderer extends CViewRenderer
 	
 	public $addRedirectOnMissingView = true;
 	
-	public $redirectScriptId;
-	
 	private $_messages;
 	
 	private $_viewSource;
-	
-	public function init()
-	{
-		if(!isset($this->redirectScriptId))
-			$this->redirectScriptId = str_replace('.', '_', self::ID.'.redirect');	
-		parent::init();
-	}
 	
 	public function getMessageSource()
 	{
@@ -50,43 +41,6 @@ class TViewRenderer extends CViewRenderer
 				throw new CException(Yii::t(self::ID, 'A view source component must be defined.'));
 		}
 		return $this->_viewSource;
-	}
-	
-	public function getMissingTranslationFlashMessage()
-	{
-		'Some of the views on this page have not yet been translated to your requested language. Your browser will be automatically redirected once those views have finished translating.';
-	}
-	
-	public function registerWaitCursorScripts()
-	{
-		$clientScript = Yii::app()->getClientScript();
-		$clientScript->registerCoreScript('jquery.ui');
-		$clientScript->registerCssFile($clientScript->getCoreScriptUrl().'/jui/css/base/jquery-ui.css');
-		$id = str_replace('.', '_', self::ID.'.waitcursor');
-		$clientScript->registerScript(
-				$id,
-				'var '.$id.' = $("<div id=\"'.$id.'\" style=\"display:hidden\">'.TranslateModule::t('Please wait while the content on this page is translated.').'</div>").appendTo("body");' .
-				$id.'.dialog({' .
-					'closeOnEscape: false,' .
-					'open: function(event, ui){$(this).closest(".ui-dialog").find(".ui-dialog-titlebar-close").hide();},' .
-					'close: function(){'.$id.'.remove();},' .
-					'height: 150,' .
-					'width: 150,' .
-					'resizable: false,' .
-					'draggable: false,' .
-					'modal: true' .
-				'});' .
-				$id.'.dialog("open");' .
-				
-				'$.ajax({' .
-					'dataType: "json",' .
-					'url: "'.Yii::app()->createUrl('/translate/translate/viewRendererProgress', array('route' => 'r')).'",' .
-					'processData: false,' .
-					'success: function(data){if(data != null && data.complete)window.location.reload();},' .
-					'error: function(xhr){'.$id.'.html("'.TranslateModule::t('An error occurred while monitoring the translation progress for this page.').'");}' .
-				'});',
-				CClientScript::POS_READY
-		);
 	}
 
 	/**
@@ -112,21 +66,27 @@ class TViewRenderer extends CViewRenderer
 		}
 		
 		if($language === null)
-			$language = $this->getMessageSource()->useLocaleSpecificTranslations ? Yii::app()->getLanguage() : TranslateModule::translator()->getLanguageID();
+			$language = Yii::app()->getLanguage();
 		
-		Yii::import('application.extensions.EConsoleRunner.EConsoleRunner');
-		
-		$runner = new EConsoleRunner();
 		if($background)
 		{
+			Yii::import('application.extensions.EConsoleRunner.EConsoleRunner');
 			$this->getViewSource()->updateViewCompleted($id, $language, 0);
 			
+			$runner = new EConsoleRunner();
 			$runner->run("tviewcompile stripTags --sourcePath=$sourcePath --compiledPath=$compiledPath --filePermission=$this->filePermission", false);
 			if($this->addRedirectOnMissingView)
-				Yii::app()->getClientScript()->registerScript($this->redirectScriptId, 'window.location.replace("'.Yii::app()->createUrl('/translate/translate/viewRendererProgress?requestUri='.urlencode(Yii::app()->getRequest()->getRequestUri())).'")');
+				Yii::app()->getClientScript()->registerScript(str_replace('.', '_', self::ID.'.redirect'), 'window.location.replace("'.Yii::app()->createUrl('/translate/translate/viewRendererProgress?requestUri='.urlencode(Yii::app()->getRequest()->getRequestUri())).'")');
+			
+			$runner->run("tviewcompile compileView --sourcePath=$sourcePath --compiledPath=$compiledPath --id=$id --language=$language --filePermission=$this->filePermission --useTransaction=$background");
+		}
+		else
+		{
+			$runner = new CConsoleCommandRunner();
+			$runner->addCommands(Yii::getPathOfAlias('application.commands'));
+			$runner->run(array('yiic', 'tviewcompile', 'compileView', "--sourcePath=$sourcePath", "--compiledPath=$compiledPath", "--id=$id", "--language=$language", "--filePermission=$this->filePermission", "--useTransaction=$background"));
 		}
 		
-		$runner->run("tviewcompile compileView --sourcePath=$sourcePath --compiledPath=$compiledPath --id=$id --language=$language --filePermission=$this->filePermission --useTransaction=$background", $background);
 	}
 	
 	public function renderFile($context, $sourceFile, $data, $return)
@@ -145,9 +105,6 @@ class TViewRenderer extends CViewRenderer
 	{
 		if($language === null)
 			$language = Yii::app()->getLanguage();
-		
-		if(!$this->getMessageSource()->useLocaleSpecificTranslations)
-			$language = TranslateModule::translator()->getLanguageID($language);
 
 		if($this->useRuntimePath)
 			return Yii::app()->getRuntimePath().DIRECTORY_SEPARATOR.'views'.DIRECTORY_SEPARATOR.sprintf('%x', crc32(__CLASS__.Yii::getVersion().dirname($file))).DIRECTORY_SEPARATOR.$language.DIRECTORY_SEPARATOR.basename($file); 
@@ -187,7 +144,8 @@ class TViewRenderer extends CViewRenderer
 		try
 		{
 			$view = $viewSource->getView($route, $path, $language);
-		
+			
+			// If the view source does not exist add it
 			if($view['view_id'] === null)
 			{
 				$view['view_id'] = $viewSource->addViewSource($path);
@@ -197,7 +155,8 @@ class TViewRenderer extends CViewRenderer
 					throw new CException(Yii::t(self::ID, "The source file '{file}' was not found in the database and could not be added to it.", array('{file}' => $path)));
 				}
 			}
-				
+			
+			// If the route does not exist or has not been associated with the source view add it and/or associate it with the source view.
 			if($view['route_id'] === null)
 			{
 				$view['route_id'] = $viewSource->getRouteId($route);
@@ -218,6 +177,7 @@ class TViewRenderer extends CViewRenderer
 				}
 			}
 		
+			// If the transalted view file path does not exist generate it and add it.
 			if($view['path'] === null)
 			{
 				$view['path'] = $this->getViewFile($path);
@@ -227,9 +187,16 @@ class TViewRenderer extends CViewRenderer
 					Yii::log("The source file '$path' compiled to '{$view['path']}' could not be added to the database. The view will be recompiled for each request until this problem is fixed.", CLogger::LEVEL_ERROR, self::ID);
 				}
 			}
-				
+			
+			// If there is not a last modified time either because a translated view path had not previously existed or 
+			// the translated view has not yet been associated with any translations then set the last modified to the current time.
+			// Otherwise convert the database timestamp to a unix time in milliseconds.
 			$view['last_modified'] = $view['last_modified'] === null ? time() : strtotime($view['last_modified']);
 
+			// Generate the translated view file if any of the following are true: 
+			// it does not exist (note: @filemtime will return false if the file does not exist.).
+			// it is older than the maximum last modified time of the translations used by this view.
+			// it is older than the source view file.
 			if(@filemtime($view['path']) < $view['last_modified'] || @filemtime($view['path']) < @filemtime($path))
 			{
 				$this->generateViewFile($path, $view['path'], $view['view_id'], $language, $background);
