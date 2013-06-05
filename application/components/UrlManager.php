@@ -13,16 +13,15 @@ class UrlManager extends CUrlManager {
 	}
 
 	public function createUrl($route, $params = array(), $ampersand = '&') {
-        if(!isset($params['language']))
-        {
-        	if($translator = Yii::app()->getComponent($this->translateComponentId))
-        		$params['language'] = $translator->getLanguageID();
-        	else
-        		$params['language'] = Yii::app()->language;
-        }
-        if($params['language'] !== false)
-       		$route = $params['language'] . '/' . ltrim($route, '/');
-        unset($params['language']);
+		if($translator = Yii::app()->getComponent($this->translateComponentId))
+		{
+	        if(empty($params[$translator->languageRequestVarName]))
+	        {
+	        	$params[$translator->languageRequestVarName] = Yii::app()->getLanguage();
+	        }
+	       	$route = $params[$translator->languageRequestVarName] . '/' . ltrim($route, '/');
+	        unset($params[$translator->languageRequestVarName]);
+		}
         return parent::createUrl($route, $params, $ampersand);
     }
     
