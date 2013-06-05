@@ -1,6 +1,26 @@
 <?php
 class TranslateController extends TController {
 	
+	public function filters()
+	{
+		return array(
+					array('filters.HttpsFilter'),
+					'accessControl -viewRendererProgress',
+			);
+	}
+	
+	public function accessRules() 
+	{
+		return array(
+					array('allow',
+							'expression' => '$user->getIsAdmin()',
+					),
+					array('deny',
+							'users' => array('*'),
+					),
+			);
+	}
+	
 	/**
 	 * override needed to check if its ajax, the redirect will be by javascript
 	 */
@@ -67,6 +87,11 @@ class TranslateController extends TController {
             echo $translation[0];
         else 
         	echo $translation;
+    }
+    
+    public function actionViewRendererProgress($requestUri)
+    {
+    	$this->render('viewRendererProgress');
     }
     
     /**

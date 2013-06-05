@@ -7,13 +7,5 @@ class TController extends CController {
 	 * for more details on how to specify this property.
 	 */
 	public $breadcrumbs = array();
-
-	public function filters() {
-		return array_merge(parent::filters(), TranslateModule::translator()->managementActionFilters);
-	}
-
-	public function accessRules() {
-		return array_merge(parent::accessRules(), TranslateModule::translator()->managementAccessRules);
-	}
 	
 }

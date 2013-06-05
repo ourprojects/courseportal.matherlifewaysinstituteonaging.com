@@ -1,5 +1,25 @@
 <?php
 class MessageController extends TController {
+	
+	public function filters()
+	{
+		return array(
+				array('filters.HttpsFilter'),
+				'accessControl',
+		);
+	}
+	
+	public function accessRules() 
+	{
+		return array(
+				array('allow',
+						'expression' => '$user->getIsAdmin()',
+				),
+				array('deny',
+						'users' => array('*'),
+				),
+		);
+	}
     
     public function actionTranslateMissing($id = null) {
     	$transaction = Yii::app()->db->beginTransaction();

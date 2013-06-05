@@ -6,6 +6,8 @@ class TViewCompileCommand extends CConsoleCommand
 	const ID = 'module.translate.commands.TViewCompileCommand';
 
 	public static $regularExpression = '/\{t(?:\s+category\s*=\s*(\w+?))?\}\s*(.+?)\s*\{\/t\}/s';
+	
+	public static $messageReference = '$2';
 
 	public $defaultAction = 'compileView';
 	
@@ -42,35 +44,60 @@ class TViewCompileCommand extends CConsoleCommand
 		}
 		return $this->_viewSource;
 	}
-
-	public function actionCompileView($sourcePath, $compiledPath, $id, $language, $filePermission = 0755, $useTransaction = true)
+	
+	public function actionStripTags($sourcePath, $compiledPath, $filePermission = 0755)
 	{
 		if(!is_dir(dirname($compiledPath)))
 			mkdir(dirname($compiledPath), $filePermission, true);
-		
-		$this->_currentViewMessages = array();
-		foreach($this->getViewSource()->getViewMessages($id) as $row)
-			$this->_currentViewMessages[$row['message']] = array('id' => $row['id'], 'confirmed' => false);
-		$this->_currentViewId = $id;
-
-		file_put_contents(
-			$compiledPath,
-			preg_replace_callback(
-				self::$regularExpression,
-				array(&$this, 'pregReplaceCallback'),
-				file_get_contents($sourcePath)
-			)
-		);
+	
+		file_put_contents($compiledPath, preg_replace(self::$regularExpression, self::$messageReference, file_get_contents($sourcePath)));
 		@chmod($compiledPath, $filePermission);
-
-		$this->getViewSource()->deleteViewMessages(
-				$viewId,
-				array_filter(array_map(create_function('$message', 'return $message["id"];'), $viewMessages), create_function('$id', 'return isset($id)'))
-		);
-		$this->getViewSource()->updateViewCreated($id, $language);
 	}
 
-	protected function pregReplaceCallback($matches)
+	public function actionCompileView($sourcePath, $compiledPath, $id, $language, $filePermission = 0755, $useTransaction = true)
+	{
+		if($useTransaction)
+			$transaction = $this->getViewSource()->getDbConnection()->beginTransaction();
+		
+		try
+		{
+			if(!is_dir(dirname($compiledPath)))
+				mkdir(dirname($compiledPath), $filePermission, true);
+			
+			$this->_currentViewMessages = array();
+			foreach($this->getViewSource()->getViewMessages($id) as $row)
+				$this->_currentViewMessages[$row['message']] = array('id' => $row['id'], 'confirmed' => false);
+			$this->_currentViewId = $id;
+	
+			file_put_contents(
+				$compiledPath,
+				preg_replace_callback(
+					self::$regularExpression,
+					array(&$this, 'compileViewCallback'),
+					file_get_contents($sourcePath)
+				)
+			);
+			@chmod($compiledPath, $filePermission);
+	
+			$this->getViewSource()->deleteViewMessages(
+					$viewId,
+					array_filter(array_map(create_function('$message', 'return $message["id"];'), $viewMessages), create_function('$id', 'return isset($id)'))
+			);
+			$this->getViewSource()->updateViewCreated($id, $language);
+			if(isset($transaction))
+				$transaction->commit();
+		}
+		catch(Exception $e)
+		{
+			if(file_exists($compiledPath))
+				unlink($compiledPath);
+			if(isset($transaction))
+				$transaction->rollback();
+			throw $e;
+		}
+	}
+
+	protected function compileViewCallback($matches)
 	{
 		$category = $matches[1] === '' ? $this->getMessageSource()->messageCategory : $matches[1];
 		$message = $matches[2];
