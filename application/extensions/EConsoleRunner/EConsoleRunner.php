@@ -44,6 +44,8 @@ class EConsoleRunner extends CComponent
      */
     public function run($cmd, $background = true)
     {
+    	if(is_array($cmd))
+    		$cmd = implode(' ', $cmd);
     	$cmd = PHP_BINDIR . DIRECTORY_SEPARATOR . 'php ' . $this->_bootstrapPath . ' ' . $cmd;
     	if($background)
     	{
