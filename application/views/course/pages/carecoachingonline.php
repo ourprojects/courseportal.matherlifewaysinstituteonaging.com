@@ -160,9 +160,7 @@ AARP provides various articles of interest and resources for family caregivers. 
         <h4>{t}HELPFUL HINTS{/t}</h4>
         <ul>
           <li>{t}MAKE A DATE WITH THE COURSE! Putting a specific time in your calendar to participate every week will get you started in the right direction.  So, for example, if you plan to participate every Tuesday at 7:00 pm, try to keep the same schedule every week.{/t}</li>
-          <br />
           <li>{t}READ CAREFULLY. The instructions to participate in activities are sometimes very specific but necessary to ensure everyone participates in the same way.  Instructions will become familiar to you over time.{/t}</li>
-          <br />
           <li>{t}KEEP ON TASK.  We know your work and family caregiving responsibilities can sometimes disrupt your participation.  The Facilitator will send emails each week to remind all students to log on and to share tips for each unit.  They will also let you know what lesson is recommended for the week so you can assess your own progress and timeline.{/t}</li>
         </ul>
         <br />
@@ -382,19 +380,23 @@ AARP provides various articles of interest and resources for family caregivers. 
             <p>{t}Make daily entries about your accomplishments – no matter how big or small. They may be accomplishments in relation to either work or your personal life.{/t}</p>
           </li>
           <li>{t}Answer these questions:{/t}</li>
-          <ul>
-            <li style="text-decoration:underline;">{t}What makes me unique?{/t}</li>
-            <li style="text-decoration:underline;">{t}In what areas of my life do I appear most satisfied or content?{/t}</li>
-            <li style="text-decoration:underline;">{t}In which areas do I appear to be struggling or unfulfilled?{/t}</li>
-            <li style="text-decoration:underline;">{t}What are my strengths? (look back at your “Principles of Success” ratings for ideas){/t}</li>
-            <li style="text-decoration:underline;">{t}How have these strengths helped me in the past?{/t}</li>
-            <li style="text-decoration:underline;">{t}How do these strengths now help me?{/t}</li>
-          </ul>
+          <li>
+	          <ul>
+	            <li style="text-decoration:underline;">{t}What makes me unique?{/t}</li>
+	            <li style="text-decoration:underline;">{t}In what areas of my life do I appear most satisfied or content?{/t}</li>
+	            <li style="text-decoration:underline;">{t}In which areas do I appear to be struggling or unfulfilled?{/t}</li>
+	            <li style="text-decoration:underline;">{t}What are my strengths? (look back at your “Principles of Success” ratings for ideas){/t}</li>
+	            <li style="text-decoration:underline;">{t}How have these strengths helped me in the past?{/t}</li>
+	            <li style="text-decoration:underline;">{t}How do these strengths now help me?{/t}</li>
+	          </ul>
+          </li>
           <li>{t}Review your journal entries of recent accomplishments to connect with your values and talents.{/t}</li>
-          <ul>
-            <li style="text-decoration:underline;">{t}What can you truly brag about?{/t}</li>
-            <li style="text-decoration:underline;">{t}What do your successes say about you?{/t}</li>
-          </ul>
+          <li>
+	          <ul>
+	            <li style="text-decoration:underline;">{t}What can you truly brag about?{/t}</li>
+	            <li style="text-decoration:underline;">{t}What do your successes say about you?{/t}</li>
+	          </ul>
+          </li>
           <li>
             <p>{t}Create a personal “bragging” statement. Be authentic and positive in your statement. Print out the statement and keep it visible so that you can refer to it often.{/t}</p>
           </li>
@@ -1258,7 +1260,7 @@ chicken for lunch today. So I think I’d like to try their fish!”{/t}</i></p>
         <h5><a href="<?php echo $this->getImagesUrl('CCOAssets/RetirementRedefinedArticle.pdf'); ?>" target="_blank"><img src="<?php echo $this->getImagesUrl('pdf-icon.png'); ?>" alt="image" class="normal" /></a>{t}Retirement Redefined{/t}</h5>
         <p>{t}Requirements for applicants and payment options vary considerably for CCRCs. Within the current housing market, many CCRCs are offering payment plan options or assistance to older couples who may need to sell their current home prior to moving to the new community. Many CCRCs offer what is termed “life care contracting.” Life care communities provide the same continuum of care to a resident for life, but the biggest difference is this: <b>residents who become financially unable to pay their monthly care fees are subsidized by the community, with the same access to services, and with no interruption in care or change in priority status</b>. In other words, residents are guaranteed the same quality of care and access to care from day one through end-of-life, regardless of their personal financial situation. Additionally, most life care communities offer all health care services on the same campus. The idea is that, after qualifying through a health and financial application process, residents will never have to move again, except between levels of care as needed.{/t}</p>
         <p>{t}The following guide provides more information about types of contracts common to CCRCs. Because there are various across states in terms of these contracts, it is important that you also investigate your state’s requirements.{/t}</p>
-        <h5> <a href="<?php echo $this->getImagesUrl('CCOAssets/GilbertGuideILTookit.pdf'); ?>" target="_blank"><img src="<?php echo $this->getImagesUrl('pdf-icon.png'); ?>" alt="image" class="normal" /></a>{t}Download Gilbert Guide – Independent Living & CCRC Evaluation Kit{/t}</h5>
+        <h5> <a href="<?php echo $this->getImagesUrl('CCOAssets/GilbertGuideILTookit.pdf'); ?>" target="_blank"><img src="<?php echo $this->getImagesUrl('pdf-icon.png'); ?>" alt="image" class="normal" /></a>{t}Download Gilbert Guide – Independent Living &amp; CCRC Evaluation Kit{/t}</h5>
         <br />
         <br />
       </div>
@@ -1353,30 +1355,35 @@ chicken for lunch today. So I think I’d like to try their fish!”{/t}</i></p>
           <li>
             <p>{t}What is the basic information I should have at hand as a long distance caregiver?{/t}</p>
           </li>
-          <ol>
-            <li>{t}Have contact information from your older parents’ neighbors. Make sure they know how to reach you in an emergency.{/t}</li>
-            <li>{t}check out local resources and services (usually through a local area agency on aging, library, or senior center). Check with your parents which ones they may find helpful and check back on whether they have initiated contacts.{/t}</li>
-            <li>{t}Have a current list of your parents’ medications (prescription and over-the-counter) including dosages, schedule, and reasons they
-are taking.{/t}</li>
-            <li>{t}When you visit their home, be observant for changes in the environment or potential safety hazards.{/t}</li>
-            <li>{t}Find out if you parents have “advanced directives” that outline their health care treatment preferences.{/t}</li>
-          </ol>
+          <li>
+	          <ol>
+	            <li>{t}Have contact information from your older parents’ neighbors. Make sure they know how to reach you in an emergency.{/t}</li>
+	            <li>{t}check out local resources and services (usually through a local area agency on aging, library, or senior center). Check with your parents which ones they may find helpful and check back on whether they have initiated contacts.{/t}</li>
+	            <li>{t}Have a current list of your parents’ medications (prescription and over-the-counter) including dosages, schedule, and reasons they are taking.{/t}</li>
+	            <li>{t}When you visit their home, be observant for changes in the environment or potential safety hazards.{/t}</li>
+	            <li>{t}Find out if you parents have “advanced directives” that outline their health care treatment preferences.{/t}</li>
+	          </ol>
+          </li>
           <li>
             <p>{t}What can I really expect to do from a distance? I don’t feel comfortable just stepping into a situation.{/t}</p>
           </li>
-          <ol>
-            <li>{t}Educate yourself on what you need to know about your parents’ health care, their needs and preferences, and other pertinent information.{/t}</li>
-            <li>{t}Plan your visits ahead of time. Decide on priorities they may have.{/t}</li>
-            <li>{t}Everything in your visit should not just be about caregiving. Plan to actually “visit” during your visits!{/t}</li>
-            <li>{t}Stay in contact and encourage your parents to do the same.{/t}</li>
-          </ol>
+          <li>
+	          <ol>
+	            <li>{t}Educate yourself on what you need to know about your parents’ health care, their needs and preferences, and other pertinent information.{/t}</li>
+	            <li>{t}Plan your visits ahead of time. Decide on priorities they may have.{/t}</li>
+	            <li>{t}Everything in your visit should not just be about caregiving. Plan to actually “visit” during your visits!{/t}</li>
+	            <li>{t}Stay in contact and encourage your parents to do the same.{/t}</li>
+	          </ol>
+          </li>
           <li>
             <p>{t}How can I feel less frustrated and angry with the caregiving situation?{/t}</p>
           </li>
-          <ol>
-            <li>{t}Feeling frustrated and angry is very common among caregivers regardless of distance.{/t}</li>
-            <li>{t}Plan to give yourself a break and just do something for yourself.{/t}</li>
-          </ol>
+          <li>
+	          <ol>
+	            <li>{t}Feeling frustrated and angry is very common among caregivers regardless of distance.{/t}</li>
+	            <li>{t}Plan to give yourself a break and just do something for yourself.{/t}</li>
+	          </ol>
+          </li>
         </ol>
         <br />
         <br />
@@ -1394,36 +1401,44 @@ are taking.{/t}</li>
           <li>
             <p>{t}What is a geriatric care manager and how can one help?{/t}</p>
           </li>
-          <ol>
-            <li>{t}Geriatric care managers are licensed nurses or social workers who specialize in geriatric care.{/t}</li>
-            <li>{t}The geriatric care manager is hired by a family to evaluate and assess an older parent’s needs and to coordinate care through community resources.{/t}</li>
-            <li>{t}When choosing one, you want to check references as well as find out their experience, fees, and if they are a member of the National Association of Professional Geriatric Care Managers.{/t}</li>
-          </ol>
+          <li>
+	          <ol>
+	            <li>{t}Geriatric care managers are licensed nurses or social workers who specialize in geriatric care.{/t}</li>
+	            <li>{t}The geriatric care manager is hired by a family to evaluate and assess an older parent’s needs and to coordinate care through community resources.{/t}</li>
+	            <li>{t}When choosing one, you want to check references as well as find out their experience, fees, and if they are a member of the National Association of Professional Geriatric Care Managers.{/t}</li>
+	          </ol>
+          </li>
           <li>
             <p>{t}How can I get my mother some relief in caring for my father?{/t}</p>
           </li>
-          <ol>
-            <li>{t}Respite care provides one a break from caregiving responsibilities – it can be for an afternoon or for several days.{/t}</li>
-            <li>{t}Care can be provided in the home, in an adult day care center, or in a senior living community.{/t}</li>
-          </ol>
+          <li>
+	          <ol>
+	            <li>{t}Respite care provides one a break from caregiving responsibilities – it can be for an afternoon or for several days.{/t}</li>
+	            <li>{t}Care can be provided in the home, in an adult day care center, or in a senior living community.{/t}</li>
+	          </ol>
+          </li>
           <li>
             <p>{t}What if my mom says, “Promise me you’ll never put me in a nursing home”?{/t}</p>
           </li>
-          <ol>
-            <li>{t}This request usually follows some horrendous story on the news about a nursing home death. Most of us want to stay in our own homes, to be independent, and to be cared for by relatives and friends.{/t}</li>
-            <li>{t}Think carefully before making this type of promise. Assuring your parents that you will look out for them in their best interests and provide quality of care is what is really important. For some illnesses, long-term care may be the sole option. Discovering too late that such promises cannot be kept has often resulted in terrible feelings of guilt by the caregiver for many years.{/t}</li>
-            <li>{t}Rather than a promise that cannot be kept, another way to respond is, “Dad, I will make sure you have the best care we can arrange. You can count on me to try and do what’s best for everyone. I can’t think of a situation where I’d walk out on you.”{/t}</li>
-          </ol>
+          <li>
+	          <ol>
+	            <li>{t}This request usually follows some horrendous story on the news about a nursing home death. Most of us want to stay in our own homes, to be independent, and to be cared for by relatives and friends.{/t}</li>
+	            <li>{t}Think carefully before making this type of promise. Assuring your parents that you will look out for them in their best interests and provide quality of care is what is really important. For some illnesses, long-term care may be the sole option. Discovering too late that such promises cannot be kept has often resulted in terrible feelings of guilt by the caregiver for many years.{/t}</li>
+	            <li>{t}Rather than a promise that cannot be kept, another way to respond is, “Dad, I will make sure you have the best care we can arrange. You can count on me to try and do what’s best for everyone. I can’t think of a situation where I’d walk out on you.”{/t}</li>
+	          </ol>
+          </li>
           <li>
             <p>{t}What are some other resources for long distance caregivers?{/t}</p>
           </li>
-          <ol>
-            <li>{t}Obtain a free Caregiver Resource Directory that provides resources, facts, and advice about caring for a family member as well as for yourself. www.netofcare.org/crd/resource_form.asp{/t}</li>
-            <li>{t}Benefits Check UP is a free online service provided by the National Council on Aging which allows people to find programs that can help them meet health care costs. www.benefitscheckup.org{/t}</li>
-            <li>{t}ARCH National Respite Network and Resource Center provides resources and information including a respite locator program and information clearinghouse. www.archrespite.org{/t}</li>
-            <li>{t}Eldercare Locator is a nationwide service helping identify local resources for older adults.  www.eldercare.gov{/t}</li>
-            <li>{t}National Family Caregivers Association supports family caregivers and offers education, information, and referrals.  www.nfcacares.org{/t}</li>
-          </ol>
+          <li>
+	          <ol>
+	            <li>{t}Obtain a free Caregiver Resource Directory that provides resources, facts, and advice about caring for a family member as well as for yourself. www.netofcare.org/crd/resource_form.asp{/t}</li>
+	            <li>{t}Benefits Check UP is a free online service provided by the National Council on Aging which allows people to find programs that can help them meet health care costs. www.benefitscheckup.org{/t}</li>
+	            <li>{t}ARCH National Respite Network and Resource Center provides resources and information including a respite locator program and information clearinghouse. www.archrespite.org{/t}</li>
+	            <li>{t}Eldercare Locator is a nationwide service helping identify local resources for older adults.  www.eldercare.gov{/t}</li>
+	            <li>{t}National Family Caregivers Association supports family caregivers and offers education, information, and referrals.  www.nfcacares.org{/t}</li>
+	          </ol>
+          </li>
         </ol>
         <br />
         <br />
@@ -1801,7 +1816,7 @@ are taking.{/t}</li>
           <p class="subtopic">{t}Resources{/t}</p>
           <p><a href="<?php echo $this->getImagesUrl('CCOAssets/DriverSelfAssessment.pdf'); ?>" target="_blank"><img class="normal" src="<?php echo $this->getImagesUrl('pdf-icon.png'); ?>" alt="" /></a><b>{t}Driver Self-Assessment{/t}</b><br />
             {t}Here is a self-assessment for older adults from ElderSafety.org to help them identify what should be noticed regarding aging changes that may impact their ability to drive safely.{/t}</p>
-          <p><a href="http://www.usatoday.com/life/graphics/elderly_drivers_popup/flash.htm" target="_blank" /><b>{t}How Age Affects the Ability to Drive{/t}</a></b><br />
+          <p><a href="http://www.usatoday.com/life/graphics/elderly_drivers_popup/flash.htm" target="_blank"><b>{t}How Age Affects the Ability to Drive{/t}</b></a><br />
             {t}This interactive guide from USA Today provides visual descriptions of changes that occur during normal aging that may impact one’s ability in driving.{/t}</p>
           <br />
           <br />
@@ -1828,11 +1843,9 @@ are taking.{/t}</li>
             <li>{t}One of the things I found out is that there are some driving refresher courses that you may take that will often give you a nice discount on your care insurance.  What would you think about that?  Could we check one out together?{/t}</li>
           </ul>
           <p class="subtopic">{t}Resources{/t}</p>
-          <p><a href="http://apps.dmv.ca.gov/about/senior/senior_self_ess.html
-" target="_blank" /><b>{t}Drivers Self-Assessment{/t}</b></a><br />
+          <p><a href="http://apps.dmv.ca.gov/about/senior/senior_self_ess.html" target="_blank"><b>{t}Drivers Self-Assessment{/t}</b></a><br />
             {t}This self-assessment at seniordrivers.org provides a quick self-assessment for older drivers to review their driving knowledge and skills.{/t}</p>
-          <p><a href="http://www.aarp.org/families/driver_safety/driver_safety_online_course.html
-" target="_blank" /><b>{t}AARP Driver Safety Online Course{/t}</b></a><br />
+          <p><a href="http://www.aarp.org/families/driver_safety/driver_safety_online_course.html" target="_blank"><b>{t}AARP Driver Safety Online Course{/t}</b></a><br />
             {t}AARP offers an online driver safety course (about 8 hours in length) for a nominal charge.  The course is designed for older drivers to learn about normal age-related changes and how to adjust driving to allow for these changes.  Successful completion of the course may qualify participants for car insurance discounts (please check with your insurance company for specifics in your state).{/t}</p>
           <br />
           <br />
@@ -1861,7 +1874,7 @@ are taking.{/t}</li>
             <li>{t}What would you think about working out a plan with a professional to help make sure that you can keep driving safely?{/t}</li>
           </ul>
           <p class="subtopic">{t}Resources{/t}</p>
-          <p> <a href="<?php echo $this->getImagesUrl('CCOAssets/WarningSignsOlderDrivers.pdf'); ?>" target="_blank" /><img class="normal" src="<?php echo $this->getImagesUrl('pdf-icon.png'); ?>" alt="" /></a> <b>{t}Warning Signs for Older Drivers{/t}</b><br />
+          <p> <a href="<?php echo $this->getImagesUrl('CCOAssets/WarningSignsOlderDrivers.pdf'); ?>" target="_blank"><img class="normal" src="<?php echo $this->getImagesUrl('pdf-icon.png'); ?>" alt="" /></a> <b>{t}Warning Signs for Older Drivers{/t}</b><br />
             {t}This checklist is for families to track potential warning signs for older drivers so that patterns may be identified early on.{/t}</p>
           <br />
           <br />
@@ -1885,8 +1898,7 @@ are taking.{/t}</li>
             <li>{t}Your safety and freedom are what’s most important to both of us.  If we can map out alternate plans to get you everywhere you need to go and try that out for a couple of weeks, what would you think about trying that plan?{/t}</li>
           </ul>
           <p class="subtopic">{t}Resources{/t}</p>
-          <p><a href="http://www.driver-ed.org/i4a/pages/index.cfm?pageid=1
-" target="_blank" /><b>Finding a Certified Driving Rehabilitation Specialist</b></a><br />
+          <p><a href="http://www.driver-ed.org/i4a/pages/index.cfm?pageid=1" target="_blank"><b>Finding a Certified Driving Rehabilitation Specialist</b></a><br />
             {t}Click on this link to search for a certified Driving Rehabilitation Specialist in your area.{/t}</p>
           <br />
           <br />
@@ -1912,10 +1924,9 @@ are taking.{/t}</li>
             <li>{t}Where are the gaps?{/t}</li>
           </ul>
           <p class="subtopic">{t}Resources{/t}</p>
-          <p><a href="https://www.aaafoundation.org/sites/default/files/stp.pdf
-" target="_blank" /><b>{t}Supplemental Transportation Programs (STPs){/t}</b></a><br />
+          <p><a href="https://www.aaafoundation.org/sites/default/files/stp.pdf" target="_blank"><b>{t}Supplemental Transportation Programs (STPs){/t}</b></a><br />
             {t}The purpose of STPs is to provide alternative transportation to older adults who have limitations to their driving or are no longer driving.  They are designed to be more flexible than other forms of transportation.  Some include “door-to-door” service to assure the older adult arrives safely to their destination and back.  All drivers are screened and trained.{/t}</p>
-          <p><a href="http://itnamerica.org" target="_blank" /><b>{t}Independent Transportation Network (ITN){/t}</b></a><br />
+          <p><a href="http://itnamerica.org" target="_blank"><b>{t}Independent Transportation Network (ITN){/t}</b></a><br />
             {t}A newer program that is in limited numbers of areas is the ITN which combines creative transportation alternatives for older adults, but coordinates volunteers, community services and agency connections to make it work.  Find an affiliate program on their website.{/t}</p>
           <br />
           <br />
@@ -1964,7 +1975,7 @@ are taking.{/t}</li>
           <h2 class="flowers">{t}Activity – Resources on Exercises Designed for Older Adults{/t}</h2>
           <hr />
           <p>{t}The National Institutes on Aging has developed an online guide for older adults.  A number of example exercises are presented with easy to follow steps and pictures.  Exercises focus on areas including endurance, flexibility, balance, and strength training.  Click on the following link to access the guide:{/t}</p>
-          <p><a href="http://www.nia.nih.gov/HealthInformation/Publications/ExerciseGuide/default.htm" target="_blank">{t}Exercise & Physical Activity: Your Everyday Guide from the National Institute on Aging{/t}</a></p>
+          <p><a href="http://www.nia.nih.gov/HealthInformation/Publications/ExerciseGuide/default.htm" target="_blank">{t}Exercise &amp; Physical Activity: Your Everyday Guide from the National Institute on Aging{/t}</a></p>
           <p class="subtopic">{t}Exercise Videos{/t}</p>
           <p>{t}These are meant to be example exercises and do not constitute a complete exercise regimen.{/t}</p>
           <h5>{t}Video – Chair Stand Strengthening{/t}</h5>
@@ -2080,7 +2091,7 @@ are taking.{/t}</li>
         <hr />
         <p>{t}Throughout this course, you have had several opportunities to gain more understanding regarding your older parents’ needs and preferences.  Every caregiving situation is unique.  Many factors come into play when considering the best possible solutions about your parents and their future.  These factors may include: your parents’ health and functional abilities, mobility, values and beliefs, and family and community support systems.{/t}</p>
         <p>{t}In this exercise, we provide several questions for you to use as a framework to “interview” your parents regarding their choices and preferences for their future.  This exercise is broken into two parts.  Please complete all of Part 1 before moving onto Part 2.{/t}</p>
-        <p> <a href="<?php echo $this->getImagesUrl('CCOAssets/ExerciseIdentifyingSolutionstoSupportChoiceandPreferences.pdf'); ?>" target="_blank" /><img class="normal" width="48" height="48" src="<?php echo $this->getImagesUrl('pdf-icon.png'); ?>" /></a> <b>{t}Click the icon to access the Exercise – Identifying Solutions to Support Choice and Preferences{/t}</b></p>
+        <p> <a href="<?php echo $this->getImagesUrl('CCOAssets/ExerciseIdentifyingSolutionstoSupportChoiceandPreferences.pdf'); ?>" target="_blank" /><img class="normal" width="48" height="48" src="<?php echo $this->getImagesUrl('pdf-icon.png'); ?>"></a> <b>{t}Click the icon to access the Exercise – Identifying Solutions to Support Choice and Preferences{/t}</b></p>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo;</a></div>
     </div>
@@ -2149,7 +2160,7 @@ are taking.{/t}</li>
         <h2 class="flowers">{t}Activity – Ways to Manage Your Own Stress{/t}</h2>
         <hr />
         <p>{t}The American Psychological Association offers several strategies to help those in the “sandwich generation” manage their stress.  In Section 1, we address the power of journaling as a self-coaching exercise to help create positive self-talk.  In managing stress, journaling can also be a very effective tool to help identify what situations or events trigger stressful feelings, how you deal (or don’t deal) with stress, and how you may manage stress.{/t}</p>
-        <p> <a href="<?php echo $this->getImagesUrl('CCOAssets/ActivityWaystoManageYourOwnStress.pdf'); ?>" target="_blank" /><img class="normal" width="48" height="48"src="<?php echo $this->getImagesUrl('pdf-icon.png'); ?>" /></a> <b>{t}Click the icon to access the Activity{/t}</b></p>
+        <p> <a href="<?php echo $this->getImagesUrl('CCOAssets/ActivityWaystoManageYourOwnStress.pdf'); ?>" target="_blank"><img class="normal" width="48" height="48"src="<?php echo $this->getImagesUrl('pdf-icon.png'); ?>" /></a> <b>{t}Click the icon to access the Activity{/t}</b></p>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo;</a></div>
     </div>

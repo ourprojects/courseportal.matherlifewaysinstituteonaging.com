@@ -16,9 +16,9 @@ $clientScript->registerCssFile($this->getStylesUrl('homeUser.css'));
     <p><b>{t}Required Applications{/t}</b></p>
     <p>{t}You will need the following applications to participate:{/t}</p>
     <hr />
-    <p><a href="http://get.adobe.com/flashplayer/" target="_blank" />{t}Adobe Flash Player{/t}</a></p>
-    <p><a href="http://get.adobe.com/reader/" target="_blank" />{t}Adobe Reader{/t}</a></p>
-    <p><a href="http://office.microsoft.com" target="_blank" />Microsoft Office</a>, <a href="http://www.apple.com/iwork/" target="_blank" />Apple iWork</a> {t}or,{/t} <a href="http://www.openoffice.org" target="_blank" />{t}Apache OpenOffice{/t}</a></p>
+    <p><a href="http://get.adobe.com/flashplayer/" target="_blank">{t}Adobe Flash Player{/t}</a></p>
+    <p><a href="http://get.adobe.com/reader/" target="_blank">{t}Adobe Reader{/t}</a></p>
+    <p><a href="http://office.microsoft.com" target="_blank">Microsoft Office</a>, <a href="http://www.apple.com/iwork/" target="_blank">Apple iWork</a> {t}or,{/t} <a href="http://www.openoffice.org" target="_blank">{t}Apache OpenOffice{/t}</a></p>
   </div>
   <div class="box-sidebar three statistics">
     <h3>{t}Statistics on Caregivers (USA){/t}</h3>

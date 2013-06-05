@@ -48,7 +48,7 @@
   <hr />
   <br />
   <br />
-  <h2 class="flowers"> {t}Online Workforce Surveys & Toolkits{/t} </h2>
+  <h2 class="flowers"> {t}Online Workforce Surveys &amp; Toolkits{/t} </h2>
   <hr />
   <h3> <a href="http://matherlifewaysinstituteonaging.com/products"> {t}Aging in the Workplace Survey{/t} </a></h3>
   <p>{t}The Aging in the Workplace toolkits and survey are designed to provide employers with strategic aging-related workforce management information. With a large percent of the 78 million boomers planning to remain in the workforce past traditional retirement age, organizations in the nonprofit, private, and public sectors will need tools and resources to make the best use of their knowledge and skills in order to increase organizational effectiveness and business performance.{/t}</p>

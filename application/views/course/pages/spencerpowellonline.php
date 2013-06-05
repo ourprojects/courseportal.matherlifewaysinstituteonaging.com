@@ -58,11 +58,10 @@ foreach(array(
 <div class="column-wide">
   <h2 class="flowers"><?php echo t($course->title); ?></h2>
   <p><?php echo t($course->description); ?></p>
-  <h5>
-  {t}Access - 1 year / Completion - 8 weeks (recommended){/t}
+  <h5>{t}Access - 1 year / Completion - 8 weeks (recommended){/t}</h5>
   <h4>{t}Objectives{/t}</h4>
   <ul>
-    <?php 
+  <?php 
   foreach($course->objectives as $objective)
   	echo '<li>' . t($objective->text) . '</li>';
   ?>
@@ -87,8 +86,7 @@ foreach(array(
       <li><a href="http://www.mindful.org/" target="_blank">mindful - taking time for what matters</a></li>
       <li><a href="http://www.psychologytoday.com/basics/mindfulness" target="_blank">Psychologytoday</a></li>
       <li><a href=" http://www.ncbi.nlm.nih.gov/pubmedhealth/PMH0008821/" target="_blank">PubMed Health</a></li>
-      <li><a href="http://www.bis.gov.uk/foresight/our-work/projects/published-projects/mental-capital-and-wellbeing/reports-and-publications
-" target="_blank">Foresight</a></li>
+      <li><a href="http://www.bis.gov.uk/foresight/our-work/projects/published-projects/mental-capital-and-wellbeing/reports-and-publications" target="_blank">Foresight</a></li>
       <li><a href="http://cognitivetherapyonline.com/" target="_blank">Cognitive Therapy Online</a></li>
       <li><a href="http://www.cognitivebehavioraltherapyonline.com/index.php" target="_blank">FixMyThinking.com</a></li>
       <li><a href="http://www.nih.gov/health/wellness/" target="_blank">National Institutes of Health</a></li>
@@ -100,7 +98,7 @@ foreach(array(
     <p>{t}Ms. O’Brien has worked in a research capacity for Mather LifeWays Institute on Aging since 2005. She has been responsible for designing and overseeing large-scale multi-year evaluations for grant-funded projects relating to the field of aging. As a Project Director on grant funded research projects, she has been responsible for forging collaborations with aging services organizations nationwide, and for recruiting older adults into various studies.{/t}</p>
     <span class="h5">{t}Course Developer:{/t}</span> <span class="name">Jon Woodall</span>
     <p>{t}Mr. Woodall is responsible for all MLIA corporate workforce wellness programs related to design, implementation, publication, and evaluation. Additionally, he seeks new grant funding to support or extend current grants related to corporate workforce wellness programs.{/t}</p>
-    <span class="h5">{t}Course Facilitator:{/t}</span> <span class="name">Sherrie All, PhD</span></a>
+    <span class="h5">{t}Course Facilitator:{/t}</span> <span class="name">Sherrie All, PhD</span>
     <p>{t}Licensed clinical neuropsychologist specializing in brain fitness, healthy aging and cognitive enhancement. She is building a private practice in clinical neuropsychological assessment combined with interventions aimed at enhancing cognition and promoting healthy aging. And has specialties in Neuropsychological Assessment, Individual and Group Psychotherapy, Brain Fitness and Healthy Aging Thearpy and Coaching{/t}</p>
   </div>
 </div>
@@ -131,20 +129,22 @@ foreach(array(
           <li>
             <h4>{t}Overview of:{/t}</h4>
           </li>
-          <ul>
-            <li>
-              <h5>{t}Brain Health Now and Later{/t}</h5>
-            </li>
-            <li>
-              <h5>{t}Dementia and Cognitive Reserve{/t}</h5>
-            </li>
-            <li>
-              <h5>{t}Brain Plasticity{/t}</h5>
-            </li>
-            <li>
-              <h5>{t}Peak Performance{/t}</h5>
-            </li>
-          </ul>
+          <li>
+	          <ul>
+	            <li>
+	              <h5>{t}Brain Health Now and Later{/t}</h5>
+	            </li>
+	            <li>
+	              <h5>{t}Dementia and Cognitive Reserve{/t}</h5>
+	            </li>
+	            <li>
+	              <h5>{t}Brain Plasticity{/t}</h5>
+	            </li>
+	            <li>
+	              <h5>{t}Peak Performance{/t}</h5>
+	            </li>
+	          </ul>
+          </li>
           <li>
             <h4>{t}Introduction to Program Format{/t}</h4>
           </li>

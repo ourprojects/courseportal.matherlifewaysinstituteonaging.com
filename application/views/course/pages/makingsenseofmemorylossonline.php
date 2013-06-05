@@ -234,7 +234,7 @@ foreach(array(
   </div>
   <div id="lesson-1-slide-7" class="course-slide">
     <div class="content">
-      <h2 class="flowers">{t}Module 1: Overview of Memory Loss & Related Symptoms{/t}</h2>
+      <h2 class="flowers">{t}Module 1: Overview of Memory Loss &amp; Related Symptoms{/t}</h2>
       <hr />
       <img src="<?php echo $this->getImagesUrl('msml/164088989.png'); ?>" alt="image">
       <h4>{t}Purposes{/t}</h4>
@@ -543,7 +543,7 @@ foreach(array(
   </div>
   <div id="lesson-1-slide-20" class="course-slide">
     <div class="content">
-      <h2 class="flowers">{t}Normal{/t} -> {t}Mild Cognitive Impairment{/t} -> {t}Alzheimer's disease{/t}</h2>
+      <h2 class="flowers">{t}Normal{/t} -&raquo; {t}Mild Cognitive Impairment{/t} -&raquo; {t}Alzheimer's disease{/t}</h2>
       <hr />
       <img src="<?php echo $this->getImagesUrl('msml/118564579.png'); ?>" alt="image">
       <p>{t}Experts today agree that what is called “early stage” AD is probably the result of many years of the disease
@@ -1379,7 +1379,7 @@ foreach(array(
       <h4>{t}Purposes{/t}</h4>
       <ul>
         <li>{t}Understand the shifting balance of power in the relationship,{/t}</li>
-        <li>{t}Address practical issues in everyday life such as driving a car, handling health & financial decisions or managing household tasks,{/t}</li>
+        <li>{t}Address practical issues in everyday life such as driving a car, handling health &amp; financial decisions or managing household tasks,{/t}</li>
         <li>{t}Share the diagnosis and involved others in helping out.{/t}</li>
       </ul>
       <div id="question1" class="question">
@@ -1536,7 +1536,7 @@ foreach(array(
         <img src="<?php echo $this->getImagesUrl('msml/200380838-001.png'); ?>" alt="image">
         <ul>
           <li>{t}Over-learned tasks are preserved{/t}</li>
-          <li>{t}Difficulty with new & unfamiliar tasks{/t}</li>
+          <li>{t}Difficulty with new &amp; unfamiliar tasks{/t}</li>
           <li>{t}Following a sequence of steps{/t}</li>
         </ul>
         <p>{t}Generally, the ability to handle personal care tasks like bathing and dressing remain intact in the early
@@ -1553,9 +1553,9 @@ foreach(array(
         <hr />
         <img src="<?php echo $this->getImagesUrl('msml/82090084.png'); ?>" alt="image">
         <ul>
-          <li>{t}Unfamiliar places, people & schedule may increase confusion{/t}</li>
+          <li>{t}Unfamiliar places, people &amp; schedule may increase confusion{/t}</li>
           <li>{t}May also be an enjoyable time together{/t}</li>
-          <li>{t}Weigh risks & benefits for all concerned{/t}</li>
+          <li>{t}Weigh risks &amp; benefits for all concerned{/t}</li>
           <li>{t}Take necessary precautions{/t}</li>
         </ul>
         <p>{t}Like anything unfamiliar, traveling to new or different places may be more stressful, but should not be
@@ -1572,10 +1572,10 @@ foreach(array(
         <hr />
         <img src="<?php echo $this->getImagesUrl('msml/87352733.png'); ?>" alt="image">
         <ul>
-          <li>{t}Impact varies on persons & couples{/t}</li>
-          <li>{t}Physiological & psychological consequences{/t}</li>
+          <li>{t}Impact varies on persons &amp; couples{/t}</li>
+          <li>{t}Physiological &amp; psychological consequences{/t}</li>
           <li>{t}Patterns of behavior may change over time{/t}</li>
-          <li>{t}Possible need for assessment & intervention{/t}</li>
+          <li>{t}Possible need for assessment &amp; intervention{/t}</li>
         </ul>
         <p>{t}Intimacy and sexuality are important issues for couples in which one partner is affected by memory loss. These important aspects of a relationship invariably change due to memory loss. The partner with memory loss slowly loses the capacity for shared closeness. Likewise, sexual functioning diminishes or ceases altogether. In rare cases, the sexual interest of the person with memory loss increases.{/t}</p>
         <p>{t}The well partner usually experiences a diminished sexual interest due to the changes of providing care although the need for non-sexual intimacy may remain strong. Couples and individuals need to know that changes in this realm of the relationship are normal. Specific situations may call for further assessment and problem solving. There is no reason for embarrassment. Please let us know of you are having any special problems in this regard.{/t}</p>
@@ -1792,7 +1792,7 @@ foreach(array(
         <p>{t}An attorney who is well versed in elder law can best assist you in legal planning. The National Academy of Elder Law Attorneys is a non‐profit organization assisting lawyers, bar associations and those who work with older clients and their families. By visiting their website, you can locate attorneys nearest you. Nonprofit legal agencies also provide legal council to families, and often offer financial assistance or reduced rates.{/t}</p>
         <p class="forum">{t}You may know of elder law attorneys and non‐profit legal agencies in your local area. Prepare a list and post it to the Forum.{/t}</p>
         <img src="<?php echo $this->getImagesUrl('msml/forum_icon.png'); ?>" alt="image">
-        <p>{t}Again, this next section is meant as an overview only. Cover the basic information and refer participants to the Medicare website, Centers for Medicare & Medicaid Services website and their local Social Security Administration office for more detailed information about Medicare and Medicaid.{/t}</p>
+        <p>{t}Again, this next section is meant as an overview only. Cover the basic information and refer participants to the Medicare website, Centers for Medicare &amp; Medicaid Services website and their local Social Security Administration office for more detailed information about Medicare and Medicaid.{/t}</p>
         <ul>
           <li><a href="http://www.medicare.gov" target="_blank">{t}Medicare.gov{/t}</a></li>
           <li><a href="http://www.ssa.gov" target="_blank">{t}Social Security Administration website{/t}</a></li>
@@ -1976,8 +1976,8 @@ foreach(array(
         </ul>
         <p>{t}The Administration on Aging has designated a network of Area Agencies on Aging (AAAs) throughout the country. Their mission is to develop a comprehensive, coordinated and cost‐effective system of home and community‐based services that help elderly individuals maintain their health and independence in their homes and communities. In each state, these AAA’s have designated agencies to administer local programs and services to persons age 60 and older. Some of the programs include:{/t}</p>
         <ul>
-          <li>{t}Older American Act & the Aging Network;{/t}</li>
-          <li>{t}Home & Community Based Long‐Term Care;{/t}</li>
+          <li>{t}Older American Act &amp; the Aging Network;{/t}</li>
+          <li>{t}Home &amp; Community Based Long‐Term Care;{/t}</li>
           <li>{t}Health, Prevention, and Wellness Program;{/t}</li>
           <li>{t}Elder Rights Protection;{/t}</li>
           <li>{t}Special Projects; and{/t}</li>
