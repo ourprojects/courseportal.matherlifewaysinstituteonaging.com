@@ -38,7 +38,7 @@ foreach(array(
     <p><a href="#">{t}Empower Online Post-Post Course Survey{/t}</a></p>
     <p><a href="#">{t}Empower Online One-Year Survey{/t}</a></p>
     <br />
-    <img src="<?php echo $this->getImagesUrl('msml/153075496.png'); ?>" alt="image"> </div>
+    <img src="<?php echo $this->getImagesUrl('empower/153075496.png'); ?>" alt="image"> </div>
   <div class="box-sidebar one">
     <h3>Alzheimer's Association: behaviors</h3>
     <p><img src="<?php echo $this->getImagesUrl('empower/alz.png'); ?>" /></p>
