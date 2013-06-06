@@ -144,7 +144,8 @@ class TViewSource extends CApplicationComponent
 				"SELECT rt.id route_id, vst.id view_id, vt.path path, COALESCE(MAX(tmt.last_modified),'0') last_modified " .
 				"FROM $this->viewSourceTable vst " .
 				"LEFT JOIN $this->routeViewTable rvt ON (vst.id=rvt.view_id) " .
-				"JOIN $this->routeTable rt ON (rvt.route_id=rt.id AND rt.route=:route) " .
+				"LEFT JOIN $this->routeTable rt ON (rvt.route_id=rt.id AND rt.route=:route) " .
+				"JOIN $this->routeTable rt2 ON (rvt.route_id=rt2.id AND rt2.route=:route) " .
 				"LEFT JOIN $this->viewTable vt ON (vst.id=vt.id AND vt.language=:language) " .
 				"LEFT JOIN $this->viewMessageTable vmt ON (vst.id=vmt.view_id) " .
 				"LEFT JOIN {$this->getMessageSource()->translatedMessageTable} tmt ON (vmt.message_id=tmt.id AND tmt.language=:language) " .
