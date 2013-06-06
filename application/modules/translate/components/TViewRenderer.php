@@ -123,7 +123,7 @@ class TViewRenderer extends CViewRenderer
 		{
 			throw new CException(Yii::t(self::ID, "The missing view translation event cannot be null."));
 		}
-		$event->path = $this->translateView($event->route, $event->path, $event->language, $this->compileInBackground);
+		$event->path = $this->translate($event->route, $event->path, $event->language, $this->compileInBackground);
 	}
 	
 	/**
@@ -136,7 +136,7 @@ class TViewRenderer extends CViewRenderer
 	 * @throws CException An exception will be thrown if any required database insertions fail.
 	 * @return string the path to the translated view.
 	 */
-	public function translateView($route, $path, $language, $background = true)
+	public function translate($route, $path, $language, $background = true)
 	{
 		$viewSource = $this->getViewSource();
 		if($viewSource->getDbConnection()->getCurrentTransaction() === null)

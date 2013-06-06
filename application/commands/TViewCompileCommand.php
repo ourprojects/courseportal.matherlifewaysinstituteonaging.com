@@ -64,10 +64,10 @@ class TViewCompileCommand extends CConsoleCommand
 			if(!is_dir(dirname($compiledPath)))
 				mkdir(dirname($compiledPath), $filePermission, true);
 			
-			$this->_currentViewMessages = array();
-			foreach($this->getViewSource()->getViewMessages($id) as $row)
-				$this->_currentViewMessages[$row['message']] = array('id' => $row['id'], 'confirmed' => false);
 			$this->_currentViewId = $id;
+			$this->_currentViewMessages = array();
+			foreach($this->getViewSource()->getViewMessages($this->_currentViewId) as $row)
+				$this->_currentViewMessages[$row['message']] = array('id' => $row['id'], 'confirmed' => false);
 	
 			file_put_contents(
 				$compiledPath,
@@ -79,12 +79,13 @@ class TViewCompileCommand extends CConsoleCommand
 			);
 			@chmod($compiledPath, $filePermission);
 	
+			$unconfirmedMessageIds = array();
 			foreach($this->_currentViewMessages as $message => $messageInfo)
-				if($messageInfo['confirmed'])
-					unset($this->_currentViewMessages[$message]);
+				if(!$messageInfo['confirmed'])
+					$unconfirmedMessageIds[] = $this->_currentViewMessages[$message]['id'];
 			
-			$this->getViewSource()->deleteViewMessages($id, $this->_currentViewMessages);
-			$this->getViewSource()->updateViewCreated($id, $language);
+			$this->getViewSource()->deleteViewMessages($this->_currentViewId, $unconfirmedMessageIds);
+			$this->getViewSource()->updateViewCreated($this->_currentViewId, $language);
 			if(isset($transaction))
 				$transaction->commit();
 		}

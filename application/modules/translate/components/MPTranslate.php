@@ -44,11 +44,11 @@ class MPTranslate extends CApplicationComponent {
     
     public $defineGlobalTranslateFunction = true;
     
-    public $useTransactions = true;
+    public $useTransaction = true;
     
     public $languageRequestVarName = 'language';
     
-    public $localeGeneric = true;
+    public $genericLocale = true;
     
     private $_source;
     
@@ -66,7 +66,7 @@ class MPTranslate extends CApplicationComponent {
 	 * handles the initialization parameters of the components
 	 */
 	public function init() {
-		if($this->localeGeneric)
+		if($this->genericLocale)
 		{
 			Yii::app()->sourceLanguage = Yii::app()->getLocale()->getLanguageID(Yii::app()->sourceLanguage);
 		}
@@ -120,7 +120,7 @@ class MPTranslate extends CApplicationComponent {
 		// Process language:
 		
 		// Canonicalize the language if we don't care about the locale portion
-		if($this->localeGeneric)
+		if($this->genericLocale)
 		{
 			$language = Yii::app()->getLocale()->getLanguageID($language);
 		}
@@ -128,7 +128,7 @@ class MPTranslate extends CApplicationComponent {
 		// If the language is not acceptable set it to the application's default language. 
 		if(!$this->isAcceptedLanguage($language)) 
 		{
-			$language = $this->localeGeneric ? Yii::app()->getLocale()->getLanguageID(Yii::app()->getLanguage()) : Yii::app()->getLanguage();
+			$language = $this->genericLocale ? Yii::app()->getLocale()->getLanguageID(Yii::app()->getLanguage()) : Yii::app()->getLanguage();
 		}
 		
 		// If the language part of the requested url is missing redirect to the same url with the language part inserted.
@@ -198,7 +198,7 @@ class MPTranslate extends CApplicationComponent {
 	
 	public function getAcceptedLanguages() 
 	{
-		$cacheKey = self::ID . '-cache-admin-accepted-languages-' . Yii::app()->sourceLanguage;
+		$cacheKey = self::ID . '-cache-admin-accepted-languages-' . Yii::app()->getLanguage();
 		if(!isset($this->_cache[$cacheKey])) 
 		{
 			if(($cache = Yii::app()->getCache()) === null || ($languages = $cache->get($cacheKey)) === false) 
@@ -364,102 +364,117 @@ class MPTranslate extends CApplicationComponent {
         if(empty($event->message))
         	return true;
         
+        $event->category = trim($event->category);
+        $event->language = trim($event->language);
+        
         $source = $this->getMessageSource();
 
         $sourceLanguage = $event->category === TranslateModule::$componentId ? 'en' : $source->getLanguage();
-        $requestedLanguage = trim($event->language);
 
-        if($requestedLanguage === $sourceLanguage && !$source->forceTranslation)
+        if(!$source->forceTranslation && $event->language === $sourceLanguage)
         	return false;
 
-        $message = $source->getTranslationFromDb($event->category, $event->message, $requestedLanguage);
-        
-        // If the source message does not exists add it.
-        if($message['id'] === null) 
-        {
-			$message['id'] = $source->addSourceMessage($event->category, $event->message);
-			
-			if($message['id'] === null)
-			{
-				Yii::log("Message '$event->message' in category '$event->category' could not be inserted into the database table '{$this->getMessageSource()->sourceMessageTable}'", CLogger::LEVEL_ERROR, self::ID);
-				return false;
-			}
-        }
-        
-        // If the category does not exist or has not been associated with the source message add it and/or associate it with the source message.
-    	if($message['category_id'] === null)
-		{
-			$message['category_id'] = $source->getCategoryId($category);
+		if($source->getDbConnection()->getCurrentTransaction() === null)
+			$transaction = $source->getDbConnection()->beginTransaction();
 		
-			if($message['category_id'] === false)
-			{
-				$message['category_id'] = $source->addCategory($category);
-						
-				if($message['category_id'] === null)
+		try
+		{ 	
+	        $message = $source->getTranslationFromDb($event->category, $event->message, $event->language);
+	        
+	        // If the source message does not exists add it.
+	        if($message['id'] === null) 
+	        {
+				$message['id'] = $source->addSourceMessage($event->category, $event->message);
+				
+				if($message['id'] === null)
 				{
-					Yii::log("The category '$event->category' was not found and could not be added to the database.", CLogger::LEVEL_ERROR, self::ID);
-					return false;
+					throw new CDbException("Message '$event->message' in category '$event->category' could not be inserted into the database table '{$this->getMessageSource()->sourceMessageTable}'");
+				}
+	        }
+	        
+	        // If the category does not exist or has not been associated with the source message add it and/or associate it with the source message.
+	    	if($message['category_id'] === null)
+			{
+				$message['category_id'] = $source->getCategoryId($category);
+			
+				if($message['category_id'] === false)
+				{
+					$message['category_id'] = $source->addCategory($category);
+							
+					if($message['category_id'] === null)
+					{
+						throw new CDbException("The category '$event->category' was not found and could not be added to the database.");
+					}
+				}
+			
+				if($source->addCategoryMessage($message['category_id'], $message['message_id']) === null)
+				{
+					throw new CDbException("The message with id '{$message['id']}' could not be associated with category id '{$message['category_id']}'.");
 				}
 			}
-		
-			if($source->addCategoryMessage($message['category_id'], $message['message_id']) === null)
-			{
-				Yii::log("The message with id '{$message['id']}' could not be associated with category id '{$message['category_id']}'.", CLogger::LEVEL_ERROR, self::ID);
-				return false;
-			}
+	        
+			// If the translation of the source message does not exist use google translate, if autotranslate is enabled, and add the translation.
+			// Otherwise if autotranslate is disabled or google translate was not successful add the source message to the missing messages.
+	        if($message['translation'] === null) 
+	        {
+	        	if($this->autoTranslate)
+	        	{
+	        		$message['translation'] = $event->message;
+	
+	        		preg_match_all('/\{(?:.*?)\}/s', $message['translation'], $matches);
+	        		$matches = $matches[0];
+	        		foreach($matches as $key => $match)
+	        			$message['translation'] = str_replace($match, "_{$key}_", $message['translation']);
+	        		 
+	        		$message['translation'] = $this->googleTranslate(
+	        				$message['translation'],
+	        				$event->language,
+	        				$sourceLanguage
+	        		);
+	        		 
+	        		if($message['translation'] !== false) 
+	        		{
+	        			$message['translation'] = trim($message['translation'][0]);
+	        			foreach($matches as $key => $match)
+	        				$message['translation'] = str_replace("_{$key}_", $match, $message['translation']);
+	
+	        			if($source->addTranslation($message['id'], $event->language, $message['translation']) !== null) 
+	        			{
+	        				$event->message = &$message['translation'];
+	        			}
+	        			else 
+	        			{
+	        				throw new CDbException('Translation "'.$message['translation'].'" could not be added to message table', CLogger::LEVEL_ERROR, self::ID);
+	        			}
+	        		}
+	        		else 
+	        		{
+	        			Yii::log('Message "'.$event->message.'" could not be translated to "'.$event->language.'" by Google translate.', CLogger::LEVEL_ERROR, self::ID);
+	        		}
+	        	} 
+	        	else 
+	        	{
+	        		Yii::log('A translation for message "'.$event->message.'" to "'.$event->language.'" could not be found and automatic translations are disabled.', CLogger::LEVEL_WARNING, self::ID);
+	        	}
+	        }
+	        else 
+	        {
+	        	$event->message = &$message['translation'];
+	        }
+	        if(isset($transaction))
+	        	$transaction->commit();
 		}
-        
-		// If the translation of the source message does not exist use google translate, if autotranslate is enabled, and add the translation.
-		// Otherwise if autotranslate is disabled or google translate was not successful add the source message to the missing messages.
-        if($message['translation'] === null) 
-        {
-        	if($this->autoTranslate)
-        	{
-        		$message['translation'] = $event->message;
+		catch(Exception $e)
+		{
+			if(isset($transaction))
+				$transaction->rollback();
+			throw $e;
+		}
 
-        		preg_match_all('/\{(?:.*?)\}/s', $message['translation'], $matches);
-        		$matches = $matches[0];
-        		foreach($matches as $key => $match)
-        			$message['translation'] = str_replace($match, "_{$key}_", $message['translation']);
-        		 
-        		$message['translation'] = $this->googleTranslate(
-        				$message['translation'],
-        				$requestedLanguage,
-        				$sourceLanguage
-        		);
-        		 
-        		if($message['translation'] !== false) 
-        		{
-        			$message['translation'] = trim($message['translation'][0]);
-        			foreach($matches as $key => $match)
-        				$message['translation'] = str_replace("_{$key}_", $match, $message['translation']);
-
-        			if($source->addTranslation($message['id'], $requestedLanguage, $message['translation']) !== null) 
-        			{
-        				$event->message = &$message['translation'];
-        				return true;
-        			}
-
-        			Yii::log('Translation "'.$message['translation'].'" could not be added to message table', CLogger::LEVEL_ERROR, self::ID);
-        		} 
-        		else 
-        		{
-        			Yii::log('Message "'.$event->message.'" could not be translated to "'.$requestedLanguage.'" by Google translate.', CLogger::LEVEL_ERROR, self::ID);
-        		}
-        	} 
-        	else 
-        	{
-        		Yii::log('A translation for message "'.$event->message.'" to "'.$requestedLanguage.'" could not be found and automatic translations are disabled.', CLogger::LEVEL_WARNING, self::ID);
-        	}
-        } 
-        else 
-        {
-        	$event->message = &$message['translation'];
-        	return true;
-        }
-
-        $this->_messages[$message['id']] = array('language' => $requestedLanguage, 'message' => $event->message, 'category' => $event->category);
-        
+		if($event->message === $message['translation'])
+			return true;
+		
+        $this->_messages[$message['id']] = array('language' => $event->language, 'message' => $event->message, 'category' => $event->category);
         return false;
     }
 

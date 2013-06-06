@@ -79,11 +79,10 @@ class TMessageSource extends CDbMessageSource
 	{
 		$cmd = $this->getCommandBuilder()->createSqlCommand(
 					"SELECT smt.message message, tmt.translation translation " .
-					"FROM $this->categoryTable ct " .
-					"JOIN $this->categoryMessageTable cmt ON (ct.id=cmt.category_id)" .
-					"JOIN $this->sourceMessageTable smt ON (cmt.message_id=smt.id)" .
-					"JOIN $this->translatedMessageTable tmt ON (smt.id=tmt.id AND tmt.language=:language) " .
-					"WHERE (ct.category=:category)", 
+					"FROM $this->sourceMessageTable smt " .
+					"JOIN $this->categoryMessageTable cmt ON (smt.id=cmt.message_id)" .
+					"JOIN $this->categoryTable ct ON (cmt.category_id=ct.id AND ct.category=:category)" .
+					"JOIN $this->translatedMessageTable tmt ON (smt.id=tmt.id AND tmt.language=:language) ", 
 				array(':category' => $category, ':language' => $language));
 		
 		$messages = array();
@@ -136,11 +135,11 @@ class TMessageSource extends CDbMessageSource
 			$category = $this->messageCategory;
 	
 		return $this->getCommandBuilder()->createSqlCommand(
-						"SELECT ct.id " .
-						"FROM $this->categoryTable ct " .
-						"JOIN $this->categoryMessageTable cmt ON (ct.id=cmt.id) " .
-						"JOIN $this->sourceMessageTable smt ON (cmt.message_id=smt.id AND message=:message) " .
-						"WHERE (category=:category)",
+						"SELECT smt.id " .
+						"FROM $this->sourceMessageTable smt " .
+						"JOIN $this->categoryMessageTable cmt ON (smt.id=cmt.message_id) " .
+						"JOIN $this->categoryTable ct ON (cmt.category_id=ct.id AND ct.category=:category) " .
+						"WHERE (smt.message=:message)",
 					array(':category' => $category, ':message' => $message))
 				->queryScalar();
 	}
@@ -165,11 +164,11 @@ class TMessageSource extends CDbMessageSource
 
 		return $this->getCommandBuilder()->createSqlCommand(
 				"SELECT ct.id category_id, MIN(smt.id) id, tmt.translation translation " .
-				"FROM $this->categoryTable ct " .
-				"JOIN $this->categoryMessageTable cmt ON (ct.id=cmt.category_id) " .
-				"JOIN $this->sourceMessageTable smt ON (cmt.message_id=smt.id AND smt.message=:message) " .
+				"FROM $this->sourceMessageTable smt " .
+				"JOIN $this->categoryMessageTable cmt ON (smt.id=cmt.message_id) " .
+				"JOIN $this->categoryTable ct ON (cmt.category_id=ct.id AND ct.category=:category) " .
 				"LEFT JOIN $this->translatedMessageTable tmt ON (smt.id=tmt.id AND tmt.language=:language) " .
-				"WHERE (ct.category=:category)",
+				"WHERE (smt.message=:message)",
 				array(':category' => $category, ':message' => $message, ':language' => $language))
 			->queryRow();
 	}
@@ -196,13 +195,7 @@ class TMessageSource extends CDbMessageSource
 		if($category === null)
 			$category = $this->messageCategory;
 		
-		if($language === null)
-			$language = Yii::app()->getLanguage();
-		
-		if($this->forceTranslation || $language !== $this->getLanguage())
-			$translation = $this->translateMessage($category, $message, $language);
-		else
-			$translation = $message;
+		$translation = parent::translate($category, $message, $language);
 		Yii::endProfile(self::ID.'.translate');
 		return $translation;
 	}
@@ -224,9 +217,7 @@ class TMessageSource extends CDbMessageSource
 			$this->_messages[$key] = $this->loadMessages($category, $language);
 		
 		if(isset($this->_messages[$key][$message]))
-		{
 			return $this->_messages[$key][$message];
-		}
 		
 		if($this->hasEventHandler('onMissingTranslation'))
 		{
