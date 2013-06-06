@@ -1469,6 +1469,9 @@ foreach(array(
     <div class="content">
       <h2 class="flowers">{t}Managing Self-Care (continued){/t}</h2>
       <hr />
+      
+            <img src="<?php echo $this->getImagesUrl('empower/100207042.png'); ?>" alt="{t}forum icon{/t}">
+
       <p>{t}As a result, Maxine experiences feelings of failure and lack of success. Maria was more realistic. She recognized that the things she wanted to be done whether they were her desires, her mother's desires, or the desires of others-were not the same as the things that needed to be done. Maria's goal was to make her mother as comfortable as possible, without sacrificing herself and the other important relationships in her life. She also got help from family and a community agency in meeting her mother's needs. Maria said:{/t}</p>
       <p><i>{t}To some degree I recognized that caregiving was like a job and my goal was to find the best way to get the job done. A friend also told me that doing any job well-including the job of caregiving requires four things:{/t}</i></p>
       <ol>
@@ -1513,12 +1516,27 @@ foreach(array(
     <div class="content">
       <h2 class="flowers">{t}Setting Goals{/t}</h2>
       <hr />
-      <img src="<?php echo $this->getImagesUrl('empower/here.png'); ?>" alt="{t}forum icon{/t}">
 
-      <p>{t}An important tool in taking care of yourself is setting goals. A goal is something you would like to accomplish in the next three to six months: What would you like to do to take better care of yourself and to help yourself to thrive? This might be to get a break from caregiving for a week, get help with caregiving tasks, be able to walk three miles, or quit feeling guilty.{/t}</p>
+      <p>{t}An important tool in taking care of yourself is setting goals. A goal is something you would like to accomplish in the next three to six months:{/t}</p>
+      
+      <p style="text-align:center;"><i>{t}What would you like to do to take better care of yourself and to help yourself to thrive?{/t}</i></p>
+      
+      <p>{t}This might be to get a break from caregiving for a week, get help with caregiving tasks, be able to walk three miles, or quit feeling guilty.{/t}</p>
       <p>{t}Goals often are difficult to accomplish because they may seem like dreams or they may be overwhelming. As a result, we may not even try to accomplish them or we may give up shortly after we get started. We will address this problem shortly.{/t}</p>
-      <p>{t}For now, take a moment and write at least 3 goals on the Forum. Put an asterisk (*) next to the goal you would like to work on first. After identifying a goal, the first step is to brainstorm all of the different things you might do to reach your goal. Identify and write down all possible options on the Forum as a separate posting.{/t}</p>
-      <p>{t}The second step is to evaluate the options you have identified. Which options seem like possibilities to you? It is important not to assume that an option is unworkable or does not exist until you have thoroughly investigated it or given it a try. Assumptions are major self-care enemies. Put an asterisk (*) next to two or three options you would like to try. Select one to try. The third step is to turn your option into a short-term plan, which we call making an action plan.{/t}</p>
+      
+      
+      <p class="forum">{t}For now, take a moment and write at least 3 goals on the Forum. Put an asterisk (*) next to the goal you would like to work on first. After identifying a goal, the first step is to brainstorm all of the different things you might do to reach your goal. Identify and write down all possible options on the Forum as a separate posting.{/t}</p>
+      
+            <img src="<?php echo $this->getImagesUrl('empower/forum_icon.png'); ?>" alt="{t}forum icon{/t}">
+
+      
+      <p>{t}The second step is to evaluate the options you have identified. Which options seem like possibilities to you? It is important not to assume that an option is unworkable or does not exist until you have thoroughly investigated it or given it a try. Assumptions are major self-care enemies.{/t}</p>
+      
+      <p class="forum">{t}Go back to the above Forum posting and put an asterisk (*) next to two or three options you would like to try. Select one to try.{/t}</p>
+                  <img src="<?php echo $this->getImagesUrl('empower/forum_icon.png'); ?>" alt="{t}forum icon{/t}">
+
+      
+      <p>{t}The third step is to turn your option into a short-term plan, which we call making an action plan.{/t}</p>
     </div>
     <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t} </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
   </div>
@@ -1527,7 +1545,7 @@ foreach(array(
       <h2 class="flowers">{t}Making Action Plans{/t}</h2>
       <hr />
       <p>{t}An action plan is a specific action that you are confident you can accomplish within the next week. It is an agreement or contract with yourself.{/t}</p>
-      <p>{t}Action plans are one of your most important self-care tools. An action. plan is a step toward reaching your long-term goal. It is to be something you want to do. It is not to be something you feel you should do, have to do, or need to do. The intent of making an action plan is to help you to feel better and to take better care of yourself. Remember, an action plan is a "want to do." Here are the five steps for making an action plan:{/t}</p>
+      <p>{t}Action plans are one of your most important self-care tools. An action. plan is a step toward reaching your long-term goal. It is to be something you want to do. It is not to be something you feel you should do, have to do, or need to do. The intent of making an action plan is to help you to feel better and to take better care of yourself. Remember, an action plan is a <i>want to do</i>. Here are the five steps for making an action plan:{/t}</p>
       <ul>
         <li>{t}Decide what you want to do.{/t}</li>
         <li>{t}Make your plan behavior-specific.{/t}</li>
@@ -1535,10 +1553,10 @@ foreach(array(
         <li>{t}Determine your confidence level.{/t}</li>
         <li>{t}Write down your action plan.{/t}</li>
       </ul>
-      <p>{t}Decide What You Want To Do{/t}</p>
-      <p>{t}Think about what is realistic for you to accomplish within the next week. It is important that an action plan is reachable; otherwise, you are likely to experience frustration. An action plan is to help you experience success-not frustration, increased stress, or failure. An action plan starts with the words, "I will ... " If you find yourself saying "I will try to ... ," "I have to ... ," or "I should ... ," then re-examine your action plan. It probably is not something that you truly want to do.{/t}</p>
-      <p>{t}Make Your Plan Behavior-Specific{/t}</p>
-      <p>{t}The more specific your action plan, the greater your chances of accomplishing it. For example, "taking better care of myself" is not a specific behavior. However, making an appointment for a physical check-up, walking three times a week, getting a massage on Thursday afternoon, or asking someone to stay with your family member for one morning are all specific behaviors. "I will relax" also is not a specific behavior; however, reading a book, listening to your favorite music, or puttering in the garden are specific behaviors.{/t}</p>
+      <h5>{t}Decide What You Want To Do{/t}</h5>
+      <p>{t}Think about what is realistic for you to accomplish within the next week. It is important that an action plan is reachable; otherwise, you are likely to experience frustration. An action plan is to help you experience success-not frustration, increased stress, or failure. An action plan starts with the words, "<i>I will ...</i>" If you find yourself saying "<i>I will try to ...,</i>" "<i>I have to ...,</i>" or "<i>I should ...,</i>" then re-examine your action plan. It probably is not something that you truly want to do.{/t}</p>
+      <h5>{t}Make Your Plan Behavior-Specific{/t}</h5>
+      <p>{t}The more specific your action plan, the greater your chances of accomplishing it. For example, <i>taking better care of myself</i> is not a specific behavior. However, making an appointment for a physical check-up, walking three times a week, getting a massage on Thursday afternoon, or asking someone to stay with your family member for one morning are all specific behaviors. <i>I will relax</i> also is not a specific behavior; however, reading a book, listening to your favorite music, or puttering in the garden are specific behaviors.{/t}</p>
     </div>
     <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t} </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
   </div>
