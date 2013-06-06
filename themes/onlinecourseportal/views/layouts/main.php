@@ -51,7 +51,7 @@
 			</div>
 			<?php if(Yii::app()->getUser()->getIsAdmin() && Yii::app()->getComponent('translate')->hasMissingTranslations()): ?>
 				<div id="translate-button">
-					<?php echo Yii::app()->getComponent('translate')->translateLink('Missing Translations on Page', 'button'); ?>	
+					<?php echo Yii::app()->getComponent('translate')->translateLink('{t}Missing Translations on Page{/t}', 'button'); ?>	
 				</div>
 			<?php endif; ?>
 			<div id="mainmenu">
@@ -60,30 +60,30 @@
 					$this->widget(
 							'zii.widgets.CMenu', 
 							array('items' => array(
-									array('label' => '<span id="menu-home" title="'.t('Home').'"></span>',
+									array('label' => '<span id="menu-home" title="{t}Home{/t}"></span>',
 											'url' => Yii::app()->createAbsoluteUrl('home/index')),
-									array('label' => '<span id="menu-contact" title="'.t('Contact Us').'"></span>',
+									array('label' => '<span id="menu-contact" title="{t}Contact Us{/t}"></span>',
 											'url' => Yii::app()->createAbsoluteUrl('home/contact')),
-									array('label' => '<span id="menu-register" title="'.t('Register').'"></span>',
+									array('label' => '<span id="menu-register" title="{t}Register{/t}"></span>',
 											'url' => Yii::app()->createAbsoluteUrl('user/register'),
 											'visible' => $user->getIsGuest()),
-									array('label' => '<span id="menu-login" title="'.t('Login').'"></span>',
+									array('label' => '<span id="menu-login" title="{t}Login{/t}"></span>',
 											'url' => Yii::app()->createAbsoluteUrl('user/login'),
 											'visible' => $user->getIsGuest()),
-									array('label' => '<span id="menu-profile" title="'.t('Profile / Files').'"></span>',
+									array('label' => '<span id="menu-profile" title="{t}Profile / Files{/t}"></span>',
 											'url' => Yii::app()->createAbsoluteUrl('user/profile'),
 											'visible' => !$user->getIsGuest()),
-									array('label' => '<span id="menu-forum" title="'.t('Forum').'"></span>',
+									array('label' => '<span id="menu-forum" title="{t}Forum{/t}"></span>',
 											'url' => Yii::app()->getComponent('phpBB')->getForumUrl(),
 											'linkOptions' => array('target' => '_blank'),
 											'visible' => !$user->getIsGuest()),
-									array('label' => '<span id="menu-courses" title="'.t('Courses').'"></span>',
+									array('label' => '<span id="menu-courses" title="{t}Courses{/t}"></span>',
 											'url' => Yii::app()->createAbsoluteUrl('course/index'),
 											'visible' => !$user->getIsGuest()),
-									array('label' => '<span id="menu-admin" title="'.t('Admin').'"></span>',
+									array('label' => '<span id="menu-admin" title="{t}Admin{/t}"></span>',
 											'url' => Yii::app()->createAbsoluteUrl('admin/index'),
 											'visible' => $user->getIsAdmin()),
-									array('label' => '<span id="menu-logout" title="'.t('Logout').'"></span>',
+									array('label' => '<span id="menu-logout" title="{t}Logout{/t}"></span>',
 											'url' => Yii::app()->createAbsoluteUrl('user/logout'),
 											'visible' => !$user->getIsGuest())
 								),
@@ -101,7 +101,7 @@
 					array_merge(
 						array('links' => $breadcrumbs), 
 						$this->getModule() === null ? array() : 
-							array('homeLink' => CHtml::link(t('Home'), $this->createUrl($this->getModule()->defaultController.'/')))
+							array('homeLink' => CHtml::link('{t}Home{/t}', $this->createUrl($this->getModule()->defaultController.'/')))
 					)
 			); 
 			?>
@@ -127,7 +127,7 @@
 		<div id="footer" style="background-image: url('<?php echo Yii::app()->getTheme()->getImagesUrl('bg-foot.jpg'); ?>');">
 			<div class="container">
 				<div id="logo">
-					<a href="http://www.matherlifewaysinstituteonaging.com/" title="Mather LifeWays Institute on Aging">
+					<a href="http://www.matherlifewaysinstituteonaging.com/" title="{t}Mather LifeWays Institute on Aging{/t}">
 						<img src="<?php echo Yii::app()->getTheme()->getImagesUrl('logo-footer.jpg'); ?>" alt="{t}Logo{/t}" />
 					</a>
 				</div>
@@ -147,9 +147,9 @@
 				</div>
 				<div id="copyright">
 					<ul>
-						<li>P: (847) 492.7500 | F: (847) 492.6789</li>
-						<li>1603 Orrington Avenue; Suite 1800 | Evanston; IL 60201</li>
-						<li>&copy; Copyright 2012 Mather LifeWays&reg;</li>
+						<li>{t}P: (847) 492.7500 | F: (847) 492.6789{/t}</li>
+						<li>{t}1603 Orrington Avenue; Suite 1800 | Evanston; IL 60201{/t}</li>
+						<li>{t}&copy; Copyright 2012 Mather LifeWays&reg;{/t}</li>
 					</ul>
 				</div>
 			</div>
