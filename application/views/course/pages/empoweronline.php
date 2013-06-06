@@ -1341,13 +1341,13 @@ foreach(array(
       <hr />
       <h5>{t}Managing our self-care means that as caregivers we:{/t}</h5>
       <ul>
-        <li>{t}<b>Take responsibility</b> - We realize we are responsible for our personal well-being and for getting our needs met. This includes maintaining activities and relationships that are meaningful to us.{/t}</li>
-        <li>{t}<b>Have realistic expectations</b> - We fully understand our family member's medical condition and we are realistic about what our family member can and cannot do. The more you know about your family member's medical condition, the better you will be able to plan successful caregiving strategies. Knowledge is power. It is also important to look at your definition of a good caregiver. Unrealistic expectations can set you up for feelings of failure, resentment, and guilt. Placing burdensome expectations on yourself does not make you a better caregiver. In fact, you are much more likely to become an exhausted, irritable, and resentful caregiver... and then to feel guilty!{/t}</li>
-        <li>{t}<b>Focus on what we can do</b> - It is important to be clear about what you can and cannot change. For example, you will not be able to change a person who has always been demanding and inflexible, but you can control how you respond to that person's demands. You can accept and let-go of-the things you cannot change. Managing your self-care also means you seek solutions to what you can change.{/t}</li>
-        <li>{t}<b>Communicate effectively with others</b> - These include family members, friends, health care professionals, and the care receiver. Do not expect others to know what you need. Recognize it is your responsibility to tell others about your needs and concerns. Communicate in ways that are positive and avoid being demanding, manipulative, or guilt provoking when you make requests.{/t}</li>
-        <li>{t}<b>Learn from our emotions</b> - Realize there will be emotional ups and downs. Listen to your emotions and what they are telling you. Do not bottle up your emotions. Repressing or denying feelings decreases energy, causes irritability, depression, and physical problems, and affects your judgment and ability to make the best decisions. Also, do not strike out at others. You are in control of your emotions, your emotions do not control you.{/t}</li>
-        <li>{t}<b>Get help when needed</b> - An important part of self-care is knowing when you need help and how to find it. Help can be from community resources, family and friends, or professionals. Most important is that you do not wait until you are hanging at the end of your rope before you get help. Do not wait until you are overwhelmed or exhausted, or your health fails. Reaching out for help, when needed, is a sign of personal strength.{/t}</li>
-        <li>{t}<b>Set goals and work toward them</b> - Be realistic in the goals that you set and take steps toward reaching those goals. Seek solutions to the problems that you experience. Changes do not need to be major to make a significant difference. In summary, self-care means that you seek ways to take better care of yourself. As a caregiver, you do not just survive. You thrive!{/t}</li>
+        <li style="margin-bottom:10px;">{t}<b>Take responsibility</b> - We realize we are responsible for our personal well-being and for getting our needs met. This includes maintaining activities and relationships that are meaningful to us.{/t}</li>
+       <li style="margin-bottom:10px;">{t}<b>Have realistic expectations</b> - We fully understand our family member's medical condition and we are realistic about what our family member can and cannot do. The more you know about your family member's medical condition, the better you will be able to plan successful caregiving strategies. Knowledge is power. It is also important to look at your definition of a good caregiver. Unrealistic expectations can set you up for feelings of failure, resentment, and guilt. Placing burdensome expectations on yourself does not make you a better caregiver. In fact, you are much more likely to become an exhausted, irritable, and resentful caregiver... and then to feel guilty!{/t}</li>
+       <li style="margin-bottom:10px;">{t}<b>Focus on what we can do</b> - It is important to be clear about what you can and cannot change. For example, you will not be able to change a person who has always been demanding and inflexible, but you can control how you respond to that person's demands. You can accept and let-go of-the things you cannot change. Managing your self-care also means you seek solutions to what you can change.{/t}</li>
+        <li style="margin-bottom:10px;">{t}<b>Communicate effectively with others</b> - These include family members, friends, health care professionals, and the care receiver. Do not expect others to know what you need. Recognize it is your responsibility to tell others about your needs and concerns. Communicate in ways that are positive and avoid being demanding, manipulative, or guilt provoking when you make requests.{/t}</li>
+        <li style="margin-bottom:10px;">{t}<b>Learn from our emotions</b> - Realize there will be emotional ups and downs. Listen to your emotions and what they are telling you. Do not bottle up your emotions. Repressing or denying feelings decreases energy, causes irritability, depression, and physical problems, and affects your judgment and ability to make the best decisions. Also, do not strike out at others. You are in control of your emotions, your emotions do not control you.{/t}</li>
+        <li style="margin-bottom:10px;">{t}<b>Get help when needed</b> - An important part of self-care is knowing when you need help and how to find it. Help can be from community resources, family and friends, or professionals. Most important is that you do not wait until you are hanging at the end of your rope before you get help. Do not wait until you are overwhelmed or exhausted, or your health fails. Reaching out for help, when needed, is a sign of personal strength.{/t}</li>
+        <li style="margin-bottom:10px;">{t}<b>Set goals and work toward them</b> - Be realistic in the goals that you set and take steps toward reaching those goals. Seek solutions to the problems that you experience. Changes do not need to be major to make a significant difference. In summary, self-care means that you seek ways to take better care of yourself. As a caregiver, you do not just survive. You thrive!{/t}</li>
       </ul>
     </div>
     <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t} </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
@@ -1355,59 +1355,111 @@ foreach(array(
   <div id="lesson-1-slide-7" class="course-slide">
     <div class="content">
       <h2 class="flowers">{t}Managing Self-Care (continued){/t}</h2>
-      <hr />
-      <div style="background-color: #FFF;
-	border-radius: 10px;
-	width:90%;
-	margin: 10px auto 10px auto;
-	padding: 10px;
-	-moz-box-shadow: 0 0 5px 5px #888;
-	-webkit-box-shadow: 0 0 5px 5px#888;
-	box-shadow: 0 0 5px 5px #888;">
-        <p>Ask yourself the following questions about your caregiving:</p>
-        <hr />
-        <p>
+         <hr />
+      <p>Ask yourself the following questions about your caregiving:</p>
+  
+       
+     <table>
+     <tr style="text-align:left;">
+     	<td>     
           <input type="checkbox" name="Yes" id="Yes">
           <label for="Yes">Yes</label>
           <input type="checkbox" name="No" id="No">
-          <label for="No"> No</label>
-          | Do you ever find yourself trying "to do it all?&quot;</p>
-        <p>
+           <label for="No"> No</label>
+         </td>
+     	<td style="text-align:left;">     
+         
+        
+       Do you ever find yourself trying "to do it all?&quot;
+      </td>
+      
+      </tr>
+     <tr style="text-align:left;">
+      <td>
           <input type="checkbox" name="Yes2" id="Yes2">
           <label for="Yes2">Yes</label>
           <input type="checkbox" name="No2" id="No2">
           <label for="No2"> No</label>
-          | Do you ever say to yourself "I should be able to ... ," "I can never. .. ," or similar statements?</p>
-        <p>
+          
+          </td>
+          
+     	<td style="text-align:left;">     
+      Do you ever say to yourself "I should be able to ... ," "I can never. .. ," or similar statements?</p>
+      </td>
+      
+      </tr>
+     <tr style="text-align:left;">
+      <td>
           <input type="checkbox" name="Yes3" id="Yes3">
           <label for="Yes3">Yes</label>
           <input type="checkbox" name="No3" id="No3">
-          <label for="No3"> No</label>
-          | Do you ever ignore your feelings or find that they are overwhelming?</p>
-        <p>
+          <label for="No3"> No</label></td>
+          
+     	<td style="text-align:left;">     
+        Do you ever ignore your feelings or find that they are overwhelming?</p>
+   </td>
+   </tr>
+   
+     <tr style="text-align:left;">
+<td>
           <input type="checkbox" name="Yes4" id="Yes4">
           <label for="Yes4">Yes</label>
           <input type="checkbox" name="No4" id="No4">
           <label for="No4"> No</label>
-          | Do you ever get frustrated because of something you can't change or someone who won't change?</p>
-        <p>
+          
+          </td>
+     	<td style="text-align:left;">     
+          
+       Do you ever get frustrated because of something you can't change or someone who won't change?</p>
+     </td>
+     
+     </tr>
+     
+     <tr style="text-align:left;">
+     <td>
           <input type="checkbox" name="Yes5" id="Yes5">
           <label for="Yes5">Yes</label>
           <input type="checkbox" name="No5" id="No5">
           <label for="No5"> No</label>
-          | Do you resist seeking, asking for, or accepting help?</p>
-        <p>
+          
+          </td>
+          
+     	<td style="text-align:left;">     
+        Do you resist seeking, asking for, or accepting help?</p>
+</td>
+
+</tr>
+<tr>
+<td>
           <input type="checkbox" name="Yes6" id="Yes6">
           <label for="Yes6">Yes</label>
           <input type="checkbox" name="No6" id="No6">
           <label for="No6"> No</label>
-          | Do you feel that your family or others just don't understand what you are going through as a caregiver?</p>
-        <p style="text-align:center;">
-          <input name="Submit" type="submit" id="Submit" onClick="MM_popupMsg('A \'Yes\' answer to any of these questions indicates an area of self-care you might want to work on.')" value="Submit">
-        </p>
-      </div>
+          
+          </td>
+          
+     	<td style="text-align:left;">     
+          
+      Do you feel that your family or others just don't understand what you are going through as a caregiver?</p>
+          
+          </td>
+          </tr>
+          <tr>
+          <td>
+          
+             <p style="text-align:center;">
+          <input name="Submit" type="submit" id="Submit" onClick="MM_popupMsg('{t}A \'Yes\' answer to any of these questions indicates an area of self-care you might want to work on.{/t}')" value="Submit">
+        </p></td>
+          </tr>
+          </table>
+     
+   
       <h5>{t}Trying To Do It All{/t}</h5>
-      <p>{t}One problem that caregivers frequently experience is trying to do it all and doing it all alone. Is it possible to do it all? The answer to the question can be both yes and no. It really depends on you. What is critical is how you define what it means to do it all and, whether or not your definition of doing it all includes taking care of yourself so that you thrive, and not just survive.{/t}</p>
+      <p>{t}One problem that caregivers frequently experience is trying to do it all and doing it all alone.{/t}</p>
+      
+      <p style="text-align:center;"><i>{t}Is it possible to do it all?</i>{/t}</p>
+      
+      <p>{t}The answer to the question can be both yes and no. It really depends on you. What is critical is how you define what it means to do it all and, whether or not your definition of doing it all includes taking care of yourself so that you thrive, and not just survive.{/t}</p>
       <p>{t}To Maxine, the answer to the question <em>is it possible to do it all</em>? was <em>no</em>. She says, <em>Mother's needs are endless and no matter what I do, I can never make her happy.</em> Yet, at the same time, Maxine was trying to do it all. Her mother's care dominated Maxine's life. Another caregiver, Maria, answered <em>yes</em> to the question, <em>is it possible to do it all</em>? She explained that "<em>all that needed to be done for my mother was done.</em>"{/t}</p>
       <p>{t}A major difference between Maxine and Maria was the rules by which they operated. Maxine operated by the rule, <em>I must do everything for my mother</em>. The rule had become, <em>I must help Mama at all costs</em>. As a result, her relationships with other family members suffered and Maxine found herself becoming increasingly resentful. Maxine's feelings of wanting to do everything is legitimate, but the actions associated with her feelings usually are impossible to carry out.{/t}</p>
     </div>
@@ -1418,15 +1470,17 @@ foreach(array(
       <h2 class="flowers">{t}Managing Self-Care (continued){/t}</h2>
       <hr />
       <p>{t}As a result, Maxine experiences feelings of failure and lack of success. Maria was more realistic. She recognized that the things she wanted to be done whether they were her desires, her mother's desires, or the desires of others-were not the same as the things that needed to be done. Maria's goal was to make her mother as comfortable as possible, without sacrificing herself and the other important relationships in her life. She also got help from family and a community agency in meeting her mother's needs. Maria said:{/t}</p>
-      <p>{t}To some degree I recognized that caregiving was like a job and my goal was to find the best way to get the job done. A friend also told me that doing any job well-including the job of caregiving requires four things:{/t}</p>
+      <p><i>{t}To some degree I recognized that caregiving was like a job and my goal was to find the best way to get the job done. A friend also told me that doing any job well-including the job of caregiving requires four things:{/t}</i></p>
       <ol>
-        <li>{t}Recognizing you can not do everything yourself-you work with others.{/t}</li>
-        <li>{t}Taking daily breaks.{/t}</li>
-        <li>{t}Taking vacations to renew oneself.{/t}</li>
-        <li>{t}Being realistic about what you can do...{/t}</li>
+        <li><i>{t}Recognizing you can not do everything yourself-you work with others.{/t}</i></li>
+        <li><i>{t}Taking daily breaks.{/t}</i></li>
+        <li><i>{t}Taking vacations to renew oneself.{/t}</i></li>
+        <li><i>{t}Being realistic about what you can do...{/t}</i></li>
       </ol>
       <p>{t}There was another difference between Maxine and Maria. Maxine felt it was selfish to think of herself. Maria, on the other hand, viewed that if she was going to be there for the long haul, she must take care of herself, and make sure that she had pleasurable moments in her life.{/t}</p>
-      <p>{t}As a caregiver, you are more likely to "be there" for your family member who needs your care and to be a more loving and patient caregiver when you meet some of your own needs. It is important to "fill your own cup" and not allow it to "run dry." It is not being selfish to focus on your own needs and desires when you are a caregiver to a family member who has a chronic ·or progressive illness. It is important to ask yourself, "If my health deteriorates, or I die, what will happen to the person I provide care for? If I get emotionally drained, become deprived of sleep, or become isolated because I am trying to do it all, how loving am I likely to be to my family member?"{/t}</p>
+      <p>{t}As a caregiver, you are more likely to <i>be there</i> for your family member who needs your care and to be a more loving and patient caregiver when you meet some of your own needs. It is important to <i>fill your own cup</i> and not allow it to <i>run dry</i>.{/t}</p>
+      
+      <p>{t}It is not being selfish to focus on your own needs and desires when you are a caregiver to a family member who has a chronic or progressive illness. It is important to ask yourself, <i>If my health deteriorates, or I die, what will happen to the person I provide care for? If I get emotionally drained, become deprived of sleep, or become isolated because I am trying to do it all, how loving am I likely to be to my family member?</i>{/t}</p>
     </div>
     <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t} </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
   </div>
@@ -1435,18 +1489,32 @@ foreach(array(
       <h2 class="flowers">{t}Managing Self-Care (continued){/t}</h2>
       <hr />
       <h5>{t}Taking Time for Yourself{/t}</h5>
-      <p>{t}Do you value yourself and your personal needs? What do you do for personal renewal? Do you save some time for yourself out of each day? Do you take occasional extended breaks? Or are you so involved with caregiving tasks that you have little or no time for yourself?{/t}</p>
-      <p>{t}What activities do you enjoy? What would you like to do that would give you a lift? When was the last time you gave yourself a treat?{/t}</p>
+      <p class="forum">{t}Please respond to the following questions on the Forum:{/t}</p>
+      
+      <ul class="forum">
+      <li>{t}Do you value yourself and your personal needs?{/t}</li>
+      <li>{t}What do you do for personal renewal?{/t}</li>
+      <li>{t}Do you save some time for yourself out of each day?{/t}</li>
+      <li>{t}Do you take occasional extended breaks?{/t}</li>
+      <li>{t}Or are you so involved with caregiving tasks that you have little or no time for yourself?{/t}</li>
+      <li>{t}What activities do you enjoy?{/t}</li>
+      <li>{t}What would you like to do that would give you a lift?{/t}</li>
+      <li>{t}When was the last time you gave yourself a treat?{/t}</li>
+    </ul>
+      
+      <img src="<?php echo $this->getImagesUrl('empower/forum_icon.png'); ?>" alt="{t}forum icon{/t}">
+      
       <p>{t}Breaks in caregiving are a must. They are as important to health as diet, sleep, rest, and exercise. It is important not to lose sight of your personal needs and interests. Studies show that sacrificing yourself in the care of another and removing pleasurable events from your life can lead to emotional exhaustion, depression, and physical illness. You have a right-even a responsibility-to take some time away from caregiving.{/t}</p>
       <p>{t}Regular breaks from the tasks of caregiving are essential. Decide on the time, date, and activity-then follow through. Breaks do not have to be long to make a positive difference. It is important to plan some time for yourself in every day, even if that time is only for 15 minutes or half an hour. Most important is to do something that "fills your cup" and helps you to feel better and thrive. If you have difficulty taking breaks for yourself, consider taking them for your family member. Care receivers also benefit from caregivers getting breaks.{/t}</p>
     </div>
     <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t} </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
   </div>
-  <!-- Lesson 1 Slide 9 -->
-  <div id="lesson-1-slide-9" class="course-slide">
+  <div id="lesson-1-slide-10" class="course-slide">
     <div class="content">
       <h2 class="flowers">{t}Setting Goals{/t}</h2>
       <hr />
+      <img src="<?php echo $this->getImagesUrl('empower/here.png'); ?>" alt="{t}forum icon{/t}">
+
       <p>{t}An important tool in taking care of yourself is setting goals. A goal is something you would like to accomplish in the next three to six months: What would you like to do to take better care of yourself and to help yourself to thrive? This might be to get a break from caregiving for a week, get help with caregiving tasks, be able to walk three miles, or quit feeling guilty.{/t}</p>
       <p>{t}Goals often are difficult to accomplish because they may seem like dreams or they may be overwhelming. As a result, we may not even try to accomplish them or we may give up shortly after we get started. We will address this problem shortly.{/t}</p>
       <p>{t}For now, take a moment and write at least 3 goals on the Forum. Put an asterisk (*) next to the goal you would like to work on first. After identifying a goal, the first step is to brainstorm all of the different things you might do to reach your goal. Identify and write down all possible options on the Forum as a separate posting.{/t}</p>
@@ -1454,8 +1522,7 @@ foreach(array(
     </div>
     <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t} </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
   </div>
-  <!-- Lesson 1 Slide 10 -->
-  <div id="lesson-1-slide-10" class="course-slide">
+  <div id="lesson-1-slide-11" class="course-slide">
     <div class="content">
       <h2 class="flowers">{t}Making Action Plans{/t}</h2>
       <hr />
