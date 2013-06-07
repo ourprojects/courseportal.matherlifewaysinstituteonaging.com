@@ -99,9 +99,8 @@
 			<?php 
 			$this->widget('zii.widgets.CBreadcrumbs', 
 					array_merge(
-						array('links' => $breadcrumbs), 
-						$this->getModule() === null ? array() : 
-							array('homeLink' => CHtml::link('{t}Home{/t}', $this->createUrl($this->getModule()->defaultController.'/')))
+						array('links' => $breadcrumbs),  
+						array('homeLink' => CHtml::link('{t}Home{/t}', $this->getModule() === null ? Yii::app()->homeUrl : $this->createUrl($this->getModule()->defaultController.'/')))
 					)
 			); 
 			?>
