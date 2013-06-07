@@ -154,19 +154,13 @@ class TMessageSource extends CDbMessageSource
 				->queryScalar();
 	}
 	
-	public function getTranslationFromDb($category, $message, $language = null)
+	public function getTranslationFromDb($category, $message, $language)
 	{
-		if($category === null)
-			$category = $this->messageCategory;
-		
-		if($language === null)
-			$language = Yii::app()->getLanguage();
-
 		return $this->getCommandBuilder()->createSqlCommand(
 				"SELECT ct.id category_id, MIN(smt.id) id, tmt.translation translation " .
 				"FROM $this->sourceMessageTable smt " .
-				"JOIN $this->categoryMessageTable cmt ON (smt.id=cmt.message_id) " .
-				"JOIN $this->categoryTable ct ON (cmt.category_id=ct.id AND ct.category=:category) " .
+				"LEFT JOIN $this->categoryMessageTable cmt ON (smt.id=cmt.message_id) " .
+				"LEFT JOIN $this->categoryTable ct ON (cmt.category_id=ct.id AND ct.category=:category) " .
 				"LEFT JOIN $this->translatedMessageTable tmt ON (smt.id=tmt.id AND tmt.language=:language) " .
 				"WHERE (smt.message=:message)",
 				array(':category' => $category, ':message' => $message, ':language' => $language))

@@ -141,14 +141,13 @@ class TViewSource extends CApplicationComponent
 	public function getView($route, $sourcePath, $language)
 	{
 		return $this->getCommandBuilder()->createSqlCommand(
-				"SELECT rt.id route_id, vst.id view_id, vt.path path, COALESCE(MAX(tmt.last_modified),'0') last_modified " .
+				"SELECT MIN(rt.id) route_id, vst.id view_id, vt.path path, vmt.message_id, MAX(COALESCE(tmt.last_modified, '9999-99-99 99:99:99')) last_modified " .
 				"FROM $this->viewSourceTable vst " .
 				"LEFT JOIN $this->routeViewTable rvt ON (vst.id=rvt.view_id) " .
 				"LEFT JOIN $this->routeTable rt ON (rvt.route_id=rt.id AND rt.route=:route) " .
-				"JOIN $this->routeTable rt2 ON (rvt.route_id=rt2.id AND rt2.route=:route) " .
 				"LEFT JOIN $this->viewTable vt ON (vst.id=vt.id AND vt.language=:language) " .
 				"LEFT JOIN $this->viewMessageTable vmt ON (vst.id=vmt.view_id) " .
-				"LEFT JOIN {$this->getMessageSource()->translatedMessageTable} tmt ON (vmt.message_id=tmt.id AND tmt.language=:language) " .
+				"LEFT JOIN {$this->getMessageSource()->translatedMessageTable} tmt ON (vmt.message_id=tmt.id AND tmt.language=vt.language) " .
 				"WHERE (vst.path=:source_path)",
 				array(':route' => $route, ':source_path' => $sourcePath, ':language' => $language))
 			->queryRow();

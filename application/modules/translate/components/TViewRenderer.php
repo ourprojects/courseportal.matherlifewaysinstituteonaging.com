@@ -118,11 +118,7 @@ class TViewRenderer extends CViewRenderer
 	 * @throws CException An exception will be thrown if the event passed to this method is null.
 	 */
 	public function missingViewTranslation($event)
-	{	
-		if($event === null)
-		{
-			throw new CException(Yii::t(self::ID, "The missing view translation event cannot be null."));
-		}
+	{
 		$event->path = $this->translate($event->route, $event->path, $event->language, $this->compileInBackground);
 	}
 	
