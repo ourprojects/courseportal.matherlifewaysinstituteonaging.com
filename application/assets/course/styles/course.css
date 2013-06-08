@@ -121,3 +121,6 @@ div.box-sidebar img {
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
 }
+ul.bulletlist li {
+	margin-bottom: 10px;
+}
