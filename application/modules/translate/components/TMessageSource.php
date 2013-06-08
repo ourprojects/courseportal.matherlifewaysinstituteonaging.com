@@ -17,6 +17,8 @@ class TMessageSource extends CDbMessageSource
 	 */
 	public $messageCategory = self::ID;
 	
+	public $enableProfiling = false;
+	
 	private $_messages = array();
 	
 	private $_cacheInvalidated = true;
@@ -131,9 +133,6 @@ class TMessageSource extends CDbMessageSource
 	
 	public function getMessageId($category, $message)
 	{
-		if($category === null)
-			$category = $this->messageCategory;
-	
 		return $this->getCommandBuilder()->createSqlCommand(
 						"SELECT smt.id " .
 						"FROM $this->sourceMessageTable smt " .
@@ -185,12 +184,17 @@ class TMessageSource extends CDbMessageSource
 	 */
 	public function translate($category, $message, $language = null)
 	{
-		Yii::beginProfile(self::ID.'.translate');
+		if($this->enableProfiling)
+			Yii::beginProfile(self::ID.'.translate()', self::ID);
+		
 		if($category === null)
 			$category = $this->messageCategory;
 		
 		$translation = parent::translate($category, $message, $language);
-		Yii::endProfile(self::ID.'.translate');
+		
+		if($this->enableProfiling)
+			Yii::endProfile(self::ID.'.translate()', self::ID);
+		
 		return $translation;
 	}
 

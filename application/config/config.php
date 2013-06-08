@@ -71,6 +71,7 @@ return array(
 						'sourceMessageTable' => '{{translate_message_source}}',
 						'translatedMessageTable' => '{{translate_message}}',
 						'cachingDuration' => defined('YII_DEBUG') && YII_DEBUG ? 0 : 3600,
+						'enableProfiling' => defined('YII_DEBUG') && YII_DEBUG,
 						'messageCategory' => 'onlinecourseportal',
 				),
 				
@@ -83,6 +84,7 @@ return array(
 						'viewTable' => '{{translate_view}}',
 						'viewMessageTable' => '{{translate_view_message}}',
 						'cachingDuration' => defined('YII_DEBUG') && YII_DEBUG ? 0 : 3600,
+						'enableProfiling' => defined('YII_DEBUG') && YII_DEBUG,
 				),
 				
 				'surveyor' => array(

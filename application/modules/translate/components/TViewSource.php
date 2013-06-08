@@ -22,6 +22,8 @@ class TViewSource extends CApplicationComponent
 	
 	public $cachingDuration = 0;
 	
+	public $enableProfiling = false;
+	
 	private $_messageSource;
 	
 	private $_views = array();
@@ -248,7 +250,8 @@ class TViewSource extends CApplicationComponent
 	 */
 	public function translate($context, $path, $language = null)
 	{
-		Yii::beginProfile(self::ID.'.translate');
+		if($this->enableProfiling)
+			Yii::beginProfile(self::ID.'.translate()', self::ID);
 		
 		if(!is_file($path) || ($realPath = realpath($path)) === false)
 			throw new CException(Yii::t(self::ID, 'Source view file "{file}" does not exist.', array('{file}' => $path)));
@@ -261,7 +264,9 @@ class TViewSource extends CApplicationComponent
 
 		$translatedPath = $this->translateView($context->getRoute(), $realPath, $language);
 
-		Yii::endProfile(self::ID.'.translate');
+		if($this->enableProfiling)
+			Yii::endProfile(self::ID.'.translate()', self::ID);
+		
 		return $translatedPath;
 	}
 
