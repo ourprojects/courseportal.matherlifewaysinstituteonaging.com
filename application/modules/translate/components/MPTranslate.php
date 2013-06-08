@@ -50,6 +50,8 @@ class MPTranslate extends CApplicationComponent {
     
     public $genericLocale = true;
     
+    public $cacheDuration = 0;
+    
     private $_source;
     
     /**
@@ -189,7 +191,7 @@ class MPTranslate extends CApplicationComponent {
 				}
 				asort($languages, SORT_LOCALE_STRING);
 				if($cache !== null)
-					$cache->set($cacheKey, $languages);
+					$cache->set($cacheKey, $languages, $this->cacheDuration);
 			}
 			$this->_cache[$cacheKey] = $languages;
 		}
@@ -198,7 +200,7 @@ class MPTranslate extends CApplicationComponent {
 	
 	public function getAcceptedLanguages() 
 	{
-		$cacheKey = self::ID . '-cache-admin-accepted-languages-' . Yii::app()->getLanguage();
+		$cacheKey = self::ID . '-cache-accepted-languages-' . Yii::app()->getLanguage();
 		if(!isset($this->_cache[$cacheKey])) 
 		{
 			if(($cache = Yii::app()->getCache()) === null || ($languages = $cache->get($cacheKey)) === false) 
@@ -209,7 +211,7 @@ class MPTranslate extends CApplicationComponent {
 					$languages[$lang['id']] = $languageDisplayNames[$lang['id']];
 				asort($languages, SORT_LOCALE_STRING);
 				if($cache !== null)
-					$cache->set($cacheKey, $languages);
+					$cache->set($cacheKey, $languages, $this->cacheDuration);
 			}
 			$this->_cache[$cacheKey] = $languages;
 		}
@@ -333,7 +335,7 @@ class MPTranslate extends CApplicationComponent {
 				}
 				asort($languages, SORT_LOCALE_STRING);
 				if($cache !== null)
-					$cache->set($cacheKey, $languages);
+					$cache->set($cacheKey, $languages, $this->cacheDuration);
 			}
 			$this->_cache[$cacheKey] = $languages;
 		}
