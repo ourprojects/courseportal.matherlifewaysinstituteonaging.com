@@ -355,127 +355,134 @@ class MPTranslate extends CApplicationComponent {
      * method that handles the on missing translation event
      * 
      * @param CMissingTranslationEvent $event
-     * @return boolean true if message was successfully translated, false otherwise.
      */
     public function missingTranslation($event) 
     {
-        $event->message = trim($event->message);
-        
-        if(empty($event->message))
-        	return true;
-        
-        $event->category = trim($event->category);
-        $event->language = trim($event->language);
-        
-        $source = $this->getMessageSource();
-
-        $sourceLanguage = $event->category === TranslateModule::$componentId ? 'en' : $source->getLanguage();
-
-        if(!$source->forceTranslation && $event->language === $sourceLanguage)
-        	return false;
-
-		if($source->getDbConnection()->getCurrentTransaction() === null)
-			$transaction = $source->getDbConnection()->beginTransaction();
-		
-		try
-		{ 	
-	        $message = $source->getTranslationFromDb($event->category, $event->message, $event->language);
-	        
-	        // If the source message does not exists add it.
-	        if($message['id'] === null) 
-	        {
-				$message['id'] = $source->addSourceMessage($event->category, $event->message);
-				
-				if($message['id'] === null)
-				{
-					throw new CDbException("Message '$event->message' in category '$event->category' could not be inserted into the database table '{$this->getMessageSource()->sourceMessageTable}'");
-				}
-	        }
-	        
-	        // If the category does not exist or has not been associated with the source message add it and/or associate it with the source message.
-	    	if($message['category_id'] === null)
-			{
-				$message['category_id'] = $source->getCategoryId($event->category);
-			
-				if($message['category_id'] === false)
-				{
-					$message['category_id'] = $source->addCategory($event->category);
-							
-					if($message['category_id'] === null)
-					{
-						throw new CDbException("The category '$event->category' was not found and could not be added to the database.");
-					}
-				}
-			
-				if($source->addMessageCategory($message['category_id'], $message['id']) === null)
-				{
-					throw new CDbException("The message with id '{$message['id']}' could not be associated with category id '{$message['category_id']}'.");
-				}
-			}
-	        
-			// If the translation of the source message does not exist use google translate, if autotranslate is enabled, and add the translation.
-			// Otherwise if autotranslate is disabled or google translate was not successful add the source message to the missing messages.
-	        if($message['translation'] === null) 
-	        {
-	        	if($this->autoTranslate)
-	        	{
-	        		$message['translation'] = $event->message;
-	
-	        		preg_match_all('/\{(?:.*?)\}/s', $message['translation'], $matches);
-	        		$matches = $matches[0];
-	        		foreach($matches as $key => $match)
-	        			$message['translation'] = str_replace($match, "_{$key}_", $message['translation']);
-	        		 
-	        		$message['translation'] = $this->googleTranslate(
-	        				$message['translation'],
-	        				$event->language,
-	        				$sourceLanguage
-	        		);
-	        		 
-	        		if($message['translation'] !== false) 
-	        		{
-	        			$message['translation'] = trim($message['translation'][0]);
-	        			foreach($matches as $key => $match)
-	        				$message['translation'] = str_replace("_{$key}_", $match, $message['translation']);
-	
-	        			if($source->addTranslation($message['id'], $event->language, $message['translation']) !== null) 
-	        			{
-	        				$event->message = &$message['translation'];
-	        			}
-	        			else 
-	        			{
-	        				throw new CDbException('Translation "'.$message['translation'].'" could not be added to message table', CLogger::LEVEL_ERROR, self::ID);
-	        			}
-	        		}
-	        		else 
-	        		{
-	        			Yii::log('Message "'.$event->message.'" could not be translated to "'.$event->language.'" by Google translate.', CLogger::LEVEL_ERROR, self::ID);
-	        		}
-	        	} 
-	        	else 
-	        	{
-	        		Yii::log('A translation for message "'.$event->message.'" to "'.$event->language.'" could not be found and automatic translations are disabled.', CLogger::LEVEL_WARNING, self::ID);
-	        	}
-	        }
-	        else 
-	        {
-	        	$event->message = &$message['translation'];
-	        }
-	        if(isset($transaction))
-	        	$transaction->commit();
-		}
-		catch(Exception $e)
-		{
-			if(isset($transaction))
-				$transaction->rollback();
-			throw $e;
-		}
-
-		if($event->message === $message['translation'])
-			return true;
-		
-        $this->_messages[$message['id']] = array('language' => $event->language, 'message' => $event->message, 'category' => $event->category);
-        return false;
+		$event->message = $this->translate($event->category, $event->message, $event->language, $this->useTransaction);
+    }
+    
+    public function translate($category, $message, $language, $useTransaction = true)
+    {
+    	$message = trim($message);
+    	
+    	if(!empty($message))
+    	{
+	    	$category = trim($category);
+	    	$language = trim($language);
+	    	
+	    	$source = $this->getMessageSource();
+	    	
+	    	$sourceLanguage = $category === TranslateModule::$componentId ? 'en' : $source->getLanguage();
+	    	
+	    	if($source->forceTranslation || $language !== $sourceLanguage)
+	    	{
+		    	if($useTransaction && $source->getDbConnection()->getCurrentTransaction() === null)
+		    		$transaction = $source->getDbConnection()->beginTransaction();
+		    	
+		    	try
+		    	{
+		    		$translation = $source->getTranslationFromDb($category, $message, $language);
+		    		 
+		    		// If the source message does not exists add it.
+		    		if($translation['id'] === null)
+		    		{
+		    			$translation['id'] = $source->addSourceMessage($category, $message);
+		    	
+		    			if($translation['id'] === null)
+		    			{
+		    				throw new CDbException("Message '$message' in category '$category' could not be inserted into the database table '{$this->getMessageSource()->sourceMessageTable}'");
+		    			}
+		    		}
+		    		 
+		    		// If the category does not exist or has not been associated with the source message add it and/or associate it with the source message.
+		    		if($translation['category_id'] === null)
+		    		{
+		    			$translation['category_id'] = $source->getCategoryId($category);
+		    				
+		    			if($translation['category_id'] === false)
+		    			{
+		    				$translation['category_id'] = $source->addCategory($category);
+		    					
+		    				if($translation['category_id'] === null)
+		    				{
+		    					throw new CDbException("The category '$category' was not found and could not be added to the database.");
+		    				}
+		    			}
+		    				
+		    			if($source->addMessageCategory($translation['category_id'], $translation['id']) === null)
+		    			{
+		    				throw new CDbException("The message with id '{$translation['id']}' could not be associated with category id '{$translation['category_id']}'.");
+		    			}
+		    		}
+		    		 
+		    		// If the translation of the source message does not exist use google translate, if autotranslate is enabled, and add the translation.
+		    		// Otherwise if autotranslate is disabled or google translate was not successful add the source message to the missing messages.
+		    		if($translation['translation'] === null)
+		    		{
+		    			if($this->autoTranslate)
+		    			{
+		    				$translation['translation'] = $message;
+		    	
+		    				preg_match_all('/\{(?:.*?)\}/s', $translation['translation'], $matches);
+		    				$matches = $matches[0];
+		    				foreach($matches as $key => $match)
+		    					$translation['translation'] = str_replace($match, "_{$key}_", $translation['translation']);
+		    	
+		    				$translation['translation'] = $this->googleTranslate(
+		    						$translation['translation'],
+		    						$language,
+		    						$sourceLanguage
+		    				);
+		    	
+		    				if($translation['translation'] !== false)
+		    				{
+		    					$translation['translation'] = trim($translation['translation'][0]);
+		    					foreach($matches as $key => $match)
+		    						$translation['translation'] = str_replace("_{$key}_", $match, $translation['translation']);
+		    	
+		    					if($source->addTranslation($translation['id'], $language, $translation['translation']) !== null)
+		    					{
+		    						$message = &$translation['translation'];
+		    					}
+		    					else
+		    					{
+		    						throw new CDbException('Translation "'.$translation['translation'].'" could not be added to message table', CLogger::LEVEL_ERROR, self::ID);
+		    					}
+		    				}
+		    				else
+		    				{
+		    					Yii::log('Message "'.$message.'" could not be translated to "'.$language.'" by Google translate.', CLogger::LEVEL_ERROR, self::ID);
+		    					$this->addMissingTranslation($translation['id'], $category, $message, $language);
+		    				}
+		    			}
+		    			else
+		    			{
+		    				Yii::log('A translation for message "'.$message.'" to "'.$language.'" could not be found and automatic translations are disabled.', CLogger::LEVEL_WARNING, self::ID);
+		    				$this->addMissingTranslation($translation['id'], $category, $message, $language);
+		    			}
+		    		}
+		    		else
+		    		{
+		    			$message = &$translation['translation'];
+		    		}
+		    		if(isset($transaction))
+		    			$transaction->commit();
+		    	}
+		    	catch(Exception $e)
+		    	{
+		    		if(isset($transaction))
+		    			$transaction->rollback();
+		    		throw $e;
+		    	}
+	    	}
+    	}
+    	
+    	return $message;
+    }
+    
+    protected function addMissingTranslation($messageId, $category, $message, $language)
+    {
+    	$this->_messages[$messageId] = array('category' => $category, 'message' => $message, 'language' => $language);
     }
 
     /**
