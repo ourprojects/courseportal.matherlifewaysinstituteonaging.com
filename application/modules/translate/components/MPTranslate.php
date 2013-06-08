@@ -395,11 +395,11 @@ class MPTranslate extends CApplicationComponent {
 	        // If the category does not exist or has not been associated with the source message add it and/or associate it with the source message.
 	    	if($message['category_id'] === null)
 			{
-				$message['category_id'] = $source->getCategoryId($category);
+				$message['category_id'] = $source->getCategoryId($event->category);
 			
 				if($message['category_id'] === false)
 				{
-					$message['category_id'] = $source->addCategory($category);
+					$message['category_id'] = $source->addCategory($event->category);
 							
 					if($message['category_id'] === null)
 					{
@@ -407,7 +407,7 @@ class MPTranslate extends CApplicationComponent {
 					}
 				}
 			
-				if($source->addCategoryMessage($message['category_id'], $message['message_id']) === null)
+				if($source->addMessageCategory($message['category_id'], $message['id']) === null)
 				{
 					throw new CDbException("The message with id '{$message['id']}' could not be associated with category id '{$message['category_id']}'.");
 				}

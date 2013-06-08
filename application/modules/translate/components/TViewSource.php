@@ -105,15 +105,12 @@ class TViewSource extends CApplicationComponent
 		$cmd = $this->getCommandBuilder()->createSqlCommand(
 				"SELECT vst.path source_path, vt.path view_path " .
 				"FROM $this->routeTable rt " .
-				"JOIN $this->routeViewTable rvt ON rt.id=rvt.route_id " .
+				"JOIN $this->routeViewTable rvt ON (rt.id=rvt.route_id) " .
 				"JOIN $this->viewSourceTable vst ON (rvt.view_id=vst.id) " .
-				"JOIN $this->viewTable vt ON (vst.id=vt.id AND vt.language=:language) " .
+				"JOIN $this->viewTable vt ON (vst.id=vt.id) " .
 				"LEFT JOIN $this->viewMessageTable vmt ON (vst.id=vmt.view_id) " .
-				"WHERE (rt.route=:route AND ((" .
-					"SELECT COALESCE(MAX(tmt.last_modified), 0) " .
-					"FROM {$this->getMessageSource()->translatedMessageTable} tmt " .
-					"WHERE (vmt.message_id=tmt.id AND tmt.language=:language) " .
-				") < vt.created)) " .
+				"LEFT JOIN {$this->getMessageSource()->translatedMessageTable} tmt ON (vmt.message_id=tmt.id AND tmt.language=vt.language) " .
+				"WHERE (rt.route=:route AND vt.language=:language AND (tmt.last_modified IS NULL OR tmt.last_modified < vt.created)) " .
 				"GROUP BY vst.id", 
 				array(':route' => $route, ':language' => $language));
 

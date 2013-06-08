@@ -115,7 +115,7 @@ class TMessageSource extends CDbMessageSource
 	
 	public function addMessageCategory($categoryId, $messageId)
 	{
-		$args = array('category_id' => $categoryId, 'message_id' => $viewId);
+		$args = array('category_id' => $categoryId, 'message_id' => $messageId);
 		if($this->getCommandBuilder()->createInsertCommand($this->categoryMessageTable, $args)->execute() > 0)
 			return $args;
 		return null;
