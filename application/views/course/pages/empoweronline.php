@@ -77,7 +77,7 @@ foreach(array(
   
   <h4>{t}Course Lessons{/t}</h4>
   <ul>
-    <li> <a href="#lesson-1-slide-1" data-fancybox-group="lesson-1" class="teal lesson-1">{t}Taking Care of You{/t}</a> <a href="#lesson-1-slide-2" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-3" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-4" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-5" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-6" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-7" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-8" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-9" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-10" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-11" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-12" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-13" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-14" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-15" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-16" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-17" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-18" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-19" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-20" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-21" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-22" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-23" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-24" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-25" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-26" data-fancybox-group="lesson-1" class="hide lesson-1"></a> </li>
+    <li> <a href="#lesson-1-slide-1" data-fancybox-group="lesson-1" class="teal lesson-1">{t}Taking Care of You{/t}</a> <a href="#lesson-1-slide-2" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-3" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-4" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-5" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-6" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-7" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-8" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-9" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-10" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-11" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-12" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-13" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-14" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-15" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-16" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-17" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-18" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-19" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-20" data-fancybox-group="lesson-1" class="hide lesson-1"></li>
     <li> <a href="#lesson-2-slide-1" data-fancybox-group="lesson-2" class="teal lesson-2">{t}Reducing Personal Stress{/t}</a> <a href="#lesson-2-slide-2" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-3" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-4" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-5" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-6" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-7" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-8" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-9" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-10" data-fancybox-group="lesson-2" class="hide lesson-2"></a> </li>
     <li> <a href="#lesson-3-slide-1" data-fancybox-group="lesson-3" class="teal lesson-3"> {t}Communicating Effectively in Challenging Situations{/t} </a> <a href="#lesson-3-slide-2" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-3" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-4" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-5" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-6" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-7" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-8" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-9" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-10" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-11" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-12" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-13" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-14" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-15" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-16" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-17" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-18" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-19" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-20" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-21" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-22" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-23" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-24" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-25" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-26" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-27" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-28" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-29" data-fancybox-group="lesson-3" class="hide lesson-3"></a> </li>
     <li> <a href="#lesson-4-slide-1" data-fancybox-group="lesson-4" class="teal lesson-4"> {t}Normal &amp; Abnormal Aging Changes{/t} </a> <a href="#lesson-4-slide-2" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-3" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-4" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-5" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-6" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-7" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-8" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-9" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-10" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-11" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-12" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-13" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-14" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-15" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-16" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-17" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-18" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-19" data-fancybox-group="lesson-4" class="hide lesson-4"></a> </li>
@@ -127,7 +127,7 @@ foreach(array(
 <!-- start course content here -->
 
 <div id="course" class="hide">
-<?php $clientScript->registerScript('question-answer-handler',
+  <?php $clientScript->registerScript('question-answer-handler',
 					"$('.course-slide .question').change(function() {".
 						"if($(this).find('select').val() == '1') {".
 							"$(this).find('.right-answer').removeClass('hide');".
@@ -138,120 +138,121 @@ foreach(array(
 						"}".
 					"});");
 			?>
-<div id="lesson-1">
-  <div id="lesson-1-slide-1" class="course-slide">
-    <div class="content">
-      <h2 class="flowers">{t}Empower Online{/t}</h2>
-      <hr />
-      <img src="<?php echo $this->getImagesUrl('empower/104651788.png'); ?>" alt="{t}image{/t}">
-      <h4>{t}Self care for the working family caregiver{/t}</h4>
-      <p>{t}<a href="http://www.matherlifewaysinstituteonaging.com/family-caregivers/empower-online/" target="_blank">Empower Online</a> is an in-depth, five-lesson online course that focuses on self-care for the working caregiver that was developed by <a href="http://www.matherlifewaysinstituteonaging.com" target="_blank">Mather LifeWays Institute on Aging</a> with the support of the <a href="http://www.abcdependentcare.com/docs/" target="_blank">American Business Collaboration for Quality Dependent Care (ABC)</a>. The program focuses on managing responsibilities while caring for loved ones with chronic medical issues and includes communicating effectively with healthcare providers and locating additional caregiver resources.{/t}</p>
-      <p>{t}Empower Online provides working caregivers with the knowledge and tools to both manage responsibilities of caring for older relatives or friends and address their own physical, mental, and emotional health needs.{/t}</p>
-      <p>{t}A research study conducted by Mather LifeWays Institute on Aging found that an online self-care program for working caregivers had multiple benefits.  As a result of participating in the online self-care program, working caregivers reported:{/t}</p>
-      <ul>
-        <li>{t}Increased participation in exercise and leisure activities;{/t}</li>
-        <li>{t}Improved self-reported health;{/t}</li>
-        <li>{t}Reduced job stress and feelings of burnout; and{/t}</li>
-        <li>{t}Increased positive feelings about their skills in caregiving.{/t}</li>
-      </ul>
-      <h5>{t}Empower Online focuses on the following key topics:{/t}</h5>
-      <ul>
-        <li>{t}Improving and maintaining one’s own health through self-care{/t}</li>
-        <li>{t}Effectively managing caregiver stress{/t}</li>
-        <li>{t}Managing caregiver transitions as loved ones’ health needs change{/t}</li>
-        <li>{t}Meeting caregiver responsibilities long distance{/t}</li>
-        <li>{t}Making care-related decisions for loved ones{/t}</li>
-      </ul>
-    </div>
-    <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Start Course &raquo;{/t}</a></div>
-  </div>
-  <div id="lesson-1-slide-2" class="course-slide">
-    <div class="content">
-      <h2 class="flowers">{t}Course Agenda{/t}</h2>
-      <hr />
-      <img src="<?php echo $this->getImagesUrl('empower/160910502.png'); ?>" alt="{t}image{/t}">
-      <h4>{t}Course Objectives{/t}</h4>
-      <ul>
-        <li>{t}Manage the ambiguities of self‐care while in the caregiver role{/t}</li>
-        <li>{t}Manage stress and emotions{/t}</li>
-        <li>{t}Communicating effectively with healthcare providers and coworkers{/t}</li>
-        <li>{t}Locate caregiver resources{/t}</li>
-      </ul>
-      <h4>{t}Course Modules{/t}</h4>
-      <ul>
-        <li>{t}Taking Care of You{/t}</li>
-        <li>{t}Reducing Personal Stress{/t}</li>
-        <li>{t}Communicating Effectively in Challenging Situations{/t}</li>
-        <li>{t}Normal &amp; Abnormal Aging Changes{/t}</li>
-        <li>{t}Financial &amp; Legal Issues{/t}</li>
-      </ul>
-      <h4>{t}Resources{/t}</h4>
-      <p>{t}Specific resources have been identified here because they relate to the course content. These resources will help you get greater detail about specific topics and ideas presented in this course. These resources can be accessed via the course homme page, by country or region.{/t}</p>
-      <p class="forum">{t}Please feel free to post your own resources on the Forum throughout this course.{/t}</p>
-      <img src="<?php echo $this->getImagesUrl('empower/forum_icon.png'); ?>" alt="{t}image{/t}"> </div>
-    <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t} </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
-  </div>
-  <div id="lesson-1-slide-3" class="course-slide">
-    <div class="content">
-      <h2 class="flowers">{t}Taking Care of You{/t}</h2>
-      <hr />
-      <img src="<?php echo $this->getImagesUrl('empower/105817205.png'); ?>" alt="{t}image{/t}">
-      <p>{t}This module contains several main sections:{/t}</p>
-      <ul>
-        <li>{t}Caregiver Resources{/t}</li>
-        <li>{t}Managing Self-Care{/t}</li>
-        <li>{t}Setting Goals{/t}</li>
-        <li>{t}Making Action Plans{/t}</li>
-        <li>{t}Problem-Solving: A Solution-Seeking Approach{/t}</li>
-        <li>{t}Reward Yourself{/t}</li>
-        <li>{t}My Action Plan{/t}</li>
-      </ul>
-      <p>{t}Caregiving involves many challenges. You often need to master new skills and gain support. You may need to develop new ways of relating to a family member if his or her ability to communicate or remember is compromised by illness. You may have to make tough decisions. But often one of the greatest challenges is taking care of yourself.{/t}</p>
-      <div id="question1" class="question">
-        <p><b>{t}Caregivers providing on-going care, typically are under a lot stress, which may lead to mental and/or physical health problems.{/t}</b>
-          <select>
-            <option selected="selected" value="select"> {t}Select{/t} </option>
-            <option value="1"> {t}True{/t} </option>
-            <option value="0"> {t}False{/t} </option>
-          </select>
-        </p>
-        <p class="right-answer hide"> {t}Correct! Stress from caregiving can lead to many health problems./t} </p>
-        <p class="wrong-answer hide"> {t}Stress from caregiving can lead to many health problems. This module covers this specific topic.{/t} </p>
+  <div id="lesson-1">
+    <div id="lesson-1-slide-1" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Empower Online{/t}</h2>
+        <hr />
+        <img src="<?php echo $this->getImagesUrl('empower/104651788.png'); ?>" alt="{t}image{/t}">
+        <h4>{t}Self care for the working family caregiver{/t}</h4>
+        <p>{t}<a href="http://www.matherlifewaysinstituteonaging.com/family-caregivers/empower-online/" target="_blank">Empower Online</a> is an in-depth, five-lesson online course that focuses on self-care for the working caregiver that was developed by <a href="http://www.matherlifewaysinstituteonaging.com" target="_blank">Mather LifeWays Institute on Aging</a> with the support of the <a href="http://www.abcdependentcare.com/docs/" target="_blank">American Business Collaboration for Quality Dependent Care (ABC)</a>. The program focuses on managing responsibilities while caring for loved ones with chronic medical issues and includes communicating effectively with healthcare providers and locating additional caregiver resources.{/t}</p>
+        <p>{t}Empower Online provides working caregivers with the knowledge and tools to both manage responsibilities of caring for older relatives or friends and address their own physical, mental, and emotional health needs.{/t}</p>
+        <p>{t}A research study conducted by Mather LifeWays Institute on Aging found that an online self-care program for working caregivers had multiple benefits.  As a result of participating in the online self-care program, working caregivers reported:{/t}</p>
+        <ul>
+          <li>{t}Increased participation in exercise and leisure activities;{/t}</li>
+          <li>{t}Improved self-reported health;{/t}</li>
+          <li>{t}Reduced job stress and feelings of burnout; and{/t}</li>
+          <li>{t}Increased positive feelings about their skills in caregiving.{/t}</li>
+        </ul>
+        <h5>{t}Empower Online focuses on the following key topics:{/t}</h5>
+        <ul>
+          <li>{t}Improving and maintaining one’s own health through self-care{/t}</li>
+          <li>{t}Effectively managing caregiver stress{/t}</li>
+          <li>{t}Managing caregiver transitions as loved ones’ health needs change{/t}</li>
+          <li>{t}Meeting caregiver responsibilities long distance{/t}</li>
+          <li>{t}Making care-related decisions for loved ones{/t}</li>
+        </ul>
       </div>
+      <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Start Course &raquo;{/t}</a></div>
     </div>
-    <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t} </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
-  </div>
-  <div id="lesson-1-slide-4" class="course-slide">
-    <div class="content">
-      <h2 class="flowers">{t}Caregiver Resources{/t}</h2>
-      <hr />
-      <p>{t}Too often caregivers neglect their own health and well-being, and put their own needs <i>on the back burner</i>. Sometimes caregivers become a second victim of the disease that afflicts their family member. It is sad when someone says, <i>my mother was the ill person, but her illness destroyed my father</i>. Usually, we cannot stop the impact of a chronic illness on a family member. However, we are responsible for our own self-care.{/t}</p>
-      <p>{t}When you board an airplane, the flight attendant gives several safety instructions. One of them is, <i>if oxygen masks drop down, put on your oxygen mask first before helping others</i>. This is because if you do not take care of yourself first, you may not be able to help those who need your help. It is the same thing with caregiving. When you take care of yourself, everyone benefits. Ignoring your own needs is not only potentially detrimental to you, but it can also be harmful to the person who depends on you.{/t}</p>
-      <p>{t}The Resource section, on this course's home page, was designed to give you additional resources in order to help you maintain personal well-being while providing quality care to your family member. Many focus on tools to help you to take care of you. These tools will help you:{/t}</p>
-      <ul>
-        <li>{t}set goals and make action plans;{/t}</li>
-        <li>{t}identify and reduce personal stress;{/t}</li>
-        <li>{t}make your thoughts and feelings work for you, not against you;{/t}</li>
-        <li>{t}communicate your feelings, needs, and concerns in positive ways;{/t}</li>
-        <li>{t}cope with difficult situations, including asking for help and setting limits;{/t}</li>
-        <li>{t}deal with emotions, especially feelings of anger, guilt, and depression; and{/t}</li>
-        <li>{t}make tough caregiving decisions.{/t}</li>
-      </ul>
-      <p>{t}Additional resources will address special concerns and decisions you may face as a caregiver. These include what to do when a family member is no longer a safe driver, hiring in-home help, using community services, how to communicate with and respond to a family member who is memory impaired, options available when a family member is having problems managing his money; coping with depression, and making a decision about a care facility. You can turn to resources for guidance and direction when you face a specific decision or concern.{/t}</p>
+    <div id="lesson-1-slide-2" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Course Agenda{/t}</h2>
+        <hr />
+        <img src="<?php echo $this->getImagesUrl('empower/160910502.png'); ?>" alt="{t}image{/t}">
+        <h4>{t}Course Objectives{/t}</h4>
+        <ul>
+          <li>{t}Manage the ambiguities of self‐care while in the caregiver role{/t}</li>
+          <li>{t}Manage stress and emotions{/t}</li>
+          <li>{t}Communicating effectively with healthcare providers and coworkers{/t}</li>
+          <li>{t}Locate caregiver resources{/t}</li>
+        </ul>
+        <h4>{t}Course Modules{/t}</h4>
+        <ul>
+          <li>{t}Taking Care of You{/t}</li>
+          <li>{t}Reducing Personal Stress{/t}</li>
+          <li>{t}Communicating Effectively in Challenging Situations{/t}</li>
+          <li>{t}Normal &amp; Abnormal Aging Changes{/t}</li>
+          <li>{t}Financial &amp; Legal Issues{/t}</li>
+        </ul>
+        <h4>{t}Resources{/t}</h4>
+        <p>{t}Specific resources have been identified here because they relate to the course content. These resources will help you get greater detail about specific topics and ideas presented in this course. These resources can be accessed via the course homme page, by country or region.{/t}</p>
+        <p class="forum">{t}Please feel free to post your own resources on the Forum throughout this course.{/t}</p>
+        <img src="<?php echo $this->getImagesUrl('empower/forum_icon.png'); ?>" alt="{t}image{/t}"> </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t} </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
-    <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t} </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
-  </div>
-  <div id="lesson-1-slide-5" class="course-slide">
-    <div class="content">
-      <h2 class="flowers">{t}Additional Resources{/t}</h2>
-      <hr />
-      <h4>{t}How Much Support Do You Have?{/t}</h4>
-      <p>{t}Even if you’re the primary family caregiver, you can’t do everything on your own, especially if you’re caregiving from a distance (more than an hour’s drive from your family member). You’ll need help from friends, siblings, and other family members, as well as health professionals. If you don’t get the support you need, you'll quickly burn out—which will compromise your ability to provide care.{/t}</p>
-      <p>{t}Take the surveys below to visually see how much support you feel from each resource. After you have completed the survey, think about what you can do to gain more support from these individuals. Again, this is simply a visual, and is not meant to be printed.{/t}</p>
-      <ul>
-        <li><a href="#" target="_blank">{t}Family{/t}</a></li>
-        
-        <!--
+    <div id="lesson-1-slide-3" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Taking Care of You{/t}</h2>
+        <hr />
+        <img src="<?php echo $this->getImagesUrl('empower/105817205.png'); ?>" alt="{t}image{/t}">
+        <p>{t}This module contains several main sections:{/t}</p>
+        <ul>
+          <li>{t}Caregiver Resources{/t}</li>
+          <li>{t}Managing Self-Care{/t}</li>
+          <li>{t}Setting Goals{/t}</li>
+          <li>{t}Making Action Plans{/t}</li>
+          <li>{t}Problem-Solving: A Solution-Seeking Approach{/t}</li>
+          <li>{t}Reward Yourself{/t}</li>
+          <li>{t}My Action Plan{/t}</li>
+        </ul>
+        <p>{t}Caregiving involves many challenges. You often need to master new skills and gain support. You may need to develop new ways of relating to a family member if his or her ability to communicate or remember is compromised by illness. You may have to make tough decisions. But often one of the greatest challenges is taking care of yourself.{/t}</p>
+        <div id="question1" class="question">
+          <p><b>{t}Caregivers providing on-going care, typically are under a lot stress, which may lead to mental and/or physical health problems.{/t}</b>
+            <select>
+              <option selected="selected" value="select"> {t}Select{/t} </option>
+              <option value="1"> {t}True{/t} </option>
+              <option value="0"> {t}False{/t} </option>
+            </select>
+          </p>
+          <p class="right-answer hide"> {t}Correct! Stress from caregiving can lead to many health problems./t} </p>
+          <p class="wrong-answer hide"> {t}Stress from caregiving can lead to many health problems. This module covers this specific topic.{/t} </p>
+        </div>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t} </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
+    <div id="lesson-1-slide-4" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Caregiver Resources{/t}</h2>
+        <hr />
+        <p>{t}Too often caregivers neglect their own health and well-being, and put their own needs <i>on the back burner</i>. Sometimes caregivers become a second victim of the disease that afflicts their family member. It is sad when someone says, <i>my mother was the ill person, but her illness destroyed my father</i>. Usually, we cannot stop the impact of a chronic illness on a family member. However, we are responsible for our own self-care.{/t}</p>
+        <p>{t}When you board an airplane, the flight attendant gives several safety instructions. One of them is, <i>if oxygen masks drop down, put on your oxygen mask first before helping others</i>. This is because if you do not take care of yourself first, you may not be able to help those who need your help. It is the same thing with caregiving. When you take care of yourself, everyone benefits. Ignoring your own needs is not only potentially detrimental to you, but it can also be harmful to the person who depends on you.{/t}</p>
+        <p>{t}The Resource section, on this course's home page, was designed to give you additional resources in order to help you maintain personal well-being while providing quality care to your family member. Many focus on tools to help you to take care of you. These tools will help you:{/t}</p>
+        <ul>
+          <li>{t}set goals and make action plans;{/t}</li>
+          <li>{t}identify and reduce personal stress;{/t}</li>
+          <li>{t}make your thoughts and feelings work for you, not against you;{/t}</li>
+          <li>{t}communicate your feelings, needs, and concerns in positive ways;{/t}</li>
+          <li>{t}cope with difficult situations, including asking for help and setting limits;{/t}</li>
+          <li>{t}deal with emotions, especially feelings of anger, guilt, and depression; and{/t}</li>
+          <li>{t}make tough caregiving decisions.{/t}</li>
+        </ul>
+        <p>{t}Additional resources will address special concerns and decisions you may face as a caregiver. These include what to do when a family member is no longer a safe driver, hiring in-home help, using community services, how to communicate with and respond to a family member who is memory impaired, options available when a family member is having problems managing his money; coping with depression, and making a decision about a care facility. You can turn to resources for guidance and direction when you face a specific decision or concern.{/t}</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t} </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
+    <div id="lesson-1-slide-5" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Caregiver Resources{/t}</h2>
+        <hr />
+        <img src="<?php echo $this->getImagesUrl('empower/165424108.png'); ?>" alt="{t}image{/t}">
+        <h4>{t}How Much Support Do You Have?{/t}</h4>
+        <p>{t}Even if you’re the primary family caregiver, you can’t do everything on your own, especially if you’re caregiving from a distance (more than an hour’s drive from your family member). You’ll need help from friends, siblings, and other family members, as well as health professionals. If you don’t get the support you need, you'll quickly burn out—which will compromise your ability to provide care.{/t}</p>
+        <p>{t}Take the surveys below to visually see how much support you feel from each resource. After you have completed the survey, think about what you can do to gain more support from these individuals. Again, this is simply a visual, and is not meant to be printed.{/t}</p>
+        <ul>
+          <li><a href="#" target="_blank">{t}Family{/t}</a></li>
+          
+          <!--
       
       
       <table>
@@ -967,11 +968,11 @@ foreach(array(
       </table>
       
       -->
+          
+          <li><a href="#" target="_blank">{t}Friends and/or Coworkers{/t}</a></li>
+        </ul>
         
-        <li><a href="#" target="_blank">{t}Friends and/or Coworkers{/t}</a></li>
-      </ul>
-      
-      <!--
+        <!--
       
        <p>{t}Friend's and Coworkers{/t}</p>
       <table>
@@ -1331,1201 +1332,1163 @@ foreach(array(
       </table>
       
       --> 
-      
-    </div>
-    <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t} </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
-  </div>
-  <div id="lesson-1-slide-6" class="course-slide">
-    <div class="content">
-      <h2 class="flowers">{t}Managing Self-Care{/t}</h2>
-      <hr />
-      <h5>{t}Managing our self-care means that as caregivers we:{/t}</h5>
-      <ul>
-        <li style="margin-bottom:10px;">{t}<b>Take responsibility</b> - We realize we are responsible for our personal well-being and for getting our needs met. This includes maintaining activities and relationships that are meaningful to us.{/t}</li>
-       <li style="margin-bottom:10px;">{t}<b>Have realistic expectations</b> - We fully understand our family member's medical condition and we are realistic about what our family member can and cannot do. The more you know about your family member's medical condition, the better you will be able to plan successful caregiving strategies. Knowledge is power. It is also important to look at your definition of a good caregiver. Unrealistic expectations can set you up for feelings of failure, resentment, and guilt. Placing burdensome expectations on yourself does not make you a better caregiver. In fact, you are much more likely to become an exhausted, irritable, and resentful caregiver... and then to feel guilty!{/t}</li>
-       <li style="margin-bottom:10px;">{t}<b>Focus on what we can do</b> - It is important to be clear about what you can and cannot change. For example, you will not be able to change a person who has always been demanding and inflexible, but you can control how you respond to that person's demands. You can accept and let-go of-the things you cannot change. Managing your self-care also means you seek solutions to what you can change.{/t}</li>
-        <li style="margin-bottom:10px;">{t}<b>Communicate effectively with others</b> - These include family members, friends, health care professionals, and the care receiver. Do not expect others to know what you need. Recognize it is your responsibility to tell others about your needs and concerns. Communicate in ways that are positive and avoid being demanding, manipulative, or guilt provoking when you make requests.{/t}</li>
-        <li style="margin-bottom:10px;">{t}<b>Learn from our emotions</b> - Realize there will be emotional ups and downs. Listen to your emotions and what they are telling you. Do not bottle up your emotions. Repressing or denying feelings decreases energy, causes irritability, depression, and physical problems, and affects your judgment and ability to make the best decisions. Also, do not strike out at others. You are in control of your emotions, your emotions do not control you.{/t}</li>
-        <li style="margin-bottom:10px;">{t}<b>Get help when needed</b> - An important part of self-care is knowing when you need help and how to find it. Help can be from community resources, family and friends, or professionals. Most important is that you do not wait until you are hanging at the end of your rope before you get help. Do not wait until you are overwhelmed or exhausted, or your health fails. Reaching out for help, when needed, is a sign of personal strength.{/t}</li>
-        <li style="margin-bottom:10px;">{t}<b>Set goals and work toward them</b> - Be realistic in the goals that you set and take steps toward reaching those goals. Seek solutions to the problems that you experience. Changes do not need to be major to make a significant difference. In summary, self-care means that you seek ways to take better care of yourself. As a caregiver, you do not just survive. You thrive!{/t}</li>
-      </ul>
-    </div>
-    <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t} </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
-  </div>
-  <div id="lesson-1-slide-7" class="course-slide">
-    <div class="content">
-      <h2 class="flowers">{t}Managing Self-Care (continued){/t}</h2>
-         <hr />
-      <p>Ask yourself the following questions about your caregiving:</p>
-  
-       
-     <table>
-     <tr style="text-align:left;">
-     	<td>     
-          <input type="checkbox" name="Yes" id="Yes">
-          <label for="Yes">Yes</label>
-          <input type="checkbox" name="No" id="No">
-           <label for="No"> No</label>
-         </td>
-     	<td style="text-align:left;">     
-         
         
-       Do you ever find yourself trying "to do it all?&quot;
-      </td>
-      
-      </tr>
-     <tr style="text-align:left;">
-      <td>
-          <input type="checkbox" name="Yes2" id="Yes2">
-          <label for="Yes2">Yes</label>
-          <input type="checkbox" name="No2" id="No2">
-          <label for="No2"> No</label>
-          
-          </td>
-          
-     	<td style="text-align:left;">     
-      Do you ever say to yourself "I should be able to ... ," "I can never. .. ," or similar statements?</p>
-      </td>
-      
-      </tr>
-     <tr style="text-align:left;">
-      <td>
-          <input type="checkbox" name="Yes3" id="Yes3">
-          <label for="Yes3">Yes</label>
-          <input type="checkbox" name="No3" id="No3">
-          <label for="No3"> No</label></td>
-          
-     	<td style="text-align:left;">     
-        Do you ever ignore your feelings or find that they are overwhelming?</p>
-   </td>
-   </tr>
-   
-     <tr style="text-align:left;">
-<td>
-          <input type="checkbox" name="Yes4" id="Yes4">
-          <label for="Yes4">Yes</label>
-          <input type="checkbox" name="No4" id="No4">
-          <label for="No4"> No</label>
-          
-          </td>
-     	<td style="text-align:left;">     
-          
-       Do you ever get frustrated because of something you can't change or someone who won't change?</p>
-     </td>
-     
-     </tr>
-     
-     <tr style="text-align:left;">
-     <td>
-          <input type="checkbox" name="Yes5" id="Yes5">
-          <label for="Yes5">Yes</label>
-          <input type="checkbox" name="No5" id="No5">
-          <label for="No5"> No</label>
-          
-          </td>
-          
-     	<td style="text-align:left;">     
-        Do you resist seeking, asking for, or accepting help?</p>
-</td>
-
-</tr>
-<tr>
-<td>
-          <input type="checkbox" name="Yes6" id="Yes6">
-          <label for="Yes6">Yes</label>
-          <input type="checkbox" name="No6" id="No6">
-          <label for="No6"> No</label>
-          
-          </td>
-          
-     	<td style="text-align:left;">     
-          
-      Do you feel that your family or others just don't understand what you are going through as a caregiver?</p>
-          
-          </td>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t} </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
+    <div id="lesson-1-slide-6" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Managing Self-Care{/t}</h2>
+        <hr />
+        <h5>{t}Managing our self-care means that as caregivers we:{/t}</h5>
+        <ul>
+          <li style="margin-bottom:10px;">{t}<b>Take responsibility</b> - We realize we are responsible for our personal well-being and for getting our needs met. This includes maintaining activities and relationships that are meaningful to us.{/t}</li>
+          <li style="margin-bottom:10px;">{t}<b>Have realistic expectations</b> - We fully understand our family member's medical condition and we are realistic about what our family member can and cannot do. The more you know about your family member's medical condition, the better you will be able to plan successful caregiving strategies. Knowledge is power. It is also important to look at your definition of a good caregiver. Unrealistic expectations can set you up for feelings of failure, resentment, and guilt. Placing burdensome expectations on yourself does not make you a better caregiver. In fact, you are much more likely to become an exhausted, irritable, and resentful caregiver... and then to feel guilty!{/t}</li>
+          <li style="margin-bottom:10px;">{t}<b>Focus on what we can do</b> - It is important to be clear about what you can and cannot change. For example, you will not be able to change a person who has always been demanding and inflexible, but you can control how you respond to that person's demands. You can accept and let-go of-the things you cannot change. Managing your self-care also means you seek solutions to what you can change.{/t}</li>
+          <li style="margin-bottom:10px;">{t}<b>Communicate effectively with others</b> - These include family members, friends, health care professionals, and the care receiver. Do not expect others to know what you need. Recognize it is your responsibility to tell others about your needs and concerns. Communicate in ways that are positive and avoid being demanding, manipulative, or guilt provoking when you make requests.{/t}</li>
+          <li style="margin-bottom:10px;">{t}<b>Learn from our emotions</b> - Realize there will be emotional ups and downs. Listen to your emotions and what they are telling you. Do not bottle up your emotions. Repressing or denying feelings decreases energy, causes irritability, depression, and physical problems, and affects your judgment and ability to make the best decisions. Also, do not strike out at others. You are in control of your emotions, your emotions do not control you.{/t}</li>
+          <li style="margin-bottom:10px;">{t}<b>Get help when needed</b> - An important part of self-care is knowing when you need help and how to find it. Help can be from community resources, family and friends, or professionals. Most important is that you do not wait until you are hanging at the end of your rope before you get help. Do not wait until you are overwhelmed or exhausted, or your health fails. Reaching out for help, when needed, is a sign of personal strength.{/t}</li>
+          <li style="margin-bottom:10px;">{t}<b>Set goals and work toward them</b> - Be realistic in the goals that you set and take steps toward reaching those goals. Seek solutions to the problems that you experience. Changes do not need to be major to make a significant difference. In summary, self-care means that you seek ways to take better care of yourself. As a caregiver, you do not just survive. You thrive!{/t}</li>
+        </ul>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t} </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
+    <div id="lesson-1-slide-7" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Managing Self-Care{/t}</h2>
+        <hr />
+        <p>Ask yourself the following questions about your caregiving:</p>
+        <table>
+          <tr style="text-align:left;">
+            <td><input type="checkbox" name="Yes" id="Yes">
+              <label for="Yes">Yes</label>
+              <input type="checkbox" name="No" id="No">
+              <label for="No"> No</label></td>
+            <td style="text-align:left;"> Do you ever find yourself trying "to do it all?&quot; </td>
+          </tr>
+          <tr style="text-align:left;">
+            <td><input type="checkbox" name="Yes2" id="Yes2">
+              <label for="Yes2">Yes</label>
+              <input type="checkbox" name="No2" id="No2">
+              <label for="No2"> No</label></td>
+            <td style="text-align:left;"> Do you ever say to yourself "I should be able to ... ," "I can never. .. ," or similar statements?
+              </p></td>
+          </tr>
+          <tr style="text-align:left;">
+            <td><input type="checkbox" name="Yes3" id="Yes3">
+              <label for="Yes3">Yes</label>
+              <input type="checkbox" name="No3" id="No3">
+              <label for="No3"> No</label></td>
+            <td style="text-align:left;"> Do you ever ignore your feelings or find that they are overwhelming?
+              </p></td>
+          </tr>
+          <tr style="text-align:left;">
+            <td><input type="checkbox" name="Yes4" id="Yes4">
+              <label for="Yes4">Yes</label>
+              <input type="checkbox" name="No4" id="No4">
+              <label for="No4"> No</label></td>
+            <td style="text-align:left;"> Do you ever get frustrated because of something you can't change or someone who won't change?
+              </p></td>
+          </tr>
+          <tr style="text-align:left;">
+            <td><input type="checkbox" name="Yes5" id="Yes5">
+              <label for="Yes5">Yes</label>
+              <input type="checkbox" name="No5" id="No5">
+              <label for="No5"> No</label></td>
+            <td style="text-align:left;"> Do you resist seeking, asking for, or accepting help?
+              </p></td>
           </tr>
           <tr>
-          <td>
-          
-             <p style="text-align:center;">
-          <input name="Submit" type="submit" id="Submit" onClick="MM_popupMsg('{t}A \'Yes\' answer to any of these questions indicates an area of self-care you might want to work on.{/t}')" value="Submit">
-        </p></td>
+            <td><input type="checkbox" name="Yes6" id="Yes6">
+              <label for="Yes6">Yes</label>
+              <input type="checkbox" name="No6" id="No6">
+              <label for="No6"> No</label></td>
+            <td style="text-align:left;"> Do you feel that your family or others just don't understand what you are going through as a caregiver?
+              </p></td>
           </tr>
-          </table>
-     
-   
-      <h5>{t}Trying To Do It All{/t}</h5>
-      <p>{t}One problem that caregivers frequently experience is trying to do it all and doing it all alone.{/t}</p>
-      
-      <p style="text-align:center;"><i>{t}Is it possible to do it all?</i>{/t}</p>
-      
-      <p>{t}The answer to the question can be both yes and no. It really depends on you. What is critical is how you define what it means to do it all and, whether or not your definition of doing it all includes taking care of yourself so that you thrive, and not just survive.{/t}</p>
-      <p>{t}To Maxine, the answer to the question <em>is it possible to do it all</em>? was <em>no</em>. She says, <em>Mother's needs are endless and no matter what I do, I can never make her happy.</em> Yet, at the same time, Maxine was trying to do it all. Her mother's care dominated Maxine's life. Another caregiver, Maria, answered <em>yes</em> to the question, <em>is it possible to do it all</em>? She explained that "<em>all that needed to be done for my mother was done.</em>"{/t}</p>
-      <p>{t}A major difference between Maxine and Maria was the rules by which they operated. Maxine operated by the rule, <em>I must do everything for my mother</em>. The rule had become, <em>I must help Mama at all costs</em>. As a result, her relationships with other family members suffered and Maxine found herself becoming increasingly resentful. Maxine's feelings of wanting to do everything is legitimate, but the actions associated with her feelings usually are impossible to carry out.{/t}</p>
-    </div>
-    <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t} </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
-  </div>
-  <div id="lesson-1-slide-8" class="course-slide">
-    <div class="content">
-      <h2 class="flowers">{t}Managing Self-Care (continued){/t}</h2>
-      <hr />
-      
-            <img src="<?php echo $this->getImagesUrl('empower/100207042.png'); ?>" alt="{t}forum icon{/t}">
-
-      <p>{t}As a result, Maxine experiences feelings of failure and lack of success. Maria was more realistic. She recognized that the things she wanted to be done whether they were her desires, her mother's desires, or the desires of others-were not the same as the things that needed to be done. Maria's goal was to make her mother as comfortable as possible, without sacrificing herself and the other important relationships in her life. She also got help from family and a community agency in meeting her mother's needs. Maria said:{/t}</p>
-      <p><i>{t}To some degree I recognized that caregiving was like a job and my goal was to find the best way to get the job done. A friend also told me that doing any job well-including the job of caregiving requires four things:{/t}</i></p>
-      <ol>
-        <li><i>{t}Recognizing you can not do everything yourself-you work with others.{/t}</i></li>
-        <li><i>{t}Taking daily breaks.{/t}</i></li>
-        <li><i>{t}Taking vacations to renew oneself.{/t}</i></li>
-        <li><i>{t}Being realistic about what you can do...{/t}</i></li>
-      </ol>
-      <p>{t}There was another difference between Maxine and Maria. Maxine felt it was selfish to think of herself. Maria, on the other hand, viewed that if she was going to be there for the long haul, she must take care of herself, and make sure that she had pleasurable moments in her life.{/t}</p>
-      <p>{t}As a caregiver, you are more likely to <i>be there</i> for your family member who needs your care and to be a more loving and patient caregiver when you meet some of your own needs. It is important to <i>fill your own cup</i> and not allow it to <i>run dry</i>.{/t}</p>
-      
-      <p>{t}It is not being selfish to focus on your own needs and desires when you are a caregiver to a family member who has a chronic or progressive illness. It is important to ask yourself, <i>If my health deteriorates, or I die, what will happen to the person I provide care for? If I get emotionally drained, become deprived of sleep, or become isolated because I am trying to do it all, how loving am I likely to be to my family member?</i>{/t}</p>
-    </div>
-    <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t} </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
-  </div>
-  <div id="lesson-1-slide-9" class="course-slide">
-    <div class="content">
-      <h2 class="flowers">{t}Managing Self-Care (continued){/t}</h2>
-      <hr />
-      <h5>{t}Taking Time for Yourself{/t}</h5>
-      <p class="forum">{t}Please respond to the following questions on the Forum:{/t}</p>
-      
-      <ul class="forum">
-      <li>{t}Do you value yourself and your personal needs?{/t}</li>
-      <li>{t}What do you do for personal renewal?{/t}</li>
-      <li>{t}Do you save some time for yourself out of each day?{/t}</li>
-      <li>{t}Do you take occasional extended breaks?{/t}</li>
-      <li>{t}Or are you so involved with caregiving tasks that you have little or no time for yourself?{/t}</li>
-      <li>{t}What activities do you enjoy?{/t}</li>
-      <li>{t}What would you like to do that would give you a lift?{/t}</li>
-      <li>{t}When was the last time you gave yourself a treat?{/t}</li>
-    </ul>
-      
-      <img src="<?php echo $this->getImagesUrl('empower/forum_icon.png'); ?>" alt="{t}forum icon{/t}">
-      
-      <p>{t}Breaks in caregiving are a must. They are as important to health as diet, sleep, rest, and exercise. It is important not to lose sight of your personal needs and interests. Studies show that sacrificing yourself in the care of another and removing pleasurable events from your life can lead to emotional exhaustion, depression, and physical illness. You have a right-even a responsibility-to take some time away from caregiving.{/t}</p>
-      <p>{t}Regular breaks from the tasks of caregiving are essential. Decide on the time, date, and activity-then follow through. Breaks do not have to be long to make a positive difference. It is important to plan some time for yourself in every day, even if that time is only for 15 minutes or half an hour. Most important is to do something that "fills your cup" and helps you to feel better and thrive. If you have difficulty taking breaks for yourself, consider taking them for your family member. Care receivers also benefit from caregivers getting breaks.{/t}</p>
-    </div>
-    <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t} </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
-  </div>
-  <div id="lesson-1-slide-10" class="course-slide">
-    <div class="content">
-      <h2 class="flowers">{t}Setting Goals{/t}</h2>
-      <hr />
-
-      <p>{t}An important tool in taking care of yourself is setting goals. A goal is something you would like to accomplish in the next three to six months:{/t}</p>
-      
-      <p style="text-align:center;"><i>{t}What would you like to do to take better care of yourself and to help yourself to thrive?{/t}</i></p>
-      
-      <p>{t}This might be to get a break from caregiving for a week, get help with caregiving tasks, be able to walk three miles, or quit feeling guilty.{/t}</p>
-      <p>{t}Goals often are difficult to accomplish because they may seem like dreams or they may be overwhelming. As a result, we may not even try to accomplish them or we may give up shortly after we get started. We will address this problem shortly.{/t}</p>
-      
-      
-      <p class="forum">{t}For now, take a moment and write at least 3 goals on the Forum. Put an asterisk (*) next to the goal you would like to work on first. After identifying a goal, the first step is to brainstorm all of the different things you might do to reach your goal. Identify and write down all possible options on the Forum as a separate posting.{/t}</p>
-      
-            <img src="<?php echo $this->getImagesUrl('empower/forum_icon.png'); ?>" alt="{t}forum icon{/t}">
-
-      
-      <p>{t}The second step is to evaluate the options you have identified. Which options seem like possibilities to you? It is important not to assume that an option is unworkable or does not exist until you have thoroughly investigated it or given it a try. Assumptions are major self-care enemies.{/t}</p>
-      
-      <p class="forum">{t}Go back to the above Forum posting and put an asterisk (*) next to two or three options you would like to try. Select one to try.{/t}</p>
-                  <img src="<?php echo $this->getImagesUrl('empower/forum_icon.png'); ?>" alt="{t}forum icon{/t}">
-
-      
-      <p>{t}The third step is to turn your option into a short-term plan, which we call making an action plan.{/t}</p>
-    </div>
-    <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t} </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
-  </div>
-  <div id="lesson-1-slide-11" class="course-slide">
-    <div class="content">
-      <h2 class="flowers">{t}Making Action Plans{/t}</h2>
-      <hr />
-      <p>{t}An action plan is a specific action that you are confident you can accomplish within the next week. It is an agreement or contract with yourself.{/t}</p>
-      <p>{t}Action plans are one of your most important self-care tools. An action. plan is a step toward reaching your long-term goal. It is to be something you want to do. It is not to be something you feel you should do, have to do, or need to do. The intent of making an action plan is to help you to feel better and to take better care of yourself. Remember, an action plan is a <i>want to do</i>. Here are the five steps for making an action plan:{/t}</p>
-      <ul>
-        <li>{t}Decide what you want to do.{/t}</li>
-        <li>{t}Make your plan behavior-specific.{/t}</li>
-        <li>{t}Make a specific plan.{/t}</li>
-        <li>{t}Determine your confidence level.{/t}</li>
-        <li>{t}Write down your action plan.{/t}</li>
-      </ul>
-      <h5>{t}Decide What You Want To Do{/t}</h5>
-      <p>{t}Think about what is realistic for you to accomplish within the next week. It is important that an action plan is reachable; otherwise, you are likely to experience frustration. An action plan is to help you experience success-not frustration, increased stress, or failure. An action plan starts with the words, "<i>I will ...</i>" If you find yourself saying "<i>I will try to ...,</i>" "<i>I have to ...,</i>" or "<i>I should ...,</i>" then re-examine your action plan. It probably is not something that you truly want to do.{/t}</p>
-      <h5>{t}Make Your Plan Behavior-Specific{/t}</h5>
-      <p>{t}The more specific your action plan, the greater your chances of accomplishing it. For example, <i>taking better care of myself</i> is not a specific behavior. However, making an appointment for a physical check-up, walking three times a week, getting a massage on Thursday afternoon, or asking someone to stay with your family member for one morning are all specific behaviors. <i>I will relax</i> also is not a specific behavior; however, reading a book, listening to your favorite music, or puttering in the garden are specific behaviors.{/t}</p>
-    </div>
-    <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t} </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
-  </div>
-  <!-- Lesson 1 Slide 11 -->
-  <div id="lesson-1-slide-11" class="course-slide">
-    <div class="content">
-      <h2 class="flowers">{t}Making Action Plans (continued){/t}</h2>
-      <hr />
-      <p>{t}Make a Specific Plan{/t}</p>
-      <p>{t}Making a specific plan is often difficult, yet it is the most important part of making an action plan. A specific plan answers these four questions:{/t}</p>
-      <ol>
-        <li>{t}What are you going to do? - Examples: I will read (book name) for pleasure. Or, I will walk.{/t}</li>
-        <li>{t}How much will you do? - Examples: Will you read one chapter or will you read for a half hour? Will you walk two blocks or for 20 minutes?{/t}</li>
-        <li>{t}When will you do this? Examples: Will you read the first thing in the morning when you awaken, before you go to bed, when the care receiver is sleeping, or ... ? If your plan is to walk, when during the day will you do it?{/t}</li>
-        <li>{t}How often will you do this activity? Example: Three times a week on Monday, Wednesday, and Friday.{/t}</li>
-      </ol>
-      <p>{t}A common mistake is to make an action plan that is unreachable within the time frame. For example, if you plan to do something every day, you might fail. Caregiving, and life in general, has its surprises. Although well-intentioned, it is often not possible to do something every day. It is better to plan to do something once or twice a week and exceed your action plan than to plan to do something every day and fail because you only did it six days, rather than seven. Remember, an action plan is meant to help you to take better care of yourself and to experience success. The last thing you need is additional pressure, disappointment, and stress.{/t}</p>
-      <p>{t}Here are two recommendations for writing an action plan that can help you achieve success.{/t}</p>
-      <p>{t}Start where you are or start slowly. If there is a book you have been wanting to read, but just have not found the time, it may not be realistic to expect to read the entire book in the next week. Instead, try reading for a half hour twice during the week If you have not been physically active, it may be unrealistic to make an action plan· to start walking three miles. It is better to make your action plan for something that you believe you can accomplish. For example, make your plan for walking three blocks or a half mile, rather than three miles.{/t}</p>
-      <p>{t}Give yourself time off. We all have days when we do not feel like doing anything. That is the advantage of saying you will do something three days a week, rather than every day. That way, if you do not feel like doing something on one day, or something develops that prevents you from doing it, you can still achieve your action plan.{/t}</p>
-    </div>
-    <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
-  </div>
-  <!-- Lesson 1 Slide 12 -->
-  <div id="lesson-1-slide-12" class="course-slide">
-    <div class="content">
-      <h2 class="flowers">{t}Making Action Plans (continued){/t}</h2>
-      <hr />
-      <p>{t}Determine Your Confidence Level{/t}</p>
-      <p>{t}Once you have made your action plan, ask yourself the following question: On a scale of 0 to 10, with 0 being not at all confident and 10 being totally confident, how confident am I that I can complete my action plan? If your answer is 7 or above, your action plan is probably realistic and reachable. However, if your answer is 6 or below, it is important to take another look at your action plan. Something probably needs to be adjusted.{/t}</p>
-      <p>{t}Ask yourself: What makes me uncertain about accomplishing my action plan? What problems do I foresee? Then, see if you either find a solution to the problems you identified or change your action plan to a new one in which you feel greater confidence.{/t}</p>
-      <p>{t}Write Down Your Action Plan{/t}</p>
-      <p>{t}Once you are satisfied with your action plan, write it down. Putting an action plan in writing helps us to remember, keep track of, and accomplish the agreement we have made with ourselves. Keep track of how you are doing. Write down the problems you encounter in carrying out your action plan. Check off activities as you accomplish them. If you made an adjustment in your action plan, make a note of what you did.{/t}</p>
-      <p>{t}At the end of the week, review your action plan. Ask yourself, "Am l nearer to accomplishing my goal?" "How do I feel about what I did?" What obstacles or problems, if any, did I encounter?" Taking stock is important. If you are having problems, this is the time to seek solutions.{/t}</p>
-    </div>
-    <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
-  </div>
-  <!-- Lesson 1 Slide 13 -->
-  <div id="lesson-1-slide-13" class="course-slide">
-    <div class="content">
-      <h2 class="flowers">{t}Problem-Solving: A Solution-Seeking Approach{/t}</h2>
-      <hr />
-      <p>{t}Sometimes you may find that your action plan is not workable. You may encounter unusual circumstances that week and need to give the plan a try for at least another week or you may need to make adjustments in your original plan. The following solution seeking approach can help you identify solutions to problems.{/t}</p>
-      <ul>
-        <li>{t}Clearly identify the problem. This is the first and most important step in the solution-seeking approach. It also can be the most difficult step.{/t}</li>
-        <li>{t}List ideas to solve the problem. Family, friends, and others may be helpful in giving ideas. When you ask for ideas, just listen to each suggestion. It is best not to respond as to why an idea is or is not likely to work. Just focus on getting the ideas.{/t}</li>
-        <li>{t}Select one to try. When trying a new idea, give it a fair trial before deciding that it will not work.{/t}</li>
-        <li>{t}Assess the results. Ask yourself, "How well did what I chose work?" If all went well, congratulate yourself for finding a solution to the identified problem. If the first idea did not work, try another idea. Sometimes an idea just needs fine-tuning. It is important not to give up on an idea just because it did not work the first time. If you have difficulty finding a solution that works, utilize other resources. Share your problem with family, friends, and professionals and ask them for possible ideas. If you still find that suggested solutions do not work, you may need to accept that the problem is not solvable right now.{/t}</li>
-      </ul>
-      <p>{t}Remember, just because there does not seem to be a workable solution right now does not mean that a problem can not be solved later, or that other problems can not be solved in the same way. It may be helpful to go back to the first step and consider if the problem needs to be redefined. For example, a caregiver had thought that her problem was "I am tired all of the time." However, the real problem was the caregiver's beliefs that "No one can care for John like I can," and "I have to do everything myself." As a result of these beliefs, the caregiver was doing everything herself and getting worn out. When she redefined the problem and focused on changing her beliefs and view of the caregiving situation, she found a workable solution. Sometimes, too, a problem may be easier to work on if you break it down into smaller problems.{/t}</p>
-      <p>{t}Most of the time if you follow these steps, you will find a solution that solves the problem. It is important to avoid making the mistake of jumping from step l to step 7 and thinking "nothing can be done."{/t}</p>
-    </div>
-    <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
-  </div>
-  <!-- Lesson 1 Slide 14 -->
-  <div id="lesson-1-slide-14" class="course-slide">
-    <div class="content">
-      <h2 class="flowers">{t}Reward Yourself{/t}</h2>
-      <hr />
-      <p>{t}Accomplishing action plans is often a reward in itself. However, it is also important to find healthy pleasures that add enjoyment to your life. Rewards do not have to be fancy or expensive or take a lot of time. One caregiver; for example, regularly goes to a movie or a play as a gift to herself from her husband. She said:{/t}</p>
-      <p>{t}When my husband was well, he would take me out Friday nights to a movie or a play at least twice a month. Because of his medical condition, he is no longer able to do so. Now a friend and I go to a movie or a play at least once a month. I consider this is a treat that my husband is still giving to me.{/t}</p>
-      <p>{t}Another caregiver said:{/t}</p>
-      <p>{t}Before my wife's illness, I would go golfing with my buddies on Saturday morning. When Carmela needed more care, I quit golfing. I now treat myself to Saturday golfing, while my daughter or a friend visits with Carmela. This gives me something to look forward to each week and I feel more alive when I return home. I am also finding I am more patient with Carmela. My daughter says I am always happier and calmer when I return home. So, I look at Saturday golfing as my treat not only to me, but also to Carmela.{/t}</p>
-    </div>
-    <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
-  </div>
-  <!-- Lesson 1 Slide 15 -->
-  <div id="lesson-1-slide-15" class="course-slide">
-    <div class="content">
-      <h2 class="flowers">{t}My Action Plan{/t}</h2>
-      <hr />
-      <p>{t}In review, a caregiver who practices selfcare does the following:{/t}</p>
-      <ol>
-        <li>{t}Sets goals.{/t}</li>
-        <li>{t}Identifies a variety of options for reaching a goal{/t}</li>
-        <li>{t}Makes an action plan toward accomplishing the goal.{/t}</li>
-        <li>{t}Carries out the action plan.{/t}</li>
-        <li>{t}Assesses how well the action plan is working.{/t}</li>
-        <li>{t}Makes adjustments, as necessary, in the action plan.{/t}</li>
-        <li>{t}Rewards himself or herself.{/t}</li>
-      </ol>
-      <p>{t}Not all goals are achievable. Sometimes we must accept that what we want to do is not possible at this time, and we must let go of the idea. Be realistic about goals and do not dwell on what can not be done.{/t}</p>
-      <p>{t}Consider what is likely to happen to the caregiver who is driven by a goal to make her mother happy. Given her mother's personality, this goal may be completely unachievable. Such a goal creates a heavy burden and a caregiver is not likely to achieve it. However, an achievable goal might be to provide a pleasurable activity for her mother at least once a week perhaps taking her to get her hair done, visiting a friend, watching a comedy on television, or working together on a project her mother enjoys.{/t}</p>
-      <p>{t}Remember, what is important in caregiving is not just to survive, but to thrive!{/t}</p>
-      <p>{t}Action Plan Template{/t} BUTTON HERE</p>
-    </div>
-    <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Complete Lesson{/t}</a></div>
-  </div>
-  <!-- need this final div here to close lesson-1 --> 
-</div>
-
-<!-- Lesson 2 Slide 1 -->
-<div id="lesson-2">
-  <div id="lesson-2-slide-1" class="course-slide">
-    <div class="content">
-      <h2 class="flowers">{t}Reducing Personal Stress{/t}</h2>
-      <hr />
-      <img src="<?php echo $this->getImagesUrl('empower/here.png'); ?>" alt="{t}image{/t}" />
-      <p>{t}This module two main sections:{/t}</p>
-      <ul>
-        <li>{t}The Stress of Caregiving{/t}</li>
-        <li>{t}Steps to Maintain Health &amp; Avoid Stress{/t}</li>
-      </ul>
-      <p>{t}This lesson explores the stress of caregiving. It will help you identify and understand your particular stressors, challenges, and strengths. You can then plan strategies that help you cope, change, and reduce stress. A basic premise of this chapter is that each of us has a reservoir of strength. The challenge is to identify our strengths build on them.{/t}</p>
-    </div>
-    <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Start Course &raquo;{/t}</a></div>
-  </div>
-  <!-- Lesson 2 Slide 2 -->
-  <div id="lesson-2-slide-2" class="course-slide">
-    <div class="content">
-      <h2 class="flowers">{t}The Stress of Caregiving{/t}</h2>
-      <hr />
-      <p>{t}There has been so much written about stress it has become a household word. Studies show that a certain amount of stress is helpful. It can challenge us to change and motivate us to do things we might not do otherwise. However, when the amount of stress overwhelms our ability to cope with it, we feel 'distress' or 'burnout.'{/t}</p>
-      <p>{t}Distress is 'suffering of mind or body; severe physical or mental strain.' As a caregiver, you no doubt have increased stress in your life, whether you are caring for a mother with early Parkinson's disease, who is still able to care for her personal needs, or a spouse who does not recognize you because of advanced Alzheimer's disease.{/t}</p>
-      <p>{t}Please think about the last time you were under distress.{/t}</p>
-      <p>{t}Each caregiving situation is unique. What is stressful for you may not be stressful for someone else. In his book The Survivor Personality, AI Siebert says, "there is no stress until you feel a strain." Since the feeling of stress is subjective and unique to each individual, it is difficult to define objectively. The stress you feel is not only the result of your caregiving situation, it is all of your perception of it. Your stress will increase or decrease depending on how you perceive your circumstances. And your perception will affect how you respond.{/t}</p>
-      <p>{t}Factors That Affect Stress{/t}</p>
-      <p>{t}Your level of stress is influenced by many factors, including:{/t}</p>
-      <ul>
-        <li>{t}whether your caregiving is voluntary or not;{/t}</li>
-        <li>{t}your relationship with the care receiver;{/t}</li>
-        <li>{t}your coping abilities;{/t}</li>
-        <li>{t}your caregiving situation; and{/t}</li>
-        <li>{t}whether support is available.{/t}</li>
-      </ul>
-    </div>
-    <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
-  </div>
-  <!-- Lesson 2 Slide 3 -->
-  <div id="lesson-2-slide-3" class="course-slide">
-    <div class="content">
-      <h2 class="flowers">{t}The Stress of Caregiving (continued){/t}</h2>
-      <hr />
-      <p>{t}Whether your caregiving is voluntary or not -{/t}</p>
-      <p>{t}Many people become caregivers voluntarily. Others acquire the role because no one else is available. When you become a caregiver voluntarily, you are making a choice. However, if you "inherited" the job and feel you had no choice, the chances are greater for experiencing strain, distress, and resentment. Nancy became a caregiver because no one else was available.{/t}</p>
-      <p>{t}Nancy could not have been more surprised when the visiting nurse asked her if she was the primary caregiver for her mother in-law, Joan. Nancy was fond of Joan. She called and stopped by frequently to see how Joan was managing, but had not thought of herself as the primary caregiver. It was apparent that Joan's medical condition was worsening and she was becoming increasingly weak Nancy realized there were no other children or relatives available, so she agreed, although somewhat reluctantly, to be Joan's caregiver. Nancy felt anxious and uncertain about what it meant to be a primary caregiver and whether she had the necessary skills to perform the role.{/t}</p>
-      <p>{t}Luckily, Nancy and Joan had a good relationship and they were able to communicate openly, minimizing some of the potential for stress. You can not always think about a caregiving relationship in advance, but if you can, it has greater potential for success.{/t}</p>
-      <p>{t}Your relationship with the care receiver -{/t}</p>
-      <p>{t}If your relationship with the care receiver has been difficult, becoming a caregiver is more of a challenge. If the care receiver has always been demanding and controlling, you will probably feel more stress, anger, and resentment. Sometimes people are caregiving with the hope of healing a relationship. The healing may or may not happen. If healing does not happen, the caregiver may feel regret, depressed, and discouraged. A professional counselor, spiritual advisor, or trusted friend can help deal with such feelings and emotions.{/t}</p>
-      <p>{t}Your coping abilities -{/t}</p>
-      <p>{t}How you have coped with stress in the past predicts how you will cope now. Did you find constructive ways to manage your stress? Perhaps you were able to find time to exercise regularly and generally take care of yourself. Or did you rely on alcohol or drugs to help you cope? Sometimes people rely on medications and alcohol in times of stress, which only makes matters worse. It is important to identify your current coping strengths and build on them. Learning new coping skills also will help make your caregiving situation less stressful.{/t} 
-    </div>
-    <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
-  </div>
-  <!-- Lesson 2 Slide 4 -->
-  <div id="lesson-2-slide-4" class="course-slide">
-    <div class="content">
-      <h2 class="flowers">{t}The Stress of Caregiving (continued){/t}</h2>
-      <hr />
-      <p>{t}The caregiving situation -{/t}</p>
-      <p>{t}What does your caregiving situation require of you? Does it require 24-hour-aday availability? Or do you just need to make an occasional telephone call to check on the person? What disease does the care receiver have? Does he have a mental or physical disability, or both? Certain caregiving situations are more stressful than others. For example, caring for someone who has a dementia such as Alzheimer's disease is often more stressful than caring for someone with a physical limitation. Also, stress tends to be highest when:{/t}</p>
-      <ul>
-        <li>{t}the caregiving situation continues for a long time.{/t}</li>
-        <li>{t}the care receiver's needs gradually increase.{/t}</li>
-        <li>{t}caregivers feel they have limited or no support.{/t}</li>
-        <li>{t}caregivers have their own health/physical problems.{/t}</li>
-      </ul>
-      <p>{t}Whether support is available -{/t}</p>
-      <p>{t}Caregivers who feel isolated and without adequate support usually experience a higher level of stress. Support may be lacking for several reasons:{/t}</p>
-      <ul>
-        <li>{t}The caregiver may resist accepting help, even when he or she needs it.{/t}</li>
-        <li>{t}Others may be willing to help but do not offer because they are uncomfortable around the ill person, frightened of the illness, or do not know what they can do.{/t}</li>
-        <li>{t}Others do not want to interfere, especially if the caregiver seems to have everything under control and has refused help in the past.{/t}</li>
-      </ul>
-      <p>{t}Caregiver stress is influenced by many factors, including the need to adapt to ongoing changes and losses caused by the care receiver's illness. These changes cause you to redefine your life. What was normal has changed. You are living with a new reality.{/t} 
-    </div>
-    <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
-  </div>
-  <!-- Lesson 2 Slide 5 -->
-  <div id="lesson-2-slide-5" class="course-slide">
-    <div class="content">
-      <h2 class="flowers">{t}The Stress of Caregiving (continued){/t}</h2>
-      <hr />
-      <p>{t}Signs of Stress{/t}</p>
-      <p>{t}Here is a checklist of some common signs of stress:{/t}
-      <table>
-        <tr>
-          <td>Physical</td>
-          <td>Mental/Emotional</td>
-          <td>Behavioral </td>
-        </tr>
-        <tr>
-          <td><p>
-              <input type="checkbox" name="checkbox" id="checkbox">
-              Headache</p>
-            <p>
-              <input type="checkbox" name="checkbox2" id="checkbox2">
-              Muscle tension and aches</p>
-            <p>
-              <input type="checkbox" name="checkbox3" id="checkbox3">
-              Nausea, diarrhea, heartburn</p>
-            <p>
-              <input type="checkbox" name="checkbox4" id="checkbox4">
-              Rapid heartbeat, palpitations</p>
-            <p>
-              <input type="checkbox" name="checkbox5" id="checkbox5">
-              Shortness of breath, dizziness</p>
-            <p>
-              <input type="checkbox" name="checkbox6" id="checkbox6">
-              Constant fatigue, energy loss</p>
-            <p>
-              <input type="checkbox" name="checkbox7" id="checkbox7">
-              Change in appetite</p>
-            <p>
-              <input type="checkbox" name="checkbox8" id="checkbox8">
-              Weight gain or loss</p>
-            <p>
-              <input type="checkbox" name="checkbox9" id="checkbox9">
-              Frequent illnesses</p></td>
-          <td><p>
-              <input type="checkbox" name="checkbox10" id="checkbox10">
-              Anxiety</p>
-            <p>
-              <input type="checkbox" name="checkbox11" id="checkbox11">
-              Constant worrying </p>
-            <p>
-              <input type="checkbox" name="checkbox12" id="checkbox12">
-              Depression, sadness</p>
-            <p>
-              <input type="checkbox" name="checkbox13" id="checkbox13">
-              Inability to concentrate</p>
-            <p>
-              <input type="checkbox" name="checkbox14" id="checkbox14">
-              Moodiness, irritability</p>
-            <p>
-              <input type="checkbox" name="checkbox15" id="checkbox15">
-              Restlessness, agitation</p>
-            <p>
-              <input type="checkbox" name="checkbox16" id="checkbox16">
-              Feeling overwhelmed </p>
-            <p>
-              <input type="checkbox" name="checkbox17" id="checkbox17">
-              Racing thoughts</p>
-            <p>
-              <input type="checkbox" name="checkbox18" id="checkbox18">
-              Forgetfulness, confusion</p></td>
-          <td><p>
-              <input type="checkbox" name="checkbox19" id="checkbox19">
-              Sleeping too much or too little</p>
-            <p>
-              <input type="checkbox" name="checkbox20" id="checkbox20">
-              Short temper </p>
-            <p>
-              <input type="checkbox" name="checkbox21" id="checkbox21">
-              Difficulty making decisions</p>
-            <p>
-              <input type="checkbox" name="checkbox22" id="checkbox22">
-              Poor nutrition</p>
-            <p>
-              <input type="checkbox" name="checkbox23" id="checkbox23">
-              Too much smoking, drinking</p>
-            <p>
-              <input type="checkbox" name="checkbox24" id="checkbox24">
-              Tooth grinding</p>
-            <p>
-              <input type="checkbox" name="checkbox25" id="checkbox25">
-              Neglecting responsibilities</p>
-            <p>
-              <input type="checkbox" name="checkbox26" id="checkbox26">
-              Social isolation</p>
-            <p>
-              <input type="checkbox" name="checkbox27" id="checkbox27">
-              Nervous habits fidgeting</p></td>
-        </tr>
-      </table>
-    </div>
-    <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
-  </div>
-  <!-- Lesson 2 Slide 6 -->
-  <div id="lesson-2-slide-6" class="course-slide">
-    <div class="content">
-      <h2 class="flowers">{t}Steps to Maintain Health &amp; Avoid Stress{/t}</h2>
-      <hr />
-      <p>{t}Whatever causes stress in your life, too much of it can lower your resistance to disease and lead to "burnout." Current research shows that there is a _close connection between stress and health. Unrelieved stress is on,e of many factors that cause illness. Research also shows that thoughts and emotions affect the immune system, which is the first line of defense against disease. It is possible to strengthen the immune system by reducing stress. The following four steps will help you maintain your health and avoid distress:{/t}</p>
-      <ol>
-        <li>{t}Recognize your warning signs of stress.{/t}</li>
-        <li>{t}Identify your sources of stress.{/t}</li>
-        <li>{t}Identify what you can and cannot change.{/t}</li>
-        <li>{t}Take action to manage your stress.{/t}</li>
-      </ol>
-      <p>{t}Each of these steps will be discussed in detail.{/t}</p>
-    </div>
-    <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
-  </div>
-  <!-- Lesson 2 Slide 7 -->
-  <div id="lesson-2-slide-6" class="course-slide">
-    <div class="content">
-      <h2 class="flowers">{t}Steps to Maintain Health &amp; Avoid Stress (continued){/t}</h2>
-      <hr />
-      <p>{t}Step 1: Recognize Your Warning Signs of Stress{/t} -</p>
-      <p>{t}The first step in managing stress is to be aware of how it affects you. What are your warning signs and symptoms of stress? The following are signs that may occur when you experience an unusual amount of stress. Answering these questions can help you identify your own warning signs. What is usually your earliest sign of stress? It is important to recognize stress early and do something about it, before it causes you serious problems. For one caregiver, the early sign might be increased irritability. For another, it might be lying awake for hours before falling asleep. For another, it might be fatigue and a lack of energy.{/t}</p>
-      <p>{t}Sometimes, too, when we are involved in a situation, we may not listen to our early warning signs, but they are voiced in the words of others: "You look so tired," "You get upset so easily lately," "Why are you snapping at me?" If you hear such statements, it is a "red light" warning sign. Just as a flashing red light on your car's dashboard warns you that something is wrong with your car, we also display warning signals. What happens if we ignore the early red flashing light on the car's dashboard? What happens if we ignore our personal early warning signals?{/t}</p>
-      <p>{t}Do you listen to your early warning signals? What are they? And what do you do about them? Warning signs usually mean we need to stop, valuate what is happening, and make some changes. The earlier warning signals are recognized, the greater the chance of avoiding or reducing the destructive effects of stress.{/t}</p>
-      <div class="question">
-        <p>
-          <input type="checkbox" name="Yes" id="Yes">
-          <label for="Yes">Yes</label>
-          <input type="checkbox" name="No" id="No">
-          <label for="No">No</label>
-          | Do you feel a loss of energy or zest for life?</p>
-        <p>
-          <input type="checkbox" name="Yes2" id="Yes2">
-          <label for="Yes2">Yes</label>
-          <input type="checkbox" name="No2" id="No2">
-          <label for="No2">No</label>
-          | Do you feel tired or exhausted much of the time?</p>
-        <p>
-          <input type="checkbox" name="Yes3" id="Yes3">
-          <label for="Yes3">Yes</label>
-          <input type="checkbox" name="No3" id="No3">
-          <label for="No3">No</label>
-          | Do you feel out of control, exhibiting uncharacteristic emotions or actions?</p>
-        <p>
-          <input type="checkbox" name="Yes4" id="Yes4">
-          <label for="Yes4">Yes</label>
-          <input type="checkbox" name="No4" id="No4">
-          <label for="No4">No</label>
-          | Do you feel tense, nervous, or anxious much of the time?</p>
-        <p>
-          <input type="checkbox" name="Yes5" id="Yes5">
-          <label for="Yes5">Yes</label>
-          <input type="checkbox" name="No5" id="No5">
-          <label for="No5">No</label>
-          | Do you lack interest in people or things that were formerly pleasurable?</p>
-        <p>
-          <input type="checkbox" name="Yes6" id="Yes6">
-          <label for="Yes6">Yes</label>
-          <input type="checkbox" name="No6" id="No6">
-          <label for="No6">No</label>
-          | Are you becoming increasingly isolated?</p>
-        <p>
-          <input type="checkbox" name="Yes7" id="Yes7">
-          <label for="Yes7">Yes</label>
-          <input type="checkbox" name="No7" id="No7">
-          <label for="No7">No</label>
-          | Are you consuming more sleeping pills, medicating, alcohol, caffeine, or
-          cigarettes?</p>
-        <p>
-          <input type="checkbox" name="Yes8" id="Yes8">
-          <label for="Yes8">Yes</label>
-          <input type="checkbox" name="No8" id="No8">
-          <label for="No8">No</label>
-          | Are you having increased health problems: ie, high blood pressure headaches, ulcers, upset stomach, or other difficulties with digestion?</p>
-        <p>
-          <input type="checkbox" name="Yes14" id="Yes14">
-          <label for="Yes14">Yes</label>
-          <input type="checkbox" name="No14" id="No14">
-          <label for="No14">No</label>
-          | Do you have sleep problems, such as
-          difficulty falling asleep at night,
-          awakening early, or sleeping excessively?</p>
-        <p>
-          <input type="checkbox" name="Yes13" id="Yes13">
-          <label for="Yes13">Yes</label>
-          <input type="checkbox" name="No13" id="No13">
-          <label for="No13">No</label>
-          | Are you experiencing appetite changes?</p>
-        <p>
-          <input type="checkbox" name="Yes12" id="Yes12">
-          <label for="Yes12">Yes</label>
-          <input type="checkbox" name="No12" id="No12">
-          <label for="No12">No</label>
-          | Do you have problems with concentration
-          or memory?</p>
-        <p>
-          <input type="checkbox" name="Yes11" id="Yes11">
-          <label for="Yes11">Yes</label>
-          <input type="checkbox" name="No11" id="No11">
-          <label for="No11">No</label>
-          | Are you increasingly irritable or
-          impatient with others?</p>
-        <p>
-          <input type="checkbox" name="Yes10" id="Yes10">
-          <label for="Yes10">Yes</label>
-          <input type="checkbox" name="No10" id="No10">
-          <label for="No10">No</label>
-          | Do you have feelings of helplessness or
-          hopelessness?</p>
-        <p>
-          <input type="checkbox" name="Yes9" id="Yes9">
-          <label for="Yes9">Yes</label>
-          <input type="checkbox" name="No9" id="No9">
-          <label for="No9">No</label>
-          | Are you abusing or neglecting to provide care to the care receiver?</p>
-        <p>
-          <input type="checkbox" name="Yes15">
-          <label for="Yes15">Yes</label>
-          <input type="checkbox" name="No15">
-          <label for="No15">No</label>
-          Do you have thoughts of suicide?</p>
-        <p>
-          <input name="button" type="submit" id="button" onClick="MM_popupMsg('A \&quot;yes\&quot; answer to even one or two of these questions can indicate stress that has become debilitating.')" value="Submit">
-        </p>
+          <tr>
+            <td><p style="text-align:center;">
+                <input name="Submit" type="submit" id="Submit" onClick="MM_popupMsg('{t}A \'Yes\' answer to any of these questions indicates an area of self-care you might want to work on.{/t}')" value="Submit">
+              </p></td>
+          </tr>
+        </table>
+        <h5>{t}Trying To Do It All{/t}</h5>
+        <p>{t}One problem that caregivers frequently experience is trying to do it all and doing it all alone.{/t}</p>
+        <p style="text-align:center;"><i>{t}Is it possible to do it all?</i>{/t}</p>
+        <p>{t}The answer to the question can be both yes and no. It really depends on you. What is critical is how you define what it means to do it all and, whether or not your definition of doing it all includes taking care of yourself so that you thrive, and not just survive.{/t}</p>
+        <p>{t}To Maxine, the answer to the question <em>is it possible to do it all</em>? was <em>no</em>. She says, <em>Mother's needs are endless and no matter what I do, I can never make her happy.</em> Yet, at the same time, Maxine was trying to do it all. Her mother's care dominated Maxine's life. Another caregiver, Maria, answered <em>yes</em> to the question, <em>is it possible to do it all</em>? She explained that "<em>all that needed to be done for my mother was done.</em>"{/t}</p>
+        <p>{t}A major difference between Maxine and Maria was the rules by which they operated. Maxine operated by the rule, <em>I must do everything for my mother</em>. The rule had become, <em>I must help Mama at all costs</em>. As a result, her relationships with other family members suffered and Maxine found herself becoming increasingly resentful. Maxine's feelings of wanting to do everything is legitimate, but the actions associated with her feelings usually are impossible to carry out.{/t}</p>
       </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t} </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
-    <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
-  </div>
-  <!-- Lesson 2 Slide 8 -->
-  <div id="lesson-2-slide-8" class="course-slide">
-    <div class="content">
-      <h2 class="flowers">{t}Steps to Maintain Health &amp; Avoid Stress (continued){/t}</h2>
-      <hr />
-      <p>{t}Step 2: Identify Your Sources of Caregiving Stress -{/t}</p>
-      <p>{t}The second step in managing stress is to recognize what causes your stress. Not all stressors are the result of caregiving. Other sources can affect your ability to be a caregiver. The following questions include many common sources of stress. Thinking about these questions can help you recognize some of your own sources.{/t}</p>
-      <ol>
-        <li>{t}Are you experiencing many demands on your time, energy, or money? What are they?{/t}</li>
-        <li>{t}Do you feel you have conflicting responsibilities? Which ones?{/t}</li>
-        <li>{t}Are there differences in expectations between your family, your boss, the care receiver, and yourself? What are they?{/t}</li>
-        <li>{t}Do you feel others do not understand the care receiver's mental or physical condition?{/t}</li>
-        <li>{t}Do you have difficulty meeting the care receiver's physical or emotional needs?{/t}</li>
-        <li>{t}Are you pressured by financial decisions and lack of resources?{/t}</li>
-        <li>{t}Do you feel a loss of freedom, to the point of feeling trapped?{/t}</li>
-        <li>{t}Is there disagreement among family members?{/t}</li>
-        <li>{t}Do you feel that other family members are not doing their share?{/t}</li>
-        <li>{t}Does the care receiver place unrealistic demands and expectations on you?{/t}</li>
-        <li>{t}Is there a lack of open communication between you and the care receiver?{/t}</li>
-        <li>{t}Do other family members have negative attitudes that create difficulty for you?{/t}</li>
-        <li>{t}Is it painful to watch the care receiver's condition get worse?{/t}</li>
-        <li>{t}Are there other problems with children, marriage, job, finances, or health? What are they?{/t}</li>
-      </ol>
-      <p>{t}Consider your "yes" answers carefully. The sources of stress you have identified are indicators for change. Use the awareness you have gained in the first two steps to make helpful changes.{/t}</p>
-    </div>
-    <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
-  </div>
-  <!-- Lesson 2 Slide 9 -->
-  <div id="lesson-2-slide-9" class="course-slide">
-    <div class="content">
-      <h2 class="flowers">{t}Steps to Maintain Health &amp; Avoid Stress (continued){/t}</h2>
-      <hr />
-      <p>{t}The following story is an example of a caregiver who recognized the source of her distress and made changes to better manage the situation.{/t}</p>
-      <p>{t}Ernestine was increasingly fatigued, irritable, and depressed with the responsibility of caring for her husband, Richard, who had Parkinson's disease. Richard's condition was steadily getting worse. He was bed-bound and needed help with many functions. Other family members had not offered to help, and Ernestine felt abandoned, alone, angry, and overwhelmed. A few friends and neighbors had offered to help but Ernestine refused. When she started having health problems, it became clear that something had to change. She had to have help.{/t}</p>
-      <p>{t}Because Ernestine had difficulty asking for help, she devised a simple plan that would give others an opportunity to help without having to be asked. She made a list of tasks she needed help with and posted it on the refrigerator. The list included such things as vacuuming the living room, grocery shopping, staying with Richard so she could go to church, weeding the garden, picking up audio books at the library, picking up medications at the pharmacy, and preparing food. When visitors offered to help, Ernestine referred them to the list, suggesting they choose a task that suited them. This proved to be a successful plan for everyone.{/t}</p>
-      <p>{t}It is important to identify the causes of your stress before they overwhelm you. Do not wait until you develop health problems, as Ernestine did. Many caregivers keep going until they become ill. You can only be an effective caregiver if you are healthy. Self-sacrifice to the point of illness benefits no one and is not required or recommended.{/t}</p>
-    </div>
-    <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
-  </div>
-  <!-- Lesson 2 Slide 10 -->
-  <div id="lesson-2-slide-10" class="course-slide">
-    <div class="content">
-      <h2 class="flowers">{t}Steps to Maintain Health &amp; Avoid Stress (continued){/t}</h2>
-      <hr />
-      <p>{t}Step 3: Identify What You Can and Cannot Change -{/t}</p>
-      <p>{t}A major challenge of caregiving is to not only survive, but to rebuild your life and thrive. This is possible once you know the sources and signs of your stress. Then you can determine those you can do something about and those that are beyond your control. Step three is to identify what you can and cannot change{/t}</p>
-      <p>{t}Identifying what you can change gives you a sense of control over events. However, it is not easy to determine what can and cannot be changed. Too often people try to change things they have no control over. For example, someone who focuses on trying to change another person usually ends up more frustrated. The only person you can change is yourself. You may be able to change a situation, how you respond to it, or your perception of it, but you can not change another person. It wastes valuable time and energy trying to change what is outside of your control. Some situations can not be changed. However, you may be able to manage them better if you change your outlook about a situation, or decide to 'roll with the punches.'{/t}</p>
-      <p>{t}The frustration and hopelessness that result from trying to change the unchangeable are self-defeating and can adversely affect a relationship, as in the case of Hal and Sue.{/t}</p>
-      <p>{t}Sue and Hal had been a socially active couple. Sue was diagnosed with early Parkinson's disease and gradually started backing out of social plans because she did not feel up to it. Since the beginning of the disease Sue has been on a roller coaster of having good days and bad days. Hal encourages Sue to go out when she does not feel like it, urging her to 'snap out of it.' He wants things to remain as they were.{/t}</p>
-      <p>{t}Hal is frustrated in his attempts to change the effect of the disease on their lives. By not accepting Sue's feelings, he is adding stress to their relationship. But recently he has learned more about Parkinson's disease and is trying to be more realistic and flexible about what he can and cannot change. Flexibility is crucial. A Japanese saying is:{/t}</p>
-      <p>{t}'In a storm, it is the bamboo, the flexible tree, that can bend with the wind and survive. The rigid tree that resists the wind falls, victim of its own insistence on control.'{/t}</p>
-      <p>{t}Bending with the wind is crucial to surviving the winds of change, including those involved in caregiving. At times, both you and the care receiver may feel a loss of control over your lives. While feeling in control is important, sometimes it can be me a problem because the more we try to control, the less control we seem to have. Being flexible can help us keep a positive attitude, despite hardships.{/t}</p>
-    </div>
-    <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
-  </div>
-  <!-- Lesson 2 Slide 11 -->
-  <div id="lesson-2-slide-11" class="course-slide">
-    <div class="content">
-      <h2 class="flowers">{t}Steps to Maintain Health &amp; Avoid Stress (continued){/t}</h2>
-      <hr />
-      <p>{t}Use the following guidelines to look at your situation and to determine what can and cannot be changed:{/t}</p>
-      <ol>
-        <li>{t}Accept the reality of your caregiving situation.{/t}</li>
-        <li>{t}Educate yourself about the care receiver's disease.{/t}</li>
-        <li>{t}Identify unrealistic expectations, especially your own.{/t}</li>
-        <li>{t}Seek and accept support.{/t}</li>
-        <li>{t}Identify what you still have, rather than focus on what is lost.{/t}</li>
-        <li>{t}Let go of what cannot be changed.{/t}</li>
-      </ol>
-      <p>{t}Accept the reality of your caregiving situation{/t}</p>
-      <p>{t}When making changes it is necessary, but not always easy; to accept reality. We often deny things that hurt, and that can keep us from seeing a situation as it really is. Jane heard the doctor tell Joe that he had a serious illness. He also told Joe he would need more rest and help with certain daily activities. Still, Jane found herself feeling annoyed when Joe took frequent naps, especially since she was taking on more responsibility for managing things at home. It took time for Jane to stop denying, and start accepting, the full impact of the disease. It was then that she was able to see realistically what could and could not be changed.{/t}</p>
-      <p>{t}Jane is coping in a more adaptive way. However, Joe's mother denied the seriousness of the disease long after Jane came to terms with it. Family members may take different lengths of time to accept reality, which can add to the stress of caregiving.{/t}</p>
-      <p>{t}Educate yourself about the care receiver's disease{/t}</p>
-      <p>{t}You will be better able to identify what you can and cannot change when you understand the disease. For example, without knowledge about the communication abilities of someone with Alzheimer's disease, you may try to reason with the person or expect him to tell someone something you consider easy to remember. This will probably frustrate both of you. There are many sources of information about specific diseases, including your personal physician, medical libraries, and associations related to specific diseases, such as Alzheimer's and Parkinson's disease. If you have access to a computer that is linked to the Internet, you can find a wealth of current information on diseases and disease-related associations.{/t}</p>
-    </div>
-    <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
-  </div>
-  <!-- Lesson 2 Slide 12 -->
-  <div id="lesson-2-slide-12" class="course-slide">
-    <div class="content">
-      <h2 class="flowers">{t}Steps to Maintain Health &amp; Avoid Stress (continued){/t}</h2>
-      <hr />
-      <p>{t}Identify unrealistic expectations, especially your own{/t}</p>
-      <p>{t}You can make changes successfully only when your expectations are realistic. How realistic are yours? Do you often feel anxious because you expect more of yourself than you can achieve? Many caregivers listen only to the 'shoulds' they have been raised with. Women, especially, often believe they "should" be able to do everything themselves, and when that is not possible, they feel guilty or depressed. If you have unrealistic expectations of yourself, then your expectations of what can be changed probably will be unrealistic also. The following story is an example of a caregiver, Rosa, who with her husband, Dean, made constructive changes in what was a difficult, stressful situation.{/t}</p>
-      <p>{t}Rosa was devastated when Dean, her husband of 40 years, suffered a sudden, severe stroke that left him partially paralyzed on one side of his body and unable to speak. The stroke was a shock. Rosa's initial response was to become overly protective and do everything for Dean. She was afraid to leave him alone for fear something terrible would happen. Before the stroke, Rosa and Dean had been making retirement plans, which included extensive travel. Those plans were forsaken as they both felt increasingly overwhelmed, fearful, isolated, and depressed. Rosa became extremely fatigued and irritable as Dean became increasingly dependent on her. The visiting nurse talked with them about what Dean could and could not do for himself. She emphasized the importance of Dean maintaining as much independence as possible. It became apparent that Dean could do many things for himself, including writing letters to family and friends. Dean felt better as he became more independent. Rosa was able to be more realistic in her expectations. She realized that Dean's dependence on her was detrimental to their relationship.{/t}</p>
-      <p>{t}As Rosa and Dean gradually adapted to living with the stroke, they became less fearful and more hopeful. They began looking at the quality of their remaining life together. They wanted, more than anything, to travel together and decided to take a short trip to see how it would go. The first trip was successful and they felt encouraged to travel more. Rosa found a travel agent who helped them plan trips that accommodated Dean's disabilities. They enjoyed several trips before Dean's death 12 years later. Rosa and Dean responded to this challenge by gaining an understanding of the disease, accepting reality; setting realistic expectations, and changing what could be changed.{/t}</p>
-      <p>{t}Seek and accept support{/t}</p>
-      <p>{t}Many caregivers find it difficult to ask for help. Rosa initially refused help from friends and neighbors. She did everything herself until she started feeling distressed. The expectations she had for herself were overwhelming and unrealistic. It was not until she began seeking support from the visiting nurse, travel agent, and others that she was able to find a way to make changes. Often you can make changes only with the help of others. Seeking and accepting support may be the single most important factor in making constructive changes.{/t}</p>
-      <p>{t}Identify what you still have, rather than focus on what is lost{/t}</p>
-      <p>{t}When Rosa and Dean decided to look for "what remained" in their situation, they hoped that they still had quality in their life together. They looked at what they still had, rather than focusing on what had been lost, and they made changes that were still possible.{/t}</p>
-      <p>{t}They found an unexpected 'gift' as they made changes and adapted to the illness. Rosa said, 'I never would have asked for the stroke to happen, but it was because of it that Dean and I learned what love was all about. I am a different person than I was. I am more understanding, patient, caring, and sensitive to the pain of others. Many caregivers, as they learn more about themselves, experience personal growth. That is the 'gift' that can often be found in difficult times.{/t}</p>
-    </div>
-    <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
-  </div>
-  <!-- Lesson 2 Slide 13 -->
-  <div id="lesson-2-slide-13" class="course-slide">
-    <div class="content">
-      <h2 class="flowers">{t}Steps to Maintain Health &amp; Avoid Stress (continued){/t}</h2>
-      <hr />
-      <p>{t}Let go of what cannot be changed{/t}</p>
-      <p>{t}It is natural to want to hold on to things as they were. But letting go of what you cannot change is accepting the situation as it is. It releases you from the need to control what you cannot change. Letting go is a way to cooperate with the inevitable. It releases new energy for accepting reality and seeing new possibilities. Sam is a prime example of someone who is learning to let go.{/t}</p>
-      <p>{t}Sam had always been an intense athletic competitor, and sports had been the driving force in his life. At age 45 he had a slight stroke which left him mildly affected. Sam's problem wasn't that he had a stroke; the problem was that he could not let go of wishing that he had not had one. He continuously wanted things to be as they had been. This made him feel angry and frustrated. Fortunately, Sam reached a point of wanting to learn to live with the stroke and to let go of wanting life to be as it had been before.{/t}</p>
-      <p>{t}Sam was unable to live in the present until he let go of his desire for things to be as they were. The "if onlys" and "what ifs" were a source of suffering. When Sam let go, he learned to live with the stroke and made changes that helped him develop a satisfying life. What Sam learned also applies to caregivers, as shown in the case of Marsha and Bud.{/t}</p>
-      <p>{t}Marsha was the caregiver for her husband, Bud, who had Parkinson's disease. Buds condition worsened and he and Marsha were unable to do any of the things they had done in the past. Marsha continually wanted things to be the way they had been. "If only" became her constant thought: "If only Bud could dress himself," "If only we could go dancing like we used to," "If only Bud had more energy," "If only he could still drive us places." Marsha's unhappiness caused a strain in their relationship. It was only when she and Bud were having a good time playing cards with friends one day that she realized how much valuable time she was wasting by constantly wanting things to be different. She began to let go of "if only" and to accept "what is." In letting go, she found acceptance and peace of mind.{/t}</p>
-      <p>{t}As you reflect on your challenges as a caregiver, consider these questions. What can I change? What must I accept? What can I improve?{/t}</p>
-      <p>{t}Step 4: Take Action to Manage Your Stress{/t}</p>
-      <p>{t}The fourth step points the way for you to manage and reduce your stress. There are many different tools for managing stress. But you must find what is most effective for you. Proven ways to manage and reduce stress include:{/t}</p>
-      <ul>
-        <li>{t}managing your thoughts, beliefs, and perceptions.{/t}</li>
-        <li>{t}practicing self-care.{/t}</li>
-        <li>{t}getting social support.{/t}</li>
-        <li>{t}using techniques that lower stress.{/t}</li>
-        <li>{t}developing plans of action.{/t}</li>
-        <li>{t}finding hope and meaning.{/t}</li>
-      </ul>
-    </div>
-    <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
-  </div>
-  <!-- Lesson 2 Slide 14 -->
-  <div id="lesson-2-slide-14" class="course-slide">
-    <div class="content">
-      <h2 class="flowers">{t}Steps to Maintain Health &amp; Avoid Stress (continued){/t}</h2>
-      <hr />
-      <p>{t}Managing your thoughts, beliefs, and perceptions{/t}</p>
-      <p>{t}Thoughts and beliefs are the foundation of experience. They are not only reactions to events but our thoughts and beliefs can also influence events. What we think and believe affects what happens. Managing our thoughts means we have control over how we view things. As a caregiver, there may be times when the only thing you can change is how you view a situation. There are several tools for managing thoughts, beliefs, and perceptions. Two that can be helpful are reframing and self-talk.{/t}</p>
-      <p>{t}Reframing -{/t}</p>
-      <p>{t}Your frame of reference is the window through which you view the world. It gives meaning to your world. You see things one way, but someone else sees the same circumstances differently. Situations become more stressful when you view them in a negative way. Reframing is learning to look at things in a different way, for example, finding something positive about a difficult situation. Some examples of reframing include:{/t}</p>
-      <ul>
-        <li>{t}A caregiver who views the behavior of someone with Alzheimer's disease as "purposefully behaving that way to get to me" versus taking the view that "the behavior is a part of the disease."{/t}</li>
-        <li>{t}A caregiver who is angry at her brother for helping only once a month versus taking the view that "any help, no matter how little, will lighten my load."{/t}</li>
-        <li>{t}A caregiver who puts the situation into a religious or philosophical framework, such as "This is happening because God is angry with me" versus taking the view that "God is giving me an opportunity to learn and grow."{/t}</li>
-      </ul>
-      <p>{t}People who are able to reframe difficult situations generally feel less burden and more in control. Feeling a greater degree of control often leads to acting in control. Clara is a good example. Clara had difficulty taking breaks from caregiving. Before becoming a caregiver, she had worked in a demanding position and had realized the importance of taking weekends off and vacations to refresh herself and cope better with work demands. When she started to view caregiving as a job, it made a difference in how she viewed breaks in caregiving. They became not only more acceptable, but a necessity.{/t}</p>
-      <p>{t}Julie also found that reframing a difficult situation reduced her stress and helped her act in new ways. Julie felt resentful and burdened with the increasing demands of caring for her mother. She had no help, feeling that as a good, dutiful daughter she should do it all. A social worker told her about available resources and suggested she think of herself as a personal care manager as a way to find help in caregiving. Julie gained a sense of control over the situation once she realized she didn't have to provide all of the care herself, but could oversee her mother's care.{/t}</p>
-      <p>{t}As a caregiver, you may feel overwhelmed and burned out, especially if you are assuming responsibility for most of the caregiving. Changing your perception of your role from a caregiver to care manager is a way of reframing. As a care manager you still get the job done, but you do not have to provide all the care yourself. The role of care manager means that you:{/t}</p>
-      <ul>
-        <li>{t}coordinate and supervise another's care needs. This includes using available support.{/t}</li>
-        <li>{t}are aware of available community resources.{/t}</li>
-        <li>{t}plan and prioritize care.{/t}</li>
-        <li>{t}understand the disease of the care receiver and what to expect.{/t}</li>
-        <li>{t}participate as an equal partner with other health care professionals.{/t}</li>
-        <li>{t}are knowledgeable about the health care system.{/t}</li>
-      </ul>
-      <p>{t}As a care manager you assume an active role and reach beyond giving hands-on care, to planning and coordinating care and using available resources. You will feel an increased sense of mastery as a successful care manager.{/t}</p>
-    </div>
-    <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
-  </div>
-  <!-- Lesson 2 Slide 15 -->
-  <div id="lesson-2-slide-15" class="course-slide">
-    <div class="content">
-      <h2 class="flowers">{t}Steps to Maintain Health &amp; Avoid Stress (continued){/t}</h2>
-      <hr />
-      <p>{t}Self-talk -{/t}</p>
-      <p>{t}Most stress management courses include learning how to use self-talk to promote health. Self-talk is what we say to ourselves. As Ralph Waldo Emerson said, "A man is what he thinks about all day long." What do you think about all day long? What do you say to yourself? Is especially important to notice your self-talk when you suffer setbacks and when you feel anxious, angry, discouraged, or distressed. Negative self-talk statements often begin with the following phrases:{/t}</p>
-      <ul>
-        <li>{t}I just can not do...{/t}</li>
-        <li>{t}If only I could (or did not) do...{/t}</li>
-        <li>{t}I could never...{/t}</li>
-        <li>{t}I should not have done...{/t}</li>
-        <li>{t}I should have...{/t}</li>
-      </ul>
-      <p>{t}Negative self-talk is defeating. It can lead to depression and a sense of failure, because with negative self-talk we tend to focus on:{/t}</p>
-      <ul>
-        <li>{t}what we did not do versus what we have done.{/t}</li>
-        <li>{t}what we cant do versus what we can do.{/t}</li>
-        <li>{t}Our mistakes and failures versus our successes.{/t}</li>
-      </ul>
-      <p>{t}You want your self-talk to work for you, not against you. If your self-talk is negative or unhelpful, challenge it. Learn to change the negative things you say to yourself into positive statements, such as affirmations.{/t}</p>
-      <p> {t}Affirmations are positive, supportive statements that counteract the effects of negative thinking. When positive statements are repeated several times a day, they begin to replace negative thoughts. This helps to change one's attitude, promote relaxation, and reduce stress. Karen's story is an example of changing negative self-talk to positive self-talk with the use of affirmations:{/t} </p>
-    </div>
-    <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
-  </div>
-  <!-- Lesson 2 Slide 16 -->
-  <div id="lesson-2-slide-16" class="course-slide">
-    <div class="content">
-      <h2 class="flowers">{t}Steps to Maintain Health &amp; Avoid Stress (continued){/t}</h2>
-      <hr />
-      <p>{t}Karen felt angry and discouraged when her mother did not eat the tasty, nutritious meals she prepared for her. She didn't accept the fact that her mother's lack of appetite was caused by the illness. Karen constantly told herself, "No matter what I cook, it is never good enough for mother."{/t}</p>
-      <p>{t}This is an example of negative self-talk. Karen became aware that she often thought she was not doing good enough, especially in caring for her mother. These thoughts made her feel like a failure. With determination, patience, and practice, you can change your self-talk from negative to positive. The following steps lead to change:{/t}</p>
-      <ul>
-        <li>{t}Identify your negative thoughts. Listen to what you say to yourself, especially during difficult times.{/t}</li>
-        <li>{t}Write your negative thoughts down on paper. This helps to identify and clarify them.{/t}</li>
-        <li>{t}Challenge your negative thoughts. Give them a good argument.{/t}</li>
-        <li>{t}Write a simple, positive statement for each thought you want to change.{/t}</li>
-        <li>{t}Memorize and repeat the chosen statements. This helps establish the habit of positive self-talk.{/t}</li>
-        <li>{t}Put your written-statements where you see them frequently. This is a helpful visual reminder.{/t}</li>
-      </ul>
-      <p>{t}Karen chose the affirmation , "I am preparing nutritious food. That is enough." In fact, the statements, "I am doing my best. It is good enough," became her frequent affirmation and counteracted her negative thoughts of "not doing good enough."{/t}</p>
-      <p>{t}These statements have the dual. purpose of affirming what Karen is doing and helping her let go of the idea that she has control over her mother's appetite. Accepting that . was important. Telling herself that she is doing her best and it is enough is a positive way of saying she is changing what she can and letting go of what she cannot change. Karen's expectations for herself have become more realistic.{/t}</p>
-      <p>{t}Practice over time will change negative, habitual thinking. Repeat this activity frequently to identify other negative self-talk Remember, thoughts and attitudes create your reality. Changing your negative thoughts will help you focus on the positive things in your life, rather than on what you do not have.{/t} </p>
-    </div>
-    <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
-  </div>
-  <!-- Lesson 2 Slide 17 -->
-  <div id="lesson-2-slide-17" class="course-slide">
-    <div class="content">
-      <h2 class="flowers">{t}Steps to Maintain Health &amp; Avoid Stress (continued){/t}</h2>
-      <hr />
-      <p>{t}CHALLENGING YOUR SELF-TALK{/t}</p>
-      <p>{t}Identify an example of your negative self-talk and the situation when it is most likely to occur.{/t}</p>
-      <ol>
-        <li>{t}My negative statement:{/t}</li>
-        <li>{t}I say this to myself when:{/t}</li>
-        <li>{t}I will replace the negative thought with this positive statement:{/t}</li>
-        <li>{t}Repeat the chosen affirmation whenever the above situation occurs.{/t}</li>
-      </ol>
-      <p>{t}There will be times when you will find it hard to shake off negative thoughts. This is normal. However, paying attention to the frequency and content of these thoughts is the beginning of self-awareness and the possibility of change.{/t}</p>
-      <p>{t}Practicing self-care -{/t}</p>
-      <p>{t}To be an effective caregiver you need to maintain your own health and spirit, and to nurture yourself. All too often caregivers put their own needs last. Studies show that sacrificing yourself in giving care to another can lead to emotional exhaustion, depression, and illness.{/t}</p>
-      <p>{t}Maintaining your health and spirit can reduce your level of stress. It is critical to find activities that help you to stay healthy and nurture yourself. These activities are different for each individual. What works for one person may not work for another. You must find stress-reducing methods that work best for you.{/t}</p>
-      <p>{t}We can learn a lot from a self-care program in Florida called "Getting Well." This is a group of people who are supporting each other in learning to live and feel better. They take part in life-affirming activities such as "laughing, juggling, playing, meditating, painting, journal writing, exercising, and eating nutritiously" They demonstrate the necessity of associating with others who help you maintain your spirit and help you feel loved and supported. To manage stress, it is essential to take breaks from caregiving. Plan them into your schedule, starting immediately; if you have not done so already. Studies show that caregivers often do not take breaks until they are at the "end of their rope" or "burned out."{/t}</p>
-      <p>{t}This serves no one's best interest as your ability to function can be seriously affected. To avoid problems, it is your responsibility to take time off from caregiving to refresh yourself. It is important to the well-being of care receivers that you take breaks. If you do not, they may become increasingly dependent on you. If you take breaks, they will be less isolated and will benefit from having contact with other people. They also need breaks from you. (This is an example of reframing your perception of a situation.){/t} </p>
-    </div>
-    <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
-  </div>
-  <!-- Lesson 2 Slide 18 -->
-  <div id="lesson-2-slide-18" class="course-slide">
-    <div class="content">
-      <h2 class="flowers">{t}Steps to Maintain Health &amp; Avoid Stress (continued){/t}</h2>
-      <hr />
-      <p>{t}You are responsible for your own self-care. Practicing self-care means that you:{/t}</p>
-      <ul>
-        <li>{t}learn and use stress reduction techniques;{/t}</li>
-        <li>{t}attend to your own health care needs;{/t}</li>
-        <li>{t}get proper rest and nutrition;{/t}</li>
-        <li>{t}exercise regularly;{/t}</li>
-        <li>{t}take time off without feeling guilty;{/t}</li>
-        <li>{t}participate in pleasant, nurturing activities;{/t}</li>
-        <li>{t}reward yourself...;{/t}</li>
-        <li>{t}seek and accept the support of others;{/t}</li>
-        <li>{t}seek supportive counseling when you need to, or talk with a trusted counselor, religious advisor, or friend;{/t}</li>
-        <li>{t}identify and acknowledge your feelings;{/t}</li>
-        <li>{t}tell others what you need. Do not assume "they should know;"{/t}</li>
-        <li>{t}change the negative ways you view situations; and{/t}</li>
-        <li>{t}set goals and prioritize.{/t}</li>
-      </ul>
-      <div class="question">
-        <p>ARE YOU TAKING CARE OF YOURSELF?</p>
-        <p>
-          <input type="checkbox" name="Yes18" id="Yes18">
-          <label for="Yes18">Yes</label>
-          <input type="checkbox" name="No18" id="No18">
-          <label for="No18">No</label>
-          |  Are you uncomfortable putting
-          yourself first at times?</p>
-        <p>
-          <input type="checkbox" name="Yes15" id="Yes15">
-          <label for="Yes15">Yes</label>
-          <input type="checkbox" name="No15" id="No15">
-          <label for="No15">No</label>
-          |  Do you think you should always meet
-          the needs of other people before your
-          own?</p>
-        <p>
-          <input type="checkbox" name="Yes16" id="Yes16">
-          <label for="Yes16">Yes</label>
-          <input type="checkbox" name="No16" id="No16">
-          <label for="No16">No</label>
-          |  Do you feel you should be a "perfect
-          caregiver"?</p>
-        <p>
-          <input type="checkbox" name="Yes17" id="Yes17">
-          <label for="Yes17">Yes</label>
-          <input type="checkbox" name="No17" id="No17">
-          <label for="No17">No</label>
-          |  Do you minimize or deny that you
-          have needs</p>
-        <p>
-          <input name="button2" type="submit" id="button2" onClick="MM_popupMsg('If you answered \&quot;yes\&quot; to any of these questions, you may be ignoring your own needs.')" value="Submit">
-        </p>
+    <div id="lesson-1-slide-8" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Managing Self-Care{/t}</h2>
+        <hr />
+        <img src="<?php echo $this->getImagesUrl('empower/100207042.png'); ?>" alt="{t}forum icon{/t}">
+        <p>{t}As a result, Maxine experiences feelings of failure and lack of success. Maria was more realistic. She recognized that the things she wanted to be done whether they were her desires, her mother's desires, or the desires of others-were not the same as the things that needed to be done. Maria's goal was to make her mother as comfortable as possible, without sacrificing herself and the other important relationships in her life. She also got help from family and a community agency in meeting her mother's needs. Maria said:{/t}</p>
+        <p><i>{t}To some degree I recognized that caregiving was like a job and my goal was to find the best way to get the job done. A friend also told me that doing any job well-including the job of caregiving requires four things:{/t}</i></p>
+        <ol>
+          <li><i>{t}Recognizing you can not do everything yourself-you work with others.{/t}</i></li>
+          <li><i>{t}Taking daily breaks.{/t}</i></li>
+          <li><i>{t}Taking vacations to renew oneself.{/t}</i></li>
+          <li><i>{t}Being realistic about what you can do...{/t}</i></li>
+        </ol>
+        <p>{t}There was another difference between Maxine and Maria. Maxine felt it was selfish to think of herself. Maria, on the other hand, viewed that if she was going to be there for the long haul, she must take care of herself, and make sure that she had pleasurable moments in her life.{/t}</p>
+        <p>{t}As a caregiver, you are more likely to <i>be there</i> for your family member who needs your care and to be a more loving and patient caregiver when you meet some of your own needs. It is important to <i>fill your own cup</i> and not allow it to <i>run dry</i>.{/t}</p>
+        <p>{t}It is not being selfish to focus on your own needs and desires when you are a caregiver to a family member who has a chronic or progressive illness. It is important to ask yourself, <i>If my health deteriorates, or I die, what will happen to the person I provide care for? If I get emotionally drained, become deprived of sleep, or become isolated because I am trying to do it all, how loving am I likely to be to my family member?</i>{/t}</p>
       </div>
-      <p>{t}Reflect on what it means to practice selfcare. Consider the items above. How do you fare? Are you caring for yourself as well as you are caring for another? Remember, it is only when we love and nurture ourselves that we are able to love and nurture another. As a caregiver, appreciation and "thank yous" for what you do may be lacking. For example, a person with Alzheimer's disease may be unable to show appreciation for what is done. Everyone has a need for approval. It motivates us to keep going. If you do not receive appreciation from other people, find a way to give it to yourself.{/t}</p>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t} </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
-    <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
-  </div>
-  <!-- Lesson 2 Slide 19 -->
-  <div id="lesson-2-slide-19" class="course-slide">
-    <div class="content">
-      <h2 class="flowers">{t}Steps to Maintain Health &amp; Avoid Stress (continued){/t}</h2>
-      <hr />
-      <p>{t}What would be helpful for you? Consider the following suggestions:{/t}</p>
-      <ul>
-        <li>{t}Acknowledge and take satisfaction in those things you do well.{/t}</li>
-        <li>{t}Reward yourself on a regular basis.{/t}</li>
-        <li>{t}Involve yourself in an activity that will provide positive feedback.{/t}</li>
-      </ul>
-      <p>{t}Carol found a creative way to reward herself for a job well done when her mother could no longer express appreciation. Carol's mother, Irene, had Alzheimer's disease. Irene often expressed frustration and anger at Carol, in spite of the fact that Carol was her mainstay Carol understood the disease process and successfully avoided taking her mother's attacks personally. To give herself a gift of appreciation, Carol bought flowers regularly. She said, "I considered the flowers a gift from Mom to me. It is something she would have done for me if she were well."{/t}</p>
-      <p>{t}Memories of past generosity and love from her mother sustained Carol. In buying herself flowers she reminded herself weekly that the gift of love and caring she gave to her mother had first been given to her. At a difficult time she found a way to nurture herself.{/t}</p>
-      <p>{t}What are you doing to nurture yourself? Are you choosing healthy activities? Or are you relying on drugs, alcohol, cigarettes, and tranquilizers to handle the emotional and physical burdens of caregiving? According to the National Institute on Drug Abuse, millions of people abuse these drugs to reduce tension and to relax. It is in your best interest to choose healthy, nurturing ways of coping with the difficulties of caregiving.{/t}</p>
-      <p>{t}Getting social support -{/t}</p>
-      <p>{t}Caregiving can be a lonely experience. According to the National Family Caregivers Association, caregivers often · report that they feel alone and isolated. Support from family, friends, and others is an important stress buffer. Something as simple as a two-minute telephone call can make you feel cared about and supported. It helps to share your experiences and burdens with a person you trust-a friend, family member, counselor, religious advisor, or support group member-who will listen and understand.{/t}</p>
-      <p>{t}Support groups can be helpful when you are going through a difficult time. Sharing with others who are going through similar experiences is a way to give and receive support, and take time out from caregiving duties. You can learn new ways of coping from others in the group, which may include learning to look at the light side of difficult situations with a bit of humor. Sharing lightens the load. A support group is a place to express thoughts and feelings in a confidential setting. Most important, you learn that you are not alone. This can be a wonderful relief. Support groups are available for caregivers and for people with various chronic illnesses. Local hospitals and disease-related associations often have groups available.{/t}</p>
-      <p>{t}Using techniques that lower stress -{/t}</p>
-      <p>{t}It is of little help to identify your stressors if you do not take action early to reduce them. Recognize obstacles to taking action. These may include:{/t}</p>
-      <ul>
-        <li>{t}Not giving yourself permission to take care of yourself.{/t}</li>
-        <li>{t}Lacking awareness of stress-reduction techniques.{/t}</li>
-        <li>{t}Choosing unrealistic stress-reduction techniques for example, those that are too complicated, lengthy, or difficult for you.{/t}</li>
-        <li>{t}Delaying or postponing a stress-reduction activity. For example, planning a break or trip too far into the future to be of help now, when you need it.{/t}</li>
-      </ul>
-      <p>{t}Take care of yourself daily Use "tried and true" stress reduction tools that work for you. In addition, learn and incorporate new stress-reducing techniques into your life. There are many worthwhile techniques available. We offer some quick and easy ones that you can fit into your busy life.{/t}</p>
-    </div>
-    <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
-  </div>
-  <!-- Lesson 2 Slide 20 -->
-  <div id="lesson-2-slide-20" class="course-slide">
-    <div class="content">
-      <h2 class="flowers">{t}Steps to Maintain Health &amp; Avoid Stress (continued){/t}</h2>
-      <hr />
-      <p>{t}Basic wellness practices -{/t}</p>
-      <div class="question">
-        <p>It is vital to maintain your health and well-being. Ask yourself the questions in the box below.</p>
-        <p>
-          <input type="checkbox" name="Yes19" id="Yes19">
-          <label for="Yes19">Yes</label>
-          <input type="checkbox" name="No19" id="No19">
-          <label for="No19">No</label>
-          |  Do you participate in physical
-          activity at least three times a week?</p>
-        <p>
-          <input type="checkbox" name="Yes20" id="Yes20">
-          <label for="Yes20">Yes</label>
-          <input type="checkbox" name="No20" id="No20">
-          <label for="No20">No</label>
-          |  Do you get enough sleep daily so
-          that you feel rested in the morning?</p>
-        <p>
-          <input type="checkbox" name="Yes21" id="Yes21">
-          <label for="Yes21">Yes</label>
-          <input type="checkbox" name="No21" id="No21">
-          <label for="No21">No</label>
-          |  Do you eat balanced, nutritious
-          meals?</p>
-        <p>
-          <input type="checkbox" name="Yes22" id="Yes22">
-          <label for="Yes22">Yes</label>
-          <input type="checkbox" name="No22" id="No22">
-          <label for="No22">No</label>
-          |  Do you take time to sit down and
-          eat your meals?</p>
-        <p>
-          <input type="checkbox" name="Yes23" id="Yes23">
-          <label for="Yes23">Yes</label>
-          <input type="checkbox" name="No23" id="No23">
-          <label for="No23">No</label>
-          |  Do you take care of your own
-          physical health (e.g., get regular
-          medical check-ups and take care of
-          yourself when you are ill)? </p>
-        <p>
-          <input type="checkbox" name="Yes24" id="Yes24">
-          <label for="Yes24">Yes</label>
-          <input type="checkbox" name="No24" id="No24">
-          <label for="No24">No</label>
-          |  Do you participate regularly in
-          recreational/leisure activities?</p>
-        <p>
-          <input type="checkbox" name="Yes25" id="Yes25">
-          <label for="Yes25">Yes</label>
-          <input type="checkbox" name="No25" id="No25">
-          <label for="No25">No</label>
-          |  Do you drink at least eight glasses
-          of Water or other liquid daily?</p>
-        <p>
-          <input type="checkbox" name="Yes26" id="Yes26">
-          <label for="Yes26">Yes</label>
-          <input type="checkbox" name="No26" id="No26">
-          <label for="No26">No</label>
-          |  Do you limit alcoholic beverages
-          to no more than two drinks a day?
-          (One drink is 1.5 oz. of hard liquor,
-          l2 oz. of beer, or 4 oz. of wine.) </p>
-        <p>
-          <input type="checkbox" name="Yes27" id="Yes27">
-          <label for="Yes27">Yes</label>
-          <input type="checkbox" name="No27" id="No27">
-          <label for="No27">No</label>
-          |  Do you avoid using alcohol,
-          medications/drugs, or cigarettes to
-          calm your nerves?</p>
-        <p>
-          <input type="checkbox" name="Yes28" id="Yes28">
-          <label for="Yes28">Yes</label>
-          <input type="checkbox" name="No28" id="No28">
-          <label for="No28">No</label>
-          |   Do you maintain a healthy weight?</p>
-        <p>
-          <input name="button3" type="submit" id="button3" onClick="MM_popupMsg('If you answered \&quot;yes\&quot; to all of these questions, congratulate yourself. A \&quot;no\&quot; response reflects areas to work on for better health.')" value="Submit">
-        </p>
+    <div id="lesson-1-slide-9" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Managing Self-Care{/t}</h2>
+        <hr />
+        <h5>{t}Taking Time for Yourself{/t}</h5>
+        <p class="forum">{t}Please respond to the following questions on the Forum:{/t}</p>
+        <ul class="forum">
+          <li>{t}Do you value yourself and your personal needs?{/t}</li>
+          <li>{t}What do you do for personal renewal?{/t}</li>
+          <li>{t}Do you save some time for yourself out of each day?{/t}</li>
+          <li>{t}Do you take occasional extended breaks?{/t}</li>
+          <li>{t}Or are you so involved with caregiving tasks that you have little or no time for yourself?{/t}</li>
+          <li>{t}What activities do you enjoy?{/t}</li>
+          <li>{t}What would you like to do that would give you a lift?{/t}</li>
+          <li>{t}When was the last time you gave yourself a treat?{/t}</li>
+        </ul>
+        <img src="<?php echo $this->getImagesUrl('empower/forum_icon.png'); ?>" alt="{t}forum icon{/t}">
+        <p>{t}Breaks in caregiving are a must. They are as important to health as diet, sleep, rest, and exercise. It is important not to lose sight of your personal needs and interests. Studies show that sacrificing yourself in the care of another and removing pleasurable events from your life can lead to emotional exhaustion, depression, and physical illness. You have a right-even a responsibility-to take some time away from caregiving.{/t}</p>
+        <p>{t}Regular breaks from the tasks of caregiving are essential. Decide on the time, date, and activity-then follow through. Breaks do not have to be long to make a positive difference. It is important to plan some time for yourself in every day, even if that time is only for 15 minutes or half an hour. Most important is to do something that "fills your cup" and helps you to feel better and thrive. If you have difficulty taking breaks for yourself, consider taking them for your family member. Care receivers also benefit from caregivers getting breaks.{/t}</p>
       </div>
-      <p>{t}Proper diet, adequate sleep, and regular exercise are necessary for all of us, and even more so when we are caregivers. These lifestyle factors increase our resistance to illness and our ability to cope with stressful situations.{/t}</p>
-      <p>{t}Exercise promotes better sleep, reduces tension and depression, and increases energy and alertness. If finding time to exercise is a problem, try to incorporate it into your usual day Perhaps the person receiving care can walk or do stretching exercises with you. If necessary do frequent short exercises instead of using large blocks of time. Find activities you enjoy. Walking is considered one of the best and easiest exercises. It helps to reduce psychological tension as well as having physical benefits.{/t}</p>
-      <p>{t}Walking 20 minutes a day, three times a week, is very beneficial. If you can not be away 20 minutes, 10-minute walks twice a day or even a five-minute walk are beneficial. Work walking into your life. Walk whenever and wherever you can. Perhaps it is easiest to walk around your block, at the mall, or a nearby park. The next time a friend or family member comes to visit, take time for a short walk. When the care receiver is getting therapy, take a walk around the medical facility.{/t}</p>
-      <p>{t}Breathing for relaxation -{/t}</p>
-      <p>{t}Stressful situations or memories of those situations can cause changes in our breathing. Often the more tense we feel, the more shallow our breathing becomes. · Stress management tools usually include a focus on breathing. The following breathing exercise takes only one or two minutes and you can easily do it anywhere. Use it often to lower stress.{/t}</p>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t} </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
-    <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
-  </div>
-  <!-- Lesson 2 Slide 21 -->
-  <div id="lesson-2-slide-21" class="course-slide">
-    <div class="content">
-      <h2 class="flowers">{t}Steps to Maintain Health &amp; Avoid Stress (continued){/t}</h2>
-      <hr />
-      <p>{t}Meditation -{/t}</p>
-      <p>{t}The word "meditation" comes from the Sanskrit word medha which, when taken literally, means "doing the wisdom." Meditation aids in relaxation and in achieving physical and mental well-being. Meditation is keeping your attention focused in the moment to quiet the mind and hear your body's inner wisdom. You, too, can learn to meditate. See the "Process of Meditation" box on the next page.{/t}</p>
-      <p>{t}Music -{/t}</p>
-      <p>{t}Music is another tool for reducing stress. It can alter the body and the mind. It can induce deep relaxation, act as a stimulant, and take you into other states of consciousness. Music is often used specifically for healing and decreasing stress and tension. Use the following steps as a guideline.{/t}</p>
-      <ol>
-        <li>{t}Choose soothing music you like.{/t}</li>
-        <li>{t}Relax and close your eyes.{/t}</li>
-        <li>{t}Breathe deeply and easily.{/t}</li>
-        <li>{t}Lose yourself in the music, listening with your body, not your mind.{/t}</li>
-        <li>{t}After the music is finished, open your eyes and notice how you feel.{/t}</li>
-      </ol>
-      <p>{t}Music is a universal language. Listening to music can be healing for both you and the care receiver, either together or alone. People with dementia, especially, respond to music when they may respond to little else.{/t}</p>
-      <p>{t}Humor -{/t}</p>
-      <p>{t}Caregivers who maintain and foster their sense of humor do better. It is , often hard to find much that is humorous in caregiving, but the secret to succeeding as a caregiver is to find humor in your daily routine. Finding humor does not deny the fact that, at times, your heart is heavy with the pain and sadness of caregiving. Those times will exist, but they can co-exist with laughter and humor.{/t}</p>
-      <p>{t}Tears and laughter are closely related. They each offer a release of tension and are often intermingled. Humor does not minimize the seriousness of a situation; rather, it helps you embrace it. Humor can be a helpful tool in many ways, from making us laugh at our shortcomings and impossible situations, reducing anxiety and stress. Laughter relaxes and helps calm emotions, allowing us to regain emotional balance and think more clearly. If you want to laugh, or want someone else to laugh, you may have to find a reason, as George and Alma do.{/t}</p>
-      <p>{t}George and Alma watch their favorite comedy show on television every weeknight at 7 P.M. They look forward to it and anticipate laughing together. In addition, Alma and George look for humorous cartoons and jokes to share with each other. The fact that Alma has a disabling medical condition does not mean they can not appreciate laughter.{/t}</p>
-      <p>{t}In his book Anatomy of an Illness, Norman Cousins wrote of his fight against a crippling disease. He credited his recovery to the use of laughter. He intentionally sought healing through watching videotapes of comedies, reading joke books, and listening to people tell jokes. He had read about the effects of stress and emotions on illness. He understood that disease was caused by chemical changes in the body, due to the stress of strong emotions such as fear and anger. He concluded that perhaps love, laughter, hope, and the will to live would counteract those effects. He was right in his belief. Recent studies show that laughter helps to stimulate breathing, muscular activity; and heart rate. This serves to reduce stress and strengthen the immune system.{/t}</p>
-      <p>{t}Humor is important to health. It lifts the spirit and provides a way to connect with others. The following suggestions can help · you make laughter and humor a larger part of your life:{/t}</p>
-      <ul>
-        <li>{t}Seek out humor. Humorous tapes and books can be found at video stores and libraries. Spend time with friends or family members you enjoy and can laugh with.{/t} </li>
-        <li>{t}Surround yourself with humor. Put jokes, cartoons, funny pictures, and humorous sayings on the refrigerator or bulletin board where others can enjoy them with you.{/t}</li>
-        <li>{t}Laugh at yourself. Do not take yourself too seriously Poke fun at yourself by making light of your shortcomings (which we all have).{/t}</li>
-      </ul>
+    <div id="lesson-1-slide-10" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Setting Goals{/t}</h2>
+        <hr />
+        <p>{t}An important tool in taking care of yourself is setting goals. A goal is something you would like to accomplish in the next three to six months:{/t}</p>
+        <p style="text-align:center;"><i>{t}What would you like to do to take better care of yourself and to help yourself to thrive?{/t}</i></p>
+        <p>{t}This might be to get a break from caregiving for a week, get help with caregiving tasks, be able to walk three miles, or quit feeling guilty.{/t}</p>
+        <p>{t}Goals often are difficult to accomplish because they may seem like dreams or they may be overwhelming. As a result, we may not even try to accomplish them or we may give up shortly after we get started. We will address this problem shortly.{/t}</p>
+        <p class="forum">{t}For now, take a moment and write at least 3 goals on the Forum. Put an asterisk (*) next to the goal you would like to work on first. After identifying a goal, the first step is to brainstorm all of the different things you might do to reach your goal. Identify and write down all possible options on the Forum as a separate posting.{/t}</p>
+        <img src="<?php echo $this->getImagesUrl('empower/forum_icon.png'); ?>" alt="{t}forum icon{/t}">
+        <p>{t}The second step is to evaluate the options you have identified. Which options seem like possibilities to you? It is important not to assume that an option is unworkable or does not exist until you have thoroughly investigated it or given it a try. Assumptions are major self-care enemies.{/t}</p>
+        <p class="forum">{t}Go back to the above Forum posting and put an asterisk (*) next to two or three options you would like to try. Select one to try.{/t}</p>
+        <img src="<?php echo $this->getImagesUrl('empower/forum_icon.png'); ?>" alt="{t}forum icon{/t}">
+        <p>{t}The third step is to turn your option into a short-term plan, which we call making an action plan.{/t}</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t} </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
-    <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
-  </div>
-  <!-- Lesson 2 Slide 22 -->
-  <div id="lesson-2-slide-22" class="course-slide">
-    <div class="content">
-      <h2 class="flowers">{t}Steps to Maintain Health &amp; Avoid Stress (continued){/t}</h2>
-      <hr />
-      <p>{t}Developing action plans -{/t}</p>
-      <p>{t}Action plans are tools for change. They can be a useful way to identify and plan specific activities for reducing stress and making change: Feelings of accomplishment are necessary for thriving as a caregiver. Action plans can help you achieve these feelings. Even the smallest action can make a big difference. This was true for Evelyn.{/t}</p>
-      <p>{t}Evelyn needed more time for herself during the day She made a plan to take a leisurely; warm tub bath four times a week instead of the always-hurried shower. Evelyn settled her father to watch the news on TV when she took her baths. This worked well for both of them and became an accepted part of their routine. Accomplishing the action plan encouraged Evelyn to make other action plans that made a big difference to her.{/t}</p>
-      <p>{t}Feelings of mastery and confidence are usually the result of developing new ways of coping. Use the information presented in this chapter to help you identify your stressors, and improve coping skills. The activity in the box on the next page can be a useful tool for managing stress. This activity can be useful on a regular basis. It will help you assess and cope with current stressors. Since your caregiving situation and stressors continually change, it is important to be aware of when you feel stress and to use stress-reducing tools that work for you. Most important, build stress reduction and nurturing activities into daily life to prevent distress. Be proactive and remember, what is good for you is good for the person receiving care!{/t}</p>
-      <p>{t}Finding hope and meaning -{/t}</p>
-      <p>{t}The ability to find hope and meaning in the caregiving situation enables you not only to survive, but to thrive. Finding meaning and hope are what keeps us going. It is a way to make sense of our circumstances.{/t}</p>
-      <p>{t}In his book Mans Search For Meaning, psychiatrist Viktor Frankl tells of his experience as a long-time prisoner in a prisoner of war camp during World War II. Many of his family members died in the camps. In spite of the fact that he faced death constantly and suffered severe punishment, Dr. Frankl was able to find meaning and hope in his life. He noted that the prisoners who were able to sustain even a flicker of hope were better able to survive the terrible circumstances than those who felt hopeless. He concluded that what did remain, when all else was taken away; was "the last of the human freedoms," the ability to "choose one's attitude in a given set of circumstances." Out of that experience, Frankl's guiding philosophy was born: "To live is to suffer, to survive is to find meaning in the suffering." He also believed that man's need for meaning is universal.{/t}</p>
-      <p>{t}The need to find hope and meaning is also important when you are a caregiver for a person with a chronic illness. Uncertainty; loss, and suffering may shake your foundation. After all, you have much at stake. Your world, as you have known it, has changed drastically and you may be left with questions such as, "Why me?" and perhaps, "Where is God?" Questioning often leads to a search for meaning. No one else can tell you what the meaning is for you. It can be a lonely journey.{/t}</p>
+    <div id="lesson-1-slide-11" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Making Action Plans{/t}</h2>
+        <hr />
+        <p>{t}An action plan is a specific action that you are confident you can accomplish within the next week. It is an agreement or contract with yourself.{/t}</p>
+        <p>{t}Action plans are one of your most important self-care tools. An action. plan is a step toward reaching your long-term goal. It is to be something you want to do. It is not to be something you feel you should do, have to do, or need to do. The intent of making an action plan is to help you to feel better and to take better care of yourself. Remember, an action plan is a <i>want to do</i>. Here are the five steps for making an action plan:{/t}</p>
+        <ul>
+          <li>{t}Decide what you want to do.{/t}</li>
+          <li>{t}Make your plan behavior-specific.{/t}</li>
+          <li>{t}Make a specific plan.{/t}</li>
+          <li>{t}Determine your confidence level.{/t}</li>
+          <li>{t}Write down your action plan.{/t}</li>
+        </ul>
+        <h5>{t}Decide What You Want To Do{/t}</h5>
+        <p>{t}Think about what is realistic for you to accomplish within the next week. It is important that an action plan is reachable; otherwise, you are likely to experience frustration. An action plan is to help you experience success-not frustration, increased stress, or failure. An action plan starts with the words, "<i>I will ...</i>" If you find yourself saying "<i>I will try to ...,</i>" "<i>I have to ...,</i>" or "<i>I should ...,</i>" then re-examine your action plan. It probably is not something that you truly want to do.{/t}</p>
+        <h5>{t}Make Your Plan Behavior-Specific{/t}</h5>
+        <p>{t}The more specific your action plan, the greater your chances of accomplishing it. For example, <i>taking better care of myself</i> is not a specific behavior. However, making an appointment for a physical check-up, walking three times a week, getting a massage on Thursday afternoon, or asking someone to stay with your family member for one morning are all specific behaviors. <i>I will relax</i> also is not a specific behavior; however, reading a book, listening to your favorite music, or puttering in the garden are specific behaviors.{/t}</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t} </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
-    <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
-  </div>
-  <!-- Lesson 2 Slide 23 -->
-  <div id="lesson-2-slide-23" class="course-slide">
-    <div class="content">
-      <h2 class="flowers">{t}Steps to Maintain Health &amp; Avoid Stress (continued){/t}</h2>
-      <hr />
-      <p>{t}REFRAMING YOUR STRESS{/t}</p>
-      <p>{t}Make a list of those things that you find most difficult or stressful. Be specific. Write at least two (more if you can).{/t}</p>
-      <p>{t}Answer the following questions in relation to each item on your list. Can I ignore this? Or can I let it go?{/t}</p>
-      <p>{t}Can I change anything about this? If so, how can I change it?{/t}</p>
-      <p>{t}If it can not be changed, can I change my perception of it? If so, how? What is a more helpful perception?{/t}</p>
-      <p>{t}Select one stressor from your list to work on first. The stressor is: Develop an action plan for addressing this stressor. Be specific and realistic.{/t}</p>
-      <p>{t}A search for meaning can be a conscious choice. There are ways to stimulate your search. The following can be helpful:{/t}</p>
-      <ul>
-        <li>{t}Ask yourself questions like "What am I to learn from this?" What good can come from this? Am I a better person now? These types of questions can help you open up to possibilities for finding meaning.{/t}</li>
-        <li>{t}Reflect .. Periods of quiet reflection, especially after a difficult time, are important and offer opportunities to learn from the experience.{/t}</li>
-        <li>{t}Talk with a trusted person. Whether this person is a counselor, religious advisor, or friend, sharing can help clarify your thoughts and feelings. As you tell your story; it often takes on meaning.{/t}</li>
-        <li>{t}Write. This is also a way to clarify your thinking. Writing is a way to bring out your thoughts and feelings. Write freely and spontaneously. Do not concern yourself with proper sentence structure or punctuation. Writing is a way to talk to yourself. Re-reading your journal over time provides an understanding of where you were when you started and where you are now. You will probably see changes and find new understanding and meaning.{/t}</li>
-        <li>{t}Seek spiritual renewal. This is especially important when you are facing difficult times. Many caregivers report that faith and prayer help them find comfort, purpose, and meaning. It may be that even when you feel anger because of suffering and sorrow, your need for meaning is greatest.{/t}</li>
-      </ul>
+    <div id="lesson-1-slide-12" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Making Action Plans{/t}</h2>
+        <hr />
+        <h5>{t}Make a Specific Plan{/t}</h5>
+        <p>{t}Making a specific plan is often difficult, yet it is the most important part of making an action plan. A specific plan answers these four questions:{/t}</p>
+        <ol>
+          <li><b>{t}What are you going to do?</b> - Examples: <i>I will read for pleasure. Or, I will walk.</i>{/t}</li>
+          <li><b>{t}How much will you do?</b> - Examples: <i>Will you read one chapter or will you read for a half hour? Will you walk two blocks or for 20 minutes?</i>{/t}</li>
+          <li><b>{t}When will you do this?</b> Examples: <i>Will you read the first thing in the morning when you awaken, before you go to bed, when the care receiver is sleeping, or ... ? If your plan is to walk, when during the day will you do it?</i>{/t}</li>
+          <li><b>{t}How often will you do this activity?</b> Example: <i>Three times a week on Monday, Wednesday, and Friday.</i>{/t}</li>
+        </ol>
+        <p>{t}A common mistake is to make an action plan that is unreachable within the time frame. For example, if you plan to do something every day, you might fail. Caregiving, and life in general, has its surprises. Although well-intentioned, it is often not possible to do something every day. It is better to plan to do something once or twice a week and exceed your action plan than to plan to do something every day and fail because you only did it six days, rather than seven. Remember, an action plan is meant to help you to take better care of yourself and to experience success. The last thing you need is additional pressure, disappointment, and stress.{/t}</p>
+        <p>{t}Here are some recommendations for writing an action plan that can help you achieve success.{/t}</p>
+        <h5>{t}Start where you are or start slowly.{/t}</h5>
+        <p>{t}If there is a book you have been wanting to read, but just have not found the time, it may not be realistic to expect to read the entire book in the next week. Instead, try reading for a half hour twice during the week If you have not been physically active, it may be unrealistic to make an action plan· to start walking three miles. It is better to make your action plan for something that you believe you can accomplish. For example, make your plan for walking three blocks or a half mile, rather than three miles.{/t}</p>
+        <h5>{t}Give yourself time off.{/t}</h5>
+        <p>{t}We all have days when we do not feel like doing anything. That is the advantage of saying you will do something three days a week, rather than every day. That way, if you do not feel like doing something on one day, or something develops that prevents you from doing it, you can still achieve your action plan.{/t}</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
-    <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    <div id="lesson-1-slide-13" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Making Action Plans{/t}</h2>
+        <hr />
+        <h5>{t}Determine Your Confidence Level{/t}</h5>
+        <p>{t}Once you have made your action plan, ask yourself the following question: On a scale of 0 to 10, with 0 being not at all confident and 10 being totally confident, how confident am I that I can complete my action plan? If your answer is 7 or above, your action plan is probably realistic and reachable. However, if your answer is 6 or below, it is important to take another look at your action plan. Something probably needs to be adjusted.{/t}</p>
+        <p>{t}Ask yourself:{/t}</p>
+        <ul>
+          <li>{t}<i>What makes me uncertain about accomplishing my action plan?</i>{/t}</li>
+          <li>{t}<i>What problems do I foresee?</i>{/t}</li>
+        </ul>
+        <p>{t}Then, see if you either find a solution to the problems you identified or change your action plan to a new one in which you feel greater confidence.{/t}</p>
+        <h5>{t}Write Down Your Action Plan{/t}</h5>
+        <p>{t}Once you are satisfied with your action plan, write it down. Putting an action plan in writing helps us to remember, keep track of, and accomplish the agreement we have made with ourselves. Keep track of how you are doing. Write down the problems you encounter in carrying out your action plan. Check off activities as you accomplish them. If you made an adjustment in your action plan, make a note of what you did.{/t}</p>
+        <p>{t}At the end of the week, review your action plan. Ask yourself:{/t}</p>
+        <ul>
+          <li>{t}<i>Am l nearer to accomplishing my goal?</i>{/t}</li>
+          <li>{t}<i>How do I feel about what I did?</i>{/t}</li>
+          <li>{t}<i>What obstacles or problems, if any, did I encounter?</i>{/t}</li>
+        </ul>
+        <p>{t}Taking stock is important. If you are having problems, this is the time to seek solutions.{/t}</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
+    <div id="lesson-1-slide-14" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Problem-Solving: A Solution-Seeking Approach{/t}</h2>
+        <hr />
+        <p>{t}Sometimes you may find that your action plan is not workable. You may encounter unusual circumstances that week and need to give the plan a try for at least another week or you may need to make adjustments in your original plan. The following solution seeking approach can help you identify solutions to problems.{/t}</p>
+        <ul>
+          <li>{t}<b>Clearly identify the problem.</b> This is the first and most important step in the solution-seeking approach. It also can be the most difficult step.{/t}</li>
+          <li>{t}<b>List ideas to solve the problem.</b> Family, friends, and others may be helpful in giving ideas. When you ask for ideas, just listen to each suggestion. It is best not to respond as to why an idea is or is not likely to work. Just focus on getting the ideas.{/t}</li>
+          <li>{t}<b>Select one to try.</b> When trying a new idea, give it a fair trial before deciding that it will not work.{/t}</li>
+          <li>{t}<b>Assess the results.</b> Ask yourself, <i>How well did what I chose work?</i> If all went well, congratulate yourself for finding a solution to the identified problem. If the first idea did not work, try another idea.{/t}</li>
+        </ul>
+        <p>{t}Sometimes an idea just needs fine-tuning. It is important not to give up on an idea just because it did not work the first time. If you have difficulty finding a solution that works, utilize other resources. Share your problem with family, friends, and professionals and ask them for possible ideas. If you still find that suggested solutions do not work, you may need to accept that the problem is not solvable right now.{/t}</p>
+        <p>{t}Remember, just because there does not seem to be a workable solution right now does not mean that a problem can not be solved later, or that other problems can not be solved in the same way. It may be helpful to go back to the first step and consider if the problem needs to be redefined.{/t}</p>
+        <p>{t}For example, a caregiver had thought that her problem was <i>I am tired all of the time.</i> However, the real problem was the caregiver's beliefs that <i>No one can care for John like I can,</i> and <i>I have to do everything myself.</i> As a result of these beliefs, the caregiver was doing everything herself and getting worn out. When she redefined the problem and focused on changing her beliefs and view of the caregiving situation, she found a workable solution. Sometimes, too, a problem may be easier to work on if you break it down into smaller problems.{/t}</p>
+        <p>{t}Most of the time if you follow these steps, you will find a solution that solves the problem. It is important to avoid making the mistake of jumping from step l to step 7 and thinking <i>nothing can be done.</i>{/t}</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
+    <div id="lesson-1-slide-15" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Reward Yourself{/t}</h2>
+        <hr />
+        <img src="<?php echo $this->getImagesUrl('empower/78771154.png'); ?>" alt="{t}image{/t}" />
+        <p>{t}Accomplishing action plans is often a reward in itself. However, it is also important to find healthy pleasures that add enjoyment to your life. Rewards do not have to be fancy or expensive or take a lot of time.{/t}</p>
+        <p>{t}One caregiver; for example, regularly goes to a movie or a play as a gift to herself from her husband. She said:{/t}</p>
+        <p><i>{t}When my husband was well, he would take me out Friday nights to a movie or a play at least twice a month. Because of his medical condition, he is no longer able to do so. Now a friend and I go to a movie or a play at least once a month. I consider this is a treat that my husband is still giving to me.{/t}</i></p>
+        <p>{t}Another caregiver said:{/t}</p>
+        <p><i>{t}Before my wife's illness, I would go golfing with my buddies on Saturday morning. When Carmela needed more care, I quit golfing. I now treat myself to Saturday golfing, while my daughter or a friend visits with Carmela. This gives me something to look forward to each week and I feel more alive when I return home. I am also finding I am more patient with Carmela. My daughter says I am always happier and calmer when I return home. So, I look at Saturday golfing as my treat not only to me, but also to Carmela.{/t}</i></p>
+        <p class="forum">{t}Have you rewarded yourself recently for the task you have accomplisehd within your caregiver role? Post your response on the Forum.{/t}</p>
+        <img src="<?php echo $this->getImagesUrl('empower/forum_icon.png'); ?>" alt="{t}image{/t}" /> </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
+    <div id="lesson-1-slide-16" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}My Action Plan{/t}</h2>
+        <hr />
+        <img src="<?php echo $this->getImagesUrl('empower/145121152.png'); ?>" alt="{t}image{/t}" />
+        <p>{t}In review, a caregiver who practices selfcare does the following:{/t}</p>
+        <ol>
+          <li>{t}Sets goals.{/t}</li>
+          <li>{t}Identifies a variety of options for reaching a goal{/t}</li>
+          <li>{t}Makes an action plan toward accomplishing the goal.{/t}</li>
+          <li>{t}Carries out the action plan.{/t}</li>
+          <li>{t}Assesses how well the action plan is working.{/t}</li>
+          <li>{t}Makes adjustments, as necessary, in the action plan.{/t}</li>
+          <li>{t}Rewards himself or herself.{/t}</li>
+        </ol>
+        <p>{t}Not all goals are achievable. Sometimes we must accept that what we want to do is not possible at this time, and we must let go of the idea. Be realistic about goals and do not dwell on what can not be done.{/t}</p>
+        <p>{t}Consider what is likely to happen to the caregiver who is driven by a goal to make her mother happy. Given her mother's personality, this goal may be completely unachievable. Such a goal creates a heavy burden and a caregiver is not likely to achieve it. However, an achievable goal might be to provide a pleasurable activity for her mother at least once a week perhaps taking her to get her hair done, visiting a friend, watching a comedy on television, or working together on a project her mother enjoys.{/t}</p>
+        <p>{t}Remember, what is important in caregiving is not just to survive, but to thrive!{/t}</p>
+        <p style="text-align:center;">{t}<a href="#" target="_blank">Action Plan Template</a>{/t}</p>
+        
+        <!--
+ <?php // echo CHtml::link('Link Text',array('controller/action',param1'=>'value1'), array('target'=>'_blank'); ?>
+
+HTML Output:
+
+<a target="_blank" href="index.php?r=controller/action&param1=value1">Link Text</a>
+
+--> 
+        
+      </div>
+      <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Complete Lesson{/t}</a></div>
+    </div>
+    <!-- need this final div here to close lesson-1 --> 
   </div>
   
-  <!-- Lesson 2 Slide 24 -->
-  
-  <div id="lesson-2-slide-24" class="course-slide">
-    <div class="content">
-      <h2 class="flowers">{t}Steps to Maintain Health &amp; Avoid Stress (continued){/t}</h2>
-      <hr />
-      <p>{t}Like Frankl, it is hopeful to believe that meaning can be found in difficult and painful experiences. Hope and meaning play a large part in the following story of Margaret and Tim.{/t}</p>
-      <p>{t}Tim's frequent visits to his elderly mother, Margaret, in the nursing home, were meaningful to him. Years ago, when Margaret was healthy; she shared some of her beliefs with Tim. She had told him, "If there comes a time when I am not able to recognize you because of Alzheimer's disease, or for any other reason, I want you to know what I believe to be true. I believe that my true essence, my spirit, will always be present, even though my physical body and mind may not be the person you remember. Please know that I am with you. We may not be able to talk with each other as we did in the past, but if you play my favorite music, read poetry, hold my hand, or just be with me, I will feel your love and you will feel mine for you."{/t}</p>
-      <p>{t}In sharing her beliefs, Margaret gave Tim the gift of finding meaning in what can be a most difficult and challenging situation. Meaning is all around us. It is the "stuff" of life. Meaning is personal. It is up to each persc1n to find his or her own meaning.{/t}</p>
-      <p>{t}SUMMARY{/t}</p>
-      <p>{t}Are you better acquainted with your stress? Have you identified what you can do to reduce at least one stressor? Do you realize the potential strength in considering your needs and in practicing self-care? Can you find meaning in difficult experiences? Have you learned that often the compassion and care you give to another comes back to you as a gift of meaning?{/t}</p>
-      <p>{t}Remember that your response to a situation will affect the situation itself. As much as possible, make it be what you want it to be.{/t}</p>
+  <!-- Lesson 2 Slide 1 -->
+  <div id="lesson-2">
+    <div id="lesson-2-slide-1" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Reducing Personal Stress{/t}</h2>
+        <hr />
+        <img src="<?php echo $this->getImagesUrl('empower/here.png'); ?>" alt="{t}image{/t}" />
+        <p>{t}This module two main sections:{/t}</p>
+        <ul>
+          <li>{t}The Stress of Caregiving{/t}</li>
+          <li>{t}Steps to Maintain Health &amp; Avoid Stress{/t}</li>
+        </ul>
+        <p>{t}This lesson explores the stress of caregiving. It will help you identify and understand your particular stressors, challenges, and strengths. You can then plan strategies that help you cope, change, and reduce stress. A basic premise of this chapter is that each of us has a reservoir of strength. The challenge is to identify our strengths build on them.{/t}</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Start Course &raquo;{/t}</a></div>
     </div>
-    <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
-  </div>
-  
-  <!-- Lesson 2 Slide 25 -->
-  
-  <div id="lesson-2-slide-25" class="course-slide">
-    <div class="content">
-      <h2 class="flowers">{t}Tips for Overcoming Negative Emotions &amp; Reducing Stress{/t}</h2>
-      <hr />
-      <p>{t}A Wide variety of mental activities can help caregivers overcome negative emotions and reduce stress. Think about how you might use some of these ideas in your own life.{/t}</p>
-      <ul>
-        <li>{t}Become aware of harmful thought patterns. That is a first step in taking positive action to care for yourself.{/t}</li>
-        <li>{t}Pay attention to shallow breathing because it often adds to physical stress.{/t}</li>
-        <li>{t}Imagine washing away the stresses of the day during a shower.{/t}</li>
-        <li>{t}Change clothes as a way to shed the day's concerns{/t}</li>
-        <li>{t}Create a stress diary where you record information about the stresses you are experiencing so you can analyze them and take steps to manage them. In your diary, record how much time you feel depressed, in control, emotionally stable, had enough energy, and were satisfied with life.{/t}</li>
-        <li>{t}Think about, and write a list of, the problems you face and the options you have available. using a scale of 1-7, prioritize the problems you want to tackle first.{/t}</li>
-        <li>{t}Think about, and write a list of, the changes you could make in your daily life. Then prioritize the changes. The first changes to tackle are the ones that have the highest priorities.{/t}</li>
-        <li>{t}Visit the Mind Tools website for more information and tools that will help you with decision making, positive thinking, managing stress, and finding balance in your life.{/t}</li>
-        <li>{t}Read about what others are doing to reduce stress.{/t}</li>
-      </ul>
+    <!-- Lesson 2 Slide 2 -->
+    <div id="lesson-2-slide-2" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}The Stress of Caregiving{/t}</h2>
+        <hr />
+        <p>{t}There has been so much written about stress it has become a household word. Studies show that a certain amount of stress is helpful. It can challenge us to change and motivate us to do things we might not do otherwise. However, when the amount of stress overwhelms our ability to cope with it, we feel 'distress' or 'burnout.'{/t}</p>
+        <p>{t}Distress is 'suffering of mind or body; severe physical or mental strain.' As a caregiver, you no doubt have increased stress in your life, whether you are caring for a mother with early Parkinson's disease, who is still able to care for her personal needs, or a spouse who does not recognize you because of advanced Alzheimer's disease.{/t}</p>
+        <p>{t}Please think about the last time you were under distress.{/t}</p>
+        <p>{t}Each caregiving situation is unique. What is stressful for you may not be stressful for someone else. In his book The Survivor Personality, AI Siebert says, "there is no stress until you feel a strain." Since the feeling of stress is subjective and unique to each individual, it is difficult to define objectively. The stress you feel is not only the result of your caregiving situation, it is all of your perception of it. Your stress will increase or decrease depending on how you perceive your circumstances. And your perception will affect how you respond.{/t}</p>
+        <p>{t}Factors That Affect Stress{/t}</p>
+        <p>{t}Your level of stress is influenced by many factors, including:{/t}</p>
+        <ul>
+          <li>{t}whether your caregiving is voluntary or not;{/t}</li>
+          <li>{t}your relationship with the care receiver;{/t}</li>
+          <li>{t}your coping abilities;{/t}</li>
+          <li>{t}your caregiving situation; and{/t}</li>
+          <li>{t}whether support is available.{/t}</li>
+        </ul>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
-    <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
-  </div>
-  <!-- Lesson 2 Slide 26 -->
-  <div id="lesson-2-slide-26" class="course-slide">
-    <div class="content">
-      <h2 class="flowers">{t}Tips for Overcoming Negative Emotions &amp; Reducing Stress: Simple Pleasures{/t}</h2>
-      <hr />
-      <p>{t}Even tiny bursts of simple pleasures may improve your physical and mental health. Some researchers say that it is the frequency of the positive feelings that come from these small pleasures that is most important in determining happiness. On the Internet, people are posting their simple pleasures such as those listed below. When you are sitting quietly in a comfortable place, list simple pleasures that help you get through your caregiving days.{/t}</p>
-      <ul>
-        <li>{t}Looking at old pictures{/t}</li>
-        <li>{t}Soft pajamas{/t}</li>
-        <li>{t}Seeing winter's first snowfall on a bright moonlit night{/t}</li>
-        <li>{t}Chocolate{/t}</li>
-        <li>{t}Watching the sun set{/t}</li>
-        <li>{t}The smell of freshly cut grass, and the air right after it rains{/t}</li>
-        <li>{t}Clean skin on clean sheets{/t}</li>
-        <li>{t}The smell of freshly cut grass, and the air right after it rains{/t}</li>
-        <li>{t}Falling asleep in the spring sun{/t}</li>
-        <li>{t}Looking to the birds sing early in the morning{/t}</li>
-        <li>{t}Sitting in bed with a cup of tea doing crossword puzzles{/t}</li>
-        <li>{t}Eating a spoonful of peanut butter{/t}</li>
-        <li>{t}An unexpected breeze on a hot summer's day{/t}</li>
-        <li>{t}Having an attached garage... and it is raining{/t}</li>
-      </ul>
-      <p>{t}Make and post a 1-5 minute video to You Tube of your simple pleasures.{/t}</p>
+    <!-- Lesson 2 Slide 3 -->
+    <div id="lesson-2-slide-3" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}The Stress of Caregiving (continued){/t}</h2>
+        <hr />
+        <p>{t}Whether your caregiving is voluntary or not -{/t}</p>
+        <p>{t}Many people become caregivers voluntarily. Others acquire the role because no one else is available. When you become a caregiver voluntarily, you are making a choice. However, if you "inherited" the job and feel you had no choice, the chances are greater for experiencing strain, distress, and resentment. Nancy became a caregiver because no one else was available.{/t}</p>
+        <p>{t}Nancy could not have been more surprised when the visiting nurse asked her if she was the primary caregiver for her mother in-law, Joan. Nancy was fond of Joan. She called and stopped by frequently to see how Joan was managing, but had not thought of herself as the primary caregiver. It was apparent that Joan's medical condition was worsening and she was becoming increasingly weak Nancy realized there were no other children or relatives available, so she agreed, although somewhat reluctantly, to be Joan's caregiver. Nancy felt anxious and uncertain about what it meant to be a primary caregiver and whether she had the necessary skills to perform the role.{/t}</p>
+        <p>{t}Luckily, Nancy and Joan had a good relationship and they were able to communicate openly, minimizing some of the potential for stress. You can not always think about a caregiving relationship in advance, but if you can, it has greater potential for success.{/t}</p>
+        <p>{t}Your relationship with the care receiver -{/t}</p>
+        <p>{t}If your relationship with the care receiver has been difficult, becoming a caregiver is more of a challenge. If the care receiver has always been demanding and controlling, you will probably feel more stress, anger, and resentment. Sometimes people are caregiving with the hope of healing a relationship. The healing may or may not happen. If healing does not happen, the caregiver may feel regret, depressed, and discouraged. A professional counselor, spiritual advisor, or trusted friend can help deal with such feelings and emotions.{/t}</p>
+        <p>{t}Your coping abilities -{/t}</p>
+        <p>{t}How you have coped with stress in the past predicts how you will cope now. Did you find constructive ways to manage your stress? Perhaps you were able to find time to exercise regularly and generally take care of yourself. Or did you rely on alcohol or drugs to help you cope? Sometimes people rely on medications and alcohol in times of stress, which only makes matters worse. It is important to identify your current coping strengths and build on them. Learning new coping skills also will help make your caregiving situation less stressful.{/t} 
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
-    <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Complete Lesson{/t}</a></div>
-  </div>
-  <!-- need this final div here to close lesson-2 --> 
-</div>
-
-<!-- Lesson 4 Slide 1 -->
-
-<div id="lesson-4">
-<div id="lesson-4-slide-1" class="course-slide">
-  <div class="content">
-    <h2 class="flowers">{t}Normal &amp; Abnormal Aging Changes{/t}</h2>
-    <hr />
-    <img src="<?php echo $this->getImagesUrl('164010920/here.png'); ?>" alt="{t}image{/t}">
-    <p>{t}This module contains four main sections:{/t}</p>
-    <ul>
-      <li>{t}Myths and Realities of Aging{/t}</li>
-      <li>{t}Focusing on Healthy Aging{/t}</li>
-      <li>{t}Normal Aging Changes{/t}</li>
-      <li>{t}Aging Well{/t}</li>
-    </ul>
-  </div>
-  <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Start Course &raquo;{/t}</a></div>
-</div>
-
-<!-- Lesson 4 Slide 2 -->
-
-<div id="lesson-4-slide-2" class="course-slide">
-  <div class="content">
-    <h2 class="flowers">{t}Myths and Realities of Aging{/t}</h2>
-    <hr />
-    <p>{t}Images of aging in our society are not very positive. For example, let us look at some of our stereotypes about older adults:{/t}</p>
-    <ul>
-      <li>{t}Old people can not learn new things.{/t}</li>
-      <li>{t}Old people are close-minded, set in their ways.{/t}</li>
-      <li>{t}Old people are cantankerous, crabby.{/t}</li>
-      <li>{t}Old people are slow.{/t}</li>
-      <li>{t}The elderly do not pull their own weight.{/t}</li>
-      <li>{t}Old people are always sick.{/t}</li>
-    </ul>
-    <p>{t}Dr. Erdman Palmore developed a “Facts on Aging” quiz to measure perceptions (and misperceptions) about aging. Dr. Palmore\’s quiz is a good way to look at our concepts of aging. Let\’s look at some of these items and see how you score them:{/t}</p>
-    <p>{t}The majority of older people are senile, have a defective memory, or are disoriented.{/t}</p>
+    <!-- Lesson 2 Slide 4 -->
+    <div id="lesson-2-slide-4" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}The Stress of Caregiving (continued){/t}</h2>
+        <hr />
+        <p>{t}The caregiving situation -{/t}</p>
+        <p>{t}What does your caregiving situation require of you? Does it require 24-hour-aday availability? Or do you just need to make an occasional telephone call to check on the person? What disease does the care receiver have? Does he have a mental or physical disability, or both? Certain caregiving situations are more stressful than others. For example, caring for someone who has a dementia such as Alzheimer's disease is often more stressful than caring for someone with a physical limitation. Also, stress tends to be highest when:{/t}</p>
+        <ul>
+          <li>{t}the caregiving situation continues for a long time.{/t}</li>
+          <li>{t}the care receiver's needs gradually increase.{/t}</li>
+          <li>{t}caregivers feel they have limited or no support.{/t}</li>
+          <li>{t}caregivers have their own health/physical problems.{/t}</li>
+        </ul>
+        <p>{t}Whether support is available -{/t}</p>
+        <p>{t}Caregivers who feel isolated and without adequate support usually experience a higher level of stress. Support may be lacking for several reasons:{/t}</p>
+        <ul>
+          <li>{t}The caregiver may resist accepting help, even when he or she needs it.{/t}</li>
+          <li>{t}Others may be willing to help but do not offer because they are uncomfortable around the ill person, frightened of the illness, or do not know what they can do.{/t}</li>
+          <li>{t}Others do not want to interfere, especially if the caregiver seems to have everything under control and has refused help in the past.{/t}</li>
+        </ul>
+        <p>{t}Caregiver stress is influenced by many factors, including the need to adapt to ongoing changes and losses caused by the care receiver's illness. These changes cause you to redefine your life. What was normal has changed. You are living with a new reality.{/t} 
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
+    <!-- Lesson 2 Slide 5 -->
+    <div id="lesson-2-slide-5" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}The Stress of Caregiving (continued){/t}</h2>
+        <hr />
+        <p>{t}Signs of Stress{/t}</p>
+        <p>{t}Here is a checklist of some common signs of stress:{/t}
+        <table>
+          <tr>
+            <td>Physical</td>
+            <td>Mental/Emotional</td>
+            <td>Behavioral </td>
+          </tr>
+          <tr>
+            <td><p>
+                <input type="checkbox" name="checkbox" id="checkbox">
+                Headache</p>
+              <p>
+                <input type="checkbox" name="checkbox2" id="checkbox2">
+                Muscle tension and aches</p>
+              <p>
+                <input type="checkbox" name="checkbox3" id="checkbox3">
+                Nausea, diarrhea, heartburn</p>
+              <p>
+                <input type="checkbox" name="checkbox4" id="checkbox4">
+                Rapid heartbeat, palpitations</p>
+              <p>
+                <input type="checkbox" name="checkbox5" id="checkbox5">
+                Shortness of breath, dizziness</p>
+              <p>
+                <input type="checkbox" name="checkbox6" id="checkbox6">
+                Constant fatigue, energy loss</p>
+              <p>
+                <input type="checkbox" name="checkbox7" id="checkbox7">
+                Change in appetite</p>
+              <p>
+                <input type="checkbox" name="checkbox8" id="checkbox8">
+                Weight gain or loss</p>
+              <p>
+                <input type="checkbox" name="checkbox9" id="checkbox9">
+                Frequent illnesses</p></td>
+            <td><p>
+                <input type="checkbox" name="checkbox10" id="checkbox10">
+                Anxiety</p>
+              <p>
+                <input type="checkbox" name="checkbox11" id="checkbox11">
+                Constant worrying </p>
+              <p>
+                <input type="checkbox" name="checkbox12" id="checkbox12">
+                Depression, sadness</p>
+              <p>
+                <input type="checkbox" name="checkbox13" id="checkbox13">
+                Inability to concentrate</p>
+              <p>
+                <input type="checkbox" name="checkbox14" id="checkbox14">
+                Moodiness, irritability</p>
+              <p>
+                <input type="checkbox" name="checkbox15" id="checkbox15">
+                Restlessness, agitation</p>
+              <p>
+                <input type="checkbox" name="checkbox16" id="checkbox16">
+                Feeling overwhelmed </p>
+              <p>
+                <input type="checkbox" name="checkbox17" id="checkbox17">
+                Racing thoughts</p>
+              <p>
+                <input type="checkbox" name="checkbox18" id="checkbox18">
+                Forgetfulness, confusion</p></td>
+            <td><p>
+                <input type="checkbox" name="checkbox19" id="checkbox19">
+                Sleeping too much or too little</p>
+              <p>
+                <input type="checkbox" name="checkbox20" id="checkbox20">
+                Short temper </p>
+              <p>
+                <input type="checkbox" name="checkbox21" id="checkbox21">
+                Difficulty making decisions</p>
+              <p>
+                <input type="checkbox" name="checkbox22" id="checkbox22">
+                Poor nutrition</p>
+              <p>
+                <input type="checkbox" name="checkbox23" id="checkbox23">
+                Too much smoking, drinking</p>
+              <p>
+                <input type="checkbox" name="checkbox24" id="checkbox24">
+                Tooth grinding</p>
+              <p>
+                <input type="checkbox" name="checkbox25" id="checkbox25">
+                Neglecting responsibilities</p>
+              <p>
+                <input type="checkbox" name="checkbox26" id="checkbox26">
+                Social isolation</p>
+              <p>
+                <input type="checkbox" name="checkbox27" id="checkbox27">
+                Nervous habits fidgeting</p></td>
+          </tr>
+        </table>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
+    <!-- Lesson 2 Slide 6 -->
+    <div id="lesson-2-slide-6" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Steps to Maintain Health &amp; Avoid Stress{/t}</h2>
+        <hr />
+        <p>{t}Whatever causes stress in your life, too much of it can lower your resistance to disease and lead to "burnout." Current research shows that there is a _close connection between stress and health. Unrelieved stress is on,e of many factors that cause illness. Research also shows that thoughts and emotions affect the immune system, which is the first line of defense against disease. It is possible to strengthen the immune system by reducing stress. The following four steps will help you maintain your health and avoid distress:{/t}</p>
+        <ol>
+          <li>{t}Recognize your warning signs of stress.{/t}</li>
+          <li>{t}Identify your sources of stress.{/t}</li>
+          <li>{t}Identify what you can and cannot change.{/t}</li>
+          <li>{t}Take action to manage your stress.{/t}</li>
+        </ol>
+        <p>{t}Each of these steps will be discussed in detail.{/t}</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
+    <!-- Lesson 2 Slide 7 -->
+    <div id="lesson-2-slide-6" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Steps to Maintain Health &amp; Avoid Stress (continued){/t}</h2>
+        <hr />
+        <p>{t}Step 1: Recognize Your Warning Signs of Stress{/t} -</p>
+        <p>{t}The first step in managing stress is to be aware of how it affects you. What are your warning signs and symptoms of stress? The following are signs that may occur when you experience an unusual amount of stress. Answering these questions can help you identify your own warning signs. What is usually your earliest sign of stress? It is important to recognize stress early and do something about it, before it causes you serious problems. For one caregiver, the early sign might be increased irritability. For another, it might be lying awake for hours before falling asleep. For another, it might be fatigue and a lack of energy.{/t}</p>
+        <p>{t}Sometimes, too, when we are involved in a situation, we may not listen to our early warning signs, but they are voiced in the words of others: "You look so tired," "You get upset so easily lately," "Why are you snapping at me?" If you hear such statements, it is a "red light" warning sign. Just as a flashing red light on your car's dashboard warns you that something is wrong with your car, we also display warning signals. What happens if we ignore the early red flashing light on the car's dashboard? What happens if we ignore our personal early warning signals?{/t}</p>
+        <p>{t}Do you listen to your early warning signals? What are they? And what do you do about them? Warning signs usually mean we need to stop, valuate what is happening, and make some changes. The earlier warning signals are recognized, the greater the chance of avoiding or reducing the destructive effects of stress.{/t}</p>
+        <div class="question">
+          <p>
+            <input type="checkbox" name="Yes" id="Yes">
+            <label for="Yes">Yes</label>
+            <input type="checkbox" name="No" id="No">
+            <label for="No">No</label>
+            | Do you feel a loss of energy or zest for life?</p>
+          <p>
+            <input type="checkbox" name="Yes2" id="Yes2">
+            <label for="Yes2">Yes</label>
+            <input type="checkbox" name="No2" id="No2">
+            <label for="No2">No</label>
+            | Do you feel tired or exhausted much of the time?</p>
+          <p>
+            <input type="checkbox" name="Yes3" id="Yes3">
+            <label for="Yes3">Yes</label>
+            <input type="checkbox" name="No3" id="No3">
+            <label for="No3">No</label>
+            | Do you feel out of control, exhibiting uncharacteristic emotions or actions?</p>
+          <p>
+            <input type="checkbox" name="Yes4" id="Yes4">
+            <label for="Yes4">Yes</label>
+            <input type="checkbox" name="No4" id="No4">
+            <label for="No4">No</label>
+            | Do you feel tense, nervous, or anxious much of the time?</p>
+          <p>
+            <input type="checkbox" name="Yes5" id="Yes5">
+            <label for="Yes5">Yes</label>
+            <input type="checkbox" name="No5" id="No5">
+            <label for="No5">No</label>
+            | Do you lack interest in people or things that were formerly pleasurable?</p>
+          <p>
+            <input type="checkbox" name="Yes6" id="Yes6">
+            <label for="Yes6">Yes</label>
+            <input type="checkbox" name="No6" id="No6">
+            <label for="No6">No</label>
+            | Are you becoming increasingly isolated?</p>
+          <p>
+            <input type="checkbox" name="Yes7" id="Yes7">
+            <label for="Yes7">Yes</label>
+            <input type="checkbox" name="No7" id="No7">
+            <label for="No7">No</label>
+            | Are you consuming more sleeping pills, medicating, alcohol, caffeine, or
+            cigarettes?</p>
+          <p>
+            <input type="checkbox" name="Yes8" id="Yes8">
+            <label for="Yes8">Yes</label>
+            <input type="checkbox" name="No8" id="No8">
+            <label for="No8">No</label>
+            | Are you having increased health problems: ie, high blood pressure headaches, ulcers, upset stomach, or other difficulties with digestion?</p>
+          <p>
+            <input type="checkbox" name="Yes14" id="Yes14">
+            <label for="Yes14">Yes</label>
+            <input type="checkbox" name="No14" id="No14">
+            <label for="No14">No</label>
+            | Do you have sleep problems, such as
+            difficulty falling asleep at night,
+            awakening early, or sleeping excessively?</p>
+          <p>
+            <input type="checkbox" name="Yes13" id="Yes13">
+            <label for="Yes13">Yes</label>
+            <input type="checkbox" name="No13" id="No13">
+            <label for="No13">No</label>
+            | Are you experiencing appetite changes?</p>
+          <p>
+            <input type="checkbox" name="Yes12" id="Yes12">
+            <label for="Yes12">Yes</label>
+            <input type="checkbox" name="No12" id="No12">
+            <label for="No12">No</label>
+            | Do you have problems with concentration
+            or memory?</p>
+          <p>
+            <input type="checkbox" name="Yes11" id="Yes11">
+            <label for="Yes11">Yes</label>
+            <input type="checkbox" name="No11" id="No11">
+            <label for="No11">No</label>
+            | Are you increasingly irritable or
+            impatient with others?</p>
+          <p>
+            <input type="checkbox" name="Yes10" id="Yes10">
+            <label for="Yes10">Yes</label>
+            <input type="checkbox" name="No10" id="No10">
+            <label for="No10">No</label>
+            | Do you have feelings of helplessness or
+            hopelessness?</p>
+          <p>
+            <input type="checkbox" name="Yes9" id="Yes9">
+            <label for="Yes9">Yes</label>
+            <input type="checkbox" name="No9" id="No9">
+            <label for="No9">No</label>
+            | Are you abusing or neglecting to provide care to the care receiver?</p>
+          <p>
+            <input type="checkbox" name="Yes15">
+            <label for="Yes15">Yes</label>
+            <input type="checkbox" name="No15">
+            <label for="No15">No</label>
+            Do you have thoughts of suicide?</p>
+          <p>
+            <input name="button" type="submit" id="button" onClick="MM_popupMsg('A \&quot;yes\&quot; answer to even one or two of these questions can indicate stress that has become debilitating.')" value="Submit">
+          </p>
+        </div>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
+    <!-- Lesson 2 Slide 8 -->
+    <div id="lesson-2-slide-8" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Steps to Maintain Health &amp; Avoid Stress (continued){/t}</h2>
+        <hr />
+        <p>{t}Step 2: Identify Your Sources of Caregiving Stress -{/t}</p>
+        <p>{t}The second step in managing stress is to recognize what causes your stress. Not all stressors are the result of caregiving. Other sources can affect your ability to be a caregiver. The following questions include many common sources of stress. Thinking about these questions can help you recognize some of your own sources.{/t}</p>
+        <ol>
+          <li>{t}Are you experiencing many demands on your time, energy, or money? What are they?{/t}</li>
+          <li>{t}Do you feel you have conflicting responsibilities? Which ones?{/t}</li>
+          <li>{t}Are there differences in expectations between your family, your boss, the care receiver, and yourself? What are they?{/t}</li>
+          <li>{t}Do you feel others do not understand the care receiver's mental or physical condition?{/t}</li>
+          <li>{t}Do you have difficulty meeting the care receiver's physical or emotional needs?{/t}</li>
+          <li>{t}Are you pressured by financial decisions and lack of resources?{/t}</li>
+          <li>{t}Do you feel a loss of freedom, to the point of feeling trapped?{/t}</li>
+          <li>{t}Is there disagreement among family members?{/t}</li>
+          <li>{t}Do you feel that other family members are not doing their share?{/t}</li>
+          <li>{t}Does the care receiver place unrealistic demands and expectations on you?{/t}</li>
+          <li>{t}Is there a lack of open communication between you and the care receiver?{/t}</li>
+          <li>{t}Do other family members have negative attitudes that create difficulty for you?{/t}</li>
+          <li>{t}Is it painful to watch the care receiver's condition get worse?{/t}</li>
+          <li>{t}Are there other problems with children, marriage, job, finances, or health? What are they?{/t}</li>
+        </ol>
+        <p>{t}Consider your "yes" answers carefully. The sources of stress you have identified are indicators for change. Use the awareness you have gained in the first two steps to make helpful changes.{/t}</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
+    <!-- Lesson 2 Slide 9 -->
+    <div id="lesson-2-slide-9" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Steps to Maintain Health &amp; Avoid Stress (continued){/t}</h2>
+        <hr />
+        <p>{t}The following story is an example of a caregiver who recognized the source of her distress and made changes to better manage the situation.{/t}</p>
+        <p>{t}Ernestine was increasingly fatigued, irritable, and depressed with the responsibility of caring for her husband, Richard, who had Parkinson's disease. Richard's condition was steadily getting worse. He was bed-bound and needed help with many functions. Other family members had not offered to help, and Ernestine felt abandoned, alone, angry, and overwhelmed. A few friends and neighbors had offered to help but Ernestine refused. When she started having health problems, it became clear that something had to change. She had to have help.{/t}</p>
+        <p>{t}Because Ernestine had difficulty asking for help, she devised a simple plan that would give others an opportunity to help without having to be asked. She made a list of tasks she needed help with and posted it on the refrigerator. The list included such things as vacuuming the living room, grocery shopping, staying with Richard so she could go to church, weeding the garden, picking up audio books at the library, picking up medications at the pharmacy, and preparing food. When visitors offered to help, Ernestine referred them to the list, suggesting they choose a task that suited them. This proved to be a successful plan for everyone.{/t}</p>
+        <p>{t}It is important to identify the causes of your stress before they overwhelm you. Do not wait until you develop health problems, as Ernestine did. Many caregivers keep going until they become ill. You can only be an effective caregiver if you are healthy. Self-sacrifice to the point of illness benefits no one and is not required or recommended.{/t}</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
+    <!-- Lesson 2 Slide 10 -->
+    <div id="lesson-2-slide-10" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Steps to Maintain Health &amp; Avoid Stress (continued){/t}</h2>
+        <hr />
+        <p>{t}Step 3: Identify What You Can and Cannot Change -{/t}</p>
+        <p>{t}A major challenge of caregiving is to not only survive, but to rebuild your life and thrive. This is possible once you know the sources and signs of your stress. Then you can determine those you can do something about and those that are beyond your control. Step three is to identify what you can and cannot change{/t}</p>
+        <p>{t}Identifying what you can change gives you a sense of control over events. However, it is not easy to determine what can and cannot be changed. Too often people try to change things they have no control over. For example, someone who focuses on trying to change another person usually ends up more frustrated. The only person you can change is yourself. You may be able to change a situation, how you respond to it, or your perception of it, but you can not change another person. It wastes valuable time and energy trying to change what is outside of your control. Some situations can not be changed. However, you may be able to manage them better if you change your outlook about a situation, or decide to 'roll with the punches.'{/t}</p>
+        <p>{t}The frustration and hopelessness that result from trying to change the unchangeable are self-defeating and can adversely affect a relationship, as in the case of Hal and Sue.{/t}</p>
+        <p>{t}Sue and Hal had been a socially active couple. Sue was diagnosed with early Parkinson's disease and gradually started backing out of social plans because she did not feel up to it. Since the beginning of the disease Sue has been on a roller coaster of having good days and bad days. Hal encourages Sue to go out when she does not feel like it, urging her to 'snap out of it.' He wants things to remain as they were.{/t}</p>
+        <p>{t}Hal is frustrated in his attempts to change the effect of the disease on their lives. By not accepting Sue's feelings, he is adding stress to their relationship. But recently he has learned more about Parkinson's disease and is trying to be more realistic and flexible about what he can and cannot change. Flexibility is crucial. A Japanese saying is:{/t}</p>
+        <p>{t}'In a storm, it is the bamboo, the flexible tree, that can bend with the wind and survive. The rigid tree that resists the wind falls, victim of its own insistence on control.'{/t}</p>
+        <p>{t}Bending with the wind is crucial to surviving the winds of change, including those involved in caregiving. At times, both you and the care receiver may feel a loss of control over your lives. While feeling in control is important, sometimes it can be me a problem because the more we try to control, the less control we seem to have. Being flexible can help us keep a positive attitude, despite hardships.{/t}</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
+    <!-- Lesson 2 Slide 11 -->
+    <div id="lesson-2-slide-11" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Steps to Maintain Health &amp; Avoid Stress (continued){/t}</h2>
+        <hr />
+        <p>{t}Use the following guidelines to look at your situation and to determine what can and cannot be changed:{/t}</p>
+        <ol>
+          <li>{t}Accept the reality of your caregiving situation.{/t}</li>
+          <li>{t}Educate yourself about the care receiver's disease.{/t}</li>
+          <li>{t}Identify unrealistic expectations, especially your own.{/t}</li>
+          <li>{t}Seek and accept support.{/t}</li>
+          <li>{t}Identify what you still have, rather than focus on what is lost.{/t}</li>
+          <li>{t}Let go of what cannot be changed.{/t}</li>
+        </ol>
+        <p>{t}Accept the reality of your caregiving situation{/t}</p>
+        <p>{t}When making changes it is necessary, but not always easy; to accept reality. We often deny things that hurt, and that can keep us from seeing a situation as it really is. Jane heard the doctor tell Joe that he had a serious illness. He also told Joe he would need more rest and help with certain daily activities. Still, Jane found herself feeling annoyed when Joe took frequent naps, especially since she was taking on more responsibility for managing things at home. It took time for Jane to stop denying, and start accepting, the full impact of the disease. It was then that she was able to see realistically what could and could not be changed.{/t}</p>
+        <p>{t}Jane is coping in a more adaptive way. However, Joe's mother denied the seriousness of the disease long after Jane came to terms with it. Family members may take different lengths of time to accept reality, which can add to the stress of caregiving.{/t}</p>
+        <p>{t}Educate yourself about the care receiver's disease{/t}</p>
+        <p>{t}You will be better able to identify what you can and cannot change when you understand the disease. For example, without knowledge about the communication abilities of someone with Alzheimer's disease, you may try to reason with the person or expect him to tell someone something you consider easy to remember. This will probably frustrate both of you. There are many sources of information about specific diseases, including your personal physician, medical libraries, and associations related to specific diseases, such as Alzheimer's and Parkinson's disease. If you have access to a computer that is linked to the Internet, you can find a wealth of current information on diseases and disease-related associations.{/t}</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
+    <!-- Lesson 2 Slide 12 -->
+    <div id="lesson-2-slide-12" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Steps to Maintain Health &amp; Avoid Stress (continued){/t}</h2>
+        <hr />
+        <p>{t}Identify unrealistic expectations, especially your own{/t}</p>
+        <p>{t}You can make changes successfully only when your expectations are realistic. How realistic are yours? Do you often feel anxious because you expect more of yourself than you can achieve? Many caregivers listen only to the 'shoulds' they have been raised with. Women, especially, often believe they "should" be able to do everything themselves, and when that is not possible, they feel guilty or depressed. If you have unrealistic expectations of yourself, then your expectations of what can be changed probably will be unrealistic also. The following story is an example of a caregiver, Rosa, who with her husband, Dean, made constructive changes in what was a difficult, stressful situation.{/t}</p>
+        <p>{t}Rosa was devastated when Dean, her husband of 40 years, suffered a sudden, severe stroke that left him partially paralyzed on one side of his body and unable to speak. The stroke was a shock. Rosa's initial response was to become overly protective and do everything for Dean. She was afraid to leave him alone for fear something terrible would happen. Before the stroke, Rosa and Dean had been making retirement plans, which included extensive travel. Those plans were forsaken as they both felt increasingly overwhelmed, fearful, isolated, and depressed. Rosa became extremely fatigued and irritable as Dean became increasingly dependent on her. The visiting nurse talked with them about what Dean could and could not do for himself. She emphasized the importance of Dean maintaining as much independence as possible. It became apparent that Dean could do many things for himself, including writing letters to family and friends. Dean felt better as he became more independent. Rosa was able to be more realistic in her expectations. She realized that Dean's dependence on her was detrimental to their relationship.{/t}</p>
+        <p>{t}As Rosa and Dean gradually adapted to living with the stroke, they became less fearful and more hopeful. They began looking at the quality of their remaining life together. They wanted, more than anything, to travel together and decided to take a short trip to see how it would go. The first trip was successful and they felt encouraged to travel more. Rosa found a travel agent who helped them plan trips that accommodated Dean's disabilities. They enjoyed several trips before Dean's death 12 years later. Rosa and Dean responded to this challenge by gaining an understanding of the disease, accepting reality; setting realistic expectations, and changing what could be changed.{/t}</p>
+        <p>{t}Seek and accept support{/t}</p>
+        <p>{t}Many caregivers find it difficult to ask for help. Rosa initially refused help from friends and neighbors. She did everything herself until she started feeling distressed. The expectations she had for herself were overwhelming and unrealistic. It was not until she began seeking support from the visiting nurse, travel agent, and others that she was able to find a way to make changes. Often you can make changes only with the help of others. Seeking and accepting support may be the single most important factor in making constructive changes.{/t}</p>
+        <p>{t}Identify what you still have, rather than focus on what is lost{/t}</p>
+        <p>{t}When Rosa and Dean decided to look for "what remained" in their situation, they hoped that they still had quality in their life together. They looked at what they still had, rather than focusing on what had been lost, and they made changes that were still possible.{/t}</p>
+        <p>{t}They found an unexpected 'gift' as they made changes and adapted to the illness. Rosa said, 'I never would have asked for the stroke to happen, but it was because of it that Dean and I learned what love was all about. I am a different person than I was. I am more understanding, patient, caring, and sensitive to the pain of others. Many caregivers, as they learn more about themselves, experience personal growth. That is the 'gift' that can often be found in difficult times.{/t}</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
+    <!-- Lesson 2 Slide 13 -->
+    <div id="lesson-2-slide-13" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Steps to Maintain Health &amp; Avoid Stress (continued){/t}</h2>
+        <hr />
+        <p>{t}Let go of what cannot be changed{/t}</p>
+        <p>{t}It is natural to want to hold on to things as they were. But letting go of what you cannot change is accepting the situation as it is. It releases you from the need to control what you cannot change. Letting go is a way to cooperate with the inevitable. It releases new energy for accepting reality and seeing new possibilities. Sam is a prime example of someone who is learning to let go.{/t}</p>
+        <p>{t}Sam had always been an intense athletic competitor, and sports had been the driving force in his life. At age 45 he had a slight stroke which left him mildly affected. Sam's problem wasn't that he had a stroke; the problem was that he could not let go of wishing that he had not had one. He continuously wanted things to be as they had been. This made him feel angry and frustrated. Fortunately, Sam reached a point of wanting to learn to live with the stroke and to let go of wanting life to be as it had been before.{/t}</p>
+        <p>{t}Sam was unable to live in the present until he let go of his desire for things to be as they were. The "if onlys" and "what ifs" were a source of suffering. When Sam let go, he learned to live with the stroke and made changes that helped him develop a satisfying life. What Sam learned also applies to caregivers, as shown in the case of Marsha and Bud.{/t}</p>
+        <p>{t}Marsha was the caregiver for her husband, Bud, who had Parkinson's disease. Buds condition worsened and he and Marsha were unable to do any of the things they had done in the past. Marsha continually wanted things to be the way they had been. "If only" became her constant thought: "If only Bud could dress himself," "If only we could go dancing like we used to," "If only Bud had more energy," "If only he could still drive us places." Marsha's unhappiness caused a strain in their relationship. It was only when she and Bud were having a good time playing cards with friends one day that she realized how much valuable time she was wasting by constantly wanting things to be different. She began to let go of "if only" and to accept "what is." In letting go, she found acceptance and peace of mind.{/t}</p>
+        <p>{t}As you reflect on your challenges as a caregiver, consider these questions. What can I change? What must I accept? What can I improve?{/t}</p>
+        <p>{t}Step 4: Take Action to Manage Your Stress{/t}</p>
+        <p>{t}The fourth step points the way for you to manage and reduce your stress. There are many different tools for managing stress. But you must find what is most effective for you. Proven ways to manage and reduce stress include:{/t}</p>
+        <ul>
+          <li>{t}managing your thoughts, beliefs, and perceptions.{/t}</li>
+          <li>{t}practicing self-care.{/t}</li>
+          <li>{t}getting social support.{/t}</li>
+          <li>{t}using techniques that lower stress.{/t}</li>
+          <li>{t}developing plans of action.{/t}</li>
+          <li>{t}finding hope and meaning.{/t}</li>
+        </ul>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
+    <!-- Lesson 2 Slide 14 -->
+    <div id="lesson-2-slide-14" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Steps to Maintain Health &amp; Avoid Stress (continued){/t}</h2>
+        <hr />
+        <p>{t}Managing your thoughts, beliefs, and perceptions{/t}</p>
+        <p>{t}Thoughts and beliefs are the foundation of experience. They are not only reactions to events but our thoughts and beliefs can also influence events. What we think and believe affects what happens. Managing our thoughts means we have control over how we view things. As a caregiver, there may be times when the only thing you can change is how you view a situation. There are several tools for managing thoughts, beliefs, and perceptions. Two that can be helpful are reframing and self-talk.{/t}</p>
+        <p>{t}Reframing -{/t}</p>
+        <p>{t}Your frame of reference is the window through which you view the world. It gives meaning to your world. You see things one way, but someone else sees the same circumstances differently. Situations become more stressful when you view them in a negative way. Reframing is learning to look at things in a different way, for example, finding something positive about a difficult situation. Some examples of reframing include:{/t}</p>
+        <ul>
+          <li>{t}A caregiver who views the behavior of someone with Alzheimer's disease as "purposefully behaving that way to get to me" versus taking the view that "the behavior is a part of the disease."{/t}</li>
+          <li>{t}A caregiver who is angry at her brother for helping only once a month versus taking the view that "any help, no matter how little, will lighten my load."{/t}</li>
+          <li>{t}A caregiver who puts the situation into a religious or philosophical framework, such as "This is happening because God is angry with me" versus taking the view that "God is giving me an opportunity to learn and grow."{/t}</li>
+        </ul>
+        <p>{t}People who are able to reframe difficult situations generally feel less burden and more in control. Feeling a greater degree of control often leads to acting in control. Clara is a good example. Clara had difficulty taking breaks from caregiving. Before becoming a caregiver, she had worked in a demanding position and had realized the importance of taking weekends off and vacations to refresh herself and cope better with work demands. When she started to view caregiving as a job, it made a difference in how she viewed breaks in caregiving. They became not only more acceptable, but a necessity.{/t}</p>
+        <p>{t}Julie also found that reframing a difficult situation reduced her stress and helped her act in new ways. Julie felt resentful and burdened with the increasing demands of caring for her mother. She had no help, feeling that as a good, dutiful daughter she should do it all. A social worker told her about available resources and suggested she think of herself as a personal care manager as a way to find help in caregiving. Julie gained a sense of control over the situation once she realized she didn't have to provide all of the care herself, but could oversee her mother's care.{/t}</p>
+        <p>{t}As a caregiver, you may feel overwhelmed and burned out, especially if you are assuming responsibility for most of the caregiving. Changing your perception of your role from a caregiver to care manager is a way of reframing. As a care manager you still get the job done, but you do not have to provide all the care yourself. The role of care manager means that you:{/t}</p>
+        <ul>
+          <li>{t}coordinate and supervise another's care needs. This includes using available support.{/t}</li>
+          <li>{t}are aware of available community resources.{/t}</li>
+          <li>{t}plan and prioritize care.{/t}</li>
+          <li>{t}understand the disease of the care receiver and what to expect.{/t}</li>
+          <li>{t}participate as an equal partner with other health care professionals.{/t}</li>
+          <li>{t}are knowledgeable about the health care system.{/t}</li>
+        </ul>
+        <p>{t}As a care manager you assume an active role and reach beyond giving hands-on care, to planning and coordinating care and using available resources. You will feel an increased sense of mastery as a successful care manager.{/t}</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
+    <!-- Lesson 2 Slide 15 -->
+    <div id="lesson-2-slide-15" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Steps to Maintain Health &amp; Avoid Stress (continued){/t}</h2>
+        <hr />
+        <p>{t}Self-talk -{/t}</p>
+        <p>{t}Most stress management courses include learning how to use self-talk to promote health. Self-talk is what we say to ourselves. As Ralph Waldo Emerson said, "A man is what he thinks about all day long." What do you think about all day long? What do you say to yourself? Is especially important to notice your self-talk when you suffer setbacks and when you feel anxious, angry, discouraged, or distressed. Negative self-talk statements often begin with the following phrases:{/t}</p>
+        <ul>
+          <li>{t}I just can not do...{/t}</li>
+          <li>{t}If only I could (or did not) do...{/t}</li>
+          <li>{t}I could never...{/t}</li>
+          <li>{t}I should not have done...{/t}</li>
+          <li>{t}I should have...{/t}</li>
+        </ul>
+        <p>{t}Negative self-talk is defeating. It can lead to depression and a sense of failure, because with negative self-talk we tend to focus on:{/t}</p>
+        <ul>
+          <li>{t}what we did not do versus what we have done.{/t}</li>
+          <li>{t}what we cant do versus what we can do.{/t}</li>
+          <li>{t}Our mistakes and failures versus our successes.{/t}</li>
+        </ul>
+        <p>{t}You want your self-talk to work for you, not against you. If your self-talk is negative or unhelpful, challenge it. Learn to change the negative things you say to yourself into positive statements, such as affirmations.{/t}</p>
+        <p> {t}Affirmations are positive, supportive statements that counteract the effects of negative thinking. When positive statements are repeated several times a day, they begin to replace negative thoughts. This helps to change one's attitude, promote relaxation, and reduce stress. Karen's story is an example of changing negative self-talk to positive self-talk with the use of affirmations:{/t} </p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
+    <!-- Lesson 2 Slide 16 -->
+    <div id="lesson-2-slide-16" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Steps to Maintain Health &amp; Avoid Stress (continued){/t}</h2>
+        <hr />
+        <p>{t}Karen felt angry and discouraged when her mother did not eat the tasty, nutritious meals she prepared for her. She didn't accept the fact that her mother's lack of appetite was caused by the illness. Karen constantly told herself, "No matter what I cook, it is never good enough for mother."{/t}</p>
+        <p>{t}This is an example of negative self-talk. Karen became aware that she often thought she was not doing good enough, especially in caring for her mother. These thoughts made her feel like a failure. With determination, patience, and practice, you can change your self-talk from negative to positive. The following steps lead to change:{/t}</p>
+        <ul>
+          <li>{t}Identify your negative thoughts. Listen to what you say to yourself, especially during difficult times.{/t}</li>
+          <li>{t}Write your negative thoughts down on paper. This helps to identify and clarify them.{/t}</li>
+          <li>{t}Challenge your negative thoughts. Give them a good argument.{/t}</li>
+          <li>{t}Write a simple, positive statement for each thought you want to change.{/t}</li>
+          <li>{t}Memorize and repeat the chosen statements. This helps establish the habit of positive self-talk.{/t}</li>
+          <li>{t}Put your written-statements where you see them frequently. This is a helpful visual reminder.{/t}</li>
+        </ul>
+        <p>{t}Karen chose the affirmation , "I am preparing nutritious food. That is enough." In fact, the statements, "I am doing my best. It is good enough," became her frequent affirmation and counteracted her negative thoughts of "not doing good enough."{/t}</p>
+        <p>{t}These statements have the dual. purpose of affirming what Karen is doing and helping her let go of the idea that she has control over her mother's appetite. Accepting that . was important. Telling herself that she is doing her best and it is enough is a positive way of saying she is changing what she can and letting go of what she cannot change. Karen's expectations for herself have become more realistic.{/t}</p>
+        <p>{t}Practice over time will change negative, habitual thinking. Repeat this activity frequently to identify other negative self-talk Remember, thoughts and attitudes create your reality. Changing your negative thoughts will help you focus on the positive things in your life, rather than on what you do not have.{/t} </p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
+    <!-- Lesson 2 Slide 17 -->
+    <div id="lesson-2-slide-17" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Steps to Maintain Health &amp; Avoid Stress (continued){/t}</h2>
+        <hr />
+        <p>{t}CHALLENGING YOUR SELF-TALK{/t}</p>
+        <p>{t}Identify an example of your negative self-talk and the situation when it is most likely to occur.{/t}</p>
+        <ol>
+          <li>{t}My negative statement:{/t}</li>
+          <li>{t}I say this to myself when:{/t}</li>
+          <li>{t}I will replace the negative thought with this positive statement:{/t}</li>
+          <li>{t}Repeat the chosen affirmation whenever the above situation occurs.{/t}</li>
+        </ol>
+        <p>{t}There will be times when you will find it hard to shake off negative thoughts. This is normal. However, paying attention to the frequency and content of these thoughts is the beginning of self-awareness and the possibility of change.{/t}</p>
+        <p>{t}Practicing self-care -{/t}</p>
+        <p>{t}To be an effective caregiver you need to maintain your own health and spirit, and to nurture yourself. All too often caregivers put their own needs last. Studies show that sacrificing yourself in giving care to another can lead to emotional exhaustion, depression, and illness.{/t}</p>
+        <p>{t}Maintaining your health and spirit can reduce your level of stress. It is critical to find activities that help you to stay healthy and nurture yourself. These activities are different for each individual. What works for one person may not work for another. You must find stress-reducing methods that work best for you.{/t}</p>
+        <p>{t}We can learn a lot from a self-care program in Florida called "Getting Well." This is a group of people who are supporting each other in learning to live and feel better. They take part in life-affirming activities such as "laughing, juggling, playing, meditating, painting, journal writing, exercising, and eating nutritiously" They demonstrate the necessity of associating with others who help you maintain your spirit and help you feel loved and supported. To manage stress, it is essential to take breaks from caregiving. Plan them into your schedule, starting immediately; if you have not done so already. Studies show that caregivers often do not take breaks until they are at the "end of their rope" or "burned out."{/t}</p>
+        <p>{t}This serves no one's best interest as your ability to function can be seriously affected. To avoid problems, it is your responsibility to take time off from caregiving to refresh yourself. It is important to the well-being of care receivers that you take breaks. If you do not, they may become increasingly dependent on you. If you take breaks, they will be less isolated and will benefit from having contact with other people. They also need breaks from you. (This is an example of reframing your perception of a situation.){/t} </p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
+    <!-- Lesson 2 Slide 18 -->
+    <div id="lesson-2-slide-18" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Steps to Maintain Health &amp; Avoid Stress (continued){/t}</h2>
+        <hr />
+        <p>{t}You are responsible for your own self-care. Practicing self-care means that you:{/t}</p>
+        <ul>
+          <li>{t}learn and use stress reduction techniques;{/t}</li>
+          <li>{t}attend to your own health care needs;{/t}</li>
+          <li>{t}get proper rest and nutrition;{/t}</li>
+          <li>{t}exercise regularly;{/t}</li>
+          <li>{t}take time off without feeling guilty;{/t}</li>
+          <li>{t}participate in pleasant, nurturing activities;{/t}</li>
+          <li>{t}reward yourself...;{/t}</li>
+          <li>{t}seek and accept the support of others;{/t}</li>
+          <li>{t}seek supportive counseling when you need to, or talk with a trusted counselor, religious advisor, or friend;{/t}</li>
+          <li>{t}identify and acknowledge your feelings;{/t}</li>
+          <li>{t}tell others what you need. Do not assume "they should know;"{/t}</li>
+          <li>{t}change the negative ways you view situations; and{/t}</li>
+          <li>{t}set goals and prioritize.{/t}</li>
+        </ul>
+        <div class="question">
+          <p>ARE YOU TAKING CARE OF YOURSELF?</p>
+          <p>
+            <input type="checkbox" name="Yes18" id="Yes18">
+            <label for="Yes18">Yes</label>
+            <input type="checkbox" name="No18" id="No18">
+            <label for="No18">No</label>
+            |  Are you uncomfortable putting
+            yourself first at times?</p>
+          <p>
+            <input type="checkbox" name="Yes15" id="Yes15">
+            <label for="Yes15">Yes</label>
+            <input type="checkbox" name="No15" id="No15">
+            <label for="No15">No</label>
+            |  Do you think you should always meet
+            the needs of other people before your
+            own?</p>
+          <p>
+            <input type="checkbox" name="Yes16" id="Yes16">
+            <label for="Yes16">Yes</label>
+            <input type="checkbox" name="No16" id="No16">
+            <label for="No16">No</label>
+            |  Do you feel you should be a "perfect
+            caregiver"?</p>
+          <p>
+            <input type="checkbox" name="Yes17" id="Yes17">
+            <label for="Yes17">Yes</label>
+            <input type="checkbox" name="No17" id="No17">
+            <label for="No17">No</label>
+            |  Do you minimize or deny that you
+            have needs</p>
+          <p>
+            <input name="button2" type="submit" id="button2" onClick="MM_popupMsg('If you answered \&quot;yes\&quot; to any of these questions, you may be ignoring your own needs.')" value="Submit">
+          </p>
+        </div>
+        <p>{t}Reflect on what it means to practice selfcare. Consider the items above. How do you fare? Are you caring for yourself as well as you are caring for another? Remember, it is only when we love and nurture ourselves that we are able to love and nurture another. As a caregiver, appreciation and "thank yous" for what you do may be lacking. For example, a person with Alzheimer's disease may be unable to show appreciation for what is done. Everyone has a need for approval. It motivates us to keep going. If you do not receive appreciation from other people, find a way to give it to yourself.{/t}</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
+    <!-- Lesson 2 Slide 19 -->
+    <div id="lesson-2-slide-19" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Steps to Maintain Health &amp; Avoid Stress (continued){/t}</h2>
+        <hr />
+        <p>{t}What would be helpful for you? Consider the following suggestions:{/t}</p>
+        <ul>
+          <li>{t}Acknowledge and take satisfaction in those things you do well.{/t}</li>
+          <li>{t}Reward yourself on a regular basis.{/t}</li>
+          <li>{t}Involve yourself in an activity that will provide positive feedback.{/t}</li>
+        </ul>
+        <p>{t}Carol found a creative way to reward herself for a job well done when her mother could no longer express appreciation. Carol's mother, Irene, had Alzheimer's disease. Irene often expressed frustration and anger at Carol, in spite of the fact that Carol was her mainstay Carol understood the disease process and successfully avoided taking her mother's attacks personally. To give herself a gift of appreciation, Carol bought flowers regularly. She said, "I considered the flowers a gift from Mom to me. It is something she would have done for me if she were well."{/t}</p>
+        <p>{t}Memories of past generosity and love from her mother sustained Carol. In buying herself flowers she reminded herself weekly that the gift of love and caring she gave to her mother had first been given to her. At a difficult time she found a way to nurture herself.{/t}</p>
+        <p>{t}What are you doing to nurture yourself? Are you choosing healthy activities? Or are you relying on drugs, alcohol, cigarettes, and tranquilizers to handle the emotional and physical burdens of caregiving? According to the National Institute on Drug Abuse, millions of people abuse these drugs to reduce tension and to relax. It is in your best interest to choose healthy, nurturing ways of coping with the difficulties of caregiving.{/t}</p>
+        <p>{t}Getting social support -{/t}</p>
+        <p>{t}Caregiving can be a lonely experience. According to the National Family Caregivers Association, caregivers often · report that they feel alone and isolated. Support from family, friends, and others is an important stress buffer. Something as simple as a two-minute telephone call can make you feel cared about and supported. It helps to share your experiences and burdens with a person you trust-a friend, family member, counselor, religious advisor, or support group member-who will listen and understand.{/t}</p>
+        <p>{t}Support groups can be helpful when you are going through a difficult time. Sharing with others who are going through similar experiences is a way to give and receive support, and take time out from caregiving duties. You can learn new ways of coping from others in the group, which may include learning to look at the light side of difficult situations with a bit of humor. Sharing lightens the load. A support group is a place to express thoughts and feelings in a confidential setting. Most important, you learn that you are not alone. This can be a wonderful relief. Support groups are available for caregivers and for people with various chronic illnesses. Local hospitals and disease-related associations often have groups available.{/t}</p>
+        <p>{t}Using techniques that lower stress -{/t}</p>
+        <p>{t}It is of little help to identify your stressors if you do not take action early to reduce them. Recognize obstacles to taking action. These may include:{/t}</p>
+        <ul>
+          <li>{t}Not giving yourself permission to take care of yourself.{/t}</li>
+          <li>{t}Lacking awareness of stress-reduction techniques.{/t}</li>
+          <li>{t}Choosing unrealistic stress-reduction techniques for example, those that are too complicated, lengthy, or difficult for you.{/t}</li>
+          <li>{t}Delaying or postponing a stress-reduction activity. For example, planning a break or trip too far into the future to be of help now, when you need it.{/t}</li>
+        </ul>
+        <p>{t}Take care of yourself daily Use "tried and true" stress reduction tools that work for you. In addition, learn and incorporate new stress-reducing techniques into your life. There are many worthwhile techniques available. We offer some quick and easy ones that you can fit into your busy life.{/t}</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
+    <!-- Lesson 2 Slide 20 -->
+    <div id="lesson-2-slide-20" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Steps to Maintain Health &amp; Avoid Stress (continued){/t}</h2>
+        <hr />
+        <p>{t}Basic wellness practices -{/t}</p>
+        <div class="question">
+          <p>It is vital to maintain your health and well-being. Ask yourself the questions in the box below.</p>
+          <p>
+            <input type="checkbox" name="Yes19" id="Yes19">
+            <label for="Yes19">Yes</label>
+            <input type="checkbox" name="No19" id="No19">
+            <label for="No19">No</label>
+            |  Do you participate in physical
+            activity at least three times a week?</p>
+          <p>
+            <input type="checkbox" name="Yes20" id="Yes20">
+            <label for="Yes20">Yes</label>
+            <input type="checkbox" name="No20" id="No20">
+            <label for="No20">No</label>
+            |  Do you get enough sleep daily so
+            that you feel rested in the morning?</p>
+          <p>
+            <input type="checkbox" name="Yes21" id="Yes21">
+            <label for="Yes21">Yes</label>
+            <input type="checkbox" name="No21" id="No21">
+            <label for="No21">No</label>
+            |  Do you eat balanced, nutritious
+            meals?</p>
+          <p>
+            <input type="checkbox" name="Yes22" id="Yes22">
+            <label for="Yes22">Yes</label>
+            <input type="checkbox" name="No22" id="No22">
+            <label for="No22">No</label>
+            |  Do you take time to sit down and
+            eat your meals?</p>
+          <p>
+            <input type="checkbox" name="Yes23" id="Yes23">
+            <label for="Yes23">Yes</label>
+            <input type="checkbox" name="No23" id="No23">
+            <label for="No23">No</label>
+            |  Do you take care of your own
+            physical health (e.g., get regular
+            medical check-ups and take care of
+            yourself when you are ill)? </p>
+          <p>
+            <input type="checkbox" name="Yes24" id="Yes24">
+            <label for="Yes24">Yes</label>
+            <input type="checkbox" name="No24" id="No24">
+            <label for="No24">No</label>
+            |  Do you participate regularly in
+            recreational/leisure activities?</p>
+          <p>
+            <input type="checkbox" name="Yes25" id="Yes25">
+            <label for="Yes25">Yes</label>
+            <input type="checkbox" name="No25" id="No25">
+            <label for="No25">No</label>
+            |  Do you drink at least eight glasses
+            of Water or other liquid daily?</p>
+          <p>
+            <input type="checkbox" name="Yes26" id="Yes26">
+            <label for="Yes26">Yes</label>
+            <input type="checkbox" name="No26" id="No26">
+            <label for="No26">No</label>
+            |  Do you limit alcoholic beverages
+            to no more than two drinks a day?
+            (One drink is 1.5 oz. of hard liquor,
+            l2 oz. of beer, or 4 oz. of wine.) </p>
+          <p>
+            <input type="checkbox" name="Yes27" id="Yes27">
+            <label for="Yes27">Yes</label>
+            <input type="checkbox" name="No27" id="No27">
+            <label for="No27">No</label>
+            |  Do you avoid using alcohol,
+            medications/drugs, or cigarettes to
+            calm your nerves?</p>
+          <p>
+            <input type="checkbox" name="Yes28" id="Yes28">
+            <label for="Yes28">Yes</label>
+            <input type="checkbox" name="No28" id="No28">
+            <label for="No28">No</label>
+            |   Do you maintain a healthy weight?</p>
+          <p>
+            <input name="button3" type="submit" id="button3" onClick="MM_popupMsg('If you answered \&quot;yes\&quot; to all of these questions, congratulate yourself. A \&quot;no\&quot; response reflects areas to work on for better health.')" value="Submit">
+          </p>
+        </div>
+        <p>{t}Proper diet, adequate sleep, and regular exercise are necessary for all of us, and even more so when we are caregivers. These lifestyle factors increase our resistance to illness and our ability to cope with stressful situations.{/t}</p>
+        <p>{t}Exercise promotes better sleep, reduces tension and depression, and increases energy and alertness. If finding time to exercise is a problem, try to incorporate it into your usual day Perhaps the person receiving care can walk or do stretching exercises with you. If necessary do frequent short exercises instead of using large blocks of time. Find activities you enjoy. Walking is considered one of the best and easiest exercises. It helps to reduce psychological tension as well as having physical benefits.{/t}</p>
+        <p>{t}Walking 20 minutes a day, three times a week, is very beneficial. If you can not be away 20 minutes, 10-minute walks twice a day or even a five-minute walk are beneficial. Work walking into your life. Walk whenever and wherever you can. Perhaps it is easiest to walk around your block, at the mall, or a nearby park. The next time a friend or family member comes to visit, take time for a short walk. When the care receiver is getting therapy, take a walk around the medical facility.{/t}</p>
+        <p>{t}Breathing for relaxation -{/t}</p>
+        <p>{t}Stressful situations or memories of those situations can cause changes in our breathing. Often the more tense we feel, the more shallow our breathing becomes. · Stress management tools usually include a focus on breathing. The following breathing exercise takes only one or two minutes and you can easily do it anywhere. Use it often to lower stress.{/t}</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
+    <!-- Lesson 2 Slide 21 -->
+    <div id="lesson-2-slide-21" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Steps to Maintain Health &amp; Avoid Stress (continued){/t}</h2>
+        <hr />
+        <p>{t}Meditation -{/t}</p>
+        <p>{t}The word "meditation" comes from the Sanskrit word medha which, when taken literally, means "doing the wisdom." Meditation aids in relaxation and in achieving physical and mental well-being. Meditation is keeping your attention focused in the moment to quiet the mind and hear your body's inner wisdom. You, too, can learn to meditate. See the "Process of Meditation" box on the next page.{/t}</p>
+        <p>{t}Music -{/t}</p>
+        <p>{t}Music is another tool for reducing stress. It can alter the body and the mind. It can induce deep relaxation, act as a stimulant, and take you into other states of consciousness. Music is often used specifically for healing and decreasing stress and tension. Use the following steps as a guideline.{/t}</p>
+        <ol>
+          <li>{t}Choose soothing music you like.{/t}</li>
+          <li>{t}Relax and close your eyes.{/t}</li>
+          <li>{t}Breathe deeply and easily.{/t}</li>
+          <li>{t}Lose yourself in the music, listening with your body, not your mind.{/t}</li>
+          <li>{t}After the music is finished, open your eyes and notice how you feel.{/t}</li>
+        </ol>
+        <p>{t}Music is a universal language. Listening to music can be healing for both you and the care receiver, either together or alone. People with dementia, especially, respond to music when they may respond to little else.{/t}</p>
+        <p>{t}Humor -{/t}</p>
+        <p>{t}Caregivers who maintain and foster their sense of humor do better. It is , often hard to find much that is humorous in caregiving, but the secret to succeeding as a caregiver is to find humor in your daily routine. Finding humor does not deny the fact that, at times, your heart is heavy with the pain and sadness of caregiving. Those times will exist, but they can co-exist with laughter and humor.{/t}</p>
+        <p>{t}Tears and laughter are closely related. They each offer a release of tension and are often intermingled. Humor does not minimize the seriousness of a situation; rather, it helps you embrace it. Humor can be a helpful tool in many ways, from making us laugh at our shortcomings and impossible situations, reducing anxiety and stress. Laughter relaxes and helps calm emotions, allowing us to regain emotional balance and think more clearly. If you want to laugh, or want someone else to laugh, you may have to find a reason, as George and Alma do.{/t}</p>
+        <p>{t}George and Alma watch their favorite comedy show on television every weeknight at 7 P.M. They look forward to it and anticipate laughing together. In addition, Alma and George look for humorous cartoons and jokes to share with each other. The fact that Alma has a disabling medical condition does not mean they can not appreciate laughter.{/t}</p>
+        <p>{t}In his book Anatomy of an Illness, Norman Cousins wrote of his fight against a crippling disease. He credited his recovery to the use of laughter. He intentionally sought healing through watching videotapes of comedies, reading joke books, and listening to people tell jokes. He had read about the effects of stress and emotions on illness. He understood that disease was caused by chemical changes in the body, due to the stress of strong emotions such as fear and anger. He concluded that perhaps love, laughter, hope, and the will to live would counteract those effects. He was right in his belief. Recent studies show that laughter helps to stimulate breathing, muscular activity; and heart rate. This serves to reduce stress and strengthen the immune system.{/t}</p>
+        <p>{t}Humor is important to health. It lifts the spirit and provides a way to connect with others. The following suggestions can help · you make laughter and humor a larger part of your life:{/t}</p>
+        <ul>
+          <li>{t}Seek out humor. Humorous tapes and books can be found at video stores and libraries. Spend time with friends or family members you enjoy and can laugh with.{/t} </li>
+          <li>{t}Surround yourself with humor. Put jokes, cartoons, funny pictures, and humorous sayings on the refrigerator or bulletin board where others can enjoy them with you.{/t}</li>
+          <li>{t}Laugh at yourself. Do not take yourself too seriously Poke fun at yourself by making light of your shortcomings (which we all have).{/t}</li>
+        </ul>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
+    <!-- Lesson 2 Slide 22 -->
+    <div id="lesson-2-slide-22" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Steps to Maintain Health &amp; Avoid Stress (continued){/t}</h2>
+        <hr />
+        <p>{t}Developing action plans -{/t}</p>
+        <p>{t}Action plans are tools for change. They can be a useful way to identify and plan specific activities for reducing stress and making change: Feelings of accomplishment are necessary for thriving as a caregiver. Action plans can help you achieve these feelings. Even the smallest action can make a big difference. This was true for Evelyn.{/t}</p>
+        <p>{t}Evelyn needed more time for herself during the day She made a plan to take a leisurely; warm tub bath four times a week instead of the always-hurried shower. Evelyn settled her father to watch the news on TV when she took her baths. This worked well for both of them and became an accepted part of their routine. Accomplishing the action plan encouraged Evelyn to make other action plans that made a big difference to her.{/t}</p>
+        <p>{t}Feelings of mastery and confidence are usually the result of developing new ways of coping. Use the information presented in this chapter to help you identify your stressors, and improve coping skills. The activity in the box on the next page can be a useful tool for managing stress. This activity can be useful on a regular basis. It will help you assess and cope with current stressors. Since your caregiving situation and stressors continually change, it is important to be aware of when you feel stress and to use stress-reducing tools that work for you. Most important, build stress reduction and nurturing activities into daily life to prevent distress. Be proactive and remember, what is good for you is good for the person receiving care!{/t}</p>
+        <p>{t}Finding hope and meaning -{/t}</p>
+        <p>{t}The ability to find hope and meaning in the caregiving situation enables you not only to survive, but to thrive. Finding meaning and hope are what keeps us going. It is a way to make sense of our circumstances.{/t}</p>
+        <p>{t}In his book Mans Search For Meaning, psychiatrist Viktor Frankl tells of his experience as a long-time prisoner in a prisoner of war camp during World War II. Many of his family members died in the camps. In spite of the fact that he faced death constantly and suffered severe punishment, Dr. Frankl was able to find meaning and hope in his life. He noted that the prisoners who were able to sustain even a flicker of hope were better able to survive the terrible circumstances than those who felt hopeless. He concluded that what did remain, when all else was taken away; was "the last of the human freedoms," the ability to "choose one's attitude in a given set of circumstances." Out of that experience, Frankl's guiding philosophy was born: "To live is to suffer, to survive is to find meaning in the suffering." He also believed that man's need for meaning is universal.{/t}</p>
+        <p>{t}The need to find hope and meaning is also important when you are a caregiver for a person with a chronic illness. Uncertainty; loss, and suffering may shake your foundation. After all, you have much at stake. Your world, as you have known it, has changed drastically and you may be left with questions such as, "Why me?" and perhaps, "Where is God?" Questioning often leads to a search for meaning. No one else can tell you what the meaning is for you. It can be a lonely journey.{/t}</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
+    <!-- Lesson 2 Slide 23 -->
+    <div id="lesson-2-slide-23" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Steps to Maintain Health &amp; Avoid Stress (continued){/t}</h2>
+        <hr />
+        <p>{t}REFRAMING YOUR STRESS{/t}</p>
+        <p>{t}Make a list of those things that you find most difficult or stressful. Be specific. Write at least two (more if you can).{/t}</p>
+        <p>{t}Answer the following questions in relation to each item on your list. Can I ignore this? Or can I let it go?{/t}</p>
+        <p>{t}Can I change anything about this? If so, how can I change it?{/t}</p>
+        <p>{t}If it can not be changed, can I change my perception of it? If so, how? What is a more helpful perception?{/t}</p>
+        <p>{t}Select one stressor from your list to work on first. The stressor is: Develop an action plan for addressing this stressor. Be specific and realistic.{/t}</p>
+        <p>{t}A search for meaning can be a conscious choice. There are ways to stimulate your search. The following can be helpful:{/t}</p>
+        <ul>
+          <li>{t}Ask yourself questions like "What am I to learn from this?" What good can come from this? Am I a better person now? These types of questions can help you open up to possibilities for finding meaning.{/t}</li>
+          <li>{t}Reflect .. Periods of quiet reflection, especially after a difficult time, are important and offer opportunities to learn from the experience.{/t}</li>
+          <li>{t}Talk with a trusted person. Whether this person is a counselor, religious advisor, or friend, sharing can help clarify your thoughts and feelings. As you tell your story; it often takes on meaning.{/t}</li>
+          <li>{t}Write. This is also a way to clarify your thinking. Writing is a way to bring out your thoughts and feelings. Write freely and spontaneously. Do not concern yourself with proper sentence structure or punctuation. Writing is a way to talk to yourself. Re-reading your journal over time provides an understanding of where you were when you started and where you are now. You will probably see changes and find new understanding and meaning.{/t}</li>
+          <li>{t}Seek spiritual renewal. This is especially important when you are facing difficult times. Many caregivers report that faith and prayer help them find comfort, purpose, and meaning. It may be that even when you feel anger because of suffering and sorrow, your need for meaning is greatest.{/t}</li>
+        </ul>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
     
-    <!-- need to add all these questions soon 
+    <!-- Lesson 2 Slide 24 -->
+    
+    <div id="lesson-2-slide-24" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Steps to Maintain Health &amp; Avoid Stress (continued){/t}</h2>
+        <hr />
+        <p>{t}Like Frankl, it is hopeful to believe that meaning can be found in difficult and painful experiences. Hope and meaning play a large part in the following story of Margaret and Tim.{/t}</p>
+        <p>{t}Tim's frequent visits to his elderly mother, Margaret, in the nursing home, were meaningful to him. Years ago, when Margaret was healthy; she shared some of her beliefs with Tim. She had told him, "If there comes a time when I am not able to recognize you because of Alzheimer's disease, or for any other reason, I want you to know what I believe to be true. I believe that my true essence, my spirit, will always be present, even though my physical body and mind may not be the person you remember. Please know that I am with you. We may not be able to talk with each other as we did in the past, but if you play my favorite music, read poetry, hold my hand, or just be with me, I will feel your love and you will feel mine for you."{/t}</p>
+        <p>{t}In sharing her beliefs, Margaret gave Tim the gift of finding meaning in what can be a most difficult and challenging situation. Meaning is all around us. It is the "stuff" of life. Meaning is personal. It is up to each persc1n to find his or her own meaning.{/t}</p>
+        <p>{t}SUMMARY{/t}</p>
+        <p>{t}Are you better acquainted with your stress? Have you identified what you can do to reduce at least one stressor? Do you realize the potential strength in considering your needs and in practicing self-care? Can you find meaning in difficult experiences? Have you learned that often the compassion and care you give to another comes back to you as a gift of meaning?{/t}</p>
+        <p>{t}Remember that your response to a situation will affect the situation itself. As much as possible, make it be what you want it to be.{/t}</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
+    
+    <!-- Lesson 2 Slide 25 -->
+    
+    <div id="lesson-2-slide-25" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Tips for Overcoming Negative Emotions &amp; Reducing Stress{/t}</h2>
+        <hr />
+        <p>{t}A Wide variety of mental activities can help caregivers overcome negative emotions and reduce stress. Think about how you might use some of these ideas in your own life.{/t}</p>
+        <ul>
+          <li>{t}Become aware of harmful thought patterns. That is a first step in taking positive action to care for yourself.{/t}</li>
+          <li>{t}Pay attention to shallow breathing because it often adds to physical stress.{/t}</li>
+          <li>{t}Imagine washing away the stresses of the day during a shower.{/t}</li>
+          <li>{t}Change clothes as a way to shed the day's concerns{/t}</li>
+          <li>{t}Create a stress diary where you record information about the stresses you are experiencing so you can analyze them and take steps to manage them. In your diary, record how much time you feel depressed, in control, emotionally stable, had enough energy, and were satisfied with life.{/t}</li>
+          <li>{t}Think about, and write a list of, the problems you face and the options you have available. using a scale of 1-7, prioritize the problems you want to tackle first.{/t}</li>
+          <li>{t}Think about, and write a list of, the changes you could make in your daily life. Then prioritize the changes. The first changes to tackle are the ones that have the highest priorities.{/t}</li>
+          <li>{t}Visit the Mind Tools website for more information and tools that will help you with decision making, positive thinking, managing stress, and finding balance in your life.{/t}</li>
+          <li>{t}Read about what others are doing to reduce stress.{/t}</li>
+        </ul>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
+    <!-- Lesson 2 Slide 26 -->
+    <div id="lesson-2-slide-26" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Tips for Overcoming Negative Emotions &amp; Reducing Stress: Simple Pleasures{/t}</h2>
+        <hr />
+        <p>{t}Even tiny bursts of simple pleasures may improve your physical and mental health. Some researchers say that it is the frequency of the positive feelings that come from these small pleasures that is most important in determining happiness. On the Internet, people are posting their simple pleasures such as those listed below. When you are sitting quietly in a comfortable place, list simple pleasures that help you get through your caregiving days.{/t}</p>
+        <ul>
+          <li>{t}Looking at old pictures{/t}</li>
+          <li>{t}Soft pajamas{/t}</li>
+          <li>{t}Seeing winter's first snowfall on a bright moonlit night{/t}</li>
+          <li>{t}Chocolate{/t}</li>
+          <li>{t}Watching the sun set{/t}</li>
+          <li>{t}The smell of freshly cut grass, and the air right after it rains{/t}</li>
+          <li>{t}Clean skin on clean sheets{/t}</li>
+          <li>{t}The smell of freshly cut grass, and the air right after it rains{/t}</li>
+          <li>{t}Falling asleep in the spring sun{/t}</li>
+          <li>{t}Looking to the birds sing early in the morning{/t}</li>
+          <li>{t}Sitting in bed with a cup of tea doing crossword puzzles{/t}</li>
+          <li>{t}Eating a spoonful of peanut butter{/t}</li>
+          <li>{t}An unexpected breeze on a hot summer's day{/t}</li>
+          <li>{t}Having an attached garage... and it is raining{/t}</li>
+        </ul>
+        <p>{t}Make and post a 1-5 minute video to You Tube of your simple pleasures.{/t}</p>
+      </div>
+      <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Complete Lesson{/t}</a></div>
+    </div>
+    <!-- need this final div here to close lesson-2 --> 
+  </div>
+  
+  <!-- Lesson 4 Slide 1 -->
+  
+  <div id="lesson-4">
+    <div id="lesson-4-slide-1" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Normal &amp; Abnormal Aging Changes{/t}</h2>
+        <hr />
+        <img src="<?php echo $this->getImagesUrl('164010920/here.png'); ?>" alt="{t}image{/t}">
+        <p>{t}This module contains four main sections:{/t}</p>
+        <ul>
+          <li>{t}Myths and Realities of Aging{/t}</li>
+          <li>{t}Focusing on Healthy Aging{/t}</li>
+          <li>{t}Normal Aging Changes{/t}</li>
+          <li>{t}Aging Well{/t}</li>
+        </ul>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Start Course &raquo;{/t}</a></div>
+    </div>
+    
+    <!-- Lesson 4 Slide 2 -->
+    
+    <div id="lesson-4-slide-2" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Myths and Realities of Aging{/t}</h2>
+        <hr />
+        <p>{t}Images of aging in our society are not very positive. For example, let us look at some of our stereotypes about older adults:{/t}</p>
+        <ul>
+          <li>{t}Old people can not learn new things.{/t}</li>
+          <li>{t}Old people are close-minded, set in their ways.{/t}</li>
+          <li>{t}Old people are cantankerous, crabby.{/t}</li>
+          <li>{t}Old people are slow.{/t}</li>
+          <li>{t}The elderly do not pull their own weight.{/t}</li>
+          <li>{t}Old people are always sick.{/t}</li>
+        </ul>
+        <p>{t}Dr. Erdman Palmore developed a “Facts on Aging” quiz to measure perceptions (and misperceptions) about aging. Dr. Palmore\’s quiz is a good way to look at our concepts of aging. Let\’s look at some of these items and see how you score them:{/t}</p>
+        <p>{t}The majority of older people are senile, have a defective memory, or are disoriented.{/t}</p>
+        
+        <!-- need to add all these questions soon 
     <p>
       <input name="True" type="submit" id="True" onClick="MM_popupMsg('Ccorrect!')" value="True">
       <input name="True2" type="submit" id="True2" onClick="MM_popupMsg('Incorrect!')" value="False">
@@ -2579,786 +2542,799 @@ foreach(array(
     </p>
     
     --> 
+        
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
     
-  </div>
-  <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
-</div>
-
-<!-- Lesson 4 Slide 3 -->
-
-<div id="lesson-4-slide-3" class="course-slide">
-  <div class="content">
-    <h2 class="flowers">{t}Myths and Realities of Aging (continued){/t}</h2>
-    <hr />
-    <p>{t}Realities of Aging{/t}</p>
-    <p>{t}So, if the stereotype of older adults as slow, sick, and/or senile is false, what is the reality of aging in America? The National Council on the Aging and AARP published the resource, American Perceptions of Aging in the 21st Century, a longitudinal study that began in 1974. In 2002 a follow-up study compared results from the original 1974 study with contemporary findings. Here are some highlights about the realities of aging:{/t}</p>
-    <ul>
-      <li>{t}58% of older adults were very happy with growing older{/t}</li>
-      <li>{t}88% felt that social relationships were very important to a meaningful, vital life{/t}</li>
-      <li>{t}32% felt that new learning was very important to a meaningful, vital life{/t}</li>
-      <li>{t}47% felt their overall health was excellent to very good{/t}</li>
-      <li>{t}60% were very or somewhat worried about memory loss as they aged{/t}</li>
-    </ul>
-    <p>{t}How about a few more realities of aging. A survey of key trends in aging conducted by Mather LifeWays Institute on Aging documented the following facts about older adults:{/t}</p>
-    <ul>
-      <li>{t}The educational level of the older adult population is increasing.{/t}</li>
-      <li>{t}Almost half of older adults currently do volunteer work.{/t}</li>
-      <li>{t}More than 75% of older adults say old age should be defined by a decline in physical or mental functioning rather than a specific age.{/t}</li>
-      <li>{t}Only 8% of older adults say they are very old.{/t}</li>
-      <li>{t}Almost 40% of older adults work part-time.{/t}</li>
-      <li>{t}Older Americans age 65+ comprise 16.3% of the US labor force.{/t}</li>
-    </ul>
-    <p>{t}First of all, how do we define healthy aging? The National Council on the Aging gives this definition:{/t}</p>
-    <p>{t}“Healthy aging is a broad concept that is more than just physical health status or absence of disease. It encompasses all of the intellectual, emotional, social, and spiritual facts of our being. While healthy aging is driven by internal dimensions such as our beliefs, attitudes, and intentions about our health, it also depends on external supports including our social networks, community services, public policies, and the built and natural environment. These dimensions are interrelated, affecting behavior and lifestyle choices.”{/t}</p>
-  </div>
-  <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
-</div>
-
-<!-- Lesson 4 Slide 4 -->
-
-<div id="lesson-4-slide-4" class="course-slide">
-  <div class="content">
-    <h2 class="flowers">{t}Focusing on Healthy Aging{/t}</h2>
-    <hr />
-    <h4>{t}Maintaining Physical Health{/t}</h4>
-    <p>{t}Research shows that older adults can attain healthy vital old age through simple health promotion and disease prevention initiatives. The MacArthur Foundation study identified several lifestyle changes that clearly proved to benefit older adults:{/t}</p>
-    <ul>
-      <li>{t}Exercise and physical activity{/t}</li>
-      <li>{t}Early detection of cancer{/t}</li>
-      <li>{t}Reducing risk of heart disease{/t}</li>
-      <li>{t}Vaccinations{/t}</li>
-    </ul>
-    <h5>{t}Exercise and physical activity{/t}</h5>
-    <p>{t}Exercise can help prevent heart disease, high blood pressure, and tendency toward diabetes, osteoporosis, and risk for falls. A regular, moderate program of aerobic and strength training for older adults is both safe and effective in improving physical function.{/t}</p>
-    <h5>{t}Early detection of cancer{/t}</h5>
-    <p>{t}With early detection, many forms of cancer are treatable and have a high survival rate. Fortunately, screening tests for early detection of cancer have become very effective and commonly available. In addition, research suggests that promoting a healthy diet may also decrease the risk of certain types of cancer.{/t}</p>
-    <h5>{t}Heart disease{/t}</h5>
-    <p>{t}Heart disease is a major killer of men at all ages and of older women. Education about reducing risk factors (high cholesterol, smoking, hypertension) is vitally important for older adults.{/t}</p>
-    <h5>{t}Vaccinations{/t}</h5>
-    <p>{t}Among the greatest advances in health promotion and disease prevention in older adults had been the development of safe and effective vaccines. Among non-vaccinated older adults, disease can sweep through the population rapidly and can be very dangerous.{/t}</p>
-  </div>
-  <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
-</div>
-
-<!-- Lesson 4 Slide 5 -->
-
-<div id="lesson-4-slide-5" class="course-slide">
-  <div class="content">
-    <h2 class="flowers">{t}Focusing on Healthy Aging (continued){/t}</h2>
-    <hr />
-    <h4>{t}Maintaining High Cognitive and Physical Function{/t}</h4>
-    <p>{t}Fear of cognitive loss, and especially of Alzheimer’s disease are widespread among older adults, and with good reason. Such losses place great burden on both the older adult and his/ her caregivers. Fortunately, research shows that even though the proportion of older adults in the population is increasing, the usual pattern is that most older adults retain a good portion of their independence and mental sharpness.{/t}</p>
-    <p>{t}The MacArthur Foundation study documented a number of ways that older adults sustain mental ability as they age. Many of the study’s “successful agers” reported that such activities as reading, conversation, crosswords and other word puzzles, card games, and other similar activities kept their minds alert and active. The study also shows that the strongest predictors of sustained cognitive function include:{/t}</p>
-    <ul>
-      <li>{t}Education{/t}</li>
-      <li>{t}Physical activity{/t}</li>
-      <li>{t}High “self-efficacy”{/t}</li>
-    </ul>
-    <h5>{t}Education{/t}</h5>
-    <p>{t}People with more years of education were more likely to maintain high cognitive function. The study that education early in life may have a direct beneficial effect of brain circuitry, and education may set a pattern of intellectual pursuits, including reading and puzzle solving, which maintains lifelong exercise of cognitive function.{/t}</p>
-    <h5>{t}Physical Activity{/t}</h5>
-    <p>{t}The study found that older adults who engaged in strenuous physical activity were much more likely to maintain high cognitive function. One possible answer for this is that exercise releases chemicals in the brain which promote the growth of new brain cells.{/t}</p>
-    <h5>{t}Self-efficacy{/t}</h5>
-    <p>{t}Self-efficacy, or self-esteem, is a person\’s belief in his or her ability to handle various situations. Many studies show that a strong sense of self-efficacy leads to improved performance in solving cognitive problems. Older adults with strong self-efficacy are more likely to view memory as a set of skills that can be learned and improved.{/t}</p>
-  </div>
-  <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
-</div>
-
-<!-- Lesson 4 Slide 6 -->
-
-<div id="lesson-4-slide-6" class="course-slide">
-  <div class="content">
-    <h2 class="flowers">{t}Focusing on Healthy Aging (continued){/t}</h2>
-    <hr />
-    <h4>{t}Engagement in Productive Relationships and Behaviors{/t}</h4>
-    <p>{t}The MacArthur research showed that “happy activities” are essential to successful aging. The two most important areas they identified that contribute to successful aging are:{/t}</p>
-    <ul>
-      <li>{t}Relating to others{/t}</li>
-      <li>{t}Continuing productive activity.{/t}</li>
-    </ul>
-    <p>{t}Relating to Others Being part of a social network of family and friends contributes significantly to successful aging.{/t}</p>
-    <p>{t}Continuing Productive Activity Most people equate being productive with earning money. However, there are many activities, both paid and unpaid, which can be considered productive.{/t}</p>
-  </div>
-  <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
-</div>
-
-<!-- Lesson 4 Slide 7 -->
-
-<div id="lesson-4-slide-7" class="course-slide">
-  <div class="content">
-    <h2 class="flowers">{t}Normal Aging Changes{/t}</h2>
-    <hr />
-    <h4>{t}Hearing Changes{/t}</h4>
-    <p>{t}More than half of people aged 60 or over are hard of hearing or deaf. Presbycusis is the most common form of hearing loss and is thought to be due to the combined effects of aging of the peripheral or central auditory systems, and the accumulated effects of wear-and-tear.{/t}</p>
-    <p>{t}Older adults may compensate for hearing loss by using hearing aids. However, some older adults don’t recognize their problem and some deny they have problems and thus don’t take actions to correct hearing impairments resulting in potential communication problems. These communication problems can lead to social isolation.{/t}</p>
-    <h5>{t}Strategies for Compensating for Hearing Changes{/t}</h5>
-    <ul>
-      <li>{t}Stand or sit in front of the older adult; get the older adult’s attention.{/t}</li>
-      <li>{t}Speak up but do not shout.{/t}</li>
-      <li>{t}Use lower-pitched tones. They are heard more easily than higher ones.{/t}</li>
-      <li>{t}Speak slowly and clearly, and emphasize only key words.{/t}</li>
-      <li>{t}Cut out as much background noise as possible.{/t}</li>
-      <li>{t}Keep your mouth in clear view, and maintain eye contact if possible.{/t}</li>
-      <li>{t}Rephrase rather than repeat a misunderstood sentence. Allow a few seconds pause after every few sentences to allow for processing and to allow the listener to formulate questions.{/t}</li>
-    </ul>
-  </div>
-  <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
-</div>
-
-<!-- Lesson 4 Slide 8 -->
-
-<div id="lesson-4-slide-8" class="course-slide">
-  <div class="content">
-    <h2 class="flowers">{t}Normal Aging Changes (continued){/t}</h2>
-    <hr />
-    <h4>{t}Vision Changes{/t}</h4>
-    <p>{t}About 7.3 million or 21% of persons age 65 and over report some form of vision impairment. As baby boomers age, this number will reach 8.3 million in the year 2010, 11.3 million in 2020, and 14.8 million in 2030.{/t}</p>
-    <h5>{t}Vision loss may be due to:{/t}</h5>
-    <ul>
-      <li>{t}Decreased pupil size and accommodation which alter visual accuracy{/t}</li>
-      <li>{t}Macular degeneration which impedes central vision{/t}</li>
-      <li>{t}Glaucoma which impeded peripheral vision{/t}</li>
-      <li>{t}Cataracts which cloud vision.{/t}</li>
-    </ul>
-    <h5>{t}Strategies for Compensating for Vision Changes{/t}</h5>
-    <p>{t}To accommodate older adults with visual impairments, it is important to make give clear verbal cues to assist the older adult.{/t}</p>
-    <ul>
-      <li>{t}If you are entering a room with someone who is visually impaired, describe the room layout, other people who are in the room, and what is happening.{/t}</li>
-      <li>{t}Tell the person if you are leaving. Let him/her know if others will remain in the room or if he/she will be alone.{/t}</li>
-      <li>{t}Allow the person to take your arm for guidance.{/t}</li>
-      <li>{t}When you speak, let the person know whom you are addressing;{/t}</li>
-      <li>{t}Ask how you may help: increasing the light, reading the menu, describing where things are, or in some other way.{/t}</li>
-      <li>{t}Call out the person’s name before touching; touching lets a person know that you are listening.{/t}</li>
-      <li>{t}Treat him/her like a sighted person as much as possible.{/t}</li>
-      <li>{t}Explain what you are doing as you are doing it.{/t}</li>
-      <li>{t}Leave things where they are unless the person asks you to move something.{/t}</li>
-    </ul>
-  </div>
-  <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
-</div>
-
-<!-- Lesson 4 Slide 9 -->
-
-<div id="lesson-4-slide-9" class="course-slide">
-<div class="content">
-<h2 class="flowers">{t}Normal Aging Changes (continued){/t}</h2>
-<hr />
-<h4>{t}Changes in Smell and Taste{/t}</h4>
-<p>{t}Decline in smell and taste are also normal aging sensory changes. Older adults recognize and identify common odors less well. Loss of taste and smell are common and result from:{/t}</p>
-<ul>
-	<li>{t}Normal aging from the degeneration of the taste buds, and decreased saliva production{/t}</li>
-	<li>{t}Certain disease states, such as Alzheimer’s disease{/t}</li>
-	<li>{t}Medications{/t}</li>
-	<li>{t}Surgical interventions{/t}</li>
-	<li>{t}Environmental exposure{/t}</li>
-</ul>
-<h5>{t}Sensory losses of taste and smell can cause:{/t}</h5>
-<ul>
-	<li>{t}Reluctance to talk about food{/t}</li>
-	<li>{t}Reduced pleasure and comfort from food affecting the socialization that accompanies eating{/t}</li>
-	<li>{t}Increased nutritional and immune deficiencies{/t}</li>
-	<li>{t}Reduced adherence to dietary regimen.{/t}</li>
-</ul>
-<p>{t}Older adults should be encouraged to have routine oral care and dental visits and to use dentures regularly. To accommodate declines in smell and taste, meals should have pleasing colors, textures, and flavorings to make them look and taste more appealing.{/t}</p>
-</div>
-<div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
-</div>
-
-<!-- Lesson 4 Slide 10 -->
-
-<div id="lesson-4-slide-10" class="course-slide">
-  <div class="content">
-    <h2 class="flowers">{t}Normal Aging Changes (continued){/t}</h2>
-    <hr />
-    <h4>{t}Common Health Issues of Older Adults{/t}</h4>
-    <p>{t}According to Older Americans 2008: Key Indicators of Well-Being, published by the Federal Interagency Forum on Age Related Statistics, about 80% of older adults have at least one age- related chronic health condition and 50% have at least two. The most prevalent include:{/t}</p>
-    <ul>
-      <li>{t}Arthritis{/t}</li>
-      <li>{t}Hypertension{/t}</li>
-      <li>{t}Heart Disease{/t}</li>
-      <li>{t}Stroke{/t}</li>
-      <li>{t}Diabetes{/t}</li>
-      <li>{t}Cancer{/t}</li>
-      <li>{t}Osteoporosis{/t}</li>
-      <li>{t}Alzheimer’s Disease{/t}</li>
-    </ul>
-    <p>{t}Arthritis encompasses more than 100 diseases and conditions that affect joints, surrounding tissues, and other connective tissues. It is the leading cause of disability among older adults. Approximately 43% of all men and 54% of all women over the age of 65 have some level of arthritis.{/t}</p>
-    <p>{t}Hypertension is also prevalent among older adults and can lead to activity limitations. 52% of all men and 54% of all women over the age of 65 suffer from hypertension.{/t}</p>
-    <p>{t}Heart Disease and Stroke. Although older women are more likely to have hypertension than older men, the prevalence of heart disease and stroke is higher among older men. 37% of men and 26% of older women have heart disease, while 10% of older men and 8% of older women have suffered a stroke.{/t}</p>
-    <p>{t}Diabetes also affects the health of older adults and limits their ability to perform normal activities. 19% of men and 17% of women over the age of 65 suffer from diabetes.{/t}</p>
-    <p>{t}Cancer. Older men are at a greater risk of cancer than older women, 24% of older men and 19% of older women having some form of cancer. For men, the most commonly diagnosed cancers included prostate, lung, colon, and rectum. Among women, cancers of the breast, colon, and rectum were the most common.{/t}</p>
-    <p>{t}Osteoporosis, another common chronic ailment among older adults, reduces bone density and raises the risk for potential disabling fractures. Although women are four times more likely than men to experience bone loss, recent research suggests that the prevalence of osteoporosis among men has been significantly under-diagnosed and under-reported.{/t}</p>
-    <p>{t}Alzheimer’s Disease is a progressive, degenerative disease that causes gradual but irreversible loss of brain cells. It currently affects an estimated 4.5 million Americans, with the vast majority of sufferers being 65 and older. The group of people who are at the highest risk for Alzheimer’s Disease are those age 85 and older, also the fastest growing segment of the population.{/t}</p>
-    <p>{t}All statistics are taken from Older Americans 2008: Key Indicators of Well-Being, published by the Federal Interagency Forum on Age Related Statistics. Search the Web for this specific report.{/t}</p>
-  </div>
-  <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
-</div>
-
-<!-- Lesson 4 Slide 11 -->
-
-<div id="lesson-4-slide-11" class="course-slide">
-  <div class="content">
-    <h2 class="flowers">{t}Normal Aging Changes (continued){/t}</h2>
-    <hr />
-    <h4>{t}Emotional and Personality Changes{/t}</h4>
-    <p>{t}As we get older, our more dominant personality traits become more pronounced. You may notice that some older people whom you know become “more difficult” to get along with while others become “more mellow” as they age. Some older people may become more concerned about death. Others may feel that they have reached a certain age that their “wisdom” should be respected by everyone and they take offense if someone disagrees or challenges them on an issue.{/t}</p>
-    <p>{t}As a caregiver, being aware and understanding of some of these changes is important. Showing empathy and compassion to older adults when they may be coping with multiple changes or losses will benefit both the older person and you as caregiver.{/t}</p>
-    <p>{t}Emotional, behavioral, and mental change may include depression, memory lapses, inability ot concentrate, or disorientation. It is important to remember that memory lapses are not automatically a sign of dementia or Alzheimer’s Disease! These changes may be caused by a number of factors including:{/t}</p>
-    <ul>
-      <li>{t}Thickening of artery walls{/t}</li>
-      <li>{t}Poor nutrition{/t}</li>
-      <li>{t}Action of medications{/t}</li>
-      <li>{t}Loss of a spouse or death among friends/relatives{/t}</li>
-      <li>{t}Reduced physical strength and endurance{/t}</li>
-      <li>{t}Fears of illness{/t}</li>
-      <li>{t}Major life changes such as moving from one’s home to another setting{/t}</li>
-    </ul>
-    <p>{t}If the change is sudden and impacts the ability of the older adult to function on a daily basis, it is important to consult with the physician as there may be an underlying cause that could be addressed by medical care.{/t}</p>
-  </div>
-  <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
-</div>
-
-<!-- Lesson 4 Slide 12 -->
-
-<div id="lesson-4-slide-12" class="course-slide">
-  <div class="content">
-    <h2 class="flowers">{t}Normal Aging Changes (continued){/t}</h2>
-    <hr />
-    <h4>{t}Memory Changes{/t}</h4>
-    <p>{t}A major concern of people as they or their loved ones age is “What is normal memory loss and what is abnormal?”{/t}</p>
-    <p>{t}By the time a person reaches 70 to 80 years of age, the brain loses 10% of its original size. Some people’s memory remains sharp throughout old age while others are mildly affected by memory loss.{/t}</p>
-    <p>{t}As many as 50% of older adults have trouble remembering things, a situation called benign forgetfulness. Some loss of short-term memory is common with older adults, yet they often can easily remember life events and experiences from the past. It is also common that older adults tell and retell information. This is not so much a situation that the older adult does not remember telling the story, but it is a way to “lock in” the story into their short-term memory “bank.”{/t}</p>
-    <p>{t}As the caregiver, rather than responding in an aggravated tone, “Mom, don’t you remember you just told me that story!”, it is better to just listen and then engage mom in more discussion about that story – maybe ask some questions about the situation or relate it back to a past similar experience. It will help mom “bank” that information, as well as you may learn something you did not know about your mom’s life experiences from the past!{/t}</p>
-    <h4>{t}Other Changes{/t}</h4>
-    <p>{t}Because it takes longer for the older brain to process information, it takes longer for an older person to react. The performance of routine tasks takes longer. Combined with normal slowing of movement, ordinary tasks may become more difficult and frustrating for both the older person and their caregiver.{/t}</p>
-  </div>
-  <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
-</div>
-
-<!-- Lesson 4 Slide 13 -->
-
-<div id="lesson-4-slide-13" class="course-slide">
-  <div class="content">
-    <h2 class="flowers">{t}Aging Well{/t}</h2>
-    <hr />
-    <h4>{t}Encouraging Health and Wellness{/t}</h4>
-    <p>{t}Wellness means striving to achieve the optimum state of health and well-being that you are capable of achieving. The whole-person wellness model, which emphasizes personal choice, self-responsibility, optimism, and self-direction comprises six dimensions of wellness:{/t}</p>
-    <ul>
-      <li>{t}Physical{/t}</li>
-      <li>{t}Social{/t}</li>
-      <li>{t}Emotional{/t}</li>
-      <li>{t}Spiritual{/t}</li>
-      <li>{t}Vocational{/t}</li>
-      <li>{t}Intellectual{/t}</li>
-    </ul>
-    <p>{t}Physical Wellness includes living an active lifestyle, participating in regular physical activity, eating nutritious foods, and practicing proper self-care. Some ideas for maintaining physical wellness?{/t}</p>
-    <ul>
-      <li>{t}Getting regular physical exams, including dental and eye{/t}</li>
-      <li>{t}Maintaining current immunizations{/t}</li>
-      <li>{t}Eating balanced, nutritious meals{/t}</li>
-      <li>{t}Getting regular exercise{/t}</li>
-      <li>{t}Joining a health club{/t}</li>
-      <li>{t}Limiting or avoiding alcohol and tobacco{/t}</li>
-    </ul>
-    <p>{t}Can you think of other ways to maintain physical wellness? How can you help older adult friends or relatives incorporate physical wellness into their lives?{/t}</p>
-  </div>
-  <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
-</div>
-
-<!-- Lesson 4 Slide 14 -->
-
-<div id="lesson-4-slide-14" class="course-slide">
-  <div class="content">
-    <h2 class="flowers">{t}Aging Well (continued){/t}</h2>
-    <hr />
-    <p>{t}Social Wellness is promoted through creating and maintaining relationships with others through talking and sharing interests. What are ways to promote social wellness?{/t}</p>
-    <ul>
-      <li>{t}Church groups{/t}</li>
-      <li>{t}Neighborhood networks{/t}</li>
-      <li>{t}Meals, gatherings, or outings with friends{/t}</li>
-      <li>{t}Clubs to expand your social network{/t}</li>
-      <li>{t}Classes to meet people with similar interests{/t}</li>
-      <li>{t}Volunteering{/t}</li>
-    </ul>
-    <p>{t}Do you know of activities to promote social wellness that currently exist in your community? Are there ways to promote participation by older friends/relatives?{/t}</p>
-    <p>{t}Emotional Wellness refers to successfully understanding, managing, and expressing personal feelings. Here are some ways to foster emotional wellness:{/t}</p>
-    <ul>
-      <li>{t}Recognize that your emotions affect your body{/t}</li>
-      <li>{t}Express needs, feelings, and opinions appropriately{/t}</li>
-      <li>{t}Use humor to lighten negative thoughts or situations{/t}</li>
-      <li>{t}Keep a diary to express your thoughts and how they made you feel{/t}</li>
-      <li>{t}Talk to trusted friends or family members and practice open communication to relieve stress{/t}</li>
-      <li>{t}Build self-esteem by respecting and taking care of yourself{/t}</li>
-    </ul>
-    <p>{t}What are some ways to help older friends/relatives cope with change and improve emotional wellness? What are some ways you may better manage your own emotional wellness?{/t}</p>
-  </div>
-  <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
-</div>
-
-<!-- Lesson 4 Slide 15 -->
-
-<div id="lesson-4-slide-15" class="course-slide">
-  <div class="content">
-    <h2 class="flowers">{t}Aging Well (continued){/t}</h2>
-    <hr />
-    <p>{t}Spiritual Wellness builds on personal values to find meaning and purpose in life and discover a peaceful harmony with the world. While faith means different things to different people, spiritual wellness means having hope, guidance, and purpose to help us understand ourselves better. Some methods of achieving spiritual wellness include:{/t}</p>
-    <ul>
-      <li>{t}Embracing personal beliefs, morals, and/or religion{/t}</li>
-      <li>{t}Develop connections with ourselves and others{/t}</li>
-      <li>{t}Develop a philosophy of life{/t}</li>
-      <li>{t}Explore teachings that appeal to you{/t}</li>
-      <li>{t}Practice relaxation techniques such as meditation or yoga{/t}</li>
-    </ul>
-    <p> {t}What are some ways you can explore spiritual wellness?{/t} </p>
-    <p>{t}Vocational Wellness encompasses experiencing personal growth and satisfaction from service to others and learning or improving skills through occupational and other life experiences. While most people equate vocation with paid work, there are many options for pursuing vocational wellness other than employment. How about:{/t}</p>
-    <ul>
-      <li>{t}Volunteering{/t}</li>
-      <li>{t}Mentoring{/t}</li>
-      <li>{t}Babysitting{/t}</li>
-      <li>{t}Caregiving{/t}</li>
-      <li>{t}Resident Committees{/t}</li>
-      <li>{t}Seasonal work (e.g., tax preparation){/t}</li>
-    </ul>
-    <p>{t}What are some other ways you can use your own skills to pursue vocational wellness? What about for older friends/relatives?{/t}</p>
-  </div>
-  <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
-</div>
-
-<!-- Lesson 4 Slide 16 -->
-
-<div id="lesson-4-slide-16" class="course-slide">
-  <div class="content">
-    <h2 class="flowers">{t}Aging Well (continued){/t}</h2>
-    <hr />
-    <p>{t}Intellectual Wellness promotes expansion of personal knowledge through learning opportunities, creative pursuits, and stimulating discussions with others. There are numerous ways of pursuing intellectual wellness, many of which may intersect with other wellness categories. How about:{/t}</p>
-    <ul>
-      <li>{t}Joining clubs that explore areas of interest to you{/t}</li>
-      <li>{t}Taking classes on subjects that interest you{/t}</li>
-      <li>{t}Pursuing creative hobbies{/t}</li>
-      <li>{t}Attending plays or musical performances{/t}</li>
-      <li>{t}Reading books, newspapers, magazines{/t}</li>
-      <li>{t}Participating in “mental aerobics” (art, puzzles, sensory stimulation techniques) to strengthen, improve, and maintain mental and memory capabilities{/t}</li>
-    </ul>
-    <h2 class="flowers">{t}Aging Well (continued){/t}</h2>
-    <p>{t}You can probably think of many other ways to promote intellectual wellness. How can you implement those ideas to stimulate intellectual wellness for your older friends/relatives?{/t}</p>
-    <h4>{t}Lifelong Learning{/t}</h4>
-    <p>{t}New learning by older adults should be linked to experiences or activities they are familiar with or have enjoyed, particularly those with a social component. Here are some key facts about older adults and lifelong learning:{/t}</p>
-    <ul>
-      <li>{t}Older people can learn new information, and new skills.{/t}</li>
-      <li>{t}Sometimes older people feel less confidence in learning new things, but often this is because they haven’t been in a classroom in a long time, or because they are aware of the stereotype and fall into a self-fulfilling prophesy.{/t}</li>
-      <li>{t}Perhaps the best-documented loss in aging is that it takes longer to understand and think about what is being learned. This just means that learning situations for older people should be self-paced without time pressure.{/t}</li>
-      <li>{t}For older learners, active, participatory learning may be more beneficial (and enjoyable) than traditional, lecture-based learning.{/t}</li>
-      <li>{t}Older learners already know more than when they were young. This can be an advantage if they are given the opportunity to reflect on new information to see how it integrates with what they already know.{/t}</li>
-      <li>{t}A supportive learning environment, with positive feedback and encouragement, is beneficial, provided that older learners are treated like adults.{/t}</li>
-    </ul>
-    <p>{t}How can you apply these lifelong learning strategies to foster wellness?{/t}</p>
-  </div>
-  <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
-</div>
-
-<!-- Lesson 4 Slide 17 -->
-
-<div id="lesson-4-slide-17" class="course-slide">
-  <div class="content">
-    <h2 class="flowers">{t}Aging Well (continued){/t}</h2>
-    <hr />
-    <h4>{t}Creativity{/t}</h4>
-    <p>{t}Creativity is defined as the skill of producing a work of thought or imagination.{/t}</p>
-    <p>{t}In his book, The Creative Age: Awakening Human Potential in the Second Half of Life (2000), Gene D. Cohen, MD, PhD, provided striking evidence that the human potential for creativity continues well into old age.{/t}</p>
-    <p>{t}So, what are some ways to encourage creativity among older friends/relatives? Here are some excerpts from a creative energy workshop.{/t}</p>
-    <p>{t}You may want to try out this workshop with your older friends, relatives, or even yourself. Sometimes, we all need to revisit our creative side!{/t}</p>
-    <p>{t}Begin by thinking about your interests and desires. This may include goals you want to achieve, projects you want to implement, or dreams you want to make real. By going through this exercise, you will begin to realize inner strengths you already have that will help you achieve your potential.{/t}</p>
-  </div>
-  <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
-</div>
-
-<!-- Lesson 4 Slide 18 -->
-
-<div id="lesson-4-slide-18" class="course-slide">
-  <div class="content">
-    <h2 class="flowers">{t}Aging Well (continued){/t}</h2>
-    <hr />
-    <ol>
-      <li>{t}Do you wish to build on what you have already done, or do you wish to take your work to a higher level?{/t}
-	      <ul>
-	        <li>{t}What do you need to do to grow?{/t} </li>
-	        <li>{t}Do you know others who do related work and whose achievements you want to  mirror? They may be agreeable to become your coach or mentor!{/t} </li>
-	        <li>{t}Search for new resources that will help you achieve your goals. Network with others  who may be of help to you.{/t} </li>
-	        <li>{t}Look for inspiration around you. Seek out success stories.{/t} </li>
-	      </ul>
-      </li>
-      <li>{t}Do you want to change direction in your work or activities?{/t}
+    <!-- Lesson 4 Slide 3 -->
+    
+    <div id="lesson-4-slide-3" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Myths and Realities of Aging (continued){/t}</h2>
+        <hr />
+        <p>{t}Realities of Aging{/t}</p>
+        <p>{t}So, if the stereotype of older adults as slow, sick, and/or senile is false, what is the reality of aging in America? The National Council on the Aging and AARP published the resource, American Perceptions of Aging in the 21st Century, a longitudinal study that began in 1974. In 2002 a follow-up study compared results from the original 1974 study with contemporary findings. Here are some highlights about the realities of aging:{/t}</p>
         <ul>
-          <li>{t}Look to strengths or interests you have that are untapped.{/t} </li>
-          <li>{t}Start exploring the new area. You do not need to make a commitment yet.{/t} </li>
-          <li>{t}Experiment just as if you were vacationing to a new area or testing new recipes.{/t} </li>
-          <li>{t}Empower yourself. Be confident that you can learn and growth in a new area.{/t} </li>
-          <li>{t}Guess what – you are not the first to make a change. If others can, so can you!{/t} </li>
+          <li>{t}58% of older adults were very happy with growing older{/t}</li>
+          <li>{t}88% felt that social relationships were very important to a meaningful, vital life{/t}</li>
+          <li>{t}32% felt that new learning was very important to a meaningful, vital life{/t}</li>
+          <li>{t}47% felt their overall health was excellent to very good{/t}</li>
+          <li>{t}60% were very or somewhat worried about memory loss as they aged{/t}</li>
         </ul>
-      </li>
-      <li>{t}Time to test your capacity for starting creativity.{/t}
+        <p>{t}How about a few more realities of aging. A survey of key trends in aging conducted by Mather LifeWays Institute on Aging documented the following facts about older adults:{/t}</p>
         <ul>
-          <li>{t}Continuously putting off something new needs to end.{/t} </li>
-          <li>{t}Look at ordinary experiences as new opportunities for self-discovery.{/t}
+          <li>{t}The educational level of the older adult population is increasing.{/t}</li>
+          <li>{t}Almost half of older adults currently do volunteer work.{/t}</li>
+          <li>{t}More than 75% of older adults say old age should be defined by a decline in physical or mental functioning rather than a specific age.{/t}</li>
+          <li>{t}Only 8% of older adults say they are very old.{/t}</li>
+          <li>{t}Almost 40% of older adults work part-time.{/t}</li>
+          <li>{t}Older Americans age 65+ comprise 16.3% of the US labor force.{/t}</li>
         </ul>
-      </li>
-      <li>{t}Consider collaborative creativity.{/t}
+        <p>{t}First of all, how do we define healthy aging? The National Council on the Aging gives this definition:{/t}</p>
+        <p>{t}“Healthy aging is a broad concept that is more than just physical health status or absence of disease. It encompasses all of the intellectual, emotional, social, and spiritual facts of our being. While healthy aging is driven by internal dimensions such as our beliefs, attitudes, and intentions about our health, it also depends on external supports including our social networks, community services, public policies, and the built and natural environment. These dimensions are interrelated, affecting behavior and lifestyle choices.”{/t}</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
+    
+    <!-- Lesson 4 Slide 4 -->
+    
+    <div id="lesson-4-slide-4" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Focusing on Healthy Aging{/t}</h2>
+        <hr />
+        <h4>{t}Maintaining Physical Health{/t}</h4>
+        <p>{t}Research shows that older adults can attain healthy vital old age through simple health promotion and disease prevention initiatives. The MacArthur Foundation study identified several lifestyle changes that clearly proved to benefit older adults:{/t}</p>
         <ul>
-          <li>{t}Look for others who may be interested in starting a new project with you.{/t}
+          <li>{t}Exercise and physical activity{/t}</li>
+          <li>{t}Early detection of cancer{/t}</li>
+          <li>{t}Reducing risk of heart disease{/t}</li>
+          <li>{t}Vaccinations{/t}</li>
+        </ul>
+        <h5>{t}Exercise and physical activity{/t}</h5>
+        <p>{t}Exercise can help prevent heart disease, high blood pressure, and tendency toward diabetes, osteoporosis, and risk for falls. A regular, moderate program of aerobic and strength training for older adults is both safe and effective in improving physical function.{/t}</p>
+        <h5>{t}Early detection of cancer{/t}</h5>
+        <p>{t}With early detection, many forms of cancer are treatable and have a high survival rate. Fortunately, screening tests for early detection of cancer have become very effective and commonly available. In addition, research suggests that promoting a healthy diet may also decrease the risk of certain types of cancer.{/t}</p>
+        <h5>{t}Heart disease{/t}</h5>
+        <p>{t}Heart disease is a major killer of men at all ages and of older women. Education about reducing risk factors (high cholesterol, smoking, hypertension) is vitally important for older adults.{/t}</p>
+        <h5>{t}Vaccinations{/t}</h5>
+        <p>{t}Among the greatest advances in health promotion and disease prevention in older adults had been the development of safe and effective vaccines. Among non-vaccinated older adults, disease can sweep through the population rapidly and can be very dangerous.{/t}</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
+    
+    <!-- Lesson 4 Slide 5 -->
+    
+    <div id="lesson-4-slide-5" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Focusing on Healthy Aging (continued){/t}</h2>
+        <hr />
+        <h4>{t}Maintaining High Cognitive and Physical Function{/t}</h4>
+        <p>{t}Fear of cognitive loss, and especially of Alzheimer’s disease are widespread among older adults, and with good reason. Such losses place great burden on both the older adult and his/ her caregivers. Fortunately, research shows that even though the proportion of older adults in the population is increasing, the usual pattern is that most older adults retain a good portion of their independence and mental sharpness.{/t}</p>
+        <p>{t}The MacArthur Foundation study documented a number of ways that older adults sustain mental ability as they age. Many of the study’s “successful agers” reported that such activities as reading, conversation, crosswords and other word puzzles, card games, and other similar activities kept their minds alert and active. The study also shows that the strongest predictors of sustained cognitive function include:{/t}</p>
+        <ul>
+          <li>{t}Education{/t}</li>
+          <li>{t}Physical activity{/t}</li>
+          <li>{t}High “self-efficacy”{/t}</li>
+        </ul>
+        <h5>{t}Education{/t}</h5>
+        <p>{t}People with more years of education were more likely to maintain high cognitive function. The study that education early in life may have a direct beneficial effect of brain circuitry, and education may set a pattern of intellectual pursuits, including reading and puzzle solving, which maintains lifelong exercise of cognitive function.{/t}</p>
+        <h5>{t}Physical Activity{/t}</h5>
+        <p>{t}The study found that older adults who engaged in strenuous physical activity were much more likely to maintain high cognitive function. One possible answer for this is that exercise releases chemicals in the brain which promote the growth of new brain cells.{/t}</p>
+        <h5>{t}Self-efficacy{/t}</h5>
+        <p>{t}Self-efficacy, or self-esteem, is a person\’s belief in his or her ability to handle various situations. Many studies show that a strong sense of self-efficacy leads to improved performance in solving cognitive problems. Older adults with strong self-efficacy are more likely to view memory as a set of skills that can be learned and improved.{/t}</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
+    
+    <!-- Lesson 4 Slide 6 -->
+    
+    <div id="lesson-4-slide-6" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Focusing on Healthy Aging (continued){/t}</h2>
+        <hr />
+        <h4>{t}Engagement in Productive Relationships and Behaviors{/t}</h4>
+        <p>{t}The MacArthur research showed that “happy activities” are essential to successful aging. The two most important areas they identified that contribute to successful aging are:{/t}</p>
+        <ul>
+          <li>{t}Relating to others{/t}</li>
+          <li>{t}Continuing productive activity.{/t}</li>
+        </ul>
+        <p>{t}Relating to Others Being part of a social network of family and friends contributes significantly to successful aging.{/t}</p>
+        <p>{t}Continuing Productive Activity Most people equate being productive with earning money. However, there are many activities, both paid and unpaid, which can be considered productive.{/t}</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
+    
+    <!-- Lesson 4 Slide 7 -->
+    
+    <div id="lesson-4-slide-7" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Normal Aging Changes{/t}</h2>
+        <hr />
+        <h4>{t}Hearing Changes{/t}</h4>
+        <p>{t}More than half of people aged 60 or over are hard of hearing or deaf. Presbycusis is the most common form of hearing loss and is thought to be due to the combined effects of aging of the peripheral or central auditory systems, and the accumulated effects of wear-and-tear.{/t}</p>
+        <p>{t}Older adults may compensate for hearing loss by using hearing aids. However, some older adults don’t recognize their problem and some deny they have problems and thus don’t take actions to correct hearing impairments resulting in potential communication problems. These communication problems can lead to social isolation.{/t}</p>
+        <h5>{t}Strategies for Compensating for Hearing Changes{/t}</h5>
+        <ul>
+          <li>{t}Stand or sit in front of the older adult; get the older adult’s attention.{/t}</li>
+          <li>{t}Speak up but do not shout.{/t}</li>
+          <li>{t}Use lower-pitched tones. They are heard more easily than higher ones.{/t}</li>
+          <li>{t}Speak slowly and clearly, and emphasize only key words.{/t}</li>
+          <li>{t}Cut out as much background noise as possible.{/t}</li>
+          <li>{t}Keep your mouth in clear view, and maintain eye contact if possible.{/t}</li>
+          <li>{t}Rephrase rather than repeat a misunderstood sentence. Allow a few seconds pause after every few sentences to allow for processing and to allow the listener to formulate questions.{/t}</li>
+        </ul>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
+    
+    <!-- Lesson 4 Slide 8 -->
+    
+    <div id="lesson-4-slide-8" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Normal Aging Changes (continued){/t}</h2>
+        <hr />
+        <h4>{t}Vision Changes{/t}</h4>
+        <p>{t}About 7.3 million or 21% of persons age 65 and over report some form of vision impairment. As baby boomers age, this number will reach 8.3 million in the year 2010, 11.3 million in 2020, and 14.8 million in 2030.{/t}</p>
+        <h5>{t}Vision loss may be due to:{/t}</h5>
+        <ul>
+          <li>{t}Decreased pupil size and accommodation which alter visual accuracy{/t}</li>
+          <li>{t}Macular degeneration which impedes central vision{/t}</li>
+          <li>{t}Glaucoma which impeded peripheral vision{/t}</li>
+          <li>{t}Cataracts which cloud vision.{/t}</li>
+        </ul>
+        <h5>{t}Strategies for Compensating for Vision Changes{/t}</h5>
+        <p>{t}To accommodate older adults with visual impairments, it is important to make give clear verbal cues to assist the older adult.{/t}</p>
+        <ul>
+          <li>{t}If you are entering a room with someone who is visually impaired, describe the room layout, other people who are in the room, and what is happening.{/t}</li>
+          <li>{t}Tell the person if you are leaving. Let him/her know if others will remain in the room or if he/she will be alone.{/t}</li>
+          <li>{t}Allow the person to take your arm for guidance.{/t}</li>
+          <li>{t}When you speak, let the person know whom you are addressing;{/t}</li>
+          <li>{t}Ask how you may help: increasing the light, reading the menu, describing where things are, or in some other way.{/t}</li>
+          <li>{t}Call out the person’s name before touching; touching lets a person know that you are listening.{/t}</li>
+          <li>{t}Treat him/her like a sighted person as much as possible.{/t}</li>
+          <li>{t}Explain what you are doing as you are doing it.{/t}</li>
+          <li>{t}Leave things where they are unless the person asks you to move something.{/t}</li>
+        </ul>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
+    
+    <!-- Lesson 4 Slide 9 -->
+    
+    <div id="lesson-4-slide-9" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Normal Aging Changes (continued){/t}</h2>
+        <hr />
+        <h4>{t}Changes in Smell and Taste{/t}</h4>
+        <p>{t}Decline in smell and taste are also normal aging sensory changes. Older adults recognize and identify common odors less well. Loss of taste and smell are common and result from:{/t}</p>
+        <ul>
+          <li>{t}Normal aging from the degeneration of the taste buds, and decreased saliva production{/t}</li>
+          <li>{t}Certain disease states, such as Alzheimer’s disease{/t}</li>
+          <li>{t}Medications{/t}</li>
+          <li>{t}Surgical interventions{/t}</li>
+          <li>{t}Environmental exposure{/t}</li>
+        </ul>
+        <h5>{t}Sensory losses of taste and smell can cause:{/t}</h5>
+        <ul>
+          <li>{t}Reluctance to talk about food{/t}</li>
+          <li>{t}Reduced pleasure and comfort from food affecting the socialization that accompanies eating{/t}</li>
+          <li>{t}Increased nutritional and immune deficiencies{/t}</li>
+          <li>{t}Reduced adherence to dietary regimen.{/t}</li>
+        </ul>
+        <p>{t}Older adults should be encouraged to have routine oral care and dental visits and to use dentures regularly. To accommodate declines in smell and taste, meals should have pleasing colors, textures, and flavorings to make them look and taste more appealing.{/t}</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
+    
+    <!-- Lesson 4 Slide 10 -->
+    
+    <div id="lesson-4-slide-10" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Normal Aging Changes (continued){/t}</h2>
+        <hr />
+        <h4>{t}Common Health Issues of Older Adults{/t}</h4>
+        <p>{t}According to Older Americans 2008: Key Indicators of Well-Being, published by the Federal Interagency Forum on Age Related Statistics, about 80% of older adults have at least one age- related chronic health condition and 50% have at least two. The most prevalent include:{/t}</p>
+        <ul>
+          <li>{t}Arthritis{/t}</li>
+          <li>{t}Hypertension{/t}</li>
+          <li>{t}Heart Disease{/t}</li>
+          <li>{t}Stroke{/t}</li>
+          <li>{t}Diabetes{/t}</li>
+          <li>{t}Cancer{/t}</li>
+          <li>{t}Osteoporosis{/t}</li>
+          <li>{t}Alzheimer’s Disease{/t}</li>
+        </ul>
+        <p>{t}Arthritis encompasses more than 100 diseases and conditions that affect joints, surrounding tissues, and other connective tissues. It is the leading cause of disability among older adults. Approximately 43% of all men and 54% of all women over the age of 65 have some level of arthritis.{/t}</p>
+        <p>{t}Hypertension is also prevalent among older adults and can lead to activity limitations. 52% of all men and 54% of all women over the age of 65 suffer from hypertension.{/t}</p>
+        <p>{t}Heart Disease and Stroke. Although older women are more likely to have hypertension than older men, the prevalence of heart disease and stroke is higher among older men. 37% of men and 26% of older women have heart disease, while 10% of older men and 8% of older women have suffered a stroke.{/t}</p>
+        <p>{t}Diabetes also affects the health of older adults and limits their ability to perform normal activities. 19% of men and 17% of women over the age of 65 suffer from diabetes.{/t}</p>
+        <p>{t}Cancer. Older men are at a greater risk of cancer than older women, 24% of older men and 19% of older women having some form of cancer. For men, the most commonly diagnosed cancers included prostate, lung, colon, and rectum. Among women, cancers of the breast, colon, and rectum were the most common.{/t}</p>
+        <p>{t}Osteoporosis, another common chronic ailment among older adults, reduces bone density and raises the risk for potential disabling fractures. Although women are four times more likely than men to experience bone loss, recent research suggests that the prevalence of osteoporosis among men has been significantly under-diagnosed and under-reported.{/t}</p>
+        <p>{t}Alzheimer’s Disease is a progressive, degenerative disease that causes gradual but irreversible loss of brain cells. It currently affects an estimated 4.5 million Americans, with the vast majority of sufferers being 65 and older. The group of people who are at the highest risk for Alzheimer’s Disease are those age 85 and older, also the fastest growing segment of the population.{/t}</p>
+        <p>{t}All statistics are taken from Older Americans 2008: Key Indicators of Well-Being, published by the Federal Interagency Forum on Age Related Statistics. Search the Web for this specific report.{/t}</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
+    
+    <!-- Lesson 4 Slide 11 -->
+    
+    <div id="lesson-4-slide-11" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Normal Aging Changes (continued){/t}</h2>
+        <hr />
+        <h4>{t}Emotional and Personality Changes{/t}</h4>
+        <p>{t}As we get older, our more dominant personality traits become more pronounced. You may notice that some older people whom you know become “more difficult” to get along with while others become “more mellow” as they age. Some older people may become more concerned about death. Others may feel that they have reached a certain age that their “wisdom” should be respected by everyone and they take offense if someone disagrees or challenges them on an issue.{/t}</p>
+        <p>{t}As a caregiver, being aware and understanding of some of these changes is important. Showing empathy and compassion to older adults when they may be coping with multiple changes or losses will benefit both the older person and you as caregiver.{/t}</p>
+        <p>{t}Emotional, behavioral, and mental change may include depression, memory lapses, inability ot concentrate, or disorientation. It is important to remember that memory lapses are not automatically a sign of dementia or Alzheimer’s Disease! These changes may be caused by a number of factors including:{/t}</p>
+        <ul>
+          <li>{t}Thickening of artery walls{/t}</li>
+          <li>{t}Poor nutrition{/t}</li>
+          <li>{t}Action of medications{/t}</li>
+          <li>{t}Loss of a spouse or death among friends/relatives{/t}</li>
+          <li>{t}Reduced physical strength and endurance{/t}</li>
+          <li>{t}Fears of illness{/t}</li>
+          <li>{t}Major life changes such as moving from one’s home to another setting{/t}</li>
+        </ul>
+        <p>{t}If the change is sudden and impacts the ability of the older adult to function on a daily basis, it is important to consult with the physician as there may be an underlying cause that could be addressed by medical care.{/t}</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
+    
+    <!-- Lesson 4 Slide 12 -->
+    
+    <div id="lesson-4-slide-12" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Normal Aging Changes (continued){/t}</h2>
+        <hr />
+        <h4>{t}Memory Changes{/t}</h4>
+        <p>{t}A major concern of people as they or their loved ones age is “What is normal memory loss and what is abnormal?”{/t}</p>
+        <p>{t}By the time a person reaches 70 to 80 years of age, the brain loses 10% of its original size. Some people’s memory remains sharp throughout old age while others are mildly affected by memory loss.{/t}</p>
+        <p>{t}As many as 50% of older adults have trouble remembering things, a situation called benign forgetfulness. Some loss of short-term memory is common with older adults, yet they often can easily remember life events and experiences from the past. It is also common that older adults tell and retell information. This is not so much a situation that the older adult does not remember telling the story, but it is a way to “lock in” the story into their short-term memory “bank.”{/t}</p>
+        <p>{t}As the caregiver, rather than responding in an aggravated tone, “Mom, don’t you remember you just told me that story!”, it is better to just listen and then engage mom in more discussion about that story – maybe ask some questions about the situation or relate it back to a past similar experience. It will help mom “bank” that information, as well as you may learn something you did not know about your mom’s life experiences from the past!{/t}</p>
+        <h4>{t}Other Changes{/t}</h4>
+        <p>{t}Because it takes longer for the older brain to process information, it takes longer for an older person to react. The performance of routine tasks takes longer. Combined with normal slowing of movement, ordinary tasks may become more difficult and frustrating for both the older person and their caregiver.{/t}</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
+    
+    <!-- Lesson 4 Slide 13 -->
+    
+    <div id="lesson-4-slide-13" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Aging Well{/t}</h2>
+        <hr />
+        <h4>{t}Encouraging Health and Wellness{/t}</h4>
+        <p>{t}Wellness means striving to achieve the optimum state of health and well-being that you are capable of achieving. The whole-person wellness model, which emphasizes personal choice, self-responsibility, optimism, and self-direction comprises six dimensions of wellness:{/t}</p>
+        <ul>
+          <li>{t}Physical{/t}</li>
+          <li>{t}Social{/t}</li>
+          <li>{t}Emotional{/t}</li>
+          <li>{t}Spiritual{/t}</li>
+          <li>{t}Vocational{/t}</li>
+          <li>{t}Intellectual{/t}</li>
+        </ul>
+        <p>{t}Physical Wellness includes living an active lifestyle, participating in regular physical activity, eating nutritious foods, and practicing proper self-care. Some ideas for maintaining physical wellness?{/t}</p>
+        <ul>
+          <li>{t}Getting regular physical exams, including dental and eye{/t}</li>
+          <li>{t}Maintaining current immunizations{/t}</li>
+          <li>{t}Eating balanced, nutritious meals{/t}</li>
+          <li>{t}Getting regular exercise{/t}</li>
+          <li>{t}Joining a health club{/t}</li>
+          <li>{t}Limiting or avoiding alcohol and tobacco{/t}</li>
+        </ul>
+        <p>{t}Can you think of other ways to maintain physical wellness? How can you help older adult friends or relatives incorporate physical wellness into their lives?{/t}</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
+    
+    <!-- Lesson 4 Slide 14 -->
+    
+    <div id="lesson-4-slide-14" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Aging Well (continued){/t}</h2>
+        <hr />
+        <p>{t}Social Wellness is promoted through creating and maintaining relationships with others through talking and sharing interests. What are ways to promote social wellness?{/t}</p>
+        <ul>
+          <li>{t}Church groups{/t}</li>
+          <li>{t}Neighborhood networks{/t}</li>
+          <li>{t}Meals, gatherings, or outings with friends{/t}</li>
+          <li>{t}Clubs to expand your social network{/t}</li>
+          <li>{t}Classes to meet people with similar interests{/t}</li>
+          <li>{t}Volunteering{/t}</li>
+        </ul>
+        <p>{t}Do you know of activities to promote social wellness that currently exist in your community? Are there ways to promote participation by older friends/relatives?{/t}</p>
+        <p>{t}Emotional Wellness refers to successfully understanding, managing, and expressing personal feelings. Here are some ways to foster emotional wellness:{/t}</p>
+        <ul>
+          <li>{t}Recognize that your emotions affect your body{/t}</li>
+          <li>{t}Express needs, feelings, and opinions appropriately{/t}</li>
+          <li>{t}Use humor to lighten negative thoughts or situations{/t}</li>
+          <li>{t}Keep a diary to express your thoughts and how they made you feel{/t}</li>
+          <li>{t}Talk to trusted friends or family members and practice open communication to relieve stress{/t}</li>
+          <li>{t}Build self-esteem by respecting and taking care of yourself{/t}</li>
+        </ul>
+        <p>{t}What are some ways to help older friends/relatives cope with change and improve emotional wellness? What are some ways you may better manage your own emotional wellness?{/t}</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
+    
+    <!-- Lesson 4 Slide 15 -->
+    
+    <div id="lesson-4-slide-15" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Aging Well (continued){/t}</h2>
+        <hr />
+        <p>{t}Spiritual Wellness builds on personal values to find meaning and purpose in life and discover a peaceful harmony with the world. While faith means different things to different people, spiritual wellness means having hope, guidance, and purpose to help us understand ourselves better. Some methods of achieving spiritual wellness include:{/t}</p>
+        <ul>
+          <li>{t}Embracing personal beliefs, morals, and/or religion{/t}</li>
+          <li>{t}Develop connections with ourselves and others{/t}</li>
+          <li>{t}Develop a philosophy of life{/t}</li>
+          <li>{t}Explore teachings that appeal to you{/t}</li>
+          <li>{t}Practice relaxation techniques such as meditation or yoga{/t}</li>
+        </ul>
+        <p> {t}What are some ways you can explore spiritual wellness?{/t} </p>
+        <p>{t}Vocational Wellness encompasses experiencing personal growth and satisfaction from service to others and learning or improving skills through occupational and other life experiences. While most people equate vocation with paid work, there are many options for pursuing vocational wellness other than employment. How about:{/t}</p>
+        <ul>
+          <li>{t}Volunteering{/t}</li>
+          <li>{t}Mentoring{/t}</li>
+          <li>{t}Babysitting{/t}</li>
+          <li>{t}Caregiving{/t}</li>
+          <li>{t}Resident Committees{/t}</li>
+          <li>{t}Seasonal work (e.g., tax preparation){/t}</li>
+        </ul>
+        <p>{t}What are some other ways you can use your own skills to pursue vocational wellness? What about for older friends/relatives?{/t}</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
+    
+    <!-- Lesson 4 Slide 16 -->
+    
+    <div id="lesson-4-slide-16" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Aging Well (continued){/t}</h2>
+        <hr />
+        <p>{t}Intellectual Wellness promotes expansion of personal knowledge through learning opportunities, creative pursuits, and stimulating discussions with others. There are numerous ways of pursuing intellectual wellness, many of which may intersect with other wellness categories. How about:{/t}</p>
+        <ul>
+          <li>{t}Joining clubs that explore areas of interest to you{/t}</li>
+          <li>{t}Taking classes on subjects that interest you{/t}</li>
+          <li>{t}Pursuing creative hobbies{/t}</li>
+          <li>{t}Attending plays or musical performances{/t}</li>
+          <li>{t}Reading books, newspapers, magazines{/t}</li>
+          <li>{t}Participating in “mental aerobics” (art, puzzles, sensory stimulation techniques) to strengthen, improve, and maintain mental and memory capabilities{/t}</li>
+        </ul>
+        <h2 class="flowers">{t}Aging Well (continued){/t}</h2>
+        <p>{t}You can probably think of many other ways to promote intellectual wellness. How can you implement those ideas to stimulate intellectual wellness for your older friends/relatives?{/t}</p>
+        <h4>{t}Lifelong Learning{/t}</h4>
+        <p>{t}New learning by older adults should be linked to experiences or activities they are familiar with or have enjoyed, particularly those with a social component. Here are some key facts about older adults and lifelong learning:{/t}</p>
+        <ul>
+          <li>{t}Older people can learn new information, and new skills.{/t}</li>
+          <li>{t}Sometimes older people feel less confidence in learning new things, but often this is because they haven’t been in a classroom in a long time, or because they are aware of the stereotype and fall into a self-fulfilling prophesy.{/t}</li>
+          <li>{t}Perhaps the best-documented loss in aging is that it takes longer to understand and think about what is being learned. This just means that learning situations for older people should be self-paced without time pressure.{/t}</li>
+          <li>{t}For older learners, active, participatory learning may be more beneficial (and enjoyable) than traditional, lecture-based learning.{/t}</li>
+          <li>{t}Older learners already know more than when they were young. This can be an advantage if they are given the opportunity to reflect on new information to see how it integrates with what they already know.{/t}</li>
+          <li>{t}A supportive learning environment, with positive feedback and encouragement, is beneficial, provided that older learners are treated like adults.{/t}</li>
+        </ul>
+        <p>{t}How can you apply these lifelong learning strategies to foster wellness?{/t}</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
+    
+    <!-- Lesson 4 Slide 17 -->
+    
+    <div id="lesson-4-slide-17" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Aging Well (continued){/t}</h2>
+        <hr />
+        <h4>{t}Creativity{/t}</h4>
+        <p>{t}Creativity is defined as the skill of producing a work of thought or imagination.{/t}</p>
+        <p>{t}In his book, The Creative Age: Awakening Human Potential in the Second Half of Life (2000), Gene D. Cohen, MD, PhD, provided striking evidence that the human potential for creativity continues well into old age.{/t}</p>
+        <p>{t}So, what are some ways to encourage creativity among older friends/relatives? Here are some excerpts from a creative energy workshop.{/t}</p>
+        <p>{t}You may want to try out this workshop with your older friends, relatives, or even yourself. Sometimes, we all need to revisit our creative side!{/t}</p>
+        <p>{t}Begin by thinking about your interests and desires. This may include goals you want to achieve, projects you want to implement, or dreams you want to make real. By going through this exercise, you will begin to realize inner strengths you already have that will help you achieve your potential.{/t}</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
+    
+    <!-- Lesson 4 Slide 18 -->
+    
+    <div id="lesson-4-slide-18" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Aging Well (continued){/t}</h2>
+        <hr />
+        <ol>
+          <li>{t}Do you wish to build on what you have already done, or do you wish to take your work to a higher level?{/t}
+            <ul>
+              <li>{t}What do you need to do to grow?{/t} </li>
+              <li>{t}Do you know others who do related work and whose achievements you want to  mirror? They may be agreeable to become your coach or mentor!{/t} </li>
+              <li>{t}Search for new resources that will help you achieve your goals. Network with others  who may be of help to you.{/t} </li>
+              <li>{t}Look for inspiration around you. Seek out success stories.{/t} </li>
+            </ul>
           </li>
-          <li>{t}Consider volunteering in your community for a project as a way to meet new contacts and expand your experiences.{/t} </li>
-        </ul>
-      </li>
-      <li>{t}Is your circle of friends intergenerational?{/t}
+          <li>{t}Do you want to change direction in your work or activities?{/t}
+            <ul>
+              <li>{t}Look to strengths or interests you have that are untapped.{/t} </li>
+              <li>{t}Start exploring the new area. You do not need to make a commitment yet.{/t} </li>
+              <li>{t}Experiment just as if you were vacationing to a new area or testing new recipes.{/t} </li>
+              <li>{t}Empower yourself. Be confident that you can learn and growth in a new area.{/t} </li>
+              <li>{t}Guess what – you are not the first to make a change. If others can, so can you!{/t} </li>
+            </ul>
+          </li>
+          <li>{t}Time to test your capacity for starting creativity.{/t}
+            <ul>
+              <li>{t}Continuously putting off something new needs to end.{/t} </li>
+              <li>{t}Look at ordinary experiences as new opportunities for self-discovery.{/t}
+            </ul>
+          </li>
+          <li>{t}Consider collaborative creativity.{/t}
+            <ul>
+              <li>{t}Look for others who may be interested in starting a new project with you.{/t} </li>
+              <li>{t}Consider volunteering in your community for a project as a way to meet new contacts and expand your experiences.{/t} </li>
+            </ul>
+          </li>
+          <li>{t}Is your circle of friends intergenerational?{/t}
+            <ul>
+              <li>{t}Look at ways to bring intergenerational activities into your life. You will be surprised at the variety of perceptions about the same topics.{/t} </li>
+              <li>{t}Spend more time with your older relatives and friends to learn about their history. Along with strengthening family ties, you may learn something new about your older  relatives and friends!{/t} </li>
+            </ul>
+          </li>
+          <li>{t}Are you seeking a sense of personal satisfaction or purpose?{/t}
+            <ul>
+              <li>{t}Recognize the power of small changes.{/t} </li>
+              <li>{t}Purposively change your language to “positive speak”. For example, a “problem” can become an “opportunity” or “challenge”. You will notice that your positive tone will gradually influence others in the same directions!{/t} </li>
+            </ul>
+          </li>
+          <li>{t}Do you want to focus on public creativity?{/t}
+            <ul>
+              <li>{t}Look for ways you may become a volunteer or activist for your community.{/t} </li>
+              <li>{t}Consider that many of your skills or knowledge are already valuable assets to your community. Seek ways to share those skills or knowledge.{/t} </li>
+            </ul>
+          </li>
+          <li>{t}Are you now asking, “Am I really creative enough?”{/t}
+            <ul>
+              <li>{t}Everyone has more potential than they know.{/t} </li>
+              <li>{t}Creativity does not need to be something grand or dramatic.{/t} </li>
+              <li>{t}Creativity takes many forms and can be as simple as a pleasant social interaction where two friends explore something new about each other or their mutual interests{/t} </li>
+            </ul>
+        </ol>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
+    
+    <!-- Lesson 4 Slide 19 -->
+    
+    <div id="lesson-4-slide-19" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Aging Well (continued){/t}</h2>
+        <hr />
+        <iframe width="420" height="315" src="http://www.youtube.com/embed/SBH9dkCZsXQ?rel=0" frameborder="0" allowfullscreen></iframe>
+        <h4>{t}Technology and the Future of Caregiving{/t}</h4>
+        <p>{t}The way we care for older adults today cannot scale to meet the looming age wave, and before long we’ll face a fullblown national crisis. We have an obligation to our parents—indeed to the next generation of older adults—to ensure they get the best possible care and that they receive it in a place they want to call home.{/t}</p>
+        <p>{t}New technology solutions offer great promise to improve quality of care while reducing healthcare costs. Technology already has transformed our lives—from email to MP3s and from online shopping to cell phones. It is time now for technology to transform the experience of aging.{/t}</p>
+        <p>{t}Fortunately, exciting new technologies coming in the next 5 to 10 years offer the potential to dramatically improve the quality of care we can provide. Watch this video to learn the possibilities!{/t}</p>
+      </div>
+      <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Complete Module{/t}</a> </div>
+    </div>
+  </div>
+  
+  
+  <div id="lesson-5">
+    <div id="lesson-5-slide-1" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Finances &amp; Legal Issues{/t}</h2>
+        <hr />
+        <img src="<?php echo $this->getImagesUrl('empower/147041673.png'); ?>" alt="{t}image{/t}">
+        <p>{t}This module contains four main sections:{/t}</p>
         <ul>
-          <li>{t}Look at ways to bring intergenerational activities into your life. You will be surprised at the variety of perceptions about the same topics.{/t} </li>
-          <li>{t}Spend more time with your older relatives and friends to learn about their history. Along with strengthening family ties, you may learn something new about your older  relatives and friends!{/t} </li>
+          <li>{t}Financial Planning Issues and Key Topics for Caregivers{/t}</li>
+          <li>{t}Understanding Key Aspects of Medicare{/t}</li>
+          <li>{t}Understanding Key Aspects of Medicaid{/t}</li>
+          <li>{t}Legal Issues for Caregivers{/t}</li>
         </ul>
-      </li>
-      <li>{t}Are you seeking a sense of personal satisfaction or purpose?{/t}
+        
+        <p>{t}As a caregiver, you will need to evaluate the long-term care needs of your loved one. In making this evaluation, it is important to consider financial options. Long-term financial planning is important for everyone, but it is essential when you are coping with the expense of chronic illnesses such as Alzheimer's or Dementia.{/t}</p>
+        
+        <p class="forum">{t}Do you have a long-term financial plan in-place for the person you are careing for?</p>
+        
+                <img src="<?php echo $this->getImagesUrl('empower/forum_icon.png'); ?>" alt="{t}image{/t}">
+
+        
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Start Course &raquo;{/t}</a></div>
+    </div>
+    
+    
+    <div id="lesson-5-slide-2" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Financial Planning Issues and Key Topics for Caregivers{/t}</h2>
+        <hr />
+        <h5>{t}Developing a Plan{/t}</h5>
+        <p>{t}For the security of the caregiver and the patient, long-term financial planning is very important for all parties involved. Planning ahead is essential. Long-term financial planning is very important for the security of the caregiver and the patient. If you wish to handle your loved one's finances, you must receive written authorization to do so. This authorization can be obtained through documents such as a power of attorney.{/t}</p>
+        <p>{t}When considering a financial plan, you may contact professional financial managers and/or medical lawyers who deal with financial planning for people facing chronic or progressive illnesses. Consider an attorney who practices the specialty of <i>“elder law.”</i> {/t}<a href="http://www.naela.org" target="_blank">The National Academy of Elder Law Attorneys (NAELA)</a>{t} is a professional organization that publishes an <i>“Experience Registry”</i> of members who specialize in various aspects of elder law.{/t}</p>
+        <p>{t}You also may want to talk to a social worker and investigate other resources, such as those available on the Internet. Ask your loved one's doctor for a referral, or speak with a national association or support group to find reputable professionals in your region.{/t}</p>
+        <h5>{t}Understanding Medical Coverage{/t}</h5>
+        <ul class="bulletlist">
+          <li>{t}If your loved one is insured, either through his or her employer or retirement policy, read all of the policies pertaining to chronic/progressive illnesses. If you are unsure about the language or terms, contact the personnel department or your financial planner.{/t}</li>
+          <li>{t}If your loved one is unemployed and does not have coverage, look for the highest level of affordable coverage.{/t}</li>
+          <li>{t}If your loved one is 65 or over, he or she qualifies for Medicare. This insurance can be supplemented with a <i>"<a href="http://www.medicare.gov/find-a-plan/questions/medigap-home.aspx?AspxAutoDetectCookieSupport=1" target="_blank">Medigap</a>"</i> policy available through a private insurer. Many states also have prescription assistance/reimbursement programs for low-income senior citizens.{/t}</li>
+          <li>{t}If your loved one is disabled but does not qualify for Social Security, he or she may be eligible to receive a form of Medicare for the disabled.{/t}</li>
+          <li>{t}If your loved one cannot get insurance and his or her income is low, he or she may qualify for Medicaid, a government <i>"safety net"</i> program that pays for medical costs that exceed a person's ability to pay.{/t}</li>
+        </ul>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
+    
+    
+    <div id="lesson-5-slide-3" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Financial Planning Issues and Key Topics for Caregivers{/t}</h2>
+        <hr />
+        
+        
+                                <img src="<?php echo $this->getImagesUrl('empower/93054723.png'); ?>" alt="{t}image{/t}">
+
+        
+        <h5>{t}Investigating Long- and Short-Term Disability Insurance{/t}</h5>
+        <p>{t}If your loved one is employed, have him check to see if his employer has private disability insurance. He or she should contact his employer's human resources to investigate eligibility, the cost of enrolling, and how much of his/her salary it will cover.{/t}</p>
+        <p>{t}If your loved one is not working, he or she may want to apply for Social Security. If they do not qualify for Social Security, state-run disability programs may be considered.{/t}</p>
+        <p>{t}If their total income is below a certain level, he or she may qualify for federally subsidized Supplemental Security Income (SSI). If an individual collects SSI, he or she is a candidate for Medicaid regardless of age.{/t}</p>
+        <h4>{t}Activity 1 - Financial Planning Issues &amp; Key Topics for Caregivers{/t}</h4>
+        
+        <p class="forum">{t}Post a response to the Forum the includes your loved-one's plan and what it consist of. If there is no plan in-place, use the Internet to research where would you find a template or where would you look to know where to start. Include the coverage options, Coverage of skilled nursing care facilities, and coverage of home care in your posting.{/t}</p>
+        
+                        <img src="<?php echo $this->getImagesUrl('empower/forum_icon.png'); ?>" alt="{t}image{/t}">
+
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
+    
+    
+    <div id="lesson-5-slide-4" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Understanding Key Aspects of Medicare{/t}</h2>
+        <hr />
+        <p>{t}<a href="http://www.medicare.gov" target="_blank">Medicare</a> is a federal health insurance program providing healthcare benefits to Americans 65 and older, as well as to some disabled individuals under age 65, and people of any age with permanent kidney failure requiring dialysis or kidney transplant. Eligibility for Medicare is linked to Social Security and railroad retirement benefits.{/t}</p>
+        <p>{t}Medicare has co-payments and deductibles. A deductible is an initial amount the patient is responsible for paying before Medicare coverage begins. A co-payment is a percentage of the amount of covered expense the patient is required to pay.{/t}</p>
+        <h4>{t}What Are Medicare's Coverage Options?{/t}</h4>
+        <p>{t}Medicare has several parts:{/t}</p>
+        <h5>{t}Part A Medicare covers hospital bills and includes:{/t}</h5>
         <ul>
-          <li>{t}Recognize the power of small changes.{/t} </li>
-          <li>{t}Purposively change your language to “positive speak”. For example, a “problem” can become an “opportunity” or “challenge”. You will notice that your positive tone will gradually influence others in the same directions!{/t} </li>
+          <li>{t}Inpatient hospital care{/t}</li>
+          <li>{t}Skilled nursing facility care (not custodial or long-term care){/t}</li>
+          <li>{t}Home health services, including a visiting nurse, or a physical, occupational, or speech therapist{/t}</li>
+          <li>{t}Blood that you receive at a hospital or skilled nursing facility during a covered stay{/t}</li>
+          <li>{t}Medical supplies{/t}</li>
+          <li>{t}Hospice services{/t}</li>
+          <li>{t}Mental health care given in a hospital{/t}</li>
         </ul>
-      </li>
-      <li>{t}Do you want to focus on public creativity?{/t} 
-	      <ul>
-	        <li>{t}Look for ways you may become a volunteer or activist for your community.{/t} </li>
-	        <li>{t}Consider that many of your skills or knowledge are already valuable assets to your community. Seek ways to share those skills or knowledge.{/t} </li>
-	      </ul>
-      </li>
-      <li>{t}Are you now asking, “Am I really creative enough?”{/t}
+        <h5>{t}Part B Medicare deals with doctors' bills and includes:{/t}</h5>
         <ul>
-          <li>{t}Everyone has more potential than they know.{/t} </li>
-          <li>{t}Creativity does not need to be something grand or dramatic.{/t} </li>
-          <li>{t}Creativity takes many forms and can be as simple as a pleasant social interaction where two friends explore something new about each other or their mutual interests{/t} </li>
+          <li>{t}Doctor charges (not routine physical exams){/t}</li>
+          <li>{t}Medically necessary ambulance services{/t}</li>
+          <li>{t}Physical, speech, and occupational therapy{/t}</li>
+          <li>{t}Home health care services (physician certification is necessary){/t}</li>
+          <li>{t}Medical supplies and equipment such as wheelchairs, hospital beds, oxygen, and walkers{/t}</li>
+          <li>{t}Transfusion of blood and blood components provided on an outpatient basis{/t}</li>
+          <li>{t}Outpatient medical/surgical supplies and services{/t}</li>
+          <li>{t}Outpatient mental health{/t}</li>
+          <li>{t}Part B Medicare benefits require payment of a monthly premium. A patient must also be entitled to Part A benefits in order to receive Part B benefits.{/t}</li>
         </ul>
-    </ol>
-  </div>
-  <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
-</div>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
+    
+    
+    <div id="lesson-5-slide-5" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Understanding Key Aspects of Medicare{/t}</h2>
+        <hr />
+        <h5>{t}Part C is the Medicare Advantage Plans:{/t}</h5>
+        <ul>
+          <li>{t}Part C refers to Medicare Advantage, which are managed care insurance plans you can buy from private insurers to replace your traditional Medicare coverage.{/t}</li>
+          <li>{t}They include Medicare HMOs, Medicare PPOs, Medicare Special Needs Plans, and Medicare Private Fee-for-Service Plans.{/t}</li>
+        </ul>
+        <h5>{t}Part D is the Prescription Insurance Plan:{/t}</h5>
+        <ul>
+          <li>{t}Part D, as of January 2006, covers prescription drugs.{/t}</li>
+          <li> {t}Depending on your income, you pay a monthly premium and part of the prescription cost.{/t} </li>
+        </ul>
+        <h5>{t}Medicare Coverage of Skilled Nursing Care Facilities{/t}</h5>
+        <p>{t}If nursing home care becomes necessary, your loved one may be eligible for Medicare. In order to receive care in a skilled nursing home under Medicare:{/t}</p>
+        <ul>
+          <li>{t}Most patients' HMO plans require them to have had a three-day hospital stay prior to admission into the skilled nursing facility. There are exceptions, however, and the patient's insurance provider should be consulted to determine whether these restrictions apply.{/t}</li>
+          <li>{t}The patient must meet specific criteria to receive treatment. The patient's doctor or nurse will help him or her to determine if the criteria are met.{/t}</li>
+          <li>{t}The patient must be admitted into the skilled nursing facility within 30 days of discharge from the hospital.{/t}</li>
+          <li>{t}The patient must enter the skilled nursing facility for treatment of the same condition for which he or she was hospitalized.{/t}</li>
+          <li>{t}The patient must require daily skilled care.{/t}</li>
+          <li>{t}The condition must be one that can be improved.{/t}</li>
+          <li>{t}The facility must be Medicare-certified.{/t}</li>
+          <li>{t}The patient's doctor must write a care plan. The care plan must be carried out by the skilled nursing facility. (Once the skilled needs are met, Medicare will no longer pay for services.){/t}</li>
+        </ul>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
+    
+    
+    <div id="lesson-5-slide-6" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Understanding Key Aspects of Medicare{/t}</h2>
+        <hr />
+        <h5>{t}Medicare Coverage of Home Care{/t}</h5>
+        <p>{t}In order to receive home care under Medicare:{/t}</p>
+        <ul>
+          <li>{t}The patient must be homebound.{/t}</li>
+          <li>{t}The doctor must certify a plan of care.{/t}</li>
+          <li>{t}Care must be needed on an intermittent (not continuous) basis.{/t}</li>
+          <li>{t}Care cannot exceed 35 hours per week or 8 hours per day.{/t}</li>
+          <li>{t}Physical or speech therapy must be provided on a "necessary and reasonable" basis. There are no restrictions on the number of days or hours per week of these therapies.{/t}</li>
+          <li>{t}If a person qualifies for home health care, he or she is entitled to a home health aide to provide some personal care.{/t}</li>
+        </ul>
+        <h4>{t}Activity 2 - Discuss Medicare{/t}</h4>
+        <p class="forum">{t}Please locate three websites that you find that have relevant, updated information on Medicare in your area, and post your findings to the Forum.{/t}</p>
+        
+                                <img src="<?php echo $this->getImagesUrl('empower/forum_icon.png'); ?>" alt="{t}image{/t}">
 
-<!-- Lesson 4 Slide 19 -->
+        
+        <h5>{t}Medicare Coverage for Prescription Drugs (Medicare Part D){/t}</h5>
+        <p>{t}Medicare prescription drug coverage is insurance that covers both brand-name and generic prescription drugs at participating pharmacies. Medicare prescription drug coverage provides protection for people who have very high drug costs or from unexpected prescription drug bills in the future.{/t}</p>
+        <p>{t}Everyone with Medicare is eligible for this coverage, regardless of income and resources, health status, or current prescription expenses. Someone may sign up when one is first eligible for Medicare (three months before the month one turns age 65 until three months after turning age 65). If one gets Medicare due to a disability, he or she can join from three months before to three months after the 25th month of cash disability payments. If someone does not sign up when first eligible, a penalty may be assessed. There may be a annual open enrollment period each year.{/t}</p>
+        <p>{t}The decision about Medicare prescription drug coverage depends on the kind of health care coverage one now has. There are two ways to get Medicare prescription drug coverage. One can join a Medicare prescription drug plan or one can join a Medicare Advantage Plan or other Medicare Health Plan that offers drug coverage. Whatever plan chosen, Medicare drug coverage will help cover brand-name and generic drugs at pharmacies that are convenient.{/t}</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
 
-<div id="lesson-4-slide-19" class="course-slide">
-  <div class="content">
-    <h2 class="flowers">{t}Aging Well (continued){/t}</h2>
-    <hr />
-    <iframe width="420" height="315" src="http://www.youtube.com/embed/SBH9dkCZsXQ?rel=0" frameborder="0" allowfullscreen></iframe>
-    <h4>{t}Technology and the Future of Caregiving{/t}</h4>
-    <p>{t}The way we care for older adults today cannot scale to meet the looming age wave, and before long we’ll face a fullblown national crisis. We have an obligation to our parents—indeed to the next generation of older adults—to ensure they get the best possible care and that they receive it in a place they want to call home.{/t}</p>
-    <p>{t}New technology solutions offer great promise to improve quality of care while reducing healthcare costs. Technology already has transformed our lives—from email to MP3s and from online shopping to cell phones. It is time now for technology to transform the experience of aging.{/t}</p>
-    <p>{t}Fortunately, exciting new technologies coming in the next 5 to 10 years offer the potential to dramatically improve the quality of care we can provide. Watch this video to learn the possibilities!{/t}</p>
-  </div>
-  <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Complete Module{/t}</a> </div>
-</div>
-</div>
-
-<!-- Lesson 5 Slide 1 -->
-
-<div id="lesson-5">
-  <div id="lesson-5-slide-1" class="course-slide">
-    <div class="content">
-      <h2 class="flowers">{t}Finances &amp; Legal Issues{/t}</h2>
-      <hr />
-      <img src="<?php echo $this->getImagesUrl('empower/147041673.png'); ?>" alt="{t}image{/t}">
-      <p>{t}This module contains four main sections:{/t}</p>
-      <ul>
-        <li>{t}Financial Planning Issues and Key Topics for Caregivers{/t}</li>
-        <li>{t}Understanding Key Aspects of Medicare{/t}</li>
-        <li>{t}Understanding Key Aspects of Medicaid{/t}</li>
-        <li>{t}Legal Issues for Caregivers{/t}</li>
-      </ul>
+    
+    <div id="lesson-5-slide-7" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Understanding Key Aspects of Medicare{/t}</h2>
+        <hr />
+        <p>{t}Like other insurance, there is a monthly premium, which varies by plan, and a yearly deductible. One will also pay a part of the cost of prescriptions, including a copayment or coinsurance. Costs will vary depending on which drug plan is chosen. Some plans may offer more coverage and additional drugs for a higher monthly premium. If someone has limited income and resources, and qualify for extra help, one may not have to pay a premium or deductible. To get more information about the extra help, please visit the <a href="http://www.socialsecurity.gov/" target="_blank">Social Security webpage</a>.{/t}</p>
+        
+        
+        
+        
+        
+        
+        <p>{t}Medicare prescription drug coverage provides greater peace of mind by protecting older adults from unexpected drug expenses. Even if someone does not use a lot of prescription drugs now, he or she should still consider joining. As we age, most people need prescription drugs to stay healthy. For most people, joining now means protection from unexpected prescription drug bills in the future.{/t}</p>
+        <p>{t}There is extra financial help for people with limited income and resources. If someone qualifies for extra help, Medicare will pay for almost all prescription drug costs. One can apply or get more information about the extra help by visiting the Social Security webpage.{/t}</p>
+        <p>Medicare Prescription Drug Plan Finder</p>
+        <p>{t}Medicare has a valuable <a href="https://www.medicare.gov/find-a-plan/questions/home.aspx?AspxAutoDetectCookieSupport=1" target="_blank">interactive tool</a> that allows you to narrow your search for a Medicare prescription drug plan based on your personal preferences such as cost, drugs covered and participating pharmacies. Click on the above link to access the tool.{/t}</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
-    <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Start Course &raquo;{/t}</a></div>
-  </div>
-  
-  <!-- Lesson 5 Slide 2 -->
-  
-  <div id="lesson-5-slide-2" class="course-slide">
-    <div class="content">
-      <h2 class="flowers">{t}Financial Planning Issues and Key Topics for Caregivers{/t}</h2>
-      <hr />
-      <p>{t}As a caregiver, you will need to evaluate the long-term care needs of your loved one. In making this evaluation, it is important to consider financial options. Long-term financial planning is important for everyone, but it is essential when you are coping with the expense of chronic illnesses such as Alzheimer's or Dementia.{/t}</p>
-      <p>{t}Developing a Plan{/t}</p>
-      <p>{t}For the security of the caregiver and the patient, long-term financial planning is very important for all parties involved. Planning ahead is essential. Long-term financial planning is very important for the security of the caregiver and the patient. If you wish to handle your loved one's finances, you must receive written authorization to do so. This authorization can be obtained through documents such as a power of attorney.{/t}</p>
-      <p>{t}When considering a financial plan, you may contact professional financial managers and/or medical lawyers who deal with financial planning for people facing chronic or progressive illnesses. Consider an attorney who practices the specialty of “elder law.”{/t}<a href="http://www.naela.org" target="_blank">The National Academy of Elder Law Attorneys (NAELA)</a>{t}is a professional organization that publishes an “Experience Registry” of members who specialize in various aspects of elder law.{/t}</p>
-      <p>{t}You also may want to talk to a social worker and investigate other resources, such as those available on the Internet. Ask your loved one's doctor for a referral, or speak with a national association or support group to find reputable professionals in your region.{/t}</p>
-      <p>{t}Understanding Medical Coverage{/t}</p>
-      <ul>
-        <li>{t}If your loved one is insured, either through his or her employer or retirement policy, read all of the policies pertaining to chronic/progressive illnesses. If you are unsure about the language or terms, contact the personnel department or your financial planner.{/t}</li>
-        <li>{t}If your loved one is unemployed and does not have coverage, look for the highest level of affordable coverage.{/t}</li>
-        <li>{t}If your loved one is 65 or over, he or she qualifies for Medicare. This insurance can be supplemented with a "Medigap" policy available through a private insurer. Many states also have prescription assistance/reimbursement programs for low-income senior citizens.{/t}</li>
-        <li>{t}If your loved one is disabled but does not qualify for Social Security, he or she may be eligible to receive a form of Medicare for the disabled.{/t}</li>
-        <li>{t}If your loved one cannot get insurance and his or her income is low, he or she may qualify for Medicaid, a government "safety net" program that pays for medical costs that exceed a person's ability to pay.{/t}</li>
-      </ul>
+    
+    <!-- Lesson 5 Slide 8 -->
+    
+    <div id="lesson-5-slide-8" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Understanding Key Aspects of Medicare (continued){/t}</h2>
+        <hr />
+        <p>{t}Medicare Coverage of Hospice{/t}</p>
+        <p>{t}Hospice is the philosophy and practice of caring for those at their end-of-life. Hospice care focuses on enhancing the quality of life for those final months, weeks, or days of life.{/t}</p>
+        <p>{t}There are more than 2,200 hospice organizations across the country. Most provide home care services and respite care for family caregivers. The hospice team consists of physicians, nurses, home health aides, social workers, counselors, nutritionists, speech and physical therapists, clergy, and volunteers who focus on the needs of the dying person and the family. Hospice staffs is usually available on a 24-hour basis. Hospice may be provided in the older adult’s home, a senior living or long-term care community, or in special hospice units in some hospitals or nursing homes if more extensive medical care to control pain or other symptoms is needed to provide peace and comfort.{/t}</p>
+        <p>{t}The goal of hospice is not to cure or rehabilitate. Nor is it to hasten death. Rather, hospice care focuses on supportive comfort care, aiming at relieving pain, nausea, dizziness, or constipation.{/t}</p>
+        <p>p{t}For the caregiver, it is important to choose a hospice agency that is certified by Medicare to provide hospice care. Almost all hospice services are covered by Medicare as long as the agency is certified.{/t}</p>
+        <p>{t}Hospice care is given in “periods of care.” For example, initial hospice care usually begins with two 90-day periods (6 months total). After than period, if the hospice medical director determines the person still would benefit from hospice, they would be “recertified” for additional 60-day periods. Recertification continues every 60-days. If the hospice medical director deems the person is doing well and does not need hospice, the care would revert back to the original Medicare coverage. If later, the person again needs hospice, the medical director can recertify the person to return to hospice care.{/t}</p>
+        <p>{t}The following is a resource from Medicare regarding explanation of the Medicare Hospice Benefit.{/t}</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
-    <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
-  </div>
-  
-  <!-- Lesson 5 Slide 3 -->
-  
-  <div id="lesson-5-slide-3" class="course-slide">
-    <div class="content">
-      <h2 class="flowers">{t}Financial Planning Issues and Key Topics for Caregivers (continued){/t}</h2>
-      <hr />
-      <p>{t}Investigating Long- and Short-Term Disability Insurance{/t}</p>
-      <p>{t}If your loved one is employed, have him check to see if his employer has private disability insurance. He or she should contact his employer's human resources to investigate eligibility, the cost of enrolling, and how much of his/her salary it will cover.{/t}</p>
-      <p>{t}If your loved one is not working, he or she may want to apply for Social Security. If they do not qualify for Social Security, state-run disability programs may be considered.{/t}</p>
-      <p>{t}If their total income is below a certain level, he or she may qualify for federally subsidized Supplemental Security Income (SSI). If an individual collects SSI, he or she is a candidate for Medicaid regardless of age.{/t}</p>
-      <p>{t}Activity 1 - Financial Planning issues &amp; topics for Caregivers{/t}</p>
-      <p>{t}After reading the section material, do you have a plan for your loved-one in place currently and is so what does it consist of? If not, where would you find a template or where would you look to know where to start.{/t}</p>
-      <ul>
-        <li>{t}Coverage options{/t}</li>
-        <li>{t}Coverage of skilled nursing care facilities{/t}</li>
-        <li>{t}Coverage of Home Care{/t}</li>
-      </ul>
+    
+    <!-- Lesson 5 Slide 9 -->
+    
+    <div id="lesson-5-slide-9" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Understanding Key Aspects of Medicaid{/t}</h2>
+        <hr />
+        <p>{t}Medicaid is a joint federal-state health insurance program providing medical assistance primarily to low-income Americans who have limited resources. It is also available to people under 65 if they are blind or disabled. The purpose of Medicaid is to provide preventive, therapeutic, and remedial health services and supplies that are essential to attain an optimum level of well-being.{/t}</p>
+        <p>{t}How Do People Receive Medicaid Benefits?{/t}</p>
+        <p>{t}There are two ways to receive Medicaid:{/t}</p>
+        <ul>
+          <li>{t}Supplemental Security Income (SSI) -- People who receive a cash grant under SSI and Aid to Dependent Children are automatically eligible for Medicaid benefits.{/t}</li>
+          <li>{t}Medicaid &quot;spend-down&quot; -- This is similar to a deductible or a co-payment that a patient must 
+            pay every month. Once the patient meets his &quot;spend-down&quot; amount, the patient is eligible for{/t}</li>
+          <li>{t}Medicaid for the remainder of the month.{/t}</li>
+          <li>{t}Who Is Eligible for Medicaid?{/t}</li>
+          <li>{t}Medicaid eligibility requirements depend on financial need, low income, and minimal assets.{/t}</li>
+          <li>{t}In determining Medicaid eligibility, officials do not review rent, car payments, or food costs.{/t}</li>
+          <li>{t}Officials only review medical expenses, which include:{/t}
+            <ul>
+              <li>{t}Care from hospitals, doctors, clinics, nurses, dentists, podiatrists, and chiropractors{/t} </li>
+              <li>{t}Medications{/t} </li>
+              <li>{t}Medical supplies and equipment{/t} </li>
+              <li>{t}Health insurance premiums{/t} </li>
+              <li>{t}Transportation to get medical care{/t} </li>
+            </ul>
+          </li>
+          <li>{t}The four eligibility tests required to receive Medicaid include:{/t}
+            <ul>
+              <li>{t}Categorical -- A patient must be age 65, blind, or disabled.{/t} </li>
+              <li>{t}Non-financial -- A patient must be a U.S. citizen and a state resident. A patient also must have a Social Security number.{/t} </li>
+              <li>{t}Financial -- A patient's total gross income, personal assets, and property will be evaluated and must meet a certain standard. This amount varies from state to state.{/t} </li>
+              <li>{t}Procedural -- A patient must complete and sign an application and have a personal interview with a Medicaid official.{/t} </li>
+            </ul>
+          </li>
+          <li>{t}Each eligible Medicaid recipient receives a monthly Medical Identification card. The card is valid for one month only.{/t}</li>
+        </ul>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
-    <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
-  </div>
-  
-  <!-- Lesson 5 Slide 4 -->
-  
-  <div id="lesson-5-slide-4" class="course-slide">
-    <div class="content">
-      <h2 class="flowers">{t}Understanding Key Aspects of Medicare{/t}</h2>
-      <hr />
-      <p>{t}Medicare is a federal health insurance program providing healthcare benefits to Americans 65 and older, as well as to some disabled individuals under age 65, and people of any age with permanent kidney failure requiring dialysis or kidney transplant. Eligibility for Medicare is linked to Social Security and railroad retirement benefits.{/t}</p>
-      <p>{t}Medicare has co-payments and deductibles. A deductible is an initial amount the patient is responsible for paying before Medicare coverage begins. A co-payment is a percentage of the amount of covered expense the patient is required to pay.{/t}</p>
-      <p>{t}What Are Medicare's Coverage Options?{/t}</p>
-      <p>{t}Medicare has several parts:{/t}</p>
-      <p>{t}Part A Medicare covers hospital bills and includes:{/t}</p>
-      <ul>
-        <li>{t}Inpatient hospital care{/t}</li>
-        <li>{t}Skilled nursing facility care (not custodial or long-term care){/t}</li>
-        <li>{t}Home health services, including a visiting nurse, or a physical, occupational, or speech therapist{/t}</li>
-        <li>{t}Blood that you receive at a hospital or skilled nursing facility during a covered stay{/t}</li>
-        <li>{t}Medical supplies{/t}</li>
-        <li>{t}Hospice services{/t}</li>
-        <li>{t}Mental health care given in a hospital{/t}</li>
-      </ul>
-      <p>{t}Part B Medicare deals with doctors' bills and includes:{/t}</p>
-      <ul>
-        <li>{t}Doctor charges (not routine physical exams){/t}</li>
-        <li>{t}Medically necessary ambulance services{/t}</li>
-        <li>{t}Physical, speech, and occupational therapy{/t}</li>
-        <li>{t}Home health care services (physician certification is necessary){/t}</li>
-        <li>{t}Medical supplies and equipment such as wheelchairs, hospital beds, oxygen, and walkers{/t}</li>
-        <li>{t}Transfusion of blood and blood components provided on an outpatient basis{/t}</li>
-        <li>{t}Outpatient medical/surgical supplies and services{/t}</li>
-        <li>{t}Outpatient mental health{/t}</li>
-        <li>{t}Part B Medicare benefits require payment of a monthly premium. A patient must also be entitled to Part A benefits in order to receive Part B benefits.{/t}</li>
-      </ul>
+    
+    <!-- Lesson 5 Slide 10 -->
+    
+    <div id="lesson-5-slide-10" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Understanding Key Aspects of Medicaid (continued){/t}</h2>
+        <hr />
+        <p>{t}Medicaid Coverage{/t}</p>
+        <p>{t}Medicaid coverage varies from state to state. For specific coverage guidelines, contact your state's Department of Human Services. Generally, Medicaid benefits include:{/t}</p>
+        <ul>
+          <li>{t}Transportation -- This may include ambulance services when other means of transportation are detrimental to the patient's health or may include transportation to and from the hospital at time of admission or discharge when required by the patient's condition. Transportation also may cover trips to and from a hospital, outpatient clinic, doctor's office, or other facility when the doctor certifies the need for this service.{/t}</li>
+          <li>{t}Ambulatory Centers -- Ambulatory health care centers are private corporations or public agencies that are not part of a hospital. They provide preventive, diagnostic, therapeutic, and rehabilitative services under the direction of a physician. Ambulatory services covered by Medicaid include dental, pharmaceutical, diagnostic, and vision care.{/t}</li>
+          <li>{t}Hospital Services -- These services include inpatient hospital care up to 60 days for an illness. Private hospital rooms are covered only when the illness requires the patient to be isolated for his or her own health or the health of others. Outpatient preventive, therapeutic, and rehabilitative services also are covered. So are professional, laboratory and radiology services.{/t}</li>
+          <li>{t}Medical Supplies and Medications -- These include general medical supplies (when prescribed by a physician), as well as medications prescribed by a physician, dentist, or podiatrist. Durable medical equipment (such as hospital beds, wheelchairs, side rails, oxygen administration apparatus, and special safety aids, etc.) also is covered.{/t}</li>
+          <li>{t}Home Health Care -- These services include those provided by a visiting nurse, home health aide, or physical therapist.{/t}</li>
+          <li>{t}Skilled Nursing Facilities -- Skilled nursing facilities and intermediate care facilities (providing short-term care for a patient whose condition is stable or reversible) are covered through{/t}</li>
+          <li>{t}Medicaid with a doctor's authorization.{/t}</li>
+        </ul>
+        <p>{t}Activity 3 - Discuss Medicaid{/t}</p>
+        <p>{t}Email your Instructor and explain the major differences between Medicare and Medicaid as you see it and if you understand it.{/t}</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
-    <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
-  </div>
-  
-  <!-- Lesson 5 Slide 5 -->
-  
-  <div id="lesson-5-slide-5" class="course-slide">
-    <div class="content">
-      <h2 class="flowers">{t}Understanding Key Aspects of Medicare (continued){/t}</h2>
-      <hr />
-      <p>{t}Part C is the Medicare Advantage Plans:{/t}</p>
-      <ul>
-        <li>{t}Part C refers to Medicare Advantage, which are managed care insurance plans you can buy from private insurers to replace your traditional Medicare coverage.{/t}</li>
-        <li>{t}They include Medicare HMOs, Medicare PPOs, Medicare Special Needs Plans, and Medicare Private Fee-for-Service Plans.{/t}</li>
-      </ul>
-      <p>{t}Part D is the Prescription Insurance Plan:{/t}</p>
-      <ul>
-        <li>{t}Part D, as of January 2006, covers prescription drugs.{/t}</li>
-        <li> {t}Depending on your income, you pay a monthly premium and part of the prescription cost.{/t} </li>
-      </ul>
-      <p>{t}Medicare Coverage of Skilled Nursing Care Facilities{/t}</p>
-      <p>{t}If nursing home care becomes necessary, your loved one may be eligible for Medicare. In order to receive care in a skilled nursing home under Medicare:{/t}</p>
-      <ul>
-        <li>{t}Most patients' HMO plans require them to have had a three-day hospital stay prior to admission into the skilled nursing facility. There are exceptions, however, and the patient's insurance provider should be consulted to determine whether these restrictions apply.{/t}</li>
-        <li>{t}The patient must meet specific criteria to receive treatment. The patient's doctor or nurse will help him or her to determine if the criteria are met.{/t}</li>
-        <li>{t}The patient must be admitted into the skilled nursing facility within 30 days of discharge from the hospital.{/t}</li>
-        <li>{t}The patient must enter the skilled nursing facility for treatment of the same condition for which he or she was hospitalized.{/t}</li>
-        <li>{t}The patient must require daily skilled care.{/t}</li>
-        <li>{t}The condition must be one that can be improved.{/t}</li>
-        <li>{t}The facility must be Medicare-certified.{/t}</li>
-        <li>{t}The patient's doctor must write a care plan. The care plan must be carried out by the skilled nursing facility. (Once the skilled needs are met, Medicare will no longer pay for services.){/t}</li>
-      </ul>
+    
+    <!-- Lesson 5 Slide 11 -->
+    
+    <div id="lesson-5-slide-11" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Legal Issues for Caregivers{/t}</h2>
+        <hr />
+        <p>{t}As a caregiver, you should begin making legal preparations soon after your loved one has been diagnosed with a serious illness. People with Alzheimer's disease and other long-term illnesses may have the capacity to manage their own legal and financial affairs right now. But as these diseases advance, they will need to rely on others to act in their best interests. This transition is never easy. However, advance planning allows people with a long-term disease and their families to make decisions together for what may come.{/t}
+        <p>{t}Legal Documents for Caregivers{/t}</p>
+        <p>{t}Clearly written legal documents that outline your loved one's wishes and decisions are essential for caregivers. These documents can authorize another person to make healthcare and financial decisions, including plans for long-term care. If the person being cared for has the legal capacity -- the level of mental functioning necessary to sign official documents -- he or she should actively participate in legal planning.{/t}</p>
+        <p>{t}To give your loved one the best care possible, obtain legal advice and services from an attorney. If the person you are caring for is age 65 or older, consider hiring an attorney who practices elder law, a specialized area of law focusing on issues that typically affect the elderly. As you plan for the future, ask the attorney about the following documents (more detailed information is provided in the section “Long-term Care Planning and Advanced Directives):{/t}</p>
+        <p>{t}Power of attorney{/t}</p>
+        <p>{t}This document gives a person (the principal) an opportunity to authorize an agent (usually a trusted family member or friend) to make legal decisions when he or she is no longer competent. There is no standard power of attorney; thus, each one must be geared toward an individual's situation. It is important for the caregiver to be very familiar with the terms of power of attorney because they spell out what authority the caregiver does and does not have. The agent should make multiple copies of the document and give one to each company with which the principal does business.{/t}</p>
+        <p>{t}Durable power of attorney for health care (also known as health care proxy){/t}</p>
+        <p>{t}This document appoints an agent to make all decisions regarding health care, including choices regarding health care providers, medical treatment, and, in the later stages of the disease, end- of-life decisions. This means that the agent may authorize or refuse any medical treatment for the principal. This power only goes into effect once the principal is unable to make decisions for himself and is activated by the principal's attending physician.{/t}</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
-    <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
-  </div>
-  
-  <!-- Lesson 5 Slide 6 -->
-  
-  <div id="lesson-5-slide-6" class="course-slide">
-    <div class="content">
-      <h2 class="flowers">{t}Understanding Key Aspects of Medicare (continued){/t}</h2>
-      <hr />
-      <p>{t}Medicare Coverage of Home Care{/t}</p>
-      <p>{t}In order to receive home care under Medicare:{/t}</p>
-      <ul>
-        <li>{t}The patient must be homebound.{/t}</li>
-        <li>{t}The doctor must certify a plan of care.{/t}</li>
-        <li>{t}Care must be needed on an intermittent (not continuous) basis.{/t}</li>
-        <li>{t}Care cannot exceed 35 hours per week or 8 hours per day.{/t}</li>
-        <li>{t}Physical or speech therapy must be provided on a "necessary and reasonable" basis. There are no restrictions on the number of days or hours per week of these therapies.{/t}</li>
-        <li>{t}If a person qualifies for home health care, he or she is entitled to a home health aide to provide some personal care.{/t}</li>
-      </ul>
-      <p>{t}Activity 2 - Discuss Medicare{/t}</p>
-      <p>{t}Please locate 3 website that you find that have relevant, updated information on Medicare in your area and write them down in a safe place you will remember for your records.{/t}</p>
-      <p>{t}Medicare Coverage for Prescription Drugs (Medicare Part D){/t}</p>
-      <p>{t}Medicare prescription drug coverage is insurance that covers both brand-name and generic prescription drugs at participating pharmacies. Medicare prescription drug coverage provides protection for people who have very high drug costs or from unexpected prescription drug bills in the future.{/t}</p>
-      <p>{t}Everyone with Medicare is eligible for this coverage, regardless of income and resources, health status, or current prescription expenses. Someone may sign up when one is first eligible for Medicare (three months before the month one turns age 65 until three months after turning age 65). If one gets Medicare due to a disability, he or she can join from three months before to three months after the 25th month of cash disability payments. If someone does not sign up when first eligible, a penalty may be assessed. There is an annual open enrollment period from November 15, 2009 to December 31, 2009.{/t}</p>
-      <p>{t}The decision about Medicare prescription drug coverage depends on the kind of health care coverage one now has. There are two ways to get Medicare prescription drug coverage. One can join a Medicare prescription drug plan or one can join a Medicare Advantage Plan or other Medicare Health Plan that offers drug coverage. Whatever plan chosen, Medicare drug coverage will help cover brand-name and generic drugs at pharmacies that are convenient.{/t}</p>
+    
+    <!-- Lesson 5 Slide 12 -->
+    
+    <div id="lesson-5-slide-12" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Legal Issues for Caregivers (continued){/t}</h2>
+        <hr />
+        <p> {t}Living will{/t} </p>
+        <p>{t}A living will allows the person to state -- in advance -- what kind of medical care he or she desires to receive and what life-support procedures he or she would like to withhold. This document is used if a person becomes terminally ill and unable to make his wishes known or if he becomes permanently unconscious. A terminal illness is defined as one from which a person's doctor believes there is no chance of recovery. Living wills can also be used if a person becomes permanently unconscious. To be considered permanently unconscious, two physicians must determine that the patient has no reasonable possibility of regaining consciousness or decision-making ability. Laws on living wills vary from state to state.{/t}</p>
+        <p>{t}Living trust{/t}</p>
+        <p>{t}This document enables a person (called a grantor or trustor) to create a trust and appoint a trustee to carefully invest and manage trust assets once the grantor is no longer able to manage finances. A person can appoint another individual or a financial institution to be the trustee.{/t}</p>
+        <p>{t}Will{/t}</p>
+        <p>{t}A will is a document created by an individual that names an executor (the person who will manage the estate) and beneficiaries (those who will receive the estate at the time of the person's death).{/t}</p>
+        <p>{t}If you cannot afford an attorney, legal forms can be accessed through resources including books and the Internet. Legal issues may be discussed with a social worker or clergy free of charge.{/t}</p>
+        <p>{t}Guardian/Conservator{/t}</p>
+        <p>{t}A caregiver of an individual who no longer has the legal capacity to execute powers of attorney or trusts may have to become that individual's guardian or conservator. A guardian has the legal authority to make decisions about the lifestyle and well-being of another person. The decisions a guardian may make include where a person may live, what care and medical treatment will be provided, and what religious and educational activities will be made available. A conservator has legal authority to manage another person's financial affairs.{/t}</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
-    <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
-  </div>
-  
-  <!-- Lesson 5 Slide 7 -->
-  
-  <div id="lesson-5-slide-7" class="course-slide">
-    <div class="content">
-      <h2 class="flowers">{t}Understanding Key Aspects of Medicare (continued){/t}</h2>
-      <hr />
-      <p>{t}Like other insurance, there is a monthly premium, which varies by plan, and a yearly deductible. One will also pay a part of the cost of prescriptions, including a copayment or coinsurance. Costs will vary depending on which drug plan is chosen. Some plans may offer more coverage and additional drugs for a higher monthly premium. If someone has limited income and resources, and qualify for extra help, one may not have to pay a premium or deductible. To get more information about the extra help, please visit the Social Security webpage:{/t}<a href="http://www.socialsecurity.gov/" target="_blank">www.socialsecurity.gov</a>.</p>
-      <p>{t}Medicare prescription drug coverage provides greater peace of mind by protecting older adults from unexpected drug expenses. Even if someone does not use a lot of prescription drugs now, he or she should still consider joining. As we age, most people need prescription drugs to stay healthy. For most people, joining now means protection from unexpected prescription drug bills in the future.{/t}</p>
-      <p>{t}There is extra financial help for people with limited income and resources. If someone qualifies for extra help, Medicare will pay for almost all prescription drug costs. One can apply or get more information about the extra help by visiting the Social Security webpage.{/t}</p>
-      <p><a href="https://www.medicare.gov/find-a-plan/questions/home.aspx?AspxAutoDetectCookieSupport=1" target="_blank">Medicare Prescription Drug Plan Finder</a></p>
-      <p>{t}Medicare has a valuable interactive tool that allows you to narrow your search for a Medicare prescription drug plan based on your personal preferences such as cost, drugs covered and participating pharmacies. Click on the above link to access the tool.{/t}</p>
+    <div id="lesson-5-slide-13" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Closing{/t}</h2>
+        <hr />
+        <h4>{t}Thank You!{/t}</h4>
+        <p>{t}We have really enjoyed getting to know you. Best wishes as you carry on in the future!{/t}</p>
+        <h4 style="text-align:center;">{t}Certificates of Completion{/t}</h4>
+        <a href="<?php echo $this->getImagesUrl('msml/CourseCompletionCertificate.pdf'); ?>" target="_blank"><img src="<?php echo $this->getImagesUrl('msml/ArtworkCertificate.png'); ?>" alt="image"></a>
+        <h4>{t}Evaluation (optional){/t}</h4>
+        <p>{t}Please complete the Post-Course Evaluation. It is acceissble via the course page, in the sidebar.{/t}</p>
+        <p>{t}Your feedback is greatly appreciated, and will help us to better serve family members in the future. We ask that you complete it before you exit the course. You do not have to include your name on the evaluation. It is completely confidential.{/t}</p>
+      </div>
+      <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Complete Course{/t}</a></div>
     </div>
-    <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    
+    <!-- need this final div here to close lesson-5 --> 
   </div>
   
-  <!-- Lesson 5 Slide 8 -->
-  
-  <div id="lesson-5-slide-8" class="course-slide">
-    <div class="content">
-      <h2 class="flowers">{t}Understanding Key Aspects of Medicare (continued){/t}</h2>
-      <hr />
-      <p>{t}Medicare Coverage of Hospice{/t}</p>
-      <p>{t}Hospice is the philosophy and practice of caring for those at their end-of-life. Hospice care focuses on enhancing the quality of life for those final months, weeks, or days of life.{/t}</p>
-      <p>{t}There are more than 2,200 hospice organizations across the country. Most provide home care services and respite care for family caregivers. The hospice team consists of physicians, nurses, home health aides, social workers, counselors, nutritionists, speech and physical therapists, clergy, and volunteers who focus on the needs of the dying person and the family. Hospice staffs is usually available on a 24-hour basis. Hospice may be provided in the older adult’s home, a senior living or long-term care community, or in special hospice units in some hospitals or nursing homes if more extensive medical care to control pain or other symptoms is needed to provide peace and comfort.{/t}</p>
-      <p>{t}The goal of hospice is not to cure or rehabilitate. Nor is it to hasten death. Rather, hospice care focuses on supportive comfort care, aiming at relieving pain, nausea, dizziness, or constipation.{/t}</p>
-      <p>p{t}For the caregiver, it is important to choose a hospice agency that is certified by Medicare to provide hospice care. Almost all hospice services are covered by Medicare as long as the agency is certified.{/t}</p>
-      <p>{t}Hospice care is given in “periods of care.” For example, initial hospice care usually begins with two 90-day periods (6 months total). After than period, if the hospice medical director determines the person still would benefit from hospice, they would be “recertified” for additional 60-day periods. Recertification continues every 60-days. If the hospice medical director deems the person is doing well and does not need hospice, the care would revert back to the original Medicare coverage. If later, the person again needs hospice, the medical director can recertify the person to return to hospice care.{/t}</p>
-      <p>{t}The following is a resource from Medicare regarding explanation of the Medicare Hospice Benefit.{/t}</p>
-    </div>
-    <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
-  </div>
-  
-  <!-- Lesson 5 Slide 9 -->
-  
-  <div id="lesson-5-slide-9" class="course-slide">
-    <div class="content">
-      <h2 class="flowers">{t}Understanding Key Aspects of Medicaid{/t}</h2>
-      <hr />
-      <p>{t}Medicaid is a joint federal-state health insurance program providing medical assistance primarily to low-income Americans who have limited resources. It is also available to people under 65 if they are blind or disabled. The purpose of Medicaid is to provide preventive, therapeutic, and remedial health services and supplies that are essential to attain an optimum level of well-being.{/t}</p>
-      <p>{t}How Do People Receive Medicaid Benefits?{/t}</p>
-      <p>{t}There are two ways to receive Medicaid:{/t}</p>
-      <ul>
-        <li>{t}Supplemental Security Income (SSI) -- People who receive a cash grant under SSI and Aid to Dependent Children are automatically eligible for Medicaid benefits.{/t}</li>
-        <li>{t}Medicaid &quot;spend-down&quot; -- This is similar to a deductible or a co-payment that a patient must 
-          pay every month. Once the patient meets his &quot;spend-down&quot; amount, the patient is eligible for{/t}</li>
-        <li>{t}Medicaid for the remainder of the month.{/t}</li>
-        <li>{t}Who Is Eligible for Medicaid?{/t}</li>
-        <li>{t}Medicaid eligibility requirements depend on financial need, low income, and minimal assets.{/t}</li>
-        <li>{t}In determining Medicaid eligibility, officials do not review rent, car payments, or food costs.{/t}</li>
-        <li>{t}Officials only review medical expenses, which include:{/t}
-          <ul>
-            <li>{t}Care from hospitals, doctors, clinics, nurses, dentists, podiatrists, and chiropractors{/t} </li>
-            <li>{t}Medications{/t} </li>
-            <li>{t}Medical supplies and equipment{/t} </li>
-            <li>{t}Health insurance premiums{/t} </li>
-            <li>{t}Transportation to get medical care{/t} </li>
-          </ul>
-        </li>
-        <li>{t}The four eligibility tests required to receive Medicaid include:{/t}
-          <ul>
-            <li>{t}Categorical -- A patient must be age 65, blind, or disabled.{/t} </li>
-            <li>{t}Non-financial -- A patient must be a U.S. citizen and a state resident. A patient also must have a Social Security number.{/t} </li>
-            <li>{t}Financial -- A patient's total gross income, personal assets, and property will be evaluated and must meet a certain standard. This amount varies from state to state.{/t} </li>
-            <li>{t}Procedural -- A patient must complete and sign an application and have a personal interview with a Medicaid official.{/t} </li>
-          </ul>
-        </li>
-        <li>{t}Each eligible Medicaid recipient receives a monthly Medical Identification card. The card is valid for one month only.{/t}</li>
-      </ul>
-    </div>
-    <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
-  </div>
-  
-  <!-- Lesson 5 Slide 10 -->
-  
-  <div id="lesson-5-slide-10" class="course-slide">
-    <div class="content">
-      <h2 class="flowers">{t}Understanding Key Aspects of Medicaid (continued){/t}</h2>
-      <hr />
-      <p>{t}Medicaid Coverage{/t}</p>
-      <p>{t}Medicaid coverage varies from state to state. For specific coverage guidelines, contact your state's Department of Human Services. Generally, Medicaid benefits include:{/t}</p>
-      <ul>
-        <li>{t}Transportation -- This may include ambulance services when other means of transportation are detrimental to the patient's health or may include transportation to and from the hospital at time of admission or discharge when required by the patient's condition. Transportation also may cover trips to and from a hospital, outpatient clinic, doctor's office, or other facility when the doctor certifies the need for this service.{/t}</li>
-        <li>{t}Ambulatory Centers -- Ambulatory health care centers are private corporations or public agencies that are not part of a hospital. They provide preventive, diagnostic, therapeutic, and rehabilitative services under the direction of a physician. Ambulatory services covered by Medicaid include dental, pharmaceutical, diagnostic, and vision care.{/t}</li>
-        <li>{t}Hospital Services -- These services include inpatient hospital care up to 60 days for an illness. Private hospital rooms are covered only when the illness requires the patient to be isolated for his or her own health or the health of others. Outpatient preventive, therapeutic, and rehabilitative services also are covered. So are professional, laboratory and radiology services.{/t}</li>
-        <li>{t}Medical Supplies and Medications -- These include general medical supplies (when prescribed by a physician), as well as medications prescribed by a physician, dentist, or podiatrist. Durable medical equipment (such as hospital beds, wheelchairs, side rails, oxygen administration apparatus, and special safety aids, etc.) also is covered.{/t}</li>
-        <li>{t}Home Health Care -- These services include those provided by a visiting nurse, home health aide, or physical therapist.{/t}</li>
-        <li>{t}Skilled Nursing Facilities -- Skilled nursing facilities and intermediate care facilities (providing short-term care for a patient whose condition is stable or reversible) are covered through{/t}</li>
-        <li>{t}Medicaid with a doctor's authorization.{/t}</li>
-      </ul>
-      <p>{t}Activity 3 - Discuss Medicaid{/t}</p>
-      <p>{t}Email your Instructor and explain the major differences between Medicare and Medicaid as you see it and if you understand it.{/t}</p>
-    </div>
-    <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
-  </div>
-  
-  <!-- Lesson 5 Slide 11 -->
-  
-  <div id="lesson-5-slide-11" class="course-slide">
-    <div class="content">
-      <h2 class="flowers">{t}Legal Issues for Caregivers{/t}</h2>
-      <hr />
-      <p>{t}As a caregiver, you should begin making legal preparations soon after your loved one has been diagnosed with a serious illness. People with Alzheimer's disease and other long-term illnesses may have the capacity to manage their own legal and financial affairs right now. But as these diseases advance, they will need to rely on others to act in their best interests. This transition is never easy. However, advance planning allows people with a long-term disease and their families to make decisions together for what may come.{/t}
-      <p>{t}Legal Documents for Caregivers{/t}</p>
-      <p>{t}Clearly written legal documents that outline your loved one's wishes and decisions are essential for caregivers. These documents can authorize another person to make healthcare and financial decisions, including plans for long-term care. If the person being cared for has the legal capacity -- the level of mental functioning necessary to sign official documents -- he or she should actively participate in legal planning.{/t}</p>
-      <p>{t}To give your loved one the best care possible, obtain legal advice and services from an attorney. If the person you are caring for is age 65 or older, consider hiring an attorney who practices elder law, a specialized area of law focusing on issues that typically affect the elderly. As you plan for the future, ask the attorney about the following documents (more detailed information is provided in the section “Long-term Care Planning and Advanced Directives):{/t}</p>
-      <p>{t}Power of attorney{/t}</p>
-      <p>{t}This document gives a person (the principal) an opportunity to authorize an agent (usually a trusted family member or friend) to make legal decisions when he or she is no longer competent. There is no standard power of attorney; thus, each one must be geared toward an individual's situation. It is important for the caregiver to be very familiar with the terms of power of attorney because they spell out what authority the caregiver does and does not have. The agent should make multiple copies of the document and give one to each company with which the principal does business.{/t}</p>
-      <p>{t}Durable power of attorney for health care (also known as health care proxy){/t}</p>
-      <p>{t}This document appoints an agent to make all decisions regarding health care, including choices regarding health care providers, medical treatment, and, in the later stages of the disease, end- of-life decisions. This means that the agent may authorize or refuse any medical treatment for the principal. This power only goes into effect once the principal is unable to make decisions for himself and is activated by the principal's attending physician.{/t}</p>
-    </div>
-    <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
-  </div>
-  
-  <!-- Lesson 5 Slide 12 -->
-  
-  <div id="lesson-5-slide-12" class="course-slide">
-    <div class="content">
-      <h2 class="flowers">{t}Legal Issues for Caregivers (continued){/t}</h2>
-      <hr />
-      <p> {t}Living will{/t} </p>
-      <p>{t}A living will allows the person to state -- in advance -- what kind of medical care he or she desires to receive and what life-support procedures he or she would like to withhold. This document is used if a person becomes terminally ill and unable to make his wishes known or if he becomes permanently unconscious. A terminal illness is defined as one from which a person's doctor believes there is no chance of recovery. Living wills can also be used if a person becomes permanently unconscious. To be considered permanently unconscious, two physicians must determine that the patient has no reasonable possibility of regaining consciousness or decision-making ability. Laws on living wills vary from state to state.{/t}</p>
-      <p>{t}Living trust{/t}</p>
-      <p>{t}This document enables a person (called a grantor or trustor) to create a trust and appoint a trustee to carefully invest and manage trust assets once the grantor is no longer able to manage finances. A person can appoint another individual or a financial institution to be the trustee.{/t}</p>
-      <p>{t}Will{/t}</p>
-      <p>{t}A will is a document created by an individual that names an executor (the person who will manage the estate) and beneficiaries (those who will receive the estate at the time of the person's death).{/t}</p>
-      <p>{t}If you cannot afford an attorney, legal forms can be accessed through resources including books and the Internet. Legal issues may be discussed with a social worker or clergy free of charge.{/t}</p>
-      <p>{t}Guardian/Conservator{/t}</p>
-      <p>{t}A caregiver of an individual who no longer has the legal capacity to execute powers of attorney or trusts may have to become that individual's guardian or conservator. A guardian has the legal authority to make decisions about the lifestyle and well-being of another person. The decisions a guardian may make include where a person may live, what care and medical treatment will be provided, and what religious and educational activities will be made available. A conservator has legal authority to manage another person's financial affairs.{/t}</p>
-    </div>
-    <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
-  </div>
-  <div id="lesson-5-slide-13" class="course-slide">
-    <div class="content">
-      <h2 class="flowers">{t}Closing{/t}</h2>
-      <hr />
-      <h4>{t}Thank You!{/t}</h4>
-      <p>{t}We have really enjoyed getting to know you. Best wishes as you carry on in the future!{/t}</p>
-      <h4 style="text-align:center;">{t}Certificates of Completion{/t}</h4>
-      <a href="<?php echo $this->getImagesUrl('msml/CourseCompletionCertificate.pdf'); ?>" target="_blank"><img src="<?php echo $this->getImagesUrl('msml/ArtworkCertificate.png'); ?>" alt="image"></a>
-      <h4>{t}Evaluation (optional){/t}</h4>
-      <p>{t}Please complete the Post-Course Evaluation. It is acceissble via the course page, in the sidebar.{/t}</p>
-      <p>{t}Your feedback is greatly appreciated, and will help us to better serve family members in the future. We ask that you complete it before you exit the course. You do not have to include your name on the evaluation. It is completely confidential.{/t}</p>
-    </div>
-    <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Complete Course{/t}</a></div>
-  </div>
-  
-  <!-- need this final div here to close lesson-5 --> 
-</div>
-
-<!-- need this final div to close the course -->
+  <!-- need this final div to close the course --> 
 </div>
