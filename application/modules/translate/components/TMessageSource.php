@@ -156,7 +156,7 @@ class TMessageSource extends CDbMessageSource
 	public function getTranslationFromDb($category, $message, $language)
 	{
 		return $this->getCommandBuilder()->createSqlCommand(
-				"SELECT ct.id category_id, MIN(smt.id) id, tmt.translation translation " .
+				"SELECT MIN(ct.id) category_id, MIN(smt.id) id, tmt.translation translation " .
 				"FROM $this->sourceMessageTable smt " .
 				"LEFT JOIN $this->categoryMessageTable cmt ON (smt.id=cmt.message_id) " .
 				"LEFT JOIN $this->categoryTable ct ON (cmt.category_id=ct.id AND ct.category=:category) " .
