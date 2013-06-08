@@ -9,17 +9,11 @@ class TViewRenderer extends CViewRenderer
 	
 	public $messageSource = 'messages';
 	
-	public $viewCompileCommand = 'tviewcompile';
-	
-	public $waitCursorViewPathAlias = 'application.modules.translate.views.viewRenderer.waitCursor';
-	
-	public $compileInBackground = true;
-	
-	public $addRedirectOnMissingView = true;
-	
 	private $_messages;
 	
 	private $_viewSource;
+	
+	private $_viewCompiler;
 	
 	public function getMessageSource()
 	{
@@ -42,6 +36,19 @@ class TViewRenderer extends CViewRenderer
 		}
 		return $this->_viewSource;
 	}
+	
+	public function getViewCompiler()
+	{
+		if(!isset($this->_viewCompiler))
+		{
+			require_once(dirname(__FILE__).DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'commands'.DIRECTORY_SEPARATOR.'TViewCompileCommand.php');
+			$this->_viewCompiler = new TViewCompileCommand(TViewCompileCommand::ID, new CConsoleCommandRunner());
+			$this->_viewCompiler->viewSource = $this->viewSource;
+			$this->_viewCompiler->messageSource = $this->messageSource;
+		}
+		
+		return $this->_viewCompiler;
+	}
 
 	/**
 	 * Parses the source view file and saves the results as another file.
@@ -55,38 +62,20 @@ class TViewRenderer extends CViewRenderer
 	 * If not set the applications current language setting will be used.
 	 * @param $background boolean If true the view will be generated in the background.
 	 */
-	protected function generateViewFile($sourcePath, $compiledPath, $id = null, $language = null, $background = true)
+	protected function generateViewFile($sourcePath, $compiledPath, $id = null, $language = null)
 	{
 		if($id === null)
 		{
 			$id = $this->getViewSource()->getViewId($sourcePath, $compiledPath);
 			
 			if($id === false)
-				throw new CException(Yii::t(self::ID, 'Database entry for view with source path "{source_path}" and compiled path "{compiled_path}" does not exist.', array('{source_path}' => $sourcePath, '{compiled_path}' => $compiledPath)));
+				throw new CDbException(Yii::t(self::ID, 'Database entry for view with source path "{source_path}" and compiled path "{compiled_path}" does not exist.', array('{source_path}' => $sourcePath, '{compiled_path}' => $compiledPath)));
 		}
 		
 		if($language === null)
 			$language = Yii::app()->getLanguage();
-		
-		if($background)
-		{
-			Yii::import('application.extensions.EConsoleRunner.EConsoleRunner');
-			$this->getViewSource()->updateViewCompleted($id, $language, 0);
-			
-			$runner = new EConsoleRunner();
-			$runner->run("tviewcompile stripTags --sourcePath=$sourcePath --compiledPath=$compiledPath --filePermission=$this->filePermission", false);
-			if($this->addRedirectOnMissingView)
-				Yii::app()->getClientScript()->registerScript(str_replace('.', '_', self::ID.'.redirect'), 'window.location.replace("'.Yii::app()->createUrl('/translate/translate/viewRendererProgress?requestUri='.urlencode(Yii::app()->getRequest()->getRequestUri())).'")');
-			
-			$runner->run("tviewcompile compileView --sourcePath=$sourcePath --compiledPath=$compiledPath --id=$id --language=$language --filePermission=$this->filePermission --useTransaction=$background");
-		}
-		else
-		{
-			$runner = new CConsoleCommandRunner();
-			$runner->addCommands(Yii::getPathOfAlias('application.commands'));
-			$runner->run(array('yiic', 'tviewcompile', 'compileView', "--sourcePath=$sourcePath", "--compiledPath=$compiledPath", "--id=$id", "--language=$language", "--filePermission=$this->filePermission", "--useTransaction=$background"));
-		}
-		
+
+		$this->getViewCompiler()->actionCompileView($sourcePath, $compiledPath, $id, $language, $this->filePermission, $this->getViewSource()->getDbConnection()->getCurrentTransaction() === null);
 	}
 	
 	public function renderFile($context, $sourceFile, $data, $return)
@@ -115,11 +104,10 @@ class TViewRenderer extends CViewRenderer
 	 * This method handles on missing view translation events
 	 *
 	 * @param TMissingViewTranslationEvent $event
-	 * @throws CException An exception will be thrown if the event passed to this method is null.
 	 */
 	public function missingViewTranslation($event)
 	{
-		$event->path = $this->translate($event->route, $event->path, $event->language, $this->compileInBackground);
+		$event->path = $this->translate($event->route, $event->path, $event->language);
 	}
 	
 	/**
@@ -128,11 +116,10 @@ class TViewRenderer extends CViewRenderer
 	 * @param string $route The route that this view is being translated for.
 	 * @param string $path The path to the source view to be translated.
 	 * @param string $language The language to translated the source view into.
-	 * @param boolean $background Whether to generate the translated view in the background. Default is true meaning generate the view in the background.
-	 * @throws CException An exception will be thrown if any required database insertions fail.
+	 * @throws CDbException An exception will be thrown if any required database insertions fail.
 	 * @return string the path to the translated view.
 	 */
-	public function translate($route, $path, $language, $background = true)
+	public function translate($route, $path, $language)
 	{
 		$viewSource = $this->getViewSource();
 		if($viewSource->getDbConnection()->getCurrentTransaction() === null)
@@ -148,7 +135,7 @@ class TViewRenderer extends CViewRenderer
 		
 				if($view['view_id'] === null)
 				{
-					throw new CException(Yii::t(self::ID, "The source file '{file}' was not found in the database and could not be added to it.", array('{file}' => $path)));
+					throw new CDbException(Yii::t(self::ID, "The source file '{file}' was not found in the database and could not be added to it.", array('{file}' => $path)));
 				}
 			}
 			
@@ -163,13 +150,13 @@ class TViewRenderer extends CViewRenderer
 						
 					if($view['route_id'] === null)
 					{
-						throw new CException(Yii::t(self::ID, "The route '{route}' was not found and could not be added to the database.", array('{file}' => $path, '{route}' => $route)));
+						throw new CDbException(Yii::t(self::ID, "The route '{route}' was not found and could not be added to the database.", array('{file}' => $path, '{route}' => $route)));
 					}
 				}
 		
 				if($viewSource->addViewRoute($view['route_id'], $view['view_id']) === null)
 				{
-					throw new CException(Yii::t(self::ID, "The source file '{file}' and the route '{route}' both exist, but they could not be associated with eachother.", array('{file}' => $path, '{route}' => $route)));
+					throw new CDbException(Yii::t(self::ID, "The source file '{file}' and the route '{route}' both exist, but they could not be associated with eachother.", array('{file}' => $path, '{route}' => $route)));
 				}
 			}
 		
@@ -195,7 +182,7 @@ class TViewRenderer extends CViewRenderer
 			// it is older than the source view file.
 			if(@filemtime($view['path']) < $view['last_modified'] || @filemtime($view['path']) < @filemtime($path))
 			{
-				$this->generateViewFile($path, $view['path'], $view['view_id'], $language, $background);
+				$this->generateViewFile($path, $view['path'], $view['view_id'], $language);
 			}
 			
 			$path = $view['path'];
