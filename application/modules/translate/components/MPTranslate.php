@@ -313,7 +313,7 @@ class MPTranslate extends CApplicationComponent {
 		if($language === null)
 			$language = Yii::app()->getLanguage();
 		$category = strtolower($category);
-		$cacheKey = self::ID . ".cache-i18n-$category-$language";
+		$cacheKey = self::ID . "-cache-i18n-$category-$language";
 	
 		if(!isset($this->_cache[$cacheKey])) 
 		{
