@@ -81,7 +81,19 @@ foreach(array(
     <li> <a href="#lesson-2-slide-1" data-fancybox-group="lesson-2" class="teal lesson-2">{t}Reducing Personal Stress{/t}</a> <a href="#lesson-2-slide-2" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-3" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-4" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-5" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-6" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-7" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-8" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-9" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-10" data-fancybox-group="lesson-2" class="hide lesson-2"></a> </li>
     <li> <a href="#lesson-3-slide-1" data-fancybox-group="lesson-3" class="teal lesson-3"> {t}Communicating Effectively in Challenging Situations{/t} </a> <a href="#lesson-3-slide-2" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-3" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-4" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-5" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-6" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-7" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-8" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-9" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-10" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-11" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-12" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-13" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-14" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-15" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-16" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-17" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-18" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-19" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-20" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-21" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-22" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-23" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-24" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-25" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-26" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-27" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-28" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-29" data-fancybox-group="lesson-3" class="hide lesson-3"></a> </li>
     <li> <a href="#lesson-4-slide-1" data-fancybox-group="lesson-4" class="teal lesson-4"> {t}Normal &amp; Abnormal Aging Changes{/t} </a> <a href="#lesson-4-slide-2" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-3" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-4" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-5" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-6" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-7" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-8" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-9" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-10" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-11" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-12" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-13" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-14" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-15" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-16" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-17" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-18" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-19" data-fancybox-group="lesson-4" class="hide lesson-4"></a> </li>
-    <li> <a href="#lesson-5-slide-1" data-fancybox-group="lesson-5" class="teal lesson-5"> {t}Financial &amp; Legal Issues{/t} </a> <a href="#lesson-5-slide-2" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-3" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-4" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-5" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-6" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-7" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-8" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-9" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-10" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-11" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-12" data-fancybox-group="lesson-5" class="hide lesson-5"></a> </li>
+    <li> <a href="#lesson-5-slide-1" data-fancybox-group="lesson-5" class="teal lesson-5"> {t}Financial &amp; Legal Issues{/t} </a> <a href="#lesson-5-slide-2" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-3" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-4" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-5" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-6" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-7" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-8" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-9" data-fancybox-group="lesson-5" class="hide lesson-5"></a>
+    
+     <a href="#lesson-5-slide-10" data-fancybox-group="lesson-5" class="hide lesson-5"></a> 
+     <a href="#lesson-5-slide-11" data-fancybox-group="lesson-5" class="hide lesson-5"></a> 
+     <a href="#lesson-5-slide-12" data-fancybox-group="lesson-5" class="hide lesson-5"></a> 
+     <a href="#lesson-5-slide-13" data-fancybox-group="lesson-5" class="hide lesson-5"></a>
+          <a href="#lesson-5-slide-14" data-fancybox-group="lesson-5" class="hide lesson-5"></a>
+
+     <a href="#lesson-5-slide-15" data-fancybox-group="lesson-5" class="hide lesson-5"></a>
+
+     
+     
+     </li>
   </ul>
   
   <!-- Resources div white box here -->
@@ -2451,14 +2463,13 @@ HTML Output:
     <!-- need this final div here to close lesson-2 --> 
   </div>
   
-  <!-- Lesson 4 Slide 1 -->
   
   <div id="lesson-4">
     <div id="lesson-4-slide-1" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}Normal &amp; Abnormal Aging Changes{/t}</h2>
         <hr />
-        <img src="<?php echo $this->getImagesUrl('164010920/here.png'); ?>" alt="{t}image{/t}">
+        <img src="<?php echo $this->getImagesUrl('empower/164010920.png'); ?>" alt="{t}image{/t}">
         <p>{t}This module contains four main sections:{/t}</p>
         <ul>
           <li>{t}Myths and Realities of Aging{/t}</li>
@@ -2466,6 +2477,13 @@ HTML Output:
           <li>{t}Normal Aging Changes{/t}</li>
           <li>{t}Aging Well{/t}</li>
         </ul>
+        <p>{t}<i>“Healthy aging is a broad concept that is more than just physical health status or absence of disease. It encompasses all of the intellectual, emotional, social, and spiritual facts of our being. While healthy aging is driven by internal dimensions such as our beliefs, attitudes, and intentions about our health, it also depends on external supports including our social networks, community services, public policies, and the built and natural environment. These dimensions are interrelated, affecting behavior and lifestyle choices.”</i>{/t}</p>
+        
+        <p class="forum">On the Forum, post your definiton or descripton of normal and abnoral aging changes.</p>
+        
+                <img src="<?php echo $this->getImagesUrl('empower/forum_icon.png'); ?>" alt="{t}image{/t}">
+
+        
       </div>
       <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Start Course &raquo;{/t}</a></div>
     </div>
@@ -3015,8 +3033,6 @@ HTML Output:
       <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Complete Module{/t}</a> </div>
     </div>
   </div>
-  
-  
   <div id="lesson-5">
     <div id="lesson-5-slide-1" class="course-slide">
       <div class="content">
@@ -3030,19 +3046,11 @@ HTML Output:
           <li>{t}Understanding Key Aspects of Medicaid{/t}</li>
           <li>{t}Legal Issues for Caregivers{/t}</li>
         </ul>
-        
         <p>{t}As a caregiver, you will need to evaluate the long-term care needs of your loved one. In making this evaluation, it is important to consider financial options. Long-term financial planning is important for everyone, but it is essential when you are coping with the expense of chronic illnesses such as Alzheimer's or Dementia.{/t}</p>
-        
         <p class="forum">{t}Do you have a long-term financial plan in-place for the person you are careing for?</p>
-        
-                <img src="<?php echo $this->getImagesUrl('empower/forum_icon.png'); ?>" alt="{t}image{/t}">
-
-        
-      </div>
+        <img src="<?php echo $this->getImagesUrl('empower/forum_icon.png'); ?>" alt="{t}image{/t}"> </div>
       <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Start Course &raquo;{/t}</a></div>
     </div>
-    
-    
     <div id="lesson-5-slide-2" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}Financial Planning Issues and Key Topics for Caregivers{/t}</h2>
@@ -3062,32 +3070,20 @@ HTML Output:
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
-    
-    
     <div id="lesson-5-slide-3" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}Financial Planning Issues and Key Topics for Caregivers{/t}</h2>
         <hr />
-        
-        
-                                <img src="<?php echo $this->getImagesUrl('empower/93054723.png'); ?>" alt="{t}image{/t}">
-
-        
+        <img src="<?php echo $this->getImagesUrl('empower/93054723.png'); ?>" alt="{t}image{/t}">
         <h5>{t}Investigating Long- and Short-Term Disability Insurance{/t}</h5>
         <p>{t}If your loved one is employed, have him check to see if his employer has private disability insurance. He or she should contact his employer's human resources to investigate eligibility, the cost of enrolling, and how much of his/her salary it will cover.{/t}</p>
         <p>{t}If your loved one is not working, he or she may want to apply for Social Security. If they do not qualify for Social Security, state-run disability programs may be considered.{/t}</p>
         <p>{t}If their total income is below a certain level, he or she may qualify for federally subsidized Supplemental Security Income (SSI). If an individual collects SSI, he or she is a candidate for Medicaid regardless of age.{/t}</p>
         <h4>{t}Activity 1 - Financial Planning Issues &amp; Key Topics for Caregivers{/t}</h4>
-        
         <p class="forum">{t}Post a response to the Forum the includes your loved-one's plan and what it consist of. If there is no plan in-place, use the Internet to research where would you find a template or where would you look to know where to start. Include the coverage options, Coverage of skilled nursing care facilities, and coverage of home care in your posting.{/t}</p>
-        
-                        <img src="<?php echo $this->getImagesUrl('empower/forum_icon.png'); ?>" alt="{t}image{/t}">
-
-      </div>
+        <img src="<?php echo $this->getImagesUrl('empower/forum_icon.png'); ?>" alt="{t}image{/t}"> </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
-    
-    
     <div id="lesson-5-slide-4" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}Understanding Key Aspects of Medicare{/t}</h2>
@@ -3121,8 +3117,6 @@ HTML Output:
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
-    
-    
     <div id="lesson-5-slide-5" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}Understanding Key Aspects of Medicare{/t}</h2>
@@ -3152,8 +3146,6 @@ HTML Output:
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
-    
-    
     <div id="lesson-5-slide-6" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}Understanding Key Aspects of Medicare{/t}</h2>
@@ -3170,10 +3162,7 @@ HTML Output:
         </ul>
         <h4>{t}Activity 2 - Discuss Medicare{/t}</h4>
         <p class="forum">{t}Please locate three websites that you find that have relevant, updated information on Medicare in your area, and post your findings to the Forum.{/t}</p>
-        
-                                <img src="<?php echo $this->getImagesUrl('empower/forum_icon.png'); ?>" alt="{t}image{/t}">
-
-        
+        <img src="<?php echo $this->getImagesUrl('empower/forum_icon.png'); ?>" alt="{t}image{/t}">
         <h5>{t}Medicare Coverage for Prescription Drugs (Medicare Part D){/t}</h5>
         <p>{t}Medicare prescription drug coverage is insurance that covers both brand-name and generic prescription drugs at participating pharmacies. Medicare prescription drug coverage provides protection for people who have very high drug costs or from unexpected prescription drug bills in the future.{/t}</p>
         <p>{t}Everyone with Medicare is eligible for this coverage, regardless of income and resources, health status, or current prescription expenses. Someone may sign up when one is first eligible for Medicare (three months before the month one turns age 65 until three months after turning age 65). If one gets Medicare due to a disability, he or she can join from three months before to three months after the 25th month of cash disability payments. If someone does not sign up when first eligible, a penalty may be assessed. There may be a annual open enrollment period each year.{/t}</p>
@@ -3181,24 +3170,20 @@ HTML Output:
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
-
-    
     <div id="lesson-5-slide-7" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}Understanding Key Aspects of Medicare{/t}</h2>
         <hr />
+        <img src="<?php echo $this->getImagesUrl('empower/149163902.png'); ?>" alt="{t}image{/t}">
         <p>{t}Like other insurance, there is a monthly premium, which varies by plan, and a yearly deductible. One will also pay a part of the cost of prescriptions, including a copayment or coinsurance. Costs will vary depending on which drug plan is chosen. Some plans may offer more coverage and additional drugs for a higher monthly premium. If someone has limited income and resources, and qualify for extra help, one may not have to pay a premium or deductible. To get more information about the extra help, please visit the <a href="http://www.socialsecurity.gov/" target="_blank">Social Security webpage</a>.{/t}</p>
-        
-        
-        
-        
-        
-        
         <p>{t}Medicare prescription drug coverage provides greater peace of mind by protecting older adults from unexpected drug expenses. Even if someone does not use a lot of prescription drugs now, he or she should still consider joining. As we age, most people need prescription drugs to stay healthy. For most people, joining now means protection from unexpected prescription drug bills in the future.{/t}</p>
         <p>{t}There is extra financial help for people with limited income and resources. If someone qualifies for extra help, Medicare will pay for almost all prescription drug costs. One can apply or get more information about the extra help by visiting the Social Security webpage.{/t}</p>
-        <p>Medicare Prescription Drug Plan Finder</p>
-        <p>{t}Medicare has a valuable <a href="https://www.medicare.gov/find-a-plan/questions/home.aspx?AspxAutoDetectCookieSupport=1" target="_blank">interactive tool</a> that allows you to narrow your search for a Medicare prescription drug plan based on your personal preferences such as cost, drugs covered and participating pharmacies. Click on the above link to access the tool.{/t}</p>
-      </div>
+        <h5>
+        Medicare Prescription Drug Plan Finder
+        <h5>
+        <p>{t}Medicare has a valuable <a href="https://www.medicare.gov/find-a-plan/questions/home.aspx?AspxAutoDetectCookieSupport=1" target="_blank">interactive tool</a> that allows you to narrow your search for a Medicare prescription drug plan based on your personal preferences such as cost, drugs covered and participating pharmacies.{/t}</p>
+        <p class="forum">{t}Did you find this interactive tool valuable? Post your feedback to the Forum?{/t}</p>
+        <img src="<?php echo $this->getImagesUrl('empower/forum_icon.png'); ?>" alt="{t}image{/t}"> </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
     
@@ -3208,112 +3193,94 @@ HTML Output:
       <div class="content">
         <h2 class="flowers">{t}Understanding Key Aspects of Medicare (continued){/t}</h2>
         <hr />
-        <p>{t}Medicare Coverage of Hospice{/t}</p>
+        <h5>{t}Medicare Coverage of Hospice{/t}</h5>
         <p>{t}Hospice is the philosophy and practice of caring for those at their end-of-life. Hospice care focuses on enhancing the quality of life for those final months, weeks, or days of life.{/t}</p>
         <p>{t}There are more than 2,200 hospice organizations across the country. Most provide home care services and respite care for family caregivers. The hospice team consists of physicians, nurses, home health aides, social workers, counselors, nutritionists, speech and physical therapists, clergy, and volunteers who focus on the needs of the dying person and the family. Hospice staffs is usually available on a 24-hour basis. Hospice may be provided in the older adult’s home, a senior living or long-term care community, or in special hospice units in some hospitals or nursing homes if more extensive medical care to control pain or other symptoms is needed to provide peace and comfort.{/t}</p>
         <p>{t}The goal of hospice is not to cure or rehabilitate. Nor is it to hasten death. Rather, hospice care focuses on supportive comfort care, aiming at relieving pain, nausea, dizziness, or constipation.{/t}</p>
-        <p>p{t}For the caregiver, it is important to choose a hospice agency that is certified by Medicare to provide hospice care. Almost all hospice services are covered by Medicare as long as the agency is certified.{/t}</p>
-        <p>{t}Hospice care is given in “periods of care.” For example, initial hospice care usually begins with two 90-day periods (6 months total). After than period, if the hospice medical director determines the person still would benefit from hospice, they would be “recertified” for additional 60-day periods. Recertification continues every 60-days. If the hospice medical director deems the person is doing well and does not need hospice, the care would revert back to the original Medicare coverage. If later, the person again needs hospice, the medical director can recertify the person to return to hospice care.{/t}</p>
-        <p>{t}The following is a resource from Medicare regarding explanation of the Medicare Hospice Benefit.{/t}</p>
+        <p>{t}For the caregiver, it is important to choose a hospice agency that is certified by Medicare to provide hospice care. Almost all hospice services are covered by Medicare as long as the agency is certified.{/t}</p>
+        <p>{t}Hospice care is given in <i>“periods of care.”</i> For example, initial hospice care usually begins with two 90-day periods (6 months total). After than period, if the hospice medical director determines the person still would benefit from hospice, they would be “recertified” for additional 60-day periods. Recertification continues every 60-days. If the hospice medical director deems the person is doing well and does not need hospice, the care would revert back to the original Medicare coverage. If later, the person again needs hospice, the medical director can recertify the person to return to hospice care.{/t}</p>
+        <p>{t}The following is a resource from Medicare regarding explanation of the <a href="http://www.medicare.gov/pubs/pdf/02154.pdf" target="_blank">Medicare Hospice Benefit.</a>{/t}</p>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
-    
-    <!-- Lesson 5 Slide 9 -->
-    
     <div id="lesson-5-slide-9" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}Understanding Key Aspects of Medicaid{/t}</h2>
         <hr />
         <p>{t}Medicaid is a joint federal-state health insurance program providing medical assistance primarily to low-income Americans who have limited resources. It is also available to people under 65 if they are blind or disabled. The purpose of Medicaid is to provide preventive, therapeutic, and remedial health services and supplies that are essential to attain an optimum level of well-being.{/t}</p>
-        <p>{t}How Do People Receive Medicaid Benefits?{/t}</p>
+        <h4>{t}How Do People Receive Medicaid Benefits?{/t}</h4>
         <p>{t}There are two ways to receive Medicaid:{/t}</p>
         <ul>
           <li>{t}Supplemental Security Income (SSI) -- People who receive a cash grant under SSI and Aid to Dependent Children are automatically eligible for Medicaid benefits.{/t}</li>
-          <li>{t}Medicaid &quot;spend-down&quot; -- This is similar to a deductible or a co-payment that a patient must 
-            pay every month. Once the patient meets his &quot;spend-down&quot; amount, the patient is eligible for{/t}</li>
-          <li>{t}Medicaid for the remainder of the month.{/t}</li>
-          <li>{t}Who Is Eligible for Medicaid?{/t}</li>
-          <li>{t}Medicaid eligibility requirements depend on financial need, low income, and minimal assets.{/t}</li>
-          <li>{t}In determining Medicaid eligibility, officials do not review rent, car payments, or food costs.{/t}</li>
-          <li>{t}Officials only review medical expenses, which include:{/t}
-            <ul>
-              <li>{t}Care from hospitals, doctors, clinics, nurses, dentists, podiatrists, and chiropractors{/t} </li>
-              <li>{t}Medications{/t} </li>
-              <li>{t}Medical supplies and equipment{/t} </li>
-              <li>{t}Health insurance premiums{/t} </li>
-              <li>{t}Transportation to get medical care{/t} </li>
-            </ul>
-          </li>
-          <li>{t}The four eligibility tests required to receive Medicaid include:{/t}
-            <ul>
-              <li>{t}Categorical -- A patient must be age 65, blind, or disabled.{/t} </li>
-              <li>{t}Non-financial -- A patient must be a U.S. citizen and a state resident. A patient also must have a Social Security number.{/t} </li>
-              <li>{t}Financial -- A patient's total gross income, personal assets, and property will be evaluated and must meet a certain standard. This amount varies from state to state.{/t} </li>
-              <li>{t}Procedural -- A patient must complete and sign an application and have a personal interview with a Medicaid official.{/t} </li>
-            </ul>
-          </li>
-          <li>{t}Each eligible Medicaid recipient receives a monthly Medical Identification card. The card is valid for one month only.{/t}</li>
+          <li>{t}Medicaid <i>&quot;spend-down&quot;</i> -- This is similar to a deductible or a co-payment that a patient must 
+            pay every month. Once the patient meets his &quot;spend-down&quot; amount, the patient is eligible for Medicaid for the remainder of the month.{/t}</li>
         </ul>
+        <h5>{t}Who Is Eligible for Medicaid?{/t}</h5>
+        <p>{t}Medicaid eligibility requirements depend on financial need, low income, and minimal assets. In determining Medicaid eligibility, officials do not review rent, car payments, or food costs. Officials only review medical expenses, which include:{/t}</p>
+        <ul>
+          <li>{t}Care from hospitals, doctors, clinics, nurses, dentists, podiatrists, and chiropractors{/t} </li>
+          <li>{t}Medications{/t} </li>
+          <li>{t}Medical supplies and equipment{/t} </li>
+          <li>{t}Health insurance premiums{/t} </li>
+          <li>{t}Transportation to get medical care{/t} </li>
+        </ul>
+        <p>{t}The four eligibility tests required to receive Medicaid include:{/t}</p>
+        <ul>
+          <li>{t}<b>Categorical</b> -- A patient must be age 65, blind, or disabled.{/t} </li>
+          <li>{t}<b>Non-financial</b> -- A patient must be a U.S. citizen and a state resident. A patient also must have a Social Security number.{/t} </li>
+          <li>{t}<b>Financial</b> -- A patient's total gross income, personal assets, and property will be evaluated and must meet a certain standard. This amount varies from state to state.{/t} </li>
+          <li>{t}<b>Procedural</b> -- A patient must complete and sign an application and have a personal interview with a Medicaid official.{/t} </li>
+        </ul>
+        <p>{t}Each eligible Medicaid recipient receives a monthly Medical Identification card. The card is valid for one month only.{/t}</p>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
-    
-    <!-- Lesson 5 Slide 10 -->
-    
     <div id="lesson-5-slide-10" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}Understanding Key Aspects of Medicaid (continued){/t}</h2>
         <hr />
-        <p>{t}Medicaid Coverage{/t}</p>
+        <h5>{t}Medicaid Coverage{/t}</h5>
         <p>{t}Medicaid coverage varies from state to state. For specific coverage guidelines, contact your state's Department of Human Services. Generally, Medicaid benefits include:{/t}</p>
         <ul>
-          <li>{t}Transportation -- This may include ambulance services when other means of transportation are detrimental to the patient's health or may include transportation to and from the hospital at time of admission or discharge when required by the patient's condition. Transportation also may cover trips to and from a hospital, outpatient clinic, doctor's office, or other facility when the doctor certifies the need for this service.{/t}</li>
-          <li>{t}Ambulatory Centers -- Ambulatory health care centers are private corporations or public agencies that are not part of a hospital. They provide preventive, diagnostic, therapeutic, and rehabilitative services under the direction of a physician. Ambulatory services covered by Medicaid include dental, pharmaceutical, diagnostic, and vision care.{/t}</li>
-          <li>{t}Hospital Services -- These services include inpatient hospital care up to 60 days for an illness. Private hospital rooms are covered only when the illness requires the patient to be isolated for his or her own health or the health of others. Outpatient preventive, therapeutic, and rehabilitative services also are covered. So are professional, laboratory and radiology services.{/t}</li>
-          <li>{t}Medical Supplies and Medications -- These include general medical supplies (when prescribed by a physician), as well as medications prescribed by a physician, dentist, or podiatrist. Durable medical equipment (such as hospital beds, wheelchairs, side rails, oxygen administration apparatus, and special safety aids, etc.) also is covered.{/t}</li>
-          <li>{t}Home Health Care -- These services include those provided by a visiting nurse, home health aide, or physical therapist.{/t}</li>
-          <li>{t}Skilled Nursing Facilities -- Skilled nursing facilities and intermediate care facilities (providing short-term care for a patient whose condition is stable or reversible) are covered through{/t}</li>
-          <li>{t}Medicaid with a doctor's authorization.{/t}</li>
+          <li>{t}<b>Transportation</b> -- This may include ambulance services when other means of transportation are detrimental to the patient's health or may include transportation to and from the hospital at time of admission or discharge when required by the patient's condition. Transportation also may cover trips to and from a hospital, outpatient clinic, doctor's office, or other facility when the doctor certifies the need for this service.{/t}</li>
+          <li>{t}<b>Ambulatory Centers</b> -- Ambulatory health care centers are private corporations or public agencies that are not part of a hospital. They provide preventive, diagnostic, therapeutic, and rehabilitative services under the direction of a physician. Ambulatory services covered by Medicaid include dental, pharmaceutical, diagnostic, and vision care.{/t}</li>
+          <li>{t}<b>Hospital Services</b> -- These services include inpatient hospital care up to 60 days for an illness. Private hospital rooms are covered only when the illness requires the patient to be isolated for his or her own health or the health of others. Outpatient preventive, therapeutic, and rehabilitative services also are covered. So are professional, laboratory and radiology services.{/t}</li>
+          <li>{t}<b>Medical Supplies and Medications</b> -- These include general medical supplies (when prescribed by a physician), as well as medications prescribed by a physician, dentist, or podiatrist. Durable medical equipment (such as hospital beds, wheelchairs, side rails, oxygen administration apparatus, and special safety aids, etc.) also is covered.{/t}</li>
+          <li>{t}<b>Home Health Care</b> -- These services include those provided by a visiting nurse, home health aide, or physical therapist.{/t}</li>
+          <li>{t}<b>Skilled Nursing Facilities</b> -- Skilled nursing facilities and intermediate care facilities (providing short-term care for a patient whose condition is stable or reversible) are covered through Medicaid with a doctor's authorization.{/t}</li>
         </ul>
-        <p>{t}Activity 3 - Discuss Medicaid{/t}</p>
-        <p>{t}Email your Instructor and explain the major differences between Medicare and Medicaid as you see it and if you understand it.{/t}</p>
-      </div>
+        <h4>{t}Activity 3 - Discuss Medicaid{/t}</h4>
+        <p class="forum">{t}Email your course Facilitator and explain the major differences between Medicare and Medicaid as you see it and if you understand it.{/t}</p>
+        <img src="<?php echo $this->getImagesUrl('empower/forum_icon.png'); ?>" alt="{t}image{/t}"> </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
-    
-    <!-- Lesson 5 Slide 11 -->
-    
     <div id="lesson-5-slide-11" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}Legal Issues for Caregivers{/t}</h2>
         <hr />
         <p>{t}As a caregiver, you should begin making legal preparations soon after your loved one has been diagnosed with a serious illness. People with Alzheimer's disease and other long-term illnesses may have the capacity to manage their own legal and financial affairs right now. But as these diseases advance, they will need to rely on others to act in their best interests. This transition is never easy. However, advance planning allows people with a long-term disease and their families to make decisions together for what may come.{/t}
-        <p>{t}Legal Documents for Caregivers{/t}</p>
+        <h5>{t}Legal Documents for Caregivers{/t}</h5>
         <p>{t}Clearly written legal documents that outline your loved one's wishes and decisions are essential for caregivers. These documents can authorize another person to make healthcare and financial decisions, including plans for long-term care. If the person being cared for has the legal capacity -- the level of mental functioning necessary to sign official documents -- he or she should actively participate in legal planning.{/t}</p>
-        <p>{t}To give your loved one the best care possible, obtain legal advice and services from an attorney. If the person you are caring for is age 65 or older, consider hiring an attorney who practices elder law, a specialized area of law focusing on issues that typically affect the elderly. As you plan for the future, ask the attorney about the following documents (more detailed information is provided in the section “Long-term Care Planning and Advanced Directives):{/t}</p>
-        <p>{t}Power of attorney{/t}</p>
+        <p>{t}To give your loved one the best care possible, obtain legal advice and services from an attorney. If the person you are caring for is age 65 or older, consider hiring an attorney who practices elder law, a specialized area of law focusing on issues that typically affect the elderly. As you plan for the future, ask the attorney about the following documents (more detailed information is provided in the module <i>“Long-term Care Planning and Advanced Directives")</i>.{/t}</p>
+        <h5>{t}Power of attorney{/t}</h5>
         <p>{t}This document gives a person (the principal) an opportunity to authorize an agent (usually a trusted family member or friend) to make legal decisions when he or she is no longer competent. There is no standard power of attorney; thus, each one must be geared toward an individual's situation. It is important for the caregiver to be very familiar with the terms of power of attorney because they spell out what authority the caregiver does and does not have. The agent should make multiple copies of the document and give one to each company with which the principal does business.{/t}</p>
-        <p>{t}Durable power of attorney for health care (also known as health care proxy){/t}</p>
+        <h5>{t}Durable power of attorney for health care (also known as health care proxy){/t}</h5>
         <p>{t}This document appoints an agent to make all decisions regarding health care, including choices regarding health care providers, medical treatment, and, in the later stages of the disease, end- of-life decisions. This means that the agent may authorize or refuse any medical treatment for the principal. This power only goes into effect once the principal is unable to make decisions for himself and is activated by the principal's attending physician.{/t}</p>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
-    
-    <!-- Lesson 5 Slide 12 -->
-    
     <div id="lesson-5-slide-12" class="course-slide">
       <div class="content">
-        <h2 class="flowers">{t}Legal Issues for Caregivers (continued){/t}</h2>
+        <h2 class="flowers">{t}Legal Issues for Caregivers{/t}</h2>
         <hr />
-        <p> {t}Living will{/t} </p>
+        <h5>{t}Living will{/t}</h5>
         <p>{t}A living will allows the person to state -- in advance -- what kind of medical care he or she desires to receive and what life-support procedures he or she would like to withhold. This document is used if a person becomes terminally ill and unable to make his wishes known or if he becomes permanently unconscious. A terminal illness is defined as one from which a person's doctor believes there is no chance of recovery. Living wills can also be used if a person becomes permanently unconscious. To be considered permanently unconscious, two physicians must determine that the patient has no reasonable possibility of regaining consciousness or decision-making ability. Laws on living wills vary from state to state.{/t}</p>
-        <p>{t}Living trust{/t}</p>
+        <h5>{t}Living trust{/t}</h5>
         <p>{t}This document enables a person (called a grantor or trustor) to create a trust and appoint a trustee to carefully invest and manage trust assets once the grantor is no longer able to manage finances. A person can appoint another individual or a financial institution to be the trustee.{/t}</p>
-        <p>{t}Will{/t}</p>
+        <h5>{t}Will{/t}</h5>
         <p>{t}A will is a document created by an individual that names an executor (the person who will manage the estate) and beneficiaries (those who will receive the estate at the time of the person's death).{/t}</p>
         <p>{t}If you cannot afford an attorney, legal forms can be accessed through resources including books and the Internet. Legal issues may be discussed with a social worker or clergy free of charge.{/t}</p>
-        <p>{t}Guardian/Conservator{/t}</p>
+        <h5>{t}Guardian/Conservator{/t}</h5>
         <p>{t}A caregiver of an individual who no longer has the legal capacity to execute powers of attorney or trusts may have to become that individual's guardian or conservator. A guardian has the legal authority to make decisions about the lifestyle and well-being of another person. The decisions a guardian may make include where a person may live, what care and medical treatment will be provided, and what religious and educational activities will be made available. A conservator has legal authority to manage another person's financial affairs.{/t}</p>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
@@ -3322,10 +3289,14 @@ HTML Output:
       <div class="content">
         <h2 class="flowers">{t}Closing{/t}</h2>
         <hr />
+        
+                <img src="<?php echo $this->getImagesUrl('empower/134189923.png'); ?>" alt="{t}image{/t}"> 
+
+        
         <h4>{t}Thank You!{/t}</h4>
         <p>{t}We have really enjoyed getting to know you. Best wishes as you carry on in the future!{/t}</p>
         <h4 style="text-align:center;">{t}Certificates of Completion{/t}</h4>
-        <a href="<?php echo $this->getImagesUrl('msml/CourseCompletionCertificate.pdf'); ?>" target="_blank"><img src="<?php echo $this->getImagesUrl('msml/ArtworkCertificate.png'); ?>" alt="image"></a>
+        <a href="<?php echo $this->getImagesUrl('empower/CourseCompletionCertificate.pdf'); ?>" target="_blank"><img src="<?php echo $this->getImagesUrl('msml/ArtworkCertificate.png'); ?>" alt="image"></a>
         <h4>{t}Evaluation (optional){/t}</h4>
         <p>{t}Please complete the Post-Course Evaluation. It is acceissble via the course page, in the sidebar.{/t}</p>
         <p>{t}Your feedback is greatly appreciated, and will help us to better serve family members in the future. We ask that you complete it before you exit the course. You do not have to include your name on the evaluation. It is completely confidential.{/t}</p>

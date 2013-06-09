@@ -29,10 +29,10 @@ jQuery(document).ready(function() {
     </li>
     <li>Normal Aging Changes<br>
     </li>
-    <li>Aging Well</li>
+    <li>Aging Well
+  <br>
+  </li>
   </ul>
-  <br>
-  <br>
   <h1>Myths and Realities of Aging</h1>
   <div class="content">
     <p>Images of aging in our society are not very positive. For example, let’s look at some of our stereotypes about older adults: </p>
@@ -429,9 +429,7 @@ jQuery(document).ready(function() {
   </div>
   <br>
   <br>
-  <footer>
-    <input type="submit" name="Exit Lesson" id="Exit Lesson" value="Exit Lesson" onClick="window.location='http://onlineportal.matherlifeways.com/content/EmpowerOnline/empower.php'">
-  </footer>
+  <footer></footer>
   <br>
   <br>
 </div>
