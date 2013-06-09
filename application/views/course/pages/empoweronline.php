@@ -2488,12 +2488,15 @@ HTML Output:
       <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Start Course &raquo;{/t}</a></div>
     </div>
     
-    <!-- Lesson 4 Slide 2 -->
     
     <div id="lesson-4-slide-2" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}Myths and Realities of Aging{/t}</h2>
         <hr />
+        
+                <img src="<?php echo $this->getImagesUrl('empower/dv2092031.png'); ?>" alt="{t}image{/t}">
+
+        
         <p>{t}Images of aging in our society are not very positive. For example, let us look at some of our stereotypes about older adults:{/t}</p>
         <ul>
           <li>{t}Old people can not learn new things.{/t}</li>
@@ -2503,10 +2506,13 @@ HTML Output:
           <li>{t}The elderly do not pull their own weight.{/t}</li>
           <li>{t}Old people are always sick.{/t}</li>
         </ul>
-        <p>{t}Dr. Erdman Palmore developed a “Facts on Aging” quiz to measure perceptions (and misperceptions) about aging. Dr. Palmore\’s quiz is a good way to look at our concepts of aging. Let\’s look at some of these items and see how you score them:{/t}</p>
-        <p>{t}The majority of older people are senile, have a defective memory, or are disoriented.{/t}</p>
+        <p>{t}Dr. Erdman Palmore developed a <i>“Facts on Aging”</i> quiz to measure perceptions (and misperceptions) about aging. Dr. Palmore’s quiz is a good way to look at our concepts of aging. Let’s look at some of these items and see how you score them:{/t}</p>
+        
+        <p style="text-align:center;"><a href="#" target="_blank">Facts on Aging Quiz</a> and <a href="http://cas.umkc.edu/agingstudies/PDFs/Answers%20to%20Quiz.pdf" target="_blank">Answer Key</a></p>
         
         <!-- need to add all these questions soon 
+                <p>{t}The majority of older people are senile, have a defective memory, or are disoriented.{/t}</p>
+
     <p>
       <input name="True" type="submit" id="True" onClick="MM_popupMsg('Ccorrect!')" value="True">
       <input name="True2" type="submit" id="True2" onClick="MM_popupMsg('Incorrect!')" value="False">
@@ -2565,13 +2571,12 @@ HTML Output:
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
     
-    <!-- Lesson 4 Slide 3 -->
     
     <div id="lesson-4-slide-3" class="course-slide">
       <div class="content">
-        <h2 class="flowers">{t}Myths and Realities of Aging (continued){/t}</h2>
+        <h2 class="flowers">{t}Myths and Realities of Aging{/t}</h2>
         <hr />
-        <p>{t}Realities of Aging{/t}</p>
+        <h5>{t}Realities of Aging{/t}</h5>
         <p>{t}So, if the stereotype of older adults as slow, sick, and/or senile is false, what is the reality of aging in America? The National Council on the Aging and AARP published the resource, American Perceptions of Aging in the 21st Century, a longitudinal study that began in 1974. In 2002 a follow-up study compared results from the original 1974 study with contemporary findings. Here are some highlights about the realities of aging:{/t}</p>
         <ul>
           <li>{t}58% of older adults were very happy with growing older{/t}</li>
@@ -2580,7 +2585,7 @@ HTML Output:
           <li>{t}47% felt their overall health was excellent to very good{/t}</li>
           <li>{t}60% were very or somewhat worried about memory loss as they aged{/t}</li>
         </ul>
-        <p>{t}How about a few more realities of aging. A survey of key trends in aging conducted by Mather LifeWays Institute on Aging documented the following facts about older adults:{/t}</p>
+        <p>{t}How about a few more realities of aging. A survey of key trends in aging conducted by <a href="http://matherlifewaysinstituteonaging.com" target="_blank">Mather LifeWays Institute on Aging</a> documented the following facts about older adults:{/t}</p>
         <ul>
           <li>{t}The educational level of the older adult population is increasing.{/t}</li>
           <li>{t}Almost half of older adults currently do volunteer work.{/t}</li>
@@ -2589,13 +2594,12 @@ HTML Output:
           <li>{t}Almost 40% of older adults work part-time.{/t}</li>
           <li>{t}Older Americans age 65+ comprise 16.3% of the US labor force.{/t}</li>
         </ul>
-        <p>{t}First of all, how do we define healthy aging? The National Council on the Aging gives this definition:{/t}</p>
-        <p>{t}“Healthy aging is a broad concept that is more than just physical health status or absence of disease. It encompasses all of the intellectual, emotional, social, and spiritual facts of our being. While healthy aging is driven by internal dimensions such as our beliefs, attitudes, and intentions about our health, it also depends on external supports including our social networks, community services, public policies, and the built and natural environment. These dimensions are interrelated, affecting behavior and lifestyle choices.”{/t}</p>
+        <p>{t}First of all, how do we define healthy aging? <a href="http://www.ncoa.org" target="_blank">The National Council on the Aging</a> gives this definition:{/t}</p>
+        <p><i>{t}“Healthy aging is a broad concept that is more than just physical health status or absence of disease. It encompasses all of the intellectual, emotional, social, and spiritual facts of our being. While healthy aging is driven by internal dimensions such as our beliefs, attitudes, and intentions about our health, it also depends on external supports including our social networks, community services, public policies, and the built and natural environment. These dimensions are interrelated, affecting behavior and lifestyle choices.”{/t}</i></p>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
     
-    <!-- Lesson 4 Slide 4 -->
     
     <div id="lesson-4-slide-4" class="course-slide">
       <div class="content">
@@ -2621,11 +2625,10 @@ HTML Output:
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
     
-    <!-- Lesson 4 Slide 5 -->
     
     <div id="lesson-4-slide-5" class="course-slide">
       <div class="content">
-        <h2 class="flowers">{t}Focusing on Healthy Aging (continued){/t}</h2>
+        <h2 class="flowers">{t}Focusing on Healthy Aging{/t}</h2>
         <hr />
         <h4>{t}Maintaining High Cognitive and Physical Function{/t}</h4>
         <p>{t}Fear of cognitive loss, and especially of Alzheimer’s disease are widespread among older adults, and with good reason. Such losses place great burden on both the older adult and his/ her caregivers. Fortunately, research shows that even though the proportion of older adults in the population is increasing, the usual pattern is that most older adults retain a good portion of their independence and mental sharpness.{/t}</p>
@@ -2633,7 +2636,7 @@ HTML Output:
         <ul>
           <li>{t}Education{/t}</li>
           <li>{t}Physical activity{/t}</li>
-          <li>{t}High “self-efficacy”{/t}</li>
+          <li>{t}High <i>“self-efficacy”</i>{/t}</li>
         </ul>
         <h5>{t}Education{/t}</h5>
         <p>{t}People with more years of education were more likely to maintain high cognitive function. The study that education early in life may have a direct beneficial effect of brain circuitry, and education may set a pattern of intellectual pursuits, including reading and puzzle solving, which maintains lifelong exercise of cognitive function.{/t}</p>
@@ -2645,25 +2648,38 @@ HTML Output:
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
     
-    <!-- Lesson 4 Slide 6 -->
-    
+      
     <div id="lesson-4-slide-6" class="course-slide">
       <div class="content">
-        <h2 class="flowers">{t}Focusing on Healthy Aging (continued){/t}</h2>
+        <h2 class="flowers">{t}Focusing on Healthy Aging{/t}</h2>
         <hr />
+        
+                        <img src="<?php echo $this->getImagesUrl('empower/153986639.png'); ?>" alt="{t}image{/t}">
+
+        
         <h4>{t}Engagement in Productive Relationships and Behaviors{/t}</h4>
-        <p>{t}The MacArthur research showed that “happy activities” are essential to successful aging. The two most important areas they identified that contribute to successful aging are:{/t}</p>
+        <p>{t}The <a href="http://www.macfound.org" target="_blank">MacArthur</a> research showed that <i>“happy activities”</i> are essential to successful aging. The two most important areas they identified that contribute to successful aging are:{/t}</p>
         <ul>
           <li>{t}Relating to others{/t}</li>
           <li>{t}Continuing productive activity.{/t}</li>
         </ul>
-        <p>{t}Relating to Others Being part of a social network of family and friends contributes significantly to successful aging.{/t}</p>
-        <p>{t}Continuing Productive Activity Most people equate being productive with earning money. However, there are many activities, both paid and unpaid, which can be considered productive.{/t}</p>
+        <h5>{t}Relating to Others{/t}</h5>
+        
+        <p>{t}Being part of a social network of family and friends contributes significantly to successful aging.{/t}</p>
+        <h5>{t}Continuing Productive Activity{/t}</h5>
+        
+        
+       <p>{t}Most people equate being productive with earning money. However, there are many activities, both paid and unpaid, which can be considered productive.{/t}</p>
+       
+       <p class="forum">On the Forum, post any <i>"happy activites"</i> that you are currently involved in. If you do not have any, post some that you would like to have.</p>
+       
+                       <img src="<?php echo $this->getImagesUrl('empower/forum_icon.png'); ?>" alt="{t}image{/t}">
+
+       
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
     
-    <!-- Lesson 4 Slide 7 -->
     
     <div id="lesson-4-slide-7" class="course-slide">
       <div class="content">
@@ -2686,11 +2702,10 @@ HTML Output:
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
     
-    <!-- Lesson 4 Slide 8 -->
     
     <div id="lesson-4-slide-8" class="course-slide">
       <div class="content">
-        <h2 class="flowers">{t}Normal Aging Changes (continued){/t}</h2>
+        <h2 class="flowers">{t}Normal Aging Changes{/t}</h2>
         <hr />
         <h4>{t}Vision Changes{/t}</h4>
         <p>{t}About 7.3 million or 21% of persons age 65 and over report some form of vision impairment. As baby boomers age, this number will reach 8.3 million in the year 2010, 11.3 million in 2020, and 14.8 million in 2030.{/t}</p>
@@ -2718,11 +2733,10 @@ HTML Output:
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
     
-    <!-- Lesson 4 Slide 9 -->
     
     <div id="lesson-4-slide-9" class="course-slide">
       <div class="content">
-        <h2 class="flowers">{t}Normal Aging Changes (continued){/t}</h2>
+        <h2 class="flowers">{t}Normal Aging Changes{/t}</h2>
         <hr />
         <h4>{t}Changes in Smell and Taste{/t}</h4>
         <p>{t}Decline in smell and taste are also normal aging sensory changes. Older adults recognize and identify common odors less well. Loss of taste and smell are common and result from:{/t}</p>
@@ -2745,14 +2759,13 @@ HTML Output:
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
     
-    <!-- Lesson 4 Slide 10 -->
     
     <div id="lesson-4-slide-10" class="course-slide">
       <div class="content">
-        <h2 class="flowers">{t}Normal Aging Changes (continued){/t}</h2>
+        <h2 class="flowers">{t}Normal Aging Changes{/t}</h2>
         <hr />
         <h4>{t}Common Health Issues of Older Adults{/t}</h4>
-        <p>{t}According to Older Americans 2008: Key Indicators of Well-Being, published by the Federal Interagency Forum on Age Related Statistics, about 80% of older adults have at least one age- related chronic health condition and 50% have at least two. The most prevalent include:{/t}</p>
+        <p>{t}According to <a href="http://www.agingstats.gov/Main_Site/Data/2008_Documents/OA_2008.pdf" target="_blank">Older Americans 2008: Key Indicators of Well-Being</a>, published by the <a href="http://www.agingstats.gov/agingstatsdotnet/main_site/default.aspx" target="_blank">Federal Interagency Forum on Age Related Statistics</a>, about 80% of older adults have at least one age- related chronic health condition and 50% have at least two. The most prevalent include:{/t}</p>
         <ul>
           <li>{t}Arthritis{/t}</li>
           <li>{t}Hypertension{/t}</li>
@@ -2763,25 +2776,23 @@ HTML Output:
           <li>{t}Osteoporosis{/t}</li>
           <li>{t}Alzheimer’s Disease{/t}</li>
         </ul>
-        <p>{t}Arthritis encompasses more than 100 diseases and conditions that affect joints, surrounding tissues, and other connective tissues. It is the leading cause of disability among older adults. Approximately 43% of all men and 54% of all women over the age of 65 have some level of arthritis.{/t}</p>
-        <p>{t}Hypertension is also prevalent among older adults and can lead to activity limitations. 52% of all men and 54% of all women over the age of 65 suffer from hypertension.{/t}</p>
-        <p>{t}Heart Disease and Stroke. Although older women are more likely to have hypertension than older men, the prevalence of heart disease and stroke is higher among older men. 37% of men and 26% of older women have heart disease, while 10% of older men and 8% of older women have suffered a stroke.{/t}</p>
-        <p>{t}Diabetes also affects the health of older adults and limits their ability to perform normal activities. 19% of men and 17% of women over the age of 65 suffer from diabetes.{/t}</p>
-        <p>{t}Cancer. Older men are at a greater risk of cancer than older women, 24% of older men and 19% of older women having some form of cancer. For men, the most commonly diagnosed cancers included prostate, lung, colon, and rectum. Among women, cancers of the breast, colon, and rectum were the most common.{/t}</p>
-        <p>{t}Osteoporosis, another common chronic ailment among older adults, reduces bone density and raises the risk for potential disabling fractures. Although women are four times more likely than men to experience bone loss, recent research suggests that the prevalence of osteoporosis among men has been significantly under-diagnosed and under-reported.{/t}</p>
-        <p>{t}Alzheimer’s Disease is a progressive, degenerative disease that causes gradual but irreversible loss of brain cells. It currently affects an estimated 4.5 million Americans, with the vast majority of sufferers being 65 and older. The group of people who are at the highest risk for Alzheimer’s Disease are those age 85 and older, also the fastest growing segment of the population.{/t}</p>
-        <p>{t}All statistics are taken from Older Americans 2008: Key Indicators of Well-Being, published by the Federal Interagency Forum on Age Related Statistics. Search the Web for this specific report.{/t}</p>
+        <p>{t}<b>Arthritis</b> encompasses more than 100 diseases and conditions that affect joints, surrounding tissues, and other connective tissues. It is the leading cause of disability among older adults. Approximately 43% of all men and 54% of all women over the age of 65 have some level of arthritis.{/t}</p>
+        <p>{t}<b>Hypertension</b> is also prevalent among older adults and can lead to activity limitations. 52% of all men and 54% of all women over the age of 65 suffer from hypertension.{/t}</p>
+        <p>{t}<b>Heart Disease and Stroke</b>. Although older women are more likely to have hypertension than older men, the prevalence of heart disease and stroke is higher among older men. 37% of men and 26% of older women have heart disease, while 10% of older men and 8% of older women have suffered a stroke.{/t}</p>
+        <p>{t}<b>Diabetes</b> also affects the health of older adults and limits their ability to perform normal activities. 19% of men and 17% of women over the age of 65 suffer from diabetes.{/t}</p>
+        <p>{t}<b>Cancer</b>. Older men are at a greater risk of cancer than older women, 24% of older men and 19% of older women having some form of cancer. For men, the most commonly diagnosed cancers included prostate, lung, colon, and rectum. Among women, cancers of the breast, colon, and rectum were the most common.{/t}</p>
+        <p>{t}<b>Osteoporosis</b>, another common chronic ailment among older adults, reduces bone density and raises the risk for potential disabling fractures. Although women are four times more likely than men to experience bone loss, recent research suggests that the prevalence of osteoporosis among men has been significantly under-diagnosed and under-reported.{/t}</p>
+        <p>{t}<b>Alzheimer’s Disease</b> is a progressive, degenerative disease that causes gradual but irreversible loss of brain cells. It currently affects an estimated 4.5 million Americans, with the vast majority of sufferers being 65 and older. The group of people who are at the highest risk for Alzheimer’s Disease are those age 85 and older, also the fastest growing segment of the population.{/t}</p>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
     
-    <!-- Lesson 4 Slide 11 -->
     
     <div id="lesson-4-slide-11" class="course-slide">
       <div class="content">
-        <h2 class="flowers">{t}Normal Aging Changes (continued){/t}</h2>
+        <h2 class="flowers">{t}Normal Aging Changes{/t}</h2>
         <hr />
-        <h4>{t}Emotional and Personality Changes{/t}</h4>
+        <h5>{t}Emotional and Personality Changes{/t}</h5>
         <p>{t}As we get older, our more dominant personality traits become more pronounced. You may notice that some older people whom you know become “more difficult” to get along with while others become “more mellow” as they age. Some older people may become more concerned about death. Others may feel that they have reached a certain age that their “wisdom” should be respected by everyone and they take offense if someone disagrees or challenges them on an issue.{/t}</p>
         <p>{t}As a caregiver, being aware and understanding of some of these changes is important. Showing empathy and compassion to older adults when they may be coping with multiple changes or losses will benefit both the older person and you as caregiver.{/t}</p>
         <p>{t}Emotional, behavioral, and mental change may include depression, memory lapses, inability ot concentrate, or disorientation. It is important to remember that memory lapses are not automatically a sign of dementia or Alzheimer’s Disease! These changes may be caused by a number of factors including:{/t}</p>
@@ -2799,18 +2810,19 @@ HTML Output:
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
     
-    <!-- Lesson 4 Slide 12 -->
     
     <div id="lesson-4-slide-12" class="course-slide">
       <div class="content">
-        <h2 class="flowers">{t}Normal Aging Changes (continued){/t}</h2>
+        <h2 class="flowers">{t}Normal Aging Changes{/t}</h2>
         <hr />
-        <h4>{t}Memory Changes{/t}</h4>
+        
+        <img src="<?php echo $this->getImagesUrl('empower/155544151.png'); ?>" alt="{t}Memory Changes Image{/t}">
+        <h5>{t}Memory Changes{/t}</h5>
         <p>{t}A major concern of people as they or their loved ones age is “What is normal memory loss and what is abnormal?”{/t}</p>
         <p>{t}By the time a person reaches 70 to 80 years of age, the brain loses 10% of its original size. Some people’s memory remains sharp throughout old age while others are mildly affected by memory loss.{/t}</p>
-        <p>{t}As many as 50% of older adults have trouble remembering things, a situation called benign forgetfulness. Some loss of short-term memory is common with older adults, yet they often can easily remember life events and experiences from the past. It is also common that older adults tell and retell information. This is not so much a situation that the older adult does not remember telling the story, but it is a way to “lock in” the story into their short-term memory “bank.”{/t}</p>
+        <p>{t}As many as 50% of older adults have trouble remembering things, a situation called benign forgetfulness. Some loss of short-term memory is common with older adults, yet they often can easily remember life events and experiences from the past. It is also common that older adults tell and retell information. This is not so much a situation that the older adult does not remember telling the story, but it is a way to “lock in” the story into their short-term memory <i>"bank."</i>{/t}</p>
         <p>{t}As the caregiver, rather than responding in an aggravated tone, “Mom, don’t you remember you just told me that story!”, it is better to just listen and then engage mom in more discussion about that story – maybe ask some questions about the situation or relate it back to a past similar experience. It will help mom “bank” that information, as well as you may learn something you did not know about your mom’s life experiences from the past!{/t}</p>
-        <h4>{t}Other Changes{/t}</h4>
+        <h5>{t}Other Changes{/t}</h5>
         <p>{t}Because it takes longer for the older brain to process information, it takes longer for an older person to react. The performance of routine tasks takes longer. Combined with normal slowing of movement, ordinary tasks may become more difficult and frustrating for both the older person and their caregiver.{/t}</p>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
