@@ -80,20 +80,8 @@ foreach(array(
     <li> <a href="#lesson-1-slide-1" data-fancybox-group="lesson-1" class="teal lesson-1">{t}Taking Care of You{/t}</a> <a href="#lesson-1-slide-2" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-3" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-4" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-5" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-6" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-7" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-8" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-9" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-10" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-11" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-12" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-13" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-14" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-15" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-16" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-17" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-18" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-19" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-20" data-fancybox-group="lesson-1" class="hide lesson-1"></li>
     <li> <a href="#lesson-2-slide-1" data-fancybox-group="lesson-2" class="teal lesson-2">{t}Reducing Personal Stress{/t}</a> <a href="#lesson-2-slide-2" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-3" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-4" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-5" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-6" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-7" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-8" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-9" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-10" data-fancybox-group="lesson-2" class="hide lesson-2"></a> </li>
     <li> <a href="#lesson-3-slide-1" data-fancybox-group="lesson-3" class="teal lesson-3"> {t}Communicating Effectively in Challenging Situations{/t} </a> <a href="#lesson-3-slide-2" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-3" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-4" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-5" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-6" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-7" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-8" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-9" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-10" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-11" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-12" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-13" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-14" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-15" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-16" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-17" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-18" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-19" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-20" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-21" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-22" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-23" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-24" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-25" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-26" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-27" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-28" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-29" data-fancybox-group="lesson-3" class="hide lesson-3"></a> </li>
-    <li> <a href="#lesson-4-slide-1" data-fancybox-group="lesson-4" class="teal lesson-4"> {t}Normal &amp; Abnormal Aging Changes{/t} </a> <a href="#lesson-4-slide-2" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-3" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-4" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-5" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-6" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-7" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-8" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-9" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-10" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-11" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-12" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-13" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-14" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-15" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-16" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-17" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-18" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-19" data-fancybox-group="lesson-4" class="hide lesson-4"></a> </li>
-    <li> <a href="#lesson-5-slide-1" data-fancybox-group="lesson-5" class="teal lesson-5"> {t}Financial &amp; Legal Issues{/t} </a> <a href="#lesson-5-slide-2" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-3" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-4" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-5" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-6" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-7" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-8" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-9" data-fancybox-group="lesson-5" class="hide lesson-5"></a>
-    
-     <a href="#lesson-5-slide-10" data-fancybox-group="lesson-5" class="hide lesson-5"></a> 
-     <a href="#lesson-5-slide-11" data-fancybox-group="lesson-5" class="hide lesson-5"></a> 
-     <a href="#lesson-5-slide-12" data-fancybox-group="lesson-5" class="hide lesson-5"></a> 
-     <a href="#lesson-5-slide-13" data-fancybox-group="lesson-5" class="hide lesson-5"></a>
-          <a href="#lesson-5-slide-14" data-fancybox-group="lesson-5" class="hide lesson-5"></a>
-
-     <a href="#lesson-5-slide-15" data-fancybox-group="lesson-5" class="hide lesson-5"></a>
-
-     
-     
-     </li>
+    <li> <a href="#lesson-4-slide-1" data-fancybox-group="lesson-4" class="teal lesson-4"> {t}Normal &amp; Abnormal Aging Changes{/t} </a> <a href="#lesson-4-slide-2" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-3" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-4" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-5" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-6" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-7" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-8" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-9" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-10" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-11" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-12" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-13" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-14" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-15" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-16" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-17" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-18" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-19" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-20" data-fancybox-group="lesson-4" class="hide lesson-4"></a> </li>
+    <li> <a href="#lesson-5-slide-1" data-fancybox-group="lesson-5" class="teal lesson-5"> {t}Financial &amp; Legal Issues{/t} </a> <a href="#lesson-5-slide-2" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-3" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-4" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-5" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-6" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-7" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-8" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-9" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-10" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-11" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-12" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-13" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-14" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-15" data-fancybox-group="lesson-5" class="hide lesson-5"></a> </li>
   </ul>
   
   <!-- Resources div white box here -->
@@ -1623,32 +1611,49 @@ HTML Output:
     <!-- need this final div here to close lesson-1 --> 
   </div>
   
-  <!-- Lesson 2 Slide 1 -->
   <div id="lesson-2">
     <div id="lesson-2-slide-1" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}Reducing Personal Stress{/t}</h2>
         <hr />
-        <img src="<?php echo $this->getImagesUrl('empower/here.png'); ?>" alt="{t}image{/t}" />
+        <img src="<?php echo $this->getImagesUrl('empower/LS021194.png'); ?>" alt="{t}image{/t}" />
         <p>{t}This module two main sections:{/t}</p>
         <ul>
           <li>{t}The Stress of Caregiving{/t}</li>
           <li>{t}Steps to Maintain Health &amp; Avoid Stress{/t}</li>
         </ul>
-        <p>{t}This lesson explores the stress of caregiving. It will help you identify and understand your particular stressors, challenges, and strengths. You can then plan strategies that help you cope, change, and reduce stress. A basic premise of this chapter is that each of us has a reservoir of strength. The challenge is to identify our strengths build on them.{/t}</p>
+        <p>{t}This module explores the stress of caregiving. It will help you identify and understand your particular stressors, challenges, and strengths. You can then plan strategies that help you cope, change, and reduce stress. A basic premise of this chapter is that each of us has a reservoir of strength. The challenge is to identify our strengths build on them.{/t}</p>
+        <p class="forum">{t}Before you get started, post to the Forum your current stressors, so at the end of this module we may recall them.{/t}</p>
+        
+                <img src="<?php echo $this->getImagesUrl('empower/forum_icon.png'); ?>" alt="{t}Forum Icon{/t}" />
+
+        
       </div>
-      <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Start Course &raquo;{/t}</a></div>
+      <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Start Module &raquo;{/t}</a></div>
     </div>
-    <!-- Lesson 2 Slide 2 -->
     <div id="lesson-2-slide-2" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}The Stress of Caregiving{/t}</h2>
         <hr />
-        <p>{t}There has been so much written about stress it has become a household word. Studies show that a certain amount of stress is helpful. It can challenge us to change and motivate us to do things we might not do otherwise. However, when the amount of stress overwhelms our ability to cope with it, we feel 'distress' or 'burnout.'{/t}</p>
-        <p>{t}Distress is 'suffering of mind or body; severe physical or mental strain.' As a caregiver, you no doubt have increased stress in your life, whether you are caring for a mother with early Parkinson's disease, who is still able to care for her personal needs, or a spouse who does not recognize you because of advanced Alzheimer's disease.{/t}</p>
-        <p>{t}Please think about the last time you were under distress.{/t}</p>
-        <p>{t}Each caregiving situation is unique. What is stressful for you may not be stressful for someone else. In his book The Survivor Personality, AI Siebert says, "there is no stress until you feel a strain." Since the feeling of stress is subjective and unique to each individual, it is difficult to define objectively. The stress you feel is not only the result of your caregiving situation, it is all of your perception of it. Your stress will increase or decrease depending on how you perceive your circumstances. And your perception will affect how you respond.{/t}</p>
-        <p>{t}Factors That Affect Stress{/t}</p>
+        <p>{t}There has been so much written about stress it has become a household word. Studies show that a certain amount of stress is helpful. It can challenge us to change and motivate us to do things we might not do otherwise. However, when the amount of stress overwhelms our ability to cope with it, we feel <i>'distress'</i> or <i>'burnout.'</i>{/t}</p>
+        <p>{t}Distress is <i>'suffering of mind or body; severe physical or mental strain.'</i> As a caregiver, you no doubt have increased stress in your life, whether you are caring for a mother with early Parkinson's disease, who is still able to care for her personal needs, or a spouse who does not recognize you because of advanced Alzheimer's disease.{/t}</p>
+        <p class="forum">{t}Please think about the last time you were under distress. Post your response to the Forum.{/t}</p>
+                        <img src="<?php echo $this->getImagesUrl('empower/forum_icon.png'); ?>" alt="{t}Forum Icon{/t}" />
+
+        
+        <p>{t}Each caregiving situation is unique. What is stressful for you may not be stressful for someone else. In his book <a href="http://www.amazon.com/The-Survivor-Personality-Stronger-Difficulties/dp/0399522301" target="_blank">The Survivor Personality</a>, AI Siebert says, <i>"there is no stress until you feel a strain."</i> Since the feeling of stress is subjective and unique to each individual, it is difficult to define objectively. The stress you feel is not only the result of your caregiving situation, it is all of your perception of it. Your stress will increase or decrease depending on how you perceive your circumstances. And your perception will affect how you respond.{/t}</p>
+       
+       
+       
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
+    <div id="lesson-2-slide-3" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}The Stress of Caregiving{/t}</h2>
+        <hr />
+        
+         <h4>{t}Factors That Affect Stress{/t}</h4>
         <p>{t}Your level of stress is influenced by many factors, including:{/t}</p>
         <ul>
           <li>{t}whether your caregiving is voluntary or not;{/t}</li>
@@ -1657,14 +1662,6 @@ HTML Output:
           <li>{t}your caregiving situation; and{/t}</li>
           <li>{t}whether support is available.{/t}</li>
         </ul>
-      </div>
-      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
-    </div>
-    <!-- Lesson 2 Slide 3 -->
-    <div id="lesson-2-slide-3" class="course-slide">
-      <div class="content">
-        <h2 class="flowers">{t}The Stress of Caregiving (continued){/t}</h2>
-        <hr />
         <p>{t}Whether your caregiving is voluntary or not -{/t}</p>
         <p>{t}Many people become caregivers voluntarily. Others acquire the role because no one else is available. When you become a caregiver voluntarily, you are making a choice. However, if you "inherited" the job and feel you had no choice, the chances are greater for experiencing strain, distress, and resentment. Nancy became a caregiver because no one else was available.{/t}</p>
         <p>{t}Nancy could not have been more surprised when the visiting nurse asked her if she was the primary caregiver for her mother in-law, Joan. Nancy was fond of Joan. She called and stopped by frequently to see how Joan was managing, but had not thought of herself as the primary caregiver. It was apparent that Joan's medical condition was worsening and she was becoming increasingly weak Nancy realized there were no other children or relatives available, so she agreed, although somewhat reluctantly, to be Joan's caregiver. Nancy felt anxious and uncertain about what it meant to be a primary caregiver and whether she had the necessary skills to perform the role.{/t}</p>
@@ -2458,12 +2455,10 @@ HTML Output:
         </ul>
         <p>{t}Make and post a 1-5 minute video to You Tube of your simple pleasures.{/t}</p>
       </div>
-      <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Complete Lesson{/t}</a></div>
+      <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Complete Module{/t}</a></div>
     </div>
     <!-- need this final div here to close lesson-2 --> 
   </div>
-  
-  
   <div id="lesson-4">
     <div id="lesson-4-slide-1" class="course-slide">
       <div class="content">
@@ -2478,25 +2473,15 @@ HTML Output:
           <li>{t}Aging Well{/t}</li>
         </ul>
         <p>{t}<i>“Healthy aging is a broad concept that is more than just physical health status or absence of disease. It encompasses all of the intellectual, emotional, social, and spiritual facts of our being. While healthy aging is driven by internal dimensions such as our beliefs, attitudes, and intentions about our health, it also depends on external supports including our social networks, community services, public policies, and the built and natural environment. These dimensions are interrelated, affecting behavior and lifestyle choices.”</i>{/t}</p>
-        
         <p class="forum">On the Forum, post your definiton or descripton of normal and abnoral aging changes.</p>
-        
-                <img src="<?php echo $this->getImagesUrl('empower/forum_icon.png'); ?>" alt="{t}image{/t}">
-
-        
-      </div>
-      <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Start Course &raquo;{/t}</a></div>
+        <img src="<?php echo $this->getImagesUrl('empower/forum_icon.png'); ?>" alt="{t}image{/t}"> </div>
+      <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Start Module &raquo;{/t}</a></div>
     </div>
-    
-    
     <div id="lesson-4-slide-2" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}Myths and Realities of Aging{/t}</h2>
         <hr />
-        
-                <img src="<?php echo $this->getImagesUrl('empower/dv2092031.png'); ?>" alt="{t}image{/t}">
-
-        
+        <img src="<?php echo $this->getImagesUrl('empower/dv2092031.png'); ?>" alt="{t}image{/t}">
         <p>{t}Images of aging in our society are not very positive. For example, let us look at some of our stereotypes about older adults:{/t}</p>
         <ul>
           <li>{t}Old people can not learn new things.{/t}</li>
@@ -2507,7 +2492,6 @@ HTML Output:
           <li>{t}Old people are always sick.{/t}</li>
         </ul>
         <p>{t}Dr. Erdman Palmore developed a <i>“Facts on Aging”</i> quiz to measure perceptions (and misperceptions) about aging. Dr. Palmore’s quiz is a good way to look at our concepts of aging. Let’s look at some of these items and see how you score them:{/t}</p>
-        
         <p style="text-align:center;"><a href="#" target="_blank">Facts on Aging Quiz</a> and <a href="http://cas.umkc.edu/agingstudies/PDFs/Answers%20to%20Quiz.pdf" target="_blank">Answer Key</a></p>
         
         <!-- need to add all these questions soon 
@@ -2570,8 +2554,6 @@ HTML Output:
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
-    
-    
     <div id="lesson-4-slide-3" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}Myths and Realities of Aging{/t}</h2>
@@ -2599,8 +2581,6 @@ HTML Output:
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
-    
-    
     <div id="lesson-4-slide-4" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}Focusing on Healthy Aging{/t}</h2>
@@ -2624,8 +2604,6 @@ HTML Output:
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
-    
-    
     <div id="lesson-4-slide-5" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}Focusing on Healthy Aging{/t}</h2>
@@ -2647,16 +2625,11 @@ HTML Output:
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
-    
-      
     <div id="lesson-4-slide-6" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}Focusing on Healthy Aging{/t}</h2>
         <hr />
-        
-                        <img src="<?php echo $this->getImagesUrl('empower/153986639.png'); ?>" alt="{t}image{/t}">
-
-        
+        <img src="<?php echo $this->getImagesUrl('empower/153986639.png'); ?>" alt="{t}image{/t}">
         <h4>{t}Engagement in Productive Relationships and Behaviors{/t}</h4>
         <p>{t}The <a href="http://www.macfound.org" target="_blank">MacArthur</a> research showed that <i>“happy activities”</i> are essential to successful aging. The two most important areas they identified that contribute to successful aging are:{/t}</p>
         <ul>
@@ -2664,23 +2637,13 @@ HTML Output:
           <li>{t}Continuing productive activity.{/t}</li>
         </ul>
         <h5>{t}Relating to Others{/t}</h5>
-        
         <p>{t}Being part of a social network of family and friends contributes significantly to successful aging.{/t}</p>
         <h5>{t}Continuing Productive Activity{/t}</h5>
-        
-        
-       <p>{t}Most people equate being productive with earning money. However, there are many activities, both paid and unpaid, which can be considered productive.{/t}</p>
-       
-       <p class="forum">On the Forum, post any <i>"happy activites"</i> that you are currently involved in. If you do not have any, post some that you would like to have.</p>
-       
-                       <img src="<?php echo $this->getImagesUrl('empower/forum_icon.png'); ?>" alt="{t}image{/t}">
-
-       
-      </div>
+        <p>{t}Most people equate being productive with earning money. However, there are many activities, both paid and unpaid, which can be considered productive.{/t}</p>
+        <p class="forum">On the Forum, post any <i>"happy activites"</i> that you are currently involved in. If you do not have any, post some that you would like to have.</p>
+        <img src="<?php echo $this->getImagesUrl('empower/forum_icon.png'); ?>" alt="{t}image{/t}"> </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
-    
-    
     <div id="lesson-4-slide-7" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}Normal Aging Changes{/t}</h2>
@@ -2701,8 +2664,6 @@ HTML Output:
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
-    
-    
     <div id="lesson-4-slide-8" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}Normal Aging Changes{/t}</h2>
@@ -2732,8 +2693,6 @@ HTML Output:
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
-    
-    
     <div id="lesson-4-slide-9" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}Normal Aging Changes{/t}</h2>
@@ -2758,8 +2717,6 @@ HTML Output:
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
-    
-    
     <div id="lesson-4-slide-10" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}Normal Aging Changes{/t}</h2>
@@ -2786,8 +2743,6 @@ HTML Output:
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
-    
-    
     <div id="lesson-4-slide-11" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}Normal Aging Changes{/t}</h2>
@@ -2809,13 +2764,10 @@ HTML Output:
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
-    
-    
     <div id="lesson-4-slide-12" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}Normal Aging Changes{/t}</h2>
         <hr />
-        
         <img src="<?php echo $this->getImagesUrl('empower/155544151.png'); ?>" alt="{t}Memory Changes Image{/t}">
         <h5>{t}Memory Changes{/t}</h5>
         <p>{t}A major concern of people as they or their loved ones age is “What is normal memory loss and what is abnormal?”{/t}</p>
@@ -2827,9 +2779,6 @@ HTML Output:
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
-    
-    <!-- Lesson 4 Slide 13 -->
-    
     <div id="lesson-4-slide-13" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}Aging Well{/t}</h2>
@@ -2844,7 +2793,9 @@ HTML Output:
           <li>{t}Vocational{/t}</li>
           <li>{t}Intellectual{/t}</li>
         </ul>
-        <p>{t}Physical Wellness includes living an active lifestyle, participating in regular physical activity, eating nutritious foods, and practicing proper self-care. Some ideas for maintaining physical wellness?{/t}</p>
+        <p>{t}Physical Wellness includes living an active lifestyle, participating in regular physical activity, eating nutritious foods, and practicing proper self-care.{/t}</p>
+        <p class="forum">{t}On the Forum, post ome ideas for maintaining physical wellness?{/t}</p>
+        <img src="<?php echo $this->getImagesUrl('empower/forum_icon.png'); ?>" alt="{t}Forum Icon{/t}">
         <ul>
           <li>{t}Getting regular physical exams, including dental and eye{/t}</li>
           <li>{t}Maintaining current immunizations{/t}</li>
@@ -2853,18 +2804,17 @@ HTML Output:
           <li>{t}Joining a health club{/t}</li>
           <li>{t}Limiting or avoiding alcohol and tobacco{/t}</li>
         </ul>
-        <p>{t}Can you think of other ways to maintain physical wellness? How can you help older adult friends or relatives incorporate physical wellness into their lives?{/t}</p>
-      </div>
+        <p class="forum">{t}Can you think of other ways to maintain physical wellness? How can you help older adult friends or relatives incorporate physical wellness into their lives? Post your responses to the Forum.{/t}</p>
+        <img src="<?php echo $this->getImagesUrl('empower/forum_icon.png'); ?>" alt="{t}Forum Icon{/t}"> </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
-    
-    <!-- Lesson 4 Slide 14 -->
-    
     <div id="lesson-4-slide-14" class="course-slide">
       <div class="content">
-        <h2 class="flowers">{t}Aging Well (continued){/t}</h2>
+        <h2 class="flowers">{t}Aging Well{/t}</h2>
         <hr />
-        <p>{t}Social Wellness is promoted through creating and maintaining relationships with others through talking and sharing interests. What are ways to promote social wellness?{/t}</p>
+        <p>{t}Social Wellness is promoted through creating and maintaining relationships with others through talking and sharing interests.{/t}</p>
+        <p class="forum">{t}What are ways to promote social wellness? Post your response to the Forum.{/t}</p>
+        <img src="<?php echo $this->getImagesUrl('empower/forum_icon.png'); ?>" alt="{t}Forum Icon{/t}">
         <ul>
           <li>{t}Church groups{/t}</li>
           <li>{t}Neighborhood networks{/t}</li>
@@ -2873,7 +2823,8 @@ HTML Output:
           <li>{t}Classes to meet people with similar interests{/t}</li>
           <li>{t}Volunteering{/t}</li>
         </ul>
-        <p>{t}Do you know of activities to promote social wellness that currently exist in your community? Are there ways to promote participation by older friends/relatives?{/t}</p>
+        <p class="forum">{t}Do you know of activities to promote social wellness that currently exist in your community? Are there ways to promote participation by older friends/relatives? Post your response to the Forum.{/t}</p>
+        <img src="<?php echo $this->getImagesUrl('empower/forum_icon.png'); ?>" alt="{t}Forum Icon{/t}">
         <p>{t}Emotional Wellness refers to successfully understanding, managing, and expressing personal feelings. Here are some ways to foster emotional wellness:{/t}</p>
         <ul>
           <li>{t}Recognize that your emotions affect your body{/t}</li>
@@ -2883,16 +2834,13 @@ HTML Output:
           <li>{t}Talk to trusted friends or family members and practice open communication to relieve stress{/t}</li>
           <li>{t}Build self-esteem by respecting and taking care of yourself{/t}</li>
         </ul>
-        <p>{t}What are some ways to help older friends/relatives cope with change and improve emotional wellness? What are some ways you may better manage your own emotional wellness?{/t}</p>
-      </div>
+        <p class="forum">{t}What are some ways to help older friends/relatives cope with change and improve emotional wellness? What are some ways you may better manage your own emotional wellness? Post your response to the Forum.{/t}</p>
+        <img src="<?php echo $this->getImagesUrl('empower/forum_icon.png'); ?>" alt="{t}Forum Icon{/t}"> </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
-    
-    <!-- Lesson 4 Slide 15 -->
-    
     <div id="lesson-4-slide-15" class="course-slide">
       <div class="content">
-        <h2 class="flowers">{t}Aging Well (continued){/t}</h2>
+        <h2 class="flowers">{t}Aging Well{/t}</h2>
         <hr />
         <p>{t}Spiritual Wellness builds on personal values to find meaning and purpose in life and discover a peaceful harmony with the world. While faith means different things to different people, spiritual wellness means having hope, guidance, and purpose to help us understand ourselves better. Some methods of achieving spiritual wellness include:{/t}</p>
         <ul>
@@ -2902,7 +2850,8 @@ HTML Output:
           <li>{t}Explore teachings that appeal to you{/t}</li>
           <li>{t}Practice relaxation techniques such as meditation or yoga{/t}</li>
         </ul>
-        <p> {t}What are some ways you can explore spiritual wellness?{/t} </p>
+        <p class="forum">{t}What are some ways you can explore spiritual wellness? Post your response to the Forum{/t}</p>
+        <img src="<?php echo $this->getImagesUrl('empower/forum_icon.png'); ?>" alt="{t}Forum Icon{/t}">
         <p>{t}Vocational Wellness encompasses experiencing personal growth and satisfaction from service to others and learning or improving skills through occupational and other life experiences. While most people equate vocation with paid work, there are many options for pursuing vocational wellness other than employment. How about:{/t}</p>
         <ul>
           <li>{t}Volunteering{/t}</li>
@@ -2912,17 +2861,15 @@ HTML Output:
           <li>{t}Resident Committees{/t}</li>
           <li>{t}Seasonal work (e.g., tax preparation){/t}</li>
         </ul>
-        <p>{t}What are some other ways you can use your own skills to pursue vocational wellness? What about for older friends/relatives?{/t}</p>
-      </div>
+        <p class="forum">{t}What are some other ways you can use your own skills to pursue vocational wellness? What about for older friends/relatives? Post your response to the Forum{/t}</p>
+        <img src="<?php echo $this->getImagesUrl('empower/forum_icon.png'); ?>" alt="{t}Forum Icon{/t}"> </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
-    
-    <!-- Lesson 4 Slide 16 -->
-    
     <div id="lesson-4-slide-16" class="course-slide">
       <div class="content">
-        <h2 class="flowers">{t}Aging Well (continued){/t}</h2>
+        <h2 class="flowers">{t}Aging Well{/t}</h2>
         <hr />
+        <img src="<?php echo $this->getImagesUrl('empower/200571474-004.png'); ?>" alt="{t}Image{/t}">
         <p>{t}Intellectual Wellness promotes expansion of personal knowledge through learning opportunities, creative pursuits, and stimulating discussions with others. There are numerous ways of pursuing intellectual wellness, many of which may intersect with other wellness categories. How about:{/t}</p>
         <ul>
           <li>{t}Joining clubs that explore areas of interest to you{/t}</li>
@@ -2930,10 +2877,16 @@ HTML Output:
           <li>{t}Pursuing creative hobbies{/t}</li>
           <li>{t}Attending plays or musical performances{/t}</li>
           <li>{t}Reading books, newspapers, magazines{/t}</li>
-          <li>{t}Participating in “mental aerobics” (art, puzzles, sensory stimulation techniques) to strengthen, improve, and maintain mental and memory capabilities{/t}</li>
+          <li>{t}Participating in <i>“mental aerobics”</i> (art, puzzles, sensory stimulation techniques) to strengthen, improve, and maintain mental and memory capabilities{/t}</li>
         </ul>
-        <h2 class="flowers">{t}Aging Well (continued){/t}</h2>
-        <p>{t}You can probably think of many other ways to promote intellectual wellness. How can you implement those ideas to stimulate intellectual wellness for your older friends/relatives?{/t}</p>
+        <p class="forum">{t}You can probably think of many other ways to promote intellectual wellness. How can you implement those ideas to stimulate intellectual wellness for your older friends/relatives?{/t}</p>
+        <img src="<?php echo $this->getImagesUrl('empower/forum_icon.png'); ?>" alt="{t}Forum Icon{/t}"> </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
+    <div id="lesson-4-slide-17" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Aging Well{/t}</h2>
+        <hr />
         <h4>{t}Lifelong Learning{/t}</h4>
         <p>{t}New learning by older adults should be linked to experiences or activities they are familiar with or have enjoyed, particularly those with a social component. Here are some key facts about older adults and lifelong learning:{/t}</p>
         <ul>
@@ -2944,33 +2897,39 @@ HTML Output:
           <li>{t}Older learners already know more than when they were young. This can be an advantage if they are given the opportunity to reflect on new information to see how it integrates with what they already know.{/t}</li>
           <li>{t}A supportive learning environment, with positive feedback and encouragement, is beneficial, provided that older learners are treated like adults.{/t}</li>
         </ul>
-        <p>{t}How can you apply these lifelong learning strategies to foster wellness?{/t}</p>
-      </div>
+        <p class="forum">{t}How can you apply these lifelong learning strategies to foster wellness? Post your response to the Forum.{/t}</p>
+        <img src="<?php echo $this->getImagesUrl('empower/forum_icon.png'); ?>" alt="{t}Forum Icon{/t}"> </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
-    
-    <!-- Lesson 4 Slide 17 -->
-    
-    <div id="lesson-4-slide-17" class="course-slide">
-      <div class="content">
-        <h2 class="flowers">{t}Aging Well (continued){/t}</h2>
-        <hr />
-        <h4>{t}Creativity{/t}</h4>
-        <p>{t}Creativity is defined as the skill of producing a work of thought or imagination.{/t}</p>
-        <p>{t}In his book, The Creative Age: Awakening Human Potential in the Second Half of Life (2000), Gene D. Cohen, MD, PhD, provided striking evidence that the human potential for creativity continues well into old age.{/t}</p>
-        <p>{t}So, what are some ways to encourage creativity among older friends/relatives? Here are some excerpts from a creative energy workshop.{/t}</p>
-        <p>{t}You may want to try out this workshop with your older friends, relatives, or even yourself. Sometimes, we all need to revisit our creative side!{/t}</p>
-        <p>{t}Begin by thinking about your interests and desires. This may include goals you want to achieve, projects you want to implement, or dreams you want to make real. By going through this exercise, you will begin to realize inner strengths you already have that will help you achieve your potential.{/t}</p>
-      </div>
-      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
-    </div>
-    
-    <!-- Lesson 4 Slide 18 -->
-    
     <div id="lesson-4-slide-18" class="course-slide">
       <div class="content">
-        <h2 class="flowers">{t}Aging Well (continued){/t}</h2>
+        <h2 class="flowers">{t}Aging Well{/t}</h2>
         <hr />
+        
+                        <img src="<?php echo $this->getImagesUrl('empower/71261154.png'); ?>" alt="{t}Image{/t}">
+
+        <h4>{t}Creativity{/t}</h4>
+        <p>{t}Creativity is defined as the skill of producing a work of thought or imagination.{/t}</p>
+        <p>{t}In his book, <a href="http://www.amazon.com/Creative-Age-Gene-D-Cohen/dp/0380800713" target="_blank">The Creative Age: Awakening Human Potential in the Second Half of Life (2000), Gene D. Cohen, MD, PhD,</a> provided striking evidence that the human potential for creativity continues well into old age.{/t}</p>
+        
+        <p class="forum">{t}So, what are some ways to encourage creativity among older friends/relatives? Post your response to the Forum.{/t}</p>
+        
+                <img src="<?php echo $this->getImagesUrl('empower/forum_icon.png'); ?>" alt="{t}Forum Icon{/t}">
+
+        
+        
+       
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
+    <div id="lesson-4-slide-19" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Aging Well{/t}</h2>
+        <hr />
+        
+         <p>{t}Here are some excerpts from a creative energy workshop.{/t}</p>
+        <p>{t}You may want to try out this workshop with your older friends, relatives, or even yourself. Sometimes, we all need to revisit our creative side!{/t}</p>
+        <p>{t}Begin by thinking about your interests and desires. This may include goals you want to achieve, projects you want to implement, or dreams you want to make real. By going through this exercise, you will begin to realize inner strengths you already have that will help you achieve your potential.{/t}</p>
         <ol>
           <li>{t}Do you wish to build on what you have already done, or do you wish to take your work to a higher level?{/t}
             <ul>
@@ -3029,18 +2988,16 @@ HTML Output:
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
-    
-    <!-- Lesson 4 Slide 19 -->
-    
-    <div id="lesson-4-slide-19" class="course-slide">
+    <div id="lesson-4-slide-20" class="course-slide">
       <div class="content">
-        <h2 class="flowers">{t}Aging Well (continued){/t}</h2>
+        <h2 class="flowers">{t}Aging Well{/t}</h2>
         <hr />
-        <iframe width="420" height="315" src="http://www.youtube.com/embed/SBH9dkCZsXQ?rel=0" frameborder="0" allowfullscreen></iframe>
         <h4>{t}Technology and the Future of Caregiving{/t}</h4>
         <p>{t}The way we care for older adults today cannot scale to meet the looming age wave, and before long we’ll face a fullblown national crisis. We have an obligation to our parents—indeed to the next generation of older adults—to ensure they get the best possible care and that they receive it in a place they want to call home.{/t}</p>
         <p>{t}New technology solutions offer great promise to improve quality of care while reducing healthcare costs. Technology already has transformed our lives—from email to MP3s and from online shopping to cell phones. It is time now for technology to transform the experience of aging.{/t}</p>
         <p>{t}Fortunately, exciting new technologies coming in the next 5 to 10 years offer the potential to dramatically improve the quality of care we can provide. Watch this video to learn the possibilities!{/t}</p>
+                <iframe width="420" height="315" src="http://www.youtube.com/embed/SBH9dkCZsXQ?rel=0" frameborder="0" allowfullscreen></iframe>
+
       </div>
       <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Complete Module{/t}</a> </div>
     </div>
@@ -3061,7 +3018,7 @@ HTML Output:
         <p>{t}As a caregiver, you will need to evaluate the long-term care needs of your loved one. In making this evaluation, it is important to consider financial options. Long-term financial planning is important for everyone, but it is essential when you are coping with the expense of chronic illnesses such as Alzheimer's or Dementia.{/t}</p>
         <p class="forum">{t}Do you have a long-term financial plan in-place for the person you are careing for?</p>
         <img src="<?php echo $this->getImagesUrl('empower/forum_icon.png'); ?>" alt="{t}image{/t}"> </div>
-      <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Start Course &raquo;{/t}</a></div>
+      <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Start Module &raquo;{/t}</a></div>
     </div>
     <div id="lesson-5-slide-2" class="course-slide">
       <div class="content">
@@ -3301,10 +3258,7 @@ HTML Output:
       <div class="content">
         <h2 class="flowers">{t}Closing{/t}</h2>
         <hr />
-        
-                <img src="<?php echo $this->getImagesUrl('empower/134189923.png'); ?>" alt="{t}image{/t}"> 
-
-        
+        <img src="<?php echo $this->getImagesUrl('empower/134189923.png'); ?>" alt="{t}image{/t}">
         <h4>{t}Thank You!{/t}</h4>
         <p>{t}We have really enjoyed getting to know you. Best wishes as you carry on in the future!{/t}</p>
         <h4 style="text-align:center;">{t}Certificates of Completion{/t}</h4>
