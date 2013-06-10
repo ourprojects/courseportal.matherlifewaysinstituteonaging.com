@@ -20,7 +20,18 @@ class TViewSource extends CApplicationComponent
 	 */
 	public $connectionID = 'db';
 	
+	/**
+	 * @var integer the time in seconds that the messages can remain valid in cache.
+	 * Defaults to 0, meaning the caching is disabled.
+	 */
 	public $cachingDuration = 0;
+	
+	/**
+	 * @var string the ID of the cache application component that is used to cache the messages.
+	 * Defaults to 'cache' which refers to the primary cache application component.
+	 * Set this property to false if you want to disable caching the messages.
+	 */
+	public $cacheID = 'cache';
 	
 	public $enableProfiling = false;
 	
@@ -220,19 +231,13 @@ class TViewSource extends CApplicationComponent
 		$builder = $this->getCommandBuilder();
 		return $builder->createDeleteCommand($this->viewMessageTable, $builder->createColumnCriteria($this->viewMessageTable, array('view_id' => $viewId))->addInCondition('message_id', $messageIds))->execute();
 	}
-	
-	public function updateViewCompleted($viewId, $language, $completed = 1)
-	{
-		$builder = $this->getCommandBuilder();
-		return $builder->createUpdateCommand($this->viewTable, array('completed' => $completed), $builder->createCriteria()->addColumnCondition(array('id' => $viewId, 'language' => $language)))->execute();
-	}
 
-	public function updateViewCreated($viewId, $language, $created = null, $completed = 1)
+	public function updateViewCreated($viewId, $language, $created = null)
 	{
 		if($created === null)
 			$created = date('Y-m-d H:i:s');
 		$builder = $this->getCommandBuilder();
-		return $builder->createUpdateCommand($this->viewTable, array('created' => $created, 'completed' => $completed), $builder->createCriteria()->addColumnCondition(array('id' => $viewId, 'language' => $language)))->execute();
+		return $builder->createUpdateCommand($this->viewTable, array('created' => $created), $builder->createCriteria()->addColumnCondition(array('id' => $viewId, 'language' => $language)))->execute();
 	}
 
 	/**
