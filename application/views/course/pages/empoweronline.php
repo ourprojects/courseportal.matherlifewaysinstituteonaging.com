@@ -78,22 +78,7 @@ foreach(array(
   <h4>{t}Course Lessons{/t}</h4>
   <ul>
     <li> <a href="#lesson-1-slide-1" data-fancybox-group="lesson-1" class="teal lesson-1">{t}Taking Care of You{/t}</a> <a href="#lesson-1-slide-2" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-3" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-4" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-5" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-6" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-7" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-8" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-9" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-10" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-11" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-12" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-13" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-14" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-15" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-16" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-17" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-18" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-19" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-20" data-fancybox-group="lesson-1" class="hide lesson-1"></li>
-    <li> <a href="#lesson-2-slide-1" data-fancybox-group="lesson-2" class="teal lesson-2">{t}Reducing Personal Stress{/t}</a> <a href="#lesson-2-slide-2" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-3" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-4" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-5" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-6" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-7" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-8" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-9" data-fancybox-group="lesson-2" class="hide lesson-2"></a> 
-    <a href="#lesson-2-slide-10" data-fancybox-group="lesson-2" class="hide lesson-2"></a>
-    <a href="#lesson-2-slide-11" data-fancybox-group="lesson-2" class="hide lesson-2"></a>
-    <a href="#lesson-2-slide-12" data-fancybox-group="lesson-2" class="hide lesson-2"></a>
-    <a href="#lesson-2-slide-13" data-fancybox-group="lesson-2" class="hide lesson-2"></a>
-    <a href="#lesson-2-slide-14" data-fancybox-group="lesson-2" class="hide lesson-2"></a>
-    <a href="#lesson-2-slide-15" data-fancybox-group="lesson-2" class="hide lesson-2"></a>
-    <a href="#lesson-2-slide-16" data-fancybox-group="lesson-2" class="hide lesson-2"></a>
-    <a href="#lesson-2-slide-17" data-fancybox-group="lesson-2" class="hide lesson-2"></a>
-    <a href="#lesson-2-slide-18" data-fancybox-group="lesson-2" class="hide lesson-2"></a>
-    <a href="#lesson-2-slide-19" data-fancybox-group="lesson-2" class="hide lesson-2"></a>
-    <a href="#lesson-2-slide-20" data-fancybox-group="lesson-2" class="hide lesson-2"></a>
-    <a href="#lesson-2-slide-21" data-fancybox-group="lesson-2" class="hide lesson-2"></a>
-
-    
-     </li>
+    <li> <a href="#lesson-2-slide-1" data-fancybox-group="lesson-2" class="teal lesson-2">{t}Reducing Personal Stress{/t}</a> <a href="#lesson-2-slide-2" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-3" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-4" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-5" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-6" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-7" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-8" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-9" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-10" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-11" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-12" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-13" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-14" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-15" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-16" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-17" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-18" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-19" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-20" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-21" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-22" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-23" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-24" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-25" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-26" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-27" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-28" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-29" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-30" data-fancybox-group="lesson-2" class="hide lesson-2"></a> </li>
     <li> <a href="#lesson-3-slide-1" data-fancybox-group="lesson-3" class="teal lesson-3"> {t}Communicating Effectively in Challenging Situations{/t} </a> <a href="#lesson-3-slide-2" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-3" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-4" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-5" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-6" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-7" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-8" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-9" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-10" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-11" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-12" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-13" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-14" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-15" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-16" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-17" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-18" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-19" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-20" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-21" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-22" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-23" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-24" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-25" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-26" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-27" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-28" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-29" data-fancybox-group="lesson-3" class="hide lesson-3"></a> </li>
     <li> <a href="#lesson-4-slide-1" data-fancybox-group="lesson-4" class="teal lesson-4"> {t}Normal &amp; Abnormal Aging Changes{/t} </a> <a href="#lesson-4-slide-2" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-3" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-4" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-5" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-6" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-7" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-8" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-9" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-10" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-11" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-12" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-13" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-14" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-15" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-16" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-17" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-18" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-19" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-20" data-fancybox-group="lesson-4" class="hide lesson-4"></a> </li>
     <li> <a href="#lesson-5-slide-1" data-fancybox-group="lesson-5" class="teal lesson-5"> {t}Financial &amp; Legal Issues{/t} </a> <a href="#lesson-5-slide-2" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-3" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-4" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-5" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-6" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-7" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-8" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-9" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-10" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-11" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-12" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-13" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-14" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-15" data-fancybox-group="lesson-5" class="hide lesson-5"></a> </li>
@@ -1942,29 +1927,19 @@ HTML Output:
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
-
-
     <div id="lesson-2-slide-12" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}Steps to Maintain Health &amp; Avoid Stress{/t}</h2>
         <hr />
-        
-        
         <h5>{t}Identify unrealistic expectations, especially your own{/t}</h5>
         <p>{t}You can make changes successfully only when your expectations are realistic. How realistic are yours? Do you often feel anxious because you expect more of yourself than you can achieve? Many caregivers listen only to the 'shoulds' they have been raised with. Women, especially, often believe they "should" be able to do everything themselves, and when that is not possible, they feel guilty or depressed. If you have unrealistic expectations of yourself, then your expectations of what can be changed probably will be unrealistic also. The following story is an example of a caregiver, Rosa, who with her husband, Dean, made constructive changes in what was a difficult, stressful situation.{/t}</p>
         <p>{t}Rosa was devastated when Dean, her husband of 40 years, suffered a sudden, severe stroke that left him partially paralyzed on one side of his body and unable to speak. The stroke was a shock. Rosa's initial response was to become overly protective and do everything for Dean. She was afraid to leave him alone for fear something terrible would happen. Before the stroke, Rosa and Dean had been making retirement plans, which included extensive travel. Those plans were forsaken as they both felt increasingly overwhelmed, fearful, isolated, and depressed. Rosa became extremely fatigued and irritable as Dean became increasingly dependent on her. The visiting nurse talked with them about what Dean could and could not do for himself. She emphasized the importance of Dean maintaining as much independence as possible. It became apparent that Dean could do many things for himself, including writing letters to family and friends. Dean felt better as he became more independent. Rosa was able to be more realistic in her expectations. She realized that Dean's dependence on her was detrimental to their relationship.{/t}</p>
         <p>{t}As Rosa and Dean gradually adapted to living with the stroke, they became less fearful and more hopeful. They began looking at the quality of their remaining life together. They wanted, more than anything, to travel together and decided to take a short trip to see how it would go. The first trip was successful and they felt encouraged to travel more. Rosa found a travel agent who helped them plan trips that accommodated Dean's disabilities. They enjoyed several trips before Dean's death 12 years later. Rosa and Dean responded to this challenge by gaining an understanding of the disease, accepting reality; setting realistic expectations, and changing what could be changed.{/t}</p>
-        
         <h5>{t}Seek and accept support{/t}</h5>
-        
         <p>{t}Many caregivers find it difficult to ask for help. Rosa initially refused help from friends and neighbors. She did everything herself until she started feeling distressed. The expectations she had for herself were overwhelming and unrealistic. It was not until she began seeking support from the visiting nurse, travel agent, and others that she was able to find a way to make changes. Often you can make changes only with the help of others. Seeking and accepting support may be the single most important factor in making constructive changes.{/t}</p>
         <h5>{t}Identify what you still have, rather than focus on what is lost{/t}</h5>
-        
-        
         <p>{t}When Rosa and Dean decided to look for <i>"what remained"</i> in their situation, they hoped that they still had quality in their life together. They looked at what they still had, rather than focusing on what had been lost, and they made changes that were still possible.{/t}</p>
-        
         <p>{t}They found an unexpected <i>'gift'</i> as they made changes and adapted to the illness. Rosa said, <i>'I never would have asked for the stroke to happen, but it was because of it that Dean and I learned what love was all about. I am a different person than I was. I am more understanding, patient, caring, and sensitive to the pain of others.'</i> {/t}</p>
-        
         <p>{t}Many caregivers, as they learn more about themselves, experience personal growth. That is the <i>'gift'</i> that can often be found in difficult times.{/t}</p>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
@@ -1978,17 +1953,14 @@ HTML Output:
         <p>{t}Sam had always been an intense athletic competitor, and sports had been the driving force in his life. At age 45 he had a slight stroke which left him mildly affected. Sam's problem wasn't that he had a stroke; the problem was that he could not let go of wishing that he had not had one. He continuously wanted things to be as they had been. This made him feel angry and frustrated. Fortunately, Sam reached a point of wanting to learn to live with the stroke and to let go of wanting life to be as it had been before.{/t}</p>
         <p>{t}Sam was unable to live in the present until he let go of his desire for things to be as they were. The "if onlys" and "what ifs" were a source of suffering. When Sam let go, he learned to live with the stroke and made changes that helped him develop a satisfying life. What Sam learned also applies to caregivers, as shown in the case of Marsha and Bud.{/t}</p>
         <p>{t}Marsha was the caregiver for her husband, Bud, who had Parkinson's disease. Buds condition worsened and he and Marsha were unable to do any of the things they had done in the past. Marsha continually wanted things to be the way they had been. "If only" became her constant thought: "If only Bud could dress himself," "If only we could go dancing like we used to," "If only Bud had more energy," "If only he could still drive us places." Marsha's unhappiness caused a strain in their relationship. It was only when she and Bud were having a good time playing cards with friends one day that she realized how much valuable time she was wasting by constantly wanting things to be different. She began to let go of "if only" and to accept "what is." In letting go, she found acceptance and peace of mind.{/t}</p>
-        <p>{t}As you reflect on your challenges as a caregiver, consider these questions. What can I change? What must I accept? What can I improve?{/t}</p>
-   
-      </div>
+        <p class="forum">{t}As you reflect on your challenges as a caregiver, consider these questions: What can I change? What must I accept? What can I improve? Post your responses to the Forum.{/t}</p>
+        <img src="<?php echo $this->getImagesUrl('empower/forum_icon.png'); ?>" alt="{t}Forum Icon{/t}"> </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
-    <!-- Lesson 2 Slide 14 -->
     <div id="lesson-2-slide-14" class="course-slide">
       <div class="content">
-        <h2 class="flowers">{t}Steps to Maintain Health &amp; Avoid Stress (continued){/t}</h2>
+        <h2 class="flowers">{t}Steps to Maintain Health &amp; Avoid Stress{/t}</h2>
         <hr />
-        
         <h4>{t}Step 4: Take Action to Manage Your Stress{/t}</h4>
         <p>{t}The fourth step points the way for you to manage and reduce your stress. There are many different tools for managing stress. But you must find what is most effective for you. Proven ways to manage and reduce stress include:{/t}</p>
         <ul>
@@ -1999,10 +1971,9 @@ HTML Output:
           <li>{t}developing plans of action.{/t}</li>
           <li>{t}finding hope and meaning.{/t}</li>
         </ul>
-        
-        <p>{t}Managing your thoughts, beliefs, and perceptions{/t}</p>
+        <h5>{t}Managing your thoughts, beliefs, and perceptions{/t}</h5>
         <p>{t}Thoughts and beliefs are the foundation of experience. They are not only reactions to events but our thoughts and beliefs can also influence events. What we think and believe affects what happens. Managing our thoughts means we have control over how we view things. As a caregiver, there may be times when the only thing you can change is how you view a situation. There are several tools for managing thoughts, beliefs, and perceptions. Two that can be helpful are reframing and self-talk.{/t}</p>
-        <p>{t}Reframing -{/t}</p>
+        <h5>{t}Reframing -{/t}</h5>
         <p>{t}Your frame of reference is the window through which you view the world. It gives meaning to your world. You see things one way, but someone else sees the same circumstances differently. Situations become more stressful when you view them in a negative way. Reframing is learning to look at things in a different way, for example, finding something positive about a difficult situation. Some examples of reframing include:{/t}</p>
         <ul>
           <li>{t}A caregiver who views the behavior of someone with Alzheimer's disease as "purposefully behaving that way to get to me" versus taking the view that "the behavior is a part of the disease."{/t}</li>
@@ -2024,13 +1995,12 @@ HTML Output:
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
-    <!-- Lesson 2 Slide 15 -->
     <div id="lesson-2-slide-15" class="course-slide">
       <div class="content">
-        <h2 class="flowers">{t}Steps to Maintain Health &amp; Avoid Stress (continued){/t}</h2>
+        <h2 class="flowers">{t}Steps to Maintain Health &amp; Avoid Stress{/t}</h2>
         <hr />
-        <p>{t}Self-talk -{/t}</p>
-        <p>{t}Most stress management courses include learning how to use self-talk to promote health. Self-talk is what we say to ourselves. As Ralph Waldo Emerson said, "A man is what he thinks about all day long." What do you think about all day long? What do you say to yourself? Is especially important to notice your self-talk when you suffer setbacks and when you feel anxious, angry, discouraged, or distressed. Negative self-talk statements often begin with the following phrases:{/t}</p>
+        <h5>{t}Self-talk -{/t}</h5>
+        <p>{t}Most stress management courses include learning how to use self-talk to promote health. Self-talk is what we say to ourselves. As Ralph Waldo Emerson said, <i>"A man is what he thinks about all day long."</i> What do you think about all day long? What do you say to yourself? Is especially important to notice your self-talk when you suffer setbacks and when you feel anxious, angry, discouraged, or distressed. Negative self-talk statements often begin with the following phrases:{/t}</p>
         <ul>
           <li>{t}I just can not do...{/t}</li>
           <li>{t}If only I could (or did not) do...{/t}</li>
@@ -2049,12 +2019,11 @@ HTML Output:
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
-    <!-- Lesson 2 Slide 16 -->
     <div id="lesson-2-slide-16" class="course-slide">
       <div class="content">
-        <h2 class="flowers">{t}Steps to Maintain Health &amp; Avoid Stress (continued){/t}</h2>
+        <h2 class="flowers">{t}Steps to Maintain Health &amp; Avoid Stress{/t}</h2>
         <hr />
-        <p>{t}Karen felt angry and discouraged when her mother did not eat the tasty, nutritious meals she prepared for her. She didn't accept the fact that her mother's lack of appetite was caused by the illness. Karen constantly told herself, "No matter what I cook, it is never good enough for mother."{/t}</p>
+        <p>{t}Karen felt angry and discouraged when her mother did not eat the tasty, nutritious meals she prepared for her. She didn't accept the fact that her mother's lack of appetite was caused by the illness. Karen constantly told herself, <i>"No matter what I cook, it is never good enough for mother."</i>{/t}</p>
         <p>{t}This is an example of negative self-talk. Karen became aware that she often thought she was not doing good enough, especially in caring for her mother. These thoughts made her feel like a failure. With determination, patience, and practice, you can change your self-talk from negative to positive. The following steps lead to change:{/t}</p>
         <ul>
           <li>{t}Identify your negative thoughts. Listen to what you say to yourself, especially during difficult times.{/t}</li>
@@ -2064,18 +2033,17 @@ HTML Output:
           <li>{t}Memorize and repeat the chosen statements. This helps establish the habit of positive self-talk.{/t}</li>
           <li>{t}Put your written-statements where you see them frequently. This is a helpful visual reminder.{/t}</li>
         </ul>
-        <p>{t}Karen chose the affirmation , "I am preparing nutritious food. That is enough." In fact, the statements, "I am doing my best. It is good enough," became her frequent affirmation and counteracted her negative thoughts of "not doing good enough."{/t}</p>
+        <p>{t}Karen chose the affirmation , <i>"I am preparing nutritious food. That is enough."</i> In fact, the statements, <i>"I am doing my best. It is good enough," became her frequent affirmation and counteracted her negative thoughts of "not doing good enough."</i>{/t}</p>
         <p>{t}These statements have the dual. purpose of affirming what Karen is doing and helping her let go of the idea that she has control over her mother's appetite. Accepting that . was important. Telling herself that she is doing her best and it is enough is a positive way of saying she is changing what she can and letting go of what she cannot change. Karen's expectations for herself have become more realistic.{/t}</p>
         <p>{t}Practice over time will change negative, habitual thinking. Repeat this activity frequently to identify other negative self-talk Remember, thoughts and attitudes create your reality. Changing your negative thoughts will help you focus on the positive things in your life, rather than on what you do not have.{/t} </p>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
-    <!-- Lesson 2 Slide 17 -->
     <div id="lesson-2-slide-17" class="course-slide">
       <div class="content">
-        <h2 class="flowers">{t}Steps to Maintain Health &amp; Avoid Stress (continued){/t}</h2>
+        <h2 class="flowers">{t}Steps to Maintain Health &amp; Avoid Stress{/t}</h2>
         <hr />
-        <p>{t}CHALLENGING YOUR SELF-TALK{/t}</p>
+        <h4>{t}Challening your Self-Talk{/t}</h4>
         <p>{t}Identify an example of your negative self-talk and the situation when it is most likely to occur.{/t}</p>
         <ol>
           <li>{t}My negative statement:{/t}</li>
@@ -2084,35 +2052,27 @@ HTML Output:
           <li>{t}Repeat the chosen affirmation whenever the above situation occurs.{/t}</li>
         </ol>
         <p>{t}There will be times when you will find it hard to shake off negative thoughts. This is normal. However, paying attention to the frequency and content of these thoughts is the beginning of self-awareness and the possibility of change.{/t}</p>
-        <p>{t}Practicing self-care -{/t}</p>
+        <h5>{t}Practicing self-care -{/t}</h5>
         <p>{t}To be an effective caregiver you need to maintain your own health and spirit, and to nurture yourself. All too often caregivers put their own needs last. Studies show that sacrificing yourself in giving care to another can lead to emotional exhaustion, depression, and illness.{/t}</p>
         <p>{t}Maintaining your health and spirit can reduce your level of stress. It is critical to find activities that help you to stay healthy and nurture yourself. These activities are different for each individual. What works for one person may not work for another. You must find stress-reducing methods that work best for you.{/t}</p>
-        <p>{t}We can learn a lot from a self-care program in Florida called "Getting Well." This is a group of people who are supporting each other in learning to live and feel better. They take part in life-affirming activities such as "laughing, juggling, playing, meditating, painting, journal writing, exercising, and eating nutritiously" They demonstrate the necessity of associating with others who help you maintain your spirit and help you feel loved and supported. To manage stress, it is essential to take breaks from caregiving. Plan them into your schedule, starting immediately; if you have not done so already. Studies show that caregivers often do not take breaks until they are at the "end of their rope" or "burned out."{/t}</p>
+        <p>{t}We can learn a lot from a self-care program in Florida called <i>"Getting Well."</i> This is a group of people who are supporting each other in learning to live and feel better. They take part in life-affirming activities such as <i>"laughing, juggling, playing, meditating, painting, journal writing, exercising, and eating nutritiously."</i> They demonstrate the necessity of associating with others who help you maintain your spirit and help you feel loved and supported. To manage stress, it is essential to take breaks from caregiving. Plan them into your schedule, starting immediately; if you have not done so already. Studies show that caregivers often do not take breaks until they are at the "end of their rope" or "burned out."{/t}</p>
         <p>{t}This serves no one's best interest as your ability to function can be seriously affected. To avoid problems, it is your responsibility to take time off from caregiving to refresh yourself. It is important to the well-being of care receivers that you take breaks. If you do not, they may become increasingly dependent on you. If you take breaks, they will be less isolated and will benefit from having contact with other people. They also need breaks from you. (This is an example of reframing your perception of a situation.){/t} </p>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
-    <!-- Lesson 2 Slide 18 -->
     <div id="lesson-2-slide-18" class="course-slide">
       <div class="content">
-        <h2 class="flowers">{t}Steps to Maintain Health &amp; Avoid Stress (continued){/t}</h2>
+        <h2 class="flowers">{t}Steps to Maintain Health &amp; Avoid Stress{/t}</h2>
         <hr />
-        <p>{t}You are responsible for your own self-care. Practicing self-care means that you:{/t}</p>
+        <img src="<?php echo $this->getImagesUrl('empower/83590515.png'); ?>" alt="{t}Image{/t}">
+        <p>{t}You are responsible for your own self-care. Practicing self-care means that, amongst others, you:{/t}</p>
         <ul>
           <li>{t}learn and use stress reduction techniques;{/t}</li>
           <li>{t}attend to your own health care needs;{/t}</li>
           <li>{t}get proper rest and nutrition;{/t}</li>
-          <li>{t}exercise regularly;{/t}</li>
-          <li>{t}take time off without feeling guilty;{/t}</li>
-          <li>{t}participate in pleasant, nurturing activities;{/t}</li>
-          <li>{t}reward yourself...;{/t}</li>
-          <li>{t}seek and accept the support of others;{/t}</li>
-          <li>{t}seek supportive counseling when you need to, or talk with a trusted counselor, religious advisor, or friend;{/t}</li>
-          <li>{t}identify and acknowledge your feelings;{/t}</li>
-          <li>{t}tell others what you need. Do not assume "they should know;"{/t}</li>
-          <li>{t}change the negative ways you view situations; and{/t}</li>
-          <li>{t}set goals and prioritize.{/t}</li>
         </ul>
+        
+        <!-- 
         <div class="question">
           <p>ARE YOU TAKING CARE OF YOURSELF?</p>
           <p>
@@ -2148,14 +2108,18 @@ HTML Output:
             <input name="button2" type="submit" id="button2" onClick="MM_popupMsg('If you answered \&quot;yes\&quot; to any of these questions, you may be ignoring your own needs.')" value="Submit">
           </p>
         </div>
-        <p>{t}Reflect on what it means to practice selfcare. Consider the items above. How do you fare? Are you caring for yourself as well as you are caring for another? Remember, it is only when we love and nurture ourselves that we are able to love and nurture another. As a caregiver, appreciation and "thank yous" for what you do may be lacking. For example, a person with Alzheimer's disease may be unable to show appreciation for what is done. Everyone has a need for approval. It motivates us to keep going. If you do not receive appreciation from other people, find a way to give it to yourself.{/t}</p>
+        -->
+        
+        <p>{t}Reflect on what it means to practice selfcare. Consider the items above.{/t}</p>
+        <p class="forum">{t}Search the Internet and find other ways to be responsbile for your selfcare. Post your findings to the Forum. Then consider, how do you fare, are you caring for yourself as well as you are caring for another? And post your response to the Forum.{/t}</p>
+        <img src="<?php echo $this->getImagesUrl('empower/forum_icon.png'); ?>" alt="{t}Forum Icon{/t}">
+        <p>{t}Remember, it is only when we love and nurture ourselves that we are able to love and nurture another. As a caregiver, appreciation and "thank yous" for what you do may be lacking. For example, a person with Alzheimer's disease may be unable to show appreciation for what is done. Everyone has a need for approval. It motivates us to keep going. If you do not receive appreciation from other people, find a way to give it to yourself.{/t}</p>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
-    <!-- Lesson 2 Slide 19 -->
     <div id="lesson-2-slide-19" class="course-slide">
       <div class="content">
-        <h2 class="flowers">{t}Steps to Maintain Health &amp; Avoid Stress (continued){/t}</h2>
+        <h2 class="flowers">{t}Steps to Maintain Health &amp; Avoid Stress{/t}</h2>
         <hr />
         <p>{t}What would be helpful for you? Consider the following suggestions:{/t}</p>
         <ul>
@@ -2166,10 +2130,10 @@ HTML Output:
         <p>{t}Carol found a creative way to reward herself for a job well done when her mother could no longer express appreciation. Carol's mother, Irene, had Alzheimer's disease. Irene often expressed frustration and anger at Carol, in spite of the fact that Carol was her mainstay Carol understood the disease process and successfully avoided taking her mother's attacks personally. To give herself a gift of appreciation, Carol bought flowers regularly. She said, "I considered the flowers a gift from Mom to me. It is something she would have done for me if she were well."{/t}</p>
         <p>{t}Memories of past generosity and love from her mother sustained Carol. In buying herself flowers she reminded herself weekly that the gift of love and caring she gave to her mother had first been given to her. At a difficult time she found a way to nurture herself.{/t}</p>
         <p>{t}What are you doing to nurture yourself? Are you choosing healthy activities? Or are you relying on drugs, alcohol, cigarettes, and tranquilizers to handle the emotional and physical burdens of caregiving? According to the National Institute on Drug Abuse, millions of people abuse these drugs to reduce tension and to relax. It is in your best interest to choose healthy, nurturing ways of coping with the difficulties of caregiving.{/t}</p>
-        <p>{t}Getting social support -{/t}</p>
+        <h5>{t}Getting social support -{/t}</h5>
         <p>{t}Caregiving can be a lonely experience. According to the National Family Caregivers Association, caregivers often · report that they feel alone and isolated. Support from family, friends, and others is an important stress buffer. Something as simple as a two-minute telephone call can make you feel cared about and supported. It helps to share your experiences and burdens with a person you trust-a friend, family member, counselor, religious advisor, or support group member-who will listen and understand.{/t}</p>
         <p>{t}Support groups can be helpful when you are going through a difficult time. Sharing with others who are going through similar experiences is a way to give and receive support, and take time out from caregiving duties. You can learn new ways of coping from others in the group, which may include learning to look at the light side of difficult situations with a bit of humor. Sharing lightens the load. A support group is a place to express thoughts and feelings in a confidential setting. Most important, you learn that you are not alone. This can be a wonderful relief. Support groups are available for caregivers and for people with various chronic illnesses. Local hospitals and disease-related associations often have groups available.{/t}</p>
-        <p>{t}Using techniques that lower stress -{/t}</p>
+        <h5>{t}Using techniques that lower stress -{/t}</h5>
         <p>{t}It is of little help to identify your stressors if you do not take action early to reduce them. Recognize obstacles to taking action. These may include:{/t}</p>
         <ul>
           <li>{t}Not giving yourself permission to take care of yourself.{/t}</li>
@@ -2177,18 +2141,22 @@ HTML Output:
           <li>{t}Choosing unrealistic stress-reduction techniques for example, those that are too complicated, lengthy, or difficult for you.{/t}</li>
           <li>{t}Delaying or postponing a stress-reduction activity. For example, planning a break or trip too far into the future to be of help now, when you need it.{/t}</li>
         </ul>
-        <p>{t}Take care of yourself daily Use "tried and true" stress reduction tools that work for you. In addition, learn and incorporate new stress-reducing techniques into your life. There are many worthwhile techniques available. We offer some quick and easy ones that you can fit into your busy life.{/t}</p>
+        <p>{t}Take care of yourself daily Use <i>"tried and true"</i> stress reduction tools that work for you. In addition, learn and incorporate new stress-reducing techniques into your life. There are many worthwhile techniques available. We offer some quick and easy ones that you can fit into your busy life.{/t}</p>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
-    <!-- Lesson 2 Slide 20 -->
     <div id="lesson-2-slide-20" class="course-slide">
       <div class="content">
-        <h2 class="flowers">{t}Steps to Maintain Health &amp; Avoid Stress (continued){/t}</h2>
+        <h2 class="flowers">{t}Steps to Maintain Health &amp; Avoid Stress{/t}</h2>
         <hr />
-        <p>{t}Basic wellness practices -{/t}</p>
+        <img src="<?php echo $this->getImagesUrl('empower/159161086.png'); ?>" alt="{t}Image{/t}">
+        <h5>{t}Basic wellness practices -{/t}</h5>
+        
+        <!--
         <div class="question">
           <p>It is vital to maintain your health and well-being. Ask yourself the questions in the box below.</p>
+        
+      
           <p>
             <input type="checkbox" name="Yes19" id="Yes19">
             <label for="Yes19">Yes</label>
@@ -2267,22 +2235,23 @@ HTML Output:
             <input name="button3" type="submit" id="button3" onClick="MM_popupMsg('If you answered \&quot;yes\&quot; to all of these questions, congratulate yourself. A \&quot;no\&quot; response reflects areas to work on for better health.')" value="Submit">
           </p>
         </div>
+        -->
+        
         <p>{t}Proper diet, adequate sleep, and regular exercise are necessary for all of us, and even more so when we are caregivers. These lifestyle factors increase our resistance to illness and our ability to cope with stressful situations.{/t}</p>
         <p>{t}Exercise promotes better sleep, reduces tension and depression, and increases energy and alertness. If finding time to exercise is a problem, try to incorporate it into your usual day Perhaps the person receiving care can walk or do stretching exercises with you. If necessary do frequent short exercises instead of using large blocks of time. Find activities you enjoy. Walking is considered one of the best and easiest exercises. It helps to reduce psychological tension as well as having physical benefits.{/t}</p>
         <p>{t}Walking 20 minutes a day, three times a week, is very beneficial. If you can not be away 20 minutes, 10-minute walks twice a day or even a five-minute walk are beneficial. Work walking into your life. Walk whenever and wherever you can. Perhaps it is easiest to walk around your block, at the mall, or a nearby park. The next time a friend or family member comes to visit, take time for a short walk. When the care receiver is getting therapy, take a walk around the medical facility.{/t}</p>
-        <p>{t}Breathing for relaxation -{/t}</p>
-        <p>{t}Stressful situations or memories of those situations can cause changes in our breathing. Often the more tense we feel, the more shallow our breathing becomes. · Stress management tools usually include a focus on breathing. The following breathing exercise takes only one or two minutes and you can easily do it anywhere. Use it often to lower stress.{/t}</p>
+        <h5>{t}Breathing for relaxation -{/t}</h5>
+        <p>{t}Stressful situations or memories of those situations can cause changes in our breathing. Often the more tense we feel, the more shallow our breathing becomes. Stress management tools usually include a focus on breathing. The following breathing exercise takes only one or two minutes and you can easily do it anywhere. Use it often to lower stress.{/t}</p>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
-    <!-- Lesson 2 Slide 21 -->
     <div id="lesson-2-slide-21" class="course-slide">
       <div class="content">
-        <h2 class="flowers">{t}Steps to Maintain Health &amp; Avoid Stress (continued){/t}</h2>
+        <h2 class="flowers">{t}Steps to Maintain Health &amp; Avoid Stress{/t}</h2>
         <hr />
-        <p>{t}Meditation -{/t}</p>
+        <h5>{t}Meditation -{/t}</h5>
         <p>{t}The word "meditation" comes from the Sanskrit word medha which, when taken literally, means "doing the wisdom." Meditation aids in relaxation and in achieving physical and mental well-being. Meditation is keeping your attention focused in the moment to quiet the mind and hear your body's inner wisdom. You, too, can learn to meditate. See the "Process of Meditation" box on the next page.{/t}</p>
-        <p>{t}Music -{/t}</p>
+        <h5>{t}Music -{/t}</h5>
         <p>{t}Music is another tool for reducing stress. It can alter the body and the mind. It can induce deep relaxation, act as a stimulant, and take you into other states of consciousness. Music is often used specifically for healing and decreasing stress and tension. Use the following steps as a guideline.{/t}</p>
         <ol>
           <li>{t}Choose soothing music you like.{/t}</li>
@@ -2292,7 +2261,7 @@ HTML Output:
           <li>{t}After the music is finished, open your eyes and notice how you feel.{/t}</li>
         </ol>
         <p>{t}Music is a universal language. Listening to music can be healing for both you and the care receiver, either together or alone. People with dementia, especially, respond to music when they may respond to little else.{/t}</p>
-        <p>{t}Humor -{/t}</p>
+        <h5>{t}Humor -{/t}</h5>
         <p>{t}Caregivers who maintain and foster their sense of humor do better. It is , often hard to find much that is humorous in caregiving, but the secret to succeeding as a caregiver is to find humor in your daily routine. Finding humor does not deny the fact that, at times, your heart is heavy with the pain and sadness of caregiving. Those times will exist, but they can co-exist with laughter and humor.{/t}</p>
         <p>{t}Tears and laughter are closely related. They each offer a release of tension and are often intermingled. Humor does not minimize the seriousness of a situation; rather, it helps you embrace it. Humor can be a helpful tool in many ways, from making us laugh at our shortcomings and impossible situations, reducing anxiety and stress. Laughter relaxes and helps calm emotions, allowing us to regain emotional balance and think more clearly. If you want to laugh, or want someone else to laugh, you may have to find a reason, as George and Alma do.{/t}</p>
         <p>{t}George and Alma watch their favorite comedy show on television every weeknight at 7 P.M. They look forward to it and anticipate laughing together. In addition, Alma and George look for humorous cartoons and jokes to share with each other. The fact that Alma has a disabling medical condition does not mean they can not appreciate laughter.{/t}</p>
@@ -2306,47 +2275,46 @@ HTML Output:
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
-    <!-- Lesson 2 Slide 22 -->
     <div id="lesson-2-slide-22" class="course-slide">
       <div class="content">
-        <h2 class="flowers">{t}Steps to Maintain Health &amp; Avoid Stress (continued){/t}</h2>
+        <h2 class="flowers">{t}Steps to Maintain Health &amp; Avoid Stress{/t}</h2>
         <hr />
-        <p>{t}Developing action plans -{/t}</p>
+        <h5>{t}Developing action plans -{/t}</h5>
         <p>{t}Action plans are tools for change. They can be a useful way to identify and plan specific activities for reducing stress and making change: Feelings of accomplishment are necessary for thriving as a caregiver. Action plans can help you achieve these feelings. Even the smallest action can make a big difference. This was true for Evelyn.{/t}</p>
         <p>{t}Evelyn needed more time for herself during the day She made a plan to take a leisurely; warm tub bath four times a week instead of the always-hurried shower. Evelyn settled her father to watch the news on TV when she took her baths. This worked well for both of them and became an accepted part of their routine. Accomplishing the action plan encouraged Evelyn to make other action plans that made a big difference to her.{/t}</p>
         <p>{t}Feelings of mastery and confidence are usually the result of developing new ways of coping. Use the information presented in this chapter to help you identify your stressors, and improve coping skills. The activity in the box on the next page can be a useful tool for managing stress. This activity can be useful on a regular basis. It will help you assess and cope with current stressors. Since your caregiving situation and stressors continually change, it is important to be aware of when you feel stress and to use stress-reducing tools that work for you. Most important, build stress reduction and nurturing activities into daily life to prevent distress. Be proactive and remember, what is good for you is good for the person receiving care!{/t}</p>
-        <p>{t}Finding hope and meaning -{/t}</p>
+        <h5>{t}Finding hope and meaning -{/t}</h5>
         <p>{t}The ability to find hope and meaning in the caregiving situation enables you not only to survive, but to thrive. Finding meaning and hope are what keeps us going. It is a way to make sense of our circumstances.{/t}</p>
-        <p>{t}In his book Mans Search For Meaning, psychiatrist Viktor Frankl tells of his experience as a long-time prisoner in a prisoner of war camp during World War II. Many of his family members died in the camps. In spite of the fact that he faced death constantly and suffered severe punishment, Dr. Frankl was able to find meaning and hope in his life. He noted that the prisoners who were able to sustain even a flicker of hope were better able to survive the terrible circumstances than those who felt hopeless. He concluded that what did remain, when all else was taken away; was "the last of the human freedoms," the ability to "choose one's attitude in a given set of circumstances." Out of that experience, Frankl's guiding philosophy was born: "To live is to suffer, to survive is to find meaning in the suffering." He also believed that man's need for meaning is universal.{/t}</p>
+        <p>{t}In his book <a href="http://www.amazon.com/Mans-Search-Meaning-Viktor-Frankl/dp/080701429X" target="_blank">Mans Search For Meaning</a>, psychiatrist Viktor Frankl tells of his experience as a long-time prisoner in a prisoner of war camp during World War II. Many of his family members died in the camps. In spite of the fact that he faced death constantly and suffered severe punishment, Dr. Frankl was able to find meaning and hope in his life. He noted that the prisoners who were able to sustain even a flicker of hope were better able to survive the terrible circumstances than those who felt hopeless. He concluded that what did remain, when all else was taken away; was "the last of the human freedoms," the ability to "choose one's attitude in a given set of circumstances." Out of that experience, Frankl's guiding philosophy was born: "To live is to suffer, to survive is to find meaning in the suffering." He also believed that man's need for meaning is universal.{/t}</p>
         <p>{t}The need to find hope and meaning is also important when you are a caregiver for a person with a chronic illness. Uncertainty; loss, and suffering may shake your foundation. After all, you have much at stake. Your world, as you have known it, has changed drastically and you may be left with questions such as, "Why me?" and perhaps, "Where is God?" Questioning often leads to a search for meaning. No one else can tell you what the meaning is for you. It can be a lonely journey.{/t}</p>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
-    <!-- Lesson 2 Slide 23 -->
     <div id="lesson-2-slide-23" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}Steps to Maintain Health &amp; Avoid Stress (continued){/t}</h2>
         <hr />
-        <p>{t}REFRAMING YOUR STRESS{/t}</p>
-        <p>{t}Make a list of those things that you find most difficult or stressful. Be specific. Write at least two (more if you can).{/t}</p>
-        <p>{t}Answer the following questions in relation to each item on your list. Can I ignore this? Or can I let it go?{/t}</p>
-        <p>{t}Can I change anything about this? If so, how can I change it?{/t}</p>
-        <p>{t}If it can not be changed, can I change my perception of it? If so, how? What is a more helpful perception?{/t}</p>
+        <h4>{t}Reframing your Stress{/t}</h4>
+        <p class="forum">{t}Make a list of those things that you find most difficult or stressful. Be specific. Write at least two (more if you can), and post your responses to the Forum. Then, answer the following questions in relation to each item on your list:{/t}</p>
+        <ul class="forum">
+          <li>{t}Can I ignore this? Or can I let it go?{/t}</li>
+          <li>{t}Can I change anything about this? If so, how can I change it?{/t}</li>
+          <li>{t}If it can not be changed, can I change my perception of it? If so, how?{/t}</li>
+          <li>{t}What is a more helpful perception?{/t}</li>
+        </ul>
+        <img src="<?php echo $this->getImagesUrl('empower/forum_icon.png'); ?>" alt="{t}Forum Icon{/t}">
         <p>{t}Select one stressor from your list to work on first. The stressor is: Develop an action plan for addressing this stressor. Be specific and realistic.{/t}</p>
         <p>{t}A search for meaning can be a conscious choice. There are ways to stimulate your search. The following can be helpful:{/t}</p>
         <ul>
-          <li>{t}Ask yourself questions like "What am I to learn from this?" What good can come from this? Am I a better person now? These types of questions can help you open up to possibilities for finding meaning.{/t}</li>
-          <li>{t}Reflect .. Periods of quiet reflection, especially after a difficult time, are important and offer opportunities to learn from the experience.{/t}</li>
-          <li>{t}Talk with a trusted person. Whether this person is a counselor, religious advisor, or friend, sharing can help clarify your thoughts and feelings. As you tell your story; it often takes on meaning.{/t}</li>
-          <li>{t}Write. This is also a way to clarify your thinking. Writing is a way to bring out your thoughts and feelings. Write freely and spontaneously. Do not concern yourself with proper sentence structure or punctuation. Writing is a way to talk to yourself. Re-reading your journal over time provides an understanding of where you were when you started and where you are now. You will probably see changes and find new understanding and meaning.{/t}</li>
-          <li>{t}Seek spiritual renewal. This is especially important when you are facing difficult times. Many caregivers report that faith and prayer help them find comfort, purpose, and meaning. It may be that even when you feel anger because of suffering and sorrow, your need for meaning is greatest.{/t}</li>
+          <li>{t}<b>Ask yourself questions</b> like; <i>"what am I to learn from this?; what good can come from this?; am I a better person now?</i>. These types of questions can help you open up to possibilities for finding meaning.{/t}</li>
+          <li>{t}<b>Reflect</b> .. Periods of quiet reflection, especially after a difficult time, are important and offer opportunities to learn from the experience.{/t}</li>
+          <li>{t}<b>Talk with a trusted person</b>. Whether this person is a counselor, religious advisor, or friend, sharing can help clarify your thoughts and feelings. As you tell your story; it often takes on meaning.{/t}</li>
+          <li>{t}<b>Write</b>. This is also a way to clarify your thinking. Writing is a way to bring out your thoughts and feelings. Write freely and spontaneously. Do not concern yourself with proper sentence structure or punctuation. Writing is a way to talk to yourself. Re-reading your journal over time provides an understanding of where you were when you started and where you are now. You will probably see changes and find new understanding and meaning.{/t}</li>
+          <li>{t}<b>Seek spiritual renewal</b>. This is especially important when you are facing difficult times. Many caregivers report that faith and prayer help them find comfort, purpose, and meaning. It may be that even when you feel anger because of suffering and sorrow, your need for meaning is greatest.{/t}</li>
         </ul>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
-    
-    <!-- Lesson 2 Slide 24 -->
-    
     <div id="lesson-2-slide-24" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}Steps to Maintain Health &amp; Avoid Stress (continued){/t}</h2>
@@ -2354,21 +2322,19 @@ HTML Output:
         <p>{t}Like Frankl, it is hopeful to believe that meaning can be found in difficult and painful experiences. Hope and meaning play a large part in the following story of Margaret and Tim.{/t}</p>
         <p>{t}Tim's frequent visits to his elderly mother, Margaret, in the nursing home, were meaningful to him. Years ago, when Margaret was healthy; she shared some of her beliefs with Tim. She had told him, "If there comes a time when I am not able to recognize you because of Alzheimer's disease, or for any other reason, I want you to know what I believe to be true. I believe that my true essence, my spirit, will always be present, even though my physical body and mind may not be the person you remember. Please know that I am with you. We may not be able to talk with each other as we did in the past, but if you play my favorite music, read poetry, hold my hand, or just be with me, I will feel your love and you will feel mine for you."{/t}</p>
         <p>{t}In sharing her beliefs, Margaret gave Tim the gift of finding meaning in what can be a most difficult and challenging situation. Meaning is all around us. It is the "stuff" of life. Meaning is personal. It is up to each persc1n to find his or her own meaning.{/t}</p>
-        <p>{t}SUMMARY{/t}</p>
-        <p>{t}Are you better acquainted with your stress? Have you identified what you can do to reduce at least one stressor? Do you realize the potential strength in considering your needs and in practicing self-care? Can you find meaning in difficult experiences? Have you learned that often the compassion and care you give to another comes back to you as a gift of meaning?{/t}</p>
+        <h4>{t}Summary{/t}</h4>
+        <p class="forum">{t}Are you better acquainted with your stress? Have you identified what you can do to reduce at least one stressor? Do you realize the potential strength in considering your needs and in practicing self-care? Can you find meaning in difficult experiences? Have you learned that often the compassion and care you give to another comes back to you as a gift of meaning? Post your responses to the Forum.{/t}</p>
+        <img src="<?php echo $this->getImagesUrl('empower/forum_icon.png'); ?>" alt="{t}Forum Icon{/t}">
         <p>{t}Remember that your response to a situation will affect the situation itself. As much as possible, make it be what you want it to be.{/t}</p>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
-    
-    <!-- Lesson 2 Slide 25 -->
-    
     <div id="lesson-2-slide-25" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}Tips for Overcoming Negative Emotions &amp; Reducing Stress{/t}</h2>
         <hr />
-        <p>{t}A Wide variety of mental activities can help caregivers overcome negative emotions and reduce stress. Think about how you might use some of these ideas in your own life.{/t}</p>
-        <ul>
+        <p>{t}A wide variety of mental activities can help caregivers overcome negative emotions and reduce stress. Think about how you might use some of these ideas in your own life.{/t}</p>
+        <ul class="bulletlist">
           <li>{t}Become aware of harmful thought patterns. That is a first step in taking positive action to care for yourself.{/t}</li>
           <li>{t}Pay attention to shallow breathing because it often adds to physical stress.{/t}</li>
           <li>{t}Imagine washing away the stresses of the day during a shower.{/t}</li>
@@ -2382,7 +2348,6 @@ HTML Output:
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
-    <!-- Lesson 2 Slide 26 -->
     <div id="lesson-2-slide-26" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}Tips for Overcoming Negative Emotions &amp; Reducing Stress: Simple Pleasures{/t}</h2>
@@ -2404,7 +2369,8 @@ HTML Output:
           <li>{t}An unexpected breeze on a hot summer's day{/t}</li>
           <li>{t}Having an attached garage... and it is raining{/t}</li>
         </ul>
-        <p>{t}Make and post a 1-5 minute video to You Tube of your simple pleasures.{/t}</p>
+        <h4>{t}Activity{/t}</h4>
+        <p class="forum">{t}Make and post a 1-5 minute video to You Tube of your simple pleasures. Post the link on the Forum for your facilitator.{/t}</p>
       </div>
       <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Complete Module{/t}</a></div>
     </div>
