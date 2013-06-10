@@ -78,7 +78,22 @@ foreach(array(
   <h4>{t}Course Lessons{/t}</h4>
   <ul>
     <li> <a href="#lesson-1-slide-1" data-fancybox-group="lesson-1" class="teal lesson-1">{t}Taking Care of You{/t}</a> <a href="#lesson-1-slide-2" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-3" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-4" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-5" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-6" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-7" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-8" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-9" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-10" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-11" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-12" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-13" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-14" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-15" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-16" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-17" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-18" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-19" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-20" data-fancybox-group="lesson-1" class="hide lesson-1"></li>
-    <li> <a href="#lesson-2-slide-1" data-fancybox-group="lesson-2" class="teal lesson-2">{t}Reducing Personal Stress{/t}</a> <a href="#lesson-2-slide-2" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-3" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-4" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-5" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-6" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-7" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-8" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-9" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-10" data-fancybox-group="lesson-2" class="hide lesson-2"></a> </li>
+    <li> <a href="#lesson-2-slide-1" data-fancybox-group="lesson-2" class="teal lesson-2">{t}Reducing Personal Stress{/t}</a> <a href="#lesson-2-slide-2" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-3" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-4" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-5" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-6" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-7" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-8" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-9" data-fancybox-group="lesson-2" class="hide lesson-2"></a> 
+    <a href="#lesson-2-slide-10" data-fancybox-group="lesson-2" class="hide lesson-2"></a>
+    <a href="#lesson-2-slide-11" data-fancybox-group="lesson-2" class="hide lesson-2"></a>
+    <a href="#lesson-2-slide-12" data-fancybox-group="lesson-2" class="hide lesson-2"></a>
+    <a href="#lesson-2-slide-13" data-fancybox-group="lesson-2" class="hide lesson-2"></a>
+    <a href="#lesson-2-slide-14" data-fancybox-group="lesson-2" class="hide lesson-2"></a>
+    <a href="#lesson-2-slide-15" data-fancybox-group="lesson-2" class="hide lesson-2"></a>
+    <a href="#lesson-2-slide-16" data-fancybox-group="lesson-2" class="hide lesson-2"></a>
+    <a href="#lesson-2-slide-17" data-fancybox-group="lesson-2" class="hide lesson-2"></a>
+    <a href="#lesson-2-slide-18" data-fancybox-group="lesson-2" class="hide lesson-2"></a>
+    <a href="#lesson-2-slide-19" data-fancybox-group="lesson-2" class="hide lesson-2"></a>
+    <a href="#lesson-2-slide-20" data-fancybox-group="lesson-2" class="hide lesson-2"></a>
+    <a href="#lesson-2-slide-21" data-fancybox-group="lesson-2" class="hide lesson-2"></a>
+
+    
+     </li>
     <li> <a href="#lesson-3-slide-1" data-fancybox-group="lesson-3" class="teal lesson-3"> {t}Communicating Effectively in Challenging Situations{/t} </a> <a href="#lesson-3-slide-2" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-3" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-4" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-5" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-6" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-7" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-8" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-9" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-10" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-11" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-12" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-13" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-14" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-15" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-16" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-17" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-18" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-19" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-20" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-21" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-22" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-23" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-24" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-25" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-26" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-27" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-28" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-29" data-fancybox-group="lesson-3" class="hide lesson-3"></a> </li>
     <li> <a href="#lesson-4-slide-1" data-fancybox-group="lesson-4" class="teal lesson-4"> {t}Normal &amp; Abnormal Aging Changes{/t} </a> <a href="#lesson-4-slide-2" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-3" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-4" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-5" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-6" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-7" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-8" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-9" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-10" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-11" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-12" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-13" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-14" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-15" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-16" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-17" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-18" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-19" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-20" data-fancybox-group="lesson-4" class="hide lesson-4"></a> </li>
     <li> <a href="#lesson-5-slide-1" data-fancybox-group="lesson-5" class="teal lesson-5"> {t}Financial &amp; Legal Issues{/t} </a> <a href="#lesson-5-slide-2" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-3" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-4" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-5" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-6" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-7" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-8" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-9" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-10" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-11" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-12" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-13" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-14" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-15" data-fancybox-group="lesson-5" class="hide lesson-5"></a> </li>
@@ -1688,35 +1703,23 @@ HTML Output:
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
-
-
     <div id="lesson-2-slide-5" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}The Stress of Caregiving{/t}</h2>
         <hr />
-        
-        
-                <img src="<?php echo $this->getImagesUrl('empower/92037503.png'); ?>" alt="{t}image{/t}" />
-
-        
+        <img src="<?php echo $this->getImagesUrl('empower/92037503.png'); ?>" alt="{t}image{/t}" />
         <h5>{t}Signs of Stress{/t}</h5>
-        
         <p>{t}The first step in managing stress is to be aware of how it affect you.{/t}</p>
-        
         <p class="forum">{t}On the Forum, post your warning signs and symptoms of stress. Also, search the Internet and locate at least 3 different resources that list stress symptoms, and post them to the Forum.{/t}</p>
-        
-        
-              <img src="<?php echo $this->getImagesUrl('empower/forum_icon.png'); ?>" alt="{t}Forum Icon{/t}" />
-<p>{t}According to the <a href="http://www.cdc.gov/Features/HandlingStress/" target="_blank">CDC</a>, common reactions to a stressful event include:{/t}</p>
-  <ul>
-  	<li>{t}Disbelief and shock{/t}</li>
-    <li>{t}Tension and irritability{/t}</li>
-    <li>{t}Fear and anxiety about the future{/t}</li>
-    <li>{t}Difficulty making decisions{/t}</li>
-    <li>{t}Being numb to one’s feelings{/t}</li>
-  </ul>
-  
-  
+        <img src="<?php echo $this->getImagesUrl('empower/forum_icon.png'); ?>" alt="{t}Forum Icon{/t}" />
+        <p>{t}According to the <a href="http://www.cdc.gov/Features/HandlingStress/" target="_blank">CDC</a>, common reactions to a stressful event include:{/t}</p>
+        <ul>
+          <li>{t}Disbelief and shock{/t}</li>
+          <li>{t}Tension and irritability{/t}</li>
+          <li>{t}Fear and anxiety about the future{/t}</li>
+          <li>{t}Difficulty making decisions{/t}</li>
+          <li>{t}Being numb to one’s feelings{/t}</li>
+        </ul>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
@@ -1724,12 +1727,8 @@ HTML Output:
       <div class="content">
         <h2 class="flowers">{t}Steps to Maintain Health &amp; Avoid Stress{/t}</h2>
         <hr />
-        
-                        <img src="<?php echo $this->getImagesUrl('empower/155236974.png'); ?>" alt="{t}image{/t}" />
-
-        
+        <img src="<?php echo $this->getImagesUrl('empower/155236974.png'); ?>" alt="{t}image{/t}" />
         <p>{t}Whatever causes stress in your life, too much of it can lower your resistance to disease and lead to <i>"burnout."</i> Current research shows that there is a close connection between stress and health. Unrelieved stress is one of many factors that cause illness.{/t}</p>
-        
         <p>{t}Research also shows that thoughts and emotions affect the immune system, which is the first line of defense against disease. It is possible to strengthen the immune system by reducing stress. The following four steps will help you maintain your health and avoid distress:{/t}</p>
         <ol>
           <li>{t}Recognize your warning signs of stress.{/t}</li>
@@ -1745,30 +1744,22 @@ HTML Output:
       <div class="content">
         <h2 class="flowers">{t}Steps to Maintain Health &amp; Avoid Stress{/t}</h2>
         <hr />
-        <h5>{t}Step 1: Recognize Your Warning Signs of Stress{/t} -</h5>
+        <h4>{t}Step 1: Recognize Your Warning Signs of Stress{/t} -</h4>
         <p>{t}The first step in managing stress is to be aware of how it affects you. What are your warning signs and symptoms of stress? The following are signs that may occur when you experience an unusual amount of stress. Answering these questions can help you identify your own warning signs.{/t}</p>
-        
-        <p style="text-align:center;">{t}What is usually your earliest sign of stress?{/t}</p>
-        
+        <p style="text-align:center;"><i>{t}What is usually your earliest sign of stress?{/t}</i></p>
         <p>{t}It is important to recognize stress early and do something about it, before it causes you serious problems. For one caregiver, the early sign might be increased irritability. For another, it might be lying awake for hours before falling asleep. For another, it might be fatigue and a lack of energy.{/t}</p>
         <p>{t}Sometimes, too, when we are involved in a situation, we may not listen to our early warning signs, but they are voiced in the words of others:{/t}</p>
-        
         <ul>
-        	<li>{t}<i>"You look so tired,"</i>{/t}</li>
-            <li>{t}<i>"You get upset so easily lately,"</i>{/t}</li>
-            <li>{t}<i>"Why are you snapping at me?"</i>{/t}</li>
-         </ul>
-        
+          <li>{t}<i>"You look so tired,"</i>{/t}</li>
+          <li>{t}<i>"You get upset so easily lately,"</i>{/t}</li>
+          <li>{t}<i>"Why are you snapping at me?"</i>{/t}</li>
+        </ul>
         <p>{t}If you hear such statements, it is a <i>"red light"</i> warning sign. Just as a flashing red light on your car's dashboard warns you that something is wrong with your car, we also display warning signals. What happens if we ignore the early red flashing light on the car's dashboard? What happens if we ignore our personal early warning signals?{/t}</p>
-        
         <p class="forum">{t}Do you listen to your early warning signals? What are they? And what do you do about them? Post your responses to the Forum.{/t}</p>
-        
-                      <img src="<?php echo $this->getImagesUrl('empower/forum_icon.png'); ?>" alt="{t}Forum Icon{/t}" />
-
-        
+        <img src="<?php echo $this->getImagesUrl('empower/forum_icon.png'); ?>" alt="{t}Forum Icon{/t}" />
         <p>{t}Warning signs usually mean we need to stop, valuate what is happening, and make some changes. The earlier warning signals are recognized, the greater the chance of avoiding or reducing the destructive effects of stress.{/t}</p>
-      
-      <!--
+        
+        <!--
       
         <div class="question">
           <p>
@@ -1871,16 +1862,16 @@ HTML Output:
             <input name="button" type="submit" id="button" onClick="MM_popupMsg('A \&quot;yes\&quot; answer to even one or two of these questions can indicate stress that has become debilitating.')" value="Submit">
           </p>
         </div>
-        -->
+        --> 
         
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
     <div id="lesson-2-slide-8" class="course-slide">
       <div class="content">
-        <h2 class="flowers">{t}Steps to Maintain Health &amp; Avoid Stress (continued){/t}</h2>
+        <h2 class="flowers">{t}Steps to Maintain Health &amp; Avoid Stress{/t}</h2>
         <hr />
-        <p>{t}Step 2: Identify Your Sources of Caregiving Stress -{/t}</p>
+        <h4>{t}Step 2: Identify Your Sources of Caregiving Stress -{/t}</h4>
         <p>{t}The second step in managing stress is to recognize what causes your stress. Not all stressors are the result of caregiving. Other sources can affect your ability to be a caregiver. The following questions include many common sources of stress. Thinking about these questions can help you recognize some of your own sources.{/t}</p>
         <ol>
           <li>{t}Are you experiencing many demands on your time, energy, or money? What are they?{/t}</li>
@@ -1898,15 +1889,16 @@ HTML Output:
           <li>{t}Is it painful to watch the care receiver's condition get worse?{/t}</li>
           <li>{t}Are there other problems with children, marriage, job, finances, or health? What are they?{/t}</li>
         </ol>
-        <p>{t}Consider your "yes" answers carefully. The sources of stress you have identified are indicators for change. Use the awareness you have gained in the first two steps to make helpful changes.{/t}</p>
-      </div>
+        <p>{t}Consider your <i>"yes"</i> answers carefully. The sources of stress you have identified are indicators for change. Use the awareness you have gained in the first two steps to make helpful changes.{/t}</p>
+        <p class="forum">{t}Which of the above listed common sources of stress can you identify with the most? Please post your response to the Forum.{/t}</p>
+        <img src="<?php echo $this->getImagesUrl('empower/forum_icon.png'); ?>" alt="{t}Forum Icon{/t}" /> </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
-    <!-- Lesson 2 Slide 9 -->
     <div id="lesson-2-slide-9" class="course-slide">
       <div class="content">
-        <h2 class="flowers">{t}Steps to Maintain Health &amp; Avoid Stress (continued){/t}</h2>
+        <h2 class="flowers">{t}Steps to Maintain Health &amp; Avoid Stress{/t}</h2>
         <hr />
+        <img src="<?php echo $this->getImagesUrl('empower/120277481.png'); ?>" alt="{t}Image{/t}" />
         <p>{t}The following story is an example of a caregiver who recognized the source of her distress and made changes to better manage the situation.{/t}</p>
         <p>{t}Ernestine was increasingly fatigued, irritable, and depressed with the responsibility of caring for her husband, Richard, who had Parkinson's disease. Richard's condition was steadily getting worse. He was bed-bound and needed help with many functions. Other family members had not offered to help, and Ernestine felt abandoned, alone, angry, and overwhelmed. A few friends and neighbors had offered to help but Ernestine refused. When she started having health problems, it became clear that something had to change. She had to have help.{/t}</p>
         <p>{t}Because Ernestine had difficulty asking for help, she devised a simple plan that would give others an opportunity to help without having to be asked. She made a list of tasks she needed help with and posted it on the refrigerator. The list included such things as vacuuming the living room, grocery shopping, staying with Richard so she could go to church, weeding the garden, picking up audio books at the library, picking up medications at the pharmacy, and preparing food. When visitors offered to help, Ernestine referred them to the list, suggesting they choose a task that suited them. This proved to be a successful plan for everyone.{/t}</p>
@@ -1914,26 +1906,24 @@ HTML Output:
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
-    <!-- Lesson 2 Slide 10 -->
     <div id="lesson-2-slide-10" class="course-slide">
       <div class="content">
-        <h2 class="flowers">{t}Steps to Maintain Health &amp; Avoid Stress (continued){/t}</h2>
+        <h2 class="flowers">{t}Steps to Maintain Health &amp; Avoid Stress{/t}</h2>
         <hr />
-        <p>{t}Step 3: Identify What You Can and Cannot Change -{/t}</p>
+        <h4>{t}Step 3: Identify What You Can and Cannot Change -{/t}</h4>
         <p>{t}A major challenge of caregiving is to not only survive, but to rebuild your life and thrive. This is possible once you know the sources and signs of your stress. Then you can determine those you can do something about and those that are beyond your control. Step three is to identify what you can and cannot change{/t}</p>
         <p>{t}Identifying what you can change gives you a sense of control over events. However, it is not easy to determine what can and cannot be changed. Too often people try to change things they have no control over. For example, someone who focuses on trying to change another person usually ends up more frustrated. The only person you can change is yourself. You may be able to change a situation, how you respond to it, or your perception of it, but you can not change another person. It wastes valuable time and energy trying to change what is outside of your control. Some situations can not be changed. However, you may be able to manage them better if you change your outlook about a situation, or decide to 'roll with the punches.'{/t}</p>
         <p>{t}The frustration and hopelessness that result from trying to change the unchangeable are self-defeating and can adversely affect a relationship, as in the case of Hal and Sue.{/t}</p>
         <p>{t}Sue and Hal had been a socially active couple. Sue was diagnosed with early Parkinson's disease and gradually started backing out of social plans because she did not feel up to it. Since the beginning of the disease Sue has been on a roller coaster of having good days and bad days. Hal encourages Sue to go out when she does not feel like it, urging her to 'snap out of it.' He wants things to remain as they were.{/t}</p>
         <p>{t}Hal is frustrated in his attempts to change the effect of the disease on their lives. By not accepting Sue's feelings, he is adding stress to their relationship. But recently he has learned more about Parkinson's disease and is trying to be more realistic and flexible about what he can and cannot change. Flexibility is crucial. A Japanese saying is:{/t}</p>
-        <p>{t}'In a storm, it is the bamboo, the flexible tree, that can bend with the wind and survive. The rigid tree that resists the wind falls, victim of its own insistence on control.'{/t}</p>
+        <blockquote style="text-align:center;">{t}'In a storm, it is the bamboo, the flexible tree, that can bend with the wind and survive. The rigid tree that resists the wind falls, victim of its own insistence on control.'{/t}</blockquote>
         <p>{t}Bending with the wind is crucial to surviving the winds of change, including those involved in caregiving. At times, both you and the care receiver may feel a loss of control over your lives. While feeling in control is important, sometimes it can be me a problem because the more we try to control, the less control we seem to have. Being flexible can help us keep a positive attitude, despite hardships.{/t}</p>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
-    <!-- Lesson 2 Slide 11 -->
     <div id="lesson-2-slide-11" class="course-slide">
       <div class="content">
-        <h2 class="flowers">{t}Steps to Maintain Health &amp; Avoid Stress (continued){/t}</h2>
+        <h2 class="flowers">{t}Steps to Maintain Health &amp; Avoid Stress{/t}</h2>
         <hr />
         <p>{t}Use the following guidelines to look at your situation and to determine what can and cannot be changed:{/t}</p>
         <ol>
@@ -1944,43 +1934,62 @@ HTML Output:
           <li>{t}Identify what you still have, rather than focus on what is lost.{/t}</li>
           <li>{t}Let go of what cannot be changed.{/t}</li>
         </ol>
-        <p>{t}Accept the reality of your caregiving situation{/t}</p>
+        <h5>{t}Accept the reality of your caregiving situation{/t}</h5>
         <p>{t}When making changes it is necessary, but not always easy; to accept reality. We often deny things that hurt, and that can keep us from seeing a situation as it really is. Jane heard the doctor tell Joe that he had a serious illness. He also told Joe he would need more rest and help with certain daily activities. Still, Jane found herself feeling annoyed when Joe took frequent naps, especially since she was taking on more responsibility for managing things at home. It took time for Jane to stop denying, and start accepting, the full impact of the disease. It was then that she was able to see realistically what could and could not be changed.{/t}</p>
         <p>{t}Jane is coping in a more adaptive way. However, Joe's mother denied the seriousness of the disease long after Jane came to terms with it. Family members may take different lengths of time to accept reality, which can add to the stress of caregiving.{/t}</p>
-        <p>{t}Educate yourself about the care receiver's disease{/t}</p>
+        <h5>{t}Educate yourself about the care receiver's disease{/t}</h5>
         <p>{t}You will be better able to identify what you can and cannot change when you understand the disease. For example, without knowledge about the communication abilities of someone with Alzheimer's disease, you may try to reason with the person or expect him to tell someone something you consider easy to remember. This will probably frustrate both of you. There are many sources of information about specific diseases, including your personal physician, medical libraries, and associations related to specific diseases, such as Alzheimer's and Parkinson's disease. If you have access to a computer that is linked to the Internet, you can find a wealth of current information on diseases and disease-related associations.{/t}</p>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
-    <!-- Lesson 2 Slide 12 -->
+
+
     <div id="lesson-2-slide-12" class="course-slide">
       <div class="content">
-        <h2 class="flowers">{t}Steps to Maintain Health &amp; Avoid Stress (continued){/t}</h2>
+        <h2 class="flowers">{t}Steps to Maintain Health &amp; Avoid Stress{/t}</h2>
         <hr />
-        <p>{t}Identify unrealistic expectations, especially your own{/t}</p>
+        
+        
+        <h5>{t}Identify unrealistic expectations, especially your own{/t}</h5>
         <p>{t}You can make changes successfully only when your expectations are realistic. How realistic are yours? Do you often feel anxious because you expect more of yourself than you can achieve? Many caregivers listen only to the 'shoulds' they have been raised with. Women, especially, often believe they "should" be able to do everything themselves, and when that is not possible, they feel guilty or depressed. If you have unrealistic expectations of yourself, then your expectations of what can be changed probably will be unrealistic also. The following story is an example of a caregiver, Rosa, who with her husband, Dean, made constructive changes in what was a difficult, stressful situation.{/t}</p>
         <p>{t}Rosa was devastated when Dean, her husband of 40 years, suffered a sudden, severe stroke that left him partially paralyzed on one side of his body and unable to speak. The stroke was a shock. Rosa's initial response was to become overly protective and do everything for Dean. She was afraid to leave him alone for fear something terrible would happen. Before the stroke, Rosa and Dean had been making retirement plans, which included extensive travel. Those plans were forsaken as they both felt increasingly overwhelmed, fearful, isolated, and depressed. Rosa became extremely fatigued and irritable as Dean became increasingly dependent on her. The visiting nurse talked with them about what Dean could and could not do for himself. She emphasized the importance of Dean maintaining as much independence as possible. It became apparent that Dean could do many things for himself, including writing letters to family and friends. Dean felt better as he became more independent. Rosa was able to be more realistic in her expectations. She realized that Dean's dependence on her was detrimental to their relationship.{/t}</p>
         <p>{t}As Rosa and Dean gradually adapted to living with the stroke, they became less fearful and more hopeful. They began looking at the quality of their remaining life together. They wanted, more than anything, to travel together and decided to take a short trip to see how it would go. The first trip was successful and they felt encouraged to travel more. Rosa found a travel agent who helped them plan trips that accommodated Dean's disabilities. They enjoyed several trips before Dean's death 12 years later. Rosa and Dean responded to this challenge by gaining an understanding of the disease, accepting reality; setting realistic expectations, and changing what could be changed.{/t}</p>
-        <p>{t}Seek and accept support{/t}</p>
+        
+        <h5>{t}Seek and accept support{/t}</h5>
+        
         <p>{t}Many caregivers find it difficult to ask for help. Rosa initially refused help from friends and neighbors. She did everything herself until she started feeling distressed. The expectations she had for herself were overwhelming and unrealistic. It was not until she began seeking support from the visiting nurse, travel agent, and others that she was able to find a way to make changes. Often you can make changes only with the help of others. Seeking and accepting support may be the single most important factor in making constructive changes.{/t}</p>
-        <p>{t}Identify what you still have, rather than focus on what is lost{/t}</p>
-        <p>{t}When Rosa and Dean decided to look for "what remained" in their situation, they hoped that they still had quality in their life together. They looked at what they still had, rather than focusing on what had been lost, and they made changes that were still possible.{/t}</p>
-        <p>{t}They found an unexpected 'gift' as they made changes and adapted to the illness. Rosa said, 'I never would have asked for the stroke to happen, but it was because of it that Dean and I learned what love was all about. I am a different person than I was. I am more understanding, patient, caring, and sensitive to the pain of others. Many caregivers, as they learn more about themselves, experience personal growth. That is the 'gift' that can often be found in difficult times.{/t}</p>
+        <h5>{t}Identify what you still have, rather than focus on what is lost{/t}</h5>
+        
+        
+        <p>{t}When Rosa and Dean decided to look for <i>"what remained"</i> in their situation, they hoped that they still had quality in their life together. They looked at what they still had, rather than focusing on what had been lost, and they made changes that were still possible.{/t}</p>
+        
+        <p>{t}They found an unexpected <i>'gift'</i> as they made changes and adapted to the illness. Rosa said, <i>'I never would have asked for the stroke to happen, but it was because of it that Dean and I learned what love was all about. I am a different person than I was. I am more understanding, patient, caring, and sensitive to the pain of others.'</i> {/t}</p>
+        
+        <p>{t}Many caregivers, as they learn more about themselves, experience personal growth. That is the <i>'gift'</i> that can often be found in difficult times.{/t}</p>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
-    <!-- Lesson 2 Slide 13 -->
     <div id="lesson-2-slide-13" class="course-slide">
       <div class="content">
-        <h2 class="flowers">{t}Steps to Maintain Health &amp; Avoid Stress (continued){/t}</h2>
+        <h2 class="flowers">{t}Steps to Maintain Health &amp; Avoid Stress{/t}</h2>
         <hr />
-        <p>{t}Let go of what cannot be changed{/t}</p>
+        <h5>{t}Let go of what cannot be changed{/t}</h5>
         <p>{t}It is natural to want to hold on to things as they were. But letting go of what you cannot change is accepting the situation as it is. It releases you from the need to control what you cannot change. Letting go is a way to cooperate with the inevitable. It releases new energy for accepting reality and seeing new possibilities. Sam is a prime example of someone who is learning to let go.{/t}</p>
         <p>{t}Sam had always been an intense athletic competitor, and sports had been the driving force in his life. At age 45 he had a slight stroke which left him mildly affected. Sam's problem wasn't that he had a stroke; the problem was that he could not let go of wishing that he had not had one. He continuously wanted things to be as they had been. This made him feel angry and frustrated. Fortunately, Sam reached a point of wanting to learn to live with the stroke and to let go of wanting life to be as it had been before.{/t}</p>
         <p>{t}Sam was unable to live in the present until he let go of his desire for things to be as they were. The "if onlys" and "what ifs" were a source of suffering. When Sam let go, he learned to live with the stroke and made changes that helped him develop a satisfying life. What Sam learned also applies to caregivers, as shown in the case of Marsha and Bud.{/t}</p>
         <p>{t}Marsha was the caregiver for her husband, Bud, who had Parkinson's disease. Buds condition worsened and he and Marsha were unable to do any of the things they had done in the past. Marsha continually wanted things to be the way they had been. "If only" became her constant thought: "If only Bud could dress himself," "If only we could go dancing like we used to," "If only Bud had more energy," "If only he could still drive us places." Marsha's unhappiness caused a strain in their relationship. It was only when she and Bud were having a good time playing cards with friends one day that she realized how much valuable time she was wasting by constantly wanting things to be different. She began to let go of "if only" and to accept "what is." In letting go, she found acceptance and peace of mind.{/t}</p>
         <p>{t}As you reflect on your challenges as a caregiver, consider these questions. What can I change? What must I accept? What can I improve?{/t}</p>
-        <p>{t}Step 4: Take Action to Manage Your Stress{/t}</p>
+   
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
+    <!-- Lesson 2 Slide 14 -->
+    <div id="lesson-2-slide-14" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Steps to Maintain Health &amp; Avoid Stress (continued){/t}</h2>
+        <hr />
+        
+        <h4>{t}Step 4: Take Action to Manage Your Stress{/t}</h4>
         <p>{t}The fourth step points the way for you to manage and reduce your stress. There are many different tools for managing stress. But you must find what is most effective for you. Proven ways to manage and reduce stress include:{/t}</p>
         <ul>
           <li>{t}managing your thoughts, beliefs, and perceptions.{/t}</li>
@@ -1990,14 +1999,7 @@ HTML Output:
           <li>{t}developing plans of action.{/t}</li>
           <li>{t}finding hope and meaning.{/t}</li>
         </ul>
-      </div>
-      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
-    </div>
-    <!-- Lesson 2 Slide 14 -->
-    <div id="lesson-2-slide-14" class="course-slide">
-      <div class="content">
-        <h2 class="flowers">{t}Steps to Maintain Health &amp; Avoid Stress (continued){/t}</h2>
-        <hr />
+        
         <p>{t}Managing your thoughts, beliefs, and perceptions{/t}</p>
         <p>{t}Thoughts and beliefs are the foundation of experience. They are not only reactions to events but our thoughts and beliefs can also influence events. What we think and believe affects what happens. Managing our thoughts means we have control over how we view things. As a caregiver, there may be times when the only thing you can change is how you view a situation. There are several tools for managing thoughts, beliefs, and perceptions. Two that can be helpful are reframing and self-talk.{/t}</p>
         <p>{t}Reframing -{/t}</p>
@@ -2408,62 +2410,51 @@ HTML Output:
     </div>
     <!-- need this final div here to close lesson-2 --> 
   </div>
-  
-  
-  
-   <div id="lesson-3">
+  <div id="lesson-3">
     <div id="lesson-3-slide-1" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}Communicating Effectively in Challenging Situations{/t}</h2>
         <hr />
         <img src="<?php echo $this->getImagesUrl('empower/168357025.png'); ?>" alt="{t}image{/t}">
-      
-  <p>{t}This module contains four main sections:{/t}</p>
-  <ul>
-    <li>{t}Communicating to Take Care of You{/t}</li>
-    <li>{t}Expressing Yourself Under Special Circumstances{/t}</li>
-    <li>{t}Challenging Communication Styles{/t}</li>
-    <li>{t}Setting your Goals and Making Action Plans{/t}</li>
-  </ul>
-  <p>{t}Many caregivers say one of their biggest challenges involves uttering the word <em>"No"</em>. The feeling is that saying no is somehow not permissible. If you feel this way, ask yourself:{/t}</p>
-  <ol>
-    <li>{t}<em>Is there courage and nobility in saying nothing and burning out?</em>{/t}</li>
-    <li>{t}<em>Or does true courage and nobility lie in taking care of yourself so you can be a caring helper longer?</em>{/t}</li>
-  </ol>
-  <p>{t}Keep those questions in mind as we discuss in this module tools for dealing with these caregiving challenges:{/t}</p>
-  <ul>
-    <li>{t}setting limits{/t}</li>
-    <li>{t}asking for help{/t}</li>
-    <li>{t}expressing and responding to criticism{/t}</li>
-    <li>{t}expressing anger{/t}</li>
-  </ul>
-  <p>{t}We will also discuss how to communicate more effectively under special circumstances and with people who use the following communication styles:{/t}</p>
-  <ul>
-    <li>{t}Passive/peacekeeping{/t}</li>
-    <li>{t}Aggressive/pitbull{/t}</li>
-    <li>{t}Factual/computer{/t}</li>
-  </ul>
-      
+        <p>{t}This module contains four main sections:{/t}</p>
+        <ul>
+          <li>{t}Communicating to Take Care of You{/t}</li>
+          <li>{t}Expressing Yourself Under Special Circumstances{/t}</li>
+          <li>{t}Challenging Communication Styles{/t}</li>
+          <li>{t}Setting your Goals and Making Action Plans{/t}</li>
+        </ul>
+        <p>{t}Many caregivers say one of their biggest challenges involves uttering the word <em>"No"</em>. The feeling is that saying no is somehow not permissible. If you feel this way, ask yourself:{/t}</p>
+        <ol>
+          <li>{t}<em>Is there courage and nobility in saying nothing and burning out?</em>{/t}</li>
+          <li>{t}<em>Or does true courage and nobility lie in taking care of yourself so you can be a caring helper longer?</em>{/t}</li>
+        </ol>
+        <p>{t}Keep those questions in mind as we discuss in this module tools for dealing with these caregiving challenges:{/t}</p>
+        <ul>
+          <li>{t}setting limits{/t}</li>
+          <li>{t}asking for help{/t}</li>
+          <li>{t}expressing and responding to criticism{/t}</li>
+          <li>{t}expressing anger{/t}</li>
+        </ul>
+        <p>{t}We will also discuss how to communicate more effectively under special circumstances and with people who use the following communication styles:{/t}</p>
+        <ul>
+          <li>{t}Passive/peacekeeping{/t}</li>
+          <li>{t}Aggressive/pitbull{/t}</li>
+          <li>{t}Factual/computer{/t}</li>
+        </ul>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Start Module &raquo;{/t}</a></div>
     </div>
-  
-  
-  
-   <div id="lesson-3-slide-2" class="course-slide">
+    <div id="lesson-3-slide-2" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}Communicating Effectively in Challenging Situations{/t}</h2>
         <hr />
         <img src="<?php echo $this->getImagesUrl('empower/here.png'); ?>" alt="{t}image{/t}">
-      <p>{t}Closing{/t}</p>
-  
-   </div>
+        <p>{t}Closing{/t}</p>
+      </div>
       <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Complete Module{/t}</a></div>
     </div>
     <!-- need this final div here to close lesson-2 --> 
   </div>
-  
-  
   <div id="lesson-4">
     <div id="lesson-4-slide-1" class="course-slide">
       <div class="content">
