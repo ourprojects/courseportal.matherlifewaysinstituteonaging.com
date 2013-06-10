@@ -231,19 +231,13 @@ class TViewSource extends CApplicationComponent
 		$builder = $this->getCommandBuilder();
 		return $builder->createDeleteCommand($this->viewMessageTable, $builder->createColumnCriteria($this->viewMessageTable, array('view_id' => $viewId))->addInCondition('message_id', $messageIds))->execute();
 	}
-	
-	public function updateViewCompleted($viewId, $language, $completed = 1)
-	{
-		$builder = $this->getCommandBuilder();
-		return $builder->createUpdateCommand($this->viewTable, array('completed' => $completed), $builder->createCriteria()->addColumnCondition(array('id' => $viewId, 'language' => $language)))->execute();
-	}
 
-	public function updateViewCreated($viewId, $language, $created = null, $completed = 1)
+	public function updateViewCreated($viewId, $language, $created = null)
 	{
 		if($created === null)
 			$created = date('Y-m-d H:i:s');
 		$builder = $this->getCommandBuilder();
-		return $builder->createUpdateCommand($this->viewTable, array('created' => $created, 'completed' => $completed), $builder->createCriteria()->addColumnCondition(array('id' => $viewId, 'language' => $language)))->execute();
+		return $builder->createUpdateCommand($this->viewTable, array('created' => $created), $builder->createCriteria()->addColumnCondition(array('id' => $viewId, 'language' => $language)))->execute();
 	}
 
 	/**
