@@ -1610,7 +1610,6 @@ HTML Output:
     </div>
     <!-- need this final div here to close lesson-1 --> 
   </div>
-  
   <div id="lesson-2">
     <div id="lesson-2-slide-1" class="course-slide">
       <div class="content">
@@ -1624,11 +1623,7 @@ HTML Output:
         </ul>
         <p>{t}This module explores the stress of caregiving. It will help you identify and understand your particular stressors, challenges, and strengths. You can then plan strategies that help you cope, change, and reduce stress. A basic premise of this chapter is that each of us has a reservoir of strength. The challenge is to identify our strengths build on them.{/t}</p>
         <p class="forum">{t}Before you get started, post to the Forum your current stressors, so at the end of this module we may recall them.{/t}</p>
-        
-                <img src="<?php echo $this->getImagesUrl('empower/forum_icon.png'); ?>" alt="{t}Forum Icon{/t}" />
-
-        
-      </div>
+        <img src="<?php echo $this->getImagesUrl('empower/forum_icon.png'); ?>" alt="{t}Forum Icon{/t}" /> </div>
       <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Start Module &raquo;{/t}</a></div>
     </div>
     <div id="lesson-2-slide-2" class="course-slide">
@@ -1638,13 +1633,9 @@ HTML Output:
         <p>{t}There has been so much written about stress it has become a household word. Studies show that a certain amount of stress is helpful. It can challenge us to change and motivate us to do things we might not do otherwise. However, when the amount of stress overwhelms our ability to cope with it, we feel <i>'distress'</i> or <i>'burnout.'</i>{/t}</p>
         <p>{t}Distress is <i>'suffering of mind or body; severe physical or mental strain.'</i> As a caregiver, you no doubt have increased stress in your life, whether you are caring for a mother with early Parkinson's disease, who is still able to care for her personal needs, or a spouse who does not recognize you because of advanced Alzheimer's disease.{/t}</p>
         <p class="forum">{t}Please think about the last time you were under distress. Post your response to the Forum.{/t}</p>
-                        <img src="<?php echo $this->getImagesUrl('empower/forum_icon.png'); ?>" alt="{t}Forum Icon{/t}" />
-
-        
-        <p>{t}Each caregiving situation is unique. What is stressful for you may not be stressful for someone else. In his book <a href="http://www.amazon.com/The-Survivor-Personality-Stronger-Difficulties/dp/0399522301" target="_blank">The Survivor Personality</a>, AI Siebert says, <i>"there is no stress until you feel a strain."</i> Since the feeling of stress is subjective and unique to each individual, it is difficult to define objectively. The stress you feel is not only the result of your caregiving situation, it is all of your perception of it. Your stress will increase or decrease depending on how you perceive your circumstances. And your perception will affect how you respond.{/t}</p>
-       
-       
-       
+        <img src="<?php echo $this->getImagesUrl('empower/forum_icon.png'); ?>" alt="{t}Forum Icon{/t}" />
+        <p>{t}Each caregiving situation is unique. What is stressful for you may not be stressful for someone else. In his book <a href="http://www.amazon.com/The-Survivor-Personality-Stronger-Difficulties/dp/0399522301" target="_blank">The Survivor Personality</a>, AI Siebert says, <i>"there is no stress until you feel a strain."</i>{/t}</p>
+        <p>{t}Since the feeling of stress is subjective and unique to each individual, it is difficult to define objectively. The stress you feel is not only the result of your caregiving situation, it is all of your perception of it. Your stress will increase or decrease depending on how you perceive your circumstances. And your perception will affect how you respond.{/t}</p>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
@@ -1652,8 +1643,7 @@ HTML Output:
       <div class="content">
         <h2 class="flowers">{t}The Stress of Caregiving{/t}</h2>
         <hr />
-        
-         <h4>{t}Factors That Affect Stress{/t}</h4>
+        <h4>{t}Factors That Affect Stress{/t}</h4>
         <p>{t}Your level of stress is influenced by many factors, including:{/t}</p>
         <ul>
           <li>{t}whether your caregiving is voluntary or not;{/t}</li>
@@ -1662,31 +1652,32 @@ HTML Output:
           <li>{t}your caregiving situation; and{/t}</li>
           <li>{t}whether support is available.{/t}</li>
         </ul>
-        <p>{t}Whether your caregiving is voluntary or not -{/t}</p>
+        <h5>{t}Whether your caregiving is voluntary or not -{/t}</h5>
         <p>{t}Many people become caregivers voluntarily. Others acquire the role because no one else is available. When you become a caregiver voluntarily, you are making a choice. However, if you "inherited" the job and feel you had no choice, the chances are greater for experiencing strain, distress, and resentment. Nancy became a caregiver because no one else was available.{/t}</p>
         <p>{t}Nancy could not have been more surprised when the visiting nurse asked her if she was the primary caregiver for her mother in-law, Joan. Nancy was fond of Joan. She called and stopped by frequently to see how Joan was managing, but had not thought of herself as the primary caregiver. It was apparent that Joan's medical condition was worsening and she was becoming increasingly weak Nancy realized there were no other children or relatives available, so she agreed, although somewhat reluctantly, to be Joan's caregiver. Nancy felt anxious and uncertain about what it meant to be a primary caregiver and whether she had the necessary skills to perform the role.{/t}</p>
         <p>{t}Luckily, Nancy and Joan had a good relationship and they were able to communicate openly, minimizing some of the potential for stress. You can not always think about a caregiving relationship in advance, but if you can, it has greater potential for success.{/t}</p>
-        <p>{t}Your relationship with the care receiver -{/t}</p>
+        <h5>{t}Your relationship with the care receiver -{/t}</h5>
         <p>{t}If your relationship with the care receiver has been difficult, becoming a caregiver is more of a challenge. If the care receiver has always been demanding and controlling, you will probably feel more stress, anger, and resentment. Sometimes people are caregiving with the hope of healing a relationship. The healing may or may not happen. If healing does not happen, the caregiver may feel regret, depressed, and discouraged. A professional counselor, spiritual advisor, or trusted friend can help deal with such feelings and emotions.{/t}</p>
-        <p>{t}Your coping abilities -{/t}</p>
+        <h5>{t}Your coping abilities -{/t}</h5>
         <p>{t}How you have coped with stress in the past predicts how you will cope now. Did you find constructive ways to manage your stress? Perhaps you were able to find time to exercise regularly and generally take care of yourself. Or did you rely on alcohol or drugs to help you cope? Sometimes people rely on medications and alcohol in times of stress, which only makes matters worse. It is important to identify your current coping strengths and build on them. Learning new coping skills also will help make your caregiving situation less stressful.{/t} 
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
-    <!-- Lesson 2 Slide 4 -->
     <div id="lesson-2-slide-4" class="course-slide">
       <div class="content">
-        <h2 class="flowers">{t}The Stress of Caregiving (continued){/t}</h2>
+        <h2 class="flowers">{t}The Stress of Caregiving{/t}</h2>
         <hr />
-        <p>{t}The caregiving situation -{/t}</p>
-        <p>{t}What does your caregiving situation require of you? Does it require 24-hour-aday availability? Or do you just need to make an occasional telephone call to check on the person? What disease does the care receiver have? Does he have a mental or physical disability, or both? Certain caregiving situations are more stressful than others. For example, caring for someone who has a dementia such as Alzheimer's disease is often more stressful than caring for someone with a physical limitation. Also, stress tends to be highest when:{/t}</p>
+        <h5>{t}The caregiving situation -{/t}</h5>
+        <p class="forum">{t}What does your caregiving situation require of you? Does it require 24-hour-aday availability? Or do you just need to make an occasional telephone call to check on the person? What disease does the care receiver have? Does he have a mental or physical disability, or both? Post your responses to the Forum.{/t}</p>
+        <img src="<?php echo $this->getImagesUrl('empower/forum_icon.png'); ?>" alt="{t}Forum Icon{/t}" />
+        <p>{t}Certain caregiving situations are more stressful than others. For example, caring for someone who has a dementia such as Alzheimer's disease is often more stressful than caring for someone with a physical limitation. Also, stress tends to be highest when:{/t}</p>
         <ul>
           <li>{t}the caregiving situation continues for a long time.{/t}</li>
           <li>{t}the care receiver's needs gradually increase.{/t}</li>
           <li>{t}caregivers feel they have limited or no support.{/t}</li>
           <li>{t}caregivers have their own health/physical problems.{/t}</li>
         </ul>
-        <p>{t}Whether support is available -{/t}</p>
+        <h5>{t}Whether support is available -{/t}</h5>
         <p>{t}Caregivers who feel isolated and without adequate support usually experience a higher level of stress. Support may be lacking for several reasons:{/t}</p>
         <ul>
           <li>{t}The caregiver may resist accepting help, even when he or she needs it.{/t}</li>
@@ -1697,112 +1688,49 @@ HTML Output:
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
-    <!-- Lesson 2 Slide 5 -->
+
+
     <div id="lesson-2-slide-5" class="course-slide">
       <div class="content">
-        <h2 class="flowers">{t}The Stress of Caregiving (continued){/t}</h2>
+        <h2 class="flowers">{t}The Stress of Caregiving{/t}</h2>
         <hr />
-        <p>{t}Signs of Stress{/t}</p>
-        <p>{t}Here is a checklist of some common signs of stress:{/t}
-        <table>
-          <tr>
-            <td>Physical</td>
-            <td>Mental/Emotional</td>
-            <td>Behavioral </td>
-          </tr>
-          <tr>
-            <td><p>
-                <input type="checkbox" name="checkbox" id="checkbox">
-                Headache</p>
-              <p>
-                <input type="checkbox" name="checkbox2" id="checkbox2">
-                Muscle tension and aches</p>
-              <p>
-                <input type="checkbox" name="checkbox3" id="checkbox3">
-                Nausea, diarrhea, heartburn</p>
-              <p>
-                <input type="checkbox" name="checkbox4" id="checkbox4">
-                Rapid heartbeat, palpitations</p>
-              <p>
-                <input type="checkbox" name="checkbox5" id="checkbox5">
-                Shortness of breath, dizziness</p>
-              <p>
-                <input type="checkbox" name="checkbox6" id="checkbox6">
-                Constant fatigue, energy loss</p>
-              <p>
-                <input type="checkbox" name="checkbox7" id="checkbox7">
-                Change in appetite</p>
-              <p>
-                <input type="checkbox" name="checkbox8" id="checkbox8">
-                Weight gain or loss</p>
-              <p>
-                <input type="checkbox" name="checkbox9" id="checkbox9">
-                Frequent illnesses</p></td>
-            <td><p>
-                <input type="checkbox" name="checkbox10" id="checkbox10">
-                Anxiety</p>
-              <p>
-                <input type="checkbox" name="checkbox11" id="checkbox11">
-                Constant worrying </p>
-              <p>
-                <input type="checkbox" name="checkbox12" id="checkbox12">
-                Depression, sadness</p>
-              <p>
-                <input type="checkbox" name="checkbox13" id="checkbox13">
-                Inability to concentrate</p>
-              <p>
-                <input type="checkbox" name="checkbox14" id="checkbox14">
-                Moodiness, irritability</p>
-              <p>
-                <input type="checkbox" name="checkbox15" id="checkbox15">
-                Restlessness, agitation</p>
-              <p>
-                <input type="checkbox" name="checkbox16" id="checkbox16">
-                Feeling overwhelmed </p>
-              <p>
-                <input type="checkbox" name="checkbox17" id="checkbox17">
-                Racing thoughts</p>
-              <p>
-                <input type="checkbox" name="checkbox18" id="checkbox18">
-                Forgetfulness, confusion</p></td>
-            <td><p>
-                <input type="checkbox" name="checkbox19" id="checkbox19">
-                Sleeping too much or too little</p>
-              <p>
-                <input type="checkbox" name="checkbox20" id="checkbox20">
-                Short temper </p>
-              <p>
-                <input type="checkbox" name="checkbox21" id="checkbox21">
-                Difficulty making decisions</p>
-              <p>
-                <input type="checkbox" name="checkbox22" id="checkbox22">
-                Poor nutrition</p>
-              <p>
-                <input type="checkbox" name="checkbox23" id="checkbox23">
-                Too much smoking, drinking</p>
-              <p>
-                <input type="checkbox" name="checkbox24" id="checkbox24">
-                Tooth grinding</p>
-              <p>
-                <input type="checkbox" name="checkbox25" id="checkbox25">
-                Neglecting responsibilities</p>
-              <p>
-                <input type="checkbox" name="checkbox26" id="checkbox26">
-                Social isolation</p>
-              <p>
-                <input type="checkbox" name="checkbox27" id="checkbox27">
-                Nervous habits fidgeting</p></td>
-          </tr>
-        </table>
+        
+        
+                <img src="<?php echo $this->getImagesUrl('empower/92037503.png'); ?>" alt="{t}image{/t}" />
+
+        
+        <h5>{t}Signs of Stress{/t}</h5>
+        
+        <p>{t}The first step in managing stress is to be aware of how it affect you.{/t}</p>
+        
+        <p class="forum">{t}On the Forum, post your warning signs and symptoms of stress. Also, search the Internet and locate at least 3 different resources that list stress symptoms, and post them to the Forum.{/t}</p>
+        
+        
+              <img src="<?php echo $this->getImagesUrl('empower/forum_icon.png'); ?>" alt="{t}Forum Icon{/t}" />
+<p>{t}According to the <a href="http://www.cdc.gov/Features/HandlingStress/" target="_blank">CDC</a>, common reactions to a stressful event include:{/t}</p>
+  <ul>
+  	<li>{t}Disbelief and shock{/t}</li>
+    <li>{t}Tension and irritability{/t}</li>
+    <li>{t}Fear and anxiety about the future{/t}</li>
+    <li>{t}Difficulty making decisions{/t}</li>
+    <li>{t}Being numb to one’s feelings{/t}</li>
+  </ul>
+  
+  
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
-    <!-- Lesson 2 Slide 6 -->
     <div id="lesson-2-slide-6" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}Steps to Maintain Health &amp; Avoid Stress{/t}</h2>
         <hr />
-        <p>{t}Whatever causes stress in your life, too much of it can lower your resistance to disease and lead to "burnout." Current research shows that there is a _close connection between stress and health. Unrelieved stress is on,e of many factors that cause illness. Research also shows that thoughts and emotions affect the immune system, which is the first line of defense against disease. It is possible to strengthen the immune system by reducing stress. The following four steps will help you maintain your health and avoid distress:{/t}</p>
+        
+                        <img src="<?php echo $this->getImagesUrl('empower/155236974.png'); ?>" alt="{t}image{/t}" />
+
+        
+        <p>{t}Whatever causes stress in your life, too much of it can lower your resistance to disease and lead to <i>"burnout."</i> Current research shows that there is a close connection between stress and health. Unrelieved stress is one of many factors that cause illness.{/t}</p>
+        
+        <p>{t}Research also shows that thoughts and emotions affect the immune system, which is the first line of defense against disease. It is possible to strengthen the immune system by reducing stress. The following four steps will help you maintain your health and avoid distress:{/t}</p>
         <ol>
           <li>{t}Recognize your warning signs of stress.{/t}</li>
           <li>{t}Identify your sources of stress.{/t}</li>
@@ -1813,15 +1741,35 @@ HTML Output:
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
-    <!-- Lesson 2 Slide 7 -->
-    <div id="lesson-2-slide-6" class="course-slide">
+    <div id="lesson-2-slide-7" class="course-slide">
       <div class="content">
-        <h2 class="flowers">{t}Steps to Maintain Health &amp; Avoid Stress (continued){/t}</h2>
+        <h2 class="flowers">{t}Steps to Maintain Health &amp; Avoid Stress{/t}</h2>
         <hr />
-        <p>{t}Step 1: Recognize Your Warning Signs of Stress{/t} -</p>
-        <p>{t}The first step in managing stress is to be aware of how it affects you. What are your warning signs and symptoms of stress? The following are signs that may occur when you experience an unusual amount of stress. Answering these questions can help you identify your own warning signs. What is usually your earliest sign of stress? It is important to recognize stress early and do something about it, before it causes you serious problems. For one caregiver, the early sign might be increased irritability. For another, it might be lying awake for hours before falling asleep. For another, it might be fatigue and a lack of energy.{/t}</p>
-        <p>{t}Sometimes, too, when we are involved in a situation, we may not listen to our early warning signs, but they are voiced in the words of others: "You look so tired," "You get upset so easily lately," "Why are you snapping at me?" If you hear such statements, it is a "red light" warning sign. Just as a flashing red light on your car's dashboard warns you that something is wrong with your car, we also display warning signals. What happens if we ignore the early red flashing light on the car's dashboard? What happens if we ignore our personal early warning signals?{/t}</p>
-        <p>{t}Do you listen to your early warning signals? What are they? And what do you do about them? Warning signs usually mean we need to stop, valuate what is happening, and make some changes. The earlier warning signals are recognized, the greater the chance of avoiding or reducing the destructive effects of stress.{/t}</p>
+        <h5>{t}Step 1: Recognize Your Warning Signs of Stress{/t} -</h5>
+        <p>{t}The first step in managing stress is to be aware of how it affects you. What are your warning signs and symptoms of stress? The following are signs that may occur when you experience an unusual amount of stress. Answering these questions can help you identify your own warning signs.{/t}</p>
+        
+        <p style="text-align:center;">{t}What is usually your earliest sign of stress?{/t}</p>
+        
+        <p>{t}It is important to recognize stress early and do something about it, before it causes you serious problems. For one caregiver, the early sign might be increased irritability. For another, it might be lying awake for hours before falling asleep. For another, it might be fatigue and a lack of energy.{/t}</p>
+        <p>{t}Sometimes, too, when we are involved in a situation, we may not listen to our early warning signs, but they are voiced in the words of others:{/t}</p>
+        
+        <ul>
+        	<li>{t}<i>"You look so tired,"</i>{/t}</li>
+            <li>{t}<i>"You get upset so easily lately,"</i>{/t}</li>
+            <li>{t}<i>"Why are you snapping at me?"</i>{/t}</li>
+         </ul>
+        
+        <p>{t}If you hear such statements, it is a <i>"red light"</i> warning sign. Just as a flashing red light on your car's dashboard warns you that something is wrong with your car, we also display warning signals. What happens if we ignore the early red flashing light on the car's dashboard? What happens if we ignore our personal early warning signals?{/t}</p>
+        
+        <p class="forum">{t}Do you listen to your early warning signals? What are they? And what do you do about them? Post your responses to the Forum.{/t}</p>
+        
+                      <img src="<?php echo $this->getImagesUrl('empower/forum_icon.png'); ?>" alt="{t}Forum Icon{/t}" />
+
+        
+        <p>{t}Warning signs usually mean we need to stop, valuate what is happening, and make some changes. The earlier warning signals are recognized, the greater the chance of avoiding or reducing the destructive effects of stress.{/t}</p>
+      
+      <!--
+      
         <div class="question">
           <p>
             <input type="checkbox" name="Yes" id="Yes">
@@ -1923,10 +1871,11 @@ HTML Output:
             <input name="button" type="submit" id="button" onClick="MM_popupMsg('A \&quot;yes\&quot; answer to even one or two of these questions can indicate stress that has become debilitating.')" value="Submit">
           </p>
         </div>
+        -->
+        
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
-    <!-- Lesson 2 Slide 8 -->
     <div id="lesson-2-slide-8" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}Steps to Maintain Health &amp; Avoid Stress (continued){/t}</h2>
@@ -2459,6 +2408,62 @@ HTML Output:
     </div>
     <!-- need this final div here to close lesson-2 --> 
   </div>
+  
+  
+  
+   <div id="lesson-3">
+    <div id="lesson-3-slide-1" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Communicating Effectively in Challenging Situations{/t}</h2>
+        <hr />
+        <img src="<?php echo $this->getImagesUrl('empower/168357025.png'); ?>" alt="{t}image{/t}">
+      
+  <p>{t}This module contains four main sections:{/t}</p>
+  <ul>
+    <li>{t}Communicating to Take Care of You{/t}</li>
+    <li>{t}Expressing Yourself Under Special Circumstances{/t}</li>
+    <li>{t}Challenging Communication Styles{/t}</li>
+    <li>{t}Setting your Goals and Making Action Plans{/t}</li>
+  </ul>
+  <p>{t}Many caregivers say one of their biggest challenges involves uttering the word <em>"No"</em>. The feeling is that saying no is somehow not permissible. If you feel this way, ask yourself:{/t}</p>
+  <ol>
+    <li>{t}<em>Is there courage and nobility in saying nothing and burning out?</em>{/t}</li>
+    <li>{t}<em>Or does true courage and nobility lie in taking care of yourself so you can be a caring helper longer?</em>{/t}</li>
+  </ol>
+  <p>{t}Keep those questions in mind as we discuss in this module tools for dealing with these caregiving challenges:{/t}</p>
+  <ul>
+    <li>{t}setting limits{/t}</li>
+    <li>{t}asking for help{/t}</li>
+    <li>{t}expressing and responding to criticism{/t}</li>
+    <li>{t}expressing anger{/t}</li>
+  </ul>
+  <p>{t}We will also discuss how to communicate more effectively under special circumstances and with people who use the following communication styles:{/t}</p>
+  <ul>
+    <li>{t}Passive/peacekeeping{/t}</li>
+    <li>{t}Aggressive/pitbull{/t}</li>
+    <li>{t}Factual/computer{/t}</li>
+  </ul>
+      
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Start Module &raquo;{/t}</a></div>
+    </div>
+  
+  
+  
+   <div id="lesson-3-slide-2" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Communicating Effectively in Challenging Situations{/t}</h2>
+        <hr />
+        <img src="<?php echo $this->getImagesUrl('empower/here.png'); ?>" alt="{t}image{/t}">
+      <p>{t}Closing{/t}</p>
+  
+   </div>
+      <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Complete Module{/t}</a></div>
+    </div>
+    <!-- need this final div here to close lesson-2 --> 
+  </div>
+  
+  
   <div id="lesson-4">
     <div id="lesson-4-slide-1" class="course-slide">
       <div class="content">
@@ -2905,29 +2910,19 @@ HTML Output:
       <div class="content">
         <h2 class="flowers">{t}Aging Well{/t}</h2>
         <hr />
-        
-                        <img src="<?php echo $this->getImagesUrl('empower/71261154.png'); ?>" alt="{t}Image{/t}">
-
+        <img src="<?php echo $this->getImagesUrl('empower/71261154.png'); ?>" alt="{t}Image{/t}">
         <h4>{t}Creativity{/t}</h4>
         <p>{t}Creativity is defined as the skill of producing a work of thought or imagination.{/t}</p>
         <p>{t}In his book, <a href="http://www.amazon.com/Creative-Age-Gene-D-Cohen/dp/0380800713" target="_blank">The Creative Age: Awakening Human Potential in the Second Half of Life (2000), Gene D. Cohen, MD, PhD,</a> provided striking evidence that the human potential for creativity continues well into old age.{/t}</p>
-        
         <p class="forum">{t}So, what are some ways to encourage creativity among older friends/relatives? Post your response to the Forum.{/t}</p>
-        
-                <img src="<?php echo $this->getImagesUrl('empower/forum_icon.png'); ?>" alt="{t}Forum Icon{/t}">
-
-        
-        
-       
-      </div>
+        <img src="<?php echo $this->getImagesUrl('empower/forum_icon.png'); ?>" alt="{t}Forum Icon{/t}"> </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
     <div id="lesson-4-slide-19" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}Aging Well{/t}</h2>
         <hr />
-        
-         <p>{t}Here are some excerpts from a creative energy workshop.{/t}</p>
+        <p>{t}Here are some excerpts from a creative energy workshop.{/t}</p>
         <p>{t}You may want to try out this workshop with your older friends, relatives, or even yourself. Sometimes, we all need to revisit our creative side!{/t}</p>
         <p>{t}Begin by thinking about your interests and desires. This may include goals you want to achieve, projects you want to implement, or dreams you want to make real. By going through this exercise, you will begin to realize inner strengths you already have that will help you achieve your potential.{/t}</p>
         <ol>
@@ -2996,8 +2991,7 @@ HTML Output:
         <p>{t}The way we care for older adults today cannot scale to meet the looming age wave, and before long we’ll face a fullblown national crisis. We have an obligation to our parents—indeed to the next generation of older adults—to ensure they get the best possible care and that they receive it in a place they want to call home.{/t}</p>
         <p>{t}New technology solutions offer great promise to improve quality of care while reducing healthcare costs. Technology already has transformed our lives—from email to MP3s and from online shopping to cell phones. It is time now for technology to transform the experience of aging.{/t}</p>
         <p>{t}Fortunately, exciting new technologies coming in the next 5 to 10 years offer the potential to dramatically improve the quality of care we can provide. Watch this video to learn the possibilities!{/t}</p>
-                <iframe width="420" height="315" src="http://www.youtube.com/embed/SBH9dkCZsXQ?rel=0" frameborder="0" allowfullscreen></iframe>
-
+        <iframe width="420" height="315" src="http://www.youtube.com/embed/SBH9dkCZsXQ?rel=0" frameborder="0" allowfullscreen></iframe>
       </div>
       <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Complete Module{/t}</a> </div>
     </div>
