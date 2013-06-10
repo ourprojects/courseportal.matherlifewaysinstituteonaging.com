@@ -20,7 +20,18 @@ class TViewSource extends CApplicationComponent
 	 */
 	public $connectionID = 'db';
 	
+	/**
+	 * @var integer the time in seconds that the messages can remain valid in cache.
+	 * Defaults to 0, meaning the caching is disabled.
+	 */
 	public $cachingDuration = 0;
+	
+	/**
+	 * @var string the ID of the cache application component that is used to cache the messages.
+	 * Defaults to 'cache' which refers to the primary cache application component.
+	 * Set this property to false if you want to disable caching the messages.
+	 */
+	public $cacheID = 'cache';
 	
 	public $enableProfiling = false;
 	
