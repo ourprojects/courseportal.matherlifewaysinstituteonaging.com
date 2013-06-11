@@ -410,10 +410,13 @@ class MPTranslate extends CApplicationComponent {
 		    			{
 		    				$translation['translation'] = $message;
 		    	
-		    				preg_match_all('/\{(?:.*?)\}/s', $translation['translation'], $matches);
-		    				$matches = $matches[0];
-		    				foreach($matches as $key => $match)
-		    					$translation['translation'] = str_replace($match, "_{$key}_", $translation['translation']);
+		    				preg_match_all('/\{(?:.*?)\}/s', $translation['translation'], $yiiParams);
+		    				$yiiParams = $yiiParams[0];
+		    				$escapedYiiParams = array();
+		    				foreach($yiiParams as $key => &$match)
+		    					$escapedYiiParams[$key] = "<span class='notranslate'>:mpt$key</span>";
+		    					
+		    				$translation['translation'] = str_replace($yiiParams, $escapedYiiParams, $translation['translation']);
 		    	
 		    				$translation['translation'] = $this->googleTranslate(
 		    						$translation['translation'],
@@ -424,8 +427,8 @@ class MPTranslate extends CApplicationComponent {
 		    				if($translation['translation'] !== false)
 		    				{
 		    					$translation['translation'] = trim($translation['translation'][0]);
-		    					foreach($matches as $key => $match)
-		    						$translation['translation'] = str_replace("_{$key}_", $match, $translation['translation']);
+
+		    					$translation['translation'] = str_replace($escapedYiiParams, $yiiParams, $translation['translation']);
 		    	
 		    					if($source->addTranslation($translation['id'], $language, $translation['translation']) !== null)
 		    					{
@@ -609,6 +612,11 @@ class MPTranslate extends CApplicationComponent {
         	if(empty($this->googleApiKey))
             	throw new CException(TranslateModule::t('You must provide your google api key in option googleApiKey'));
         	$args['key'] = $this->googleApiKey;
+        }
+        
+        if(!isset($args['format']))
+        {
+        	$args['format'] = 'html';
         }
         
         $trans = false;
