@@ -12,6 +12,9 @@ class SourceGrid extends CGridView {
 	public $deleteRoute = 'messageSource/delete';
 	
 	public function init() {
+		if(!isset($this->sources))
+			throw new CException(TranslateModule::t('sources must be set in SourceGrid.'));
+		
 		$modelName = get_class($this->sources);
 		$userStateAttr = "{$this->getId()}-$modelName-";
 		

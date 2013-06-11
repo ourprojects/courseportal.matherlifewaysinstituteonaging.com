@@ -99,10 +99,32 @@ class TMessageSource extends CDbMessageSource
 		return $this->getCommandBuilder()->createSqlCommand("SELECT * FROM $this->acceptedLanguageTable")->queryAll();
 	}
 	
-	public function addSourceMessage($category, $message)
+	public function addMessageToCategory($category, $messageId)
+	{
+		$categoryId = $this->getCategoryId($category);
+			
+		if($categoryId === false)
+		{
+			$categoryId = $this->addCategory($category);
+	
+			if($categoryId === null)
+			{
+				throw new CDbException("The category '$category' was not found and could not be added to the database.");
+			}
+		}
+			
+		if($this->addMessageCategory($categoryId, $messageId) === null)
+		{
+			throw new CDbException("The message with id '$messageId' could not be associated with category id '$categoryId'.");
+		}
+	
+		return $categoryId;
+	}
+	
+	public function addSourceMessage($message)
 	{
 		$builder = $this->getCommandBuilder();
-		if($builder->createInsertCommand($this->sourceMessageTable, array('category' => $category, 'message' => $message))->execute())
+		if($builder->createInsertCommand($this->sourceMessageTable, array('message' => $message))->execute())
 			return $builder->getLastInsertID($this->sourceMessageTable);
 		return null;
 	}
@@ -143,12 +165,24 @@ class TMessageSource extends CDbMessageSource
 				->queryScalar();
 	}
 	
+	public function getCategoryAndMessageId($category, $message)
+	{
+		return $this->getCommandBuilder()->createSqlCommand(
+						"SELECT MIN(ct.id) category_id, MIN(smt.id) message_id " .
+						"FROM $this->sourceMessageTable smt " .
+						"LEFT JOIN $this->categoryMessageTable cmt ON (smt.id=cmt.message_id) " .
+						"LEFT JOIN $this->categoryTable ct ON (cmt.category_id=ct.id AND ct.category=:category) " .
+						"WHERE (smt.message=:message)",
+					array(':category' => $category, ':message' => $message))
+				->queryRow();
+	}
+	
 	public function getCategoryId($category)
 	{
 		return $this->getCommandBuilder()->createSqlCommand(
-					"SELECT id " .
-					"FROM $this->categoryTable " .
-					"WHERE (category=:category)",
+						"SELECT id " .
+						"FROM $this->categoryTable " .
+						"WHERE (category=:category)",
 					array(':category' => $category))
 				->queryScalar();
 	}
@@ -156,12 +190,12 @@ class TMessageSource extends CDbMessageSource
 	public function getTranslationFromDb($category, $message, $language)
 	{
 		return $this->getCommandBuilder()->createSqlCommand(
-				"SELECT MIN(ct.id) category_id, MIN(smt.id) id, tmt.translation translation " .
-				"FROM $this->sourceMessageTable smt " .
-				"LEFT JOIN $this->categoryMessageTable cmt ON (smt.id=cmt.message_id) " .
-				"LEFT JOIN $this->categoryTable ct ON (cmt.category_id=ct.id AND ct.category=:category) " .
-				"LEFT JOIN $this->translatedMessageTable tmt ON (smt.id=tmt.id AND tmt.language=:language) " .
-				"WHERE (smt.message=:message)",
+					"SELECT MIN(ct.id) category_id, MIN(smt.id) id, tmt.translation translation " .
+					"FROM $this->sourceMessageTable smt " .
+					"LEFT JOIN $this->categoryMessageTable cmt ON (smt.id=cmt.message_id) " .
+					"LEFT JOIN $this->categoryTable ct ON (cmt.category_id=ct.id AND ct.category=:category) " .
+					"LEFT JOIN $this->translatedMessageTable tmt ON (smt.id=tmt.id AND tmt.language=:language) " .
+					"WHERE (smt.message=:message)",
 				array(':category' => $category, ':message' => $message, ':language' => $language))
 			->queryRow();
 	}

@@ -44,7 +44,7 @@
 			<h2><?php echo TranslateModule::t('Accepted languages:'); ?></h2>
 			<?php 
 			$widget = $this->widget('translate.widgets.messageSource.MissingAcceptedLanguageGrid', 
-					array('id' => 'missing-accepted-language-grid', 'sourceMessage' => $source)); 
+					array('id' => 'missing-accepted-language-grid', 'sourceMessageId' => $source->id)); 
 			
 			if(TranslateModule::translator()->canUseGoogleTranslate() &&
 					$widget->dataProvider->getItemCount() > 0) {

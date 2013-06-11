@@ -1,19 +1,10 @@
 <?php
-
-/**
- * This is the model class for table "{{translate_route}}".
- *
- * The followings are the available columns in table '{{translate_route}}':
- * @property integer $id
- * @property string $route
- * 
- */
-class Route extends CActiveRecord
+class CategoryMessage extends CActiveRecord
 {
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
-	 * @return Route the static model class
+	 * @return CategoryMessage the static model class
 	 */
 	public static function model($className = __CLASS__)
 	{
@@ -25,7 +16,7 @@ class Route extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return '{{translate_route}}';
+		return Yii::app()->getMessages()->categoryMessageTable;
 	}
 
 	/**
@@ -34,12 +25,12 @@ class Route extends CActiveRecord
 	public function rules()
 	{
 		return array(
-			array('route', 'required', 'except' => 'search'),
-			array('id', 'numerical', 'integerOnly' => true),
-			array('route', 'length', 'max' => 255),
-			array('id, route', 'unique', 'except' => 'search'),
-
-			array('id, route', 'safe', 'on' => 'search'),
+			array('message_id, category_id', 'required', 'except' => 'search'),
+			array('message_id, category_id', 'numerical', 'integerOnly' => true),
+			array('message_id', 'exist', 'attributeName' => 'id', 'className' => 'MessageSource', 'except' => 'search'),
+			array('category_id', 'exist', 'attributeName' => 'id', 'className' => 'Category', 'except' => 'search'),
+				
+			array('message_id, category_id', 'safe', 'on' => 'search'),
 		);
 	}
 
@@ -49,8 +40,8 @@ class Route extends CActiveRecord
 	public function relations()
 	{
 		return array(
-			'routeViews' => array(self::HAS_MANY, 'RouteView', 'route_id'),
-			'viewSources' => array(self::MANY_MANY, 'ViewSource', '{{translate_route_view}}(route_id, view_id)'),
+				'messageSource' => array(self::BELONGS_TO, 'MessageSource', 'message_id'),
+				'category' => array(self::BELONGS_TO, 'Category', 'category_id'),
 		);
 	}
 
@@ -60,8 +51,8 @@ class Route extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => TranslateModule::t('ID'),
-			'route' => TranslateModule::t('Route'),
+			'message_id' => TranslateModule::t('Message ID'),
+			'category_id' => TranslateModule::t('Category ID'),
 		);
 	}
 
@@ -73,8 +64,8 @@ class Route extends CActiveRecord
 	{
 		$criteria = new CDbCriteria;
 
-		$criteria->compare('id', $this->id);
-		$criteria->compare('route', $this->route, true);
+		$criteria->compare('message_id', $this->message_id);
+		$criteria->compare('category_id', $this->category_id);
 
 		return new CActiveDataProvider($this, array(
 			'criteria' => $criteria,

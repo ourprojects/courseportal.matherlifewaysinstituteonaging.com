@@ -13,19 +13,17 @@ class MessageSource extends CActiveRecord {
 
 	public function rules() {
 		return array(
-            array('category, message', 'required', 'except' => 'search'),
+            array('message', 'required', 'except' => 'search'),
 			array('id', 'numerical', 'integerOnly' => true),
 			array('id', 'unique', 'except' => 'search'),
-			array('category', 'length', 'max' => 32),
 			
-			array('id, category, message', 'safe', 'on' => 'search'),
+			array('id, message', 'safe', 'on' => 'search'),
 		);
 	}
 	
 	public function attributeLabels() {
 		return array(
 				'id' => TranslateModule::t('ID'),
-				'category' => TranslateModule::t('Category'),
 				'message' => TranslateModule::t('Message'),
 		);
 	}
@@ -36,6 +34,7 @@ class MessageSource extends CActiveRecord {
 			'compiledViews' => array(self::MANY_MANY, 'CompiledView', '{{translate_compiled_view_message}}(message_source_id, compiled_view_id)'),
             'translations' => array(self::HAS_MANY, 'Message', 'id', 'joinType' => 'INNER JOIN'),
 			'acceptedLanguages' => array(self::HAS_MANY, 'AcceptedLanguage', array('id' => 'language'), 'through' => 'translations')
+			
 		);
 	}
 	
@@ -93,7 +92,6 @@ class MessageSource extends CActiveRecord {
 		$criteria = $this->getDbCriteria();
 		
 		$criteria->compare('t.id', $this->id);
-		$criteria->compare('t.category', $this->category, true);
 		$criteria->compare('t.message', $this->message, true);
 		
 		return $this;

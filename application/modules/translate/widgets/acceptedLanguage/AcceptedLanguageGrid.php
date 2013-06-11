@@ -12,6 +12,9 @@ class AcceptedLanguageGrid extends CGridView {
 	public $deleteRoute = 'acceptedLanguage/delete';
 	
 	public function init() {
+		if(!isset($this->acceptedLanguagesModel))
+			throw new CException(TranslateModule::t('The acceptedLanguagesModel must be set inside AcceptedLanguageGrid.'));
+		
 		$modelName = get_class($this->acceptedLanguagesModel);
 		$userStateAttr = "{$this->getId()}-$modelName-";
 		

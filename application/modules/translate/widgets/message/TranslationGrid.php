@@ -12,6 +12,9 @@ class TranslationGrid extends CGridView {
 	public $viewRoute = 'message/view';
 	
 	public function init() {
+		if(!isset($this->messagesModel))
+			throw new CException(TranslateModule::t('The messagesModel must be set in TranslationGrid.'));
+		
 		$modelName = get_class($this->messagesModel);
 		$userStateAttr = "{$this->getId()}-$modelName-";
 		

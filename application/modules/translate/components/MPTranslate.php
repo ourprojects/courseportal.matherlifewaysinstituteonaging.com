@@ -388,33 +388,18 @@ class MPTranslate extends CApplicationComponent {
 		    		// If the source message does not exists add it.
 		    		if($translation['id'] === null)
 		    		{
-		    			$translation['id'] = $source->addSourceMessage($category, $message);
+		    			$translation['id'] = $source->addSourceMessage($message);
 		    	
 		    			if($translation['id'] === null)
 		    			{
-		    				throw new CDbException("Message '$message' in category '$category' could not be inserted into the database table '{$this->getMessageSource()->sourceMessageTable}'");
+		    				throw new CDbException("Message '$message' could not be inserted into the database table '{$source->sourceMessageTable}'");
 		    			}
 		    		}
 		    		 
 		    		// If the category does not exist or has not been associated with the source message add it and/or associate it with the source message.
 		    		if($translation['category_id'] === null)
 		    		{
-		    			$translation['category_id'] = $source->getCategoryId($category);
-		    				
-		    			if($translation['category_id'] === false)
-		    			{
-		    				$translation['category_id'] = $source->addCategory($category);
-		    					
-		    				if($translation['category_id'] === null)
-		    				{
-		    					throw new CDbException("The category '$category' was not found and could not be added to the database.");
-		    				}
-		    			}
-		    				
-		    			if($source->addMessageCategory($translation['category_id'], $translation['id']) === null)
-		    			{
-		    				throw new CDbException("The message with id '{$translation['id']}' could not be associated with category id '{$translation['category_id']}'.");
-		    			}
+						$source->addMessageToCategory($category, $translation['id']);
 		    		}
 		    		 
 		    		// If the translation of the source message does not exist use google translate, if autotranslate is enabled, and add the translation.

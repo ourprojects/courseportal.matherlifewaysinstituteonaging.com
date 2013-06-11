@@ -13,8 +13,8 @@
 	<div id="missingTranslations">
 		<h2><?php echo TranslateModule::t('Missing Translations:'); ?></h2>
 		<?php
-		$widget = $this->widget('translate.widgets.acceptedLanguage.MissingTranslationGrid',
-				array('id' => 'missing-grid', 'sourceLanguage' => $source));
+		$widget = $this->widget('translate.widgets.acceptedLanguage.ALMissingTranslationGrid',
+				array('id' => 'missing-grid', 'sourceLanguageId' => $source->id));
 		
     	if(TranslateModule::translator()->canUseGoogleTranslate() &&
     			$widget->dataProvider->getItemCount() > 0) {

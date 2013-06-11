@@ -11,9 +11,12 @@ class MissingTranslationGrid extends CGridView {
 	public $createMessageRoute = 'message/create';
 	
 	public function init() {
+		if(!isset($this->sourceMessageId))
+			throw new CException(TranslateModule::t('A sourceMessageId must be set in MissingTranslationGrid.'));
+		
 		Yii::import($this->translateModulePathAlias . 'models.*');
 		
-		$this->dataProvider = new CActiveDataProvider('Message', array('criteria' => Message::model()->missingTranslations($this->sourceMessage->id)->getDbCriteria()));
+		$this->dataProvider = new CActiveDataProvider('Message', array('criteria' => Message::model()->missingTranslations($this->sourceMessageId)->getDbCriteria()));
 		$this->columns = array(
 				array(
 						'name' => 'language'
@@ -22,7 +25,7 @@ class MissingTranslationGrid extends CGridView {
 						'class' => 'CButtonColumn',
 						'template' => '{update}',
 						'updateButtonLabel' => TranslateModule::t('Create Translation'),
-						'updateButtonUrl' => 'Yii::app()->getController()->createUrl("'.$this->createMessageRoute.'", array("id" => '.$this->sourceMessage->id.', "languageId" => $data->language))',
+						'updateButtonUrl' => 'Yii::app()->getController()->createUrl("'.$this->createMessageRoute.'", array("id" => '.$this->sourceMessageId.', "languageId" => $data->language))',
 				)
 		);
 		

@@ -14,8 +14,8 @@ class AcceptedLanguage extends CActiveRecord {
 
 	public function rules() {
 		return array(
-            array('id', 'required', 'exxcept' => 'search'),
-			array('id', 'unique', 'exxcept' => 'search'),
+            array('id', 'required', 'except' => 'search'),
+			array('id', 'unique', 'except' => 'search'),
 			array('id', 'length', 'max' => 12),
 				
 			array('id', 'safe', 'on' => 'search')

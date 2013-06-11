@@ -12,6 +12,9 @@ class TranslationGrid extends CGridView {
 	public $deleteMessageRoute = 'message/delete';
 	
 	public function init() {
+		if(!isset($this->$translations))
+			throw new CException(TranslateModule::t('$translations must be set in TranslationGrid.'));
+		
 		$modelName = get_class($this->translations);
 		$userStateAttr = "{$this->getId()}-$modelName-";
 		
