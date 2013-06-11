@@ -147,6 +147,10 @@ function MM_popupMsg(msg) { //v1.0
       limits. What is the most you can give to
       others? This has to be clear, "I am able to
       help two days a week. That is all I can do."</p>
+      
+      
+      
+      
     <p>Look at how you set limits now -</p>
     <p>Evaluate your current style of setting
       limits, particularly with the care receiver and
@@ -235,6 +239,12 @@ function MM_popupMsg(msg) { //v1.0
       Thursday a month at this time with ... "
       Then work up to family situations, such as
       who will host the holiday dinners.</p>
+      
+      
+      
+      
+      
+      
     <p class="subheader">Communicating your limits</p>
     <p>The following tools will help you communicate
       what you can and cannot do.</p>

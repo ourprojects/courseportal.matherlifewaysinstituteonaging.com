@@ -1630,8 +1630,7 @@ HTML Output:
       <div class="content">
         <h2 class="flowers">{t}The Stress of Caregiving{/t}</h2>
         <hr />
-                <img src="<?php echo $this->getImagesUrl('empower/LS021194.png'); ?>" alt="{t}image{/t}" />
-
+        <img src="<?php echo $this->getImagesUrl('empower/LS021194.png'); ?>" alt="{t}image{/t}" />
         <p>{t}There has been so much written about stress it has become a household word. Studies show that a certain amount of stress is helpful. It can challenge us to change and motivate us to do things we might not do otherwise. However, when the amount of stress overwhelms our ability to cope with it, we feel <i>'distress'</i> or <i>'burnout.'</i>{/t}</p>
         <p>{t}Distress is <i>'suffering of mind or body; severe physical or mental strain.'</i> As a caregiver, you no doubt have increased stress in your life, whether you are caring for a mother with early Parkinson's disease, who is still able to care for her personal needs, or a spouse who does not recognize you because of advanced Alzheimer's disease.{/t}</p>
         <p class="forum">{t}Please think about the last time you were under distress. Post your response to the Forum.{/t}</p>
@@ -2354,11 +2353,8 @@ HTML Output:
       <div class="content">
         <h2 class="flowers">{t}Tips for Overcoming Negative Emotions &amp; Reducing Stress: Simple Pleasures{/t}</h2>
         <hr />
-        
-                <img src="<?php echo $this->getImagesUrl('empower/148154562.png'); ?>" alt="{t}Image{/t}">
-
+        <img src="<?php echo $this->getImagesUrl('empower/148154562.png'); ?>" alt="{t}Image{/t}">
         <p>{t}Even tiny bursts of simple pleasures may improve your physical and mental health. Some researchers say that it is the frequency of the positive feelings that come from these small pleasures that is most important in determining happiness.{/t}</p>
-        
         <p>{t}On the Internet, people are posting their simple pleasures such as those listed below. When you are sitting quietly in a comfortable place, list simple pleasures that help you get through your caregiving days.{/t}</p>
         <ul class="bulletlist">
           <li>{t}Looking at old pictures{/t}</li>
@@ -2369,10 +2365,7 @@ HTML Output:
         </ul>
         <h4>{t}Activity{/t}</h4>
         <p class="forum">{t}Search the Internet to help you think of at least five other simple pleasures and then post your findings to the Forum. Then, make and post a 1-5 minute video to You Tube of your simple pleasures. Post the link to your YouTube posting on the Forum for your facilitator to review.{/t}</p>
-        <img src="<?php echo $this->getImagesUrl('empower/youtube-icon.png'); ?>" alt="{t}YouTube Icon{/t}">
-        
-        
-      </div>
+        <img src="<?php echo $this->getImagesUrl('empower/youtube-icon.png'); ?>" alt="{t}YouTube Icon{/t}"> </div>
       <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Complete Module{/t}</a></div>
     </div>
     <!-- need this final div here to close lesson-2 --> 
@@ -2413,13 +2406,154 @@ HTML Output:
     </div>
     <div id="lesson-3-slide-2" class="course-slide">
       <div class="content">
+        <h2 class="flowers">{t}Communicating to Take Care of You{/t}</h2>
+        <hr />
+        <p>{t}Caregivers frequently report they have difficulty setting limits and asking for help. Yet, these are critical tools for avoiding burnout, maintaining your well-being, and getting the support you need. It's equally important to express your feelings and give criticism in constructive ways. You want others to hear what you have to say, not to focus on how you said something.{/t}</p>
+        <h5>{t}Setting Limits{/t}</h5>
+        <p>{t}If you have never set limits, it can take time to feel good about doing so and to communicate your limits in positive ways. At first people may not take you seriously and you might back down a few times. But with time and practice, you can do it. You might be surprised at your family's reaction. Many caregivers discovered that their relatives were pleased and relieved when they began setting limits. It seems family members worried less knowing that caregivers were taking care of themselves. B ecause only you know what your limits are, setting your limits is up to you. Setting limits is a form of self-respect and honesty. It's realizing that you can't do everything and that's okay. It also shows consideration for family and friends. It helps take the guesswork out of planning and problem solving when you tell others what you are able and unable to do.{/t}</p>
+        <p>{t}Remember, your limits are not engraved in stone. You can be flexible and change them when your priorities change and when time, place, people, and circumstances demand it.{/t}</p>
+        <h5>{t}What happens if you don't set limits -{/t}</h5>
+        <p class="forum">{t}As a caregiver, do you think setting limits is selfish? Do you believe people who set limits are uncaring? If so, think about what can happen if you don't set limits. Post your response to the Forum.{/t}</p>
+        <img src="<?php echo $this->getImagesUrl('empower/forum_icon.png'); ?>" alt="{t}Forum Icon{/t}">
+        <p>{t}Not setting limits can lead to:{/t}</p>
+        <ul>
+          <li>{t}feelings of resentment on your part.{/t}</li>
+          <li>{t}caregiver burnout, and possibly, the inability to provide the help needed.{/t}</li>
+          <li>{t}concern by family about your health and even your survival.{/t}</li>
+          <li>{t}health problems related to stress and fatigue, or even death.{/t}</li>
+        </ul>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
+    <div id="lesson-3-slide-3" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Communicating to Take Care of You{/t}</h2>
+        <hr />
+        <img src="<?php echo $this->getImagesUrl('empower/156468003.png'); ?>" alt="{t}Image{/t}">
+        <h5>{t}Limits carry risks -{/t}</h5>
+        <p>{t}Relationships suffer when they are based on someone doing whatever another person wants or needs. If you lose closeness with a person because you set limits, ask yourself, "Am I better off without a relationship completely defined by what the other person wants?" Then weigh the risks, to yourself and the care receiver, of not setting limits. Think about the serious effects on you and the care receiver if your health fails.{/t}</p>
+        <h5>{t}Consider the consequences of setting limits -{/t}</h5>
+        <p>{t}Before saying or doing anything about setting limits, review possible consequences of what you want to do. Ask yourself:{/t}</p>
+        <ul>
+          <li>{t}What would be the worst outcome? How would I handle it?{/t}</li>
+          <li>{t}What are the chances the worst outcome will happen? Could I live with it?{/t}</li>
+          <li>{t}What are the consequences if I do nothing? Can I live with those?{/t}</li>
+          <li>{t}What is the best thing that could happen?{/t}</li>
+        </ul>
+        <h5>{t}Some limits are not negotiable -{/t}</h5>
+        <p>{t}Look carefully at limits you cannot exceed. These are your non-negotiable limits. What is the most you can give to others? This has to be clear, <i>"I am able to help two days a week. That is all I can do."</i>{/t}</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
+    <div id="lesson-3-slide-4" class="course-slide">
+      <div class="content">
         <h2 class="flowers">{t}Communicating Effectively in Challenging Situations{/t}</h2>
         <hr />
-        <img src="<?php echo $this->getImagesUrl('empower/here.png'); ?>" alt="{t}image{/t}">
-        <p>{t}Closing{/t}</p>
+        <img src="<?php echo $this->getImagesUrl('empower/147709685.png'); ?>" alt="{t}image{/t}">
+        <h4>{t}Look at how you set limits now -{/t}</h4>
+        <p>Evaluate your current style of setting limits, particularly with the care receiver and other family members. Check the boxes that most closely describe how you set limits.{/t}</p>
+        
+        <!--
+    <div class="question">
+      <p>
+        <input type="checkbox" name="Yes" id="Yes">
+        <label for="Yes">Yes</label>
+        <input type="checkbox" name="No" id="No">
+        <label for="No">No | </label>
+        Do I set limits so seldom that people
+        don't pay attention when I do?</p>
+      <p>
+        <input type="checkbox" name="Yes2" id="Yes2">
+        <label for="Yes2">Yes</label>
+        <input type="checkbox" name="No2" id="No2">
+        <label for="No2">No  | </label>
+        Am I so meek about setting limits that
+        people don't take me seriously?</p>
+      <p>
+        <input type="checkbox" name="Yes3" id="Yes3">
+        <label for="Yes3">Yes</label>
+        <input type="checkbox" name="No3" id="No3">
+        <label for="No3">No  | </label>
+        Do I usually wait too long-until I
+        can't continue-before I set limits?</p>
+      <p>
+        <input type="checkbox" name="Yes4" id="Yes4">
+        <label for="Yes4">Yes</label>
+        <input type="checkbox" name="No4" id="No4">
+        <label for="No4">No  | </label>
+        Do I hint or expect people to read my
+        mind about what I can and can't do?</p>
+      <p>
+        <input type="checkbox" name="Yes5" id="Yes5">
+        <label for="Yes5">Yes</label>
+        <input type="checkbox" name="No5" id="No5">
+        <label for="No5">No  | </label>
+        Do I complain instead of setting clear
+        caregiving limits with those who need
+        to know my limits?</p>
+      <p>
+        <input type="checkbox" name="Yes6" id="Yes6">
+        <label for="Yes6">Yes</label>
+        <input type="checkbox" name="No6" id="No6">
+        <label for="No6">No  | </label>
+        Do I set limits and flip-flop by not
+        sticking to them?</p>
+      <p>
+        <input type="checkbox" name="Yes7" id="Yes7">
+        <label for="Yes7">Yes</label>
+        <input type="checkbox" name="No7" id="No7">
+        <label for="No7">No  | </label>
+        Do I try setting limits once and then
+        quit if people ignore them?</p>
+      <p>
+        <input name="Submit" type="submit" id="Submit" onClick="MM_popupMsg('Did you check \'yes\' in answering any  questions? If so, the following suggestions  will help you set and communicate your limits.')" value="Submit">
+      </p>
+    </div>
+    
+    -->
+        <h5>{t}Start small -{/t}</h5>
+        <p>{t}If you have trouble setting limits, start with people outside your family and start with small matters, like telling a caller you can visit for only five minutes.{/t}</p>
+        <h5>{t}Start with the easy people -{/t}</h5>
+        <p>{t}This means practicing saying a polite, firm <i>"no"</i> to someone either unrelated to you or that you do not even know, such as telephone sales       solicitors, fund-raisers for questionable charities, or pollsters in the local mall. A simple ~'Thank you for your call, but I cannot donate to your cause" (or whatever the request is) is all you need to say. If the person persists, just keep repeating your statement and soon he will give up.{/t}</p>
+        <h5>{t}Start with easy situations -{/t}</h5>
+        <p>{t}It is a good idea to warm up on situations or tasks that are impersonal or that you don't like. For example, if you enjoy volunteering but you do not care for the schedule or the assignment, try saying, <i>"I enjoy volunteering but I must cut back. I would be glad to help one Thursday a month at this time with ... "</i> Then work up to family situations, such as who will host the holiday dinners.</p>
+        {/t}
+        </p>
       </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
+    <div id="lesson-3-slide-5" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Communicating Effectively in Challenging Situations{/t}</h2>
+        <hr />
+        <img src="<?php echo $this->getImagesUrl('empower/91057929.png'); ?>" alt="{t}image{/t}">
+        <h4>{t}Communicating your limits{/t}</h4>
+        <p>{t}The following tools will help you communicate what you can and cannot do.{/t}</p>
+        <h5>{t}Be clear about your limits -{/t}</h5>
+        <p>{t}Use I statements and be as specific about your limits as possible. I am happy to stop by after work tonight but I have to leave by 6:30. (The formula is: Up to this point I can do __ . Beyond this point I will do _ , or _ happens.){/t}</p>
+        <h5>{t}Offer choices within your limits -{/t}</h5>
+        <p>{t}This is a way to replace what you can't do with a choice of what you can and are willing to do. "I can't take you shopping today; but I can do it either on Thursday afternoon or Saturday morning. Which is best for you?" (The formula is: "I am unable to do __ , but I can do __ or _· _ .Which do you prefer?"). Sharon said to her son:{/t}</p>
+        <p>{t}I've enjoyed having the grandchildren stay at the house over the holidays every year. Because Grandpa needs more help these days, I can't ask them to stay with us this year. I would like to have them over to sing carols and decorate Christmas cookies with Grandpa. Let's talk during Thanksgiving.{/t}</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
+    <div id="lesson-3-slide-6" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Communicating Effectively in Challenging Situations{/t}</h2>
+        <hr />
+        <h5>{t}Make no excuses -{/t}</h5>
+        <p>{t}Giving factual reasons for setting limits aids understanding and is different from making excuses. Offering excuses sounds apologetic. Notice that the following statements contain no excuses or self-criticism:{/t}</p>
+        <ul>
+          <li>{t}<i>"I would like to do that, but for now I can only handle these three things."</i> (You are being factual and specific, and suggesting the limits are not permanent ones.){/t}</li>
+          <li>{t}<i>"I appreciate your suggestions. Right now I can not fit them into my day."</i> (This is a good response to unsolicited advice.){/t}</li>
+          <li>{t}<i>"I need some time to think about it. I will let you know tomorrow."</i> (This gives you time if you feel like making excuses or if flattery or <i>"guilt trips"</i> undermine your resolve.){/t}</li>
+        </ul>
+        <p>{t}If you want to make it easier, you can prepare people over the phone or in writing that you have to rethink how much you can do. You also can mention that your doctor advises you to cut down. Some people may respond negatively to your limits. This does not mean you are wrong. It usually means things are changing that other people wish would stay the same.{/t}</p>
+        <p class="forum">{t}Do you find yourself making excuses or not giving factual reasons for your limits? Post your feedback to the Forum.{/t}</p>
+        <img src="<?php echo $this->getImagesUrl('empower/forum_icon.png'); ?>" alt="{t}Forum Icon{/t}"> </div>
       <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Complete Module{/t}</a></div>
     </div>
+    
     <!-- need this final div here to close lesson-2 --> 
   </div>
   <div id="lesson-4">
