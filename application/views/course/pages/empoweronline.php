@@ -1615,7 +1615,7 @@ HTML Output:
       <div class="content">
         <h2 class="flowers">{t}Reducing Personal Stress{/t}</h2>
         <hr />
-        <img src="<?php echo $this->getImagesUrl('empower/LS021194.png'); ?>" alt="{t}image{/t}" />
+        <img src="<?php echo $this->getImagesUrl('empower/154263430.png'); ?>" alt="{t}image{/t}" />
         <p>{t}This module two main sections:{/t}</p>
         <ul>
           <li>{t}The Stress of Caregiving{/t}</li>
@@ -1630,6 +1630,8 @@ HTML Output:
       <div class="content">
         <h2 class="flowers">{t}The Stress of Caregiving{/t}</h2>
         <hr />
+                <img src="<?php echo $this->getImagesUrl('empower/LS021194.png'); ?>" alt="{t}image{/t}" />
+
         <p>{t}There has been so much written about stress it has become a household word. Studies show that a certain amount of stress is helpful. It can challenge us to change and motivate us to do things we might not do otherwise. However, when the amount of stress overwhelms our ability to cope with it, we feel <i>'distress'</i> or <i>'burnout.'</i>{/t}</p>
         <p>{t}Distress is <i>'suffering of mind or body; severe physical or mental strain.'</i> As a caregiver, you no doubt have increased stress in your life, whether you are caring for a mother with early Parkinson's disease, who is still able to care for her personal needs, or a spouse who does not recognize you because of advanced Alzheimer's disease.{/t}</p>
         <p class="forum">{t}Please think about the last time you were under distress. Post your response to the Forum.{/t}</p>
@@ -2352,25 +2354,24 @@ HTML Output:
       <div class="content">
         <h2 class="flowers">{t}Tips for Overcoming Negative Emotions &amp; Reducing Stress: Simple Pleasures{/t}</h2>
         <hr />
-        <p>{t}Even tiny bursts of simple pleasures may improve your physical and mental health. Some researchers say that it is the frequency of the positive feelings that come from these small pleasures that is most important in determining happiness. On the Internet, people are posting their simple pleasures such as those listed below. When you are sitting quietly in a comfortable place, list simple pleasures that help you get through your caregiving days.{/t}</p>
-        <ul>
+        
+                <img src="<?php echo $this->getImagesUrl('empower/148154562.png'); ?>" alt="{t}Image{/t}">
+
+        <p>{t}Even tiny bursts of simple pleasures may improve your physical and mental health. Some researchers say that it is the frequency of the positive feelings that come from these small pleasures that is most important in determining happiness.{/t}</p>
+        
+        <p>{t}On the Internet, people are posting their simple pleasures such as those listed below. When you are sitting quietly in a comfortable place, list simple pleasures that help you get through your caregiving days.{/t}</p>
+        <ul class="bulletlist">
           <li>{t}Looking at old pictures{/t}</li>
           <li>{t}Soft pajamas{/t}</li>
           <li>{t}Seeing winter's first snowfall on a bright moonlit night{/t}</li>
           <li>{t}Chocolate{/t}</li>
           <li>{t}Watching the sun set{/t}</li>
-          <li>{t}The smell of freshly cut grass, and the air right after it rains{/t}</li>
-          <li>{t}Clean skin on clean sheets{/t}</li>
-          <li>{t}The smell of freshly cut grass, and the air right after it rains{/t}</li>
-          <li>{t}Falling asleep in the spring sun{/t}</li>
-          <li>{t}Looking to the birds sing early in the morning{/t}</li>
-          <li>{t}Sitting in bed with a cup of tea doing crossword puzzles{/t}</li>
-          <li>{t}Eating a spoonful of peanut butter{/t}</li>
-          <li>{t}An unexpected breeze on a hot summer's day{/t}</li>
-          <li>{t}Having an attached garage... and it is raining{/t}</li>
         </ul>
         <h4>{t}Activity{/t}</h4>
-        <p class="forum">{t}Make and post a 1-5 minute video to You Tube of your simple pleasures. Post the link on the Forum for your facilitator.{/t}</p>
+        <p class="forum">{t}Search the Internet to help you think of at least five other simple pleasures and then post your findings to the Forum. Then, make and post a 1-5 minute video to You Tube of your simple pleasures. Post the link to your YouTube posting on the Forum for your facilitator to review.{/t}</p>
+        <img src="<?php echo $this->getImagesUrl('empower/youtube-icon.png'); ?>" alt="{t}YouTube Icon{/t}">
+        
+        
       </div>
       <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Complete Module{/t}</a></div>
     </div>
