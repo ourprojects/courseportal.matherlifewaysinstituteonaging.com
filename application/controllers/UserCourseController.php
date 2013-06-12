@@ -29,7 +29,7 @@ class UserCourseController extends ApiController {
 
 		$data = array();
 		foreach($model->findAll($model->with('user', 'course')->getSearchCriteria()) as $userCourse) {
-			$data[] = $userCourse->toArray($userCourse->getSafeAttributeNames(), array('user' => 'email', 'course' => 'title'));
+			$data[] = $userCourse->toArray(array_merge($userCourse->getSafeAttributeNames(), array('user' => 'email', 'course' => 'title')), true);
 		}
 
 		if(empty($data)) {

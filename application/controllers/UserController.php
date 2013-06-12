@@ -370,7 +370,7 @@ class UserController extends ApiController {
 			if($user->save()) 
 			{	
 				$this->sendAccountActivationEmail($user);
-				return $this->renderApiResponse(200, $user->toArray(array('id', 'email')));
+				return $this->renderApiResponse(200, $user->toArray(array('id', 'email'), true));
 			}
 			$model->addErrors($user->getErrors());
 		}
@@ -389,7 +389,7 @@ class UserController extends ApiController {
 		$users = $model->with('group')->findAll($criteria);
 		$data = array();
 		foreach($users as $user) {
-			$data[] = $user->toArray($user->getSafeAttributeNames(), array('group' => 'name')); 
+			$data[] = $user->toArray(array_merge($user->getSafeAttributeNames(), array('group' => 'name')), true); 
 		}
 	
 		if(empty($data))

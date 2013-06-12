@@ -1,45 +1,64 @@
 <?php
-class EArrayBehavior extends CBehavior {
+/**
+ * 
+ * This behavior simplifies using ActiveRecords as arrays of attributes.
+ * 
+ * @author Louis DaPrato
+ *
+ */
+class EArrayBehavior extends CBehavior 
+{
 	
-	public function toArray($attributeNames = true, $relations = array()) {
-		if(is_subclass_of($this->getOwner(),'CActiveRecord')) {
-			return array(
-					get_class($this->getOwner()) => array_merge(
-								$this->getOwner()->getAttributes($attributeNames), 
-								$this->getRelated($this->getOwner(), $attributeNames, $relations)
-							)
-					);
-		}
-
-		return false;
+	public function toArray($attributes = true, $prefixWithClassName = false) 
+	{
+		return $this->_toArray($this->getOwner(), $attributes, $prefixWithClassName);
 	}
 	
-	private function getRelated($activeRecord, $attributeNames, $relations) {	
-		$related = array();
+	protected function _toArray($activeRecord, &$attributes, &$prefixWithClassName)
+	{
 		
-		foreach($relations as $name => $relation) {
-			if(is_string($name)) {
-				$ans = true;
-				$rls = array();
-				if(is_array($relation)) {
-					if(isset($relation['relations'])) {
-						$rls = $relation['relations'];
-						unset($relation['relations']);
-					} else {
-						$rls = array();
+		if(is_array($attributes))
+		{
+			$values = array();
+			foreach($attributes as $key => &$value)
+			{
+				if(is_string($key))
+				{
+					if($prefixWithClassName)
+					{
+						$arr = $this->_toArray($activeRecord->getRelated($key), $value, $prefixWithClassName);
+						if(isset($values[key($arr)]))
+						{
+							if(!isset($values[key($arr)][0]))
+								$values[key($arr)] = array($values[key($arr)]);
+							$values[key($arr)][] = $arr[key($arr)];
+						}
+						else
+						{
+							$values = array_merge($values, $arr);
+						}
 					}
-					$ans = isset($relation['attributeNames']) ? $relation['attributeNames'] : $relation;
-				} else {
-					$ans = array($relation);
+					else
+					{
+						$values[$key] = $this->_toArray($activeRecord->getRelated($key), $value, $prefixWithClassName);
+					}
 				}
-				
- 				$related = array_merge($related, $activeRecord->getRelated($name)->toArray($ans, $rls));
-			} else if(is_string($relation)) {
-				$related = array_merge($related, $activeRecord->getRelated($relation)->toArray());
+				else
+				{
+					$values[$value] = $activeRecord->getAttribute($value);
+				}
 			}
 		}
-	    
-	    return $related;
+		else if(is_string($attributes))
+		{
+			$values = array($attributes => $activeRecord->getAttribute($attributes));
+		}
+		else
+		{
+			$values = $activeRecord->getAttributes($attributes);
+		}
+			
+		return $prefixWithClassName ? array(get_class($activeRecord) => $values) : $values;
 	}
 	
 }
