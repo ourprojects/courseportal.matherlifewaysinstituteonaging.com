@@ -7,36 +7,6 @@ class TViewCompileCommand extends CConsoleCommand
 
 	public $defaultAction = 'compileView';
 	
-	public $viewSource = 'views';
-	
-	public $messageSource = 'messages';
-	
-	private $_viewSource;
-	
-	private $_messageSource;
-	
-	public function getMessageSource()
-	{
-		if(!isset($this->_messageSource))
-		{
-			$this->_messageSource = Yii::app()->getComponent($this->messageSource);
-			if($this->_messageSource === null)
-				throw new CException(Yii::t(self::ID, 'A message source must be defined.'));
-		}
-		return $this->_messageSource;
-	}
-	
-	public function getViewSource()
-	{
-		if(!isset($this->_viewSource))
-		{
-			$this->_viewSource = Yii::app()->getComponent($this->viewSource);
-			if($this->_viewSource === null)
-				throw new CException(Yii::t(self::ID, 'A view source component must be defined.'));
-		}
-		return $this->_viewSource;
-	}
-	
 	public function actionStripTags($sourcePath, $compiledPath, $filePermission = 0755)
 	{
 		if(!is_dir(dirname($compiledPath)))
@@ -48,8 +18,8 @@ class TViewCompileCommand extends CConsoleCommand
 
 	public function actionCompileView($sourcePath, $compiledPath, $id, $language, $filePermission = 0755, $useTransaction = true)
 	{
-		$messageSource = $this->getMessageSource();
-		$viewSource = $this->getViewSource();
+		$messageSource = TranslateModule::translator()->getMessageSource();
+		$viewSource = TranslateModule::translator()->getViewSource();
 		if($useTransaction)
 			$transaction = $viewSource->getDbConnection()->beginTransaction();
 		
@@ -133,7 +103,7 @@ class TViewCompileCommand extends CConsoleCommand
 			// Delete any view messages not in this view
 			$viewSource->deleteViewMessages($id, $viewMessages);
 			// Update the created time for the view.
-			$this->getViewSource()->updateViewCreated($id, $language);
+			$viewSource->updateViewCreated($id, $language);
 			if(isset($transaction))
 				$transaction->commit();
 		}

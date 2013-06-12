@@ -3,7 +3,7 @@
 class TViewSource extends CApplicationComponent
 {
 	
-	const ID = 'modules.translate.TViewRenderer';
+	const ID = 'modules.translate.TViewSource';
 	
 	public $routeTable = '{{translate_route}}';
 	
@@ -35,8 +35,6 @@ class TViewSource extends CApplicationComponent
 	
 	public $enableProfiling = false;
 	
-	private $_messageSource;
-	
 	private $_views = array();
 	
 	private $_cacheInvalidated = true;
@@ -66,21 +64,6 @@ class TViewSource extends CApplicationComponent
 	public function getCommandBuilder()
 	{
 		return $this->getDbConnection()->getSchema()->getCommandBuilder();
-	}
-	
-	/**
-	 * Returns the component used for message source.
-	 * @return TMessageSource the message source component.
-	 */
-	public function getMessageSource()
-	{
-		if($this->_messageSource === null)
-		{
-			$this->_messageSource = Yii::app()->getMessages();
-			if(!$this->_messageSource instanceof TMessageSource)
-				throw new CException('The application configured message source component is invalid. TViewSource is only compatible with message source components of type TMessageSource. Please check your configuration for the messages component.');
-		}
-		return $this->_messageSource;
 	}
 
 	protected function getCache()
@@ -122,7 +105,7 @@ class TViewSource extends CApplicationComponent
 				"JOIN $this->viewSourceTable vst ON (rvt.view_id=vst.id) " .
 				"JOIN $this->viewTable vt ON (vst.id=vt.id) " .
 				"LEFT JOIN $this->viewMessageTable vmt ON (vst.id=vmt.view_id) " .
-				"LEFT JOIN {$this->getMessageSource()->translatedMessageTable} tmt ON (vmt.message_id=tmt.id AND tmt.language=vt.language) " .
+				'LEFT JOIN '.TranslateModule::translator()->getMessageSource()->translatedMessageTable.' tmt ON (vmt.message_id=tmt.id AND tmt.language=vt.language) ' .
 				"WHERE (rt.route=:route AND vt.language=:language AND (tmt.last_modified IS NULL OR tmt.last_modified < vt.created)) " .
 				"GROUP BY vst.id", 
 				array(':route' => $route, ':language' => $language));
@@ -141,7 +124,7 @@ class TViewSource extends CApplicationComponent
 	{
 		return $this->getCommandBuilder()->createSqlCommand(
 				"SELECT smt.id id, smt.message message " .
-				"FROM {$this->getMessageSource()->sourceMessageTable} smt " .
+				'FROM '.TranslateModule::translator()->getMessageSource()->sourceMessageTable.' smt ' .
 				"JOIN $this->viewMessageTable vmt ON (vmt.message_id=smt.id) " .
 				"WHERE (vmt.view_id=:view_id)", 
 				array(':view_id' => $viewId))
@@ -157,7 +140,7 @@ class TViewSource extends CApplicationComponent
 				"LEFT JOIN $this->routeTable rt ON (rvt.route_id=rt.id AND rt.route=:route) " .
 				"LEFT JOIN $this->viewTable vt ON (vst.id=vt.id AND vt.language=:language) " .
 				"LEFT JOIN $this->viewMessageTable vmt ON (vst.id=vmt.view_id) " .
-				"LEFT JOIN {$this->getMessageSource()->translatedMessageTable} tmt ON (vmt.message_id=tmt.id AND tmt.language=vt.language) " .
+				'LEFT JOIN '.TranslateModule::translator()->getMessageSource()->translatedMessageTable.' tmt ON (vmt.message_id=tmt.id AND tmt.language=vt.language) ' .
 				"WHERE (vst.path=:source_path)",
 				array(':route' => $route, ':source_path' => $sourcePath, ':language' => $language))
 			->queryRow();

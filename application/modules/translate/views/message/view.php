@@ -18,7 +18,7 @@ $form = $this->beginWidget('CActiveForm',
 );
 ?>
 	<p class="note">
-		<?php echo TranslateModule::t('Fields with <span class="required">*</span> are required.'); ?>
+		<?php echo TranslateModule::t('Fields with {span} are required.', array('{span}' => '<span class="required">*</span>')); ?>
 	</p>
     <div class="row">
         <?php echo $form->labelEx($message, 'id'); ?>
@@ -31,8 +31,8 @@ $form = $this->beginWidget('CActiveForm',
         <?php echo $form->error($message,'language'); ?>
     </div>
     <div class="row">
-        <?php echo $form->label($message->source, 'category'); ?>
-        <?php echo $form->textField($message->source, 'category', array('disabled' => 'disabled')); ?>
+        <?php echo CHtml::label($message->source->getAttributeLabel('categories'), 'categories'); ?>
+        <?php echo CHtml::checkBoxList('categories', $message->source->categories, CHtml::listData(Category::model()->findAll(), 'category', 'category'), array('disabled' => 'disabled')); ?>
     </div>
     <div class="row">
         <?php echo $form->label($message->source, 'message'); ?>

@@ -25,7 +25,14 @@ class Route extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return '{{translate_route}}';
+		return TranslateModule::translator()->getViewSource()->routeTable;
+	}
+	
+	public function behaviors() {
+		return array_merge(parent::behaviors(),
+				array(
+						'toArray' => array('class' => 'application.behaviors.EArrayBehavior'),
+				));
 	}
 
 	/**
@@ -50,7 +57,7 @@ class Route extends CActiveRecord
 	{
 		return array(
 			'routeViews' => array(self::HAS_MANY, 'RouteView', 'route_id'),
-			'viewSources' => array(self::MANY_MANY, 'ViewSource', '{{translate_route_view}}(route_id, view_id)'),
+			'viewSources' => array(self::MANY_MANY, 'ViewSource', RouteView::model()->tableName().'(route_id, view_id)'),
 		);
 	}
 

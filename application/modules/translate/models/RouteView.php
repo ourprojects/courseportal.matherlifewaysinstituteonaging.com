@@ -25,7 +25,14 @@ class RouteView extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return '{{translate_route_view}}';
+		return TranslateModule::translator()->getViewSource()->routeViewTable;
+	}
+	
+	public function behaviors() {
+		return array_merge(parent::behaviors(),
+				array(
+						'toArray' => array('class' => 'application.behaviors.EArrayBehavior'),
+				));
 	}
 
 	/**

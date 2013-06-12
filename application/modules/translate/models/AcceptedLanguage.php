@@ -11,6 +11,13 @@ class AcceptedLanguage extends CActiveRecord {
 	public function tableName() {
 		return Yii::app()->getMessages()->acceptedLanguageTable;
 	}
+	
+	public function behaviors() {
+		return array_merge(parent::behaviors(),
+				array(
+						'toArray' => array('class' => 'application.behaviors.EArrayBehavior'),
+				));
+	}
 
 	public function rules() {
 		return array(
@@ -25,7 +32,7 @@ class AcceptedLanguage extends CActiveRecord {
 	public function relations() {
 		return array(
 			'translations' => array(self::HAS_MANY, 'Message', 'language', 'joinType' => 'INNER JOIN'),
-			'translationSources' => array(self::HAS_MANY, 'MessageSource', array('language' => 'id'), 'through' => 'translations')
+			'messageSources' => array(self::MANY_MANY, 'MessageSource', Message::model()->tableName().'(language, id)')
 		);
 	}
 	
@@ -38,24 +45,24 @@ class AcceptedLanguage extends CActiveRecord {
 	public function missingTranslations($sourceMessageId = null) {
 		if($sourceMessageId === null) {
 			$this->getDbCriteria()->mergeWith(array(
-					'condition' => 't.id NOT IN
-						(
-							SELECT tt.language FROM '.Message::model()->tableName().' tt
-							WHERE (tt.language = t.id) AND tt.id NOT IN
-							(
-								SELECT m.id FROM '.MessageSource::model()->tableName().' m
-								WHERE (m.id = tt.id)
-							)
-						)'
+					'condition' => $this->getTableAlias(false, false).'.id NOT IN ' .
+						'(' .
+							'SELECT tt.language FROM '.Message::model()->tableName().' tt ' .
+							'WHERE (tt.language = '.$this->getTableAlias(false, false).'.id) AND tt.id NOT IN ' .
+							'(' .
+								'SELECT m.id FROM '.MessageSource::model()->tableName().' m ' .
+								'WHERE (m.id = tt.id)' .
+							')' .
+						')'
 			));
 		} else {
 			$this->getDbCriteria()->mergeWith(array(
 					'params' => array(':sourceMessageId' => $sourceMessageId),
-					'condition' => 't.id NOT IN 
-						(
-							SELECT m.language FROM '.MessageSource::model()->tableName().' sm 
-							INNER JOIN '.Message::model()->tableName().' m ON ((sm.id = m.id) AND (sm.id = :sourceMessageId))
-						)'
+					'condition' => $this->getTableAlias(false, false).'.id NOT IN ' .
+						'(' .
+							'SELECT m.language FROM '.MessageSource::model()->tableName().' sm ' . 
+							'INNER JOIN '.Message::model()->tableName().' m ON ((sm.id = m.id) AND (sm.id = :sourceMessageId))' .
+						')'
 			));
 		}
 		return $this;

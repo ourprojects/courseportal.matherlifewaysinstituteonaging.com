@@ -26,7 +26,14 @@ class View extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return '{{translate_view}}';
+		return TranslateModule::translator()->getViewSource()->viewTable;
+	}
+	
+	public function behaviors() {
+		return array_merge(parent::behaviors(),
+				array(
+						'toArray' => array('class' => 'application.behaviors.EArrayBehavior'),
+				));
 	}
 
 	/**
@@ -62,6 +69,7 @@ class View extends CActiveRecord
 	public function relations()
 	{
 		return array(
+			'acceptedLanguage' => array(self::BELONGS_TO, 'AcceptedLanguage', 'language', 'joinType' => 'INNER JOIN'),
 			'viewSource' => array(self::BELONGS_TO, 'ViewSource', 'id'),
 		);
 	}

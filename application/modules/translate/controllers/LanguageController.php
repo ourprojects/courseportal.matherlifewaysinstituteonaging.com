@@ -1,5 +1,5 @@
 <?php
-class AcceptedLanguageController extends TController {
+class LanguageController extends TController {
 	
 	public function filters()
 	{

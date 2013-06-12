@@ -5,37 +5,7 @@ class TViewRenderer extends CViewRenderer
 	
 	const ID = 'modules.translate.TViewRenderer';
 	
-	public $viewSource = 'views';
-	
-	public $messageSource = 'messages';
-	
-	private $_messages;
-	
-	private $_viewSource;
-	
 	private $_viewCompiler;
-	
-	public function getMessageSource()
-	{
-		if(!isset($this->_messages))
-		{
-			$this->_messages = Yii::app()->getComponent($this->messageSource);
-			if(!$this->_messages === null)
-				throw new CException(Yii::t(self::ID, 'A message source must be defined.'));
-		}
-		return $this->_messages;
-	}
-	
-	public function getViewSource()
-	{
-		if(!isset($this->_viewSource))
-		{
-			$this->_viewSource = Yii::app()->getComponent($this->viewSource);
-			if($this->_viewSource === null)
-				throw new CException(Yii::t(self::ID, 'A view source component must be defined.'));
-		}
-		return $this->_viewSource;
-	}
 	
 	public function getViewCompiler()
 	{
@@ -43,8 +13,6 @@ class TViewRenderer extends CViewRenderer
 		{
 			require_once(dirname(__FILE__).DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'commands'.DIRECTORY_SEPARATOR.'TViewCompileCommand.php');
 			$this->_viewCompiler = new TViewCompileCommand(TViewCompileCommand::ID, new CConsoleCommandRunner());
-			$this->_viewCompiler->viewSource = $this->viewSource;
-			$this->_viewCompiler->messageSource = $this->messageSource;
 		}
 		
 		return $this->_viewCompiler;
@@ -66,7 +34,7 @@ class TViewRenderer extends CViewRenderer
 	{
 		if($id === null)
 		{
-			$id = $this->getViewSource()->getViewId($sourcePath, $compiledPath);
+			$id = TranslateModule::translator()->getViewSource()->getViewId($sourcePath, $compiledPath);
 			
 			if($id === false)
 				throw new CDbException(Yii::t(self::ID, 'Database entry for view with source path "{source_path}" and compiled path "{compiled_path}" does not exist.', array('{source_path}' => $sourcePath, '{compiled_path}' => $compiledPath)));
@@ -75,12 +43,12 @@ class TViewRenderer extends CViewRenderer
 		if($language === null)
 			$language = Yii::app()->getLanguage();
 
-		$this->getViewCompiler()->actionCompileView($sourcePath, $compiledPath, $id, $language, $this->filePermission, $this->getViewSource()->getDbConnection()->getCurrentTransaction() === null);
+		$this->getViewCompiler()->actionCompileView($sourcePath, $compiledPath, $id, $language, $this->filePermission, TranslateModule::translator()->getViewSource()->getDbConnection()->getCurrentTransaction() === null);
 	}
 	
 	public function renderFile($context, $sourceFile, $data, $return)
 	{
-		return $context->renderInternal($this->getViewSource()->translate($context, $sourceFile), $data, $return);
+		return $context->renderInternal(TranslateModule::translator()->getViewSource()->translate($context, $sourceFile), $data, $return);
 	}
 	
 	/**
@@ -121,7 +89,7 @@ class TViewRenderer extends CViewRenderer
 	 */
 	public function translate($route, $path, $language)
 	{
-		$viewSource = $this->getViewSource();
+		$viewSource = TranslateModule::translator()->getViewSource();
 		if($viewSource->getDbConnection()->getCurrentTransaction() === null)
 			$transaction = $viewSource->getDbConnection()->beginTransaction();
 		try

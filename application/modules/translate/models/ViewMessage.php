@@ -24,7 +24,14 @@ class ViewMessage extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return '{{translate_view_message}}';
+		return TranslateModule::translator()->getViewSource()->viewMessageTable;
+	}
+	
+	public function behaviors() {
+		return array_merge(parent::behaviors(),
+				array(
+						'toArray' => array('class' => 'application.behaviors.EArrayBehavior'),
+				));
 	}
 
 	/**

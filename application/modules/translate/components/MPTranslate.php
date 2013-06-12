@@ -52,7 +52,11 @@ class MPTranslate extends CApplicationComponent {
     
     public $cacheDuration = 0;
     
-    private $_source;
+    public $viewSource = 'views';
+    
+    private $_viewSource;
+    
+    private $_messageSource;
     
     /**
      * @var array $_messages contains the untranslated messages found during the current request
@@ -342,15 +346,34 @@ class MPTranslate extends CApplicationComponent {
 		return $this->_cache[$cacheKey];
 	}
 	
+	/**
+	 * @throws CException If the message source component was either not found or was not an instance of TMessageSource.
+	 * @return TMessageSource the message source component currently in use.
+	 */
 	public function getMessageSource()
 	{
-		if(!isset($this->_source))
+		if(!isset($this->_messageSource))
 		{
-			$this->_source = Yii::app()->getMessages();
-			if(!$this->_source instanceof TMessageSource)
+			$this->_messageSource = Yii::app()->getMessages();
+			if(!$this->_messageSource instanceof TMessageSource)
 				throw new CException(self::ID.' is only compatible with message source of type TMessageSource.');
 		}
-		return $this->_source;
+		return $this->_messageSource;
+	}
+	
+	/**
+	 * @throws CException If the view source component was either not found or was not an instance of TViewSource.
+	 * @return TViewSource the view source component currently in use.
+	 */
+	public function getViewSource()
+	{
+		if(!isset($this->_viewSource))
+		{
+			$this->_viewSource = Yii::app()->getComponent($this->viewSource);
+			if(!$this->_viewSource instanceof TViewSource)
+				throw new CException(self::ID.' is only compatible with view source of type TViewSource.');
+		}
+		return $this->_viewSource;
 	}
 
     /**

@@ -10,6 +10,13 @@ class Category extends CActiveRecord {
 	public function tableName() {
 		return Yii::app()->getMessages()->categoryTable;
 	}
+	
+	public function behaviors() {
+		return array_merge(parent::behaviors(),
+				array(
+						'toArray' => array('class' => 'application.behaviors.EArrayBehavior'),
+				));
+	}
 
 	public function rules() {
 		return array(
@@ -32,7 +39,7 @@ class Category extends CActiveRecord {
 	public function relations() {
 		return array(
 			'categoryMessages' => array(self::HAS_MANY, 'CategoryMessage', 'category_id'),
-			'messageSources' => array(self::MANY_MANY, 'MessageSource', '{{translate_category_message}}(category_id, message_id)'),
+			'messageSources' => array(self::MANY_MANY, 'MessageSource', CategoryMessage::model()->tableName().'(category_id, message_id)'),
 		);
 	}
 	

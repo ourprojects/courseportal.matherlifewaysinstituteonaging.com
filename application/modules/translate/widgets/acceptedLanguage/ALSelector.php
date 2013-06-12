@@ -1,7 +1,9 @@
 <?php
-class ALSelector extends CWidget {
+class ALSelector extends CWidget 
+{
 	
-    public function run() {
+    public function run() 
+    {
         $this->render('ALSelector', 
         		array(
         				'currentLang' => Yii::app()->getLanguage(), 

@@ -25,7 +25,14 @@ class ViewSource extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return '{{translate_view_source}}';
+		return TranslateModule::translator()->getViewSource()->viewSourceTable;
+	}
+	
+	public function behaviors() {
+		return array_merge(parent::behaviors(),
+				array(
+						'toArray' => array('class' => 'application.behaviors.EArrayBehavior'),
+				));
 	}
 
 	/**
@@ -50,7 +57,7 @@ class ViewSource extends CActiveRecord
 	{
 		return array(
 			'viewMessageSources' => array(self::HAS_MANY, 'ViewMessage', 'view_id'),
-			'messageSources' => array(self::MANY_MANY, 'MessageSource', '{{translate_view_message}}(view_id, message_id)'),
+			'messageSources' => array(self::MANY_MANY, 'MessageSource', ViewMessage::model()->tableName().'(view_id, message_id)'),
 			'views' => array(self::HAS_MANY, 'View', 'id'),
 		);
 	}

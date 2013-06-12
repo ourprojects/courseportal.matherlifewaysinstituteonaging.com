@@ -10,6 +10,13 @@ class MessageSource extends CActiveRecord {
 	public function tableName() {
 		return Yii::app()->getMessages()->sourceMessageTable;
 	}
+	
+	public function behaviors() {
+		return array_merge(parent::behaviors(),
+				array(
+						'toArray' => array('class' => 'application.behaviors.EArrayBehavior'),
+				));
+	}
 
 	public function rules() {
 		return array(
@@ -25,32 +32,36 @@ class MessageSource extends CActiveRecord {
 		return array(
 				'id' => TranslateModule::t('ID'),
 				'message' => TranslateModule::t('Message'),
+				'categories' => TranslateModule::t('Categories'),
+				'translations' => TranslateModule::t('Translations'),
+				'acceptedLanguages' => TranslateModule::t('Accepted Languages'),
 		);
 	}
     
 	public function relations() {
 		return array(
-			'compiledViewMessageSources' => array(self::HAS_MANY, 'CompiledViewMessage', 'message_source_id'),
-			'compiledViews' => array(self::MANY_MANY, 'CompiledView', '{{translate_compiled_view_message}}(message_source_id, compiled_view_id)'),
+			'viewMessages' => array(self::HAS_MANY, 'CompiledViewMessage', 'message_source_id'),
+			'views' => array(self::MANY_MANY, 'View', ViewMessage::model()->tableName().'(message_source_id, compiled_view_id)'),
             'translations' => array(self::HAS_MANY, 'Message', 'id', 'joinType' => 'INNER JOIN'),
-			'acceptedLanguages' => array(self::HAS_MANY, 'AcceptedLanguage', array('id' => 'language'), 'through' => 'translations')
-			
+			'acceptedLanguages' => array(self::MANY_MANY, 'AcceptedLanguage', Message::model()->tableName().'(id, language)'),
+			'messageCategories' => array(self::HAS_MANY, 'CategoryMessage', 'message_id'),
+			'categories' => array(self::MANY_MANY, 'Category', CategoryMessage::model()->tableName().'(message_id, category_id)'),
 		);
 	}
 	
 	public function scopes() {
 		return array(
-				'isAcceptedLanguage' => array('with' => 'acceptedLanguage'),
+				'acceptedLanguageTranslation' => array('with' => 'acceptedLanguage'),
 				'missingAcceptedLanguageTranslations' => array(
-						'condition' => 't.id <> ANY 
-							(
-								SELECT al.* FROM '.AcceptedLanguage::model()->tableName().' al
-								WHERE al.id NOT IN
-								(
-									SELECT m.language FROM '.Message::model()->tableName().' m
-									WHERE (m.id = t.id)
-								)
-							)'
+						'condition' => $this->getTableAlias(false, false).'.id <> ANY ' .
+							'(' .
+								'SELECT al.* FROM '.AcceptedLanguage::model()->tableName().' al ' .
+								'WHERE al.id NOT IN '.
+								'(' .
+									'SELECT m.language FROM '.Message::model()->tableName().' m' .
+									'WHERE (m.id = '.$this->getTableAlias(false, false).'.id)' .
+								')' .
+							')'
 				)
 		);
 	}
@@ -64,25 +75,24 @@ class MessageSource extends CActiveRecord {
 	public function missingTranslations($languageId = null) {
 		if($languageId === null) {
 			$this->getDbCriteria()->mergeWith(array(
-					'condition' => 't.id <> ANY
-						(
-							SELECT m.id FROM '.Message::model()->tableName().' m
-							WHERE m.language NOT IN
-							(
-								SELECT mm.language FROM '.Message::model()->tableName().' mm
-								WHERE (mm.id = t.id)
-							)
-					
-						)'
+					'condition' => $this->getTableAlias(false, false).'.id <> ANY ' .
+						'(' .
+							'SELECT m.id FROM '.Message::model()->tableName().' m ' .
+							'WHERE m.language NOT IN ' .
+							'(' .
+								'SELECT mm.language FROM '.Message::model()->tableName().' mm ' .
+								'WHERE (mm.id = '.$this->getTableAlias(false, false).'.id) ' .
+							')' .
+						')'
 			));
 		} else {
 			$this->getDbCriteria()->mergeWith(array(
 					'params' => array(':languageId' => $languageId),
-					'condition' => 't.id NOT IN 
-						(
-							SELECT id FROM '.Message::model()->tableName().' m 
-							WHERE (m.language = :languageId) AND (m.id = t.id)
-						)'
+					'condition' => $this->getTableAlias(false, false).'.id NOT IN ' .
+						'(' .
+							'SELECT id FROM '.Message::model()->tableName().' m' . 
+							'WHERE (m.language = :languageId) AND (m.id = '.$this->getTableAlias(false, false).'.id)' .
+						')'
 			));
 		}
 		return $this;
@@ -91,8 +101,8 @@ class MessageSource extends CActiveRecord {
 	public function search() {
 		$criteria = $this->getDbCriteria();
 		
-		$criteria->compare('t.id', $this->id);
-		$criteria->compare('t.message', $this->message, true);
+		$criteria->compare('id', $this->id);
+		$criteria->compare('message', $this->message, true);
 		
 		return $this;
 	}

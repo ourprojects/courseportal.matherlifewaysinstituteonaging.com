@@ -10,6 +10,13 @@ class Message extends CActiveRecord {
 	public function tableName() {
 		return Yii::app()->getMessages()->translatedMessageTable;
 	}
+	
+	public function behaviors() {
+		return array_merge(parent::behaviors(),
+				array(
+						'toArray' => array('class' => 'application.behaviors.EArrayBehavior'),
+				));
+	}
 
 	public function rules() {
 		return array(
@@ -36,13 +43,17 @@ class Message extends CActiveRecord {
 	public function relations() {
 		return array(
             'source' => array(self::BELONGS_TO, 'MessageSource', 'id'),
-			'acceptedLanguage' => array(self::BELONGS_TO, 'AcceptedLanguage', 'language', 'joinType' => 'INNER JOIN')
+			'acceptedLanguage' => array(self::BELONGS_TO, 'AcceptedLanguage', 'language', 'joinType' => 'INNER JOIN'),
 		);
 	}
 	
 	public function scopes() {
 		return array(
 			'isAcceptedLanguage' => array('with' => 'acceptedLanguage'),
+			'notAcceptedLanguage' => array(
+					'join' => 'LEFT JOIN '.AcceptedLanguage::model()->tableName().' al ON (al.id='.$this->getTableAlias(false, false).'.language)',
+					'condition' => 'al.id IS NULL'
+			),
 		);
 	}
 	
@@ -55,28 +66,28 @@ class Message extends CActiveRecord {
 	public function missingTranslations($sourceMessageId = null) {
 		if($sourceMessageId === null) {
 			$this->getDbCriteria()->mergeWith(array(
-					'select' => 't.language',
-					'condition' => 't.id NOT IN
+					'select' => $this->getTableAlias(false, false).'.language',
+					'condition' => $this->getTableAlias(false, false).'.id NOT IN
 						(
 								SELECT tt.id FROM '.Message::model()->tableName().' tt
-								WHERE (tt.language = t.language) AND tt.id NOT IN
+								WHERE (tt.language = '.$this->getTableAlias(false, false).'.language) AND tt.id NOT IN
 								(
 										SELECT m.id FROM '.MessageSource::model()->tableName().' m
 										WHERE (m.id = tt.id)
 								)
 						)',
-					'group' => 't.language'
+					'group' => $this->getTableAlias(false, false).'.language'
 			));
 		} else {
 			$this->getDbCriteria()->mergeWith(array(
-					'select' => 't.language',
+					'select' => $this->getTableAlias(false, false).'.language',
 					'params' => array(':sourceMessageId' => $sourceMessageId),
-					'condition' => 't.language NOT IN 
+					'condition' => $this->getTableAlias(false, false).'.language NOT IN 
 						(
 							SELECT m.language FROM '.MessageSource::model()->tableName().' sm 
 							INNER JOIN '.Message::model()->tableName().' m ON ((sm.id = m.id) AND (sm.id = :sourceMessageId))
 						)',
-					'group' => 't.language'
+					'group' => $this->getTableAlias(false, false).'.language'
 			));
 		}
 		return $this;
@@ -93,9 +104,9 @@ class Message extends CActiveRecord {
 	public function search() {
 		$criteria = $this->getDbCriteria();
 		
-		$criteria->compare('t.id', $this->id);
-		$criteria->compare('t.language', $this->language, true);
-		$criteria->compare('t.translation', $this->translation, true);
+		$criteria->compare('id', $this->id);
+		$criteria->compare('language', $this->language, true);
+		$criteria->compare('translation', $this->translation, true);
 	
 		return $this;
 	}
