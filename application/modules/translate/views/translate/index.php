@@ -4,6 +4,7 @@
   <div class="box-sidebar one">
   	<h3><?php echo TranslateModule::t('Configure'); ?></h3>
 	<ul id="config_options">
+		<li><?php echo CHtml::link(TranslateModule::t('Message Categories'), $this->createUrl('category/')); ?></li>
 		<li><?php echo CHtml::link(TranslateModule::t('Source Messages'), $this->createUrl('messageSource/')); ?></li>
 		<li><?php echo CHtml::link(TranslateModule::t('Translations'), $this->createUrl('message/')); ?></li>
 		<li><?php echo CHtml::link(TranslateModule::t('Translated Views'), $this->createUrl('view/')); ?></li>
