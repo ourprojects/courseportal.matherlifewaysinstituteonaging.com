@@ -1,21 +1,47 @@
 <?php
 
-class MPTranslate extends CApplicationComponent {
+class MPTranslate extends CApplicationComponent 
+{
 	
 	/**
-	 * @const string ID an unique key to be used in many situations
-	 * */
+	 * A unique key to be used in many situations
+	 * 
+	 * @name MPTranslate::ID
+	 * @type string
+	 * @const string
+	 */
 	const ID = 'modules.translate';
 	
+	/**
+	 * The maximum time in seconds to wait for a Google translate API query to complete
+	 *
+	 * @name MPTranslate::GOOGLE_QUERY_TIME_LIMIT
+	 * @type integer
+	 * @const integer
+	 */
 	const GOOGLE_QUERY_TIME_LIMIT = 30;
 	
+	/**
+	 * The maximum number of characters to use for a Google translate API query.
+	 *
+	 * @name MPTranslate::GOOGLE_TRANSLATE_MAX_CHARS
+	 * @type integer
+	 * @const integer
+	 */
 	const GOOGLE_TRANSLATE_MAX_CHARS = 5000;
 	
+	/**
+	 * The URL to use for querying the Google translate API.
+	 *
+	 * @name MPTranslate::GOOGLE_TRANSLATE_URL
+	 * @type string
+	 * @const string
+	 */
 	const GOOGLE_TRANSLATE_URL = 'https://www.googleapis.com/language/translate/v2';
     
     /**
-     * @var $dialogOptions options of the dialog
-     * */
+     * @var array $dialogOptions options of the dialog
+     */
     public $dialogOptions = array(
         'autoOpen' => false,
         'modal' => true,
@@ -24,38 +50,75 @@ class MPTranslate extends CApplicationComponent {
     );
     
     /**
-     * @var string $googleTranslateApiKey your google translate api key
-     * set this if you wish to use googles translate service to translate the messages
-     * if empty it will not use the service 
-     * */
+     * @var string $googleApiKey your google translate api key
+     * set this if you wish to use Google's translate service to translate the messages
+     * if empty it will not use the Google's translate API service 
+     */
     public $googleApiKey = null;
 
     /**
      * @var boolean wheter to auto translate the missing messages found on the page
      * needs google api key to set
-     * */
+     */
     public $autoTranslate = false;
     
     public $managementAccessRules = array();
     
     public $managementActionFilters = array();
     
-    public $cookieExpire = 63072000; // 2 Years in seconds.
+    /**
+     * @var integer time in seconds to store language setting in cookie. Defaults to 63072000 seconds (2 Years).
+     */
+    public $cookieExpire = 63072000;
     
+    /**
+     * @var bool Whether to define a global translate function called 't' to simplify translating messages. 
+     */
     public $defineGlobalTranslateFunction = true;
     
+    /**
+     * @var bool Whether to use database transactions when updating the database.
+     */
     public $useTransaction = true;
     
+    /**
+     * @var string The name of the variable to use for saving and retrieving language settings for a client.
+     */
     public $languageRequestVarName = 'language';
     
+    /**
+     * @var bool Use generic locales. Current language and source language will be stripped to the language portion of their respective IDs.
+     */
     public $genericLocale = true;
     
+    /**
+     * @var bool require the language of a request to be one of the accepted languages configured for the translate component.
+     */
+    public $forceAcceptedLanguage = true;
+    
+    /**
+     * @var integer The number of seconds in which cached values will expire. 0 means never expire. {@see CCache::set()}
+     */
     public $cacheDuration = 0;
     
+    /**
+     * @var string The name of the view source component to use
+     */
     public $viewSource = 'views';
     
+    /**
+     * @var string The name of the message source component to use
+     */
+    public $messageSource = 'messages';
+    
+    /**
+     * @var TViewSource The view source component being used.
+     */
     private $_viewSource;
     
+    /**
+     * @var TMessageSource The message source component being used.
+     */
     private $_messageSource;
     
     /**
@@ -69,9 +132,17 @@ class MPTranslate extends CApplicationComponent {
     private $_cache = array();
     
 	/**
-	 * handles the initialization parameters of the components
+	 * Initialize the translate component.
+	 * 
+	 * If {@see MPTranslate::genericLocale} is set to true the source language setting will be stripped to just the language portion of its value.
+	 * 
+	 * If {@see MPTranslate::defineGlobalTranslateFunction} is set to true a global function called 't' will be defined to simplify message translations
+	 * over the built in {@see Yii::t()} function.
+	 * 
+	 * @see CApplicationComponent::init()
 	 */
-	public function init() {
+	public function init() 
+	{
 		if($this->genericLocale)
 		{
 			Yii::app()->sourceLanguage = Yii::app()->getLocale()->getLanguageID(Yii::app()->sourceLanguage);
@@ -86,6 +157,34 @@ class MPTranslate extends CApplicationComponent {
         return parent::init();
 	}
 	
+	/**
+	 * Processes the current request variables for a language setting and calls {@link MPTranslate::setLanguage()} with the language settings found.
+	 * 
+	 * The language setting is determined as follows in the order of these rules,
+	 * as soon as the language setting is determined no futher rules are considered:
+	 * 1. Check for a post variable with name {@see MPTranslate::$languageRequestVarName}.
+	 * 2. Check for a get variable with name {@see MPTranslate::$languageRequestVarName}.
+	 * 	  The $_GET and $_REQUEST global variables with name {@see MPTranslate::$languageRequestVarName} will
+	 * 	  be unset if this rule is matched.
+	 * 3. Check for a session variable with name {@see MPTranslate::$languageRequestVarName}.
+	 * 4. Check for a cookie variable with name {@see MPTranslate::$languageRequestVarName}.
+	 * 5. Get the client's preferred language setting if available.
+	 * 6. Use the applications source language.
+	 * 
+	 * Next the language setting is processed in order as follows:
+	 * 
+	 * 1. If {@see MPTranslate::$genericLocale} is set to true then the language settings will be stripped to its language portion only.
+	 * 
+	 * 2. If {@see MPTranslate::$forceAcceptedLanguage} is set to true and the language settings is not considered to be an acceptable language
+	 *    by {@see MPTranslate::isAcceptedLanguage()} the the language setting will be discarded and the system's default language will be used.
+	 * 
+	 * 3. If the language setting is not part of the current request URI (the first path segment immediately following the host name) 
+	 *    the current URI will be updated and the client will be redirected to this new URI.
+	 *
+	 * 4. Finally, {@see MPTranslate::setLanguage()} is called using the language setting as the method's parameter.
+	 * 
+	 * @param string $route The current requested route.
+	 */
 	public function processRequest($route) 
 	{
 		// Determine request's preferred language by:
@@ -131,12 +230,12 @@ class MPTranslate extends CApplicationComponent {
 			$language = Yii::app()->getLocale()->getLanguageID($language);
 		}
 
-		// If the language is not acceptable set it to the application's default language. 
-		if(!$this->isAcceptedLanguage($language)) 
+		// If we should enforce accepted languages only and the language is not acceptable set it to the application's default language. 
+		if($this->forceAcceptedLanguage && !$this->isAcceptedLanguage($language)) 
 		{
 			$language = $this->genericLocale ? Yii::app()->getLocale()->getLanguageID(Yii::app()->getLanguage()) : Yii::app()->getLanguage();
 		}
-		
+
 		// If the language part of the requested url is missing redirect to the same url with the language part inserted.
 		if(preg_match('/^\w+/', Yii::app()->getRequest()->getPathinfo(), $matches) !== 1 || $matches[0] !== $language)
 		{
@@ -147,6 +246,15 @@ class MPTranslate extends CApplicationComponent {
 		$this->setLanguage($language);
 	}
 	
+	/**
+	 * Performs the following actions with the langauge parameter:
+	 * Sets the application's current language.
+	 * Sets php's current language.
+	 * Creates a session variable containing the current language's value.
+	 * Creates a cookie containing the current language value.
+	 * 
+	 * @param string $language The language ID
+	 */
 	public function setLanguage($language) 
 	{
 		Yii::app()->setLanguage($language);
@@ -155,26 +263,42 @@ class MPTranslate extends CApplicationComponent {
 		Yii::app()->getRequest()->getCookies()->add($this->languageRequestVarName, new CHttpCookie($this->languageRequestVarName, $language, array('expire' => time() + $this->cookieExpire)));
 	}
 	
+	/**
+	 * Get whether there are missing translations for the current request.
+	 * 
+	 * @return boolean true if missing translations exist for the current request. False otherwise.
+	 */
 	public function hasMissingTranslations()
 	{
 		return !empty($this->_messages);
 	}
 	
+	/**
+	 * Whether Google translate can be used (whether a google translate API key has been set and is not empty)
+	 * 
+	 * @see MPTranslate::$googleApiKey
+	 * @return boolean true if Google translate can be used (google translate API key is set and not empty). False otherwise.
+	 */
 	public function canUseGoogleTranslate() 
 	{
 		return !empty($this->googleApiKey);
 	}
 	
+	/**
+	 * Get the list of Yii accepted locales. Alias for {@link CLocale::getLocaleIds()}.
+	 * 
+	 * @see CLocale::getLocaleIds()
+	 * @return array list of Yii accepted locales.
+	 */
 	public function getYiiAcceptedLocales() 
 	{
 		return CLocale::getLocaleIds();
 	}
 	
 	/**
-	 * returns an array containing all languages accepted by google translate
-	 *
-	 * @param string $targetLanguage
-	 * @return array
+	 * Get a list of all languages accepted by Google translate.
+
+	 * @return array An array of the languages accepted by Google translate in the form of 'ID' => 'display name or ID if display name could not be determined'.
 	 */
 	public function getGoogleAcceptedLanguages() 
 	{
@@ -202,6 +326,11 @@ class MPTranslate extends CApplicationComponent {
 		return $this->_cache[$cacheKey];
 	}
 	
+	/**
+	 * Get the list of 'accepted' languages.
+	 * 
+	 * @return array An array of the accepted languages in the form of 'ID' => 'display name or ID if display name could not be determined'.
+	 */
 	public function getAcceptedLanguages() 
 	{
 		$cacheKey = self::ID . '-cache-accepted-languages-' . Yii::app()->getLanguage();
@@ -222,78 +351,161 @@ class MPTranslate extends CApplicationComponent {
 		return $this->_cache[$cacheKey];
 	}
 	
+	/**
+	 * Get whether a language ID is accepted by Yii i18n locale database.
+	 *
+	 * @param string $languageId The language ID
+	 * @return boolean true if the language ID is accepted by Yii i18n locale database, false otherwise.
+	 */
 	public function isYiiAcceptedLocale($id) 
 	{
 		return in_array($id, $this->getYiiAcceptedLocales());
 	}
 	
+	/**
+	 * Get whether a language ID is accepted by Google Translate.
+	 *
+	 * @param string $languageId The language ID
+	 * @return boolean true if the language ID is accepted by Google Translate, false otherwise.
+	 */
 	public function isGoogleAcceptedLanguage($id) 
 	{
 		return array_key_exists($id, $this->getGoogleAcceptedLanguages());
 	}
 	
-	public function isAcceptedLanguage($id) 
+	/**
+	 * Get whether a language ID is an 'accepted' language ID.
+	 * 
+	 * @param string $languageId The language ID
+	 * @return boolean true if the language ID is an accepted language ID false otherwise.
+	 */
+	public function isAcceptedLanguage($languageId) 
 	{
-		return array_key_exists($id, $this->getAcceptedLanguages());
+		return array_key_exists($languageId, $this->getAcceptedLanguages());
 	}
 	
-	public function getLanguageID($language = null) 
+	/**
+	 * Get the language ID portion of a locale ID.
+	 *
+	 * @param string $localeId The locale ID. Defaults to null meaning use the aplication's current language as the locale ID.
+	 * @return string the language ID portion of a locale ID
+	 */
+	public function getLanguageID($localeId = null) 
 	{
-		if($language === null)
-			$language = Yii::app()->getLanguage();
-		return Yii::app()->getLocale()->getLanguageID($language);
+		if($localeId === null)
+			$localeId = Yii::app()->getLanguage();
+		return Yii::app()->getLocale()->getLanguageID($localeId);
 	}
 	
-	public function getScriptID($language = null) 
+	/**
+	 * Get the script ID portion of a locale ID.
+	 *
+	 * @param string $localeId The locale ID. Defaults to null meaning use the aplication's current language as the locale ID.
+	 * @return string the script ID portion of a locale ID
+	 */
+	public function getScriptID($localeId = null) 
 	{
-		if($language === null)
-			$language = Yii::app()->getLanguage();
-		$id = Yii::app()->getLocale()->getScriptID($language);
-		if($id === null && $language !== Yii::app()->getLanguage())
-			return $this->getScriptID(Yii::app()->getLanguage());
-		return $id;
+		if($localeId === null)
+			$localeId = Yii::app()->getLanguage();
+		return Yii::app()->getLocale()->getScriptID($localeId);
 	}
 	
-	public function getTerritoryID($language = null) 
+	/**
+	 * Get the territory ID portion of a locale ID. 
+	 * 
+	 * @param string $localeId The locale ID. Defaults to null meaning use the aplication's current language as the locale ID.
+	 * @return string the territory ID portion of a locale ID
+	 */
+	public function getTerritoryID($localeId = null) 
 	{
-		if($language === null)
-			$language = Yii::app()->getLanguage();
-		$id = Yii::app()->getLocale()->getTerritoryID($language);
-		if($id === null && $language !== Yii::app()->getLanguage())
-			return $this->getTerritoryID(Yii::app()->getLanguage());
-		return $id;
+		if($localeId === null)
+			$localeId = Yii::app()->getLanguage();
+		return Yii::app()->getLocale()->getTerritoryID($localeId);
 	}
 	
+	/**
+	 * Get the localized display name of a language for a language using the Yii i18n database.
+	 *
+	 * @see MPTranslate::getLocaleDisplayName()
+	 * @param string $id The locale ID.
+	 * @param string $language The language to localize the language display name for. Defaults to null meaning the application's current language.
+	 * @return string|false Returns the localized language display name, or false on error.
+	 */
 	public function getLanguageDisplayName($id = null, $language = null) 
 	{
 		return $this->getLocaleDisplayName($id, $language);
 	}
 	
+	/**
+	 * Get the localized display names of all languages for a language using the Yii i18n database.
+	 *
+	 * @see MPTranslate::getLocaleDisplayNames()
+	 * @param string $language The language to localize the territory display names for. Defaults to null meaning the application's current language.
+	 * @return array|false Returns an array of the localized territory display names in the form 'locale ID' => 'territory display name', or false on error.
+	 */
 	public function getLanguageDisplayNames($language = null) 
 	{
 		return $this->getLocaleDisplayNames($language);
 	}
 	
+	/**
+	 * Get the localized display name of a script for a language using the Yii i18n database.
+	 *
+	 * @see MPTranslate::getLocaleDisplayName()
+	 * @param string $id The locale ID.
+	 * @param string $language The language to localize the script display name for. Defaults to null meaning the application's current language.
+	 * @return string|false Returns the localized script display name, or false on error.
+	 */
 	public function getScriptDisplayName($id = null, $language = null) 
 	{
 		return $this->getLocaleDisplayName($id, $language, 'script');
 	}
 	
+	/**
+	 * Get the localized display names of all scritps for a language using the Yii i18n database.
+	 *
+	 * @see MPTranslate::getLocaleDisplayNames()
+	 * @param string $language The language to localize the territory display names for. Defaults to null meaning the application's current language.
+	 * @return array|false Returns an array of the localized territory display names in the form 'locale ID' => 'territory display name', or false on error.
+	 */
 	public function getScriptDisplayNames($language = null) 
 	{
 		return $this->getLocaleDisplayNames($language, 'script');
 	}
 	
+	/**
+	 * Get the localized display name of a territory for a language using the Yii i18n database.
+	 *
+	 * @see MPTranslate::getLocaleDisplayName()
+	 * @param string $id The locale ID.
+	 * @param string $language The language to localize the territory display name for. Defaults to null meaning the application's current language.
+	 * @return string|false Returns the localized territory display name, or false on error.
+	 */
 	public function getTerritoryDisplayName($id = null, $language = null) 
 	{
 		return $this->getLocaleDisplayName($id, $language, 'territory');
 	}
 	
+	/**
+	 * Get the localized display names of all territories for a language using the Yii i18n database.
+	 * 
+	 * @see MPTranslate::getLocaleDisplayNames()
+	 * @param string $language The language to localize the territory display names for. Defaults to null meaning the application's current language.
+	 * @return array|false Returns an array of the localized territory display names in the form 'locale ID' => 'territory display name', or false on error.
+	 */
 	public function getTerritoryDisplayNames($language = null) 
 	{
 		return $this->getLocaleDisplayNames($language, 'territory');
 	}
 	
+	/**
+	 * Get the localized display name of a language, script, or territory for a language using the Yii i18n database.
+	 * 
+	 * @param string $id The locale ID.
+	 * @param string $language The language to localize the display name for. Defaults to null meaning the application's current language.
+	 * @param string $category The type of display name to get for the ID 'language', 'script', or 'territory'. Defaults to 'language'.
+	 * @return string|false Returns the localized display name, or false on error.
+	 */
 	public function getLocaleDisplayName($id = null, $language = null, $category = 'language') 
 	{
 		$idMethod = 'get' . ucfirst(strtolower($category)) . 'ID';
@@ -312,6 +524,13 @@ class MPTranslate extends CApplicationComponent {
 		return false;
 	}
 	
+	/**
+	 * Get the localized display names of all languages, scripts, or territories for a language using the Yii i18n database.
+	 * 
+	 * @param string $language The language to localize the display names for. Defaults to null meaning the application's current language.
+	 * @param string $category The type of display names either 'language', 'script', or 'territory'. Defaults to 'language'.
+	 * @return array|false Returns an array of the localized display names in the form 'locale ID' => 'display name', or false on error.
+	 */
 	public function getLocaleDisplayNames($language = null, $category = 'language') 
 	{
 		if($language === null)
@@ -347,6 +566,8 @@ class MPTranslate extends CApplicationComponent {
 	}
 	
 	/**
+	 * gets the {@link TMessageSource} component
+	 * 
 	 * @throws CException If the message source component was either not found or was not an instance of TMessageSource.
 	 * @return TMessageSource the message source component currently in use.
 	 */
@@ -354,14 +575,16 @@ class MPTranslate extends CApplicationComponent {
 	{
 		if(!isset($this->_messageSource))
 		{
-			$this->_messageSource = Yii::app()->getMessages();
+			$this->_messageSource = Yii::app()->getComponent($this->messageSource);
 			if(!$this->_messageSource instanceof TMessageSource)
-				throw new CException(self::ID.' is only compatible with message source of type TMessageSource.');
+				throw new CException("The component '$this->messageSource' must be defined and of type TMessageSource.");
 		}
 		return $this->_messageSource;
 	}
 	
 	/**
+	 * gets the {@link TViewSource} component
+	 * 
 	 * @throws CException If the view source component was either not found or was not an instance of TViewSource.
 	 * @return TViewSource the view source component currently in use.
 	 */
@@ -371,13 +594,13 @@ class MPTranslate extends CApplicationComponent {
 		{
 			$this->_viewSource = Yii::app()->getComponent($this->viewSource);
 			if(!$this->_viewSource instanceof TViewSource)
-				throw new CException(self::ID.' is only compatible with view source of type TViewSource.');
+				throw new CException("The component '$this->viewSource' must be defined and of type TViewSource.");
 		}
 		return $this->_viewSource;
 	}
 
     /**
-     * method that handles the on missing translation event
+     * method that handles {@link CMissingTranslationEvent}s
      * 
      * @param CMissingTranslationEvent $event
      */
@@ -386,6 +609,16 @@ class MPTranslate extends CApplicationComponent {
 		$event->message = $this->translate($event->category, $event->message, $event->language, $this->useTransaction);
     }
     
+    /**
+     * Attempts to translate a message. 
+     * 
+     * @param string $category The category the message should be associated with
+     * @param string $message The message to be translated
+     * @param string $language The language the message should be translate to
+     * @param bool $useTransaction If true a transaction will be used when updating the database entries for this category, message, language, translation.
+     * @throws CDbException If a database update query fails
+     * @return string The translation for the message or the message it self if either the translation failed or the target language was the same as source language. 
+     */
     public function translate($category, $message, $language, $useTransaction = true)
     {
     	$message = trim($message);
@@ -397,7 +630,7 @@ class MPTranslate extends CApplicationComponent {
 	    	
 	    	$source = $this->getMessageSource();
 	    	
-	    	$sourceLanguage = $category === TranslateModule::$componentId ? 'en' : $source->getLanguage();
+	    	$sourceLanguage = $category === self::ID ? 'en' : $source->getLanguage();
 	    	
 	    	if($source->forceTranslation || $language !== $sourceLanguage)
 	    	{
@@ -493,6 +726,14 @@ class MPTranslate extends CApplicationComponent {
     	return $message;
     }
     
+    /**
+     * Adds a message to the list of translations missing for this request
+     * 
+     * @param integer $messageId The database ID of the source message that is missing a translation 
+     * @param string $category The category associate with the message
+     * @param string $message The message
+     * @param string $language The language the message is missing a translation for
+     */
     protected function addMissingTranslation($messageId, $category, $message, $language)
     {
     	$this->_messages[$messageId] = array('category' => $category, 'message' => $message, 'language' => $language);
@@ -507,7 +748,7 @@ class MPTranslate extends CApplicationComponent {
      * if an array then the message will be translated into each language and an associative array of translations in the form of language=>translation will be returned.
      * @param mixed $sourceLanguage language that the message is written in, 
      * if null it will use the application source language
-     * @return string translated message
+     * @return array translated messages
      */
     public function googleTranslate(&$message, &$targetLanguage = null, &$sourceLanguage = null) 
     {
@@ -573,6 +814,13 @@ class MPTranslate extends CApplicationComponent {
         return $translated;
     }
     
+    /**
+     * Throws an exception to indicate the maximum number of characters allowed for a Google API request was exceeded.
+     * 
+     * @param integer $charsInRequest The number of cahracters in the request
+     * @param integer $maxChars The maximum number of characters allowed in a request
+     * @throws CException An exception indicating the maximum number of characters allowed for a Google API request was exceeded.
+     */
     protected function _throwCharLimitException($charsInRequest, $maxChars) 
     {
     	throw new CException(TranslateModule::t(
@@ -624,9 +872,7 @@ class MPTranslate extends CApplicationComponent {
      * query google translate api 
      * 
      * @param array $args
-     * @param string $method the method to use, use null to translate
-     * accepted values are null(translate), "languages" and "detect"
-     * @return stdClass the google response object
+     * @return array the google response object
      */
     protected function queryGoogle($args = array()) 
     {
@@ -975,19 +1221,6 @@ class MPTranslate extends CApplicationComponent {
     	$res =Yii::app()->dateFormatter->format($my_format, $timestamp);
     
     	return $res;
-    }
-    
-    /**
-     * helper so you can use MPTransalate::someMethod($args) 
-     * 
-     * php 5.3 only
-     * 
-     * @param mixed $method
-     * @param mixed $args
-     * @return mixed
-     */
-    static function __callStatic($method, $args){
-        return call_user_func_array(array(TranslateModule::translator(), $method), $args);
     }
     
 }
