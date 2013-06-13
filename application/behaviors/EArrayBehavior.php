@@ -16,7 +16,6 @@ class EArrayBehavior extends CBehavior
 	
 	protected function _toArray($activeRecord, &$attributes, &$prefixWithClassName)
 	{
-		
 		if(is_array($attributes))
 		{
 			$values = array();
@@ -24,24 +23,7 @@ class EArrayBehavior extends CBehavior
 			{
 				if(is_string($key))
 				{
-					if($prefixWithClassName)
-					{
-						$arr = $this->_toArray($activeRecord->getRelated($key), $value, $prefixWithClassName);
-						if(isset($values[key($arr)]))
-						{
-							if(!isset($values[key($arr)][0]))
-								$values[key($arr)] = array($values[key($arr)]);
-							$values[key($arr)][] = $arr[key($arr)];
-						}
-						else
-						{
-							$values = array_merge($values, $arr);
-						}
-					}
-					else
-					{
-						$values[$key] = $this->_toArray($activeRecord->getRelated($key), $value, $prefixWithClassName);
-					}
+					$values[$key] = $this->_toArray($activeRecord->getRelated($key), $value, $prefixWithClassName);
 				}
 				else
 				{
