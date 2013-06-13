@@ -1,20 +1,25 @@
 <?php
 
 class TranslateModule extends CWebModule {
-    /**
-     * the name of the translate component
-     * change this in case you dont use the default name
-     * */
-    public static $componentId = 'translate';
-    
-    private static $_translator = null;
-    
-    private static $_viewRenderer = null;
-    
+
 	/**
-	 * TranslateModule::init()
+	 * @var string The name of the translate component. Change this to what ever component name you used in your configuration.
+	 */
+	public static $translatorComponentName = 'translate';
+	
+	/**
+	 * @var string The name of the view renderer component. Change this to what ever component name you used in your configuration.
+	 */
+	public static $viewRendererComponentName = 'viewRenderer';
+
+	private static $_translator;
+	
+	private static $_viewRenderer;
+
+	/**
+	 * Initializes the TranslateModule.
 	 * 
-	 * @return
+	 * @see CWebModule::init()
 	 */
 	public function init() {
         $this->defaultController = 'Translate';
@@ -27,45 +32,68 @@ class TranslateModule extends CWebModule {
         ));
         return parent::init();
 	}
+	
     /**
      * get the translate component
      * 
-     * @return MPTranslate
+     * @throws CException If the translate component named by {@see TranslateModule::$translateComponentName} cannot be found {@link MPTranslate}
+     * @return MPTranslate The translate component named by {@see TranslateModule::$translateComponentName}
      */
     public static function translator() 
     {
-    	if(self::$_translator === null) 
+    	if(!isset(self::$_translator)) 
     	{
-        	self::$_translator = Yii::app()->getComponent(self::$componentId);
+        	self::$_translator = Yii::app()->getComponent(self::$translatorComponentName);
 	        if(self::$_translator === null)
-	            throw new CException('Translate component must be defined');
+	            throw new CException(self::$translatorComponentName.' component must be defined');
     	}
         return self::$_translator;
     }
     
+    /**
+     * get the view renderer component
+     *
+     * @throws CException If the view renderer component named by {@see TranslateModule::$viewRendererComponentName} is not set or is not an instance of {@link TViewRenderer}.
+     * @return TViewRenderer The view renderer component named by {@see TranslateModule::$viewRendererComponentName}
+     */
+    public static function viewRenderer()
+    {
+    	if(!isset(self::$_viewRenderer))
+    	{
+    		self::$_viewRenderer = Yii::app()->getComponent(self::$viewRendererComponentName);
+    		if(!self::$_viewRenderer instanceof TViewRenderer)
+    			throw new CException(self::$viewRendererComponentName.' component must be defined and an instance of TViewRenderer');
+    	}
+    	return self::$_viewRenderer;
+    }
+    
+    /**
+     * Convenience method for calling {@link MPTranslate::missingTranslation()}
+     * 
+     * @see MPTranslate::missingTranslation()
+     * @param CMissingTranslationEvent $event
+     * @return CMissingTranslationEvent
+     */
     public static function missingTranslation($event) 
     {
         return self::translator()->missingTranslation($event);
     }
     
-    public static function viewRenderer()
-    {
-    	if(self::$_viewRenderer === null)
-    	{
-    		self::$_viewRenderer = Yii::app()->getViewRenderer();
-    		if(!self::$_viewRenderer instanceof TViewRenderer)
-    			throw new CException('View renderer component must be defined and an instance of TViewRenderer.');
-    	}
-    	return self::$_viewRenderer;
-    }
-    
+    /**
+     * Convenience method for calling {@link MPTranslate::missingViewTranslation()}
+     *
+     * @see MPTranslate::missingViewTranslation()
+     * @param TMissingViewTranslationEvent $event
+     * @return TMissingViewTranslationEvent
+     */
     public static function missingViewTranslation($event)
     {
     	return self::viewRenderer()->missingViewTranslation($event);
     }
 
     /**
-     * translate some message using the module configuration
+     * Translate some message using the translate module's configuration.
+     * This method is mainly only used by the translate module. 
      * 
      * @param string $message
      * @param array $params
@@ -73,6 +101,6 @@ class TranslateModule extends CWebModule {
      */
     public static function t($message, $params = array()) 
     {
-        return Yii::t(self::$componentId, $message, $params);
+        return Yii::t(MPTranslate::ID, $message, $params);
     }
 }
