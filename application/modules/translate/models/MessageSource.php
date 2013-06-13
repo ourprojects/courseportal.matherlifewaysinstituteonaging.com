@@ -10,13 +10,6 @@ class MessageSource extends CActiveRecord {
 	public function tableName() {
 		return Yii::app()->getMessages()->sourceMessageTable;
 	}
-	
-	public function behaviors() {
-		return array_merge(parent::behaviors(),
-				array(
-						'toArray' => array('class' => 'application.behaviors.EArrayBehavior'),
-				));
-	}
 
 	public function rules() {
 		return array(

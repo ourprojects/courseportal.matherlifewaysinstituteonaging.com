@@ -27,13 +27,6 @@ class RouteView extends CActiveRecord
 	{
 		return TranslateModule::translator()->getViewSource()->routeViewTable;
 	}
-	
-	public function behaviors() {
-		return array_merge(parent::behaviors(),
-				array(
-						'toArray' => array('class' => 'application.behaviors.EArrayBehavior'),
-				));
-	}
 
 	/**
 	 * @return array validation rules for model attributes.
