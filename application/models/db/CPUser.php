@@ -99,7 +99,6 @@ class CPUser extends CActiveRecord {
 								'createdUnixTime' => 'user_regdate'
 						)
 				),
-				'toArray' => array('class' => 'behaviors.EArrayBehavior'),
 				'extendedFeatures' => array('class' => 'behaviors.EModelBehaviors'),
 				'PBKDF2Behavior' => array(
 						'class' => 'ext.pbkdf2.PBKDF2Behavior',

@@ -30,7 +30,6 @@ class UserActivated extends CActiveRecord {
     public function behaviors() {
     	return array_merge(parent::behaviors(),
     			array(
-    					'toArray' => array('class' => 'behaviors.EArrayBehavior'),
     					'extendedFeatures' => array('class' => 'behaviors.EModelBehaviors')
     			));
     }

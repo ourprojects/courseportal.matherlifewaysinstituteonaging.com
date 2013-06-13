@@ -29,6 +29,7 @@ class UserCourseController extends ApiController {
 
 		$data = array();
 		foreach($model->findAll($model->with('user', 'course')->getSearchCriteria()) as $userCourse) {
+			$userCourse->attachBehavior('toArray', array('class' => 'behaviors.EArrayBehavior'));
 			$data[] = $userCourse->toArray(array_merge($userCourse->getSafeAttributeNames(), array('user' => 'email', 'course' => 'title')), true);
 		}
 
