@@ -32,7 +32,7 @@ return array(
 				'application.components.*',
 				'application.helpers.*',
 				'ext.yii-mail.*',
-				'modules.translate.*',
+				'modules.translate.TranslateModule'
 		),
 		
 		// configured modules
