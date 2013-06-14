@@ -18,6 +18,15 @@ class CategoryMessage extends CActiveRecord
 	{
 		return Yii::app()->getMessages()->categoryMessageTable;
 	}
+	
+	public function behaviors()
+	{
+		return array(
+				'ERememberFiltersBehavior' => array(
+						'class' => 'translate.behaviors.ERememberFiltersBehavior',
+				)
+		);
+	}
 
 	/**
 	 * @return array validation rules for model attributes.

@@ -10,6 +10,15 @@ class Category extends CActiveRecord {
 	public function tableName() {
 		return Yii::app()->getMessages()->categoryTable;
 	}
+	
+	public function behaviors()
+	{
+		return array(
+				'ERememberFiltersBehavior' => array(
+						'class' => 'translate.behaviors.ERememberFiltersBehavior',
+				)
+		);
+	}
 
 	public function rules() {
 		return array(

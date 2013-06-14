@@ -28,6 +28,15 @@ class View extends CActiveRecord
 	{
 		return TranslateModule::translator()->getViewSource()->viewTable;
 	}
+	
+	public function behaviors()
+	{
+		return array(
+				'ERememberFiltersBehavior' => array(
+						'class' => 'translate.behaviors.ERememberFiltersBehavior',
+				)
+		);
+	}
 
 	/**
 	 * @return array validation rules for model attributes.

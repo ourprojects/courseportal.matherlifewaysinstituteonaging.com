@@ -27,6 +27,15 @@ class ViewSource extends CActiveRecord
 	{
 		return TranslateModule::translator()->getViewSource()->viewSourceTable;
 	}
+	
+	public function behaviors()
+	{
+		return array(
+				'ERememberFiltersBehavior' => array(
+						'class' => 'translate.behaviors.ERememberFiltersBehavior',
+				)
+		);
+	}
 
 	/**
 	 * @return array validation rules for model attributes.

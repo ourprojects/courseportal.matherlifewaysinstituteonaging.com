@@ -11,6 +11,15 @@ class AcceptedLanguage extends CActiveRecord {
 	public function tableName() {
 		return Yii::app()->getMessages()->acceptedLanguageTable;
 	}
+	
+	public function behaviors()
+	{
+		return array(
+				'ERememberFiltersBehavior' => array(
+						'class' => 'translate.behaviors.ERememberFiltersBehavior',
+				)
+		);
+	}
 
 	public function rules() {
 		return array(

@@ -1,56 +1,13 @@
 <?php $this->breadcrumbs = array(TranslateModule::t('Languages')); ?>
 <h1><?php echo TranslateModule::t('Requested Languages'); ?></h1>
-<?php
-$this->widget('translate.widgets.PersistentGridView', 
-		array(
-			'id' => 'language-index-requested-grid', 
-			'dataProvider' => new CActiveDataProvider($acceptedLanguages, array('criteria' => $acceptedLanguages->search()->getDbCriteria())),
-			'filter' => $acceptedLanguages,
-			'columns' => array(
-	        	'id',
-				array(
-					'header' => TranslateModule::t('Missing Translations?'),
-					'type' => 'boolean',
-					'value' => '$data->isMissingTranslations()',
-				),
-		        array(
-		            'class' => 'CButtonColumn',
-		            'template' => '{view}{delete}',
-		        	'viewButtonLabel' => TranslateModule::t('View Translations'),
-		        	'viewButtonUrl' => 'Yii::app()->getController()->createUrl("language/view", array("id" => $data->id))',
-		            'deleteButtonUrl' => 'Yii::app()->getController()->createUrl("language/delete", array("id" => $data->id))',
-		        )
-			)
-		)
-);
-?>
+<?php $this->renderPartial('_requested_grid', array('requestedLanguages' => $acceptedLanguages)); ?>
 <h1><?php echo TranslateModule::t('Accepted Languages'); ?></h1>
 <?php
-$widget = $this->widget('translate.widgets.PersistentGridView', 
-		array(
-			'id' => 'language-index-accepted-grid', 
-			'dataProvider' => new CActiveDataProvider($acceptedLanguages, array('criteria' => $acceptedLanguages->search()->getDbCriteria())),
-			'filter' => $acceptedLanguages,
-			'columns' => array(
-	        	'id',
-				array(
-					'header' => TranslateModule::t('Missing Translations?'),
-					'type' => 'boolean',
-					'value' => '$data->isMissingTranslations()',
-				),
-		        array(
-		            'class' => 'CButtonColumn',
-		            'template' => '{view}{delete}',
-		        	'viewButtonLabel' => TranslateModule::t('View Translations'),
-		        	'viewButtonUrl' => 'Yii::app()->getController()->createUrl("language/view", array("id" => $data->id))',
-		            'deleteButtonUrl' => 'Yii::app()->getController()->createUrl("language/delete", array("id" => $data->id))',
-		        )
-			)
-		)
-);
+$dataProvider = new CActiveDataProvider($requestedLanguages, array('criteria' => $requestedLanguages->search()->getDbCriteria()));
+$this->renderPartial('_accepted_grid', array('filter' => $acceptedLanguages, 'dataProvider' => $dataProvider));
 
 if(TranslateModule::translator()->canUseGoogleTranslate()) {
-	foreach($widget->dataProvider->getData() as $item)
+	foreach($dataProvider->getData() as $item)
 	{
 		if($item->isMissingTranslations())
 		{

@@ -26,6 +26,15 @@ class ViewMessage extends CActiveRecord
 	{
 		return TranslateModule::translator()->getViewSource()->viewMessageTable;
 	}
+	
+	public function behaviors()
+	{
+		return array(
+				'ERememberFiltersBehavior' => array(
+						'class' => 'translate.behaviors.ERememberFiltersBehavior',
+				)
+		);
+	}
 
 	/**
 	 * @return array validation rules for model attributes.

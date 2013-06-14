@@ -6,24 +6,11 @@
 	<div id="translations">
 		<h2><?php echo TranslateModule::t('Translations: '); ?></h2>
 		<?php
-		$this->widget('translate.widgets.PersistentGridView', 
+		$this->renderPartial(
+				'../message/_grid', 
 				array(
-					'id' => 'language-view-messages-grid', 
-					'filter' => $translations,
-					'dataProvider' => new CActiveDataProvider($translations, array('criteria' => $translations->search()->getDbCriteria())),
-					'columns' => array(
-									'language',
-									array(
-											'name' => 'translation',
-											'htmlOptions' => array('width' => '700'),
-									),
-									array(
-											'class' => 'CButtonColumn',
-											'template' => '{update}{delete}',
-											'updateButtonUrl' => 'Yii::app()->getController()->createUrl("message/update", array("id" => $data->id, "languageId" => $data->language))',
-											'deleteButtonUrl' => 'Yii::app()->getController()->createUrl("message/delete", array("id" => $data->id, "languageId" => $data->language))',
-									)
-								),
+						'filter' => $translations, 
+						'dataProvider' => new CActiveDataProvider($translations, array('criteria' => $translations->search()->getDbCriteria()))
 				)
 		);
 		?>
@@ -32,29 +19,10 @@
 		<h2><?php echo TranslateModule::t('Missing Translations:'); ?></h2>
 		<?php
 		$model = MessageSource::model();
-		$widget = $this->widget('translate.widgets.PersistentGridView',
-				array(
-					'id' => 'language-view-missing-grid',
-					'filter' => $model,
-					'dataProvider' => new CActiveDataProvider('MessageSource', array('criteria' => $model->missingTranslations($source->id)->getDbCriteria())),
-					'columns' => array(
-						'id',
-						'category',
-						array(
-								'name' => 'message',
-								'htmlOptions' => array('width' => '600'),
-						),
-						array(
-								'class' => 'CButtonColumn',
-								'template' => '{update}',
-								'updateButtonLabel' => TranslateModule::t('Create Translation'),
-								'updateButtonUrl' => 'Yii::app()->getController()->createUrl("message/create", array("id" => $data->id, "languageId" => "'.$source->id.'"))',
-						)
-					)
-				)
-		);
+		$dataProvider = new CActiveDataProvider('MessageSource', array('criteria' => $model->missingTranslations($source->id)->getDbCriteria()));
+		$this->renderPartial('_missing_translations_grid', array('filter' => $model, 'dataProvider' => $dataProvider));
 		
-    	if(TranslateModule::translator()->canUseGoogleTranslate() && $widget->dataProvider->getItemCount() > 0) {
+    	if(TranslateModule::translator()->canUseGoogleTranslate() && $dataProvider->getItemCount() > 0) {
 			echo CHtml::ajaxButton(
 					TranslateModule::t('Google Translate Missing'),
 					$this->createUrl('messageSource/translateMissing'),
