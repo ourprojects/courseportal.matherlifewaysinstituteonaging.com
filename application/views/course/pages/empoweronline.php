@@ -2550,7 +2550,62 @@ HTML Output:
         </ul>
         <p>{t}If you want to make it easier, you can prepare people over the phone or in writing that you have to rethink how much you can do. You also can mention that your doctor advises you to cut down. Some people may respond negatively to your limits. This does not mean you are wrong. It usually means things are changing that other people wish would stay the same.{/t}</p>
         <p class="forum">{t}Do you find yourself making excuses or not giving factual reasons for your limits? Post your feedback to the Forum.{/t}</p>
-        <img src="<?php echo $this->getImagesUrl('empower/forum_icon.png'); ?>" alt="{t}Forum Icon{/t}"> </div>
+        <img src="<?php echo $this->getImagesUrl('empower/forum_icon.png'); ?>" alt="{t}Forum Icon{/t}"> 
+        
+        
+        
+          <h5>{t}Asking for Help{/t}</h5>
+          
+    <p>{t}Some caregivers feel that by asking for help they are somehow falling short. But
+      asking for help may be the only way they
+      can continue to provide care at home. They
+      are not falling short; they are adapting to
+      changing care needs that cannot be met
+      without help. It is a caregiver's responsibility
+      to ask for help. If you feel uncomfortable
+      asking for it, consider the following
+      questions about asking for salt.</p>
+    <div class="question">
+      <p>
+        <input type="checkbox" name="Yes8" id="Yes8">
+        <label for="Yes8">Yes</label>
+        <input type="checkbox" name="No8" id="No8">
+        <label for="No8">No  | </label>
+        Do you expect people to pass the salt before you ask for it?</p>
+      <p>
+        <input type="checkbox" name="Yes9" id="Yes9">
+        <label for="Yes9">Yes</label>
+        <input type="checkbox" name="No9" id="No9">
+        <label for="No9">No  | </label>
+        Do you blame people for not knowing you want salt?</p>
+      <p>
+        <input type="checkbox" name="Yes10" id="Yes10">
+        <label for="Yes10">Yes</label>
+        <input type="checkbox" name="No10" id="No10">
+        <label for="No10">No  | </label>
+        Would you plead, hint, or whine to get the salt?</p>
+      <input type="button" onClick="MM_popupMsg('You probably answered \&quot;no\&quot; to the salt questions. just as we expect to ask for salt in order to receive it, we also need to ask for the help we need in caregiving. As you ask for help, remember to use the tone of voice you use when asking for salt. It\'s probably pleasant and matter-of-fact, without blaming and hinting.')" value="Submit">
+    </div>
+        
+        
+        
+              </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
+    
+    
+    <div id="lesson-3-slide-7" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Communicating Effectively in Challenging Situations{/t}</h2>
+        <hr />
+        
+        
+        
+        
+        
+        
+        
+        </div>
       <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Complete Module{/t}</a></div>
     </div>
     
