@@ -8,21 +8,13 @@ class LanguageController extends TController
 				array('filters.HttpsFilter'),
 				'accessControl',
 				'ajaxOnly + ajaxIndex, ajaxView, ajaxCreate',
+				'postOnly + create, ajaxCreate',
 				array(
 						'translate.filters.TForwardActionFilter + index, view, create',
-						'actionMap' => array(
-								'index' => array(
-										'action' => 'ajaxIndex',
-										'ajaxOnly' => true
-								),
-								'view' => array(
-										'action' => 'ajaxView',
-										'ajaxOnly' => true
-								),
-								'create' => array(
-										'action' => 'ajaxCreate',
-										'ajaxOnly' => true
-								),
+						'map' => array(
+								'index' => 'ajaxIndex + ajax',
+								'view' => 'ajaxView + ajax',
+								'create' => 'ajaxCreate + create, post',
 						)
 				)
 		);
@@ -111,7 +103,7 @@ class LanguageController extends TController
 		$translations = new Message('search');
 
 		if(isset($_REQUEST['Message']))
-			$translations->attributes = $_REQUEST['Message'];
+			$translations->setAttributes($_REQUEST['Message']);
 
 		$translations->setAttribute('language', $id);
 

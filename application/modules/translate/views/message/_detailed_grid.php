@@ -9,7 +9,12 @@ $this->widget('zii.widgets.grid.CGridView',
 					            'name' => 'id',
 								'htmlOptions' => array('width' => '50'),
 					        ),
-							'source.category',
+							array(
+								'header' => TranslateModule::t('Categories'),
+								'type' => 'html',
+								'value' => 'implode("<br />", array_map(create_function(\'&$val\', \'return "<a href=\"".Yii::app()->getController()->createUrl("category/view", array("id" => $val->id))."\" title=\"".$val->category."\">".$val->category;\'), $data->source->categories))',
+								'htmlOptions' => array('width' => '150'),
+							),
 							array(
 								'name' => 'language',
 								'htmlOptions' => array('width' => '50'),

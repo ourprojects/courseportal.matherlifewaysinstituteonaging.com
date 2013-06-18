@@ -16,7 +16,7 @@ class CategoryMessage extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return Yii::app()->getMessages()->categoryMessageTable;
+		return TranslateModule::translator()->getMessageSource()->categoryMessageTable;
 	}
 	
 	public function behaviors()
@@ -73,8 +73,8 @@ class CategoryMessage extends CActiveRecord
 	{
 		$criteria = new CDbCriteria;
 
-		$criteria->compare('message_id', $this->message_id);
-		$criteria->compare('category_id', $this->category_id);
+		$criteria->compare($this->getTableAlias(false, false).'.message_id', $this->message_id);
+		$criteria->compare($this->getTableAlias(false, false).'.category_id', $this->category_id);
 
 		return new CActiveDataProvider($this, array(
 			'criteria' => $criteria,

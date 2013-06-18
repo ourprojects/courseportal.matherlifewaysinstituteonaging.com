@@ -8,7 +8,7 @@ class Category extends CActiveRecord {
 	}
 	
 	public function tableName() {
-		return Yii::app()->getMessages()->categoryTable;
+		return TranslateModule::translator()->getMessageSource()->categoryTable;
 	}
 	
 	public function behaviors()
@@ -35,6 +35,7 @@ class Category extends CActiveRecord {
 		return array(
 				'id' => TranslateModule::t('ID'),
 				'category' => TranslateModule::t('Category'),
+				'messageCount' =>  TranslateModule::t('Message Count')
 		);
 	}
     
@@ -42,14 +43,15 @@ class Category extends CActiveRecord {
 		return array(
 			'categoryMessages' => array(self::HAS_MANY, 'CategoryMessage', 'category_id'),
 			'messageSources' => array(self::MANY_MANY, 'MessageSource', CategoryMessage::model()->tableName().'(category_id, message_id)'),
+			'messageCount' => array(self::STAT, 'MessageSource', CategoryMessage::model()->tableName().'(category_id, message_id)')
 		);
 	}
 	
 	public function search() {
 		$criteria = $this->getDbCriteria();
 		
-		$criteria->compare('t.id', $this->id);
-		$criteria->compare('t.category', $this->category, true);
+		$criteria->compare($this->getTableAlias(false, false).'.id', $this->id);
+		$criteria->compare($this->getTableAlias(false, false).'.category', $this->category, true);
 		
 		return $this;
 	}

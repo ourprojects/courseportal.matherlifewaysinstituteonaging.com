@@ -81,8 +81,8 @@ class ViewMessage extends CActiveRecord
 	{
 		$criteria = new CDbCriteria;
 
-		$criteria->compare('message_id', $this->message_id);
-		$criteria->compare('view_id', $this->view_id);
+		$criteria->compare($this->getTableAlias(false, false).'.message_id', $this->message_id);
+		$criteria->compare($this->getTableAlias(false, false).'.view_id', $this->view_id);
 
 		return new CActiveDataProvider($this, array(
 			'criteria' => $criteria,

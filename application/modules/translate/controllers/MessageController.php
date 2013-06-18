@@ -10,11 +10,8 @@ class MessageController extends TController
 				'ajaxOnly + ajaxIndex',
 				array(
 						'translate.filters.TForwardActionFilter + index, view',
-						'actionMap' => array(
-								'index' => array(
-										'action' => 'ajaxIndex',
-										'ajaxOnly' => true
-								),
+						'map' => array(
+								'index' => 'ajaxIndex + ajax',
 								'view' => 'update'
 						)
 				)
@@ -73,7 +70,7 @@ class MessageController extends TController
 		$messages = new Message('search');
 
 		if(isset($_REQUEST['Message']))
-			$messages->attributes = $_REQUEST['Message'];
+			$messages->setAttributes($_REQUEST['Message']);
 
 		$this->render('index', array('messages' => $messages));
 	}
@@ -105,7 +102,7 @@ class MessageController extends TController
 		$message->language = $languageId;
 
 		if(isset($_POST['Message'])){
-			$message->attributes = $_POST['Message'];
+			$message->setAttributes($_POST['Message']);
 			if($message->save())
 				$this->redirect(Yii::app()->getUser()->getReturnUrl());
 		} else {
@@ -125,17 +122,23 @@ class MessageController extends TController
 	{
 		$message = Message::model()->with('source')->findByPk(array('id' => $id, 'language' => $languageId));
 
-		if($message !== null) {
-			if(isset($_POST['Message'])) {
-				$message->attributes = $_POST['Message'];
+		if($message !== null) 
+		{
+			if(isset($_POST['Message'])) 
+			{
+				$message->setAttributes($_POST['Message']);
 				if($message->save())
 					$this->redirect(Yii::app()->getUser()->getReturnUrl());
-			} else {
+			} 
+			else 
+			{
 				if($referer = Yii::app()->getRequest()->getUrlReferrer())
 					Yii::app()->getUser()->setReturnUrl($referer);
 			}
 			$this->render('view', array('message' => $message));
-		} else {
+		} 
+		else 
+		{
 			throw new CHttpException(404, TranslateModule::t('The requested message does not exist.'));
 		}
 	}

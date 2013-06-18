@@ -9,7 +9,7 @@ class AcceptedLanguage extends CActiveRecord {
 	}
 	
 	public function tableName() {
-		return Yii::app()->getMessages()->acceptedLanguageTable;
+		return TranslateModule::translator()->getMessageSource()->acceptedLanguageTable;
 	}
 	
 	public function behaviors()
@@ -90,7 +90,7 @@ class AcceptedLanguage extends CActiveRecord {
 	public function search() {
 		$criteria = $this->getDbCriteria();
 		
-		$criteria->compare('id', $this->id);
+		$criteria->compare($this->getTableAlias(false, false).'.id', $this->id);
 		
 		return $this;
 	}

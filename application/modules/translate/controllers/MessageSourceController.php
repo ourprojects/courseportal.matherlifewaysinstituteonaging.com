@@ -10,15 +10,9 @@ class MessageSourceController extends TController
 				'ajaxOnly + ajaxIndex, ajaxView',
 				array(
 						'translate.filters.TForwardActionFilter + index, view',
-						'actionMap' => array(
-								'index' => array(
-										'action' => 'ajaxIndex',
-										'ajaxOnly' => true
-								),
-								'view' => array(
-										'action' => 'ajaxView',
-										'ajaxOnly' => true
-								),
+						'map' => array(
+								'index' => 'ajaxIndex + ajax',
+								'view' => 'ajaxView + ajax',
 						)
 				)
 		);
@@ -52,11 +46,11 @@ class MessageSourceController extends TController
 						throw new CHttpException(500, TranslateModule::t('An error occured translating message {message} with google translate.', array('{message}' => $missingTranslations[$i]->message)));
 					foreach($translations[$i] as $language => $t) {
 						$translation = new Message();
-						$translation->attributes = array(
+						$translation->setAttributes(array(
 								'id' => $missingTranslations[$i]->id,
 								'language' => $language,
 								'translation' => $t
-						);
+						));
 							
 						if(!$translation->save()) {
 							$transaction->rollback();
@@ -69,11 +63,11 @@ class MessageSourceController extends TController
 				if(is_array($translations) && count($translations) === count($missingTranslations)) {
 					for($i = 0; $i < count($missingTranslations); $i++) {
 						$translation = new Message();
-						$translation->attributes = array(
+						$translation->setAttributes(array(
 								'id' => $missingTranslations[$i]->id,
 								'language' => $id,
 								'translation' => $translations[$i]
-						);
+						));
 							
 						if(!$translation->save()) {
 							$transaction->rollback();
@@ -100,7 +94,7 @@ class MessageSourceController extends TController
 		$sources = new MessageSource('search');
 		 
 		if(isset($_GET['MessageSource']))
-			$sources->attributes = $_GET['MessageSource'];
+			$sources->setAttributes($_GET['MessageSource']);
 
 		$this->render('index', array('sources' => $sources));
 	}
@@ -119,7 +113,7 @@ class MessageSourceController extends TController
 		$translations = new Message('search');
 		 
 		if(isset($_REQUEST['Message']))
-			$translations->attributes = $_REQUEST['Message'];
+			$translations->setAttributes($_REQUEST['Message']);
 		 
 		$translations->id = $id;
 

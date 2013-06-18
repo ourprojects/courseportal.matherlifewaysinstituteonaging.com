@@ -8,7 +8,7 @@ class Message extends CActiveRecord {
 	}
 	
 	public function tableName() {
-		return Yii::app()->getMessages()->translatedMessageTable;
+		return TranslateModule::translator()->getMessageSource()->translatedMessageTable;
 	}
 	
 	public function behaviors()
@@ -71,7 +71,7 @@ class Message extends CActiveRecord {
 					'select' => $this->getTableAlias(false, false).'.language',
 					'condition' => $this->getTableAlias(false, false).'.id NOT IN
 						(
-								SELECT tt.id FROM '.Message::model()->tableName().' tt
+								SELECT tt.id FROM '.$this->tableName().' tt
 								WHERE (tt.language = '.$this->getTableAlias(false, false).'.language) AND tt.id NOT IN
 								(
 										SELECT m.id FROM '.MessageSource::model()->tableName().' m
@@ -87,7 +87,7 @@ class Message extends CActiveRecord {
 					'condition' => $this->getTableAlias(false, false).'.language NOT IN 
 						(
 							SELECT m.language FROM '.MessageSource::model()->tableName().' sm 
-							INNER JOIN '.Message::model()->tableName().' m ON ((sm.id = m.id) AND (sm.id = :sourceMessageId))
+							INNER JOIN '.$this->tableName().' m ON ((sm.id = m.id) AND (sm.id = :sourceMessageId))
 						)',
 					'group' => $this->getTableAlias(false, false).'.language'
 			));
@@ -106,9 +106,9 @@ class Message extends CActiveRecord {
 	public function search() {
 		$criteria = $this->getDbCriteria();
 		
-		$criteria->compare('id', $this->id);
-		$criteria->compare('language', $this->language, true);
-		$criteria->compare('translation', $this->translation, true);
+		$criteria->compare($this->getTableAlias(false, false).'.id', $this->id);
+		$criteria->compare($this->getTableAlias(false, false).'.language', $this->language, true);
+		$criteria->compare($this->getTableAlias(false, false).'.translation', $this->translation, true);
 	
 		return $this;
 	}

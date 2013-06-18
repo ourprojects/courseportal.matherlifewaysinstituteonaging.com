@@ -1,7 +1,7 @@
 <?php
 $this->widget('zii.widgets.grid.CGridView', 
 		array(
-			'id' => 'language-view-messages-grid', 
+			'id' => 'message-grid', 
 			'filter' => $filter,
 			'dataProvider' => $dataProvider,
 			'columns' => array(

@@ -82,8 +82,8 @@ class Route extends CActiveRecord
 	{
 		$criteria = new CDbCriteria;
 
-		$criteria->compare('id', $this->id);
-		$criteria->compare('route', $this->route, true);
+		$criteria->compare($this->getTableAlias(false, false).'.id', $this->id);
+		$criteria->compare($this->getTableAlias(false, false).'.route', $this->route, true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria' => $criteria,

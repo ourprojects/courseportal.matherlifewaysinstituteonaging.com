@@ -8,7 +8,7 @@ class MessageSource extends CActiveRecord {
 	}
 	
 	public function tableName() {
-		return Yii::app()->getMessages()->sourceMessageTable;
+		return TranslateModule::translator()->getMessageSource()->sourceMessageTable;
 	}
 	
 	public function behaviors()
@@ -103,8 +103,8 @@ class MessageSource extends CActiveRecord {
 	public function search() {
 		$criteria = $this->getDbCriteria();
 		
-		$criteria->compare('id', $this->id);
-		$criteria->compare('message', $this->message, true);
+		$criteria->compare($this->getTableAlias(false, false).'.id', $this->id);
+		$criteria->compare($this->getTableAlias(false, false).'.message', $this->message, true);
 		
 		return $this;
 	}

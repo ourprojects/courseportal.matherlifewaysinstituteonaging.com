@@ -83,8 +83,8 @@ class ViewSource extends CActiveRecord
 	{
 		$criteria = new CDbCriteria;
 
-		$criteria->compare('id', $this->id);
-		$criteria->compare('path', $this->path, true);
+		$criteria->compare($this->getTableAlias(false, false).'.id', $this->id);
+		$criteria->compare($this->getTableAlias(false, false).'.path', $this->path, true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria' => $criteria,

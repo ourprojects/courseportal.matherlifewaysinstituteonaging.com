@@ -97,10 +97,10 @@ class View extends CActiveRecord
 	{
 		$criteria = new CDbCriteria;
 
-		$criteria->compare('id', $this->id);
-		$criteria->compare('path', $this->path, true);
-		$criteria->compare('language', $this->language, true);
-		$criteria->compare('created', $this->created, true);
+		$criteria->compare($this->getTableAlias(false, false).'.id', $this->id);
+		$criteria->compare($this->getTableAlias(false, false).'.path', $this->path, true);
+		$criteria->compare($this->getTableAlias(false, false).'.language', $this->language, true);
+		$criteria->compare($this->getTableAlias(false, false).'.created', $this->created, true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria' => $criteria,
