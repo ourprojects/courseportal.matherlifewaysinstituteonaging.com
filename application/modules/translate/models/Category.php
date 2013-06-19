@@ -47,16 +47,25 @@ class Category extends CActiveRecord {
 		);
 	}
 	
-	public function search() {
-		$criteria = $this->getDbCriteria();
+	/**
+	 * Retrieves a list of models based on the current search/filter conditions.
+	 * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.
+	 */
+	public function search($dataProviderConfig = array()) 
+	{
+		if(!isset($dataProviderConfig['criteria']))
+		{
+			$dataProviderConfig['criteria'] = $this->getDbCriteria();
+			
+			$dataProviderConfig['criteria']->compare($this->getTableAlias(false, false).'.id', $this->id);
+			$dataProviderConfig['criteria']->compare($this->getTableAlias(false, false).'.category', $this->category, true);
+		}
 		
-		$criteria->compare($this->getTableAlias(false, false).'.id', $this->id);
-		$criteria->compare($this->getTableAlias(false, false).'.category', $this->category, true);
-		
-		return $this;
+		return new CActiveDataProvider($this, $dataProviderConfig);
 	}
 	
-	public function __toString() {
+	public function __toString() 
+	{
 		return strval($this->category);
 	}
 	

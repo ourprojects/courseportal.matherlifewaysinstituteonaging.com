@@ -33,28 +33,37 @@ class MessageController extends TController
 	public function actionTranslateMissing($id = null)
 	{
 		$transaction = Yii::app()->db->beginTransaction();
-		try {
-			foreach(Message::model()->missingTranslations($id)->findAll() as $message) {
+		try 
+		{
+			foreach(Message::model()->missingTranslations($id)->findAll() as $message) 
+			{
 				$missingTranslations = $id === null ? MessageSource::model()->missingTranslations($message->language)->findAll() :
 				MessageSource::model()->missingTranslations($message->language)->findAllByPk($id);
 				$translations = TranslateModule::translator()->googleTranslate($missingTranslations, $message->language);
 
-				if(is_array($translations) && count($translations) === count($missingTranslations)) {
-					for($i = 0; $i < count($missingTranslations); $i++) {
+				if(is_array($translations) && count($translations) === count($missingTranslations)) 
+				{
+					for($i = 0; $i < count($missingTranslations); $i++) 
+					{
 						$translation = new Message();
 						$translation->id = $missingTranslations[$i]->id;
 						$translation->language = $message->language;
 						$translation->translation = $translations[$i];
-						if(!$translation->save()) {
+						if(!$translation->save()) 
+						{
 							$transaction->rollback();
 							throw new CHttpException(500, TranslateModule::t('An error occured while saving a translation'));
 						}
 					}
-				} else {
+				} 
+				else 
+				{
 					throw new CHttpException(500, TranslateModule::t('An error occured translating a message to {language} with google translate.', array('{language}' => $message->language)));
 				}
 			}
-		} catch(Exception $e) {
+		} 
+		catch(Exception $e) 
+		{
 			$transaction->rollback();
 			throw $e;
 		}
@@ -67,26 +76,19 @@ class MessageController extends TController
 	 */
 	public function actionIndex()
 	{
-		$messages = new Message('search');
-
-		if(isset($_REQUEST['Message']))
-			$messages->setAttributes($_REQUEST['Message']);
-
-		$this->render('index', array('messages' => $messages));
+		$this->render('index');
 	}
 
 	public function actionAjaxIndex()
 	{
-		if(isset($_GET['ajax']) && $_GET['ajax'] === 'message-detailed-grid')
+		if(isset($_GET['ajax']))
 		{
-			$messages = new Message('search');
-			$this->renderPartial(
-					'_detailed_grid',
-					array(
-							'filter' => $messages,
-							'dataProvider' => new CActiveDataProvider($messages, array('criteria' => $messages->with('source')->search()->getDbCriteria()))
-					)
-			);
+			switch($_GET['ajax'])
+			{
+				case 'message-detailed-grid':
+					$this->renderPartial('_detailed_grid', array('model' => new Message('search')));
+					break;
+			}
 		}
 	}
 
@@ -101,16 +103,24 @@ class MessageController extends TController
 		$message->id = $id;
 		$message->language = $languageId;
 
-		if(isset($_POST['Message'])){
+		if(isset($_POST['Message']))
+		{
 			$message->setAttributes($_POST['Message']);
 			if($message->save())
 				$this->redirect(Yii::app()->getUser()->getReturnUrl());
-		} else {
+		} 
+		else 
+		{
 			if($referer = Yii::app()->getRequest()->getUrlReferrer())
 				Yii::app()->getUser()->setReturnUrl($referer);
 		}
 
 		$this->render('view', array('message' => $message));
+	}
+	
+	public function actionView($id, $languageId)
+	{
+		// Forwarded to update action
 	}
 
 	/**
@@ -150,13 +160,19 @@ class MessageController extends TController
 	public function actionDelete($id, $languageId)
 	{
 		$model = Message::model()->findByPk(array('id' => $id, 'language' => $languageId));
-		if($model !== null) {
-			if($model->delete()) {
+		if($model !== null) 
+		{
+			if($model->delete()) 
+			{
 				$message = 'The translation has been deleted.';
-			} else {
+			} 
+			else 
+			{
 				$message = 'The translation could not be deleted.';
 			}
-		} else {
+		} 
+		else 
+		{
 			$message = 'The translation could not be found.';
 		}
 

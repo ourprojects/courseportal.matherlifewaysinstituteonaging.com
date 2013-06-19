@@ -91,33 +91,25 @@ class MessageSourceController extends TController
 	 */
 	public function actionIndex()
 	{
-		$sources = new MessageSource('search');
-		 
-		if(isset($_GET['MessageSource']))
-			$sources->setAttributes($_GET['MessageSource']);
-
-		$this->render('index', array('sources' => $sources));
+		$this->render('index');
 	}
 
 	public function actionAjaxIndex()
 	{
-		if(isset($_GET['ajax']) && $_GET['ajax'] === 'messageSource-detailed-grid')
+		if(isset($_GET['ajax']))
 		{
-			$sources = new MessageSource('search');
-			$this->renderPartial('_detailed_grid', array('filter' => $sources, 'dataProvider' => new CActiveDataProvider($sources, array('criteria' => $sources->search()->getDbCriteria()))));
+			switch($_GET['ajax'])
+			{
+				case 'messageSource-detailed-grid':
+					$this->renderPartial('_detailed_grid', array('model' => new MessageSource('search')));
+					break;
+			}
 		}
 	}
 
 	public function actionView($id)
 	{
-		$translations = new Message('search');
-		 
-		if(isset($_REQUEST['Message']))
-			$translations->setAttributes($_REQUEST['Message']);
-		 
-		$translations->id = $id;
-
-		$this->render('view', array('source' => MessageSource::model()->findByPk($id), 'translations' => $translations));
+		$this->render('view', array('source' => MessageSource::model()->findByPk($id)));
 	}
 
 	public function actionAjaxView($id)
@@ -128,34 +120,16 @@ class MessageSourceController extends TController
 			{
 				case 'message-grid':
 					$model = new Message('search');
-					$model->id = $id;
-					$this->renderPartial(
-							'../message/_grid',
-							array(
-									'filter' => $model,
-									'dataProvider' => new CActiveDataProvider($model, array('criteria' => $model->search()->getDbCriteria()))
-							)
-					);
+					$model->setAttribute('id', $id);
+					$this->renderPartial('../message/_grid', array('model' => $model));
 					break;
 				case 'messageSource-accepted-translations-grid':
 					$model = new AcceptedLanguage('search');
-					$this->renderPartial(
-							'_missing_accepted_translation_grid',
-							array(
-									'filter' => $model,
-									'dataProvider' => new CActiveDataProvider('AcceptedLanguage', array('criteria' => $model->missingTranslations($id)->getDbCriteria()))
-							)
-					);
+					$this->renderPartial('_missing_accepted_translation_grid', array('model' => $model->missingTranslations($id)));
 					break;
 				case 'messageSource-other-translations-grid':
 					$model = new Message('search');
-					$this->renderPartial(
-							'_missing_other_translation_grid',
-							array(
-									'filter' => $model,
-									'dataProvider' => new CActiveDataProvider('Message', array('criteria' => $model->missingTranslations($id)->getDbCriteria()))
-							)
-					);
+					$this->renderPartial('_missing_other_translation_grid', array('model' => $model->missingTranslations($id)));
 					break;
 			}
 		}
@@ -168,13 +142,19 @@ class MessageSourceController extends TController
 	public function actionDelete($id)
 	{
 		$model = MessageSource::model()->findByPk($id);
-		if($model !== null) {
-			if($model->delete()) {
+		if($model !== null) 
+		{
+			if($model->delete()) 
+			{
 				$message = 'The message source and its translations have been deleted.';
-			} else {
+			} 
+			else 
+			{
 				$message = 'The message source could not be deleted.';
 			}
-		} else {
+		} 
+		else 
+		{
 			$message = 'The message source could not be found.';
 		}
 

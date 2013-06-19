@@ -73,7 +73,29 @@ class View extends CActiveRecord
 		return array(
 			'acceptedLanguage' => array(self::BELONGS_TO, 'AcceptedLanguage', 'language', 'joinType' => 'INNER JOIN'),
 			'viewSource' => array(self::BELONGS_TO, 'ViewSource', 'id'),
+			// @ TODO
+			'translationCount' => array(
+					self::STAT,
+					'MessageSource',
+					ViewMessage::model()->tableName().'(view_id, message_id)',
+					'join' =>
+					'INNER JOIN '.View::model()->tableName().' v ON (v.id='.ViewMessage::model()->tableName().'.view_id)'.
+					'INNER JOIN '.Message::model()->tableName().' m ON ('.$this->getTableAlias(false, false).'.id=m.id AND v.language=m.language)'),
 		);
+	}
+	
+	public function getRelativePath()
+	{
+		if (substr($this->getAttribute('path'), 0, strlen(Yii::app()->getBasePath())) == Yii::app()->getBasePath())
+		{
+			return substr($this->getAttribute('path'), strlen(Yii::app()->getBasePath()));
+		}
+		return $this->getAttribute('path');
+	}
+	
+	public function setRelativePath($path)
+	{
+		return $this->setAttribute('path', Yii::app()->getBasePath().DIRECTORY_SEPARATOR.$path);
 	}
 
 	/**
@@ -84,6 +106,7 @@ class View extends CActiveRecord
 		return array(
 			'id' => TranslateModule::t('ID'),
 			'path' => TranslateModule::t('Path'),
+			'relativePath' => TranslateModule::t('Path (relative to app base path)'),
 			'language' => TranslateModule::t('Language'),
 			'created' => TranslateModule::t('Created'),
 		);
@@ -93,17 +116,24 @@ class View extends CActiveRecord
 	 * Retrieves a list of models based on the current search/filter conditions.
 	 * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.
 	 */
-	public function search()
+	public function search($dataProviderConfig = array()) 
 	{
-		$criteria = new CDbCriteria;
+		if(!isset($dataProviderConfig['criteria']))
+		{
+			$dataProviderConfig['criteria'] = new CDbCriteria;
 
-		$criteria->compare($this->getTableAlias(false, false).'.id', $this->id);
-		$criteria->compare($this->getTableAlias(false, false).'.path', $this->path, true);
-		$criteria->compare($this->getTableAlias(false, false).'.language', $this->language, true);
-		$criteria->compare($this->getTableAlias(false, false).'.created', $this->created, true);
+			$dataProviderConfig['criteria']->compare($this->getTableAlias(false, false).'.id', $this->id);
+			$dataProviderConfig['criteria']->compare($this->getTableAlias(false, false).'.path', $this->path, true);
+			$dataProviderConfig['criteria']->compare($this->getTableAlias(false, false).'.language', $this->language, true);
+			$dataProviderConfig['criteria']->compare($this->getTableAlias(false, false).'.created', $this->created, true);
+		}
 
-		return new CActiveDataProvider($this, array(
-			'criteria' => $criteria,
-		));
+		return new CActiveDataProvider($this, $dataProviderConfig);
 	}
+	
+	public function __toString()
+	{
+		return strval($this->path);
+	}
+	
 }

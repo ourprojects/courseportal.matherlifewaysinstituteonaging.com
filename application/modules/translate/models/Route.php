@@ -60,6 +60,7 @@ class Route extends CActiveRecord
 		return array(
 			'routeViews' => array(self::HAS_MANY, 'RouteView', 'route_id'),
 			'viewSources' => array(self::MANY_MANY, 'ViewSource', RouteView::model()->tableName().'(route_id, view_id)'),
+			'viewSourceCount' => array(self::STAT, 'ViewSource', RouteView::model()->tableName().'(route_id, view_id)'),
 		);
 	}
 
@@ -78,15 +79,23 @@ class Route extends CActiveRecord
 	 * Retrieves a list of models based on the current search/filter conditions.
 	 * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.
 	 */
-	public function search()
+	public function search($dataProviderConfig = array()) 
 	{
-		$criteria = new CDbCriteria;
+		if(!isset($dataProviderConfig['criteria']))
+		{
+			$dataProviderConfig['criteria'] = new CDbCriteria;
 
-		$criteria->compare($this->getTableAlias(false, false).'.id', $this->id);
-		$criteria->compare($this->getTableAlias(false, false).'.route', $this->route, true);
+			$dataProviderConfig['criteria']->compare($this->getTableAlias(false, false).'.id', $this->id);
+			$dataProviderConfig['criteria']->compare($this->getTableAlias(false, false).'.route', $this->route, true);
+		}
 
-		return new CActiveDataProvider($this, array(
-			'criteria' => $criteria,
-		));
+
+		return new CActiveDataProvider($this, $dataProviderConfig);
 	}
+	
+	public function __toString()
+	{
+		return strval($this->route);
+	}
+	
 }

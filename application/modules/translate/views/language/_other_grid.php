@@ -2,8 +2,8 @@
 $this->widget('zii.widgets.grid.CGridView', 
 		array(
 			'id' => 'language-requested-grid', 
-			'dataProvider' => $dataProvider,
-			'filter' => $filter,
+			'filter' => $model,
+			'dataProvider' => $model->search(),
 			'columns' => array(
 	        	'id',
 				array(

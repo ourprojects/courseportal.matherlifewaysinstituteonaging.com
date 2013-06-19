@@ -78,15 +78,16 @@ class RouteView extends CActiveRecord
 	 * Retrieves a list of models based on the current search/filter conditions.
 	 * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.
 	 */
-	public function search()
+	public function search($dataProviderConfig = array()) 
 	{
-		$criteria = new CDbCriteria;
+		if(!isset($dataProviderConfig['criteria']))
+		{
+			$dataProviderConfig['criteria'] = new CDbCriteria;
 
-		$criteria->compare($this->getTableAlias(false, false).'.route_id', $this->route_id);
-		$criteria->compare($this->getTableAlias(false, false).'.view_id', $this->view_id);
+			$dataProviderConfig['criteria']->compare($this->getTableAlias(false, false).'.route_id', $this->route_id);
+			$dataProviderConfig['criteria']->compare($this->getTableAlias(false, false).'.view_id', $this->view_id);
+		}
 
-		return new CActiveDataProvider($this, array(
-			'criteria' => $criteria,
-		));
+		return new CActiveDataProvider($this, $dataProviderConfig);
 	}
 }

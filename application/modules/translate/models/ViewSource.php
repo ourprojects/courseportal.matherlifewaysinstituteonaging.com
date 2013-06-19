@@ -43,6 +43,7 @@ class ViewSource extends CActiveRecord
 	public function rules()
 	{
 		return array(
+			array('path', 'filter', 'filter' => 'realpath'),
 			array('path', 'required', 'except' => 'search'),
 			array('id', 'numerical', 'integerOnly' => true),
 			array('path', 'length', 'max' => 255),
@@ -59,9 +60,36 @@ class ViewSource extends CActiveRecord
 	{
 		return array(
 			'viewMessageSources' => array(self::HAS_MANY, 'ViewMessage', 'view_id'),
-			'messageSources' => array(self::MANY_MANY, 'MessageSource', ViewMessage::model()->tableName().'(view_id, message_id)'),
+			'messages' => array(self::MANY_MANY, 'MessageSource', ViewMessage::model()->tableName().'(view_id, message_id)'),
+			'messageCount' => array(self::STAT, 'MessageSource', ViewMessage::model()->tableName().'(view_id, message_id)'),
+			'translations' => array(self::MANY_MANY, 'Message', ViewMessage::model()->tableName().'(view_id, message_id)'),
+			'translationCount' => array(
+					self::STAT, 
+					'MessageSource', 
+					ViewMessage::model()->tableName().'(view_id, message_id)', 
+					'join' => 
+					'INNER JOIN '.View::model()->tableName().' v ON (v.id='.ViewMessage::model()->tableName().'.view_id)'.
+					'INNER JOIN '.Message::model()->tableName().' m ON ('.$this->getTableAlias(false, false).'.id=m.id AND v.language=m.language)'),
 			'views' => array(self::HAS_MANY, 'View', 'id'),
+			'viewCount' => array(self::STAT, 'View', 'id'),
+			'viewRoutes' => array(self::HAS_MANY, 'ViewRoute', 'route_id'),
+			'routes' => array(self::MANY_MANY, 'Route', RouteView::model()->tableName().'(view_id, route_id)'),
+			'routeCount' => array(self::STAT, 'Route', RouteView::model()->tableName().'(view_id, route_id)'),
 		);
+	}
+	
+	public function getRelativePath()
+	{
+		if (substr($this->getAttribute('path'), 0, strlen(Yii::app()->getBasePath())) == Yii::app()->getBasePath()) 
+		{
+			return substr($this->getAttribute('path'), strlen(Yii::app()->getBasePath()));
+		}
+		return $this->getAttribute('path');
+	}
+	
+	public function setRelativePath($path)
+	{
+		return $this->setAttribute('path', Yii::app()->getBasePath().DIRECTORY_SEPARATOR.$path);
 	}
 
 	/**
@@ -72,6 +100,7 @@ class ViewSource extends CActiveRecord
 		return array(
 			'id' => TranslateModule::t('ID'),
 			'path' => TranslateModule::t('Path'),
+			'relativePath' => TranslateModule::t('Path (relative to app base path)'),
 		);
 	}
 
@@ -79,15 +108,22 @@ class ViewSource extends CActiveRecord
 	 * Retrieves a list of models based on the current search/filter conditions.
 	 * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.
 	 */
-	public function search()
+	public function search($dataProviderConfig = array()) 
 	{
-		$criteria = new CDbCriteria;
+		if(!isset($dataProviderConfig['criteria']))
+		{
+			$dataProviderConfig['criteria'] = new CDbCriteria;
+	
+			$dataProviderConfig['criteria']->compare($this->getTableAlias(false, false).'.id', $this->id);
+			$dataProviderConfig['criteria']->compare($this->getTableAlias(false, false).'.path', $this->path, true);
+		}
 
-		$criteria->compare($this->getTableAlias(false, false).'.id', $this->id);
-		$criteria->compare($this->getTableAlias(false, false).'.path', $this->path, true);
-
-		return new CActiveDataProvider($this, array(
-			'criteria' => $criteria,
-		));
+		return new CActiveDataProvider($this, $dataProviderConfig);
 	}
+	
+	public function __toString()
+	{
+		return strval($this->path);
+	}
+	
 }

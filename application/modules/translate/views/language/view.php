@@ -1,26 +1,27 @@
 <?php $this->breadcrumbs = array(TranslateModule::t('Languages') => $this->createUrl('index'), TranslateModule::t('Language Details')); ?>
 <h1>
-<?php echo TranslateModule::t('Language:')." $source->id - ".TranslateModule::translator()->getLanguageDisplayName($source->id); ?>
+<?php echo TranslateModule::t('Language:')." $language->id - ".TranslateModule::translator()->getLanguageDisplayName($language->id); ?>
 </h1>
-<div id="languageDetails">
-	<div id="translations">
-		<h2><?php echo TranslateModule::t('Translations: '); ?></h2>
+<div id="single-column">
+	<div id="translations" class="box-white">
+		<h2><?php echo TranslateModule::translator()->getLanguageDisplayName($language->id) . '&nbsp;' . TranslateModule::t('Translations: '); ?></h2>
 		<?php
-		$this->renderPartial(
-				'../message/_grid', 
-				array(
-						'filter' => $translations, 
-						'dataProvider' => new CActiveDataProvider($translations, array('criteria' => $translations->search()->getDbCriteria()))
-				)
-		);
+		$model = new Message('search');
+		$model->setAttribute('language', $language->id);
+		$this->renderPartial('../message/_grid', array('model' => $model)); 
 		?>
 	</div>
-	<div id="missingTranslations">
-		<h2><?php echo TranslateModule::t('Missing Translations:'); ?></h2>
+	<div id="missingTranslations" class="box-white">
+		<h2>
+		<?php 
+		echo TranslateModule::t('Messages not yet translated to') . '&nbsp;' . TranslateModule::translator()->getLanguageDisplayName($language->id) . ':'; 
+		?>
+		</h2>
 		<?php
 		$model = MessageSource::model();
-		$dataProvider = new CActiveDataProvider('MessageSource', array('criteria' => $model->missingTranslations($source->id)->getDbCriteria()));
-		$this->renderPartial('_missing_translations_grid', array('filter' => $model, 'dataProvider' => $dataProvider));
+		// @ TODO this is very inefficient. Need to find a better way.
+		$dataProvider = $model->missingTranslations($language->id)->search();
+		$this->renderPartial('_missing_translations_grid', array('languageId' => $language->id, 'model' => $model->missingTranslations($language->id)));
 		
     	if(TranslateModule::translator()->canUseGoogleTranslate() && $dataProvider->getItemCount() > 0) {
 			echo CHtml::ajaxButton(
@@ -28,7 +29,7 @@
 					$this->createUrl('messageSource/translateMissing'),
 					array(
 						'data' => array(
-							'id' => $source->id
+							'id' => $language->id
 						),
 						'beforeSend' => 'js:function(jqXHR, settings){$("#missingAcceptedLanguageTranslations").addClass("loading");}',
 						'complete' => 'js:function(jqXHR, textStatus){$("#missingAcceptedLanguageTranslations").removeClass("loading");}',

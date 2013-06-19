@@ -2,8 +2,8 @@
 $this->widget('zii.widgets.grid.CGridView', 
 		array(
 			'id' => 'messageSource-accepted-translations-grid', 
-			'filter' => $filter,
-			'dataProvider' => $dataProvider,
+			'filter' => $model,
+			'dataProvider' => $model->search(),
 			'columns' => array(
 							array(
 								'name' => 'id',

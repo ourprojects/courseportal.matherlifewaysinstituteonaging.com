@@ -42,8 +42,9 @@ class MessageSource extends CActiveRecord {
     
 	public function relations() {
 		return array(
-			'viewMessages' => array(self::HAS_MANY, 'CompiledViewMessage', 'message_source_id'),
-			'views' => array(self::MANY_MANY, 'View', ViewMessage::model()->tableName().'(message_source_id, compiled_view_id)'),
+			'viewMessages' => array(self::HAS_MANY, 'CompiledViewMessage', 'message_id'),
+			'views' => array(self::MANY_MANY, 'View', ViewMessage::model()->tableName().'(message_id, view_id)'),
+			'viewSources' => array(self::MANY_MANY, 'ViewSource', ViewMessage::model()->tableName().'(message_id, view_id)'),
             'translations' => array(self::HAS_MANY, 'Message', 'id', 'joinType' => 'INNER JOIN'),
 			'acceptedLanguages' => array(self::MANY_MANY, 'AcceptedLanguage', Message::model()->tableName().'(id, language)'),
 			'messageCategories' => array(self::HAS_MANY, 'CategoryMessage', 'message_id'),
@@ -60,7 +61,7 @@ class MessageSource extends CActiveRecord {
 								'SELECT al.* FROM '.AcceptedLanguage::model()->tableName().' al ' .
 								'WHERE al.id NOT IN '.
 								'(' .
-									'SELECT m.language FROM '.Message::model()->tableName().' m' .
+									'SELECT m.language FROM '.Message::model()->tableName().' m ' .
 									'WHERE (m.id = '.$this->getTableAlias(false, false).'.id)' .
 								')' .
 							')'
@@ -92,7 +93,7 @@ class MessageSource extends CActiveRecord {
 					'params' => array(':languageId' => $languageId),
 					'condition' => $this->getTableAlias(false, false).'.id NOT IN ' .
 						'(' .
-							'SELECT id FROM '.Message::model()->tableName().' m' . 
+							'SELECT id FROM '.Message::model()->tableName().' m ' . 
 							'WHERE (m.language = :languageId) AND (m.id = '.$this->getTableAlias(false, false).'.id)' .
 						')'
 			));
@@ -100,16 +101,25 @@ class MessageSource extends CActiveRecord {
 		return $this;
 	}
 	
-	public function search() {
-		$criteria = $this->getDbCriteria();
+	/**
+	 * Retrieves a list of models based on the current search/filter conditions.
+	 * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.
+	 */
+	public function search($dataProviderConfig = array()) 
+	{
+		if(!isset($dataProviderConfig['criteria']))
+		{
+			$dataProviderConfig['criteria'] = $this->getDbCriteria();
 		
-		$criteria->compare($this->getTableAlias(false, false).'.id', $this->id);
-		$criteria->compare($this->getTableAlias(false, false).'.message', $this->message, true);
-		
-		return $this;
+			$dataProviderConfig['criteria']->compare($this->getTableAlias(false, false).'.id', $this->id);
+			$dataProviderConfig['criteria']->compare($this->getTableAlias(false, false).'.message', $this->message, true);
+		}
+
+		return new CActiveDataProvider($this, $dataProviderConfig);
 	}
 	
-	public function __toString() {
+	public function __toString() 
+	{
 		return strval($this->message);
 	}
 	

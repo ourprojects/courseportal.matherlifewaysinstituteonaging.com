@@ -69,28 +69,26 @@ class LanguageController extends TController
 	 */
 	public function actionIndex()
 	{
-		$acceptedLanguages = new AcceptedLanguage('search');
+		$acceptedLanguage = new AcceptedLanguage;
 		 
 		if(isset($_GET['AcceptedLanguage']))
-		{
-			$acceptedLanguages->setAttributes($_GET['AcceptedLanguage']);
-		}
+			$acceptedLanguage->setAttributes($_GET['AcceptedLanguage']);
 
-		$this->render('index', array('acceptedLanguages' => $acceptedLanguages, 'model' => $acceptedLanguage));
+		$this->render('index', array('acceptedLanguage' => $acceptedLanguage));
 	}
 
 	public function ajaxIndex()
 	{
 		if(isset($_GET['ajax']))
 		{
-			$acceptedLanguages = new AcceptedLanguage('search');
 			switch($_GET['ajax'])
 			{
 				case 'language-accepted-grid':
-					$this->renderPartial('_accepted_grid', array('filter' => $acceptedLanguages, 'dataProvider' => new CActiveDataProvider($acceptedLanguages, array('criteria' => $acceptedLanguages->search()->getDbCriteria()))));
+					$this->renderPartial('_accepted_grid', array('model' => new AcceptedLanguage('search')));
 					break;
-				case 'language-requested-grid':
-					$this->renderPartial('_requested_grid', array('requestedLanguages' => $acceptedLanguages));
+				case 'language-other-grid':
+					// @ TODO This needs to be other languages not accepted languages.
+					$this->renderPartial('_other_grid', array('model' => new AcceptedLanguage('search')));
 					break;
 			}
 		}
@@ -98,16 +96,7 @@ class LanguageController extends TController
 
 	public function actionView($id)
 	{
-		$source = AcceptedLanguage::model()->findByPk($id);
-
-		$translations = new Message('search');
-
-		if(isset($_REQUEST['Message']))
-			$translations->setAttributes($_REQUEST['Message']);
-
-		$translations->setAttribute('language', $id);
-
-		$this->render('view', array('source' => $source, 'translations' => $translations));
+		$this->render('view', array('language' => AcceptedLanguage::model()->findByPk($id)));
 	}
 
 	public function actionAjaxView($id)
@@ -117,19 +106,13 @@ class LanguageController extends TController
 			switch($_GET['ajax'])
 			{
 				case 'message-grid':
-					$translations = new Message('search');
-					$translations->setAttribute('language', $id);
-					$this->renderPartial(
-							'../message/_grid',
-							array(
-									'filter' => $translations,
-									'dataProvider' => new CActiveDataProvider($translations, array('criteria' => $translations->search()->getDbCriteria()))
-							)
-					);
+					$model = new Message('search');
+					$model->setAttribute('language', $id);
+					$this->renderPartial('../message/_grid', array('model' => $model));
 					break;
 				case 'language-missing-grid':
-					$model = MessageSource::model();
-					$this->renderPartial('_missing_translations_grid', array('filter' => $model, 'dataProvider' => new CActiveDataProvider('MessageSource', array('criteria' => $model->missingTranslations($id)->getDbCriteria()))));
+					$model = new MessageSource('search');
+					$this->renderPartial('_missing_translations_grid', array('model' => $model->missingTranslations($id)));
 					break;
 			}
 		}
@@ -176,12 +159,17 @@ class LanguageController extends TController
 	{
 		$model = AcceptedLanguage::model()->findByPk($id);
 		if($model !== null) {
-			if($model->delete()) {
+			if($model->delete()) 
+			{
 				$message = 'The accepted language has been deleted.';
-			} else {
+			} 
+			else 
+			{
 				$message = 'The accepted language could not be deleted.';
 			}
-		} else {
+		} 
+		else 
+		{
 			$message = 'The accepted language could not be found.';
 		}
 

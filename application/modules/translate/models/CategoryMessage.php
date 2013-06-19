@@ -69,15 +69,16 @@ class CategoryMessage extends CActiveRecord
 	 * Retrieves a list of models based on the current search/filter conditions.
 	 * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.
 	 */
-	public function search()
+	public function search($dataProviderConfig = array()) 
 	{
-		$criteria = new CDbCriteria;
+		if(!isset($dataProviderConfig['criteria']))
+		{
+			$dataProviderConfig['criteria'] = new CDbCriteria;
 
-		$criteria->compare($this->getTableAlias(false, false).'.message_id', $this->message_id);
-		$criteria->compare($this->getTableAlias(false, false).'.category_id', $this->category_id);
+			$dataProviderConfig['criteria']->compare($this->getTableAlias(false, false).'.message_id', $this->message_id);
+			$dataProviderConfig['criteria']->compare($this->getTableAlias(false, false).'.category_id', $this->category_id);
+		}
 
-		return new CActiveDataProvider($this, array(
-			'criteria' => $criteria,
-		));
+		return new CActiveDataProvider($this, $dataProviderConfig);
 	}
 }

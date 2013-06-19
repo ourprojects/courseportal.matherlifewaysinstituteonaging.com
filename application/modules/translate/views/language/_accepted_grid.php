@@ -1,9 +1,9 @@
 <?php
 $this->widget('zii.widgets.grid.CGridView', 
 		array(
-			'id' => 'language-accepted-grid', 
-			'dataProvider' => new CActiveDataProvider($acceptedLanguages, array('criteria' => $acceptedLanguages->search()->getDbCriteria())),
-			'filter' => $acceptedLanguages,
+			'id' => 'language-accepted-grid',
+			'filter' => $model,
+			'dataProvider' => $model->search(),
 			'columns' => array(
 	        	'id',
 				array(

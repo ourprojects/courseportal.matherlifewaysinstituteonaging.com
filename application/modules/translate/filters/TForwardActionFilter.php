@@ -198,12 +198,14 @@ class TForwardActionFilter extends CFilter
 					}
 					else
 					{
+						$action = $requestConditions;
 						unset($pos);
 						$requestConditions = array();
 					}
 				}
 
-				if(is_array($requestConditions) && (array_reduce($requestConditions, array($this, '_reduceHelper'), false) != isset($pos)))
+				if(is_array($requestConditions) && 
+						(empty($requestConditions) || (array_reduce($requestConditions, array($this, '_reduceHelper'), false)) != isset($pos)))
 				{
 					$filterChain->controller->run($action);
 					return false;

@@ -2,8 +2,8 @@
 $this->widget('zii.widgets.grid.CGridView', 
 		array(
 				'id' => 'messageSource-detailed-grid', 
-				'filter' => $filter,
-				'dataProvider' => $dataProvider,
+				'filter' => $model,
+				'dataProvider' => $model->with('categories')->search(),
 				'columns' => array(
 								array(
 									'name' => 'id',

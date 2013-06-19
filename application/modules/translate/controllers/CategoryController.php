@@ -30,7 +30,7 @@ class CategoryController extends TController
 		);
 	}
 
-	public function actionTranslateMissing($id = null, $class = 'Message')
+	public function actionTranslateMissing($id = null, $class = 'Category')
 	{
 
 	}
@@ -40,12 +40,7 @@ class CategoryController extends TController
 	 */
 	public function actionIndex()
 	{
-		$categories = new Category('search');
-			
-		if(isset($_GET['Category']))
-			$categories->setAttributes($_GET['Category']);
-
-		$this->render('index', array('categories' => $categories));
+		$this->render('index');
 	}
 	
 	public function actionAjaxIndex()
@@ -55,14 +50,7 @@ class CategoryController extends TController
 			switch($_GET['ajax'])
 			{
 				case 'category-detailed-grid':
-					$categories = new Category('search');
-					$this->renderPartial(
-							'_detailed_grid', 
-							array(
-									'filter' => $categories, 
-									'dataProvider' => new CActiveDataProvider($categories, array('criteria' => $categories->with('messageCount')->search()->getDbCriteria()))
-							)
-					);
+					$this->renderPartial('_detailed_grid', array('model' => new Category('search')));
 					break;
 			}
 		}
@@ -75,21 +63,7 @@ class CategoryController extends TController
 	 */
 	public function actionView($id)
 	{
-		$category = Category::model()->findByPk($id);
-		
-		$sourceMessages = new MessageSource('search');
-		$sourceMessages->with(array('categories' => array('condition' => 'categories.id='.$id, 'together' => true)));
-			
-		if(isset($_GET['MessageSource']))
-			$sourceMessages->setAttributes($_GET['MessageSource']);
-		
-		$messages = new Message('search');
-		$messages->with(array('source' => array('joinType' => 'INNER JOIN', 'with' => array('categories' => array('condition' => 'categories.id='.$id, 'together' => true)), 'together' => true)));
-		
-		if(isset($_GET['Message']))
-			$messages->setAttributes($_GET['Message']);
-		
-		$this->render('view', array('category' => $category, 'sourceMessages' => $sourceMessages, 'messages' => $messages));
+		$this->render('view', array('category' => Category::model()->findByPk($id)));
 	}
 	
 	public function actionAjaxView($id)
@@ -99,26 +73,14 @@ class CategoryController extends TController
 			switch($_GET['ajax'])
 			{
 				case 'messageSource-detailed-grid':
-					$sourceMessages = new MessageSource('search');
-					$sourceMessages->with(array('categories' => array('condition' => 'categories.id='.$id, 'together' => true)));
-					$this->renderPartial(
-							'../messageSource/_detailed_grid',
-							array(
-									'filter' => $sourceMessages,
-									'dataProvider' => new CActiveDataProvider($sourceMessages, array('criteria' => $sourceMessages->search()->getDbCriteria()))
-							)
-					);
+					$model = new MessageSource('search');
+					$model->with(array('categories' => array('together' => true, 'condition' => 'categories.id=:id', 'params' => array(':id' => $category->id))));
+					$this->renderPartial('../messageSource/_detailed_grid', array('model' => $model)); 
 					break;
 				case 'message-detailed-grid':
-					$messages = new Message('search');
-					$messages->with(array('source' => array('with' => array('categories' => array('condition' => 'categories.id='.$id, 'together' => true)), 'together' => true)));
-					$this->renderPartial(
-							'../message/_detailed_grid',
-							array(
-									'filter' => $messages,
-									'dataProvider' => new CActiveDataProvider($messages, array('criteria' => $messages->search()->getDbCriteria()))
-							)
-					);
+					$model = new Message('search');
+					$model->with(array('source.categories' => array('together' => true, 'condition' => 'categories.id=:id', 'params' => array(':id' => $category->id))));
+					$this->renderPartial('../message/_detailed_grid', array('model' => $model)); 
 					break;
 			}
 		}
