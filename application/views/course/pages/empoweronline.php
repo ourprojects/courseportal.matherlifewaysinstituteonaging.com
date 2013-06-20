@@ -79,7 +79,35 @@ foreach(array(
   <ul>
     <li> <a href="#lesson-1-slide-1" data-fancybox-group="lesson-1" class="teal lesson-1">{t}Taking Care of You{/t}</a> <a href="#lesson-1-slide-2" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-3" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-4" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-5" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-6" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-7" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-8" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-9" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-10" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-11" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-12" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-13" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-14" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-15" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-16" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-17" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-18" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-19" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-20" data-fancybox-group="lesson-1" class="hide lesson-1"></li>
     <li> <a href="#lesson-2-slide-1" data-fancybox-group="lesson-2" class="teal lesson-2">{t}Reducing Personal Stress{/t}</a> <a href="#lesson-2-slide-2" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-3" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-4" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-5" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-6" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-7" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-8" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-9" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-10" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-11" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-12" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-13" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-14" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-15" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-16" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-17" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-18" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-19" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-20" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-21" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-22" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-23" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-24" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-25" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-26" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-27" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-28" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-29" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-30" data-fancybox-group="lesson-2" class="hide lesson-2"></a> </li>
-    <li> <a href="#lesson-3-slide-1" data-fancybox-group="lesson-3" class="teal lesson-3"> {t}Communicating Effectively in Challenging Situations{/t} </a> <a href="#lesson-3-slide-2" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-3" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-4" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-5" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-6" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-7" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-8" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-9" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-10" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-11" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-12" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-13" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-14" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-15" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-16" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-17" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-18" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-19" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-20" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-21" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-22" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-23" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-24" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-25" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-26" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-27" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-28" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-29" data-fancybox-group="lesson-3" class="hide lesson-3"></a> </li>
+    <li> 
+    
+    
+    
+    
+    
+    <a href="#lesson-3-slide-1" data-fancybox-group="lesson-3" class="teal lesson-3"> {t}Communicating Effectively in Challenging Situations{/t} </a> 
+    <a href="#lesson-3-slide-2" data-fancybox-group="lesson-3" class="hide lesson-3"></a> 
+    <a href="#lesson-3-slide-3" data-fancybox-group="lesson-3" class="hide lesson-3"></a> 
+    <a href="#lesson-3-slide-4" data-fancybox-group="lesson-3" class="hide lesson-3"></a> 
+    <a href="#lesson-3-slide-5" data-fancybox-group="lesson-3" class="hide lesson-3"></a> 
+    <a href="#lesson-3-slide-6" data-fancybox-group="lesson-3" class="hide lesson-3"></a> 
+    <a href="#lesson-3-slide-7" data-fancybox-group="lesson-3" class="hide lesson-3"></a> 
+    <a href="#lesson-3-slide-8" data-fancybox-group="lesson-3" class="hide lesson-3"></a> 
+    <a href="#lesson-3-slide-9" data-fancybox-group="lesson-3" class="hide lesson-3"></a> 
+    <a href="#lesson-3-slide-10" data-fancybox-group="lesson-3" class="hide lesson-3"></a> 
+    <a href="#lesson-3-slide-11" data-fancybox-group="lesson-3" class="hide lesson-3"></a> 
+    <a href="#lesson-3-slide-12" data-fancybox-group="lesson-3" class="hide lesson-3"></a> 
+    <a href="#lesson-3-slide-13" data-fancybox-group="lesson-3" class="hide lesson-3"></a> 
+    <a href="#lesson-3-slide-14" data-fancybox-group="lesson-3" class="hide lesson-3"></a> 
+    <a href="#lesson-3-slide-15" data-fancybox-group="lesson-3" class="hide lesson-3"></a> 
+    <a href="#lesson-3-slide-16" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-17" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-18" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-19" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-20" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-21" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-22" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-23" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-24" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-25" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-26" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-27" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-28" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-29" data-fancybox-group="lesson-3" class="hide lesson-3"></a>
+    
+    
+    
+    </li>
+    
+    
+    
     <li> <a href="#lesson-4-slide-1" data-fancybox-group="lesson-4" class="teal lesson-4"> {t}Normal &amp; Abnormal Aging Changes{/t} </a> <a href="#lesson-4-slide-2" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-3" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-4" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-5" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-6" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-7" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-8" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-9" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-10" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-11" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-12" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-13" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-14" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-15" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-16" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-17" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-18" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-19" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-20" data-fancybox-group="lesson-4" class="hide lesson-4"></a> </li>
     <li> <a href="#lesson-5-slide-1" data-fancybox-group="lesson-5" class="teal lesson-5"> {t}Financial &amp; Legal Issues{/t} </a> <a href="#lesson-5-slide-2" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-3" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-4" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-5" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-6" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-7" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-8" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-9" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-10" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-11" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-12" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-13" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-14" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-15" data-fancybox-group="lesson-5" class="hide lesson-5"></a> </li>
   </ul>
@@ -2554,17 +2582,9 @@ HTML Output:
         
         
         
-          <h5>{t}Asking for Help{/t}</h5>
-          
-    <p>{t}Some caregivers feel that by asking for help they are somehow falling short. But
-      asking for help may be the only way they
-      can continue to provide care at home. They
-      are not falling short; they are adapting to
-      changing care needs that cannot be met
-      without help. It is a caregiver's responsibility
-      to ask for help. If you feel uncomfortable
-      asking for it, consider the following
-      questions about asking for salt.</p>
+        
+   
+   <!-- 
     <div class="question">
       <p>
         <input type="checkbox" name="Yes8" id="Yes8">
@@ -2586,7 +2606,7 @@ HTML Output:
         Would you plead, hint, or whine to get the salt?</p>
       <input type="button" onClick="MM_popupMsg('You probably answered \&quot;no\&quot; to the salt questions. just as we expect to ask for salt in order to receive it, we also need to ask for the help we need in caregiving. As you ask for help, remember to use the tone of voice you use when asking for salt. It\'s probably pleasant and matter-of-fact, without blaming and hinting.')" value="Submit">
     </div>
-        
+        -->
         
         
               </div>
@@ -2599,6 +2619,100 @@ HTML Output:
         <h2 class="flowers">{t}Communicating Effectively in Challenging Situations{/t}</h2>
         <hr />
         
+          <h4>{t}Asking for Help{/t}</h4>
+          
+    <p>{t}Some caregivers feel that by asking for help they are somehow falling short. But asking for help may be the only way they can continue to provide care at home. They are not falling short; they are adapting to changing care needs that cannot be met without help. It is a caregiver's responsibility to ask for help. If you feel uncomfortable asking for it, consider the following questions about asking for salt.{/t}</p>
+        
+         <h5>{t}Prepare yourself to ask for help -{/t}</h5>
+         
+    <p>{t}Before you ask for help, consider the following suggestions:{/t}</p>    
+    <p>{t}<b>Consider the person's special abilities and interests</b> - Before approaching someone with a request, consider their likes, dislikes, areas of interest, experience, abilities, and knowledge. For instance, if someone likes cooking but dislikes driving, your chances improve if you ask for help with cooking. Your chances for success also improve if you ask the person to help you with tasks he feels comfortable with and knows how to do. Tasks unrelated to caregiving are easier for some people.{/t}</p>
+    
+    <p>{t}<i>Note: When one family member has a medical or nursing background, it is natural to expect that he is the best one to help with caregiving. Take care that other relatives are not automatically excused from responsibility because there is a health professional in the family.</i>{/t}</p>      
+      
+    <p>{t}<b>Resist asking the same person repeatedly</b> - Ask yourself if you are requesting help from a certain person because he or she has difficulty saying no. It is important to capitalize on your stronger speaking skills rather than on someone else's inability to set limits.{/t}</p>
+    
+    
+    <p>{t}<b>Consider the person's special needs</b> - Personal, private time is hard to come by. As a caregiver, no one knows this better than you. Other obligations in people's lives may limit the time and energy they have to give. Consider these matters before asking for help and talk them over.{/t}</p>
+    
+    <ul>
+    <li>{t}I need more help with the...{/t}</li>
+    <li>{t}I know you are very busy and I'm concerned about asking too much of you.{/t}</li>
+    <li>{t}Would helping me a few hours during the week be more than you can do comfortably?{/t}</li>
+    <li>{t}Out of concern for everyone's needs, you may decide it's time Jo inquire about hiring in-home help.{/t}</li>
+      </ul>
+      
+    <p><b>Decide the best time to make a request</b> - Timing is important. A person who is tired, hungry, stressed, or busy is not a good candidate for a request.{/t}</p>
+    
+    <p>Prepare a list of things that need doing - If you are unsure what people prefer to do, relatives say they don't know how to help, make a list of tasks you need help with (cooking, errands, yard-work, someone to visit with the care receiver) and let them choose. Some caregivers turn providing help into gifts given. The idea is that when people give their time and energy to help, they are giving the caregiver a valuable gift. They may call their list "Gifts of Help" or <em>Gifts
+        
+        
+        
+                     </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
+        
+          <div id="lesson-3-slide-8" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Communicating Effectively in Challenging Situations{/t}</h2>
+        <hr />
+        
+        
+        
+                     </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
+        
+          <div id="lesson-3-slide-9" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Communicating Effectively in Challenging Situations{/t}</h2>
+        <hr />
+        
+        
+                     </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
+    
+    
+          <div id="lesson-3-slide-10" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Communicating Effectively in Challenging Situations{/t}</h2>
+        <hr />
+        
+                            </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
+    
+        
+               <div id="lesson-3-slide-11" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Communicating Effectively in Challenging Situations{/t}</h2>
+        <hr />
+        
+        
+                            </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
+    
+        
+        
+        
+               <div id="lesson-3-slide-12" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Communicating Effectively in Challenging Situations{/t}</h2>
+        <hr />
+        
+                            </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
+    
+        
+        
+        
+               <div id="lesson-3-slide-13" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Communicating Effectively in Challenging Situations{/t}</h2>
+        <hr />
         
         
         
