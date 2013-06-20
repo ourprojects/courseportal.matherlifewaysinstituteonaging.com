@@ -385,6 +385,9 @@ function MM_popupMsg(msg) { //v1.0
       giving the caregiver a valuable gift. They
       may call their list "Gifts of Help" or <em>Gifts
       You Can Share/Give</em>.</p>
+    
+    
+    
     <p>Be prepared for hesitance or refusal - Your request might be answered with a
       simple no or silence. The person may be
       unable or unwilling to help and is setting
@@ -394,6 +397,12 @@ function MM_popupMsg(msg) { //v1.0
       his mind and decide to help, but the relationship
       will suffer. If the person hesitates, ask,
       "Would you like time to think about it?"</p>
+      
+      
+      
+      
+      
+      
     <p>Suggestions for asking for help - </p>
     <p>The following communication tools may
       help if you feel uncomfortable putting your

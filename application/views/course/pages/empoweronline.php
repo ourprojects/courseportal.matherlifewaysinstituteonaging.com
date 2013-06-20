@@ -2642,9 +2642,11 @@ HTML Output:
     <li>{t}Out of concern for everyone's needs, you may decide it's time Jo inquire about hiring in-home help.{/t}</li>
       </ul>
       
-    <p><b>Decide the best time to make a request</b> - Timing is important. A person who is tired, hungry, stressed, or busy is not a good candidate for a request.{/t}</p>
+    <p>{t}<b>Decide the best time to make a request</b> - Timing is important. A person who is tired, hungry, stressed, or busy is not a good candidate for a request.{/t}</p>
     
-    <p>Prepare a list of things that need doing - If you are unsure what people prefer to do, relatives say they don't know how to help, make a list of tasks you need help with (cooking, errands, yard-work, someone to visit with the care receiver) and let them choose. Some caregivers turn providing help into gifts given. The idea is that when people give their time and energy to help, they are giving the caregiver a valuable gift. They may call their list "Gifts of Help" or <em>Gifts
+    <p>{t}<b>Prepare a list of things that need doing</b> - If you are unsure what people prefer to do, relatives say they do not know how to help, make a list of tasks you need help with (cooking, errands, yard-work, someone to visit with the care receiver) and let them choose. Some caregivers turn providing help into gifts given. The idea is that when people give their time and energy to help, they are giving the caregiver a valuable gift. They may call their list <i>Gifts of Help</i> or <i>Gifts You Can Share/Give</i>.{/t}</p>
+    
+       <p>{t}<b>Be prepared for hesitance or refusal</b> - Your request might be answered with a simple <i>no</i> or silence. The person may be unable or unwilling to help and is setting personal limits. Sometimes refusals upset caregivers. Realizing the refusal has hurt the caregiver's feelings, the person may change his mind and decide to help, but the relationship will suffer. If the person hesitates, ask, <i>"Would you like time to think about it?"</i>{/t}</p>
         
         
         
@@ -2657,7 +2659,17 @@ HTML Output:
         <h2 class="flowers">{t}Communicating Effectively in Challenging Situations{/t}</h2>
         <hr />
         
+        <h5>{t}Suggestions for asking for help - {/t}</h5>
         
+        <p>{t}The following communication tools may help if you feel uncomfortable putting your request into words.{/t}</p>
+        
+        <p>{t}<b>Use your please-pass-the-salt style to make requests</b> - This is the tone you want to use when you ask someone for help. Practice making a request: <i>"I would like to go to church on Sunday. Would you mind staying with Grandma?"</i> in the same tone you would use to ask for the salt.{/t}</p>
+        
+        <p>{t}<b>Use <i>"I"</i> statements to make clear, specific requests</b> - A statement like <i>"I need more help"</i> is vague. A specific request sounds like, <i>"I would like to go to church this Sunday. Would you stay with Grandma from 9:00a.m. to noon?"</i>{/t}</p>
+        
+        <p>{t}<b>Avoid weakening your request</b> - If you say <i>"Could you think about staying with Grandma?"</i> you weaken your request. Saying, <i>"It is only a thought, but I would like to go to church,"</i> sounds like your request is not very important to you. Notice the strength of the statement, <i>Would you stay with Grandma from 9:00a.m. to noon?"</i>{/t}</p>
+        
+        <p>{t}<b>Use an <i>"I"</i> statement to express appreciation for any help even if it is given reluctantly</b> - <i>"I want to thank you for staying with Grandma so I could go to church today."</i>{/t}</p>        
         
                      </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
@@ -2667,6 +2679,38 @@ HTML Output:
       <div class="content">
         <h2 class="flowers">{t}Communicating Effectively in Challenging Situations{/t}</h2>
         <hr />
+        
+        <h5>{t}If your request is turned down -{/t}</h5>
+        
+        <p>{t}If your request is turned down, try not to take it personally and give yourself credit for asking. Most likely the person is turning down the task, not you. Or he may worry about doing the task the way you want it done. Consider asking, <i>"Do you have any concerns about what I have asked?"</i> Then express appreciation for the person's willingness to hear your request. <i>"Thank you for taking the time to listen."</i> Try not to let a refusal prevent you from asking for help again. The person who refused today may be glad to help another time.{/t}</p>
+        
+        <h5>{t}Expressing Criticism{/t}</h5>
+        
+        <p>{t}If setting limits and asking for help seems risky to caregiving relationships, expressing criticism may seem even more risky. But sometimes you must speak up whether you want to or not. This is especially true when health or safety are involved. Because the person may not like what he hears does not mean you should not speak up. Usually, how criticism is given affects people more than the criticism itself. Consider Grace's approach:{/t}</p>
+        
+        <p style="text-align:center; font-style:italic;">{t}Do not load the dishwasher that way. Always put the glasses on the upper rack and the cups in rows behind the saucers. You are wasting detergent. I never use that much.{/t}</p>
+        
+        
+      <p>{t}How would you feel about loading Grace's dishwasher? Was the way you were doing it wrong or simply different? Grace could use some advice on more effective ways to correct people.{/t}</p>
+        
+        <h5>{t}Before offering criticism -{/t}</h5>
+        
+        <p>{t}Constructive criticism helps people learn. It focuses on problems, not personalities. It shows you care enough to level with the person. A courteous, respectful tone makes your words, not your behavior, worth remembering. Before you say anything, reflect on why you are criticizing. Use the following checklist to be certain you are criticizing for the right reasons.{/t}</p>
+        
+        <h5>{t}Address problems promptly -{/t}</h5>
+        
+        <p>{t}Timing is important. If you ignore a problem or delay addressing it, you give someone the message that he is doing fine. Then when you do speak up, the person wonders why you did not say something earlier. Delays in addressing the problem may also allow it to grow worse and your feelings about it to build. This often leads to blaming <i>"you"</i> statements like, <i>"Why don't you ever ... ?" "You always ... ,1 ' or "You never ... "</i>{/t}</p>
+
+<h5>{t}Avoid the pitfalls -{/t}</h5>
+
+<p>{t}Before you say anything, mentally review pitfalls you want to avoid. It is important to:{/t}</p>
+
+<ul>
+	<li>{t}resist offering an opinion about the person's motives for doing what he did;{/t}</li>
+    <li>{t}avoid mind-reading and judging the other person's motives for doing what he did;{/t}</li>
+    <li>{t}avoid making comparisons with other people; and{/t}</li>
+    <li>{t}avoid raising questions about the person's loyalty or commitment.{/t}</li>
+ </ul>
         
         
                      </div>
@@ -2679,6 +2723,36 @@ HTML Output:
         <h2 class="flowers">{t}Communicating Effectively in Challenging Situations{/t}</h2>
         <hr />
         
+        <h5>{t}Ways to deliver constructive criticism -{/t}</h5>
+        
+        <p>{t}Bringing up a problem can be the hardest part of communicating effectively. If the person has seen you (or others in the family) do what you will be discussing, mention that you are also working on this problem. This makes you partners against the problem. Grace has done this in the following scenario. Compare this with her statements earlier about loading the dishwasher. Do you feel differently about the way the criticism was given?{/t}</p>
+        
+        <p style="text-align:center; font-style:italic;">{t}I would like to talk about the way the bathroom is left after Grandpa has his shower. I know he throws his damp towels on the floor. I would like them put in the laundry. I step in puddles of water when I go in the bathroom and I worry about slipping and falling. You can use the mop in the kitchen closet or the damp towels to soak up the puddles. I would appreciate it if you would make sure the floor is dry. Thanks.{/t}</p>
+        
+        <p>{t}Grace's criticism was constructive because she applied the following suggestions. She used an <i>"I"</i> statement when she said, <i>"I step in puddles."</i> She focused on the problem, not the person, by saying, <i>"I would like to talk about the way the bathroom is left."</i> She was specific when she said, <i>"You can use the damp towel to soak up the puddles."</i> She focused on the issue of concern-the bathroom. She did not mention the dishwasher. The following are additional tools for giving constructive criticism:{/t}</p>
+        
+        <p>{t}<b>Phrase questions carefully</b> - Your questions and comments can help or hurt. Asking why the person did something sounds accusatory. Frequently people do not know why they did something. Questions beginning with how, what, and when sound like you are gathering information, not blaming.{/t}</p>
+        
+        <ul>
+        	<li>{t}How do you usually do this?{/t}</li>
+            <li>{t}What do you think went wrong?{/t}</li>
+            <li>{t}When does the problem arise?{/t}</li>
+         </ul>
+         
+         <p>{t}<b>Offer face-saving comments</b> - Your intent is to protect the person's pride and feelings by offering valid, impersonal reasons for what has happened. Ask yourself the aikido question when a criticism must be given, <i>"What does this person need from me to feel better or to save face? Protection from embarrassment? A chance to improve without having to apologize?"</i> Some examples of face-savers are:{/t}</p>
+         
+         <ul>
+         	<li>{t}I can see how a mistake could be made. The directions are confusing.{/t}</li>
+            <li>{t}This is easy to forget, especially when it is a busy time.{/t}</li>
+            <li>{t}I hope we can continue to talk things over at a later time.{/t}</li>
+         </ul>
+         
+         <p>{t}<b>End on a positive note</b> - You can end on an upbeat note by mentioning positive, helpful contributions the person has made and expressing your belief that things will work out. For example, Gerald said to an in-home worker:{/t}</p>
+         
+         <p style="text-align:center; font-style:italic;">{t}I notice how patient you are when talking to Dad, especially when he keeps asking who you are.{/t}</p>
+         
+         <p>{t}One thing I have become more sensitive to when talking to Dad is to say <i>"you"</i> instead of <i>"we."</i> It sounds more respectful to say <i>"How are you today?"</i> instead of <i>"How are we today?"</i> With a little forethought, this can be an easy change to make. And it is a change I will appreciate very much.{/t}</p>       
+        
                             </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
@@ -2688,6 +2762,30 @@ HTML Output:
       <div class="content">
         <h2 class="flowers">{t}Communicating Effectively in Challenging Situations{/t}</h2>
         <hr />
+        
+        <h4><{t} here {/t]</h4>
+        
+        
+        <h5>{t}Responding to criticism -{/t}</h5>
+        
+        <p>{t}Although you may do your best to offer criticism in a constructive manner, you may not always be treated in the same way. This can be infuriating even when you sense a criticism has merit. Being open to criticism is not easy, but it is important. As a caregiver you may be offended by criticism you feel is neither deserved nor wanted. How does one deal with criticism? The Boy Scouts say it best: <i>"Be prepared."</i> Here are some other tools that will help:{/t}</p>
+        
+        <p>{t}<b>Think about the merits of the criticism, not just how it makes you feel</b> - Does the criticism have merit? Did the person truly criticize or was he expressing a concern that you viewed as a criticism? For example, if you were told you needed help to provide care, would you see it as a criticism of your ability? Are there times when you could be wrong? If so, it shows true grit to admit a mistake and apologize. just be sure your apology doesn't have the word "if' in it. Saying ''I'm sorry if I was wrong" suggests you don't really believe you were wrong. A genuine apology has no "ifs" and says, "I was wrong and I'm sorry."{/t}</p>
+        
+        <p>{t}<b>Use your aikido skills if the criticism is valid</b> - Step into the other person's shoes and try to see things from his point of view. Ask what needs to change for him to feel better: "I need to understand what you want done differently." Perhaps you can't make the changes he wants, but you can listen with respect and concern. That might be all he wanted. (See Chapter 3 for information about aikido.){/t}</p>
+
+Don't take unjust criticism to heart - Another part of readiness is the ability to disregard unfair criticism. You can ignore the criticism by simply saying, "I find your remarks interesting" and dropping the subject. If ignoring the criticism isn't the answer, you can calmly assert yourself by returning the problem to the critic with a statement like, "It would help me if you would share how you would have done __ ." Or, to deflect criticism, try a remark like, "That is another way of looking at this ... " If you need time to collect your thoughts, tell the person, "I will think about what you've said."
+
+Responding to criticism from the care receiver - 
+
+Taking criticism from the person receiving your help can be particularly difficult. This is especially true if you are the brunt of all the criticism and you are doing the most. If the criticism is undeserved or invalid, try using aikido to respond and try not to take the criticism personally. Aikido is a very useful tool to use in these situations. It tends to disarm the person because he has no opponent and is not given "fuel" for an argument. Some caregivers have also found it helps to calmly interrupt when the care receiver takes a breath and suggest talking later. Other caregivers quietly state that they can't listen any longer: "I need to excuse myself for a while," and leave the room. Offering a snack or something to drink gives you a reason to leave the room and may reduce the stress of the moment.
+
+Another option is to suggest the person put his criticisms in writing because you can't remember everything. (The idea here is that people who criticize for the sake of criticizing often will not take the time to put their criticisms in writing.) This also may help to focus you and the care receiver on legitimate issues that need to be addressed. Remember, you do not have to listen to a barrage of unfair and hurtful criticism. Regardless of the criticism or its source, how you react to it affects how you will feel about yourself later. It's gratifying to look back on a challenging situation and say to yourself, "I handled that very well."{/t}</p>
+        
+        
+        
+        
+        
         
         
                             </div>
