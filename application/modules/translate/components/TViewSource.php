@@ -56,15 +56,6 @@ class TViewSource extends CApplicationComponent
 		}
 		return $this->_db;
 	}
-	
-	/**
-	 * Returns the command builder used by this AR.
-	 * @return CDbCommandBuilder the command builder used by this AR
-	 */
-	public function getCommandBuilder()
-	{
-		return $this->getDbConnection()->getSchema()->getCommandBuilder();
-	}
 
 	protected function getCache()
 	{
@@ -98,17 +89,16 @@ class TViewSource extends CApplicationComponent
 	
 	protected function loadViewsFromDb($route, $language)
 	{
-		$cmd = $this->getCommandBuilder()->createSqlCommand(
-				"SELECT vst.path source_path, vt.path view_path " .
-				"FROM $this->routeTable rt " .
-				"JOIN $this->routeViewTable rvt ON (rt.id=rvt.route_id) " .
-				"JOIN $this->viewSourceTable vst ON (rvt.view_id=vst.id) " .
-				"JOIN $this->viewTable vt ON (vst.id=vt.id) " .
-				"LEFT JOIN $this->viewMessageTable vmt ON (vst.id=vmt.view_id) " .
-				'LEFT JOIN '.TranslateModule::translator()->getMessageSource()->translatedMessageTable.' tmt ON (vmt.message_id=tmt.id AND tmt.language=vt.language) ' .
-				"WHERE (rt.route=:route AND vt.language=:language AND (tmt.last_modified IS NULL OR tmt.last_modified < vt.created)) " .
-				"GROUP BY vst.id", 
-				array(':route' => $route, ':language' => $language));
+		$cmd = $this->getDbConnection()->createCommand()
+				->select(array('vst.path AS source_path', 'vt.path AS view_path'))
+				->from(array($this->routeTable.' rt'))
+				->join($this->routeViewTable.' rvt', 'rt.id=rvt.route_id')
+				->join($this->viewSourceTable.' vst', 'rvt.view_id=vst.id')
+				->join($this->viewTable.' vt', 'vst.id=vt.id')
+				->leftJoin($this->viewMessageTable.' vmt', 'vst.id=vmt.view_id')
+				->leftJoin(TranslateModule::translator()->getMessageSource()->translatedMessageTable.' tmt', array('and', 'vmt.message_id=tmt.id', 'tmt.language=vt.language'))
+				->where(array('and', 'rt.route=:route', 'vt.language=:language', array('or', 'tmt.last_modified IS NULL', 'tmt.last_modified < vt.created')), array(':route' => $route, ':language' => $language))
+				->group('vst.id');
 
 		$views = array();
 		foreach($cmd->queryAll() as $row)
@@ -122,79 +112,73 @@ class TViewSource extends CApplicationComponent
 
 	public function getViewMessages($viewId)
 	{
-		return $this->getCommandBuilder()->createSqlCommand(
-				"SELECT smt.id id, smt.message message " .
-				'FROM '.TranslateModule::translator()->getMessageSource()->sourceMessageTable.' smt ' .
-				"JOIN $this->viewMessageTable vmt ON (vmt.message_id=smt.id) " .
-				"WHERE (vmt.view_id=:view_id)", 
-				array(':view_id' => $viewId))
+		return $this->getDbConnection()->createCommand()
+				->select(array('smt.id AS id', 'smt.message AS message'))
+				->from(TranslateModule::translator()->getMessageSource()->sourceMessageTable.' smt')
+				->join($this->viewMessageTable.' vmt', 'vmt.message_id=smt.id')
+				->where('vmt.view_id=:view_id', array(':view_id' => $viewId))
 			->queryAll();
 	}
 	
 	public function getView($route, $sourcePath, $language)
 	{
-		return $this->getCommandBuilder()->createSqlCommand(
-				"SELECT MIN(rt.id) route_id, vst.id view_id, vt.path path, vmt.message_id, MAX(COALESCE(tmt.last_modified, '9999-99-99 99:99:99')) last_modified " .
-				"FROM $this->viewSourceTable vst " .
-				"LEFT JOIN $this->routeViewTable rvt ON (vst.id=rvt.view_id) " .
-				"LEFT JOIN $this->routeTable rt ON (rvt.route_id=rt.id AND rt.route=:route) " .
-				"LEFT JOIN $this->viewTable vt ON (vst.id=vt.id AND vt.language=:language) " .
-				"LEFT JOIN $this->viewMessageTable vmt ON (vst.id=vmt.view_id) " .
-				'LEFT JOIN '.TranslateModule::translator()->getMessageSource()->translatedMessageTable.' tmt ON (vmt.message_id=tmt.id AND tmt.language=vt.language) ' .
-				"WHERE (vst.path=:source_path)",
-				array(':route' => $route, ':source_path' => $sourcePath, ':language' => $language))
+		return $this->getDbConnection()->createCommand()
+				->select(array('MIN(rt.id) AS route_id', 'vst.id AS view_id', 'vt.path AS path', 'vmt.message_id AS message_id', 'MAX(COALESCE(tmt.last_modified, \'9999-99-99 99:99:99\')) AS last_modified'))
+				->from($this->viewSourceTable.' vst')
+				->leftJoin($this->routeViewTable.' rvt', 'vst.id=rvt.view_id')
+				->leftJoin($this->routeTable.' rt', array('and', 'rvt.route_id=rt.id', 'rt.route=:route'), array(':route' => $route))
+				->leftJoin($this->viewTable.' vt', array('and', 'vst.id=vt.id', 'vt.language=:language'), array(':language' => $language))
+				->leftJoin($this->viewMessageTable.' vmt', 'vst.id=vmt.view_id')
+				->leftJoin(TranslateModule::translator()->getMessageSource()->translatedMessageTable.' tmt', array('and', 'vmt.message_id=tmt.id', 'tmt.language=vt.language'))
+				->where('vst.path=:source_path', array(':source_path' => $sourcePath))
 			->queryRow();
 	}
 	
 	public function getViewId($sourcePath, $viewPath)
 	{
-		return $this->getCommandBuilder()->createSqlCommand(
-				"SELECT t1.id id " .
-				"FROM $this->viewSourceTable t1 " .
-				"JOIN $this->viewTable t2 ON (t1.id=t2.id) " .
-				"WHERE (t1.path=:source_path AND t2.path=:compiled_path)",
-				array(':source_path' => $sourcePath, ':compiled_path' => $viewPath))
+		return $this->getDbConnection()->createCommand()
+				->select('vst.id AS id')
+				->from($this->viewSourceTable.' vst')
+				->join($this->viewTable.' vt', 'vst.id=vt.id')
+				->where(array('and', 'vst.path=:source_path', 'vt.path=:compiled_path'), array(':source_path' => $sourcePath, ':compiled_path' => $viewPath))
 			->queryScalar();
 	}
 	
 	public function getRouteId($route)
 	{
-		return $this->getCommandBuilder()->createSqlCommand(
-					"SELECT rt.id id " .
-					"FROM $this->routeTable rt " .
-					"WHERE (rt.route=:route)",
-					array(':route' => $route))
+		return $this->getDbConnection()->createCommand()
+					->select('rt.id AS id')
+					->from($this->routeTable.' rt')
+					->where('rt.route=:route', array(':route' => $route))
 				->queryScalar();
 	}
 
 	public function addView($id, $path, $language)
 	{
 		$args = array('id' => $id, 'path' => $path, 'language' => $language);
-		if($this->getCommandBuilder()->createInsertCommand($this->viewTable, $args)->execute() > 0)
+		if($this->getDbConnection()->createCommand()->insert($this->viewTable, $args) > 0)
 			return $args;
 		return null;
 	}
 
 	public function addViewSource($path)
 	{
-		$builder = $this->getCommandBuilder();
-		if($builder->createInsertCommand($this->viewSourceTable, array('path' => $path))->execute())
-			return $builder->getLastInsertID($this->viewSourceTable);
+		if($this->getDbConnection()->createCommand()->insert($this->viewSourceTable, array('path' => $path)) > 0)
+			return $this->getDbConnection()->getLastInsertID($this->viewSourceTable);
 		return null;
 	}
 	
 	public function addRoute($route)
 	{
-		$builder = $this->getCommandBuilder();
-		if($builder->createInsertCommand($this->routeTable, array('route' => $route))->execute())
-			return $builder->getLastInsertID($this->routeTable);
+		if($this->getDbConnection()->createCommand()->insert($this->routeTable, array('route' => $route)) > 0)
+			return $this->getDbConnection()->getLastInsertID($this->routeTable);
 		return null;
 	}
 	
 	public function addViewRoute($routeId, $viewId)
 	{
 		$args = array('route_id' => $routeId, 'view_id' => $viewId);
-		if($this->getCommandBuilder()->createInsertCommand($this->routeViewTable, $args)->execute() > 0)
+		if($this->getDbConnection()->createCommand()->insert($this->routeViewTable, $args) > 0)
 			return $args;
 		return null;
 	}
@@ -202,7 +186,7 @@ class TViewSource extends CApplicationComponent
 	public function addViewMessage($viewId, $messageId)
 	{
 		$args = array('view_id' => $viewId, 'message_id' => $messageId);
-		if($this->getCommandBuilder()->createInsertCommand($this->viewMessageTable, $args)->execute() > 0)
+		if($this->getDbConnection()->createCommand()->insert($this->viewMessageTable, $args) > 0)
 			return $args;
 		return null;
 	}
@@ -211,16 +195,12 @@ class TViewSource extends CApplicationComponent
 	{
 		if(empty($messageIds))
 			return 0;
-		$builder = $this->getCommandBuilder();
-		return $builder->createDeleteCommand($this->viewMessageTable, $builder->createColumnCriteria($this->viewMessageTable, array('view_id' => $viewId))->addInCondition('message_id', $messageIds))->execute();
+		return $this->getDbConnection()->createCommand()->delete($this->viewMessageTable, array('and', 'view_id=:view_id', array('in', 'message_id', $messageIds)), array(':view_id' => $viewId));
 	}
 
 	public function updateViewCreated($viewId, $language, $created = null)
 	{
-		if($created === null)
-			$created = date('Y-m-d H:i:s');
-		$builder = $this->getCommandBuilder();
-		return $builder->createUpdateCommand($this->viewTable, array('created' => $created), $builder->createCriteria()->addColumnCondition(array('id' => $viewId, 'language' => $language)))->execute();
+		return $this->getDbConnection()->createCommand()->update($this->viewTable, array('created' => $created === null ? date('Y-m-d H:i:s') : $created), array('and', 'id=:id', 'language=:language'), array(':id' => $viewId, ':language' => $language));
 	}
 
 	/**

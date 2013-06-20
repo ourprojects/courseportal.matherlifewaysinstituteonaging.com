@@ -38,7 +38,7 @@ class TViewCompileCommand extends CConsoleCommand
 			for($i = 0; $i < count($matches[2]); $i++)
 			{
 				$category = $matches[1][$i] === '' ? $messageSource->messageCategory : $matches[1][$i];
-				$categorizedMessages[$category][":$i"] = $matches[2][$i];
+				$categorizedMessages[$category][$matches[2][$i]] = $i;
 				$matches[2][$i] = Yii::t($category, $matches[2][$i], array(), null, null);
 			}
 
@@ -47,22 +47,23 @@ class TViewCompileCommand extends CConsoleCommand
 			@chmod($compiledPath, $filePermission);
 
 			// Add any missing view messages associations and confirm all source messages and their respective categories were added to the DB.
+			$cmd = $viewSource->getDbConnection()->createCommand()
+					->select('vmt.message_id AS id')
+					->from($viewSource->viewMessageTable.' vmt')
+					->where('vmt.view_id=:view_id', array(':view_id' => $id));
 			$viewMessages = array();
-			foreach($viewSource->getCommandBuilder()->createSqlCommand("SELECT vmt.message_id id FROM $viewSource->viewMessageTable vmt WHERE (vmt.view_id=:view_id)", array(':view_id' => $id))->queryAll() as $row)
+			foreach($cmd->queryAll() as $row)
 				$viewMessages[$row['id']] = $row['id'];
 
 			foreach($categorizedMessages as $category => &$messages)
 			{
-				$cmd = $messageSource->getCommandBuilder()->createSqlCommand(
-							'SELECT MIN(ct.id) category_id, smt.id message_id, smt.message message ' .
-							"FROM $messageSource->sourceMessageTable smt " .
-							"LEFT JOIN $messageSource->categoryMessageTable cmt ON (smt.id=cmt.message_id) " .
-							"LEFT JOIN $messageSource->categoryTable ct ON (cmt.category_id=ct.id AND ct.category=:category) " .
-							'WHERE (smt.message IN ('.implode(',', array_keys($messages)).')) ' .
-							'GROUP BY smt.id')
-						->bindValue(':category', $category)
-						->bindValues($messages);
-				$messages = array_flip($messages);
+				$cmd = $messageSource->getDbConnection()->createCommand()
+							->select(array('MIN(ct.id) AS category_id', 'smt.id AS message_id', 'smt.message AS message'))
+							->from($messageSource->sourceMessageTable.' smt')
+							->leftJoin($messageSource->categoryMessageTable.' cmt', 'smt.id=cmt.message_id')
+							->leftJoin($messageSource->categoryTable.' ct', array('and', 'cmt.category_id=ct.id', 'ct.category=:category'), array(':category' => $category))
+							->where(array('in', 'smt.message', array_keys($messages)))
+							->group('smt.id');
 				foreach($cmd->queryAll() as $messageInfo)
 				{
 					unset($messages[$messageInfo['message']]);
