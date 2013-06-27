@@ -2761,10 +2761,7 @@ HTML Output:
                <div id="lesson-3-slide-11" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}Communicating Effectively in Challenging Situations{/t}</h2>
-        <hr />
-        
-        <h4><{t} here {/t]</h4>
-        
+        <hr /> 
         
         <h5>{t}Responding to criticism -{/t}</h5>
         
@@ -2772,33 +2769,61 @@ HTML Output:
         
         <p>{t}<b>Think about the merits of the criticism, not just how it makes you feel</b> - Does the criticism have merit? Did the person truly criticize or was he expressing a concern that you viewed as a criticism? For example, if you were told you needed help to provide care, would you see it as a criticism of your ability? Are there times when you could be wrong? If so, it shows true grit to admit a mistake and apologize. just be sure your apology doesn't have the word "if' in it. Saying ''I'm sorry if I was wrong" suggests you don't really believe you were wrong. A genuine apology has no "ifs" and says, "I was wrong and I'm sorry."{/t}</p>
         
-        <p>{t}<b>Use your aikido skills if the criticism is valid</b> - Step into the other person's shoes and try to see things from his point of view. Ask what needs to change for him to feel better: "I need to understand what you want done differently." Perhaps you can't make the changes he wants, but you can listen with respect and concern. That might be all he wanted. (See Chapter 3 for information about aikido.){/t}</p>
-
-Don't take unjust criticism to heart - Another part of readiness is the ability to disregard unfair criticism. You can ignore the criticism by simply saying, "I find your remarks interesting" and dropping the subject. If ignoring the criticism isn't the answer, you can calmly assert yourself by returning the problem to the critic with a statement like, "It would help me if you would share how you would have done __ ." Or, to deflect criticism, try a remark like, "That is another way of looking at this ... " If you need time to collect your thoughts, tell the person, "I will think about what you've said."
-
-Responding to criticism from the care receiver - 
-
-Taking criticism from the person receiving your help can be particularly difficult. This is especially true if you are the brunt of all the criticism and you are doing the most. If the criticism is undeserved or invalid, try using aikido to respond and try not to take the criticism personally. Aikido is a very useful tool to use in these situations. It tends to disarm the person because he has no opponent and is not given "fuel" for an argument. Some caregivers have also found it helps to calmly interrupt when the care receiver takes a breath and suggest talking later. Other caregivers quietly state that they can't listen any longer: "I need to excuse myself for a while," and leave the room. Offering a snack or something to drink gives you a reason to leave the room and may reduce the stress of the moment.
-
-Another option is to suggest the person put his criticisms in writing because you can't remember everything. (The idea here is that people who criticize for the sake of criticizing often will not take the time to put their criticisms in writing.) This also may help to focus you and the care receiver on legitimate issues that need to be addressed. Remember, you do not have to listen to a barrage of unfair and hurtful criticism. Regardless of the criticism or its source, how you react to it affects how you will feel about yourself later. It's gratifying to look back on a challenging situation and say to yourself, "I handled that very well."{/t}</p>
+        <p>{t}<b>Use your aikido skills if the criticism is valid</b> - Step into the other person's shoes and try to see things from his point of view. Ask what needs to change for him to feel better: <i>"I need to understand what you want done differently."</i> Perhaps you can't make the changes he wants, but you can listen with respect and concern. That might be all he wanted.{/t}</p>
         
+        <p>{t}<b>Don not take unjust criticism to heart</b> - Another part of readiness is the ability to disregard unfair criticism. You can ignore the criticism by simply saying, <i>"I find your remarks interesting"</i> and dropping the subject. If ignoring the criticism is not the answer, you can calmly assert yourself by returning the problem to the critic with a statement like, <i>"It would help me if you would share how you would have done __ ."</i> Or, to deflect criticism, try a remark like, <i>"That is another way of looking at this ... "</i> If you need time to collect your thoughts, tell the person, <i>"I will think about what you've said."</i>{/t}</p>
         
+        <h5>{t}Responding to criticism from the care receiver - {/t}</h5>
         
+        <p>{t}Taking criticism from the person receiving your help can be particularly difficult. This is especially true if you are the brunt of all the criticism and you are doing the most. If the criticism is undeserved or invalid, try using aikido to respond and try not to take the criticism personally.{/t}</p>
         
+        <p>{t}Aikido is a very useful tool to use in these situations. It tends to disarm the person because he has no opponent and is not given <i>"fuel"</i> for an argument. Some caregivers have also found it helps to calmly interrupt when the care receiver takes a breath and suggest talking later. Other caregivers quietly state that they can not listen any longer:{/t}</p>
         
+        <p>{t}<i>"I need to excuse myself for a while,"</i> and leave the room. Offering a snack or something to drink gives you a reason to leave the room and may reduce the stress of the moment.{/t}</p>
         
+        <p>{t}Another option is to suggest the person put his criticisms in writing because you can not remember everything. (The idea here is that people who criticize for the sake of criticizing often will not take the time to put their criticisms in writing.) This also may help to focus you and the care receiver on legitimate issues that need to be addressed.{/t}</p>
+        
+        <p>{t}Remember, you do not have to listen to a barrage of unfair and hurtful criticism. Regardless of the criticism or its source, how you react to it affects how you will feel about yourself later. It is gratifying to look back on a challenging situation and say to yourself, <i>"I handled that very well."</i>{/t}</p>
         
                             </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
     
         
-        
-        
                <div id="lesson-3-slide-12" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}Communicating Effectively in Challenging Situations{/t}</h2>
         <hr />
+        
+        <h5>{t}Expressing Anger{/t}</h5>
+        
+        <p>{t}Like most of us, you can probably relate to this quote. Being able to express anger in ways that are positive and not hurtful is critical This can be especially true when you find yourself facing emotionally charged problems and decisions. This happened to Betty when she least expected it.{/t}</p>
+        
+        <p>{t}Betty is 50 years old. She is the youngest of three children in the family and the only one who lives near their parents, who are both in their nineties. Her sister, Catherine, lives on the East Coast and her brother, Allen, lives in France. Betty thought the family should get together at least once while both the parents were alive. After much planning, a family reunion was held.{/t}</p>
+        
+        <p>{t}Betty still gets a knot in her stomach when she thinks about what happened that weekend. Catherine had said she felt the folks should move in with Betty because they should not live at home alone at their age. Allen agreed with Catherine. Betty became upset and angry.{/t}</p>
+        
+        <p>{t}<b>Betty</b>: You are both fine ones to give me advice. You do none of the work. You never offer to send a dime to help me with the folks' expenses. I end up doing all the work and paying for everything. Now, you have the nerve to suggest that they move in with me so I can sacrifice what little free time I have left to take care of them!{/t}</p>
+        
+        <p><{t}<b>Catherine</b>: I did not realize you would be so touchy about my idea.{/t}</p>
+        
+        <p>{t}<b>Allen</b>: You never asked for any help or money How was I to know you needed it?'{/t}</p>
+        
+        <p>{t}<b>Betty</b>: Just forget I said anything. You are obviously too busy with your own lives to care about your own parents and me.{/t}</p>
+        
+        <p>{t}Silence descended on the group. The rest of the time was spent avoiding each other while trying to be polite in front of their parents. The family reunion ended with polite good-byes. Nothing had changed, except Betty wishes she had handled her anger in a better way The goal of expressing anger effectively is to share your feelings in a positive way so that people hear what you say versus hearing only your anger. Reaching this goal requires taking the time to regain perspective and to prepare.{/t}</p>
+        
+        <p>{t}Begin preparing by taking a look at what triggers your anger. Is it advice from people who don't help? Is it repetitive questions or behavior? Is it a request for help just when you have a moment to yourself? Once you identify the triggers, think of ways to cool off before you say anything. Deep-breathing and stress reduction activities might help you regroup. Counting to ten remains an effective way to calm down and think about what to say Once you feel composed it helps to apply the following communication tools:{/t}</p>
+        
+        <ul>
+        	<li>{t}<b>Use I messages in a non-threatening manner</b> - Be aware of your body language. For example, do not tower over people when you talk to them. Place yourself at or below eye level when you say, I get upset when I get advice instead of help taking care of Mother.{/t}</li>
+            
+            <li>{t}<b>Avoid you messages</b> - Blaming, accusing, and mind-reading are huge pitfalls. They usually lead to strong feelings of remorse later.{/t}</li>
+            
+            <li>{t}<b>Speak in a normal tone of voice</b> - Talking fast with a raised voice implies anger, regardless of what you actually say. Maintaining a moderate tone, volume, and rate of speaking suggests you are in control of your anger. Getting angry is only human and saying so is not a bad thing as long as you follow the tools for how to best express yourself.{/t}</li>
+            
+        </ul>
+        
         
                             </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
