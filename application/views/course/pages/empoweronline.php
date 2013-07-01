@@ -2805,7 +2805,7 @@ HTML Output:
         
         <p>{t}<b>Betty</b>: You are both fine ones to give me advice. You do none of the work. You never offer to send a dime to help me with the folks' expenses. I end up doing all the work and paying for everything. Now, you have the nerve to suggest that they move in with me so I can sacrifice what little free time I have left to take care of them!{/t}</p>
         
-        <p><{t}<b>Catherine</b>: I did not realize you would be so touchy about my idea.{/t}</p>
+        <p>{t}<b>Catherine</b>: I did not realize you would be so touchy about my idea.{/t}</p>
         
         <p>{t}<b>Allen</b>: You never asked for any help or money How was I to know you needed it?'{/t}</p>
         
@@ -2836,6 +2836,189 @@ HTML Output:
       <div class="content">
         <h2 class="flowers">{t}Communicating Effectively in Challenging Situations{/t}</h2>
         <hr />
+        
+        <h5>{t}Responding to anger -{/t}</h5>
+        
+        <p>{t}When we respond to anger, our goal is to defuse the anger and calm the situation. Applying the aikido style of communication is an effective way to do this. If Catherine and Allen would have responded this way; the family reunion might have turned out differently.{/t}</p>
+        
+        <p>{t}<b>Catherine</b>: If I believed that my brother and sister did not care about me or the folks, I would feel the same way you do.{/t}</p>
+        
+        <p>{t}<b>Allen</b>: I do not know exactly what you need from us. Give us an example of what we can do from such long distances.{/t}</p>
+        
+        <p>{t}<b>Betty</b>: I figure I spend about $200 a month on the folks. I would really like some help in covering my out-of-pocket expenses.{/t}</p>
+        
+        <p>{t}<b>Catherine</b>: I can see we have a problem. What would you like me to do to help? I do not have much money.{/t}</p>
+        
+        <p>{t}<b>Betty</b>: If you could come out once a year and keep an eye on the folks so I could take a vacation, it would be a big help.{/t}</p>
+        
+        <p>{t}In this example, Catherine and Allen aligned with Betty. They empathized with her feelings and asked for more information. This told Betty they cared. Meanwhile, they received information from Betty to redirect the conversation and move toward resolving the problem.{/t}</p>
+                                  </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
+    
+        
+            
+               <div id="lesson-3-slide-14" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Communicating Effectively in Challenging Situations{/t}</h2>
+        <hr />
+        
+        <h5>{t}Other possible tools for responding to anger -{/t}</h5>
+        
+        <p>{t}Be careful with the following tools because they can backfire and make people angrier. Your knowledge and experience with the person will help you decide if these responses are appropriate in your situation.{/t}</p>
+        
+        <p>{t}<b>Excuse yourself and leave the person alone</b> - Sometimes anger builds as it is being expressed. You may decide to say; <i>"I have to excuse myself. Let us talk when we both feel less emotional,"</i> and calmly leave the room. This is an option if your presence is making the person angry, if your safety is at risk, or anger is building and the person usually calms down when alone. Be careful about using this response. There are times when even politely leaving the room will increase someone's anger.{/t}</p>
+        
+        <p>{t}<b>Use humor to ease tensions</b> - Humor, used wisely, can recast unfairness into nonsense. It can help people rethink a problem. The difficulty is that not taking someone seriously is a powerful act of defiance. Using humor can come across as insulting or arrogant when it is not meant that way. Either way, there is a risk of increasing anger if the person feels you are making fun of him or light of an issue. Refer to yourself, riot the other person, in using humor. So, I guess I am not <i>"person of the week"</i> or <i>"Here we are, madder than hatters at each other, and Dad is the one with the driving problem."</i>{/t}</p>
+        
+        <p>{t}<b>Change the subject</b> - This is risky, too, because the person may think you do not understand or do not care. He needs to feel you have heard him before you change the subject. A remark like <i>"You have a good reason to be upset. I have news I hope will help you feel better ..."</i> may work to lighten the atmosphere. Expressing anger with blaming and accusations or responding to anger with anger does not promote family unity or help to solve problems. The assertiveness and aikido communication tools will help you accomplish more.{/t}</p>
+        
+        
+                                  </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
+    
+               <div id="lesson-3-slide-15" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Expressing Yourself Under Special Circumstances{/t}</h2>
+        <hr />
+        
+        <h4>{t}Talking On The Telephone{/t}</h4>
+        
+        <p>{t}Bob lived several hundred miles from his father. He called his father weekly, but was - increasingly concerned about his father's well-being after the calls. He said:{/t}</p>
+        
+        <p style="text-align:center; font-style:italic;">{t}My dad is 85 years old and very frail. He is hard of hearing and has poor vision. Lately he seems more forgetful. I learned from a neighbor that my dad had a blood test at the hospital the previous day. Dad did not remember anything about it. Every time I call, he tells me "everything is just fine." But his voice sounds weaker when he says it. I have a feeling something just is not right, so I am going down for a visit.{/t}</p>
+        
+        <p>{t}Although telephone conversations can reveal clues about potential problems, they also can lead you astray. Miscommunication can occur because you do not have <i>"the messages"</i> that body language and facial expression provide. If you want to understand what the person means or feels, you might have to check with the person to make certain you both understand each other. For instance:{/t}</p>
+        
+        <p>{t}<i>"From the sound of your voice, I have the feeling you are worried. Is there something that is worrying you?"</i>{/t}</p>
+        
+        <p>{t}<i>"I am having trouble understanding what you mean. Can you explain a little more?"</i>{/t}</p>
+        
+        <p>{t}<i>"It sounds like you mean (want, need, feel) __. Am I right?"</i>{/t}</p>
+        
+        <p>{t}Some people feel safer talking on the telephone than they do face to face. It is possible to capture honest thoughts, concerns, and feelings that would not be disclosed in person. If you discover this, try to schedule your calls when you won't be interrupted and you have time to talk. You do not want to cut off someone who finally trusts you and opens up to you. If your time is short when the person calls, mention in advance how long you can visit.{/t}</p>    
+        
+        
+        <h5>{t}Telephone skills -{/t}</h5>
+        
+        <p>{t}A skilled, considerate telephone listener will:{/t}</p>
+        
+        <ul>
+        	<li>{t}listen for clues in the tone of voice or manner of speaking that are different from earlier conversations;{/t}</li>
+            <li>{t}ask open-ended questions to get more information about those clues; and{/t}</li>
+            <li>{t}stop other activities such as housework or driving while on the phone.{/t}</li>
+        </ul>
+            
+                                  </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
+    
+        
+               <div id="lesson-3-slide-16" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Expressing Yourself Under Special Circumstances{/t}</h2>
+        <hr />
+        
+       <h4>{t}Communicate With The Doctor{/t}</h4>
+       
+       <p>{t}As you provide care over the years, you wear various hats. You are an expert in the care of your relative, a consumer of health care services, and the person who works with the doctors. You may also be a patient occasionally. In any case, you want to build a partnership with the physician and other health care providers. You, as well as the physician and his or her staff, have a role in forming and maintaining this relationship.{/t}</p>
+       
+       <h5>{t}What to consider before going to the doctor -{/t}</h5>
+       
+       <p>{t}Think about the main reasons for your visit and what you expect from the doctor as you prepare for your visit. Consider the following tools.{/t}</p>
+       
+       <ul>
+       	<li>{t}Prepare your questions{/t}</li>
+        <li>{t}Consider other reliable sources of information{/t}</li>
+     </ul>
+       
+       <p>{t}Before you decide what questions you want to ask the doctor, consider other reliable sources of information. Your pharmacist can answer questions about medications and the office nurse may have answers to your caregiving questions. Most caregiving issues relate more closely to nursing than to medicine.{/t}</p>
+       
+       <p>{t}Also, the nurse usually has extensive knowledge about the doctor's patients, their illnesses, and the treatments prescribed. Do not worry about asking the nurse questions the doctor should or prefers to answer. The nurse will refer you to the doctor for those questions. Depending on her background and the doctor's wishes, you can usually ask a nurse questions regarding:{/t}</p>
+       
+       <ul>
+       	<li style="list-style-type:square;">{t}what you can learn from various tests and examinations;{/t}</li>
+        <li style="list-style-type:square;">{t}scheduling tests and what you have to do to prepare for tests or surgical procedures;{/t}</li>
+        <li style="list-style-type:square;">{t}providing personal care and measures to prevent problems such as pressure sores; and{/t}</li>
+        <li style="list-style-type:square;">{t}managing medications at home.{/t}</li>
+      </ul>
+      
+      <p>{t}You also can obtain information from support groups, specialty clinics, your local health department, and organizations dealing with certain health problems such as Parkinson's and Alzheimer's diseases, and stroke. These organizations offer free or inexpensive educational materials or can tell you where to get them. Sharing this information with non-caregiving relatives gives them an objective overview of the illness and related caregiving issues.{/t}</p>
+      
+      <ul>
+      	<li>{t}Make sure appointments meet your needs{/t}</li>
+        <li>{t}Call ahead{/t}</li>
+        <li>{t}Take someone with you{/t}</li>
+        <li>{t}Build a relationship with the office staff{/t}</li>
+      </ul>      
+                                  </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
+    
+               <div id="lesson-3-slide-17" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Expressing Yourself Under Special Circumstances{/t}</h2>
+        <hr />
+        
+        <h5>{t}Talking with the doctor - {/t}</h5>
+        
+        <p>{t}The following tools can help you get the most out of your time with the doctor.{/t}</p>
+        
+        <p>{t}Discuss your main concerns first. This is important because if you wait until the end of your appointment there may not be time to properly deal with the main reasons for your visit. You can say something like:{/t}</p>
+        
+        <ul>
+        	<li style="list-style-type:square; font-style:italic;">{t}"I have something important I want to talk about."{/t}</li>
+            <li style="list-style-type:square; font-style:italic;">{t}"There are three things I need to understand better."{/t}</li>
+            <li style="list-style-type:square; font-style:italic;">{t}"I have three important questions to ask."{/t}</li>
+         </ul>
+         
+    <ul>
+    	<li>{t}Be concise{/t}</li>
+        <li>{t}Refer to a second party{/t}</li>
+     </ul>
+     
+     <p>{t}If you want a second opinion but you hesitate to ask for it, tell your doctor: <i>"my and I have discussed the importance of getting a second opinion."</i> (Remember, there is a better chance of getting a second opinion if you ask for it than if you don't ask.){/t}</p>
+        
+        
+                                  </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
+    
+        
+        
+            
+               <div id="lesson-3-slide-18" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Communicating Effectively in Challenging Situations{/t}</h2>
+        <hr />
+        
+        
+        
+                                  </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
+    
+        
+            
+               <div id="lesson-3-slide-19" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Communicating Effectively in Challenging Situations{/t}</h2>
+        <hr />
+        
+        
+        
+                                  </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
+    
+        
+            
+               <div id="lesson-3-slide-20" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Communicating Effectively in Challenging Situations{/t}</h2>
+        <hr />
+        
         
         
         
