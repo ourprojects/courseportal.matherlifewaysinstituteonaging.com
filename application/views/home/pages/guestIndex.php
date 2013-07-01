@@ -110,23 +110,29 @@ $this->widget(
   
   <!-- sidebar for Stats on Caregivers here -->
   
-  <div class="box-sidebar one">
-    <h3>{t}Statistics on Caregivers{/t}</h3>
-    <div> <img src="<?php echo $this->getImagesUrl('stat-two-thirds.png'); ?>" alt="2/3" style="margin-bottom: 8px;" /><br />
-      {t}2/3 of working caregivers in the USA report conflicts between work and caregiving that result in increased
-      absenteeism, workday interruptions, reduced hours, and workload shifting to other employees.{/t} </div>
-  </div>
+
   
   <!-- sidebar on Resent Research here -->
   
   <div class="box-sidebar two">
-    <h3>{t}Recent Research (USA){/t}</h3>
-    <img class="block center" src="<?php echo $this->getImagesUrl('metlife.jpg'); ?>" alt="MetLife" />
-    <p class="text-center"><b>{t}Double Jeopardy for Baby Boomers Caring for Their Parents{/t}</b></p>
-    <p> {t}Nearly 10 million adult children over the age of 50 care for their aging parents. These family caregivers are themselves aging as well
-      as providing care at a time when they also need to be planning and saving for their own retirement. The study is an updated, national
-      look at adult children who work and care for their parents and the impact of caregiving on their earnings and lifetime wealth.{/t} </p>
-    <p> <a href="http://www.metlife.com/assets/cao/mmi/publications/studies/2010/mmi-working-caregivers-employers-health-care-costs.pdf" class="pdf" target="_blank">{t}The MetLife Study of Working Caregivers and Employer Health Care Costs (English){/t} </a> </p>
+    <h3>{t}Pew Research Center (English){/t}</h3>
+    
+    <!--  -->
+    
+    
+    <p class="text-center"><b>{t}Family Caregivers are Wired for Health{/t}</b></p>
+    
+    
+    <p> {t}
+    Four in ten adults in the U.S. are caring for an adult or child with significant health issues, up from 30% in 2010. Caring for a loved one is an activity that cuts across most demographic groups, but is especially prevalent among adults ages 30 to 64, a group traditionally still in the workforce.
+Caregivers are highly engaged in the pursuit of health information, support, care, and advice, both online and offline, and do many health-related activities at higher levels than non-caregivers.
+    {/t} </p>
+      
+      
+    <p> <a href="http://www.pewinternet.org/~/media//Files/Reports/2013/PewResearch_FamilyCaregivers.pdf" class="pdf" target="_blank">{t}Family Caregivers are Wired for Health (2013){/t} </a> </p>
+    
+    
+    
   </div>
   <div class="box-sidebar three">
     <h3>{t}Whitepapers (English){/t}</h3>
@@ -140,16 +146,18 @@ $this->widget(
 </div>
 <div class="column-wide">
   <h2 class="flowers">Mather LifeWays Institute on Aging</h2>
-  <p> {t}Through research-based programs and innovative techniques, Mather LifeWays Institute on Aging is committed to advancing the field of eldercare. Used by individuals and entire organizations, our nationally recognized, award-winning programs include training modules, online
-    courses, toolkits, and learning modules designed to make learning fun and easy.{/t} </p>
-  
-  <!-- online courses for caregivers div here -->
-  
-  <h2 class="flowers top-pad">{t}Digital Workforce Solutions{/t}</h2>
-  <p style="padding-bottom: 5px;">{t}We deliver online learning and web-based modalities using the latest technologies to efficiently and cost-effectively empower professionals in the workplace. In addition, we are well-positioned to help conduct pilot studies that measure the impact on both working caregivers and the bottom line for interested corporations. We provide practical solutions in the form of online courses, workplace toolkits, and workforce surveys.{/t}</p>
-  
-  <!-- text for ROI here for program use  -->
-  
+  <p> {t}Through research-based programs and innovative techniques, Mather LifeWays Institute on Aging is committed to advancing the field of eldercare. We deliver online learning and web-based modalities using the latest technologies to efficiently and cost-effectively empower professionals in the workplace.{/t} </p>
+  <h2 class="flowers top-pad">{t}Health status of your working caregivers{/t}</h2>
+  <p> {t}Please choose one of the surveys below to take. Depending on your position, employer or employee, submit this voluntary survey and view aggregate feedback from all previous users.{/t}</p>
+  <p>
+    <?php foreach($hiddenSurveys as $survey): ?>
+    <a id="survey_link_<?php echo $survey->getId(); ?>" href="#survey_<?php echo $survey->getId(); ?>" class="button" title="<?php echo $survey->model->title; ?>"><?php echo $survey->model->title; ?></a>
+    <?php endforeach; ?>
+  </p>
+  <?php 
+	  	foreach($hiddenSurveys as $survey)
+  			$survey->run();
+  	?>
   <h2 class="flowers top-pad">{t}Benefits of Participation{/t}</h2>
   <p style="padding-bottom: 5px;">{t}Why participate? Our programs have been shown to result in measurable
     improvements in the quality of care provided and workforce retention. Past participation has yieled many benfits for our clients, including, but not limited to: {/t}</p>
@@ -193,20 +201,12 @@ $this->widget(
     {t}Targeted Collaboration - 50%{/t} </p>
   <img id="pie-chart" class="block center" height="300" src="<?php echo $this->getImagesUrl('home-chart.png'); ?>" alt="{t}Pie chart{/t}" />
   <?php $workingCaregiverSurvey->run(); ?>
-  <div class="box-white">
-    <h2 class="flowers"> {t}Health status of your working caregivers{/t} </h2>
-    <p> {t}Please choose one of the surveys below to take. Depending on your position, employer 
-      or employee, submit this voluntary survey and view aggregate feedback from all previous users.{/t} </p>
-    <p>
-      <?php foreach($hiddenSurveys as $survey): ?>
-      <a id="survey_link_<?php echo $survey->getId(); ?>" href="#survey_<?php echo $survey->getId(); ?>" class="button" title="<?php echo $survey->model->title; ?>"><?php echo $survey->model->title; ?></a>
-      <?php endforeach; ?>
-    </p>
-    <?php 
-	  	foreach($hiddenSurveys as $survey)
-  			$survey->run();
-  	?>
-  </div>
+  
+  
+ 
+  
+  
+  
 </div>
 <div id="bottom-logos">
   <h4>{t}Partners{/t}</h4>
