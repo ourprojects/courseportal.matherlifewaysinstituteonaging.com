@@ -79,7 +79,35 @@ foreach(array(
   <ul>
     <li> <a href="#lesson-1-slide-1" data-fancybox-group="lesson-1" class="teal lesson-1">{t}Taking Care of You{/t}</a> <a href="#lesson-1-slide-2" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-3" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-4" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-5" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-6" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-7" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-8" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-9" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-10" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-11" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-12" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-13" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-14" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-15" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-16" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-17" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-18" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-19" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-20" data-fancybox-group="lesson-1" class="hide lesson-1"></li>
     <li> <a href="#lesson-2-slide-1" data-fancybox-group="lesson-2" class="teal lesson-2">{t}Reducing Personal Stress{/t}</a> <a href="#lesson-2-slide-2" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-3" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-4" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-5" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-6" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-7" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-8" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-9" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-10" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-11" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-12" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-13" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-14" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-15" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-16" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-17" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-18" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-19" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-20" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-21" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-22" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-23" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-24" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-25" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-26" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-27" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-28" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-29" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-30" data-fancybox-group="lesson-2" class="hide lesson-2"></a> </li>
-    <li> <a href="#lesson-3-slide-1" data-fancybox-group="lesson-3" class="teal lesson-3"> {t}Communicating Effectively in Challenging Situations{/t} </a> <a href="#lesson-3-slide-2" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-3" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-4" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-5" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-6" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-7" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-8" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-9" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-10" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-11" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-12" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-13" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-14" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-15" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-16" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-17" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-18" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-19" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-20" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-21" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-22" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-23" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-24" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-25" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-26" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-27" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-28" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-29" data-fancybox-group="lesson-3" class="hide lesson-3"></a> </li>
+    <li> 
+    
+    
+    
+    
+    
+    <a href="#lesson-3-slide-1" data-fancybox-group="lesson-3" class="teal lesson-3"> {t}Communicating Effectively in Challenging Situations{/t} </a> 
+    <a href="#lesson-3-slide-2" data-fancybox-group="lesson-3" class="hide lesson-3"></a> 
+    <a href="#lesson-3-slide-3" data-fancybox-group="lesson-3" class="hide lesson-3"></a> 
+    <a href="#lesson-3-slide-4" data-fancybox-group="lesson-3" class="hide lesson-3"></a> 
+    <a href="#lesson-3-slide-5" data-fancybox-group="lesson-3" class="hide lesson-3"></a> 
+    <a href="#lesson-3-slide-6" data-fancybox-group="lesson-3" class="hide lesson-3"></a> 
+    <a href="#lesson-3-slide-7" data-fancybox-group="lesson-3" class="hide lesson-3"></a> 
+    <a href="#lesson-3-slide-8" data-fancybox-group="lesson-3" class="hide lesson-3"></a> 
+    <a href="#lesson-3-slide-9" data-fancybox-group="lesson-3" class="hide lesson-3"></a> 
+    <a href="#lesson-3-slide-10" data-fancybox-group="lesson-3" class="hide lesson-3"></a> 
+    <a href="#lesson-3-slide-11" data-fancybox-group="lesson-3" class="hide lesson-3"></a> 
+    <a href="#lesson-3-slide-12" data-fancybox-group="lesson-3" class="hide lesson-3"></a> 
+    <a href="#lesson-3-slide-13" data-fancybox-group="lesson-3" class="hide lesson-3"></a> 
+    <a href="#lesson-3-slide-14" data-fancybox-group="lesson-3" class="hide lesson-3"></a> 
+    <a href="#lesson-3-slide-15" data-fancybox-group="lesson-3" class="hide lesson-3"></a> 
+    <a href="#lesson-3-slide-16" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-17" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-18" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-19" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-20" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-21" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-22" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-23" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-24" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-25" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-26" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-27" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-28" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-29" data-fancybox-group="lesson-3" class="hide lesson-3"></a>
+    
+    
+    
+    </li>
+    
+    
+    
     <li> <a href="#lesson-4-slide-1" data-fancybox-group="lesson-4" class="teal lesson-4"> {t}Normal &amp; Abnormal Aging Changes{/t} </a> <a href="#lesson-4-slide-2" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-3" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-4" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-5" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-6" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-7" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-8" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-9" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-10" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-11" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-12" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-13" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-14" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-15" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-16" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-17" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-18" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-19" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-20" data-fancybox-group="lesson-4" class="hide lesson-4"></a> </li>
     <li> <a href="#lesson-5-slide-1" data-fancybox-group="lesson-5" class="teal lesson-5"> {t}Financial &amp; Legal Issues{/t} </a> <a href="#lesson-5-slide-2" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-3" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-4" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-5" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-6" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-7" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-8" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-9" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-10" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-11" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-12" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-13" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-14" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-15" data-fancybox-group="lesson-5" class="hide lesson-5"></a> </li>
   </ul>
@@ -2554,17 +2582,9 @@ HTML Output:
         
         
         
-          <h5>{t}Asking for Help{/t}</h5>
-          
-    <p>{t}Some caregivers feel that by asking for help they are somehow falling short. But
-      asking for help may be the only way they
-      can continue to provide care at home. They
-      are not falling short; they are adapting to
-      changing care needs that cannot be met
-      without help. It is a caregiver's responsibility
-      to ask for help. If you feel uncomfortable
-      asking for it, consider the following
-      questions about asking for salt.</p>
+        
+   
+   <!-- 
     <div class="question">
       <p>
         <input type="checkbox" name="Yes8" id="Yes8">
@@ -2586,7 +2606,7 @@ HTML Output:
         Would you plead, hint, or whine to get the salt?</p>
       <input type="button" onClick="MM_popupMsg('You probably answered \&quot;no\&quot; to the salt questions. just as we expect to ask for salt in order to receive it, we also need to ask for the help we need in caregiving. As you ask for help, remember to use the tone of voice you use when asking for salt. It\'s probably pleasant and matter-of-fact, without blaming and hinting.')" value="Submit">
     </div>
-        
+        -->
         
         
               </div>
@@ -2595,6 +2615,406 @@ HTML Output:
     
     
     <div id="lesson-3-slide-7" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Communicating Effectively in Challenging Situations{/t}</h2>
+        <hr />
+        
+          <h4>{t}Asking for Help{/t}</h4>
+          
+    <p>{t}Some caregivers feel that by asking for help they are somehow falling short. But asking for help may be the only way they can continue to provide care at home. They are not falling short; they are adapting to changing care needs that cannot be met without help. It is a caregiver's responsibility to ask for help. If you feel uncomfortable asking for it, consider the following questions about asking for salt.{/t}</p>
+        
+         <h5>{t}Prepare yourself to ask for help -{/t}</h5>
+         
+    <p>{t}Before you ask for help, consider the following suggestions:{/t}</p>    
+    <p>{t}<b>Consider the person's special abilities and interests</b> - Before approaching someone with a request, consider their likes, dislikes, areas of interest, experience, abilities, and knowledge. For instance, if someone likes cooking but dislikes driving, your chances improve if you ask for help with cooking. Your chances for success also improve if you ask the person to help you with tasks he feels comfortable with and knows how to do. Tasks unrelated to caregiving are easier for some people.{/t}</p>
+    
+    <p>{t}<i>Note: When one family member has a medical or nursing background, it is natural to expect that he is the best one to help with caregiving. Take care that other relatives are not automatically excused from responsibility because there is a health professional in the family.</i>{/t}</p>      
+      
+    <p>{t}<b>Resist asking the same person repeatedly</b> - Ask yourself if you are requesting help from a certain person because he or she has difficulty saying no. It is important to capitalize on your stronger speaking skills rather than on someone else's inability to set limits.{/t}</p>
+    
+    
+    <p>{t}<b>Consider the person's special needs</b> - Personal, private time is hard to come by. As a caregiver, no one knows this better than you. Other obligations in people's lives may limit the time and energy they have to give. Consider these matters before asking for help and talk them over.{/t}</p>
+    
+    <ul>
+    <li>{t}I need more help with the...{/t}</li>
+    <li>{t}I know you are very busy and I'm concerned about asking too much of you.{/t}</li>
+    <li>{t}Would helping me a few hours during the week be more than you can do comfortably?{/t}</li>
+    <li>{t}Out of concern for everyone's needs, you may decide it's time Jo inquire about hiring in-home help.{/t}</li>
+      </ul>
+      
+    <p>{t}<b>Decide the best time to make a request</b> - Timing is important. A person who is tired, hungry, stressed, or busy is not a good candidate for a request.{/t}</p>
+    
+    <p>{t}<b>Prepare a list of things that need doing</b> - If you are unsure what people prefer to do, relatives say they do not know how to help, make a list of tasks you need help with (cooking, errands, yard-work, someone to visit with the care receiver) and let them choose. Some caregivers turn providing help into gifts given. The idea is that when people give their time and energy to help, they are giving the caregiver a valuable gift. They may call their list <i>Gifts of Help</i> or <i>Gifts You Can Share/Give</i>.{/t}</p>
+    
+       <p>{t}<b>Be prepared for hesitance or refusal</b> - Your request might be answered with a simple <i>no</i> or silence. The person may be unable or unwilling to help and is setting personal limits. Sometimes refusals upset caregivers. Realizing the refusal has hurt the caregiver's feelings, the person may change his mind and decide to help, but the relationship will suffer. If the person hesitates, ask, <i>"Would you like time to think about it?"</i>{/t}</p>
+        
+        
+        
+                     </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
+        
+          <div id="lesson-3-slide-8" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Communicating Effectively in Challenging Situations{/t}</h2>
+        <hr />
+        
+        <h5>{t}Suggestions for asking for help - {/t}</h5>
+        
+        <p>{t}The following communication tools may help if you feel uncomfortable putting your request into words.{/t}</p>
+        
+        <p>{t}<b>Use your please-pass-the-salt style to make requests</b> - This is the tone you want to use when you ask someone for help. Practice making a request: <i>"I would like to go to church on Sunday. Would you mind staying with Grandma?"</i> in the same tone you would use to ask for the salt.{/t}</p>
+        
+        <p>{t}<b>Use <i>"I"</i> statements to make clear, specific requests</b> - A statement like <i>"I need more help"</i> is vague. A specific request sounds like, <i>"I would like to go to church this Sunday. Would you stay with Grandma from 9:00a.m. to noon?"</i>{/t}</p>
+        
+        <p>{t}<b>Avoid weakening your request</b> - If you say <i>"Could you think about staying with Grandma?"</i> you weaken your request. Saying, <i>"It is only a thought, but I would like to go to church,"</i> sounds like your request is not very important to you. Notice the strength of the statement, <i>Would you stay with Grandma from 9:00a.m. to noon?"</i>{/t}</p>
+        
+        <p>{t}<b>Use an <i>"I"</i> statement to express appreciation for any help even if it is given reluctantly</b> - <i>"I want to thank you for staying with Grandma so I could go to church today."</i>{/t}</p>        
+        
+                     </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
+        
+          <div id="lesson-3-slide-9" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Communicating Effectively in Challenging Situations{/t}</h2>
+        <hr />
+        
+        <h5>{t}If your request is turned down -{/t}</h5>
+        
+        <p>{t}If your request is turned down, try not to take it personally and give yourself credit for asking. Most likely the person is turning down the task, not you. Or he may worry about doing the task the way you want it done. Consider asking, <i>"Do you have any concerns about what I have asked?"</i> Then express appreciation for the person's willingness to hear your request. <i>"Thank you for taking the time to listen."</i> Try not to let a refusal prevent you from asking for help again. The person who refused today may be glad to help another time.{/t}</p>
+        
+        <h5>{t}Expressing Criticism{/t}</h5>
+        
+        <p>{t}If setting limits and asking for help seems risky to caregiving relationships, expressing criticism may seem even more risky. But sometimes you must speak up whether you want to or not. This is especially true when health or safety are involved. Because the person may not like what he hears does not mean you should not speak up. Usually, how criticism is given affects people more than the criticism itself. Consider Grace's approach:{/t}</p>
+        
+        <p style="text-align:center; font-style:italic;">{t}Do not load the dishwasher that way. Always put the glasses on the upper rack and the cups in rows behind the saucers. You are wasting detergent. I never use that much.{/t}</p>
+        
+        
+      <p>{t}How would you feel about loading Grace's dishwasher? Was the way you were doing it wrong or simply different? Grace could use some advice on more effective ways to correct people.{/t}</p>
+        
+        <h5>{t}Before offering criticism -{/t}</h5>
+        
+        <p>{t}Constructive criticism helps people learn. It focuses on problems, not personalities. It shows you care enough to level with the person. A courteous, respectful tone makes your words, not your behavior, worth remembering. Before you say anything, reflect on why you are criticizing. Use the following checklist to be certain you are criticizing for the right reasons.{/t}</p>
+        
+        <h5>{t}Address problems promptly -{/t}</h5>
+        
+        <p>{t}Timing is important. If you ignore a problem or delay addressing it, you give someone the message that he is doing fine. Then when you do speak up, the person wonders why you did not say something earlier. Delays in addressing the problem may also allow it to grow worse and your feelings about it to build. This often leads to blaming <i>"you"</i> statements like, <i>"Why don't you ever ... ?" "You always ... ,1 ' or "You never ... "</i>{/t}</p>
+
+<h5>{t}Avoid the pitfalls -{/t}</h5>
+
+<p>{t}Before you say anything, mentally review pitfalls you want to avoid. It is important to:{/t}</p>
+
+<ul>
+	<li>{t}resist offering an opinion about the person's motives for doing what he did;{/t}</li>
+    <li>{t}avoid mind-reading and judging the other person's motives for doing what he did;{/t}</li>
+    <li>{t}avoid making comparisons with other people; and{/t}</li>
+    <li>{t}avoid raising questions about the person's loyalty or commitment.{/t}</li>
+ </ul>
+        
+        
+                     </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
+    
+    
+          <div id="lesson-3-slide-10" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Communicating Effectively in Challenging Situations{/t}</h2>
+        <hr />
+        
+        <h5>{t}Ways to deliver constructive criticism -{/t}</h5>
+        
+        <p>{t}Bringing up a problem can be the hardest part of communicating effectively. If the person has seen you (or others in the family) do what you will be discussing, mention that you are also working on this problem. This makes you partners against the problem. Grace has done this in the following scenario. Compare this with her statements earlier about loading the dishwasher. Do you feel differently about the way the criticism was given?{/t}</p>
+        
+        <p style="text-align:center; font-style:italic;">{t}I would like to talk about the way the bathroom is left after Grandpa has his shower. I know he throws his damp towels on the floor. I would like them put in the laundry. I step in puddles of water when I go in the bathroom and I worry about slipping and falling. You can use the mop in the kitchen closet or the damp towels to soak up the puddles. I would appreciate it if you would make sure the floor is dry. Thanks.{/t}</p>
+        
+        <p>{t}Grace's criticism was constructive because she applied the following suggestions. She used an <i>"I"</i> statement when she said, <i>"I step in puddles."</i> She focused on the problem, not the person, by saying, <i>"I would like to talk about the way the bathroom is left."</i> She was specific when she said, <i>"You can use the damp towel to soak up the puddles."</i> She focused on the issue of concern-the bathroom. She did not mention the dishwasher. The following are additional tools for giving constructive criticism:{/t}</p>
+        
+        <p>{t}<b>Phrase questions carefully</b> - Your questions and comments can help or hurt. Asking why the person did something sounds accusatory. Frequently people do not know why they did something. Questions beginning with how, what, and when sound like you are gathering information, not blaming.{/t}</p>
+        
+        <ul>
+        	<li>{t}How do you usually do this?{/t}</li>
+            <li>{t}What do you think went wrong?{/t}</li>
+            <li>{t}When does the problem arise?{/t}</li>
+         </ul>
+         
+         <p>{t}<b>Offer face-saving comments</b> - Your intent is to protect the person's pride and feelings by offering valid, impersonal reasons for what has happened. Ask yourself the aikido question when a criticism must be given, <i>"What does this person need from me to feel better or to save face? Protection from embarrassment? A chance to improve without having to apologize?"</i> Some examples of face-savers are:{/t}</p>
+         
+         <ul>
+         	<li>{t}I can see how a mistake could be made. The directions are confusing.{/t}</li>
+            <li>{t}This is easy to forget, especially when it is a busy time.{/t}</li>
+            <li>{t}I hope we can continue to talk things over at a later time.{/t}</li>
+         </ul>
+         
+         <p>{t}<b>End on a positive note</b> - You can end on an upbeat note by mentioning positive, helpful contributions the person has made and expressing your belief that things will work out. For example, Gerald said to an in-home worker:{/t}</p>
+         
+         <p style="text-align:center; font-style:italic;">{t}I notice how patient you are when talking to Dad, especially when he keeps asking who you are.{/t}</p>
+         
+         <p>{t}One thing I have become more sensitive to when talking to Dad is to say <i>"you"</i> instead of <i>"we."</i> It sounds more respectful to say <i>"How are you today?"</i> instead of <i>"How are we today?"</i> With a little forethought, this can be an easy change to make. And it is a change I will appreciate very much.{/t}</p>       
+        
+                            </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
+    
+        
+               <div id="lesson-3-slide-11" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Communicating Effectively in Challenging Situations{/t}</h2>
+        <hr /> 
+        
+        <h5>{t}Responding to criticism -{/t}</h5>
+        
+        <p>{t}Although you may do your best to offer criticism in a constructive manner, you may not always be treated in the same way. This can be infuriating even when you sense a criticism has merit. Being open to criticism is not easy, but it is important. As a caregiver you may be offended by criticism you feel is neither deserved nor wanted. How does one deal with criticism? The Boy Scouts say it best: <i>"Be prepared."</i> Here are some other tools that will help:{/t}</p>
+        
+        <p>{t}<b>Think about the merits of the criticism, not just how it makes you feel</b> - Does the criticism have merit? Did the person truly criticize or was he expressing a concern that you viewed as a criticism? For example, if you were told you needed help to provide care, would you see it as a criticism of your ability? Are there times when you could be wrong? If so, it shows true grit to admit a mistake and apologize. just be sure your apology doesn't have the word "if' in it. Saying ''I'm sorry if I was wrong" suggests you don't really believe you were wrong. A genuine apology has no "ifs" and says, "I was wrong and I'm sorry."{/t}</p>
+        
+        <p>{t}<b>Use your aikido skills if the criticism is valid</b> - Step into the other person's shoes and try to see things from his point of view. Ask what needs to change for him to feel better: <i>"I need to understand what you want done differently."</i> Perhaps you can't make the changes he wants, but you can listen with respect and concern. That might be all he wanted.{/t}</p>
+        
+        <p>{t}<b>Don not take unjust criticism to heart</b> - Another part of readiness is the ability to disregard unfair criticism. You can ignore the criticism by simply saying, <i>"I find your remarks interesting"</i> and dropping the subject. If ignoring the criticism is not the answer, you can calmly assert yourself by returning the problem to the critic with a statement like, <i>"It would help me if you would share how you would have done __ ."</i> Or, to deflect criticism, try a remark like, <i>"That is another way of looking at this ... "</i> If you need time to collect your thoughts, tell the person, <i>"I will think about what you've said."</i>{/t}</p>
+        
+        <h5>{t}Responding to criticism from the care receiver - {/t}</h5>
+        
+        <p>{t}Taking criticism from the person receiving your help can be particularly difficult. This is especially true if you are the brunt of all the criticism and you are doing the most. If the criticism is undeserved or invalid, try using aikido to respond and try not to take the criticism personally.{/t}</p>
+        
+        <p>{t}Aikido is a very useful tool to use in these situations. It tends to disarm the person because he has no opponent and is not given <i>"fuel"</i> for an argument. Some caregivers have also found it helps to calmly interrupt when the care receiver takes a breath and suggest talking later. Other caregivers quietly state that they can not listen any longer:{/t}</p>
+        
+        <p>{t}<i>"I need to excuse myself for a while,"</i> and leave the room. Offering a snack or something to drink gives you a reason to leave the room and may reduce the stress of the moment.{/t}</p>
+        
+        <p>{t}Another option is to suggest the person put his criticisms in writing because you can not remember everything. (The idea here is that people who criticize for the sake of criticizing often will not take the time to put their criticisms in writing.) This also may help to focus you and the care receiver on legitimate issues that need to be addressed.{/t}</p>
+        
+        <p>{t}Remember, you do not have to listen to a barrage of unfair and hurtful criticism. Regardless of the criticism or its source, how you react to it affects how you will feel about yourself later. It is gratifying to look back on a challenging situation and say to yourself, <i>"I handled that very well."</i>{/t}</p>
+        
+                            </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
+    
+        
+               <div id="lesson-3-slide-12" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Communicating Effectively in Challenging Situations{/t}</h2>
+        <hr />
+        
+        <h5>{t}Expressing Anger{/t}</h5>
+        
+        <p>{t}Like most of us, you can probably relate to this quote. Being able to express anger in ways that are positive and not hurtful is critical This can be especially true when you find yourself facing emotionally charged problems and decisions. This happened to Betty when she least expected it.{/t}</p>
+        
+        <p>{t}Betty is 50 years old. She is the youngest of three children in the family and the only one who lives near their parents, who are both in their nineties. Her sister, Catherine, lives on the East Coast and her brother, Allen, lives in France. Betty thought the family should get together at least once while both the parents were alive. After much planning, a family reunion was held.{/t}</p>
+        
+        <p>{t}Betty still gets a knot in her stomach when she thinks about what happened that weekend. Catherine had said she felt the folks should move in with Betty because they should not live at home alone at their age. Allen agreed with Catherine. Betty became upset and angry.{/t}</p>
+        
+        <p>{t}<b>Betty</b>: You are both fine ones to give me advice. You do none of the work. You never offer to send a dime to help me with the folks' expenses. I end up doing all the work and paying for everything. Now, you have the nerve to suggest that they move in with me so I can sacrifice what little free time I have left to take care of them!{/t}</p>
+        
+        <p>{t}<b>Catherine</b>: I did not realize you would be so touchy about my idea.{/t}</p>
+        
+        <p>{t}<b>Allen</b>: You never asked for any help or money How was I to know you needed it?'{/t}</p>
+        
+        <p>{t}<b>Betty</b>: Just forget I said anything. You are obviously too busy with your own lives to care about your own parents and me.{/t}</p>
+        
+        <p>{t}Silence descended on the group. The rest of the time was spent avoiding each other while trying to be polite in front of their parents. The family reunion ended with polite good-byes. Nothing had changed, except Betty wishes she had handled her anger in a better way The goal of expressing anger effectively is to share your feelings in a positive way so that people hear what you say versus hearing only your anger. Reaching this goal requires taking the time to regain perspective and to prepare.{/t}</p>
+        
+        <p>{t}Begin preparing by taking a look at what triggers your anger. Is it advice from people who don't help? Is it repetitive questions or behavior? Is it a request for help just when you have a moment to yourself? Once you identify the triggers, think of ways to cool off before you say anything. Deep-breathing and stress reduction activities might help you regroup. Counting to ten remains an effective way to calm down and think about what to say Once you feel composed it helps to apply the following communication tools:{/t}</p>
+        
+        <ul>
+        	<li>{t}<b>Use I messages in a non-threatening manner</b> - Be aware of your body language. For example, do not tower over people when you talk to them. Place yourself at or below eye level when you say, I get upset when I get advice instead of help taking care of Mother.{/t}</li>
+            
+            <li>{t}<b>Avoid you messages</b> - Blaming, accusing, and mind-reading are huge pitfalls. They usually lead to strong feelings of remorse later.{/t}</li>
+            
+            <li>{t}<b>Speak in a normal tone of voice</b> - Talking fast with a raised voice implies anger, regardless of what you actually say. Maintaining a moderate tone, volume, and rate of speaking suggests you are in control of your anger. Getting angry is only human and saying so is not a bad thing as long as you follow the tools for how to best express yourself.{/t}</li>
+            
+        </ul>
+        
+        
+                            </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
+    
+        
+        
+        
+               <div id="lesson-3-slide-13" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Communicating Effectively in Challenging Situations{/t}</h2>
+        <hr />
+        
+        <h5>{t}Responding to anger -{/t}</h5>
+        
+        <p>{t}When we respond to anger, our goal is to defuse the anger and calm the situation. Applying the aikido style of communication is an effective way to do this. If Catherine and Allen would have responded this way; the family reunion might have turned out differently.{/t}</p>
+        
+        <p>{t}<b>Catherine</b>: If I believed that my brother and sister did not care about me or the folks, I would feel the same way you do.{/t}</p>
+        
+        <p>{t}<b>Allen</b>: I do not know exactly what you need from us. Give us an example of what we can do from such long distances.{/t}</p>
+        
+        <p>{t}<b>Betty</b>: I figure I spend about $200 a month on the folks. I would really like some help in covering my out-of-pocket expenses.{/t}</p>
+        
+        <p>{t}<b>Catherine</b>: I can see we have a problem. What would you like me to do to help? I do not have much money.{/t}</p>
+        
+        <p>{t}<b>Betty</b>: If you could come out once a year and keep an eye on the folks so I could take a vacation, it would be a big help.{/t}</p>
+        
+        <p>{t}In this example, Catherine and Allen aligned with Betty. They empathized with her feelings and asked for more information. This told Betty they cared. Meanwhile, they received information from Betty to redirect the conversation and move toward resolving the problem.{/t}</p>
+                                  </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
+    
+        
+            
+               <div id="lesson-3-slide-14" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Communicating Effectively in Challenging Situations{/t}</h2>
+        <hr />
+        
+        <h5>{t}Other possible tools for responding to anger -{/t}</h5>
+        
+        <p>{t}Be careful with the following tools because they can backfire and make people angrier. Your knowledge and experience with the person will help you decide if these responses are appropriate in your situation.{/t}</p>
+        
+        <p>{t}<b>Excuse yourself and leave the person alone</b> - Sometimes anger builds as it is being expressed. You may decide to say; <i>"I have to excuse myself. Let us talk when we both feel less emotional,"</i> and calmly leave the room. This is an option if your presence is making the person angry, if your safety is at risk, or anger is building and the person usually calms down when alone. Be careful about using this response. There are times when even politely leaving the room will increase someone's anger.{/t}</p>
+        
+        <p>{t}<b>Use humor to ease tensions</b> - Humor, used wisely, can recast unfairness into nonsense. It can help people rethink a problem. The difficulty is that not taking someone seriously is a powerful act of defiance. Using humor can come across as insulting or arrogant when it is not meant that way. Either way, there is a risk of increasing anger if the person feels you are making fun of him or light of an issue. Refer to yourself, riot the other person, in using humor. So, I guess I am not <i>"person of the week"</i> or <i>"Here we are, madder than hatters at each other, and Dad is the one with the driving problem."</i>{/t}</p>
+        
+        <p>{t}<b>Change the subject</b> - This is risky, too, because the person may think you do not understand or do not care. He needs to feel you have heard him before you change the subject. A remark like <i>"You have a good reason to be upset. I have news I hope will help you feel better ..."</i> may work to lighten the atmosphere. Expressing anger with blaming and accusations or responding to anger with anger does not promote family unity or help to solve problems. The assertiveness and aikido communication tools will help you accomplish more.{/t}</p>
+        
+        
+                                  </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
+    
+               <div id="lesson-3-slide-15" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Expressing Yourself Under Special Circumstances{/t}</h2>
+        <hr />
+        
+        <h4>{t}Talking On The Telephone{/t}</h4>
+        
+        <p>{t}Bob lived several hundred miles from his father. He called his father weekly, but was - increasingly concerned about his father's well-being after the calls. He said:{/t}</p>
+        
+        <p style="text-align:center; font-style:italic;">{t}My dad is 85 years old and very frail. He is hard of hearing and has poor vision. Lately he seems more forgetful. I learned from a neighbor that my dad had a blood test at the hospital the previous day. Dad did not remember anything about it. Every time I call, he tells me "everything is just fine." But his voice sounds weaker when he says it. I have a feeling something just is not right, so I am going down for a visit.{/t}</p>
+        
+        <p>{t}Although telephone conversations can reveal clues about potential problems, they also can lead you astray. Miscommunication can occur because you do not have <i>"the messages"</i> that body language and facial expression provide. If you want to understand what the person means or feels, you might have to check with the person to make certain you both understand each other. For instance:{/t}</p>
+        
+        <p>{t}<i>"From the sound of your voice, I have the feeling you are worried. Is there something that is worrying you?"</i>{/t}</p>
+        
+        <p>{t}<i>"I am having trouble understanding what you mean. Can you explain a little more?"</i>{/t}</p>
+        
+        <p>{t}<i>"It sounds like you mean (want, need, feel) __. Am I right?"</i>{/t}</p>
+        
+        <p>{t}Some people feel safer talking on the telephone than they do face to face. It is possible to capture honest thoughts, concerns, and feelings that would not be disclosed in person. If you discover this, try to schedule your calls when you won't be interrupted and you have time to talk. You do not want to cut off someone who finally trusts you and opens up to you. If your time is short when the person calls, mention in advance how long you can visit.{/t}</p>    
+        
+        
+        <h5>{t}Telephone skills -{/t}</h5>
+        
+        <p>{t}A skilled, considerate telephone listener will:{/t}</p>
+        
+        <ul>
+        	<li>{t}listen for clues in the tone of voice or manner of speaking that are different from earlier conversations;{/t}</li>
+            <li>{t}ask open-ended questions to get more information about those clues; and{/t}</li>
+            <li>{t}stop other activities such as housework or driving while on the phone.{/t}</li>
+        </ul>
+            
+                                  </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
+    
+        
+               <div id="lesson-3-slide-16" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Expressing Yourself Under Special Circumstances{/t}</h2>
+        <hr />
+        
+       <h4>{t}Communicate With The Doctor{/t}</h4>
+       
+       <p>{t}As you provide care over the years, you wear various hats. You are an expert in the care of your relative, a consumer of health care services, and the person who works with the doctors. You may also be a patient occasionally. In any case, you want to build a partnership with the physician and other health care providers. You, as well as the physician and his or her staff, have a role in forming and maintaining this relationship.{/t}</p>
+       
+       <h5>{t}What to consider before going to the doctor -{/t}</h5>
+       
+       <p>{t}Think about the main reasons for your visit and what you expect from the doctor as you prepare for your visit. Consider the following tools.{/t}</p>
+       
+       <ul>
+       	<li>{t}Prepare your questions{/t}</li>
+        <li>{t}Consider other reliable sources of information{/t}</li>
+     </ul>
+       
+       <p>{t}Before you decide what questions you want to ask the doctor, consider other reliable sources of information. Your pharmacist can answer questions about medications and the office nurse may have answers to your caregiving questions. Most caregiving issues relate more closely to nursing than to medicine.{/t}</p>
+       
+       <p>{t}Also, the nurse usually has extensive knowledge about the doctor's patients, their illnesses, and the treatments prescribed. Do not worry about asking the nurse questions the doctor should or prefers to answer. The nurse will refer you to the doctor for those questions. Depending on her background and the doctor's wishes, you can usually ask a nurse questions regarding:{/t}</p>
+       
+       <ul>
+       	<li style="list-style-type:square;">{t}what you can learn from various tests and examinations;{/t}</li>
+        <li style="list-style-type:square;">{t}scheduling tests and what you have to do to prepare for tests or surgical procedures;{/t}</li>
+        <li style="list-style-type:square;">{t}providing personal care and measures to prevent problems such as pressure sores; and{/t}</li>
+        <li style="list-style-type:square;">{t}managing medications at home.{/t}</li>
+      </ul>
+      
+      <p>{t}You also can obtain information from support groups, specialty clinics, your local health department, and organizations dealing with certain health problems such as Parkinson's and Alzheimer's diseases, and stroke. These organizations offer free or inexpensive educational materials or can tell you where to get them. Sharing this information with non-caregiving relatives gives them an objective overview of the illness and related caregiving issues.{/t}</p>
+      
+      <ul>
+      	<li>{t}Make sure appointments meet your needs{/t}</li>
+        <li>{t}Call ahead{/t}</li>
+        <li>{t}Take someone with you{/t}</li>
+        <li>{t}Build a relationship with the office staff{/t}</li>
+      </ul>      
+                                  </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
+    
+               <div id="lesson-3-slide-17" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Expressing Yourself Under Special Circumstances{/t}</h2>
+        <hr />
+        
+        <h5>{t}Talking with the doctor - {/t}</h5>
+        
+        <p>{t}The following tools can help you get the most out of your time with the doctor.{/t}</p>
+        
+        <p>{t}Discuss your main concerns first. This is important because if you wait until the end of your appointment there may not be time to properly deal with the main reasons for your visit. You can say something like:{/t}</p>
+        
+        <ul>
+        	<li style="list-style-type:square; font-style:italic;">{t}"I have something important I want to talk about."{/t}</li>
+            <li style="list-style-type:square; font-style:italic;">{t}"There are three things I need to understand better."{/t}</li>
+            <li style="list-style-type:square; font-style:italic;">{t}"I have three important questions to ask."{/t}</li>
+         </ul>
+         
+    <ul>
+    	<li>{t}Be concise{/t}</li>
+        <li>{t}Refer to a second party{/t}</li>
+     </ul>
+     
+     <p>{t}If you want a second opinion but you hesitate to ask for it, tell your doctor: <i>"my and I have discussed the importance of getting a second opinion."</i> (Remember, there is a better chance of getting a second opinion if you ask for it than if you don't ask.){/t}</p>
+        
+        
+                                  </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
+    
+        
+        
+            
+               <div id="lesson-3-slide-18" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Communicating Effectively in Challenging Situations{/t}</h2>
+        <hr />
+        
+        
+        
+                                  </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
+    
+        
+            
+               <div id="lesson-3-slide-19" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Communicating Effectively in Challenging Situations{/t}</h2>
+        <hr />
+        
+        
+        
+                                  </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
+    
+        
+            
+               <div id="lesson-3-slide-20" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}Communicating Effectively in Challenging Situations{/t}</h2>
         <hr />
