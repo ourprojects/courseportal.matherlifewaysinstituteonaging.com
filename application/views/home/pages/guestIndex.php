@@ -60,19 +60,6 @@ $this->widget(
   <div class="box-sidebar zero"> <a href="<?php echo $this->createUrl('user/register'); ?>">{t}Register{/t} </a> <a
 			href="<?php echo $this->createUrl('home/contact'); ?>" class="teal"
 		>{t}Request Information{/t} </a> <a href="#slide-1" data-fancybox-group="open-tutorial" class="teal open-tutorial"> {t}Tutorial{/t} </a> <a href="#slide-2" data-fancybox-group="open-tutorial" class="hide open-tutorial"></a> <a href="#slide-3" data-fancybox-group="open-tutorial" class="hide open-tutorial"></a> <a href="#slide-4" data-fancybox-group="open-tutorial" class="hide open-tutorial"></a> <a href="#slide-5" data-fancybox-group="open-tutorial" class="hide open-tutorial"></a> <a href="#slide-6" data-fancybox-group="open-tutorial" class="hide open-tutorial"></a> <a href="#slide-7" data-fancybox-group="open-tutorial" class="hide open-tutorial"></a> </div>
-  
-  <!-- EACC pending approval sidebar here -->
-  
-  <div class="box-sidebar one">
-    <h3>{t}EACC{/t}</h3>
-    <h5 class="text-center">{t}Course Approvals<br />
-      Pending Application{/t}</h5>
-    <p><b><a href="http://www.eapassn.org/files/public/EACCroster2012.pdf" target="_blank">{t}Employee Assistance Certification Commission (EACC){/t}</a></b></p>
-    <p>{t}Established in 1986, the EACC is the credentialing governance body responsible for upholding all professional standards, policies, and procedures concerning the Certified Employee Assistance Professional (CEAP) credential.{/t}</p>
-    <p><a href="http://www.eapassn.org/" target="_blank"><img class="block center" src="<?php echo $this->getImagesUrl('EAPlogo.png'); ?>" alt="EAP Assocation Logo"></a></p>
-  </div>
-  
-  <!-- Clients sidebar here -->
   <div class="box-sidebar one">
     <h3> {t}Our Clients{/t} </h3>
     <div id="customers"> <a href="http://www.ibm.com" target="_blank"><img src="<?php echo $this->getImagesUrl('customers/ibm.png'); ?>" alt="IBM" /> </a> <a href="http://www.merck.com" target="_blank"><img src="<?php echo $this->getImagesUrl('customers/merck.png'); ?>"
@@ -83,6 +70,19 @@ $this->widget(
 				alt="Mather Lifeways"
 			/> </a> </div>
   </div>
+  <div class="box-sidebar one">
+    <h3>{t}EACC{/t}</h3>
+    <h5 class="text-center">{t}Course Approvals<br />
+      Pending Application{/t}</h5>
+    <p><b><a href="http://www.eapassn.org/files/public/EACCroster2012.pdf" target="_blank">{t}Employee Assistance Certification Commission (EACC){/t}</a></b></p>
+    <p>{t}Established in 1986, the EACC is the credentialing governance body responsible for upholding all professional standards, policies, and procedures concerning the Certified Employee Assistance Professional (CEAP) credential.{/t}</p>
+    <p><a href="http://www.eapassn.org/" target="_blank"><img class="block center" src="<?php echo $this->getImagesUrl('EAPlogo.png'); ?>" alt="EAP Assocation Logo"></a></p>
+  </div>
+  <div class="box-sidebar four">
+    <h3>Aging in Action</h3>
+    <p>{t}Aging in Action is Mather LifeWays Institute on Aging's monthly e-newsletter and blog containing the latest research news in the field of aging.{/t}</p>
+    <a href="http://twitter.com/aginginaction" target="_blank"> <img class="block center" src="<?php echo $this->getImagesUrl('twitter-bird.png'); ?>" alt="Twitter" /></a> </div>
+  
   <!-- sidebar for Participating locations here -->
   
   <div class="box-sidebar one">
@@ -108,41 +108,23 @@ $this->widget(
     </div>
   </div>
   
-  <!-- sidebar for Stats on Caregivers here -->
-  
-
-  
   <!-- sidebar on Resent Research here -->
   
   <div class="box-sidebar two">
     <h3>{t}Pew Research Center (English){/t}</h3>
-    
-    <!--  -->
-    
-    
+    <a href="http://www.pewresearch.org" target="_blank"><img class="block center" src="<?php echo $this->getImagesUrl('pew.png'); ?>" alt="Pew Internet Research Logo"></a>
     <p class="text-center"><b>{t}Family Caregivers are Wired for Health{/t}</b></p>
-    
-    
     <p> {t}
-    Four in ten adults in the U.S. are caring for an adult or child with significant health issues, up from 30% in 2010. Caring for a loved one is an activity that cuts across most demographic groups, but is especially prevalent among adults ages 30 to 64, a group traditionally still in the workforce.
-Caregivers are highly engaged in the pursuit of health information, support, care, and advice, both online and offline, and do many health-related activities at higher levels than non-caregivers.
-    {/t} </p>
-      
-      
+      Four in ten adults in the U.S. are caring for an adult or child with significant health issues, up from 30% in 2010. Caring for a loved one is an activity that cuts across most demographic groups, but is especially prevalent among adults ages 30 to 64, a group traditionally still in the workforce.
+      Caregivers are highly engaged in the pursuit of health information, support, care, and advice, both online and offline, and do many health-related activities at higher levels than non-caregivers.
+      {/t} </p>
     <p> <a href="http://www.pewinternet.org/~/media//Files/Reports/2013/PewResearch_FamilyCaregivers.pdf" class="pdf" target="_blank">{t}Family Caregivers are Wired for Health (2013){/t} </a> </p>
-    
-    
-    
   </div>
   <div class="box-sidebar three">
     <h3>{t}Whitepapers (English){/t}</h3>
     <p> <a href="http://www.matherlifewaysinstituteonaging.com/wp-content/uploads/2012/03/eLearning-Maturing-Technology.pdf" class="pdf" target="_blank">{t}e-Learning: Maturing Technology Brings Balance &amp; Possibilities to Nursing Education{/t} </a> <a href="http://www.matherlifewaysinstituteonaging.com/wp-content/uploads/2012/03/How-eLearning-Can-Reduce-Expenses-and-Improve-Staff-Performance.pdf"
 				class="pdf" target="_blank">{t}The Bottom Line: How e-Learning Can Reduce Expenses and Improve Staff Performance{/t} </a> </p>
   </div>
-  <div class="box-sidebar four">
-    <h3>Aging in Action</h3>
-    <p>{t}Aging in Action is Mather LifeWays Institute on Aging's monthly e-newsletter and blog containing the latest research news in the field of aging.{/t}</p>
-    <a href="http://twitter.com/aginginaction" target="_blank"> <img class="block center" src="<?php echo $this->getImagesUrl('twitter-bird.png'); ?>" alt="Twitter" /></a> </div>
 </div>
 <div class="column-wide">
   <h2 class="flowers">Mather LifeWays Institute on Aging</h2>
@@ -201,12 +183,6 @@ Caregivers are highly engaged in the pursuit of health information, support, car
     {t}Targeted Collaboration - 50%{/t} </p>
   <img id="pie-chart" class="block center" height="300" src="<?php echo $this->getImagesUrl('home-chart.png'); ?>" alt="{t}Pie chart{/t}" />
   <?php $workingCaregiverSurvey->run(); ?>
-  
-  
- 
-  
-  
-  
 </div>
 <div id="bottom-logos">
   <h4>{t}Partners{/t}</h4>
