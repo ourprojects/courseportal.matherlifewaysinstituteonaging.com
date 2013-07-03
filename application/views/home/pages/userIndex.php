@@ -11,15 +11,6 @@ $clientScript->registerCssFile($this->getStylesUrl('homeUser.css'));
   <h1 class="bottom">{t}Welcome!{/t}</h1>
 </div>
 <div id="sidebar">
-  <div class="box-sidebar one">
-    <h3>{t}Course Requirements{/t}</h3>
-    <p><b>{t}Required Applications{/t}</b></p>
-    <p>{t}You will need the following applications to participate:{/t}</p>
-    <hr />
-    <p><a href="http://get.adobe.com/flashplayer/" target="_blank">{t}Adobe Flash Player{/t}</a></p>
-    <p><a href="http://get.adobe.com/reader/" target="_blank">{t}Adobe Reader{/t}</a></p>
-    <p><a href="http://office.microsoft.com" target="_blank">Microsoft Office</a>, <a href="http://www.apple.com/iwork/" target="_blank">Apple iWork</a> {t}or,{/t} <a href="http://www.openoffice.org" target="_blank">{t}Apache OpenOffice{/t}</a></p>
-  </div>
   <div class="box-sidebar three statistics">
     <h3>{t}Statistics on Caregivers (USA){/t}</h3>
     <ul id="quotes">
@@ -28,48 +19,59 @@ $clientScript->registerCssFile($this->getStylesUrl('homeUser.css'));
       <li> <img src="<?php echo $this->getImagesUrl('stat-half.png'); ?>" /> <span>50%</span>&nbsp;{t}of employed caregivers work full-time{/t} </li>
     </ul>
   </div>
-  <div class="box-sidebar four">
-    <h3><a href="http://feeds.feedburner.com/pewresearch/internetandtechnology" target="_blank">Pew Research (USA)</a></h3>
-    <img src="<?php echo $this->getImagesUrl('pew.png'); ?>" />
-    <p>{t}As of April 2012, 53% of American adults age 65 and older use the internet or email. 
-			Though these adults are still less likely than all other age groups to use the internet, 
-			the latest data represent the first time that half of seniors are going online. After 
-			several years of very little growth among this group, these gains are significant.{/t}</p>
-    <p><a href="http://pewinternet.org/~/media//Files/Reports/2012/PIP_Older_adults_and_internet_use.pdf" class="pdf">{t}Click to view the report (English){/t}</a></p>
+  <div class="box-sidebar three">
+    <h3>{t}Whitepapers (English){/t}</h3>
+    <p> <a href="http://www.matherlifewaysinstituteonaging.com/wp-content/uploads/2012/03/eLearning-Maturing-Technology.pdf" class="pdf" target="_blank">{t}e-Learning: Maturing Technology Brings Balance &amp; Possibilities to Nursing Education{/t} </a> <a href="http://www.matherlifewaysinstituteonaging.com/wp-content/uploads/2012/03/How-eLearning-Can-Reduce-Expenses-and-Improve-Staff-Performance.pdf"
+				class="pdf" target="_blank">{t}The Bottom Line: How e-Learning Can Reduce Expenses and Improve Staff Performance{/t} </a> </p>
+  </div>
+  <div class="box-sidebar two">
+    <h3>{t}Pew Research Center (English){/t}</h3>
+    <a href="http://www.pewresearch.org" target="_blank"><img class="block center" src="<?php echo $this->getImagesUrl('pew.png'); ?>" alt="Pew Internet Research Logo"></a>
+    <p class="text-center"><b>{t}Family Caregivers are Wired for Health{/t}</b></p>
+    <p> {t}
+      Four in ten adults in the U.S. are caring for an adult or child with significant health issues, up from 30% in 2010. Caring for a loved one is an activity that cuts across most demographic groups, but is especially prevalent among adults ages 30 to 64, a group traditionally still in the workforce.
+      Caregivers are highly engaged in the pursuit of health information, support, care, and advice, both online and offline, and do many health-related activities at higher levels than non-caregivers.
+      {/t} </p>
+    <p> <a href="http://www.pewinternet.org/~/media//Files/Reports/2013/PewResearch_FamilyCaregivers.pdf" class="pdf" target="_blank">{t}Family Caregivers are Wired for Health (2013){/t} </a> </p>
   </div>
   <div class="box-sidebar one">
-    <h3>{t}Alzheimer's Assocation (USA){/t}</h3>
-    <img src="<?php echo $this->getImagesUrl('partners/alz.png'); ?>" />
+    <h3>{t}Alzheimer's Assocation (English) (USA){/t}</h3>
+    <img class="block center" src="<?php echo $this->getImagesUrl('partners/alz.png'); ?>" />
     <p>{t}There are 10 warning signs of Alzheimer's. If you or someone you know is experiencing 
-			any of the signs, please see a doctor. Early diagnosis gives you a chance to seek treatment and plan for the future.{/t}</p>
+      any of the signs, please see a doctor. Early diagnosis gives you a chance to seek treatment and plan for the future.{/t}</p>
     <p><a href="http://www.alz.org/national/documents/checklist_10signs.pdf" class="pdf">{t}Click to download the handout (English){/t}</a></p>
   </div>
   <div class="box-sidebar two">
-    <h3 class="two-line">{t}Medicare.gov - Tips &amp; Resources for Caregivers (USA){/t}</h3>
-    <img src="<?php echo $this->getImagesUrl('medicare.png'); ?>" />
+    <h3 class="two-line">{t}Medicare.gov - Tips &amp; Resources for Caregivers (English) (USA){/t}</h3>
+    <img class="block center" src="<?php echo $this->getImagesUrl('medicare.png'); ?>" />
     <p>{t}Are you familar and/or have you visited the Medicare website? 
-			The handout below is a list of tips and resources for caregivers as suggested by Medicare.{/t}</p>
+      The handout below is a list of tips and resources for caregivers as suggested by Medicare.{/t}</p>
     <p><a href="http://www.medicare.gov/files/ask-medicare-what-medicare-covers.pdf" class="pdf"> {t}Click to download the handout (English){/t}</a></p>
   </div>
 </div>
 <div class="column-wide">
-  <h2 class="flowers">Mather LifeWays Institute on Aging</h2>
-  <p>{t}Through research-based programs and innovative techniques,{/t} Mather LifeWays Institute on Aging {t}is 
-		committed to advancing the field of geriatric care. Cutting-edge research lays the foundation for our solid solutions to senior care challenges, including recruitment, mentorship, training, and retention.{/t}</p>
-  <p>{t}Used by individuals and entire organizations, our nationally recognized, award-winning programs include training modules, online courses, toolkits, and learning modules designed to make learning fun and easy. 
-		Our programs have been shown to result in measurable improvements in the quality of care provided and workforce retention.{/t}</p>
-  <h2 class="flowers top-pad">{t}Employers and Employees{/t}</h2>
-  <p>{t}We are uniquely positioned to provide corporations with innovative programs and products, all thoughtfully developed and tested under applied research conditions with well respected companies and senior living organizations. With staff expertise across a number of fields including gerontology, psychology, sociology, nursing, and cultural anthropology, we bring together multiple perspectives to address a wide range of issues that affect the aging population.{/t}</p>
-  <p>{t}We deliver online learning and web-based modalities using the latest technologies to efficiently and cost-effectively empower professionals. Digital toolkits provide one-stop training resources for human resource managers and trainers who wish to incorporate key topics for working caregivers into current training programs. In addition, we are well positioned to help conduct pilot studies that measure the impact on both working caregivers and the bottom line for interested corporations.{/t}</p>
+  <h2 class="flowers">{t}Employers and Employees{/t}</h2>
+  <p>{t}We are uniquely positioned to provide corporations with innovative programs and products, all thoughtfully developed and tested under applied research conditions with well respected companies and senior living organizations.{/t}</p>
+  <p>{t}With staff expertise across a number of fields including gerontology, psychology, sociology, nursing, and cultural anthropology, we bring together multiple perspectives to address a wide range of issues that affect the aging population. Digital toolkits provide one-stop training resources for human resource managers and trainers who wish to incorporate key topics for working caregivers into current training programs. In addition, we are well positioned to help conduct pilot studies that measure the impact on both working caregivers and the bottom line for interested corporations.{/t}</p>
+  <h2 class="flowers top-pad">{t}Portal Requirements &amp; Pedagogy{/t}</h2>
+  <p>{t}You will need the following applications to participate:{/t}</p>
+  <ul>
+    <li><a href="http://get.adobe.com/flashplayer/" target="_blank">{t}Adobe Flash Player{/t};</a></li>
+    <li><a href="http://get.adobe.com/reader/" target="_blank">{t}Adobe Reader{/t}; and</a></li>
+    <li><a href="http://office.microsoft.com" target="_blank">Microsoft Office</a> or (<a href="http://www.apple.com/iwork/" target="_blank">Apple iWork</a> or <a href="http://www.openoffice.org" target="_blank">Apache OpenOffice).</a></li>
+  </ul>
+  <p> {t}Effective online instruction depends on learning experiences appropriately designed and facilitated by knowledgeable facilitators.
+    Because learners have different learning styles or a combination of styles, our web-based training has been design using activities that
+    address their modes of learning in order to provide significant experiences for each course user.{/t} </p>
+  <p> {t}Institution Wide Content Management - 25%{/t}<br />
+    {t}Online Course Delivery - 25%{/t}<br />
+    {t}Targeted Collaboration - 50%{/t} </p>
+  <img id="pie-chart" class="block center" height="300" src="<?php echo $this->getImagesUrl('home-chart.png'); ?>" alt="{t}Pie chart{/t}" />
   <h2 class="flowers top-pad">The Sandwich Generation - by Media Storm</h2>
   <p>{t}Filmmaker and photographer couple Julie Winokur and Ed Kashi were busy pursuing their careers 
-		and raising two children when Winokurs 83-year-old father, Herbie, became too infirm to care for himself. At that moment they joined 
-		some twenty million other Americans who make up the sandwich generation, those who find themselves responsible for the care of both 
-		their children and their aging parents.{/t}</p>
-  <p>{t}Authors of the book{/t}Aging in America: The Years Ahead, {t}which chronicles the country's 
-		fastest-growing segment of the population, Winokur and Kashi decided to tell their own story as they took on the care of Winokurs 
-		father. In{/t}The Sandwich Generation{t}, they have created an honest, intimate account of their own shifting 
-		and challenging responsibilities, as well as some of their unexpected joys. (English){/t}</p>
+    and raising two children when Winokurs 83-year-old father, Herbie, became too infirm to care for himself. At that moment they joined 
+    some twenty million other Americans who make up the sandwich generation, those who find themselves responsible for the care of both 
+    their children and their aging parents.{/t} </p>
   <div class="box-grey">
     <?php 
 			$this->widget(

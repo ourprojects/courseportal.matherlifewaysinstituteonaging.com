@@ -108,29 +108,16 @@ $this->widget(
     </div>
   </div>
   
-  <!-- sidebar on Resent Research here -->
+  <!-- sidebar on Resent Research here --> 
   
-  <div class="box-sidebar two">
-    <h3>{t}Pew Research Center (English){/t}</h3>
-    <a href="http://www.pewresearch.org" target="_blank"><img class="block center" src="<?php echo $this->getImagesUrl('pew.png'); ?>" alt="Pew Internet Research Logo"></a>
-    <p class="text-center"><b>{t}Family Caregivers are Wired for Health{/t}</b></p>
-    <p> {t}
-      Four in ten adults in the U.S. are caring for an adult or child with significant health issues, up from 30% in 2010. Caring for a loved one is an activity that cuts across most demographic groups, but is especially prevalent among adults ages 30 to 64, a group traditionally still in the workforce.
-      Caregivers are highly engaged in the pursuit of health information, support, care, and advice, both online and offline, and do many health-related activities at higher levels than non-caregivers.
-      {/t} </p>
-    <p> <a href="http://www.pewinternet.org/~/media//Files/Reports/2013/PewResearch_FamilyCaregivers.pdf" class="pdf" target="_blank">{t}Family Caregivers are Wired for Health (2013){/t} </a> </p>
-  </div>
-  <div class="box-sidebar three">
-    <h3>{t}Whitepapers (English){/t}</h3>
-    <p> <a href="http://www.matherlifewaysinstituteonaging.com/wp-content/uploads/2012/03/eLearning-Maturing-Technology.pdf" class="pdf" target="_blank">{t}e-Learning: Maturing Technology Brings Balance &amp; Possibilities to Nursing Education{/t} </a> <a href="http://www.matherlifewaysinstituteonaging.com/wp-content/uploads/2012/03/How-eLearning-Can-Reduce-Expenses-and-Improve-Staff-Performance.pdf"
-				class="pdf" target="_blank">{t}The Bottom Line: How e-Learning Can Reduce Expenses and Improve Staff Performance{/t} </a> </p>
-  </div>
 </div>
 <div class="column-wide">
   <h2 class="flowers">Mather LifeWays Institute on Aging</h2>
   <p> {t}Through research-based programs and innovative techniques, Mather LifeWays Institute on Aging is committed to advancing the field of eldercare. We deliver online learning and web-based modalities using the latest technologies to efficiently and cost-effectively empower professionals in the workplace.{/t} </p>
   <h2 class="flowers top-pad">{t}Health status of your working caregivers{/t}</h2>
   <p> {t}Please choose one of the surveys below to take. Depending on your position, employer or employee, submit this voluntary survey and view aggregate feedback from all previous users.{/t}</p>
+  
+  <!-- add in input boxes for name,title, corporation, email, (optional, but no note) -->
   <p>
     <?php foreach($hiddenSurveys as $survey): ?>
     <a id="survey_link_<?php echo $survey->getId(); ?>" href="#survey_<?php echo $survey->getId(); ?>" class="button" title="<?php echo $survey->model->title; ?>"><?php echo $survey->model->title; ?></a>
@@ -174,14 +161,6 @@ $this->widget(
 		);
 		?>
   </div>
-  <h2 class="flowers top-pad">{t}Pedagogy{/t}</h2>
-  <p> {t}Effective online instruction depends on learning experiences appropriately designed and facilitated by knowledgeable facilitators.
-    Because learners have different learning styles or a combination of styles, our web-based training has been design using activities that
-    address their modes of learning in order to provide significant experiences for each course user.{/t} </p>
-  <p> {t}Institution Wide Content Management - 25%{/t}<br />
-    {t}Online Course Delivery - 25%{/t}<br />
-    {t}Targeted Collaboration - 50%{/t} </p>
-  <img id="pie-chart" class="block center" height="300" src="<?php echo $this->getImagesUrl('home-chart.png'); ?>" alt="{t}Pie chart{/t}" />
   <?php $workingCaregiverSurvey->run(); ?>
 </div>
 <div id="bottom-logos">
