@@ -64,7 +64,7 @@ foreach(array(
 <div class="column-wide">
   <h2 class="flowers"><?php echo t($course->title); ?></h2>
   <p><?php echo t($course->description); ?></p>
-  <h5>{t}Access - 1 year / Completion - 5 weeks (recommended){/t}</h5>
+  <h5>{t}Independent Study / One-Year Access{/t}</h5>
   <h4>{t}Objectives{/t}</h4>
   <ul>
     <?php 
