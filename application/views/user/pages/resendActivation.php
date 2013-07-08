@@ -5,4 +5,4 @@
 </div>
 <div id="single-column">
   <p> <?php echo CHtml::link(t('Not registered?'), $this->createUrl('register')); ?> </p>
-  <?php echo $this->renderPartial('forms/user_maintenance_form', array('models' => $models)); ?> </div>
+  <?php echo $this->renderPartial('forms/username_form', $models); ?> </div>
