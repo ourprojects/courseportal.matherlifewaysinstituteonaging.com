@@ -304,7 +304,6 @@ class UserController extends ApiController {
 					array(
 							'id' => $surveyName, 
 							'options' => array(
-								'autoProcess' => true,
 								'htmlOptions' => array('style' => 'display:none;'),
 								'title' => array('htmlOptions' => array('class' => 'flowers')),
 								'form' => array('options' =>
@@ -316,6 +315,7 @@ class UserController extends ApiController {
 					)
 			);
 			$survey->model->user_id = $user->id;
+			$survey->processRequest();
 			$surveys[] = $survey;
 		}
 
