@@ -16,7 +16,7 @@ abstract class ApiController extends OnlineCoursePortalController {
 		if(isset($_GET['key_id']) && isset($_GET['key'])) {
 			$key = Key::model()->findByPk($_GET['key_id']);
 			if($key !== null) {
-				if(Yii::createComponent(array('class' => 'ext.pbkdf2.PBKDF2', 'string' => $_GET['key'], 'IV' => $key->salt))->verifyHash($key->value)) {
+				if(Yii::createComponent('ext.pbkdf2.PBKDF2')->hash($_GET['key'], $key->salt) === $key->value) {
 					$filterChain->run();
 					return;
 				}
@@ -46,14 +46,15 @@ abstract class ApiController extends OnlineCoursePortalController {
 	}
 	
 	protected function renderApiResponse($statusCode = 200, $data = array(), $additionalHeaders = null) {
-		header("HTTP/1.1 $statusCode " . getHttpMessage($statusCode));
+		Yii::import('application.helpers.CHttpStatusCodes');
+		header("HTTP/1.1 $statusCode " . CHttpStatusCodes::getHttpMessage($statusCode));
 		
 		if(is_array($additionalHeaders))
 			foreach($additionalHeaders as $header)
 				header($header);
 		
 		header('Content-Type: application/json');
-		$data = CJSON::encode(array('success' => isHttpNormal($statusCode), 'data' => $data));
+		$data = CJSON::encode(array('success' => CHttpStatusCodes::isHttpNormal($statusCode), 'data' => $data));
 		
 		header('Content-MD5: ' . md5($data));
 		header('Content-Length: ' . strlen($data));
