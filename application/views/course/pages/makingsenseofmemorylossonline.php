@@ -27,12 +27,10 @@ foreach(array(
 </div>
 <div id="sidebar">
   <div class="box-sidebar one" style="background-color:#FFF;">
-    <h3>{t}Survey{/t}</h3>
+    <h3>{t}Coming Soon!{/t}</h3>
     <br />
-    <p><a href="#">{t}MSML Online Pre-Course Survey{/t}</a></p>
-    <p><a href="#">{t}MSML Online Post-Course Survey{/t}</a></p>
-    <p><a href="#">{t}MSML Online Post-Post Course Survey{/t}</a></p>
-    <p><a href="#">{t}MSML Online One-Year Survey{/t}</a></p>
+    <p><a href="#">{t}Pre-Course Survey{/t}</a></p>
+    <p><a href="#">{t}Post-Course Survey{/t}</a></p>
     <br />
     <img src="<?php echo $this->getImagesUrl('msml/153075496.png'); ?>" alt="image"> </div>
   <div class="box-sidebar one">
@@ -82,7 +80,7 @@ foreach(array(
   </ul>
   <div class="box-white" id="resources">
     <h4> {t}Resources{/t}</h4>
-    <p>{t}Please use these listed resources in the completion of this online course. Please contact your instructor or the program director if you have additional resources you would like to see added here.{/t}</p>
+   <p>{t}Please use these listed resources for additional reading. Pleaes contact your course facilitator if you have additional resources you would like to see added here.{/t}</p>
     <ul>
       <li><a href="http://www.alz.org" target="_blank">Alzheimer's Association</a></li>
       <li><a href="http://www.nih.gov" target="_blank">National Intitute on Health (NIH)</a></li>
@@ -90,13 +88,13 @@ foreach(array(
     </ul>
   </div>
   <div class="box-white" id="developers">
-    <h4>{t}Facilitators &amp; Course Developers{/t}</h4>
+    <h4>{t}Course Contacts{/t}</h4>
     <h5>{t}Content Designer:{/t}</h5>
     <p><a href="http://matherlifewaysinstituteonaging.com" target="_blank">Mather LifeWays Institute on Aging</a><br />
       {t}Through research-based programs and innovative techniques, Mather LifeWays Institute on Aging is committed to advancing the field of geriatric care. Cutting-edge research lays the foundation for our solid solutions to senior care challenges, including recruitment, mentorship, training, and retention. Used by individuals and entire organizations, our nationally recognized, award-winning programs include training modules, online courses, toolkits, and learning modules designed to make learning fun and easy. Our programs have been shown to result in measurable improvements in the quality of care provided and workforce retention.{/t}</p>
     <p><a href="http://www.alz.org/illinois/" target="_blank">Greater Illinois Chapter | Alzheimer's Association</a><br />
       {t}The Alzheimer’s Association, Greater Illinois Chapter serves 68 counties in Illinois with offices in Bloomington, Carbondale, Chicago, Joliet, Rockford and Springfield. Since 1980, the Chapter has provided reliable information and care consultation; created supportive services for families; increased funding for dementia research; and influenced public policy changes. Today, the Greater Illinois Chapter serves the more than a half million Illinois residents affected by Alzheimer’s disease throughout our chapter area, including 210,000 people with the disease.{/t}</p>
-    <span class="h5">{t}Course Developer: {/t}</span><span class="name">Jon Woodall</span>
+    <span class="h5">{t}Developer: {/t}</span><span class="name">Jon Woodall</span>
     <p>{t}Mr. Woodall is responsible for all MLIA corporate workforce wellness programs related to design, implementation, publication, and evaluation. Additionally, he seeks new grant funding to support or extend current grants related to corporate workforce wellness programs.{/t} </p>
     <span class="h5">{t}Facilitator: {/t}</span><span class="name">Ellen Ziegemeier</span>
     <p>{t}Ms. Ziegemeier has been facilitating online courses for Mather LifeWays Institute on Aging since 2004. She earned her Masters in Anthropology, and has worked locally and abroad -  Latin America and South America for various aging services. She is fluent in English and Spanish, and has a strong passion for caregiver training.{/t} </p>

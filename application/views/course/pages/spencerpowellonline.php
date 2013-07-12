@@ -29,12 +29,10 @@ foreach(array(
 </div>
 <div id="sidebar">
   <div class="box-sidebar one" style="background-color:#FFF;">
-    <h3>{t}Survey{/t}</h3>
+    <h3>{t}Coming Soon!{/t}</h3>
     <br />
-    <p><a href="#">{t}Spencer Online Pre-Course Survey{/t}</a></p>
-    <p><a href="#">{t}Spencer Online Post-Course Survey{/t}</a></p>
-    <p><a href="#">{t}Spencer Online Post-Post Course Survey{/t}</a></p>
-    <p><a href="#">{t}Spencer Online One-Year Survey{/t}</a></p>
+    <p><a href="#">{t}Pre-Course Survey{/t}</a></p>
+    <p><a href="#">{t}Post-Course Survey{/t}</a></p>
     <br />
     <img src="<?php echo $this->getImagesUrl('msml/153075496.png'); ?>" alt="image"> </div>
   <div class="box-sidebar one">
@@ -93,12 +91,12 @@ foreach(array(
     </ul>
   </div>
   <div class="box-white" id="developers">
-    <h4>{t}Facilitators &amp; Course Developers{/t}</h4>
+    <h4>{t}Course Contacts{/t}</h4>
     <h5>{t}Content Designer:{/t} <span class="name">Cate O'Brien</span></h5>
     <p>{t}Ms. O’Brien has worked in a research capacity for Mather LifeWays Institute on Aging since 2005. She has been responsible for designing and overseeing large-scale multi-year evaluations for grant-funded projects relating to the field of aging. As a Project Director on grant funded research projects, she has been responsible for forging collaborations with aging services organizations nationwide, and for recruiting older adults into various studies.{/t}</p>
-    <span class="h5">{t}Course Developer:{/t}</span> <span class="name">Jon Woodall</span>
+    <span class="h5">{t}Developer:{/t}</span> <span class="name">Jon Woodall</span>
     <p>{t}Mr. Woodall is responsible for all MLIA corporate workforce wellness programs related to design, implementation, publication, and evaluation. Additionally, he seeks new grant funding to support or extend current grants related to corporate workforce wellness programs.{/t}</p>
-    <span class="h5">{t}Course Facilitator:{/t}</span> <span class="name">Sherrie All, PhD</span>
+    <span class="h5">{t}Facilitator:{/t}</span> <span class="name">Sherrie All, PhD</span>
     <p>{t}Licensed clinical neuropsychologist specializing in brain fitness, healthy aging and cognitive enhancement. She is building a private practice in clinical neuropsychological assessment combined with interventions aimed at enhancing cognition and promoting healthy aging. And has specialties in Neuropsychological Assessment, Individual and Group Psychotherapy, Brain Fitness and Healthy Aging Thearpy and Coaching{/t}</p>
   </div>
 </div>

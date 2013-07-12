@@ -29,12 +29,10 @@ foreach(array(
 </div>
 <div id="sidebar">
   <div class="box-sidebar one" style="background-color:#FFF;">
-    <h3>{t}Survey{/t}</h3>
+    <h3>{t}Coming Soon!{/t}</h3>
     <br />
-    <p><a href="#">{t}Intro to Caregiving Online Pre-Course Survey{/t}</a></p>
-    <p><a href="#">{t}Intro to Caregiving Online Post-Course Survey{/t}</a></p>
-    <p><a href="#">{t}Intro to Caregiving Online Post-Post Course Survey{/t}</a></p>
-    <p><a href="#">{t}Intro to Caregiving Online One-Year Survey{/t}</a></p>
+    <p><a href="#">{t}Pre-Course Survey{/t}</a></p>
+    <p><a href="#">{t}Post-Course Survey{/t}</a></p>
     <br />
     <img src="<?php echo $this->getImagesUrl('intro/153075496.png'); ?>" alt="image"> </div>
   <div class="box-sidebar one">
@@ -75,7 +73,7 @@ foreach(array(
   </ul>
   <div class="box-white" id="resources">
     <h4> {t}Resources{/t}</h4>
-    <p>{t}Please use these listed resources in the completion of this online course. Pleaes contact your instructor or the program director if you have additional resources you would like to see added here.{/t}</p>
+    <p>{t}Please use these listed resources for additional reading. Pleaes contact your course facilitator if you have additional resources you would like to see added here.{/t}</p>
     <ul>
       <li><a href="http://www.alz.org" target="_blank">Alzheimer's Association</a></li>
       <li><a href="http://www.nih.gov" target="_blank">National Intitute on Health (NIH)</a></li>
@@ -83,13 +81,13 @@ foreach(array(
     </ul>
   </div>
   <div class="box-white" id="developers">
-    <h4>{t}Facilitators &amp; Course Developers{/t}</h4>
+    <h4>{t}Course Contacts{/t}</h4>
     <br />
     <SPAN class="h5">{t}Content Designer:{/t}</SPAN> <span class="name">Linda Hollinger-Smith, PhD</SPAN>
     <p> {t}Dr. Hollinger-Smith is a doctorally prepared registered nurse focusing her research in gerontology, workforce development, and quality improvement. She has more than 28 years of experience working with older adults in senior living, long-term care settings, in the community, and in acute care settings in various staff and managerial positions. Her past positions include Assistant Dean of the Rush University College of Nursing, Nursing Director of the Rush Primary Care Institute, and Associate Chairperson of the Department of Adult Health Nursing at Rush University College of Nursing.{/t} </p>
-    <span class="h5">{t}Course Developer:{/t}</span> <span class="name">Jon Woodall</span>
+    <span class="h5">{t}Developer:{/t}</span> <span class="name">Jon Woodall</span>
     <p>{t}Mr. Woodall is responsible for all MLIA corporate workforce wellness programs related to design, implementation, publication, and evaluation. Additionally, he seeks new grant funding to support or extend current grants related to corporate workforce wellness programs.{/t} </p>
-    <span class="h5">{t}Course Developer:{/t}</span> <span class="name">Jon Woodall</span>
+    <span class="h5">{t}Facilitator:{/t}</span> <span class="name">Jon Woodall</span>
     <p>{t}Mr. Woodall is responsible for all MLIA corporate workforce wellness programs related to design, implementation, publication, and evaluation. Additionally, he seeks new grant funding to support or extend current grants related to corporate workforce wellness programs.{/t} </p>
   </div>
 </div>
