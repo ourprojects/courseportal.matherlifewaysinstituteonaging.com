@@ -29,12 +29,10 @@ foreach(array(
 </div>
 <div id="sidebar">
   <div class="box-sidebar one" style="background-color:#FFF;">
-    <h3>{t}Survey{/t}</h3>
+    <h3>{t}Coming Soon!{/t}</h3>
     <br />
-    <p><a href="#">{t}Intro to Caregiving Online Pre-Course Survey{/t}</a></p>
-    <p><a href="#">{t}Intro to Caregiving Online Post-Course Survey{/t}</a></p>
-    <p><a href="#">{t}Intro to Caregiving Online Post-Post Course Survey{/t}</a></p>
-    <p><a href="#">{t}Intro to Caregiving Online One-Year Survey{/t}</a></p>
+    <p><a href="#">{t}Pre-Course Survey{/t}</a></p>
+    <p><a href="#">{t}Post-Course Survey{/t}</a></p>
     <br />
     <img src="<?php echo $this->getImagesUrl('intro/153075496.png'); ?>" alt="image"> </div>
   <div class="box-sidebar one">
@@ -45,7 +43,7 @@ foreach(array(
   <div class="box-sidebar three">
     <h3>Pew Internet: Health (Feb 1, 2013)</h3>
     <p><a href="http://pewinternet.org/experts/~/link.aspx?_id=E26587FE8FDB443A8610ECB87E635F94&_z=z" target="_blank"><img class="block-center" src="<?php echo $this->getImagesUrl('intro/pew.png'); ?>" /></a></p>
-    <hr />
+   
     <p>{t}36% of U.S. adults care for an adult or multiple adults.{/t}</p>
     <hr />
     <p>{t}Eight in ten caregivers (79%) have access to the internet. Of those, 88% look online for health information, outpacing other internet users on every health topic included in our survey, from looking up certain treatments to hospital ratings to end-of-life decisions.{/t}</p>
@@ -75,7 +73,7 @@ foreach(array(
   </ul>
   <div class="box-white" id="resources">
     <h4> {t}Resources{/t}</h4>
-    <p>{t}Please use these listed resources in the completion of this online course. Pleaes contact your instructor or the program director if you have additional resources you would like to see added here.{/t}</p>
+    <p>{t}Please use these listed resources for additional reading. Pleaes contact your course facilitator if you have additional resources you would like to see added here.{/t}</p>
     <ul>
       <li><a href="http://www.alz.org" target="_blank">Alzheimer's Association</a></li>
       <li><a href="http://www.nih.gov" target="_blank">National Intitute on Health (NIH)</a></li>
@@ -83,13 +81,13 @@ foreach(array(
     </ul>
   </div>
   <div class="box-white" id="developers">
-    <h4>{t}Facilitators &amp; Course Developers{/t}</h4>
+    <h4>{t}Course Contacts{/t}</h4>
     <br />
     <SPAN class="h5">{t}Content Designer:{/t}</SPAN> <span class="name">Linda Hollinger-Smith, PhD</SPAN>
     <p> {t}Dr. Hollinger-Smith is a doctorally prepared registered nurse focusing her research in gerontology, workforce development, and quality improvement. She has more than 28 years of experience working with older adults in senior living, long-term care settings, in the community, and in acute care settings in various staff and managerial positions. Her past positions include Assistant Dean of the Rush University College of Nursing, Nursing Director of the Rush Primary Care Institute, and Associate Chairperson of the Department of Adult Health Nursing at Rush University College of Nursing.{/t} </p>
-    <span class="h5">{t}Course Developer:{/t}</span> <span class="name">Jon Woodall</span>
+    <span class="h5">{t}Developer:{/t}</span> <span class="name">Jon Woodall</span>
     <p>{t}Mr. Woodall is responsible for all MLIA corporate workforce wellness programs related to design, implementation, publication, and evaluation. Additionally, he seeks new grant funding to support or extend current grants related to corporate workforce wellness programs.{/t} </p>
-    <span class="h5">{t}Course Developer:{/t}</span> <span class="name">Jon Woodall</span>
+    <span class="h5">{t}Facilitator:{/t}</span> <span class="name">Jon Woodall</span>
     <p>{t}Mr. Woodall is responsible for all MLIA corporate workforce wellness programs related to design, implementation, publication, and evaluation. Additionally, he seeks new grant funding to support or extend current grants related to corporate workforce wellness programs.{/t} </p>
   </div>
 </div>
@@ -241,9 +239,9 @@ foreach(array(
         <p>While many consider careing for a parent and/or grandparent the summation of the term <i>caregiving</i>, there are many more roles that are included when defining caregiving. As you have read in the reports listed above, careing for those other than our parents and/or grandparents also puts you in a caregiving role. </p>
         <p>As reported by the <a href="http://www.caregiverresource.net" target="_blank">Caregiver Network Resource</a>, caregiveres are wives, husbands, parents, children, friends, employees…  Types of caregivers include:</p>
         <ul>
-          <li>{t}<b>Crisis Caregiver</b>:  Your family member manages most of the time on their own until there is an emergency.{/t}</li>
-          <li>Primary Caregiver:  Your family member depends on you for regular assistance for two or more activities in their life. You make decisions that directly affect them.  You may act as their representative in situations.  You provide hands-on assistance with basic daily tasks (bathing, dressing, transportation, money matters, etc.)</li>
-          <li>Secondary Caregiver:  Your parent, sibling, spouse, etc. functions as the primary caregiver and you provide assistance to them. </li>
+          <li>{t}<b>Crisis Caregiver</b>: Your family member manages most of the time on their own until there is an emergency.{/t}</li>
+          <li>{t}<b>Primary Caregiver</b>: Your family member depends on you for regular assistance for two or more activities in their life. You make decisions that directly affect them. You may act as their representative in situations.  You provide hands-on assistance with basic daily tasks (bathing, dressing, transportation, money matters, etc.){/t}</li>
+          <li>{t}<b>Secondary Caregiver</b>: Your parent, sibling, spouse, etc. functions as the primary caregiver and you provide assistance to them.{/t}</li>
         </ul>
         <p class="forum">{t}Search the Internet and research other types of caregivers. Post your findings on the Forum{/t}</p>
         <p>{t}Whether you are an informal caregiver caring for a relative, or a professional caregiver - all caregivers share certain experiences. For many people, caregiving isn't a job or a duty. It is doing what is right for a loved one. Caregiving is an unspoken promise that so many of us make in our relationships, to be there for our loved ones when they need us. Unfortunately, few people have the time, resources or ability to care for their aging or disabled loved one without any help. It is important as a caregiver to know your limits, take care of yourself, know your resources in the community, and understand the wants and needs of the person needing care.{/t}</p>
@@ -256,7 +254,9 @@ foreach(array(
         <h2 class="flowers">{t}Closing{/t}</h2>
         <hr />
         <img src="<?php echo $this->getImagesUrl('intro/imsis530-020.png'); ?>" alt="{t}Tutorial{/t}" />
-        <p>{t}Whether you are an informal caregiver caring for a relative, or a professional caregiver - all caregivers share certain experiences. For many people, caregiving is not a job or a duty. It is doing what is right for a loved one.{/t{</p>
+        <p>{t}Whether you are an informal caregiver caring for a relative, or a professional caregiver - all caregivers share certain experiences. For many people, caregiving is not a job or a duty. It is doing what is right for a loved one.{/t}</p>
+        
+        
         <p>{t}Caregiving is an unspoken promise that so many of us make in our relationships, to be there for our loved ones when they need us. Unfortunately, few people have the time, resources or ability to care for their aging or disabled loved one without any help. It is important as a caregiver to know your limits, take care of yourself, know your resources in the community, and understand the wants and needs of the person needing care.{/t}</p>
         <div id="question1" class="question">
           <p><b>{t}Listening and responding appropriately results in better care and can build a better relationship.{/t}</b><br />
@@ -850,7 +850,7 @@ foreach(array(
           <li>{t}Explore and discuss how the <i>Technology Revolution</i> will impact US caregiving{/t}</li>
         </ul>
         <p>{t}While today’s average baby boomer has one of the highest overall income and wealth levels ever, creative financing will be a big priority as they move into their golden years. Because pension funds and overall savings are predicted not to keep up with rising medical costs, things like reverse mortgages will become even more popular. Employers will also continue to restructure daily work schedules and family leave policies. Family leave policies often created for families taking time off for the birth or adoption of a child will now be changed to also add time off policies for dealing with a sick family member. Because of the growing concern facing more family members, employers will also begin to offer seminars and other resources for their working caregiver employees. Flexibility will be the key in the future.{/t}</p>
-        <p class="forum">How do you think technology will impact caregiving in the U.S. in the future? Post your feedback to the Forum.{/t}</p>
+        <p class="forum">{t}How do you think technology will impact caregiving in the U.S. in the future? Post your feedback to the Forum.{/t}</p>
         <img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}"> </div>
       <div class="buttons"> <a href="javascript:;" class="button right"	onclick="$.fancybox.next();">{t}Start Module &raquo;{/t}</a></div>
     </div>

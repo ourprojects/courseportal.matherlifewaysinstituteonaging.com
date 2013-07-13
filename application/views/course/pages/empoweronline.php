@@ -31,12 +31,10 @@ foreach(array(
 
 <div id="sidebar">
   <div class="box-sidebar one" style="background-color:#FFF;">
-    <h3>{t}Survey{/t}</h3>
+    <h3>{t}Coming Soon!{/t}</h3>
     <br />
-    <p><a href="#">{t}Empower Online Pre-Course Survey{/t}</a></p>
-    <p><a href="#">{t}Empower Online Post-Course Survey{/t}</a></p>
-    <p><a href="#">{t}Empower Online Post-Post Course Survey{/t}</a></p>
-    <p><a href="#">{t}Empower Online One-Year Survey{/t}</a></p>
+    <p><a href="#">{t}Pre-Course Survey{/t}</a></p>
+    <p><a href="#">{t}Post-Course Survey{/t}</a></p>
     <br />
     <img src="<?php echo $this->getImagesUrl('empower/153075496.png'); ?>" alt="image"> </div>
   <div class="box-sidebar one">
@@ -139,11 +137,11 @@ foreach(array(
   <!-- Developers div white box here -->
   
   <div class="box-white" id="developers">
-    <h4>{t}Facilitators &amp; Course Developers{/t}</h4>
+    <h4>{t}Course Contacts{/t}</h4>
     <br />
     <SPAN class="h5">{t}Content Designer:{/t}</SPAN> <span class="name">Linda Hollinger-Smith, PhD</SPAN>
     <p> {t}Dr. Hollinger-Smith is a doctorally prepared registered nurse focusing her research in gerontology, workforce development, and quality improvement. She has more than 28 years of experience working with older adults in senior living, long-term care settings, in the community, and in acute care settings in various staff and managerial positions. Her past positions include Assistant Dean of the Rush University College of Nursing, Nursing Director of the Rush Primary Care Institute, and Associate Chairperson of the Department of Adult Health Nursing at Rush University College of Nursing.{/t} </p>
-    <span class="h5">{t}Course Developer:{/t}</span> <span class="name">Jon Woodall</span>
+    <span class="h5">{t}Developer:{/t}</span> <span class="name">Jon Woodall</span>
     <p>{t}Mr. Woodall is responsible for all MLIA corporate workforce wellness programs related to design, implementation, publication, and evaluation. Additionally, he seeks new grant funding to support or extend current grants related to corporate workforce wellness programs.{/t} </p>
     <span class="h5">{t}Facilitator (English / Spanish / Portuguese):{/t}</span> <span class="name">Elise Foss</span>
     <p>{t}Ms. Foss has been facilitating online courses for Mather LifeWays Institute on Aging since 2004. Currently, she is the Fitness Coordinator for a Mather LifeWays Senior Living community. Originally from Venezula, and educated in Brazil, Elise is fluent in English, Spanish and Portuguese, and travels to family in Brazil each year.{/t} </p>
@@ -2979,6 +2977,22 @@ HTML Output:
      </ul>
      
      <p>{t}If you want a second opinion but you hesitate to ask for it, tell your doctor: <i>"my and I have discussed the importance of getting a second opinion."</i> (Remember, there is a better chance of getting a second opinion if you ask for it than if you don't ask.){/t}</p>
+    
+    <ul>
+    	<li>{t}Get your questions answered{/t}</li>
+      </ul>
+      <p>{t}Ask about tests and treatments and the reasons for them.{/t}</p>
+      
+      <p>{t}+What do you expect to learn from the test? When can I expect to hear the results of the test?{/t}</p>
+      <p>{t}+How will I (or my relative) feel afterward?{/t}</p>
+      <p>{t}+Are there other options to having this test?{/t}</p>
+
+<ul>
+	<li>{t}Ask about treatment plans{/t}</li>
+ </ul>
+ 
+ <p>{t}Ask about medications and treatments that don't seem to work. Ask about alternatives for any treatment you find burdensome, such as a medication that must be taken in the middle of the night. Ask for clarification about the. diagnosis and treatment plan· and the reasons the doctor recommends it, what the treatment will accomplish, and restrictions on activities, food, or driving and the reasons for the restrictions. Find out about recovery and how long it will take to get back to normal, not just to feel better.{/t}</p>
+   
         
         
                                   </div>
@@ -2990,7 +3004,7 @@ HTML Output:
             
                <div id="lesson-3-slide-18" class="course-slide">
       <div class="content">
-        <h2 class="flowers">{t}Communicating Effectively in Challenging Situations{/t}</h2>
+        <h2 class="flowers">{t}Coming Soon!{/t}</h2>
         <hr />
         
         
@@ -3003,7 +3017,7 @@ HTML Output:
             
                <div id="lesson-3-slide-19" class="course-slide">
       <div class="content">
-        <h2 class="flowers">{t}Communicating Effectively in Challenging Situations{/t}</h2>
+        <h2 class="flowers">{t}Coming Soon!{/t}</h2>
         <hr />
         
         
@@ -3016,7 +3030,7 @@ HTML Output:
             
                <div id="lesson-3-slide-20" class="course-slide">
       <div class="content">
-        <h2 class="flowers">{t}Communicating Effectively in Challenging Situations{/t}</h2>
+        <h2 class="flowers">{t}Coming Soon!{/t}</h2>
         <hr />
         
         
@@ -3024,10 +3038,33 @@ HTML Output:
         
         
         
-        
-        </div>
-      <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Complete Module{/t}</a></div>
+                                        </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
+    
+    
+    
+               <div id="lesson-3-slide-21" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Coming Soon!{/t}</h2>
+        <hr />
+        
+        
+        
+                                       </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
+    
+    
+               <div id="lesson-3-slide-22" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Coming Soon!{/t}</h2>
+        <hr />
+        
+        
+        
+    
+        
     
     <!-- need this final div here to close lesson-2 --> 
   </div>

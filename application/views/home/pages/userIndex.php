@@ -28,9 +28,7 @@ $clientScript->registerCssFile($this->getStylesUrl('homeUser.css'));
     <h3>{t}Pew Research Center (English){/t}</h3>
     <a href="http://www.pewresearch.org" target="_blank"><img class="block center" src="<?php echo $this->getImagesUrl('pew.png'); ?>" alt="Pew Internet Research Logo"></a>
     <p class="text-center"><b>{t}Family Caregivers are Wired for Health{/t}</b></p>
-    <p> {t}
-      Four in ten adults in the U.S. are caring for an adult or child with significant health issues, up from 30% in 2010. Caring for a loved one is an activity that cuts across most demographic groups, but is especially prevalent among adults ages 30 to 64, a group traditionally still in the workforce.
-      Caregivers are highly engaged in the pursuit of health information, support, care, and advice, both online and offline, and do many health-related activities at higher levels than non-caregivers.
+    <p>{t}Four in ten adults in the U.S. are caring for an adult or child with significant health issues, up from 30% in 2010. Caring for a loved one is an activity that cuts across most demographic groups, but is especially prevalent among adults ages 30 to 64, a group traditionally still in the workforce. Caregivers are highly engaged in the pursuit of health information, support, care, and advice, both online and offline, and do many health-related activities at higher levels than non-caregivers.
       {/t} </p>
     <p> <a href="http://www.pewinternet.org/~/media//Files/Reports/2013/PewResearch_FamilyCaregivers.pdf" class="pdf" target="_blank">{t}Family Caregivers are Wired for Health (2013){/t} </a> </p>
   </div>
@@ -51,15 +49,23 @@ $clientScript->registerCssFile($this->getStylesUrl('homeUser.css'));
 </div>
 <div class="column-wide">
   <h2 class="flowers">{t}Employers and Employees{/t}</h2>
-  <p>{t}We are uniquely positioned to provide corporations with innovative programs and products, all thoughtfully developed and tested under applied research conditions with well respected companies and senior living organizations.{/t}</p>
-  <p>{t}With staff expertise across a number of fields including gerontology, psychology, sociology, nursing, and cultural anthropology, we bring together multiple perspectives to address a wide range of issues that affect the aging population. Digital toolkits provide one-stop training resources for human resource managers and trainers who wish to incorporate key topics for working caregivers into current training programs. In addition, we are well positioned to help conduct pilot studies that measure the impact on both working caregivers and the bottom line for interested corporations.{/t}</p>
-  <h2 class="flowers top-pad">{t}Portal Requirements &amp; Pedagogy{/t}</h2>
-  <p>{t}You will need the following applications to participate:{/t}</p>
+  <p>{t}We are uniquely positioned to provide corporations with innovative programs and products, all thoughtfully developed and tested under applied research conditions with well-respected companies and senior living organizations.{/t}</p>
+  <p>{t}With staff expertise across a number of fields including gerontology, psychology, sociology, nursing, and cultural anthropology, we bring together multiple perspectives to address a wide range of issues that affect the aging population.{/t}</p>
+  
+  <p>{t}Digital toolkits provide one-stop training resources for human resource managers and trainers who wish to incorporate key topics for working caregivers into current training programs. In addition, we are well positioned to help conduct pilot studies that measure the impact on both working caregivers and the bottom line for interested corporations.{/t}</p>
+  
+  
+  
+  <h2 class="flowers top-pad">{t}Recommendations &amp; Pedagogy{/t}</h2>
+  <h5>{t}Recommendations{/t}</h5>
+  <p>{t}We recommend the following applications to successfully participate:{/t}</p>
   <ul>
-    <li><a href="http://get.adobe.com/flashplayer/" target="_blank">{t}Adobe Flash Player{/t};</a></li>
-    <li><a href="http://get.adobe.com/reader/" target="_blank">{t}Adobe Reader{/t}; and</a></li>
-    <li><a href="http://office.microsoft.com" target="_blank">Microsoft Office</a> or (<a href="http://www.apple.com/iwork/" target="_blank">Apple iWork</a> or <a href="http://www.openoffice.org" target="_blank">Apache OpenOffice).</a></li>
+    <li><a href="http://get.adobe.com/flashplayer/" target="_blank">{t}Adobe Flash Player{/t}</a></li>
+    <li><a href="http://get.adobe.com/reader/" target="_blank">{t}Adobe Reader{/t}</a></li>
+    <li>{t}Word Processor &amp; Spreadsheet Processor{/t} ({t}recommended applications include:{/t} <a href="http://office.microsoft.com" target="_blank">Microsoft Office</a> {t}or{/t} <a href="http://www.apple.com/iwork/" target="_blank">Apple iWork</a> {t}or{/t} <a href="http://www.openoffice.org" target="_blank">Apache OpenOffice</a>)</li>
+
   </ul>
+  <h5>{t}Pedagogy{/t}</h5>
   <p> {t}Effective online instruction depends on learning experiences appropriately designed and facilitated by knowledgeable facilitators.
     Because learners have different learning styles or a combination of styles, our web-based training has been design using activities that
     address their modes of learning in order to provide significant experiences for each course user.{/t} </p>
