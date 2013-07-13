@@ -37,14 +37,14 @@ foreach(array(
     <img src="<?php echo $this->getImagesUrl('msml/153075496.png'); ?>" alt="image"> </div>
   <div class="box-sidebar one">
     <h3>Sharp Brains - Market Research</h3>
-    <p>{t}Tracking Brain Health Innovations: News, Research, Trech, Trends{/t}</p>
+    <h5 style="text-align:center;">{t}Tracking Brain Health Innovations: News, Research, Trech, Trends{/t}</h5>
     <p><a href="http://sharpbrains.com/index.php" target="_blank"><img src="<?php echo $this->getImagesUrl('spencer/sharpbrainslogo.gif'); ?>" alt="image"></a></p>
     <hr />
     <p>{t}Sharp­Brains is an independent market research firm and think tank helping organizations and individuals navigate the emerging brain fitness and applied neuroscience field. We maintain an annual state-of-the-market report series, publish consumer guides to inform decision-making, produce an annual global and virtual professional conference.{/t}</p>
   </div>
   <div class="box-sidebar two">
     <h3>Go4Life</h3>
-    <p>{t}from the National Institute on Aging at NIH{/t}</p>
+    <h5 style="text-align:center;">{t}National Institute on Aging at NIH{/t}</h5>
     <p><a href="http://sharpbrains.com/index.php" target="_blank"><img src="<?php echo $this->getImagesUrl('spencer/litejazz_logo.png'); ?>" style="width:200; height:142;" alt="image"></a></p>
     <hr />
     <p>{t}Go4Life, an exercise and physical activity campaign from the National Institute on Aging at NIH, is designed to help you fit exercise and physical activity into your daily life. Motivating older adults to become physically active for the first time, return to exercise after a break in their routines, or build more exercise and physical activity into weekly routines are the essential elements of Go4Life.{/t}</p>
