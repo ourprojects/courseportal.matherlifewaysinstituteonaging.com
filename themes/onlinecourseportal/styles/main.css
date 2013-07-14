@@ -755,3 +755,6 @@ div.view {
 .opacity-hover:hover {
 	opacity: 1;
 }
+.word-wrap-break {
+	word-wrap: break-word;
+}
