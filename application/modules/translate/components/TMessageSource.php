@@ -96,9 +96,9 @@ class TMessageSource extends CDbMessageSource
 					->from($this->sourceMessageTable.' smt')
 					->join($this->categoryMessageTable.' cmt', 'smt.id=cmt.message_id')
 					->join($this->categoryTable.' ct', array('and', 'cmt.category_id=ct.id', 'ct.category=:category'), array(':category' => $category))
-					->join($this->translatedMessageTable.' tmt', 'smt.id=tmt.id')
-					->join($this->languageTable.' lt', array('and', 'tmt.language_id=lt.id', 'lt.code=:language'), array(':language' => $language));
-		
+					->join($this->languageTable.' lt', 'lt.code=:language', array(':language' => $language))
+					->join($this->translatedMessageTable.' tmt', array('and', 'smt.id=tmt.id', 'tmt.language_id=lt.id'));
+
 		$messages = array();
 		foreach($cmd->queryAll() as $row)
 			$messages[$row['message']] = $row['translation'];
@@ -260,6 +260,7 @@ class TMessageSource extends CDbMessageSource
 	 * Translates the specified message.
 	 * If the message is not found, an {@link onMissingTranslation}
 	 * event will be raised.
+	 * Please note that the category, message, and language parameters will be trimmed using {@link trim()}.
 	 * @param string $category the category that the message belongs to
 	 * @param string $message the message to be translated
 	 * @param string $language the target language
@@ -267,6 +268,10 @@ class TMessageSource extends CDbMessageSource
 	 */
 	protected function translateMessage($category, $message, $language)
 	{
+		$category = trim($category);
+		$language = trim($language);
+		$message = trim($message);
+		
 		$key = $category.'.'.$language;
 		
 		if(!isset($this->_messages[$key]))

@@ -95,8 +95,8 @@ class TViewSource extends CApplicationComponent
 				->from($this->routeTable.' rt')
 				->join($this->routeViewTable.' rvt', 'rt.id=rvt.route_id')
 				->join($this->viewSourceTable.' vst', 'rvt.view_id=vst.id')
-				->join($this->viewTable.' vt', 'vst.id=vt.id')
-				->join($messageSource->languageTable.' lt', array('and', 'vt.language_id=lt.id', 'lt.code=:language'), array(':language' => $language))
+				->join($messageSource->languageTable.' lt', 'lt.code=:language', array(':language' => $language))
+				->join($this->viewTable.' vt', array('and', 'vst.id=vt.id', 'vt.language_id=lt.id'))
 				->leftJoin($this->viewMessageTable.' vmt', 'vst.id=vmt.view_id')
 				->leftJoin($messageSource->translatedMessageTable.' tmt', array('and', 'vmt.message_id=tmt.id', 'tmt.language_id=vt.language_id'))
 				->where(array('and', 'rt.route=:route', array('or', 'tmt.last_modified IS NULL', 'tmt.last_modified < vt.created')), array(':route' => $route))
@@ -175,17 +175,15 @@ class TViewSource extends CApplicationComponent
 	{
 		$messageSource = TranslateModule::translator()->getMessageSource();
 		$view = $this->getDbConnection()->createCommand()
-						->select(array('rt.id AS route_id', 'vst.id AS id', 'lt.id AS language_id', 'vt.path AS path', 'MAX(COALESCE(tmt.last_modified, \'9999-99-99 99:99:99\')) AS last_modified'))
+						->select(array('rt.id AS route_id', 'MIN(vst.id) AS id', 'lt.id AS language_id', 'vt.path AS path'))
 						->from($this->viewSourceTable.' vst')
 						->leftJoin($this->routeViewTable.' rvt', 'vst.id=rvt.view_id')
 						->leftJoin($this->routeTable.' rt', array('and', 'rvt.route_id=rt.id', 'rt.route=:route'), array(':route' => $route))
 						->leftJoin($messageSource->languageTable.' lt', 'lt.code=:code', array(':code' => $language))
 						->leftJoin($this->viewTable.' vt', array('and', 'vst.id=vt.id', 'vt.language_id=lt.id'))
-						->leftJoin($this->viewMessageTable.' vmt', 'vst.id=vmt.view_id')
-						->leftJoin($messageSource->translatedMessageTable.' tmt', array('and', 'vmt.message_id=tmt.id', 'tmt.language_id=vt.language_id'))
 						->where('vst.path=:source_path', array(':source_path' => $sourcePath))
 				->queryRow();
-	
+
 		if($createSourceViewIfNotExists)
 		{
 			if($view['id'] === null)
@@ -218,9 +216,9 @@ class TViewSource extends CApplicationComponent
 		return empty($messageIds) ? 0 : $this->getDbConnection()->createCommand()->delete($this->viewMessageTable, array('and', 'view_id=:view_id', array('in', 'message_id', $messageIds)), array(':view_id' => $viewId));
 	}
 
-	public function updateViewCreated($viewId, $languageId, $created = null)
+	public function updateView($viewId, $languageId, $created, $path)
 	{
-		return $this->getDbConnection()->createCommand()->update($this->viewTable, array('created' => $created === null ? date('Y-m-d H:i:s') : $created), array('and', 'id=:id', 'language_id=:language_id'), array(':id' => $viewId, ':language_id' => $languageId));
+		return $this->getDbConnection()->createCommand()->update($this->viewTable, array('created' => $created, 'path' => $path), array('and', 'id=:id', 'language_id=:language_id'), array(':id' => $viewId, ':language_id' => $languageId));
 	}
 
 	/**

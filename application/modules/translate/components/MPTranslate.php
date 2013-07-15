@@ -532,13 +532,8 @@ class MPTranslate extends CApplicationComponent
      */
     public function translate($category, $message, $language, $useTransaction = true)
     {
-    	$message = trim($message);
-    	
-    	if(!empty($message))
+    	if(trim($message) !== '')
     	{
-	    	$category = trim($category);
-	    	$language = trim($language);
-	    	
 	    	$source = $this->getMessageSource();
 	    	
 	    	$sourceLanguage = $category === self::ID ? 'en' : $source->getLanguage();
