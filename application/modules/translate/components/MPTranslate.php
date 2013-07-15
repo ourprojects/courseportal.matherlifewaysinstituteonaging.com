@@ -562,6 +562,11 @@ class MPTranslate extends CApplicationComponent
 		    			throw new CException("The category '$category' was not found or could not be associated with the source message '$message'.");
 		    		}
 		    		
+		    		if($translation['language_id'] === null)
+		    		{
+		    			throw new CException("The language '$language' could not be found or added to the message source.");
+		    		}
+		    		
 		    		// If the translation of the source message does not exist use google translate, if autotranslate is enabled, and add the translation.
 		    		// Otherwise if autotranslate is disabled or google translate was not successful add the source message to the missing messages.
 		    		if($translation['translation'] === null)

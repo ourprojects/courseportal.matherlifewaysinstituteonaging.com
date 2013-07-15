@@ -188,12 +188,12 @@ class TMessageSource extends CDbMessageSource
 	public function getTranslation($category, $message, $language, $createSourceMessageIfNotExists = false)
 	{
 		$translation = $this->getDbConnection()->createCommand()
-					->select(array('MIN(ct.id) AS category_id', 'MIN(smt.id) AS id', 'tmt.translation AS translation'))
+					->select(array('MIN(ct.id) AS category_id', 'MIN(smt.id) AS id', 'lt.id AS language_id', 'tmt.translation AS translation'))
 					->from($this->sourceMessageTable.' smt')
 					->leftJoin($this->categoryMessageTable.' cmt', 'smt.id=cmt.message_id')
 					->leftJoin($this->categoryTable.' ct', array('and', 'cmt.category_id=ct.id', 'ct.category=:category'), array(':category' => $category))
-					->leftJoin($this->translatedMessageTable.' tmt', 'smt.id=tmt.id')
-					->join($this->languageTable.' lt', array('and', 'tmt.language_id=lt.id', 'lt.code=:language'), array(':language' => $language))
+					->leftJoin($this->languageTable.' lt', 'lt.code=:language', array(':language' => $language))
+					->leftJoin($this->translatedMessageTable.' tmt', array('and', 'smt.id=tmt.id', 'tmt.language_id=lt.id'))
 					->where('smt.message=:message', array(':message' => $message))
 			->queryRow();
 		
@@ -204,11 +204,20 @@ class TMessageSource extends CDbMessageSource
 				if(($translation['id'] = $this->addSourceMessage($message)) !== null)
 				{
 					$translation['category_id'] = $this->addMessageToCategory($translation['id'], $category, true);
+					$translation['language_id'] = $this->getLanguageId($language, true);
 				}
 			}
-			else if($translation['category_id'] === null)
+			else 
 			{
-				$translation['category_id'] = $this->addMessageToCategory($translation['id'], $category, true);
+				if($translation['category_id'] === null)
+				{
+					$translation['category_id'] = $this->addMessageToCategory($translation['id'], $category, true);
+				}
+				
+				if($translation['language_id'] === null)
+				{
+					$translation['language_id'] = $this->addLanguage($language);
+				}
 			}
 		}
 		

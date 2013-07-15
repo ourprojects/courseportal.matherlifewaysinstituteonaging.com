@@ -142,11 +142,11 @@ class TViewSource extends CApplicationComponent
 				: null;
 	}
 	
-	public function addView($sourceViewId, $path, $language, $createLanguageIfNotExists = false)
+	public function addView($sourceViewId, $path, $languageId)
 	{
-		return (($languageId = TranslateModule::translator()->getMessageSource()->getLanguageId($language, $createLanguageIfNotExists)) !== false
-					&& $this->getDbConnection()->createCommand()->insert($this->viewTable, array('id' => $sourceViewId, 'path' => $path, 'language_id' => $languageId)) > 0)
-				? $languageId
+		$args = array('id' => $sourceViewId, 'language_id' => $languageId, 'path' => $path);
+		return ($this->getDbConnection()->createCommand()->insert($this->viewTable, $args) > 0)
+				? $args
 				: null;
 	}
 	
@@ -175,12 +175,12 @@ class TViewSource extends CApplicationComponent
 	{
 		$messageSource = TranslateModule::translator()->getMessageSource();
 		$view = $this->getDbConnection()->createCommand()
-						->select(array('MIN(rt.id) AS route_id', 'vst.id AS id', 'vt.path AS path', 'MAX(COALESCE(tmt.last_modified, \'9999-99-99 99:99:99\')) AS last_modified'))
+						->select(array('rt.id AS route_id', 'vst.id AS id', 'lt.id AS language_id', 'vt.path AS path', 'MAX(COALESCE(tmt.last_modified, \'9999-99-99 99:99:99\')) AS last_modified'))
 						->from($this->viewSourceTable.' vst')
 						->leftJoin($this->routeViewTable.' rvt', 'vst.id=rvt.view_id')
 						->leftJoin($this->routeTable.' rt', array('and', 'rvt.route_id=rt.id', 'rt.route=:route'), array(':route' => $route))
-						->leftJoin($this->viewTable.' vt', 'vst.id=vt.id')
-						->join($messageSource->languageTable.' lt', array('and', 'vt.language_id=lt.id', 'lt.code=:language'), array(':language' => $language))
+						->leftJoin($messageSource->languageTable.' lt', 'lt.code=:code', array(':code' => $language))
+						->leftJoin($this->viewTable.' vt', array('and', 'vst.id=vt.id', 'vt.language_id=lt.id'))
 						->leftJoin($this->viewMessageTable.' vmt', 'vst.id=vmt.view_id')
 						->leftJoin($messageSource->translatedMessageTable.' tmt', array('and', 'vmt.message_id=tmt.id', 'tmt.language_id=vt.language_id'))
 						->where('vst.path=:source_path', array(':source_path' => $sourcePath))
@@ -193,13 +193,21 @@ class TViewSource extends CApplicationComponent
 				if(($view['id'] = $this->addSourceView($sourcePath)) !== null)
 				{
 					$view['route_id'] = $this->addViewToRoute($view['id'], $route, true);
+					$view['language_id'] = $messageSource->getLanguage($language, true);
 				}
 			}
-			else if($view['route_id'] === null)
+			else
 			{
-				$view['route_id'] = $this->addViewToRoute($view['id'], $route, true);
+				if($view['route_id'] === null)
+				{
+					$view['route_id'] = $this->addViewToRoute($view['id'], $route, true);
+				}
+				
+				if($view['language_id'] === null)
+				{
+					$view['language_id'] = $messageSource->addLanguage($language);
+				}
 			}
-			
 		}
 	
 		return $view;

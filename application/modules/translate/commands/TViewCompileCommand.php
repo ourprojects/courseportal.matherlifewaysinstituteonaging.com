@@ -36,9 +36,14 @@ class TViewCompileCommand extends CConsoleCommand
 				throw new CException(Yii::t(self::ID, "The source view with path '{path}' could not be associated with the route {route}.", array('{path}' => $sourcePath, '{route}' => $route)));
 			}
 			
+			if($view['language_id'] === null)
+			{
+				throw new CException(Yii::t(self::ID, "The language '{language}' could not be found or added.", array('{language}' => $language)));
+			}
+			
 			if($view['path'] === null)
 			{
-				if($viewSource->addView($view['id'], $compiledPath, $language, true) === null)
+				if($viewSource->addView($view['id'], $compiledPath, $view['language_id']) === null)
 				{
 					Yii::log("The source view with path '$path' and compiled path '$compiledPath' could not be added to the view source. This source view will be recompiled for each request until this problem is fixed.", CLogger::LEVEL_ERROR, self::ID);
 				}
@@ -49,6 +54,7 @@ class TViewCompileCommand extends CConsoleCommand
 			}
 			else if($view['path'] !== $compiledPath)
 			{
+				// @ TODO This should delete the old path and create the new instead of throwing an exception, but this is useful for debugging at the moment.
 				throw new CException(Yii::t(self::ID, "The source view with path '{path}' has already been compiled to language '{language}', but its compiled path '{compiledPath}' does not match the requested compiled path '{requestedCompiledPath}'.", 
 						array('{path}' => $sourcePath, '{language}' => $language, '{compiledPath}' => $view['path'], '{requestedCompiledPath}' => $compiledPath)));
 			}
