@@ -193,7 +193,7 @@ class TViewSource extends CApplicationComponent
 				if(($view['id'] = $this->addSourceView($sourcePath)) !== null)
 				{
 					$view['route_id'] = $this->addViewToRoute($view['id'], $route, true);
-					$view['language_id'] = $messageSource->getLanguage($language, true);
+					$view['language_id'] = $messageSource->getLanguageId($language, true);
 				}
 			}
 			else
