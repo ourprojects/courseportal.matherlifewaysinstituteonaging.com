@@ -1,8 +1,8 @@
 <?php
 $this->breadcrumbs = array(
-		t('Admin') => $this->createUrl('admin'), 
-		t('Users') => $this->createUrl('users'), 
-		t('User Details')
+		'{t}Admin{/t}' => $this->createUrl('admin'), 
+		'{t}Users{/t}' => $this->createUrl('users'), 
+		'{t}User Details{/t}'
 );
 ?>
 <div id="sidebar"> 
@@ -30,7 +30,7 @@ $this->breadcrumbs = array(
   </div>
 </div>
 <div class="column-wide">
-  <h1>{t}Viewing User ') . $user->id; ?></h1>
+  <h1>{t}Viewing User{/t}&nbsp;<?php echo $user->id; ?></h1>
   <br />
   <div class="box-white">
 	<div class="form">
@@ -44,7 +44,7 @@ $this->breadcrumbs = array(
 				));
 		?>
 		<p class="note">
-			<span class="required">*</span><?php echo t('Required{/t}.
+			<span class="required">*</span>{t}Required{/t}.
 		</p>
 		<?php echo $form->errorSummary(array($Avatar, $user)); ?>
 		
@@ -104,7 +104,7 @@ $this->breadcrumbs = array(
 		</div>
 				
 		<div class="row submit">
-			<?php echo CHtml::submitButton(t('Save Changes')); ?>
+			<?php echo CHtml::submitButton('{t}Save Changes{/t}'); ?>
 		</div>
 
 		<?php $this->endWidget();?>
@@ -125,7 +125,7 @@ $this->breadcrumbs = array(
   	</ul>
   	<?php 
   	else:
-		echo t('None');
+		echo '{t}None{/t}';
 	endif; 
 	?>
   </div>
