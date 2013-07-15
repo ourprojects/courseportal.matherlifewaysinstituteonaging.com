@@ -6,7 +6,15 @@ $this->widget('zii.widgets.CDetailView',
 				'attributes' => array(
 						'id',
 						'code',
-						'name'
+						'name',
+						array(
+								'name' => 'isAccepted',
+								'type' => 'boolean'
+						),
+						array(
+								'name' => 'isMissingTranslations',
+								'type' => 'boolean'
+						)
 				),
 		)
 );

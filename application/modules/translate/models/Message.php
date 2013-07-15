@@ -2,8 +2,6 @@
 class Message extends CActiveRecord 
 {
 
-    private $_isMissingTranslations;
-    
 	public static function model($className = __CLASS__) 
 	{
 		return parent::model($className);
@@ -67,44 +65,6 @@ class Message extends CActiveRecord
 				'isAcceptedLanguage' => array('with' => array('acceptedLanguage' => array('joinType' => 'INNER JOIN'))),
 				'isOtherLanguage' => array('with' => array('acceptedLanguage' => array('joinType' => 'LEFT JOIN')), 'condition' => 'acceptedLanguage.id IS NULL')
 		);
-	}
-
-	public function isMissingTranslations($refresh = false) 
-	{
-		if($refresh || !isset($this->_isMissingTranslations))
-			$this->_isMissingTranslations = $this->missingTranslations()->exists();
-		return $this->_isMissingTranslations;
-	}
-	
-	public function missingTranslations($sourceMessageId = null) 
-	{
-		if($sourceMessageId === null) {
-			$this->getDbCriteria()->mergeWith(array(
-					'select' => $this->getTableAlias(false, false).'.language',
-					'condition' => $this->getTableAlias(false, false).'.id NOT IN ' .
-						'(' .
-								'SELECT tt.id FROM '.$this->tableName().' tt ' .
-								'WHERE (tt.language = '.$this->getTableAlias(false, false).'.language) AND tt.id NOT IN ' .
-								'(' .
-										'SELECT m.id FROM '.MessageSource::model()->tableName().' m ' .
-										'WHERE (m.id = tt.id)' .
-								')' .
-						')',
-					'group' => $this->getTableAlias(false, false).'.language'
-			));
-		} else {
-			$this->getDbCriteria()->mergeWith(array(
-					'select' => $this->getTableAlias(false, false).'.language',
-					'params' => array(':sourceMessageId' => $sourceMessageId),
-					'condition' => $this->getTableAlias(false, false).'.language NOT IN ' .
-						'(' .
-							'SELECT m.language FROM '.MessageSource::model()->tableName().' sm ' . 
-							'INNER JOIN '.$this->tableName().' m ON ((sm.id = m.id) AND (sm.id = :sourceMessageId))' .
-						')',
-					'group' => $this->getTableAlias(false, false).'.language'
-			));
-		}
-		return $this;
 	}
 	
 	/**

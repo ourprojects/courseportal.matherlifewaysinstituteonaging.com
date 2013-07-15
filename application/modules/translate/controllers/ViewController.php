@@ -125,6 +125,10 @@ class ViewController extends TController
 		{
 			if($model->delete())
 			{
+				if(file_exists($model['path']))
+				{
+					unlink($model['path']);
+				}
 				$message = 'The view was successfully deleted.';
 			}
 			else

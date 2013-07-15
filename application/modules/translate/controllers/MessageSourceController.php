@@ -139,6 +139,11 @@ class MessageSourceController extends TController
 				$model->with(array('messageSources' => array('condition' => 'messageSources.id=:id', 'params' => array(':id' => $id))))->together()->getDbCriteria()->group = 't.id';
 				$gridPath = '../language/_grid';
 				break;
+			case 'missingLanguage-grid':
+				$model = new Language('search');
+				$model->missingTranslations($id);
+				$this->renderPartial('../language/_grid', array('model' => $model, 'messageId' => $id));
+				return;
 			case 'route-grid':
 				$model = new Route('search');
 				$model->with(array('viewSources.messageSources' => array('condition' => 'messageSources.id=:id', 'params' => array(':id' => $id))))->together()->getDbCriteria()->group = 't.id';

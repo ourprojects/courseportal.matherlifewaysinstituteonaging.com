@@ -1,7 +1,31 @@
 <?php
+if(isset($languageId))
+{
+	$id = 'missingMessageSource-grid';
+	$buttonConfig = array(
+			'class' => 'CButtonColumn',
+			'template' => '{view}{update}{delete}',
+			'viewButtonLabel' => TranslateModule::t('View Translations'),
+			'viewButtonUrl' => 'Yii::app()->getController()->createUrl("messageSource/view", array("id" => $data->id))',
+			'updateButtonLabel' => TranslateModule::t('Create Translation'),
+			'updateButtonUrl' => 'Yii::app()->getController()->createUrl("message/create", array("id" => $data->id, "languageId" => '.$languageId.'))',
+			'deleteButtonUrl' => 'Yii::app()->getController()->createUrl("messageSource/delete", array("id" => $data->id))',
+	);
+}
+else
+{
+	$id = 'messageSource-grid';
+	$buttonConfig = array(
+			'class' => 'CButtonColumn',
+			'template' => '{view}{delete}',
+			'viewButtonLabel' => TranslateModule::t('View Translations'),
+			'viewButtonUrl' => 'Yii::app()->getController()->createUrl("messageSource/view", array("id" => $data->id))',
+			'deleteButtonUrl' => 'Yii::app()->getController()->createUrl("messageSource/delete", array("id" => $data->id))',
+	);
+}
 $this->widget('zii.widgets.grid.CGridView',
 		array(
-				'id' => 'messageSource-grid',
+				'id' => $id,
 				'filter' => $model,
 				'dataProvider' => $model->with('categories')->search(),
 				'columns' => array(
@@ -19,19 +43,7 @@ $this->widget('zii.widgets.grid.CGridView',
 								'name' => 'message',
 								'htmlOptions' => array('width' => '400'),
 						),
-						array(
-								'header' => TranslateModule::t('Missing Translation'),
-								'type' => 'boolean',
-								'value' => '$data->isMissingTranslations()',
-								'htmlOptions' => array('width' => '25'),
-						),
-						array(
-								'class' => 'CButtonColumn',
-								'template' => '{view}{delete}',
-								'viewButtonLabel' => TranslateModule::t('View Translations'),
-								'viewButtonUrl' => 'Yii::app()->getController()->createUrl("messageSource/view", array("id" => $data->id))',
-								'deleteButtonUrl' => 'Yii::app()->getController()->createUrl("messageSource/delete", array("id" => $data->id))',
-						)
+						$buttonConfig
 				)
 		)
 );

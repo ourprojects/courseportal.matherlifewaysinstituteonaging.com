@@ -5,11 +5,7 @@ $this->widget('zii.widgets.grid.CGridView',
 				'filter' => $model,
 				'dataProvider' => $model->with(array('source', 'language'))->search(),
 				'columns' => array(
-						array(
-								'name' => 'source',
-								'filter' => '',
-								'sortable' => false
-						),
+						'id',
 						array(
 								'name' => 'language',
 								'filter' => '',

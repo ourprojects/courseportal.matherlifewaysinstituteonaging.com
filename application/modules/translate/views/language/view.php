@@ -24,6 +24,12 @@
 		</h2>
 		<?php $this->actionGrid($language->id, 'message-grid'); ?>
 	</div>
+	<div id="missingMessageSources" class="box-white">
+		<h2>
+			<?php echo TranslateModule::t('Source Messages Missing a Translation For Language'); ?>
+		</h2>
+		<?php $this->actionGrid($language->id, 'missingMessageSource-grid'); ?>
+	</div>
 	<div id="routes" class="box-white">
 		<h2>
 			<?php echo TranslateModule::t('Routes'); ?>

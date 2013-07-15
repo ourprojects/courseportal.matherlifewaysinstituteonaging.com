@@ -3,7 +3,6 @@ class Language extends CActiveRecord
 {
 
 	private $_name;
-	private $_isMissingTranslations;
     
 	public static function model($className = __CLASS__) 
 	{
@@ -39,8 +38,8 @@ class Language extends CActiveRecord
 	public function relations() 
 	{
 		return array(
-			'messages' => array(self::HAS_MANY, 'Message', 'language', 'joinType' => 'INNER JOIN'),
-			'messageCount' => array(self::STAT, 'Message', 'language'),
+			'messages' => array(self::HAS_MANY, 'Message', 'language_id', 'joinType' => 'INNER JOIN'),
+			'messageCount' => array(self::STAT, 'Message', 'language_id'),
 			'messageSources' => array(self::MANY_MANY, 'MessageSource', Message::model()->tableName().'(language_id, id)'),
 			'messageSourceCount' => array(self::STAT, 'MessageSource', Message::model()->tableName().'(language_id, id)'),
 			'views' => array(self::HAS_MANY, 'View', 'language_id'),
@@ -70,6 +69,7 @@ class Language extends CActiveRecord
 				// Virtual Attributes
 				'name' => TranslateModule::t('Name'),
 				'isAccepted' => TranslateModule::t('Accepted?'),
+				'isMissingTranslations' => TranslateModule::t('Missing Translations?'),
 		);
 	}
 	
@@ -81,37 +81,23 @@ class Language extends CActiveRecord
 		);
 	}
 	
-	public function isMissingTranslations($refresh = false) 
+	public function missingTranslations($messageId = null)
 	{
-		if($refresh || !isset($this->_isMissingTranslations))
-			$this->_isMissingTranslations = $this->missingTranslations()->exists();
-		return $this->_isMissingTranslations;
-	}
-	
-	public function missingTranslations($sourceMessageId = null) 
-	{
-		if($sourceMessageId === null) {
-			$this->getDbCriteria()->mergeWith(array(
-					'condition' => $this->getTableAlias(false, false).'.id NOT IN ' .
-						'(' .
-							'SELECT tt.language_id FROM '.Message::model()->tableName().' tt ' .
-							'WHERE (tt.language_id = '.$this->getTableAlias(false, false).'.id) AND tt.id NOT IN ' .
-							'(' .
-								'SELECT m.id FROM '.MessageSource::model()->tableName().' m ' .
-								'WHERE (m.id = tt.id)' .
-							')' .
-						')'
-			));
-		} else {
-			$this->getDbCriteria()->mergeWith(array(
-					'params' => array(':sourceMessageId' => $sourceMessageId),
-					'condition' => $this->getTableAlias(false, false).'.id NOT IN ' .
-						'(' .
-							'SELECT m.language_id FROM '.MessageSource::model()->tableName().' sm ' . 
-							'INNER JOIN '.Message::model()->tableName().' m ON ((sm.id = m.id) AND (sm.id = :sourceMessageId))' .
-						')'
-			));
+		$criteria = array(
+				'with' => array('messages' => array('joinType' => 'LEFT JOIN', 'on' => 'messageSources.id=messages.id')),
+				'condition' => 'messages.id IS NULL',
+				'together' => true
+		);
+		if($messageId === null)
+		{
+			$criteria['join'] = 'CROSS JOIN '.MessageSource::model()->tableName().' messageSources';
 		}
+		else
+		{
+			$criteria['params'] = array(':message_id' => $messageId);
+			$criteria['join'] = 'JOIN '.MessageSource::model()->tableName().' messageSources ON messageSources.id=:message_id';
+		}
+		$this->getDbCriteria()->mergeWith($criteria);
 		return $this;
 	}
 	
@@ -124,6 +110,11 @@ class Language extends CActiveRecord
 				$this->_name = strval($this->code);
 		}
 		return $this->_name;
+	}
+	
+	public function getIsMissingTranslations($messageId = null)
+	{
+		return $this->missingTranslations($messageId)->exists();
 	}
 	
 	public function getIsAccepted()
