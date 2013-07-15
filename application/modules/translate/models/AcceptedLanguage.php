@@ -2,7 +2,6 @@
 class AcceptedLanguage extends CActiveRecord 
 {
 
-	private $_name;
 	private $_isMissingTranslations;
     
 	public static function model($className = __CLASS__) 
@@ -27,9 +26,10 @@ class AcceptedLanguage extends CActiveRecord
 	public function rules() 
 	{
 		return array(
-            array('id', 'required', 'except' => 'search'),
+			array('id', 'required', 'except' => 'search'),
 			array('id', 'unique', 'except' => 'search'),
 			array('id', 'length', 'max' => 12),
+			array('id', 'exist', 'attributeName' => 'id', 'className' => 'Language', 'except' => 'search'),
 				
 			array('id', 'safe', 'on' => 'search')
 		);
@@ -38,62 +38,34 @@ class AcceptedLanguage extends CActiveRecord
 	public function relations() 
 	{
 		return array(
-			'translations' => array(self::HAS_MANY, 'Message', 'language', 'joinType' => 'INNER JOIN'),
-			'messageSources' => array(self::MANY_MANY, 'MessageSource', Message::model()->tableName().'(language, id)')
+			'messages' => array(self::HAS_MANY, 'Message', 'language', 'joinType' => 'INNER JOIN'),
+			'messageCount' => array(self::STAT, 'Message', 'language'),
+			'messageSources' => array(self::MANY_MANY, 'MessageSource', Message::model()->tableName().'(language_id, id)'),
+			'messageSourceCount' => array(self::STAT, 'MessageSource', Message::model()->tableName().'(language_id, id)'),
+			'views' => array(self::HAS_MANY, 'View', 'language_id'),
+			'viewCount' => array(self::STAT, 'View', 'language_id'),
+			'viewSources' => array(self::MANY_MANY, 'ViewSource', View::model()->tableName().'(language_id, id)'),
+			'viewSourceCount' => array(self::STAT, 'ViewSource', View::model()->tableName().'(language_id, id)'),
+			'language' => array(self::BELONGS_TO, 'Language', 'id'),
 		);
 	}
 	
-	public function isMissingTranslations($refresh = false) 
-	{
-		if($refresh || !isset($this->_isMissingTranslations))
-			$this->_isMissingTranslations = $this->missingTranslations()->exists();
-		return $this->_isMissingTranslations;
-	}
-	
-	public function missingTranslations($sourceMessageId = null) 
-	{
-		if($sourceMessageId === null) {
-			$this->getDbCriteria()->mergeWith(array(
-					'condition' => $this->getTableAlias(false, false).'.id NOT IN ' .
-						'(' .
-							'SELECT tt.language FROM '.Message::model()->tableName().' tt ' .
-							'WHERE (tt.language = '.$this->getTableAlias(false, false).'.id) AND tt.id NOT IN ' .
-							'(' .
-								'SELECT m.id FROM '.MessageSource::model()->tableName().' m ' .
-								'WHERE (m.id = tt.id)' .
-							')' .
-						')'
-			));
-		} else {
-			$this->getDbCriteria()->mergeWith(array(
-					'params' => array(':sourceMessageId' => $sourceMessageId),
-					'condition' => $this->getTableAlias(false, false).'.id NOT IN ' .
-						'(' .
-							'SELECT m.language FROM '.MessageSource::model()->tableName().' sm ' . 
-							'INNER JOIN '.Message::model()->tableName().' m ON ((sm.id = m.id) AND (sm.id = :sourceMessageId))' .
-						')'
-			));
-		}
-		return $this;
-	}
-
-	public function attributeLabels() 
+	public function attributeLabels()
 	{
 		return array(
-			'id' => TranslateModule::t('ID'),
-			'name' => TranslateModule::t('Name'),
+				// Attributes
+				'id' => TranslateModule::t('ID'),
+				// Relations
+				'messages' => TranslateModule::t('Messages'),
+				'messageCount' => TranslateModule::t('Message Count'),
+				'messageSources' => TranslateModule::t('Message Sources'),
+				'messageSourceCount' => TranslateModule::t('Message Source Count'),
+				'views' => TranslateModule::t('Views'),
+				'viewCount' => TranslateModule::t('View Count'),
+				'viewSources' => TranslateModule::t('View Sources'),
+				'viewSourceCount' => TranslateModule::t('View Source Count'),
+				'language' => TranslateModule::t('Language'),
 		);
-	}
-	
-	public function getName() 
-	{
-		if(!isset($this->_name) && isset($this->id))
-		{
-			$this->_name = TranslateModule::translator()->getLanguageDisplayName($this->id);
-			if($this->_name === false)
-				$this->_name = strval($this->id);
-		}
-		return $this->_name;
 	}
 	
 	/**
@@ -114,7 +86,7 @@ class AcceptedLanguage extends CActiveRecord
 	
 	public function __toString() 
 	{
-		return $this->getName();
+		return $this->getRelated('language')->getName();
 	}
 
 }

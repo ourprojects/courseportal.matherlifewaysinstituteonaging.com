@@ -1,5 +1,5 @@
 <?php
-class RouteController extends TController
+class ViewSourceController extends TController
 {
 
 	public function filters()
@@ -9,10 +9,10 @@ class RouteController extends TController
 				'accessControl',
 				'ajaxOnly + ajaxIndex, ajaxView',
 				array(
-						'translate.filters.TForwardActionFilter + index, route',
+						'translate.filters.TForwardActionFilter + index, view',
 						'map' => array(
 								'index' => 'ajaxIndex + ajax',
-								'route' => 'ajaxView + ajax',
+								'view' => 'ajaxView + ajax',
 						)
 				)
 		);
@@ -36,7 +36,7 @@ class RouteController extends TController
 	}
 
 	/**
-	 * View all Categories.
+	 * View all ViewSources.
 	 */
 	public function actionIndex()
 	{
@@ -52,13 +52,13 @@ class RouteController extends TController
 	}
 
 	/**
-	 * View a Route's details
+	 * View a ViewSource's details
 	 *
-	 * @param integer $id The ID of the route to show details for
+	 * @param integer $id The ID of the view to show details for
 	 */
 	public function actionView($id)
 	{
-		$this->render('view', array('route' => Route::model()->findByPk($id)));
+		$this->render('view', array('viewSource' => ViewSource::model()->findByPk($id)));
 	}
 	
 	public function actionAjaxView($id)
@@ -75,37 +75,37 @@ class RouteController extends TController
 		{
 			case 'category-grid':
 				$model = new Category('search');
-				$model->with(array('messageSources.viewSources.routes' => array('condition' => 'routes.id=:id', 'params' => array(':id' => $id))))->together()->getDbCriteria()->group = 't.id';
+				$model->with(array('messageSources.viewSources' => array('condition' => 'viewSources.id=:id', 'params' => array(':id' => $id))))->together()->getDbCriteria()->group = 't.id';
 				$gridPath = '../category/_grid';
 				break;
 			case 'messageSource-grid':
 				$model = new MessageSource('search');
-				$model->with(array('viewSources.routes' => array('condition' => 'routes.id=:id', 'params' => array(':id' => $id))))->together()->getDbCriteria()->group = 't.id';
+				$model->with(array('viewSources' => array('condition' => 'viewSources.id=:id', 'params' => array(':id' => $id))))->together()->getDbCriteria()->group = 't.id';
 				$gridPath = '../messageSource/_grid';
 				break;
 			case 'message-grid':
 				$model = new Message('search');
-				$model->with(array('views.sourceView.routes' => array('condition' => 'routes.id=:id', 'params' => array(':id' => $id))))->together()->getDbCriteria()->group = 't.id, t.language_id';
+				$model->with(array('views.sourceView' => array('condition' => 'sourceView.id=:id', 'params' => array(':id' => $id))))->together()->getDbCriteria()->group = 't.id, t.language_id';
 				$gridPath = '../message/_grid';
 				break;
 			case 'language-grid':
 				$model = new Language('search');
-				$model->with(array('views.sourceView.routes' => array('condition' => 'routes.id=:id', 'params' => array(':id' => $id))))->together()->getDbCriteria()->group = 't.id';
+				$model->with(array('viewSources' => array('condition' => 'viewSources.id=:id', 'params' => array(':id' => $id))))->together()->getDbCriteria()->group = 't.id';
 				$gridPath = '../language/_grid';
 				break;
 			case 'route-grid':
 				$model = new Route('search');
-				$model->setAttribute('id', $id);
-				$gridPath = '_grid';
+				$model->with(array('viewSources' => array('condition' => 'viewSources.id=:id', 'params' => array(':id' => $id))))->together()->getDbCriteria()->group = 't.id';
+				$gridPath = '../route/_grid';
 				break;
 			case 'viewSource-grid':
 				$model = new ViewSource('search');
-				$model->with(array('routes' => array('condition' => 'routes.id=:id', 'params' => array(':id' => $id))))->together()->getDbCriteria()->group = 't.id';
-				$gridPath = '../viewSource/_grid';
+				$model->setAttribute('id', $id);
+				$gridPath = '_grid';
 				break;
 			case 'view-grid':
 				$model = new View('search');
-				$model->with(array('sourceView.routes' => array('condition' => 'routes.id=:id', 'params' => array(':id' => $id))))->together()->getDbCriteria()->group = 't.id, t.language_id';
+				$model->setAttribute('id', $id);
 				$gridPath = '../view/_grid';
 				break;
 			default:
@@ -115,27 +115,27 @@ class RouteController extends TController
 	}
 
 	/**
-	 * Deletes a Route
+	 * Deletes a ViewSource
 	 *
-	 * @param integer $id the ID of the Route to be deleted
+	 * @param integer $id the ID of the ViewSource to be deleted
 	 */
 	public function actionDelete($id)
 	{
-		$model = Route::model()->findByPk($id);
+		$model = ViewSource::model()->findByPk($id);
 		if($model !== null)
 		{
 			if($model->delete())
 			{
-				$message = 'The route was successfully deleted.';
+				$message = 'The source view and its translated views have been deleted.';
 			}
 			else
 			{
-				$message = 'The route could not be deleted.';
+				$message = 'The source view could not be deleted.';
 			}
 		}
 		else
 		{
-			$message = 'The route could not be found.';
+			$message = 'The source view could not be found.';
 		}
 		
 		if(Yii::app()->getRequest()->getIsAjaxRequest())

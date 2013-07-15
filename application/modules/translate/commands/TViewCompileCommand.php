@@ -16,95 +16,92 @@ class TViewCompileCommand extends CConsoleCommand
 		@chmod($compiledPath, $filePermission);
 	}
 
-	public function actionCompileView($sourcePath, $compiledPath, $id, $language, $filePermission = 0755, $useTransaction = true)
+	public function actionCompileView($sourcePath, $compiledPath, $route, $language, $filePermission = 0755, $useTransaction = true)
 	{
-		$messageSource = TranslateModule::translator()->getMessageSource();
 		$viewSource = TranslateModule::translator()->getViewSource();
 		if($useTransaction)
 			$transaction = $viewSource->getDbConnection()->beginTransaction();
 		
 		try
 		{
-			if(!is_dir(dirname($compiledPath)))
-				mkdir(dirname($compiledPath), $filePermission, true);
+			$view = $viewSource->getView($route, $sourcePath, $language, true);
 			
-			$subject = file_get_contents($sourcePath);
-			
-			// Extract messages
-			preg_match_all('/\{t(?:\s+category\s*=\s*(\w+?))?\}\s*(.+?)\s*\{\/t\}/s', $subject, $matches);
-			
-			// Organize messages by into categories and translate them.
-			$categorizedMessages = array();
-			for($i = 0; $i < count($matches[2]); $i++)
+			if($view['id'] === null)
 			{
-				$category = $matches[1][$i] === '' ? $messageSource->messageCategory : $matches[1][$i];
-				$categorizedMessages[$category][$matches[2][$i]] = $i;
-				$matches[2][$i] = Yii::t($category, $matches[2][$i], array(), null, null);
+				throw new CException(Yii::t(self::ID, "The source view with path '{path}' could not be found or added to the view source.", array('{path}' => $sourcePath)));
 			}
-
-			// Replace messages with respective translations in source and write to compiled path.
-			file_put_contents($compiledPath, str_replace($matches[0], $matches[2], $subject));
-			@chmod($compiledPath, $filePermission);
-
-			// Add any missing view messages associations and confirm all source messages and their respective categories were added to the DB.
-			$cmd = $viewSource->getDbConnection()->createCommand()
-					->select('vmt.message_id AS id')
-					->from($viewSource->viewMessageTable.' vmt')
-					->where('vmt.view_id=:view_id', array(':view_id' => $id));
-			$viewMessages = array();
-			foreach($cmd->queryAll() as $row)
-				$viewMessages[$row['id']] = $row['id'];
-
-			foreach($categorizedMessages as $category => &$messages)
+				
+			if($view['route_id'] === null)
 			{
-				$cmd = $messageSource->getDbConnection()->createCommand()
-							->select(array('MIN(ct.id) AS category_id', 'smt.id AS message_id', 'smt.message AS message'))
-							->from($messageSource->sourceMessageTable.' smt')
-							->leftJoin($messageSource->categoryMessageTable.' cmt', 'smt.id=cmt.message_id')
-							->leftJoin($messageSource->categoryTable.' ct', array('and', 'cmt.category_id=ct.id', 'ct.category=:category'), array(':category' => $category))
-							->where(array('in', 'smt.message', array_keys($messages)))
-							->group('smt.id');
-				foreach($cmd->queryAll() as $messageInfo)
+				throw new CException(Yii::t(self::ID, "The source view with path '{path}' could not be associated with the route {route}.", array('{path}' => $sourcePath, '{route}' => $route)));
+			}
+			
+			if($view['path'] === null)
+			{
+				if($viewSource->addView($view['id'], $compiledPath, $language, true) === null)
 				{
-					unset($messages[$messageInfo['message']]);
-				 	if($messageInfo['category_id'] === null)
-				 	{
-						if($messageSource->addMessageToCategory($category, $messageInfo['message_id']) === null)
+					Yii::log("The source view with path '$path' and compiled path '$compiledPath' could not be added to the view source. This source view will be recompiled for each request until this problem is fixed.", CLogger::LEVEL_ERROR, self::ID);
+				}
+				else 
+				{
+					$view['path'] = $compiledPath;
+				}
+			}
+			else if($view['path'] !== $compiledPath)
+			{
+				throw new CException(Yii::t(self::ID, "The source view with path '{path}' has already been compiled to language '{language}', but its compiled path '{compiledPath}' does not match the requested compiled path '{requestedCompiledPath}'.", 
+						array('{path}' => $sourcePath, '{language}' => $language, '{compiledPath}' => $view['path'], '{requestedCompiledPath}' => $compiledPath)));
+			}
+			
+			$view['last_modified'] = $view['last_modified'] === null ? time() : strtotime($view['last_modified']);
+			
+			if(@filemtime($view['path']) < $view['last_modified'] || @filemtime($view['path']) < @filemtime($sourcePath))
+			{
+				if(!is_dir(dirname($compiledPath)))
+					mkdir(dirname($compiledPath), $filePermission, true);
+				
+				$subject = file_get_contents($sourcePath);
+				
+				// Extract messages
+				preg_match_all('/\{t(?:\s+category\s*=\s*(\w+?))?\}\s*(.+?)\s*\{\/t\}/s', $subject, $messages);
+
+				$messageSource = TranslateModule::translator()->getMessageSource();
+				
+				// Load view messages
+				$unconfirmedMessages = array();
+				foreach($viewSource->getViewMessages($view['id']) as $message)
+				{
+					$unconfirmedMessages[$message['message']] = $message['id'];
+				}
+				
+				// Translate the messages
+				$confirmedMessages = array();
+				foreach($messages[2] as $i => &$message)
+				{
+					if(!isset($confirmedMessages[$message]))
+					{
+						if(isset($unconfirmedMessages[$message]))
 						{
-							throw new CDbException("Failed to add source message with ID '{$messageInfo['message_id']}' to category '$category'.");
+							$confirmedMessages[$message] = $unconfirmedMessages[$message];
+							unset($unconfirmedMessages[$message]);
 						}
-				 	}
-				 	if(isset($viewMessages[$messageInfo['message_id']]))
-				 	{
-				 		unset($viewMessages[$messageInfo['message_id']]);
-				 	}
-				 	elseif($viewSource->addViewMessage($id, $messageInfo['message_id']) === null)
-			 		{
-			 			throw new CDbException("The view with ID '$id' could not be associated with the source message with ID '{$messageInfo['message_id']}'.");
-			 		}
+						else 
+						{
+							$confirmedMessages[$message] = $viewSource->addSourceMessageToView($view['id'], $message, true);
+						}
+					}
+					$message = Yii::t($messages[1][$i] === '' ? $messageSource->messageCategory : $messages[1][$i], $message, array(), null, null);
 				}
-				foreach(array_keys($messages) as $message)
-				{
-					$messageId = $messageSource->addSourceMessage($message);
-					if($messageId === null)
-					{
-						throw new CDbException("The source message '$message' could not be found in or added to the database.");
-					}
-					if($messageSource->addMessageToCategory($category, $messageId) === null)
-					{
-						throw new CDbException("Failed to add source message with ID '$messageId' to category '$category'.");
-					}
-					if($viewSource->addViewMessage($id, $messageId) === null)
-					{
-						throw new CDbException("The view with ID '$id' could not be associated with the source message with ID '$messageId'.");
-					}
-				}
+				
+				$viewSource->deleteViewMessages($view['id'], $unconfirmedMessages);
+	
+				// Replace messages with respective translations in source and write to compiled path.
+				file_put_contents($compiledPath, str_replace($messages[0], $messages[2], $subject));
+				@chmod($compiledPath, $filePermission);
+
+				// Update the created time for the view.
+				$viewSource->updateViewCreated($view['id'], $messageSource->getLanguageId($language, true));
 			}
-			
-			// Delete any view messages not in this view
-			$viewSource->deleteViewMessages($id, $viewMessages);
-			// Update the created time for the view.
-			$viewSource->updateViewCreated($id, $language);
 			if(isset($transaction))
 				$transaction->commit();
 		}

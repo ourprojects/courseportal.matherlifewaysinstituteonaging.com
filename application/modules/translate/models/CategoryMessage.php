@@ -60,8 +60,12 @@ class CategoryMessage extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
+			// Attributes
 			'message_id' => TranslateModule::t('Message ID'),
 			'category_id' => TranslateModule::t('Category ID'),
+			// Relations
+			'messageSource' => TranslateModule::t('Message Source'),
+			'category' => TranslateModule::t('Category'),
 		);
 	}
 
@@ -75,8 +79,9 @@ class CategoryMessage extends CActiveRecord
 		{
 			$dataProviderConfig['criteria'] = new CDbCriteria;
 
-			$dataProviderConfig['criteria']->compare($this->getTableAlias(false, false).'.message_id', $this->message_id);
-			$dataProviderConfig['criteria']->compare($this->getTableAlias(false, false).'.category_id', $this->category_id);
+			$dataProviderConfig['criteria']
+			->compare($this->getTableAlias(false, false).'.message_id', $this->message_id)
+			->compare($this->getTableAlias(false, false).'.category_id', $this->category_id);
 		}
 
 		return new CActiveDataProvider($this, $dataProviderConfig);

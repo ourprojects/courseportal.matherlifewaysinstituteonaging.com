@@ -98,41 +98,66 @@ class MessageSourceController extends TController
 	{
 		if(isset($_GET['ajax']))
 		{
-			switch($_GET['ajax'])
-			{
-				case 'messageSource-detailed-grid':
-					$this->renderPartial('_detailed_grid', array('model' => new MessageSource('search')));
-					break;
-			}
+			$this->actionGrid($id, $_GET['ajax']);
 		}
 	}
 
 	public function actionView($id)
 	{
-		$this->render('view', array('source' => MessageSource::model()->findByPk($id)));
+		$this->render('view', array('messageSource' => MessageSource::model()->findByPk($id)));
 	}
 
 	public function actionAjaxView($id)
 	{
 		if(isset($_GET['ajax']))
 		{
-			switch($_GET['ajax'])
-			{
-				case 'message-grid':
-					$model = new Message('search');
-					$model->setAttribute('id', $id);
-					$this->renderPartial('../message/_grid', array('model' => $model));
-					break;
-				case 'messageSource-accepted-translations-grid':
-					$model = new AcceptedLanguage('search');
-					$this->renderPartial('_missing_accepted_translation_grid', array('model' => $model->missingTranslations($id)));
-					break;
-				case 'messageSource-other-translations-grid':
-					$model = new Message('search');
-					$this->renderPartial('_missing_other_translation_grid', array('model' => $model->missingTranslations($id)));
-					break;
-			}
+			$this->actionGrid($id, $_GET['ajax']);
 		}
+	}
+	
+	public function actionGrid($id, $name)
+	{
+		switch($name)
+		{
+			case 'category-grid':
+				$model = new Category('search');
+				$model->with(array('messageSources' => array('condition' => 'messageSources.id=:id', 'params' => array(':id' => $id))))->together()->getDbCriteria()->group = 't.id';
+				$gridPath = '../category/_grid';
+				break;
+			case 'messageSource-grid':
+				$model = new MessageSource('search');
+				$model->setAttribute('id', $id);
+				$gridPath = '_grid';
+				break;
+			case 'message-grid':
+				$model = new Message('search');
+				$model->with(array('source' => array('condition' => 'source.id=:id', 'params' => array(':id' => $id))))->together()->getDbCriteria()->group = 't.id, t.language_id';
+				$gridPath = '../message/_grid';
+				break;
+			case 'language-grid':
+				$model = new Language('search');
+				$model->with(array('messageSources' => array('condition' => 'messageSources.id=:id', 'params' => array(':id' => $id))))->together()->getDbCriteria()->group = 't.id';
+				$gridPath = '../language/_grid';
+				break;
+			case 'route-grid':
+				$model = new Route('search');
+				$model->with(array('viewSources.messageSources' => array('condition' => 'messageSources.id=:id', 'params' => array(':id' => $id))))->together()->getDbCriteria()->group = 't.id';
+				$gridPath = '../route/_grid';
+				break;
+			case 'viewSource-grid':
+				$model = new ViewSource('search');
+				$model->with(array('messageSources' => array('condition' => 'messageSources.id=:id', 'params' => array(':id' => $id))))->together()->getDbCriteria()->group = 't.id';
+				$gridPath = '../viewSource/_grid';
+				break;
+			case 'view-grid':
+				$model = new View('search');
+				$model->with(array('sourceView.messageSources' => array('condition' => 'messageSources.id=:id', 'params' => array(':id' => $id))))->together()->getDbCriteria()->group = 't.id, t.language_id';
+				$gridPath = '../view/_grid';
+				break;
+			default:
+				return;
+		}
+		$this->renderPartial($gridPath, array('model' => $model));
 	}
 
 	/**
@@ -159,9 +184,14 @@ class MessageSourceController extends TController
 		}
 
 		if(Yii::app()->getRequest()->getIsAjaxRequest())
+		{
 			echo TranslateModule::t($message);
+		}
 		else
+		{
+			Yii::app()->getUser()->setFlash(TranslateModule::t($message));
 			$this->redirect(Yii::app()->getRequest()->getUrlReferrer());
+		}
 	}
 
 }

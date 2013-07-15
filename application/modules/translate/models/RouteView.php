@@ -69,8 +69,12 @@ class RouteView extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
+			// Attributes
 			'route_id' => TranslateModule::t('Route ID'),
 			'view_id' => TranslateModule::t('View ID'),
+			// Relations
+			'route' => TranslateModule::t('Route'),
+			'viewSource' => TranslateModule::t('View Source'),
 		);
 	}
 
@@ -84,8 +88,9 @@ class RouteView extends CActiveRecord
 		{
 			$dataProviderConfig['criteria'] = new CDbCriteria;
 
-			$dataProviderConfig['criteria']->compare($this->getTableAlias(false, false).'.route_id', $this->route_id);
-			$dataProviderConfig['criteria']->compare($this->getTableAlias(false, false).'.view_id', $this->view_id);
+			$dataProviderConfig['criteria']
+			->compare($this->getTableAlias(false, false).'.route_id', $this->route_id)
+			->compare($this->getTableAlias(false, false).'.view_id', $this->view_id);
 		}
 
 		return new CActiveDataProvider($this, $dataProviderConfig);

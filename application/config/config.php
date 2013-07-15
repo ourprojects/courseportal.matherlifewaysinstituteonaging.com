@@ -37,11 +37,11 @@ return array(
 		
 		// configured modules
 		'modules' => array(
-			'gii'=>array(
+			/*'gii'=>array(
 		        'class'=>'system.gii.GiiModule',
 		        'password'=>'abcd',
 		        'ipFilters'=>array('*'),
-		    ),
+		    ),*/
 			'phpbb',
 			'translate',
 			'surveyor',
@@ -150,10 +150,8 @@ return array(
 				'forumDb' => require('dbPhpBB.php'),
 				
 				'urlManager' => array(
-						'class'=>'UrlManager',
 						'urlFormat' => 'path',
 						'showScriptName' => false,
-						'translateComponentId' => 'translate',
 						'rules' => require('routes.php'),
 				),
 				

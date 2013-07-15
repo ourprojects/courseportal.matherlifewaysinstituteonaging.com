@@ -67,6 +67,11 @@ class MPTranslate extends CApplicationComponent
     public $managementActionFilters = array();
     
     /**
+     * @var string The name of the variable to use for saving and retrieving language settings for a client.
+     */
+    public $languageVarName = 'language';
+    
+    /**
      * @var integer time in seconds to store language setting in cookie. Defaults to 63072000 seconds (2 Years).
      */
     public $cookieExpire = 63072000;
@@ -80,11 +85,6 @@ class MPTranslate extends CApplicationComponent
      * @var bool Whether to use database transactions when updating the database.
      */
     public $useTransaction = true;
-    
-    /**
-     * @var string The name of the variable to use for saving and retrieving language settings for a client.
-     */
-    public $languageRequestVarName = 'language';
     
     /**
      * @var bool Use generic locales. Current language and source language will be stripped to the language portion of their respective IDs.
@@ -158,95 +158,6 @@ class MPTranslate extends CApplicationComponent
 	}
 	
 	/**
-	 * Processes the current request variables for a language setting and calls {@link MPTranslate::setLanguage()} with the language settings found.
-	 * 
-	 * The language setting is determined as follows in the order of these rules,
-	 * as soon as the language setting is determined no futher rules are considered:
-	 * 1. Check for a post variable with name {@see MPTranslate::$languageRequestVarName}.
-	 * 2. Check for a get variable with name {@see MPTranslate::$languageRequestVarName}.
-	 * 	  The $_GET and $_REQUEST global variables with name {@see MPTranslate::$languageRequestVarName} will
-	 * 	  be unset if this rule is matched.
-	 * 3. Check for a session variable with name {@see MPTranslate::$languageRequestVarName}.
-	 * 4. Check for a cookie variable with name {@see MPTranslate::$languageRequestVarName}.
-	 * 5. Get the client's preferred language setting if available.
-	 * 6. Use the applications source language.
-	 * 
-	 * Next the language setting is processed in order as follows:
-	 * 
-	 * 1. If {@see MPTranslate::$genericLocale} is set to true then the language settings will be stripped to its language portion only.
-	 * 
-	 * 2. If {@see MPTranslate::$forceAcceptedLanguage} is set to true and the language settings is not considered to be an acceptable language
-	 *    by {@see MPTranslate::isAcceptedLanguage()} the the language setting will be discarded and the system's default language will be used.
-	 * 
-	 * 3. If the language setting is not part of the current request URI (the first path segment immediately following the host name) 
-	 *    the current URI will be updated and the client will be redirected to this new URI.
-	 *
-	 * 4. Finally, {@see MPTranslate::setLanguage()} is called using the language setting as the method's parameter.
-	 * 
-	 * @param string $route The current requested route.
-	 */
-	public function processRequest($route) 
-	{
-		// Determine request's preferred language by:
-		
-		// Post parameter
-		if(isset($_POST[$this->languageRequestVarName]))
-		{
-			$language = $_POST[$this->languageRequestVarName];
-		} 
-		// Get parameter
-		else if(isset($_GET[$this->languageRequestVarName])) 
-		{
-			$language = $_GET[$this->languageRequestVarName];
-			unset($_GET[$this->languageRequestVarName]);
-			unset($_REQUEST[$this->languageRequestVarName]);
-		}
-		// Session
-		else if(Yii::app()->getUser()->hasState($this->languageRequestVarName)) 
-		{
-			$language = Yii::app()->getUser()->getState($this->languageRequestVarName);
-		}
-		// Cookie
-		else if(Yii::app()->getRequest()->getCookies()->contains($this->languageRequestVarName)) 
-		{
-			$language = Yii::app()->getRequest()->getCookies()->itemAt($this->languageRequestVarName)->value;
-		}
-		// Client's preferred language setting
-		else if(Yii::app()->getRequest()->getPreferredLanguage() !== false) 
-		{
-			$language = Yii::app()->getRequest()->getPreferredLanguage();
-		} 
-		// Application's default language
-		else
-		{
-			$language = Yii::app()->getLanguage();
-		}
-		
-		// Process language:
-		
-		// Canonicalize the language if we don't care about the locale portion
-		if($this->genericLocale)
-		{
-			$language = Yii::app()->getLocale()->getLanguageID($language);
-		}
-
-		// If we should enforce accepted languages only and the language is not acceptable set it to the application's default language. 
-		if($this->forceAcceptedLanguage && !$this->isAcceptedLanguage($language)) 
-		{
-			$language = $this->genericLocale ? Yii::app()->getLocale()->getLanguageID(Yii::app()->getLanguage()) : Yii::app()->getLanguage();
-		}
-
-		// If the language part of the requested url is missing redirect to the same url with the language part inserted.
-		if(preg_match('/^\w+/', Yii::app()->getRequest()->getPathinfo(), $matches) !== 1 || $matches[0] !== $language)
-		{
-			Yii::app()->getRequest()->redirect(Yii::app()->createUrl($route, array($this->languageRequestVarName => $language)));
-		}
-		
-		// Set application's current language to derived language.
-		$this->setLanguage($language);
-	}
-	
-	/**
 	 * Performs the following actions with the langauge parameter:
 	 * Sets the application's current language.
 	 * Sets php's current language.
@@ -259,8 +170,8 @@ class MPTranslate extends CApplicationComponent
 	{
 		Yii::app()->setLanguage($language);
 		setLocale(LC_ALL, $language.'.'.Yii::app()->charset);
-		Yii::app()->getUser()->setState($this->languageRequestVarName, $language);
-		Yii::app()->getRequest()->getCookies()->add($this->languageRequestVarName, new CHttpCookie($this->languageRequestVarName, $language, array('expire' => time() + $this->cookieExpire)));
+		Yii::app()->getUser()->setState($this->languageVarName, $language);
+		Yii::app()->getRequest()->getCookies()->add($this->languageVarName, new CHttpCookie($this->languageVarName, $language, array('expire' => time() + $this->cookieExpire)));
 	}
 	
 	/**
@@ -616,7 +527,7 @@ class MPTranslate extends CApplicationComponent
      * @param string $message The message to be translated
      * @param string $language The language the message should be translate to
      * @param bool $useTransaction If true a transaction will be used when updating the database entries for this category, message, language, translation.
-     * @throws CDbException If a database update query fails
+     * @throws CException If the source message, source message category, language, or translation could not be added to the message source.
      * @return string The translation for the message or the message it self if either the translation failed or the target language was the same as source language. 
      */
     public function translate($category, $message, $language, $useTransaction = true)
@@ -639,25 +550,18 @@ class MPTranslate extends CApplicationComponent
 		    	
 		    	try
 		    	{
-		    		$translation = $source->getTranslationFromDb($category, $message, $language);
-		    		 
-		    		// If the source message does not exists add it.
+		    		$translation = $source->getTranslation($category, $message, $language, true);
+		    		
 		    		if($translation['id'] === null)
 		    		{
-		    			$translation['id'] = $source->addSourceMessage($message);
-		    	
-		    			if($translation['id'] === null)
-		    			{
-		    				throw new CDbException("Message '$message' could not be inserted into the database table '{$source->sourceMessageTable}'");
-		    			}
+		    			throw new CException("Source message '$message' could not be found or added to the message source.");
 		    		}
-		    		 
-		    		// If the category does not exist or has not been associated with the source message add it and/or associate it with the source message.
+		    		
 		    		if($translation['category_id'] === null)
 		    		{
-						$source->addMessageToCategory($category, $translation['id']);
+		    			throw new CException("The category '$category' was not found or could not be associated with the source message '$message'.");
 		    		}
-		    		 
+		    		
 		    		// If the translation of the source message does not exist use google translate, if autotranslate is enabled, and add the translation.
 		    		// Otherwise if autotranslate is disabled or google translate was not successful add the source message to the missing messages.
 		    		if($translation['translation'] === null)
@@ -686,24 +590,24 @@ class MPTranslate extends CApplicationComponent
 
 		    					$translation['translation'] = str_replace($escapedYiiParams, $yiiParams, $translation['translation']);
 		    	
-		    					if($source->addTranslation($translation['id'], $language, $translation['translation']) !== null)
+		    					if($source->addTranslation($translation['id'], $language, $translation['translation'], true) !== null)
 		    					{
 		    						$message = &$translation['translation'];
 		    					}
 		    					else
 		    					{
-		    						throw new CDbException('Translation "'.$translation['translation'].'" could not be added to message table', CLogger::LEVEL_ERROR, self::ID);
+		    						throw new CException("Translation '{$translation['translation']}' could not be added to the message source");
 		    					}
 		    				}
 		    				else
 		    				{
-		    					Yii::log('Message "'.$message.'" could not be translated to "'.$language.'" by Google translate.', CLogger::LEVEL_ERROR, self::ID);
+		    					Yii::log("Message '$message' could not be translated to '$language' by Google translate.", CLogger::LEVEL_ERROR, self::ID);
 		    					$this->addMissingTranslation($translation['id'], $category, $message, $language);
 		    				}
 		    			}
 		    			else
 		    			{
-		    				Yii::log('A translation for message "'.$message.'" to "'.$language.'" could not be found and automatic translations are disabled.', CLogger::LEVEL_WARNING, self::ID);
+		    				Yii::log("A translation for message '$message' to '$language' could not be found and automatic translations are disabled.", CLogger::LEVEL_WARNING, self::ID);
 		    				$this->addMissingTranslation($translation['id'], $category, $message, $language);
 		    			}
 		    		}

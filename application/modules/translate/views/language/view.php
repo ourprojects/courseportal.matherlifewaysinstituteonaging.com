@@ -1,44 +1,45 @@
 <?php $this->breadcrumbs = array(TranslateModule::t('Languages') => $this->createUrl('index'), TranslateModule::t('Language Details')); ?>
 <h1>
-<?php echo TranslateModule::t('Language:')." $language->id - ".TranslateModule::translator()->getLanguageDisplayName($language->id); ?>
+	<?php echo TranslateModule::t('Language').'&nbsp;-&nbsp;'.$language->getName(); ?>
 </h1>
 <div id="single-column">
-	<div id="translations" class="box-white">
-		<h2><?php echo TranslateModule::translator()->getLanguageDisplayName($language->id) . '&nbsp;' . TranslateModule::t('Translations: '); ?></h2>
-		<?php
-		$model = new Message('search');
-		$model->setAttribute('language', $language->id);
-		$this->renderPartial('../message/_grid', array('model' => $model)); 
-		?>
+	<div id="details" class="box-white">
+		<?php $this->renderPartial('_details', array('model' => $language)); ?>
 	</div>
-	<div id="missingTranslations" class="box-white">
+	<div id="categories" class="box-white">
 		<h2>
-		<?php 
-		echo TranslateModule::t('Messages not yet translated to') . '&nbsp;' . TranslateModule::translator()->getLanguageDisplayName($language->id) . ':'; 
-		?>
+			<?php echo TranslateModule::t('Message Categories'); ?>
 		</h2>
-		<?php
-		$model = MessageSource::model();
-		// @ TODO this is very inefficient. Need to find a better way.
-		$dataProvider = $model->missingTranslations($language->id)->search();
-		$this->renderPartial('_missing_translations_grid', array('languageId' => $language->id, 'model' => $model->missingTranslations($language->id)));
-		
-    	if(TranslateModule::translator()->canUseGoogleTranslate() && $dataProvider->getItemCount() > 0) {
-			echo CHtml::ajaxButton(
-					TranslateModule::t('Google Translate Missing'),
-					$this->createUrl('messageSource/translateMissing'),
-					array(
-						'data' => array(
-							'id' => $language->id
-						),
-						'beforeSend' => 'js:function(jqXHR, settings){$("#missingAcceptedLanguageTranslations").addClass("loading");}',
-						'complete' => 'js:function(jqXHR, textStatus){$("#missingAcceptedLanguageTranslations").removeClass("loading");}',
-						'success' => 'js:function(data){$.fn.yiiGridView.update("missing-grid");$.fn.yiiGridView.update("translation-grid");}',
-						'error' => 'js:function(xhr){alert(xhr.responseText);}'
-					),
-					array('id' => 'missingAcceptedLanguageTranslations')
-			);
-    	}
-		?>
+		<?php $this->actionGrid($language->id, 'category-grid'); ?>
+	</div>
+	<div id="messageSources" class="box-white">
+		<h2>
+			<?php echo TranslateModule::t('Source Messages'); ?>
+		</h2>
+		<?php $this->actionGrid($language->id, 'messageSource-grid'); ?>
+	</div>
+	<div id="messages" class="box-white">
+		<h2>
+			<?php echo TranslateModule::t('Translated Messages'); ?>
+		</h2>
+		<?php $this->actionGrid($language->id, 'message-grid'); ?>
+	</div>
+	<div id="routes" class="box-white">
+		<h2>
+			<?php echo TranslateModule::t('Routes'); ?>
+		</h2>
+		<?php $this->actionGrid($language->id, 'route-grid'); ?>
+	</div>
+	<div id="sourceViews" class="box-white">
+		<h2>
+			<?php echo TranslateModule::t('Source Views'); ?>
+		</h2>
+		<?php $this->actionGrid($language->id, 'viewSource-grid'); ?>
+	</div>
+	<div id="views" class="box-white">
+		<h2>
+			<?php echo TranslateModule::t('Translated Views'); ?>
+		</h2>
+		<?php $this->actionGrid($language->id, 'view-grid'); ?>
 	</div>
 </div>

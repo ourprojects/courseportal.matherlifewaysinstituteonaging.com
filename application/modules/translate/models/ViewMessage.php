@@ -68,8 +68,12 @@ class ViewMessage extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
+			// Attributes
 			'message_id' => TranslateModule::t('Message ID'),
 			'view_id' => TranslateModule::t('View ID'),
+			// Relations
+			'messageSource' => TranslateModule::t('Message Source'),
+			'viewSource' => TranslateModule::t('View Source'),
 		);
 	}
 
@@ -83,8 +87,9 @@ class ViewMessage extends CActiveRecord
 		{
 			$dataProviderConfig['criteria'] = new CDbCriteria;
 
-			$dataProviderConfig['criteria']->compare($this->getTableAlias(false, false).'.message_id', $this->message_id);
-			$dataProviderConfig['criteria']->compare($this->getTableAlias(false, false).'.view_id', $this->view_id);
+			$dataProviderConfig['criteria']
+			->compare($this->getTableAlias(false, false).'.message_id', $this->message_id)
+			->compare($this->getTableAlias(false, false).'.view_id', $this->view_id);
 		}
 
 		return new CActiveDataProvider($this, $dataProviderConfig);

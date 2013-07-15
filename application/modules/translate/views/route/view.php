@@ -1,29 +1,45 @@
 <?php $this->breadcrumbs = array(TranslateModule::t('Routes') => $this->createUrl('index'), TranslateModule::t('Route Details')); ?>
 <h1>
-<?php echo TranslateModule::t('Route ID').'&nbsp;'.$route->id; ?>
+	<?php echo TranslateModule::t('Route').'&nbsp;'.$route->id; ?>
 </h1>
 <div id="single-column">
 	<div id="details" class="box-white">
-		<h2><?php echo TranslateModule::t('Route Details:'); ?></h2>
-		<div id="id">
-			<h2><?php echo $route->getAttributeLabel('id'); ?></h2>
-			<p>
-				<?php echo $route->id; ?>
-			</p>
-		</div>
-		<div id="route">
-			<h2><?php echo $route->getAttributeLabel('route'); ?></h2>
-			<p>
-				<?php echo $route->route; ?>
-			</p>
-		</div>
+		<?php $this->renderPartial('_details', array('model' => $route)); ?>
 	</div>
-	<div id="routes" class="box-white">
-		<h2><?php echo TranslateModule::t('Views:'); ?></h2>
-		<?php
-		$model = new ViewSource('search');
-		$model->with(array('routes' => array('together' => true, 'condition' => 'routes.id=:id', 'params' => array(':id' => $route->id))));
-		$this->renderPartial('../view/_detailed_grid', array('model' => $model)); 
-		?>
+	<div id="categories" class="box-white">
+		<h2>
+			<?php echo TranslateModule::t('Message Categories'); ?>
+		</h2>
+		<?php $this->actionGrid($route->id, 'category-grid'); ?>
+	</div>
+	<div id="messageSources" class="box-white">
+		<h2>
+			<?php echo TranslateModule::t('Source Messages'); ?>
+		</h2>
+		<?php $this->actionGrid($route->id, 'messageSource-grid'); ?>
+	</div>
+	<div id="messages" class="box-white">
+		<h2>
+			<?php echo TranslateModule::t('Translated Messages'); ?>
+		</h2>
+		<?php $this->actionGrid($route->id, 'message-grid'); ?>
+	</div>
+	<div id="languages" class="box-white">
+		<h2>
+			<?php echo TranslateModule::t('Languages'); ?>
+		</h2>
+		<?php $this->actionGrid($route->id, 'language-grid'); ?>
+	</div>
+	<div id="sourceViews" class="box-white">
+		<h2>
+			<?php echo TranslateModule::t('Source Views'); ?>
+		</h2>
+		<?php $this->actionGrid($route->id, 'viewSource-grid'); ?>
+	</div>
+	<div id="views" class="box-white">
+		<h2>
+			<?php echo TranslateModule::t('Translated Views'); ?>
+		</h2>
+		<?php $this->actionGrid($route->id, 'view-grid'); ?>
 	</div>
 </div>

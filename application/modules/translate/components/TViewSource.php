@@ -89,15 +89,17 @@ class TViewSource extends CApplicationComponent
 	
 	protected function loadViewsFromDb($route, $language)
 	{
+		$messageSource = TranslateModule::translator()->getMessageSource();
 		$cmd = $this->getDbConnection()->createCommand()
 				->select(array('vst.path AS source_path', 'vt.path AS view_path'))
-				->from(array($this->routeTable.' rt'))
+				->from($this->routeTable.' rt')
 				->join($this->routeViewTable.' rvt', 'rt.id=rvt.route_id')
 				->join($this->viewSourceTable.' vst', 'rvt.view_id=vst.id')
 				->join($this->viewTable.' vt', 'vst.id=vt.id')
+				->join($messageSource->languageTable.' lt', array('and', 'vt.language_id=lt.id', 'lt.code=:language'), array(':language' => $language))
 				->leftJoin($this->viewMessageTable.' vmt', 'vst.id=vmt.view_id')
-				->leftJoin(TranslateModule::translator()->getMessageSource()->translatedMessageTable.' tmt', array('and', 'vmt.message_id=tmt.id', 'tmt.language=vt.language'))
-				->where(array('and', 'rt.route=:route', 'vt.language=:language', array('or', 'tmt.last_modified IS NULL', 'tmt.last_modified < vt.created')), array(':route' => $route, ':language' => $language))
+				->leftJoin($messageSource->translatedMessageTable.' tmt', array('and', 'vmt.message_id=tmt.id', 'tmt.language_id=vt.language_id'))
+				->where(array('and', 'rt.route=:route', array('or', 'tmt.last_modified IS NULL', 'tmt.last_modified < vt.created')), array(':route' => $route))
 				->group('vst.id');
 
 		$views = array();
@@ -110,97 +112,107 @@ class TViewSource extends CApplicationComponent
 		return $views;
 	}
 
-	public function getViewMessages($viewId)
+	public function addSourceView($path)
 	{
-		return $this->getDbConnection()->createCommand()
-				->select(array('smt.id AS id', 'smt.message AS message'))
-				->from(TranslateModule::translator()->getMessageSource()->sourceMessageTable.' smt')
-				->join($this->viewMessageTable.' vmt', 'vmt.message_id=smt.id')
-				->where('vmt.view_id=:view_id', array(':view_id' => $viewId))
-			->queryAll();
-	}
-	
-	public function getView($route, $sourcePath, $language)
-	{
-		return $this->getDbConnection()->createCommand()
-				->select(array('MIN(rt.id) AS route_id', 'vst.id AS view_id', 'vt.path AS path', 'vmt.message_id AS message_id', 'MAX(COALESCE(tmt.last_modified, \'9999-99-99 99:99:99\')) AS last_modified'))
-				->from($this->viewSourceTable.' vst')
-				->leftJoin($this->routeViewTable.' rvt', 'vst.id=rvt.view_id')
-				->leftJoin($this->routeTable.' rt', array('and', 'rvt.route_id=rt.id', 'rt.route=:route'), array(':route' => $route))
-				->leftJoin($this->viewTable.' vt', array('and', 'vst.id=vt.id', 'vt.language=:language'), array(':language' => $language))
-				->leftJoin($this->viewMessageTable.' vmt', 'vst.id=vmt.view_id')
-				->leftJoin(TranslateModule::translator()->getMessageSource()->translatedMessageTable.' tmt', array('and', 'vmt.message_id=tmt.id', 'tmt.language=vt.language'))
-				->where('vst.path=:source_path', array(':source_path' => $sourcePath))
-			->queryRow();
-	}
-	
-	public function getViewId($sourcePath, $viewPath)
-	{
-		return $this->getDbConnection()->createCommand()
-				->select('vst.id AS id')
-				->from($this->viewSourceTable.' vst')
-				->join($this->viewTable.' vt', 'vst.id=vt.id')
-				->where(array('and', 'vst.path=:source_path', 'vt.path=:compiled_path'), array(':source_path' => $sourcePath, ':compiled_path' => $viewPath))
-			->queryScalar();
-	}
-	
-	public function getRouteId($route)
-	{
-		return $this->getDbConnection()->createCommand()
-					->select('rt.id AS id')
-					->from($this->routeTable.' rt')
-					->where('rt.route=:route', array(':route' => $route))
-				->queryScalar();
-	}
-
-	public function addView($id, $path, $language)
-	{
-		$args = array('id' => $id, 'path' => $path, 'language' => $language);
-		if($this->getDbConnection()->createCommand()->insert($this->viewTable, $args) > 0)
-			return $args;
-		return null;
-	}
-
-	public function addViewSource($path)
-	{
-		if($this->getDbConnection()->createCommand()->insert($this->viewSourceTable, array('path' => $path)) > 0)
-			return $this->getDbConnection()->getLastInsertID($this->viewSourceTable);
-		return null;
+		return $this->getDbConnection()->createCommand()->insert($this->viewSourceTable, array('path' => $path)) > 0
+				? $this->getDbConnection()->getLastInsertID($this->viewSourceTable)
+				: null;
 	}
 	
 	public function addRoute($route)
 	{
-		if($this->getDbConnection()->createCommand()->insert($this->routeTable, array('route' => $route)) > 0)
-			return $this->getDbConnection()->getLastInsertID($this->routeTable);
-		return null;
+		return $this->getDbConnection()->createCommand()->insert($this->routeTable, array('route' => $route)) > 0
+				? $this->getDbConnection()->getLastInsertID($this->routeTable)
+				: null;
 	}
 	
-	public function addViewRoute($routeId, $viewId)
+	public function addViewToRoute($viewId, $route, $createRouteIfNotExists = false)
 	{
-		$args = array('route_id' => $routeId, 'view_id' => $viewId);
-		if($this->getDbConnection()->createCommand()->insert($this->routeViewTable, $args) > 0)
-			return $args;
-		return null;
+		return (($routeId = $this->getRouteId($route, $createRouteIfNotExists)) !== false
+					&& $this->getDbConnection()->createCommand()->insert($this->routeViewTable, array('route_id' => $routeId , 'view_id' => $viewId)) > 0)
+				? $routeId
+				: null;
 	}
 
-	public function addViewMessage($viewId, $messageId)
+	public function addSourceMessageToView($viewId, $message, $createMessageIfNotExists = false)
 	{
-		$args = array('view_id' => $viewId, 'message_id' => $messageId);
-		if($this->getDbConnection()->createCommand()->insert($this->viewMessageTable, $args) > 0)
-			return $args;
-		return null;
+		return (($messageId = TranslateModule::translator()->getMessageSource()->getSourceMessageId($message, $createMessageIfNotExists)) !== false
+					&& $this->getDbConnection()->createCommand()->insert($this->viewMessageTable, array('view_id' => $viewId, 'message_id' => $messageId)) > 0)
+				? $messageId
+				: null;
+	}
+	
+	public function addView($sourceViewId, $path, $language, $createLanguageIfNotExists = false)
+	{
+		return (($languageId = TranslateModule::translator()->getMessageSource()->getLanguageId($language, $createLanguageIfNotExists)) !== false
+					&& $this->getDbConnection()->createCommand()->insert($this->viewTable, array('id' => $sourceViewId, 'path' => $path, 'language_id' => $languageId)) > 0)
+				? $languageId
+				: null;
+	}
+	
+	public function getRouteId($route, $createIfNotExists = false)
+	{
+		$routeId = $this->getDbConnection()->createCommand()
+							->select('rt.id AS id')
+							->from($this->routeTable.' rt')
+							->where('rt.route=:route', array(':route' => $route))
+					->queryScalar();
+		
+		return $routeId === false && $createIfNotExists && ($routeId = $this->addRoute($route)) === null ? false : $routeId;
+	}
+	
+	public function getViewMessages($viewId)
+	{
+		return $this->getDbConnection()->createCommand()
+						->select(array('smt.id AS id', 'smt.message AS message'))
+						->from(TranslateModule::translator()->getMessageSource()->sourceMessageTable.' smt')
+						->join($this->viewMessageTable.' vmt', 'vmt.message_id=smt.id')
+						->where('vmt.view_id=:view_id', array(':view_id' => $viewId))
+					->queryAll();
+	}
+	
+	public function getView($route, $sourcePath, $language, $createSourceViewIfNotExists = false)
+	{
+		$messageSource = TranslateModule::translator()->getMessageSource();
+		$view = $this->getDbConnection()->createCommand()
+						->select(array('MIN(rt.id) AS route_id', 'vst.id AS id', 'vt.path AS path', 'MAX(COALESCE(tmt.last_modified, \'9999-99-99 99:99:99\')) AS last_modified'))
+						->from($this->viewSourceTable.' vst')
+						->leftJoin($this->routeViewTable.' rvt', 'vst.id=rvt.view_id')
+						->leftJoin($this->routeTable.' rt', array('and', 'rvt.route_id=rt.id', 'rt.route=:route'), array(':route' => $route))
+						->leftJoin($this->viewTable.' vt', 'vst.id=vt.id')
+						->join($messageSource->languageTable.' lt', array('and', 'vt.language_id=lt.id', 'lt.code=:language'), array(':language' => $language))
+						->leftJoin($this->viewMessageTable.' vmt', 'vst.id=vmt.view_id')
+						->leftJoin($messageSource->translatedMessageTable.' tmt', array('and', 'vmt.message_id=tmt.id', 'tmt.language_id=vt.language_id'))
+						->where('vst.path=:source_path', array(':source_path' => $sourcePath))
+				->queryRow();
+	
+		if($createSourceViewIfNotExists)
+		{
+			if($view['id'] === null)
+			{
+				if(($view['id'] = $this->addSourceView($sourcePath)) !== null)
+				{
+					$view['route_id'] = $this->addViewToRoute($view['id'], $route, true);
+				}
+			}
+			else if($view['route_id'] === null)
+			{
+				$view['route_id'] = $this->addViewToRoute($view['id'], $route, true);
+			}
+			
+		}
+	
+		return $view;
 	}
 	
 	public function deleteViewMessages($viewId, $messageIds)
 	{
-		if(empty($messageIds))
-			return 0;
-		return $this->getDbConnection()->createCommand()->delete($this->viewMessageTable, array('and', 'view_id=:view_id', array('in', 'message_id', $messageIds)), array(':view_id' => $viewId));
+		return empty($messageIds) ? 0 : $this->getDbConnection()->createCommand()->delete($this->viewMessageTable, array('and', 'view_id=:view_id', array('in', 'message_id', $messageIds)), array(':view_id' => $viewId));
 	}
 
-	public function updateViewCreated($viewId, $language, $created = null)
+	public function updateViewCreated($viewId, $languageId, $created = null)
 	{
-		return $this->getDbConnection()->createCommand()->update($this->viewTable, array('created' => $created === null ? date('Y-m-d H:i:s') : $created), array('and', 'id=:id', 'language=:language'), array(':id' => $viewId, ':language' => $language));
+		return $this->getDbConnection()->createCommand()->update($this->viewTable, array('created' => $created === null ? date('Y-m-d H:i:s') : $created), array('and', 'id=:id', 'language_id=:language_id'), array(':id' => $viewId, ':language_id' => $languageId));
 	}
 
 	/**

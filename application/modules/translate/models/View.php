@@ -44,6 +44,7 @@ class View extends CActiveRecord
 	public function rules()
 	{
 		return array(
+			array('path', 'filter', 'filter' => 'realpath'),
 			array('id, language, path', 'required', 'except' => 'search'),
 			array('created', 'date', 'format' => 'yyyy-M-d H:m:s'),
 			array('path', 'length', 'max' => 255),
@@ -71,16 +72,19 @@ class View extends CActiveRecord
 	public function relations()
 	{
 		return array(
-			'acceptedLanguage' => array(self::BELONGS_TO, 'AcceptedLanguage', 'language', 'joinType' => 'INNER JOIN'),
-			'viewSource' => array(self::BELONGS_TO, 'ViewSource', 'id'),
-			// @ TODO
-			'translationCount' => array(
-					self::STAT,
-					'MessageSource',
-					ViewMessage::model()->tableName().'(view_id, message_id)',
-					'join' =>
-					'INNER JOIN '.View::model()->tableName().' v ON (v.id='.ViewMessage::model()->tableName().'.view_id)'.
-					'INNER JOIN '.Message::model()->tableName().' m ON ('.$this->getTableAlias(false, false).'.id=m.id AND v.language=m.language)'),
+			'sourceView' => array(self::BELONGS_TO, 'ViewSource', 'id'),
+			'language' => array(self::BELONGS_TO, 'Language', 'language_id'),
+			'acceptedLanguage' => array(self::BELONGS_TO, 'AcceptedLanguage', 'language_id'),
+			'viewMessages' => array(self::HAS_MANY, 'ViewMessage', 'view_id'),
+			'messages' => array(self::HAS_MANY, 'Message', array('message_id' => 'id'), 'through' => 'viewMessages', 'on' => $this->getTableAlias(false, false).'.language_id=messages.language_id'),
+		);
+	}
+	
+	public function scopes()
+	{
+		return array(
+				'isAcceptedLanguage' => array('with' => array('acceptedLanguage' => array('joinType' => 'INNER JOIN'))),
+				'isOtherLanguage' => array('with' => array('acceptedLanguage' => array('joinType' => 'LEFT JOIN')), 'condition' => 'acceptedLanguage.id IS NULL')
 		);
 	}
 	
@@ -104,11 +108,19 @@ class View extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
+			// Attributes
 			'id' => TranslateModule::t('ID'),
-			'path' => TranslateModule::t('Path'),
-			'relativePath' => TranslateModule::t('Path (relative to app base path)'),
+			'path' => TranslateModule::t('Compiled Path'),
+			// Relations
+			'sourceView' => TranslateModule::t('Source'),
 			'language' => TranslateModule::t('Language'),
-			'created' => TranslateModule::t('Created'),
+			'acceptedLanguage' => TranslateModule::t('Accepted Language'),
+			'viewMessages' => TranslateModule::t('View Messages'),
+			'messageSources' => TranslateModule::t('Messages'),
+			'messageSourceCount' => TranslateModule::t('Message Count'),
+			'messages' => TranslateModule::t('Translations'),
+			// Virtual Attributes
+			'relativePath' => TranslateModule::t('Relative Path'),
 		);
 	}
 
@@ -122,10 +134,11 @@ class View extends CActiveRecord
 		{
 			$dataProviderConfig['criteria'] = new CDbCriteria;
 
-			$dataProviderConfig['criteria']->compare($this->getTableAlias(false, false).'.id', $this->id);
-			$dataProviderConfig['criteria']->compare($this->getTableAlias(false, false).'.path', $this->path, true);
-			$dataProviderConfig['criteria']->compare($this->getTableAlias(false, false).'.language', $this->language, true);
-			$dataProviderConfig['criteria']->compare($this->getTableAlias(false, false).'.created', $this->created, true);
+			$dataProviderConfig['criteria']
+			->compare($this->getTableAlias(false, false).'.id', $this->id)
+			->compare($this->getTableAlias(false, false).'.path', $this->path, true)
+			->compare($this->getTableAlias(false, false).'.language_id', $this->language_id, true)
+			->compare($this->getTableAlias(false, false).'.created', $this->created, true);
 		}
 
 		return new CActiveDataProvider($this, $dataProviderConfig);

@@ -47,12 +47,7 @@ class CategoryController extends TController
 	{
 		if(isset($_GET['ajax']))
 		{
-			switch($_GET['ajax'])
-			{
-				case 'category-detailed-grid':
-					$this->renderPartial('_detailed_grid', array('model' => new Category('search')));
-					break;
-			}
+			$this->actionGrid(null, $_GET['ajax']);
 		}
 	}
 
@@ -70,30 +65,82 @@ class CategoryController extends TController
 	{
 		if(isset($_GET['ajax']))
 		{
-			switch($_GET['ajax'])
-			{
-				case 'messageSource-detailed-grid':
-					$model = new MessageSource('search');
-					$model->with(array('categories' => array('together' => true, 'condition' => 'categories.id=:id', 'params' => array(':id' => $category->id))));
-					$this->renderPartial('../messageSource/_detailed_grid', array('model' => $model)); 
-					break;
-				case 'message-detailed-grid':
-					$model = new Message('search');
-					$model->with(array('source.categories' => array('together' => true, 'condition' => 'categories.id=:id', 'params' => array(':id' => $category->id))));
-					$this->renderPartial('../message/_detailed_grid', array('model' => $model)); 
-					break;
-			}
+			$this->actionGrid($id, $_GET['ajax']);
 		}
+	}
+	
+	public function actionGrid($id, $name)
+	{
+		switch($name)
+		{
+			case 'category-grid':
+				$model = new Category('search');
+				$model->setAttribute('id', $id);
+				$gridPath = '_grid';
+				break;
+			case 'messageSource-grid':
+				$model = new MessageSource('search');
+				$model->with(array('categories' => array('condition' => 'categories.id=:id', 'params' => array(':id' => $id))))->together()->getDbCriteria()->group = 't.id';
+				$gridPath = '../messageSource/_grid';
+				break;
+			case 'message-grid':
+				$model = new Message('search');
+				$model->with(array('source.categories' => array('condition' => 'categories.id=:id', 'params' => array(':id' => $id))))->together()->getDbCriteria()->group = 't.id, t.language_id';
+				$gridPath = '../message/_grid';
+				break;
+			case 'language-grid':
+				$model = new Language('search');
+				$model->with(array('messageSources.categories' => array('condition' => 'categories.id=:id', 'params' => array(':id' => $id))))->together()->getDbCriteria()->group = 't.id';
+				$gridPath = '../language/_grid';
+				break;
+			case 'route-grid':
+				$model = new Route('search');
+				$model->with(array('viewSources.messageSources.categories' => array('condition' => 'categories.id=:id', 'params' => array(':id' => $id))))->together()->getDbCriteria()->group = 't.id';
+				$gridPath = '../route/_grid';
+				break;
+			case 'viewSource-grid':
+				$model = new ViewSource('search');
+				$model->with(array('messageSources.categories' => array('condition' => 'categories.id=:id', 'params' => array(':id' => $id))))->together()->getDbCriteria()->group = 't.id';
+				$gridPath = '../viewSource/_grid';
+				break;
+			case 'view-grid':
+				$model = new View('search');
+				$model->with(array('sourceView.messageSources.categories' => array('condition' => 'categories.id=:id', 'params' => array(':id' => $id))))->together()->getDbCriteria()->group = 't.id, t.language_id';
+				$gridPath = '../view/_grid';
+				break;
+			default:
+				return;
+		}
+		$this->renderPartial($gridPath, array('model' => $model));
 	}
 
 	/**
 	 * Deletes a Category
-	 *
 	 * @param integer $id the ID of the Category to be deleted
 	 */
 	public function actionDelete($id)
 	{
+		$model = Category::model()->findByPk($id);
+		if($model !== null) 
+		{
+			if($model->delete()) 
+			{
+				$message = 'The category and its translations have been deleted.';
+			} 
+			else 
+			{
+				$message = 'The category could not be deleted.';
+			}
+		} 
+		else 
+		{
+			$message = 'The category could not be found.';
+		}
 
+		if(Yii::app()->getRequest()->getIsAjaxRequest())
+			echo TranslateModule::t($message);
+		else
+			$this->redirect(Yii::app()->getRequest()->getUrlReferrer());
 	}
 
 }

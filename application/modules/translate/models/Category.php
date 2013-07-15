@@ -30,20 +30,30 @@ class Category extends CActiveRecord {
 			array('id, category', 'safe', 'on' => 'search'),
 		);
 	}
-	
-	public function attributeLabels() {
-		return array(
-				'id' => TranslateModule::t('ID'),
-				'category' => TranslateModule::t('Category'),
-				'messageCount' =>  TranslateModule::t('Message Count')
-		);
-	}
-    
+
 	public function relations() {
 		return array(
 			'categoryMessages' => array(self::HAS_MANY, 'CategoryMessage', 'category_id'),
+			'categoryMessageCount' => array(self::STAT, 'CategoryMessage', 'category_id'),
 			'messageSources' => array(self::MANY_MANY, 'MessageSource', CategoryMessage::model()->tableName().'(category_id, message_id)'),
-			'messageCount' => array(self::STAT, 'MessageSource', CategoryMessage::model()->tableName().'(category_id, message_id)')
+			'messageSourceCount' => array(self::STAT, 'MessageSource', CategoryMessage::model()->tableName().'(category_id, message_id)'),
+			'messages' => array(self::MANY_MANY, 'Message', CategoryMessage::model()->tableName().'(category_id, message_id)'),
+			'messageCount' => array(self::STAT, 'MessageSource', CategoryMessage::model()->tableName().'(category_id, message_id)'),
+		);
+	}
+	
+	public function attributeLabels() {
+		return array(
+				// Attributes
+				'id' => TranslateModule::t('ID'),
+				'category' => TranslateModule::t('Category'),
+				// Relations
+				'categoryMessages' => TranslateModule::t('Category Messages'),
+				'categoryMessageCount' => TranslateModule::t('Category Message Count'),
+				'messageSources' => TranslateModule::t('Message Sources'),
+				'messageSourceCount' => TranslateModule::t('Message Source Count'),
+				'messages' => TranslateModule::t('Messages'),
+				'messageCount' => TranslateModule::t('Message Count'),
 		);
 	}
 	
@@ -57,8 +67,9 @@ class Category extends CActiveRecord {
 		{
 			$dataProviderConfig['criteria'] = $this->getDbCriteria();
 			
-			$dataProviderConfig['criteria']->compare($this->getTableAlias(false, false).'.id', $this->id);
-			$dataProviderConfig['criteria']->compare($this->getTableAlias(false, false).'.category', $this->category, true);
+			$dataProviderConfig['criteria']
+			->compare($this->getTableAlias(false, false).'.id', $this->id)
+			->compare($this->getTableAlias(false, false).'.category', $this->category, true);
 		}
 		
 		return new CActiveDataProvider($this, $dataProviderConfig);

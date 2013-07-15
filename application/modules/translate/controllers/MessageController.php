@@ -83,12 +83,7 @@ class MessageController extends TController
 	{
 		if(isset($_GET['ajax']))
 		{
-			switch($_GET['ajax'])
-			{
-				case 'message-detailed-grid':
-					$this->renderPartial('_detailed_grid', array('model' => new Message('search')));
-					break;
-			}
+			$this->actionGrid(null, null, $_GET['ajax']);
 		}
 	}
 
@@ -101,7 +96,7 @@ class MessageController extends TController
 	{
 		$message = new Message;
 		$message->id = $id;
-		$message->language = $languageId;
+		$message->language_id = $languageId;
 
 		if(isset($_POST['Message']))
 		{
@@ -130,7 +125,7 @@ class MessageController extends TController
 	 */
 	public function actionUpdate($id, $languageId)
 	{
-		$message = Message::model()->with('source')->findByPk(array('id' => $id, 'language' => $languageId));
+		$message = Message::model()->with('source')->findByPk(array('id' => $id, 'language_id' => $languageId));
 
 		if($message !== null) 
 		{
@@ -152,6 +147,41 @@ class MessageController extends TController
 			throw new CHttpException(404, TranslateModule::t('The requested message does not exist.'));
 		}
 	}
+	
+	public function actionGrid($id, $languageId, $name)
+	{
+		switch($name)
+		{
+			case 'category-grid':
+				$model = new Category('search');
+				$model->with(array('messages' => array('condition' => 'messages.id=:id AND messages.language_id=:language_id', 'params' => array(':id' => $id, ':language_id' => $languageId))))->together()->getDbCriteria()->group = 't.id';
+				$gridPath = '../category/_grid';
+				break;
+			case 'message-grid':
+				$model = new Message('search');
+				$model->setAttribute('id', $id);
+				$gridPath = '_grid';
+				break;
+			case 'route-grid':
+				$model = new Route('search');
+				$model->with(array('views.messages' => array('condition' => 'messages.id=:id AND messages.language_id=:language_id', 'params' => array(':id' => $id, ':language_id' => $languageId))))->together()->getDbCriteria()->group = 't.id';
+				$gridPath = '../route/_grid';
+				break;
+			case 'viewSource-grid':
+				$model = new ViewSource('search');
+				$model->with(array('messages' => array('condition' => 'messages.id=:id AND messages.language_id=:language_id', 'params' => array(':id' => $id, ':language_id' => $languageId))))->together()->getDbCriteria()->group = 't.id';
+				$gridPath = '../viewSource/_grid';
+				break;
+			case 'view-grid':
+				$model = new View('search');
+				$model->with(array('messages' => array('condition' => 'messages.id=:id AND messages.language_id=:language_id', 'params' => array(':id' => $id, ':language_id' => $languageId))))->together()->getDbCriteria()->group = 't.id, t.language_id';
+				$gridPath = '../view/_grid';
+				break;
+			default:
+				return;
+		}
+		$this->renderPartial($gridPath, array('model' => $model));
+	}
 
 	/**
 	 * Deletes a record
@@ -159,7 +189,7 @@ class MessageController extends TController
 	 */
 	public function actionDelete($id, $languageId)
 	{
-		$model = Message::model()->findByPk(array('id' => $id, 'language' => $languageId));
+		$model = Message::model()->findByPk(array('id' => $id, 'language_id' => $languageId));
 		if($model !== null) 
 		{
 			if($model->delete()) 
@@ -177,9 +207,14 @@ class MessageController extends TController
 		}
 
 		if(Yii::app()->getRequest()->getIsAjaxRequest())
+		{
 			echo TranslateModule::t($message);
+		}
 		else
+		{
+			Yii::app()->getUser()->setFlash(TranslateModule::t($message));
 			$this->redirect(Yii::app()->getRequest()->getUrlReferrer());
+		}
 	}
 
 }

@@ -27,7 +27,7 @@ Yii::app()->getClientScript()->registerCss($this->getId(), '#statistics th { tex
 			</tr>
 			<tr>
 				<th></th>
-				<td><?php echo Message::model()->notAcceptedLanguage()->count(array('select' => '1', 'group' => 'language')) . '&nbsp;' . TranslateModule::t('Other'); ; ?>
+				<td><?php echo Language::model()->notAccepted()->count() . '&nbsp;' . TranslateModule::t('Other'); ?>
 				</td>
 			</tr>
 			<tr>
@@ -61,16 +61,19 @@ Yii::app()->getClientScript()->registerCss($this->getId(), '#statistics th { tex
 			<?php echo CHtml::link(TranslateModule::t('Source Messages'), $this->createUrl('messageSource/')); ?>
 			</li>
 			<li>
-			<?php echo CHtml::link(TranslateModule::t('Translations'), $this->createUrl('message/')); ?>
+			<?php echo CHtml::link(TranslateModule::t('Translated Messages'), $this->createUrl('message/')); ?>
 			</li>
 			<li>
 			<?php echo CHtml::link(TranslateModule::t('Languages'), $this->createUrl('language/')); ?>
 			</li>
 			<li>
-			<?php echo CHtml::link(TranslateModule::t('Views'), $this->createUrl('view/')); ?>
+			<?php echo CHtml::link(TranslateModule::t('Routes'), $this->createUrl('route/')); ?>
 			</li>
 			<li>
-			<?php echo CHtml::link(TranslateModule::t('Routes'), $this->createUrl('route/')); ?>
+			<?php echo CHtml::link(TranslateModule::t('Source Views'), $this->createUrl('viewSource/')); ?>
+			</li>
+			<li>
+			<?php echo CHtml::link(TranslateModule::t('Translated Views'), $this->createUrl('view/')); ?>
 			</li>
 		</ul>
 	</div>

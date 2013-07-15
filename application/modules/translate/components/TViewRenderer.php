@@ -23,27 +23,18 @@ class TViewRenderer extends CViewRenderer
 	 * This method is required by the parent class.
 	 * @param string $sourcePath the source view file path
 	 * @param string $compiledPath the resulting view file path
-	 * @param integer $id The database id of the view to generated. 
-	 * If not set the id will be determined automatically using the sourcePath and compiledPath.
-	 * An exception will be thrown if the view is not found in the database.
+	 * @param string $route The route that requested this view. 
+	 * If not set the route name 'default' will be used.
 	 * @param string $language The language that this view is being translated to. 
 	 * If not set the applications current language setting will be used.
 	 * @param $background boolean If true the view will be generated in the background.
 	 */
-	protected function generateViewFile($sourcePath, $compiledPath, $id = null, $language = null)
-	{
-		if($id === null)
-		{
-			$id = TranslateModule::translator()->getViewSource()->getViewId($sourcePath, $compiledPath);
-			
-			if($id === false)
-				throw new CDbException(Yii::t(self::ID, 'Database entry for view with source path "{source_path}" and compiled path "{compiled_path}" does not exist.', array('{source_path}' => $sourcePath, '{compiled_path}' => $compiledPath)));
-		}
-		
+	protected function generateViewFile($sourcePath, $compiledPath, $route = 'default', $language = null, $useTransaction = true)
+	{	
 		if($language === null)
 			$language = Yii::app()->getLanguage();
-
-		$this->getViewCompiler()->actionCompileView($sourcePath, $compiledPath, $id, $language, $this->filePermission, TranslateModule::translator()->getViewSource()->getDbConnection()->getCurrentTransaction() === null);
+		
+		$this->getViewCompiler()->actionCompileView($sourcePath, $compiledPath, $route, $language, $this->filePermission, $useTransaction);
 	}
 	
 	public function renderFile($context, $sourceFile, $data, $return)
@@ -75,96 +66,9 @@ class TViewRenderer extends CViewRenderer
 	 */
 	public function missingViewTranslation($event)
 	{
-		$event->path = $this->translate($event->route, $event->path, $event->language);
-	}
-	
-	/**
-	 * This method translates a view for a given route, path, language.
-	 * 
-	 * @param string $route The route that this view is being translated for.
-	 * @param string $path The path to the source view to be translated.
-	 * @param string $language The language to translated the source view into.
-	 * @throws CDbException An exception will be thrown if any required database insertions fail.
-	 * @return string the path to the translated view.
-	 */
-	public function translate($route, $path, $language)
-	{
-		$viewSource = TranslateModule::translator()->getViewSource();
-		if($viewSource->getDbConnection()->getCurrentTransaction() === null)
-			$transaction = $viewSource->getDbConnection()->beginTransaction();
-		try
-		{
-			$view = $viewSource->getView($route, $path, $language);
-			
-			// If the view source does not exist add it
-			if($view['view_id'] === null)
-			{
-				$view['view_id'] = $viewSource->addViewSource($path);
-		
-				if($view['view_id'] === null)
-				{
-					throw new CDbException(Yii::t(self::ID, "The source file '{file}' was not found in the database and could not be added to it.", array('{file}' => $path)));
-				}
-			}
-			
-			// If the route does not exist or has not been associated with the source view add it and/or associate it with the source view.
-			if($view['route_id'] === null)
-			{
-				$view['route_id'] = $viewSource->getRouteId($route);
-		
-				if($view['route_id'] === false)
-				{
-					$view['route_id'] = $viewSource->addRoute($route);
-						
-					if($view['route_id'] === null)
-					{
-						throw new CDbException(Yii::t(self::ID, "The route '{route}' was not found and could not be added to the database.", array('{file}' => $path, '{route}' => $route)));
-					}
-				}
-		
-				if($viewSource->addViewRoute($view['route_id'], $view['view_id']) === null)
-				{
-					throw new CDbException(Yii::t(self::ID, "The source file '{file}' and the route '{route}' both exist, but they could not be associated with eachother.", array('{file}' => $path, '{route}' => $route)));
-				}
-			}
-		
-			// If the transalted view file path does not exist generate it and add it.
-			if($view['path'] === null)
-			{
-				$view['path'] = $this->getViewFile($path);
-		
-				if($viewSource->addView($view['view_id'], $view['path'], $language) === null)
-				{
-					Yii::log("The source file '$path' compiled to '{$view['path']}' could not be added to the database. The view will be recompiled for each request until this problem is fixed.", CLogger::LEVEL_ERROR, self::ID);
-				}
-			}
-			
-			// If there is not a last modified time either because a translated view path had not previously existed or 
-			// the translated view has not yet been associated with any translations then set the last modified to the current time.
-			// Otherwise convert the database timestamp to a unix time in milliseconds.
-			$view['last_modified'] = $view['last_modified'] === null ? time() : strtotime($view['last_modified']);
-
-			// Generate the translated view file if any of the following are true: 
-			// it does not exist (note: @filemtime will return false if the file does not exist.).
-			// it is older than the maximum last modified time of the translations used by this view.
-			// it is older than the source view file.
-			if(@filemtime($view['path']) < $view['last_modified'] || @filemtime($view['path']) < @filemtime($path))
-			{
-				$this->generateViewFile($path, $view['path'], $view['view_id'], $language);
-			}
-			
-			$path = $view['path'];
-			if(isset($transaction) && $transaction->getActive())
-				$transaction->commit();
-		}
-		catch(Exception $e)
-		{
-			if(isset($transaction) && $transaction->getActive())
-				$transaction->rollback();
-			throw $e;
-		}
-		
-		return $path;
+		$compiledPath = $this->getViewFile($event->path, $event->language);
+		$this->generateViewFile($event->path, $compiledPath, $event->route, $event->language);
+		$event->path = $compiledPath;
 	}
 	
 }
