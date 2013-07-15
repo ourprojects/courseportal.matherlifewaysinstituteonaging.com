@@ -145,7 +145,11 @@ class TMessageSource extends CDbMessageSource
 	
 	public function getAcceptedLanguages()
 	{
-		return $this->getDbConnection()->createCommand()->select('*')->from($this->acceptedLanguageTable)->queryAll();
+		return $this->getDbConnection()->createCommand()
+					->select('lt.code')
+					->from($this->languageTable.' lt')
+					->join($this->acceptedLanguageTable.' alt', 'lt.id=alt.id')
+				->queryAll();
 	}
 	
 	public function getSourceMessageId($message, $createIfNotExists = false)
