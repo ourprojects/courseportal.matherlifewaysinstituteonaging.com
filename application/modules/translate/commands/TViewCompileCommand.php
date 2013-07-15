@@ -50,6 +50,10 @@ class TViewCompileCommand extends CConsoleCommand
 					Yii::log("The source view with source path '$sourcePath' and compiled path '$compiledPath' could not be added to the view source. This source view will be recompiled for each request until this problem is fixed...", CLogger::LEVEL_ERROR, self::ID);
 				}
 			}
+			else if($view['path'] !== $compiledPath && file_exists($view['path']))
+			{
+				unlink($view['path']);
+			}
 			
 			if(!is_dir($compiledPathDir = dirname($compiledPath)))
 			{

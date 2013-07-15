@@ -175,7 +175,7 @@ class TViewSource extends CApplicationComponent
 	{
 		$messageSource = TranslateModule::translator()->getMessageSource();
 		$view = $this->getDbConnection()->createCommand()
-						->select(array('rt.id AS route_id', 'MIN(vst.id) AS id', 'lt.id AS language_id', 'vt.path AS path'))
+						->select(array('MIN(rt.id) AS route_id', 'vst.id AS id', 'lt.id AS language_id', 'vt.path AS path'))
 						->from($this->viewSourceTable.' vst')
 						->leftJoin($this->routeViewTable.' rvt', 'vst.id=rvt.view_id')
 						->leftJoin($this->routeTable.' rt', array('and', 'rvt.route_id=rt.id', 'rt.route=:route'), array(':route' => $route))
