@@ -53,8 +53,8 @@ class GoogleTranslateAjaxButton extends CWidget
 						'targetLanguage' => $this->targetLanguage,
 						'sourceLanguage' => $this->sourceLanguage,
 					),
-					'beforeSend' => 'js:function(jqXHR, settings){$("#'.$this->target.'").addClass("googleTranslating");}',
-					'complete' => 'js:function(jqXHR, textStatus){$("#'.$this->target.'").removeClass("googleTranslating");}',
+					'beforeSend' => 'js:function(jqXHR, settings){$("'.$this->target.'").addClass("googleTranslating");}',
+					'complete' => 'js:function(jqXHR, textStatus){$("'.$this->target.'").removeClass("googleTranslating");}',
 					'success' => 'js:function(data){alert(data);}',
 					'error' => 'js:function(xhr){alert(xhr.responseText);}'
 				),

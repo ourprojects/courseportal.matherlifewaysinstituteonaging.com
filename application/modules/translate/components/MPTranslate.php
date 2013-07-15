@@ -654,7 +654,7 @@ class MPTranslate extends CApplicationComponent
      * if null it will use the application source language
      * @return array translated messages
      */
-    public function googleTranslate(&$message, &$targetLanguage = null, &$sourceLanguage = null) 
+    public function googleTranslate(&$message, $targetLanguage = null, $sourceLanguage = null) 
     {
         if($targetLanguage === null)
             $targetLanguage = Yii::app()->getLanguage();
@@ -741,7 +741,7 @@ class MPTranslate extends CApplicationComponent
     		{
     			$language = strval($language);
     			$query = $this->queryGoogle(array('q' => $messages, 'source' => $sourceLanguage, 'target' => $language));
-    	
+
     			if($query === false) 
     			{
     				$translated[$language] = false;
@@ -756,7 +756,7 @@ class MPTranslate extends CApplicationComponent
     	else 
     	{
     		$query = $this->queryGoogle(array('q' => $messages, 'source' => $sourceLanguage, 'target' => $targetLanguage));
-    	
+
     		if($query === false) 
     		{
     			$translated = false;
@@ -836,7 +836,7 @@ class MPTranslate extends CApplicationComponent
         }
         
         $trans = CJSON::decode($trans);
-        
+
         if(isset($trans['error'])) 
         {
             Yii::log('Google translate error: '.$trans['error']['code'].'. '.$trans['error']['message'], CLogger::LEVEL_ERROR, self::ID);
