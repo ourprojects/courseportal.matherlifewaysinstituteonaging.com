@@ -56,7 +56,7 @@ class CPUser extends CActiveRecord {
 	 */
 	public function rules() {
 		return array(
-			array('password, salt, session_key, group_id, last_ip, last_login, language', 'unsafe'),
+			array('password, salt, session_key, group_id, last_ip, last_login, language, isActivated', 'unsafe', 'except' => 'admin'),
 			array('session_key', 'default', 'value' => $this->generateIV(), 'setOnEmpty' => true),
 			array('email, name, session_key, firstname, lastname', 'required', 'except' => 'search'),
 			array('new_password', 'required', 'on' => 'new'),
@@ -67,7 +67,7 @@ class CPUser extends CActiveRecord {
 			array('created', 'date', 'format' => 'yyyy-M-d H:m:s'),
 			array('last_login', 'date', 'format' => 'yyyy-M-d H:m:s'),
 			array('last_ip', 'length', 'max' => 40),
-			array('language', 'length', 'max' => 12),
+			array('language', 'length', 'max' => 16),
 			array('country_iso', 'length', 'max' => 3),
 				
 			array('email, name', 'length', 'max' => 127),
@@ -185,6 +185,25 @@ class CPUser extends CActiveRecord {
 	public function getIsActivated() 
 	{
 		return $this->activated instanceof UserActivated && !$this->activated->getIsNewRecord();
+	}
+	
+	public function setIsActivated($isActivated)
+	{
+		if($isActivated)
+		{
+			$model = new UserActivated();
+			$model->setAttribute('user_id', $this->getAttribute('id'));
+			$model->setAttribute('date', date('Y-m-d H:i:s'));
+		}
+		else if(($model = $this->getRelated('activated')) instanceof UserActivated)
+		{
+			if(!$model->getIsNewRecord())
+			{
+				$model->delete();
+			}
+			$model = null;
+		}
+		$this->activated = $model;
 	}
 	
 	public function hasCourse($course) {
@@ -307,6 +326,16 @@ class CPUser extends CActiveRecord {
 		if(stripos($url, '/') !== strlen($url) - 1)
 			$url .= '/';
 		return Yii::app()->createAbsoluteUrl($url . 'id/' . urlencode($this->id) . '/session_key/' . CBase64::urlEncode($this->session_key));
+	}
+	
+	protected function afterSave()
+	{
+		$activated = $this->getRelated('activated');
+		if($activated !== null && $activated->getIsNewRecord())
+		{
+			$activated->save();
+		}
+		parent::afterSave();
 	}
 	
 }

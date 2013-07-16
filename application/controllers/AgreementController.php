@@ -23,12 +23,21 @@ class AgreementController extends OnlineCoursePortalController {
 	/**
 	 * Displays the confidentiality agreement with specified id
 	 */
-	public function actionView($id) 
-	{	
+	public function actionView($id, $userId = null) 
+	{
 		if($agreement = Agreement::model()->findByPk($id))
 		{
 			$webUser = Yii::app()->getUser();
-			$userAgreement = $webUser->getIsGuest() ? null : UserAgreement::model()->findByPk(array('user_id' => $webUser->getId(), 'agreement_id' => $agreement->id));
+			if($userId === null)
+			{
+				$userId = $webUser->getId();
+			} 
+			else if(!$webUser->getIsAdmin() && $userId !== $webUser->getId())
+			{
+				Yii::log('An unauthroized attempt has been made by the user with id '.$webUser->getId()." to access the confidentiality agreement with id $id of the user with id $userId.", CLogger::LEVEL_WARNING);
+				throw new CHttpException(401, t('You are not authorized to access the agreements made by other users. Your attempt has been logged.', array('{id}' => $id, '{userId}' => $userId)));
+			}
+			$userAgreement = UserAgreement::model()->findByPk(array('user_id' => $userId, 'agreement_id' => $agreement->id));
 			if($userAgreement != null)
 			{
 				$webUser->setFlash('success', t('You agreed to the terms of this document on {date}.', array('{date}' => $userAgreement->getFormattedAgreedOn())));
@@ -37,7 +46,7 @@ class AgreementController extends OnlineCoursePortalController {
 			{
 				$webUser->setFlash('error', t('You have not yet agreed to the terms of this document.'));
 			}
-			return $this->render('agreement', array('agreement' => $agreement, 'user' => $webUser->getModel(), 'userAgreement' => $userAgreement));
+			return $this->render('agreement', array('agreement' => $agreement, 'user' => CPUser::model()->findByPk($userId), 'userAgreement' => $userAgreement));
 		}
 		throw new CHttpException(404, t('An agreement with id {id} could not be located.', array('{id}' => $id)));
 	}

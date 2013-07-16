@@ -18,6 +18,9 @@ class UserProfile extends CFormModel
 	public $lastname;
 	public $location;
 	public $country_iso;
+	public $group_id;
+	public $language;
+	public $isActivated;
     
     public function behaviors() 
     {
@@ -34,6 +37,11 @@ class UserProfile extends CFormModel
     {
         return array(
         	array('name, email, firstname, lastname', 'required'),
+        	array('group_id, language', 'safe', 'on' => 'admin'),
+        	array('group_id', 'required', 'on' => 'admin'),
+        	array('group_id', 'numerical', 'integerOnly' => true, 'on' => 'admin'),
+        	array('language', 'length', 'max' => 16, 'on' => 'admin'),
+        	array('isActivated', 'boolean', 'on' => 'admin'),
         	array('name, email', 'length', 'max' => 127),
         	array('email', 'email'),
         	
@@ -55,6 +63,9 @@ class UserProfile extends CFormModel
 	            'lastname' => t('Last Name'),
 	            'location' => t('Location'),
 	            'country_iso' => t('Country'),
+        		'group_id' => t('Group'),
+        		'language' => t('Language'),
+        		'isActivated' => t('Activated')
         );
     }
     

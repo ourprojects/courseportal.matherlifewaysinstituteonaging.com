@@ -187,7 +187,7 @@ class AdminController extends OnlineCoursePortalController {
     	$models['searchModel']->unsetAttributes();
     	
     	if(isset($_GET['CPUser']))
-    		$models['searchModel']->attributes = $_GET['CPUser'];
+    		$models['searchModel']->setAttributes($_GET['CPUser']);
     	
     	$this->render('user/index', $models);
     }
@@ -199,34 +199,47 @@ class AdminController extends OnlineCoursePortalController {
 		if($models['user'] === null)
 			throw new CHttpException(404, t('A User with ID {id} could not be found.', array('{id}' => $id)));
 		
-		$models['Profile'] = new UserProfile;
-		$models['Avatar'] = new Avatar;
+		$models['user']->setScenario('admin');
 		
+		$models['Profile'] = new UserProfile('admin');
 		$models['Profile']->setAttributes($models['user']->getAttributes());
-		$models['Avatar']->user_id = $models['user']->id;
+		$models['Profile']->isActivated = $models['user']->getIsActivated();
 		
+		$models['Avatar'] = $models['user']->getRelated('avatar');
+
+		if($models['Avatar'] === null)
+		{
+			$models['Avatar'] = new Avatar;
+			$models['Avatar']->setAttribute('user_id', $models['user']->getAttribute('id'));
+		}
+
 		// if it is ajax validation request
-		if(isset($_POST['ajax']) && $_POST['ajax'] === 'profile-form') {
+		if(isset($_POST['ajax']) && $_POST['ajax'] === 'profile-form') 
+		{
 			echo CActiveForm::validateTabular($models);
 			Yii::app()->end();
 		}
-		
+
 		// collect user input data
-		if($models['Profile']->loadAttributes() && $models['Profile']->validate())
+		if($models['Profile']->loadAttributes() && $models['Profile']->validate() && $models['Avatar']->validate())
 		{
 			$models['user']->setAttributes($models['Profile']->getAttributes());
+			$models['user']->setIsActivated($models['Profile']->isActivated);
 				
-			if($models['user']->validate() && (!$models['Avatar']->loadUploadedImage() || $models['Avatar']->validate(null, false)))
+			if($models['user']->validate())
 			{
 				$transaction = Yii::app()->db->beginTransaction();
 				$exception = null;
-				try {
+				try 
+				{
 					if((!isset($models['Avatar']->image) || (($models['user']->avatar === null || $models['user']->avatar->delete()) && $models['Avatar']->save())) && $models['user']->save())
 					{
 						$transaction->commit();
 					}
 					$models['Profile']->addErrors($models['user']->getErrors());
-				} catch(Exception $e) {
+				} 
+				catch(Exception $e) 
+				{
 					$exception = $e;
 				}
 				if($models['Profile']->hasErrors() || $models['Avatar']->hasErrors() || isset($exception))

@@ -7,15 +7,13 @@ $this->breadcrumbs = array(
 ?>
 <div id="sidebar"> 
   <div class="box-sidebar">
+  	<h3>{t}Statistics{/t}</h3>
   	<table>
-  		<tr>
-  			<th>{t}Statistics{/t}</th>
-  		</tr>
   		<tr>
   			<th>{t}User Since:{/t}</th><td><?php echo $user->created; ?></td>
   		</tr>
   		<tr>
-  			<th>{t}Activated:{/t}</th><td><?php echo $user->activated === null ? 'No' : $user->activated->date; ?></td>
+  			<th>{t}Activated:{/t}</th><td><?php echo $user->getIsActivated() ? $user->activated->date : 'No'; ?></td>
   		</tr>
   		<tr>
   			<th>{t}Last Seen:{/t}</th><td><?php echo $user->last_login; ?></td>
@@ -46,61 +44,67 @@ $this->breadcrumbs = array(
 		<p class="note">
 			<span class="required">*</span>{t}Required{/t}.
 		</p>
-		<?php echo $form->errorSummary(array($Avatar, $user)); ?>
+		<?php echo $form->errorSummary(array($Avatar, $Profile)); ?>
 		
 		<div class="row">
 			<?php echo $form->labelEx($Avatar, 'image'); ?>
-			<?php echo CHtml::image($this->createUrl("avatar/{$Avatar->user_id}"), $Avatar->getAttributeLabel('image')); ?>
+			<?php echo CHtml::image($this->createUrl('avatar/'.$Avatar->user_id), $Avatar->getAttributeLabel('image')); ?>
 			<?php echo $form->fileField($Avatar, 'image'); ?>
 			<?php echo $form->error($Avatar, 'image'); ?>
 		</div>
 		
 		<div class="row">
-			<?php echo $form->labelEx($user, 'name'); ?>
-			<?php echo $form->textField($user, 'name'); ?>
-			<?php echo $form->error($user, 'name'); ?>
+			<?php echo $form->labelEx($Profile, 'name'); ?>
+			<?php echo $form->textField($Profile, 'name'); ?>
+			<?php echo $form->error($Profile, 'name'); ?>
 		</div>
 		
 		<div class="row">
-			<?php echo $form->labelEx($user, 'email'); ?>
-			<?php echo $form->emailField($user, 'email'); ?>
-			<?php echo $form->error($user, 'email'); ?>
+			<?php echo $form->labelEx($Profile, 'email'); ?>
+			<?php echo $form->emailField($Profile, 'email'); ?>
+			<?php echo $form->error($Profile, 'email'); ?>
 		</div>
 		
 		<div class="row">
-			<?php echo $form->labelEx($user, 'group_id'); ?>
-			<?php echo $form->dropDownList($user, 'group_id', CHtml::listData(Group::model()->findAll(), 'id', 'name')); ?>
-			<?php echo $form->error($user, 'group_id'); ?>
+			<?php echo $form->labelEx($Profile, 'group_id'); ?>
+			<?php echo $form->dropDownList($Profile, 'group_id', CHtml::listData(Group::model()->findAll(), 'id', 'name')); ?>
+			<?php echo $form->error($Profile, 'group_id'); ?>
 		</div>
 		
 		<div class="row">
-			<?php echo $form->labelEx($user, 'language'); ?>
-			<?php echo CHTML::dropDownList('language', Yii::app()->translate->getLanguageID($user->language), Yii::app()->translate->getLocaleDisplayNames()); ?>
-			<?php echo $form->error($user, 'language'); ?>
+			<?php echo $form->labelEx($Profile, 'language'); ?>
+			<?php echo $form->dropDownList($Profile, 'language', Yii::app()->translate->getLocaleDisplayNames()); ?>
+			<?php echo $form->error($Profile, 'language'); ?>
 		</div>
 	
 		<div class="row">
-			<?php echo $form->labelEx($user, 'firstname'); ?>
-			<?php echo $form->textField($user, 'firstname'); ?>
-			<?php echo $form->error($user, 'firstname'); ?>
+			<?php echo $form->labelEx($Profile, 'firstname'); ?>
+			<?php echo $form->textField($Profile, 'firstname'); ?>
+			<?php echo $form->error($Profile, 'firstname'); ?>
 		</div>
 		
 		<div class="row">
-			<?php echo $form->labelEx($user, 'lastname'); ?>
-			<?php echo $form->textField($user, 'lastname'); ?>
-			<?php echo $form->error($user, 'lastname'); ?>
+			<?php echo $form->labelEx($Profile, 'lastname'); ?>
+			<?php echo $form->textField($Profile, 'lastname'); ?>
+			<?php echo $form->error($Profile, 'lastname'); ?>
 		</div>
 		
 		<div class="row">
-			<?php echo $form->labelEx($user, 'location'); ?>
-			<?php echo $form->textField($user, 'location'); ?>
-			<?php echo $form->error($user, 'location'); ?>
+			<?php echo $form->labelEx($Profile, 'location'); ?>
+			<?php echo $form->textField($Profile, 'location'); ?>
+			<?php echo $form->error($Profile, 'location'); ?>
 		</div>
 
 		<div class="row">
-			<?php echo $form->labelEx($user, 'country_iso'); ?>
-			<?php echo $form->dropDownList($user, 'country_iso', Yii::app()->translate->getTerritoryDisplayNames()); ?>
-			<?php echo $form->error($user, 'country_iso'); ?>
+			<?php echo $form->labelEx($Profile, 'country_iso'); ?>
+			<?php echo $form->dropDownList($Profile, 'country_iso', Yii::app()->translate->getTerritoryDisplayNames()); ?>
+			<?php echo $form->error($Profile, 'country_iso'); ?>
+		</div>
+		
+		<div class="row">
+			<?php echo $form->labelEx($Profile, 'isActivated'); ?>
+			<?php echo $form->checkBox($Profile, 'isActivated'); ?>
+			<?php echo $form->error($Profile, 'isActivated'); ?>
 		</div>
 				
 		<div class="row submit">
@@ -115,17 +119,17 @@ $this->breadcrumbs = array(
   	<br />
   	<?php 
   	$agreements = $user->agreements;
-  	if(!empty($agreements)): ?>
+  	if(empty($agreements)): 
+  		echo '{t}None{/t}';
+  	else:?>
   	<ul>
   		<?php foreach($agreements as $agreement): ?>
   		<li>
-  			<?php echo t($agreement->name); ?>
+  			<a href="<?php echo $this->createUrl('/agreement/view', array('id' => $agreement->id, 'userId' => $user->id)) ?>" target='_blank'><?php echo t($agreement->name); ?></a>
   		</li>
   		<?php endforeach; ?>
   	</ul>
-  	<?php 
-  	else:
-		echo '{t}None{/t}';
+  	<?php
 	endif; 
 	?>
   </div>

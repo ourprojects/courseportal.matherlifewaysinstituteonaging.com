@@ -214,10 +214,9 @@ class UserController extends ApiController {
 		if($userIdentity->authenticate()) 
 		{
 			$user = $userIdentity->getModel();
-			$user->activated = new UserActivated;
-			$user->activated->user_id = $id;
+			$user->setIsActivated(true);
 		
-			if($user->activated->save()) 
+			if($user->getRelated('activated')->save()) 
 			{
 				Yii::app()->getUser()->login($userIdentity, 0);
 				$user->regenerateSessionKey();
@@ -326,11 +325,11 @@ class UserController extends ApiController {
 		}
 
 		// collect user input data
-		if($models['Profile']->loadAttributes() && $models['Profile']->validate()) 
+		if($models['Profile']->loadAttributes() && $models['Profile']->validate() && $models['avatar']->validate())
 		{
 			$user->setAttributes($models['Profile']->getAttributes());
 			
-			if($user->validate() && (!$models['avatar']->loadUploadedImage() || $models['avatar']->validate(null, false)))
+			if($user->validate())
 			{
 				$transaction = Yii::app()->db->beginTransaction();
 				$exception = null;

@@ -1,11 +1,13 @@
 <?php
-class EModelBehaviors extends CBehavior {
+class EModelBehaviors extends CBehavior 
+{
 	
 	public function loadAttributes($inputName = null, $safeOnly = true)
 	{
 		if(empty($inputName))
 			$inputName = get_class($this->getOwner());
-		if(isset($_POST[$inputName])) {
+		if(isset($_POST[$inputName])) 
+		{
 			$this->getOwner()->setAttributes($_POST[$inputName], $safeOnly);
 			return true;
 		}
@@ -20,16 +22,19 @@ class EModelBehaviors extends CBehavior {
 		return function_exists('json_encode') ? json_encode($result) : CJSON::encode($result);
 	}
 	
-	public function getRequiredAttributes($safeOnly = true) {
+	public function getRequiredAttributes($safeOnly = true) 
+	{
 		return array_values(array_filter($safeOnly ? $this->getOwner()->getSafeAttributeNames() : $this->getOwner()->attributeNames(), 
 				array($this->getOwner(), 'isAttributeRequired')));
 	}
 	
-	public function isAttributeOptional($attrName) {
+	public function isAttributeOptional($attrName) 
+	{
 		return !$this->getOwner()->isAttributeRequired($attrName);
 	}
 	
-	public function getOptionalAttributes($safeOnly = true) {
+	public function getOptionalAttributes($safeOnly = true) 
+	{
 		return array_values(array_filter($safeOnly ? $this->getOwner()->getSafeAttributeNames() : $this->getOwner()->attributeNames(), 
 				array($this, 'isAttributeOptional')));
 	}
