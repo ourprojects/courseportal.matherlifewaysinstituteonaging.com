@@ -12,13 +12,13 @@ class TranslateUrlRule extends CBaseUrlRule
 	
 	public $checkIfLanguageIsPartOfRoute = true;
 	
-	private $_recursionDepth = 0;
+	private $_recursion = false;
 
 	public function createUrl($manager, $route, $params, $ampersand)
 	{
-		if($this->_recursionDepth > 0)
+		if($this->_recursion)
 			return false;
-		$this->_recursionDepth++;
+		$this->_recursion = true;
 		
 		$languageVarName = Yii::app()->getComponent($this->translateComponentId)->languageVarName;
 		if(!isset($params[$languageVarName]))
@@ -27,15 +27,15 @@ class TranslateUrlRule extends CBaseUrlRule
 		}
 		$url = $manager->createUrl($route, $params, $ampersand);
 		
-		$this->_recursionDepth--;
+		$this->_recursion = false;
 		return $url;
 	}
 	
 	public function parseUrl($manager, $request, $pathInfo, $rawPathInfo)
 	{
-		if($this->_recursionDepth > 0)
+		if($this->_recursion)
 			return false;
-		$this->_recursionDepth++;
+		$this->_recursion = true;
 		
 		$route = $manager->parseUrl($request);
 		$translator = Yii::app()->getComponent($this->translateComponentId);
@@ -99,11 +99,15 @@ class TranslateUrlRule extends CBaseUrlRule
 			{
 				$route = $this->patchRoute($route, $_REQUEST[$translator->languageVarName]);
 			}
-			$request->redirect(Yii::app()->createUrl($route, array($translator->languageVarName => $language)), true, $_SERVER['SERVER_PROTOCOL'] === 'HTTP/1.1' ? 303 : 302);
+			$request->redirect(
+					Yii::app()->createUrl($route, array_merge($_GET, array($translator->languageVarName => $language))), 
+					true, 
+					($request->getIsPostRequest() && isset($_SERVER['SERVER_PROTOCOL']) && $_SERVER['SERVER_PROTOCOL'] === 'HTTP/1.1') ? 303 : 302
+			);
 		}
 		
 		unset($_REQUEST[$translator->languageVarName]);
-		$this->_recursionDepth--;
+		$this->_recursion = false;
 		return $route;
 	}
 	
