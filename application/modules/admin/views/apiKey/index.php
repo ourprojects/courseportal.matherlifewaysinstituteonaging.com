@@ -1,7 +1,7 @@
 <?php $this->breadcrumbs = array('{t}Admin{/t}' => Yii::app()->createUrl('admin'), '{t}API Keys{/t}'); ?>
 <h1>{t}API Keys{/t}</h1>
 <div id="single-column">
-	<?php $this->renderPartial('_grid', array('model' => $searchModel)); ?>
+	<?php $this->actionGrid(null, 'apiKey-grid') ?>
 	<h2>{t}Create New{/t}</h2>
 	<div class="form">
 		<?php $form = $this->beginWidget('CActiveForm', array(
@@ -18,7 +18,7 @@
 			$jqueryTextFieldSelector = "$('#{$form->id}').find('#".CHtml::activeId($model, 'key')."')";
 			echo CHtml::ajaxButton(
 						'{t}Generate{/t}', 
-						$this->createUrl('keyGenerate'), 
+						$this->createUrl('generate'), 
 						array(
 							'method' => 'GET', 
 							'beforeSend' => "function() { $jqueryTextFieldSelector.addClass('loading'); }",

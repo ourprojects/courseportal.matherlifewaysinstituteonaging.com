@@ -28,86 +28,79 @@ class UserController extends OnlineCoursePortalController
 
     public function actionIndex()
     {
-    	$models = array(
-    			'searchModel' => new CPUser('search'),
-    	);
-    	
-    	$models['searchModel']->unsetAttributes();
-    	
-    	if(isset($_GET['CPUser']))
-    	{
-    		$models['searchModel']->setAttributes($_GET['CPUser']);
-    	}
-    	
-    	$this->render('index', $models);
+    	$this->render('index');
     }
     
-    public function actionView($id)
+    public function actionView($id = null)
     {
-		$models = array('user' => CPUser::model()->findByPk($id));
+		$CPUser = isset($id) ? CPUser::model()->findByPk($id) : new CPUser;
 		
-		if($models['user'] === null)
+		if($CPUser === null)
 		{
 			throw new CHttpException(404, t('A User with ID {id} could not be found.', array('{id}' => $id)));
 		}
 		
-		$models['user']->setScenario('admin');
-		
-		$models['Profile'] = new UserProfile('admin');
-		$models['Profile']->setAttributes($models['user']->getAttributes());
-		$models['Profile']->isActivated = $models['user']->getIsActivated();
-		
-		$models['Avatar'] = $models['user']->getRelated('avatar');
-
-		if($models['Avatar'] === null)
+		if(!$CPUser->getIsNewRecord())
 		{
-			$models['Avatar'] = new Avatar;
-			$models['Avatar']->setAttribute('user_id', $models['user']->getAttribute('id'));
+			$CPUser->setScenario('admin');
+		}
+		
+		$UserProfile = new UserProfile($CPUser->getScenario());
+		$UserProfile->setAttributes($CPUser->getAttributes());
+		$UserProfile->isActivated = $CPUser->getIsActivated();
+		
+		$Avatar = $CPUser->getRelated('avatar');
+
+		if($Avatar === null)
+		{
+			$Avatar = new Avatar;
+			$Avatar->setAttribute('user_id', $CPUser->getAttribute('id'));
 		}
 
 		// if it is ajax validation request
 		if(isset($_POST['ajax']) && $_POST['ajax'] === 'profile-form') 
 		{
-			echo CActiveForm::validateTabular($models);
+			echo CActiveForm::validateTabular(array('UserProfile' => $UserProfile, 'Avatar' => $Avatar));
 			Yii::app()->end();
 		}
 
 		// collect user input data
-		if($models['Profile']->loadAttributes() && $models['Profile']->validate() && $models['Avatar']->validate())
+		if($UserProfile->loadAttributes() && $UserProfile->validate())
 		{
-			$models['user']->setAttributes($models['Profile']->getAttributes());
-			$models['user']->setIsActivated($models['Profile']->isActivated);
-				
-			if($models['user']->validate())
+			$CPUser->setAttributes($UserProfile->getAttributes());
+			$CPUser->setIsActivated($UserProfile->isActivated);
+			
+			$transaction = Yii::app()->db->beginTransaction();
+			$exception = null;
+			try 
 			{
-				$transaction = Yii::app()->db->beginTransaction();
-				$exception = null;
-				try 
+				if($CPUser->save())
 				{
-					if((!isset($models['Avatar']->image) || (($models['user']->avatar === null || $models['user']->avatar->delete()) && $models['Avatar']->save())) && $models['user']->save())
+					$Avatar->user_id = $CPUser->id;
+					if($Avatar->image === null || $Avatar->save())
 					{
 						$transaction->commit();
 					}
-					$models['Profile']->addErrors($models['user']->getErrors());
-				} 
-				catch(Exception $e) 
-				{
-					$exception = $e;
 				}
-				if($models['Profile']->hasErrors() || $models['Avatar']->hasErrors() || isset($exception))
+				$UserProfile->addErrors($CPUser->getErrors());
+			} 
+			catch(Exception $e) 
+			{
+				$exception = $e;
+			}
+			if($UserProfile->hasErrors() || $Avatar->hasErrors() || isset($exception))
+			{
+				if(!$Avatar->getIsNewRecord())
 				{
-					if(!$models['Avatar']->getIsNewRecord())
-					{
-						$models['Avatar']->delete();
-					}
-					$transaction->rollback();
-					if(isset($exception))
-						throw $exception;
+					$Avatar->delete();
 				}
+				$transaction->rollback();
+				if(isset($exception))
+					throw $exception;
 			}
 		}
     	 
-    	$this->render('view', $models);
+    	$this->render('view', array('CPUser' => $CPUser, 'UserProfile' => $UserProfile, 'Avatar' => $Avatar));
     }
     
     public function actionDelete($id) 
@@ -148,6 +141,26 @@ class UserController extends OnlineCoursePortalController
     		Yii::app()->getUser()->setFlash($response['result'], $response['message']);
     		$this->redirect(Yii::app()->getRequest()->getUrlReferrer());
     	}
+    }
+    
+    public function actionGrid($id, $name)
+    {
+    	switch($name)
+    	{
+    		case 'course-grid':
+    			$model = new Course('search');
+    			$model->with(array('users' => array('condition' => 'users.id=:id', 'params' => array(':id' => $id))))->together()->getDbCriteria()->group = 't.id';
+    			$gridPath = '../course/_grid';
+    			break;
+    		case 'user-grid':
+    			$model = new CPUser('search');
+    			$model->setAttribute('id', $id);
+    			$gridPath = '_grid';
+    			break;
+    		default:
+    			return;
+    	}
+    	$this->renderPartial($gridPath, array('model' => $model));
     }
 
 }

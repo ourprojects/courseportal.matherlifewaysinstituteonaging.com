@@ -26,15 +26,9 @@ class CourseController extends OnlineCoursePortalController
 		);
 	}
 	
-	public function actionIndex() {
-		$searchModel = new Course('search');
-		
-		$searchModel->unsetAttributes();
-		
-		if(isset($_GET['Course']))
-			$searchModel->setAttributes($_GET['Course']);
-		
-		$this->render('index', array('searchModel' => $searchModel));
+	public function actionIndex() 
+	{
+		$this->render('index');
 	}
 	
     public function actionView($id = null) 
@@ -161,6 +155,26 @@ class CourseController extends OnlineCoursePortalController
     		Yii::app()->getUser()->setFlash($response['result'], $response['message']);
     		$this->redirect(Yii::app()->getRequest()->getUrlReferrer());
     	}
+    }
+    
+    public function actionGrid($id, $name)
+    {
+    	switch($name)
+    	{
+    		case 'course-grid':
+    			$model = new Course('search');
+    			$model->setAttribute('id', $id);
+    			$gridPath = '_grid';
+    			break;
+    		case 'user-grid':
+    			$model = new CPUser('search');
+    			$model->with(array('courses' => array('condition' => 'courses.id=:id', 'params' => array(':id' => $id))))->together()->getDbCriteria()->group = 't.id';
+    			$gridPath = '../user/_grid';
+    			break;
+    		default:
+    			return;
+    	}
+    	$this->renderPartial($gridPath, array('model' => $model));
     }
 
 }

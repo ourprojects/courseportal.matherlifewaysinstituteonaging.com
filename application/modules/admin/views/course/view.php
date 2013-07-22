@@ -3,7 +3,7 @@ $action = $course->getIsNewRecord() ? '{t}Create{/t}' : '{t}Update{/t}';
 
 $this->breadcrumbs = array(
 		'{t}Admin{/t}' => $this->createUrl('admin'), 
-		'{t}Courses{/t}' => $this->createUrl('course'), 
+		'{t}Courses{/t}' => $this->createUrl('/admin/course'), 
 		t("Course $action")
 );
 ?>
@@ -102,10 +102,10 @@ $this->breadcrumbs = array(
 				<?php $this->endWidget(); ?>
 			</div>
 		</div>
-		<?php endif; ?>
 	</div>
 	<div id="users" class="box-white">
-	<h2>{t}Registered Course Users{/t}</h2>
-	<?php $this->renderPartial('../user/_grid', array('model' => new CPUser('search'))); ?>
+	<h2>{t}Registered Users{/t}</h2>
+	<?php $this->actionGrid($course->id, 'user-grid'); ?>
+	<?php endif; ?>
 	</div>
 </div>

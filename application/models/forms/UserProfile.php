@@ -21,6 +21,8 @@ class UserProfile extends CFormModel
 	public $group_id;
 	public $language;
 	public $isActivated;
+	public $new_password;
+	public $new_password_repeat;
     
     public function behaviors() 
     {
@@ -37,6 +39,7 @@ class UserProfile extends CFormModel
     {
         return array(
         	array('name, email, firstname, lastname', 'required'),
+        	array('new_password, new_password_repeat', 'required', 'on' => 'insert'),
         	array('group_id, language', 'safe', 'on' => 'admin'),
         	array('group_id', 'required', 'on' => 'admin'),
         	array('group_id', 'numerical', 'integerOnly' => true, 'on' => 'admin'),
@@ -47,7 +50,13 @@ class UserProfile extends CFormModel
         	
             array('firstname, lastname, location', 'length', 'max' => 255),
 
-        	array('country_iso', 'length', 'max' => 3)
+        	array('country_iso', 'length', 'max' => 3),
+        	array('new_password_repeat',
+        			'compare',
+        			'compareAttribute' => 'new_password',
+        			'strict' => true,
+        			'message' => t('Passwords do not match'),
+        			'on' => 'insert'),
         );
     }
 
@@ -65,7 +74,9 @@ class UserProfile extends CFormModel
 	            'country_iso' => t('Country'),
         		'group_id' => t('Group'),
         		'language' => t('Language'),
-        		'isActivated' => t('Activated')
+        		'isActivated' => t('Activated'),
+        		'new_password' => t('Password'),
+        		'new_password_repeat' => t('Repeat Password'),
         );
     }
     

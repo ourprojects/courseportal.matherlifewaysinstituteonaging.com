@@ -4,25 +4,15 @@ $this->widget('zii.widgets.grid.CGridView', array(
 	'dataProvider' => $model->search(),
 	'filter' => $model,
 	'columns' => array(
-        array(
-            'name' => 'id',
-        	'htmlOptions' => array('width' => '40'),
-        ),
+        'id',
+		'rank',
+		'name',
+        'title',
+		'description',
 		array(
-			'name' => 'rank',
-			'htmlOptions' => array('width' => '40'),
-		),
-		array(
-			'name' => 'name',
-			'htmlOptions' => array('width' => '100'),
-		),
-        array(
-            'name' => 'title',
-        	'htmlOptions' => array('width' => '100'),
-        ),
-		array(
-			'name' => 'description',
-			'htmlOptions' => array('width' => '400'),
+				'name' => 'userCount',
+				'sortable' => false,
+				'filter' => '',
 		),
         array(
             'class' => 'CButtonColumn',

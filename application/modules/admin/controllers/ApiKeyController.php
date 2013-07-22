@@ -28,35 +28,28 @@ class ApiKeyController extends OnlineCoursePortalController
 	
 	public function actionIndex() 
 	{
-		$models = array(
-				'searchModel' => new Key('search'),
-				'model' => new Key,
-		);
+		$model = new Key;
 		
 		if(isset($_POST['ajax'])) 
 		{
-			if($_POST['ajax'] === 'key-create-form') {
-				echo CActiveForm::validate($models['model']);
+			if($_POST['ajax'] === 'key-create-form') 
+			{
+				echo CActiveForm::validate($model);
 				Yii::app()->end();
 			}
 		}
 		
-		$models['searchModel']->unsetAttributes();
-		
-		if(isset($_GET['Key']))
-			$models['searchModel']->setAttributes($_GET['Key']);
-		
 		if(isset($_POST['Key'])) 
 		{
-			$models['model']->setAttributes($_POST['Key']);
+			$model->setAttributes($_POST['Key']);
 			
-			if($models['model']->save())
+			if($model->save())
 				Yii::app()->getUser()->setFlash('success', t('Key saved successfully.'));
 			else
 				Yii::app()->getUser()->setFlash('error', t('Key could not be saved.'));
 		}
 		
-		$this->render('index', $models);
+		$this->render('index', array('model' => $model));
 	}
 	
 	public function actionGenerate() 
@@ -91,6 +84,21 @@ class ApiKeyController extends OnlineCoursePortalController
 			Yii::app()->getUser()->setFlash($response['result'], $response['message']);
 			$this->redirect(Yii::app()->getRequest()->getUrlReferrer());
 		}
+	}
+	
+	public function actionGrid($id, $name)
+	{
+		switch($name)
+		{
+			case 'apiKey-grid':
+				$model = new Key('search');
+				$model->setAttribute('id', $id);
+				$gridPath = '_grid';
+				break;
+			default:
+				return;
+		}
+		$this->renderPartial($gridPath, array('model' => $model));
 	}
 
 }
