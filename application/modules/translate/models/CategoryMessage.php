@@ -23,7 +23,7 @@ class CategoryMessage extends CActiveRecord
 	{
 		return array(
 				'ERememberFiltersBehavior' => array(
-						'class' => 'translate.behaviors.ERememberFiltersBehavior',
+						'class' => 'application.behaviors.ERememberFiltersBehavior',
 				)
 		);
 	}

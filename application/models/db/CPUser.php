@@ -107,6 +107,9 @@ class CPUser extends CActiveRecord {
 						'newValueAttribute' => 'new_password',
 						'generateSaltOnNewRecord' => true,
 						'clearNewValueAfterSave' => false
+				),
+				'ERememberFiltersBehavior' => array(
+						'class' => 'application.behaviors.ERememberFiltersBehavior',
 				)
 		));
 	}

@@ -38,7 +38,10 @@ class Key extends CActiveRecord {
 								'hashAttribute' => 'value',
 								'newValueAttribute' => 'key',
 								'clearNewValueAfterSave' => true
-						)
+						),
+    					'ERememberFiltersBehavior' => array(
+    							'class' => 'application.behaviors.ERememberFiltersBehavior',
+    					)
     			));
     }
 
