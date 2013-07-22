@@ -81,7 +81,7 @@
 											'url' => Yii::app()->createAbsoluteUrl('course/index'),
 											'visible' => !$user->getIsGuest()),
 									array('label' => '<span id="menu-admin" title="{t}Admin{/t}"></span>',
-											'url' => Yii::app()->createAbsoluteUrl('admin/index'),
+											'url' => Yii::app()->createAbsoluteUrl('admin'),
 											'visible' => $user->getIsAdmin()),
 									array('label' => '<span id="menu-logout" title="{t}Logout{/t}"></span>',
 											'url' => Yii::app()->createAbsoluteUrl('user/logout'),

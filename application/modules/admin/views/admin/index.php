@@ -1,6 +1,6 @@
 <?php
 Yii::app()->getClientScript()->registerCssFile($this->getStylesUrl('index.css')); 
-$this->breadcrumbs = array(t('Admin'));
+$this->breadcrumbs = array('{t}Admin{/t}');
 ?>
 
 <div class="small-masthead" style="background-image: url(<?php echo $this->getImagesUrl('159325162.png'); ?>);">
@@ -13,12 +13,12 @@ $this->breadcrumbs = array(t('Admin'));
   <div class="box-white">
     <h5>{t}API Keys{/t}</h5>
     <p>{t}An application programming interface (API) is a protocol intended to be used as an interface by software components to communicate with each other. An API is a library that may include specification for routines, data structures, object classes, and variables.{/t}</p>
-    <p id="categories"><a href="<?php echo $this->createUrl('apiKeys'); ?>" class="button">{t}API Keys{/t}</a> </p>
+    <p id="categories"><a href="<?php echo $this->createUrl('/admin/apiKey'); ?>" class="button">{t}API Keys{/t}</a> </p>
   </div>
   <div class="box-white">
     <h5>{t}Courses{/t}</h5>
     <p>{t}Mather LifeWays Institute on Aging online course portal provides web-based traning and education for those who provide services to older adults. Courses target Nurses, CNAs, Social Workers, Geriatric Professionals, professional and non-professional caregivers. {/t}</p>
-    <p id="categories"><a href="<?php echo $this->createUrl('course'); ?>" class="button">{t}Courses{/t}</a> </p>
+    <p id="categories"><a href="<?php echo $this->createUrl('/admin/course'); ?>" class="button">{t}Courses{/t}</a> </p>
   </div>
   <div class="box-white">
     <h5>{t}Translation &amp; Languages{/t}</h5>
@@ -33,7 +33,7 @@ $this->breadcrumbs = array(t('Admin'));
   <div class="box-white">
     <h5>{t}Course Portal User Table{/t}</h5>
     <p>{t}User registration table records all events and user registration and profile data text input fields. Administrators have access to this table and permissions to edit, add, remove (delete) profiles.{/t}</p>
-    <p id="categories"> <a href="<?php echo $this->createUrl('users'); ?>" class="button">{t}Users{/t}</a> </p>
+    <p id="categories"> <a href="<?php echo $this->createUrl('/admin/user'); ?>" class="button">{t}Users{/t}</a> </p>
   </div>
   <div class="box-white">
     <h5>{t}HostMySite.com cPanel{/t}</h5>

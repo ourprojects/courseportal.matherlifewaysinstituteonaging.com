@@ -13,7 +13,7 @@ $this->breadcrumbs = array(
   			<th>{t}User Since:{/t}</th><td><?php echo $user->created; ?></td>
   		</tr>
   		<tr>
-  			<th>{t}Activated:{/t}</th><td><?php echo $user->getIsActivated() ? $user->activated->date : 'No'; ?></td>
+  			<th>{t}Activated:{/t}</th><td><?php echo $user->getIsActivated() ? $user->activated->date : '{t}Never{/t}'; ?></td>
   		</tr>
   		<tr>
   			<th>{t}Last Seen:{/t}</th><td><?php echo $user->last_login; ?></td>
