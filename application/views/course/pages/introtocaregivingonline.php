@@ -63,7 +63,7 @@ foreach(array(
   	echo '<li>' . t($objective->text) . '</li>';
   ?>
   </ul>
-  <h4>{t}Course Lessons{/t}</h4>
+  <h4>{t}Course Modules{/t}</h4>
   <ul>
     <li> <a href="#lesson-1-slide-1" data-fancybox-group="lesson-1" class="teal lesson-1"> {t}Defining, Describing &amp; Understanding Caregiving{/t} </a> <a href="#lesson-1-slide-2" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-3" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-4" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-5" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-6" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-7" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-8" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-9" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-10" data-fancybox-group="lesson-1" class="hide lesson-1"></a> </li>
     <li> <a href="#lesson-2-slide-1" data-fancybox-group="lesson-2" class="teal lesson-2"> {t}Current Data, Trends &amp; Research on US Caregivers{/t} </a> <a href="#lesson-2-slide-2" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-3" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-4" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-5" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-6" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-7" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-8" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-9" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-10" data-fancybox-group="lesson-2" class="hide lesson-2"></a> </li>
@@ -434,7 +434,7 @@ foreach(array(
         </ul>
         <p class="forum">{t}Search the Internet and downlaod at least two recent studies associated with the financial impact caregiving has on businesses, and attach them to a posting on the Forum.{/t}</p>
         <img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}"> </div>
-      <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Complete Lesson{/t}</a></div>
+      <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Complete module{/t}</a></div>
     </div>
   </div>
   <div id="lesson-3">
@@ -584,7 +584,7 @@ foreach(array(
         <p>{t}When you are not able to be around to oversee the day-to-day care of your older relative due to geographical distance, it is comforting to know that there are strategies that can be used to plan and to monitor your relative’s situation. Customizing a caregiving network will make your life much easier, which will lead to decreased stress and both you and your older relative will reap the benefit of the care that is provided.{/t}</p>
         <p class="forum">{t}Please list any questions or concerns you have on the Forum. Also list any content additions or corrections you would like to suggest.{/t}</p>
         <img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}"> </div>
-      <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Complete Lesson{/t}</a></div>
+      <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Complete Module{/t}</a></div>
     </div>
   </div>
   <div id="lesson-4">
@@ -834,7 +834,7 @@ foreach(array(
         <p>{t}New approaches to work-based elder care programs are currently being developed. This next generation of formal elder care programs has been referred to as decision-support services. Rather than relying solely upon resource and referral models, these programs strategically address key needs of working caregivers - enhanced information and resources through geriatric care professionals, information on legal and financial matters, and help with insurance paperwork.{/t}</p>
         <p class="forum">{t}Reearch any benefits your employer offers you as a employee caregiver, and post your findings to the Forum.{/t}</p>
         <img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}"> </div>
-      <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Complete Lesson{/t}</a></div>
+      <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Complete Module{/t}</a></div>
     </div>
   </div>
   <div id="lesson-5">
