@@ -35,7 +35,10 @@ class Course extends CActiveRecord {
 	public function behaviors() {
 		return array_merge(parent::behaviors(),
 				array(
-						'extendedFeatures' => array('class' => 'behaviors.EModelBehaviors')
+						'extendedFeatures' => array('class' => 'behaviors.EModelBehaviors'),
+						'ERememberFiltersBehavior' => array(
+								'class' => 'application.behaviors.ERememberFiltersBehavior',
+						)
 				));
 	}
 	
@@ -63,6 +66,7 @@ class Course extends CActiveRecord {
 				'objectives' => array(self::HAS_MANY, 'CourseObjective', 'course_id'),
 				'userCourses' => array(self::HAS_MANY, 'UserCourse', 'course_id'),
 				'users' => array(self::MANY_MANY, 'CPUser', '{{user_course}}(course_id, user_id)'),
+				'userCount' => array(self::STAT, 'CPUser', '{{user_course}}(course_id, user_id)'),
 		);
 	}
 	
@@ -84,13 +88,16 @@ class Course extends CActiveRecord {
 	 */
 	public function attributeLabels() {
 		return array(
+				// Attributes
 				'id' => t('ID'),
 				'name' => t('Unique Name'),
 				'rank' => t('Rank'),
 				'title' => t('Title'),
 				'description' => t('Description'),
+				// Relations
 				'userCourses' => t('User Courses'),
 				'users' => t('Users'),
+				'userCount' => t('User Count'),
 		);
 	}
 	

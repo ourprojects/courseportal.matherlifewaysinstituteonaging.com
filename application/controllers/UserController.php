@@ -249,13 +249,13 @@ class UserController extends ApiController {
 			$user = $models['UserNameEmail']->getUser();
 			if($user->getIsActivated()) 
 			{
-				Yii::app()->getUser()->setFlash('error', t('Your account has already been activated. If you have forgotten your password you can recover it by clicking ') . 
-															CHtml::link(t('here'), $this->createUrl('forgotPassword')));
+				Yii::app()->getUser()->setFlash('error', t('Your account has already been activated. If you have forgotten your password you can recover it by clicking') . 
+															'&nbsp;' . CHtml::link(t('here'), $this->createUrl('forgotPassword')));
 			} 
 			else 
 			{
 				$this->sendAccountActivationEmail($user);
-				Yii::app()->getUser()->setFlash('success', t('We have resent an activation email to ') . $user->email);
+				Yii::app()->getUser()->setFlash('success', t('We have resent an activation email to') . '&nbsp;' . $user->email);
 			}
 			$this->refresh();
 		}

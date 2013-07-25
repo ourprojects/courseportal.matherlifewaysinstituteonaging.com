@@ -51,6 +51,7 @@ class WebUser extends CWebUser {
 		if(($user = $this->getModel()) !== null)
 		{
 			$user->last_login = date('Y-m-d H:i:s');
+			$user->save();// @ TODO
 			if(!Yii::app()->phpBB->login() && !Yii::app()->phpBB->getUserIdFromName($user->name))
 			{
 				if($this->_identity->canGetProperty('password'))

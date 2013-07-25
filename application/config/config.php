@@ -45,6 +45,7 @@ return array(
 			'phpbb',
 			'translate',
 			'surveyor',
+			'admin'
 		),
 
 		// application components

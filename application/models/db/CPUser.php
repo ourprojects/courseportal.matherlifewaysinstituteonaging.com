@@ -59,7 +59,7 @@ class CPUser extends CActiveRecord {
 			array('password, salt, session_key, group_id, last_ip, last_login, language, isActivated', 'unsafe', 'except' => 'admin'),
 			array('session_key', 'default', 'value' => $this->generateIV(), 'setOnEmpty' => true),
 			array('email, name, session_key, firstname, lastname', 'required', 'except' => 'search'),
-			array('new_password', 'required', 'on' => 'new'),
+			array('new_password', 'required', 'on' => 'insert'),
 			array('password', 'ext.pbkdf2.PBKDF2validator', 'allowEmpty' => true),
 			array('salt, session_key', 'ext.pbkdf2.PBKDF2validator', 'except' => 'search'),
 				
@@ -107,6 +107,9 @@ class CPUser extends CActiveRecord {
 						'newValueAttribute' => 'new_password',
 						'generateSaltOnNewRecord' => true,
 						'clearNewValueAfterSave' => false
+				),
+				'ERememberFiltersBehavior' => array(
+						'class' => 'application.behaviors.ERememberFiltersBehavior',
 				)
 		));
 	}
@@ -189,13 +192,16 @@ class CPUser extends CActiveRecord {
 	
 	public function setIsActivated($isActivated)
 	{
+		$model = $this->getRelated('activated');
 		if($isActivated)
 		{
-			$model = new UserActivated();
-			$model->setAttribute('user_id', $this->getAttribute('id'));
-			$model->setAttribute('date', date('Y-m-d H:i:s'));
+			if(!$model instanceof UserActivated)
+			{
+				$model = new UserActivated();
+				$model->setAttribute('date', date('Y-m-d H:i:s'));
+			}
 		}
-		else if(($model = $this->getRelated('activated')) instanceof UserActivated)
+		else if($model instanceof UserActivated)
 		{
 			if(!$model->getIsNewRecord())
 			{
@@ -331,9 +337,11 @@ class CPUser extends CActiveRecord {
 	protected function afterSave()
 	{
 		$activated = $this->getRelated('activated');
-		if($activated !== null && $activated->getIsNewRecord())
+		if($activated instanceof UserActivated && $activated->getIsNewRecord())
 		{
+			$activated->setAttribute('user_id', $this->getAttribute('id'));
 			$activated->save();
+			$this->addErrors($activated->getErrors());
 		}
 		parent::afterSave();
 	}

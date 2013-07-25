@@ -23,21 +23,31 @@ class AvatarController extends OnlineCoursePortalController {
 		);
 	}
 	
+	public function actionIndex()
+	{
+		$this->loadExtension('HTTP_Download');
+		HTTP_Download::staticSend(array(
+				'file'               => Avatar::getDefaultPath(),
+				'contenttype'		 => Avatar::DEFAULT_MIME,
+				'contentdisposition' => array(HTTP_Download::ATTACHMENT, Avatar::DEFAULT_NAME),
+		), false);
+	}
+	
 	public function actionView($id) {
 		$this->loadExtension('HTTP_Download');
 		$avatar = Avatar::model()->findByPk($id);
-		$sendParams = isset($avatar) && file_exists($avatar->getPath()) 
-			? array(
+		if(isset($avatar) && file_exists($avatar->getPath()))
+		{
+			HTTP_Download::staticSend(array(
 					'file'               => $avatar->getPath(),
 					'contenttype'		 => $avatar->mime,
 					'contentdisposition' => array(HTTP_Download::ATTACHMENT, $avatar->name),
-			) 
-			: array(
-					'file'               => Avatar::getDefaultPath(),
-					'contenttype'		 => Avatar::DEFAULT_MIME,
-					'contentdisposition' => array(HTTP_Download::ATTACHMENT, Avatar::DEFAULT_NAME),
-			);
-		HTTP_Download::staticSend($sendParams, false);
+			), false);
+		}
+		else
+		{
+			$this->actionIndex();
+		}
 	}
 	
 }

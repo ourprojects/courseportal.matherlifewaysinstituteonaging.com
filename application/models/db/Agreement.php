@@ -20,7 +20,10 @@ class Agreement extends CActiveRecord {
     public function behaviors() {
     	return array_merge(parent::behaviors(),
     			array(
-    					'extendedFeatures' => array('class' => 'behaviors.EModelBehaviors')
+    					'extendedFeatures' => array('class' => 'behaviors.EModelBehaviors'),
+    					'ERememberFiltersBehavior' => array(
+    							'class' => 'application.behaviors.ERememberFiltersBehavior',
+    					)
     			));
     }
 
