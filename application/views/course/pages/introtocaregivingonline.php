@@ -29,10 +29,10 @@ foreach(array(
 </div>
 <div id="sidebar">
   <div class="box-sidebar one" style="background-color:#FFF;">
-    <h3>{t}Coming Soon!{/t}</h3>
+    <h3>{t}Evaluations - Coming Soon!{/t}</h3>
     <br />
-    <p><a href="#">{t}Pre-Course Survey{/t}</a></p>
-    <p><a href="#">{t}Post-Course Survey{/t}</a></p>
+    <p><a href="#">{t}Pre-Course Evaluation{/t}</a></p>
+    <p><a href="#">{t}Post-Course Evaluation{/t}</a></p>
     <br />
     <img src="<?php echo $this->getImagesUrl('intro/153075496.png'); ?>" alt="image"> </div>
   <div class="box-sidebar one">
