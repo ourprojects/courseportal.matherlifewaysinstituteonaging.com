@@ -19,8 +19,8 @@
 		$this->pageTitle = t(Yii::app()->name);
 		
 		$breadcrumbs = property_exists($this, 'breadcrumbs') ? $this->breadcrumbs : array();
-		
-		foreach($breadcrumbs as $label => $url) 
+
+		foreach(is_array($breadcrumbs) ? $breadcrumbs : array($breadcrumbs) as $label => $url) 
 		{
 			if(is_string($label))
 				$this->pageTitle .= " - $label";
