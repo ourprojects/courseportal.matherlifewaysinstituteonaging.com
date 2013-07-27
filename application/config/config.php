@@ -1,4 +1,4 @@
-<?php   
+<?php
 
 // This is the main Web application configuration.
 
@@ -14,7 +14,7 @@ return array(
 		'preload' => array(
 				'log'
 		),
-		
+
 		'aliases' => array(
 				'modules' => APP_DIR . DIRECTORY_SEPARATOR . 'modules',
 				'helpers' => APP_DIR . DIRECTORY_SEPARATOR . 'helpers',
@@ -34,7 +34,7 @@ return array(
 				'ext.yii-mail.*',
 				'modules.translate.TranslateModule'
 		),
-		
+
 		// configured modules
 		'modules' => array(
 			/*'gii'=>array(
@@ -45,16 +45,31 @@ return array(
 			'phpbb',
 			'translate',
 			'surveyor',
-			'admin'
+			'admin',
+			'srbac' => array(
+				'userclass' => 'CPUser',
+				'userid' => 'id',
+				'username' => 'name',
+				'superUser' =>'l.daprato',
+				'debug' => true,
+				'layout' => 'webroot.themes.onlinecourseportal.views.layouts.main'
+			),
 		),
 
 		// application components
 		'components' => array(
-				
+
+				'authManager'=>array(
+						'class' => 'modules.srbac.components.EDbAuthManager',
+						'itemTable' => '{{auth_item}}',
+						'itemChildTable' => '{{auth_item_child}}',
+						'assignmentTable' => '{{auth_assignment}}',
+				),
+
 				'themeManager' => array(
 						'themeClass' => 'Theme'
 				),
-				
+
 				'request' => array(
 						'class' => 'HttpRequest',
 						'enableCookieValidation' => true,
@@ -63,7 +78,7 @@ return array(
 									'[user|usercourse]/[create|read|update|delete|options]/*'
 								)
 				),
-				
+
 				'messages' => array(
 						'class' => 'modules.translate.components.TMessageSource',
 						'forceTranslation' => false,
@@ -75,7 +90,7 @@ return array(
 						'enableProfiling' => defined('YII_DEBUG') && YII_DEBUG,
 						'messageCategory' => 'onlinecourseportal',
 				),
-				
+
 				'views' => array(
 						'class' => 'modules.translate.components.TViewSource',
 						'onMissingViewTranslation' => array('TranslateModule', 'missingViewTranslation'),
@@ -87,45 +102,45 @@ return array(
 						'cachingDuration' => defined('YII_DEBUG') && YII_DEBUG ? 0 : 86400,
 						'enableProfiling' => defined('YII_DEBUG') && YII_DEBUG,
 				),
-				
+
 				'surveyor' => array(
-						'class' => 'modules.surveyor.components.Surveyor',		
+						'class' => 'modules.surveyor.components.Surveyor',
 				),
-				
+
 				'translate' => array(
 						'class' => 'modules.translate.components.MPTranslate',
 						'googleApiKey' => 'AIzaSyD5Xxt_4VKM13pF9uQdcULK4eHuTe7w940',
 						'autoTranslate' => true,
 						'viewSource' => 'views',
 				),
-				
+
 				'viewRenderer' => array(
 					'class' => 'modules.translate.components.TViewRenderer',
 				),
-				
+
 				'cache' => array(
 					'class' => 'system.caching.CApcCache'
 				),
-				
+
 				'user' => array(
 						'class' => 'application.auth.WebUser',
 						'allowAutoLogin' => true,
 						'loginUrl' => array('user/login')
 				),
-				
+
 				'session' => array(
 						'class' => 'DbHttpSession',
 						'connectionID' => 'db',
 						'autoCreateSessionTable' => defined('YII_DEBUG') && YII_DEBUG,
 						'sessionTableName' => '{{yii_session}}'
 				),
-				
+
 				'phpBB' => array(
 						'class' => 'phpbb.extensions.phpBB.phpBB',
 						'path' => 'webroot.forum',
 						'webPath' => 'forum'
 				),
-				
+
 				'mail' => array(
 						'class' => 'ext.yii-mail.YiiMail',
 						'transportType' => 'php',
@@ -133,7 +148,7 @@ return array(
 						'logging' => defined('YII_DEBUG') && YII_DEBUG,
 						'dryRun' => false,
 				),
-				
+
 				'image' => array(
 						'class' => 'ext.image.CImageComponent',
 						// GD or ImageMagick
@@ -141,21 +156,21 @@ return array(
 						// ImageMagick setup path
 						//'params' => array('directory' => '/opt/local/bin'),
 				),
-				
+
 				'file' => array(
 						'class' => 'ext.file.CFile',
 				),
-				
+
 				'db' => require('db.php'),
-				
+
 				'forumDb' => require('dbPhpBB.php'),
-				
+
 				'urlManager' => array(
 						'urlFormat' => 'path',
 						'showScriptName' => false,
 						'rules' => require('routes.php'),
 				),
-				
+
 				'log' => array(
 						'class' => 'CLogRouter',
 						'routes' => array(
@@ -190,6 +205,6 @@ return array(
 				),
 
 		),
-		
+
 		'params' => require('params.php'),
 );
