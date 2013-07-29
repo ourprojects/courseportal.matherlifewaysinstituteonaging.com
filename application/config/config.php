@@ -46,25 +46,25 @@ return array(
 			'translate',
 			'surveyor',
 			'admin',
-			'srbac' => array(
+			/*'srbac' => array(
 				'userclass' => 'CPUser',
 				'userid' => 'id',
 				'username' => 'name',
 				'superUser' =>'l.daprato',
 				'debug' => true,
 				'layout' => 'webroot.themes.onlinecourseportal.views.layouts.main'
-			),
+			),*/
 		),
 
 		// application components
 		'components' => array(
 
-				'authManager'=>array(
+				/*'authManager'=>array(
 						'class' => 'modules.srbac.components.EDbAuthManager',
 						'itemTable' => '{{auth_item}}',
 						'itemChildTable' => '{{auth_item_child}}',
 						'assignmentTable' => '{{auth_assignment}}',
-				),
+				),*/
 
 				'themeManager' => array(
 						'themeClass' => 'Theme'
@@ -191,7 +191,7 @@ return array(
 								// Translation logging
 								array(
 										'class' => 'CFileLogRoute',
-										'categories' => 'module.translate.*',
+										'categories' => 'modules.translate.*',
 										'logFile' => 'translate.log',
 										'levels' => defined('YII_DEBUG') && YII_DEBUG ? '' : 'error, warning',
 								),
