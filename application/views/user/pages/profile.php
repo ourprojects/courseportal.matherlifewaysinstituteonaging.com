@@ -1,5 +1,5 @@
 <?php
-$this->breadcrumbs = array(t('Profile & Surveys'));
+$this->breadcrumbs = array('{t}Profile & Surveys{/t}');
 $this->widget(
 		'ext.fancybox.EFancyBox',
 		array(

@@ -1,4 +1,4 @@
-<?php $this->breadcrumbs = array(t('Register')); ?>
+<?php $this->breadcrumbs = array('{t}Register{/t}'); ?>
 
 <div class="small-masthead" style="background-image: url(<?php echo $this->getImagesUrl('header-register.png'); ?>);">
 	<h1 class="bottom">{t}Register{/t}</h1>
@@ -19,6 +19,6 @@
 		<?php echo $this->renderPartial('forms/register_form', $models); ?>
 	</div>
 	<p>
-		<?php echo CHtml::link(t('Resend Activation Email'), $this->createUrl('resendActivation')); ?>
+		<?php echo CHtml::link('{t}Resend Activation Email{/t}', $this->createUrl('resendActivation')); ?>
 	</p>
 </div>
