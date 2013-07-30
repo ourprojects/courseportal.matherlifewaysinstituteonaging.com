@@ -132,14 +132,12 @@
 				</div>
 				<div id="icons">
 					<a class="twitter" href="http://twitter.com/aginginaction" title="{t}Twitter{/t}" rel="nofollow" target="_blank"
-						style="background-image: url('<?php echo Yii::app()->getTheme()->getImagesUrl('icon-twitter.png'); ?>');">
+						style="background-image: url('<?php echo Yii::app()->getTheme()->getImagesUrl('icon-twitter.png'); ?>');
+                        -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; ">
 					</a>
-					<a class="facebook" href="http://www.facebook.com/matherlifeways" title="{t}Facebook{/t}" rel="nofollow" target="_blank"
-						style="background-image: url('<?php echo Yii::app()->getTheme()->getImagesUrl('icon-facebook.png'); ?>');">
-					</a>
-					<a class="pinterest" href="http://pinterest.com/" title="{t}Pinterest{/t}" rel="nofollow" target="_blank" 
-						style="background-image: url('<?php echo Yii::app()->getTheme()->getImagesUrl('icon-pinterest.png'); ?>');">
-					</a>
+                    <a class="linkedin" href="http://www.linkedin.com/in/kenadams60201" title="{t}LinkedIn{/t}" rel="nofollow" target="_blank"
+						style="background-image: url('<?php echo Yii::app()->getTheme()->getImagesUrl('icon-linkedin.png'); ?>');">
+					</a>  
 					<a class="youtube" href="http://www.youtube.com/matherlifeways" title="{t}YouTube{/t}" rel="nofollow" target="_blank" 
 						style="background-image: url('<?php echo Yii::app()->getTheme()->getImagesUrl('icon-youtube.png'); ?>');">
 					</a>
@@ -148,7 +146,7 @@
 					<ul>
 						<li>{t}P: (847) 492.7500 | F: (847) 492.6789{/t}</li>
 						<li>{t}1603 Orrington Avenue; Suite 1800 | Evanston; IL 60201{/t}</li>
-						<li>{t}&copy; Copyright 2012 Mather LifeWays&reg;{/t}</li>
+						<li>{t}&copy; Copyright 2013 Mather LifeWays&reg;{/t}</li>
 					</ul>
 				</div>
 			</div>
