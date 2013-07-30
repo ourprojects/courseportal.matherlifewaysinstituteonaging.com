@@ -1,4 +1,4 @@
-<?php   
+<?php
 /**
  * This is the model class for table "user".
  *
@@ -33,9 +33,9 @@
  */
 
 class CPUser extends CActiveRecord {
-	
+
 	public $new_password = null;
-	
+
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @return CActiveRecord the static model class
@@ -62,21 +62,21 @@ class CPUser extends CActiveRecord {
 			array('new_password', 'required', 'on' => 'insert'),
 			array('password', 'ext.pbkdf2.PBKDF2validator', 'allowEmpty' => true),
 			array('salt, session_key', 'ext.pbkdf2.PBKDF2validator', 'except' => 'search'),
-				
+
 			array('firstname, lastname, location, last_agent', 'length', 'max' => 255),
 			array('created', 'date', 'format' => 'yyyy-M-d H:m:s'),
 			array('last_login', 'date', 'format' => 'yyyy-M-d H:m:s'),
 			array('last_ip', 'length', 'max' => 40),
 			array('language', 'length', 'max' => 16),
 			array('country_iso', 'length', 'max' => 3),
-				
+
 			array('email, name', 'length', 'max' => 127),
 			array('email', 'email'),
-			array('email, name', 'unique', 'except' => 'search'),
+			array('email, name', 'unique', 'caseSensitive' => false, 'except' => 'search'),
 
 			array('group_id', 'setDefaultGroupID', 'setOnEmpty' => true),
 			array('group_id', 'exist', 'attributeName' => 'id', 'className' => 'Group'),
-			
+
 			array('name, new_password, email, firstname, lastname, location, country_iso', 'safe'),
 			array('id, group_id, created, last_ip, last_login, last_agent, language', 'safe', 'on' => 'search')
         );
@@ -137,12 +137,12 @@ class CPUser extends CActiveRecord {
 			'activityLogEntryDimensions' => array(self::HAS_MANY, 'UserLogEntryDimension', array('id' => 'user_log_entry_id'), 'through' => 'activityLogEntries'),
 		);
 	}
-	
+
 	public function getCountry()
 	{
 		return isset($this->country_iso) ? Yii::app()->translate->getTerritoryDisplayName($this->country_iso) : '';
 	}
-	
+
 	public function getFullLocation() {
 		if(isset($this->location))
 		{
@@ -156,40 +156,40 @@ class CPUser extends CActiveRecord {
 		}
 		return '';
 	}
-	
+
 	public function getCreatedUnixTime() {
-		if(preg_match('/^(?P<year>\d+)-(?P<month>\d+)-(?P<day>\d+) (?P<hour>\d+):(?P<minute>\d+):(?P<second>\d+)$/', 
-				$this->created, 
+		if(preg_match('/^(?P<year>\d+)-(?P<month>\d+)-(?P<day>\d+) (?P<hour>\d+):(?P<minute>\d+):(?P<second>\d+)$/',
+				$this->created,
 				$matches))
 		{
 			return mktime(
-					$matches['hour'], 
-					$matches['minute'], 
-					$matches['second'], 
-					$matches['month'], 
-					$matches['day'], 
+					$matches['hour'],
+					$matches['minute'],
+					$matches['second'],
+					$matches['month'],
+					$matches['day'],
 					$matches['year']);
 		}
 		return time();
 	}
-	
+
 	public function getIsGuest() {
 		return $this->group instanceof Group && $this->group->getIsGuest();
 	}
-	
+
 	public function getIsAdmin() {
 		return $this->group instanceof Group && $this->group->getIsAdmin();
 	}
-	
+
 	public function getIsEmployee() {
 		return $this->group instanceof Group && $this->group->getIsEmployee();
 	}
-	
-	public function getIsActivated() 
+
+	public function getIsActivated()
 	{
 		return $this->activated instanceof UserActivated && !$this->activated->getIsNewRecord();
 	}
-	
+
 	public function setIsActivated($isActivated)
 	{
 		$model = $this->getRelated('activated');
@@ -211,17 +211,17 @@ class CPUser extends CActiveRecord {
 		}
 		$this->activated = $model;
 	}
-	
+
 	public function hasCourse($course) {
 		if(is_int($course)) {
 			$this->getDbCriteria()->mergeWith(array(
-					'with' => 'userCourses', 
+					'with' => 'userCourses',
 					'condition' => 'userCourses.course_id=:course_id',
 					'params' => array(':course_id' => $course)
 				));
 		} else if(is_string($course)) {
 			$this->getDbCriteria()->mergeWith(array(
-					'with' => 'courses', 
+					'with' => 'courses',
 					'condition' => 'course.name=:name',
 					'params' => array(':name' => $course)
 				));
@@ -230,7 +230,7 @@ class CPUser extends CActiveRecord {
 		}
 		return $this;
 	}
-	
+
 	public function setDefaultGroupID($attribute, $params)
 	{
 		if(!$params['setOnEmpty'] || empty($this->$attribute))
@@ -280,7 +280,7 @@ class CPUser extends CActiveRecord {
 			'agreements' 	 => t('Agreements')
 		);
 	}
-	
+
 	public function getSearchCriteria() {
 		$criteria = new CDbCriteria;
 
@@ -296,10 +296,10 @@ class CPUser extends CActiveRecord {
 		$criteria->compare('last_login', $this->last_login, true);
 		$criteria->compare('last_ip', $this->last_ip, true);
 		$criteria->compare('last_agent', $this->last_agent, true);
-		
+
 		return $criteria;
 	}
-	
+
 	/**
 	 * Retrieves a list of models based on the current search/filter conditions.
 	 * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.
@@ -309,7 +309,7 @@ class CPUser extends CActiveRecord {
 				'criteria' => $this->getSearchCriteria(),
 		));
 	}
-	
+
 	public static function getUniqueName($name) {
 		if(!isset($name)) {
 			do {
@@ -318,7 +318,7 @@ class CPUser extends CActiveRecord {
 		}
 		return $name;
 	}
-	
+
 	/**
 	 * Regenerates the session key for this user and saves to database.
 	 * @return boolean whether the session key was successfully updated for this user.
@@ -327,13 +327,13 @@ class CPUser extends CActiveRecord {
 		$this->session_key = $this->generateIV();
 		return !$saveImmediately || $this->save(true, array('session_key'));
 	}
-	
+
 	public function encodeUrl($url) {
 		if(stripos($url, '/') !== strlen($url) - 1)
 			$url .= '/';
 		return Yii::app()->createAbsoluteUrl($url . 'id/' . urlencode($this->id) . '/session_key/' . CBase64::urlEncode($this->session_key));
 	}
-	
+
 	protected function afterSave()
 	{
 		$activated = $this->getRelated('activated');
@@ -345,5 +345,5 @@ class CPUser extends CActiveRecord {
 		}
 		parent::afterSave();
 	}
-	
+
 }
