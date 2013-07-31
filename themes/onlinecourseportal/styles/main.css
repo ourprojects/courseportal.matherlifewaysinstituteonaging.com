@@ -164,7 +164,17 @@ h5 {
 	background-repeat: no-repeat;
 }
 #footer #icons a:hover {
-	background-position: top;
+	-webkit-transform:scale(0.8); /*Webkit: Scale down image to 0.8x original size*/
+-moz-transform:scale(0.8); /*Mozilla scale version*/
+-o-transform:scale(0.8); /*Opera scale version*/
+-webkit-transition-duration: 0.5s; /*Webkit: Animation duration*/
+-moz-transition-duration: 0.5s; /*Mozilla duration version*/
+-o-transition-duration: 0.5s; /*Opera duration version*/
+opacity: 0.7; /*initial opacity of images*/
+margin: 0 10px 0 10; /*margin between images*/
+
+/* http://www.htmldrive.net/items/show/1091/CSS3-animation-shadows-image-hover-effect */
+
 }
 
 /************** BREADCRUMBS **************/
