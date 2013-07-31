@@ -86,6 +86,11 @@ $this->widget(
   
   <div class="box-sidebar one">
     <h3>{t}Participating Locations{/t}</h3>
+   
+   
+   
+   
+   
     <div id="flags">
       <table>
         <tr>
@@ -106,6 +111,20 @@ $this->widget(
       </table>
     </div>
   </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   
   <!-- sidebar on Resent Research here --> 
   
