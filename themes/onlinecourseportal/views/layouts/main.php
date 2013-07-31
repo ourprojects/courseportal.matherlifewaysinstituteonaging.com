@@ -126,7 +126,7 @@
 		<div id="footer" style="background-image: url('<?php echo Yii::app()->getTheme()->getImagesUrl('bg-foot.jpg'); ?>');">
 			<div class="container">
 				<div id="logo">
-					<a href="http://www.matherlifewaysinstituteonaging.com/" title="{t}Mather LifeWays Institute on Aging{/t}">
+					<a href="http://www.matherlifewaysinstituteonaging.com/" target="_blank" title="{t}Mather LifeWays Institute on Aging{/t}">
 						<img src="<?php echo Yii::app()->getTheme()->getImagesUrl('logo-footer.jpg'); ?>" alt="{t}Logo{/t}" />
 					</a>
 				</div>

@@ -11,6 +11,13 @@ $clientScript->registerCssFile($this->getStylesUrl('homeUser.css'));
   <h1 class="bottom">{t}Welcome!{/t}</h1>
 </div>
 <div id="sidebar">
+  <div class="box-sidebar one" style="background-color:#FFF;">
+    <h3>{t}Recommended Web Browser{/t}</h3>
+    <p style="text-align:center; font-weight:bold;">{t}For the best experience, we recommend using Google Chrome.{/t}</p>
+    <p style="text-align:center; font-weight:bold;">{t}Download Chrome <a href="https://www.google.com/intl/en/chrome/browser/" target="_blank">here</a>!{/t}</p>
+    <p><img class="block-center" src="<?php echo $this->getImagesUrl('googlechromelogo.png'); ?>" /></p>
+    <p><a href="http://www.w3schools.com/browsers/browsers_stats.asp" target="_blank">{t}Web browser usage statistics{/t}</a></p>
+  </div>
   <div class="box-sidebar three statistics">
     <h3>{t}Statistics on Caregivers (USA){/t}</h3>
     <ul id="quotes">
@@ -20,7 +27,7 @@ $clientScript->registerCssFile($this->getStylesUrl('homeUser.css'));
     </ul>
   </div>
   <div class="box-sidebar three">
-    <h3>{t}Whitepapers (English){/t}</h3>
+    <h3>{t}White papers (English){/t}</h3>
     <p> <a href="http://www.matherlifewaysinstituteonaging.com/wp-content/uploads/2012/03/eLearning-Maturing-Technology.pdf" class="pdf" target="_blank">{t}e-Learning: Maturing Technology Brings Balance &amp; Possibilities to Nursing Education{/t} </a> <a href="http://www.matherlifewaysinstituteonaging.com/wp-content/uploads/2012/03/How-eLearning-Can-Reduce-Expenses-and-Improve-Staff-Performance.pdf"
 				class="pdf" target="_blank">{t}The Bottom Line: How e-Learning Can Reduce Expenses and Improve Staff Performance{/t} </a> </p>
   </div>
@@ -33,37 +40,32 @@ $clientScript->registerCssFile($this->getStylesUrl('homeUser.css'));
     <p> <a href="http://www.pewinternet.org/~/media//Files/Reports/2013/PewResearch_FamilyCaregivers.pdf" class="pdf" target="_blank">{t}Family Caregivers are Wired for Health (2013){/t} </a> </p>
   </div>
   <div class="box-sidebar one">
-    <h3>{t}Alzheimer's Assocation (English) (USA){/t}</h3>
+    <h3>{t}Alzheimer's Association (English) (USA){/t}</h3>
     <img class="block center" src="<?php echo $this->getImagesUrl('partners/alz.png'); ?>" />
     <p>{t}There are 10 warning signs of Alzheimer's. If you or someone you know is experiencing 
       any of the signs, please see a doctor. Early diagnosis gives you a chance to seek treatment and plan for the future.{/t}</p>
-    <p><a href="http://www.alz.org/national/documents/checklist_10signs.pdf" class="pdf">{t}Click to download the handout (English){/t}</a></p>
+    <p><a href="http://www.alz.org/national/documents/checklist_10signs.pdf" target="_blank" class="pdf">{t}Click to download the handout (English){/t}</a></p>
   </div>
   <div class="box-sidebar two">
     <h3 class="two-line">{t}Medicare.gov - Tips &amp; Resources for Caregivers (English) (USA){/t}</h3>
     <img class="block center" src="<?php echo $this->getImagesUrl('medicare.png'); ?>" />
-    <p>{t}Are you familar and/or have you visited the Medicare website? 
+    <p>{t}Are you familiar and/or have you visited the Medicare website? 
       The handout below is a list of tips and resources for caregivers as suggested by Medicare.{/t}</p>
-    <p><a href="http://www.medicare.gov/files/ask-medicare-what-medicare-covers.pdf" class="pdf"> {t}Click to download the handout (English){/t}</a></p>
+    <p><a href="http://www.medicare.gov/files/ask-medicare-what-medicare-covers.pdf" target="_blank" class="pdf"> {t}Click to download the handout (English){/t}</a></p>
   </div>
 </div>
 <div class="column-wide">
   <h2 class="flowers">{t}Employers and Employees{/t}</h2>
   <p>{t}We are uniquely positioned to provide corporations with innovative programs and products, all thoughtfully developed and tested under applied research conditions with well-respected companies and senior living organizations.{/t}</p>
   <p>{t}With staff expertise across a number of fields including gerontology, psychology, sociology, nursing, and cultural anthropology, we bring together multiple perspectives to address a wide range of issues that affect the aging population.{/t}</p>
-  
   <p>{t}Digital toolkits provide one-stop training resources for human resource managers and trainers who wish to incorporate key topics for working caregivers into current training programs. In addition, we are well positioned to help conduct pilot studies that measure the impact on both working caregivers and the bottom line for interested corporations.{/t}</p>
-  
-  
-  
   <h2 class="flowers top-pad">{t}Recommendations &amp; Pedagogy{/t}</h2>
   <h5>{t}Recommendations{/t}</h5>
   <p>{t}We recommend the following applications to successfully participate:{/t}</p>
   <ul>
-    <li><a href="http://get.adobe.com/flashplayer/" target="_blank">{t}Adobe Flash Player{/t}</a></li>
-    <li><a href="http://get.adobe.com/reader/" target="_blank">{t}Adobe Reader{/t}</a></li>
+    <li><a href="https://www.google.com/intl/en/chrome/browser/" target="_blank">{t}Google Chrome{/t}</a></li>
+    <li><a href="http://get.adobe.com/flashplayer/" target="_blank">{t}Adobe Flash Player 11</a> (or higher) & <a href="http://get.adobe.com/reader/" target="_blank">Adobe Reader XI{/t}</a> (or higher)</li>
     <li>{t}Word Processor &amp; Spreadsheet Processor{/t} ({t}recommended applications include:{/t} <a href="http://office.microsoft.com" target="_blank">Microsoft Office</a> {t}or{/t} <a href="http://www.apple.com/iwork/" target="_blank">Apple iWork</a> {t}or{/t} <a href="http://www.openoffice.org" target="_blank">Apache OpenOffice</a>)</li>
-
   </ul>
   <h5>{t}Pedagogy{/t}</h5>
   <p> {t}Effective online instruction depends on learning experiences appropriately designed and facilitated by knowledgeable facilitators.
