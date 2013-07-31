@@ -8,7 +8,7 @@ $this->breadcrumbs = array('{t}Admin{/t}');
 </div>
 <div class="column-wide">
   <h2 class="flowers">{t}Administrator{/t}</h2>
-  <hr />
+  <p> {t}This Administrator panel gives users within the group "Administrator" the ability to manage this course portal and various interfaces via these listed panels:{/t}</p>
   <h4>{t}Controls and Configurations{/t}</h4>
   <div class="box-white">
     <h5>{t}API Keys{/t}</h5>
@@ -17,7 +17,7 @@ $this->breadcrumbs = array('{t}Admin{/t}');
   </div>
   <div class="box-white">
     <h5>{t}Courses{/t}</h5>
-    <p>{t}Mather LifeWays Institute on Aging online course portal provides web-based traning and education for those who provide services to older adults. Courses target Nurses, CNAs, Social Workers, Geriatric Professionals, professional and non-professional caregivers. {/t}</p>
+    <p>{t}Mather LifeWays Institute on Aging online course portal provides web-based training and education for those who provide services to older adults. Courses target Nurses, CNAs, Social Workers, Geriatric Professionals, professional and non-professional caregivers. {/t}</p>
     <p id="categories"><a href="<?php echo $this->createUrl('/admin/course'); ?>" class="button">{t}Courses{/t}</a> </p>
   </div>
   <div class="box-white">
@@ -27,7 +27,7 @@ $this->breadcrumbs = array('{t}Admin{/t}');
   </div>
   <div class="box-white">
     <h5>{t}phpBB{/t}</h5>
-    <p>{t}phpBB is a free flat-forum bulletin board software solution that can be used to stay in touch with a group of people or can power your entire website. With an extensive database of user-created modifications and styles database containing hundreds of style and image packages to customise your board, you can create a very unique forum in minutes.{/t}</p>
+    <p>{t}phpBB is a free flat-forum bulletin board software solution that can be used to stay in touch with a group of people or can power your entire website. With an extensive database of user-created modifications and styles database containing hundreds of style and image packages to customize your board, you can create a very unique forum in minutes.{/t}</p>
     <p id="categories"> <a href="<?php echo Yii::app()->getComponent('phpBB')->getACPUrl(); ?>" class="button">{t}phpBB Administration Control Panel{/t}</a> </p>
   </div>
   <div class="box-white">
@@ -37,7 +37,7 @@ $this->breadcrumbs = array('{t}Admin{/t}');
   </div>
   <div class="box-white">
     <h5>{t}HostMySite.com cPanel{/t}</h5>
-    <p>{t}HostMySite is a division of Hosting.com, a leader in enterprise hosting solutions such as Cloud Hosting, Dedicated Hosting, Disaster Recovery, and Business Continuity Services. Hosting.com owns and operates its own datacenters and networks, employs more than 325 employees, and has been financially stable and profitable since its inception in 1997. Our passion for customer service and our carrier-class resources and facilities are what enable us to offer enterprise class service at affordable small business prices on HostMySite.{/t}</p>
+    <p>{t}HostMySite is a division of Hosting.com, a leader in enterprise hosting solutions such as Cloud Hosting, Dedicated Hosting, Disaster Recovery, and Business Continuity Services. Hosting.com owns and operates its own data centers and networks, employs more than 325 employees, and has been financially stable and profitable since its inception in 1997. Our passion for customer service and our carrier-class resources and facilities are what enable us to offer enterprise class service at affordable small business prices on HostMySite.{/t}</p>
     <p id="categories"> <a href="https://my.hostmysite.com/single.html" class="button">{t}HostMySite Control Panel{/t}</a> </p>
   </div>
 </div>
