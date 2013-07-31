@@ -34,7 +34,7 @@
   <hr />
   <img src="<?php echo $this->getImagesUrl('image-nurse.png'); ?>"
 		class="image-right" />
-  <h3> <a href="http://mather.connectedlearning.net/home/" target="_blank">{t}Gerontology Online program{/t} </a> </h3>
+  <h3> <a href="http://matherlifewaysinstituteonaging.com/products"> {t}Gerontology Online program{/t} </a> </h3>
   <p> {t}Gerontology Online is a web-based continuing education program designed for health care professionals who wish to enhance their knowledge and skills in the field of aging. This program will provide employees with valuable information about gerontology, helping them to stay abreast of the latest research and practices and it is also an excellent resource for new hires, providing them with a solid foundation while saving employers time and money by reducing training hours and ensuring employees have a basic skill set upon hiring.{/t}</p>
   <p>{t}This program is offered by Mather LifeWays Institute on Aging in collaboration with Rush University College of Nursing. Development was partially supported by funding from the Bureau of Health Professionals division of the Department of Health and Human Services.{/t} </p>
   <h4> {t}Objectives{/t} </h4>
