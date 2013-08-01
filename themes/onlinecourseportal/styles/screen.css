@@ -255,6 +255,18 @@ select {
 	margin-right:auto;
 }
 
+.bold {
+	font-weight: bold;
+}
+
+.bolder {
+	font-weight: bolder;
+}
+
+.lighter {
+	font-weight: lighter;
+}
+
 .text-left {
 	text-align: left;
 }
