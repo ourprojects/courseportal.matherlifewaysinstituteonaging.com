@@ -33,7 +33,7 @@ foreach(array(
     <br />
     <p><a href="#">{t}Pre-Course Evaluation{/t}</a></p>
     <p><a href="#">{t}Post-Course Evaluation{/t}</a></p>
-<br />
+    <br />
     <img src="<?php echo $this->getImagesUrl('msml/153075496.png'); ?>" alt="image"> </div>
   <div class="box-sidebar one">
     <h3>Sharp Brains - Market Research</h3>
@@ -59,7 +59,7 @@ foreach(array(
   <h5>{t}Independent Study / One-Year Access{/t}</h5>
   <h4>{t}Objectives{/t}</h4>
   <ul>
-  <?php 
+    <?php 
   foreach($course->objectives as $objective)
   	echo '<li>' . t($objective->text) . '</li>';
   ?>
@@ -74,12 +74,12 @@ foreach(array(
     <li> <a href="#lesson-4-slide-1" data-fancybox-group="lesson-4" class="teal lesson-4"> {t}Intellectual{/t}</a> <a href="#lesson-4-slide-2" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-3" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-4" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-5" data-fancybox-group="lesson-4" class="hide lesson-4"></a></li>
     <li> <a href="#lesson-5-slide-1" data-fancybox-group="lesson-5" class="teal lesson-5"> {t}Nutritional{/t}</a> <a href="#lesson-5-slide-2" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-3" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-4" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-5" data-fancybox-group="lesson-5" class="hide lesson-5"></a></li>
     <li> <a href="#lesson-5-slide-1" data-fancybox-group="lesson-5" class="teal lesson-5"> {t}Spiritual{/t}</a> <a href="#lesson-5-slide-2" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-3" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-4" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-5" data-fancybox-group="lesson-5" class="hide lesson-5"></a></li>
-    <li> <a href="#lesson-5-slide-1" data-fancybox-group="lesson-5" class="teal lesson-5"> {t}Emotional{/t}</a> <a href="#lesson-5-slide-2" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-3" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-4" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-5" data-fancybox-group="lesson-5" class="hide lesson-5"></a></li>
+    <li> <a href="#lesson-5-slide-1" data-fancybox-group="lesson-5" class="teal lesson-5"> {t}Social{/t}</a> <a href="#lesson-5-slide-2" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-3" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-4" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-5" data-fancybox-group="lesson-5" class="hide lesson-5"></a></li>
     <li> <a href="#lesson-5-slide-1" data-fancybox-group="lesson-5" class="teal lesson-5"> {t}Closing{/t}</a> <a href="#lesson-5-slide-2" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-3" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-4" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-5" data-fancybox-group="lesson-5" class="hide lesson-5"></a></li>
   </ul>
   <div class="box-white" id="resources">
     <h4> {t}Resources{/t}</h4>
-    <p>{t}Please use these listed resources in the completion of this online course. Please contact your instructor or the program director if you have additional resources you would like to see added here.{/t}</p>
+    <p>{t}Please use these listed resources in the completion of this online course. Please contact your facilitator or the program director if you have additional resources you would like to see added here.{/t}</p>
     <ul>
       <li><a href="http://www.mindful.org/" target="_blank">mindful - taking time for what matters</a></li>
       <li><a href="http://www.psychologytoday.com/basics/mindfulness" target="_blank">Psychologytoday</a></li>
@@ -97,7 +97,7 @@ foreach(array(
     <span class="h5">{t}Developer:{/t}</span> <span class="name">Jon Woodall</span>
     <p>{t}Mr. Woodall is responsible for all MLIA corporate workforce wellness programs related to design, implementation, publication, and evaluation. Additionally, he seeks new grant funding to support or extend current grants related to corporate workforce wellness programs.{/t}</p>
     <span class="h5">{t}Facilitator:{/t}</span> <span class="name">Sherrie All, PhD</span>
-    <p>{t}Licensed clinical neuropsychologist specializing in brain fitness, healthy aging and cognitive enhancement. She is building a private practice in clinical neuropsychological assessment combined with interventions aimed at enhancing cognition and promoting healthy aging. And has specialties in Neuropsychological Assessment, Individual and Group Psychotherapy, Brain Fitness and Healthy Aging Thearpy and Coaching{/t}</p>
+    <p>{t}Licensed clinical neuropsychologist specializing in brain fitness, healthy aging and cognitive enhancement. She is building a private practice in clinical neuropsychological assessment combined with interventions aimed at enhancing cognition and promoting healthy aging. And has specialties in Neuropsychological Assessment, Individual and Group Psychotherapy, Brain Fitness and Healthy Aging Therapy, and Coaching{/t}</p>
   </div>
 </div>
 
@@ -128,20 +128,20 @@ foreach(array(
             <h4>{t}Overview of:{/t}</h4>
           </li>
           <li>
-	          <ul>
-	            <li>
-	              <h5>{t}Brain Health Now and Later{/t}</h5>
-	            </li>
-	            <li>
-	              <h5>{t}Dementia and Cognitive Reserve{/t}</h5>
-	            </li>
-	            <li>
-	              <h5>{t}Brain Plasticity{/t}</h5>
-	            </li>
-	            <li>
-	              <h5>{t}Peak Performance{/t}</h5>
-	            </li>
-	          </ul>
+            <ul>
+              <li>
+                <h5>{t}Brain Health Now and Later{/t}</h5>
+              </li>
+              <li>
+                <h5>{t}Dementia and Cognitive Reserve{/t}</h5>
+              </li>
+              <li>
+                <h5>{t}Brain Plasticity{/t}</h5>
+              </li>
+              <li>
+                <h5>{t}Peak Performance{/t}</h5>
+              </li>
+            </ul>
           </li>
           <li>
             <h4>{t}Introduction to Program Format{/t}</h4>
@@ -295,7 +295,7 @@ foreach(array(
         <h2 class="flowers">{t}Your Brain’s 401K{/t}</h2>
         <hr />
         <p>{t}Now that we know that a lot of the things we do throughout our lives affects our susceptibility to dementia, we can utilize the principles of Cognitive Reserve Theory to maximize our investments in our Brain’s retirement account.{/t}</p>
-        <p>{t}Disclaimer!!!  We want to emphasize that there are still risk factors that we cannot control, so living a brain healthy lifestyle does not guarantee that you will not get dementia, just like living a heart healthy lifestyle doesn’t guarantee you won’t have a heart attack.{/t}</p>
+        <p>{t}Disclaimer!!!  We want to emphasize that there are still risk factors that we cannot control, so living a brain healthy lifestyle does not guarantee that you will not get dementia, just like living a heart healthy lifestyle does not guarantee you won’t have a heart attack.{/t}</p>
         <p>{t}However, this program will help you understand the things you can do that may lower the risk for dementia or postpone cognitive decline in the hopes that you will maintain independence for as long as possible.{/t}</p>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
@@ -307,7 +307,7 @@ foreach(array(
       <div class="content">
         <h2 class="flowers">{t}Peak Performance!{/t}</h2>
         <hr />
-        <p>{t}We’ve talked a lot today about protecting your brain from dementia, but this program will also focus on helping you get the most out of your brain today, which can help you both at work and at home.  You will be learning strategies to remember things better, to be more organized, to pay closer attention and to regulate your emotions.  Some of the strategies will come to you directly through the memory tips that you will learn in sessions 2-7 and the lifestyle demonstrations we will present each week.  Other strategies will come to you indirectly as you practice the exercises included in both the program homework assignments and the brain training software we are providing.{/t}</p>
+        <p>{t}We have talked a lot today about protecting your brain from dementia, but this program will also focus on helping you get the most out of your brain today, which can help you both at work and at home.  You will be learning strategies to remember things better, to be more organized, to pay closer attention and to regulate your emotions.  Some of the strategies will come to you directly through the memory tips that you will learn in sessions 2-7 and the lifestyle demonstrations we will present each week.  Other strategies will come to you indirectly as you practice the exercises included in both the program homework assignments and the brain training software we are providing.{/t}</p>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
@@ -441,7 +441,7 @@ Finally, it is also important to remember that emotions can interrupt our attent
         <h2 class="flowers">{t}Attention Exercise{/t}</h2>
         <hr />
         <p>{t}Allow 10 minutes of time for this activity{/t}</p>
-        <p>{t}Once you have completed this activity, please record your experince on the Forum{/t}</p>
+        <p>{t}Once you have completed this activity, please record your experience on the Forum{/t}</p>
         
         <!--
 
@@ -530,7 +530,7 @@ Rewards
           <li>{t}What are your goals for this week?{/t}</li>
         </ul>
       </div>
-      <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Complete Lesson{/t}</a></div>
+      <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Complete Module{/t}</a></div>
     </div>
     
     <!-- this div is needed to close the  lesson --> 
@@ -611,7 +611,7 @@ Rewards
           <li>{t}What are your goals for this week?{/t}</li>
         </ul>
       </div>
-      <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Complete Lesson{/t}</a></div>
+      <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Complete Module{/t}</a></div>
     </div>
     
     <!-- this div is needed to close the  lesson --> 
