@@ -10,7 +10,7 @@ class LanguageController extends TController
 				'ajaxOnly + ajaxIndex, ajaxView, ajaxCreate',
 				'postOnly + create, ajaxCreate',
 				array(
-						'translate.filters.TForwardActionFilter + index, view, create',
+						'ext.EForwardActionFilter.EForwardActionFilter + index, view, create',
 						'map' => array(
 								'index' => 'ajaxIndex + ajax',
 								'view' => 'ajaxView + ajax',

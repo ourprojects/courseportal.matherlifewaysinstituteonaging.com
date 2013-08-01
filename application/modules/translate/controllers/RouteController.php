@@ -9,7 +9,7 @@ class RouteController extends TController
 				'accessControl',
 				'ajaxOnly + ajaxIndex, ajaxView',
 				array(
-						'translate.filters.TForwardActionFilter + index, route',
+						'ext.EForwardActionFilter.EForwardActionFilter + index, route',
 						'map' => array(
 								'index' => 'ajaxIndex + ajax',
 								'route' => 'ajaxView + ajax',

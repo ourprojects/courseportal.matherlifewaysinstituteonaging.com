@@ -9,7 +9,7 @@ class MessageController extends TController
 				'accessControl',
 				'ajaxOnly + ajaxIndex',
 				array(
-						'translate.filters.TForwardActionFilter + index, view',
+						'ext.EForwardActionFilter.EForwardActionFilter + index, view',
 						'map' => array(
 								'index' => 'ajaxIndex + ajax',
 								'view' => 'update'
