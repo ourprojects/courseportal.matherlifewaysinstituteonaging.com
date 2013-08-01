@@ -4,16 +4,17 @@ class AdminModule extends CWebModule {
 
 	/**
 	 * Initializes the TranslateModule.
-	 * 
+	 *
 	 * @see CWebModule::init()
 	 */
 	public function init() {
-        $this->defaultController = 'Admin';
-        $dirname = basename(dirname(__FILE__));
+		$this->defaultController = 'Admin';
+		$dirname = basename(dirname(__FILE__));
 		$this->setImport(array(
-            $dirname . '.controllers.*',
-        ));
-        return parent::init();
+				$dirname . '.components.*',
+				$dirname . '.controllers.*',
+		));
+		return parent::init();
 	}
 
 }

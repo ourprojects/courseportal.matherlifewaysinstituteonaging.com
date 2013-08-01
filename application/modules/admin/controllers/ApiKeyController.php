@@ -1,20 +1,20 @@
-<?php   
+<?php
 
-class ApiKeyController extends OnlineCoursePortalController 
+class ApiKeyController extends AController
 {
-	
+
 	/**
 	 * @return array action filters
 	 */
-	public function filters() 
+	public function filters()
 	{
 		return array(
 				array('filters.HttpsFilter'),
 				'accessControl',
 		);
 	}
-	
-	public function accessRules() 
+
+	public function accessRules()
 	{
 		return array(
 				array('allow',
@@ -25,67 +25,67 @@ class ApiKeyController extends OnlineCoursePortalController
 				),
 		);
 	}
-	
-	public function actionIndex() 
+
+	public function actionIndex()
 	{
 		$model = new Key;
-		
-		if(isset($_POST['ajax'])) 
+
+		if(isset($_POST['ajax']))
 		{
-			if($_POST['ajax'] === 'key-create-form') 
+			if($_POST['ajax'] === 'key-create-form')
 			{
 				echo CActiveForm::validate($model);
 				Yii::app()->end();
 			}
 		}
-		
-		if(isset($_POST['Key'])) 
+
+		if(isset($_POST['Key']))
 		{
 			$model->setAttributes($_POST['Key']);
-			
+
 			if($model->save())
 				Yii::app()->getUser()->setFlash('success', t('Key saved successfully.'));
 			else
 				Yii::app()->getUser()->setFlash('error', t('Key could not be saved.'));
 		}
-		
+
 		$this->render('index', array('model' => $model));
 	}
-	
-	public function actionGenerate() 
+
+	public function actionGenerate()
 	{
 		echo CBase64::urlEncode(Key::model()->generateIV());
 	}
-	
-	public function actionDelete($id) 
+
+	public function actionDelete($id)
 	{
 		$model = Key::model()->findByPk($id);
-		 
+
 		if($model === null)
 		{
 			throw new CHttpException(404, t('Key ID {id} not found.', array('{id}' => $id)));
 		}
-		 
-		if($model->delete()) 
+
+		if($model->delete())
 		{
 			$response = array('result' => 'success', 'message' => t('Key deleted successfully.'));
 		}
-		else 
+		else
 		{
 			$response = array('result' => 'error', 'message' => t('Key could not be deleted.'));
 		}
-		 
-		if(Yii::app()->getRequest()->getIsAjaxRequest()) 
+
+		if(Yii::app()->getRequest()->getIsAjaxRequest())
 		{
 			echo $response['message'];
-		} 
-		else 
+		}
+		else
 		{
 			Yii::app()->getUser()->setFlash($response['result'], $response['message']);
 			$this->redirect(Yii::app()->getRequest()->getUrlReferrer());
 		}
 	}
-	
+
 	public function actionGrid($id, $name)
 	{
 		switch($name)

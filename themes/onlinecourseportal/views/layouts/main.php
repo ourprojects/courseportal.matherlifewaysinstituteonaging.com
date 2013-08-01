@@ -10,25 +10,25 @@
 	<!--[if lt IE 8]>
 		<?php echo CHtml::cssFile(Yii::app()->getTheme()->getStylesUrl('ie.css'), 'screen, projection'); ?>
 		<![endif]-->
-	
+
 	<?php echo CHtml::cssFile(Yii::app()->getTheme()->getStylesUrl('form.css')); ?>
 	<?php echo CHtml::cssFile(Yii::app()->getTheme()->getStylesUrl('main.css')); ?>
 	<?php Yii::app()->getClientScript()->registerScriptFile(Yii::app()->getTheme()->getScriptsUrl('main.js'), CClientScript::POS_HEAD); ?>
 	<title>
 		<?php
 		$this->pageTitle = t(Yii::app()->name);
-		
+
 		$breadcrumbs = property_exists($this, 'breadcrumbs') ? $this->breadcrumbs : array();
 
-		foreach(is_array($breadcrumbs) ? $breadcrumbs : array($breadcrumbs) as $label => $url) 
+		foreach(is_array($breadcrumbs) ? $breadcrumbs : array($breadcrumbs) as $label => $url)
 		{
 			if(is_string($label))
 				$this->pageTitle .= " - $label";
 			else if(is_string($url))
 				$this->pageTitle .= " - $url";
 		}
-		
-		echo CHtml::encode($this->pageTitle); 
+
+		echo CHtml::encode($this->pageTitle);
 		?>
 	</title>
 </head>
@@ -51,14 +51,14 @@
 			</div>
 			<?php if(Yii::app()->getUser()->getIsAdmin() && Yii::app()->getComponent('translate')->hasMissingTranslations()): ?>
 				<div id="translate-button">
-					<?php echo Yii::app()->getComponent('translate')->translateLink('{t}Missing Translations on Page{/t}', 'button'); ?>	
+					<?php echo Yii::app()->getComponent('translate')->translateLink('{t}Missing Translations on Page{/t}', 'button'); ?>
 				</div>
 			<?php endif; ?>
 			<div id="mainmenu">
-				<?php 
+				<?php
 					$user = Yii::app()->getUser();
 					$this->widget(
-							'zii.widgets.CMenu', 
+							'zii.widgets.CMenu',
 							array('items' => array(
 									array('label' => '<span id="menu-home" title="{t}Home{/t}"></span>',
 											'url' => Yii::app()->createAbsoluteUrl('home/index')),
@@ -89,26 +89,26 @@
 								),
 								'encodeLabel' => false
 							)
-					); 
+					);
 				?>
 			</div>
 		</div>
 		<!-- END HEADER -->
 		<!-- BEGIN CONTENT -->
 		<div id="content" class="container">
-			<?php 
-			$this->widget('zii.widgets.CBreadcrumbs', 
+			<?php
+			$this->widget('zii.widgets.CBreadcrumbs',
 					array_merge(
-						array('links' => $breadcrumbs),  
+						array('links' => $breadcrumbs),
 						array('homeLink' => CHtml::link('{t}Home{/t}', $this->getModule() === null ? Yii::app()->homeUrl : $this->createUrl($this->getModule()->defaultController.'/')))
 					)
-			); 
+			);
 			?>
 			<?php if(Yii::app()->getUser()->hasFlash('success')): ?>
 					<div class="flash-success">
 						<?php echo Yii::app()->getUser()->getFlash('success'); ?>
 					</div>
-			<?php endif; ?>		
+			<?php endif; ?>
 			<?php if(Yii::app()->getUser()->hasFlash('notice')): ?>
 					<div class="flash-notice">
 						<?php echo Yii::app()->getUser()->getFlash('notice'); ?>
@@ -133,12 +133,12 @@
 				<div id="icons">
 					<a class="twitter" href="http://twitter.com/aginginaction" title="{t}Twitter{/t}" rel="nofollow" target="_blank"
 						style="background-image: url('<?php echo Yii::app()->getTheme()->getImagesUrl('icon-twitter.png'); ?>');
-                        -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; ">
+						-webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; ">
 					</a>
-                    <a class="linkedin" href="http://www.linkedin.com/in/kenadams60201" title="{t}LinkedIn{/t}" rel="nofollow" target="_blank"
+					<a class="linkedin" href="http://www.linkedin.com/in/kenadams60201" title="{t}LinkedIn{/t}" rel="nofollow" target="_blank"
 						style="background-image: url('<?php echo Yii::app()->getTheme()->getImagesUrl('icon-linkedin.png'); ?>');">
-					</a>  
-					<a class="youtube" href="http://www.youtube.com/matherlifeways" title="{t}YouTube{/t}" rel="nofollow" target="_blank" 
+					</a>
+					<a class="youtube" href="http://www.youtube.com/matherlifeways" title="{t}YouTube{/t}" rel="nofollow" target="_blank"
 						style="background-image: url('<?php echo Yii::app()->getTheme()->getImagesUrl('icon-youtube.png'); ?>');">
 					</a>
 				</div>
