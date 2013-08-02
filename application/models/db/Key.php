@@ -40,7 +40,7 @@ class Key extends CActiveRecord {
 								'clearNewValueAfterSave' => true
 						),
     					'ERememberFiltersBehavior' => array(
-    							'class' => 'application.behaviors.ERememberFiltersBehavior',
+    							'class' => 'ext.ERememberFiltersBehavior.ERememberFiltersBehavior',
     					)
     			));
     }

@@ -109,7 +109,7 @@ class CPUser extends CActiveRecord {
 						'clearNewValueAfterSave' => false
 				),
 				'ERememberFiltersBehavior' => array(
-						'class' => 'application.behaviors.ERememberFiltersBehavior',
+						'class' => 'ext.ERememberFiltersBehavior.ERememberFiltersBehavior',
 				)
 		));
 	}

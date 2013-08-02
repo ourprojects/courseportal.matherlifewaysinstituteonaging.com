@@ -22,7 +22,7 @@ class Agreement extends CActiveRecord {
     			array(
     					'extendedFeatures' => array('class' => 'behaviors.EModelBehaviors'),
     					'ERememberFiltersBehavior' => array(
-    							'class' => 'application.behaviors.ERememberFiltersBehavior',
+    							'class' => 'ext.ERememberFiltersBehavior.ERememberFiltersBehavior',
     					)
     			));
     }

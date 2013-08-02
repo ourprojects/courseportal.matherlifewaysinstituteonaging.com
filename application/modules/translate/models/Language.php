@@ -18,7 +18,7 @@ class Language extends CActiveRecord
 	{
 		return array(
 				'ERememberFiltersBehavior' => array(
-						'class' => 'application.behaviors.ERememberFiltersBehavior',
+						'class' => 'ext.ERememberFiltersBehavior.ERememberFiltersBehavior',
 				)
 		);
 	}
