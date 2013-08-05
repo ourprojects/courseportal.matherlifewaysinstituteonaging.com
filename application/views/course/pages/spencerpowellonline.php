@@ -120,29 +120,22 @@ foreach(array(
       <div class="content">
         <h2 class="flowers">{t}Spencer Powell Brain Fitness Program online{/t}</h2>
         <hr />
-                        <img src="<?php echo $this->getImagesUrl('spencer/167585366.png'); ?>" alt="{t}Welcome!{/t}">
-
+        <img src="<?php echo $this->getImagesUrl('spencer/167585366.png'); ?>" alt="{t}Welcome!{/t}">
         <h4>{t}Welcome!{/t}</h4>
         <p>{t}Welcome and thank you for your interest and participation in the <strong>Spencer Powell Brain Fitness Program</strong> online course. We are excited to have your participation and look forward to our interactions! Please contact us if you need help, have questions, or suggestions for course improvements.{/t}</p>
-
         <h4>{t}Course Description{/t}</h4>
         <p>{t}<strong>The Spencer Powell Brain Fitness Program</strong> is designed to promote cognitive health and healthy lifestyle changes. The course provides information on how lifestyle factors such as physical activity and cognitive engagement affect your brain and your risk for dementia. Practical strategies are suggested for maintaining memory over time. In addition, the course includes memory training such as chunking, the story method, and mnemonic techniques.{/t}</p>
-        
-        
-          <div id="question1" class="question">
-        <p><b>{t}Have you taken the pre-course survey yet?{/t}</b><br />
-          <select>
-            <option selected="selected" value="select"> {t}Select{/t} </option>
-            <option value="1"> {t}Yes{/t} </option>
-            <option value="0"> {t}No{/t} </option>
-          </select>
-        </p>
-        <p class="right-answer hide"> {t}Great! Thank you! Please continue.{/t} </p>
-        <p class="wrong-answer hide"> {t}Please return to this course's home page and complete the pre-course survey. It is accessible via the sibebar.{/t} </p>
-      </div>
-        
-        
-        
+        <div id="question1" class="question">
+          <p><b>{t}Have you taken the pre-course survey yet?{/t}</b><br />
+            <select>
+              <option selected="selected" value="select"> {t}Select{/t} </option>
+              <option value="1"> {t}Yes{/t} </option>
+              <option value="0"> {t}No{/t} </option>
+            </select>
+          </p>
+          <p class="right-answer hide"> {t}Great! Thank you! Please continue.{/t} </p>
+          <p class="wrong-answer hide"> {t}Please return to this course's home page and complete the pre-course survey. It is accessible via the sibebar.{/t} </p>
+        </div>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Start Course &raquo;{/t}</a></div>
     </div>
@@ -155,17 +148,16 @@ foreach(array(
         <hr />
         <h4>{t}The Brain Fitness Program on PBS{/t}</h4>
         <p>{t}The first look at an exciting new program on PBS about neuroplasticity and the ability of the brain to change itself, thus paving the way to incredible advances in strengthening your brain as you age.{/t}</p>
-        
-        <div class="box-grey">
-       <iframe width="480" height="360" src="//www.youtube.com/embed/WBSNQi4es5k?rel=0" frameborder="0" allowfullscreen></iframe>
-       </div>
-       
+        <div class="box-grey" style="margin:0 auto 0 auto;">
+          <iframe width="480" height="360" src="//www.youtube.com/embed/WBSNQi4es5k?rel=0" frameborder="0" allowfullscreen></iframe>
+        </div>
       </div>
-      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"> {t}Next{/t}&nbsp;&raquo; </a></div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"> {t}Next{/t}&nbsp;&raquo; </a>
+        <p class="forum">{t}Before you begin, please introduce yourself on the Forum.{/t}</p>
+        <img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}"> </div>
     </div>
     
-    
-     <!-- Lesson 1 - slide #3 -->
+    <!-- Lesson 1 - slide #3 -->
     
     <div id="lesson-1-slide32" class="course-slide">
       <div class="content">
@@ -173,9 +165,9 @@ foreach(array(
         <hr />
         <h4>{t}Course Modules{/t}</h4>
         <ol>
-        	<li>test</li>
-            <li>test</li>
-         </ol>
+          <li>test</li>
+          <li>test</li>
+        </ol>
         <ol>
           <li>
             <h4>{t}Module Overview{/t}</h4>
