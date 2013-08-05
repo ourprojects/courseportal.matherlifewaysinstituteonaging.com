@@ -1,6 +1,6 @@
 <?php
 
-class EAuthAssignment extends CAuthAssigment
+class EAuthAssignment extends CAuthAssignment
 {
 
 	private $_itemId;
@@ -21,7 +21,7 @@ class EAuthAssignment extends CAuthAssigment
 			throw new CException(Yii::t('yii', 'The item "{name}" does not exist.', array('{name}' => $itemName)));
 		parent::__construct($auth, $itemName, $userId, $bizRule, $data);
 	}
-	
+
 	public function getItemId()
 	{
 		return $this->_itemId;

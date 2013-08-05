@@ -23,7 +23,7 @@
 	<?php $this->beginWidget('CTextHighlighter',array('language'=>'php')) ?>
 	'modules'=>array('srbac'=> array( // Your application's user class
 	(default: User) "userclass"=>"User", // Your users' table user_id
-	column (default: userid) "userid"=>"user_id", // your users' table
+	column (default: userId) "userId"=>"user_id", // your users' table
 	username column (default: username) "username"=>"user_name", // If in
 	debug mode (default: false) // In debug mode every user (even guest)
 	can admin srbac, also //if you use internationalization untranslated

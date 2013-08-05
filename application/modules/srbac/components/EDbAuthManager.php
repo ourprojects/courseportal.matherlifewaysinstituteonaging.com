@@ -70,20 +70,20 @@ class EDbAuthManager extends CDbAuthManager
 		{
 			if($item instanceof EAuthItem)
 			{
-				return array('id', $item->getId());
+				return array('id', intval($item->getId()));
 			}
 			else
 			{
-				return array('name', $item->getName());
+				return array('name', strval($item->getName()));
 			}
 		}
-		else if(is_string($item))
+		else if(preg_match('/^([0-9])+$/i', $item))
 		{
-			return array('name', $item);
+			return array('id', intval($item));
 		}
-		else if(is_integer($item))
+		else
 		{
-			return array('id', $item);
+			return array('name', strval($item));
 		}
 		throw new CException(Yii::t('rbac', 'Invalid authorization item type.'));
 	}
@@ -305,7 +305,7 @@ class EDbAuthManager extends CDbAuthManager
 		switch($itemId[0])
 		{
 			case 'id':
-				return $this->db->getCommandBuilder()->delete($this->assignmentTable, array('and', 'item_id=:item_id', 'user_id=:user_id'), array(':item_id' => $itemId[1], ':user_id' => $userId)) > 0;
+				return $this->db->createCommand()->delete($this->assignmentTable, array('and', 'item_id=:item_id', 'user_id=:user_id'), array(':item_id' => $itemId[1], ':user_id' => $userId)) > 0;
 			case 'name':
 				return $this->db->getCommandBuilder()->createSqlCommand(
 						'DELETE '.$this->db->getSchema()->quoteSimpleTableName('at').
@@ -551,7 +551,7 @@ class EDbAuthManager extends CDbAuthManager
 	 * @param mixed $name string, the name of the item. Or an integer, the unique identifier of the item.
 	 * @return EAuthItem the authorization item. Null if the item cannot be found.
 	 */
-	public function getAuthItem($name)
+	public function getAuthItem($item)
 	{
 		$cmd = $this->db->createCommand()
 			->select()

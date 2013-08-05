@@ -24,6 +24,8 @@ Yii::import("srbac.components.Helper");
 class SBaseController extends CController
 {
 
+	public $breadcrumbs = array();
+
 	/**
 	 * Checks if srbac access is granted for the current user
 	 * @param String $action . The current action
@@ -31,62 +33,70 @@ class SBaseController extends CController
 	 */
 	protected function beforeAction($action)
 	{
-		$del = Helper::findModule('srbac')->delimeter;
+		if (!$this->getModule()->isInstalled() && $action->id !== 'install')
+		{
+			$this->redirect(array('install'));
+		}
+		else if ($this->getModule()->debug || Yii::app()->getUser()->checkAccess(Helper::findModule('srbac')->superUser))
+		{
+			$del = Helper::findModule('srbac')->delimeter;
 
-		//srbac access
-		$mod = $this->getModule() !== null ? $this->getModule()->id . $del : "";
+			//srbac access
+			$mod = $this->getModule() !== null ? $this->getModule()->id . $del : "";
 
-		$contrArr = explode("/", $this->id);
-		$contrArr[sizeof($contrArr) - 1] = ucfirst($contrArr[sizeof($contrArr) - 1]);
-		$controller = implode(".", $contrArr);
+			$contrArr = explode("/", $this->id);
+			$contrArr[sizeof($contrArr) - 1] = ucfirst($contrArr[sizeof($contrArr) - 1]);
+			$controller = implode(".", $contrArr);
 
-		$controller = str_replace("/", ".", $this->id);
-		// Static pages
-		if(sizeof($contrArr)==1)
-		{
-			$controller = ucfirst($controller);
-		}
-		$access = $mod . $controller . ucfirst($this->action->id);
-			
-		//   if (Yii::getVersion() >= "1.1.7") {
-		//      if (count($this->actionParams) > 0) {
-		//        $keys = array_keys($this->actionParams);
-		//        foreach ($keys as $key) {
-		//          $query = $query . ',' . '$' . $key;
-		//        }
-		//
-		//        $query = substr_replace($query, '', 0, 1);
-		//        $access = $access . $query;
-		//      }
-		//    }
-		//Always allow access if $access is in the allowedAccess array
-		if (in_array($access, $this->allowedAccess()))
-		{
-			return true;
-		}
-			
+			$controller = str_replace("/", ".", $this->id);
+			// Static pages
+			if(sizeof($contrArr)==1)
+			{
+				$controller = ucfirst($controller);
+			}
+			$access = $mod . $controller . ucfirst($this->action->id);
 
-		//Allow access if srbac is not installed yet
-		if (!Yii::app()->getModule('srbac')->isInstalled())
-		{
-			return true;
-		}
-			
-		//Allow access when srbac is in debug mode
-		if (Yii::app()->getModule('srbac')->debug)
-		{
-			return true;
-		}
+			//   if (Yii::getVersion() >= "1.1.7") {
+			//      if (count($this->actionParams) > 0) {
+			//        $keys = array_keys($this->actionParams);
+			//        foreach ($keys as $key) {
+			//          $query = $query . ',' . '$' . $key;
+			//        }
+			//
+			//        $query = substr_replace($query, '', 0, 1);
+			//        $access = $access . $query;
+			//      }
+			//    }
+			//Always allow access if $access is in the allowedAccess array
+			if (in_array($access, $this->allowedAccess()))
+			{
+				return true;
+			}
 
-		// Check for srbac access
-		if (!Yii::app()->getUser()->checkAccess($access) || Yii::app()->getUser()->getIsGuest())
-		{
-			$this->onUnauthorizedAccess();
+
+			//Allow access if srbac is not installed yet
+			if (!Yii::app()->getModule('srbac')->isInstalled())
+			{
+				return true;
+			}
+
+			//Allow access when srbac is in debug mode
+			if (Yii::app()->getModule('srbac')->debug)
+			{
+				return true;
+			}
+
+			// Check for srbac access
+			if (!Yii::app()->getUser()->checkAccess($access) || Yii::app()->getUser()->getIsGuest())
+			{
+				$this->onUnauthorizedAccess();
+			}
+			else
+			{
+				return true;
+			}
 		}
-		else
-		{
-			return true;
-		}
+		return false;
 	}
 
 	/**

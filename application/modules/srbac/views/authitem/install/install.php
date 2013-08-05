@@ -30,7 +30,7 @@ $disabled = array(); ?>
 <div class="srbac">
 	<div id="help_handle" class="iconBox" style="float: right">
 		<?php echo
-		SHtml::image($this->getModule()->getIconsPath().'/help.png',
+		SHtml::image($this->getModule()->getIconsUrl('help.png'),
       Yii::t('srbac', 'Help'),
       array('class'=>'icon',
       'title'=>Yii::t('srbac','Help'),
@@ -55,8 +55,8 @@ $disabled = array(); ?>
 			<tr>
 				<th colspan="2"><?php echo Yii::t('srbac','Database');?>
 				</th>
-			
-			
+
+
 			<tr>
 				<td><?php echo Yii::t('srbac','Driver');?></td>
 				<td><?php echo Yii::app()->getAuthManager()->db->getDriverName()?></td>
@@ -80,8 +80,8 @@ $disabled = array(); ?>
 			<tr>
 				<th colspan="2"><?php echo Yii::t('srbac','AuthManager');?>
 				</th>
-			
-			
+
+
 			<tr>
 				<td><?php echo Yii::t('srbac','Item Table');?></td>
 				<td><?php echo Yii::app()->getAuthManager()->itemTable?></td>

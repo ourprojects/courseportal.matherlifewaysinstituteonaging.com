@@ -13,9 +13,7 @@
  * @package srbac.views.authitem
  * @since 1.1.0
  */
-?>
-<?php
-
+Yii::app()->getClientScript()->registerCssFile($this->getModule()->getStylesUrl('srbac.css'));
 //CVarDumper::dump($controllers, 3, true);
 foreach ($controllers as $n=>$controller) {
 	$title = $controller["title"];
@@ -39,11 +37,10 @@ foreach ($controllers as $n=>$controller) {
 <?php echo SHtml::form();?>
 <div class="vertTab">
 	<?php
-	Helper::publishCss($this->getModule()->css);
 	$this->widget('system.web.widgets.CTabView',
     array(
-    'tabs'=>$cont,
-    'cssFile'=>$this->getModule()->getCssUrl(),
+    'tabs' => $cont,
+    'cssFile' => $this->getModule()->getStylesUrl('srbac.css'),
   ));
   ?>
 </div>
@@ -75,6 +72,6 @@ foreach ($controllers as $n=>$controller) {
   } else {
     $(".view").height(260);
     $(".tabs").attr("style","border-bottom:none");
-    
+
   }
 </script>

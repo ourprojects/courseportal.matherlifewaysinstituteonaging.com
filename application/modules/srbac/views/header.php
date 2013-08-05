@@ -14,4 +14,4 @@
  * @since 1.1.0
  */
 ?>
-<h1>Srbac Administration Web Interface</h1>
+<h1><?php Yii::t('srbac', 'Srbac Administration Web Interface'); ?></h1>

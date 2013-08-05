@@ -14,23 +14,198 @@
  * @package srbac.controllers
  * @since 1.0.0
  */
-class AuthitemController extends SBaseController
+class ManageController extends SBaseController
 {
-
-	/**
-	 * @var string specifies the default action to be 'list'.
-	 */
-	public $defaultAction = 'frontpage';
 
 	/**
 	 * @var CActiveRecord the currently loaded data model instance.
 	 */
 	private $_model;
 
-	public function actionGetUsers($term)
+	public function filters()
 	{
-		$list = Helper::getAllusers($term);
-		echo CJSON::encode($list);
+		return array(
+				array(
+					'ext.ERequestMethodFilter.ERequestMethodFilter',
+					'config' => array(
+							'ajax' => 'ajaxIndex, ajaxView, ajaxUpdate',
+							'get' => 'index, ajaxIndex, view, ajaxView',
+							'put' => 'update, ajaxUpdate'
+					)
+				),
+				array(
+						'ext.EForwardActionFilter.EForwardActionFilter + index, view, update, authItem',
+						'map' => array(
+								'authItem' => array('view + get', 'create + post', 'update + put', 'delete + delete'),
+								'index' => 'ajaxIndex + ajax',
+								'view' => 'ajaxView + ajax',
+								'update' => 'ajaxUpdate + ajax',
+								'create' => 'ajaxCreate + ajax',
+								'delete' => 'ajaxDelete + ajax'
+						)
+				)
+			);
+	}
+
+	public function actionAuthItem()
+	{
+		// Placeholder action for creating restful like behavior when request are made to this route.
+		// See EForwardActionFilter configuration to see where this action will be forwarded based on request method.
+	}
+
+	/**
+	 * Displays the authitem manage page
+	 */
+	public function actionIndex()
+	{
+		$this->render('index', array('gridModel' => new AuthItem('search'), 'formModel' => new AuthItem()));
+	}
+
+	public function actionAjaxIndex()
+	{
+		if(isset($_GET['ajax']) && $_GET['ajax'] === 'authItem-grid')
+		{
+			$this->renderPartial('partials/_authItemGrid', array('model' => new AuthItem('search')));
+		}
+	}
+
+	public function actionView($id = null)
+	{
+		$authItem = isset($id) ? AuthItem::model()->findByPk($id) : new AuthItem();
+		if($authItem === null)
+		{
+			throw new CHttpException(404, Yii::t('srbac', 'The authorization item with ID {id} could not be found.', array('{id}' => $id)));
+		}
+		$this->render('index', array('gridModel' => new AuthItem('search'), 'formModel' => $authItem));
+	}
+
+	public function actionAjaxView($id = null)
+	{
+		$authItem = isset($id) ? AuthItem::model()->findByPk($id) : new AuthItem();
+		if($authItem === null)
+		{
+			throw new CHttpException(404, Yii::t('srbac', 'The authorization item with ID {id} could not be found.', array('{id}' => $id)));
+		}
+		$this->renderPartial('partials/_authItemForm', array('model' => $authItem));
+	}
+
+	public function actionUpdate()
+	{
+		$AuthItem = Yii::app()->getRequest()->getRestParams();
+
+		if(!isset($AuthItem['AuthItem']) || !isset($AuthItem['AuthItem']['id']))
+		{
+			throw new CHttpException(400, Yii::t('srbac', 'The ID of the authorization item being updated must be specified.'));
+		}
+
+		$this->render('index', array('gridModel' => new AuthItem('search'), 'formModel' => $this->update($AuthItem['AuthItem'])));
+	}
+
+	public function actionAjaxUpdate()
+	{
+		$AuthItem = Yii::app()->getRequest()->getRestParams();
+
+		if(!isset($AuthItem['AuthItem']) || !isset($AuthItem['AuthItem']['id']))
+		{
+			throw new CHttpException(400, Yii::t('srbac', 'The ID of the authorization item being updated must be specified.'));
+		}
+
+		$this->renderPartial('partials/_authItemForm', array('model' => $this->update($AuthItem['AuthItem'])));
+	}
+
+	public function update($AuthItem)
+	{
+		$model = AuthItem::model()->findByPk($AuthItem['id']);
+		if($model === null)
+		{
+			throw new CHttpException(404, Yii::t('srbac', 'The authorization item requested to update could not be found.'));
+		}
+		$model->setAttributes($AuthItem);
+
+		if ($model->save())
+		{
+			Yii::app()->getUser()->setFlash('updateSuccess', '"'.$model->name.'" '.Yii::t('srbac', 'updated successfully'));
+		}
+
+		return $model;
+	}
+
+	/**
+	 * Creates a new model.
+	 * If creation is successful, the browser will be redirected to the 'show' page.
+	 */
+	public function actionCreate()
+	{
+		$model = new AuthItem;
+		if (isset($_POST['AuthItem']))
+		{
+			$this->create($_POST['AuthItem'], $model);
+		}
+		$this->renderPartial('index', array('gridModel' => new AuthItem('search'), 'formModel' => $model));
+	}
+
+	/**
+	 * Creates a new model.
+	 * If creation is successful, the browser will be redirected to the 'show' page.
+	 */
+	public function actionAjaxCreate()
+	{
+		$model = new AuthItem;
+		if (isset($_POST['AuthItem']))
+		{
+			$this->create($_POST['AuthItem'], $model);
+		}
+		$this->renderPartial('partials/_authItemForm', array('model' => $model));
+	}
+
+	public function create($AuthItem, $model)
+	{
+		$model->setAttributes($AuthItem);
+		try
+		{
+			if ($model->save())
+			{
+				Yii::app()->getUser()->setFlash('updateSuccess', '"'.$model->name.'" ' .Yii::t('srbac', 'created successfully'));
+				$model->data = unserialize($model->data);
+			}
+		}
+		catch (CDbException $exc)
+		{
+			Yii::app()->getUser()->setFlash('updateError', Yii::t('srbac', 'Error while creating the authorization item.') . '<br />');
+		}
+	}
+
+	/**
+	 * Deletes a particular model.
+	 * If deletion is successful, the browser will be redirected to the 'list' page.
+	 */
+	public function actionDelete()
+	{
+		$params = Yii::app()->getRequest()->getRestParams();
+
+		if(!isset($params['id']))
+		{
+			throw new CHttpException(400, Yii::t('srbac', 'The ID of the authorization item to be deleted must be specified.'));
+		}
+		AuthItem::model()->deleteByPk($params['id']);
+		$this->render('index', array('gridModel' => new AuthItem('search'), 'formModel' => new AuthItem()));
+	}
+
+	/**
+	 * Deletes a particular model.
+	 * If deletion is successful, the browser will be redirected to the 'list' page.
+	 */
+	public function actionAjaxDelete($id = null)
+	{
+		$params = Yii::app()->getRequest()->getRestParams();
+
+		if(!isset($params['id']))
+		{
+			throw new CHttpException(400, Yii::t('srbac', 'The ID of the authorization item to be deleted must be specified.'));
+		}
+
+		AuthItem::model()->deleteByPk($params['id']);
+		$this->render('partials/_authItemForm', array('model' => new AuthItem()));
 	}
 
 	/**
@@ -56,7 +231,7 @@ class AuthitemController extends SBaseController
 	 */
 	public function actionShow($id = null, $deleted = false, $delete = false) {
 		$model = $this->loadAuthItem($id);
-		$this->renderPartial('manage/show',
+		$this->renderPartial('show',
 				array(
 					'model' => $model,
 					'deleted' => $deleted,
@@ -67,109 +242,11 @@ class AuthitemController extends SBaseController
 	}
 
 	/**
-	 * Creates a new model.
-	 * If creation is successful, the browser will be redirected to the 'show' page.
-	 */
-	public function actionCreate()
-	{
-		$model = new AuthItem;
-		if (isset($_POST['AuthItem']))
-		{
-			$model->attributes = $_POST['AuthItem'];
-			try
-			{
-				if ($model->save())
-				{
-
-					Yii::app()->getUser()->setFlash('updateSuccess', '"'.$model->name.'" ' .Yii::t('srbac', 'created successfully'));
-					$model->data = unserialize($model->data);
-					$this->renderPartial('manage/update', array('model' => $model));
-				}
-				else
-				{
-					$this->renderPartial('manage/create', array('model' => $model));
-				}
-			}
-			catch (CDbException $exc)
-			{
-				Yii::app()->getUser()->setFlash('updateError',
-				Yii::t('srbac', 'Error while creating')
-				. ' ' . $model->name . '<br />' .
-				Yii::t('srbac', 'Possible there\'s already an item with the same name'));
-				$this->renderPartial('manage/create', array('model' => $model));
-			}
-		}
-		else
-		{
-			$this->renderPartial('manage/create', array('model' => $model));
-		}
-	}
-
-	/**
-	 * Updates a particular model.
-	 * If update is successful, the browser will be redirected to the 'show' page.
-	 */
-	public function actionUpdate($id = null)
-	{
-		$model = $this->loadAuthItem($id);
-		$message = '';
-		if (isset($_POST['AuthItem']))
-		{
-			//$model->oldName = isset($_POST['oldName']) ? $_POST['oldName'] : $_POST['name'];
-			$model->attributes = $_POST['AuthItem'];
-
-			if ($model->save())
-			{
-				Yii::app()->getUser()->setFlash('updateSuccess', '"'.$model->name.'" '.Yii::t('srbac', 'updated successfully'));
-			}
-			else
-			{
-
-			}
-		}
-		$this->renderPartial('manage/update', array('model' => $model));
-	}
-
-	/**
-	 * Deletes a particular model.
-	 * If deletion is successful, the browser will be redirected to the 'list' page.
-	 */
-	public function actionDelete($id = null)
-	{
-		if (Yii::app()->getRequest()->getIsAjaxRequest())
-		{
-
-			$this->loadAuthItem($id)->delete();
-			//
-			//$criteria = new CDbCriteria;
-			//$pages = new CPagination(AuthItem::model()->count($criteria));
-			//$pages->pageSize = $this->getModule()->pageSize;
-			//$pages->applyLimit($criteria);
-			//$sort = new CSort('AuthItem');
-			//$sort->applyOrder($criteria);
-			//$models = AuthItem::model()->findAll($criteria);
-
-			Yii::app()->getUser()->setFlash('updateName',
-			Yii::t('srbac', 'Updating list'));
-			$this->renderPartial('manage/show', array(
-					//'models' => $models,
-					//'pages' => $pages,
-					//'sort' => $sort,
-					'updateList' => true,
-			), false, false);
-		}
-		else
-		{
-			throw new CHttpException(400, 'Invalid request. Please do not repeat this request again.');
-		}
-	}
-
-	/**
 	 * Show the confirmation view for deleting auth items
 	 */
 	public function actionConfirm($id = null)
 	{
-		$this->renderPartial('manage/show',
+		$this->renderPartial('show',
 				array('model' => $this->loadAuthItem($id), 'updateList' => false, 'delete' => true),
 				false, true);
 	}
@@ -210,48 +287,10 @@ class AuthitemController extends SBaseController
 		$pages->route = 'manage';
 		$pages->setCurrentPage(Yii::app()->getUser()->getState('currentPage'));
 		$models = AuthItem::model()->findAll($criteria);
-		$this->renderPartial('manage/list', array(
+		$this->renderPartial('list', array(
 				'models' => $models,
 				'pages' => $pages,
 		), false, true);
-	}
-
-	/**
-	 * Installs srbac (only in debug mode)
-	 */
-	public function actionInstall()
-	{
-		if ($this->getModule()->debug)
-		{
-			$action = Yii::app()->getRequest()->getParam('action', '');
-			$demo = Yii::app()->getRequest()->getParam('demo', 0);
-			if ($action)
-			{
-				$error = Helper::install($action, $demo);
-				if ($error == 1)
-				{
-					$this->render('install/overwrite', array('demo' => $demo));
-				}
-				else if ($error == 0)
-				{
-					$this->render('install/success', array('demo' => $demo));
-				}
-				else if ($error == 2)
-				{
-					$error = Yii::t('srbac', 'Error while installing srbac.<br />Please check your database and try again');
-					$this->render('install/error', array('demo' => $demo, 'error' => $error));
-				}
-			}
-			else
-			{
-				$this->render('install/install');
-			}
-		}
-		else
-		{
-			$error = Yii::t('srbac', 'srbac must be in debug mode');
-			$this->render('install/error', array('error' => $error));
-		}
 	}
 
 	/**
@@ -289,54 +328,6 @@ class AuthitemController extends SBaseController
 	}
 
 	/**
-	 * Displayes the assignments page with no user selected
-	 */
-	public function actionAssignments()
-	{
-		$this->render('assignments', array('id' => 0));
-	}
-
-	/**
-	 * Show a user's assignments.The user is passed by $_GET
-	 */
-	public function actionShowAssignments()
-	{
-		$userId = isset($_GET['id']) ? $_GET['id'] : $_POST[Helper::findModule('srbac')->userclass][$this->getModule()->userId];
-		$user = $this->getModule()->getUserModel()->findByPk($userId);
-		$username = $user->{$this->getModule()->username};
-
-		if ($userId > 0)
-		{
-			$auth = Yii::app()->getAuthManager();
-			/* @var $auth CDbAuthManager */
-			$ass = $auth->getAuthItems(2, $userId);
-			$r = array();
-			foreach ($ass as $i => $role)
-			{
-				$curRole = $role->name;
-				$r[$i] = $curRole;
-				$children = $auth->getItemChildren($curRole);
-				$r[$i] = array();
-				foreach ($children as $j => $task)
-				{
-					$curTask = $task->name;
-					$r[$i][$j] = $curTask;
-					$grandchildren = $auth->getItemChildren($curTask);
-					$r[$i][$j] = array();
-					foreach ($grandchildren as $k => $oper)
-					{
-						$curOper = $oper->name;
-						$r[$i][$j][$k] = $curOper;
-					}
-				}
-			}
-			// Add always allowed opers
-			$r['AlwaysAllowed'][''] = $this->getModule()->getAlwaysAllowed();
-			$this->renderPartial('userAssignments', array('data' => $r, 'username' => $username));
-		}
-	}
-
-	/**
 	 * Scans applications controllers and find the actions for autocreating of
 	 * authItems
 	 */
@@ -352,7 +343,7 @@ class AuthitemController extends SBaseController
 			$controller = Yii::app()->getRequest()->getParam('controller');
 		}
 		$controllerInfo = $this->_getControllerInfo($controller);
-		$this->renderPartial('manage/createItems',
+		$this->renderPartial('createItems',
 				array('actions' => $controllerInfo[0],
 						'controller' => $controller,
 						'delete' => $controllerInfo[2],
@@ -658,7 +649,7 @@ class AuthitemController extends SBaseController
 	public function actionAuto()
 	{
 		$controllers = $this->_getControllers();
-		$this->renderPartial('manage/wizard', array('controllers' => $controllers), false, true);
+		$this->renderPartial('wizard', array('controllers' => $controllers), false, true);
 	}
 
 	/**
@@ -750,14 +741,6 @@ class AuthitemController extends SBaseController
 	}
 
 	/**
-	 * Displays srbac frontpage
-	 */
-	public function actionFrontPage()
-	{
-		$this->render('../frontpage');
-	}
-
-	/**
 	 * Displays the editor for the alwaysAllowed items
 	 */
 	public function actionEditAllowed()
@@ -832,7 +815,7 @@ class AuthitemController extends SBaseController
 		{
 			$obsolete[$key] = $key;
 		}
-		$this->renderPartial('manage/clearObsolete', array('items' => $obsolete), false, true);
+		$this->renderPartial('clearObsolete', array('items' => $obsolete), false, true);
 	}
 
 	private function replace($value)
@@ -859,7 +842,7 @@ class AuthitemController extends SBaseController
 				}
 			}
 		}
-		$this->renderPartial('manage/obsoleteRemoved', array('removed' => $removed, 'notRemoved' => $notRemoved));
+		$this->renderPartial('obsoleteRemoved', array('removed' => $removed, 'notRemoved' => $notRemoved));
 	}
 
 }

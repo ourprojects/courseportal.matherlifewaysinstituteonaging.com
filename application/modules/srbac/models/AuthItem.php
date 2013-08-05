@@ -25,7 +25,7 @@ class AuthItem extends CActiveRecord {
 	 *
 	 */
 
-	public static $TYPES = array(CAuthItem::TYPE_OPERATION => 'Operation',CAuthItem::TYPE_TASK => 'Task', CAuthItem::TYPE_ROLE => 'Role');
+	public static $TYPES = array(CAuthItem::TYPE_OPERATION => 'Operation', CAuthItem::TYPE_TASK => 'Task', CAuthItem::TYPE_ROLE => 'Role');
 
 	public function getDbConnection() {
 		return Yii::app()->getAuthManager()->db;
@@ -47,10 +47,14 @@ class AuthItem extends CActiveRecord {
 		return Yii::app()->getAuthManager()->itemTable;
 	}
 
-	//  public function safeAttributes() {
-	//    parent::safeAttributes();
-	//    return array('name','type','description','bizrule','data');
-	//  }
+	public function behaviors()
+	{
+		return array(
+				'ERememberFiltersBehavior' => array(
+						'class' => 'ext.ERememberFiltersBehavior.ERememberFiltersBehavior',
+				)
+		);
+	}
 
 	/**
 	 * @return array validation rules for model attributes.
@@ -84,7 +88,7 @@ class AuthItem extends CActiveRecord {
 	 */
 	public function type($type)
 	{
-		$this->getDbCriteria()->addColumnCondition(array($this->getDbConnection()->getSchema()->quoteColumnName($this->getTableAlias(false, false).'.type') => is_string($type) ? array_search($type, self::$TYPES) : $type));
+		$this->getDbCriteria()->addColumnCondition(array($this->getDbConnection()->getSchema()->quoteColumnName($this->getTableAlias(false, false).'.type') => is_numeric($type) ? $type : array_search($type, self::$TYPES)));
 		return $this;
 	}
 
@@ -100,17 +104,6 @@ class AuthItem extends CActiveRecord {
 				'data'=>Yii::t('srbac','Data'),
 		);
 	}
-
-	//  protected function beforeSave() {
-	//    if($this->getIsNewRecord()) {
-	//      $authItem = AuthItem::model()->findByPk($this->name);
-	//      if($authItem !== null) {
-	//        return false;
-	//      }
-	//    }
-	//    parent::beforeSave();
-	//  }
-
 
 	protected function beforeSave() {
 		$this->data = serialize($this->data);
@@ -132,4 +125,31 @@ class AuthItem extends CActiveRecord {
 		Assignments::model()->deleteAll("item_id='".$this->id."'");
 		ItemChildren::model()->deleteAll( "parent_id='".$this->id."' OR child_id='".$this->id."'");
 	}
+
+	public function orderBy($order)
+	{
+		$this->getDbCriteria()->mergeWith(array('order' => $order));
+		return $this;
+	}
+
+	/**
+	 * Retrieves a list of models based on the current search/filter conditions.
+	 * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.
+	 */
+	public function search() {
+
+		$criteria = new CDbCriteria;
+
+		$criteria->compare('id', $this->id);
+		$criteria->compare('name', $this->name, true);
+		$criteria->compare('type', $this->type);
+		$criteria->compare('description', $this->description, true);
+		$criteria->compare('bizrule', $this->bizrule, true);
+		$criteria->compare('data', isset($this->data) ? serialize($this->data) : $this->data);
+
+		return new CActiveDataProvider($this, array(
+				'criteria' => $criteria,
+		));
+	}
+
 }

@@ -18,7 +18,7 @@
 ?>
 <?php $module = ""; ?>
 <div id="wizardMain" style="margin: 10px">
-	<table width="100%">
+	<table>
 		<tr valign="top">
 			<td width="40%" style="vertical-align: top">
 				<table class="srbacDataGrid" width="40%" align="left">
@@ -52,7 +52,7 @@
 							<td><?php
 							echo SHtml::ajaxLink(
 								SHtml::image(
-									$this->getModule()->getIconsPath().'/wizard.png',
+									$this->getModule()->getIconsUrl('wizard.png'),
 									"Autocreate Auth Items for controller ".$controller,
 									array(
 										'border' => 0,
@@ -67,12 +67,8 @@
 								array(
 									'type' => 'POST',
 									'update' => '#controllerActions',
-									'beforeSend' => 'function(){'.
-											'$("#controllerActions").addClass("srbacLoading");'.
-									'}',
-									'complete' => 'function(){'.
-											'$("#controllerActions").removeClass("srbacLoading");'.
-									'}',
+									'beforeSend' => 'function(){$("#controllerActions").addClass("srbacLoading");}',
+									'complete' => 'function(){$("#controllerActions").removeClass("srbacLoading");}',
 								),
 								array('name' => 'buttonScan_'.$n)
 							);
@@ -81,7 +77,7 @@
 							<td><?php
 							echo SHtml::ajaxLink(
 								SHtml::image(
-									$this->getModule()->getIconsPath().'/delete.png',
+									$this->getModule()->getIconsUrl('delete.png'),
 									"Delete All Auth Items of controller ".$controller,
 									array(
 										'border' => 0,
@@ -97,12 +93,8 @@
 								array(
 									'type' => 'POST',
 									'update' => '#controllerActions',
-									'beforeSend' => 'function(){'.
-											'$("#controllerActions").addClass("srbacLoading");'.
-									'}',
-									'complete' => 'function(){'.
-											'$("#controllerActions").removeClass("srbacLoading");'.
-									'}',
+									'beforeSend' => 'function(){$("#controllerActions").addClass("srbacLoading");}',
+									'complete' => 'function(){$("#controllerActions").removeClass("srbacLoading");}',
 								),
 								array('name' => 'buttonDelete_'.$n)
 							);

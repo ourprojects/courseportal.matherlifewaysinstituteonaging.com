@@ -14,18 +14,22 @@
  * @package srbac.views.authitem
  * @since 1.0.1
  */
-?>
-<?php
+
 $this->breadcrumbs = array(
     'Srbac Assignments'
-  )
+  );
+Yii::app()->getClientScript()->registerCssFile($this->getModule()->getStylesUrl('srbac.css'));
+if(Yii::app()->getUser()->hasFlash($this->getModule()->flashKey))
+{
 ?>
-<?php if ($this->getModule()->getMessage() != ""): ?>
 <div id="srbacError">
-	<?php echo $this->getModule()->getMessage(); ?>
+	<?php
+	echo Yii::app()->getUser()->getFlash($this->getModule()->flashKey);
+	echo Yii::app()->getUser()->setFlash($this->getModule()->flashKey, null);
+	?>
 </div>
-<?php endif; ?>
 <?php
+}
 if (!$id):
 	if ($this->getModule()->getShowHeader())
 	{
@@ -34,17 +38,17 @@ if (!$id):
 ?>
 <div class="simple">
 	<?php
-	$this->renderPartial("frontpage");
+	$this->renderPartial("../frontpage");
 	?>
 	<?php echo SHtml::beginForm(); ?>
 	<?php
 	echo Yii::t('srbac', 'User') . ": " .
-			SHtml::activeDropDownList(
+			CHtml::activeDropDownList(
 			$this->getModule()->getUserModel(),
-			$this->getModule()->userid,
-			SHtml::listData(
+			$this->getModule()->userId,
+			CHtml::listData(
 				$this->getModule()->getUserModel()->findAll(),
-				$this->getModule()->userid,
+				$this->getModule()->userId,
 				$this->getModule()->username
 			),
 			array(
@@ -95,11 +99,9 @@ if (!$id):
     ?>
 	<?php echo SHtml::endForm(); ?>
 </div>
-<?php else: ?>
-<?php $url = Yii::app()->getUrlManager()->createUrl("srbac/authitem/showAssignments", array('id' => $id)); ?>
-<?php Yii::import("srbac.components.Helper"); ?>
-<?php Helper::publishCss(Yii::app()->getModule('srbac')->css, true); ?>
-<?php
+<?php else:
+$url = Yii::app()->getUrlManager()->createUrl("srbac/authitem/showAssignments", array('id' => $id));
+
 Yii::app()->clientScript->registerScript(
 	"alert",
 	'$.ajax({'.

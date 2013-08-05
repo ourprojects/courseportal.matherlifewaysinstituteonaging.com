@@ -41,6 +41,15 @@ class ItemChildren extends CActiveRecord {
 		return Yii::app()->getAuthManager()->itemChildTable;
 	}
 
+	public function behaviors()
+	{
+		return array(
+				'ERememberFiltersBehavior' => array(
+						'class' => 'ext.ERememberFiltersBehavior.ERememberFiltersBehavior',
+				)
+		);
+	}
+
 	/**
 	 * @return array validation rules for model attributes.
 	 */
@@ -59,4 +68,27 @@ class ItemChildren extends CActiveRecord {
 		return array(
 		);
 	}
+
+	public function orderBy($order)
+	{
+		$this->getDbCriteria()->mergeWith(array('order' => $order));
+		return $this;
+	}
+
+	/**
+	 * Retrieves a list of models based on the current search/filter conditions.
+	 * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.
+	 */
+	public function search() {
+
+		$criteria = new CDbCriteria;
+
+		$criteria->compare('parent_id', $this->parent_id);
+		$criteria->compare('child_id', $this->child_id);
+
+		return new CActiveDataProvider($this, array(
+				'criteria' => $criteria,
+		));
+	}
+
 }

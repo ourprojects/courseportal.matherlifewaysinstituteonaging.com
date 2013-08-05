@@ -43,6 +43,15 @@ class Assignments extends CActiveRecord {
 		return Yii::app()->getAuthManager()->assignmentTable;
 	}
 
+	public function behaviors()
+	{
+		return array(
+				'ERememberFiltersBehavior' => array(
+						'class' => 'ext.ERememberFiltersBehavior.ERememberFiltersBehavior',
+				)
+		);
+	}
+
 	/**
 	 * @return array validation rules for model attributes.
 	 */
@@ -76,4 +85,29 @@ class Assignments extends CActiveRecord {
 				'data' => Yii::t('srbac','Data'),
 		);
 	}
+
+	public function orderBy($order)
+	{
+		$this->getDbCriteria()->mergeWith(array('order' => $order));
+		return $this;
+	}
+
+	/**
+	 * Retrieves a list of models based on the current search/filter conditions.
+	 * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.
+	 */
+	public function search() {
+
+		$criteria = new CDbCriteria;
+
+		$criteria->compare('item_id', $this->item_id);
+		$criteria->compare('user_id', $this->user_id);
+		$criteria->compare('bizrule', $this->bizrule, true);
+		$criteria->compare('data', isset($this->data) ? serialize($this->data) : $this->data);
+
+		return new CActiveDataProvider($this, array(
+				'criteria' => $criteria,
+		));
+	}
+
 }

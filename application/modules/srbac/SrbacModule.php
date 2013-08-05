@@ -23,16 +23,10 @@ class SrbacModule extends CWebModule
 			in the CDBAuthManager configuration.<br />A common mistake is that names in database are in lowercase.<br />Srbac may not work correctly!!!";
 
 	//Private attributes
-	/* @var $_icons String The path to the icons */
-	private $_icons;
 	/* @var $_yiiSupportedVersion String The yii version tha srbac supports */
 	private $_yiiSupportedVersion = "1.1.0";
 	/* @var $_version Srbac version */
 	private $_version = "1.3beta";
-	/* @var $_cssPublished boolean If css file exists and is published */
-	private $_cssPublished = false;
-	/* @var $_imagesPublished boolean If images files exists and are published */
-	private $_imagesPublished = false;
 
 	// Srbac Attributes
 	/* @var $debug If srbac is in debug mode */
@@ -51,33 +45,30 @@ class SrbacModule extends CWebModule
 	private $_showHeader = false;
 	/* @var $_useFooter boolean Use footer or not */
 	private $_showFooter = false;
-	/* @var $_cssUrl The url of the css file to register */
-	private $_cssUrl;
 	/* @deprecated $useAlwaysAllowedGui boolean */
 	public $useAlwaysAllowedGui;
 	/* @var $_message A warning/error message displayed in the top of each page */
 	private $_message ="";
 
-	/* @var $userid String The primary column of the users table*/
-	public $userid = "userid";
+	private $_assetsUrl;
+
+	public $flashKey = 'srbac';
+	/* @var $userId String The primary column of the users table*/
+	public $userId = "userId";
 	/* @var $username String The username column of the users table*/
 	public $username = "username";
 	/* @var $userclass String The name of the users Class*/
 	public $userclass = "User";
 	/* @var $superUser String The name of the superuser */
 	public $superUser = "Authorizer";
-	/* @var $css string The css to use */
-	public $css = "srbac.css";
 	/* @var $notAuthorizedView String The view to render when unathorized access*/
 	public $notAuthorizedView = "srbac.views.authitem.unauthorized";
-	/* @var $imagesPath string The path to srbac images*/
-	public $imagesPath = "srbac.images";
 	/* @var $imagesPack String The images theme to use*/
 	public $imagesPack = "noia";
 	/* @var $header String Srbac header*/
-	public $header = "srbac.views.authitem.header";
+	public $header = "srbac.views.header";
 	/* @var $footer String Srbac footer*/
-	public $footer = "srbac.views.authitem.footer";
+	public $footer = "srbac.views.footer";
 	/* @var $alwaysAllowedPath String */
 	public $alwaysAllowedPath = "srbac.components";
 	/* @var $delimeter The delimeter used in modules between moduleId and itemId */
@@ -102,20 +93,11 @@ class SrbacModule extends CWebModule
 	 */
 	public function init()
 	{
-
 		// import the module-level models and components
 		$this->setImport(array(
 				'srbac.models.*',
 				'srbac.components.*',
-				'srbac.controllers.SBaseController'
 		));
-
-		//Publish css
-		$this->_cssPublished = Helper::publishCss($this->css);
-
-		//Publish images
-		$this->setIconsPath(Helper::publishImages($this->imagesPath, $this->imagesPack));
-		$this->_imagesPublished = $this->getIconsPath() == "" ? false : true;
 
 		//Create the translation component
 		$this->setComponents(
@@ -130,17 +112,6 @@ class SrbacModule extends CWebModule
 	}
 
 	// SETTERS & GETTERS
-
-	public function setCssUrl($cssUrl)
-	{
-		$this->_cssUrl = $cssUrl;
-	}
-
-	public function getCssUrl()
-	{
-		return $this->_cssUrl;
-
-	}
 
 	public function setDebug($debug)
 	{
@@ -369,20 +340,6 @@ class SrbacModule extends CWebModule
 		return parent::beforeControllerAction($controller, $action);
 	}
 
-	/**
-	 * Gets the path to the icon files
-	 * @return String The path to the icons
-	 */
-	public function getIconsPath()
-	{
-		return $this->_icons;
-	}
-
-	public function setIconsPath($path)
-	{
-		$this->_icons = $path;
-	}
-
 	public function getSupportedYiiVersion()
 	{
 		return $this->_yiiSupportedVersion;
@@ -393,29 +350,45 @@ class SrbacModule extends CWebModule
 		return $this->_version;
 	}
 
-	public function isCssPublished()
-	{
-		return $this->_cssPublished;
-	}
-	public function isImagesPublished()
-	{
-		return $this->_imagesPublished;
-	}
-
 	public function getAttributes()
 	{
 		return get_object_vars($this);
 	}
 
-	public function getMessage()
+	public function getAssetsUrl()
 	{
-		if($this->_message != "")
+		if($this->_assetsUrl === null)
 		{
-			return Yii::t("srbac", $this->_message);
+			$assetsDir = Yii::getPathOfAlias('srbac.assets');
+			if(is_dir($assetsDir))
+				$this->_assetsUrl = Yii::app()->getAssetManager()->publish($assetsDir, false, -1, YII_DEBUG);
+			else
+				$this->_assetsUrl = Yii::app()->getTheme()->getBaseUrl();
 		}
-		else
-		{
-			return "";
-		}
+		return $this->_assetsUrl;
+	}
+
+	/**
+	 * Gets the path to the icon files
+	 * @return String The path to the icons
+	 */
+	public function getIconsUrl($file = '')
+	{
+		return $this->getImagesUrl() . $this->imagesPack . '/' .$file;
+	}
+
+	public function getStylesUrl($file = '')
+	{
+		return $this->getAssetsUrl() . '/styles/' . $file;
+	}
+
+	public function getScriptsUrl($file = '')
+	{
+		return $this->getAssetsUrl() . '/scripts/' . $file;
+	}
+
+	public function getImagesUrl($file = '')
+	{
+		return $this->getAssetsUrl() . '/images/' . $file;
 	}
 }
