@@ -7,98 +7,6 @@
  * You may apply this filter to an action as you would any filter.
  *
  * There is only one property that should be set for this filter to have any effect, it is called $map.
- * Possible settings are as follows.
- *
- * ------ $map as a string ------
- *
- * If $map is a string then any actions that this filter is applied to will be forwarded to the action
- * named by the string value of the property $map.
- * Example 1:
- * This will forward all requests for the action named 'index' to the action named 'view'.
- *
- * public function filters()
- * {
- * 		return array('translate.filters.TForwardActionFilter + index', 'actionMap' => 'view');
- * }
- *
- * The $map string may also contain request conditions to check for before forwarding the action.
- *
- * Example 2:
- * This will forward all requests for the action named 'index' to the action named 'view' ONLY if the request IS an
- * AJAX or POST request.
- *
- * public function filters()
- * {
- * 		return array('translate.filters.TForwardActionFilter + index', 'actionMap' => 'view + ajax, post');
- * }
- *
- * Example 3:
- * This will forward all requests for the action named 'index' to the action named 'view' ONLY if the request IS NOT an
- * AJAX or POST request.
- *
- * public function filters()
- * {
- * 		return array('translate.filters.TForwardActionFilter + index', 'actionMap' => 'view - ajax, post');
- * }
- *
- * ------ $map as an array ------
- *
- * The $map property may also be an array where the value of each array element
- * contains the action mapping and request conditions in the same format as when $map is a string.
- * If an array element has a string for its key value then that key value will be compared with the id of the current action
- * being filtered. If they do not match then the array element's value (the action mapping) will not be considered.
- *
- * Example 4:
- * This will forward all requests for the action named 'index' to the action named 'view' ONLY if the request is NOT an
- * AJAX or POST request. Or if the request is a put request then all requests for the action named 'index' will be forwarded
- * to the action named 'update'.
- *
- * public function filters()
- * {
- * 		return array(
- * 					'translate.filters.TForwardActionFilter + index',
- * 					'actionMap' => array(
- * 									'view - ajax, post',
- * 									'update + put'
- * 					)
- * 		);
- * }
- *
- * Example 5:
- * This will forward all requests for the action named 'index' to the action named 'view' ONLY if the request is NOT an
- * AJAX or POST request. Or if the request is a put request and the action is named 'view' then all requests for the action named 'view'
- * will be forwarded to the action named 'update'. Or if the current action is 'index' or 'view' and the request is an OPTIONS request
- * then the requested action will be forwarded to the 'help' action.
- *
- * public function filters()
- * {
- * 		return array(
- * 					'translate.filters.TForwardActionFilter + index, view',
- * 					'actionMap' => array(
- * 									'index' => 'view - ajax, post',
- * 									'view' => 'update + put',
- * 									'help + options'
- * 					)
- * 		);
- * }
- *
- * ------ $map is an array of arrays ------
- *
- * Finally $map may be an array of arrays. In this case the key of each array value is the action that will be mapped if each
- * request condition has been satisfied in the in the array of conditions of the key's value.
- *
- * Example 6:
- * This will forward any requests for action 'index' or 'view' to the action 'help' if the request is an OPTIONS request or a HEAD request.
- *
- * public function filters()
- * {
- * 		return array(
- * 					'translate.filters.TForwardActionFilter + index, view',
- * 					'actionMap' => array(
- * 									'help' => array('options', 'head')
- * 					)
- * 		);
- * }
  *
  * The folowing, case insensitive, request conditions are available by default:
  *
@@ -142,6 +50,8 @@ class EForwardActionFilter extends CFilter
 	 */
 	private $_requestMatchRegex;
 
+	private $_currentActionId;
+
 	/**
 	 * Finds all visible methods of this object prefixed with the word 'match'. The suffix following the word 'match'
 	 * will be compiled into a regular expression that will match any of those suffixes separated by a word boundary case insensitive.
@@ -171,61 +81,49 @@ class EForwardActionFilter extends CFilter
 
 	protected function preFilter($filterChain)
 	{
-		if(is_string($this->map))
+		if(($action = $this->processConditions($filterChain->controller->getAction()->getId(), $this->map)) !== null)
 		{
-			$filterChain->controller->run($this->map);
+			$filterChain->controller->run($action);
 			return false;
 		}
-		else if(is_array($this->map))
-		{
-			foreach($this->map as $action => $requestConditions)
-			{
-				if(is_string($requestConditions))
-				{
-					if(is_string($action) && $action !== $filterChain->controller->getAction()->getId())
-					{
-						continue;
-					}
-					else if(($pos = strpos($requestConditions, '+')) !== false || ($pos = strpos($requestConditions, '-')) !== false)
-					{
-						$action = trim(substr($requestConditions, 0, $pos));
-						preg_match_all($this->getRequestMatchRegex(), substr($requestConditions, $pos + 1), $matches);
 
-						if($requestConditions[$pos] !== '-')
-							unset($pos);
-
-						$requestConditions = $matches[0];
-					}
-					else
-					{
-						$action = $requestConditions;
-						unset($pos);
-						$requestConditions = array();
-					}
-				}
-
-				if(is_array($requestConditions) &&
-						(empty($requestConditions) || (array_reduce($requestConditions, array($this, '_reduceHelper'), false)) != isset($pos)))
-				{
-					$filterChain->controller->run($action);
-					return false;
-				}
-			}
-		}
 		return true;
 	}
 
-	/**
-	 * A helper method for reducing an array of the match method names to a single boolean value
-	 * of true if all match methods returned true, false otherwise.
-	 *
-	 * @param bool $value Current or starting boolean value.
-	 * @param string $condition The match method name to call.
-	 * @return boolean true if either the first parameter was true or the second parameter method name returned true.
-	 */
-	private function _reduceHelper($value, $condition)
+	protected function processConditions($actionId, $conditions, $sign = '+')
 	{
-		return $value || call_user_func(array($this, "match$condition"));
+		if(!is_array($conditions))
+		{
+			$conditions = array($conditions);
+		}
+
+		foreach($conditions as $action => $mapping)
+		{
+			if(is_string($action) && !preg_match('/\b'.$actionId.'\b/i', $action))
+			{
+				continue;
+			}
+			if(is_array($mapping))
+			{
+				if(($action = $this->processConditions($actionId, $mapping, $sign)) !== null)
+				{
+					return $action;
+				}
+			}
+			else if(is_string($mapping) && (($pos = strpos($mapping, '+')) !== false || ($pos = strpos($mapping, '-')) !== false))
+			{
+				preg_match_all($this->getRequestMatchRegex(), substr($mapping, $pos + 1), $matches);
+				if($this->processConditions($actionId, $matches[0], $mapping[$pos]) !== null)
+				{
+					return trim(substr($mapping, 0, $pos));
+				}
+			}
+			else if(call_user_func(array($this, 'match'.$mapping)) && $sign === '+')
+			{
+				return $actionId;
+			}
+		}
+		return null;
 	}
 
 	/**
