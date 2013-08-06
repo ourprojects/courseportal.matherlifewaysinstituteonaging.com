@@ -139,27 +139,20 @@ foreach(array(
       </div>
       <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Start Course &raquo;{/t}</a></div>
     </div>
-    
-    <!-- Lesson 1 - slide #2 -->
-    
     <div id="lesson-1-slide-2" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}YouTube - The Brain Fitness Program{/t}</h2>
         <hr />
         <h4>{t}The Brain Fitness Program on PBS{/t}</h4>
         <p>{t}The first look at an exciting new program on PBS about neuroplasticity and the ability of the brain to change itself, thus paving the way to incredible advances in strengthening your brain as you age.{/t}</p>
-        <div class="box-grey" style="margin:0 auto 0 auto;">
-          <iframe width="480" height="360" src="//www.youtube.com/embed/WBSNQi4es5k?rel=0" frameborder="0" allowfullscreen></iframe>
-        </div>
-      </div>
-      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"> {t}Next{/t}&nbsp;&raquo; </a>
-        <p class="forum">{t}Before you begin, please introduce yourself on the Forum.{/t}</p>
+        <iframe width="480" height="360" src="//www.youtube.com/embed/WBSNQi4es5k?rel=0" frameborder="0" allowfullscreen></iframe>
+        <p class="forum">{t}Before you begin, please introduce yourself on the Forum. Click here to access it. Once opened, leave it open as you will post to it throughout this course.{/t}</p>
+        <!-- 'url' => Yii::app()->getComponent('phpBB')->getForumUrl(), --> 
+        
         <img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}"> </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"> {t}Next{/t}&nbsp;&raquo; </a> </div>
     </div>
-    
-    <!-- Lesson 1 - slide #3 -->
-    
-    <div id="lesson-1-slide32" class="course-slide">
+    <div id="lesson-1-slide-3" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}Course &amp; Module Outline{/t}</h2>
         <hr />
@@ -201,10 +194,7 @@ foreach(array(
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"> {t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
-    
-    <!-- Lesson 1 - slide #4 -->
-    
-    <div id="lesson-1-slide4" class="course-slide">
+    <div id="lesson-1-slide-4" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}Brain Health{/t}</h2>
         <hr />
@@ -214,10 +204,7 @@ foreach(array(
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
-    
-    <!-- Lesson 1 - slide #4 -->
-    
-    <div id="lesson-1-slide-4" class="course-slide">
+    <div id="lesson-1-slide-5" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}Dementia is not inevitable{/t}</h2>
         <hr />
@@ -227,10 +214,7 @@ foreach(array(
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
-    
-    <!-- Lesson 1 - slide #5 -->
-    
-    <div id="lesson-1-slide-5" class="course-slide">
+    <div id="lesson-1-slide-6" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}Dementia{/t}</h2>
         <hr />
