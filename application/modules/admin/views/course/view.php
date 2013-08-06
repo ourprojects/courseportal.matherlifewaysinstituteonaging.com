@@ -2,8 +2,8 @@
 $action = $course->getIsNewRecord() ? '{t}Create{/t}' : '{t}Update{/t}';
 
 $this->breadcrumbs = array(
-		'{t}Admin{/t}' => $this->createUrl('admin'), 
-		'{t}Courses{/t}' => $this->createUrl('/admin/course'), 
+		'{t}Admin{/t}' => $this->createUrl('/admin'),
+		'{t}Courses{/t}' => $this->createUrl('/admin/course'),
 		t("Course $action")
 );
 ?>
@@ -11,8 +11,8 @@ $this->breadcrumbs = array(
 <div id="single-column">
 	<div id="course" class="box-white">
 		<div id="course-form" class="form">
-			<?php 
-			$form = $this->beginWidget('CActiveForm', 
+			<?php
+			$form = $this->beginWidget('CActiveForm',
 					array(
 						'id' => 'course-form',
 						'enableAjaxValidation' => true,
@@ -51,7 +51,7 @@ $this->breadcrumbs = array(
 		<?php if(!$course->getIsNewRecord()): ?>
 		<div id="objectives">
 			<h2>{t}Objectives{/t}</h2>
-			<?php 
+			<?php
 			$source = CourseObjective::model()->findAll('course_id=:course_id', array(':course_id' => $course->id));
 			$this->widget('zii.widgets.grid.CGridView', array(
 				'id' => 'course-objective-grid',
@@ -69,7 +69,7 @@ $this->breadcrumbs = array(
 			        array(
 			            'class' => 'CButtonColumn',
 			            'template' => '{delete}',
-			            'deleteButtonUrl' => 'Yii::app()->getController()->createUrl("objectiveDelete", array("id" => $data->id))',
+			            'deleteButtonUrl' => 'Yii::app()->getController()->createUrl("/admin/course/objectiveDelete", array("id" => $data->id))',
 			        )
 				),
 			)); ?>
@@ -80,7 +80,7 @@ $this->breadcrumbs = array(
 						'enableAjaxValidation' => true,
 						'enableClientValidation' => true,
 			));
-				
+
 				echo $form->errorSummary($courseObjective); ?>
 				<div class="row">
 				<?php

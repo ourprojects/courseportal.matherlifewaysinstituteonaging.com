@@ -2,7 +2,7 @@
 $action = $CPUser->getIsNewRecord() ? '{t}Create{/t}' : '{t}Update{/t}';
 
 $this->breadcrumbs = array(
-		'{t}Admin{/t}' => $this->createUrl('admin'),
+		'{t}Admin{/t}' => $this->createUrl('/admin'),
 		'{t}Users{/t}' => $this->createUrl('/admin/user'),
 		t("User $action")
 );
@@ -116,14 +116,14 @@ $this->breadcrumbs = array(
 			<?php echo $form->checkBox($UserProfile, 'isActivated'); ?>
 			<?php echo $form->error($UserProfile, 'isActivated'); ?>
 		</div>
-		
+
 		<?php if($CPUser->getIsNewRecord()): ?>
 			<div class="row">
 				<?php echo $form->labelEx($UserProfile, 'new_password'); ?>
 				<?php echo $form->passwordField($UserProfile, 'new_password'); ?>
 				<?php echo $form->error($UserProfile, 'new_password'); ?>
 			</div>
-		
+
 			<div class="row">
 				<?php echo $form->labelEx($UserProfile, 'new_password_repeat'); ?>
 				<?php echo $form->passwordField($UserProfile, 'new_password_repeat'); ?>
@@ -141,7 +141,7 @@ $this->breadcrumbs = array(
 	<div class="box-white">
 		<p>{t}Agreements{/t}</p>
 		<br />
-		<?php 
+		<?php
 		$agreements = $CPUser->agreements;
 		if(empty($agreements)):
 		echo '{t}None{/t}';
