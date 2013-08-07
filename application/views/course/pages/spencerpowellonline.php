@@ -31,12 +31,14 @@ foreach(array(
   <div class="box-sidebar one" style="background-color:#FFF;">
     <h3>{t}Evaluations - Coming Soon!{/t}</h3>
     <br />
+   
     <script>
-function myFunction()
-{
+function myFunction(){
 alert("Coming Soon!");
 }
 </script>
+
+
     <p>
       <input type="button" onclick="myFunction()" value="Pre-Course Evaluation" />
     </p>
@@ -45,6 +47,34 @@ alert("Coming Soon!");
     </p>
     <br />
     <img src="<?php echo $this->getImagesUrl('msml/153075496.png'); ?>" alt="image"> </div>
+  <div class="box-sidebar one">
+    <h3>{t}Module Activity Log{/t}</h3>
+    <br />
+    <p>
+      <input type="button" onclick="myFunction()" value="Module 1" />
+      {t} - Introduction{/t} </p>
+    <p>
+      <input type="button" onclick="myFunction()" value="Module 2" />
+      {t} - Physical Activity{/t} </p>
+    <p>
+      <input type="button" onclick="myFunction()" value="Module 3" />
+      {t} - Physical Activity{/t} </p>
+    <p>
+      <input type="button" onclick="myFunction()" value="Module 4" />
+      {t} - Physical Activity{/t} </p>
+    <p>
+      <input type="button" onclick="myFunction()" value="Module 5" />
+      {t} - Physical Activity{/t} </p>
+    <p>
+      <input type="button" onclick="myFunction()" value="Module 6" />
+      {t} - Physical Activity{/t} </p>
+    <p>
+      <input type="button" onclick="myFunction()" value="Module 7" />
+      {t} - Physical Activity{/t} </p>
+    <p>
+      <input type="button" onclick="myFunction()" value="Module 8" />
+      {t} - Physical Activity{/t} </p>
+  </div>
   <div class="box-sidebar one">
     <h3>Sharp Brains - Market Research</h3>
     <h5 style="text-align:center;">{t}Tracking Brain Health Innovations: News, Research, Trech, Trends{/t}</h5>
@@ -223,14 +253,8 @@ alert("Coming Soon!");
     </div>
     
     
-    
-    
-    
-    
-    
-    
-      
-    <div id="lesson-1-slide-5" class="course-slide">
+   
+     <div id="lesson-1-slide-5" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}Dementia is not inevitable{/t}</h2>
         <hr />
@@ -243,17 +267,9 @@ alert("Coming Soon!");
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
     
+   
+ 
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-  
     <div id="lesson-1-slide-6" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}Dementia{/t}</h2>
@@ -343,7 +359,7 @@ alert("Coming Soon!");
         <hr />
         <img src="<?php echo $this->getImagesUrl('spencer/160382211.png'); ?>" alt="{t}Image{/t}">
         <p>{t}In addition to discovering the growth of new brain cells, over the last couple of decades, scientist have demonstrated that<strong> brain structures can grow in adulthood, which often seems to be the result of experience, or learning new things</strong>.{/t}</p>
-        <p>{t}In the late 1990’s a group of researchers started studying the brains of cab drivers in London.  This is an elite group of taxi drivers who have to complete a 3-4 year apprenticeship to learn the intricate routes within the 6-square mile are of central London (see map).  They literally call it <strong>“The Knowledge.”  75% of the people who start the apprenticeship drop out</strong>.  At first researchers noted that a<strong> region of the hippocampus responsible for spatial relations was larger in experienced drivers compared to other people</strong>.  After following new recruits over time, the same researchers observed that<strong> this region actually grew in the recruits who successfully completed the program</strong>.{/t}</p>
+        <p>{t}In the late 1990’s a group of researchers started studying the brains of cab drivers in London.  This is an elite group of taxi drivers who have to complete a 3-4 year apprenticeship to learn the intricate routes within the 6-square mile are of central London (see map).  They literally call it <strong>“The Knowledge.” 75% of the people who start the apprenticeship drop out</strong>.  At first researchers noted that a<strong> region of the hippocampus responsible for spatial relations was larger in experienced drivers compared to other people</strong>.  After following new recruits over time, the same researchers observed that<strong> this region actually grew in the recruits who successfully completed the program</strong>.{/t}</p>
         <p>{t}Developing such a specialized skill did come at a price, however, as other studies from the same group have shown that these taxi drivers perform worse on other tests of memory. This suggests that it is<strong> likely important to diversify your brain building activities</strong>. But the exciting part of all of this research is that it shows in a pretty clear way that the <strong>adult brain can grow –  that is actually change its structure in a positive direction – through experience</strong>.{/t}</p>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
@@ -418,7 +434,7 @@ alert("Coming Soon!");
       <div class="content">
         <h2 class="flowers">{t}Let’s Give Ourselves a Break{/t}</h2>
         <hr />
-        <p>{t}Before we get into the specifics of what you will be doing for the next few weeks, let’s take a moment to give ourselves a little break. Not an actual break from the session, but rather let’s take a moment to go over some<strong> myths and misconceptions that older adults tend to have about their memories</strong>.{/t}</p>
+        <p>{t}Before we get into the specifics of what you will be doing for the next few modules, let’s take a moment to give ourselves a little break. Not an actual break from the course, but rather let’s take a moment to go over some<strong> myths and misconceptions that older adults tend to have about their memories</strong>.{/t}</p>
         <p>{t}Because dementia is such a great concern among older adults, <strong>many people forget that it’s normal to forget things</strong>. You’ve been forgetting things all your life! It’s just that when you were 25 years old, you didn’t care so much because you didn’t interpret the forgetting as a signal that you may be on the path to losing your independence.{/t}</p>
         <p>{t}<strong>It is also a myth that people can remember everything</strong>.  You may have heard of these “memory champions” who can remember several decks of cards just by seeing them flipped over one at a time or about people with photographic memories.  Well the memory champions train like professional athletes, hours on end, day after day for months to develop their craft, but it doesn’t really seem to help them get better at much of anything else.  And most of the people with photographic memories are savants whose incredible gifts are often accompanied by severe handicaps in other areas of day-to-day living.{/t}</p>
         <p>{t}So<strong> let’s all just have reasonable expectations of our memories.  If you forget something, try and relax</strong>.  That may even help you remember since, as you will learn in a few weeks, being upset can arrest our thinking.{/t}</p>
@@ -487,17 +503,17 @@ alert("Coming Soon!");
         <p>{t} - May need to see a sleep doctor{/t}</p>
         <p>{t} - Resting when you're awake{/t}</p>
         <p>{t}<strong>Manage your Emotions</strong>{/t}</p>
-        <p>{t}You may be saying to yourself, “I’m just not good at paying attention.”  “I have ADD” or “I’ve always been bad at paying attention.”  Well keep in mind that the brain is plastic and very much capable of change.  In fact, new research is showing that through brain exercises and through the tips that you will learn in this class, even people with attention problems caused by brain injury and people with Attention Deficit / Hyperactivity Disorder (ADD/ADHD) can improve their attention.{/t}</p>
-        <p>{t}<strong>Here are some strategies that are used to help people with attention deficits improving their attention – we list them here because they are also important for many of us.</strong>{/t}</p>
+        <p>{t}You may be saying to yourself, “I’m just not good at paying attention.”  “I have ADD” or “I’ve always been bad at paying attention.”  Well keep in mind that the brain is plastic and very much capable of change.  In fact, new research is showing that through brain exercises and through the tips that you will learn in this course, even people with attention problems caused by brain injury and people with Attention Deficit / Hyperactivity Disorder (ADD/ADHD) can improve their attention.{/t}</p>
+        <p>{t}<strong>Strategies that are used to help people with attention deficits improving their attention – we list them here because they are also important for many of us.</strong>{/t}</p>
         <h5>{t}<strong>Manage your environment</strong> –{/t}</h5>
-        <p>{t}Distractions and interruptions some of the biggest threats to attention.  In today’s world we are surrounded by so many sources of stimulation including the TV, computer, cell phone, radio, etc. Taking steps to manage these distractions and interruptions can be very helpful in improving attention and thereby improving memory.{/t}</p>
+        <p>{t}Distractions and interruptions some of the biggest threats to attention.{/t}</p>
         <h5>{t}Do one thing at a time –{/t}</h5>
-        <p>{t}Multi-tasking is a myth!  Our brains really don’t seem to process more than one thing at a time.  What may feel like multi-tasking, for example checking your email while having a conversation, really seems to just involve your brain switching rapidly back and forth between the two tasks.  Studies even in young people suggest that this type of processing reduces performance by almost a full IQ category (10-15 points, say from average to low average), which for some people is about the same as being high on marijuana.  This inability to multitask the way we think we can is also starting to influence public policy in terms of limiting cell phone use while driving.  Texting has received a lot of focus, but talking may be just a bad.{/t}</p>
+        <p>{t}Multi-tasking is a myth!  Our brains really don’t seem to process more than one thing at a time.  What may feel like multi-tasking, for example checking your email while having a conversation, really seems to just involve your brain switching rapidly back and forth between the two tasks.  This inability to multitask the way we think we can is also starting to influence public policy in terms of limiting cell phone use while driving.  Texting has received a lot of focus, but talking may be just a bad.{/t}</p>
         <h5>{t}Bribe yourself –{/t}</h5>
-        <p>{t}Often we have trouble paying attention simply because we are not motivated to do so.  Sometimes we don’t admit this and just get mad at ourselves for not being able to pay attention.  But surely you can think of examples where you had trouble concentrating simply because there was something else you would much rather be doing.  So increase your motivation to pay attention by creating some sort of reward (or bribe).{/t}</p>
+        <p>{t}Often we have trouble paying attention simply because we are not motivated to do so.  Sometimes we don’t admit this and just get mad at ourselves for not being able to pay attention.{/t}</p>
         <h5>{t}Get Plenty of Rest -{/t}</h5>
-        <p>{t}Feeling tired, either by not sleeping well or from mental fatigue, can limit our attention. People who do not get enough, good quality sleep perform considerably worse on tests of attention, which can have a big impact on important tasks such as driving.  Too little sleep has also been linked with a higher risk for stroke and a lower life expectancy.  Even if you sleep enough hours, if you snore or have to wake frequently to go to the restroom or nap during the day, the quality of your sleep may be limiting your attention or affecting your health.  Seeing a  sleep specialist could pay large dividends for your brain health.{/t}</p>
-        <p>{t}Finally, it is also important to remember that emotions can interrupt our attention!  Feeling anxious or being distracted by self-criticism or worried thoughts is often one of the biggest robbers of our attention.  So learning to relax is also very important for improving attention.  You will learn more about caring for your emotions and dealing with stress in the coming weeks.{/t}</p>
+        <p>{t}Feeling tired, either by not sleeping well or from mental fatigue, can limit our attention. People who do not get enough, good quality sleep perform considerably worse on tests of attention, which can have a big impact on important tasks such as driving.{/t}</p>
+        <p>{t}Finally, it is also important to remember that emotions can interrupt our attention!  Feeling anxious or being distracted by self-criticism or worried thoughts is often one of the biggest robbers of our attention.  So learning to relax is also very important for improving attention.  You will learn more about caring for your emotions and dealing with stress in the coming modules.{/t}</p>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
@@ -515,10 +531,10 @@ alert("Coming Soon!");
       <div class="content">
         <h2 class="flowers">{t}This Week's Goals Steps{/t}</h2>
         <hr />
-        <h5 style="text-align:center;">{t}Memory Goal:{/t}</h5>
+        <h5>{t}Memory Goal:{/t}</h5>
         <p>{t}Goal: Practice paying close attention to my surroundings for at least 30 seconds, 2 times a day for 4 days{/t}</p>
         <p>{t}Daily Reward: A spray of my favorite cologne or perfume{/t}</p>
-        <h5 style="text-align:center;">{t}Behavior Goal:{/t}</h5>
+        <h5>{t}Behavior Goal:{/t}</h5>
         <p>{t}Goal: Fill out activity log before bed at least 4 days in a row{/t}</p>
         <p>{t}Daily Reward: Read my favorite book before bed{/t}</p>
         <p>{t}Allow 5 minutes for this activity{/t}</p>
