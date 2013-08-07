@@ -24,9 +24,9 @@ class MessageSource extends CActiveRecord
 	public function rules()
 	{
 		return array(
-            array('message', 'required', 'except' => 'search'),
+			array('message', 'required', 'except' => 'search'),
 			array('id', 'numerical', 'integerOnly' => true),
-			array('id', 'unique', 'except' => 'search'),
+			array('id, message', 'unique', 'except' => 'search'),
 
 			array('id, message', 'safe', 'on' => 'search'),
 		);

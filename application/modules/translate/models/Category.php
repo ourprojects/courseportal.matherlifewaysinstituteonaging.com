@@ -24,7 +24,7 @@ class Category extends CActiveRecord {
 		return array(
             array('category', 'required', 'except' => 'search'),
 			array('id', 'numerical', 'integerOnly' => true),
-			array('id', 'unique', 'except' => 'search'),
+			array('id, category', 'unique', 'except' => 'search'),
 			array('category', 'length', 'max' => 32),
 
 			array('id, category', 'safe', 'on' => 'search'),
