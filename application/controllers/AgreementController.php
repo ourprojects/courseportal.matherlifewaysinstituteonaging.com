@@ -1,4 +1,4 @@
-<?php   
+<?php
 
 class AgreementController extends OnlineCoursePortalController {
 
@@ -8,7 +8,7 @@ class AgreementController extends OnlineCoursePortalController {
 	public function filters() {
 		return array_merge(parent::filters(), array('accessControl + agree'));
 	}
-	
+
 	public function accessRules() {
 		return array(
 				array('allow',
@@ -23,7 +23,7 @@ class AgreementController extends OnlineCoursePortalController {
 	/**
 	 * Displays the confidentiality agreement with specified id
 	 */
-	public function actionView($id, $userId = null) 
+	public function actionView($id, $userId = null)
 	{
 		if($agreement = Agreement::model()->findByPk($id))
 		{
@@ -31,14 +31,14 @@ class AgreementController extends OnlineCoursePortalController {
 			if($userId === null)
 			{
 				$userId = $webUser->getId();
-			} 
+			}
 			else if(!$webUser->getIsAdmin() && $userId !== $webUser->getId())
 			{
 				Yii::log('An unauthroized attempt has been made by the user with id '.$webUser->getId()." to access the confidentiality agreement with id $id of the user with id $userId.", CLogger::LEVEL_WARNING);
 				throw new CHttpException(401, t('You are not authorized to access the agreements made by other users. Your attempt has been logged.', array('{id}' => $id, '{userId}' => $userId)));
 			}
-			$userAgreement = UserAgreement::model()->findByPk(array('user_id' => $userId, 'agreement_id' => $agreement->id));
-			if($userAgreement != null)
+			$userAgreement = $userId === null ? null : UserAgreement::model()->findByPk(array('user_id' => $userId, 'agreement_id' => $agreement->id));
+			if($userAgreement !== null)
 			{
 				$webUser->setFlash('success', t('You agreed to the terms of this document on {date}.', array('{date}' => $userAgreement->getFormattedAgreedOn())));
 			}
@@ -50,7 +50,7 @@ class AgreementController extends OnlineCoursePortalController {
 		}
 		throw new CHttpException(404, t('An agreement with id {id} could not be located.', array('{id}' => $id)));
 	}
-	
+
 	public function actionDownload($id)
 	{
 		if($agreement = Agreement::model()->findByPk($id))
@@ -62,15 +62,15 @@ class AgreementController extends OnlineCoursePortalController {
 					array(
 							'class' => 'ext.HTTP_Download.components.HTTP_DownloadAction',
 							'data' => $this->render('agreementPartial', array('agreement' => $agreement, 'user' => $webUser->getModel(), 'userAgreement' => $userAgreement), true),
-							'contentType' => 'text/html',
-							'fileName' => $agreement->name . '.html'
+							'mime' => 'text/html',
+							'filename' => $agreement->name . '.html'
 						),
 					$this,
 					$this->getAction()->getId())->run();
 		}
 		throw new CHttpException(404, t('An agreement with id {id} could not be located.', array('{id}' => $id)));
 	}
-	
+
 	public function actionAgree($id)
 	{
 		if($agreement = Agreement::model()->findByPk($id))
@@ -87,5 +87,5 @@ class AgreementController extends OnlineCoursePortalController {
 		}
 		throw new CHttpException(404, t('An agreement with id {id} could not be located.', array('{id}' => $id)));
 	}
-	
+
 }
