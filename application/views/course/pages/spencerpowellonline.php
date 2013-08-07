@@ -31,8 +31,18 @@ foreach(array(
   <div class="box-sidebar one" style="background-color:#FFF;">
     <h3>{t}Evaluations - Coming Soon!{/t}</h3>
     <br />
-    <p><a href="#">{t}Pre-Course Evaluation{/t}</a></p>
-    <p><a href="#">{t}Post-Course Evaluation{/t}</a></p>
+    <script>
+function myFunction()
+{
+alert("Coming Soon!");
+}
+</script>
+    <p>
+      <input type="button" onclick="myFunction()" value="Pre-Course Evaluation" />
+    </p>
+    <p>
+      <input type="button" onclick="myFunction()" value="Post-Course Evaluation" />
+    </p>
     <br />
     <img src="<?php echo $this->getImagesUrl('msml/153075496.png'); ?>" alt="image"> </div>
   <div class="box-sidebar one">
@@ -126,8 +136,8 @@ foreach(array(
         <h4>{t}Course Description{/t}</h4>
         <p>{t}<strong>The Spencer Powell Brain Fitness Program</strong> is designed to promote cognitive health and healthy lifestyle changes. The course provides information on how lifestyle factors such as physical activity and cognitive engagement affect your brain and your risk for dementia. Practical strategies are suggested for maintaining memory over time. In addition, the course includes memory training such as chunking, the story method, and mnemonic techniques.{/t}</p>
         <div id="question1" class="question">
-          <p><b>{t}Have you taken the pre-course survey yet?{/t}</b><br />
-            <select>
+          <p style="text-align:center;"><b>{t}Have you taken the pre-course survey yet?{/t}</b><br />
+            <select style="text-align:center;">
               <option selected="selected" value="select"> {t}Select{/t} </option>
               <option value="1"> {t}Yes{/t} </option>
               <option value="0"> {t}No{/t} </option>
@@ -145,8 +155,8 @@ foreach(array(
         <hr />
         <h4>{t}The Brain Fitness Program on PBS{/t}</h4>
         <p>{t}The first look at an exciting new program on PBS about neuroplasticity and the ability of the brain to change itself, thus paving the way to incredible advances in strengthening your brain as you age.{/t}</p>
-        <iframe width="480" height="360" src="//www.youtube.com/embed/WBSNQi4es5k?rel=0" frameborder="0" allowfullscreen></iframe>
-        <p class="forum">{t}Before you begin, please introduce yourself on the Forum. Click here to access it. Once opened, leave it open as you will post to it throughout this course.{/t}</p>
+        <iframe style="width:480px; height:360px; margin: 15px auto 15px auto;" src="//www.youtube.com/embed/WBSNQi4es5k?rel=0" frameborder="0" allowfullscreen></iframe>
+        <p class="forum">{t}Before you begin, please introduce yourself on the Forum. You may describe your caregiving situation, your living arrangements, or the challenges you face amongst potential responses. Click here to access it. Once opened, leave it open as you will post to it throughout this course.{/t}</p>
         <!-- 'url' => Yii::app()->getComponent('phpBB')->getForumUrl(), --> 
         
         <img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}"> </div>
@@ -157,40 +167,44 @@ foreach(array(
         <h2 class="flowers">{t}Course &amp; Module Outline{/t}</h2>
         <hr />
         <h4>{t}Course Modules{/t}</h4>
+        <p>{t}This course consist of the following eight modules:{/t}</p>
+        <ul style="list-style-image:square;">
+          <li>Module One - Introduction</li>
+          <li>Module Two - Physical Activity</li>
+          <li>Module Three - Emotional</li>
+          <li>Module Four - Intellectual</li>
+          <li>Module Five - Nutritional</li>
+          <li>Module Six - Spiritual</li>
+          <li>Module Seven - Social</li>
+          <li>Module Eight - Closing</li>
+        </ul>
+        <h4>{t}Module One - Introduction:{/t}</h4>
         <ol>
-          <li>test</li>
-          <li>test</li>
-        </ol>
-        <ol>
-          <li>
-            <h4>{t}Module Overview{/t}</h4>
-          </li>
-          <li>
-            <ul>
-              <li>
-                <h5>{t}Brain Health Now and Later{/t}</h5>
-              </li>
-              <li>
-                <h5>{t}Dementia and Cognitive Reserve{/t}</h5>
-              </li>
-              <li>
-                <h5>{t}Brain Plasticity{/t}</h5>
-              </li>
-              <li>
-                <h5>{t}Peak Performance{/t}</h5>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <h4>{t}Introduction to Program Format{/t}</h4>
-          </li>
-          <li>
-            <h4>{t}Memory Exercise{/t}</h4>
-          </li>
-          <li>
-            <h4>{t}Goal Setting{/t}</h4>
-          </li>
-        </ol>
+        	<li><h5>{t}Overview{/t}</h5></li>
+        <ul>
+          <li>{t}Brain Health Now and Later{/t}</li>
+          <li>{t}Dementia and Cognitive Reserve{/t}</li>
+          <li>{t}Brain Plasticity{/t}</li>
+          <li>{t}Peak Performance{/t}</li>
+        </ul>
+       <li><h5>{t}Introduction to Program Format{/t}</h5></li>
+       <li><h5>{t}Memory Exercise{/t}</h5></li>
+       <li><h5>{t}Goal Setting{/t}</h5></li>
+     </ol>
+        
+         <div id="question1" class="question">
+          <p style="text-align: center;"><b>{t}Have you ever taken a online course before?{/t}</b><br />
+            <select style="text-align: center;">
+              <option selected="selected" value="select"> {t}Select{/t} </option>
+              <option value="1"> {t}Yes{/t} </option>
+              <option value="0"> {t}No{/t} </option>
+            </select>
+          </p>
+          <p class="right-answer hide"> {t}Great! Thank you! Please continue.{/t} </p>
+          <p class="wrong-answer hide"> {t}Please visit this <a href="http://student.worldcampus.psu.edu/academic-support-resources/tips-for-being-a-successful-world-campus-student" target="_blank">website</a> for tips on being successful in a online course.{/t} </p>
+        </div>
+        
+        
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"> {t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
@@ -198,9 +212,39 @@ foreach(array(
       <div class="content">
         <h2 class="flowers">{t}Brain Health{/t}</h2>
         <hr />
-        <p>{t}The world of brain health has exploded over the past decade with many new programs and applications emerging to help people think and perform better both now in their daily lives at work or at home and later in life as people age.  Maintaining independence later in life is a concern for many people, especially older adults, but even for younger people this can be a nagging concern.  Through the course of this program you will learn how investing in your brain health now can pay dividends both immediately and as you age.
-          
-          To describe some of the key concepts underlying the field of brain health, we will start by talking a bit about how to protect brain health as you age.{/t}</p>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+         <img src="<?php echo $this->getImagesUrl('spencer/154418413.png'); ?>" alt="{t}Image{/t}">
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <p>{t}The world of brain health has exploded over the past decade with many new programs and applications emerging to help people think and perform better both now in their daily lives at work or at home and later in life as people age.  Maintaining independence later in life is a concern for many people, especially older adults, but even for younger people this can be a nagging concern.  Through the course of this program you will learn how investing in your brain health now can pay dividends both immediately and as you age.{/t}</p>
+        <p>{t}To describe some of the key concepts underlying the field of brain health, we will start by talking a bit about how to protect brain health as you age.{/t}</p>
+        
+        
+          <p class="forum">{t}Without researching the Internet, what healthy activities do you commit to for specifically boosting your brain health? Post your responses to the Forum.{/t}</p>
+        
+        <img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}">
+        
+        
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
@@ -208,6 +252,10 @@ foreach(array(
       <div class="content">
         <h2 class="flowers">{t}Dementia is not inevitable{/t}</h2>
         <hr />
+        
+               <img src="<?php echo $this->getImagesUrl('spencer/161824211.png'); ?>" alt="{t}Image{/t}">
+        
+        
         <p>{t}Many people think that dementia is a normal part of the aging process and that losing ones memory is just part of getting older. While some cognitive skills, such as reaction time and our ability to access words at times (what we think of as “senior moments”), do decline naturally with age, “dementia” is a decline in cognitive ability beyond the normal aging process, most likely due to disease or injury.{/t}</p>
         <p>{t}Many people also think that if dementia is in their family they are destined to develop it at some point in their lives.  However, brain research is showing that the way people live their lives actually seems to account for as much or more of the risk for dementia than family history.  In fact for the typical late-onset form of Alzheimer’s disease, genes seem to only account for about 30% of the risk (that’s in contrast to early-onset Alzheimer’s, which occurs before age 65 and has a much stronger genetic component).  The rest of that 70% is made up of some other things that we can’t control such as environmental toxins, but within that 70% area there are a lot of things that we can control.{/t}</p>
         <p>{t}This information is leading some doctors and scientists to start thinking of dementia as a preventable disease, similar to how we think of heart disease, cancer and Type II diabetes as preventable.{/t}</p>

@@ -43,21 +43,21 @@ $clientScript->registerCssFile($this->getStylesUrl('homeUser.css'));
     <p class="text-center"><b>{t}Family Caregivers are Wired for Health{/t}</b></p>
     <p>{t}Four in ten adults in the U.S. are caring for an adult or child with significant health issues, up from 30% in 2010. Caring for a loved one is an activity that cuts across most demographic groups, but is especially prevalent among adults ages 30 to 64, a group traditionally still in the workforce. Caregivers are highly engaged in the pursuit of health information, support, care, and advice, both online and offline, and do many health-related activities at higher levels than non-caregivers.
       {/t} </p>
-    <p> <a href="http://www.pewinternet.org/~/media//Files/Reports/2013/PewResearch_FamilyCaregivers.pdf" class="pdf" target="_blank">{t}Family Caregivers are Wired for Health (2013){/t} </a> </p>
+    <p> <a href="http://www.pewinternet.org/~/media//Files/Reports/2013/PewResearch_FamilyCaregivers.pdf" class="pdf" target="_blank">{t}Family Caregivers are Wired for Health{/t} </a> </p>
   </div>
   <div class="box-sidebar one">
     <h3>{t}Alzheimer's Association{/t}</h3>
     <img class="block center" src="<?php echo $this->getImagesUrl('partners/alz.png'); ?>" />
     <p>{t}There are 10 warning signs of Alzheimer's. If you or someone you know is experiencing 
       any of the signs, please see a doctor. Early diagnosis gives you a chance to seek treatment and plan for the future.{/t}</p>
-    <p><a href="http://www.alz.org/national/documents/checklist_10signs.pdf" target="_blank" class="pdf">{t}Click to download the handout (English){/t}</a></p>
+    <p><a href="http://www.alz.org/national/documents/checklist_10signs.pdf" target="_blank" class="pdf">{t}KNOW the 10 SIGNS{/t}</a></p>
   </div>
   <div class="box-sidebar two">
-    <h3 class="two-line">{t}Medicare.gov - Tips &amp; Resources for Caregivers{/t}</h3>
+    <h3 class="two-line">{t}Tips &amp; Resources for Caregivers{/t}</h3>
     <img class="block center" src="<?php echo $this->getImagesUrl('medicare.png'); ?>" />
     <p>{t}Are you familiar and/or have you visited the Medicare website? 
       The handout below is a list of tips and resources for caregivers as suggested by Medicare.{/t}</p>
-    <p><a href="http://www.medicare.gov/files/ask-medicare-what-medicare-covers.pdf" target="_blank" class="pdf"> {t}Click to download the handout (English){/t}</a></p>
+    <p><a href="http://www.medicare.gov/files/ask-medicare-what-medicare-covers.pdf" target="_blank" class="pdf"> {t}Tips and Resources for Caregivers{/t}</a></p>
   </div>
 </div>
 <div class="column-wide">
