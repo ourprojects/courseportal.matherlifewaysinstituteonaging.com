@@ -1,17 +1,17 @@
 <?php
-class MessageSource extends CActiveRecord 
+class MessageSource extends CActiveRecord
 {
 
-	public static function model($className = __CLASS__) 
+	public static function model($className = __CLASS__)
 	{
 		return parent::model($className);
 	}
-	
-	public function tableName() 
+
+	public function tableName()
 	{
 		return TranslateModule::translator()->getMessageSource()->sourceMessageTable;
 	}
-	
+
 	public function behaviors()
 	{
 		return array(
@@ -21,18 +21,18 @@ class MessageSource extends CActiveRecord
 		);
 	}
 
-	public function rules() 
+	public function rules()
 	{
 		return array(
             array('message', 'required', 'except' => 'search'),
 			array('id', 'numerical', 'integerOnly' => true),
 			array('id', 'unique', 'except' => 'search'),
-			
+
 			array('id, message', 'safe', 'on' => 'search'),
 		);
 	}
 
-	public function relations() 
+	public function relations()
 	{
 		return array(
 			'viewMessages' => array(self::HAS_MANY, 'ViewMessage', 'message_id'),
@@ -52,7 +52,7 @@ class MessageSource extends CActiveRecord
 		);
 	}
 
-	public function attributeLabels() 
+	public function attributeLabels()
 	{
 		return array(
 				// Attributes
@@ -78,7 +78,7 @@ class MessageSource extends CActiveRecord
 		);
 	}
 
-	public function scopes() 
+	public function scopes()
 	{
 		return array(
 				'translated' => array('with' => array('translations' => array('joinType' => 'INNER JOIN'))),
@@ -91,19 +91,19 @@ class MessageSource extends CActiveRecord
 				),
 		);
 	}
-	
-	public function missingTranslations($languageId = null) 
+
+	public function missingTranslations($languageId = null)
 	{
 		$criteria = array(
 					'with' => array('translations' => array('joinType' => 'LEFT JOIN', 'on' => 'languages.id=translations.language_id')),
 					'condition' => 'translations.id IS NULL',
 					'together' => true
 			);
-		if($languageId === null) 
+		if($languageId === null)
 		{
 			$criteria['join'] = 'CROSS JOIN '.Language::model()->tableName().' languages';
-		} 
-		else 
+		}
+		else
 		{
 			$criteria['params'] = array(':language_id' => $languageId);
 			$criteria['join'] = 'JOIN '.Language::model()->tableName().' languages ON languages.id=:language_id';
@@ -111,22 +111,28 @@ class MessageSource extends CActiveRecord
 		$this->getDbCriteria()->mergeWith($criteria);
 		return $this;
 	}
-	
+
 	public function getIsMissingTranslations($languageId = null)
 	{
 		return $this->missingTranslations($languageId)->exists();
 	}
-	
+
+	protected function beforeSave()
+	{
+		$this->setAttribute('message', trim($this->getAttribute('message')));
+		return parent::beforeSave();
+	}
+
 	/**
 	 * Retrieves a list of models based on the current search/filter conditions.
 	 * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.
 	 */
-	public function search($dataProviderConfig = array()) 
+	public function search($dataProviderConfig = array())
 	{
 		if(!isset($dataProviderConfig['criteria']))
 		{
 			$dataProviderConfig['criteria'] = $this->getDbCriteria();
-		
+
 			$dataProviderConfig['criteria']
 			->compare($this->getTableAlias(false, false).'.id', $this->id)
 			->compare($this->getTableAlias(false, false).'.message', $this->message, true);
@@ -134,10 +140,10 @@ class MessageSource extends CActiveRecord
 
 		return new CActiveDataProvider($this, $dataProviderConfig);
 	}
-	
-	public function __toString() 
+
+	public function __toString()
 	{
 		return strval($this->message);
 	}
-	
+
 }
