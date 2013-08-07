@@ -234,7 +234,7 @@ alert("Coming Soon!");
               <option value="0"> {t}No{/t} </option>
             </select>
           </p>
-          <p class="right-answer hide"> {t}Great! Thank you! Please continue.{/t} </p>
+          <p class="right-answer hide"> {t}Great! Please continue.{/t} </p>
           <p class="wrong-answer hide"> {t}Please visit this <a href="http://student.worldcampus.psu.edu/academic-support-resources/tips-for-being-a-successful-world-campus-student" target="_blank">website</a> for tips on being successful in a online course.{/t} </p>
         </div>
       </div>

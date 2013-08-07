@@ -97,7 +97,7 @@ foreach(array(
     <span class="h5">{t}Developer: {/t}</span><span class="name">Jon Woodall</span>
     <p>{t}Mr. Woodall is responsible for all MLIA corporate workforce wellness programs related to design, implementation, publication, and evaluation. Additionally, he seeks new grant funding to support or extend current grants related to corporate workforce wellness programs.{/t} </p>
     <span class="h5">{t}Facilitator: {/t}</span><span class="name">Ellen Ziegemeier</span>
-    <p>{t}Ms. Ziegemeier has been facilitating online courses for Mather LifeWays Institute on Aging since 2004. She earned her Masters in Anthropology and has worked locally and abroad (Central America) for various aging services. She is fluent in English and Spanish and has a strong passion for caregiver training.{/t} </p>
+    <p>{t}Ms. Ziegemeier has been facilitating online courses for Mather LifeWays Institute on Aging since 2004. She earned her Masters in Anthropology and has worked locally and abroad (Central America) for various aging services. She is fluent in English and Spanish and has a strong passion for caregiver training. {/t} </p>
   </div>
 </div>
 
