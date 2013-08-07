@@ -221,20 +221,39 @@ alert("Coming Soon!");
         <img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}"> </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
+    
+    
+    
+    
+    
+    
+    
+    
+      
     <div id="lesson-1-slide-5" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}Dementia is not inevitable{/t}</h2>
         <hr />
         <img src="<?php echo $this->getImagesUrl('spencer/161824211.png'); ?>" alt="{t}Image{/t}">
         <p>{t}Many people think that dementia is a normal part of the aging process and that losing ones memory is just part of getting older. While some cognitive skills, such as reaction time and our ability to access words at times (what we think of as “senior moments”), do decline naturally with age, “dementia” is a decline in cognitive ability beyond the normal aging process, most likely due to disease or injury.{/t}</p>
-        <p>{t}Many people also think that if dementia is in their family they are destined to develop it at some point in their lives.  However, brain research is showing that the way people live their lives actually seems to account for as much or more of the risk for dementia than family history.  In fact for the typical late-onset form of Alzheimer’s disease, genes seem to only account for about 30% of the risk (that’s in contrast to early-onset Alzheimer’s, which occurs before age 65 and has a much stronger genetic component).  The rest of that 70% is made up of some other things that we can’t control such as environmental toxins, but within that 70% area there are a lot of things that we can control.{/t}</p>
+        <p>{t}Many people also think that if dementia is in their family they are destined to develop it at some point in their lives.  However, brain research is showing that the way people live their lives actually seems to account for as much or more of the risk for dementia than family history. In fact for the typical late-onset form of Alzheimer’s disease, genes seem to only account for about 30% of the risk (that’s in contrast to early-onset Alzheimer’s, which occurs before age 65 and has a much stronger genetic component). The rest of that 70% is made up of some other things that we can’t control such as environmental toxins, but within that 70% area there are a lot of things that we can control.{/t}</p>
         <p>{t}This information is leading some doctors and scientists to start thinking of dementia as a preventable disease, similar to how we think of heart disease, cancer and Type II diabetes as preventable.{/t}</p>
-        <p class="forum">{t}
-          Use the Internet to research the greatest risk factors for Alzheimer's disease. Post your response to the Forum.
-          {/t}</p>
+        <p class="forum">{t}Use the Internet to research the greatest risk factors for Alzheimer's disease. Post your response to the Forum.{/t}</p>
         <img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}"> </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  
     <div id="lesson-1-slide-6" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}Dementia{/t}</h2>
@@ -413,7 +432,7 @@ alert("Coming Soon!");
       <div class="content">
         <h2 class="flowers">{t}Program Format{/t}</h2>
         <hr />
-        <img src="<?php echo $this->getImagesUrl('spencer/here.png'); ?>" alt="{t}Image{/t}">
+        <img src="<?php echo $this->getImagesUrl('spencer/140238058.png'); ?>" alt="{t}Image{/t}">
         <p style="font-size:24px; text-align:center;">{t}Physical Activity{/t}</p>
         <p style="font-size:24px; text-align:center;">{t}Social Engagement{/t}</p>
         <p style="font-size:24px; text-align:center;">{t}Intellectual Engagement{/t}</p>
@@ -424,24 +443,6 @@ alert("Coming Soon!");
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div id="lesson-1-slide-18" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}CR Contributions Logs{/t}</h2>
@@ -452,7 +453,7 @@ alert("Coming Soon!");
         <p>{t}We are providing you with a Menu of brain healthy activities that converts your activities to CR Contribution units.  The Menu is available on the main course page, in the right sidebar.  It makes your activities easier to quantify, therefore making it easier to see the gains that you are making each week in Maximizing your CR Contributions.{/t}</p>
         <p>{t}The Menu is broken up into three sections, the top section are standard brain healthy activities, the second section has a list of all of the brain healthy activities that are provided at this facility, the third section includes some blank paces for you to add your own, customized brain healthy activities.  The menu also has suggested domains for each activity, but the domain that you feel the activity best fits is entirely up to you.  Some people think that going for a walk is purely for exercise, but others see the connection with nature as a spiritual experience.  This is for you to decide.{/t}</p>
         <h4>{t}What to do:{/t}</h4>
-        <p>{t}<strong>In this module, we would like for you to get started in logging your brain healthy activities.  This will give you an idea of your baseline, and will help you know where you want to add when it comes time to set goals</strong>.{/t}</p>
+        <p>{t}<strong>In this module, we would like for you to get started in logging your brain healthy activities.  This will give you an idea of your baseline, and will help you know where you want to add when it comes time to set goals</strong>. Your Activity log can be accessed on the course home page in the right sidebar.{/t}</p>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
@@ -525,23 +526,24 @@ alert("Coming Soon!");
         <h5>{t}Goals{/t}</h5>
         <p>{t}You will likely need to <strong>offer guidance in helping set goals that are not too difficult or too vague</strong> – It’s better to set a “ridiculously simple goal” that a person can achieve in order to feel success than to set a goal that they will not achieve.{/t}</p>
         <h5>{t}Goals need to be:{/t}</h5>
-        <p>{t}Specific with respect to:{/t}</p>
-        <ul>
-          <li>{t}Type of behavior – have people write a specific behavior (will log activities) as opposed to a vague aspiration (will try to monitor activities){/t}</li>
-          <li>{t}Duration of the behavior (5 minutes, etc.){/t}</li>
-          <li>{t}Frequency of behavior (4 times a week){/t}</li>
-        </ul>
-        <p>{t}Simple (ridiculously easy goals are an important place to start because small successes create momentum for bigger change){/t}</p>
-        <p>{t}Feasible (same as simple){/t}</p>
+        <ol>
+          <li>{t}Specific with respect to:{/t}</li>
+          <ul>
+            <li>{t}Type of behavior – have people write a specific behavior (will log activities) as opposed to a vague aspiration (will try to monitor activities){/t}</li>
+            <li>{t}Duration of the behavior (5 minutes, etc.){/t}</li>
+            <li>{t}Frequency of behavior (4 times a week){/t}</li>
+          </ul>
+          <li>{t}Simple (ridiculously easy goals are an important place to start because small successes create momentum for bigger change){/t}</li>
+          <li>{t}Feasible (same as simple){/t}</li>
+        </ol>
         <h5>{t}Rewards{/t}</h5>
         <p>{t}Rewards are intended to be used each time the goal behavior is performed – not merely at the end of the week.  Using the memory goal above as an example, each day a person pays close attention for 30 seconds two times in a single day, she gets to put on a spray of her favorite perfume (maybe in preparation for dinner or the next morning).  She doesn’t have to wait the entire week to use her perfume.  If the perfume is part of her daily routine, then she can continue this routine provided she meet her goal each day.{/t}</p>
         <h5>{t}Here are some guidelines for rewards:{/t}</h5>
         <ul>
           <li>{t}Some people may need to take some time to think over their reward, so encourage them to come up with a reward very soon if they do not finish that in class{/t}</li>
           <li>{t}Rewards should be small and feasible &amp; it’s a good idea not to use a reward that will get in the way of some other health goal, such as cookies{/t}</li>
-          <li>{t}For a reward to be effective, the person must make an agreement with themselves that they will in no way get to have the reward without FIRST having achieved their small goal{/t}</li>
+          <li>{t}For a reward to be effective, the person must make an agreement with themselves that they will in no way get to have the reward without FIRST having achieved their small goal{/t} </li>
         </ul>
-        <p>{t}{/t}</p>
         <p class="forum">{t}Please discuss how you plan to remember your goals and rewards and how you plan to track your progress on the Forum.{/t}</p>
         <img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}"> </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
