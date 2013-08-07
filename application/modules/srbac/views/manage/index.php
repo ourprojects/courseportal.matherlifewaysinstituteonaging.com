@@ -45,7 +45,7 @@ $this->renderPartial("../frontpage");
 							'border' => 0
 					)
 			)." ".($this->getModule()->iconText ? Yii::t('srbac','Manage AuthItem') : ""),
-			array('manage', 'full' => true),
+			$this->createUrl('/srbac/manage', array('full' => true)),
 			array(
 				'type' => 'POST',
 				'update' => '#wizard',
@@ -66,7 +66,7 @@ $this->renderPartial("../frontpage");
 					'border' => 0
 				)
 			)." ".($this->getModule()->iconText ? Yii::t('srbac','Autocreate Auth Items') : ""),
-			array('auto'),
+			$this->createUrl('/srbac/manage/auto'),
 			array(
 				'type' => 'POST',
 				'update' => '#wizard',
@@ -87,7 +87,7 @@ $this->renderPartial("../frontpage");
 						'border' => 0
 					)
 				)." ".($this->getModule()->iconText ? Yii::t('srbac','Edit always allowed list') : ""),
-				array('editAllowed'),
+				$this->createUrl('/srbac/manage/editAllowed'),
 				array(
 					'type' => 'POST',
 					'update' => '#wizard',
@@ -108,7 +108,7 @@ $this->renderPartial("../frontpage");
 				'border'=>0
 				)
 			)." ".($this->getModule()->iconText ? Yii::t('srbac', 'Clear obsolete authItems') : ""),
-			array('clearObsolete'),
+			$this->createUrl('/srbac/manage/clearObsolete'),
 			array(
 				'type' => 'POST',
 				'update' => '#wizard',
@@ -126,9 +126,8 @@ $this->renderPartial("../frontpage");
 <div id="wizard">
 	<table class="srbacDataGrid" align="center">
 		<tr>
-			<th width="50%"><?php echo Yii::t("srbac","Auth items");?>
-			</th>
-			<th><?php echo Yii::t('srbac','Actions')?></th>
+			<th width="50%"><?php echo Yii::t('srbac', 'Auth items');?></th>
+			<th><?php echo Yii::t('srbac', 'Actions')?></th>
 		</tr>
 		<tr>
 			<td style="vertical-align: top; text-align: center">
@@ -143,25 +142,22 @@ $this->renderPartial("../frontpage");
 											'border' => 0
 										)
 							) . Yii::t('srbac', 'Create New'),
-							'manage/authItem',
+							$this->createUrl('/srbac/manage/authItem', array('ajax' => 'authItem-form')),
 							array(
 								'type' => 'GET',
-								'update' => '#form',
 								'beforeSend' => 'function(){$("#form").addClass("srbacLoading");}',
 								'complete' => 'function(){$("#form").removeClass("srbacLoading");}',
-							)
+								'replace' => '#authItem-form'
+							),
+							array('id' => 'createNewButton')
 					);
 					?>
 				</div>
-				<br />
-				<div id="authItemGrid">
+				<br /><br />
 				<?php $this->renderPartial('partials/_authItemGrid', array('model' => $gridModel)); ?>
-				</div>
 			</td>
 			<td style="vertical-align: top; text-align: center">
-				<div id="form">
 				<?php $this->renderPartial('partials/_authItemForm', array('model' => $formModel)); ?>
-				</div>
 			</td>
 		</tr>
 	</table>

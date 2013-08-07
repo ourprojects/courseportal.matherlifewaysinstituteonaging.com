@@ -2,6 +2,7 @@
 Yii::app()->clientScript->registerScript('hideEffectSuccess', '$("#messageSuccess").animate({opacity: 0}, 2000).fadeOut(500);', CClientScript::POS_READY);
 Yii::app()->clientScript->registerScript('hideEffectError', '$("#messageError").animate({opacity: 0}, 6000).fadeOut(400);', CClientScript::POS_READY);
 ?>
+<div id="authItem-form">
 <h2><?php echo $model->getIsNewRecord() ? Yii::t('srbac', 'Create New') : Yii::t('srbac', 'Update'); ?></h2>
 <div class="srbacForm">
 	<p>
@@ -62,23 +63,23 @@ Yii::app()->clientScript->registerScript('hideEffectError', '$("#messageError").
 		<?php
 		echo CHtml::ajaxButton(
 			Yii::t('srbac', 'Save'),
-			'manage/authItem',
+			$this->createUrl('/srbac/manage/authItem', array('ajax' => 'authItem-form')),
 			array(
 				'type' => 'PUT',
-				'update' => '#form',
-				'beforeSend' => 'function(){$("#form").addClass("srbacLoading");}',
-				'complete' => 'function(){$("#form").removeClass("srbacLoading");}'
+				'beforeSend' => 'function(){$("#authItem-form").addClass("srbacLoading");}',
+				'complete' => 'function(){$("#authItem-form").removeClass("srbacLoading");}',
+				'success' => 'function(html){$("#authItem-grid").yiiGridView("update");$("#authItem-form").replaceWith(html);}',
 			),
 			$model->getIsNewRecord() ? array('style' => 'display: none;', 'id' => 'save') : array('id' => 'save')
 		);
 		echo CHtml::ajaxButton(
 			Yii::t('srbac', 'Create'),
-			'manage/authItem',
+			$this->createUrl('/srbac/manage/authItem', array('ajax' => 'authItem-form')),
 			array(
 				'type' => 'POST',
-				'update' => '#form',
-				'beforeSend' => 'function(){$("#form").addClass("srbacLoading");}',
-				'complete' => 'function(){$("#form").removeClass("srbacLoading");}'
+				'beforeSend' => 'function(){$("#authItem-form").addClass("srbacLoading");}',
+				'complete' => 'function(){$("#authItem-form").removeClass("srbacLoading");}',
+				'success' => 'function(html){$("#authItem-grid").yiiGridView("update");$("#authItem-form").replaceWith(html);}',
 			),
 			$model->getIsNewRecord() ? array('id' => 'create') : array('style' => 'display: none;', 'id' => 'create')
 		);
@@ -87,3 +88,5 @@ Yii::app()->clientScript->registerScript('hideEffectError', '$("#messageError").
 	<div id="mess" class="message" style="visibility: hidden"></div>
 	<?php echo CHtml::endForm(); ?>
 </div>
+</div>
+

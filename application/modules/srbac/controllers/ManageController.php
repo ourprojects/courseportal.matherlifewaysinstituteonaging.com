@@ -26,24 +26,21 @@ class ManageController extends SBaseController
 	{
 		return array(
 				array(
-					'ext.ERequestMethodFilter.ERequestMethodFilter',
-					'config' => array(
-							'ajax' => 'ajaxIndex, ajaxView, ajaxUpdate',
-							'get' => 'index, ajaxIndex, view, ajaxView',
-							'put' => 'update, ajaxUpdate'
-					)
-				),
-				array(
-						'ext.EForwardActionFilter.EForwardActionFilter + index, view, update, authItem',
+						'ext.EForwardActionFilter.EForwardActionFilter',
 						'map' => array(
 								'authItem' => array('view + get', 'create + post', 'update + put', 'delete + delete'),
-								'index' => 'ajaxIndex + ajax',
-								'view' => 'ajaxView + ajax',
-								'update' => 'ajaxUpdate + ajax',
-								'create' => 'ajaxCreate + ajax',
-								'delete' => 'ajaxDelete + ajax'
 						)
-				)
+				),
+				array(
+					'ext.ERequestMethodFilter.ERequestMethodFilter',
+					'config' => array(
+							'get' => 'index, view',
+							'put' => 'update',
+							'post' => 'create',
+							'delete' => 'delete',
+							'ajax' => 'ajax'
+					)
+				),
 			);
 	}
 
@@ -58,76 +55,88 @@ class ManageController extends SBaseController
 	 */
 	public function actionIndex()
 	{
-		$this->render('index', array('gridModel' => new AuthItem('search'), 'formModel' => new AuthItem()));
+		if(Yii::app()->getRequest()->getIsAjaxRequest())
+		{
+			if(isset($_GET['ajax']))
+			{
+				$this->actionAjax($_GET['ajax']);
+			}
+		}
+		else
+		{
+			$this->render('index', array('gridModel' => new AuthItem('search'), 'formModel' => new AuthItem()));
+		}
 	}
 
-	public function actionAjaxIndex()
+	public function actionAjax($ajax)
 	{
-		if(isset($_GET['ajax']) && $_GET['ajax'] === 'authItem-grid')
+		switch($ajax)
 		{
-			$this->renderPartial('partials/_authItemGrid', array('model' => new AuthItem('search')));
+			case 'authItem-grid':
+				$this->renderPartial('partials/_authItemGrid', array('model' => new AuthItem('search')));
+				break;
+			case 'authItem-form':
+				if(!isset($this->_model))
+				{
+					$this->_model = new AuthItem();
+				}
+				$this->renderPartial('partials/_authItemForm', array('model' => $this->_model));
+				break;
 		}
 	}
 
 	public function actionView($id = null)
 	{
-		$authItem = isset($id) ? AuthItem::model()->findByPk($id) : new AuthItem();
-		if($authItem === null)
+		$this->_model = isset($id) ? AuthItem::model()->findByPk($id) : new AuthItem();
+		if($this->_model === null)
 		{
 			throw new CHttpException(404, Yii::t('srbac', 'The authorization item with ID {id} could not be found.', array('{id}' => $id)));
 		}
-		$this->render('index', array('gridModel' => new AuthItem('search'), 'formModel' => $authItem));
-	}
-
-	public function actionAjaxView($id = null)
-	{
-		$authItem = isset($id) ? AuthItem::model()->findByPk($id) : new AuthItem();
-		if($authItem === null)
+		if(Yii::app()->getRequest()->getIsAjaxRequest())
 		{
-			throw new CHttpException(404, Yii::t('srbac', 'The authorization item with ID {id} could not be found.', array('{id}' => $id)));
+			if(isset($_GET['ajax']))
+			{
+				$this->actionAjax($_GET['ajax']);
+			}
 		}
-		$this->renderPartial('partials/_authItemForm', array('model' => $authItem));
+		else
+		{
+			$this->render('index', array('gridModel' => new AuthItem('search'), 'formModel' => $this->_model));
+		}
 	}
 
 	public function actionUpdate()
 	{
-		$AuthItem = Yii::app()->getRequest()->getRestParams();
+		$params = Yii::app()->getRequest()->getRestParams();
 
-		if(!isset($AuthItem['AuthItem']) || !isset($AuthItem['AuthItem']['id']))
+		if(!isset($params['AuthItem']) || !isset($params['AuthItem']['id']))
 		{
 			throw new CHttpException(400, Yii::t('srbac', 'The ID of the authorization item being updated must be specified.'));
 		}
 
-		$this->render('index', array('gridModel' => new AuthItem('search'), 'formModel' => $this->update($AuthItem['AuthItem'])));
-	}
-
-	public function actionAjaxUpdate()
-	{
-		$AuthItem = Yii::app()->getRequest()->getRestParams();
-
-		if(!isset($AuthItem['AuthItem']) || !isset($AuthItem['AuthItem']['id']))
-		{
-			throw new CHttpException(400, Yii::t('srbac', 'The ID of the authorization item being updated must be specified.'));
-		}
-
-		$this->renderPartial('partials/_authItemForm', array('model' => $this->update($AuthItem['AuthItem'])));
-	}
-
-	public function update($AuthItem)
-	{
-		$model = AuthItem::model()->findByPk($AuthItem['id']);
-		if($model === null)
+		$this->_model = AuthItem::model()->findByPk($params['AuthItem']['id']);
+		if($this->_model === null)
 		{
 			throw new CHttpException(404, Yii::t('srbac', 'The authorization item requested to update could not be found.'));
 		}
-		$model->setAttributes($AuthItem);
+		$this->_model->setAttributes($params['AuthItem']);
 
-		if ($model->save())
+		if ($this->_model->save())
 		{
-			Yii::app()->getUser()->setFlash('updateSuccess', '"'.$model->name.'" '.Yii::t('srbac', 'updated successfully'));
+			Yii::app()->getUser()->setFlash('updateSuccess', '"'.$this->_model->name.'" '.Yii::t('srbac', 'updated successfully'));
 		}
 
-		return $model;
+		if(Yii::app()->getRequest()->getIsAjaxRequest())
+		{
+			if(isset($_GET['ajax']))
+			{
+				$this->actionAjax($_GET['ajax']);
+			}
+		}
+		else
+		{
+			$this->render('index', array('gridModel' => new AuthItem('search'), 'formModel' => $this->_model));
+		}
 	}
 
 	/**
@@ -136,42 +145,34 @@ class ManageController extends SBaseController
 	 */
 	public function actionCreate()
 	{
-		$model = new AuthItem;
+		$this->_model = new AuthItem;
 		if (isset($_POST['AuthItem']))
 		{
-			$this->create($_POST['AuthItem'], $model);
-		}
-		$this->renderPartial('index', array('gridModel' => new AuthItem('search'), 'formModel' => $model));
-	}
-
-	/**
-	 * Creates a new model.
-	 * If creation is successful, the browser will be redirected to the 'show' page.
-	 */
-	public function actionAjaxCreate()
-	{
-		$model = new AuthItem;
-		if (isset($_POST['AuthItem']))
-		{
-			$this->create($_POST['AuthItem'], $model);
-		}
-		$this->renderPartial('partials/_authItemForm', array('model' => $model));
-	}
-
-	public function create($AuthItem, $model)
-	{
-		$model->setAttributes($AuthItem);
-		try
-		{
-			if ($model->save())
+			$this->_model->setAttributes($_POST['AuthItem']);
+			try
 			{
-				Yii::app()->getUser()->setFlash('updateSuccess', '"'.$model->name.'" ' .Yii::t('srbac', 'created successfully'));
-				$model->data = unserialize($model->data);
+				if ($this->_model->save())
+				{
+					Yii::app()->getUser()->setFlash('updateSuccess', '"'.$this->_model->name.'" ' .Yii::t('srbac', 'created successfully'));
+					$this->_model->data = unserialize($this->_model->data);
+				}
+			}
+			catch (CDbException $exc)
+			{
+				Yii::app()->getUser()->setFlash('updateError', Yii::t('srbac', 'Error while creating the authorization item.') . '<br />');
 			}
 		}
-		catch (CDbException $exc)
+
+		if(Yii::app()->getRequest()->getIsAjaxRequest())
 		{
-			Yii::app()->getUser()->setFlash('updateError', Yii::t('srbac', 'Error while creating the authorization item.') . '<br />');
+			if(isset($_GET['ajax']))
+			{
+				$this->actionAjax($_GET['ajax']);
+			}
+		}
+		else
+		{
+			$this->render('index', array('gridModel' => new AuthItem('search'), 'formModel' => $this->_model));
 		}
 	}
 
@@ -187,25 +188,20 @@ class ManageController extends SBaseController
 		{
 			throw new CHttpException(400, Yii::t('srbac', 'The ID of the authorization item to be deleted must be specified.'));
 		}
+
 		AuthItem::model()->deleteByPk($params['id']);
-		$this->render('index', array('gridModel' => new AuthItem('search'), 'formModel' => new AuthItem()));
-	}
 
-	/**
-	 * Deletes a particular model.
-	 * If deletion is successful, the browser will be redirected to the 'list' page.
-	 */
-	public function actionAjaxDelete($id = null)
-	{
-		$params = Yii::app()->getRequest()->getRestParams();
-
-		if(!isset($params['id']))
+		if(Yii::app()->getRequest()->getIsAjaxRequest())
 		{
-			throw new CHttpException(400, Yii::t('srbac', 'The ID of the authorization item to be deleted must be specified.'));
+			if(isset($_GET['ajax']))
+			{
+				$this->actionAjax($_GET['ajax']);
+			}
 		}
-
-		AuthItem::model()->deleteByPk($params['id']);
-		$this->render('partials/_authItemForm', array('model' => new AuthItem()));
+		else
+		{
+			$this->render('index', array('gridModel' => new AuthItem('search'), 'formModel' => new AuthItem()));
+		}
 	}
 
 	/**
