@@ -31,19 +31,16 @@ foreach(array(
   <div class="box-sidebar one" style="background-color:#FFF;">
     <h3>{t}Evaluations - Coming Soon!{/t}</h3>
     <br />
-   
     <script>
 function myFunction(){
 alert("Coming Soon!");
 }
 </script>
-
-
     <p>
-      <input type="button" onclick="myFunction()" value="Pre-Course Evaluation" />
+      <input type="button" style="width:175px;" onclick="myFunction()" value="Pre-Course Evaluation" />
     </p>
     <p>
-      <input type="button" onclick="myFunction()" value="Post-Course Evaluation" />
+      <input type="button" style="width:175px;" onclick="myFunction()" value="Post-Course Evaluation" />
     </p>
     <br />
     <img src="<?php echo $this->getImagesUrl('msml/153075496.png'); ?>" alt="image"> </div>
@@ -51,29 +48,29 @@ alert("Coming Soon!");
     <h3>{t}Module Activity Log{/t}</h3>
     <br />
     <p>
-      <input type="button" onclick="myFunction()" value="Module 1" />
+      <input type="button" style="width:100px;" onclick="myFunction()" value="Week 1" />
       {t} - Introduction{/t} </p>
     <p>
-      <input type="button" onclick="myFunction()" value="Module 2" />
+      <input type="button" style="width:100px;" onclick="myFunction()" value="Week 2" />
       {t} - Physical Activity{/t} </p>
     <p>
-      <input type="button" onclick="myFunction()" value="Module 3" />
-      {t} - Physical Activity{/t} </p>
+      <input type="button" style="width:100px;" onclick="myFunction()" value="Week 3" />
+      {t} - Emotional{/t} </p>
     <p>
-      <input type="button" onclick="myFunction()" value="Module 4" />
-      {t} - Physical Activity{/t} </p>
+      <input type="button" style="width:100px;" onclick="myFunction()" value="Week 4" />
+      {t} - Intellectual{/t} </p>
     <p>
-      <input type="button" onclick="myFunction()" value="Module 5" />
-      {t} - Physical Activity{/t} </p>
+      <input type="button" style="width:100px;" onclick="myFunction()" value="Week 5" />
+      {t} - Nutritional{/t} </p>
     <p>
-      <input type="button" onclick="myFunction()" value="Module 6" />
-      {t} - Physical Activity{/t} </p>
+      <input type="button" style="width:100px;" onclick="myFunction()" value="Week 6" />
+      {t} - Spiritual{/t} </p>
     <p>
-      <input type="button" onclick="myFunction()" value="Module 7" />
-      {t} - Physical Activity{/t} </p>
+      <input type="button" style="width:100px;" onclick="myFunction()" value="Week 7" />
+      {t} - Social{/t} </p>
     <p>
-      <input type="button" onclick="myFunction()" value="Module 8" />
-      {t} - Physical Activity{/t} </p>
+      <input type="button" style="width:100px;" onclick="myFunction()" value="Week 8" />
+      {t} - Closing{/t} </p>
   </div>
   <div class="box-sidebar one">
     <h3>Sharp Brains - Market Research</h3>
@@ -96,6 +93,7 @@ alert("Coming Soon!");
 <div class="column-wide">
   <h2 class="flowers"><?php echo t($course->title); ?></h2>
   <p><?php echo t($course->description); ?></p>
+  <p style="color:#E80000;">{t}<strong>Disclaimer: </strong>We want to emphasize that there are still risk factors that we cannot control, so living a brain healthy lifestyle does not guarantee that you will not get dementia, just like living a heart healthy lifestyle does not guarantee you won’t have a heart attack.{/t}</p>
   <h5>{t}Independent Study / One-Year Access{/t}</h5>
   <h4>{t}Objectives{/t}</h4>
   <ul>
@@ -251,10 +249,7 @@ alert("Coming Soon!");
         <img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}"> </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
-    
-    
-   
-     <div id="lesson-1-slide-5" class="course-slide">
+    <div id="lesson-1-slide-5" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}Dementia is not inevitable{/t}</h2>
         <hr />
@@ -266,10 +261,6 @@ alert("Coming Soon!");
         <img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}"> </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
-    
-   
- 
-    
     <div id="lesson-1-slide-6" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}Dementia{/t}</h2>
@@ -286,8 +277,8 @@ alert("Coming Soon!");
           <p style="text-align: center;"><b>{t}Alzheimer’s disease is a TYPE of dementia.{/t}</b><br />
             <select style="text-align: center;">
               <option selected="selected" value="select"> {t}Select{/t} </option>
-              <option value="1"> {t}Yes{/t} </option>
-              <option value="0"> {t}No{/t} </option>
+              <option value="1"> {t}True{/t} </option>
+              <option value="0"> {t}False{/t} </option>
             </select>
           </p>
           <p class="right-answer hide"> {t}Correct! Alzheimer's disease is a type of dementia.{/t} </p>
@@ -372,7 +363,7 @@ alert("Coming Soon!");
         <p>{t}The connections between brain cells, at the ends of the pathways, are called <strong>synapses</strong>, and “<strong>synaptic density</strong>”<strong> can be increased by learning new things and performing new skills</strong>.{/t}</p>
         <p>{t}<strong>Pathways and synapses can also rewire</strong>, diverting their resources to different regions following an injury.{/t}</p>
         <p>{t}All of this “<strong>malleability</strong>”<strong> in the wiring of brain cells</strong> is called <strong>“plasticity</strong>.”{/t}</p>
-        <iframe style="width:640px; height:480px; display:block; margin:15px auto;" src="//www.youtube.com/embed/ZuclwAOJFh8?rel=0" frameborder="0" allowfullscreen></iframe>
+        <iframe width="640" height="360" src="//www.youtube.com/embed/jSE703UokZY?rel=0" frameborder="0" allowfullscreen></iframe>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
@@ -394,8 +385,7 @@ alert("Coming Soon!");
         <h2 class="flowers">{t}Your Brain’s 401K{/t}</h2>
         <hr />
         <img src="<?php echo $this->getImagesUrl('spencer/dv497047.png'); ?>" alt="{t}Image{/t}">
-        <p>{t}Now that we know that a lot of the things we do throughout our lives affects our susceptibility to dementia, we can utilize the principles of Cognitive Reserve Theory to <strong>maximize our investments in our Brain’s retirement account</strong>.{/t}</p>
-        <p>{t}<strong>Disclaimer!!!  We want to emphasize that there are still risk factors that we cannot control, so living a brain healthy lifestyle does not guarantee that you will not get dementia</strong>, just like living a heart healthy lifestyle does not guarantee you won’t have a heart attack.{/t}</p>
+        <p>{t}Now that we know that a lot of the things we do throughout our lives affects our susceptibility to dementia, we can utilize the principles of Cognitive Reserve Theory to <strong>maximize our investments in our Brain’s retirement account</strong>.{/t} </p>
         <p>{t}However, this program will help you understand the things you can do that may lower the risk for dementia or postpone cognitive decline in the hopes that you will maintain independence for as long as possible.{/t}</p>
         <table style="width:100%; margin: 15px auto; border:3;">
           <tr style="text-align:center;">
@@ -587,8 +577,6 @@ alert("Coming Soon!");
       <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Complete Module{/t}</a></div>
     </div>
     
-    <!-- this div is needed to close the  lesson --> 
+    <!-- final 2 divs needed to close lesson and course --> 
   </div>
-  
-  <!-- need this final div to close the full course --> 
 </div>
