@@ -17,11 +17,11 @@
  * @author Pentium10 http://www.yiiframework.com/forum/index.php?/user/8824-pentium10/
  * @link http://www.yiiframework.com/
  * @version 1.2
- 
- * 
+
+ *
  * Overhauled with many performance enhancements, code reductions, and feature additions by:
  * @author Louis DaPrato
- * 
+ *
  * Changes and additions:
  * - Refactored all code for performance and simplicity.
  * - rememberScenario is now the only scenario that will be saved and stored (Defaults to 'search').
@@ -32,7 +32,7 @@
  * It follows this format: `this class name`-`attached model class name`-`remember scenario`-`save ID`-`saved attribute name`
  * - Added a flag to indicate whether the afterConstruct method has been called. This eliminates the need to call doReadSave multiple
  * times if the CActiveRecord that owns this behavior has not even been constructed yet.
- * 
+ *
 
  * Copyright (c) 2011, Pentium10
  * All rights reserved.
@@ -99,7 +99,7 @@
  * http://www.yiiframework.com/extension/remember-filters-gridview
  */
 
-class ERememberFiltersBehavior extends CActiveRecordBehavior
+class ERememberFiltersBehavior extends CModelBehavior
 {
 
 	/**
@@ -108,42 +108,42 @@ class ERememberFiltersBehavior extends CActiveRecordBehavior
 	 * @var array
 	 */
 	public $defaults = array();
-	
+
 	/**
 	 * When this flag is true, the default values will be used also when the user clears the filters
 	 *
 	 * @var boolean
 	*/
 	public $defaultStickOnClear = false;
-	
+
 	/**
 	 * A list of model scenarios that will be remembered. Defaults to 'search' only.
 	 *
 	 * @var array
 	 */
 	private $_rememberScenario = array('search');
-	
+
 	/**
-	 * A unique ID for saving states of this model. 
+	 * A unique ID for saving states of this model.
 	 * This is useful when a model's states need to be saved and loaded separately depending on where the model is used.
-	 * For example a page containing multiple grid views using the same model class with the same rememberScenario would 
+	 * For example a page containing multiple grid views using the same model class with the same rememberScenario would
 	 * need different save ids to avoid conflicts when storing their filter values.
 	 * Defaults to 'default'.
-	 * 
+	 *
 	 * @var string
 	 */
 	private $_id = 'default';
-	
+
 	/**
 	 * The state key ID for the current scenario
-	 * 
+	 *
 	 * @var string
 	 */
 	private $_stateKeyPrefix;
-	
+
 	/**
 	 * Flag indicating whether the afterConstruct event callback has happened yet.
-	 * 
+	 *
 	 * @var bool
 	 */
 	private $_afterConstructCalled = false;
@@ -156,10 +156,10 @@ class ERememberFiltersBehavior extends CActiveRecordBehavior
 		}
 		return $this->_stateKeyPrefix;
 	}
-	
+
 	/**
 	 * Sets the unique ID for avoiding conlflicts between multiple uses of the CActiveRecord this behavior is attached to
-	 * 
+	 *
 	 * @param string $value The unique ID
 	 * @return CActiveRecord the AR component that this behavior is attached to.
 	 */
@@ -171,10 +171,10 @@ class ERememberFiltersBehavior extends CActiveRecordBehavior
 			$this->doReadSave();
 		return $this->getOwner();
 	}
-	
+
 	/**
 	 * A unique ID so that CActiveRecord this behavior is attached to may be used multiple times without conflicts
-	 * 
+	 *
 	 * @return string
 	 */
 	public function getRememberId()
@@ -184,7 +184,7 @@ class ERememberFiltersBehavior extends CActiveRecordBehavior
 
 	/**
 	 * Set the scenario(s) that should match the scenario of the CActiveRecord this behavior is attached to before performing any reads/saves.
-	 * 
+	 *
 	 * @param mixed $value The scenario(s) to match
 	 * @return CActiveRecord the AR component that this behavior is attached to.
 	 */
@@ -200,7 +200,7 @@ class ERememberFiltersBehavior extends CActiveRecordBehavior
 
 	/**
 	 * The scenarios that must be set in the CActiveRecord that this behavior is attached for the filters to be read/saved.
-	 * 
+	 *
 	 * @return array
 	 */
 	public function getRememberScenario()
@@ -236,7 +236,7 @@ class ERememberFiltersBehavior extends CActiveRecordBehavior
 				// if active page variable was empty check if this is an ajax request (page 1 does not set the page variable, just an ajax flag)
 				if(empty($_GET['ajax']))
 				{
-					// if this is not an ajax request and the state has been previously stored then load the state 
+					// if this is not an ajax request and the state has been previously stored then load the state
 					if(Yii::app()->getUser()->hasState($stateKeyPrefix . 'system-page'))
 						$_GET[$key] = Yii::app()->getUser()->getState($stateKeyPrefix . 'system-page');
 				}
@@ -279,7 +279,7 @@ class ERememberFiltersBehavior extends CActiveRecordBehavior
 					}
 					Yii::app()->getUser()->setState($stateKeyPrefix . 'system-defaultsSet', 1);
 				}
-			
+
 				// set values from session
 				foreach($this->getOwner()->getSafeAttributeNames() as $attribute)
 				{
@@ -305,8 +305,8 @@ class ERememberFiltersBehavior extends CActiveRecordBehavior
 	}
 
 	/**
-	 * Method is called when we need to unset the filters. 
-	 * This method does nothing if the current CActiveRecord's scenario is not one of the rememberScenarios 
+	 * Method is called when we need to unset the filters.
+	 * This method does nothing if the current CActiveRecord's scenario is not one of the rememberScenarios
 	 *
 	 * @return CActiveRecord the AR component that this behavior is attached to.
 	 */
