@@ -52,27 +52,31 @@ class SrbacModule extends CWebModule
 
 	private $_assetsUrl;
 
+	private $_generatedAuthItemNamePrefix = 'srbacgenerated_';
+
 	public $flashKey = 'srbac';
 	/* @var $userId String The primary column of the users table*/
-	public $userId = "userId";
+	public $userId = 'userId';
 	/* @var $username String The username column of the users table*/
-	public $username = "username";
+	public $username = 'username';
 	/* @var $userclass String The name of the users Class*/
-	public $userclass = "User";
+	public $userclass = 'User';
 	/* @var $superUser String The name of the superuser */
-	public $superUser = "Authorizer";
+	public $superUser = 'Authorizer';
 	/* @var $notAuthorizedView String The view to render when unathorized access*/
-	public $notAuthorizedView = "srbac.views.authitem.unauthorized";
+	public $notAuthorizedView = 'srbac.views.authitem.unauthorized';
 	/* @var $imagesPack String The images theme to use*/
-	public $imagesPack = "noia";
+	public $imagesPack = 'noia';
 	/* @var $header String Srbac header*/
-	public $header = "srbac.views.header";
+	public $header = 'srbac.views.header';
 	/* @var $footer String Srbac footer*/
-	public $footer = "srbac.views.footer";
+	public $footer = 'srbac.views.footer';
 	/* @var $alwaysAllowedPath String */
-	public $alwaysAllowedPath = "srbac.components";
+	public $alwaysAllowedPath = 'srbac.components';
+	/* @var $alwaysAllowedFileName String */
+	public $alwaysAllowedFileName = 'alwaysAllowed.php';
 	/* @var $delimeter The delimeter used in modules between moduleId and itemId */
-	public $delimeter = "-";
+	public $delimeter = '-';
 	/**
 	 * @var string the ID of the default controller for this module. Defaults to 'default'.
 	 */
@@ -112,6 +116,16 @@ class SrbacModule extends CWebModule
 	}
 
 	// SETTERS & GETTERS
+
+	public function getGeneratedAuthItemNamePrefix()
+	{
+		return $this->_generatedAuthItemNamePrefix;
+	}
+
+	public function setGeneratedAuthItemNamePrefix($prefix)
+	{
+		$this->_generatedAuthItemNamePrefix = preg_quote($prefix);
+	}
 
 	public function setDebug($debug)
 	{
@@ -157,9 +171,7 @@ class SrbacModule extends CWebModule
 		$paramAllowed = array();
 		if(!is_file($this->getAlwaysAllowedFile()))
 		{
-			$handle = fopen($this->getAlwaysAllowedFile(), "wb");
-			fwrite($handle, "<?php\n return array();\n?>");
-			fclose($handle);
+			file_put_contents($this->getAlwaysAllowedFile(), '<?php\nreturn array();\n?>');
 		}
 		$guiAllowed = include($this->getAlwaysAllowedFile());
 		if(!is_array($guiAllowed))
@@ -183,7 +195,7 @@ class SrbacModule extends CWebModule
 
 	public function getAlwaysAllowedFile()
 	{
-		return Yii::getPathOfAlias($this->alwaysAllowedPath).DIRECTORY_SEPARATOR."allowed.php";
+		return Yii::getPathOfAlias($this->alwaysAllowedPath).DIRECTORY_SEPARATOR.$this->alwaysAllowedFileName;
 	}
 
 	public function setUserActions($userActions)
@@ -391,4 +403,190 @@ class SrbacModule extends CWebModule
 	{
 		return $this->getAssetsUrl() . '/images/' . $file;
 	}
+
+	/**
+	 * Geting all the application's controllers and its module's controllers
+	 * @return array The controllers
+	 */
+	public function getControllers($module = null, $controllers = array())
+	{
+		if(!isset($module))
+		{
+			$module = Yii::app();
+		}
+		$this->_scanModules($module, $controllers);
+		return $controllers;
+	}
+
+	private function _scanModules($module, &$controllers, $prefix = '')
+	{
+		if(isset($module))
+		{
+			$this->_scanControllers($module->getControllerPath(), $controllers, $prefix . ($prefix === '' ? '' : '.'));
+			//Scan modules
+			foreach(array_keys($module->getModules()) as $moduleId)
+			{
+				$this->_scanModules($module->getModule($moduleId), $controllers, $prefix . $moduleId);
+			}
+		}
+	}
+
+	private function _scanControllers($controllerPath, &$controllers, $prefix = '')
+	{
+		if(($handle = @opendir($controllerPath)))
+		{
+			while(($file = readdir($handle)) !== false)
+			{
+				$filePath = $controllerPath . DIRECTORY_SEPARATOR . $file;
+				if(is_file($filePath))
+				{
+					if(preg_match('/^(.+)Controller.php$/i', basename($file)))
+					{
+						$controllers[] = $prefix.str_replace('.php', '', $file);
+					}
+				}
+				elseif(is_dir($filePath) && $file != '.' && $file != '..')
+				{
+					$this->_scanControllers($filePath, $controllers, $prefix);
+				}
+			}
+			closedir($handle);
+		}
+	}
+
+	/**
+	 * Extracts the actions from a controller. Beware the controller will be loaded and instantiated.
+	 * @param $controller string The alias for a controller as returned by getControllers()
+	 * @return array A list of the controller's defined actions.
+	 * */
+	public function extractControllerActions($controller)
+	{
+		$controllerParts = explode('.', $controller);
+		$controllerClassName = array_pop($controllerParts);
+
+		// @ TODO Won't handle disabled modules properly
+
+		$module = Yii::app();
+		foreach($controllerParts as $part)
+		{
+			$module = $module->getModule($part);
+		}
+
+		$controllerPath = realpath($module->getControllerPath().DIRECTORY_SEPARATOR.$controllerClassName.'.php');
+
+		if($controllerPath === false)
+		{
+			return false;
+		}
+
+		if(!class_exists($controllerClassName, false))
+		{
+			include_once($controllerPath);
+			if(!class_exists($controllerClassName, false))
+			{
+				return false;
+			}
+		}
+
+		$controllerObj = new $controllerClassName($controller);
+		$actions = array_keys($controllerObj->actions());
+
+		foreach(get_class_methods($controllerObj) as $method)
+		{
+			if(preg_match('/^action(\w+)$/i', $method, $match) && strcasecmp($match[1], 's'))
+			{
+				$actions[] = $match[1];
+			}
+		}
+
+		unset($controllerObj);
+		return $actions;
+	}
+
+	public function extractControllerActionsFromText($controllerText)
+	{
+		$tokens = token_get_all($controllerText);
+
+		$braceDepth = 0;
+		$ignoredFunctionTypes = array(T_STATIC, T_ABSTRACT, T_PRIVATE, T_PROTECTED);
+		$actions = array();
+		$tokenCount = count($tokens);
+		foreach($tokens as $index => $token)
+		{
+			if(is_array($token))
+			{
+				switch($token[0])
+				{
+					case T_CLASS:
+						$braceDepth = -1;
+						break;
+					case T_FUNCTION:
+						if($braceDepth === 1 &&
+						$index > 3 &&
+						$tokenCount - $index > 2 &&
+						(!is_array($tokens[$index - 2]) || !in_array($tokens[$index - 2][0], $ignoredFunctionTypes)) &&
+						(!is_array($tokens[$index - 4]) || !in_array($tokens[$index - 4][0], $ignoredFunctionTypes)) &&
+						is_array($tokens[$index + 2]) &&
+						$tokens[$index + 2][0] === T_STRING &&
+						$tokens[$index + 3] === '(' &&
+						preg_match('/^action(\w+)$/i', $tokens[$index + 2][1], $matches))
+						{
+							$actions[] = $matches[1];
+						}
+						break;
+				}
+			}
+			elseif(is_string($token))
+			{
+				if($token === '{')
+				{
+					if($braceDepth < 0)
+					{
+						$braceDepth = 1;
+					}
+					elseif($braceDepth > 0)
+					{
+						$braceDepth++;
+					}
+				}
+				elseif($token === '}' && $braceDepth > 0)
+				{
+					$braceDepth--;
+				}
+			}
+		}
+		return $actions;
+	}
+
+	public function generateAuthItems()
+	{
+		$authItems = array();
+		$controllers = $this->getControllers();
+		foreach($controllers as $controller)
+		{
+			$nameParts = explode('.', $controller);
+			$nameParts[] = preg_replace('/^(.+)Controller$/i', '$1', array_pop($nameParts));
+			foreach($nameParts as $part)
+			{
+				$part = preg_replace('/(?<!^)([A-Z])/', ' \\1', ucfirst($part));
+			}
+			$actions = $this->extractControllerActions($controller);
+			$controller = implode('.', $nameParts);
+			$authItem = new AuthItem();
+			$authItem->setAttributes(array('name' => $controller, 'type' => EAuthItem::TYPE_TASK, 'generated' => true));
+			$authItems[] = $authItem;
+			if($actions !== false)
+			{
+				foreach($actions as $action)
+				{
+					$action = preg_replace('/(?<!^)([A-Z])/', ' \\1', ucfirst($action));
+					$authItem = new AuthItem();
+					$authItem->setAttributes(array('name' => $controller.'.'.$action, 'type' => EAuthItem::TYPE_OPERATION, 'generated' => true));
+					$authItems[] = $authItem;
+				}
+			}
+		}
+		return $authItems;
+	}
+
 }

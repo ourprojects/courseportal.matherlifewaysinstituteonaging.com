@@ -1,16 +1,16 @@
 <?php
 class Category extends CActiveRecord {
-	
+
 	private $_isMissingTranslations;
 
 	public static function model($className = __CLASS__) {
 		return parent::model($className);
 	}
-	
+
 	public function tableName() {
 		return TranslateModule::translator()->getMessageSource()->categoryTable;
 	}
-	
+
 	public function behaviors()
 	{
 		return array(
@@ -24,9 +24,9 @@ class Category extends CActiveRecord {
 		return array(
             array('category', 'required', 'except' => 'search'),
 			array('id', 'numerical', 'integerOnly' => true),
-			array('id', 'unique', 'except' => 'search'),
+			array('id, category', 'unique', 'except' => 'search'),
 			array('category', 'length', 'max' => 32),
-			
+
 			array('id, category', 'safe', 'on' => 'search'),
 		);
 	}
@@ -41,7 +41,7 @@ class Category extends CActiveRecord {
 			'messageCount' => array(self::STAT, 'MessageSource', CategoryMessage::model()->tableName().'(category_id, message_id)'),
 		);
 	}
-	
+
 	public function attributeLabels() {
 		return array(
 				// Attributes
@@ -56,28 +56,34 @@ class Category extends CActiveRecord {
 				'messageCount' => TranslateModule::t('Message Count'),
 		);
 	}
-	
+
+	protected function beforeSave()
+	{
+		$this->setAttribute('category', trim($this->getAttribute('category')));
+		return parent::beforeSave();
+	}
+
 	/**
 	 * Retrieves a list of models based on the current search/filter conditions.
 	 * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.
 	 */
-	public function search($dataProviderConfig = array()) 
+	public function search($dataProviderConfig = array())
 	{
 		if(!isset($dataProviderConfig['criteria']))
 		{
 			$dataProviderConfig['criteria'] = $this->getDbCriteria();
-			
+
 			$dataProviderConfig['criteria']
 			->compare($this->getTableAlias(false, false).'.id', $this->id)
 			->compare($this->getTableAlias(false, false).'.category', $this->category, true);
 		}
-		
+
 		return new CActiveDataProvider($this, $dataProviderConfig);
 	}
-	
-	public function __toString() 
+
+	public function __toString()
 	{
 		return strval($this->category);
 	}
-	
+
 }

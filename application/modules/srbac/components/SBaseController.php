@@ -106,7 +106,7 @@ class SBaseController extends CController
 	 */
 	protected function allowedAccess()
 	{
-		Yii::import("srbac.components.Helper");
+		Yii::import('srbac.components.Helper');
 		return Helper::findModule('srbac')->getAlwaysAllowed();
 	}
 

@@ -44,12 +44,6 @@ class ManageController extends SBaseController
 			);
 	}
 
-	public function actionAuthItem()
-	{
-		// Placeholder action for creating restful like behavior when request are made to this route.
-		// See EForwardActionFilter configuration to see where this action will be forwarded based on request method.
-	}
-
 	/**
 	 * Displays the authitem manage page
 	 */
@@ -64,7 +58,19 @@ class ManageController extends SBaseController
 		}
 		else
 		{
-			$this->render('index', array('gridModel' => new AuthItem('search'), 'formModel' => new AuthItem()));
+			$viewParams = array(
+					'customGridId' => 'customAuthItem-grid',
+					'customFormId' => 'customAuthItem-form',
+					'customGridModel' => new AuthItem('search'),
+					'customFormModel' => new AuthItem(),
+					'generatedGridId' => 'generatedAuthItem-grid',
+					'generatedFormId' => 'generatedAuthItem-form',
+					'generatedGridModel' => new AuthItem('search'),
+					'generatedFormModel' => new AuthItem()
+			);
+			$viewParams['generatedGridModel']->generated = true;
+			$viewParams['generatedFormModel']->generated = true;
+			$this->render('index', $viewParams);
 		}
 	}
 
@@ -72,20 +78,83 @@ class ManageController extends SBaseController
 	{
 		switch($ajax)
 		{
-			case 'authItem-grid':
-				$this->renderPartial('partials/_authItemGrid', array('model' => new AuthItem('search')));
+			case 'customAuthItem-grid':
+				$path = 'partials/_authItemGrid';
+				$params = array('model' => new AuthItem('search'), 'gridId' => 'customAuthItem-grid', 'formId' => 'customAuthItem-form');
 				break;
-			case 'authItem-form':
+			case 'customAuthItem-form':
 				if(!isset($this->_model))
 				{
 					$this->_model = new AuthItem();
 				}
-				$this->renderPartial('partials/_authItemForm', array('model' => $this->_model));
+				$view = 'partials/_authItemForm';
+				$params = array('model' => $this->_model, 'gridId' => 'customAuthItem-grid', 'formId' => 'customAuthItem-form');
 				break;
+			case 'generatedAuthItem-grid':
+				$path = 'partials/_authItemGrid';
+				$params = array('model' => new AuthItem('search'), 'gridId' => 'generatedAuthItem-grid', 'formId' => 'generatedAuthItem-form');
+				$params['model']->generated = true;
+				break;
+			case 'generatedAuthItem-form':
+				if(!isset($this->_model))
+				{
+					$this->_model = new AuthItem();
+				}
+				$this->_model->generated = true;
+				$view = 'partials/_authItemForm';
+				$params = array('model' => $this->_model, 'gridId' => 'generatedAuthItem-grid', 'formId' => 'generatedAuthItem-form');
+				break;
+			default:
+				return;
+		}
+		$this->renderPartial($path, $params);
+	}
+
+	public function actionAuthItem()
+	{
+		// Placeholder action for creating restful like behavior when request are made to this route.
+		// See EForwardActionFilter configuration to see where this action will be forwarded based on request method.
+	}
+
+	/** Begin custom auth item actions **/
+
+	/**
+	 * Creates a new model.
+	 * If creation is successful, the browser will be redirected to the 'show' page.
+	 */
+	public function actionCreate()
+	{
+		$this->_model = new AuthItem;
+		if(isset($_POST['AuthItem']))
+		{
+			$this->_model->setAttributes($_POST['AuthItem']);
+			try
+			{
+				if ($this->_model->save())
+				{
+					Yii::app()->getUser()->setFlash('updateSuccess', '"'.$this->_model->getAttribute('name').'" ' .Yii::t('srbac', 'created successfully'));
+				}
+			}
+			catch (CDbException $exc)
+			{
+				Yii::app()->getUser()->setFlash('updateError', Yii::t('srbac', 'Error while creating the authorization item.') . '<br />');
+			}
+		}
+
+		if(Yii::app()->getRequest()->getIsAjaxRequest())
+		{
+			if(isset($_GET['ajax']))
+			{
+				$this->actionAjax($_GET['ajax']);
+			}
+		}
+		else
+		{
+			$this->render('index', array('gridModel' => new AuthItem('search'), 'formModel' => $this->_model));
 		}
 	}
 
-	public function actionView($id = null)
+	public function actionRead($id = null)
 	{
 		$this->_model = isset($id) ? AuthItem::model()->findByPk($id) : new AuthItem();
 		if($this->_model === null)
@@ -140,43 +209,6 @@ class ManageController extends SBaseController
 	}
 
 	/**
-	 * Creates a new model.
-	 * If creation is successful, the browser will be redirected to the 'show' page.
-	 */
-	public function actionCreate()
-	{
-		$this->_model = new AuthItem;
-		if (isset($_POST['AuthItem']))
-		{
-			$this->_model->setAttributes($_POST['AuthItem']);
-			try
-			{
-				if ($this->_model->save())
-				{
-					Yii::app()->getUser()->setFlash('updateSuccess', '"'.$this->_model->name.'" ' .Yii::t('srbac', 'created successfully'));
-					$this->_model->data = unserialize($this->_model->data);
-				}
-			}
-			catch (CDbException $exc)
-			{
-				Yii::app()->getUser()->setFlash('updateError', Yii::t('srbac', 'Error while creating the authorization item.') . '<br />');
-			}
-		}
-
-		if(Yii::app()->getRequest()->getIsAjaxRequest())
-		{
-			if(isset($_GET['ajax']))
-			{
-				$this->actionAjax($_GET['ajax']);
-			}
-		}
-		else
-		{
-			$this->render('index', array('gridModel' => new AuthItem('search'), 'formModel' => $this->_model));
-		}
-	}
-
-	/**
 	 * Deletes a particular model.
 	 * If deletion is successful, the browser will be redirected to the 'list' page.
 	 */
@@ -203,6 +235,66 @@ class ManageController extends SBaseController
 			$this->render('index', array('gridModel' => new AuthItem('search'), 'formModel' => new AuthItem()));
 		}
 	}
+
+	/** Begin generated auth item actions **/
+
+	public function actionGeneratedAuthItem()
+	{
+		if(Yii::app()->getRequest()->getIsAjaxRequest())
+		{
+			if(isset($_GET['ajax']))
+			{
+				$this->actionAjax($_GET['ajax']);
+			}
+		}
+		else
+		{
+			$gridModel = new AuthItem('search');
+			$gridModel->generated = true;
+			$formModel =  new AuthItem();
+			$formModel->generated = true;
+			$this->render('index', array('gridModel' => $gridModel, 'formModel' => $formModel));
+		}
+	}
+
+	public function actionGeneratedCreate()
+	{
+
+	}
+
+	public function actionGeneratedRead()
+	{
+
+	}
+
+	public function actionGeneratedUpdate()
+	{
+
+	}
+
+	public function actionGeneratedDelete()
+	{
+
+	}
+
+	/** Begin obsolete auth item actions **/
+
+	public function actionObsoleteAuthItem()
+	{
+
+	}
+
+	public function actionObsoleteRead()
+	{
+
+	}
+
+	public function actionObsoleteDelete()
+	{
+
+	}
+
+/******************************* BEGIN RIDICULOUSNESS *********************************************/
 
 	/**
 	 * Assigns child items to a parent item
@@ -649,77 +741,6 @@ class ManageController extends SBaseController
 	}
 
 	/**
-	 * Geting all the application's and  modules controllers
-	 * @return array The application's and modules controllers
-	 */
-	private function _getControllers()
-	{
-		$contPath = Yii::app()->getControllerPath();
-
-		$controllers = $this->_scanDir($contPath);
-
-		//Scan modules
-		$modules = Yii::app()->getModules();
-		$modControllers = array();
-		foreach ($modules as $mod_id => $mod)
-		{
-			$moduleControllersPath = Yii::app()->getModule($mod_id)->controllerPath;
-			if(is_dir($moduleControllersPath))
-			{
-				$modControllers = $this->_scanDir($moduleControllersPath, $mod_id, '', $modControllers);
-			}
-		}
-		return array_merge($controllers, $modControllers);
-	}
-
-	private function _scanDir($contPath, $module='', $subdir='', $controllers = array())
-	{
-		$handle = opendir($contPath);
-		$del = Helper::findModule('srbac')->delimeter;
-		while (($file = readdir($handle)) !== false)
-		{
-			$filePath = $contPath . DIRECTORY_SEPARATOR . $file;
-			if (is_file($filePath))
-			{
-				if (preg_match('/^(.+)Controller.php$/', basename($file)))
-				{
-					if ($this->_extendsSBaseController($filePath))
-					{
-						$controllers[] = (($module) ? $module . $del : '') .
-						(($subdir) ? $subdir . '.' : '') .
-						str_replace('.php', '', $file);
-					}
-				}
-			}
-			else if (is_dir($filePath) && $file != '.' && $file != '..')
-			{
-				$controllers = $this->_scanDir($filePath, $module, $file, $controllers);
-			}
-		}
-		return $controllers;
-	}
-
-	private function _extendsSBaseController($controller)
-	{
-		$c = basename(str_replace('.php', '', $controller));
-		if (!class_exists($c, false))
-		{
-			include_once $controller;
-		}
-		else
-		{
-
-		}
-		$cont = new $c($c);
-
-		if ($cont instanceof SBaseController)
-		{
-			return true;
-		}
-		return false;
-	}
-
-	/**
 	 *
 	 * @param <type> $operation
 	 * @return <type> Checks if an operations should be assigned to using task or not
@@ -741,12 +762,14 @@ class ManageController extends SBaseController
 	 */
 	public function actionEditAllowed()
 	{
-		if (!Helper::isAlwaysAllowedFileWritable())
+		if (!($f = @fopen(self::findModule("srbac")->getAlwaysAllowedFile(), 'r+')))
 		{
 			echo Yii::t('srbac', 'The always allowed file is not writeable by the server') . '<br />';
 			echo 'File : ' . $this->getModule()->getAlwaysAllowedFile();
 			return;
 		}
+		fclose($f);
+
 		$controllers = $this->_getControllers();
 		foreach ($controllers as $n => $controller)
 		{
