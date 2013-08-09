@@ -59,6 +59,9 @@ class AuthItem extends CActiveRecord
 		return array(
 				'ERememberFiltersBehavior' => array(
 						'class' => 'ext.ERememberFiltersBehavior.ERememberFiltersBehavior',
+				),
+				'EFilterRawModelDataBehavior' => array(
+						'class' => 'ext.EFilterRawModelDataBehavior.EFilterRawModelDataBehavior',
 				)
 		);
 	}
@@ -103,6 +106,17 @@ class AuthItem extends CActiveRecord
 	public function type($type)
 	{
 		$this->getDbCriteria()->addColumnCondition(array($this->getDbConnection()->getSchema()->quoteColumnName($this->getTableAlias(false, false).'.type') => is_numeric($type) ? $type : array_search($type, self::$TYPES)));
+		return $this;
+	}
+
+	public function obsolete($obsolete = true)
+	{
+		$criteria = $this->getDbCriteria();
+		$criteria->mergeWith(array('condition' => 'name REGEXP :nameRegex', 'params' => array(':nameRegex' => '^'.Helper::findModule('srbac')->getGeneratedAuthItemNamePrefix().'(.+)$')));
+		$authItems = Helper::findModule('srbac')->generateAuthItems();
+		array_walk($authItems, create_function('&$authItem', '$authItem = "'.Helper::findModule('srbac')->getGeneratedAuthItemNamePrefix().'".$authItem["name"];'));
+		$criteria->{$obsolete ? 'addNotInCondition' : 'addInCondition'}('name', $authItems);
+
 		return $this;
 	}
 
@@ -192,7 +206,9 @@ class AuthItem extends CActiveRecord
 		$criteria = new CDbCriteria;
 
 		$criteria->compare('id', $this->getAttribute('id'));
-		$criteria->compare('name', $this->getAttribute('name'), true);
+		$name = strtr($this->generated ? Helper::findModule('srbac')->getGeneratedAuthItemNamePrefix() : '', array('%'=>'\%', '_'=>'\_', '\\'=>'\\\\'));
+		$name .= '%'.strtr($this->getAttribute('name'), array('%'=>'\%', '_'=>'\_', '\\'=>'\\\\')).'%';
+		$criteria->compare('name', $name, true, 'AND', false);
 		$criteria->compare('type', $this->getAttribute('type'));
 		$criteria->compare('description', $this->getAttribute('description'), true);
 		$criteria->compare('bizrule', $this->getAttribute('bizrule'), true);

@@ -3,21 +3,36 @@ $this->widget('zii.widgets.grid.CGridView',
 		array(
 				'id' => $gridId,
 				'filter' => $model,
-				'dataProvider' => $model->search(),
+				'dataProvider' => isset($dataProvider) ? $dataProvider : $model->search(),
 				'columns' => array(
 						'name',
 						array(
 								'name' => 'type',
-								'value' => 'AuthItem::$TYPES[$data->getAttribute("type")].($this->grid->getController()->getModule()->superUser === $data->getAttribute("name") ? " (Super User)" : "")',
+								'value' => 'AuthItem::$TYPES[$data["type"]].($this->grid->getController()->getModule()->superUser === $data["name"] ? " (Super User)" : "")',
 								'filter' => AuthItem::$TYPES,
 								'sortable' => false
 						),
 						array(
 								'class' => 'CButtonColumn',
-								'template' => '{update}{delete}',
+								'template' => '{create}{update}{delete}',
 								'buttons' => array(
+										'create' => array(
+												'label' => Yii::t('srbac', 'Create'),
+												'url' => 'Yii::app()->getController()->createUrl("/srbac/manage/authItem", array("ajax" => "'.$formId.'"))',
+												'imageUrl' => $this->getModule()->getIconsUrl('create.png'),
+												'click' => 'function(){'.CHtml::ajax(
+														array(
+																'type' => 'POST',
+																'url' => new CJavaScriptExpression('$(this).attr("href")'),
+																'beforeSend' => 'function(){$("#'.$formId.'").addClass("srbacLoading");}',
+																'complete' => 'function(){$("#'.$formId.'").removeClass("srbacLoading");}',
+																'replace' => '#'.$formId
+														)
+												).'return false;}',
+												'visible' => '$data instanceof CActiveRecord ? $data->getIsNewRecord() : empty($data["id"])'
+										),
 										'update' => array(
-												'url' => 'Yii::app()->getController()->createUrl("/srbac/manage/authItem", array("id" => $data->getAttribute("id")))',
+												'url' => 'Yii::app()->getController()->createUrl("/srbac/manage/authItem", array("id" => $data["id"]))',
 												'imageUrl' => $this->getModule()->getIconsUrl('update.png'),
 												'click' => 'function(){'.CHtml::ajax(
 														array(
@@ -27,10 +42,11 @@ $this->widget('zii.widgets.grid.CGridView',
 																'complete' => 'function(){$("#'.$formId.'").removeClass("srbacLoading");}',
 																'replace' => '#'.$formId
 														)
-												).'return false;}'
+												).'return false;}',
+												'visible' => '$data instanceof CActiveRecord ? !$data->getIsNewRecord() : !empty($data["id"])'
 										),
 										'delete' => array(
-												'url' => 'Yii::app()->getController()->createUrl("/srbac/manage/authItem", array("id" => $data->getAttribute("id")))',
+												'url' => 'Yii::app()->getController()->createUrl("/srbac/manage/authItem", array("id" => $data["id"]))',
 												'imageUrl' => $this->getModule()->getIconsUrl('delete.png'),
 												'click' => 'function(){'.
 														'if(!confirm("'.Yii::t('srbac', 'Are you sure you want to delete this item?').'")) return false;'.
@@ -44,7 +60,7 @@ $this->widget('zii.widgets.grid.CGridView',
 																'error' => 'js:function(jqXHR,textStatus,errorThrown){alert(errorThrown);}'
 														)).');'.
 														'return false;}',
-												'visible' => '$this->grid->getController()->getModule()->superUser !== $data->getAttribute("name")'
+												'visible' => '($data instanceof CActiveRecord ? !$data->getIsNewRecord() : !empty($data["id"])) && $this->grid->getController()->getModule()->superUser !== $data["name"]'
 										)
 								),
 						)

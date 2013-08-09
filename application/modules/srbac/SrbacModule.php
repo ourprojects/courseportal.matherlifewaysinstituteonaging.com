@@ -124,6 +124,10 @@ class SrbacModule extends CWebModule
 
 	public function setGeneratedAuthItemNamePrefix($prefix)
 	{
+		if(substr($prefix, -1) !== '_')
+		{
+			$prefix .= '_';
+		}
 		$this->_generatedAuthItemNamePrefix = preg_quote($prefix);
 	}
 
@@ -558,34 +562,80 @@ class SrbacModule extends CWebModule
 		return $actions;
 	}
 
-	public function generateAuthItems()
+	private $_generatedAuthItems;
+	private $_generatedMissingAuthItems;
+
+	public function generateAuthItems($missingOnly = true)
 	{
+		if($missingOnly)
+		{
+			if(isset($this->_generatedMissingAuthItems))
+			{
+				return $this->_generatedMissingAuthItems;
+			}
+		}
+		elseif(isset($this->_generatedAuthItems))
+		{
+			return $this->_generatedAuthItems;
+		}
+
 		$authItems = array();
+		$authItemNames = array();
 		$controllers = $this->getControllers();
+		$authItemCount = 0;
 		foreach($controllers as $controller)
 		{
 			$nameParts = explode('.', $controller);
 			$nameParts[] = preg_replace('/^(.+)Controller$/i', '$1', array_pop($nameParts));
-			foreach($nameParts as $part)
+			foreach($nameParts as &$part)
 			{
 				$part = preg_replace('/(?<!^)([A-Z])/', ' \\1', ucfirst($part));
 			}
-			$actions = $this->extractControllerActions($controller);
-			$controller = implode('.', $nameParts);
-			$authItem = new AuthItem();
-			$authItem->setAttributes(array('name' => $controller, 'type' => EAuthItem::TYPE_TASK, 'generated' => true));
-			$authItems[] = $authItem;
-			if($actions !== false)
+
+			$controllerName = implode('.', $nameParts);
+
+			$authItemCount++;
+			$authItemNames[$this->_generatedAuthItemNamePrefix.$controllerName] = $authItemCount;
+			$authItems[$authItemCount] = array('id' => null, 'name' => $controllerName, 'type' => EAuthItem::TYPE_TASK, 'generated' => true);
+
+			if(($actions = $this->extractControllerActions($controller)) !== false)
 			{
 				foreach($actions as $action)
 				{
-					$action = preg_replace('/(?<!^)([A-Z])/', ' \\1', ucfirst($action));
-					$authItem = new AuthItem();
-					$authItem->setAttributes(array('name' => $controller.'.'.$action, 'type' => EAuthItem::TYPE_OPERATION, 'generated' => true));
-					$authItems[] = $authItem;
+					$actionName = $controllerName.'.'.preg_replace('/(?<!^)([A-Z])/', ' \\1', ucfirst($action));
+
+					$authItemCount++;
+					$authItemNames[$this->_generatedAuthItemNamePrefix.$actionName] = $authItemCount;
+					$authItems[$authItemCount] = array('id' => null, 'name' => $actionName, 'type' => EAuthItem::TYPE_OPERATION, 'generated' => true);
 				}
 			}
 		}
+
+		$criteria = new CDbCriteria(
+				array(
+						'select' => $missingOnly ? 'name' : '*',
+						'condition' => 'name REGEXP :nameRegex',
+						'params' => array(':nameRegex' => '^'.$this->_generatedAuthItemNamePrefix.'(.+)$')
+				)
+		);
+		$criteria->addInCondition('name', array_keys($authItemNames));
+
+		foreach(AuthItem::model()->findAll($criteria) as $authItem)
+		{
+			$fullName = $authItem->getFullName();
+			if(isset($authItemNames[$fullName]))
+			{
+				if($missingOnly)
+				{
+					unset($authItems[$authItemNames[$fullName]]);
+				}
+				else
+				{
+					$authItems[$authItemNames[$fullName]]['id'] = $authItem->getAttribute('id');
+				}
+			}
+		}
+
 		return $authItems;
 	}
 
