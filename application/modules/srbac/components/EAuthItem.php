@@ -30,7 +30,7 @@ class EAuthItem extends CAuthItem
 	{
 		return $this->_id;
 	}
-	
+
 	/**
 	 * Adds a child item.
 	 * @param mixed $item string the name of the child item, integer unique identifier of the child item, EAuthItem the item to add as a child
@@ -42,7 +42,7 @@ class EAuthItem extends CAuthItem
 	{
 		return $this->_auth->addItemChild($this, $item);
 	}
-	
+
 	/**
 	 * Removes a child item.
 	 * Note, the child item is not deleted. Only the parent-child relationship is removed.
@@ -54,7 +54,7 @@ class EAuthItem extends CAuthItem
 	{
 		return $this->_auth->removeItemChild($this, $item);
 	}
-	
+
 	/**
 	 * Returns a value indicating whether a child exists
 	 * @param mixed $item string the name of the child item, integer unique identifier of the child item, EAuthItem the item to add as a child
@@ -65,7 +65,7 @@ class EAuthItem extends CAuthItem
 	{
 		return $this->_auth->hasItemChild($this, $item);
 	}
-	
+
 	/**
 	 * Assigns this item to a user.
 	 * @param mixed $userId the user ID (see {@link IWebUser::getId})
@@ -80,7 +80,7 @@ class EAuthItem extends CAuthItem
 	{
 		return $this->_auth->assign($this, $userId, $bizRule, $data);
 	}
-	
+
 	/**
 	 * Revokes an authorization assignment from a user.
 	 * @param mixed $userId the user ID (see {@link IWebUser::getId})
@@ -91,7 +91,7 @@ class EAuthItem extends CAuthItem
 	{
 		return $this->_auth->revoke($this, $userId);
 	}
-	
+
 	/**
 	 * Returns a value indicating whether this item has been assigned to the user.
 	 * @param mixed $userId the user ID (see {@link IWebUser::getId})
@@ -102,7 +102,7 @@ class EAuthItem extends CAuthItem
 	{
 		return $this->_auth->isAssigned($this, $userId);
 	}
-	
+
 	/**
 	 * Returns the item assignment information.
 	 * @param mixed $userId the user ID (see {@link IWebUser::getId})
@@ -114,5 +114,5 @@ class EAuthItem extends CAuthItem
 	{
 		return $this->_auth->getAuthAssignment($this, $userId);
 	}
-	
+
 }

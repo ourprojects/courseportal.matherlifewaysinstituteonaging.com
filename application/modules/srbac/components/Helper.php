@@ -293,18 +293,6 @@ class Helper {
 	}
 
 	/**
-	 * Checks if the always allowed file is writeable
-	 * @return boolean true if always allowed file is writeable or false otherwise
-	 */
-	public static function isAlwaysAllowedFileWritable() {
-		if (!($f = @fopen(self::findModule("srbac")->getAlwaysAllowedFile(), 'r+'))) {
-			return false;
-		}
-		fclose($f);
-		return true;
-	}
-
-	/**
 	 * Gets all users array for autocomplete textbox
 	 */
 	public static function getAllusers($term){

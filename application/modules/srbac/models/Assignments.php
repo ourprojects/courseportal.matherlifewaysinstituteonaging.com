@@ -2,20 +2,19 @@
 /**
  * Assignments class file.
  *
- * @author Spyros Soldatos <spyros@valor.gr>
- * @link http://code.google.com/p/srbac/
+ * @author Louis DaPrato <l.daprato@gmail.com>
  */
 
 /**
  * Assignments model is the authManager model that defines which operations /
  * tasks / roles are assigned to which user.
  *
- * @author Spyros Soldatos <spyros@valor.gr>
+ * @author Louis DaPrato <l.daprato@gmail.com>
  * @package srbac.models
- * @since 1.0.0
  */
 
-class Assignments extends CActiveRecord {
+class Assignments extends CActiveRecord
+{
 	/**
 	 * The followings are the available columns in table 'authassignment':
 	 * @var string $item_id
@@ -28,18 +27,21 @@ class Assignments extends CActiveRecord {
 	 * Returns the static model of the specified AR class.
 	 * @return CActiveRecord the static model class
 	 */
-	public static function model($className=__CLASS__) {
+	public static function model($className = __CLASS__)
+	{
 		return parent::model($className);
 	}
 
-	public function getDbConnection() {
+	public function getDbConnection()
+	{
 		return Yii::app()->getAuthManager()->db;
 	}
 
 	/**
 	 * @return string the associated database table name
 	 */
-	public function tableName() {
+	public function tableName()
+	{
 		return Yii::app()->getAuthManager()->assignmentTable;
 	}
 
@@ -55,19 +57,24 @@ class Assignments extends CActiveRecord {
 	/**
 	 * @return array validation rules for model attributes.
 	 */
-	public function rules() {
+	public function rules()
+	{
 		return array(
-				array('item_id', 'numerical', 'integerOnly' => true),
-				array('user_id', 'numerical', 'integerOnly' => true),
+				array('user_id, item_id', 'unsafe'),
+				array('item_id, user_id', 'numerical', 'integerOnly' => true),
 				array('item_id, user_id', 'required'),
-				array('user_id,item_id,bizrule,data','safe'),
+				array('item_id', 'exist', 'attributeName' => 'id', 'className' => 'AuthItem', 'allowEmpty' => false),
+				array('user_id', 'exist', 'attributeName' => Helper::findModule('srbac')->userId, 'className' => Helper::findModule('srbac')->userclass, 'allowEmpty' => false),
+				array('bizrule, data', 'safe'),
+				array('user_id, item_id', 'safe', 'on' => 'search'),
 		);
 	}
 
 	/**
 	 * @return array relational rules.
 	 */
-	public function relations() {
+	public function relations()
+	{
 		return array(
 				'authItem' => array(self::BELONGS_TO, 'AuthItem', 'item_id'),
 				'user' => array(self::BELONGS_TO, Helper::findModule('srbac')->userclass, 'user_id'),
@@ -75,14 +82,15 @@ class Assignments extends CActiveRecord {
 	}
 
 	/**
-	 * @return array customized attribute labels (name=>label)
+	 * @return array customized attribute labels (name => label)
 	 */
-	public function attributeLabels() {
+	public function attributeLabels()
+	{
 		return array(
-				'item_id' => Yii::t('srbac','Item id'),
-				'user_id' => Yii::t('srbac','User id'),
-				'bizrule' => Yii::t('srbac','Bizrule'),
-				'data' => Yii::t('srbac','Data'),
+				'item_id' => Yii::t('srbac', 'Item id'),
+				'user_id' => Yii::t('srbac', 'User id'),
+				'bizrule' => Yii::t('srbac', 'Bizrule'),
+				'data' => Yii::t('srbac', 'Data'),
 		);
 	}
 
@@ -96,14 +104,14 @@ class Assignments extends CActiveRecord {
 	 * Retrieves a list of models based on the current search/filter conditions.
 	 * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.
 	 */
-	public function search() {
-
+	public function search()
+	{
 		$criteria = new CDbCriteria;
 
-		$criteria->compare('item_id', $this->item_id);
-		$criteria->compare('user_id', $this->user_id);
-		$criteria->compare('bizrule', $this->bizrule, true);
-		$criteria->compare('data', isset($this->data) ? serialize($this->data) : $this->data);
+		$criteria->compare('item_id', $this->getAttribute('item_id'));
+		$criteria->compare('user_id', $this->getAttribute('user_id'));
+		$criteria->compare('bizrule', $this->getAttribute('bizrule'), true);
+		$criteria->compare('data', isset($this->data) ? serialize($this->getAttribute('data')) : $this->getAttribute('data'));
 
 		return new CActiveDataProvider($this, array(
 				'criteria' => $criteria,

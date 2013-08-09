@@ -2,18 +2,17 @@
 /**
  * AuthItem class file.
  *
- * @author Spyros Soldatos <spyros@valor.gr>
- * @link http://code.google.com/p/srbac/
+ * @author Louis DaPrato <l.daprato@gmail.com>
  */
 
 /**
  * AuthItem is the models for authManager items (operations, tasks and roles)
  *
- * @author Spyros Soldatos <spyros@valor.gr>
+ * @author Louis DaPrato <l.daprato@gmail.com>
  * @package srbac.models
- * @since 1.0.0
  */
-class AuthItem extends CActiveRecord {
+class AuthItem extends CActiveRecord
+{
 	/**
 	 * The followings are the available columns in table 'authitem':
 	 * @var integer $id
@@ -25,25 +24,33 @@ class AuthItem extends CActiveRecord {
 	 *
 	 */
 
-	public static $TYPES = array(CAuthItem::TYPE_OPERATION => 'Operation', CAuthItem::TYPE_TASK => 'Task', CAuthItem::TYPE_ROLE => 'Role');
+	public static $TYPES = array(
+			CAuthItem::TYPE_OPERATION => 'Operation',
+			CAuthItem::TYPE_TASK => 'Task',
+			CAuthItem::TYPE_ROLE => 'Role'
+	);
 
-	public function getDbConnection() {
+	public $generated = false;
+
+	public function getDbConnection()
+	{
 		return Yii::app()->getAuthManager()->db;
 	}
-
 
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @return CActiveRecord the static model class
 	 */
-	public static function model($className=__CLASS__) {
+	public static function model($className = __CLASS__)
+	{
 		return parent::model($className);
 	}
 
 	/**
 	 * @return string the associated database table name
 	 */
-	public function tableName() {
+	public function tableName()
+	{
 		return Yii::app()->getAuthManager()->itemTable;
 	}
 
@@ -59,20 +66,27 @@ class AuthItem extends CActiveRecord {
 	/**
 	 * @return array validation rules for model attributes.
 	 */
-	public function rules() {
+	public function rules()
+	{
 		return array(
+				array('id', 'unsafe'),
 				array('id', 'numerical', 'integerOnly' => true),
 				array('name', 'length', 'max' => 64),
 				array('name, type', 'required'),
+				array('name', 'unique'),
 				array('type', 'numerical', 'integerOnly' => true),
-				array('name,type,description,bizrule,data', 'safe'),
+				array('generated', 'default', 'value' => false),
+				array('generated', 'boolean'),
+				array('name, type, description, bizrule, data, generated', 'safe'),
+				array('id', 'safe', 'on' => 'search')
 		);
 	}
 
 	/**
 	 * @return array relational rules.
 	 */
-	public function relations() {
+	public function relations()
+	{
 		return array(
 				'assignments' => array(self::HAS_MANY, 'Assignments', 'item_id'),
 				'users' => array(self::MANY_MANY, Helper::findModule('srbac')->userclass, Yii::app()->getAuthManager()->assignmentTable.'(item_id, user_id)'),
@@ -93,37 +107,74 @@ class AuthItem extends CActiveRecord {
 	}
 
 	/**
-	 * @return array customized attribute labels (name=>label)
+	 * @return array customized attribute labels (name => label)
 	 */
-	public function attributeLabels() {
+	public function attributeLabels()
+	{
 		return array(
-				'name'=>Yii::t('srbac','Name'),
-				'type'=>Yii::t('srbac','Type'),
-				'description'=>Yii::t('srbac','Description'),
-				'bizrule'=>Yii::t('srbac','Bizrule'),
-				'data'=>Yii::t('srbac','Data'),
+				'id' => Yii::t('srbac', 'ID'),
+				'name' => Yii::t('srbac', 'Name'),
+				'type' => Yii::t('srbac', 'Type'),
+				'description' => Yii::t('srbac', 'Description'),
+				'bizrule' => Yii::t('srbac', 'Bizrule'),
+				'data' => Yii::t('srbac', 'Data'),
+				'generated' => Yii::t('srbac', 'Generated')
 		);
 	}
 
-	protected function beforeSave() {
-		$this->data = serialize($this->data);
+	public function getFullName()
+	{
+		if($this->generated)
+		{
+			return Helper::findModule('srbac')->getGeneratedAuthItemNamePrefix().$this->getAttribute('name');
+		}
+		return $this->getAttribute('name');
+	}
+
+	protected function beforeSave()
+	{
+		$this->pack();
 		return parent::beforeSave();
 	}
 
-	protected function afterFind() {
+	protected function afterFind()
+	{
 		parent::afterFind();
-		$this->data = unserialize($this->data);
+		$this->unPack();
 	}
 
-	protected function afterSave() {
+	protected function afterSave()
+	{
 		parent::afterSave();
-		$this->data = unserialize($this->data);
+		$this->unPack();
 	}
 
-	protected function afterDelete() {
+	protected function afterDelete()
+	{
 		parent::afterDelete();
-		Assignments::model()->deleteAll("item_id='".$this->id."'");
-		ItemChildren::model()->deleteAll( "parent_id='".$this->id."' OR child_id='".$this->id."'");
+		Assignments::model()->deleteAll('item_id=:item_id', array(':item_id' => $this->getAttribute('id')));
+		ItemChildren::model()->deleteAll('parent_id=:parent_id OR child_id=:child_id', array(':parent_id' => $this->getAttribute('id'), ':child_id' => $this->getAttribute('id')));
+	}
+
+	protected function pack()
+	{
+		$this->setAttribute('data', serialize($this->getAttribute('data')));
+		if($this->generated)
+		{
+			$this->setAttribute('name', Helper::findModule('srbac')->getGeneratedAuthItemNamePrefix().$this->getAttribute('name'));
+		}
+	}
+
+	protected function unPack()
+	{
+		if($data = @unserialize($this->getAttribute('data')) === false)
+		{
+			$data = null;
+		}
+		$this->setAttribute('data', $data);
+		$count = false;
+		$this->setAttribute('name', preg_replace('/^'.Helper::findModule('srbac')->getGeneratedAuthItemNamePrefix().'(.+)$/i', '$1', $this->getAttribute('name')), 1, $count);
+		$this->generated = (bool)$count;
 	}
 
 	public function orderBy($order)
@@ -136,16 +187,17 @@ class AuthItem extends CActiveRecord {
 	 * Retrieves a list of models based on the current search/filter conditions.
 	 * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.
 	 */
-	public function search() {
-
+	public function search()
+	{
 		$criteria = new CDbCriteria;
 
-		$criteria->compare('id', $this->id);
-		$criteria->compare('name', $this->name, true);
-		$criteria->compare('type', $this->type);
-		$criteria->compare('description', $this->description, true);
-		$criteria->compare('bizrule', $this->bizrule, true);
-		$criteria->compare('data', isset($this->data) ? serialize($this->data) : $this->data);
+		$criteria->compare('id', $this->getAttribute('id'));
+		$criteria->compare('name', $this->getAttribute('name'), true);
+		$criteria->compare('type', $this->getAttribute('type'));
+		$criteria->compare('description', $this->getAttribute('description'), true);
+		$criteria->compare('bizrule', $this->getAttribute('bizrule'), true);
+		$criteria->compare('data', isset($this->data) ? serialize($this->getAttribute('data')) : $this->getAttribute('data'));
+		$criteria->mergeWith(array('condition' => 'name'.($this->generated ? ' ' : ' NOT ').'REGEXP :nameRegex', 'params' => array(':nameRegex' => '^'.Helper::findModule('srbac')->getGeneratedAuthItemNamePrefix().'(.+)$')));
 
 		return new CActiveDataProvider($this, array(
 				'criteria' => $criteria,

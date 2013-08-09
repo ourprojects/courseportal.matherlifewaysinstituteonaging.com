@@ -1,21 +1,40 @@
 <?php
+$authItems = $this->getModule()->generateAuthItems();
+$fullNames = array();
+foreach($authItems as $key => $item)
+{
+	$fullNames[$key] = $item->getFullName();
+}
+$existingAuthItems = AuthItem::model()->findAllByAttributes(array('name' => $fullNames));
+foreach($existingAuthItems as $authItem)
+{
+	foreach($fullNames as $key => $name)
+	{
+		if($authItem->getFullName() === $name)
+		{
+			unset($authItems[$key]);
+			break;
+		}
+	}
+}
+$dataProvider = new CArrayDataProvider($authItems);
 $this->widget('zii.widgets.grid.CGridView',
 		array(
-				'id' => $gridId,
-				'filter' => $model,
-				'dataProvider' => $model->search(),
+				'id' => '$gridId',
+				'dataProvider' => $dataProvider,
 				'columns' => array(
-						'name',
 						array(
 								'name' => 'type',
-								'value' => 'AuthItem::$TYPES[$data->getAttribute("type")].($this->grid->getController()->getModule()->superUser === $data->getAttribute("name") ? " (Super User)" : "")',
+								'value' => 'AuthItem::$TYPES[$data["type"]]',
 								'filter' => AuthItem::$TYPES,
 								'sortable' => false
 						),
+						'name',
+						'description',
 						array(
 								'class' => 'CButtonColumn',
-								'template' => '{update}{delete}',
-								'buttons' => array(
+								'template' => '{update}',
+								/*'buttons' => array(
 										'update' => array(
 												'url' => 'Yii::app()->getController()->createUrl("/srbac/manage/authItem", array("id" => $data->getAttribute("id")))',
 												'imageUrl' => $this->getModule()->getIconsUrl('update.png'),
@@ -46,7 +65,7 @@ $this->widget('zii.widgets.grid.CGridView',
 														'return false;}',
 												'visible' => '$this->grid->getController()->getModule()->superUser !== $data->getAttribute("name")'
 										)
-								),
+								),*/
 						)
 				),
 		)
