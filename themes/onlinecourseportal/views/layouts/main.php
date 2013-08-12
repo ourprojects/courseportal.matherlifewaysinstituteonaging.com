@@ -40,7 +40,7 @@
 		<div id="flowersRight" style="background-image: url('<?php echo Yii::app()->getTheme()->getImagesUrl('bgright.png'); ?>');"></div>
 		<!-- BEGIN HEADER -->
 		<div id="header" class="container">
-			<div id="logo">
+			<div class="logo">
 				<img src="<?php echo Yii::app()->getTheme()->getImagesUrl('logo.png'); ?>" alt="{t}Logo{/t}" />
 			</div>
 			<div id="site-title">
@@ -125,7 +125,7 @@
 		<!-- BEGIN FOOTER -->
 		<div id="footer" style="background-image: url('<?php echo Yii::app()->getTheme()->getImagesUrl('bg-foot.jpg'); ?>');">
 			<div class="container">
-				<div id="logo">
+				<div class="logo">
 					<a href="http://www.matherlifewaysinstituteonaging.com/" target="_blank" title="{t}Mather LifeWays Institute on Aging{/t}">
 						<img src="<?php echo Yii::app()->getTheme()->getImagesUrl('logo-footer.jpg'); ?>" alt="{t}Logo{/t}" />
 					</a>
