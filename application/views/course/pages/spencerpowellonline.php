@@ -71,6 +71,7 @@ alert("Coming Soon!");
     <p>
       <input type="button" style="width:100px;" onclick="myFunction()" value="Week 8" />
       {t} - Closing{/t} </p>
+    <p>&nbsp;</p>
   </div>
   <div class="box-sidebar one">
     <h3>Sharp Brains - Market Research</h3>
@@ -119,13 +120,16 @@ alert("Coming Soon!");
     <h4> {t}Resources{/t}</h4>
     <p>{t}Please use these listed resources in the completion of this online course. Please contact your facilitator or the program director if you have additional resources you would like to see added here.{/t}</p>
     <ul>
-      <li><a href="http://www.mindful.org/" target="_blank">mindful - taking time for what matters</a></li>
-      <li><a href="http://www.psychologytoday.com/basics/mindfulness" target="_blank">Psychologytoday</a></li>
-      <li><a href=" http://www.ncbi.nlm.nih.gov/pubmedhealth/PMH0008821/" target="_blank">PubMed Health</a></li>
-      <li><a href="http://www.bis.gov.uk/foresight/our-work/projects/published-projects/mental-capital-and-wellbeing/reports-and-publications" target="_blank">Foresight</a></li>
-      <li><a href="http://cognitivetherapyonline.com/" target="_blank">Cognitive Therapy Online</a></li>
-      <li><a href="http://www.cognitivebehavioraltherapyonline.com/index.php" target="_blank">FixMyThinking.com</a></li>
-      <li><a href="http://www.nih.gov/health/wellness/" target="_blank">National Institutes of Health</a></li>
+      <li><a href="http://www.mindful.org/" target="_blank">Mindful - taking time for what matters</a> (Emotional, Spiritual and Closing)</li>
+      <li><a href="http://www.psychologytoday.com/basics/mindfulness" target="_blank">Psychologytoday</a> (Emotional, Spiritual and Closing)</li>
+      <li><a href=" http://www.ncbi.nlm.nih.gov/pubmedhealth/PMH0008821/" target="_blank">PubMed Health</a> (Introduction)</li>
+      <li><a href="http://www.bis.gov.uk/foresight/our-work/projects/published-projects/mental-capital-and-wellbeing/reports-and-publications" target="_blank">Foresight</a> (Intellectual)</li>
+      <li><a href="http://cognitivetherapyonline.com/" target="_blank">Cognitive Therapy Online</a> (Emotional)</li>
+      <li><a href="http://www.cognitivebehavioraltherapyonline.com/index.php" target="_blank">FixMyThinking.com</a> (Emotional)</li>
+      <li><a href="http://www.nih.gov/health/wellness/" target="_blank">National Institutes of Health</a> (All Modules)</li>
+      <li><a href="http://sharpbrains.com/" target="_blank">SharpBrains</a> (Introduction and Intellectual)</li>
+      <li><a href="http://go4life.nia.nih.gov/" target="_blank">Go4Life</a> (Physical Activity)</li>
+      <li><a href="http://www.nlm.nih.gov/medlineplus/nutrition.html" target="_blank">NIH</a> (Nutitrion)</li>
     </ul>
   </div>
   <div class="box-white" id="developers">
