@@ -29,8 +29,17 @@ foreach(array(
   <div class="box-sidebar one" style="background-color:#FFF;">
     <h3>{t}Evaluations - Coming Soon!{/t}</h3>
     <br />
-    <p><a href="#">{t}Pre-Course Evaluation{/t}</a></p>
-    <p><a href="#">{t}Post-Course Evaluation{/t}</a></p>
+    <script>
+function myFunction(){
+alert("Coming Soon!");
+}
+</script>
+    <p>
+      <input type="button" style="width:175px;" onclick="myFunction()" value="Pre-Course Evaluation" />
+    </p>
+    <p>
+      <input type="button" style="width:175px;" onclick="myFunction()" value="Post-Course Evaluation" />
+    </p>
 <br />
     <img src="<?php echo $this->getImagesUrl('msml/153075496.png'); ?>" alt="image"> </div>
   <div class="box-sidebar one">
