@@ -5,7 +5,7 @@ if(Yii::app()->getUser()->hasFlash($this->getModule()->flashKey)):
 ?>
 <div id="srbacError">
 	<?php
-	echo Yii::app()->getUser()->getFlash($this->getModule()->flashKey);
+	echo Yii::app()->getUser()->getFlash($this->getModule()->flashKey, null, true);
 	echo Yii::app()->getUser()->setFlash($this->getModule()->flashKey, null);
 	?>
 </div>
@@ -24,6 +24,7 @@ if(Yii::app()->getUser()->hasFlash($this->getModule()->flashKey)):
 								'view' => 'partials/roleToUser',
 								'data' => array(
 										'userId' => null,
+										'users' => $users,
 										'assignedRoles' => $assignedRoles,
 										'notAssignedRoles' => $notAssignedRoles
 								)
@@ -51,7 +52,6 @@ if(Yii::app()->getUser()->hasFlash($this->getModule()->flashKey)):
 				),
 				'viewData' => array(
 							'model' => $model,
-							'message' => '',
 				),
 				'cssFile' => $this->getModule()->getStylesUrl('srbac.css'),
 			)

@@ -183,32 +183,60 @@ div.srbac div.message {
 }
 
 /* begin data grid style */
-table.srbacDataGrid {
+table.srbac {
 	background: white;
 	border-collapse: collapse;
 	width: 99%;
 }
 
-table.srbacDataGrid th,table.srbacDataGrid td {
+table.srbac th,table.srbac td {
 	font-size: 0.9em;
 	border: 1px #4F81BD solid;
 	padding: 0.5em;
 	text-align: left;
 }
 
-table.srbacDataGrid th {
+table.srbac th {
 	background: #d3dfee;
 	text-align: center;
 }
 
-table.srbacDataGrid th.label {
+table.srbac th.label {
 	width: 150px;
 }
 
-table.srbacDataGrid tr.odd {
+table.srbac tr.odd {
 	background: #E6F2FF;
 }
+
+table.roles {
+	color: #111;
+	font-size: 12px;
+	font-weight: bold;
+	background: white;
+	width: 100%;
+	vertical-align: middle;
+}
+
+table.tasks {
+	color: #111;
+	font-size: 12px;
+	float: right;
+	width: 75%;
+	background-color: #66ffff;
+}
+
+table.operations {
+	color: #111;
+	font-size: 11px;
+	float: right;
+	width: 60%;
+	vertical-align: middle;
+	background-color: #9999ff;
+}
+
 /* end of data grid style */
+
 div.error {
 	color: red;
 }
@@ -218,24 +246,6 @@ div.title {
 	font-size: 16px;
 	text-align: center;
 	margin-bottom: 8px;
-}
-
-table.roles {
-	background: white;
-	width: 100%;
-}
-
-table.tasks {
-	float: right;
-	width: 75%;
-	vertical-align: top;
-	background-color: #66ffff;
-}
-
-table.operations {
-	float: right;
-	width: 60%;
-	background-color: #9999ff;
 }
 
 /* TABVIEW ELEMENTS */

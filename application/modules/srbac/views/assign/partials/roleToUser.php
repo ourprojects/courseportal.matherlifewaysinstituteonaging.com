@@ -11,7 +11,7 @@
 			</th>
 		</tr>
 		<tr>
-			<td width="50%">
+			<td style="width: 50%;">
 				<table>
 					<tr>
 						<th><?php echo Yii::t('srbac', 'Users'); ?></th>
@@ -20,9 +20,9 @@
 						<td>
 						<?php
 						echo CHtml::activeDropDownList(
-								$this->getModule()->getUserModel(),
+								$this->getModule()->getStaticUserModel(),
 								$this->getModule()->userId,
-								CHtml::listData($this->getModule()->getUserModel()->findAll(new CDbCriteria(array('order' => $this->getModule()->username))), $this->getModule()->userId, $this->getModule()->username),
+								CHtml::listData($users, $this->getModule()->userId, $this->getModule()->username),
 								array(
 									'size' => 15,
 									'class' => 'dropdown',
@@ -42,7 +42,7 @@
 					</tr>
 				</table>
 			</td>
-			<td width="50%" id="role">
+			<td id="role" style="width: 50%;">
 				<?php
 					$this->renderPartial(
 						'partials/userAjax',
@@ -51,7 +51,6 @@
 							'userId' => $userId,
 							'assignedRoles' => $assignedRoles,
 							'notAssignedRoles' => $notAssignedRoles,
-							'message' => $message
 						)
 					);
 				?>

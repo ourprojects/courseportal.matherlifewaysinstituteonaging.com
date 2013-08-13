@@ -1,16 +1,4 @@
-<?php
-$this->breadcrumbs = array(
-		Yii::t('srbac', 'RBAC Item Management')
-);
-if(Yii::app()->getUser()->hasFlash($this->getModule()->flashKey)):
-?>
-<div id="srbacError">
-	<?php
-	echo Yii::app()->getUser()->getFlash($this->getModule()->flashKey);
-	echo Yii::app()->getUser()->setFlash($this->getModule()->flashKey, null);
-	?>
-</div>
-<?php endif; ?>
+<?php $this->breadcrumbs = array(Yii::t('srbac', 'RBAC Item Management')); ?>
 <h1><?php Yii::t('srbac', 'Srbac Administration Web Interface'); ?></h1>
 <div>
 <?php $this->renderPartial('../frontpage'); ?>

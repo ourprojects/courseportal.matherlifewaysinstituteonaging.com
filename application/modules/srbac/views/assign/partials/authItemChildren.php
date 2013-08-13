@@ -11,7 +11,7 @@
 			</th>
 		</tr>
 		<tr>
-			<td width="50%">
+			<td style="width: 50%;">
 				<table>
 					<tr>
 						<th><?php echo Yii::t('srbac', AuthItem::$TYPES[$parentType].'s')?></th>
@@ -42,7 +42,7 @@
 					</tr>
 				</table>
 			</td>
-			<td width="50%" id="<?php echo AuthItem::$TYPES[$childType].'Management'; ?>">
+			<td id="<?php echo AuthItem::$TYPES[$childType].'Management'; ?>" style="width: 50%;">
 				<?php
 					$this->renderPartial(
 						'partials/childrenAjax',
@@ -50,7 +50,6 @@
 							'model' => $model,
 							'children' => $children,
 							'notChildren' => $notChildren,
-							'message' => $message,
 							'childType' => $childType,
 							'parentType' => $parentType
 						)

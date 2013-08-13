@@ -1,18 +1,4 @@
 <?php
-/**
- * SrbacModule class file.
- *
- * @author Spyros Soldatos <spyros@valor.gr>
- * @link http://code.google.com/p/srbac/
- */
-
-/**
- * SrbacModule is the module that loads the srbac module in the application
- *
- * @author Spyros Soldatos <spyros@valor.gr>
- * @package srbac
- * @since 1.0.0
- */
 
 class SrbacModule extends CWebModule
 {
@@ -31,14 +17,6 @@ class SrbacModule extends CWebModule
 	// Srbac Attributes
 	/* @var $debug If srbac is in debug mode */
 	private $_debug = false;
-	/* @var $userActions mixed Operations assigned to users by default*/
-	private $_userActions = array();
-	/* @var $listBoxNumberOfLines integer The number of lines in the assign tabview listboxes  */
-	private $_listBoxNumberOfLines = 10;
-	/* @var $iconText boolean Display text next to the icons */
-	private $_iconText = false;
-	/* @deprecated $useAlwaysAllowedGui boolean */
-	public $useAlwaysAllowedGui;
 
 	private $_assetsUrl;
 
@@ -52,9 +30,7 @@ class SrbacModule extends CWebModule
 	/* @var $userclass String The name of the users Class*/
 	public $userclass = 'User';
 	/* @var $superUser String The name of the superuser */
-	public $superUser = 'Authorizer';
-	/* @var $notAuthorizedView String The view to render when unathorized access*/
-	public $notAuthorizedView = 'srbac.views.authitem.unauthorized';
+	public $superUser = 'Super User';
 	/* @var $imagesPack String The images theme to use*/
 	public $imagesPack = 'noia';
 	/**
@@ -82,17 +58,6 @@ class SrbacModule extends CWebModule
 				'srbac.models.*',
 				'srbac.components.*',
 		));
-
-		//Create the translation component
-		$this->setComponents(
-				array(
-						'tr' => array(
-								'class' => 'CPhpMessageSource',
-								'basePath' => dirname(__FILE__).DIRECTORY_SEPARATOR.'messages',
-								'onMissingTranslation' => "Helper::markWords"
-						),
-				)
-		);
 	}
 
 	// SETTERS & GETTERS
@@ -126,40 +91,6 @@ class SrbacModule extends CWebModule
 	public function getDebug()
 	{
 		return $this->_debug;
-	}
-
-	public function setUserActions($userActions)
-	{
-		if(is_array($userActions))
-		{
-			$this->_userActions = $userActions;
-		}
-		else
-		{
-			$this->_userActions = explode(",",$userActions);
-		}
-	}
-
-	public function getUserActions()
-	{
-		return $this->_userActions;
-	}
-
-	public function setIconText($iconText)
-	{
-		if(is_bool($iconText))
-		{
-			$this->_iconText = $iconText;
-		}
-		else
-		{
-			throw new CException("Wrong value for srbac attribute iconText in srbac configuration.'".$iconText."' is not a boolean.");
-		}
-	}
-
-	public function getIconText()
-	{
-		return $this->_iconText;
 	}
 
 	/**
@@ -207,13 +138,20 @@ class SrbacModule extends CWebModule
 		}
 	}
 
+	public function getStaticUserModel()
+	{
+		return call_user_func(array($this->userclass, 'model'));
+	}
+
 	/**
-	 * Gets the user's class
+	 * Instantiate the user's class
 	 * @return userclass
 	 */
-	public function getUserModel()
+	public function getNewUserModel()
 	{
-		return new $this->userclass;
+		$args = func_get_args();
+		$klass = new ReflectionClass($this->userclass);
+		return $klass->newInstanceArgs($args);
 	}
 
 	public function getAssetsUrl()
@@ -303,6 +241,23 @@ class SrbacModule extends CWebModule
 		}
 	}
 
+	public function getControllerPathFromAlias($alias)
+	{
+		$controllerParts = explode('.', $alias);
+		$controllerClassName = array_pop($controllerParts);
+
+		$module = Yii::app();
+		foreach($controllerParts as $part)
+		{
+			if(($module = $module->getModule($part)) === null)
+			{
+				return false;
+			}
+		}
+
+		return realpath($module->getControllerPath().DIRECTORY_SEPARATOR.$controllerClassName.'.php');
+	}
+
 	/**
 	 * Extracts the actions from a controller. Beware the controller will be loaded and instantiated.
 	 * @param $controller string The alias for a controller as returned by getControllers()
@@ -310,24 +265,14 @@ class SrbacModule extends CWebModule
 	 * */
 	public function extractControllerActions($controller)
 	{
-		$controllerParts = explode('.', $controller);
-		$controllerClassName = array_pop($controllerParts);
-
-		// @ TODO Won't handle disabled modules properly
-
-		$module = Yii::app();
-		foreach($controllerParts as $part)
-		{
-			$module = $module->getModule($part);
-		}
-
-		$controllerPath = realpath($module->getControllerPath().DIRECTORY_SEPARATOR.$controllerClassName.'.php');
+		$controllerPath = $this->getControllerPathFromAlias($controller);
 
 		if($controllerPath === false)
 		{
 			return false;
 		}
 
+		$controllerClassName = str_ireplace('.php', '', basename($controllerPath));
 		if(!class_exists($controllerClassName, false))
 		{
 			include_once($controllerPath);
@@ -338,21 +283,37 @@ class SrbacModule extends CWebModule
 		}
 
 		$controllerObj = new $controllerClassName($controller);
-		$actions = $controllerObj->actions();
+
 		foreach(get_class_methods($controllerObj) as $method)
 		{
 			if(preg_match('/^action(\w+)$/i', $method, $match) && strcasecmp($match[1], 's'))
 			{
-				$actions[$match[1]] = true;
+				$actions[strtolower($match[1])] = $match[1];
+			}
+		}
+
+		foreach($controllerObj->actions() as $action => $config)
+		{
+			$loweredAction = strtolower($action);
+			if(!isset($actions[$loweredAction]))
+			{
+				$actions[$loweredAction] = $action;
 			}
 		}
 
 		unset($controllerObj);
-		return array_keys($actions);
+		return array_values($actions);
 	}
 
-	public function extractControllerActionsFromText($controllerText)
+	public function extractControllerActionsFromText($controller)
 	{
+		$controllerText = file_get_contents($this->getControllerPathFromAlias($controller));
+
+		if($controllerText === false)
+		{
+			return false;
+		}
+
 		$tokens = token_get_all($controllerText);
 
 		$braceDepth = 0;
@@ -425,12 +386,14 @@ class SrbacModule extends CWebModule
 
 		$authItems = array();
 		$authItemNames = array();
+		$controllerClassNames = array();
 		$controllers = $this->getControllers();
 		$authItemCount = 0;
 		foreach($controllers as $controller)
 		{
 			$nameParts = explode('.', $controller);
-			$nameParts[] = preg_replace('/^(.+)Controller$/i', '$1', array_pop($nameParts));
+			$controllerClassName = array_pop($nameParts);
+			$nameParts[] = preg_replace('/^(.+)Controller$/i', '$1', $controllerClassName);
 			foreach($nameParts as &$part)
 			{
 				$part = preg_replace('/(?<!^)([A-Z])/', ' \\1', ucfirst($part));
@@ -444,18 +407,24 @@ class SrbacModule extends CWebModule
 				$authItemNames[$fullName] = $authItemCount;
 				$authItems[$authItemCount] = array('id' => null, 'name' => $controllerName, 'type' => EAuthItem::TYPE_TASK, 'generated' => true);
 
-				if(($actions = $this->extractControllerActions($controller)) !== false)
+				if(isset($controllerClassNames[$controllerClassName]))
+				{
+					$actions = $this->extractControllerActionsFromText($controller);
+				}
+				else
+				{
+					$controllerClassNames[$controllerClassName] = true;
+					$actions = $this->extractControllerActions($controller);
+				}
+				if($actions !== false)
 				{
 					foreach($actions as $action)
 					{
 						$actionName = $controllerName.'.'.preg_replace('/(?<!^)([A-Z])/', ' \\1', ucfirst($action));
 						$fullName = $this->_generatedAuthItemNamePrefix.$actionName;
-						if(!isset($authItemNames[$fullName]))
-						{
-							$authItemCount++;
-							$authItemNames[$fullName] = $authItemCount;
-							$authItems[$authItemCount] = array('id' => null, 'name' => $actionName, 'type' => EAuthItem::TYPE_OPERATION, 'generated' => true);
-						}
+						$authItemCount++;
+						$authItemNames[$fullName] = $authItemCount;
+						$authItems[$authItemCount] = array('id' => null, 'name' => $actionName, 'type' => EAuthItem::TYPE_OPERATION, 'generated' => true);
 					}
 				}
 			}

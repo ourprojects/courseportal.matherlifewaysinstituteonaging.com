@@ -28,7 +28,7 @@ $gridUpdateJs = $this->generateGridUpdateJS($updateGridIds);
 		<div class="simple">
 			<?php
 			echo $form->labelEx($model, 'name');
-			if($model->name == $this->getModule()->superUser || $model->generated)
+			if($model->getIsSuperUser() || $model->generated)
 			{
 				echo $form->textField($model, 'name', array('size' => 20, 'disabled' => 'disabled'));
 				echo $form->hiddenField($model, 'name');
@@ -47,7 +47,7 @@ $gridUpdateJs = $this->generateGridUpdateJS($updateGridIds);
 				$model,
 				'type',
 				AuthItem::$TYPES,
-				$model->name == $this->getModule()->superUser || !$model->getIsNewRecord() ? array('disabled' => 'disabled') : array()
+				$model->getIsSuperUser() || !$model->getIsNewRecord() ? array('disabled' => 'disabled') : array()
 			);
 			echo $form->error($model, 'type');
 			?>
@@ -81,7 +81,7 @@ $gridUpdateJs = $this->generateGridUpdateJS($updateGridIds);
 			<?php
 			echo CHtml::ajaxButton(
 				Yii::t('srbac', 'Save'),
-				$this->createUrl('/srbac/manage/authItem', array('ajax' => $formId)),
+				$this->createUrl('/srbac/authItem/authItem', array('ajax' => $formId)),
 				array(
 					'type' => 'PUT',
 					'beforeSend' => 'function(){$("#'.$formId.'").addClass("srbacLoading");}',
@@ -91,7 +91,7 @@ $gridUpdateJs = $this->generateGridUpdateJS($updateGridIds);
 			);
 			echo CHtml::ajaxButton(
 				Yii::t('srbac', 'Create'),
-				$this->createUrl('/srbac/manage/authItem', array('ajax' => $formId)),
+				$this->createUrl('/srbac/authItem/authItem', array('ajax' => $formId)),
 				array(
 					'type' => 'POST',
 					'beforeSend' => 'function(){$("#'.$formId.'").addClass("srbacLoading");}',
@@ -102,5 +102,8 @@ $gridUpdateJs = $this->generateGridUpdateJS($updateGridIds);
 			?>
 		</div>
 		<?php $this->endWidget(); ?>
+		<div class="message" id="loadMessage<?php echo $formId; ?>">
+			&nbsp;<?php echo Yii::app()->getUser()->getFlash($this->getModule()->flashKey, null, true); ?>
+		</div>
 	</div>
 </div>

@@ -1,4 +1,23 @@
+<?php
+Yii::app()->getClientScript()->registerScript(
+	'automaticMissingTabUpdateEvent',
+	'$("#autoMissingTab").bind("update", function(){'.
+	CHtml::ajax(array(
+			'type' => 'GET',
+			'data' => 'ajax=autoMissingTab',
+			'beforeSend' => 'function(){$("#autoMissingTab").addClass("srbacLoading");}',
+			'complete' => 'function(){$("#autoMissingTab").removeClass("srbacLoading");}',
+			'update' => '#autoMissingTab'
+		)
+	)
+	.'})',
+	CClientScript::POS_READY
+);
+?>
 <div class="iconBox">
+<script type="text/javascript">
+var autoMissingAuthItems = <?php echo CJavaScript::encode(array('AuthItems' => $dataProvider->rawData)); ?>;
+</script>
 	<?php
 	echo CHtml::ajaxLink(
 			CHtml::image(
@@ -10,10 +29,10 @@
 								'title' => Yii::t('srbac', 'Create All'),
 						)
 			) . Yii::t('srbac', 'Create All'),
-			$this->createUrl('/srbac/manage/authItem', array('ajax' => 'autoMissingTab')),
+			$this->createUrl('/srbac/authItem/authItem', array('ajax' => 'autoMissingTab')),
 			array(
 				'type' => 'POST',
-				'data' => array('AuthItems' => $dataProvider->rawData),
+				'data' => 'js:autoMissingAuthItems',
 				'beforeSend' => 'function(){$("#autoMissingTab").addClass("srbacLoading");}',
 				'complete' =>
 					'function(){'.

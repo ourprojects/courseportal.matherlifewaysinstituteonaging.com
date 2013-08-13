@@ -21,7 +21,12 @@ class AuthItem extends CActiveRecord
 	 * @var string $description
 	 * @var string $bizrule
 	 * @var string $data
-	 *
+	 */
+
+	/**
+	 * The following are available virtual column attributes
+	 * @var boolean $generated
+	 * @var string $fullName
 	 */
 
 	public static $TYPES = array(
@@ -111,7 +116,11 @@ class AuthItem extends CActiveRecord
 	 */
 	public function type($type)
 	{
-		$this->getDbCriteria()->addColumnCondition(array($this->getDbConnection()->getSchema()->quoteColumnName($this->getTableAlias(false, false).'.type') => is_numeric($type) ? $type : array_search($type, self::$TYPES)));
+		$this->getDbCriteria()->addColumnCondition(
+				array(
+						$this->getDbConnection()->getSchema()->quoteColumnName($this->getTableAlias(false, false).'.type') => is_numeric($type) ? $type : array_search($type, self::$TYPES)
+				)
+		);
 		return $this;
 	}
 
@@ -131,6 +140,80 @@ class AuthItem extends CActiveRecord
 		return $this;
 	}
 
+	public function userAssigned($userId)
+	{
+		$schema = $this->getDbConnection()->getSchema();
+		$this->getDbCriteria()->mergeWith(
+				array(
+					'scopes' => array('type' => CAuthItem::TYPE_ROLE),
+					'with' => 'assignments',
+					'order' => $schema->quoteColumnName($this->getTableAlias(false, false).'.name').' ASC'
+			)
+		);
+		if($userId)
+		{
+			$this->getDbCriteria()->addColumnCondition(array($schema->quoteColumnName('assignments.user_id') => $userId));
+		}
+		return $this;
+	}
+
+	public function userNotAssigned($userId)
+	{
+		$schema = $this->getDbConnection()->getSchema();
+		$this->getDbCriteria()->mergeWith(
+				array(
+						'order' => $schema->quoteColumnName($this->getTableAlias(false, false).'.name').' ASC',
+						'group' => $schema->quoteColumnName($this->getTableAlias(false, false).'.id'),
+						'having' => 'MIN('.$schema->quoteColumnName('assignments.user_id').') IS NULL',
+						'with' => (
+								$userId
+								?
+								array(
+										'assignments' => array(
+												'on' => $schema->quoteColumnName('assignments.user_id').'=:user_id',
+												'params' => array(':user_id' => $userId)
+										)
+								)
+								:
+								'assignments')
+				)
+		);
+		return $this;
+	}
+
+	public function children()
+	{
+		$schema = $this->getDbConnection()->getSchema();
+		$this->getDbCriteria()->mergeWith(
+				array(
+						'with' => 'parents',
+						'condition' => $schema->quoteColumnName('parents.id').'=:parentId',
+						'order' => $schema->quoteColumnName($this->getTableAlias(false, false).'.name').' ASC',
+						'params' => array(':parentId' => $this->getAttribute('id'))
+				)
+		);
+		return $this;
+	}
+
+	public function notChildren()
+	{
+		$schema = $this->getDbConnection()->getSchema();
+		$this->getDbCriteria()->mergeWith(
+				array(
+						'with' => array(
+								'parents' => array(
+										'on' => $schema->quoteColumnName('parents.id').'=:id',
+										'params' => array(':id' => $this->getAttribute('id'))
+								)
+						),
+						'order' => $schema->quoteColumnName($this->getTableAlias(false, false).'.name').' ASC',
+						'group' => $schema->quoteColumnName($this->getTableAlias(false, false).'.id'),
+						'having' => 'MIN('.$schema->quoteColumnName('parents.id').') IS NULL'
+				)
+		);
+		return $this;
+	}
+
 	/**
 	 * @return array customized attribute labels (name => label)
 	 */
@@ -143,7 +226,8 @@ class AuthItem extends CActiveRecord
 				'description' => Yii::t('srbac', 'Description'),
 				'bizrule' => Yii::t('srbac', 'Bizrule'),
 				'data' => Yii::t('srbac', 'Data'),
-				'generated' => Yii::t('srbac', 'Generated')
+				'generated' => Yii::t('srbac', 'Generated'),
+				'fullName' => Yii::t('srbac', 'Full Name'),
 		);
 	}
 
@@ -201,6 +285,11 @@ class AuthItem extends CActiveRecord
 	{
 		$this->getDbCriteria()->mergeWith(array('order' => $order));
 		return $this;
+	}
+
+	public function getIsSuperUser()
+	{
+		return $this->getAttribute('name') === Helper::findModule('srbac')->superUser;
 	}
 
 	/**

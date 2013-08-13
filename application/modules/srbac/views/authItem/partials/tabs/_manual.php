@@ -1,4 +1,4 @@
-<table class="srbacDataGrid" align="center">
+<table class="srbac" align="center">
 	<tr>
 		<th width="50%"><?php echo Yii::t('srbac', 'Authorization items');?></th>
 		<th><?php echo Yii::t('srbac', 'Actions')?></th>
@@ -17,7 +17,7 @@
 											'title' => Yii::t('srbac', 'Create New'),
 									)
 						) . Yii::t('srbac', 'Create New'),
-						$this->createUrl('/srbac/manage/authItem', array('ajax' => 'authItem-form')),
+						$this->createUrl('/srbac/authItem/authItem', array('ajax' => 'authItem-form')),
 						array(
 							'type' => 'GET',
 							'beforeSend' => 'function(){$("#authItem-form").addClass("srbacLoading");}',

@@ -5,7 +5,7 @@
 		<th><?php echo Yii::t('srbac', AuthItem::$TYPES[$childType].'s Not Assigned')?></th>
 	</tr>
 	<tr>
-		<td width="45%">
+		<td style="width: 45%;">
 		<?php
 		echo CHtml::activeDropDownList(
 				$model,
@@ -21,7 +21,7 @@
 		);
 		?>
 		</td>
-		<td width="10%" align="center">
+		<td align="center" style="width: 10%;">
 		<?php
 		echo CHtml::ajaxButton(
 				'<<',
@@ -47,7 +47,7 @@
 		);
 		?>
 		</td>
-		<td width="45%">
+		<td style="width: 45%;">
 		<?php
 		echo CHtml::activeDropDownList(
 				$model,
@@ -66,5 +66,5 @@
 	</tr>
 </table>
 <div id="loadMessage<?php echo AuthItem::$TYPES[$childType]; ?>" class="message">
-	&nbsp;<?php echo $message ?>
+	&nbsp;<?php echo Yii::app()->getUser()->getFlash($this->getModule()->flashKey, null, true); ?>
 </div>
