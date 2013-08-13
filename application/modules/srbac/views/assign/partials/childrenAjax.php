@@ -1,8 +1,8 @@
 <table>
 	<tr>
-		<th><?php echo Yii::t('srbac','Assigned '.AuthItem::$TYPES[$childType].'(s)')?></th>
+		<th><?php echo Yii::t('srbac', AuthItem::$TYPES[$childType].'s Assigned')?></th>
 		<th>&nbsp;</th>
-		<th><?php echo Yii::t('srbac','Not Assigned '.AuthItem::$TYPES[$childType].'(s)')?></th>
+		<th><?php echo Yii::t('srbac', AuthItem::$TYPES[$childType].'s Not Assigned')?></th>
 	</tr>
 	<tr>
 		<td width="45%">
@@ -12,7 +12,7 @@
 				'id',
 				CHtml::listData($children, 'id', 'name'),
 				array(
-					'size' => $this->getModule()->listBoxNumberOfLines,
+					'size' => 15,
 					'multiple' => 'multiple',
 					'class' => 'dropdown',
 					'name' => 'children',
@@ -25,7 +25,7 @@
 		<?php
 		echo CHtml::ajaxButton(
 				'<<',
-				array('children', 'parentType' => $parentType, 'childType' => $childType),
+				$this->createUrl('/srbac/assign/children', array('parentType' => $parentType, 'childType' => $childType)),
 				array(
 					'type' => 'PUT',
 					'update' => '#'.AuthItem::$TYPES[$childType].'Management',
@@ -36,7 +36,7 @@
 		);
 		echo CHtml::ajaxButton(
 				'>>',
-				array('children', 'parentType' => $parentType, 'childType' => $childType),
+				$this->createUrl('/srbac/assign/children', array('parentType' => $parentType, 'childType' => $childType)),
 				array(
 					'type' => 'DELETE',
 					'update' => '#'.AuthItem::$TYPES[$childType].'Management',
@@ -54,7 +54,7 @@
 				'id',
 				CHtml::listData($notChildren, 'id', 'name'),
 				array(
-					'size' => $this->getModule()->listBoxNumberOfLines,
+					'size' => 15,
 					'multiple' => 'multiple',
 					'class' => 'dropdown',
 					'name' => 'children',

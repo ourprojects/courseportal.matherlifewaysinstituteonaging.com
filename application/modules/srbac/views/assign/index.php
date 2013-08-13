@@ -1,8 +1,7 @@
 <?php
 $this->breadcrumbs = array('Srbac Assign');
 
-if(Yii::app()->getUser()->hasFlash($this->getModule()->flashKey))
-{
+if(Yii::app()->getUser()->hasFlash($this->getModule()->flashKey)):
 ?>
 <div id="srbacError">
 	<?php
@@ -10,13 +9,8 @@ if(Yii::app()->getUser()->hasFlash($this->getModule()->flashKey))
 	echo Yii::app()->getUser()->setFlash($this->getModule()->flashKey, null);
 	?>
 </div>
-<?php
-}
-if($this->getModule()->getShowHeader())
-{
-	$this->renderPartial($this->getModule()->header);
-}
-?>
+<?php endif; ?>
+<h1><?php Yii::t('srbac', 'Srbac Administration Web Interface'); ?></h1>
 <div>
 	<?php $this->renderPartial('../frontpage'); ?>
 	<div class="horTab">
@@ -65,9 +59,3 @@ if($this->getModule()->getShowHeader())
 	?>
 	</div>
 </div>
-<?php
-if($this->getModule()->getShowFooter())
-{
-	$this->renderPartial($this->getModule()->footer);
-}
-?>

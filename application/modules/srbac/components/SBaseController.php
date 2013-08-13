@@ -39,40 +39,21 @@ class SBaseController extends CController
 		}
 		else if ($this->getModule()->debug || Yii::app()->getUser()->checkAccess(Helper::findModule('srbac')->superUser))
 		{
-			$del = Helper::findModule('srbac')->delimeter;
-
-			//srbac access
-			$mod = $this->getModule() !== null ? $this->getModule()->id . $del : "";
-
-			$contrArr = explode("/", $this->id);
-			$contrArr[sizeof($contrArr) - 1] = ucfirst($contrArr[sizeof($contrArr) - 1]);
-			$controller = implode(".", $contrArr);
-
-			$controller = str_replace("/", ".", $this->id);
-			// Static pages
-			if(sizeof($contrArr)==1)
+			$access = preg_replace('/^(.+)Controller$/i', '$1', get_class($this)) . '.' . $this->getAction()->id;
+			$module = $this->getModule();
+			while($module !== null && $module !== Yii::app())
 			{
-				$controller = ucfirst($controller);
-			}
-			$access = $mod . $controller . ucfirst($this->action->id);
-
-			//   if (Yii::getVersion() >= "1.1.7") {
-			//      if (count($this->actionParams) > 0) {
-			//        $keys = array_keys($this->actionParams);
-			//        foreach ($keys as $key) {
-			//          $query = $query . ',' . '$' . $key;
-			//        }
-			//
-			//        $query = substr_replace($query, '', 0, 1);
-			//        $access = $access . $query;
-			//      }
-			//    }
-			//Always allow access if $access is in the allowedAccess array
-			if (in_array($access, $this->allowedAccess()))
-			{
-				return true;
+				$access = $module->getId() . '.' . $access;
+				$module = $module->getParentModule();
 			}
 
+			$access = explode('.', $access);
+			foreach($access as &$a)
+			{
+				$a = preg_replace('/(?<!^)([A-Z])/', ' \\1', ucfirst($a));
+			}
+
+			$access = implode('.', $access);
 
 			//Allow access if srbac is not installed yet
 			if (!Yii::app()->getModule('srbac')->isInstalled())
@@ -99,17 +80,6 @@ class SBaseController extends CController
 		return false;
 	}
 
-	/**
-	 * The auth items that access is always  allowed. Configured in srbac module's
-	 * configuration
-	 * @return The always allowed auth items
-	 */
-	protected function allowedAccess()
-	{
-		Yii::import('srbac.components.Helper');
-		return Helper::findModule('srbac')->getAlwaysAllowed();
-	}
-
 	protected function onUnauthorizedAccess()
 	{
 		/**
@@ -131,11 +101,11 @@ class SBaseController extends CController
 			//You may change the view for unauthorized access
 			if (Yii::app()->getRequest()->getIsAjaxRequest())
 			{
-				$this->renderPartial(Yii::app()->getModule('srbac')->notAuthorizedView, array("error" => $error));
+				$this->renderPartial($this->getModule()->notAuthorizedView, array("error" => $error));
 			}
 			else
 			{
-				$this->render(Yii::app()->getModule('srbac')->notAuthorizedView, array("error" => $error));
+				$this->render($this->getModule()->notAuthorizedView, array("error" => $error));
 			}
 			return false;
 		}

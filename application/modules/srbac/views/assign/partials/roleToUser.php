@@ -14,7 +14,7 @@
 			<td width="50%">
 				<table>
 					<tr>
-						<th><?php echo Yii::t('srbac', 'User'); ?></th>
+						<th><?php echo Yii::t('srbac', 'Users'); ?></th>
 					</tr>
 					<tr>
 						<td>
@@ -24,11 +24,11 @@
 								$this->getModule()->userId,
 								CHtml::listData($this->getModule()->getUserModel()->findAll(new CDbCriteria(array('order' => $this->getModule()->username))), $this->getModule()->userId, $this->getModule()->username),
 								array(
-									'size' => $this->getModule()->listBoxNumberOfLines,
+									'size' => 15,
 									'class' => 'dropdown',
 									'ajax' => array(
 										'type' => 'GET',
-										'url' => 'roles',
+										'url' => $this->createUrl('/srbac/assign/roles'),
 										'update' => '#role',
 										'beforeSend' => 'function(){$("#loadMessageRole").addClass("srbacLoading");}',
 										'complete' => 'function(){$("#loadMessageRole").removeClass("srbacLoading");}'

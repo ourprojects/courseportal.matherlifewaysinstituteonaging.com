@@ -31,24 +31,14 @@ class SrbacModule extends CWebModule
 	// Srbac Attributes
 	/* @var $debug If srbac is in debug mode */
 	private $_debug = false;
-	/* @var $pagesize int The number of items displayed in each page*/
-	private $_pageSize = 15;
-	/* @var $alwaysAllowed mixed The actions that are always allowed*/
-	private $_alwaysAllowed = array();
 	/* @var $userActions mixed Operations assigned to users by default*/
 	private $_userActions = array();
 	/* @var $listBoxNumberOfLines integer The number of lines in the assign tabview listboxes  */
 	private $_listBoxNumberOfLines = 10;
 	/* @var $iconText boolean Display text next to the icons */
 	private $_iconText = false;
-	/* @var $_useHeader boolean Use header or not */
-	private $_showHeader = false;
-	/* @var $_useFooter boolean Use footer or not */
-	private $_showFooter = false;
 	/* @deprecated $useAlwaysAllowedGui boolean */
 	public $useAlwaysAllowedGui;
-	/* @var $_message A warning/error message displayed in the top of each page */
-	private $_message ="";
 
 	private $_assetsUrl;
 
@@ -67,16 +57,6 @@ class SrbacModule extends CWebModule
 	public $notAuthorizedView = 'srbac.views.authitem.unauthorized';
 	/* @var $imagesPack String The images theme to use*/
 	public $imagesPack = 'noia';
-	/* @var $header String Srbac header*/
-	public $header = 'srbac.views.header';
-	/* @var $footer String Srbac footer*/
-	public $footer = 'srbac.views.footer';
-	/* @var $alwaysAllowedPath String */
-	public $alwaysAllowedPath = 'srbac.components';
-	/* @var $alwaysAllowedFileName String */
-	public $alwaysAllowedFileName = 'alwaysAllowed.php';
-	/* @var $delimeter The delimeter used in modules between moduleId and itemId */
-	public $delimeter = '-';
 	/**
 	 * @var string the ID of the default controller for this module. Defaults to 'default'.
 	 */
@@ -148,60 +128,6 @@ class SrbacModule extends CWebModule
 		return $this->_debug;
 	}
 
-	public function setPageSize($pageSize)
-	{
-		if(is_numeric($pageSize))
-		{
-			$this->_pageSize = (int) $pageSize;
-		}
-		else
-		{
-			throw new CException("Wrong value for srbac attribute pageSize in srbac configuration.'".$pageSize."' is not an integer.");
-		}
-	}
-
-	public function getPageSize()
-	{
-		return $this->_pageSize;
-	}
-
-	public function setAlwaysAllowed($alwaysAllowed)
-	{
-		$this->_alwaysAllowed = $alwaysAllowed;
-	}
-
-	public function getAlwaysAllowed()
-	{
-		$paramAllowed = array();
-		if(!is_file($this->getAlwaysAllowedFile()))
-		{
-			file_put_contents($this->getAlwaysAllowedFile(), '<?php\nreturn array();\n?>');
-		}
-		$guiAllowed = include($this->getAlwaysAllowedFile());
-		if(!is_array($guiAllowed))
-		{
-			$guiAllowed = array();
-		}
-		if(is_array($this->_alwaysAllowed))
-		{
-			$paramAllowed = $this->_alwaysAllowed;
-		}
-		else if(is_file(Yii::getPathOfAlias($this->_alwaysAllowed).".php"))
-		{
-			$paramAllowed = include(Yii::getPathOfAlias($this->_alwaysAllowed).".php");
-		}
-		else if(is_string($this->_alwaysAllowed))
-		{
-			$paramAllowed = split(",", $this->_alwaysAllowed);
-		}
-		return array_merge($guiAllowed, $paramAllowed);
-	}
-
-	public function getAlwaysAllowedFile()
-	{
-		return Yii::getPathOfAlias($this->alwaysAllowedPath).DIRECTORY_SEPARATOR.$this->alwaysAllowedFileName;
-	}
-
 	public function setUserActions($userActions)
 	{
 		if(is_array($userActions))
@@ -217,23 +143,6 @@ class SrbacModule extends CWebModule
 	public function getUserActions()
 	{
 		return $this->_userActions;
-	}
-
-	public function setListBoxNumberOfLines($size)
-	{
-		if(is_numeric($size))
-		{
-			$this->_listBoxNumberOfLines = (int) $size;
-		}
-		else
-		{
-			throw new CException("Wrong value for srbac attribute listBoxNumberOfLines in srbac configuration.'".$size."' is not an integer.");
-		}
-	}
-
-	public function getListBoxNumberOfLines()
-	{
-		return $this->_listBoxNumberOfLines;
 	}
 
 	public function setIconText($iconText)
@@ -252,42 +161,6 @@ class SrbacModule extends CWebModule
 	{
 		return $this->_iconText;
 	}
-
-	public function setShowHeader($useHeader)
-	{
-		if(is_bool($useHeader))
-		{
-			$this->_showHeader = $useHeader;
-		}
-		else
-		{
-			throw new CException("Wrong value for srbac attribute useHeader in srbac configuration.'".$useHeader."' is not a boolean.");
-		}
-	}
-
-	public function getShowHeader()
-	{
-		return $this->_showHeader;
-	}
-
-	public function setShowFooter($useFooter)
-	{
-		if(is_bool($useFooter))
-		{
-			$this->_showFooter = $useFooter;
-		}
-		else
-		{
-			throw new CException("Wrong value for srbac attribute footer in srbac configuration.'".$useFooter."' is not a boolean.");
-		}
-	}
-
-	public function getShowFooter()
-	{
-		return $this->_showFooter;
-	}
-
-
 
 	/**
 	 * Checks if srbac is installed by checking if Auth items table exists.
@@ -341,34 +214,6 @@ class SrbacModule extends CWebModule
 	public function getUserModel()
 	{
 		return new $this->userclass;
-	}
-
-
-	/**
-	 * this method is called before any module controller action is performed
-	 * you may place customized code here
-	 * @param CController $controller
-	 * @param CAction $action
-	 * @return boolean
-	 */
-	public function beforeControllerAction($controller, $action)
-	{
-		return parent::beforeControllerAction($controller, $action);
-	}
-
-	public function getSupportedYiiVersion()
-	{
-		return $this->_yiiSupportedVersion;
-	}
-
-	public function getVersion()
-	{
-		return $this->_version;
-	}
-
-	public function getAttributes()
-	{
-		return get_object_vars($this);
 	}
 
 	public function getAssetsUrl()
@@ -493,18 +338,17 @@ class SrbacModule extends CWebModule
 		}
 
 		$controllerObj = new $controllerClassName($controller);
-		$actions = array_keys($controllerObj->actions());
-
+		$actions = $controllerObj->actions();
 		foreach(get_class_methods($controllerObj) as $method)
 		{
 			if(preg_match('/^action(\w+)$/i', $method, $match) && strcasecmp($match[1], 's'))
 			{
-				$actions[] = $match[1];
+				$actions[$match[1]] = true;
 			}
 		}
 
 		unset($controllerObj);
-		return $actions;
+		return array_keys($actions);
 	}
 
 	public function extractControllerActionsFromText($controllerText)
@@ -593,20 +437,26 @@ class SrbacModule extends CWebModule
 			}
 
 			$controllerName = implode('.', $nameParts);
-
-			$authItemCount++;
-			$authItemNames[$this->_generatedAuthItemNamePrefix.$controllerName] = $authItemCount;
-			$authItems[$authItemCount] = array('id' => null, 'name' => $controllerName, 'type' => EAuthItem::TYPE_TASK, 'generated' => true);
-
-			if(($actions = $this->extractControllerActions($controller)) !== false)
+			$fullName = $this->_generatedAuthItemNamePrefix.$controllerName;
+			if(!isset($authItemNames[$fullName]))
 			{
-				foreach($actions as $action)
-				{
-					$actionName = $controllerName.'.'.preg_replace('/(?<!^)([A-Z])/', ' \\1', ucfirst($action));
+				$authItemCount++;
+				$authItemNames[$fullName] = $authItemCount;
+				$authItems[$authItemCount] = array('id' => null, 'name' => $controllerName, 'type' => EAuthItem::TYPE_TASK, 'generated' => true);
 
-					$authItemCount++;
-					$authItemNames[$this->_generatedAuthItemNamePrefix.$actionName] = $authItemCount;
-					$authItems[$authItemCount] = array('id' => null, 'name' => $actionName, 'type' => EAuthItem::TYPE_OPERATION, 'generated' => true);
+				if(($actions = $this->extractControllerActions($controller)) !== false)
+				{
+					foreach($actions as $action)
+					{
+						$actionName = $controllerName.'.'.preg_replace('/(?<!^)([A-Z])/', ' \\1', ucfirst($action));
+						$fullName = $this->_generatedAuthItemNamePrefix.$actionName;
+						if(!isset($authItemNames[$fullName]))
+						{
+							$authItemCount++;
+							$authItemNames[$fullName] = $authItemCount;
+							$authItems[$authItemCount] = array('id' => null, 'name' => $actionName, 'type' => EAuthItem::TYPE_OPERATION, 'generated' => true);
+						}
+					}
 				}
 			}
 		}
@@ -636,7 +486,11 @@ class SrbacModule extends CWebModule
 			}
 		}
 
-		return $authItems;
+		if($missingOnly)
+		{
+			return $this->_generatedMissingAuthItems = $authItems;
+		}
+		return $this->_generatedAuthItems = $authItems;
 	}
 
 }

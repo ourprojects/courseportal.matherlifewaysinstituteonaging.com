@@ -6,7 +6,7 @@ Yii::app()->getClientScript()->registerCssFile($this->getModule()->getStylesUrl(
 		<div class="iconBox">
 			<?php
 			echo CHtml::link(
-					SHtml::image($this->getModule()->getIconsUrl('manageAuth.png'),
+					CHtml::image($this->getModule()->getIconsUrl('manageAuth.png'),
 							Yii::t('srbac', 'Managing auth items'),
 							array('class' => 'icon',
 									'title' => Yii::t('srbac','Managing auth items'),
@@ -19,8 +19,8 @@ Yii::app()->getClientScript()->registerCssFile($this->getModule()->getStylesUrl(
 		</div>
 		<div class="iconBox">
 			<?php
-			echo SHtml::link(
-					SHtml::image($this->getModule()->getIconsUrl('usersAssign.png'),
+			echo CHtml::link(
+					CHtml::image($this->getModule()->getIconsUrl('usersAssign.png'),
 						Yii::t('srbac', 'Assign to users'),
 						array('class' => 'icon',
 							'title' => Yii::t('srbac','Assign to users'),
@@ -33,15 +33,15 @@ Yii::app()->getClientScript()->registerCssFile($this->getModule()->getStylesUrl(
 		</div>
 		<div class="iconBox">
 			<?php
-			echo SHtml::link(
-					SHtml::image($this->getModule()->getIconsUrl('users.png'),
+			echo CHtml::link(
+					CHtml::image($this->getModule()->getIconsUrl('users.png'),
 						Yii::t('srbac', 'User\'s assignments'),
 						array('class' => 'icon',
 							'title' => Yii::t('srbac', 'User\'s assignments'),
 							'border' => 0
 						)
 					)." ".($this->getModule()->iconText ? Yii::t('srbac', 'User\'s assignments') : ""),
-					Yii::app()->createUrl('srbac/assignements')
+					Yii::app()->createUrl('srbac/assignments')
 			);
 			?>
 		</div>

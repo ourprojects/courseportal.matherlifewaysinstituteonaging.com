@@ -79,10 +79,16 @@ class AuthItem extends CActiveRecord
 				array('name', 'unique'),
 				array('type', 'numerical', 'integerOnly' => true),
 				array('generated', 'default', 'value' => false),
+				array('generated', 'filter', 'filter' => array($this, 'filterBoolean')),
 				array('generated', 'boolean'),
 				array('name, type, description, bizrule, data, generated', 'safe'),
 				array('id', 'safe', 'on' => 'search')
 		);
+	}
+
+	public function filterBoolean($attribute)
+	{
+		return is_string($attribute) ? $attribute === 'true' || $attribute === '1' : (bool)$attribute;
 	}
 
 	/**
@@ -112,11 +118,16 @@ class AuthItem extends CActiveRecord
 	public function obsolete($obsolete = true)
 	{
 		$criteria = $this->getDbCriteria();
-		$criteria->mergeWith(array('condition' => 'name REGEXP :nameRegex', 'params' => array(':nameRegex' => '^'.Helper::findModule('srbac')->getGeneratedAuthItemNamePrefix().'(.+)$')));
-		$authItems = Helper::findModule('srbac')->generateAuthItems();
+		$authItems = Helper::findModule('srbac')->generateAuthItems(false);
 		array_walk($authItems, create_function('&$authItem', '$authItem = "'.Helper::findModule('srbac')->getGeneratedAuthItemNamePrefix().'".$authItem["name"];'));
-		$criteria->{$obsolete ? 'addNotInCondition' : 'addInCondition'}('name', $authItems);
-
+		if($obsolete)
+		{
+			$criteria->addNotInCondition('name', $authItems);
+		}
+		else
+		{
+			$criteria->addInCondition('name', $authItems);
+		}
 		return $this;
 	}
 
@@ -138,11 +149,7 @@ class AuthItem extends CActiveRecord
 
 	public function getFullName()
 	{
-		if($this->generated)
-		{
-			return Helper::findModule('srbac')->getGeneratedAuthItemNamePrefix().$this->getAttribute('name');
-		}
-		return $this->getAttribute('name');
+		return $this->generated ? Helper::findModule('srbac')->getGeneratedAuthItemNamePrefix().$this->getAttribute('name') : $this->getAttribute('name');
 	}
 
 	protected function beforeSave()
@@ -186,8 +193,7 @@ class AuthItem extends CActiveRecord
 			$data = null;
 		}
 		$this->setAttribute('data', $data);
-		$count = false;
-		$this->setAttribute('name', preg_replace('/^'.Helper::findModule('srbac')->getGeneratedAuthItemNamePrefix().'(.+)$/i', '$1', $this->getAttribute('name')), 1, $count);
+		$this->setAttribute('name', preg_replace('/^'.Helper::findModule('srbac')->getGeneratedAuthItemNamePrefix().'(.+)$/i', '$1', $this->getAttribute('name'), 1, $count));
 		$this->generated = (bool)$count;
 	}
 
@@ -203,21 +209,32 @@ class AuthItem extends CActiveRecord
 	 */
 	public function search()
 	{
+		return new CActiveDataProvider($this, array('criteria' => $this->searchCriteria()));
+	}
+
+	/**
+	 * Retrieves a list of models based on the current search/filter conditions.
+	 * @return CDbCriteria
+	 */
+	public function searchCriteria($criteriaConfig = array())
+	{
 		$criteria = new CDbCriteria;
 
+		$criteria->mergeWith($criteriaConfig);
 		$criteria->compare('id', $this->getAttribute('id'));
-		$name = strtr($this->generated ? Helper::findModule('srbac')->getGeneratedAuthItemNamePrefix() : '', array('%'=>'\%', '_'=>'\_', '\\'=>'\\\\'));
-		$name .= '%'.strtr($this->getAttribute('name'), array('%'=>'\%', '_'=>'\_', '\\'=>'\\\\')).'%';
-		$criteria->compare('name', $name, true, 'AND', false);
+		if(isset($this->name) && $this->name !== '')
+		{
+			$name = strtr($this->generated ? Helper::findModule('srbac')->getGeneratedAuthItemNamePrefix() : '', array('%'=>'\%', '_'=>'\_', '\\'=>'\\\\'));
+			$name .= '%'.strtr($this->getAttribute('name'), array('%'=>'\%', '_'=>'\_', '\\'=>'\\\\')).'%';
+			$criteria->compare('name', $name, true, 'AND', false);
+		}
 		$criteria->compare('type', $this->getAttribute('type'));
 		$criteria->compare('description', $this->getAttribute('description'), true);
 		$criteria->compare('bizrule', $this->getAttribute('bizrule'), true);
 		$criteria->compare('data', isset($this->data) ? serialize($this->getAttribute('data')) : $this->getAttribute('data'));
 		$criteria->mergeWith(array('condition' => 'name'.($this->generated ? ' ' : ' NOT ').'REGEXP :nameRegex', 'params' => array(':nameRegex' => '^'.Helper::findModule('srbac')->getGeneratedAuthItemNamePrefix().'(.+)$')));
 
-		return new CActiveDataProvider($this, array(
-				'criteria' => $criteria,
-		));
+		return $criteria;
 	}
 
 }

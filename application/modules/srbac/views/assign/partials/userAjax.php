@@ -1,8 +1,8 @@
 <table>
 	<tr>
-		<th><?php echo Yii::t('srbac','Assigned Roles') ?></th>
+		<th><?php echo Yii::t('srbac','Roles Assigned') ?></th>
 		<th>&nbsp;</th>
-		<th><?php echo Yii::t('srbac','Not Assigned Roles') ?></th>
+		<th><?php echo Yii::t('srbac','Roles Not Assigned') ?></th>
 	</tr>
 	<tr>
 		<td width="45%">
@@ -12,7 +12,7 @@
 				'id',
 				CHtml::listData($assignedRoles, 'id', 'name'),
 				array(
-						'size' => $this->getModule()->listBoxNumberOfLines,
+						'size' => 15,
 						'multiple' => 'multiple',
 						'class' => 'dropdown',
 						'name' => 'roles',
@@ -25,7 +25,7 @@
 		<?php
 		echo CHtml::ajaxButton(
 			'<<',
-			array('roles', 'userId' => $userId),
+			$this->createUrl('/srbac/assign/roles', array('userId' => $userId)),
 			array(
 				'type' => 'PUT',
 				'update' => '#role',
@@ -36,7 +36,7 @@
 		);
 		echo CHtml::ajaxButton(
 			'>>',
-			array('roles', 'userId' => $userId),
+			$this->createUrl('/srbac/assign/roles', array('userId' => $userId)),
 			array(
 				'type' => 'DELETE',
 				'update' => '#role',
@@ -54,7 +54,7 @@
 				'id',
 				CHtml::listData($notAssignedRoles, 'id', 'name'),
 				array(
-						'size' => $this->getModule()->listBoxNumberOfLines,
+						'size' => 15,
 						'multiple' => 'multiple',
 						'class' => 'dropdown',
 						'name' => 'roles',

@@ -1,64 +1,82 @@
 <?php
-Yii::app()->clientScript->registerScript('hideEffectSuccess', '$("#'.$formId.'_messageSuccess").animate({opacity: 0}, 2000).fadeOut(500);', CClientScript::POS_READY);
-Yii::app()->clientScript->registerScript('hideEffectError', '$("#'.$formId.'_messageError").animate({opacity: 0}, 6000).fadeOut(400);', CClientScript::POS_READY);
+if(!isset($updateGridIds))
+{
+	$updateGridIds = array();
+}
+else if(!is_array($updateGridIds))
+{
+	$updateGridIds = array($updateGridIds);
+}
+$gridUpdateJs = $this->generateGridUpdateJS($updateGridIds);
 ?>
-<div id="<?php echo $formId; ?>">
+<div id="<?php echo $formId; ?>" <?php if($model->getIsNewRecord()) echo 'style="display: none;"'?>>
 	<h2><?php echo $model->getIsNewRecord() ? Yii::t('srbac', 'Create New') : Yii::t('srbac', 'Update'); ?></h2>
 	<div class="srbacForm">
-		<p>
-			<?php echo Yii::t('srbac','Fields with {span} are required.', array('{span}' => '<span class="required">*</span>')); ?>
+		<p class="note">
+			<?php echo Yii::t('srbac', 'Fields with {span} are required.', array('{span}' => '<span class="required">*</span>')); ?>
 		</p>
 		<?php
-		echo CHtml::beginForm();
-		echo CHtml::errorSummary($model);
+		$form = $this->beginWidget(
+			'ext.EActiveForm.EActiveForm',
+			array(
+				'id' => $formId.'_form',
+				'inputIdPrefix' => true
+			)
+		);
 		?>
-
+		<?php echo $form->errorSummary($model); ?>
 		<div class="simple">
 			<?php
-			echo CHtml::activeLabelEx($model, 'name');
-			echo CHtml::activeTextField(
-					$model,
-					'name',
-					$model->name == $this->getModule()->superUser || $model->generated ? array('size' => 20, 'disabled' => 'disabled') : array('size' => 20)
-			);
+			echo $form->labelEx($model, 'name');
+			if($model->name == $this->getModule()->superUser || $model->generated)
+			{
+				echo $form->textField($model, 'name', array('size' => 20, 'disabled' => 'disabled'));
+				echo $form->hiddenField($model, 'name');
+			}
+			else
+			{
+				echo $form->textField($model, 'name', array('size' => 20));
+			}
+			echo $form->error($model, 'name');
 			?>
 		</div>
 		<div class="simple">
 			<?php
-			echo CHtml::activeLabelEx($model, 'type');
-			echo CHtml::activeDropDownList(
+			echo $form->labelEx($model, 'type');
+			echo $form->dropDownList(
 				$model,
 				'type',
 				AuthItem::$TYPES,
 				$model->name == $this->getModule()->superUser || !$model->getIsNewRecord() ? array('disabled' => 'disabled') : array()
 			);
+			echo $form->error($model, 'type');
 			?>
 		</div>
 		<div class="simple">
 			<?php
-			echo CHtml::activeLabelEx($model, 'description');
-			echo CHtml::activeTextArea($model, 'description', array('rows' => 3, 'cols' => 20));
+			echo $form->labelEx($model, 'description');
+			echo $form->textArea($model, 'description', array('rows' => 3, 'cols' => 20));
+			echo $form->error($model, 'description');
 			?>
 		</div>
 		<div class="simple">
 			<?php
-			echo CHtml::activeLabelEx($model, 'bizrule');
-			echo CHtml::activeTextArea($model, 'bizrule', array('rows' => 3, 'cols' => 20));
+			echo $form->labelEx($model, 'bizrule');
+			echo $form->textArea($model, 'bizrule', array('rows' => 3, 'cols' => 20));
+			echo $form->error($model, 'bizrule');
 			?>
 		</div>
 		<div class="simple">
 			<?php
-			echo CHtml::activeLabelEx($model, 'data');
-			echo CHtml::activeTextField($model, 'data', array('size' => 30));
+			echo $form->labelEx($model, 'data');
+			echo $form->textField($model, 'data', array('size' => 30));
+			echo $form->error($model, 'data');
 			?>
 		</div>
-		<?php echo CHtml::activeHiddenField($model, 'id', array('value' => $model->getAttribute('id'))); ?>
-		<div id="<?php echo $formId; ?>_messageSuccess" style="color: green; font-weight: bold; font-size: 14px; text-align: center; position: relative; border: solid black 2px; background-color: #DDDDDD; <?php echo Yii::app()->getUser()->hasFlash('updateSuccess') ? '' : ' display: none;'?>">
-			<?php echo Yii::app()->getUser()->getFlash('updateSuccess'); ?>
-		</div>
-		<div id="<?php echo $formId; ?>_messageError" style="color: red; font-weight: bold; font-size: 14px; text-align: center; position: relative; border: solid black 2px; background-color: #DDDDDD; <?php echo Yii::app()->getUser()->hasFlash('updateError') ? '' : ' display: none;'?>">
-			<?php echo Yii::app()->getUser()->getFlash('updateError'); ?>
-		</div>
+		<?php
+		echo $form->hiddenField($model, 'id');
+		echo $form->hiddenField($model, 'generated');
+		?>
 		<div class="action">
 			<?php
 			echo CHtml::ajaxButton(
@@ -67,8 +85,7 @@ Yii::app()->clientScript->registerScript('hideEffectError', '$("#'.$formId.'_mes
 				array(
 					'type' => 'PUT',
 					'beforeSend' => 'function(){$("#'.$formId.'").addClass("srbacLoading");}',
-					'complete' => 'function(){$("#'.$formId.'").removeClass("srbacLoading");}',
-					'success' => 'function(html){$("#'.$gridId.'").yiiGridView("update");$("#'.$formId.'").replaceWith(html);}',
+					'success' => 'function(html){$("#'.$formId.'").replaceWith(html);'.$gridUpdateJs.'}',
 				),
 				$model->getIsNewRecord() ? array('style' => 'display: none;', 'id' => $formId.'_save') : array('id' => $formId.'_save')
 			);
@@ -78,13 +95,12 @@ Yii::app()->clientScript->registerScript('hideEffectError', '$("#'.$formId.'_mes
 				array(
 					'type' => 'POST',
 					'beforeSend' => 'function(){$("#'.$formId.'").addClass("srbacLoading");}',
-					'complete' => 'function(){$("#'.$formId.'").removeClass("srbacLoading");}',
-					'success' => 'function(html){$("#'.$gridId.'").yiiGridView("update");$("#'.$formId.'").replaceWith(html);}',
+					'success' => 'function(html){$("#'.$formId.'").replaceWith(html);$("#'.$formId.'").css("display", "block");'.$gridUpdateJs.'}',
 				),
 				$model->getIsNewRecord() ? array('id' => $formId.'_create') : array('style' => 'display: none;', 'id' => $formId.'_create')
 			);
 			?>
 		</div>
-		<?php echo CHtml::endForm(); ?>
+		<?php $this->endWidget(); ?>
 	</div>
 </div>

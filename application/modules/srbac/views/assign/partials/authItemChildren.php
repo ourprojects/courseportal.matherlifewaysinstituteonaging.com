@@ -7,14 +7,14 @@
 	<table>
 		<tr>
 			<th colspan="2">
-			<?php echo Yii::t('srbac','Assign '.AuthItem::$TYPES[$childType].' to '.AuthItem::$TYPES[$parentType]) ?>
+			<?php echo Yii::t('srbac','Assign '.AuthItem::$TYPES[$childType].'s to '.AuthItem::$TYPES[$parentType].'s') ?>
 			</th>
 		</tr>
 		<tr>
 			<td width="50%">
 				<table>
 					<tr>
-						<th><?php echo Yii::t('srbac', AuthItem::$TYPES[$parentType])?></th>
+						<th><?php echo Yii::t('srbac', AuthItem::$TYPES[$parentType].'s')?></th>
 					</tr>
 					<tr>
 						<td>
@@ -24,11 +24,11 @@
 									'id',
 									CHtml::listData(AuthItem::model()->orderBy('name')->findAllByAttributes(array('type' => $parentType)), 'id', 'name'),
 									array(
-										'size' => $this->getModule()->listBoxNumberOfLines,
+										'size' => 15,
 										'class' => 'dropdown',
 										'ajax' => array(
 											'type' => 'GET',
-											'url' => array('children', 'parentType' => $parentType, 'childType' => $childType),
+											'url' => $this->createUrl('/srbac/assign/children', array('parentType' => $parentType, 'childType' => $childType)),
 											'update' => '#'.AuthItem::$TYPES[$childType].'Management',
 											'beforeSend' => 'function(){$("#loadMessage'.AuthItem::$TYPES[$childType].'").addClass("srbacLoading");}',
 											'complete' => 'function(){$("#loadMessage'.AuthItem::$TYPES[$childType].'").removeClass("srbacLoading");}'
