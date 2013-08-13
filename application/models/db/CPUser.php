@@ -57,7 +57,7 @@ class CPUser extends CActiveRecord {
 	public function rules() {
 		return array(
 			array('password, salt, session_key, group_id, last_ip, last_login, language, isActivated', 'unsafe', 'except' => 'admin'),
-			array('session_key', 'default', 'value' => $this->generateIV(), 'setOnEmpty' => true),
+			array('session_key', 'default', 'value' => $this->generateIV(), 'setOnEmpty' => true, 'except' => 'search'),
 			array('email, name, session_key, firstname, lastname', 'required', 'except' => 'search'),
 			array('new_password', 'required', 'on' => 'insert'),
 			array('password', 'ext.pbkdf2.PBKDF2validator', 'allowEmpty' => true),
@@ -74,7 +74,7 @@ class CPUser extends CActiveRecord {
 			array('email', 'email'),
 			array('email, name', 'unique', 'caseSensitive' => false, 'except' => 'search'),
 
-			array('group_id', 'setDefaultGroupID', 'setOnEmpty' => true),
+			array('group_id', 'setDefaultGroupID', 'setOnEmpty' => true, 'except' => 'search'),
 			array('group_id', 'exist', 'attributeName' => 'id', 'className' => 'Group'),
 
 			array('name, new_password, email, firstname, lastname, location, country_iso', 'safe'),
