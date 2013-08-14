@@ -36,6 +36,7 @@ $this->widget(
 
 <!-- index page main image -->
 
+
 <div id="home-image">
   <h1>{t}Web-based Training for Caregivers{/t}</h1>
 </div>
@@ -84,10 +85,6 @@ $this->widget(
     <p>{t}<strong>Prepared by Mather LifeWays Institute on Aging - August, 2013</strong>{/t} </p>
     <p> <a href="<?php echo $this->getImagesUrl('MLIAsurvey.pdf'); ?>" class="pdf" target="_blank">{t}Survey of Working Caregiver Needs and Resources{/t} </a> </p>
   </div>
-  <div class="box-sidebar four">
-    <h3>{t}Aging in Action{/t}</h3>
-    <p>{t}Aging in Action is Mather LifeWays Institute on Aging's monthly e-newsletter and blog containing the latest research news in the field of aging.{/t}</p>
-    <a href="http://twitter.com/aginginaction" target="_blank"> <img class="block center" src="<?php echo $this->getImagesUrl('twitter-bird.png'); ?>" alt="Twitter" /></a> </div>
   
   <!-- sidebar for Participating locations here -->
   
