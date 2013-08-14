@@ -78,25 +78,11 @@ $this->widget(
   </div>
   <div class="box-sidebar three">
     <h3>{t}Caregiver Needs &amp; Resources{/t}</h3>
-    <h5 style="text-align:center;">{t}Survey of Working Caregiver Needs and Resources{/t}    </h5>
+    <h5 style="text-align:center;">{t}Survey of Working Caregiver Needs and Resources{/t} </h5>
     <p>{t}Currently, 39% of U.S. adults are caregivers, up from 30% in 2010. Nearly two‐thirds of family caregivers are employed full or part‐time. As the U.S. population ages and medical advances save and extend more lives, the numbers of employees with eldercare responsibilities is on the rise...{/t}</p>
     <p><img class="block center" src="<?php echo $this->getImagesUrl('174280723.png'); ?>" alt="Image"></p>
-    <p>{t}<strong>Prepared by Mather LifeWays Institute on Aging - August, 2013</strong>{/t} 
-    
-    </p>
-    <p>
-    
- 
-
-    
-    <?php 
-	echo CHtml::link(t('Survey of Working Caregiver Needs and Resources'), $this->createUrl('/home/images/MLIAsurvey.pdf')); 
-	?>
-    
-    <a href="MLIAsurvey.pdf" class="pdf" target="_blank">{t}Survey of Working Caregiver Needs and Resources{/t} </a> 
-      
-      
-    </p>
+    <p>{t}<strong>Prepared by Mather LifeWays Institute on Aging - August, 2013</strong>{/t} </p>
+    <p> <a href="<?php echo $this->getImagesUrl('MLIAsurvey.pdf'); ?>" class="pdf" target="_blank">{t}Survey of Working Caregiver Needs and Resources{/t} </a> </p>
   </div>
   <div class="box-sidebar four">
     <h3>{t}Aging in Action{/t}</h3>
