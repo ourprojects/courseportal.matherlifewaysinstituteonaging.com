@@ -11,7 +11,8 @@ foreach(array(
 		'.lesson-4', 
 		'.lesson-5',
 		'.lesson-6',
-		'.lesson-7') as $lesson)
+		'.lesson-7',
+		'.lesson-8') as $lesson)
 	$this->widget(
 			'ext.fancybox.EFancyBox',
 			array('id' => $lesson,
@@ -44,7 +45,7 @@ alert("Coming Soon!");
     </p>
     <br />
     <img src="<?php echo $this->getImagesUrl('msml/153075496.png'); ?>" alt="image"> </div>
-  <div class="box-sidebar one">
+  <div class="box-sidebar one" style="background-color:#FFF;">
     <h3>{t}Module Activity Log{/t}</h3>
     <br />
     <p>
@@ -74,18 +75,18 @@ alert("Coming Soon!");
     <p>&nbsp;</p>
   </div>
   <div class="box-sidebar one">
-    <h3>Sharp Brains - Market Research</h3>
-    <h5 style="text-align:center;">{t}Tracking Brain Health Innovations: News, Research, Trech, Trends{/t}</h5>
-    <p><a href="http://sharpbrains.com/index.php" target="_blank"><img src="<?php echo $this->getImagesUrl('spencer/sharpbrainslogo.gif'); ?>" alt="image"></a></p>
+    <h3>Coming Soon!</h3>
+    <h5 style="text-align:center;">&nbsp;</h5>
+    <p>&nbsp;</p>
     <hr />
-    <p>{t}Sharp­Brains is an independent market research firm and think tank helping organizations and individuals navigate the emerging brain fitness and applied neuroscience field. We maintain an annual state-of-the-market report series, publish consumer guides to inform decision-making, produce an annual global and virtual professional conference.{/t}</p>
+    <p>{t}Coming Soon!{/t}</p>
   </div>
-  <div class="box-sidebar two">
-    <h3>Go4Life</h3>
-    <h5 style="text-align:center;">{t}National Institute on Aging at NIH{/t}</h5>
-    <p><a href="http://sharpbrains.com/index.php" target="_blank"><img src="<?php echo $this->getImagesUrl('spencer/litejazz_logo.png'); ?>" style="width:200; height:142;" alt="image"></a></p>
+  <div class="box-sidebar one">
+    <h3>Coming Soon!</h3>
+    <h5 style="text-align:center;">&nbsp;</h5>
+    <p>&nbsp;</p>
     <hr />
-    <p>{t}Go4Life, an exercise and physical activity campaign from the National Institute on Aging at NIH, is designed to help you fit exercise and physical activity into your daily life. Motivating older adults to become physically active for the first time, return to exercise after a break in their routines, or build more exercise and physical activity into weekly routines are the essential elements of Go4Life.{/t}</p>
+    <p>{t}Coming Soon!{/t}</p>
   </div>
 </div>
 
@@ -112,9 +113,27 @@ alert("Coming Soon!");
     <li> <a href="#lesson-3-slide-1" data-fancybox-group="lesson-3" class="teal lesson-3"> {t}Emotional{/t}</a> <a href="#lesson-3-slide-2" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-3" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-4" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-5" data-fancybox-group="lesson-3" class="hide lesson-3"></a></li>
     <li> <a href="#lesson-4-slide-1" data-fancybox-group="lesson-4" class="teal lesson-4"> {t}Intellectual{/t}</a> <a href="#lesson-4-slide-2" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-3" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-4" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-5" data-fancybox-group="lesson-4" class="hide lesson-4"></a></li>
     <li> <a href="#lesson-5-slide-1" data-fancybox-group="lesson-5" class="teal lesson-5"> {t}Nutritional{/t}</a> <a href="#lesson-5-slide-2" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-3" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-4" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-5" data-fancybox-group="lesson-5" class="hide lesson-5"></a></li>
-    <li> <a href="#lesson-5-slide-1" data-fancybox-group="lesson-5" class="teal lesson-5"> {t}Spiritual{/t}</a> <a href="#lesson-5-slide-2" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-3" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-4" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-5" data-fancybox-group="lesson-5" class="hide lesson-5"></a></li>
-    <li> <a href="#lesson-5-slide-1" data-fancybox-group="lesson-5" class="teal lesson-5"> {t}Social{/t}</a> <a href="#lesson-5-slide-2" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-3" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-4" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-5" data-fancybox-group="lesson-5" class="hide lesson-5"></a></li>
-    <li> <a href="#lesson-5-slide-1" data-fancybox-group="lesson-5" class="teal lesson-5"> {t}Closing{/t}</a> <a href="#lesson-5-slide-2" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-3" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-4" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-5" data-fancybox-group="lesson-5" class="hide lesson-5"></a></li>
+    
+    <li> 
+    <a href="#lesson-6-slide-1" data-fancybox-group="lesson-6" class="teal lesson-6"> {t}Spiritual{/t}</a> 
+    <a href="#lesson-6-slide-2" data-fancybox-group="lesson-6" class="hide lesson-6"></a> 
+    <a href="#lesson-6-slide-3" data-fancybox-group="lesson-6" class="hide lesson-6"></a> 
+    <a href="#lesson-6-slide-4" data-fancybox-group="lesson-6" class="hide lesson-6"></a> 
+    <a href="#lesson-6-slide-5" data-fancybox-group="lesson-6" class="hide lesson-6"></a></li>
+    
+    <li> 
+    <a href="#lesson-7-slide-1" data-fancybox-group="lesson-7" class="teal lesson-7"> {t}Social{/t}</a> 
+    <a href="#lesson-7-slide-2" data-fancybox-group="lesson-7" class="hide lesson-7"></a> 
+    <a href="#lesson-7-slide-3" data-fancybox-group="lesson-7" class="hide lesson-7"></a> 
+    <a href="#lesson-7-slide-4" data-fancybox-group="lesson-7" class="hide lesson-7"></a> 
+    <a href="#lesson-7-slide-5" data-fancybox-group="lesson-7" class="hide lesson-7"></a></li>
+    
+    <li> 
+    <a href="#lesson-8-slide-1" data-fancybox-group="lesson-8" class="teal lesson-8"> {t}Closing{/t}</a> 
+    <a href="#lesson-8-slide-2" data-fancybox-group="lesson-8" class="hide lesson-8"></a> 
+    <a href="#lesson-8-slide-3" data-fancybox-group="lesson-8" class="hide lesson-8"></a> 
+    <a href="#lesson-8-slide-4" data-fancybox-group="lesson-8" class="hide lesson-8"></a> 
+    <a href="#lesson-8-slide-5" data-fancybox-group="lesson-8" class="hide lesson-8"></a></li>
   </ul>
   <div class="box-white" id="resources">
     <h4> {t}Resources{/t}</h4>
@@ -183,8 +202,9 @@ alert("Coming Soon!");
         <h2 class="flowers">{t}YouTube - The Brain Fitness Program{/t}</h2>
         <hr />
         <h4>{t}The Brain Fitness Program on PBS{/t}</h4>
-        <p>{t}The first look at an exciting new program on PBS about neuroplasticity and the ability of the brain to change itself, thus paving the way to incredible advances in strengthening your brain as you age.{/t}</p>
-        <iframe style="width:640px; height:480px; display:block; margin: 15px auto;" src="//www.youtube.com/embed/WBSNQi4es5k?rel=0" frameborder="0" allowfullscreen></iframe>
+        <p>{t}This short video will provide  you with a first look at some of the exciting new discoveries about  neuroplasticity (the ability of the adult brain to change itself) that form the  foundation of this course.  You may have  already seen this popular PBS special, which helped pave the way for many  incredible advances, including this course, that can help you strengthen your  brain and lower your risk for dementia.{/t}
+        </p>
+        <iframe style="width:480px; height:360px; display:block; margin: 15px auto;" src="//www.youtube.com/embed/WBSNQi4es5k?rel=0" frameborder="0" allowfullscreen></iframe>
         <p class="forum">{t}Before you begin, please introduce yourself on the Forum to your facilitator and other participants. Click here to access it. Once opened, leave it open as you will post to it throughout this course.{/t}</p>
         <!-- 'url' => Yii::app()->getComponent('phpBB')->getForumUrl(), --> 
         
@@ -193,20 +213,10 @@ alert("Coming Soon!");
     </div>
     <div id="lesson-1-slide-3" class="course-slide">
       <div class="content">
-        <h2 class="flowers">{t}Course &amp; Module Outline{/t}</h2>
+        <h2 class="flowers">{t}Module Outline{/t}</h2>
         <hr />
-        <h4>{t}Course Modules{/t}</h4>
-        <p>{t}This course consist of the following eight modules:{/t}</p>
-        <ul style="list-style-image:square;">
-          <li>Module One - Introduction</li>
-          <li>Module Two - Physical Activity</li>
-          <li>Module Three - Emotional</li>
-          <li>Module Four - Intellectual</li>
-          <li>Module Five - Nutritional</li>
-          <li>Module Six - Spiritual</li>
-          <li>Module Seven - Social</li>
-          <li>Module Eight - Closing</li>
-        </ul>
+                <img src="<?php echo $this->getImagesUrl('spencer/121346445.png'); ?>" alt="{t{Image{/t}">
+
         <h4>{t}Module One - Introduction:{/t}</h4>
         <ol>
           <li>
@@ -249,7 +259,7 @@ alert("Coming Soon!");
         <img src="<?php echo $this->getImagesUrl('spencer/154418413.png'); ?>" alt="{t}Image{/t}">
         <p>{t}The world of brain health has exploded over the past decade with many new programs and applications emerging to help people think and perform better both now in their daily lives at work or at home and later in life as people age.  Maintaining independence later in life is a concern for many people, especially older adults, but even for younger people this can be a nagging concern.  Through the course of this program you will learn how investing in your brain health now can pay dividends both immediately and as you age.{/t}</p>
         <p>{t}To describe some of the key concepts underlying the field of brain health, we will start by talking a bit about how to protect brain health as you age.{/t}</p>
-        <p class="forum">{t}Without researching the Internet, what healthy activities do you commit to for specifically boosting your brain health? Post your responses to the Forum.{/t}</p>
+        <p class="forum">{t}What healthy activities do you currently engage in to specifically boost your brain health? Post your responses to the Forum.{/t}</p>
         <img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}"> </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
@@ -260,9 +270,9 @@ alert("Coming Soon!");
         <img src="<?php echo $this->getImagesUrl('spencer/161824211.png'); ?>" alt="{t}Image{/t}">
         <p>{t}Many people think that dementia is a normal part of the aging process and that losing ones memory is just part of getting older. While some cognitive skills, such as reaction time and our ability to access words at times (what we think of as “senior moments”), do decline naturally with age, “dementia” is a decline in cognitive ability beyond the normal aging process, most likely due to disease or injury.{/t}</p>
         <p>{t}Many people also think that if dementia is in their family they are destined to develop it at some point in their lives.  However, brain research is showing that the way people live their lives actually seems to account for as much or more of the risk for dementia than family history. In fact for the typical late-onset form of Alzheimer’s disease, genes seem to only account for about 30% of the risk (that’s in contrast to early-onset Alzheimer’s, which occurs before age 65 and has a much stronger genetic component). The rest of that 70% is made up of some other things that we can’t control such as environmental toxins, but within that 70% area there are a lot of things that we can control.{/t}</p>
-        <p>{t}This information is leading some doctors and scientists to start thinking of dementia as a preventable disease, similar to how we think of heart disease, cancer and Type II diabetes as preventable.{/t}</p>
-        <p class="forum">{t}Use the Internet to research the greatest risk factors for Alzheimer's disease. Post your response to the Forum.{/t}</p>
-        <img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}"> </div>
+        <p>{t}This information is leading some doctors and scientists to start thinking of<strong> dementia as a preventable disease</strong>, similar to how we think of heart disease, cancer and Type II diabetes as preventable.{/t}</p>
+        <p>&nbsp; </p>
+      </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
     <div id="lesson-1-slide-6" class="course-slide">
@@ -273,21 +283,6 @@ alert("Coming Soon!");
         <p>{t}<strong>Alzheimer’s is a disease process</strong> – a medical condition – that causes the cognitive changes that produce dementia.  There are many other medical conditions that cause dementia as well.{/t}</p>
         <p>{t}The second most common disease that causes dementia is what we call cerebrovascular disease, which causes vascular dementia.  This includes any type of injury to the brain caused by a problem with the brain’s blood supply, most notably a stroke.  There are varying degrees of strokes, however.  You may have heard of TIA’s (or Transient Ischemic Attacks) or mini strokes.  The stroke process can also occur without any identifiable symptoms, causing what we call silent strokes.  You will learn more about these in the next session.{/t}</p>
         <p>{t}Head trauma, Parkinson’s disease, Huntington Disease, Pick’s disease, infections such as HIV and CJD (Creutzfeldt-Jakob Disease – the human form of mad cow disease), substance abuse and environmental toxins can also cause dementia.{/t}</p>
-        <p class="forum">{t}
-          Use the Internet to research different conditions and behaviors that can cause dementia. Post your response to the Forum.
-          {/t}</p>
-        <img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}">
-        <div id="question2" class="question">
-          <p style="text-align: center;"><b>{t}Alzheimer’s disease is a TYPE of dementia.{/t}</b><br />
-            <select style="text-align: center;">
-              <option selected="selected" value="select"> {t}Select{/t} </option>
-              <option value="1"> {t}True{/t} </option>
-              <option value="0"> {t}False{/t} </option>
-            </select>
-          </p>
-          <p class="right-answer hide"> {t}Correct! Alzheimer's disease is a type of dementia.{/t} </p>
-          <p class="wrong-answer hide"> {t}Please review this slide again, and ensure you understand what dementia is before you continue.{/t} </p>
-        </div>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
@@ -309,15 +304,12 @@ alert("Coming Soon!");
         <p>{t}Simply put, the Theory of Cognitive Reserve is based on observations that <strong>no 2 brains respond to injury or illness in exactly the same way</strong>.  There are people who can sustain a small amount of damage to their brains and lose a lot of brain function, and there are people who can sustain large amounts of damage and never develop dementia. <strong>What seems to differentiate these types of people is the amount of brain reserve that they have “stored in the bank” that can make up for the losses</strong>.{/t}</p>
         <p>{t}So when planning financially for retirement, if you have a lot invested in your retirement account, you can survive losses - such as fluctuations in the market or an unexpected expense - much better if your account is bigger than if it were smaller.  This principle seems to apply to our brains too, which serves as the basis for the theory of cognitive reserve.  People with high levels of Cognitive Reserve have to sustain many more losses before crossing over the threshold to having dementia than people who have lower reserve.{/t}</p>
         <p>{t}The keyword to learn from this is “Cognitive Reserve” – which is your<strong> brain’s reserve of both tissue and abilities</strong> that affects your risk for dementia.  Or your Brain’s retirement account.{/t}</p>
-        <p class="forum">{t}
-          What protective effect is there against AD via "cognitive reserve"? Exactly what is it and what can be done to maximize this reserve? Search the Internet to help you form a response and post your findings to the Forum.
-          {/t}</p>
-        <img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}"> </div>
+      </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
     <div id="lesson-1-slide-9" class="course-slide">
       <div class="content">
-        <h2 class="flowers">{t}Cognitive Reserve{/t}</h2>
+        <h2 class="flowers">{t}More on Cognitive Reserve{/t}</h2>
         <hr />
         <img src="<?php echo $this->getImagesUrl('spencer/153211616.png'); ?>" alt="{t}Image{/t}">
         <p>{t}A little over 10 years ago, Yakov Stern, PhD, a neuropsychologist at Columbia University, summarized a series of important brain discoveries and proposed the theory of Cognitive Reserve.  Since then, numerous studies have continued to support this theory, allowing us to now know many of the factors that can raise and lower a person’s risk for dementia.{/t}</p>
@@ -330,7 +322,8 @@ alert("Coming Soon!");
       <div class="content">
         <h2 class="flowers">{t}The Adult Brain Grows New Cells{/t}</h2>
         <hr />
-        <p>{t}About 10 years after that autopsy study, another group of researchers studied the brains of people who had survived cancer through radiation treatment.  It turns out that after people go through radiation treatment, some of the genetic information in their cells changes.  By applying a special dye that is only attracted to cells with this new genetic data, researchers can see which cells had formed after the cancer.  They applied this dye to brain tissue on autopsy and were surprised to find cells in the brain that accepted the dye.  This meant that these <strong>cells had developed AFTER the radiation treatment.  Some of the people in this study well into their 80’s when they received the cancer treatment, so it seems that new brain cells are growing well into later life</strong>.  This evidence combined with other studies since this has changed the way we think about the adult brain;<strong> now we accept that the adult brain DOES grow new brain cells</strong>!{/t}</p>
+        <p>{t}About 10 years after that autopsy study, another group of researchers studied the brains of people who had survived cancer through radiation treatment.  It turns out that after people go through radiation treatment, some of the genetic information in their cells changes.  By applying a special dye that is only attracted to cells with this new genetic data, researchers can see which cells had formed after the cancer.  They applied this dye to brain tissue on autopsy and were surprised to find cells in the brain that accepted the dye.  This meant that these <strong>cells had developed AFTER the radiation treatment.{/t}</strong></p>
+        <p><strong>{t}Some of the people in this study well into their 80’s when they received the cancer treatment, so it seems that new brain cells are growing well into later life</strong>.  This evidence combined with other studies since this has changed the way we think about the adult brain;<strong> now we accept that the adult brain DOES grow new brain cells</strong>!{/t}</p>
         <p>{t}Now this excitement has to be tempered a bit because<strong> brain cells do not grow at the same rate as say cells in your skin or your bones</strong>, so it is still harder for the brain to recover from injury.{/t}</p>
         <p>{t}Nevertheless, it is exciting to know that we can still grow new brain cells.  This may actually be one of the<strong> mechanism by which we can learn new things as the region of the brain where these new brain cells grow – called the hippocampus – is the area responsible for forming new memories</strong>.{/t}</p>
         <p>{t}The key word to learn from this is “neurogenesis,” meaning the growth of new brain cells.{/t}</p>
@@ -352,9 +345,10 @@ alert("Coming Soon!");
       <div class="content">
         <h2 class="flowers">{t}Brain Structures Also Grow with Experience{/t}</h2>
         <hr />
-        <img src="<?php echo $this->getImagesUrl('spencer/160382211.png'); ?>" alt="{t}Image{/t}">
+        <p><img src="<?php echo $this->getImagesUrl('spencer/120133005.png'); ?>" alt="{t}Image{/t}"></p>
         <p>{t}In addition to discovering the growth of new brain cells, over the last couple of decades, scientist have demonstrated that<strong> brain structures can grow in adulthood, which often seems to be the result of experience, or learning new things</strong>.{/t}</p>
-        <p>{t}In the late 1990’s a group of researchers started studying the brains of cab drivers in London.  This is an elite group of taxi drivers who have to complete a 3-4 year apprenticeship to learn the intricate routes within the 6-square mile are of central London (see map).  They literally call it <strong>“The Knowledge.” 75% of the people who start the apprenticeship drop out</strong>.  At first researchers noted that a<strong> region of the hippocampus responsible for spatial relations was larger in experienced drivers compared to other people</strong>.  After following new recruits over time, the same researchers observed that<strong> this region actually grew in the recruits who successfully completed the program</strong>.{/t}</p>
+        <p>{t}In the late 1990’s a group of researchers started studying the brains of cab drivers in London.  This is an elite group of taxi drivers who have to complete a 3-4 year apprenticeship to learn the intricate routes within the 6-square mile are of central London (see map).  They literally call it <strong>“The Knowledge.” 75% of the people who start the apprenticeship drop out</strong>.{/t}</p>
+        <p>{t}At first researchers noted that a<strong> region of the hippocampus responsible for spatial relations was larger in experienced drivers compared to other people</strong>.  After following new recruits over time, the same researchers observed that<strong> this region actually grew in the recruits who successfully completed the program</strong>.{/t}</p>
         <p>{t}Developing such a specialized skill did come at a price, however, as other studies from the same group have shown that these taxi drivers perform worse on other tests of memory. This suggests that it is<strong> likely important to diversify your brain building activities</strong>. But the exciting part of all of this research is that it shows in a pretty clear way that the <strong>adult brain can grow –  that is actually change its structure in a positive direction – through experience</strong>.{/t}</p>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
@@ -363,11 +357,11 @@ alert("Coming Soon!");
       <div class="content">
         <h2 class="flowers">{t}Brain Cells Form New Connections{/t}</h2>
         <hr />
+        <p><img src="<?php echo $this->getImagesUrl('spencer/160382211.png'); ?>" alt="{t}Image{/t}"></p>
         <p>{t}The adult brain also changes in another way.  The brain cells you already have as well as the new ones you are growing, can also form new connections.  These connections are referred to as “<strong>pathways</strong>,” and just like with your muscles,<strong> the stronger a pathway becomes, the bigger it gets</strong>.{/t}</p>
         <p>{t}The connections between brain cells, at the ends of the pathways, are called <strong>synapses</strong>, and “<strong>synaptic density</strong>”<strong> can be increased by learning new things and performing new skills</strong>.{/t}</p>
         <p>{t}<strong>Pathways and synapses can also rewire</strong>, diverting their resources to different regions following an injury.{/t}</p>
         <p>{t}All of this “<strong>malleability</strong>”<strong> in the wiring of brain cells</strong> is called <strong>“plasticity</strong>.”{/t}</p>
-        <iframe width="640" height="360" src="//www.youtube.com/embed/jSE703UokZY?rel=0" frameborder="0" allowfullscreen></iframe>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
@@ -375,12 +369,16 @@ alert("Coming Soon!");
       <div class="content">
         <h2 class="flowers">{t}Cells that Fire Together, Wire Together{/t}</h2>
         <hr />
-        <p style="text-align:center; font-size:24px">{t}Long Term Potentiation (LTP){/t}</p>
-        <h5 style="text-align:center;">{t} - "Cells that fire together, wire together"{/t} - Hebb's Law</h5>
-        <p style="text-align:center; font-size:24px">{t}Long Term Depression{/t}</p>
-        <h5 style="text-align:center;">{t} - "Use it or Lose it"{/t}</h5>
+        
+        
+     
+        
+        
         <p>{t}This phenomenon was first described in the 1940’s by a scientist named Donald Hebb, and the process has since been termed Hebb’s Law, which is often <strong>paraphrased</strong> as, “<strong>cells that fire together, wire together</strong>.”  So anytime you practice a new skill, the brain cells required to perform that skill will fire together, meaning they will both produce an electrical charge, which over time will change the structure of the synapse and allow the cells to be “wired together” or more likely to excite one another when one is excited.{/t}</p>
         <p>{t}The technical names for the “rewiring process” are called <strong>Long Term Potentiation (LTP)</strong> and<strong> Long Term Depression (LTD)</strong>.<strong> LTP</strong> we already understand, that<strong> cells that fire together build stronger connections</strong>.<strong> LTD</strong> explains what we call negative plasticity or the “<strong>use it or lose it</strong>” phenomenon, meaning that when cells are not firing together, when you are not practicing a particular skill, the connections become weaker over time.{/t}</p>
+        <p style="text-align:center;">
+          <iframe width="480" height="360" src="//www.youtube.com/embed/jSE703UokZY?rel=0" frameborder="0" allowfullscreen></iframe>
+        </p>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
@@ -388,9 +386,6 @@ alert("Coming Soon!");
       <div class="content">
         <h2 class="flowers">{t}Your Brain’s 401K{/t}</h2>
         <hr />
-        <img src="<?php echo $this->getImagesUrl('spencer/dv497047.png'); ?>" alt="{t}Image{/t}">
-        <p>{t}Now that we know that a lot of the things we do throughout our lives affects our susceptibility to dementia, we can utilize the principles of Cognitive Reserve Theory to <strong>maximize our investments in our Brain’s retirement account</strong>.{/t} </p>
-        <p>{t}However, this program will help you understand the things you can do that may lower the risk for dementia or postpone cognitive decline in the hopes that you will maintain independence for as long as possible.{/t}</p>
         <table style="width:100%; margin: 15px auto; border:3;">
           <tr style="text-align:center;">
             <th><strong>Minimize Losses</strong></th>
@@ -409,6 +404,8 @@ alert("Coming Soon!");
             <td>&nbsp;</td>
           </tr>
         </table>
+        <p>{t}Now that we know that a lot of the things we do throughout our lives affects our susceptibility to dementia, we can utilize the principles of Cognitive Reserve Theory to <strong>maximize our investments in our Brain’s retirement account</strong>.{/t} </p>
+        <p>{t}However, this course will help you understand the things you can do that may lower the risk for dementia or postpone cognitive decline in the hopes that you will maintain independence for as long as possible.{/t}</p>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
@@ -424,21 +421,8 @@ alert("Coming Soon!");
         <img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}"> </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
+    
     <div id="lesson-1-slide-16" class="course-slide">
-      <div class="content">
-        <h2 class="flowers">{t}Let’s Give Ourselves a Break{/t}</h2>
-        <hr />
-        <p>{t}Before we get into the specifics of what you will be doing for the next few modules, let’s take a moment to give ourselves a little break. Not an actual break from the course, but rather let’s take a moment to go over some<strong> myths and misconceptions that older adults tend to have about their memories</strong>.{/t}</p>
-        <p>{t}Because dementia is such a great concern among older adults, <strong>many people forget that it’s normal to forget things</strong>. You’ve been forgetting things all your life! It’s just that when you were 25 years old, you didn’t care so much because you didn’t interpret the forgetting as a signal that you may be on the path to losing your independence.{/t}</p>
-        <p>{t}<strong>It is also a myth that people can remember everything</strong>.  You may have heard of these “memory champions” who can remember several decks of cards just by seeing them flipped over one at a time or about people with photographic memories.  Well the memory champions train like professional athletes, hours on end, day after day for months to develop their craft, but it doesn’t really seem to help them get better at much of anything else.  And most of the people with photographic memories are savants whose incredible gifts are often accompanied by severe handicaps in other areas of day-to-day living.{/t}</p>
-        <p>{t}So<strong> let’s all just have reasonable expectations of our memories.  If you forget something, try and relax</strong>.  That may even help you remember since, as you will learn in a few weeks, being upset can arrest our thinking.{/t}</p>
-        <p>{t}Over the next few modules you will be working on some techniques to remember things better, and with a fair amount of effort and practice you can improve your thinking, but <strong>there is no magic bullet, no miracle cure, and no special pill to give us perfect thinking</strong>.{/t}</p>
-        <p>{t}Nor is it likely that your memory is really as bad as you think.  On that note, however,<strong> if you really are concerned about your thinking, we encourage you to talk with your doctor if you have not done so already</strong>.{/t}</p>
-        <p class="forum">{t}Post to the Forum any other myths and misconceptions that older adults tend to have about their memories.{/t}</p>
-        <img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}"> </div>
-      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
-    </div>
-    <div id="lesson-1-slide-17" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}Program Format{/t}</h2>
         <hr />
@@ -453,7 +437,7 @@ alert("Coming Soon!");
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
-    <div id="lesson-1-slide-18" class="course-slide">
+    <div id="lesson-1-slide-17" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}CR Contributions Logs{/t}</h2>
         <hr />
@@ -467,6 +451,25 @@ alert("Coming Soon!");
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
+    
+    
+      <div id="lesson-1-slide-18" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Let’s Give Ourselves a Break{/t}</h2>
+        <hr />
+        <p>{t}Before we get into the specifics of what you will be doing for the next few modules, let’s take a moment to give ourselves a little break. Not an actual break from the course, but rather let’s take a moment to go over some<strong> myths and misconceptions that older adults tend to have about their memories</strong>.{/t}</p>
+        <p>{t}Because dementia is such a great concern among older adults, <strong>many people forget that it’s normal to forget things</strong>. You’ve been forgetting things all your life! It’s just that when you were 25 years old, you didn’t care so much because you didn’t interpret the forgetting as a signal that you may be on the path to losing your independence.{/t}</p>
+        <p>{t}<strong>It is also a myth that people can remember everything</strong>.  You may have heard of these “memory champions” who can remember several decks of cards just by seeing them flipped over one at a time or about people with photographic memories.  Well the memory champions train like professional athletes, hours on end, day after day for months to develop their craft, but it doesn’t really seem to help them get better at much of anything else.  And most of the people with photographic memories are savants whose incredible gifts are often accompanied by severe handicaps in other areas of day-to-day living.{/t}</p>
+        <p>{t}So<strong> let’s all just have reasonable expectations of our memories.  If you forget something, try and relax</strong>.  That may even help you remember since, as you will learn in a few weeks, being upset can arrest our thinking.{/t}</p>
+        <p>{t}Over the next few modules you will be working on some techniques to remember things better, and with a fair amount of effort and practice you can improve your thinking, but <strong>there is no magic bullet, no miracle cure, and no special pill to give us perfect thinking</strong>.{/t}</p>
+        <p>{t}Nor is it likely that your memory is really as bad as you think.  On that note, however,<strong> if you really are concerned about your thinking, we encourage you to talk with your doctor if you have not done so already</strong>.{/t}</p>
+        <p class="forum">{t}Post to the Forum any other myths and misconceptions that older adults tend to have about their memories.{/t}</p>
+        <img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}"> </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
+    
+    
+    
     <div id="lesson-1-slide-19" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}Memory Strategy #1{/t}</h2>
@@ -479,8 +482,8 @@ alert("Coming Soon!");
         <p>{t}<strong>Look up and around</strong> - Open your eyes - <strong>Simply being more aware</strong> can improve your attention. <strong>Putting in the effort</strong> to look around and making mental notes of where you parked your car or whether or not you locked the door, can do wonders for setting a good foundation for remembering things!{/t}</p>
         <p>{t}<strong>Stay</strong> “<strong>Present</strong>” - <strong>Dial down the internal chatter or the mental to-do list</strong>.  In conversations, remind yourself that you will be able to come up with something to say after the person is finished talking in order to stop the mental rehearsal of your next point.  This way you can really pay attention to what the other person is saying{/t}</p>
         <p>{t}<strong>Get your hearing or vision checked and corrected if needed</strong> – Do not let vanity get in the way of your brain health.  Vision and hearing loss not only keep you from taking in current information, but over time it seems that they can weaken you whole brain.  As we just learned today, cells that fire together, wire together, so if your brain is not getting good quality stimulation from your ears or your eyes, all of the brain circuits that process that information (including your memory circuits) have less stimulation, and therefore seem to also weaken over time.{/t}</p>
-        <p class="forum">{t}What other ways can you improve your attention? Post your responses to the Forum.{/t}</p>
-        <img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}"> </div>
+        <p class="forum">&nbsp;</p>
+      </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
     <div id="lesson-1-slide-20" class="course-slide">
@@ -523,19 +526,14 @@ alert("Coming Soon!");
     </div>
     <div id="lesson-1-slide-22" class="course-slide">
       <div class="content">
-        <h2 class="flowers">{t}This Week's Goals Steps{/t}</h2>
+        <h2 class="flowers">{t}Set Some Goals for This Week{/t}</h2>
         <hr />
-        <h5>{t}Memory Goal:{/t}</h5>
-        <p>{t}Goal: Practice paying close attention to my surroundings for at least 30 seconds, 2 times a day for 4 days{/t}</p>
-        <p>{t}Daily Reward: A spray of my favorite cologne or perfume{/t}</p>
-        <h5>{t}Behavior Goal:{/t}</h5>
-        <p>{t}Goal: Fill out activity log before bed at least 4 days in a row{/t}</p>
-        <p>{t}Daily Reward: Read my favorite book before bed{/t}</p>
-        <p>{t}Allow 5 minutes for this activity{/t}</p>
-        <p>{t}Ensure that you record a goal and a reward on your activity chart.{/t}</p>
-        <h5>{t}Goals{/t}</h5>
-        <p>{t}You will likely need to <strong>offer guidance in helping set goals that are not too difficult or too vague</strong> – It’s better to set a “ridiculously simple goal” that a person can achieve in order to feel success than to set a goal that they will not achieve.{/t}</p>
-        <h5>{t}Goals need to be:{/t}</h5>
+        <p>{t}To get the most out of this program, it is important that you set goals for yourself to practice the skills you are learning and to pave the way for developing new brain-healthy habits.{/t}</p>
+        <p class="forum">So take a moment to write down two goals for the coming week.  One focused on your lifestyle and one focused on practicing this week’s memory strategy.{/t}</p>
+        <p class="forum"><img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}"></p>
+        <p>{t}It&rsquo;s  is important that you<strong> set goals that are not too difficult or too vague</strong> – It&rsquo;s better to set a &ldquo;ridiculously simple goal&rdquo; that a you can achieve in  order to feel successful than to set a lofty goal that you will feel bad about  not reaching.  We want to start you on a  cycle of success...{/t}</p>
+        <h5>{t}Goals are most effective when they are:{/t}
+        </h5>
         <ol>
           <li>{t}Specific with respect to:{/t}</li>
           <ul>
@@ -550,19 +548,21 @@ alert("Coming Soon!");
         <p>{t}Rewards are intended to be used each time the goal behavior is performed – not merely at the end of the week.  Using the memory goal above as an example, each day a person pays close attention for 30 seconds two times in a single day, she gets to put on a spray of her favorite perfume (maybe in preparation for dinner or the next morning).  She doesn’t have to wait the entire week to use her perfume.  If the perfume is part of her daily routine, then she can continue this routine provided she meet her goal each day.{/t}</p>
         <h5>{t}Here are some guidelines for rewards:{/t}</h5>
         <ul>
-          <li>{t}Some people may need to take some time to think over their reward, so encourage them to come up with a reward very soon if they do not finish that in class{/t}</li>
-          <li>{t}Rewards should be small and feasible &amp; it’s a good idea not to use a reward that will get in the way of some other health goal, such as cookies{/t}</li>
-          <li>{t}For a reward to be effective, the person must make an agreement with themselves that they will in no way get to have the reward without FIRST having achieved their small goal{/t} </li>
+          <li>{t}Take some time to think of a reward or ask someone for suggestions{/t}</li>
+          <li>{t}Rewards should be small and feasible do not use a reward that will get in the way of other health goals, such as cookies{/t}</li>
+          <li>{t}Make an agreement with yourself that you will in no way get to have the reward without FIRST having achieved your goal{/t}        </li>
         </ul>
-        <p class="forum">{t}Please discuss how you plan to remember your goals and rewards and how you plan to track your progress on the Forum.{/t}</p>
-        <img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}"> </div>
+        <h5>{t}Sample Behavior Goal:{/t}</h5>
+        <p>{t}Goal: Fill out activity log before bed at least 4 days in a row{/t}</p>
+        <p>{t}Daily Reward: Read my favorite book before bed{/t}</p>
+      </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
     <div id="lesson-1-slide-23" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}Recap{/t}</h2>
         <hr />
-        <h4>{t}Forum Postings{/t}</h4>
+        <h4>{t}Forum Postings - WILL POST THESE TO FORUM AND REPLACE TEXT WITH CLOSING THOUGHTS{/t}</h4>
         <p class="forum">{t}Please answer the following questions on the Forum. You can use the same thread to respond to all of these questions. Attempt to respond to these questions using the knowledge you gained from this module. Please do not use the Internet or other sources to create your responses.{/t}</p>
         <ul class="forum">
           <li>{t}Alzheimer’s disease is caused by what?{/t}</li>
@@ -577,10 +577,124 @@ alert("Coming Soon!");
           <li>{t}Is multi-tasking more efficient than doing one thing at a time?{/t}</li>
           <li>{t}What are your goals for this week?{/t}</li>
         </ul>
-        <img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}"> </div>
+        <img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}">  </div>
       <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Complete Module{/t}</a></div>
     </div>
+  </div>
+  
+    <div id="lesson-2">
+    <div id="lesson-2-slide-1" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Closing{/t}</h2>
+        <hr />
+        <img src="<?php echo $this->getImagesUrl('spencer/167585366.png'); ?>" alt="{t}Welcome!{/t}">
+        <h4>{t}Coming Soon!{/t}</h4>
+        <p>&nbsp;</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Start Course &raquo;{/t}</a></div>
+    </div>
     
-    <!-- final 2 divs needed to close lesson and course --> 
+      <div id="lesson38">
+    <div id="lesson-3-slide-1" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Closing{/t}</h2>
+        <hr />
+        <img src="<?php echo $this->getImagesUrl('spencer/167585366.png'); ?>" alt="{t}Welcome!{/t}">
+        <h4>{t}Coming Soon!{/t}</h4>
+        <p>&nbsp;</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Start Course &raquo;{/t}</a></div>
+    </div>
+    
+      <div id="lesson-4">
+    <div id="lesson-4-slide-1" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Closing{/t}</h2>
+        <hr />
+        <img src="<?php echo $this->getImagesUrl('spencer/167585366.png'); ?>" alt="{t}Welcome!{/t}">
+        <h4>{t}Coming Soon!{/t}</h4>
+        <p>&nbsp;</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Start Module &raquo;{/t}</a></div>
+    </div>
+    
+      <div id="lesson-5">
+    <div id="lesson-5-slide-1" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Closing{/t}</h2>
+        <hr />
+        <img src="<?php echo $this->getImagesUrl('spencer/167585366.png'); ?>" alt="{t}Welcome!{/t}">
+        <h4>{t}Coming Soon!{/t}</h4>
+        <p>&nbsp;</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Start Module &raquo;{/t}</a></div>
+    </div>
+    
+      <div id="lesson-6">
+    <div id="lesson-6-slide-1" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Closing{/t}</h2>
+        <hr />
+        <img src="<?php echo $this->getImagesUrl('spencer/167585366.png'); ?>" alt="{t}Welcome!{/t}">
+        <h4>{t}Coming Soon!{/t}</h4>
+        <p>&nbsp;</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Start Module &raquo;{/t}</a></div>
+    </div>
+    
+      <div id="lesson-7">
+    <div id="lesson-7-slide-1" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Closing{/t}</h2>
+        <hr />
+        <img src="<?php echo $this->getImagesUrl('spencer/167585366.png'); ?>" alt="{t}Welcome!{/t}">
+        <h4>{t}Coming Soon!{/t}</h4>
+        <p>&nbsp;</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Start Module &raquo;{/t}</a></div>
+    </div>
+  
+  
+  
+  <div id="lesson-8">
+    <div id="lesson-8-slide-1" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Closing{/t}</h2>
+        <hr />
+        <img src="<?php echo $this->getImagesUrl('spencer/167585366.png'); ?>" alt="{t}Welcome!{/t}">
+        <h4>{t}Coming Soon!{/t}</h4>
+        <p>&nbsp;</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Start Module &raquo;{/t}</a></div>
+    </div>
+    
+    
+  
+
+    <div id="lesson-8-slide-2" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Certificate of Completion &amp; Course Evalutation{/t}</h2>
+        <hr />
+        <img src="<?php echo $this->getImagesUrl('intro/160382234.png'); ?>" alt="{t}image{/t}">
+        <p>{t}We have really enjoyed getting to know you, and hope this course was helpful. Please post any final thoughts, questions, or concerns to the Forum before you close out this final module. Best wishes as you carry on in the future!{/t}</p>
+        <h4 style="text-align:center;">{t}Certificate of Completion{/t}</h4>
+        <a href="<?php echo $this->getImagesUrl('spencer/certificate.pdf'); ?>" target="_blank"><img src="<?php echo $this->getImagesUrl('intro/ArtworkCertificate.png'); ?>" alt="image"></a>
+        <h4>{t}Evaluation (optional){/t}</h4>
+        <p>{t}Please complete the Post-Course Evaluation. It is acceissble via the course page, in the sidebar.{/t}</p>
+        <p>{t}Your feedback is greatly appreciated, and will help us to better serve other participants in the future. We ask that you
+          complete it before you exit this course portal. You do not have to include your name on the evaluation. It is completely
+          confidential.{/t}</p>
+            <script>
+function myFunction(){
+alert("Coming Soon!");
+}
+</script>
+    <p style="text-align:center;">
+      <input type="button" style="width:175px;" onclick="myFunction()" value="Post-Course Evaluation" />
+    </p>
+      </div>
+      <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}End Course{/t}</a></div>
+    </div>
+    <!-- need to close module and course -->
   </div>
 </div>

@@ -1,7 +1,6 @@
 /**************** GOOGLE WEBFONTS ***************/
 
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Arapey:400italic,400|Hammersmith+One:400);
-
 /**************** MAIN ***************/
 
 html {
@@ -48,7 +47,6 @@ h5 {
 	line-height: normal;
 	font-size: 12pt;
 }
-
 /**************** BASE STYLES ***************/
 
 #page {
@@ -113,7 +111,6 @@ h5 {
 	font-style: italic;
 	color: #999;
 }
-
 /************** FOOTER **************/
 
 #footer {
@@ -164,19 +161,16 @@ h5 {
 	background-repeat: no-repeat;
 }
 #footer #icons a:hover {
-	-webkit-transform:scale(0.8); /*Webkit: Scale down image to 0.8x original size*/
--moz-transform:scale(0.8); /*Mozilla scale version*/
--o-transform:scale(0.8); /*Opera scale version*/
--webkit-transition-duration: 0.5s; /*Webkit: Animation duration*/
--moz-transition-duration: 0.5s; /*Mozilla duration version*/
--o-transition-duration: 0.5s; /*Opera duration version*/
-opacity: 0.7; /*initial opacity of images*/
-margin: 0 10px 0 10; /*margin between images*/
-
-/* http://www.htmldrive.net/items/show/1091/CSS3-animation-shadows-image-hover-effect */
+	-webkit-transform: scale(0.8); /*Webkit: Scale down image to 0.8x original size*/
+	-moz-transform: scale(0.8); /*Mozilla scale version*/
+	-o-transform: scale(0.8); /*Opera scale version*/
+	-webkit-transition-duration: 0.5s; /*Webkit: Animation duration*/
+	-moz-transition-duration: 0.5s; /*Mozilla duration version*/
+	-o-transition-duration: 0.5s; /*Opera duration version*/
+	opacity: 0.7; /*initial opacity of images*/
+	margin: 0 10px 0 10; /*margin between images*//* http://www.htmldrive.net/items/show/1091/CSS3-animation-shadows-image-hover-effect */
 
 }
-
 /************** BREADCRUMBS **************/
 
 .breadcrumbs {
@@ -188,116 +182,76 @@ margin: 0 10px 0 10; /*margin between images*/
 div.breadcrumbs span {
 	font-weight: bold;
 }
-
 /************** BUTTONS **************/
 
 .button, button, input[type=submit] {
 	cursor: pointer;
 	cursor: hand;
-
-    position: relative;
-    display: inline-block;
-
-    padding: 10px 10px;
-    margin: 5px;
-
-    background: rgb(112,181,242); /* Old browsers */
-    background: -moz-linear-gradient(top, rgb(112,181,242) 0%, rgb(84,164,238) 49%, rgb(54,144,240) 50%, rgb(26,97,219) 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgb(112,181,242)), color-stop(49%,rgb(84,164,238)), color-stop(50%,rgb(54,144,240)), color-stop(100%,rgb(26,97,219))); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top, rgb(112,181,242) 0%,rgb(84,164,238) 49%,rgb(54,144,240) 50%,rgb(26,97,219) 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top, rgb(112,181,242) 0%,rgb(84,164,238) 49%,rgb(54,144,240) 50%,rgb(26,97,219) 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top, rgb(112,181,242) 0%,rgb(84,164,238) 49%,rgb(54,144,240) 50%,rgb(26,97,219) 100%); /* IE10+ */
-    background: linear-gradient(to bottom, rgb(112,181,242) 0%,rgb(84,164,238) 49%,rgb(54,144,240) 50%,rgb(26,97,219) 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#70b5f2', endColorstr='#1a61db',GradientType=0 ); /* IE6-9 */
-
-    color: #fff;
-    font-size: medium;
-    font-family: Arial, sans-serif;
-    text-decoration: none;
-    text-align: center;
-    line-height: 1;
-
-    text-shadow: 0px -1px 0px rgba(0,0,0,0.5);
-
-    border: 1px solid;
-    border-color: #2f71a3 #265a82 #1e4766 #265a82;
-    -moz-border-radius: 8px;
-    -webkit-border-radius: 8px;
-    border-radius: 8px;
- 
-    -moz-box-shadow:    inset 0px -4px 5px rgba(255,255,255,0.2),
-                        inset 0px 1px 5px rgba(255,255,255,0.2),
-                        /**/
-                        0px 2px 0px #1e4766,
-                        0px 4px 0px #1e4766,
-                        0px 6px 0px #1e4766,
-                        /**/
+	position: relative;
+	display: inline-block;
+	padding: 10px 10px;
+	margin: 5px;
+	background: rgb(112,181,242); /* Old browsers */
+	background: -moz-linear-gradient(top, rgb(112,181,242) 0%, rgb(84,164,238) 49%, rgb(54,144,240) 50%, rgb(26,97,219) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgb(112,181,242)), color-stop(49%, rgb(84,164,238)), color-stop(50%, rgb(54,144,240)), color-stop(100%, rgb(26,97,219))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgb(112,181,242) 0%, rgb(84,164,238) 49%, rgb(54,144,240) 50%, rgb(26,97,219) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgb(112,181,242) 0%, rgb(84,164,238) 49%, rgb(54,144,240) 50%, rgb(26,97,219) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, rgb(112,181,242) 0%, rgb(84,164,238) 49%, rgb(54,144,240) 50%, rgb(26,97,219) 100%); /* IE10+ */
+	background: linear-gradient(to bottom, rgb(112,181,242) 0%, rgb(84,164,238) 49%, rgb(54,144,240) 50%, rgb(26,97,219) 100%); /* W3C */
+ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#70b5f2', endColorstr='#1a61db', GradientType=0 ); /* IE6-9 */
+	color: #fff;
+	font-size: medium;
+	font-family: Arial, sans-serif;
+	text-decoration: none;
+	text-align: center;
+	line-height: 1;
+	text-shadow: 0px -1px 0px rgba(0,0,0,0.5);
+	border: 1px solid;
+	border-color: #2f71a3 #265a82 #1e4766 #265a82;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+	-moz-box-shadow: inset 0px -4px 5px rgba(255,255,255,0.2),  inset 0px 1px 5px rgba(255,255,255,0.2),                         /**/
+                        0px 2px 0px #1e4766,  0px 4px 0px #1e4766,  0px 6px 0px #1e4766,                         /**/
                         0px 8px 5px rgba(0,0,0,0.5);
- 
-    -webkit-box-shadow: inset 0px -4px 5px rgba(255,255,255,0.2),
-                        inset 0px 1px 5px rgba(255,255,255,0.2),
-                        /**/
-                        0px 2px 0px #1e4766,
-                        0px 4px 0px #1e4766,
-                        0px 6px 0px #1e4766,
-                        /**/
+	-webkit-box-shadow: inset 0px -4px 5px rgba(255,255,255,0.2),  inset 0px 1px 5px rgba(255,255,255,0.2),                         /**/
+                        0px 2px 0px #1e4766,  0px 4px 0px #1e4766,  0px 6px 0px #1e4766,                         /**/
                         0px 8px 5px rgba(0,0,0,0.5);
- 
-    box-shadow:         inset 0px -4px 5px rgba(255,255,255,0.2),
-                        inset 0px 1px 5px rgba(255,255,255,0.2),
-                        /**/
-                        0px 2px 0px #1e4766,
-                        0px 4px 0px #1e4766,
-                        0px 6px 0px #1e4766,
-                        /**/
+	box-shadow: inset 0px -4px 5px rgba(255,255,255,0.2),  inset 0px 1px 5px rgba(255,255,255,0.2),                         /**/
+                        0px 2px 0px #1e4766,  0px 4px 0px #1e4766,  0px 6px 0px #1e4766,                         /**/
                         0px 8px 5px rgba(0,0,0,0.5);
- 
-    -moz-transition: -moz-background 1s ease-out;
-    -o-transition: -o-background 1s ease-out;
-    -webkit-transition: -webkit-background 1s ease-out;
-    transition: background 1s ease-out
+	-moz-transition: -moz-background 1s ease-out;
+	-o-transition: -o-background 1s ease-out;
+	-webkit-transition: -webkit-background 1s ease-out;
+	transition: background 1s ease-out
 }
 .button:hover, button:hover, input[type=submit]:hover {
 	color: #e8e8e8;
-	
-    background: rgb(137,201,249); /* Old browsers */
-    background: -moz-linear-gradient(top, rgb(137,201,249) 0%, rgb(89,175,249) 50%, rgb(58,156,255) 51%, rgb(29,110,242) 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgb(137,201,249)), color-stop(50%,rgb(89,175,249)), color-stop(51%,rgb(58,156,255)), color-stop(100%,rgb(29,110,242))); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top, rgb(137,201,249) 0%,rgb(89,175,249) 50%,rgb(58,156,255) 51%,rgb(29,110,242) 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top, rgb(137,201,249) 0%,rgb(89,175,249) 50%,rgb(58,156,255) 51%,rgb(29,110,242) 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top, rgb(137,201,249) 0%,rgb(89,175,249) 50%,rgb(58,156,255) 51%,rgb(29,110,242) 100%); /* IE10+ */
-    background: linear-gradient(to bottom, rgb(137,201,249) 0%,rgb(89,175,249) 50%,rgb(58,156,255) 51%,rgb(29,110,242) 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#89c9f9', endColorstr='#1d6ef2',GradientType=0 ); /* IE6-9 */
+	background: rgb(137,201,249); /* Old browsers */
+	background: -moz-linear-gradient(top, rgb(137,201,249) 0%, rgb(89,175,249) 50%, rgb(58,156,255) 51%, rgb(29,110,242) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgb(137,201,249)), color-stop(50%, rgb(89,175,249)), color-stop(51%, rgb(58,156,255)), color-stop(100%, rgb(29,110,242))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgb(137,201,249) 0%, rgb(89,175,249) 50%, rgb(58,156,255) 51%, rgb(29,110,242) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgb(137,201,249) 0%, rgb(89,175,249) 50%, rgb(58,156,255) 51%, rgb(29,110,242) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, rgb(137,201,249) 0%, rgb(89,175,249) 50%, rgb(58,156,255) 51%, rgb(29,110,242) 100%); /* IE10+ */
+	background: linear-gradient(to bottom, rgb(137,201,249) 0%, rgb(89,175,249) 50%, rgb(58,156,255) 51%, rgb(29,110,242) 100%); /* W3C */
+ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#89c9f9', endColorstr='#1d6ef2', GradientType=0 ); /* IE6-9 */
 }
 .button:active, button:active, input[type=submit]:active {
 	color: #bfbfbf;
-    top: 4px;
- 
-    -moz-box-shadow:    inset 0px 4px 5px rgba(255,255,255,0.4),
-                        inset 0px -1px 5px rgba(255,255,255,0.2),
-                        /**/
-                        0px 2px 0px #1e4766,
-                        /**/
+	top: 4px;
+	-moz-box-shadow: inset 0px 4px 5px rgba(255,255,255,0.4),  inset 0px -1px 5px rgba(255,255,255,0.2),                         /**/
+                        0px 2px 0px #1e4766,                         /**/
                         0px 4px 5px rgba(0,0,0,0.5);
- 
-    -webkit-box-shadow: inset 0px 4px 5px rgba(255,255,255,0.4),
-                        inset 0px -1px 5px rgba(255,255,255,0.2),
-                        /**/
-                        0px 2px 0px #1e4766,
-                        /**/
+	-webkit-box-shadow: inset 0px 4px 5px rgba(255,255,255,0.4),  inset 0px -1px 5px rgba(255,255,255,0.2),                         /**/
+                        0px 2px 0px #1e4766,                         /**/
                         0px 4px 5px rgba(0,0,0,0.5);
- 
-    box-shadow:         inset 0px 4px 5px rgba(255,255,255,0.4),
-                        inset 0px -1px 5px rgba(255,255,255,0.2),
-                        /**/
-                        0px 2px 0px #1e4766,
-                        /**/
+	box-shadow: inset 0px 4px 5px rgba(255,255,255,0.4),  inset 0px -1px 5px rgba(255,255,255,0.2),                         /**/
+                        0px 2px 0px #1e4766,                         /**/
                         0px 4px 5px rgba(0,0,0,0.5);
 }
 .button.hide, button.hide, input[type=submit].hide {
 	display: none;
 }
-
 /************** MENUS **************/
 
 #mainmenu {
@@ -403,7 +357,6 @@ div.breadcrumbs span {
 	background: #f47b20 url(../images/bg-menu-active.jpg) top center repeat-x;
 	text-decoration: none;
 }
-
 /************** TRANSLATION COMPONENTS **************/
 
 #language {
@@ -439,7 +392,6 @@ div.breadcrumbs span {
 	color: #514721;
 	border-color: #FFD324;
 }
-
 /************** SIDEBARS **************/
 
 #sidebar {
@@ -574,7 +526,6 @@ div.breadcrumbs span {
 	max-height: 45px;
 	margin: 5px 8px;
 }
-
 /************** COLUMNS **************/
 .column-wide {
 	width: 560px;
@@ -588,7 +539,6 @@ div.breadcrumbs span {
 	padding: 10px 2%;
 	float: left;
 }
-
 /**************** BOXES ***************/
 
 .box-white {
@@ -639,7 +589,6 @@ div.breadcrumbs span {
 	background: none;
 	opacity: .9;
 }
-
 /**************** FLASH MESSAGES ***************/
 
 div.flash-error, div.flash-notice, div.flash-success {
@@ -677,7 +626,6 @@ div.form .rememberMe label {
 div.form .rememberMe label.hide {
 	display: none;
 }
-
 /**************** PORTLETS ***************/
 
 .portlet {
@@ -708,7 +656,6 @@ div.form .rememberMe label.hide {
 	margin: 0;
 	padding: 0;
 }
-
 /**************** GENERAL CLASSES ***************/
 
 .flowers {
@@ -747,7 +694,6 @@ div.view {
 	vertical-align: top;
 	margin-top: 0;
 }
-
 .portlet-content li {
 	padding: 2px 0 4px 0px;
 }
