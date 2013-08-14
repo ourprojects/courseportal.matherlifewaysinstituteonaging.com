@@ -55,8 +55,7 @@ $this->widget(
 
 <!-- Begin sidebar -->
 
-<div id="sidebar"> 
-  <!-- Sidebar #1 with 3 buttons here -->
+<div id="sidebar">
   <div class="box-sidebar zero"> <a href="<?php echo $this->createUrl('user/register'); ?>">{t}Register{/t} </a> <a
 			href="<?php echo $this->createUrl('home/contact'); ?>" class="teal"
 		>{t}Request Information{/t} </a> <a href="#slide-1" data-fancybox-group="open-tutorial" class="teal open-tutorial"> {t}Demo{/t} </a> <a href="#slide-2" data-fancybox-group="open-tutorial" class="hide open-tutorial"></a> <a href="#slide-3" data-fancybox-group="open-tutorial" class="hide open-tutorial"></a> <a href="#slide-4" data-fancybox-group="open-tutorial" class="hide open-tutorial"></a> <a href="#slide-5" data-fancybox-group="open-tutorial" class="hide open-tutorial"></a> <a href="#slide-6" data-fancybox-group="open-tutorial" class="hide open-tutorial"></a> <a href="#slide-7" data-fancybox-group="open-tutorial" class="hide open-tutorial"></a> </div>
@@ -70,27 +69,44 @@ $this->widget(
 				alt="Mather Lifeways"
 			/> </a> </div>
   </div>
-  <div class="box-sidebar one">
+  <div class="box-sidebar two">
     <h3>{t}EACC Course Approval{/t}</h3>
     <h5  style="text-align:center;">{t}NOW APPROVED !!!{/t}</h5>
     <p><b><a href="http://www.eapassn.org/files/public/EACCroster2012.pdf" target="_blank">{t}Employee Assistance Certification Commission (EACC){/t}</a></b></p>
     <p>{t}Established in 1986, the EACC is the credentialing governance body responsible for upholding all professional standards, policies, and procedures concerning the Certified Employee Assistance Professional (CEAP) credential.{/t}</p>
     <p><a href="http://www.eapassn.org/" target="_blank"><img class="block center" src="<?php echo $this->getImagesUrl('EAPlogo.png'); ?>" alt="EAP Assocation Logo"></a></p>
   </div>
+  <div class="box-sidebar three">
+    <h3>{t}Caregiver Needs &amp; Resources{/t}</h3>
+    <h5 style="text-align:center;">{t}Survey of Working Caregiver Needs and Resources{/t}    </h5>
+    <p>{t}Currently, 39% of U.S. adults are caregivers, up from 30% in 2010. Nearly two‐thirds of family caregivers are employed full or part‐time. As the U.S. population ages and medical advances save and extend more lives, the numbers of employees with eldercare responsibilities is on the rise...{/t}</p>
+    <p><img class="block center" src="<?php echo $this->getImagesUrl('174280723.png'); ?>" alt="Image"></p>
+    <p>{t}<strong>Prepared by Mather LifeWays Institute on Aging - August, 2013</strong>{/t} 
+    
+    </p>
+    <p>
+    
+ 
+
+    
+    <?php 
+	echo CHtml::link(t('Survey of Working Caregiver Needs and Resources'), $this->createUrl('/home/images/MLIAsurvey.pdf')); 
+	?>
+    
+    <a href="MLIAsurvey.pdf" class="pdf" target="_blank">{t}Survey of Working Caregiver Needs and Resources{/t} </a> 
+      
+      
+    </p>
+  </div>
   <div class="box-sidebar four">
-    <h3>Aging in Action</h3>
+    <h3>{t}Aging in Action{/t}</h3>
     <p>{t}Aging in Action is Mather LifeWays Institute on Aging's monthly e-newsletter and blog containing the latest research news in the field of aging.{/t}</p>
     <a href="http://twitter.com/aginginaction" target="_blank"> <img class="block center" src="<?php echo $this->getImagesUrl('twitter-bird.png'); ?>" alt="Twitter" /></a> </div>
   
   <!-- sidebar for Participating locations here -->
   
-  <div class="box-sidebar one">
+  <div class="box-sidebar five">
     <h3>{t}Participating Locations{/t}</h3>
-   
-   
-   
-   
-   
     <div id="flags">
       <table>
         <tr>
@@ -111,20 +127,6 @@ $this->widget(
       </table>
     </div>
   </div>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
   
   <!-- sidebar on Resent Research here --> 
   
