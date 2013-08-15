@@ -168,7 +168,7 @@ AARP provides various articles of interest and resources for family caregivers. 
         <ul>
           <li>{t}MAKE A DATE WITH THE COURSE! Putting a specific time in your calendar to participate every week will get you started in the right direction.  So, for example, if you plan to participate every Tuesday at 7:00 pm, try to keep the same schedule every week.{/t}</li>
           <li>{t}READ CAREFULLY. The instructions to participate in activities are sometimes very specific but necessary to ensure everyone participates in the same way.  Instructions will become familiar to you over time.{/t}</li>
-          <li>{t}KEEP ON TASK.  We know your work and family caregiving responsibilities can sometimes disrupt your participation.  The Facilitator will send emails each week to remind all students to log on and to share tips for each unit.  They will also let you know what lesson is recommended for the week so you can assess your own progress and timeline.{/t}</li>
+          <li>{t}KEEP ON TASK.  We know your work and family caregiving responsibilities can sometimes disrupt your participation.  The Facilitator will send emails each week to remind all students to log on and to share tips for each unit.  They will also let you know what module is recommended for the week so you can assess your own progress and timeline.{/t}</li>
         </ul>
         <br />
         <br />
@@ -501,7 +501,7 @@ AARP provides various articles of interest and resources for family caregivers. 
         <br />
         <br />
       </div>
-      <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Complete Lesson{/t} </a></div>
+      <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Complete Module{/t} </a></div>
     </div>
   </div>
   
@@ -665,7 +665,7 @@ chicken for lunch today. So I think I’d like to try their fish!”{/t}</i></p>
         <br />
         <br />
       </div>
-      <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Complete Lesson{/t} </a></div>
+      <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Complete Module{/t} </a></div>
     </div>
   </div>
   
@@ -872,7 +872,7 @@ chicken for lunch today. So I think I’d like to try their fish!”{/t}</i></p>
         <a href="<?php echo $this->getImagesUrl('CCOAssets/ExerciseCARECoachingandSelectingPHRs.pdf'); ?>" target="_blank"><img src="<?php echo $this->getImagesUrl('pdf-icon.png'); ?>" alt="image" class="normal" /></a>
         <p> {t}Asking the right questions is key to determine which PHR product is right for you and your family. This exercise is designed to help you determine exactly that. Review the previously described internet-based tools, My Family Health Profile and ProfileMD, and respond to the following questions.{/t}</p>
       </div>
-      <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Complete Lesson{/t} </a></div>
+      <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Complete Module{/t} </a></div>
     </div>
   </div>
   
@@ -1069,7 +1069,7 @@ chicken for lunch today. So I think I’d like to try their fish!”{/t}</i></p>
         <br />
         <br />
       </div>
-      <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Complete Lesson{/t}</a></div>
+      <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Complete Module{/t}</a></div>
     </div>
   </div>
   
@@ -1450,7 +1450,7 @@ chicken for lunch today. So I think I’d like to try their fish!”{/t}</i></p>
         <br />
         <br />
       </div>
-      <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Complete Lesson{/t}</a></div>
+      <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Complete Module{/t}</a></div>
     </div>
     
     <!-- Promoting Safety of Older Relatives and Friends in Caring for Themselves -->
@@ -2034,7 +2034,7 @@ chicken for lunch today. So I think I’d like to try their fish!”{/t}</i></p>
           <br />
           <br />
         </div>
-        <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Complete Lesson{/t}</a></div>
+        <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Complete Module{/t}</a></div>
       </div>
     </div>
     
@@ -2187,7 +2187,7 @@ chicken for lunch today. So I think I’d like to try their fish!”{/t}</i></p>
         <h4>{t}Certificate of Completion{/t}</h4>
         <p>{t}Thank you for your participation! Now that you have completed this online course, you can now download your custom Certificate of Completion. Once accessed, type your name, date, and online course title into the form-fillable certificate.{/t}</p>
         <a href="<?php echo $this->getImagesUrl('CourseCompletionCertificate.pdf'); ?>" target="_blank"><img class="normal" src="<?php echo $this->getImagesUrl('ArtworkCertificate.png'); ?>" alt="{t}Certificate{/t}" /></a>
-        <p> {t}Again, thank you for participating in this online course. Please take a moment to complete the Post-Course Survey; accessible via the Profile Page.{/t} </p>
+        <p> {t}Again, thank you for participating in this online course. Please take a moment to complete the Post-Course Evaluation; accessible via the Profile Page.{/t} </p>
         <br />
         <br />
       </div>

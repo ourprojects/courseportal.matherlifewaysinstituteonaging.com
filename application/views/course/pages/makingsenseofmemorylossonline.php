@@ -1270,7 +1270,7 @@ alert("Coming Soon!");
         <li>{t}Gestures{/t}</li>
       </ul>
       <h5>{t}"It is often not what you say, but how you say it."{/t}</h5>
-      <p>{t}As we discussed at the beginning of the lesson, nonverbal communication refers to the things that we do in addition to what we say. The most basic of these are tone of voice, body language, and facial expressions.{/t}</p>
+      <p>{t}As we discussed at the beginning of the module, nonverbal communication refers to the things that we do in addition to what we say. The most basic of these are tone of voice, body language, and facial expressions.{/t}</p>
       <p>{t}We are all familiar with the saying, <i>"it is not what you say, but also how you say it."</i> We have all had experiences where we were put off by a person's tone of voice or facial expression, even if what they said was not really all that offensive.{/t}</p>
       <p>{t}Nonverbal communication can be very important when having conversation with people with memory loss.{/t}</p>
       <p>{t}We are going to take a little time to discuss this, because it is so important.{/t}</p>
