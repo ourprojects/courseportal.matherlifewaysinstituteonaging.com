@@ -184,11 +184,7 @@ alert("Coming Soon!");
         <h4>{t}Course Description{/t}</h4>
         <p>{t}<strong>The Spencer Powell Brain Fitness Program</strong> is designed to promote cognitive health and healthy lifestyle changes. The course provides information on how lifestyle factors such as physical activity and cognitive engagement affect your brain and your risk for dementia. Practical strategies are suggested for maintaining memory over time. In addition, the course includes memory training such as chunking, the story method, and mnemonic techniques.{/t}</p>
         <div id="question1" class="question">
-<<<<<<< .merge_file_CKmgmC
-          <p style="text-align:center;"><b>{t}Have you taken the pre-course survey yet?{/t}</b><br />
-=======
           <p style="text-align:center;"><b>{t}Have you taken the pre-course evaluation yet?{/t}</b><br />
->>>>>>> .merge_file_nP2b3P
             <select style="text-align:center;">
               <option selected="selected" value="select"> {t}Select{/t} </option>
               <option value="1"> {t}Yes{/t} </option>
@@ -196,11 +192,7 @@ alert("Coming Soon!");
             </select>
           </p>
           <p class="right-answer hide"> {t}Great! Thank you! Please continue.{/t} </p>
-<<<<<<< .merge_file_CKmgmC
-          <p class="wrong-answer hide"> {t}Please return to this course's home page and complete the pre-course survey. It is accessible via the sidebar.{/t} </p>
-=======
           <p class="wrong-answer hide"> {t}Please return to this course's home page and complete the pre-course evaluation. It is accessible via the sidebar.{/t} </p>
->>>>>>> .merge_file_nP2b3P
         </div>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Start Course &raquo;{/t}</a></div>

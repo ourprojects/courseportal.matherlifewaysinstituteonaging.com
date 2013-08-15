@@ -1,20 +1,5 @@
 <?php $this->breadcrumbs = array(t('Not Registered')); ?>
 
-<<<<<<< .merge_file_I3B5V0
-<div class="small-masthead" style="background-image: url(<?php echo $this->getImagesUrl('header-courses.png'); ?>);">
-	<h1 class="bottom">
-		{t}Courses{/t}
-	</h1>
-</div>
-<div id="single-column">
-	<h2 class="flowers">
-		<?php echo t($course->title); ?>
-	</h2>
-	<p>
-		{t}You have not registered for this course yet.{/t}
-	</p>
-</div>
-=======
 <div class="small-masthead" style="background-image: url(<?php echo $this->getImagesUrl('126922518.png'); ?>);">
   <h1 class="bottom"> {t}Online Course Access{/t} </h1>
 </div>
@@ -38,4 +23,3 @@ border-bottom-left-radius: 5px;" src="<?php echo $this->getImagesUrl('148950191.
   <p> {t}You have not registered for this course yet. Please use the form below to contact support. You will receive a response within 24 hours of submitting your request.{/t} </p>
   <div class="box-white"> <?php echo $this->renderPartial('forms/contact', $models); ?> </div>
 </div>
->>>>>>> .merge_file_UFleZS
