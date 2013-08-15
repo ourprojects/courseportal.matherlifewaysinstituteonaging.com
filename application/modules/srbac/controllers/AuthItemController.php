@@ -16,6 +16,26 @@ class AuthItemController extends SBaseController
 
 	public function filters()
 	{
+<<<<<<< .merge_file_4tyQjN
+		return array(
+				array(
+						'ext.EForwardActionFilter.EForwardActionFilter',
+						'map' => array(
+								'authItem' => array('read + get', 'create + post', 'update + put', 'delete + delete'),
+						)
+				),
+				array(
+					'ext.ERequestMethodFilter.ERequestMethodFilter',
+					'config' => array(
+							'get' => 'index, read',
+							'put' => 'update',
+							'post' => 'create',
+							'delete' => 'delete',
+							'ajax' => 'ajax'
+					)
+				),
+			);
+=======
 		return array_merge(
 				parent::filters(),
 				array(
@@ -37,6 +57,7 @@ class AuthItemController extends SBaseController
 					),
 				)
 		);
+>>>>>>> .merge_file_gbsPym
 	}
 
 	/**

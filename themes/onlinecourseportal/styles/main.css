@@ -400,8 +400,9 @@ div.breadcrumbs span {
 	float: right;
 }
 #sidebar img {
-	max-width: 240px;
+	/* max-width: 240px; */
 }
+
 .box-sidebar {
 	padding: 0;
 	background: #eee;
@@ -443,10 +444,10 @@ div.breadcrumbs span {
 .box-sidebar.two {
 	padding: 0;
 	background: #eee;
-	margin: 0 0 20px 0;
+	margin: 20px 0;
 	border-radius: 5px;
 	box-shadow: 0 0 10px #999;
-	padding: 0 0 15px 0;
+	padding: 0px;
 }
 .box-sidebar.four h3 img {
 	position: absolute;
