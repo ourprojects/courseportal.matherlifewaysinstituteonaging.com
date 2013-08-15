@@ -48,9 +48,9 @@ return array(
 			'admin',
 			/*'srbac' => array(
 				'userclass' => 'CPUser',
-				'userid' => 'id',
+				'userId' => 'id',
 				'username' => 'name',
-				'superUser' =>'l.daprato',
+				'superUser' =>'SuperUser',
 				'debug' => true,
 				'layout' => 'webroot.themes.onlinecourseportal.views.layouts.main'
 			),*/

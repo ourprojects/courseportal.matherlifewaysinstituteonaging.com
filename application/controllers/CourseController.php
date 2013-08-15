@@ -52,7 +52,7 @@ class CourseController extends OnlineCoursePortalController {
 	}
 
 	public function actionIndex() {
-		$this->render('pages/index', array('courses' => Course::model()->with('objectives')->findAll(array('order' => 'rank'))));
+		$this->render('pages/index', array('courses' => Course::model()->with('objectives')->findAll(array('order' => 't.rank'))));
 	}
 
 }

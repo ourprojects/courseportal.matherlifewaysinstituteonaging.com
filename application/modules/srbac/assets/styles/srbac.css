@@ -379,22 +379,16 @@ div.srbacLoading * {
 }
 
 /*Installing srbac styles*/
-div.installNoError {
+.srbacNoError {
 	color: green;
-}
-
-div.installError {
-	color: red;
-	font-weight: bold;
-}
-
-div.installNoError {
 	background-image: url(noError.png);
 	background-repeat: no-repeat;
 	background-position: right;
 }
 
-div.installError {
+.srbacError {
+	color: red;
+	font-weight: bold;
 	background-image: url(error.png);
 	background-repeat: no-repeat;
 	background-position: right;
