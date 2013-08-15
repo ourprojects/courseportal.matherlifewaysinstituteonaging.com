@@ -18,8 +18,7 @@ class BasicIdentity extends CoursePortalUserIdentity
 
 	public function authenticate()
 	{
-		$this->_model = CPUser::model()->autoQuoteFind(array('or', 'email=:name_email', 'name=:name_email', array(':name_email' => $this->name_email));
-
+		$this->_model = CPUser::model()->autoQuoteFind(array('or', 't.email' => $this->name_email, 't.name' => $this->name_email));
 		if($this->_model === null)
 		{
 			$this->errorCode = self::ERROR_USERNAME_INVALID;

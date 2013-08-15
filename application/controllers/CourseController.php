@@ -28,11 +28,10 @@ class CourseController extends OnlineCoursePortalController {
 	public function filterVerifyUserCourse($filterChain) {
 		if($filterChain->action->getId() === $this->defaultMissingAction)
 		{
-			$course = Course::model()->with('objectives')->autoQuoteFind(array('and', 'name=:name'), array(':name' => $filterChain->action->getRequestedView()));
+			$course = Course::model()->with('objectives')->autoQuoteFind(array('and', 't.name' => $filterChain->action->getRequestedView()));
 			if(Yii::app()->getUser()->getIsEmployee() ||
 					Yii::app()->getUser()->getIsAdmin() ||
-					UserCourse::model()->exists('course_id=:course_id AND user_id=:user_id',
-							array(':course_id' => $course->id, ':user_id' => Yii::app()->getUser()->id))) {
+					UserCourse::model()->exists(array('and', 'course_id' => $course->id, 'user_id' => Yii::app()->getUser()->id))) {
 				$filterChain->action->renderData['course'] = $course;
 				return $filterChain->run();
 			}

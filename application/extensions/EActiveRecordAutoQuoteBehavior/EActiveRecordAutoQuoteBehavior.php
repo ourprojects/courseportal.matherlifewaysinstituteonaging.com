@@ -3,79 +3,80 @@
 class EActiveRecordAutoQuoteBehavior extends CActiveRecordBehavior
 {
 
+	const PARAM_PREFIX = ':aqp';
+
+	/**
+	 * @var integer the global counter for anonymous binding parameters.
+	 * This counter is used for generating the name for the anonymous parameters.
+	 */
+	public static $paramCount = 0;
+
 	public function autoQuoteExists($conditions, $params = array())
 	{
-		return $this->getOwner()->exists($this->processConditions($conditions), $params);
+		return $this->getOwner()->exists($this->processConditions($conditions, $params), $params);
 	}
 
 	public function autoQuoteFind($conditions, $params = array())
 	{
-		return $this->getOwner()->find($this->processConditions($conditions), $params);
+		return $this->getOwner()->find($this->processConditions($conditions, $params), $params);
 	}
 
 	public function autoQuoteFindAll($conditions, $params = array())
 	{
-		return $this->getOwner()->findAll($this->processConditions($conditions), $params);
+		return $this->getOwner()->findAll($this->processConditions($conditions, $params), $params);
 	}
 
 	public function autoQuoteFindAllByAttributes($attributes, $conditions, $params = array())
 	{
-		return $this->getOwner()->findAllByAttributes($attributes, $this->processConditions($conditions), $params);
+		return $this->getOwner()->findAllByAttributes($attributes, $this->processConditions($conditions, $params), $params);
 	}
 
 	public function autoQuoteFindByPk($pk, $conditions, $params = array())
 	{
-		return $this->getOwner()->findByPk($pk, $this->processConditions($conditions), $params);
+		return $this->getOwner()->findByPk($pk, $this->processConditions($conditions, $params), $params);
 	}
 
 	public function autoQuoteCount($conditions, $params = array())
 	{
-		return $this->getOwner()->count($this->processConditions($conditions), $params);
+		return $this->getOwner()->count($this->processConditions($conditions, $params), $params);
 	}
 
 	public function autoQuoteCountByAttributes($attributes, $conditions, $params = array())
 	{
-		return $this->getOwner()->countByAttributes($attributes, $this->processConditions($conditions), $params);
+		return $this->getOwner()->countByAttributes($attributes, $this->processConditions($conditions, $params), $params);
 	}
 
 	public function autoQuoteDeleteAll($conditions, $params = array())
 	{
-		return $this->getOwner()->deleteAll($this->processConditions($conditions), $params);
+		return $this->getOwner()->deleteAll($this->processConditions($conditions, $params), $params);
 	}
 
 	public function autoQuoteDeleteAllByAttributes($attributes, $conditions, $params = array())
 	{
-		return $this->getOwner()->deleteAllByAttributes($attributes, $this->processConditions($conditions), $params);
+		return $this->getOwner()->deleteAllByAttributes($attributes, $this->processConditions($conditions, $params), $params);
 	}
 
 	public function autoQuoteDeleteByPk($pk, $conditions, $params = array())
 	{
-		return $this->getOwner()->deleteByPk($pk, $this->processConditions($conditions), $params);
+		return $this->getOwner()->deleteByPk($pk, $this->processConditions($conditions, $params), $params);
 	}
 
 	public function autoQuoteUpdateAll($attributes, $conditions, $params = array())
 	{
-		return $this->getOwner()->updateAll($attributes, $this->processConditions($conditions), $params);
+		return $this->getOwner()->updateAll($attributes, $this->processConditions($conditions, $params), $params);
 	}
 
 	public function autoQuoteUpdateByPk($attributes, $conditions, $params = array())
 	{
-		return $this->getOwner()->updateByPk($attributes, $this->processConditions($conditions), $params);
+		return $this->getOwner()->updateByPk($attributes, $this->processConditions($conditions, $params), $params);
 	}
 
 	public function autoQuoteUpdateCounters($counters, $conditions, $params = array())
 	{
-		return $this->getOwner()->updateCounters($counters, $this->processConditions($conditions), $params);
+		return $this->getOwner()->updateCounters($counters, $this->processConditions($conditions, $params), $params);
 	}
 
-	/**
-	 * Copied from CDbCommand
-	 * Generates the condition string that will be put in the WHERE part
-	 * @param mixed $conditions the conditions that will be put in the WHERE part.
-	 * @throws CDbException if unknown operator is used
-	 * @return string the condition string to put in the WHERE part
-	 */
-	public function processConditions($conditions)
+	public function processConditions($conditions, &$params)
 	{
 		if(!is_array($conditions))
 		{
@@ -85,36 +86,77 @@ class EActiveRecordAutoQuoteBehavior extends CActiveRecordBehavior
 		{
 			return '';
 		}
-		$operator = strtoupper($conditions[0]);
+
+		$conds = array_merge(array(), $conditions);
+		$operator = strtoupper(array_shift($conds));
 		if($operator === 'OR' || $operator === 'AND')
 		{
+			$dbConnection = $this->getOwner()->getDbConnection();
 			$parts = array();
-			for($i = 1, $n = count($conditions); $i < $n; ++$i)
+			foreach($conds as $column => $value)
 			{
-				$condition = $this->processConditions($conditions[$i]);
-				if($condition !== '')
+				if(!is_array($value) && is_string($column))
 				{
-					$parts[] = '('.$condition.')';
+					if(strpos($column, '(') === false)
+					{
+						if(strpos($column, '.') !== false && $dbConnection->tablePrefix !== null && strpos($column, '{{') !== false)
+						{
+							$column = preg_replace('/\{\{(.*?)\}\}/', $dbConnection->tablePrefix.'$1', $column);
+						}
+						$column = $dbConnection->quoteColumnName($column);
+					}
+					if($value === null)
+					{
+						$parts[] = $column.' IS NULL';
+					}
+					else
+					{
+						if(is_string($value) && preg_match('/^(?:\s*(<>|<=|>=|<|>|=|\!=))(.*)$/', $value, $matches))
+						{
+							$value = $matches[2];
+							$op = $matches[1];
+						}
+						else
+						{
+							$op = '=';
+						}
+						$parts[] = '('.$column.$op.self::PARAM_PREFIX.self::$paramCount.')';
+						$params[self::PARAM_PREFIX.self::$paramCount++] = $value;
+					}
+				}
+				else
+				{
+					$value = $this->processConditions($value, $params);
+					if($value !== '')
+					{
+						$parts[] = '('.$value.')';
+					}
 				}
 			}
-			return $parts === array() ? '' : implode(' '.$operator.' ', $parts);
+			return implode(' '.$operator.' ', $parts);
 		}
 
-		if(!isset($conditions[1], $conditions[2]))
+		$column = array_shift($conds);
+		if($column === null || !is_string($column))
 		{
-			return '';
+			throw new CDbException('Malformed query condition. When operator is not "AND" or "OR" the second parameter must be a column name.');
 		}
-
-		$column = $conditions[1];
-		if(strpos($column, '(') === false)
+		elseif(strpos($column, '(') === false)
 		{
 			$column = $this->getOwner()->getDbConnection()->quoteColumnName($column);
 		}
 
-		$values = $conditions[2];
-		if(!is_array($values))
+		if(empty($conds))
 		{
-			$values = array($values);
+			$values = array();
+		}
+		else
+		{
+			$values = array_shift($conds);
+			if(!is_array($values))
+			{
+				$values = array($values);
+			}
 		}
 
 		if($operator === 'IN' || $operator === 'NOT IN')
@@ -125,14 +167,8 @@ class EActiveRecordAutoQuoteBehavior extends CActiveRecordBehavior
 			}
 			foreach($values as $i => $value)
 			{
-				if(is_string($value))
-				{
-					$values[$i] = $this->getOwner()->getDbConnection()->quoteValue($value);
-				}
-				else
-				{
-					$values[$i] = (string)$value;
-				}
+				$values[$i] = self::PARAM_PREFIX.self::$paramCount;
+				$params[self::PARAM_PREFIX.self::$paramCount++] = $value;
 			}
 			return $column.' '.$operator.' ('.implode(', ', $values).')';
 		}
@@ -156,9 +192,10 @@ class EActiveRecordAutoQuoteBehavior extends CActiveRecordBehavior
 			$expressions = array();
 			foreach($values as $value)
 			{
-				$expressions[] = $column.' '.$operator.' '.$this->getOwner()->getDbConnection()->quoteValue($value);
+				$expressions[] = '('.$column.' '.$operator.' '.self::PARAM_PREFIX.self::$paramCount.')';
+				$params[self::PARAM_PREFIX.self::$paramCount++] = $value;
 			}
-			return implode($andor, $expressions);
+			return '('.implode($andor, $expressions).')';
 		}
 
 		throw new CDbException(Yii::t('yii', 'Unknown operator "{operator}".', array('{operator}' => $operator)));
