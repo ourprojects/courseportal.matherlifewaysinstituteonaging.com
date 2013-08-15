@@ -16,24 +16,27 @@ class AuthItemController extends SBaseController
 
 	public function filters()
 	{
-		return array(
+		return array_merge(
+				parent::filters(),
 				array(
-						'ext.EForwardActionFilter.EForwardActionFilter',
-						'map' => array(
-								'authItem' => array('read + get', 'create + post', 'update + put', 'delete + delete'),
+					array(
+							'ext.EForwardActionFilter.EForwardActionFilter',
+							'map' => array(
+									'authItem' => array('read + get', 'create + post', 'update + put', 'delete + delete'),
+							)
+					),
+					array(
+						'ext.ERequestMethodFilter.ERequestMethodFilter',
+						'config' => array(
+								'get' => 'index, read',
+								'put' => 'update',
+								'post' => 'create',
+								'delete' => 'delete',
+								'ajax' => 'ajax'
 						)
-				),
-				array(
-					'ext.ERequestMethodFilter.ERequestMethodFilter',
-					'config' => array(
-							'get' => 'index, read',
-							'put' => 'update',
-							'post' => 'create',
-							'delete' => 'delete',
-							'ajax' => 'ajax'
-					)
-				),
-			);
+					),
+				)
+		);
 	}
 
 	/**

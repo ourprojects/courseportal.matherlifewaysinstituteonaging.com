@@ -5,14 +5,6 @@ class SrbacModule extends CWebModule
 	//Constants
 	const ICON_PACKS = "noia,tango";
 	const PRIVATE_ATTRIBUTES = "_icons,_cssPublished,_imagesPublished,defaultController,controllerMap,preload,behaviors";
-	const TABLE_NAMES_ERROR = "Srbac is installed but the CDBAuthManger table names in the database are different from those
-			in the CDBAuthManager configuration.<br />A common mistake is that names in database are in lowercase.<br />Srbac may not work correctly!!!";
-
-	//Private attributes
-	/* @var $_yiiSupportedVersion String The yii version tha srbac supports */
-	private $_yiiSupportedVersion = "1.1.0";
-	/* @var $_version Srbac version */
-	private $_version = "1.3beta";
 
 	// Srbac Attributes
 	/* @var $debug If srbac is in debug mode */
@@ -36,7 +28,7 @@ class SrbacModule extends CWebModule
 	/**
 	 * @var string the ID of the default controller for this module. Defaults to 'default'.
 	 */
-	public $defaultController = 'authitem';
+	public $defaultController = 'authItem';
 	/**
 	 * @var mixed the layout that is shared by the controllers inside this module.
 	 * If a controller has explicitly declared its own {@link CController::layout layout},
@@ -93,51 +85,6 @@ class SrbacModule extends CWebModule
 		return $this->_debug;
 	}
 
-	/**
-	 * Checks if srbac is installed by checking if Auth items table exists.
-	 * @return boolean Whether srbac is installed or not
-	 */
-	public function isInstalled()
-	{
-		try
-		{
-			$tables = Yii::app()->getAuthManager()->db->schema->tableNames;
-			$itemTableName = Yii::app()->getAuthManager()->itemTable;
-			$itemChildTableName = Yii::app()->getAuthManager()->itemChildTable ;
-			$assignmentTableName  = Yii::app()->getAuthManager()->assignmentTable ;
-			$tablePrefix = AuthItem::model()->getDbConnection()->tablePrefix;
-
-			if(!is_null($tablePrefix))
-			{
-				$itemTableName = preg_replace('/{{(.*?)}}/',$tablePrefix.'\1',$itemTableName);
-				$itemChildTableName = preg_replace('/{{(.*?)}}/',$tablePrefix.'\1',$itemChildTableName);
-				$assignmentTableName = preg_replace('/{{(.*?)}}/',$tablePrefix.'\1',$assignmentTableName);
-			}
-
-			if(in_array($itemTableName, $tables) &&
-					in_array($itemChildTableName, $tables) &&
-					in_array($assignmentTableName, $tables)) {
-				return true;
-			}
-			else
-			{
-				$tables = array_map('strtolower', $tables);
-				if(in_array(strtolower($itemTableName), $tables) &&
-						in_array(strtolower($itemChildTableName), $tables) &&
-						in_array(strtolower($assignmentTableName), $tables))
-				{
-					$this->_message = self::TABLE_NAMES_ERROR;
-					return true;
-				}
-			}
-			return false;
-		}
-		catch (CDbException  $ex )
-		{
-			return false;
-		}
-	}
-
 	public function getStaticUserModel()
 	{
 		return call_user_func(array($this->userclass, 'model'));
@@ -191,182 +138,6 @@ class SrbacModule extends CWebModule
 		return $this->getAssetsUrl() . '/images/' . $file;
 	}
 
-	/**
-	 * Geting all the application's controllers and its module's controllers
-	 * @return array The controllers
-	 */
-	public function getControllers($module = null, $controllers = array())
-	{
-		if(!isset($module))
-		{
-			$module = Yii::app();
-		}
-		$this->_scanModules($module, $controllers);
-		return $controllers;
-	}
-
-	private function _scanModules($module, &$controllers, $prefix = '')
-	{
-		if(isset($module))
-		{
-			$this->_scanControllers($module->getControllerPath(), $controllers, $prefix . ($prefix === '' ? '' : '.'));
-			//Scan modules
-			foreach(array_keys($module->getModules()) as $moduleId)
-			{
-				$this->_scanModules($module->getModule($moduleId), $controllers, $prefix . $moduleId);
-			}
-		}
-	}
-
-	private function _scanControllers($controllerPath, &$controllers, $prefix = '')
-	{
-		if(($handle = @opendir($controllerPath)))
-		{
-			while(($file = readdir($handle)) !== false)
-			{
-				$filePath = $controllerPath . DIRECTORY_SEPARATOR . $file;
-				if(is_file($filePath))
-				{
-					if(preg_match('/^(.+)Controller.php$/i', basename($file)))
-					{
-						$controllers[] = $prefix.str_replace('.php', '', $file);
-					}
-				}
-				elseif(is_dir($filePath) && $file != '.' && $file != '..')
-				{
-					$this->_scanControllers($filePath, $controllers, $prefix);
-				}
-			}
-			closedir($handle);
-		}
-	}
-
-	public function getControllerPathFromAlias($alias)
-	{
-		$controllerParts = explode('.', $alias);
-		$controllerClassName = array_pop($controllerParts);
-
-		$module = Yii::app();
-		foreach($controllerParts as $part)
-		{
-			if(($module = $module->getModule($part)) === null)
-			{
-				return false;
-			}
-		}
-
-		return realpath($module->getControllerPath().DIRECTORY_SEPARATOR.$controllerClassName.'.php');
-	}
-
-	/**
-	 * Extracts the actions from a controller. Beware the controller will be loaded and instantiated.
-	 * @param $controller string The alias for a controller as returned by getControllers()
-	 * @return array A list of the controller's defined actions.
-	 * */
-	public function extractControllerActions($controller)
-	{
-		$controllerPath = $this->getControllerPathFromAlias($controller);
-
-		if($controllerPath === false)
-		{
-			return false;
-		}
-
-		$controllerClassName = str_ireplace('.php', '', basename($controllerPath));
-		if(!class_exists($controllerClassName, false))
-		{
-			include_once($controllerPath);
-			if(!class_exists($controllerClassName, false))
-			{
-				return false;
-			}
-		}
-
-		$controllerObj = new $controllerClassName($controller);
-
-		foreach(get_class_methods($controllerObj) as $method)
-		{
-			if(preg_match('/^action(\w+)$/i', $method, $match) && strcasecmp($match[1], 's'))
-			{
-				$actions[strtolower($match[1])] = $match[1];
-			}
-		}
-
-		foreach($controllerObj->actions() as $action => $config)
-		{
-			$loweredAction = strtolower($action);
-			if(!isset($actions[$loweredAction]))
-			{
-				$actions[$loweredAction] = $action;
-			}
-		}
-
-		unset($controllerObj);
-		return array_values($actions);
-	}
-
-	public function extractControllerActionsFromText($controller)
-	{
-		$controllerText = file_get_contents($this->getControllerPathFromAlias($controller));
-
-		if($controllerText === false)
-		{
-			return false;
-		}
-
-		$tokens = token_get_all($controllerText);
-
-		$braceDepth = 0;
-		$ignoredFunctionTypes = array(T_STATIC, T_ABSTRACT, T_PRIVATE, T_PROTECTED);
-		$actions = array();
-		$tokenCount = count($tokens);
-		foreach($tokens as $index => $token)
-		{
-			if(is_array($token))
-			{
-				switch($token[0])
-				{
-					case T_CLASS:
-						$braceDepth = -1;
-						break;
-					case T_FUNCTION:
-						if($braceDepth === 1 &&
-						$index > 3 &&
-						$tokenCount - $index > 2 &&
-						(!is_array($tokens[$index - 2]) || !in_array($tokens[$index - 2][0], $ignoredFunctionTypes)) &&
-						(!is_array($tokens[$index - 4]) || !in_array($tokens[$index - 4][0], $ignoredFunctionTypes)) &&
-						is_array($tokens[$index + 2]) &&
-						$tokens[$index + 2][0] === T_STRING &&
-						$tokens[$index + 3] === '(' &&
-						preg_match('/^action(\w+)$/i', $tokens[$index + 2][1], $matches))
-						{
-							$actions[] = $matches[1];
-						}
-						break;
-				}
-			}
-			elseif(is_string($token))
-			{
-				if($token === '{')
-				{
-					if($braceDepth < 0)
-					{
-						$braceDepth = 1;
-					}
-					elseif($braceDepth > 0)
-					{
-						$braceDepth++;
-					}
-				}
-				elseif($token === '}' && $braceDepth > 0)
-				{
-					$braceDepth--;
-				}
-			}
-		}
-		return $actions;
-	}
-
 	private $_generatedAuthItems;
 	private $_generatedMissingAuthItems;
 
@@ -384,16 +155,15 @@ class SrbacModule extends CWebModule
 			return $this->_generatedAuthItems;
 		}
 
+		require_once(dirname(__FILE__).DIRECTORY_SEPARATOR.'components'.DIRECTORY_SEPARATOR.'SrbacUtilities.php');
+
 		$authItems = array();
 		$authItemNames = array();
-		$controllerClassNames = array();
-		$controllers = $this->getControllers();
 		$authItemCount = 0;
-		foreach($controllers as $controller)
+		foreach(SrbacUtilities::getApplicationControllers() as $controller)
 		{
 			$nameParts = explode('.', $controller);
-			$controllerClassName = array_pop($nameParts);
-			$nameParts[] = preg_replace('/^(.+)Controller$/i', '$1', $controllerClassName);
+			$nameParts[] = preg_replace('/^(.+)Controller$/i', '$1', array_pop($nameParts));
 			foreach($nameParts as &$part)
 			{
 				$part = preg_replace('/(?<!^)([A-Z])/', ' \\1', ucfirst($part));
@@ -407,15 +177,7 @@ class SrbacModule extends CWebModule
 				$authItemNames[$fullName] = $authItemCount;
 				$authItems[$authItemCount] = array('id' => null, 'name' => $controllerName, 'type' => EAuthItem::TYPE_TASK, 'generated' => true);
 
-				if(isset($controllerClassNames[$controllerClassName]))
-				{
-					$actions = $this->extractControllerActionsFromText($controller);
-				}
-				else
-				{
-					$controllerClassNames[$controllerClassName] = true;
-					$actions = $this->extractControllerActions($controller);
-				}
+				$actions = SrbacUtilities::getControllerActions($controller);
 				if($actions !== false)
 				{
 					foreach($actions as $action)
