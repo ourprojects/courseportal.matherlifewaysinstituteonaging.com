@@ -13,51 +13,27 @@ $clientScript->registerCssFile($this->getStylesUrl('homeUser.css'));
 <div id="sidebar">
   <div class="box-sidebar one" style="background-color:#FFF;">
     <h3>{t}Recommendations{/t}</h3>
-    <p style="text-align:center; font-weight:bold;">{t}For the best experience, we recommend using Google Chrome.{/t}</p>
-    <p style="text-align:center; font-weight:bold;">{t}Download Chrome <a href="https://www.google.com/intl/en/chrome/browser/" target="_blank">here</a>!{/t}</p>
+    <p style="text-align:center; font-weight:bold;">{t}For the best experience, download Google Chrome <a href="https://www.google.com/intl/en/chrome/browser/" target="_blank">here</a>!{/t}</p>
     <p><img class="block-center" src="<?php echo $this->getImagesUrl('googlechromelogo.png'); ?>" /></p>
-    <p><a href="http://get.adobe.com/flashplayer/" target="_blank">{t}<strong>Adobe Flash Player 11</strong></a> (or higher) & <a href="http://get.adobe.com/reader/" target="_blank"><strong>Adobe Reader XI</strong>{/t}</a> (or higher)</p>
-    <p>{t}<strong>Word  &amp; Spreadsheet Processor -</strong>{/t}</p>
-    <ul>
-      <li><a href="http://office.microsoft.com" target="_blank"><strong>Microsoft Office</strong></a>; {t}or{/t}</li>
-      <li><a href="http://www.apple.com/iwork/" target="_blank"><strong>Apple iWork</strong></a>; {t}or{/t}</li>
-      <li><a href="http://www.openoffice.org" target="_blank"><strong>Apache OpenOffice</strong></a>.</li>
-    </ul>
-  </div>
-  <div class="box-sidebar three statistics">
-    <h3>{t}Statistics on Caregivers{/t}</h3>
-    <ul id="quotes">
-      <li> <img src="<?php echo $this->getImagesUrl('stat-one-quarter.png'); ?>" /> <span>1/4</span>&nbsp;{t}of US households has a family caregiver providing some form of care or service to a relative or friend, age 50+{/t} </li>
-      <li> <img src="<?php echo $this->getImagesUrl('stat-two-thirds.png'); ?>" /> <span>2/3</span>&nbsp;{t}of these family caregivers are also working{/t} </li>
-      <li> <img src="<?php echo $this->getImagesUrl('stat-half.png'); ?>" /> <span>50%</span>&nbsp;{t}of employed caregivers work full-time{/t} </li>
-    </ul>
+    <p><strong>Adobe - </strong><a href="http://get.adobe.com/flashplayer/" target="_blank"><strong>Flash Player 11</strong></a> & <a href="http://get.adobe.com/reader/" target="_blank"><strong>Reader XI</strong></a></p>
+    <p>{t}<strong>Word  &amp; Spreadsheet Processor -</strong>{/t} <strong>(</strong><a href="http://office.microsoft.com" target="_blank"><strong>Office</strong></a>, <a href="http://www.apple.com/iwork/" target="_blank"><strong>iWork</strong></a>,<strong> </strong><a href="http://www.openoffice.org" target="_blank"><strong>OpenOffice</strong></a>)</p>
   </div>
   <div class="box-sidebar three">
     <h3>{t}White papers{/t}</h3>
     <p> <a href="http://www.matherlifewaysinstituteonaging.com/wp-content/uploads/2012/03/eLearning-Maturing-Technology.pdf" class="pdf" target="_blank">{t}e-Learning: Maturing Technology Brings Balance &amp; Possibilities to Nursing Education{/t} </a> <a href="http://www.matherlifewaysinstituteonaging.com/wp-content/uploads/2012/03/How-eLearning-Can-Reduce-Expenses-and-Improve-Staff-Performance.pdf"
-				class="pdf" target="_blank">{t}The Bottom Line: How e-Learning Can Reduce Expenses and Improve Staff Performance{/t} </a> </p>
+				class="pdf" target="_blank">{t}The Bottom Line: How e-Learning Can Reduce Expenses and Improve Staff Performance{/t} </a></p>
   </div>
-  <div class="box-sidebar two">
-    <h3>{t}Pew Research Center{/t}</h3>
-    <a href="http://www.pewresearch.org" target="_blank"><img class="block center" src="<?php echo $this->getImagesUrl('pew.png'); ?>" alt="Pew Internet Research Logo"></a>
-    <p class="text-center"><b>{t}Family Caregivers are Wired for Health{/t}</b></p>
-    <p>{t}Four in ten adults in the U.S. are caring for an adult or child with significant health issues, up from 30% in 2010. Caring for a loved one is an activity that cuts across most demographic groups, but is especially prevalent among adults ages 30 to 64, a group traditionally still in the workforce. Caregivers are highly engaged in the pursuit of health information, support, care, and advice, both online and offline, and do many health-related activities at higher levels than non-caregivers.
-      {/t} </p>
-    <p> <a href="http://www.pewinternet.org/~/media//Files/Reports/2013/PewResearch_FamilyCaregivers.pdf" class="pdf" target="_blank">{t}Family Caregivers are Wired for Health{/t} </a> </p>
-  </div>
-  <div class="box-sidebar one">
-    <h3>{t}Alzheimer's Association{/t}</h3>
-    <img class="block center" src="<?php echo $this->getImagesUrl('partners/alz.png'); ?>" />
-    <p>{t}There are 10 warning signs of Alzheimer's. If you or someone you know is experiencing 
-      any of the signs, please see a doctor. Early diagnosis gives you a chance to seek treatment and plan for the future.{/t}</p>
-    <p><a href="http://www.alz.org/national/documents/checklist_10signs.pdf" target="_blank" class="pdf">{t}KNOW the 10 SIGNS{/t}</a></p>
-  </div>
-  <div class="box-sidebar two">
-    <h3 class="two-line">{t}Tips &amp; Resources for Caregivers{/t}</h3>
-    <img class="block center" src="<?php echo $this->getImagesUrl('medicare.png'); ?>" />
-    <p>{t}Are you familiar and/or have you visited the Medicare website? 
-      The handout below is a list of tips and resources for caregivers as suggested by Medicare.{/t}</p>
-    <p><a href="http://www.medicare.gov/files/ask-medicare-what-medicare-covers.pdf" target="_blank" class="pdf"> {t}Tips and Resources for Caregivers{/t}</a></p>
+  <div class="box-sidebar four">
+    <h3>{t}Aging in Action{/t}</h3>
+    <p>{t}Aging in Action is Mather LifeWays Institute on Aging's monthly e-newsletter and blog containing the latest research news in the field of aging.{/t}</p>
+    <a href="http://twitter.com/aginginaction" target="_blank"> <img class="block center" src="<?php echo $this->getImagesUrl('twitter-bird.png'); ?>" alt="Twitter" /></a></div>
+  <div class="box-sidebar three statistics">
+    <h3>{t}Statistics on Caregivers{/t}</h3>
+    <ul id="quotes">
+      <li> <img src="<?php echo $this->getImagesUrl('stat-one-quarter.png'); ?>" alt="image" /> <span>1/4</span>&nbsp;{t}of US households has a family caregiver providing some form of care or service to a relative or friend, age 50+{/t} </li>
+      <li> <img src="<?php echo $this->getImagesUrl('stat-two-thirds.png'); ?>" alt="image" /> <span>2/3</span>&nbsp;{t}of these family caregivers are also working{/t} </li>
+      <li> <img src="<?php echo $this->getImagesUrl('stat-half.png'); ?>" alt="image" /> <span>50%</span>&nbsp;{t}of employed caregivers work full-time{/t} </li>
+    </ul>
   </div>
 </div>
 <div class="column-wide">

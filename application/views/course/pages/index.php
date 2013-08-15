@@ -34,7 +34,7 @@
   <hr />
   <img src="<?php echo $this->getImagesUrl('image-nurse.png'); ?>"
 		class="image-right" />
-  <h3> <a href="http://matherlifewaysinstituteonaging.com/products"> {t}Gerontology Online program{/t} </a> </h3>
+  <h3> <a href="http://www.matherlifewaysinstituteonaging.com/senior-living-providers/gerontology-online/" target="_blank"> {t}Gerontology Online program{/t} </a> </h3>
   <p> {t}Gerontology Online is a web-based continuing education program designed for health care professionals who wish to enhance their knowledge and skills in the field of aging. This program will provide employees with valuable information about gerontology, helping them to stay abreast of the latest research and practices and it is also an excellent resource for new hires, providing them with a solid foundation while saving employers time and money by reducing training hours and ensuring employees have a basic skill set upon hiring.{/t}</p>
   <p>{t}This program is offered by Mather LifeWays Institute on Aging in collaboration with Rush University College of Nursing. Development was partially supported by funding from the Bureau of Health Professionals division of the Department of Health and Human Services.{/t} </p>
   <h4> {t}Objectives{/t} </h4>
@@ -50,7 +50,7 @@
   <br />
   <h2 class="flowers"> {t}Online Workforce Surveys &amp; Toolkits{/t} </h2>
   <hr />
-  <h3> <a href="http://matherlifewaysinstituteonaging.com/products"> {t}Aging in the Workplace Survey{/t} </a></h3>
+  <h3> <a href="http://www.matherlifewaysinstituteonaging.com/senior-living-providers/aging-in-the-workplace/" target="_blank"> {t}Aging in the Workplace Survey{/t} </a></h3>
   <p>{t}The Aging in the Workplace toolkits and survey are designed to provide employers with strategic aging-related workforce management information. With a large percent of the 78 million boomers planning to remain in the workforce past traditional retirement age, organizations in the nonprofit, private, and public sectors will need tools and resources to make the best use of their knowledge and skills in order to increase organizational effectiveness and business performance.{/t}</p>
   <p>{t}The survey covers two primary areas of focus related to age and the workplace: Retirement and The Impact of Caregiving on Work, in addition to measuring job satisfaction in the workforce.{/t}</p>
   <p>{t}Employers who are well versed in matters related to aging in the workplace are better positioned to:{/t}</p>
@@ -64,7 +64,7 @@
     <li><b>{t}The Impact of Caregiving on Work{/t}</b>{t}: Provides employers with an estimate of the prevalence of unpaid caregiving performed by their employees and its impact on absenteeism.{/t} </li>
   </ul>
   <hr />
-  <h3> <a href="http://matherlifewaysinstituteonaging.com/products">{t}Aging in the Workplace Toolkits{/t} </a></h3>
+  <h3> <a href="http://www.matherlifewaysinstituteonaging.com/senior-living-providers/aging-in-the-workplace/" target="_blank">{t}Aging in the Workplace Toolkits{/t} </a></h3>
   <p>{t}The Aging in the Workplace toolkits and survey are designed to provide employers with strategic aging-related workforce management information. With a large percent of the 78 million boomers planning to remain in the workforce past traditional retirement age, organizations in the nonprofit, private, and public sectors will need tools and resources to make the best use of their knowledge and skills in order to increase organizational effectiveness and business performance.{/t}</p>
   <p>{t}The toolkit provides valuable information and resources for human resource professionals, managers, and employed caregivers.{/t}</p>
   <h4>{t}Toolkit Includes:{/t}</h4>
@@ -77,7 +77,7 @@
     <li>{t}Aging in the Workplace Survey*{/t} </li>
   </ul>
   <hr />
-  <h3><a href="http://matherlifewaysinstituteonaging.com/products"> {t}Making Sense of Memory Loss Class Leader Toolkit{/t} </a> </h3>
+  <h3><a href="http://www.matherlifewaysinstituteonaging.com/health-care-professionals/making-sense-of-memory-loss-class-leader-toolkit/" target="_blank"> {t}Making Sense of Memory Loss Class Leader Toolkit{/t} </a> </h3>
   <p>{t}Making Sense of Memory Loss is a five-part training program for professionals interested in educating families and staff about caring for persons with memory loss in regards to its causes and treatments, as well as effective ways of coping now and in the future. In light of the growing trend toward earlier diagnosis of Alzheimer's Disease and related dementias, Making Sense of Memory Loss is for anyone who cares for someone in the early stages of memory loss, whether or not that the person has received a diagnosis.{/t}</p>
   <p>{t}Developed by the Alzheimer’s Association—Greater Illinois Chapter and Mather LifeWays Institute on Aging, this evidence-based training program covers these topics:{/t}</p>
   <ul>
