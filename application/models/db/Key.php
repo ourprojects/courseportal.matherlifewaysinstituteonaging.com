@@ -1,4 +1,4 @@
-<?php   
+<?php
 
 /**
  * This is the model class for table "key".
@@ -9,9 +9,9 @@
  * @property string $salt
  */
 class Key extends CActiveRecord {
-	
+
 	public $key;
-	
+
     /**
      * Returns the static model of the specified AR class.
      * @param string $className active record class name.
@@ -20,14 +20,14 @@ class Key extends CActiveRecord {
     public static function model($className = __CLASS__) {
         return parent::model($className);
     }
-    
+
     /**
      * @return string the associated database table name
      */
     public function tableName() {
         return '{{key}}';
     }
-    
+
     public function behaviors() {
     	return array_merge(parent::behaviors(),
     			array(
@@ -41,7 +41,10 @@ class Key extends CActiveRecord {
 						),
     					'ERememberFiltersBehavior' => array(
     							'class' => 'ext.ERememberFiltersBehavior.ERememberFiltersBehavior',
-    					)
+    					),
+						'EActiveRecordAutoQuoteBehavior' => array(
+								'class' => 'ext.EActiveRecordAutoQuoteBehavior.EActiveRecordAutoQuoteBehavior',
+						)
     			));
     }
 
@@ -52,9 +55,9 @@ class Key extends CActiveRecord {
         return array(
             array('key, value, salt', 'required'),
         	array('value, salt', 'ext.pbkdf2.PBKDF2validator'),
-        		
+
         	array('id', 'numerical', 'integerOnly' => true),
-        		
+
         	array('key', 'safe'),
         	array('id', 'safe', 'on' => 'search'),
         );
@@ -71,13 +74,13 @@ class Key extends CActiveRecord {
         	'key' => t('Key'),
         );
     }
-    
+
     public function search() {
     	$criteria = new CDbCriteria;
-    	
+
     	$criteria->compare('id', $this->id);
     	$criteria->compare('value', $this->value, true);
-    	
+
     	return new CActiveDataProvider($this, array(
     			'criteria' => $criteria,
     	));

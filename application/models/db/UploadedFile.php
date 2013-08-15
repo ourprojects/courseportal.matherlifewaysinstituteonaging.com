@@ -1,4 +1,4 @@
-<?php   
+<?php
 
 /**
  * This is the model class for table "uploaded_file".
@@ -17,7 +17,7 @@
  * @property CPUser $user
  */
 class UploadedFile extends CActiveRecord {
-	
+
 	const FILES_PATH_ALIAS = 'uploads.files';
 	const MAX_FILE_SIZE = 17179869184;
 
@@ -37,11 +37,14 @@ class UploadedFile extends CActiveRecord {
 	public function tableName() {
 		return '{{uploaded_file}}';
 	}
-	
+
 	public function behaviors() {
 		return array_merge(parent::behaviors(),
 				array(
-						'extendedFeatures' => array('class' => 'behaviors.EModelBehaviors')
+						'extendedFeatures' => array('class' => 'behaviors.EModelBehaviors'),
+						'EActiveRecordAutoQuoteBehavior' => array(
+								'class' => 'ext.EActiveRecordAutoQuoteBehavior.EActiveRecordAutoQuoteBehavior',
+						)
 				));
 	}
 
@@ -87,11 +90,11 @@ class UploadedFile extends CActiveRecord {
 				'user' => t('User')
 		);
 	}
-	
+
 	public function getPath() {
 		return Yii::getPathOfAlias(self::FILES_PATH_ALIAS) . DIRECTORY_SEPARATOR . $this->local_name;
 	}
-	
+
 	public function checkFileMakeLocal($attribute, $params) {
 		Yii::import('CFileValidator', true);
 		$this->$attribute = CUploadedFile::getInstance($this, $attribute);
@@ -104,12 +107,12 @@ class UploadedFile extends CActiveRecord {
 			$validator->tooLarge = 'The file is too large. 16MB maximum.';
 			$validator->tooMany = 'Only 1 file may be uploaded at a time';
 			$validator->validate($this, $attribute);
-				
+
 			if(!$this->hasErrors() && $this->$attribute !== null) {
 				$this->mime_type = $this->$attribute->getType();
 				$this->size = $this->$attribute->getSize();
 				$this->name = $this->$attribute->getName();
-					
+
 				do {
 					$this->local_name = sha1(uniqid('', true));
 				} while(self::model()->exists('local_name = :local_name', array(':local_name' => $this->local_name)));
@@ -118,13 +121,13 @@ class UploadedFile extends CActiveRecord {
 			$this->addError($attribute, 'Not a valid uploaded file');
 		}
 	}
-	
+
 	protected function afterSave() {
 		if(!file_exists($this->getPath()) && $file !== null)
 			$this->file->saveAs($this->getPath());
 		parent::afterSave();
 	}
-	
+
 	protected function afterDelete() {
 		if(file_exists($this->getPath()))
 			unlink($this->getPath());

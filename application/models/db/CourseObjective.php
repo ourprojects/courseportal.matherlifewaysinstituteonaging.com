@@ -1,4 +1,4 @@
-<?php   
+<?php
 
 class CourseObjective extends CActiveRecord {
 	/**
@@ -13,7 +13,7 @@ class CourseObjective extends CActiveRecord {
 	 * The followings are the available model relations:
 	 * @property Course $course
 	 */
-	
+
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @return CActiveRecord the static model class
@@ -25,26 +25,29 @@ class CourseObjective extends CActiveRecord {
 	/**
 	 * @return string the associated database table name
 	 */
-	public function tableName() 
+	public function tableName()
 	{
 		return '{{course_objective}}';
 	}
-	
-	public function behaviors() 
+
+	public function behaviors()
 	{
 		return array_merge(parent::behaviors(),
 				array(
 						'extendedFeatures' => array('class' => 'behaviors.EModelBehaviors'),
 						'ERememberFiltersBehavior' => array(
 								'class' => 'ext.ERememberFiltersBehavior.ERememberFiltersBehavior',
+						),
+						'EActiveRecordAutoQuoteBehavior' => array(
+								'class' => 'ext.EActiveRecordAutoQuoteBehavior.EActiveRecordAutoQuoteBehavior',
 						)
 				));
 	}
-	
+
 	/**
 	 * @return array validation rules for model attributes.
 	 */
-	public function rules() 
+	public function rules()
 	{
 		return array(
 				array('id, course_id', 'unsafe', 'except' => 'search'),
@@ -61,7 +64,7 @@ class CourseObjective extends CActiveRecord {
 						'message' => 'An objective with {attribute} "{value}" already exists for this course.',
 				),
 				array('text', 'length', 'max' => 65535),
-	
+
 				array('id, course_id, rank, text', 'safe', 'on' => 'search'),
 		);
 	}
@@ -69,7 +72,7 @@ class CourseObjective extends CActiveRecord {
 	/**
 	 * @return array relational rules.
 	 */
-	public function relations() 
+	public function relations()
 	{
 		return array(
 				'course' => array(self::BELONGS_TO, 'Course', 'course_id'),
@@ -79,7 +82,7 @@ class CourseObjective extends CActiveRecord {
 	/**
 	 * @return array customized attribute labels (name => label)
 	 */
-	public function attributeLabels() 
+	public function attributeLabels()
 	{
 		return array(
 				'id' => t('ID'),
@@ -89,21 +92,21 @@ class CourseObjective extends CActiveRecord {
 				'course' => t('Course'),
 		);
 	}
-	
+
 	/**
 	 * Retrieves a list of models based on the current search/filter conditions.
 	 * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.
 	 */
-	public function search() 
+	public function search()
 	{
 		$criteria = new CDbCriteria;
-	
+
 		$criteria->order = 'rank';
 		$criteria->compare('id', $this->id);
 		$criteria->compare('course_id', $this->course_id);
 		$criteria->compare('rank', $this->rank);
 		$criteria->compare('text', $this->text, true);
-	
+
 		return new CActiveDataProvider($this, array(
 				'criteria' => $criteria,
 		));

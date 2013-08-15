@@ -1,4 +1,4 @@
-<?php   
+<?php
 
 class UserAgreement extends CActiveRecord {
 
@@ -16,14 +16,17 @@ class UserAgreement extends CActiveRecord {
 	public function tableName() {
 		return '{{user_agreement}}';
 	}
-	
+
 	public function behaviors() {
 		return array_merge(parent::behaviors(),
 				array(
-						'extendedFeatures' => array('class' => 'behaviors.EModelBehaviors')
+						'extendedFeatures' => array('class' => 'behaviors.EModelBehaviors'),
+						'EActiveRecordAutoQuoteBehavior' => array(
+								'class' => 'ext.EActiveRecordAutoQuoteBehavior.EActiveRecordAutoQuoteBehavior',
+						)
 				));
 	}
-	
+
 	/**
 	 * @return array validation rules for model attributes.
 	 */
@@ -31,22 +34,22 @@ class UserAgreement extends CActiveRecord {
 		return array(
 				array('user_id, agreement_id', 'required'),
 				array('user_id, agreement_id', 'numerical', 'integerOnly' => true),
-				
+
 				array('user_id', 'exist', 'attributeName' => 'id', 'className' => 'CPUser', 'allowEmpty' => false),
 				array('agreement_id', 'exist', 'attributeName' => 'id', 'className' => 'Agreement', 'allowEmpty' => false),
-				
-				array('agreement_id', 
-						'unique', 
-						'caseSensitive' => false, 
+
+				array('agreement_id',
+						'unique',
+						'caseSensitive' => false,
 						'criteria' => array(
 							'condition' => 'user_id = :id',
 							'params' => array(':id' => $this->user_id),
 						),
 						'message' => '{attribute} "{value}" has already been added to this user.',
 				),
-				
+
 				array('agreed_on', 'date', 'format' => 'yyyy-M-d H:m:s'),
-				
+
 				array('user_id, agreement_id, agreed_on', 'safe', 'on'=>'search'),
 		);
 	}
@@ -60,7 +63,7 @@ class UserAgreement extends CActiveRecord {
 				'agreement' => array(self::BELONGS_TO, 'Agreement', 'agreement_id'),
 		);
 	}
-	
+
 	public function getFormattedAgreedOn($format = null)
 	{
 		if(!isset($format))
@@ -80,16 +83,16 @@ class UserAgreement extends CActiveRecord {
 				'agreement' => t('Agreement'),
 		);
 	}
-	
+
 	public function getSearchCriteria() {
 		$criteria = new CDbCriteria;
-		
+
 		$criteria->compare('user_id', $this->user_id);
 		$criteria->compare('agreement_id', $this->agreement_id);
-		
+
 		return $criteria;
 	}
-	
+
 	/**
 	 * Retrieves a list of models based on the current search/filter conditions.
 	 * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.

@@ -1,4 +1,4 @@
-<?php   
+<?php
 
 class Agreement extends CActiveRecord {
     /**
@@ -16,14 +16,17 @@ class Agreement extends CActiveRecord {
     public function tableName() {
         return '{{agreement}}';
     }
-    
+
     public function behaviors() {
     	return array_merge(parent::behaviors(),
     			array(
     					'extendedFeatures' => array('class' => 'behaviors.EModelBehaviors'),
     					'ERememberFiltersBehavior' => array(
     							'class' => 'ext.ERememberFiltersBehavior.ERememberFiltersBehavior',
-    					)
+    					),
+						'EActiveRecordAutoQuoteBehavior' => array(
+								'class' => 'ext.EActiveRecordAutoQuoteBehavior.EActiveRecordAutoQuoteBehavior',
+						)
     			));
     }
 
@@ -86,7 +89,7 @@ class Agreement extends CActiveRecord {
             'criteria' => $criteria,
         ));
     }
-    
+
     public function __toString() {
     	return $this->text;
     }

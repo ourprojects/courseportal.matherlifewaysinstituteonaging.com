@@ -1,4 +1,4 @@
-<?php   
+<?php
 
 class Course extends CActiveRecord {
 	/**
@@ -16,7 +16,7 @@ class Course extends CActiveRecord {
 	 * @property UserCourse[] $userCourses
 	 * @property CourseObjective[] $objectives
 	 */
-	
+
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @return CActiveRecord the static model class
@@ -31,17 +31,20 @@ class Course extends CActiveRecord {
 	public function tableName() {
 		return '{{course}}';
 	}
-	
+
 	public function behaviors() {
 		return array_merge(parent::behaviors(),
 				array(
 						'extendedFeatures' => array('class' => 'behaviors.EModelBehaviors'),
 						'ERememberFiltersBehavior' => array(
 								'class' => 'ext.ERememberFiltersBehavior.ERememberFiltersBehavior',
+						),
+						'EActiveRecordAutoQuoteBehavior' => array(
+								'class' => 'ext.EActiveRecordAutoQuoteBehavior.EActiveRecordAutoQuoteBehavior',
 						)
 				));
 	}
-	
+
 	/**
 	 * @return array validation rules for model attributes.
 	 */
@@ -53,7 +56,7 @@ class Course extends CActiveRecord {
 				array('name, rank', 'unique'),
 				array('title', 'length', 'max' => 255),
 				array('description', 'length', 'max' => 65535),
-	
+
 				array('id, name, rank, title, description', 'safe', 'on'=>'search'),
 		);
 	}
@@ -69,7 +72,7 @@ class Course extends CActiveRecord {
 				'userCount' => array(self::STAT, 'CPUser', '{{user_course}}(course_id, user_id)'),
 		);
 	}
-	
+
 	public function hasUser($user) {
 		if(is_int($user)) {
 			$this->getDbCriteria()->mergeWith(array(
@@ -100,22 +103,22 @@ class Course extends CActiveRecord {
 				'userCount' => t('User Count'),
 		);
 	}
-	
+
 	/**
 	 * Retrieves a list of models based on the current search/filter conditions.
 	 * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.
 	 */
 	public function search() {
-	
+
 		$criteria = new CDbCriteria;
-	
+
 		$criteria->order = '`t`.`rank`';
 		$criteria->compare('id', $this->id);
 		$criteria->compare('name', $this->name, true);
 		$criteria->compare('rank', $this->rank, true);
 		$criteria->compare('title', $this->title, true);
 		$criteria->compare('description', $this->description, true);
-	
+
 		return new CActiveDataProvider($this, array(
 				'criteria' => $criteria,
 		));

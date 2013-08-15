@@ -1,4 +1,4 @@
-<?php   
+<?php
 
 /**
  * This is the model class for table "employer_domain".
@@ -27,12 +27,15 @@ class GroupRegularExpression extends CActiveRecord
 	{
 		return '{{group_regular_expression}}';
 	}
-	
-	public function behaviors() 
+
+	public function behaviors()
 	{
 		return array_merge(parent::behaviors(),
 				array(
-						'extendedFeatures' => array('class' => 'behaviors.EModelBehaviors')
+						'extendedFeatures' => array('class' => 'behaviors.EModelBehaviors'),
+						'EActiveRecordAutoQuoteBehavior' => array(
+								'class' => 'ext.EActiveRecordAutoQuoteBehavior.EActiveRecordAutoQuoteBehavior',
+						)
 				));
 	}
 
@@ -46,11 +49,11 @@ class GroupRegularExpression extends CActiveRecord
 			array('regex', 'length', 'max' => 255),
 			array('id, group_id', 'numerical', 'integerOnly' => true),
 			array('group_id', 'exist', 'attributeName' => 'id', 'className' => 'Group'),
-				
+
 			array('id, regex', 'safe', 'on' => 'search'),
 		);
 	}
-	
+
 	/**
 	 * @return array relational rules.
 	 */

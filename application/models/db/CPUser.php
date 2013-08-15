@@ -110,6 +110,9 @@ class CPUser extends CActiveRecord {
 				),
 				'ERememberFiltersBehavior' => array(
 						'class' => 'ext.ERememberFiltersBehavior.ERememberFiltersBehavior',
+				),
+				'EActiveRecordAutoQuoteBehavior' => array(
+						'class' => 'ext.EActiveRecordAutoQuoteBehavior.EActiveRecordAutoQuoteBehavior',
 				)
 		));
 	}

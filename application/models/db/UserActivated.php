@@ -1,4 +1,4 @@
-<?php   
+<?php
 
 /**
  * This is the model class for table "user_activated".
@@ -19,18 +19,21 @@ class UserActivated extends CActiveRecord {
     public static function model($className=__CLASS__) {
         return parent::model($className);
     }
-    
+
     /**
      * @return string the associated database table name
      */
     public function tableName() {
         return '{{user_activated}}';
     }
-    
+
     public function behaviors() {
     	return array_merge(parent::behaviors(),
     			array(
-    					'extendedFeatures' => array('class' => 'behaviors.EModelBehaviors')
+    					'extendedFeatures' => array('class' => 'behaviors.EModelBehaviors'),
+						'EActiveRecordAutoQuoteBehavior' => array(
+								'class' => 'ext.EActiveRecordAutoQuoteBehavior.EActiveRecordAutoQuoteBehavior',
+						)
     			));
     }
 
@@ -42,7 +45,7 @@ class UserActivated extends CActiveRecord {
             array('user_id', 'required'),
             array('user_id', 'numerical', 'integerOnly' => true),
         	array('user_id', 'exist', 'attributeName' => 'id', 'className' => 'CPUser'),
-        		
+
         	array('date', 'date', 'format' => 'yyyy-M-d H:m:s'),
         );
     }

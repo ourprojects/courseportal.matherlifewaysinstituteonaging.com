@@ -1,4 +1,4 @@
-<?php   
+<?php
 
 class UserCourse extends CActiveRecord {
 	/**
@@ -27,14 +27,17 @@ class UserCourse extends CActiveRecord {
 	public function tableName() {
 		return '{{user_course}}';
 	}
-	
+
 	public function behaviors() {
 		return array_merge(parent::behaviors(),
 				array(
-						'extendedFeatures' => array('class' => 'behaviors.EModelBehaviors')
+						'extendedFeatures' => array('class' => 'behaviors.EModelBehaviors'),
+						'EActiveRecordAutoQuoteBehavior' => array(
+								'class' => 'ext.EActiveRecordAutoQuoteBehavior.EActiveRecordAutoQuoteBehavior',
+						)
 				));
 	}
-	
+
 	/**
 	 * @return array validation rules for model attributes.
 	 */
@@ -42,20 +45,20 @@ class UserCourse extends CActiveRecord {
 		return array(
 				array('user_id, course_id', 'required'),
 				array('user_id, course_id', 'numerical', 'integerOnly' => true),
-				
+
 				array('user_id', 'exist', 'attributeName' => 'id', 'className' => 'CPUser', 'allowEmpty' => false),
 				array('course_id', 'exist', 'attributeName' => 'id', 'className' => 'Course', 'allowEmpty' => false),
-				
-				array('course_id', 
-						'unique', 
-						'caseSensitive' => false, 
+
+				array('course_id',
+						'unique',
+						'caseSensitive' => false,
 						'criteria' => array(
 							'condition' => 'user_id = :id',
 							'params' => array(':id' => $this->user_id),
 						),
 						'message' => '{attribute} "{value}" has already been added to this user.',
 				),
-				
+
 				array('user_id, course_id', 'safe', 'on'=>'search'),
 		);
 	}
@@ -81,16 +84,16 @@ class UserCourse extends CActiveRecord {
 				'course' => t('Course'),
 		);
 	}
-	
+
 	public function getSearchCriteria() {
 		$criteria = new CDbCriteria;
-		
+
 		$criteria->compare('user_id', $this->user_id);
 		$criteria->compare('course_id', $this->course_id);
-		
+
 		return $criteria;
 	}
-	
+
 	/**
 	 * Retrieves a list of models based on the current search/filter conditions.
 	 * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.

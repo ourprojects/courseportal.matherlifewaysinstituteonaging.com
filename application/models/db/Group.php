@@ -1,4 +1,4 @@
-<?php   
+<?php
 
 class Group extends CActiveRecord {
 	/**
@@ -31,38 +31,41 @@ class Group extends CActiveRecord {
 	public function tableName() {
 		return '{{group}}';
 	}
-	
+
 	public function behaviors() {
 		return array_merge(parent::behaviors(),
 				array(
 						'extendedFeatures' => array('class' => 'behaviors.EModelBehaviors'),
 						'ERememberFiltersBehavior' => array(
 								'class' => 'ext.ERememberFiltersBehavior.ERememberFiltersBehavior',
+						),
+						'EActiveRecordAutoQuoteBehavior' => array(
+								'class' => 'ext.EActiveRecordAutoQuoteBehavior.EActiveRecordAutoQuoteBehavior',
 						)
 				));
 	}
-	
+
 	public function getIsAdmin() {
 		return $this->name === self::ADMIN;
 	}
-	
+
 	public function getIsGuest() {
 		return $this->name === self::GUEST;
 	}
-	
+
 	public function getIsRegistered() {
 		return $this->name === self::REGISTERED;
 	}
-	
+
 	public function getIsEmployee() {
 		return $this->name === self::EMPLOYEE;
 	}
-	
+
 	public function rules()
 	{
 		return array(
 				array('name', 'required'),
-				
+
 				array('id', 'unsafe', 'except' => 'search'),
 				array('id', 'numerical', 'integerOnly' => true),
 		);
@@ -90,7 +93,7 @@ class Group extends CActiveRecord {
 				'users' => t('Users'),
 		);
 	}
-	
+
 	/**
 	 * Retrieves a list of models based on the current search/filter conditions.
 	 * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.
@@ -99,17 +102,17 @@ class Group extends CActiveRecord {
 	{
 		// Warning: Please modify the following code to remove attributes that
 		// should not be searched.
-	
+
 		$criteria = new CDbCriteria;
-	
+
 		$criteria->compare('id', $this->id);
 		$criteria->compare('name', $this->name, true);
-	
+
 		return new CActiveDataProvider($this, array(
 				'criteria' => $criteria,
 		));
 	}
-	
+
 	public function __toString() {
 		return $this->name;
 	}

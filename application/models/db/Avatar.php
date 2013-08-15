@@ -1,4 +1,4 @@
-<?php   
+<?php
 /**
  * This is the model class for table "avatar".
  *
@@ -7,7 +7,7 @@
  * @property string $mime
  * @property string $name
  */
-class Avatar extends CActiveRecord 
+class Avatar extends CActiveRecord
 {
 
 	const DEFAULT_MIME = 'image/png';
@@ -24,7 +24,7 @@ class Avatar extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * @return CActiveRecord the static model class
 	 */
-	public static function model($className = __CLASS__) 
+	public static function model($className = __CLASS__)
 	{
 		return parent::model($className);
 	}
@@ -32,30 +32,33 @@ class Avatar extends CActiveRecord
 	/**
 	 * @return string the associated database table name
 	 */
-	public function tableName() 
+	public function tableName()
 	{
 		return '{{avatar}}';
 	}
-	
-	public function behaviors() 
+
+	public function behaviors()
 	{
-		return array_merge(parent::behaviors(), 
+		return array_merge(parent::behaviors(),
 				array(
-						'extendedFeatures' => array('class' => 'behaviors.EModelBehaviors')
+						'extendedFeatures' => array('class' => 'behaviors.EModelBehaviors'),
+						'EActiveRecordAutoQuoteBehavior' => array(
+								'class' => 'ext.EActiveRecordAutoQuoteBehavior.EActiveRecordAutoQuoteBehavior',
+						)
 					));
 	}
 
 	/**
 	 * @return array validation rules for model attributes.
 	 */
-	public function rules() 
+	public function rules()
 	{
 		return array(
 				array('user_id, mime, name', 'unsafe'),
 				array('user_id', 'required'),
 				array('image', 'required', 'on' => 'new'),
-				array('image', 
-						'file', 
+				array('image',
+						'file',
 						'allowEmpty' => true,
 						'maxFiles' => 1,
 						'maxSize' => self::MAX_FILE_SIZE,
@@ -74,23 +77,23 @@ class Avatar extends CActiveRecord
 				array('name', 'match', 'pattern' => '/[\da-fA-F]{1,4}/'),
 		);
 	}
-	
+
 	/**
 	 * @return array relational rules.
 	 */
-	public function relations() 
+	public function relations()
 	{
         return array(
             'user' => array(self::BELONGS_TO, 'CPUser', 'user_id'),
         );
 	}
-	
-	public static function getDefaultPath() 
+
+	public static function getDefaultPath()
 	{
 		return Yii::getPathOfAlias(self::AVATARS_PATH_ALIAS) . DIRECTORY_SEPARATOR . self::DEFAULT_NAME;
 	}
-	
-	public function getPath() 
+
+	public function getPath()
 	{
 		return Yii::getPathOfAlias(self::AVATARS_PATH_ALIAS) . DIRECTORY_SEPARATOR . $this->name;
 	}
@@ -98,7 +101,7 @@ class Avatar extends CActiveRecord
 	/**
 	 * @return array customized attribute labels (name => label)
 	 */
-	public function attributeLabels() 
+	public function attributeLabels()
 	{
 		return array(
 				'user_id' => t('User ID'),
@@ -108,58 +111,58 @@ class Avatar extends CActiveRecord
 				'user' => t('User'),
 		);
 	}
-	
-	public function loadUploadedFile($file) 
+
+	public function loadUploadedFile($file)
 	{
 		if(!$this->hasErrors())
 			$file = CUploadedFile::getInstance($this, 'image');
 		return $file;
 	}
-	
-	public function loadImage($image) 
+
+	public function loadImage($image)
 	{
 		if(!$this->hasErrors() && isset($image))
 			$image = Yii::app()->getComponent('image')->load($image->getTempName())->resize(self::MAX_WIDTH, self::MAX_HEIGHT);
 		return $image;
 	}
-	
+
 	public function loadMimeType($mime)
 	{
 		if(isset($this->image))
 			$mime = $this->image->mime;
 		return $mime;
 	}
-	
-	public function generateUniqueName($name) 
+
+	public function generateUniqueName($name)
 	{
-		if(!isset($name)) 
+		if(!isset($name))
 		{
-			do 
+			do
 			{
 				$name = sha1(uniqid('', true));
-			} 
+			}
 			while(self::model()->exists('name = :name', array(':name' => $name)));
 		}
 		return $name;
 	}
 
-	protected function afterSave() 
+	protected function afterSave()
 	{
-		if(isset($this->image)) 
+		if(isset($this->image))
 		{
 			$this->image->save($this->getPath());
 		}
 		parent::afterSave();
 	}
 
-	protected function afterDelete() 
+	protected function afterDelete()
 	{
 		if(file_exists($this->getPath()))
 			unlink($this->getPath());
 		parent::afterDelete();
 	}
-	
-	public function __toString() 
+
+	public function __toString()
 	{
 		return $this->name;
 	}
