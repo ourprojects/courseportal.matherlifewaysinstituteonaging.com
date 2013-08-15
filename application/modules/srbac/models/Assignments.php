@@ -13,6 +13,8 @@
  * @package srbac.models
  */
 
+require_once(dirname(__FILE__).DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'components'.DIRECTORY_SEPARATOR.'SrbacUtilities.php');
+
 class Assignments extends CActiveRecord
 {
 	/**
@@ -64,7 +66,11 @@ class Assignments extends CActiveRecord
 				array('item_id, user_id', 'numerical', 'integerOnly' => true),
 				array('item_id, user_id', 'required'),
 				array('item_id', 'exist', 'attributeName' => 'id', 'className' => 'AuthItem', 'allowEmpty' => false),
+<<<<<<< .merge_file_Taec0l
 				array('user_id', 'exist', 'attributeName' => Helper::findModule('srbac')->userId, 'className' => Helper::findModule('srbac')->userclass, 'allowEmpty' => false),
+=======
+				array('user_id', 'exist', 'attributeName' => SrbacUtilities::getSrbacModule()->userId, 'className' => SrbacUtilities::getSrbacModule()->userclass, 'allowEmpty' => false),
+>>>>>>> .merge_file_ucQRwL
 				array('bizrule, data', 'safe'),
 				array('user_id, item_id', 'safe', 'on' => 'search'),
 		);
@@ -77,7 +83,11 @@ class Assignments extends CActiveRecord
 	{
 		return array(
 				'authItem' => array(self::BELONGS_TO, 'AuthItem', 'item_id'),
+<<<<<<< .merge_file_Taec0l
 				'user' => array(self::BELONGS_TO, Helper::findModule('srbac')->userclass, 'user_id'),
+=======
+				'user' => array(self::BELONGS_TO, SrbacUtilities::getSrbacModule()->userclass, 'user_id'),
+>>>>>>> .merge_file_ucQRwL
 		);
 	}
 

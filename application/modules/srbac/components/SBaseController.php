@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< .merge_file_E2TISD
 /**
  * SBaseController class file.
  *
@@ -20,19 +21,48 @@
  * @since 1.0.2
  */
 Yii::import("srbac.components.Helper");
+=======
+require_once('SrbacUtilities.php');
+>>>>>>> .merge_file_2sZlrX
 
 class SBaseController extends CController
 {
 
 	public $breadcrumbs = array();
 
+<<<<<<< .merge_file_E2TISD
 	/**
 	 * Checks if srbac access is granted for the current user
+=======
+	public function filters()
+	{
+		return array(
+				'accessControl' => array(
+						'SrbacAccessControlFilter',
+						'rules' => $this->accessRules()
+				),
+		);
+	}
+
+	public function accessRules()
+	{
+		return array(
+				array(
+					'deny',
+					'expression' => 'SrbacUtilities::isInstalled() && !SrbacUtilities::getSrbacModule()->debug'
+				)
+		);
+	}
+
+	/**
+	 * Checks if srbac access is need because debug mode is on or installation is incomplete
+>>>>>>> .merge_file_2sZlrX
 	 * @param String $action . The current action
 	 * @return boolean true if access is granted else false
 	 */
 	protected function beforeAction($action)
 	{
+<<<<<<< .merge_file_E2TISD
 		if (!$this->getModule()->isInstalled() && $action->id !== 'install')
 		{
 			$this->redirect(array('install'));
@@ -109,6 +139,13 @@ class SBaseController extends CController
 			}
 			return false;
 		}
+=======
+		if(!SrbacUtilities::isInstalled() && $action->getId() !== 'install')
+		{
+			$this->redirect(array('install'));
+		}
+		return parent::beforeAction($action);
+>>>>>>> .merge_file_2sZlrX
 	}
 
 }

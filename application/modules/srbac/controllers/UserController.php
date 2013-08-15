@@ -26,4 +26,8 @@ class UserController extends SBaseController
 		}
 	}
 
+<<<<<<< .merge_file_IQsUeb
 }
+=======
+}
+>>>>>>> .merge_file_5twGqN

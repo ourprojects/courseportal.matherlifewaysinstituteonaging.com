@@ -11,6 +11,8 @@
  * @author Louis DaPrato <l.daprato@gmail.com>
  * @package srbac.models
  */
+require_once(dirname(__FILE__).DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'components'.DIRECTORY_SEPARATOR.'SrbacUtilities.php');
+
 class AuthItem extends CActiveRecord
 {
 	/**
@@ -103,10 +105,26 @@ class AuthItem extends CActiveRecord
 	{
 		return array(
 				'assignments' => array(self::HAS_MANY, 'Assignments', 'item_id'),
+<<<<<<< .merge_file_cSE1u3
 				'users' => array(self::MANY_MANY, Helper::findModule('srbac')->userclass, Yii::app()->getAuthManager()->assignmentTable.'(item_id, user_id)'),
+=======
+				'users' => array(self::MANY_MANY, SrbacUtilities::getSrbacModule()->userclass, Yii::app()->getAuthManager()->assignmentTable.'(item_id, user_id)'),
+>>>>>>> .merge_file_KrTjP1
 				'children' => array(self::MANY_MANY, 'AuthItem', ItemChildren::model()->tableName().'(parent_id, child_id)'),
 				'parents' => array(self::MANY_MANY, 'AuthItem', ItemChildren::model()->tableName().'(child_id, parent_id)')
 		);
+	}
+
+	public function superUser()
+	{
+		$this->with(array('users' => array('joinType' => 'INNER JOIN')))->together()->type(EAuthItem::TYPE_ROLE)
+			->getDbCriteria()
+			->addColumnCondition(
+					array(
+							$this->getDbConnection()->getSchema()->quoteColumnName($this->getTableAlias(false, false).'.name') => SrbacUtilities::getSrbacModule()->superUser
+					)
+			);
+		return $this;
 	}
 
 	/**
@@ -127,8 +145,13 @@ class AuthItem extends CActiveRecord
 	public function obsolete($obsolete = true)
 	{
 		$criteria = $this->getDbCriteria();
+<<<<<<< .merge_file_cSE1u3
 		$authItems = Helper::findModule('srbac')->generateAuthItems(false);
 		array_walk($authItems, create_function('&$authItem', '$authItem = "'.Helper::findModule('srbac')->getGeneratedAuthItemNamePrefix().'".$authItem["name"];'));
+=======
+		$authItems = SrbacUtilities::getSrbacModule()->generateAuthItems(false);
+		array_walk($authItems, create_function('&$authItem', '$authItem = "'.SrbacUtilities::getSrbacModule()->getGeneratedAuthItemNamePrefix().'".$authItem["name"];'));
+>>>>>>> .merge_file_KrTjP1
 		if($obsolete)
 		{
 			$criteria->addNotInCondition('name', $authItems);
@@ -233,7 +256,11 @@ class AuthItem extends CActiveRecord
 
 	public function getFullName()
 	{
+<<<<<<< .merge_file_cSE1u3
 		return $this->generated ? Helper::findModule('srbac')->getGeneratedAuthItemNamePrefix().$this->getAttribute('name') : $this->getAttribute('name');
+=======
+		return $this->generated ? SrbacUtilities::getSrbacModule()->getGeneratedAuthItemNamePrefix().$this->getAttribute('name') : $this->getAttribute('name');
+>>>>>>> .merge_file_KrTjP1
 	}
 
 	protected function beforeSave()
@@ -266,7 +293,11 @@ class AuthItem extends CActiveRecord
 		$this->setAttribute('data', serialize($this->getAttribute('data')));
 		if($this->generated)
 		{
+<<<<<<< .merge_file_cSE1u3
 			$this->setAttribute('name', Helper::findModule('srbac')->getGeneratedAuthItemNamePrefix().$this->getAttribute('name'));
+=======
+			$this->setAttribute('name', SrbacUtilities::getSrbacModule()->getGeneratedAuthItemNamePrefix().$this->getAttribute('name'));
+>>>>>>> .merge_file_KrTjP1
 		}
 	}
 
@@ -277,7 +308,11 @@ class AuthItem extends CActiveRecord
 			$data = null;
 		}
 		$this->setAttribute('data', $data);
+<<<<<<< .merge_file_cSE1u3
 		$this->setAttribute('name', preg_replace('/^'.Helper::findModule('srbac')->getGeneratedAuthItemNamePrefix().'(.+)$/i', '$1', $this->getAttribute('name'), 1, $count));
+=======
+		$this->setAttribute('name', preg_replace('/^'.SrbacUtilities::getSrbacModule()->getGeneratedAuthItemNamePrefix().'(.+)$/i', '$1', $this->getAttribute('name'), 1, $count));
+>>>>>>> .merge_file_KrTjP1
 		$this->generated = (bool)$count;
 	}
 
@@ -289,7 +324,11 @@ class AuthItem extends CActiveRecord
 
 	public function getIsSuperUser()
 	{
+<<<<<<< .merge_file_cSE1u3
 		return $this->getAttribute('name') === Helper::findModule('srbac')->superUser;
+=======
+		return $this->getAttribute('name') === SrbacUtilities::getSrbacModule()->superUser;
+>>>>>>> .merge_file_KrTjP1
 	}
 
 	/**
@@ -313,7 +352,11 @@ class AuthItem extends CActiveRecord
 		$criteria->compare('id', $this->getAttribute('id'));
 		if(isset($this->name) && $this->name !== '')
 		{
+<<<<<<< .merge_file_cSE1u3
 			$name = strtr($this->generated ? Helper::findModule('srbac')->getGeneratedAuthItemNamePrefix() : '', array('%'=>'\%', '_'=>'\_', '\\'=>'\\\\'));
+=======
+			$name = strtr($this->generated ? SrbacUtilities::getSrbacModule()->getGeneratedAuthItemNamePrefix() : '', array('%'=>'\%', '_'=>'\_', '\\'=>'\\\\'));
+>>>>>>> .merge_file_KrTjP1
 			$name .= '%'.strtr($this->getAttribute('name'), array('%'=>'\%', '_'=>'\_', '\\'=>'\\\\')).'%';
 			$criteria->compare('name', $name, true, 'AND', false);
 		}
@@ -321,7 +364,11 @@ class AuthItem extends CActiveRecord
 		$criteria->compare('description', $this->getAttribute('description'), true);
 		$criteria->compare('bizrule', $this->getAttribute('bizrule'), true);
 		$criteria->compare('data', isset($this->data) ? serialize($this->getAttribute('data')) : $this->getAttribute('data'));
+<<<<<<< .merge_file_cSE1u3
 		$criteria->mergeWith(array('condition' => 'name'.($this->generated ? ' ' : ' NOT ').'REGEXP :nameRegex', 'params' => array(':nameRegex' => '^'.Helper::findModule('srbac')->getGeneratedAuthItemNamePrefix().'(.+)$')));
+=======
+		$criteria->mergeWith(array('condition' => 'name'.($this->generated ? ' ' : ' NOT ').'REGEXP :nameRegex', 'params' => array(':nameRegex' => '^'.SrbacUtilities::getSrbacModule()->getGeneratedAuthItemNamePrefix().'(.+)$')));
+>>>>>>> .merge_file_KrTjP1
 
 		return $criteria;
 	}

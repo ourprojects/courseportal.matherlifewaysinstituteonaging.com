@@ -5,6 +5,7 @@ class SrbacModule extends CWebModule
 	//Constants
 	const ICON_PACKS = "noia,tango";
 	const PRIVATE_ATTRIBUTES = "_icons,_cssPublished,_imagesPublished,defaultController,controllerMap,preload,behaviors";
+<<<<<<< .merge_file_JpaN7p
 	const TABLE_NAMES_ERROR = "Srbac is installed but the CDBAuthManger table names in the database are different from those
 			in the CDBAuthManager configuration.<br />A common mistake is that names in database are in lowercase.<br />Srbac may not work correctly!!!";
 
@@ -13,6 +14,8 @@ class SrbacModule extends CWebModule
 	private $_yiiSupportedVersion = "1.1.0";
 	/* @var $_version Srbac version */
 	private $_version = "1.3beta";
+=======
+>>>>>>> .merge_file_i5eVIB
 
 	// Srbac Attributes
 	/* @var $debug If srbac is in debug mode */
@@ -36,7 +39,11 @@ class SrbacModule extends CWebModule
 	/**
 	 * @var string the ID of the default controller for this module. Defaults to 'default'.
 	 */
+<<<<<<< .merge_file_JpaN7p
 	public $defaultController = 'authitem';
+=======
+	public $defaultController = 'authItem';
+>>>>>>> .merge_file_i5eVIB
 	/**
 	 * @var mixed the layout that is shared by the controllers inside this module.
 	 * If a controller has explicitly declared its own {@link CController::layout layout},
@@ -93,6 +100,7 @@ class SrbacModule extends CWebModule
 		return $this->_debug;
 	}
 
+<<<<<<< .merge_file_JpaN7p
 	/**
 	 * Checks if srbac is installed by checking if Auth items table exists.
 	 * @return boolean Whether srbac is installed or not
@@ -138,6 +146,8 @@ class SrbacModule extends CWebModule
 		}
 	}
 
+=======
+>>>>>>> .merge_file_i5eVIB
 	public function getStaticUserModel()
 	{
 		return call_user_func(array($this->userclass, 'model'));
@@ -191,6 +201,7 @@ class SrbacModule extends CWebModule
 		return $this->getAssetsUrl() . '/images/' . $file;
 	}
 
+<<<<<<< .merge_file_JpaN7p
 	/**
 	 * Geting all the application's controllers and its module's controllers
 	 * @return array The controllers
@@ -394,18 +405,52 @@ class SrbacModule extends CWebModule
 			$nameParts = explode('.', $controller);
 			$controllerClassName = array_pop($nameParts);
 			$nameParts[] = preg_replace('/^(.+)Controller$/i', '$1', $controllerClassName);
+=======
+	private $_generatedAuthItems;
+	private $_generatedMissingAuthItems;
+
+	public function generateAuthItems($missingOnly = true)
+	{
+		if($missingOnly)
+		{
+			if(isset($this->_generatedMissingAuthItems))
+			{
+				return $this->_generatedMissingAuthItems;
+			}
+		}
+		elseif(isset($this->_generatedAuthItems))
+		{
+			return $this->_generatedAuthItems;
+		}
+
+		require_once(dirname(__FILE__).DIRECTORY_SEPARATOR.'components'.DIRECTORY_SEPARATOR.'SrbacUtilities.php');
+
+		$authItems = array();
+		$authItemNames = array();
+		$authItemCount = 0;
+		foreach(SrbacUtilities::getApplicationControllers() as $controller)
+		{
+			$nameParts = explode('.', $controller);
+			$nameParts[] = preg_replace('/^(.+)Controller$/i', '$1', array_pop($nameParts));
+>>>>>>> .merge_file_i5eVIB
 			foreach($nameParts as &$part)
 			{
 				$part = preg_replace('/(?<!^)([A-Z])/', ' \\1', ucfirst($part));
 			}
 
 			$controllerName = implode('.', $nameParts);
+<<<<<<< .merge_file_JpaN7p
 			$fullName = $this->_generatedAuthItemNamePrefix.$controllerName;
 			if(!isset($authItemNames[$fullName]))
+=======
+			$fullName = $this->_generatedAuthItemNamePrefix.$controllerName;
+			if(!isset($authItemNames[$fullName]))
+>>>>>>> .merge_file_i5eVIB
 			{
 				$authItemCount++;
 				$authItemNames[$fullName] = $authItemCount;
 				$authItems[$authItemCount] = array('id' => null, 'name' => $controllerName, 'type' => EAuthItem::TYPE_TASK, 'generated' => true);
+<<<<<<< .merge_file_JpaN7p
 
 				if(isset($controllerClassNames[$controllerClassName]))
 				{
@@ -416,17 +461,29 @@ class SrbacModule extends CWebModule
 					$controllerClassNames[$controllerClassName] = true;
 					$actions = $this->extractControllerActions($controller);
 				}
+=======
+
+				$actions = SrbacUtilities::getControllerActions($controller);
+>>>>>>> .merge_file_i5eVIB
 				if($actions !== false)
 				{
 					foreach($actions as $action)
 					{
+<<<<<<< .merge_file_JpaN7p
 						$actionName = $controllerName.'.'.preg_replace('/(?<!^)([A-Z])/', ' \\1', ucfirst($action));
+=======
+						$actionName = $controllerName.'.'.preg_replace('/(?<!^)([A-Z])/', ' \\1', ucfirst($action));
+>>>>>>> .merge_file_i5eVIB
 						$fullName = $this->_generatedAuthItemNamePrefix.$actionName;
 						$authItemCount++;
 						$authItemNames[$fullName] = $authItemCount;
 						$authItems[$authItemCount] = array('id' => null, 'name' => $actionName, 'type' => EAuthItem::TYPE_OPERATION, 'generated' => true);
 					}
+<<<<<<< .merge_file_JpaN7p
 				}
+=======
+				}
+>>>>>>> .merge_file_i5eVIB
 			}
 		}
 
@@ -440,7 +497,11 @@ class SrbacModule extends CWebModule
 		$criteria->addInCondition('name', array_keys($authItemNames));
 
 		foreach(AuthItem::model()->findAll($criteria) as $authItem)
+<<<<<<< .merge_file_JpaN7p
 		{
+=======
+		{
+>>>>>>> .merge_file_i5eVIB
 			$fullName = $authItem->getFullName();
 			if(isset($authItemNames[$fullName]))
 			{
@@ -455,10 +516,17 @@ class SrbacModule extends CWebModule
 			}
 		}
 
+<<<<<<< .merge_file_JpaN7p
 		if($missingOnly)
 		{
 			return $this->_generatedMissingAuthItems = $authItems;
 		}
+=======
+		if($missingOnly)
+		{
+			return $this->_generatedMissingAuthItems = $authItems;
+		}
+>>>>>>> .merge_file_i5eVIB
 		return $this->_generatedAuthItems = $authItems;
 	}
 
