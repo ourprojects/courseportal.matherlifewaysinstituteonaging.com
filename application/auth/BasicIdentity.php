@@ -1,30 +1,30 @@
-<?php   
+<?php
 
-class BasicIdentity extends CoursePortalUserIdentity 
-{	
+class BasicIdentity extends CoursePortalUserIdentity
+{
 	protected $name_email;
 	protected $password;
-	
-	public function __construct($name_email, $password) 
+
+	public function __construct($name_email, $password)
 	{
 		$this->name_email = $name_email;
 		$this->password = $password;
 	}
-	
-	public function getPassword() 
+
+	public function getPassword()
 	{
-		return $this->password;	
+		return $this->password;
 	}
-	
-	public function authenticate() 
+
+	public function authenticate()
 	{
-		$this->_model = CPUser::model()->find('email = :name_email OR name = :name_email', array(':name_email' => $this->name_email));
-		
-		if($this->_model === null) 
+		$this->_model = CPUser::model()->autoQuoteFind(array('or', 'email=:name_email', 'name=:name_email', array(':name_email' => $this->name_email));
+
+		if($this->_model === null)
 		{
 			$this->errorCode = self::ERROR_USERNAME_INVALID;
-		} 
-		else if(!$this->_model->verify($this->password)) 
+		}
+		else if(!$this->_model->verify($this->password))
 		{
 			$this->errorCode = self::ERROR_PASSWORD_INVALID;
 		}
@@ -32,11 +32,11 @@ class BasicIdentity extends CoursePortalUserIdentity
 		{
 			$this->errorCode = self::ERROR_NOT_ACTIVATED;
 		}
-		else 
+		else
 		{
 			$this->errorCode = self::ERROR_NONE;
 		}
 		return parent::authenticate();
 	}
-	
+
 }

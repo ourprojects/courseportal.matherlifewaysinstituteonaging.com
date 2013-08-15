@@ -388,9 +388,7 @@ class UserController extends ApiController {
 		if(isset($_GET['CPUser']))
 			$model->setAttributes($_GET['CPUser']);
 
-		$criteria = $model->getSearchCriteria();
-		$criteria->mergeWith($model->getSearchCriteria());
-		$users = $model->with('group')->findAll($criteria);
+		$users = $model->with('group')->findAll($model->getSearchCriteria());
 		$data = array();
 		foreach($users as $user) {
 			$user->attachBehavior('toArray', array('class' => 'behaviors.EArrayBehavior'));

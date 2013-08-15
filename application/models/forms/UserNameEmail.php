@@ -36,7 +36,7 @@ class UserNameEmail extends CFormModel {
 		if(isset($this->name_email) &&
 				(!isset($this->_user) ||
 						(strcasecmp($this->_user->email, $this->name_email) && strcasecmp($this->_user->name, $this->name_email))))
-			$this->_user = CPUser::model()->find('email = :name_email OR name = :name_email', array(':name_email' => $this->name_email));
+			$this->_user = CPUser::model()->autoQuoteFind(array('or', 'email=:name_email', 'name=:name_email'), array(':name_email' => $this->name_email));
 		return $this->_user;
 	}
 

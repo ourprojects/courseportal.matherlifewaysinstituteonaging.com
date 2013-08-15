@@ -1,4 +1,4 @@
-<?php   
+<?php
 
 class CourseController extends OnlineCoursePortalController {
 
@@ -10,10 +10,10 @@ class CourseController extends OnlineCoursePortalController {
 				array('filters.HttpsFilter'),
 				'accessControl',
 				'verifyUserCourse'
-				
+
 		);
 	}
-	
+
 	public function accessRules() {
 		return array(
 				array('allow',
@@ -24,14 +24,11 @@ class CourseController extends OnlineCoursePortalController {
 				),
 		);
 	}
-	
+
 	public function filterVerifyUserCourse($filterChain) {
 		if($filterChain->action->getId() === $this->defaultMissingAction)
 		{
-			$course = Course::model()->with('objectives')->find(array(
-					'condition' => 'name=:name', 
-					'params' => array(':name' => $filterChain->action->getRequestedView()))
-			);
+			$course = Course::model()->with('objectives')->autoQuoteFind(array('and', 'name=:name'), array(':name' => $filterChain->action->getRequestedView()));
 			if(Yii::app()->getUser()->getIsEmployee() ||
 					Yii::app()->getUser()->getIsAdmin() ||
 					UserCourse::model()->exists('course_id=:course_id AND user_id=:user_id',
@@ -43,20 +40,20 @@ class CourseController extends OnlineCoursePortalController {
 		}
 		return $filterChain->run();
 	}
-	
+
 	public function createCourseUrl($course) {
 		return $this->createUrl($course->name);
 	}
-	
+
 	public function actionNotRegistered($id) {
 		$course = Course::model()->findByPk($id);
 		if($course === null)
 			throw new CHttpException(404, t('Course not found'));
 		$this->render('pages/notRegistered', array('course' => $course));
 	}
-	
+
 	public function actionIndex() {
-		$this->render('pages/index', array('courses' => Course::model()->with('objectives')->findAll(array('order' => '`t`.`rank`'))));
+		$this->render('pages/index', array('courses' => Course::model()->with('objectives')->findAll(array('order' => 'rank'))));
 	}
-	
+
 }
