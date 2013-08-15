@@ -3,6 +3,11 @@
 class EActiveRecordAutoQuoteBehavior extends CActiveRecordBehavior
 {
 
+	public function autoQuoteExists($conditions, $params = array())
+	{
+		return $this->getOwner()->exists($this->processConditions($conditions), $params);
+	}
+
 	public function autoQuoteFind($conditions, $params = array())
 	{
 		return $this->getOwner()->find($this->processConditions($conditions), $params);
@@ -18,9 +23,49 @@ class EActiveRecordAutoQuoteBehavior extends CActiveRecordBehavior
 		return $this->getOwner()->findAllByAttributes($attributes, $this->processConditions($conditions), $params);
 	}
 
-	public function autoQuoteFindAllByPk($pk, $conditions, $params = array())
+	public function autoQuoteFindByPk($pk, $conditions, $params = array())
 	{
-		return $this->getOwner()->findAllByPk($pk, $this->processConditions($conditions), $params);
+		return $this->getOwner()->findByPk($pk, $this->processConditions($conditions), $params);
+	}
+
+	public function autoQuoteCount($conditions, $params = array())
+	{
+		return $this->getOwner()->count($this->processConditions($conditions), $params);
+	}
+
+	public function autoQuoteCountByAttributes($attributes, $conditions, $params = array())
+	{
+		return $this->getOwner()->countByAttributes($attributes, $this->processConditions($conditions), $params);
+	}
+
+	public function autoQuoteDeleteAll($conditions, $params = array())
+	{
+		return $this->getOwner()->deleteAll($this->processConditions($conditions), $params);
+	}
+
+	public function autoQuoteDeleteAllByAttributes($attributes, $conditions, $params = array())
+	{
+		return $this->getOwner()->deleteAllByAttributes($attributes, $this->processConditions($conditions), $params);
+	}
+
+	public function autoQuoteDeleteByPk($pk, $conditions, $params = array())
+	{
+		return $this->getOwner()->deleteByPk($pk, $this->processConditions($conditions), $params);
+	}
+
+	public function autoQuoteUpdateAll($attributes, $conditions, $params = array())
+	{
+		return $this->getOwner()->updateAll($attributes, $this->processConditions($conditions), $params);
+	}
+
+	public function autoQuoteUpdateByPk($attributes, $conditions, $params = array())
+	{
+		return $this->getOwner()->updateByPk($attributes, $this->processConditions($conditions), $params);
+	}
+
+	public function autoQuoteUpdateCounters($counters, $conditions, $params = array())
+	{
+		return $this->getOwner()->updateCounters($counters, $this->processConditions($conditions), $params);
 	}
 
 	/**
