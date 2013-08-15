@@ -3,6 +3,6 @@
 _notes
 
 # Directories with dynamic content
-/assets
-/application/runtime
-/tmp
+/assets/*
+/application/runtime/*
+/tmp/*
