@@ -238,13 +238,13 @@ class CPUser extends CActiveRecord {
 	{
 		if(!$params['setOnEmpty'] || empty($this->$attribute))
 		{
-			if($emailGroup = GroupRegularExpression::model()->find(':email RLIKE regex', array(':email' => $this->email)))
+			if($emailGroup = GroupRegularExpression::model()->find(':email REGEXP regex', array(':email' => $this->email)))
 			{
 				$this->$attribute = $emailGroup->group_id;
 			}
 			else
 			{
-				$this->$attribute = Group::model()->find('name=:name', array(':name' => Group::DEFAULT_GROUP))->id;
+				$this->$attribute = Group::model()->autoQuoteFind(array('and', 'name' => Group::DEFAULT_GROUP))->id;
 			}
 		}
 	}
@@ -317,7 +317,7 @@ class CPUser extends CActiveRecord {
 		if(!isset($name)) {
 			do {
 				$name = uniqid('temp_username_');
-			} while(self::model()->exists('name = :name', array(':name' => $name)));
+			} while(self::model()->autoQuoteExists(array('and', 'name' => $name)));
 		}
 		return $name;
 	}

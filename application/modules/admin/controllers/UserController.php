@@ -111,7 +111,7 @@ class UserController extends AController
     	}
     	elseif(is_string($id))
     	{
-    		$model = CPUser::model()->find('name = :name OR email = :name', array(':name' => $id));
+    		$model = CPUser::model()->autoQuoteFind(array('or', 't.name' => $id, 't.email' => $id));
     	}
     	else
     	{

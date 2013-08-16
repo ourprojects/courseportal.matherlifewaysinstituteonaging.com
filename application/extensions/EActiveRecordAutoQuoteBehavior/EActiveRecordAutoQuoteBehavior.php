@@ -173,21 +173,28 @@ class EActiveRecordAutoQuoteBehavior extends CActiveRecordBehavior
 			return $column.' '.$operator.' ('.implode(', ', $values).')';
 		}
 
-		if($operator === 'LIKE' || $operator === 'NOT LIKE' || $operator === 'OR LIKE' || $operator === 'OR NOT LIKE')
+		if($operator === 'LIKE' ||
+				$operator === 'NOT LIKE' ||
+				$operator === 'OR LIKE' ||
+				$operator === 'OR NOT LIKE' ||
+				$operator === 'REGEXP' ||
+				$operator === 'NOT REGEXP' ||
+				$operator === 'OR REGEXP' ||
+				$operator === 'OR NOT REGEXP')
 		{
 			if($values === array())
 			{
 				return $operator === 'LIKE' || $operator === 'OR LIKE' ? '0=1' : '';
 			}
 
-			if($operator === 'LIKE' || $operator === 'NOT LIKE')
+			if(strpos($operator, 'OR ') === false)
 			{
 				$andor = ' AND ';
 			}
 			else
 			{
 				$andor = ' OR ';
-				$operator = $operator === 'OR LIKE' ? 'LIKE' : 'NOT LIKE';
+				$operator = preg_replace('/^OR (.+)$/', '$1', $operator);
 			}
 			$expressions = array();
 			foreach($values as $value)
