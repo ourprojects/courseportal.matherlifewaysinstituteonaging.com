@@ -28,7 +28,7 @@
 										'class' => 'dropdown',
 										'ajax' => array(
 											'type' => 'GET',
-											'url' => $this->createUrl('/srbac/assign/children', array('parentType' => $parentType, 'childType' => $childType)),
+											'url' => $this->createUrl('/'.SrbacUtilities::SRBAC_MODULE_NAME.'/assign/children', array('parentType' => $parentType, 'childType' => $childType)),
 											'update' => '#'.AuthItem::$TYPES[$childType].'Management',
 											'beforeSend' => 'function(){$("#loadMessage'.AuthItem::$TYPES[$childType].'").addClass("srbacLoading");}',
 											'complete' => 'function(){$("#loadMessage'.AuthItem::$TYPES[$childType].'").removeClass("srbacLoading");}'

@@ -409,7 +409,7 @@ class SrbacUtilities
 		catch(Exception $ex)
 		{
 			$transaction->rollback();
-			throw $ex;
+			return self::ERROR;
 		}
 
 		return self::SUCCESS; //Success

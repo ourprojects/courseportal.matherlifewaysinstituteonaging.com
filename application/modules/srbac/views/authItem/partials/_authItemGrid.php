@@ -26,7 +26,7 @@ $this->widget('zii.widgets.grid.CGridView',
 								'buttons' => array(
 										'create' => array(
 												'label' => Yii::t('srbac', 'Create'),
-												'url' => '$this->grid->getController()->createUrl("/srbac/authItem/authItem", array_merge($data instanceof AuthItem ? $data->getAttributes($data->getSafeAttributeNames()) : $data, array("ajax" => "'.$formId.'")))',
+												'url' => '$this->grid->getController()->createUrl("/'.SrbacUtilities::SRBAC_MODULE_NAME.'/authItem/authItem", array_merge($data instanceof AuthItem ? $data->getAttributes($data->getSafeAttributeNames()) : $data, array("ajax" => "'.$formId.'")))',
 												'imageUrl' => $this->getModule()->getIconsUrl('create.png'),
 												'click' => 'function(){'.CHtml::ajax(
 														array(
@@ -40,7 +40,7 @@ $this->widget('zii.widgets.grid.CGridView',
 												'visible' => '$data instanceof CActiveRecord ? $data->getIsNewRecord() : (empty($data["id"]) || empty($data["name"]))'
 										),
 										'update' => array(
-												'url' => '$this->grid->getController()->createUrl("/srbac/authItem/authItem", array("id" => $data["id"]))',
+												'url' => '$this->grid->getController()->createUrl("/'.SrbacUtilities::SRBAC_MODULE_NAME.'/authItem/authItem", array("id" => $data["id"]))',
 												'imageUrl' => $this->getModule()->getIconsUrl('update.png'),
 												'click' => 'function(){'.CHtml::ajax(
 														array(
@@ -53,7 +53,7 @@ $this->widget('zii.widgets.grid.CGridView',
 												'visible' => '$data instanceof CActiveRecord ? !$data->getIsNewRecord() : !(empty($data["id"]) || empty($data["name"]))'
 										),
 										'delete' => array(
-												'url' => '$this->grid->getController()->createUrl("/srbac/authItem/authItem", array("id" => $data["id"]))',
+												'url' => '$this->grid->getController()->createUrl("/'.SrbacUtilities::SRBAC_MODULE_NAME.'/authItem/authItem", array("id" => $data["id"]))',
 												'imageUrl' => $this->getModule()->getIconsUrl('delete.png'),
 												'click' => 'function(){'.
 														'if(!confirm("'.Yii::t('srbac', 'Are you sure you want to delete this item?').'")) return false;'.

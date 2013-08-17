@@ -29,7 +29,7 @@ var autoMissingAuthItems = <?php echo CJavaScript::encode(array('AuthItems' => $
 								'title' => Yii::t('srbac', 'Create All'),
 						)
 			) . Yii::t('srbac', 'Create All'),
-			$this->createUrl('/srbac/authItem/authItem', array('ajax' => 'autoMissingTab')),
+			$this->createUrl('/'.SrbacUtilities::SRBAC_MODULE_NAME.'/authItem/authItem', array('ajax' => 'autoMissingTab')),
 			array(
 				'type' => 'POST',
 				'data' => 'js:autoMissingAuthItems',

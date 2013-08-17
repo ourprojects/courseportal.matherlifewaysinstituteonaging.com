@@ -25,7 +25,7 @@
 		<?php
 		echo CHtml::ajaxButton(
 				'<<',
-				$this->createUrl('/srbac/assign/children', array('parentType' => $parentType, 'childType' => $childType)),
+				$this->createUrl('/'.SrbacUtilities::SRBAC_MODULE_NAME.'/assign/children', array('parentType' => $parentType, 'childType' => $childType)),
 				array(
 					'type' => 'PUT',
 					'update' => '#'.AuthItem::$TYPES[$childType].'Management',
@@ -36,7 +36,7 @@
 		);
 		echo CHtml::ajaxButton(
 				'>>',
-				$this->createUrl('/srbac/assign/children', array('parentType' => $parentType, 'childType' => $childType)),
+				$this->createUrl('/'.SrbacUtilities::SRBAC_MODULE_NAME.'/assign/children', array('parentType' => $parentType, 'childType' => $childType)),
 				array(
 					'type' => 'DELETE',
 					'update' => '#'.AuthItem::$TYPES[$childType].'Management',

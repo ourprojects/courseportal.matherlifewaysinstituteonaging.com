@@ -396,9 +396,14 @@ div.srbacLoading * {
 	background-position: right;
 }
 
-#srbacError {
-	color: red;
+#srbacFlash {
+	border: 2px solid #ddd;
+	background: #FFF6BF;
+	color: #514721;
+	border-color: #FFD324;
 	font-weight: bold;
-	font-size: 110%;
-	padding-top: 10px;
+	font-size: 1.1em;
+	padding: .8em;
+	margin-top: .75em;
+	margin-bottom: .75em;
 }

@@ -17,7 +17,7 @@
 											'title' => Yii::t('srbac', 'Create New'),
 									)
 						) . Yii::t('srbac', 'Create New'),
-						$this->createUrl('/srbac/authItem/authItem', array('ajax' => 'authItem-form')),
+						$this->createUrl('/'.SrbacUtilities::SRBAC_MODULE_NAME.'/authItem/authItem', array('ajax' => 'authItem-form')),
 						array(
 							'type' => 'GET',
 							'beforeSend' => 'function(){$("#authItem-form").addClass("srbacLoading");}',

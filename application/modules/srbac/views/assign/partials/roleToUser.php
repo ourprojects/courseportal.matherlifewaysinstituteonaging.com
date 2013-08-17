@@ -28,7 +28,7 @@
 									'class' => 'dropdown',
 									'ajax' => array(
 										'type' => 'GET',
-										'url' => $this->createUrl('/srbac/assign/roles'),
+										'url' => $this->createUrl('/'.SrbacUtilities::SRBAC_MODULE_NAME.'/assign/roles'),
 										'update' => '#role',
 										'beforeSend' => 'function(){$("#loadMessageRole").addClass("srbacLoading");}',
 										'complete' => 'function(){$("#loadMessageRole").removeClass("srbacLoading");}'

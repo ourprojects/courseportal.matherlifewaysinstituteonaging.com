@@ -81,7 +81,7 @@ $gridUpdateJs = $this->generateGridUpdateJS($updateGridIds);
 			<?php
 			echo CHtml::ajaxButton(
 				Yii::t('srbac', 'Save'),
-				$this->createUrl('/srbac/authItem/authItem', array('ajax' => $formId)),
+				$this->createUrl('/'.SrbacUtilities::SRBAC_MODULE_NAME.'/authItem/authItem', array('ajax' => $formId)),
 				array(
 					'type' => 'PUT',
 					'beforeSend' => 'function(){$("#'.$formId.'").addClass("srbacLoading");}',
@@ -91,7 +91,7 @@ $gridUpdateJs = $this->generateGridUpdateJS($updateGridIds);
 			);
 			echo CHtml::ajaxButton(
 				Yii::t('srbac', 'Create'),
-				$this->createUrl('/srbac/authItem/authItem', array('ajax' => $formId)),
+				$this->createUrl('/'.SrbacUtilities::SRBAC_MODULE_NAME.'/authItem/authItem', array('ajax' => $formId)),
 				array(
 					'type' => 'POST',
 					'beforeSend' => 'function(){$("#'.$formId.'").addClass("srbacLoading");}',

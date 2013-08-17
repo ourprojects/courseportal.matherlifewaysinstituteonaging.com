@@ -31,7 +31,7 @@ var autoObsoleteAuthItems = <?php echo CJavaScript::encode(array('id' => $obsole
 								'title' => Yii::t('srbac', 'Delete All'),
 						)
 			) . Yii::t('srbac', 'Delete All'),
-			$this->createUrl('/srbac/authItem/authItem', array('ajax' => 'autoObsoleteTab')),
+			$this->createUrl('/'.SrbacUtilities::SRBAC_MODULE_NAME.'/authItem/authItem', array('ajax' => 'autoObsoleteTab')),
 			array(
 				'type' => 'DELETE',
 				'data' => 'js:autoObsoleteAuthItems',

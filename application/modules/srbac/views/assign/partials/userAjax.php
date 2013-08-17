@@ -25,7 +25,7 @@
 		<?php
 		echo CHtml::ajaxButton(
 			'<<',
-			$this->createUrl('/srbac/assign/roles'),
+			$this->createUrl('/'.SrbacUtilities::SRBAC_MODULE_NAME.'/assign/roles'),
 			array(
 				'type' => 'PUT',
 				'update' => '#role',
@@ -37,7 +37,7 @@
 		);
 		echo CHtml::ajaxButton(
 			'>>',
-			$this->createUrl('/srbac/assign/roles'),
+			$this->createUrl('/'.SrbacUtilities::SRBAC_MODULE_NAME.'/assign/roles'),
 			array(
 				'type' => 'DELETE',
 				'data' => 'js:"userId="+$("#UserList").val()+"&"+$("#assignedRole").serialize()',

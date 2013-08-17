@@ -1,5 +1,5 @@
 <?php
-$this->breadcrumbs = array(Yii::t('srbac', 'SRBAC Installation'));
+$this->breadcrumbs = array(Yii::t('srbac', 'SRBAC System'));
 $error = false;
 Yii::app()->getClientScript()->registerCss('settingsTable', 'table th.right{text-align:right;} table th.center{text-align:center;font-size:1.6em;} table td.fill{width:100%;} table.attributesGrid th, table.attributesGrid td{padding:.135em;}');
 ?>
@@ -109,6 +109,44 @@ Yii::app()->getClientScript()->registerCss('settingsTable', 'table th.right{text
 					<td class="fill srbacError"><?php echo Yii::t('srbac', 'Unable to locate the SRBAC module. Expected name: {moduleName}.', array('{moduleName}' => SrbacUtilities::SRBAC_MODULE_NAME)); ?></td>
 				</tr>
 			<?php else: ?>
+				<tr>
+					<th class="right"><?php echo Yii::t('srbac', 'Debug&nbsp;Mode:'); ?></th>
+					<td class="fill <?php echo $srbacModule->checkSetting('debug') ? 'srbacNoError' : 'srbacError'; ?>">
+						<table class="attributesGrid">
+							<tr>
+								<th class="right"><?php echo Yii::t('srbac', 'Attribute:'); ?></th>
+								<td class="fill"><?php echo 'debug'; ?></td>
+							</tr>
+							<tr>
+								<th class="right"><?php echo Yii::t('srbac', 'Value:'); ?></th>
+								<td class="fill"><?php echo $srbacModule->getDebug() ? 'Enabled' : 'Disabled'; ?></td>
+							</tr>
+							<tr>
+								<th class="right"><?php echo Yii::t('srbac', 'Description:'); ?></th>
+								<td class="fill"><?php echo Yii::t('srbac', 'Enabling debug mode will disable all access controls on RBAC administration interface. Enable this option with caution!'); ?></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<th class="right"><?php echo Yii::t('srbac', 'Default&nbsp;Controller:'); ?></th>
+					<td class="fill <?php echo $srbacModule->checkSetting('defaultController') ? 'srbacNoError' : 'srbacError'; ?>">
+						<table class="attributesGrid">
+							<tr>
+								<th class="right"><?php echo Yii::t('srbac', 'Attribute:'); ?></th>
+								<td class="fill"><?php echo 'defaultController'; ?></td>
+							</tr>
+							<tr>
+								<th class="right"><?php echo Yii::t('srbac', 'Value:'); ?></th>
+								<td class="fill"><?php echo $srbacModule->defaultController; ?></td>
+							</tr>
+							<tr>
+								<th class="right"><?php echo Yii::t('srbac', 'Description:'); ?></th>
+								<td class="fill"><?php echo Yii::t('srbac', 'The default controller that will be used for any requests to the RBAC administration interface that do not specify a controller.'); ?></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
 				<tr>
 					<th class="right"><?php echo Yii::t('srbac', 'Flash&nbsp;Key:'); ?></th>
 					<td class="fill <?php echo $srbacModule->checkSetting('layout') ? 'srbacNoError' : 'srbacError'; ?>">
@@ -246,7 +284,7 @@ Yii::app()->getClientScript()->registerCss('settingsTable', 'table th.right{text
 								echo Yii::t(
 										'srbac',
 										'The super user role exists, but has not been assigned. Access to the SRBAC administration interface will be granted to all users until this problem is resolved! Click {link} to assign a super user now.',
-										array('{link}' => CHtml::link(Yii::t('srbac', 'here'), $this->createUrl('/srbac/assign/superUsers')))
+										array('{link}' => CHtml::link(Yii::t('srbac', 'here'), $this->createUrl('/'.SrbacUtilities::SRBAC_MODULE_NAME.'/assign/superUsers')))
 								);
 								?>
 							</td>
@@ -258,10 +296,18 @@ Yii::app()->getClientScript()->registerCss('settingsTable', 'table th.right{text
 						?>
 						<td class="fill srbacError">
 						<?php
-						echo Yii::t(
-								'srbac',
-								'The super user role does not exist. Access to the SRBAC administration interface will be granted to all users until this problem is resolved! Click {link} to create the super user role now.',
-								array('{link}' => CHtml::link(Yii::t('srbac', 'here'), $this->createUrl('/srbac/assign/superUsers')))
+						echo Yii::t('srbac', 'The super user role does not exist. Access to the SRBAC administration interface will be granted to all users until this problem is resolved!');
+						echo '<br />';
+						echo CHtml::ajaxButton(
+								'Create Super User Role',
+								$this->createUrl('/'.SrbacUtilities::SRBAC_MODULE_NAME.'/authItem/create'),
+								array(
+										'type' => 'POST',
+										'data' => array('AuthItem' => array('name' => $srbacModule->superUser, 'type' => EAuthItem::TYPE_ROLE)),
+										'beforeSend' => 'function(){$("#superUserCreate").addClass("srbacLoading");}',
+										'complete' => 'function(data){location.reload()}',
+								),
+								array('id' => 'superUserCreate')
 						);
 						?>
 						</td>
@@ -302,20 +348,23 @@ Yii::app()->getClientScript()->registerCss('settingsTable', 'table th.right{text
 			</tr>
 			<tr>
 				<th class="right"></th>
-				<td id="install" class="fill">
+				<td class="fill">
 				<?php
 				if($installed)
 				{
 					echo CHtml::ajaxButton(
 						'Re-install SRBAC',
-						$this->createUrl('/srbac/install/execute'),
+						$this->createUrl('/'.SrbacUtilities::SRBAC_MODULE_NAME.'/system/install'),
 						array(
 							'type' => 'POST',
-							'beforeSend' => 'function(){if(!confirm("'.Yii::t('srbac', 'Re-installing SRBAC will clear all data! All authorization items and user assignments will be lost! Are you sure you want to continue?').'")) return false;$("#install").addClass("srbacLoading");}',
-							'success' => 'function(data){location.reload()}',
-							'error' => 'function(jqXHR,textStatus,errorThrown){alert(errorThrown);}'
+							'data' => array('overwrite' => true),
+							'beforeSend' => 'function(){if(!confirm("'.Yii::t('srbac', 'Re-installing SRBAC will clear all data! All authorization items and user assignments will be lost! Are you sure you want to continue?').'")) return false;$("#reInstall").addClass("srbacLoading");}',
+							'complete' => 'function(data){location.reload()}',
 						),
-						array('disabled' => $error)
+						array(
+							'id' => 'reInstall',
+							'disabled' => $error
+						)
 					);
 					?>
 					<p style="font-size:1.15em;font-weight:bold;color:red;">
@@ -331,9 +380,17 @@ Yii::app()->getClientScript()->registerCss('settingsTable', 'table th.right{text
 					}
 					echo CHtml::ajaxButton(
 						'Install SRBAC',
-						$this->createUrl('/srbac/install/execute'),
-						array('type' => 'POST'),
-						array('disabled' => $error)
+						$this->createUrl('/'.SrbacUtilities::SRBAC_MODULE_NAME.'/system/install'),
+						array(
+							'type' => 'POST',
+							'data' => array('overwrite' => false),
+							'beforeSend' => 'function(){$("#install").addClass("srbacLoading");}',
+							'complete' => 'function(data){location.reload()}',
+						),
+						array(
+							'id' => 'install',
+							'disabled' => $error
+						)
 					);
 				}
 				?>

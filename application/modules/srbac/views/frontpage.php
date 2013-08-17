@@ -2,37 +2,46 @@
 Yii::app()->getClientScript()->registerCssFile($this->getModule()->getStylesUrl('srbac.css'));
 ?>
 <div class="marginBottom">
-<?php if(Yii::app()->getUser()->hasFlash($this->getModule()->flashKey)): ?>
-<div id="srbacError">
-	<?php echo Yii::app()->getUser()->getFlash($this->getModule()->flashKey, null, true); ?>
-</div>
-<?php endif; ?>
 	<div class="iconSet">
-		<div class="iconBox">
+			<div class="iconBox">
 			<?php
 			echo CHtml::link(
-					CHtml::image($this->getModule()->getIconsUrl('manageAuth.png'),
-							Yii::t('srbac', 'Auth Items'),
+					CHtml::image($this->getModule()->getIconsUrl('system.png'),
+							Yii::t('srbac', 'System'),
 							array('class' => 'icon',
-									'title' => Yii::t('srbac','Auth Items'),
+									'title' => Yii::t('srbac', 'System'),
 									'border' => 0
 							)
-					).' '.Yii::t('srbac', 'Auth Items'),
-					$this->createUrl('/srbac/authItem')
+					).' '.Yii::t('srbac', 'System'),
+					$this->createUrl('/'.SrbacUtilities::SRBAC_MODULE_NAME.'/system')
 			);
 			?>
 		</div>
 		<div class="iconBox">
 			<?php
 			echo CHtml::link(
-					CHtml::image($this->getModule()->getIconsUrl('usersAssign.png'),
+					CHtml::image($this->getModule()->getIconsUrl('manageAuth.png'),
+							Yii::t('srbac', 'Auth Items'),
+							array('class' => 'icon',
+									'title' => Yii::t('srbac', 'Auth Items'),
+									'border' => 0
+							)
+					).' '.Yii::t('srbac', 'Auth Items'),
+					$this->createUrl('/'.SrbacUtilities::SRBAC_MODULE_NAME.'/authItem')
+			);
+			?>
+		</div>
+		<div class="iconBox">
+			<?php
+			echo CHtml::link(
+					CHtml::image($this->getModule()->getIconsUrl('hierarchy.png'),
 						Yii::t('srbac', 'Hierarchy'),
 						array('class' => 'icon',
 							'title' => Yii::t('srbac', 'Hierarchy'),
 							'border' => 0,
 						)
 					).' '.Yii::t('srbac', 'Hierarchy'),
-					$this->createUrl('/srbac/assign')
+					$this->createUrl('/'.SrbacUtilities::SRBAC_MODULE_NAME.'/assign')
 			);
 			?>
 		</div>
@@ -42,11 +51,11 @@ Yii::app()->getClientScript()->registerCssFile($this->getModule()->getStylesUrl(
 					CHtml::image($this->getModule()->getIconsUrl('superman.png'),
 						Yii::t('srbac', 'Super Users'),
 						array('class' => 'icon',
-							'title' => Yii::t('srbac','Super Users'),
+							'title' => Yii::t('srbac', 'Super Users'),
 							'border' => 0,
 						)
 					).' '.Yii::t('srbac', 'Super Users'),
-					$this->createUrl('/srbac/assign/superUsers')
+					$this->createUrl('/'.SrbacUtilities::SRBAC_MODULE_NAME.'/assign/superUsers')
 			);
 			?>
 		</div>
@@ -60,10 +69,14 @@ Yii::app()->getClientScript()->registerCssFile($this->getModule()->getStylesUrl(
 							'border' => 0
 						)
 					).' '.Yii::t('srbac', 'User Assignments'),
-					$this->createUrl('/srbac/user')
+					$this->createUrl('/'.SrbacUtilities::SRBAC_MODULE_NAME.'/user')
 			);
 			?>
 		</div>
 	</div>
-	<div class="reset"></div>
+	<?php if(Yii::app()->getUser()->hasFlash($this->getModule()->flashKey)): ?>
+	<div id="srbacFlash">
+		<?php echo Yii::app()->getUser()->getFlash($this->getModule()->flashKey, null, true); ?>
+	</div>
+	<?php endif; ?>
 </div>

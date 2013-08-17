@@ -31,7 +31,7 @@
 												'buttons' => array(
 														'view' => array(
 																'label' => Yii::t('srbac', 'View User\'s Assignments'),
-																'url' => 'Yii::app()->getController()->createUrl("/srbac/user/view", array("id" => $data->{$this->grid->getController()->getModule()->userId}))',
+																'url' => 'Yii::app()->getController()->createUrl("/'.SrbacUtilities::SRBAC_MODULE_NAME.'/user/view", array("id" => $data->{$this->grid->getController()->getModule()->userId}))',
 																'click' => 'function(){'.CHtml::ajax(
 																		array(
 																				'type' => 'GET',
