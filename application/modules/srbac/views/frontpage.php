@@ -12,12 +12,12 @@ Yii::app()->getClientScript()->registerCssFile($this->getModule()->getStylesUrl(
 			<?php
 			echo CHtml::link(
 					CHtml::image($this->getModule()->getIconsUrl('manageAuth.png'),
-							Yii::t('srbac', 'Manage Auth Items'),
+							Yii::t('srbac', 'Auth Items'),
 							array('class' => 'icon',
-									'title' => Yii::t('srbac','Manage Auth Items'),
+									'title' => Yii::t('srbac','Auth Items'),
 									'border' => 0
 							)
-					).' '.Yii::t('srbac', 'Manage Auth Items'),
+					).' '.Yii::t('srbac', 'Auth Items'),
 					$this->createUrl('/srbac/authItem')
 			);
 			?>
@@ -26,12 +26,12 @@ Yii::app()->getClientScript()->registerCssFile($this->getModule()->getStylesUrl(
 			<?php
 			echo CHtml::link(
 					CHtml::image($this->getModule()->getIconsUrl('usersAssign.png'),
-						Yii::t('srbac', 'Assign to Users'),
+						Yii::t('srbac', 'Hierarchy'),
 						array('class' => 'icon',
-							'title' => Yii::t('srbac','Assign to Users'),
+							'title' => Yii::t('srbac', 'Hierarchy'),
 							'border' => 0,
 						)
-					).' '.Yii::t('srbac', 'Assign to Users'),
+					).' '.Yii::t('srbac', 'Hierarchy'),
 					$this->createUrl('/srbac/assign')
 			);
 			?>
@@ -39,13 +39,27 @@ Yii::app()->getClientScript()->registerCssFile($this->getModule()->getStylesUrl(
 		<div class="iconBox">
 			<?php
 			echo CHtml::link(
-					CHtml::image($this->getModule()->getIconsUrl('users.png'),
-						Yii::t('srbac', 'User assignments'),
+					CHtml::image($this->getModule()->getIconsUrl('superman.png'),
+						Yii::t('srbac', 'Super Users'),
 						array('class' => 'icon',
-							'title' => Yii::t('srbac', 'User assignments'),
+							'title' => Yii::t('srbac','Super Users'),
+							'border' => 0,
+						)
+					).' '.Yii::t('srbac', 'Super Users'),
+					$this->createUrl('/srbac/assign/superUsers')
+			);
+			?>
+		</div>
+		<div class="iconBox">
+			<?php
+			echo CHtml::link(
+					CHtml::image($this->getModule()->getIconsUrl('users.png'),
+						Yii::t('srbac', 'User Assignments'),
+						array('class' => 'icon',
+							'title' => Yii::t('srbac', 'User Assignments'),
 							'border' => 0
 						)
-					).' '.Yii::t('srbac', 'User assignments'),
+					).' '.Yii::t('srbac', 'User Assignments'),
 					$this->createUrl('/srbac/user')
 			);
 			?>

@@ -25,10 +25,11 @@
 		<?php
 		echo CHtml::ajaxButton(
 			'<<',
-			$this->createUrl('/srbac/assign/roles', array('userId' => $userId)),
+			$this->createUrl('/srbac/assign/roles'),
 			array(
 				'type' => 'PUT',
 				'update' => '#role',
+				'data' => 'js:"userId="+$("#UserList").val()+"&"+$("#notAssignedRole").serialize()',
 				'beforeSend' => 'function(){$("#loadMessageRole").addClass("srbacLoading");}',
 				'complete' => 'function(){$("#loadMessageRole").removeClass("srbacLoading");}'
 			),
@@ -36,9 +37,10 @@
 		);
 		echo CHtml::ajaxButton(
 			'>>',
-			$this->createUrl('/srbac/assign/roles', array('userId' => $userId)),
+			$this->createUrl('/srbac/assign/roles'),
 			array(
 				'type' => 'DELETE',
+				'data' => 'js:"userId="+$("#UserList").val()+"&"+$("#assignedRole").serialize()',
 				'update' => '#role',
 				'beforeSend' => 'function(){$("#loadMessageRole").addClass("srbacLoading");}',
 				'complete' => 'function(){$("#loadMessageRole").removeClass("srbacLoading");}'

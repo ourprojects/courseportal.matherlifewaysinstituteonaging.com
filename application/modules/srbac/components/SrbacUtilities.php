@@ -1,7 +1,7 @@
 <?php
 
 
-class self
+class SrbacUtilities
 {
 
 	const SRBAC_MODULE_NAME = 'srbac';
@@ -54,15 +54,18 @@ class self
 	 */
 	public static function isInstalled()
 	{
-		$authManager = Yii::app()->getAuthManager();
-		if(!$authManager instanceof EDbAuthManager)
+		if(self::getSrbacModule() !== null)
 		{
-			return false;
+			$authManager = Yii::app()->getAuthManager();
+			if($authManager instanceof EDbAuthManager)
+			{
+				$schema = $authManager->db->getSchema();
+				return $schema->getTable($authManager->itemTable) !== null &&
+					$schema->getTable($authManager->itemChildTable) !== null &&
+					$schema->getTable($authManager->assignmentTable) !== null;
+			}
 		}
-		$schema = $authManager->db->getSchema();
-		return $schema->getTable($authManager->itemTable) !== null &&
-			$schema->getTable($authManager->itemChildTable) !== null &&
-			$schema->getTable($authManager->assignmentTable) !== null;
+		return false;
 	}
 
 	public static function getControllerPathFromAlias($alias)
@@ -95,22 +98,49 @@ class self
 	 * Gets all the application's controllers and its module's controllers
 	 * @return array The controllers
 	 */
-	public static function getApplicationControllers()
+	public static function getApplicationControllers($application = null)
 	{
-		if(!isset(self::$_controllers))
+		if(!isset($application))
 		{
-			self::$_controllers = self::_scanModules(Yii::app());
+			$application = Yii::app();
 		}
-		return self::$_controllers;
+		if(!isset(self::$_controllers[$application->getId()]))
+		{
+			self::$_controllers[$application->getId()] = self::_scanModules($application);
+		}
+		return self::$_controllers[$application->getId()];
 	}
 
 	private static function _scanModules($module, &$controllers = array(), $prefix = '')
 	{
 		if(isset($module))
 		{
-			self::_scanControllers($module->getControllerPath(), $controllers, $prefix . ($prefix === '' ? '' : '.'));
+			if($prefix !== '')
+			{
+				$prefix .= '.';
+			}
+			self::_scanControllers($module->getControllerPath(), $controllers, $prefix);
+			foreach($module->controllerMap as $controllerId => $config)
+			{
+				if(is_string($config))
+				{
+					$controllerPath = Yii::getPathOfAlias($config);
+				}
+				elseif(isset($config['class']))
+				{
+					$controllerPath = Yii::getPathOfAlias($config['class']);
+				}
+				else
+				{
+					continue;
+				}
+				if(!in_array(strtolower($prefix.basename($controllerPath)), array_map('strtolower', $controllers)));
+				{
+					self::_scanControllers($controllerPath.'.php', $controllers, $prefix);
+				}
+			}
 			//Scan modules
-			foreach(array_keys($module->getModules()) as $moduleId)
+			foreach($module->getModules() as $moduleId => $configuration)
 			{
 				self::_scanModules($module->getModule($moduleId), $controllers, $prefix . $moduleId);
 			}
@@ -120,30 +150,34 @@ class self
 
 	private static function _scanControllers($controllerPath, &$controllers, $prefix = '')
 	{
-		if(($handle = @opendir($controllerPath)))
+		if(is_dir($controllerPath))
 		{
-			while(($file = readdir($handle)) !== false)
+			$file = basename($controllerPath);
+			if($file !== '.' && $file !== '..')
 			{
-				$filePath = $controllerPath . DIRECTORY_SEPARATOR . $file;
-				if(is_file($filePath))
+				if(($handle = @opendir($controllerPath)))
 				{
-					if(preg_match('/^(.+)Controller.php$/i', basename($file)))
+					while(($file = readdir($handle)) !== false)
 					{
-						$controllers[] = $prefix.str_replace('.php', '', $file);
+						self::_scanControllers($controllerPath . DIRECTORY_SEPARATOR . $file, $controllers, $prefix);
 					}
-				}
-				elseif(is_dir($filePath) && $file != '.' && $file != '..')
-				{
-					self::_scanControllers($filePath, $controllers, $prefix);
+					closedir($handle);
 				}
 			}
-			closedir($handle);
+		}
+		elseif(is_file($controllerPath))
+		{
+			$file = basename($controllerPath);
+			if(preg_match('/^(.+)Controller.php$/i', $file))
+			{
+				$controllers[] = $prefix.str_replace('.php', '', $file);
+			}
 		}
 	}
 
 	/**
 	 * Extracts the actions from a controller. Beware the controller will be loaded and instantiated.
-	 * @param $controller string The alias for a controller as returned by getControllers()
+	 * @param $controller string The alias for a controller as returned by getApplicationControllers()
 	 * @return array A list of the controller's defined actions.
 	 * */
 	public static function getControllerActions($controllerPathAlias)
@@ -284,6 +318,7 @@ class self
 		$schema = $db->getSchema();
 		try
 		{
+			$schema->checkIntegrity(false);
 			$sql = '';
 			// Drop the tables if they exist
 			foreach(array($auth->itemTable, $auth->assignmentTable, $auth->itemChildTable) as $table)
@@ -304,7 +339,7 @@ class self
 							'description' => 'text',
 							'bizrule' => 'text',
 							'data' => 'text',
-							'UNIQUE KEY '.$scehma->quoteColumnName('name').' ('.$scehma->quoteColumnName('name').')'
+							'UNIQUE KEY '.$schema->quoteColumnName('name').' ('.$schema->quoteColumnName('name').')'
 					)
 			).';';
 
@@ -315,7 +350,7 @@ class self
 							'user_id' => 'integer NOT NULL',
 							'bizrule' => 'text',
 							'data' => 'text',
-							'PRIMARY KEY ('.$scehma->quoteColumnName('item_id').','.$scehma->quoteColumnName('user_id').')'
+							'PRIMARY KEY ('.$schema->quoteColumnName('item_id').','.$schema->quoteColumnName('user_id').')'
 					)
 			).';';
 
@@ -324,7 +359,7 @@ class self
 					array(
 							'parent_id' => 'integer NOT NULL',
 							'child_id' => 'integer NOT NULL',
-							'PRIMARY KEY ('.$scehma->quoteColumnName('parent_id').','.$scehma->quoteColumnName('child_id').')'
+							'PRIMARY KEY ('.$schema->quoteColumnName('parent_id').','.$schema->quoteColumnName('child_id').')'
 					)
 			).';';
 
@@ -365,6 +400,8 @@ class self
 
 			$db->createCommand($sql)->execute();
 
+			$schema->checkIntegrity(true);
+
 			$db->createCommand()->insert($auth->itemTable, array('name' => self::getSrbacModule()->superUser, 'type' => EAuthItem::TYPE_ROLE));
 
 			$transaction->commit();
@@ -372,7 +409,7 @@ class self
 		catch(Exception $ex)
 		{
 			$transaction->rollback();
-			return self::ERROR; //Error
+			throw $ex;
 		}
 
 		return self::SUCCESS; //Success

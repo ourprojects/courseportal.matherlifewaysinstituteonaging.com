@@ -113,7 +113,7 @@ class AuthItem extends CActiveRecord
 
 	public function superUser()
 	{
-		$this->with(array('users' => array('joinType' => 'INNER JOIN')))->together()->type(EAuthItem::TYPE_ROLE)
+		$this->type(EAuthItem::TYPE_ROLE)
 			->getDbCriteria()
 			->addColumnCondition(
 					array(
@@ -145,11 +145,11 @@ class AuthItem extends CActiveRecord
 		array_walk($authItems, create_function('&$authItem', '$authItem = "'.SrbacUtilities::getSrbacModule()->getGeneratedAuthItemNamePrefix().'".$authItem["name"];'));
 		if($obsolete)
 		{
-			$criteria->addNotInCondition('name', $authItems);
+			$criteria->addNotInCondition($this->getTableAlias(false, false).'.name', $authItems);
 		}
 		else
 		{
-			$criteria->addInCondition('name', $authItems);
+			$criteria->addInCondition($this->getTableAlias(false, false).'.name', $authItems);
 		}
 		return $this;
 	}
@@ -329,13 +329,13 @@ class AuthItem extends CActiveRecord
 		{
 			$name = strtr($this->generated ? SrbacUtilities::getSrbacModule()->getGeneratedAuthItemNamePrefix() : '', array('%'=>'\%', '_'=>'\_', '\\'=>'\\\\'));
 			$name .= '%'.strtr($this->getAttribute('name'), array('%'=>'\%', '_'=>'\_', '\\'=>'\\\\')).'%';
-			$criteria->compare('name', $name, true, 'AND', false);
+			$criteria->compare($this->getTableAlias(false, false).'.name', $name, true, 'AND', false);
 		}
 		$criteria->compare('type', $this->getAttribute('type'));
 		$criteria->compare('description', $this->getAttribute('description'), true);
 		$criteria->compare('bizrule', $this->getAttribute('bizrule'), true);
 		$criteria->compare('data', isset($this->data) ? serialize($this->getAttribute('data')) : $this->getAttribute('data'));
-		$criteria->mergeWith(array('condition' => 'name'.($this->generated ? ' ' : ' NOT ').'REGEXP :nameRegex', 'params' => array(':nameRegex' => '^'.SrbacUtilities::getSrbacModule()->getGeneratedAuthItemNamePrefix().'(.+)$')));
+		$criteria->mergeWith(array('condition' => $this->getTableAlias(false, false).'.name'.($this->generated ? ' ' : ' NOT ').'REGEXP :nameRegex', 'params' => array(':nameRegex' => '^'.SrbacUtilities::getSrbacModule()->getGeneratedAuthItemNamePrefix().'(.+)$')));
 
 		return $criteria;
 	}

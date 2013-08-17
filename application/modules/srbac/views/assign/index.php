@@ -1,16 +1,6 @@
 <?php
-$this->breadcrumbs = array('Srbac Assign');
-
-if(Yii::app()->getUser()->hasFlash($this->getModule()->flashKey)):
+$this->breadcrumbs = array('SRBAC Assignments');
 ?>
-<div id="srbacError">
-	<?php
-	echo Yii::app()->getUser()->getFlash($this->getModule()->flashKey, null, true);
-	echo Yii::app()->getUser()->setFlash($this->getModule()->flashKey, null);
-	?>
-</div>
-<?php endif; ?>
-<h1><?php Yii::t('srbac', 'Srbac Administration Web Interface'); ?></h1>
 <div>
 	<?php $this->renderPartial('../frontpage'); ?>
 	<div class="horTab">

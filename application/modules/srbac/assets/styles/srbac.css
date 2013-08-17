@@ -380,14 +380,16 @@ div.srbacLoading * {
 
 /*Installing srbac styles*/
 .srbacNoError {
-	color: green;
+	color: #070;
+	background: #D8FFD8;
 	background-image: url(noError.png);
 	background-repeat: no-repeat;
 	background-position: right;
 }
 
 .srbacError {
-	color: red;
+	color: #B00;
+	background: #FFD8D8;
 	font-weight: bold;
 	background-image: url(error.png);
 	background-repeat: no-repeat;

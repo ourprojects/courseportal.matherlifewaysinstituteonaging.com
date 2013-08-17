@@ -3,8 +3,7 @@
 class SrbacModule extends CWebModule
 {
 	//Constants
-	const ICON_PACKS = "noia,tango";
-	const PRIVATE_ATTRIBUTES = "_icons,_cssPublished,_imagesPublished,defaultController,controllerMap,preload,behaviors";
+	const ICON_PACKS = 'noia,tango';
 
 	// Srbac Attributes
 	/* @var $debug If srbac is in debug mode */
@@ -52,6 +51,44 @@ class SrbacModule extends CWebModule
 		));
 	}
 
+	public function checkSetting($setting)
+	{
+		try
+		{
+			switch($setting)
+			{
+				case 'debug':
+					return $this->getDebug();
+				case 'flashKey':
+					return is_string($this->flashKey) && trim($this->flashKey) !== '';
+				case 'userclass':
+					return @class_exists($this->userclass);
+				case 'userId':
+					return $this->checkSetting('userclass') &&
+						is_string($this->userId) &&
+						$this->getStaticUserModel()->hasAttribute($this->userId);
+				case 'username':
+					return $this->checkSetting('userclass') &&
+						is_string($this->username) &&
+						$this->getStaticUserModel()->hasAttribute($this->username);
+				case 'superUser':
+					return is_string($this->superUser) && trim($this->superUser) !== '';
+				case 'imagesPack':
+					return in_array($this->imagesPack, explode(',', self::ICON_PACKS));
+				case 'defaultController':
+					return in_array(ucfirst($this->defaultController).'Controller', SrbacUtilities::getApplicationControllers($this));
+				case 'layout':
+					return $this->layout === false || $this->layout === null || Yii::app()->getController()->getLayoutFile($this->layout) !== false;
+				default:
+					return false;
+			}
+		}
+		catch(Exception $e)
+		{
+			return false;
+		}
+	}
+
 	// SETTERS & GETTERS
 
 	public function getGeneratedAuthItemNamePrefix()
@@ -61,6 +98,10 @@ class SrbacModule extends CWebModule
 
 	public function setGeneratedAuthItemNamePrefix($prefix)
 	{
+		if(!is_string($prefix) || ($prefix = trim($prefix)) === '')
+		{
+			throw new CException(Yii::t('srbac', 'The generated AuthItem name prefix must be a non-empty string.'));
+		}
 		if(substr($prefix, -1) !== '_')
 		{
 			$prefix .= '_';
@@ -70,14 +111,7 @@ class SrbacModule extends CWebModule
 
 	public function setDebug($debug)
 	{
-		if(is_bool($debug))
-		{
-			$this->_debug = $debug;
-		}
-		else
-		{
-			throw new CException("Wrong value for srbac attribute debug in srbac configuration.'".$debug."' is not a boolean.");
-		}
+		$this->_debug = is_string($debug) ? $debug === 'true' || $debug === '1' : (bool)$debug;
 	}
 
 	public function getDebug()
