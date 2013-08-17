@@ -27,7 +27,7 @@ $clientScript->registerCssFile($this->getStylesUrl('homeUser.css'));
     <h3>{t}Aging in Action{/t}</h3>
     <p>{t}Aging in Action is Mather LifeWays Institute on Aging's monthly e-newsletter and blog containing the latest research news in the field of aging.{/t}</p>
     <a href="http://twitter.com/aginginaction" target="_blank"> <img class="block center" src="<?php echo $this->getImagesUrl('twitter-bird.png'); ?>" alt="Twitter" /></a></div>
-  <div class="box-sidebar three statistics">
+  <div class="box-sidebar three statistics" style="padding-bottom:25px;">
     <h3>{t}Statistics on Caregivers{/t}</h3>
     <ul id="quotes">
       <li> <img src="<?php echo $this->getImagesUrl('stat-one-quarter.png'); ?>" alt="image" /> <span>1/4</span>&nbsp;{t}of US households has a family caregiver providing some form of care or service to a relative or friend, age 50+{/t} </li>

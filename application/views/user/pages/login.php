@@ -20,5 +20,5 @@ border-bottom-left-radius: 5px;" src="<?php echo $this->getImagesUrl('148950191.
   <div class="box-white">
     <p> <?php echo $this->renderPartial('forms/login_form', array('Login' => $model)); ?> </p>
   </div>
-  <p> {t}Please click{/t} <strong><?php echo CHtml::link('{t}here{/t}', $this->createUrl('register')); ?></strong> {t}if you still need to <strong>register</strong>, or click<strong>{/t}<?php echo CHtml::link('{t}here{/t}', $this->createUrl('forgotPassword')); ?></strong> {t}if you <strong>forgot your password</strong>.{/t} </p>
+  <p> {t}Please click{/t} <strong><?php echo CHtml::link('{t}here{/t}', $this->createUrl('register')); ?></strong> {t}if you still need to <strong>register</strong>, or click <strong>{/t}<?php echo CHtml::link('{t}here{/t}', $this->createUrl('forgotPassword')); ?></strong> {t}if you <strong>forgot your password</strong>.{/t} </p>
 </div>
