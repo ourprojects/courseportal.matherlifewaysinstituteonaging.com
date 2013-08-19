@@ -341,7 +341,7 @@ class EDbAuthManager extends CDbAuthManager
 					->select('at.item_id')
 					->from($this->assignmentTable.' at')
 					->join($this->itemTable.' it', 'at.item_id=it.id')
-					->where(array('and', 'it.name=:itemname', 'at.user_id=:user_id'), array(':itemname' => $itemId[1],':user_id' => $userId))
+					->where(array('and', 'it.name=:name', 'at.user_id=:user_id'), array(':name' => $itemId[1],':user_id' => $userId))
 				->queryScalar() !== false;
 			default:
 				return false;
@@ -411,7 +411,7 @@ class EDbAuthManager extends CDbAuthManager
 		{
 			if(($data = @unserialize($row['data'])) === false)
 				$data = null;
-			$assignments[$row['itemname']] = new EAuthAssignment($this, $row['name'], $row['userid'], $row['bizrule'], $data, $row['id']);
+			$assignments[$row['name']] = new EAuthAssignment($this, $row['name'], $row['user_id'], $row['bizrule'], $data, $row['id']);
 		}
 		return $assignments;
 	}

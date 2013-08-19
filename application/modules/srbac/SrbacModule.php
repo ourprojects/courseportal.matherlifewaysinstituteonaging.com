@@ -58,7 +58,7 @@ class SrbacModule extends CWebModule
 			switch($setting)
 			{
 				case 'debug':
-					return $this->getDebug();
+					return !$this->getDebug();
 				case 'flashKey':
 					return is_string($this->flashKey) && trim($this->flashKey) !== '';
 				case 'userclass':

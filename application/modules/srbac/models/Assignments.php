@@ -96,6 +96,11 @@ class Assignments extends CActiveRecord
 		);
 	}
 
+	public function getIsSuperUser()
+	{
+		return ($authItem = $this->getRelated('authItem')) !== null && $authItem->getIsSuperUser();
+	}
+
 	public function orderBy($order)
 	{
 		$this->getDbCriteria()->mergeWith(array('order' => $order));

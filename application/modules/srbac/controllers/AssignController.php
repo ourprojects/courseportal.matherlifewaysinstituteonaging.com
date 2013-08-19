@@ -137,89 +137,11 @@ class AssignController extends SBaseController
 
 	public function actionSuperUsers()
 	{
-		$this->render('superUsers', array('superUserModel' => $this->getSuperUsers(true), 'userModel' => $this->getSuperUsers(false)));
-	}
-
-	public function getSuperUsers($superUser = true)
-	{
-		$authManager = Yii::app()->getAuthManager();
-		$srbacModule = SrbacUtilities::getSrbacModule();
-		$userModel = $srbacModule->getNewUserModel('search');
-		$dbSchema = $authManager->db->getSchema();
-		$assignmentsTableName = $dbSchema->quoteTableName($dbSchema->getTable($authManager->assignmentTable)->name);
-		$itemTableName = $dbSchema->quoteTableName($dbSchema->getTable($authManager->itemTable)->name);
-
-		if($superUser)
-		{
-			$userModel->getDbCriteria()->mergeWith(
-					array(
-							'select' => array($dbSchema->quoteColumnName($userModel->getTableAlias().'.'.$srbacModule->userId), $dbSchema->quoteColumnName($userModel->getTableAlias().'.'.$srbacModule->username)),
-							'join' => 'INNER JOIN '.
-									$assignmentsTableName.' ON ('.$dbSchema->quoteColumnName($userModel->getTableAlias().'.'.$srbacModule->userId).'='.$assignmentsTableName.'.'.$dbSchema->quoteColumnName('user_id').')'.
-									' INNER JOIN '.
-									$itemTableName.' ON ('.$itemTableName.'.'.$dbSchema->quoteColumnName('id').'='.$assignmentsTableName.'.'.$dbSchema->quoteColumnName('item_id').')',
-							'condition' => '(('.$itemTableName.'.'.$dbSchema->quoteColumnName('type').'=:type) AND ('.$itemTableName.'.'.$dbSchema->quoteColumnName('name').'=:name) AND ('.$itemTableName.'.'.$dbSchema->quoteColumnName('name').' NOT REGEXP :nameRegex))',
-							'params' => array(':type' => EAuthItem::TYPE_ROLE, ':name' => $srbacModule->superUser, ':nameRegex' => '^'.$srbacModule->getGeneratedAuthItemNamePrefix().'(.+)$')
-					)
-			);
-		}
-		else
-		{
-			$userModel->getDbCriteria()->mergeWith(
-					array(
-							'select' => array($dbSchema->quoteColumnName($userModel->getTableAlias().'.'.$srbacModule->userId), $dbSchema->quoteColumnName($userModel->getTableAlias().'.'.$srbacModule->username)),
-							'join' => 'LEFT JOIN '.
-								$assignmentsTableName.' ON ('.$dbSchema->quoteColumnName($userModel->getTableAlias().'.'.$srbacModule->userId).'='.$assignmentsTableName.'.'.$dbSchema->quoteColumnName('user_id').')'.
-								' LEFT JOIN '.
-								$itemTableName.' ON (('.$itemTableName.'.'.$dbSchema->quoteColumnName('id').'='.$assignmentsTableName.'.'.$dbSchema->quoteColumnName('item_id').') AND ('.$itemTableName.'.'.$dbSchema->quoteColumnName('type').'=:type) AND ('.$itemTableName.'.'.$dbSchema->quoteColumnName('name').'=:name) AND ('.$itemTableName.'.'.$dbSchema->quoteColumnName('name').' NOT REGEXP :nameRegex))',
-							'group' => $dbSchema->quoteColumnName($userModel->getTableAlias().'.'.$srbacModule->userId),
-							'having' => 'MIN('.$itemTableName.'.'.$dbSchema->quoteColumnName('id').') IS NULL',
-							'params' => array(':type' => EAuthItem::TYPE_ROLE, ':name' => $srbacModule->superUser, ':nameRegex' => '^'.$srbacModule->getGeneratedAuthItemNamePrefix().'(.+)$')
-					)
-			);
-		}
-		return $userModel;
-	}
-
-	public function getSuperUserCount($superUser = true)
-	{
-		$authManager = Yii::app()->getAuthManager();
-		$srbacModule = SrbacUtilities::getSrbacModule();
-		$dbSchema = $authManager->db->getSchema();
-		$assignmentsTableName = $dbSchema->quoteTableName($dbSchema->getTable($authManager->assignmentTable)->name);
-		$itemTableName = $dbSchema->quoteTableName($dbSchema->getTable($authManager->itemTable)->name);
-
-		if($superUser)
-		{
-			$cmd = $authManager->db->createCommand(
-					array(
-							'select' => 'COUNT(*)',
-							'from' => $srbacModule->getStaticUserModel()->tableName().' t',
-							'join' => 'INNER JOIN '.
-							$assignmentsTableName.' ON ('.$dbSchema->quoteTableName('t').'.'.$dbSchema->quoteColumnName($srbacModule->userId).'='.$assignmentsTableName.'.'.$dbSchema->quoteColumnName('user_id').')'.
-							' INNER JOIN '.
-							$itemTableName.' ON ('.$itemTableName.'.'.$dbSchema->quoteColumnName('id').'='.$assignmentsTableName.'.'.$dbSchema->quoteColumnName('item_id').')',
-							'where' => '(('.$itemTableName.'.'.$dbSchema->quoteColumnName('type').'=:type) AND ('.$itemTableName.'.'.$dbSchema->quoteColumnName('name').'=:name) AND ('.$itemTableName.'.'.$dbSchema->quoteColumnName('name').' NOT REGEXP :nameRegex))',
-					)
-			);
-		}
-		else
-		{
-			$cmd = $authManager->db->createCommand(
-					array(
-							'select' => 't.id',
-							'from' => $srbacModule->getStaticUserModel()->tableName().' t',
-							'join' => 'LEFT JOIN '.
-							$assignmentsTableName.' ON ('.$dbSchema->quoteTableName('t').'.'.$dbSchema->quoteColumnName($srbacModule->userId).'='.$assignmentsTableName.'.'.$dbSchema->quoteColumnName('user_id').')'.
-							' LEFT JOIN '.
-							$itemTableName.' ON (('.$itemTableName.'.'.$dbSchema->quoteColumnName('id').'='.$assignmentsTableName.'.'.$dbSchema->quoteColumnName('item_id').') AND ('.$itemTableName.'.'.$dbSchema->quoteColumnName('type').'=:type) AND ('.$itemTableName.'.'.$dbSchema->quoteColumnName('name').'=:name) AND ('.$itemTableName.'.'.$dbSchema->quoteColumnName('name').' NOT REGEXP :nameRegex))',
-							'group' => 't.'.$srbacModule->userId,
-							'having' => 'MIN('.$itemTableName.'.'.$dbSchema->quoteColumnName('id').') IS NULL',
-					)
-			);
-			$cmd = $authManager->db->createCommand(array('select' => 'COUNT(*)', 'from' => '('.$cmd->getText().') sq'));
-		}
-		return $cmd->queryScalar(array(':type' => EAuthItem::TYPE_ROLE, ':name' => $srbacModule->superUser, ':nameRegex' => '^'.$srbacModule->getGeneratedAuthItemNamePrefix().'(.+)$'));
+		$superUserModel = new SrbacUser('search');
+		$superUserModel->superUser();
+		$normalUserModel = new SrbacUser('search');
+		$normalUserModel->normalUser();
+		$this->render('superUsers', array('superUserModel' => $superUserModel, 'userModel' => $normalUserModel));
 	}
 
 }

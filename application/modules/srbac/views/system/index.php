@@ -272,7 +272,7 @@ Yii::app()->getClientScript()->registerCss('settingsTable', 'table th.right{text
 				{
 					if(AuthItem::model()->superUser()->exists())
 					{
-						if(AuthItem::model()->superUser()->with(array('users' => array('joinType' => 'INNER JOIN')))->together()->exists())
+						if(SrbacUser::model()->superUser()->exists())
 						{
 							echo '<td class="fill srbacNoError">'.Yii::t('srbac', 'Super user role exists and is assigned.').'</td>';
 						}

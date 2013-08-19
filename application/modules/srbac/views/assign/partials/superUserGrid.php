@@ -17,7 +17,7 @@ $this->widget('zii.widgets.grid.CGridView',
 								'viewButtonUrl' => 'Yii::app()->getController()->createUrl("/'.SrbacUtilities::SRBAC_MODULE_NAME.'/user/view", array("id" => $data->{SrbacUtilities::getSrbacModule()->userId}))',
 								'buttons' => array(
 										'create' => array(
-												'label' => Yii::t('srbac', 'Assign super user priveledges'),
+												'label' => Yii::t('srbac', 'Assign super user privledges'),
 												'url' => 'Yii::app()->getController()->createUrl("/'.SrbacUtilities::SRBAC_MODULE_NAME.'/assign/roles", array("userId" => $data->{SrbacUtilities::getSrbacModule()->userId}))',
 												'imageUrl' => $this->getModule()->getIconsUrl('create.png'),
 												'click' => 'function(){'.CHtml::ajax(
@@ -29,10 +29,10 @@ $this->widget('zii.widgets.grid.CGridView',
 																'complete' => 'function(){$("#superUserGrid").removeClass("srbacLoading");$("#normalUserGrid").yiiGridView("update");$("#superUserGrid").yiiGridView("update");}',
 														)
 												).'return false;}',
-												'visible' => '!AuthItem::model()->superUser()->with(array("users" => array("joinType" => "INNER JOIN")))->together()->exists("users.".SrbacUtilities::getSrbacModule()->userId."=:id", array(":id" => $data->{SrbacUtilities::getSrbacModule()->userId}))'
+												'visible' => '!$data->getIsSuperUser()'
 										),
 										'delete' => array(
-												'label' => Yii::t('srbac', 'Revoke super user priveledges'),
+												'label' => Yii::t('srbac', 'Revoke super user privledges'),
 												'url' => 'Yii::app()->getController()->createUrl("/'.SrbacUtilities::SRBAC_MODULE_NAME.'/assign/roles", array("userId" => $data->{SrbacUtilities::getSrbacModule()->userId}))',
 												'click' => 'function(){'.CHtml::ajax(
 														array(
@@ -43,8 +43,7 @@ $this->widget('zii.widgets.grid.CGridView',
 																'complete' => 'function(){$("#superUserGrid").removeClass("srbacLoading");$("#normalUserGrid").yiiGridView("update");$("#superUserGrid").yiiGridView("update");}',
 														)
 												).'return false;}',
-												'visible' => ($this->getSuperUserCount() > 1 ? 'true' : 'false').
-													' && AuthItem::model()->superUser()->with(array("users" => array("joinType" => "INNER JOIN")))->together()->exists("users.".SrbacUtilities::getSrbacModule()->userId."=:id", array(":id" => $data->{SrbacUtilities::getSrbacModule()->userId}))'
+												'visible' => (SrbacUser::model()->superUser()->count() > 1 ? 'true' : 'false').' && $data->getIsSuperUser()'
 										)
 								)
 						)

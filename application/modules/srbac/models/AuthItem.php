@@ -117,7 +117,7 @@ class AuthItem extends CActiveRecord
 			->getDbCriteria()
 			->addColumnCondition(
 					array(
-							$this->getDbConnection()->getSchema()->quoteColumnName($this->getTableAlias(false, false).'.name') => SrbacUtilities::getSrbacModule()->superUser
+							$this->getDbConnection()->quoteColumnName($this->getTableAlias(false, false).'.name') => SrbacUtilities::getSrbacModule()->superUser
 					)
 			);
 		return $this;
@@ -132,7 +132,7 @@ class AuthItem extends CActiveRecord
 	{
 		$this->getDbCriteria()->addColumnCondition(
 				array(
-						$this->getDbConnection()->getSchema()->quoteColumnName($this->getTableAlias(false, false).'.type') => is_numeric($type) ? $type : array_search($type, self::$TYPES)
+						$this->getDbConnection()->quoteColumnName($this->getTableAlias(false, false).'.type') => is_numeric($type) ? $type : array_search($type, self::$TYPES)
 				)
 		);
 		return $this;

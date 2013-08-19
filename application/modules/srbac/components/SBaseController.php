@@ -22,7 +22,7 @@ class SBaseController extends CController
 		return array(
 				array(
 					'deny',
-					'expression' => 'SrbacUtilities::isInstalled() && !SrbacUtilities::getSrbacModule()->debug && AuthItem::model()->superUser()->exists()'
+					'expression' => 'SrbacUtilities::isInstalled() && !SrbacUtilities::getSrbacModule()->debug && SrbacUser::model()->superUser()->exists()'
 				)
 		);
 	}
@@ -34,7 +34,7 @@ class SBaseController extends CController
 	 */
 	protected function beforeAction($action)
 	{
-		if(!SrbacUtilities::isInstalled() && $this->getId() !== 'system')
+		if((!SrbacUtilities::isInstalled() || !AuthItem::model()->superUser()->exists()) && $this->getId() !== 'system')
 		{
 			$this->redirect('/'.SrbacUtilities::SRBAC_MODULE_NAME.'/system');
 		}

@@ -9,7 +9,7 @@ $this->breadcrumbs = array('SRBAC Super Users');
 			<?php echo Yii::t('srbac', 'Manage Super User Assignments')?>
 			</th>
 		</tr>
-		<?php if(!AuthItem::model()->superUser()->with(array('users' => array('joinType' => 'INNER JOIN')))->together()->exists()): ?>
+		<?php if(!SrbacUser::model()->superUser()->exists()): ?>
 			<tr class="srbacError">
 			<th colspan="2">
 				<?php
