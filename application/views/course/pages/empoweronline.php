@@ -59,7 +59,7 @@ alert("Coming Soon!");
   <div class="box-sidebar two">
     <h3>AARP </h3>
     <p> {t}The AARP website provides a list of tips for those providing care at a distance.{/t} </p>
-    <p> <img class="block center" style="-webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px;" src="<?php echo $this->getImagesUrl('162496418sidebar1.png'); ?>" alt="EAP Assocation Logo"> </p>
+    <p> <img class="block center" style="-webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px;" src="<?php echo $this->getImagesUrl('empower/162496418.png'); ?>" alt="EAP Assocation Logo"> </p>
     <p>{t} Caregiving from afar is no easy task. Here are some helpful tips to keep in mind while contemplating caring for your parent from a distance..{/t}</p>
     <p class="text-center bold"> <a href="http://www.aarp.org/relationships/caregiving-resource-center/info-09-2010/pc_tips_for_long_distance_caregiver.html" target="_blank">{t}Tips for the Long-Distance Caregiver{/t}</a> </p>
     <p> <a href="http://www.eapassn.org/" target="_blank"></a> </p>
@@ -153,7 +153,7 @@ alert("Coming Soon!");
       <hr />
       <img src="<?php echo $this->getImagesUrl('empower/104651788.png'); ?>" alt="{t}image{/t}">
       <h4>{t}Self care for the working family caregiver{/t}</h4>
-      <p>{t}<a href="http://www.matherlifewaysinstituteonaging.com/family-caregivers/empower-online/" target="_blank">Empower Online</a> is an in-depth, five-module online course that focuses on self-care for the working caregiver. This course focuses on managing responsibilities while caring for loved ones with chronic medical issues and includes communicating effectively with healthcare providers and locating additional caregiver resources. More specifically, Empower Online provides working caregivers with the knowledge and tools to both manage responsibilities of caring for older relatives or friends and address their own physical, mental, and emotional health needs.{/t}</p>
+      <p>{t}Empower Online provides working caregivers with the knowledge and tools to both manage responsibilities of caring for older relatives or friends and address their own physical, mental, and emotional health needs.{/t}</p>
       <p>{t}A research study conducted by Mather LifeWays Institute on Aging found that this online self-care program for working caregivers had multiple benefits.  As a result of participating in this course, working caregivers reported:{/t}</p>
       <ul>
         <li>{t}Increased participation in exercise and leisure activities;{/t}</li>
@@ -194,7 +194,7 @@ alert("Coming Soon!");
       </ul>
       <h4>{t}Resources{/t}</h4>
       <p>{t}Specific resources have been identified here because they relate to the course content. These resources will help you get greater detail about specific topics and ideas presented in this course. These resources can be accessed via the course home page, by country or region.{/t}</p>
-      <p class="forum">{t}Please feel free to post your own resources on the Forum throughout this course.{/t}</p>
+      <p class="forum">{t}Please  post any resources on the Forum that your currently use to assist you in your caregiver role.{/t}</p>
       <img src="<?php echo $this->getImagesUrl('empower/forum_icon.png'); ?>" alt="{t}image{/t}"> </div>
     <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t} </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
   </div>
@@ -203,7 +203,7 @@ alert("Coming Soon!");
       <h2 class="flowers">{t}Taking Care of You{/t}</h2>
       <hr />
       <img src="<?php echo $this->getImagesUrl('empower/105817205.png'); ?>" alt="{t}image{/t}">
-      <p>{t}This module contains several main sections:{/t}</p>
+      <p>{t}This first module contains several main sections:{/t}</p>
       <ul>
         <li>{t}Caregiver Resources{/t}</li>
         <li>{t}Managing Self-Care{/t}</li>
@@ -232,8 +232,8 @@ alert("Coming Soon!");
     <div class="content">
       <h2 class="flowers">{t}Caregiver Resources{/t}</h2>
       <hr />
-      <p>{t}Too often caregivers neglect their own health and well-being, and put their own needs <i>on the back burner</i>. Sometimes caregivers become a second victim of the disease that afflicts their family member. It is sad when someone says, <i>my mother was the ill person, but her illness destroyed my father</i>. Usually, we cannot stop the impact of a chronic illness on a family member. However, we are responsible for our own self-care.{/t}</p>
-      <p>{t}When you board an airplane, the flight attendant gives several safety instructions. One of them is, <i>if oxygen masks drop down, put on your oxygen mask first before helping others</i>. This is because if you do not take care of yourself first, you may not be able to help those who need your help. It is the same thing with caregiving. When you take care of yourself, everyone benefits. Ignoring your own needs is not only potentially detrimental to you, but it can also be harmful to the person who depends on you.{/t}</p>
+      <p>{t}Too often caregivers neglect their own health and well-being, and suspend  their own needs. Sometimes caregivers become a second victim of the disease that afflicts their family member. Usually, we cannot stop the impact of a chronic illness on a family member. However, we are responsible for our own self-care.{/t}</p>
+      <p>{t}When you take care of yourself, everyone benefits. Ignoring your own needs is not only potentially detrimental to you, but it can also be harmful to the person who depends on you.{/t}</p>
       <p>{t}The Resource section, on this course's home page, was designed to give you additional resources in order to help you maintain personal well-being while providing quality care to your family member. Many focus on tools to help you to take care of you. These tools will help you:{/t}</p>
       <ul>
         <li>{t}set goals and make action plans;{/t}</li>
@@ -255,729 +255,10 @@ alert("Coming Soon!");
       <img src="<?php echo $this->getImagesUrl('empower/165424108.png'); ?>" alt="{t}image{/t}">
       <h4>{t}How Much Support Do You Have?{/t}</h4>
       <p>{t}Even if you’re the primary family caregiver, you can’t do everything on your own, especially if you’re caregiving from a distance (more than an hour’s drive from your family member). You’ll need help from friends, siblings, and other family members, as well as health professionals. If you don’t get the support you need, you'll quickly burn out—which will compromise your ability to provide care.{/t}</p>
-      <p>{t}Take the surveys below to visually see how much support you feel from each resource. After you have completed the survey, think about what you can do to gain more support from these individuals. Again, this is simply a visual, and is not meant to be printed.{/t}</p>
-      <ul>
-        <li><a href="#" target="_blank">{t}Family{/t}</a></li>
-        
-        <!--
+      <p class="forum">{t}Think about how much support you feel from family and friends or co-workers, and then think about what you can do to gain more support from these individuals. Use the Internet to help you search for ideas, and post your findgins to the Forum.{/t}</p>
       
-      
-      <table>
-        <tr>
-          <td><div align="center">Type of Support</div></td>
-          <td><div align="center">None</div></td>
-          <td><div align="center">Little</div></td>
-          <td><div align="center">Some</div></td>
-          <td><div align="center">A lot</div></td>
-          <td><div align="center">As Much As I Need</div></td>
-        </tr>
-        <tr>
-          <td><div align="left">Understanding</div></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio" value="radio">
-            </div>
-            <label for="radio"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio2" value="radio">
-            </div>
-            <label for="radio2"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio3" value="radio">
-            </div>
-            <label for="radio3"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio4" value="radio">
-            </div>
-            <label for="radio4"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio5" value="radio">
-            </div>
-            <label for="radio5"></label></td>
-        </tr>
-        <tr>
-          <td><div align="left">Respect</div></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio" value="radio">
-            </div>
-            <label for="radio"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio2" value="radio">
-            </div>
-            <label for="radio2"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio3" value="radio">
-            </div>
-            <label for="radio3"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio4" value="radio">
-            </div>
-            <label for="radio4"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio5" value="radio">
-            </div>
-            <label for="radio5"></label></td>
-        </tr>
-        <tr>
-          <td><div align="left">Encouragement</div></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio" value="radio">
-            </div>
-            <label for="radio"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio2" value="radio">
-            </div>
-            <label for="radio2"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio3" value="radio">
-            </div>
-            <label for="radio3"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio4" value="radio">
-            </div>
-            <label for="radio4"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio5" value="radio">
-            </div>
-            <label for="radio5"></label></td>
-        </tr>
-        <tr>
-          <td><div align="left">Help me feel good about myself</div></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio" value="radio">
-            </div>
-            <label for="radio"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio2" value="radio">
-            </div>
-            <label for="radio2"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio3" value="radio">
-            </div>
-            <label for="radio3"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio4" value="radio">
-            </div>
-            <label for="radio4"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio5" value="radio">
-            </div>
-            <label for="radio5"></label></td>
-        </tr>
-        <tr>
-          <td><div align="left">Listen to me</div></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio" value="radio">
-            </div>
-            <label for="radio"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio2" value="radio">
-            </div>
-            <label for="radio2"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio3" value="radio">
-            </div>
-            <label for="radio3"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio4" value="radio">
-            </div>
-            <label for="radio4"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio5" value="radio">
-            </div>
-            <label for="radio5"></label></td>
-        </tr>
-        <tr>
-          <td><div align="left">Are there for me</div></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio" value="radio">
-            </div>
-            <label for="radio"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio2" value="radio">
-            </div>
-            <label for="radio2"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio3" value="radio">
-            </div>
-            <label for="radio3"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio4" value="radio">
-            </div>
-            <label for="radio4"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio5" value="radio">
-            </div>
-            <label for="radio5"></label></td>
-        </tr>
-        <tr>
-          <td><div align="left">Offer spiritual support</div></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio" value="radio">
-            </div>
-            <label for="radio"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio2" value="radio">
-            </div>
-            <label for="radio2"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio3" value="radio">
-            </div>
-            <label for="radio3"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio4" value="radio">
-            </div>
-            <label for="radio4"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio5" value="radio">
-            </div>
-            <label for="radio5"></label></td>
-        </tr>
-        <tr>
-          <td><div align="left">Cooperation</div></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio" value="radio">
-            </div>
-            <label for="radio"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio2" value="radio">
-            </div>
-            <label for="radio2"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio3" value="radio">
-            </div>
-            <label for="radio3"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio4" value="radio">
-            </div>
-            <label for="radio4"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio5" value="radio">
-            </div>
-            <label for="radio5"></label></td>
-        </tr>
-        <tr>
-          <td><div align="left">Care for me when I'm sick</div></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio" value="radio">
-            </div>
-            <label for="radio"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio2" value="radio">
-            </div>
-            <label for="radio2"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio3" value="radio">
-            </div>
-            <label for="radio3"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio4" value="radio">
-            </div>
-            <label for="radio4"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio5" value="radio">
-            </div>
-            <label for="radio5"></label></td>
-        </tr>
-        <tr>
-          <td><div align="left">Give/loan me money when I need it</div></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio" value="radio">
-            </div>
-            <label for="radio"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio2" value="radio">
-            </div>
-            <label for="radio2"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio3" value="radio">
-            </div>
-            <label for="radio3"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio4" value="radio">
-            </div>
-            <label for="radio4"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio5" value="radio">
-            </div>
-            <label for="radio5"></label></td>
-        </tr>
-        <tr>
-          <td><div align="left">Babysit</div></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio" value="radio">
-            </div>
-            <label for="radio"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio2" value="radio">
-            </div>
-            <label for="radio2"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio3" value="radio">
-            </div>
-            <label for="radio3"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio4" value="radio">
-            </div>
-            <label for="radio4"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio5" value="radio">
-            </div>
-            <label for="radio5"></label></td>
-        </tr>
-        <tr>
-          <td><div align="left">Help with transportation</div></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio" value="radio">
-            </div>
-            <label for="radio"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio2" value="radio">
-            </div>
-            <label for="radio2"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio3" value="radio">
-            </div>
-            <label for="radio3"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio4" value="radio">
-            </div>
-            <label for="radio4"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio5" value="radio">
-            </div>
-            <label for="radio5"></label></td>
-        </tr>
-        <tr>
-          <td><div align="left">Help take care of ill/elderly family member</div></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio" value="radio">
-            </div>
-            <label for="radio"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio2" value="radio">
-            </div>
-            <label for="radio2"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio3" value="radio">
-            </div>
-            <label for="radio3"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio4" value="radio">
-            </div>
-            <label for="radio4"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio5" value="radio">
-            </div>
-            <label for="radio5"></label></td>
-        </tr>
-        <tr>
-          <td><div align="left">Physcial affection (hugs)</div></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio" value="radio">
-            </div>
-            <label for="radio"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio2" value="radio">
-            </div>
-            <label for="radio2"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio3" value="radio">
-            </div>
-            <label for="radio3"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio4" value="radio">
-            </div>
-            <label for="radio4"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio5" value="radio">
-            </div>
-            <label for="radio5"></label></td>
-        </tr>
-        <tr>
-          <td><div align="left">Helps cook and clean</div></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio" value="radio">
-            </div>
-            <label for="radio"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio2" value="radio">
-            </div>
-            <label for="radio2"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio3" value="radio">
-            </div>
-            <label for="radio3"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio4" value="radio">
-            </div>
-            <label for="radio4"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio5" value="radio">
-            </div>
-            <label for="radio5"></label></td>
-        </tr>
-      </table>
-      <p>FRIENDS &amp; COWORKERS</p>
-      <table>
-        <tr>
-          <td><div align="center">Type of Support</div></td>
-          <td><div align="center">None</div></td>
-          <td><div align="center">Little</div></td>
-          <td><div align="center">Some</div></td>
-          <td><div align="center">A lot</div></td>
-          <td><div align="center">As Much As I Need</div></td>
-        </tr>
-        <tr>
-          <td><div align="left">Understanding</div></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio6" value="radio">
-            </div>
-            <label for="radio6"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio7" value="radio">
-            </div>
-            <label for="radio7"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio8" value="radio">
-            </div>
-            <label for="radio8"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio9" value="radio">
-            </div>
-            <label for="radio9"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio10" value="radio">
-            </div>
-            <label for="radio10"></label></td>
-        </tr>
-        <tr>
-          <td><div align="left">Respect</div></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio6" value="radio">
-            </div>
-            <label for="radio6"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio7" value="radio">
-            </div>
-            <label for="radio7"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio8" value="radio">
-            </div>
-            <label for="radio8"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio9" value="radio">
-            </div>
-            <label for="radio9"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio10" value="radio">
-            </div>
-            <label for="radio10"></label></td>
-        </tr>
-        <tr>
-          <td><div align="left">Encouragement</div></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio6" value="radio">
-            </div>
-            <label for="radio6"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio7" value="radio">
-            </div>
-            <label for="radio7"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio8" value="radio">
-            </div>
-            <label for="radio8"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio9" value="radio">
-            </div>
-            <label for="radio9"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio10" value="radio">
-            </div>
-            <label for="radio10"></label></td>
-        </tr>
-        <tr>
-          <td><div align="left">Help me feel good about myself</div></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio6" value="radio">
-            </div>
-            <label for="radio6"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio7" value="radio">
-            </div>
-            <label for="radio7"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio8" value="radio">
-            </div>
-            <label for="radio8"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio9" value="radio">
-            </div>
-            <label for="radio9"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio10" value="radio">
-            </div>
-            <label for="radio10"></label></td>
-        </tr>
-        <tr>
-          <td><div align="left">Listen to me</div></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio6" value="radio">
-            </div>
-            <label for="radio6"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio7" value="radio">
-            </div>
-            <label for="radio7"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio8" value="radio">
-            </div>
-            <label for="radio8"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio9" value="radio">
-            </div>
-            <label for="radio9"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio10" value="radio">
-            </div>
-            <label for="radio10"></label></td>
-        </tr>
-        <tr>
-          <td><div align="left">Are there for me</div></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio6" value="radio">
-            </div>
-            <label for="radio6"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio7" value="radio">
-            </div>
-            <label for="radio7"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio8" value="radio">
-            </div>
-            <label for="radio8"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio9" value="radio">
-            </div>
-            <label for="radio9"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio10" value="radio">
-            </div>
-            <label for="radio10"></label></td>
-        </tr>
-        <tr>
-          <td><div align="left">Offer spiritual support</div></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio6" value="radio">
-            </div>
-            <label for="radio6"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio7" value="radio">
-            </div>
-            <label for="radio7"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio8" value="radio">
-            </div>
-            <label for="radio8"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio9" value="radio">
-            </div>
-            <label for="radio9"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio10" value="radio">
-            </div>
-            <label for="radio10"></label></td>
-        </tr>
-        <tr>
-          <td><div align="left">Cooperation</div></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio6" value="radio">
-            </div>
-            <label for="radio6"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio7" value="radio">
-            </div>
-            <label for="radio7"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio8" value="radio">
-            </div>
-            <label for="radio8"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio9" value="radio">
-            </div>
-            <label for="radio9"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio10" value="radio">
-            </div>
-            <label for="radio10"></label></td>
-        </tr>
-        <tr>
-          <td><div align="left">Care for me when I'm sick</div></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio6" value="radio">
-            </div>
-            <label for="radio6"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio7" value="radio">
-            </div>
-            <label for="radio7"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio8" value="radio">
-            </div>
-            <label for="radio8"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio9" value="radio">
-            </div>
-            <label for="radio9"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio10" value="radio">
-            </div>
-            <label for="radio10"></label></td>
-        </tr>
-        <tr>
-          <td><div align="left">Give/loan me money when I need it</div></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio6" value="radio">
-            </div>
-            <label for="radio6"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio7" value="radio">
-            </div>
-            <label for="radio7"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio8" value="radio">
-            </div>
-            <label for="radio8"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio9" value="radio">
-            </div>
-            <label for="radio9"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio10" value="radio">
-            </div>
-            <label for="radio10"></label></td>
-        </tr>
-        <tr>
-          <td><div align="left">Babysit</div></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio6" value="radio">
-            </div>
-            <label for="radio6"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio7" value="radio">
-            </div>
-            <label for="radio7"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio8" value="radio">
-            </div>
-            <label for="radio8"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio9" value="radio">
-            </div>
-            <label for="radio9"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio10" value="radio">
-            </div>
-            <label for="radio10"></label></td>
-        </tr>
-        <tr>
-          <td><div align="left">Help with transportation</div></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio6" value="radio">
-            </div>
-            <label for="radio6"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio7" value="radio">
-            </div>
-            <label for="radio7"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio8" value="radio">
-            </div>
-            <label for="radio8"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio9" value="radio">
-            </div>
-            <label for="radio9"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio10" value="radio">
-            </div>
-            <label for="radio10"></label></td>
-        </tr>
-        <tr>
-          <td><div align="left">Help take care of ill/elderly family member</div></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio6" value="radio">
-            </div>
-            <label for="radio6"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio7" value="radio">
-            </div>
-            <label for="radio7"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio8" value="radio">
-            </div>
-            <label for="radio8"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio9" value="radio">
-            </div>
-            <label for="radio9"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio10" value="radio">
-            </div>
-            <label for="radio10"></label></td>
-        </tr>
-        <tr>
-          <td><div align="left">Physcial affection (hugs)</div></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio6" value="radio">
-            </div>
-            <label for="radio6"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio7" value="radio">
-            </div>
-            <label for="radio7"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio8" value="radio">
-            </div>
-            <label for="radio8"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio9" value="radio">
-            </div>
-            <label for="radio9"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio10" value="radio">
-            </div>
-            <label for="radio10"></label></td>
-        </tr>
-        <tr>
-          <td><div align="left">Helps cook and clean</div></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio6" value="radio">
-            </div>
-            <label for="radio6"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio7" value="radio">
-            </div>
-            <label for="radio7"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio8" value="radio">
-            </div>
-            <label for="radio8"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio9" value="radio">
-            </div>
-            <label for="radio9"></label></td>
-          <td><div align="center">
-              <input type="radio" name="radio" id="radio10" value="radio">
-            </div>
-            <label for="radio10"></label></td>
-        </tr>
-      </table>
-      
-      -->
-        
-        <li><a href="#" target="_blank">{t}Friends and/or Coworkers{/t}</a></li>
-      </ul>
+            <img src="<?php echo $this->getImagesUrl('empower/forum_icon.png'); ?>" alt="{t}image{/t}"> 
+
       
       <!--
       
@@ -1350,13 +631,12 @@ alert("Coming Soon!");
       <h5>{t}Managing our self-care means that as caregivers we:{/t}</h5>
       <ul>
         <li style="margin-bottom:10px;">{t}<b>Take responsibility</b> - We realize we are responsible for our personal well-being and for getting our needs met. This includes maintaining activities and relationships that are meaningful to us.{/t}</li>
-        <li style="margin-bottom:10px;">{t}<b>Have realistic expectations</b> - We fully understand our family member's medical condition and we are realistic about what our family member can and cannot do. The more you know about your family member's medical condition, the better you will be able to plan successful caregiving strategies. Knowledge is power. It is also important to look at your definition of a good caregiver. Unrealistic expectations can set you up for feelings of failure, resentment, and guilt. Placing burdensome expectations on yourself does not make you a better caregiver. In fact, you are much more likely to become an exhausted, irritable, and resentful caregiver... and then to feel guilty!{/t}</li>
-        <li style="margin-bottom:10px;">{t}<b>Focus on what we can do</b> - It is important to be clear about what you can and cannot change. For example, you will not be able to change a person who has always been demanding and inflexible, but you can control how you respond to that person's demands. You can accept and let-go of-the things you cannot change. Managing your self-care also means you seek solutions to what you can change.{/t}</li>
         <li style="margin-bottom:10px;">{t}<b>Communicate effectively with others</b> - These include family members, friends, health care professionals, and the care receiver. Do not expect others to know what you need. Recognize it is your responsibility to tell others about your needs and concerns. Communicate in ways that are positive and avoid being demanding, manipulative, or guilt provoking when you make requests.{/t}</li>
-        <li style="margin-bottom:10px;">{t}<b>Learn from our emotions</b> - Realize there will be emotional ups and downs. Listen to your emotions and what they are telling you. Do not bottle up your emotions. Repressing or denying feelings decreases energy, causes irritability, depression, and physical problems, and affects your judgment and ability to make the best decisions. Also, do not strike out at others. You are in control of your emotions, your emotions do not control you.{/t}</li>
-        <li style="margin-bottom:10px;">{t}<b>Get help when needed</b> - An important part of self-care is knowing when you need help and how to find it. Help can be from community resources, family and friends, or professionals. Most important is that you do not wait until you are hanging at the end of your rope before you get help. Do not wait until you are overwhelmed or exhausted, or your health fails. Reaching out for help, when needed, is a sign of personal strength.{/t}</li>
         <li style="margin-bottom:10px;">{t}<b>Set goals and work toward them</b> - Be realistic in the goals that you set and take steps toward reaching those goals. Seek solutions to the problems that you experience. Changes do not need to be major to make a significant difference. In summary, self-care means that you seek ways to take better care of yourself. As a caregiver, you do not just survive. You thrive!{/t}</li>
       </ul>
+      <p class="forum">{t}What are some other ways that we can help manage our self-care? Post your response to the Forum.{/t}</p>
+      <img src="<?php echo $this->getImagesUrl('empower/forum_icon.png'); ?>" alt="{t}image{/t}">
+      <p>&nbsp;</p>
     </div>
     <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t} </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
   </div>
@@ -1364,7 +644,7 @@ alert("Coming Soon!");
     <div class="content">
       <h2 class="flowers">{t}Managing Self-Care{/t}</h2>
       <hr />
-      <p>Ask yourself the following questions about your caregiving:</p>
+      <p>Ask yourself the following questions about your caregiving situation, and place a check in each box where appropriate (this is only meant to be a visual):</p>
       <table>
         <tr style="text-align:left;">
           <td><input type="checkbox" name="Yes" id="Yes">
@@ -1412,18 +692,13 @@ alert("Coming Soon!");
             <label for="No6"> No</label></td>
           <td style="text-align:left;"> Do you feel that your family or others just don't understand what you are going through as a caregiver?
             </p></td>
-        </tr>
-        <tr>
-          <td><p style="text-align:center;">
-              <input name="Submit" type="submit" id="Submit" onClick="MM_popupMsg('{t}A \'Yes\' answer to any of these questions indicates an area of self-care you might want to work on.{/t}')" value="Submit">
-            </p></td>
-        </tr>
+     
       </table>
+      <p style="text-align:center;">{t}A &quot;<em>Yes</em>&quot; answer to any of these questions indicates an area of self-care you might want to work on.{/t}</p>
       <h5>{t}Trying To Do It All{/t}</h5>
-      <p>{t}One problem that caregivers frequently experience is trying to do it all and doing it all alone.{/t}</p>
-      <p style="text-align:center;"><i>{t}Is it possible to do it all?</i>{/t}</p>
-      <p>{t}The answer to the question can be both yes and no. It really depends on you. What is critical is how you define what it means to do it all and, whether or not your definition of doing it all includes taking care of yourself so that you thrive, and not just survive.{/t}</p>
-      <p>{t}To Maxine, the answer to the question <em>is it possible to do it all</em>? was <em>no</em>. She says, <em>Mother's needs are endless and no matter what I do, I can never make her happy.</em> Yet, at the same time, Maxine was trying to do it all. Her mother's care dominated Maxine's life. Another caregiver, Maria, answered <em>yes</em> to the question, <em>is it possible to do it all</em>? She explained that "<em>all that needed to be done for my mother was done.</em>"{/t}</p>
+      <p>{t}One problem that caregivers frequently experience is trying to do it all and doing it all alone. <strong>Is it possible to do it all?</strong> The answer to the question can be both yes and no. It really depends on you. What is critical is how you define what it means to do it all and, whether or not your definition of doing it all includes taking care of yourself so that you thrive, and not just survive. To Maxine, the answer to the question &quot;<em>is it possible to do it all</em>:&quot; was no.{/t}</p>
+      <p>{t}She says, &quot;<em>Mother's needs are endless and no matter what I do, I can never make her happy.&quot;</em> Yet, at the same time, Maxine was trying to do it all. Her mother's care dominated Maxine's life.{/t}</p>
+      <p>{t}Another caregiver, Maria, answered <em>yes</em> to the question, <em>is it possible to do it all</em>? She explained that "<em>all that needed to be done for my mother was done.</em>"{/t}</p>
       <p>{t}A major difference between Maxine and Maria was the rules by which they operated. Maxine operated by the rule, <em>I must do everything for my mother</em>. The rule had become, <em>I must help Mama at all costs</em>. As a result, her relationships with other family members suffered and Maxine found herself becoming increasingly resentful. Maxine's feelings of wanting to do everything is legitimate, but the actions associated with her feelings usually are impossible to carry out.{/t}</p>
     </div>
     <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t} </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
@@ -1443,7 +718,7 @@ alert("Coming Soon!");
       </ol>
       <p>{t}There was another difference between Maxine and Maria. Maxine felt it was selfish to think of herself. Maria, on the other hand, viewed that if she was going to be there for the long haul, she must take care of herself, and make sure that she had pleasurable moments in her life.{/t}</p>
       <p>{t}As a caregiver, you are more likely to <i>be there</i> for your family member who needs your care and to be a more loving and patient caregiver when you meet some of your own needs. It is important to <i>fill your own cup</i> and not allow it to <i>run dry</i>.{/t}</p>
-      <p>{t}It is not being selfish to focus on your own needs and desires when you are a caregiver to a family member who has a chronic or progressive illness. It is important to ask yourself, <i>If my health deteriorates, or I die, what will happen to the person I provide care for? If I get emotionally drained, become deprived of sleep, or become isolated because I am trying to do it all, how loving am I likely to be to my family member?</i>{/t}</p>
+      <p>{t}It is not being selfish to focus on your own needs when you are a caregiver for a family member. It is important to remember that you must care for yourself before you can care for another.<i></i>{/t}</p>
     </div>
     <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t} </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
   </div>
@@ -1454,13 +729,10 @@ alert("Coming Soon!");
       <h5>{t}Taking Time for Yourself{/t}</h5>
       <p class="forum">{t}Please respond to the following questions on the Forum:{/t}</p>
       <ul class="forum">
-        <li>{t}Do you value yourself and your personal needs?{/t}</li>
-        <li>{t}What do you do for personal renewal?{/t}</li>
+        <li>{t}Do you value yourself and your personal needs, and what do you do for personal renewal?{/t}</li>
         <li>{t}Do you save some time for yourself out of each day?{/t}</li>
-        <li>{t}Do you take occasional extended breaks?{/t}</li>
-        <li>{t}Or are you so involved with caregiving tasks that you have little or no time for yourself?{/t}</li>
+        <li>{t}Do you take occasional extended breaks, or are you so involved with caregiving tasks that you have little or no time for yourself?{/t}</li>
         <li>{t}What activities do you enjoy?{/t}</li>
-        <li>{t}What would you like to do that would give you a lift?{/t}</li>
         <li>{t}When was the last time you gave yourself a treat?{/t}</li>
       </ul>
       <img src="<?php echo $this->getImagesUrl('empower/forum_icon.png'); ?>" alt="{t}forum icon{/t}">
@@ -2258,7 +1530,7 @@ HTML Output:
       <h2 class="flowers">{t}Steps to Maintain Health &amp; Avoid Stress{/t}</h2>
       <hr />
       <h5>{t}Meditation -{/t}</h5>
-      <p>{t}The word "meditation" comes from the Sanskrit word medha which, when taken literally, means "doing the wisdom." Meditation aids in relaxation and in achieving physical and mental well-being. Meditation is keeping your attention focused in the moment to quiet the mind and hear your body's inner wisdom. You, too, can learn to meditate. See the "Process of Meditation" box on the next page.{/t}</p>
+      <p>{t}The word "meditation" comes from the Sanskrit word 'medha' which, when taken literally, means "doing the wisdom." Meditation aids in relaxation and in achieving physical and mental well-being. Meditation is keeping your attention focused in the moment to quiet the mind and hear your body's inner wisdom. You, too, can learn to meditate. See the "Process of Meditation" box on the next page.{/t}</p>
       <h5>{t}Music -{/t}</h5>
       <p>{t}Music is another tool for reducing stress. It can alter the body and the mind. It can induce deep relaxation, act as a stimulant, and take you into other states of consciousness. Music is often used specifically for healing and decreasing stress and tension. Use the following steps as a guideline.{/t}</p>
       <ol>

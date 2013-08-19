@@ -42,13 +42,13 @@ alert("Coming Soon!");
     <p>
       <input type="button" style="width:175px;" onclick="myFunction()" value="Post-Course Evaluation" />
     </p>
-<br />
+    <br />
     <img src="<?php echo $this->getImagesUrl('care/153075496.png'); ?>" alt="image"> </div>
   <div class="box-sidebar one">
     <h3>{t}Working Caregivers in America{/t}</h3>
     <img src="<?php echo $this->getImagesUrl('care/286x366_Grafix_69pc.png'); ?>" alt="image" class="block center" />
     <p>{t}69% of working caregivers report having to rearrange their work schedule, decrease their hours, or take an 
-	unpaid leave of absence to meet their care-giving responsibilities.{/t}</p>
+      unpaid leave of absence to meet their care-giving responsibilities.{/t}</p>
   </div>
   <div class="box-sidebar two">
     <h3>{t}Magnitude - Informal Caregivers{/t}</h3>
@@ -56,13 +56,9 @@ alert("Coming Soon!");
     <p style="text-align:center;"><b> {t}National Center on Caregiving (USA){/t}</b></p>
     <p style="text-align:center; font-weight:bold; font-style:italic;">{t}65.7 million{/t}</p>
     <p>{t}caregivers make up 29% of the U.S. adult population providing care to someone who is ill, disabled or aged{/t}</p>
-        <hr />
-        
-        <img src="<?php echo $this->getImagesUrl('care/piechart.png'); ?>" alt="image">
-        <p style="text-align:center;"><a href="http://www.caregiver.org/caregiver/jsp/content_node.jsp?nodeid=439" target="_blank">more statistics...</a></p>
-
-
-   
+    <hr />
+    <img src="<?php echo $this->getImagesUrl('care/piechart.png'); ?>" alt="image">
+    <p style="text-align:center;"><a href="http://www.caregiver.org/caregiver/jsp/content_node.jsp?nodeid=439" target="_blank">more statistics...</a></p>
   </div>
 </div>
 <!-- Start main content here -->
@@ -70,7 +66,7 @@ alert("Coming Soon!");
 <div class="column-wide">
   <h2 class="flowers"><?php echo t($course->title); ?></h2>
   <p><?php echo t($course->description); ?></p>
-   <h5>{t}Independent Study / One-Year Access{/t}</h5>
+  <h5>{t}Independent Study / One-Year Access{/t}</h5>
   <h4>{t}Objectives{/t}</h4>
   <ul>
     <?php 
@@ -92,10 +88,9 @@ alert("Coming Soon!");
     <li> <a href="#lesson-6-slide-1" data-fancybox-group="lesson-6" class="teal lesson-6"> {t}Promoting Safety of Older Relatives and Friends in Caring for Themselves{/t} </a> <a href="#lesson-6-slide-2" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-3" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-4" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-5" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-6" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-7" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-8" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-9" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-10" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-11" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-12" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-13" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-14" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-15" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-16" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-17" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-18" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-19" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-20" data-fancybox-group="lesson-6" class="hide lesson-6"></a> </li>
     <li> <a href="#lesson-7-slide-1" data-fancybox-group="lesson-7" class="teal lesson-7"> {t}Supporting Personal Choice and Preferences of Older Adults in Health and Care Decision Making{/t} </a> <a href="#lesson-7-slide-2" data-fancybox-group="lesson-7" class="teal lesson-7"></a> <a href="#lesson-7-slide-3" data-fancybox-group="lesson-7" class="teal lesson-7"></a> <a href="#lesson-7-slide-4" data-fancybox-group="lesson-7" class="teal lesson-7"></a> <a href="#lesson-7-slide-5" data-fancybox-group="lesson-7" class="teal lesson-7"></a> <a href="#lesson-7-slide-6" data-fancybox-group="lesson-7" class="teal lesson-7"></a> <a href="#lesson-7-slide-7" data-fancybox-group="lesson-7" class="teal lesson-7"></a> <a href="#lesson-7-slide-8" data-fancybox-group="lesson-7" class="teal lesson-7"></a> </li>
   </ul>
-  
   <div class="box-white" id="resources">
-  <h4> {t}Resources{/t}</h4>
-    <p>{t}Please use these listed resources for additional reading. Pleaes contact your course facilitator if you have additional resources you would like to see added here.{/t}</p>
+    <h4> {t}Resources{/t}</h4>
+    <p>{t}Please use these listed resources for additional reading. Please contact your course facilitator if you have additional resources you would like to see added here.{/t}</p>
     <ul>
       <li><a href="http://www.nlm.nih.gov/medlineplus/talkingwithyourdoctor.html" target="_blank">{t}Talking with Your Doctor{/t}</a> 
         <!-- 
@@ -123,20 +118,17 @@ Find help providing care, government agencies, long-distance caregiving, and sup
 AARP provides various articles of interest and resources for family caregivers. --> </li>
     </ul>
   </div>
-
   <div class="box-white" id="developers">
-      <h4>{t}Course Contacts{/t}</h4>
-      <br />
-      <SPAN class="h5">{t}Content Designer:{/t} </SPAN><span class="name">Linda Hollinger-Smith, PhD</SPAN>
-      <p> {t}Dr. Hollinger-Smith is a doctorally prepared registered nurse focusing her research in gerontology, workforce development, and quality improvement. She has more than 28 years of experience working with older adults in senior living, long-term care settings, in the community, and in acute care settings in various staff and managerial positions. Her past positions include Assistant Dean of the Rush University College of Nursing, Nursing Director of the Rush Primary Care Institute, and Associate Chairperson of the Department of Adult Health Nursing at Rush University College of Nursing.{/t} </p>
-      <span class="h5">{t}Developer:{/t} </span><span class="name">Jon Woodall</span>
-      <p>{t}Mr. Woodall is responsible for all MLIA corporate workforce wellness programs related to design, implementation, publication, and evaluation. Additionally, he seeks new grant funding to support or extend current grants related to corporate workforce wellness programs.{/t} </p>
-      <span class="h5">{t}Facilitator:{/t}</span> <span class="name">Ellen Ziegemeier</span>
-      <p>{t}Ms. Ziegemeier has been facilitating online courses for Mather LifeWays Institute on Aging since 2004. She earned her Masters in Anthropology, and has worked locally and abroad -  Latin America and South America for various aging services. She is fluent in English and Spanish, and has a strong passion for caregiver training.{/t} </p>
- 
+    <h4>{t}Course Contacts{/t}</h4>
+    <br />
+    <SPAN class="h5">{t}Content Designer:{/t} </SPAN><span class="name">Linda Hollinger-Smith, PhD</SPAN>
+    <p> {t}Dr. Hollinger-Smith is a doctorally prepared registered nurse focusing her research in gerontology, workforce development, and quality improvement. She has more than 28 years of experience working with older adults in senior living, long-term care settings, in the community, and in acute care settings in various staff and managerial positions. Her past positions include Assistant Dean of the Rush University College of Nursing, Nursing Director of the Rush Primary Care Institute, and Associate Chairperson of the Department of Adult Health Nursing at Rush University College of Nursing.{/t} </p>
+    <span class="h5">{t}Developer:{/t} </span><span class="name">Jon Woodall</span>
+    <p>{t}Mr. Woodall is responsible for all MLIA corporate workforce wellness programs related to design, implementation, publication, and evaluation. Additionally, he seeks new grant funding to support or extend current grants related to corporate workforce wellness programs.{/t} </p>
+    <span class="h5">{t}Facilitator:{/t}</span> <span class="name">Ellen Ziegemeier</span>
+    <p>{t}Ms. Ziegemeier has been facilitating online courses for Mather LifeWays Institute on Aging since 2004. She earned her Masters in Anthropology, and has worked locally and abroad -  Latin America and South America for various aging services. She is fluent in English and Spanish, and has a strong passion for caregiver training.{/t} </p>
   </div>
 </div>
-
 <div id="course" class="hide">
   <?php $clientScript->registerScript('question-answer-handler',
 					"$('.course-slide .question').change(function() {".
@@ -161,7 +153,7 @@ AARP provides various articles of interest and resources for family caregivers. 
         <h4>{t}Class Schedule{/t}</h4>
         <p>{t}There are 7 units in total, and we encourage you to complete at least one unit per week so that your Facilitator may monitor and help lead the various weekly unit Discussion areas.{/t}</p>
         <h4>{t}Availability{/t}</h4>
-        <p>{t}You will have access to CARE Coaching Online for approximately 7 weeks. We limit student access to this timeframe because we review and update each class session to ensure students receive current information.{/t}</p>
+        <p>{t}You will have access to CARE Coaching Online for approximately 7 weeks. We limit student access to this time frame because we review and update each class session to ensure students receive current information.{/t}</p>
         <h4>{t}Contact{/t}</h4>
         <p>{t}If you have any questions and/or concerns, please don’t hesitate to contact your Facilitator via email.  Their information can be found by clicking on the ‘Staff Information’ link in the left toolbar.{/t}</p>
         <h4>{t}HELPFUL HINTS{/t}</h4>
@@ -175,8 +167,6 @@ AARP provides various articles of interest and resources for family caregivers. 
       </div>
       <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Start Course &raquo;{/t}</a></div>
     </div>
-    
-    
     <div id="lesson-1-slide-2" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}CARE Coaching - Topics{/t}</h2>
@@ -202,8 +192,6 @@ AARP provides various articles of interest and resources for family caregivers. 
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t} </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
-    
-
     <div id="lesson-1-slide-3" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}What’s CARE Coaching all about?{/t}</h2>
@@ -330,7 +318,7 @@ AARP provides various articles of interest and resources for family caregivers. 
           </li>
           <li>{t}You accept that through self-coaching, you are going to persist until you identify a solution and set of actions that you will then commit to implementing.  It may take some time to achieve results, but you need to stick to your goal.{/t}</li>
           <li>
-            <p>{t}Be willing to “let it go.”  We’ve all been in the situation where something just nags at us.  Things always seem worse when we pay too much attention to them.  If I feel anxious, overwhelmed, or depressed and focus on those feelings, I become it.  By letting go, I turn away from it.  I don’t feed those problems any longer.  It is sort of like flipping to another television channel.  You may not be able to stop a thought from “percolating” in your mind, but you can say “no!” to thoughts that result in anxiety or depression.  We always have choices.  In this case, we have the choice not be become a victim of negative thoughts or insecurities.{/t}</p>
+            <p>{t}Be willing to “let it go.”  We have all been in the situation where something just nags at us.  Things always seem worse when we pay too much attention to them.  If I feel anxious, overwhelmed, or depressed and focus on those feelings, I become it.  By letting go, I turn away from it.  I don’t feed those problems any longer.  It is sort of like flipping to another television channel.  You may not be able to stop a thought from “percolating” in your mind, but you can say “no!” to thoughts that result in anxiety or depression.  We always have choices.  In this case, we have the choice not be become a victim of negative thoughts or insecurities.{/t}</p>
           </li>
           <li>
             <p>{t}Set a time frame for the self-coaching session.  The focus of self-coaching is to identify your goal, commit to your actions, and then move on to do something else.   Sometimes your best thinking goes on when you do move onto something else and then come back to your goal.{/t}</p>
@@ -388,21 +376,21 @@ AARP provides various articles of interest and resources for family caregivers. 
           </li>
           <li>{t}Answer these questions:{/t}</li>
           <li>
-	          <ul>
-	            <li style="text-decoration:underline;">{t}What makes me unique?{/t}</li>
-	            <li style="text-decoration:underline;">{t}In what areas of my life do I appear most satisfied or content?{/t}</li>
-	            <li style="text-decoration:underline;">{t}In which areas do I appear to be struggling or unfulfilled?{/t}</li>
-	            <li style="text-decoration:underline;">{t}What are my strengths? (look back at your “Principles of Success” ratings for ideas){/t}</li>
-	            <li style="text-decoration:underline;">{t}How have these strengths helped me in the past?{/t}</li>
-	            <li style="text-decoration:underline;">{t}How do these strengths now help me?{/t}</li>
-	          </ul>
+            <ul>
+              <li style="text-decoration:underline;">{t}What makes me unique?{/t}</li>
+              <li style="text-decoration:underline;">{t}In what areas of my life do I appear most satisfied or content?{/t}</li>
+              <li style="text-decoration:underline;">{t}In which areas do I appear to be struggling or unfulfilled?{/t}</li>
+              <li style="text-decoration:underline;">{t}What are my strengths? (look back at your “Principles of Success” ratings for ideas){/t}</li>
+              <li style="text-decoration:underline;">{t}How have these strengths helped me in the past?{/t}</li>
+              <li style="text-decoration:underline;">{t}How do these strengths now help me?{/t}</li>
+            </ul>
           </li>
           <li>{t}Review your journal entries of recent accomplishments to connect with your values and talents.{/t}</li>
           <li>
-	          <ul>
-	            <li style="text-decoration:underline;">{t}What can you truly brag about?{/t}</li>
-	            <li style="text-decoration:underline;">{t}What do your successes say about you?{/t}</li>
-	          </ul>
+            <ul>
+              <li style="text-decoration:underline;">{t}What can you truly brag about?{/t}</li>
+              <li style="text-decoration:underline;">{t}What do your successes say about you?{/t}</li>
+            </ul>
           </li>
           <li>
             <p>{t}Create a personal “bragging” statement. Be authentic and positive in your statement. Print out the statement and keep it visible so that you can refer to it often.{/t}</p>
@@ -540,7 +528,7 @@ AARP provides various articles of interest and resources for family caregivers. 
         <hr />
         <img src="<?php echo $this->getImagesUrl('9146129r.png'); ?>" alt="image" />
         <p>{t}Does this scenario sound familiar?{/t} <i>{t}You are in a restaurant having dinner with your older parents. Your mother has some memory problems which means she takes quite a long time to figure out what to order. The waiter is standing over your table, and your father gets frustrated waiting for her to order. He says, “Helen, just order the chicken. You like the chicken!” She says, “I guess I’ll have the chicken.”{/t}</i></p>
-        <p><i>{t}After the waiter leaves (and in front of your mother), he says, “She takes too long to order. She’s distracted with other things going on. She can’t figure it out, so it’s easy for her if I just tell her, and all she has to do is repeat it.” Your mother subsequently doesn’t say much through the rest of the evening. The mood around the table is not much better.{/t}</i></p>
+        <p><i>{t}After the waiter leaves (and in front of your mother), he says, “She takes too long to order. She’s distracted with other things going on. She can’t figure it out, so it’s easy for her if I just tell her, and all she has to do is repeat it.” Your mother subsequently does not say much through the rest of the evening. The mood around the table is not much better.{/t}</i></p>
         <p>{t}<b>Communicating</b> in CARE Coaching is all about choice. Your father’s response is based on his own perceptions and feelings about what’s going on with your mother rather than supporting her remaining potential to make choices. Perhaps her memory problems do interfere with her capacity to make choices, but being able to “modify” the situation can maximize Helen’s remaining capacities.{/t}</p>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t} </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
@@ -555,7 +543,7 @@ AARP provides various articles of interest and resources for family caregivers. 
         <img src="<?php echo $this->getImagesUrl('9869154r.png'); ?>" alt="image" />
         <p>{t}Here’s an example:{/t}</p>
         <p><i>{t}Back at the restaurant, the waiter is ready to take the order. You say, “Mom, this restaurant is really well known for their delicious chicken and fish dishes, just the way you like them. What do you have a taste for today – chicken or fish?” Your mother says, “Well, I just don’t know. I had
-chicken for lunch today. So I think I’d like to try their fish!”{/t}</i></p>
+          chicken for lunch today. So I think I’d like to try their fish!”{/t}</i></p>
         <p>{t}So what is different in the two approaches? In your approach, you are taking a CARE Coaching approach by asking a version of “What do you want?” through your conversation. Taking into consideration your mother’s limitations, you have supported her remaining abilities to participate in daily life activities.{/t}</p>
         <p>{t}You may not yet be in a “caregiving” role for your older parents or other loved ones (or you may not consider what you now do for them as “caregiving”), but this course is designed to help you think about the future. People may find themselves “plunged” into the caregiving role at a time in life when they themselves are facing challenges such as mid-career transitions, their own health issues, or before retirement. Additionally, they may be contending with raising their own children simultaneously.{/t}</p>
         <p>{t}Caregiving commonly brings up feelings of burden, confusion, and guilt for caregivers. As a first step, using some key communication skills can relieve some of these concerns. Where do these feelings stem from? Burden refers to emotional response to changes and demands that occur as caregivers give help and support to the older person.{/t}</p>
@@ -692,7 +680,7 @@ chicken for lunch today. So I think I’d like to try their fish!”{/t}</i></p>
         <h4>{t}Activity – Reviewing Internet-Based PHR Tools - ProfileMD{/t}</h4>
         <p> {t}ProfileMD is a freeware PHR that allows immediate access to medical health history and information via your smartphone or PDA.{/t}</p>
         <h4>{t}Exercise – CARE Coaching and Selecting PHRs{/t}</h4>
-        <p>{t}Asking the right questions is key to determine which PHR product is right for you and your family. Review the previously described internet-based tools, My Family Health Profile and ProfileMD, and complete the self-learning exercise.{/t}</p>
+        <p>{t}Asking the right questions is key to determine which PHR product is right for you and your family. Review the previously described Internet-based tools, My Family Health Profile and ProfileMD, and complete the self-learning exercise.{/t}</p>
         <br />
         <br />
       </div>
@@ -761,7 +749,7 @@ chicken for lunch today. So I think I’d like to try their fish!”{/t}</i></p>
         <h2 class="flowers">{t}Types of PHRs{/t}</h2>
         <hr />
         <img src="<?php echo $this->getImagesUrl('12051072r.jpg'); ?>" alt="image" />
-        <p>{t}PHRs may be kept as hardcopy on paper or electronically on one’s computer or on the Internet through a service provider. In considering what form may be most suitable, you should consider things like accessibility, convenience, and ease of updating.{/t}</p>
+        <p>{t}PHRs may be kept as hard copy on paper or electronically on one’s computer or on the Internet through a service provider. In considering what form may be most suitable, you should consider things like accessibility, convenience, and ease of updating.{/t}</p>
         <p>{t}Paper versions can range from a formal document to a file folder with information from health care providers, insurance companies and hospitals. This is at least a good starting point for most people to get a snapshot of one’s health history. The difficulties come in when trying to keep all the information current as well as having emergency access to the information.{/t}</p>
         <p>{t}The greatest risk of keeping health information on paper can easily be understood when considering the saga of Hurricane Katrina. The risks of keeping health information on paper were fully exposed when hundreds of thousands of evacuees sought care in new medical communities across the country. Evacuees lacked even the most basic personal health information, such as their medications and dosages. Most of their paper records were destroyed in the muck of hurricane-caused flooding, and many medical practices and hospitals were shut down for weeks, perhaps forever. Out of necessity, a program called{/t} <a href="http://www.katrinahealth.org" target="_blank">KatrinaHealth</a> {t}was created to rapidly develop electronic health records for those displaced by the hurricane. Since then, the American Association of Family Practitioners (AAFP) has collaborated with the city of New Orleans and Intel, among others, to provide digital PHRs to every New Orleans resident who wants one, and to transfer these to medical practices and hospitals in the displaced residents' current location for follow-up care.{/t}</p>
       </div>
@@ -777,9 +765,9 @@ chicken for lunch today. So I think I’d like to try their fish!”{/t}</i></p>
         <hr />
         <a href="<?php echo $this->getImagesUrl('CARECoachingOnlineImages/PHRForm.pdf'); ?>" target="_blank"><img src="<?php echo $this->getImagesUrl('pdf-icon.png'); ?>" alt="image" width="48" height="48" class="normal" /></a>
         <p> <a href="http://www.ahima.org/" target="_blank">The American Health Information Management Association (AHIMA)</a> {t}created a PHR form that is downloadable here.{/t}</p>
-        <p>{t}Software versions of PHRs are stored on personal computers. Information is inputted directly into electronic forms or by scanning documents from health care providers. A hardcopy can then be easily printed. The user controls access to the information. The major drawback is the lack of accessibility in case of an emergency unless one carries a copy of the records on a flash drive or on a data card. Most software versions of PHRs are available at a cost to consumers.{/t}</p>
-        <p>{t}Internet versions of PHRs are very new having just been developed over the past 1-2 years. Through the web, consumers may access their private PHR accounts by connecting to the Internet and logging in with their username and password. Information may easily be updated, and consumers may elect to share information with specific individuals of their choosing. The major advantage is the access and availability of information in emergency situations – all one needs is Internet connection and logon information.{/t}</p>
-        <p>{t}If you are looking at an internet-based PHR, it is very important that the provider describes security and privacy standards that are in place to protect the information being stored. We will look at a few examples in the next section.{/t}</p>
+        <p>{t}Software versions of PHRs are stored on personal computers. Information is inputted directly into electronic forms or by scanning documents from health care providers. A hard copy can then be easily printed. The user controls access to the information. The major drawback is the lack of accessibility in case of an emergency unless one carries a copy of the records on a flash drive or on a data card. Most software versions of PHRs are available at a cost to consumers.{/t}</p>
+        <p>{t}Internet versions of PHRs are very new having just been developed over the past 1-2 years. Through the web, consumers may access their private PHR accounts by connecting to the Internet and logging in with their user name and password. Information may easily be updated, and consumers may elect to share information with specific individuals of their choosing. The major advantage is the access and availability of information in emergency situations – all one needs is an Internet connection and login information.{/t}</p>
+        <p>{t}If you are looking at an Internet-based PHR, it is very important that the provider describes security and privacy standards that are in place to protect the information being stored. We will look at a few examples in the next section.{/t}</p>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t} </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
@@ -855,7 +843,7 @@ chicken for lunch today. So I think I’d like to try their fish!”{/t}</i></p>
         <h2 class="flowers">{t}Activity – Reviewing Internet-Based PHR Tools{/t}</h2>
         <hr />
         <h5>{t}ProfileMD{/t}</h5>
-        <p>{t}The final PHR tool we will review is one of the latest Internet-based programs designed for Smartphones.  ProfileMD is a freeware PHR that allows immediate access to medical health history and information via your smartphone or PDA.{/t}</p>
+        <p>{t}The final PHR tool we will review is one of the latest )nternet-based programs designed for Smartphones.  ProfileMD is a freeware PHR that allows immediate access to medical health history and information via your smartphone or PDA.{/t}</p>
         <p>{t}Download the software to your computer and sync with your handheld device.{/t}</p>
         <p><a href="http://www.e-medtools.com/profilemd.html" target="_blank">{t}Download Site for ProfileMD{/t}</a></p>
       </div>
@@ -870,7 +858,7 @@ chicken for lunch today. So I think I’d like to try their fish!”{/t}</i></p>
         <h2 class="flowers">{t}Exercise – CARE Coaching and Selecting PHRs{/t}</h2>
         <hr />
         <a href="<?php echo $this->getImagesUrl('CCOAssets/ExerciseCARECoachingandSelectingPHRs.pdf'); ?>" target="_blank"><img src="<?php echo $this->getImagesUrl('pdf-icon.png'); ?>" alt="image" class="normal" /></a>
-        <p> {t}Asking the right questions is key to determine which PHR product is right for you and your family. This exercise is designed to help you determine exactly that. Review the previously described internet-based tools, My Family Health Profile and ProfileMD, and respond to the following questions.{/t}</p>
+        <p> {t}Asking the right questions is key to determine which PHR product is right for you and your family. This exercise is designed to help you determine exactly that. Review the previously described Internet-based tools, My Family Health Profile and ProfileMD, and respond to the following questions.{/t}</p>
       </div>
       <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Complete Module{/t} </a></div>
     </div>
@@ -960,7 +948,7 @@ chicken for lunch today. So I think I’d like to try their fish!”{/t}</i></p>
       <div class="content">
         <h2 class="flowers">{t}Video – How to Communicate with the Physician{/t}</h2>
         <hr />
-        <p>{t}Have you ever left a doctor's appoinment feeling that your questions were not answered? Or not sure what you were supposed to do next? Do not worry, you are not alone. Dr. Lori Whittaker, a family physician in Seattle, shares tips and advice for how to speak up for yourself when you are at the doctor's office. Good communication is a two way street, and it is up to you to make sure you get the treatment and the information you need to stay healthy.{/t}
+        <p>{t}Have you ever left a doctor's appointment feeling that your questions were not answered? Or not sure what you were supposed to do next? Do not worry, you are not alone. Dr. Lori Whittaker, a family physician in Seattle, shares tips and advice for how to speak up for yourself when you are at the doctor's office. Good communication is a two way street, and it is up to you to make sure you get the treatment and the information you need to stay healthy.{/t}
         <p>
           <iframe width="420" height="315" src="http://www.youtube.com/embed/rEt8xfQ9z1U?rel=0" frameborder="0" allowfullscreen></iframe>
         </p>
@@ -1065,7 +1053,7 @@ chicken for lunch today. So I think I’d like to try their fish!”{/t}</i></p>
         <hr />
         <p>{t}Learning What You Need to Know About the Health Care System{/t}</p>
         <p>{t}Learning what you need to know about the health care system can seem a daunting task. We break down some of the core components that are key for you to understand as caregivers for older parents. This information is not meant to be comprehensive, but provides you a starting point to better understand the complexities that are today’s health care system.{/t}</p>
-        <p> <a href="<?php echo $this->getImagesUrl('CCOAssets/Lesson4Handouts.zip'); ?>" target="_blank"><img src="<?php echo $this->getImagesUrl('pdf-icon.png'); ?>" alt="image" width="48" height="48" class="normal" /></a> {t}Click the icon below to access the folloiwng handouts: <i>People, Places, Things and More Things</i>{/t}</p>
+        <p> <a href="<?php echo $this->getImagesUrl('CCOAssets/Lesson4Handouts.zip'); ?>" target="_blank"><img src="<?php echo $this->getImagesUrl('pdf-icon.png'); ?>" alt="image" width="48" height="48" class="normal" /></a> {t}Click the icon below to access the following handouts: <i>People, Places, Things and More Things</i>{/t}</p>
         <br />
         <br />
       </div>
@@ -1363,33 +1351,33 @@ chicken for lunch today. So I think I’d like to try their fish!”{/t}</i></p>
             <p>{t}What is the basic information I should have at hand as a long distance caregiver?{/t}</p>
           </li>
           <li>
-	          <ol>
-	            <li>{t}Have contact information from your older parents’ neighbors. Make sure they know how to reach you in an emergency.{/t}</li>
-	            <li>{t}check out local resources and services (usually through a local area agency on aging, library, or senior center). Check with your parents which ones they may find helpful and check back on whether they have initiated contacts.{/t}</li>
-	            <li>{t}Have a current list of your parents’ medications (prescription and over-the-counter) including dosages, schedule, and reasons they are taking.{/t}</li>
-	            <li>{t}When you visit their home, be observant for changes in the environment or potential safety hazards.{/t}</li>
-	            <li>{t}Find out if you parents have “advanced directives” that outline their health care treatment preferences.{/t}</li>
-	          </ol>
+            <ol>
+              <li>{t}Have contact information from your older parents’ neighbors. Make sure they know how to reach you in an emergency.{/t}</li>
+              <li>{t}check out local resources and services (usually through a local area agency on aging, library, or senior center). Check with your parents which ones they may find helpful and check back on whether they have initiated contacts.{/t}</li>
+              <li>{t}Have a current list of your parents’ medications (prescription and over-the-counter) including dosages, schedule, and reasons they are taking.{/t}</li>
+              <li>{t}When you visit their home, be observant for changes in the environment or potential safety hazards.{/t}</li>
+              <li>{t}Find out if you parents have “advanced directives” that outline their health care treatment preferences.{/t}</li>
+            </ol>
           </li>
           <li>
             <p>{t}What can I really expect to do from a distance? I don’t feel comfortable just stepping into a situation.{/t}</p>
           </li>
           <li>
-	          <ol>
-	            <li>{t}Educate yourself on what you need to know about your parents’ health care, their needs and preferences, and other pertinent information.{/t}</li>
-	            <li>{t}Plan your visits ahead of time. Decide on priorities they may have.{/t}</li>
-	            <li>{t}Everything in your visit should not just be about caregiving. Plan to actually “visit” during your visits!{/t}</li>
-	            <li>{t}Stay in contact and encourage your parents to do the same.{/t}</li>
-	          </ol>
+            <ol>
+              <li>{t}Educate yourself on what you need to know about your parents’ health care, their needs and preferences, and other pertinent information.{/t}</li>
+              <li>{t}Plan your visits ahead of time. Decide on priorities they may have.{/t}</li>
+              <li>{t}Everything in your visit should not just be about caregiving. Plan to actually “visit” during your visits!{/t}</li>
+              <li>{t}Stay in contact and encourage your parents to do the same.{/t}</li>
+            </ol>
           </li>
           <li>
             <p>{t}How can I feel less frustrated and angry with the caregiving situation?{/t}</p>
           </li>
           <li>
-	          <ol>
-	            <li>{t}Feeling frustrated and angry is very common among caregivers regardless of distance.{/t}</li>
-	            <li>{t}Plan to give yourself a break and just do something for yourself.{/t}</li>
-	          </ol>
+            <ol>
+              <li>{t}Feeling frustrated and angry is very common among caregivers regardless of distance.{/t}</li>
+              <li>{t}Plan to give yourself a break and just do something for yourself.{/t}</li>
+            </ol>
           </li>
         </ol>
         <br />
@@ -1409,42 +1397,42 @@ chicken for lunch today. So I think I’d like to try their fish!”{/t}</i></p>
             <p>{t}What is a geriatric care manager and how can one help?{/t}</p>
           </li>
           <li>
-	          <ol>
-	            <li>{t}Geriatric care managers are licensed nurses or social workers who specialize in geriatric care.{/t}</li>
-	            <li>{t}The geriatric care manager is hired by a family to evaluate and assess an older parent’s needs and to coordinate care through community resources.{/t}</li>
-	            <li>{t}When choosing one, you want to check references as well as find out their experience, fees, and if they are a member of the National Association of Professional Geriatric Care Managers.{/t}</li>
-	          </ol>
+            <ol>
+              <li>{t}Geriatric care managers are licensed nurses or social workers who specialize in geriatric care.{/t}</li>
+              <li>{t}The geriatric care manager is hired by a family to evaluate and assess an older parent’s needs and to coordinate care through community resources.{/t}</li>
+              <li>{t}When choosing one, you want to check references as well as find out their experience, fees, and if they are a member of the National Association of Professional Geriatric Care Managers.{/t}</li>
+            </ol>
           </li>
           <li>
             <p>{t}How can I get my mother some relief in caring for my father?{/t}</p>
           </li>
           <li>
-	          <ol>
-	            <li>{t}Respite care provides one a break from caregiving responsibilities – it can be for an afternoon or for several days.{/t}</li>
-	            <li>{t}Care can be provided in the home, in an adult day care center, or in a senior living community.{/t}</li>
-	          </ol>
+            <ol>
+              <li>{t}Respite care provides one a break from caregiving responsibilities – it can be for an afternoon or for several days.{/t}</li>
+              <li>{t}Care can be provided in the home, in an adult day care center, or in a senior living community.{/t}</li>
+            </ol>
           </li>
           <li>
             <p>{t}What if my mom says, “Promise me you’ll never put me in a nursing home”?{/t}</p>
           </li>
           <li>
-	          <ol>
-	            <li>{t}This request usually follows some horrendous story on the news about a nursing home death. Most of us want to stay in our own homes, to be independent, and to be cared for by relatives and friends.{/t}</li>
-	            <li>{t}Think carefully before making this type of promise. Assuring your parents that you will look out for them in their best interests and provide quality of care is what is really important. For some illnesses, long-term care may be the sole option. Discovering too late that such promises cannot be kept has often resulted in terrible feelings of guilt by the caregiver for many years.{/t}</li>
-	            <li>{t}Rather than a promise that cannot be kept, another way to respond is, “Dad, I will make sure you have the best care we can arrange. You can count on me to try and do what’s best for everyone. I can’t think of a situation where I’d walk out on you.”{/t}</li>
-	          </ol>
+            <ol>
+              <li>{t}This request usually follows some horrendous story on the news about a nursing home death. Most of us want to stay in our own homes, to be independent, and to be cared for by relatives and friends.{/t}</li>
+              <li>{t}Think carefully before making this type of promise. Assuring your parents that you will look out for them in their best interests and provide quality of care is what is really important. For some illnesses, long-term care may be the sole option. Discovering too late that such promises cannot be kept has often resulted in terrible feelings of guilt by the caregiver for many years.{/t}</li>
+              <li>{t}Rather than a promise that cannot be kept, another way to respond is, “Dad, I will make sure you have the best care we can arrange. You can count on me to try and do what’s best for everyone. I can’t think of a situation where I’d walk out on you.”{/t}</li>
+            </ol>
           </li>
           <li>
             <p>{t}What are some other resources for long distance caregivers?{/t}</p>
           </li>
           <li>
-	          <ol>
-	            <li>{t}Obtain a free Caregiver Resource Directory that provides resources, facts, and advice about caring for a family member as well as for yourself. www.netofcare.org/crd/resource_form.asp{/t}</li>
-	            <li>{t}Benefits Check UP is a free online service provided by the National Council on Aging which allows people to find programs that can help them meet health care costs. www.benefitscheckup.org{/t}</li>
-	            <li>{t}ARCH National Respite Network and Resource Center provides resources and information including a respite locator program and information clearinghouse. www.archrespite.org{/t}</li>
-	            <li>{t}Eldercare Locator is a nationwide service helping identify local resources for older adults.  www.eldercare.gov{/t}</li>
-	            <li>{t}National Family Caregivers Association supports family caregivers and offers education, information, and referrals.  www.nfcacares.org{/t}</li>
-	          </ol>
+            <ol>
+              <li>{t}Obtain a free Caregiver Resource Directory that provides resources, facts, and advice about caring for a family member as well as for yourself. www.netofcare.org/crd/resource_form.asp{/t}</li>
+              <li>{t}Benefits Check UP is a free online service provided by the National Council on Aging which allows people to find programs that can help them meet health care costs. www.benefitscheckup.org{/t}</li>
+              <li>{t}ARCH National Respite Network and Resource Center provides resources and information including a respite locater program and information clearinghouse. www.archrespite.org{/t}</li>
+              <li>{t}Eldercare Locator is a nationwide service helping identify local resources for older adults.  www.eldercare.gov{/t}</li>
+              <li>{t}National Family Caregivers Association supports family caregivers and offers education, information, and referrals.  www.nfcacares.org{/t}</li>
+            </ol>
           </li>
         </ol>
         <br />
@@ -1539,7 +1527,7 @@ chicken for lunch today. So I think I’d like to try their fish!”{/t}</i></p>
             <li>{t}Outdoor area{/t}</li>
           </ul>
           <p><i>{t}CARE Coaching Tip – Be Alert!{/t}</i></p>
-          <p>{t}You may be a situation where your older parents are living alone and you live quite a distance away, maybe even across the country. You may not get back to visit on a regular basis, but the last time you visited, you noticed “little things” around the house that seemed “out of place” for them. You decide that on the hanksgiving holiday visit, you want to evaluate how they are doing. Remember, this should not be an inspection for purposes of judgment or criticism. Rather, think of this as a part wellness check, part well-being check, and part safety check. Things may be getting difficult to handle around the house for your older parents, and they may just be reluctant to bring them up with you because “you’ve got so much on your plate just now.”{/t}</p>
+          <p>{t}You may be a situation where your older parents are living alone and you live quite a distance away, maybe even across the country. You may not get back to visit on a regular basis, but the last time you visited, you noticed “little things” around the house that seemed “out of place” for them. You decide that on the Thanksgiving holiday visit, you want to evaluate how they are doing. Remember, this should not be an inspection for purposes of judgment or criticism. Rather, think of this as a part wellness check, part well-being check, and part safety check. Things may be getting difficult to handle around the house for your older parents, and they may just be reluctant to bring them up with you because “you’ve got so much on your plate just now.”{/t}</p>
           <p>{t}You want to try to be as subtle as possible. Don’t look like you are checking up on them. Use what you notice as openings for conversations. Do it privately (not a great opener for the family Thanksgiving table conversation!).{/t}</p>
           <p><i>{t}“Mom, I noticed you were having a bit of trouble reading that label. What if we change the light bulbs in here?”{/t}</i></p>
           <p>{t}Offer to do little things around the house. Don’t always wait for a “yes” or “no” response, as they may be too proud to ask for help. Just let them know that you’d like to use some of the time to be helpful and supportive.{/t}</p>
@@ -1838,7 +1826,7 @@ chicken for lunch today. So I think I’d like to try their fish!”{/t}</i></p>
           <h2 class="flowers">{t}CARE Coaching: Talking to Your Parents about Their Driving (continued){/t}</h2>
           <hr />
           <h5>{t}Step 2: Noticing the First Changes{/t}</h5>
-          <p>{t}Physical and cognitive changes with aging variy considerably from very sudden and dramatic to very subtle and barely noticeable.  Preparing and being willing to compensate for these changes will promote their safety and the safety of others.  In many communities, finding a group of older adults who are tackling driving issues together may be a positive way to address some of those initial changes through sharing.  Watch the following video to see how one church group addressed their issues through an AARP Driving Safety course.{/t}</p>
+          <p>{t}Physical and cognitive changes with aging vary considerably from very sudden and dramatic to very subtle and barely noticeable.  Preparing and being willing to compensate for these changes will promote their safety and the safety of others.  In many communities, finding a group of older adults who are tackling driving issues together may be a positive way to address some of those initial changes through sharing.  Watch the following video to see how one church group addressed their issues through an AARP Driving Safety course.{/t}</p>
           <h5>{t}Video – Senior Driving Safety{/t}</h5>
           <p>
             <iframe width="420" height="315" src="http://www.youtube.com/embed/YLW-GEJBMik?rel=0" frameborder="0" allowfullscreen></iframe>
@@ -2107,7 +2095,7 @@ chicken for lunch today. So I think I’d like to try their fish!”{/t}</i></p>
     
     <div id="lesson-7-slide-4" class="course-slide">
       <div class="content">
-        <h2 class="flowers">{t}CARE Coaching Review: Talking wih Your Older Parents{/t}</h2>
+        <h2 class="flowers">{t}CARE Coaching Review: Talking with Your Older Parents{/t}</h2>
         <hr />
         <img src="<?php echo $this->getImagesUrl('11829178r.jpg'); ?>" />
         <p>{t}Let’s just take a moment to review the core components of CARE Coaching in relation to talking with your older parents.{/t}</p>
@@ -2128,10 +2116,10 @@ chicken for lunch today. So I think I’d like to try their fish!”{/t}</i></p>
     
     <div id="lesson-7-slide-5" class="course-slide">
       <div class="content">
-        <h2 class="flowers">{t}CARE Coaching Review: Talking wih Your Older Parents (continued){/t}</h2>
+        <h2 class="flowers">{t}CARE Coaching Review: Talking with Your Older Parents (continued){/t}</h2>
         <hr />
         <h5>{t}Relate{/t}</h5>
-        <p>{t}It is often helpful when we think about relating to try to put yourself in “someone elses shoes.”   Think before responding to them – don’t try to relate when you are angry or upset about something.  Practice a conversation, particularly if it will be a difficult one, and try to have alternatives ready depending on the response.{/t}</p>
+        <p>{t}It is often helpful when we think about relating to try to put yourself in “someone else's shoes.”   Think before responding to them – don’t try to relate when you are angry or upset about something.  Practice a conversation, particularly if it will be a difficult one, and try to have alternatives ready depending on the response.{/t}</p>
         <p>{t}Just as important as verbal communication, your nonverbal communication – or body language – may speak volumes.  Try to use body language that would be viewed as open and positive – use eye contact, touch, and an open body stance.{/t}</p>
         <h5>{t}Encourage{/t}</h5>
         <p>{t}As the final component of CARE Coaching, encouraging can take on many forms.  Showing appreciation for your parents, letting them know that you realize that they tried to do the best they could.  It is not uncommon for older parents to look back and say, “I wish I could have been a better parent” or “if only I could have given you more when you were growing up.”  That is a great opportunity for you to acknowledge the characteristics that they passed on to you and the valuable things you learned from them.{/t}</p>
@@ -2148,7 +2136,7 @@ chicken for lunch today. So I think I’d like to try their fish!”{/t}</i></p>
         <h2 class="flowers">{t}Are You a “Sandwich Generation” Caregiver?{/t}</h2>
         <hr />
         <p>{t}If you are between the ages of 35 to 54 and are caring for both younger ones such as children and older parents or other family members and probably employed at the same time, you may be a “sandwich generation” caregivers.  You are not alone as approximately 20 million American fit this description.{/t}</p>
-        <p>{t}A survey by the American Psychological Association reported that women in the “sandwich generation” feel more stress than any other age group as they have to balance the demands of caregiving two generations.  Nearly 40% of them report “extreme levels” of stress which takes a toll on both their personal relationships but also on their own well-being as they may often put their own health on the “backburner.”{/t}</p>
+        <p>{t}A survey by the American Psychological Association reported that women in the “sandwich generation” feel more stress than any other age group as they have to balance the demands of caregiving two generations.  Nearly 40% of them report “extreme levels” of stress which takes a toll on both their personal relationships but also on their own well-being as they may often put their own health on the “back burner.”{/t}</p>
         <p>{t}Watch the following video to see one family’s experience.{/t}</p>
         <h4>{t}Video – Part of the Sandwich Generation{/t}</h4>
         <p>

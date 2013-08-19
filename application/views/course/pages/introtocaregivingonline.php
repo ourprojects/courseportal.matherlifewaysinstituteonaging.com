@@ -52,10 +52,9 @@ alert("Coming Soon!");
   <div class="box-sidebar three">
     <h3>Pew Internet: Health (Feb 1, 2013)</h3>
     <p><a href="http://pewinternet.org/experts/~/link.aspx?_id=E26587FE8FDB443A8610ECB87E635F94&_z=z" target="_blank"><img class="block-center" src="<?php echo $this->getImagesUrl('intro/pew.png'); ?>" /></a></p>
-   
     <p>{t}36% of U.S. adults care for an adult or multiple adults.{/t}</p>
     <hr />
-    <p>{t}Eight in ten caregivers (79%) have access to the internet. Of those, 88% look online for health information, outpacing other internet users on every health topic included in our survey, from looking up certain treatments to hospital ratings to end-of-life decisions.{/t}</p>
+    <p>{t}Eight in ten caregivers (79%) have access to the Internet. Of those, 88% look online for health information, outpacing other Internet users on every health topic included in our survey, from looking up certain treatments to hospital ratings to end-of-life decisions.{/t}</p>
     <img src="<?php echo $this->getImagesUrl('intro/piechart.png'); ?>" alt="image" /> </div>
 </div>
 
@@ -82,10 +81,10 @@ alert("Coming Soon!");
   </ul>
   <div class="box-white" id="resources">
     <h4> {t}Resources{/t}</h4>
-    <p>{t}Please use these listed resources for additional reading. Pleaes contact your course facilitator if you have additional resources you would like to see added here.{/t}</p>
+    <p>{t}Please use these listed resources for additional reading. Please contact your course facilitator if you have additional resources you would like to see added here.{/t}</p>
     <ul>
       <li><a href="http://www.alz.org" target="_blank">Alzheimer's Association</a></li>
-      <li><a href="http://www.nih.gov" target="_blank">National Intitute on Health (NIH)</a></li>
+      <li><a href="http://www.nih.gov" target="_blank">National Institute on Health (NIH)</a></li>
       <li><a href="http://pewinternet.org" target="_blank">Pew Internet &amp; American Life Project</a></li>
     </ul>
   </div>
@@ -147,7 +146,7 @@ alert("Coming Soon!");
         <h4>{t}Snapshot{/t}</h4>
         <h5>{t}Caregiver Population{/t} - </h5>
         <p>{t}Millions of people in the U.S. provide care for a chronically ill, disabled or aged family member or friend during any given year and spend many hours per week providing care for their loved one.{/t}</p>
-        <p class="forum">{t}Seach the Internet for current data on the number of people in your country that provide care to an older adult, and post your findings on the Forum.{/t}</p>
+        <p class="forum">{t}Search the Internet for current data on the number of people in your country that provide care to an older adult, and post your findings on the Forum.{/t}</p>
         <!--
         <div id="question" class="question">
           <p class="forum">Seach the Internet for current data on the number of people in your country that provide care to an older adult, and post your findings on the Forum.</p>
@@ -169,7 +168,7 @@ alert("Coming Soon!");
         <ul>
           <li>{t}Locate, define and summarize caregiving and it's characteristics{/t}</li>
           <li>{t}Describe the  caregiver role{/t}</li>
-          <li>{t}Eplore different types of US caregivers{/t}</li>
+          <li>{t}Explore different types of US caregivers{/t}</li>
         </ul>
         <h5>{t}Your Definition of Caregiving{/t}</h5>
         <p class="forum">{t}Create your own definition or description of caregiving, and post your response on the Forum. Please use the Internet to help create your definition.{/t}</p>
@@ -180,17 +179,17 @@ alert("Coming Soon!");
       <div class="content">
         <h2 class="flowers">{t}Defining Caregiving{/t}</h2>
         <hr />
-        <p>{t}<a href="http://www.merriam-webster.com/dictionary/caregiving" target="_blank">Merriam-Webster's</a> dictionary defines <i>cargiving</i> as a person who provides direct care (as for children, elderly people, or the chronically ill). <a href="http://www.caregiver.org/caregiver/jsp/content_node.jsp?nodeid=439" target="_blank">The Family Caregiver Alliance</a> defines the term caregiver as anyone who provides assistance to someone else who is, to some degree, incapacitated and needs help performing the daily tasks essential to living a normal life. This would include persons providing care for: a husband who has suffered a stroke, a wife with Parkinson's disease, a mother-in-law with cancer, a grandfather with Alzheimer's disease, a loved one with traumatic brain injury, a friend with AIDS, a child with muscular dystrophy, an elder who is very frail.{/t}</p>
+        <p>{t}<a href="http://www.merriam-webster.com/dictionary/caregiving" target="_blank">Merriam-Webster's</a> dictionary defines <i>caregiving</i> as a person who provides direct care (as for children, elderly people, or the chronically ill). <a href="http://www.caregiver.org/caregiver/jsp/content_node.jsp?nodeid=439" target="_blank">The Family Caregiver Alliance</a> defines the term caregiver as anyone who provides assistance to someone else who is, to some degree, incapacitated and needs help performing the daily tasks essential to living a normal life. This would include persons providing care for: a husband who has suffered a stroke, a wife with Parkinson's disease, a mother-in-law with cancer, a grandfather with Alzheimer's disease, a loved one with traumatic brain injury, a friend with AIDS, a child with muscular dystrophy, an elder who is very frail.{/t}</p>
         <p>{t}More specifically, A a caregiver is an unpaid family member, friend, or neighbor who provides care to an individual who has an acute or chronic condition and needs assistance to manage a variety of tasks, from bathing, to medication administration, to symptom monitoring. For our purposes, a caregiver is an unpaid individual (a spouse, significant other, family member, friend, or neighbor) involved in assisting others who are unable to perform certain activities on their own.{/t}</p>
         <p>{t}<a href="http://www.aarp.org/research/ppi/" target="_blank">The AARP Public Policy Institute</a> reports that in 2009, about 42.1 million family caregivers in the United States provided care to an adult with limitations in daily activities at any given point in time, and about 61.6 million provided care at some time during the year. The estimated economic value of their unpaid contributions was approximately $450 billion in 2009, up from an estimated $375 billion in 2007. That's a lot of money and a lot of caregivers!{/t}</p>
         <p>{t}Please search the Internet and read the following reports to get a better understanding of <i>caregiving</i>:{/t}</p>
         <ul>
           <li>{t}The MetLife Study of Caregiving Costs to Working Caregivers - Double Jeopardy for Baby Boomers Caring for Their Parents{/t}</li>
-          <li>{t}A study by the National Alliance for Caregiving and UnitedHealthcare - The e-Connected Family Caregiver{/t}</li>
-          <li>{t}Conducted by the National Alliance for Caregiving and Funded by the UnitedHealth Foundation Caregivers of Veterans – Serving on the Homefront{/t}</li>
+          <li>{t}A study by the National Alliance for Caregiving and United Healthcare - The e-Connected Family Caregiver{/t}</li>
+          <li>{t}Conducted by the National Alliance for Caregiving and Funded by the United Health Foundation Caregivers of Veterans – Serving on the Home front{/t}</li>
           <li>{t}National Alliance for Caregiving in Collaboration with AARP; Funded by The MetLife Foundation - Caregiving in the U.S. 2009{/t}</li>
         </ul>
-        <p class="forum">{t}After learning how several organzitions define caregiving, would you consider yourself a caregiver and why?{/t}</p>
+        <p class="forum">{t}After learning how several organizations define caregiving, would you consider yourself a caregiver and why?{/t}</p>
         <img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}"> </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
@@ -215,7 +214,7 @@ alert("Coming Soon!");
         <h2 class="flowers">{t}The Caregiver Role (continued){/t}</h2>
         <hr />
         <img src="<?php echo $this->getImagesUrl('intro/76946582.png'); ?>" alt="{t}Tutorial{/t}" />
-        <p>{t}More importantly, care recievers need to be secure in knowing that the caregiver can perform the persons' basic needs, since they can no longer do it for themselves. Those needs may include:{/t}</p>
+        <p>{t}More importantly, care receivers need to be secure in knowing that the caregiver can perform the persons' basic needs, since they can no longer do it for themselves. Those needs may include:{/t}</p>
         <ul>
           <li>{t}Physical needs{/t}</li>
           <li>{t}Safety and security needs{/t}</li>
@@ -224,13 +223,13 @@ alert("Coming Soon!");
           <li>{t}Self- actualization needs{/t}</li>
         </ul>
         <p class="forum">{t}Please search the Internet for detailed information and descriptions on these topics listed above, and post your findings on the Forum.{/t}</p>
-        <p>{t}The caregiver must be able to listen and focus on these needs through verbal and nonverbal messages of the person receiving care. They must develop a strategy over the years, keeping in mind the caregiver at all times, maintaining respect and understanding cultural and religious differences. Caregivers contribute more than any other member of the health team to the physical, psychological, spiritual, and most important, social aspects of a person’s care. Now, let's look at a real-life caregiving sitiuation and see how one family copes.{/t}</p>
+        <p>{t}The caregiver must be able to listen and focus on these needs through verbal and nonverbal messages of the person receiving care. They must develop a strategy over the years, keeping in mind the caregiver at all times, maintaining respect and understanding cultural and religious differences. Caregivers contribute more than any other member of the health team to the physical, psychological, spiritual, and most important, social aspects of a person’s care. Now, let's look at a real-life caregiving situation and see how one family copes.{/t}</p>
         <img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}Tutorial{/t}" /> </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
     <div id="lesson-1-slide-7" class="course-slide">
       <div class="content">
-        <h2 class="flowers">{t}The Sandwih Generation - MediaStorm{/t}</h2>
+        <h2 class="flowers">{t}The Sandwich Generation - MediaStorm{/t}</h2>
         <hr />
         <p>{t}Filmmaker-photographer couple Julie Winokur and Ed Kashi were busy pursuing their careers and raising two children when Winokur's 83-year-old father, Herbie, became too infirm to care for himself. At that moment they joined some twenty million other Americans who make up the sandwich generation, those who find themselves responsible for the care of both their children and their aging parents.{/t}</p>
         <p>{t}Authors of the book <i>Aging in America: The Years Ahead</i>, which chronicles the country's fastest-growing segment of the population, Winokur and Kashi decided to tell their own story as they took on the care of Winokur's father. In The Sandwich Generation, they have created an honest, intimate account of their own shifting — and challenging — responsibilities, as well as some of their unexpected joys.{/t}</p>
@@ -245,8 +244,8 @@ alert("Coming Soon!");
       <div class="content">
         <h2 class="flowers">{t}Types of Caregivers in the US{/t}</h2>
         <hr />
-        <p>While many consider careing for a parent and/or grandparent the summation of the term <i>caregiving</i>, there are many more roles that are included when defining caregiving. As you have read in the reports listed above, careing for those other than our parents and/or grandparents also puts you in a caregiving role. </p>
-        <p>As reported by the <a href="http://www.caregiverresource.net" target="_blank">Caregiver Network Resource</a>, caregiveres are wives, husbands, parents, children, friends, employees…  Types of caregivers include:</p>
+        <p>While many consider caring for a parent and/or grandparent the summation of the term <i>caregiving</i>, there are many more roles that are included when defining caregiving. As you have read in the reports listed above, caring for those other than our parents and/or grandparents also puts you in a caregiving role. </p>
+        <p>As reported by the <a href="http://www.caregiverresource.net" target="_blank">Caregiver Network Resource</a>, caregivers are wives, husbands, parents, children, friends, employees…  Types of caregivers include:</p>
         <ul>
           <li>{t}<b>Crisis Caregiver</b>: Your family member manages most of the time on their own until there is an emergency.{/t}</li>
           <li>{t}<b>Primary Caregiver</b>: Your family member depends on you for regular assistance for two or more activities in their life. You make decisions that directly affect them. You may act as their representative in situations.  You provide hands-on assistance with basic daily tasks (bathing, dressing, transportation, money matters, etc.){/t}</li>
@@ -264,8 +263,6 @@ alert("Coming Soon!");
         <hr />
         <img src="<?php echo $this->getImagesUrl('intro/imsis530-020.png'); ?>" alt="{t}Tutorial{/t}" />
         <p>{t}Whether you are an informal caregiver caring for a relative, or a professional caregiver - all caregivers share certain experiences. For many people, caregiving is not a job or a duty. It is doing what is right for a loved one.{/t}</p>
-        
-        
         <p>{t}Caregiving is an unspoken promise that so many of us make in our relationships, to be there for our loved ones when they need us. Unfortunately, few people have the time, resources or ability to care for their aging or disabled loved one without any help. It is important as a caregiver to know your limits, take care of yourself, know your resources in the community, and understand the wants and needs of the person needing care.{/t}</p>
         <div id="question1" class="question">
           <p><b>{t}Listening and responding appropriately results in better care and can build a better relationship.{/t}</b><br />
@@ -306,7 +303,7 @@ alert("Coming Soon!");
           <p class="right-answer hide"> {t}Correct! According the AoA website, by 2030 all <i>baby boomers</i> will be at least 65.{/t} </p>
           <p class="wrong-answer hide"> {t}Please review this module again, and understand the caregiver role before continuing.{/t} </p>
         </div>
-        <p>{t}The information supplied by the <a href="http://www.aoa.gov" target="_blank">Administration on Aging</a> website is a great reference and resource for current and future caregivers. There vision is to serve a growning senior population, ensuring the continuation of a veibrant aging services network at State, Territory, local and Tribal levels through funding of lower-cost, non-medical services and supports that provide the means by which many more seniors can maintain their independence.{/t}</p>
+        <p>{t}The information supplied by the <a href="http://www.aoa.gov" target="_blank">Administration on Aging</a> website is a great reference and resource for current and future caregivers. There vision is to serve a growing senior population, ensuring the continuation of a vibrant aging services network at State, Territory, local and Tribal levels through funding of lower-cost, non-medical services and supports that provide the means by which many more seniors can maintain their independence.{/t}</p>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Start Module &raquo;{/t}</a></div>
     </div>
@@ -314,14 +311,14 @@ alert("Coming Soon!");
       <div class="content">
         <h2 class="flowers">{t}Data on US Caregivers{/t}</h2>
         <hr />
-        <p>{t}The older population--persons 65 years or older -- are a large portion of the US population. They represent more than 10% of Americans. By 2030, there will be more than 70 million older persons, more than twice their number in 2000. People 65+ represented more than 10% of the population in the year 2000 but are expected to grow to be approxmiatley 20% of the population by 2030.{/t}</p>
+        <p>{t}The older population--persons 65 years or older -- are a large portion of the US population. They represent more than 10% of Americans. By 2030, there will be more than 70 million older persons, more than twice their number in 2000. People 65+ represented more than 10% of the population in the year 2000 but are expected to grow to be appropriately 20% of the population by 2030.{/t}</p>
         <p class="forum">{t}Search the following website to research data on the number of US caregivers, and post your findings to the Forum: National Institutes of Health, Alzheimer's Association, and National Alliance for Caregivers.{/t}</p>
         <img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}Tutorial{/t}" />
-        <p>{t}As reported by the <a href="http://caregiveraction.org" target="_blank">National Family Caregivers Association (NFCA)</a>, here is a snopshot of statistics on family caregivers and family caregiving:{/t}</p>
+        <p>{t}As reported by the <a href="http://caregiveraction.org" target="_blank">National Family Caregivers Association (NFCA)</a>, here is a snapshot of statistics on family caregivers and family caregiving:{/t}</p>
         <h5>{t}Caregiving Population{/t}</h5>
         <ul>
           <li>{t}More than 65 million people, 29% of the U.S. population, provide care for a chronically ill, disabled or aged family member or friend during any given year and spend an average of 20 hours per week providing care for their loved one.{/t}</li>
-          <li>{t}The value of the services family caregivers provide for "free," when caring for older adults, is estimated to be $375 billion a year. That is almost twice as much as is actually spent on homecare and nursing home services combined ($158 billion).{/t}</li>
+          <li>{t}The value of the services family caregivers provide for "free," when caring for older adults, is estimated to be $375 billion a year. That is almost twice as much as is actually spent on home care and nursing home services combined ($158 billion).{/t}</li>
           <li>{t}The typical family caregiver is a 49-year-old woman caring for her widowed 69-year-old mother who does not live with her. She is married and employed. Approximately 66% of family caregivers are women. More than 37% have children or grandchildren under 18 years old living with them.{/t}</li>
         </ul>
       </div>
@@ -367,7 +364,7 @@ alert("Coming Soon!");
         <h5>{t}State by State Statistics{/t}</h5>
         <p>{t}There are many reports that detail the economic value of family caregiving in a state-by-state comparison of the number of family caregivers in the country, the number of hours they spend on caregiving responsibilities, and the market value of those services. Also reported, the most recent estimate of the value of family caregivers' services can reach hundreds of billions of US dollars, annually.{/t}</p>
         <div id="question" class="question">
-          <p class="forum">Seach the Internet and read the most current report titled: Economic Value of Informal Caregiving. </p>
+          <p class="forum">Search the Internet and read the most current report titled: Economic Value of Informal Caregiving. </p>
           <form method="get" action="http://www.google.com/search" target="_blank">
             <input type="text" id="google-search" name="q" size="65" maxlength="255" value="" />
             <input type="submit" value="{t}Google Search{/t}" class="teal" />
@@ -425,7 +422,7 @@ alert("Coming Soon!");
         <p>{t}This key trend has resulted in the implementation of cost containment measures and the further informalization of care, that is, increased reliance on family and friends to provide informal care to substitute for formal health care services. Older adults who, in the past, remained in the hospital for most of their recovery period from an illness or accident are today sent home after considerably fewer days and with less <i>formal</i> support. Family members and other informal supports are left to manage the overall care of an elder and to perform sometimes very complicated health care tasks. This often comes at great personal expense and frequently with little or no training or resources from health care professionals.{/t}</p>
         <p>{t}Taken together, these aging, workforce, family, and health care-related trends mean that there are growing numbers of people who must juggle the demands of their work with those of their families. The cost of replacing the work of these informal caregivers with paid home care has been estimated to range from $45 - 75 billion to $196 billion dollars per year. This latter figure represents about 18% of total national health care spending per year. Although the American family continues to perform the basic family functions of socialization, care and nurturing of its members, the ways in which family functions are performed now differ. It is clear that for most families today, reliance on a stay-at-home spouse to handle family responsibilities is not an option. Also, increasingly there will be fewer children to care for aging parents.{/t}</p>
         <p>{t}The implications of these trends for caregiving in the future are that there will be more elders who need care, fewer women who can devote their full attention to providing this care due to their paid work responsibilities, more men who will be involved in caregiving, more care provided by non-relatives, and more caregivers who will also be engaged in paid work. Conflicts between work and family are becoming more common and are of concern to employers and workers alike. So, who are these working caregivers, and how many of them are there?{/t}</p>
-        <p class="forum">{t}Search the Internet for other trends you may find in the US, and post your findings on the Forum. As you comment on these listed trends, also share if you can see signs of these trends in your perosnal life. Finally, search the Internet and post to the Forum how many caregivers are in your State/Region and what, in general, are their biggest challenges.{/t}</p>
+        <p class="forum">{t}Search the Internet for other trends you may find in the US, and post your findings on the Forum. As you comment on these listed trends, also share if you can see signs of these trends in your personal life. Finally, search the Internet and post to the Forum how many caregivers are in your State/Region and what, in general, are their biggest challenges.{/t}</p>
         <img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}"> </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
@@ -441,7 +438,7 @@ alert("Coming Soon!");
           <li>{t}On average, they provide 20 hours of care per week.{/t}</li>
           <li>{t}Of those 65.7 million people, approximately three-fourths of caregivers are or were working while providing care.{/t}</li>
         </ul>
-        <p class="forum">{t}Search the Internet and downlaod at least two recent studies associated with the financial impact caregiving has on businesses, and attach them to a posting on the Forum.{/t}</p>
+        <p class="forum">{t}Search the Internet and download at least two recent studies associated with the financial impact caregiving has on businesses, and attach them to a posting on the Forum.{/t}</p>
         <img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}"> </div>
       <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Complete module{/t}</a></div>
     </div>
@@ -456,7 +453,7 @@ alert("Coming Soon!");
         <ul>
           <li>{t}Locate and explore general challenges associated with caregiving{/t}</li>
           <li>{t}Locate and explore various local and regional resources for caregivers{/t}</li>
-          <li>{t}Discss long-distance caregiving and potential solutions{/t}</li>
+          <li>{t}Discuss long-distance caregiving and potential solutions{/t}</li>
         </ul>
         <p>{t}Caring for others is filled with many mixed and varied emotions such as feelings of love, loss, anger, affection, sadness, frustration, and guilt. It’s not uncommon for family caregivers to feel lonely and isolated. It takes a lot of physical, mental, spiritual, and emotional energy to care for a loved one.{/t}</p>
         <p>{t}No one can ever be fully prepared for the challenges of caregiving. The tasks and responsibilities involved can be demanding, even more so when caregivers themselves are frail, have been thrust into their role unexpectedly or reluctantly, or must care for someone who is uncooperative or combative.{/t}</p>
@@ -469,7 +466,7 @@ alert("Coming Soon!");
             </select>
           </p>
           <p class="right-answer hide"> {t}Correct! Caregivers experience a higher rate of stress, anxiety, and depression than those who are not caregivers.{/t} </p>
-          <p class="wrong-answer hide"> {t}Incorrect. This module will help you learn more about the challenges associted ith caregiving.{/t} </p>
+          <p class="wrong-answer hide"> {t}Incorrect. This module will help you learn more about the challenges associated with caregiving.{/t} </p>
         </div>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button right"	onclick="$.fancybox.next();">{t}Start Module &raquo;{/t}</a></div>
@@ -527,10 +524,10 @@ alert("Coming Soon!");
         <h2 class="flowers">{t}Resources for Caregivers{/t}</h2>
         <hr />
         <p>{t}The Web has a ocean of information for caregivers. While it can be intimidating, part of this online course is to teach you how to use the Web to your advantage. Entering your caregiving role can be complicated enough, but you can use the Web as a first-stop for many of your questions and as your main research tools. Useful tools and resources like checklists for doctor visits, online education, links to resources, phone numbers, and answers to frequently asked questions are readily available on the Web for those who use it.{/t}</p>
-        <p>{t}On the home page for this course, there is list of hyperlinks to various caregiver resources. While this is a small list, it does provide you with several resources.{/t}</p>
-        <p class="forum">{t}Search the Internet for caregiver resources and post to the Forum at least 3 new hyperlinks that are not already listed on this course's home page under the <i>Resource</i> section.{/t}</p>
+        <p>{t}On the home page for this course, there is list of hyper links to various caregiver resources. While this is a small list, it does provide you with several resources.{/t}</p>
+        <p class="forum">{t}Search the Internet for caregiver resources and post to the Forum at least 3 new hyper links that are not already listed on this course's home page under the <i>Resource</i> section.{/t}</p>
         <img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}">
-        <p>{t}To give you some more direction, familarize yourself with the following websites:{/t}</p>
+        <p>{t}To give you some more direction, familiarize yourself with the following websites:{/t}</p>
         <ul>
           <li>{t}<a href="http://www.aoa.gov/" target="_blank">Administration on Aging</a>{/t}</li>
           <li>{t}<a href="http://www.alz.org/" target="_blank">Alzheimer's Association</a>{/t}</li>
@@ -565,7 +562,7 @@ alert("Coming Soon!");
           <li>{t}Grief - over your relative\’s decline in health{/t}</li>
           <li>{t}Anger - at the whole situation{/t}</li>
         </ul>
-        <p class="forum">{t}List other emotions that you have expereinced on the Forum.{/t}</p>
+        <p class="forum">{t}List other emotions that you have experienced on the Forum.{/t}</p>
         <img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}"> </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
     </div>
@@ -694,10 +691,10 @@ alert("Coming Soon!");
         <p>{t}To explore these questions, we must consider the effect of caregiver and care recipient characteristics — including whether a care recipient is insured — on the probability of being in the workplace. Estimates are calculated based on the average value of each of the specific characteristics (e.g., gender, age, insurance status, income, etc.) of caregivers and care recipients observed in this sample. The following are factors related to a caregiver’s ability to work:{/t}</p>
         <ul>
           <li>{t}Disability Status (Frailty) of Care Recipient - Caregivers for more disabled older people are less likely to be able to work. This is not surprising given the increasing care needs associated with greater levels of disability.{/t}</li>
-          <li>{t}Relationship to Care Recipient - A caregiver who is not a spouse is much more likely to be in the workforce than a caregiver who is a spouse. In fact, a nonspousal caregiver is 2.4 times more likely to be in the labor force as is a spousal caregiver.{/t}</li>
+          <li>{t}Relationship to Care Recipient - A caregiver who is not a spouse is much more likely to be in the workforce than a caregiver who is a spouse. In fact, a non-spousal caregiver is 2.4 times more likely to be in the labor force as is a spousal caregiver.{/t}</li>
           <li>{t}Education Level - College educated caregivers are more likely to be in the workplace than those without college education. Caregivers with less than a college education are only half as likely to be in the workforce. This finding mirrors trends in the general population relating to labor force participation.{/t}</li>
         </ul>
-        <p class="forum">{t}Why would educational levels influence the type of care that could be provided to a faimly member or friend? Search the Internet for help, and post your responses to the Forum.{/t}</p>
+        <p class="forum">{t}Why would educational levels influence the type of care that could be provided to a family member or friend? Search the Internet for help, and post your responses to the Forum.{/t}</p>
         <img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}"> </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo;</a></div>
     </div>
@@ -757,7 +754,7 @@ alert("Coming Soon!");
           <li>{t}<b>Hours of Care - </b>Caregivers reporting more than 20 hours of caregiving per week are slightly more than twice as likely to experience severe stress as are those providing less care.{/t}</li>
           <li>{t}<b>Job Disruptions - </b>To the extent that working caregivers experience job disruptions (e.g., having to rearrange their schedule, take time off, or having had to quit a previous job for caregiving), they are three times more likely than working caregivers who do not have job disruptions to experience severe stress.{/t}</li>
         </ul>
-        <p class="forum">{t}Please think about ways caregiving has affected your workplac, and post your responses to the Forum.{/t}</p>
+        <p class="forum">{t}Please think about ways caregiving has affected your workplace, and post your responses to the Forum.{/t}</p>
         <img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}"> </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo;</a></div>
     </div>
@@ -827,7 +824,7 @@ alert("Coming Soon!");
             </select>
           </p>
           <p class="right-answer hide"> {t}Correct! In general, companies are not legally obligated to provide specific benefits related to caregiving in the U.S.{/t} </p>
-          <p class="wrong-answer hide"> {t}Incorrect. Companies have no legal obligation to offer benefits specically related to caregiving in the U.S.{/t} </p>
+          <p class="wrong-answer hide"> {t}Incorrect. Companies have no legal obligation to offer benefits specifically related to caregiving in the U.S.{/t} </p>
         </div>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo;</a></div>
@@ -841,7 +838,7 @@ alert("Coming Soon!");
         <p>{t}For the most part, the large employer-based programs in place today were put in place by private vendors of services, not the aging network. This has meant that the aging network has not benefited from this corporate investment in elder care. Two exceptions are the <a href="http://www.nyc.gov/html/dfta/html/home/home.shtml" target="_blank">New York City Department on Aging</a>, an early aging network pioneer, and a more recent developer of programs, <a href="http://www.atlantaregional.com" target="_blank">Atlanta Regional Commission’s Area Agency on Aging</a>. Both of these agencies contract with certain employers to provide services directly to their employees.{/t}</p>
         <p>{t}Despite this lack of direct financial benefit through business partnerships with employers, the aging network has gained financial support through employer investment in community services. Such support has come through individual employers’ support of local services as a component of their overall community investment strategy and through coalitions of businesses formed to invest funds in local services that benefit their employees and which support quality improvement in selected aging services. An example is the American Business Collaboration for Quality Dependent Care (ABC), a consortium of 137 companies, including 11 large corporations (e.g., IBM, AT&amp;T). The ABC has as its goal the enhanced quality of and access to child care and elder care.{/t}</p>
         <p>{t}New approaches to work-based elder care programs are currently being developed. This next generation of formal elder care programs has been referred to as decision-support services. Rather than relying solely upon resource and referral models, these programs strategically address key needs of working caregivers - enhanced information and resources through geriatric care professionals, information on legal and financial matters, and help with insurance paperwork.{/t}</p>
-        <p class="forum">{t}Reearch any benefits your employer offers you as a employee caregiver, and post your findings to the Forum.{/t}</p>
+        <p class="forum">{t}Research any benefits your employer offers you as a employee caregiver, and post your findings to the Forum.{/t}</p>
         <img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}"> </div>
       <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Complete Module{/t}</a></div>
     </div>
@@ -887,7 +884,7 @@ alert("Coming Soon!");
         <p>{t}Generally less costly than hospitalization or long-term institutional care, community based services contribute to seniors’ quality of life by preventing or delaying institutionalization, promoting social integration, responding to changing health needs in a flexible manner, and providing support to informal caregivers. Plans in health care reform reinforce this shift from institutional to community-based care, at the same time assuring a continuum of care that includes institutional care.{/t}</p>
         <p>{t}In Canada, <a href="http://www.elderweb.com/organization/canada-national-advisory-council-aging" target="_blank">The National Advisory Council on Aging (NACA)</a> has observed that provincial trends limiting the growth of long-term care facilities may result in insufficient accommodation for those who are too disabled to remain in the community. If, as expected, more and more older people — and their caregivers — reach a point at which institutionalization becomes appropriate, suitable accommodation must be made available.{/t}</p>
         <p>{t}A dynamic partnership between formal and informal care is the cornerstone of new policies of care being adopted for frail seniors. According to this view, elders, family and friends collaborate with a variety of paid workers to provide the range of services required by the client. In fact, most states have been shifting the focus of long-term care to the community and to families as the main caregivers, with some support from home care workers. Seniors themselves are viewed as clients who have an important decision-making role in their care, rather than as the passive recipients of services.{/t}</p>
-        <p class="forum">{t}Search the Internet for national-level changes in the past 10 years that were specifically aimed at protecting seniors, and post your findgins to the Forum. Next, considering your caregiving situation, what changes do you expect to see in the near future, in the form of support and available services, from the State and Federal level, if any? And post your response to the Forum.{/t}</p>
+        <p class="forum">{t}Search the Internet for national-level changes in the past 10 years that were specifically aimed at protecting seniors, and post your findings to the Forum. Next, considering your caregiving situation, what changes do you expect to see in the near future, in the form of support and available services, from the State and Federal level, if any? And post your response to the Forum.{/t}</p>
         <img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}"> </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo;</a></div>
     </div>
@@ -897,7 +894,7 @@ alert("Coming Soon!");
         <hr />
         <p>{t}Seventy-six million American children were born between 1945 and 1964, representing a cohort that is significant on account of its size alone. A baby boomer is a person who was born during the demographic Post-World War II baby boom and who grew up during the period between 1945 and 1964. The term <i>baby boomer</i> is sometimes used in a cultural context. Therefore, it is impossible to achieve broad consensus of a precise definition, even within a given territory. Different groups, organizations, individuals, and scholars may have widely varying opinions on what constitutes a baby boomer, both technically and culturally{/t}</p>
         <p>{t}The words <i>sandwich generation</i> today are a new term in society's long history of the written language. This term is now found in the latest editions of the <a href="http://www.oed.com" target="_blank">Oxford English Dictionary</a> and the <a href="http://www.merriam-webster.com/cgi-bin/book.pl?c11.htm&1" target="_blank">Webster's Collegiate Dictionary</a>. These <i>Sandwich Generationers</i>, are those sandwiched between aging parents and their own children. As more baby boomers become both sandwich generationers and seniors, the need to understand aging dynamics and family relationships increases dramatically. It is not easy to become elderly or a parent to your parent(s). After all, our society "says" adults should be able to take care of themselves. But, as more live well into their 80s and 90s and families are dispersed across the country, everyone is going to be involved somehow, some way, in elder care. If not today, then tomorrow.{/t}</p>
-        <p>{t}With so many baby boomers entering the market each year, careing for their parents, we must also remember that they too will need care at some point in the future. This is a large concern and responsibility for the baby boomers, but also a large responsibility for the generation right behind the baby boomers. As reported by various surveys and reports:{/t}</p>
+        <p>{t}With so many baby boomers entering the market each year, caring for their parents, we must also remember that they too will need care at some point in the future. This is a large concern and responsibility for the baby boomers, but also a large responsibility for the generation right behind the baby boomers. As reported by various surveys and reports:{/t}</p>
         <ul>
           <li>{t}Most caregivers feel relatively unprepared for their own possible long term care. That is, they feel only a little or not at all prepared.{/t}</li>
           <li>{t}Caregivers report thinking more about saving money to meet their needs as a result of their caregiving experience. They also think about the adequacy of their insurance and the need to plan.{/t}</li>
@@ -953,7 +950,7 @@ alert("Coming Soon!");
         <p>{t}First there were mainframes, each shared by lots of people. Now we are in the personal computing era, person and machine staring uneasily at each other across the desktop. Next comes ubiquitous computing, or the age of <i>calm technology</i>, when technology <i>recedes into the background of our lives</i>.{/t}</p>
         <p>{t}For those with cognitive decline, Morris and Lundell (2003) identify four principles to guide the use of calm technology solutions including assessing while helping, adapting assistance to variability in cognitive abilities, catalyzing instead of replacing social interactions, and leveraging familiar interfaces. These needs are embodied in the technology-based solutions that are being proposed for the caregiver/elder dyad.{/t}</p>
         <p>{t}Technologies for adaptive aging include: wireless broadband; biosensors and bodily diagnostics; activity sensors and behavioral diagnostics; information fusion; personal health informatics; ambient displays and actuator networks; agents, assistants, coaches, and companions; adaptive, distributed interfaces; and remote community and collaboration.{/t}</p>
-        <p>{t}Two-way video connections adapted for the elder’s level of physical and cognitive ability can engage the elder in social and cognitive stimulation. Intelligent assistive technology such as activity cueing, autominders, televideo monitoring or a ComputerLinks network could assist in remote wellness checking, providing information and decision-support, and address distance caregiving needs to assess changes in health or functional status. Telecommunication innovations could bridge some of the socialization and communication gaps imposed by distance and assist the caregiver in assessing and enhancing the elder’s functional status. The use of family portraits, ambient displays, and customized two-way video and computers offer methods to connect and represent a way of feeling presence across distance.{/t}</p>
+        <p>{t}Two-way video connections adapted for the elder’s level of physical and cognitive ability can engage the elder in social and cognitive stimulation. Intelligent assistive technology such as activity cueing, autominders, televideo monitoring or a Computer Links network could assist in remote wellness checking, providing information and decision-support, and address distance caregiving needs to assess changes in health or functional status. Telecommunication innovations could bridge some of the socialization and communication gaps imposed by distance and assist the caregiver in assessing and enhancing the elder’s functional status. The use of family portraits, ambient displays, and customized two-way video and computers offer methods to connect and represent a way of feeling presence across distance.{/t}</p>
         <p>{t}Using technology to communicate and interact with elders offers avenues for novel approaches to care and opens new areas of exploration. The challenge to using advanced technology-based interventions is to match these technological capabilities to actual caregiving needs, understand how people prefer to interact with technology, and learn how it fits into caregivers’ and elders’ lives without introducing new burdens associated with technology use.{/t}</p>
         <p class="forum">{t}How has technology changed your caregiving situation? What web-based tools do you use to communicate with others, besides e-mail? Post your responses to the Forum.{/t}</p>
         <img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}"> </div>
@@ -968,7 +965,7 @@ alert("Coming Soon!");
         <h4 style="text-align:center;">{t}Certificates of Completion{/t}</h4>
         <a href="<?php echo $this->getImagesUrl('intro/CourseCompletionCertificate.pdf'); ?>" target="_blank"><img src="<?php echo $this->getImagesUrl('intro/ArtworkCertificate.png'); ?>" alt="image"></a>
         <h4>{t}Evaluation (optional){/t}</h4>
-        <p>{t}Please complete the Post-Course Evaluation. It is acceissble via the course page, in the sidebar.{/t}</p>
+        <p>{t}Please complete the Post-Course Evaluation. It is accessible via the course page, in the sidebar.{/t}</p>
         <p>{t}Your feedback is greatly appreciated, and will help us to better serve family members in the future. We ask that you
           complete it before you exit the course. You do not have to include your name on the evaluation. It is completely
           confidential.{/t}</p>
