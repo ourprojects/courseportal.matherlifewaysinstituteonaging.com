@@ -1,32 +1,28 @@
-<?php   
+<?php
 
-class FileController extends OnlineCoursePortalController {
+class FileController extends CoursePortalController
+{
 
-	/**
-	 * @return array action filters
-	 */
-	public function filters() {
-		return array(
-				array('filters.HttpsFilter'),
-				'accessControl',
+
+	public function accessRules()
+	{
+		return array_merge(
+				parent::accessRules(),
+				array(
+					array('allow',
+							'users' => array('@'),
+					),
+					array('deny',
+							'users' => array('*'),
+					),
+				)
 		);
 	}
-	
-	public function accessRules() {
-		return array(
-				array('allow',
-						'users' => array('@'),
-				),
-				array('deny',
-						'users' => array('*'),
-				),
-		);
-	}
-	
+
 	public function actionAdd() {
-		
+
 	}
-	
+
 	public function actionIndex($id) {
 		$file = Yii::app()->getUser()->getModel()->uploadedFiles($id);
 		if($file !== null) {
@@ -40,5 +36,5 @@ class FileController extends OnlineCoursePortalController {
 			throw new CHttpException(404, t('The file {name} could not be found.', array('{name}' => $id)));
 		}
 	}
-	
+
 }

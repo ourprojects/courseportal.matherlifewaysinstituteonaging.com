@@ -1,4 +1,4 @@
-<?php   
+<?php
 
 // This is the main Web application configuration.
 
@@ -13,7 +13,7 @@ return array(
 		'preload' => array(
 				'log'
 		),
-		
+
 		'aliases' => array(
 				'modules' => APP_DIR . DIRECTORY_SEPARATOR . 'modules',
 				'helpers' => APP_DIR . DIRECTORY_SEPARATOR . 'helpers',
@@ -26,7 +26,7 @@ return array(
 		'import' => array(
 				'application.modules.translate.*',
 		),
-		
+
 		// configured modules
 		'modules' => array(
 				'translate',
@@ -34,7 +34,7 @@ return array(
 
 		// application components
 		'components' => array(
-				
+
 				'messages' => array(
 						'class' => 'modules.translate.components.TMessageSource',
 						'forceTranslation' => false,
@@ -45,7 +45,7 @@ return array(
 						'cachingDuration' => defined('YII_DEBUG') && YII_DEBUG ? 0 : 3600,
 						'messageCategory' => 'onlinecourseportal',
 				),
-				
+
 				'views' => array(
 						'class' => 'modules.translate.components.TViewSource',
 						'onMissingViewTranslation' => array('TranslateModule', 'missingViewTranslation'),
@@ -56,7 +56,7 @@ return array(
 						'viewMessageTable' => '{{translate_view_message}}',
 						'cachingDuration' => defined('YII_DEBUG') && YII_DEBUG ? 0 : 3600,
 				),
-				
+
 				'translate' => array(
 						'class' => 'modules.translate.components.MPTranslate',
 						'googleApiKey' => 'AIzaSyD5Xxt_4VKM13pF9uQdcULK4eHuTe7w940',
@@ -67,25 +67,25 @@ return array(
 												),
 						'managementAccessRules' => array(
 														array('allow',
-																'expression' => '$user->getIsAdmin()',
+																'roles' => array('Administrator'),
 														),
 														array('deny',
 																'users' => array('*'),
 														),
 												),
 				),
-				
+
 				'viewRenderer' => array(
 					'class' => 'modules.translate.components.TViewRenderer',
 					'viewSource' => 'views'
 				),
-				
+
 				'cache' => array(
 					'class' => 'system.caching.CApcCache'
 				),
-				
+
 				'db' => require('db.php'),
-				
+
 				'log' => array(
 						'class' => 'CLogRouter',
 						'routes' => array(

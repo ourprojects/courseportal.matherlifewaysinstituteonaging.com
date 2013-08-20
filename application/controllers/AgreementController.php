@@ -1,22 +1,22 @@
 <?php
 
-class AgreementController extends OnlineCoursePortalController {
+class AgreementController extends CoursePortalController
+{
 
-	/**
-	 * @return array action filters
-	 */
-	public function filters() {
-		return array_merge(parent::filters(), array('accessControl + agree'));
-	}
-
-	public function accessRules() {
-		return array(
-				array('allow',
-						'users' => array('@'),
-				),
-				array('deny',
-						'users' => array('*'),
-				),
+	public function accessRules()
+	{
+		return array_merge(
+				parent::accessRules(),
+				array(
+					array('allow',
+							'actions' => array('agree'),
+							'users' => array('@'),
+					),
+					array('deny',
+							'actions' => array('agree'),
+							'users' => array('*'),
+					),
+				)
 		);
 	}
 
@@ -32,11 +32,11 @@ class AgreementController extends OnlineCoursePortalController {
 			{
 				$userId = $webUser->getId();
 			}
-			else if(!$webUser->getIsAdmin() && $userId !== $webUser->getId())
+			/*else if(!$webUser->getIsAdmin() && $userId !== $webUser->getId())
 			{
 				Yii::log('An unauthroized attempt has been made by the user with id '.$webUser->getId()." to access the confidentiality agreement with id $id of the user with id $userId.", CLogger::LEVEL_WARNING);
 				throw new CHttpException(401, t('You are not authorized to access the agreements made by other users. Your attempt has been logged.', array('{id}' => $id, '{userId}' => $userId)));
-			}
+			}*/
 			$userAgreement = $userId === null ? null : UserAgreement::model()->findByPk(array('user_id' => $userId, 'agreement_id' => $agreement->id));
 			if($userAgreement !== null)
 			{

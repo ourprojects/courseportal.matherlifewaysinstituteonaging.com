@@ -1,5 +1,6 @@
 <?php
-class TController extends CController {
+class TController extends CController
+{
 
 	/**
 	 * @var array the breadcrumbs of the current page. The value of this property will
@@ -9,6 +10,25 @@ class TController extends CController {
 	public $breadcrumbs = array();
 
 	private $_assetsUrl;
+
+	/**
+	 * @return array action filters
+	 */
+	public function filters()
+	{
+		return array(
+				array('filters.HttpsFilter'),
+				'accessControl' => array(
+						'application.modules.srbac.components.SrbacAccessControlFilter',
+						'rules' => $this->accessRules()
+				),
+		);
+	}
+
+	public function accessRules()
+	{
+		return array(array('deny'));
+	}
 
 	public function getAssetsUrl()
 	{
@@ -22,15 +42,18 @@ class TController extends CController {
 		return $this->_assetsUrl;
 	}
 
-	public function getStylesUrl($file = '') {
+	public function getStylesUrl($file = '')
+	{
 		return $this->getAssetsUrl() . '/styles/' . $file;
 	}
 
-	public function getScriptsUrl($file = '') {
+	public function getScriptsUrl($file = '')
+	{
 		return $this->getAssetsUrl() . '/scripts/' . $file;
 	}
 
-	public function getImagesUrl($file = '') {
+	public function getImagesUrl($file = '')
+	{
 		return $this->getAssetsUrl() . '/images/' . $file;
 	}
 

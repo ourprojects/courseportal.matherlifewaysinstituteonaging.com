@@ -1,6 +1,7 @@
 <?php
 
-abstract class OnlineCoursePortalController extends CController {
+abstract class CoursePortalController extends CController
+{
 
 	/**
 	 * @var array the breadcrumbs of the current page. The value of this property will
@@ -18,12 +19,25 @@ abstract class OnlineCoursePortalController extends CController {
 
 	private $_assetsUrl;
 
-	public function init() {
+	public function init()
+	{
 		parent::init();
 		CHtml::$afterRequiredLabel = '&nbsp;<span class="required">*</span>';
 	}
 
-	public function actions() {
+	public function filters()
+	{
+		return array(
+				array('filters.HttpsFilter'),
+				'accessControl' => array(
+						'application.modules.srbac.components.SrbacAccessControlFilter',
+						'rules' => $this->accessRules()
+				),
+		);
+	}
+
+	public function actions()
+	{
 		$actions = array_merge(array(
 				'download' => 'ext.HTTP_Download.components.HTTP_DownloadAction',
 		));
@@ -71,46 +85,24 @@ abstract class OnlineCoursePortalController extends CController {
 	 * @param string $className
 	 * @return void
 	 */
-	public function loadExtension($extension, $className = '*') {
+	public function loadExtension($extension, $className = '*')
+	{
 		Yii::import("ext.$extension.$className", true);
 	}
 
-	public function getStylesUrl($file = '') {
+	public function getStylesUrl($file = '')
+	{
 		return $this->getAssetsUrl() . '/styles/' . $file;
 	}
 
-	public function getScriptsUrl($file = '') {
+	public function getScriptsUrl($file = '')
+	{
 		return $this->getAssetsUrl() . '/scripts/' . $file;
 	}
 
-	public function getImagesUrl($file = '') {
+	public function getImagesUrl($file = '')
+	{
 		return $this->getAssetsUrl() . '/images/' . $file;
-	}
-
-	/**
-	 * Helper function for building CDbCriteria
-	 *
-	 * @param string $attribute
-	 * @param array $values
-	 * @param string $symbol
-	 * @param string $operator
-	 * @access protected
-	 * @return CDbCriteria
-	 */
-	public static function criteriaBuilder($attribute, $values, $symbol = '=', $operator = 'AND') {
-		$criteria = new CDbCriteria;
-		if(is_array($values)) {
-			$condition = array();
-			foreach($values as $value)
-				if(is_array($value))
-				$condition[] = "$attribute $symbol {$value[$attribute]}";
-			else
-				$condition[] = "$attribute $symbol $value";
-			$criteria->addCondition($condition, $operator);
-		} else {
-			$criteria->addCondition("$attribute $symbol $values", $operator);
-		}
-		return $criteria;
 	}
 
 }

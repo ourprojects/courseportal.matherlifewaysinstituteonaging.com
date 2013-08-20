@@ -11,8 +11,6 @@ class SrbacModule extends CWebModule
 
 	private $_assetsUrl;
 
-	private $_generatedAuthItemNamePrefix = 'srbacgenerated_';
-
 	public $flashKey = 'srbac';
 	/* @var $userId String The primary column of the users table*/
 	public $userId = 'userId';
@@ -90,24 +88,6 @@ class SrbacModule extends CWebModule
 	}
 
 	// SETTERS & GETTERS
-
-	public function getGeneratedAuthItemNamePrefix()
-	{
-		return $this->_generatedAuthItemNamePrefix;
-	}
-
-	public function setGeneratedAuthItemNamePrefix($prefix)
-	{
-		if(!is_string($prefix) || ($prefix = trim($prefix)) === '')
-		{
-			throw new CException(Yii::t('srbac', 'The generated AuthItem name prefix must be a non-empty string.'));
-		}
-		if(substr($prefix, -1) !== '_')
-		{
-			$prefix .= '_';
-		}
-		$this->_generatedAuthItemNamePrefix = preg_quote($prefix);
-	}
 
 	public function setDebug($debug)
 	{
@@ -204,11 +184,10 @@ class SrbacModule extends CWebModule
 			}
 
 			$controllerName = implode('.', $nameParts);
-			$fullName = $this->_generatedAuthItemNamePrefix.$controllerName;
-			if(!isset($authItemNames[$fullName]))
+			if(!isset($authItemNames[$controllerName]))
 			{
 				$authItemCount++;
-				$authItemNames[$fullName] = $authItemCount;
+				$authItemNames[$controllerName] = $authItemCount;
 				$authItems[$authItemCount] = array('id' => null, 'name' => $controllerName, 'type' => EAuthItem::TYPE_TASK, 'generated' => true);
 
 				$actions = SrbacUtilities::getControllerActions($controller);
@@ -217,36 +196,30 @@ class SrbacModule extends CWebModule
 					foreach($actions as $action)
 					{
 						$actionName = $controllerName.'.'.preg_replace('/(?<!^)([A-Z])/', ' \\1', ucfirst($action));
-						$fullName = $this->_generatedAuthItemNamePrefix.$actionName;
 						$authItemCount++;
-						$authItemNames[$fullName] = $authItemCount;
+						$authItemNames[$actionName] = $authItemCount;
 						$authItems[$authItemCount] = array('id' => null, 'name' => $actionName, 'type' => EAuthItem::TYPE_OPERATION, 'generated' => true);
 					}
 				}
 			}
 		}
 
-		$criteria = new CDbCriteria(
-				array(
-						'select' => $missingOnly ? 'name' : '*',
-						'condition' => 'name REGEXP :nameRegex',
-						'params' => array(':nameRegex' => '^'.$this->_generatedAuthItemNamePrefix.'(.+)$')
-				)
-		);
+		$criteria = new CDbCriteria(array('select' => $missingOnly ? 'name' : '*'));
+		$criteria->addColumnCondition(array('generated' => true));
 		$criteria->addInCondition('name', array_keys($authItemNames));
 
 		foreach(AuthItem::model()->findAll($criteria) as $authItem)
 		{
-			$fullName = $authItem->getFullName();
-			if(isset($authItemNames[$fullName]))
+			$name = $authItem->getattribute('name');
+			if(isset($authItemNames[$name]))
 			{
 				if($missingOnly)
 				{
-					unset($authItems[$authItemNames[$fullName]]);
+					unset($authItems[$authItemNames[$name]]);
 				}
 				else
 				{
-					$authItems[$authItemNames[$fullName]]['id'] = $authItem->getAttribute('id');
+					$authItems[$authItemNames[$name]]['id'] = $authItem->getAttribute('id');
 				}
 			}
 		}

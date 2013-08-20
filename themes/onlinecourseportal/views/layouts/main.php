@@ -49,7 +49,7 @@
 			<div id="language-menu">
 				<?php $this->widget('modules.translate.widgets.acceptedLanguage.ALSelector'); ?>
 			</div>
-			<?php if(Yii::app()->getUser()->getIsAdmin() && Yii::app()->getComponent('translate')->hasMissingTranslations()): ?>
+			<?php if(Yii::app()->getUser()->checkAccess('Translate.MissingOnPage') && Yii::app()->getComponent('translate')->hasMissingTranslations()): ?>
 				<div id="translate-button">
 					<?php echo Yii::app()->getComponent('translate')->translateLink('{t}Missing Translations on Page{/t}', 'button'); ?>
 				</div>
@@ -82,7 +82,7 @@
 											'visible' => !$user->getIsGuest()),
 									array('label' => '<span id="menu-admin" title="{t}Admin{/t}"></span>',
 											'url' => Yii::app()->createAbsoluteUrl('admin'),
-											'visible' => $user->getIsAdmin()),
+											'visible' => $user->checkAccess('Admin')),
 									array('label' => '<span id="menu-logout" title="{t}Logout{/t}"></span>',
 											'url' => Yii::app()->createAbsoluteUrl('user/logout'),
 											'visible' => !$user->getIsGuest())

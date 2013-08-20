@@ -182,7 +182,7 @@ class SrbacUtilities
 	 * */
 	public static function getControllerActions($controllerPathAlias)
 	{
-		if(!isset($controllerActions[$controllerPathAlias]))
+		if(!isset(self::$_controllerActions[$controllerPathAlias]))
 		{
 			$controllerPath = self::getControllerPathFromAlias($controllerPathAlias);
 
@@ -195,7 +195,7 @@ class SrbacUtilities
 
 			if(isset(self::$_loadedControllerClassPaths[$controllerClassName]))
 			{
-				$controllerActions[$controllerPathAlias] = self::getControllerActionsFromText(file_get_contents($controllerPath));
+				self::$_controllerActions[$controllerPathAlias] = self::getControllerActionsFromText(file_get_contents($controllerPath));
 			}
 			else
 			{
@@ -208,10 +208,10 @@ class SrbacUtilities
 					}
 				}
 				self::$_loadedControllerClassPaths[$controllerClassName] = $controllerPath;
-				$controllerActions[$controllerPathAlias] = self::getControllerActionsFromObject(new $controllerClassName($controllerPathAlias));
+				self::$_controllerActions[$controllerPathAlias] = self::getControllerActionsFromObject(new $controllerClassName($controllerPathAlias));
 			}
 		}
-		return $controllerActions[$controllerPathAlias];
+		return self::$_controllerActions[$controllerPathAlias];
 	}
 
 	public static function getControllerActionsFromObject($controllerObject)
@@ -334,6 +334,7 @@ class SrbacUtilities
 					$auth->itemTable,
 					array(
 							'id' => 'pk',
+							'generated' => 'boolean',
 							'name' => 'varchar(64) NOT NULL',
 							'type' => 'integer NOT NULL',
 							'description' => 'text',

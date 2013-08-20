@@ -1,6 +1,7 @@
 <?php
 
-abstract class AController extends CController {
+abstract class AController extends CController
+{
 
 	/**
 	 * @var array the breadcrumbs of the current page. The value of this property will
@@ -10,6 +11,25 @@ abstract class AController extends CController {
 	public $breadcrumbs = array();
 
 	private $_assetsUrl;
+
+	/**
+	 * @return array action filters
+	 */
+	public function filters()
+	{
+		return array(
+				array('filters.HttpsFilter'),
+				'accessControl' => array(
+						'application.modules.srbac.components.SrbacAccessControlFilter',
+						'rules' => $this->accessRules()
+				),
+		);
+	}
+
+	public function accessRules()
+	{
+		return array(array('deny'));
+	}
 
 	public function getAssetsUrl()
 	{

@@ -1,18 +1,10 @@
-<?php   
+<?php
 
-class ForumController extends OnlineCoursePortalController {
+class ForumController extends CoursePortalController
+{
 
-	/**
-	 * @return array action filters
-	 */
-	public function filters() {
-		return array(
-				array('filters.HttpsFilter'),
-				'accessControl',
-		);
-	}
-	
-	public function accessRules() {
+	public function accessRules()
+	{
 		return array(
 				array('allow',
 						'users' => array('@'),
@@ -22,5 +14,5 @@ class ForumController extends OnlineCoursePortalController {
 				),
 		);
 	}
-	
+
 }

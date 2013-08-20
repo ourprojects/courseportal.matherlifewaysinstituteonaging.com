@@ -169,52 +169,34 @@ class AuthItemController extends SBaseController
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'show' page.
 	 */
-	public function actionCreate()
+	public function actionCreate(array $AuthItems = array(), array $AuthItem = array())
 	{
-		if(isset($_POST['AuthItem']))
+		if(!empty($AuthItem))
 		{
-			$this->_model = new AuthItem;
-			$this->_model->setAttributes($_POST['AuthItem']);
-			try
-			{
-				if($this->_model->save())
-				{
-					Yii::app()->getUser()->setFlash($this->getModule()->flashKey, '"'.$this->_model->getAttribute('name').'" ' .Yii::t('srbac', 'Authorization item created successfully.'));
-				}
-			}
-			catch (CDbException $exc)
-			{
-				Yii::app()->getUser()->setFlash($this->getModule()->flashKey, Yii::t('srbac', 'Error while creating the authorization item.') . '<br />');
-			}
+			$AuthItems[] = $AuthItem;
 		}
-		else
+		$success = true;
+		try
 		{
-			if(isset($_POST['AuthItems']))
+			foreach($AuthItems as $attributes)
 			{
-				$success = true;
-				try
-				{
-					foreach($_POST['AuthItems'] as $attributes)
-					{
-						$this->_model = new AuthItem;
-						$this->_model->setAttributes($attributes);
-						if(!$this->_model->save())
-						{
-							$success = false;
-						}
-					}
-				}
-				catch (CDbException $exc)
+				$this->_model = new AuthItem;
+				$this->_model->setAttributes($attributes);
+				if(!$this->_model->save())
 				{
 					$success = false;
 				}
-				Yii::app()->getUser()->setFlash(
-					$this->getModule()->flashKey,
-					($success ? Yii::t('srbac', 'All authorization items were created successfully.') : Yii::t('srbac', 'An error occurred while creating one or more authorization item(s).')) . '<br />'
-				);
-				$this->_model = new AuthItem;
 			}
 		}
+		catch(CDbException $exc)
+		{
+			$success = false;
+		}
+		Yii::app()->getUser()->setFlash(
+			$this->getModule()->flashKey,
+			($success ? Yii::t('srbac', 'Authorization item(s) were created successfully.') : Yii::t('srbac', 'An error occurred while creating one or more authorization items.')) . '<br />'
+		);
+		$this->_model = new AuthItem;
 
 		if(Yii::app()->getRequest()->getIsAjaxRequest())
 		{
@@ -259,21 +241,19 @@ class AuthItemController extends SBaseController
 		}
 	}
 
-	public function actionUpdate()
+	public function actionUpdate(array $AuthItem = null)
 	{
-		$params = Yii::app()->getRequest()->getRestParams();
-
-		if(!isset($params['AuthItem']) || !isset($params['AuthItem']['id']))
+		if(!isset($AuthItem) || !isset($AuthItem['id']))
 		{
 			throw new CHttpException(400, Yii::t('srbac', 'The ID of the authorization item being updated must be specified.'));
 		}
 
-		$this->_model = AuthItem::model()->findByPk($params['AuthItem']['id']);
+		$this->_model = AuthItem::model()->findByPk($AuthItem['id']);
 		if($this->_model === null)
 		{
 			throw new CHttpException(404, Yii::t('srbac', 'The authorization item requested to update could not be found.'));
 		}
-		$this->_model->setAttributes($params['AuthItem']);
+		$this->_model->setAttributes($AuthItem);
 
 		try
 		{
@@ -304,15 +284,13 @@ class AuthItemController extends SBaseController
 	 * Deletes a particular model.
 	 * If deletion is successful, the browser will be redirected to the 'list' page.
 	 */
-	public function actionDelete()
+	public function actionDelete($id = null)
 	{
-		$params = Yii::app()->getRequest()->getRestParams();
-
-		if(isset($params['id']))
+		if(isset($id))
 		{
 			try
 			{
-				$rowsDeleted = AuthItem::model()->deleteByPk($params['id']);
+				$rowsDeleted = AuthItem::model()->deleteByPk($id);
 				Yii::app()->getUser()->setFlash($this->getModule()->flashKey, Yii::t('srbac', '{rowsDeleted} authorization item(s) deleted.', array('{rowsDeleted}' => $rowsDeleted)) . '<br />');
 			}
 			catch (CDbException $exc)

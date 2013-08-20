@@ -176,18 +176,6 @@ class CPUser extends CActiveRecord {
 		return time();
 	}
 
-	public function getIsGuest() {
-		return $this->group instanceof Group && $this->group->getIsGuest();
-	}
-
-	public function getIsAdmin() {
-		return $this->group instanceof Group && $this->group->getIsAdmin();
-	}
-
-	public function getIsEmployee() {
-		return $this->group instanceof Group && $this->group->getIsEmployee();
-	}
-
 	public function getIsActivated()
 	{
 		return $this->activated instanceof UserActivated && !$this->activated->getIsNewRecord();

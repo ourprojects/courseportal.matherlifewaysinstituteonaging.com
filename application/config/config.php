@@ -46,25 +46,24 @@ return array(
 			'translate',
 			'surveyor',
 			'admin',
-			/*'srbac' => array(
+			'srbac' => array(
 				'userclass' => 'CPUser',
 				'userId' => 'id',
 				'username' => 'name',
 				'superUser' =>'SuperUser',
-				'debug' => true,
 				'layout' => 'webroot.themes.onlinecourseportal.views.layouts.main'
-			),*/
+			),
 		),
 
 		// application components
 		'components' => array(
 
-				/*'authManager'=>array(
+				'authManager'=>array(
 						'class' => 'modules.srbac.components.EDbAuthManager',
 						'itemTable' => '{{auth_item}}',
 						'itemChildTable' => '{{auth_item_child}}',
 						'assignmentTable' => '{{auth_assignment}}',
-				),*/
+				),
 
 				'themeManager' => array(
 						'themeClass' => 'Theme'
@@ -125,14 +124,18 @@ return array(
 				'user' => array(
 						'class' => 'application.auth.WebUser',
 						'allowAutoLogin' => true,
-						'loginUrl' => array('user/login')
+						'loginUrl' => array('user/login'),
+						'userClassName' => 'CPUser',
+						'userId' => 'id',
+						'userName' => 'name'
 				),
 
 				'session' => array(
-						'class' => 'DbHttpSession',
+						'class' => 'ext.EUserDbHttpSession.EUserDbHttpSession',
 						'connectionID' => 'db',
 						'autoCreateSessionTable' => defined('YII_DEBUG') && YII_DEBUG,
-						'sessionTableName' => '{{yii_session}}'
+						'sessionTableName' => '{{yii_session}}',
+						'userIdColumnType' => 'integer'
 				),
 
 				'phpBB' => array(

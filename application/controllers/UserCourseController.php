@@ -1,14 +1,16 @@
-<?php   
+<?php
 
-class UserCourseController extends ApiController {
-	
-	public function actionCreate() {
+class UserCourseController extends ApiController
+{
+
+	public function actionCreate()
+	{
 		$errors = array();
-		if(!isset($_POST['user_id'])) 
+		if(!isset($_POST['user_id']))
 			$errors['user_id'] = t('An user_id must be specified. Who are you adding this course to?');
 		if(!isset($_POST['course_id']))
 			$errors['course_id'] = t('A course_id must be specified. What course are you adding?');
-	
+
 		if(empty($errors)) {
 			$userCourse = new UserCourse;
 			$userCourse->user_id = $_POST['user_id'];
@@ -16,14 +18,15 @@ class UserCourseController extends ApiController {
 			if(!$userCourse->save())
 				$errors = $userCourse->getErrors();
 		}
-	
+
 		if(empty($errors))
 			$this->renderApiResponse();
 		else
 			$this->renderApiResponse(400, $errors);
 	}
-	
-	public function actionRead() {
+
+	public function actionRead()
+	{
 		$model = new UserCourse('search');
 		$model->attributes = $_GET;
 
@@ -39,8 +42,9 @@ class UserCourseController extends ApiController {
 			$this->renderApiResponse(200, $data);
 		}
 	}
-	
-	public function actionDelete() {
+
+	public function actionDelete()
+	{
 		$requestVars = Yii::app()->getRequest()->getRestParams();
 		if(!isset($requestVars['user_id'])) {
 			$this->renderApiResponse(400, array('user_id' => t('The id of the user whose course is to be deleted must be specified.')));
@@ -51,14 +55,15 @@ class UserCourseController extends ApiController {
 			$this->renderApiResponse(200, $result);
 		}
 	}
-	
-	public function actionOptions() {
-		$this->renderApiResponse(200, 
-				array('GET' => 
+
+	public function actionOptions()
+	{
+		$this->renderApiResponse(200,
+				array('GET' =>
 							array(
 								'returns' => t('List of course, user associations.'),
 								'optional' => array(
-										'user_id' => t('search for courses associated with this user id.'), 
+										'user_id' => t('search for courses associated with this user id.'),
 										'course_id' => t('search for users associated with this course id.')
 										),
 								'required' => array()
@@ -74,15 +79,15 @@ class UserCourseController extends ApiController {
 								),
 					  'PUT' => false,
 					  'DELETE' => array(
-					  			'returns' => t('Number of rows effected'),								
+					  			'returns' => t('Number of rows effected'),
 								'optional' => false,
 								'required' => array(
 										'user_id' => t('The id of the user to associate a course with.'),
 										'course_id' => t('The id of the course to associate with a user.')
 										)
-								)		
+								)
 					)
 				);
 	}
-	
+
 }

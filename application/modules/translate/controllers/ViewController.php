@@ -4,9 +4,7 @@ class ViewController extends TController
 
 	public function filters()
 	{
-		return array(
-				array('filters.HttpsFilter'),
-				'accessControl',
+		return array_merge(parent::filters(), array(
 				'ajaxOnly + ajaxIndex, ajaxView',
 				array(
 						'ext.EForwardActionFilter.EForwardActionFilter + index, view',
@@ -15,19 +13,7 @@ class ViewController extends TController
 								'view' => 'ajaxView + ajax',
 						)
 				)
-		);
-	}
-
-	public function accessRules()
-	{
-		return array(
-				array('allow',
-						'expression' => '$user->getIsAdmin()',
-				),
-				array('deny',
-						'users' => array('*'),
-				),
-		);
+		));
 	}
 
 	public function actionTranslateMissing($id = null, $class = 'View')
@@ -42,7 +28,7 @@ class ViewController extends TController
 	{
 		$this->render('index');
 	}
-	
+
 	public function actionAjaxIndex()
 	{
 		if(isset($_GET['ajax']))
@@ -61,7 +47,7 @@ class ViewController extends TController
 	{
 		$this->render('view', array('view' => View::model()->with(array('sourceView', 'language'))->findByPk(array('id' => $id, 'language_id' => $languageId))));
 	}
-	
+
 	/**
 	 * Get a View's detailed info grid. Ajax only.
 	 *
@@ -75,7 +61,7 @@ class ViewController extends TController
 			$this->actionGrid($id, $languageId, $_GET['ajax']);
 		}
 	}
-	
+
 	public function actionGrid($id, $languageId, $name)
 	{
 		switch($name)
@@ -140,7 +126,7 @@ class ViewController extends TController
 		{
 			$message = 'The view could not be found.';
 		}
-		
+
 		if(Yii::app()->getRequest()->getIsAjaxRequest())
 		{
 			echo TranslateModule::t($message);

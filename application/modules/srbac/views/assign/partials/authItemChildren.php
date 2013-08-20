@@ -11,6 +11,32 @@
 			</th>
 		</tr>
 		<tr>
+			<td colspan="2">
+				<?php
+				echo CHtml::ajaxLink(
+						CHtml::image(
+									$this->getModule()->getIconsUrl('create.png'),
+									Yii::t('srbac', 'Auto Assign Generated'),
+									array(
+											'border' => 0,
+											'class' => 'icon',
+											'title' => Yii::t('srbac', 'Auto Assign Generated'),
+									)
+						) . Yii::t('srbac', 'Auto Assign Generated'),
+						$this->createUrl('/'.SrbacUtilities::SRBAC_MODULE_NAME.'/assign/auto'),
+						array(
+							'type' => 'GET',
+							'beforeSend' => 'function(){$("#'.AuthItem::$TYPES[$childType].'Management").addClass("srbacLoading");}',
+							'complete' => 'function(){$("#'.AuthItem::$TYPES[$childType].'Management").removeClass("srbacLoading");}',
+						),
+						array(
+							'title' => Yii::t('srbac', 'Auto Assign Generated')
+						)
+				);
+				?>
+			</td>
+		</tr>
+		<tr>
 			<td style="width: 50%;">
 				<table>
 					<tr>

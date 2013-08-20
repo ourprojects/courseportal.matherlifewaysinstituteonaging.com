@@ -1,5 +1,9 @@
 <?php
 
+require_once('SrbacUtilities.php');
+require_once('EAuthItem.php');
+require_once('EAuthAssignment.php');
+
 class EDbAuthManager extends CDbAuthManager
 {
 
@@ -16,7 +20,8 @@ class EDbAuthManager extends CDbAuthManager
 	public function checkAccess($item, $userId, $params = array())
 	{
 		$assignments = $this->getAuthAssignments($userId);
-		return $this->checkAccessRecursive($item, $userId, $params, $assignments);
+		return $this->checkAccessRecursive(SrbacUtilities::getSrbacModule()->superUser, $userId, $params, $assignments) ||
+			$this->checkAccessRecursive($item, $userId, $params, $assignments);
 	}
 
 	/**
@@ -35,11 +40,14 @@ class EDbAuthManager extends CDbAuthManager
 	protected function checkAccessRecursive($item, $userId, $params, $assignments)
 	{
 		if(!$item instanceof EAuthItem && ($itm = $this->getAuthItem($item)) === null)
+		{
 			return false;
+		}
 		$itemName = $itm->getName();
-		Yii::trace('Checking permission "'.$itemName.'"', 'system.web.auth.CDbAuthManager');
 		if(!isset($params['userId']))
-		    $params['userId'] = $userId;
+		{
+			$params['userId'] = $userId;
+		}
 		if($this->executeBizRule($itm->getBizRule(), $params, $itm->getData()))
 		{
 			if(in_array($itemName, $this->defaultRoles))
@@ -85,7 +93,7 @@ class EDbAuthManager extends CDbAuthManager
 		{
 			return array('name', strval($item));
 		}
-		throw new CException(Yii::t('rbac', 'Invalid authorization item type.'));
+		throw new CException(Yii::t('srbac', 'Invalid authorization item type.'));
 	}
 
 	/**

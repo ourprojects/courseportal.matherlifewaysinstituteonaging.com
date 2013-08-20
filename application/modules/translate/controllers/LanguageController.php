@@ -4,9 +4,7 @@ class LanguageController extends TController
 
 	public function filters()
 	{
-		return array(
-				array('filters.HttpsFilter'),
-				'accessControl',
+		return array_merge(parent::filters(), array(
 				'ajaxOnly + ajaxIndex, ajaxView, ajaxCreate',
 				'postOnly + create, ajaxCreate',
 				array(
@@ -17,19 +15,7 @@ class LanguageController extends TController
 								'create' => 'ajaxCreate + create, post',
 						)
 				)
-		);
-	}
-
-	public function accessRules()
-	{
-		return array(
-				array('allow',
-						'expression' => '$user->getIsAdmin()',
-				),
-				array('deny',
-						'users' => array('*'),
-				),
-		);
+		));
 	}
 
 	public function actionTranslateMissing($id = null)
@@ -89,7 +75,7 @@ class LanguageController extends TController
 			$this->actionGrid($id, $_GET['ajax']);
 		}
 	}
-	
+
 	public function actionGrid($id, $name)
 	{
 		switch($name)
@@ -155,7 +141,7 @@ class LanguageController extends TController
 		{
 			Yii::app()->getUser()->setFlash('error', 'The language could not be created.');
 		}
-		 
+
 		$this->redirect(Yii::app()->getRequest()->getUrlReferrer());
 	}
 
@@ -181,16 +167,16 @@ class LanguageController extends TController
 	{
 		$model = Language::model()->findByPk($id);
 		if($model !== null) {
-			if($model->delete()) 
+			if($model->delete())
 			{
 				$message = 'The language has been deleted.';
-			} 
-			else 
+			}
+			else
 			{
 				$message = 'The language could not be deleted.';
 			}
-		} 
-		else 
+		}
+		else
 		{
 			$message = 'The language could not be found.';
 		}

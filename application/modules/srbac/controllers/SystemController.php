@@ -15,12 +15,8 @@ class SystemController extends SBaseController
 		);
 	}
 
-	public function actionInstall()
+	public function actionInstall($overwrite = false)
 	{
-		$overwrite = array_merge(Yii::app()->getRequest()->getRestParams(), $_POST, $_GET);
-
-		$overwrite = isset($overwrite['overwrite']) ? $overwrite['overwrite'] : false;
-
 		if(is_numeric($overwrite))
 		{
 			$overwrite = intval($overwrite) > 0;

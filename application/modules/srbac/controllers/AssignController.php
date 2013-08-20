@@ -3,13 +3,7 @@
 class AssignController extends SBaseController
 {
 
-	/**
-	 * The assignment action
-	 * First checks if the user is authorized to perform this action
-	 * Then initializes the needed variables for the assign view.
-	 * If there's a post back it performs the assign action
-	 */
-	public function actionIndex($AuthItem = array())
+	public function actionIndex()
 	{
 		$this->render('index', array(
 				'model' => AuthItem::model(),
@@ -23,37 +17,28 @@ class AssignController extends SBaseController
 		));
 	}
 
-	public function actionRoles($userId = null)
+	public function actionRoles($userId = null, array $roles = null)
 	{
 		$request = Yii::app()->getRequest();
 		if($request->getIsPutRequest() || $request->getIsDeleteRequest())
 		{
-			$requestVars = $request->getRestParams();
 			if(!isset($userId))
 			{
-				if(!isset($requestVars['userId']))
-				{
-					Yii::app()->getUser()->setFlash($this->getModule()->flashKey, Yii::t('srbac', 'No User specified to '.($request->getIsPutRequest() ? 'assign' : 'revoke').' Role(s).'));
-				}
-				$userId = $requestVars['userId'];
+				Yii::app()->getUser()->setFlash($this->getModule()->flashKey, Yii::t('srbac', 'No User specified to '.($request->getIsPutRequest() ? 'assign' : 'revoke').' Role(s).'));
 			}
-
-			if(isset($userId))
+			elseif(!isset($roles))
 			{
-				if(!isset($requestVars['roles']))
+				Yii::app()->getUser()->setFlash($this->getModule()->flashKey, Yii::t('srbac', 'No Role(s) were specified to be '.($request->getIsPutRequest() ? 'assigned to' : 'revoked from').' the User.'));
+			}
+			else
+			{
+				$auth = Yii::app()->getAuthManager();
+				$method = $request->getIsPutRequest() ? 'assign' : 'revoke';
+				foreach ($roles as $role)
 				{
-					Yii::app()->getUser()->setFlash($this->getModule()->flashKey, Yii::t('srbac', 'No Role(s) were specified to be '.($request->getIsPutRequest() ? 'assigned to' : 'revoked from').' the User.'));
+					$auth->$method($role, $userId);
 				}
-				else
-				{
-					$auth = Yii::app()->getAuthManager();
-					$method = $request->getIsPutRequest() ? 'assign' : 'revoke';
-					foreach ($requestVars['roles'] as $role)
-					{
-						$auth->$method($role, $userId);
-					}
-					Yii::app()->getUser()->setFlash($this->getModule()->flashKey, Yii::t('srbac', 'Role'.(count($requestVars['roles']) > 1 ? 's' : '').' '.($request->getIsPutRequest() ? 'assigned to' : 'revoked from').' User.'));
-				}
+				Yii::app()->getUser()->setFlash($this->getModule()->flashKey, Yii::t('srbac', 'Role'.(count($roles) > 1 ? 's' : '').' '.($request->getIsPutRequest() ? 'assigned to' : 'revoked from').' User.'));
 			}
 		}
 
@@ -68,7 +53,7 @@ class AssignController extends SBaseController
 		);
 	}
 
-	public function actionChildren($parentType, $childType, $parent = null)
+	public function actionChildren($parentType, $childType, $parent = null, array $children = null)
 	{
 		if($parentType == $childType)
 		{
@@ -77,28 +62,23 @@ class AssignController extends SBaseController
 		$request = Yii::app()->getRequest();
 		if($request->getIsPutRequest() || $request->getIsDeleteRequest())
 		{
-			$requestVars = $request->getRestParams();
-			if(!isset($requestVars['parent']))
+			if(!isset($parent))
 			{
 				Yii::app()->getUser()->setFlash($this->getModule()->flashKey, Yii::t('srbac', 'No '.AuthItem::$TYPES[$parentType].' specified to '.($request->getIsPutRequest() ? 'assign' : 'revoke').' '.AuthItem::$TYPES[$childType].'(s).'));
 			}
+			elseif(!isset($children))
+			{
+				Yii::app()->getUser()->setFlash($this->getModule()->flashKey, Yii::t('srbac', 'No '.AuthItem::$TYPES[$childType].'(s) specfied to '.($request->getIsPutRequest() ? 'assign to' : 'revoke from').' '.AuthItem::$TYPES[$parentType].'.'));
+			}
 			else
 			{
-				$parent = $requestVars['parent'];
-				if(!isset($requestVars['children']))
+				$method = $request->getIsPutRequest() ? 'addItemChild' : 'removeItemChild';
+				$auth = Yii::app()->getAuthManager();
+				foreach ($children as $child)
 				{
-					Yii::app()->getUser()->setFlash($this->getModule()->flashKey, Yii::t('srbac', 'No '.AuthItem::$TYPES[$childType].'(s) specfied to '.($request->getIsPutRequest() ? 'assign to' : 'revoke from').' '.AuthItem::$TYPES[$parentType].'.'));
+					$auth->$method($parent, $child);
 				}
-				else
-				{
-					$method = $request->getIsPutRequest() ? 'addItemChild' : 'removeItemChild';
-					$auth = Yii::app()->getAuthManager();
-					foreach ($requestVars['children'] as $child)
-					{
-						$auth->$method($parent, $child);
-					}
-					Yii::app()->getUser()->setFlash($this->getModule()->flashKey, Yii::t('srbac', AuthItem::$TYPES[$childType].(count($requestVars['children']) > 1 ? 's' : '').' '.($request->getIsPutRequest() ? 'assigned to' : 'revoked from').' '.AuthItem::$TYPES[$parentType].'.'));
-				}
+				Yii::app()->getUser()->setFlash($this->getModule()->flashKey, Yii::t('srbac', AuthItem::$TYPES[$childType].(count($children) > 1 ? 's' : '').' '.($request->getIsPutRequest() ? 'assigned to' : 'revoked from').' '.AuthItem::$TYPES[$parentType].'.'));
 			}
 		}
 
@@ -133,6 +113,20 @@ class AssignController extends SBaseController
 						'notChildren' => $notChildren
 				)
 		);
+	}
+
+	public function actionAuto()
+	{
+		$tasks = AuthItem::model()->type(EAuthItem::TYPE_TASK)->generated()->findAll();
+		$auth = Yii::app()->getAuthManager();
+		foreach($tasks as $task)
+		{
+			$operations = $task->notChildren()->type(EAuthItem::TYPE_OPERATION)->generated()->findAll(array('condition' => AuthItem::model()->getTableAlias().'.name REGEXP "^'.$task->getAttribute('name').'[.]{1}[^.]+$"'));
+			foreach($operations as $op)
+			{
+				$auth->addItemChild($task->getAttribute('id'), $op->getAttribute('id'));
+			}
+		}
 	}
 
 	public function actionSuperUsers()

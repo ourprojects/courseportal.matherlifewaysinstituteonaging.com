@@ -4,21 +4,19 @@ class UserController extends ApiController {
 
 	const REMEMBER_ME_DURATION = 2592000; // 30 days in seconds
 
-	/**
-	 * @return array action filters
-	 */
-	public function filters() {
-		return array_merge(parent::filters(), array('accessControl + profile, profileSurvey'));
-	}
-
 	public function accessRules() {
-		return array(
-				array('allow',
-						'users' => array('@'),
-				),
-				array('deny',
-						'users' => array('*'),
-				),
+		return array_merge(
+				parent::accessRules(),
+				array(
+					array('allow',
+							'actions' => array('profile', 'profileSurvey'),
+							'users' => array('@'),
+					),
+					array('deny',
+							'actions' => array('profile', 'profileSurvey'),
+							'users' => array('*'),
+					),
+				)
 		);
 	}
 

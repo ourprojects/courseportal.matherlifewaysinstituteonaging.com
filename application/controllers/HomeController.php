@@ -1,31 +1,34 @@
-<?php   
+<?php
 
-class HomeController extends OnlineCoursePortalController {
-	
-	/**
-	 * @return array action filters
-	 */
-	public function filters() {
-		return array(
-				array('filters.HttpsFilter'),
-				'accessControl 
-				+ 
-				userIndex 
-				videos.TheSandwichGeneration.poster.jpg
-				videos.TheSandwichGeneration.video.m4v
-				videos.TheSandwichGeneration.video.ogv
-				videos.TheSandwichGeneration.video.webm',
-		);
-	}
-	
-	public function accessRules() {
-		return array(
-				array('allow',
-						'users' => array('@'),
-				),
-				array('deny',
-						'users' => array('*'),
-				),
+class HomeController extends CoursePortalController
+{
+
+	public function accessRules()
+	{
+		return array_merge(
+				parent::accessRules(),
+				array(
+					array('allow',
+							'actions' => array(
+									'userIndex',
+									'videos.TheSandwichGeneration.poster.jpg',
+									'videos.TheSandwichGeneration.video.m4v',
+									'videos.TheSandwichGeneration.video.ogv',
+									'videos.TheSandwichGeneration.video.webm'
+							),
+							'users' => array('@'),
+					),
+					array('deny',
+							'actions' => array(
+									'userIndex',
+									'videos.TheSandwichGeneration.poster.jpg',
+									'videos.TheSandwichGeneration.video.m4v',
+									'videos.TheSandwichGeneration.video.ogv',
+									'videos.TheSandwichGeneration.video.webm'
+							),
+							'users' => array('*'),
+					),
+				)
 		);
 	}
 
@@ -102,9 +105,9 @@ class HomeController extends OnlineCoursePortalController {
 			echo CActiveForm::validate($models);
 			Yii::app()->end();
 		}
-		
+
 		if($models['Captcha']->loadAttributes() && $models['ContactUs']->loadAttributes()
-				&& $models['Captcha']->validate() && $models['ContactUs']->validate()) 
+				&& $models['Captcha']->validate() && $models['ContactUs']->validate())
 		{
 			$message = Yii::app()->mail->getNewMessageInstance();
 			$message->setBody($models['ContactUs']->body, 'text/plain');
@@ -112,9 +115,9 @@ class HomeController extends OnlineCoursePortalController {
 			$message->setTo(Yii::app()->params['supportEmail']);
 			$message->setFrom($models['ContactUs']->email);
 			Yii::app()->mail->send($message);
-			
+
 			Yii::app()->getUser()->setFlash('success', t('Thank you for contacting us. We will respond to your inquiry as soon as possible.'));
-			
+
 			$models = array(
 					'ContactUs' => new ContactUs,
 					'Captcha' => new Captcha

@@ -39,7 +39,8 @@ class SrbacAccessControlFilter extends CAccessControlFilter
 
 		$this->_rule = new CAccessRule();
 		$this->_rule->allow = true;
-		$this->_rule->roles = array(SrbacUtilities::getSrbacModule()->superUser, implode('.', $role));
+		$this->_rule->roles = array(implode('.', $role) => array('controller' => $filterChain->controller, 'action' => $filterChain->action));
+		$this->_rule->expression = 'SrbacUtilities::isInstalled() && !SrbacUtilities::getSrbacModule()->debug && SrbacUser::model()->superUser()->exists()';
 		$result = parent::preFilter($filterChain);
 		$this->_rule = null;
 		return $result;

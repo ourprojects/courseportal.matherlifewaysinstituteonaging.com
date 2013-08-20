@@ -4,9 +4,7 @@ class ViewSourceController extends TController
 
 	public function filters()
 	{
-		return array(
-				array('filters.HttpsFilter'),
-				'accessControl',
+		return array_merge(parent::filters(), array(
 				'ajaxOnly + ajaxIndex, ajaxView',
 				array(
 						'ext.EForwardActionFilter.EForwardActionFilter + index, view',
@@ -15,19 +13,7 @@ class ViewSourceController extends TController
 								'view' => 'ajaxView + ajax',
 						)
 				)
-		);
-	}
-
-	public function accessRules()
-	{
-		return array(
-				array('allow',
-						'expression' => '$user->getIsAdmin()',
-				),
-				array('deny',
-						'users' => array('*'),
-				),
-		);
+		));
 	}
 
 	public function actionTranslateMissing($id = null, $class = 'View')
@@ -42,7 +28,7 @@ class ViewSourceController extends TController
 	{
 		$this->render('index');
 	}
-	
+
 	public function actionAjaxIndex()
 	{
 		if(isset($_GET['ajax']))
@@ -60,7 +46,7 @@ class ViewSourceController extends TController
 	{
 		$this->render('view', array('viewSource' => ViewSource::model()->findByPk($id)));
 	}
-	
+
 	public function actionAjaxView($id)
 	{
 		if(isset($_GET['ajax']))
@@ -68,7 +54,7 @@ class ViewSourceController extends TController
 			$this->actionGrid($id, $_GET['ajax']);
 		}
 	}
-	
+
 	public function actionGrid($id, $name)
 	{
 		switch($name)
@@ -137,7 +123,7 @@ class ViewSourceController extends TController
 		{
 			$message = 'The source view could not be found.';
 		}
-		
+
 		if(Yii::app()->getRequest()->getIsAjaxRequest())
 		{
 			echo TranslateModule::t($message);

@@ -1,28 +1,23 @@
-<?php   
+<?php
 
-class AvatarController extends OnlineCoursePortalController {
+class AvatarController extends CoursePortalController
+{
 
-	/**
-	 * @return array action filters
-	 */
-	public function filters() {
-		return array(
-				array('filters.HttpsFilter'),
-				'accessControl',
+	public function accessRules()
+	{
+		return array_merge(
+				parent::accessRules(),
+				array(
+					array('allow',
+							'users' => array('@'),
+					),
+					array('deny',
+							'users' => array('*'),
+					),
+				)
 		);
 	}
-	
-	public function accessRules() {
-		return array(
-				array('allow',
-						'users' => array('@'),
-				),
-				array('deny',
-						'users' => array('*'),
-				),
-		);
-	}
-	
+
 	public function actionIndex()
 	{
 		$this->loadExtension('HTTP_Download');
@@ -32,7 +27,7 @@ class AvatarController extends OnlineCoursePortalController {
 				'contentdisposition' => array(HTTP_Download::ATTACHMENT, Avatar::DEFAULT_NAME),
 		), false);
 	}
-	
+
 	public function actionView($id) {
 		$this->loadExtension('HTTP_Download');
 		$avatar = Avatar::model()->findByPk($id);
@@ -49,5 +44,5 @@ class AvatarController extends OnlineCoursePortalController {
 			$this->actionIndex();
 		}
 	}
-	
+
 }

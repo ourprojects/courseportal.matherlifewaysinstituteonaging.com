@@ -3,36 +3,13 @@
 class UserController extends AController
 {
 
-	/**
-	 * @return array action filters
-	 */
-	public function filters()
+	public function actionIndex()
 	{
-		return array(
-				array('filters.HttpsFilter'),
-				'accessControl',
-		);
+		$this->render('index');
 	}
 
-	public function accessRules()
+	public function actionView($id = null)
 	{
-		return array(
-				array('allow',
-						'expression' => '$user->getIsAdmin()',
-				),
-				array('deny',
-						'users' => array('*'),
-				),
-		);
-	}
-
-    public function actionIndex()
-    {
-    	$this->render('index');
-    }
-
-    public function actionView($id = null)
-    {
 		$CPUser = isset($id) ? CPUser::model()->findByPk($id) : new CPUser;
 
 		if($CPUser === null)

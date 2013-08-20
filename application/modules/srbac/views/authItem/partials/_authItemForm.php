@@ -96,6 +96,7 @@ $gridUpdateJs = $this->generateGridUpdateJS($updateGridIds);
 					'type' => 'POST',
 					'beforeSend' => 'function(){$("#'.$formId.'").addClass("srbacLoading");}',
 					'success' => 'function(html){$("#'.$formId.'").replaceWith(html);$("#'.$formId.'").css("display", "block");'.$gridUpdateJs.'}',
+					'error' => 'function(html){$("#'.$formId.'").removeClass("srbacLoading");}'
 				),
 				$model->getIsNewRecord() ? array('id' => $formId.'_create') : array('style' => 'display: none;', 'id' => $formId.'_create')
 			);

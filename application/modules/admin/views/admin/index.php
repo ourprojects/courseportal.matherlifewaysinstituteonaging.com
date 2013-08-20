@@ -36,6 +36,11 @@ $this->breadcrumbs = array('{t}Admin{/t}');
 		<a href="<?php echo $this->createUrl('/admin/user'); ?>" class="button">{t}Users{/t}</a>
 	</div>
 	<div class="box-white">
+		<h5>{t}Role Based Access Control{/t}</h5>
+		<p></p>
+		<a href="<?php echo $this->createUrl('/srbac'); ?>" class="button">{t}RBAC{/t}</a>
+	</div>
+	<div class="box-white">
 		<h5>{t}HostMySite.com cPanel{/t}</h5>
 		<p>{t}HostMySite is a division of Hosting.com, a leader in enterprise hosting solutions such as Cloud Hosting, Dedicated Hosting, Disaster Recovery, and Business Continuity Services. Hosting.com owns and operates its own data centers and networks, employs more than 325 employees, and has been financially stable and profitable since its inception in 1997. Our passion for customer service and our carrier-class resources and facilities are what enable us to offer enterprise class service at affordable small business prices on HostMySite.{/t}</p>
 		<a href="https://my.hostmysite.com/single.html" class="button">{t}HostMySite Control Panel{/t}</a>

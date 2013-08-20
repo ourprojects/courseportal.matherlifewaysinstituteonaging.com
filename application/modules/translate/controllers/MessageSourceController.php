@@ -4,9 +4,7 @@ class MessageSourceController extends TController
 
 	public function filters()
 	{
-		return array(
-				array('filters.HttpsFilter'),
-				'accessControl',
+		return array_merge(parent::filters(), array(
 				'ajaxOnly + ajaxIndex, ajaxView',
 				array(
 						'ext.EForwardActionFilter.EForwardActionFilter + index, view',
@@ -15,19 +13,7 @@ class MessageSourceController extends TController
 								'view' => 'ajaxView + ajax',
 						)
 				)
-		);
-	}
-
-	public function accessRules()
-	{
-		return array(
-				array('allow',
-						'expression' => '$user->getIsAdmin()',
-				),
-				array('deny',
-						'users' => array('*'),
-				),
-		);
+		));
 	}
 
 	public function actionTranslateMissing($id = null, $class = 'Message')
@@ -51,7 +37,7 @@ class MessageSourceController extends TController
 								'language' => $language,
 								'translation' => $t
 						));
-							
+
 						if(!$translation->save()) {
 							$transaction->rollback();
 							throw new CHttpException(500, TranslateModule::t('An error occured while saving a translation'));
@@ -68,7 +54,7 @@ class MessageSourceController extends TController
 								'language' => $id,
 								'translation' => $translations[$i]
 						));
-							
+
 						if(!$translation->save()) {
 							$transaction->rollback();
 							throw new CHttpException(500, TranslateModule::t('An error occured while saving a translation'));
@@ -114,7 +100,7 @@ class MessageSourceController extends TController
 			$this->actionGrid($id, $_GET['ajax']);
 		}
 	}
-	
+
 	public function actionGrid($id, $name)
 	{
 		switch($name)
@@ -172,18 +158,18 @@ class MessageSourceController extends TController
 	public function actionDelete($id)
 	{
 		$model = MessageSource::model()->findByPk($id);
-		if($model !== null) 
+		if($model !== null)
 		{
-			if($model->delete()) 
+			if($model->delete())
 			{
 				$message = 'The message source and its translations have been deleted.';
-			} 
-			else 
+			}
+			else
 			{
 				$message = 'The message source could not be deleted.';
 			}
-		} 
-		else 
+		}
+		else
 		{
 			$message = 'The message source could not be found.';
 		}

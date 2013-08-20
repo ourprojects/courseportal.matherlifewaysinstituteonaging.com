@@ -25,19 +25,11 @@ class AuthItem extends CActiveRecord
 	 * @var string $data
 	 */
 
-	/**
-	 * The following are available virtual column attributes
-	 * @var boolean $generated
-	 * @var string $fullName
-	 */
-
 	public static $TYPES = array(
 			CAuthItem::TYPE_OPERATION => 'Operation',
 			CAuthItem::TYPE_TASK => 'Task',
 			CAuthItem::TYPE_ROLE => 'Role'
 	);
-
-	public $generated = false;
 
 	public function getDbConnection()
 	{
@@ -123,6 +115,16 @@ class AuthItem extends CActiveRecord
 		return $this;
 	}
 
+	public function generated($generated = true)
+	{
+		$this->getDbCriteria()->addColumnCondition(
+				array(
+						$this->getDbConnection()->quoteColumnName($this->getTableAlias(false, false).'.generated') => $generated
+				)
+		);
+		return $this;
+	}
+
 	/**
 	 * Applies a scope to this AuthItem's type attribute.
 	 * @param mixed $type string or integer authorization item type identifier
@@ -141,8 +143,9 @@ class AuthItem extends CActiveRecord
 	public function obsolete($obsolete = true)
 	{
 		$criteria = $this->getDbCriteria();
+		$criteria->addColumnCondition(array('generated' => 1));
 		$authItems = SrbacUtilities::getSrbacModule()->generateAuthItems(false);
-		array_walk($authItems, create_function('&$authItem', '$authItem = "'.SrbacUtilities::getSrbacModule()->getGeneratedAuthItemNamePrefix().'".$authItem["name"];'));
+		array_walk($authItems, create_function('&$authItem', '$authItem = $authItem["name"];'));
 		if($obsolete)
 		{
 			$criteria->addNotInCondition($this->getTableAlias(false, false).'.name', $authItems);
@@ -241,13 +244,7 @@ class AuthItem extends CActiveRecord
 				'bizrule' => Yii::t('srbac', 'Bizrule'),
 				'data' => Yii::t('srbac', 'Data'),
 				'generated' => Yii::t('srbac', 'Generated'),
-				'fullName' => Yii::t('srbac', 'Full Name'),
 		);
-	}
-
-	public function getFullName()
-	{
-		return $this->generated ? SrbacUtilities::getSrbacModule()->getGeneratedAuthItemNamePrefix().$this->getAttribute('name') : $this->getAttribute('name');
 	}
 
 	protected function beforeSave()
@@ -278,10 +275,6 @@ class AuthItem extends CActiveRecord
 	protected function pack()
 	{
 		$this->setAttribute('data', serialize($this->getAttribute('data')));
-		if($this->generated)
-		{
-			$this->setAttribute('name', SrbacUtilities::getSrbacModule()->getGeneratedAuthItemNamePrefix().$this->getAttribute('name'));
-		}
 	}
 
 	protected function unPack()
@@ -291,8 +284,6 @@ class AuthItem extends CActiveRecord
 			$data = null;
 		}
 		$this->setAttribute('data', $data);
-		$this->setAttribute('name', preg_replace('/^'.SrbacUtilities::getSrbacModule()->getGeneratedAuthItemNamePrefix().'(.+)$/i', '$1', $this->getAttribute('name'), 1, $count));
-		$this->generated = (bool)$count;
 	}
 
 	public function orderBy($order)
@@ -325,17 +316,12 @@ class AuthItem extends CActiveRecord
 
 		$criteria->mergeWith($criteriaConfig);
 		$criteria->compare('id', $this->getAttribute('id'));
-		if(isset($this->name) && $this->name !== '')
-		{
-			$name = strtr($this->generated ? SrbacUtilities::getSrbacModule()->getGeneratedAuthItemNamePrefix() : '', array('%'=>'\%', '_'=>'\_', '\\'=>'\\\\'));
-			$name .= '%'.strtr($this->getAttribute('name'), array('%'=>'\%', '_'=>'\_', '\\'=>'\\\\')).'%';
-			$criteria->compare($this->getTableAlias(false, false).'.name', $name, true, 'AND', false);
-		}
+		$criteria->compare('generated', $this->getAttribute('generated'));
+		$criteria->compare('name', $this->getAttribute('name'));
 		$criteria->compare('type', $this->getAttribute('type'));
 		$criteria->compare('description', $this->getAttribute('description'), true);
 		$criteria->compare('bizrule', $this->getAttribute('bizrule'), true);
 		$criteria->compare('data', isset($this->data) ? serialize($this->getAttribute('data')) : $this->getAttribute('data'));
-		$criteria->mergeWith(array('condition' => $this->getTableAlias(false, false).'.name'.($this->generated ? ' ' : ' NOT ').'REGEXP :nameRegex', 'params' => array(':nameRegex' => '^'.SrbacUtilities::getSrbacModule()->getGeneratedAuthItemNamePrefix().'(.+)$')));
 
 		return $criteria;
 	}

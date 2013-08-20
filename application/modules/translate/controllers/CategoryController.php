@@ -4,9 +4,7 @@ class CategoryController extends TController
 
 	public function filters()
 	{
-		return array(
-				array('filters.HttpsFilter'),
-				'accessControl',
+		return array_merge(parent::filters(), array(
 				'ajaxOnly + ajaxIndex, ajaxView',
 				array(
 						'ext.EForwardActionFilter.EForwardActionFilter + index, view',
@@ -15,19 +13,7 @@ class CategoryController extends TController
 								'view' => 'ajaxView + ajax',
 						)
 				)
-		);
-	}
-
-	public function accessRules()
-	{
-		return array(
-				array('allow',
-						'expression' => '$user->getIsAdmin()',
-				),
-				array('deny',
-						'users' => array('*'),
-				),
-		);
+		));
 	}
 
 	public function actionTranslateMissing($id = null, $class = 'Category')
@@ -42,7 +28,7 @@ class CategoryController extends TController
 	{
 		$this->render('index');
 	}
-	
+
 	public function actionAjaxIndex()
 	{
 		if(isset($_GET['ajax']))
@@ -60,7 +46,7 @@ class CategoryController extends TController
 	{
 		$this->render('view', array('category' => Category::model()->findByPk($id)));
 	}
-	
+
 	public function actionAjaxView($id)
 	{
 		if(isset($_GET['ajax']))
@@ -68,7 +54,7 @@ class CategoryController extends TController
 			$this->actionGrid($id, $_GET['ajax']);
 		}
 	}
-	
+
 	public function actionGrid($id, $name)
 	{
 		switch($name)
@@ -121,18 +107,18 @@ class CategoryController extends TController
 	public function actionDelete($id)
 	{
 		$model = Category::model()->findByPk($id);
-		if($model !== null) 
+		if($model !== null)
 		{
-			if($model->delete()) 
+			if($model->delete())
 			{
 				$message = 'The category and its translations have been deleted.';
-			} 
-			else 
+			}
+			else
 			{
 				$message = 'The category could not be deleted.';
 			}
-		} 
-		else 
+		}
+		else
 		{
 			$message = 'The category could not be found.';
 		}

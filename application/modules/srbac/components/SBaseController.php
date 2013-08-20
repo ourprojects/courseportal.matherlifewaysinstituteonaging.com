@@ -19,12 +19,22 @@ class SBaseController extends CController
 
 	public function accessRules()
 	{
-		return array(
-				array(
-					'deny',
-					'expression' => 'SrbacUtilities::isInstalled() && !SrbacUtilities::getSrbacModule()->debug && SrbacUser::model()->superUser()->exists()'
-				)
-		);
+		return array(array('deny'));
+	}
+
+	public function getActionParams()
+	{
+		$actionParams = parent::getActionParams();
+		$request = Yii::app()->getRequest();
+		if($request->getIsPostRequest())
+		{
+			$actionParams += $_POST;
+		}
+		else
+		{
+			$actionParams += $request->getRestParams();
+		}
+		return $actionParams;
 	}
 
 	/**

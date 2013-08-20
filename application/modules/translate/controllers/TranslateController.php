@@ -2,26 +2,6 @@
 class TranslateController extends TController
 {
 
-	public function filters()
-	{
-		return array(
-				array('filters.HttpsFilter'),
-				'accessControl',
-		);
-	}
-
-	public function accessRules()
-	{
-		return array(
-				array('allow',
-						'expression' => '$user->getIsAdmin()',
-				),
-				array('deny',
-						'users' => array('*'),
-				),
-		);
-	}
-
 	/**
 	 * override needed to check if its ajax, the redirect will be by javascript
 	 */
