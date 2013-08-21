@@ -57,9 +57,14 @@ $this->widget(
 <!-- Begin sidebar -->
 
 <div id="sidebar">
-  <div class="box-sidebar zero"> <a href="<?php echo $this->createUrl('user/register'); ?>">{t}Register{/t} </a> <a
-			href="<?php echo $this->createUrl('home/contact'); ?>" class="teal"
-		>{t}Request Information{/t} </a> <a href="#slide-1" data-fancybox-group="open-tutorial" class="teal open-tutorial"> {t}Demo{/t} </a> <a href="#slide-2" data-fancybox-group="open-tutorial" class="hide open-tutorial"></a> <a href="#slide-3" data-fancybox-group="open-tutorial" class="hide open-tutorial"></a> <a href="#slide-4" data-fancybox-group="open-tutorial" class="hide open-tutorial"></a> <a href="#slide-5" data-fancybox-group="open-tutorial" class="hide open-tutorial"></a> <a href="#slide-6" data-fancybox-group="open-tutorial" class="hide open-tutorial"></a> <a href="#slide-7" data-fancybox-group="open-tutorial" class="hide open-tutorial"></a> </div>
+  <div class="box-sidebar zero"> 
+  
+  <a href="<?php echo $this->createUrl('user/register'); ?>">{t}Register{/t} </a> 
+  <a href="<?php echo $this->createUrl('home/contact'); ?>" class="teal">{t}Request Information{/t} </a> 
+  <a href="#slide-1" data-fancybox-group="open-tutorial" class="teal open-tutorial"> {t}Demo{/t} </a> 
+  <a href="#slide-2" data-fancybox-group="open-tutorial" class="hide open-tutorial"></a> 				  <a href="#slide-3" data-fancybox-group="open-tutorial" class="hide open-tutorial"></a>  <a href="#slide-4" data-fancybox-group="open-tutorial" class="hide open-tutorial"></a>  <a href="#slide-5" data-fancybox-group="open-tutorial" class="hide open-tutorial"></a>  <a href="#slide-6" data-fancybox-group="open-tutorial" class="hide open-tutorial"></a>	  <a href="#slide-7" data-fancybox-group="open-tutorial" class="hide open-tutorial"></a>
+  
+   </div>
   <div class="box-sidebar one">
     <h3> {t}Our Clients{/t} </h3>
     <div id="customers"> <a href="http://www.ibm.com" target="_blank"><img src="<?php echo $this->getImagesUrl('customers/ibm.png'); ?>" alt="IBM" /> </a> <a href="http://www.merck.com" target="_blank"><img src="<?php echo $this->getImagesUrl('customers/merck.png'); ?>"

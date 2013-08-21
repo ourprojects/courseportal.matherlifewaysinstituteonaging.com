@@ -9,7 +9,9 @@ foreach(array(
 		'.lesson-2', 
 		'.lesson-3', 
 		'.lesson-4', 
-		'.lesson-5') as $lesson)
+		'.lesson-5',
+		'.lesson-6',
+		'.lesson-7') as $lesson)
 	$this->widget(
 			'ext.fancybox.EFancyBox',
 			array('id' => $lesson,
@@ -70,66 +72,65 @@ alert("Coming Soon!");
 <!-- start main content here -->
 
 <div class="column-wide">
-  <h2 class="flowers"><?php echo t($course->title); ?></h2>
-  <p><?php echo t($course->description); ?></p>
-  <h5>{t}Independent Study / One-Year Access{/t}</h5>
-  <h4>{t}Objectives{/t}</h4>
-  <ul>
-    <?php 
+<h2 class="flowers"><?php echo t($course->title); ?></h2>
+<p><?php echo t($course->description); ?></p>
+<h5>{t}Independent Study / One-Year Access{/t}</h5>
+<h4>{t}Objectives{/t}</h4>
+<ul>
+  <?php 
   foreach($course->objectives as $objective)
   	echo '<li>' . t($objective->text) . '</li>';
   ?>
-  </ul>
-  
-  <!-- Course Lesson list starts here -->
-  
-  <h4>{t}Course Modules{/t}</h4>
-  <ul>
-    <li> <a href="#lesson-1-slide-1" data-fancybox-group="lesson-1" class="teal lesson-1">{t}Taking Care of You{/t}</a> <a href="#lesson-1-slide-2" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-3" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-4" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-5" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-6" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-7" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-8" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-9" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-10" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-11" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-12" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-13" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-14" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-15" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-16" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-17" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-18" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-19" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-20" data-fancybox-group="lesson-1" class="hide lesson-1"></li>
-    <li> <a href="#lesson-2-slide-1" data-fancybox-group="lesson-2" class="teal lesson-2">{t}Reducing Personal Stress{/t}</a> <a href="#lesson-2-slide-2" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-3" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-4" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-5" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-6" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-7" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-8" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-9" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-10" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-11" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-12" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-13" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-14" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-15" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-16" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-17" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-18" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-19" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-20" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-21" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-22" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-23" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-24" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-25" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-26" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-27" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-28" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-29" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-30" data-fancybox-group="lesson-2" class="hide lesson-2"></a> </li>
-    <li> <a href="#lesson-3-slide-1" data-fancybox-group="lesson-3" class="teal lesson-3"> {t}Communicating Effectively in Challenging Situations{/t} </a> <a href="#lesson-3-slide-2" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-3" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-4" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-5" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-6" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-7" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-8" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-9" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-10" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-11" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-12" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-13" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-14" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-15" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-16" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-17" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-18" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-19" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-20" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-21" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-22" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-23" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-24" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-25" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-26" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-27" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-28" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-29" data-fancybox-group="lesson-3" class="hide lesson-3"></a> </li>
-    <li> <a href="#lesson-4-slide-1" data-fancybox-group="lesson-4" class="teal lesson-4"> {t}Normal &amp; Abnormal Aging Changes{/t} </a> <a href="#lesson-4-slide-2" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-3" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-4" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-5" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-6" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-7" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-8" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-9" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-10" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-11" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-12" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-13" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-14" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-15" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-16" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-17" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-18" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-19" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-20" data-fancybox-group="lesson-4" class="hide lesson-4"></a> </li>
-    <li> <a href="#lesson-5-slide-1" data-fancybox-group="lesson-5" class="teal lesson-5"> {t}Financial &amp; Legal Issues{/t} </a> <a href="#lesson-5-slide-2" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-3" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-4" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-5" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-6" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-7" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-8" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-9" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-10" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-11" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-12" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-13" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-14" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-15" data-fancybox-group="lesson-5" class="hide lesson-5"></a> </li>
-  </ul>
-  
-  <!-- Resources div white box here -->
-  
-  <div class="box-white" id="resources">
-    <h4> {t}Resources{/t}</h4>
-    <p>{t}Please click on your countries flag to access resources that may be required to complete this online course. Please contact your instructor or the program director if you have additional resources you would like to see added to your geographical location.{/t}</p>
-    <table>
-      <tr>
-        <td><a href="#"><img src="<?php echo $this->getImagesUrl('flags/United-States-Flag-64.png'); ?>" alt="{t}USA{/t}" /></a></td>
-        <td><a href="#"><img src="<?php echo $this->getImagesUrl('flags/China-Flag-64.png'); ?>" alt="{t}China{/t}" /></a></td>
-        <td><a href="#"><img src="<?php echo $this->getImagesUrl('flags/Hong-Kong-Flag-64.png'); ?>" alt="{t}Hong Kong{/t}" /></a></td>
-      </tr>
-      <tr>
-        <td><a href="#"><img src="<?php echo $this->getImagesUrl('flags/Brazil-Flag-64.png'); ?>" alt="{t}Brazil{/t}" /></a></td>
-        <td><a href="#"><img src="<?php echo $this->getImagesUrl('flags/Mexico-Flag-64.png'); ?>" alt="{t}Mexico{/t}" /></a></td>
-        <td><a href="#"><img src="<?php echo $this->getImagesUrl('flags/Taiwan-Flag-64.png'); ?>" alt="{t}Taiwan{/t}" /></a></td>
-      </tr>
-      <tr>
-        <td><a href="#"><img src="<?php echo $this->getImagesUrl('flags/Argentina-Flag-64.png'); ?>" alt="{t}Argentina{/t}" /></a></td>
-        <td><a href="#"><img src="<?php echo $this->getImagesUrl('flags/United-Kingdom-flag-64.png'); ?>" alt="{t}England{/t}" /></a></td>
-        <td><a href="#"><img src="<?php echo $this->getImagesUrl('flags/Luxembourg-Flag-64.png'); ?>" alt="{t}Luxembourg{/t}" /></a></td>
-      </tr>
-    </table>
-  </div>
-  
-  <!-- Developers div white box here -->
-  
-  <div class="box-white" id="developers">
-    <h4>{t}Course Contacts{/t}</h4>
-    <br />
-    <SPAN class="h5">{t}Content Designer:{/t}</SPAN> <span class="name">Linda Hollinger-Smith, PhD</SPAN>
-    <p> {t}Dr. Hollinger-Smith is a doctorally prepared registered nurse focusing her research in gerontology, workforce development, and quality improvement. She has more than 28 years of experience working with older adults in senior living, long-term care settings, in the community, and in acute care settings in various staff and managerial positions. Her past positions include Assistant Dean of the Rush University College of Nursing, Nursing Director of the Rush Primary Care Institute, and Associate Chairperson of the Department of Adult Health Nursing at Rush University College of Nursing.{/t} </p>
-    <span class="h5">{t}Developer:{/t}</span> <span class="name">Jon Woodall</span>
-    <p>{t}Mr. Woodall is responsible for all MLIA corporate workforce wellness programs related to design, implementation, publication, and evaluation. Additionally, he seeks new grant funding to support or extend current grants related to corporate workforce wellness programs.{/t} </p>
-    <span class="h5">{t}Facilitator (English / Spanish / Portuguese):{/t}</span> <span class="name">Elise Foss</span>
-    <p>{t}Ms. Foss has been facilitating online courses for Mather LifeWays Institute on Aging since 2004. Currently, she is the Fitness Coordinator for a Mather LifeWays Senior Living community. Originally from Venezuela, and educated in Brazil, Elise is fluent in English, Spanish and Portuguese, and travels to family in Brazil each year.{/t} </p>
-    <span class="h5">{t}Facilitator (Chinese):{/t}</span> <span class="name">LiJuan Yin</span>
-    <p>{t}Mrs. Lin is currently a PhD student at the University of Illinois at Chicago (UIC), studying Public Health. She has helped research, develop, and facilitate online courses for Mather LifeWays Institute on aging for the past 3 years.{/t} </p>
-  </div>
+</ul>
+
+<!-- Course Lesson list starts here -->
+
+<h4>{t}Course Modules{/t}</h4>
+<ul>
+<li> <a href="#lesson-1-slide-1" data-fancybox-group="lesson-1" class="teal lesson-1">{t}Taking Care of You{/t}</a> <a href="#lesson-1-slide-2" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-3" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-4" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-5" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-6" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-7" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-8" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-9" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-10" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-11" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-12" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-13" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-14" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-15" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-16" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-17" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-18" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-19" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-20" data-fancybox-group="lesson-1" class="hide lesson-1"></li>
+<li> <a href="#lesson-2-slide-1" data-fancybox-group="lesson-2" class="teal lesson-2">{t}Reducing Personal Stress{/t}</a> <a href="#lesson-2-slide-2" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-3" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-4" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-5" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-6" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-7" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-8" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-9" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-10" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-11" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-12" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-13" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-14" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-15" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-16" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-17" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-18" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-19" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-20" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-21" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-22" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-23" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-24" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-25" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-26" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-27" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-28" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-29" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-30" data-fancybox-group="lesson-2" class="hide lesson-2"></a> </li>
+<li> <a href="#lesson-3-slide-1" data-fancybox-group="lesson-3" class="teal lesson-3"> {t}Communicating Effectively in Challenging Situations{/t} </a> <a href="#lesson-3-slide-2" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-3" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-4" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-5" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-6" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-7" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-8" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-9" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-10" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-11" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-12" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-13" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-14" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-15" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-16" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-17" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-18" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-19" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-20" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-21" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-22" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-23" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-24" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-25" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-26" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-27" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-28" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-29" data-fancybox-group="lesson-3" class="hide lesson-3"></a> </li>
+<li> <a href="#lesson-4-slide-1" data-fancybox-group="lesson-4" class="teal lesson-4"> {t}Normal &amp; Abnormal Aging Changes{/t} </a> <a href="#lesson-4-slide-2" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-3" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-4" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-5" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-6" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-7" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-8" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-9" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-10" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-11" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-12" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-13" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-14" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-15" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-16" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-17" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-18" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-19" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-20" data-fancybox-group="lesson-4" class="hide lesson-4"></a> </li>
+<li> <a href="#lesson-5-slide-1" data-fancybox-group="lesson-5" class="teal lesson-5"> {t}Financial &amp; Legal Issues{/t} </a> <a href="#lesson-5-slide-2" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-3" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-4" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-5" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-6" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-7" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-8" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-9" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-10" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-11" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-12" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-13" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-14" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-15" data-fancybox-group="lesson-5" class="hide lesson-5"></a> </li>
+
+<!-- Resources div white box here -->
+
+<div class="box-white" id="resources">
+  <h4> {t}Resources{/t}</h4>
+  <p>{t}Please click on your countries flag to access resources that may be required to complete this online course. Please contact your instructor or the program director if you have additional resources you would like to see added to your geographical location.{/t}</p>
+  <table>
+    <tr>
+      <td><a href="#lesson-6-slide-1" data-fancybox-group="lesson-6" class="teal lesson-6"><img src="<?php echo $this->getImagesUrl('flags/United-States-Flag-64.png'); ?>" alt="{t}USA{/t}" /></a></td>
+      <td><a href="#lesson-7-slide-1" data-fancybox-group="lesson-7" class="teal lesson-7"><a href="#"><img src="<?php echo $this->getImagesUrl('flags/China-Flag-64.png'); ?>" alt="{t}China{/t}" /></a></td>
+      <td><a href="#lesson-8-slide-1" data-fancybox-group="lesson-6" class="teal lesson-6"><a href="#"><img src="<?php echo $this->getImagesUrl('flags/Hong-Kong-Flag-64.png'); ?>" alt="{t}Hong Kong{/t}" /></a></td>
+    </tr>
+    <tr>
+      <td><a href="#lesson-9-slide-1" data-fancybox-group="lesson-6" class="teal lesson-6"><a href="#"><img src="<?php echo $this->getImagesUrl('flags/Brazil-Flag-64.png'); ?>" alt="{t}Brazil{/t}" /></a></td>
+      <td><a href="#lesson-10-slide-1" data-fancybox-group="lesson-6" class="teal lesson-6"><a href="#"><img src="<?php echo $this->getImagesUrl('flags/Mexico-Flag-64.png'); ?>" alt="{t}Mexico{/t}" /></a></td>
+      <td><a href="#lesson-11-slide-1" data-fancybox-group="lesson-6" class="teal lesson-6"><a href="#"><img src="<?php echo $this->getImagesUrl('flags/Taiwan-Flag-64.png'); ?>" alt="{t}Taiwan{/t}" /></a></td>
+    </tr>
+    <tr>
+      <td><a href="#lesson-12-slide-1" data-fancybox-group="lesson-6" class="teal lesson-6"><a href="#"><img src="<?php echo $this->getImagesUrl('flags/Argentina-Flag-64.png'); ?>" alt="{t}Argentina{/t}" /></a></td>
+      <td><a href="#lesson-13-slide-1" data-fancybox-group="lesson-6" class="teal lesson-6"><a href="#"><img src="<?php echo $this->getImagesUrl('flags/United-Kingdom-flag-64.png'); ?>" alt="{t}England{/t}" /></a></td>
+      <td><a href="#lesson-14-slide-1" data-fancybox-group="lesson-6" class="teal lesson-6"><a href="#"><img src="<?php echo $this->getImagesUrl('flags/Luxembourg-Flag-64.png'); ?>" alt="{t}Luxembourg{/t}" /></a></td>
+    </tr>
+  </table>
+</div>
+
+<!-- Developers div white box here -->
+
+<div class="box-white" id="developers">
+  <h4>{t}Course Contacts{/t}</h4>
+  <br />
+  <SPAN class="h5">{t}Content Designer:{/t}</SPAN> <span class="name">Linda Hollinger-Smith, PhD</SPAN>
+  <p> {t}Dr. Hollinger-Smith is a doctorally prepared registered nurse focusing her research in gerontology, workforce development, and quality improvement. She has more than 28 years of experience working with older adults in senior living, long-term care settings, in the community, and in acute care settings in various staff and managerial positions. Her past positions include Assistant Dean of the Rush University College of Nursing, Nursing Director of the Rush Primary Care Institute, and Associate Chairperson of the Department of Adult Health Nursing at Rush University College of Nursing.{/t} </p>
+  <span class="h5">{t}Developer:{/t}</span> <span class="name">Jon Woodall</span>
+  <p>{t}Mr. Woodall is responsible for all MLIA corporate workforce wellness programs related to design, implementation, publication, and evaluation. Additionally, he seeks new grant funding to support or extend current grants related to corporate workforce wellness programs.{/t} </p>
+  <span class="h5">{t}Facilitator (English / Spanish / Portuguese):{/t}</span> <span class="name">Elise Foss</span>
+  <p>{t}Ms. Foss has been facilitating online courses for Mather LifeWays Institute on Aging since 2004. Currently, she is the Fitness Coordinator for a Mather LifeWays Senior Living community. Originally from Venezuela, and educated in Brazil, Elise is fluent in English, Spanish and Portuguese, and travels to family in Brazil each year.{/t} </p>
+  <span class="h5">{t}Facilitator (Chinese):{/t}</span> <span class="name">LiJuan Yin</span>
+  <p>{t}Mrs. Lin is currently a PhD student at the University of Illinois at Chicago (UIC), studying Public Health. She has helped research, develop, and facilitate online courses for Mather LifeWays Institute on aging for the past 3 years.{/t} </p>
+</div>
 </div>
 
 <!-- start course content here -->
@@ -232,7 +233,8 @@ alert("Coming Soon!");
     <div class="content">
       <h2 class="flowers">{t}Caregiver Resources{/t}</h2>
       <hr />
-      <p>{t}Too often caregivers neglect their own health and well-being, and suspend  their own needs. Sometimes caregivers become a second victim of the disease that afflicts their family member. Usually, we cannot stop the impact of a chronic illness on a family member. However, we are responsible for our own self-care.{/t}</p>
+      <p>{t}Too often caregivers neglect their own health and well-being, and suspend  their own needs. Sometimes caregivers become a second victim of the disease that afflicts their family member. Usually, we cannot stop the impact of a chronic illness on a family member.{/t}</p>
+      <p>{t}However, we are responsible for our own self-care.{/t}</p>
       <p>{t}When you take care of yourself, everyone benefits. Ignoring your own needs is not only potentially detrimental to you, but it can also be harmful to the person who depends on you.{/t}</p>
       <p>{t}The Resource section, on this course's home page, was designed to give you additional resources in order to help you maintain personal well-being while providing quality care to your family member. Many focus on tools to help you to take care of you. These tools will help you:{/t}</p>
       <ul>
@@ -244,7 +246,8 @@ alert("Coming Soon!");
         <li>{t}deal with emotions, especially feelings of anger, guilt, and depression; and{/t}</li>
         <li>{t}make tough caregiving decisions.{/t}</li>
       </ul>
-      <p>{t}Additional resources will address special concerns and decisions you may face as a caregiver. These include what to do when a family member is no longer a safe driver, hiring in-home help, using community services, how to communicate with and respond to a family member who is memory impaired, options available when a family member is having problems managing his money; coping with depression, and making a decision about a care facility. You can turn to resources for guidance and direction when you face a specific decision or concern.{/t}</p>
+      <p>{t}Additional resources will address special concerns and decisions you may face as a caregiver. These include what to do when a family member is no longer a safe driver, hiring in-home help, using community services, how to communicate with and respond to a family member who is memory impaired, options available when a family member is having problems managing his money; coping with depression, and making a decision about a care facility.{/t}</p>
+      <p>{t}You can turn to resources for guidance and direction when you face a specific decision or concern.{/t}</p>
     </div>
     <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t} </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
   </div>
@@ -256,9 +259,7 @@ alert("Coming Soon!");
       <h4>{t}How Much Support Do You Have?{/t}</h4>
       <p>{t}Even if you’re the primary family caregiver, you can’t do everything on your own, especially if you’re caregiving from a distance (more than an hour’s drive from your family member). You’ll need help from friends, siblings, and other family members, as well as health professionals. If you don’t get the support you need, you'll quickly burn out—which will compromise your ability to provide care.{/t}</p>
       <p class="forum">{t}Think about how much support you feel from family and friends or co-workers, and then think about what you can do to gain more support from these individuals. Use the Internet to help you search for ideas, and post your findgins to the Forum.{/t}</p>
-      
-            <img src="<?php echo $this->getImagesUrl('empower/forum_icon.png'); ?>" alt="{t}image{/t}"> 
-
+      <img src="<?php echo $this->getImagesUrl('empower/forum_icon.png'); ?>" alt="{t}image{/t}"> 
       
       <!--
       
@@ -692,14 +693,13 @@ alert("Coming Soon!");
             <label for="No6"> No</label></td>
           <td style="text-align:left;"> Do you feel that your family or others just don't understand what you are going through as a caregiver?
             </p></td>
-     
       </table>
       <p style="text-align:center;">{t}A &quot;<em>Yes</em>&quot; answer to any of these questions indicates an area of self-care you might want to work on.{/t}</p>
       <h5>{t}Trying To Do It All{/t}</h5>
-      <p>{t}One problem that caregivers frequently experience is trying to do it all and doing it all alone. <strong>Is it possible to do it all?</strong> The answer to the question can be both yes and no. It really depends on you. What is critical is how you define what it means to do it all and, whether or not your definition of doing it all includes taking care of yourself so that you thrive, and not just survive. To Maxine, the answer to the question &quot;<em>is it possible to do it all</em>:&quot; was no.{/t}</p>
-      <p>{t}She says, &quot;<em>Mother's needs are endless and no matter what I do, I can never make her happy.&quot;</em> Yet, at the same time, Maxine was trying to do it all. Her mother's care dominated Maxine's life.{/t}</p>
+      <p>{t}One problem that caregivers frequently experience is trying to do it all and doing it all alone. <strong>Is it possible to do it all?</strong> It really depends on you. What is critical is how you define what it means to do it all and, whether or not your definition  includes taking care of yourself.{/t}</p>
+      <p>{t}To Maxine, the answer to the question &quot;<em>is it possible to do it all</em>:&quot; was no. She says, &quot;<em>Mother's needs are endless and no matter what I do, I can never make her happy.&quot;</em> Yet, at the same time, Maxine was trying to do it all. Her mother's care dominated Maxine's life.{/t}</p>
       <p>{t}Another caregiver, Maria, answered <em>yes</em> to the question, <em>is it possible to do it all</em>? She explained that "<em>all that needed to be done for my mother was done.</em>"{/t}</p>
-      <p>{t}A major difference between Maxine and Maria was the rules by which they operated. Maxine operated by the rule, <em>I must do everything for my mother</em>. The rule had become, <em>I must help Mama at all costs</em>. As a result, her relationships with other family members suffered and Maxine found herself becoming increasingly resentful. Maxine's feelings of wanting to do everything is legitimate, but the actions associated with her feelings usually are impossible to carry out.{/t}</p>
+      <p>{t}A major difference between Maxine and Maria was the rules by which they operated. Maxine operated by the rule, <em>I must do everything for my mother</em>. The rule had become &quot;<em>I must help Mama at all costs</em>.&quot; As a result, her relationships with other family members suffered and Maxine found herself becoming increasingly resentful. Maxine's feelings of wanting to do everything is legitimate, but the actions associated with her feelings usually are impossible to carry out.{/t}</p>
     </div>
     <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t} </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
   </div>
@@ -745,16 +745,14 @@ alert("Coming Soon!");
     <div class="content">
       <h2 class="flowers">{t}Setting Goals{/t}</h2>
       <hr />
-      <p>{t}An important tool in taking care of yourself is setting goals. A goal is something you would like to accomplish in the next three to six months:{/t}</p>
-      <p style="text-align:center;"><i>{t}What would you like to do to take better care of yourself and to help yourself to thrive?{/t}</i></p>
-      <p>{t}This might be to get a break from caregiving for a week, get help with caregiving tasks, be able to walk three miles, or quit feeling guilty.{/t}</p>
+      <p>{t}An important tool in taking care of yourself is setting goals. A goal is something you would like to accomplish in the next three to six months. This might be to get a break from caregiving for a week or getting help with caregiving tasks.{/t}</p>
       <p>{t}Goals often are difficult to accomplish because they may seem like dreams or they may be overwhelming. As a result, we may not even try to accomplish them or we may give up shortly after we get started. We will address this problem shortly.{/t}</p>
       <p class="forum">{t}For now, take a moment and write at least 3 goals on the Forum. Put an asterisk (*) next to the goal you would like to work on first. After identifying a goal, the first step is to brainstorm all of the different things you might do to reach your goal. Identify and write down all possible options on the Forum as a separate posting.{/t}</p>
       <img src="<?php echo $this->getImagesUrl('empower/forum_icon.png'); ?>" alt="{t}forum icon{/t}">
       <p>{t}The second step is to evaluate the options you have identified. Which options seem like possibilities to you? It is important not to assume that an option is unworkable or does not exist until you have thoroughly investigated it or given it a try. Assumptions are major self-care enemies.{/t}</p>
       <p class="forum">{t}Go back to the above Forum posting and put an asterisk (*) next to two or three options you would like to try. Select one to try.{/t}</p>
       <img src="<?php echo $this->getImagesUrl('empower/forum_icon.png'); ?>" alt="{t}forum icon{/t}">
-      <p>{t}The third step is to turn your option into a short-term plan, which we call making an action plan.{/t}</p>
+      <p>{t}The third step is to turn your option into a short-term plan, which we call &quot;making an action plan.&quot;{/t}</p>
     </div>
     <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t} </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
   </div>
@@ -762,8 +760,8 @@ alert("Coming Soon!");
     <div class="content">
       <h2 class="flowers">{t}Making Action Plans{/t}</h2>
       <hr />
-      <p>{t}An action plan is a specific action that you are confident you can accomplish within the next week. It is an agreement or contract with yourself.{/t}</p>
-      <p>{t}Action plans are one of your most important self-care tools. An action. plan is a step toward reaching your long-term goal. It is to be something you want to do. It is not to be something you feel you should do, have to do, or need to do. The intent of making an action plan is to help you to feel better and to take better care of yourself. Remember, an action plan is a <i>want to do</i>. Here are the five steps for making an action plan:{/t}</p>
+      <p>{t}An action plan is a specific action that you are confident you can accomplish within the next week; a step toward reaching your long-term goal. It is an agreement or contract with yourself.{/t}</p>
+      <p>{t}Action plans are one of your most important self-care tools.  It is to be something you want to do. The intent of making an action plan is to help you to feel better and to take better care of yourself. Remember, an action plan is a <i>want to do</i>. Here are the five steps for making an action plan:{/t}</p>
       <ul>
         <li>{t}Decide what you want to do.{/t}</li>
         <li>{t}Make your plan behavior-specific.{/t}</li>
@@ -772,9 +770,9 @@ alert("Coming Soon!");
         <li>{t}Write down your action plan.{/t}</li>
       </ul>
       <h5>{t}Decide What You Want To Do{/t}</h5>
-      <p>{t}Think about what is realistic for you to accomplish within the next week. It is important that an action plan is reachable; otherwise, you are likely to experience frustration. An action plan is to help you experience success-not frustration, increased stress, or failure. An action plan starts with the words, "<i>I will ...</i>" If you find yourself saying "<i>I will try to ...,</i>" "<i>I have to ...,</i>" or "<i>I should ...,</i>" then re-examine your action plan. It probably is not something that you truly want to do.{/t}</p>
+      <p>{t}Think about what is realistic for you to accomplish within the next week. It is important that an action plan is reachable. An action plan is to help you experience success. An action plan starts with the words, "<i>I will ...</i>" If you find yourself saying "<i>I will try to ...,</i>" "<i>I have to ...,</i>" or "<i>I should ...,</i>" then re-examine your action plan. It probably is not something that you truly want to do.{/t}</p>
       <h5>{t}Make Your Plan Behavior-Specific{/t}</h5>
-      <p>{t}The more specific your action plan, the greater your chances of accomplishing it. For example, <i>taking better care of myself</i> is not a specific behavior. However, making an appointment for a physical check-up, walking three times a week, getting a massage on Thursday afternoon, or asking someone to stay with your family member for one morning are all specific behaviors. <i>I will relax</i> also is not a specific behavior; however, reading a book, listening to your favorite music, or puttering in the garden are specific behaviors.{/t}</p>
+      <p>{t}The more specific your action plan, the greater your chances of accomplishing it. <i>I will relax</i> also is not a specific behavior; however, reading a book or listening to your favorite music are specific behaviors.{/t}</p>
     </div>
     <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t} </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
   </div>
@@ -790,10 +788,9 @@ alert("Coming Soon!");
         <li><b>{t}When will you do this?</b> Examples: <i>Will you read the first thing in the morning when you awaken, before you go to bed, when the care receiver is sleeping, or ... ? If your plan is to walk, when during the day will you do it?</i>{/t}</li>
         <li><b>{t}How often will you do this activity?</b> Example: <i>Three times a week on Monday, Wednesday, and Friday.</i>{/t}</li>
       </ol>
-      <p>{t}A common mistake is to make an action plan that is unreachable within the time frame. For example, if you plan to do something every day, you might fail. Caregiving, and life in general, has its surprises. Although well-intentioned, it is often not possible to do something every day. It is better to plan to do something once or twice a week and exceed your action plan than to plan to do something every day and fail because you only did it six days, rather than seven. Remember, an action plan is meant to help you to take better care of yourself and to experience success. The last thing you need is additional pressure, disappointment, and stress.{/t}</p>
-      <p>{t}Here are some recommendations for writing an action plan that can help you achieve success.{/t}</p>
+      <p>{t}A common mistake is to make an action plan that is unreachable within the time frame. For example, if you plan to do something every day, you might fail. Although well-intentioned, it is often not possible to do something every day. It is better to plan to do something once or twice a week and exceed your action plan. Here are some recommendations for writing an action plan that can help you achieve success:{/t}</p>
       <h5>{t}Start where you are or start slowly.{/t}</h5>
-      <p>{t}If there is a book you have been wanting to read, but just have not found the time, it may not be realistic to expect to read the entire book in the next week. Instead, try reading for a half hour twice during the week If you have not been physically active, it may be unrealistic to make an action plan· to start walking three miles. It is better to make your action plan for something that you believe you can accomplish. For example, make your plan for walking three blocks or a half mile, rather than three miles.{/t}</p>
+      <p>{t}If there is a book you have been wanting to read, but just have not found the time, it may not be realistic to expect to read the entire book in the next week. Instead, try reading for a half-hour, twice during the week. It is better to make your action plan for something that you believe you can accomplish.{/t}</p>
       <h5>{t}Give yourself time off.{/t}</h5>
       <p>{t}We all have days when we do not feel like doing anything. That is the advantage of saying you will do something three days a week, rather than every day. That way, if you do not feel like doing something on one day, or something develops that prevents you from doing it, you can still achieve your action plan.{/t}</p>
     </div>
@@ -828,16 +825,16 @@ alert("Coming Soon!");
       <h2 class="flowers">{t}Problem-Solving: A Solution-Seeking Approach{/t}</h2>
       <hr />
       <p>{t}Sometimes you may find that your action plan is not workable. You may encounter unusual circumstances that week and need to give the plan a try for at least another week or you may need to make adjustments in your original plan. The following solution seeking approach can help you identify solutions to problems.{/t}</p>
-      <ul>
-        <li>{t}<b>Clearly identify the problem.</b> This is the first and most important step in the solution-seeking approach. It also can be the most difficult step.{/t}</li>
-        <li>{t}<b>List ideas to solve the problem.</b> Family, friends, and others may be helpful in giving ideas. When you ask for ideas, just listen to each suggestion. It is best not to respond as to why an idea is or is not likely to work. Just focus on getting the ideas.{/t}</li>
-        <li>{t}<b>Select one to try.</b> When trying a new idea, give it a fair trial before deciding that it will not work.{/t}</li>
-        <li>{t}<b>Assess the results.</b> Ask yourself, <i>How well did what I chose work?</i> If all went well, congratulate yourself for finding a solution to the identified problem. If the first idea did not work, try another idea.{/t}</li>
-      </ul>
-      <p>{t}Sometimes an idea just needs fine-tuning. It is important not to give up on an idea just because it did not work the first time. If you have difficulty finding a solution that works, utilize other resources. Share your problem with family, friends, and professionals and ask them for possible ideas. If you still find that suggested solutions do not work, you may need to accept that the problem is not solvable right now.{/t}</p>
+      <ol>
+        <li>{t}Clearly identify the problem{/t}</li>
+        <li>{t}List ideas to solve the problem{/t}</li>
+        <li>{t}Select one to try{/t}</li>
+        <li>{t}Assess the results{/t}</li>
+      </ol>
+      <p>{t}It is important not to give up on an idea just because it did not work the first time. If you have difficulty finding a solution that works, utilize other resources. Share your problem with family, friends, and professionals and ask them for possible ideas. If you still find that suggested solutions do not work, you may need to accept that the problem is not solvable right now.{/t}</p>
       <p>{t}Remember, just because there does not seem to be a workable solution right now does not mean that a problem can not be solved later, or that other problems can not be solved in the same way. It may be helpful to go back to the first step and consider if the problem needs to be redefined.{/t}</p>
-      <p>{t}For example, a caregiver had thought that her problem was <i>I am tired all of the time.</i> However, the real problem was the caregiver's beliefs that <i>No one can care for John like I can,</i> and <i>I have to do everything myself.</i> As a result of these beliefs, the caregiver was doing everything herself and getting worn out. When she redefined the problem and focused on changing her beliefs and view of the caregiving situation, she found a workable solution. Sometimes, too, a problem may be easier to work on if you break it down into smaller problems.{/t}</p>
-      <p>{t}Most of the time if you follow these steps, you will find a solution that solves the problem. It is important to avoid making the mistake of jumping from step l to step 7 and thinking <i>nothing can be done.</i>{/t}</p>
+      <p>{t}Sometimes, too, a problem may be easier to work on if you break it down into smaller problems.{/t}</p>
+      <p>{t}Most of the time if you follow these steps, you will find a solution that solves the problem. It is important to avoid making the mistake of jumping from step start to fnish and thinking <i>nothing can be done.</i>{/t}</p>
     </div>
     <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
   </div>
@@ -849,9 +846,7 @@ alert("Coming Soon!");
       <p>{t}Accomplishing action plans is often a reward in itself. However, it is also important to find healthy pleasures that add enjoyment to your life. Rewards do not have to be fancy or expensive or take a lot of time.{/t}</p>
       <p>{t}One caregiver; for example, regularly goes to a movie or a play as a gift to herself from her husband. She said:{/t}</p>
       <p><i>{t}When my husband was well, he would take me out Friday nights to a movie or a play at least twice a month. Because of his medical condition, he is no longer able to do so. Now a friend and I go to a movie or a play at least once a month. I consider this is a treat that my husband is still giving to me.{/t}</i></p>
-      <p>{t}Another caregiver said:{/t}</p>
-      <p><i>{t}Before my wife's illness, I would go golfing with my buddies on Saturday morning. When Carmela needed more care, I quit golfing. I now treat myself to Saturday golfing, while my daughter or a friend visits with Carmela. This gives me something to look forward to each week and I feel more alive when I return home. I am also finding I am more patient with Carmela. My daughter says I am always happier and calmer when I return home. So, I look at Saturday golfing as my treat not only to me, but also to Carmela.{/t}</i></p>
-      <p class="forum">{t}Have you rewarded yourself recently for the task you have accomplished within your caregiver role? Post your response on the Forum.{/t}</p>
+      <p>{t}Have you rewarded yourself recently for the task you have accomplished within your caregiver role? Post your response on the Forum.{/t}</p>
       <img src="<?php echo $this->getImagesUrl('empower/forum_icon.png'); ?>" alt="{t}image{/t}" /> </div>
     <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
   </div>
@@ -896,10 +891,10 @@ HTML Output:
       <hr />
       <img src="<?php echo $this->getImagesUrl('empower/154263430.png'); ?>" alt="{t}image{/t}" />
       <p>{t}This module two main sections:{/t}</p>
-      <ul>
+      <ol>
         <li>{t}The Stress of Caregiving{/t}</li>
         <li>{t}Steps to Maintain Health &amp; Avoid Stress{/t}</li>
-      </ul>
+      </ol>
       <p>{t}This module explores the stress of caregiving. It will help you identify and understand your particular stressors, challenges, and strengths. You can then plan strategies that help you cope, change, and reduce stress. A basic premise of this chapter is that each of us has a reservoir of strength. The challenge is to identify our strengths build on them.{/t}</p>
       <p class="forum">{t}Before you get started, post to the Forum your current stressors, so at the end of this module we may recall them.{/t}</p>
       <img src="<?php echo $this->getImagesUrl('empower/forum_icon.png'); ?>" alt="{t}Forum Icon{/t}" /> </div>
@@ -2932,6 +2927,26 @@ HTML Output:
     </div>
     
     <!-- need this final div here to close lesson-5 --> 
+  </div>
+  <div id="lesson-6">
+    <div id="lesson-6-slide-1" class="course-slide">
+      <div class="content">
+        <p>{t}this is a test!{/t}</p>
+      </div>
+      <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Close{/t}</a></div>
+    </div>
+    
+    <!-- need this final div here to close lesson-6 --> 
+  </div>
+  <div id="lesson-7">
+    <div id="lesson-7-slide-1" class="course-slide">
+      <div class="content">
+        <p>{t}this is a test!{/t}</p>
+      </div>
+      <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Close{/t}</a></div>
+    </div>
+    
+    <!-- need this final div here to close lesson-6 --> 
   </div>
   
   <!-- need this final div to close the course --> 
