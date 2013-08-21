@@ -26,7 +26,7 @@ class WebUser extends CWebUser
 			{
 				$attributes[$this->userName] = $this->getName();
 			}
-			if(!empty($aattributes))
+			if(!empty($attributes))
 			{
 				$this->_userModel = call_user_func(array($this->userClassName, 'model'))->findByAttributes($attributes);
 			}

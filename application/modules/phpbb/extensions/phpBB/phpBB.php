@@ -3,8 +3,7 @@
 /**
  * component to work with phpBB forum users
  *
- * @author Veaceslav Rudnev <slava.rudnev@gmail.com>
- * @modified ElisDN <mail@elisdn.ru>
+ * @author Louis DaPrato <l.daprato@gmail.com>
  *
  * @version 0.1
  *
@@ -36,20 +35,26 @@ Yii::import('phpbb.extensions.phpBB.phpbbClass');
 
 class phpBB extends CApplicationComponent
 {
-	
+
 	const ID = 'phpBB';
+
+	const USER_NORMAL = 0;
+	const USER_INACTIVE = 1;
+	const USER_IGNORE = 2;
+	const USER_FOUNDER = 3;
+
 	/**
 	 * Path to forum
 	 * @var string
 	 */
 	public $path;
-	
+
 	/**
 	 * Web path to forum
 	 * @var string
 	 */
 	public $webPath = '';
-	
+
 	/**
 	 * PHP file extentions
 	 * @var string
@@ -72,7 +77,7 @@ class phpBB extends CApplicationComponent
 	{
 		return Yii::app()->getBaseUrl(true) . '/' . $this->webPath;
 	}
-	
+
 	public function getACPurl()
 	{
 		return $this->_phpbb->append_sid($this->getForumUrl() . '/adm/index.' . $this->php);
@@ -117,7 +122,7 @@ class phpBB extends CApplicationComponent
 		} elseif(!$group_id instanceof PhpBBGroup) {
 			$group_id = PhpBBGroup::model()->findByName(strval($group_id));
 		}
-		
+
 		if($group_id === null)
 		{
 			throw new CException(Yii::t(self::ID, 'Unable to add user, an invalid group was specified.'));
@@ -187,8 +192,8 @@ class phpBB extends CApplicationComponent
 	{
 		return $this->_phpbb->user_update($phpbb_vars);
 	}
-	
-	public function getUserIdFromName($username) 
+
+	public function getUserIdFromName($username)
 	{
 		return $this->_phpbb->get_user_id_from_name($username);
 	}

@@ -8,6 +8,14 @@
 			'system.web.widgets.CTabView',
 			array(
 				'tabs' => array(
+						'manual' => array(
+								'title' => Yii::t('srbac', 'Manual'),
+								'view' => 'partials/tabs/_manual',
+								'data' => array(
+										'gridModel' => $manualGridModel,
+										'formModel' => $manualFormModel
+								)
+						),
 						'automatic' => array(
 								'title' => Yii::t('srbac', 'Automatic'),
 								'view' => 'partials/tabs/_automatic',
@@ -17,14 +25,6 @@
 										'obsoleteGridModel' => $autoObsoleteGridModel,
 										'formModel' => $automaticFormModel,
 										'dataProvider' => $dataProvider,
-								)
-						),
-						'manual' => array(
-								'title' => Yii::t('srbac', 'Manual'),
-								'view' => 'partials/tabs/_manual',
-								'data' => array(
-										'gridModel' => $manualGridModel,
-										'formModel' => $manualFormModel
 								)
 						),
 				),

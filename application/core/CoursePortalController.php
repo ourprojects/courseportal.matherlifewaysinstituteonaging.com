@@ -48,6 +48,21 @@ abstract class CoursePortalController extends CController
 		return $actions;
 	}
 
+	public function getActionParams()
+	{
+		$actionParams = parent::getActionParams();
+		$request = Yii::app()->getRequest();
+		if($request->getIsPostRequest())
+		{
+			$actionParams += $_POST;
+		}
+		elseif($request->getRequestType() !== 'GET')
+		{
+			$actionParams += $request->getRestParams();
+		}
+		return $actionParams;
+	}
+
 	public function missingAction($actionID)
 	{
 		if(!isset($this->defaultMissingAction) || $actionID === $this->defaultMissingAction)

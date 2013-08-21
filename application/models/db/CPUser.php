@@ -6,7 +6,6 @@
  * @property integer $id
  * @property string  $password
  * @property string  $salt
- * @property integer $group_id
  * @property string  $email
  * @property string  $name
  * @property string  $session_key
@@ -32,7 +31,8 @@
  * @property UserProfile $userProfile
  */
 
-class CPUser extends CActiveRecord {
+class CPUser extends CActiveRecord
+{
 
 	public $new_password = null;
 
@@ -40,49 +40,53 @@ class CPUser extends CActiveRecord {
 	 * Returns the static model of the specified AR class.
 	 * @return CActiveRecord the static model class
 	 */
-	public static function model($className = __CLASS__) {
+	public static function model($className = __CLASS__)
+	{
 		return parent::model($className);
 	}
 
 	/**
 	 * @return string the associated database table username
 	 */
-	public function tableName() {
+	public function tableName()
+	{
 		return '{{user}}';
 	}
 
 	/**
 	 * @return array validation rules for model attributes.
 	 */
-	public function rules() {
+	public function rules()
+	{
 		return array(
-			array('password, salt, session_key, group_id, last_ip, last_login, language, isActivated', 'unsafe', 'except' => 'admin'),
-			array('session_key', 'default', 'value' => $this->generateIV(), 'setOnEmpty' => true, 'except' => 'search'),
-			array('email, name, session_key, firstname, lastname', 'required', 'except' => 'search'),
-			array('new_password', 'required', 'on' => 'insert'),
-			array('password', 'ext.pbkdf2.PBKDF2validator', 'allowEmpty' => true),
-			array('salt, session_key', 'ext.pbkdf2.PBKDF2validator', 'except' => 'search'),
+				array('password, salt, session_key, group_id, last_ip, last_login, language, isActivated', 'unsafe', 'except' => 'admin'),
+				array('session_key', 'filter', 'filter' => array($this, 'generateSessionKey'), 'except' => 'search'),
+				array('email, name, session_key, firstname, lastname', 'required', 'except' => 'search'),
+				array('new_password', 'required', 'on' => 'insert'),
+				array('password', 'ext.pbkdf2.PBKDF2validator', 'allowEmpty' => true),
+				array('salt, session_key', 'ext.pbkdf2.PBKDF2validator', 'except' => 'search'),
 
-			array('firstname, lastname, location, last_agent', 'length', 'max' => 255),
-			array('created', 'date', 'format' => 'yyyy-M-d H:m:s'),
-			array('last_login', 'date', 'format' => 'yyyy-M-d H:m:s'),
-			array('last_ip', 'length', 'max' => 40),
-			array('language', 'length', 'max' => 16),
-			array('country_iso', 'length', 'max' => 3),
+				array('firstname, lastname, location, last_agent', 'length', 'max' => 255),
+				array('created', 'date', 'format' => 'yyyy-M-d H:m:s'),
+				array('last_login', 'date', 'format' => 'yyyy-M-d H:m:s'),
+				array('last_ip', 'length', 'max' => 40),
+				array('language', 'length', 'max' => 16),
+				array('country_iso', 'length', 'max' => 3),
 
-			array('email, name', 'length', 'max' => 127),
-			array('email', 'email'),
-			array('email, name', 'unique', 'caseSensitive' => false, 'except' => 'search'),
+				array('email, name', 'length', 'max' => 127),
+				array('email', 'email'),
+				array('email, name', 'unique', 'caseSensitive' => false, 'except' => 'search'),
 
-			array('group_id', 'setDefaultGroupID', 'setOnEmpty' => true, 'except' => 'search'),
-			array('group_id', 'exist', 'attributeName' => 'id', 'className' => 'Group'),
+				array('group_id', 'setDefaultGroupID', 'setOnEmpty' => true, 'except' => 'search'),
+				array('group_id', 'exist', 'attributeName' => 'id', 'className' => 'Group'),
 
-			array('name, new_password, email, firstname, lastname, location, country_iso', 'safe'),
-			array('id, group_id, created, last_ip, last_login, last_agent, language', 'safe', 'on' => 'search')
-        );
+				array('name, new_password, email, firstname, lastname, location, country_iso', 'safe'),
+				array('id, group_id, created, last_ip, last_login, last_agent, language', 'safe', 'on' => 'search')
+		);
 	}
 
-	public function behaviors() {
+	public function behaviors()
+	{
 		return array_merge(parent::behaviors(), array(
 				'PhpBBUserBehavior' => array(
 						'class' => 'phpbb.components.PhpBBUserBehavior',
@@ -96,8 +100,12 @@ class CPUser extends CActiveRecord {
 								'email' => 'email',
 								'fullLocation' => 'user_from',
 								'language' => 'user_lang',
-								'createdUnixTime' => 'user_regdate'
+								'createdUnixTime' => 'user_regdate',
+								'phpbbUserType' => 'user_type'
 						)
+				),
+				'SrbacBehavior' => array(
+						'class' => 'srbac.components.SrbacBehavior'
 				),
 				'extendedFeatures' => array('class' => 'behaviors.EModelBehaviors'),
 				'PBKDF2Behavior' => array(
@@ -120,25 +128,43 @@ class CPUser extends CActiveRecord {
 	/**
 	 * @return array relational rules.
 	 */
-	public function relations() {
-		Yii::import('phpbb.models.*');
+	public function relations()
+	{
 		return array(
 			'avatar' => array(self::HAS_ONE, 'Avatar', 'user_id'),
-            'referees' => array(self::HAS_MANY, 'Referral', 'referee'),
-            'referrals' => array(self::HAS_MANY, 'Referral', 'referrer'),
-            'uploadedFiles' => array(self::HAS_MANY, 'UploadedFile', 'user_id'),
-            'group' => array(self::BELONGS_TO, 'Group', 'group_id'),
+			'referees' => array(self::HAS_MANY, 'Referral', 'referee'),
+			'referrals' => array(self::HAS_MANY, 'Referral', 'referrer'),
+			'group' => array(self::BELONGS_TO, 'Group', 'group_id'),
+			'uploadedFiles' => array(self::HAS_MANY, 'UploadedFile', 'user_id'),
 			'activated' => array(self::HAS_ONE, 'UserActivated', 'user_id'),
 			'userCourses' => array(self::HAS_MANY, 'UserCourse', 'user_id'),
-			'courses' => array(self::MANY_MANY, 'Course', '{{user_course}}(user_id, course_id)'),
+			'courses' => array(self::MANY_MANY, 'Course', UserCourse::model()->tableName().'(user_id, course_id)'),
 			'phpBbUser' => array(self::HAS_ONE, 'PhpBBUser', array('username' => 'username')),
 			'userAgreements' => array(self::HAS_MANY, 'UserAgreement', 'user_id'),
-			'agreements' => array(self::MANY_MANY, 'Agreement', '{{user_agreement}}(user_id, agreement_id)'),
+			'agreements' => array(self::MANY_MANY, 'Agreement', UserAgreement::model()->tableName().'(user_id, agreement_id)'),
 			'userActivities' => array(self::HAS_MANY, 'UserActivity', 'user_id'),
-			'activities' => array(self::MANY_MANY, 'Activity', '{{spencer_powell_user_activity}}(user_id, activity_id)'),
+			'activities' => array(self::MANY_MANY, 'Activity', UserActivity::model()->tableName().'(user_id, activity_id)'),
 			'activityLogEntries' => array(self::HAS_MANY, 'UserLogEntry', array('id' => 'user_activity_id'), 'through' => 'activities'),
 			'activityLogEntryDimensions' => array(self::HAS_MANY, 'UserLogEntryDimension', array('id' => 'user_log_entry_id'), 'through' => 'activityLogEntries'),
 		);
+	}
+
+	public function generateSessionKey($sessionKey = null)
+	{
+		if(!isset($sessionKey))
+		{
+			$sessionKey = $this->generateIV();
+		}
+		return $sessionKey;
+	}
+
+	public function getPhpbbUserType()
+	{
+		if($this->getIsActivated())
+		{
+			return Yii::app()->getAuthManager()->isSuperUser($this->getAttribute('id')) ? phpBB::USER_FOUNDER : phpBB::USER_NORMAL;
+		}
+		return phpBB::USER_INACTIVE;
 	}
 
 	public function getCountry()
@@ -146,7 +172,8 @@ class CPUser extends CActiveRecord {
 		return isset($this->country_iso) ? Yii::app()->translate->getTerritoryDisplayName($this->country_iso) : '';
 	}
 
-	public function getFullLocation() {
+	public function getFullLocation()
+	{
 		if(isset($this->location))
 		{
 			if(isset($this->country_iso))
@@ -160,7 +187,8 @@ class CPUser extends CActiveRecord {
 		return '';
 	}
 
-	public function getCreatedUnixTime() {
+	public function getCreatedUnixTime()
+	{
 		if(preg_match('/^(?P<year>\d+)-(?P<month>\d+)-(?P<day>\d+) (?P<hour>\d+):(?P<minute>\d+):(?P<second>\d+)$/',
 				$this->created,
 				$matches))
@@ -203,7 +231,8 @@ class CPUser extends CActiveRecord {
 		$this->activated = $model;
 	}
 
-	public function hasCourse($course) {
+	public function hasCourse($course)
+	{
 		if(is_int($course)) {
 			$this->getDbCriteria()->mergeWith(array(
 					'with' => 'userCourses',
@@ -222,35 +251,21 @@ class CPUser extends CActiveRecord {
 		return $this;
 	}
 
-	public function setDefaultGroupID($attribute, $params)
-	{
-		if(!$params['setOnEmpty'] || empty($this->$attribute))
-		{
-			if($emailGroup = GroupRegularExpression::model()->find(':email REGEXP regex', array(':email' => $this->email)))
-			{
-				$this->$attribute = $emailGroup->group_id;
-			}
-			else
-			{
-				$this->$attribute = Group::model()->autoQuoteFind(array('and', 'name' => Group::DEFAULT_GROUP))->id;
-			}
-		}
-	}
-
 	/**
 	 * @return array customized attribute labels (name=>label)
 	 */
-	public function attributeLabels() {
+	public function attributeLabels()
+	{
 		return array(
-            'id' 			 => t('ID'),
+			'id' 			 => t('ID'),
 			'new_password' 	 => t('New Password'),
-            'password' 		 => t('Password'),
-            'salt' 			 => t('Salt'),
-            'group_id' 		 => t('Group'),
-            'email' 		 => t('Email'),
+			'password' 		 => t('Password'),
+			'salt' 			 => t('Salt'),
+			'group_id' 		 => t('Group'),
+			'email' 		 => t('Email'),
 			'name' 			 => t('Username'),
-            'session_key' 	 => t('Session Key'),
-            'created' 		 => t('Created'),
+			'session_key' 	 => t('Session Key'),
+			'created' 		 => t('Created'),
 			'referees' 		 => t('Referees'),
 			'referrals' 	 => t('Referrals'),
 			'uploadedFiles'  => t('Uploaded Files'),
@@ -272,7 +287,8 @@ class CPUser extends CActiveRecord {
 		);
 	}
 
-	public function getSearchCriteria() {
+	public function getSearchCriteria()
+	{
 		$criteria = new CDbCriteria;
 
 		$criteria->compare('id', $this->id);
@@ -295,17 +311,22 @@ class CPUser extends CActiveRecord {
 	 * Retrieves a list of models based on the current search/filter conditions.
 	 * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.
 	 */
-	public function search() {
+	public function search()
+	{
 		return new CActiveDataProvider($this, array(
 				'criteria' => $this->getSearchCriteria(),
 		));
 	}
 
-	public static function getUniqueName($name) {
-		if(!isset($name)) {
-			do {
+	public static function getUniqueName($name)
+	{
+		if(!isset($name))
+		{
+			do
+			{
 				$name = uniqid('temp_username_');
-			} while(self::model()->autoQuoteExists(array('and', 'name' => $name)));
+			}
+			while(self::model()->autoQuoteExists(array('and', 'name' => $name)));
 		}
 		return $name;
 	}
@@ -314,15 +335,50 @@ class CPUser extends CActiveRecord {
 	 * Regenerates the session key for this user and saves to database.
 	 * @return boolean whether the session key was successfully updated for this user.
 	 */
-	public function regenerateSessionKey($saveImmediately = true) {
+	public function regenerateSessionKey($saveImmediately = true)
+	{
 		$this->session_key = $this->generateIV();
 		return !$saveImmediately || $this->save(true, array('session_key'));
 	}
 
-	public function encodeUrl($url) {
+	public function encodeUrl($url)
+	{
 		if(stripos($url, '/') !== strlen($url) - 1)
 			$url .= '/';
 		return Yii::app()->createAbsoluteUrl($url . 'id/' . urlencode($this->id) . '/session_key/' . CBase64::urlEncode($this->session_key));
+	}
+
+	public function setDefaultGroupID($attribute, $params)
+	{
+		if(!$params['setOnEmpty'] || empty($this->$attribute))
+		{
+			if($emailGroup = GroupRegularExpression::model()->find(':email REGEXP '.$this->getDbConnection()->quoteColumnName($this->getTableAlias().'.regex'), array(':email' => $this->email)))
+			{
+				$this->$attribute = $emailGroup->group_id;
+			}
+			else
+			{
+				$this->$attribute = Group::model()->autoQuoteFind(array('and', 'name' => Group::DEFAULT_GROUP))->id;
+			}
+		}
+	}
+
+	public function assignAuthorizationItems()
+	{
+		if(!$this->getIsNewRecord())
+		{
+			$db = $this->getDbConnection();
+			$cmd = $db->createCommand()
+				->select('auth_item_id')
+				->from(GroupAuthItem::model()->tableName().' gait')
+				->leftJoin(Yii::app()->getAuthManager()->assignmentTable.' at', array('and', $db->quoteColumnName('at.item_id').'='.$db->quoteColumnName('gait.auth_item_id'), $db->quoteColumnName('at.user_id').'=:user_id'), array(':user_id' => $this->getAttribute('id')))
+				->where(array('and', $db->quoteColumnName('gait.group_id').'=:group_id', $db->quoteColumnName('at.item_id').' IS NULL'), array(':group_id' => $this->getAttribute('group_id')));
+
+			foreach($cmd->queryColumn() as $authItemId)
+			{
+				$this->assign($authItemId);
+			}
+		}
 	}
 
 	protected function afterSave()
@@ -334,6 +390,7 @@ class CPUser extends CActiveRecord {
 			$activated->save();
 			$this->addErrors($activated->getErrors());
 		}
+		$this->assignAuthorizationItems();
 		parent::afterSave();
 	}
 

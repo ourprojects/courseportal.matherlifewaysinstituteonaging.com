@@ -80,6 +80,7 @@ class Group extends CActiveRecord {
 		return array(
 				'users' => array(self::HAS_MANY, 'CPUser', 'group_id'),
 				'regularExpressions' => array(self::HAS_MANY, 'GroupRegularExpression', 'group_id'),
+				'authItems' => array(self::HAS_MANY, 'GroupAuthItem', 'group_id')
 		);
 	}
 

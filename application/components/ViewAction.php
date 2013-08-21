@@ -1,9 +1,9 @@
-<?php   
+<?php
 
 class ViewAction extends CViewAction {
-	
+
 	public $renderData = array();
-	
+
 	private $_viewPath;
 
 	/**
@@ -20,11 +20,11 @@ class ViewAction extends CViewAction {
 			{
 				$_GET[$this->viewParam] = CArray::array_flatten($_GET);
 			}
-			
+
 			if(empty($_GET[$this->viewParam]))
 			{
 				unset($_GET[$this->viewParam]);
-			} 
+			}
 			else if(is_array($_GET[$this->viewParam]))
 			{
 				$_GET[$this->viewParam] = implode('.', $_GET[$this->viewParam]);
@@ -33,10 +33,10 @@ class ViewAction extends CViewAction {
 			{
 				$_GET[$this->viewParam] = strval($_GET[$this->viewParam]);
 			}
-			
+
 			$this->_viewPath = trim(preg_replace('/[\\\\\/]+/', '.', parent::getRequestedView()), '.');
 		}
-		
+
 		return $this->_viewPath;
 	}
 
@@ -66,20 +66,20 @@ class ViewAction extends CViewAction {
 	 * This method displays the view requested by the user.
 	 * @throws CHttpException if the view is invalid
 	 */
-	public function run() 
+	public function run()
 	{
 		$this->resolveView($this->getRequestedView());
 		$controller = $this->getController();
-		if($this->layout !== null) 
+		if($this->layout !== null)
 		{
 			$layout = $controller->layout;
 			$controller->layout = $this->layout;
 		}
 
 		$this->onBeforeRender($event = new CEvent($this));
-		if(!$event->handled) 
+		if(!$event->handled)
 		{
-			if($this->renderAsText) 
+			if($this->renderAsText)
 			{
 				$text=file_get_contents($controller->getViewFile($this->view));
 				$controller->renderText($text);

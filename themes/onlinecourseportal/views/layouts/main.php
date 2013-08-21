@@ -82,7 +82,7 @@
 											'visible' => !$user->getIsGuest()),
 									array('label' => '<span id="menu-admin" title="{t}Admin{/t}"></span>',
 											'url' => Yii::app()->createAbsoluteUrl('admin'),
-											'visible' => $user->checkAccess('Admin')),
+											'visible' => $user->checkAccess('Admin.Admin')),
 									array('label' => '<span id="menu-logout" title="{t}Logout{/t}"></span>',
 											'url' => Yii::app()->createAbsoluteUrl('user/logout'),
 											'visible' => !$user->getIsGuest())

@@ -3,47 +3,31 @@
 class CourseController extends CoursePortalController
 {
 
-	/**
-	 * @return array action filters
-	 */
-/*	public function filters()
-	{
-		return array(
-				'verifyUserCourse'
-		);
-	}
-
 	public function accessRules()
 	{
 		return array_merge(
 				parent::accessRules(),
 				array(
 					array('allow',
+							'actions' => array('index, notRegistered'),
 							'users' => array('@'),
 					),
-					array('deny',
-							'users' => array('*'),
-					),
+					array('deny'),
 				)
 		);
 	}
 
-	public function filterVerifyUserCourse($filterChain)
+	public function actions()
 	{
-		if($filterChain->action->getId() === $this->defaultMissingAction)
+		$courses = Yii::app()->getDb()->createCommand()->select('name')->from(Course::model()->tableName())->queryColumn();
+		$courseActions = array();
+		foreach($courses as $course)
 		{
-			$course = Course::model()->with('objectives')->autoQuoteFind(array('and', 't.name' => $filterChain->action->getRequestedView()));
-			if(Yii::app()->getUser()->getIsEmployee() ||
-					Yii::app()->getUser()->getIsAdmin() ||
-					UserCourse::model()->exists(array('and', 'course_id' => $course->id, 'user_id' => Yii::app()->getUser()->id))) {
-				$filterChain->action->renderData['course'] = $course;
-				return $filterChain->run();
-			}
-			$this->redirect(array('notRegistered', 'id' => $course->id));
+			$courseActions[$course] = array('class' => 'application.components.CourseViewAction', 'defaultView' => $course);
 		}
-		return $filterChain->run();
+		return array_merge(parent::actions(), $courseActions);
 	}
-*/
+
 	public function createCourseUrl($course)
 	{
 		return $this->createUrl($course->name);

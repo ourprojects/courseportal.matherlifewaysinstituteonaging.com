@@ -30,7 +30,7 @@ class SBaseController extends CController
 		{
 			$actionParams += $_POST;
 		}
-		else
+		elseif($request->getRequestType() !== 'GET')
 		{
 			$actionParams += $request->getRestParams();
 		}

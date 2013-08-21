@@ -19,56 +19,40 @@ class EDbAuthManager extends CDbAuthManager
 	 */
 	public function checkAccess($item, $userId, $params = array())
 	{
-		$assignments = $this->getAuthAssignments($userId);
-		return $this->checkAccessRecursive(SrbacUtilities::getSrbacModule()->superUser, $userId, $params, $assignments) ||
-			$this->checkAccessRecursive($item, $userId, $params, $assignments);
-	}
-
-	/**
-	 * Performs access check for the specified user.
-	 * This method is internally called by {@link checkAccess}.
-	 * @param mixed $item this can be an instance of an EAuthItem, a string (the name of the operation that needs to be checked), or an integer (the unique identifier of the operation that needs to be checked).
-	 * @param integer $userId the user ID. This should can be either an integer and a string representing
-	 * the unique identifier of a user. See {@link IWebUser::getId}.
-	 * @param array $params name-value pairs that would be passed to biz rules associated
-	 * with the tasks and roles assigned to the user.
-	 * Since version 1.1.11 a param with name 'userId' is added to this array, which holds the value of <code>$userId</code>.
-	 * @param array $assignments the assignments to the specified user
-	 * @return boolean whether the operations can be performed by the user.
-	 * @since 1.1.3
-	 */
-	protected function checkAccessRecursive($item, $userId, $params, $assignments)
-	{
-		if(!$item instanceof EAuthItem && ($itm = $this->getAuthItem($item)) === null)
-		{
-			return false;
-		}
-		$itemName = $itm->getName();
 		if(!isset($params['userId']))
 		{
 			$params['userId'] = $userId;
 		}
-		if($this->executeBizRule($itm->getBizRule(), $params, $itm->getData()))
+
+		$query = $this->db->createCommand()
+					->select('pit.id')
+					->from($this->itemTable.' pit')
+					->join($this->itemChildTable.' ict', array('and', $this->db->quoteColumnName('pit.id').'='.$this->db->quoteColumnName('ict.parent_id'), $this->db->quoteColumnName('ict.child_id').'=:child_id'));
+		$authItems = array($item);
+		while(!empty($authItems))
 		{
-			if(in_array($itemName, $this->defaultRoles))
-				return true;
-			if(isset($assignments[$itemName]))
+			$authItem = $this->getAuthItem(array_pop($authItems));
+			if($authItem === null)
 			{
-				$assignment = $assignments[$itemName];
-				if($this->executeBizRule($assignment->getBizRule(), $params, $assignment->getData()))
-					return true;
+				continue;
 			}
-			$parentIds = $this->db->createCommand()
-				->select('pit.id')
-				->from($this->itemTable.' pit')
-				->join($this->itemChildTable.' ict', array('and', 'pit.id=ict.parent_id', 'ict.child_id=:child_id'), array(':child_id' => $itm->getId()))
-				->queryColumn();
-			foreach($parentIds as $parenId)
+			if($this->executeBizRule($authItem->getBizRule(), $params, $authItem->getData()))
 			{
-				if($this->checkAccessRecursive($parentId, $userId, $params, $assignments))
+				$itemName = $authItem->getName();
+				if(in_array($itemName, $this->defaultRoles))
+				{
 					return true;
+				}
+				$assignments = $this->getAuthAssignments($userId);
+				if(isset($assignments[$itemName]) &&
+						$this->executeBizRule($assignments[$itemName]->getBizRule(), $params, $assignments[$itemName]->getData()))
+				{
+					return true;
+				}
+				$authItems += $query->bindValue(':child_id', $authItem->getId())->queryColumn();
 			}
 		}
+
 		return false;
 	}
 
@@ -108,9 +92,9 @@ class EDbAuthManager extends CDbAuthManager
 		$cmd = $this->db->createCommand()->select(array('id', 'name', 'type'))->from($this->itemTable);
 
 		$id = $this->getItemIdentity($childItem);
-		$cmd->orWhere($id[0].'=:child', array(':child' => $id[1]));
+		$cmd->orWhere($this->db->quoteColumnName($id[0]).'=:child', array(':child' => $id[1]));
 		$id = $this->getItemIdentity($parentItem);
-		$cmd->orWhere($id[0].'=:parent', array(':parent' => $id[1]));
+		$cmd->orWhere($this->db->quoteColumnName($id[0]).'=:parent', array(':parent' => $id[1]));
 
 		$rows = $cmd->queryAll();
 
@@ -189,13 +173,13 @@ class EDbAuthManager extends CDbAuthManager
 		$cmd = $this->db->createCommand()
 			->select('pit.id')
 			->from($this->itemTable.' pit')
-			->join($this->itemChildTable.' ict', 'pit.id=ict.parent_id')
-			->join($this->itemTable.' cit', 'ict.child_id=cit.id');
+			->join($this->itemChildTable.' ict', $this->db->quoteColumnName('pit.id').'='.$this->db->quoteColumnName('ict.parent_id'))
+			->join($this->itemTable.' cit', $this->db->quoteColumnName('ict.child_id').'='.$this->db->quoteColumnName('cit.id'));
 
 		$id = $this->getItemIdentity($childItem);
-		$cmd->andWhere('cit.'.$id[0].'=:child', array(':child' => $id[1]));
+		$cmd->andWhere($this->db->quoteColumnName('cit.'.$id[0]).'=:child', array(':child' => $id[1]));
 		$id = $this->getItemIdentity($parentItem);
-		$cmd->andWhere('pit.'.$id[0].'=:parent', array(':parent' => $id[1]));
+		$cmd->andWhere($this->db->quoteColumnName('pit.'.$id[0]).'=:parent', array(':parent' => $id[1]));
 
 		return $cmd->queryScalar() !== false;
 	}
@@ -211,8 +195,8 @@ class EDbAuthManager extends CDbAuthManager
 		$cmd = $this->db->createCommand()
 			->select(array('cit.id', 'cit.name', 'cit.type', 'cit.description', 'cit.bizrule', 'cit.data'))
 			->from($this->itemTable.' cit')
-			->join($this->itemChildTable.' ict', 'cit.id=ict.child_id')
-			->join($this->itemTable.' pit', 'ict.parent_id=pit.id');
+			->join($this->itemChildTable.' ict', $this->db->quoteColumnName('cit.id').'='.$this->db->quoteColumnName('ict.child_id'))
+			->join($this->itemTable.' pit', $this->db->quoteColumnName('ict.parent_id').'='.$this->db->quoteColumnName('pit.id'));
 
 		if(is_array($items))
 		{
@@ -228,11 +212,11 @@ class EDbAuthManager extends CDbAuthManager
 				{
 					if(count($ids) > 1)
 					{
-						$cmd->orWhere('pit.'.$type.' IN ('.implode(', ', $ids).')');
+						$cmd->orWhere($this->db->quoteColumnName('pit.'.$type).' IN ('.implode(', ', $ids).')');
 					}
 					else
 					{
-						$cmd->orWhere('pit.'.$type.'=:id', array(':id' => $ids[0]));
+						$cmd->orWhere($this->db->quoteColumnName('pit.'.$type).'=:id', array(':id' => $ids[0]));
 					}
 				}
 			}
@@ -240,7 +224,7 @@ class EDbAuthManager extends CDbAuthManager
 		else
 		{
 			$itemId = $this->getItemIdentity($items);
-			$cmd->orWhere('pit.'.$itemId[0].'=:id', array(':id' => $itemId[1]));
+			$cmd->orWhere($this->db->quoteColumnName('pit.'.$itemId[0]).'=:id', array(':id' => $itemId[1]));
 		}
 
 		$children = array();
@@ -313,7 +297,10 @@ class EDbAuthManager extends CDbAuthManager
 		switch($itemId[0])
 		{
 			case 'id':
-				return $this->db->createCommand()->delete($this->assignmentTable, array('and', 'item_id=:item_id', 'user_id=:user_id'), array(':item_id' => $itemId[1], ':user_id' => $userId)) > 0;
+				return $this->db->createCommand()->delete(
+							$this->assignmentTable,
+							array('and', $this->db->quoteColumnName('item_id').'=:item_id', $this->db->quoteColumnName('user_id').'=:user_id'),
+							array(':item_id' => $itemId[1], ':user_id' => $userId)) > 0;
 			case 'name':
 				return $this->db->getCommandBuilder()->createSqlCommand(
 						'DELETE '.$this->db->getSchema()->quoteSimpleTableName('at').
@@ -325,6 +312,11 @@ class EDbAuthManager extends CDbAuthManager
 			default:
 				return false;
 		}
+	}
+
+	public function isSuperUser($userId)
+	{
+		return $this->isAssigned(SrbacUtilities::getSrbacModule()->superUser, $userId);
 	}
 
 	/**
@@ -342,14 +334,14 @@ class EDbAuthManager extends CDbAuthManager
 				return $this->db->createCommand()
 					->select('item_id')
 					->from($this->assignmentTable)
-					->where(array('and', 'item_id=:itemId' ,'user_id=:userId'), array(':itemId' => $itemId[1],':userId' => $userId))
+					->where(array('and', $this->db->quoteColumnName('item_id').'=:itemId' , $this->db->quoteColumnName('user_id').'=:userId'), array(':itemId' => $itemId[1],':userId' => $userId))
 				->queryScalar() !== false;
 			case 'name':
 				return $this->db->createCommand()
 					->select('at.item_id')
 					->from($this->assignmentTable.' at')
-					->join($this->itemTable.' it', 'at.item_id=it.id')
-					->where(array('and', 'it.name=:name', 'at.user_id=:user_id'), array(':name' => $itemId[1],':user_id' => $userId))
+					->join($this->itemTable.' it', $this->db->quoteColumnName('at.item_id').'=it.id')
+					->where(array('and', $this->db->quoteColumnName('it.name').'=:name', $this->db->quoteColumnName('at.user_id').'=:user_id'), array(':name' => $itemId[1],':user_id' => $userId))
 				->queryScalar() !== false;
 			default:
 				return false;
@@ -367,8 +359,8 @@ class EDbAuthManager extends CDbAuthManager
 		return $this->db->createCommand()
 			->select('COUNT(*)')
 			->from($this->assignmentTable.' at')
-			->join($this->itemTable.' it', 'at.item_id=it.id')
-			->where('it.'.$itemId[0].'=:id', array(':id' => $itemId[1]))
+			->join($this->itemTable.' it', $this->db->quoteColumnName('at.item_id').'='.$this->db->quoteColumnName('it.id'))
+			->where($this->db->quoteColumnName('it.'.$itemId[0]).'=:id', array(':id' => $itemId[1]))
 		->queryScalar();
 	}
 
@@ -386,8 +378,8 @@ class EDbAuthManager extends CDbAuthManager
 		$row = $this->db->createCommand()
 			->select(array('at.user_id', 'at.bizrule', 'at.data', 'it.id', 'it.name'))
 			->from($this->assignmentTable.' at')
-			->join($this->itemTable.' it', 'at.item_id=it.id')
-			->where(array('and', 'it.'.$itemId[0].'=:id', 'at.user_id=:userId'), array(':id' => $itemId[1], ':userId' => $userId))
+			->join($this->itemTable.' it', $this->db->quoteColumnName('at.item_id').'='.$this->db->quoteColumnName('it.id'))
+			->where(array('and', $this->db->quoteColumnName('it.'.$itemId[0]).'=:id', $this->db->quoteColumnName('at.user_id').'=:userId'), array(':id' => $itemId[1], ':userId' => $userId))
 		->queryRow();
 
 		if($row !== false)
@@ -411,8 +403,8 @@ class EDbAuthManager extends CDbAuthManager
 		$rows = $this->db->createCommand()
 			->select(array('at.user_id', 'at.bizrule', 'at.data', 'it.name', 'it.id'))
 			->from($this->assignmentTable.' at')
-			->join($this->itemTable.' it', 'at.item_id=it.id')
-			->where('at.user_id=:user_id', array(':user_id' => $userId))
+			->join($this->itemTable.' it', $this->db->quoteColumnName('at.item_id').'='.$this->db->quoteColumnName('it.id'))
+			->where($this->db->quoteColumnName('at.user_id').'=:user_id', array(':user_id' => $userId))
 		->queryAll();
 		$assignments = array();
 		foreach($rows as $row)
@@ -431,13 +423,18 @@ class EDbAuthManager extends CDbAuthManager
 	public function saveAuthAssignment($assignment)
 	{
 		$this->db->createCommand()
-			->update($this->assignmentTable, array(
+			->update(
+			$this->assignmentTable,
+			array(
 				'bizrule' => $assignment->getBizRule(),
 				'data' => serialize($assignment->getData()),
-			), 'item_id=:item_id AND user_id=:user_id', array(
-				'item_id' => $assignment->getItemId(),
-				'user_id' => $assignment->getUserId()
-			));
+			),
+			$this->db->quoteColumnName('item_id').'=:item_id AND '.$this->db->quoteColumnName('user_id').'=:user_id',
+			array(
+				':item_id' => $assignment->getItemId(),
+				':user_id' => $assignment->getUserId()
+			)
+		);
 	}
 
 	/**
@@ -461,7 +458,7 @@ class EDbAuthManager extends CDbAuthManager
 			$command = $this->db->createCommand()
 				->select()
 				->from($this->itemTable)
-				->where('type=:type', array(':type' => $type));
+				->where($this->db->quoteColumnName('type').'=:type', array(':type' => $type));
 		}
 		elseif($type === null)
 		{
@@ -471,7 +468,7 @@ class EDbAuthManager extends CDbAuthManager
 					$this->itemTable.' t1',
 					$this->assignmentTable.' t2'
 				))
-				->where('id=item_id AND user_id=:user_id', array(':user_id' => $userId));
+				->where(array('and', $this->db->quoteColumnName('id').'=item_id', $this->db->quoteColumnName('user_id').'=:user_id'), array(':user_id' => $userId));
 		}
 		else
 		{
@@ -481,10 +478,10 @@ class EDbAuthManager extends CDbAuthManager
 					$this->itemTable.' t1',
 					$this->assignmentTable.' t2'
 				))
-				->where('id=item_id AND type=:type AND user_id=:user_id', array(
-					':type' => $type,
-					':user_id' => $userId
-				));
+				->where(
+						array('and', $this->db->quoteColumnName('id').'=item_id', $this->db->quoteColumnName('type').'=:type', $this->db->quoteColumnName('user_id').'=:user_id'),
+						array(':type' => $type, ':user_id' => $userId)
+				);
 		}
 		$items = array();
 		foreach($command->queryAll() as $row)
@@ -542,16 +539,16 @@ class EDbAuthManager extends CDbAuthManager
 				$itemId[0] = 'id';
 			}
 			$this->db->createCommand()
-				->delete($this->itemChildTable, 'parent_id=:id1 OR child_id=:id2', array(
+				->delete($this->itemChildTable, array('or', $this->db->quoteColumnName('parent_id').'=:id1', $this->db->quoteColumnName('child_id').'=:id2'), array(
 					':id1' => $itemId[1],
 					':id2' => $itemId[1]
 			));
 			$this->db->createCommand()
-				->delete($this->assignmentTable, 'item_id=:id', array(
+				->delete($this->assignmentTable, $this->db->quoteColumnName('item_id').'=:id', array(
 					':id' => $itemId[1],
 			));
 		}
-		$this->db->createCommand()->delete($this->itemTable, $itemId[0].'=:id', array(':id' => $itemId[1])) > 0;
+		$this->db->createCommand()->delete($this->itemTable, $this->db->quoteColumnName($itemId[0]).'=:id', array(':id' => $itemId[1])) > 0;
 	}
 
 	/**
@@ -566,7 +563,7 @@ class EDbAuthManager extends CDbAuthManager
 			->from($this->itemTable);
 
 		$itemId = $this->getItemIdentity($item);
-		$cmd->where($itemId[0].'=:id', array(':id' => $itemId[1]));
+		$cmd->where($this->db->quoteColumnName($itemId[0]).'=:id', array(':id' => $itemId[1]));
 
 		$row = $cmd->queryRow();
 
@@ -596,7 +593,7 @@ class EDbAuthManager extends CDbAuthManager
 				return $this->db->createCommand()
 					->select('id')
 					->from($this->itemTable)
-					->where('name=:name', array(':name' => $itemId[1]))
+					->where($this->db->quoteColumnName('name').'=:name', array(':name' => $itemId[1]))
 				->queryScalar();
 			default:
 				return false;
@@ -617,7 +614,7 @@ class EDbAuthManager extends CDbAuthManager
 				return $this->db->createCommand()
 					->select('name')
 					->from($this->itemTable)
-					->where('id=:id', array(':id' => $itemId[1]))
+					->where($this->db->quoteColumnName('id').'=:id', array(':id' => $itemId[1]))
 				->queryScalar();
 			case 'name':
 				return $itemId[1];
@@ -634,15 +631,18 @@ class EDbAuthManager extends CDbAuthManager
 	public function saveAuthItem($item, $oldName = null)
 	{
 		$this->db->createCommand()
-			->update($this->itemTable, array(
-				'name' => $item->getName(),
-				'type' => $item->getType(),
-				'description' => $item->getDescription(),
-				'bizrule' => $item->getBizRule(),
-				'data' => serialize($item->getData()),
-			), 'id=:id', array(
-				':id' => $item->getId(),
-			));
+			->update(
+					$this->itemTable,
+					array(
+						'name' => $item->getName(),
+						'type' => $item->getType(),
+						'description' => $item->getDescription(),
+						'bizrule' => $item->getBizRule(),
+						'data' => serialize($item->getData()),
+					),
+					$this->db->quoteColumnName('id').'=:id',
+					array(':id' => $item->getId())
+		);
 	}
 
 	/**
@@ -678,11 +678,11 @@ class EDbAuthManager extends CDbAuthManager
 	 */
 	protected function detectLoop($itemName,$childName)
 	{
-		if($childName===$itemName)
+		if($childName === $itemName)
 			return true;
 		foreach($this->getItemChildren($childName) as $child)
 		{
-			if($this->detectLoop($itemName,$child->getName()))
+			if($this->detectLoop($itemName, $child->getName()))
 				return true;
 		}
 		return false;

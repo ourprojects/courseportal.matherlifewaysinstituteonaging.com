@@ -69,8 +69,7 @@
  * }
  * </pre>
  *
- * @author ElisDN <mail@elisdn.ru>
- * @link http://www.elisdn.ru
+ * @author Louis DaPrato <l.daprato@gmail.com>
  * @version 1.0
  */
 
@@ -112,6 +111,8 @@ class PhpBBUserBehavior extends CActiveRecordBehavior
 
     public function __construct()
     {
+    	Yii::import('phpbb.models.*');
+    	Yii::import('phpbb.extensions.phpBB.phpBB');
     	$this->setSyncAttributes(array('username' => 'username', 'email' => 'user_email'));
     }
 
@@ -142,16 +143,15 @@ class PhpBBUserBehavior extends CActiveRecordBehavior
     public function beforeFind($event)
     {
         $user = $this->getOwner();
-    	$relations = $user->relations();
 
-    	if(isset($this->avatarAttribute) && isset($this->avatarPath) && isset($relations[$this->avatarAttribute]))
+    	if(isset($this->avatarAttribute) && isset($this->avatarPath) && array_key_exists($this->avatarAttribute, $user->relations()))
     	{
     		$user->with($this->avatarAttribute);
     	}
 
     	foreach($this->_phpBBToYiiAttributes as $yiiAttribute)
     	{
-    		if(isset($relations[$yiiAttribute]))
+    		if(array_key_exists($yiiAttribute, $user->relations()))
     		{
     			$user->with($yiiAttribute);
     		}
@@ -163,11 +163,13 @@ class PhpBBUserBehavior extends CActiveRecordBehavior
         $user = $this->getOwner();
 
     	if(isset($this->avatarAttribute) && isset($this->avatarPath))
+    	{
     		$this->_avatarAudit = $user->{$this->avatarAttribute};
+    	}
 
     	foreach($this->_phpBBToYiiAttributes as $yiiAttribute)
     	{
-    		$this->_attributeAudit[$yiiAttribute] = $user->{$yiiAttribute};
+    		$this->_attributeAudit[$yiiAttribute] = $user->$yiiAttribute;
     	}
     }
 
@@ -215,7 +217,9 @@ class PhpBBUserBehavior extends CActiveRecordBehavior
     		$additional_attributes = array();
 
     		foreach($this->_yiiToPhpBBAttributes as $yiiAttribute => $phpBBAttribute)
-    			$additional_attributes[$phpBBAttribute] = $user->{$yiiAttribute};
+    		{
+    			$additional_attributes[$phpBBAttribute] = array_key_exists($this->avatarAttribute, $user->relations()) ? $user->getRelated($yiiAttribute, true) : $user->$yiiAttribute;
+    		}
 
     		return Yii::app()->{$this->phpBBComponentName}->userAdd(
 			    		$user->{$this->_phpBBToYiiAttributes['username']},
@@ -238,7 +242,9 @@ class PhpBBUserBehavior extends CActiveRecordBehavior
         foreach($this->_attributeAudit as $attribute => $oldValue)
         {
         	if($oldValue !== (array_key_exists($attribute, $user->relations()) ? $user->getRelated($attribute, true) : $user->$attribute))
-        		$attrs[$this->_yiiToPhpBBAttributes[$attribute]] = $user->{$attribute};
+        	{
+        		$attrs[$this->_yiiToPhpBBAttributes[$attribute]] = $user->$attribute;
+        	}
         }
 
         if(!empty($user->{$this->newPasswordAttribute}))
@@ -325,7 +331,9 @@ class PhpBBUserBehavior extends CActiveRecordBehavior
     protected function getForumConfigValue($param)
     {
         if (!isset($this->_configData[$param]))
-            $this->_configData[$param] =  Yii::app()->{$this->forumDbConnection}->createCommand('SELECT `config_value` FROM {{config}} WHERE `config_name`=:param')->queryScalar(array(':param'=>$param));
+        {
+			$this->_configData[$param] = Yii::app()->{$this->forumDbConnection}->createCommand()->select('config_value')->from('{{config}}')->where('config_name=:param')->queryScalar(array(':param'=>$param));
+        }
 
         return $this->_configData[$param];
     }

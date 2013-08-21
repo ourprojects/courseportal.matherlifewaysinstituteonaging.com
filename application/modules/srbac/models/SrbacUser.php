@@ -6,7 +6,6 @@
  */
 
 /**
- * AuthItem is the models for authManager items (operations, tasks and roles)
  *
  * @author Louis DaPrato <l.daprato@gmail.com>
  * @package srbac.models
