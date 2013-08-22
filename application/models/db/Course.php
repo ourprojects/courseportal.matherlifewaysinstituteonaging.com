@@ -74,15 +74,15 @@ class Course extends CActiveRecord {
 	}
 
 	public function hasUser($user) {
-		if(is_int($user)) {
-			$this->getDbCriteria()->mergeWith(array(
-					'with' => 'userCourses',
-					'condition' => 'userCourses.user_id=:user_id',
-					'params' => array(':user_id' => $user)
-			));
-		} else if($user instanceof CPUser) {
+		if($user instanceof CPUser)
+		{
 			return $this->hasUser($user->id);
 		}
+		$this->getDbCriteria()->mergeWith(array(
+				'with' => 'userCourses',
+				'condition' => $this->getDbConnection()->quoteColumnName('userCourses.user_id').'=:user_id',
+				'params' => array(':user_id' => $user)
+		));
 		return $this;
 	}
 
