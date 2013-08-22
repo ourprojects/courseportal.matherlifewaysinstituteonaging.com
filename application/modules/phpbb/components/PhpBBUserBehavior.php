@@ -220,7 +220,22 @@ class PhpBBUserBehavior extends CActiveRecordBehavior
     	}
     	else
     	{
-    		$this->phpBBUpdateAttributes();
+    		if(isset($this->_attributeAudit[$this->_phpBBToYiiAttributes['username']]))
+    		{
+    			$username = $this->_attributeAudit[$this->_phpBBToYiiAttributes['username']];
+    		}
+    		else
+    		{
+    			$username = (array_key_exists($this->_phpBBToYiiAttributes['username'], $user->relations()) ? $user->getRelated($this->_phpBBToYiiAttributes['username'], true) : $user->{$this->_phpBBToYiiAttributes['username']});
+    		}
+    		if(Yii::app()->{$this->phpBBComponentName}->getUserIdFromName($username) === false)
+    		{
+    			$this->phpBBAddUser();
+    		}
+    		else
+    		{
+    			$this->phpBBUpdateAttributes();
+    		}
     	}
 
     	if(isset($this->_avatarAudit) &&
@@ -232,7 +247,11 @@ class PhpBBUserBehavior extends CActiveRecordBehavior
 
     public function afterDelete($event)
     {
-    	Yii::app()->{$this->phpBBComponentName}->userDelete($this->getOwner()->{$this->_phpBBToYiiAttributes['username']});
+    	$user_id = Yii::app()->{$this->phpBBComponentName}->getUserIdFromName($this->getOwner()->{$this->_phpBBToYiiAttributes['username']});
+    	if($user_id !== false)
+    	{
+    		Yii::app()->{$this->phpBBComponentName}->userDelete($user_id);
+    	}
     }
 
     public function phpBBAddUser($plainTextPassword = '')
@@ -299,6 +318,10 @@ class PhpBBUserBehavior extends CActiveRecordBehavior
         if(!empty($attrs))
         {
         	$attrs['user_id'] = Yii::app()->{$this->phpBBComponentName}->getUserIdFromName(isset($attrs['username']) ? $this->_attributeAudit[$this->_phpBBToYiiAttributes['username']] : $user->{$this->_phpBBToYiiAttributes['username']});
+        	if($attrs['user_id'] === false)
+        	{
+        		return false;
+        	}
         }
         else
         {
