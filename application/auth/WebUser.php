@@ -3,8 +3,6 @@
 class WebUser extends CWebUser
 {
 
-	private $_identity = null;
-
 	private $_userModel = null;
 
 	public function getModel()
@@ -48,45 +46,30 @@ class WebUser extends CWebUser
 
 	public function login($identity, $duration = 0)
 	{
-		$this->_identity = $identity;
-		return parent::login($identity, $duration);
+		if(parent::login($identity, $duration) && ($identity->getIsAuthenticated() || $identity->authenticate()))
+		{
+			$this->_userModel = $identity->getModel();
+			$phpBB = Yii::app()->getComponent('phpBB');
+			if(!$phpBB->getUserIdFromName($identity->getName()) && $identity->canGetProperty('password') && $this->_userModel !== null)
+			{
+				$identity->getModel()->phpBBAddUser($identity->password);
+			}
+			return $phpBB->login($identity, '', $this->allowAutoLogin);
+		}
+		return false;
 	}
 
 	protected function beforeLogin($id, $states, $fromCookie)
 	{
 		if(parent::beforeLogin($id, $states, $fromCookie))
 		{
-			if(isset($this->_identity))
+			if($fromCookie)
 			{
-				$identity = $this->_identity;
-			}
-			else
-			{
-				if(!$fromCookie)
-				{
-					return false;
-				}
 				$identity = new SessionIdentity($id);
 				$identity->setPersistentStates($states);
+				return ($identity->getIsAuthenticated() || $identity->authenticate()) && Yii::app()->getComponent('phpBB')->login($identity, '', $this->allowAutoLogin);
 			}
-			$this->_identity = null;
-			if($identity->getIsAuthenticated() || $identity->authenticate())
-			{
-				$this->_userModel = $identity->getModel();
-				$phpBB = Yii::app()->getComponent('phpBB');
-				if($phpBB->login($identity, '', $this->allowAutoLogin))
-				{
-					return true;
-				}
-				elseif(!$phpBB->getUserIdFromName($identity->getName()) &&
-							$identity->canGetProperty('password') &&
-							$identity->getModel() !== null)
-				{
-					$identity->getModel()->phpBBAddUser($identity->password);
-					return $phpBB->login($identity, '', $this->allowAutoLogin);
-				}
-				return false;
-			}
+			return true;
 		}
 		return false;
 	}
@@ -95,7 +78,6 @@ class WebUser extends CWebUser
 	{
 		if(parent::beforeLogout())
 		{
-			Yii::app()->phpBB->logout();
 			if(isset($this->_userModel))
 			{
 				$this->_userModel->regenerateSessionKey();
@@ -104,6 +86,12 @@ class WebUser extends CWebUser
 			return true;
 		}
 		return false;
+	}
+
+	protected function afterLogout()
+	{
+		parent::afterLogout();
+		Yii::app()->getComponent('phpBB')->logout();
 	}
 
 }

@@ -92,6 +92,7 @@ class CPUser extends CActiveRecord
 						'class' => 'phpbb.components.PhpBBUserBehavior',
 						'newPasswordAttribute' => 'new_password',
 						'groupAttribute' => 'group',
+						'userTypeAttribute' => 'phpbbUserType',
 						'avatarAttribute' => 'avatar',
 						'avatarPath' => Yii::getPathOfAlias(Avatar::AVATARS_PATH_ALIAS),
 						'forumDbConnection' => 'forumDb',
@@ -101,7 +102,6 @@ class CPUser extends CActiveRecord
 								'fullLocation' => 'user_from',
 								'language' => 'user_lang',
 								'createdUnixTime' => 'user_regdate',
-								'phpbbUserType' => 'user_type'
 						)
 				),
 				'SrbacBehavior' => array(
@@ -291,18 +291,20 @@ class CPUser extends CActiveRecord
 	{
 		$criteria = new CDbCriteria;
 
-		$criteria->compare('id', $this->id);
-		$criteria->compare('group_id',$this->group_id);
-		$criteria->compare('email', $this->email, true);
-		$criteria->compare('name', $this->name, true);
-		$criteria->compare('created', $this->created, true);
-		$criteria->compare('firstname', $this->firstname, true);
-		$criteria->compare('lastname', $this->lastname, true);
-		$criteria->compare('location', $this->location, true);
-		$criteria->compare('country_iso', $this->country_iso, true);
-		$criteria->compare('last_login', $this->last_login, true);
-		$criteria->compare('last_ip', $this->last_ip, true);
-		$criteria->compare('last_agent', $this->last_agent, true);
+		$tableAlias = $this->getTableAlias();
+		$db = $this->getDbConnection();
+		$criteria->compare($db->quoteColumnName($tableAlias.'.id'), $this->id);
+		$criteria->compare($db->quoteColumnName($tableAlias.'.group_id'),$this->group_id);
+		$criteria->compare($db->quoteColumnName($tableAlias.'.email'), $this->email, true);
+		$criteria->compare($db->quoteColumnName($tableAlias.'.name'), $this->name, true);
+		$criteria->compare($db->quoteColumnName($tableAlias.'.created'), $this->created, true);
+		$criteria->compare($db->quoteColumnName($tableAlias.'.firstname'), $this->firstname, true);
+		$criteria->compare($db->quoteColumnName($tableAlias.'.lastname'), $this->lastname, true);
+		$criteria->compare($db->quoteColumnName($tableAlias.'.location'), $this->location, true);
+		$criteria->compare($db->quoteColumnName($tableAlias.'.country_iso'), $this->country_iso, true);
+		$criteria->compare($db->quoteColumnName($tableAlias.'.last_login'), $this->last_login, true);
+		$criteria->compare($db->quoteColumnName($tableAlias.'.last_ip'), $this->last_ip, true);
+		$criteria->compare($db->quoteColumnName($tableAlias.'.last_agent'), $this->last_agent, true);
 
 		return $criteria;
 	}

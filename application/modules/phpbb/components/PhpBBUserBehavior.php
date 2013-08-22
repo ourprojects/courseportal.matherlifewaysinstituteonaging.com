@@ -85,6 +85,8 @@ class PhpBBUserBehavior extends CActiveRecordBehavior
      */
     public $newPasswordAttribute = 'new_password';
 
+    public $userTypeAttribute = null;
+
     public $groupAttribute = null;
     /**
      * @var string User attribute which contains filename with extension
@@ -108,6 +110,10 @@ class PhpBBUserBehavior extends CActiveRecordBehavior
     private $_attributeAudit = array();
 
     private $_avatarAudit = null;
+
+    private $_groupAudit = null;
+
+    private $_userTypeAudit = null;
 
     public function __construct()
     {
@@ -149,6 +155,16 @@ class PhpBBUserBehavior extends CActiveRecordBehavior
     		$user->with($this->avatarAttribute);
     	}
 
+    	if(isset($this->groupAttribute) && array_key_exists($this->groupAttribute, $user->relations()))
+    	{
+    		$user->with($this->groupAttribute);
+    	}
+
+    	if(isset($this->userTypeAttribute) && array_key_exists($this->userTypeAttribute, $user->relations()))
+    	{
+    		$user->with($this->userTypeAttribute);
+    	}
+
     	foreach($this->_phpBBToYiiAttributes as $yiiAttribute)
     	{
     		if(array_key_exists($yiiAttribute, $user->relations()))
@@ -165,6 +181,16 @@ class PhpBBUserBehavior extends CActiveRecordBehavior
     	if(isset($this->avatarAttribute) && isset($this->avatarPath))
     	{
     		$this->_avatarAudit = $user->{$this->avatarAttribute};
+    	}
+
+    	if(isset($this->groupAttribute))
+    	{
+    		$this->_groupAudit = $user->{$this->groupAttribute};
+    	}
+
+    	if(isset($this->userTypeAttribute))
+    	{
+    		$this->_userTypeAudit = $user->{$this->userTypeAttribute};
     	}
 
     	foreach($this->_phpBBToYiiAttributes as $yiiAttribute)
@@ -189,9 +215,13 @@ class PhpBBUserBehavior extends CActiveRecordBehavior
     	$user = $this->getOwner();
 
     	if($user->getIsNewRecord())
+    	{
     		$this->phpBBAddUser();
+    	}
     	else
+    	{
     		$this->phpBBUpdateAttributes();
+    	}
 
     	if(isset($this->_avatarAudit) &&
     			$this->_avatarAudit !== (array_key_exists($this->avatarAttribute, $user->relations()) ? $user->getRelated($this->avatarAttribute, true) : $user->{$this->avatarAttribute}))
@@ -218,7 +248,7 @@ class PhpBBUserBehavior extends CActiveRecordBehavior
 
     		foreach($this->_yiiToPhpBBAttributes as $yiiAttribute => $phpBBAttribute)
     		{
-    			$additional_attributes[$phpBBAttribute] = array_key_exists($this->avatarAttribute, $user->relations()) ? $user->getRelated($yiiAttribute, true) : $user->$yiiAttribute;
+    			$additional_attributes[$phpBBAttribute] = array_key_exists($yiiAttribute, $user->relations()) ? $user->getRelated($yiiAttribute, true) : $user->$yiiAttribute;
     		}
 
     		return Yii::app()->{$this->phpBBComponentName}->userAdd(
@@ -226,6 +256,7 @@ class PhpBBUserBehavior extends CActiveRecordBehavior
 			    		$plainTextPassword,
 			    		$user->{$this->_phpBBToYiiAttributes['email']},
     					isset($this->groupAttribute) ? $user->{$this->groupAttribute} : 'REGISTERED',
+    					isset($this->userTypeAttribute) ? $user->{$this->userTypeAttribute} : phpBB::USER_NORMAL,
 			    		$additional_attributes
 		    		);
     	}
@@ -245,6 +276,19 @@ class PhpBBUserBehavior extends CActiveRecordBehavior
         	{
         		$attrs[$this->_yiiToPhpBBAttributes[$attribute]] = $user->$attribute;
         	}
+        }
+
+        if(isset($this->groupAttribute) &&
+        		$this->_groupAudit !== (array_key_exists($this->groupAttribute, $user->relations()) ? $user->getRelated($this->groupAttribute, true) : $user->{$this->groupAttribute}))
+        {
+        	$group = $user->{$this->groupAttribute};
+        	$attrs['group_id'] = is_numeric($group) ? $group : Yii::app()->{$this->phpBBComponentName}->getGroupIdFromName(strval($group));
+        }
+
+        if(isset($this->userTypeAttribute) &&
+        		$this->_userTypeAudit !== (array_key_exists($this->userTypeAttribute, $user->relations()) ? $user->getRelated($this->userTypeAttribute, true) : $user->{$this->userTypeAttribute}))
+        {
+        	$attrs['user_type'] = $user->{$this->userTypeAttribute};
         }
 
         if(!empty($user->{$this->newPasswordAttribute}))

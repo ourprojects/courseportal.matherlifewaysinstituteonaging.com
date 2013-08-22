@@ -169,7 +169,7 @@ class phpBB extends CApplicationComponent
 	 * @param int $user_type
 	 * @return boolean false on failure or true on success
 	 */
-	public function userAdd($username, $password, $email, $groupId, $userType = self::USER_NORMAL, $additional_attributes = array())
+	public function userAdd($username, $password, $email, $groupId, $userType, $additional_attributes = array())
 	{
 		if(is_numeric($groupId))
 		{
@@ -295,6 +295,12 @@ class phpBB extends CApplicationComponent
 			if(isset($phpbb_vars['user_newpasswd']))
 				$phpbb_vars['user_newpasswd'] = phpbb_hash($phpbb_vars['user_newpasswd']);
 
+			if(isset($phpbb_vars['group_id']))
+			{
+				group_set_user_default($phpbb_vars['group_id'], array($phpbb_vars['user_id']));
+				unset($phpbb_vars['group_id']);
+			}
+
 			$sql = '';
 			for($i = 0; $i < count($this->table_fields[USERS_TABLE]); $i++)
 			{
@@ -368,6 +374,20 @@ class phpBB extends CApplicationComponent
 		}
 
 		return false;
+	}
+
+	public function getGroupIdFromName($groupname)
+	{
+		global $db;
+
+		$this->prepare();
+
+		$sql = 'SELECT group_id FROM ' . GROUPS_TABLE . " WHERE group_name = '" . $groupname . "'";
+		$result = $db->sql_query($sql);
+		$row = $db->sql_fetchrow($result);
+		$db->sql_freeresult($result);
+
+		return $row ? $row['group_id'] : false;
 	}
 
 	public function getUserIdFromName($username)
