@@ -84,9 +84,11 @@ class GroupRegularExpression extends CActiveRecord
 	{
 		$criteria = new CDbCriteria;
 
-		$criteria->compare('id', $this->id);
-		$criteria->compare('regex', $this->regex, true);
-		$criteria->compare('group_id', $this->group_id);
+		$tableAlias = $this->getTableAlias();
+		$db = $this->getDbConnection();
+		$criteria->compare($db->quoteColumnName($tableAlias.'.id'), $this->id);
+		$criteria->compare($db->quoteColumnName($tableAlias.'.regex'), $this->regex, true);
+		$criteria->compare($db->quoteColumnName($tableAlias.'.group_id'), $this->group_id);
 
 		return new CActiveDataProvider($this, array(
 			'criteria' => $criteria,

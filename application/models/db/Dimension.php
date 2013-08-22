@@ -41,7 +41,7 @@ class Dimension extends CActiveRecord
 			array('name, description', 'required'),
 			array('name', 'length', 'max' => 255),
 			array('name', 'unique', 'except' => 'search'),
-				
+
 			array('id, name, description', 'safe', 'on' => 'search'),
 		);
 	}
@@ -53,14 +53,14 @@ class Dimension extends CActiveRecord
 	{
 		return array(
 			'activityRecommendations' => array(self::HAS_MANY, 'RecommendedActivityDimension', 'dimension_id'),
-			'recommendedActivities' => array(self::MANY_MANY, 'Activity', '{{spencer_powell_recommended_activity_dimension}}(dimension_id, activity_id)'),
+			'recommendedActivities' => array(self::MANY_MANY, 'Activity', RecommendedActivityDimension::model()->tableName().'(dimension_id, activity_id)'),
 			'userLogEntryDimensions' => array(self::HAS_MANY, 'UserLogEntryDimension', 'dimension_id'),
-			'userLogEntries' => array(self::MANY_MANY, 'UserLogEntry', '{{spencer_powell_user_log_entry_dimension}}(dimension_id, user_log_entry_id)'),
-				
+			'userLogEntries' => array(self::MANY_MANY, 'UserLogEntry', UserLogEntryDimension::model()->tableName().'(dimension_id, user_log_entry_id)'),
+
 			'activityRecommendationCount' => array(self::STAT, 'RecommendedActivityDimension', 'dimension_id'),
-			'recommendedActivityCount' => array(self::STAT, 'Activity', '{{spencer_powell_recommended_activity_dimension}}(dimension_id, activity_id)'),
+			'recommendedActivityCount' => array(self::STAT, 'Activity', RecommendedActivityDimension::model()->tableName().'(dimension_id, activity_id)'),
 			'userLogEntryDimensionCount' => array(self::STAT, 'UserLogEntryDimension', 'dimension_id'),
-			'userLogEntryCount' => array(self::STAT, 'UserLogEntry', '{{spencer_powell_user_log_entry_dimension}}(dimension_id, user_log_entry_id)'),
+			'userLogEntryCount' => array(self::STAT, 'UserLogEntry', UserLogEntryDimension::model()->tableName().'(dimension_id, user_log_entry_id)'),
 		);
 	}
 
@@ -92,9 +92,11 @@ class Dimension extends CActiveRecord
 	{
 		$criteria = new CDbCriteria;
 
-		$criteria->compare('id', $this->id);
-		$criteria->compare('name', $this->name, true);
-		$criteria->compare('description', $this->description, true);
+		$tableAlias = $this->getTableAlias();
+		$db = $this->getDbConnection();
+		$criteria->compare($db->quoteColumnName($tableAlias.'.id'), $this->id);
+		$criteria->compare($db->quoteColumnName($tableAlias.'.name'), $this->name, true);
+		$criteria->compare($db->quoteColumnName($tableAlias.'.description'), $this->description, true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria' => $criteria,

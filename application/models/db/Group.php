@@ -75,8 +75,6 @@ class Group extends CActiveRecord {
 	 * @return array relational rules.
 	 */
 	public function relations() {
-		// NOTE: you may need to adjust the relation name and the related
-		// class name for the relations automatically generated below.
 		return array(
 				'users' => array(self::HAS_MANY, 'CPUser', 'group_id'),
 				'regularExpressions' => array(self::HAS_MANY, 'GroupRegularExpression', 'group_id'),
@@ -101,13 +99,12 @@ class Group extends CActiveRecord {
 	 */
 	public function search()
 	{
-		// Warning: Please modify the following code to remove attributes that
-		// should not be searched.
-
 		$criteria = new CDbCriteria;
 
-		$criteria->compare('id', $this->id);
-		$criteria->compare('name', $this->name, true);
+		$tableAlias = $this->getTableAlias();
+		$db = $this->getDbConnection();
+		$criteria->compare($db->quoteColumnName($tableAlias.'.id'), $this->id);
+		$criteria->compare($db->quoteColumnName($tableAlias.'.name'), $this->name, true);
 
 		return new CActiveDataProvider($this, array(
 				'criteria' => $criteria,

@@ -42,7 +42,7 @@ class UserAgreement extends CActiveRecord {
 						'unique',
 						'caseSensitive' => false,
 						'criteria' => array(
-							'condition' => 'user_id = :id',
+							'condition' => $this->getDbCOnnection()->quoteColumnName($this->getTableAlias().'.user_id').'=:id',
 							'params' => array(':id' => $this->user_id),
 						),
 						'message' => '{attribute} "{value}" has already been added to this user.',
@@ -87,8 +87,10 @@ class UserAgreement extends CActiveRecord {
 	public function getSearchCriteria() {
 		$criteria = new CDbCriteria;
 
-		$criteria->compare('user_id', $this->user_id);
-		$criteria->compare('agreement_id', $this->agreement_id);
+		$tableAlias = $this->getTableAlias();
+		$db = $this->getDbConnection();
+		$criteria->compare($db->quoteColumnName($tableAlias.'.user_id'), $this->user_id);
+		$criteria->compare($db->quoteColumnName($tableAlias.'.agreement_id'), $this->agreement_id);
 
 		return $criteria;
 	}

@@ -68,8 +68,8 @@ class Course extends CActiveRecord {
 		return array(
 				'objectives' => array(self::HAS_MANY, 'CourseObjective', 'course_id'),
 				'userCourses' => array(self::HAS_MANY, 'UserCourse', 'course_id'),
-				'users' => array(self::MANY_MANY, 'CPUser', '{{user_course}}(course_id, user_id)'),
-				'userCount' => array(self::STAT, 'CPUser', '{{user_course}}(course_id, user_id)'),
+				'users' => array(self::MANY_MANY, 'CPUser', UserCourse::model()->tableName().'(course_id, user_id)'),
+				'userCount' => array(self::STAT, 'CPUser', UserCourse::model()->tableName().'(course_id, user_id)'),
 		);
 	}
 
@@ -112,12 +112,14 @@ class Course extends CActiveRecord {
 
 		$criteria = new CDbCriteria;
 
-		$criteria->order = '`t`.`rank`';
-		$criteria->compare('id', $this->id);
-		$criteria->compare('name', $this->name, true);
-		$criteria->compare('rank', $this->rank, true);
-		$criteria->compare('title', $this->title, true);
-		$criteria->compare('description', $this->description, true);
+		$tableAlias = $this->getTableAlias();
+		$db = $this->getDbConnection();
+		$criteria->order = $db->quoteColumnName($tableAlias.'.rank');
+		$criteria->compare($db->quoteColumnName($tableAlias.'.id'), $this->id);
+		$criteria->compare($db->quoteColumnName($tableAlias.'.name'), $this->name, true);
+		$criteria->compare($db->quoteColumnName($tableAlias.'.rank'), $this->rank, true);
+		$criteria->compare($db->quoteColumnName($tableAlias.'.title'), $this->title, true);
+		$criteria->compare($db->quoteColumnName($tableAlias.'.description'), $this->description, true);
 
 		return new CActiveDataProvider($this, array(
 				'criteria' => $criteria,

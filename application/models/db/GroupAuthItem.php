@@ -65,13 +65,12 @@ class GroupAuthItem extends CActiveRecord {
 	 */
 	public function search()
 	{
-		// Warning: Please modify the following code to remove attributes that
-		// should not be searched.
-
 		$criteria = new CDbCriteria;
 
-		$criteria->compare('group_id', $this->group_id);
-		$criteria->compare('auth_item_id', $this->auth_item_id);
+		$tableAlias = $this->getTableAlias();
+		$db = $this->getDbConnection();
+		$criteria->compare($db->quoteColumnName($tableAlias.'.group_id'), $this->group_id);
+		$criteria->compare($db->quoteColumnName($tableAlias.'.auth_item_id'), $this->auth_item_id);
 
 		return new CActiveDataProvider($this, array(
 				'criteria' => $criteria,

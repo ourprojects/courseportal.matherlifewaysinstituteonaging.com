@@ -78,8 +78,10 @@ class Key extends CActiveRecord {
     public function search() {
     	$criteria = new CDbCriteria;
 
-    	$criteria->compare('id', $this->id);
-    	$criteria->compare('value', $this->value, true);
+    	$tableAlias = $this->getTableAlias();
+    	$db = $this->getDbConnection();
+    	$criteria->compare($db->quoteColumnName($tableAlias.'.id'), $this->id);
+    	$criteria->compare($db->quoteColumnName($tableAlias.'.value'), $this->value, true);
 
     	return new CActiveDataProvider($this, array(
     			'criteria' => $criteria,

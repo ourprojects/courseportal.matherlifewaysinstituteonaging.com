@@ -43,7 +43,7 @@ class UserLogEntry extends CActiveRecord
 			array('comment', 'length', 'max' => 65535),
 			array('datetime', 'date', 'format' => 'yyyy-M-d H:m:s'),
 			array('user_activity_id', 'exist', 'attributeName' => 'id', 'className' => 'UserActivity', 'except' => 'search'),
-				
+
 			array('id, user_activity_id, datetime, comment', 'safe', 'on' => 'search'),
 		);
 	}
@@ -56,10 +56,10 @@ class UserLogEntry extends CActiveRecord
 		return array(
 			'userActivity' => array(self::BELONGS_TO, 'UserActivity', 'user_activity_id'),
 			'logEntryDimensions' => array(self::HAS_MANY, 'UserLogEntryDimension', 'user_log_entry_id'),
-			'dimensions' => array(self::MANY_MANY, 'Dimension', '{{spencer_powell_user_log_entry_dimension}}(user_log_entry_id, dimension_id)'),
-				
+			'dimensions' => array(self::MANY_MANY, 'Dimension', UserLogEntryDimension::model()->tableName().'(user_log_entry_id, dimension_id)'),
+
 			'logEntryDimensionCount' => array(self::STAT, 'UserLogEntryDimension', 'user_log_entry_id'),
-			'dimensionCount' => array(self::STAT, 'Dimension', '{{spencer_powell_user_log_entry_dimension}}(user_log_entry_id, dimension_id)'),
+			'dimensionCount' => array(self::STAT, 'Dimension', UserLogEntryDimension::model()->tableName().'(user_log_entry_id, dimension_id)'),
 		);
 	}
 
@@ -87,15 +87,14 @@ class UserLogEntry extends CActiveRecord
 	 */
 	public function search()
 	{
-		// Warning: Please modify the following code to remove attributes that
-		// should not be searched.
-
 		$criteria = new CDbCriteria;
 
-		$criteria->compare('id', $this->id);
-		$criteria->compare('user_activity_id', $this->user_activity_id);
-		$criteria->compare('datetime', $this->datetime, true);
-		$criteria->compare('comment', $this->comment, true);
+		$tableAlias = $this->getTableAlias();
+		$db = $this->getDbConnection();
+		$criteria->compare($db->quoteColumnName($tableAlias.'.id'), $this->id);
+		$criteria->compare($db->quoteColumnName($tableAlias.'.user_activity_id'), $this->user_activity_id);
+		$criteria->compare($db->quoteColumnName($tableAlias.'.datetime'), $this->datetime, true);
+		$criteria->compare($db->quoteColumnName($tableAlias.'.comment'), $this->comment, true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria' => $criteria,

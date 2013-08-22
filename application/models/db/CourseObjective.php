@@ -58,7 +58,7 @@ class CourseObjective extends CActiveRecord {
 						'unique',
 						'caseSensitive' => false,
 						'criteria' => array(
-								'condition' => 'course_id = :course_id',
+								'condition' => $this->getDbCOnnection()->quoteColumnName($this->getTableAlias().'.course_id').'=:course_id',
 								'params' => array(':course_id' => $this->course_id),
 						),
 						'message' => 'An objective with {attribute} "{value}" already exists for this course.',
@@ -101,11 +101,13 @@ class CourseObjective extends CActiveRecord {
 	{
 		$criteria = new CDbCriteria;
 
-		$criteria->order = 'rank';
-		$criteria->compare('id', $this->id);
-		$criteria->compare('course_id', $this->course_id);
-		$criteria->compare('rank', $this->rank);
-		$criteria->compare('text', $this->text, true);
+		$tableAlias = $this->getTableAlias();
+		$db = $this->getDbConnection();
+		$criteria->order = $db->quoteColumnName($tableAlias.'.rank');
+		$criteria->compare($db->quoteColumnName($tableAlias.'.id'), $this->id);
+		$criteria->compare($db->quoteColumnName($tableAlias.'.course_id'), $this->course_id);
+		$criteria->compare($db->quoteColumnName($tableAlias.'.rank'), $this->rank);
+		$criteria->compare($db->quoteColumnName($tableAlias.'.text'), $this->text, true);
 
 		return new CActiveDataProvider($this, array(
 				'criteria' => $criteria,

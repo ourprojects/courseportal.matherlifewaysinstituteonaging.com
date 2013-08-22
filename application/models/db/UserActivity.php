@@ -57,7 +57,7 @@ class UserActivity extends CActiveRecord
 			'user' => array(self::BELONGS_TO, 'CPUser', 'user_id'),
 			'userLogEntries' => array(self::HAS_MANY, 'UserLogEntry', 'user_activity_id'),
 			'userLogEntryDimensions' => array(self::HAS_MANY, 'UserLogEntryDimension', array('id' => 'user_log_entry_id'), 'through' => 'userLogEntries'),
-				
+
 			'userLogEntryCount' => array(self::STAT, 'UserLogEntry', 'user_activity_id'),
 		);
 	}
@@ -87,9 +87,11 @@ class UserActivity extends CActiveRecord
 	{
 		$criteria = new CDbCriteria;
 
-		$criteria->compare('id', $this->id);
-		$criteria->compare('user_id', $this->user_id);
-		$criteria->compare('activity_id', $this->activity_id);
+		$tableAlias = $this->getTableAlias();
+		$db = $this->getDbConnection();
+		$criteria->compare($db->quoteColumnName($tableAlias.'.id'), $this->id);
+		$criteria->compare($db->quoteColumnName($tableAlias.'.user_id'), $this->user_id);
+		$criteria->compare($db->quoteColumnName($tableAlias.'.activity_id'), $this->activity_id);
 
 		return new CActiveDataProvider($this, array(
 			'criteria' => $criteria,

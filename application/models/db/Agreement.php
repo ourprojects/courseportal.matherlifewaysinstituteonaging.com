@@ -51,7 +51,7 @@ class Agreement extends CActiveRecord {
     public function relations() {
         return array(
 				'userAgreements' => array(self::HAS_MANY, 'UserAgreement', 'agreement_id'),
-				'users' => array(self::MANY_MANY, 'CPUser', '{{user_agreement}}(agreement_id, user_id)'),
+				'users' => array(self::MANY_MANY, 'CPUser', UserAgreement::model()->tableName().'(agreement_id, user_id)'),
         );
     }
 
@@ -78,12 +78,14 @@ class Agreement extends CActiveRecord {
     public function search() {
         $criteria = new CDbCriteria;
 
-        $criteria->compare('id', $this->id);
-        $criteria->compare('name', $this->name, true);
-        $criteria->compare('created_by', $this->created_by, true);
-        $criteria->compare('created_on', $this->created_on, true);
-        $criteria->compare('text', $this->text, true);
-        $criteria->compare('date_format', $this->date_format, true);
+        $tableAlias = $this->getTableAlias();
+        $db = $this->getDbConnection();
+        $criteria->compare($db->quoteColumnName($tableAlias.'.id'), $this->id);
+        $criteria->compare($db->quoteColumnName($tableAlias.'.name'), $this->name, true);
+        $criteria->compare($db->quoteColumnName($tableAlias.'.created_by'), $this->created_by, true);
+        $criteria->compare($db->quoteColumnName($tableAlias.'.created_on'), $this->created_on, true);
+        $criteria->compare($db->quoteColumnName($tableAlias.'.text'), $this->text, true);
+        $criteria->compare($db->quoteColumnName($tableAlias.'.date_format'), $this->date_format, true);
 
         return new CActiveDataProvider($this, array(
             'criteria' => $criteria,

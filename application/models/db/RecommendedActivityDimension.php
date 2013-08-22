@@ -74,8 +74,10 @@ class RecommendedActivityDimension extends CActiveRecord
 	{
 		$criteria = new CDbCriteria;
 
-		$criteria->compare('activity_id', $this->activity_id);
-		$criteria->compare('dimension_id', $this->dimension_id);
+		$tableAlias = $this->getTableAlias();
+		$db = $this->getDbConnection();
+		$criteria->compare($db->quoteColumnName($tableAlias.'.activity_id'), $this->activity_id);
+		$criteria->compare($db->quoteColumnName($tableAlias.'.dimension_id'), $this->dimension_id);
 
 		return new CActiveDataProvider($this, array(
 			'criteria' => $criteria,

@@ -39,7 +39,7 @@ class UserLogEntryDimension extends CActiveRecord
 			array('primary', 'boolean'),
 			array('user_log_entry_id', 'exist', 'attributeName' => 'id', 'className' => 'UserLogEntry', 'except' => 'search'),
 			array('dimension_id', 'exist', 'attributeName' => 'id', 'className' => 'Dimension', 'except' => 'search'),
-				
+
 			array('user_log_entry_id, dimension_id, primary', 'safe', 'on' => 'search'),
 		);
 	}
@@ -54,7 +54,7 @@ class UserLogEntryDimension extends CActiveRecord
 				'dimension' => array(self::BELONGS_TO, 'Dimension', 'dimension_id'),
 		);
 	}
-	
+
 	public function scopes()
 	{
 		return array(
@@ -84,9 +84,11 @@ class UserLogEntryDimension extends CActiveRecord
 	{
 		$criteria = new CDbCriteria;
 
-		$criteria->compare('user_log_entry_id', $this->user_log_entry_id);
-		$criteria->compare('dimension_id', $this->dimension_id);
-		$criteria->compare('primary', $this->primary);
+		$tableAlias = $this->getTableAlias();
+		$db = $this->getDbConnection();
+		$criteria->compare($db->quoteColumnName($tableAlias.'.user_log_entry_id'), $this->user_log_entry_id);
+		$criteria->compare($db->quoteColumnName($tableAlias.'.dimension_id'), $this->dimension_id);
+		$criteria->compare($db->quoteColumnName($tableAlias.'.primary'), $this->primary);
 
 		return new CActiveDataProvider($this, array(
 			'criteria' => $criteria,

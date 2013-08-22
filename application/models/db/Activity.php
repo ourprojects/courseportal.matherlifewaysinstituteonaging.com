@@ -44,7 +44,7 @@ class Activity extends CActiveRecord
 			array('cr', 'numerical', 'integerOnly' => true),
 			array('name, dose', 'length', 'max' => 255),
 			array('name', 'unique', 'except' => 'search'),
-				
+
 			array('id, name, description, dose, cr', 'safe', 'on' => 'search'),
 		);
 	}
@@ -56,16 +56,16 @@ class Activity extends CActiveRecord
 	{
 		return array(
 			'dimensionRecommendations' => array(self::HAS_MANY, 'RecommendedActivityDimension', 'activity_id'),
-			'recommendedDimensions' => array(self::MANY_MANY, 'Dimension', '{{spencer_powell_recommended_activity_dimension}}(activity_id, dimension_id)'),
+			'recommendedDimensions' => array(self::MANY_MANY, 'Dimension', RecommendedActivityDimension::model()->tableName().'(activity_id, dimension_id)'),
 			'userActivities' => array(self::HAS_MANY, 'UserActivity', 'activity_id'),
 			'userLogEntries' => array(self::HAS_MANY, 'UserLogEntry', array('id' => 'user_activity_id'), 'through' => 'userActivities'),
 			'userLogEntryDimensions' => array(self::HAS_MANY, 'UserLogEntryDimension', array('id' => 'user_log_entry_id'), 'through' => 'userLogEntries'),
-			'users' => array(self::MANY_MANY, 'CPUser', '{{spencer_powell_user_activity}}(activity_id, user_id)'),
-			
+			'users' => array(self::MANY_MANY, 'CPUser', UserActivity::model()->tableName().'(activity_id, user_id)'),
+
 			'dimensionRecommendationCount' => array(self::STAT, 'RecommendedActivityDimension', 'activity_id'),
-			'recommendedDimensionCount' => array(self::STAT, 'Dimension', '{{spencer_powell_recommended_activity_dimension}}(activity_id, dimension_id)'),
+			'recommendedDimensionCount' => array(self::STAT, 'Dimension', RecommendedActivityDimension::model()->tableName().'(activity_id, dimension_id)'),
 			'userActivityCount' => array(self::STAT, 'UserActivity', 'activity_id'),
-			'userCount' => array(self::STAT, 'CPUser', '{{spencer_powell_user_activity}}(activity_id, user_id)'),
+			'userCount' => array(self::STAT, 'CPUser', UserActivity::model()->tableName().'(activity_id, user_id)'),
 		);
 	}
 
@@ -101,11 +101,13 @@ class Activity extends CActiveRecord
 	{
 		$criteria = new CDbCriteria;
 
-		$criteria->compare('id', $this->id);
-		$criteria->compare('name', $this->name, true);
-		$criteria->compare('description', $this->description, true);
-		$criteria->compare('dose', $this->dose, true);
-		$criteria->compare('cr', $this->cr);
+		$tableAlias = $this->getTableAlias();
+		$db = $this->getDbConnection();
+		$criteria->compare($db->quoteColumnName($tableAlias.'.id'), $this->id);
+		$criteria->compare($db->quoteColumnName($tableAlias.'.name'), $this->name, true);
+		$criteria->compare($db->quoteColumnName($tableAlias.'.description'), $this->description, true);
+		$criteria->compare($db->quoteColumnName($tableAlias.'.dose'), $this->dose, true);
+		$criteria->compare($db->quoteColumnName($tableAlias.'.cr'), $this->cr);
 
 		return new CActiveDataProvider($this, array(
 			'criteria' => $criteria,

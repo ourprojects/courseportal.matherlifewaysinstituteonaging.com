@@ -94,9 +94,11 @@ class Referral extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('id',$this->id);
-		$criteria->compare('referrer',$this->referrer);
-		$criteria->compare('referee',$this->referee);
+		$tableAlias = $this->getTableAlias();
+		$db = $this->getDbConnection();
+		$criteria->compare($db->quoteColumnName($tableAlias.'.id'),$this->id);
+		$criteria->compare($db->quoteColumnName($tableAlias.'.referrer'),$this->referrer);
+		$criteria->compare($db->quoteColumnName($tableAlias.'.referee'),$this->referee);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

@@ -88,8 +88,10 @@ class UserCourse extends CActiveRecord {
 	public function getSearchCriteria() {
 		$criteria = new CDbCriteria;
 
-		$criteria->compare('user_id', $this->user_id);
-		$criteria->compare('course_id', $this->course_id);
+		$tableAlias = $this->getTableAlias();
+		$db = $this->getDbConnection();
+		$criteria->compare($db->quoteColumnName($tableAlias.'.user_id'), $this->user_id);
+		$criteria->compare($db->quoteColumnName($tableAlias.'.course_id'), $this->course_id);
 
 		return $criteria;
 	}
