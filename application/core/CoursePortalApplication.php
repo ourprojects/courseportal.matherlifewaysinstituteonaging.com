@@ -1,8 +1,5 @@
 <?php
 
-/**
- * Implements global registry and config
- */
 class CoursePortalApplication extends CWebApplication {
 
 	protected function init()
@@ -12,36 +9,38 @@ class CoursePortalApplication extends CWebApplication {
 
 	public function saveUserState()
 	{
-		if(($user = $this->getUser()) &&
-				$user->canGetProperty('model') &&
-				($user = $user->getModel()) && !$user->getIsNewRecord())
+		if(($user = $this->getUser()) && isset($user) && !$user->getIsGuest())
 		{
-			$updated = array('last_login');
-			$user->last_login = date('Y-m-d H:i:s');
-			if($request = Yii::app()->getRequest())
+			$user = $user->getModel();
+			if(isset($user) && !$user->getIsNewRecord())
 			{
-				$var = $request->getUserHostAddress();
-				if($var != $user->last_ip)
+				$updated = array('last_login');
+				$user->last_login = date('Y-m-d H:i:s');
+				if($request = Yii::app()->getRequest())
 				{
-					$updated[] = 'last_ip';
-					$user->last_ip = $var;
-				}
+					$var = $request->getUserHostAddress();
+					if($var != $user->last_ip)
+					{
+						$updated[] = 'last_ip';
+						$user->last_ip = $var;
+					}
 
-				$var = $request->getUserAgent();
-				$var = strlen($var) > 255 ? substr($var, 0, 255) : $var;
-				if($var != $user->last_agent)
-				{
-					$updated[] = 'last_agent';
-					$user->last_agent = $var;
+					$var = $request->getUserAgent();
+					$var = strlen($var) > 255 ? substr($var, 0, 255) : $var;
+					if($var != $user->last_agent)
+					{
+						$updated[] = 'last_agent';
+						$user->last_agent = $var;
+					}
 				}
+				$var = $this->getLanguage();
+				if($user->language != $var)
+				{
+					$updated[] = 'language';
+					$user->language = $var;
+				}
+				$user->save(true, $updated);
 			}
-			$var = $this->getLanguage();
-			if($user->language != $var)
-			{
-				$updated[] = 'language';
-				$user->language = $var;
-			}
-			$user->save(true, $updated);
 		}
 	}
 

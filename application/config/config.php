@@ -63,6 +63,7 @@ return array(
 						'itemTable' => '{{auth_item}}',
 						'itemChildTable' => '{{auth_item_child}}',
 						'assignmentTable' => '{{auth_assignment}}',
+						'showErrors' => true
 				),
 
 				'themeManager' => array(

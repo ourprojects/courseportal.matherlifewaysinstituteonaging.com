@@ -29,14 +29,10 @@ class EDbAuthManager extends CDbAuthManager
 					->from($this->itemTable.' pit')
 					->join($this->itemChildTable.' ict', array('and', $this->db->quoteColumnName('pit.id').'='.$this->db->quoteColumnName('ict.parent_id'), $this->db->quoteColumnName('ict.child_id').'=:child_id'));
 		$authItems = array($item);
-		while(!empty($authItems))
+		do
 		{
 			$authItem = $this->getAuthItem(array_pop($authItems));
-			if($authItem === null)
-			{
-				continue;
-			}
-			if($this->executeBizRule($authItem->getBizRule(), $params, $authItem->getData()))
+			if($authItem !== null && $this->executeBizRule($authItem->getBizRule(), $params, $authItem->getData()))
 			{
 				$itemName = $authItem->getName();
 				if(in_array($itemName, $this->defaultRoles))
@@ -44,14 +40,13 @@ class EDbAuthManager extends CDbAuthManager
 					return true;
 				}
 				$assignments = $this->getAuthAssignments($userId);
-				if(isset($assignments[$itemName]) &&
-						$this->executeBizRule($assignments[$itemName]->getBizRule(), $params, $assignments[$itemName]->getData()))
+				if(isset($assignments[$itemName]) && $this->executeBizRule($assignments[$itemName]->getBizRule(), $params, $assignments[$itemName]->getData()))
 				{
 					return true;
 				}
 				$authItems += $query->bindValue(':child_id', $authItem->getId())->queryColumn();
 			}
-		}
+		} while(!empty($authItems));
 
 		return false;
 	}

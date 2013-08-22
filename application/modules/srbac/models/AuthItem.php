@@ -317,7 +317,7 @@ class AuthItem extends CActiveRecord
 		$criteria->mergeWith($criteriaConfig);
 		$criteria->compare('id', $this->getAttribute('id'));
 		$criteria->compare('generated', $this->getAttribute('generated'));
-		$criteria->compare('name', $this->getAttribute('name'));
+		$criteria->compare('name', $this->getAttribute('name'), true);
 		$criteria->compare('type', $this->getAttribute('type'));
 		$criteria->compare('description', $this->getAttribute('description'), true);
 		$criteria->compare('bizrule', $this->getAttribute('bizrule'), true);
