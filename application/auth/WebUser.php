@@ -3,12 +3,6 @@
 class WebUser extends CWebUser
 {
 
-	public $userClassName = 'User';
-
-	public $userId = null;
-
-	public $userName = null;
-
 	private $_identity = null;
 
 	private $_userModel = null;
@@ -18,17 +12,17 @@ class WebUser extends CWebUser
 		if(!isset($this->_userModel))
 		{
 			$attributes = array();
-			if(isset($this->userId) && $this->getId() !== null)
+			if($this->getId() !== null)
 			{
-				$attributes[$this->userId] = $this->getId();
+				$attributes['id'] = $this->getId();
 			}
-			if(isset($this->userName) && $this->getName() !== null)
+			if($this->getName() !== null)
 			{
-				$attributes[$this->userName] = $this->getName();
+				$attributes['name'] = $this->getName();
 			}
 			if(!empty($attributes))
 			{
-				$this->_userModel = call_user_func(array($this->userClassName, 'model'))->findByAttributes($attributes);
+				$this->_userModel = CPUser::model()->findByAttributes($attributes);
 			}
 		}
 		return $this->_userModel;
@@ -54,82 +48,62 @@ class WebUser extends CWebUser
 
 	public function login($identity, $duration = 0)
 	{
-		if(!$identity->getIsAuthenticated() && !$identity->authenticate())
-		{
-			return false;
-		}
 		$this->_identity = $identity;
 		return parent::login($identity, $duration);
 	}
 
 	protected function beforeLogin($id, $states, $fromCookie)
 	{
-		if(!isset($this->_identity))
+		if(parent::beforeLogin($id, $states, $fromCookie))
 		{
-			$identity = new SessionIdentity($id);
-			$identity->setPersistentStates($states);
-			$this->login($identity);
-			return false;
-		}
-
-		return parent::beforeLogin($id, $states, $fromCookie);
-	}
-
-	protected function afterLogin($fromCookie)
-	{
-		/*if(isset($this->_userModel))
-		{
-			//$user->last_login = date('Y-m-d H:i:s');
-			//$user->save();// @ TODO
-			if(!Yii::app()->phpBB->login() && !Yii::app()->phpBB->getUserIdFromName($this->getName()))
+			if(isset($this->_identity))
 			{
-				if($this->_identity->canGetProperty('password'))
-				{
-					$user->phpBBAddUser($this->_identity->password);
-					Yii::app()->phpBB->login();
-				}
-				else
-				{
-					$this->logout();
-					Yii::app()->end();
-				}
-			}
-		}
-		else
-		{
-			Yii::app()->phpBB->login();
-		}*/
-		if(!Yii::app()->phpBB->login() && !Yii::app()->phpBB->getUserIdFromName($this->getName()))
-		{
-			if($this->_identity->canGetProperty('password'))
-			{
-				$user->phpBBAddUser($this->_identity->password);
-				Yii::app()->phpBB->login();
+				$identity = $this->_identity;
 			}
 			else
 			{
-				$this->logout();
-				Yii::app()->end();
+				if(!$fromCookie)
+				{
+					return false;
+				}
+				$identity = new SessionIdentity($id);
+				$identity->setPersistentStates($states);
+			}
+			$this->_identity = null;
+			if($identity->getIsAuthenticated() || $identity->authenticate())
+			{
+				$this->_userModel = $identity->getModel();
+				$phpBB = Yii::app()->getComponent('phpBB');
+				if($phpBB->login($identity, '', $this->allowAutoLogin))
+				{
+					return true;
+				}
+				elseif(!$phpBB->getUserIdFromName($identity->getName()) &&
+							$identity->canGetProperty('password') &&
+							$identity->getModel() !== null)
+				{
+					$identity->getModel()->phpBBAddUser($identity->password);
+					return $phpBB->login($identity, '', $this->allowAutoLogin);
+				}
+				return false;
 			}
 		}
-		$this->_identity = null;
-		parent::afterLogin($fromCookie);
+		return false;
 	}
 
 	protected function beforeLogout()
 	{
-		if(isset($this->_userModel))
+		if(parent::beforeLogout())
 		{
-			$this->_userModel->regenerateSessionKey();
-			$this->_userModel = null;
+			Yii::app()->phpBB->logout();
+			if(isset($this->_userModel))
+			{
+				$this->_userModel->regenerateSessionKey();
+				$this->_userModel = null;
+			}
+			return true;
 		}
-		return parent::beforeLogout();
-	}
-
-	protected function afterLogout()
-	{
-		Yii::app()->phpBB->logout();
-		parent::afterLogout();
+		return false;
 	}
 
 }

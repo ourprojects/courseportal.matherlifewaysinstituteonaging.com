@@ -20,7 +20,7 @@ Deny from All
 
 <IfModule mod_rewrite.c>
 	RewriteEngine On
-	RewriteCond %{REQUEST_URI}  ^/forum/ucp\.php$
-	RewriteCond %{QUERY_STRING} ^mode=(register|login|logout)
-	RewriteRule ^(.*)$ /user/%1 [L,R=301]
+	RewriteCond %{REQUEST_URI}  ^(.*)/forum/ucp\.php$
+	RewriteCond (%1)%{QUERY_STRING} ^\((.*)\)\bmode=(register|login|logout)
+	RewriteRule ^(.*)$ %1/user/%2 [L,R=301]
 </IfModule>

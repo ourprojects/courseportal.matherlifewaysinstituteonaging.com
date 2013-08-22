@@ -16,7 +16,8 @@ class CoursePortalApplication extends CWebApplication {
 				$user->canGetProperty('model') &&
 				($user = $user->getModel()) && !$user->getIsNewRecord())
 		{
-			$updated = array();
+			$updated = array('last_login');
+			$user->last_login = date('Y-m-d H:i:s');
 			if($request = Yii::app()->getRequest())
 			{
 				$var = $request->getUserHostAddress();
@@ -40,10 +41,7 @@ class CoursePortalApplication extends CWebApplication {
 				$updated[] = 'language';
 				$user->language = $var;
 			}
-			if(!empty($updated))
-			{
-				$user->save(true, $updated);
-			}
+			$user->save(true, $updated);
 		}
 	}
 

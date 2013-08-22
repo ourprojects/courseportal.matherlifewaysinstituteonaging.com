@@ -6,8 +6,11 @@ abstract class ApiController extends CoursePortalController {
 	 * @return array action filters
 	 */
 	public function filters() {
-		return array(
-				'verifyKey + create, read, update, delete, options',
+		return array_merge(
+				parent::filters(),
+				array(
+					'verifyKey + create, read, update, delete, options',
+				)
 		);
 	}
 

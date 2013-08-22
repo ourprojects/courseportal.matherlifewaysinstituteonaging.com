@@ -31,8 +31,6 @@
  *
  */
 
-Yii::import('phpbb.extensions.phpBB.phpbbClass');
-
 class phpBB extends CApplicationComponent
 {
 
@@ -59,18 +57,52 @@ class phpBB extends CApplicationComponent
 	 * PHP file extentions
 	 * @var string
 	 */
-	public $php = 'php';
+	public $phpExtension = 'php';
 
-	protected $_phpbb;
+	protected $table_fields = array();
+
+	private $_prepared = false;
 
 	public function init()
 	{
 		if(!$this->path)
+		{
 			throw new CException('Must set path to phpBB forum.');
+		}
 
-        Yii::import($this->path . '.includes.utf.utf_normalizer');
+		global $phpbb_root_path, $phpEx;
 
-		$this->_phpbb = new phpbbClass(Yii::getPathOfAlias($this->path) . DIRECTORY_SEPARATOR, $this->php);
+		define('IN_PHPBB', true);
+		$phpbb_root_path = Yii::getPathOfAlias($this->path) . DIRECTORY_SEPARATOR;
+		$phpEx = $this->phpExtension;
+
+		require_once($phpbb_root_path.'includes'.DIRECTORY_SEPARATOR.'utf'.DIRECTORY_SEPARATOR.'utf_normalizer.'.$phpEx);
+	}
+
+	public function prepare($loggingIn = false)
+	{
+		if($loggingIn && !defined('IN_LOGIN'))
+		{
+			define('IN_LOGIN', true);
+		}
+		else if($this->_prepared)
+		{
+			return;
+		}
+
+		global $phpbb_root_path, $phpEx, $db, $config, $user, $auth, $cache, $template;
+
+		require_once($phpbb_root_path.'common.'.$phpEx);
+
+		if($loggingIn && (!isset($config['auth_method']) || $config['auth_method'] !== 'yii'))
+		{
+			set_config('auth_method', 'yii');
+		}
+
+		$user->session_begin();
+		$auth->acl($user->data);
+
+		$this->_prepared = true;
 	}
 
 	public function getForumUrl()
@@ -78,9 +110,15 @@ class phpBB extends CApplicationComponent
 		return Yii::app()->getBaseUrl(true) . '/' . $this->webPath;
 	}
 
-	public function getACPurl()
+	public function getACPurl($params = false, $is_amp = true)
 	{
-		return $this->_phpbb->append_sid($this->getForumUrl() . '/adm/index.' . $this->php);
+		global $phpbb_root_path, $phpEx, $user;
+
+		$this->prepare();
+
+		require_once($phpbb_root_path.'includes'.DIRECTORY_SEPARATOR.'functions.'.$phpEx);
+
+		return append_sid($this->getForumUrl() . '/adm/index.' . $phpEx, $params, $is_amp, $user->session_id);
 	}
 
 	/**
@@ -89,12 +127,17 @@ class phpBB extends CApplicationComponent
 	 * @param string $password
 	 * @return boolean false on failure or true on success
 	 */
-	public function login($username = '', $password = '')
+	public function login($user, $password = '', $autologin = false, $viewonline = 1, $admin = 0)
 	{
-		return $this->_phpbb->user_login(array(
-			"username" => $username,
-			"password" => $password,
-		));
+		global $auth, $_SID;
+
+		$this->prepare(true);
+
+		$login = $auth->login($user, $password, $autologin, $viewonline, $admin);
+
+		$_SESSION['sid'] = $_SID;
+
+		return $login['status'] == LOGIN_SUCCESS;
 	}
 
 	/**
@@ -103,7 +146,18 @@ class phpBB extends CApplicationComponent
 	 */
 	public function logout()
 	{
-		return $this->_phpbb->user_logout();
+		global $user, $auth;
+
+		$this->prepare(true);
+
+		if($user->data['user_id'] != ANONYMOUS)
+		{
+			$user->session_kill();
+			$user->session_begin();
+			return true;
+		}
+
+		return false;
 	}
 
 	/**
@@ -115,66 +169,94 @@ class phpBB extends CApplicationComponent
 	 * @param int $user_type
 	 * @return boolean false on failure or true on success
 	 */
-	public function userAdd($username, $password, $email, $group_id, $additional_attributes = array())
+	public function userAdd($username, $password, $email, $groupId, $userType = self::USER_NORMAL, $additional_attributes = array())
 	{
-		if(is_numeric($group_id)) {
-			$group_id = PhpBBGroup::model()->findByPk($group_id);
-		} elseif(!$group_id instanceof PhpBBGroup) {
-			$group_id = PhpBBGroup::model()->findByName(strval($group_id));
+		if(is_numeric($groupId))
+		{
+			$group = PhpBBGroup::model()->findByPk($groupId);
+		}
+		elseif($groupId instanceof PhpBBGroup)
+		{
+			$group = $groupId;
+		}
+		else
+		{
+			$group = PhpBBGroup::model()->findByName(strval($groupId));
 		}
 
-		if($group_id === null)
+		if($group === null)
 		{
 			throw new CException(Yii::t(self::ID, 'Unable to add user, an invalid group was specified.'));
 		}
 
-		return $this->_phpbb->user_add(array_merge(array(
-			'username' 		=> $username,
-			'user_password' => $password,
-			'user_email' 	=> $email,
-			'group_id' 		=> $group_id->group_id
-			),
-			$additional_attributes));
+		global $phpbb_root_path, $phpEx;
+
+		$this->prepare();
+
+		require_once($phpbb_root_path.'includes'.DIRECTORY_SEPARATOR.'functions_user.'.$phpEx);
+
+		$user_row = array(
+				'username' 		=> $username,
+				'user_password' => phpbb_hash($password),
+				'user_email' 	=> $email,
+				'group_id' 		=> $group->group_id,
+				'user_type' 	=> $userType,
+		);
+
+		if($additional_attributes['user_id'] = user_add($user_row))
+		{
+			$this->userUpdate($additional_attributes);
+			return true;
+		}
+
+		return false;
 	}
 
 	/**
 	 * Delete phpBB user
-	 * @param mixed $user integer userid or string username
-	 * @return boolean false on failure or true on success
+	 * @param integer $user_id integer user's id
+	 * @param string $mode
+	 * @param mixed $post_username
 	 */
-	public function userDelete($user)
+	public function userDelete($user_id, $mode = 'remove', $post_username = false)
 	{
-		$phpbb_vars = is_int($user)
-			? array("user_id" => $user)
-			: array("username" => $user);
+		global $phpbb_root_path, $phpEx;
 
-		return $this->_phpbb->user_delete($phpbb_vars);
+		$this->prepare();
+
+		require_once($phpbb_root_path.'includes'.DIRECTORY_SEPARATOR.'functions_user.'.$phpEx);
+
+		user_delete($mode, $user_id, $post_username);
 	}
 
 	/**
 	 * Change user password
-	 * @param mixed $user integer userid or string username
+	 * @param integer $user_id integer user's id
 	 * @param string $password new password
 	 * @return boolean false on failure or true on success
 	 */
-	public function changePassword($user, $password)
+	public function changePassword($user_id, $password)
 	{
-		$phpbb_vars = is_int($user)
-			? array("user_id" => $user)
-			: array("username" => $user);
+		global $phpbb_root_path, $phpEx, $db;
 
-		$phpbb_vars['password'] = $password;
+		$this->prepare();
 
-		return $this->_phpbb->user_change_password($phpbb_vars);
+		require_once($phpbb_root_path.'includes'.DIRECTORY_SEPARATOR.'functions_user.'.$phpEx);
+
+		$db->sql_query("UPDATE " . USERS_TABLE . " SET user_password = '" . phpbb_hash($password) . "' WHERE user_id = '" . $user_id . "'");
 	}
 
 	/**
 	 * Test if user is logged in phpBB
 	 * @return boolean false on failure or true on success
 	 */
-	public function loggedin()
+	public function loggedIn()
 	{
-		return $this->_phpbb->user_loggedin();
+		global $user;
+
+		$this->prepare();
+
+		return is_array($user->data) && isset($user->data['user_id']) && $user->data['user_id'] != ANONYMOUS && $user->data['user_id'] > 0;
 	}
 
 	/**
@@ -190,11 +272,123 @@ class phpBB extends CApplicationComponent
 	 */
 	public function userUpdate($phpbb_vars)
 	{
-		return $this->_phpbb->user_update($phpbb_vars);
+		global $phpbb_root_path, $phpEx, $db;
+
+		$this->prepare();
+
+		require_once($phpbb_root_path.'includes'.DIRECTORY_SEPARATOR.'functions_user.'.$phpEx);
+
+		if(!isset($phpbb_vars['user_id']))
+		{
+			if(isset($phpbb_vars['username']))
+				$phpbb_vars['user_id'] = $this->getUserIdFromName($phpbb_vars['username']);
+			if(!isset($phpbb_vars['user_id']))
+				return false;
+		}
+
+		if($this->getTableFields(USERS_TABLE))
+		{
+			if(isset($phpbb_vars['username']))
+				$phpbb_vars['username_clean'] = utf8_clean_string($phpbb_vars['username']);
+			if(isset($phpbb_vars['user_password']))
+				$phpbb_vars['user_password'] = phpbb_hash($phpbb_vars['user_password']);
+			if(isset($phpbb_vars['user_newpasswd']))
+				$phpbb_vars['user_newpasswd'] = phpbb_hash($phpbb_vars['user_newpasswd']);
+
+			$sql = '';
+			for($i = 0; $i < count($this->table_fields[USERS_TABLE]); $i++)
+			{
+				if(isset($phpbb_vars[$this->table_fields[USERS_TABLE][$i]]) && $this->table_fields[USERS_TABLE][$i] != 'user_id')
+				{
+					$sql .= ", " . $this->table_fields[USERS_TABLE][$i] . " = '" . $db->sql_escape($phpbb_vars[$this->table_fields[USERS_TABLE][$i]]) . "'";
+				}
+			}
+
+			if(strlen($sql) > 0)
+			{
+				$db->sql_query('UPDATE ' . USERS_TABLE . ' SET ' . substr($sql, 2) . " WHERE user_id = '" . $phpbb_vars['user_id'] . "'");
+				return true;
+			}
+		}
+
+		return false;
+	}
+
+	public function userUpdateName($old_name, $new_name)
+	{
+
+	}
+
+	public function userActiveFlip($mode, $user_ids, $reason)
+	{
+
+	}
+
+	public function validateUsername($username)
+	{
+
+	}
+
+	public function validatePassword($password)
+	{
+
+	}
+
+	public function validateEmail($email)
+	{
+
+	}
+
+	public function validateJabber($jid)
+	{
+
+	}
+
+	private function getTableFields($table)
+	{
+		if(isset($this->table_fields[$table]))
+		{
+			return true;
+		}
+
+		global $db;
+
+		$this->prepare();
+
+		if($result = $db->sql_query('SHOW FIELDS FROM '.$table))
+		{
+			$this->table_fields[$table] = array();
+			while($row = $db->sql_fetchrow($result))
+			{
+				$this->table_fields[$table][] = $row['Field'];
+			}
+			$db->sql_freeresult($result);
+
+			return true;
+		}
+
+		return false;
 	}
 
 	public function getUserIdFromName($username)
 	{
-		return $this->_phpbb->get_user_id_from_name($username);
+		global $phpbb_root_path, $phpEx;
+
+		$this->prepare();
+
+		require_once($phpbb_root_path.'includes'.DIRECTORY_SEPARATOR.'functions_user.'.$phpEx);
+
+		if(isset($username))
+		{
+			$user_id = false;
+			user_get_id_name($user_id, $username);
+			if(isset($user_id[0]))
+			{
+				return $user_id[0];
+			}
+		}
+
+		return false;
 	}
+
 }

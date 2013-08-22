@@ -125,9 +125,6 @@ return array(
 						'class' => 'application.auth.WebUser',
 						'allowAutoLogin' => true,
 						'loginUrl' => array('user/login'),
-						'userClassName' => 'CPUser',
-						'userId' => 'id',
-						'userName' => 'name'
 				),
 
 				'session' => array(
