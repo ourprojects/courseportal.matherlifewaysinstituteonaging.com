@@ -365,22 +365,18 @@ class CPUser extends CActiveRecord
 		}
 	}
 
-	public function assignAuthorizationItems()
-	{
-		if(!$this->getIsNewRecord())
-		{
-			$db = $this->getDbConnection();
-			$cmd = $db->createCommand()
-				->select('auth_item_id')
-				->from(GroupAuthItem::model()->tableName().' gait')
-				->leftJoin(Yii::app()->getAuthManager()->assignmentTable.' at', array('and', $db->quoteColumnName('at.item_id').'='.$db->quoteColumnName('gait.auth_item_id'), $db->quoteColumnName('at.user_id').'=:user_id'), array(':user_id' => $this->getAttribute('id')))
-				->where(array('and', $db->quoteColumnName('gait.group_id').'=:group_id', $db->quoteColumnName('at.item_id').' IS NULL'), array(':group_id' => $this->getAttribute('group_id')));
+	private $_groupIdAudit;
 
-			foreach($cmd->queryColumn() as $authItemId)
-			{
-				$this->assign($authItemId);
-			}
-		}
+	protected function beforeFind()
+	{
+		parent::beforeFind();
+		$this->with('group');
+	}
+
+	protected function afterFind()
+	{
+		parent::afterFind();
+		$this->_groupIdAudit = $this->group->id;
 	}
 
 	protected function afterSave()
@@ -392,7 +388,36 @@ class CPUser extends CActiveRecord
 			$activated->save();
 			$this->addErrors($activated->getErrors());
 		}
-		$this->assignAuthorizationItems();
+
+		if($this->getIsNewRecord() || $this->_groupIdAudit !== $this->getRelated('group', true)->id)
+		{
+			$db = $this->getDbConnection();
+			$assignments = $db->createCommand()
+				->select(array('it.id'))
+				->from(Yii::app()->getAuthManager()->assignmentTable.' at')
+				->join(Yii::app()->getAuthManager()->itemTable.' it', $db->quoteColumnName('at.item_id').'='.$db->quoteColumnName('it.id'))
+				->where(array('and', $db->quoteColumnName('it.name').'!=:superUser', $db->quoteColumnName('at.user_id').'=:user_id'),
+						array(':user_id' => $this->id, ':superUser' => SrbacUtilities::getSrbacModule()->superUser))
+			->queryColumn();
+			$assignments = array_flip($assignments);
+			foreach($this->group->authItems as $authItem)
+			{
+				if(isset($assignments[$authItem->auth_item_id]))
+				{
+					unset($assignments[$authItem->auth_item_id]);
+				}
+				else
+				{
+					$this->assign($authItem->auth_item_id);
+				}
+			}
+
+			foreach($assignments as $index => $value)
+			{
+				$this->revoke($index);
+			}
+		}
+
 		parent::afterSave();
 	}
 

@@ -19,7 +19,7 @@ class SBaseController extends CController
 
 	public function accessRules()
 	{
-		return array(array('deny'));
+		return array(array('deny', 'expression' => 'SrbacUtilities::isInstalled() && !SrbacUtilities::getSrbacModule()->debug && SrbacUser::model()->superUser()->exists()'));
 	}
 
 	public function getActionParams()
