@@ -23,7 +23,7 @@ class CourseController extends CoursePortalController
 		$courseActions = array();
 		foreach($courses as $course)
 		{
-			$courseActions[$course] = array('class' => 'application.components.CourseViewAction', 'defaultView' => $course);
+			$courseActions[$course] = array('class' => 'application.components.CourseViewAction', 'defaultView' => $course, 'basePath' => 'courses');
 		}
 		return array_merge(parent::actions(), $courseActions);
 	}
