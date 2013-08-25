@@ -15,7 +15,7 @@ class LDGoogleAnalytics extends CWidget {
      * 
      * @var string
      */
-    private $_accountID;
+    private $_accountID = null;
 
     /**
      * Automatically add trackPageview when render is called
@@ -111,13 +111,16 @@ class LDGoogleAnalytics extends CWidget {
      * @return mixed
      */
     public function render($view, $data = array(), $return = false) {
-        if($this->_accountID !== null) {
+        if($this->_accountID !== null) 
+        {
         	$js = parent::render($view, array('_data' => $data), true);
 
         	return $return ? $js : Yii::app()->getClientScript()->registerScript($this->getId(), $js, CClientScript::POS_BEGIN);
         }
-        
-        throw new CHttpException(500, Yii::t(ID, ID . '- Google Analytics account ID has not been set.'));
+        else
+        {
+       		Yii::log(Yii::t(self::ID, self::ID . '- Google Analytics account ID has not been set. Google Analytics will be disabled until the account ID is set.', array(), 'en', Yii::app()->sourceLanguage), CLogger::LEVEL_WARNING);
+        }
     }
     
     /**
@@ -127,11 +130,14 @@ class LDGoogleAnalytics extends CWidget {
      * @param string $accountID A valid Google Analytics account ID.
      */
     public function setAccountID($accountID) {
-    	if(preg_match('~^(UA|MO)-\d{4,10}-\d{1,3}$~i', $accountID)) {
+    	if(preg_match('~^(UA|MO)-\d{4,10}-\d{1,3}$~i', $accountID)) 
+    	{
     		$this->_accountID = strtoupper($accountID);
     		$this->_setAccount($this->_accountID);
-    	} else {
-    		throw new CHttpException(500, Yii::t(ID, ID . '- Invalid Google Analytics account ID.'));
+    	} 
+    	elseif($accountID !== null)
+    	{
+    		throw new CHttpException(500, Yii::t(self::ID, self::ID . '- Invalid Google Analytics account ID.', array(), 'en'));
     	}
     }
 
@@ -142,7 +148,8 @@ class LDGoogleAnalytics extends CWidget {
      * @param array  $arguments The arguments to be set for the named option.
      */
     public function __call($name, $arguments) {
-        if($name[0] === '_' && in_array($name, $this->_availableOptions)) {
+        if($name[0] === '_' && in_array($name, $this->_availableOptions)) 
+        {
             array_push($this->_data, array_merge(array($name), $arguments));
         	$this->_calledOptions[] = $name;
             return true;

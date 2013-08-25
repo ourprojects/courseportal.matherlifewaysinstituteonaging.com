@@ -135,21 +135,22 @@ class EReCaptcha extends CInputWidget
 
 	public function init()
 	{	
-		if (empty(Yii::app()->params['reCaptcha']['publicKey']) || !is_string(Yii::app()->params['reCaptcha']['publicKey']))
-			throw new CException(Yii::t('yii','EReCaptcha.publicKey requires your public key to be specified in your config file.'));
-		$customthemewidget = (($w = $this->customThemeWidget) != '') ? "'{$w}'" : 'null';
-		$cs = Yii::app()->getClientScript();
+		if(empty(Yii::app()->params['reCaptcha']['publicKey']) || !is_string(Yii::app()->params['reCaptcha']['publicKey']))
+		{
+			throw new CException(Yii::t('ReCaptcha', 'EReCaptcha.publicKey requires your public key to be specified in your config file.'));
+		}
 
-		if (!$cs->isScriptRegistered(get_class($this).'_options')) {
-			$script =<<<EOP
-var RecaptchaOptions = {
-   theme : '{$this->theme}',
-   custom_theme_widget : {$customthemewidget},
-   lang : '{$this->language}',
-   tabindex : {$this->tabIndex}
-};
-EOP;
-			$cs->registerScript(get_class($this).'_options', $script, CClientScript::POS_HEAD);
+		if (!Yii::app()->getClientScript()->isScriptRegistered(get_class($this).'_options', CClientScript::POS_HEAD)) 
+		{
+			Yii::app()->getClientScript()->registerScript(
+				get_class($this).'_options',
+				'var RecaptchaOptions = {'.
+					'theme:"'.$this->theme.'",'.
+					'custom_theme_widget:"'.(($this->customThemeWidget != '') ? '"'.$this->customThemeWidget.'"' : 'null').'",'.
+					'lang:"'.$this->language.'",'.
+					'tabindex:"'.$this->tabIndex.'"'.
+				'};', 
+				CClientScript::POS_HEAD);
 		}
 	}
 
@@ -159,12 +160,13 @@ EOP;
 	public function run()
 	{
 		$body = '';
-		if ($this->hasModel()) {
+		if($this->hasModel()) 
+		{
 			$body = CHtml::activeHiddenField($this->model, $this->attribute) . "\n";
 		}
 		echo $body . recaptcha_get_html(Yii::app()->params['reCaptcha']['publicKey'],
 				null,
-				($this->useSsl ? true : Yii::app()->getRequest()->getIsSecureConnection()),
+				$this->useSsl || Yii::app()->getRequest()->getIsSecureConnection(),
 				$this->language);
 	}
 }
