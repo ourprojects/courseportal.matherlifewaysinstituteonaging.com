@@ -162,7 +162,7 @@ class UserController extends ApiController {
 				Yii::app()->end();
 			}
 
-			if(/*$models['Captcha']->validate() && */$models['Register']->validate())
+			if($models['Captcha']->validate() && $models['Register']->validate())
 			{
 				$userAgreement = new UserAgreement();
 				$userAgreement->agreement_id = $models['Register']->agreement_id;

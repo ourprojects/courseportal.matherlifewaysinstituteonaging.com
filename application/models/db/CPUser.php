@@ -352,9 +352,9 @@ class CPUser extends CActiveRecord
 
 	public function setDefaultGroupID($attribute, $params)
 	{
-		if(!$params['setOnEmpty'] || empty($this->$attribute))
+		if($this->getIsNewRecord() || !$params['setOnEmpty'] || empty($this->$attribute))
 		{
-			if($emailGroup = GroupRegularExpression::model()->find(':email REGEXP '.$this->getDbConnection()->quoteColumnName($this->getTableAlias().'.regex'), array(':email' => $this->email)))
+			if($emailGroup = GroupRegularExpression::model()->find(':email REGEXP '.$this->getDbConnection()->quoteColumnName($this->getTableAlias().'.name'), array(':email' => $this->email)))
 			{
 				$this->$attribute = $emailGroup->group_id;
 			}
