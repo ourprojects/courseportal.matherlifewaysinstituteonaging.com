@@ -153,7 +153,7 @@ alert("Coming Soon!");
       <h2 class="flowers">{t}Empower Online{/t}</h2>
       <hr />
       <img src="<?php echo $this->getImagesUrl('empower/104651788.png'); ?>" alt="{t}image{/t}">
-      <h4>{t}Self care for the working family caregiver{/t}</h4>
+      <h4>{t}Self-care for the working family caregiver{/t}</h4>
       <p>{t}Empower Online provides working caregivers with the knowledge and tools to both manage responsibilities of caring for older relatives or friends and address their own physical, mental, and emotional health needs.{/t}</p>
       <p>{t}A research study conducted by Mather LifeWays Institute on Aging found that this online self-care program for working caregivers had multiple benefits.  As a result of participating in this course, working caregivers reported:{/t}</p>
       <ul>
@@ -195,7 +195,7 @@ alert("Coming Soon!");
       </ul>
       <h4>{t}Resources{/t}</h4>
       <p>{t}Specific resources have been identified here because they relate to the course content. These resources will help you get greater detail about specific topics and ideas presented in this course. These resources can be accessed via the course home page, by country or region.{/t}</p>
-      <p class="forum">{t}Please  post any resources on the Forum that your currently use to assist you in your caregiver role.{/t}</p>
+      <p class="forum">{t}Please  post any resources on the Forum that you're currently use to assist you in your caregiver role.{/t}</p>
       <img src="<?php echo $this->getImagesUrl('empower/forum_icon.png'); ?>" alt="{t}image{/t}"> </div>
     <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t} </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
   </div>
@@ -258,7 +258,7 @@ alert("Coming Soon!");
       <img src="<?php echo $this->getImagesUrl('empower/165424108.png'); ?>" alt="{t}image{/t}">
       <h4>{t}How Much Support Do You Have?{/t}</h4>
       <p>{t}Even if you’re the primary family caregiver, you can’t do everything on your own, especially if you’re caregiving from a distance (more than an hour’s drive from your family member). You’ll need help from friends, siblings, and other family members, as well as health professionals. If you don’t get the support you need, you'll quickly burn out—which will compromise your ability to provide care.{/t}</p>
-      <p class="forum">{t}Think about how much support you feel from family and friends or co-workers, and then think about what you can do to gain more support from these individuals. Use the Internet to help you search for ideas, and post your findgins to the Forum.{/t}</p>
+      <p class="forum">{t}Think about how much support you feel from family and friends or co-workers, and then think about what you can do to gain more support from these individuals. Use the Internet to help you search for ideas, and post your findings to the Forum.{/t}</p>
       <img src="<?php echo $this->getImagesUrl('empower/forum_icon.png'); ?>" alt="{t}image{/t}"> 
       
       <!--
@@ -659,7 +659,7 @@ alert("Coming Soon!");
             <label for="Yes2">Yes</label>
             <input type="checkbox" name="No2" id="No2">
             <label for="No2"> No</label></td>
-          <td style="text-align:left;"> Do you ever say to yourself "I should be able to ... ," "I can never. .. ," or similar statements?
+          <td style="text-align:left;"> Do you ever say to yourself "I should be able to... ," "I can never... ," or similar statements?
             </p></td>
         </tr>
         <tr style="text-align:left;">
@@ -711,7 +711,7 @@ alert("Coming Soon!");
       <p>{t}As a result, Maxine experiences feelings of failure and lack of success. Maria was more realistic. She recognized that the things she wanted to be done whether they were her desires, her mother's desires, or the desires of others-were not the same as the things that needed to be done. Maria's goal was to make her mother as comfortable as possible, without sacrificing herself and the other important relationships in her life. She also got help from family and a community agency in meeting her mother's needs. Maria said:{/t}</p>
       <p><i>{t}To some degree I recognized that caregiving was like a job and my goal was to find the best way to get the job done. A friend also told me that doing any job well-including the job of caregiving requires four things:{/t}</i></p>
       <ol>
-        <li><i>{t}Recognizing you can not do everything yourself-you work with others.{/t}</i></li>
+        <li><i>{t}Recognizing you cannot do everything yourself-you work with others.{/t}</i></li>
         <li><i>{t}Taking daily breaks.{/t}</i></li>
         <li><i>{t}Taking vacations to renew oneself.{/t}</i></li>
         <li><i>{t}Being realistic about what you can do...{/t}</i></li>
@@ -785,7 +785,7 @@ alert("Coming Soon!");
       <ol>
         <li><b>{t}What are you going to do?</b> - Examples: <i>I will read for pleasure. Or, I will walk.</i>{/t}</li>
         <li><b>{t}How much will you do?</b> - Examples: <i>Will you read one chapter or will you read for a half hour? Will you walk two blocks or for 20 minutes?</i>{/t}</li>
-        <li><b>{t}When will you do this?</b> Examples: <i>Will you read the first thing in the morning when you awaken, before you go to bed, when the care receiver is sleeping, or ... ? If your plan is to walk, when during the day will you do it?</i>{/t}</li>
+        <li><b>{t}When will you do this?</b> Examples: <i>Will you read the first thing in the morning when you awaken, before you go to bed, when the care receiver is sleeping, o ...? If your plan is to walk, when during the day will you do it?</i>{/t}</li>
         <li><b>{t}How often will you do this activity?</b> Example: <i>Three times a week on Monday, Wednesday, and Friday.</i>{/t}</li>
       </ol>
       <p>{t}A common mistake is to make an action plan that is unreachable within the time frame. For example, if you plan to do something every day, you might fail. Although well-intentioned, it is often not possible to do something every day. It is better to plan to do something once or twice a week and exceed your action plan. Here are some recommendations for writing an action plan that can help you achieve success:{/t}</p>
@@ -832,9 +832,9 @@ alert("Coming Soon!");
         <li>{t}Assess the results{/t}</li>
       </ol>
       <p>{t}It is important not to give up on an idea just because it did not work the first time. If you have difficulty finding a solution that works, utilize other resources. Share your problem with family, friends, and professionals and ask them for possible ideas. If you still find that suggested solutions do not work, you may need to accept that the problem is not solvable right now.{/t}</p>
-      <p>{t}Remember, just because there does not seem to be a workable solution right now does not mean that a problem can not be solved later, or that other problems can not be solved in the same way. It may be helpful to go back to the first step and consider if the problem needs to be redefined.{/t}</p>
+      <p>{t}Remember, just because there does not seem to be a workable solution right now does not mean that a problem cannot be solved later, or that other problems cannot be solved in the same way. It may be helpful to go back to the first step and consider if the problem needs to be redefined.{/t}</p>
       <p>{t}Sometimes, too, a problem may be easier to work on if you break it down into smaller problems.{/t}</p>
-      <p>{t}Most of the time if you follow these steps, you will find a solution that solves the problem. It is important to avoid making the mistake of jumping from step start to fnish and thinking <i>nothing can be done.</i>{/t}</p>
+      <p>{t}Most of the time if you follow these steps, you will find a solution that solves the problem. It is important to avoid making the mistake of jumping from step start to finish and thinking <i>nothing can be done.</i>{/t}</p>
     </div>
     <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
   </div>
@@ -846,7 +846,7 @@ alert("Coming Soon!");
       <p>{t}Accomplishing action plans is often a reward in itself. However, it is also important to find healthy pleasures that add enjoyment to your life. Rewards do not have to be fancy or expensive or take a lot of time.{/t}</p>
       <p>{t}One caregiver; for example, regularly goes to a movie or a play as a gift to herself from her husband. She said:{/t}</p>
       <p><i>{t}When my husband was well, he would take me out Friday nights to a movie or a play at least twice a month. Because of his medical condition, he is no longer able to do so. Now a friend and I go to a movie or a play at least once a month. I consider this is a treat that my husband is still giving to me.{/t}</i></p>
-      <p>{t}Have you rewarded yourself recently for the task you have accomplished within your caregiver role? Post your response on the Forum.{/t}</p>
+      <p class="forum">{t}Have you rewarded yourself recently for the task you have accomplished within your caregiver role? Post your response on the Forum.{/t}</p>
       <img src="<?php echo $this->getImagesUrl('empower/forum_icon.png'); ?>" alt="{t}image{/t}" /> </div>
     <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
   </div>
@@ -865,10 +865,11 @@ alert("Coming Soon!");
         <li>{t}Makes adjustments, as necessary, in the action plan.{/t}</li>
         <li>{t}Rewards himself or herself.{/t}</li>
       </ol>
-      <p>{t}Not all goals are achievable. Sometimes we must accept that what we want to do is not possible at this time, and we must let go of the idea. Be realistic about goals and do not dwell on what can not be done.{/t}</p>
+      <p>{t}Not all goals are achievable. Sometimes we must accept that what we want to do is not possible at this time, and we must let go of the idea. Be realistic about goals and do not dwell on what cannot be done.{/t}</p>
       <p>{t}Consider what is likely to happen to the caregiver who is driven by a goal to make her mother happy. Given her mother's personality, this goal may be completely unachievable. Such a goal creates a heavy burden and a caregiver is not likely to achieve it. However, an achievable goal might be to provide a pleasurable activity for her mother at least once a week perhaps taking her to get her hair done, visiting a friend, watching a comedy on television, or working together on a project her mother enjoys.{/t}</p>
       <p>{t}Remember, what is important in caregiving is not just to survive, but to thrive!{/t}</p>
-      <p style="text-align:center;">{t}<a href="#" target="_blank">Action Plan Template</a>{/t}</p>
+      <p style="text-align:center;">
+      <a href="<?php echo $this->getImagesUrl('empower/ActionPlanTemplate.pdf'); ?>" target="_blank">{t}Action Plan Template{/t}</p>
       
       <!--
  <?php // echo CHtml::link('Link Text',array('controller/action',param1'=>'value1'), array('target'=>'_blank'); ?>
