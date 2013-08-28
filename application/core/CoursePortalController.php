@@ -16,6 +16,8 @@ abstract class CoursePortalController extends CController
 			'class' => 'application.components.ViewAction',
 			'viewParam' => 'view'
 	);
+	
+	public $assetsDirectoryName = 'assets';
 
 	private $_assetsUrl;
 
@@ -82,8 +84,10 @@ abstract class CoursePortalController extends CController
 
 	public function getAssetsUrl()
 	{
-		if($this->_assetsUrl === null) {
-			$assetsDir = Yii::getPathOfAlias('application.assets.' . $this->getId());
+		if($this->_assetsUrl === null) 
+		{
+			$app = $this->getModule() === null ? Yii::app() : $this->getModule();
+			$assetsDir = $app->getBasePath().DIRECTORY_SEPARATOR.$this->assetsDirectoryName.DIRECTORY_SEPARATOR.$this->getId();
 			if(is_dir($assetsDir))
 				$this->_assetsUrl = Yii::app()->getAssetManager()->publish($assetsDir, false, -1, YII_DEBUG);
 			else
