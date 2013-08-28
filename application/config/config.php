@@ -46,6 +46,11 @@ return array(
 			'translate',
 			'surveyor',
 			'admin',
+			'course' => array(
+				'userClass' => 'CPUser',
+				'userId' => 'id',
+				'userName' => 'name'
+			),
 			'srbac' => array(
 				'userclass' => 'CPUser',
 				'userId' => 'id',

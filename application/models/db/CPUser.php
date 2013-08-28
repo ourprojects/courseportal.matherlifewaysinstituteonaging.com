@@ -24,8 +24,6 @@
  * @property Referral[] $referrals
  * @property Referral[] $referees
  * @property UploadedFile[] $uploadedFiles
- * @property Course[] $courses
- * @property UserCourse[] $userCourses
  * @property Group $group
  * @property UserActivated $activated
  * @property UserProfile $userProfile
@@ -70,6 +68,7 @@ class CPUser extends CActiveRecord
 				array('created', 'date', 'format' => 'yyyy-M-d H:m:s'),
 				array('last_login', 'date', 'format' => 'yyyy-M-d H:m:s'),
 				array('last_ip', 'length', 'max' => 40),
+				array('language', 'default', 'setOnEmpty' => true, 'value' => Yii::app()->getLanguage(), 'except' => 'search'),
 				array('language', 'length', 'max' => 16),
 				array('country_iso', 'length', 'max' => 3),
 
@@ -107,6 +106,9 @@ class CPUser extends CActiveRecord
 				'SrbacBehavior' => array(
 						'class' => 'srbac.components.SrbacBehavior'
 				),
+				'CourseBehavior' => array(
+						'class' => 'course.components.CourseBehavior'
+				),
 				'extendedFeatures' => array('class' => 'behaviors.EModelBehaviors'),
 				'PBKDF2Behavior' => array(
 						'class' => 'ext.pbkdf2.PBKDF2Behavior',
@@ -137,15 +139,9 @@ class CPUser extends CActiveRecord
 			'group' => array(self::BELONGS_TO, 'Group', 'group_id'),
 			'uploadedFiles' => array(self::HAS_MANY, 'UploadedFile', 'user_id'),
 			'activated' => array(self::HAS_ONE, 'UserActivated', 'user_id'),
-			'userCourses' => array(self::HAS_MANY, 'UserCourse', 'user_id'),
-			'courses' => array(self::MANY_MANY, 'Course', UserCourse::model()->tableName().'(user_id, course_id)'),
 			'phpBbUser' => array(self::HAS_ONE, 'PhpBBUser', array('username' => 'username')),
 			'userAgreements' => array(self::HAS_MANY, 'UserAgreement', 'user_id'),
 			'agreements' => array(self::MANY_MANY, 'Agreement', UserAgreement::model()->tableName().'(user_id, agreement_id)'),
-			'userActivities' => array(self::HAS_MANY, 'UserActivity', 'user_id'),
-			'activities' => array(self::MANY_MANY, 'Activity', UserActivity::model()->tableName().'(user_id, activity_id)'),
-			'activityLogEntries' => array(self::HAS_MANY, 'UserLogEntry', array('id' => 'user_activity_id'), 'through' => 'activities'),
-			'activityLogEntryDimensions' => array(self::HAS_MANY, 'UserLogEntryDimension', array('id' => 'user_log_entry_id'), 'through' => 'activityLogEntries'),
 		);
 	}
 
@@ -231,26 +227,6 @@ class CPUser extends CActiveRecord
 		$this->activated = $model;
 	}
 
-	public function hasCourse($course)
-	{
-		if(is_int($course)) {
-			$this->getDbCriteria()->mergeWith(array(
-					'with' => 'userCourses',
-					'condition' => 'userCourses.course_id=:course_id',
-					'params' => array(':course_id' => $course)
-				));
-		} else if(is_string($course)) {
-			$this->getDbCriteria()->mergeWith(array(
-					'with' => 'courses',
-					'condition' => 'course.name=:name',
-					'params' => array(':name' => $course)
-				));
-		} else if($course instanceof Course) {
-			return $this->hasCourse($course->id);
-		}
-		return $this;
-	}
-
 	/**
 	 * @return array customized attribute labels (name=>label)
 	 */
@@ -271,8 +247,6 @@ class CPUser extends CActiveRecord
 			'uploadedFiles'  => t('Uploaded Files'),
 			'activated'  	 => t('Activated'),
 			'group' 		 => t('Group'),
-			'userCourses' 	 => t('User Courses'),
-			'courses' 		 => t('Courses'),
 			'firstname' 	 => t('First Name'),
 			'lastname' 		 => t('Last Name'),
 			'location' 		 => t('Location'),
