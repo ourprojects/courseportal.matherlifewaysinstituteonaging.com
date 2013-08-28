@@ -18,8 +18,6 @@ class SrbacUtilities
 
 	private static $_controllerActions = array();
 
-	private static $_loadedControllerClassPaths = array();
-
 	public static function getSrbacModule()
 	{
 		if(self::$_srbacModule === null)
@@ -193,62 +191,159 @@ class SrbacUtilities
 
 			$controllerClassName = str_ireplace('.php', '', basename($controllerPath));
 
-			if(isset(self::$_loadedControllerClassPaths[$controllerClassName]))
+			$controllerFileContents = file_get_contents($controllerPath);
+			$classNameMap = self::ensureUniqueClassNames($controllerFileContents);
+			
+			if(!isset($classNameMap[$controllerClassName]) || class_exists($classNameMap[$controllerClassName], false))
 			{
-				self::$_controllerActions[$controllerPathAlias] = self::getControllerActionsFromText(file_get_contents($controllerPath));
+				return null;
 			}
-			else
+			
+			try
 			{
-				if(!class_exists($controllerClassName, false))
+				$tempFile = Yii::app()->getRuntimePath().DIRECTORY_SEPARATOR.'srbac';
+				if(!file_exists($tempFile))
 				{
-					include_once($controllerPath);
-					if(!class_exists($controllerClassName, false))
-					{
-						return null;
-					}
+					mkdir($tempFile, 0755);
 				}
-				self::$_loadedControllerClassPaths[$controllerClassName] = $controllerPath;
-				self::$_controllerActions[$controllerPathAlias] = self::getControllerActionsFromObject(new $controllerClassName($controllerPathAlias));
+				elseif(!is_dir($tempFile))
+				{
+					throw new CException('SRBAC bad runtime path.');
+				}
+				else
+				{
+					@chmod($tempFile, 0755);
+				}
+				
+				$tempFile = tempnam($tempFile, 'tempController_');
+				
+				if($tempFile === false)
+				{
+					throw new CException('SRBAC failed to create temporary file.');
+				}
+				
+				file_put_contents($tempFile, $controllerFileContents);
+				@chmod($tempFile, 0755);
+				
+				if((include $tempFile) === false || !class_exists($classNameMap[$controllerClassName], false))
+				{
+					return null;
+				}
+				
+				unlink($tempFile);
+			}
+			catch(Exception $e)
+			{
+				if(isset($tempFile) && is_file($tempFile))
+				{
+					unlink($tempFile);
+				}
+				throw $e;
+			}
+			
+			try
+			{
+				$reflection = new ReflectionClass($classNameMap[$controllerClassName]);
+				
+				if(!$reflection->isSubclassOf('CController'))
+				{
+					return null;
+				}
+				self::$_controllerActions[$controllerPathAlias] = self::getControllerActionsFromReflection($reflection);
+			}
+			catch(Exception $e)
+			{
+				Yii::log(Yii::t('srbac', 'An exception was thrown with message "{message}" while attempting to instantiate and extract the actions of controller with class name "{controller}". An attempt to manually parse the controller as a string will be made.', array('{controller}' => $controllerClassName, '{message}' => $e->getMessage())), CLogger::LEVEL_WARNING);
+				self::$_controllerActions[$controllerPathAlias] = self::getControllerActionsFromText($controllerFileContents, $classNameMap[$controllerClassName]);
 			}
 		}
 		return self::$_controllerActions[$controllerPathAlias];
 	}
-
-	public static function getControllerActionsFromObject($controllerObject)
+	
+	public static function ensureUniqueClassNames(&$classContentString)
 	{
-		if(!$controllerObject instanceof CController)
+		$tokens = token_get_all($classContentString);
+		
+		$tokenCount = count($tokens);
+		$classNameIndex = 0;
+		$classNameReplacements = array();
+		for($index = 0; $index < $tokenCount; $index++)
 		{
-			throw new CException('Controller object is not an instance of CController.');
+			if(is_array($tokens[$index]))
+			{
+				$classNameIndex += strlen($tokens[$index][1]);
+				if($tokens[$index][0] === T_CLASS)
+				{
+					$index++;
+					if($index < $tokenCount && $tokens[$index][0] === T_WHITESPACE)
+					{
+						$classNameIndex += strlen($tokens[$index][1]);
+						$index++;
+						if($index < $tokenCount && $tokens[$index][0] === T_STRING)
+						{
+							if(class_exists($tokens[$index][1], false))
+							{
+								$uniqueClassName = $tokens[$index][1];
+								do
+								{
+									$uniqueClassName = str_shuffle($uniqueClassName.'abcdefghijklmnopqrstuvwxyz');
+								} while(class_exists($uniqueClassName, false));
+								$classNameReplacements[$tokens[$index][1]] = $uniqueClassName;
+								$classContentString = substr_replace($classContentString, $uniqueClassName, $classNameIndex, strlen($tokens[$index][1]));
+							}
+							else
+							{
+								$classNameReplacements[$tokens[$index][1]] = $tokens[$index][1];
+							}
+							$classNameIndex += strlen($tokens[$index][1]);
+						}
+					}
+				}
+			}
+			else
+			{
+				$classNameIndex += strlen($tokens[$index]);
+			}
 		}
-		foreach(get_class_methods($controllerObject) as $method)
+		
+		return $classNameReplacements;
+	}
+
+	public static function getControllerActionsFromReflection($reflection)
+	{
+		foreach($reflection->getMethods(ReflectionMethod::IS_PUBLIC) as $method)
 		{
-			if(preg_match('/^action(\w+)$/i', $method, $match) && strcasecmp($match[1], 's'))
+			if(preg_match('/^action(\w+)$/i', $method->getName(), $match) && strcasecmp($match[1], 's'))
 			{
 				$actions[strtolower($match[1])] = $match[1];
 			}
 		}
 
-		foreach($controllerObject->actions() as $action => $config)
+		if($reflection->isInstantiable())
 		{
-			$loweredAction = strtolower($action);
-			if(!isset($actions[$loweredAction]))
+			$controllerObject = $reflection->newInstance($reflection->getName());
+			foreach($controllerObject->actions() as $action => $config)
 			{
-				$actions[$loweredAction] = $action;
+				$loweredAction = strtolower($action);
+				if(!isset($actions[$loweredAction]))
+				{
+					$actions[$loweredAction] = $action;
+				}
 			}
 		}
 
 		return array_values($actions);
 	}
-
-	public static function getControllerActionsFromText($controllerText)
+	
+	public static function getControllerActionsFromText($controllerText, $className)
 	{
 		if(!is_string($controllerText))
 		{
 			return null;
 		}
-
+	
 		$tokens = token_get_all($controllerText);
-
+	
 		$braceDepth = 0;
 		$ignoredFunctionTypes = array(T_STATIC, T_ABSTRACT, T_PRIVATE, T_PROTECTED);
 		$actions = array();
@@ -260,18 +355,24 @@ class SrbacUtilities
 				switch($token[0])
 				{
 					case T_CLASS:
-						$braceDepth = -1;
+						if($index + 2 < $tokenCount && 
+							$tokens[$index + 1][0] === T_WHITESPACE && 
+							$tokens[$index + 2][0] === T_STRING && 
+							$tokens[$index + 2][1] === $className)
+						{
+							$braceDepth = -1;
+						}
 						break;
 					case T_FUNCTION:
 						if($braceDepth === 1 &&
-						$index > 3 &&
-						$tokenCount - $index > 2 &&
-						(!is_array($tokens[$index - 2]) || !in_array($tokens[$index - 2][0], $ignoredFunctionTypes)) &&
-						(!is_array($tokens[$index - 4]) || !in_array($tokens[$index - 4][0], $ignoredFunctionTypes)) &&
-						is_array($tokens[$index + 2]) &&
-						$tokens[$index + 2][0] === T_STRING &&
-						$tokens[$index + 3] === '(' &&
-						preg_match('/^action(\w+)$/i', $tokens[$index + 2][1], $matches))
+							$index > 3 &&
+							$tokenCount - $index > 2 &&
+							(!is_array($tokens[$index - 2]) || !in_array($tokens[$index - 2][0], $ignoredFunctionTypes)) &&
+							(!is_array($tokens[$index - 4]) || !in_array($tokens[$index - 4][0], $ignoredFunctionTypes)) &&
+							is_array($tokens[$index + 2]) &&
+							$tokens[$index + 2][0] === T_STRING &&
+							$tokens[$index + 3] === '(' &&
+							preg_match('/^action(\w+)$/i', $tokens[$index + 2][1], $matches) && strcasecmp($matches[1], 's'))
 						{
 							$actions[] = $matches[1];
 						}

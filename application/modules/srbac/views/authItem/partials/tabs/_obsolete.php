@@ -13,12 +13,10 @@ Yii::app()->getClientScript()->registerScript(
 	.'})',
 	CClientScript::POS_READY
 );
-$obsolete = $model->findAll($model->searchCriteria(array('select' => 'id')));
-array_walk($obsolete, create_function('&$authItem', '$authItem = $authItem->getAttribute("id");'));
 ?>
 <div class="iconBox">
 <script type="text/javascript">
-var autoObsoleteAuthItems = <?php echo CJavaScript::encode(array('id' => $obsolete)); ?>;
+var autoObsoleteAuthItems = <?php echo CJavaScript::encode(array('id' => $ids)); ?>;
 </script>
 	<?php
 	echo CHtml::ajaxLink(

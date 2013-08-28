@@ -28,11 +28,11 @@ class SBaseController extends CController
 		$request = Yii::app()->getRequest();
 		if($request->getIsPostRequest())
 		{
-			$actionParams += $_POST;
+			$actionParams = array_merge($_POST, $actionParams);
 		}
 		elseif($request->getRequestType() !== 'GET')
 		{
-			$actionParams += $request->getRestParams();
+			$actionParams = array_merge($request->getRestParams(), $actionParams);
 		}
 		return $actionParams;
 	}

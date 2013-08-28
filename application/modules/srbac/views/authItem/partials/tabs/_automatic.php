@@ -33,6 +33,7 @@
 										'view' => 'partials/tabs/_obsolete',
 										'data' => array(
 												'model' => $obsoleteGridModel,
+												'ids' => $obsoleteIds
 										)
 								),
 						),
