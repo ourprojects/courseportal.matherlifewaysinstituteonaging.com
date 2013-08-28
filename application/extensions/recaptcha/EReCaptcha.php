@@ -68,7 +68,7 @@ class EReCaptcha extends CInputWidget
 	 *
 	 * @var string the language suffix
 	 */
-	public $language = 'en';
+	public $language = null;
 
 	/**
 	 * @var string the tab index for the HTML tag
@@ -84,6 +84,10 @@ class EReCaptcha extends CInputWidget
 	 * @var boolean whether to use SSL for connections. If false, autodetection will be used.
 	 */
 	public $useSsl = false;
+	
+	public $error = null;
+	
+	public $publicKey = null;
 
 	//***************************************************************************
 	// Internal properties.
@@ -99,15 +103,6 @@ class EReCaptcha extends CInputWidget
 	//***************************************************************************
 	// Setters and getters.
 	//***************************************************************************
-
-	/**
-	 * Returns the reCAPTCHA public key
-	 *
-	 * @return string
-	 */
-	public function getPublicKey() {
-		return Yii::app()->params['reCaptcha']['publicKey'];
-	}
 
 	/**
 	 * Sets the theme
@@ -135,9 +130,14 @@ class EReCaptcha extends CInputWidget
 
 	public function init()
 	{	
-		if(empty(Yii::app()->params['reCaptcha']['publicKey']) || !is_string(Yii::app()->params['reCaptcha']['publicKey']))
+		if(empty($this->publicKey) || !is_string($this->publicKey))
 		{
 			throw new CException(Yii::t('ReCaptcha', 'EReCaptcha.publicKey requires your public key to be specified in your config file.'));
+		}
+		
+		if(!isset($this->language))
+		{
+			$this->language = Yii::app()->getLanguage();
 		}
 
 		if (!Yii::app()->getClientScript()->isScriptRegistered(get_class($this).'_options', CClientScript::POS_HEAD)) 
@@ -159,14 +159,15 @@ class EReCaptcha extends CInputWidget
 	 */
 	public function run()
 	{
-		$body = '';
-		if($this->hasModel()) 
-		{
-			$body = CHtml::activeHiddenField($this->model, $this->attribute) . "\n";
-		}
-		echo $body . recaptcha_get_html(Yii::app()->params['reCaptcha']['publicKey'],
-				null,
-				$this->useSsl || Yii::app()->getRequest()->getIsSecureConnection(),
-				$this->language);
+		$this->render(
+				'ReCaptcha',
+				array(
+						'publicKey' => $this->publicKey,
+						'error' => $this->error,
+						'language' => $this->language,
+						'useSsl' => $this->useSsl || Yii::app()->getRequest()->getIsSecureConnection(),
+						'model' => $this->model,
+						'attribute' => $this->attribute)
+		);
 	}
 }

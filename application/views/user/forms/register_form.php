@@ -11,7 +11,7 @@
 	<p class="note">
 		<span class="required">*</span>{t}Required{/t}.
 	</p>
-	<?php echo $form->errorSummary(array($Register, $Captcha)); ?>
+	<?php echo $form->errorSummary(array($Register, $EReCaptchaForm)); ?>
 	
 	<div class="row">
 		<?php echo $form->labelEx($Register, 'email'); ?>
@@ -60,13 +60,16 @@
 	
 	<div class="row">
 		<?php 
-		echo $form->labelEx($Captcha, 'captcha');
+		echo $form->labelEx($EReCaptchaForm, 'captcha');
 		$this->widget('ext.recaptcha.EReCaptcha',
-				array('model' => $Captcha, 
-						'attribute' => 'captcha',
-						'language' => Yii::app()->getLanguage())
-				);
-		echo $form->error($Captcha, 'captcha');
+				array(
+					'publicKey' => Yii::app()->params['reCaptcha']['publicKey'],
+					'model' => $EReCaptchaForm, 
+					'attribute' => 'captcha',
+					'language' => Yii::app()->getLanguage()
+				)
+		);
+		echo $form->error($EReCaptchaForm, 'captcha');
 		?>
 	</div>
 				

@@ -98,7 +98,7 @@ class HomeController extends CoursePortalController
 	public function actionContact() {
 		$models = array(
 					'ContactUs' => new ContactUs,
-					'Captcha' => new Captcha
+					'EReCaptchaForm' => Yii::createComponent('ext.recaptcha.EReCaptchaForm', Yii::app()->params['reCaptcha']['privateKey'])
 				);
 		// if it is ajax validation request
 		if(isset($_POST['ajax']) && $_POST['ajax'] === 'contact-form') {
@@ -106,8 +106,8 @@ class HomeController extends CoursePortalController
 			Yii::app()->end();
 		}
 
-		if($models['Captcha']->loadAttributes() && $models['ContactUs']->loadAttributes()
-				&& $models['Captcha']->validate() && $models['ContactUs']->validate())
+		if($models['EReCaptchaForm']->loadAttributes() && $models['ContactUs']->loadAttributes()
+				&& $models['EReCaptchaForm']->validate() && $models['ContactUs']->validate())
 		{
 			$message = Yii::app()->mail->getNewMessageInstance();
 			$message->setBody($models['ContactUs']->body, 'text/plain');
@@ -120,7 +120,7 @@ class HomeController extends CoursePortalController
 
 			$models = array(
 					'ContactUs' => new ContactUs,
-					'Captcha' => new Captcha
+					'EReCaptchaForm' => Yii::createComponent('ext.recaptcha.EReCaptchaForm', Yii::app()->params['reCaptcha']['privateKey'])
 				);
 		}
 		$this->render('pages/contact', array('models' => $models));

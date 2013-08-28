@@ -55,7 +55,7 @@ class UserController extends ApiController {
 	{
 		$models = array(
 				'UserNameEmail' => new UserNameEmail,
-				'Captcha' => new Captcha
+				'EReCaptchaForm' => Yii::createComponent('ext.recaptcha.EReCaptchaForm', Yii::app()->params['reCaptcha']['privateKey'])
 		);
 		// if it is ajax validation request
 		if(isset($_POST['ajax']) && $_POST['ajax'] === 'user-maintenance-form')
@@ -64,9 +64,9 @@ class UserController extends ApiController {
 			Yii::app()->end();
 		}
 
-		if($models['Captcha']->loadAttributes() &&
+		if($models['EReCaptchaForm']->loadAttributes() &&
 				$models['UserNameEmail']->loadAttributes() &&
-				$models['Captcha']->validate() &&
+				$models['EReCaptchaForm']->validate() &&
 				$models['UserNameEmail']->validate())
 		{
 			$user = $models['UserNameEmail']->getUser();
@@ -149,12 +149,12 @@ class UserController extends ApiController {
 	{
 		$models = array(
 					'Register' => new Register,
-					'Captcha' => new Captcha,
+					'EReCaptchaForm' => Yii::createComponent('ext.recaptcha.EReCaptchaForm', Yii::app()->params['reCaptcha']['privateKey']),
 				);
 		$models['Register']->agreement_id = 1;
 
 		// collect user input data
-		if($models['Captcha']->loadAttributes() && $models['Register']->loadAttributes())
+		if($models['EReCaptchaForm']->loadAttributes() && $models['Register']->loadAttributes())
 		{
 			if(isset($_POST['ajax']) && $_POST['ajax'] === 'register-form')
 			{
@@ -162,7 +162,7 @@ class UserController extends ApiController {
 				Yii::app()->end();
 			}
 
-			if($models['Captcha']->validate() && $models['Register']->validate())
+			if($models['EReCaptchaForm']->validate() && $models['Register']->validate())
 			{
 				$userAgreement = new UserAgreement();
 				$userAgreement->agreement_id = $models['Register']->agreement_id;
@@ -222,7 +222,7 @@ class UserController extends ApiController {
 	public function actionResendActivation() {
 		$models = array(
 				'UserNameEmail' => new UserNameEmail,
-				'Captcha' => new Captcha
+				'EReCaptchaForm' => Yii::createComponent('ext.recaptcha.EReCaptchaForm', Yii::app()->params['reCaptcha']['privateKey'])
 		);
 		// if it is ajax validation request
 		if(isset($_POST['ajax']) && $_POST['ajax'] === 'user-maintenance-form') {
@@ -231,9 +231,9 @@ class UserController extends ApiController {
 			Yii::app()->end();
 		}
 
-		if($models['Captcha']->loadAttributes() &&
+		if($models['EReCaptchaForm']->loadAttributes() &&
 				$models['UserNameEmail']->loadAttributes() &&
-				$models['Captcha']->validate() &&
+				$models['EReCaptchaForm']->validate() &&
 				$models['UserNameEmail']->validate())
 		{
 			$user = $models['UserNameEmail']->getUser();
