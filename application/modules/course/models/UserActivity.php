@@ -7,13 +7,18 @@
  * @property integer $id
  * @property integer $user_id
  * @property integer $activity_id
+ * @property string $datetime
+ * @property string $comment
  *
  * The followings are the available model relations:
  * @property Activity $activity
- * @property CourseportalUser $user
+ * @property CourseUser $user
+ * @property UserActivityDimension[] $userActivityDimensions User Activity Dimensions
+ * @property Dimension[] $dimensions Activity Dimensions
  */
 class UserActivity extends CActiveRecord
 {
+	
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
@@ -38,12 +43,14 @@ class UserActivity extends CActiveRecord
 	public function rules()
 	{
 		return array(
-			array('user_id, activity_id', 'required'),
+			array('user_id, activity_id, datetime, comment', 'required'),
 			array('user_id, activity_id', 'numerical', 'integerOnly' => true),
-			array('user_id', 'exist', 'attributeName' => 'id', 'className' => 'CPUser', 'except' => 'search'),
+			array('user_id', 'exist', 'attributeName' => Yii::app()->getModule(CourseUser::COURSE_MODULE_NAME)->userId, 'className' => 'CourseUser', 'except' => 'search'),
 			array('activity_id', 'exist', 'attributeName' => 'id', 'className' => 'Activity', 'except' => 'search'),
-
-			array('id, user_id, activity_id', 'safe', 'on' => 'search'),
+			array('comment', 'length', 'max' => 65535),
+			array('datetime', 'date', 'format' => 'yyyy-M-d H:m:s'),
+				
+			array('id, user_id, activity_id, datetime, comment', 'safe', 'on' => 'search'),
 		);
 	}
 
@@ -54,11 +61,9 @@ class UserActivity extends CActiveRecord
 	{
 		return array(
 			'activity' => array(self::BELONGS_TO, 'Activity', 'activity_id'),
-			'user' => array(self::BELONGS_TO, 'CPUser', 'user_id'),
-			'userLogEntries' => array(self::HAS_MANY, 'UserLogEntry', 'user_activity_id'),
-			'userLogEntryDimensions' => array(self::HAS_MANY, 'UserLogEntryDimension', array('id' => 'user_log_entry_id'), 'through' => 'userLogEntries'),
-
-			'userLogEntryCount' => array(self::STAT, 'UserLogEntry', 'user_activity_id'),
+			'user' => array(self::BELONGS_TO, 'CourseUser', 'user_id'),
+			'userActivityDimensions' => array(self::HAS_MANY, 'UserActivityDimension', 'user_activity_id'),
+			'dimensions' => array(self::MANY_MANY, UserActivityDimension::model()->tableName().'(user_activity_id, dimension_id)'),
 		);
 	}
 
@@ -68,14 +73,18 @@ class UserActivity extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
+			// column attributes
 			'id' => t('ID'),
 			'user_id' => t('User ID'),
 			'activity_id' => t('Activity ID'),
+			'datetime' => t('Date'),
+			'comment' => t('Comment'),
+				
+			// relation attributes 
 			'activity' => t('Activity'),
 			'user' => t('User'),
-			'userLogEntries' => t('User Log Entries'),
-			'userLogEntryDimensions' => t('User Log Entry Dimensions'),
-			'userLogEntryCount' => t('User Log Entry Count'),
+			'userActivityDimensions' => t('User Activity Dimensions'),
+			'dimensions' => t('Dimensions'),
 		);
 	}
 
@@ -92,9 +101,12 @@ class UserActivity extends CActiveRecord
 		$criteria->compare($db->quoteColumnName($tableAlias.'.id'), $this->id);
 		$criteria->compare($db->quoteColumnName($tableAlias.'.user_id'), $this->user_id);
 		$criteria->compare($db->quoteColumnName($tableAlias.'.activity_id'), $this->activity_id);
-
+		$criteria->compare($db->quoteColumnName($tableAlias.'.datetime'), $this->datetime, true);
+		$criteria->compare($db->quoteColumnName($tableAlias.'.comment'), $this->comment, true);
+		
 		return new CActiveDataProvider($this, array(
 			'criteria' => $criteria,
 		));
 	}
+	
 }

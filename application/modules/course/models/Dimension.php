@@ -9,11 +9,14 @@
  * @property string $description
  *
  * The followings are the available model relations:
- * @property Activity[] $courseportalSpencerPowellActivities
- * @property UserLogEntry[] $courseportalSpencerPowellUserLogEntries
+ * @property RecommendedActivityDimension[] $activityRecommendations
+ * @property Activity[] $recommendedActivities
+ * @property UserActivityDimension[] $userActivityDimensions
+ * @property UserActivity[] $userActivities
  */
 class Dimension extends CActiveRecord
 {
+	
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
@@ -54,13 +57,13 @@ class Dimension extends CActiveRecord
 		return array(
 			'activityRecommendations' => array(self::HAS_MANY, 'RecommendedActivityDimension', 'dimension_id'),
 			'recommendedActivities' => array(self::MANY_MANY, 'Activity', RecommendedActivityDimension::model()->tableName().'(dimension_id, activity_id)'),
-			'userLogEntryDimensions' => array(self::HAS_MANY, 'UserLogEntryDimension', 'dimension_id'),
-			'userLogEntries' => array(self::MANY_MANY, 'UserLogEntry', UserLogEntryDimension::model()->tableName().'(dimension_id, user_log_entry_id)'),
+			'userActivityDimensions' => array(self::HAS_MANY, 'UserActivityDimension', 'dimension_id'),
+			'userActivities' => array(self::MANY_MANY, 'UserActivity', UserActivityDimension::model()->tableName().'(dimension_id, user_activity_id)'),
 
 			'activityRecommendationCount' => array(self::STAT, 'RecommendedActivityDimension', 'dimension_id'),
 			'recommendedActivityCount' => array(self::STAT, 'Activity', RecommendedActivityDimension::model()->tableName().'(dimension_id, activity_id)'),
-			'userLogEntryDimensionCount' => array(self::STAT, 'UserLogEntryDimension', 'dimension_id'),
-			'userLogEntryCount' => array(self::STAT, 'UserLogEntry', UserLogEntryDimension::model()->tableName().'(dimension_id, user_log_entry_id)'),
+			'userActivityDimensionCount' => array(self::STAT, 'UserActivityDimension', 'dimension_id'),
+			'userActivityCount' => array(self::STAT, 'UserActivity', UserActivityDimension::model()->tableName().'(dimension_id, user_activity_id)'),
 		);
 	}
 
@@ -70,17 +73,20 @@ class Dimension extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
+			// column attributes
 			'id' => t('ID'),
 			'name' => t('Name'),
 			'description' => t('Description'),
+				
+			// relation attributes
 			'activityRecommendations' => t('Activity Recommendations'),
 			'recommendedActivites' => t('Recommended Activities'),
-			'userLogEntries' => t('User Log Entries'),
-			'userLogEntryDimensions' => t('User Log Entry Dimensions'),
+			'userActivities' => t('User Activities'),
+			'userActivityDimensions' => t('User Activity Dimensions'),
 			'activityRecommendationCount' => t('Activity Recommendation Count'),
 			'recommendedActivityCount' => t('Recommended Activity Count'),
-			'userLogEntryDimensionCount' => t('User Log Entry Dimension Count'),
-			'userLogEntryCount' => t('User Log Entry Count'),
+			'userActivityDimensionCount' => t('User Activity Dimension Count'),
+			'userActivityCount' => t('User Activity Count'),
 		);
 	}
 
@@ -102,4 +108,5 @@ class Dimension extends CActiveRecord
 			'criteria' => $criteria,
 		));
 	}
+	
 }

@@ -1,18 +1,18 @@
 <?php
-
-class CourseObjective extends CActiveRecord {
-	/**
-	 * This is the model class for table "course".
-	 *
-	 * The followings are the available columns in table 'course':
-	 * @property integer $id
-	 * @property integer $course_id
-	 * @property integer $rank
-	 * @property string $text
-	 *
-	 * The followings are the available model relations:
-	 * @property Course $course
-	 */
+/**
+ * This is the model class for table "course".
+ *
+ * The followings are the available columns in table 'course':
+ * @property integer $id
+ * @property integer $course_id
+ * @property integer $rank
+ * @property string $text
+ *
+ * The followings are the available model relations:
+ * @property Course $course
+ */
+class CourseObjective extends CActiveRecord 
+{
 
 	/**
 	 * Returns the static model of the specified AR class.

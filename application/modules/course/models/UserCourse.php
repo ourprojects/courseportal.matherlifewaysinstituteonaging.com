@@ -1,17 +1,17 @@
 <?php
-
-class UserCourse extends CActiveRecord {
-	/**
-	 * This is the model class for table "user_course".
-	 *
-	 * The followings are the available columns in table 'user_course':
-	 * @property integer $course_id
-	 * @property integer $user_id
-	 *
-	 * The followings are the available model relations:
-	 * @property CPUser $user
-	 * @property Course $course
-	 */
+/**
+ * This is the model class for table "user_course".
+ *
+ * The followings are the available columns in table 'user_course':
+ * @property integer $course_id
+ * @property integer $user_id
+ *
+ * The followings are the available model relations:
+ * @property CourseUser $user
+ * @property Course $course
+ */
+class UserCourse extends CActiveRecord 
+{
 
 	/**
 	 * Returns the static model of the specified AR class.
@@ -46,7 +46,7 @@ class UserCourse extends CActiveRecord {
 				array('user_id, course_id', 'required'),
 				array('user_id, course_id', 'numerical', 'integerOnly' => true),
 
-				array('user_id', 'exist', 'attributeName' => 'id', 'className' => 'CPUser', 'allowEmpty' => false),
+				array('user_id', 'exist', 'attributeName' => Yii::app()->getModule(CourseUser::COURSE_MODULE_NAME)->userId, 'className' => 'CourseUser', 'allowEmpty' => false),
 				array('course_id', 'exist', 'attributeName' => 'id', 'className' => 'Course', 'allowEmpty' => false),
 
 				array('course_id',
@@ -68,7 +68,7 @@ class UserCourse extends CActiveRecord {
 	 */
 	public function relations() {
 		return array(
-				'user' => array(self::BELONGS_TO, 'CPUser', 'user_id'),
+				'user' => array(self::BELONGS_TO, 'CourseUser', 'user_id'),
 				'course' => array(self::BELONGS_TO, 'Course', 'course_id'),
 		);
 	}
@@ -78,8 +78,11 @@ class UserCourse extends CActiveRecord {
 	 */
 	public function attributeLabels() {
 		return array(
+				// column attributes
 				'user_id' => t('User ID'),
 				'course_id' => t('Course ID'),
+				
+				// relation attributes
 				'user' => t('User'),
 				'course' => t('Course'),
 		);

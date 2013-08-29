@@ -1,25 +1,24 @@
 <?php
 
+/**
+ * This is the model class for the application's users.
+ *
+ * The followings are the available columns in the user table:
+ * @property integer $id
+ * @property string $name
+ *
+ * The followings are the available model relations:
+ * @property Course[] $courses
+ * @property UserCourse[] $userCourses
+ * @property UserActivity[] $userActivities
+ * @property Activity[] $activities
+ * @property ActivityLogEntry[] $activityLogEntries
+ * @property ActivityLogEntryDimension[] $activityLogEntryDimensions
+ */
 class CourseUser extends CActiveRecord 
 {
 	
 	const COURSE_MODULE_NAME = 'course';
-	
-	/**
-	 * This is the model class for the application's users.
-	 *
-	 * The followings are the available columns in the user table:
-	 * @property integer $id
-	 * @property string $name
-	 *
-	 * The followings are the available model relations:
-	 * @property Course[] $courses
-	 * @property UserCourse[] $userCourses
-	 * @property UserActivity[] $userActivities
-	 * @property Activity[] $activities
-	 * @property ActivityLogEntry[] $activityLogEntries
-	 * @property ActivityLogEntryDimension[] $activityLogEntryDimensions
-	 */
 
 	/**
 	 * Returns the static model of the specified AR class.
@@ -103,10 +102,11 @@ class CourseUser extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			// columns
+			// column attributes
 			Yii::app()->getModule(self::COURSE_MODULE_NAME)->userId   => t('ID'),
 			Yii::app()->getModule(self::COURSE_MODULE_NAME)->userName => t('Username'),
-			// relations
+				
+			// relation attributes
 			'userCourses' 	 			 => t('User Courses'),
 			'courses' 		 			 => t('Courses'),
 			'userActivities' 			 => t('User Activities'),
@@ -122,7 +122,6 @@ class CourseUser extends CActiveRecord
 	 */
 	public function search() 
 	{
-
 		$criteria = new CDbCriteria;
 
 		$tableAlias = $this->getTableAlias();

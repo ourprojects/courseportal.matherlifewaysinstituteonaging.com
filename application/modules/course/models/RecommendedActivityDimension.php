@@ -6,9 +6,14 @@
  * The followings are the available columns in table '{{spencer_powell_recommended_activity_dimension}}':
  * @property integer $activity_id
  * @property integer $dimension_id
+ * 
+ * The followings are the available model relations:
+ * @property Dimension $dimension
+ * @property Activity $activity
  */
 class RecommendedActivityDimension extends CActiveRecord
 {
+	
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
@@ -59,8 +64,11 @@ class RecommendedActivityDimension extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
+			// column attributes
 			'activity_id' => t('Activity ID'),
 			'dimension_id' => t('Dimension ID'),
+				
+			// relation attributes
 			'activity' => t('Activity'),
 			'dimension' => t('Dimension'),
 		);
@@ -83,4 +91,5 @@ class RecommendedActivityDimension extends CActiveRecord
 			'criteria' => $criteria,
 		));
 	}
+	
 }

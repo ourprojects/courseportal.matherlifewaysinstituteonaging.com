@@ -11,11 +11,15 @@
  * @property integer $cr
  *
  * The followings are the available model relations:
- * @property Dimension[] $courseportalSpencerPowellDimensions
+ * @property Dimension[] $recommendedDimensions
  * @property UserActivity[] $userActivities
+ * @property RecommendedActivityDimension[] $dimensionRecommendations
+ * @property UserActivityDimension[] $userActivityDimensions
+ * @property CourseUser[] $users
  */
 class Activity extends CActiveRecord
 {
+	
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
@@ -58,14 +62,13 @@ class Activity extends CActiveRecord
 			'dimensionRecommendations' => array(self::HAS_MANY, 'RecommendedActivityDimension', 'activity_id'),
 			'recommendedDimensions' => array(self::MANY_MANY, 'Dimension', RecommendedActivityDimension::model()->tableName().'(activity_id, dimension_id)'),
 			'userActivities' => array(self::HAS_MANY, 'UserActivity', 'activity_id'),
-			'userLogEntries' => array(self::HAS_MANY, 'UserLogEntry', array('id' => 'user_activity_id'), 'through' => 'userActivities'),
-			'userLogEntryDimensions' => array(self::HAS_MANY, 'UserLogEntryDimension', array('id' => 'user_log_entry_id'), 'through' => 'userLogEntries'),
-			'users' => array(self::MANY_MANY, 'CPUser', UserActivity::model()->tableName().'(activity_id, user_id)'),
+			'userActivityDimensions' => array(self::MANY_MANY, 'UserActivityDimension', UserActivity::model()->tableName().'(activity_id, id)'),
+			'users' => array(self::MANY_MANY, 'CourseUser', UserActivity::model()->tableName().'(activity_id, '.Yii::app()->getModule(CourseUser::COURSE_MODULE_NAME)->userId.')'),
 
 			'dimensionRecommendationCount' => array(self::STAT, 'RecommendedActivityDimension', 'activity_id'),
 			'recommendedDimensionCount' => array(self::STAT, 'Dimension', RecommendedActivityDimension::model()->tableName().'(activity_id, dimension_id)'),
 			'userActivityCount' => array(self::STAT, 'UserActivity', 'activity_id'),
-			'userCount' => array(self::STAT, 'CPUser', UserActivity::model()->tableName().'(activity_id, user_id)'),
+			'userCount' => array(self::STAT, 'CourseUser', UserActivity::model()->tableName().'(activity_id, '.Yii::app()->getModule(CourseUser::COURSE_MODULE_NAME)->userId.')'),
 		);
 	}
 
@@ -75,16 +78,18 @@ class Activity extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
+			// column attributes
 			'id' => t('ID'),
 			'name' => t('Name'),
 			'description' => t('Description'),
 			'dose' => t('Dose'),
 			'cr' => t('Contribution'),
+				
+			// relation attributes
 			'dimensionRecommendations' => t('Dimension Recommendations'),
 			'recommendedDimensions' => t('Recommended Dimensions'),
 			'userActivites' => t('User Activities'),
-			'userLogEntries' => t('User Log Entries'),
-			'userLogEntryDimensions' => t('User Log Entry Dimensions'),
+			'userActivityDimensions' => t('User Activity Dimensions'),
 			'users' => t('Users'),
 			'dimensionRecommendationCount' => t('Dimension Recommendation Count'),
 			'recommendedDimensionCount' => t('Recommended Dimension Count'),
@@ -113,4 +118,5 @@ class Activity extends CActiveRecord
 			'criteria' => $criteria,
 		));
 	}
+	
 }
