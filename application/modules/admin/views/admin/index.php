@@ -18,7 +18,7 @@ $this->breadcrumbs = array('{t}Admin{/t}');
 	<div class="box-white">
 		<h5>{t}Courses{/t}</h5>
 		<p>{t}Mather LifeWays Institute on Aging online course portal provides web-based training and education for those who provide services to older adults. Courses target Nurses, CNAs, Social Workers, Geriatric Professionals, professional and non-professional caregivers. {/t}</p>
-		<a href="<?php echo $this->createUrl('/admin/course'); ?>" class="button">{t}Courses{/t}</a>
+		<a href="<?php echo $this->createUrl('/course/admin'); ?>" class="button">{t}Courses{/t}</a>
 	</div>
 	<div class="box-white">
 		<h5>{t}Translation &amp; Languages{/t}</h5>

@@ -77,21 +77,19 @@ class CourseUser extends CActiveRecord
 			'courses' => array(self::MANY_MANY, 'Course', UserCourse::model()->tableName().'(user_id, course_id)'),
 			'userActivities' => array(self::HAS_MANY, 'UserActivity', 'user_id'),
 			'activities' => array(self::MANY_MANY, 'Activity', UserActivity::model()->tableName().'(user_id, activity_id)'),
-			'activityLogEntries' => array(self::HAS_MANY, 'UserLogEntry', array('id' => 'user_activity_id'), 'through' => 'activities'),
-			'activityLogEntryDimensions' => array(self::HAS_MANY, 'UserLogEntryDimension', array('id' => 'user_log_entry_id'), 'through' => 'activityLogEntries'),
 		);
 	}
 
-	public function hasUser($user) 
+	public function hasCourse($course) 
 	{
-		if(get_class($user) === Yii::app()->getModule(self::COURSE_MODULE_NAME)->userClass)
+		if($course instanceof Course)
 		{
-			return $this->hasUser($user->id);
+			return $this->hasUser($course->id);
 		}
 		$this->getDbCriteria()->mergeWith(array(
 				'with' => 'userCourses',
-				'condition' => $this->getDbConnection()->quoteColumnName('userCourses.user_id').'=:user_id',
-				'params' => array(':user_id' => $user)
+				'condition' => $this->getDbConnection()->quoteColumnName('userCourses.course_id').'=:course_id',
+				'params' => array(':course_id' => $course)
 		));
 		return $this;
 	}

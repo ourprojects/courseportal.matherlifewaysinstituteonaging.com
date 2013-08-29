@@ -63,7 +63,7 @@ class UserActivity extends CActiveRecord
 			'activity' => array(self::BELONGS_TO, 'Activity', 'activity_id'),
 			'user' => array(self::BELONGS_TO, 'CourseUser', 'user_id'),
 			'userActivityDimensions' => array(self::HAS_MANY, 'UserActivityDimension', 'user_activity_id'),
-			'dimensions' => array(self::MANY_MANY, UserActivityDimension::model()->tableName().'(user_activity_id, dimension_id)'),
+			'dimensions' => array(self::MANY_MANY, 'Dimension', UserActivityDimension::model()->tableName().'(user_activity_id, dimension_id)'),
 		);
 	}
 

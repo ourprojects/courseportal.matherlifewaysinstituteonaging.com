@@ -132,16 +132,20 @@ class CPUser extends CActiveRecord
 	 */
 	public function relations()
 	{
-		return array(
-			'avatar' => array(self::HAS_ONE, 'Avatar', 'user_id'),
-			'referees' => array(self::HAS_MANY, 'Referral', 'referee'),
-			'referrals' => array(self::HAS_MANY, 'Referral', 'referrer'),
-			'group' => array(self::BELONGS_TO, 'Group', 'group_id'),
-			'uploadedFiles' => array(self::HAS_MANY, 'UploadedFile', 'user_id'),
-			'activated' => array(self::HAS_ONE, 'UserActivated', 'user_id'),
-			'phpBbUser' => array(self::HAS_ONE, 'PhpBBUser', array('username' => 'username')),
-			'userAgreements' => array(self::HAS_MANY, 'UserAgreement', 'user_id'),
-			'agreements' => array(self::MANY_MANY, 'Agreement', UserAgreement::model()->tableName().'(user_id, agreement_id)'),
+		Yii::import('course.models.CourseUser');
+		return array_merge(
+				CourseUser::model()->relations(),
+				array(
+					'avatar' => array(self::HAS_ONE, 'Avatar', 'user_id'),
+					'referees' => array(self::HAS_MANY, 'Referral', 'referee'),
+					'referrals' => array(self::HAS_MANY, 'Referral', 'referrer'),
+					'group' => array(self::BELONGS_TO, 'Group', 'group_id'),
+					'uploadedFiles' => array(self::HAS_MANY, 'UploadedFile', 'user_id'),
+					'activated' => array(self::HAS_ONE, 'UserActivated', 'user_id'),
+					'phpBbUser' => array(self::HAS_ONE, 'PhpBBUser', array('username' => 'username')),
+					'userAgreements' => array(self::HAS_MANY, 'UserAgreement', 'user_id'),
+					'agreements' => array(self::MANY_MANY, 'Agreement', UserAgreement::model()->tableName().'(user_id, agreement_id)'),
+				)
 		);
 	}
 
@@ -232,32 +236,36 @@ class CPUser extends CActiveRecord
 	 */
 	public function attributeLabels()
 	{
-		return array(
-			'id' 			 => t('ID'),
-			'new_password' 	 => t('New Password'),
-			'password' 		 => t('Password'),
-			'salt' 			 => t('Salt'),
-			'group_id' 		 => t('Group'),
-			'email' 		 => t('Email'),
-			'name' 			 => t('Username'),
-			'session_key' 	 => t('Session Key'),
-			'created' 		 => t('Created'),
-			'referees' 		 => t('Referees'),
-			'referrals' 	 => t('Referrals'),
-			'uploadedFiles'  => t('Uploaded Files'),
-			'activated'  	 => t('Activated'),
-			'group' 		 => t('Group'),
-			'firstname' 	 => t('First Name'),
-			'lastname' 		 => t('Last Name'),
-			'location' 		 => t('Location'),
-			'fullLocation' 	 => t('Full Location'),
-			'country_iso' 	 => t('Country'),
-			'last_login' 	 => t('Last Login'),
-			'last_ip' 		 => t('Last IP Address'),
-			'last_agent'	 => t('Last Agent'),
-			'language' 		 => t('Preferred Language'),
-			'userAgreements' => t('User Agreements'),
-			'agreements' 	 => t('Agreements')
+		Yii::import('course.models.CourseUser');
+		return array_merge(
+				CourseUser::model()->attributeLabels(),
+				array(
+					'id' 			 => t('ID'),
+					'new_password' 	 => t('New Password'),
+					'password' 		 => t('Password'),
+					'salt' 			 => t('Salt'),
+					'group_id' 		 => t('Group'),
+					'email' 		 => t('Email'),
+					'name' 			 => t('Username'),
+					'session_key' 	 => t('Session Key'),
+					'created' 		 => t('Created'),
+					'referees' 		 => t('Referees'),
+					'referrals' 	 => t('Referrals'),
+					'uploadedFiles'  => t('Uploaded Files'),
+					'activated'  	 => t('Activated'),
+					'group' 		 => t('Group'),
+					'firstname' 	 => t('First Name'),
+					'lastname' 		 => t('Last Name'),
+					'location' 		 => t('Location'),
+					'fullLocation' 	 => t('Full Location'),
+					'country_iso' 	 => t('Country'),
+					'last_login' 	 => t('Last Login'),
+					'last_ip' 		 => t('Last IP Address'),
+					'last_agent'	 => t('Last Agent'),
+					'language' 		 => t('Preferred Language'),
+					'userAgreements' => t('User Agreements'),
+					'agreements' 	 => t('Agreements')
+				)
 		);
 	}
 

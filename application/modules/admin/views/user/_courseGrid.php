@@ -18,8 +18,8 @@ $this->widget('zii.widgets.grid.CGridView', array(
 						'class' => 'CButtonColumn',
 						'template' => '{view}{delete}',
 						'viewButtonLabel' => '{t}View Course Details{/t}',
-						'viewButtonUrl' => 'Yii::app()->getController()->createUrl("/admin/course/view", array("id" => $data->id))',
-						'deleteButtonUrl' => 'Yii::app()->getController()->createUrl("/admin/course/delete", array("id" => $data->id))',
+						'viewButtonUrl' => 'Yii::app()->getController()->createUrl("/course/admin/view", array("id" => $data->id))',
+						'deleteButtonUrl' => 'Yii::app()->getController()->createUrl("/course/admin/delete", array("id" => $data->id))',
 				)
 		),
 ));

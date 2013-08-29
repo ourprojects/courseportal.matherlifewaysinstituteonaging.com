@@ -1,7 +1,12 @@
 <?php
 
-class CourseController extends AController
+class AdminController extends CoursePortalController
 {
+	
+	public function accessRules()
+	{
+		return array(array('deny'));
+	}
 
 	public function actionIndex()
 	{
@@ -141,12 +146,12 @@ class CourseController extends AController
     		case 'course-grid':
     			$model = new Course('search');
     			$model->setAttribute('id', $id);
-    			$gridPath = '_grid';
+    			$gridPath = '_courseGrid';
     			break;
     		case 'user-grid':
-    			$model = new CPUser('search');
-    			$model->with(array('courses' => array('condition' => 'courses.id=:id', 'params' => array(':id' => $id))))->together()->getDbCriteria()->group = 't.id';
-    			$gridPath = '../user/_grid';
+    			$model = new CourseUser('search');
+    			$model->with(array('courses' => array('condition' => 'courses.id=:id', 'params' => array(':id' => $id))))->together()->getDbCriteria()->group = $model->getDbConnection()->quoteColumnName($model->getTableAlias().'.id');
+    			$gridPath = '_userGrid';
     			break;
     		default:
     			return;

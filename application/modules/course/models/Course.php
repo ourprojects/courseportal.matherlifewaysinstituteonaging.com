@@ -73,8 +73,7 @@ class Course extends CActiveRecord
 		return array(
 				'objectives' => array(self::HAS_MANY, 'CourseObjective', 'course_id'),
 				'userCourses' => array(self::HAS_MANY, 'UserCourse', 'course_id'),
-				'users' => array(self::MANY_MANY, 'CourseUser', UserCourse::model()->tableName().'(course_id, '.Yii::app()->getModule(CourseUser::COURSE_MODULE_NAME)->userId.')'),
-				'userCount' => array(self::STAT, 'CourseUser', UserCourse::model()->tableName().'(course_id, '.Yii::app()->getModule(CourseUser::COURSE_MODULE_NAME)->userId.')'),
+				'users' => array(self::MANY_MANY, Yii::app()->getModule(CourseUser::COURSE_MODULE_NAME)->userClass, UserCourse::model()->tableName().'(course_id, user_id)'),
 		);
 	}
 
@@ -108,7 +107,6 @@ class Course extends CActiveRecord
 				// Relation attributes
 				'userCourses' => t('User Courses'),
 				'users' => t('Users'),
-				'userCount' => t('User Count'),
 		);
 	}
 

@@ -127,7 +127,7 @@ class UserController extends AController
     		case 'course-grid':
     			$model = new Course('search');
     			$model->with(array('users' => array('condition' => 'users.id=:id', 'params' => array(':id' => $id))))->together()->getDbCriteria()->group = 't.id';
-    			$gridPath = '../course/_grid';
+    			$gridPath = '_courseGrid';
     			break;
     		case 'user-grid':
     			$model = new CPUser('search');
