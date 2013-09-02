@@ -75,11 +75,18 @@ alert("Coming Soon!");
     <p>&nbsp;</p>
   </div>
   <div class="box-sidebar one">
-    <h3>Coming Soon!</h3>
-    <h5 style="text-align:center;">&nbsp;</h5>
-    <p>&nbsp;</p>
-    <hr />
-    <p>{t}Coming Soon!{/t}</p>
+    <h3>{t}Certificate of Completion{/t}</h3>
+    <p>{t}You must complete the following Modules before accessing your Certificate of Completion:{/t}</p>
+ <ol>
+ 	<li>{t}1. Introduction{/t}</li>
+    <li>{t}2. Physical Activity{/t}</li>
+    <li>{t}3. Emotional{/t}</li>
+    <li>{t}4. Intellectual{/t}</li>
+ </ol>
+    <p style="text-align:center; font-weight:bold;">{t}Click the Certificate below to download your Certificate of Completion.{/t}</p>
+   <img src="<?php echo $this->getImagesUrl('spencer/ArtworkCertificate.png'); ?>" alt="{t}Certificate of Completion{/t}" onclick="myFunction()">
+ 
+    
   </div>
   <div class="box-sidebar one">
     <h3>Coming Soon!</h3>
@@ -632,8 +639,6 @@ alert("Coming Soon!");
         <hr />
         <img src="<?php echo $this->getImagesUrl('intro/160382234.png'); ?>" alt="{t}image{/t}">
         <p>{t}We have really enjoyed getting to know you, and hope this course was helpful. Please post any final thoughts, questions, or concerns to the Forum before you close out this final module. Best wishes as you carry on in the future!{/t}</p>
-        <h4 style="text-align:center;">{t}Certificate of Completion{/t}</h4>
-        <a href="<?php echo $this->getImagesUrl('spencer/certificate.pdf'); ?>" target="_blank"><img src="<?php echo $this->getImagesUrl('intro/ArtworkCertificate.png'); ?>" alt="image"></a>
         <h4>{t}Evaluation (optional){/t}</h4>
         <p>{t}Please complete the Post-Course Evaluation. It is accessible via the course page, in the sidebar.{/t}</p>
         <p>{t}Your feedback is greatly appreciated, and will help us to better serve other participants in the future. We ask that you
@@ -650,6 +655,5 @@ alert("Coming Soon!");
       </div>
       <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}End Course{/t}</a></div>
     </div>
-    <!-- need to close module and course --> 
   </div>
 </div>

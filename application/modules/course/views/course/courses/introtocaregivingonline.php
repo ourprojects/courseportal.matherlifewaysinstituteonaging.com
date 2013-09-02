@@ -55,6 +55,7 @@ alert("Coming Soon!");
     <p>{t}36% of U.S. adults care for an adult or multiple adults.{/t}</p>
     <hr />
     <p>{t}Eight in ten caregivers (79%) have access to the Internet. Of those, 88% look online for health information, outpacing other Internet users on every health topic included in our survey, from looking up certain treatments to hospital ratings to end-of-life decisions.{/t}</p>
+    <hr />
     <img src="<?php echo $this->getImagesUrl('intro/piechart.png'); ?>" alt="image" /> </div>
 </div>
 
