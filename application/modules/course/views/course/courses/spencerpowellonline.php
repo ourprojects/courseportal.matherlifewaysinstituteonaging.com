@@ -30,7 +30,7 @@ foreach(array(
 </div>
 <div id="sidebar">
   <div class="box-sidebar one" style="background-color:#FFF;">
-    <h3>{t}Evaluations - Coming Soon!{/t}</h3>
+    <h3>{t}Evaluations{/t}</h3>
     <br />
     <script>
 function myFunction(){
@@ -76,25 +76,19 @@ alert("Coming Soon!");
   </div>
   <div class="box-sidebar one">
     <h3>{t}Certificate of Completion{/t}</h3>
-    <p>{t}You must complete the following Modules before accessing your Certificate of Completion:{/t}</p>
- <ol>
- 	<li>{t}1. Introduction{/t}</li>
-    <li>{t}2. Physical Activity{/t}</li>
-    <li>{t}3. Emotional{/t}</li>
-    <li>{t}4. Intellectual{/t}</li>
- </ol>
-    <p style="text-align:center; font-weight:bold;">{t}Click the Certificate below to download your Certificate of Completion.{/t}</p>
-   <img src="<?php echo $this->getImagesUrl('spencer/ArtworkCertificate.png'); ?>" alt="{t}Certificate of Completion{/t}" onclick="myFunction()">
- 
-    
-  </div>
+    <p>{t}Complete the following Modules before accessing your Certificate of Completion:{/t}</p>
+    <ol>
+      <li>{t}1. Introduction{/t}</li>
+      <li>{t}2. Physical Activity{/t}</li>
+      <li>{t}3. Emotional{/t}</li>
+      <li>{t}4. Intellectual{/t}</li>
+    </ol>
+    <img src="<?php echo $this->getImagesUrl('spencer/ArtworkCertificate.png'); ?>" alt="{t}Certificate of Completion{/t}"> </div>
   <div class="box-sidebar one">
-    <h3>Coming Soon!</h3>
-    <h5 style="text-align:center;">&nbsp;</h5>
-    <p>&nbsp;</p>
-    <hr />
-    <p>{t}Coming Soon!{/t}</p>
-  </div>
+    <h3>{t}SharpBrains.com{/t}</h3>
+    <p><a href="http://sharpbrains.com/blog/2007/07/23/build-your-cognitive-reserve-yaakov-stern/" target="_blank">{t}Build Your Cognitive Reserve: An Interview with Dr. Yaakov Stern{/t}</a></p>
+    <p>{t}Dr. Yaakov Stern is the Divi­sion Leader of the Cog­ni­tive Neu­ro­science Divi­sion of the Sergievsky Cen­ter, and Pro­fes­sor of Clin­i­cal Neu­ropsy­chol­ogy, at the Col­lege of Physi­cians and Sur­geons of Colum­bia Uni­ver­sity, New York.{/t}</p>
+    <img src="<?php echo $this->getImagesUrl('spencer/122423200.png'); ?>" alt="{t}Certificate of Completion{/t}"> </div>
 </div>
 
 <!-- start main content -->
@@ -122,7 +116,7 @@ alert("Coming Soon!");
     <li> <a href="#lesson-5-slide-1" data-fancybox-group="lesson-5" class="teal lesson-5"> {t}Nutritional{/t}</a> <a href="#lesson-5-slide-2" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-3" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-4" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-5" data-fancybox-group="lesson-5" class="hide lesson-5"></a></li>
     <li> <a href="#lesson-6-slide-1" data-fancybox-group="lesson-6" class="teal lesson-6"> {t}Spiritual{/t}</a> <a href="#lesson-6-slide-2" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-3" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-4" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-5" data-fancybox-group="lesson-6" class="hide lesson-6"></a></li>
     <li> <a href="#lesson-7-slide-1" data-fancybox-group="lesson-7" class="teal lesson-7"> {t}Social{/t}</a> <a href="#lesson-7-slide-2" data-fancybox-group="lesson-7" class="hide lesson-7"></a> <a href="#lesson-7-slide-3" data-fancybox-group="lesson-7" class="hide lesson-7"></a> <a href="#lesson-7-slide-4" data-fancybox-group="lesson-7" class="hide lesson-7"></a> <a href="#lesson-7-slide-5" data-fancybox-group="lesson-7" class="hide lesson-7"></a></li>
-    <li> <a href="#lesson-8-slide-1" data-fancybox-group="lesson-8" class="teal lesson-8"> {t}Closing{/t}</a> <a href="#lesson-8-slide-2" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-3" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-4" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-5" data-fancybox-group="lesson-8" class="hide lesson-8"></a></li>
+    <li> <a href="#lesson-8-slide-1" data-fancybox-group="lesson-8" class="teal lesson-8"> {t}Closing{/t}</a> <a href="#lesson-8-slide-2" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-3" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-4" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-5" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-6" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-7" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-8" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-9" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-10" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-11" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-12" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-13" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-14" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-15" data-fancybox-group="lesson-8" class="hide lesson-8"></a> </li>
   </ul>
   <div class="box-white" id="resources">
     <h4> {t}Resources{/t}</h4>
@@ -142,7 +136,8 @@ alert("Coming Soon!");
   </div>
   <div class="box-white" id="developers">
     <h4>{t}Course Contacts{/t}</h4>
-    <h5>{t}Content Designer:{/t} <span class="name">Cate O'Brien</span></h5>
+    <span class="h5">{t}Content Designer:{/t}</span> <span class="name">Cate O'Brien</span>
+    </h5>
     <p>{t}Ms. O’Brien has worked in a research capacity for Mather LifeWays Institute on Aging since 2005. She has been responsible for designing and overseeing large-scale multi-year evaluations for grant-funded projects relating to the field of aging. As a Project Director on grant funded research projects, she has been responsible for forging collaborations with aging services organizations nationwide, and for recruiting older adults into various studies.{/t}</p>
     <span class="h5">{t}Developer:{/t}</span> <span class="name">Jon Woodall</span>
     <p>{t}Mr. Woodall is responsible for all MLIA corporate workforce wellness programs related to design, implementation, publication, and evaluation. Additionally, he seeks new grant funding to support or extend current grants related to corporate workforce wellness programs.{/t}</p>
@@ -190,10 +185,12 @@ alert("Coming Soon!");
     <div class="content">
       <h2 class="flowers">{t}You Tube - The Brain Fitness Program{/t}</h2>
       <hr />
-      <h4>{t}The Brain Fitness Program on PBS{/t}</h4>
-      <p>{t}This short video will provide  you with a first look at some of the exciting new discoveries about  neuroplasticity (the ability of the adult brain to change itself) that form the  foundation of this course.  You may have  already seen this popular PBS special, which helped pave the way for many  incredible advances, including this course, that can help you strengthen your  brain and lower your risk for dementia.{/t} </p>
+      <p>{t}This short video will provide  you with a first look at some of the exciting new discoveries about  neuroplasticity (the ability of the adult brain to change itself) that form the  foundation of this course. You may have  already seen this popular PBS special, which helped pave the way for many  incredible advances, including this course, that can help you strengthen your  brain and lower your risk for dementia.{/t} </p>
       <iframe style="width:480px; height:360px; display:block; margin: 15px auto;" src="//www.youtube.com/embed/WBSNQi4es5k?rel=0" frameborder="0" allowfullscreen></iframe>
-      <p class="forum">{t}Before you begin, please introduce yourself on the Forum to your facilitator and other participants. Click here to access it. Once opened, leave it open as you will post to it throughout this course.{/t}</p>
+      <h4>{t}Forum Postings{/t}</h4>
+      <p>{t}You are going to be asked to participate in many Forum postings throughout each module. Similar to blogging, the Forum postings will be visible to the Facilitator and other course participants. 
+        As shown below, Forum postings will have colored font, along with the Forum icon. Some  postings will already have the questions listed on the Forum, while others need to be created by you.{/t}</p>
+      <p class="forum">{t}Before you begin, please introduce yourself on the Forum to your facilitator and other participants. Click <a href="#" target="_blank">here</a> to access it. Once opened, leave it open as you will post to it throughout this course.{/t}</p>
       <!-- 'url' => Yii::app()->getComponent('phpBB')->getForumUrl(), --> 
       
       <img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}"> </div>
@@ -206,27 +203,20 @@ alert("Coming Soon!");
       <img src="<?php echo $this->getImagesUrl('spencer/121346445.png'); ?>" alt="{t{Image{/t}">
       <h4>{t}Module One - Introduction:{/t}</h4>
       <ol>
-        <li>
-          <h5>{t}Overview{/t}</h5>
-        </li>
+        <li> {t}Overview{/t} </li>
         <ul>
           <li>{t}Brain Health Now and Later{/t}</li>
           <li>{t}Dementia and Cognitive Reserve{/t}</li>
           <li>{t}Brain Plasticity{/t}</li>
           <li>{t}Peak Performance{/t}</li>
         </ul>
-        <li>
-          <h5>{t}Introduction to Program Format{/t}</h5>
-        </li>
-        <li>
-          <h5>{t}Memory Exercise{/t}</h5>
-        </li>
-        <li>
-          <h5>{t}Goal Setting{/t}</h5>
-        </li>
+        <li> {t}Introduction to Program Format{/t} </li>
+        <li> {t}Memory Exercise{/t} </li>
+        <li> {t}Goal Setting{/t} </li>
       </ol>
       <div id="question1" class="question">
-        <p style="text-align: center;"><b>{t}Have you ever taken a online course before?{/t}</b><br />
+        <p><b>{t}Have you ever taken a online course before?{/t}</b></p>
+        <p>
           <select style="text-align: center;">
             <option selected="selected" value="select"> {t}Select{/t} </option>
             <option value="1"> {t}Yes{/t} </option>
@@ -505,7 +495,7 @@ alert("Coming Soon!");
       <h2 class="flowers">{t}Set Some Goals for This Week{/t}</h2>
       <hr />
       <p>{t}To get the most out of this program, it is important that you set goals for yourself to practice the skills you are learning and to pave the way for developing new brain-healthy habits.{/t}</p>
-      <p class="forum">So take a moment to write down two goals for the coming week.  One focused on your lifestyle and one focused on practicing this week’s memory strategy.{/t}</p>
+      <p class="forum">{t}So take a moment to write down two goals for the coming week.  One focused on your lifestyle and one focused on practicing this week’s memory strategy.{/t}</p>
       <p class="forum"><img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}"></p>
       <p>{t}It&rsquo;s  is important that you<strong> set goals that are not too difficult or too vague</strong> – It&rsquo;s better to set a &ldquo;ridiculously simple goal&rdquo; that a you can achieve in  order to feel successful than to set a lofty goal that you will feel bad about  not reaching.  We want to start you on a  cycle of success...{/t}</p>
       <h5>{t}Goals are most effective when they are:{/t} </h5>
@@ -537,21 +527,10 @@ alert("Coming Soon!");
     <div class="content">
       <h2 class="flowers">{t}Recap{/t}</h2>
       <hr />
-      <h4>{t}Forum Postings - WILL POST THESE TO FORUM AND REPLACE TEXT WITH CLOSING THOUGHTS{/t}</h4>
-      <p class="forum">{t}Please answer the following questions on the Forum. You can use the same thread to respond to all of these questions. Attempt to respond to these questions using the knowledge you gained from this module. Please do not use the Internet or other sources to create your responses.{/t}</p>
-      <ul class="forum">
-        <li>{t}Alzheimer’s disease is caused by what?{/t}</li>
-        <li>{t}What is cognitive reserve?{/t}</li>
-        <li>{t}What is brain plasticity?{/t}</li>
-        <li>{t}Do adult brains grow new brain cells?{/t}</li>
-        <li>{t}Can brain pathways re-organize?{/t}</li>
-        <li>{t}What is the term for the brain’s ability to change throughout life?{/t}</li>
-        <li>{t}How will we be working to maximize contributions to our cognitive reserve?{/t}</li>
-        <li>{t}Does a good memory depend on good attention?{/t}</li>
-        <li>{t}How can you improve your attention?{/t}</li>
-        <li>{t}Is multi-tasking more efficient than doing one thing at a time?{/t}</li>
-        <li>{t}What are your goals for this week?{/t}</li>
-      </ul>
+      <img src="<?php echo $this->getImagesUrl('spencer/173262053.png'); ?>" alt="{t}image{/t}">
+      <h4>{t}You Made It!{/t}</h4>
+      <p>{t}Congratulations on completing this first module! You should now be comfortable with the course setup, having had this first experience.{/t}</p>
+      <p class="forum">{t}Please revisit the Forum and respond to the pre-filled question that are listed under the 'Introudction' section. You can use the same thread to respond to all of these questions. Attempt to respond to these questions using the knowledge you gained from this module. Please do not use the Internet or other sources to create your responses.{/t}</p>
       <img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}"> </div>
     <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Complete Module{/t}</a></div>
   </div>
@@ -559,7 +538,7 @@ alert("Coming Soon!");
 <div id="lesson-2">
 <div id="lesson-2-slide-1" class="course-slide">
   <div class="content">
-    <h2 class="flowers">{t}Closing{/t}</h2>
+    <h2 class="flowers">{t}Physical Activity{/t}</h2>
     <hr />
     <img src="<?php echo $this->getImagesUrl('spencer/167585366.png'); ?>" alt="{t}Welcome!{/t}">
     <h4>{t}Coming Soon!{/t}</h4>
@@ -567,10 +546,10 @@ alert("Coming Soon!");
   </div>
   <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Start Course &raquo;{/t}</a></div>
 </div>
-<div id="lesson38">
+<div id="lesson3">
 <div id="lesson-3-slide-1" class="course-slide">
   <div class="content">
-    <h2 class="flowers">{t}Closing{/t}</h2>
+    <h2 class="flowers">{t}Emotional{/t}</h2>
     <hr />
     <img src="<?php echo $this->getImagesUrl('spencer/167585366.png'); ?>" alt="{t}Welcome!{/t}">
     <h4>{t}Coming Soon!{/t}</h4>
@@ -581,7 +560,7 @@ alert("Coming Soon!");
 <div id="lesson-4">
 <div id="lesson-4-slide-1" class="course-slide">
   <div class="content">
-    <h2 class="flowers">{t}Closing{/t}</h2>
+    <h2 class="flowers">{t}Intellectual{/t}</h2>
     <hr />
     <img src="<?php echo $this->getImagesUrl('spencer/167585366.png'); ?>" alt="{t}Welcome!{/t}">
     <h4>{t}Coming Soon!{/t}</h4>
@@ -592,7 +571,7 @@ alert("Coming Soon!");
 <div id="lesson-5">
 <div id="lesson-5-slide-1" class="course-slide">
   <div class="content">
-    <h2 class="flowers">{t}Closing{/t}</h2>
+    <h2 class="flowers">{t}Nutritional{/t}</h2>
     <hr />
     <img src="<?php echo $this->getImagesUrl('spencer/167585366.png'); ?>" alt="{t}Welcome!{/t}">
     <h4>{t}Coming Soon!{/t}</h4>
@@ -603,7 +582,7 @@ alert("Coming Soon!");
 <div id="lesson-6">
 <div id="lesson-6-slide-1" class="course-slide">
   <div class="content">
-    <h2 class="flowers">{t}Closing{/t}</h2>
+    <h2 class="flowers">{t}Spiritual{/t}</h2>
     <hr />
     <img src="<?php echo $this->getImagesUrl('spencer/167585366.png'); ?>" alt="{t}Welcome!{/t}">
     <h4>{t}Coming Soon!{/t}</h4>
@@ -614,7 +593,7 @@ alert("Coming Soon!");
 <div id="lesson-7">
   <div id="lesson-7-slide-1" class="course-slide">
     <div class="content">
-      <h2 class="flowers">{t}Closing{/t}</h2>
+      <h2 class="flowers">{t}Social{/t}</h2>
       <hr />
       <img src="<?php echo $this->getImagesUrl('spencer/167585366.png'); ?>" alt="{t}Welcome!{/t}">
       <h4>{t}Coming Soon!{/t}</h4>
@@ -627,20 +606,238 @@ alert("Coming Soon!");
       <div class="content">
         <h2 class="flowers">{t}Closing{/t}</h2>
         <hr />
-        <img src="<?php echo $this->getImagesUrl('spencer/167585366.png'); ?>" alt="{t}Welcome!{/t}">
-        <h4>{t}Coming Soon!{/t}</h4>
-        <p>&nbsp;</p>
-      </div>
+        <img src="<?php echo $this->getImagesUrl('spencer/82399215.png'); ?>" alt="{t}Welcome!{/t}">
+        <h4>{t}Welcome to the final Module!{/t}</h4>
+        <p>{t}In this module, we are going to review the key points from the last seven modules of this course. We will take a little time to discuss your progress, as well as talk about how to set goals for the future. We will also list some strategies that you can use to maintain a brain healthy lifestyle. This module will be brief, so at the end you will have time to take the post-course evaluation.{/t}</p>
+        <h4>{t}Module Objectives{/t}</h4>
+        <ul>
+          <li>{t}Review content from last seven modules of the course{/t}</li>
+          <li>{t}Discuss progress{/t}</li>
+          <li>{t}Goal setting and strategies to maintain a brain-healthy lifestyle{/t}</li>
+          <li>{t}Post-program survey{/t}</li>
+        </ul>
+        <p class="forum">{t}Considering the past seven modules you have completed, do you feel that you have earned a sense of accomlishment? Post your response to the Forum.{/t}</p>
+        <img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}"> </div>
       <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Start Module &raquo;{/t}</a></div>
     </div>
     <div id="lesson-8-slide-2" class="course-slide">
       <div class="content">
-        <h2 class="flowers">{t}Certificate of Completion &amp; Course Evaluation{/t}</h2>
+        <h2 class="flowers">{t}Brain Health Fundamentals{/t}</h2>
+        <hr />
+        <ul>
+          <li>{t}Dementia is not a normal part of aging{/t}</li>
+          <li>{t}Genetics do not equal destiny{/t}</li>
+          <li>{t}Our lifestyle affects our brain{/t}</li>
+          <li>{t}It is never too late to adopt brain-healthy behaviors!{/t}</li>
+        </ul>
+        <p>{t}Let us review some facts which serve as the foundation for our course. First, unlike slowed reaction time or impaired hearing, dementia is not a normal part of aging. Dementia is a disease, and while it is very common among older adults, it is not something that occurs in everyone who grows to be old.{/t}</p>
+        <p>{t}Next, Alzheimer’s disease is not entirely caused by genetics. Although there are deterministic genes that result in dementia, individuals with these genes represent only a small subset of those with the disease, and typically the onset of this variant of Alzheimer's disease is earlier in the lifespan, typically before age 65. Risk genes contribute to the likelihood that someone will develop dementia as well, however, someone may have the risk gene and not develop dementia. At the beginning of this program, we told you that genes are responsible for only 30% of the risk of contracting late onset Alzheimer’s Disease. Approximately 70% of what causes the disease is environmental, much of which is within our control.  This is why we say that lifestyle is an important factor in brain health.{/t}</p>
+        <p>{t}Fortunately, it is never too late to adopt brain healthy behaviors. Although someone with a lifetime of participation in these behaviors may fare the best, even older adult will gain from them.
+          {/t}</p>
+        <div id="question2" class="question">
+          <p style="text-align: center;"><b>{t}Is Alzheimer’s diseaseentirely caused by genetics?{/t}</b><br />
+            <select name="select" style="text-align: center;">
+              <option selected="selected" value="select"> {t}Select{/t} </option>
+              <option value="0"> {t}Yes{/t} </option>
+              <option value="1"> {t}No{/t} </option>
+            </select>
+          </p>
+          <p class="right-answer hide"> {t}Correct!{/t} </p>
+          <p class="wrong-answer hide"> {t}Alzheimer’s disease is not entirely caused by genetics.{/t} </p>
+        </div>
+        <p>&nbsp;</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
+    <div id="lesson-8-slide-3" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Key Terms{/t}</h2>
+        <hr />
+        <ul>
+          <li>{t}Alzheimer's disease and Dementia{/t}</li>
+          <li>{t}Cognitive reserve{/t}</li>
+          <li>{t}Neuroplasticity{/t}</li>
+        </ul>
+        <h5>{t}What is the difference between Alzheimer’s disease and dementia?{/t}</h5>
+        <p>{t}Dementia is an umbrella term used to describe any type of stable decline in cognitive abilities, severe enough to interrupt a person's ability to function independently.  Dementia describes the observable symptoms of a brain disease or injury. Alzheimer’s disease is a TYPE of dementia.{/t}</p>
+        <p>{t}Alzheimer’s is a disease process – a medical condition – that causes the cognitive changes that produce dementia.{/t}</p>
+        <h5>{t}How do we define cognitive reserve?{/t}</h5>
+        <p>{t}Cognitive reserve is your brain’s reserve of both tissue and abilities that affects your risk for dementia.{/t}
+        <p>{t}In this course, we have compared cognitive reserve to your brain’s retirement account. Individuals who have a lot of Cognitive Reserve are more able to sustain losses before showing symptoms of dementia than people who have do not have much reserve. Cognitive reserve is not about preventing dementia. It is about delaying the onset of symptoms so you can have greater quality of life for a longer time.{/t}
+        <h5>{t}How can we describe neuroplasticity?{/t}</h5>
+        <p>{t}The adult brain can change much more than we ever thought possible.  Adult brains can grow new neurons and existing neurons can modify and grow new connections between each other.  Brains can recover from injury better than we ever thought before as well.{/t}</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
+    <div id="lesson-8-slide-4" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Six areas affecting brain health{/t}</h2>
+        <hr />
+        <img src="<?php echo $this->getImagesUrl('spencer/138024136.png'); ?>" alt="{t}image{/t}">
+        <p>{t}Let us list the six areas we studied that effect brain health:{/t}</p>
+        <ul>
+          <li>{t}Physical activity{/t}</li>
+          <li>{t}Emotional{/t}</li>
+          <li>{t}Intellectual{/t}</li>
+          <li>{t}Nutrition{/t}</li>
+          <li>{t}Spiritual{/t}</li>
+          <li>{t}Social{/t}</li>
+        </ul>
+        <p>{t}These past eight modules, we have helped you learn about how behavior changes in different areas of your life could help you build your cognitive reserve and maintain a healthy brain.{/t}</p>
+        <p style="text-align:center; font-style:italic;">{t}If asked, could you  name all six areas of a brain-healthy lifestyle?{/t}</p>
+        <p>{t}Throughout the course, we have learned how each of these areas affect your risk of developing dementia, and what kinds of behaviors in these areas can promote brain health. Let us review some key points from each of the areas now.{/t}</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
+    <div id="lesson-8-slide-5" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Physical Activity{/t}</h2>
+        <hr />
+        <h4>{t}Key points:{/t}</h4>
+        <ul>
+          <li>{t}Physical activity lowers your lifetime odds of developing Alzheimer's disease{/t}</li>
+          <li>{t}You don’t have to run a marathon!{/t}</li>
+          <li>{t}Walking reduces your risk of cognitive decline.{/t}</li>
+        </ul>
+        <p style="text-align:center; font-style:italic;">{t}What are some easy ways to increase physical activity in your daily life? Post your responses to the Forum.{/t}</p>
+        <ul>
+          <li>{t}There is a good amount of research that shows physical activity helps your brain and protects against cognitive impairment.{/t}</li>
+          <li>{t}People who have a genetic predisposition to Alzheimer's Disease may be helped the most by physical activity.{/t}</li>
+          <li>{t}The degree to which physical activity helps your brain depend on length, type and duration of training sessions (Colcombe and Krammer, 2003).{/t}</li>
+        </ul>
+        <p>{t}But moderate levels of physical activity are enough to reduce the risk of cognitive impairment to some degree.{/t}</p>
+        <p class="forum">{t}During this course, we have asked you to increase your physical activity. Have you been able to do that? How so? What are some easy ways to increase  physical activity in your daily life?  Post your responses to the Forum (examples may include, taking the stairs instead of the elevator or parking farther away from the store).{/t}</p>
+        <img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}"> </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
+    <div id="lesson-8-slide-6" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Emotional{/t}</h2>
+        <hr />
+        <h4>{t}Key points:{/t}</h4>
+        <ul>
+          <li>{t}Chronic stress is toxic for brain cells and can increase your risk of all types of dementia.{/t}</li>
+          <li>{t}Managing stress is an important part of a brain healthy lifestyle.{/t}</li>
+        </ul>
+        <p style="text-align:center; font-style:italic;">{t}What stress management techniques have you found to be most effective for you?{/t}</p>
+        <p>{t}In this module, we learned about the physiology of stress and it’s effect on the body and brain. We know that chronic stress can lead to depression, which has been linked with a higher risk of Alzheimer's disease.
+          Controlling stress is an important component in a brain healthy lifestyle. We talked about several practices, such as mindfulness meditation, that can be used to reduce stress.{/t}</p>
+        <p class="forum">{t}Have you incorporated mindfulness meditation or another stress reduction practice into your life? What stress management techniques have you found to be the most effective for you? Post your responses to the Forum.{/t}</p>
+        <img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}"> </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
+    <div id="lesson-8-slide-7" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Intellectual{/t}</h2>
+        <hr />
+        <h4>{t}Key points:{/t}</h4>
+        <ul>
+          <li>{t}Stimulating your brain can promote cognitive reserve.{/t}</li>
+          <li>{t}The best way to stimulate your brain is to try new things that are really out of character for you.{/t}</li>
+        </ul>
+        <p style="text-align:center; font-style:italic;">{t}What does it mean to diversify your cognitive investments?{/t}</p>
+        <p>{t}In this module we learned how intellectual stimulation promotes cognitive reserve. We also talked about how, while doing crossword puzzles everyday is good, you can really stretch your brain by trying to learn something new. We also talked about diversifying our cognitive investments.{/t}</p>
+        <p class="forum">{t}What does it mean to diversify your cognitive investments? Post your response to the Forum.{/t}</p>
+        <img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}"> </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
+    <div id="lesson-8-slide-8" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Nutritional{/t}</h2>
+        <hr />
+        <h4>{t}Key points:{/t}</h4>
+        <ul>
+          <li>{t}The food we eat affects our brains.{/t}</li>
+          <li>{t}We can incorporate brain healthy food choices into our diet.{/t}</li>
+        </ul>
+        <p style="text-align:center; font-style:italic;">{t}What kinds of foods can we eat to help our brains?{/t}</p>
+        <p>{t}In this module, we learned how good nutrition can benefit our brains. Perhaps most importantly, we learned how to make healthy food choices that can promote cognitive health.{/t}</p>
+        <p class="forum">Can you remember what kinds of foods are healthy for your brain? Without searching the Internet, post your response to the Forum (examples foods can include: healthy salad dressing, nuts, fish, tomatoes, poultry, cruciferous vegetables, fruits, dark green leafy vegetables, foods rich in omega 3’s and anti-oxidants). </p>
+        <img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}">
+        <p class="forum">{t}What foods should we avoid because they are not good for our brain (examples can include: high fat dairy products, red meats, organ meats, butter, fried foods, too many sweets)? Can you share how you have been able to adopt more brain-healthy foods as part of your diet? Post your responses to the Forum.{/t}</p>
+        <img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}"></div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
+    <div id="lesson-8-slide-9" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Spiritual{/t}</h2>
+        <hr />
+        <h4>{t}Key points:{/t}</h4>
+        <ul>
+          <li>{t}Research has demonstrated that people who participate in spiritual practices experience various benefits to their health.{/t}</li>
+          <li>{t}There are a multitude of practices that could be considered spiritual.{/t}</li>
+        </ul>
+        <p style="text-align:center; font-style:italic;">{t}What types of spiritual practices are good for your health?{/t}</p>
+        <p>{t}In this module, we discussed different types of spiritual practices, their benefits, and how they help us. For example, meditation, Judeo-Christian practice and other spiritual practices have been shown to have positive health outcomes. We also learned some of the reasons why this might be the case.{/t}</p>
+        <p class="forum">{t}Can you describe some of the reasons spiritual practices have benefits for people? Post your response to the Forum (examples may include: social support, connection to a higher power, reduced stress, healthy lifestyle, gatitude, hopefulness and optimism, attention training, forgiveness)?{/t}</p>
+        <img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}"> </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
+    <div id="lesson-8-slide-10" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Social{/t}</h2>
+        <hr />
+        <h4>{t}Key points:{/t}</h4>
+        <ul>
+          <li>{t}Older adults who are socially active have better cognitive function, less cognitive decline, and are less likely to develop Alzheimer's disease and other dementias.{/t}</li>
+          <li>{t}One benefits of social activity is lowered stress.{/t}</li>
+        </ul>
+        <p style="text-align:center; font-style:italic;">{t}Can you think of others?{/t}</p>
+        <p>{t}In this module we learned how a socially active lifestyle can benefit our brains. Older adults who are socially active have better cognitive function, less cognitive decline, and are less likely to develop Alzheimer's disease and other dementias. They are also less likely to develop a disability. Social activity also has many immediate benefits. One of these is lowered stress.{/t}</p>
+        <p class="forum">{t}What are some other benefits of social activity (examples may include: positive mood, provides social roles, purpose in life, keeps seniors from ‘disengaging,' humans are ‘social creatures,' friends/family can notice unhealthy symptoms and behaviors, some social activities challenge us physically, it is a fun and efficient form of brain exercise – works the whole brain)? Post your response to the Forum.{/t}</p>
+        <img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}"> </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
+    <div id="lesson-8-slide-11" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Goal Setting{/t}</h2>
+        <hr />
+        <ul>
+          <li>{t}Identify at least one long term goal{/t}</li>
+          <li>{t}Create short term goals/action steps{/t}</li>
+          <ul>
+            <li>{t}Are your goals realistic and attainable?{/t}</li>
+            <li>{t}Do they include the FITT principle?{/t}</li>
+            <li>{t}Is it something you will enjoy?{/t}</li>
+          </ul>
+          <li>{t}Do you have a way of tracking your activity?{/t}</li>
+          <li>{t}Have you chosen a way to reward yourself?{/t}</li>
+        </ul>
+        <p>{t}Let us talk about how to set long-term goals. This should look somewhat familiar to you. In an earlier module, we talked about goal setting, and how to create short term goals and action steps. After you have chosen a long-term goal, determine how you can break that down into shorter term action steps. Ask yourself:{/t}</p>
+        <ul>
+          <li>{t}Are your goals realistic and attainable?{/t}</li>
+          <li>{t}Do they include the FITT principle?{/t}</li>
+          <li>{t}Is it something you will enjoy?{/t}</li>
+        </ul>
+        <p>{t}Tracking your activity can be helpful to reaching long and short term goals, as can rewarding yourself. Determine what kind of larger reward you will give yourself for reaching your long-term goal.{/t}</p>
+        <p class="forum">{t}On the Forum, please share a long-term goal, how you have broken that goal into action steps and how you will track your progress and reward yourself.{/t}</p>
+        <img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}"> </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
+    <div id="lesson-8-slide-12" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Long-Term Strategies{/t}</h2>
+        <hr />
+        <ul>
+          <li>{t}Track your progress{/t}</li>
+          <li>{t}Find a friend to work toward one or more of your goals with you{/t}</li>
+        </ul>
+        <p style="text-align:center; font-style:italic;">{t}What are some other strategies that might help you?{/t}</p>
+        <p>{t}Lastly, let us talk about a couple of long-term strategies that will help you meet your long-term goal of adopting a brain-healthy lifestyle. One way to keep on track is to record your progress. You can continue to use the log sheet we gave you, or you can record your activities in a journal or use another tool.  There are also free online tools like www.myfitnesspal.com, that can help you to track your food choices and exercise.{/t}</p>
+        <p class="forum">{t}Share any other  strategy to reach your long-term goals on the Forum. Thinking about each of the six areas we discussed: nutrition, physical activity, emotional, spiritual, social and intellectual – also inlcude in your posting if you will use any strategies specific to any of these areas to help you reach your goals.{/t}</p>
+        <img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}"> </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
+    <div id="lesson-8-slide-13" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Congratulations!{/t}</h2>
         <hr />
         <img src="<?php echo $this->getImagesUrl('intro/160382234.png'); ?>" alt="{t}image{/t}">
+        <h4 style="text-align:center;">You’re on your way to a brainhealthy life!</h4>
+        <p>{t}Congratulations on completing the Spencer Powell  Brain Fitness Course! You know have the knowledge and tools to lead a  brain-healthy life. We hope that you will continue to strive to make healthy  choices in each of the six areas we&rsquo;ve discussed. We are available for any  questions you might have as you move forward.{/t}</p>
         <p>{t}We have really enjoyed getting to know you, and hope this course was helpful. Please post any final thoughts, questions, or concerns to the Forum before you close out this final module. Best wishes as you carry on in the future!{/t}</p>
         <h4>{t}Evaluation (optional){/t}</h4>
-        <p>{t}Please complete the Post-Course Evaluation. It is accessible via the course page, in the sidebar.{/t}</p>
+        <p>{t}Please complete the Post-Course Evaluation. It is accessible via the course page, in the right sidebar.{/t}</p>
         <p>{t}Your feedback is greatly appreciated, and will help us to better serve other participants in the future. We ask that you
           complete it before you exit this course portal. You do not have to include your name on the evaluation. It is completely
           confidential.{/t}</p>
