@@ -1,19 +1,25 @@
+<?php 
+$clientScript = Yii::app()->getClientScript();
+$theme = Yii::app()->getTheme();
+$language = Yii::app()->getLanguage();
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo Yii::app()->getLanguage(); ?>" lang="<?php echo Yii::app()->getLanguage(); ?>">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $language; ?>" lang="<?php echo $language; ?>">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=<?php echo Yii::app()->charset; ?>" />
-	<meta name="language" content="<?php echo Yii::app()->getLanguage(); ?>" />
-	<link rel="shortcut icon" href="<?php echo Yii::app()->getTheme()->getImagesUrl('favicon.ico'); ?>" />
+	<meta name="language" content="<?php echo $language; ?>" />
+	<link rel="shortcut icon" href="<?php echo $theme->getImagesUrl('favicon.ico'); ?>" />
 	<!-- blueprint CSS framework -->
-	<?php echo CHtml::cssFile(Yii::app()->getTheme()->getStylesUrl('screen.css'), 'screen, projection'); ?>
-	<?php echo CHtml::cssFile(Yii::app()->getTheme()->getStylesUrl('print.css'), 'print'); ?>
 	<!--[if lt IE 8]>
-		<?php echo CHtml::cssFile(Yii::app()->getTheme()->getStylesUrl('ie.css'), 'screen, projection'); ?>
-		<![endif]-->
-
-	<?php echo CHtml::cssFile(Yii::app()->getTheme()->getStylesUrl('form.css')); ?>
-	<?php echo CHtml::cssFile(Yii::app()->getTheme()->getStylesUrl('main.css')); ?>
-	<?php Yii::app()->getClientScript()->registerScriptFile(Yii::app()->getTheme()->getScriptsUrl('main.js'), CClientScript::POS_HEAD); ?>
+	<?php echo CHtml::cssFile($theme->getStylesUrl('ie.css'), 'screen, projection'); ?>
+	<![endif]-->
+	<?php
+	$clientScript->registerCssFile($theme->getStylesUrl('screen.css'), 'screen, projection');
+	$clientScript->registerCssFile($theme->getStylesUrl('print.css'), 'print');
+	$clientScript->registerCssFile($theme->getStylesUrl('form.css'));
+	$clientScript->registerCssFile($theme->getStylesUrl('main.css'));
+	$clientScript->registerScriptFile($theme->getScriptsUrl('main.js'), CClientScript::POS_HEAD); 
+	?>
 	<title>
 		<?php
 		$this->pageTitle = t(Yii::app()->name);
@@ -36,12 +42,12 @@
 	<?php $this->widget('ext.LDGoogleAnalytics.LDGoogleAnalytics', Yii::app()->params['googleAnalytics']); ?>
 	<!-- BEGIN PAGE -->
 	<div id="page">
-		<div id="flowersLeft" style="background-image: url('<?php echo Yii::app()->getTheme()->getImagesUrl('bgleft.png'); ?>');"></div>
-		<div id="flowersRight" style="background-image: url('<?php echo Yii::app()->getTheme()->getImagesUrl('bgright.png'); ?>');"></div>
+		<div id="flowersLeft" style="background-image: url('<?php echo $theme->getImagesUrl('bgleft.png'); ?>');"></div>
+		<div id="flowersRight" style="background-image: url('<?php echo $theme->getImagesUrl('bgright.png'); ?>');"></div>
 		<!-- BEGIN HEADER -->
 		<div id="header" class="container">
 			<div class="logo">
-				<img src="<?php echo Yii::app()->getTheme()->getImagesUrl('logo.png'); ?>" alt="{t}Logo{/t}" />
+				<img src="<?php echo $theme->getImagesUrl('logo.png'); ?>" alt="{t}Logo{/t}" />
 			</div>
 			<div id="site-title">
 				<?php echo t(Yii::app()->name); ?>
@@ -123,23 +129,23 @@
 		</div>
 		<!-- END CONTENT -->
 		<!-- BEGIN FOOTER -->
-		<div id="footer" style="background-image: url('<?php echo Yii::app()->getTheme()->getImagesUrl('bg-foot.jpg'); ?>');">
+		<div id="footer" style="background-image: url('<?php echo $theme->getImagesUrl('bg-foot.jpg'); ?>');">
 			<div class="container">
 				<div class="logo">
 					<a href="http://www.matherlifewaysinstituteonaging.com/" target="_blank" title="{t}Mather LifeWays Institute on Aging{/t}">
-						<img src="<?php echo Yii::app()->getTheme()->getImagesUrl('logo-footer.jpg'); ?>" alt="{t}Logo{/t}" />
+						<img src="<?php echo $theme->getImagesUrl('logo-footer.jpg'); ?>" alt="{t}Logo{/t}" />
 					</a>
 				</div>
 				<div id="icons">
 					<a class="twitter" href="http://twitter.com/aginginaction" title="{t}Twitter{/t}" rel="nofollow" target="_blank"
-						style="background-image: url('<?php echo Yii::app()->getTheme()->getImagesUrl('icon-twitter.png'); ?>');
+						style="background-image: url('<?php echo $theme->getImagesUrl('icon-twitter.png'); ?>');
 						-webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; ">
 					</a>
 					<a class="linkedin" href="http://www.linkedin.com/in/kenadams60201" title="{t}LinkedIn{/t}" rel="nofollow" target="_blank"
-						style="background-image: url('<?php echo Yii::app()->getTheme()->getImagesUrl('icon-linkedin.png'); ?>');">
+						style="background-image: url('<?php echo $theme->getImagesUrl('icon-linkedin.png'); ?>');">
 					</a>
 					<a class="youtube" href="http://www.youtube.com/matherlifeways" title="{t}YouTube{/t}" rel="nofollow" target="_blank"
-						style="background-image: url('<?php echo Yii::app()->getTheme()->getImagesUrl('icon-youtube.png'); ?>');">
+						style="background-image: url('<?php echo $theme->getImagesUrl('icon-youtube.png'); ?>');">
 					</a>
 				</div>
 				<div id="copyright">
