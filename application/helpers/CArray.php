@@ -316,7 +316,7 @@ class CArray {
 	public static function array_flatten(array $array, $flattened = array()) {
 		foreach($array as $key => $val) {
 			if(is_array($val))
-				$flattened = array_flatten($val, $flattened);
+				$flattened = self::array_flatten($val, $flattened);
 			else
 				array_push($flattened, $key, $val);
 		}
