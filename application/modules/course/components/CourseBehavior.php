@@ -20,7 +20,7 @@ class CourseBehavior extends CActiveRecordBehavior
 		$this->updateCourseUser('update');
 	}
 	
-	protected function afterDelete()
+	protected function afterDelete($event)
 	{
 		$this->updateCourseUser();
 	}

@@ -244,11 +244,8 @@ class TViewSource extends CApplicationComponent
 		
 		if($language === null)
 			$language = Yii::app()->getLanguage();
-		
-		if($context instanceof CWidget)
-			$context = $context->getController();
 
-		$translatedPath = $this->translateView($context->getRoute(), $realPath, $language);
+		$translatedPath = $this->translateView($context instanceof CController ?  $context->getRoute() : $context->getController()->getRoute(), $realPath, $language);
 
 		if($this->enableProfiling)
 			Yii::endProfile(self::ID.'.translate()', self::ID);
