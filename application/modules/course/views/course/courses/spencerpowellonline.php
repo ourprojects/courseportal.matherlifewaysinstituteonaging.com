@@ -536,15 +536,93 @@ alert("Coming Soon!");
   </div>
 </div>
 <div id="lesson-2">
-<div id="lesson-2-slide-1" class="course-slide">
-  <div class="content">
-    <h2 class="flowers">{t}Physical Activity{/t}</h2>
-    <hr />
-    <img src="<?php echo $this->getImagesUrl('spencer/167585366.png'); ?>" alt="{t}Welcome!{/t}">
-    <h4>{t}Coming Soon!{/t}</h4>
-    <p>&nbsp;</p>
+  <div id="lesson-2-slide-1" class="course-slide">
+    <div class="content">
+      <h2 class="flowers">{t}Physical Activity{/t}</h2>
+      <hr />
+      <img src="<?php echo $this->getImagesUrl('spencer/200069246-001.png'); ?>" alt="{t}Welcome!{/t}">
+      <h4>{t}Module Outline{/t}</h4>
+      <ul>
+        <li>{t}Check-in and Review{/t}</li>
+        <li>{t}Benefits of Physical Activity{/t}</li>
+        <li>{t}Memory Exercise{/t}</li>
+        <li>{t}Goal Setting{/t}</li>
+      </ul>
+    </div>
+    <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Start Course &raquo;{/t}</a></div>
   </div>
-  <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Start Course &raquo;{/t}</a></div>
+  <div id="lesson-2-slide-2" class="course-slide">
+    <div class="content">
+      <h2 class="flowers">{t}Check-in{/t}</h2>
+      <hr />
+      <ul>
+        <li>{t}How did your week go?{/t}
+          <ul>
+            <li>{t}Did you think about anything you learned last week?{/t}</li>
+            <li>{t}Did you log your activities?{/t}</li>
+            <li>{t}Any questions about the CR Contribution Logs?{/t}</li>
+          </ul>
+        </li>
+        <li>{t}What is Cognitive Reserve?{/t}
+          <ul>
+            <li>{t}How can knowing about this theory help you?{/t}</li>
+          </ul>
+        </li>
+        <li>{t}What was the Memory Strategy that you learned last week?{/t}
+          <ul>
+            <li>{t}Did you have a chance to use it?{/t}</li>
+          </ul>
+        </li>
+      </ul>
+      <h5>{t}Last week’s memory strategy was:{/t}</h5>
+      <ul>
+        <li><strong>Improving Attention to Improve Memory</strong></li>
+        <li>Look Up and Around
+          <ul>
+            <li>Put in the Effort</li>
+          </ul>
+        </li>
+        <li>Stay “Present”</li>
+        <li>Get your Hearing or Vision Checked</li>
+        <li>Manage Your Environment
+          <ul>
+            <li>Reduce <strong>Distractions</strong> and <strong>Interruptions</strong></li>
+          </ul>
+        </li>
+        <li><strong>Do</strong> One Thing at a Time
+          <ul>
+            <li>Multi-tasking is a Myth!</li>
+            <li>Multi-tasking can be toxic to the brain</li>
+          </ul>
+        </li>
+        <li>Bribe yourself</li>
+        <li>Get Plenty of Rest
+          <ul>
+            <li>May need to see a sleep doctor</li>
+            <li>Resting your when you’re awake</li>
+          </ul>
+        </li>
+        <li>Manage your Emotions</li>
+      </ul>
+      <p class="forum">{t}Please imagine and generate scenarios where you might memory strategies.  And remember, memory strategies are most effective when they are practiced. Post your scenarios to the Forum.{/t}</p>
+      <img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}"> </div>
+    <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+  </div>
+  <div id="lesson-2-slide-3" class="course-slide">
+    <div class="content">
+      <h2 class="flowers">{t}Investing in Brain Health{/t}</h2>
+      <hr />
+      <p>{t}In the last module we talked about actively investing in our brain reserve (or Cognitive Reserve / Brain 401K) – Maximizing our contributions to our brain, which can help us build up a larger reserve in order to ward off dementia.{/t}</p>
+      <p class="forum">{t}What activities come to mind when you think of investing in your brain reserve? Post your response to the Forum.{/t}</p>
+      <img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}">
+      <p>{t}In the last module, about the autopsy study where people had resisted the clinical effects of Alzheimer’s disease growing in their brains, there were three main lifestyle behaviors that distinguished these people from people who had lost their independence.  They had been more active during their lives in a few key ways.{/t}</p>
+      <p class="forum">{t}On the Forum, list  the main ways they had been more active?{/t}</p>
+      <img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}">
+      <p>{t}We are going to talk today about how physical activity seems to be a key component of brain health. In fact, it may be one of the best things you can do for your brain.
+        {/t}</p>
+    </div>
+    <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Complete Module{/t}</a></div>
+  </div>
 </div>
 <div id="lesson3">
 <div id="lesson-3-slide-1" class="course-slide">
@@ -580,26 +658,62 @@ alert("Coming Soon!");
   <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Start Module &raquo;{/t}</a></div>
 </div>
 <div id="lesson-6">
-<div id="lesson-6-slide-1" class="course-slide">
-  <div class="content">
-    <h2 class="flowers">{t}Spiritual{/t}</h2>
-    <hr />
-    <img src="<?php echo $this->getImagesUrl('spencer/167585366.png'); ?>" alt="{t}Welcome!{/t}">
-    <h4>{t}Coming Soon!{/t}</h4>
-    <p>&nbsp;</p>
-  </div>
-  <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Start Module &raquo;{/t}</a></div>
-</div>
-<div id="lesson-7">
-  <div id="lesson-7-slide-1" class="course-slide">
+  <div id="lesson-6-slide-1" class="course-slide">
     <div class="content">
-      <h2 class="flowers">{t}Social{/t}</h2>
+      <h2 class="flowers">{t}Spiritual{/t}</h2>
       <hr />
       <img src="<?php echo $this->getImagesUrl('spencer/167585366.png'); ?>" alt="{t}Welcome!{/t}">
       <h4>{t}Coming Soon!{/t}</h4>
       <p>&nbsp;</p>
     </div>
     <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Start Module &raquo;{/t}</a></div>
+  </div>
+  <div id="lesson-7">
+    <div id="lesson-7-slide-1" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Social{/t}</h2>
+        <hr />
+        <img src="<?php echo $this->getImagesUrl('spencer/167585366.png'); ?>" alt="{t}Welcome!{/t}">
+        <h4>{t}Module Outline{/t}</h4>
+        <ul>
+          <li>{t}Review/Discuss content from last week{/t}</li>
+          <li>{t}Overview of Social Activity and Healthy Brains{/t}</li>
+          <li>{t}Examine ways in which social activity can help our brains{/t}</li>
+          <li>{t}Social activities you can do{/t}</li>
+          <li>{t}Goal Setting/Wrap-up{/t}</li>
+        </ul>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Start Module &raquo;{/t}</a></div>
+    </div>
+    <div id="lesson-7-slide-2" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Welcome to Module Seven!{/t}</h2>
+        <hr />
+        <p><img src="<?php echo $this->getImagesUrl('spencer/120133005.png'); ?>" alt="{t}Image{/t}"></p>
+        <p>{t}In the last module we discussed the impact of spirituality on longevity and brain health.{/t} </p>
+        <p class="forum">{t}How did you do with your goals from last week? Those of you who met your goals, are there any tips or pointers you could share with the class about how you went about those goals? Those of you who had trouble in the last module, was there a particular barrier that you encountered?  Do you have a concrete plan for overcoming that barrier and achieving your goals for the coming week. Post your responses to the Forum.{/t} </p>
+        <img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}"> </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a></div>
+    </div>
+    <div id="lesson-7-slide-3" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}More Socially Active Adults{/t}</h2>
+        <hr />
+        <p><img src="<?php echo $this->getImagesUrl('spencer/here.png'); ?>" alt="{t}Image{/t}"></p>
+        <ol>
+          <li>{t}
+            Have better cognitive function{/t}</li>
+          <li>{t}Experience less cognitive decline{/t}</li>
+          <li>{t}Are less likely to develop Alzheimer’s disease and other dementias{/t}</li>
+          <li>{t}Are less likely to develop disabilities {/t}</li>
+        </ol>
+        <p>{t}Ask: How many of you would consider yourselves socially active? How many of you have heard that being socially active is good for your brain?{/t}</p>
+        <p>{t}We are going to talk today about how social activities may be a key component of brain health. The great news for this module is that we are going to be talking about how doing things with other people that you consider FUN is actually good for you!{/t}</p>
+        <p>{t}Scientists have shown repeatedly that social engagement, meaning participating in social activities and keeping a robust social network, is associated with many beneficial outcomes in later life in terms of preserving our memory and thinking abilities. The majority of these findings come from observational studies, in which hundreds or thousands of older persons without cognitive impairments are followed over time to see who develops problems like Alzheimer’s disease, other dementias, or declines in their cognitive function. Such studies have shown that the more socially active seniors tend to have better cognitive function and experience less cognitive decline as they age. One study showed that in over a thousand people aged 65 and older, the people in the top 10% of social activity experienced an average rate of cognitive decline that was 70% less than the 10% least socially active. More socially active people are also less likely to develop Alzheimer’s disease or other forms of dementia, and they are less likely to develop disabilities and loss of independence.
+          {/t}</p>
+      </div>
+      <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Complete Module{/t}</a></div>
+    </div>
   </div>
   <div id="lesson-8">
     <div id="lesson-8-slide-1" class="course-slide">
