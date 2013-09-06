@@ -7,7 +7,7 @@
  * @property integer $id
  * @property integer $user_id
  * @property integer $activity_id
- * @property string $datetime
+ * @property integer $completed
  * @property string $comment
  *
  * The followings are the available model relations:
@@ -18,6 +18,8 @@
  */
 class UserActivity extends CActiveRecord
 {
+	
+	public $dateFormat = 'm/d/Y';
 	
 	/**
 	 * Returns the static model of the specified AR class.
@@ -43,14 +45,14 @@ class UserActivity extends CActiveRecord
 	public function rules()
 	{
 		return array(
-			array('user_id, activity_id, datetime, comment', 'required'),
-			array('user_id, activity_id', 'numerical', 'integerOnly' => true),
+			array('user_id, activity_id, comment', 'required'),
+			array('completed', 'default', 'setOnEmpty' => true, 'value' => time(), 'except' => 'search'),
+			array('user_id, activity_id, completed', 'numerical', 'integerOnly' => true),
 			array('user_id', 'exist', 'attributeName' => Yii::app()->getModule(CourseUser::COURSE_MODULE_NAME)->userId, 'className' => 'CourseUser', 'except' => 'search'),
 			array('activity_id', 'exist', 'attributeName' => 'id', 'className' => 'Activity', 'except' => 'search'),
 			array('comment', 'length', 'max' => 65535),
-			array('datetime', 'date', 'format' => 'yyyy-M-d H:m:s'),
-				
-			array('id, user_id, activity_id, datetime, comment', 'safe', 'on' => 'search'),
+			array('dateCompleted', 'safe'),
+			array('id, user_id, activity_id, completed, comment', 'safe', 'on' => 'search'),
 		);
 	}
 
@@ -64,6 +66,8 @@ class UserActivity extends CActiveRecord
 			'user' => array(self::BELONGS_TO, 'CourseUser', 'user_id'),
 			'userActivityDimensions' => array(self::HAS_MANY, 'UserActivityDimension', 'user_activity_id'),
 			'dimensions' => array(self::MANY_MANY, 'Dimension', UserActivityDimension::model()->tableName().'(user_activity_id, dimension_id)'),
+				
+			'crTotal' => array(self::STAT, 'Activity', 'id', 'select' => 'SUM('.Activity::model()->getDbConnection()->quoteColumnName(Activity::model()->getTableAlias().'.cr').')')
 		);
 	}
 
@@ -77,8 +81,11 @@ class UserActivity extends CActiveRecord
 			'id' => t('ID'),
 			'user_id' => t('User ID'),
 			'activity_id' => t('Activity ID'),
-			'datetime' => t('Date'),
+			'completed' => t('Completed On'),
 			'comment' => t('Comment'),
+				
+			// Virtual attributes
+			'dateCompleted' => t('Completed On'),
 				
 			// relation attributes 
 			'activity' => t('Activity'),
@@ -101,12 +108,73 @@ class UserActivity extends CActiveRecord
 		$criteria->compare($db->quoteColumnName($tableAlias.'.id'), $this->id);
 		$criteria->compare($db->quoteColumnName($tableAlias.'.user_id'), $this->user_id);
 		$criteria->compare($db->quoteColumnName($tableAlias.'.activity_id'), $this->activity_id);
-		$criteria->compare($db->quoteColumnName($tableAlias.'.datetime'), $this->datetime, true);
+		$criteria->compare($db->quoteColumnName($tableAlias.'.completed'), $this->completed);
 		$criteria->compare($db->quoteColumnName($tableAlias.'.comment'), $this->comment, true);
 		
 		return new CActiveDataProvider($this, array(
 			'criteria' => $criteria,
 		));
+	}
+	
+	public function dimension($dimensionId)
+	{
+		$this->getDbCriteria()->mergeWith(array('with' => array('userActivityDimensions' => array('condition' => $this->getDbConnection()->quoteColumnName('userActivityDimensions.dimension_id').'=:dimension_id', 'params' => array(':dimension_id' => $dimensionId)))));
+		return $this;
+	}
+	
+	public function completed($date = null, $range = null)
+	{
+		if(is_int($date))
+		{
+			$time = $date;
+		}
+		elseif(is_string($date))
+		{
+			$time = strtotime($date);
+		}
+		else
+		{
+			$time = time();
+		}
+		
+		$criteria = array('condition' => '('.$this->getDbConnection()->quoteColumnName($this->getTableAlias().'.completed').' BETWEEN :start AND :end)');
+		switch($range)
+		{
+			case 'day':
+				$criteria['params'] = array(':start' => mktime(0, 0, 0, date('n', $time), date('j', $time), date('Y', $time)), ':end' => mktime(0, 0, 0, date('n', $time), date('j', $time) + 1, date('Y', $time)));
+				break;
+			case 'week':
+				$criteria['params'] = array(':start' => mktime(0, 0, 0, date('n', $time), date('j', $time) - (6 - (date('w', $time) % 6)), date('Y', $time)), ':end' => mktime(0, 0, 0, date('n', $time) + 1, date('j', $time) + (date('w', $time) % 6), date('Y', $time)));
+				break;
+			case 'month':
+				$criteria['params'] = array(':start' => mktime(0, 0, 0, date('n', $time), 0, date('Y', $time)), ':end' => mktime(0, 0, 0, date('n', $time) + 1, 0, date('Y', $time)));
+				break;
+			case 'year':
+				$criteria['params'] = array(':start' => mktime(0, 0, 0, 0, 0, date('Y', $time)), ':end' => mktime(0, 0, 0, 0, 0, date('Y', $time) + 1));
+				break;
+			default:
+				$criteria['params'] = array(':start' => $time, ':end' => $time);
+				break;
+		}
+		$this->getDbCriteria()->mergeWith($criteria);
+		return $this;
+	}
+	
+	public function getDateCompleted()
+	{
+		return isset($this->completed) ? date($this->dateFormat, $this->completed) : null;
+	}
+	
+	public function setDateCompleted($date)
+	{
+		if(is_int($date))
+		{
+			$this->completed = $date;
+		}
+		elseif(is_string($date))
+		{
+			$this->completed = strtotime($date);
+		}
 	}
 	
 }

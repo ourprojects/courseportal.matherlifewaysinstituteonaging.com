@@ -33,8 +33,9 @@ class CourseUser extends CActiveRecord
 	{
 		if(Yii::app()->getModule(self::COURSE_MODULE_NAME) === null)
 		{
-			throw new CException(t('Course module has not been configured or is disabled.'));
+			throw new CException(t('Course module could not be found. It may not be configured or is disabled.'));
 		}
+		parent::init();
 	}
 
 	/**
@@ -93,6 +94,26 @@ class CourseUser extends CActiveRecord
 		));
 		return $this;
 	}
+	
+	public function getId()
+	{
+		return $this->{$this->getIdColumnName()};
+	}
+	
+	public function getName()
+	{
+		return $this->{$this->getNameColumnName()};
+	}
+	
+	public function getIdColumnName()
+	{
+		return Yii::app()->getModule(self::COURSE_MODULE_NAME)->userId;
+	}
+	
+	public function getNameColumnName()
+	{
+		return Yii::app()->getModule(self::COURSE_MODULE_NAME)->userName;
+	}
 
 	/**
 	 * @return array customized attribute labels (name=>label)
@@ -101,8 +122,8 @@ class CourseUser extends CActiveRecord
 	{
 		return array(
 			// column attributes
-			Yii::app()->getModule(self::COURSE_MODULE_NAME)->userId   => t('ID'),
-			Yii::app()->getModule(self::COURSE_MODULE_NAME)->userName => t('Username'),
+			$this->getIdColumnName()   => t('ID'),
+			$this->getNameColumnName() => t('Username'),
 				
 			// relation attributes
 			'userCourses' 	 			 => t('User Courses'),
@@ -124,8 +145,8 @@ class CourseUser extends CActiveRecord
 
 		$tableAlias = $this->getTableAlias();
 		$db = $this->getDbConnection();
-		$criteria->compare($db->quoteColumnName($tableAlias.'.'.Yii::app()->getModule(self::COURSE_MODULE_NAME)->userId), $this->{Yii::app()->getModule(self::COURSE_MODULE_NAME)->userId});
-		$criteria->compare($db->quoteColumnName($tableAlias.'.'.Yii::app()->getModule(self::COURSE_MODULE_NAME)->userName), $this->{Yii::app()->getModule(self::COURSE_MODULE_NAME)->userName}, true);
+		$criteria->compare($db->quoteColumnName($tableAlias.'.'.$this->getIdColumnName()), $this->getId());
+		$criteria->compare($db->quoteColumnName($tableAlias.'.'.$this->getNameColumnName()), $this->getName(), true);
 
 		return new CActiveDataProvider($this, array(
 				'criteria' => $criteria,

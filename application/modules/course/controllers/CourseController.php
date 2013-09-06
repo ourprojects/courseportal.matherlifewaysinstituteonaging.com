@@ -8,8 +8,9 @@ class CourseController extends CoursePortalController
 		return array_merge(
 				parent::accessRules(),
 				array(
+						array('allow'),
 					array('allow',
-							'actions' => array('index, notRegistered'),
+							'actions' => array('index, notRegistered', 'test, spencerpowell.ajax'),
 							'users' => array('@'),
 					),
 					array('deny'),
@@ -19,13 +20,15 @@ class CourseController extends CoursePortalController
 
 	public function actions()
 	{
+		$actions = array(
+			'spencerpowell.' => 'course.widgets.SpencerPowell.UserActivityWidget'
+		);
 		$courses = Yii::app()->getDb()->createCommand()->select('name')->from(Course::model()->tableName())->queryColumn();
-		$courseActions = array();
 		foreach($courses as $course)
 		{
-			$courseActions[$course] = array('class' => 'course.components.CourseViewAction', 'defaultView' => $course, 'basePath' => 'courses');
+			$actions[$course] = array('class' => 'course.components.CourseViewAction', 'defaultView' => $course, 'basePath' => 'courses');
 		}
-		return array_merge(parent::actions(), $courseActions);
+		return array_merge(parent::actions(), $actions);
 	}
 
 	public function createCourseUrl($course)
@@ -38,12 +41,17 @@ class CourseController extends CoursePortalController
 		$course = Course::model()->findByPk($id);
 		if($course === null)
 			throw new CHttpException(404, t('Course not found'));
-		$this->render('pages/notRegistered', array('course' => $course));
+		$this->render('notRegistered', array('course' => $course));
 	}
 
 	public function actionIndex()
 	{
-		$this->render('pages/index', array('courses' => Course::model()->with('objectives')->findAll(array('order' => 't.rank'))));
+		$this->render('index', array('courses' => Course::model()->with('objectives')->findAll(array('order' => 't.rank'))));
+	}
+	
+	public function actionTest()
+	{
+		$this->render('test');
 	}
 
 }

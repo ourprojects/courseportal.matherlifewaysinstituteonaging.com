@@ -83,7 +83,7 @@ class Activity extends CActiveRecord
 			'name' => t('Name'),
 			'description' => t('Description'),
 			'dose' => t('Dose'),
-			'cr' => t('Contribution'),
+			'cr' => t('CR Contribution'),
 				
 			// relation attributes
 			'dimensionRecommendations' => t('Dimension Recommendations'),
