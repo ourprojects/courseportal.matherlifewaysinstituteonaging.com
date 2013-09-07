@@ -8,9 +8,8 @@ class CourseController extends CoursePortalController
 		return array_merge(
 				parent::accessRules(),
 				array(
-						array('allow'),
 					array('allow',
-							'actions' => array('index, notRegistered', 'test, spencerpowell.ajax'),
+							'actions' => array('index', 'notRegistered', 'test', 'spencerpowell.logActivity', 'spencerpowell.dimension', 'spencerpowell.logActivityGrid'),
 							'users' => array('@'),
 					),
 					array('deny'),

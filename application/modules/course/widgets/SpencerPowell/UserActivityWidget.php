@@ -2,9 +2,9 @@
 class UserActivityWidget extends CInputWidget 
 {
 	
-	public $user;
-	
 	public $admin = false;
+
+	private $_user;
 	
 	private $_dimensions;
 	
@@ -16,6 +16,10 @@ class UserActivityWidget extends CInputWidget
 						'widgetClassName' => 'course.widgets.SpencerPowell.UserActivityWidget'
 				),
 				'logActivity' => array(
+						'class' => 'course.widgets.SpencerPowell.actions.WidgetInlineAction',
+						'widgetClassName' => 'course.widgets.SpencerPowell.UserActivityWidget'
+				),
+				'logActivityGrid' => array(
 						'class' => 'course.widgets.SpencerPowell.actions.WidgetInlineAction',
 						'widgetClassName' => 'course.widgets.SpencerPowell.UserActivityWidget'
 				)
@@ -64,6 +68,24 @@ class UserActivityWidget extends CInputWidget
 		}
 		return $this->_dimensions;
 	}
+	
+	public function setUser($user)
+	{
+		$this->_user = $user;
+	}
+	
+	public function getUser()
+	{
+		if(!$this->_user instanceof CourseUser)
+		{
+			$this->_user = $this->user = CourseUser::model()->findByAttributes(array(CourseUser::model()->getIdColumnName() => Yii::app()->getUser()->getId(), CourseUser::model()->getNameColumnName() => Yii::app()->getUser()->getName()));
+			if($this->_user === null)
+			{
+				throw new CHttpException(500, t('The current user is not defined and could not be determined automatically.'));
+			}
+		}
+		return $this->_user;
+	}
 
 	public function init() 
 	{
@@ -74,29 +96,146 @@ class UserActivityWidget extends CInputWidget
 	
 	public function run() 
 	{
-		$this->actionDimension();
+		$this->render(
+				'index', 
+				array(
+						'dimensions' => $this->getDimensions(), 
+						'Activity' => new Activity(), 
+						'UserActivity' => new UserActivity(),
+						'activitySearchModel' => new Activity('search')
+				)
+		);
+	}
+	
+	public function actionLogActivityGrid(array $Activity = array())
+	{
+		$model = new Activity('search');
+		$model->setAttributes($Activity);
+		$this->render('logActivityGrid', array('activitySearchModel' => $model));
 	}
 	
 	public function actionLogActivity(array $UserActivity = array(), $ajax = null)
 	{
-		if(Yii::app()->getRequest()->getIsPostRequest())
+		if(Yii::app()->getRequest()->getIsPostRequest() || 
+				Yii::app()->getRequest()->getIsPutRequest() || 
+				Yii::app()->getRequest()->getIsDeleteRequest())
 		{
-			$UserActivityModel = new UserActivity();
-		}
-		elseif(Yii::app()->getRequest()->getIsPutRequest() || Yii::app()->getRequest()->getIsDeleteRequest())
-		{
-			if(!isset($UserActivity['id']))
+			if(Yii::app()->getRequest()->getIsPostRequest())
 			{
-				throw new CHttpException(400, t('A user activity ID must be specified.'));
+				$UserActivityModel = new UserActivity();
+			}
+			elseif(!isset($UserActivity['id']))
+			{
+				$UserActivityModel = new UserActivity();
+				$UserActivityModel->addError('id', t('The user activity\'s ID must be specified in order to perform an update.'));
 			}
 			else
 			{
 				$UserActivityModel = UserActivity::model()->findByPk($UserActivity['id']);
-				if($UserActivityModel === null || $UserActivityModel->user_id !== Yii::app()->getUser()->getId())
+				if($UserActivityModel === null || $UserActivityModel->user_id !== $this->getUser()->getId())
 				{
-					throw new CHttpException(404, t('A user activity with ID {id} could not be found for user {user}.', array('{id}' => $UserActivity['id'], '{user}' => Yii::app()->getUser()->getName())));
+					$UserActivityModel->addError('user_id',  t('A user activity with ID {id} could not be found for user {user}.', array('{id}' => $UserActivity['id'], '{user}' => $this->getUser()->getName())));
 				}
 				$activity = Activity::model()->with('recommendedDimensions')->findByPk($UserActivityModel->activity_id);
+			}
+			if(!$UserActivityModel->hasErrors())
+			{
+				if(Yii::app()->getRequest()->getIsPostRequest() || Yii::app()->getRequest()->getIsPutRequest())
+				{
+					$UserActivityModel->setAttributes($UserActivity);
+					$UserActivityModel->user_id = $this->getUser()->getId();
+					$UserActivityModel->validate();
+					if(empty($UserActivity['dimensions']))
+					{
+						$UserActivityModel->addError('dimensions', t('The activity must be logged in at least one dimension.'));
+					}
+					elseif(!$UserActivityModel->hasErrors('activity_id'))
+					{
+						$activity = Activity::model()->with('recommendedDimensions')->findByPk($UserActivityModel->activity_id);
+						$recommendedDims = CHtml::listData($activity->recommendedDimensions, 'id', 'id');
+						foreach($UserActivity['dimensions'] as $dimId)
+						{
+							if(!isset($recommendedDims[$dimId]))
+							{
+								$UserActivityModel->addError('dimensions', t('Invalid dimension for this activity.'));
+								break;
+							}
+						}
+					}
+					if((!isset($ajax) || $ajax !== $this->getId().'-userActivityForm') && !$UserActivityModel->hasErrors())
+					{
+						$transaction = $UserActivityModel->getDbConnection()->beginTransaction();
+						try
+						{
+							if($UserActivityModel->save(false))
+							{
+								if(Yii::app()->getRequest()->getIsPutRequest())
+								{
+									foreach($UserActivityModel->getRelated('dimensions', true) as $dimension)
+									{
+										if (($key = array_search($dimension->id, $UserActivity['dimensions'])) !== false)
+										{
+											unset($UserActivity['dimensions'][$key]);
+										}
+										else
+										{
+											$dimension->delete();
+										}
+									}
+								}
+				
+								foreach($UserActivity['dimensions'] as $dimensionId)
+								{
+									$UserActivityDimension = new UserActivityDimension();
+									$UserActivityDimension->user_activity_id = $UserActivityModel->id;
+									$UserActivityDimension->dimension_id = $dimensionId;
+									if(!$UserActivityDimension->save())
+									{
+										$UserActivityModel->addError('dimensions', implode(' & ',$UserActivityDimension->getErrors()));
+										break;
+									}
+								}
+							}
+							if($UserActivityModel->hasErrors())
+							{
+								$transaction->rollback();
+							}
+							else
+							{
+								$result = array('success' => t('Activity sucessfully '.(Yii::app()->getRequest()->getIsPostRequest() ? 'logged' : 'updated').'.'));
+								$transaction->commit();
+							}
+						}
+						catch(Exception $e)
+						{
+							$transaction->rollback();
+							throw $e;
+						}
+					}
+					$activity = $UserActivityModel->getIsNewRecord() ? new Activity() : $UserActivityModel->activity;
+				}
+				elseif(!isset($ajax) || $ajax !== $this->getId().'-userActivityForm')
+				{
+					if($UserActivityModel->delete() > 0)
+					{
+						$result = array('success' => t('Activity sucessfully removed.'));
+					}
+					else
+					{
+						$UserActivityModel->addError('id', t('No activity was removed. The activity may have already been removed.'));
+					}
+				}
+			}
+			if($UserActivityModel->hasErrors())
+			{
+				foreach($UserActivityModel->getErrors() as $attribute => $errors)
+				{
+					$result[CHtml::activeId($UserActivityModel, $attribute)] = $errors;
+				}
+			}
+			elseif(!isset($result))
+			{
+				$result = array('success' => true);
 			}
 		}
 		else
@@ -115,90 +254,7 @@ class UserActivityWidget extends CInputWidget
 			{
 				$activity = new Activity();
 			}
-		}
-		
-		if(Yii::app()->getRequest()->getIsPostRequest() || Yii::app()->getRequest()->getIsPutRequest())
-		{
-			$UserActivityModel->setAttributes($UserActivity);
-			$UserActivityModel->user_id = Yii::app()->getUser()->getId();
-			$UserActivityModel->validate();
-			if(empty($UserActivity['dimensions']))
-			{
-				$UserActivityModel->addError('dimensions', t('The activity must be logged for at least one dimension.'));
-			}
-			
-			if(isset($ajax) && $ajax === $this->getId().'-logActivityForm')
-			{
-				$result = array();
-				foreach($UserActivityModel->getErrors() as $attribute => $errors)
-				{
-					$result[CHtml::activeId($model, $attribute)] = $errors;
-				}
-				echo function_exists('json_encode') ? json_encode($result) : CJSON::encode($result);
-			}
-			elseif(!$UserActivityModel->hasErrors())
-			{
-				$transaction = $UserActivityModel->getDbConnection()->beginTransaction();
-				try
-				{
-					if($UserActivityModel->save(false))
-					{
-						if(Yii::app()->getRequest()->getIsPutRequest())
-						{
-							foreach($UserActivityModel->getRelated('dimensions', true) as $dimension)
-							{
-								if (($key = array_search($dimension->id, $UserActivity['dimensions'])) !== false) 
-								{
-									unset($UserActivity['dimensions'][$key]);
-								}
-								else
-								{
-									$dimension->delete();
-								}
-							}
-						}
-						
-						foreach($UserActivity['dimensions'] as $dimensionId)
-						{
-							$UserActivityDimension = new UserActivityDimension();
-							$UserActivityDimension->user_activity_id = $UserActivityModel->id;
-							$UserActivityDimension->dimension_id = $UserActivityModel->dimensionId;
-							if(!$UserActivityDimension->save())
-							{
-								$UserActivityModel->addError('dimensions', implode(' & ',$UserActivityDimension->getErrors()));
-								break;
-							}
-						}
-						Yii::app()->getUser()->setFlash($this->getId().'-success', t('Activity '.(Yii::app()->getRequest()->getIsPostRequest() ? 'created' : 'updated').' sucessfully.'));
-					}
-					if($UserActivityModel->hasErrors())
-					{
-						$transaction->rollback();
-					}
-					else
-					{
-						$transaction->commit();
-					}
-				}
-				catch(Exception $e)
-				{
-					$transaction->rollback();
-					throw $e;
-				}
-			}
-			$activity = $UserActivityModel->getIsNewRecord() ? new Activity() : $UserActivityModel->activity;
-		}
-		elseif(Yii::app()->getRequest()->getIsDeleteRequest())
-		{
-			if($UserActivityModel->delete() > 0)
-			{
-				Yii::app()->getUser()->setFlash($this->getId().'-success', t('Activity deleted sucessfully.'));
-			}
-		}
-		
-		if(Yii::app()->getRequest()->getIsAjaxRequest())
-		{
-			$data = array(
+			$result = array(
 					'name' => $activity->name,
 					'description' => $activity->description,
 					'dateCompleted' => $UserActivityModel->dateCompleted,
@@ -208,50 +264,34 @@ class UserActivityWidget extends CInputWidget
 			);
 			foreach($activity->recommendedDimensions as $dimension)
 			{
-				$data['dimensions'][] = array('val' => $dimension->id, 'text' => $dimension->name);
+				$result['dimensions'][] = array('val' => $dimension->id, 'text' => $dimension->name);
 			}
-			echo CJSON::encode($data);
 		}
-		else
-		{
-			$this->render('activityList', array('activity' => $activity, 'UserActivity' => $UserActivityModel));
-		}
+		echo function_exists('json_encode') ? json_encode($result) : CJSON::encode($result);
 	}
 	
-	public function actionDimension($id = null, $date = null, $range = 'day')
+	public function actionDimension($id, $date = null, $range = 'day', array $UserActivity = array())
 	{
-		$this->_actionDimension($id, $date, $range, false);
+		$this->_actionDimension($id, $date, $range, $UserActivity, false);
 	}
 	
-	protected function _actionDimension($id = null, $date = null, $range = 'day', $return = false)
+	protected function _actionDimension($id, $date = null, $range = 'day', array $UserActivity = array(), $return = false)
 	{
-		if(isset($id))
+		$id = intval($id);
+		$dimensions = $this->getDimensions();
+		if(!isset($dimensions[$id]))
 		{
-			$userActivityModel = new UserActivity('search');
-			if(is_int($date))
-			{
-				$time = $date;
-			}
-			elseif(is_string($date))
-			{
-				$time = strtotime($date);
-			}
-			else
-			{
-				$time = time();
-			}
-			
-			$dimensions = $this->getDimensions();
-			if(!isset($dimensions[$id]))
-			{
-				throw new CHttpException(404, t('Dimension with id {id} could not be found or was not enabled for this request.', array('{id}' => $id)));
-			}
-			
-			$userActivityModel->dimension($id);
-			$userActivityModel->completed($time, $range);
-			return $this->render('dimension', array('userActivityModel' => $userActivityModel, 'dimension' => $dimensions[$id], 'time' => $time, 'range' => $range), $return);
+			throw new CHttpException(404, t('Dimension with id {id} could not be found or was not enabled for this request.', array('{id}' => $id)));
 		}
-		return $this->render('dimensionTabs', array('dimensions' => $this->getDimensions()), $return);
+		
+		$dimension = $dimensions[$id];
+		$model = new UserActivity('search');
+		$model->setAttributes($UserActivity);
+		$model->user_id = $this->getUser()->getId();
+		$time = $model->convertDateToDBformat($date);
+		$model->dimension($dimension->id);
+		$model->completed($time, $range);
+		return $this->render('dimension', array('userActivitySearchModel' => $model, 'dimension' => $dimension, 'time' => $time, 'range' => $range), $return);
 	}
 
 }

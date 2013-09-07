@@ -18,6 +18,8 @@
  */
 class UserActivity extends CActiveRecord
 {
+	// This attribute exists because Yii is bad. Yes! It! Is!
+	public $crTotal;
 	
 	public $dateFormat = 'm/d/Y';
 	
@@ -45,15 +47,20 @@ class UserActivity extends CActiveRecord
 	public function rules()
 	{
 		return array(
-			array('user_id, activity_id, comment', 'required'),
-			array('completed', 'default', 'setOnEmpty' => true, 'value' => time(), 'except' => 'search'),
+			array('user_id, activity_id, completed, dateCompleted', 'required'),
+			array('completed', 'default', 'setOnEmpty' => true, 'value' => $this->convertDateToDBformat(time()), 'except' => 'search'),
 			array('user_id, activity_id, completed', 'numerical', 'integerOnly' => true),
-			array('user_id', 'exist', 'attributeName' => Yii::app()->getModule(CourseUser::COURSE_MODULE_NAME)->userId, 'className' => 'CourseUser', 'except' => 'search'),
+			array('user_id', 'exist', 'attributeName' => CourseUser::model()->getIdColumnName(), 'className' => 'CourseUser', 'except' => 'search'),
 			array('activity_id', 'exist', 'attributeName' => 'id', 'className' => 'Activity', 'except' => 'search'),
 			array('comment', 'length', 'max' => 65535),
 			array('dateCompleted', 'safe'),
 			array('id, user_id, activity_id, completed, comment', 'safe', 'on' => 'search'),
 		);
+	}
+	
+	public function isAttributeRequired($attribute)
+	{
+		return $attribute === 'dimensions' || parent::isAttributeRequired($attribute);
 	}
 
 	/**
@@ -66,8 +73,6 @@ class UserActivity extends CActiveRecord
 			'user' => array(self::BELONGS_TO, 'CourseUser', 'user_id'),
 			'userActivityDimensions' => array(self::HAS_MANY, 'UserActivityDimension', 'user_activity_id'),
 			'dimensions' => array(self::MANY_MANY, 'Dimension', UserActivityDimension::model()->tableName().'(user_activity_id, dimension_id)'),
-				
-			'crTotal' => array(self::STAT, 'Activity', 'id', 'select' => 'SUM('.Activity::model()->getDbConnection()->quoteColumnName(Activity::model()->getTableAlias().'.cr').')')
 		);
 	}
 
@@ -116,65 +121,86 @@ class UserActivity extends CActiveRecord
 		));
 	}
 	
+	// This method exists because Yii is bad. Yes! It! Is!
+	public function getCRtotal($refresh = false)
+	{
+		if($refresh || !isset($this->crTotal))
+		{
+			$criteria = clone $this->getDbCriteria();
+			$model = $this->find(array('with' => 'activity', 'select' => 'SUM('.$this->getDbConnection()->quoteColumnName('activity.cr').') AS crTotal'));// Quoting not allowed by Yii on this alias!?!? LOL!!
+			$this->crTotal = $model === null ? 0 :$model->crTotal;
+			$this->setDbCriteria($criteria);
+		}
+		return $this->crTotal;
+	}
+
 	public function dimension($dimensionId)
 	{
-		$this->getDbCriteria()->mergeWith(array('with' => array('userActivityDimensions' => array('condition' => $this->getDbConnection()->quoteColumnName('userActivityDimensions.dimension_id').'=:dimension_id', 'params' => array(':dimension_id' => $dimensionId)))));
-		return $this;
+		return $this->with(array('userActivityDimensions' => array('condition' => $this->getDbConnection()->quoteColumnName('userActivityDimensions.dimension_id').'=:dimension_id', 'params' => array(':dimension_id' => $dimensionId))))->together();
 	}
 	
 	public function completed($date = null, $range = null)
 	{
-		if(is_int($date))
+		if($range !== 'all')
 		{
-			$time = $date;
+			$time = $this->convertDateToDBformat($date);
+			$criteria = array('condition' => '('.$this->getDbConnection()->quoteColumnName($this->getTableAlias().'.completed').' BETWEEN :start AND :end)');
+			switch($range)
+			{
+				case 'day':
+					$criteria['params'] = array(':start' => mktime(0, 0, 0, date('n', $time), date('j', $time), date('Y', $time)), ':end' => mktime(0, 0, 0, date('n', $time), date('j', $time) + 1, date('Y', $time)));
+					break;
+				case 'week':
+					$criteria['params'] = array(':start' => mktime(0, 0, 0, date('n', $time), date('j', $time) - (6 - (date('w', $time) % 6)), date('Y', $time)), ':end' => mktime(0, 0, 0, date('n', $time) + 1, date('j', $time) + (date('w', $time) % 6), date('Y', $time)));
+					break;
+				case 'month':
+					$criteria['params'] = array(':start' => mktime(0, 0, 0, date('n', $time), 0, date('Y', $time)), ':end' => mktime(0, 0, 0, date('n', $time) + 1, 0, date('Y', $time)));
+					break;
+				case 'year':
+					$criteria['params'] = array(':start' => mktime(0, 0, 0, 0, 0, date('Y', $time)), ':end' => mktime(0, 0, 0, 0, 0, date('Y', $time) + 1));
+					break;
+				default:
+					$criteria['params'] = array(':start' => $time, ':end' => $time);
+					break;
+			}
+			$this->getDbCriteria()->mergeWith($criteria);
 		}
-		elseif(is_string($date))
-		{
-			$time = strtotime($date);
-		}
-		else
-		{
-			$time = time();
-		}
-		
-		$criteria = array('condition' => '('.$this->getDbConnection()->quoteColumnName($this->getTableAlias().'.completed').' BETWEEN :start AND :end)');
-		switch($range)
-		{
-			case 'day':
-				$criteria['params'] = array(':start' => mktime(0, 0, 0, date('n', $time), date('j', $time), date('Y', $time)), ':end' => mktime(0, 0, 0, date('n', $time), date('j', $time) + 1, date('Y', $time)));
-				break;
-			case 'week':
-				$criteria['params'] = array(':start' => mktime(0, 0, 0, date('n', $time), date('j', $time) - (6 - (date('w', $time) % 6)), date('Y', $time)), ':end' => mktime(0, 0, 0, date('n', $time) + 1, date('j', $time) + (date('w', $time) % 6), date('Y', $time)));
-				break;
-			case 'month':
-				$criteria['params'] = array(':start' => mktime(0, 0, 0, date('n', $time), 0, date('Y', $time)), ':end' => mktime(0, 0, 0, date('n', $time) + 1, 0, date('Y', $time)));
-				break;
-			case 'year':
-				$criteria['params'] = array(':start' => mktime(0, 0, 0, 0, 0, date('Y', $time)), ':end' => mktime(0, 0, 0, 0, 0, date('Y', $time) + 1));
-				break;
-			default:
-				$criteria['params'] = array(':start' => $time, ':end' => $time);
-				break;
-		}
-		$this->getDbCriteria()->mergeWith($criteria);
 		return $this;
 	}
 	
 	public function getDateCompleted()
 	{
-		return isset($this->completed) ? date($this->dateFormat, $this->completed) : null;
+		if(!strcasecmp($this->getScenario(), 'search') && !isset($this->completed))
+		{
+			return null;
+		}
+		return $this->convertDateToDisplayformat($this->completed);
 	}
 	
 	public function setDateCompleted($date)
 	{
-		if(is_int($date))
+		$this->completed = $this->convertDateToDBformat($date);
+	}
+	
+	public function convertDateToDBformat($date)
+	{
+		if(is_numeric($date))
 		{
-			$this->completed = $date;
+			return intval($date);
 		}
 		elseif(is_string($date))
 		{
-			$this->completed = strtotime($date);
+			return strtotime($date);
 		}
+		else
+		{
+			return time();
+		}
+	}
+	
+	public function convertDateToDisplayformat($date)
+	{
+		return date($this->dateFormat, $this->convertDateToDBformat($date));
 	}
 	
 }
