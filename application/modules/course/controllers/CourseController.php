@@ -20,7 +20,7 @@ class CourseController extends CoursePortalController
 	public function actions()
 	{
 		$actions = array(
-			'spencerpowell.' => 'course.widgets.SpencerPowell.UserActivityWidget'
+			'spencerpowell.' => 'course.widgets.SpencerPowell.ActivityLogWidget'
 		);
 		$courses = Yii::app()->getDb()->createCommand()->select('name')->from(Course::model()->tableName())->queryColumn();
 		foreach($courses as $course)

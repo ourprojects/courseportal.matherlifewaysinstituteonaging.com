@@ -1,5 +1,5 @@
 <?php
 
-$this->widget('course.widgets.SpencerPowell.UserActivityWidget');
+$this->widget('course.widgets.SpencerPowell.ActivityLogWidget');
 
 ?>

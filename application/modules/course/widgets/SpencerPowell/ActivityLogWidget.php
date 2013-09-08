@@ -1,5 +1,5 @@
 <?php
-class UserActivityWidget extends CInputWidget 
+class ActivityLogWidget extends CInputWidget 
 {
 	
 	public $admin = false;
@@ -13,15 +13,15 @@ class UserActivityWidget extends CInputWidget
 		return array(
 				'dimension' => array(
 						'class' => 'course.widgets.SpencerPowell.actions.WidgetInlineAction',
-						'widgetClassName' => 'course.widgets.SpencerPowell.UserActivityWidget'
+						'widgetClassName' => 'course.widgets.SpencerPowell.ActivityLogWidget'
 				),
 				'logActivity' => array(
 						'class' => 'course.widgets.SpencerPowell.actions.WidgetInlineAction',
-						'widgetClassName' => 'course.widgets.SpencerPowell.UserActivityWidget'
+						'widgetClassName' => 'course.widgets.SpencerPowell.ActivityLogWidget'
 				),
 				'logActivityGrid' => array(
 						'class' => 'course.widgets.SpencerPowell.actions.WidgetInlineAction',
-						'widgetClassName' => 'course.widgets.SpencerPowell.UserActivityWidget'
+						'widgetClassName' => 'course.widgets.SpencerPowell.ActivityLogWidget'
 				)
 		);
 	}
