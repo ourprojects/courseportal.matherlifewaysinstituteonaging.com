@@ -3,7 +3,7 @@
 		<td colspan="2"><p><?php echo $dimension->description; ?></p></td>
 	</tr>
 	<tr id="<?php echo $this->getId().'-'.$dimension->id; ?>-activityInfo">
-		<td>
+		<td id="<?php echo $this->getId().'-'.$dimension->id; ?>-activityInfo-datePeriod">
 			{t}Date Period{/t}:
 			<?php
 			$this->widget('zii.widgets.jui.CJuiDatePicker',
@@ -33,7 +33,7 @@
 			);
 			?>
 		</td>
-		<td>
+		<td id="<?php echo $this->getId().'-'.$dimension->id; ?>-activityInfo-crContributions">
 			{t}Total CR Contributions{/t}: <?php echo $userActivitySearchModel->getCRtotal(); ?>
 		</td>
 	</tr>
@@ -79,6 +79,10 @@
 								'options.data = $("input#'.$this->getId().'-'.$dimension->id.'-activityDate, select#'.$this->getId().'-'.$dimension->id.'-activityRange").serialize();'.
 								'return true;'.
 							'}',
+							'afterAjaxUpdate' => 'function(id,data){'.
+								'$("#'.$this->getId().'-'.$dimension->id.'-activityInfo-crContributions").text($(data).find("#'.$this->getId().'-'.$dimension->id.'-activityInfo-crContributions").text());'.
+								'return true;'.
+							'}'
 							
 					)
 			);
