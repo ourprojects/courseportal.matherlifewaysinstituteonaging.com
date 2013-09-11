@@ -103,7 +103,7 @@ class HomeController extends CoursePortalController
 	{
 		$models = array(
 					'ContactUs' => new ContactUs,
-					'EReCaptchaForm' => Yii::createComponent('ext.recaptcha.EReCaptchaForm', Yii::app()->params['reCaptcha']['privateKey'])
+					'EReCaptchaForm' => Yii::createComponent('ext.recaptcha.EReCaptchaForm', Yii::app()->params['reCaptcha']['privateKey'], $this)
 				);
 		
 		if(Yii::app()->getRequest()->getIsPostRequest())
@@ -129,7 +129,7 @@ class HomeController extends CoursePortalController
 	
 				$models = array(
 						'ContactUs' => new ContactUs,
-						'EReCaptchaForm' => Yii::createComponent('ext.recaptcha.EReCaptchaForm', Yii::app()->params['reCaptcha']['privateKey'])
+						'EReCaptchaForm' => Yii::createComponent('ext.recaptcha.EReCaptchaForm', Yii::app()->params['reCaptcha']['privateKey'], $this)
 					);
 			}
 		}

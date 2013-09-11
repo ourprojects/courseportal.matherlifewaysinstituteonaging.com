@@ -62,7 +62,7 @@ class UserController extends ApiController
 	{
 		$models = array(
 				'UserNameEmail' => new UserNameEmail,
-				'EReCaptchaForm' => Yii::createComponent('ext.recaptcha.EReCaptchaForm', Yii::app()->params['reCaptcha']['privateKey'])
+				'EReCaptchaForm' => Yii::createComponent('ext.recaptcha.EReCaptchaForm', Yii::app()->params['reCaptcha']['privateKey'], $this)
 		);
 		if(Yii::app()->getRequest()->getIsPostRequest())
 		{
@@ -161,7 +161,7 @@ class UserController extends ApiController
 		$models = array(
 					'CPUser' => new CPUser(),
 					'UserAgreement' => new UserAgreement(),
-					'EReCaptchaForm' => Yii::createComponent('ext.recaptcha.EReCaptchaForm', Yii::app()->params['reCaptcha']['privateKey']),
+					'EReCaptchaForm' => Yii::createComponent('ext.recaptcha.EReCaptchaForm', Yii::app()->params['reCaptcha']['privateKey'], $this),
 				);
 		$models['UserAgreement']->agreement_id = 1;
 
@@ -233,7 +233,7 @@ class UserController extends ApiController
 	public function actionResendActivation(array $EReCaptchaForm = array(), array $UserNameEmail = array(), $ajax = null) {
 		$models = array(
 				'UserNameEmail' => new UserNameEmail,
-				'EReCaptchaForm' => Yii::createComponent('ext.recaptcha.EReCaptchaForm', Yii::app()->params['reCaptcha']['privateKey'])
+				'EReCaptchaForm' => Yii::createComponent('ext.recaptcha.EReCaptchaForm', Yii::app()->params['reCaptcha']['privateKey'], $this)
 		);
 		if(Yii::app()->getRequest()->getIsPostRequest())
 		{

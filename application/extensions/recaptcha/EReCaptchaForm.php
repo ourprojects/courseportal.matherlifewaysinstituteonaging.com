@@ -16,7 +16,9 @@ class EReCaptchaForm extends CFormModel
 	
 	private $_privateKey;
 	
-	public function __construct($privateKey, $scenario = '')
+	private $_controller;
+	
+	public function __construct($privateKey, $controller, $scenario = '')
 	{
 		parent::__construct($scenario);
 		if(!isset($privateKey))
@@ -24,30 +26,12 @@ class EReCaptchaForm extends CFormModel
 			throw new CException(Yii::t('recaptcha', 'Invalid reCaptcha private key.'));
 		}
 		$this->_privateKey = $privateKey;
+		$this->_controller = $controller;
 	}
 	
 	public function getPrivateKey()
 	{
 		return $this->_privateKey;
-	}
-	
-	public function loadAttributes($safeOnly = true)
-	{
-		$inputName = get_class($this);
-		if(isset($_POST['recaptcha_challenge_field']))
-		{
-			$_POST[$inputName]['recaptcha_challenge_field'] = $_POST['recaptcha_challenge_field'];
-		}
-		if(isset($_POST['recaptcha_response_field']))
-		{
-			$_POST[$inputName]['recaptcha_response_field'] = $_POST['recaptcha_response_field'];
-		}
-		if(isset($_POST[$inputName])) 
-		{
-			$this->setAttributes($_POST[$inputName], $safeOnly);
-			return true;
-		}
-		return false;
 	}
 	
 	public function getRequiredAttributes($safeOnly = true) 
@@ -71,10 +55,33 @@ class EReCaptchaForm extends CFormModel
 	public function rules() 
 	{
 		return array(
-				array('captcha, recaptcha_challenge_field, recaptcha_response_field', 'safe'),
+				array('recaptcha_challenge_field', 'filter', 'filter' => array($this, 'loadChallenge')),
+				array('recaptcha_response_field', 'filter', 'filter' => array($this, 'loadResponse')),
+				array('recaptcha_challenge_field, recaptcha_response_field', 'unsafe'),
+				array('captcha', 'safe'),
 				array('recaptcha_challenge_field, recaptcha_response_field', 'required'),
 				array('captcha', 'validateCaptcha'),
 		);
+	}
+	
+	public function loadChallenge($challenge)
+	{
+		$actionParams = $this->_controller->getActionParams();
+		if(isset($actionParams['recaptcha_challenge_field']))
+		{
+			$challenge = $actionParams['recaptcha_challenge_field'];
+		}
+		return $challenge;
+	}
+	
+	public function loadResponse($response)
+	{
+		$actionParams = $this->_controller->getActionParams();
+		if(isset($actionParams['recaptcha_response_field']))
+		{
+			$response = $actionParams['recaptcha_response_field'];
+		}
+		return $response;
 	}
 	
 	/**
@@ -98,8 +105,7 @@ class EReCaptchaForm extends CFormModel
 		$resp = recaptcha_check_answer($this->getPrivateKey(), $_SERVER['REMOTE_ADDR'], $this->recaptcha_challenge_field, $this->recaptcha_response_field);
 		if (!$resp->is_valid)
 		{
-			$message = isset($params['message']) ? $params['message'] : Yii::t('recaptcha', 'Your captcha response could not be validated.');
-			$this->addError($attribute, $message);
+			$this->addError($attribute, isset($params['message']) ? $params['message'] : Yii::t('recaptcha', 'Your captcha response could not be validated.'));
 		}
 	}
 
