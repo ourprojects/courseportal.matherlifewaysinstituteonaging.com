@@ -3,29 +3,30 @@
 class ApiKeyController extends AController
 {
 
-	public function actionIndex()
+	public function actionIndex(array $Key = array(), $ajax = null)
 	{
 		$model = new Key;
 
-		if(isset($_POST['ajax']))
+		if(Yii::app()->getRequest()->getIsPostRequest())
 		{
-			if($_POST['ajax'] === 'key-create-form')
+			$model->setAttributes($Key);
+			if(isset($ajax) && $ajax === 'key-create-form')
 			{
 				echo CActiveForm::validate($model);
-				Yii::app()->end();
+				return;
+			}
+			else
+			{
+				if($model->save())
+				{
+					Yii::app()->getUser()->setFlash('success', t('Key saved successfully.'));
+				}
+				else 
+				{
+					Yii::app()->getUser()->setFlash('error', t('Key could not be saved.'));
+				}
 			}
 		}
-
-		if(isset($_POST['Key']))
-		{
-			$model->setAttributes($_POST['Key']);
-
-			if($model->save())
-				Yii::app()->getUser()->setFlash('success', t('Key saved successfully.'));
-			else
-				Yii::app()->getUser()->setFlash('error', t('Key could not be saved.'));
-		}
-
 		$this->render('index', array('model' => $model));
 	}
 
@@ -63,13 +64,13 @@ class ApiKeyController extends AController
 		}
 	}
 
-	public function actionGrid($id, $name)
+	public function actionGrid(array $Key = array(), $name)
 	{
 		switch($name)
 		{
 			case 'apiKey-grid':
 				$model = new Key('search');
-				$model->setAttribute('id', $id);
+				$model->setAttributes($Key);
 				$gridPath = '_grid';
 				break;
 			default:

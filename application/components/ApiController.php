@@ -1,11 +1,13 @@
 <?php
 
-abstract class ApiController extends CoursePortalController {
+abstract class ApiController extends CoursePortalController 
+{
 
 	/**
 	 * @return array action filters
 	 */
-	public function filters() {
+	public function filters() 
+	{
 		return array_merge(
 				parent::filters(),
 				array(
@@ -14,11 +16,15 @@ abstract class ApiController extends CoursePortalController {
 		);
 	}
 
-	public function filterVerifyKey($filterChain) {
-		if(isset($_GET['key_id']) && isset($_GET['key'])) {
+	public function filterVerifyKey($filterChain) 
+	{
+		if(isset($_GET['key_id']) && isset($_GET['key'])) 
+		{
 			$key = Key::model()->findByPk($_GET['key_id']);
-			if($key !== null) {
-				if(Yii::createComponent('ext.pbkdf2.PBKDF2')->hash($_GET['key'], $key->salt) === $key->value) {
+			if($key !== null) 
+			{
+				if(Yii::createComponent('ext.pbkdf2.PBKDF2')->hash($_GET['key'], $key->salt) === $key->value) 
+				{
 					$filterChain->run();
 					return;
 				}
@@ -27,27 +33,33 @@ abstract class ApiController extends CoursePortalController {
 		throw new CHttpException(401, t('Not authorized.'));
 	}
 
-	public function actionCreate() {
+	/*public function actionCreate() 
+	{
 		$this->renderApiResponse(501);
 	}
 
-	public function actionRead() {
+	public function actionRead() 
+	{
 		$this->renderApiResponse(501);
 	}
 
-	public function actionUpdate() {
+	public function actionUpdate() 
+	{
 		$this->renderApiResponse(501);
 	}
 
-	public function actionDelete() {
+	public function actionDelete() 
+	{
 		$this->renderApiResponse(501);
 	}
 
-	public function actionOptions() {
+	public function actionOptions() 
+	{
 		$this->renderApiResponse(501);
-	}
+	}*/
 
-	protected function renderApiResponse($statusCode = 200, $data = array(), $additionalHeaders = null) {
+	protected function renderApiResponse($statusCode = 200, $data = array(), $additionalHeaders = null) 
+	{
 		Yii::import('application.helpers.CHttpStatusCodes');
 		header("HTTP/1.1 $statusCode " . CHttpStatusCodes::getHttpMessage($statusCode));
 

@@ -58,7 +58,7 @@ abstract class CoursePortalController extends CController
 		{
 			$actionParams += $_POST;
 		}
-		elseif($request->getRequestType() !== 'GET')
+		elseif(strcasecmp($request->getRequestType(), 'GET'))
 		{
 			$actionParams += $request->getRestParams();
 		}

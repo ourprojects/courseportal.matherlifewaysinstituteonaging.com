@@ -32,7 +32,9 @@
 class CPUser extends CActiveRecord
 {
 
-	public $new_password = null;
+	public $new_password;
+	
+	public $new_password_repeat;
 
 	/**
 	 * Returns the static model of the specified AR class.
@@ -41,6 +43,11 @@ class CPUser extends CActiveRecord
 	public static function model($className = __CLASS__)
 	{
 		return parent::model($className);
+	}
+	
+	public function init()
+	{
+		$this->language = Yii::app()->getLanguage();
 	}
 
 	/**
@@ -57,10 +64,16 @@ class CPUser extends CActiveRecord
 	public function rules()
 	{
 		return array(
-				array('password, salt, session_key, group_id, last_ip, last_login, language, isActivated', 'unsafe', 'except' => 'admin'),
+				array('password, salt, session_key, group_id, last_ip, last_login, language, isActivated', 'unsafe', 'except' => 'adminInsert, adminUpdate'),
 				array('session_key', 'filter', 'filter' => array($this, 'generateSessionKey'), 'except' => 'search'),
 				array('email, name, session_key, firstname, lastname', 'required', 'except' => 'search'),
-				array('new_password', 'required', 'on' => 'insert'),
+				array('new_password, new_password_repeat', 'required', 'on' => 'insert, adminInsert'),
+				array('new_password_repeat',
+						'compare',
+						'compareAttribute' => 'new_password',
+						'strict' => true,
+						'message' => t('Passwords do not match'),
+						'on' => 'insert, adminInsert'),
 				array('password', 'ext.pbkdf2.PBKDF2validator', 'allowEmpty' => true),
 				array('salt, session_key', 'ext.pbkdf2.PBKDF2validator', 'except' => 'search'),
 
@@ -74,11 +87,12 @@ class CPUser extends CActiveRecord
 
 				array('email, name', 'length', 'max' => 127),
 				array('email', 'email'),
-				array('email, name', 'unique', 'caseSensitive' => false, 'except' => 'search'),
+				array('email, name', 'unique', 'caseSensitive' => false, 'on' => 'insert, adminInsert'),
 
 				array('group_id', 'setDefaultGroupID', 'setOnEmpty' => true, 'except' => 'search'),
 				array('group_id', 'exist', 'attributeName' => 'id', 'className' => 'Group'),
 
+				array('group_id, isActivated', 'safe', 'on' => 'adminInsert, adminUpdate'),
 				array('name, new_password, email, firstname, lastname, location, country_iso', 'safe'),
 				array('id, group_id, created, last_ip, last_login, last_agent, language', 'safe', 'on' => 'search')
 		);
@@ -211,7 +225,7 @@ class CPUser extends CActiveRecord
 
 	public function setIsActivated($isActivated)
 	{
-		$model = $this->getRelated('activated');
+		$model = $this->getRelated('activated', true);
 		if($isActivated)
 		{
 			if(!$model instanceof UserActivated)
@@ -334,9 +348,9 @@ class CPUser extends CActiveRecord
 
 	public function setDefaultGroupID($attribute, $params)
 	{
-		if($this->getIsNewRecord() || !$params['setOnEmpty'] || empty($this->$attribute))
+		if(!$params['setOnEmpty'] || empty($this->$attribute))
 		{
-			if($emailGroup = GroupRegularExpression::model()->find(':email REGEXP '.$this->getDbConnection()->quoteColumnName($this->getTableAlias().'.name'), array(':email' => $this->email)))
+			if($emailGroup = GroupRegularExpression::model()->find(':email REGEXP '.$this->getDbConnection()->quoteColumnName(GroupRegularExpression::model()->getTableAlias().'.name'), array(':email' => $this->email)))
 			{
 				$this->$attribute = $emailGroup->group_id;
 			}

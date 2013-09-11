@@ -10,15 +10,16 @@
 class Avatar extends CActiveRecord
 {
 
-	const DEFAULT_MIME = 'image/png';
 	const DEFAULT_NAME = 'default.png';
 	const AVATARS_PATH_ALIAS = 'uploads.avatars';
 	const MAX_WIDTH = 100;
 	const MAX_HEIGHT = 100;
 	const MAX_FILE_SIZE = 16777216; // 16MB
 	const ALLOWED_TYPES = 'tiff, jpg, jpeg, gif, png';
+	
+	private static $_defaultAvatar;
 
-	public $image = null;
+	public $image;
 
 	/**
 	 * Returns the static model of the specified AR class.
@@ -27,6 +28,23 @@ class Avatar extends CActiveRecord
 	public static function model($className = __CLASS__)
 	{
 		return parent::model($className);
+	}
+	
+	public static function getDefaultAvatar()
+	{
+		if(!isset(self::$_defaultAvatar))
+		{
+			self::$_defaultAvatar = new Avatar();
+			self::$_defaultAvatar->name = self::DEFAULT_NAME;
+			self::$_defaultAvatar->image = Yii::app()->getComponent('image')->load(Yii::getPathOfAlias(self::AVATARS_PATH_ALIAS).DIRECTORY_SEPARATOR.self::DEFAULT_NAME);
+		}
+		return self::$_defaultAvatar;
+	}
+	
+	public static function generateUniqueName()
+	{
+		for($name = uniqid('', true); self::model()->autoQuoteExists(self::model()->getTableAlias().'.name=:name', array(':name' => $name)); $name = uniqid('', true)){}
+		return $name;
 	}
 
 	/**
@@ -54,26 +72,23 @@ class Avatar extends CActiveRecord
 	public function rules()
 	{
 		return array(
-				array('user_id, mime, name', 'unsafe'),
+				array('user_id, name', 'unsafe'),
 				array('user_id', 'required'),
-				array('image', 'required', 'on' => 'new'),
+				array('image', 'filter', 'filter' => array($this, 'loadImage')),
 				array('image',
 						'file',
-						'allowEmpty' => true,
+						'allowEmpty' => true, 
 						'maxFiles' => 1,
 						'maxSize' => self::MAX_FILE_SIZE,
 						'types' => self::ALLOWED_TYPES,
-						'tooLarge' => 'The image must be less than 16MB in size.',
-						'tooMany' => 'Only 1 image may be uploaded at a time',
-						'wrongType' => 'File type is not allowed. tiff, jpg, jpeg, gif, or png type images only.'),
-				array('image', 'filter', 'filter' => array($this, 'loadUploadedFile')),
-				array('image', 'filter', 'filter' => array($this, 'loadImage')),
+						'tooLarge' => t('The image must be less than 16MB in size.'),
+						'tooMany' => t('Only 1 image may be uploaded at a time.'),
+						'wrongType' => t('File type is not allowed. tiff, jpg, jpeg, gif, or png type images only.')),
+				array('image', 'filter', 'filter' => array($this, 'filterImage')),
 				array('user_id', 'numerical', 'integerOnly' => true),
 				array('user_id', 'exist', 'attributeName' => 'id', 'className' => 'CPUser'),
-				array('mime', 'filter', 'filter' => array($this, 'loadMimeType')),
-				array('mime', 'length', 'allowEmpty' => false, 'max' => 32),
-				array('name', 'filter', 'filter' => array($this, 'generateUniqueName')),
-				array('name', 'length', 'is' => 40),
+				array('name', 'filter', 'filter' => array($this, 'filterName')),
+				array('name', 'length', 'is' => 23),
 				array('name', 'match', 'pattern' => '/[\da-fA-F]{1,4}/'),
 		);
 	}
@@ -83,19 +98,39 @@ class Avatar extends CActiveRecord
 	 */
 	public function relations()
 	{
-        return array(
-            'user' => array(self::BELONGS_TO, 'CPUser', 'user_id'),
-        );
-	}
-
-	public static function getDefaultPath()
-	{
-		return Yii::getPathOfAlias(self::AVATARS_PATH_ALIAS) . DIRECTORY_SEPARATOR . self::DEFAULT_NAME;
+		return array(
+			'user' => array(self::BELONGS_TO, 'CPUser', 'user_id'),
+		);
 	}
 
 	public function getPath()
 	{
 		return Yii::getPathOfAlias(self::AVATARS_PATH_ALIAS) . DIRECTORY_SEPARATOR . $this->name;
+	}
+	
+	public function getMime()
+	{
+		return $this->image instanceof Image ? $this->image->mime : null;
+	}
+	
+	public function getWidth()
+	{
+		return $this->image instanceof Image ? $this->image->width : null;
+	}
+	
+	public function getHeight()
+	{
+		return $this->image instanceof Image ? $this->image->height : null;
+	}
+	
+	public function getType()
+	{
+		return $this->image instanceof Image ? $this->image->type : null;
+	}
+	
+	public function getExt()
+	{
+		return $this->image instanceof Image ? $this->image->ext : null;
 	}
 
 	/**
@@ -104,61 +139,74 @@ class Avatar extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
+				// column attributes
 				'user_id' => t('User ID'),
-				'mime' => t('MIME'),
 				'name' => t('Name'),
 				'image' => t('Avatar'),
-				'user' => t('User'),
+				
+				// virtual attributes
+				'mime' => t('MIME'),
+				'width' => t('Width'),
+				'height' => t('Height'),
+				'type' => t('Type'),
+				'ext' => t('Ext'),
 		);
-	}
-
-	public function loadUploadedFile($file)
-	{
-		if(!$this->hasErrors())
-			$file = CUploadedFile::getInstance($this, 'image');
-		return $file;
 	}
 
 	public function loadImage($image)
 	{
-		if(!$this->hasErrors() && isset($image))
-			$image = Yii::app()->getComponent('image')->load($image->getTempName())->resize(self::MAX_WIDTH, self::MAX_HEIGHT);
+		if(($img = CUploadedFile::getInstance($this, 'image')) !== null)
+		{
+			$image = $img;
+		}
 		return $image;
 	}
-
-	public function loadMimeType($mime)
+	
+	public function filterImage($image)
 	{
-		if(isset($this->image))
-			$mime = $this->image->mime;
-		return $mime;
+		if($image instanceof CUploadedFile)
+		{
+			$image = Yii::app()->getComponent('image')->load($image->getTempName())->resize(self::MAX_WIDTH, self::MAX_HEIGHT);
+		}
+		return $image;
 	}
-
-	public function generateUniqueName($name)
+	
+	public function filterName($name)
 	{
 		if(!isset($name))
 		{
-			do
-			{
-				$name = sha1(uniqid('', true));
-			}
-			while(self::model()->exists('name = :name', array(':name' => $name)));
+			$name = self::generateUniqueName();
 		}
 		return $name;
+	}
+	
+	protected function afterFind()
+	{
+		parent::afterFind();
+		if(!file_exists($this->getPath()))
+		{
+			$this->delete();
+			$this->setScenario('insert');
+			$this->image = Yii::app()->getComponent('image')->load(self::getDefaultAvatar()->getPath());
+		}
+		else
+		{
+			$this->image = Yii::app()->getComponent('image')->load($this->getPath());
+		}
 	}
 
 	protected function afterSave()
 	{
-		if(isset($this->image))
-		{
-			$this->image->save($this->getPath());
-		}
+		$this->image->save($this->getPath());
 		parent::afterSave();
 	}
 
 	protected function afterDelete()
 	{
 		if(file_exists($this->getPath()))
+		{
 			unlink($this->getPath());
+		}
 		parent::afterDelete();
 	}
 

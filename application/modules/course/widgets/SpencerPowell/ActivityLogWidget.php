@@ -2,7 +2,11 @@
 class ActivityLogWidget extends CInputWidget 
 {
 	
-	public $admin = false;
+	/**
+	 * @var string the base script URL for all grid view resources (eg javascript, CSS file, images).
+	 * Defaults to null, meaning using the integrated grid view resources (which are published as assets).
+	 */
+	public $baseScriptUrl;
 
 	private $_user;
 	
@@ -24,6 +28,20 @@ class ActivityLogWidget extends CInputWidget
 						'widgetClassName' => 'course.widgets.SpencerPowell.ActivityLogWidget'
 				)
 		);
+	}
+	
+	public function init()
+	{
+		$this->setId('spencerPowell-userActivityWidget');
+		$this->actionPrefix = 'spencerpowell.';
+		if(!isset($this->baseScriptUrl))
+		{
+			$this->baseScriptUrl = Yii::app()->getAssetManager()->publish(Yii::getPathOfAlias('course.widgets.SpencerPowell.assets'), -1, true);
+		}
+		$cs = Yii::app()->getClientScript();
+		$cs->registerCoreScript('jquery');
+		$cs->registerScriptFile($this->baseScriptUrl.'/jquery.activitylog.js', CClientScript::POS_END);
+		parent::init();
 	}
 	
 	public function setDimensions($dimensions = true)
@@ -86,13 +104,6 @@ class ActivityLogWidget extends CInputWidget
 		}
 		return $this->_user;
 	}
-
-	public function init() 
-	{
-		$this->setId('spencerPowell-userActivityWidget');
-		$this->actionPrefix = 'spencerpowell.';
-		parent::init();
-	}
 	
 	public function run() 
 	{
@@ -116,28 +127,53 @@ class ActivityLogWidget extends CInputWidget
 	
 	public function actionLogActivity(array $UserActivity = array(), $ajax = null)
 	{
+		$result = array();
+		if(!empty($UserActivity['id']))
+		{
+			$UserActivityModel = UserActivity::model()->with(array('dimensions', 'activity' => array('with' => 'recommendedDimensions')))->findByAttributes(array('id' => $UserActivity['id']));
+			if($UserActivityModel === null || $UserActivityModel->user_id !== $this->getUser()->getId())
+			{
+				$UserActivityModel = new UserActivity();
+				$UserActivityModel->addError('user_id',  t('An activity log with ID "{id}" could not be found for user "{user}".', array('{id}' => $UserActivity['id'], '{user}' => $this->getUser()->getName())));
+				$result['statusCode'] = 404;
+			}
+			elseif(Yii::app()->getRequest()->getIsPostRequest())
+			{
+				$UserActivityModel->addError('user_id',  t('The activity log with ID "{id}" already exists for user "{user}". Unable to create a new activity.', array('{id}' => $UserActivity['id'], '{user}' => $this->getUser()->getName())));
+			}
+			else
+			{
+				$activity = $UserActivityModel->activity;
+			}
+		}
+		else
+		{
+			$UserActivityModel = new UserActivity();
+		}
+
+		if(!isset($activity))
+		{
+			if(!empty($UserActivity['activity_id']))
+			{
+				$activity = Activity::model()->with('recommendedDimensions')->findByPk($UserActivity['activity_id']);
+				if($activity === null)
+				{
+					$activity = new Activity();
+					$UserActivityModel->addError('activity_id', t('An activity with ID "{id}" could not be found.', array('{id}' => $UserActivity['activity_id'])));
+					$result['statusCode'] = 404;
+				}
+			}
+			else
+			{
+				$activity = new Activity();
+			}
+			$UserActivityModel->activity_id = $activity->id;
+		}
+
 		if(Yii::app()->getRequest()->getIsPostRequest() || 
 				Yii::app()->getRequest()->getIsPutRequest() || 
 				Yii::app()->getRequest()->getIsDeleteRequest())
 		{
-			if(Yii::app()->getRequest()->getIsPostRequest())
-			{
-				$UserActivityModel = new UserActivity();
-			}
-			elseif(!isset($UserActivity['id']))
-			{
-				$UserActivityModel = new UserActivity();
-				$UserActivityModel->addError('id', t('The user activity\'s ID must be specified in order to perform an update.'));
-			}
-			else
-			{
-				$UserActivityModel = UserActivity::model()->findByPk($UserActivity['id']);
-				if($UserActivityModel === null || $UserActivityModel->user_id !== $this->getUser()->getId())
-				{
-					$UserActivityModel->addError('user_id',  t('A user activity with ID {id} could not be found for user {user}.', array('{id}' => $UserActivity['id'], '{user}' => $this->getUser()->getName())));
-				}
-				$activity = Activity::model()->with('recommendedDimensions')->findByPk($UserActivityModel->activity_id);
-			}
 			if(!$UserActivityModel->hasErrors())
 			{
 				if(Yii::app()->getRequest()->getIsPostRequest() || Yii::app()->getRequest()->getIsPutRequest())
@@ -226,48 +262,48 @@ class ActivityLogWidget extends CInputWidget
 					}
 				}
 			}
-			if($UserActivityModel->hasErrors())
+		}
+		if($UserActivityModel->hasErrors())
+		{
+			$statusCode = isset($result['statusCode']) ? $result['statusCode'] : 400;
+			foreach($UserActivityModel->getErrors() as $attribute => $errors)
 			{
-				foreach($UserActivityModel->getErrors() as $attribute => $errors)
-				{
-					$result[CHtml::activeId($UserActivityModel, $attribute)] = $errors;
-				}
-			}
-			elseif(!isset($result))
-			{
-				$result = array('success' => true);
+				$result[CHtml::activeId($UserActivityModel, $attribute)] = $errors;
 			}
 		}
 		else
 		{
-			$UserActivityModel = new UserActivity();
-			if(isset($UserActivity['activity_id']))
-			{
-				$activity = Activity::model()->with('recommendedDimensions')->findByPk($UserActivity['activity_id']);
-				if($activity === null)
-				{
-					throw new CHttpException(404, t('An activity with ID {id} could not be found.', array('{id}' => $UserActivity['activity_id'])));
-				}
-				$UserActivityModel->activity_id = $activity->id;
-			}
-			else
-			{
-				$activity = new Activity();
-			}
-			$result = array(
+			$statusCode = isset($result['statusCode']) ? $result['statusCode'] : 200;
+			$result = array_merge(array(
 					'name' => $activity->name,
 					'description' => $activity->description,
 					'dateCompleted' => $UserActivityModel->dateCompleted,
 					'comment' => $UserActivityModel->comment,
 					'activity_id' => $UserActivityModel->activity_id,
 					'id' => $UserActivityModel->id
-			);
+			), $result);
 			foreach($activity->recommendedDimensions as $dimension)
 			{
-				$result['dimensions'][] = array('val' => $dimension->id, 'text' => $dimension->name);
+				$result['dimensions'][$dimension->id] = array('text' => $dimension->name, 'selected' => false);
+			}
+			foreach($UserActivityModel->dimensions as $dimension)
+			{
+				$result['dimensions'][$dimension->id]['selected'] = true;
 			}
 		}
-		echo function_exists('json_encode') ? json_encode($result) : CJSON::encode($result);
+		unset($result['statusCode']);
+		$data = function_exists('json_encode') ? json_encode($result) : CJSON::encode($result);
+		if(!headers_sent())
+		{
+			header("HTTP/1.1 ".$statusCode.' '.CHttpStatusCodes::getHttpMessage($statusCode));
+			header('Content-Type: application/json');
+			header('Content-MD5: '.md5($data));
+			header('Content-Length: '.strlen($data));
+		}
+		if(strcasecmp(Yii::app()->getRequest()->getRequestType(), 'HEAD'))
+		{
+			echo $data;
+		}
 	}
 	
 	public function actionDimension($id, $date = null, $range = 'day', array $UserActivity = array())

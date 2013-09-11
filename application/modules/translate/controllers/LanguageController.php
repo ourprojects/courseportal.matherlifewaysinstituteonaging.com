@@ -145,15 +145,14 @@ class LanguageController extends TController
 		$this->redirect(Yii::app()->getRequest()->getUrlReferrer());
 	}
 
-	public function actionAjaxCreate()
+	public function actionAjaxCreate(array $Language = array(), $ajax = null)
 	{
-		if(isset($_POST['ajax']))
+		if(isset($ajax))
 		{
-			if($_POST['ajax'] === 'accepted-language-create-form')
+			if($ajax === 'accepted-language-create-form')
 			{
 				$language = new Language;
-				if(isset($_POST['Language']))
-					$language->setAttributes($_POST['Language']);
+				$language->setAttributes($Language);
 				echo CActiveForm::validate($language);
 			}
 		}

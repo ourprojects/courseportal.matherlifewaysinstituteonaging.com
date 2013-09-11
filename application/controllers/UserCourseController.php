@@ -3,57 +3,48 @@
 class UserCourseController extends ApiController
 {
 
-	public function actionCreate()
+	public function actionCreate(array $UserCourse = array())
 	{
-		$errors = array();
-		if(!isset($_POST['user_id']))
-			$errors['user_id'] = t('An user_id must be specified. Who are you adding this course to?');
-		if(!isset($_POST['course_id']))
-			$errors['course_id'] = t('A course_id must be specified. What course are you adding?');
+		$userCourseModel = new UserCourse;
+		$userCourseModel->setAttributes($UserCourse);
+		$userCourseModel->save();
 
-		if(empty($errors)) {
-			$userCourse = new UserCourse;
-			$userCourse->user_id = $_POST['user_id'];
-			$userCourse->course_id = $_POST['course_id'];
-			if(!$userCourse->save())
-				$errors = $userCourse->getErrors();
-		}
-
-		if(empty($errors))
-			$this->renderApiResponse();
-		else
+		if($userCourseModel->hasErrors())
+		{
 			$this->renderApiResponse(400, $errors);
+		}
+		else 
+		{
+			$this->renderApiResponse($userCourseModel);
+		}
 	}
 
-	public function actionRead()
+	public function actionRead(array $UserCourse = array())
 	{
 		$model = new UserCourse('search');
-		$model->attributes = $_GET;
+		$model->setAttributes($UserCourse);
 
 		$data = array();
-		foreach($model->findAll($model->with('user', 'course')->getSearchCriteria()) as $userCourse) {
+		foreach($model->findAll($model->with('user', 'course')->getSearchCriteria()) as $userCourse) 
+		{
 			$userCourse->attachBehavior('toArray', array('class' => 'behaviors.EArrayBehavior'));
 			$data[] = $userCourse->toArray(array_merge($userCourse->getSafeAttributeNames(), array('user' => 'email', 'course' => 'title')), true);
 		}
 
-		if(empty($data)) {
+		if(empty($data)) 
+		{
 			$this->renderApiResponse(404);
-		} else {
+		} 
+		else 
+		{
 			$this->renderApiResponse(200, $data);
 		}
 	}
 
-	public function actionDelete()
+	public function actionDelete($user_id, $course_id)
 	{
-		$requestVars = Yii::app()->getRequest()->getRestParams();
-		if(!isset($requestVars['user_id'])) {
-			$this->renderApiResponse(400, array('user_id' => t('The id of the user whose course is to be deleted must be specified.')));
-		} else if(!isset($requestVars['course_id'])) {
-			$this->renderApiResponse(400, array('course_id' => t('The id of the course to be deleted must be specified.')));
-		} else {
-			$result = array('UserCourse' => array('rows_deleted' => UserCourse::model()->deleteByPk(array('user_id' => $requestVars['user_id'], 'course_id' => $requestVars['course_id']))));
-			$this->renderApiResponse(200, $result);
-		}
+		$result = array('UserCourse' => array('rows_deleted' => UserCourse::model()->deleteByPk(array('user_id' => $user_id, 'course_id' => $course_id))));
+		$this->renderApiResponse(200, $result);
 	}
 
 	public function actionOptions()
@@ -63,8 +54,8 @@ class UserCourseController extends ApiController
 							array(
 								'returns' => t('List of course, user associations.'),
 								'optional' => array(
-										'user_id' => t('search for courses associated with this user id.'),
-										'course_id' => t('search for users associated with this course id.')
+										'UserCourse[user_id]' => t('search for courses associated with this user id.'),
+										'UserCourse[course_id]' => t('search for users associated with this course id.')
 										),
 								'required' => array()
 								),
@@ -73,8 +64,8 @@ class UserCourseController extends ApiController
 								'returns' => false,
 								'optional' => false,
 								'required' => array(
-										'user_id' => t('The id of the user to associate a course with.'),
-										'course_id' => t('The id of the course to associate with a user.')
+										'UserCourse[user_id]' => t('The id of the user to associate a course with.'),
+										'UserCourse[course_id]' => t('The id of the course to associate with a user.')
 										)
 								),
 					  'PUT' => false,

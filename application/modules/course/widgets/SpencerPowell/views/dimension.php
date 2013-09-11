@@ -42,49 +42,79 @@
 			<?php 
 			$this->widget('zii.widgets.grid.CGridView',
 					array(
-							'id' => $this->getId().'-'.$dimension->id.'-userActivityGrid',
-							'filter' => $userActivitySearchModel,
-							'dataProvider' => $userActivitySearchModel->search(),
-							'columns' => array(
-									'activity.name',
-									'activity.cr',
-									'comment',
-									'dateCompleted',
-									array(
-											'class' => 'CButtonColumn',
-											'template' => '{delete}',
-											'buttons' => array(
-													'delete' => array(
-															'label' => '{t}Delete{/t}',
-															'url' => '$this->grid->getOwner()->getController()->createUrl($this->grid->getOwner()->actionPrefix."logActivity", array("UserActivity" => array("id" => $data->id)));',
-															'click' => 'function(){'.
-																CHtml::ajax(
-																	array(
-																		'type' => 'DELETE',
-																		'url' => 'js:$(this).attr("href")',
-																		'beforeSend' => 'function(){$("#'.$this->getId().'-activities").addClass("loading");}',
-																		'success' => 'function(data){$.fn.yiiGridView.update("'.$this->getId().'-'.$dimension->id.'-userActivityGrid");}',
-																		'error' => 'function(data){alert(data);}',
-																		'complete' => 'function(){$("#'.$this->getId().'-activities").removeClass("loading");}',
-																	)
-																).
-																'return false;'.
-															'}',
-													),
+						'id' => $this->getId().'-'.$dimension->id.'-userActivityGrid',
+						'filter' => $userActivitySearchModel,
+						'dataProvider' => $userActivitySearchModel->search(),
+						'columns' => array(
+							'activity.name',
+							'activity.cr',
+							'comment',
+							'dateCompleted',
+							array(
+								'class' => 'CButtonColumn',
+								'template' => '{view}{delete}',
+								'buttons' => array(
+									'view' => array(
+										'label' => '{t}Edit{/t}',
+										'url' => '$this->grid->getOwner()->getController()->createUrl($this->grid->getOwner()->actionPrefix."logActivity", array("UserActivity" => array("id" => $data->id)));',
+										'click' => 'function(){'.
+										CHtml::ajax(
+											array(
+												'type' => 'GET',
+												'url' => 'js:$(this).attr("href")',
+												'beforeSend' => 'function(){'.
+													'$("#'.$this->getId().'-activityLogForm").spUserActivityForm({"scenario":"update","loading":true});'.
+													'$("#'.$this->getId().'-activityDialog").dialog("open");'.
+												'}',
+												'success' => 'function(data){'.
+													'var $form = $("div#'.$this->getId().'-activityLogForm");'.
+													'$.each($.parseJSON(data), function(attribute, value){'.
+														'$form.spUserActivityForm(attribute, value);'.
+													'});'.
+												'}',
+												'error' => 'function(data){'.
+													'$("#'.$this->getId().'-activityDialog").dialog("close");'.
+													'alert(data);'.
+												'}',
+												'complete' => 'function(){'.
+													'$("#'.$this->getId().'-activityLogForm").spUserActivityForm("loading", false);'.
+												'}',
 											)
-									)
-							),
-							'ajaxUrl' => $this->getController()->createUrl($this->actionPrefix.'dimension', array('id' => $dimension->id)),
-							'beforeAjaxUpdate' => 'function(id,options){'.
-								'options.data = $("input#'.$this->getId().'-'.$dimension->id.'-activityDate, select#'.$this->getId().'-'.$dimension->id.'-activityRange").serialize();'.
-								'return true;'.
-							'}',
-							'afterAjaxUpdate' => 'function(id,data){'.
-								'$("#'.$this->getId().'-'.$dimension->id.'-activityInfo-crContributions").text($(data).find("#'.$this->getId().'-'.$dimension->id.'-activityInfo-crContributions").text());'.
-								'return true;'.
-							'}'
-							
-					)
+										).
+										'return false;'.
+										'}',
+									),
+									'delete' => array(
+										'label' => '{t}Delete{/t}',
+										'url' => '$this->grid->getOwner()->getController()->createUrl($this->grid->getOwner()->actionPrefix."logActivity", array("UserActivity" => array("id" => $data->id)));',
+										'click' => 'function(){'.
+											CHtml::ajax(
+												array(
+													'type' => 'DELETE',
+													'url' => 'js:$(this).attr("href")',
+													'beforeSend' => 'function(){$("#'.$this->getId().'-'.$dimension->id.'-activities").addClass("loading");}',
+													'success' => 'function(data){$.fn.yiiGridView.update("'.$this->getId().'-'.$dimension->id.'-userActivityGrid");}',
+													'error' => 'function(data){alert(data);}',
+													'complete' => 'function(){$("#'.$this->getId().'-'.$dimension->id.'-activities").removeClass("loading");}',
+												)
+											).
+											'return false;'.
+										'}',
+									),
+								)
+							)
+						),
+						'ajaxUrl' => $this->getController()->createUrl($this->actionPrefix.'dimension', array('id' => $dimension->id)),
+						'beforeAjaxUpdate' => 'function(id,options){'.
+							'options.data = $("input#'.$this->getId().'-'.$dimension->id.'-activityDate, select#'.$this->getId().'-'.$dimension->id.'-activityRange").serialize();'.
+							'return true;'.
+						'}',
+						'afterAjaxUpdate' => 'function(id,data){'.
+							'$("#'.$this->getId().'-'.$dimension->id.'-activityInfo-crContributions").text($(data).find("#'.$this->getId().'-'.$dimension->id.'-activityInfo-crContributions").text());'.
+							'return true;'.
+						'}'
+						
+				)
 			);
 			?>
 		</td>

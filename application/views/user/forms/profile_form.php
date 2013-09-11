@@ -11,49 +11,52 @@
 	<p class="note">
 		<span class="required">*</span><?php echo t('Required'); ?>.
 	</p>
-	<?php echo $form->errorSummary(array($avatar, $Profile)); ?>
+	<?php echo $form->errorSummary(array($Avatar, $CPUser)); ?>
 	
 	<div class="row">
-		<?php echo $form->labelEx($avatar, 'image'); ?>
-		<?php echo CHtml::image($this->createUrl("avatar/{$avatar->user_id}"), $avatar->getAttributeLabel('image')); ?>
-		<?php echo $form->fileField($avatar, 'image'); ?>
-		<?php echo $form->error($avatar, 'image'); ?>
+		<?php echo $form->labelEx($Avatar, 'image'); ?>
+		<?php echo CHtml::image($this->createUrl("avatar/{$Avatar->user_id}"), $Avatar->getAttributeLabel('image')); ?>
+		<?php echo $form->fileField($Avatar, 'image'); ?>
+		<?php echo $form->error($Avatar, 'image'); ?>
+		<?php if(!$Avatar->getIsNewRecord()): ?>
+		<?php echo CHtml::linkButton('{t}Delete Avatar{/t}', array('href' => $this->createUrl('/avatar/delete'))); ?>
+		<?php endif; ?>
 	</div>
 	
 	<div class="row">
-		<?php echo $form->labelEx($Profile, 'name'); ?>
-		<?php echo $form->textField($Profile, 'name'); ?>
-		<?php echo $form->error($Profile, 'name'); ?>
+		<?php echo $form->labelEx($CPUser, 'name'); ?>
+		<?php echo $form->textField($CPUser, 'name'); ?>
+		<?php echo $form->error($CPUser, 'name'); ?>
 	</div>
 	
 	<div class="row">
-		<?php echo $form->labelEx($Profile, 'email'); ?>
-		<?php echo $form->emailField($Profile, 'email'); ?>
-		<?php echo $form->error($Profile, 'email'); ?>
+		<?php echo $form->labelEx($CPUser, 'email'); ?>
+		<?php echo $form->emailField($CPUser, 'email'); ?>
+		<?php echo $form->error($CPUser, 'email'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($Profile, 'firstname'); ?>
-		<?php echo $form->textField($Profile, 'firstname'); ?>
-		<?php echo $form->error($Profile, 'firstname'); ?>
+		<?php echo $form->labelEx($CPUser, 'firstname'); ?>
+		<?php echo $form->textField($CPUser, 'firstname'); ?>
+		<?php echo $form->error($CPUser, 'firstname'); ?>
 	</div>
 	
 	<div class="row">
-		<?php echo $form->labelEx($Profile, 'lastname'); ?>
-		<?php echo $form->textField($Profile, 'lastname'); ?>
-		<?php echo $form->error($Profile, 'lastname'); ?>
+		<?php echo $form->labelEx($CPUser, 'lastname'); ?>
+		<?php echo $form->textField($CPUser, 'lastname'); ?>
+		<?php echo $form->error($CPUser, 'lastname'); ?>
 	</div>
 	
 	<div class="row">
-		<?php echo $form->labelEx($Profile, 'location'); ?>
-		<?php echo $form->textField($Profile, 'location'); ?>
-		<?php echo $form->error($Profile, 'location'); ?>
+		<?php echo $form->labelEx($CPUser, 'location'); ?>
+		<?php echo $form->textField($CPUser, 'location'); ?>
+		<?php echo $form->error($CPUser, 'location'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($Profile, 'country_iso'); ?>
-		<?php echo $form->dropDownList($Profile, 'country_iso', Yii::app()->translate->getTerritoryDisplayNames()); ?>
-		<?php echo $form->error($Profile, 'country_iso'); ?>
+		<?php echo $form->labelEx($CPUser, 'country_iso'); ?>
+		<?php echo $form->dropDownList($CPUser, 'country_iso', Yii::app()->translate->getTerritoryDisplayNames()); ?>
+		<?php echo $form->error($CPUser, 'country_iso'); ?>
 	</div>
 			
 	<div class="row submit">

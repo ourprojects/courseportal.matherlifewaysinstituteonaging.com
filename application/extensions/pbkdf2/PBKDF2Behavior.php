@@ -73,7 +73,9 @@ class PBKDF2Behavior extends CActiveRecordBehavior
     public function afterSave($event)
     {
     	if($this->clearNewValueAfterSave)
-    		$model->{$this->newValueAttribute} = null;
+    	{
+    		$this->getOwner()->{$this->newValueAttribute} = null;
+    	}
     	$this->_saltAudit = null;
     	$this->_newValueAudit = null;
     }

@@ -32,8 +32,10 @@ class HomeController extends CoursePortalController
 		);
 	}
 
-	public function actionIndex() {
-		if(Yii::app()->getUser()->getIsGuest()) {
+	public function actionIndex() 
+	{
+		if(Yii::app()->getUser()->getIsGuest()) 
+		{
 			$this->render('pages/guestIndex',
 				array(
 					'workingCaregiverSurvey' => $this->createWidget(
@@ -87,7 +89,9 @@ class HomeController extends CoursePortalController
 					)
 				)
 			);
-		} else {
+		} 
+		else 
+		{
 			$this->render('pages/userIndex');
 		}
 	}
@@ -95,33 +99,39 @@ class HomeController extends CoursePortalController
 	/**
 	 * Displays the contact page
 	 */
-	public function actionContact() {
+	public function actionContact(array $EReCaptchaForm = array(), array $ContactUs = array(), $ajax = null) 
+	{
 		$models = array(
 					'ContactUs' => new ContactUs,
 					'EReCaptchaForm' => Yii::createComponent('ext.recaptcha.EReCaptchaForm', Yii::app()->params['reCaptcha']['privateKey'])
 				);
-		// if it is ajax validation request
-		if(isset($_POST['ajax']) && $_POST['ajax'] === 'contact-form') {
-			echo CActiveForm::validate($models);
-			Yii::app()->end();
-		}
-
-		if($models['EReCaptchaForm']->loadAttributes() && $models['ContactUs']->loadAttributes()
-				&& $models['EReCaptchaForm']->validate() && $models['ContactUs']->validate())
+		
+		if(Yii::app()->getRequest()->getIsPostRequest())
 		{
-			$message = Yii::app()->mail->getNewMessageInstance();
-			$message->setBody($models['ContactUs']->body, 'text/plain');
-			$message->setSubject($models['ContactUs']->subject);
-			$message->setTo(Yii::app()->params['supportEmail']);
-			$message->setFrom($models['ContactUs']->email);
-			Yii::app()->mail->send($message);
-
-			Yii::app()->getUser()->setFlash('success', t('Thank you for contacting us. We will respond to your inquiry as soon as possible.'));
-
-			$models = array(
-					'ContactUs' => new ContactUs,
-					'EReCaptchaForm' => Yii::createComponent('ext.recaptcha.EReCaptchaForm', Yii::app()->params['reCaptcha']['privateKey'])
-				);
+			$models['EReCaptchaForm']->setAttributes($EReCaptchaForm);
+			$models['ContactUs']->setAttributes($ContactUs);
+			// if it is ajax validation request
+			if(isset($ajax) && $ajax === 'contact-form') 
+			{
+				echo CActiveForm::validate($models, null, false);
+				return;
+			}
+			elseif($models['EReCaptchaForm']->validate() && $models['ContactUs']->validate())
+			{
+				$message = Yii::app()->mail->getNewMessageInstance();
+				$message->setBody($models['ContactUs']->body, 'text/plain');
+				$message->setSubject($models['ContactUs']->subject);
+				$message->setTo(Yii::app()->params['supportEmail']);
+				$message->setFrom($models['ContactUs']->email);
+				Yii::app()->mail->send($message);
+	
+				Yii::app()->getUser()->setFlash('success', t('Thank you for contacting us. We will respond to your inquiry as soon as possible.'));
+	
+				$models = array(
+						'ContactUs' => new ContactUs,
+						'EReCaptchaForm' => Yii::createComponent('ext.recaptcha.EReCaptchaForm', Yii::app()->params['reCaptcha']['privateKey'])
+					);
+			}
 		}
 		$this->render('pages/contact', array('models' => $models));
 	}

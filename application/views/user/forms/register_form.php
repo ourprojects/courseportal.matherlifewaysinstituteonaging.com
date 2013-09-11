@@ -11,52 +11,50 @@
 	<p class="note">
 		<span class="required">*</span>{t}Required{/t}.
 	</p>
-	<?php echo $form->errorSummary(array($Register, $EReCaptchaForm)); ?>
+	<?php echo $form->errorSummary(array($CPUser, $EReCaptchaForm)); ?>
 	
 	<div class="row">
-		<?php echo $form->labelEx($Register, 'email'); ?>
-		<?php echo $form->emailField($Register, 'email'); ?>
-		<?php echo $form->error($Register, 'email'); ?>
+		<?php echo $form->labelEx($CPUser, 'email'); ?>
+		<?php echo $form->emailField($CPUser, 'email'); ?>
+		<?php echo $form->error($CPUser, 'email'); ?>
 	</div>
 	
 	<div class="row">
-		<?php echo $form->labelEx($Register, 'name'); ?>
-		<?php echo $form->textField($Register, 'name'); ?>
-		<?php echo $form->error($Register, 'name'); ?>
+		<?php echo $form->labelEx($CPUser, 'name'); ?>
+		<?php echo $form->textField($CPUser, 'name'); ?>
+		<?php echo $form->error($CPUser, 'name'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($Register, 'new_password'); ?>
-		<?php echo $form->passwordField($Register, 'new_password'); ?>
-		<?php echo $form->error($Register, 'new_password'); ?>
+		<?php echo $form->labelEx($CPUser, 'new_password'); ?>
+		<?php echo $form->passwordField($CPUser, 'new_password'); ?>
+		<?php echo $form->error($CPUser, 'new_password'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($Register, 'new_password_repeat'); ?>
-		<?php echo $form->passwordField($Register, 'new_password_repeat'); ?>
-		<?php echo $form->error($Register, 'new_password_repeat'); ?>
+		<?php echo $form->labelEx($CPUser, 'new_password_repeat'); ?>
+		<?php echo $form->passwordField($CPUser, 'new_password_repeat'); ?>
+		<?php echo $form->error($CPUser, 'new_password_repeat'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($Register, 'firstname'); ?>
-		<?php echo $form->textField($Register, 'firstname'); ?>
-		<?php echo $form->error($Register, 'firstname'); ?>
+		<?php echo $form->labelEx($CPUser, 'firstname'); ?>
+		<?php echo $form->textField($CPUser, 'firstname'); ?>
+		<?php echo $form->error($CPUser, 'firstname'); ?>
 	</div>
 	
 	<div class="row">
-		<?php echo $form->labelEx($Register, 'lastname'); ?>
-		<?php echo $form->textField($Register, 'lastname'); ?>
-		<?php echo $form->error($Register, 'lastname'); ?>
+		<?php echo $form->labelEx($CPUser, 'lastname'); ?>
+		<?php echo $form->textField($CPUser, 'lastname'); ?>
+		<?php echo $form->error($CPUser, 'lastname'); ?>
 	</div>
 	
-	<?php if(isset($Register->agreement_id)): ?>
 	<div class="row">
-		<?php echo $form->labelEx($Register, 'agree'); ?>
-		<?php echo $form->checkBox($Register, 'agree'); ?>
-		<?php echo $form->error($Register, 'agree'); ?>
-		<?php echo CHtml::link(t('View details'), $this->createUrl('/agreement/' . $Register->agreement_id), array('target' => '_blank')); ?>
+		<?php echo $form->labelEx($UserAgreement, 'agree'); ?>
+		<?php echo $form->checkBox($UserAgreement, 'agree'); ?>
+		<?php echo $form->error($UserAgreement, 'agree'); ?>
+		<?php echo CHtml::link(t('View details'), $this->createUrl('/agreement/' . $UserAgreement->agreement_id), array('target' => '_blank')); ?>
 	</div>
-	<?php endif; ?>
 	
 	<div class="row">
 		<?php 

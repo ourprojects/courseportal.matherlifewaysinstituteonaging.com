@@ -1,6 +1,7 @@
 <?php
 
-class UserController extends ApiController {
+class UserController extends ApiController 
+{
 
 	const REMEMBER_ME_DURATION = 2592000; // 30 days in seconds
 
@@ -23,177 +24,187 @@ class UserController extends ApiController {
 	/**
 	 * Displays the login page
 	 */
-	public function actionLogin()
+	public function actionLogin(array $Login = array(), $ajax = null)
 	{
 		$loginModel = new Login;
-
-		if(isset($_POST['ajax']) && $_POST['ajax'] === 'login-form')
+		$loginModel->setAttributes($Login);
+		
+		if(Yii::app()->getRequest()->getIsPostRequest())
 		{
-			echo CActiveForm::validate($loginModel);
-			Yii::app()->end();
-		}
-
-		if($loginModel->loadAttributes() && $loginModel->validate())
-		{
-			$webUser = Yii::app()->getUser();
-			if($webUser->login(
-					new BasicIdentity($loginModel->username_email, $loginModel->password),
-					$loginModel->remember_me ? self::REMEMBER_ME_DURATION : 0))
+			if(isset($ajax) && $ajax === 'login-form')
 			{
-				$webUser->setFlash('success', t('Welcome {name}!', array('{name}' => $webUser->getModel()->name)));
-				$this->redirect($webUser->returnUrl);
+				echo CActiveForm::validate($loginModel, null, false);
+				return;
 			}
-			else
+			elseif($loginModel->validate())
 			{
-				$loginModel->addError('username_email_password', t('Incorrect username or password.'));
+				$webUser = Yii::app()->getUser();
+				$identity = new BasicIdentity($loginModel->username_email, $loginModel->password);
+				if($webUser->login($identity, $loginModel->remember_me ? self::REMEMBER_ME_DURATION : 0))
+				{
+					$webUser->setFlash('success', t('Welcome {name}!', array('{name}' => $webUser->getModel()->name)));
+					$this->redirect($webUser->returnUrl);
+				}
+				else
+				{
+					$loginModel->addError(
+							'username_email_password', 
+							$identity->errorCode === CoursePortalUserIdentity::ERROR_NOT_ACTIVATED ? 
+							t('Your account has not yet been activated. To have an activation email sent to you again please click {here}.', array('{here}' => CHtml::link(t('here'), $this->createUrl('resendActivation')))) : 
+							t('Incorrect username or password.'));
+				}
 			}
 		}
 		$this->render('pages/login', array('model' => $loginModel));
 	}
 
-	public function actionForgotPassword()
+	public function actionForgotPassword(array $UserNameEmail = array(), array $EReCaptchaForm = array(), $ajax = null)
 	{
 		$models = array(
 				'UserNameEmail' => new UserNameEmail,
 				'EReCaptchaForm' => Yii::createComponent('ext.recaptcha.EReCaptchaForm', Yii::app()->params['reCaptcha']['privateKey'])
 		);
-		// if it is ajax validation request
-		if(isset($_POST['ajax']) && $_POST['ajax'] === 'user-maintenance-form')
+		if(Yii::app()->getRequest()->getIsPostRequest())
 		{
-			echo CActiveForm::validate($models);
-			Yii::app()->end();
-		}
-
-		if($models['EReCaptchaForm']->loadAttributes() &&
-				$models['UserNameEmail']->loadAttributes() &&
-				$models['EReCaptchaForm']->validate() &&
-				$models['UserNameEmail']->validate())
-		{
-			$user = $models['UserNameEmail']->getUser();
-			if($user === null)
+			$models['EReCaptchaForm']->setAttributes($EReCaptchaForm);
+			$models['UserNameEmail']->setAttributes($UserNameEmail);
+			// if it is ajax validation request
+			if(isset($ajax) && $ajax === 'user-maintenance-form')
 			{
-				$models['UserNameEmail']->addError('name_email', t('The username or email address you have entered could not be found.'));
+				echo CActiveForm::validate($models, null, false);
+				return;
 			}
-			else
+			elseif($models['EReCaptchaForm']->validate() && $models['UserNameEmail']->validate())
 			{
-				if(!$user->getIsActivated())
+				$user = $models['UserNameEmail']->getUser();
+				if($user === null)
 				{
-					Yii::app()->getUser()->setFlash('error',
-						t('We could not reset your password because your account has not yet been activated. To have an activation email sent to you again please click ').
-							CHtml::link(t('here'), $this->createUrl('resendActivation')));
+					$models['UserNameEmail']->addError('name_email', t('The username or email address you have entered could not be found.'));
 				}
 				else
 				{
-					$this->sendPasswordResetEmail($user);
-					Yii::app()->getUser()->setFlash('success', t('Instructions for resetting your password have been sent to your email.'));
+					if(!$user->getIsActivated())
+					{
+						Yii::app()->getUser()->setFlash('error',
+							t('We could not reset your password because your account has not yet been activated. To have an activation email sent to you again please click ').
+								CHtml::link(t('here'), $this->createUrl('resendActivation')));
+					}
+					else
+					{
+						$this->sendPasswordResetEmail($user);
+						Yii::app()->getUser()->setFlash('success', t('Instructions for resetting your password have been sent to your email.'));
+					}
+					$this->refresh();
 				}
-				$this->refresh();
 			}
 		}
 		$this->render('pages/forgotPassword', array('models' => $models));
 	}
 
-	public function actionChangePassword($id = null, $session_key = null)
+	public function actionChangePassword($id = null, $session_key = null, array $ChangePassword = array(), $ajax = null)
 	{
-		$ChangePassword = new ChangePassword('change');
+		$ChangePasswordModel = new ChangePassword('change');
 		$UserIdentity = new SessionIdentity($id, @CBase64::urlDecode($session_key));
 
 		if($UserIdentity->authenticate())
 		{
-			$ChangePassword->setScenario('reset');
-			$ChangePassword->username_email = $UserIdentity->getModel()->name;
+			$ChangePasswordModel->setScenario('reset');
+			$ChangePasswordModel->username_email = $UserIdentity->getModel()->name;
 		}
-
-		if($ChangePassword->loadAttributes()) {
-			$ChangePassword->validate();
+		
+		if(Yii::app()->getRequest()->getIsPostRequest())
+		{
+			$ChangePasswordModel->setAttributes($ChangePassword);
 			// if this is an ajax validation request
-			if(isset($_POST['ajax']) && $_POST['ajax'] === 'change-password-form')
+			if(isset($ajax) && $ajax === 'change-password-form')
 			{
-				echo $ChangePassword->getErrorsAsJSON();
-				Yii::app()->end();
+				echo CActiveForm::validate($ChangePasswordModel, null, false);
+				return;
 			}
-
-			if(!$ChangePassword->hasErrors() && $ChangePassword->getScenario() === 'change')
+			else
 			{
-				$UserIdentity = new BasicIdentity($ChangePassword->username_email, $ChangePassword->current_password);
-				if(!$UserIdentity->authenticate())
+				if($ChangePasswordModel->validate() && $ChangePasswordModel->getScenario() === 'change')
 				{
-					$ChangePassword->addError('username_email_current_password', t('Incorrect username or password.'));
-				}
-			}
-
-			if(!$ChangePassword->hasErrors())
-			{
-				$user = $UserIdentity->getModel();
-				$user->new_password = $ChangePassword->new_password;
-				$user->regenerateSessionKey(false);
-				if($user->save(true, array('session_key', 'password')))
-				{
-					$webUser = Yii::app()->getUser();
-					if($webUser->login(new BasicIdentity($user->email, $ChangePassword->new_password)))
+					$UserIdentity = new BasicIdentity($ChangePasswordModel->username_email, $ChangePasswordModel->current_password);
+					if(!$UserIdentity->authenticate())
 					{
-						$webUser->setFlash('success',
-								t('Your account password has been reset. Welcome {email}!', array('{email}' => $webUser->name)));
-						$this->redirect(Yii::app()->homeUrl);
+						$ChangePasswordModel->addError('username_email_current_password', t('Incorrect username or password.'));
+					}
+				}
+		
+				if(!$ChangePasswordModel->hasErrors())
+				{
+					$user = $UserIdentity->getModel();
+					$user->new_password = $ChangePasswordModel->new_password;
+					$user->regenerateSessionKey(false);
+					if($user->save(true, array('session_key', 'password')))
+					{
+						$webUser = Yii::app()->getUser();
+						if($webUser->login(new BasicIdentity($user->email, $ChangePasswordModel->new_password)))
+						{
+							$webUser->setFlash('success',
+									t('Your account password has been reset. Welcome {email}!', array('{email}' => $webUser->name)));
+							$this->redirect(Yii::app()->homeUrl);
+						}
 					}
 				}
 			}
 		}
-		return $this->render('pages/changePassword', array('ChangePassword' => $ChangePassword));
+		return $this->render('pages/changePassword', array('ChangePassword' => $ChangePasswordModel));
 	}
 
 	/**
 	 * Displays the register page
 	 */
-	public function actionRegister()
+	public function actionRegister(array $EReCaptchaForm = array(), array $CPUser = array(), array $UserAgreement = array(), $ajax = null)
 	{
 		$models = array(
-					'Register' => new Register,
+					'CPUser' => new CPUser(),
+					'UserAgreement' => new UserAgreement(),
 					'EReCaptchaForm' => Yii::createComponent('ext.recaptcha.EReCaptchaForm', Yii::app()->params['reCaptcha']['privateKey']),
 				);
-		$models['Register']->agreement_id = 1;
+		$models['UserAgreement']->agreement_id = 1;
 
-		// collect user input data
-		if($models['EReCaptchaForm']->loadAttributes() && $models['Register']->loadAttributes())
+		if(Yii::app()->getRequest()->getIsPostRequest())
 		{
-			if(isset($_POST['ajax']) && $_POST['ajax'] === 'register-form')
+			$models['EReCaptchaForm']->setAttributes($EReCaptchaForm);
+			$models['CPUser']->setAttributes($CPUser);
+			$models['UserAgreement']->setAttributes($UserAgreement);
+			
+			if(isset($ajax) && $ajax === 'register-form')
 			{
-				echo CActiveForm::validateTabular($models);
-				Yii::app()->end();
+				echo CActiveForm::validateTabular($models, null, false);
+				return;
 			}
-
-			if($models['EReCaptchaForm']->validate() && $models['Register']->validate())
+			elseif($models['EReCaptchaForm']->validate() && $models['CPUser']->validate())
 			{
-				$userAgreement = new UserAgreement();
-				$userAgreement->agreement_id = $models['Register']->agreement_id;
-				$user = new CPUser();
-				$user->setAttributes($models['Register']->getAttributes());
-
 				$transaction = Yii::app()->db->beginTransaction();
 				try
 				{
-					if($user->save())
+					if($models['CPUser']->save(false))
 					{
-						$userAgreement->user_id = $user->id;
-						$userAgreement->save();
+						$models['UserAgreement']->user_id = $models['CPUser']->id;
+					}
+					if($models['UserAgreement']->save())
+					{
+						$transaction->commit();
+						$this->sendAccountActivationEmail($models['CPUser']);
+						return $this->render('pages/registerConfSent');
+					}
+					else
+					{
+						$models['CPUser']->delete(); // needed for phpBB
+						$transaction->rollback();
 					}
 				}
 				catch(Exception $e)
 				{
+					$models['CPUser']->delete(); // needed for phpBB
 					$transaction->rollback();
 					throw $e;
 				}
-				if(!($user->hasErrors() || $userAgreement->hasErrors()))
-				{
-					$transaction->commit();
-					$this->sendAccountActivationEmail($user);
-					return $this->render('pages/registerConfSent');
-				}
-				$transaction->rollback();
-				$models['Register']->addErrors($user->getErrors());
 			}
 		}
-		// display the register form
 		$this->render('pages/register', array('models' => $models));
 	}
 
@@ -219,35 +230,37 @@ class UserController extends ApiController {
 		$this->render('pages/activationFailure');
 	}
 
-	public function actionResendActivation() {
+	public function actionResendActivation(array $EReCaptchaForm = array(), array $UserNameEmail = array(), $ajax = null) {
 		$models = array(
 				'UserNameEmail' => new UserNameEmail,
 				'EReCaptchaForm' => Yii::createComponent('ext.recaptcha.EReCaptchaForm', Yii::app()->params['reCaptcha']['privateKey'])
 		);
-		// if it is ajax validation request
-		if(isset($_POST['ajax']) && $_POST['ajax'] === 'user-maintenance-form') {
-			$models['UserNameEmail']->setScenario('ajax');
-			echo CActiveForm::validate($models);
-			Yii::app()->end();
-		}
-
-		if($models['EReCaptchaForm']->loadAttributes() &&
-				$models['UserNameEmail']->loadAttributes() &&
-				$models['EReCaptchaForm']->validate() &&
-				$models['UserNameEmail']->validate())
+		if(Yii::app()->getRequest()->getIsPostRequest())
 		{
-			$user = $models['UserNameEmail']->getUser();
-			if($user->getIsActivated())
+			$models['EReCaptchaForm']->setAttributes($EReCaptchaForm);
+			$models['UserNameEmail']->setAttributes($UserNameEmail);
+			// if it is ajax validation request
+			if(isset($ajax) && $ajax === 'user-maintenance-form') 
 			{
-				Yii::app()->getUser()->setFlash('error', t('Your account has already been activated. If you have forgotten your password you can recover it by clicking') .
-															'&nbsp;' . CHtml::link(t('here'), $this->createUrl('forgotPassword')));
+				$models['UserNameEmail']->setScenario('ajax');
+				echo CActiveForm::validate($models, null, false);
+				Yii::app()->end();
 			}
-			else
+			elseif($models['EReCaptchaForm']->validate() && $models['UserNameEmail']->validate())
 			{
-				$this->sendAccountActivationEmail($user);
-				Yii::app()->getUser()->setFlash('success', t('We have resent an activation email to') . '&nbsp;' . $user->email);
+				$user = $models['UserNameEmail']->getUser();
+				if($user->getIsActivated())
+				{
+					Yii::app()->getUser()->setFlash('error', t('Your account has already been activated. If you have forgotten your password you can recover it by clicking') .
+																'&nbsp;' . CHtml::link(t('here'), $this->createUrl('forgotPassword')));
+				}
+				else
+				{
+					$this->sendAccountActivationEmail($user);
+					Yii::app()->getUser()->setFlash('success', t('We have resent an activation email to') . '&nbsp;' . $user->email);
+				}
+				$this->refresh();
 			}
-			$this->refresh();
 		}
 		$this->render('pages/resendActivation', array('models' => $models));
 	}
@@ -264,7 +277,8 @@ class UserController extends ApiController {
 		Yii::app()->mail->send($message);
 	}
 
-	public function sendAccountActivationEmail($userModel) {
+	public function sendAccountActivationEmail($userModel) 
+	{
 		$message = Yii::app()->mail->getNewMessageInstance();
 		$message->layout = 'mail';
 		$message->view = 'registrationConfirmation';
@@ -279,27 +293,25 @@ class UserController extends ApiController {
 	/**
 	 * Logs out the current user and redirect to homepage.
 	 */
-	public function actionLogout() {
+	public function actionLogout() 
+	{
 		Yii::app()->getUser()->logout();
 		Yii::app()->getUser()->setFlash('success', t('You have been successfully logged out.'));
 		$this->redirect(Yii::app()->homeUrl);
 	}
 
-	public function actionProfile() {
-		$user = Yii::app()->getUser()->getModel();
-		$models = array(
-				'Profile' => new UserProfile,
-				'avatar' => new Avatar);
-
-		$models['Profile']->setAttributes($user->getAttributes());
-		$models['avatar']->user_id = $user->id;
+	public function actionProfile(array $CPUser = array(), $ajax = null) 
+	{
+		$CPUserModel = Yii::app()->getUser()->getModel();
+		$AvatarModel = isset($CPUserModel->avatar) ? $CPUserModel->avatar : new Avatar();
 
 		$surveys = array();
 		foreach(array(
 				'profile',
 				'precourse',
 				'postcourse',
-				'spencerpowell') as $surveyName) {
+				'spencerpowell') as $surveyName) 
+		{
 			$survey = $this->createWidget(
 					'modules.surveyor.widgets.Survey',
 					array(
@@ -315,55 +327,51 @@ class UserController extends ApiController {
 							)
 					)
 			);
-			$survey->model->user_id = $user->id;
+			$survey->model->user_id = $CPUserModel->id;
 			$survey->processRequest();
 			$surveys[] = $survey;
 		}
 
-		// if it is ajax validation request
-		if(isset($_POST['ajax']) && $_POST['ajax'] === 'profile-form') {
-			echo CActiveForm::validateTabular($models);
-			Yii::app()->end();
-		}
-
-		// collect user input data
-		if($models['Profile']->loadAttributes() && $models['Profile']->validate() && $models['avatar']->validate())
+		if(Yii::app()->getRequest()->getIsPostRequest())
 		{
-			$user->setAttributes($models['Profile']->getAttributes());
-
-			if($user->validate())
+			$AvatarModel->user_id = $CPUserModel->id;
+			$CPUserModel->setAttributes($CPUser);
+			if(isset($ajax) && $ajax === 'profile-form') 
+			{
+				echo CActiveForm::validateTabular(array($CPUserModel, $AvatarModel), null, false);
+				return;
+			}
+			elseif($CPUserModel->validate() && $AvatarModel->validate())
 			{
 				$transaction = Yii::app()->db->beginTransaction();
-				$exception = null;
-				try {
-					if((!isset($models['avatar']->image) || (($user->avatar === null || $user->avatar->delete()) && $models['avatar']->save())) && $user->save())
+				try 
+				{
+					if($CPUserModel->save(false) && (!isset($AvatarModel->image) || $AvatarModel->save(false)))
 					{
 						$transaction->commit();
 					}
-					$models['Profile']->addErrors($user->getErrors());
-				} catch(Exception $e) {
-					$exception = $e;
+					else 
+					{
+						$transaction->rollback();
+					}
 				}
-				if($models['Profile']->hasErrors() || $models['avatar']->hasErrors() || isset($exception))
+				catch(Exception $e) 
 				{
-					if(!$models['avatar']->getIsNewRecord())
-						$models['avatar']->delete();
 					$transaction->rollback();
-					if(isset($exception))
-						throw $exception;
+					throw $e;
 				}
 			}
 		}
-		$this->render('pages/profile', array('models' => $models, 'surveys' => $surveys));
+		$this->render('pages/profile', array('CPUser' => $CPUserModel, 'Avatar' => $AvatarModel, 'surveys' => $surveys));
 	}
 
 	/****** START API ACTIONS ******/
 
-	public function actionCreate()
+	public function actionCreate(array $Register = array())
 	{
 		$model = new Register('pushed');
-
-		if($model->loadAttributes() && $model->validate())
+		$model->setAttributes($Register);
+		if($model->validate())
 		{
 			$user = new CPUser();
 			$user->setAttributes($model->getAttributes());
@@ -380,11 +388,11 @@ class UserController extends ApiController {
 		$this->renderApiResponse(400, $model->getErrorsAsJSON());
 	}
 
-	public function actionRead() {
+	public function actionRead(array $CPUser = array()) 
+	{
 		$model = new CPUser('search');
 
-		if(isset($_GET['CPUser']))
-			$model->setAttributes($_GET['CPUser']);
+		$model->setAttributes($CPUser);
 
 		$users = $model->with('group')->findAll($model->getSearchCriteria());
 		$data = array();
@@ -399,14 +407,13 @@ class UserController extends ApiController {
 			$this->renderApiResponse(200, $data);
 	}
 
-	public function actionUpdate() {
-		$requestVars = Yii::app()->getRequest()->getRestParams();
-		if(!isset($requestVars['id'])) {
-			$this->renderApiResponse(400, array('id' => t('The id of the user to be updated must be specified.')));
-			return;
+	public function actionUpdate(array $CPUser) 
+	{
+		if(!isset($CPUser['id']))
+		{
+			return $this->renderApiResponse(400, array('CPUser[id]' => t('The id of the user to be updated must be specified.')));
 		}
-
-		$model = CPUser::model()->findByPk($requestVars['id']);
+		$model = CPUser::model()->findByPk($CPUser['id']);
 
 		$model->setAttributes($requestVars);
 
@@ -417,17 +424,18 @@ class UserController extends ApiController {
 		$this->renderApiResponse(400, $model->getErrorsAsJSON());
 	}
 
-	public function actionDelete() {
-		$requestVars = Yii::app()->getRequest()->getRestParams();
-		if(!isset($requestVars['id']))
+	public function actionDelete(array $CPUser) 
+	{
+		if(!isset($CPUser['id']))
 		{
-			return $this->renderApiResponse(400, array('id' => t('The id of the user to be deleted must be specified.')));
+			return $this->renderApiResponse(400, array('CPUser[id]' => t('The id of the user to be deleted must be specified.')));
 		}
 
-		$this->renderApiResponse(200, array('rows_deleted' => CPUser::model()->deleteByPk($requestVars['id'])));
+		$this->renderApiResponse(200, array('rows_deleted' => CPUser::model()->deleteByPk($CPUser['id'])));
 	}
 
-	public function actionOptions() {
+	public function actionOptions() 
+	{
 		$model = new CPUser('search');
 		$response['GET'] =
 						array(

@@ -8,7 +8,8 @@
  * @property string $value
  * @property string $salt
  */
-class Key extends CActiveRecord {
+class Key extends CActiveRecord 
+{
 
 	public $key;
 
@@ -17,18 +18,21 @@ class Key extends CActiveRecord {
      * @param string $className active record class name.
      * @return Key the static model class
      */
-    public static function model($className = __CLASS__) {
+    public static function model($className = __CLASS__) 
+    {
         return parent::model($className);
     }
 
     /**
      * @return string the associated database table name
      */
-    public function tableName() {
+    public function tableName() 
+    {
         return '{{key}}';
     }
 
-    public function behaviors() {
+    public function behaviors() 
+    {
     	return array_merge(parent::behaviors(),
     			array(
     					'extendedFeatures' => array('class' => 'behaviors.EModelBehaviors'),
@@ -51,7 +55,8 @@ class Key extends CActiveRecord {
     /**
      * @return array validation rules for model attributes.
      */
-    public function rules() {
+    public function rules() 
+    {
         return array(
             array('key, value, salt', 'required'),
         	array('value, salt', 'ext.pbkdf2.PBKDF2validator'),
@@ -66,7 +71,8 @@ class Key extends CActiveRecord {
     /**
      * @return array customized attribute labels (name=>label)
      */
-    public function attributeLabels() {
+    public function attributeLabels() 
+    {
         return array(
             'id' => t('ID'),
             'value' => t('Value'),
@@ -75,7 +81,8 @@ class Key extends CActiveRecord {
         );
     }
 
-    public function search() {
+    public function search() 
+    {
     	$criteria = new CDbCriteria;
 
     	$tableAlias = $this->getTableAlias();

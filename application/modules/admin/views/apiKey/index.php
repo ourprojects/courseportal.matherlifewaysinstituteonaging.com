@@ -1,7 +1,7 @@
 <?php $this->breadcrumbs = array('{t}Admin{/t}' => $this->createUrl('/admin'), '{t}API Keys{/t}'); ?>
 <h1>{t}API Keys{/t}</h1>
 <div id="single-column">
-	<?php $this->actionGrid(null, 'apiKey-grid') ?>
+	<?php $this->actionGrid(array(), 'apiKey-grid') ?>
 	<h2>{t}Create New{/t}</h2>
 	<div class="form">
 		<?php
