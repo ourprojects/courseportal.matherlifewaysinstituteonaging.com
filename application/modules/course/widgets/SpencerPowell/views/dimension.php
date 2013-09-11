@@ -63,8 +63,8 @@
 												'type' => 'GET',
 												'url' => 'js:$(this).attr("href")',
 												'beforeSend' => 'function(){'.
-													'$("#'.$this->getId().'-activityLogForm").spUserActivityForm({"scenario":"update","loading":true});'.
-													'$("#'.$this->getId().'-activityDialog").dialog("open");'.
+													'$("div#'.$this->getId().'-activityLogForm").spUserActivityForm({"scenario":"update","loading":true});'.
+													'$("div#'.$this->getId().'-activityDialog").dialog("open");'.
 												'}',
 												'success' => 'function(data){'.
 													'var $form = $("div#'.$this->getId().'-activityLogForm");'.
@@ -73,11 +73,11 @@
 													'});'.
 												'}',
 												'error' => 'function(data){'.
-													'$("#'.$this->getId().'-activityDialog").dialog("close");'.
-													'alert(data);'.
+													'$("div#'.$this->getId().'-activityDialog").dialog("close");'.
+													'alert("{t}Unable to contact server.{/t}");'.
 												'}',
 												'complete' => 'function(){'.
-													'$("#'.$this->getId().'-activityLogForm").spUserActivityForm("loading", false);'.
+													'$("div#'.$this->getId().'-activityLogForm").spUserActivityForm("loading", false);'.
 												'}',
 											)
 										).
@@ -86,15 +86,19 @@
 									),
 									'delete' => array(
 										'label' => '{t}Delete{/t}',
-										'url' => '$this->grid->getOwner()->getController()->createUrl($this->grid->getOwner()->actionPrefix."logActivity", array("UserActivity" => array("id" => $data->id)));',
+										'url' => '$this->grid->getOwner()->getController()->createUrl($this->grid->getOwner()->actionPrefix."logActivity", array("UserActivity" => array("id" => $data->id, "dimensions" => array('.$dimension->id.'))));',
 										'click' => 'function(){'.
 											CHtml::ajax(
 												array(
 													'type' => 'DELETE',
 													'url' => 'js:$(this).attr("href")',
 													'beforeSend' => 'function(){$("#'.$this->getId().'-'.$dimension->id.'-activities").addClass("loading");}',
-													'success' => 'function(data){$.fn.yiiGridView.update("'.$this->getId().'-'.$dimension->id.'-userActivityGrid");}',
-													'error' => 'function(data){alert(data);}',
+													'success' => 'function(data){'.
+														'$.fn.yiiGridView.update("'.$this->getId().'-'.$dimension->id.'-userActivityGrid");'.
+														'var $data = $.parseJSON(data);'.
+														'alert($data.message);'.
+													'}',
+													'error' => 'function(data){alert("{t}Unable to contact server.{/t}");}',
 													'complete' => 'function(){$("#'.$this->getId().'-'.$dimension->id.'-activities").removeClass("loading");}',
 												)
 											).

@@ -130,16 +130,15 @@ class ActivityLogWidget extends CInputWidget
 		$result = array();
 		if(!empty($UserActivity['id']))
 		{
-			$UserActivityModel = UserActivity::model()->with(array('dimensions', 'activity' => array('with' => 'recommendedDimensions')))->findByAttributes(array('id' => $UserActivity['id']));
+			$UserActivityModel = UserActivity::model()->with(array('userActivityDimensions', 'activity' => array('with' => 'recommendedDimensions')))->findByAttributes(array('id' => $UserActivity['id']));
 			if($UserActivityModel === null || $UserActivityModel->user_id !== $this->getUser()->getId())
 			{
 				$UserActivityModel = new UserActivity();
-				$UserActivityModel->addError('user_id',  t('An activity log with ID "{id}" could not be found for user "{user}".', array('{id}' => $UserActivity['id'], '{user}' => $this->getUser()->getName())));
-				$result['statusCode'] = 404;
+				$UserActivityModel->addError('id',  t('A logged activity with ID "{id}" could not be found for user "{user}".', array('{id}' => $UserActivity['id'], '{user}' => $this->getUser()->getName())));
 			}
-			elseif(Yii::app()->getRequest()->getIsPostRequest())
+			elseif(Yii::app()->getRequest()->getIsPostRequest() && !Yii::app()->getRequest()->getIsPutRequest())
 			{
-				$UserActivityModel->addError('user_id',  t('The activity log with ID "{id}" already exists for user "{user}". Unable to create a new activity.', array('{id}' => $UserActivity['id'], '{user}' => $this->getUser()->getName())));
+				$UserActivityModel->addError('id',  t('The logged activity with ID "{id}" already exists for user "{user}".', array('{id}' => $UserActivity['id'], '{user}' => $this->getUser()->getName())));
 			}
 			else
 			{
@@ -160,7 +159,6 @@ class ActivityLogWidget extends CInputWidget
 				{
 					$activity = new Activity();
 					$UserActivityModel->addError('activity_id', t('An activity with ID "{id}" could not be found.', array('{id}' => $UserActivity['activity_id'])));
-					$result['statusCode'] = 404;
 				}
 			}
 			else
@@ -207,15 +205,15 @@ class ActivityLogWidget extends CInputWidget
 							{
 								if(Yii::app()->getRequest()->getIsPutRequest())
 								{
-									foreach($UserActivityModel->getRelated('dimensions', true) as $dimension)
+									foreach($UserActivityModel->userActivityDimensions as $actDim)
 									{
-										if (($key = array_search($dimension->id, $UserActivity['dimensions'])) !== false)
+										if (($key = array_search($actDim->dimension_id, $UserActivity['dimensions'])) !== false)
 										{
 											unset($UserActivity['dimensions'][$key]);
 										}
 										else
 										{
-											$dimension->delete();
+											$actDim->delete();
 										}
 									}
 								}
@@ -227,7 +225,7 @@ class ActivityLogWidget extends CInputWidget
 									$UserActivityDimension->dimension_id = $dimensionId;
 									if(!$UserActivityDimension->save())
 									{
-										$UserActivityModel->addError('dimensions', implode(' & ',$UserActivityDimension->getErrors()));
+										$UserActivityModel->addError('dimensions', $UserActivityDimension->getErrors());
 										break;
 									}
 								}
@@ -238,12 +236,13 @@ class ActivityLogWidget extends CInputWidget
 							}
 							else
 							{
-								$result = array('success' => t('Activity sucessfully '.(Yii::app()->getRequest()->getIsPostRequest() ? 'logged' : 'updated').'.'));
+								$result = array('message' => t('Activity sucessfully '.(Yii::app()->getRequest()->getIsPutRequest() ? 'updated' : 'logged').'.'));
 								$transaction->commit();
 							}
 						}
 						catch(Exception $e)
 						{
+							$UserActivityModel->addError('id', $e->getMessage());
 							$transaction->rollback();
 							throw $e;
 						}
@@ -252,20 +251,35 @@ class ActivityLogWidget extends CInputWidget
 				}
 				elseif(!isset($ajax) || $ajax !== $this->getId().'-userActivityForm')
 				{
-					if($UserActivityModel->delete() > 0)
+					if(isset($UserActivity['dimensions']))
 					{
-						$result = array('success' => t('Activity sucessfully removed.'));
+						$removed = UserActivityDimension::model()->deleteAllByAttributes(array('user_activity_id' => $UserActivityModel->id, 'dimension_id' => $UserActivity['dimensions']));
+						if($removed !== count($UserActivity['dimensions']))
+						{
+							$result = array('message' => t('Not all dimensions could be removed from the activity. Some may have already been removed.'));
+						}
+						else
+						{
+							$result = array('message' => t('Activity dimension'.($removed > 1 ? 's' : '').' removed.'));
+						}
 					}
-					else
+					if(!isset($UserActivity['dimensions']) || $UserActivityModel->getRelated('userActivityDimensions', true) === array())
 					{
-						$UserActivityModel->addError('id', t('No activity was removed. The activity may have already been removed.'));
+						if($UserActivityModel->delete() > 0)
+						{
+							$result = array('message' => t('Activity removed.'));
+						}
+						else
+						{
+							$result = array('message' => t('No activity was removed. It may have already been removed.'));
+						}
 					}
 				}
 			}
 		}
+		
 		if($UserActivityModel->hasErrors())
 		{
-			$statusCode = isset($result['statusCode']) ? $result['statusCode'] : 400;
 			foreach($UserActivityModel->getErrors() as $attribute => $errors)
 			{
 				$result[CHtml::activeId($UserActivityModel, $attribute)] = $errors;
@@ -273,37 +287,26 @@ class ActivityLogWidget extends CInputWidget
 		}
 		else
 		{
-			$statusCode = isset($result['statusCode']) ? $result['statusCode'] : 200;
 			$result = array_merge(array(
 					'name' => $activity->name,
 					'description' => $activity->description,
 					'dateCompleted' => $UserActivityModel->dateCompleted,
 					'comment' => $UserActivityModel->comment,
 					'activity_id' => $UserActivityModel->activity_id,
-					'id' => $UserActivityModel->id
+					'id' => $UserActivityModel->id,
+					'message' => false,
+					'scenario' => $UserActivityModel->getScenario()
 			), $result);
 			foreach($activity->recommendedDimensions as $dimension)
 			{
 				$result['dimensions'][$dimension->id] = array('text' => $dimension->name, 'selected' => false);
 			}
-			foreach($UserActivityModel->dimensions as $dimension)
+			foreach($UserActivityModel->getRelated('dimensions', true) as $dimension)
 			{
 				$result['dimensions'][$dimension->id]['selected'] = true;
 			}
 		}
-		unset($result['statusCode']);
-		$data = function_exists('json_encode') ? json_encode($result) : CJSON::encode($result);
-		if(!headers_sent())
-		{
-			header("HTTP/1.1 ".$statusCode.' '.CHttpStatusCodes::getHttpMessage($statusCode));
-			header('Content-Type: application/json');
-			header('Content-MD5: '.md5($data));
-			header('Content-Length: '.strlen($data));
-		}
-		if(strcasecmp(Yii::app()->getRequest()->getRequestType(), 'HEAD'))
-		{
-			echo $data;
-		}
+		echo function_exists('json_encode') ? json_encode($result) : CJSON::encode($result);
 	}
 	
 	public function actionDimension($id, $date = null, $range = 'day', array $UserActivity = array())

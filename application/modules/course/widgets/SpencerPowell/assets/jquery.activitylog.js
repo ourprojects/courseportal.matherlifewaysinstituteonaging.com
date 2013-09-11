@@ -7,9 +7,9 @@
 
 (function ($) {
 
-	var methods, scenarios = [];
+	var attributes;
 
-	methods = {
+	attributes = {
 			
 			init: function(options)
 			{
@@ -134,24 +134,40 @@
 					return this.addClass("loading");
 				}
 				return this.removeClass("loading");
-			}
-		
+			},
+			
+			message: function(message)
+			{
+				var $message = this.find("p.message");
+				if(message)
+				{
+					$message.text(message);
+					$message.removeClass("hide");
+				}
+				else
+				{
+					$message.text("");
+					$message.addClass("hide");
+				}
+			},
+
 	};
 
 	$.fn.spUserActivityForm = function(method) 
 	{
-		if(methods[method]) 
+		if(attributes[method]) 
 		{
-			return methods[method].apply(this, Array.prototype.slice.call(arguments, 1));
+			return attributes[method].apply(this, Array.prototype.slice.call(arguments, 1));
 		}
-		else if (typeof method === 'object' || !method) 
+		else if(typeof method === 'object' || !method) 
 		{
-			return methods.init.apply(this, arguments);
+			return attributes.init.apply(this, arguments);
 		}
 		else
 		{
-			$.error('Method ' + method + ' does not exist on jQuery.spUserActivityForm');
-			return false;
+			var error = {};
+			error[method] = Array.prototype.slice.call(arguments, 1);
+			$.fn.yiiactiveform.updateSummary(this.find("form"), error);
 		}
 	};
 

@@ -26,21 +26,21 @@
 												'beforeSend' => 'function(){$("#'.$this->getId().'-userActivityForm").spUserActivityForm("loading", true);}',
 												'success' => 'function(data){'.
 													'var $data = $.parseJSON(data);'.
-													'if($data.success){'.
-														'$.each($("form#'.$this->getId().'-userActivityForm").spUserActivityForm("dimensions"), function(value){'.
-															'var $grid = $("div#'.$this->getId().'-"+value+"-userActivityGrid");'.
-															'if($grid.length > 0){'.
-																'$grid.yiiGridView("update");'.
-															'}'.
-														'});'.
-														'alert($data.success);'.
-													'}'.
+													'$.each($("form#'.$this->getId().'-userActivityForm").spUserActivityForm("dimensions"), function(value){'.
+														'var $grid = $("div#'.$this->getId().'-"+value+"-userActivityGrid");'.
+														'if($grid.length > 0){'.
+															'$grid.yiiGridView("update");'.
+														'}'.
+													'});'.
+													'var $form = $("div#'.$this->getId().'-activityLogForm");'.
+													'$.each($.parseJSON(data), function(attribute, value){'.
+														'$form.spUserActivityForm(attribute, value);'.
+													'});'.
 												'}',
 												'error' => 'function(data){'.
 													'$("form#'.$this->getId().'-userActivityForm").yiiactiveform("updateSummary", data);'.
 												'}',
 												'complete' => 'function(){'.
-													'$("#'.$this->getId().'-activityDialog").dialog("close");'.
 													'$("#'.$this->getId().'-userActivityForm").spUserActivityForm("loading", false);'.
 												'}',
 											)).
@@ -51,6 +51,7 @@
 				)
 			);
 	?>
+	<p class="message hide" style="background:#E6EFC2; color:#264409; border-color:#C6D880;"></p>
 	<p class="note">
 		<span class="required">*</span>{t}Required{/t}.
 	</p>
@@ -80,9 +81,15 @@
 		<?php echo $form->error($UserActivity, 'comment'); ?>
 	</div>
 	
-	<?php echo $form->hiddenField($UserActivity, 'activity_id'); ?>
+	<div class="row">
+		<?php echo $form->hiddenField($UserActivity, 'activity_id'); ?>
+		<?php echo $form->error($UserActivity, 'activity_id'); ?>
+	</div>
 	
-	<?php echo $form->hiddenField($UserActivity, 'id'); ?>
+	<div class="row">
+		<?php echo $form->hiddenField($UserActivity, 'id'); ?>
+		<?php echo $form->error($UserActivity, 'id'); ?>
+	</div>
 	
 	<?php echo CHtml::hiddenField('_method', 'POST'); ?>
 				

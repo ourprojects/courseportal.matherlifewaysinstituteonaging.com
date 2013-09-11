@@ -24,21 +24,21 @@ $this->widget('zii.widgets.grid.CGridView',
 									'type' => 'GET',
 									'url' => 'js:$(this).attr("href")',
 									'beforeSend' => 'function(){'.
-										'$("#'.$this->getId().'-activityLogForm").spUserActivityForm();'.
-										'$("#'.$this->getId().'-activityDialog").dialog("open");'.
+										'$("div#'.$this->getId().'-activityLogForm").spUserActivityForm();'.
+										'$("div#'.$this->getId().'-activityDialog").dialog("open");'.
 									'}',
 									'success' => 'function(data){'.
 										'var $form = $("div#'.$this->getId().'-activityLogForm");'.
-										'$.each(data, function(attribute, value){'.
+										'$.each($.parseJSON(data), function(attribute, value){'.
 											'$form.spUserActivityForm(attribute, value);'.
 										'});'.
 									'}',
 									'error' => 'function(data){'.
-										'$("#'.$this->getId().'-activityDialog").dialog("close");'.
-										'alert(data);'.
+										'$("div#'.$this->getId().'-activityDialog").dialog("close");'.
+										'alert("{t}Unable to contact server.{/t}");'.
 									'}',
 									'complete' => 'function(){'.
-										'$("#'.$this->getId().'-activityLogForm").spUserActivityForm("loading", false);'.
+										'$("div#'.$this->getId().'-activityLogForm").spUserActivityForm("loading", false);'.
 									'}',
 								)
 							).
