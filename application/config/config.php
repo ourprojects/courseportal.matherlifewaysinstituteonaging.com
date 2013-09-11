@@ -176,6 +176,10 @@ return array(
 						'showScriptName' => false,
 						'rules' => require('routes.php'),
 				),
+				
+				'assetManager' => array(
+					'forceCopy' => defined('YII_DEBUG') && YII_DEBUG
+				),
 
 				'log' => array(
 						'class' => 'CLogRouter',
