@@ -1,18 +1,41 @@
 <?php
 $this->widget('zii.widgets.grid.CGridView', array(
 	'id' => 'user-grid',
-	'dataProvider' => $model->search(),
-	'filter' => $model,
+	'dataProvider' => $CourseUser->search(),
+	'filter' => $CourseUser,
 	'columns' => array(
-		Yii::app()->getModule(CourseUser::COURSE_MODULE_NAME)->userId,
-		Yii::app()->getModule(CourseUser::COURSE_MODULE_NAME)->userName,
+		$CourseUser->getIdColumnName(),
+		$CourseUser->getNameColumnName(),
+		array(
+			'name' => 'courseCount',
+			'sortable' => false,
+			'filter' => '',
+		),
 		array(
 				'class' => 'CButtonColumn',
 				'template' => '{view}{delete}',
 				'viewButtonLabel' => '{t}View User Details{/t}',
-				'viewButtonUrl' => 'Yii::app()->getController()->createUrl("/admin/user/view", array("id" => $data->id))',
-				'deleteButtonUrl' => 'Yii::app()->getController()->createUrl("/admin/user/delete", array("id" => $data->id))',
-				'deleteConfirmation' => "{t}Are you sure you would like to delete this user? All of this user's data will be lost forever.{/t}"
+				'viewButtonUrl' => 'Yii::app()->getController()->createUrl("/course/admin/user", array("id" => $data->id))',
+				'buttons' => array(
+						'delete' => array(
+								'url' => isset($course_id) ? 'Yii::app()->getController()->createUrl("/course/admin/user", array("id" => $data->id, "course_id" => '.$course_id.'));' : '#',
+								'label' => '{t}Remove User From Course{/t}',
+								'visible' => isset($course_id) ? 'true' : 'false',
+								'click' => 'function(){'.
+								CHtml::ajax(
+										array(
+											'type' => 'DELETE',
+											'url' => 'js:$(this).attr("href")',
+											'beforeSend' => 'function(){$("div#user-grid").addClass("loading");}',
+											'success' => 'function(data){$.fn.yiiGridView.update("user-grid");}',
+											'error' => 'function(data){alert("{t}An error ocurred attempting to remove the user from the course.{/t}");}',
+											'complete' => 'function(){$("div#user-grid").removeClass("loading");}',
+										)
+								).
+								'return false;'.
+								'}',
+						),
+				)
 		)
 	),
 ));

@@ -7,157 +7,288 @@ class AdminController extends CoursePortalController
 	{
 		return array(array('deny'));
 	}
-
-	public function actionIndex()
+	
+	public function actionIndex(array $Course = array(), array $CourseUser = array(), $ajax = null)
 	{
-		$this->render('index');
+		$CourseModel = new Course('search');
+		$CourseModel->setAttributes($Course);
+		$CourseUserModel = new CourseUser('search');
+		$CourseUserModel->setAttributes($CourseUser);
+		$CourseUserModel->with('courses')->together()->getDbCriteria()->group = $CourseUserModel->getDbConnection()->quoteColumnName($CourseUserModel->getTableAlias().'.id');
+		
+		switch($ajax)
+		{
+			case 'course-grid':
+				$this->renderPartial('_courseGrid', array('Course' => $CourseModel));
+				break;
+			case 'user-grid':
+				$this->renderPartial('_userGrid', array('CourseUser' => $CourseUserModel));
+				break;
+			default:
+				$this->render('index', array('Course' => $CourseModel, 'CourseUser' => $CourseUserModel));
+				break;
+		}
 	}
 
-    public function actionView($id = null, $ajax = null, array $Course = array(), array $CourseObjective = array())
-    {
-    	$models = isset($id) ? array(
-    			'course' => Course::model()->findByPk($id),
-    			'objectiveSearchModel' => new CourseObjective('search'),
-    			'courseObjective' => new CourseObjective
-    	) : array(
-    			'course' => new Course,
-    	);
-
-    	if(!$models['course']->getIsNewRecord())
-    	{
-	    	$models['objectiveSearchModel']->unsetAttributes();
-
-	    	$models['objectiveSearchModel']->course_id = $id;
-	    	$models['courseObjective']->course_id = $id;
-    	}
-
-    	if(isset($ajax))
-    	{
-    		if($ajax === 'course-form')
-    		{
-    			echo CActiveForm::validate($models['course']);
-    			Yii::app()->end();
-    		}
-    		elseif(!$models['course']->getIsNewRecord() && $ajax === 'course-objective-form')
-    		{
-    			echo CActiveForm::validate($models['courseObjective']);
-    			Yii::app()->end();
-    		}
-    	}
-
-    	if(Yii::app()->getRequest()->getIsPostRequest())
-    	{
-	    	$wasNew = $models['course']->getIsNewRecord();
-	    	$models['course']->setAttributes($Course);
-	    	if($models['course']->save())
-	    	{
-	    		Yii::app()->getUser()->setFlash('success', t('Course saved successfully.'));
-	    		if($wasNew)
-	    			$this->redirect($this->createUrl('courseView', array('id' => $models['course']->id)));
-	    	}
-	    	else
-	    	{
-	    		Yii::app()->getUser()->setFlash('error', t('Course could not be saved.'));
-	    	}
+	public function actionCourse($id, array $Course = array(), array $CourseObjective = array(), array $CourseUser = array(), $ajax = null)
+	{
+		$message = false;
+		$request = Yii::app()->getRequest();
+		if($request->getIsPostRequest() && !$request->getIsPutRequest())
+		{
+			$CourseModel = new Course();
+		}
+		else
+		{
+			$CourseModel = Course::model()->findByPk($id);
+			if($CourseModel === null)
+			{
+				$CourseModel->addError('id', t('Course with ID "{id}" was not found.', array('{id}' => $id)));
+			}
+		}
+		
+		if($request->getIsPostRequest() || $request->getIsPutRequest())
+		{
+			$CourseModel->setAttributes($Course);
+			if($CourseModel->validate())
+			{
+				$transaction = $CourseModel->getDbConnection()->beginTransaction();
+				try
+				{
+					if($CourseModel->save(false))
+					{
+						$transaction->commit();
+					}
+					else
+					{
+						$transaction->rollback();
+					}
+				}
+				catch(Exception $e)
+				{
+					$transaction->rollback();
+					$CourseModel->addError('id', $e->getMessage());
+				}
+			}
+		}
+		else if($request->getIsDeleteRequest())
+		{
+			if($CourseModel->delete() > 0)
+			{
+				$message = t('Course successfully deleted.');
+			}
+			else
+			{
+				$message = t('No course was deleted. The course may already have been deleted.');
+			}
+		}
+		
+		if($request->getIsAjaxRequest())
+		{
+			$result = array('message' => $message);
+			if($CourseModel->hasErrors())
+			{
+				foreach($CourseModel->getErrors() as $attribute => $errors)
+				{
+					$result[CHtml::activeId($CourseModel, $attribute)] = $errors;
+				}
+			}
+			else if(isset($ajax))
+			{
+				switch($ajax)
+				{
+					case 'objective-grid':
+						$CourseObjectiveModel = new CourseObjective('search');
+						$CourseObjectiveModel->setAttributes($CourseObjective);
+						$CourseObjectiveModel->course_id = $id;
+						$this->renderPartial('_objectiveGrid', array('CourseObjective' => $CourseObjectiveModel));
+						break;
+					case 'user-grid':
+						$CourseUserModel = new CourseUser('search');
+						$CourseUserModel->setAttributes($CourseUser);
+						$CourseUserModel->with(array('courses' => array('condition' => $CourseUserModel->getDbConnection()->quoteColumnName('courses.id').'=:id', 'params' => array(':id' => $id))))->together();
+						$CourseUserModel->getDbCriteria()->group = $CourseUserModel->getDbConnection()->quoteColumnName($CourseUserModel->getTableAlias().'.id');
+						$this->renderPartial('_userGrid', array('CourseUser' => $CourseUserModel));
+						break;
+					default:
+						break;
+				}
+			}
+			else
+			{
+				foreach($CourseModel->getAttributes() as $name => $value)
+				{
+					$result[CHtml::activeId($CourseModel, $name)] = $value;
+				}
+			}
+			echo function_exists('json_encode') ? json_encode($result) : CJSON::encode($result);
+		}
+		else
+		{
+			$CourseObjectiveModel = new CourseObjective('search');
+			$CourseObjectiveModel->setAttributes($CourseObjective);
+			$CourseObjectiveModel->course_id = $id;
+			$CourseUserModel = new CourseUser('search');
+			$CourseUserModel->setAttributes($CourseUser);
+			$CourseUserModel->with(array('courses' => array('condition' => $CourseUserModel->getDbConnection()->quoteColumnName('courses.id').'=:id', 'params' => array(':id' => $id))))->together();
+			$CourseUserModel->getDbCriteria()->group = $CourseUserModel->getDbConnection()->quoteColumnName($CourseUserModel->getTableAlias().'.id');
+			$this->render('course', array('Course' => $CourseModel, 'CourseObjective' => $CourseObjectiveModel, 'CourseUser' => $CourseUserModel, 'message' => $message));
+		}
+	}
 	
-	    	if(!$models['course']->getIsNewRecord() && isset($CourseObjective))
-	    	{
-	    		$models['courseObjective']->setAttributes($CourseObjective);
-	    		if($models['courseObjective']->save())
-	    		{
-	    			Yii::app()->getUser()->setFlash('success', t('Course objective saved successfully.'));
-	    		}
-	    		else
-	    		{
-	    			Yii::app()->getUser()->setFlash('error', t('Course objective could not be saved.'));
-	    		}
-	    	}
-    	}
-    	else
-    	{
-    		$models['objectiveSearchModel']->setAttributes($CourseObjective);
-    	}
+	public function actionCourseObjective($id, array $CourseObjective = array(), $ajax = null)
+	{
+		$message = false;
+		$request = Yii::app()->getRequest();
+		if($request->getIsPostRequest() && !$request->getIsPutRequest())
+		{
+			$courseObjectiveModel = new CourseObjective();
+		}
+		else
+		{
+			$courseObjectiveModel = CourseObjective::model()->findByPk($id);
+			if($courseObjectiveModel === null)
+			{
+				$courseObjectiveModel->addError('id', t('Course objective with ID "{id}" was not found.', array('{id}' => $id)));
+			}
+		}
+		
+		if($request->getIsPostRequest() || $request->getIsPutRequest())
+		{
+			$courseObjectiveModel->setAttributes($CourseObjective);
+			if($courseObjectiveModel->validate())
+			{
+				$transaction = $courseObjectiveModel->getDbConnection()->beginTransaction();
+				try
+				{
+					if($courseObjectiveModel->save(false))
+					{
+						$transaction->commit();
+					}
+					else
+					{
+						$transaction->rollback();
+					}
+				}
+				catch(Exception $e)
+				{
+					$transaction->rollback();
+					$courseObjectiveModel->addError('id', $e->getMessage());
+				}
+			}
+		}
+		else if($request->getIsDeleteRequest())
+		{
+			if($courseObjectiveModel->delete() > 0)
+			{
+				$message = t('Course objective successfully deleted.');
+			}
+			else
+			{
+				$message = t('No course objective was deleted. The course objective may already have been deleted.');
+			}
+		}
+		
+		$result = array('message' => $message);
+		if($courseObjectiveModel->hasErrors())
+		{
+			foreach($courseObjectiveModel->getErrors() as $attribute => $errors)
+			{
+				$result[CHtml::activeId($courseObjectiveModel, $attribute)] = $errors;
+			}
+		}
+		else if(!isset($ajax))
+		{
+			foreach($courseObjectiveModel->getAttributes() as $name => $value)
+			{
+				$result[CHtml::activeId($courseObjectiveModel, $name)] = $value;
+			}
+		}
+		echo function_exists('json_encode') ? json_encode($result) : CJSON::encode($result);
+	}
 
-    	$this->render('view', $models);
-    }
-
-
-    public function actionObjectiveDelete($id)
-    {
-    	$model = CourseObjective::model()->findByPk($id);
-
-    	if($model === null)
-    	{
-    		throw new CHttpException(404, t('Course objective with ID {id} not found.', array('{id}' => $id)));
-    	}
-
-    	if($model->delete())
-    	{
-    		$response = array('result' => 'success', 'message' => t('Course objective deleted successfully.'));
-    	}
-    	else
-    	{
-    		$response = array('result' => 'error', 'message' => t('Course objective could not be deleted.'));
-    	}
-
-    	if(Yii::app()->getRequest()->getIsAjaxRequest())
-    	{
-    		echo $response['message'];
-    	}
-    	else
-    	{
-    		Yii::app()->getUser()->setFlash($response['result'], $response['message']);
-    		$this->redirect(Yii::app()->getRequest()->getUrlReferrer());
-    	}
-    }
-
-    public function actionDelete($id)
-    {
-    	$model = Course::model()->findByPk($id);
-
-    	if($model === null)
-    	{
-    		throw new CHttpException(404, t('Course ID {id} not found.', array('{id}' => $id)));
-    	}
-
-    	if($model->delete())
-    	{
-    		$response = array('result' => 'success', 'message' => t('Course deleted successfully.'));
-    	}
-    	else
-    	{
-    		$response = array('result' => 'error', 'message' => t('Course could not be deleted.'));
-    	}
-
-    	if(Yii::app()->getRequest()->getIsAjaxRequest())
-    	{
-    		echo $response['message'];
-    	}
-    	else
-    	{
-    		Yii::app()->getUser()->setFlash($response['result'], $response['message']);
-    		$this->redirect(Yii::app()->getRequest()->getUrlReferrer());
-    	}
-    }
-
-    public function actionGrid($id, $name)
-    {
-    	switch($name)
-    	{
-    		case 'course-grid':
-    			$model = new Course('search');
-    			$model->setAttribute('id', $id);
-    			$gridPath = '_courseGrid';
-    			break;
-    		case 'user-grid':
-    			$model = new CourseUser('search');
-    			$model->with(array('courses' => array('condition' => 'courses.id=:id', 'params' => array(':id' => $id))))->together()->getDbCriteria()->group = $model->getDbConnection()->quoteColumnName($model->getTableAlias().'.id');
-    			$gridPath = '_userGrid';
-    			break;
-    		default:
-    			return;
-    	}
-    	$this->renderPartial($gridPath, array('model' => $model));
-    }
+	public function actionUser($id, $course_id = null, array $Course = array(), $ajax = null)
+	{
+		$message = false;
+		$courseUserModel = CourseUser::model()->findByPk($id);
+		if($courseUserModel === null)
+		{
+			throw new CHttpException(404, t('The user with ID "{id}" could not be found.', array('{id}' => $id)));
+		}
+		
+		$CourseModel = new Course('search');
+		$CourseModel->setAttributes($Course);
+		$CourseModel->with(array('users' => array('condition' => $CourseModel->getDbConnection()->quoteColumnName('users.'.$courseUserModel->getIdColumnName()).'=:user_id', 'params' => array(':user_id' => $courseUserModel->getId()))))->together();
+		
+		$request = Yii::app()->getRequest();
+		if(isset($course_id))
+		{
+			if($request->getIsPostRequest())
+			{
+				$UserCourse = new UserCourse();
+				$UserCourse->user_id = $courseUserModel->getId();
+				$UserCourse->course_id = $course_id;
+				if($UserCourse->validate())
+				{
+					$transaction = $UserCourse->getDbConnection()->beginTransaction();
+					try
+					{
+						if($UserCourse->save(false))
+						{
+							$transaction->commit();
+						}
+						else
+						{
+							$transaction->rollback();
+						}
+					}
+					catch(Exception $e)
+					{
+						$transaction->rollback();
+						$UserCourse->addError('user_id', $e->getMessage());
+					}
+				}
+			}
+			else if($request->getIsDeleteRequest())
+			{
+				if(UserCourse::model()->deleteByPk(array('user_id' => $courseUserModel->getId(), 'course_id' => $course_id)) > 0)
+				{
+					$message = t('User successfully removed from course.');
+				}
+				else
+				{
+					$message = t('No user was removed from any course.');
+				}
+			}
+		}
+		
+		if($request->getIsAjaxRequest())
+		{
+			$result = array('message' => $message);
+			if($courseUserModel->hasErrors())
+			{
+				foreach($courseUserModel->getErrors() as $attribute => $errors)
+				{
+					$result[CHtml::activeId($courseUserModel, $attribute)] = $errors;
+				}
+			}
+			else if(isset($ajax) && $ajax === 'course-grid')
+			{
+				$this->renderPartial('_courseGrid', array('Course' => $Course, 'user_id' => $courseUserModel->getId()));
+			}
+			else
+			{
+				foreach($courseUserModel->getAttributes() as $name => $value)
+				{
+					$result[CHtml::activeId($courseUserModel, $name)] = $value;
+				}
+			}
+			echo function_exists('json_encode') ? json_encode($result) : CJSON::encode($result);
+		}
+		else
+		{
+			$this->render('user', array('CourseUser' => $courseUserModel, 'Course' => $CourseModel, 'message' => $message));
+		}
+	}
 
 }

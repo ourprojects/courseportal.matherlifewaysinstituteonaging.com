@@ -78,6 +78,8 @@ class CourseUser extends CActiveRecord
 			'courses' => array(self::MANY_MANY, 'Course', UserCourse::model()->tableName().'(user_id, course_id)'),
 			'userActivities' => array(self::HAS_MANY, 'UserActivity', 'user_id'),
 			'activities' => array(self::MANY_MANY, 'Activity', UserActivity::model()->tableName().'(user_id, activity_id)'),
+				
+			'courseCount' => array(self::STAT, 'Course', UserCourse::model()->tableName().'(user_id, course_id)'),
 		);
 	}
 
@@ -100,9 +102,19 @@ class CourseUser extends CActiveRecord
 		return $this->{$this->getIdColumnName()};
 	}
 	
+	public function setId($id)
+	{
+		return $this->{$this->getIdColumnName()} = $id;
+	}
+	
 	public function getName()
 	{
 		return $this->{$this->getNameColumnName()};
+	}
+	
+	public function setName($name)
+	{
+		return $this->{$this->getNameColumnName()} = $name;
 	}
 	
 	public function getIdColumnName()
@@ -132,6 +144,7 @@ class CourseUser extends CActiveRecord
 			'activities' 				 => t('Activities'),
 			'activityLogEntries' 		 => t('Activity Log Entries'),
 			'activityLogEntryDimensions' => t('Activity Log Entry Dimensions'),
+			'courseCount'				 => t('Courses')
 		);
 	}
 

@@ -164,9 +164,5 @@ $this->breadcrumbs = array(
 		endif;
 		?>
 	</div>
-	<div class="box-white">
-		<h2>{t}Courses{/t}</h2>
-		<?php $this->actionGrid($CPUser->id, 'course-grid'); ?>
-	</div>
 	<?php endif; ?>
 </div>
