@@ -130,6 +130,7 @@ return array(
 				'user' => array(
 						'class' => 'application.auth.WebUser',
 						'allowAutoLogin' => true,
+						'autoUpdateFlash' => false,
 						'loginUrl' => array('user/login'),
 				),
 

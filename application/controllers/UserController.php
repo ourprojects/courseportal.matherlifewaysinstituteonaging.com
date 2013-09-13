@@ -42,8 +42,8 @@ class UserController extends ApiController
 				$identity = new BasicIdentity($loginModel->username_email, $loginModel->password);
 				if($webUser->login($identity, $loginModel->remember_me ? self::REMEMBER_ME_DURATION : 0))
 				{
-					$webUser->setFlash('success', t('Welcome {name}!', array('{name}' => $webUser->getModel()->name)));
-					$this->redirect($webUser->returnUrl);
+					$webUser->setFlash('success', t('Welcome {name}!', array('{name}' => $webUser->getName())));
+					$this->redirect($webUser->getReturnUrl());
 				}
 				else
 				{
@@ -215,15 +215,10 @@ class UserController extends ApiController
 		if($userIdentity->authenticate())
 		{
 			$user = $userIdentity->getModel();
-			$user->setIsActivated(true);
-
-			if($user->getRelated('activated')->save())
+			if($user->setIsActivated(true) && Yii::app()->getUser()->login($userIdentity, 0))
 			{
-				Yii::app()->getUser()->login($userIdentity, 0);
 				$user->regenerateSessionKey();
-				Yii::app()->getUser()->setFlash('success',
-					t('Your account has been activated. Welcome {email}!',
-						array('{email}' => Yii::app()->getUser()->name)));
+				Yii::app()->getUser()->setFlash('success', t('Your account has been activated. Welcome {email}!', array('{email}' => Yii::app()->getUser()->getName())));
 				$this->redirect(Yii::app()->homeUrl);
 			}
 		}

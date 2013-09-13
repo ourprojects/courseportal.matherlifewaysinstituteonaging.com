@@ -232,6 +232,8 @@ class CPUser extends CActiveRecord
 			{
 				$model = new UserActivated();
 				$model->setAttribute('date', date('Y-m-d H:i:s'));
+				$model->setAttribute('user_id', $this->id);
+				$model->save();
 			}
 		}
 		else if($model instanceof UserActivated)
@@ -243,6 +245,7 @@ class CPUser extends CActiveRecord
 			$model = null;
 		}
 		$this->activated = $model;
+		return $model === null || !$model->hasErrors();
 	}
 
 	/**
