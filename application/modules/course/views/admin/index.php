@@ -1,19 +1,16 @@
-<?php $this->breadcrumbs = array('{t}Courses{/t}' => $this->createUrl('/course'), '{t}Courses & Users{/t}'); ?>
-<h1 class="bottom">{t}Courses & Users{/t}</h1>
+<?php $this->breadcrumbs = array('{t}Courses{/t}' => $this->createUrl('/course'), '{t}Course Administration{/t}'); ?>
+<h1 class="bottom">{t}Course Administration{/t}</h1>
 <div id="single-column">
-	<div id="courses">
-		<h2>{t}Courses{/t}</h2>
-		<div class="box-white">
-			<?php 
-			$this->renderPartial('_courseGrid', array('Course' => $Course));
-			echo CHtml::button('{t}Create{/t}'); 
-			?>
-		</div>
-	</div>
-	<div id="users">
-		<h2>{t}Users{/t}</h2>
-		<div class="box-white">
-			<?php $this->renderPartial('_userGrid', array('CourseUser' => $CourseUser)); ?>
-		</div>
-	</div>
+	<?php 
+	$this->widget(
+			'zii.widgets.jui.CJuiTabs',
+			array(
+					'tabs' => array(
+							'{t}Courses{/t}' => $this->renderPartial('tabs/courses', array('Course' => $Course), true),
+							'{t}Users{/t}' => $this->renderPartial('tabs/users', array('CourseUser' => $CourseUser), true),
+					),
+					'headerTemplate' => '<li><a href="{url}" title="{title}">{title}</a></li>'
+			)
+	);
+	?>
 </div>

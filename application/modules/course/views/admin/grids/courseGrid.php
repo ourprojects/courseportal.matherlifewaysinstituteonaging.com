@@ -1,6 +1,6 @@
 <?php
 $this->widget('zii.widgets.grid.CGridView', array(
-		'id' => 'course-grid',
+		'id' => $gridId,
 		'dataProvider' => $Course->search(),
 		'filter' => $Course,
 		'columns' => array(
@@ -29,7 +29,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
 								'type' => 'DELETE',
 								'url' => 'js:$(this).attr("href")',
 								'beforeSend' => 'function(){$("div#course-grid").addClass("loading");}',
-								'success' => 'function(data){$.fn.yiiGridView.update("course-grid");}',
+								'success' => 'function(data){$.fn.yiiGridView.update("'.$gridId.'");}',
 								'error' => 'function(data){alert("{t}An error ocurred while performing action.{/t}");}',
 								'complete' => 'function(){$("div#course-grid").removeClass("loading");}',
 							)

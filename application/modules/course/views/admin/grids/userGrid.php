@@ -1,6 +1,6 @@
 <?php
 $this->widget('zii.widgets.grid.CGridView', array(
-	'id' => 'user-grid',
+	'id' => $gridId,
 	'dataProvider' => $CourseUser->search(),
 	'filter' => $CourseUser,
 	'columns' => array(
@@ -27,7 +27,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
 											'type' => 'DELETE',
 											'url' => 'js:$(this).attr("href")',
 											'beforeSend' => 'function(){$("div#user-grid").addClass("loading");}',
-											'success' => 'function(data){$.fn.yiiGridView.update("user-grid");}',
+											'success' => 'function(data){$.fn.yiiGridView.update("'.$gridId.'");}',
 											'error' => 'function(data){alert("{t}An error ocurred attempting to remove the user from the course.{/t}");}',
 											'complete' => 'function(){$("div#user-grid").removeClass("loading");}',
 										)

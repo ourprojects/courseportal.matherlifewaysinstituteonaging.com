@@ -1,6 +1,6 @@
 <?php
 $this->widget('zii.widgets.grid.CGridView', array(
-	'id' => 'course-objective-grid',
+	'id' => $gridId,
 	'dataProvider' => $CourseObjective->search(),
 	'filter' => $CourseObjective,
 	'columns' => array(
@@ -18,7 +18,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
 								'type' => 'GET',
 								'url' => 'js:$(this).attr("href")',
 								'beforeSend' => 'function(){$("div#course-objective-grid").addClass("loading");}',
-								'success' => 'function(data){$.fn.yiiGridView.update("course-objective-grid");}',
+								'success' => 'function(data){$.fn.yiiGridView.update("'.$gridId.'");}',
 								'error' => 'function(data){alert("{t}An error ocurred retrieving course objective data.{/t}");}',
 								'complete' => 'function(){$("div#course-objective-grid").removeClass("loading");}',
 							)
@@ -34,7 +34,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
 								'type' => 'DELETE',
 								'url' => 'js:$(this).attr("href")',
 								'beforeSend' => 'function(){$("div#course-objective-grid").addClass("loading");}',
-								'success' => 'function(data){$.fn.yiiGridView.update("course-objective-grid");}',
+								'success' => 'function(data){$.fn.yiiGridView.update("'.$gridId.'");}',
 								'error' => 'function(data){alert("{t}An error ocurred attempting to delete the course objective.{/t}");}',
 								'complete' => 'function(){$("div#course-objective-grid").removeClass("loading");}',
 							)

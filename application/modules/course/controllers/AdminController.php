@@ -19,10 +19,10 @@ class AdminController extends CoursePortalController
 		switch($ajax)
 		{
 			case 'course-grid':
-				$this->renderPartial('_courseGrid', array('Course' => $CourseModel));
+				$this->renderPartial('grids/courseGrid', array('Course' => $CourseModel, 'gridId' => 'course-grid'));
 				break;
 			case 'user-grid':
-				$this->renderPartial('_userGrid', array('CourseUser' => $CourseUserModel));
+				$this->renderPartial('grids/userGrid', array('CourseUser' => $CourseUserModel, 'gridId' => 'user-grid'));
 				break;
 			default:
 				$this->render('index', array('Course' => $CourseModel, 'CourseUser' => $CourseUserModel));
@@ -101,14 +101,21 @@ class AdminController extends CoursePortalController
 						$CourseObjectiveModel = new CourseObjective('search');
 						$CourseObjectiveModel->setAttributes($CourseObjective);
 						$CourseObjectiveModel->course_id = $id;
-						$this->renderPartial('_objectiveGrid', array('CourseObjective' => $CourseObjectiveModel));
+						$this->renderPartial('grids/objectiveGrid', array('CourseObjective' => $CourseObjectiveModel, 'gridId' => 'objective-grid'));
 						break;
 					case 'user-grid':
 						$CourseUserModel = new CourseUser('search');
 						$CourseUserModel->setAttributes($CourseUser);
 						$CourseUserModel->with(array('courses' => array('condition' => $CourseUserModel->getDbConnection()->quoteColumnName('courses.id').'=:id', 'params' => array(':id' => $id))))->together();
 						$CourseUserModel->getDbCriteria()->group = $CourseUserModel->getDbConnection()->quoteColumnName($CourseUserModel->getTableAlias().'.id');
-						$this->renderPartial('_userGrid', array('CourseUser' => $CourseUserModel));
+						$this->renderPartial('grids/userGrid', array('CourseUser' => $CourseUserModel, 'gridId' => 'user-grid'));
+						break;
+					case 'add-user-grid':
+						$CourseUserModel = new CourseUser('search');
+						$CourseUserModel->setAttributes($CourseUser);
+						$CourseUserModel->with(array('courses' => array('condition' => $CourseUserModel->getDbConnection()->quoteColumnName('courses.id').'!=:id', 'params' => array(':id' => $id))))->together();
+						$CourseUserModel->getDbCriteria()->group = $CourseUserModel->getDbConnection()->quoteColumnName($CourseUserModel->getTableAlias().'.id');
+						$this->renderPartial('grids/userGrid', array('CourseUser' => $CourseUserModel, 'gridId' => 'add-user-grid'));
 						break;
 					default:
 						break;
@@ -274,7 +281,19 @@ class AdminController extends CoursePortalController
 			}
 			else if(isset($ajax) && $ajax === 'course-grid')
 			{
-				$this->renderPartial('_courseGrid', array('Course' => $Course, 'user_id' => $courseUserModel->getId()));
+				switch($ajax)
+				{
+					case 'course-grid':
+						$this->renderPartial('grids/courseGrid', array('Course' => $Course, 'user_id' => $courseUserModel->getId(), 'gridId' => 'course-grid'));
+						break;
+					case 'add-course-grid':
+						$CourseModel->with(array('users' => array('condition' => $CourseModel->getDbConnection()->quoteColumnName('users.'.$courseUserModel->getIdColumnName()).'!=:user_id', 'params' => array(':user_id' => $courseUserModel->getId()))))->together();
+						$this->renderPartial('grids/courseGrid', array('Course' => $Course, 'user_id' => $courseUserModel->getId(), 'gridId' => 'add-course-grid'));
+						break;
+					default:
+						break;
+				}
+				
 			}
 			else
 			{
