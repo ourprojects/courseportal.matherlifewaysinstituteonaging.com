@@ -76,9 +76,10 @@ $this->widget(
 			/> </a> </div>
   </div>
   <div class="box-sidebar two">
-    <h3>{t}EACC Course Approval{/t}</h3>
-    <h5  style="text-align:center;">{t}NOW APPROVED !!!{/t}</h5>
-    <p><b><a href="http://www.eapassn.org/files/public/EACCroster2012.pdf" target="_blank">{t}Employee Assistance Certification Commission (EACC){/t}</a></b></p>
+    <h3>{t}Approved Courses{/t}</h3>
+    <p style="font-weight:bold;">{t}EACC has approved certain courses for PDH credit.{/t}</p>
+ 
+    <p style="text-align:center;"><b><a href="http://www.eapassn.org/files/public/EACCroster2012.pdf" target="_blank">{t}Employee Assistance Certification Commission (EACC){/t}</a></b></p>
     <p>{t}Established in 1986, the EACC is the credentialing governance body responsible for upholding all professional standards, policies, and procedures concerning the Certified Employee Assistance Professional (CEAP) credential.{/t}</p>
     <p><a href="http://www.eapassn.org/" target="_blank"><img class="block center" src="<?php echo $this->getImagesUrl('EAPlogo.png'); ?>" alt="EAP Assocation Logo"></a></p>
   </div>
