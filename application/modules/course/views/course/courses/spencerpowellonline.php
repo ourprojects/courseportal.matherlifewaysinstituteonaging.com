@@ -1004,7 +1004,7 @@ foreach(array(
 				<hr />
 				<img src="<?php echo $this->getImagesUrl('spencer/82399215.png'); ?>" alt="{t}Welcome!{/t}">
 				<h4>{t}Welcome to the final Module!{/t}</h4>
-				<p>{t}In this module, we are going to review the key points from the last seven modules of this course. We will take a little time to discuss your progress, as well as talk about how to set goals for the future. We will also list some strategies that you can use to maintain a brain healthy lifestyle. This module will be brief, so at the end you will have time to take the post-course evaluation.{/t}</p>
+				<p>{t}In this module, we are going to review the key points from the last seven modules of this course and help you set goals for the future. We will also go over some strategies that you can use to maintain a brain healthy lifestyle.{/t}</p>
 				<h4>{t}Module Objectives{/t}</h4>
 				<ul>
 					<li>{t}Review content from last seven modules of the course{/t}</li>
@@ -1012,7 +1012,7 @@ foreach(array(
 					<li>{t}Goal setting and strategies to maintain a brain-healthy lifestyle{/t}</li>
 					<li>{t}Post-program survey{/t}</li>
 				</ul>
-				<p class="forum">{t}Considering the past seven modules you have completed, do you feel that you have earned a sense of accomlishment? Post your response to the Forum.{/t}</p>
+				<p class="forum">{t}Considering the past seven modules you have completed, do you feel that you have earned a sense of accomplishment? Post your response to the Forum.{/t}</p>
 				<img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}">
 			</div>
 			<div class="buttons">
@@ -1030,8 +1030,10 @@ foreach(array(
 					<li>{t}It is never too late to adopt brain-healthy behaviors!{/t}</li>
 				</ul>
 				<p>{t}Let us review some facts which serve as the foundation for our course. First, unlike slowed reaction time or impaired hearing, dementia is not a normal part of aging. Dementia is a disease, and while it is very common among older adults, it is not something that occurs in everyone who grows to be old.{/t}</p>
-				<p>{t}Next, Alzheimer’s disease is not entirely caused by genetics. Although there are deterministic genes that result in dementia, individuals with these genes represent only a small subset of those with the disease, and typically the onset of this variant of Alzheimer's disease is earlier in the lifespan, typically before age 65. Risk genes contribute to the likelihood that someone will develop dementia as well, however, someone may have the risk gene and not develop dementia. At the beginning of this program, we told you that genes are responsible for only 30% of the risk of contracting late onset Alzheimer’s Disease. Approximately 70% of what causes the disease is environmental, much of which is within our control. This is why we say that lifestyle is an important factor in brain health.{/t}</p>
-				<p>{t}Fortunately, it is never too late to adopt brain healthy behaviors. Although someone with a lifetime of participation in these behaviors may fare the best, even older adult will gain from them. {/t}</p>
+				<p>{t}Next, Alzheimer’s disease is not entirely caused by genetics. Although there are deterministic genes that result in dementia, individuals with these genes represent only a small subset of those with the disease, and typically the onset of this variant of Alzheimer's disease is earlier in the lifespan, typically before age 65.{/t}</p>
+				<p>{t}Risk genes on the other hand only contribute to the likelihood that someone will develop dementia.  Therefore, someone may have the risk gene and not develop dementia.{/t}</p>
+				<p>{t}At the beginning of this program, we told you that genes are responsible for only about 30% of the risk of contracting late onset Alzheimer ’s disease, the most common form of dementia. Therefore, approximately 70% of what causes the disease is environmental, much of which is within our control. This is why we say that lifestyle is an important factor in brain health.{/t}</p>
+				<p>{t}Fortunately, it is never too late to adopt brain healthy behaviors. Although someone with a lifetime of participation in these behaviors may fare the best, even older adult will gain from them, so it is never too late to get started!{/t}</p>
 				<div id="question2" class="question">
 					<p style="text-align: center;">
 						<b>{t}Is Alzheimer’s diseaseentirely caused by genetics?{/t}</b><br /> <select name="select" style="text-align: center;">
@@ -1065,12 +1067,12 @@ foreach(array(
 				<p>{t}Cognitive reserve is your brain’s reserve of both tissue and abilities that affects your risk for dementia.{/t}
 				
 				
-				<p>{t}In this course, we have compared cognitive reserve to your brain’s retirement account. Individuals who have a lot of Cognitive Reserve are more able to sustain losses before showing symptoms of dementia than people who have do not have much reserve. Cognitive reserve is not about preventing dementia. It is about delaying the onset of symptoms so you can have greater quality of life for a longer time.{/t}
+				<p>{t}In this course, we have compared cognitive reserve to your  brain&rsquo;s retirement account. Individuals who have a lot of Cognitive Reserve are  more able to sustain losses before showing symptoms of dementia than people who   do not have much reserve. Cognitive reserve is not just about  preventing dementia. It is also about delaying the onset of  symptoms so you can have greater quality of life for a longer time.{/t}
 				
 				
-				<h5>{t}How can we describe neuroplasticity?{/t}</h5>
-				<p>{t}The adult brain can change much more than we ever thought possible. Adult brains can grow new neurons and existing neurons can modify and grow new connections between each other. Brains can recover from injury better than we ever thought before as well.{/t}</p>
-			</div>
+	          <h5>{t}How can we describe neuroplasticity?{/t}</h5>
+				<p>{t}The adult brain can change much more than we ever thought  possible. Adult brains can grow new neurons and existing neurons can modify and  grow new connections between each other. Brains can recover from injury better  than we ever thought before as well.  All of this malleability is referred to as  plasticity – the brain is more plastic or changeable than we ever thought  before.{/t}
+			</p></div>
 			<div class="buttons">
 				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
@@ -1089,9 +1091,9 @@ foreach(array(
 					<li>{t}Spiritual{/t}</li>
 					<li>{t}Social{/t}</li>
 				</ul>
-				<p>{t}These past eight modules, we have helped you learn about how behavior changes in different areas of your life could help you build your cognitive reserve and maintain a healthy brain.{/t}</p>
-				<p style="text-align: center; font-style: italic;">{t}If asked, could you name all six areas of a brain-healthy lifestyle?{/t}</p>
-				<p>{t}Throughout the course, we have learned how each of these areas affect your risk of developing dementia, and what kinds of behaviors in these areas can promote brain health. Let us review some key points from each of the areas now.{/t}</p>
+				<p>{t}Throughout  the course, we have helped you learn about how behavior changes in  different areas of your life could help you build your cognitive reserve and  maintain a healthy brain.{/t}</p>
+				<p style="text-align: center; font-style: italic;">{t}Quiz yourself: <em>Close  your eyes and name all six areas of a brain-healthy lifestyle</em>.{/t}</p>
+				<p>{t} What  kinds of behaviors in these areas can promote brain health?    Let us review some key points from each of the areas now.{/t}</p>
 			</div>
 			<div class="buttons">
 				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
@@ -1105,16 +1107,23 @@ foreach(array(
 				<ul>
 					<li>{t}Physical activity lowers your lifetime odds of developing Alzheimer's disease{/t}</li>
 					<li>{t}You don’t have to run a marathon!{/t}</li>
-					<li>{t}Walking reduces your risk of cognitive decline.{/t}</li>
+					<li>{t}Walking as little as 6-9 miles a week reduces  the risk  of cognitive decline.{/t}</li>
 				</ul>
-				<p style="text-align: center; font-style: italic;">{t}What are some easy ways to increase physical activity in your daily life? Post your responses to the Forum.{/t}</p>
+			  <p style="text-align: center; font-style: italic;">{t}What are some easy ways to increase physical activity in your daily life? Post your responses to the Forum.{/t}</p>
+                
+             
 				<ul>
-					<li>{t}There is a good amount of research that shows physical activity helps your brain and protects against cognitive impairment.{/t}</li>
-					<li>{t}People who have a genetic predisposition to Alzheimer's Disease may be helped the most by physical activity.{/t}</li>
-					<li>{t}The degree to which physical activity helps your brain depend on length, type and duration of training sessions (Colcombe and Krammer, 2003).{/t}</li>
+                <li>{t}Physical activity increases:{/t}
+                  <ul>
+                    <li>{t}The growth of new brain cells{/t}</li>
+                    <li>{t}Nerve growth factors to help new and existing brain  cells{/t}</li>
+                    <li>{t}The growth of new blood vessels in the brain to  nourish and oxygenate brain cells{/t}</li>
+                    <li>{t}Brain volume and the size of key structures in the  brain (&ldquo;Reverses 1-2 years of age related volume loss&rdquo;){/t}</li></ul></li>
+					<li>{t}People who have a genetic predisposition to Alzheimer's d isease  may be helped the most by physical activity.{/t}</li>
+					<li>{t}The degree to which physical activity helps your brain depends  on length, type and duration of training sessions (Colcombe and Krammer, 2003).{/t}</li>
 				</ul>
 				<p>{t}But moderate levels of physical activity are enough to reduce the risk of cognitive impairment to some degree.{/t}</p>
-				<p class="forum">{t}During this course, we have asked you to increase your physical activity. Have you been able to do that? How so? What are some easy ways to increase physical activity in your daily life? Post your responses to the Forum (examples may include, taking the stairs instead of the elevator or parking farther away from the store).{/t}</p>
+				<p class="forum">{t}During  this course, we have asked you to increase your physical activity. Have you  been able to do that? How so?  Post your responses to the Forum.{/t}</p>
 				<img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}">
 			</div>
 			<div class="buttons">
@@ -1127,11 +1136,11 @@ foreach(array(
 				<hr />
 				<h4>{t}Key points:{/t}</h4>
 				<ul>
-					<li>{t}Chronic stress is toxic for brain cells and can increase your risk of all types of dementia.{/t}</li>
+					<li>{t}Chronic stress is toxic  to brain  cells and can increase your risk of all types of dementia.{/t}</li>
 					<li>{t}Managing stress is an important part of a brain healthy lifestyle.{/t}</li>
 				</ul>
-				<p style="text-align: center; font-style: italic;">{t}What stress management techniques have you found to be most effective for you?{/t}</p>
-				<p>{t}In this module, we learned about the physiology of stress and it’s effect on the body and brain. We know that chronic stress can lead to depression, which has been linked with a higher risk of Alzheimer's disease. Controlling stress is an important component in a brain healthy lifestyle. We talked about several practices, such as mindfulness meditation, that can be used to reduce stress.{/t}</p>
+				<p style="text-align: center; font-style: italic;">{t}<em>What stress management  techniques have you found to be most effective for you? Post your responses to  the Forum.</em>{/t}</p>
+				<p>{t}In this module, we learned about the physiology of stress and its effect on the body and brain. We know that chronic stress can lead to depression, which has been linked with a higher risk of Alzheimer's disease. Controlling stress is an important component in a brain healthy lifestyle. We talked about several practices, such as mindfulness meditation, that can be used to reduce stress.{/t}</p>
 				<p class="forum">{t}Have you incorporated mindfulness meditation or another stress reduction practice into your life? What stress management techniques have you found to be the most effective for you? Post your responses to the Forum.{/t}</p>
 				<img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}">
 			</div>
@@ -1146,10 +1155,9 @@ foreach(array(
 				<h4>{t}Key points:{/t}</h4>
 				<ul>
 					<li>{t}Stimulating your brain can promote cognitive reserve.{/t}</li>
-					<li>{t}The best way to stimulate your brain is to try new things that are really out of character for you.{/t}</li>
+					<li>{t}The best way to stimulate your brain is to try new things that are really out of character for you.{/t}				</li>
 				</ul>
-				<p style="text-align: center; font-style: italic;">{t}What does it mean to diversify your cognitive investments?{/t}</p>
-				<p>{t}In this module we learned how intellectual stimulation promotes cognitive reserve. We also talked about how, while doing crossword puzzles everyday is good, you can really stretch your brain by trying to learn something new. We also talked about diversifying our cognitive investments.{/t}</p>
+				<p>{t}In this module  you learned  how intellectual stimulation promotes cognitive reserve.  And while  doing crossword puzzles every day is generally a good thing,  it  really seems that you  may   get a bigger return on  your investment by learning something new. We also  taught  you about diversifying  your cognitive  investments.{/t}</p>
 				<p class="forum">{t}What does it mean to diversify your cognitive investments? Post your response to the Forum.{/t}</p>
 				<img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}">
 			</div>
@@ -1164,13 +1172,13 @@ foreach(array(
 				<h4>{t}Key points:{/t}</h4>
 				<ul>
 					<li>{t}The food we eat affects our brains.{/t}</li>
-					<li>{t}We can incorporate brain healthy food choices into our diet.{/t}</li>
+					<li>{t}We can incorporate brain healthy food choices into our diet.{/t}				</li>
 				</ul>
-				<p style="text-align: center; font-style: italic;">{t}What kinds of foods can we eat to help our brains?{/t}</p>
 				<p>{t}In this module, we learned how good nutrition can benefit our brains. Perhaps most importantly, we learned how to make healthy food choices that can promote cognitive health.{/t}</p>
 				<p class="forum">Can you remember what kinds of foods are healthy for your brain? Without searching the Internet, post your response to the Forum (examples foods can include: healthy salad dressing, nuts, fish, tomatoes, poultry, cruciferous vegetables, fruits, dark green leafy vegetables, foods rich in omega 3’s and anti-oxidants).</p>
 				<img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}">
-				<p class="forum">{t}What foods should we avoid because they are not good for our brain (examples can include: high fat dairy products, red meats, organ meats, butter, fried foods, too many sweets)? Can you share how you have been able to adopt more brain-healthy foods as part of your diet? Post your responses to the Forum.{/t}</p>
+				<p class="forum">{t}What  foods should we avoid because they are not good for our brain (examples can  include: high fat dairy products, red meats, organ meats, butter, fried foods,  too many sweets)?{/t} </p>
+				<p class="forum">{t}Can  you share how you have been able to  incorporate  more brain-healthy foods  in  your diet? Post your responses to the Forum.{/t}</p>
 				<img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}">
 			</div>
 			<div class="buttons">
@@ -1184,13 +1192,10 @@ foreach(array(
 				<h4>{t}Key points:{/t}</h4>
 				<ul>
 					<li>{t}Research has demonstrated that people who participate in spiritual practices experience various benefits to their health.{/t}</li>
-					<li>{t}There are a multitude of practices that could be considered spiritual.{/t}</li>
+					<li>{t}There are a multitude of practices that could be considered spiritual.{/t}				</li>
 				</ul>
-				<p style="text-align: center; font-style: italic;">{t}What types of spiritual practices are good for your health?{/t}</p>
-				<p>{t}In this module, we discussed different types of spiritual practices, their benefits, and how they help us. For example, meditation, Judeo-Christian practice and other spiritual practices have been shown to have positive health outcomes. We also learned some of the reasons why this might be the case.{/t}</p>
-				<p class="forum">{t}Can you describe some of the reasons spiritual practices have benefits for people? Post your response to the Forum (examples may include: social support, connection to a higher power, reduced stress, healthy lifestyle, gatitude, hopefulness and optimism, attention training, forgiveness)?{/t}</p>
-				<img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}">
-			</div>
+				<p>{t}In this module,  you learned  different types of spiritual practices, their benefits, and how they help us.  For example, meditation, Judeo-Christian practice and other spiritual practices  have been shown to have positive health outcomes. We also learned some of the  reasons why this might be the case.  These include:{/t}
+			</p></div>
 			<div class="buttons">
 				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
