@@ -47,9 +47,10 @@ foreach(array(
     </p>
     <br />
     <img src="<?php echo $this->getImagesUrl('msml/153075496.png'); ?>" alt="image"> </div>
-  <div class="box-sidebar one" style="background-color: #FFF;">
+  <div class="box-sidebar one">
     <h3>{t}Module Activity Log{/t}</h3>
-    <br />
+   
+    <p>{t}Please click the button below to access your user Activity Log.{/t}</p>
     <div class="text-center">
       <?php
 		echo CHtml::button('{t}Activity Log{/t}', array('onclick' => '$("#activityLog").dialog("open")', 'class' => 'button'));
@@ -694,7 +695,7 @@ foreach(array(
         <hr />
         <p> <img src="<?php echo $this->getImagesUrl('spencer/here.png'); ?>" alt="{t}Image{/t}"> </p>
         <ol>
-          <li>{t} Have better cognitive function{/t}</li>
+          <li>{t}Have better cognitive function{/t}</li>
           <li>{t}Experience less cognitive decline{/t}</li>
           <li>{t}Are less likely to develop Alzheimer’s disease and other dementias{/t}</li>
           <li>{t}Are less likely to develop disabilities {/t}</li>
@@ -702,11 +703,273 @@ foreach(array(
         <p>{t}Ask: How many of you would consider yourselves socially active? How many of you have heard that being socially active is good for your brain?{/t}</p>
         <p>{t}We are going to talk today about how social activities may be a key component of brain health. The great news for this module is that we are going to be talking about how doing things with other people that you consider FUN is actually good for you!{/t}</p>
         <p>{t}Scientists have shown repeatedly that social engagement, meaning participating in social activities and keeping a robust social network, is associated with many beneficial outcomes in later life in terms of preserving our memory and thinking abilities. The majority of these findings come from observational studies, in which hundreds or thousands of older persons without cognitive impairments are followed over time to see who develops problems like Alzheimer’s disease, other dementias, or declines in their cognitive function. Such studies have shown that the more socially active seniors tend to have better cognitive function and experience less cognitive decline as they age. One study showed that in over a thousand people aged 65 and older, the people in the top 10% of social activity experienced an average rate of cognitive decline that was 70% less than the 10% least socially active. More socially active people are also less likely to develop Alzheimer’s disease or other
-          forms of dementia, and they are less likely to develop disabilities and loss of independence. {/t}</p>
+          forms of dementia, and they are less likely to develop disabilities and loss of independence.{/t}</p>
       </div>
       <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Complete Module{/t}</a> </div>
     </div>
+    
+    
+    
+     <div id="lesson-7-slide-4" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Why is social activity good for our brains?{/t}</h2>
+        <hr />
+        
+        <p>{t}So why do more socially active older persons experience better cognitive outcomes? What are the ways in which social activity can improve the health of our brains?{/t}</p>
+        
+        <p>{t}There are a number of theories as to how this could work. More than one of these factors may be at play. You will see how many of these ideas tie in with other modules in the brain health series.{/t}</p>
+        
+        <p>{t}Social activity can lower stress and increase our mood. Some studies have shown that social isolation is linked to higher production of stress hormones. In an earlier module you learned all about how stress and negative emotions can be very bad for our brains. Therefore, social activity may be good for us by keeping us happy.{/t}</p>
+        <p>{t}Social activity can provide social roles to older people and keep people engaged in communities and groups. This can be especially important post-retirement, as many people, especially men, consider their occupation to be their primary role. Social activity can help to fill this void that some people feel.{/t}</p>
+        <p>{t}Social activity can provide a sense of purpose in life, which can be very important to the health and well being of older adults. A group of studies has shown that a strong sense of purpose in life is associated with less incidence of Alzheimer’s, less disability, and a longer life.{/t}</p>
+        <p>{t}Social activity can keep seniors from disengaging from life and becoming couch potatoes. Many gerontologists, scientists who study aging, focus on disengagement and have shown that seniors who disengage from others and stop leaving their homes are much more likely to enter a quick spiral downwards in terms of health and being able to care for themselves adequately.{/t}</p>
+        <p>{t}Human beings are social creatures in that we thrive on cooperation and the relationships we have with other people who are close to us. Seniors who socially disengage may be missing a critical element of what it is to be human.{/t}</p>
+        <p>{t}A more direct reason that staying social can be good for our brain health is because being around family and friends who care about us can be good in terms of preventative health. Loved ones can notice unhealthy symptoms and behaviors that could be early signs that something may be wrong and that it is time to see a medical professional.{/t}</p>
+        <p>{t}Finally, many social activities challenge us physically and mentally. Two other modules in this class will teach you why physical activity and mentally stimulating activity is good for you. Many social activities have these same elements and can be good for our brains in multiple ways!  
+          {/t}</p>
+        </p>
+        
+        
+   </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
+    </div>
+        
+        
+        
+    <div id="lesson-7-slide-5" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Social Brain Exercise{/t}</h2>
+        <hr />
+        
+        <p>{t}Being social also seems to be good brain exercise.  As we discussed briefly in the emotional module, people who are more socially active, have lower rates of cognitive decline.  Lower stress may be one of the reasons for this, but increased intellectual stimulation may also be another mechanism.{/t}</p>
+        
+        <p>{t}Let’s think for a minute about all of the brain activities that are involved in carrying on a simple conversation:{/t}</p>
+
+<p>{t}What sort of brain skills do you think are involved?{/t}</p>
+
+
+<ol>
+  <li>{t}The sides of our brains (the temporal lobes) are activated in a conversation because they are responsible for processing the sensations from our ears, so any sound, and converting that into meaningful information (language).  Our word bank is also stored here, so when we go searching for what we want to say, this part is activated.  This part also forms new memories.{/t}</li>
+  <li>{t}The occipital lobes at the back of the head are devoted to processing sensations that come through our eyes.  So if you are communicating face-to-face with someone, this part of the brain is active in reading important social cues such as facial expression and gestures.{/t}</li>
+  <li>{t}The front of the brain (frontal lobes) is responsible for what we call “executive functions” or things a CEO would do (plan, organize, direct attention, inhibit).  This part of the brain is what makes humans unique, allowing us to interact in civil ways.  It also helps us retrieve memories.  This part of the brain is also involved in motor function, allowing us to gesture with our body, make facial expressions and even move the muscles required to talk.  Therefore this part of the brain is also very active during a simple conversation.{/t}</li>
+  <li>{t}The parietal lobes (top back) are involved in maintaining our attention.{/t}</li>
+</ol>
+<p>{t}</p>
+<p>These are brain skills involved in a simple conversation.  Now think of all of the additional brain skills involved in planning outings with a friend (planning, spatial skills required to navigate to a meeting place – e.g. new restaurant) as well as maintaining a relationship (empathy, compassion, initiation, etc.).
+  {/t}</p>
+</p>
+   </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
+    </div>
+        
+        
+        
+        
+        
+    <div id="lesson-7-slide-6" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Oxytocin the  Love Hormone{/t}</h2>
+        <hr />
+        
+        
+        
+   </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
+    </div>
+        
+        
+        
+        
+    <div id="lesson-7-slide-7" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}An active lifestyle{/t}</h2>
+        <hr />
+        
+        
+   </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
+    </div>
+        
+        
+        
+        
+    <div id="lesson-7-slide-8" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Cognitive reserve{/t}</h2>
+        <hr />
+        
+        
+        
+   </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
+    </div>
+        
+        
+        
+        
+    <div id="lesson-7-slide-9" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}A caveat…{/t}</h2>
+        <hr />
+    
+    
+    
+</div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
+    </div>
+    
+    
+    
+    <div id="lesson-7-slide-10" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Enriched environments{/t}</h2>
+        <hr />
+    
+    
+    
+    
+</div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
+    </div>
+       <div id="lesson-7-slide-11" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Helpful tips on how to stay socially engaged{/t}</h2>
+        <hr />
+    
+    
+    
+    
   </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
+    </div>
+    
+       <div id="lesson-7-slide-12" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Quality Matters{/t}</h2>
+        <hr />
+    
+    
+    
+  </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
+    </div>
+    
+       <div id="lesson-7-slide-13" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Fun social activities{/t}</h2>
+        <hr />
+    
+    
+    
+</div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
+    </div>
+    
+    
+       <div id="lesson-7-slide-14" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Setting goals{/t}</h2>
+        <hr />
+    
+    
+    
+    
+</div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
+    </div>
+    
+    
+       <div id="lesson-7-slide-15" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Memory Strategy #7{/t}</h2>
+        <hr />
+    
+    
+    
+</div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
+    </div>
+    
+    
+    
+       <div id="lesson-7-slide-16" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Rehearsal Exercise{/t}</h2>
+        <hr />
+    
+    
+    
+    
+</div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
+    </div>
+    
+       <div id="lesson-7-slide-17" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}This Week&rsquo;s Goals{/t}</h2>
+        <hr />
+    
+    
+    
+    
+</div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
+    </div>
+    
+    
+       <div id="lesson-7-slide-18" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Recap{/t}</h2>
+        <hr />
+    <p class="forum">{t}Please answer the following questions on the Forum.{/t}</p>
+    <ul class="forum">
+    	<li>{t}What are some benefits of social engagement?{/t}</li>
+        <li>{t}What are some possible ways that social engagement helps us age better?{/t}</li>
+        <li>{t}Oxytocin is sometimes called what?{/t}</li>
+        <li>{t}What is the Memory Tip for this week?{/t}</li>
+        <li>{t}What are some ways to practice rehearsing memories?{/t}</li>
+        <li>{t}What are your goals moving forward?{/t}</li>
+        </ul>
+    <img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}">
+
+
+    
+    
+         </div>
+      <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Complete Module{/t}</a> </div>
+    </div>
+    
+    
+   
+     
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   <div id="lesson-8">
     <div id="lesson-8-slide-1" class="course-slide">
       <div class="content">
