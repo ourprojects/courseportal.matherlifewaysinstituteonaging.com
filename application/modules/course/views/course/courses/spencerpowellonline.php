@@ -749,13 +749,13 @@ foreach(array(
 
 
 <ol>
-  <li>{t}The sides of our brains (the temporal lobes) are activated in a conversation because they are responsible for processing the sensations from our ears, so any sound, and converting that into meaningful information (language).  Our word bank is also stored here, so when we go searching for what we want to say, this part is activated.  This part also forms new memories.{/t}</li>
-  <li>{t}The occipital lobes at the back of the head are devoted to processing sensations that come through our eyes.  So if you are communicating face-to-face with someone, this part of the brain is active in reading important social cues such as facial expression and gestures.{/t}</li>
-  <li>{t}The front of the brain (frontal lobes) is responsible for what we call “executive functions” or things a CEO would do (plan, organize, direct attention, inhibit).  This part of the brain is what makes humans unique, allowing us to interact in civil ways.  It also helps us retrieve memories.  This part of the brain is also involved in motor function, allowing us to gesture with our body, make facial expressions and even move the muscles required to talk.  Therefore this part of the brain is also very active during a simple conversation.{/t}</li>
-  <li>{t}The parietal lobes (top back) are involved in maintaining our attention.{/t}</li>
+  <li>{t}The sides of our brains (the<strong> temporal lobes</strong>) are activated in a conversation because they are responsible for processing the sensations from our ears, so any sound, and converting that into meaningful information <strong>(language</strong>).  Our <strong>word bank</strong> is also stored here, so when we go searching for what we want to say, this part is activated.  This part also <strong>forms new memories</strong>.{/t}</li>
+  <li>{t}The <strong>occipital lobes</strong> at the back of the head are devoted to processing sensations that come through our eyes.  So if you are communicating face-to-face with someone, this part of the brain is active in reading important social cues such as facial expression and gestures.{/t}</li>
+  <li>{t}The front of the brain <strong>(frontal lobes</strong>) is responsible for what we call “<strong>executive functions</strong>” or things a CEO would do <strong>(plan, organize, direct attention, inhibit</strong>).  This part of the brain is what makes humans unique, allowing us to interact in civil ways.  It also helps us retrieve memories.  This part of the brain is also involved in <strong>motor function</strong>, allowing us to gesture with our body, make facial expressions and even move the muscles required to talk.  Therefore this part of the brain is also very active during a simple conversation.{/t}</li>
+  <li>{t}The <strong>parietal lobes</strong> (top back) are involved in maintaining our <strong>attention</strong>.{/t}</li>
 </ol>
 <p>{t}</p>
-<p>These are brain skills involved in a simple conversation.  Now think of all of the additional brain skills involved in planning outings with a friend (planning, spatial skills required to navigate to a meeting place – e.g. new restaurant) as well as maintaining a relationship (empathy, compassion, initiation, etc.).
+<p>These are brain skills involved in a simple conversation.  Now think of all of the<strong> additional brain skills</strong> involved in <strong>planning outings</strong> with a friend (planning, spatial skills required to navigate to a meeting place – e.g. new restaurant) as well as<strong> maintaining a relationship</strong> (empathy, compassion, initiation, etc.).
   {/t}</p>
 </p>
    </div>
@@ -770,10 +770,26 @@ foreach(array(
       <div class="content">
         <h2 class="flowers">{t}Oxytocin the  Love Hormone{/t}</h2>
         <hr />
+  <ul>
+  	<li>{t}A brain chemical that promotes bonding{/t}</li>
+    <li>{t}Is activated when we are around people we feel a connection with:{/t}
+      <ul>
+        <li>{t}Spouse or partner{/t}</li>
+        <li>{t}Children{/t}</li>
+        <li>{t}Close friends{/t}</li>
+        <li>{t}Even Pets
+          
+          {t}</li>
+      </ul>
+    </li>
+    <li>{t}Oxytocin has been shown to play a role in memory improvement and brain plasticity.{/t}</li>
+</ul>
+
+        <p>{t}Finally, a chemical called <strong>oxytocin</strong> (sometimes called the love hormone) promotes bonding and is activated when we are around people we feel a connection with (spouse or partner, children, close friends, etc.).<strong> Oxytocin has been shown to play a role in memory improvement and brain plasticity</strong>.
+          {/t}</p>
         
         
-        
-   </div>
+      </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
     </div>
         
@@ -784,7 +800,7 @@ foreach(array(
       <div class="content">
         <h2 class="flowers">{t}An active lifestyle{/t}</h2>
         <hr />
-        
+        <p>{t}In fact, I would encourage you all to think of engaging in a general “active lifestyle”, replete with physical, mental, and social activities. Many activities are both social and physical, including going for walks with friends, exercise groups, and dancing. Many activities are both social and mental, including playing cards and other games, taking group classes, and book clubs. And then there are activities that hit that sweet spot of social, physical, and mental activity, such as learning new dance moves with a dance partner, playing sports which require strategy such as golf, and discovering new places with friends or a tour group.{/t}</p>
         
    </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
@@ -797,7 +813,7 @@ foreach(array(
       <div class="content">
         <h2 class="flowers">{t}Cognitive reserve{/t}</h2>
         <hr />
-        
+        <p>{t}How many of you have heard the term “use it or lose it”? One of the theories for why social activity is good for us is that when we are social, we are using our brains and challenging them to remember names and faces, addresses, phone numbers, language skills, and other cognitive abilities. Think for a moment about all of the different cognitive skills that you use just to carry on a simple conversation, including: auditory and visual processing, emotion perception, memory, language, working memory, needed to remember what you want to say next, planning, organizing your thoughts – basically your whole brain. In other words, being social is “exercise” for our brains. In Session 1 of this course, you learned about the concept of cognitive reserve, and there is convincing evidence that social activity may be one way that we can build up this cognitive reserve capacity. More socially active seniors may have a larger reserve to work with and more to lose cognitively before they experience problems like dementia.{/t}</p>
         
         
    </div>
@@ -812,7 +828,11 @@ foreach(array(
         <h2 class="flowers">{t}A caveat…{/t}</h2>
         <hr />
     
-    
+    <p>{t}In discussing the observed link between social activity and positive cognitive outcomes, we do need to caution that as I said before, most of the evidence comes from observational studies in which people are followed over time and their levels of social activity and their cognitive function is observed. Observational studies cannot prove causality beyond a shadow of a doubt and there are many reasons that social activity may be linked to better cognitive function that is not “causal” per se.{/t}</p>
+
+<p>{t}For example, 1) some other factor, such as personality type, socioeconomic status, or health status, may be a common cause of both a person’s social activity level and their cognitive function. Most observational studies attempt to control for these influences but may not do so perfectly. 2) It may also be that early declines in cognitive function are what leads to people disengaging socially. Observational studies attempt to deal with this problem by measuring social activities many years before cognitive problems appear to establish that changes in cognition come after social activity levels are determined, but certain neurological diseases such as Alzheimer’s are now believed to start many years before they are clinically detected. 3) As a related concept, social disengagement may be an early marker for brain disease such as Alzheimer’s that manifests years before cognitive problems.{/t}</p>
+
+<p>{t}The most well-designed studies have attempted to address these challenges to establishing a causal role for social activity, and the preponderance of evidence supports the idea that social activity actually affects our brain health, but these concerns cannot totally be ruled out. Because of the complexity of randomizing people to years of social activity, it is very difficult to conceive of randomized controlled trials in this area. But, despite some doubts about social activity having a direct effect on our brains, given that there are very few negative effects of social activity, there is little reason to not engage!{/t}</p>
     
 </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
@@ -825,18 +845,29 @@ foreach(array(
         <h2 class="flowers">{t}Enriched environments{/t}</h2>
         <hr />
     
+    <p>{t}Despite the lack of clinical trial  evidence of a causal role  for social activity in humans, there has been a large body of animal research  showing that animals that are allowed to experience what we might consider an  analogue of social activity experience beneficial changes in their brain.  Enriched environments are lab environments that are &lsquo;enriched&rsquo; in relation to  standard laboratory cages: animals (usually mice) are placed in larger cages  with other animals and a large amount of objects and obstacles and  opportunities for exercise.{/t}</p>
+    <p>{t}Unlike human studies, animal researchers can have animals  live in enriched environments and others in standard cages, and then autopsy  them to observe differences in brain biology that can be attributed to living  in the enriched environments. Scientists found that mice in enriched  environments actually grew new neurons (brain cells), had more synapses (the  connections between neurons), had more dendritic branching, meaning there are more  branches coming off of brain cells (point to picture) are connecting to other  brain cells, and neurochemical changes such as an increase in  certain chemicals that lead to brain cell development.{/t}</p>
+    <p>{t}Therefore,  these animal experiments give some biological evidence that humans who are  socially active and engaged may be experiencing some of these same beneficial  changes in their brain as compared to people who socially disengage from the  world. Coupled with the observational evidence in humans, the animal evidence  helps to paint a convincing picture of social activity&rsquo;s role in keeping our  brains healthy.{/t}</p>
     
     
-    
-</div>
+      </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
     </div>
        <div id="lesson-7-slide-11" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}Helpful tips on how to stay socially engaged{/t}</h2>
         <hr />
-    
-    
+        <ol>
+          <li>{t}Stay socially connected so you feel like you're a part of something – workplace, clubs, network of friends, religious congregation, or volunteer group{/t}</li>
+          <li>{t}Make friends and family a priority and spend time with them regularly{/t}</li>
+          <li>{t}Seek out friends and family for emotional support{/t}</li>
+          <li>{t}Keep working as long as you can and want to      {/t}</li>
+          <li>{t}After you stop working, find something that gives you a role and a purpose and has other people relying on you{/t}</li>
+          <li>{t}Put your passion into action: volunteer for a cause that is meaningful to you{/t}</li>
+        </ol>
+        <p><a href="http://www.beautiful-minds.com/FourDimensionsOfBrainHealth/TheSociallyConnectedMind.aspx
+" target="_blank">Beautiful-Minds.com</a></p>
+    <p>{t}OK, now that we have gone over the scientific evidence, let’s talk about some ways that we can stay socially active to improve our brain health. Here are some healthy tips that are adapted from this website, beautiful-minds.com. [read list and go over each point individually.{/t}</p>
     
     
   </div>
@@ -847,7 +878,12 @@ foreach(array(
       <div class="content">
         <h2 class="flowers">{t}Quality Matters{/t}</h2>
         <hr />
-    
+    <ul>
+    	<li>{t}Negative relationships can take a toll on us both emotionally and physically{/t}</li>
+
+<li>{t}Get the most out of your socialization by surrounding yourself with positive, supportive people{/t}</li>
+
+</ul>
     
     
   </div>
@@ -859,7 +895,17 @@ foreach(array(
         <h2 class="flowers">{t}Fun social activities{/t}</h2>
         <hr />
     
-    
+    <ul>
+    	<li>{t}Walking groups{/t}</li>
+    	<li>{t}Dancing{/t}</li>
+    	<li>{t}Bowling{/t}</li>
+    	<li>{t}Bridge and other card games{/t}</li>
+    	<li>{t}Coffee and tea groups
+    	  Dinner with friends{/t}</li>
+    	<li>{t}Goup trips to museums{/t}</li>
+    	<li>{t}Anything you find FUN!!{/t}</li>
+    </ul>
+    <p>{t}To give you some good ideas, here are some fun social activities that you can engage in. Remember, you are more likely to stay socially active if you are doing something you have a lot of fun doing, and having fun may be the key to staying happy and healthy!{/t}</p>
     
 </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
@@ -870,8 +916,25 @@ foreach(array(
       <div class="content">
         <h2 class="flowers">{t}Setting goals{/t}</h2>
         <hr />
+        
+        <ul>
+       	  <li>Identify a long term goal (Sample long term goals):
+        	  <ul>
+        	    <li>Volunteer for a cause</li>
+        	    <li>Join a group or club</li>
+        	    <li>Spend more time withfamily and friends</li>
+      	    </ul>
+      	  </li>
+        	<li>Set a short term goal for the week (Sample short term goals): 
+        	  <ul>
+        	    <li>Watch one less TV show and go for a walk with friend or family member instead</li>
+        	    <li>Pick up the phone and call one person you have not talked to in a while        	  </li>
+        	    <li>Introduce yourself to someone you see frequently but have never met (this moduel's exercise does not count)</li>
+      	    </ul>
+      	    </li>
+       	</ul>
     
-    
+    <p>{t}Before we leave, I would like you to set some goals for staying socially active. We can set some long term goals, which may take a little longer to get into but hopefully can last a lifetime. But we can start with some short term goals, that you can accomplish by next week.{/t}</p>
     
     
 </div>
@@ -884,9 +947,54 @@ foreach(array(
         <h2 class="flowers">{t}Memory Strategy #7{/t}</h2>
         <hr />
     
+    <h4>{t}Memory Tip #6{/t}</h4>
+    <h5>{t}Rehearsal{/t}</h5>
+    <p>{t}So often it seems that people overestimate the ability of the human memory, assuming to be able to remember things after just one exposure.  Often they forget that practice makes perfect, the operative word here being “practice.”  No self-respecting ballerina would be caught dead trying to perform a routine after just seeing it once and never rehearsing!  So why do we expect our memories to work perfectly without rehearsal? {/t}</p>
+      
+      <p>{t}If we really want our memories to live up to the expectations that we set for them, <strong>we have to invest some time in rehearsing what we want to remember.</strong>{/t}</p>
+      
+      <p>{t}Here are some tips for using rehearsal to your advantage:{/t}</p>
+      
+<p>{t}<strong>Repeat what you want to remember to yourself a couple of times.</strong>{/t}</p>
+
+<p>{t}Recall back to a couple of weeks ago when we discussed the concept of Working Memory.  Remember that one of the systems in working memory is the phonological loop.  This is the place where you can repeat something to yourself a few times, which will keep it in your working memory longer, allowing you more time to “work with it,” perhaps linking it, visualizing, or some other strategy.  But even just rehearsing the info to yourself a few times can give you more time to make it into a memory.{/t}</p>
+      
+      
+     <p>{t}<strong>Repeat what you want to remember out loud a couple of times</strong>.{/t}</p>
+      This is easy to do in a conversation.  Simply repeat what the other person said in the form of a question.  It may seem awkward at first, but you may do it naturally already without realizing it.  It is standard practice of conversation.  
+      “The Empire State Building is at the corner of 34th street and 5th Avenue, you say?”{/t}</p>
+      
+     <p>{t}This is a common tip for remembering the name of someone you just met also.  The standard recommendation is to try and use their name three times in your first conversation with them.{/t}</p>
+     <ul>
+       <li>Repeat it when they first introduce themselves{/t}
+         <ul>
+           <li>“Well hi Bill Smith, it is great to meet you.”{/t}</li>
+           </ul>
+         </li>
+       <li>Call them by name once in the course of your conversation{/t}
+         <ul>
+           <li>“Have you lived around here for a long time, Bill?”       {/t}</li>
+         </ul>
+         </li>
+       <li>Call them by name again when you end the conversation.{/t}
+         <ul>
+           <li>“Well Bill, it was really great to meet you.  I hope to see you around soon.”{/t}</li>
+         </ul>
+       </li>
+       </ul>
+     <p><strong>{t}Quiz yourself.</strong> Getting into a solid habit of quizzing yourself could work wonders in helping you improve your memory.  For example, you park on the 5th floor of the parking garage.  You practice your skill from Session 1 and pay attention to the sign indicating what floor you are on, and you may even write it down.  But one other thing you can do is to quiz yourself on the floor number at gradually increasing intervals.{/t}</p>
+     <p>{t}Quiz yourself right after looking at the number or right after writing it down, and quickly verify if you are right or wrong.{/t}</p>
+     <ul>
+       <li>{t}Getting it right can help your memory because you will feel good, and you may get a little burst of happy brain chemicals that can improve your memory.{/t}</li>
+       <li>{t}Getting it wrong can also help your memory because the disappointment that comes with getting it wrong can often provide a more salient memory than if we were to get it right.{/t}</li>
+     </ul>
+     <p>{t}Then quiz yourself on your walk to the elevator.  If you didn’t write the floor down, you will know if have the right answer by looking at the floor number on the elevator.{/t}</p>
+     <p>{t}Then quiz yourself about half-way to your destination.{/t}</p>
+     <p>{t}Quiz yourself again later after you’ve settled into the event that you’re attending.
+       And quiz yourself again any other time you think about it, perhaps when you go to the rest room or when you have a quiet moment to yourself.{/t}</p>
+     <p>{t}<strong>Tell someone else all about it.</strong> The common teaching method for getting students to learn the vast amounts of information required in medical school is “see one, do one, teach one.”  That last step is an important rehearsal technique that you can use in your everyday life.  Recounting an interesting fact you heard on the news, an entertaining story of a situation you experienced or a joke that someone told you is an easy way to rehearse what you want to remember.  What will work even better in helping you repeat the story will be to rehearse the story to yourself a few times (in the same way as quizzing yourself) to polish it up before telling someone else.{/t}</p>
     
-    
-</div>
+      </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
     </div>
     
