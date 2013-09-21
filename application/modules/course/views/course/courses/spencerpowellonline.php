@@ -757,8 +757,7 @@ foreach(array(
 <p>{t}</p>
 <p>These are brain skills involved in a simple conversation.  Now think of all of the<strong> additional brain skills</strong> involved in <strong>planning outings</strong> with a friend (planning, spatial skills required to navigate to a meeting place – e.g. new restaurant) as well as<strong> maintaining a relationship</strong> (empathy, compassion, initiation, etc.).
   {/t}</p>
-</p>
-   </div>
+      </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
     </div>
         
@@ -1006,25 +1005,24 @@ foreach(array(
         <hr />
         
         <ul>
-       	  <li>Repeat Things to Yourself</li>
-        	<li>Repeat things out loud
-        	  <ul>
-        	    <li>Repeat with questions</li>
-        	    <li>Repeat names 3 times</li>
+       	  <li>{t}Repeat Things to Yourself{/t}</li>
+        	<li>{t}Repeat things out loud{/t}
+        	  <ul><li>{t}Repeat with questions{/t}</li>
+        	    <li>{t}Repeat names 3 times{/t}</li>
       	    </ul>
       	  </li>
-        	<li>Quiz Yourself</li>
-        	<li>Tell Someone Else
+        	<li>{t}Quiz Yourself{/t}</li>
+        	<li>{t}Tell Someone Else{/t}
         	  <ul>
-        	    <li>See one, do one, teach one</li>
+        	    <li>{t}See one, do one, teach one{/t}</li>
       	    </ul>
       	  </li>
        	</ul>
     
-    <p>{t}Have people pair off and spend about 5 minutes interviewing the other person, uncovering 3-4 autobiographical facts about the other person that they did not know before.  This could include the other person’s middle name, where they grew up, their occupation, somewhere they’ve traveled, etc.  Encourage people to practice the  rehearsal techniques that were just discussed. </p>
-    <p>After 5 minutes of interviewing, ask the group to return to their seats.</p>
-    <p>Have them sit quietly for a minute or two, Quizzing themselves.</p>
-    <p>Then ask them to share what they learned.{/t}</p>
+    <p>{t}Have people pair off and spend about 5 minutes interviewing the other person, uncovering 3-4 autobiographical facts about the other person that they did not know before.  This could include the other person’s middle name, where they grew up, their occupation, somewhere they’ve traveled, etc.  Encourage people to practice the  rehearsal techniques that were just discussed.{/t}</p>
+    <p>{t}After 5 minutes of interviewing, ask the group to return to their seats.{/t}</p>
+    <p>{t}Have them sit quietly for a minute or two, Quizzing themselves.{/t}</p>
+    <p>{t}Then ask them to share what they learned.{/t}</p>
     
     
       </div>
@@ -1036,25 +1034,35 @@ foreach(array(
         <h2 class="flowers">{t}This Week&rsquo;s Goals{/t}</h2>
         <hr />
     
-    <p>{t}Goals</p>
-    <p> It’s better to set a “ridiculously simple goal” that a person can achieve in order to feel success than to set a goal that they will not achieve. </p>
-    <p>Goals need to be:</p>
-    <p>Specific with respect to:</p>
-    <p>Type of behavior – have people write a specific behavior (will log activities) as opposed to a vague aspiration (will try to monitor activities)</p>
-    <p>Duration of the behavior (5 minutes, etc.)</p>
-    <p>Frequency of behavior (4 times aweek)</p>
-    <p>Simple (ridiculously easy goals are an important place to start because small successes create momentum for bigger change)</p>
-    <p>Feasible (same as simple)</p>
-    <p>Rewards</p>
-    <p>Rewards are intended to be used each time the goal behavior is performed – not merely at the end of the week.  Using the memory goal above as an example, each day a person pays close attention for 30 seconds two times in a single day, she gets to put on a spray of her favorite perfume (maybe in preparation for dinner or the next morning).  She doesn’t have to wait the entire week to use her perfume.  If the perfume is part of her daily routine, then she can continue this routine provided she meet her goal each day.</p>
-    <p>Here are some guidelines for rewards:</p>
-    <p>Some people may need to take some time to think over their reward, so encourage them to come up with a reward very soon if they do not finish that in class</p>
-    <p>Rewards should be small and feasible & it’s a good idea not to use a reward that will get in the way of some other health goal, such as cookies</p>
-    <p>For a reward to be effective, the person must make an agreement with themselves that they will in no way get to have the reward without FIRST having achieved their small goal</p>
-    <p>Discuss how they plan to remember their goals and rewards and how they plan to track their progress.{/t}</p>
-    
-    
-      </div>
+    <h4>{t}Goals{/t}</h4>
+    <ul>
+      <li>{t}   You will likely need to <strong>offer guidance in helping set goals that are not too difficult or too vague</strong> – It’s better to set a “ridiculously simple goal” that a person can achieve in order to feel success than to set a goal that they will not achieve. {/t}</li>
+    </ul>
+    <h5>{t}Goals need to be:{/t}</h5>
+    <ul>
+      <li><strong>{t}Specific</strong> with respect to:{/t}
+        <ul>
+          <li>{t}Type of behavior – have people write a specific behavior (will log activities) as opposed to a vague aspiration (will try to monitor activities){/t}</li>
+          <li>{t}Duration of the behavior (5 minutes, etc.){/t}</li>
+          <li>{t}Frequency of behavior (4 times aweek){/t}</li>
+        </ul>
+      </li>
+      <li><strong>{t}Simple</strong> (ridiculously easy goals are an important place to start because small successes create momentum for bigger change){/t}</li>
+      <li><strong>{t}Feasible</strong> (same as simple){/t}</li>
+    </ul>
+    <h5>{t}Rewards{/t}</h5>
+<ul>
+  <li>{t}Rewards are intended to be used each time the goal behavior is performed – not merely at the end of the week.  Using the memory goal above as an example, each day a person pays close attention for 30 seconds two times in a single day, she gets to put on a spray of her favorite perfume (maybe in preparation for dinner or the next morning).  She doesn’t have to wait the entire week to use her perfume.  If the perfume is part of her daily routine, then she can continue this routine provided she meet her goal each day.{/t}</li>
+  </ul>
+<h5>{t}Here are some guidelines for rewards:{/t}</h5>
+<ul>
+  <li>{t}Some people <strong>may need to take some time to think over their reward</strong>, so encourage them to come up with a reward very soon if they do not finish that in class{/t}</li>
+  <li>{t}Rewards should be small and feasible & it’s a good idea not to use a reward that will get in the way of some other health goal, such as cookies{/t}</li>
+  <li><strong>{t}For a reward to be effective, the person must make an agreement with themselves that they will in no way get to have the reward without FIRST having achieved their small goal</strong>{/t}</li>
+</ul>
+<p>{t}Please share your plan to remember your goals and rewards and how you plan to track your progress, on the Forum.{/t}</p>
+<img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}">
+        </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
     </div>
     
