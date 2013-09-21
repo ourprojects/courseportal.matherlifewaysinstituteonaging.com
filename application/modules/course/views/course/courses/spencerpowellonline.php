@@ -47,9 +47,10 @@ foreach(array(
     </p>
     <br />
     <img src="<?php echo $this->getImagesUrl('msml/153075496.png'); ?>" alt="image"> </div>
-  <div class="box-sidebar one" style="background-color: #FFF;">
+  <div class="box-sidebar one">
     <h3>{t}Module Activity Log{/t}</h3>
-    <br />
+   
+    <p>{t}Please click the button below to access your user Activity Log.{/t}</p>
     <div class="text-center">
       <?php
 		echo CHtml::button('{t}Activity Log{/t}', array('onclick' => '$("#activityLog").dialog("open")', 'class' => 'button'));
@@ -694,7 +695,7 @@ foreach(array(
         <hr />
         <p> <img src="<?php echo $this->getImagesUrl('spencer/here.png'); ?>" alt="{t}Image{/t}"> </p>
         <ol>
-          <li>{t} Have better cognitive function{/t}</li>
+          <li>{t}Have better cognitive function{/t}</li>
           <li>{t}Experience less cognitive decline{/t}</li>
           <li>{t}Are less likely to develop Alzheimer’s disease and other dementias{/t}</li>
           <li>{t}Are less likely to develop disabilities {/t}</li>
@@ -702,11 +703,415 @@ foreach(array(
         <p>{t}Ask: How many of you would consider yourselves socially active? How many of you have heard that being socially active is good for your brain?{/t}</p>
         <p>{t}We are going to talk today about how social activities may be a key component of brain health. The great news for this module is that we are going to be talking about how doing things with other people that you consider FUN is actually good for you!{/t}</p>
         <p>{t}Scientists have shown repeatedly that social engagement, meaning participating in social activities and keeping a robust social network, is associated with many beneficial outcomes in later life in terms of preserving our memory and thinking abilities. The majority of these findings come from observational studies, in which hundreds or thousands of older persons without cognitive impairments are followed over time to see who develops problems like Alzheimer’s disease, other dementias, or declines in their cognitive function. Such studies have shown that the more socially active seniors tend to have better cognitive function and experience less cognitive decline as they age. One study showed that in over a thousand people aged 65 and older, the people in the top 10% of social activity experienced an average rate of cognitive decline that was 70% less than the 10% least socially active. More socially active people are also less likely to develop Alzheimer’s disease or other
-          forms of dementia, and they are less likely to develop disabilities and loss of independence. {/t}</p>
+          forms of dementia, and they are less likely to develop disabilities and loss of independence.{/t}</p>
       </div>
       <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Complete Module{/t}</a> </div>
     </div>
+    
+    
+    
+     <div id="lesson-7-slide-4" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Why is social activity good for our brains?{/t}</h2>
+        <hr />
+        
+        <p>{t}So why do more socially active older persons experience better cognitive outcomes? What are the ways in which social activity can improve the health of our brains?{/t}</p>
+        
+        <p>{t}There are a number of theories as to how this could work. More than one of these factors may be at play. You will see how many of these ideas tie in with other modules in the brain health series.{/t}</p>
+        
+        <p>{t}Social activity can lower stress and increase our mood. Some studies have shown that social isolation is linked to higher production of stress hormones. In an earlier module you learned all about how stress and negative emotions can be very bad for our brains. Therefore, social activity may be good for us by keeping us happy.{/t}</p>
+        <p>{t}Social activity can provide social roles to older people and keep people engaged in communities and groups. This can be especially important post-retirement, as many people, especially men, consider their occupation to be their primary role. Social activity can help to fill this void that some people feel.{/t}</p>
+        <p>{t}Social activity can provide a sense of purpose in life, which can be very important to the health and well being of older adults. A group of studies has shown that a strong sense of purpose in life is associated with less incidence of Alzheimer’s, less disability, and a longer life.{/t}</p>
+        <p>{t}Social activity can keep seniors from disengaging from life and becoming couch potatoes. Many gerontologists, scientists who study aging, focus on disengagement and have shown that seniors who disengage from others and stop leaving their homes are much more likely to enter a quick spiral downwards in terms of health and being able to care for themselves adequately.{/t}</p>
+        <p>{t}Human beings are social creatures in that we thrive on cooperation and the relationships we have with other people who are close to us. Seniors who socially disengage may be missing a critical element of what it is to be human.{/t}</p>
+        <p>{t}A more direct reason that staying social can be good for our brain health is because being around family and friends who care about us can be good in terms of preventative health. Loved ones can notice unhealthy symptoms and behaviors that could be early signs that something may be wrong and that it is time to see a medical professional.{/t}</p>
+        <p>{t}Finally, many social activities challenge us physically and mentally. Two other modules in this class will teach you why physical activity and mentally stimulating activity is good for you. Many social activities have these same elements and can be good for our brains in multiple ways!  
+          {/t}</p>
+        </p>
+        
+        
+   </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
+    </div>
+        
+        
+        
+    <div id="lesson-7-slide-5" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Social Brain Exercise{/t}</h2>
+        <hr />
+        
+        <p>{t}Being social also seems to be good brain exercise.  As we discussed briefly in the emotional module, people who are more socially active, have lower rates of cognitive decline.  Lower stress may be one of the reasons for this, but increased intellectual stimulation may also be another mechanism.{/t}</p>
+        
+        <p>{t}Let’s think for a minute about all of the brain activities that are involved in carrying on a simple conversation:{/t}</p>
+
+<p>{t}What sort of brain skills do you think are involved?{/t}</p>
+
+
+<ol>
+  <li>{t}The sides of our brains (the<strong> temporal lobes</strong>) are activated in a conversation because they are responsible for processing the sensations from our ears, so any sound, and converting that into meaningful information <strong>(language</strong>).  Our <strong>word bank</strong> is also stored here, so when we go searching for what we want to say, this part is activated.  This part also <strong>forms new memories</strong>.{/t}</li>
+  <li>{t}The <strong>occipital lobes</strong> at the back of the head are devoted to processing sensations that come through our eyes.  So if you are communicating face-to-face with someone, this part of the brain is active in reading important social cues such as facial expression and gestures.{/t}</li>
+  <li>{t}The front of the brain <strong>(frontal lobes</strong>) is responsible for what we call “<strong>executive functions</strong>” or things a CEO would do <strong>(plan, organize, direct attention, inhibit</strong>).  This part of the brain is what makes humans unique, allowing us to interact in civil ways.  It also helps us retrieve memories.  This part of the brain is also involved in <strong>motor function</strong>, allowing us to gesture with our body, make facial expressions and even move the muscles required to talk.  Therefore this part of the brain is also very active during a simple conversation.{/t}</li>
+  <li>{t}The <strong>parietal lobes</strong> (top back) are involved in maintaining our <strong>attention</strong>.{/t}</li>
+</ol>
+<p>{t}</p>
+<p>These are brain skills involved in a simple conversation.  Now think of all of the<strong> additional brain skills</strong> involved in <strong>planning outings</strong> with a friend (planning, spatial skills required to navigate to a meeting place – e.g. new restaurant) as well as<strong> maintaining a relationship</strong> (empathy, compassion, initiation, etc.).
+  {/t}</p>
+</p>
+   </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
+    </div>
+        
+        
+        
+        
+        
+    <div id="lesson-7-slide-6" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Oxytocin the  Love Hormone{/t}</h2>
+        <hr />
+  <ul>
+  	<li>{t}A brain chemical that promotes bonding{/t}</li>
+    <li>{t}Is activated when we are around people we feel a connection with:{/t}
+      <ul>
+        <li>{t}Spouse or partner{/t}</li>
+        <li>{t}Children{/t}</li>
+        <li>{t}Close friends{/t}</li>
+        <li>{t}Even Pets
+          
+          {t}</li>
+      </ul>
+    </li>
+    <li>{t}Oxytocin has been shown to play a role in memory improvement and brain plasticity.{/t}</li>
+</ul>
+
+        <p>{t}Finally, a chemical called <strong>oxytocin</strong> (sometimes called the love hormone) promotes bonding and is activated when we are around people we feel a connection with (spouse or partner, children, close friends, etc.).<strong> Oxytocin has been shown to play a role in memory improvement and brain plasticity</strong>.
+          {/t}</p>
+        
+        
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
+    </div>
+        
+        
+        
+        
+    <div id="lesson-7-slide-7" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}An active lifestyle{/t}</h2>
+        <hr />
+        <p>{t}In fact, I would encourage you all to think of engaging in a general “active lifestyle”, replete with physical, mental, and social activities. Many activities are both social and physical, including going for walks with friends, exercise groups, and dancing. Many activities are both social and mental, including playing cards and other games, taking group classes, and book clubs. And then there are activities that hit that sweet spot of social, physical, and mental activity, such as learning new dance moves with a dance partner, playing sports which require strategy such as golf, and discovering new places with friends or a tour group.{/t}</p>
+        
+   </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
+    </div>
+        
+        
+        
+        
+    <div id="lesson-7-slide-8" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Cognitive reserve{/t}</h2>
+        <hr />
+        <p>{t}How many of you have heard the term “use it or lose it”? One of the theories for why social activity is good for us is that when we are social, we are using our brains and challenging them to remember names and faces, addresses, phone numbers, language skills, and other cognitive abilities. Think for a moment about all of the different cognitive skills that you use just to carry on a simple conversation, including: auditory and visual processing, emotion perception, memory, language, working memory, needed to remember what you want to say next, planning, organizing your thoughts – basically your whole brain. In other words, being social is “exercise” for our brains. In Session 1 of this course, you learned about the concept of cognitive reserve, and there is convincing evidence that social activity may be one way that we can build up this cognitive reserve capacity. More socially active seniors may have a larger reserve to work with and more to lose cognitively before they experience problems like dementia.{/t}</p>
+        
+        
+   </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
+    </div>
+        
+        
+        
+        
+    <div id="lesson-7-slide-9" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}A caveat…{/t}</h2>
+        <hr />
+    
+    <p>{t}In discussing the observed link between social activity and positive cognitive outcomes, we do need to caution that as I said before, most of the evidence comes from observational studies in which people are followed over time and their levels of social activity and their cognitive function is observed. Observational studies cannot prove causality beyond a shadow of a doubt and there are many reasons that social activity may be linked to better cognitive function that is not “causal” per se.{/t}</p>
+
+<p>{t}For example, 1) some other factor, such as personality type, socioeconomic status, or health status, may be a common cause of both a person’s social activity level and their cognitive function. Most observational studies attempt to control for these influences but may not do so perfectly. 2) It may also be that early declines in cognitive function are what leads to people disengaging socially. Observational studies attempt to deal with this problem by measuring social activities many years before cognitive problems appear to establish that changes in cognition come after social activity levels are determined, but certain neurological diseases such as Alzheimer’s are now believed to start many years before they are clinically detected. 3) As a related concept, social disengagement may be an early marker for brain disease such as Alzheimer’s that manifests years before cognitive problems.{/t}</p>
+
+<p>{t}The most well-designed studies have attempted to address these challenges to establishing a causal role for social activity, and the preponderance of evidence supports the idea that social activity actually affects our brain health, but these concerns cannot totally be ruled out. Because of the complexity of randomizing people to years of social activity, it is very difficult to conceive of randomized controlled trials in this area. But, despite some doubts about social activity having a direct effect on our brains, given that there are very few negative effects of social activity, there is little reason to not engage!{/t}</p>
+    
+</div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
+    </div>
+    
+    
+    
+    <div id="lesson-7-slide-10" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Enriched environments{/t}</h2>
+        <hr />
+    
+    <p>{t}Despite the lack of clinical trial  evidence of a causal role  for social activity in humans, there has been a large body of animal research  showing that animals that are allowed to experience what we might consider an  analogue of social activity experience beneficial changes in their brain.  Enriched environments are lab environments that are &lsquo;enriched&rsquo; in relation to  standard laboratory cages: animals (usually mice) are placed in larger cages  with other animals and a large amount of objects and obstacles and  opportunities for exercise.{/t}</p>
+    <p>{t}Unlike human studies, animal researchers can have animals  live in enriched environments and others in standard cages, and then autopsy  them to observe differences in brain biology that can be attributed to living  in the enriched environments. Scientists found that mice in enriched  environments actually grew new neurons (brain cells), had more synapses (the  connections between neurons), had more dendritic branching, meaning there are more  branches coming off of brain cells (point to picture) are connecting to other  brain cells, and neurochemical changes such as an increase in  certain chemicals that lead to brain cell development.{/t}</p>
+    <p>{t}Therefore,  these animal experiments give some biological evidence that humans who are  socially active and engaged may be experiencing some of these same beneficial  changes in their brain as compared to people who socially disengage from the  world. Coupled with the observational evidence in humans, the animal evidence  helps to paint a convincing picture of social activity&rsquo;s role in keeping our  brains healthy.{/t}</p>
+    
+    
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
+    </div>
+       <div id="lesson-7-slide-11" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Helpful tips on how to stay socially engaged{/t}</h2>
+        <hr />
+        <ol>
+          <li>{t}Stay socially connected so you feel like you're a part of something – workplace, clubs, network of friends, religious congregation, or volunteer group{/t}</li>
+          <li>{t}Make friends and family a priority and spend time with them regularly{/t}</li>
+          <li>{t}Seek out friends and family for emotional support{/t}</li>
+          <li>{t}Keep working as long as you can and want to      {/t}</li>
+          <li>{t}After you stop working, find something that gives you a role and a purpose and has other people relying on you{/t}</li>
+          <li>{t}Put your passion into action: volunteer for a cause that is meaningful to you{/t}</li>
+        </ol>
+        <p><a href="http://www.beautiful-minds.com/FourDimensionsOfBrainHealth/TheSociallyConnectedMind.aspx
+" target="_blank">Beautiful-Minds.com</a></p>
+    <p>{t}OK, now that we have gone over the scientific evidence, let’s talk about some ways that we can stay socially active to improve our brain health. Here are some healthy tips that are adapted from this website, beautiful-minds.com. [read list and go over each point individually.{/t}</p>
+    
+    
   </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
+    </div>
+    
+       <div id="lesson-7-slide-12" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Quality Matters{/t}</h2>
+        <hr />
+    <ul>
+    	<li>{t}Negative relationships can take a toll on us both emotionally and physically{/t}</li>
+
+<li>{t}Get the most out of your socialization by surrounding yourself with positive, supportive people{/t}</li>
+
+</ul>
+    
+    
+  </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
+    </div>
+    
+       <div id="lesson-7-slide-13" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Fun social activities{/t}</h2>
+        <hr />
+    
+    <ul>
+    	<li>{t}Walking groups{/t}</li>
+    	<li>{t}Dancing{/t}</li>
+    	<li>{t}Bowling{/t}</li>
+    	<li>{t}Bridge and other card games{/t}</li>
+    	<li>{t}Coffee and tea groups
+    	  Dinner with friends{/t}</li>
+    	<li>{t}Goup trips to museums{/t}</li>
+    	<li>{t}Anything you find FUN!!{/t}</li>
+    </ul>
+    <p>{t}To give you some good ideas, here are some fun social activities that you can engage in. Remember, you are more likely to stay socially active if you are doing something you have a lot of fun doing, and having fun may be the key to staying happy and healthy!{/t}</p>
+    
+</div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
+    </div>
+    
+    
+       <div id="lesson-7-slide-14" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Setting goals{/t}</h2>
+        <hr />
+        
+        <ul>
+       	  <li>Identify a long term goal (Sample long term goals):
+        	  <ul>
+        	    <li>Volunteer for a cause</li>
+        	    <li>Join a group or club</li>
+        	    <li>Spend more time withfamily and friends</li>
+      	    </ul>
+      	  </li>
+        	<li>Set a short term goal for the week (Sample short term goals): 
+        	  <ul>
+        	    <li>Watch one less TV show and go for a walk with friend or family member instead</li>
+        	    <li>Pick up the phone and call one person you have not talked to in a while        	  </li>
+        	    <li>Introduce yourself to someone you see frequently but have never met (this moduel's exercise does not count)</li>
+      	    </ul>
+      	    </li>
+       	</ul>
+    
+    <p>{t}Before we leave, I would like you to set some goals for staying socially active. We can set some long term goals, which may take a little longer to get into but hopefully can last a lifetime. But we can start with some short term goals, that you can accomplish by next week.{/t}</p>
+    
+    
+</div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
+    </div>
+    
+    
+       <div id="lesson-7-slide-15" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Memory Strategy #7{/t}</h2>
+        <hr />
+    
+    <h4>{t}Memory Tip #6{/t}</h4>
+    <h5>{t}Rehearsal{/t}</h5>
+    <p>{t}So often it seems that people overestimate the ability of the human memory, assuming to be able to remember things after just one exposure.  Often they forget that practice makes perfect, the operative word here being “practice.”  No self-respecting ballerina would be caught dead trying to perform a routine after just seeing it once and never rehearsing!  So why do we expect our memories to work perfectly without rehearsal? {/t}</p>
+      
+      <p>{t}If we really want our memories to live up to the expectations that we set for them, <strong>we have to invest some time in rehearsing what we want to remember.</strong>{/t}</p>
+      
+      <p>{t}Here are some tips for using rehearsal to your advantage:{/t}</p>
+      
+<p>{t}<strong>Repeat what you want to remember to yourself a couple of times.</strong>{/t}</p>
+
+<p>{t}Recall back to a couple of weeks ago when we discussed the concept of Working Memory.  Remember that one of the systems in working memory is the phonological loop.  This is the place where you can repeat something to yourself a few times, which will keep it in your working memory longer, allowing you more time to “work with it,” perhaps linking it, visualizing, or some other strategy.  But even just rehearsing the info to yourself a few times can give you more time to make it into a memory.{/t}</p>
+      
+      
+     <p>{t}<strong>Repeat what you want to remember out loud a couple of times</strong>.{/t}</p>
+      This is easy to do in a conversation.  Simply repeat what the other person said in the form of a question.  It may seem awkward at first, but you may do it naturally already without realizing it.  It is standard practice of conversation.  
+      “The Empire State Building is at the corner of 34th street and 5th Avenue, you say?”{/t}</p>
+      
+     <p>{t}This is a common tip for remembering the name of someone you just met also.  The standard recommendation is to try and use their name three times in your first conversation with them.{/t}</p>
+     <ul>
+       <li>Repeat it when they first introduce themselves{/t}
+         <ul>
+           <li>“Well hi Bill Smith, it is great to meet you.”{/t}</li>
+           </ul>
+         </li>
+       <li>Call them by name once in the course of your conversation{/t}
+         <ul>
+           <li>“Have you lived around here for a long time, Bill?”       {/t}</li>
+         </ul>
+         </li>
+       <li>Call them by name again when you end the conversation.{/t}
+         <ul>
+           <li>“Well Bill, it was really great to meet you.  I hope to see you around soon.”{/t}</li>
+         </ul>
+       </li>
+       </ul>
+     <p><strong>{t}Quiz yourself.</strong> Getting into a solid habit of quizzing yourself could work wonders in helping you improve your memory.  For example, you park on the 5th floor of the parking garage.  You practice your skill from Session 1 and pay attention to the sign indicating what floor you are on, and you may even write it down.  But one other thing you can do is to quiz yourself on the floor number at gradually increasing intervals.{/t}</p>
+     <p>{t}Quiz yourself right after looking at the number or right after writing it down, and quickly verify if you are right or wrong.{/t}</p>
+     <ul>
+       <li>{t}Getting it right can help your memory because you will feel good, and you may get a little burst of happy brain chemicals that can improve your memory.{/t}</li>
+       <li>{t}Getting it wrong can also help your memory because the disappointment that comes with getting it wrong can often provide a more salient memory than if we were to get it right.{/t}</li>
+     </ul>
+     <p>{t}Then quiz yourself on your walk to the elevator.  If you didn’t write the floor down, you will know if have the right answer by looking at the floor number on the elevator.{/t}</p>
+     <p>{t}Then quiz yourself about half-way to your destination.{/t}</p>
+     <p>{t}Quiz yourself again later after you’ve settled into the event that you’re attending.
+       And quiz yourself again any other time you think about it, perhaps when you go to the rest room or when you have a quiet moment to yourself.{/t}</p>
+     <p>{t}<strong>Tell someone else all about it.</strong> The common teaching method for getting students to learn the vast amounts of information required in medical school is “see one, do one, teach one.”  That last step is an important rehearsal technique that you can use in your everyday life.  Recounting an interesting fact you heard on the news, an entertaining story of a situation you experienced or a joke that someone told you is an easy way to rehearse what you want to remember.  What will work even better in helping you repeat the story will be to rehearse the story to yourself a few times (in the same way as quizzing yourself) to polish it up before telling someone else.{/t}</p>
+    
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
+    </div>
+    
+    
+    
+       <div id="lesson-7-slide-16" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Rehearsal Exercise{/t}</h2>
+        <hr />
+        
+        <ul>
+       	  <li>Repeat Things to Yourself</li>
+        	<li>Repeat things out loud
+        	  <ul>
+        	    <li>Repeat with questions</li>
+        	    <li>Repeat names 3 times</li>
+      	    </ul>
+      	  </li>
+        	<li>Quiz Yourself</li>
+        	<li>Tell Someone Else
+        	  <ul>
+        	    <li>See one, do one, teach one</li>
+      	    </ul>
+      	  </li>
+       	</ul>
+    
+    <p>{t}Have people pair off and spend about 5 minutes interviewing the other person, uncovering 3-4 autobiographical facts about the other person that they did not know before.  This could include the other person’s middle name, where they grew up, their occupation, somewhere they’ve traveled, etc.  Encourage people to practice the  rehearsal techniques that were just discussed. </p>
+    <p>After 5 minutes of interviewing, ask the group to return to their seats.</p>
+    <p>Have them sit quietly for a minute or two, Quizzing themselves.</p>
+    <p>Then ask them to share what they learned.{/t}</p>
+    
+    
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
+    </div>
+    
+       <div id="lesson-7-slide-17" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}This Week&rsquo;s Goals{/t}</h2>
+        <hr />
+    
+    <p>{t}Goals</p>
+    <p> It’s better to set a “ridiculously simple goal” that a person can achieve in order to feel success than to set a goal that they will not achieve. </p>
+    <p>Goals need to be:</p>
+    <p>Specific with respect to:</p>
+    <p>Type of behavior – have people write a specific behavior (will log activities) as opposed to a vague aspiration (will try to monitor activities)</p>
+    <p>Duration of the behavior (5 minutes, etc.)</p>
+    <p>Frequency of behavior (4 times aweek)</p>
+    <p>Simple (ridiculously easy goals are an important place to start because small successes create momentum for bigger change)</p>
+    <p>Feasible (same as simple)</p>
+    <p>Rewards</p>
+    <p>Rewards are intended to be used each time the goal behavior is performed – not merely at the end of the week.  Using the memory goal above as an example, each day a person pays close attention for 30 seconds two times in a single day, she gets to put on a spray of her favorite perfume (maybe in preparation for dinner or the next morning).  She doesn’t have to wait the entire week to use her perfume.  If the perfume is part of her daily routine, then she can continue this routine provided she meet her goal each day.</p>
+    <p>Here are some guidelines for rewards:</p>
+    <p>Some people may need to take some time to think over their reward, so encourage them to come up with a reward very soon if they do not finish that in class</p>
+    <p>Rewards should be small and feasible & it’s a good idea not to use a reward that will get in the way of some other health goal, such as cookies</p>
+    <p>For a reward to be effective, the person must make an agreement with themselves that they will in no way get to have the reward without FIRST having achieved their small goal</p>
+    <p>Discuss how they plan to remember their goals and rewards and how they plan to track their progress.{/t}</p>
+    
+    
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
+    </div>
+    
+    
+       <div id="lesson-7-slide-18" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Recap{/t}</h2>
+        <hr />
+    <p class="forum">{t}Please answer the following questions on the Forum.{/t}</p>
+    <ul class="forum">
+    	<li>{t}What are some benefits of social engagement?{/t}</li>
+        <li>{t}What are some possible ways that social engagement helps us age better?{/t}</li>
+        <li>{t}Oxytocin is sometimes called what?{/t}</li>
+        <li>{t}What is the Memory Tip for this week?{/t}</li>
+        <li>{t}What are some ways to practice rehearsing memories?{/t}</li>
+        <li>{t}What are your goals moving forward?{/t}</li>
+        </ul>
+    <img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}">
+
+
+    
+    
+         </div>
+      <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Complete Module{/t}</a> </div>
+    </div>
+    
+    
+   
+     
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   <div id="lesson-8">
     <div id="lesson-8-slide-1" class="course-slide">
       <div class="content">
