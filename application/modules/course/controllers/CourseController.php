@@ -47,10 +47,5 @@ class CourseController extends CoursePortalController
 	{
 		$this->render('index', array('courses' => Course::model()->with('objectives')->findAll(array('order' => 't.rank'))));
 	}
-	
-	public function actionTest()
-	{
-		$this->render('test');
-	}
 
 }
