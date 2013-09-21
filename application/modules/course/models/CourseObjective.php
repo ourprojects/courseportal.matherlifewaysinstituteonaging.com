@@ -50,20 +50,17 @@ class CourseObjective extends CActiveRecord
 	public function rules()
 	{
 		return array(
-				array('id, course_id', 'unsafe', 'except' => 'search'),
+				array('id', 'unsafe', 'except' => 'search'),
 				array('course_id, rank, text', 'required'),
 				array('id, course_id, rank', 'numerical', 'integerOnly' => true),
-				array('course_id', 'exist', 'attributeName' => 'id', 'className' => 'Course', 'allowEmpty' => false),
+				array('text', 'length', 'max' => 65535),
+				array('course_id', 'exist', 'attributeName' => 'id', 'className' => 'Course'),
 				array('rank',
-						'unique',
+						'ext.ECompositeUniqueValidator.ECompositeUniqueValidator',
 						'caseSensitive' => false,
-						'criteria' => array(
-								'condition' => $this->getDbCOnnection()->quoteColumnName($this->getTableAlias().'.course_id').'=:course_id',
-								'params' => array(':course_id' => $this->course_id),
-						),
+						'attributeName' => array('rank', 'course_id'),
 						'message' => 'An objective with {attribute} "{value}" already exists for this course.',
 				),
-				array('text', 'length', 'max' => 65535),
 
 				array('id, course_id, rank, text', 'safe', 'on' => 'search'),
 		);

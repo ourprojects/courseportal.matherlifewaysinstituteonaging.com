@@ -83,17 +83,21 @@ class CourseUser extends CActiveRecord
 		);
 	}
 
-	public function hasCourse($course) 
+	public function hasCourse($courseId, $hasCourse = true) 
 	{
-		if($course instanceof Course)
+		$criteria = array('params' => array(':course_id' => $courseId), 'together' => true);
+		$userCourses = $this->getDbConnection()->quoteColumnName('userCourses.course_id');
+		if($hasCourse)
 		{
-			return $this->hasUser($course->id);
+			$criteria['with'] = 'userCourses';
+			$criteria['condition'] = $userCourses.'=:course_id';
 		}
-		$this->getDbCriteria()->mergeWith(array(
-				'with' => 'userCourses',
-				'condition' => $this->getDbConnection()->quoteColumnName('userCourses.course_id').'=:course_id',
-				'params' => array(':course_id' => $course)
-		));
+		else
+		{
+			$criteria['with'] = array('userCourses' => array('on' => $userCourses.'=:course_id'));
+			$criteria['condition'] = $userCourses.' IS NULL';
+		}
+		$this->getDbCriteria()->mergeWith($criteria);
 		return $this;
 	}
 	

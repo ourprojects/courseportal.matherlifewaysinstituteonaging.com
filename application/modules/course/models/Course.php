@@ -54,7 +54,8 @@ class Course extends CActiveRecord
 	public function rules() 
 	{
 		return array(
-				array('name, title', 'required'),
+				array('id', 'unsafe'),
+				array('rank, name, title', 'required'),
 				array('name', 'length', 'max' => 255),
 				array('id, rank', 'numerical', 'integerOnly' => true),
 				array('name, rank', 'unique'),
@@ -79,17 +80,21 @@ class Course extends CActiveRecord
 		);
 	}
 
-	public function hasUser($user) 
+	public function hasUser($userId, $hasUser = false) 
 	{
-		if($user instanceof CPUser)
+		$criteria = array('params' => array(':user_id' => $userId), 'together' => true);
+		$userCourses = $this->getDbConnection()->quoteColumnName('userCourses.user_id');
+		if($hasUser)
 		{
-			return $this->hasUser($user->id);
+			$criteria['with'] = 'userCourses';
+			$criteria['condition'] = $userCourses.'=:user_id';
 		}
-		$this->getDbCriteria()->mergeWith(array(
-				'with' => 'userCourses',
-				'condition' => $this->getDbConnection()->quoteColumnName('userCourses.user_id').'=:user_id',
-				'params' => array(':user_id' => $user)
-		));
+		else
+		{
+			$criteria['with'] = array('userCourses' => array('on' => $userCourses.'=:user_id'));
+			$criteria['condition'] = $userCourses.' IS NULL';
+		}
+		$this->getDbCriteria()->mergeWith($criteria);
 		return $this;
 	}
 

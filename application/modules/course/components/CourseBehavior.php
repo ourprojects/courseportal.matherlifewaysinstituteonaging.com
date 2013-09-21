@@ -46,9 +46,9 @@ class CourseBehavior extends CActiveRecordBehavior
 		return $this->courseUser->attributeLabels();
 	}
 
-	public function hasCourse($course)
+	public function hasCourse($courseId, $hasCourse = true)
 	{
-		return $this->courseUser->hasUser($course);
+		return $this->courseUser->hasCourse($courseId, $hasCourse);
 	}
 
 }

@@ -14,7 +14,7 @@ class AdminController extends CoursePortalController
 		$CourseModel->setAttributes($Course);
 		$CourseUserModel = new CourseUser('search');
 		$CourseUserModel->setAttributes($CourseUser);
-		$CourseUserModel->with('courses')->together()->getDbCriteria()->group = $CourseUserModel->getDbConnection()->quoteColumnName($CourseUserModel->getTableAlias().'.id');
+		$CourseUserModel->with('courses')->together();
 		
 		switch($ajax)
 		{
@@ -30,7 +30,7 @@ class AdminController extends CoursePortalController
 		}
 	}
 
-	public function actionCourse($id, array $Course = array(), array $CourseObjective = array(), array $CourseUser = array(), $ajax = null)
+	public function actionCourse($id = null, array $Course = array(), array $CourseObjective = array(), array $CourseUser = array(), $ajax = null)
 	{
 		$message = false;
 		$request = Yii::app()->getRequest();
@@ -38,19 +38,33 @@ class AdminController extends CoursePortalController
 		{
 			$CourseModel = new Course();
 		}
-		else
+		
+		if(isset($id))
 		{
-			$CourseModel = Course::model()->findByPk($id);
-			if($CourseModel === null)
+			if(!isset($Course['id']))
 			{
-				$CourseModel->addError('id', t('Course with ID "{id}" was not found.', array('{id}' => $id)));
+				$Course['id'] = $id;
 			}
 		}
+		else if(isset($Course['id']))
+		{
+			$id = $Course['id'];
+		}
 		
-		if($request->getIsPostRequest() || $request->getIsPutRequest())
+		if(isset($id))
+		{
+			$CourseModel = Course::model()->findByPk($id);
+		}
+		
+		if(!isset($CourseModel))
+		{
+			$CourseModel = new Course();
+			$CourseModel->addError('id', t('Course with ID "{id}" was not found.', array('{id}' => $id)));
+		}
+		else if($request->getIsPostRequest() || $request->getIsPutRequest())
 		{
 			$CourseModel->setAttributes($Course);
-			if($CourseModel->validate())
+			if($CourseModel->validate() && (!isset($ajax) || strcasecmp($ajax, 'course-form')))
 			{
 				$transaction = $CourseModel->getDbConnection()->beginTransaction();
 				try
@@ -58,16 +72,24 @@ class AdminController extends CoursePortalController
 					if($CourseModel->save(false))
 					{
 						$transaction->commit();
+						$message = t('Course successfully '.($request->getIsPutRequest() ? 'updated' : 'created').'.');
 					}
 					else
 					{
-						$transaction->rollback();
+						throw new CHttpException(500, t('Failed to save course data.'));
 					}
 				}
 				catch(Exception $e)
 				{
 					$transaction->rollback();
-					$CourseModel->addError('id', $e->getMessage());
+					if($CourseModel->hasErrors())
+					{
+						$message = $e->getMessage();
+					}
+					else
+					{
+						$CourseModel->addError('id', $e->getMessage());
+					}
 				}
 			}
 		}
@@ -79,21 +101,13 @@ class AdminController extends CoursePortalController
 			}
 			else
 			{
-				$message = t('No course was deleted. The course may already have been deleted.');
+				$message = t('No course was deleted. The course may have already been deleted.');
 			}
 		}
 		
 		if($request->getIsAjaxRequest())
 		{
-			$result = array('message' => $message);
-			if($CourseModel->hasErrors())
-			{
-				foreach($CourseModel->getErrors() as $attribute => $errors)
-				{
-					$result[CHtml::activeId($CourseModel, $attribute)] = $errors;
-				}
-			}
-			else if(isset($ajax))
+			if(isset($ajax))
 			{
 				switch($ajax)
 				{
@@ -106,16 +120,13 @@ class AdminController extends CoursePortalController
 					case 'user-grid':
 						$CourseUserModel = new CourseUser('search');
 						$CourseUserModel->setAttributes($CourseUser);
-						$CourseUserModel->with(array('courses' => array('condition' => $CourseUserModel->getDbConnection()->quoteColumnName('courses.id').'=:id', 'params' => array(':id' => $id))))->together();
-						$CourseUserModel->getDbCriteria()->group = $CourseUserModel->getDbConnection()->quoteColumnName($CourseUserModel->getTableAlias().'.id');
-						$this->renderPartial('grids/userGrid', array('CourseUser' => $CourseUserModel, 'gridId' => 'user-grid'));
-						break;
+						$CourseUserModel->hasCourse($id, true);
+						$this->renderPartial('grids/userGrid', array('CourseUser' => $CourseUserModel, 'course_id' => $id, 'hasCourse' => true, 'gridId' => 'user-grid', 'scenario' => 'course'));
 					case 'add-user-grid':
 						$CourseUserModel = new CourseUser('search');
 						$CourseUserModel->setAttributes($CourseUser);
-						$CourseUserModel->with(array('courses' => array('condition' => $CourseUserModel->getDbConnection()->quoteColumnName('courses.id').'!=:id', 'params' => array(':id' => $id))))->together();
-						$CourseUserModel->getDbCriteria()->group = $CourseUserModel->getDbConnection()->quoteColumnName($CourseUserModel->getTableAlias().'.id');
-						$this->renderPartial('grids/userGrid', array('CourseUser' => $CourseUserModel, 'gridId' => 'add-user-grid'));
+						$CourseUserModel->hasCourse($id, false);
+						$this->renderPartial('grids/userGrid', array('CourseUser' => $CourseUserModel, 'course_id' => $id, 'hasCourse' => false, 'gridId' => 'add-user-grid', 'scenario' => 'add'));
 						break;
 					default:
 						break;
@@ -123,12 +134,33 @@ class AdminController extends CoursePortalController
 			}
 			else
 			{
-				foreach($CourseModel->getAttributes() as $name => $value)
+				if($CourseModel->getIsNewRecord())
 				{
-					$result[CHtml::activeId($CourseModel, $name)] = $value;
+					$result = array('course-form-submit' => t('Create'), '_method' => 'POST');
 				}
+				else
+				{
+					$result = array('course-form-submit' => t('Save'), '_method' => 'PUT');
+				}
+				$result['message'] = $message;
+				if($CourseModel->hasErrors())
+				{
+					$result['success'] = false;
+					foreach($CourseModel->getErrors() as $attribute => $errors)
+					{
+						$result[CHtml::activeId($CourseModel, $attribute)] = $errors;
+					}
+				}
+				else
+				{
+					$result['success'] = true;
+					foreach($CourseModel->getAttributes() as $name => $value)
+					{
+						$result[CHtml::activeId($CourseModel, $name)] = $value;
+					}
+				}
+				echo function_exists('json_encode') ? json_encode($result) : CJSON::encode($result);
 			}
-			echo function_exists('json_encode') ? json_encode($result) : CJSON::encode($result);
 		}
 		else
 		{
@@ -137,13 +169,19 @@ class AdminController extends CoursePortalController
 			$CourseObjectiveModel->course_id = $id;
 			$CourseUserModel = new CourseUser('search');
 			$CourseUserModel->setAttributes($CourseUser);
-			$CourseUserModel->with(array('courses' => array('condition' => $CourseUserModel->getDbConnection()->quoteColumnName('courses.id').'=:id', 'params' => array(':id' => $id))))->together();
-			$CourseUserModel->getDbCriteria()->group = $CourseUserModel->getDbConnection()->quoteColumnName($CourseUserModel->getTableAlias().'.id');
-			$this->render('course', array('Course' => $CourseModel, 'CourseObjective' => $CourseObjectiveModel, 'CourseUser' => $CourseUserModel, 'message' => $message));
+			$this->render(
+					'course', 
+					array(
+							'Course' => $CourseModel, 
+							'CourseObjective' => $CourseObjectiveModel, 
+							'CourseUser' => $CourseUserModel,
+							'message' => $message
+					)
+			);
 		}
 	}
 	
-	public function actionCourseObjective($id, array $CourseObjective = array(), $ajax = null)
+	public function actionCourseObjective($id = null, array $CourseObjective = array(), $ajax = null)
 	{
 		$message = false;
 		$request = Yii::app()->getRequest();
@@ -151,19 +189,25 @@ class AdminController extends CoursePortalController
 		{
 			$courseObjectiveModel = new CourseObjective();
 		}
-		else
+		else if(isset($id))
 		{
 			$courseObjectiveModel = CourseObjective::model()->findByPk($id);
-			if($courseObjectiveModel === null)
-			{
-				$courseObjectiveModel->addError('id', t('Course objective with ID "{id}" was not found.', array('{id}' => $id)));
-			}
+
+		}
+		else if(isset($CourseObjective['id']))
+		{
+			$courseObjectiveModel = CourseObjective::model()->findByPk($CourseObjective['id']);
 		}
 		
-		if($request->getIsPostRequest() || $request->getIsPutRequest())
+		if(!isset($courseObjectiveModel))
+		{
+			$courseObjectiveModel = new CourseObjective();
+			$courseObjectiveModel->addError('id', t('Course objective with ID "{id}" was not found.', array('{id}' => $id)));
+		}
+		else if($request->getIsPostRequest() || $request->getIsPutRequest())
 		{
 			$courseObjectiveModel->setAttributes($CourseObjective);
-			if($courseObjectiveModel->validate())
+			if($courseObjectiveModel->validate() && (!isset($ajax) || strcasecmp($ajax, 'course-objective-form')))
 			{
 				$transaction = $courseObjectiveModel->getDbConnection()->beginTransaction();
 				try
@@ -171,6 +215,7 @@ class AdminController extends CoursePortalController
 					if($courseObjectiveModel->save(false))
 					{
 						$transaction->commit();
+						$message = t('Course objective successfully '.($request->getIsPutRequest() ? 'updated' : 'created').'.');
 					}
 					else
 					{
@@ -195,17 +240,27 @@ class AdminController extends CoursePortalController
 				$message = t('No course objective was deleted. The course objective may already have been deleted.');
 			}
 		}
-		
-		$result = array('message' => $message);
+
+		if($courseObjectiveModel->getIsNewRecord())
+		{
+			$result = array('course-objective-form-submit' => t('Create'), '_method' => 'POST');
+		}
+		else
+		{
+			$result = array('course-objective-form-submit' => t('Save'), '_method' => 'PUT');
+		}
+		$result['message'] = $message;
 		if($courseObjectiveModel->hasErrors())
 		{
+			$result['success'] = false;
 			foreach($courseObjectiveModel->getErrors() as $attribute => $errors)
 			{
 				$result[CHtml::activeId($courseObjectiveModel, $attribute)] = $errors;
 			}
 		}
-		else if(!isset($ajax))
+		else
 		{
+			$result['success'] = true;
 			foreach($courseObjectiveModel->getAttributes() as $name => $value)
 			{
 				$result[CHtml::activeId($courseObjectiveModel, $name)] = $value;
@@ -223,9 +278,20 @@ class AdminController extends CoursePortalController
 			throw new CHttpException(404, t('The user with ID "{id}" could not be found.', array('{id}' => $id)));
 		}
 		
+		if(isset($course_id))
+		{
+			if(!isset($Course['id']))
+			{
+				$Course['id'] = $course_id;
+			}
+		}
+		else if(isset($Course['id']))
+		{
+			$course_id = $Course['id'];
+		}
+		
 		$CourseModel = new Course('search');
 		$CourseModel->setAttributes($Course);
-		$CourseModel->with(array('users' => array('condition' => $CourseModel->getDbConnection()->quoteColumnName('users.'.$courseUserModel->getIdColumnName()).'=:user_id', 'params' => array(':user_id' => $courseUserModel->getId()))))->together();
 		
 		$request = Yii::app()->getRequest();
 		if(isset($course_id))
@@ -243,6 +309,7 @@ class AdminController extends CoursePortalController
 						if($UserCourse->save(false))
 						{
 							$transaction->commit();
+							$message = t('User successfully added to course.');
 						}
 						else
 						{
@@ -264,45 +331,26 @@ class AdminController extends CoursePortalController
 				}
 				else
 				{
-					$message = t('No user was removed from any course.');
+					$message = t('No users were removed from any courses. Perhaps the user has already been removed from the course.');
 				}
 			}
 		}
 		
-		if($request->getIsAjaxRequest())
+		if(isset($ajax))
 		{
-			$result = array('message' => $message);
-			if($courseUserModel->hasErrors())
+			switch($ajax)
 			{
-				foreach($courseUserModel->getErrors() as $attribute => $errors)
-				{
-					$result[CHtml::activeId($courseUserModel, $attribute)] = $errors;
-				}
+				case 'course-grid':
+					$CourseModel->hasUser($courseUserModel->getId(), true);
+					$this->renderPartial('grids/courseGrid', array('Course' => $CourseModel, 'user_id' => $courseUserModel->getId(), 'hasUser' => true, 'gridId' => 'course-grid', 'scenario' => 'user'));
+					break;
+				case 'add-course-grid':
+					$CourseModel->hasUser($courseUserModel->getId(), false);
+					$this->renderPartial('grids/courseGrid', array('Course' => $CourseModel, 'user_id' => $courseUserModel->getId(), 'hasUser' => false, 'gridId' => 'add-course-grid', 'scenario' => 'add'));
+					break;
+				default:
+					break;
 			}
-			else if(isset($ajax) && $ajax === 'course-grid')
-			{
-				switch($ajax)
-				{
-					case 'course-grid':
-						$this->renderPartial('grids/courseGrid', array('Course' => $Course, 'user_id' => $courseUserModel->getId(), 'gridId' => 'course-grid'));
-						break;
-					case 'add-course-grid':
-						$CourseModel->with(array('users' => array('condition' => $CourseModel->getDbConnection()->quoteColumnName('users.'.$courseUserModel->getIdColumnName()).'!=:user_id', 'params' => array(':user_id' => $courseUserModel->getId()))))->together();
-						$this->renderPartial('grids/courseGrid', array('Course' => $Course, 'user_id' => $courseUserModel->getId(), 'gridId' => 'add-course-grid'));
-						break;
-					default:
-						break;
-				}
-				
-			}
-			else
-			{
-				foreach($courseUserModel->getAttributes() as $name => $value)
-				{
-					$result[CHtml::activeId($courseUserModel, $name)] = $value;
-				}
-			}
-			echo function_exists('json_encode') ? json_encode($result) : CJSON::encode($result);
 		}
 		else
 		{
