@@ -50,6 +50,8 @@
                 case 'select-one':
                 case 'text':
                 case 'hidden':
+                case 'number':
+                case 'range':
                     $(element).attr("value", value);
                     break;
                 case 'a':
