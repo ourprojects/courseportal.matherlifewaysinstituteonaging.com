@@ -14,40 +14,40 @@
 					'enableAjaxValidation' => true,
 					'enableClientValidation' => true,
 					'clientOptions' => array(
-							'validateOnSubmit' => true,
-							'afterValidate' => 'js:'.
-									'function(form, data, hasError){'.
-										'if (!hasError) {'.
-											CHtml::ajax(array(
-												'type' => 'POST',
-												'url' => $this->getController()->createUrl($this->actionPrefix.'logActivity'),
-												'cache' => false,
-												'data' => 'js:$("form#'.$this->getId().'-userActivityForm").serialize()',
-												'beforeSend' => 'function(){$("#'.$this->getId().'-userActivityForm").spUserActivityForm("loading", true);}',
-												'success' => 'function(data){'.
-													'var $data = $.parseJSON(data);'.
-													'$.each($("form#'.$this->getId().'-userActivityForm").spUserActivityForm("dimensions"), function(value){'.
-														'var $grid = $("div#'.$this->getId().'-"+value+"-userActivityGrid");'.
-														'if($grid.length > 0){'.
-															'$grid.yiiGridView("update");'.
-														'}'.
-													'});'.
-													'var $form = $("div#'.$this->getId().'-activityLogForm");'.
-													'$.each($.parseJSON(data), function(attribute, value){'.
-														'$form.spUserActivityForm(attribute, value);'.
-													'});'.
-												'}',
-												'error' => 'function(data){'.
-													'$("form#'.$this->getId().'-userActivityForm").yiiactiveform("updateSummary", data);'.
-												'}',
-												'complete' => 'function(){'.
-													'$("#'.$this->getId().'-userActivityForm").spUserActivityForm("loading", false);'.
-												'}',
-											)).
-											'return false;'.
-										'}'.
-									'}'
-						)
+						'validateOnSubmit' => true,
+						'afterValidate' => 'js:'.
+							'function(form, data, hasError){'.
+								'if (!hasError) {'.
+									CHtml::ajax(array(
+										'type' => 'POST',
+										'url' => $this->getController()->createUrl($this->actionPrefix.'logActivity'),
+										'cache' => false,
+										'data' => 'js:$("form#'.$this->getId().'-userActivityForm").serialize()',
+										'beforeSend' => 'function(){$("#'.$this->getId().'-userActivityForm").spUserActivityForm("loading", true);}',
+										'success' => 'function(data){'.
+											'var $data = $.parseJSON(data);'.
+											'$.each($("form#'.$this->getId().'-userActivityForm").spUserActivityForm("dimensions"), function(value){'.
+												'var $grid = $("div#'.$this->getId().'-"+value+"-userActivityGrid");'.
+												'if($grid.length > 0){'.
+													'$grid.yiiGridView("update");'.
+												'}'.
+											'});'.
+											'var $form = $("div#'.$this->getId().'-activityLogForm");'.
+											'$.each($.parseJSON(data), function(attribute, value){'.
+												'$form.spUserActivityForm(attribute, value);'.
+											'});'.
+										'}',
+										'error' => 'function(data){'.
+											'$("form#'.$this->getId().'-userActivityForm").yiiactiveform("updateSummary", data);'.
+										'}',
+										'complete' => 'function(){'.
+											'$("#'.$this->getId().'-userActivityForm").spUserActivityForm("loading", false);'.
+										'}',
+									)).
+									'return false;'.
+								'}'.
+							'}'
+					)
 				)
 			);
 	?>
