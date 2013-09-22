@@ -567,38 +567,41 @@ foreach(array(
         </ul>
         <h5>{t}Last week’s memory strategy was:{/t}</h5>
         <ul>
-          <li><strong>Improving Attention to Improve Memory</strong></li>
-          <li>Look Up and Around
+          <li><strong>{t}Improving Attention to Improve Memory</strong>{/t}</li>
+          <li>{t}Look Up and Around{/t}
             <ul>
-              <li>Put in the Effort</li>
+              <li>{t}Put in the Effort{/t}</li>
             </ul>
           </li>
-          <li>Stay “Present”</li>
-          <li>Get your Hearing or Vision Checked</li>
-          <li>Manage Your Environment
+          <li>{t}Stay “Present”{/t}</li>
+          <li>{t}Get your Hearing or Vision Checked{/t}</li>
+          <li>{t}Manage Your Environment{/t}
             <ul>
-              <li>Reduce <strong>Distractions</strong> and <strong>Interruptions</strong> </li>
+              <li>{t}Reduce <strong>Distractions</strong> and <strong>Interruptions</strong> {/t}</li>
             </ul>
           </li>
-          <li><strong>Do</strong> One Thing at a Time
+          <li><strong>{t}Do</strong> One Thing at a Time{/t}
             <ul>
-              <li>Multi-tasking is a Myth!</li>
-              <li>Multi-tasking can be toxic to the brain</li>
+              <li>{t}Multi-tasking is a Myth!{/t}</li>
+              <li>{t}Multi-tasking can be toxic to the brain{/t}</li>
             </ul>
           </li>
-          <li>Bribe yourself</li>
-          <li>Get Plenty of Rest
+          <li>{t}Bribe yourself{/t}</li>
+          <li>{t}Get Plenty of Rest{/t}
             <ul>
-              <li>May need to see a sleep doctor</li>
-              <li>Resting your when you’re awake</li>
+              <li>{t}May need to see a sleep doctor{/t}</li>
+              <li>{t}Resting your when you’re awake{/t}</li>
             </ul>
           </li>
-          <li>Manage your Emotions</li>
+          <li>{t}Manage your Emotions{/t}</li>
         </ul>
         <p class="forum">{t}Please imagine and generate scenarios where you might memory strategies. And remember, memory strategies are most effective when they are practiced. Post your scenarios to the Forum.{/t}</p>
         <img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}"> </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
     </div>
+    
+    
+    
     <div id="lesson-2-slide-3" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}Investing in Brain Health{/t}</h2>
@@ -610,10 +613,249 @@ foreach(array(
         <p class="forum">{t}On the Forum, list the main ways they had been more active?{/t}</p>
         <img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}">
         <p>{t}We are going to talk today about how physical activity seems to be a key component of brain health. In fact, it may be one of the best things you can do for your brain. {/t}</p>
+        
+        
+         <div id="lesson-2-slide-4" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Exercise is Linked to:{/t}</h2>
+        <hr />
+        
+        <ul>
+          <li>{t}Maintaining a Healthy Weight{/t}
+            <ul>
+              <li>{t}Decreased body fat{/t}</li>
+              <li>{t}Increased lean body mass{/t}</li>
+              <li>{t}Increased resting metabolism{/t}</li>
+              <li>{t}Better digestion{/t}</li>
+            </ul>
+          </li>
+          <li>{t}Preventing and Managing Chronic Disease{/t}
+            <ul>
+              <li>{t}Cardiovascular fitness (Heart, Blood Pressure, Stroke){/t}</li>
+              <li>{t}Prevent and control adult onset diabetes{/t}</li>
+              <li>{t}Increased insulin sensitivity{/t}</li>
+            </ul>
+          </li>
+          <li>{t}Maintaining a Strong Body{/t}
+            <ul>
+              <li>{t}Increased bone density and reduced osteoporosis{/t}</li>
+              <li>{t}Reversed physical frailty{/t}</li>
+              <li>{t}Improved vestibular function{/t}</li>
+              <li>{t}Fewer falls{/t}</li>
+            </ul>
+          </li>
+          <li>{t}Reduced depression{/t}</li>
+          <li>{t}Better quality sleep{/t}</li>
+          <li>{t}AND… Delayed onset of cognitive decline!{/t}</li>
+          <li>{t}AND… Better memory performance!{/t}</li>
+        </ul>
+        <p>Let us start off by talking about the benefits of physical activity that we already  know about.</p>
+        <p>Ask:</p>
+        <p>Does  anyone here exercise regularly?  Have any  of you felt or seen benefits of physical activity in yourself or others?</p>
+        <p>What are some benefits of physical  activity?   [Engage participants in a discussion of the benefits of exercise &amp;  then click to reveal list items to fill in any gaps] </p>
+        <p>You  may want to add some suggestions of how you have personally felt the benefits  of physical activity or elicit from group members.</p>
+        <p>Click  to reveal #13:  &ldquo;Most  recently, we have learned that participation in physical activity may also help  to prevent or postpone the onset of dementia and cognitive decline.&rdquo;</p>
+        <p>As  you&rsquo;ve been learning, scientists have learned that the brain stays plastic  (changeable) all the way into our later years – this means that the brain can  change in response to exercise no matter how old or young you are. (Eckmann, 2011)</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
+    </div>
+    
+    
+      <div id="lesson-2-slide-5" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}How does physical activity reduce  cognitive decline?{/t}</h2>
+        <hr />
+        
+        
+          </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
+    </div>
+    
+    
+       
+      <div id="lesson-2-slide-6" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Medical Conditions Linked to  
+Cognitive Decline{/t}</h2>
+        <hr />
+        
+        
+          </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
+    </div>
+    
+         <div id="lesson-2-slide-7" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}here{/t}</h2>
+        <hr />
+        
+        
+          </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
+    </div>
+    
+           <div id="lesson-2-slide-8" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}here{/t}</h2>
+        <hr />
+        
+        
+          </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
+    </div>
+    
+           <div id="lesson-2-slide-9" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}here{/t}</h2>
+        <hr />
+        
+        
+          </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
+    </div>
+    
+    
+           <div id="lesson-2-slide-10" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}here{/t}</h2>
+        <hr />
+        
+        
+        
+          </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
+    </div>
+    
+    
+    
+           <div id="lesson-2-slide-11" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}here{/t}</h2>
+        <hr />
+        
+        
+          </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
+    </div>
+    
+    
+    
+           <div id="lesson-2-slide-12" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}here{/t}</h2>
+        <hr />
+        
+        
+          </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
+    </div>
+    
+    
+           <div id="lesson-2-slide-13" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}here{/t}</h2>
+        <hr />
+        
+        
+          </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
+    </div>
+    
+    
+           <div id="lesson-2-slide-14" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}here{/t}</h2>
+        <hr />
+        
+        
+          </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
+    </div>
+    
+    
+           <div id="lesson-2-slide-15" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}here{/t}</h2>
+        <hr />
+        
+        
+          </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+         <div id="lesson-2-slide-21" class="course-slide"> 
+      <div class="content">
+        <h2 class="flowers">{t}Recap{/t}</h2>
+        <hr />
+        
+        <p>{t}Physical Activity Helps the Brain by:{/t}</p>
+        <ul>
+        	<li>{t}Improves vascular health{/t}</li>
+            <li>{t}Increases brain volume{/t}</li>
+            <li>{t}Increases production of brain cells (neurogenesis){/t}</li>
+            <li>{t}Increases production of nerve growth factors (BDNF, IGF-1){/t}</li>
+        </ul>
+
+<p>{t}White dots are silent strokes that can build up over time to cause cognitive decline (vascular dementia){/t}</p>
+<p class="forum">{t}Please post your responses to the following questions on the Forum:{/t}</p>
+<ul>
+  <li>{t}What are some benefits of physical activity?<span class="forum">{/t}</span></li>
+  <li><span class="forum">{t}</span>How does physical activity help your brain?<span class="forum">{/t}</span></li>
+  <li><span class="forum">{t}</span>What are white dots?<span class="forum">{/t}</span></li>
+  <li><span class="forum">{t}</span>Name 3 direct ways that physical activity seems to directly improve cognition.<span class="forum">{/t}</span></li>
+  <li><span class="forum">{t}</span>What is the Memory Strategy for this week?<span class="forum">{/t}</span></li>
+  <li><span class="forum">{t}</span>Are verbal memories (thoughts repeated in our heads) stronger than visual memories?<span class="forum">{/t}</span></li>
+  <li><span class="forum">{t}</span>What are your goals for this week?{/t}</li>
+</ul>
+<img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}">
+    
+        
+        
       </div>
       <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Complete Module{/t}</a> </div>
     </div>
   </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   <div id="lesson3">
     <div id="lesson-3-slide-1" class="course-slide">
       <div class="content">
