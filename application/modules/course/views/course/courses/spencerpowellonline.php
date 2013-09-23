@@ -113,7 +113,19 @@ foreach(array(
     <li> <a href="#lesson-4-slide-1" data-fancybox-group="lesson-4" class="teal lesson-4">{t}Intellectual{/t}</a> <a href="#lesson-4-slide-2" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-3" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-4" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-5" data-fancybox-group="lesson-4" class="hide lesson-4"></a> </li>
     <li> <a href="#lesson-5-slide-1" data-fancybox-group="lesson-5" class="teal lesson-5">{t}Nutritional{/t}</a> <a href="#lesson-5-slide-2" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-3" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-4" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-5" data-fancybox-group="lesson-5" class="hide lesson-5"></a> </li>
     <li> <a href="#lesson-6-slide-1" data-fancybox-group="lesson-6" class="teal lesson-6">{t}Spiritual{/t}</a> <a href="#lesson-6-slide-2" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-3" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-4" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-5" data-fancybox-group="lesson-6" class="hide lesson-6"></a> </li>
-    <li> <a href="#lesson-7-slide-1" data-fancybox-group="lesson-7" class="teal lesson-7">{t}Social{/t}</a> <a href="#lesson-7-slide-2" data-fancybox-group="lesson-7" class="hide lesson-7"></a> <a href="#lesson-7-slide-3" data-fancybox-group="lesson-7" class="hide lesson-7"></a> <a href="#lesson-7-slide-4" data-fancybox-group="lesson-7" class="hide lesson-7"></a> <a href="#lesson-7-slide-5" data-fancybox-group="lesson-7" class="hide lesson-7"></a> </li>
+    <li> 
+<a href="#lesson-7-slide-1" data-fancybox-group="lesson-7" class="teal lesson-7">{t}Social{/t}</a> 
+<a href="#lesson-7-slide-2" data-fancybox-group="lesson-7" class="hide lesson-7"></a> 	<a href="#lesson-7-slide-3" data-fancybox-group="lesson-7" class="hide lesson-7"></a> 	<a href="#lesson-7-slide-4" data-fancybox-group="lesson-7" class="hide lesson-7"></a> 	
+<a href="#lesson-7-slide-5" data-fancybox-group="lesson-7" class="hide lesson-7"></a> 
+<a href="#lesson-7-slide-6" data-fancybox-group="lesson-7" class="hide lesson-7"></a> 
+<a href="#lesson-7-slide-7" data-fancybox-group="lesson-7" class="hide lesson-7"></a> 	<a href="#lesson-7-slide-8" data-fancybox-group="lesson-7" class="hide lesson-7"></a> 	<a href="#lesson-7-slide-9" data-fancybox-group="lesson-7" class="hide lesson-7"></a> 	<a href="#lesson-7-slide-10" data-fancybox-group="lesson-7" class="hide lesson-7"></a> 
+<a href="#lesson-7-slide-11" data-fancybox-group="lesson-7" class="hide lesson-7"></a> 	<a href="#lesson-7-slide-12" data-fancybox-group="lesson-7" class="hide lesson-7"></a> 	<a href="#lesson-7-slide-13" data-fancybox-group="lesson-7" class="hide lesson-7"></a> 	<a href="#lesson-7-slide-14" data-fancybox-group="lesson-7" class="hide lesson-7"></a> 
+<a href="#lesson-7-slide-15" data-fancybox-group="lesson-7" class="hide lesson-7"></a> 	<a href="#lesson-7-slide-16" data-fancybox-group="lesson-7" class="hide lesson-7"></a> 	<a href="#lesson-7-slide-17" data-fancybox-group="lesson-7" class="hide lesson-7"></a> 	<a href="#lesson-7-slide-18" data-fancybox-group="lesson-7" class="hide lesson-7"></a> 
+<a href="#lesson-7-slide-19" data-fancybox-group="lesson-7" class="hide lesson-7"></a> 	<a href="#lesson-7-slide-20" data-fancybox-group="lesson-7" class="hide lesson-7"></a> 	<a href="#lesson-7-slide-21" data-fancybox-group="lesson-7" class="hide lesson-7"></a> 	<a href="#lesson-7-slide-22" data-fancybox-group="lesson-7" class="hide lesson-7"></a> 
+
+    
+    
+    </li>
     <li> <a href="#lesson-8-slide-1" data-fancybox-group="lesson-8" class="teal lesson-8">{t}Closing{/t}</a> <a href="#lesson-8-slide-2" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-3" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-4" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-5" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-6" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-7" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-8" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-9" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-10" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-11" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-12" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-13" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-14" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-15" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-16" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-17" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-18" data-fancybox-group="lesson-8" class="hide lesson-8"></a> </li>
   </ul>
   <div class="box-white" id="resources">
@@ -283,7 +295,7 @@ foreach(array(
         <h2 class="flowers">{t}More on Cognitive Reserve{/t}</h2>
         <hr />
         <img src="<?php echo $this->getImagesUrl('spencer/153211616.png'); ?>" alt="{t}Image{/t}">
-        <p>{t}A little over 10 years ago, Yakov Stern, PhD, a neuropsychologist at Columbia University, summarized a series of important brain discoveries and proposed the theory of Cognitive Reserve. Since then, numerous studies have continued to support this theory, allowing us to now know many of the factors that can raise and lower a person’s risk for dementia.{/t}</p>
+        <p>{t}A little over 10 years ago, Yaakov Stern, PhD, a neuropsychologist at Columbia University, summarized a series of important brain discoveries and proposed the theory of Cognitive Reserve. Since then, numerous studies have continued to support this theory, allowing us to now know many of the factors that can raise and lower a person’s risk for dementia.{/t}</p>
         <p> {t}One of the first discoveries leading to the theory of cognitive reserve came after scientists noticed that a group of people who had donated their brains for autopsy showed signs of advanced Alzheimer’s disease in their brains even though at the time of their death they had no clinical signs of the disease. In other words, these were people<strong> with fully intact memories who had remained quite independent, yet their brains looked exactly the same as the brains of people who had forgotten their families and could no longer care for themselves</strong>.{/t} </p>
         <p> {t}The scientists wondered if there might be something different about the way these people had lived their lives that allowed them to resist the effects of the Alzheimer’s disease pathology that had grown in their brains. It turned out that<strong> these people had been more active intellectually, socially and physically throughout their adult lives than the people in the other group</strong>.{/t} </p>
       </div>
@@ -749,30 +761,47 @@ Cognitive Decline{/t}</h2>
         <hr />
         <p>In addition to protecting our vascular health and thereby our brain health, more recent evidence suggests that physical activity seems to also play a direct role in promoting cognitive performance, cognitive reserve and brain health.  
   </p>
-        <p>Directly, physical activity has been found to influence the processes by which learning and memory occur.  
-          (Click to Reveal Circle)</p>
-        <p>Animal studies have shown that aerobic exercise (a rat running on a wheel) can have a profound effect on increasing the number of new brain cells that are born.</p>
-        <p>(Click to Reveal Circle) 
-          In humans physical cardiovascular exercise is linked to increase in the size of the structure responsible for forming new memories (hippocampus)
-          (Click to Reveal Circle) 
-          Physical activity has been found to increase a group of proteins called nerve growth factors .  There are lots of these growth factors, but most notably:
-          (Click to Reveal Circle) 
-          Cardiovascular exercise has been linked with increased production of one called BDNF (brain-derived neurotrophin factor).  BDNF has also been found to be more abundant in people with higher cognitive abilities.
-          (Click to Reveal Circle) 
-          Strength training has been shown to increase a different nerve growth factor called IGF-1 (insulin-like growth factor-1).  
-          These nerve growth factors help neurons and dendrites grow and thrive.  Some have even referred to these growth factors as Miracle Grow for your brain cells. </p>
-        
-          </div>
+        <ul>
+          <li>Directly, physical activity has been found to influence the processes by which learning and memory occur.</li>
+          <li>Animal studies have shown that aerobic exercise (a rat running on a wheel) can have a profound effect on increasing the number of new brain cells that are born.</li>
+          <li>In humans physical cardiovascular exercise is linked to increase in the size of the structure responsible for forming new memories (hippocampus)
+            (Click to Reveal Circle)</li>
+          <li>Physical activity has been found to increase a group of proteins called nerve growth factors .  There are lots of these growth factors, but most notably:
+            <ul>
+              <li>Cardiovascular exercise has been linked with increased production of one called BDNF (brain-derived neurotrophin factor).  BDNF has also been found to be more abundant in people with higher cognitive abilities.</li>
+              <li>Strength training has been shown to increase a different nerve growth factor called IGF-1 (insulin-like growth factor-1).</li>
+              <li>These nerve growth factors help neurons and dendrites grow and thrive.  Some have even referred to these growth factors as<strong> Miracle Grow for your brain cells</strong>. </li>
+            </ul>
+          </li>
+        </ul>
+        </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
     </div>
     
     
            <div id="lesson-2-slide-10" class="course-slide">
       <div class="content">
-        <h2 class="flowers">{t}here{/t}</h2>
+        <h2 class="flowers">{t}Physical Activity and  
+Cognitive Reserve{/t}</h2>
         <hr />
         
-        
+        <p>For example, in a recent study, researchers put 120 healthy older adults participants on a fitness plan for 1 full year.  Half of them (60) were assigned to a moderate to high intensity <strong>aerobics class</strong> 3 times per week and the other half (60) were assigned to a <strong>stretching and toning class</strong> that also met 3 days a week.</p>
+        <p>MRI brain scans were given before the program, half-way through the program (at 6 months) and at the end of the program (1 year after the first scan).</p>
+        <ul>
+          <li>Before the program, the groups’ brain scans were not any different.</li>
+          <li>After 6 months and again after a year:
+            <ul>
+              <li>The aerobics training increased the volume of the hippocampus by 2%,          
+                <ul>
+                  <li>(2.12% over baseline at 6-months and 1.97% over baseline at 12-months)</li>
+                  <li>effectively reversing age-related loss in volume by 1 to 2 years</li>
+                </ul>
+              </li>
+              <li>Volume for the stretching control group on the other hand declined 1.4% (1.40% at 6-months and 1.43% at 12-months)</li>
+            </ul>
+          </li>
+        </ul>
+        <p>Erikson, et al, 2010 http://www.pnas.org/content/early/2011/01/25/1015950108.full.pdf</p>
         
           </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
@@ -782,9 +811,16 @@ Cognitive Decline{/t}</h2>
     
            <div id="lesson-2-slide-11" class="course-slide">
       <div class="content">
-        <h2 class="flowers">{t}here{/t}</h2>
+        <h2 class="flowers">{t}How much Physical Activity 
+do we need?{/t}</h2>
         <hr />
-        
+        <p>One study found that those who participated in leisure-time physical activity at least twice a week in midlife (between the ages of 40 and 55), lowered their odds of developing Alzheimer’s disease by 60%.  The largest impact was in people who had a genetic predisposition to dementia (meaning that they carried the APoE-4 allele, a gene found to be linked to Alzheimer’s disease), but the effect of exercise was still significant in people without this gene meaning that everyone’s risk for dementia seemed to be lower if they exercised.</p>
+        <p>Another study looked at regular exercise, which they measured by asking participants how many times a week they participated in a variety of specific types of exercise.  They found that regular exercise was associated with a reduced risk for all types of dementia 6 years later.  They also found that those who exercised 3 or more times per week had a 32% reduction in risk for dementia.  The finding was greatest among those who had poor physical functioning at the start of the study.</p>
+        <p>A similar study found that those who participated in moderate or high levels of physical activity and were dementia-free at the beginning of the study had a significantly reduced risk of cognitive impairment 2 years later.</p>
+        <p>It seems clear that the more physical active people are the better off they are.</p>
+        <p>But you don’t have to immediately become a body builder or start training for marathons to reap the benefits of exercise. Researchers have found positive results when they analyzed physical activity, including walking.</p>
+        <p>The more walking, the better, but even walking briskly 90 minutes a week (that’s only 15 minutes a day) was all that was needed to improve cognitive outcomes and increased blood flow in the brain.  That translates to about walking as little as 6-9 miles a week, which is really a just a pretty nice walk (2-3 miles), 3x/week.  That seems doable doesn’t it?          </p>
+        <p>There is still much research that needs to be done in this area to understand the relationship between exercise and specific types of dementia, but from what we know so far, exercise seems to be one of the best ways to protect your brain as you age.  It has some of the best evidence supporting it in terms of helping people build the “hardware” (brain cells) aspect of cognitive reserve.</p>
         
           </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
@@ -794,19 +830,37 @@ Cognitive Decline{/t}</h2>
     
            <div id="lesson-2-slide-12" class="course-slide">
       <div class="content">
-        <h2 class="flowers">{t}here{/t}</h2>
+        <h2 class="flowers">{t}Increasing physical activity: 
+The FITT Principle{/t}</h2>
         <hr />
         
-        
-          </div>
+        <p>As you can see from the last couple of slides, it’s not just about how often you exercise.  The brain benefits of exercise appear to increase when you increase several different factors related to your physical activity.</p>
+        <p>One group of scientists pulled together a series of research articles and reviewed them inclusively.  They found that the amount of impact that exercise had on cognition depended upon several factors including the length of the fitness-training intervention, the type of the intervention, and the duration of training sessions,  Generally, higher levels of exercise at higher intensities for longer amounts of time throughout the life course appear to be most beneficial.          </p>
+        <p>Because the risk of dementia decreases with increased intensity and duration of exercise, we recommend that people who already have a habit of exercising, set goals to step it up in some way.</p>
+        <p>So, when we are thinking about improving our brain health through increased physical activity, there are a few different dimensions that you can consider following the FITT Principle:</p>
+        <ul>
+          <li>Frequency of our workouts – how often we plan to do them, for example, will we walk every day or 4 days per week?</li>
+          <li>Intensity of our workouts – for example, are we going to walk at a brisk or a leisurely pace?, the</li>
+          <li>Time of our sessions – how long will we walk for each time? And, of course, the</li>
+          <li>Type of our workout – will it in fact be walking, or another type of exercise such as swimming, playing tennis, lifting weights or something else. </li>
+        </ul>
+        </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
     </div>
     
     
            <div id="lesson-2-slide-13" class="course-slide">
       <div class="content">
-        <h2 class="flowers">{t}here{/t}</h2>
+        <h2 class="flowers">{t}Types of Physical Activity{/t}</h2>
         <hr />
+        
+        <p>Frequency, Intensity and Time for our physical activity is pretty straightforward, but what do we mean by type?  Here are some examples of the major categories of types of physical activities.  It is important for older adults to consider doing a variety of different types of workouts because they can all be beneficial to us in different ways.</p>
+        
+        <p>We tend to experience the greatest benefit from endurance type exercises, however, we can’t keep up with endurance routines without maintaining our flexibility and balance.  When we were young, balance was something that came naturally to us, as we age, it is something we need to work on to maintain. Flexibility is also often over-looked in terms of its importance.  In order to maintain our range of motion to be able to do things like reaching a can on the top shelf or bending down to pick up something that we dropped we need to work on our flexibility.  Finally, maintaining our strength is another key component that will allow us to continue caring for ourselves and keeping up with our daily activities.  Strength training can also help build bone density and seems to help us generate a different type of nerve growth factor than endurance exercise.  Ideally, you should try to incorporate each one of these types of exercises into your routine.</p>
+
+<p class="forum">Review the listed types of physical activities. What types of physical activity participants are already active in, what is their favorite?
+  Have you already practices all 4 types of activities. Post your responses to the Forum.</p>
+<img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}">
         
         
           </div>
@@ -816,19 +870,51 @@ Cognitive Decline{/t}</h2>
     
            <div id="lesson-2-slide-14" class="course-slide">
       <div class="content">
-        <h2 class="flowers">{t}here{/t}</h2>
+        <h2 class="flowers">{t}Making the most out of our 
+daily activities{/t}</h2>
         <hr />
         
-        
-          </div>
+        <p>In order to help maintain brain health, it is recommended that we live a lifestyle enhanced by as much physical activity as possible.  There are a variety of ways we could easily increase the amount of activity in our daily lives, these are just a few suggestions.</p>
+        <ul>
+          <li>When you’re going to the store, park far away from the door in order to limit the time you waste looking for parking and to get more steps in your day.</li>
+          <li>Or even, park a block away from your destination – this way you don’t have to take time out of your day for your physical activity, just leave a few minutes early – as the research showed us, every bit of activity that we do will be beneficial to us.</li>
+          <li>Walk instead of drive.</li>
+          <li>Walking around the block in the middle of the day is a great way to take a break from whatever you are doing and refresh yourself and to burn some extra calories and benefit our brains!</li>
+          <li>Make 2 laps at the grocery store:
+            <ul>
+              <li>1) A Memory Lap: Make a grocery list, but don’t use the list when you shop – this is a way you exercise your memory</li>
+              <li>2) Then when you’re done, check the list and take another lap to get anything you missed – this helps you get some extra steps into your day and works your memory.</li>
+            </ul>
+          </li>
+          <li>Stairs instead of the elevator – can even take the stairs up a few flights and then switch to the elevator if going up a lot of stories.
+            <ul>
+              <li>Fun Fact:  One woman who worked at a desk all day, said she never got out to do much walking.  She decided that every time she had to use the restroom she would walk up then down a flight of stairs – she lost 10 pounds in 3 months!  Find fun ways to add activity to your day.</li>
+            </ul>
+          </li>
+          <li>Plan a walking date instead of a lunch date.  Remember, plans with friends don’t always have to be over food – plan a date to get together to walk the mall, or walk along the lakefront path or a forest path.</li>
+          <li>Wear Comfortable Shoes.  If you wear uncomfortable shoes you will not walk as much as you do if your shoes are comfortable – so wear comfortable shoes everyday!</li>
+          <li>Wear a pedometer to help keep you conscious of the number of steps you are getting it – if it is 7pm and you realize you haven’t done much for the day you could do a few extra laps around your home or apartment just to get in that movement.
+            <ul>
+              <li>It is recommended that, on average, everyone should walk 10,000 steps a day (this is the national recommendation by the surgeon general – your daily goal may be less or more, but this gives us a sense of where an average American should be in order to live an enhanced physically active lifestyle).</li>
+            </ul>
+          </li>
+          <li>Keep weights in clear view – under the coffee table, somewhere where you will see them regularly as a cue to use them.
+            Lift weights during commercials or while on the phone
+            <ul>
+              <li>Pace while talking on the phone </li>
+            </ul>
+          </li>
+        </ul>
+        </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
     </div>
     
     
            <div id="lesson-2-slide-15" class="course-slide">
       <div class="content">
-        <h2 class="flowers">{t}here{/t}</h2>
+        <h2 class="flowers">{t}Standing{/t}</h2>
         <hr />
+        <p>Another thing you can do to increase your activity and help your body is to take opportunities to stand as much as possible.</p>
         
         
           </div>
@@ -837,16 +923,98 @@ Cognitive Decline{/t}</h2>
     
     
     
+             <div id="lesson-2-slide-16" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Memory Strategy #2 - Visualization{/t}</h2>
+        <hr />
+        <p>Visualization: The Roman Room Method (a.k.a. the Method of Loci).</p>
+        
+        <p>We use our verbal skills so much day to day that sometimes it seems as though most of us have forgotten that we also have a visual memory.  We try to remember things by “telling ourselves” to remember it (auditory or verbal) as oppose to perhaps “picturing it” (visual).  In fact, many scientists argue that our visual memories may be stronger than our verbal memories.  They draw this conclusion from some memory studies but also because “language” or verbal skills evolved so much later than our visuospatial skills.  Our visual memories may be so effective because they have been part of our brains longer as our hunter and gathering ancestors had to use them to navigate large distances to survive.</p>
+        <p>Some scientists argue that our new reliance on verbal memory may be the result of having become a literate society and the wide availability of written text, so we have now grown accustom to “externalizing” our memories.  Nowadays we write so many things down, keeping calendars and datebooks, communicating by email and text message, reading stories in books and now on e-readers as opposed to memorizing stories that we keep in our heads until we have the opportunity to tell to someone else.  Thus we seem to have lost some very effective memory techniques that were relied upon by pre-literate and even early literate cultures who didn’t have wide access to books.  Remember that tales like The Odyssey were passed down almost verbatim for centuries before anyone wrote them down.  People back then had strategies for remembering the details of these epic tales.  And even after people could read, when books were scarce, they championed their ability to memorize vast texts.  Now we can read e-books or even read the internet until we are cross-eyed.  We can “bookmark” and “highlight” and write things down, so our memories are a bit weaker than our ancestors’.  We could argue that we now have other skills, like how to organize all of this information, and we are likely more efficient, but nevertheless we agonize about our “failing memories.”  So to make our memories stronger, we will practice some of the strategies used by people before words took over the world.</p>
+        <p>But just because we do not overtly use visual memory skills as much anymore doesn’t mean that we no longer possess the ability to do so, especially since it seems that we are somewhat “hard wired” to benefit from using visualization to improve our memories.</p>
+        <p>Let’s talk more about using “visualization” to improve our memories:</p>
+        <p> One quick way to use visualization is to take mental snapshots of things such as:</p>
+        <ul>
+          <li>Where you placed your keys</li>
+          <li>Where you parked your car</li>
+          <li>The arrangement of items on your desk before you take them off to dust</li>
+          <li>The contents of your refrigerator</li>
+          <li>Even a list</li>
+        </ul>
+        <p>You can also use your visual memory to help you memorize directions somewhere.  Instead of relying on the GPS, you can challenge yourself to memorize a new or somewhat unfamiliar route.</p>
+        <ul>
+          <li>If the route is brand new to you, then you can visualize the road signs that you will be on the lookout for and then imagine right and left arrows for the turns.</li>
+          <li>If you sort of know the area, then try visualizing the intersections where you will make each turn.</li>
+        </ul>
+        <p>If you try this challenge then it will probably be a good idea to put the GPS or a map in the car just in case you get yourself </p>
+        
+        
+          </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
+    </div>
     
     
+             <div id="lesson-2-slide-17" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Memory Exercise{/t}</h2>
+        <hr />
+        
+        <h4>Visualization: The Roman Room Method</h4>
+        <p>For today’s memory exercise, you are going to learn about and practice a very powerful visualization exercise that can be used to memorize virtually anything, but it is particularly useful when it comes to memorizing lists.  This technique is called the “Method of Loci,” but it is also sometimes called the “Journey Method” or the “Roman Room Method” because it was used by ancient Romans and likely the Greeks before them.  As you learned in today’s lecture, learning and practicing this method on a regular basis can bulk up the pathways in the frontal lobes underlying this skill.</p>
+        
+        <p>How this works is that you use your visual memory to help you out.  You place vivid mental images of whatever it is that you are trying to remember along a pathway around a familiar location.  The easiest place to start is within a home that is solidly ingrained in your memory.  For most people this is the house they grew up in.</p>
+        
+        
+
+
+<p>Let’s take a moment to take a good look around this familiar space.  Imagine the driveway leading up to the house, recall the look of the path leading up to the front door, imagine the entry way just inside the front door, look around the front room, walk down the hallway and recall a mental picture of each room along the way.  Take a couple of moments to complete this mental tour of this memorable home as though you were there for an open-house.  When you make it back to the front room join us back in this room, maybe you’ll need to open your eyes.</p>
+
+<p>Now we are going to remember a shopping list for brain healthy foods by placing very large, vivid, and humorous representations of them throughout the pathway we just took through this familiar house.</p>
+ Here is the shopping list of Brain Healthy Foods:
+<ul>
+  <li>2 bunches of salad greens</li>
+  <li>1 quart of blueberries</li>
+  <li>1 pound of shelled English walnuts</li>
+  <li>2 pounds of fresh wild salmon</li>
+  <li>A quart of low-fat Greek yogurt</li>
+  <li>2 bars of dark chocolate</li>
+  <li>3 bottles of red wine</li>
+  </ul>
+<p>Now, start off by imagining that as you’re walking up the pathway to the house, it has been neglected for some time and you have to push back large, over-grown leaves that look like salad greens or leafy lettuce that are taller than you are.  Every time you move one out of the way a new one slaps you in the face.</p>
+<p>The trick here is to imagine things that are absurd, unusual, humorous and even arousing in some way.  Emotional memories are often more salient because they get an encoding boost from the emotional brain structures that live near the memory center, so try to make walking through this pathway as dramatic as a Hollywood movie.</p>
+<p>So you finally make it through the overgrown salad greens and you arrive at the front porch.  Blocking your way to opening the door is a container that looks like a quart of blueberries except that the container is the size of a hot-tub and there are little kids inside smashing blueberries over each other’s heads, making a colossal mess.  
+  
+</p>
+<p>You finally manage to get the door open and once inside the entry way, you are met by a giant shelled walnut, dressed like one of the guards at Buckingham palace, asking you to give him a pound as a fee for passing into your childhood home.  You pay the walnut and move into the living room where you see a whole, 2-pound salmon, disgusting mouth and all, laying across the vent on the back of the old television set, steaming from the heat coming off of the tube of the TV, causing it to cook a little and to stink a lot!</p>
+
+<p>Moving down the hallway, you pass by the first room and see that inside there is another giant quart-sized-looking container of yogurt and a Greek god or goddess of your choosing, but who is skinny with “low-fat”, is taking a bath in the yogurt.  Moving farther down the hallway, you look inside a bedroom and see two giant bars of dark chocolate laid out on the bed as though they are sleeping side-by-side.  It can help your memory if these bars of chocolate grow faces and you see them wake up and look at you or something like that.  Finally you arrive in the kitchen and open up the refrigerator door to see three large bottles of red wine that also have faces and start “whining” at you, so you immediately close the door to make them stop being so annoying.</p>
+
+<p>Now that you’ve taken your walk through your own “Roman Room,” rehearse this path a few times later today, and we will see next week how well it stuck with you. The list is in your workbook in case you need to brush up on any items, but it’s possible through this exercise in what we call “elaborated encoding” that you may not have to reference it.</p>
+
+<p>A great resource for learning more about this and a few other methods like it is the book Moonwalking with Einstein: The Art and Science of Remembering Everything by Joshua Foer, an entertaining account of how an average journalist (Mr. Foer, himself) trains to win the U.S. Memory Championship.</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
+    </div>
     
+             <div id="lesson-2-slide-18" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Sample Memory Goals{/t}</h2>
+        <hr />
+        <p>The more Memory Palaces you have, the easier it  will be for you to use the Roman Room Technique in different  circumstances.  So spend  some time this week &ldquo;revisiting,&rdquo; (either literally or in your mind) familiar  spaces that you can use as Memory Palaces.  Then spend some time practicing this technique.   Even though it is powerful (you may be surprised at how easily you  remember the list of foods from this week) it does take some work, and as with  most things, the  more you practice them the easier they get.</p></div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
+    </div>
     
-    
-    
-    
-    
-    
-         <div id="lesson-2-slide-21" class="course-slide"> 
+               <div id="lesson-2-slide-19" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Goal Setting for Physical Activity{/t}</h2>
+        <hr />
+        <p>Lifestyle changes are difficult.  In order to help you do that, we are going to  help you create short and long term goals.   Goal setting has been found to be an effective way to help create  behavioral habits and maintain healthy behaviors into everyday lifestyles.</p>
+        <p>Start by identifying a long term goal,  then create action steps for short-term (1-week) to help you reach your long  term goals.   Often times, long term goals are too daunting that we don&rsquo;t even know  where to begin!</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
+    </div>
+  
+         <div id="lesson-2-slide-20" class="course-slide"> 
       <div class="content">
         <h2 class="flowers">{t}Recap{/t}</h2>
         <hr />
