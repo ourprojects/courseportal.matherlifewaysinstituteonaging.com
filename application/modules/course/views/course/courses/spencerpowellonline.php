@@ -49,7 +49,6 @@ foreach(array(
     <img src="<?php echo $this->getImagesUrl('msml/153075496.png'); ?>" alt="image"> </div>
   <div class="box-sidebar one">
     <h3>{t}Module Activity Log{/t}</h3>
-   
     <p>{t}Please click the button below to access your user Activity Log.{/t}</p>
     <div class="text-center">
       <?php
@@ -109,23 +108,11 @@ foreach(array(
   <ul>
     <li> <a href="#lesson-1-slide-1" data-fancybox-group="lesson-1" class="teal lesson-1">{t}Introduction{/t}</a> <a href="#lesson-1-slide-2" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-3" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-4" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-5" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-6" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-7" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-8" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-9" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-10" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-11" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-12" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-13" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-14" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-15" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-16" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-17" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-18" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-19" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-20" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-21" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-22" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-23" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-24" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-25" data-fancybox-group="lesson-1" class="hide lesson-1"></a> </li>
     <li> <a href="#lesson-2-slide-1" data-fancybox-group="lesson-2" class="teal lesson-2">{t}Physical Activity{/t}</a> <a href="#lesson-2-slide-2" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-3" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-4" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-5" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-6" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-7" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-8" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-9" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-10" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-11" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-12" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-13" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-14" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-15" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-16" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-17" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-18" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-19" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-20" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-21" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-22" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-23" data-fancybox-group="lesson-2" class="hide lesson-2"></a> </li>
-    <li> <a href="#lesson-3-slide-1" data-fancybox-group="lesson-3" class="teal lesson-3">{t}Emotional{/t}</a> <a href="#lesson-3-slide-2" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-3" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-4" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-5" data-fancybox-group="lesson-3" class="hide lesson-3"></a> </li>
+    <li> <a href="#lesson-3-slide-1" data-fancybox-group="lesson-3" class="teal lesson-3">{t}Emotional{/t}</a> <a href="#lesson-3-slide-2" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-3" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-4" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-5" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-6" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-7" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-8" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-9" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-10" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-11" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-12" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-13" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-14" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-15" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-16" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-17" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-18" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-19" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-20" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-21" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-22" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-23" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-24" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-25" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-26" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-27" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-28" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-29" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-30" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-31" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-32" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-33" data-fancybox-group="lesson-3" class="hide lesson-3"></a> </li>
     <li> <a href="#lesson-4-slide-1" data-fancybox-group="lesson-4" class="teal lesson-4">{t}Intellectual{/t}</a> <a href="#lesson-4-slide-2" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-3" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-4" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-5" data-fancybox-group="lesson-4" class="hide lesson-4"></a> </li>
     <li> <a href="#lesson-5-slide-1" data-fancybox-group="lesson-5" class="teal lesson-5">{t}Nutritional{/t}</a> <a href="#lesson-5-slide-2" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-3" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-4" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-5" data-fancybox-group="lesson-5" class="hide lesson-5"></a> </li>
     <li> <a href="#lesson-6-slide-1" data-fancybox-group="lesson-6" class="teal lesson-6">{t}Spiritual{/t}</a> <a href="#lesson-6-slide-2" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-3" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-4" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-5" data-fancybox-group="lesson-6" class="hide lesson-6"></a> </li>
-    <li> 
-<a href="#lesson-7-slide-1" data-fancybox-group="lesson-7" class="teal lesson-7">{t}Social{/t}</a> 
-<a href="#lesson-7-slide-2" data-fancybox-group="lesson-7" class="hide lesson-7"></a> 	<a href="#lesson-7-slide-3" data-fancybox-group="lesson-7" class="hide lesson-7"></a> 	<a href="#lesson-7-slide-4" data-fancybox-group="lesson-7" class="hide lesson-7"></a> 	
-<a href="#lesson-7-slide-5" data-fancybox-group="lesson-7" class="hide lesson-7"></a> 
-<a href="#lesson-7-slide-6" data-fancybox-group="lesson-7" class="hide lesson-7"></a> 
-<a href="#lesson-7-slide-7" data-fancybox-group="lesson-7" class="hide lesson-7"></a> 	<a href="#lesson-7-slide-8" data-fancybox-group="lesson-7" class="hide lesson-7"></a> 	<a href="#lesson-7-slide-9" data-fancybox-group="lesson-7" class="hide lesson-7"></a> 	<a href="#lesson-7-slide-10" data-fancybox-group="lesson-7" class="hide lesson-7"></a> 
-<a href="#lesson-7-slide-11" data-fancybox-group="lesson-7" class="hide lesson-7"></a> 	<a href="#lesson-7-slide-12" data-fancybox-group="lesson-7" class="hide lesson-7"></a> 	<a href="#lesson-7-slide-13" data-fancybox-group="lesson-7" class="hide lesson-7"></a> 	<a href="#lesson-7-slide-14" data-fancybox-group="lesson-7" class="hide lesson-7"></a> 
-<a href="#lesson-7-slide-15" data-fancybox-group="lesson-7" class="hide lesson-7"></a> 	<a href="#lesson-7-slide-16" data-fancybox-group="lesson-7" class="hide lesson-7"></a> 	<a href="#lesson-7-slide-17" data-fancybox-group="lesson-7" class="hide lesson-7"></a> 	<a href="#lesson-7-slide-18" data-fancybox-group="lesson-7" class="hide lesson-7"></a> 
-<a href="#lesson-7-slide-19" data-fancybox-group="lesson-7" class="hide lesson-7"></a> 	<a href="#lesson-7-slide-20" data-fancybox-group="lesson-7" class="hide lesson-7"></a> 	<a href="#lesson-7-slide-21" data-fancybox-group="lesson-7" class="hide lesson-7"></a> 	<a href="#lesson-7-slide-22" data-fancybox-group="lesson-7" class="hide lesson-7"></a> 
-
-    
-    
-    </li>
+    <li> <a href="#lesson-7-slide-1" data-fancybox-group="lesson-7" class="teal lesson-7">{t}Social{/t}</a> <a href="#lesson-7-slide-2" data-fancybox-group="lesson-7" class="hide lesson-7"></a> <a href="#lesson-7-slide-3" data-fancybox-group="lesson-7" class="hide lesson-7"></a> <a href="#lesson-7-slide-4" data-fancybox-group="lesson-7" class="hide lesson-7"></a> <a href="#lesson-7-slide-5" data-fancybox-group="lesson-7" class="hide lesson-7"></a> <a href="#lesson-7-slide-6" data-fancybox-group="lesson-7" class="hide lesson-7"></a> <a href="#lesson-7-slide-7" data-fancybox-group="lesson-7" class="hide lesson-7"></a> <a href="#lesson-7-slide-8" data-fancybox-group="lesson-7" class="hide lesson-7"></a> <a href="#lesson-7-slide-9" data-fancybox-group="lesson-7" class="hide lesson-7"></a> <a href="#lesson-7-slide-10" data-fancybox-group="lesson-7" class="hide lesson-7"></a> <a href="#lesson-7-slide-11" data-fancybox-group="lesson-7" class="hide lesson-7"></a> <a href="#lesson-7-slide-12" data-fancybox-group="lesson-7" class="hide lesson-7"></a> <a href="#lesson-7-slide-13" data-fancybox-group="lesson-7" class="hide lesson-7"></a> <a href="#lesson-7-slide-14" data-fancybox-group="lesson-7" class="hide lesson-7"></a> <a href="#lesson-7-slide-15" data-fancybox-group="lesson-7" class="hide lesson-7"></a> <a href="#lesson-7-slide-16" data-fancybox-group="lesson-7" class="hide lesson-7"></a> <a href="#lesson-7-slide-17" data-fancybox-group="lesson-7" class="hide lesson-7"></a> <a href="#lesson-7-slide-18" data-fancybox-group="lesson-7" class="hide lesson-7"></a> <a href="#lesson-7-slide-19" data-fancybox-group="lesson-7" class="hide lesson-7"></a> <a href="#lesson-7-slide-20" data-fancybox-group="lesson-7" class="hide lesson-7"></a> <a href="#lesson-7-slide-21" data-fancybox-group="lesson-7" class="hide lesson-7"></a> <a href="#lesson-7-slide-22" data-fancybox-group="lesson-7" class="hide lesson-7"></a> </li>
     <li> <a href="#lesson-8-slide-1" data-fancybox-group="lesson-8" class="teal lesson-8">{t}Closing{/t}</a> <a href="#lesson-8-slide-2" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-3" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-4" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-5" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-6" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-7" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-8" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-9" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-10" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-11" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-12" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-13" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-14" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-15" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-16" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-17" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-18" data-fancybox-group="lesson-8" class="hide lesson-8"></a> </li>
   </ul>
   <div class="box-white" id="resources">
@@ -611,9 +598,6 @@ foreach(array(
         <img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}"> </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
     </div>
-    
-    
-    
     <div id="lesson-2-slide-3" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}Investing in Brain Health{/t}</h2>
@@ -625,13 +609,13 @@ foreach(array(
         <p class="forum">{t}On the Forum, list the main ways they had been more active?{/t}</p>
         <img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}">
         <p>{t}We are going to talk today about how physical activity seems to be a key component of brain health. In fact, it may be one of the best things you can do for your brain. {/t}</p>
-        
-        
-         <div id="lesson-2-slide-4" class="course-slide">
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
+    </div>
+    <div id="lesson-2-slide-4" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}Exercise is Linked to:{/t}</h2>
         <hr />
-        
         <ul>
           <li>{t}Maintaining a Healthy Weight{/t}
             <ul>
@@ -668,47 +652,28 @@ foreach(array(
           <li>Have you felt or seen benefits of physical activity in yourself or others?</li>
           <li>What are some benefits of physical  activity?</li>
         </ul>
-       <img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}">
+        <img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}">
         <p>&ldquo;Most  recently, we have learned that participation in physical activity may also help  to prevent or postpone the onset of dementia and cognitive decline.&rdquo;</p>
         <p>As  you&rsquo;ve been learning, scientists have learned that the brain stays plastic  (changeable) all the way into our later years – this means that the brain can  change in response to exercise no matter how old or young you are. (Eckmann, 2011)</p>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
     </div>
-    
-    
-      <div id="lesson-2-slide-5" class="course-slide">
+    <div id="lesson-2-slide-5" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}How does physical activity reduce  cognitive decline?{/t}</h2>
         <hr />
-        
         <p>There are two proposed routes through which it seems that physical activity reduces cognitive decline.</p>
-
-<p>The route that has been understood for some time is an indirect route, a relationship that scientists call a moderating relationship, where the effects of a third variable (in this case vascular health) explains or “moderates” the relationship between physical activity and cognitive decline. For a long time, scientists believed that the link between physical activity and cognitive performance was primarily moderated by vascular health, which remains an important moderator!!</p>
-
-
-<p>But more recently evidence suggests that physical activity also seems to have a direct impact on cognitive performance, which we will discuss in a moment.</p>
-
-<p>But first let’s get a better understanding of the impact that your vascular health on your brain performance and aging.</p>
-        
-        
-        
-          </div>
+        <p>The route that has been understood for some time is an indirect route, a relationship that scientists call a moderating relationship, where the effects of a third variable (in this case vascular health) explains or “moderates” the relationship between physical activity and cognitive decline. For a long time, scientists believed that the link between physical activity and cognitive performance was primarily moderated by vascular health, which remains an important moderator!!</p>
+        <p>But more recently evidence suggests that physical activity also seems to have a direct impact on cognitive performance, which we will discuss in a moment.</p>
+        <p>But first let’s get a better understanding of the impact that your vascular health on your brain performance and aging.</p>
+      </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
     </div>
-    
-    
-    
-    
-    
-    
-    
-       
-      <div id="lesson-2-slide-6" class="course-slide">
+    <div id="lesson-2-slide-6" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}Medical Conditions Linked to  
-Cognitive Decline{/t}</h2>
+          Cognitive Decline{/t}</h2>
         <hr />
-        
         <p>High blood pressure, heart disease, diabetes, stroke, and obesity are consistently associated with cognitive decline.</p>
         <p> Research has found that:</p>
         <p>High blood pressure, high cholesterol, heart disease, diabetes and mini-strokes are all related to cognitive decline, but it appears that of all these conditions, high blood pressure may be the worst culprit!</p>
@@ -720,47 +685,37 @@ Cognitive Decline{/t}</h2>
         <p>Diabetes and pre-diabetes (insulin resistance) can damage the blood vessels that bring important nutrients to brain cells.</p>
         <p>As we just discussed, physical activity seems to play a role in preventing or reducing the impact of all of these medical conditions, so this is an important way that exercise protects our brains.</p>
         <p>How is it that these conditions reduce our cognitive reserve?  Well let’s look inside the brain to find out more. </p>
-        
-        
-          </div>
+      </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
     </div>
-    
-         <div id="lesson-2-slide-7" class="course-slide">
+    <div id="lesson-2-slide-7" class="course-slide">
       <div class="content">
-        <h2 class="flowers">{t}here{/t}</h2>
+        <h2 class="flowers">{t}White Dots on the Brain{/t}</h2>
         <hr />
-        
         <p>Brain cells needs a constant and robust supply of blood flow to stay alive.  Unlike other most other cells in your body, neurons (brain cells) cannot store the oxygen and glucose (sugar) they need to survive.  Any interruption in blood flow for even just a few minutes can significant damage.</p>
         <p>High blood pressure, high blood sugar and high cholesterol damage can interrupt the blood supply contributing to the form of dementia we call Vascular Dementia.  Vascular dementia has many names including: cerebrovascular disease, stroke, TAI, mini-stroke, and “white dot syndrome.”</p>
-        <p>The term “white dots” (also called white matter hyperintensities) comes from the way that vascular-related damage to the brain shows up on a certain type of MRI picture called a T2 weighted image.  In this type of image, the tissue for what we call “white matter tracks” normally show up as black.  White matter tracks are bundles of the connective fibers through which brain cells communicate with one another.  They are also called axon bundles.  When these tracks are damaged, they show up on T2 MRI as white instead of black, hence the name “white dot syndrome.”  You can see the white dots on this image inside the red circles.  The big white dots around the red circles are supposed to be there.          </p>
-        <p>Cerebrovascular disease is a serious condition, which includes stroke, and it is the 4th leading cause of death in people over 65, more than Alzheimer’s which is #5.  Most of us are familiar with the effects of stroke and maybe even TIA’s, which are basically just short-acting strokes, but you may not be familiar with this “white dot syndrome,” which can occur without any symptoms.  The white dots form from an accumulation of little silent strokes.  The effects on thinking build up over time, in many cases leading to dementia.  White dots start forming somewhat early in adulthood, with some detected in people as young as their 30’s.  White dots are common in the brains of older adults, and a certain number of them are considered to be “age appropriate.” But since they are linked to high blood pressure, high cholesterol and diabetes, we can work to reduce or prevent them.</p>
-        <p>[Trainer Tip:  Strokes occur when blood supply is lost to the brain resulting in a loss of function for a significant period of time (more than 24-hours).  TIA’s (transient ischemic attacks) or “mini-strokes” have visible symptoms of brain disruption (fainting, slurred speech, paralysis, etc), but function returns within 24-hours.]</p>
-        
-          </div>
+        <p>The term &quot;white dots&quot; (also called white matter hyperintensities) comes from the way that vascular-related damage to the brain shows up on a certain type of MRI picture called a T2 weighted image.  In this type of image, the tissue for what we call “white matter tracks” normally show up as black.  White matter tracks are bundles of the connective fibers through which brain cells communicate with one another.  They are also called axon bundles.  When these tracks are damaged, they show up on T2 MRI as white instead of black, hence the name &quot;white dot syndrome.&quot;  You can see the white dots on this image inside the red circles.  The big white dots around the red circles are supposed to be there. </p>
+        <p>Cerebrovascular disease is a serious condition, which includes stroke, and it is the 4th leading cause of death in people over 65, more than Alzheimer’s which is #5.  Most of us are familiar with the effects of stroke and maybe even TIA’s, which are basically just short-acting strokes, but you may not be familiar with this “white dot syndrome,” which can occur without any symptoms.  The white dots form from an accumulation of little silent strokes.  The effects on thinking build up over time, in many cases leading to dementia.  White dots start forming somewhat early in adulthood, with some detected in people as young as their 30’s.  White dots are common in the brains of older adults, and a certain number of them are considered to be “age appropriate.” But since they are linked to high blood pressure, high cholesterol and diabetes, we can work to reduce or prevent them. </p>
+      </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
     </div>
-    
-           <div id="lesson-2-slide-8" class="course-slide">
+    <div id="lesson-2-slide-8" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}The Formation of White Dots{/t}</h2>
         <hr />
-        
         <p>These white dots form because the arteries that feed this area of the brain are very, very tiny capillaries.  Chronic high blood pressure can cause these tiny capillaries to burst, spilling blood into the area where brain cells live, which is toxic to them.</p>
         <p>OR these tiny capillaries can also “clog up” and prevent blood flow from reaching points beyond the clog, leading to tissue damage.</p>
         <p>The things that “clog up” these capillaries are directly related to high blood pressure, high blood sugar and high cholesterol.  High blood pressure and high cholesterol lead to the build up of plaque in the arteries, sort of like the gunk that fills up in a slow kitchen sink pipe.  If a piece of this plaque or an associated blood clot becomes loose & starts floating around in the blood stream, it can float freely in the larger arteries.</p>
         <p>But if the plaque floats up to these small capillaries, (Click to start animation) it will block blood flow to the tissue downstream.</p>
         <p>The same type of thing happens when blood sugar is too high.   High blood sugar causes the red blood cells to swell up, (Click to animate) and this can block off capillaries as well.  High blood sugar also damages the walls of blood vessels increasing the risk for high blood pressure.</p>
-          </div>
+      </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
     </div>
-    
-           <div id="lesson-2-slide-9" class="course-slide">
+    <div id="lesson-2-slide-9" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}How does physical activity prevent  cognitive decline?{/t}</h2>
         <hr />
-        <p>In addition to protecting our vascular health and thereby our brain health, more recent evidence suggests that physical activity seems to also play a direct role in promoting cognitive performance, cognitive reserve and brain health.  
-  </p>
+        <p>In addition to protecting our vascular health and thereby our brain health, more recent evidence suggests that physical activity seems to also play a direct role in promoting cognitive performance, cognitive reserve and brain health. </p>
         <ul>
           <li>Directly, physical activity has been found to influence the processes by which learning and memory occur.</li>
           <li>Animal studies have shown that aerobic exercise (a rat running on a wheel) can have a profound effect on increasing the number of new brain cells that are born.</li>
@@ -774,24 +729,21 @@ Cognitive Decline{/t}</h2>
             </ul>
           </li>
         </ul>
-        </div>
+      </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
     </div>
-    
-    
-           <div id="lesson-2-slide-10" class="course-slide">
+    <div id="lesson-2-slide-10" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}Physical Activity and  
-Cognitive Reserve{/t}</h2>
+          Cognitive Reserve{/t}</h2>
         <hr />
-        
         <p>For example, in a recent study, researchers put 120 healthy older adults participants on a fitness plan for 1 full year.  Half of them (60) were assigned to a moderate to high intensity <strong>aerobics class</strong> 3 times per week and the other half (60) were assigned to a <strong>stretching and toning class</strong> that also met 3 days a week.</p>
         <p>MRI brain scans were given before the program, half-way through the program (at 6 months) and at the end of the program (1 year after the first scan).</p>
         <ul>
           <li>Before the program, the groups’ brain scans were not any different.</li>
           <li>After 6 months and again after a year:
             <ul>
-              <li>The aerobics training increased the volume of the hippocampus by 2%,          
+              <li>The aerobics training increased the volume of the hippocampus by 2%,
                 <ul>
                   <li>(2.12% over baseline at 6-months and 1.97% over baseline at 12-months)</li>
                   <li>effectively reversing age-related loss in volume by 1 to 2 years</li>
@@ -802,40 +754,31 @@ Cognitive Reserve{/t}</h2>
           </li>
         </ul>
         <p>Erikson, et al, 2010 http://www.pnas.org/content/early/2011/01/25/1015950108.full.pdf</p>
-        
-          </div>
+      </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
     </div>
-    
-    
-    
-           <div id="lesson-2-slide-11" class="course-slide">
+    <div id="lesson-2-slide-11" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}How much Physical Activity 
-do we need?{/t}</h2>
+          do we need?{/t}</h2>
         <hr />
         <p>One study found that those who participated in leisure-time physical activity at least twice a week in midlife (between the ages of 40 and 55), lowered their odds of developing Alzheimer’s disease by 60%.  The largest impact was in people who had a genetic predisposition to dementia (meaning that they carried the APoE-4 allele, a gene found to be linked to Alzheimer’s disease), but the effect of exercise was still significant in people without this gene meaning that everyone’s risk for dementia seemed to be lower if they exercised.</p>
         <p>Another study looked at regular exercise, which they measured by asking participants how many times a week they participated in a variety of specific types of exercise.  They found that regular exercise was associated with a reduced risk for all types of dementia 6 years later.  They also found that those who exercised 3 or more times per week had a 32% reduction in risk for dementia.  The finding was greatest among those who had poor physical functioning at the start of the study.</p>
         <p>A similar study found that those who participated in moderate or high levels of physical activity and were dementia-free at the beginning of the study had a significantly reduced risk of cognitive impairment 2 years later.</p>
         <p>It seems clear that the more physical active people are the better off they are.</p>
         <p>But you don’t have to immediately become a body builder or start training for marathons to reap the benefits of exercise. Researchers have found positive results when they analyzed physical activity, including walking.</p>
-        <p>The more walking, the better, but even walking briskly 90 minutes a week (that’s only 15 minutes a day) was all that was needed to improve cognitive outcomes and increased blood flow in the brain.  That translates to about walking as little as 6-9 miles a week, which is really a just a pretty nice walk (2-3 miles), 3x/week.  That seems doable doesn’t it?          </p>
+        <p>The more walking, the better, but even walking briskly 90 minutes a week (that’s only 15 minutes a day) was all that was needed to improve cognitive outcomes and increased blood flow in the brain.  That translates to about walking as little as 6-9 miles a week, which is really a just a pretty nice walk (2-3 miles), 3x/week.  That seems doable doesn’t it? </p>
         <p>There is still much research that needs to be done in this area to understand the relationship between exercise and specific types of dementia, but from what we know so far, exercise seems to be one of the best ways to protect your brain as you age.  It has some of the best evidence supporting it in terms of helping people build the “hardware” (brain cells) aspect of cognitive reserve.</p>
-        
-          </div>
+      </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
     </div>
-    
-    
-    
-           <div id="lesson-2-slide-12" class="course-slide">
+    <div id="lesson-2-slide-12" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}Increasing physical activity: 
-The FITT Principle{/t}</h2>
+          The FITT Principle{/t}</h2>
         <hr />
-        
         <p>As you can see from the last couple of slides, it’s not just about how often you exercise.  The brain benefits of exercise appear to increase when you increase several different factors related to your physical activity.</p>
-        <p>One group of scientists pulled together a series of research articles and reviewed them inclusively.  They found that the amount of impact that exercise had on cognition depended upon several factors including the length of the fitness-training intervention, the type of the intervention, and the duration of training sessions,  Generally, higher levels of exercise at higher intensities for longer amounts of time throughout the life course appear to be most beneficial.          </p>
+        <p>One group of scientists pulled together a series of research articles and reviewed them inclusively.  They found that the amount of impact that exercise had on cognition depended upon several factors including the length of the fitness-training intervention, the type of the intervention, and the duration of training sessions,  Generally, higher levels of exercise at higher intensities for longer amounts of time throughout the life course appear to be most beneficial. </p>
         <p>Because the risk of dementia decreases with increased intensity and duration of exercise, we recommend that people who already have a habit of exercising, set goals to step it up in some way.</p>
         <p>So, when we are thinking about improving our brain health through increased physical activity, there are a few different dimensions that you can consider following the FITT Principle:</p>
         <ul>
@@ -844,36 +787,25 @@ The FITT Principle{/t}</h2>
           <li>Time of our sessions – how long will we walk for each time? And, of course, the</li>
           <li>Type of our workout – will it in fact be walking, or another type of exercise such as swimming, playing tennis, lifting weights or something else. </li>
         </ul>
-        </div>
+      </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
     </div>
-    
-    
-           <div id="lesson-2-slide-13" class="course-slide">
+    <div id="lesson-2-slide-13" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}Types of Physical Activity{/t}</h2>
         <hr />
-        
         <p>Frequency, Intensity and Time for our physical activity is pretty straightforward, but what do we mean by type?  Here are some examples of the major categories of types of physical activities.  It is important for older adults to consider doing a variety of different types of workouts because they can all be beneficial to us in different ways.</p>
-        
         <p>We tend to experience the greatest benefit from endurance type exercises, however, we can’t keep up with endurance routines without maintaining our flexibility and balance.  When we were young, balance was something that came naturally to us, as we age, it is something we need to work on to maintain. Flexibility is also often over-looked in terms of its importance.  In order to maintain our range of motion to be able to do things like reaching a can on the top shelf or bending down to pick up something that we dropped we need to work on our flexibility.  Finally, maintaining our strength is another key component that will allow us to continue caring for ourselves and keeping up with our daily activities.  Strength training can also help build bone density and seems to help us generate a different type of nerve growth factor than endurance exercise.  Ideally, you should try to incorporate each one of these types of exercises into your routine.</p>
-
-<p class="forum">Review the listed types of physical activities. What types of physical activity participants are already active in, what is their favorite?
-  Have you already practices all 4 types of activities. Post your responses to the Forum.</p>
-<img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}">
-        
-        
-          </div>
+        <p class="forum">Review the listed types of physical activities. What types of physical activity participants are already active in, what is their favorite?
+          Have you already practices all 4 types of activities. Post your responses to the Forum.</p>
+        <img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}"> </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
     </div>
-    
-    
-           <div id="lesson-2-slide-14" class="course-slide">
+    <div id="lesson-2-slide-14" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}Making the most out of our 
-daily activities{/t}</h2>
+          daily activities{/t}</h2>
         <hr />
-        
         <p>In order to help maintain brain health, it is recommended that we live a lifestyle enhanced by as much physical activity as possible.  There are a variety of ways we could easily increase the amount of activity in our daily lives, these are just a few suggestions.</p>
         <ul>
           <li>When you’re going to the store, park far away from the door in order to limit the time you waste looking for parking and to get more steps in your day.</li>
@@ -905,30 +837,22 @@ daily activities{/t}</h2>
             </ul>
           </li>
         </ul>
-        </div>
+      </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
     </div>
-    
-    
-           <div id="lesson-2-slide-15" class="course-slide">
+    <div id="lesson-2-slide-15" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}Standing{/t}</h2>
         <hr />
         <p>Another thing you can do to increase your activity and help your body is to take opportunities to stand as much as possible.</p>
-        
-        
-          </div>
+      </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
     </div>
-    
-    
-    
-             <div id="lesson-2-slide-16" class="course-slide">
+    <div id="lesson-2-slide-16" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}Memory Strategy #2 - Visualization{/t}</h2>
         <hr />
         <p>Visualization: The Roman Room Method (a.k.a. the Method of Loci).</p>
-        
         <p>We use our verbal skills so much day to day that sometimes it seems as though most of us have forgotten that we also have a visual memory.  We try to remember things by “telling ourselves” to remember it (auditory or verbal) as oppose to perhaps “picturing it” (visual).  In fact, many scientists argue that our visual memories may be stronger than our verbal memories.  They draw this conclusion from some memory studies but also because “language” or verbal skills evolved so much later than our visuospatial skills.  Our visual memories may be so effective because they have been part of our brains longer as our hunter and gathering ancestors had to use them to navigate large distances to survive.</p>
         <p>Some scientists argue that our new reliance on verbal memory may be the result of having become a literate society and the wide availability of written text, so we have now grown accustom to “externalizing” our memories.  Nowadays we write so many things down, keeping calendars and datebooks, communicating by email and text message, reading stories in books and now on e-readers as opposed to memorizing stories that we keep in our heads until we have the opportunity to tell to someone else.  Thus we seem to have lost some very effective memory techniques that were relied upon by pre-literate and even early literate cultures who didn’t have wide access to books.  Remember that tales like The Odyssey were passed down almost verbatim for centuries before anyone wrote them down.  People back then had strategies for remembering the details of these epic tales.  And even after people could read, when books were scarce, they championed their ability to memorize vast texts.  Now we can read e-books or even read the internet until we are cross-eyed.  We can “bookmark” and “highlight” and write things down, so our memories are a bit weaker than our ancestors’.  We could argue that we now have other skills, like how to organize all of this information, and we are likely more efficient, but nevertheless we agonize about our “failing memories.”  So to make our memories stronger, we will practice some of the strategies used by people before words took over the world.</p>
         <p>But just because we do not overtly use visual memory skills as much anymore doesn’t mean that we no longer possess the ability to do so, especially since it seems that we are somewhat “hard wired” to benefit from using visualization to improve our memories.</p>
@@ -947,64 +871,47 @@ daily activities{/t}</h2>
           <li>If you sort of know the area, then try visualizing the intersections where you will make each turn.</li>
         </ul>
         <p>If you try this challenge then it will probably be a good idea to put the GPS or a map in the car just in case you get yourself </p>
-        
-        
-          </div>
-      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
-    </div>
-    
-    
-             <div id="lesson-2-slide-17" class="course-slide">
-      <div class="content">
-        <h2 class="flowers">{t}Memory Exercise{/t}</h2>
-        <hr />
-        
-        <h4>Visualization: The Roman Room Method</h4>
-        <p>For today’s memory exercise, you are going to learn about and practice a very powerful visualization exercise that can be used to memorize virtually anything, but it is particularly useful when it comes to memorizing lists.  This technique is called the “Method of Loci,” but it is also sometimes called the “Journey Method” or the “Roman Room Method” because it was used by ancient Romans and likely the Greeks before them.  As you learned in today’s lecture, learning and practicing this method on a regular basis can bulk up the pathways in the frontal lobes underlying this skill.</p>
-        
-        <p>How this works is that you use your visual memory to help you out.  You place vivid mental images of whatever it is that you are trying to remember along a pathway around a familiar location.  The easiest place to start is within a home that is solidly ingrained in your memory.  For most people this is the house they grew up in.</p>
-        
-        
-
-
-<p>Let’s take a moment to take a good look around this familiar space.  Imagine the driveway leading up to the house, recall the look of the path leading up to the front door, imagine the entry way just inside the front door, look around the front room, walk down the hallway and recall a mental picture of each room along the way.  Take a couple of moments to complete this mental tour of this memorable home as though you were there for an open-house.  When you make it back to the front room join us back in this room, maybe you’ll need to open your eyes.</p>
-
-<p>Now we are going to remember a shopping list for brain healthy foods by placing very large, vivid, and humorous representations of them throughout the pathway we just took through this familiar house.</p>
- Here is the shopping list of Brain Healthy Foods:
-<ul>
-  <li>2 bunches of salad greens</li>
-  <li>1 quart of blueberries</li>
-  <li>1 pound of shelled English walnuts</li>
-  <li>2 pounds of fresh wild salmon</li>
-  <li>A quart of low-fat Greek yogurt</li>
-  <li>2 bars of dark chocolate</li>
-  <li>3 bottles of red wine</li>
-  </ul>
-<p>Now, start off by imagining that as you’re walking up the pathway to the house, it has been neglected for some time and you have to push back large, over-grown leaves that look like salad greens or leafy lettuce that are taller than you are.  Every time you move one out of the way a new one slaps you in the face.</p>
-<p>The trick here is to imagine things that are absurd, unusual, humorous and even arousing in some way.  Emotional memories are often more salient because they get an encoding boost from the emotional brain structures that live near the memory center, so try to make walking through this pathway as dramatic as a Hollywood movie.</p>
-<p>So you finally make it through the overgrown salad greens and you arrive at the front porch.  Blocking your way to opening the door is a container that looks like a quart of blueberries except that the container is the size of a hot-tub and there are little kids inside smashing blueberries over each other’s heads, making a colossal mess.  
-  
-</p>
-<p>You finally manage to get the door open and once inside the entry way, you are met by a giant shelled walnut, dressed like one of the guards at Buckingham palace, asking you to give him a pound as a fee for passing into your childhood home.  You pay the walnut and move into the living room where you see a whole, 2-pound salmon, disgusting mouth and all, laying across the vent on the back of the old television set, steaming from the heat coming off of the tube of the TV, causing it to cook a little and to stink a lot!</p>
-
-<p>Moving down the hallway, you pass by the first room and see that inside there is another giant quart-sized-looking container of yogurt and a Greek god or goddess of your choosing, but who is skinny with “low-fat”, is taking a bath in the yogurt.  Moving farther down the hallway, you look inside a bedroom and see two giant bars of dark chocolate laid out on the bed as though they are sleeping side-by-side.  It can help your memory if these bars of chocolate grow faces and you see them wake up and look at you or something like that.  Finally you arrive in the kitchen and open up the refrigerator door to see three large bottles of red wine that also have faces and start “whining” at you, so you immediately close the door to make them stop being so annoying.</p>
-
-<p>Now that you’ve taken your walk through your own “Roman Room,” rehearse this path a few times later today, and we will see next week how well it stuck with you. The list is in your workbook in case you need to brush up on any items, but it’s possible through this exercise in what we call “elaborated encoding” that you may not have to reference it.</p>
-
-<p>A great resource for learning more about this and a few other methods like it is the book Moonwalking with Einstein: The Art and Science of Remembering Everything by Joshua Foer, an entertaining account of how an average journalist (Mr. Foer, himself) trains to win the U.S. Memory Championship.</p>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
     </div>
-    
-             <div id="lesson-2-slide-18" class="course-slide">
+    <div id="lesson-2-slide-17" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Memory Exercise{/t}</h2>
+        <hr />
+        <h4>Visualization: The Roman Room Method</h4>
+        <p>For today’s memory exercise, you are going to learn about and practice a very powerful visualization exercise that can be used to memorize virtually anything, but it is particularly useful when it comes to memorizing lists.  This technique is called the “Method of Loci,” but it is also sometimes called the “Journey Method” or the “Roman Room Method” because it was used by ancient Romans and likely the Greeks before them.  As you learned in today’s lecture, learning and practicing this method on a regular basis can bulk up the pathways in the frontal lobes underlying this skill.</p>
+        <p>How this works is that you use your visual memory to help you out.  You place vivid mental images of whatever it is that you are trying to remember along a pathway around a familiar location.  The easiest place to start is within a home that is solidly ingrained in your memory.  For most people this is the house they grew up in.</p>
+        <p>Let’s take a moment to take a good look around this familiar space.  Imagine the driveway leading up to the house, recall the look of the path leading up to the front door, imagine the entry way just inside the front door, look around the front room, walk down the hallway and recall a mental picture of each room along the way.  Take a couple of moments to complete this mental tour of this memorable home as though you were there for an open-house.  When you make it back to the front room join us back in this room, maybe you’ll need to open your eyes.</p>
+        <p>Now we are going to remember a shopping list for brain healthy foods by placing very large, vivid, and humorous representations of them throughout the pathway we just took through this familiar house.</p>
+        Here is the shopping list of Brain Healthy Foods:
+        <ul>
+          <li>2 bunches of salad greens</li>
+          <li>1 quart of blueberries</li>
+          <li>1 pound of shelled English walnuts</li>
+          <li>2 pounds of fresh wild salmon</li>
+          <li>A quart of low-fat Greek yogurt</li>
+          <li>2 bars of dark chocolate</li>
+          <li>3 bottles of red wine</li>
+        </ul>
+        <p>Now, start off by imagining that as you’re walking up the pathway to the house, it has been neglected for some time and you have to push back large, over-grown leaves that look like salad greens or leafy lettuce that are taller than you are.  Every time you move one out of the way a new one slaps you in the face.</p>
+        <p>The trick here is to imagine things that are absurd, unusual, humorous and even arousing in some way.  Emotional memories are often more salient because they get an encoding boost from the emotional brain structures that live near the memory center, so try to make walking through this pathway as dramatic as a Hollywood movie.</p>
+        <p>So you finally make it through the overgrown salad greens and you arrive at the front porch.  Blocking your way to opening the door is a container that looks like a quart of blueberries except that the container is the size of a hot-tub and there are little kids inside smashing blueberries over each other’s heads, making a colossal mess. </p>
+        <p>You finally manage to get the door open and once inside the entry way, you are met by a giant shelled walnut, dressed like one of the guards at Buckingham palace, asking you to give him a pound as a fee for passing into your childhood home.  You pay the walnut and move into the living room where you see a whole, 2-pound salmon, disgusting mouth and all, laying across the vent on the back of the old television set, steaming from the heat coming off of the tube of the TV, causing it to cook a little and to stink a lot!</p>
+        <p>Moving down the hallway, you pass by the first room and see that inside there is another giant quart-sized-looking container of yogurt and a Greek god or goddess of your choosing, but who is skinny with “low-fat”, is taking a bath in the yogurt.  Moving farther down the hallway, you look inside a bedroom and see two giant bars of dark chocolate laid out on the bed as though they are sleeping side-by-side.  It can help your memory if these bars of chocolate grow faces and you see them wake up and look at you or something like that.  Finally you arrive in the kitchen and open up the refrigerator door to see three large bottles of red wine that also have faces and start “whining” at you, so you immediately close the door to make them stop being so annoying.</p>
+        <p>Now that you’ve taken your walk through your own “Roman Room,” rehearse this path a few times later today, and we will see next week how well it stuck with you. The list is in your workbook in case you need to brush up on any items, but it’s possible through this exercise in what we call “elaborated encoding” that you may not have to reference it.</p>
+        <p>A great resource for learning more about this and a few other methods like it is the book Moonwalking with Einstein: The Art and Science of Remembering Everything by Joshua Foer, an entertaining account of how an average journalist (Mr. Foer, himself) trains to win the U.S. Memory Championship.</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
+    </div>
+    <div id="lesson-2-slide-18" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}Sample Memory Goals{/t}</h2>
         <hr />
-        <p>The more Memory Palaces you have, the easier it  will be for you to use the Roman Room Technique in different  circumstances.  So spend  some time this week &ldquo;revisiting,&rdquo; (either literally or in your mind) familiar  spaces that you can use as Memory Palaces.  Then spend some time practicing this technique.   Even though it is powerful (you may be surprised at how easily you  remember the list of foods from this week) it does take some work, and as with  most things, the  more you practice them the easier they get.</p></div>
+        <p>The more Memory Palaces you have, the easier it  will be for you to use the Roman Room Technique in different  circumstances.  So spend  some time this week &ldquo;revisiting,&rdquo; (either literally or in your mind) familiar  spaces that you can use as Memory Palaces.  Then spend some time practicing this technique.   Even though it is powerful (you may be surprised at how easily you  remember the list of foods from this week) it does take some work, and as with  most things, the  more you practice them the easier they get.</p>
+      </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
     </div>
-    
-               <div id="lesson-2-slide-19" class="course-slide">
+    <div id="lesson-2-slide-19" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}Goal Setting for Physical Activity{/t}</h2>
         <hr />
@@ -1013,77 +920,424 @@ daily activities{/t}</h2>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
     </div>
-  
-         <div id="lesson-2-slide-20" class="course-slide"> 
+    <div id="lesson-2-slide-20" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Action Steps for Physical Activity{/t}</h2>
+        <hr />
+        <p>Short term goals should be realistic and attainable, they should be specific – include each element of the FITT principle where appropriate, and they should be something that you will enjoy and are likely to complete.</p>
+        <p>Remind yourself of your action items – write them down, and keep track of your progress</p>
+        <p>Don’t let yourself get discouraged, remember, it is hard to start something new in life.  It doesn’t matter how long it takes you to get to your long-term goals, just as long as you keep working towards it is what counts.</p>
+        <p>And make sure to reward yourself for your accomplishments.  Changing your lifestyle is difficult to do and you need to be patient with yourself and give yourself credit for trying!</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
+    </div>
+    <div id="lesson-2-slide-21" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}This Week&rsquo;s Goals{/t}</h2>
+        <hr />
+        <h5>Memory Goal:</h5>
+        <ul>
+          <li>Goal: Practice a Roman Room using a grocery list, a to-do list, the names of people in this group, etc. once each day</li>
+          <li>Daily Reward: Five strawberries at dinner</li>
+        </ul>
+        <h5>Behavior Goal:</h5>
+        <ul>
+          <li>Goal: Increase the intensity of my daily walk (walk faster) for 5 minutes</li>
+          <li>Daily Reward: An extra 5 minutes relaxing in the shower </li>
+        </ul>
+        </p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
+    </div>
+    <div id="lesson-2-slide-22" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}Recap{/t}</h2>
         <hr />
-        
         <p>{t}Physical Activity Helps the Brain by:{/t}</p>
         <ul>
-        	<li>{t}Improves vascular health{/t}</li>
-            <li>{t}Increases brain volume{/t}</li>
-            <li>{t}Increases production of brain cells (neurogenesis){/t}</li>
-            <li>{t}Increases production of nerve growth factors (BDNF, IGF-1){/t}</li>
+          <li>{t}Improves vascular health{/t}</li>
+          <li>{t}Increases brain volume{/t}</li>
+          <li>{t}Increases production of brain cells (neurogenesis){/t}</li>
+          <li>{t}Increases production of nerve growth factors (BDNF, IGF-1){/t}</li>
         </ul>
-
-<p>{t}White dots are silent strokes that can build up over time to cause cognitive decline (vascular dementia){/t}</p>
-<p class="forum">{t}Please post your responses to the following questions on the Forum:{/t}</p>
-<ul>
-  <li>{t}What are some benefits of physical activity?<span class="forum">{/t}</span></li>
-  <li><span class="forum">{t}</span>How does physical activity help your brain?<span class="forum">{/t}</span></li>
-  <li><span class="forum">{t}</span>What are white dots?<span class="forum">{/t}</span></li>
-  <li><span class="forum">{t}</span>Name 3 direct ways that physical activity seems to directly improve cognition.<span class="forum">{/t}</span></li>
-  <li><span class="forum">{t}</span>What is the Memory Strategy for this week?<span class="forum">{/t}</span></li>
-  <li><span class="forum">{t}</span>Are verbal memories (thoughts repeated in our heads) stronger than visual memories?<span class="forum">{/t}</span></li>
-  <li><span class="forum">{t}</span>What are your goals for this week?{/t}</li>
-</ul>
-<img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}">
-    
-        
-        
-      </div>
+        <p>{t}White dots are silent strokes that can build up over time to cause cognitive decline (vascular dementia){/t}</p>
+        <p class="forum">{t}Please post your responses to the following questions on the Forum:{/t}</p>
+        <ul>
+          <li>{t}What are some benefits of physical activity?<span class="forum">{/t}</span></li>
+          <li><span class="forum">{t}</span>How does physical activity help your brain?<span class="forum">{/t}</span></li>
+          <li><span class="forum">{t}</span>What are white dots?<span class="forum">{/t}</span></li>
+          <li><span class="forum">{t}</span>Name 3 direct ways that physical activity seems to directly improve cognition.<span class="forum">{/t}</span></li>
+          <li><span class="forum">{t}</span>What is the Memory Strategy for this week?<span class="forum">{/t}</span></li>
+          <li><span class="forum">{t}</span>Are verbal memories (thoughts repeated in our heads) stronger than visual memories?<span class="forum">{/t}</span></li>
+          <li><span class="forum">{t}</span>What are your goals for this week?{/t}</li>
+        </ul>
+        <img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}"> </div>
       <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Complete Module{/t}</a> </div>
     </div>
   </div>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
   <div id="lesson3">
     <div id="lesson-3-slide-1" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}Emotional{/t}</h2>
         <hr />
         <img src="<?php echo $this->getImagesUrl('spencer/167585366.png'); ?>" alt="{t}Welcome!{/t}">
-        <h4>{t}Coming Soon!{/t}</h4>
-        <p>&nbsp;</p>
+        <h4>{t}Module Outline{/t}</h4>
+        <ul>
+          <li>Check-in and Review</li>
+          <li>Effects of Emotions on the Brain</li>
+          <li>Memory Exercise</li>
+          <li>Goal Setting </li>
+        </ul>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
+    </div>
+    <div id="lesson-3-slide-2" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Check-in{/t}</h2>
+        <hr />
+        <p class="forum">Before you begin, please review the previous module, its content and activities. If you had a goal and failed to complete it, consider what could have been more feasible? Post your feedback to the Forum.</p>
+        <img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}">
+        <p>Please remember the importance of being compassionate with yourself.  Change is hard, and if we get mad at ourselves for not changing then we are more likely to go back to our old patterns.</p>
+        <h4>FITT is Frequency, Intensity, Time & Type</h4>
+        <h5>Ways that Physical Activity helps the brain:</h5>
+        <ul>
+          <li>Improves vascular health (blood pressure, cholesterol, heart health, diabetes)</li>
+          <li>Reduces risk of white dots</li>
+          <li>Increases neurogenesis (growth of new brain cells)</li>
+          <li>Increases size of brain structures (hippocampus – used for memory)</li>
+          <li>Increases release of nerve growth factors (BDNF, IGF-1, aka Miracle Grow for the brain)</li>
+        </ul>
+        <h5>Last week’s Memory Strategy:</h5>
+        <ul>
+          <li>Visualization</li>
+          <li>Roman Room Method / Method of Loci / Memory Palace</li>
+        </ul>
+        <p>Brain Healthy Food (Grocery) List:</p>
+        <ul>
+          <li>2 bunches of salad greens</li>
+          <li>1 quart of blueberries</li>
+          <li>1 pound of shelled English walnuts</li>
+          <li>2 pounds of fresh wild salmon</li>
+          <li>A quart of low-fat Greek yogurt</li>
+          <li>2 bars of dark chocolate</li>
+          <li>3 bottles of red wine </li>
+        </ul>
+        <p>Gather honest feedback about the activity log and memory strategy to discuss in the weekly call.</p>
+        <p>If people did not practice the memory strategy, have them imagine and generate scenarios where they might use it.  Also emphasize that memory strategies are most effective when they are practiced,</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
+    </div>
+    <div id="lesson-3-slide-3" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Investing in Brain Health{/t}</h2>
+        <hr />
+        <p>The last couple of weeks we have talked about actively investing in our brain reserve (or Cognitive Reserve / Brain 401K) in order to prevent or delay the onset of dementia.  Last week we talked about maximizing contributions to our cognitive reserve through physical activity.</p>
+        <p>Current module:</p>
+        <ul>
+          <li>will focus a little more on minimizing losses by discussing the impact of emotions on our brains,</li>
+          <li>but we will also discuss briefly how emotions can also help maximize contributions.</li>
+          <li>We will also give you some tools for reducing stress and improving focus. </li>
+        </ul>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
+    </div>
+    <div id="lesson-3-slide-4" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Emotions and the Brain{/t}</h2>
+        <hr />
+        <p>Emotions are an important part of being human. They motivate us to do pretty much everything we need to do to ensure our survival: mate, work, avoid harm, etc..  They also add depth and dimension to our lives.  Most of the time emotions help us, but there are times when they get in our way.  Today we will discuss the ways emotions impact the way your brain works and help you develop strategies to work more effectively with your emotions to improve your thinking and increase your cognitive reserve.</p>
+        <p>Since we experience such a wide range of emotions, to cover all of the ways that emotions affect the brain would be a whole course all by itself.  Therefore, our discussion will focus on the short-term (or “acute”) effects of stress on how we think and the long-term effects of chronic stress on our bodies and brains.</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
+    </div>
+    <div id="lesson-3-slide-5" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Stress{/t}</h2>
+        <hr />
+        <p>Stress is an umbrella term that we use colloquially to describe a pretty wide range of emotions.  Typically we think of stress as something negative, such as “I’m so stressed out,” but some people will also distinguish between “good stress” and &quot;bad stress."</p>
+        <p>While our minds conceive of these emotions as very different things, our bodies actually don’t know the difference.  To understand the impact that stress has on our brains, we need to spend a little time talking about the body’s reaction to stress.  What we call “the stress response.”</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
+    </div>
+    <div id="lesson-3-slide-6" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}The Physical Stress Response{/t}</h2>
+        <hr />
+        <p>Here is what happens in the body and brain when we become stressed:</p>
+        <ul>
+          <li>When we are faced with threats, emergencies, or what we think are emergencies, our physical stress response, called the fight-or-flight response,  is switched on.</li>
+          <li>The fight or flight response involves the activation of multiple systems in the body, generally following this sequence of events (From Left to Right):
+            <ol>
+              <li> Structures in the brain and body from our hormonal (or endocrine) system called the HPA Axis become active, which triggers</li>
+              <li> a release of
+                <ul>
+                  <li>adrenaline and</li>
+                  <li>cortsol, activating the the fight-or-flight state, which activates</li>
+                </ul>
+              </li>
+              <li> the primitive, emotion-related structures in the brain collectively called the “Limbic System” or the Emotional Brain</li>
+            </ol>
+          </li>
+          <li>The fight-or-flight response is designed to help us survive life-threatening situations—in other words, it helps us to escape or defend ourselves when we feel threatened.  This causes a uniform series of body sensations and changes in how our brain works.</li>
+        </ul>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
+    </div>
+    <div id="lesson-3-slide-7" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}What We Feel Physically{/t}</h2>
+        <hr />
+        <p class="forum">Whave all experienced the fight-or-flight response, what physical sensations do you feel when you are stressed or upset? Post your response to the Forum.</p>
+        <img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}">
+        <ul>
+          <li>Heart rate increases, pumping oxygenated blood to our skeletal muscles in preparation to run away</li>
+          <li>We sweat – like the body’s car radiator kicking-in in preparation for the exertion required to run away</li>
+          <li>Blood flow is moved to our muscles, which become tense, preparing us to run away</li>
+          <li>Goose bumps – part of the skin’s cooling process</li>
+          <li>Digestion stops – as blood flow is diverted to our skeletal muscles, the body diverts blood flow away from our digestive organs so as to not waste valuable resources.  Tension in this area may also increase.  This can lead to irritable bowl syndrome over time.  Other unpleasant things can occur when digestion is not allowed to proceed naturally.</li>
+          <li>Respiration increases preparing us to provide our muscles oxygen in order to run away.</li>
+          <li>Blood vessels dilate (vasodilation) – allowing more blood flow to the body’s muscles.</li>
+          <li>Eyes widen – allowing us to be able to look around for threats
+            </p>
+          </li>
+        </ul>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
+    </div>
+    <div id="lesson-3-slide-8" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Stress Can Impair Memory{/t}</h2>
+        <hr />
+        <p>When we are stressed, the brain puts a lot of effort into remembering what it thinks is important about the situation, namely things that will ensure our survival.  Therefore, even though stress may improve memory for certain things, the details that are remembered may not be the things that we want to remember.  This is how acute stress can get the way of our thinking abilities.  More specifically, it distracts our attention from the things we may want to remember.</p>
+        <p>Since we humans are uniquely able to activate our stress response simply with our thoughts, what starts off as a senior moment, can be made much, much worse if we start to worry about what that means about our brains.</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
+    </div>
+    <div id="lesson-3-slide-9" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Escaping Emotional Hijackings {/t}</h2>
+        <hr />
+        <p>The reason this happens is because when the stress response kicks in, it activates the “emotional brain” or the “Limbic System.” (Point to brain image) This image is a transparent look at the brain, showing some of the deep structures that make up the more primal parts of our brain.</p>
+        <p> The Limbic System is also sometimes called the “reptilian (or reptile) brain” because in the brains of reptiles such as alligators and snakes (creatures that have a reputation for being aggressive and persnickety), Limbic structures take up most of the brain real estate.  As humans evolved, we never gave up those primitive parts of our brains, instead we grew new structures around them, most notably the region we call the prefrontal cortex (or frontal lobes), which surrounds the limbic system and works hard to literally inhibit the “reptilian” brain.</p>
+        <p>The prefrontal cortex keeps the emotional brain under pretty good control most of the time. BUT because the emotional brain is so important for ensuring our survival, when it becomes active through the fight-or-flight response, most of the brain’s resources (literally blood flow) get diverted to this region.</p>
+        <p>The prefrontal cortex is also a very energy-hungry region, so when blood-flow is diverted to the limbic system, the prefrontal cortex can’t work as well as it normally does when we are relaxed.  It’s like when the lights dim when you turn on the toaster.</p>
+        <p class="forum">Have you ever been at a loss for words in the middle of an argument? Post your response to the Forum.</p>
+        <img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}">
+        <p>An important way to use your brain more effectively is to know when the logical prefrontal cortex has been hijacked by the emotional part of the brain (the limbic system) and take steps to release it.  By noticing when a the stress response kicks in and taking steps to calm down, we can direct our brains to focus better, dialing down the emotional brain and dialing up the prefrontal cortex.   One way to do this is to learn how to activate the PNS, which you will learn in today’s demonstration. </p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
+    </div>
+    <div id="lesson-3-slide-10" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Using Stress to 
+          Optimize your Performance{/t}</h2>
+        <hr />
+        <p>On the other hand, stress isn’t always “all bad.”  This brings us back to that concept of “good stress” and “bad stress.”</p>
+        <p>An absence of stress can make us unmotivated.</p>
+        <p>Mild to moderate SNS activation can be useful for:</p>
+        <ul>
+          <li> Feeling enthusiasm</li>
+          <li>Maintaining attention - our senses become sharper under SNS activation</li>
+          <li>Being motivated</li>
+          <li>Working passionately at something </li>
+        </ul>
+        <p>This may explain some elements of procrastination.</p>
+        <p>This inverted u-shaped curve is referred to as the Yerkes-Dodson Curve, and it was proposed by Yerkes and Dodson to explain this phenomenon.  You can use this curve to your advantage by thinking about where you fall on the curve in any given situation where you want perform at your best.  If you feel you are not performing at your best, are you on the left side of the curve and unmotivated? Or are you on the right side and “stressed-out”?</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
+    </div>
+    <div id="lesson-3-slide-11" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Stress Can Even Improve Memory 
+          (Sometimes){/t}</h2>
+        <hr />
+        <p>Stress can also improve certain types of memory.  As we have been discussing, activation of the SNS leads to activation of the “emotional” part of the brain, which actually includes the hippocampus, the structure responsible for forming new memories, so in some instances, stress can help facilitate some memories, particularly the threatening or highly arousing details of those memories.</p>
+        <p>Ever experience a tragedy or some highly arousing event and you can remember it as though it happened yesterday?  This is an example of a “stress-enhanced memory” also called “flash-bulb memory”</p>
+        <p>This happens because the Amygdala - a structure in the brain that controls some negative emotions such as fear and disgust - sits right in front of the Hippocampus (the structure that forms new memories) and the cells in these two structures are highly interconnected.  When the Amygdala is activated by fear or disgust, it sends a lot of signals to the the hippocampus, giving it a boost and helping us remember some things better.  This means that memories that contain an element of fear or drama tend to stick with us better.</p>
+        <p>You can harness this effect when you are trying to remember something by adding a flare for the dramatic.  That is why we made the images in our Roman Room exercise so absurd and in some cases either disgusting or arousing. </p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
+    </div>
+    <div id="lesson-3-slide-12" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Relaxation Response{/t}</h2>
+        <hr />
+        <p>here</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
+    </div>
+    <div id="lesson-3-slide-13" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Why Zebras Don&rsquo;t Get Ulcers{/t}</h2>
+        <hr />
+        <p>here</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
+    </div>
+    <div id="lesson-3-slide-14" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Chronic Stress: Wear  and Tear on the Body{/t}</h2>
+        <hr />
+        <p>here</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
+    </div>
+    <div id="lesson-3-slide-15" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Chronic Stress is Toxic to the Brain{/t}</h2>
+        <hr />
+        <p>here</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
+    </div>
+    <div id="lesson-3-slide-16" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}The Stress and Anxiety Cycle{/t}</h2>
+        <hr />
+        <p>here</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
+    </div>
+    <div id="lesson-3-slide-17" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Stress and Depression{/t}</h2>
+        <hr />
+        <p>here</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
+    </div>
+    <div id="lesson-3-slide-18" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}What  can we do? {/t}</h2>
+        <hr />
+        <p>here</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
+    </div>
+    <div id="lesson-3-slide-19" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Put yourself into Rest-and-Digest{/t}</h2>
+        <hr />
+        <p>here</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
+    </div>
+    <div id="lesson-3-slide-20" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Mindfulness Practices {/t}</h2>
+        <hr />
+        <p>here</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
+    </div>
+    <div id="lesson-3-slide-21" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Unhelpful or Negative Thinking{/t}</h2>
+        <hr />
+        <p>here</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
+    </div>
+    <div id="lesson-3-slide-22" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Self-care{/t}</h2>
+        <hr />
+        <p>here</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
+    </div>
+    <div id="lesson-3-slide-23" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Memory Strategy #3{/t}</h2>
+        <hr />
+        <p>here</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
+    </div>
+    <div id="lesson-3-slide-24" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Memory Strategy #3{/t}</h2>
+        <hr />
+        <p>here</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
+    </div>
+    <div id="lesson-3-slide-25" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Memory Exercise{/t}</h2>
+        <hr />
+        <p>here</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
+    </div>
+    <div id="lesson-3-slide-26" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Memory Exercise{/t}</h2>
+        <hr />
+        <p>here</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
+    </div>
+    <div id="lesson-3-slide-27" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Memory Strategy #3{/t}</h2>
+        <hr />
+        <p>here</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
+    </div>
+    <div id="lesson-3-slide-28" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Sample Memory Goals{/t}</h2>
+        <hr />
+        <p>here</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
+    </div>
+    <div id="lesson-3-slide-29" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Sample Behavior Goals{/t}</h2>
+        <hr />
+        <p>here</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
+    </div>
+    <div id="lesson-3-slide-30" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}This Week&rsquo;s Goals{/t}</h2>
+        <hr />
+        <p>here</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
+    </div>
+    <div id="lesson-3-slide-31" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}In-class Exercise: Focused Breathing{/t}</h2>
+        <hr />
+        <p>here</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
+    </div>
+    <div id="lesson-3-slide-32" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Recap{/t}</h2>
+        <hr />
+        <p class="forum">Please post your responses to the following questions to the Forum:</p>
+        <ul class="forum">
+          <li>What happens during the stress response?</li>
+          <li>What happens to our thinking during stress?</li>
+          <li>Can emotions help us remember better?</li>
+          <li>What is the opposite of fight-or-flight?</li>
+          <li>What can happen if we don’t get enough time in rest-and-digest?</li>
+          <li>What effect does chronic stress have on brain cells?</li>
+          <li>What are some ways to engage the relaxation response?</li>
+          <li>What is the Memory Strategy for this week?</li>
+          <li>How does organizing information help us remember it?</li>
+          <li>Does writing things down help you remember better?</li>
+          <li>What are your goals for this week?</li>
+        </ul>
+        <img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}">
+        <p>The answer to the first question is yes and no – recall that emotions can give some types of memories a boost & positive emotions such as love can be good for building cognitive reserve.</p>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Start Course &raquo;{/t}</a> </div>
     </div>
@@ -1167,20 +1421,14 @@ daily activities{/t}</h2>
         <p>{t}Scientists have shown repeatedly that social engagement, meaning participating in social activities and keeping a robust social network, is associated with many beneficial outcomes in later life in terms of preserving our memory and thinking abilities. The majority of these findings come from observational studies, in which hundreds or thousands of older persons without cognitive impairments are followed over time to see who develops problems like Alzheimer’s disease, other dementias, or declines in their cognitive function. Such studies have shown that the more socially active seniors tend to have better cognitive function and experience less cognitive decline as they age. One study showed that in over a thousand people aged 65 and older, the people in the top 10% of social activity experienced an average rate of cognitive decline that was 70% less than the 10% least socially active. More socially active people are also less likely to develop Alzheimer’s disease or other
           forms of dementia, and they are less likely to develop disabilities and loss of independence.{/t}</p>
       </div>
-      <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Complete Module{/t}</a> </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
     </div>
-    
-    
-    
-     <div id="lesson-7-slide-4" class="course-slide">
+    <div id="lesson-7-slide-4" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}Why is social activity good for our brains?{/t}</h2>
         <hr />
-        
         <p>{t}So why do more socially active older persons experience better cognitive outcomes? What are the ways in which social activity can improve the health of our brains?{/t}</p>
-        
         <p>{t}There are a number of theories as to how this could work. More than one of these factors may be at play. You will see how many of these ideas tie in with other modules in the brain health series.{/t}</p>
-        
         <p>{t}Social activity can lower stress and increase our mood. Some studies have shown that social isolation is linked to higher production of stress hormones. In an earlier module you learned all about how stress and negative emotions can be very bad for our brains. Therefore, social activity may be good for us by keeping us happy.{/t}</p>
         <p>{t}Social activity can provide social roles to older people and keep people engaged in communities and groups. This can be especially important post-retirement, as many people, especially men, consider their occupation to be their primary role. Social activity can help to fill this void that some people feel.{/t}</p>
         <p>{t}Social activity can provide a sense of purpose in life, which can be very important to the health and well being of older adults. A group of studies has shown that a strong sense of purpose in life is associated with less incidence of Alzheimer’s, less disability, and a longer life.{/t}</p>
@@ -1190,131 +1438,88 @@ daily activities{/t}</h2>
         <p>{t}Finally, many social activities challenge us physically and mentally. Two other modules in this class will teach you why physical activity and mentally stimulating activity is good for you. Many social activities have these same elements and can be good for our brains in multiple ways!  
           {/t}</p>
         </p>
-        
-        
-   </div>
+      </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
     </div>
-        
-        
-        
     <div id="lesson-7-slide-5" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}Social Brain Exercise{/t}</h2>
         <hr />
-        
         <p>{t}Being social also seems to be good brain exercise.  As we discussed briefly in the emotional module, people who are more socially active, have lower rates of cognitive decline.  Lower stress may be one of the reasons for this, but increased intellectual stimulation may also be another mechanism.{/t}</p>
-        
         <p>{t}Let’s think for a minute about all of the brain activities that are involved in carrying on a simple conversation:{/t}</p>
-
-<p>{t}What sort of brain skills do you think are involved?{/t}</p>
-
-
-<ol>
-  <li>{t}The sides of our brains (the<strong> temporal lobes</strong>) are activated in a conversation because they are responsible for processing the sensations from our ears, so any sound, and converting that into meaningful information <strong>(language</strong>).  Our <strong>word bank</strong> is also stored here, so when we go searching for what we want to say, this part is activated.  This part also <strong>forms new memories</strong>.{/t}</li>
-  <li>{t}The <strong>occipital lobes</strong> at the back of the head are devoted to processing sensations that come through our eyes.  So if you are communicating face-to-face with someone, this part of the brain is active in reading important social cues such as facial expression and gestures.{/t}</li>
-  <li>{t}The front of the brain <strong>(frontal lobes</strong>) is responsible for what we call “<strong>executive functions</strong>” or things a CEO would do <strong>(plan, organize, direct attention, inhibit</strong>).  This part of the brain is what makes humans unique, allowing us to interact in civil ways.  It also helps us retrieve memories.  This part of the brain is also involved in <strong>motor function</strong>, allowing us to gesture with our body, make facial expressions and even move the muscles required to talk.  Therefore this part of the brain is also very active during a simple conversation.{/t}</li>
-  <li>{t}The <strong>parietal lobes</strong> (top back) are involved in maintaining our <strong>attention</strong>.{/t}</li>
-</ol>
-<p>{t}</p>
-<p>These are brain skills involved in a simple conversation.  Now think of all of the<strong> additional brain skills</strong> involved in <strong>planning outings</strong> with a friend (planning, spatial skills required to navigate to a meeting place – e.g. new restaurant) as well as<strong> maintaining a relationship</strong> (empathy, compassion, initiation, etc.).
-  {/t}</p>
+        <p>{t}What sort of brain skills do you think are involved?{/t}</p>
+        <ol>
+          <li>{t}The sides of our brains (the<strong> temporal lobes</strong>) are activated in a conversation because they are responsible for processing the sensations from our ears, so any sound, and converting that into meaningful information <strong>(language</strong>).  Our <strong>word bank</strong> is also stored here, so when we go searching for what we want to say, this part is activated.  This part also <strong>forms new memories</strong>.{/t}</li>
+          <li>{t}The <strong>occipital lobes</strong> at the back of the head are devoted to processing sensations that come through our eyes.  So if you are communicating face-to-face with someone, this part of the brain is active in reading important social cues such as facial expression and gestures.{/t}</li>
+          <li>{t}The front of the brain <strong>(frontal lobes</strong>) is responsible for what we call “<strong>executive functions</strong>” or things a CEO would do <strong>(plan, organize, direct attention, inhibit</strong>).  This part of the brain is what makes humans unique, allowing us to interact in civil ways.  It also helps us retrieve memories.  This part of the brain is also involved in <strong>motor function</strong>, allowing us to gesture with our body, make facial expressions and even move the muscles required to talk.  Therefore this part of the brain is also very active during a simple conversation.{/t}</li>
+          <li>{t}The <strong>parietal lobes</strong> (top back) are involved in maintaining our <strong>attention</strong>.{/t}</li>
+        </ol>
+        <p>{t}</p>
+        <p>These are brain skills involved in a simple conversation.  Now think of all of the<strong> additional brain skills</strong> involved in <strong>planning outings</strong> with a friend (planning, spatial skills required to navigate to a meeting place – e.g. new restaurant) as well as<strong> maintaining a relationship</strong> (empathy, compassion, initiation, etc.).
+          {/t}</p>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
     </div>
-        
-        
-        
-        
-        
     <div id="lesson-7-slide-6" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}Oxytocin the  Love Hormone{/t}</h2>
         <hr />
-  <ul>
-  	<li>{t}A brain chemical that promotes bonding{/t}</li>
-    <li>{t}Is activated when we are around people we feel a connection with:{/t}
-      <ul>
-        <li>{t}Spouse or partner{/t}</li>
-        <li>{t}Children{/t}</li>
-        <li>{t}Close friends{/t}</li>
-        <li>{t}Even Pets
-          
-          {t}</li>
-      </ul>
-    </li>
-    <li>{t}Oxytocin has been shown to play a role in memory improvement and brain plasticity.{/t}</li>
-</ul>
-
+        <ul>
+          <li>{t}A brain chemical that promotes bonding{/t}</li>
+          <li>{t}Is activated when we are around people we feel a connection with:{/t}
+            <ul>
+              <li>{t}Spouse or partner{/t}</li>
+              <li>{t}Children{/t}</li>
+              <li>{t}Close friends{/t}</li>
+              <li>{t}Even Pets
+                
+                {t}</li>
+            </ul>
+          </li>
+          <li>{t}Oxytocin has been shown to play a role in memory improvement and brain plasticity.{/t}</li>
+        </ul>
         <p>{t}Finally, a chemical called <strong>oxytocin</strong> (sometimes called the love hormone) promotes bonding and is activated when we are around people we feel a connection with (spouse or partner, children, close friends, etc.).<strong> Oxytocin has been shown to play a role in memory improvement and brain plasticity</strong>.
           {/t}</p>
-        
-        
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
     </div>
-        
-        
-        
-        
     <div id="lesson-7-slide-7" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}An active lifestyle{/t}</h2>
         <hr />
         <p>{t}In fact, I would encourage you all to think of engaging in a general “active lifestyle”, replete with physical, mental, and social activities. Many activities are both social and physical, including going for walks with friends, exercise groups, and dancing. Many activities are both social and mental, including playing cards and other games, taking group classes, and book clubs. And then there are activities that hit that sweet spot of social, physical, and mental activity, such as learning new dance moves with a dance partner, playing sports which require strategy such as golf, and discovering new places with friends or a tour group.{/t}</p>
-        
-   </div>
+      </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
     </div>
-        
-        
-        
-        
     <div id="lesson-7-slide-8" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}Cognitive reserve{/t}</h2>
         <hr />
         <p>{t}How many of you have heard the term “use it or lose it”? One of the theories for why social activity is good for us is that when we are social, we are using our brains and challenging them to remember names and faces, addresses, phone numbers, language skills, and other cognitive abilities. Think for a moment about all of the different cognitive skills that you use just to carry on a simple conversation, including: auditory and visual processing, emotion perception, memory, language, working memory, needed to remember what you want to say next, planning, organizing your thoughts – basically your whole brain. In other words, being social is “exercise” for our brains. In Session 1 of this course, you learned about the concept of cognitive reserve, and there is convincing evidence that social activity may be one way that we can build up this cognitive reserve capacity. More socially active seniors may have a larger reserve to work with and more to lose cognitively before they experience problems like dementia.{/t}</p>
-        
-        
-   </div>
+      </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
     </div>
-        
-        
-        
-        
     <div id="lesson-7-slide-9" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}A caveat…{/t}</h2>
         <hr />
-    
-    <p>{t}In discussing the observed link between social activity and positive cognitive outcomes, we do need to caution that as I said before, most of the evidence comes from observational studies in which people are followed over time and their levels of social activity and their cognitive function is observed. Observational studies cannot prove causality beyond a shadow of a doubt and there are many reasons that social activity may be linked to better cognitive function that is not “causal” per se.{/t}</p>
-
-<p>{t}For example, 1) some other factor, such as personality type, socioeconomic status, or health status, may be a common cause of both a person’s social activity level and their cognitive function. Most observational studies attempt to control for these influences but may not do so perfectly. 2) It may also be that early declines in cognitive function are what leads to people disengaging socially. Observational studies attempt to deal with this problem by measuring social activities many years before cognitive problems appear to establish that changes in cognition come after social activity levels are determined, but certain neurological diseases such as Alzheimer’s are now believed to start many years before they are clinically detected. 3) As a related concept, social disengagement may be an early marker for brain disease such as Alzheimer’s that manifests years before cognitive problems.{/t}</p>
-
-<p>{t}The most well-designed studies have attempted to address these challenges to establishing a causal role for social activity, and the preponderance of evidence supports the idea that social activity actually affects our brain health, but these concerns cannot totally be ruled out. Because of the complexity of randomizing people to years of social activity, it is very difficult to conceive of randomized controlled trials in this area. But, despite some doubts about social activity having a direct effect on our brains, given that there are very few negative effects of social activity, there is little reason to not engage!{/t}</p>
-    
-</div>
+        <p>{t}In discussing the observed link between social activity and positive cognitive outcomes, we do need to caution that as I said before, most of the evidence comes from observational studies in which people are followed over time and their levels of social activity and their cognitive function is observed. Observational studies cannot prove causality beyond a shadow of a doubt and there are many reasons that social activity may be linked to better cognitive function that is not “causal” per se.{/t}</p>
+        <p>{t}For example, 1) some other factor, such as personality type, socioeconomic status, or health status, may be a common cause of both a person’s social activity level and their cognitive function. Most observational studies attempt to control for these influences but may not do so perfectly. 2) It may also be that early declines in cognitive function are what leads to people disengaging socially. Observational studies attempt to deal with this problem by measuring social activities many years before cognitive problems appear to establish that changes in cognition come after social activity levels are determined, but certain neurological diseases such as Alzheimer’s are now believed to start many years before they are clinically detected. 3) As a related concept, social disengagement may be an early marker for brain disease such as Alzheimer’s that manifests years before cognitive problems.{/t}</p>
+        <p>{t}The most well-designed studies have attempted to address these challenges to establishing a causal role for social activity, and the preponderance of evidence supports the idea that social activity actually affects our brain health, but these concerns cannot totally be ruled out. Because of the complexity of randomizing people to years of social activity, it is very difficult to conceive of randomized controlled trials in this area. But, despite some doubts about social activity having a direct effect on our brains, given that there are very few negative effects of social activity, there is little reason to not engage!{/t}</p>
+      </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
     </div>
-    
-    
-    
     <div id="lesson-7-slide-10" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}Enriched environments{/t}</h2>
         <hr />
-    
-    <p>{t}Despite the lack of clinical trial  evidence of a causal role  for social activity in humans, there has been a large body of animal research  showing that animals that are allowed to experience what we might consider an  analogue of social activity experience beneficial changes in their brain.  Enriched environments are lab environments that are &lsquo;enriched&rsquo; in relation to  standard laboratory cages: animals (usually mice) are placed in larger cages  with other animals and a large amount of objects and obstacles and  opportunities for exercise.{/t}</p>
-    <p>{t}Unlike human studies, animal researchers can have animals  live in enriched environments and others in standard cages, and then autopsy  them to observe differences in brain biology that can be attributed to living  in the enriched environments. Scientists found that mice in enriched  environments actually grew new neurons (brain cells), had more synapses (the  connections between neurons), had more dendritic branching, meaning there are more  branches coming off of brain cells (point to picture) are connecting to other  brain cells, and neurochemical changes such as an increase in  certain chemicals that lead to brain cell development.{/t}</p>
-    <p>{t}Therefore,  these animal experiments give some biological evidence that humans who are  socially active and engaged may be experiencing some of these same beneficial  changes in their brain as compared to people who socially disengage from the  world. Coupled with the observational evidence in humans, the animal evidence  helps to paint a convincing picture of social activity&rsquo;s role in keeping our  brains healthy.{/t}</p>
-    
-    
+        <p>{t}Despite the lack of clinical trial  evidence of a causal role  for social activity in humans, there has been a large body of animal research  showing that animals that are allowed to experience what we might consider an  analogue of social activity experience beneficial changes in their brain.  Enriched environments are lab environments that are &lsquo;enriched&rsquo; in relation to  standard laboratory cages: animals (usually mice) are placed in larger cages  with other animals and a large amount of objects and obstacles and  opportunities for exercise.{/t}</p>
+        <p>{t}Unlike human studies, animal researchers can have animals  live in enriched environments and others in standard cages, and then autopsy  them to observe differences in brain biology that can be attributed to living  in the enriched environments. Scientists found that mice in enriched  environments actually grew new neurons (brain cells), had more synapses (the  connections between neurons), had more dendritic branching, meaning there are more  branches coming off of brain cells (point to picture) are connecting to other  brain cells, and neurochemical changes such as an increase in  certain chemicals that lead to brain cell development.{/t}</p>
+        <p>{t}Therefore,  these animal experiments give some biological evidence that humans who are  socially active and engaged may be experiencing some of these same beneficial  changes in their brain as compared to people who socially disengage from the  world. Coupled with the observational evidence in humans, the animal evidence  helps to paint a convincing picture of social activity&rsquo;s role in keeping our  brains healthy.{/t}</p>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
     </div>
-       <div id="lesson-7-slide-11" class="course-slide">
+    <div id="lesson-7-slide-11" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}Helpful tips on how to stay socially engaged{/t}</h2>
         <hr />
@@ -1328,260 +1533,187 @@ daily activities{/t}</h2>
         </ol>
         <p><a href="http://www.beautiful-minds.com/FourDimensionsOfBrainHealth/TheSociallyConnectedMind.aspx
 " target="_blank">Beautiful-Minds.com</a></p>
-    <p>{t}OK, now that we have gone over the scientific evidence, let’s talk about some ways that we can stay socially active to improve our brain health. Here are some healthy tips that are adapted from this website, beautiful-minds.com. [read list and go over each point individually.{/t}</p>
-    
-    
-  </div>
+        <p>{t}OK, now that we have gone over the scientific evidence, let’s talk about some ways that we can stay socially active to improve our brain health. Here are some healthy tips that are adapted from this website, beautiful-minds.com. [read list and go over each point individually.{/t}</p>
+      </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
     </div>
-    
-       <div id="lesson-7-slide-12" class="course-slide">
+    <div id="lesson-7-slide-12" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}Quality Matters{/t}</h2>
         <hr />
-    <ul>
-    	<li>{t}Negative relationships can take a toll on us both emotionally and physically{/t}</li>
-
-<li>{t}Get the most out of your socialization by surrounding yourself with positive, supportive people{/t}</li>
-
-</ul>
-    
-    
-  </div>
+        <ul>
+          <li>{t}Negative relationships can take a toll on us both emotionally and physically{/t}</li>
+          <li>{t}Get the most out of your socialization by surrounding yourself with positive, supportive people{/t}</li>
+        </ul>
+      </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
     </div>
-    
-       <div id="lesson-7-slide-13" class="course-slide">
+    <div id="lesson-7-slide-13" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}Fun social activities{/t}</h2>
         <hr />
-    
-    <ul>
-    	<li>{t}Walking groups{/t}</li>
-    	<li>{t}Dancing{/t}</li>
-    	<li>{t}Bowling{/t}</li>
-    	<li>{t}Bridge and other card games{/t}</li>
-    	<li>{t}Coffee and tea groups
-    	  Dinner with friends{/t}</li>
-    	<li>{t}Goup trips to museums{/t}</li>
-    	<li>{t}Anything you find FUN!!{/t}</li>
-    </ul>
-    <p>{t}To give you some good ideas, here are some fun social activities that you can engage in. Remember, you are more likely to stay socially active if you are doing something you have a lot of fun doing, and having fun may be the key to staying happy and healthy!{/t}</p>
-    
-</div>
+        <ul>
+          <li>{t}Walking groups{/t}</li>
+          <li>{t}Dancing{/t}</li>
+          <li>{t}Bowling{/t}</li>
+          <li>{t}Bridge and other card games{/t}</li>
+          <li>{t}Coffee and tea groups
+            Dinner with friends{/t}</li>
+          <li>{t}Goup trips to museums{/t}</li>
+          <li>{t}Anything you find FUN!!{/t}</li>
+        </ul>
+        <p>{t}To give you some good ideas, here are some fun social activities that you can engage in. Remember, you are more likely to stay socially active if you are doing something you have a lot of fun doing, and having fun may be the key to staying happy and healthy!{/t}</p>
+      </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
     </div>
-    
-    
-       <div id="lesson-7-slide-14" class="course-slide">
+    <div id="lesson-7-slide-14" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}Setting goals{/t}</h2>
         <hr />
-        
         <ul>
-       	  <li>Identify a long term goal (Sample long term goals):
-        	  <ul>
-        	    <li>Volunteer for a cause</li>
-        	    <li>Join a group or club</li>
-        	    <li>Spend more time withfamily and friends</li>
-      	    </ul>
-      	  </li>
-        	<li>Set a short term goal for the week (Sample short term goals): 
-        	  <ul>
-        	    <li>Watch one less TV show and go for a walk with friend or family member instead</li>
-        	    <li>Pick up the phone and call one person you have not talked to in a while        	  </li>
-        	    <li>Introduce yourself to someone you see frequently but have never met (this moduel's exercise does not count)</li>
-      	    </ul>
-      	    </li>
-       	</ul>
-    
-    <p>{t}Before we leave, I would like you to set some goals for staying socially active. We can set some long term goals, which may take a little longer to get into but hopefully can last a lifetime. But we can start with some short term goals, that you can accomplish by next week.{/t}</p>
-    
-    
-</div>
+          <li>Identify a long term goal (Sample long term goals):
+            <ul>
+              <li>Volunteer for a cause</li>
+              <li>Join a group or club</li>
+              <li>Spend more time withfamily and friends</li>
+            </ul>
+          </li>
+          <li>Set a short term goal for the week (Sample short term goals):
+            <ul>
+              <li>Watch one less TV show and go for a walk with friend or family member instead</li>
+              <li>Pick up the phone and call one person you have not talked to in a while </li>
+              <li>Introduce yourself to someone you see frequently but have never met (this moduel's exercise does not count)</li>
+            </ul>
+          </li>
+        </ul>
+        <p>{t}Before we leave, I would like you to set some goals for staying socially active. We can set some long term goals, which may take a little longer to get into but hopefully can last a lifetime. But we can start with some short term goals, that you can accomplish by next week.{/t}</p>
+      </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
     </div>
-    
-    
-       <div id="lesson-7-slide-15" class="course-slide">
+    <div id="lesson-7-slide-15" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}Memory Strategy #7{/t}</h2>
         <hr />
-    
-    <h4>{t}Memory Tip #6{/t}</h4>
-    <h5>{t}Rehearsal{/t}</h5>
-    <p>{t}So often it seems that people overestimate the ability of the human memory, assuming to be able to remember things after just one exposure.  Often they forget that practice makes perfect, the operative word here being “practice.”  No self-respecting ballerina would be caught dead trying to perform a routine after just seeing it once and never rehearsing!  So why do we expect our memories to work perfectly without rehearsal? {/t}</p>
-      
-      <p>{t}If we really want our memories to live up to the expectations that we set for them, <strong>we have to invest some time in rehearsing what we want to remember.</strong>{/t}</p>
-      
-      <p>{t}Here are some tips for using rehearsal to your advantage:{/t}</p>
-      
-<p>{t}<strong>Repeat what you want to remember to yourself a couple of times.</strong>{/t}</p>
-
-<p>{t}Recall back to a couple of weeks ago when we discussed the concept of Working Memory.  Remember that one of the systems in working memory is the phonological loop.  This is the place where you can repeat something to yourself a few times, which will keep it in your working memory longer, allowing you more time to “work with it,” perhaps linking it, visualizing, or some other strategy.  But even just rehearsing the info to yourself a few times can give you more time to make it into a memory.{/t}</p>
-      
-      
-     <p>{t}<strong>Repeat what you want to remember out loud a couple of times</strong>.{/t}</p>
-      This is easy to do in a conversation.  Simply repeat what the other person said in the form of a question.  It may seem awkward at first, but you may do it naturally already without realizing it.  It is standard practice of conversation.  
-      “The Empire State Building is at the corner of 34th street and 5th Avenue, you say?”{/t}</p>
-      
-     <p>{t}This is a common tip for remembering the name of someone you just met also.  The standard recommendation is to try and use their name three times in your first conversation with them.{/t}</p>
-     <ul>
-       <li>Repeat it when they first introduce themselves{/t}
-         <ul>
-           <li>“Well hi Bill Smith, it is great to meet you.”{/t}</li>
-           </ul>
-         </li>
-       <li>Call them by name once in the course of your conversation{/t}
-         <ul>
-           <li>“Have you lived around here for a long time, Bill?”       {/t}</li>
-         </ul>
-         </li>
-       <li>Call them by name again when you end the conversation.{/t}
-         <ul>
-           <li>“Well Bill, it was really great to meet you.  I hope to see you around soon.”{/t}</li>
-         </ul>
-       </li>
-       </ul>
-     <p><strong>{t}Quiz yourself.</strong> Getting into a solid habit of quizzing yourself could work wonders in helping you improve your memory.  For example, you park on the 5th floor of the parking garage.  You practice your skill from Session 1 and pay attention to the sign indicating what floor you are on, and you may even write it down.  But one other thing you can do is to quiz yourself on the floor number at gradually increasing intervals.{/t}</p>
-     <p>{t}Quiz yourself right after looking at the number or right after writing it down, and quickly verify if you are right or wrong.{/t}</p>
-     <ul>
-       <li>{t}Getting it right can help your memory because you will feel good, and you may get a little burst of happy brain chemicals that can improve your memory.{/t}</li>
-       <li>{t}Getting it wrong can also help your memory because the disappointment that comes with getting it wrong can often provide a more salient memory than if we were to get it right.{/t}</li>
-     </ul>
-     <p>{t}Then quiz yourself on your walk to the elevator.  If you didn’t write the floor down, you will know if have the right answer by looking at the floor number on the elevator.{/t}</p>
-     <p>{t}Then quiz yourself about half-way to your destination.{/t}</p>
-     <p>{t}Quiz yourself again later after you’ve settled into the event that you’re attending.
-       And quiz yourself again any other time you think about it, perhaps when you go to the rest room or when you have a quiet moment to yourself.{/t}</p>
-     <p>{t}<strong>Tell someone else all about it.</strong> The common teaching method for getting students to learn the vast amounts of information required in medical school is “see one, do one, teach one.”  That last step is an important rehearsal technique that you can use in your everyday life.  Recounting an interesting fact you heard on the news, an entertaining story of a situation you experienced or a joke that someone told you is an easy way to rehearse what you want to remember.  What will work even better in helping you repeat the story will be to rehearse the story to yourself a few times (in the same way as quizzing yourself) to polish it up before telling someone else.{/t}</p>
-    
+        <h4>{t}Memory Tip #6{/t}</h4>
+        <h5>{t}Rehearsal{/t}</h5>
+        <p>{t}So often it seems that people overestimate the ability of the human memory, assuming to be able to remember things after just one exposure.  Often they forget that practice makes perfect, the operative word here being “practice.”  No self-respecting ballerina would be caught dead trying to perform a routine after just seeing it once and never rehearsing!  So why do we expect our memories to work perfectly without rehearsal? {/t}</p>
+        <p>{t}If we really want our memories to live up to the expectations that we set for them, <strong>we have to invest some time in rehearsing what we want to remember.</strong>{/t}</p>
+        <p>{t}Here are some tips for using rehearsal to your advantage:{/t}</p>
+        <p>{t}<strong>Repeat what you want to remember to yourself a couple of times.</strong>{/t}</p>
+        <p>{t}Recall back to a couple of weeks ago when we discussed the concept of Working Memory.  Remember that one of the systems in working memory is the phonological loop.  This is the place where you can repeat something to yourself a few times, which will keep it in your working memory longer, allowing you more time to “work with it,” perhaps linking it, visualizing, or some other strategy.  But even just rehearsing the info to yourself a few times can give you more time to make it into a memory.{/t}</p>
+        <p>{t}<strong>Repeat what you want to remember out loud a couple of times</strong>.{/t}</p>
+        This is easy to do in a conversation.  Simply repeat what the other person said in the form of a question.  It may seem awkward at first, but you may do it naturally already without realizing it.  It is standard practice of conversation.  
+        “The Empire State Building is at the corner of 34th street and 5th Avenue, you say?”{/t}
+        </p>
+        <p>{t}This is a common tip for remembering the name of someone you just met also.  The standard recommendation is to try and use their name three times in your first conversation with them.{/t}</p>
+        <ul>
+          <li>Repeat it when they first introduce themselves{/t}
+            <ul>
+              <li>“Well hi Bill Smith, it is great to meet you.”{/t}</li>
+            </ul>
+          </li>
+          <li>Call them by name once in the course of your conversation{/t}
+            <ul>
+              <li>“Have you lived around here for a long time, Bill?”       {/t}</li>
+            </ul>
+          </li>
+          <li>Call them by name again when you end the conversation.{/t}
+            <ul>
+              <li>“Well Bill, it was really great to meet you.  I hope to see you around soon.”{/t}</li>
+            </ul>
+          </li>
+        </ul>
+        <p><strong>{t}Quiz yourself.</strong> Getting into a solid habit of quizzing yourself could work wonders in helping you improve your memory.  For example, you park on the 5th floor of the parking garage.  You practice your skill from Session 1 and pay attention to the sign indicating what floor you are on, and you may even write it down.  But one other thing you can do is to quiz yourself on the floor number at gradually increasing intervals.{/t}</p>
+        <p>{t}Quiz yourself right after looking at the number or right after writing it down, and quickly verify if you are right or wrong.{/t}</p>
+        <ul>
+          <li>{t}Getting it right can help your memory because you will feel good, and you may get a little burst of happy brain chemicals that can improve your memory.{/t}</li>
+          <li>{t}Getting it wrong can also help your memory because the disappointment that comes with getting it wrong can often provide a more salient memory than if we were to get it right.{/t}</li>
+        </ul>
+        <p>{t}Then quiz yourself on your walk to the elevator.  If you didn’t write the floor down, you will know if have the right answer by looking at the floor number on the elevator.{/t}</p>
+        <p>{t}Then quiz yourself about half-way to your destination.{/t}</p>
+        <p>{t}Quiz yourself again later after you’ve settled into the event that you’re attending.
+          And quiz yourself again any other time you think about it, perhaps when you go to the rest room or when you have a quiet moment to yourself.{/t}</p>
+        <p>{t}<strong>Tell someone else all about it.</strong> The common teaching method for getting students to learn the vast amounts of information required in medical school is “see one, do one, teach one.”  That last step is an important rehearsal technique that you can use in your everyday life.  Recounting an interesting fact you heard on the news, an entertaining story of a situation you experienced or a joke that someone told you is an easy way to rehearse what you want to remember.  What will work even better in helping you repeat the story will be to rehearse the story to yourself a few times (in the same way as quizzing yourself) to polish it up before telling someone else.{/t}</p>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
     </div>
-    
-    
-    
-       <div id="lesson-7-slide-16" class="course-slide">
+    <div id="lesson-7-slide-16" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}Rehearsal Exercise{/t}</h2>
         <hr />
-        
         <ul>
-       	  <li>{t}Repeat Things to Yourself{/t}</li>
-        	<li>{t}Repeat things out loud{/t}
-        	  <ul><li>{t}Repeat with questions{/t}</li>
-        	    <li>{t}Repeat names 3 times{/t}</li>
-      	    </ul>
-      	  </li>
-        	<li>{t}Quiz Yourself{/t}</li>
-        	<li>{t}Tell Someone Else{/t}
-        	  <ul>
-        	    <li>{t}See one, do one, teach one{/t}</li>
-      	    </ul>
-      	  </li>
-       	</ul>
-    
-    <p>{t}Have people pair off and spend about 5 minutes interviewing the other person, uncovering 3-4 autobiographical facts about the other person that they did not know before.  This could include the other person’s middle name, where they grew up, their occupation, somewhere they’ve traveled, etc.  Encourage people to practice the  rehearsal techniques that were just discussed.{/t}</p>
-    <p>{t}After 5 minutes of interviewing, ask the group to return to their seats.{/t}</p>
-    <p>{t}Have them sit quietly for a minute or two, Quizzing themselves.{/t}</p>
-    <p>{t}Then ask them to share what they learned.{/t}</p>
-    
-    
+          <li>{t}Repeat Things to Yourself{/t}</li>
+          <li>{t}Repeat things out loud{/t}
+            <ul>
+              <li>{t}Repeat with questions{/t}</li>
+              <li>{t}Repeat names 3 times{/t}</li>
+            </ul>
+          </li>
+          <li>{t}Quiz Yourself{/t}</li>
+          <li>{t}Tell Someone Else{/t}
+            <ul>
+              <li>{t}See one, do one, teach one{/t}</li>
+            </ul>
+          </li>
+        </ul>
+        <p>{t}Have people pair off and spend about 5 minutes interviewing the other person, uncovering 3-4 autobiographical facts about the other person that they did not know before.  This could include the other person’s middle name, where they grew up, their occupation, somewhere they’ve traveled, etc.  Encourage people to practice the  rehearsal techniques that were just discussed.{/t}</p>
+        <p>{t}After 5 minutes of interviewing, ask the group to return to their seats.{/t}</p>
+        <p>{t}Have them sit quietly for a minute or two, Quizzing themselves.{/t}</p>
+        <p>{t}Then ask them to share what they learned.{/t}</p>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
     </div>
-    
-       <div id="lesson-7-slide-17" class="course-slide">
+    <div id="lesson-7-slide-17" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}This Week&rsquo;s Goals{/t}</h2>
         <hr />
-    
-    <h4>{t}Goals{/t}</h4>
-    <ul>
-      <li>{t}   You will likely need to <strong>offer guidance in helping set goals that are not too difficult or too vague</strong> – It’s better to set a “ridiculously simple goal” that a person can achieve in order to feel success than to set a goal that they will not achieve. {/t}</li>
-    </ul>
-    <h5>{t}Goals need to be:{/t}</h5>
-    <ul>
-      <li><strong>{t}Specific</strong> with respect to:{/t}
+        <h4>{t}Goals{/t}</h4>
         <ul>
-          <li>{t}Type of behavior – have people write a specific behavior (will log activities) as opposed to a vague aspiration (will try to monitor activities){/t}</li>
-          <li>{t}Duration of the behavior (5 minutes, etc.){/t}</li>
-          <li>{t}Frequency of behavior (4 times aweek){/t}</li>
+          <li>{t}   You will likely need to <strong>offer guidance in helping set goals that are not too difficult or too vague</strong> – It’s better to set a “ridiculously simple goal” that a person can achieve in order to feel success than to set a goal that they will not achieve. {/t}</li>
         </ul>
-      </li>
-      <li><strong>{t}Simple</strong> (ridiculously easy goals are an important place to start because small successes create momentum for bigger change){/t}</li>
-      <li><strong>{t}Feasible</strong> (same as simple){/t}</li>
-    </ul>
-    <h5>{t}Rewards{/t}</h5>
-<ul>
-  <li>{t}Rewards are intended to be used each time the goal behavior is performed – not merely at the end of the week.  Using the memory goal above as an example, each day a person pays close attention for 30 seconds two times in a single day, she gets to put on a spray of her favorite perfume (maybe in preparation for dinner or the next morning).  She doesn’t have to wait the entire week to use her perfume.  If the perfume is part of her daily routine, then she can continue this routine provided she meet her goal each day.{/t}</li>
-  </ul>
-<h5>{t}Here are some guidelines for rewards:{/t}</h5>
-<ul>
-  <li>{t}Some people <strong>may need to take some time to think over their reward</strong>, so encourage them to come up with a reward very soon if they do not finish that in class{/t}</li>
-  <li>{t}Rewards should be small and feasible & it’s a good idea not to use a reward that will get in the way of some other health goal, such as cookies{/t}</li>
-  <li><strong>{t}For a reward to be effective, the person must make an agreement with themselves that they will in no way get to have the reward without FIRST having achieved their small goal</strong>{/t}</li>
-</ul>
-<p>{t}Please share your plan to remember your goals and rewards and how you plan to track your progress, on the Forum.{/t}</p>
-<img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}">
-        </div>
+        <h5>{t}Goals need to be:{/t}</h5>
+        <ul>
+          <li><strong>{t}Specific</strong> with respect to:{/t}
+            <ul>
+              <li>{t}Type of behavior – have people write a specific behavior (will log activities) as opposed to a vague aspiration (will try to monitor activities){/t}</li>
+              <li>{t}Duration of the behavior (5 minutes, etc.){/t}</li>
+              <li>{t}Frequency of behavior (4 times aweek){/t}</li>
+            </ul>
+          </li>
+          <li><strong>{t}Simple</strong> (ridiculously easy goals are an important place to start because small successes create momentum for bigger change){/t}</li>
+          <li><strong>{t}Feasible</strong> (same as simple){/t}</li>
+        </ul>
+        <h5>{t}Rewards{/t}</h5>
+        <ul>
+          <li>{t}Rewards are intended to be used each time the goal behavior is performed – not merely at the end of the week.  Using the memory goal above as an example, each day a person pays close attention for 30 seconds two times in a single day, she gets to put on a spray of her favorite perfume (maybe in preparation for dinner or the next morning).  She doesn’t have to wait the entire week to use her perfume.  If the perfume is part of her daily routine, then she can continue this routine provided she meet her goal each day.{/t}</li>
+        </ul>
+        <h5>{t}Here are some guidelines for rewards:{/t}</h5>
+        <ul>
+          <li>{t}Some people <strong>may need to take some time to think over their reward</strong>, so encourage them to come up with a reward very soon if they do not finish that in class{/t}</li>
+          <li>{t}Rewards should be small and feasible & it’s a good idea not to use a reward that will get in the way of some other health goal, such as cookies{/t}</li>
+          <li><strong>{t}For a reward to be effective, the person must make an agreement with themselves that they will in no way get to have the reward without FIRST having achieved their small goal</strong>{/t}</li>
+        </ul>
+        <p>{t}Please share your plan to remember your goals and rewards and how you plan to track your progress, on the Forum.{/t}</p>
+        <img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}"> </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
     </div>
-    
-    
-       <div id="lesson-7-slide-18" class="course-slide">
+    <div id="lesson-7-slide-18" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}Recap{/t}</h2>
         <hr />
-    <p class="forum">{t}Please answer the following questions on the Forum.{/t}</p>
-    <ul class="forum">
-    	<li>{t}What are some benefits of social engagement?{/t}</li>
-        <li>{t}What are some possible ways that social engagement helps us age better?{/t}</li>
-        <li>{t}Oxytocin is sometimes called what?{/t}</li>
-        <li>{t}What is the Memory Tip for this week?{/t}</li>
-        <li>{t}What are some ways to practice rehearsing memories?{/t}</li>
-        <li>{t}What are your goals moving forward?{/t}</li>
+        <p class="forum">{t}Please answer the following questions on the Forum.{/t}</p>
+        <ul class="forum">
+          <li>{t}What are some benefits of social engagement?{/t}</li>
+          <li>{t}What are some possible ways that social engagement helps us age better?{/t}</li>
+          <li>{t}Oxytocin is sometimes called what?{/t}</li>
+          <li>{t}What is the Memory Tip for this week?{/t}</li>
+          <li>{t}What are some ways to practice rehearsing memories?{/t}</li>
+          <li>{t}What are your goals moving forward?{/t}</li>
         </ul>
-    <img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}">
-
-
-    
-    
-         </div>
+        <img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}"> </div>
       <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Complete Module{/t}</a> </div>
     </div>
-    
-    
-   
-     
   </div>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
   <div id="lesson-8">
     <div id="lesson-8-slide-1" class="course-slide">
       <div class="content">
