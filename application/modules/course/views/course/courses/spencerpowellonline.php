@@ -650,11 +650,14 @@ foreach(array(
           <li>{t}AND… Better memory performance!{/t}</li>
         </ul>
         <p>Let us start off by talking about the benefits of physical activity that we already  know about.</p>
-        <p>Ask:</p>
-        <p>Does  anyone here exercise regularly?  Have any  of you felt or seen benefits of physical activity in yourself or others?</p>
-        <p>What are some benefits of physical  activity?   [Engage participants in a discussion of the benefits of exercise &amp;  then click to reveal list items to fill in any gaps] </p>
-        <p>You  may want to add some suggestions of how you have personally felt the benefits  of physical activity or elicit from group members.</p>
-        <p>Click  to reveal #13:  &ldquo;Most  recently, we have learned that participation in physical activity may also help  to prevent or postpone the onset of dementia and cognitive decline.&rdquo;</p>
+        <p class="forum">On the Forum, answer the following questions:</p>
+        <ul class="forum">
+          <li>Does  your exercise regularly?</li>
+          <li>Have you felt or seen benefits of physical activity in yourself or others?</li>
+          <li>What are some benefits of physical  activity?</li>
+        </ul>
+       <img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}">
+        <p>&ldquo;Most  recently, we have learned that participation in physical activity may also help  to prevent or postpone the onset of dementia and cognitive decline.&rdquo;</p>
         <p>As  you&rsquo;ve been learning, scientists have learned that the brain stays plastic  (changeable) all the way into our later years – this means that the brain can  change in response to exercise no matter how old or young you are. (Eckmann, 2011)</p>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
@@ -666,10 +669,25 @@ foreach(array(
         <h2 class="flowers">{t}How does physical activity reduce  cognitive decline?{/t}</h2>
         <hr />
         
+        <p>There are two proposed routes through which it seems that physical activity reduces cognitive decline.</p>
+
+<p>The route that has been understood for some time is an indirect route, a relationship that scientists call a moderating relationship, where the effects of a third variable (in this case vascular health) explains or “moderates” the relationship between physical activity and cognitive decline. For a long time, scientists believed that the link between physical activity and cognitive performance was primarily moderated by vascular health, which remains an important moderator!!</p>
+
+
+<p>But more recently evidence suggests that physical activity also seems to have a direct impact on cognitive performance, which we will discuss in a moment.</p>
+
+<p>But first let’s get a better understanding of the impact that your vascular health on your brain performance and aging.</p>
+        
+        
         
           </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
     </div>
+    
+    
+    
+    
+    
     
     
        
@@ -678,6 +696,18 @@ foreach(array(
         <h2 class="flowers">{t}Medical Conditions Linked to  
 Cognitive Decline{/t}</h2>
         <hr />
+        
+        <p>High blood pressure, heart disease, diabetes, stroke, and obesity are consistently associated with cognitive decline.</p>
+        <p> Research has found that:</p>
+        <p>High blood pressure, high cholesterol, heart disease, diabetes and mini-strokes are all related to cognitive decline, but it appears that of all these conditions, high blood pressure may be the worst culprit!</p>
+        <p>Blood pressure above or below the healthy level in middle-aged men has been associated with poor performance on cognitive tests 25 years later
+          This association, however, was only found in men who did not treat their blood pressure, showing that if we do something to attend to our health problems we can help to prevent or postpone onset of cognitive decline.</p>
+        <p>Stroke and diabetes consistently and reliably predicted cognitive deficits.</p>
+        <p>High blood pressure and poorer health ratings were more predictive of deficits in younger old adults versus older old adults, meaning that it seems that these health conditions promote premature brain aging.</p>
+        <p>High cholesterol increases the risk for heart disease, and a healthy heart is essential to having a healthy brain.</p>
+        <p>Diabetes and pre-diabetes (insulin resistance) can damage the blood vessels that bring important nutrients to brain cells.</p>
+        <p>As we just discussed, physical activity seems to play a role in preventing or reducing the impact of all of these medical conditions, so this is an important way that exercise protects our brains.</p>
+        <p>How is it that these conditions reduce our cognitive reserve?  Well let’s look inside the brain to find out more. </p>
         
         
           </div>
@@ -689,6 +719,11 @@ Cognitive Decline{/t}</h2>
         <h2 class="flowers">{t}here{/t}</h2>
         <hr />
         
+        <p>Brain cells needs a constant and robust supply of blood flow to stay alive.  Unlike other most other cells in your body, neurons (brain cells) cannot store the oxygen and glucose (sugar) they need to survive.  Any interruption in blood flow for even just a few minutes can significant damage.</p>
+        <p>High blood pressure, high blood sugar and high cholesterol damage can interrupt the blood supply contributing to the form of dementia we call Vascular Dementia.  Vascular dementia has many names including: cerebrovascular disease, stroke, TAI, mini-stroke, and “white dot syndrome.”</p>
+        <p>The term “white dots” (also called white matter hyperintensities) comes from the way that vascular-related damage to the brain shows up on a certain type of MRI picture called a T2 weighted image.  In this type of image, the tissue for what we call “white matter tracks” normally show up as black.  White matter tracks are bundles of the connective fibers through which brain cells communicate with one another.  They are also called axon bundles.  When these tracks are damaged, they show up on T2 MRI as white instead of black, hence the name “white dot syndrome.”  You can see the white dots on this image inside the red circles.  The big white dots around the red circles are supposed to be there.          </p>
+        <p>Cerebrovascular disease is a serious condition, which includes stroke, and it is the 4th leading cause of death in people over 65, more than Alzheimer’s which is #5.  Most of us are familiar with the effects of stroke and maybe even TIA’s, which are basically just short-acting strokes, but you may not be familiar with this “white dot syndrome,” which can occur without any symptoms.  The white dots form from an accumulation of little silent strokes.  The effects on thinking build up over time, in many cases leading to dementia.  White dots start forming somewhat early in adulthood, with some detected in people as young as their 30’s.  White dots are common in the brains of older adults, and a certain number of them are considered to be “age appropriate.” But since they are linked to high blood pressure, high cholesterol and diabetes, we can work to reduce or prevent them.</p>
+        <p>[Trainer Tip:  Strokes occur when blood supply is lost to the brain resulting in a loss of function for a significant period of time (more than 24-hours).  TIA’s (transient ischemic attacks) or “mini-strokes” have visible symptoms of brain disruption (fainting, slurred speech, paralysis, etc), but function returns within 24-hours.]</p>
         
           </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
@@ -696,19 +731,36 @@ Cognitive Decline{/t}</h2>
     
            <div id="lesson-2-slide-8" class="course-slide">
       <div class="content">
-        <h2 class="flowers">{t}here{/t}</h2>
+        <h2 class="flowers">{t}The Formation of White Dots{/t}</h2>
         <hr />
         
-        
+        <p>These white dots form because the arteries that feed this area of the brain are very, very tiny capillaries.  Chronic high blood pressure can cause these tiny capillaries to burst, spilling blood into the area where brain cells live, which is toxic to them.</p>
+        <p>OR these tiny capillaries can also “clog up” and prevent blood flow from reaching points beyond the clog, leading to tissue damage.</p>
+        <p>The things that “clog up” these capillaries are directly related to high blood pressure, high blood sugar and high cholesterol.  High blood pressure and high cholesterol lead to the build up of plaque in the arteries, sort of like the gunk that fills up in a slow kitchen sink pipe.  If a piece of this plaque or an associated blood clot becomes loose & starts floating around in the blood stream, it can float freely in the larger arteries.</p>
+        <p>But if the plaque floats up to these small capillaries, (Click to start animation) it will block blood flow to the tissue downstream.</p>
+        <p>The same type of thing happens when blood sugar is too high.   High blood sugar causes the red blood cells to swell up, (Click to animate) and this can block off capillaries as well.  High blood sugar also damages the walls of blood vessels increasing the risk for high blood pressure.</p>
           </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
     </div>
     
            <div id="lesson-2-slide-9" class="course-slide">
       <div class="content">
-        <h2 class="flowers">{t}here{/t}</h2>
+        <h2 class="flowers">{t}How does physical activity prevent  cognitive decline?{/t}</h2>
         <hr />
-        
+        <p>In addition to protecting our vascular health and thereby our brain health, more recent evidence suggests that physical activity seems to also play a direct role in promoting cognitive performance, cognitive reserve and brain health.  
+  </p>
+        <p>Directly, physical activity has been found to influence the processes by which learning and memory occur.  
+          (Click to Reveal Circle)</p>
+        <p>Animal studies have shown that aerobic exercise (a rat running on a wheel) can have a profound effect on increasing the number of new brain cells that are born.</p>
+        <p>(Click to Reveal Circle) 
+          In humans physical cardiovascular exercise is linked to increase in the size of the structure responsible for forming new memories (hippocampus)
+          (Click to Reveal Circle) 
+          Physical activity has been found to increase a group of proteins called nerve growth factors .  There are lots of these growth factors, but most notably:
+          (Click to Reveal Circle) 
+          Cardiovascular exercise has been linked with increased production of one called BDNF (brain-derived neurotrophin factor).  BDNF has also been found to be more abundant in people with higher cognitive abilities.
+          (Click to Reveal Circle) 
+          Strength training has been shown to increase a different nerve growth factor called IGF-1 (insulin-like growth factor-1).  
+          These nerve growth factors help neurons and dendrites grow and thrive.  Some have even referred to these growth factors as Miracle Grow for your brain cells. </p>
         
           </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
