@@ -1665,14 +1665,20 @@ foreach(array(
     <ul>
       <li>The Central Executive</li>
       <li>The Phonological Loop</li>
-      <li>The Visuo-spatial Sketchpad
-        <div id="lesson-4-slide-3" class="course-slide">
-        <div class="content">
-      </li>
+      <li>The Visuo-spatial Sketchpad</li>
     </ul>
+    
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
+    </div>
+    
+    
     <div id="lesson-4-slide-3" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}Cognitive Reserve: Your Brain&rsquo;s 401K Account{/t}</h2>
+        
+        <p>Remember back in Session 1 when we discussed the Theory of Cognitive Reserve?  This theory was born out of the discovery that there were people who had resisted the effects of Alzheimer’s disease growing in their brain, most likely because of the way they had lived their lives.  One of the key factors distinguishing people who had resisted dementia from those who did not was the amount of intellectual stimulation they had experienced throughout their lives through education, their jobs and their leisure activities.</p>
+        <p>Researchers continue to demonstrate that intellectually stimulating leisure activities lower the risk for dementia.  Generally, researchers have thought that this was only due to the “reserve-building” properties of these activities, which we will review, but very recently a second mechanism for the protective effects of intellectual stimulation was proposed. Let’s review these two mechanisms.</p>
         <hr />
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
@@ -1681,6 +1687,9 @@ foreach(array(
       <div class="content">
         <h2 class="flowers">{t}Mechanism 1: Reserve Building{/t}</h2>
         <hr />
+        
+        <p>The first mechanism is based on the idea that the more we use our brains, the more “brain real estate” we are able to develop.  This occurs through brain plasticity, following the principles of Hebb’s Law.  Remember from Session 1 that Hebb’s Law generally states that “cells that fire together, wire together,” so the more you practice a certain skill, the more you provide your brain cells the opportunity to wire up new connections and make existing connections stronger and more resistant to disease.</p>
+        <p> Research has shown that practicing a skill can make the pathways between cells, or the “connection highways,” bigger!  These brain images show different levels of the brain from the vantage point of peering down into the brain as though you were standing over the top of someone's head.  Connection highways are shown in blue.  The red area is an area of connection highway that actually got bigger in adults during 10 weeks of training in using the “Roman Room” or “Method of Loci” memory technique that you learned back in week 3, so if you’ve been practicing this technique, chances are that you are building up the pathways in the front right part of your brain.</p>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
     </div>
@@ -1688,9 +1697,210 @@ foreach(array(
       <div class="content">
         <h2 class="flowers">{t}Mechanism 1: Reserve Building{/t}</h2>
         <hr />
+        
+        <p>Also, remember back to Session 1 that another important way to build reserve is by growing new brain cells. One important thing to know about these new brain cells is that they actually start off as stem cells, which are cells that can perform any function. These stem cells must be given a job to do in order to be effectively incorporated into the system or else many of them will not survive for very long.</p>
+        <p>So by stimulating your new baby brain cells – by stimulating your brain and learning new things – you are helping these stem cells grow into new, functioning neurons.
+  </p>
+        </p>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
     </div>
+    
+    
+    
+    
+    <div id="lesson-4-slide-6" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Mechanism 2: 
+Possible Reduced AD Pathology{/t}</h2>
+        <hr />
+        <p>So building up your Cognitive Reserve is the main way that we have understood that intellectual stimulation can protect your brain from dementia.  However, very recently a new relationship between intellectual stimulation and cognitive reserve has been proposed, suggesting that it may also be the case that intellectual stimulation can ward off some “reserve depleters.”</p>
+        
+        <p>
+
+Agroup of researchers from the University of California and Rush University in Chicago found that people who engaged in intellectually stimulating activities had less Alzheimer’s disease pathology in their brains, not just left over cells and connections. They discovered this by using new brain imaging techniques that can actually detect one of the brain deposits thought to cause Alzheimer’s disease – a protein called Beta-Amyloid – in people when they are still alive.</p>
+
+<p>The older adults in this study (folks in their 70’s) who had engaged in more intellectually stimulating leisure activities throughout their lives had fewer Beta-Amyloid deposits.</p>
+
+<p>The group with the highest amount of intellectual activity had deposits in the same range as young participants (20-year-olds), and (Click again to activate animation) the group with the lowest amount of intellectually stimulating activity had deposits in the same range as people who were already showing signs of Alzheimer's disease.</p>
+
+<p>Now this study is a) preliminary and b) just showed a relationship, so we cannot be sure yet if the intellectual stimulation prevented the growth of the Beta-Amyloid. That is, we cannot say that intellectual stimulation caused the effect. It may be the case that Alzheimer’s disease can have effects very early in a person’s life that prevents him or her from pursuing intellectual activities, but the new association is exciting and may be a newly discovered benefit to staying mentally active.</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
+    </div>
+    
+    <div id="lesson-4-slide-7" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}What Sort of Intellectual Stimulation  Seems Protective?{/t}</h2>
+        <hr />
+        <h4>Lifetime  Activities</h4>
+        <ul>
+          <li>          Reading
+            <ul>
+              <li>Newspapers,</li>
+              <li>Magazines,</li>
+              <li>Books</li>
+            </ul>
+          </li>
+          <li>Writing Letters</li>
+          <li>Playing Games</li>
+          <li>Education</li>
+          <li>Stimulating Professions</li>
+          <li>Hobbies </li>
+        </ul>
+        <p>Studies of people with high reserve have  shown that these people tend to have engaged in intellectually stimulating  activities over their lifetimes.  While  we still have a lot to learn about which activities are most protective, here  is a list of most of the activities that have been studied so far (reading,  writing letters, playing games, getting a higher education, intellectually  demanding professions and hobbies).  </p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
+    </div>
+    
+    
+    <div id="lesson-4-slide-8" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}A caveat…{/t}      </h2>
+        <hr />
+        
+        <p>Let us give a bit more attention to the issue of causal relationships in correlational studies.</p>
+        <p>The studies we just discussed and much of the other evidence linking any type of activity with better brain aging come from observational studies in which people are followed over time, and their levels of activity and their cognitive function or brain size is observed. Observational studies cannot prove causality, and there may be many reasons why intellectual activity seems to be linked to better cognitive function that are not “causal” per se.</p>
+        <p>For example:</p>
+        <ol>
+          <li>some other factor, such as personality type, socioeconomic status, educational background or health status, may be a common cause of both a person’s mental activity level and their cognitive function. Most observational studies attempt to control for these influences but may not do so perfectly.</li>
+          <li>It may also be that early declines in cognitive function are what leads to people disengaging intellectually. Observational studies attempt to deal with this problem by measuring social activities many years before cognitive problems appear to establish that changes in cognition come after social activity levels are determined, but as we just observed, certain neurological diseases such as Alzheimer’s are now believed to start many years before they are clinically detected.</li>
+          <li>As a related concept, intellectual disengagement may be an early marker for brain disease such as Alzheimer’s that manifests years before cognitive problems.</li>
+        </ol>
+        <p>Well-designed studies attempt to control for for these alternate relationships, but the gold standard for testing a causal relationship is to perform an experiment where similar groups of people are to assigned to different conditions and the effects are observed.  We saw some of these types of studies in the exercise lecture.  But when it comes to other areas of lifestyle such as intellectual activity or social activity, these types of studies can be quite difficult to pull of. </p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
+    </div>
+    
+    <div id="lesson-4-slide-9" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}ACTIVE Study{/t}</h2>
+        <hr />
+        
+        <p>There have been some experimental studies performed though with active brain training.</p>
+        
+        <p>Brain training is another area where it seems that people can build reserve. One of the biggest clinical trials of brain training programs so far was funded by the National Institutes of Health (or NIH) to compare the effects of three different brain training programs on skill and independence loss as people aged.  A memory skills group, a problem solving skills group and a group that used a computer program to improve their processing speed, were compared to a group of people who didn’t received any brain training.  All three programs lead to improvements on independent measure of their respective skills, but there was little transfer from one type of training to another.  The idea of “cross training” your brain was born out of this finding.</p>
+        
+        <p>The people who participated in a brain training group retained  more functional independence in the 5 years following the study than people who did not do any training.  Therefore, it seems that investing in your intellectual stimulation, even relatively late in life, can pay big dividends in helping you maintain your independence.</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
+    </div>
+    
+    
+    <div id="lesson-4-slide-10" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Diversify your Intellectual Investments{/t}</h2>
+        <hr />
+        
+        <p>Scientists believe that the most efficient way to build up connections between brain cells may be to learn something new because this promotes the growth of new connections.  If you do the same type of cognitively stimulating activity that you’ve been doing for years, it seems that you will get less of a return on your intellectual investment than if you were to learn something new.  This is because the nerve stimulation that you are creating by doing the old activity seems to only serve to maintain the connection pathway that you grew years ago.  It likely does not challenge your brain to grow a new pathway.</p>
+        
+        <p>As you also learned in the physical activity lecture, building more pathways between cells seems important because many of these pathways, or the white matter tracks, are particularly vulnerable to the effects of those “white dots”  that we talked about, which can lead to vascular dementia.</p>
+        
+        <p>Dr. Marie Pasinski, a neurologist at Harvard Medical School and author of the book “Beautiful Brain, Beautiful You” challenges her readers to “Indulge in the New.”  It’s actually the first step in her 7-step “brain beauty makeover.”  She describes this step as “surprisingly simple,” recommending her readers to open themselves up to 5 new experiences as a way to get started.</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
+    </div>
+    
+    
+    <div id="lesson-4-slide-11" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Diversify your Intellectual Investments{/t}</h2>
+        <hr />
+        <p>A common mistake that people seem to make with respect to brain fitness is that they focus exclusively on one or two intellectual tasks that only work a narrow focus of skills.  People often say, “I’m keeping my brain active by doing the crossword every day” or “I stay sharp with those Sudoku puzzles.”  Often these are activities that have become part of the person’s routine, and more often they are skills that represent that person’s strengths.  For example the crossword person is often someone who tends to be more verbal in his thinking, and the Sudoku person may tend to be more analytical or spatial in her thinking.  This is an understandable mistake because activities that are consistent with our strengths are fun, easy and rewarding.</p>
+        
+        <p>But to get the most out of your intellectual investments, we challenge you to do things that are really out of character for you.  If you are a word person who likes to do crossword puzzles and read books, then you may get a better return on your intellectual investment by doing something that is artistic or musical, like taking a sculpture class or going to a music concert.  If you are a visual person who likes to do crafty things like quilting, painting or jigsaw puzzles, you will likely get a better return on your intellectual investment by taking a writing class or starting to do the crossword.</p>
+        
+        <p>This doesn’t mean that your brain fitness activities should not be fun or rewarding.  We just want to emphasize the importance of exercising your whole brain and engaging in mental activities that involve brain skills that have not traditionally been “your thing” and have the most room for improvement.  Just like with your body, the brain needs to sweat a little to truly grow.</p>
+</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
+    </div>
+    
+     <div id="lesson-4-slide-12" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Diversify Your Intellectual Investments{/t}</h2>
+        <hr />
+        <p>here</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
+    </div>
+    
+        <div id="lesson-4-slide-13" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Getting the most out of your intelligence  now{/t}</h2>
+        <hr />
+        <p>here</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
+    </div>
+    
+        <div id="lesson-4-slide-14" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Getting the most out of your intelligence  now{/t}</h2>
+        <hr />
+        <p>here</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
+    </div>
+    
+    
+        <div id="lesson-4-slide-15" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Memory Strategy #4{/t}</h2>
+        <hr />
+        <p>here</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
+    </div>
+    
+    
+    
+        <div id="lesson-4-slide-16" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Working Memory{/t}</h2>
+        <hr />
+        <p>here</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
+    </div>
+    
+    
+    
+    
+        <div id="lesson-4-slide-17" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Memory Strategy #4{/t}</h2>
+        <hr />
+        <p>here</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
+    </div>
+    
+    
+        <div id="lesson-4-slide-18" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Link it! Exercise{/t}</h2>
+        <hr />
+        <p>here</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
+    </div>
+    
+    
+    
+        <div id="lesson-4-slide-19" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Extra{/t}</h2>
+        <hr />
+        <p>here</p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
+    </div>
+    
+    
+    
+    
+    
     <div id="lesson-4-slide-20" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}Recap{/t}</h2>
@@ -1710,6 +1920,34 @@ foreach(array(
       <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Complete Module{/t}</a> </div>
     </div>
   </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   <div id="lesson-5">
     <div id="lesson-5-slide-1" class="course-slide">
       <div class="content">
