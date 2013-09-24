@@ -1162,7 +1162,19 @@ foreach(array(
       <div class="content">
         <h2 class="flowers">{t}Relaxation Response{/t}</h2>
         <hr />
-        <p>here</p>
+        <p>This concludes the acute or immediate effects of stress on our brains and thinking abilities.  Now let’s talk more about the long term effects of too much stress.</p>
+        
+        <p>To understand this, we need to introduce you to the Relaxation Response. This is the opposite of fight-or-flight, and many scientists refer to it as “rest-and-digest.” These two “nervous systems” cannot be active at the same time.</p>
+        
+        <p>When rest-and-digest kicks in:</p>
+        
+ Heart rate and respiration slow back to the resting baseline
+ Blood flow is re-routed from the skeletal muscles to the internal organs, so muscles relax
+ Salivation occurs and Digestion resumes, allowing our body to consume and convert food to energy in preparation for the next fight-or-flight spike
+ Pupils constrict back to their baseline
+
+Rest-and-Digest is intended to be our normal resting state, while fight-or-flight is actually a change from our resting baseline. 
+</p>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
     </div>
@@ -1170,7 +1182,32 @@ foreach(array(
       <div class="content">
         <h2 class="flowers">{t}Why Zebras Don&rsquo;t Get Ulcers{/t}</h2>
         <hr />
-        <p>here</p>
+        <p>Even though there are times when the stress response can be good for us, we want to be able to recover, or come down from those necessary fight-or-flight spikes quickly and avoid  the unnecessary spikes as much as possible.  Otherwise, we are setting ourselves up for all sorts of “stress-related disease."</p>
+        
+        <p>
+
+The Stress and Relaxation responses seem to have evolved in order for us to get our selves out of sticky situations.  So most animal species will have a brief fight-or-fight spike and will return to baseline.  Author and neuroscientist Robert Sapolsky, PhD describes this as why “Zebras Don’t Get Ulcers” in his book by the same name.  The zebra is consistently in a relaxed state unless there is an eminent threat, say a lion from which the zebra will run away after getting a boos of adrenaline from the stress response, and then go about resting and recovering again.</p>
+
+<p>
+
+Human and other social primates, however, are unique in that we can activate the Stress Response purely with our thoughts.  So instead of lions chasing us, we activate our fight-or-fight system in response to:</p>
+<ul>
+  <li>
+    
+    Chronic stressors</li>
+  <li>Big life changes such as moving or loss of a loved one</li>
+  <li>Daily hassles and minor irritations such as being stuck in traffic</li>
+  <li>Even just WORRYING
+    <ul>
+      <li>that something bad might happen</li>
+      <li>about paying our bills on time</li>
+    </ul>
+  </li>
+  <li>THINKING something is an emergency even when it’s not</li>
+  </ul>
+<p> Due to chronic stressors and daily hassles, most of us experience an ongoing activation of the stress response.  Therefore, most people may not be getting the “rest and digest” breaks that their bodies and brains need.
+</p>
+</p>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
     </div>
@@ -1178,7 +1215,46 @@ foreach(array(
       <div class="content">
         <h2 class="flowers">{t}Chronic Stress: Wear  and Tear on the Body{/t}</h2>
         <hr />
-        <p>here</p>
+        
+      <table width="100%" border="3">
+  <tr>
+    <th width="50%"><p>Chronic  Stress Disturbs all of these Body Systems:</p></th>
+    <th><p>Makes  us more vulnerable to:</p></th>
+  </tr>
+   <tr>
+    <td width="50%"><ul>
+      <li>Nervous system</li>
+      <li>Cardiovascular system</li>
+      <li>Endocrine (hormone) system        </li>
+      <li>Gastrointestinal system        </li>
+      <li>Immune system </li>
+    </ul></td>
+    <td><ul>
+      <li>High Blood Pressure</li>
+      <li>Hardening of the arteries</li>
+      <li>Heart attack and Stroke</li>
+      <li>Type II diabetes</li>
+      <li>Cancer</li>
+      <li>Ulcers</li>
+      <li>Colitis & IBS</li>
+      <li>Diarrhea & Constipation</li>
+      <li>Colds & Flus</li>
+      <li>Slower wound healing</li>
+      <li>Infection</li>
+      <li>Erectile dysfunction</li>
+      <li>Lowered libido</li>
+      <li>Chronic Pain</li>
+      <li>Sleep Disorders </li>
+    </ul></td>
+  </tr><strong></strong>
+</table>
+
+        
+        
+        <cite>(Licinio  et al, 1995,; Wolf, 1995; Salpolsky,   2004; Kabat-Zinn, 1990)</cite>
+<p>Over time, this chronic stress  response can  lead to wear and tear on  the body and the brain.  </p>
+        <p>It  disturbs basically  every major organ system and can makes us more vulnerable to many health problems that over  time can affect our brains. A healthy brain is dependent on a healthy body.  Disruption in pretty much any organ system can impair the brain.  </p>
+        <p>What  sorts of health conditions do you think are caused by or exacerbated by chronic  stress?      </p>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
     </div>
@@ -1186,7 +1262,33 @@ foreach(array(
       <div class="content">
         <h2 class="flowers">{t}Chronic Stress is Toxic to the Brain{/t}</h2>
         <hr />
-        <p>here</p>
+        
+        <p>Studies show negative effects of cortisol on neurons (brain cells) and brain function.</p>
+        <p>Cortisol is:</p>
+        
+        
+        <ul>
+          <li>toxic to brain cells;</li>
+          <li> inhibits the birth of new brain cells; and</li>
+          <li>weakens synaptic connections and prevents the formation of new connections.</li>
+        </ul>
+        <cite>(Hanson, 2009;  1990; Sapolsky et al., 2004, Uno et al, 1994)
+          </cite>
+        </p>
+        <p>In addition to the indirect effects of stress taking a toll on the body, chronic stress also seems to directly lower cognitive reserve.</p>
+        
+        <p>As stated earlier, cortisol is released during the stress response.  If levels get too high or the brain is not give a chance to flush the cortisol out through PNS breaks, then cortisol can have negative effects on brain cells and brain function.</p>
+
+<p>For example:</p>
+<ol>
+  <li>
+    Cortisol is toxic to brain cells.    </li>
+  <li> Cortisol inhibits the birth of new brain cells    </li>
+  <li>Cortisol weakens synaptic connections and prevents the formation of new connections.</li>
+  </ol>
+<p>These effects can lead to a decline in cognitive function and can interrupt the ability to make new memories
+  </p>
+</p>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
     </div>
@@ -1194,15 +1296,34 @@ foreach(array(
       <div class="content">
         <h2 class="flowers">{t}The Stress and Anxiety Cycle{/t}</h2>
         <hr />
-        <p>here</p>
-      </div>
+        <p>Chronic stress has other long-term  effects in that it can actually change  our brains to make us more &ldquo;sensitive to future stress.&rdquo;</p>
+        <p>Stress often leads to the feeling  of anxiety, or being &ldquo;keyed up&rdquo; or &ldquo;on edge&rdquo;.   And chronic stress and activation of the fight-or-flight response  actually makes it easier to become anxious.  </p>
+        <p>This  increase in sensitivity occurs in part because, as we&rsquo;ve discussed before, cells  that fire together wire together--  so over time with repeated activation those connections get stronger and the  emotional brain becomes more sensitive to stressful cues.   So then we  tend to react more strongly to perceived threats, which can repeat the cycle.  Over time we may develop an ongoing feeling of anxiety  regardless of the situation. This  ongoing anxiety is called trait anxiety. </p>
+        <p>Chronic stress can become like a pot on a  low simmer. That low bubbling can result in  the chronic feeling of anxiety, and when faced with a stressor, we react  strongly—the simmer turns into a boil. This does not feel good, and definitely  does not make us better at problem-solving or thinking clearly. </p>
+</div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
     </div>
     <div id="lesson-3-slide-17" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}Stress and Depression{/t}</h2>
         <hr />
-        <p>here</p>
+        <p>Stress may also lower our cognitive reserve by way of increasing the risk for depression.</p>
+        <ul>
+          <li>Stress hormones have been linked to the brain chemicals associated with depression</li>
+          <li>Depression has been shown to be linked to Alzheimer’s disease and cognitive decline</li>
+          <li>Stress and depression also exacerbate one another, creating a cycle whereby the stress response can trigger negative thoughts, destructive beliefs and pessimism – these thoughts trigger the stress response and so on.
+            <ul>
+              <li>For Example:  Having negative thought about yourself (”I should be better”; “I’m not very good”) can trigger the fight or flight response, leading to more of those types of negative thoughts about yourself, which is linked to depression. The thoughts trigger the stress response, the stress response triggers more thoughts, and so on.</li>
+              <li>The more we have these thoughts (or activate those negative belief systems), the stronger the underlying brain pathway gets.</li>
+            </ul>
+          </li>
+        </ul>
+        <p>The details about stress hormones and depression chemicals:</p>
+        <ul>
+          <li>Stress hormones deplete norepinephrine. This can make us feel flat or apathetic and makes it hard to concentrate</li>
+          <li>Stress hormones lower the production of dopamine,  which makes it harder to enjoy pleasurable activities</li>
+          <li>Stress reduces serotonin, a chemical which is essential for maintaining a good mood) </li>
+        </ul>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
     </div>
@@ -1210,7 +1331,10 @@ foreach(array(
       <div class="content">
         <h2 class="flowers">{t}What  can we do? {/t}</h2>
         <hr />
-        <p>here</p>
+        <p>So, now we know that the  stress response can wreak havoc  on us physically, cognitively, and emotionally. We may be feeling pretty  hopeless.</p>
+        <p>The  good news is, we now understand that there are techniques we can use to <u>actively  engage the relaxation response</u>.</p>
+        <p>Any time you can activate rest-and-digest  state, you are providing your body and mind the opportunity to recover from the  stress response and clear out harmful stress hormones like cortisol. The calming, steadying influence of  the parasympathetic nervous system restores balance to our system after a spike  in the fight-or flight response. </p>
+        <p>With  practice you can lower  your baseline level of stress and feel more calm, restoring balance and  returning your body to the more natural Stress/Recovery cycle.  This  will lower your risk for that huge list of stress-related medical issues,  including cognitive decline!</p>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
     </div>
@@ -1218,7 +1342,30 @@ foreach(array(
       <div class="content">
         <h2 class="flowers">{t}Put yourself into Rest-and-Digest{/t}</h2>
         <hr />
-        <p>here</p>
+        <p>Doctors used to believe that the stress response was an automatic process brought on by a division of the nervous system that we could not control, but that belief is long gone!  We now know that we have the power to take control of our Stress / Relaxation cycle, and the easiest way to do this is to actively engage the Relaxation Response.</p>
+        <p>Here are some ways to actively engage your Relaxation Response.</p>
+        <p>Relaxation techniques provide the body the opportunity to relax, you can simply sit for a while and slow your breath.        </p>
+<ul>
+          <li>Slowing the breath:
+            <ul>
+              <li>Breathing at a rate of about 4 seconds in / 6 seconds out can engage the rest-and-digest response.</li>
+              <li>Don’t breath deeply (this may cause hyperventilation and trigger fight-or-flight), just breath normally, just a bit more slowly.</li>
+              <li>Relaxed breathing will move the belly not the chest.</li>
+            </ul>
+          </li>
+          <li>Muscle Relaxation:          
+            <ul>
+              <li>You can also relax your muscles with your minds, imagining that tension is released from a particular muscle can help it relax.</li>
+              <li>A body scan where you relax muscles progressively from head to toe or from toe to head can be an easy way to start a relaxation practice.</li>
+            </ul>
+          </li>
+          <li>Meditation involves a little more than relaxation techniques, mainly in that it involves a bit more focus on directing attention toward a particular stimulus such as the breath, a body part or a mantra.  So meditation is pretty much the same thing as relaxation practice, but with the added benefit of turning off negative thoughts and training your attention.</li>
+        </ul>
+<p>Biofeedback refers to gathering objective information about body responses.  Biofeedback could be as simple as taking your pulse to see if your heart is racing.  But as technology develops, most people think of biofeedback as involving some sort of device to measure body states. These devices ensure that you spend some good quality (not necessarily quantity) time in rest-and-digest, because they are able to measure body states that are more subtle than a simple pulse.  There are body and brain states that let we know represent the rest-and-digest state, and they can be monitored using:</p>
+<p>Heart-rate variability biofeedback: This involves using a small, relatively inexpensive, heart-rate monitor that will tell you when you are breathing at a rate that engages your rest-and-digest system (also called the parasympathetic nervous system or PNS).</p>
+<p>Neurofeedback: Brain wave monitors are also becoming less and less expensive.  Alpha waves are associated with a relaxed brain state, so using a brain wave monitor can help you ensure that you are spending some good quality time in a relaxed state.
+  </p>
+</p>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
     </div>
@@ -1226,7 +1373,12 @@ foreach(array(
       <div class="content">
         <h2 class="flowers">{t}Mindfulness Practices {/t}</h2>
         <hr />
-        <p>here</p>
+        <h4>Mindfulness Sitting Meditation</h4>
+        <p>Say:  Sit comfortably in a chair or on the  floor, with your back, neck, and head straight but not stiff. Concentrate on a  single object, such as the breath. Focus your attention on the sensations of  the breath wherever you feel them in your body. Use the breath as an anchor.  When your mind wanders or you become distracted, gently return focus to your  breathing. Practice this just for 1-2 minutes at first.  You can gradually increase the time up to 30  to 60 minutes if you wish.  Guided  meditations can make this easier – any recording by Jon Kabit-Zenn is helpful and can teach you a  lot.        </p>
+        <p><u>Walking Meditation</u>.  Similar to sitting meditation, but walking  is the focus of attention. Slowly and comfortably walk, focusing your attention  on each step, on each movement of the body, the feel of the foot on the ground.  When your mind wanders, gently bring it back to the movement of walking.</p>
+        <p><u>Mindfully  Doing Anything:</u>  Mindfulness simply is the act of giving  one thing your full attention and taking in every part of the experience.   All of the sights, sounds, smells, tactile sensations, tastes, even the  emotional experiences that you may have, giving every part of the experience  your full attention.  YOUR  MIND WILL WANDER  and that&rsquo;s OK.  Just gently bring your  focus back to the present moment.  Being  in the present protects us from emotional distress because worry lives in the  future and rumination lives in the past (rumination is replaying events in your  head that are typically negative, which leads to depression).  Very little of the present moment is  unpleasant.  If it is unpleasant then feel  that too.  Distress most often comes when  we are trying to cover up or escape an emotion, learning to sit with an emotion  will also relieve stress over time.  Mindfulness  practice can also improve your memory, which we will discuss more in a future  session.</p>
+        <p><u>Lovingkindness Meditation</u>.  Sharon Salzberg  is a meditation  teacher who has written quite a about &ldquo;metta,&rdquo; or lovingkindness meditations. These meditations  focus on practicing compassion and positive intention for ourselves and others.  We&rsquo;ve given you more information about Lovingkindness Meditation in your workbook.</p>
+        <p>Centering Prayer: Centering Prayer  was first described in  the 14th century text, The  Cloud of Unknowing. Centering  prayer was reintroduced in the 1970s by Friar Thomas Keating and two other trappist monks. This simple meditation  involves choosing a word, concept, or passage (such as love, inner peace, God&rsquo;s  presence) that has sacred meaning for you and focusing on it for 20 minutes or  more with your eyes closed. The goal is not to concentrate on the single word,  rather, allow your mind to reflect on the qualities associated with this  particular word. As with the sitting meditation, when your mind wanders, you  gently return to your sacred word or idea. This is not meant to replace other  types of prayer, and can be used on it&rsquo;s own or, if it appeals to you, to  enhance an existing prayer practice.</p>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
     </div>
@@ -1234,15 +1386,58 @@ foreach(array(
       <div class="content">
         <h2 class="flowers">{t}Unhelpful or Negative Thinking{/t}</h2>
         <hr />
-        <p>here</p>
+        <p>Since our thoughts, all by themselves, can trigger the stress response, we can also lower chronic stress by interrupting the cycle of negative thoughts, which leads to anxiety and depression.  Interrupting this cycle is not only important for getting breaks from stress, but it can also reduce future stress by weakening the underlying brain pathway that makes us prone to more negative thinking by reducing their activation.</p>
+        
+        <p>
+
+Unfortunately, negative thoughts tend to be automatic, so you may not even be aware that your thoughts are contributing to stress and emotional distress. Once we are more aware of what we are thinking, we can look at whether the thinking is helpful or unhelpful.</p>
+
+<p> 
+
+When stressed or upset, try to:</p>
+<ul>
+  <li>
+    Pause and pay attention to what you are saying to yourself. If the thoughts are unhelpful, meaning they are making you feel more upset, stressed, anxious, angry, or sad, there are strategies to change or decrease thoughts or distance ourselves from them.
+    <ul>
+      <li>It’s important to know and remember that we are more than just our thoughts, and our thoughts are that - just thoughts!, not necessarily facts, not necessarily true.</li>
+      </ul>
+  </li>
+  <li>If you notice yourself thinking something especially unhelpful or hurtful about yourself, you might ask yourself:
+    <ul>
+      <li>Is this really true? Or is it just a habit?</li>
+      <li>If someone I truly cared about said this about themselves, would I let them get away with it? What would I say to him or her? 
+        <ul>
+          <li>Usually we are much more compassionate towards others than we are towards ourselves. Try turning that compassion towards yourself.</li>
+        </ul>
+        </li>
+      </ul>
+  </li>
+  <li>Saying something new and more compassionate not only helps you to feel better in the moment, it can weaken those old negative pathways in the brain and create new positive pathways, making you less vulnerable to stress, anxiety, and depression, and very likely cognitive decline as you age.</li>
+  </ul>
+<p>There have been many books written about ways to cope with negative thoughts. Counselors and psychologists can also be helpful with this process. Simply writing down thoughts when your are feeling stressed or upset (we call these “hot” or emotionally charged thoughts) can be a good place to start.
+  </p>
+
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
     </div>
     <div id="lesson-3-slide-22" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}Self-care{/t}</h2>
-        <hr />
-        <p>here</p>
+        <ul>
+          <li>
+        Taking time to engage in pleasurable activities</li>
+          <li>Eating well</li>
+          <li>Exercising</li>
+          <li>Getting enough sleep and rest </li>
+        </ul>
+        <p>It’s important to take good care of yourself. When our basic needs are not being met; when we’re not getting enough rest or eating properly:</p>
+        <ul>
+          <li>we become stressed more easily</li>
+          <li>we are more vulnerable to the negative effects of stress</li>
+          <li>we are more likely to be emotionally distressed, and</li>
+          <li>we have a more difficult time effectively coping with stressful situations</li>
+        </ul>
+        <p>We know that exercise has positive effects on mood and is a great way to cope with stress.  Other self-care strategies such as taking time to do something healthy and pleasant, like enjoying a good meal, talking with a friend, engaging in a hobby, or taking a bath can turn also down the stress response and turn up the relaxation response.</p>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
     </div>
@@ -1250,7 +1445,20 @@ foreach(array(
       <div class="content">
         <h2 class="flowers">{t}Memory Strategy #3{/t}</h2>
         <hr />
-        <p>here</p>
+        <p>10-15  Minutes for Explanation and Exercise</p>
+        <p>Get  Organized</p>
+        <p>Organizing  information makes it easier to remember.   There are some tried and true techniques that can help you put  information into a form that will help you remember.</p>
+        <p><u>Chunking</u>.   This is an old psychological technique used to help improve memory when  learning lists of things.  Cognitive  psychologists discovered it as a natural tendency that people with strong  memories have used naturally for some time. Now that you know about it, you can  use it too.</p>
+        <p>Basically,  Chunking involves breaking longer lists into smaller groups of items, which  makes it feel like there is less to remember.   It also capitalizes on associations, which you learned about a few weeks  ago.  There are a few different ways to  chunk information.</p>
+        <p><u>Break strings of numbers down into  smaller chunks.</u>   2, 3 and 4-item clusters are easier to remember than larger ones.  It helps to also chunk in a way that you are  well practiced at, such as remembering a group of seven numbers in either a  group of 3 digits and 4 digits or 3-2-2, like the way you would remember a  telephone number. 10-digit numbers can be grouped the same way, just think of  the first three numbers as the area code.</p>
+        <p><u>Group words from a list based on some  similar feature or category.</u>  Language  is stored in the brain in what we call semantic networks, so words with similar  features or in similar categories are linked together naturally in our  brains.  You can capitalize on this  natural association when trying to remember things.  Group similar items together, so that you  only have to remember the category and remembering the category will cue you to  think of the items within that category.   This works with shopping lists.  Organize your grocery list according to  department (produce, deli, pharmacy, etc.) and aisle (breakfast food, baking,  canned foods, etc.).</p>
+        <p><u>Outlines.</u>   Make outlines of oral or written information that you are trying to  remember.  Outlines aren&rsquo;t just for  preparing reports or laying out a long story you want to write.  You can use outlines to help you learn new  things.  You can make use of outlines  when: </p>
+        <p>trying  to memorize a speech or the lines to a play if, for instance, you decide that a  new way to stimulate your brain is to run for an elected office in your  community or to try out for a community play; </p>
+        <p>studying  for a test if, for instance, you decided to take a class; </p>
+        <p>or  you want to remember the details of a newspaper article that you thought was  interesting so you can tell your friends about it.</p>
+        <p>Having  the important points laid out in a list and organized according to idea can  reduce the amount of information you have to remember.  You can also visualize your list when you are  trying to recall it, and you can rehearse the list by quizzing yourself, which  we will discuss more in the last session.   When studying the list, try to recall the list from memory.  If you forget what&rsquo;s next, just glance at it  (maybe even cover up the items below it with your hand or a sheet of paper) and  then quiz yourself on the details that the key point represents.</p>
+        <p><u>Organize your space.</u>   One of the best ways to appear as though you are the person who  remembers everything is to have a special spot for everything and keep  everything in that spot.  The organization  will allow you to remember where everything is, and it will save you time and  effort in having to recall where you put certain things.  It can also reduce stress because you will be  less pressed for time when looking for things and you may not be as hard on  yourself about &ldquo;how bad your memory is getting.&rdquo;  (Really it&rsquo;s not that your memory is bad,  it&rsquo;s that you&rsquo;ve given it too much to do).  </p>
+        <p>Often  we do not take the time to organize our space in this way because we feel like  we don&rsquo;t have the time, but imagine the time that you will save by not having  to search for your things.  Enlisting the  help of a relative or trusted friend or even a professional organizer can help  to get you started if it feels overwhelming.</p>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
     </div>
