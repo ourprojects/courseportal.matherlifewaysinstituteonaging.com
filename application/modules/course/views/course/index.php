@@ -1,4 +1,4 @@
-<?php $this->breadcrumbs = array(t('Courses')); ?>
+<?php $this->breadcrumbs = array('{t}Courses{/t}'); ?>
 
 <div class="small-masthead" style="background-image: url(<?php echo $this->getImagesUrl('header-courses.png'); ?>);">
 	<h1 class="bottom">{t}Courses, Surveys, &amp; Toolkits{/t}</h1>
@@ -12,15 +12,15 @@
 	// The following 2 if statements are a BAD HACK!!! Need to find a better way here.
 	if($course->name === 'introtocaregivingonline')
 	{
-		echo CHtml::image($this->getImagesUrl('image-hands.png'), t('hands'), array('class' => 'image-right'));
+		echo CHtml::image($this->getImagesUrl('image-hands.png'), '{t}hands{/t}', array('class' => 'image-right'));
 	}
 	else if($course->name === 'carecoachingonline')
 	{
-		echo CHtml::image($this->getImagesUrl('image-grocery.png'), t('groceries'), array('class' => 'image-right'));
+		echo CHtml::image($this->getImagesUrl('image-grocery.png'), '{t}groceries{/t}', array('class' => 'image-right'));
 	}
 	?>
 	<h3>
-		<a href="<?php echo $this->createUrl($course->name); ?>" title="<?php echo t($course->title); ?>"><?php echo t($course->title); ?></a>
+		<?php echo CHtml::link(t($course->title), $this->createUrl($course->name)); ?>
 	</h3>
 	<p>
 		<?php echo t($course->description); ?>
