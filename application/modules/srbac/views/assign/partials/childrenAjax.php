@@ -66,5 +66,5 @@
 	</tr>
 </table>
 <div id="loadMessage<?php echo AuthItem::$TYPES[$childType]; ?>" class="message">
-	&nbsp;<?php echo Yii::app()->getUser()->getFlash($this->getModule()->flashKey, null, true); ?>
+	&nbsp;<?php echo Yii::app()->getUser()->getFlash($this->getModule()->flashKey); ?>
 </div>
