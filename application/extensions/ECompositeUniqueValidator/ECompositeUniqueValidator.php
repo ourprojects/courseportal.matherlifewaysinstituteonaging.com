@@ -4,9 +4,59 @@
  *
  * @author Louis DaPrato <l.daprato@gmail.com>
  */
-class ECompositeUniqueValidator extends CUniqueValidator
+class ECompositeUniqueValidator extends CValidator
 {
-
+	
+	/**
+	 * @var boolean whether the comparison is case sensitive. Defaults to true.
+	 * Note, by setting it to false, you are assuming the attribute type is string.
+	 */
+	public $caseSensitive = true;
+	
+	/**
+	 * @var boolean whether the attribute value can be null or empty. Defaults to true,
+	 * meaning that if the attribute is empty, it is considered valid.
+	 */
+	public $allowEmpty = true;
+	
+	/**
+	 * @var string the ActiveRecord class name that should be used to
+	 * look for the attribute value being validated. Defaults to null, meaning using
+	 * the class of the object currently being validated.
+	 * You may use path alias to reference a class name here.
+	 * @see attributeName
+	 */
+	public $className;
+	
+	/**
+	 * @var string the ActiveRecord class attribute name that should be
+	 * used to look for the attribute value being validated. Defaults to null,
+	 * meaning using the name of the attribute being validated.
+	 * @see className
+	 */
+	public $attributeName;
+	
+	/**
+	 * @var mixed additional query criteria. Either an array or CDbCriteria.
+	 * This will be combined with the condition that checks if the attribute
+	 * value exists in the corresponding table column.
+	 * This array will be used to instantiate a {@link CDbCriteria} object.
+	 */
+	public $criteria = array();
+	
+	/**
+	 * @var string the user-defined error message. The placeholders "{attribute}" and "{value}"
+	 * are recognized, which will be replaced with the actual attribute name and value, respectively.
+	 */
+	public $message;
+	
+	/**
+	 * @var boolean whether this validation rule should be skipped if when there is already a validation
+	 * error for the current attribute. Defaults to true.
+	 * @since 1.1.1
+	 */
+	public $skipOnError = true;
+	
 	/**
 	 * Validates the attribute of the object.
 	 * If there is any error, the error message is added to the object.
@@ -15,50 +65,71 @@ class ECompositeUniqueValidator extends CUniqueValidator
 	 */
 	protected function validateAttribute($object, $attribute)
 	{
-		$value = $object->$attribute;
-		if($this->allowEmpty && $this->isEmpty($value))
+		$attributes = array_flip(preg_split('/[\s+]+/', trim($attribute), -1, PREG_SPLIT_NO_EMPTY));
+		$attributeCount = count($attributes);
+		foreach($attributes as $attributeName => &$config)
+		{
+			$config = array('value' => $object->$attributeName);
+			if(is_array($config['value']))
+			{
+				// https://github.com/yiisoft/yii/issues/1955
+				$this->addError($object, $attributeName, Yii::t('yii', '{attribute} is invalid.'));
+				return;
+			}
+			$allowEmpty = is_array($this->allowEmpty) ? (isset($this->allowEmpty[$attributeName]) ? $this->allowEmpty[$attributeName] : true) : $this->allowEmpty;
+			if($allowEmpty && $this->isEmpty($config['value']))
+			{
+				unset($attributes[$attributeName]);
+			}
+			else
+			{
+				$config['attributeName'] = is_array($this->attributeName) && isset($this->attributeName[$attributeName]) ? $this->attributeName[$attributeName] : $attributeName;
+				$config['caseSensitive'] = is_array($this->caseSensitive) ? (isset($this->caseSensitive[$attributeName]) ? $this->caseSensitive[$attributeName] : true) : $this->caseSensitive;
+			}
+		}
+		
+		if(empty($attributes))
 		{
 			return;
 		}
 		
-		if($this->attributeName === null || $this->attributeName === array())
+		if($attributeCount === 1 && isset($this->attributeName) && !is_array($this->attributeName))
 		{
-			$attributeNames = array($attribute);
-		}
-		else
-		{
-			$attributeNames = is_array($this->attributeName) ? $this->attributeName : array($this->attributeName);
+			$config = reset($attributes);
+			$attributeName = key($attributes);
+			$config['attributeName'] = $this->attributeName;
+			$attributes[$attributeName] = $config;
 		}
 
 		$className = $this->className === null ? get_class($object) : Yii::import($this->className);
 		
-		$finder = CActiveRecord::model($className);
+		$finder = $this->getModel($className);
 		$table = $finder->getTableSchema();
 		
 		$criteria = new CDbCriteria();
-		if($this->criteria !== array())
-		{
-			$criteria->mergeWith($this->criteria);
-		}
+		$criteria->mergeWith($this->criteria);
+		
 		$tableAlias = empty($criteria->alias) ? $finder->getTableAlias(true) : $criteria->alias;
 		
 		$columns = array();
 		$primaryKeyColumn = null;
-		foreach($attributeNames as $attributeName)
+		$dbConnection = $finder->getDbConnection();
+		foreach($attributes as $attributeName => &$config)
 		{
-			$column = $table->getColumn($attributeName);
+			$columnName = $config['attributeName'];
+			$column = $table->getColumn($columnName);
 			if($column === null)
 			{
-				throw new CException(Yii::t('yii','Table "{table}" does not have a column named "{column}".',
-						array('{column}' => $attributeName,'{table}' => $table->name)));
+				throw new CException(Yii::t('yii', 'Table "{table}" does not have a column named "{column}".',
+						array('{column}' => $columnName,'{table}' => $table->name)));
 			}
 			if($column->isPrimaryKey)
 			{
 				$primaryKeyColumn = $column;
 			}
 			$valueParamName = CDbCriteria::PARAM_PREFIX.CDbCriteria::$paramCount++;
-			$criteria->addCondition($this->caseSensitive ? "{$tableAlias}.{$column->rawName} = {$valueParamName}" : "LOWER({$tableAlias}.{$column->rawName}) = LOWER({$valueParamName})");
-			$criteria->params[$valueParamName] = $object->$attributeName;
+			$criteria->addCondition($config['caseSensitive'] ? "{$tableAlias}.{$column->rawName}={$valueParamName}" : "LOWER({$tableAlias}.{$column->rawName})=LOWER({$valueParamName})");
+			$criteria->params[$valueParamName] = $config['value'];
 		}
 		
 		if(!$object instanceof CActiveRecord || $object->getIsNewRecord() || $object->tableName() !== $finder->tableName())
@@ -89,10 +160,37 @@ class ECompositeUniqueValidator extends CUniqueValidator
 
 		if($exists)
 		{
-			$message = $this->message !== null ? $this->message : Yii::t('yii', '{attribute} "{value}" has already been taken.');
-			$this->addError($object, $attribute, $message, array('{value}' => CHtml::encode($value)));
+			$attrs = implode(', ', array_intersect_key($object->attributeLabels(), $attributes));
+			if(isset($this->message))
+			{
+				$message = $this->message;
+			}
+			else
+			{
+				$message = Yii::t('yii', '{attribute} "{value}" has already been taken.');
+				if(count($attributes) > 1)
+				{
+					$message .= Yii::t('yii', ' The combination of ({attributes}) should be unique in the current context.');
+				}
+			}
+			foreach($attributes as $attributeName => &$config)
+			{
+				$this->addError($object, $attributeName, $message, array('{value}' => CHtml::encode($config['value']), '{attributes}' => $attrs));
+			}
 		}
 	}
 	
+	/**
+	 * Given active record class name returns new model instance.
+	 *
+	 * @param string $className active record class name.
+	 * @return CActiveRecord active record model instance.
+	 *
+	 * @since 1.1.14
+	 */
+	protected function getModel($className)
+	{
+		return CActiveRecord::model($className);
+	}
+	
 }
-
