@@ -36,9 +36,9 @@
 			name: function(value) 
 			{
 				var element = this.find("h2#Activity_name");
-				if(value === undefined)
+				if(value === undefined || value === null)
 				{
-					return element.text();
+					return element.text("");
 				}
 				return element.text(value);
 			},
@@ -46,9 +46,9 @@
 			description: function(value) 
 			{
 				var element = this.find("p#Activity_description");
-				if(value === undefined)
+				if(value === undefined || value === null)
 				{
-					return element.text();
+					return element.text("");
 				}
 				return element.text(value);
 			},
@@ -56,11 +56,11 @@
 			dimensions: function(value) 
 			{
 				var element = this.find("select#UserActivity_dimensions");
-				if(value === undefined)
+				if(value === undefined || value === null)
 				{
 					var values = [];
 					element.children(":selected").each(function(){
-						values[$(this).val()] = $(this).text();
+						values[$(this).val()] = $(this).text("");
 					});
 					return values;
 				}
@@ -74,7 +74,7 @@
 			dateCompleted: function(value) 
 			{
 				var element = this.find("input#UserActivity_dateCompleted");
-				if(value === undefined)
+				if(value === undefined || value === null)
 				{
 					return element.datepicker("getDate");
 				}
@@ -83,20 +83,20 @@
 			
 			comment: function(value) 
 			{
-				var element = this.find("input#UserActivity_comment");
-				if(value === undefined)
+				var element = this.find("textarea#UserActivity_comment");
+				if(value === undefined || value === null)
 				{
-					return element.text();
+					return element.text("");
 				}
-				return element.val(value);
+				return element.text(value);
 			},
 			
 			activity_id: function(value) 
 			{
 				var element = this.find("input#UserActivity_activity_id");
-				if(value === undefined)
+				if(value === undefined || value === null)
 				{
-					return element.text();
+					return element.text("");
 				}
 				return element.val(value);
 			},
@@ -104,9 +104,9 @@
 			id: function(value) 
 			{
 				var element = this.find("input#UserActivity_id");
-				if(value === undefined)
+				if(value === undefined || value === null)
 				{
-					return element.text();
+					return element.text("");
 				}
 				return element.val(value);
 			},
