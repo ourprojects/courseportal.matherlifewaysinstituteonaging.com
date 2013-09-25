@@ -62,7 +62,7 @@ class Course extends CActiveRecord
 				array('title', 'length', 'max' => 255),
 				array('description', 'length', 'max' => 65535),
 
-				array('id, name, rank, title, description', 'safe', 'on'=>'search'),
+				array('id, name, rank, title, description', 'safe', 'on' => 'search'),
 		);
 	}
 
@@ -124,7 +124,6 @@ class Course extends CActiveRecord
 	 */
 	public function search() 
 	{
-
 		$criteria = new CDbCriteria;
 
 		$tableAlias = $this->getTableAlias();

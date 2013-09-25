@@ -18,7 +18,8 @@ class CourseObjective extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * @return CActiveRecord the static model class
 	 */
-	public static function model($className = __CLASS__) {
+	public static function model($className = __CLASS__) 
+	{
 		return parent::model($className);
 	}
 
@@ -55,13 +56,10 @@ class CourseObjective extends CActiveRecord
 				array('id, course_id, rank', 'numerical', 'integerOnly' => true),
 				array('text', 'length', 'max' => 65535),
 				array('course_id', 'exist', 'attributeName' => 'id', 'className' => 'Course'),
-				array('rank',
+				array('+rank+course_id',
 						'ext.ECompositeUniqueValidator.ECompositeUniqueValidator',
-						'caseSensitive' => false,
-						'attributeName' => array('rank', 'course_id'),
-						'message' => 'An objective with {attribute} "{value}" already exists for this course.',
+						'message' => t('An objective with {attribute} "{value}" already exists for this course.'),
 				),
-
 				array('id, course_id, rank, text', 'safe', 'on' => 'search'),
 		);
 	}

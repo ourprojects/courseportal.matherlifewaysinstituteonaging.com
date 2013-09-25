@@ -19,7 +19,7 @@ class UserActivityDimension extends CActiveRecord
 	 * @param string $className active record class name.
 	 * @return UserActivityDimension the static model class
 	 */
-	public static function model($className=__CLASS__)
+	public static function model($className = __CLASS__)
 	{
 		return parent::model($className);
 	}
@@ -42,7 +42,10 @@ class UserActivityDimension extends CActiveRecord
 			array('user_activity_id, dimension_id', 'numerical', 'integerOnly' => true),
 			array('user_activity_id', 'exist', 'attributeName' => 'id', 'className' => 'UserActivity', 'except' => 'search'),
 			array('dimension_id', 'exist', 'attributeName' => 'id', 'className' => 'Dimension', 'except' => 'search'),
-
+			array('+user_activity_id+dimension_id',
+					'ext.ECompositeUniqueValidator.ECompositeUniqueValidator',
+					'message' => t('The dimension with ID "{value}" has already been added to this user activity.'),
+			),
 			array('user_activity_id, dimension_id, primary', 'safe', 'on' => 'search'),
 		);
 	}

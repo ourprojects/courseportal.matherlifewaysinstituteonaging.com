@@ -17,7 +17,8 @@ class UserCourse extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * @return CActiveRecord the static model class
 	 */
-	public static function model($className = __CLASS__) {
+	public static function model($className = __CLASS__) 
+	{
 		return parent::model($className);
 	}
 
@@ -46,17 +47,12 @@ class UserCourse extends CActiveRecord
 				array('user_id, course_id', 'required'),
 				array('user_id, course_id', 'numerical', 'integerOnly' => true),
 
-				array('user_id', 'exist', 'attributeName' => Yii::app()->getModule(CourseUser::COURSE_MODULE_NAME)->userId, 'className' => 'CourseUser', 'allowEmpty' => false),
-				array('course_id', 'exist', 'attributeName' => 'id', 'className' => 'Course', 'allowEmpty' => false),
+				array('user_id', 'exist', 'attributeName' => CourseUser::model()->getIdColumnName(), 'className' => 'CourseUser'),
+				array('course_id', 'exist', 'attributeName' => 'id', 'className' => 'Course'),
 
-				array('course_id',
-						'unique',
-						'caseSensitive' => false,
-						'criteria' => array(
-							'condition' => 'user_id = :id',
-							'params' => array(':id' => $this->user_id),
-						),
-						'message' => '{attribute} "{value}" has already been added to this user.',
+				array('+course_id+user_id',
+						'ext.ECompositeUniqueValidator.ECompositeUniqueValidator',
+						'message' => t('{attribute} "{value}" has already been added to this user.'),
 				),
 
 				array('user_id, course_id', 'safe', 'on'=>'search'),
