@@ -4,6 +4,11 @@ class CourseBehavior extends CActiveRecordBehavior
 {
 	
 	private $courseUser;
+	
+	public function __construct()
+	{
+		Yii::import('course.models.*');
+	}
 
 	protected function afterConstruct($event)
 	{
@@ -31,8 +36,8 @@ class CourseBehavior extends CActiveRecordBehavior
 		{
 			$this->courseUser = new CourseUser();
 		}
-		$this->courseUser->{Yii::app()->getModule(self::COURSE_MODULE_NAME)->userId} = $this->getOwner()->{Yii::app()->getModule(self::COURSE_MODULE_NAME)->userId};
-		$this->courseUser->{Yii::app()->getModule(self::COURSE_MODULE_NAME)->userName} = $this->getOwner()->{Yii::app()->getModule(self::COURSE_MODULE_NAME)->userName};
+		$this->courseUser->setId($this->getOwner()->{$this->courseUser->getIdColumnName()});
+		$this->courseUser->setName($this->getOwner()->{$this->courseUser->getNameColumnName()});
 		$this->courseUser->setScenario($scenario);
 	}
 	
