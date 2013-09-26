@@ -101,6 +101,9 @@ class CPUser extends CActiveRecord
 	public function behaviors()
 	{
 		return array_merge(parent::behaviors(), array(
+				'CourseBehavior' => array(
+						'class' => 'course.components.CourseBehavior'
+				),
 				'PhpBBUserBehavior' => array(
 						'class' => 'phpbb.components.PhpBBUserBehavior',
 						'newPasswordAttribute' => 'new_password',
@@ -120,9 +123,6 @@ class CPUser extends CActiveRecord
 				'SrbacBehavior' => array(
 						'class' => 'srbac.components.SrbacBehavior'
 				),
-				'CourseBehavior' => array(
-						'class' => 'course.components.CourseBehavior'
-				),
 				'extendedFeatures' => array('class' => 'behaviors.EModelBehaviors'),
 				'PBKDF2Behavior' => array(
 						'class' => 'ext.pbkdf2.PBKDF2Behavior',
@@ -137,6 +137,9 @@ class CPUser extends CActiveRecord
 				),
 				'EActiveRecordAutoQuoteBehavior' => array(
 						'class' => 'ext.EActiveRecordAutoQuoteBehavior.EActiveRecordAutoQuoteBehavior',
+				),
+				'EUserDbHttpSessionBehavior' => array(
+						'class' => 'ext.EUserDbHttpSession.components.EUserDbHttpSessionBehavior',
 				)
 		));
 	}
@@ -146,7 +149,7 @@ class CPUser extends CActiveRecord
 	 */
 	public function relations()
 	{
-		Yii::import('course.models.CourseUser');
+		Yii::import('course.models.*');
 		return array_merge(
 				CourseUser::model()->relations(),
 				array(
@@ -217,6 +220,20 @@ class CPUser extends CActiveRecord
 		}
 		return time();
 	}
+	
+	public function getLastSeen()
+	{
+		$lastSeen = $this->asa('EUserDbHttpSessionBehavior')->getLastSeen();
+		if($lastSeen === null)
+		{
+			if($this->last_login === null)
+			{
+				return strcasecmp($this->getScenario(), 'search') ? t('Never') : null;
+			}
+			return $this->last_login;
+		}
+		return EHttpSession::convertDateToDisplayformat($lastSeen);
+	}
 
 	public function getIsActivated()
 	{
@@ -256,6 +273,7 @@ class CPUser extends CActiveRecord
 		Yii::import('course.models.CourseUser');
 		return array_merge(
 				CourseUser::model()->attributeLabels(),
+				$this->asa('EUserDbHttpSessionBehavior')->attributeLabels(),
 				array(
 					'id' 			 => t('ID'),
 					'new_password' 	 => t('New Password'),
