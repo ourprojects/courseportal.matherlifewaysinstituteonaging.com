@@ -4,11 +4,6 @@ class CourseBehavior extends CActiveRecordBehavior
 {
 	
 	private $courseUser;
-	
-	public function __construct()
-	{
-		Yii::import('course.models.*');
-	}
 
 	protected function afterConstruct($event)
 	{
