@@ -46,12 +46,6 @@ class EUserDbHttpSessionBehavior extends CActiveRecordBehavior
 		return $session !== null && !$session->getIsExpired();
 	}
 	
-	public function getLastSeen()
-	{
-		$session = $this->getSession();
-		return $session === null || $session->getIsExpired() ? null : $session->getCreated();
-	}
-	
 	public function attributeLabels()
 	{
 		return array(

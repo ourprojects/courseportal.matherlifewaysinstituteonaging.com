@@ -12,7 +12,8 @@
  * @property string  $created
  * @property string  $last_ip
  * @property string  $last_agent
- * @property string  $last_login
+ * @property string  $last_seen
+ * @property string  $last_route
  * @property string  $language
  * @property string  $firstname
  * @property string  $lastname
@@ -64,7 +65,7 @@ class CPUser extends CActiveRecord
 	public function rules()
 	{
 		return array(
-				array('password, salt, session_key, group_id, last_ip, last_login, language, isActivated', 'unsafe', 'except' => 'adminInsert, adminUpdate'),
+				array('password, salt, session_key, group_id, last_ip, last_seen, last_route, language, isActivated', 'unsafe', 'except' => 'adminInsert, adminUpdate'),
 				array('session_key', 'filter', 'filter' => array($this, 'generateSessionKey'), 'except' => 'search'),
 				array('email, name, session_key, firstname, lastname', 'required', 'except' => 'search'),
 				array('new_password, new_password_repeat', 'required', 'on' => 'insert, adminInsert'),
@@ -77,9 +78,9 @@ class CPUser extends CActiveRecord
 				array('password', 'ext.pbkdf2.PBKDF2validator', 'allowEmpty' => true),
 				array('salt, session_key', 'ext.pbkdf2.PBKDF2validator', 'except' => 'search'),
 
-				array('firstname, lastname, location, last_agent', 'length', 'max' => 255),
+				array('firstname, lastname, location, last_agent, last_route', 'length', 'max' => 255),
 				array('created', 'date', 'format' => 'yyyy-M-d H:m:s'),
-				array('last_login', 'date', 'format' => 'yyyy-M-d H:m:s'),
+				array('last_seen', 'date', 'format' => 'yyyy-M-d H:m:s'),
 				array('last_ip', 'length', 'max' => 40),
 				array('language', 'default', 'setOnEmpty' => true, 'value' => Yii::app()->getLanguage(), 'except' => 'search'),
 				array('language', 'length', 'max' => 16),
@@ -94,7 +95,7 @@ class CPUser extends CActiveRecord
 
 				array('group_id, isActivated', 'safe', 'on' => 'adminInsert, adminUpdate'),
 				array('name, new_password, email, firstname, lastname, location, country_iso', 'safe'),
-				array('id, group_id, created, last_ip, last_login, last_agent, language', 'safe', 'on' => 'search')
+				array('id, group_id, created, last_ip, last_seen, last_agent, last_route, language', 'safe', 'on' => 'search')
 		);
 	}
 
@@ -220,20 +221,6 @@ class CPUser extends CActiveRecord
 		}
 		return time();
 	}
-	
-	public function getLastSeen()
-	{
-		$lastSeen = $this->asa('EUserDbHttpSessionBehavior')->getLastSeen();
-		if($lastSeen === null)
-		{
-			if($this->last_login === null)
-			{
-				return strcasecmp($this->getScenario(), 'search') ? t('Never') : null;
-			}
-			return $this->last_login;
-		}
-		return EHttpSession::convertDateToDisplayformat($lastSeen);
-	}
 
 	public function getIsActivated()
 	{
@@ -294,7 +281,7 @@ class CPUser extends CActiveRecord
 					'location' 		 => t('Location'),
 					'fullLocation' 	 => t('Full Location'),
 					'country_iso' 	 => t('Country'),
-					'last_login' 	 => t('Last Login'),
+					'last_seen' 	 => t('Last Seen'),
 					'last_ip' 		 => t('Last IP Address'),
 					'last_agent'	 => t('Last Agent'),
 					'language' 		 => t('Preferred Language'),
@@ -319,9 +306,10 @@ class CPUser extends CActiveRecord
 		$criteria->compare($db->quoteColumnName($tableAlias.'.lastname'), $this->lastname, true);
 		$criteria->compare($db->quoteColumnName($tableAlias.'.location'), $this->location, true);
 		$criteria->compare($db->quoteColumnName($tableAlias.'.country_iso'), $this->country_iso, true);
-		$criteria->compare($db->quoteColumnName($tableAlias.'.last_login'), $this->last_login, true);
+		$criteria->compare($db->quoteColumnName($tableAlias.'.last_seen'), $this->last_seen, true);
 		$criteria->compare($db->quoteColumnName($tableAlias.'.last_ip'), $this->last_ip, true);
 		$criteria->compare($db->quoteColumnName($tableAlias.'.last_agent'), $this->last_agent, true);
+		$criteria->compare($db->quoteColumnName($tableAlias.'.last_route'), $this->last_route, true);
 
 		return $criteria;
 	}

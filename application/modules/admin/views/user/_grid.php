@@ -28,13 +28,10 @@ if(isset($detailed) && $detailed)
 			),
 			array(
 				'name' => 'isOnline',
-				'value' => '$data->getIsOnline() ? "{t}Yes{/t}" : "{t}No{/t}"',
+				'type' => 'boolean',
 				'filter' => ''
 			),
-			array(
-				'name' => 'lastSeen',
-				'filter' => ''
-			)
+			'last_seen',
 		)
 	);
 }

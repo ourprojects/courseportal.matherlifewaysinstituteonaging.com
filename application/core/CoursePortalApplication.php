@@ -1,47 +1,73 @@
 <?php
 
-class CoursePortalApplication extends CWebApplication {
+class CoursePortalApplication extends CWebApplication 
+{
 
-	protected function init()
+	private $_recursing = false;
+	
+	public function createController($route, $owner = null)
 	{
-		$this->onEndRequest = array($this, 'saveUserState');
-	}
-
-	public function saveUserState()
-	{
-		if(($user = $this->getUser()) && isset($user) && !$user->getIsGuest())
+		if($this->_recursing)
+		{
+			return parent::createController($route, $owner);
+		}
+		$this->_recursing = true;
+		$ca = parent::createController($route, $owner);
+		$this->_recursing = false;
+		if($ca === null)
+		{
+			return $ca;
+		}
+		list($controller, $actionId) = $ca;
+		$user = $this->getUser();
+		if($user !== null && !$user->getIsGuest())
 		{
 			$user = $user->getModel();
-			if(isset($user) && !$user->getIsNewRecord())
+			if($user !== null && !$user->getIsNewRecord())
 			{
-				$updated = array('last_login');
-				$user->last_login = date('Y-m-d H:i:s');
-				if($request = Yii::app()->getRequest())
+				$updated = array('last_seen');
+				$user->setAttribute('last_seen', date('Y-m-d H:i:s'));
+				$request = Yii::app()->getRequest();
+				if($request !== null)
 				{
 					$var = $request->getUserHostAddress();
-					if($var != $user->last_ip)
+					if($var != $user->getAttribute('last_ip'))
 					{
 						$updated[] = 'last_ip';
-						$user->last_ip = $var;
+						$user->setAttribute('last_ip', $var);
 					}
 
 					$var = $request->getUserAgent();
 					$var = strlen($var) > 255 ? substr($var, 0, 255) : $var;
-					if($var != $user->last_agent)
+					if($var != $user->getAttribute('last_agent'))
 					{
 						$updated[] = 'last_agent';
-						$user->last_agent = $var;
+						$user->setAttribute('last_agent', $var);
 					}
 				}
+				
+				$rt = $controller->getId().'/'.($actionId === '' ? $controller->defaultAction : $actonId);
+				for($module = $controller->getModule(); $module !== null; $module = $module->getParentModule())
+				{
+					$rt = $module->getId().'/'.$rt;
+				}
+				$rt = strlen($rt) > 255 ? substr($rt, 0, 255) : $rt;
+				if($rt != $user->getAttribute('last_route'))
+				{
+					$updated[] = 'last_route';
+					$user->setAttribute('last_route', $rt);
+				}
+				
 				$var = $this->getLanguage();
-				if($user->language != $var)
+				if($var != $user->getAttribute('language'))
 				{
 					$updated[] = 'language';
-					$user->language = $var;
+					$user->setAttribute('language', $var);
 				}
 				$user->save(true, $updated);
 			}
 		}
+		return array($controller, $actionId);
 	}
 
 }

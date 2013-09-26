@@ -24,7 +24,7 @@ $session = $CPUser->getSession();
 			</tr>
 			<tr>
 				<th>{t}Last Seen:{/t}</th>
-				<td><?php echo $CPUser->getLastSeen(); ?></td>
+				<td><?php echo $CPUser->last_seen; ?></td>
 			</tr>
 			<tr>
 				<th>{t}Online Now:{/t}</th>
