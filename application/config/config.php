@@ -135,11 +135,13 @@ return array(
 				),
 
 				'session' => array(
-						'class' => 'ext.EUserDbHttpSession.EUserDbHttpSession',
+						'class' => 'ext.EUserDbHttpSession.components.EUserDbHttpSession',
 						'connectionID' => 'db',
 						'autoCreateSessionTable' => defined('YII_DEBUG') && YII_DEBUG,
 						'sessionTableName' => '{{yii_session}}',
-						'userIdColumnType' => 'integer'
+						'userIdColumnType' => 'integer',
+						'userModelClassName' => 'CPUser',
+						'userIdColumnName' => 'id',
 				),
 
 				'phpBB' => array(

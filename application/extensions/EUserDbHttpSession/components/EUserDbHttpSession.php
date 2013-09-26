@@ -4,6 +4,10 @@ class EUserDbHttpSession extends CDbHttpSession
 {
 
 	public $userIdColumnType = 'integer';
+	
+	public $userModelClassName = 'User';
+	
+	public $userIdColumnName = 'id';
 
 	/**
 	 * Creates the session DB table.
@@ -87,6 +91,11 @@ class EUserDbHttpSession extends CDbHttpSession
 			return false;
 		}
 		return true;
+	}
+	
+	public function getDbConnection()
+	{
+		return parent::getDbConnection();
 	}
 
 }
