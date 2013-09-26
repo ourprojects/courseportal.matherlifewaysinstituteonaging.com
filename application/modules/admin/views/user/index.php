@@ -1,6 +1,6 @@
 <?php $this->breadcrumbs = array('{t}Admin{/t}' => $this->createUrl('/admin'), '{t}Users{/t}'); ?>
 
-<h1>{t}User Table Administration{/t}</h1>
+<h1>{t}User Administration{/t}</h1>
 <div id="single-column">
 	<?php 
 		echo CHtml::button(

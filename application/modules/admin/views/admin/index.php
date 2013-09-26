@@ -31,13 +31,13 @@ $this->breadcrumbs = array('{t}Admin{/t}');
 		<a href="<?php echo Yii::app()->getComponent('phpBB')->getACPUrl(); ?>" class="button">{t}phpBB Administration Control Panel{/t}</a>
 	</div>
 	<div class="box-white">
-		<h5>{t}Course Portal User Table{/t}</h5>
-		<p>{t}User registration table records all events and user registration and profile data text input fields. Administrators have access to this table and permissions to edit, add, remove (delete) profiles.{/t}</p>
+		<h5>{t}Users{/t}</h5>
+		<p>{t}Search, view, edit, add, and delete any information pertaining to course portal users including profile fields, registration status, recent activity, and group memberships.{/t}</p>
 		<a href="<?php echo $this->createUrl('/admin/user'); ?>" class="button">{t}Users{/t}</a>
 	</div>
 	<div class="box-white">
 		<h5>{t}Role Based Access Control{/t}</h5>
-		<p></p>
+		<p>{t}Allows for fine grained tuning of access permission for individual users and groups of users.{/t}</p>
 		<a href="<?php echo $this->createUrl('/srbac'); ?>" class="button">{t}RBAC{/t}</a>
 	</div>
 	<div class="box-white">
