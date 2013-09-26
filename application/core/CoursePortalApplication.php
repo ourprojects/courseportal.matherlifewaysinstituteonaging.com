@@ -18,6 +18,7 @@ class CoursePortalApplication extends CWebApplication
 		{
 			return $ca;
 		}
+		
 		list($controller, $actionId) = $ca;
 		$user = $this->getUser();
 		if($user !== null && !$user->getIsGuest())
@@ -45,8 +46,8 @@ class CoursePortalApplication extends CWebApplication
 						$user->setAttribute('last_agent', $var);
 					}
 				}
-				
-				$rt = $controller->getId().'/'.($actionId === '' ? $controller->defaultAction : $actonId);
+
+				$rt = $controller->getId().'/'.($actionId === '' ? $controller->defaultAction : $actionId);
 				for($module = $controller->getModule(); $module !== null; $module = $module->getParentModule())
 				{
 					$rt = $module->getId().'/'.$rt;
