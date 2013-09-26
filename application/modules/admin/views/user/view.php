@@ -6,6 +6,8 @@ $this->breadcrumbs = array(
 		'{t}Users{/t}' => $this->createUrl('/admin/user'),
 		'{t}User{/t} '.$action
 );
+
+$session = $CPUser->getSession();
 ?>
 <?php if(!$CPUser->getIsNewRecord()): ?>
 <div id="sidebar">
@@ -22,7 +24,11 @@ $this->breadcrumbs = array(
 			</tr>
 			<tr>
 				<th>{t}Last Seen:{/t}</th>
-				<td><?php echo $CPUser->last_login; ?></td>
+				<td><?php echo $CPUser->getLastSeen(); ?></td>
+			</tr>
+			<tr>
+				<th>{t}Online Now:{/t}</th>
+				<td><?php echo $CPUser->getIsOnline() ? '{t}Yes{/t}' : '{t}No{/t}'; ?></td>
 			</tr>
 			<tr>
 				<th>{t}Last Agent:{/t}</th>
