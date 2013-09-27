@@ -2389,7 +2389,7 @@ alert("Coming Soon!");
 				<p style="font-style: italic;">{t}The best and most beautiful things in the world cannot be seen or even touched. They must be felt within the heart. --Helen Keller{/t}</p>
 				<p>{t}We have really enjoyed getting to know you. Best wishes as you carry on in the future!{/t}</p>
 				<h4 style="text-align: center;">{t}Certificates of Completion{/t}</h4>
-				<a href="<?php echo $this->getImagesUrl('msml/CourseCompletionCertificate.pdf'); ?>" target="_blank"><img src="<?php echo $this->getImagesUrl('msml/ArtworkCertificate.png'); ?>" alt="image"> </a>
+				<a href="<?php echo $this->createDownloadUrl('CourseCompletionCertificate.pdf'); ?>" target="_blank"><img src="<?php echo $this->getImagesUrl('msml/ArtworkCertificate.png'); ?>" alt="image"> </a>
 				<h4>{t}Evaluation (optional){/t}</h4>
 				<p>{t}Please complete the Post-Course Evaluation. It is accessible via the course page, in the sidebar.{/t}</p>
 				<p>{t}Your feedback is greatly appreciated, and will help us to better serve family members in the future. We ask that you complete it before you exit the course. You do not have to include your name on the evaluation. It is completely confidential.{/t}</p>

@@ -86,7 +86,7 @@ alert("Coming Soon!");
 		?>
 	</ul>
 	<h5>{t}Course Agenda{/t}</h5>
-	<a href="<?php echo $this->getImagesUrl('care/CARECoachingSyllabus.pdf'); ?>" target="_blank"><img src="<?php echo $this->getImagesUrl('care/pdf-icon.png'); ?>" alt="{t}Course Syllabus{/t}" /> </a> <br />
+	<a href="<?php echo $this->createDownloadUrl('carecoachingonline/CARECoachingSyllabus.pdf'); ?>" target="_blank"><img src="<?php echo $this->getImagesUrl('care/pdf-icon.png'); ?>" alt="{t}Course Syllabus{/t}" /> </a> <br />
 	<h4>{t}Course Modules{/t}</h4>
 
 	<!-- Bullet points start here for course lessons, hyperlinks to FancyBox -->
@@ -332,7 +332,7 @@ AARP provides various articles of interest and resources for family caregivers. 
 				<h2 class="flowers">{t}Activity – Self-Awareness Survey{/t}</h2>
 				<hr />
 				<p>
-					<a href="<?php echo $this->getImagesUrl('CCOAssets/ActivitySelfAwarenessSurvey.pdf'); ?>" target="_blank"><img src="<?php echo $this->getImagesUrl('pdf-icon.png'); ?>" alt="image" class="normal" /> </a>{t}This activity invites you to explore and live several questions. Your responses should open up more self-awareness of what is important to you in your life.{/t}
+					<a href="<?php echo $this->createDownloadUrl('carecoachingonline/ActivitySelfAwarenessSurvey.pdf'); ?>" target="_blank"><img src="<?php echo $this->getImagesUrl('pdf-icon.png'); ?>" alt="image" class="normal" /> </a>{t}This activity invites you to explore and live several questions. Your responses should open up more self-awareness of what is important to you in your life.{/t}
 				</p>
 			</div>
 			<div class="buttons">
@@ -408,7 +408,7 @@ AARP provides various articles of interest and resources for family caregivers. 
 				<h2 class="flowers">{t}Activity – Principles of Success{/t}</h2>
 				<hr />
 				<p>
-					<a href="<?php echo $this->getImagesUrl('CCOAssets/ActivityPrinciplesofSuccess.xls'); ?>" target="_blank"><img src="<?php echo $this->getImagesUrl('spreadsheet.png'); ?>" alt="image" class="normal" /> </a> {t}This activity focuses on assessing your awareness of ten principles of success and your rating of how you presently live according to them.{/t}
+					<a href="<?php echo $this->createDownloadUrl('carecoachingonline/ActivityPrinciplesofSuccess.xls'); ?>" target="_blank"><img src="<?php echo $this->getImagesUrl('spreadsheet.png'); ?>" alt="image" class="normal" /> </a> {t}This activity focuses on assessing your awareness of ten principles of success and your rating of how you presently live according to them.{/t}
 				</p>
 			</div>
 			<div class="buttons">
@@ -668,7 +668,7 @@ AARP provides various articles of interest and resources for family caregivers. 
 				<h2 class="flowers">{t}CARE Coaching: Communicating (continued){/t}</h2>
 				<hr />
 				<p>
-					<a href="<?php echo $this->getImagesUrl('CCOAssets/CaregiverBurdenAssessmentTool.pdf'); ?>" target="_blank"><img src="<?php echo $this->getImagesUrl('pdf-icon.png'); ?>" alt="image" class="normal" /> </a> {t}We have developed a Caregiver Burden Assessment to help you identify aspects of your life that may or may not be impacted by caregiving at this time. Click on the icon to access the <b>Caregiver Burden Assessment</b> tool.{/t}
+					<a href="<?php echo $this->createDownloadUrl('carecoachingonline/CaregiverBurdenAssessmentTool.pdf'); ?>" target="_blank"><img src="<?php echo $this->getImagesUrl('pdf-icon.png'); ?>" alt="image" class="normal" /> </a> {t}We have developed a Caregiver Burden Assessment to help you identify aspects of your life that may or may not be impacted by caregiving at this time. Click on the icon to access the <b>Caregiver Burden Assessment</b> tool.{/t}
 				</p>
 				<p>
 					{t}<i>Confusion</i> about the healthcare system and utilization of those services by older adults is a universal experience for caregivers. Later in this course, we will address important ways for you to better understand the key roles and responsibilities of care providers as well as where concise, accurate information may be found to also share with your older parents.{/t}
@@ -767,7 +767,7 @@ AARP provides various articles of interest and resources for family caregivers. 
 				<h2 class="flowers">{t}Activity - Practice "The Talk"{/t}</h2>
 				<hr />
 				<p>
-					<a href="<?php echo $this->getImagesUrl('CCOAssets/ActivityPracticetheTalk.pdf'); ?>" target="_blank"><img src="<?php echo $this->getImagesUrl('pdf-icon.png'); ?>" alt="image" class="normal" /> </a> {t}Some caregivers feel that practice sessions are valuable to "test out" the conversations in other situations. Here are some practice activities for you to try out.{/t}
+					<a href="<?php echo $this->createDownloadUrl('carecoachingonline/ActivityPracticetheTalk.pdf'); ?>" target="_blank"><img src="<?php echo $this->getImagesUrl('pdf-icon.png'); ?>" alt="image" class="normal" /> </a> {t}Some caregivers feel that practice sessions are valuable to "test out" the conversations in other situations. Here are some practice activities for you to try out.{/t}
 				</p>
 			</div>
 			<div class="buttons">
@@ -929,7 +929,7 @@ AARP provides various articles of interest and resources for family caregivers. 
 			<div class="content">
 				<h2 class="flowers">{t}Types of PHRs{/t}</h2>
 				<hr />
-				<a href="<?php echo $this->getImagesUrl('CARECoachingOnlineImages/PHRForm.pdf'); ?>" target="_blank"><img src="<?php echo $this->getImagesUrl('pdf-icon.png'); ?>" alt="image" width="48" height="48" class="normal" /> </a>
+				<a href="<?php echo $this->createDownloadUrl('carecoachingonline/PHRForm.pdf'); ?>" target="_blank"><img src="<?php echo $this->getImagesUrl('pdf-icon.png'); ?>" alt="image" width="48" height="48" class="normal" /> </a>
 				<p>
 					<a href="http://www.ahima.org/" target="_blank">The American Health Information Management Association (AHIMA)</a> {t}created a PHR form that is downloadable here.{/t}
 				</p>
@@ -1043,7 +1043,7 @@ AARP provides various articles of interest and resources for family caregivers. 
 			<div class="content">
 				<h2 class="flowers">{t}Exercise – CARE Coaching and Selecting PHRs{/t}</h2>
 				<hr />
-				<a href="<?php echo $this->getImagesUrl('CCOAssets/ExerciseCARECoachingandSelectingPHRs.pdf'); ?>" target="_blank"><img src="<?php echo $this->getImagesUrl('pdf-icon.png'); ?>" alt="image" class="normal" /> </a>
+				<a href="<?php echo $this->createDownloadUrl('carecoachingonline/ExerciseCARECoachingandSelectingPHRs.pdf'); ?>" target="_blank"><img src="<?php echo $this->getImagesUrl('pdf-icon.png'); ?>" alt="image" class="normal" /> </a>
 				<p>{t}Asking the right questions is key to determine which PHR product is right for you and your family. This exercise is designed to help you determine exactly that. Review the previously described Internet-based tools, My Family Health Profile and ProfileMD, and respond to the following questions.{/t}</p>
 			</div>
 			<div class="buttons">
@@ -1187,7 +1187,7 @@ AARP provides various articles of interest and resources for family caregivers. 
 				<p>{t}A “PowerPhrase” is a short, specific expression that gets results by saying what it means and meaning what it says (without being mean!). By planning specific phrases to use prior to an appointment, the results can be much more favorable to the patient.{/t}</p>
 				<p>{t}Let’s do an exercise to see your current “PowerPhrase” skill level. Click on the following icon to take a quick survey.{/t}</p>
 				<p>
-					<a href="<?php echo $this->getImagesUrl('CCOAssets/ExercisePowerPhraseSurvey.pdf'); ?>" target="_blank"><img src="<?php echo $this->getImagesUrl('pdf-icon.png'); ?>" alt="image" width="48" height="48" class="normal" /> </a> {t}PowerPhrase Survey{/t}
+					<a href="<?php echo $this->createDownloadUrl('carecoachingonline/ExercisePowerPhraseSurvey.pdf'); ?>" target="_blank"><img src="<?php echo $this->getImagesUrl('pdf-icon.png'); ?>" alt="image" width="48" height="48" class="normal" /> </a> {t}PowerPhrase Survey{/t}
 				</p>
 				<br /> <br />
 			</div>
@@ -1261,7 +1261,7 @@ AARP provides various articles of interest and resources for family caregivers. 
 					{t}<i>Self-Coaching Hint</i>: Be assertive but not aggressive in communicating with your parent’s doctors. Most doctors and other health care professionals today want to ask questions and be asked about health care issues by their patients.{/t}
 				</p>
 				<p>
-					<a href="<?php echo $this->getImagesUrl('CCOAssets/ActivityPracticingPowerPhraseswithYourHealthProvide.pdf'); ?>" target="_blank"><img src="<?php echo $this->getImagesUrl('pdf-icon.png'); ?>" alt="image" width="48" height="48" class="normal" /> </a> {t}Click the icon to access the activity.{/t}
+					<a href="<?php echo $this->createDownloadUrl('carecoachingonline/ActivityPracticingPowerPhraseswithYourHealthProvide.pdf'); ?>" target="_blank"><img src="<?php echo $this->getImagesUrl('pdf-icon.png'); ?>" alt="image" width="48" height="48" class="normal" /> </a> {t}Click the icon to access the activity.{/t}
 				</p>
 				<br /> <br />
 			</div>
@@ -1279,7 +1279,7 @@ AARP provides various articles of interest and resources for family caregivers. 
 				<p>{t}Learning What You Need to Know About the Health Care System{/t}</p>
 				<p>{t}Learning what you need to know about the health care system can seem a daunting task. We break down some of the core components that are key for you to understand as caregivers for older parents. This information is not meant to be comprehensive, but provides you a starting point to better understand the complexities that are today’s health care system.{/t}</p>
 				<p>
-					<a href="<?php echo $this->getImagesUrl('CCOAssets/Lesson4Handouts.zip'); ?>" target="_blank"><img src="<?php echo $this->getImagesUrl('pdf-icon.png'); ?>" alt="image" width="48" height="48" class="normal" /> </a> {t}Click the icon below to access the following handouts: <i>People, Places, Things and More Things</i>{/t}
+					<a href="<?php echo $this->createDownloadUrl('carecoachingonline/Lesson4Handouts.zip'); ?>" target="_blank"><img src="<?php echo $this->getImagesUrl('pdf-icon.png'); ?>" alt="image" width="48" height="48" class="normal" /> </a> {t}Click the icon below to access the following handouts: <i>People, Places, Things and More Things</i>{/t}
 				</p>
 				<br /> <br />
 			</div>
@@ -1395,7 +1395,7 @@ AARP provides various articles of interest and resources for family caregivers. 
 				<h2 class="flowers">{t}Activity – Relocating Scenarios{/t}</h2>
 				<hr />
 				<p>
-					<a href="<?php echo $this->getImagesUrl('CCOAssets/ActivityRelocatingScenarios.pdf'); ?>" target="_blank"><img src="<?php echo $this->getImagesUrl('pdf-icon.png'); ?>" alt="image" class="normal" /> </a> {t}How can I convince my older parents to move to a retirement community? Here are two scenarios for you to respond to.{/t}
+					<a href="<?php echo $this->createDownloadUrl('carecoachingonline/ActivityRelocatingScenarios.pdf'); ?>" target="_blank"><img src="<?php echo $this->getImagesUrl('pdf-icon.png'); ?>" alt="image" class="normal" /> </a> {t}How can I convince my older parents to move to a retirement community? Here are two scenarios for you to respond to.{/t}
 				</p>
 				<br /> <br />
 			</div>
@@ -1482,7 +1482,7 @@ AARP provides various articles of interest and resources for family caregivers. 
 				<hr />
 				<p>{t}To understand more about assisted living – levels of care, caring for loved ones with dementia, how to pay for one, and how to evaluate one – search the Web and download the “ Gilbert Buide - Assisted Living Evaluation and Moving Kit.”{/t}</p>
 				<h5>
-					<a href="<?php echo $this->getImagesUrl('CCOAssets/GilbertGuideALToolkit.pdf'); ?>" target="_blank"><img src="<?php echo $this->getImagesUrl('pdf-icon.png'); ?>" alt="image" class="normal" /> </a>{t}Download Gilbert Guide – Assisted Living Evaluation and Moving Kit{/t}
+					<a href="<?php echo $this->createDownloadUrl('carecoachingonline/GilbertGuideALToolkit.pdf'); ?>" target="_blank"><img src="<?php echo $this->getImagesUrl('pdf-icon.png'); ?>" alt="image" class="normal" /> </a>{t}Download Gilbert Guide – Assisted Living Evaluation and Moving Kit{/t}
 				</h5>
 				<p>{t}Watch the following brief video to learn more about assisted living.{/t}</p>
 				<h5>{t}Video – Learn about Assisted Living{/t}</h5>
@@ -1512,7 +1512,7 @@ AARP provides various articles of interest and resources for family caregivers. 
 				</ul>
 				<p>{t}“Retirement living” is changing with a greater emphasis on wellness and quality of life for residents. The next generations of older adults are redefining what they are looking for in the next phase of their lives. Read about some of these changes happening in some Tucson area senior living communities.{/t}</p>
 				<h5>
-					<a href="<?php echo $this->getImagesUrl('CCOAssets/RetirementRedefinedArticle.pdf'); ?>" target="_blank"><img src="<?php echo $this->getImagesUrl('pdf-icon.png'); ?>" alt="image" class="normal" /> </a>{t}Retirement Redefined{/t}
+					<a href="<?php echo $this->createDownloadUrl('carecoachingonline/RetirementRedefinedArticle.pdf'); ?>" target="_blank"><img src="<?php echo $this->getImagesUrl('pdf-icon.png'); ?>" alt="image" class="normal" /> </a>{t}Retirement Redefined{/t}
 				</h5>
 				<p>
 					{t}Requirements for applicants and payment options vary considerably for CCRCs. Within the current housing market, many CCRCs are offering payment plan options or assistance to older couples who may need to sell their current home prior to moving to the new community. Many CCRCs offer what is termed “life care contracting.” Life care communities provide the same continuum of care to a resident for life, but the biggest difference is this: <b>residents who become financially unable to pay their monthly care fees are subsidized by the community, with the same access to services, and with no interruption in care or change in priority status</b>. In other words, residents are guaranteed the same quality of care and access to care from day one through end-of-life, regardless of their personal financial situation. Additionally, most life care communities offer all health care services on the same campus. The idea is that, after qualifying through a health and financial application
@@ -1520,7 +1520,7 @@ AARP provides various articles of interest and resources for family caregivers. 
 				</p>
 				<p>{t}The following guide provides more information about types of contracts common to CCRCs. Because there are various across states in terms of these contracts, it is important that you also investigate your state’s requirements.{/t}</p>
 				<h5>
-					<a href="<?php echo $this->getImagesUrl('CCOAssets/GilbertGuideILTookit.pdf'); ?>" target="_blank"><img src="<?php echo $this->getImagesUrl('pdf-icon.png'); ?>" alt="image" class="normal" /> </a>{t}Download Gilbert Guide – Independent Living &amp; CCRC Evaluation Kit{/t}
+					<a href="<?php echo $this->createDownloadUrl('carecoachingonline/GilbertGuideILTookit.pdf'); ?>" target="_blank"><img src="<?php echo $this->getImagesUrl('pdf-icon.png'); ?>" alt="image" class="normal" /> </a>{t}Download Gilbert Guide – Independent Living &amp; CCRC Evaluation Kit{/t}
 				</h5>
 				<br /> <br />
 			</div>
@@ -1569,7 +1569,7 @@ AARP provides various articles of interest and resources for family caregivers. 
 				<hr />
 				<p>{t}The best way to understand senior living communities is to actually visit one in your area. Because many adult children visit senior living communities prior to having their older parents come for a tour, many senior living communities are very welcoming to adult children.{/t}</p>
 				<p>
-					<a href="<?php echo $this->getImagesUrl('CCOAssets/ExerciseVisitingaSeniorLivingCommunity.pdf'); ?>" target="_blank"><img class="normal" src="<?php echo $this->getImagesUrl('pdf-icon.png'); ?>" alt="image" /> </a> {t}Click on the icon to access the activity: Visiting a Senior Living Community{/t}
+					<a href="<?php echo $this->createDownloadUrl('carecoachingonline/ExerciseVisitingaSeniorLivingCommunity.pdf'); ?>" target="_blank"><img class="normal" src="<?php echo $this->getImagesUrl('pdf-icon.png'); ?>" alt="image" /> </a> {t}Click on the icon to access the activity: Visiting a Senior Living Community{/t}
 				</p>
 			</div>
 			<div class="buttons">
@@ -1611,7 +1611,7 @@ AARP provides various articles of interest and resources for family caregivers. 
 				<hr />
 				<p>{t}Read the following scenario and then respond to the CARE coaching questions. We provide some initial “openers” for CARE coaching questions for you to more fully develop your own questions.{/t}</p>
 				<p>
-					<a href="<?php echo $this->getImagesUrl('CCOAssets/ActivityCARECoachingthroughLongDistanceCaregiving.pdf'); ?>" target="_blank"><img src="<?php echo $this->getImagesUrl('pdf-icon.png'); ?>" alt="image" class="normal" /> </a>{t}CARE Coaching through Long Distance Caregiving{/t}
+					<a href="<?php echo $this->createDownloadUrl('carecoachingonline/ActivityCARECoachingthroughLongDistanceCaregiving.pdf'); ?>" target="_blank"><img src="<?php echo $this->getImagesUrl('pdf-icon.png'); ?>" alt="image" class="normal" /> </a>{t}CARE Coaching through Long Distance Caregiving{/t}
 				</p>
 			</div>
 			<div class="buttons">
@@ -1837,7 +1837,7 @@ AARP provides various articles of interest and resources for family caregivers. 
 					<hr />
 					<p>{t}During your next visit, use your powers of observation to note changes in the following areas. You may want to make mental notes and then jot down some of your observations privately. We have included some general questions to get you started. In this activity, you will add some of your own specific questions that you may want to assess during your visit.{/t}</p>
 					<p>
-						<a href="<?php echo $this->getImagesUrl('CCOAssets/ActivityUsingYourPowersofObservation.pdf'); ?>" target="_blank"><img src="<?php echo $this->getImagesUrl('pdf-icon.png'); ?>" alt="image" class="normal" /> </a>{t}Click on the icon to access the activity - Using Your Powers of Observation.{/t}
+						<a href="<?php echo $this->createDownloadUrl('carecoachingonline/ActivityUsingYourPowersofObservation.pdf'); ?>" target="_blank"><img src="<?php echo $this->getImagesUrl('pdf-icon.png'); ?>" alt="image" class="normal" /> </a>{t}Click on the icon to access the activity - Using Your Powers of Observation.{/t}
 					</p>
 				</div>
 				<div class="buttons">
@@ -2041,10 +2041,10 @@ AARP provides various articles of interest and resources for family caregivers. 
 						{t}<a href="http://www.homemods.org/resources/doable-home/index.shtml" target="_blank"><b>The Do Able Renewable Home</b> </a>. This booklet is designed to help overcome problems experienced in the home as one grows older. Content was developed in collaboration with gerontologists to make the home more livable.{/t}
 					</p>
 					<p>
-						<a href="<?php echo $this->getImagesUrl('CCOAssets/LightingInTheHome.pdf'); ?>" target="_blank"><img src="<?php echo $this->getImagesUrl('pdf-icon.png'); ?>" alt="image" class="normal" /> </a>{t}<b>Lighting the Way: A Key to Independence</b>. This resource provides a number of recommendations to help older adults see better. From home lighting to doing small tasks, many suggestions can easily be implemented with simple modifications.{/t}
+						<a href="<?php echo $this->createDownloadUrl('carecoachingonline/LightingInTheHome.pdf'); ?>" target="_blank"><img src="<?php echo $this->getImagesUrl('pdf-icon.png'); ?>" alt="image" class="normal" /> </a>{t}<b>Lighting the Way: A Key to Independence</b>. This resource provides a number of recommendations to help older adults see better. From home lighting to doing small tasks, many suggestions can easily be implemented with simple modifications.{/t}
 					</p>
 					<p>
-						<a href="<?php echo $this->getImagesUrl('CCOAssets/HomeSafetyChecklist.pdf'); ?>" target="_blank"><img src="<?php echo $this->getImagesUrl('pdf-icon.png'); ?>" alt="image" class="normal" /> </a>{t}<b>Home Safety Checklist</b>. This is a simple checklist that you can use when visiting your older parents to assess safety issues in their home environment.{/t}
+						<a href="<?php echo $this->createDownloadUrl('carecoachingonline/HomeSafetyChecklist.pdf'); ?>" target="_blank"><img src="<?php echo $this->getImagesUrl('pdf-icon.png'); ?>" alt="image" class="normal" /> </a>{t}<b>Home Safety Checklist</b>. This is a simple checklist that you can use when visiting your older parents to assess safety issues in their home environment.{/t}
 					</p>
 					<br /> <br />
 				</div>
@@ -2088,7 +2088,7 @@ AARP provides various articles of interest and resources for family caregivers. 
 					<hr />
 					<p>{t}This exercise provides an opportunity for you and your family to consider key questions to explore potential for having older parents move in with you. You may not be thinking about this at the present time, but you may have other family members or friends considering various options and so this may be helpful to them as well. These questions can serve as a guide for discussions with your family. As you read through each section, we include some CARE Coaching questions to bring out your best thinking about what would be important to you.{/t}</p>
 					<p>
-						<a href="<?php echo $this->getImagesUrl('CCOAssets/ExerciseAssessingtheSituation.pdf'); ?>" target="_blank"><img src="<?php echo $this->getImagesUrl('pdf-icon.png'); ?>" alt="image" class="normal" /> </a>{t}Click on the icon to access the activity - Assessing the Situation.{/t}
+						<a href="<?php echo $this->createDownloadUrl('carecoachingonline/ExerciseAssessingtheSituation.pdf'); ?>" target="_blank"><img src="<?php echo $this->getImagesUrl('pdf-icon.png'); ?>" alt="image" class="normal" /> </a>{t}Click on the icon to access the activity - Assessing the Situation.{/t}
 					</p>
 					<br /> <br />
 				</div>
@@ -2194,7 +2194,7 @@ AARP provides various articles of interest and resources for family caregivers. 
 					</ul>
 					<p class="subtopic">{t}Resources{/t}</p>
 					<p>
-						<a href="<?php echo $this->getImagesUrl('CCOAssets/DriverSelfAssessment.pdf'); ?>" target="_blank"><img class="normal" src="<?php echo $this->getImagesUrl('pdf-icon.png'); ?>" alt="" /> </a><b>{t}Driver Self-Assessment{/t}</b><br /> {t}Here is a self-assessment for older adults from ElderSafety.org to help them identify what should be noticed regarding aging changes that may impact their ability to drive safely.{/t}
+						<a href="<?php echo $this->createDownloadUrl('carecoachingonline/DriverSelfAssessment.pdf'); ?>" target="_blank"><img class="normal" src="<?php echo $this->getImagesUrl('pdf-icon.png'); ?>" alt="" /> </a><b>{t}Driver Self-Assessment{/t}</b><br /> {t}Here is a self-assessment for older adults from ElderSafety.org to help them identify what should be noticed regarding aging changes that may impact their ability to drive safely.{/t}
 					</p>
 					<p>
 						<a href="http://www.usatoday.com/life/graphics/elderly_drivers_popup/flash.htm" target="_blank"><b>{t}How Age Affects the Ability to Drive{/t}</b> </a><br /> {t}This interactive guide from USA Today provides visual descriptions of changes that occur during normal aging that may impact one’s ability in driving.{/t}
@@ -2260,7 +2260,7 @@ AARP provides various articles of interest and resources for family caregivers. 
 					</ul>
 					<p class="subtopic">{t}Resources{/t}</p>
 					<p>
-						<a href="<?php echo $this->getImagesUrl('CCOAssets/WarningSignsOlderDrivers.pdf'); ?>" target="_blank"><img class="normal" src="<?php echo $this->getImagesUrl('pdf-icon.png'); ?>" alt="" /> </a> <b>{t}Warning Signs for Older Drivers{/t}</b><br /> {t}This checklist is for families to track potential warning signs for older drivers so that patterns may be identified early on.{/t}
+						<a href="<?php echo $this->createDownloadUrl('carecoachingonline/WarningSignsOlderDrivers.pdf'); ?>" target="_blank"><img class="normal" src="<?php echo $this->getImagesUrl('pdf-icon.png'); ?>" alt="" /> </a> <b>{t}Warning Signs for Older Drivers{/t}</b><br /> {t}This checklist is for families to track potential warning signs for older drivers so that patterns may be identified early on.{/t}
 					</p>
 					<br /> <br />
 				</div>
@@ -2499,7 +2499,7 @@ AARP provides various articles of interest and resources for family caregivers. 
 				<p>{t}Throughout this course, you have had several opportunities to gain more understanding regarding your older parents’ needs and preferences. Every caregiving situation is unique. Many factors come into play when considering the best possible solutions about your parents and their future. These factors may include: your parents’ health and functional abilities, mobility, values and beliefs, and family and community support systems.{/t}</p>
 				<p>{t}In this exercise, we provide several questions for you to use as a framework to “interview” your parents regarding their choices and preferences for their future. This exercise is broken into two parts. Please complete all of Part 1 before moving onto Part 2.{/t}</p>
 				<p>
-					<a href="<?php echo $this->getImagesUrl('CCOAssets/ExerciseIdentifyingSolutionstoSupportChoiceandPreferences.pdf'); ?>" target="_blank"><img class="normal" width="48" height="48" src="<?php echo $this->getImagesUrl('pdf-icon.png'); ?>"> </a> <b>{t}Click the icon to access the Exercise – Identifying Solutions to Support Choice and Preferences{/t}</b>
+					<a href="<?php echo $this->createDownloadUrl('carecoachingonline/ExerciseIdentifyingSolutionstoSupportChoiceandPreferences.pdf'); ?>" target="_blank"><img class="normal" width="48" height="48" src="<?php echo $this->getImagesUrl('pdf-icon.png'); ?>"> </a> <b>{t}Click the icon to access the Exercise – Identifying Solutions to Support Choice and Preferences{/t}</b>
 				</p>
 			</div>
 			<div class="buttons">
@@ -2575,7 +2575,7 @@ AARP provides various articles of interest and resources for family caregivers. 
 				<hr />
 				<p>{t}The American Psychological Association offers several strategies to help those in the “sandwich generation” manage their stress. In Section 1, we address the power of journaling as a self-coaching exercise to help create positive self-talk. In managing stress, journaling can also be a very effective tool to help identify what situations or events trigger stressful feelings, how you deal (or don’t deal) with stress, and how you may manage stress.{/t}</p>
 				<p>
-					<a href="<?php echo $this->getImagesUrl('CCOAssets/ActivityWaystoManageYourOwnStress.pdf'); ?>" target="_blank"><img class="normal" width="48" height="48" src="<?php echo $this->getImagesUrl('pdf-icon.png'); ?>" /> </a> <b>{t}Click the icon to access the Activity{/t}</b>
+					<a href="<?php echo $this->createDownloadUrl('carecoachingonline/ActivityWaystoManageYourOwnStress.pdf'); ?>" target="_blank"><img class="normal" width="48" height="48" src="<?php echo $this->getImagesUrl('pdf-icon.png'); ?>" /> </a> <b>{t}Click the icon to access the Activity{/t}</b>
 				</p>
 			</div>
 			<div class="buttons">
@@ -2597,7 +2597,7 @@ AARP provides various articles of interest and resources for family caregivers. 
 
 				<h4>{t}Certificate of Completion{/t}</h4>
 				<p>{t}Thank you for your participation! Now that you have completed this online course, you can now download your custom Certificate of Completion. Once accessed, type your name, date, and online course title into the form-fillable certificate.{/t}</p>
-				<a href="<?php echo $this->getImagesUrl('CourseCompletionCertificate.pdf'); ?>" target="_blank"><img class="normal" src="<?php echo $this->getImagesUrl('ArtworkCertificate.png'); ?>" alt="{t}Certificate{/t}" /> </a>
+				<a href="<?php echo $this->createDownloadUrl('CourseCompletionCertificate.pdf'); ?>" target="_blank"><img class="normal" src="<?php echo $this->getImagesUrl('ArtworkCertificate.png'); ?>" alt="{t}Certificate{/t}" /> </a>
 				<p>{t}Again, thank you for participating in this online course. Please take a moment to complete the Post-Course Evaluation; accessible via the Profile Page.{/t}</p>
 				<br /> <br />
 			</div>

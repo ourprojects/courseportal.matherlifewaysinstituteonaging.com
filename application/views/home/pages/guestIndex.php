@@ -176,13 +176,13 @@ $this->widget(
 				array(
 						'id' => 'MatherCaregivers',
 						'config' => array(
-								'image' => $this->createUrl('download').'/videos/MatherCaregivers/poster.jpg',
+								'image' => $this->createDownloadUrl('videos/MatherCaregivers/poster.jpg'),
 								'width' => '540px',
 								'height' => '305px',
 								'levels' => array(
-										array('file' => $this->createUrl('download').'/videos/MatherCaregivers/video.m4v'),
-										array('file' => $this->createUrl('download').'/videos/MatherCaregivers/video.webm'),
-										array('file' => $this->createUrl('download').'/videos/MatherCaregivers/video.ogv')
+										array('file' => $this->createDownloadUrl('videos/MatherCaregivers/video.m4v')),
+										array('file' => $this->createDownloadUrl('videos/MatherCaregivers/video.webm')),
+										array('file' => $this->createDownloadUrl('videos/MatherCaregivers/video.ogv'))
 								)
 						)
 				)
@@ -429,7 +429,7 @@ NY: Metropolitan Life Insurance Company.
 			<p>{t}Additionally, the good news is that research shows that providing support, ranging from simple information and referral to the more substantial, such as counseling, respite care, education and training to caregivers, can reduce the negative health and work-related effects of caregiving and improve overall wellbeing.{/t}</p>
 			<h4>{t}Certificate of Completion{/t}</h4>
 			<p>{t}Upon successful completion ( participation in all of the available course lessons) of each online course, you will have the opportunity to download your custom Certificate of Completion. Once accessed, you will be able to type your name and date into the form-fillable certificate.{/t}</p>
-			<a href="<?php echo $this->getImagesUrl('tutorial/CourseCompletionCertificate.pdf'); ?>" target="_blank"><img class="normal" src="<?php echo $this->getImagesUrl('tutorial/ArtworkCertificate.png'); ?>" alt="{t}Certificate{/t}" /> </a>
+			<a href="<?php echo $this->createDownloadUrl('files/CourseCompletionCertificate.pdf'); ?>" target="_blank"><img class="normal" src="<?php echo $this->getImagesUrl('tutorial/ArtworkCertificate.png'); ?>" alt="{t}Certificate{/t}" /> </a>
 		</div>
 		<div class="buttons">
 			<a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}End Tutorial{/t} </a>

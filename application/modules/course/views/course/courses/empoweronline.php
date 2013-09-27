@@ -1020,7 +1020,7 @@ alert("Coming Soon!");
 				<p>{t}Consider what is likely to happen to the caregiver who is driven by a goal to make her mother happy. Given her mother's personality, this goal may be completely unachievable. Such a goal creates a heavy burden and a caregiver is not likely to achieve it. However, an achievable goal might be to provide a pleasurable activity for her mother at least once a week perhaps taking her to get her hair done, visiting a friend, watching a comedy on television, or working together on a project her mother enjoys.{/t}</p>
 				<p>{t}Remember, what is important in caregiving is not just to survive, but to thrive!{/t}</p>
 				<p style="text-align: center;">
-					<a href="<?php echo $this->getImagesUrl('empower/ActionPlanTemplate.pdf'); ?>" target="_blank">{t}Action Plan Template{/t} </a>
+					<a href="<?php echo $this->createDownloadUrl('empoweronline/ActionPlanTemplate.pdf'); ?>" target="_blank">{t}Action Plan Template{/t} </a>
 				</p>
 
 				<!--
@@ -3500,7 +3500,7 @@ HTML Output:
 				<h4>{t}Thank You!{/t}</h4>
 				<p>{t}We have really enjoyed getting to know you. Best wishes as you carry on in the future!{/t}</p>
 				<h4 style="text-align: center;">{t}Certificates of Completion{/t}</h4>
-				<a href="<?php echo $this->getImagesUrl('empower/CourseCompletionCertificate.pdf'); ?>" target="_blank"><img src="<?php echo $this->getImagesUrl('msml/ArtworkCertificate.png'); ?>" alt="image"> </a>
+				<a href="<?php echo $this->createDownloadUrl('CourseCompletionCertificate.pdf'); ?>" target="_blank"><img src="<?php echo $this->getImagesUrl('msml/ArtworkCertificate.png'); ?>" alt="image"> </a>
 				<h4>{t}Evaluation (optional){/t}</h4>
 				<p>{t}Please complete the Post-Course Evaluation. It is accessible via the course page, in the sidebar.{/t}</p>
 				<p>{t}Your feedback is greatly appreciated, and will help us to better serve family members in the future. We ask that you complete it before you exit the course. You do not have to include your name on the evaluation. It is completely confidential.{/t}</p>

@@ -73,14 +73,14 @@ $clientScript->registerCssFile($this->getStylesUrl('homeUser.css'));
 					array(
 						'id' => 'TheSandwichGeneration',
 						'config' => array(
-							'image' => $this->createUrl('download').'/videos/TheSandwichGeneration/poster.jpg',
+							'image' => $this->createDownloadUrl('videos/TheSandwichGeneration/poster.jpg'),
 							'width' => '540px',
 							'height' => '400px',
 							'levels' => array(
-					            array('file' => $this->createUrl('download').'/videos/TheSandwichGeneration/video.m4v'),
-					            array('file' => $this->createUrl('download').'/videos/TheSandwichGeneration/video.webm'),
-					            array('file' => $this->createUrl('download').'/videos/TheSandwichGeneration/video.ogv')
-					        )
+								array('file' => $this->createDownloadUrl('videos/TheSandwichGeneration/video.m4v')),
+								array('file' => $this->createDownloadUrl('videos/TheSandwichGeneration/video.webm')),
+								array('file' => $this->createDownloadUrl('videos/TheSandwichGeneration/video.ogv'))
+							)
 						)
 					)
 			);

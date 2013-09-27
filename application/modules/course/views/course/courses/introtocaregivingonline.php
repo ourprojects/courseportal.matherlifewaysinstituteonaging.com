@@ -1207,7 +1207,7 @@ alert("Coming Soon!");
 				<img src="<?php echo $this->getImagesUrl('intro/160382234.png'); ?>" alt="{t}image{/t}">
 				<p>{t}We have really enjoyed getting to know you, and hope this course was helpful. Please post any final thoughts, questions, or concerns to the Forum before you close out this final module. Best wishes as you carry on in the future!{/t}</p>
 				<h4 style="text-align: center;">{t}Certificates of Completion{/t}</h4>
-				<a href="<?php echo $this->getImagesUrl('intro/CourseCompletionCertificate.pdf'); ?>" target="_blank"><img src="<?php echo $this->getImagesUrl('intro/ArtworkCertificate.png'); ?>" alt="image"> </a>
+				<a href="<?php echo $this->createDownloadUrl('CourseCompletionCertificate.pdf'); ?>" target="_blank"><img src="<?php echo $this->getImagesUrl('intro/ArtworkCertificate.png'); ?>" alt="image"> </a>
 				<h4>{t}Evaluation (optional){/t}</h4>
 				<p>{t}Please complete the Post-Course Evaluation. It is accessible via the course page, in the sidebar.{/t}</p>
 				<p>{t}Your feedback is greatly appreciated, and will help us to better serve family members in the future. We ask that you complete it before you exit the course. You do not have to include your name on the evaluation. It is completely confidential.{/t}</p>
