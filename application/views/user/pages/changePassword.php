@@ -3,5 +3,5 @@
 	<h1 class="bottom">{t}Lost your password?{/t}</h1>
 </div>
 <div id="single-column">
-<?php echo $this->renderPartial('forms/change_password_form', array('ChangePassword' => $ChangePassword)); ?>
+	<?php echo $this->renderPartial('forms/change_password_form', array('ChangePassword' => $ChangePassword)); ?>
 </div>

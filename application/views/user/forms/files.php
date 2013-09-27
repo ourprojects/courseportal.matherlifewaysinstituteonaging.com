@@ -8,15 +8,15 @@
 			));
 	?>
 
-		<div class="row">
-			<?php echo $form->labelEx($uploadFile, 'file'); ?>
-			<?php echo $form->fileField($uploadFile, 'file'); ?>
-			<?php echo $form->error($uploadFile, 'file'); ?>
-		</div>
-					
-		<div class="row submit">
-			<?php echo CHtml::submitButton(t('Upload')); ?>
-		</div>
+	<div class="row">
+		<?php echo $form->labelEx($uploadFile, 'file'); ?>
+		<?php echo $form->fileField($uploadFile, 'file'); ?>
+		<?php echo $form->error($uploadFile, 'file'); ?>
+	</div>
+
+	<div class="row submit">
+		<?php echo CHtml::submitButton(t('Upload')); ?>
+	</div>
 
 	<?php $this->endWidget();?>
 

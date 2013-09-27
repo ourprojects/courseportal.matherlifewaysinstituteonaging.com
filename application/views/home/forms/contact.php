@@ -2,10 +2,15 @@
 
 <div class="form">
 
-	<?php $form = $this->beginWidget('CActiveForm',
-			array('id' => 'contact-form',
-			'enableAjaxValidation' => true,
-			'enableClientValidation' => true)); ?>
+	<?php 
+	$form = $this->beginWidget('CActiveForm',
+			array(
+					'id' => 'contact-form',
+					'enableAjaxValidation' => true,
+					'enableClientValidation' => true
+			)
+	); 
+	?>
 
 	<p class="note">
 		<span class="required">*</span>{t}Required{/t}.

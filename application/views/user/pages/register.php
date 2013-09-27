@@ -31,6 +31,8 @@
 <div class="column-wide">
 	<h2 class="flowers">{t} Register {/t}</h2>
 	<p>{t}Complete the fields below to register. You will be sent a verification email to authenticate your email address.{/t}
+	
+	
 	<p class="bold">{t}Employees of IBM, Exxon Mobil, Merck and Mather LifeWays must register with their work email.{/t}</p>
 	<div class="box-white">
 		<?php echo $this->renderPartial('forms/register_form', $models); ?>

@@ -3,14 +3,14 @@
 			'id' => 'user-maintenance-form',
 			'enableAjaxValidation' => true,
 )); ?>
-	
+
 	<?php echo $form->errorSummary(array($UserNameEmail, $EReCaptchaForm)); ?>
 	<div class="row">
 		<?php echo $form->labelEx($UserNameEmail,'name_email'); ?>
 		<?php echo $form->textField($UserNameEmail,'name_email'); ?>
 		<?php echo $form->error($UserNameEmail,'name_email'); ?>
 	</div>
-	
+
 	<div class="row">
 		<?php 
 		echo $form->labelEx($EReCaptchaForm, 'captcha');

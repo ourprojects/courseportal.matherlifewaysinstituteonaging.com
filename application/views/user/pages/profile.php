@@ -24,7 +24,9 @@ $this->widget(
 		<p>{t}Our goal is to help better educate our participants by creating a feedback system and means to better understanding the shifting needs of the field.{/t}</p>
 		<ul id="surveys">
 			<?php foreach($surveys as $survey): ?>
-			<li><a id="survey_link_<?php echo $survey->getId(); ?>" href="#survey_<?php echo $survey->getId(); ?>" title="<?php echo t($survey->model->title); ?>"><?php echo t($survey->model->title); ?> </a> <?php $survey->run(); ?>
+			<li>
+				<a id="survey_link_<?php echo $survey->getId(); ?>" href="#survey_<?php echo $survey->getId(); ?>" title="<?php echo t($survey->model->title); ?>"><?php echo t($survey->model->title); ?> </a>
+				<?php $survey->run(); ?>
 			</li>
 			<?php endforeach; ?>
 		</ul>
@@ -57,7 +59,8 @@ $this->widget(
 		?>
 		<ul>
 			<?php foreach($agreements as $agreement): ?>
-			<li><a href="<?php echo $this->createUrl('/agreement/' . $agreement->id) ?>" target='_blank'><?php echo t($agreement->name); ?> </a>
+			<li>
+				<a href="<?php echo $this->createUrl('/agreement/' . $agreement->id) ?>" target='_blank'><?php echo t($agreement->name); ?> </a>
 			</li>
 			<?php endforeach; ?>
 		</ul>

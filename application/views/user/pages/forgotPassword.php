@@ -23,6 +23,6 @@
 		<?php echo $this->renderPartial('forms/username_form', $models); ?>
 	</div>
 	<p>
-		{t}Please click{/t} <strong><?php echo CHtml::link('{t}here{/t}', $this->createUrl('register')); ?></strong> {t}if you still need to register.{/t}
+		{t}Please click{/t} <strong><?php echo CHtml::link('{t}here{/t}', $this->createUrl('register')); ?> </strong> {t}if you still need to register.{/t}
 	</p>
 </div>
