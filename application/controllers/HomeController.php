@@ -11,20 +11,13 @@ class HomeController extends CoursePortalController
 					array('allow',
 							'actions' => array(
 									'userIndex',
-									'videos.TheSandwichGeneration.poster.jpg',
-									'videos.TheSandwichGeneration.video.m4v',
-									'videos.TheSandwichGeneration.video.ogv',
-									'videos.TheSandwichGeneration.video.webm'
+									'download',
 							),
 							'users' => array('@'),
 					),
 					array('deny',
 							'actions' => array(
 									'userIndex',
-									'videos.TheSandwichGeneration.poster.jpg',
-									'videos.TheSandwichGeneration.video.m4v',
-									'videos.TheSandwichGeneration.video.ogv',
-									'videos.TheSandwichGeneration.video.webm'
 							),
 							'users' => array('*'),
 					),
