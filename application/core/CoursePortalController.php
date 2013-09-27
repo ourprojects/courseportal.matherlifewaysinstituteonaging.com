@@ -123,5 +123,18 @@ abstract class CoursePortalController extends CController
 	{
 		return $this->getAssetsUrl() . '/images/' . $file;
 	}
+	
+	public function createDownloadUrl($filePath = '', $controller = null)
+	{
+		if($controller === null)
+		{
+			$controller = $this->getId();
+			for($module = $this->getModule(); $module !== null; $module = $module->getParentModule())
+			{
+				$controller = $module->getId().'/'.$controller;
+			}
+		}
+		return $this->createUrl('/'.trim($controller, '/').'/download/'.ltrim($filePath, '/'));
+	}
 
 }
