@@ -4,6 +4,7 @@ $this->widget('zii.widgets.grid.CGridView',
 				'id' => 'message-grid',
 				'filter' => $model,
 				'dataProvider' => $model->with(array('source', 'language'))->search(),
+				'selectableRows' => 0,
 				'columns' => array(
 						'id',
 						array(
@@ -11,7 +12,9 @@ $this->widget('zii.widgets.grid.CGridView',
 								'filter' => '',
 								'sortable' => false
 						),
-						'translation',
+						array(
+								'name' => 'translation',
+						),
 						array(
 								'class' => 'CButtonColumn',
 								'template' => '{update}{delete}',

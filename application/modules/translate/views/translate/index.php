@@ -47,7 +47,7 @@ Yii::app()->getClientScript()->registerCss($this->getId(), '#statistics th { tex
 			<a href="https://developers.google.com/translate/" target="_blank"><?php echo TranslateModule::t('Google Translate API - Login'); ?></a>
 		</p>
 		<p>
-			<img class="block center" src="<?php echo $this->getImagesUrl('googledeveloperslogo.png'); ?>" alt="Google Developers">
+			<img class="block center" src="<?php echo $this->getImagesUrl('googledeveloperslogo.png', $this->getId()); ?>" alt="Google Developers">
 		</p>
 		<p>
 			<?php echo TranslateModule::t('With Google Translate, you can dynamically translate text between thousands of language pairs. The Google Translate API lets websites and programs integrate with Google Translate programmatically. This Google Translate API widget is available as a paid service. See the sidebar for login instructions and access.'); ?>

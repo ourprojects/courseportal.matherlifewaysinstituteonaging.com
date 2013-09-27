@@ -28,20 +28,18 @@ $this->widget('zii.widgets.grid.CGridView',
 				'id' => $id,
 				'filter' => $model,
 				'dataProvider' => $model->with('categories')->search(),
+				'selectableRows' => 0,
 				'columns' => array(
 						array(
 								'name' => 'id',
-								'htmlOptions' => array('width' => '30'),
 						),
 						array(
 								'header' => TranslateModule::t('Categories'),
 								'type' => 'html',
 								'value' => 'implode("<br />", array_map(create_function(\'&$val\', \'return "<a href=\"".Yii::app()->getController()->createUrl("category/view", array("id" => $val->id))."\" title=\"".$val->category."\">".$val->category;\'), $data->categories))',
-								'htmlOptions' => array('width' => '150'),
 						),
 						array(
 								'name' => 'message',
-								'htmlOptions' => array('width' => '400'),
 						),
 						$buttonConfig
 				)

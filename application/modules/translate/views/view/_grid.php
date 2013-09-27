@@ -1,18 +1,16 @@
-<p class="word-wrap-break">
-	<?php echo TranslateModule::t("When possible the paths listed below will be shortened to show only the portion relative to the current application's base path - '{path}'.", array('{path}' => Yii::app()->getBasePath())); ?>
-</p>
 <?php
+Yii::app()->getClientScript()->registerCss('view-grid-table-width', 'div#view-grid table.items{min-width:100%;width:100%;max-width:100%;}');
 $this->widget('zii.widgets.grid.CGridView',
 		array(
 				'id' => 'view-grid',
 				'filter' => $model,
 				'dataProvider' => $model->with('language')->search(),
+				'selectableRows' => 0,
 				'columns' => array(
 						'id',
 						array(
-								'name' => 'relativePath',
-								'filter' => '',
-								'sortable' => false
+								'name' => 'path',
+								'htmlOptions' => array('style' => 'word-wrap:break-word;word-break:break-all;'),
 						),
 						array(
 								'name' => 'language',

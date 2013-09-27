@@ -9,7 +9,7 @@ class TController extends CController
 	 */
 	public $breadcrumbs = array();
 
-	private $_assetsUrl;
+	private $_assetsUrls = array();
 
 	/**
 	 * @return array action filters
@@ -45,31 +45,37 @@ class TController extends CController
 		return $actionParams;
 	}
 
-	public function getAssetsUrl()
+	public function getAssetsUrl($location = '_shared')
 	{
-		if($this->_assetsUrl === null) {
-			$assetsDir = Yii::getPathOfAlias('translate.assets.' . $this->getId());
+		if(!isset($this->_assetsUrls[$location])) 
+		{
+			$assetsDir = Yii::getPathOfAlias('translate.assets.'.$location);
+			
 			if(is_dir($assetsDir))
-				$this->_assetsUrl = Yii::app()->getAssetManager()->publish($assetsDir, false, -1, YII_DEBUG);
+			{
+				$this->_assetsUrls[$location] = Yii::app()->getAssetManager()->publish($assetsDir, false, -1, YII_DEBUG);
+			}
 			else
-				$this->_assetsUrl = Yii::app()->getTheme()->getBaseUrl();
+			{
+				$this->_assetsUrls[$location] = Yii::app()->getTheme()->getBaseUrl();
+			}
 		}
-		return $this->_assetsUrl;
+		return $this->_assetsUrls[$location];
 	}
 
-	public function getStylesUrl($file = '')
+	public function getStylesUrl($file = '', $location = '_shared')
 	{
-		return $this->getAssetsUrl() . '/styles/' . $file;
+		return $this->getAssetsUrl($location).'/styles/'.$file;
 	}
 
-	public function getScriptsUrl($file = '')
+	public function getScriptsUrl($file = '', $location = '_shared')
 	{
-		return $this->getAssetsUrl() . '/scripts/' . $file;
+		return $this->getAssetsUrl($location).'/scripts/'.$file;
 	}
 
-	public function getImagesUrl($file = '')
+	public function getImagesUrl($file = '', $location = '_shared')
 	{
-		return $this->getAssetsUrl() . '/images/' . $file;
+		return $this->getAssetsUrl($location).'/images/'.$file;
 	}
 
 }

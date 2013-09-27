@@ -6,46 +6,21 @@
 	<div id="details" class="box-white">
 		<?php $this->renderPartial('_details', array('model' => $viewSource)); ?>
 	</div>
-	<div id="categories" class="box-white">
-		<h2>
-			<?php echo TranslateModule::t('Message Categories'); ?>
-		</h2>
-		<hr />
-		<?php $this->actionGrid($viewSource->id, 'category-grid'); ?>
-	</div>
-	<div id="messageSources" class="box-white">
-		<h2>
-			<?php echo TranslateModule::t('Source Messages'); ?>
-		</h2>
-		<hr />
-		<?php $this->actionGrid($viewSource->id, 'messageSource-grid'); ?>
-	</div>
-	<div id="messages" class="box-white">
-		<h2>
-			<?php echo TranslateModule::t('Translated Messages'); ?>
-		</h2>
-		<hr />
-		<?php $this->actionGrid($viewSource->id, 'message-grid'); ?>
-	</div>
-	<div id="languages" class="box-white">
-		<h2>
-			<?php echo TranslateModule::t('Languages'); ?>
-		</h2>
-		<hr />
-		<?php $this->actionGrid($viewSource->id, 'language-grid'); ?>
-	</div>
-	<div id="routes" class="box-white">
-		<h2>
-			<?php echo TranslateModule::t('Routes'); ?>
-		</h2>
-		<hr />
-		<?php $this->actionGrid($viewSource->id, 'route-grid'); ?>
-	</div>
-	<div id="views" class="box-white">
-		<h2>
-			<?php echo TranslateModule::t('Translated Views'); ?>
-		</h2>
-		<hr />
-		<?php $this->actionGrid($viewSource->id, 'view-grid'); ?>
-	</div>
+	<?php 
+	$this->widget(
+			'zii.widgets.jui.CJuiTabs',
+			array(
+				'tabs' => array(
+						TranslateModule::t('Categories') => $this->internalActionGrid($viewSource->id, 'category-grid', true),
+						TranslateModule::t('Source Messages') => $this->internalActionGrid($viewSource->id, 'messageSource-grid', true),
+						TranslateModule::t('Translated Messages') => $this->internalActionGrid($viewSource->id, 'message-grid', true),
+						TranslateModule::t('Languages') => $this->internalActionGrid($viewSource->id, 'language-grid', true),
+						TranslateModule::t('Routes') => $this->internalActionGrid($viewSource->id, 'route-grid', true),
+						TranslateModule::t('Translated Views') => $this->internalActionGrid($viewSource->id, 'view-grid', true)
+				),
+				'headerTemplate' => '<li><a href="{url}" title="{title}">{title}</a></li>',
+				'id' => 'relatedDetails'
+			)
+	);
+	?>
 </div>

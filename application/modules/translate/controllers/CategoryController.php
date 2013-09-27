@@ -57,10 +57,10 @@ class CategoryController extends TController
 	
 	public function actionGrid($id, $name)
 	{
-		$this->_internalActionGrid($id, $name);
+		$this->internalActionGrid($id, $name);
 	}
 
-	protected function _internalActionGrid($id, $name, $return = false)
+	public function internalActionGrid($id, $name, $return = false)
 	{
 		switch($name)
 		{

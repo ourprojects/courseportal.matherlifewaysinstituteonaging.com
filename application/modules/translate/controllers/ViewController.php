@@ -61,8 +61,13 @@ class ViewController extends TController
 			$this->actionGrid($id, $languageId, $_GET['ajax']);
 		}
 	}
-
+	
 	public function actionGrid($id, $languageId, $name)
+	{
+		$this->internalActionGrid($id, $languageId, $name);
+	}
+
+	public function internalActionGrid($id, $languageId, $name, $return = false)
 	{
 		switch($name)
 		{
@@ -95,7 +100,7 @@ class ViewController extends TController
 			default:
 				return;
 		}
-		$this->renderPartial($gridPath, array('model' => $model));
+		return $this->renderPartial($gridPath, array('model' => $model), $return);
 	}
 
 	/**

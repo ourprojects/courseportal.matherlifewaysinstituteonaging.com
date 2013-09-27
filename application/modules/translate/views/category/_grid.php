@@ -1,12 +1,17 @@
 <?php
+Yii::app()->getClientScript()->registerCss('category-grid-table-width', 'div#category-grid table.items{min-width:100%;width:100%;max-width:100%;}');
 $this->widget('zii.widgets.grid.CGridView',
 		array(
 				'id' => 'category-grid',
 				'filter' => $model,
 				'dataProvider' => $model->search(),
+				'selectableRows' => 0,
 				'columns' => array(
 						'id',
-						'category',
+						array(
+								'name' => 'category',
+								'htmlOptions' => array('style' => 'word-wrap:break-word;word-break:break-all;'),
+						),
 						array(
 								'class' => 'CButtonColumn',
 								'template' => '{view}{delete}',

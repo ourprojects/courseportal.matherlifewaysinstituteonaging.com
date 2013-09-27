@@ -133,8 +133,13 @@ class MessageController extends TController
 			throw new CHttpException(404, TranslateModule::t('The requested message does not exist.'));
 		}
 	}
-
+	
 	public function actionGrid($id, $languageId, $name)
+	{
+		$this->internalActionGrid($id, $languageId, $name);
+	}
+
+	public function internalActionGrid($id, $languageId, $name, $return = false)
 	{
 		switch($name)
 		{
@@ -166,7 +171,7 @@ class MessageController extends TController
 			default:
 				return;
 		}
-		$this->renderPartial($gridPath, array('model' => $model));
+		return $this->renderPartial($gridPath, array('model' => $model), $return);
 	}
 
 	/**

@@ -28,6 +28,7 @@ $this->widget('zii.widgets.grid.CGridView',
 				'id' => $id,
 				'filter' => $model,
 				'dataProvider' => $model->with('acceptedLanguage')->search(),
+				'selectableRows' => 0,
 				'columns' => array(
 						'id',
 						'code',

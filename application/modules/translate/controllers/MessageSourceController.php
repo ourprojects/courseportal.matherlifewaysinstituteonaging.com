@@ -100,8 +100,13 @@ class MessageSourceController extends TController
 			$this->actionGrid($id, $_GET['ajax']);
 		}
 	}
-
+	
 	public function actionGrid($id, $name)
+	{
+		$this->internalActionGrid($id, $name);
+	}
+
+	public function internalActionGrid($id, $name, $return = false)
 	{
 		switch($name)
 		{
@@ -148,7 +153,7 @@ class MessageSourceController extends TController
 			default:
 				return;
 		}
-		$this->renderPartial($gridPath, array('model' => $model));
+		return $this->renderPartial($gridPath, array('model' => $model), $return);
 	}
 
 	/**

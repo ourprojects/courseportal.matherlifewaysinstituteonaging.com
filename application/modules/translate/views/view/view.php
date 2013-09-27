@@ -6,32 +6,19 @@
 	<div id="details" class="box-white">
 		<?php $this->renderPartial('_details', array('model' => $view)); ?>
 	</div>
-	<div id="categories" class="box-white">
-		<h2>
-			<?php echo TranslateModule::t('Message Categories'); ?>
-		</h2>
-		<hr />
-		<?php $this->actionGrid($view->id, $view->language_id, 'category-grid'); ?>
-	</div>
-	<div id="messageSources" class="box-white">
-		<h2>
-			<?php echo TranslateModule::t('Source Messages'); ?>
-		</h2>
-		<hr />
-		<?php $this->actionGrid($view->id, $view->language_id, 'messageSource-grid'); ?>
-	</div>
-	<div id="messages" class="box-white">
-		<h2>
-			<?php echo TranslateModule::t('Translated Messages'); ?>
-		</h2>
-		<hr />
-		<?php $this->actionGrid($view->id, $view->language_id, 'message-grid'); ?>
-	</div>
-	<div id="routes" class="box-white">
-		<h2>
-			<?php echo TranslateModule::t('Routes'); ?>
-		</h2>
-		<hr />
-		<?php $this->actionGrid($view->id, $view->language_id, 'route-grid'); ?>
-	</div>
+	<?php 
+	$this->widget(
+			'zii.widgets.jui.CJuiTabs',
+			array(
+				'tabs' => array(
+						TranslateModule::t('Categories') => $this->internalActionGrid($view->id, $view->language_id, 'category-grid', true),
+						TranslateModule::t('Source Messages') => $this->internalActionGrid($view->id, $view->language_id, 'messageSource-grid', true),
+						TranslateModule::t('Translated Messages') => $this->internalActionGrid($view->id, $view->language_id, 'message-grid', true),
+						TranslateModule::t('Routes') => $this->internalActionGrid($view->id, $view->language_id, 'route-grid', true),
+				),
+				'headerTemplate' => '<li><a href="{url}" title="{title}">{title}</a></li>',
+				'id' => 'relatedDetails'
+			)
+	);
+	?>
 </div>
