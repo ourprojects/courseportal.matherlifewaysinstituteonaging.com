@@ -1,45 +1,25 @@
-<?php $this->breadcrumbs = array(TranslateModule::t('Categorys') => $this->createUrl('index'), TranslateModule::t('Category Details')); ?>
+<?php $this->breadcrumbs = array(TranslateModule::t('Categories') => $this->createUrl('index'), TranslateModule::t('Category Details')); ?>
 <h1>
 	<?php echo TranslateModule::t('Category').'&nbsp;-&nbsp;'.$category->category; ?>
 </h1>
 <div id="single-column">
-	<div id="details" class="box-white">
-		<?php $this->renderPartial('_details', array('model' => $category)); ?>
-	</div>
-	<div id="messageSources" class="box-white">
-		<h2>
-			<?php echo TranslateModule::t('Source Messages'); ?>
-		</h2>
-		<?php $this->actionGrid($category->id, 'messageSource-grid'); ?>
-	</div>
-	<div id="messages" class="box-white">
-		<h2>
-			<?php echo TranslateModule::t('Translated Messages'); ?>
-		</h2>
-		<?php $this->actionGrid($category->id, 'message-grid'); ?>
-	</div>
-	<div id="languages" class="box-white">
-		<h2>
-			<?php echo TranslateModule::t('Languages'); ?>
-		</h2>
-		<?php $this->actionGrid($category->id, 'language-grid'); ?>
-	</div>
-	<div id="routes" class="box-white">
-		<h2>
-			<?php echo TranslateModule::t('Routes'); ?>
-		</h2>
-		<?php $this->actionGrid($category->id, 'route-grid'); ?>
-	</div>
-	<div id="sourceViews" class="box-white">
-		<h2>
-			<?php echo TranslateModule::t('Source Views'); ?>
-		</h2>
-		<?php $this->actionGrid($category->id, 'viewSource-grid'); ?>
-	</div>
-	<div id="views" class="box-white">
-		<h2>
-			<?php echo TranslateModule::t('Translated Views'); ?>
-		</h2>
-		<?php $this->actionGrid($category->id, 'view-grid'); ?>
-	</div>
+	<?php 
+	$this->widget(
+			'ext.EJuiTabs.EJuiTabs',
+			array(
+				'vertical' => true,
+				'tabs' => array(
+						TranslateModule::t('Details') => $this->renderPartial('_details', array('model' => $category), true),
+						TranslateModule::t('Source Messages') => $this->_internalActionGrid($category->id, 'messageSource-grid', true),
+						TranslateModule::t('Translated Messages') => $this->_internalActionGrid($category->id, 'message-grid', true),
+						TranslateModule::t('Languages') => $this->_internalActionGrid($category->id, 'language-grid', true),
+						TranslateModule::t('Routes') => $this->_internalActionGrid($category->id, 'route-grid', true),
+						TranslateModule::t('Source Views') => $this->_internalActionGrid($category->id, 'viewSource-grid', true),
+						TranslateModule::t('Translated Views') => $this->_internalActionGrid($category->id, 'view-grid', true)
+						
+				),
+				'headerTemplate' => '<li><a href="{url}" title="{title}">{title}</a></li>'
+			)
+	);
+	?>
 </div>

@@ -54,8 +54,13 @@ class CategoryController extends TController
 			$this->actionGrid($id, $_GET['ajax']);
 		}
 	}
-
+	
 	public function actionGrid($id, $name)
+	{
+		$this->_internalActionGrid($id, $name);
+	}
+
+	protected function _internalActionGrid($id, $name, $return = false)
 	{
 		switch($name)
 		{
@@ -97,7 +102,7 @@ class CategoryController extends TController
 			default:
 				return;
 		}
-		$this->renderPartial($gridPath, array('model' => $model));
+		return $this->renderPartial($gridPath, array('model' => $model), $return);
 	}
 
 	/**
