@@ -60,18 +60,20 @@ class HTTP_DownloadAction extends CAction
 	public $magicFile = null;
 
 	private $_filePath;
-	private $_id = null;
+	private $_id = 'download';
 
 	/**
 	 * @return string id of this action
 	 */
-	public function getId() 
+/*	public function getId() 
 	{
 		if($this->_id === null)
+		{
 			$this->_id = parent::getId() . '.' . strtr($this->getRequestedFile(), DIRECTORY_SEPARATOR, '.');
+		}
 		return $this->_id;
 	}
-
+*/
 	/**
 	 * Returns the name of the file requested by the user.
 	 * If the user doesn't specify any file, the {@link defaultFile} will be returned.
@@ -82,20 +84,25 @@ class HTTP_DownloadAction extends CAction
 	{
 		if($this->_filePath === null) 
 		{
-			if(!empty($_GET[$this->getParam])) 
+			if(isset($_GET[$this->getParam])) 
 			{
-				$this->_filePath = implode(DIRECTORY_SEPARATOR, array_filter(explode('/', $_GET[$this->filePathParam]), array(new CPregMatch($this->pathEscapeRegex), 'match')));
+				$this->_filePath = implode(DIRECTORY_SEPARATOR, array_filter(explode('/', $_GET[$this->getParam]), array(new CPregMatch($this->pathEscapeRegex), 'match')));
 			} 
-			else if(!empty($_GET)) 
+			else if($_GET !== array()) 
 			{
 				$this->_filePath = implode(DIRECTORY_SEPARATOR, array_filter(CArray::array_flatten($_GET), array(new CPregMatch($this->pathEscapeRegex), 'match')));
 			}
-			if(empty($this->_filePath)) 
+			
+			if($this->_filePath === '') 
 			{
-				if(!empty($this->defaultFile))
+				if(isset($this->defaultFile))
+				{
 					$this->_filePath = $this->defaultFile;
+				}
 				else
+				{
 					throw new CHttpException(400, Yii::t(self::ID, 'A file to download was not specified.'));
+				}
 			}
 		}
 		return $this->_filePath;
@@ -133,7 +140,9 @@ class HTTP_DownloadAction extends CAction
 		if(isset($this->data))
 		{
 			if(!isset($this->filename) || !isset($this->mime))
+			{
 				throw new Exception(Yii::t(self::ID, 'A filename and mime type must be specified for raw data. Please check your HTTP_DownloadAction configuration.'));
+			}
 			$fileInfo = array(
 						'name' => $this->filename,
 						'mime' => $this->mime,
