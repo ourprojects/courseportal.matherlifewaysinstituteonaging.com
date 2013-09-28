@@ -1388,7 +1388,7 @@ class CStatElement
 	 */
 	public function query()
 	{
-		if(preg_match('/^\s*(.*?)\((.*)\)\s*$/',$this->relation->foreignKey,$matches))
+		if(!is_array($this->relation->foreignKey) && preg_match('/^\s*(.*?)\((.*)\)\s*$/',$this->relation->foreignKey,$matches))
 			$this->queryManyMany($matches[1],$matches[2]);
 		else
 			$this->queryOneMany();
@@ -1404,8 +1404,18 @@ class CStatElement
 		$parent=$this->_parent;
 		$pkTable=$parent->model->getTableSchema();
 
-		$fks=preg_split('/\s*,\s*/',$relation->foreignKey,-1,PREG_SPLIT_NO_EMPTY);
-		if(count($fks)!==count($pkTable->primaryKey))
+		if(is_array($relation->foreignKey))
+		{
+			$pks = reset($relation->foreignKey);
+			$fks = key($relation->foreignKey);
+		}
+		else
+		{
+			$pks = $pkTable->primaryKey;
+			$fks = $relation->foreignKey;
+		}
+		$fks=preg_split('/\s*,\s*/',$fks,-1,PREG_SPLIT_NO_EMPTY);
+		if(count($fks)!==count($pks))
 			throw new CDbException(Yii::t('yii','The relation "{relation}" in active record class "{class}" is specified with an invalid foreign key. The columns in the key must match the primary keys of the table "{table}".',
 						array('{class}'=>get_class($parent->model), '{relation}'=>$relation->name, '{table}'=>$pkTable->name)));
 
@@ -1428,10 +1438,10 @@ class CStatElement
 			}
 			else  // FK constraints undefined
 			{
-				if(is_array($pkTable->primaryKey)) // composite PK
-					$map[$pkTable->primaryKey[$i]]=$fk;
+				if(is_array($pks)) // composite PK
+					$map[$pks[$i]]=$fk;
 				else
-					$map[$pkTable->primaryKey]=$fk;
+					$map[$pks]=$fk;
 			}
 		}
 
@@ -1470,11 +1480,11 @@ class CStatElement
 			{
 				$key2=unserialize($key);
 				$key=array();
-				foreach($pkTable->primaryKey as $pk)
+				foreach($pks as $pk)
 					$key[$map[$pk]]=$key2[$pk];
 			}
 			$cols=array();
-			foreach($pkTable->primaryKey as $n=>$pk)
+			foreach($pks as $n=>$pk)
 			{
 				$name=$tableAlias.'.'.$table->columns[$map[$pk]]->rawName;
 				$cols[$name]=$name.' AS '.$schema->quoteColumnName('c'.$n);
@@ -1490,7 +1500,7 @@ class CStatElement
 			foreach($command->queryAll() as $row)
 			{
 				$key=array();
-				foreach($pkTable->primaryKey as $n=>$pk)
+				foreach($pks as $n=>$pk)
 					$key[$pk]=$row['c'.$n];
 				$stats[serialize($key)]=$row['s'];
 			}
