@@ -237,16 +237,8 @@ foreach(array(
 				<h2 class="flowers">{t}You Tube - The Brain Fitness Program{/t}</h2>
 				<hr />
 				<p>{t}This short video will provide you with a first look at some of the exciting new discoveries about neuroplasticity (the ability of the adult brain to change itself) that form the foundation of this course. You may have already seen this popular PBS special, which helped pave the way for many incredible advances, including this course, that can help you strengthen your brain and lower your risk for dementia.{/t}</p>
-				<iframe style="width: 480px; height: 360px; display: block; margin: 15px auto;" src="//www.youtube.com/embed/WBSNQi4es5k?rel=0" frameborder="0" allowfullscreen></iframe>
-				<h4>{t}Forum Postings{/t}</h4>
-				<p>{t}You are going to be asked to participate in many Forum postings throughout each module. Similar to blogging, the Forum postings will be visible to the Facilitator and other course participants. As shown below, Forum postings will have colored font, along with the Forum icon. Some postings will already have the questions listed on the Forum, while others need to be created by you.{/t}</p>
-				<p class="forum">
-					{t}Before you begin, please introduce yourself on the Forum to your facilitator and other participants. Click <a href="#" target="_blank">here</a> to access it. Once opened, leave it open as you will post to it throughout this course.{/t}
-				</p>
-				<!-- 'url' => Yii::app()->getComponent('phpBB')->getForumUrl(), -->
-
-				<img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}">
-			</div>
+			  <iframe style="width: 480px; height: 360px; display: block; margin: 15px auto;" src="//www.youtube.com/embed/WBSNQi4es5k?rel=0" frameborder="0" allowfullscreen></iframe>
+		    <!-- 'url' => Yii::app()->getComponent('phpBB')->getForumUrl(), --></div>
 			<div class="buttons">
 				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"> {t}Next{/t}&nbsp;&raquo; </a>
 			</div>
@@ -295,8 +287,6 @@ foreach(array(
 				<img src="<?php echo $this->getImagesUrl('spencer/154418413.png'); ?>" alt="{t}Image{/t}">
 				<p>{t}The world of brain health has exploded over the past decade with many new programs and applications emerging to help people think and perform better both now in their daily lives at work or at home and later in life as people age. Maintaining independence later in life is a concern for many people, especially older adults, but even for younger people this can be a nagging concern. Through the course of this program you will learn how investing in your brain health now can pay dividends both immediately and as you age.{/t}</p>
 				<p>{t}To describe some of the key concepts underlying the field of brain health, we will start by talking a bit about how to protect brain health as you age.{/t}</p>
-				<p class="forum">{t}What healthy activities do you currently engage in to specifically boost your brain health? Post your responses to the Forum.{/t}</p>
-				<img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}">
 			</div>
 			<div class="buttons">
 				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
@@ -400,18 +390,6 @@ foreach(array(
 					{t}Nevertheless, it is exciting to know that we can still grow new brain cells. This may actually be one of the<strong> mechanism by which we can learn new things as the region of the brain where these new brain cells grow – called the hippocampus – is the area responsible for forming new memories</strong>.{/t}
 				</p>
 				<p>{t}The key word to learn from this is “neurogenesis,” meaning the growth of new brain cells.{/t}</p>
-				<div id="question3" class="question">
-					<p style="text-align: center;">
-						<b>{t}"Neurogenesis” means the growth of new brain cells.{/t}</b><br />
-						<select style="text-align: center;">
-							<option selected="selected" value="select">{t}Select{/t}</option>
-							<option value="1">{t}Yes{/t}</option>
-							<option value="0">{t}No{/t}</option>
-						</select>
-					</p>
-					<p class="right-answer hide">{t}Correct! "Neurogenesis” means the growth of new brain cells.{/t}</p>
-					<p class="wrong-answer hide">{t}Please review this slide again, and ensure you understand what "neurogenesis" is before you continue.{/t}</p>
-				</div>
 			</div>
 			<div class="buttons">
 				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
@@ -525,8 +503,6 @@ foreach(array(
 				<img src="<?php echo $this->getImagesUrl('spencer/165431293.png'); ?>" alt="{t}Image{/t}">
 				<p>{t}We have talked a lot about protecting your brain from dementia, but this program will also focus on helping you get the most out of your brain today, which can help you both at work and at home. You will be learning strategies to remember things better, to be more organized, to pay closer attention and to regulate your emotions.{/t}</p>
 				<p>{t}Some of the strategies will come to you directly through the memory tips that you will learn in modules 2-7 and the lifestyle demonstrations we will present in each module. Other strategies will come to you indirectly as you practice the exercises included in both the course assignments and the brain training software being providing.{/t}</p>
-				<p class="forum">{t} Without searching the Internet, what activities do you engage in to help you get the most out of your brain? Post your response to the Forum.{/t}</p>
-				<img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}">
 			</div>
 			<div class="buttons">
 				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
@@ -587,11 +563,7 @@ foreach(array(
 					{t}Over the next few modules you will be working on some techniques to remember things better, and with a fair amount of effort and practice you can improve your thinking, but <strong>there is no magic bullet, no miracle cure, and no special pill to give us perfect thinking</strong>.{/t}
 				</p>
 				<p>
-					{t}Nor is it likely that your memory is really as bad as you think. On that note, however,<strong> if you really are concerned about your thinking, we encourage you to talk with your doctor if you have not done so already</strong>.{/t}
-				</p>
-				<p class="forum">{t}Post to the Forum any other myths and misconceptions that older adults tend to have about their memories.{/t}</p>
-				<img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}">
-			</div>
+					{t}Nor is it likely that your memory is really as bad as you think. On that note, however,<strong> if you really are concerned about your thinking, we encourage you to talk with your doctor if you have not done so already</strong>.{/t}</p></div>
 			<div class="buttons">
 				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
@@ -614,9 +586,7 @@ foreach(array(
 					{t}<strong>Stay</strong> “<strong>Present</strong>” - <strong>Dial down the internal chatter or the mental to-do list</strong>. In conversations, remind yourself that you will be able to come up with something to say after the person is finished talking in order to stop the mental rehearsal of your next point. This way you can really pay attention to what the other person is saying{/t}
 				</p>
 				<p>
-					{t}<strong>Get your hearing or vision checked and corrected if needed</strong> – Do not let vanity get in the way of your brain health. Vision and hearing loss not only keep you from taking in current information, but over time it seems that they can weaken you whole brain. As we just learned today, cells that fire together, wire together, so if your brain is not getting good quality stimulation from your ears or your eyes, all of the brain circuits that process that information (including your memory circuits) have less stimulation, and therefore seem to also weaken over time.{/t}
-				</p>
-				<p class="forum">&nbsp;</p>
+					{t}<strong>Get your hearing or vision checked and corrected if needed</strong> – Do not let vanity get in the way of your brain health. Vision and hearing loss not only keep you from taking in current information, but over time it seems that they can weaken you whole brain. As we just learned today, cells that fire together, wire together, so if your brain is not getting good quality stimulation from your ears or your eyes, all of the brain circuits that process that information (including your memory circuits) have less stimulation, and therefore seem to also weaken over time.{/t}</p>
 			</div>
 			<div class="buttons">
 				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
@@ -672,10 +642,7 @@ foreach(array(
 				<hr />
 				<img src="<?php echo $this->getImagesUrl('spencer/124108115.png'); ?>" alt="{t}Image{/t}">
 				<p>
-					{t}Allow 10 minutes of time for this activity. Please visit the following <a href="http://sharpbrains.com/blog/2007/10/16/brain-teasers-and-games-for-adults-our-top-50/" target="_blank">website</a> and participate in one of the 'Attention' activities.{/t}
-				</p>
-				<p class="forum">{t}Once you have completed this activity, please record your experience on the Forum.{/t}</p>
-				<img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}">
+					{t}Allow 10 minutes of time for this activity. Please visit the following <a href="http://sharpbrains.com/blog/2007/10/16/brain-teasers-and-games-for-adults-our-top-50/" target="_blank">website</a> and participate in one of the 'Attention' activities.{/t}</p>
 			</div>
 			<div class="buttons">
 				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
@@ -686,13 +653,8 @@ foreach(array(
 				<h2 class="flowers">{t}Set Some Goals for This Week{/t}</h2>
 				<hr />
 				<p>{t}To get the most out of this program, it is important that you set goals for yourself to practice the skills you are learning and to pave the way for developing new brain-healthy habits.{/t}</p>
-				<p class="forum">{t}So take a moment to write down two goals for the coming week. One focused on your lifestyle and one focused on practicing this week’s memory strategy.{/t}</p>
 				<p class="forum">
-					<img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}">
-				</p>
-				<p>
-					{t}It&rsquo;s is important that you<strong> set goals that are not too difficult or too vague</strong> – It&rsquo;s better to set a &ldquo;ridiculously simple goal&rdquo; that a you can achieve in order to feel successful than to set a lofty goal that you will feel bad about not reaching.  We want to start you on a cycle of success...{/t}
-				</p>
+					{t}It&rsquo;s is important that you<strong> set goals that are not too difficult or too vague</strong> – It&rsquo;s better to set a &ldquo;ridiculously simple goal&rdquo; that a you can achieve in order to feel successful than to set a lofty goal that you will feel bad about not reaching.  We want to start you on a cycle of success...{/t}				</p>
 				<h5>{t}Goals are most effective when they are:{/t}</h5>
 				<ol>
 					<li>{t}Specific with respect to:{/t}</li>
@@ -725,8 +687,6 @@ foreach(array(
 				<img src="<?php echo $this->getImagesUrl('spencer/173262053.png'); ?>" alt="{t}image{/t}">
 				<h4>{t}You Made It!{/t}</h4>
 				<p>{t}Congratulations on completing this first module! You should now be comfortable with the course setup, having had this first experience.{/t}</p>
-				<p class="forum">{t}Please revisit the Forum and respond to the pre-filled question that are listed under the 'Introudction' section. You can use the same thread to respond to all of these questions. Attempt to respond to these questions using the knowledge you gained from this module. Please do not use the Internet or other sources to create your responses.{/t}</p>
-				<img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}">
 			</div>
 			<div class="buttons">
 				<a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Complete Module{/t}</a>
@@ -815,8 +775,6 @@ foreach(array(
 					</li>
 					<li>{t}Manage your Emotions{/t}</li>
 				</ul>
-				<p class="forum">{t}Please imagine and generate scenarios where you might memory strategies. And remember, memory strategies are most effective when they are practiced. Post your scenarios to the Forum.{/t}</p>
-				<img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}">
 			</div>
 			<div class="buttons">
 				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
@@ -827,12 +785,8 @@ foreach(array(
 				<h2 class="flowers">{t}Investing in Brain Health{/t}</h2>
 				<hr />
 				<p>{t}In the last module we talked about actively investing in our brain reserve (or Cognitive Reserve / Brain 401K) – Maximizing our contributions to our brain, which can help us build up a larger reserve in order to ward off dementia.{/t}</p>
-				<p class="forum">{t}What activities come to mind when you think of investing in your brain reserve? Post your response to the Forum.{/t}</p>
-				<img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}">
-				<p>{t}In the last module, about the autopsy study where people had resisted the clinical effects of Alzheimer’s disease growing in their brains, there were three main lifestyle behaviors that distinguished these people from people who had lost their independence. They had been more active during their lives in a few key ways.{/t}</p>
-				<p class="forum">{t}On the Forum, list the main ways they had been more active?{/t}</p>
-				<img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}">
-				<p>{t}We are going to talk today about how physical activity seems to be a key component of brain health. In fact, it may be one of the best things you can do for your brain. {/t}</p>
+				<p class="forum">{t}In the last module, about the autopsy study where people had resisted the clinical effects of Alzheimer’s disease growing in their brains, there were three main lifestyle behaviors that distinguished these people from people who had lost their independence. They had been more active during their lives in a few key ways.{/t}</p>
+				<p>{t}We are going to present how physical activity seems to be a key component of brain health. In fact, it may be one of the best things you can do for your brain. {/t}</p>
 			</div>
 			<div class="buttons">
 				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
@@ -874,15 +828,8 @@ foreach(array(
 					<li>{t}AND… Delayed onset of cognitive decline!{/t}</li>
 					<li>{t}AND… Better memory performance!{/t}</li>
 				</ul>
-				<p>Let us start off by talking about the benefits of physical activity that we already know about.</p>
-				<p class="forum">On the Forum, answer the following questions:</p>
-				<ul class="forum">
-					<li>Does your exercise regularly?</li>
-					<li>Have you felt or seen benefits of physical activity in yourself or others?</li>
-					<li>What are some benefits of physical activity?</li>
-				</ul>
-				<img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}">
-				<p>&ldquo;Most recently, we have learned that participation in physical activity may also help to prevent or postpone the onset of dementia and cognitive decline.&rdquo;</p>
+				<p>Let us start off by talking about the benefits of physical activity that we already know about.			  </p>
+			  <p>&ldquo;Most recently, we have learned that participation in physical activity may also help to prevent or postpone the onset of dementia and cognitive decline.&rdquo;</p>
 				<p>As you&rsquo;ve been learning, scientists have learned that the brain stays plastic (changeable) all the way into our later years – this means that the brain can change in response to exercise no matter how old or young you are. (Eckmann, 2011)</p>
 			</div>
 			<div class="buttons">
@@ -1044,8 +991,6 @@ foreach(array(
 				<hr />
 				<p>Frequency, Intensity and Time for our physical activity is pretty straightforward, but what do we mean by type? Here are some examples of the major categories of types of physical activities. It is important for older adults to consider doing a variety of different types of workouts because they can all be beneficial to us in different ways.</p>
 				<p>We tend to experience the greatest benefit from endurance type exercises, however, we can’t keep up with endurance routines without maintaining our flexibility and balance. When we were young, balance was something that came naturally to us, as we age, it is something we need to work on to maintain. Flexibility is also often over-looked in terms of its importance. In order to maintain our range of motion to be able to do things like reaching a can on the top shelf or bending down to pick up something that we dropped we need to work on our flexibility. Finally, maintaining our strength is another key component that will allow us to continue caring for ourselves and keeping up with our daily activities. Strength training can also help build bone density and seems to help us generate a different type of nerve growth factor than endurance exercise. Ideally, you should try to incorporate each one of these types of exercises into your routine.</p>
-				<p class="forum">Review the listed types of physical activities. What types of physical activity participants are already active in, what is their favorite? Have you already practices all 4 types of activities. Post your responses to the Forum.</p>
-				<img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}">
 			</div>
 			<div class="buttons">
 				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
@@ -1229,31 +1174,6 @@ foreach(array(
 					<li>{t}Increases production of nerve growth factors (BDNF, IGF-1){/t}</li>
 				</ul>
 				<p>{t}White dots are silent strokes that can build up over time to cause cognitive decline (vascular dementia){/t}</p>
-				<p class="forum">{t}Please post your responses to the following questions on the Forum:{/t}</p>
-				<ul>
-					<li>
-						{t}What are some benefits of physical activity?<span class="forum">{/t}</span>
-					</li>
-					<li>
-						<span class="forum">{t}</span>How does physical activity help your brain?<span class="forum">{/t}</span>
-					</li>
-					<li>
-						<span class="forum">{t}</span>What are white dots?<span class="forum">{/t}</span>
-					</li>
-					<li>
-						<span class="forum">{t}</span>Name 3 direct ways that physical activity seems to directly improve cognition.<span class="forum">{/t}</span>
-					</li>
-					<li>
-						<span class="forum">{t}</span>What is the Memory Strategy for this week?<span class="forum">{/t}</span>
-					</li>
-					<li>
-						<span class="forum">{t}</span>Are verbal memories (thoughts repeated in our heads) stronger than visual memories?<span class="forum">{/t}</span>
-					</li>
-					<li>
-						<span class="forum">{t}</span>What are your goals for this week?{/t}
-					</li>
-				</ul>
-				<img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}">
 			</div>
 			<div class="buttons">
 				<a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Complete Module{/t}</a>
@@ -1282,9 +1202,7 @@ foreach(array(
 			<div class="content">
 				<h2 class="flowers">{t}Check-in{/t}</h2>
 				<hr />
-				<p class="forum">Before you begin, please review the previous module, its content and activities. If you had a goal and failed to complete it, consider what could have been more feasible? Post your feedback to the Forum.</p>
-				<img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}">
-				<p>Please remember the importance of being compassionate with yourself. Change is hard, and if we get mad at ourselves for not changing then we are more likely to go back to our old patterns.</p>
+				<p class="forum">Please remember the importance of being compassionate with yourself. Change is hard, and if we get mad at ourselves for not changing then we are more likely to go back to our old patterns.</p>
 				<h4>FITT is Frequency, Intensity, Time &amp; Type</h4>
 				<h5>Ways that Physical Activity helps the brain:</h5>
 				<ul>
@@ -1386,10 +1304,8 @@ foreach(array(
 			<div class="content">
 				<h2 class="flowers">{t}What We Feel Physically{/t}</h2>
 				<hr />
-				<p class="forum">Whave all experienced the fight-or-flight response, what physical sensations do you feel when you are stressed or upset? Post your response to the Forum.</p>
-				<img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}">
 				<ul>
-					<li>Heart rate increases, pumping oxygenated blood to our skeletal muscles in preparation to run away</li>
+				  <li>Heart rate increases, pumping oxygenated blood to our skeletal muscles in preparation to run away</li>
 					<li>We sweat – like the body’s car radiator kicking-in in preparation for the exertion required to run away</li>
 					<li>Blood flow is moved to our muscles, which become tense, preparing us to run away</li>
 					<li>Goose bumps – part of the skin’s cooling process</li>
@@ -1399,7 +1315,7 @@ foreach(array(
 					<li>
 						Eyes widen – allowing us to be able to look around for threats
 					</li>
-				</ul>
+			  </ul>
 			</div>
 			<div class="buttons">
 				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
@@ -1424,8 +1340,6 @@ foreach(array(
 				<p>The Limbic System is also sometimes called the “reptilian (or reptile) brain” because in the brains of reptiles such as alligators and snakes (creatures that have a reputation for being aggressive and persnickety), Limbic structures take up most of the brain real estate. As humans evolved, we never gave up those primitive parts of our brains, instead we grew new structures around them, most notably the region we call the prefrontal cortex (or frontal lobes), which surrounds the limbic system and works hard to literally inhibit the “reptilian” brain.</p>
 				<p>The prefrontal cortex keeps the emotional brain under pretty good control most of the time. BUT because the emotional brain is so important for ensuring our survival, when it becomes active through the fight-or-flight response, most of the brain’s resources (literally blood flow) get diverted to this region.</p>
 				<p>The prefrontal cortex is also a very energy-hungry region, so when blood-flow is diverted to the limbic system, the prefrontal cortex can’t work as well as it normally does when we are relaxed. It’s like when the lights dim when you turn on the toaster.</p>
-				<p class="forum">Have you ever been at a loss for words in the middle of an argument? Post your response to the Forum.</p>
-				<img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}">
 				<p>An important way to use your brain more effectively is to know when the logical prefrontal cortex has been hijacked by the emotional part of the brain (the limbic system) and take steps to release it. By noticing when a the stress response kicks in and taking steps to calm down, we can direct our brains to focus better, dialing down the emotional brain and dialing up the prefrontal cortex. One way to do this is to learn how to activate the PNS, which you will learn in today’s demonstration.</p>
 			</div>
 			<div class="buttons">
@@ -1979,22 +1893,8 @@ foreach(array(
 			<div class="content">
 				<h2 class="flowers">{t}Recap{/t}</h2>
 				<hr />
-				<p class="forum">Please post your responses to the following questions to the Forum:</p>
-				<ul class="forum">
-					<li>What happens during the stress response?</li>
-					<li>What happens to our thinking during stress?</li>
-					<li>Can emotions help us remember better?</li>
-					<li>What is the opposite of fight-or-flight?</li>
-					<li>What can happen if we don’t get enough time in rest-and-digest?</li>
-					<li>What effect does chronic stress have on brain cells?</li>
-					<li>What are some ways to engage the relaxation response?</li>
-					<li>What is the Memory Strategy for this week?</li>
-					<li>How does organizing information help us remember it?</li>
-					<li>Does writing things down help you remember better?</li>
-					<li>What are your goals for this week?</li>
-				</ul>
-				<img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}">
-				<p>The answer to the first question is yes and no – recall that emotions can give some types of memories a boost &amp; positive emotions such as love can be good for building cognitive reserve.</p>
+				<p class="forum">&nbsp;</p>
+				<p>removed questions here</p>
 			</div>
 			<div class="buttons">
 				<a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Complete Module{/t}</a>
@@ -2876,11 +2776,8 @@ foreach(array(
 					</li>
 					<li>{t}Rewards should be small and feasible &amp; it’s a good idea not to use a reward that will get in the way of some other health goal, such as cookies{/t}</li>
 					<li>
-						<strong>{t}For a reward to be effective, the person must make an agreement with themselves that they will in no way get to have the reward without FIRST having achieved their small goal</strong>{/t}
-					</li>
+						<strong>{t}For a reward to be effective, the person must make an agreement with themselves that they will in no way get to have the reward without FIRST having achieved their small goal</strong>{/t}</li>
 				</ul>
-				<p>{t}Please share your plan to remember your goals and rewards and how you plan to track your progress, on the Forum.{/t}</p>
-				<img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}">
 			</div>
 			<div class="buttons">
 				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
@@ -2890,16 +2787,7 @@ foreach(array(
 			<div class="content">
 				<h2 class="flowers">{t}Recap{/t}</h2>
 				<hr />
-				<p class="forum">{t}Please answer the following questions on the Forum.{/t}</p>
-				<ul class="forum">
-					<li>{t}What are some benefits of social engagement?{/t}</li>
-					<li>{t}What are some possible ways that social engagement helps us age better?{/t}</li>
-					<li>{t}Oxytocin is sometimes called what?{/t}</li>
-					<li>{t}What is the Memory Tip for this week?{/t}</li>
-					<li>{t}What are some ways to practice rehearsing memories?{/t}</li>
-					<li>{t}What are your goals moving forward?{/t}</li>
-				</ul>
-				<img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}">
+				<p class="forum">removed questions</p>
 			</div>
 			<div class="buttons">
 				<a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Complete Module{/t}</a>
@@ -2921,8 +2809,6 @@ foreach(array(
 					<li>{t}Goal setting and strategies to maintain a brain-healthy lifestyle{/t}</li>
 					<li>{t}Post-program survey{/t}</li>
 				</ul>
-				<p class="forum">{t}Considering the past seven modules you have completed, do you feel that you have earned a sense of accomplishment? Post your response to the Forum.{/t}</p>
-				<img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}">
 			</div>
 			<div class="buttons">
 				<a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Start Module &raquo;{/t}</a>
@@ -2943,19 +2829,6 @@ foreach(array(
 				<p>{t}Risk genes on the other hand only contribute to the likelihood that someone will develop dementia. Therefore, someone may have the risk gene and not develop dementia.{/t}</p>
 				<p>{t}At the beginning of this program, we told you that genes are responsible for only about 30% of the risk of contracting late onset Alzheimer ’s disease, the most common form of dementia. Therefore, approximately 70% of what causes the disease is environmental, much of which is within our control. This is why we say that lifestyle is an important factor in brain health.{/t}</p>
 				<p>{t}Fortunately, it is never too late to adopt brain healthy behaviors. Although someone with a lifetime of participation in these behaviors may fare the best, even older adult will gain from them, so it is never too late to get started!{/t}</p>
-				<div id="question2" class="question">
-					<p style="text-align: center;">
-						<b>{t}Is Alzheimer’s diseaseentirely caused by genetics?{/t}</b><br />
-						<select name="select" style="text-align: center;">
-							<option selected="selected" value="select">{t}Select{/t}</option>
-							<option value="0">{t}Yes{/t}</option>
-							<option value="1">{t}No{/t}</option>
-						</select>
-					</p>
-					<p class="right-answer hide">{t}Correct!{/t}</p>
-					<p class="wrong-answer hide">{t}Alzheimer’s disease is not entirely caused by genetics.{/t}</p>
-				</div>
-				<p>&nbsp;</p>
 			</div>
 			<div class="buttons">
 				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
@@ -3036,8 +2909,6 @@ foreach(array(
 					<li>{t}The degree to which physical activity helps your brain depends on length, type and duration of training sessions (Colcombe and Krammer, 2003).{/t}</li>
 				</ul>
 				<p>{t}But moderate levels of physical activity are enough to reduce the risk of cognitive impairment to some degree.{/t}</p>
-				<p class="forum">{t}During this course, we have asked you to increase your physical activity. Have you been able to do that? How so? Post your responses to the Forum.{/t}</p>
-				<img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}">
 			</div>
 			<div class="buttons">
 				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
@@ -3056,8 +2927,6 @@ foreach(array(
 					{t}<em>What stress management techniques have you found to be most effective for you? Post your responses to the Forum.</em>{/t}
 				</p>
 				<p>{t}In this module, we learned about the physiology of stress and its effect on the body and brain. We know that chronic stress can lead to depression, which has been linked with a higher risk of Alzheimer's disease. Controlling stress is an important component in a brain healthy lifestyle. We talked about several practices, such as mindfulness meditation, that can be used to reduce stress.{/t}</p>
-				<p class="forum">{t}Have you incorporated mindfulness meditation or another stress reduction practice into your life? What stress management techniques have you found to be the most effective for you? Post your responses to the Forum.{/t}</p>
-				<img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}">
 			</div>
 			<div class="buttons">
 				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
@@ -3073,8 +2942,6 @@ foreach(array(
 					<li>{t}The best way to stimulate your brain is to try new things that are really out of character for you.{/t}</li>
 				</ul>
 				<p>{t}In this module you learned how intellectual stimulation promotes cognitive reserve. And while doing crossword puzzles every day is generally a good thing, it really seems that you may get a bigger return on your investment by learning something new. We also taught you about diversifying your cognitive investments.{/t}</p>
-				<p class="forum">{t}What does it mean to diversify your cognitive investments? Post your response to the Forum.{/t}</p>
-				<img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}">
 			</div>
 			<div class="buttons">
 				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
@@ -3090,11 +2957,7 @@ foreach(array(
 					<li>{t}We can incorporate brain healthy food choices into our diet.{/t}</li>
 				</ul>
 				<p>{t}In this module, we learned how good nutrition can benefit our brains. Perhaps most importantly, we learned how to make healthy food choices that can promote cognitive health.{/t}</p>
-				<p class="forum">Can you remember what kinds of foods are healthy for your brain? Without searching the Internet, post your response to the Forum (examples foods can include: healthy salad dressing, nuts, fish, tomatoes, poultry, cruciferous vegetables, fruits, dark green leafy vegetables, foods rich in omega 3’s and anti-oxidants).</p>
-				<img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}">
 				<p class="forum">{t}What foods should we avoid because they are not good for our brain (examples can include: high fat dairy products, red meats, organ meats, butter, fried foods, too many sweets)?{/t}</p>
-				<p class="forum">{t}Can you share how you have been able to incorporate more brain-healthy foods in your diet? Post your responses to the Forum.{/t}</p>
-				<img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}">
 			</div>
 			<div class="buttons">
 				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
@@ -3120,8 +2983,6 @@ foreach(array(
 					<li>{t}forgiveness{/t}</li>
 					<li>{t}attention training{/t}</li>
 				</ul>
-				<p>{t} What practices to you engage in to help in this area of wellness? Post your response to the Forum (examples may include: )?{/t}</p>
-				<img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}">
 			</div>
 			<div class="buttons">
 				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
@@ -3148,8 +3009,6 @@ foreach(array(
 						</ul>
 					</li>
 				</ul>
-				<p class="forum">{t}What types of social activities do you engage in? What steps have you taken during this course, if any, to increase your social activity? Post your response to the Forum.{/t}</p>
-				<img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}">
 			</div>
 			<div class="buttons">
 				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
@@ -3307,10 +3166,7 @@ foreach(array(
 				</p>
 				<p>{t}(Pause 1-2 minutes){/t}</p>
 				<p>
-					{t}As you are watching, and offering these two sides compassion, <strong>you can gain some distance from the things that cause you to abandon your goals</strong>.  This will help you pick yourself up, dust yourself off and get back on the road of working toward the ideal self you have been envisioning.  The healthy, vibrant you 5, 10, or 15 years down the road.{/t}
-				</p>
-				<p class="forum">{t}After completing the excersise above, please share your experience on the Forum.{/t}</p>
-				<img src="<?php echo $this->getImagesUrl('intro/forum_icon.png'); ?>" alt="{t}image{/t}">
+					{t}As you are watching, and offering these two sides compassion, <strong>you can gain some distance from the things that cause you to abandon your goals</strong>.  This will help you pick yourself up, dust yourself off and get back on the road of working toward the ideal self you have been envisioning.  The healthy, vibrant you 5, 10, or 15 years down the road.{/t}</p>
 				<p>{t}(This meditation is referred to as Lovingkindness Meditation, and there is more information about it included in the workbook.  This particular exercise is  adapted from Martha Beck, PhD and her book The Four-day Win, and she is credited with the terms &ldquo;wild child,&rdquo; &ldquo;dictator,&rdquo; and &ldquo;watcher&rdquo;){/t}</p>
 			</div>
 			<div class="buttons">
