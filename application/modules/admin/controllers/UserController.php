@@ -6,6 +6,7 @@ class UserController extends AController
 	public function actionIndex(array $CPUser = array(), $ajax = null)
 	{
 		$CPUserModel = new CPUser('search');
+		$CPUserModel->with(array('sessions', 'lastSeen', 'activated'));
 		$CPUserModel->setAttributes($CPUser);
 		switch($ajax)
 		{

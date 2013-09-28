@@ -3,7 +3,7 @@
 /**
  * This is the model class for the yii session table.
  *
- * The followings are the available columns in table 'user_activated':
+ * The followings are the available columns in the user session table:
  * @property integer $id
  * @property mixed $user_id Type is defined by configuration
  * @property integer $expire
@@ -12,7 +12,7 @@
  * The followings are the available model relations:
  * @property mixed $user Type is defined by configuration
  */
-class EHttpSession extends CActiveRecord
+class EUserHttpSession extends CActiveRecord
 {
 	
 	/**
@@ -69,9 +69,9 @@ class EHttpSession extends CActiveRecord
 	{
 		return array(
 				array('id', 'unsafe', 'except' => 'search'),
-				array('user_id, expire, data', 'required'),
+				array('expire, data', 'required'),
 				array('expire', 'numerical', 'integerOnly' => true),
-				array('user_id', 'exists', 'attributeName' => Yii::app()->getSession()->userIdColumnName, 'className' => Yii::app()->getSession()->userModelClassName),
+				array('user_id', 'exists', 'allowEmpty' => true, 'attributeName' => Yii::app()->getSession()->userIdColumnName, 'className' => Yii::app()->getSession()->userModelClassName),
 		);
 	}
 
@@ -81,8 +81,20 @@ class EHttpSession extends CActiveRecord
 	public function relations()
 	{
 		return array(
-				'user' => array(self::BELONGS_TO, Yii::app()->getSession()->userModelClassName, 'user_id'),
+				'user' => array(self::BELONGS_TO, Yii::app()->getSession()->userModelClassName, array(Yii::app()->getSession()->userIdColumnName => 'user_id')),
 		);
+	}
+	
+	public function expired($expired = true)
+	{
+		$this->getDbCriteria()->addCondition($expired ? 'expire<:expire' : 'expire>:expire')->params[':expire'] = time();
+		return $this;
+	}
+	
+	public function guest($guest = true)
+	{
+		$this->getDbCriteria()->addCondition($guest ? 'user_id IS NULL' : 'user_id IS NOT NULL');
+		return $this;
 	}
 
 	/**
@@ -101,11 +113,17 @@ class EHttpSession extends CActiveRecord
 				'user' => Yii::t('ext.EUserDbHttpSession', 'User'),
 				
 				// virtual attributes
+				'isGuest' => Yii::t('ext.EUserDbHttpSession', 'Is Guest'),
 				'isExpired' => Yii::t('ext.EUserDbHttpSession', 'Is Expired'),
 				'dateExpire' => Yii::t('ext.EUserDbHttpSession', 'Date Expire'),
 				'created' => Yii::t('ext.EUserDbHttpSession', 'Created'),
 				'dateCreated' => Yii::t('ext.EUserDbHttpSession', 'Date Created'),
 		);
+	}
+	
+	public function getIsGuest()
+	{
+		return !isset($this->user_id);
 	}
 	
 	public function getIsExpired()

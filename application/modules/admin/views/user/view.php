@@ -6,10 +6,8 @@ $this->breadcrumbs = array(
 		'{t}Users{/t}' => $this->createUrl('/admin/user'),
 		'{t}User{/t} '.$action
 );
-
-$session = $CPUser->getSession();
+if(!$CPUser->getIsNewRecord()): 
 ?>
-<?php if(!$CPUser->getIsNewRecord()): ?>
 <div id="sidebar">
 	<div class="box-sidebar">
 		<h3>{t}Statistics{/t}</h3>

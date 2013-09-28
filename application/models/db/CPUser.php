@@ -153,6 +153,7 @@ class CPUser extends CActiveRecord
 		Yii::import('course.models.*');
 		return array_merge(
 				CourseUser::model()->relations(),
+				EUserDbHttpSessionBehavior::relations(),
 				array(
 					'avatar' => array(self::HAS_ONE, 'Avatar', 'user_id'),
 					'referees' => array(self::HAS_MANY, 'Referral', 'referee'),
@@ -165,6 +166,16 @@ class CPUser extends CActiveRecord
 					'agreements' => array(self::MANY_MANY, 'Agreement', UserAgreement::model()->tableName().'(user_id, agreement_id)'),
 				)
 		);
+	}
+	
+	public function activated($activated = true)
+	{
+		if($activated)
+		{
+			return $this->with(array('activated' => array('joinType' => 'INNER JOIN')))->together();
+		}
+		$this->with('activated')->together()->getDbCriteria()->addCondition('activated.user_id IS NULL');
+		return $this;
 	}
 
 	public function generateSessionKey($sessionKey = null)
