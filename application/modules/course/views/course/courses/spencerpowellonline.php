@@ -105,7 +105,35 @@ foreach(array(
     <li> <a href="#lesson-2-slide-1" data-fancybox-group="lesson-2" class="teal lesson-2">{t}Physical Activity{/t}</a> <a href="#lesson-2-slide-2" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-3" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-4" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-5" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-6" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-7" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-8" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-9" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-10" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-11" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-12" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-13" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-14" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-15" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-16" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-17" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-18" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-19" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-20" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-21" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-22" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-23" data-fancybox-group="lesson-2" class="hide lesson-2"></a> </li>
     <li> <a href="#lesson-3-slide-1" data-fancybox-group="lesson-3" class="teal lesson-3">{t}Emotional{/t}</a> <a href="#lesson-3-slide-2" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-3" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-4" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-5" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-6" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-7" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-8" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-9" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-10" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-11" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-12" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-13" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-14" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-15" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-16" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-17" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-18" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-19" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-20" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-21" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-22" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-23" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-24" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-25" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-26" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-27" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-28" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-29" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-30" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-31" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-32" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-33" data-fancybox-group="lesson-3" class="hide lesson-3"></a> </li>
     <li> <a href="#lesson-4-slide-1" data-fancybox-group="lesson-4" class="teal lesson-4">{t}Intellectual{/t}</a> <a href="#lesson-4-slide-2" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-3" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-4" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-5" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-6" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-7" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-8" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-9" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-10" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-11" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-12" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-13" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-14" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-15" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-16" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-17" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-18" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-19" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-20" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-21" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-22" data-fancybox-group="lesson-4" class="hide lesson-4"></a> </li>
-    <li> <a href="#lesson-5-slide-1" data-fancybox-group="lesson-5" class="teal lesson-5">{t}Nutritional{/t}</a> <a href="#lesson-5-slide-2" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-3" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-4" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-5" data-fancybox-group="lesson-5" class="hide lesson-5"></a> </li>
+    <li>
+<a href="#lesson-5-slide-1" data-fancybox-group="lesson-5" class="teal lesson-5">{t}Nutritional{/t}</a>
+<a href="#lesson-5-slide-2" data-fancybox-group="lesson-5" class="hide lesson-5"></a>
+<a href="#lesson-5-slide-3" data-fancybox-group="lesson-5" class="hide lesson-5"></a>
+<a href="#lesson-5-slide-4" data-fancybox-group="lesson-5" class="hide lesson-5"></a>
+<a href="#lesson-5-slide-5" data-fancybox-group="lesson-5" class="hide lesson-5"></a>
+<a href="#lesson-5-slide-6" data-fancybox-group="lesson-5" class="hide lesson-5"></a>
+<a href="#lesson-5-slide-7" data-fancybox-group="lesson-5" class="hide lesson-5"></a>
+<a href="#lesson-5-slide-8" data-fancybox-group="lesson-5" class="hide lesson-5"></a>
+<a href="#lesson-5-slide-9" data-fancybox-group="lesson-5" class="hide lesson-5"></a>
+<a href="#lesson-5-slide-10" data-fancybox-group="lesson-5" class="hide lesson-5"></a>
+<a href="#lesson-5-slide-11" data-fancybox-group="lesson-5" class="hide lesson-5"></a>
+<a href="#lesson-5-slide-12" data-fancybox-group="lesson-5" class="hide lesson-5"></a>
+<a href="#lesson-5-slide-13" data-fancybox-group="lesson-5" class="hide lesson-5"></a>
+<a href="#lesson-5-slide-14" data-fancybox-group="lesson-5" class="hide lesson-5"></a>
+<a href="#lesson-5-slide-15" data-fancybox-group="lesson-5" class="hide lesson-5"></a>
+<a href="#lesson-5-slide-16" data-fancybox-group="lesson-5" class="hide lesson-5"></a>
+<a href="#lesson-5-slide-17" data-fancybox-group="lesson-5" class="hide lesson-5"></a>
+<a href="#lesson-5-slide-18" data-fancybox-group="lesson-5" class="hide lesson-5"></a>
+<a href="#lesson-5-slide-19" data-fancybox-group="lesson-5" class="hide lesson-5"></a>
+<a href="#lesson-5-slide-20" data-fancybox-group="lesson-5" class="hide lesson-5"></a>
+<a href="#lesson-5-slide-21" data-fancybox-group="lesson-5" class="hide lesson-5"></a>
+<a href="#lesson-5-slide-22" data-fancybox-group="lesson-5" class="hide lesson-5"></a>
+<a href="#lesson-5-slide-23" data-fancybox-group="lesson-5" class="hide lesson-5"></a>
+<a href="#lesson-5-slide-24" data-fancybox-group="lesson-5" class="hide lesson-5"></a>
+<a href="#lesson-5-slide-25" data-fancybox-group="lesson-5" class="hide lesson-5"></a>
+
+
+</li>
     <li> <a href="#lesson-6-slide-1" data-fancybox-group="lesson-6" class="teal lesson-6">{t}Spiritual{/t}</a> <a href="#lesson-6-slide-2" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-3" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-4" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-5" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-6" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-7" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-8" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-9" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-10" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-11" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-12" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-13" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-14" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-15" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-16" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-17" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-18" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-19" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-20" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-21" data-fancybox-group="lesson-6" class="hide lesson-6"></a> </li>
     <li> <a href="#lesson-7-slide-1" data-fancybox-group="lesson-7" class="teal lesson-7">{t}Social{/t}</a> <a href="#lesson-7-slide-2" data-fancybox-group="lesson-7" class="hide lesson-7"></a> <a href="#lesson-7-slide-3" data-fancybox-group="lesson-7" class="hide lesson-7"></a> <a href="#lesson-7-slide-4" data-fancybox-group="lesson-7" class="hide lesson-7"></a> <a href="#lesson-7-slide-5" data-fancybox-group="lesson-7" class="hide lesson-7"></a> <a href="#lesson-7-slide-6" data-fancybox-group="lesson-7" class="hide lesson-7"></a> <a href="#lesson-7-slide-7" data-fancybox-group="lesson-7" class="hide lesson-7"></a> <a href="#lesson-7-slide-8" data-fancybox-group="lesson-7" class="hide lesson-7"></a> <a href="#lesson-7-slide-9" data-fancybox-group="lesson-7" class="hide lesson-7"></a> <a href="#lesson-7-slide-10" data-fancybox-group="lesson-7" class="hide lesson-7"></a> <a href="#lesson-7-slide-11" data-fancybox-group="lesson-7" class="hide lesson-7"></a> <a href="#lesson-7-slide-12" data-fancybox-group="lesson-7" class="hide lesson-7"></a> <a href="#lesson-7-slide-13" data-fancybox-group="lesson-7" class="hide lesson-7"></a> <a href="#lesson-7-slide-14" data-fancybox-group="lesson-7" class="hide lesson-7"></a> <a href="#lesson-7-slide-15" data-fancybox-group="lesson-7" class="hide lesson-7"></a> <a href="#lesson-7-slide-16" data-fancybox-group="lesson-7" class="hide lesson-7"></a> <a href="#lesson-7-slide-17" data-fancybox-group="lesson-7" class="hide lesson-7"></a> <a href="#lesson-7-slide-18" data-fancybox-group="lesson-7" class="hide lesson-7"></a> <a href="#lesson-7-slide-19" data-fancybox-group="lesson-7" class="hide lesson-7"></a> <a href="#lesson-7-slide-20" data-fancybox-group="lesson-7" class="hide lesson-7"></a> <a href="#lesson-7-slide-21" data-fancybox-group="lesson-7" class="hide lesson-7"></a> <a href="#lesson-7-slide-22" data-fancybox-group="lesson-7" class="hide lesson-7"></a> </li>
     <li> <a href="#lesson-8-slide-1" data-fancybox-group="lesson-8" class="teal lesson-8">{t}Closing{/t}</a> <a href="#lesson-8-slide-2" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-3" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-4" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-5" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-6" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-7" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-8" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-9" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-10" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-11" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-12" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-13" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-14" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-15" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-16" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-17" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-18" data-fancybox-group="lesson-8" class="hide lesson-8"></a> </li>
@@ -1811,18 +1839,277 @@ foreach(array(
       <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Complete Module{/t}</a> </div>
     </div>
   </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   <div id="lesson-5">
     <div id="lesson-5-slide-1" class="course-slide">
       <div class="content">
         <h2 class="flowers">{t}Nutritional{/t}</h2>
         <hr />
         <img src="<?php echo $this->getImagesUrl('spencer/167585366.png'); ?>" alt="{t}Welcome!{/t}">
-        <h4>{t}Coming Soon!{/t}</h4>
-        <p>&nbsp;</p>
+        <h4>{t}Module Outline{/t}</h4>
+        <ul>
+          <li>Review/Discuss content from last week</li>
+          <li>Overview of Healthy Brain Nutrition</li>
+          <li>Cooking Demonstration and discussion of how to eat for a brain healthy lifestyle</li>
+          <li>Goal Setting/Wrap-up</li>
+          <li>Take home memory tip </li>
+        </ul>
+        </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
+    </div>
+    
+    
+    <div id="lesson-5-slide-2" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Welcome to Module Five!{/t}</h2>
+        <hr />
+        <p>Last week we discussed how Intellectual Stimulation keeps your brain sharp.</p>
+        <p>Ask: How did you do with your goals from last week?
+          Ask: Those of you who met your goals, are there any tips or pointers you could share with the class about how you went about those goals?  (give an example, was it easy to develop a habit of meeting your goal first thing in the morning or right before bed?)</p>
+        <p>Ask: Those of you who had trouble this week, was there a particular barrier that you encountered?  Do you have a concrete plan for overcoming that barrier and achieving your goals for the coming week.</p>
+        <p>Ask: Who remembers the items from the list of brain healthy foods that you learned last week using the Roman Room method?  How many times did you have to practice it to remember?
+          
+          Ask:  Did anyone complete the multiplication table in the workbook? </p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
+    </div>
+        
+        
+        <div id="lesson-5-slide-3" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Learning Objectives{/t}</h2>
+        <hr />
+  
+        <ul>
+          <li>Understand how a healthy diet could benefit our brain</li>
+          <li>Discuss the evidence for healthy brain nutrition</li>
+          <li>Provide examples of how everyone could improve their diet to benefit their brain</li>
+          <li>Create short-term nutrition goals as first steps to living a brain healthy lifestyle</li>
+        </ul>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
+    </div>
+        
+        
+        <div id="lesson-5-slide-4" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Nutrition and our Brain{/t}</h2>
+        <hr />
+  
+  
+        <ul>
+          <li>What we eat effects our brains
+            <ul>
+              <li>Obesity</li>
+              <li>Cardiovascular health</li>
+              <li>Diabete</li>
+              <li> Chronic inflammation</li>
+              <li>Vitamins & Minerals</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p>Explain: Most of you already know that what we put into our bodies has a major impact on our health.  We know that in order to maintain a healthy body weight we need to keep an even balance between the energy (or calories) we consume with the energy we expend.  We know that eating foods high in calories and high in fat will contribute to greater body weight if we don’t burn those calories.  We also know that foods that are higher in fat content tend to have other implications such as contributing to increased cholesterol and blocked arteries.  And, we know that foods high in carbohydrates and sugars are going to contribute to the liklihood of late-onset diabetes and blood-sugar imbalances.  Finally, we know that taking vitamins and minerals has been found to be good for our health and to help reduce onset of chronic conditions including cardiovascular disease and certain cancers.</p>
+        <p>Key point: But, did you know that what we eat also has a big effect on our brain health?</p>
+        <p>Reminder: In our previous module on physical activity we talked about how our cardiovascular health is linked to Alzheimer’s disease and cognition and how blocked arteries and diabetes can lower Cognitive Reserve. </p>
+        
+        
+        
+          </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
+    </div>
+        
+        
+        <div id="lesson-5-slide-5" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Healthy Dietary Patterns{/t}</h2>
+        <hr />
+        <p>Diets Rich in:</p>
+        <ul>
+          <li>Healthy salad dressing, nuts, fish, tomatoes, poultry, cruciferous vegetables, fruits, dark green leafy vegetables</li>
+        </ul>
+        <p>With limited:</p>
+        <ul>
+          <li>High fat dairy products, red meats, organ meats, butter</li>
+        </ul>
+        <p>Researchers are beginning to look at patterns of food consumption in order to understand how different food could work together to help promote a brain healthy lifestyle.  A diet pattern similar to the Mediterranean diet has been identified as helping reduce the risk of Alzheimer’s disease.  This diet was discovered by researchers in the 1960’s who noticed that people who lived in the Mediterranean region had very low rates of Alzheimer’s disease.  Overall, the Mediterranean Diet includes eating lots of fruits and vegetables, “good fats” from olive oil, walnuts, fish and avocados, and low-fat and non-fat cheeses and yogurt (Greek yogurt is great!).  The diet also includes reliance on fish, poultry and legumes for protein with much more limited consumption of red meat. Fresh or dried fruit is eaten for dessert, and lots of water and moderate wine consumption are also recommended.
+</p>
+
+
+
+    <div id="lesson-5-slide-6" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Antioxidants{/t}</h2>
+        <hr />
+        <p>Antioxidant rich foods include:</p>
+        <ul>
+          <li>Fruits
+            <ul>
+              <li>Blueberries, blackberries, cranberries, prunes, strawberries, applies</li>
+            </ul>
+          </li>
+          <li>Vegetables
+            <ul>
+              <li>Red beans, kidney beans, pinto beans</li>
+            </ul>
+          </li>
+          <li>Nuts
+            <ul>
+              <li>Pecans, walnuts, hazelnuts</li>
+            </ul>
+          </li>
+          <li>Spices
+            <ul>
+              <li>Cinnamon, oregano, cloves</li>
+            </ul>
+          </li>
+          <li>Teas </li>
+        </ul>
+        <p>There are a few routes through which consumption of antioxidants seem to help reduce our risk of dementia or postpone its onset.</p>
+        <p>For one thing, chronic inflammation has been linked to the development of Alzheimer’s disease, and antioxidants are thought to help reduce chronic inflammation.</p>
+        <p>Antioxidants are also helpful because they are thought to relieve a process called oxidative stress that happens throughout the body, including the brain. Oxidative stress has been linked many diseases including cancer, Parkinson's disease, heart disease, Alzheimer’s disease, and the aging process itself.</p>
+        <p>Oxidative stress is a fancy term to describe the burden placed on our bodies by unstable molecules called “free oxygen radicals” or “free radicals”.  This may bring you back to chemistry class for a minute. When oxygen is metabolized (a process called oxidation), some of the oxygen molecules end up missing an electron, making them unstable – these are the free radicals. This is the same process that causes iron to rust, so you can think of oxidative stress as your body rusting.  In their search for an electron to make them stable, these free radicals bounce all around causing damage to your cells.  Antioxidants provide the missing electron that these oxygen cells need to stabilize, so they tone down the oxidative stress in your body and in your brain, allowing more brain cells to stick around in your cognitive reserve.</p>
+        <p>Antioxidants are simply vitamins and minerals that you are used to knowing are good for you.  They include Vitamins C and E, beta-carotene and the minerals zinc and selenium.</p>
+        <p>Most of the research suggests that the positive benefits from these vitamins and minerals really only comes through direct consumption of the foods that contain the vitamins or minerals as opposed to consumption of a supplement.  For example, Vitamin C found naturally in an orange appears to be more beneficial than taking a Vitamin C pill.  Our bodies are better at absorbing the nutrients directly from foods than from capsules or supplements.</p>
+        <p>Dark chocolate is one of those ‘miracle foods’ that is also high in antioxidants!  But be careful.  In order to make it taste so good, it is mixed with a lot of sugar and fat. Other “superfoods” that are high in antioxidants include wild blueberries, red beans, cranberries & artichoke hearts.</p>
+        <p>Many of the antioxidants are found in the skins of fruits and vegetables including potatoes and apples – so peeling or boiling these foods may lessen the amount of antioxidants found in them.</p>
+        
+            </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
+    </div>
+        
+        
+        
+        
+        
+            <div id="lesson-5-slide-7" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Fruits &amp; Vegetables{/t}</h2>
+        <hr />
+        
+        <ul>
+          <li>Fresh fruits & vegetables</li>
+          <li>Fruit & Vegetable Juice</li>
+          <li>Pomegranate Juice</li>
+        </ul>
+        <p>In addition to being high in anti-oxidants, fruits and vegetables have many other benefits including lots of other essential vitamins and nutruietnts as well as being high in fiber and liquid, which can help slow the absorption of sugar into the blood stream and help us feel fuller and therefore hopefully eat less.</p>
+<p>The best way to get your nutrients is by eating fresh fruits and vegetables, such as eating a salad or snacking on veggies with a low-fat dip. Try to vary the color of your fruits and veggies.  The multitude of colors that appear in our fruits and vegetables is natures way of enticing us to eat and enjoy a variety!  Each color comes with its on profile of healthy nutrients.</p>
+<p>In an attempt to control the type of fruit and vegetable consumption and the cooking methods involved, one study specifically looked at the consumption of fruit and vegetable juices.  The study then compared people who drank fruit or vegetable juices at least 3 times per week to those who drank less than once per week and found that those who drank more juice were less likely to have Alzheimer’s disease 7 years later.  They found the results to be even stronger for people who had a genetic predisposition (the ApOE-4 gene) to Alzheimer’s disease and for people who were less physically active.  The same study found no benefit from dietary supplements of vitamins C, E, and beta carotene –which is consistent with other research on the topic.</p>
+<p>A recent study using mice found that a daily glass of pomegranate juice cut the build-up of harmful proteins linked to Alzheimer’s disease in half for these mice. In fact, the study showed that pomegranates worked just as well as pharmaceutical medicines in the mice. Pomegranate's are extremely high in antioxidants, and they have been used as folk-medicine for ages.</p>
+
+
+        
+            </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
+    </div>
+        
+        
+        
+        
+        
+            <div id="lesson-5-slide-8" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Omega-3&rsquo;s{/t}</h2>
+        <hr />
+        
+        <p>Foods rich in Omega 3’s</p>
+        <ul>
+          <li>Salmon</li>
+          <li>Sardines</li>
+          <li>Pumpkin seeds</li>
+          <li>Soybeans</li>
+          <li>Herring</li>
+          <li>Flaxseed</li>
+          <li>Walnuts</li>
+          <li>Tuna</li>
+        </ul>
+<p>Omega-3 fatty acids are considered to be important protectors of your brain as well as your heart, and as you’ve been learning, what’s good for the heart is good for the brain!</p>
+<p>Scientists have focused primarily on fish consumption to understand the benefit of Omega-3 fatty acids on brain health, so research in this area is still young, but it is growing, and there is promising evidence to suggest that omega 3’s are beneficial to our brains.</p>
+<p>There was a recent study that prospectively examined brain volume in older people who did and didn’t eat fish and provided some of the strongest evidence to date for the role of Omega-3 in brain health.  Those who ate fish 2-3 times per week maintained more brain volume over the years of the study whereas those who had low fish consumption lost brain volume.</p>
+<p>Researchers at Rush University found that people who ate fish once per week or more had a 60% reduced risk for Alzheimer’s disease 2 years later.</p>
+<p>One benefit of Omega-3’s may be related to the way they seem to help reduce depression.  Depression is predictive of Alzheimer’s disease, so it may be speculated that people who consume a diet rich in Omega 3’s are less likely to be depressed, and therefore less likely to experience cognitive decline.</p>
+<p> Researchers have also found that diets rich in Omega 3’s could help to combat other nutrition-related problems.  For example people who consume diets that are high in sugars are more likely to be effected by metabolic syndrome problems with insulin levels that could negatively affect brain health.  However, people who also had diets high in Omega-3 had less trouble from the high rates of sugar in their diet.        </p>
+      </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
+    </div>
+        
+        
+        
+        
+        
+            <div id="lesson-5-slide-9" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Caffeine and Water{/t}</h2>
+        <hr />
+        
+        <p>Coffee appears to be actually good for our brains!  On the short-term it helps keep us alert and focused, on the long-term it has been found that people who drink up to 3 cups of coffee a day have decreased risks of AD.  The important thing is to pay attention to what you are putting in your coffee.  Low-fat or non-fat milk is best, but if you load your coffee up with cream and sugar, the detrimental effects of these may counteract the potential benefits of the coffee.</p>
+        
+        <p>
+We know that drinking water has many health benefits – it is good for our body and good for our brains!  Our brains are made up of 90% water!  First and foremost, water helps to ward off dehydration which could cause symptoms of dementia. It also helps us stay focused, and it helps transport nutrients and oxygen to our cells, helps our organisms absorb all those helpful nutrients that we discussed earlier, and helps detoxify us.</p>
+        
+            </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
+    </div>
+        
+        
+        
+        
+        
+            <div id="lesson-5-slide-10" class="course-slide">
+      <div class="content">
+        <h2 class="flowers">{t}Alcohol{/t}</h2>
+        <hr />
+<p>Alcohol in moderation also appears to be good for us.</p>
+
+<p>Scientists have found a very interesting relationship between alcohol and Alzheimer's disease, it is described as a “Curvilinear relationship.” That means the relationship looks more like a “U”.  So, people who abstain from alcohol and those who over-indulge tend to have a greater risk for cognitive decline than those who drink in moderation (ie, approximately 1 glass per day).  This relationship has mystified many researchers and scientists for years, yet findings replicating this relationship have been strong and consistent.</p>
+
       </div>
       <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Start Module &raquo;{/t}</a> </div>
     </div>
   </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   <div id="lesson-6">
     <div id="lesson-6-slide-1" class="course-slide">
       <div class="content">
