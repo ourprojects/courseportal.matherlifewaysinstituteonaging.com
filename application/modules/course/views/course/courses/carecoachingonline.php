@@ -287,7 +287,7 @@ AARP provides various articles of interest and resources for family caregivers. 
 				<p>{t}We constantly have an “internal dialogue” going on that no one else can hear. As a caregiver, that “internal dialogue” may be reliving negative experiences:{/t}</p>
 				<ul>
 					<li>{t}“If only my mother listened to me and moved in with us years ago, she would not have fallen, broken her hip, and wound up in that terrible nursing home!”{/t}</li>
-					<li>{t}“I just can not take on more responsibility for my dad\’s care. I already work 50 to 60 hours a week and have family responsibilities. But if I do not, who will?”{/t}</li>
+					<li>{t}“I just cannot take on more responsibility for my dad\’s care. I already work 50 to 60 hours a week and have family responsibilities. But if I do not, who will?”{/t}</li>
 					<li>{t}“How am I going to bring up the issue of long-term care planning with my parents? They always shut me off when I bring up questions about their finances.”{/t}</li>
 				</ul>
 				<p>{t}Going over and over these types of thoughts and questions in our minds does not get to problem solving.{/t}</p>
