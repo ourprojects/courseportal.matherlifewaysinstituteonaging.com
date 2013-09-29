@@ -22,7 +22,6 @@ foreach(array(
 							'mouseWheel' => false))
 	);
 	
-
 ?>
 
 <div class="small-masthead" style="background-image: url(<?php echo $this->getImagesUrl('care/78458492r.png'); ?>);">
@@ -151,20 +150,18 @@ AARP provides various articles of interest and resources for family caregivers. 
         <h2 class="flowers">{t}Welcome to CARE Coaching Online!{/t}</h2>
         <hr />
         <img src="<?php echo $this->getImagesUrl('care/3223247-531x800.png'); ?>" alt="image" />
-        <p>{t}We are so pleased you can participate in this online course. This online course is 7 weeks in length. The class moves forward on interval units to encourage discussion about specific topics each week. You may log on any time during the week for a few hours by reading the content and participating. Please note: participation will enhance what you get out of this course and will create a successful experience for you and others.{/t}</p>
+        <p>{t}We are so pleased you can participate in this online course. This course moves forward on interval units to encourage discussion about specific topics each week. You may log on any time during the week for a few hours by reading the content and participating. Please note: participation will enhance what you get out of this course and will create a successful experience for you and others.{/t}</p>
         <h4>{t}Technical Requirements{/t}</h4>
-        <p>{t}There are minimal technical requirements for participation in CARE Coaching Online, such as Internet access and e-mail. Special software and hardware are not needed, and plug-ins are available at no cost; if needed, plug-ins can be found at blue skeleton. Support is available 24 hours a day via a toll-free telephone number or via email. Just click on the ‘Help” icon in the top toolbar.{/t}</p>
-        <h4>{t}Class Schedule{/t}</h4>
-        <p>{t}There are 7 units in total, and we encourage you to complete at least one unit per week so that your Facilitator may monitor and help lead the various weekly unit Discussion areas.{/t}</p>
+        <p>{t}There are minimal technical requirements for participation in CARE Coaching Online, such as Internet access and e-mail. Special software and hardware are not needed, and plug-ins are available at no cost.{/t}</p>
+        <h4>{t}Course Schedule{/t}</h4>
+        <p>{t}There are seven modules in total, and we encourage you to complete at least one unit per week so that your Facilitator may monitor and help lead the various weekly unit Discussion areas.{/t}</p>
         <h4>{t}Availability{/t}</h4>
-        <p>{t}You will have access to CARE Coaching Online for approximately 7 weeks. We limit student access to this time frame because we review and update each class session to ensure students receive current information.{/t}</p>
-        <h4>{t}Contact{/t}</h4>
-        <p>{t}If you have any questions and/or concerns, please don’t hesitate to contact your Facilitator via email. Their information can be found by clicking on the ‘Staff Information’ link in the left toolbar.{/t}</p>
+        <p>{t}You will have access to CARE Coaching Online for one year. We limit user access to this time frame because we review and update each class session to ensure users receive current information.{/t}</p>
         <h4>{t}HELPFUL HINTS{/t}</h4>
         <ul>
-          <li>{t}MAKE A DATE WITH THE COURSE! Putting a specific time in your calendar to participate every week will get you started in the right direction. So, for example, if you plan to participate every Tuesday at 7:00 pm, try to keep the same schedule every week.{/t}</li>
-          <li>{t}READ CAREFULLY. The instructions to participate in activities are sometimes very specific but necessary to ensure everyone participates in the same way. Instructions will become familiar to you over time.{/t}</li>
-          <li>{t}KEEP ON TASK. We know your work and family caregiving responsibilities can sometimes disrupt your participation. The Facilitator will send emails each week to remind all students to log on and to share tips for each unit. They will also let you know what module is recommended for the week so you can assess your own progress and timeline.{/t}</li>
+          <li>{t}Putting a specific time in your calendar to participate every week will get you started in the right direction.{/t}</li>
+          <li>{t}The instructions to participate in activities are sometimes very specific but necessary to ensure everyone participates in the same way.{/t}</li>
+          <li>{t}We know your work and family caregiving responsibilities can sometimes disrupt your participation. The Facilitator will send emails each week to remind all students to log on and to share tips for each unit. They will also let you know what module is recommended for the week so you can assess your own progress and timeline.{/t}</li>
         </ul>
         <br />
         <br />
