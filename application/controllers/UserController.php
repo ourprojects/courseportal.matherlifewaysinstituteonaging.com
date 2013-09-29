@@ -304,8 +304,7 @@ class UserController extends ApiController
 		foreach(array(
 				'profile',
 				'precourse',
-				'postcourse',
-				'spencerpowell') as $surveyName) 
+				'postcourse') as $surveyName) 
 		{
 			$survey = $this->createWidget(
 					'modules.surveyor.widgets.Survey',

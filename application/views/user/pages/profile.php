@@ -22,6 +22,8 @@ $this->widget(
   <div class="box-sidebar one">
     <h3>{t}Optional Surveys{/t}</h3>
     <p>{t}Our goal is to help better educate our participants by creating a feedback system and means to better understanding the shifting needs of the field.{/t}</p>
+   
+   
     <ul id="surveys">
       <?php foreach($surveys as $survey): ?>
       <li> <a id="survey_link_<?php echo $survey->getId(); ?>" href="#survey_<?php echo $survey->getId(); ?>" title="<?php echo t($survey->model->title); ?>"><?php echo t($survey->model->title); ?> </a>
@@ -29,6 +31,9 @@ $this->widget(
       </li>
       <?php endforeach; ?>
     </ul>
+    
+    
+    
   </div>
   <div class="box-sidebar two">
     <h3>Mather LifeWays Institute on Aging</h3>
