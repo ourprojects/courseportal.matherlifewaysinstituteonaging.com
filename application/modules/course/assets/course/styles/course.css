@@ -1,7 +1,6 @@
 @charset "UTF-8";
 /* CSS Document */
 
-@import url(http://fonts.googleapis.com/css?family=Swanky+and+Moo+Moo);
 @import url(http://fonts.googleapis.com/css?family=Happy+Monkey);
 @import url(http://fonts.googleapis.com/css?family=Finger+Paint);
 div.course-slide {
@@ -59,9 +58,9 @@ div.course-slide div#video {
 	box-shadow: 0 0 5px 5px #888;
 }
 .forum {
-	font-family: 'Swanky and Moo Moo', cursive;
-	color: #000;
-	font-size: 22px;
+	font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif;
+	color: #00F;
+	font-size: 20px;
 }
 ul.forum li {
 	font-family: 'Swanky and Moo Moo', cursive;

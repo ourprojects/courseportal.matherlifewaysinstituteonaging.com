@@ -239,7 +239,6 @@ AARP provides various articles of interest and resources for family caregivers. 
       <div class="content">
         <h2 class="flowers">{t}Self-Coaching: It all starts with me!{/t}</h2>
         <hr />
-        <img src="<?php echo $this->getImagesUrl('care/4919555r.png'); ?>" alt="image" />
         <p>{t}In this case, it’s alright to say “it’s all about me!” There is quite a bit of information published about “self-coaching.” Think about the fact that we each represent a unique individual surrounded by a myriad of things going on inside and outside of ourselves.{/t}</p>
         <p>{t}We constantly have an “internal dialogue” going on that no one else can hear. As a caregiver, that “internal dialogue” may be reliving negative experiences:{/t}</p>
         <ul>
@@ -297,7 +296,7 @@ AARP provides various articles of interest and resources for family caregivers. 
       <div class="content">
         <h2 class="flowers">{t}Creating the Environment for Self-Coaching{/t}</h2>
         <hr />
-        <img src="<?php echo $this->getImagesUrl('care/5342290r.png'); ?>" alt="image" />
+        <img src="<?php echo $this->getImagesUrl('care/5342290.png'); ?>" alt="image" />
         <p>{t}The principle behind self-coaching (and CARE Coaching for that matter!) is the revelation of solutions already inherent in each person. For those who may be fortunate to experience an external coach, their role is to facilitate the experience and create an environment for the person being coached to do their best thinking.{/t}</p>
         <p>{t}Self-coaching can work in the same way for many individuals who commit some time and effort into the process. We have included several exercises throughout this course that will help you practice coaching skills that will be valuable when coaching yourself or communicating in your caregiving role with older parents.{/t}</p>
       </div>
@@ -339,11 +338,10 @@ AARP provides various articles of interest and resources for family caregivers. 
         <h2 class="flowers">{t}Video – Steps to Self-Coaching{/t}</h2>
         <hr />
         <p>{t}View the video, self-coaching 101 by Brooke Castillo from The Life Coach School. This video is a new way for you to experience a self-coaching session in the comfort of your own home. Serving as an introduction to self-coaching exercises, this video shows an example of self-coaching in action.{/t}</p>
-        <p>
-          <iframe width="560" height="315" src="http://www.youtube.com/embed/0_otisZVT8A" frameborder="0" allowfullscreen></iframe>
-        </p>
-        <br />
-        <br />
+        <div>
+         <iframe style="width: 640px; height: 360px; display:block; margin:25px auto;" src="//www.youtube.com/embed/0_otisZVT8A?rel=0" frameborder="0" allowfullscreen></iframe>
+      </div>
+       
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t} </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
     </div>
@@ -354,7 +352,14 @@ AARP provides various articles of interest and resources for family caregivers. 
       <div class="content">
         <h2 class="flowers">{t}Activity – Principles of Success{/t}</h2>
         <hr />
-        <p> <a href="<?php echo $this->createDownloadUrl('carecoachingonline/ActivityPrinciplesofSuccess.xls'); ?>" target="_blank"><img src="<?php echo $this->getImagesUrl('spreadsheet.png'); ?>" alt="image" class="normal" /> </a> {t}This activity focuses on assessing your awareness of ten principles of success and your rating of how you presently live according to them.{/t} </p>
+        <p>     
+
+        
+        
+         {t}This activity focuses on assessing your awareness of ten principles of success and your rating of how you presently live according to them.{/t} </p>
+         
+                 
+         <a href="<?php echo $this->createDownloadUrl('carecoachingonline/ActivityPrinciplesofSuccess.xls'); ?>" target="_blank"><img src="<?php echo $this->getImagesUrl('care/spreadsheet.png'); ?>" alt="image" class="normal" style="display:block; margin:0 auto;" /> </a>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t} </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
     </div>
@@ -476,20 +481,8 @@ AARP provides various articles of interest and resources for family caregivers. 
         </ul>
         <p>{t}For this exercise, look back at your responses to the two activities in this module. In the Self-Awareness Survey, you explored what is important to you in your life. In the Principles of Success activity, you rated yourself against these principles. Based on these results, develop three statements of goals for yourself.{/t}</p>
         <p>{t}Remember that goals should be stated in terms of nouns. Goals also answer the question, “What do you want that’s really important to you?”{/t}</p>
-        <p>{t}To start, type your goals below, and we will revisit them later in the course. (You only need to type them below; you will not be able to submit them yet).{/t}</p>
-        <div class="box-white">
-          <p> {t}Goal #1:{/t}
-            <input type="text" size="75%">
-          </p>
-          <p> {t}Goal #2:{/t}
-            <input type="text" size="75%">
-          </p>
-          <p> {t}Goal #3:{/t}
-            <input type="text" size="75%">
-          </p>
-        </div>
-        <br />
-        <br />
+        <p class="forum">{t}To start, post your goals to the Forum, and we will revisit them later in the course.{/t}</p>
+       <img src="<?php echo $this->getImagesUrl('care/forum_icon.png'); ?>" alt="{t}Forum Icon{/t}">
       </div>
       <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Complete Module{/t} </a> </div>
     </div>
@@ -528,7 +521,7 @@ AARP provides various articles of interest and resources for family caregivers. 
       <div class="content">
         <h2 class="flowers">{t}CARE Coaching: Communicating{/t}</h2>
         <hr />
-        <img src="<?php echo $this->getImagesUrl('9146129r.png'); ?>" alt="image" />
+        <img src="<?php echo $this->getImagesUrl('care/9146129r.png'); ?>" alt="image" />
         <p> {t}Does this scenario sound familiar?{/t} <i>{t}You are in a restaurant having dinner with your older parents. Your mother has some memory problems which means she takes quite a long time to figure out what to order. The waiter is standing over your table, and your father gets frustrated waiting for her to order. He says, “Helen, just order the chicken. You like the chicken!” She says, “I guess I’ll have the chicken.”{/t}</i> </p>
         <p> <i>{t}After the waiter leaves (and in front of your mother), he says, “She takes too long to order. She’s distracted with other things going on. She can’t figure it out, so it’s easy for her if I just tell her, and all she has to do is repeat it.” Your mother subsequently does not say much through the rest of the evening. The mood around the table is not much better.{/t}</i> </p>
         <p> {t}<b>Communicating</b> in CARE Coaching is all about choice. Your father’s response is based on his own perceptions and feelings about what’s going on with your mother rather than supporting her remaining potential to make choices. Perhaps her memory problems do interfere with her capacity to make choices, but being able to “modify” the situation can maximize Helen’s remaining capacities.{/t} </p>
