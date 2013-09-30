@@ -521,7 +521,7 @@ AARP provides various articles of interest and resources for family caregivers. 
       <div class="content">
         <h2 class="flowers">{t}CARE Coaching: Communicating{/t}</h2>
         <hr />
-        <img src="<?php echo $this->getImagesUrl('care/9146129r.png'); ?>" alt="image" />
+        <img src="<?php echo $this->getImagesUrl('care/9146129.png'); ?>" alt="image" />
         <p> {t}Does this scenario sound familiar?{/t} <i>{t}You are in a restaurant having dinner with your older parents. Your mother has some memory problems which means she takes quite a long time to figure out what to order. The waiter is standing over your table, and your father gets frustrated waiting for her to order. He says, “Helen, just order the chicken. You like the chicken!” She says, “I guess I’ll have the chicken.”{/t}</i> </p>
         <p> <i>{t}After the waiter leaves (and in front of your mother), he says, “She takes too long to order. She’s distracted with other things going on. She can’t figure it out, so it’s easy for her if I just tell her, and all she has to do is repeat it.” Your mother subsequently does not say much through the rest of the evening. The mood around the table is not much better.{/t}</i> </p>
         <p> {t}<b>Communicating</b> in CARE Coaching is all about choice. Your father’s response is based on his own perceptions and feelings about what’s going on with your mother rather than supporting her remaining potential to make choices. Perhaps her memory problems do interfere with her capacity to make choices, but being able to “modify” the situation can maximize Helen’s remaining capacities.{/t} </p>
@@ -535,7 +535,6 @@ AARP provides various articles of interest and resources for family caregivers. 
       <div class="content">
         <h2 class="flowers">{t}CARE Coaching: Communicating (continued){/t}</h2>
         <hr />
-        <img src="<?php echo $this->getImagesUrl('9869154r.png'); ?>" alt="image" />
         <p>{t}Here’s an example:{/t}</p>
         <p> <i>{t}Back at the restaurant, the waiter is ready to take the order. You say, “Mom, this restaurant is really well known for their delicious chicken and fish dishes, just the way you like them. What do you have a taste for today – chicken or fish?” Your mother says, “Well, I just don’t know. I had chicken for lunch today. So I think I’d like to try their fish!”{/t}</i> </p>
         <p>{t}So what is different in the two approaches? In your approach, you are taking a CARE Coaching approach by asking a version of “What do you want?” through your conversation. Taking into consideration your mother’s limitations, you have supported her remaining abilities to participate in daily life activities.{/t}</p>
@@ -551,7 +550,13 @@ AARP provides various articles of interest and resources for family caregivers. 
       <div class="content">
         <h2 class="flowers">{t}CARE Coaching: Communicating (continued){/t}</h2>
         <hr />
-        <p> <a href="<?php echo $this->createDownloadUrl('carecoachingonline/CaregiverBurdenAssessmentTool.pdf'); ?>" target="_blank"><img src="<?php echo $this->getImagesUrl('pdf-icon.png'); ?>" alt="image" class="normal" /> </a> {t}We have developed a Caregiver Burden Assessment to help you identify aspects of your life that may or may not be impacted by caregiving at this time. Click on the icon to access the <b>Caregiver Burden Assessment</b> tool.{/t} </p>
+        <p> 
+        
+        {t}We have developed a Caregiver Burden Assessment to help you identify aspects of your life that may or may not be impacted by caregiving at this time. Click on the icon to access the <b>Caregiver Burden Assessment</b> tool.{/t} </p>
+        
+        <a href="<?php echo $this->createDownloadUrl('care/CaregiverBurdenAssessmentTool.pdf'); ?>" target="_blank"><img src="<?php echo $this->getImagesUrl('pdf-icon.png'); ?>" alt="image" class="normal"> </a>
+        
+        
         <p> {t}<i>Confusion</i> about the healthcare system and utilization of those services by older adults is a universal experience for caregivers. Later in this course, we will address important ways for you to better understand the key roles and responsibilities of care providers as well as where concise, accurate information may be found to also share with your older parents.{/t} </p>
         <p> {t}<i>Guilt</i> is often an ongoing feeling for many caregivers. Sometimes caregivers get so focused on their frail, older parent that they feel guilty focusing on someone else – including themselves. Empower Online addresses these issues for caregivers and provides tools focused on self-care of the caregiver.{/t} </p>
         <p>{t}As a first step to better communication with your older parents about their needs and preferences, it is important that you have a clear understanding of what you may know and do not know about these needs and preferences. The next exercise will help you determine your level of knowledge as well as your own feelings about your parents’ future planning.{/t}</p>
@@ -565,7 +570,9 @@ AARP provides various articles of interest and resources for family caregivers. 
       <div class="content">
         <h2 class="flowers">{t}Exercise – Understanding Your Parents' Needs and Preferences{/t}</h2>
         <hr />
-        <p> <a href="<?php echo $this->getImagesUrl('CCO/Assets/ExerciseUnderstandingNeedsandPreferences.pdf'); ?>" target="_blank"><img src="<?php echo $this->getImagesUrl('pdf-icon.png'); ?>" alt="image" class="normal" /> </a> {t}This exercise is designed to help you determine what you know and do not know about your parents needs and preferences. Determining this now will help you on the road of communicating more openly about your parents’ future wishes to reduce your experience of burden, confusion, and guilt as a caregiver. Everyone has a different level of knowledge when it comes to the following information, so do not feel overwhelmed if you do not recall or have not addressed some of these areas with your parents.{/t} </p>
+        <p> <a href="<?php echo $this->getImagesUrl('CCO/Assets/ExerciseUnderstandingNeedsandPreferences.pdf'); ?>" target="_blank"><img src="<?php echo $this->getImagesUrl('pdf-icon.png'); ?>" alt="image" class="normal" /> </a></p>
+        
+         <p>{t}This exercise is designed to help you determine what you know and do not know about your parents needs and preferences. Determining this now will help you on the road of communicating more openly about your parents’ future wishes to reduce your experience of burden, confusion, and guilt as a caregiver. Everyone has a different level of knowledge when it comes to the following information, so do not feel overwhelmed if you do not recall or have not addressed some of these areas with your parents.{/t} </p>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t} </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
     </div>
@@ -589,7 +596,7 @@ AARP provides various articles of interest and resources for family caregivers. 
       <div class="content">
         <h2 class="flowers">{t}A Framework to Start "The Talk"{/t}</h2>
         <hr />
-        <img src="<?php echo $this->getImagesUrl('11829067r.png'); ?>" alt="image" />
+        <img src="<?php echo $this->getImagesUrl('care/11829067.png'); ?>" alt="image" />
         <p>{t}A framework has been developed to help you getting the conversations going. Overall, start small while your parents are still healthy and can fully participate in the discussions about their lives and health without undue pressure.{/t}</p>
         <p> {t}Think of this paced way to communicate as "<b>TEMPO</b>." This acronym stands for:{/t} </p>
         <ul>
@@ -619,7 +626,12 @@ AARP provides various articles of interest and resources for family caregivers. 
       <div class="content">
         <h2 class="flowers">{t}Activity - Practice "The Talk"{/t}</h2>
         <hr />
-        <p> <a href="<?php echo $this->createDownloadUrl('carecoachingonline/ActivityPracticetheTalk.pdf'); ?>" target="_blank"><img src="<?php echo $this->getImagesUrl('pdf-icon.png'); ?>" alt="image" class="normal" /> </a> {t}Some caregivers feel that practice sessions are valuable to "test out" the conversations in other situations. Here are some practice activities for you to try out.{/t} </p>
+        <p> <a href="<?php echo $this->createDownloadUrl('carecoachingonline/ActivityPracticetheTalk.pdf'); ?>" target="_blank"><img src="<?php echo $this->getImagesUrl('pdf-icon.png'); ?>" alt="image" class="normal" /> </a></p>
+        
+        <p>
+        
+        
+         {t}Some caregivers feel that practice sessions are valuable to "test out" the conversations in other situations. Here are some practice activities for you to try out.{/t} </p>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t} </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
     </div>
@@ -630,7 +642,7 @@ AARP provides various articles of interest and resources for family caregivers. 
       <div class="content">
         <h2 class="flowers">{t}CARE Coaching: Advocating{/t}</h2>
         <hr />
-        <img src="<?php echo $this->getImagesUrl('11829138r.png'); ?>" alt="image" />
+        <img src="<?php echo $this->getImagesUrl('care/11829138.png'); ?>" alt="image" />
         <p>{t}It’s time to bring up the second component of CARE Coaching – that of advocating. We are talking about advocating in a caring sense – that of supporting another – rather than in the legal sense – that of defending another.{/t}</p>
         <p>{t}Caregivers often view their parents as “stubborn” or “resistant” to their help:{/t}</p>
         <p>{t}“I just can’t get them to listen to me!”{/t}</p>
@@ -688,7 +700,7 @@ AARP provides various articles of interest and resources for family caregivers. 
       <div class="content">
         <h2 class="flowers">{t}What is a Personal Health Record?{/t}</h2>
         <hr />
-        <img src="<?php echo $this->getImagesUrl('11829178r.jpg'); ?>" alt="image" />
+        <img src="<?php echo $this->getImagesUrl('care/11829178.png'); ?>" alt="image" />
         <p>{t}In the previous section, you had the opportunity to complete the Exercise – Understanding Your Parents Needs and Preferences. In that exercise, we asked you to document some basics about what you know about your parents medical and health conditions.{/t}</p>
         <p>{t}Information like: the name and phone numbers of physicians, lists of their medical conditions and past surgeries, current lists of medications, allergies, and reactions to certain drugs or foods, advanced directives, physical functioning level, cognition, and diet requirements are basic questions asked in the emergency room – and unfortunately – usually repeated by every physician or surgeon you may see during a hospital stay!{/t}</p>
         <p>{t}It is often difficult to keep all this information straight, particularly in an emergency situation.{/t}</p>
@@ -708,9 +720,9 @@ AARP provides various articles of interest and resources for family caregivers. 
         <p>{t}Click on the following link to view a brief video on some personal experiences with PHRs.{/t}</p>
         <p>{t}Vimeo is a respectful community of creative people who are passionate about sharing the videos they make.{/t}</p>
         <p>
-          <iframe src="http://player.vimeo.com/video/5001493" width="500" height="338" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+          <iframe style="display:block; margin:25px auto;" src="http://player.vimeo.com/video/5001493" width="500" height="338" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
         </p>
-        <p> <a href="http://vimeo.com/5001493">PHR Video</a> from <a href="http://vimeo.com/ahima">AHIMA</a> on <a href="http://vimeo.com">Vimeo</a>. </p>
+        <p> <a href="http://vimeo.com/5001493" target="_blank">PHR Video</a> from <a href="http://vimeo.com/ahima" target="_blank">AHIMA</a> on <a href="http://vimeo.com" target="_blank">Vimeo</a>. </p>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t} </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
     </div>
@@ -722,7 +734,7 @@ AARP provides various articles of interest and resources for family caregivers. 
       <div class="content">
         <h2 class="flowers">{t}How to Choose a Personal Health Record{/t}</h2>
         <hr />
-        <img src="<?php echo $this->getImagesUrl('11848241r.jpg'); ?>" alt="image" />
+        <img src="<?php echo $this->getImagesUrl('care/11848241.png'); ?>" alt="image" />
         <p>{t}Choosing a Personal Health Record (PHR) is really a matter of personal choice. A PHR is controlled by the individual and can be shared with others including family members, caregivers, and health care providers. This is different from a health care provider’s electronic or paper health records, which are controlled by the provider. One can get access to one’s own health records from a provider, but family members do not have access without your permission.{/t}</p>
         <p>{t}This can be challenging in the caregiving situation if you as the caregiver do not have permission to access your parents’ health records, and you may need to provide information to a health care provider in an emergency situation. If one of your parents was hospitalized and unable to speak for himself or herself, did you know that the hospital cannot legally provide any information to you as a child without previous permission of your parent?{/t}</p>
         <p>{t}Ideally, a PHR contains a fairly complete summary of one’s medical and health history based on data from a number of sources. PHRs are available from a number of sources:{/t}</p>
@@ -742,7 +754,7 @@ AARP provides various articles of interest and resources for family caregivers. 
       <div class="content">
         <h2 class="flowers">{t}Types of PHRs{/t}</h2>
         <hr />
-        <img src="<?php echo $this->getImagesUrl('12051072r.jpg'); ?>" alt="image" />
+        <img src="<?php echo $this->getImagesUrl('care/12051072.png'); ?>" alt="image" />
         <p>{t}PHRs may be kept as hard copy on paper or electronically on one’s computer or on the Internet through a service provider. In considering what form may be most suitable, you should consider things like accessibility, convenience, and ease of updating.{/t}</p>
         <p>{t}Paper versions can range from a formal document to a file folder with information from health care providers, insurance companies and hospitals. This is at least a good starting point for most people to get a snapshot of one’s health history. The difficulties come in when trying to keep all the information current as well as having emergency access to the information.{/t}</p>
         <p> {t}The greatest risk of keeping health information on paper can easily be understood when considering the saga of Hurricane Katrina. The risks of keeping health information on paper were fully exposed when hundreds of thousands of evacuees sought care in new medical communities across the country. Evacuees lacked even the most basic personal health information, such as their medications and dosages. Most of their paper records were destroyed in the muck of hurricane-caused flooding, and many medical practices and hospitals were shut down for weeks, perhaps forever. Out of necessity, a program called{/t} <a href="http://www.katrinahealth.org" target="_blank">KatrinaHealth</a> {t}was created to rapidly develop electronic health records for those displaced by the hurricane. Since then, the American Association of Family Practitioners (AAFP) has collaborated with the city of New Orleans and Intel, among others, to provide digital PHRs to every New Orleans resident who wants one, and
@@ -758,8 +770,16 @@ AARP provides various articles of interest and resources for family caregivers. 
       <div class="content">
         <h2 class="flowers">{t}Types of PHRs{/t}</h2>
         <hr />
-        <a href="<?php echo $this->createDownloadUrl('carecoachingonline/PHRForm.pdf'); ?>" target="_blank"><img src="<?php echo $this->getImagesUrl('pdf-icon.png'); ?>" alt="image" width="48" height="48" class="normal" /> </a>
+       
+
+        
+        
+        
         <p> <a href="http://www.ahima.org/" target="_blank">The American Health Information Management Association (AHIMA)</a> {t}created a PHR form that is downloadable here.{/t} </p>
+        <p>       
+        <a href="<?php echo $this->createDownloadUrl('carecoachingonline/PHRForm.pdf'); ?>" target="_blank"><img src="<?php echo $this->getImagesUrl('pdf-icon.png'); ?>" alt="image" width="48" height="48" class="normal" /> </a></p>
+        
+        
         <p>{t}Software versions of PHRs are stored on personal computers. Information is inputted directly into electronic forms or by scanning documents from health care providers. A hard copy can then be easily printed. The user controls access to the information. The major drawback is the lack of accessibility in case of an emergency unless one carries a copy of the records on a flash drive or on a data card. Most software versions of PHRs are available at a cost to consumers.{/t}</p>
         <p>{t}Internet versions of PHRs are very new having just been developed over the past 1-2 years. Through the web, consumers may access their private PHR accounts by connecting to the Internet and logging in with their user name and password. Information may easily be updated, and consumers may elect to share information with specific individuals of their choosing. The major advantage is the access and availability of information in emergency situations – all one needs is an Internet connection and login information.{/t}</p>
         <p>{t}If you are looking at an Internet-based PHR, it is very important that the provider describes security and privacy standards that are in place to protect the information being stored. We will look at a few examples in the next section.{/t}</p>
@@ -813,7 +833,7 @@ AARP provides various articles of interest and resources for family caregivers. 
         <hr />
         <p>{t}Click on the following link to view a brief video taking you on a tour of Google Health.{/t}</p>
         <p>
-          <iframe width="560" height="315" src="http://www.youtube.com/embed/yNe6-p4G7Ik?rel=0" frameborder="0" allowfullscreen></iframe>
+          <iframe style="display:block; margin:25px auto;" width="560" height="315" src="http://www.youtube.com/embed/yNe6-p4G7Ik?rel=0" frameborder="0" allowfullscreen></iframe>
         </p>
         <p>{t}To summarize aspects of Google Health:{/t}</p>
         <ul>
@@ -852,8 +872,16 @@ AARP provides various articles of interest and resources for family caregivers. 
       <div class="content">
         <h2 class="flowers">{t}Exercise – CARE Coaching and Selecting PHRs{/t}</h2>
         <hr />
-        <a href="<?php echo $this->createDownloadUrl('carecoachingonline/ExerciseCARECoachingandSelectingPHRs.pdf'); ?>" target="_blank"><img src="<?php echo $this->getImagesUrl('pdf-icon.png'); ?>" alt="image" class="normal" /> </a>
-        <p>{t}Asking the right questions is key to determine which PHR product is right for you and your family. This exercise is designed to help you determine exactly that. Review the previously described Internet-based tools, My Family Health Profile and ProfileMD, and respond to the following questions.{/t}</p>
+       
+       
+
+        
+        
+        
+        <p>{t}Asking the right questions is key to determine which PHR product is right for you and your family. This exercise is designed to help you determine exactly that. Review the previously described Internet-based tools, My Family Health Profile and ProfileMD.{/t}</p>
+        
+        
+        <p>        <a href="<?php echo $this->createDownloadUrl('carecoachingonline/ExerciseCARECoachingandSelectingPHRs.pdf'); ?>" target="_blank"><img src="<?php echo $this->getImagesUrl('pdf-icon.png'); ?>" alt="image" class="normal" /> </a></p>
       </div>
       <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Complete Module{/t} </a> </div>
     </div>
@@ -892,7 +920,7 @@ AARP provides various articles of interest and resources for family caregivers. 
       <div class="content">
         <h2 class="flowers">{t}Navigating the Health Care System{/t}</h2>
         <hr />
-        <img src="<?php echo $this->getImagesUrl('Dining-MGEVr.jpg'); ?>" alt="image" />
+        <img src="<?php echo $this->getImagesUrl('care/82090054.png'); ?>" alt="image" />
         <p>{t}Talk to anyone today about the state of health care and you will probably get an earful of complaints, “horror” stories, and head shaking. Complaints run the gamut of problems with insurance companies and Medicare, doctors who don’t spend enough time with patients, and quick hospital discharges.{/t}</p>
         <p>{t}Here are common issues voiced by older adult patients:{/t}</p>
         <ul>
@@ -921,7 +949,7 @@ AARP provides various articles of interest and resources for family caregivers. 
       <div class="content">
         <h2 class="flowers">{t}CARE Coaching: Relating{/t}</h2>
         <hr />
-        <img src="<?php echo $this->getImagesUrl('J0285068r.jpg'); ?>" alt="image" />
+        <img src="<?php echo $this->getImagesUrl('care/158802964.png'); ?>" alt="image" />
         <p>{t}Over the years, the patient-doctor relationship has been defined, though rules of ethics and rules of law, as a fiduciary one, as a relationship founded in trust. When a patient seeks out a physician’s help, and the physician agrees to give that help, a special covenant is made. The patient agrees to take the physician into confidence, to reveal intimate information related to one’s health. The physician, in turn, agrees to honor that trust, and to become the patient’s advocate in all health-related matters.{/t}</p>
         <p>{t}As a caregiver, you are probably stepping into a situation where your older parents already are seeing one or more physicians for various ailments. Stepping into those relationships can often make you feel like the “third wheel” initially. We are not suggesting that you go to every office visit with your older parents, but in the future, your caregiving role may include and require this so that you may best advocate for you parents.{/t}</p>
         <p> {t}This brings us to the third component of CARE Coaching, that of <b>relating</b>. The most important factor in the patient-doctor relationship is communicating or relating. It fairly obvious that if a patient cannot communicate well with his or her physician, that’s a problem. How do you know that your older parents’ doctor is relating? Here are some questions to asking your parents:{/t} </p>
@@ -945,7 +973,7 @@ AARP provides various articles of interest and resources for family caregivers. 
         <hr />
         <p>{t}Have you ever left a doctor's appointment feeling that your questions were not answered? Or not sure what you were supposed to do next? Do not worry, you are not alone. Dr. Lori Whittaker, a family physician in Seattle, shares tips and advice for how to speak up for yourself when you are at the doctor's office. Good communication is a two way street, and it is up to you to make sure you get the treatment and the information you need to stay healthy.{/t}
         <p>
-          <iframe width="420" height="315" src="http://www.youtube.com/embed/rEt8xfQ9z1U?rel=0" frameborder="0" allowfullscreen></iframe>
+          <iframe style="display:block; margin:25px auto;" width="420" height="315" src="http://www.youtube.com/embed/rEt8xfQ9z1U?rel=0" frameborder="0" allowfullscreen></iframe>
         </p>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo;</a> </div>
@@ -957,7 +985,6 @@ AARP provides various articles of interest and resources for family caregivers. 
       <div class="content">
         <h2 class="flowers">{t}Helping Older Parents Talk to Medical Professionals about Health Care{/t}</h2>
         <hr />
-        <img src="<?php echo $this->getImagesUrl('J0289491r.jpg'); ?>" alt="image" />
         <p>{t}Occasionally, it may be feel intimidating to speak to physicians for one reason or another. At times, the actions of the doctor may appear that he or she has little time to spend with us. At other times, we may feel “inadequate” in our knowledge and use of “medical terms,” feeling like we speak a different language than physicians.{/t}</p>
         <p>{t}Older adults may especially loath to question physicians because they were raised in a generation where doctors were considered to be above reproach. Many of today’s generation of health care professionals encourage questions and want their patients to play a role in their health care.{/t}</p>
         <p>{t}In planning for your discussions with your older parents and their physicians, remember that as their caregiver, you have an obligation to understand your parents’ medical care.{/t}</p>
@@ -976,16 +1003,14 @@ AARP provides various articles of interest and resources for family caregivers. 
       <div class="content">
         <h2 class="flowers">{t}Exercise – How are You with PowerPhrases?{/t}</h2>
         <hr />
-        <img src="<?php echo $this->getImagesUrl('J0315447r.jpg'); ?>" alt="image" />
         <p>{t}How familiar does this sound? George has been waiting in the exam room for his physician to come in for over 50 minutes. He has counted the floor and ceiling tiles at least six times and needs to use the bathroom out in the hall, but is unwilling to get up with just the examining gown to cover him.{/t}</p>
         <p>{t}When George’s physician entered, he seemed rush and distracted. He glanced at George’s file and talked rapidly throughout the brief exam. George has several questions that he wanted to discuss that were very personal. Because the physician seemed so rushed, George was not comfortable asking his questions.{/t}</p>
         <p>{t}The physician told George that his blood pressure was high and he was going to give him a prescription for something (he didn’t say what!). The physician walked out. A few minutes later, a nurse walked in and handed George a prescription telling him that he may get dressed now. George figured that he would just have to ask his pharmacist the questions.{/t}</p>
         <p>{t}Given the pressures of managed care, it is common for physicians to space appointments 15 minutes apart. The need for expediency can result in communication breakdowns that may result in inadequate care or serious consequences.{/t}</p>
+        <h5>{t}PowerPhrase Survey{/t}</h5>
         <p>{t}A “PowerPhrase” is a short, specific expression that gets results by saying what it means and meaning what it says (without being mean!). By planning specific phrases to use prior to an appointment, the results can be much more favorable to the patient.{/t}</p>
         <p>{t}Let’s do an exercise to see your current “PowerPhrase” skill level. Click on the following icon to take a quick survey.{/t}</p>
-        <p> <a href="<?php echo $this->createDownloadUrl('carecoachingonline/ExercisePowerPhraseSurvey.pdf'); ?>" target="_blank"><img src="<?php echo $this->getImagesUrl('pdf-icon.png'); ?>" alt="image" width="48" height="48" class="normal" /> </a> {t}PowerPhrase Survey{/t} </p>
-        <br />
-        <br />
+        <p> <a href="<?php echo $this->createDownloadUrl('carecoachingonline/ExercisePowerPhraseSurvey.pdf'); ?>" target="_blank"><img src="<?php echo $this->getImagesUrl('pdf-icon.png'); ?>" alt="image" width="48" height="48" class="normal" /> </a></p>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo;</a> </div>
     </div>
@@ -996,7 +1021,7 @@ AARP provides various articles of interest and resources for family caregivers. 
       <div class="content">
         <h2 class="flowers">{t}Activity – Practicing PowerPhrases with Your Health Provider{/t}</h2>
         <hr />
-        <img src="<?php echo $this->getImagesUrl('CARECoachingOnlineImages/J0321054.JPG'); ?>" alt="image" width="400" height="267" />
+        <img src="<?php echo $this->getImagesUrl('care/here.png'); ?>" alt="image" />
         <p>{t}Now that you have assessed your PowerPhrase skill level, we will now focus on PowerPhrases related to your health care provider to ensure a positive visit. By planning specific phrases to use in advance of the appointment, the patient can impact the outcome of the visit. You may find these helpful not only for your older parents, but also for your own use when visiting your doctor.{/t}</p>
         <p>{t}Here is another typical scenario. You are visiting your mother one Sunday afternoon. You notice that she appears to be limping and favoring one side when she walks. You say, “Mom, I noticed you are limping. Are you having some difficulty walking?” She says, “Yes, my left shin is very painful. It’s been like this for about a week.” You ask to see her shin and you notice that there is redness and swelling. She tells you that she will be seeing her doctor this Thursday. You offer to accompany her, and she agrees.{/t}</p>
         <p>{t}On Thursday, you take her to her appointment and accompany her to the exam room. Dr. Palmer enters and asks your mom how she is feeling. Your mom replies, “Fine, thank you.” Dr. Palmer reviews the laboratory results and says, “Your iron level is a bit low. I’ll give you a B12 injection and you’ll feel as good as new!” “Thank you, doctor,” replies your mom. With that the doctor exits to see his next patient.{/t}</p>
