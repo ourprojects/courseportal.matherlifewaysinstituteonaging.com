@@ -31,19 +31,51 @@ foreach(array(
 </div>
 <div id="sidebar">
 	<div class="box-sidebar one" style="background-color: #FFF;">
-		<h3>{t}Evaluations - Coming Soon!{/t}</h3>
+		<h3>{t}Evaluations{/t}</h3>
 		<br />
-		<script>
-function myFunction(){
-alert("Coming Soon!");
-}
-</script>
-		<p>
-			<input type="button" style="width: 175px;" onclick="myFunction()" value="Pre-Course Evaluation" />
-		</p>
-		<p>
-			<input type="button" style="width: 175px;" onclick="myFunction()" value="Post-Course Evaluation" />
-		</p>
+		<ul id="surveys">
+			<?php
+			$this->widget(
+					'ext.fancybox.EFancyBox',
+					array(
+							'id' => 'a[id^="survey_link_"]',
+							'config' => array(
+									'width' => '95%',
+									'height' => '95%',
+									'arrows' => false,
+									'autoSize' => false,
+									'mouseWheel' => false,
+							)
+					)
+			);
+			foreach(array(
+					'precourse',
+					'postcourse') as $surveyName)
+			{
+				$survey = $this->createWidget(
+						'modules.surveyor.widgets.Survey',
+						array(
+								'id' => $surveyName,
+								'options' => array(
+										'htmlOptions' => array('style' => 'display:none;'),
+										'title' => array('htmlOptions' => array('class' => 'flowers')),
+										'form' => array('options' =>
+												array(
+														'enableAjaxValidation' => true,
+														'enableClientValidation' => true
+												)),
+								)
+						)
+				);
+				$survey->model->user_id = Yii::app()->getUser()->getId();
+				$survey->processRequest();
+				echo '<li>';
+				echo '<a id="survey_link_'.$survey->getId().'" href="#survey_'.$survey->getId().'" title="'.t($survey->model->title).'">'.t($survey->model->title).'</a>';
+				$survey->run();
+				echo '</li>';
+			}
+			?>
+		</ul>
 		<br /> <img src="<?php echo $this->getImagesUrl('intro/153075496.png'); ?>" alt="image">
 	</div>
 	<div class="box-sidebar one">
