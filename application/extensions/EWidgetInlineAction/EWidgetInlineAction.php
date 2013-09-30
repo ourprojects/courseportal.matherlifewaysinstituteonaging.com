@@ -1,6 +1,6 @@
 <?php
 
-class WidgetInlineAction extends CInlineAction
+class EWidgetInlineAction extends CInlineAction
 {
 	
 	public $widgetClassName;

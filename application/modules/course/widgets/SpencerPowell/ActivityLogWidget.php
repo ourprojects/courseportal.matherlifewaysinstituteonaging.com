@@ -16,15 +16,15 @@ class ActivityLogWidget extends CInputWidget
 	{
 		return array(
 				'dimension' => array(
-						'class' => 'course.widgets.SpencerPowell.actions.WidgetInlineAction',
+						'class' => 'ext.EWidgetInlineAction.EWidgetInlineAction',
 						'widgetClassName' => 'course.widgets.SpencerPowell.ActivityLogWidget'
 				),
 				'logActivity' => array(
-						'class' => 'course.widgets.SpencerPowell.actions.WidgetInlineAction',
+						'class' => 'ext.EWidgetInlineAction.EWidgetInlineAction',
 						'widgetClassName' => 'course.widgets.SpencerPowell.ActivityLogWidget'
 				),
 				'logActivityGrid' => array(
-						'class' => 'course.widgets.SpencerPowell.actions.WidgetInlineAction',
+						'class' => 'ext.EWidgetInlineAction.EWidgetInlineAction',
 						'widgetClassName' => 'course.widgets.SpencerPowell.ActivityLogWidget'
 				)
 		);
