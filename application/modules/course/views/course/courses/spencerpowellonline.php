@@ -118,7 +118,7 @@ foreach(array(
     <li> <a href="http://www.nlm.nih.gov/medlineplus/nutrition.html" target="_blank">NIH</a> (Nutrition) </li>
   </ul>
   <h4>{t}Facilitator:{/t}</h4>
-  <h5><a href="mailto:sall@matherlifeways.com" target="_blank">Sherrie All, PhD</a></h5>
+  <h5>Sherrie All, PhD</h5>
   <p>{t}Licensed clinical neuropsychologist specializing in brain fitness, healthy aging and cognitive enhancement. She is building a private practice in clinical neuropsychological assessment combined with interventions aimed at enhancing cognition and promoting healthy aging. And has specialties in Neuropsychological Assessment, Individual and Group Psychotherapy, Brain Fitness and Healthy Aging Therapy, and Coaching{/t}</p>
 </div>
 <div id="course" class="hide">

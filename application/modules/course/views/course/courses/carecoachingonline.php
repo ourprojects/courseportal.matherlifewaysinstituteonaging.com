@@ -83,7 +83,7 @@ foreach(array(
     <li> <a href="#lesson-6-slide-1" data-fancybox-group="lesson-6" class="teal lesson-6"> {t}Promoting Safety of Older Relatives and Friends in Caring for Themselves{/t} </a> <a href="#lesson-6-slide-2" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-3" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-4" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-5" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-6" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-7" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-8" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-9" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-10" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-11" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-12" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-13" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-14" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-15" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-16" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-17" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-18" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-19" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-20" data-fancybox-group="lesson-6" class="hide lesson-6"></a> </li>
     <li> <a href="#lesson-7-slide-1" data-fancybox-group="lesson-7" class="teal lesson-7"> {t}Supporting Personal Choice and Preferences of Older Adults in Health and Care Decision Making{/t} </a> <a href="#lesson-7-slide-2" data-fancybox-group="lesson-7" class="teal lesson-7"></a> <a href="#lesson-7-slide-3" data-fancybox-group="lesson-7" class="teal lesson-7"></a> <a href="#lesson-7-slide-4" data-fancybox-group="lesson-7" class="teal lesson-7"></a> <a href="#lesson-7-slide-5" data-fancybox-group="lesson-7" class="teal lesson-7"></a> <a href="#lesson-7-slide-6" data-fancybox-group="lesson-7" class="teal lesson-7"></a> <a href="#lesson-7-slide-7" data-fancybox-group="lesson-7" class="teal lesson-7"></a> <a href="#lesson-7-slide-8" data-fancybox-group="lesson-7" class="teal lesson-7"></a> </li>
   </ul>
-  <div class="box-white" id="resources">
+  
     <h4>{t}Resources{/t}</h4>
     <p>{t}Please use these listed resources for additional reading. Please contact your course facilitator if you have additional resources you would like to see added here.{/t}</p>
     <ul>
@@ -120,17 +120,12 @@ Find help providing care, government agencies, long-distance caregiving, and sup
 AARP provides various articles of interest and resources for family caregivers. --> 
       </li>
     </ul>
-  </div>
-  <div class="box-white" id="developers">
-    <h4>{t}Course Contacts{/t}</h4>
-    <br />
-    <SPAN class="h5">{t}Content Designer:{/t} </SPAN><span class="name">Linda Hollinger-Smith, PhD</SPAN>
-    <p>{t}Dr. Hollinger-Smith is a doctorally prepared registered nurse focusing her research in gerontology, workforce development, and quality improvement. She has more than 28 years of experience working with older adults in senior living, long-term care settings, in the community, and in acute care settings in various staff and managerial positions. Her past positions include Assistant Dean of the Rush University College of Nursing, Nursing Director of the Rush Primary Care Institute, and Associate Chairperson of the Department of Adult Health Nursing at Rush University College of Nursing.{/t}</p>
-    <span class="h5">{t}Developer:{/t} </span><span class="name">Jon Woodall</span>
-    <p>{t}Mr. Woodall is responsible for all MLIA corporate workforce wellness programs related to design, implementation, publication, and evaluation. Additionally, he seeks new grant funding to support or extend current grants related to corporate workforce wellness programs.{/t}</p>
-    <span class="h5">{t}Facilitator:{/t}</span> <span class="name">Ellen Ziegemeier</span>
+
+ 
+    <h4>{t}Facilitator:{/t}</h4>
+    <h5>Ellen Ziegemeier</h5>
     <p>{t}Ms. Ziegemeier has been facilitating online courses for Mather LifeWays Institute on Aging since 2004. She earned her Masters in Anthropology, and has worked locally and abroad - Latin America and South America for various aging services. She is fluent in English and Spanish, and has a strong passion for caregiver training.{/t}</p>
-  </div>
+
 </div>
 <div id="course" class="hide">
   <?php $clientScript->registerScript('question-answer-handler',

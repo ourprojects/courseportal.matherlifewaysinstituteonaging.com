@@ -25,7 +25,7 @@ $clientScript->registerCssFile($this->getStylesUrl('homeUser.css'));
   <div class="box-sidebar four">
     <h3>{t}Aging in Action{/t}</h3>
     <p>{t}<a href="http://twitter.com/aginginaction" target="_blank">Aging in Action</a> is Mather LifeWays Institute on Aging's monthly e-newsletter and blog containing the latest research news in the field of aging.{/t}</p>
-    <p> <img class="block-center" src="<?php echo $this->getImagesUrl('twitter-bird.png'); ?>" /></p>
+    <p> <img style="display:block; margin:0 auto;" src="<?php echo $this->getImagesUrl('twitter-bird.png'); ?>" /></p>
   </div>
   <div class="box-sidebar three statistics" style="padding-bottom: 25px;">
     <h3>{t}Statistics on Caregivers{/t}</h3>
