@@ -1460,7 +1460,7 @@ AARP provides various articles of interest and resources for family caregivers. 
 			<div class="content">
 				<h2 class="flowers">{t}General Indicators When It May be Time to Consider Moving{/t}</h2>
 				<hr />
-				<img src="<?php echo $this->getImagesUrl('11829067r.png'); ?> " alt="image" />
+				<img src="<?php echo $this->getImagesUrl('care/155282486.png'); ?> " alt="image" />
 				<p>{t}Although each situation is going to be very different, often medical conditions or mental awareness change warrant considering a move to a place where help with activities of daily living is available. In other cases, older adults may begin to find that tasks like cooking, housekeeping, shoveling snow, mowing the lawn, and taking care of home repairs have become a burden.{/t}</p>
 				<p>{t}Some general indicators to consider:{/t}</p>
 				<p>
@@ -1612,9 +1612,8 @@ AARP provides various articles of interest and resources for family caregivers. 
 			<div class="content">
 				<h2 class="flowers">{t}Exercise – Visiting a Senior Living Community{/t}</h2>
 				<hr />
-				<p>{t}The best way to understand senior living communities is to actually visit one in your area. Because many adult children visit senior living communities prior to having their older parents come for a tour, many senior living communities are very welcoming to adult children.{/t}</p>
-				<p>{t}Click on the icon below to access the activity: Visiting a Senior Living Community{/t}</p>
-				<a href="<?php echo $this->createDownloadUrl('carecoachingonline/ExerciseVisitingaSeniorLivingCommunity.pdf'); ?>" target="_blank"><img class="normal" src="<?php echo $this->getImagesUrl('care/pdf-icon.png'); ?>" alt="image" /> </a>
+			  <p>{t}The best way to understand senior living communities is to actually visit one in your area. Because many adult children visit senior living communities prior to having their older parents come for a tour, many senior living communities are very welcoming to adult children.{/t}</p>
+				<p><a href="<?php echo $this->createDownloadUrl('carecoachingonline/ExerciseVisitingaSeniorLivingCommunity.pdf'); ?>" target="_blank"><img class="normal" src="<?php echo $this->getImagesUrl('care/pdf-icon.png'); ?>" alt="image" /> </a>			    </p>
 			</div>
 			<div class="buttons">
 				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo;</a>
@@ -1675,7 +1674,7 @@ AARP provides various articles of interest and resources for family caregivers. 
 						{t}What is the basic information I should have at hand as a long distance caregiver?{/t}
 						<ul>
 							<li>{t}Have contact information from your older parents’ neighbors. Make sure they know how to reach you in an emergency.{/t}</li>
-							<li>{t}check out local resources and services (usually through a local area agency on aging, library, or senior center). Check with your parents which ones they may find helpful and check back on whether they have initiated contacts.{/t}</li>
+							<li>{t}Check out local resources and services (usually through a local area agency on aging, library, or senior center). Check with your parents which ones they may find helpful and check back on whether they have initiated contacts.{/t}</li>
 							<li>{t}Have a current list of your parents’ medications (prescription and over-the-counter) including dosages, schedule, and reasons they are taking.{/t}</li>
 							<li>{t}When you visit their home, be observant for changes in the environment or potential safety hazards.{/t}</li>
 							<li>{t}Find out if you parents have “advanced directives” that outline their health care treatment preferences.{/t}</li>
