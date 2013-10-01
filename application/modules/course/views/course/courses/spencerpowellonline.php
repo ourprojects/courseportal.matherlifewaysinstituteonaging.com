@@ -2424,9 +2424,7 @@ foreach(array(
 					<li>Simple and tasty fruit salad – Cut up some fruit, then make a simple marinade of lime juice, honey & chopped up mint leaves to pour on top – makes the fruit salad more enjoyable and more elegant to serve.</li>
 					<li>A great way to add some anti-oxidants to your veggies is to make a simple dip for them – Curry dip: mix 2, 6 ounce containers of low fat yogurt with ¼ cut mango chutney, and 2-3 tspoons of curry powder together for a great dip to have with raw veggies.</li>
 					<li>Trail mix: mix together pretzels, almonds, walnuts, dried fruit (cranberries or raisins) few m&m’s</li>
-					<li>
-						Explain: it is ok to have some sweets and we don’t want to deprive ourselves of things we crave otherwise we may eat too much of it later. By incorporating a variety of different textures into this trail mix we will help satisfy our cravings and enjoy our snacks.
-					</li>
+					<li>Explain: it is ok to have some sweets and we don’t want to deprive ourselves of things we crave otherwise we may eat too much of it later. By incorporating a variety of different textures into this trail mix we will help satisfy our cravings and enjoy our snacks.</li>
 				</ul>
 			</div>
 			<div class="buttons">
