@@ -181,12 +181,13 @@ AARP provides various articles of interest and resources for family caregivers. 
         <h2 class="flowers">{t}Welcome to CARE Coaching Online!{/t}</h2>
         <hr />
         <img src="<?php echo $this->getImagesUrl('care/3223247-531x800.png'); ?>" alt="image" />
-        <p>{t}We are so pleased you can participate in this online course. This course moves forward on interval units to encourage discussion about specific topics each week. You may log on any time during the week for a few hours by reading the content and participating. Please note: participation will enhance what you get out of this course and will create a successful experience for you and others.{/t}</p>
-        <h4>{t}Technical Requirements{/t}</h4>
+        <p>{t}We are so pleased you can participate in this online course. This course moves forward on interval units to encourage discussion about specific topics each week. You may log on any time during the week for a few hours by reading the content and participating.{/t}</p>
+        <p style="font-style:italic;">{t}<span style="color:red; font-weight:bold;">Please note</span> -  participation will enhance what you get out of this course and will create a successful experience for you and others.{/t} </p>
+        <h5>{t}Technical Requirements{/t}</h5>
         <p>{t}There are minimal technical requirements for participation in CARE Coaching Online, such as Internet access and e-mail. Special software and hardware are not needed, and plug-ins are available at no cost.{/t}</p>
-        <h4>{t}Course Schedule{/t}</h4>
+        <h5>{t}Course Schedule{/t}</h5>
         <p>{t}There are seven modules in total, and we encourage you to complete at least one unit per week so that your Facilitator may monitor and help lead the various weekly unit Discussion areas.{/t}</p>
-        <h4>{t}Availability{/t}</h4>
+        <h5>{t}Availability{/t}</h5>
         <p>{t}You will have access to CARE Coaching Online for one year. We limit user access to this time frame because we review and update each class session to ensure users receive current information.{/t}</p>
         <h4>{t}HELPFUL HINTS{/t}</h4>
         <ul>
@@ -291,17 +292,18 @@ AARP provides various articles of interest and resources for family caregivers. 
       <div class="content">
         <h2 class="flowers">{t}Self-Coaching: It all starts with me! (continued){/t}</h2>
         <hr />
+        <img src="<?php echo $this->getImagesUrl('care/86509800.png'); ?>" alt="{t}image{/t}">
         <p>{t}Say this to yourself:{/t}</p>
         <ul>
-          <li>{t}I am going to accomplish something.{/t}</li>
-          <li>{t}I am going to figure it out.{/t}</li>
-          <li>{t}I am going to do my best thinking, because I want to get to what’s important.{/t}</li>
+          <li><em>{t}I am going to accomplish something.{/t}</em></li>
+          <li><em>{t}I am going to figure it out.{/t}</em></li>
+          <li><em>{t}I am going to do my best thinking, because I want to get to what’s important.{/t}</em></li>
         </ul>
         <p>{t}Now, say this out loud:{/t}</p>
         <ul>
-          <li>{t}I am going to accomplish something.{/t}</li>
-          <li>{t}I am going to figure it out.{/t}</li>
-          <li>{t}I am going to do my best thinking, because I want to get to what is important.{/t}</li>
+          <li><em>{t}I am going to accomplish something.{/t}</em></li>
+          <li><em>{t}I am going to figure it out.{/t}</em></li>
+          <li><em>{t}I am going to do my best thinking, because I want to get to what is important.{/t}</em></li>
         </ul>
         <p>{t}This is just a simple exercise in positive self-talk. Our internal voice and thoughts have the capability to create our reality, and so it is our daily challenge to move aside the negative, cyclical thinking and focus on positive steps we may take to move forward. Focusing on the many skills you already have inside of yourself not only will benefit your own health, success, and self-esteem, but will be of great aide to your caregiving responsibilities{/t}</p>
         <p>{t}Let us first assess where you currently are related to your readiness and awareness for self-coaching, and then we will move into some self-coaching exercises that you may continue as often as you feel it would be helpful to you.{/t}</p>
@@ -448,33 +450,33 @@ AARP provides various articles of interest and resources for family caregivers. 
         <p>{t}None of these are goals – these are strategies towards goals. Strategies are important, as they focus on the “how to get to” goals. It is easy to focus on strategies rather than goals because strategies seem to focus on actions.{/t}</p>
         <p>{t}How do we identify the goal? The goal answers the question: “What do you want that is really important to you?”{/t}</p>
         <p>{t}Another way to differentiate between setting goals and identifying strategies is to look at differences between goal setting and problem solving. Here are some different terms that describe the two:{/t}</p>
-        <table>
+        <table style="width:100%;">
           <tr>
-            <td><p>{t}Goal Setting{/t}</p></td>
+            <td width="50%"><p>{t}Goal Setting{/t}</p></td>
             <td><p>{t}Identifying Strategies{/t}</p></td>
           </tr>
           <tr>
-            <td><p>{t}Proactive{/t}</p></td>
+            <td width="50%"><p>{t}Proactive{/t}</p></td>
             <td><p>{t}Reactive{/t}</p></td>
           </tr>
           <tr>
-            <td><p>{t}Finding what is possible{/t}</p></td>
+            <td width="50%"><p>{t}Finding what is possible{/t}</p></td>
             <td><p>{t}Finding what is wrong{/t}</p></td>
           </tr>
           <tr>
-            <td><p>{t}Developing{/t}</p></td>
+            <td width="50%"><p>{t}Developing{/t}</p></td>
             <td><p>{t}Fixing{/t}</p></td>
           </tr>
           <tr>
-            <td><p>{t}Identifying priorities{/t}</p></td>
+            <td width="50%"><p>{t}Identifying priorities{/t}</p></td>
             <td><p>{t}Addressing crises{/t}</p></td>
           </tr>
           <tr>
-            <td><p>{t}Dynamic{/t}</p></td>
+            <td width="50%"><p>{t}Dynamic{/t}</p></td>
             <td><p>{t}Static{/t}</p></td>
           </tr>
           <tr>
-            <td><p>{t}Working with the whole{/t}</p></td>
+            <td width="50%"><p>{t}Working with the whole{/t}</p></td>
             <td><p>{t}Working with parts{/t}</p></td>
           </tr>
         </table>
@@ -492,19 +494,19 @@ AARP provides various articles of interest and resources for family caregivers. 
         <hr />
         <p>{t}Think of goal setting in terms of NOUNS:{/t}</p>
         <ul>
-          <li>{t}“I want more confidence dealing with my parents.”{/t}</li>
-          <li>{t}“I want a more positive attitude about my caregiving responsibilities.”{/t}</li>
-          <li>{t}“I want better health for myself.”{/t}</li>
+          <li><em>{t}I want more confidence dealing with my parents.{/t}</em></li>
+          <li><em>{t}I want a more positive attitude about my caregiving responsibilities.{/t}</em></li>
+          <li><em>{t}I want better health for myself.{/t}</em></li>
         </ul>
         <p>{t}Compare these to strategies which are usually stated in terms of VERBS:{/t}</p>
         <ul>
-          <li>{t}I want to lose 30 pounds.{/t}</li>
-          <li>{t}I want to get better at negotiating.{/t}</li>
-          <li>{t}I want to get my mother to start considering her long-term care options.{/t}</li>
+          <li><em>{t}I want to lose 30 pounds.{/t}</em></li>
+          <li><em>{t}I want to get better at negotiating.{/t}</em></li>
+          <li><em>{t}I want to get my mother to start considering her long-term care options.{/t}</em></li>
         </ul>
-        <p>{t}For this exercise, look back at your responses to the two activities in this module. In the Self-Awareness Survey, you explored what is important to you in your life. In the Principles of Success activity, you rated yourself against these principles. Based on these results, develop three statements of goals for yourself.{/t}</p>
-        <p>{t}Remember that goals should be stated in terms of nouns. Goals also answer the question, “What do you want that’s really important to you?”{/t}</p>
-        <p class="forum">{t}To start, post your goals to the Forum, and we will revisit them later in the course.{/t}</p>
+        <p>{t}For this exercise, look back at your responses to the two activities in this module. In the <strong>Self-Awareness Survey</strong>, you explored what is important to you in your life. In the <strong>Principles of Success activity</strong>, you rated yourself against these principles. Based on these results, develop three statements of goals for yourself.{/t}</p>
+        <p>{t}Remember that goals should be stated in terms of nouns. Goals also answer the question, <em>“What do you want that’s really important to you?”</em>{/t}</p>
+        <p class="forum">{t}To start, post your goals to the Forum, and we will revisit them later in the course. The Forum is accessible by clicking the icon in the top navigation bar, back on the course home page.{/t}</p>
         <img src="<?php echo $this->getImagesUrl('care/forum_icon.png'); ?>" alt="{t}Forum Icon{/t}"> </div>
       <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Complete Module{/t} </a> </div>
     </div>
@@ -534,7 +536,7 @@ AARP provides various articles of interest and resources for family caregivers. 
         <br />
         <br />
       </div>
-      <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Start Course &raquo;{/t} </a> </div>
+      <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Start Module &raquo;{/t} </a> </div>
     </div>
     
     <!-- Understanding Needs and Preferences of Older Adults starts here -->
@@ -557,7 +559,7 @@ AARP provides various articles of interest and resources for family caregivers. 
       <div class="content">
         <h2 class="flowers">{t}CARE Coaching: Communicating (continued){/t}</h2>
         <hr />
-        <p>{t}Here’s an example:{/t}</p>
+        <h5>{t}Here’s an example:{/t}</h5>
         <p> <i>{t}Back at the restaurant, the waiter is ready to take the order. You say, “Mom, this restaurant is really well known for their delicious chicken and fish dishes, just the way you like them. What do you have a taste for today – chicken or fish?” Your mother says, “Well, I just don’t know. I had chicken for lunch today. So I think I’d like to try their fish!”{/t}</i> </p>
         <p>{t}So what is different in the two approaches? In your approach, you are taking a CARE Coaching approach by asking a version of “What do you want?” through your conversation. Taking into consideration your mother’s limitations, you have supported her remaining abilities to participate in daily life activities.{/t}</p>
         <p>{t}You may not yet be in a “caregiving” role for your older parents or other loved ones (or you may not consider what you now do for them as “caregiving”), but this course is designed to help you think about the future. People may find themselves “plunged” into the caregiving role at a time in life when they themselves are facing challenges such as mid-career transitions, their own health issues, or before retirement. Additionally, they may be contending with raising their own children simultaneously.{/t}</p>
@@ -587,8 +589,9 @@ AARP provides various articles of interest and resources for family caregivers. 
       <div class="content">
         <h2 class="flowers">{t}Exercise – Understanding Your Parents' Needs and Preferences{/t}</h2>
         <hr />
+        <p>{t}This exercise is designed to help you determine what you know and do not know about your parents needs and preferences. Determining this now will help you on the road of communicating more openly about your parents’ future wishes to reduce your experience of burden, confusion, and guilt as a caregiver.{/t}</p>
+        <p>{t}Everyone has a different level of knowledge when it comes to the following information, so do not feel overwhelmed if you do not recall or have not addressed some of these areas with your parents.{/t}</p>
         <p> <a href="<?php echo $this->getImagesUrl('CCO/Assets/ExerciseUnderstandingNeedsandPreferences.pdf'); ?>" target="_blank"><img src="<?php echo $this->getImagesUrl('care/pdf-icon.png'); ?>" alt="image" class="normal" /> </a> </p>
-        <p>{t}This exercise is designed to help you determine what you know and do not know about your parents needs and preferences. Determining this now will help you on the road of communicating more openly about your parents’ future wishes to reduce your experience of burden, confusion, and guilt as a caregiver. Everyone has a different level of knowledge when it comes to the following information, so do not feel overwhelmed if you do not recall or have not addressed some of these areas with your parents.{/t}</p>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t} </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
     </div>
@@ -602,7 +605,8 @@ AARP provides various articles of interest and resources for family caregivers. 
         <p>{t}Do not feel anxious if you had a number of "blanks" when working through the previous exercise - it is not a reflection on "bad" caregiving. Your parents have been independent through these many years and may not have felt the need to share much of these matters with "the kids."{/t}</p>
         <p>{t}How do you start to talk to your older parents about the future? What fears do you have about bringing up this topic with them?{/t}</p>
         <p>{t}So that we can share stories, ideas, questions, and issues among participants throughout the course, we have an online topic forum. This forum is for you the caregiver, so feel free to participate in the discussions, add new topics, and share information for others to learn from!{/t}</p>
-      </div>
+        <p class="forum">{t}The Forum will be indicated by blue font color, like this sentance, as well as the icon below. Again, the Forum is accessible by clicking on the Forum icon in the top navigation bar, back on the course home page.</p>
+        <img src="<?php echo $this->getImagesUrl('care/forum_icon.png'); ?>" alt="{t}Forum{/t}"> </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t} </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
     </div>
     
@@ -642,8 +646,8 @@ AARP provides various articles of interest and resources for family caregivers. 
       <div class="content">
         <h2 class="flowers">{t}Activity - Practice "The Talk"{/t}</h2>
         <hr />
-        <p> <a href="<?php echo $this->createDownloadUrl('carecoachingonline/ActivityPracticetheTalk.pdf'); ?>" target="_blank"><img src="<?php echo $this->getImagesUrl('care/pdf-icon.png'); ?>" alt="image" class="normal" /> </a> </p>
         <p>{t}Some caregivers feel that practice sessions are valuable to "test out" the conversations in other situations. Here are some practice activities for you to try out.{/t}</p>
+        <p> <a href="<?php echo $this->createDownloadUrl('carecoachingonline/ActivityPracticetheTalk.pdf'); ?>" target="_blank"><img src="<?php echo $this->getImagesUrl('care/pdf-icon.png'); ?>" alt="image" class="normal" /> </a> </p>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t} </a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a> </div>
     </div>
@@ -702,7 +706,7 @@ AARP provides various articles of interest and resources for family caregivers. 
         <br />
         <br />
       </div>
-      <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Start Course &raquo;{/t} </a> </div>
+      <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Start Module &raquo;{/t} </a> </div>
     </div>
     
     <!-- Lesson #3 - Managing Health Information and Record Keeping --> 
@@ -907,7 +911,7 @@ AARP provides various articles of interest and resources for family caregivers. 
         <br />
         <br />
       </div>
-      <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Start Course &raquo;{/t} </a> </div>
+      <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Start Module &raquo;{/t} </a> </div>
     </div>
     
     <!-- Understanding the Health Care System and Utilization by Older Adults -->
@@ -1074,9 +1078,6 @@ AARP provides various articles of interest and resources for family caregivers. 
       <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Complete Module{/t}</a> </div>
     </div>
   </div>
-  
-  <!-- Relocation and Transfers by Older Adults within the Health Care System -->
-  
   <div id="lesson-5">
     <div id="lesson-5-slide-1" class="course-slide">
       <div class="content">
@@ -1095,7 +1096,7 @@ AARP provides various articles of interest and resources for family caregivers. 
         <br />
         <br />
       </div>
-      <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Start Course &raquo;{/t} </a> </div>
+      <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Start Module &raquo;{/t} </a> </div>
     </div>
     
     <!-- Relocation and Transfers by Older Adults within the Health Care System -->
@@ -1216,7 +1217,7 @@ AARP provides various articles of interest and resources for family caregivers. 
       <div class="content">
         <h2 class="flowers">{t}Understanding the Options: From Staying at Home to Retirement Living{/t}</h2>
         <hr />
-        <img src="<?php echo $this->getImagesUrl('4919555r.png'); ?>" alt="image" />
+        <img src="<?php echo $this->getImagesUrl('care/4919555.png'); ?>" alt="image" />
         <p>{t}Major life changes are seldom easy particularly when it comes to considering moving out of one’s home with all its memories. In past years, older parents had two options – either struggle to stay in one’s home, often one spouse caring for the other, or else resort to expensive (and frequently inadequate) nursing home care. The stress on the caregiving spouse can also have negative effects on his or her health and well-being.{/t}</p>
         <p>{t}Our aging population and growing consumer expectations for choice and quality in care for older adults have sparked an increasing number of options for older adults and their families. We will look at some of those choices in this next section.{/t}</p>
         <p>{t}Retirement living has many names and faces. The “industry” typically refers to “retirement living” as “senior living.” Retirement communities are referred to as “senior living communities.” There is basically three levels of care in senior living:{/t}</p>
@@ -1241,7 +1242,8 @@ AARP provides various articles of interest and resources for family caregivers. 
         <h2 class="flowers">{t}Understanding the Options: From Staying at Home to Retirement Living (continued){/t}</h2>
         <hr />
         <p>{t}To understand more about assisted living – levels of care, caring for loved ones with dementia, how to pay for one, and how to evaluate one – search the Web and download the “ Gilbert Buide - Assisted Living Evaluation and Moving Kit.”{/t}</p>
-        <h5> <a href="<?php echo $this->createDownloadUrl('carecoachingonline/GilbertGuideALToolkit.pdf'); ?>" target="_blank"><img src="<?php echo $this->getImagesUrl('care/pdf-icon.png'); ?>" alt="image" class="normal" /> </a>{t}Download Gilbert Guide – Assisted Living Evaluation and Moving Kit{/t} </h5>
+        <h5> {t}Download Gilbert Guide – Assisted Living Evaluation and Moving Kit{/t} </h5>
+        <a href="<?php echo $this->createDownloadUrl('carecoachingonline/GilbertGuideALToolkit.pdf'); ?>" target="_blank"><img src="<?php echo $this->getImagesUrl('care/pdf-icon.png'); ?>" alt="image" class="normal" /> </a>
         <p>{t}Watch the following brief video to learn more about assisted living.{/t}</p>
         <h5>{t}Video – Learn about Assisted Living{/t}</h5>
         <p>
@@ -1268,14 +1270,13 @@ AARP provides various articles of interest and resources for family caregivers. 
           <li>{t}Long-Term Care{/t}</li>
         </ul>
         <p>{t}“Retirement living” is changing with a greater emphasis on wellness and quality of life for residents. The next generations of older adults are redefining what they are looking for in the next phase of their lives. Read about some of these changes happening in some Tucson area senior living communities.{/t}</p>
-        <h5> <a href="<?php echo $this->createDownloadUrl('carecoachingonline/RetirementRedefinedArticle.pdf'); ?>" target="_blank"><img src="<?php echo $this->getImagesUrl('care/pdf-icon.png'); ?>" alt="image" class="normal" /> </a>{t}Retirement Redefined{/t} </h5>
+        <h5> {t}Retirement Redefined{/t} </h5>
+        <a href="<?php echo $this->createDownloadUrl('carecoachingonline/RetirementRedefinedArticle.pdf'); ?>" target="_blank"><img src="<?php echo $this->getImagesUrl('care/pdf-icon.png'); ?>" alt="image" class="normal" /> </a>
         <p> {t}Requirements for applicants and payment options vary considerably for CCRCs. Within the current housing market, many CCRCs are offering payment plan options or assistance to older couples who may need to sell their current home prior to moving to the new community. Many CCRCs offer what is termed “life care contracting.” Life care communities provide the same continuum of care to a resident for life, but the biggest difference is this: <b>residents who become financially unable to pay their monthly care fees are subsidized by the community, with the same access to services, and with no interruption in care or change in priority status</b>. In other words, residents are guaranteed the same quality of care and access to care from day one through end-of-life, regardless of their personal financial situation. Additionally, most life care communities offer all health care services on the same campus. The idea is that, after qualifying through a health and financial application
           process, residents will never have to move again, except between levels of care as needed.{/t} </p>
         <p>{t}The following guide provides more information about types of contracts common to CCRCs. Because there are various across states in terms of these contracts, it is important that you also investigate your state’s requirements.{/t}</p>
-        <h5> <a href="<?php echo $this->createDownloadUrl('carecoachingonline/GilbertGuideILTookit.pdf'); ?>" target="_blank"><img src="<?php echo $this->getImagesUrl('care/pdf-icon.png'); ?>" alt="image" class="normal" /> </a>{t}Download Gilbert Guide – Independent Living &amp; CCRC Evaluation Kit{/t} </h5>
-        <br />
-        <br />
-      </div>
+        <h5> {t}Download Gilbert Guide – Independent Living &amp; CCRC Evaluation Kit{/t} </h5>
+        <a href="<?php echo $this->createDownloadUrl('carecoachingonline/GilbertGuideILTookit.pdf'); ?>" target="_blank"><img src="<?php echo $this->getImagesUrl('care/pdf-icon.png'); ?>" alt="image" class="normal" /> </a> </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo;</a> </div>
     </div>
     
@@ -1291,17 +1292,15 @@ AARP provides various articles of interest and resources for family caregivers. 
         <p>{t}View an example of a Florida Active Adult Community in the following video.{/t}</p>
         <h5>{t}Video – Active Adult Community{/t}</h5>
         <p>
-          <iframe width="560" height="315" src="http://www.youtube.com/embed/ji-srBxj5MA?rel=0" frameborder="0" allowfullscreen></iframe>
+          <iframe style="width:560px; height:315px; display:block; margin:25px auto;" src="http://www.youtube.com/embed/ji-srBxj5MA?rel=0" frameborder="0" allowfullscreen></iframe>
         </p>
         <p> <i>{t}Affordable Senior Housing Options{/t}</i> </p>
         <p>{t}For a number of older adults, the cost of entering an active adult community or CCRC may pose a financial barrier. What is also termed “Section 202 Housing” - named after the section of the federal legislation authorizing it – this is rental housing specifically for people over the age of 62 who have incomes under 50 percent of the area median income. According to HUD, the U.S. Department of Housing and Urban Development, the average Section 202 resident is a woman in her 70s with an annual income of less than $10,000. Section 202 residences are built and run by private, non-profit groups who have received loan incentives from HUD. HUD is not involved in day to day operations. Rents are calculated according to income, and rental assistance funds pay whatever balance remains.{/t}</p>
         <p>{t}View the following brief video about affordable senior housing.{/t}</p>
         <h5>{t}Video – Affordable Senior Housing{/t}</h5>
         <p>
-          <iframe width="420" height="315" src="http://www.youtube.com/embed/cUrdKp8MGEw?rel=0" frameborder="0" allowfullscreen></iframe>
+          <iframe style="width: 420px; height: 315px; display:block; margin:25px auto;" src="http://www.youtube.com/embed/cUrdKp8MGEw?rel=0" frameborder="0" allowfullscreen></iframe>
         </p>
-        <br />
-        <br />
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo;</a> </div>
     </div>
@@ -1313,8 +1312,8 @@ AARP provides various articles of interest and resources for family caregivers. 
         <h2 class="flowers">{t}Exercise – Visiting a Senior Living Community{/t}</h2>
         <hr />
         <p>{t}The best way to understand senior living communities is to actually visit one in your area. Because many adult children visit senior living communities prior to having their older parents come for a tour, many senior living communities are very welcoming to adult children.{/t}</p>
-        <p> <a href="<?php echo $this->createDownloadUrl('carecoachingonline/ExerciseVisitingaSeniorLivingCommunity.pdf'); ?>" target="_blank"><img class="normal" src="<?php echo $this->getImagesUrl('care/pdf-icon.png'); ?>" alt="image" /> </a> {t}Click on the icon to access the activity: Visiting a Senior Living Community{/t} </p>
-      </div>
+        <p> {t}Click on the icon below to access the activity: Visiting a Senior Living Community{/t} </p>
+        <a href="<?php echo $this->createDownloadUrl('carecoachingonline/ExerciseVisitingaSeniorLivingCommunity.pdf'); ?>" target="_blank"><img class="normal" src="<?php echo $this->getImagesUrl('care/pdf-icon.png'); ?>" alt="image" /> </a> </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo;</a> </div>
     </div>
     
@@ -1324,7 +1323,7 @@ AARP provides various articles of interest and resources for family caregivers. 
       <div class="content">
         <h2 class="flowers">{t}Long Distance Caregiving{/t}</h2>
         <hr />
-        <img src="<?php echo $this->getImagesUrl('78634274r.jpeg'); ?>" alt="image" />
+        <img src="<?php echo $this->getImagesUrl('care/78634274.png'); ?>" alt="image" />
         <p>{t}With many grown children seeking new career opportunities or needing to relocate due to their job away from their parents and the home in which they were raised, long distance caregiving has grown as an issue in our society.{/t}</p>
         <p>{t}Here are some fast facts to consider:{/t}</p>
         <ul>
@@ -1350,8 +1349,8 @@ AARP provides various articles of interest and resources for family caregivers. 
         <h2 class="flowers">{t}Activity – CARE Coaching through Long Distance Caregiving{/t}</h2>
         <hr />
         <p>{t}Read the following scenario and then respond to the CARE coaching questions. We provide some initial “openers” for CARE coaching questions for you to more fully develop your own questions.{/t}</p>
-        <p> <a href="<?php echo $this->createDownloadUrl('carecoachingonline/ActivityCARECoachingthroughLongDistanceCaregiving.pdf'); ?>" target="_blank"><img src="<?php echo $this->getImagesUrl('care/pdf-icon.png'); ?>" alt="image" class="normal" /> </a>{t}CARE Coaching through Long Distance Caregiving{/t} </p>
-      </div>
+        <p> {t}CARE Coaching through Long Distance Caregiving{/t} </p>
+        <a href="<?php echo $this->createDownloadUrl('carecoachingonline/ActivityCARECoachingthroughLongDistanceCaregiving.pdf'); ?>" target="_blank"><img src="<?php echo $this->getImagesUrl('care/pdf-icon.png'); ?>" alt="image" class="normal" /> </a> </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo;</a> </div>
     </div>
     
@@ -1361,42 +1360,33 @@ AARP provides various articles of interest and resources for family caregivers. 
       <div class="content">
         <h2 class="flowers">{t}Some Common Questions (and Answers) for Long Distance Caregivers{/t}</h2>
         <hr />
-        <img src="<?php echo $this->getImagesUrl('J0285068r.jpg'); ?>" alt="image" />
+        <img src="<?php echo $this->getImagesUrl('care/120724245.png'); ?>" alt="image" />
         <p>{t}Long distance caregivers can be helpful regardless of the distance! Here are some common questions (and answers) for long distance caregivers.{/t}</p>
-        <ol start="1">
-          <li>
-            <p>{t}What is the basic information I should have at hand as a long distance caregiver?{/t}</p>
-          </li>
-          <li>
-            <ol>
+        <ul>
+          <li>{t}What is the basic information I should have at hand as a long distance caregiver?{/t}
+            <ul>
               <li>{t}Have contact information from your older parents’ neighbors. Make sure they know how to reach you in an emergency.{/t}</li>
               <li>{t}check out local resources and services (usually through a local area agency on aging, library, or senior center). Check with your parents which ones they may find helpful and check back on whether they have initiated contacts.{/t}</li>
               <li>{t}Have a current list of your parents’ medications (prescription and over-the-counter) including dosages, schedule, and reasons they are taking.{/t}</li>
               <li>{t}When you visit their home, be observant for changes in the environment or potential safety hazards.{/t}</li>
               <li>{t}Find out if you parents have “advanced directives” that outline their health care treatment preferences.{/t}</li>
-            </ol>
+            </ul>
           </li>
-          <li>
-            <p>{t}What can I really expect to do from a distance? I don’t feel comfortable just stepping into a situation.{/t}</p>
-          </li>
-          <li>
-            <ol>
+          <li>{t}What can I really expect to do from a distance? I don’t feel comfortable just stepping into a situation.{/t}
+            <ul>
               <li>{t}Educate yourself on what you need to know about your parents’ health care, their needs and preferences, and other pertinent information.{/t}</li>
               <li>{t}Plan your visits ahead of time. Decide on priorities they may have.{/t}</li>
               <li>{t}Everything in your visit should not just be about caregiving. Plan to actually “visit” during your visits!{/t}</li>
               <li>{t}Stay in contact and encourage your parents to do the same.{/t}</li>
-            </ol>
+            </ul>
           </li>
-          <li>
-            <p>{t}How can I feel less frustrated and angry with the caregiving situation?{/t}</p>
-          </li>
-          <li>
-            <ol>
+          <li>{t}How can I feel less frustrated and angry with the caregiving situation?{/t}
+            <ul>
               <li>{t}Feeling frustrated and angry is very common among caregivers regardless of distance.{/t}</li>
               <li>{t}Plan to give yourself a break and just do something for yourself.{/t}</li>
-            </ol>
+            </ul>
           </li>
-        </ol>
+        </ul>
         <br />
         <br />
       </div>
@@ -1409,49 +1399,37 @@ AARP provides various articles of interest and resources for family caregivers. 
       <div class="content">
         <h2 class="flowers">{t}Some Common Questions (and Answers) for Long Distance Caregivers (continued){/t}</h2>
         <hr />
-        <ol start="4">
-          <li>
-            <p>{t}What is a geriatric care manager and how can one help?{/t}</p>
-          </li>
-          <li>
-            <ol>
+        <ul>
+          <li>{t}What is a geriatric care manager and how can one help?{/t}
+            <ul>
               <li>{t}Geriatric care managers are licensed nurses or social workers who specialize in geriatric care.{/t}</li>
               <li>{t}The geriatric care manager is hired by a family to evaluate and assess an older parent’s needs and to coordinate care through community resources.{/t}</li>
               <li>{t}When choosing one, you want to check references as well as find out their experience, fees, and if they are a member of the National Association of Professional Geriatric Care Managers.{/t}</li>
-            </ol>
+            </ul>
           </li>
-          <li>
-            <p>{t}How can I get my mother some relief in caring for my father?{/t}</p>
-          </li>
-          <li>
-            <ol>
+          <li>{t}How can I get my mother some relief in caring for my father?{/t}
+            <ul>
               <li>{t}Respite care provides one a break from caregiving responsibilities – it can be for an afternoon or for several days.{/t}</li>
               <li>{t}Care can be provided in the home, in an adult day care center, or in a senior living community.{/t}</li>
-            </ol>
+            </ul>
           </li>
-          <li>
-            <p>{t}What if my mom says, “Promise me you’ll never put me in a nursing home”?{/t}</p>
-          </li>
-          <li>
-            <ol>
+          <li>{t}What if my mom says, “Promise me you’ll never put me in a nursing home”?{/t}
+            <ul>
               <li>{t}This request usually follows some horrendous story on the news about a nursing home death. Most of us want to stay in our own homes, to be independent, and to be cared for by relatives and friends.{/t}</li>
               <li>{t}Think carefully before making this type of promise. Assuring your parents that you will look out for them in their best interests and provide quality of care is what is really important. For some illnesses, long-term care may be the sole option. Discovering too late that such promises cannot be kept has often resulted in terrible feelings of guilt by the caregiver for many years.{/t}</li>
               <li>{t}Rather than a promise that cannot be kept, another way to respond is, “Dad, I will make sure you have the best care we can arrange. You can count on me to try and do what’s best for everyone. I can’t think of a situation where I’d walk out on you.”{/t}</li>
-            </ol>
+            </ul>
           </li>
-          <li>
-            <p>{t}What are some other resources for long distance caregivers?{/t}</p>
-          </li>
-          <li>
-            <ol>
+          <li>{t}What are some other resources for long distance caregivers?{/t}
+            <ul>
               <li>{t}Obtain a free Caregiver Resource Directory that provides resources, facts, and advice about caring for a family member as well as for yourself. www.netofcare.org/crd/resource_form.asp{/t}</li>
               <li>{t}Benefits Check UP is a free online service provided by the National Council on Aging which allows people to find programs that can help them meet health care costs. www.benefitscheckup.org{/t}</li>
               <li>{t}ARCH National Respite Network and Resource Center provides resources and information including a respite locater program and information clearinghouse. www.archrespite.org{/t}</li>
               <li>{t}Eldercare Locator is a nationwide service helping identify local resources for older adults. www.eldercare.gov{/t}</li>
               <li>{t}National Family Caregivers Association supports family caregivers and offers education, information, and referrals. www.nfcacares.org{/t}</li>
-            </ol>
+            </ul>
           </li>
-        </ol>
+        </ul>
         <br />
         <br />
       </div>
@@ -1480,7 +1458,7 @@ AARP provides various articles of interest and resources for family caregivers. 
           <br />
           <br />
         </div>
-        <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Start Course &raquo;{/t}</a> </div>
+        <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Start Module &raquo;{/t}</a> </div>
       </div>
       
       <!-- Promoting Safety of Older Relatives and Friends in Caring for Themselves -->
@@ -1511,7 +1489,7 @@ AARP provides various articles of interest and resources for family caregivers. 
         <div class="content">
           <h2 class="flowers">{t}Knowledge Itself is Power{/t}</h2>
           <hr />
-          <img src="<?php echo $this->getImagesUrl('5342290r.png'); ?>" alt="image" />
+          <img src="<?php echo $this->getImagesUrl('care/148176013.png'); ?>" alt="image" />
           <p>{t}You’ve heard this phrase many times – probably even from your parents during your education years. It was actually first documented by Sir Frances Bacon back in the 16th century. When we consider how to promote safety of older adults so that they may remain independent for as long as possible, having knowledge and understanding what’s important will facilitate decision making in the future.{/t}</p>
           <p>{t}In this section, we look at several scenarios – all of which relate to safety in some way – that are commonly faced by family caregivers and their older parents. We address several topics including:{/t}</p>
           <ul>
@@ -1560,9 +1538,9 @@ AARP provides various articles of interest and resources for family caregivers. 
         <div class="content">
           <h2 class="flowers">{t}Activity – Using Your Powers of Observation{/t}</h2>
           <hr />
-          <p>{t}During your next visit, use your powers of observation to note changes in the following areas. You may want to make mental notes and then jot down some of your observations privately. We have included some general questions to get you started. In this activity, you will add some of your own specific questions that you may want to assess during your visit.{/t}</p>
-          <p>{t}Click on the icon to access the activity - Using Your Powers of Observation.{/t}</p>
-          <p> <a href="<?php echo $this->createDownloadUrl('carecoachingonline/ActivityUsingYourPowersofObservation.pdf'); ?>" target="_blank"><img src="<?php echo $this->getImagesUrl('care/pdf-icon.png'); ?>" alt="image" class="normal" /> </a> </p>
+          <p>{t}During your next visit, use your powers of observation to note changes in the following areas. You may want to make mental notes and then jot down some of your observations privately. We have included some general questions to get you started.{/t}</p>
+          <p>{t}In this activity, you will add some of your own specific questions that you may want to assess during your visit.{/t}</p>
+          <p><a href="<?php echo $this->createDownloadUrl('carecoachingonline/ActivityUsingYourPowersofObservation.pdf'); ?>" target="_blank"><img src="<?php echo $this->getImagesUrl('care/pdf-icon.png'); ?>" alt="image" class="normal" /> </a> </p>
         </div>
         <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo;</a> </div>
       </div>
@@ -1574,14 +1552,14 @@ AARP provides various articles of interest and resources for family caregivers. 
           <h2 class="flowers">{t}Additional Home Safety Resources{/t}</h2>
           <hr />
           <p>{t}The U.S. Consumer Product Safety Commission estimates that over 1.5 million adults ages 65 and older are treated each year in hospital emergency rooms due to injuries from hazards in the home. The Commission believes that many of these injuries are preventable with some simple steps to correct the hazards. Some of these steps are valuable in your own home to prevent injuries in general. Here are some general recommendations to consider. Following the general recommendations are links to downloadable resources.{/t}</p>
-          <p class="subtopic">{t}General Recommendations for Home Safety{/t}</p>
+          <h5>{t}General Recommendations for Home Safety{/t}</h5>
           <table>
             <tr>
-              <td><h5>{t}Area{/t}</h5></td>
-              <td><h5>{t}Recommendations{/t}</h5></td>
+              <th width="40%" align="left">{t}Area{/t}</th>
+              <th>{t}Recommendations{/t}</th>
             </tr>
             <tr>
-              <td><p>{t}Exposed cords from lamps, extensions, and telephones{/t}</p></td>
+              <td width="40%" align="left"><p>{t}Exposed cords from lamps, extensions, and telephones{/t}</p></td>
               <td><ul>
                   <li>{t}Arrange furniture so that outlets are available for lamps and appliances without use of numerous extension cords.{/t}</li>
                   <li>{t}If you use extension cords, place it along the wall on the floor where people cannot trip over it.{/t}</li>
@@ -1589,34 +1567,34 @@ AARP provides various articles of interest and resources for family caregivers. 
                 </ul></td>
             </tr>
             <tr>
-              <td><p>{t}Cords covered by carpets and rugs{/t}</p></td>
+              <td width="40%" align="left"><p>{t}Cords covered by carpets and rugs{/t}</p></td>
               <td><ul>
                   <li>{t}Remove cords from under carpeting or rugs as they may fray and cause a fire.{/t}</li>
                   <li>{t}Replace damaged or frayed cords.{/t}</li>
                 </ul></td>
             </tr>
             <tr>
-              <td><p>{t}Overloaded extension cords{/t}</p></td>
+              <td width="40%" align="left"><p>{t}Overloaded extension cords{/t}</p></td>
               <td><ul>
                   <li>{t}Overloaded extension cords may cause fires.  A standard 18 gauge extension cord can carry 1250 watts.{/t}</li>
                   <li>{t}Change to a higher rated cord if the wattage is exceeded.{/t}</li>
                 </ul></td>
             </tr>
             <tr>
-              <td><p>{t}Rugs, runners, and mats{/t}</p></td>
+              <td width="40%" align="left"><p>{t}Rugs, runners, and mats{/t}</p></td>
               <td><ul>
                   <li>{t}Remove rugs and runners that tend to slide.{/t}</li>
                   <li>{t}Used double-faced adhesives or matting to backs or rugs or runners to prevent sliding.{/t}</li>
                 </ul></td>
             </tr>
             <tr>
-              <td><p>{t}Accessibility to the telephone{/t}</p></td>
+              <td width="40%" align="left"><p>{t}Accessibility to the telephone{/t}</p></td>
               <td><ul>
                   <li>{t}Have at least one telephone located where it would be accessible in the event of an accident where someone has fallen and can&rsquo;t get up. This can be simply a phone that can be pulled down from a table by grabbing the cord.{/t}</li>
                 </ul></td>
             </tr>
             <tr>
-              <td><p>{t}Smoke detectors{/t}</p></td>
+              <td width="40%" align="left"><p>{t}Smoke detectors{/t}</p></td>
               <td><ul>
                   <li>{t}Check location of smoke detectors according to the instructions that came with the detector.{/t}</li>
                   <li>{t}Detectors should be placed near bedrooms on the ceilings or 6-12 inches below the ceiling on the wall.{/t}</li>
@@ -1625,13 +1603,13 @@ AARP provides various articles of interest and resources for family caregivers. 
                 </ul></td>
             </tr>
             <tr>
-              <td><p>{t}Electrical outlets/switches{/t}</p></td>
+              <td width="40%" align="left"><p>{t}Electrical outlets/switches{/t}</p></td>
               <td><ul>
                   <li>{t}If an outlet or switch plate feels warm or hot to the touch, wiring may be unsafe. Carefully unplug cords from that outlet and do not use the switch. Have an electrician check the wiring as soon as possible.{/t}</li>
                 </ul></td>
             </tr>
             <tr>
-              <td><p>{t}Light bulbs{/t}</p></td>
+              <td width="40%" align="left"><p>{t}Light bulbs{/t}</p></td>
               <td><ul>
                   <li>{t}Bulbs of too high a wattage or the wrong time may lead to fire through overheating.{/t}</li>
                   <li>{t}Replace the bulb with one of correct wattage and type.  If you don&rsquo;t know the wattage, use a bulb no larger than 60 watts.{/t}</li>
@@ -1649,6 +1627,10 @@ AARP provides various articles of interest and resources for family caregivers. 
           <h2 class="flowers">{t}Additional Home Safety Resources (continued){/t}</h2>
           <hr />
           <table>
+            <tr>
+              <th width="40%" align="left">{t}Area{/t}</th>
+              <th>{t}Recommendations{/t}</th>
+            </tr>
             <tr>
               <td><p>{t}Space heaters{/t}</p></td>
               <td><ul>
@@ -1713,12 +1695,12 @@ AARP provides various articles of interest and resources for family caregivers. 
         <div class="content">
           <h2 class="flowers">{t}Considering Your Older Parents Moving in with You?{/t}</h2>
           <hr />
-          <img src="<?php echo $this->getImagesUrl('care/3663024r.png'); ?>" alt="image" />
+          <img src="<?php echo $this->getImagesUrl('care/152498563.png'); ?>" alt="image" />
           <p>{t}More than 3.6 million older adults live with their children (up 67% from 2000) according to U.S. Census figures. It is a growing family dynamic that is gaining national attention with President Barack Obama’s mother-in-law, Marian Robinson, moved into the White House to help with her young granddaughters. With the economy and housing market issues, many more examples of older parents moving in with their children are coming to light. Older adults who may have been planning to sell their home and use the proceeds to living in a senior living residence may be delaying their decision or realizing they will not get enough money from the house sale to make the move.{/t}</p>
           <p>{t}The children may also be facing financial difficulties of their own. “Merging” finances and obligations may benefit everyone in these types of arrangements. One son commented that he “gets to see a different side of his mother and father. They are not just parents, they’re people, and once you recognize that, you work with it and it’s fun.”{/t}</p>
           <p>{t}Interestingly, an entire new housing opportunity is developing with this “return” to multiple generations living under a single roof. Called “multigenerational housing,” these homes are often designed with a master and guest (in-law) suite on the main floor, both with private bath and walk-in closet. An open plan with lots of gathering areas and additional bedroom and recreation areas upstairs provides families with flexible living space.{/t}</p>
           <p>{t}“Giving each other space” is a valuable recommendation for those considering these living arrangements, particularly if the older parents are independent.{/t}</p>
-          <p> <i>{t}CARE Coaching Hints:{/t}</i> </p>
+          <h5> {t}CARE Coaching Hints:{/t} </h5>
           <ul>
             <li>{t}Hold regular family conferences to discuss issues or problems that may come up. Often, it is much easier to discuss awkward subjects when everyone is together and in the mood to talk.{/t}</li>
             <li>{t}If your parents have health problems, set up an emergency contact system and make sure everyone knows what it is. This could be a buzzer or alarm in the bedroom or shower. Preprogram their telephones with your cell phone or pager number.{/t}</li>
@@ -1737,8 +1719,8 @@ AARP provides various articles of interest and resources for family caregivers. 
         <div class="content">
           <h2 class="flowers">{t}Exercise – Assessing the Situation{/t}</h2>
           <hr />
-          <p>{t}This exercise provides an opportunity for you and your family to consider key questions to explore potential for having older parents move in with you. You may not be thinking about this at the present time, but you may have other family members or friends considering various options and so this may be helpful to them as well. These questions can serve as a guide for discussions with your family. As you read through each section, we include some CARE Coaching questions to bring out your best thinking about what would be important to you.{/t}</p>
-          <p>{t}Click on the icon to access the activity - Assessing the Situation.{/t}</p>
+          <p>{t}This exercise provides an opportunity for you and your family to consider key questions to explore potential for having older parents move in with you. You may not be thinking about this at the present time, but you may have other family members or friends considering various options and so this may be helpful to them as well.{/t}</p>
+          <p>{t}These questions can serve as a guide for discussions with your family. As you read through each section, we include some CARE Coaching questions to bring out your best thinking about what would be important to you.{/t} </p>
           <p> <a href="<?php echo $this->createDownloadUrl('carecoachingonline/ExerciseAssessingtheSituation.pdf'); ?>" target="_blank"><img src="<?php echo $this->getImagesUrl('care/pdf-icon.png'); ?>" alt="image" class="normal" /> </a> </p>
         </div>
         <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo;</a> </div>
@@ -1750,7 +1732,7 @@ AARP provides various articles of interest and resources for family caregivers. 
         <div class="content">
           <h2 class="flowers">{t}Driving Concerns and Older Adults{/t}</h2>
           <hr />
-          <img src="<?php echo $this->getImagesUrl('3223247r.jpg'); ?>" alt="image" />
+          <img src="<?php echo $this->getImagesUrl('care/147072784.png'); ?>" alt="image" />
           <p>{t}According to driving statistics, older adults have more fatal car accidents than any other age group. Additionally, older adults are more at risk for death after being involved in a car accident because of their age and health condition.{/t}</p>
           <p>{t}By 2030, it is estimated that 25% of the driving population will be age 65 years and older. Currently, about 14% of all people killed in traffic accidents are older adults, and that percent is expected to increase to 25%.{/t}</p>
           <p>{t}In addition to being a danger to themselves, many of these accidents result in injury or death of others.{/t}</p>
@@ -1779,30 +1761,24 @@ AARP provides various articles of interest and resources for family caregivers. 
           <hr />
           <p>{t}The following list of warning signs comes from the American Association of Retired People (AARP).{/t}</p>
           <p> <i>{t}What are the warning signs when someone should begin to limit driving or stop altogether?{/t}</i> </p>
-          <table>
-            <tr>
-              <td><ul>
-                  <li>{t}Feeling uncomfortable and nervous or fearful while driving{/t}</li>
-                  <li>{t}Dents and scrapes on the car or on fences, mailboxes, garage doors, curbs etc.{/t}</li>
-                  <li>{t}Difficulty staying in the lane of travel{/t}</li>
-                  <li>{t}Getting lost{/t}</li>
-                  <li>{t}Trouble paying attention to signals, road signs and pavement markings{/t}</li>
-                  <li>{t}Slower response to unexpected situations{/t}</li>
-                  <li>{t}Medical conditions or medications that may be affecting the ability to handle the car safely{/t}</li>
-                  <li>{t}Frequent "close calls" (i.e. almost crashing){/t}</li>
-                  <li>{t}Trouble judging gaps in traffics at intersections and on highway entrance/exit ramps{/t}</li>
-                  <li>{t}Other drivers honking at you and instances when you are angry at other drivers{/t}</li>
-                  <li>{t}Friends or relatives not wanting to drive with you{/t}</li>
-                  <li>{t}Difficulty seeing the sides of the road when looking straight ahead{/t}</li>
-                  <li>{t}Easily distracted or having a hard time concentrating while driving{/t}</li>
-                  <li>{t}"Having a hard time turning around to check over your shoulder while backing up or changing lanes{/t}</li>
-                  <li>{t}Frequent traffic tickets or "warnings" by traffic or law enforcement officers in the last year or two{/t}</li>
-                </ul></td>
-            </tr>
-          </table>
+          <ul>
+            <li>{t}Feeling uncomfortable and nervous or fearful while driving{/t}</li>
+            <li>{t}Dents and scrapes on the car or on fences, mailboxes, garage doors, curbs etc.{/t}</li>
+            <li>{t}Difficulty staying in the lane of travel{/t}</li>
+            <li>{t}Getting lost{/t}</li>
+            <li>{t}Trouble paying attention to signals, road signs and pavement markings{/t}</li>
+            <li>{t}Slower response to unexpected situations{/t}</li>
+            <li>{t}Medical conditions or medications that may be affecting the ability to handle the car safely{/t}</li>
+            <li>{t}Frequent "close calls" (i.e. almost crashing){/t}</li>
+            <li>{t}Trouble judging gaps in traffics at intersections and on highway entrance/exit ramps{/t}</li>
+            <li>{t}Other drivers honking at you and instances when you are angry at other drivers{/t}</li>
+            <li>{t}Friends or relatives not wanting to drive with you{/t}</li>
+            <li>{t}Difficulty seeing the sides of the road when looking straight ahead{/t}</li>
+            <li>{t}Easily distracted or having a hard time concentrating while driving{/t}</li>
+            <li>{t}"Having a hard time turning around to check over your shoulder while backing up or changing lanes{/t}</li>
+            <li>{t}Frequent traffic tickets or "warnings" by traffic or law enforcement officers in the last year or two{/t}</li>
+          </ul>
           <p>{t}If you notice one or more of these warning signs with your older parents, you may want to have their driving assessed by a professional or have them attend a driver refresher class. You may also want to consult with their doctor if you notice unusual concentration or memory problems, or other physical symptoms that may be affecting ability to drive.{/t}</p>
-          <br />
-          <br />
         </div>
         <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo;</a> </div>
       </div>
@@ -1832,8 +1808,6 @@ AARP provides various articles of interest and resources for family caregivers. 
           <p> <a href="<?php echo $this->createDownloadUrl('carecoachingonline/DriverSelfAssessment.pdf'); ?>" target="_blank"><img class="normal" src="<?php echo $this->getImagesUrl('care/pdf-icon.png'); ?>" alt="" /> </a>
           <p> <a href="http://www.usatoday.com/life/graphics/elderly_drivers_popup/flash.htm" target="_blank"><b>{t}How Age Affects the Ability to Drive{/t}</b> </a><br />
             {t}This interactive guide from USA Today provides visual descriptions of changes that occur during normal aging that may impact one’s ability in driving.{/t} </p>
-          <br />
-          <br />
         </div>
         <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo;</a> </div>
       </div>
@@ -1959,14 +1933,14 @@ AARP provides various articles of interest and resources for family caregivers. 
             <iframe style="display: block; margin: 25px auto;" width="420" height="315" src="http://www.youtube.com/embed/Y1Uoce6hfyc" frameborder="0" allowfullscreen></iframe>
           </p>
           <p>{t}Before beginning an exercise program, it is important that your parents consult their physician.{/t}</p>
-          <p class="subtopic">{t}Where to Start?{/t}</p>
+          <h5 class="subtopic">{t}Where to Start?{/t}</h5>
           <p>{t}It is important to wear loose, comfortable clothing and well-fitting, sturdy shoes. Shoes should have a good arch support, and an elevated and cushioned heel to absorb shock.{/t}</p>
           <p>{t}If not already active, one should begin slowly. Starting slowly makes it less likely that injury will occur. Starting slowly also helps prevent soreness from "overdoing" it. The saying "no pain, no gain" is not true for older or elderly adults. One does not have to exercise at a high intensity to get most health benefits.{/t}</p>
           <p>{t}Walking, for example, is an excellent activity to start. As one gets used to exercising, or if already active, a person can slowly increase the intensity of the exercise program.{/t}</p>
-          <p class="subtopic">{t}What Types of Exercises are Good for Older Adults?{/t}</p>
+          <h5 class="subtopic">{t}What Types of Exercises are Good for Older Adults?{/t}</h5>
           <p>{t}There are several types of exercise that are effective for older adults. At least 30 minutes of aerobic activity is recommended daily. Examples are walking, swimming, and bicycling. Resistance or strength training is recommended twice a week.{/t}</p>
           <p>{t}Warm up for five minutes before each exercise session. Walking slowly and stretching are good warm-up activities. After finishing exercising, cool down with more stretching for five minutes. Cool down longer in warmer weather.{/t}</p>
-          <p>{t}What are Some Safety Tips for Older Adults Related to Exercise?{/t}</p>
+          <h5>{t}What are Some Safety Tips for Older Adults Related to Exercise?{/t}</h5>
           <ul>
             <li>{t}Wait at least 2 hours after you eat to start your exercise routine.{/t}</li>
             <li>{t}Do not exercise if you have a fever.{/t}</li>
@@ -1975,8 +1949,6 @@ AARP provides various articles of interest and resources for family caregivers. 
             <li>{t}If you have osteoporosis, talk to your doctor about any exercises that would be safe. Exercise that involves stretching or flexing the spine should be approved directly by your doctor.{/t}</li>
             <li>{t}Do not exercise if you develop a new pain or symptom. Swelling, shortness of breath, extreme tiredness and you should get your parents to the doctor.{/t}</li>
           </ul>
-          <br />
-          <br />
         </div>
         <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo;</a> </div>
       </div>
@@ -1989,7 +1961,7 @@ AARP provides various articles of interest and resources for family caregivers. 
           <hr />
           <p>{t}The National Institutes on Aging has developed an online guide for older adults. A number of example exercises are presented with easy to follow steps and pictures. Exercises focus on areas including endurance, flexibility, balance, and strength training. Click on the following link to access the guide:{/t}</p>
           <p> <a href="http://www.nia.nih.gov/HealthInformation/Publications/ExerciseGuide/default.htm" target="_blank">{t}Exercise &amp; Physical Activity: Your Everyday Guide from the National Institute on Aging{/t}</a> </p>
-          <p class="subtopic">{t}Exercise Videos{/t}</p>
+          <h4 class="subtopic">{t}Exercise Videos{/t}</h4>
           <p>{t}These are meant to be example exercises and do not constitute a complete exercise regimen.{/t}</p>
           <h5>{t}Video – Chair Stand Strengthening{/t}</h5>
           <p>
@@ -2013,11 +1985,11 @@ AARP provides various articles of interest and resources for family caregivers. 
           <hr />
           <h5>{t}Video – Seated Knee Extensions{/t}</h5>
           <p>
-            <iframe width="420" height="315" src="http://www.youtube.com/embed/q7b7HgPYQN8" frameborder="0" allowfullscreen></iframe>
+            <iframe style="width: 420px; height: 315px; display:block; margin:25px auto;" src="http://www.youtube.com/embed/q7b7HgPYQN8" frameborder="0" allowfullscreen></iframe>
           </p>
           <h5>{t}Video – Calf Muscle Exercise{/t}</h5>
           <p>
-            <iframe width="420" height="315" src="http://www.youtube.com/embed/rEfS6AfIgS4" frameborder="0" allowfullscreen></iframe>
+            <iframe style="width: 420px; height: 315px; display:block; margin:25px auto;" src="http://www.youtube.com/embed/rEfS6AfIgS4" frameborder="0" allowfullscreen></iframe>
           </p>
         </div>
         <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo;</a> </div>
@@ -2063,7 +2035,7 @@ AARP provides various articles of interest and resources for family caregivers. 
         <br />
         <br />
       </div>
-      <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Start Course &raquo;{/t} </a> </div>
+      <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Start Module &raquo;{/t} </a> </div>
     </div>
     
     <!-- Supporting Personal Choice and Preferences of Older Adults in Health and Care Decision Making -->
@@ -2072,12 +2044,12 @@ AARP provides various articles of interest and resources for family caregivers. 
       <div class="content">
         <h2 class="flowers">{t}It’s All about Choice{/t}</h2>
         <hr />
-        <img src="<?php echo $this->getImagesUrl('Untitled1.png'); ?>" />
+        <img src="<?php echo $this->getImagesUrl('care/78369216.png'); ?>" />
         <p>{t}Self-determination means having the freedom to be in charge of one’s own life, choosing where you live, who you spend time with, and what you do every day. It means having the resources you need to create a good life and to make responsible decisions. It also means choosing where, when, and how you get help for any problems you might have.{/t}</p>
         <p>{t}We all want to feel that we have choices in our daily lives. At times, the choices our older parents may want may not be choices we would want for them particularly if their safety or health may be at risk. At other times, we as caregivers are tempted to want to immediately rise to the occasion and take action. This may be because you want to help find a solution to a problem quickly. Imposing a solution may actually make a situation more of a problem.{/t}</p>
         <p>{t}If you were to walk into your supervisor’s office with a problem – say that your project is 50% over budget – and your supervisor tells you to immediately cut five of your key staff, how would you feel? Probably shocked that your supervisor did not want to discuss the situation, examine several reasons for the overage, and come up with a couple of options – all in collaboration with you as project manager.{/t}</p>
         <p>{t}The same should apply with your older parents. You may notice that one or both are starting to forget things. Immediately, you jump to the conclusion that they have Alzheimer’s Disease. There are many causes of memory loss including poor nutrition, sleep problems, medications, or one’s emotional state. You would want to take a measured approach to this issue in your discussions with your parents.{/t}</p>
-        <p> {t}Some general <b>Do's</b> and <b>Dont's</b>:{/t} </p>
+        <h5> {t}Some general Do's and Dont's:{/t} </h5>
         <p> <b>{t}Do:{/t}</b> </p>
         <ul>
           <li>{t}Assess the situation thoroughly{/t}</li>
@@ -2103,8 +2075,8 @@ AARP provides various articles of interest and resources for family caregivers. 
         <h2 class="flowers">{t}Exercise – Identifying Solutions to Support Choice and Preferences{/t}</h2>
         <hr />
         <p>{t}Throughout this course, you have had several opportunities to gain more understanding regarding your older parents’ needs and preferences. Every caregiving situation is unique. Many factors come into play when considering the best possible solutions about your parents and their future. These factors may include: your parents’ health and functional abilities, mobility, values and beliefs, and family and community support systems.{/t}</p>
-        <p>{t}In this exercise, we provide several questions for you to use as a framework to “interview” your parents regarding their choices and preferences for their future. This exercise is broken into two parts. Please complete all of Part 1 before moving onto Part 2.{/t}</p>
-        <p> <a href="<?php echo $this->createDownloadUrl('carecoachingonline/ExerciseIdentifyingSolutionstoSupportChoiceandPreferences.pdf'); ?>" target="_blank"><img class="normal" src="<?php echo $this->getImagesUrl('care/pdf-icon.png'); ?>"> </a> <b>{t}Click the icon to access the Exercise – Identifying Solutions to Support Choice and Preferences{/t}</b> </p>
+        <p>{t}In this exercise, we provide several questions for you to use as a framework to &quot;interview&quot; your parents regarding their choices and preferences for their future. This exercise is broken into two parts. Please complete all of Part 1 before moving onto Part 2.{/t}</p>
+        <p><a href="<?php echo $this->createDownloadUrl('carecoachingonline/ExerciseIdentifyingSolutionstoSupportChoiceandPreferences.pdf'); ?>" target="_blank"><img class="normal" src="<?php echo $this->getImagesUrl('care/pdf-icon.png'); ?>"> </a> </p>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo;</a> </div>
     </div>
@@ -2115,7 +2087,7 @@ AARP provides various articles of interest and resources for family caregivers. 
       <div class="content">
         <h2 class="flowers">{t}CARE Coaching Review: Talking with Your Older Parents{/t}</h2>
         <hr />
-        <img src="<?php echo $this->getImagesUrl('11829178r.jpg'); ?>" />
+        <img src="<?php echo $this->getImagesUrl('care/179583321.png'); ?>" />
         <p>{t}Let’s just take a moment to review the core components of CARE Coaching in relation to talking with your older parents.{/t}</p>
         <h5>{t}Communicate{/t}</h5>
         <p>{t}Effective communication is essential to any relationship, particularly so in caregiving situations. It is not so much what you say, but how you say it that influences how your messages are received.{/t}</p>
@@ -2151,14 +2123,14 @@ AARP provides various articles of interest and resources for family caregivers. 
     
     <div id="lesson-7-slide-6" class="course-slide">
       <div class="content">
-        <h2 class="flowers">{t}Are You a “Sandwich Generation” Caregiver?{/t}</h2>
+        <h2 class="flowers">{t}Are You a &quot;Sandwich Generation&quot; Caregiver?{/t}</h2>
         <hr />
         <p>{t}If you are between the ages of 35 to 54 and are caring for both younger ones such as children and older parents or other family members and probably employed at the same time, you may be a “sandwich generation” caregivers. You are not alone as approximately 20 million American fit this description.{/t}</p>
         <p>{t}A survey by the American Psychological Association reported that women in the “sandwich generation” feel more stress than any other age group as they have to balance the demands of caregiving two generations. Nearly 40% of them report “extreme levels” of stress which takes a toll on both their personal relationships but also on their own well-being as they may often put their own health on the “back burner.”{/t}</p>
         <p>{t}Watch the following video to see one family’s experience.{/t}</p>
-        <h4>{t}Video – Part of the Sandwich Generation{/t}</h4>
+        <h5>{t}Video – Part of the Sandwich Generation{/t}</h5>
         <p>
-          <iframe width="560" height="315" src="http://www.youtube.com/embed/55UCToPajd4?rel=0" frameborder="0" allowfullscreen></iframe>
+          <iframe style="width: 560px; height: 315px; display:block; margin:25px auto;" src="http://www.youtube.com/embed/55UCToPajd4?rel=0" frameborder="0" allowfullscreen></iframe>
         </p>
         <br />
         <br />
@@ -2172,8 +2144,8 @@ AARP provides various articles of interest and resources for family caregivers. 
       <div class="content">
         <h2 class="flowers">{t}Activity – Ways to Manage Your Own Stress{/t}</h2>
         <hr />
-        <p>{t}The American Psychological Association offers several strategies to help those in the “sandwich generation” manage their stress. In Section 1, we address the power of journaling as a self-coaching exercise to help create positive self-talk. In managing stress, journaling can also be a very effective tool to help identify what situations or events trigger stressful feelings, how you deal (or don’t deal) with stress, and how you may manage stress.{/t}</p>
-        <p> <a href="<?php echo $this->createDownloadUrl('carecoachingonline/ActivityWaystoManageYourOwnStress.pdf'); ?>" target="_blank"><img class="normal" src="<?php echo $this->getImagesUrl('care/pdf-icon.png'); ?>" /> </a> <b>{t}Click the icon to access the Activity{/t}</b> </p>
+        <p>{t}<a href="http://www.apa.org/" target="_blank">The American Psychological Association</a> offers several strategies to help those in the “sandwich generation” manage their stress. In module one, we address the power of journaling as a self-coaching exercise to help create positive self-talk. In managing stress, journaling can also be a very effective tool to help identify what situations or events trigger stressful feelings, how you deal (or don’t deal) with stress, and how you may manage stress.{/t}</p>
+        <p><a href="<?php echo $this->createDownloadUrl('carecoachingonline/ActivityWaystoManageYourOwnStress.pdf'); ?>" target="_blank"><img class="normal" src="<?php echo $this->getImagesUrl('care/pdf-icon.png'); ?>" /> </a> </p>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo;</a> </div>
     </div>
@@ -2184,15 +2156,15 @@ AARP provides various articles of interest and resources for family caregivers. 
       <div class="content">
         <h2 class="flowers">{t}Family Communication: When Siblings Attack!{/t}</h2>
         <hr />
+        <img src="<?php echo $this->getImagesUrl('care/134189923.png'); ?>" alt="{t}Thank You{/t}" />
         <p>{t}Family dynamics can be very complex. We have been talking about your caregiving throughout this course in relation to your older parents. We cannot forget that, in many families, family dynamics also include siblings – whether they are yours or your parents.{/t}</p>
-        <img src="<?php echo $this->getImagesUrl('56677551r.jpeg'); ?>" width="250" height="375" alt="{t}Thank You{/t}" />
         <p>{t}With such a profound impact on society, business, and potentially your family, having the essential tools, knowledge, and skills to effectively deal with the variety of issues arising from caring for their aging parents, relatives, or loved ones, is essential to thriving in life. If necessary, please review this tutorial again if you are still not confident and comfortable being able to deal with the various challenges of caregiving.{/t}</p>
         
         <!-- Certificate of Completion here -->
         
         <h4>{t}Certificate of Completion{/t}</h4>
         <p>{t}Thank you for your participation! Now that you have completed this online course, you can now download your custom Certificate of Completion. Once accessed, type your name, date, and online course title into the form-fillable certificate.{/t}</p>
-        <a href="<?php echo $this->createDownloadUrl('CourseCompletionCertificate.pdf'); ?>" target="_blank"><img class="normal" src="<?php echo $this->getImagesUrl('ArtworkCertificate.png'); ?>" alt="{t}Certificate{/t}" /> </a>
+        <a href="<?php echo $this->createDownloadUrl('CourseCompletionCertificate.pdf'); ?>" target="_blank"><img class="normal" src="<?php echo $this->getImagesUrl('care/ArtworkCertificate.png'); ?>" alt="{t}Certificate{/t}" /> </a>
         <p>{t}Again, thank you for participating in this online course. Please take a moment to complete the Post-Course Evaluation; accessible via the Profile Page.{/t}</p>
         <br />
         <br />

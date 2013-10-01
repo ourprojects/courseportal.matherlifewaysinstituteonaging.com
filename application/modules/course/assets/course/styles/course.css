@@ -82,12 +82,8 @@ div.course-slide table th {
 div.course-slide table td {
 	background-color: #666;
 	color: #FFF;
-	text-align: center;
 }
-div.course-slide table td ul li {
-	list-style-type: none;
-	list-style-image: none;
-}
+
 /* all non-slide css3 */
 
 div#resources p {
