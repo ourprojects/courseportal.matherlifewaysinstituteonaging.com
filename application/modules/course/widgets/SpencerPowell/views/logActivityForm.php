@@ -97,5 +97,5 @@
 		<?php echo CHtml::submitButton('{t}Create{/t}'); ?>
 	</div>
 
-	<?php $this->endWidget('CActiveForm'); ?>
+	<?php $this->endWidget($this->getId().'-userActivityForm'); ?>
 </div>
