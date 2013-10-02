@@ -1,48 +1,57 @@
 <?php
 
-class SurveyController extends CController {
+class SurveyController extends SController 
+{
 	
-	public function actionSubmit() {
-		if(isset($_POST['Survey'])) {
-			$errors = array();
-			foreach($_POST['Survey'] as $surveyName => $surveyAttributes) {
-				$survey = SurveyorModule::surveyor()->$surveyName->form;
-				$survey->attributes = $surveyAttributes;
-				$survey->save();
-				$errors[$surveyName] = $survey->getErrors();
-			}
-			echo CJSON::encode($errors);
-		}
+	public function actions()
+	{
+		return array_merge(parent::actions(), Survey::actions());
 	}
 	
-	public function actionStat($name) {
+	public function actionStat($name) 
+	{
 		$survey = SurveyorModule::surveyor()->$name;
 		$stats = array();
-		foreach($survey->questions as $question) {
+		foreach($survey->questions as $question) 
+		{
 			$stats[] = $question->getStatistics();
 		}
 		echo CJSON::encode($stats);
 	}
 	
-	public function actionStatQuestion($name, $num) {
+	public function actionStatQuestion($name, $num) 
+	{
 		$survey = SurveyorModule::surveyor()->$name;
 		if($num < 0 || $num >= count($survey->questions))
+		{
 			$num = 0;
+		}
 		echo CJSON::encode($survey->questions[$num]->getStatistics());
 	}
 	
-	public function actionChart($name, $qNum = 0) {
+	public function actionChart($name, $qNum = 0) 
+	{
 		$survey = SurveyorModule::surveyor()->$name;
 		if($qNum < 0 || $qNum >= count($survey->questions))
+		{
 			$qNum = 0;
+		}
 		$this->render('chart', array('survey' => $survey, 'qNum' => $qNum));
 	}
 	
-	public function actionChartQuestion($name, $num) {
+	public function actionChartQuestion($name, $num) 
+	{
 		$survey = SurveyorModule::surveyor()->$name;
 		if($num < 0 || $num >= count($survey->questions))
+		{
 			$num = 0;
+		}
 		$this->render('chart', array('survey' => $survey, 'qNum' => $num));
+	}
+	
+	public function actionTest()
+	{
+		$this->render('test');
 	}
 	
 }
