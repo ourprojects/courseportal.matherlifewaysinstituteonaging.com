@@ -24,11 +24,6 @@
 						'options' => array(
 								'htmlOptions' => array('style' => 'display:none;'),
 								'title' => array('htmlOptions' => array('class' => 'flowers')),
-								'form' => array('options' =>
-										array(
-												'enableAjaxValidation' => true,
-												'enableClientValidation' => true
-										)),
 						)
 				)
 		);

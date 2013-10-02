@@ -13,13 +13,11 @@ class SurveyForm extends CFormModel
 	private $_isComplete;
 
 	private $_requiredQuestions;
-	private $_safeAttributeNames;
-	private $_attributeNames;
 	private $_attributeLabels;
 	
 	private $_user_id;
 	private $_survey;
-	private $_questionAnswers = array();
+	private $_attributes;
 	
 	public function __construct($survey) 
 	{
@@ -41,9 +39,10 @@ class SurveyForm extends CFormModel
 			throw new CException(Surveyor::t('Invalid survey parameter when constructing SurveyForm. A valid Survey name, id, or ActiveRecord object is required.'));
 		}
 		
+		$this->_attributes = array();
 		foreach($this->_survey->questions as $question)
 		{
-			$this->_questionAnswers[$question->id] = null;
+			$this->_attributes[$question->id] = null;
 		}
 		
 		parent::__construct(self::SCENARIO_NOT_COMPLETE);
@@ -58,26 +57,28 @@ class SurveyForm extends CFormModel
 				// @ TODO We should just set the allowEmpty based on the anonymous state of the survey.
 				array('user_id', 'exist', 'attributeName' => 'id', 'className' => Yii::app()->params['userModelClassName'], 'allowEmpty' => true),
 				array('user_id', 'checkAnonymous'),
-				array('_questionAnswers', 'validateAnswers'),
+				array('_attributes', 'validateAnswers'),
 		);
+	}
+	
+	public function getRequiredQuestions()
+	{
+		if(!isset($this->_requiredQuestions))
+		{
+			foreach($this->_survey->questions as $question)
+			{
+				$this->_requiredQuestions[$question->id] = $question->required;
+			}
+		}
+		return $this->_requiredQuestions;
 	}
 	
 	public function isAttributeRequired($attribute) 
 	{
-		if(preg_match('/^question(?P<qId>\d+)$/', $attribute, $matches)) 
+		$requiredQuestions = $this->getRequiredQuestions();
+		if(array_key_exists($attribute, $requiredQuestions))
 		{
-			if(!isset($this->_requiredQuestions))
-			{
-				foreach($this->_survey->questions as $question)
-				{
-					$this->_requiredQuestions[$question->id] = $question->required;
-				}
-			}
-
-			if(array_key_exists($matches['qId'], $this->_requiredQuestions))
-			{
-				return $this->_requiredQuestions[$matches['qId']];
-			}
+			return $requiredQuestions[$attribute];
 		}
 		return parent::isAttributeRequired($attribute);
 	}
@@ -89,15 +90,18 @@ class SurveyForm extends CFormModel
 	{
 		if(!isset($this->_attributeLabels)) 
 		{
-			$this->_attributeLabels = array(
+			$this->_attributeLabels = array_merge(
+				parent::attributeLabels(),
+				$this->_survey->attributeLabels(),
+				array(
 					'user_id' => Surveyor::t('User ID'),
 					'name' => Surveyor::t('Name'),
 					'title' => Surveyor::t('Title'),
 					'description' => Surveyor::t('Description'),
-				);
+				));
 			foreach($this->_survey->questions as $question)
 			{
-				$this->_attributeLabels["question{$question->id}"] = Surveyor::t($question->text);
+				$this->_attributeLabels[$question->id] = Surveyor::t($question->text);
 			}
 		}
 		return $this->_attributeLabels;
@@ -105,24 +109,12 @@ class SurveyForm extends CFormModel
 	
 	public function attributeNames() 
 	{
-		if(!isset($this->_attributeNames))
-		{
-			$this->_attributeNames = array_merge(parent::attributeNames(), $this->_survey->attributeNames());
-		}
-		return $this->_attributeNames;
+		return array_merge(parent::attributeNames(), array_keys($this->_attributes), $this->_survey->attributeNames());
 	}
 	
 	public function getSafeAttributeNames() 
 	{
-		if(!isset($this->_safeAttributeNames)) 
-		{
-			$this->_safeAttributeNames = parent::getSafeAttributeNames();
-			foreach($this->_survey->questions as $question)
-			{
-				$this->_safeAttributeNames[] = "question{$question->id}";
-			}
-		}
-		return $this->_safeAttributeNames;
+		return array_merge(parent::getSafeAttributeNames(), array_keys($this->_attributes));
 	}
 
 	public function getUser_id() 
@@ -139,19 +131,19 @@ class SurveyForm extends CFormModel
 			{
 				if($answer->question->type->name == 'textarea' || $answer->question->type->name == 'textfield') 
 				{
-					$this->_questionAnswers[$answer->question->id] = $answer->answerText->text;
+					$this->_attributes[$answer->question->id] = $answer->answerText->text;
 				} 
 				else if($answer->question->allow_many_options) 
 				{
-					$this->_questionAnswers[$answer->question->id] = array();
+					$this->_attributes[$answer->question->id] = array();
 					foreach($answer->options as $option)
 					{
-						$this->_questionAnswers[$answer->question->id][] = $option->id;
+						$this->_attributes[$answer->question->id][] = $option->id;
 					}
 				} 
 				else 
 				{
-					$this->_questionAnswers[$answer->question->id] = $answer->options[0]->id;
+					$this->_attributes[$answer->question->id] = $answer->options[0]->id;
 				}
 			}
 		}
@@ -168,18 +160,18 @@ class SurveyForm extends CFormModel
 		{
 			return $this->_survey->$name;
 		}
-		if(preg_match('/^question(?P<qId>\d+)$/', $name, $matches) && array_key_exists($matches['qId'], $this->_questionAnswers))
+		if(array_key_exists($name, $this->_attributes))
 		{
-			return $this->_questionAnswers[$matches['qId']];
+			return $this->_attributes[$name];
 		}
 		return parent::__get($name);
 	}
 	
 	public function __set($name, $value) 
 	{
-		if(preg_match('/^question(?P<qId>\d+)$/', $name, $matches) && array_key_exists($matches['qId'], $this->_questionAnswers)) 
+		if(array_key_exists($name, $this->_attributes)) 
 		{
-			$this->_questionAnswers[$matches['qId']] = $value;
+			$this->_attributes[$name] = $value;
 		} 
 		else 
 		{
@@ -189,11 +181,10 @@ class SurveyForm extends CFormModel
 	
 	public function checkAnonymous($attribute, $params) 
 	{
-		if(isset($this->_user_id) || $this->_survey->anonymous)
+		if(!$this->_survey->anonymous && !isset($this->_user_id))
 		{
-			return;
+			$this->addError($attribute, Surveyor::t('This survey is not anonymous and a user was not specified.'));
 		}
-		$this->addError($attribute, Surveyor::t('This survey is not anonymous and a user was not specified.'));
 	}
 	
 	public function isComplete() 
@@ -222,26 +213,26 @@ class SurveyForm extends CFormModel
 						{
 							if(count(array_intersect(self::arrayMap($question->options, 'id'), $answers[$question->id])) !== count($answers[$question->id]))
 							{
-								$this->addError("question{$question->id}", Surveyor::t('Invalid option selected.'));
+								$this->addError('['.$this->_survey->name.']'.$question->id, Surveyor::t('Invalid option selected.'));
 							}
 						} 
 						else 
 						{
-							$this->addError("question{$question->id}", Surveyor::t('Only one answer is allowed.'));
+							$this->addError('['.$this->_survey->name.']'.$question->id, Surveyor::t('Only one answer is allowed.'));
 						}
 					} 
 					else 
 					{
 						if(!in_array($answers[$question->id], self::arrayMap($question->options, 'id')))
 						{
-							$this->addError("question{$question->id}", Surveyor::t('Invalid option selected.'));
+							$this->addError('['.$this->_survey->name.']'.$question->id, Surveyor::t('Invalid option selected.'));
 						}
 					}
 				}
 			} 
 			else if($question->required) 
 			{
-				$this->addError("question{$question->id}", Surveyor::t('This question is required.'));
+				$this->addError('['.$this->_survey->name.']'.$question->id, Surveyor::t('This question is required.'));
 			}
 		}
 	}
@@ -295,7 +286,7 @@ class SurveyForm extends CFormModel
 	
 	private function _save() 
 	{
-		$newAnswers = $this->_questionAnswers;
+		$newAnswers = $this->_attributes;
 		if(!$this->_survey->anonymous) {
 			foreach($this->_survey->answers(DbCriteria::instance()->addColumnCondition(array('answers.user_id' => $this->_user_id))) as $answer) 
 			{
@@ -305,7 +296,7 @@ class SurveyForm extends CFormModel
 					SurveyAnswerText::model()->deleteAll('answer_id = ?', array($answer->id));
 					if(!$answer->delete()) 
 					{
-						$this->addErrors(array("question{$answer->question_id}" => $answer->getErrors()));
+						$this->addErrors(array('['.$this->_survey->name.']'.$answer->question_id => $answer->getErrors()));
 						return false;
 					}
 					unset($newAnswers[$answer->question_id]);
@@ -317,7 +308,7 @@ class SurveyForm extends CFormModel
 						$answer->answerText->text = $newAnswers[$answer->question_id];
 						if(!$answer->answerText->save()) 
 						{
-							$this->addErrors(array("question{$answer->question_id}" => $answer->answerText->getErrors()));
+							$this->addErrors(array('['.$this->_survey->name.']'.$answer->question_id => $answer->answerText->getErrors()));
 							return false;
 						}
 					}
@@ -335,7 +326,7 @@ class SurveyForm extends CFormModel
 						{
 							if(!$option->delete()) 
 							{
-								$this->addErrors(array("question{$answer->question_id}" => $option->getErrors()));
+								$this->addErrors(array('['.$this->_survey->name.']'.$answer->question_id => $option->getErrors()));
 								return false;
 							}
 						}
@@ -347,7 +338,7 @@ class SurveyForm extends CFormModel
 						$surveyAnswerOption->option_id = $newAnswer;
 						if(!$surveyAnswerOption->save()) 
 						{
-							$this->addErrors(array("question{$answer->question_id}" => $surveyAnswerOption->getErrors()));
+							$this->addErrors(array('['.$this->_survey->name.']'.$answer->question_id => $surveyAnswerOption->getErrors()));
 							return false;
 						}
 					}
@@ -361,7 +352,7 @@ class SurveyForm extends CFormModel
 						$option->option_id = $newAnswers[$answer->question_id];
 						if(!$option->save()) 
 						{
-							$this->addErrors(array("question{$answer->question_id}" => $option->getErrors()));
+							$this->addErrors(array('['.$this->_survey->name.']'.$answer->question_id => $option->getErrors()));
 							return false;
 						}
 					}
@@ -378,7 +369,7 @@ class SurveyForm extends CFormModel
 				$surveyAnswer->question_id = $questionId;
 				if(!$surveyAnswer->save()) 
 				{
-					$this->addErrors(array("question$questionId" => $surveyAnswer->getErrors()));
+					$this->addErrors(array('['.$this->_survey->name.']'.$questionId => $surveyAnswer->getErrors()));
 					return false;
 				}
 				if(is_array($questionAnswer)) 
@@ -390,7 +381,7 @@ class SurveyForm extends CFormModel
 						$surveyAnswerOption->option_id = $answer;
 						if(!$surveyAnswerOption->save()) 
 						{
-							$this->addErrors(array("question$questionId" => $surveyAnswerOption->getErrors()));
+							$this->addErrors(array('['.$this->_survey->name.']'.$questionId => $surveyAnswerOption->getErrors()));
 							return false;
 						}
 					}
@@ -402,7 +393,7 @@ class SurveyForm extends CFormModel
 					$surveyAnswerOption->option_id = $questionAnswer;
 					if(!$surveyAnswerOption->save()) 
 					{
-						$this->addErrors(array("question$questionId" => $surveyAnswerOption->getErrors()));
+						$this->addErrors(array('['.$this->_survey->name.']'.$questionId => $surveyAnswerOption->getErrors()));
 						return false;
 					}
 				}

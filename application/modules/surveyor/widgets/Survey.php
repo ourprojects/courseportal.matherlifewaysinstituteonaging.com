@@ -20,74 +20,67 @@ class Survey extends CWidget
 	{
 		$id = $this->getId();
 		return array(
-				'autoProcess' => false,
-				'htmlOptions' => array('id' => "survey_$id"),
-				'useAjax' => true,
-				'title' => array(
-						'show' => true,
-						'htmlOptions' => array('id' => "title_$id")
-				),
-				'description' => array(
-						'show' => true,
-						'htmlOptions' => array('id' => "description_$id")
-				),
-				'form' => array(
-						'show' => true,
-						'options' => array(
-								'id' => "form_{$this->model->name}",
-								'actionPrefix' => $this->actionPrefix,
-								'action' => $this->actionPrefix.'logActivity',
-								'enableAjaxValidation' => true,
-								'enableClientValidation' => true,
+			'htmlOptions' => array('id' => 'survey_'.$id),
+			'title' => array(
+				'show' => true,
+				'htmlOptions' => array('id' => 'survey_title_'.$id),
+			),
+			'description' => array(
+				'show' => true,
+				'htmlOptions' => array('id' => 'survey_description_'.$id),
+			),
+			'form' => array(
+				'show' => true,
+				'options' => array()
+			),
+			'submitButtonLabel' =>  Surveyor::t('Submit'),
+			'submitButtonHtmlOptions' => array('id' => 'survey_submit_'.$id),
+			'questionsHtmlOptions' => array(),
+			'rowsHtmlOptions' => array(),
+			'messageShow' => true,
+			'messageHtmlOptions' => array(),
+			'highcharts' => array(
+				'show' => true,
+				'options' => array(
+					'options' => array(
+						'chart' => array(
+							'backgroundColor' => 'rgba(255, 255, 255, 0.0)',
+							'plotBackgroundColor' => null,
+							'plotBorderWidth' => null,
+							'plotShadow' => false,
+						),
+						'exporting' => array('enabled' => false),
+						'title' => array('text' => null),
+						'credits' => array('enabled' => false),
+						'tooltip' => array(
+							'pointFormat' => '<b>{point.percentage}%</b>',
+							'percentageDecimals' => 2
+						),
+						'plotOptions' => array(
+							'pie' => array(
+								'allowPointSelect' => true,
+								'cursor' => 'pointer',
+								'size' => '45%',
+								'dataLabels' => array(
+									'enabled' => true,
+									'color' => '#000000',
+									'connectorColor' => '#000000',
+									'style' => array('width' => '150px'),
+									'formatter' => 'js:function() {' .
+										'return "<b>"+ this.point.name + "</b>: " + Highcharts.numberFormat(this.percentage, 2) + " %";' .
+									'}'
 								)
+							)
 						),
-						'submitButton' => array(
-								'label' => Surveyor::t('Submit'),
-								'htmlOptions' => array('id' => "submitButton_$id")
-						),
-						'questions' => array(
-								'htmlOptions' => array('id' => "question_$id")
-						),
-						'highcharts' => array(
-								'show' => true,
-								'group' => 'survey',
-								'options' => array(
-										'chart' => array(
-												'backgroundColor' => 'rgba(255, 255, 255, 0.0)',
-												'plotBackgroundColor' => null,
-												'plotBorderWidth' => null,
-												'plotShadow' => false,
-										),
-										'exporting' => array('enabled' => false),
-										'title' => array('text' => null),
-										'credits' => array('enabled' => false),
-										'tooltip' => array(
-												'pointFormat' => '<b>{point.percentage}%</b>',
-												'percentageDecimals' => 2
-										),
-										'plotOptions' => array(
-												'pie' => array(
-														'allowPointSelect' => true,
-														'cursor' => 'pointer',
-														'size' => '45%',
-														'dataLabels' => array(
-																'enabled' => true,
-																'color' => '#000000',
-																'connectorColor' => '#000000',
-																'style' => array('width' => '150px'),
-																'formatter' => 'js:function() {' .
-																	'return "<b>"+ this.point.name + "</b>: " + Highcharts.numberFormat(this.percentage, 2) + " %";' .
-																'}'
-														)
-												)
-										),
-										'series' => array(
-												array(
-														'type' => 'pie',
-												)
-										)
-								)),
-				);
+						'series' => array(
+							array(
+								'type' => 'pie',
+							)
+						)
+					)
+				)
+			),
+		);
 	}
 	
 	public function init()
@@ -130,7 +123,7 @@ class Survey extends CWidget
 		}
 		
 		// merge options with default values
-		$this->options = CMap::mergeArray($this->getDefaultOptions(), $this->options);
+		$this->options = array_merge_recursive($this->getDefaultOptions(), $this->options);
 		
 		$assetsDir = dirname(__FILE__).DIRECTORY_SEPARATOR.'assets';
 		if(is_dir($assetsDir))
@@ -174,7 +167,7 @@ class Survey extends CWidget
 			} 
 			else 
 			{
-				return $this->render('survey', array_merge(array('model' => $this->model), $this->options));
+				return $this->render('survey', array_merge($this->options, array('model' => $this->model, 'message' => '')));
 			}
 		}
 	}

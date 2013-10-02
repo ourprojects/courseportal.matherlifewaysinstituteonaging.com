@@ -5,7 +5,7 @@ class SurveyController extends SController
 	
 	public function actions()
 	{
-		return array_merge(parent::actions(), Survey::actions());
+		return array_merge(parent::actions(), array('survey.' => 'surveyor.widgets.Survey'));
 	}
 	
 	public function actionStat($name) 
