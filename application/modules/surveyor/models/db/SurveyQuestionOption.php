@@ -57,8 +57,7 @@ class SurveyQuestionOption extends SActiveRecord {
         		'question' => array(self::BELONGS_TO, 'SurveyQuestion', 'question_id'),
         		'answerOptions' => array(self::HAS_MANY, 'SurveyAnswerOption', 'option_id'),
         		'answerCount' => array(self::STAT, 'SurveyAnswerOption', 'option_id'),
-        		'answers' => array(self::HAS_MANY, 'SurveyAnswer', array('answer_id' => 'id'),
-        				'through' => 'answerOptions'),
+        		'answers' => array(self::MANY_MANY, 'SurveyAnswer', SurveyAnswerOption::model()->tableName().'(option_id, answer_id)'),
         );
     }
 

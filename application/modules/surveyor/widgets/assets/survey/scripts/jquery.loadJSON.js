@@ -52,6 +52,15 @@
                 case 'hidden':
                 case 'number':
                 case 'range':
+                case 'tel':
+                case 'date':
+                case 'email':
+                case 'time':
+                case 'url':
+                case 'search':
+                case 'submit':
+                case 'button':
+                case 'reset':
                     $(element).attr("value", value);
                     break;
                 case 'a':
@@ -80,11 +89,6 @@
                     $(element).attr("src", src);
                     $(element).attr("alt", alt);
                     break;
-                    
-                case 'submit':
-                case 'button':
-                case 'reset':
-                    $(element).attr("value", value);
                 case 'textarea':
                 default:
                     try {

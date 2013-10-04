@@ -13,25 +13,20 @@
 					)
 			)
 	);
-	foreach(array(
-			'precourse',
-			'postcourse') as $surveyName)
-	{
-		$survey = $this->createWidget(
-				'modules.surveyor.widgets.Survey',
-				array(
-						'id' => $surveyName,
-						'options' => array(
-								'htmlOptions' => array('style' => 'display:none;'),
-								'title' => array('htmlOptions' => array('class' => 'flowers')),
-						)
-				)
-		);
-		$survey->model->user_id = Yii::app()->getUser()->getId();
-		echo '<li>';
-		echo '<a id="survey_link_'.$survey->getId().'" href="#survey_'.$survey->getId().'" title="'.t($survey->model->title).'">'.t($survey->model->title).'</a>';
-		$survey->run();
-		echo '</li>';
-	}
+	$survey = $this->createWidget(
+			'modules.surveyor.widgets.Survey',
+			array(
+					'id' => 'test',
+					'options' => array(
+							'htmlOptions' => array('style' => 'display:none;'),
+							'title' => array('htmlOptions' => array('class' => 'flowers')),
+					)
+			)
+	);
+	$survey->model->user_id = 4;
+	echo '<li>';
+	echo '<a id="survey_link_'.$survey->getId().'" href="#survey_'.$survey->getId().'" title="'.t($survey->model->title).'">'.t($survey->model->title).'</a>';
+	$survey->run();
+	echo '</li>';
 	?>
 </ul>

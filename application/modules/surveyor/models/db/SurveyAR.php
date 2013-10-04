@@ -54,14 +54,10 @@ class SurveyAR extends SActiveRecord {
      */
     public function relations() {
         return array(
-        		'questions' => array(self::HAS_MANY, 'SurveyQuestion', 'survey_id', 
-        				'order' => 'questions.order ASC'),
+        		'questions' => array(self::HAS_MANY, 'SurveyQuestion', 'survey_id', 'order' => 'questions.order ASC'),
         		'questionCount' => array(self::STAT, 'SurveyQuestion', 'survey_id'), 
-        		'options' => array(self::HAS_MANY, 'SurveyQuestionOption', array('id' => 'question_id'), 
-        				'through' => 'questions',
-        				'order' => 'questions.order, options.order ASC'),
-        		'types' => array(self::HAS_MANY, 'SurveyQuestionType', array('type_id' => 'id'),
-        				'through' => 'questions'),
+        		'options' => array(self::HAS_MANY, 'SurveyQuestionOption', array('id' => 'question_id'), 'through' => 'questions', 'order' => 'questions.order, options.order ASC'),
+        		'types' => array(self::MANY_MANY, 'SurveyQuestionType', SurveyQuestion::model()->tableName().'(survey_id, type_id)'),
         		'answers' => array(self::HAS_MANY, 'SurveyAnswer', array('id' => 'question_id'), 'through' => 'questions'),
         );
     }

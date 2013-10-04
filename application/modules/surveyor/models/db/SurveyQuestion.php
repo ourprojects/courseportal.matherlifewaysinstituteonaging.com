@@ -7,8 +7,8 @@
  * @property integer $id
  * @property integer $type_id
  * @property string $text
- * @property integer $allow_many_options
- * @property integer $required
+ * @property integer $order
+ * @property boolean $required
  * 
  * The followings are the available model relations:
  * @property SurveyQuestionType $type
@@ -41,8 +41,9 @@ class SurveyQuestion extends SActiveRecord {
     public function rules() {
         return array(
             array('survey_id, type_id, text, order', 'required'),
-            array('type_id, survey_id, order', 'numerical', 'integerOnly' => true),
+            array('order', 'numerical', 'integerOnly' => true),
             array('text', 'length', 'max' => 255),
+        	array('required', 'boolean'),
         	array('type_id', 'exist', 'attributeName' => 'id', 'className' => 'SurveyQuestionType', 'allowEmpty' => false),
         	array('survey_id', 'exist', 'attributeName' => 'id', 'className' => 'Survey', 'allowEmpty' => false),
             // The following rule is used by search().
@@ -60,8 +61,7 @@ class SurveyQuestion extends SActiveRecord {
         		'survey' => array(self::BELONGS_TO, 'SurveyAR', 'survey_id'),
         		'answers' => array(self::HAS_MANY, 'SurveyAnswer', 'question_id'),
         		'answerCount' => array(self::STAT, 'SurveyAnswer', 'question_id'),
-        		'options' => array(self::HAS_MANY, 'SurveyQuestionOption', 'question_id',
-        						   'order' => 'options.order ASC'),
+        		'options' => array(self::HAS_MANY, 'SurveyQuestionOption', 'question_id', 'order' => 'options.order ASC'),
         		'optionCount' => array(self::STAT, 'SurveyQuestionOption', 'question_id'),
         		'users' => array(self::HAS_MANY, Yii::app()->params['userModelClassName'], array('user_id' => 'id'),
         				'through' => 'answers'),
@@ -78,9 +78,13 @@ class SurveyQuestion extends SActiveRecord {
      */
     public function attributeLabels() {
         return array(
+        	// column attributes
             'id' => Surveyor::t('ID'),
             'type_id' => Surveyor::t('Type ID'),
             'text' => Surveyor::t('Text'),
+        	'required' => Surveyor::t('Required'),
+        		
+        	// relational attributes
         	'type' => Surveyor::t('Type'),
         	'survey' => Surveyor::t('Survey'),
         	'answers' => Surveyor::t('Answers'),
@@ -101,6 +105,7 @@ class SurveyQuestion extends SActiveRecord {
         $criteria->compare('type_id', $this->type_id);
         $criteria->compare('order', $this->order);
         $criteria->compare('text', $this->text, true);
+        $criteria->compare('required', $this->required);
 
         return new CActiveDataProvider($this, array(
             'criteria' => $criteria,

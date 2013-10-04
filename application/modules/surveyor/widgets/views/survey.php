@@ -47,6 +47,8 @@ if($form['show'])
 	echo $activeForm->errorSummary($model);
 	foreach($model->questions as $q)
 	{
+		echo '
+';
 		$attributeName = '['.$model->name.']'.$q->id;
 		$attributeId = CHtml::activeId($model, $attributeName);
 		echo CHtml::openTag('div', array_merge_recursive($rowsHtmlOptions, array('id' => $attributeId.'_row_', 'class' => 'row')));
@@ -57,6 +59,9 @@ if($form['show'])
 		{
 			case 'select':
 				echo $activeForm->dropDownList($model, $attributeName, array_map(array('Surveyor', 't'), CHtml::listData($q->options, 'id', 'text')));
+				break;
+			case 'select-multiple':
+				echo $activeForm->dropDownList($model, $attributeName, array_map(array('Surveyor', 't'), CHtml::listData($q->options, 'id', 'text')), array('multiple' => 'multiple'));
 				break;
 			case 'checkbox':
 				echo $activeForm->checkBoxList($model, $attributeName, array_map(array('Surveyor', 't'), CHtml::listData($q->options, 'id', 'text')));
@@ -69,6 +74,27 @@ if($form['show'])
 				break;
 			case 'textarea':
 				echo $activeForm->textArea($model, $attributeName);
+				break;
+			case 'date':
+				echo $activeForm->dateField($model, $attributeName);
+				break;
+			case 'email':
+				echo $activeForm->emailField($model, $attributeName);
+				break;
+			case 'number':
+				echo $activeForm->numberField($model, $attributeName);
+				break;
+			case 'telephone':
+				echo $activeForm->telField($model, $attributeName);
+				break;
+			case 'time':
+				echo $activeForm->timeField($model, $attributeName);
+				break;
+			case 'url':
+				echo $activeForm->urlField($model, $attributeName);
+				break;
+			case 'search':
+				echo $activeForm->searchField($model, $attributeName);
 				break;
 		}
 		echo $activeForm->error($model, $attributeName);

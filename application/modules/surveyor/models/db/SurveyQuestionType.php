@@ -6,6 +6,8 @@
  * The followings are the available columns in table '{{survey_question_type}}':
  * @property integer $id
  * @property string $name
+ * @property boolean $textual
+ * @property boolean $multiple
  * 
  * The followings are the available model relations:
  * @property SurveyQuestion[] $questions
@@ -38,8 +40,9 @@ class SurveyQuestionType extends SActiveRecord
     public function rules()
     {
         return array(
-            array('name', 'required'),
+            array('name, textual, multiple', 'required'),
             array('name', 'length', 'max' => 64),
+        	array('textual, multiple', 'boolean'),
             // The following rule is used by search().
             // Please remove those attributes that should not be searched.
             array('id, name', 'safe', 'on' => 'search'),
@@ -52,12 +55,9 @@ class SurveyQuestionType extends SActiveRecord
     public function relations()
     {
         return array(
-        		'questions' => array(self::HAS_MANY, 'SurveyQuestion', 'type_id',
-        						'order' => 'questions.order ASC'),
-        		'surveys' => array(self::HAS_MANY, 'SurveyAR', array('survey_id' => 'id'),
-        				'through' => 'questions'),
-        		'answers' => array(self::HAS_MANY, 'SurveyAnswer', array('id' => 'question_id'),
-        				'through' => 'questions'),
+        		'questions' => array(self::HAS_MANY, 'SurveyQuestion', 'type_id', 'order' => 'questions.order ASC'),
+        		'surveys' => array(self::MANY_MANY, 'SurveyAR', SurveyAR::Model()->tableName().'(type_id, survey_id)'),
+        		'answers' => array(self::HAS_MANY, 'SurveyAnswer', array('id' => 'question_id'), 'through' => 'questions'),
         );
     }
 
@@ -67,8 +67,13 @@ class SurveyQuestionType extends SActiveRecord
     public function attributeLabels()
     {
         return array(
+        	// Column attributes
             'id' => Surveyor::t('ID'),
             'name' => Surveyor::t('Name'),
+        	'textual' => Surveyor::t('Textual'),
+        	'multiple' => Surveyor::t('Multiple'),
+        		
+        	// Relation attributes
         	'questions' => Surveyor::t('Questions'),
         	'surveys' => Surveyor::t('Surveys'),
         );
@@ -80,13 +85,15 @@ class SurveyQuestionType extends SActiveRecord
      */
     public function search()
     {
-        $criteria=new CDbCriteria;
+        $criteria = new CDbCriteria;
 
-        $criteria->compare('id',$this->id);
-        $criteria->compare('name',$this->name,true);
+        $criteria->compare('id', $this->id);
+        $criteria->compare('name', $this->name, true);
+        $criteria->compare('textual', $this->textual);
+        $criteria->compare('multiple', $this->multiple);
 
         return new CActiveDataProvider($this, array(
-            'criteria'=>$criteria,
+            'criteria' => $criteria,
         ));
     }
 }

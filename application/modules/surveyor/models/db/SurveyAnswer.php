@@ -57,10 +57,9 @@ class SurveyAnswer extends SActiveRecord
         return array(
         		'user' => array(self::BELONGS_TO, Yii::app()->params['userModelClassName'], 'user_id'),
         		'question' => array(self::BELONGS_TO, 'SurveyQuestion', 'question_id'),
-        		'answerText' => array(self::HAS_MANY, 'SurveyAnswerText', 'answer_id'),
+        		'answerText' => array(self::HAS_ONE, 'SurveyAnswerText', 'answer_id'),
         		'answerOptions' => array(self::HAS_MANY, 'SurveyAnswerOption', 'answer_id'),
-        		'options' => array(self::HAS_MANY, 'SurveyQuestionOption', array('option_id' => 'id'),
-        				'through' => 'answerOptions'),
+        		'options' => array(self::MANY_MANY, 'SurveyQuestionOption', SurveyAnswerOption::model()->tableName().'(answer_id, option_id)'),
         );
     }
 
