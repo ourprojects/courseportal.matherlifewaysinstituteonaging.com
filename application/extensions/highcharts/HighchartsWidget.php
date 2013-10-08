@@ -78,6 +78,26 @@ class HighchartsWidget extends CWidget
 	public $options = array();
 	public $htmlOptions = array();
 	public $scripts = array();
+	
+	public function init()
+	{
+		$basePath = dirname(__FILE__) . DIRECTORY_SEPARATOR . 'assets' . DIRECTORY_SEPARATOR;
+		$baseUrl = Yii::app()->getAssetManager()->publish($basePath, false, 1, YII_DEBUG);
+		
+		$cs = Yii::app()->clientScript;
+		$cs->registerCoreScript('jquery');
+		
+		array_unshift($this->scripts, $this->_baseScript);
+		
+		// register additional scripts
+		foreach ($this->scripts as $script) {
+			if (YII_DEBUG && file_exists(realpath("$basePath/$script.src.js"))) {
+				$cs->registerScriptFile("$baseUrl/$script.src.js");
+			} else {
+				$cs->registerScriptFile("$baseUrl/$script.js");
+			}
+		}
+	}
 
 	/**
 	 * Renders the widget.
@@ -101,38 +121,11 @@ class HighchartsWidget extends CWidget
 		// merge options with default values
 		$defaultOptions = array('chart' => array('renderTo' => $id));
 		$this->options = CMap::mergeArray($defaultOptions, $this->options);
-		array_unshift($this->scripts, $this->_baseScript);
 
 		$jsOptions = CJavaScript::encode($this->options);
-		$this->registerScripts(__CLASS__, 'var highcharts = [];');
-		$this->registerScripts(__CLASS__ . '#' . $id, "highcharts['$id'] = new Highcharts.{$this->_constr}($jsOptions);");
-	}
-
-
-	/**
-	 * Publishes and registers the necessary script files.
-	 *
-	 * @param string the id of the script to be inserted into the page
-	 * @param string the embedded script to be inserted into the page
-	 */
-	protected function registerScripts($id, $embeddedScript)
-	{
-		$basePath = dirname(__FILE__) . DIRECTORY_SEPARATOR . 'assets' . DIRECTORY_SEPARATOR;
-		$baseUrl = Yii::app()->getAssetManager()->publish($basePath, false, 1, YII_DEBUG);
-
 		$cs = Yii::app()->clientScript;
-		$cs->registerCoreScript('jquery');
-
-		// register additional scripts
-		foreach ($this->scripts as $script) {
-			if (YII_DEBUG && file_exists(realpath("$basePath/$script.src.js"))) {
-				$cs->registerScriptFile("$baseUrl/$script.src.js");
-			} else {
-				$cs->registerScriptFile("$baseUrl/$script.js");
-			}
-		}
-
-		$cs->registerScript($id, $embeddedScript, CClientScript::POS_LOAD);
+		$cs->registerScript(__CLASS__, 'var highcharts = [];', CClientScript::POS_HEAD);
+		$cs->registerScript(__CLASS__ . '#' . $id, "highcharts['$id'] = new Highcharts.{$this->_constr}($jsOptions);", CClientScript::POS_LOAD);
 	}
 
 }
