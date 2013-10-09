@@ -2,7 +2,7 @@
 
 abstract class SController extends CController
 {
-	
+
 	public function getActionParams()
 	{
 		$actionParams = parent::getActionParams();
@@ -17,5 +17,5 @@ abstract class SController extends CController
 		}
 		return $actionParams;
 	}
-	
+
 }

@@ -2,6 +2,11 @@
 
 class HomeController extends CoursePortalController
 {
+	
+	public function actions()
+	{
+		return array_merge(parent::actions(), array('survey.' => 'surveyor.widgets.Survey'));
+	}
 
 	public function accessRules()
 	{
@@ -29,59 +34,7 @@ class HomeController extends CoursePortalController
 	{
 		if(Yii::app()->getUser()->getIsGuest()) 
 		{
-			$this->render('pages/guestIndex',
-				array(
-					'workingCaregiverSurvey' => $this->createWidget(
-							'modules.surveyor.widgets.Survey',
-							array(
-									'id' => 'workingCaregiver',
-									'options' => array(
-										'autoProcess' => true,
-										'htmlOptions' => array('class' => 'box-white'),
-										'title' => array('htmlOptions' => array('class' => 'flowers')),
-										'form' => array('options' => array(
-															'enableAjaxValidation' => true,
-															'enableClientValidation' => true
-														)),
-									)
-							)
-					),
-					'hiddenSurveys' => array(
-						$this->createWidget(
-								'modules.surveyor.widgets.Survey',
-								array(
-										'id' => 'hrEmployer',
-										'options' => array(
-											'autoProcess' => true,
-											'htmlOptions' => array('style' => 'display:none;'),
-											'title' => array('htmlOptions' => array('class' => 'flowers')),
-											'form' => array('options' =>
-													array(
-															'enableAjaxValidation' => true,
-															'enableClientValidation' => true
-													)),
-										)
-								)
-						),
-						$this->createWidget(
-								'modules.surveyor.widgets.Survey',
-								array(
-										'id' => 'caregiver',
-										'options' => array(
-											'autoProcess' => true,
-											'htmlOptions' => array('style' => 'display:none;'),
-											'title' => array('htmlOptions' => array('class' => 'flowers')),
-											'form' => array('options' =>
-													array(
-															'enableAjaxValidation' => true,
-															'enableClientValidation' => true
-													)),
-										)
-								)
-						)
-					)
-				)
-			);
+			$this->render('pages/guestIndex');
 		} 
 		else 
 		{

@@ -1,21 +1,21 @@
 <?php
 
-class Survey extends CWidget 
+class Survey extends CWidget
 {
 
 	public $model;
-	
+
 	public $options = array();
-	
+
 	public static function actions()
 	{
 		return array(
-				'submit' => array(
-						'class' => 'surveyor.widgets.actions.SubmitAction',
-				),
+			'submit' => array(
+				'class' => 'surveyor.widgets.actions.SubmitAction',
+			),
 		);
 	}
-	
+
 	public function getDefaultOptions()
 	{
 		$id = $this->getId();
@@ -33,7 +33,7 @@ class Survey extends CWidget
 				'show' => true,
 				'options' => array()
 			),
-			'submitButtonLabel' =>  Surveyor::t('Submit'),
+			'submitButtonLabel' =>  Yii::app()->getModule('surveyor')->t('Submit'),
 			'submitButtonHtmlOptions' => array('id' => 'survey_submit_'.$id),
 			'questionsHtmlOptions' => array(),
 			'rowsHtmlOptions' => array(),
@@ -67,7 +67,7 @@ class Survey extends CWidget
 									'connectorColor' => '#000000',
 									'style' => array('width' => '150px'),
 									'formatter' => 'js:function() {' .
-										'return "<b>"+ this.point.name + "</b>: " + Highcharts.numberFormat(this.percentage, 2) + " %";' .
+									'return "<b>"+ this.point.name + "</b>: " + Highcharts.numberFormat(this.percentage, 2) + " %";' .
 									'}'
 								)
 							)
@@ -82,49 +82,44 @@ class Survey extends CWidget
 			),
 		);
 	}
-	
+
 	public function init()
 	{
-		Yii::import('surveyor.models.db.*');
-		Yii::import('surveyor.models.forms.*');
-		Yii::import('surveyor.controllers.*');
-		Yii::import('surveyor.components.*');
-		Yii::import('surveyor.widgets.*');
-		Yii::import('surveyor.*');
-		
+		Yii::import('surveyor.models.forms.SurveyForm');
+
 		if(!isset($this->actionPrefix))
 		{
 			$this->actionPrefix = 'survey.';
 		}
-		
+
 		$id = $this->getId(false);
-		if(!isset($this->model)) 
+		if(!isset($this->model))
 		{
 			if(!isset($id))
 			{
-				throw new CException(Surveyor::t('The survey model or survey name must be specified in survey widget.'));
+				throw new CException(Yii::app()->getModule('surveyor')->t('The survey model or survey name must be specified in survey widget.'));
 			}
-			$this->model = SurveyorModule::surveyor()->getSurveyForm($id);
+			$this->model = new SurveyForm($id);
 			if(!isset($this->model))
 			{
-				throw new CException(Surveyor::t('Survey with name {name} was not found.', array('{name}' => $id)));
+				throw new CException(Yii::app()->getModule('surveyor')->t('Survey with name {name} was not found.', array('{name}' => $id)));
 			}
-		} 
-		else if(!isset($id)) 
+		}
+		else if(!isset($id))
 		{
 			$id = $this->model->name;
 			$this->setId($id);
 		}
-		
+
 		// check if options parameter is an array or a json string
 		if(!is_array($this->options) && is_string($this->options) && !$this->options = CJSON::decode($this->options))
 		{
-			throw new CException(Surveyor::t('The options parameter is not an array or a valid JSON string.'));
+			throw new CException(Yii::app()->getModule('surveyor')->t('The options parameter is not an array or a valid JSON string.'));
 		}
-		
+
 		// merge options with default values
 		$this->options = array_merge_recursive($this->getDefaultOptions(), $this->options);
-		
+
 		$assetsDir = dirname(__FILE__).DIRECTORY_SEPARATOR.'assets';
 		if(is_dir($assetsDir))
 		{
@@ -135,41 +130,41 @@ class Survey extends CWidget
 			$cs->registerScriptFile("$assetsUrl/survey/scripts/jquery.survey.js");
 		}
 	}
-	
-	public function run() 
+
+	public function run()
 	{
-		if($this->model->isComplete() && $this->options['highcharts']['show']) 
+		if($this->model->isComplete() && $this->options['highcharts']['show'])
 		{
-			if(Yii::app()->getRequest()->getIsAjaxRequest()) 
+			if(Yii::app()->getRequest()->getIsAjaxRequest())
 			{
 				$data = array();
-				foreach($this->model->questions as $question) 
+				foreach($this->model->questions as $question)
 				{
 					$qData = array();
-					foreach($question->options as $option) 
+					foreach($question->options as $option)
 					{
 						$qData[] = array($option->text, $option->getPercentAnswered());
 					}
 					$data["Survey_{$this->model->name}_question$question->id"] = $qData;
 				}
 				echo CJSON::encode($data);
-			} 
-			else 
+			}
+			else
 			{
 				//@TODO Render stat chart in a page here.
 			}
-		} 
-		else 
+		}
+		else
 		{
-			if(Yii::app()->getRequest()->getIsAjaxRequest()) 
+			if(Yii::app()->getRequest()->getIsAjaxRequest())
 			{
 				echo CJSON::encode($this->model->getErrors());
-			} 
-			else 
+			}
+			else
 			{
 				return $this->render('survey', array_merge($this->options, array('model' => $this->model, 'message' => '')));
 			}
 		}
 	}
-	
+
 }

@@ -48,23 +48,32 @@
 		
 		showCharts: function(questions)
 		{
-			for(question in questions) 
+			if(questions.success == undefined)
 			{
-				questionElementId = surveySettings.questionPrefix + question.id;
-				highcharts[questionElementId + '_highchart_'].series[0].setData(question.data, true);
-				$('#' + questionElementId + '_question_').css("display", "none");
-				$('#' + questionElementId + '_highchart_').css("display", "block");
+				return;
 			}
+			$.each(questions.success, function(index, question){
+				if(question.textual == 0)
+				{
+					highcharts[index + '_highchart_'].series[0].setData(question.data, true);
+					$('#' + index).css("display", "none");
+					$('#' + index + '_highchart_').css("display", "block");
+				}
+			});
+			$('#' + surveySettings.submitButtonId).css("display", "none");
 		},
 		
 		showQuestions: function(questions)
 		{
-			for(question in questions)
+			if(questions.success == undefined)
 			{
-				questionElementId = surveySettings.questionPrefix + question.id;
-				$('#' + questionElementId + '_highchart_').css("display", "none");
-				$('#' + questionElementId + '_question_').css("display", "block");
+				return;
 			}
+			$.each(questions.success, function(index, question){
+				$('#' + index + '_highchart_').css("display", "none");
+				$('#' + index).css("display", "inline");
+			});
+			$('#' + surveySettings.submitButtonId).css("display", "inline");
 		},
 		
 		submit: function()
@@ -76,9 +85,9 @@
 				type: $form.attr('method'),
 				data: $form.serialize(),
 				beforeSend: function(){$form.addClass(surveySettings.loadingClass);},
-				success: function(data){$form.showCharts(data);},
-				error: function(data){$form.yiiactiveform("updateSummary", data);},
-				complete: function(){$form.surveyForm(surveySettings.loadingClass);}
+				success: function(data){$form.yiiSurvey("showCharts", $.parseJSON(data));},
+				error: function(data){$form.yiiactiveform("updateSummary", $.parseJSON(data));},
+				complete: function(){$form.removeClass(surveySettings.loadingClass);}
 			});
 		}
 			

@@ -1,6 +1,6 @@
 <?php
 
-$this->breadcrumbs = array(t('Courses') => $this->createUrl('course/'), t($course->title));
+$this->breadcrumbs = array('{t}Courses{/t}' => $this->createUrl('course/'), t($course->title));
 $clientScript = Yii::app()->getClientScript();
 $clientScript->registerCssFile($this->getStylesUrl('course.css'));
 
@@ -58,21 +58,17 @@ foreach(array(
 								'id' => $surveyName,
 								'options' => array(
 										'htmlOptions' => array('style' => 'display:none;'),
-										'title' => array('htmlOptions' => array('class' => 'flowers')),
-										'form' => array('options' =>
-												array(
-														'enableAjaxValidation' => true,
-														'enableClientValidation' => true
-												)),
+										'title' => array('htmlOptions' => array('class' => 'flowers'))
 								)
 						)
 				);
 				$survey->model->user_id = Yii::app()->getUser()->getId();
-				$survey->processRequest();
-				echo '<li>';
-				echo '<a id="survey_link_'.$survey->getId().'" href="#survey_'.$survey->getId().'" title="'.t($survey->model->title).'">'.t($survey->model->title).'</a>';
-				$survey->run();
-				echo '</li>';
+				?>
+				<li>
+					<a id="survey_link_<?php echo $survey->getId(); ?>" href="#survey_<?php echo $survey->getId(); ?>" title="<?php echo t($survey->model->title); ?>"><?php echo t($survey->model->title); ?> </a>
+					<?php $survey->run(); ?>
+				</li>
+				<?php
 			}
 			?>
 		</ul>

@@ -148,14 +148,33 @@ $this->widget(
 	<p>{t}Please choose one of the surveys below to take. Depending on your position, employer or employee, submit this voluntary survey and view aggregate feedback from all previous users.{/t}</p>
 
 	<!-- add in input boxes for name,title, corporation, email, (optional, but no note) -->
+	<?php 
+	$hrEmployerSurvey = $this->createWidget(
+			'modules.surveyor.widgets.Survey',
+			array(
+					'id' => 'hrEmployer',
+					'options' => array(
+							'htmlOptions' => array('style' => 'display:none;'),
+							'title' => array('htmlOptions' => array('class' => 'flowers'))),
+			)
+	);
+	$caregiverSurvey = $this->createWidget(
+			'modules.surveyor.widgets.Survey',
+			array(
+					'id' => 'caregiver',
+					'options' => array(
+							'htmlOptions' => array('style' => 'display:none;'),
+							'title' => array('htmlOptions' => array('class' => 'flowers'))),
+			)
+	);
+	?>
 	<p>
-		<?php foreach($hiddenSurveys as $survey): ?>
-		<a id="survey_link_<?php echo $survey->getId(); ?>" href="#survey_<?php echo $survey->getId(); ?>" class="button" title="<?php echo $survey->model->title; ?>"><?php echo $survey->model->title; ?> </a>
-		<?php endforeach; ?>
+		<a id="survey_link_<?php echo $hrEmployerSurvey->getId(); ?>" href="#survey_<?php echo $hrEmployerSurvey->getId(); ?>" class="button" title="<?php echo $hrEmployerSurvey->model->title; ?>"><?php echo $hrEmployerSurvey->model->title; ?></a>
+		<a id="survey_link_<?php echo $caregiverSurvey->getId(); ?>" href="#survey_<?php echo $caregiverSurvey->getId(); ?>" class="button" title="<?php echo $caregiverSurvey->model->title; ?>"><?php echo $caregiverSurvey->model->title; ?></a>
 	</p>
 	<?php 
-	foreach($hiddenSurveys as $survey)
-		$survey->run();
+	$hrEmployerSurvey->run();
+	$caregiverSurvey->run();
 	?>
 	<h2 class="flowers top-pad">{t}Benefits of Participation{/t}</h2>
 	<p style="padding-bottom: 5px;">{t}Why participate? Our programs have been shown to result in measurable improvements in the quality of care provided and workforce retention. Past participation has yieled many benfits for our clients, including, but not limited to: {/t}</p>
@@ -189,7 +208,17 @@ $this->widget(
 		);
 		?>
 	</div>
-	<?php $workingCaregiverSurvey->run(); ?>
+	<?php 
+		$this->createWidget(
+			'modules.surveyor.widgets.Survey',
+			array(
+					'id' => 'workingCaregiver',
+					'options' => array(
+						'htmlOptions' => array('class' => 'box-white'),
+						'title' => array('htmlOptions' => array('class' => 'flowers'))),
+					)
+		)->run(); 
+	?>
 </div>
 <div id="bottom-logos">
 	<h4>{t}Partners{/t}</h4>

@@ -39,12 +39,14 @@ return array(
 		'modules' => array(
 			/*'gii'=>array(
 		        'class'=>'system.gii.GiiModule',
-		        'password'=>'abcd',
+		        'password'=>false,
 		        'ipFilters'=>array('*'),
 		    ),*/
 			'phpbb',
 			'translate',
-			'surveyor',
+			'surveyor' => array(
+				'userClass' => 'CPUser',
+			),
 			'admin',
 			'course' => array(
 				'userClass' => 'CPUser',
@@ -106,10 +108,6 @@ return array(
 						'viewMessageTable' => '{{translate_view_message}}',
 						'cachingDuration' => defined('YII_DEBUG') && YII_DEBUG ? 0 : 86400,
 						'enableProfiling' => defined('YII_DEBUG') && YII_DEBUG,
-				),
-
-				'surveyor' => array(
-						'class' => 'modules.surveyor.components.Surveyor',
 				),
 
 				'translate' => array(
@@ -216,7 +214,6 @@ return array(
 								),
 						),
 				),
-
 		),
 
 		'params' => require('params.php'),

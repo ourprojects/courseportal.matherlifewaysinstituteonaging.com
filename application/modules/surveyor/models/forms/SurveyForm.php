@@ -2,65 +2,66 @@
 
 /**
  * SurveyResponse class.
- * SurveyResponse handles a response to a survey. 
- */
-class SurveyForm extends CFormModel 
+ * SurveyResponse handles a response to a survey.
+*/
+class SurveyForm extends CFormModel
 {
-	
+
 	const SCENARIO_NOT_COMPLETE = 'incomplete';
 	const SCENARIO_COMPLETE = 'complete';
-	
+
 	private $_isComplete;
 
 	private $_requiredQuestions;
 	private $_attributeLabels;
-	
-	private $_user_id = 4;
+
+	private $_user_id;
 	private $_survey;
 	private $_attributes;
-	
-	public function __construct($survey) 
+
+	public function __construct($survey)
 	{
+		Yii::import('surveyor.models.db.*');
 		if($survey instanceof SurveyAR)
 		{
 			$this->_survey = $survey;
 		}
 		else if(is_numeric($survey))
 		{
-			$this->_survey = SurveyAR::model()->with(array('questions' => array('with' => 'options')))->findByPk($survey);
+			$this->_survey = SurveyAR::model()->with(array('questions' => array('with' => array('options', 'type'))))->findByPk($survey);
 		}
 		else if(is_string($survey))
 		{
-			$this->_survey = SurveyAR::model()->with(array('questions' => array('with' => 'options')))->find('name = :name', array(':name' => $survey));
+			$this->_survey = SurveyAR::model()->with(array('questions' => array('with' => array('options', 'type'))))->find(SurveyAR::model()->getTableAlias().'.name = :name', array(':name' => $survey));
 		}
-		
+
 		if(!isset($this->_survey))
 		{
-			throw new CException(Surveyor::t('Invalid survey parameter when constructing SurveyForm. A valid Survey name, id, or ActiveRecord object is required.'));
+			throw new CException(Yii::app()->getModule('surveyor')->t('Invalid survey parameter when constructing SurveyForm. A valid Survey name, id, or ActiveRecord object is required.'));
 		}
-		
+
 		$this->_attributes = array();
 		foreach($this->_survey->questions as $question)
 		{
 			$this->_attributes[$question->id] = null;
 		}
-		
+
 		parent::__construct(self::SCENARIO_NOT_COMPLETE);
 	}
 
 	/**
 	 * Declares the validation rules.
 	 */
-	public function rules() 
+	public function rules()
 	{
 		return array(
-				// @ TODO We should just set the allowEmpty based on the anonymous state of the survey.
-				array('user_id', 'exist', 'attributeName' => 'id', 'className' => Yii::app()->params['userModelClassName'], 'allowEmpty' => true),
-				array('user_id', 'checkAnonymous'),
-				array('_attributes', 'validateAnswers'),
+			// @ TODO We should just set the allowEmpty based on the anonymous state of the survey.
+			array('user_id', 'exist', 'attributeName' => 'id', 'className' => Yii::app()->getModule('surveyor')->userClass, 'allowEmpty' => true),
+			array('user_id', 'checkAnonymous'),
+			array('_attributes', 'validateAnswers'),
 		);
 	}
-	
+
 	public function getRequiredQuestions()
 	{
 		if(!isset($this->_requiredQuestions))
@@ -72,8 +73,8 @@ class SurveyForm extends CFormModel
 		}
 		return $this->_requiredQuestions;
 	}
-	
-	public function isAttributeRequired($attribute) 
+
+	public function isAttributeRequired($attribute)
 	{
 		$requiredQuestions = $this->getRequiredQuestions();
 		if(array_key_exists($attribute, $requiredQuestions))
@@ -82,79 +83,81 @@ class SurveyForm extends CFormModel
 		}
 		return parent::isAttributeRequired($attribute);
 	}
-	
+
 	/**
 	 * @return array customized attribute labels (name=>label)
 	 */
-	public function attributeLabels() 
+	public function attributeLabels()
 	{
-		if(!isset($this->_attributeLabels)) 
+		if(!isset($this->_attributeLabels))
 		{
 			$this->_attributeLabels = array_merge(
 				parent::attributeLabels(),
 				$this->_survey->attributeLabels(),
 				array(
-					'user_id' => Surveyor::t('User ID'),
-					'name' => Surveyor::t('Name'),
-					'title' => Surveyor::t('Title'),
-					'description' => Surveyor::t('Description'),
+					'user_id' => Yii::app()->getModule('surveyor')->t('User ID'),
+					'name' => Yii::app()->getModule('surveyor')->t('Name'),
+					'title' => Yii::app()->getModule('surveyor')->t('Title'),
+					'description' => Yii::app()->getModule('surveyor')->t('Description'),
 				));
 			foreach($this->_survey->questions as $question)
 			{
-				$this->_attributeLabels[$question->id] = Surveyor::t($question->text);
+				$this->_attributeLabels[$question->id] = Yii::app()->getModule('surveyor')->t($question->text);
 			}
 		}
 		return $this->_attributeLabels;
 	}
-	
-	public function attributeNames() 
+
+	public function attributeNames()
 	{
 		return array_merge(parent::attributeNames(), array_keys($this->_attributes), $this->_survey->attributeNames());
 	}
-	
-	public function getSafeAttributeNames() 
+
+	public function getSafeAttributeNames()
 	{
 		return array_merge(parent::getSafeAttributeNames(), array_keys($this->_attributes));
 	}
 
-	public function getUser_id() 
+	public function getUser_id()
 	{
 		return $this->_user_id;
 	}
-	
-	public function setUser_id($user_id, $loadAnswers = true) 
+
+	public function setUser_id($user_id, $loadAnswers = true)
 	{
 		$this->_user_id = $user_id;
-		if($loadAnswers) 
+		if($loadAnswers)
 		{
-			foreach($this->_survey->answers(DbCriteria::instance()->addColumnCondition(array('answers.user_id' => $user_id))) as $answer) 
+			$criteria = new CDbCriteria();
+			$criteria->addColumnCondition(array('answers.user_id' => $user_id));
+			foreach($this->_survey->answers($criteria) as $answer)
 			{
-				if($answer->question->type->textual) 
+				if($answer->question->type->textual)
 				{
 					$this->_attributes[$answer->question->id] = $answer->answerText->text;
-				} 
-				else if($answer->question->type->multiple) 
+				}
+				else if($answer->question->type->multiple)
 				{
 					$this->_attributes[$answer->question->id] = array();
 					foreach($answer->options as $option)
 					{
 						$this->_attributes[$answer->question->id][] = $option->id;
 					}
-				} 
-				else 
+				}
+				else
 				{
 					$this->_attributes[$answer->question->id] = $answer->options[0]->id;
 				}
 			}
 		}
 	}
-	
-	public function getQuestions() 
+
+	public function getQuestions()
 	{
 		return $this->_survey->questions;
 	}
-	
-	public function __get($name) 
+
+	public function __get($name)
 	{
 		if($this->_survey->hasAttribute($name))
 		{
@@ -166,97 +169,97 @@ class SurveyForm extends CFormModel
 		}
 		return parent::__get($name);
 	}
-	
-	public function __set($name, $value) 
+
+	public function __set($name, $value)
 	{
-		if(array_key_exists($name, $this->_attributes)) 
+		if(array_key_exists($name, $this->_attributes))
 		{
 			$this->_attributes[$name] = $value;
-		} 
-		else 
+		}
+		else
 		{
 			parent::__set($name, $value);
 		}
 	}
-	
-	public function checkAnonymous($attribute, $params) 
+
+	public function checkAnonymous($attribute, $params)
 	{
 		if(!$this->_survey->anonymous && !isset($this->_user_id))
 		{
-			$this->addError($attribute, Surveyor::t('This survey is not anonymous and a user was not specified.'));
+			$this->addError($attribute, Yii::app()->getModule('surveyor')->t('This survey is not anonymous and a user was not specified.'));
 		}
 	}
-	
-	public function isComplete() 
+
+	public function isComplete()
 	{
 		return $this->_isComplete;
 	}
-	
-	public function setScenario($scenario) 
+
+	public function setScenario($scenario)
 	{
 		$this->_isComplete = $scenario === self::SCENARIO_COMPLETE;
 		parent::setScenario($scenario);
 	}
-	
-	public function validateAnswers($attribute, $params) 
+
+	public function validateAnswers($attribute, $params)
 	{
 		$answers = $this->$attribute;
-		foreach($this->_survey->questions as $question) 
+		foreach($this->_survey->questions as $question)
 		{
-			if(isset($answers[$question->id]) && $answers[$question->id] !== '') 
+			if(isset($answers[$question->id]) && $answers[$question->id] !== '')
 			{
-				if(!$question->type->textual) 
+				if(!$question->type->textual)
 				{
 					$questionOptions = array();
 					foreach($question->options as $option)
 					{
 						$questionOptions[$option->id] = $option->id;
 					}
-					if(is_array($answers[$question->id])) 
+					if(is_array($answers[$question->id]))
 					{
-						if($question->type->multiple) 
+						if($question->type->multiple)
 						{
 							foreach($answers[$question->id] as $answer)
 							{
 								if(!isset($questionOptions[$answer]))
 								{
-									$this->addError('['.$this->_survey->name.']'.$question->id, Surveyor::t('Invalid option selected.'));
+									$this->addError('['.$this->_survey->name.']'.$question->id, Yii::app()->getModule('surveyor')->t('Invalid option selected.'));
 									break;
 								}
 							}
-						} 
-						else 
+						}
+						else
 						{
-							$this->addError('['.$this->_survey->name.']'.$question->id, Surveyor::t('Only one answer is allowed.'));
+							$this->addError('['.$this->_survey->name.']'.$question->id, Yii::app()->getModule('surveyor')->t('Only one answer is allowed.'));
 						}
 					}
-					else 
+					else
 					{
 						if(!isset($questionOptions[$answers[$question->id]]))
 						{
-							$this->addError('['.$this->_survey->name.']'.$question->id, Surveyor::t('Invalid option selected.'));
+							$this->addError('['.$this->_survey->name.']'.$question->id, Yii::app()->getModule('surveyor')->t('Invalid option selected.'));
 						}
 					}
 				}
-			} 
-			else if($question->required) 
+			}
+			else if($question->required)
 			{
-				$this->addError('['.$this->_survey->name.']'.$question->id, Surveyor::t('This question is required.'));
+				$this->addError('['.$this->_survey->name.']'.$question->id, Yii::app()->getModule('surveyor')->t('This question is required.'));
 			}
 		}
 	}
-	
-	public function save($validate = true, $useTransaction = true) 
+
+	public function save($validate = true, $useTransaction = true)
 	{
-		if(!$validate || $this->validate()) 
+		if(!$validate || $this->validate())
 		{
 			if($useTransaction)
 			{
 				$transaction = Yii::app()->db->beginTransaction();
 			}
-			try 
+			try
 			{
-				if($this->_save()) 
+				if($this->_save())
 				{
 					if(isset($transaction))
 					{
@@ -265,8 +268,8 @@ class SurveyForm extends CFormModel
 					$this->setScenario(self::SCENARIO_COMPLETE);
 					return true;
 				}
-			} 
-			catch(Exception $e) 
+			}
+			catch(Exception $e)
 			{
 				if(isset($transaction))
 				{
@@ -282,75 +285,77 @@ class SurveyForm extends CFormModel
 		$this->setScenario(self::SCENARIO_NOT_COMPLETE);
 		return false;
 	}
-	
-	private function _save() 
+
+	private function _save()
 	{
 		$newAnswers = $this->_attributes;
-		if(!$this->_survey->anonymous) 
+		if(!$this->_survey->anonymous)
 		{
-			foreach($this->_survey->answers(DbCriteria::instance()->addColumnCondition(array('answers.user_id' => $this->_user_id))) as $answer) 
+			$criteria = new CDbCriteria();
+			$criteria->addColumnCondition(array('answers.user_id' => $this->_user_id));
+			foreach($this->_survey->answers($criteria) as $answer)
 			{
-				if(empty($newAnswers[$answer->question_id]) && $newAnswers[$answer->question_id] !== 0) 
+				if(empty($newAnswers[$answer->question_id]) && $newAnswers[$answer->question_id] !== 0)
 				{
 					SurveyAnswerOption::model()->deleteAll('answer_id = ?', array($answer->id));
 					SurveyAnswerText::model()->deleteAll('answer_id = ?', array($answer->id));
-					if(!$answer->delete()) 
+					if(!$answer->delete())
 					{
 						$this->addErrors(array('['.$this->_survey->name.']'.$answer->question_id => $answer->getErrors()));
 						return false;
 					}
 					unset($newAnswers[$answer->question_id]);
-				} 
-				else if($answer->question->type->textual) 
+				}
+				else if($answer->question->type->textual)
 				{
-					if(isset($answer->answerText) && $answer->answerText->text !== $newAnswers[$answer->question_id]) 
+					if(isset($answer->answerText) && $answer->answerText->text !== $newAnswers[$answer->question_id])
 					{
 						$answer->answerText->text = $newAnswers[$answer->question_id];
-						if(!$answer->answerText->save()) 
+						if(!$answer->answerText->save())
 						{
 							$this->addErrors(array('['.$this->_survey->name.']'.$answer->question_id => $answer->answerText->getErrors()));
 							return false;
 						}
 					}
 					unset($newAnswers[$answer->question_id]);
-				} 
-				else if(is_array($newAnswers[$answer->question_id])) 
+				}
+				else if(is_array($newAnswers[$answer->question_id]))
 				{
-					foreach($answer->answerOptions as $option) 
+					foreach($answer->answerOptions as $option)
 					{
-						if(($key = array_search($option->option_id, $newAnswers[$answer->question_id])) === true) 
+						if(($key = array_search($option->option_id, $newAnswers[$answer->question_id])) === true)
 						{
 							unset($newAnswers[$answer->question_id][$key]);
-						} 
-						else 
+						}
+						else
 						{
-							if(!$option->delete()) 
+							if(!$option->delete())
 							{
 								$this->addErrors(array('['.$this->_survey->name.']'.$answer->question_id => $option->getErrors()));
 								return false;
 							}
 						}
 					}
-					foreach($newAnswers[$answer->question_id] as $newAnswer) 
+					foreach($newAnswers[$answer->question_id] as $newAnswer)
 					{
 						$surveyAnswerOption = new SurveyAnswerOption;
 						$surveyAnswerOption->answer_id = $answer->id;
 						$surveyAnswerOption->option_id = $newAnswer;
-						if(!$surveyAnswerOption->save()) 
+						if(!$surveyAnswerOption->save())
 						{
 							$this->addErrors(array('['.$this->_survey->name.']'.$answer->question_id => $surveyAnswerOption->getErrors()));
 							return false;
 						}
 					}
 					unset($newAnswers[$answer->question_id]);
-				} 
-				else 
+				}
+				else
 				{
 					$option = $answer->answerOptions[0];
-					if($option->option_id !== $newAnswers[$answer->question_id]) 
+					if($option->option_id !== $newAnswers[$answer->question_id])
 					{
 						$option->option_id = $newAnswers[$answer->question_id];
-						if(!$option->save()) 
+						if(!$option->save())
 						{
 							$this->addErrors(array('['.$this->_survey->name.']'.$answer->question_id => $option->getErrors()));
 							return false;
@@ -365,14 +370,14 @@ class SurveyForm extends CFormModel
 		{
 			$textualQuestions[$question->id] = $question->type->textual;
 		}
-		foreach($newAnswers as $questionId => $questionAnswer) 
+		foreach($newAnswers as $questionId => $questionAnswer)
 		{
-			if(!empty($questionAnswer) || $questionAnswer === 0) 
+			if(!empty($questionAnswer) || $questionAnswer === 0)
 			{
 				$surveyAnswer = new SurveyAnswer;
 				$surveyAnswer->user_id = $this->_user_id;
 				$surveyAnswer->question_id = $questionId;
-				if(!$surveyAnswer->save()) 
+				if(!$surveyAnswer->save())
 				{
 					$this->addErrors(array('['.$this->_survey->name.']'.$questionId => $surveyAnswer->getErrors()));
 					return false;
@@ -391,12 +396,12 @@ class SurveyForm extends CFormModel
 				else
 				{
 					$questionAnswer = is_array($questionAnswer) ? $questionAnswer : array($questionAnswer);
-					foreach($questionAnswer as $answer) 
+					foreach($questionAnswer as $answer)
 					{
 						$surveyAnswerOption = new SurveyAnswerOption;
 						$surveyAnswerOption->answer_id = $surveyAnswer->id;
 						$surveyAnswerOption->option_id = $answer;
-						if(!$surveyAnswerOption->save()) 
+						if(!$surveyAnswerOption->save())
 						{
 							$this->addErrors(array('['.$this->_survey->name.']'.$questionId => $surveyAnswerOption->getErrors()));
 							return false;

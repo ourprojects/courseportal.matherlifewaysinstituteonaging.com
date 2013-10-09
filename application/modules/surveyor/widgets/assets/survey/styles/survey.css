@@ -1,10 +1,13 @@
-div[id^='survey_'], div[id*='survey_'] {
+div[id^='survey_'],div[id*='survey_'] {
 	font-size: 12pt;
 }
-div[id^='survey_'], div[id*='survey_'] span[id^='Survey_'], span[id*='Survey_'] {
+
+div[id^='survey_'],div[id*='survey_'] span[id^='Survey_'],span[id*='Survey_']
+	{
 	display: block;
 	padding: 5px;
 }
-div[id^='survey_'], div[id*='survey_'] input[type=submit] {
+
+div[id^='survey_'],div[id*='survey_'] input[type=submit] {
 	margin-top: 10px;
 }

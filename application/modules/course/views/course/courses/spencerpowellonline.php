@@ -1,6 +1,6 @@
 <?php
 
-$this->breadcrumbs = array(t('Courses') => $this->createUrl('course/'), t($course->title));
+$this->breadcrumbs = array('{t}Courses{/t}' => $this->createUrl('course/'), t($course->title));
 $clientScript = Yii::app()->getClientScript();
 $clientScript->registerCssFile($this->getStylesUrl('course.css'));
 

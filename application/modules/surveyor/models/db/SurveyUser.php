@@ -14,21 +14,21 @@
  * @property Activity[] $activities
  * @property ActivityLogEntry[] $activityLogEntries
  * @property ActivityLogEntryDimension[] $activityLogEntryDimensions
- */
-class SurveyUser extends CActiveRecord 
+*/
+class SurveyUser extends CActiveRecord
 {
-	
+
 	public static $SURVEYOR_MODULE_NAME = 'surveyor';
 
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @return CActiveRecord the static model class
 	 */
-	public static function model($className = __CLASS__) 
+	public static function model($className = __CLASS__)
 	{
 		return parent::model($className);
 	}
-	
+
 	public function init()
 	{
 		if(Yii::app()->getModule(self::$SURVEYOR_MODULE_NAME) === null)
@@ -41,29 +41,29 @@ class SurveyUser extends CActiveRecord
 	/**
 	 * @return string the associated database table name
 	 */
-	public function tableName() 
+	public function tableName()
 	{
 		return Yii::app()->getModule(self::$SURVEYOR_MODULE_NAME)->getStaticUserModel()->tableName();
 	}
 
-	public function behaviors() 
+	public function behaviors()
 	{
 		return array_merge(parent::behaviors(),
-				array(
-						'extendedFeatures' => array('class' => 'behaviors.EModelBehaviors'),
-						'ERememberFiltersBehavior' => array(
-								'class' => 'ext.ERememberFiltersBehavior.ERememberFiltersBehavior',
-						),
-						'EActiveRecordAutoQuoteBehavior' => array(
-								'class' => 'ext.EActiveRecordAutoQuoteBehavior.EActiveRecordAutoQuoteBehavior',
-						)
-				));
+			array(
+				'extendedFeatures' => array('class' => 'behaviors.EModelBehaviors'),
+				'ERememberFiltersBehavior' => array(
+					'class' => 'ext.ERememberFiltersBehavior.ERememberFiltersBehavior',
+				),
+				'EActiveRecordAutoQuoteBehavior' => array(
+					'class' => 'ext.EActiveRecordAutoQuoteBehavior.EActiveRecordAutoQuoteBehavior',
+				)
+			));
 	}
 
 	/**
 	 * @return array validation rules for model attributes.
 	 */
-	public function rules() 
+	public function rules()
 	{
 		return array();
 	}
@@ -78,12 +78,12 @@ class SurveyUser extends CActiveRecord
 			'courses' => array(self::MANY_MANY, 'Course', UserCourse::model()->tableName().'(user_id, course_id)'),
 			'userActivities' => array(self::HAS_MANY, 'UserActivity', 'user_id'),
 			'activities' => array(self::MANY_MANY, 'Activity', UserActivity::model()->tableName().'(user_id, activity_id)'),
-				
+
 			'courseCount' => array(self::STAT, 'Course', UserCourse::model()->tableName().'(user_id, course_id)'),
 		);
 	}
 
-	public function hasCourse($courseId, $hasCourse = true) 
+	public function hasCourse($courseId, $hasCourse = true)
 	{
 		$criteria = array('params' => array(':course_id' => $courseId), 'together' => true);
 		$userCourses = $this->getDbConnection()->quoteColumnName('userCourses.course_id');
@@ -100,32 +100,32 @@ class SurveyUser extends CActiveRecord
 		$this->getDbCriteria()->mergeWith($criteria);
 		return $this;
 	}
-	
+
 	public function getId()
 	{
 		return $this->{$this->getIdColumnName()};
 	}
-	
+
 	public function setId($id)
 	{
 		return $this->{$this->getIdColumnName()} = $id;
 	}
-	
+
 	public function getName()
 	{
 		return $this->{$this->getNameColumnName()};
 	}
-	
+
 	public function setName($name)
 	{
 		return $this->{$this->getNameColumnName()} = $name;
 	}
-	
+
 	public function getIdColumnName()
 	{
 		return Yii::app()->getModule(self::$SURVEYOR_MODULE_NAME)->userId;
 	}
-	
+
 	public function getNameColumnName()
 	{
 		return Yii::app()->getModule(self::$SURVEYOR_MODULE_NAME)->userName;
@@ -140,7 +140,7 @@ class SurveyUser extends CActiveRecord
 			// column attributes
 			$this->getIdColumnName()   => t('ID'),
 			$this->getNameColumnName() => t('Username'),
-				
+
 			// relation attributes
 			'userCourses' 	 			 => t('User Courses'),
 			'courses' 		 			 => t('Courses'),
@@ -156,7 +156,7 @@ class SurveyUser extends CActiveRecord
 	 * Retrieves a list of models based on the current search/filter conditions.
 	 * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.
 	 */
-	public function search() 
+	public function search()
 	{
 		$criteria = new CDbCriteria;
 
@@ -166,7 +166,7 @@ class SurveyUser extends CActiveRecord
 		$criteria->compare($db->quoteColumnName($tableAlias.'.'.$this->getNameColumnName()), $this->getName(), true);
 
 		return new CActiveDataProvider($this, array(
-				'criteria' => $criteria,
+			'criteria' => $criteria,
 		));
 	}
 

@@ -20,6 +20,11 @@ class UserController extends ApiController
 				)
 		);
 	}
+	
+	public function actions()
+	{
+		return array_merge(parent::actions(), array('survey.' => 'surveyor.widgets.Survey'));
+	}
 
 	/**
 	 * Displays the login page
@@ -300,32 +305,6 @@ class UserController extends ApiController
 		$CPUserModel = Yii::app()->getUser()->getModel();
 		$AvatarModel = isset($CPUserModel->avatar) ? $CPUserModel->avatar : new Avatar();
 
-		$surveys = array();
-		foreach(array(
-				'profile',
-				'precourse',
-				'postcourse') as $surveyName) 
-		{
-			$survey = $this->createWidget(
-					'modules.surveyor.widgets.Survey',
-					array(
-							'id' => $surveyName,
-							'options' => array(
-								'htmlOptions' => array('style' => 'display:none;'),
-								'title' => array('htmlOptions' => array('class' => 'flowers')),
-								'form' => array('options' =>
-										array(
-												'enableAjaxValidation' => true,
-												'enableClientValidation' => true
-										)),
-							)
-					)
-			);
-			$survey->model->user_id = $CPUserModel->id;
-			$survey->processRequest();
-			$surveys[] = $survey;
-		}
-
 		if(Yii::app()->getRequest()->getIsPostRequest())
 		{
 			$AvatarModel->user_id = $CPUserModel->id;
@@ -356,7 +335,7 @@ class UserController extends ApiController
 				}
 			}
 		}
-		$this->render('pages/profile', array('CPUser' => $CPUserModel, 'Avatar' => $AvatarModel, 'surveys' => $surveys));
+		$this->render('pages/profile', array('CPUser' => $CPUserModel, 'Avatar' => $AvatarModel));
 	}
 
 	/****** START API ACTIONS ******/

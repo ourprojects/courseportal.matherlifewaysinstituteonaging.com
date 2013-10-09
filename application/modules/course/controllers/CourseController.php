@@ -9,7 +9,7 @@ class CourseController extends CoursePortalController
 				parent::accessRules(),
 				array(
 					array('allow',
-							'actions' => array('index', 'notRegistered'),
+							'actions' => array('index', 'notRegistered', 'survey.submit'),
 							'users' => array('@'),
 					),
 					array('deny'),
@@ -20,7 +20,8 @@ class CourseController extends CoursePortalController
 	public function actions()
 	{
 		$actions = array(
-			'spencerpowell.' => 'course.widgets.SpencerPowell.ActivityLogWidget'
+			'spencerpowell.' => 'course.widgets.SpencerPowell.ActivityLogWidget',
+			'survey.' => 'surveyor.widgets.Survey'
 		);
 		$courses = Yii::app()->getDb()->createCommand()->select('name')->from(Course::model()->tableName())->queryColumn();
 		foreach($courses as $course)

@@ -31,8 +31,8 @@
  * except that the match method must not have any required parameters and must return a value that can be evaluated to a boolean.
  * Finally, any match methods defined must be defined as either protected or public. private methods will have no effect.
  *
- * Note that the order of mappings is important. The first mapping that can be applied to an action will be,
- * no further mappings will be considered once one is matched.
+ * Note that the order of mappings is important. The first mapping that can be applied to an action will be applied,
+ * no further action mappings will be considered once one mapping is found.
  *
  * @author Louis DaPrato
  * @property $map string|array mappings and request conditions for forwarding actions that this filter has been applied to

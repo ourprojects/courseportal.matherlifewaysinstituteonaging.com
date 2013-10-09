@@ -23,12 +23,31 @@ $this->widget(
 		<h3>{t}Optional Surveys{/t}</h3>
 		<p>{t}Our goal is to help better educate our participants by creating a feedback system and means to better understanding the shifting needs of the field.{/t}</p>
 		<ul id="surveys">
-			<?php foreach($surveys as $survey): ?>
-			<li>
-				<a id="survey_link_<?php echo $survey->getId(); ?>" href="#survey_<?php echo $survey->getId(); ?>" title="<?php echo t($survey->model->title); ?>"><?php echo t($survey->model->title); ?> </a>
-				<?php $survey->run(); ?>
-			</li>
-			<?php endforeach; ?>
+			<?php 
+			foreach(array(
+				'profile',
+				'precourse',
+				'postcourse') as $surveyName)
+			{
+				$survey = $this->createWidget(
+					'modules.surveyor.widgets.Survey',
+					array(
+						'id' => $surveyName,
+						'options' => array(
+							'htmlOptions' => array('style' => 'display:none;'),
+							'title' => array('htmlOptions' => array('class' => 'flowers'))
+						)
+					)
+				);
+				$survey->model->user_id = $CPUser->id;
+				?>
+				<li>
+					<a id="survey_link_<?php echo $survey->getId(); ?>" href="#survey_<?php echo $survey->getId(); ?>" title="<?php echo t($survey->model->title); ?>"><?php echo t($survey->model->title); ?> </a>
+					<?php $survey->run(); ?>
+				</li>
+				<?php
+			}
+			?>
 		</ul>
 	</div>
 	<div class="box-sidebar two">

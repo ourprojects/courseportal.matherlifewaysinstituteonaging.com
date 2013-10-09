@@ -186,98 +186,150 @@ class SrbacUtilities
 
 			if($controllerPath === false)
 			{
+				Yii::log(
+					Yii::t(
+						'srbac',
+						'Unable to extract controller actions. The controller path alias "{alias}" could not be found.',
+						array('{alias}' => $controllerPathAlias)
+					),
+					CLogger::LEVEL_WARNING
+				);
 				return false;
 			}
 
 			$controllerClassName = str_ireplace('.php', '', basename($controllerPath));
 
-			$controllerFileContents = file_get_contents($controllerPath);
-			$classNameMap = self::ensureUniqueClassNames($controllerFileContents);
-			
-			if(!isset($classNameMap[$controllerClassName]) || class_exists($classNameMap[$controllerClassName], false))
+			$controllerFileContents = @file_get_contents($controllerPath);
+			if($controllerFileContents === false)
 			{
+				Yii::log(
+					Yii::t(
+						'srbac',
+						'Unable to extract controller actions. Unable to read controller file "{file}".',
+						array('{file}' => $controllerPath)
+					),
+					CLogger::LEVEL_WARNING
+				);
 				return null;
 			}
 			
+			$classNameMap = self::ensureUniqueClassNames($controllerFileContents);
+			
+			if(!isset($classNameMap[$controllerClassName]))
+			{
+				Yii::log(
+					Yii::t(
+						'srbac',
+						'Unable to extract controller actions. The controller named "{controller}" could not be found in the file "{file}".',
+						array('{controller}' => $controllerClassName, '{file}' => $controllerPath)
+					),
+					CLogger::LEVEL_WARNING
+				);
+				return null;
+			}
+			
+			set_error_handler(array(__CLASS__, 'handleErrorWithException'));
 			try
 			{
+				if(class_exists($classNameMap[$controllerClassName], false))
+				{
+					trigger_error('SRBAC controller class already exists.');
+				}
+				
 				$tempFile = Yii::app()->getRuntimePath().DIRECTORY_SEPARATOR.'srbac';
 				if(!file_exists($tempFile))
 				{
 					mkdir($tempFile, 0755);
 				}
-				elseif(!is_dir($tempFile))
+				if(!is_dir($tempFile))
 				{
-					throw new CException('SRBAC bad runtime path.');
+					trigger_error('SRBAC bad runtime path. Runtime directory is not a directory or could not be created.');
 				}
 				else
 				{
-					@chmod($tempFile, 0755);
+					chmod($tempFile, 0755);
 				}
 				
 				$tempFile = tempnam($tempFile, 'tempController_');
 				
 				if($tempFile === false)
 				{
-					throw new CException('SRBAC failed to create temporary file.');
+					trigger_error('SRBAC failed to create a controller temporary file in runtime path. Please check that this location is writable by the application.');
 				}
-				
+
 				file_put_contents($tempFile, $controllerFileContents);
-				@chmod($tempFile, 0755);
+				chmod($tempFile, 0755);
 				
 				if((include $tempFile) === false || !class_exists($classNameMap[$controllerClassName], false))
 				{
-					return null;
+					trigger_error('SRBAC failed to include generated temporary controller class.');
 				}
 				
 				unlink($tempFile);
-			}
-			catch(Exception $e)
-			{
-				if(isset($tempFile) && is_file($tempFile))
-				{
-					unlink($tempFile);
-				}
-				throw $e;
-			}
-			
-			try
-			{
+				$tempFile = null;
+				
 				$reflection = new ReflectionClass($classNameMap[$controllerClassName]);
 				
 				if(!$reflection->isSubclassOf('CController'))
 				{
+					Yii::log(
+						Yii::t(
+							'srbac',
+							'Unable to extract controller actions. The class named "{controller}", in file "{file}" was determined not to be a subclass of type CController.',
+							array('{controller}' => $controllerClassName, '{file}' => $controllerPath)
+						),
+						CLogger::LEVEL_WARNING
+					);
 					return null;
 				}
 				self::$_controllerActions[$controllerPathAlias] = self::getControllerActionsFromReflection($reflection);
+				
 			}
 			catch(Exception $e)
 			{
-				Yii::log(Yii::t('srbac', 'An exception was thrown with message "{message}" while attempting to instantiate and extract the actions of controller with class name "{controller}". An attempt to manually parse the controller as a string will be made.', array('{controller}' => $controllerClassName, '{message}' => $e->getMessage())), CLogger::LEVEL_WARNING);
+				restore_error_handler();
+				if(isset($tempFile) && is_file($tempFile))
+				{
+					unlink($tempFile);
+				}
+				Yii::log(
+					Yii::t(
+						'srbac', 
+						'An exception was thrown with message "{message}" while attempting to instantiate and extract the actions of the controller with class name "{controller}". An attempt to manually parse the controller as a string will be made.', 
+						array('{controller}' => $controllerClassName, '{message}' => $e->getMessage())
+					), 
+					CLogger::LEVEL_WARNING
+				);
 				self::$_controllerActions[$controllerPathAlias] = self::getControllerActionsFromText($controllerFileContents, $classNameMap[$controllerClassName]);
 			}
+			restore_error_handler();
 		}
 		return self::$_controllerActions[$controllerPathAlias];
+	}
+	
+	public static function handleErrorWithException($errno, $errstr, $errfile, $errline, array $errcontext)
+	{
+		throw new ErrorException($errstr, 0, $errno, $errfile, $errline);
 	}
 	
 	public static function ensureUniqueClassNames(&$classContentString)
 	{
 		$tokens = token_get_all($classContentString);
-		
+
 		$tokenCount = count($tokens);
-		$classNameIndex = 0;
+		$textIndex = 0;
 		$classNameReplacements = array();
 		for($index = 0; $index < $tokenCount; $index++)
 		{
 			if(is_array($tokens[$index]))
 			{
-				$classNameIndex += strlen($tokens[$index][1]);
+				$textIndex += strlen($tokens[$index][1]);
 				if($tokens[$index][0] === T_CLASS)
 				{
 					$index++;
 					if($index < $tokenCount && $tokens[$index][0] === T_WHITESPACE)
 					{
-						$classNameIndex += strlen($tokens[$index][1]);
+						$textIndex += strlen($tokens[$index][1]);
 						$index++;
 						if($index < $tokenCount && $tokens[$index][0] === T_STRING)
 						{
@@ -289,23 +341,23 @@ class SrbacUtilities
 									$uniqueClassName = str_shuffle($uniqueClassName.'abcdefghijklmnopqrstuvwxyz');
 								} while(class_exists($uniqueClassName, false));
 								$classNameReplacements[$tokens[$index][1]] = $uniqueClassName;
-								$classContentString = substr_replace($classContentString, $uniqueClassName, $classNameIndex, strlen($tokens[$index][1]));
+								$classContentString = substr_replace($classContentString, $uniqueClassName, $textIndex, strlen($tokens[$index][1]));
 							}
 							else
 							{
 								$classNameReplacements[$tokens[$index][1]] = $tokens[$index][1];
 							}
-							$classNameIndex += strlen($tokens[$index][1]);
+							$textIndex += strlen($classNameReplacements[$tokens[$index][1]]);
 						}
 					}
 				}
 			}
 			else
 			{
-				$classNameIndex += strlen($tokens[$index]);
+				$textIndex += strlen($tokens[$index]);
 			}
 		}
-		
+
 		return $classNameReplacements;
 	}
 
