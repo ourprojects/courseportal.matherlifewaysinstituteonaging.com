@@ -11,11 +11,11 @@ $google = !empty(TranslateModule::translator()->googleApiKey);
 <?php
 if($google)
 {
-	echo CHtml::link(TranslateModule::t('Translate all with google translate'), '#', array('id' => MPTranslate::ID."-google-translateall"));
+	echo CHtml::link(TranslateModule::t('Translate all with google translate'), '#', array('id' => TTranslator::ID."-google-translateall"));
 	echo CHtml::script(
-			'$("#'.MPTranslate::ID.'-google-translateall").click(function(){' .
+			'$("#'.TTranslator::ID.'-google-translateall").click(function(){' .
 			'var messages=[];' .
-			'$("'.MPTranslate::ID.'-google-message").each(function(count){' .
+			'$("'.TTranslator::ID.'-google-message").each(function(count){' .
 			'messages[count]=$(this).html();' .
 			'});' .
 			CHtml::ajax(array(
@@ -28,10 +28,10 @@ if($google)
 							'message' => 'js:messages'
 					),
 					'success' => 'js:function(response){' .
-					'$("'.MPTranslate::ID.'-google-translation").each(function(count){' .
+					'$("'.TTranslator::ID.'-google-translation").each(function(count){' .
 					'$(this).val(response[count]);' .
 					'});' .
-					'$("'.MPTranslate::ID.'-google-button, #'.MPTranslate::ID.'-google-translateall").hide();' .
+					'$("'.TTranslator::ID.'-google-button, #'.TTranslator::ID.'-google-translateall").hide();' .
 					'},',
 					'error' => 'js:function(xhr){alert(xhr.statusText);}',
 			)) .
@@ -40,8 +40,8 @@ if($google)
 	if(Yii::app()->getRequest()->isAjaxRequest)
 	{
 		echo CHtml::script(
-                '$("#'.MPTranslate::ID.'-pager a").click(function(){' .
-                    '$dialog = $("#'.MPTranslate::ID.'-dialog").load($(this).attr("href"));' .
+                '$("#'.TTranslator::ID.'-pager a").click(function(){' .
+                    '$dialog = $("#'.TTranslator::ID.'-dialog").load($(this).attr("href"));' .
                     'return false;' .
                 '});');
 	}
@@ -53,7 +53,7 @@ if($google)
 	$this->widget('zii.widgets.CListView', array(
                 'dataProvider' => new CArrayDataProvider($messages),
                 'pager' => array(
-                    'id' => MPTranslate::ID.'-pager',
+                    'id' => TTranslator::ID.'-pager',
                     'class' => 'CLinkPager',
                 ),
                 'viewData' => array(

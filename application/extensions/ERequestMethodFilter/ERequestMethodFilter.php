@@ -1,7 +1,37 @@
 <?php
 /**
- * @author Louis DaPrato
+ * ERequestMethodFilter class file
+ * 
+ * @author Louis DaPrato <l.daprato@gmail.com>
+ */
+
+/**
+ * ERequestMethodFilter allows request to be matched with some expected condition(s).
+ * If the condition(s) fail a HTTP 400 error may occur. This class essentially expands significantly
+ * on the {@link CController::filterAjaxOnly()} and {@link CController::filterPostOnly()} methods that are
+ * integrated into {@link CController}.
+ * 
+ * The folowing, case insensitive, request conditions are available by default:
+ *
+ * secure (test if this is an https connection)
+ * ajax
+ * flash
+ * options
+ * get
+ * head
+ * post
+ * put
+ * putViaPost
+ * delete
+ * deleteViaPost
+ * trace
+ * connect
+ * patch
+ * 
+ * 
  * @property $config string|array matchings and request methods.
+ * 
+ * @author Louis DaPrato <l.daprato@gmail.com>
  */
 class ERequestMethodFilter extends CFilter
 {
@@ -43,6 +73,10 @@ class ERequestMethodFilter extends CFilter
 		return $this->_requestMatchRegex;
 	}
 
+	/**
+	 * (non-PHPdoc)
+	 * @see CFilter::preFilter()
+	 */
 	protected function preFilter($filterChain)
 	{
 		$result = true;
@@ -89,6 +123,12 @@ class ERequestMethodFilter extends CFilter
 		return $result;
 	}
 
+	/**
+	 * Sets this object's configuration parameter
+	 * 
+	 * @param array|string $config The configuration for this object
+	 * @throws CException Thrown if the $config parameter is not a string or an array
+	 */
 	public function setConfig($config)
 	{
 		if(is_array($config))
@@ -105,11 +145,23 @@ class ERequestMethodFilter extends CFilter
 		}
 	}
 
+	/**
+	 * Returns this object's configuration
+	 * 
+	 * @return array This object's configuration
+	 */
 	public function getConfig()
 	{
 		return $this->_config;
 	}
 
+	/**
+	 * Called when a request method has been matched. Triggers 'onRequestMethodMatched' event.
+	 * 
+	 * @param CFilterChain $filterChain The filter chain this filter belongs to
+	 * @param string $method The method the request has been matched to
+	 * @return boolean Whether the matched request method is OK
+	 */
 	public function requestMethodMatched($filterChain, $method)
 	{
 		if($this->hasEventHandler('onRequestMethodMatched'))
@@ -121,6 +173,13 @@ class ERequestMethodFilter extends CFilter
 		return true;
 	}
 
+	/**
+	 * Called when a request method was not matched. Triggers 'onRequestMethodNotMatched' event.
+	 *
+	 * @param CFilterChain $filterChain The filter chain this filter belongs to
+	 * @return boolean True only if the 'onRequestMethodNotMatched' event handler decided to accept the request anyways.
+	 * @throws CHttpException thrown if there is no 'onRequestMethodNotMatched' event handler or the event handler did not choose to accept the request.
+	 */
 	public function requestMethodNotMatched($filterChain)
 	{
 		if($this->hasEventHandler('onRequestMethodNotMatched'))
@@ -135,23 +194,33 @@ class ERequestMethodFilter extends CFilter
 		throw new CHttpException(400, Yii::t('ERequestMethodFilter', 'Your request is invalid.'));
 	}
 
+	/**
+	 * Raises 'onRequestMethodMatched' event.
+	 * 
+	 * @param ERequestMethodMatchEvent $event
+	 */
 	public function onRequestMethodMatched($event)
 	{
 		$this->raiseEvent('onRequestMethodMatched', $event);
 	}
 
+	/**
+	 * Raises 'onRequestMethodNotMatched' event.
+	 * 
+	 * @param ERequestMethodMatchEvent $event
+	 */
 	public function onRequestMethodNotMatched($event)
 	{
 		$this->raiseEvent('onRequestMethodNotMatched', $event);
 	}
 
 	/**
-	 * A helper method for reducing an array of the match method names to a single boolean value
-	 * of true if all match methods returned true, false otherwise.
+	 * A helper method for reducing an array of match method names to a single boolean value.
+	 * True if ANY match method returns true, false otherwise.
 	 *
 	 * @param bool $value Current or starting boolean value.
 	 * @param string $condition The match method name to call.
-	 * @return boolean true if either the first parameter was true or the second parameter method name returned true.
+	 * @return boolean true if either the first parameter was true or the match method (condition) returned true.
 	 */
 	private function _reduceHelper($value, $condition)
 	{
@@ -300,14 +369,19 @@ class ERequestMethodFilter extends CFilter
 
 }
 
+/**
+ * 
+ * @author Louis DaPrato <l.daprato@gmail.com>
+ *
+ */
 class ERequestMethodMatchEvent extends CEvent
 {
 
 	/**
 	 * Constructor.
 	 * @param mixed $sender sender of this event
-	 * @param CFilterChain $filterChain the filter chain that triggered this event.
-	 * @param string $method the method the action was matched to. Or null if a method could not be matched.
+	 * @param CFilterChain $filterChain the filter chain that the filter that triggered this event belongs to.
+	 * @param string $method the method the request was matched to. Or null if a method could not be matched.
 	 * @param bool $acceptMatch whether the matched request method is OK.
 	 */
 	public function __construct($sender, $filterChain, $method = null, $acceptMatch = false)
@@ -315,21 +389,42 @@ class ERequestMethodMatchEvent extends CEvent
 		parent::__construct($sender, array('filterChain' => $filterChain, 'method' => $method, 'acceptMatch' => $acceptMatch));
 	}
 
+	/**
+	 * Gets the filter chain that the filter that triggered this event belongs to.
+	 * 
+	 * @return CFilterChain the filter chain that the filter that triggered this event belongs to.
+	 */
 	public function getFilterChain()
 	{
 		return $this->params['filterChain'];
 	}
 
+	/**
+	 * Gets the method the request was matched to. Or null if a method could not be matched.
+	 * 
+	 * @return string|null the method the request was matched to. Or null if a method could not be matched. 
+	 */
 	public function getMethod()
 	{
 		return $this->params['method'];
 	}
 
+	/**
+	 * Gets whether or not the match/request will be accepted
+	 * 
+	 * @return boolean whether or not the match/request will be accepted
+	 */
 	public function getAcceptMatch()
 	{
 		return $this->params['acceptMatch'];
 	}
 
+	/**
+	 * Set whether to accept the match/request or not. 
+	 * Allows a listener of this event to override whether or not to accept a request. 
+	 * 
+	 * @param boolean $acceptMatch whether to accept the match/request or not
+	 */
 	public function setAcceptMatch($acceptMatch)
 	{
 		$this->params['acceptMatch'] = $acceptMatch;

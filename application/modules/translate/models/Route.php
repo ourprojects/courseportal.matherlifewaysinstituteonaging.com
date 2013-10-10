@@ -7,6 +7,8 @@
  * @property integer $id
  * @property string $route
  * 
+ * @author Louis DaPrato <l.daprato@gmail.com>
+ *
  */
 class Route extends CActiveRecord
 {
@@ -25,7 +27,7 @@ class Route extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return TranslateModule::translator()->getViewSource()->routeTable;
+		return TranslateModule::translator()->getViewSourceComponent()->routeTable;
 	}
 	
 	public function behaviors()

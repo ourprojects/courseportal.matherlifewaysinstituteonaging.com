@@ -1,13 +1,32 @@
 <?php
+/**
+ * EUserDbHttpSession class file
+ * 
+ * @author Louis DaPrato <l.daprato@gmail.com>
+ */
 
+/**
+ * 
+ * @author Louis DaPrato <l.daprato@gmail.com>
+ *
+ */
 class EUserDbHttpSession extends CDbHttpSession
 {
-
-	public $userIdColumnType = 'integer';
 	
+	/**
+	 * @var string The name of the ActiveRecord model class for this application's users.
+	 */
 	public $userModelClassName = 'User';
 	
+	/**
+	 * @var string the column name of the primary key of this application's user table.
+	 */
 	public $userIdColumnName = 'id';
+	
+	/**
+	 * @var string the type of the primary key column for this application's user table
+	 */
+	public $userIdColumnType = 'integer';
 
 	/**
 	 * Creates the session DB table.
@@ -93,6 +112,10 @@ class EUserDbHttpSession extends CDbHttpSession
 		return true;
 	}
 	
+	/**
+	 * (non-PHPdoc)
+	 * @see CDbHttpSession::getDbConnection()
+	 */
 	public function getDbConnection()
 	{
 		return parent::getDbConnection();

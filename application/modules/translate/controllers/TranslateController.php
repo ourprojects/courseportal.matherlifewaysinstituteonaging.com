@@ -1,4 +1,10 @@
 <?php
+
+/**
+ * 
+ * @author Louis DaPrato <l.daprato@gmail.com>
+ *
+ */
 class TranslateController extends TController
 {
 
@@ -36,7 +42,7 @@ class TranslateController extends TController
 			$this->redirect(Yii::app()->getUser()->getReturnUrl());
 		}
 
-		$key = str_replace('.', '_', MPTranslate::ID) . '-missing';
+		$key = str_replace('.', '_', TTranslator::ID) . '-missing';
 		$missing = array();
 		if(isset($_POST[$key]))
 		{

@@ -6,6 +6,8 @@
  * The followings are the available columns in table '{{translate_view_message}}':
  * @property integer $message_id
  * @property integer $view_id
+ * 
+ * @author Louis DaPrato <l.daprato@gmail.com>
  */
 class ViewMessage extends CActiveRecord
 {
@@ -24,7 +26,7 @@ class ViewMessage extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return TranslateModule::translator()->getViewSource()->viewMessageTable;
+		return TranslateModule::translator()->getViewSourceComponent()->viewMessageTable;
 	}
 	
 	public function behaviors()

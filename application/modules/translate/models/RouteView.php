@@ -7,6 +7,8 @@
  * @property integer $route_id
  * @property integer $view_id
  * 
+ * @author Louis DaPrato <l.daprato@gmail.com>
+ *
  */
 class RouteView extends CActiveRecord
 {
@@ -25,7 +27,7 @@ class RouteView extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return TranslateModule::translator()->getViewSource()->routeViewTable;
+		return TranslateModule::translator()->getViewSourceComponent()->routeViewTable;
 	}
 	
 	public function behaviors()

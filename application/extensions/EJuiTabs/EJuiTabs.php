@@ -1,12 +1,30 @@
 <?php
+/**
+ * EJuiTabs class file
+ * 
+ * @author Louis DaPrato <l.daprato@gmail.com>
+ */
 
 Yii::import('zii.widgets.jui.CJuiTabs');
 
+/**
+ * This widget is exactly the same as the {@link CJuiTabs} widget except that the tabs can optionally be laid out vertically. 
+ *
+ * @property $vertical boolean If true tabs will be laid out vertical, if false the tabs will be horizontal (default).
+ * 
+ * @author Louis DaPrato <l.daprato@gmail.com>
+ */
 class EJuiTabs extends CJuiTabs
 {
-	
+	/**
+	 * @var boolean If true tabs will be laid out vertical otherwise they will be horizontal (default).
+	 */
 	public $vertical = false;
 	
+	/**
+	 * (non-PHPdoc)
+	 * @see CJuiTabs::run()
+	 */
 	public function run()
 	{
 		parent::run();

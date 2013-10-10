@@ -1,4 +1,10 @@
 <?php
+
+/**
+ *
+ * @author Louis DaPrato <l.daprato@gmail.com>
+ *
+ */
 class CategoryMessage extends CActiveRecord
 {
 	/**
@@ -16,7 +22,7 @@ class CategoryMessage extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return TranslateModule::translator()->getMessageSource()->categoryMessageTable;
+		return TranslateModule::translator()->getMessageSourceComponent()->categoryMessageTable;
 	}
 	
 	public function behaviors()

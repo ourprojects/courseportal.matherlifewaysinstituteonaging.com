@@ -1,4 +1,9 @@
 <?php
+/**
+ * EUserHttpSession class file
+ * 
+ * @author Louis DaPrato <l.daprato@gmail.com>
+ */
 
 /**
  * This is the model class for the yii session table.
@@ -11,6 +16,8 @@
  *
  * The followings are the available model relations:
  * @property mixed $user Type is defined by configuration
+ * 
+ * @author Louis DaPrato <l.daprato@gmail.com>
  */
 class EUserHttpSession extends CActiveRecord
 {
@@ -25,6 +32,10 @@ class EUserHttpSession extends CActiveRecord
 		return parent::model($className);
 	}
 	
+	/**
+	 * (non-PHPdoc)
+	 * @see CActiveRecord::init()
+	 */
 	public function init()
 	{
 		if(!class_exists('EUserDbHttpSession', false) || !Yii::app()->getSession() instanceof EUserDbHttpSession)
@@ -39,18 +50,27 @@ class EUserHttpSession extends CActiveRecord
 	}
 
 	/**
-	 * @return string the associated database table name
+	 * (non-PHPdoc)
+	 * @see CActiveRecord::tableName()
 	 */
 	public function tableName()
 	{
 		return Yii::app()->getSession()->sessionTableName;
 	}
 	
+	/**
+	 * (non-PHPdoc)
+	 * @see CActiveRecord::getDbConnection()
+	 */
 	public function getDbConnection()
 	{
 		return Yii::app()->getSession()->getDbConnection();
 	}
 
+	/**
+	 * (non-PHPdoc)
+	 * @see CModel::behaviors()
+	 */
 	public function behaviors()
 	{
 		return array_merge(parent::behaviors(),
@@ -63,7 +83,8 @@ class EUserHttpSession extends CActiveRecord
 	}
 
 	/**
-	 * @return array validation rules for model attributes.
+	 * (non-PHPdoc)
+	 * @see CModel::rules()
 	 */
 	public function rules()
 	{
@@ -76,7 +97,8 @@ class EUserHttpSession extends CActiveRecord
 	}
 
 	/**
-	 * @return array relational rules.
+	 * (non-PHPdoc)
+	 * @see CActiveRecord::relations()
 	 */
 	public function relations()
 	{
@@ -85,12 +107,24 @@ class EUserHttpSession extends CActiveRecord
 		);
 	}
 	
+	/**
+	 * Scope for expired or not expired sessions. Defaults to expired.
+	 * 
+	 * @param boolean $expired Defaults to true meaning expired sessions. Set false to invert match and get not expired sessions.
+	 * @return EUserHttpSession this model instance for convenient method chaining
+	 */
 	public function expired($expired = true)
 	{
 		$this->getDbCriteria()->addCondition($expired ? 'expire<:expire' : 'expire>:expire')->params[':expire'] = time();
 		return $this;
 	}
 	
+	/**
+	 * Scope for guest or not guest sessions. Defaults to guests.
+	 * 
+	 * @param boolean $guest Defaults to true meaning guest sessions. Set false to invert match and get non-guest sessions.
+	 * @return EUserHttpSession this model instance for convenient method chaining
+	 */
 	public function guest($guest = true)
 	{
 		$this->getDbCriteria()->addCondition($guest ? 'user_id IS NULL' : 'user_id IS NOT NULL');
@@ -98,7 +132,8 @@ class EUserHttpSession extends CActiveRecord
 	}
 
 	/**
-	 * @return array customized attribute labels (name=>label)
+	 * (non-PHPdoc)
+	 * @see CModel::attributeLabels()
 	 */
 	public function attributeLabels()
 	{
@@ -121,16 +156,32 @@ class EUserHttpSession extends CActiveRecord
 		);
 	}
 	
+	/**
+	 * Returns whether this session is a guest or not by checking whether the session's user_id has been set.
+	 * 
+	 * @return boolean True if this session is a guest, false otherwise.
+	 */
 	public function getIsGuest()
 	{
 		return !isset($this->user_id);
 	}
 	
+	/**
+	 * Returns whether this session has expired.
+	 * 
+	 * @return boolean True if this session has expired. False otherwise.
+	 */
 	public function getIsExpired()
 	{
 		return $this->expire < time();
 	}
 	
+	/**
+	 * Returns the expire time for this session as a formatted date string.
+	 * 
+	 * @param string $dateFormat The PHP date format the expire time should be returned in. 
+	 * @return NULL|string The formatted date string or null if the expire time is not set.
+	 */
 	public function getDateExpire($dateFormat = 'Y-m-d H:i:s')
 	{
 		if(!strcasecmp($this->getScenario(), 'search') && !isset($this->expire))
@@ -140,11 +191,21 @@ class EUserHttpSession extends CActiveRecord
 		return self::convertDateToDisplayformat($this->expire, $dateFormat);
 	}
 	
-	public function setDateExpire($date, $dateFormat = 'Y-m-d H:i:s')
+	/**
+	 * Sets the expire time for this session using a formatted date string.
+	 * 
+	 * @param mixed $date time in milliseconds or PHP formatted time string
+	 */
+	public function setDateExpire($date)
 	{
-		$this->expire = self::convertDateToDBformat($date, $dateFormat);
+		$this->expire = self::convertDateToDBformat($date);
 	}
 	
+	/**
+	 * Returns the time when this session was created.
+	 * 
+	 * @return NULL|integer the time when this session was created, or null if the expire time is not set.
+	 */
 	public function getCreated()
 	{
 		if(!isset($this->expire))
@@ -154,6 +215,12 @@ class EUserHttpSession extends CActiveRecord
 		return $this->expire - Yii::app()->getSession()->getTimeout();
 	}
 	
+	/**
+	 * Returns the fomatted string representation of the time when this session was created.
+	 * 
+	 * @param string $dateFormat The PHP date format the string should be returned as.
+	 * @return NULL|string The formatted time string or null if {@link EUserDbHttpSession::getCreated()} returns null.
+	 */
 	public function getDateCreated($dateFormat = 'Y-m-d H:i:s')
 	{
 		if(!strcasecmp($this->getScenario(), 'search') && $this->getCreated() === null)
@@ -163,11 +230,22 @@ class EUserHttpSession extends CActiveRecord
 		return self::convertDateToDisplayformat($this->getCreated(), $dateFormat);
 	}
 	
-	public function setDateCreated($date, $dateFormat = 'Y-m-d H:i:s')
+	/**
+	 * Set the date that this session was created.
+	 * 
+	 * @param mixed $date The date as time in milliseconds or a formatted string.
+	 */
+	public function setDateCreated($date)
 	{
-		$this->expire = self::convertDateToDBformat($date, $dateFormat);
+		$this->expire = self::convertDateToDBformat($date) + Yii::app()->getSession()->getTimeout();
 	}
 	
+	/**
+	 * Converts a date or time to the DB's format
+	 * 
+	 * @param mixed $date The time to convert to DB format
+	 * @return ninteger
+	 */
 	public static function convertDateToDBformat($date)
 	{
 		if(is_numeric($date))
@@ -184,6 +262,13 @@ class EUserHttpSession extends CActiveRecord
 		}
 	}
 	
+	/**
+	 * Converts a date to a PHP string formatted date
+	 * 
+	 * @param mixed $date The date to format
+	 * @param string $dateFormat The PHP format the date should be returned as
+	 * @return string The formatted string representation of the date
+	 */
 	public static function convertDateToDisplayformat($date, $dateFormat = 'Y-m-d H:i:s')
 	{
 		return date($dateFormat, self::convertDateToDBformat($date));

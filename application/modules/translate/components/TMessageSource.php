@@ -91,13 +91,14 @@ class TMessageSource extends CDbMessageSource
 	 */
 	protected function loadMessagesFromDb($category, $language)
 	{
-		$cmd = $this->getDbConnection()->createCommand()
+		$db = $this->getDbConnection();
+		$cmd = $db->createCommand()
 					->select(array('smt.message AS message', 'tmt.translation AS translation'))
 					->from($this->sourceMessageTable.' smt')
-					->join($this->categoryMessageTable.' cmt', 'smt.id=cmt.message_id')
-					->join($this->categoryTable.' ct', array('and', 'cmt.category_id=ct.id', 'ct.category=:category'), array(':category' => $category))
-					->join($this->languageTable.' lt', 'lt.code=:language', array(':language' => $language))
-					->join($this->translatedMessageTable.' tmt', array('and', 'smt.id=tmt.id', 'tmt.language_id=lt.id'));
+					->join($this->categoryMessageTable.' cmt', $db->quoteColumnName('smt.id').'='.$db->quoteColumnName('cmt.message_id'))
+					->join($this->categoryTable.' ct', array('and', $db->quoteColumnName('cmt.category_id').'='.$db->quoteColumnName('ct.id'), $db->quoteColumnName('ct.category').'=:category'), array(':category' => $category))
+					->join($this->languageTable.' lt', $db->quoteColumnName('lt.code').'=:language', array(':language' => $language))
+					->join($this->translatedMessageTable.' tmt', array('and', $db->quoteColumnName('smt.id').'='.$db->quoteColumnName('tmt.id'), $db->quoteColumnName('tmt.language_id').'='.$db->quoteColumnName('lt.id')));
 
 		$messages = array();
 		foreach($cmd->queryAll() as $row)
@@ -106,6 +107,12 @@ class TMessageSource extends CDbMessageSource
 		return $messages;
 	}
 	
+	/**
+	 * Adds a source message to the source message table
+	 * 
+	 * @param string $message The source message to add to the source message table
+	 * @return string The ID of the source message that was inserted or null if the source message was not added
+	 */
 	public function addSourceMessage($message)
 	{
 		return $this->getDbConnection()->createCommand()->insert($this->sourceMessageTable, array('message' => $message)) > 0
@@ -113,6 +120,12 @@ class TMessageSource extends CDbMessageSource
 				: null;
 	}
 	
+	/**
+	 * Adds a category to the category table
+	 *
+	 * @param string $message The category to add to the category table
+	 * @return string The ID of the category that was inserted or null if the category was not added
+	 */
 	public function addCategory($category)
 	{
 		return $this->getDbConnection()->createCommand()->insert($this->categoryTable, array('category' => $category)) > 0
@@ -120,6 +133,12 @@ class TMessageSource extends CDbMessageSource
 				: null;
 	}
 	
+	/**
+	 * Adds a language to the language table
+	 *
+	 * @param string $language The language to add to the language table
+	 * @return string The ID of the language that was inserted or null if the language was not added
+	 */
 	public function addLanguage($language)
 	{
 		return $this->getDbConnection()->createCommand()->insert($this->languageTable, array('code' => $language)) > 0 
@@ -127,6 +146,13 @@ class TMessageSource extends CDbMessageSource
 				: null;
 	}
 	
+	/**
+	 * 
+	 * @param integer $messageId
+	 * @param string $category
+	 * @param boolean $createCategoryIfNotExists
+	 * @return string The ID of the category the message was added to otherwise null if the category could not be found or the message could not be added to the category.
+	 */
 	public function addMessageToCategory($messageId, $category, $createCategoryIfNotExists = false)
 	{
 		return (($categoryId = $this->getCategoryId($category, $createCategoryIfNotExists)) !== false 
@@ -135,6 +161,14 @@ class TMessageSource extends CDbMessageSource
 				: null; 
 	}
 	
+	/**
+	 * 
+	 * @param integer $sourceMessageId
+	 * @param string $language
+	 * @param string $translation
+	 * @param boolean $createLanguageIfNotExists
+	 * @return string The ID of the language this translation was added to otherwise null if the language could not be found or the translation could not be associated with the language and source message
+	 */
 	public function addTranslation($sourceMessageId, $language, $translation, $createLanguageIfNotExists = false)
 	{
 		return (($languageId = $this->getLanguageId($language, $createLanguageIfNotExists)) !== false
@@ -143,58 +177,93 @@ class TMessageSource extends CDbMessageSource
 				: null;
 	}
 	
+	/**
+	 * 
+	 * @return array An array of accepted language codes
+	 */
 	public function getAcceptedLanguages()
 	{
-		return $this->getDbConnection()->createCommand()
+		$db = $this->getDbConnection();
+		return $db->createCommand()
 					->select('lt.code')
 					->from($this->languageTable.' lt')
-					->join($this->acceptedLanguageTable.' alt', 'lt.id=alt.id')
+					->join($this->acceptedLanguageTable.' alt', $db->quoteColumnName('lt.id').'='.$db->quoteColumnName('alt.id'))
 				->queryAll();
 	}
 	
+	/**
+	 * 
+	 * @param string $message
+	 * @param boolean $createIfNotExists
+	 * @return integer The ID of the source message if it is found or if createIfNotExists is set true and the source message is successfully added otherwise null.
+	 */
 	public function getSourceMessageId($message, $createIfNotExists = false)
 	{
-		$messageId = $this->getDbConnection()->createCommand()
+		$db = $this->getDbConnection();
+		$messageId = $db->createCommand()
 						->select('smt.id AS id')
 						->from($this->sourceMessageTable.' smt')
-						->where('smt.message=:message', array(':message' => $message))
+						->where($db->quoteColumnName('smt.message').'=:message', array(':message' => $message))
 				->queryScalar();
 		
 		return $messageId === false && $createIfNotExists && ($messageId = $this->addSourceMessage($message)) === null ? false : $messageId;
 	}
 	
+	/**
+	 * 
+	 * @param string $category
+	 * @param boolean $createIfNotExists
+	 * @return integer The ID of the category if it is found or if createIfNotExists is set true and the category is successfully added otherwise null.
+	 */
 	public function getCategoryId($category, $createIfNotExists = false)
 	{
-		$categoryId = $this->getDbConnection()->createCommand()
+		$db = $this->getDbConnection();
+		$categoryId = $db->createCommand()
 						->select('id AS id')
 						->from($this->categoryTable)
-						->where('category=:category', array(':category' => $category))
+						->where($db->quoteColumnName('category').'=:category', array(':category' => $category))
 				->queryScalar();
 
 		return $categoryId === false && $createIfNotExists && ($categoryId = $this->addCategory($category)) === null ? false : $categoryId;
 	}
 	
+	/**
+	 * 
+	 * @param string $language
+	 * @param boolean $createIfNotExists
+	 * @return integer The ID of the language if it is found or if createIfNotExists is set true and the language is successfully added otherwise null.
+	 */
 	public function getLanguageId($language, $createIfNotExists = false)
 	{
-		$languageId = $this->getDbConnection()->createCommand()
+		$db = $this->getDbConnection();
+		$languageId = $db->createCommand()
 						->select('lt.id AS id')
 						->from($this->languageTable.' lt')
-						->where('lt.code=:language', array(':language' => $language))
+						->where($db->quoteColumnName('lt.code').'=:language', array(':language' => $language))
 				->queryScalar();
 		
 		return $languageId === false && $createIfNotExists && ($languageId = $this->addLanguage($language)) === null ? false : $languageId;
 	}
 	
+	/**
+	 * 
+	 * @param string $category
+	 * @param string $message
+	 * @param string $language
+	 * @param boolean $createSourceMessageIfNotExists
+	 * @return string The translation of the message or null if it does not exist.
+	 */
 	public function getTranslation($category, $message, $language, $createSourceMessageIfNotExists = false)
 	{
-		$translation = $this->getDbConnection()->createCommand()
-					->select(array('MIN(ct.id) AS category_id', 'MIN(smt.id) AS id', 'lt.id AS language_id', 'tmt.translation AS translation'))
+		$db = $this->getDbConnection();
+		$translation = $db->createCommand()
+					->select(array('MIN('.$db->quoteColumnName('ct.id').') AS '.$db->quoteColumnName('category_id'), 'MIN('.$db->quoteColumnName('smt.id').') AS '.$db->quoteColumnName('id'), 'lt.id AS language_id', 'tmt.translation AS translation'))
 					->from($this->sourceMessageTable.' smt')
-					->leftJoin($this->categoryMessageTable.' cmt', 'smt.id=cmt.message_id')
-					->leftJoin($this->categoryTable.' ct', array('and', 'cmt.category_id=ct.id', 'ct.category=:category'), array(':category' => $category))
-					->leftJoin($this->languageTable.' lt', 'lt.code=:language', array(':language' => $language))
-					->leftJoin($this->translatedMessageTable.' tmt', array('and', 'smt.id=tmt.id', 'tmt.language_id=lt.id'))
-					->where('smt.message=:message', array(':message' => $message))
+					->leftJoin($this->categoryMessageTable.' cmt', $db->quoteColumnName('smt.id').'='.$db->quoteColumnName('cmt.message_id'))
+					->leftJoin($this->categoryTable.' ct', array('and', $db->quoteColumnName('cmt.category_id').'='.$db->quoteColumnName('ct.id'), $db->quoteColumnName('ct.category').'=:category'), array(':category' => $category))
+					->leftJoin($this->languageTable.' lt', $db->quoteColumnName('lt.code').'=:language', array(':language' => $language))
+					->leftJoin($this->translatedMessageTable.' tmt', array('and', $db->quoteColumnName('smt.id').'='.$db->quoteColumnName('tmt.id'), $db->quoteColumnName('tmt.language_id').'='.$db->quoteColumnName('lt.id')))
+					->where($db->quoteColumnName('smt.message').'=:message', array(':message' => $message))
 			->queryRow();
 		
 		if($createSourceMessageIfNotExists)
@@ -247,7 +316,7 @@ class TMessageSource extends CDbMessageSource
 		
 		if($category === null)
 			$category = $this->messageCategory;
-		
+
 		$translation = parent::translate($category, $message, $language);
 		
 		if($this->enableProfiling)

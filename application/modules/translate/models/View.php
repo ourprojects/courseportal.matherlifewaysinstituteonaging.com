@@ -8,6 +8,8 @@
  * @property string $language
  * @property string $path
  * @property integer $created
+ * 
+ * @author Louis DaPrato <l.daprato@gmail.com>
  */
 class View extends CActiveRecord
 {
@@ -26,7 +28,7 @@ class View extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return TranslateModule::translator()->getViewSource()->viewTable;
+		return TranslateModule::translator()->getViewSourceComponent()->viewTable;
 	}
 	
 	public function behaviors()

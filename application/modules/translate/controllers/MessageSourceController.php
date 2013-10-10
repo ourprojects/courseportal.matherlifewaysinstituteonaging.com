@@ -1,4 +1,10 @@
 <?php
+
+/**
+ * 
+ * @author Louis DaPrato <l.daprato@gmail.com>
+ *
+ */
 class MessageSourceController extends TController
 {
 

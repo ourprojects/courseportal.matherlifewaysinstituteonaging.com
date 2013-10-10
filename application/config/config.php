@@ -111,7 +111,7 @@ return array(
 				),
 
 				'translate' => array(
-						'class' => 'modules.translate.components.MPTranslate',
+						'class' => 'modules.translate.components.TTranslator',
 						'googleApiKey' => 'AIzaSyD5Xxt_4VKM13pF9uQdcULK4eHuTe7w940',
 						'autoTranslate' => true,
 						'viewSource' => 'views',

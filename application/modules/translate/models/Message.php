@@ -1,4 +1,10 @@
 <?php
+
+/**
+ *
+ * @author Louis DaPrato <l.daprato@gmail.com>
+ *
+ */
 class Message extends CActiveRecord 
 {
 
@@ -9,7 +15,7 @@ class Message extends CActiveRecord
 	
 	public function tableName() 
 	{
-		return TranslateModule::translator()->getMessageSource()->translatedMessageTable;
+		return TranslateModule::translator()->getMessageSourceComponent()->translatedMessageTable;
 	}
 	
 	public function behaviors()

@@ -1,19 +1,44 @@
 <?php
 
+/**
+ * 
+ * @author Louis DaPrato <l.daprato@gmail.com>
+ *
+ */
 class TViewSource extends CApplicationComponent
 {
 	
 	const ID = 'modules.translate.TViewSource';
 	
+	/**
+	 * @var string The name of the routes database table.
+	 */
 	public $routeTable = '{{translate_route}}';
 	
+	/**
+	 * @var string The name of the route views database table.
+	 */
 	public $routeViewTable = '{{translate_route_view}}';
 	
+	/**
+	 * @var string The name of the view sources database table.
+	 */
 	public $viewSourceTable = '{{translate_view_source}}';
 	
+	/**
+	 * @var string The name of the views database table.
+	 */
 	public $viewTable = '{{translate_view}}';
 	
+	/**
+	 * @var string The name of the view messages database table.
+	 */
 	public $viewMessageTable = '{{translate_view_message}}';
+	
+	/**
+	 * @var string The format of timestamp dates in the database used by this view source.
+	 */
+	public $databaseTimestampFormat = 'Y-m-d H:i:s';
 	
 	/**
 	 * @var string the ID of the database connection application component. Defaults to 'db'.
@@ -33,6 +58,9 @@ class TViewSource extends CApplicationComponent
 	 */
 	public $cacheID = 'cache';
 	
+	/**
+	 * @var boolean If true each call to the translate method will be profiled.
+	 */
 	public $enableProfiling = false;
 	
 	private $_views = array();
@@ -51,22 +79,46 @@ class TViewSource extends CApplicationComponent
 		{
 			$this->_db = Yii::app()->getComponent($this->connectionID);
 			if(!$this->_db instanceof CDbConnection)
+			{
 				throw new CException(Yii::t(self::ID, 'TViewSource.connectionID is invalid. Please make sure "{id}" refers to a valid database application component.',
 						array('{id}' => $this->connectionID)));
+			}
 		}
 		return $this->_db;
 	}
 
+	/**
+	 * Returns the cache component used by this view source.
+	 * 
+	 * @return CCache The caching component used by this view source or null if caching is disabled.
+	 */
 	protected function getCache()
 	{
 		return $this->cachingDuration > 0 && $this->cacheID !== false ? Yii::app()->getComponent($this->cacheID) : null;
 	}
 
+	/**
+	 * Given a route and a language this method determines the cache key to be used for caching an item.
+	 * 
+	 * @param string $route
+	 * @param string $language
+	 * @return string The cache key
+	 */
 	protected function getCacheKey($route, $language)
 	{
 		return self::ID.'.views.'.$route.'.'.$language;
 	}
 
+	/**
+	 * Loads and returns the views for a particular route and language from the database.
+	 * If caching is enabled and a cache hit occurs the cached views will be returned.
+	 * Otehrwise the views are loaded from the database. 
+	 * After the views are loaded they will be cached if caching is enabled.
+	 * 
+	 * @param string $route The requested route
+	 * @param string $language The requested language
+	 * @return array A list of known views for the specified route and language in the form array(source_path => view_path)
+	 */
 	protected function loadViews($route, $language)
 	{
 		if(($cache = $this->getCache()) !== null)
@@ -87,19 +139,27 @@ class TViewSource extends CApplicationComponent
 		return $views;
 	}
 	
+	/**
+	 * Loads and returns the views for a particular route and language from the database.
+	 * 
+	 * @param string $route The requested route
+	 * @param string $language The requested language
+	 * @return array A list of known views for the specified route and language in the form array(source_path => view_path)
+	 */
 	protected function loadViewsFromDb($route, $language)
 	{
-		$messageSource = TranslateModule::translator()->getMessageSource();
-		$cmd = $this->getDbConnection()->createCommand()
+		$messageSource = TranslateModule::translator()->getMessageSourceComponent();
+		$db = $this->getDbConnection();
+		$cmd = $db->createCommand()
 				->select(array('vst.path AS source_path', 'vt.path AS view_path'))
 				->from($this->routeTable.' rt')
-				->join($this->routeViewTable.' rvt', 'rt.id=rvt.route_id')
-				->join($this->viewSourceTable.' vst', 'rvt.view_id=vst.id')
-				->join($messageSource->languageTable.' lt', 'lt.code=:language', array(':language' => $language))
-				->join($this->viewTable.' vt', array('and', 'vst.id=vt.id', 'vt.language_id=lt.id'))
-				->leftJoin($this->viewMessageTable.' vmt', 'vst.id=vmt.view_id')
-				->leftJoin($messageSource->translatedMessageTable.' tmt', array('and', 'vmt.message_id=tmt.id', 'tmt.language_id=vt.language_id'))
-				->where(array('and', 'rt.route=:route', array('or', 'tmt.last_modified IS NULL', 'tmt.last_modified < vt.created')), array(':route' => $route))
+				->join($this->routeViewTable.' rvt', $db->quoteColumnName('rt.id').'='.$db->quoteColumnName('rvt.route_id'))
+				->join($this->viewSourceTable.' vst', $db->quoteColumnName('rvt.view_id').'='.$db->quoteColumnName('vst.id'))
+				->join($messageSource->languageTable.' lt', $db->quoteColumnName('lt.code').'=:language', array(':language' => $language))
+				->join($this->viewTable.' vt', array('and', $db->quoteColumnName('vst.id').'='.$db->quoteColumnName('vt.id'), $db->quoteColumnName('vt.language_id').'='.$db->quoteColumnName('lt.id')))
+				->leftJoin($this->viewMessageTable.' vmt', $db->quoteColumnName('vst.id').'='.$db->quoteColumnName('vmt.view_id'))
+				->leftJoin($messageSource->translatedMessageTable.' tmt', array('and', $db->quoteColumnName('vmt.message_id').'='.$db->quoteColumnName('tmt.id'), $db->quoteColumnName('tmt.language_id').'='.$db->quoteColumnName('vt.language_id')))
+				->where(array('and', $db->quoteColumnName('rt.route').'=:route', array('or', $db->quoteColumnName('tmt.last_modified').' IS NULL', $db->quoteColumnName('tmt.last_modified').'<'.$db->quoteColumnName('vt.created'))), array(':route' => $route))
 				->group('vst.id');
 
 		$views = array();
@@ -112,6 +172,12 @@ class TViewSource extends CApplicationComponent
 		return $views;
 	}
 
+	/**
+	 * Adds a source view to the database and returns its database ID.
+	 * 
+	 * @param string $path The path to the source view
+	 * @return string The database ID of the source view or null if the source view could not be added to the database
+	 */
 	public function addSourceView($path)
 	{
 		return $this->getDbConnection()->createCommand()->insert($this->viewSourceTable, array('path' => $path)) > 0
@@ -119,6 +185,12 @@ class TViewSource extends CApplicationComponent
 				: null;
 	}
 	
+	/**
+	 * Adds a route to the database and returns its database ID
+	 *
+	 * @param string $route The name of the route
+	 * @return string The database ID of the route or null if the route could not be added to the database
+	 */
 	public function addRoute($route)
 	{
 		return $this->getDbConnection()->createCommand()->insert($this->routeTable, array('route' => $route)) > 0
@@ -126,6 +198,13 @@ class TViewSource extends CApplicationComponent
 				: null;
 	}
 	
+	/**
+	 * 
+	 * @param integer $viewId
+	 * @param string $route
+	 * @param boolean $createRouteIfNotExists
+	 * @return string
+	 */
 	public function addViewToRoute($viewId, $route, $createRouteIfNotExists = false)
 	{
 		return (($routeId = $this->getRouteId($route, $createRouteIfNotExists)) !== false
@@ -134,14 +213,28 @@ class TViewSource extends CApplicationComponent
 				: null;
 	}
 
+	/**
+	 * 
+	 * @param integer $viewId
+	 * @param string $message
+	 * @param boolean $createMessageIfNotExists
+	 * @return string
+	 */
 	public function addSourceMessageToView($viewId, $message, $createMessageIfNotExists = false)
 	{
-		return (($messageId = TranslateModule::translator()->getMessageSource()->getSourceMessageId($message, $createMessageIfNotExists)) !== false
+		return (($messageId = TranslateModule::translator()->getMessageSourceComponent()->getSourceMessageId($message, $createMessageIfNotExists)) !== false
 					&& $this->getDbConnection()->createCommand()->insert($this->viewMessageTable, array('view_id' => $viewId, 'message_id' => $messageId)) > 0)
 				? $messageId
 				: null;
 	}
 	
+	/**
+	 * 
+	 * @param integer $sourceViewId
+	 * @param string $path
+	 * @param integer $languageId
+	 * @return string
+	 */
 	public function addView($sourceViewId, $path, $languageId)
 	{
 		$args = array('id' => $sourceViewId, 'language_id' => $languageId, 'path' => $path);
@@ -150,38 +243,60 @@ class TViewSource extends CApplicationComponent
 				: null;
 	}
 	
+	/**
+	 * 
+	 * @param string $route
+	 * @param boolean $createIfNotExists
+	 * @return string
+	 */
 	public function getRouteId($route, $createIfNotExists = false)
 	{
-		$routeId = $this->getDbConnection()->createCommand()
+		$db = $this->getDbConnection();
+		$routeId = $db->createCommand()
 							->select('rt.id AS id')
 							->from($this->routeTable.' rt')
-							->where('rt.route=:route', array(':route' => $route))
+							->where($db->quoteColumnName('rt.route').'=:route', array(':route' => $route))
 					->queryScalar();
 		
 		return $routeId === false && $createIfNotExists && ($routeId = $this->addRoute($route)) === null ? false : $routeId;
 	}
 	
+	/**
+	 * 
+	 * @param integer $viewId
+	 * @return array
+	 */
 	public function getViewMessages($viewId)
 	{
-		return $this->getDbConnection()->createCommand()
+		$db = $this->getDbConnection();
+		return $db->createCommand()
 						->select(array('smt.id AS id', 'smt.message AS message'))
-						->from(TranslateModule::translator()->getMessageSource()->sourceMessageTable.' smt')
-						->join($this->viewMessageTable.' vmt', 'vmt.message_id=smt.id')
-						->where('vmt.view_id=:view_id', array(':view_id' => $viewId))
+						->from(TranslateModule::translator()->getMessageSourceComponent()->sourceMessageTable.' smt')
+						->join($this->viewMessageTable.' vmt', $db->quoteColumnName('vmt.message_id').'='.$db->quoteColumnName('smt.id'))
+						->where($db->quoteColumnName('vmt.view_id').'=:view_id', array(':view_id' => $viewId))
 					->queryAll();
 	}
 	
+	/**
+	 * 
+	 * @param string $route
+	 * @param string $sourcePath
+	 * @param string $language
+	 * @param boolean $createSourceViewIfNotExists
+	 * @return array
+	 */
 	public function getView($route, $sourcePath, $language, $createSourceViewIfNotExists = false)
 	{
-		$messageSource = TranslateModule::translator()->getMessageSource();
-		$view = $this->getDbConnection()->createCommand()
-						->select(array('MIN(rt.id) AS route_id', 'vst.id AS id', 'lt.id AS language_id', 'vt.path AS path'))
+		$messageSource = TranslateModule::translator()->getMessageSourceComponent();
+		$db = $this->getDbConnection();
+		$view = $db->createCommand()
+						->select(array('MIN('.$db->quoteColumnName('rt.id').') AS '.$db->quoteColumnName('route_id'), 'vst.id AS id', 'lt.id AS language_id', 'vt.path AS path'))
 						->from($this->viewSourceTable.' vst')
-						->leftJoin($this->routeViewTable.' rvt', 'vst.id=rvt.view_id')
-						->leftJoin($this->routeTable.' rt', array('and', 'rvt.route_id=rt.id', 'rt.route=:route'), array(':route' => $route))
-						->leftJoin($messageSource->languageTable.' lt', 'lt.code=:code', array(':code' => $language))
-						->leftJoin($this->viewTable.' vt', array('and', 'vst.id=vt.id', 'vt.language_id=lt.id'))
-						->where('vst.path=:source_path', array(':source_path' => $sourcePath))
+						->leftJoin($this->routeViewTable.' rvt', $db->quoteColumnName('vst.id').'='.$db->quoteColumnName('rvt.view_id'))
+						->leftJoin($this->routeTable.' rt', array('and', $db->quoteColumnName('rvt.route_id').'='.$db->quoteColumnName('rt.id'), $db->quoteColumnName('rt.route').'=:route'), array(':route' => $route))
+						->leftJoin($messageSource->languageTable.' lt', $db->quoteColumnName('lt.code').'=:code', array(':code' => $language))
+						->leftJoin($this->viewTable.' vt', array('and', $db->quoteColumnName('vst.id').'='.$db->quoteColumnName('vt.id'), $db->quoteColumnName('vt.language_id').'='.$db->quoteColumnName('lt.id')))
+						->where($db->quoteColumnName('vst.path').'=:source_path', array(':source_path' => $sourcePath))
 				->queryRow();
 
 		if($createSourceViewIfNotExists)
@@ -211,14 +326,30 @@ class TViewSource extends CApplicationComponent
 		return $view;
 	}
 	
+	/**
+	 * 
+	 * @param integer $viewId
+	 * @param integer $messageIds
+	 * @return integer
+	 */
 	public function deleteViewMessages($viewId, $messageIds)
 	{
-		return empty($messageIds) ? 0 : $this->getDbConnection()->createCommand()->delete($this->viewMessageTable, array('and', 'view_id=:view_id', array('in', 'message_id', $messageIds)), array(':view_id' => $viewId));
+		$db = $this->getDbConnection();
+		return empty($messageIds) ? 0 : $db->createCommand()->delete($this->viewMessageTable, array('and', $db->quoteColumnName('view_id').'=:view_id', array('in', 'message_id', $messageIds)), array(':view_id' => $viewId));
 	}
 
+	/**
+	 * 
+	 * @param integer $viewId
+	 * @param integer $languageId
+	 * @param string $created
+	 * @param string $path
+	 * @return integer
+	 */
 	public function updateView($viewId, $languageId, $created, $path)
 	{
-		return $this->getDbConnection()->createCommand()->update($this->viewTable, array('created' => $created, 'path' => $path), array('and', 'id=:id', 'language_id=:language_id'), array(':id' => $viewId, ':language_id' => $languageId));
+		$db = $this->getDbConnection();
+		return $db->createCommand()->update($this->viewTable, array('created' => $created, 'path' => $path), array('and', $db->quoteColumnName('id').'=:id', $db->quoteColumnName('language_id').'=:language_id'), array(':id' => $viewId, ':language_id' => $languageId));
 	}
 
 	/**

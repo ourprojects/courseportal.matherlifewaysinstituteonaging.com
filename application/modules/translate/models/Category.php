@@ -1,4 +1,10 @@
 <?php
+
+/**
+ *
+ * @author Louis DaPrato <l.daprato@gmail.com>
+ *
+ */
 class Category extends CActiveRecord {
 
 	private $_isMissingTranslations;
@@ -8,7 +14,7 @@ class Category extends CActiveRecord {
 	}
 
 	public function tableName() {
-		return TranslateModule::translator()->getMessageSource()->categoryTable;
+		return TranslateModule::translator()->getMessageSourceComponent()->categoryTable;
 	}
 
 	public function behaviors()

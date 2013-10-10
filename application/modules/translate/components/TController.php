@@ -1,4 +1,10 @@
 <?php
+
+/**
+ * 
+ * @author Louis DaPrato <l.daprato@gmail.com>
+ *
+ */
 class TController extends CController
 {
 
@@ -12,7 +18,8 @@ class TController extends CController
 	private $_assetsUrls = array();
 
 	/**
-	 * @return array action filters
+	 * (non-PHPdoc)
+	 * @see CController::filters()
 	 */
 	public function filters()
 	{
@@ -25,11 +32,19 @@ class TController extends CController
 		);
 	}
 
+	/**
+	 * (non-PHPdoc)
+	 * @see CController::accessRules()
+	 */
 	public function accessRules()
 	{
 		return array(array('deny'));
 	}
 	
+	/**
+	 * (non-PHPdoc)
+	 * @see CController::getActionParams()
+	 */
 	public function getActionParams()
 	{
 		$actionParams = parent::getActionParams();
@@ -45,6 +60,12 @@ class TController extends CController
 		return $actionParams;
 	}
 
+	/**
+	 * Given a sub directory within the assets directory this function returns the URL to that asset directory.
+	 * 
+	 * @param string $location The sub directory in the assets directory to get a URL for.
+	 * @return string The URL to the asset directory
+	 */
 	public function getAssetsUrl($location = '_shared')
 	{
 		if(!isset($this->_assetsUrls[$location])) 
@@ -63,16 +84,37 @@ class TController extends CController
 		return $this->_assetsUrls[$location];
 	}
 
+	/**
+	 * Convenience method for getting the URL to a stylesheet asset.
+	 * 
+	 * @param string $file The stylesheet asset file name to get a URL for
+	 * @param string $location The sub directory in the assets directory to get a URL for
+	 * @return string The URL to the stylesheet asset
+	 */
 	public function getStylesUrl($file = '', $location = '_shared')
 	{
 		return $this->getAssetsUrl($location).'/styles/'.$file;
 	}
 
+	/**
+	 * Convenience method for getting the URL to a script asset.
+	 *
+	 * @param string $file The script asset file name to get a URL for
+	 * @param string $location The sub directory in the assets directory to get a URL for
+	 * @return string The URL to the script asset
+	 */
 	public function getScriptsUrl($file = '', $location = '_shared')
 	{
 		return $this->getAssetsUrl($location).'/scripts/'.$file;
 	}
 
+	/**
+	 * Convenience method for getting the URL to an image asset.
+	 *
+	 * @param string $file The image asset file name to get a URL for
+	 * @param string $location The sub directory in the assets directory to get a URL for
+	 * @return string The URL to the image asset
+	 */
 	public function getImagesUrl($file = '', $location = '_shared')
 	{
 		return $this->getAssetsUrl($location).'/images/'.$file;

@@ -7,6 +7,7 @@
  * @property integer $id
  * @property string $path
  * 
+ * @author Louis DaPrato <l.daprato@gmail.com>
  */
 class ViewSource extends CActiveRecord
 {
@@ -26,7 +27,7 @@ class ViewSource extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return TranslateModule::translator()->getViewSource()->viewSourceTable;
+		return TranslateModule::translator()->getViewSourceComponent()->viewSourceTable;
 	}
 
 	public function behaviors()

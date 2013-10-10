@@ -1,5 +1,10 @@
 <?php
 
+/**
+ *
+ * @author Louis DaPrato <l.daprato@gmail.com>
+ *
+ */
 class TranslateModule extends CWebModule {
 
 	/**
@@ -36,8 +41,8 @@ class TranslateModule extends CWebModule {
     /**
      * get the translate component
      * 
-     * @throws CException If the translate component named by {@see TranslateModule::$translateComponentName} cannot be found {@link MPTranslate}
-     * @return MPTranslate The translate component named by {@see TranslateModule::$translateComponentName}
+     * @throws CException If the translate component named by {@see TranslateModule::$translateComponentName} cannot be found {@link TTranslator}
+     * @return TTranslator The translate component named by {@see TranslateModule::$translateComponentName}
      */
     public static function translator() 
     {
@@ -68,9 +73,9 @@ class TranslateModule extends CWebModule {
     }
     
     /**
-     * Convenience method for calling {@link MPTranslate::missingTranslation()}
+     * Convenience method for calling {@link TTranslator::missingTranslation()}
      * 
-     * @see MPTranslate::missingTranslation()
+     * @see TTranslator::missingTranslation()
      * @param CMissingTranslationEvent $event
      * @return CMissingTranslationEvent
      */
@@ -80,9 +85,9 @@ class TranslateModule extends CWebModule {
     }
     
     /**
-     * Convenience method for calling {@link MPTranslate::missingViewTranslation()}
+     * Convenience method for calling {@link TTranslator::missingViewTranslation()}
      *
-     * @see MPTranslate::missingViewTranslation()
+     * @see TTranslator::missingViewTranslation()
      * @param TMissingViewTranslationEvent $event
      * @return TMissingViewTranslationEvent
      */
@@ -101,6 +106,6 @@ class TranslateModule extends CWebModule {
      */
     public static function t($message, $params = array()) 
     {
-        return Yii::t(MPTranslate::ID, $message, $params);
+        return Yii::t(TTranslator::ID, $message, $params);
     }
 }

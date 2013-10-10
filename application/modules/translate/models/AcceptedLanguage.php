@@ -1,4 +1,10 @@
 <?php
+
+/**
+ * 
+ * @author Louis DaPrato <l.daprato@gmail.com>
+ *
+ */
 class AcceptedLanguage extends CActiveRecord 
 {
 
@@ -11,7 +17,7 @@ class AcceptedLanguage extends CActiveRecord
 	
 	public function tableName() 
 	{
-		return TranslateModule::translator()->getMessageSource()->acceptedLanguageTable;
+		return TranslateModule::translator()->getMessageSourceComponent()->acceptedLanguageTable;
 	}
 	
 	public function behaviors()

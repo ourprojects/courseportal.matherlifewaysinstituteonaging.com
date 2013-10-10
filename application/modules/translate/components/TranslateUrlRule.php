@@ -1,15 +1,31 @@
 <?php
 
+/**
+ * 
+ * @author Louis DaPrato <l.daprato@gmail.com>
+ *
+ */
 class TranslateUrlRule extends CBaseUrlRule
 {
 	
+	/**
+	 * (non-PHPdoc)
+	 * @see CBaseUrlRule::$hasHostInfo
+	 */
 	public $hasHostInfo = true;
 	
 	/**
-	 * @var string The name of the translator component.
+	 * @var string The name of the {@link TTranslator} component.
 	 */
 	public $translateComponentId = 'translate';
 	
+
+	/**
+	 * @var boolean Whether to check if the URL contains the language to use for this request.  
+	 * If true and $_REQUEST variable containing the language is not set or does not match the current language then 
+	 * the client will be redirected to the same page URL, but containing the language part. If false the URL will not be considered
+	 * when determining the requested language.
+	 */
 	public $checkIfLanguageIsPartOfRoute = true;
 	
 	private $_recursion = false;

@@ -1,12 +1,18 @@
 <?php
 /**
+ * EForwardActionFilter class file
+ * 
+ * @author Louis DaPrato <l.daprato@gmail.com>
+ */
+
+/**
  *
- * This filter is meant to allow one action to be forwarded to a different action
- * within the same controller based on some request conditions.
+ * EForwardActionFilter allows one controller action to be forwarded, or mapped, to a different controller action
+ * based on whether some condition(s) are met.
  *
- * You may apply this filter to an action as you would any filter.
+ * You may apply this action filter to an action as you would any action filter.
  *
- * There is only one property that should be set for this filter to have any effect, it is called $map.
+ * There is only one property that should be set for this filter to have any effect, it is called {@see EForwardActionFilter::$map}.
  *
  * The folowing, case insensitive, request conditions are available by default:
  *
@@ -25,17 +31,20 @@
  * connect
  * patch
  *
- * The conditions listed above may be extended by extending this class and defining new methods prefixed with the word 'match'.
- * If a mapping with a request condition having the same name as the suffix of the match method then that method will be called
- * to determine if the condition is valid and the mapping should be applied. This is very similar to defining action methods in a controller,
+ * The conditions listed above may be extended by extending this class and defining new methods that are prefixed with the word 'match' followed
+ * by the mapping condition key word of your choice. This is very similar to defining action methods in a controller,
  * except that the match method must not have any required parameters and must return a value that can be evaluated to a boolean.
  * Finally, any match methods defined must be defined as either protected or public. private methods will have no effect.
+ * 
+ * Adding a request condition to a mapping causes the associated match method of that request condition to be called. If the match
+ * method returns true then the mapping will be applied to the request.
  *
- * Note that the order of mappings is important. The first mapping that can be applied to an action will be applied,
- * no further action mappings will be considered once one mapping is found.
+ * Note that the order of mappings is important. The first mapping with a request condition returning true will be applied,
+ * no further action mappings will be considered once one mapping is applied.
  *
- * @author Louis DaPrato
  * @property $map string|array mappings and request conditions for forwarding actions that this filter has been applied to
+ * 
+ * @author Louis DaPrato <l.daprato@gmail.com>
  */
 class EForwardActionFilter extends CFilter
 {
@@ -79,6 +88,10 @@ class EForwardActionFilter extends CFilter
 		return $this->_requestMatchRegex;
 	}
 
+	/**
+	 * (non-PHPdoc)
+	 * @see CFilter::preFilter()
+	 */
 	protected function preFilter($filterChain)
 	{
 		if(($action = $this->processConditions($filterChain->controller->getAction()->getId(), $this->map)) !== null)
@@ -90,6 +103,15 @@ class EForwardActionFilter extends CFilter
 		return true;
 	}
 
+	/**
+	 * Processes the mapping conditions and determines whether an action should be mapped to another action.
+	 * If the action should be mapped the new action will be returned. Otherwise null is returned.
+	 * 
+	 * @param string $actionId The action to check if it should be mapped to a different action
+	 * @param string|array $conditions The conditions to check if this action should be mapped and if so mapped where.
+	 * @param string $sign Either a '+' or a '-'. Plus is the default meaning apply the conditions normally. Minus negates conditions.
+	 * @return string|null returns either the ID of the new action to forward the current action to or null meaning do not forward the current action.
+	 */
 	protected function processConditions($actionId, $conditions, $sign = '+')
 	{
 		if(!is_array($conditions))
