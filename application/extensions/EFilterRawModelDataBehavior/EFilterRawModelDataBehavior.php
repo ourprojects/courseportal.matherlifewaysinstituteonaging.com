@@ -6,11 +6,13 @@
  */
 
 /**
- * EFilterRawModelDataBehavior is designed to simplify filtering arrays of data that are associated with a model.
- * This is especially useful for {@link CArrayDataProvider} since that class only supports pagination and sorting, not filtering.
+ * EFilterRawModelDataBehavior is designed to simplify filtering arrays of data that are associated with a model, but not derived from a database source.
+ * This is especially useful when it is necessary to use {@link CArrayDataProvider} since that class only supports pagination and sorting, not filtering.
  * 
- * To use EFilterRawModelDataBehavior attach this behavior to the model your raw data is associated with as follows.
+ * To use EFilterRawModelDataBehavior attach this behavior to the model that your raw data array is associated with either inline 
+ * using {@link CComponent::attachBehavior()} or {@link CComponent::attachBehaviors()} or statically as follows.
  * 
+ * In associated model:
  * <pre>
  * public function behaviors()
  * {
@@ -23,18 +25,58 @@
  * }
  * </pre>
  * 
- * When you need to filter an array of data set the attribute values of your model as you would normally when filtering data using {@link CActiveDataProvider}.
- * Then call the {@see EFilterRawModelDataBehavior::filter()} method this behavior has added to your model. Pass the method your raw data and
- * the filtered form of that data will be returned. 
+ * When you want to filter an array of data set the attribute values of your model as you would normally when filtering data using {@link CActiveDataProvider}.
+ * Then call the {@see EFilterRawModelDataBehavior::filter()} method that this behavior has added to your model. Pass the method your raw data and
+ * the filtered form of that data will be returned to you. 
  * 
- * By default this behavior will only filter, or unset, a data row by checking if the function empty() returns true on the value 
- * of the attribute of the model this behavior is attached to, or if there is a partial match between the string value of the 
- * raw data item and the model attribute value.
- * If you need to specify a different comparison for your data you may optionally specify custom callbacks for comparing data attributes 
- * by setting the {@see EFilterRawModelDataBehavior::$callbacks} property. This property can be set in the behavior's declaration or 
+ * A basic example using a {@link CArrayDataProvider} with a {@link CGridView}:
+ * 
+ * Controller action:
+ * <pre>
+ * public function actionFoo()
+ * {
+ * 		$fooModel = new FooModel();
+ * 		if(isset($_POST['FooModel']))
+ * 		{
+ * 			$fooModel->setAttributes($_POST['FooModel']);
+ * 		}
+ * 		$rawFooData = $this->generateRawFooData();
+ * 		$filteredRawFooData = $fooModel->filter($rawFooData);
+ * 		$dataProvider = new CArrayDataProvider($filteredRawFooData);
+ * 		$this->render('foo', array('model' => $fooModel, 'dataProvider' => $dataProvider));
+ * }
+ * </pre>
+ * 
+ * View 'foo':
+ * <pre>
+ * $this->widget('zii.widgets.grid.CGridView',
+ *		array(
+ *			'filter' => $model,
+ *			'dataProvider' => $dataProvider,
+ *			'columns' => array(
+ *				...
+ *			)
+ *		)
+ *	);
+ * </pre>
+ * 
+ * By default this behavior will only filter, or unset, a data row if BOTH of the following conditions are TRUE. 
+ * 	1. The function empty() returns true on the associated model attribute's value.
+ * 	2. There is a partial match between the string value of the associated model attribute's value and the raw data value.
+ * 
+ * If you need to specify different comparisons for your data you may optionally specify custom callbacks for comparing attributes 
+ * by setting the {@see EFilterRawModelDataBehavior::$callbacks} property. This property can be set in the behavior's configuration or 
  * can be passed on the fly to the {@see EFilterRawModelDataBehavior::filter()} method.
+ * If a callback is set for a particular attribute the return value of your defined callback will be used to determine whether the 
+ * row should be filtered or not.
+ * Your callback must strictly return false for the data row to be filtered. Any oher value will not cause the data row to be filtered.
+ * Your callback should accept 3 parameters as follows:
+ * 	1. The name of the attribute
+ * 	2. The model's attribute's value
+ * 	3. The associated raw data row's attribute's value
+ * 
  * Also by default the {@see EFilterRawModelDataBehavior::filter()} method will only compare safe attribute values. This can be disabled
- * by passing false as the safeOnly parameter of the {@see EFilterRawModelDataBehavior::filter()} method.
+ * by passing false as the argument to the safeOnly parameter of the {@see EFilterRawModelDataBehavior::filter()} method.
  * 
  * @property $callbacks array a list of comparison callbacks in the form array('attribute name' => 'callable')
  * 
@@ -46,9 +88,10 @@ class EFilterRawModelDataBehavior extends CModelBehavior
 	/**
 	 * Set this if you require custom comparisons to be done for certain attributes.
 	 * The default comparison checks if the value is empty or if there is a partial match of the string value of the attribute and the data.
-	 * If either is true the data row will not be filtered.
+	 * If either is true the data row will NOT be filtered.
 	 * 
 	 * The comparison callback should explicitly return false if the data row should be filtered.
+	 * Any other return value will NOT cause the row to be filtered.
 	 * 
 	 * @var array a list of comparison callbacks in the form array('attribute name' => 'callable')
 	 */
