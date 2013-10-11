@@ -113,7 +113,10 @@ class LanguageController extends TController
 				return;
 			case 'language-grid':
 				$model = new Language('search');
-				$model->setAttribute('id', $id);
+				if(isset($id))
+				{
+					$model->setAttribute('id', $id);
+				}
 				$gridPath = '_grid';
 				break;
 			case 'route-grid':

@@ -97,12 +97,18 @@ class ViewSourceController extends TController
 				break;
 			case 'viewSource-grid':
 				$model = new ViewSource('search');
-				$model->setAttribute('id', $id);
+				if(isset($id))
+				{
+					$model->setAttribute('id', $id);
+				}
 				$gridPath = '_grid';
 				break;
 			case 'view-grid':
 				$model = new View('search');
-				$model->setAttribute('id', $id);
+				if(isset($id))
+				{
+					$model->setAttribute('id', $id);
+				}
 				$gridPath = '../view/_grid';
 				break;
 			default:

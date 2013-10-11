@@ -92,7 +92,10 @@ class RouteController extends TController
 				break;
 			case 'route-grid':
 				$model = new Route('search');
-				$model->setAttribute('id', $id);
+				if(isset($id))
+				{
+					$model->setAttribute('id', $id);
+				}
 				$gridPath = '_grid';
 				break;
 			case 'viewSource-grid':

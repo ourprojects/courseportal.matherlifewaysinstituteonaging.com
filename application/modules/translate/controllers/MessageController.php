@@ -156,7 +156,10 @@ class MessageController extends TController
 				break;
 			case 'message-grid':
 				$model = new Message('search');
-				$model->setAttribute('id', $id);
+				if(isset($id))
+				{
+					$model->setAttribute('id', $id);
+				}
 				$gridPath = '_grid';
 				break;
 			case 'route-grid':

@@ -123,7 +123,10 @@ class MessageSourceController extends TController
 				break;
 			case 'messageSource-grid':
 				$model = new MessageSource('search');
-				$model->setAttribute('id', $id);
+				if(isset($id))
+				{
+					$model->setAttribute('id', $id);
+				}
 				$gridPath = '_grid';
 				break;
 			case 'message-grid':

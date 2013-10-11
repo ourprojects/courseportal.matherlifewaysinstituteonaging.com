@@ -99,8 +99,14 @@ class ViewController extends TController
 				break;
 			case 'view-grid':
 				$model = new View('search');
-				$model->setAttribute('id', $id);
-				$model->setAttribute('language_id', $languageId);
+				if(isset($id))
+				{
+					$model->setAttribute('id', $id);
+				}
+				if(isset($languageId))
+				{
+					$model->setAttribute('language_id', $languageId);
+				}
 				$gridPath = '_grid';
 				break;
 			default:

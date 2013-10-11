@@ -72,7 +72,10 @@ class CategoryController extends TController
 		{
 			case 'category-grid':
 				$model = new Category('search');
-				$model->setAttribute('id', $id);
+				if(isset($id))
+				{
+					$model->setAttribute('id', $id);
+				}
 				$gridPath = '_grid';
 				break;
 			case 'messageSource-grid':
