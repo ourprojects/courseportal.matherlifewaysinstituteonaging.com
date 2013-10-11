@@ -6,13 +6,10 @@
  */
 
 /**
- *
  * EForwardActionFilter allows one controller action to be forwarded, or mapped, to a different controller action
  * based on whether some condition(s) are met.
  *
- * You may apply this action filter to an action as you would any action filter.
- *
- * There is only one property that should be set for this filter to have any effect, it is called {@see EForwardActionFilter::$map}.
+ * This filter has one configuration property called {@see EForwardActionFilter::$map}.
  *
  * The folowing, case insensitive, request conditions are available by default:
  *
@@ -31,16 +28,112 @@
  * connect
  * patch
  *
- * The conditions listed above may be extended by extending this class and defining new methods that are prefixed with the word 'match' followed
- * by the mapping condition key word of your choice. This is very similar to defining action methods in a controller,
- * except that the match method must not have any required parameters and must return a value that can be evaluated to a boolean.
- * Finally, any match methods defined must be defined as either protected or public. private methods will have no effect.
+ * It is also possible to use a callable in place of a condition string. In this case the result of the callable will determine if the mapping 
+ * should be applied. The {@link CFilterChain} object that triggered this call will be passed to the callable. If any call results in something 
+ * that evaluates to True then the mapping will be applied and no further conditions will be considered for that particular mapping.
  * 
- * Adding a request condition to a mapping causes the associated match method of that request condition to be called. If the match
- * method returns true then the mapping will be applied to the request.
+ * A + or - sign at the start of the condition(s) indicates the condition is inclusive or exclusive. Inclusive meaning the condition must be matched
+ * for the mapping to be applied. Exlusive meaning the condition must not be matched for the mapping to be applied.
+ * If a sign is not provided + is assumed.
  *
- * Note that the order of mappings is important. The first mapping with a request condition returning true will be applied,
- * no further action mappings will be considered once one mapping is applied.
+ * Note that the order of mappings is important. The first mapping that can be applied will be applied,
+ * no further action mappings will be considered once one mapping has been applied.
+ * 
+ * Once an action is mapped to a new action, that new action will have all its filters executed. 
+ * This means it is possible to chain action forwardings which can be very useful, but potentially dangerous...
+ * 
+ * BEWARE of action forwarding cycles.
+ * This class does not check for cycles in its mapping configuration. It is possible your application could entire an infinite loop
+ * if the configuration is not carefully considered when chaining action forwarding.
+ * 
+ * 
+ * Mapping configuration examples:
+ * <pre>
+ * // Any action this filter is applied to will be forwarded to the action named 'action1' if the request IS an 'ajax' or 'get' request.
+ * 
+ * 		$map = 'action1 + ajax, get';
+ * 
+ * // Any action this filter is applied to will be forwarded to the action named 'action1' if the request IS NOT an 'ajax' or 'get' request.
+ * 
+ * 		$map = 'action1 - ajax, get';
+ * 
+ * // In each of the following action 'foo' will be forwarded to the action 'bar' if the request IS an 'ajax' or 'get' request.
+ * // In other words the following are all the same, just different syntax.
+ * // Note the plus sign is not necessary in any of these cases since it assumed when a sign is not provided.
+ * 
+ * 		$map = array(
+ * 			'foo' => 'bar + ajax, get'
+ * 		);
+ * 		$map = array(
+ * 			'foo' => array('bar + ajax, get')
+ * 		);
+ * 		$map = array(
+ * 			'foo' => array('bar' => '+ ajax, get')
+ * 		);
+ * 		$map = array(
+ * 			'foo' => array(array('bar', '+', 'ajax', 'get'))
+ * 		);
+ * 		$map = array(
+ * 			'foo' => array('bar' => array('+', 'ajax', 'get'))
+ * 		);
+ * 
+ * // In each of the following action 'foo' will be forwarded to the action 'bar' if the request IS an 'put' or 'secure' request.
+ * // Otherwise 'foo' will be forwarded to the action 'fooBar' if the request IS NOT a 'get' request.
+ * // Note the plus sign is not used in the initial rule. It is assumed when not provided.
+ * 
+ * 		$map = array(
+ * 			'foo' => 'bar put, secure', 
+ * 			'foo' => 'fooBar - get'
+ * 		);
+ * 		$map = array(
+ * 			'foo' => array('bar put, secure', 'fooBar - get')
+ * 		);
+ * 		$map = array(
+ * 			'foo' => array('bar' => 'put, secure', 'fooBar' => '- get')
+ * 		);
+ * 		$map = array(
+ * 			'foo' => array(array('bar', 'put', 'secure'), array('fooBar', '-', 'get'))
+ * 		);
+ * 		$map = array(
+ * 			'foo' => array('bar' => array('put', 'secure'), 'fooBar' => array('-', 'get'))
+ * 		);
+ * 
+ * // If you want to test a custom condition consider the following global condition function and class with condition function
+ * 
+ * 		function testFooGlobal()
+ * 		{
+ * 			return true; // This condition is always matched. Return false and this condition is never matched.
+ * 		}
+ * 
+ * 		class SomeClass
+ * 		{
+ * 			public function testFooInstance()
+ * 			{
+ * 				return true; // This condition is always matched. Return false and this condition is never matched.
+ * 			}
+ * 		}
+ * 
+ * // In each of the following action 'foo' will be forwarded to the action 'bar' if a call to 'testFooGlobal' or 'testFooInstance' results in true.
+ * // Note array syntax is necessary when using an instance method callable.
+ * 
+ * 		$obj = new SomeClass();
+ * 		$map = array(
+ * 			'foo' => 'bar + testFooGlobal'
+ * 		);
+ * 		$map = array(
+ * 			'foo' => array('bar + testFooGlobal')
+ * 		);
+ * 		$map = array(
+ * 			'foo' => array('bar' => '+ testFooGlobal', 'bar' => array('+', array($obj, 'testFooInstance')))
+ * 		);
+ * 		$map = array(
+ * 			'foo' => array(array('bar', '+', 'testFooGlobal', array($obj, 'testFooInstance')))
+ * 		);
+ * 		$map = array(
+ * 			'foo' => array('bar' => array('+', 'testFooGlabal', array($obj, 'testFooInstance')))
+ * 		);
+ * </pre>
+ * 
  *
  * @property $map string|array mappings and request conditions for forwarding actions that this filter has been applied to
  * 
@@ -59,10 +152,8 @@ class EForwardActionFilter extends CFilter
 	 */
 	private $_requestMatchRegex;
 
-	private $_currentActionId;
-
 	/**
-	 * Finds all visible methods of this object prefixed with the word 'match'. The suffix following the word 'match'
+	 * Finds all visible methods of this object prefixed with the word 'isRequest'. The suffix following the word 'isRequest'
 	 * will be compiled into a regular expression that will match any of those suffixes separated by a word boundary case insensitive.
 	 * The resulting regular expression is returned.
 	 *
@@ -72,18 +163,18 @@ class EForwardActionFilter extends CFilter
 	{
 		if(!isset($this->_requestMatchRegex))
 		{
-			$this->_requestMatchRegex = '/\b(?:' .
+			$this->_requestMatchRegex = '/(?:' .
 										implode('|',
 												preg_replace(
-													'/^match(.+)$/i',
+													'/^isRequest(\\w+)$/i',
 													'$1',
 													array_filter(
 															get_class_methods($this),
-															create_function('$method', 'return preg_match("/^match.+$/i", $method);')
+															create_function('$method', 'return preg_match("/^isRequest\\\\w+$/i", $method);')
 													)
 												)
 										) .
-										')\b/i';
+										')/i';
 		}
 		return $this->_requestMatchRegex;
 	}
@@ -94,58 +185,105 @@ class EForwardActionFilter extends CFilter
 	 */
 	protected function preFilter($filterChain)
 	{
-		if(($action = $this->processConditions($filterChain->controller->getAction()->getId(), $this->map)) !== null)
+		$actionId = $filterChain->controller->getAction()->getId();
+		$map = $this->map;
+		if(!is_array($map))
 		{
-			$filterChain->controller->run($action);
-			return false;
+			$map = array($actionId => $map);
 		}
-
+		
+		foreach($map as $action => $mapping)
+		{
+			if(!is_string($action))
+			{
+				return $mapping;
+			}
+			if(preg_match('/\b'.$actionId.'\b/i', $action))
+			{
+				if(!is_array($mapping))
+				{
+					$mapping = array($mapping);
+				}
+				foreach($mapping as $forwardToAction => $conditions)
+				{
+					if(is_array($conditions))
+					{
+						if(is_int($forwardToAction))
+						{
+							$forwardToAction = array_shift($conditions);
+						}
+						if(count($conditions) > 1 && ($conditions[0] === '+' || $conditions[0] === '-'))
+						{
+							$sign = array_shift($conditions);
+						}
+						else
+						{
+							$sign = '+';
+						}
+					}
+					else if(is_string($conditions))
+					{
+						if(($pos = strpos($conditions, '+')) !== false || ($pos = strpos($conditions, '-')) !== false)
+						{
+							$sign = $conditions[$pos];
+							if(is_int($forwardToAction))
+							{
+								$forwardToAction = trim(substr($conditions, 0, $pos));
+							}
+							$conditions = preg_split('/\\\\b+/', substr($conditions, $pos + 1), -1, PREG_SPLIT_NO_EMPTY);
+						}
+						else if(is_int($forwardToAction))
+						{
+							$forwardToAction = $conditions;
+							$conditions = array();
+						}
+					}
+					else
+					{
+						$sign = '+';
+						$conditions = array($conditions);
+					}
+				}
+				if($conditions === array() || ($this->checkConditions($conditions, $filterChain) === ($sign === '+')))
+				{
+					$filterChain->controller->run($forwardToAction);
+					return false;
+				}
+			}
+		}
 		return true;
 	}
-
+	
 	/**
-	 * Processes the mapping conditions and determines whether an action should be mapped to another action.
-	 * If the action should be mapped the new action will be returned. Otherwise null is returned.
+	 * Takes a list of conditions to evaluate. If any one evaluates to true then this function will return true.
+	 * If a condition is a string it will be checked to see if it matches one of the isRequest function of this object, if so
+	 * the function is called and its result evaluated. If the evaluated result is false or the function was not a valid
+	 * isRequest function of this object then the condition will be test to see if it is callable. If it is callable it will be
+	 * called using {@link call_user_func}. The filter chain will be passed to this function.
 	 * 
-	 * @param string $actionId The action to check if it should be mapped to a different action
-	 * @param string|array $conditions The conditions to check if this action should be mapped and if so mapped where.
-	 * @param string $sign Either a '+' or a '-'. Plus is the default meaning apply the conditions normally. Minus negates conditions.
-	 * @return string|null returns either the ID of the new action to forward the current action to or null meaning do not forward the current action.
+	 * @param array $conditions The list of conditions to evaluate.
+	 * @param CFilterChain $filterChain The filter chain that will be passed to any callable conditions.
+	 * @return boolean True if any evaluated condition results in True. False otherwise.
 	 */
-	protected function processConditions($actionId, $conditions, $sign = '+')
+	protected function checkConditions($conditions, $filterChain)
 	{
-		if(!is_array($conditions))
+		$requestMatchRegex = $this->getRequestMatchRegex();
+		foreach($conditions as $condition)
 		{
-			$conditions = array($conditions);
-		}
+			if(is_string($condition) && preg_match($requestMatchRegex, $condition, $matches))
+			{
+				if(call_user_func(array($this, 'isRequest'.$matches[0])))
+				{
+					return true;
+				}
+			}
 
-		foreach($conditions as $action => $mapping)
-		{
-			if(is_string($action) && !preg_match('/\b'.$actionId.'\b/i', $action))
+			if(is_callable($condition) && call_user_func($condition, $filterChain))
 			{
-				continue;
-			}
-			if(is_array($mapping))
-			{
-				if(($action = $this->processConditions($actionId, $mapping, $sign)) !== null)
-				{
-					return $action;
-				}
-			}
-			else if(is_string($mapping) && (($pos = strpos($mapping, '+')) !== false || ($pos = strpos($mapping, '-')) !== false))
-			{
-				preg_match_all($this->getRequestMatchRegex(), substr($mapping, $pos + 1), $matches);
-				if($this->processConditions($actionId, $matches[0], $mapping[$pos]) !== null)
-				{
-					return trim(substr($mapping, 0, $pos));
-				}
-			}
-			else if(call_user_func(array($this, 'match'.$mapping)) && $sign === '+')
-			{
-				return $actionId;
+				return true;
 			}
 		}
-		return null;
+		return false;
 	}
 
 	/**
@@ -153,7 +291,7 @@ class EForwardActionFilter extends CFilter
 	 *
 	 * @return bool true if the current connection is secure, false otherwise.
 	 */
-	public function matchSecure()
+	public function isRequestSecure()
 	{
 		return Yii::app()->getRequest()->getIsSecureConnection();
 	}
@@ -163,7 +301,7 @@ class EForwardActionFilter extends CFilter
 	 *
 	 * @return bool true if the current request is an AJAX request, false otherwise.
 	 */
-	public function matchAjax()
+	public function isRequestAjax()
 	{
 		return Yii::app()->getRequest()->getIsAjaxRequest();
 	}
@@ -173,7 +311,7 @@ class EForwardActionFilter extends CFilter
 	 *
 	 * @return bool true if the current request is a flash request, false otherwise.
 	 */
-	public function matchFlash()
+	public function isRequestFlash()
 	{
 		return Yii::app()->getRequest()->getIsFlashRequest();
 	}
@@ -183,7 +321,7 @@ class EForwardActionFilter extends CFilter
 	 *
 	 * @return bool true if the current request is an OPTIONS request, false otherwise.
 	 */
-	public function matchOptions()
+	public function isRequestOptions()
 	{
 		return (isset($_SERVER['REQUEST_METHOD']) && !strcasecmp($_SERVER['REQUEST_METHOD'], 'OPTIONS'));
 	}
@@ -193,7 +331,7 @@ class EForwardActionFilter extends CFilter
 	 *
 	 * @return bool true if the current request is a GET request, false otherwise.
 	 */
-	public function matchGet()
+	public function isRequestGet()
 	{
 		return (isset($_SERVER['REQUEST_METHOD']) && !strcasecmp($_SERVER['REQUEST_METHOD'], 'GET'));
 	}
@@ -203,7 +341,7 @@ class EForwardActionFilter extends CFilter
 	 *
 	 * @return bool true if the current request is a HEAD request, false otherwise.
 	 */
-	public function matchHead()
+	public function isRequestHead()
 	{
 		return (isset($_SERVER['REQUEST_METHOD']) && !strcasecmp($_SERVER['REQUEST_METHOD'], 'HEAD'));
 	}
@@ -213,7 +351,7 @@ class EForwardActionFilter extends CFilter
 	 *
 	 * @return bool true if the current request is a post request, false otherwise.
 	 */
-	public function matchPost()
+	public function isRequestPost()
 	{
 		return Yii::app()->getRequest()->getIsPostRequest();
 	}
@@ -223,7 +361,7 @@ class EForwardActionFilter extends CFilter
 	 *
 	 * @return bool true if the current request is a put request, false otherwise.
 	 */
-	public function matchPut()
+	public function isRequestPut()
 	{
 		return Yii::app()->getRequest()->getIsPutRequest();
 	}
@@ -233,7 +371,7 @@ class EForwardActionFilter extends CFilter
 	 *
 	 * @return bool true if the current request is a put via a post request, false otherwise.
 	 */
-	public function matchPutViaPost()
+	public function isRequestPutViaPost()
 	{
 		return Yii::app()->getRequest()->getIsPutViaPostRequest();
 	}
@@ -243,7 +381,7 @@ class EForwardActionFilter extends CFilter
 	 *
 	 * @return bool true if the current request is a delete request, false otherwise.
 	 */
-	public function matchDelete()
+	public function isRequestDelete()
 	{
 		return Yii::app()->getRequest()->getIsDeleteRequest();
 	}
@@ -253,7 +391,7 @@ class EForwardActionFilter extends CFilter
 	 *
 	 * @return bool true if the current request is a delete via a post request, false otherwise.
 	 */
-	public function matchDeleteViaPost()
+	public function isRequestDeleteViaPost()
 	{
 		return Yii::app()->getRequest()->getIsDeleteViaPostRequest();
 	}
@@ -263,7 +401,7 @@ class EForwardActionFilter extends CFilter
 	 *
 	 * @return bool true if the current request is a TRACE request, false otherwise.
 	 */
-	public function matchTrace()
+	public function isRequestTrace()
 	{
 		return (isset($_SERVER['REQUEST_METHOD']) && !strcasecmp($_SERVER['REQUEST_METHOD'], 'TRACE'));
 	}
@@ -273,7 +411,7 @@ class EForwardActionFilter extends CFilter
 	 *
 	 * @return bool true if the current request is a CONNECT request, false otherwise.
 	 */
-	public function matchConnect()
+	public function isRequestConnect()
 	{
 		return (isset($_SERVER['REQUEST_METHOD']) && !strcasecmp($_SERVER['REQUEST_METHOD'], 'CONNECT'));
 	}
@@ -283,7 +421,7 @@ class EForwardActionFilter extends CFilter
 	 *
 	 * @return bool true if the current request is a PATCH request, false otherwise.
 	 */
-	public function matchPatch()
+	public function isRequestPatch()
 	{
 		return (isset($_SERVER['REQUEST_METHOD']) && !strcasecmp($_SERVER['REQUEST_METHOD'], 'PATCH'));
 	}
