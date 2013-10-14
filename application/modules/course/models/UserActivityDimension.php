@@ -43,7 +43,7 @@ class UserActivityDimension extends CActiveRecord
 			array('user_activity_id', 'exist', 'attributeName' => 'id', 'className' => 'UserActivity', 'except' => 'search'),
 			array('dimension_id', 'exist', 'attributeName' => 'id', 'className' => 'Dimension', 'except' => 'search'),
 			array('+user_activity_id+dimension_id',
-					'ext.ECompositeUniqueValidator.ECompositeUniqueValidator',
+					'ext.LDCompositeUniqueValidator.LDCompositeUniqueValidator',
 					'message' => t('The dimension with ID "{value}" has already been added to this user activity.'),
 			),
 			array('user_activity_id, dimension_id, primary', 'safe', 'on' => 'search'),

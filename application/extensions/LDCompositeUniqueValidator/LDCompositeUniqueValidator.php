@@ -1,12 +1,12 @@
 <?php
 /**
- * ECompositeUniqueValidator class file.
+ * LDCompositeUniqueValidator class file.
  *
  * @author Louis DaPrato <l.daprato@gmail.com>
  */
 
 /**
- * ECompositeUniqueValidator validates that the attribute value is unique in the corresponding database table.
+ * LDCompositeUniqueValidator validates that the attribute(s) value(s) is/are unique in the corresponding database table.
  *
  * When using the {@link message} property to define a custom error message, the message
  * may contain additional placeholders that will be replaced with the actual content. In addition
@@ -18,7 +18,7 @@
  *
  * @author Louis DaPrato <l.daprato@gmail.com>
  */
-class ECompositeUniqueValidator extends CValidator
+class LDCompositeUniqueValidator extends CValidator
 {
 	
 	/**

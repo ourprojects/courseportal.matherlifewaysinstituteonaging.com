@@ -1,15 +1,15 @@
 <?php
 /**
- * EFilterRawModelDataBehavior class file
+ * LDFilterRawModelDataBehavior class file
  * 
  * @author Louis DaPrato <l.daprato@gmail.com>
  */
 
 /**
- * EFilterRawModelDataBehavior is designed to simplify filtering arrays of data that are associated with a model, but not derived from a database source.
+ * LDFilterRawModelDataBehavior is designed to simplify filtering arrays of data that are associated with a model, but not derived from a database source.
  * This is especially useful when it is necessary to use {@link CArrayDataProvider} since that class only supports pagination and sorting, not filtering.
  * 
- * To use EFilterRawModelDataBehavior attach this behavior to the model that your raw data array is associated with either inline 
+ * To use LDFilterRawModelDataBehavior attach this behavior to the model that your raw data array is associated with either inline 
  * using {@link CComponent::attachBehavior()} or {@link CComponent::attachBehaviors()} or statically as follows.
  * 
  * In associated model:
@@ -17,8 +17,8 @@
  * public function behaviors()
  * {
  * 		return array(
- * 			'EFilterRawModelDataBehavior' => array(
- * 				'class' => 'ext.EFilterRawModelDataBehavior.EFilterRawModelDataBehavior', // or wherever this class is located in your app
+ * 			'LDFilterRawModelDataBehavior' => array(
+ * 				'class' => 'ext.LDFilterRawModelDataBehavior.LDFilterRawModelDataBehavior', // or wherever this class is located in your app
  * 				'callbacks' => array() // optionally specify this attribute if you always need custom comparisons done on certain attributes in your data 
  * 			)
  * 		);
@@ -26,7 +26,7 @@
  * </pre>
  * 
  * When you want to filter an array of data set the attribute values of your model as you would normally when filtering data using {@link CActiveDataProvider}.
- * Then call the {@see EFilterRawModelDataBehavior::filter()} method that this behavior has added to your model. Pass the method your raw data and
+ * Then call the {@see LDFilterRawModelDataBehavior::filter()} method that this behavior has added to your model. Pass the method your raw data and
  * the filtered form of that data will be returned to you. 
  * 
  * A basic example using a {@link CArrayDataProvider} with a {@link CGridView}:
@@ -65,8 +65,8 @@
  * 	2. There is a partial match between the string value of the associated model attribute's value and the raw data value.
  * 
  * If you need to specify different comparisons for your data you may optionally specify custom callbacks for comparing attributes 
- * by setting the {@see EFilterRawModelDataBehavior::$callbacks} property. This property can be set in the behavior's configuration or 
- * can be passed on the fly to the {@see EFilterRawModelDataBehavior::filter()} method.
+ * by setting the {@see LDFilterRawModelDataBehavior::$callbacks} property. This property can be set in the behavior's configuration or 
+ * can be passed on the fly to the {@see LDFilterRawModelDataBehavior::filter()} method.
  * If a callback is set for a particular attribute the return value of your defined callback will be used to determine whether the 
  * row should be filtered or not.
  * Your callback must strictly return false for the data row to be filtered. Any oher value will not cause the data row to be filtered.
@@ -75,14 +75,14 @@
  * 	2. The model's attribute's value
  * 	3. The associated raw data row's attribute's value
  * 
- * Also by default the {@see EFilterRawModelDataBehavior::filter()} method will only compare safe attribute values. This can be disabled
- * by passing false as the argument to the safeOnly parameter of the {@see EFilterRawModelDataBehavior::filter()} method.
+ * Also by default the {@see LDFilterRawModelDataBehavior::filter()} method will only compare safe attribute values. This can be disabled
+ * by passing false as the argument to the safeOnly parameter of the {@see LDFilterRawModelDataBehavior::filter()} method.
  * 
  * @property $callbacks array a list of comparison callbacks in the form array('attribute name' => 'callable')
  * 
  * @author Louis DaPrato <l.daprato@gmail.com>
  */
-class EFilterRawModelDataBehavior extends CModelBehavior
+class LDFilterRawModelDataBehavior extends CModelBehavior
 {
 	
 	/**
@@ -103,7 +103,7 @@ class EFilterRawModelDataBehavior extends CModelBehavior
 	 * 
 	 * @param array $data The data to be filtered
 	 * @param boolean $safeOnly Whether only safe attributes should be considered when filtering the data. Defaults to true.
-	 * @param boolean $callbacks A list of comparison callbacks in the form array('attribute name' => 'callable') {@see EFilterRawModelDataBehavior::$callbacks}
+	 * @param boolean $callbacks A list of comparison callbacks in the form array('attribute name' => 'callable') {@see LDFilterRawModelDataBehavior::$callbacks}
 	 * @return array The filtered data
 	 */
 	public function filter(array $data, $safeOnly = true, $callbacks = null)

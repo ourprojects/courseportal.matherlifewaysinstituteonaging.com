@@ -1,6 +1,6 @@
 <?php
 /**
- * EJuiTabs class file
+ * LDJuiTabs class file
  * 
  * @author Louis DaPrato <l.daprato@gmail.com>
  */
@@ -14,7 +14,7 @@ Yii::import('zii.widgets.jui.CJuiTabs');
  * 
  * @author Louis DaPrato <l.daprato@gmail.com>
  */
-class EJuiTabs extends CJuiTabs
+class LDJuiTabs extends CJuiTabs
 {
 	/**
 	 * @var boolean If true tabs will be laid out vertical otherwise they will be horizontal (default).

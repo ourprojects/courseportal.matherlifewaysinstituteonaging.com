@@ -11,14 +11,15 @@ class RouteController extends TController
 	public function filters()
 	{
 		return array_merge(parent::filters(), array(
-				'ajaxOnly + ajaxIndex, ajaxView',
-				array(
-						'ext.EForwardActionFilter.EForwardActionFilter + index, route',
-						'map' => array(
-								'index' => 'ajaxIndex + ajax',
-								'route' => 'ajaxView + ajax',
-						)
-				)
+			'ajaxOnly + ajaxIndex, ajaxView',
+			array(
+				'ext.LDConditionChainFilter.LDForwardActionFilter.LDForwardActionFilter + index',
+				'conditions' => 'ajaxIndex + ajax'
+			),
+			array(
+				'ext.LDConditionChainFilter.LDForwardActionFilter.LDForwardActionFilter + view',
+				'conditions' => 'ajaxView + ajax'
+			)
 		));
 	}
 

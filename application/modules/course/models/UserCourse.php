@@ -51,7 +51,7 @@ class UserCourse extends CActiveRecord
 				array('course_id', 'exist', 'attributeName' => 'id', 'className' => 'Course'),
 
 				array('+course_id+user_id',
-						'ext.ECompositeUniqueValidator.ECompositeUniqueValidator',
+						'ext.LDCompositeUniqueValidator.LDCompositeUniqueValidator',
 						'message' => t('{attribute} "{value}" has already been added to this user.'),
 				),
 

@@ -57,7 +57,7 @@ class CourseObjective extends CActiveRecord
 				array('text', 'length', 'max' => 65535),
 				array('course_id', 'exist', 'attributeName' => 'id', 'className' => 'Course'),
 				array('+rank+course_id',
-						'ext.ECompositeUniqueValidator.ECompositeUniqueValidator',
+						'ext.LDCompositeUniqueValidator.LDCompositeUniqueValidator',
 						'message' => t('An objective with {attribute} "{value}" already exists for this course.'),
 				),
 				array('id, course_id, rank, text', 'safe', 'on' => 'search'),

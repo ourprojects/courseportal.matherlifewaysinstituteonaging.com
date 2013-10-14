@@ -11,16 +11,20 @@ class LanguageController extends TController
 	public function filters()
 	{
 		return array_merge(parent::filters(), array(
-				'ajaxOnly + ajaxIndex, ajaxView, ajaxCreate',
-				'postOnly + create, ajaxCreate',
-				array(
-						'ext.EForwardActionFilter.EForwardActionFilter + index, view, create',
-						'map' => array(
-								'index' => 'ajaxIndex + ajax',
-								'view' => 'ajaxView + ajax',
-								'create' => 'ajaxCreate + create, post',
-						)
-				)
+			'ajaxOnly + ajaxIndex, ajaxView, ajaxCreate',
+			'postOnly + create, ajaxCreate',
+			array(
+				'ext.LDConditionChainFilter.LDForwardActionFilter.LDForwardActionFilter + index',
+				'conditions' => 'ajaxIndex + ajax'
+			),
+			array(
+				'ext.LDConditionChainFilter.LDForwardActionFilter.LDForwardActionFilter + view',
+				'conditions' => 'ajaxView + ajax'
+			),
+			array(
+				'ext.LDConditionChainFilter.LDForwardActionFilter.LDForwardActionFilter + create',
+				'conditions' => 'ajaxCreate + ajax'
+			)
 		));
 	}
 

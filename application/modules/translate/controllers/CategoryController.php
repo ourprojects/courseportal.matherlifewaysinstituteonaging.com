@@ -11,14 +11,15 @@ class CategoryController extends TController
 	public function filters()
 	{
 		return array_merge(parent::filters(), array(
-				'ajaxOnly + ajaxIndex, ajaxView',
-				array(
-						'ext.EForwardActionFilter.EForwardActionFilter + index, view',
-						'map' => array(
-								'index' => 'ajaxIndex + ajax',
-								'view' => 'ajaxView + ajax',
-						)
-				)
+			'ajaxOnly + ajaxIndex, ajaxView',
+			array(
+				'ext.LDConditionChainFilter.LDForwardActionFilter.LDForwardActionFilter + index',
+				'conditions' => 'ajaxIndex + ajax'
+			),
+			array(
+				'ext.LDConditionChainFilter.LDForwardActionFilter.LDForwardActionFilter + view',
+				'conditions' => 'ajaxView + ajax'
+			)
 		));
 	}
 

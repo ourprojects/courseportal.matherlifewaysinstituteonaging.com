@@ -11,14 +11,15 @@ class MessageController extends TController
 	public function filters()
 	{
 		return array_merge(parent::filters(), array(
-				'ajaxOnly + ajaxIndex',
-				array(
-						'ext.EForwardActionFilter.EForwardActionFilter + index, view',
-						'map' => array(
-								'index' => 'ajaxIndex + ajax',
-								'view' => 'update'
-						)
-				)
+			'ajaxOnly + ajaxIndex',
+			array(
+				'ext.LDConditionChainFilter.LDForwardActionFilter.LDForwardActionFilter + index',
+				'conditions' => 'ajaxIndex + ajax'
+			),
+			array(
+				'ext.LDConditionChainFilter.LDForwardActionFilter.LDForwardActionFilter + view',
+				'conditions' => 'update'
+			)
 		));
 	}
 

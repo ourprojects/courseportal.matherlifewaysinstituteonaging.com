@@ -59,8 +59,8 @@ class AuthItem extends CActiveRecord
 				'ERememberFiltersBehavior' => array(
 						'class' => 'ext.ERememberFiltersBehavior.ERememberFiltersBehavior',
 				),
-				'EFilterRawModelDataBehavior' => array(
-						'class' => 'ext.EFilterRawModelDataBehavior.EFilterRawModelDataBehavior',
+				'LDFilterRawModelDataBehavior' => array(
+						'class' => 'ext.LDFilterRawModelDataBehavior.LDFilterRawModelDataBehavior',
 				)
 		);
 	}

@@ -20,23 +20,46 @@ class AuthItemController extends SBaseController
 				parent::filters(),
 				array(
 					array(
-							'ext.EForwardActionFilter.EForwardActionFilter',
-							'map' => array(
-									'authItem' => array('read + get', 'create + post', 'update + put', 'delete + delete'),
-							)
+						'ext.LDConditionChainFilter.LDForwardActionFilter.LDForwardActionFilter + authItem',
+						'conditions' => array(
+							'read + get', 
+							'create + post', 
+							'update + put', 
+							'delete + delete'
+						)
 					),
 					array(
-						'ext.ERequestMethodFilter.ERequestMethodFilter',
-						'config' => array(
-								'get' => 'index, read',
-								'put' => 'update',
-								'post' => 'create',
-								'delete' => 'delete',
-								'ajax' => 'ajax'
-						)
+						'ext.LDConditionChainFilter.LDConditionChainFilter + index, read',
+						'conditions' => '+ get',
+						'onNoMatchCallback' => array($this, 'onInvalidRequest')
+					),
+					array(
+						'ext.LDConditionChainFilter.LDConditionChainFilter + update',
+						'conditions' => '+ put',
+						'onNoMatchCallback' => array($this, 'onInvalidRequest')
+					),
+					array(
+						'ext.LDConditionChainFilter.LDConditionChainFilter + create',
+						'conditions' => '+ post',
+						'onNoMatchCallback' => array($this, 'onInvalidRequest')
+					),
+					array(
+						'ext.LDConditionChainFilter.LDConditionChainFilter + delete',
+						'conditions' => '+ delete',
+						'onNoMatchCallback' => array($this, 'onInvalidRequest')
+					),
+					array(
+						'ext.LDConditionChainFilter.LDConditionChainFilter + ajax',
+						'conditions' => '+ ajax',
+						'onNoMatchCallback' => array($this, 'onInvalidRequest')
 					),
 				)
 		);
+	}
+	
+	public function onInvalidRequest()
+	{
+		throw new CHttpException(400, Yii::t('srbac', 'Your request is invalid.'));
 	}
 
 	/**
@@ -164,7 +187,7 @@ class AuthItemController extends SBaseController
 	public function actionAuthItem()
 	{
 		// Placeholder action for creating restful like behavior when request are made to this route.
-		// See EForwardActionFilter configuration to see where this action will be forwarded based on request method.
+		// See LDForwardActionFilter configuration to see where this action will be forwarded based on request method.
 	}
 
 	/** Begin custom auth item actions **/

@@ -43,7 +43,7 @@ class RecommendedActivityDimension extends CActiveRecord
 			array('activity_id', 'exist', 'attributeName' => 'id', 'className' => 'Activity', 'except' => 'search'),
 			array('dimension_id', 'exist', 'attributeName' => 'id', 'className' => 'Dimension', 'except' => 'search'),
 			array('+activity_id+dimension_id',
-					'ext.ECompositeUniqueValidator.ECompositeUniqueValidator',
+					'ext.LDCompositeUniqueValidator.LDCompositeUniqueValidator',
 					'message' => t('The dimension with ID "{value}" has already been recommended for this activity.'),
 			),
 			array('activity_id, dimension_id', 'safe', 'on' => 'search'),
