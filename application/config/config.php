@@ -173,6 +173,8 @@ return array(
 				'forumDb' => require('dbPhpBB.php'),
 
 				'urlManager' => array(
+						'class' => 'translate.components.TUrlManager',
+						'translatorComponentId' => 'translate',
 						'urlFormat' => 'path',
 						'showScriptName' => false,
 						'rules' => require('routes.php'),

@@ -1,12 +1,6 @@
 <?php 
 
 return array(
-		// Translation URL component handler
-		array(
-				'class' => 'application.modules.translate.components.TranslateUrlRule',
-				'translateComponentId' => 'translate',
-		),
-		
 		// API routes
 		array('<controller>/create', 'pattern' => '<controller:\w+>/<key_id:\d+>/<key:[\w\-,_]+>', 'verb' => 'POST'),
 		array('<controller>/read', 'pattern' => '<controller:\w+>/<key_id:\d+>/<key:[\w\-,_]+>', 'verb' => 'GET'),

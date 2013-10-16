@@ -106,6 +106,12 @@ class TranslateModule extends CWebModule {
      */
     public static function t($message, $params = array()) 
     {
-        return Yii::t(TTranslator::ID, $message, $params);
+    	if(!Yii::app()->hasComponent(TTranslator::ID))
+    	{
+    		$messageSource = new TMessageSourceLanguageWrapper(self::translator()->getMessageSourceComponent());
+    		$messageSource->setLanguage('en');
+    		Yii::app()->setComponent(TTranslator::ID, $messageSource);
+    	}
+        return Yii::t(TTranslator::ID, $message, $params, TTranslator::ID);
     }
 }

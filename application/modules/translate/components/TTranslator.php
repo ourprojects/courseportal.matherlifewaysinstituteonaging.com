@@ -522,7 +522,7 @@ class TTranslator extends CApplicationComponent
 	 */
 	public function missingTranslation($event)
 	{
-		$event->message = $this->translate($event->category, $event->message, $event->language, $this->useTransaction);
+		$event->message = $this->translate($event->category, $event->message, $event->language, $event->sender, $this->useTransaction);
 	}
 
 	/**
@@ -535,13 +535,11 @@ class TTranslator extends CApplicationComponent
 	 * @throws CException If the source message, source message category, language, or translation could not be added to the message source.
 	 * @return string The translation for the message or the message it self if either the translation failed or the target language was the same as source language.
 	 */
-	public function translate($category, $message, $language, $useTransaction = true)
+	public function translate($category, $message, $language, $source, $useTransaction = true)
 	{
 		if(trim($message) !== '')
 		{
-			$source = $this->getMessageSourceComponent();
-
-			$sourceLanguage = $category === self::ID ? 'en' : $source->getLanguage();
+			$sourceLanguage = $source->getLanguage();
 
 			if($source->forceTranslation || $language !== $sourceLanguage)
 			{
