@@ -18,6 +18,7 @@ $this->widget('zii.widgets.grid.CGridView',
 								'viewButtonLabel' => TranslateModule::t('View Details'),
 								'viewButtonUrl' => 'Yii::app()->getController()->createUrl("route/view", array("id" => $data->id))',
 								'deleteButtonUrl' => 'Yii::app()->getController()->createUrl("route/delete", array("id" => $data->id))',
+							'deleteConfirmation' => TranslateModule::t('Are you certain that you would like to delete this route?')
 						)
 				),
 		)
