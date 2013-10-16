@@ -11,7 +11,7 @@ class Avatar extends CActiveRecord
 {
 
 	const DEFAULT_NAME = 'default.png';
-	const AVATARS_PATH_ALIAS = 'uploads.avatars';
+	const AVATARS_PATH_ALIAS = 'application.uploads.avatars';
 	const MAX_WIDTH = 100;
 	const MAX_HEIGHT = 100;
 	const MAX_FILE_SIZE = 16777216; // 16MB
@@ -59,7 +59,7 @@ class Avatar extends CActiveRecord
 	{
 		return array_merge(parent::behaviors(),
 				array(
-						'extendedFeatures' => array('class' => 'behaviors.EModelBehaviors'),
+						'extendedFeatures' => array('class' => 'application.behaviors.EModelBehaviors'),
 						'EActiveRecordAutoQuoteBehavior' => array(
 								'class' => 'ext.EActiveRecordAutoQuoteBehavior.EActiveRecordAutoQuoteBehavior',
 						)

@@ -597,7 +597,7 @@ foreach(array(
 				<p>{t}Often we have trouble paying attention simply because we are not motivated to do so. Sometimes we don’t admit this and just get mad at ourselves for not being able to pay attention.{/t}</p>
 				<h5>{t}Get Plenty of Rest -{/t}</h5>
 				<p>{t}Feeling tired, either by not sleeping well or from mental fatigue, can limit our attention. People who do not get enough, good quality sleep perform considerably worse on tests of attention, which can have a big impact on important tasks such as driving.{/t}</p>
-				<p>{t}Finally, it is also important to remember that emotions can interrupt our attention! Feeling anxious or being distracted by self-criticism or worried thoughts is often one of the biggest robbers of our attention. So learning to relax is also very important for improving attention. You will learn more about caring for your emotions and dealing with stress in the coming modules.{/t}</p>
+				<p>{t}Finally, it is also important to remember that emotions can interrupt our attention! Feeling anxious or being distracted by self-criticism or worried thoughts is often one of the biggest robbers of our attention. So learning to relax is also very important for improving attention. You will learn more about caring for your emotions and dealing with stress in the coming {/t}</p>
 			</div>
 			<div class="buttons">
 				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>

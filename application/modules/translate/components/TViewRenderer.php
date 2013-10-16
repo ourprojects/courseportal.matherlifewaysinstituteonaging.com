@@ -3,8 +3,6 @@
 class TViewRenderer extends CViewRenderer
 {
 	
-	const ID = 'modules.translate.TViewRenderer';
-	
 	private $_viewCompiler;
 	
 	/**
@@ -15,8 +13,8 @@ class TViewRenderer extends CViewRenderer
 	{
 		if(!isset($this->_viewCompiler))
 		{
-			Yii::import('modules.translate.commands.TViewCompileCommand');
-			$this->_viewCompiler = new TViewCompileCommand(TViewCompileCommand::ID, new CConsoleCommandRunner());
+			Yii::import('translate.commands.TViewCompileCommand');
+			$this->_viewCompiler = new TViewCompileCommand(TranslateModule::ID.'.TViewCompileCommand', new CConsoleCommandRunner());
 		}
 		
 		return $this->_viewCompiler;

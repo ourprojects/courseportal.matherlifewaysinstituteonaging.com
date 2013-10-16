@@ -150,7 +150,7 @@ $this->widget(
 	<!-- add in input boxes for name,title, corporation, email, (optional, but no note) -->
 	<?php 
 	$hrEmployerSurvey = $this->createWidget(
-			'modules.surveyor.widgets.Survey',
+			'surveyor.widgets.Survey',
 			array(
 					'id' => 'hrEmployer',
 					'options' => array(
@@ -159,7 +159,7 @@ $this->widget(
 			)
 	);
 	$caregiverSurvey = $this->createWidget(
-			'modules.surveyor.widgets.Survey',
+			'surveyor.widgets.Survey',
 			array(
 					'id' => 'caregiver',
 					'options' => array(
@@ -210,7 +210,7 @@ $this->widget(
 	</div>
 	<?php 
 		$this->createWidget(
-			'modules.surveyor.widgets.Survey',
+			'surveyor.widgets.Survey',
 			array(
 					'id' => 'workingCaregiver',
 					'options' => array(

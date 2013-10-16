@@ -52,7 +52,7 @@ echo CHtml::encode($this->pageTitle);
 				<?php echo t(Yii::app()->name); ?>
 			</div>
 			<div id="language-menu">
-				<?php $this->widget('modules.translate.widgets.acceptedLanguage.ALSelector'); ?>
+				<?php $this->widget('translate.widgets.acceptedLanguage.ALSelector'); ?>
 			</div>
 			<?php if(Yii::app()->getUser()->checkAccess('Translate.MissingOnPage') && Yii::app()->getComponent('translate')->hasMissingTranslations()): ?>
 			<div id="translate-button">

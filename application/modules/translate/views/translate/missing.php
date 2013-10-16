@@ -11,11 +11,11 @@ $google = !empty(TranslateModule::translator()->googleApiKey);
 <?php
 if($google)
 {
-	echo CHtml::link(TranslateModule::t('Translate all with google translate'), '#', array('id' => TTranslator::ID."-google-translateall"));
+	echo CHtml::link(TranslateModule::t('Translate all with google translate'), '#', array('id' => TranslateModule::ID."-google-translateall"));
 	echo CHtml::script(
-			'$("#'.TTranslator::ID.'-google-translateall").click(function(){' .
+			'$("#'.TranslateModule::ID.'-google-translateall").click(function(){' .
 			'var messages=[];' .
-			'$("'.TTranslator::ID.'-google-message").each(function(count){' .
+			'$("'.TranslateModule::ID.'-google-message").each(function(count){' .
 			'messages[count]=$(this).html();' .
 			'});' .
 			CHtml::ajax(array(
@@ -28,10 +28,10 @@ if($google)
 							'message' => 'js:messages'
 					),
 					'success' => 'js:function(response){' .
-					'$("'.TTranslator::ID.'-google-translation").each(function(count){' .
+					'$("'.TranslateModule::ID.'-google-translation").each(function(count){' .
 					'$(this).val(response[count]);' .
 					'});' .
-					'$("'.TTranslator::ID.'-google-button, #'.TTranslator::ID.'-google-translateall").hide();' .
+					'$("'.TranslateModule::ID.'-google-button, #'.TranslateModule::ID.'-google-translateall").hide();' .
 					'},',
 					'error' => 'js:function(xhr){alert(xhr.statusText);}',
 			)) .
@@ -40,8 +40,8 @@ if($google)
 	if(Yii::app()->getRequest()->isAjaxRequest)
 	{
 		echo CHtml::script(
-                '$("#'.TTranslator::ID.'-pager a").click(function(){' .
-                    '$dialog = $("#'.TTranslator::ID.'-dialog").load($(this).attr("href"));' .
+                '$("#'.TranslateModule::ID.'-pager a").click(function(){' .
+                    '$dialog = $("#'.TranslateModule::ID.'-dialog").load($(this).attr("href"));' .
                     'return false;' .
                 '});');
 	}
@@ -53,7 +53,7 @@ if($google)
 	$this->widget('zii.widgets.CListView', array(
                 'dataProvider' => new CArrayDataProvider($messages),
                 'pager' => array(
-                    'id' => TTranslator::ID.'-pager',
+                    'id' => TranslateModule::ID.'-pager',
                     'class' => 'CLinkPager',
                 ),
                 'viewData' => array(

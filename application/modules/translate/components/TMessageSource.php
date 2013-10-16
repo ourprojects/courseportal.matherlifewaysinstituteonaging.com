@@ -3,8 +3,6 @@
 class TMessageSource extends CDbMessageSource
 {
 	
-	const ID = 'modules.translate.TMessageSource';
-	
 	/**
 	 * @var string the name of the language table. Defaults to 'translate_language'.
 	 */
@@ -28,7 +26,7 @@ class TMessageSource extends CDbMessageSource
 	/**
 	 * @var string The default category to assign messages when the category supplied via the translate functions is an empty string.
 	 */
-	public $messageCategory = self::ID;
+	public $messageCategory = TranslateModule::ID;
 	
 	/**
 	 * @var boolean If true each call to the translate method will be profiled.
@@ -52,7 +50,7 @@ class TMessageSource extends CDbMessageSource
 	
 	protected function getCacheKey($category, $language)
 	{
-		return self::ID.'.messages.'.$category.'.'.$language;
+		return TranslateModule::ID.'.messages.'.$category.'.'.$language;
 	}
 	
 	/**
@@ -312,7 +310,7 @@ class TMessageSource extends CDbMessageSource
 	public function translate($category, $message, $language = null)
 	{
 		if($this->enableProfiling)
-			Yii::beginProfile(self::ID.'.translate()', self::ID);
+			Yii::beginProfile(TranslateModule::ID.'.'.get_class($this).'.translate()', TranslateModule::ID);
 		
 		if($category === null)
 			$category = $this->messageCategory;
@@ -320,7 +318,7 @@ class TMessageSource extends CDbMessageSource
 		$translation = parent::translate($category, $message, $language);
 		
 		if($this->enableProfiling)
-			Yii::endProfile(self::ID.'.translate()', self::ID);
+			Yii::endProfile(TranslateModule::ID.'.'.get_class($this).'.translate()', TranslateModule::ID);
 		
 		return $translation;
 	}

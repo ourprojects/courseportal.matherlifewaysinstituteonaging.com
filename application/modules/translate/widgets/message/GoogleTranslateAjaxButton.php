@@ -8,8 +8,6 @@
 class GoogleTranslateAjaxButton extends CWidget
 {
 
-	const ID = 'GoogleTranslateAjaxButton';
-
 	public $label = 'Google Translate';
 
 	public $message;
@@ -35,10 +33,9 @@ class GoogleTranslateAjaxButton extends CWidget
 		}
 		else
 		{
-			throw new CException(Yii::t(
-					self::ID,
-					self::ID.' - Error: Couldn\'t find assets to publish. Please make sure the directory exists and is readable {dir_name}',
-					array('{dir_name}' => $assetsDir))
+			throw new CException(TranslateModule::t(
+					'{class_name} - Error: Couldn\'t find assets to publish. Please make sure the directory exists and is readable {dir_name}',
+					array('{class_name}' => get_class($this), '{dir_name}' => $assetsDir))
 			);
 		}
 

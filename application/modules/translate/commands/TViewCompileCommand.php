@@ -7,15 +7,6 @@
  */
 class TViewCompileCommand extends CConsoleCommand
 {
-
-	/**
-	 * An ID used to uniquely identify things used by this component.
-	 *
-	 * @name TTranslator::ID
-	 * @type string
-	 * @const string
-	 */
-	const ID = 'modules.translate.commands.TViewCompileCommand';
 	
 	/**
 	 * The regular expression used to extract translate tags inside views.
@@ -57,19 +48,19 @@ class TViewCompileCommand extends CConsoleCommand
 			{
 				if(mkdir($compiledPathDir, $filePermission, true) === false)
 				{
-					throw new CException(Yii::t(self::ID, "The compiled view directory '{dir}' does not exist and could not be created.", array('{dir}' => $compiledPathDir)));
+					throw new CException(TranslateModule::t("The compiled view directory '{dir}' does not exist and could not be created.", array('{dir}' => $compiledPathDir)));
 				}
 			}
 			
 			$sourceViewContents = file_get_contents($sourcePath);
 			if($sourceViewContents === false)
 			{
-				throw new CException(Yii::t(self::ID, "Unable to read the contents of the source view at path '{path}'.", array('{path}' => $sourcePath)));
+				throw new CException(TranslateModule::t("Unable to read the contents of the source view at path '{path}'.", array('{path}' => $sourcePath)));
 			}
 	
 			if(file_put_contents($compiledPath, preg_replace(self::TRANSLATE_TAG_REGEX, '$3', $sourceViewContents)) === false)
 			{
-				throw new CException(Yii::t(self::ID, "Failed to create compiled view file at path '{path}'.", array('{path}' => $compiledPath)));
+				throw new CException(TranslateModule::t("Failed to create compiled view file at path '{path}'.", array('{path}' => $compiledPath)));
 			}
 			@chmod($compiledPath, $filePermission);
 		}
@@ -109,24 +100,24 @@ class TViewCompileCommand extends CConsoleCommand
 
 			if($view['id'] === null)
 			{
-				throw new CException(Yii::t(self::ID, "The source view with path '{path}' could not be found or added to the view source.", array('{path}' => $sourcePath)));
+				throw new CException(TranslateModule::t("The source view with path '{path}' could not be found or added to the view source.", array('{path}' => $sourcePath)));
 			}
 
 			if($view['route_id'] === null)
 			{
-				throw new CException(Yii::t(self::ID, "The source view with path '{path}' could not be associated with the route {route}.", array('{path}' => $sourcePath, '{route}' => $route)));
+				throw new CException(TranslateModule::t("The source view with path '{path}' could not be associated with the route {route}.", array('{path}' => $sourcePath, '{route}' => $route)));
 			}
 
 			if($view['language_id'] === null)
 			{
-				throw new CException(Yii::t(self::ID, "The language '{language}' could not be found or added to the view source.", array('{language}' => $language)));
+				throw new CException(TranslateModule::t("The language '{language}' could not be found or added to the view source.", array('{language}' => $language)));
 			}
 
 			if($view['path'] === null)
 			{
 				if($viewSource->addView($view['id'], $compiledPath, $view['language_id']) === null)
 				{
-					Yii::log("The source view with source path '$sourcePath' and compiled path '$compiledPath' could not be added to the view source. This source view will be recompiled for each request until this problem is fixed...", CLogger::LEVEL_ERROR, self::ID);
+					Yii::log("The source view with source path '$sourcePath' and compiled path '$compiledPath' could not be added to the view source. This source view will be recompiled for each request until this problem is fixed...", CLogger::LEVEL_ERROR, TranslateModule::ID);
 				}
 			}
 			else if($view['path'] !== $compiledPath && file_exists($view['path']))
@@ -138,14 +129,14 @@ class TViewCompileCommand extends CConsoleCommand
 			{
 				if(mkdir($compiledPathDir, $filePermission, true) === false)
 				{
-					throw new CException(Yii::t(self::ID, "The compiled view directory '{dir}' does not exist and could not be created.", array('{dir}' => $compiledPathDir)));
+					throw new CException(TranslateModule::t("The compiled view directory '{dir}' does not exist and could not be created.", array('{dir}' => $compiledPathDir)));
 				}
 			}
 
 			$subject = file_get_contents($sourcePath);
 			if($subject === false)
 			{
-				throw new CException(Yii::t(self::ID, "Unable to read the contents of the source view at path '{path}'.", array('{path}' => $sourcePath)));
+				throw new CException(TranslateModule::t("Unable to read the contents of the source view at path '{path}'.", array('{path}' => $sourcePath)));
 			}
 
 			// Extract messages
@@ -175,7 +166,7 @@ class TViewCompileCommand extends CConsoleCommand
 					{
 						if($confirmedMessages[$message] = $viewSource->addSourceMessageToView($view['id'], $message, true) === null)
 						{
-							Yii::log("Failed to add source message '$message' to view with id '{$view['id']}'.", CLogger::LEVEL_ERROR, self::ID);
+							Yii::log("Failed to add source message '$message' to view with id '{$view['id']}'.", CLogger::LEVEL_ERROR, TranslateModule::ID);
 						}
 					}
 				}
@@ -189,7 +180,7 @@ class TViewCompileCommand extends CConsoleCommand
 			// Replace messages with respective translations in source and write to compiled path.
 			if(file_put_contents($compiledPath, str_replace($messages[0], $messages[3], $subject)) === false)
 			{
-				throw new CException(Yii::t(self::ID, "Failed to create translated view file at path '{path}'.", array('{path}' => $compiledPath)));
+				throw new CException(TranslateModule::t("Failed to create translated view file at path '{path}'.", array('{path}' => $compiledPath)));
 			}
 			@chmod($compiledPath, $filePermission);
 

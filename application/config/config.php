@@ -15,14 +15,6 @@ return array(
 				'log'
 		),
 
-		'aliases' => array(
-				'modules' => APP_DIR . DIRECTORY_SEPARATOR . 'modules',
-				'helpers' => APP_DIR . DIRECTORY_SEPARATOR . 'helpers',
-				'filters' => APP_DIR . DIRECTORY_SEPARATOR . 'filters',
-				'uploads' => APP_DIR . DIRECTORY_SEPARATOR . 'uploads',
-				'behaviors' => APP_DIR . DIRECTORY_SEPARATOR . 'behaviors',
-		),
-
 		// autoloaded files
 		'import' => array(
 				'application.core.*',
@@ -32,7 +24,7 @@ return array(
 				'application.components.*',
 				'application.helpers.*',
 				'ext.yii-mail.*',
-				'modules.translate.TranslateModule'
+				'application.modules.translate.TranslateModule'
 		),
 
 		// configured modules
@@ -66,7 +58,7 @@ return array(
 		'components' => array(
 
 				'authManager'=>array(
-						'class' => 'modules.srbac.components.EDbAuthManager',
+						'class' => 'srbac.components.EDbAuthManager',
 						'itemTable' => '{{auth_item}}',
 						'itemChildTable' => '{{auth_item_child}}',
 						'assignmentTable' => '{{auth_assignment}}',
@@ -86,8 +78,10 @@ return array(
 								)
 				),
 
+				// Begin translation system components
+
 				'messages' => array(
-						'class' => 'modules.translate.components.TMessageSource',
+						'class' => 'translate.components.TMessageSource',
 						'forceTranslation' => false,
 						'onMissingTranslation' => array('TranslateModule', 'missingTranslation'),
 						'acceptedLanguageTable' => '{{translate_accepted_language}}',
@@ -99,7 +93,7 @@ return array(
 				),
 
 				'views' => array(
-						'class' => 'modules.translate.components.TViewSource',
+						'class' => 'translate.components.TViewSource',
 						'onMissingViewTranslation' => array('TranslateModule', 'missingViewTranslation'),
 						'routeTable' => '{{translate_route}}',
 						'routeViewTable' => '{{translate_route_view}}',
@@ -111,15 +105,25 @@ return array(
 				),
 
 				'translate' => array(
-						'class' => 'modules.translate.components.TTranslator',
+						'class' => 'translate.components.TTranslator',
 						'googleApiKey' => 'AIzaSyD5Xxt_4VKM13pF9uQdcULK4eHuTe7w940',
 						'autoTranslate' => true,
 						'viewSource' => 'views',
 				),
 
 				'viewRenderer' => array(
-					'class' => 'modules.translate.components.TViewRenderer',
+					'class' => 'translate.components.TViewRenderer',
 				),
+
+				'urlManager' => array(
+					'class' => 'translate.components.TUrlManager',
+					'translatorComponentId' => 'translate',
+					'urlFormat' => 'path',
+					'showScriptName' => false,
+					'rules' => require('routes.php'),
+				),
+
+				// End translation system components
 
 				'cache' => array(
 					'class' => 'system.caching.CApcCache'
@@ -171,14 +175,6 @@ return array(
 				'db' => require('db.php'),
 
 				'forumDb' => require('dbPhpBB.php'),
-
-				'urlManager' => array(
-						'class' => 'translate.components.TUrlManager',
-						'translatorComponentId' => 'translate',
-						'urlFormat' => 'path',
-						'showScriptName' => false,
-						'rules' => require('routes.php'),
-				),
 				
 				'assetManager' => array(
 					'forceCopy' => defined('YII_DEBUG') && YII_DEBUG
@@ -204,7 +200,7 @@ return array(
 								// Translation logging
 								array(
 										'class' => 'CFileLogRoute',
-										'categories' => 'modules.translate.*',
+										'categories' => 'translate.*',
 										'logFile' => 'translate.log',
 										'levels' => defined('YII_DEBUG') && YII_DEBUG ? '' : 'error, warning',
 								),

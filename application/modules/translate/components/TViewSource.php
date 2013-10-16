@@ -8,8 +8,6 @@
 class TViewSource extends CApplicationComponent
 {
 	
-	const ID = 'modules.translate.TViewSource';
-	
 	/**
 	 * @var string The name of the routes database table.
 	 */
@@ -80,7 +78,7 @@ class TViewSource extends CApplicationComponent
 			$this->_db = Yii::app()->getComponent($this->connectionID);
 			if(!$this->_db instanceof CDbConnection)
 			{
-				throw new CException(Yii::t(self::ID, 'TViewSource.connectionID is invalid. Please make sure "{id}" refers to a valid database application component.',
+				throw new CException(TranslateModule::t('TViewSource.connectionID is invalid. Please make sure "{id}" refers to a valid database application component.',
 						array('{id}' => $this->connectionID)));
 			}
 		}
@@ -106,7 +104,7 @@ class TViewSource extends CApplicationComponent
 	 */
 	protected function getCacheKey($route, $language)
 	{
-		return self::ID.'.views.'.$route.'.'.$language;
+		return TranslateModule::ID.'.views.'.$route.'.'.$language;
 	}
 
 	/**
@@ -368,10 +366,10 @@ class TViewSource extends CApplicationComponent
 	public function translate($context, $path, $language = null)
 	{
 		if($this->enableProfiling)
-			Yii::beginProfile(self::ID.'.translate()', self::ID);
+			Yii::beginProfile(TranslateModule::ID.'.'.get_class($this).'.translate()', TranslateModule::ID);
 		
 		if(!is_file($path) || ($realPath = realpath($path)) === false)
-			throw new CException(Yii::t(self::ID, 'Source view file "{file}" does not exist.', array('{file}' => $path)));
+			throw new CException(TranslateModule::t('Source view file "{file}" does not exist.', array('{file}' => $path)));
 		
 		if($language === null)
 			$language = Yii::app()->getLanguage();
@@ -379,7 +377,7 @@ class TViewSource extends CApplicationComponent
 		$translatedPath = $this->translateView($context instanceof CController ?  $context->getRoute() : $context->getController()->getRoute(), $realPath, $language);
 
 		if($this->enableProfiling)
-			Yii::endProfile(self::ID.'.translate()', self::ID);
+			Yii::endProfile(TranslateModule::ID.'.'.get_class($this).'.translate()', TranslateModule::ID);
 		
 		return $translatedPath;
 	}
@@ -436,7 +434,7 @@ class TViewSource extends CApplicationComponent
  * TMissingViewTranslationEvent represents the parameter for the {@link TViewSource::onMissingViewTranslation onMissingViewTranslation} event.
  *
  * @author Louis DaPrato <l.daprato@gmail.com>
- * @package modules.translate
+ * @package translate
  */
 class TMissingViewTranslationEvent extends CEvent
 {

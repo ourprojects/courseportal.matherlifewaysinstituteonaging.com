@@ -14,7 +14,7 @@
 		)
 	);
 	$survey = $this->createWidget(
-		'modules.surveyor.widgets.Survey',
+		'surveyor.widgets.Survey',
 		array(
 			'id' => 'test',
 			'options' => array(

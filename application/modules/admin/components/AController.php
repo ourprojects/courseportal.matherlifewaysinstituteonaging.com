@@ -18,9 +18,9 @@ abstract class AController extends CController
 	public function filters()
 	{
 		return array(
-				array('filters.HttpsFilter'),
+				array('application.filters.HttpsFilter'),
 				'accessControl' => array(
-						'application.modules.srbac.components.SrbacAccessControlFilter',
+						'srbac.components.SrbacAccessControlFilter',
 						'rules' => $this->accessRules()
 				),
 		);

@@ -18,7 +18,7 @@
  */
 class UploadedFile extends CActiveRecord {
 
-	const FILES_PATH_ALIAS = 'uploads.files';
+	const FILES_PATH_ALIAS = 'application.uploads.files';
 	const MAX_FILE_SIZE = 17179869184;
 
 	public $file = null;
@@ -41,7 +41,7 @@ class UploadedFile extends CActiveRecord {
 	public function behaviors() {
 		return array_merge(parent::behaviors(),
 				array(
-						'extendedFeatures' => array('class' => 'behaviors.EModelBehaviors'),
+						'extendedFeatures' => array('class' => 'application.behaviors.EModelBehaviors'),
 						'EActiveRecordAutoQuoteBehavior' => array(
 								'class' => 'ext.EActiveRecordAutoQuoteBehavior.EActiveRecordAutoQuoteBehavior',
 						)

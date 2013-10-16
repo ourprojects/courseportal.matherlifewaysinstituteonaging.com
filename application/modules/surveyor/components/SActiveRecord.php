@@ -3,7 +3,7 @@
 class SActiveRecord extends CActiveRecord {
 
 	public function behaviors() {
-		return array_merge(parent::behaviors(), array('toArray' => array('class' => 'behaviors.EArrayBehavior')));
+		return array_merge(parent::behaviors(), array('toArray' => array('class' => 'application.behaviors.EArrayBehavior')));
 	}
 
 	public function getRequiredAttributes($safeOnly = true) {

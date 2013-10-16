@@ -14,17 +14,9 @@ return array(
 				'log'
 		),
 
-		'aliases' => array(
-				'modules' => APP_DIR . DIRECTORY_SEPARATOR . 'modules',
-				'helpers' => APP_DIR . DIRECTORY_SEPARATOR . 'helpers',
-				'filters' => APP_DIR . DIRECTORY_SEPARATOR . 'filters',
-				'uploads' => APP_DIR . DIRECTORY_SEPARATOR . 'uploads',
-				'behaviors' => APP_DIR . DIRECTORY_SEPARATOR . 'behaviors',
-		),
-
 		// autoloaded files
 		'import' => array(
-				'application.modules.translate.*',
+				'application.translate.*',
 		),
 
 		// configured modules
@@ -36,7 +28,7 @@ return array(
 		'components' => array(
 
 				'messages' => array(
-						'class' => 'modules.translate.components.TMessageSource',
+						'class' => 'translate.components.TMessageSource',
 						'forceTranslation' => false,
 						'onMissingTranslation' => array('TranslateModule', 'missingTranslation'),
 						'acceptedLanguageTable' => '{{translate_accepted_language}}',
@@ -47,7 +39,7 @@ return array(
 				),
 
 				'views' => array(
-						'class' => 'modules.translate.components.TViewSource',
+						'class' => 'translate.components.TViewSource',
 						'onMissingViewTranslation' => array('TranslateModule', 'missingViewTranslation'),
 						'routeTable' => '{{translate_route}}',
 						'routeViewTable' => '{{translate_route_view}}',
@@ -58,7 +50,7 @@ return array(
 				),
 
 				'translate' => array(
-						'class' => 'modules.translate.components.TTranslator',
+						'class' => 'translate.components.TTranslator',
 						'googleApiKey' => 'AIzaSyD5Xxt_4VKM13pF9uQdcULK4eHuTe7w940',
 						'autoTranslate' => true,
 						'managementActionFilters' => array(
@@ -76,7 +68,7 @@ return array(
 				),
 
 				'viewRenderer' => array(
-					'class' => 'modules.translate.components.TViewRenderer',
+					'class' => 'translate.components.TViewRenderer',
 					'viewSource' => 'views'
 				),
 

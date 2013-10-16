@@ -5,7 +5,18 @@
  * @author Louis DaPrato <l.daprato@gmail.com>
  *
  */
-class TranslateModule extends CWebModule {
+class TranslateModule extends CWebModule 
+{
+	
+	/**
+	 * A unique key to be used in many situations. 
+	 * Be certain your application does not contain any components with this exact name.
+	 *
+	 * @name TranslateModule::ID
+	 * @type string
+	 * @const string
+	 */
+	const ID = 'TranslateModule';
 
 	/**
 	 * @var string The name of the translate component. Change this to what ever component name you used in your configuration.
@@ -98,7 +109,7 @@ class TranslateModule extends CWebModule {
 
     /**
      * Translate some message using the translate module's configuration.
-     * This method is mainly only used by the translate module. 
+     * This method is generally should only used within the translate module. 
      * 
      * @param string $message
      * @param array $params
@@ -106,12 +117,12 @@ class TranslateModule extends CWebModule {
      */
     public static function t($message, $params = array()) 
     {
-    	if(!Yii::app()->hasComponent(TTranslator::ID))
+    	if(!Yii::app()->hasComponent(self::ID))
     	{
     		$messageSource = new TMessageSourceLanguageWrapper(self::translator()->getMessageSourceComponent());
     		$messageSource->setLanguage('en');
-    		Yii::app()->setComponent(TTranslator::ID, $messageSource);
+    		Yii::app()->setComponent(self::ID, $messageSource);
     	}
-        return Yii::t(TTranslator::ID, $message, $params, TTranslator::ID);
+        return Yii::t(self::ID, $message, $params, self::ID);
     }
 }

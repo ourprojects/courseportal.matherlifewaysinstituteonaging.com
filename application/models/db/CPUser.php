@@ -124,7 +124,7 @@ class CPUser extends CActiveRecord
 				'SrbacBehavior' => array(
 						'class' => 'srbac.components.SrbacBehavior'
 				),
-				'extendedFeatures' => array('class' => 'behaviors.EModelBehaviors'),
+				'extendedFeatures' => array('class' => 'application.behaviors.EModelBehaviors'),
 				'PBKDF2Behavior' => array(
 						'class' => 'ext.pbkdf2.PBKDF2Behavior',
 						'saltAttribute' => 'salt',

@@ -9,15 +9,6 @@ class TTranslator extends CApplicationComponent
 {
 
 	/**
-	 * A unique key to be used in many situations
-	 *
-	 * @name TTranslator::ID
-	 * @type string
-	 * @const string
-	 */
-	const ID = 'modules.translate';
-
-	/**
 	 * The maximum time in seconds to wait for a Google translate API query to complete
 	 *
 	 * @name TTranslator::GOOGLE_QUERY_TIME_LIMIT
@@ -218,7 +209,7 @@ class TTranslator extends CApplicationComponent
 	 */
 	public function getGoogleAcceptedLanguages()
 	{
-		$cacheKey = self::ID . '-cache-google-accepted-languages';
+		$cacheKey = TranslateModule::ID . '-cache-google-accepted-languages';
 		if(!isset($this->_cache[$cacheKey]))
 		{
 			if(($cache = Yii::app()->getCache()) === null || ($languages = $cache->get($cacheKey)) === false)
@@ -226,7 +217,7 @@ class TTranslator extends CApplicationComponent
 				$queryLanguages = $this->queryGoogle(array(), 'languages');
 				if($queryLanguages === false)
 				{
-					Yii::log('Failed to query Google\'s accepted languages.', CLogger::LEVEL_ERROR, self::ID);
+					Yii::log('Failed to query Google\'s accepted languages.', CLogger::LEVEL_ERROR, TranslateModule::ID);
 					return false;
 				}
 				foreach($queryLanguages->languages as $language)
@@ -249,7 +240,7 @@ class TTranslator extends CApplicationComponent
 	 */
 	public function getAcceptedLanguages()
 	{
-		$cacheKey = self::ID . '-cache-accepted-languages-' . Yii::app()->getLanguage();
+		$cacheKey = TranslateModule::ID . '-cache-accepted-languages-' . Yii::app()->getLanguage();
 		if(!isset($this->_cache[$cacheKey]))
 		{
 			if(($cache = Yii::app()->getCache()) === null || ($languages = $cache->get($cacheKey)) === false)
@@ -427,7 +418,7 @@ class TTranslator extends CApplicationComponent
 		$idMethod = 'get' . ucfirst(strtolower($category)) . 'ID';
 		if(!method_exists($this, $idMethod))
 		{
-			Yii::log("Failed to query Yii locale DB. Category '$category' is invalid.", CLogger::LEVEL_ERROR, self::ID);
+			Yii::log("Failed to query Yii locale DB. Category '$category' is invalid.", CLogger::LEVEL_ERROR, TranslateModule::ID);
 			return false;
 		}
 		if(!isset($id))
@@ -452,7 +443,7 @@ class TTranslator extends CApplicationComponent
 		if($language === null)
 			$language = Yii::app()->getLanguage();
 		$category = strtolower($category);
-		$cacheKey = self::ID . "-cache-i18n-$category-$language";
+		$cacheKey = TranslateModule::ID . "-cache-i18n-$category-$language";
 
 		if(!isset($this->_cache[$cacheKey]))
 		{
@@ -463,7 +454,7 @@ class TTranslator extends CApplicationComponent
 				$locale = Yii::app()->getLocale();
 				if(!method_exists($locale, $method) || !method_exists($locale, $idMethod))
 				{
-					Yii::log("Failed to query Yii locale DB. Category '$category' is invalid.", CLogger::LEVEL_ERROR, self::ID);
+					Yii::log("Failed to query Yii locale DB. Category '$category' is invalid.", CLogger::LEVEL_ERROR, TranslateModule::ID);
 					return false;
 				}
 				foreach(CLocale::getLocaleIds() as $id)
@@ -604,13 +595,13 @@ class TTranslator extends CApplicationComponent
 							}
 							else
 							{
-								Yii::log("Message '$message' could not be translated to '$language' by Google translate.", CLogger::LEVEL_ERROR, self::ID);
+								Yii::log("Message '$message' could not be translated to '$language' by Google translate.", CLogger::LEVEL_ERROR, TranslateModule::ID);
 								$this->addMissingTranslation($translation['id'], $category, $message, $language);
 							}
 						}
 						else
 						{
-							Yii::log("A translation for message '$message' to '$language' could not be found and automatic translations are disabled.", CLogger::LEVEL_WARNING, self::ID);
+							Yii::log("A translation for message '$message' to '$language' could not be found and automatic translations are disabled.", CLogger::LEVEL_WARNING, TranslateModule::ID);
 							$this->addMissingTranslation($translation['id'], $category, $message, $language);
 						}
 					}
@@ -817,24 +808,24 @@ class TTranslator extends CApplicationComponent
 				}
 				else
 				{
-					Yii::log('Failed to set cURL options.', CLogger::LEVEL_ERROR, self::ID);
+					Yii::log('Failed to set cURL options.', CLogger::LEVEL_ERROR, TranslateModule::ID);
 				}
 				curl_close($curl);
 			}
 			else
 			{
-				Yii::log('Failed to initialize cURL.', CLogger::LEVEL_ERROR, self::ID);
+				Yii::log('Failed to initialize cURL.', CLogger::LEVEL_ERROR, TranslateModule::ID);
 			}
 		}
 		else
 		{
-			Yii::log('cURL extension not found. Falling back to file_get_contents() to read Google translation query response.', CLogger::LEVEL_INFO, self::ID);
+			Yii::log('cURL extension not found. Falling back to file_get_contents() to read Google translation query response.', CLogger::LEVEL_INFO, TranslateModule::ID);
 			$trans = file_get_contents($url);
 		}
 
 		if(!$trans)
 		{
-			Yii::log('Failed to query Google for message translation. Args: ' . print_r($args, true), CLogger::LEVEL_WARNING, self::ID);
+			Yii::log('Failed to query Google for message translation. Args: ' . print_r($args, true), CLogger::LEVEL_WARNING, TranslateModule::ID);
 			return false;
 		}
 
@@ -842,12 +833,12 @@ class TTranslator extends CApplicationComponent
 
 		if(isset($trans['error']))
 		{
-			Yii::log('Google translate error: '.$trans['error']['code'].'. '.$trans['error']['message'], CLogger::LEVEL_ERROR, self::ID);
+			Yii::log('Google translate error: '.$trans['error']['code'].'. '.$trans['error']['message'], CLogger::LEVEL_ERROR, TranslateModule::ID);
 			return false;
 		}
 		elseif(!isset($trans['data']))
 		{
-			Yii::log('Google translate error: '.print_r($trans, true), CLogger::LEVEL_ERROR, self::ID);
+			Yii::log('Google translate error: '.print_r($trans, true), CLogger::LEVEL_ERROR, TranslateModule::ID);
 			return false;
 		}
 		else
@@ -870,7 +861,7 @@ class TTranslator extends CApplicationComponent
 		{
 			foreach($message as $name => $value)
 			{
-				$form .= CHtml::hiddenField(self::ID."-missing[$index][$name]", $value);
+				$form .= CHtml::hiddenField(TranslateModule::ID."-missing[$index][$name]", $value);
 			}
 		}
 		if($type === 'button')
@@ -891,12 +882,12 @@ class TTranslator extends CApplicationComponent
 	 */
 	public function translateDialogLink($label = 'Translate', $title = null, $type = 'link')
 	{
-		return $this->_ajaxDialog(TranslateModule::t($label), 'translate/translate/missingOnPage', $title, $type, array('data' => array(self::ID.'-missing' => $this->_messages)));
+		return $this->_ajaxDialog(TranslateModule::t($label), 'translate/translate/missingOnPage', $title, $type, array('data' => array(TranslateModule::ID.'-missing' => $this->_messages)));
 	}
 
 	private function _ajaxDialog($label, $url, $title = null, $type = 'link', $ajaxOptions = array())
 	{
-		$id = self::ID.'-dialog';
+		$id = TranslateModule::ID.'-dialog';
 
 		$ajaxOptions = array_merge(array(
 			'update' => "#$id",

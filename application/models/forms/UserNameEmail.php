@@ -8,7 +8,7 @@ class UserNameEmail extends CFormModel {
 	public function behaviors() {
 		return array_merge(parent::behaviors(),
 				array(
-						'extendedFeatures' => array('class' => 'behaviors.EModelBehaviors')
+						'extendedFeatures' => array('class' => 'application.behaviors.EModelBehaviors')
 				));
 	}
 

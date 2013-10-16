@@ -51,7 +51,7 @@ foreach(array(
 					'postcourse') as $surveyName)
 			{
 				$survey = $this->createWidget(
-						'modules.surveyor.widgets.Survey',
+						'surveyor.widgets.Survey',
 						array(
 								'id' => $surveyName,
 								'options' => array(
@@ -247,7 +247,7 @@ foreach(array(
 			<div class="content">
 				<h2 class="flowers">{t}Course Overview{/t}</h2>
 				<hr />
-				<p>{t}The course is divided into five modules. Each module is approximately two to three hours. Modules build upon each other, so it is recommended that the agenda be followed as prescribed.{/t}</p>
+				<p>{t}The course is divided into five  Each module is approximately two to three hours. Modules build upon each other, so it is recommended that the agenda be followed as prescribed.{/t}</p>
 				<p>{t}Module One ‐ Overview of Memory Loss and Related Symptoms, is an introduction of class leaders and participants. Discussion of the medical aspects of memory loss, causes of memory loss, the need for a medical evaluation, drug treatments, and the current state of research.{/t}</p>
 				<p>{t}Module Two ‐ Communication Strategies, is an overview of communication changes typical in early memory loss. Familiarize participants with general principles for maintaining communication with a person experiencing early memory loss.{/t}</p>
 				<p>{t}Module Three ‐ Making Decisions, addresses practical issues in everyday life such as driving a car, handling health and financial decisions, or managing household tasks.{/t}</p>
@@ -2251,7 +2251,7 @@ foreach(array(
 				<h2 class="flowers">{t}Ten Steps for Living with Memory Loss{/t}</h2>
 				<hr />
 				<img src="<?php echo $this->getImagesUrl('msml/90329967.png'); ?>" alt="image">
-				<p>{t}We have covered a lot of information in these past five modules. We are going to take a bit of time now to review and discuss a few new ideas that you may want to consider as you continue on this journey.{/t}</p>
+				<p>{t}We have covered a lot of information in these past five  We are going to take a bit of time now to review and discuss a few new ideas that you may want to consider as you continue on this journey.{/t}</p>
 				<div id="question1" class="question">
 					<p>
 						<b>{t}Could you describe dementia, Alzheimer's disease, Medicare and its various parts?{/t}</b>
@@ -2408,7 +2408,7 @@ foreach(array(
 				<p class="forum">{t}On the Forum, please post your final responses to these questions:{/t}</p>
 				<ul class="forum">
 					<li>{t}Do you feel like enough information has been covered during these five modules?{/t}</li>
-					<li>{t}And, please answer any remaining questions from all five modules.{/t}</li>
+					<li>{t}And, please answer any remaining questions from all five {/t}</li>
 				</ul>
 				<img src="<?php echo $this->getImagesUrl('msml/forum_icon.png'); ?>" alt="image">
 			</div>

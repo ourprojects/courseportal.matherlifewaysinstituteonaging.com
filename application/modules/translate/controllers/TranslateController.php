@@ -42,7 +42,7 @@ class TranslateController extends TController
 			$this->redirect(Yii::app()->getUser()->getReturnUrl());
 		}
 
-		$key = str_replace('.', '_', TTranslator::ID) . '-missing';
+		$key = str_replace('.', '_', TranslateModule::ID) . '-missing';
 		$missing = array();
 		if(isset($_POST[$key]))
 		{

@@ -57,7 +57,7 @@ foreach(array(
 					'postcourse') as $surveyName)
 			{
 				$survey = $this->createWidget(
-						'modules.surveyor.widgets.Survey',
+						'surveyor.widgets.Survey',
 						array(
 								'id' => $surveyName,
 								'options' => array(

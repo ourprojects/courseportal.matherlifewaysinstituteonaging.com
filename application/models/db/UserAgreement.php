@@ -26,7 +26,7 @@ class UserAgreement extends CActiveRecord
 	{
 		return array_merge(parent::behaviors(),
 				array(
-						'extendedFeatures' => array('class' => 'behaviors.EModelBehaviors'),
+						'extendedFeatures' => array('class' => 'application.behaviors.EModelBehaviors'),
 						'EActiveRecordAutoQuoteBehavior' => array(
 								'class' => 'ext.EActiveRecordAutoQuoteBehavior.EActiveRecordAutoQuoteBehavior',
 						)

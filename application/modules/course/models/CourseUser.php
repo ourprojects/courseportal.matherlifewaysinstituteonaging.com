@@ -50,7 +50,7 @@ class CourseUser extends CActiveRecord
 	{
 		return array_merge(parent::behaviors(),
 				array(
-						'extendedFeatures' => array('class' => 'behaviors.EModelBehaviors'),
+						'extendedFeatures' => array('class' => 'application.behaviors.EModelBehaviors'),
 						'ERememberFiltersBehavior' => array(
 								'class' => 'ext.ERememberFiltersBehavior.ERememberFiltersBehavior',
 						),

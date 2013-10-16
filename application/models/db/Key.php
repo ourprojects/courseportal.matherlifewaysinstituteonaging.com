@@ -35,7 +35,7 @@ class Key extends CActiveRecord
     {
     	return array_merge(parent::behaviors(),
     			array(
-    					'extendedFeatures' => array('class' => 'behaviors.EModelBehaviors'),
+    					'extendedFeatures' => array('class' => 'application.behaviors.EModelBehaviors'),
 						'PBKDF2Behavior' => array(
 								'class' => 'ext.pbkdf2.PBKDF2Behavior',
 								'saltAttribute' => 'salt',
