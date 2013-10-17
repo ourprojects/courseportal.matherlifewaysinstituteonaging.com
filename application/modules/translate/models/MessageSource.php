@@ -32,7 +32,8 @@ class MessageSource extends CActiveRecord
 		return array(
 			array('message', 'required', 'except' => 'search'),
 			array('id', 'numerical', 'integerOnly' => true),
-			array('id, message', 'unique', 'except' => 'search'),
+			array('language_id', 'exist', 'attributeName' => 'id', 'className' => 'Language', 'except' => 'search'),
+			array('id', 'unique', 'except' => 'search'),
 
 			array('id, message', 'safe', 'on' => 'search'),
 		);
@@ -48,6 +49,7 @@ class MessageSource extends CActiveRecord
 			'viewSourceCount' => array(self::STAT, 'ViewSource', ViewMessage::model()->tableName().'(message_id, view_id)'),
 			'translations' => array(self::HAS_MANY, 'Message', 'id'),
 			'translationCount' => array(self::STAT, 'Message', 'id'),
+			'sourceLanguage' => array(self::BELONGS_TO, 'Language', 'language_id'),
 			'languages' => array(self::MANY_MANY, 'Language', Message::model()->tableName().'(id, language_id)'),
 			'languageCount' => array(self::STAT, 'Language', Message::model()->tableName().'(id, language_id)'),
 			'acceptedLanguages' => array(self::MANY_MANY, 'AcceptedLanguage', Message::model()->tableName().'(id, language_id)'),
@@ -72,6 +74,7 @@ class MessageSource extends CActiveRecord
 				'viewSourceCount' => TranslateModule::t('View Source Count'),
 				'translations' => TranslateModule::t('Translations'),
 				'translationCount' => TranslateModule::t('Translation Count'),
+				'sourceLanguage' => TranslateModule::t('Source Language'),
 				'languages' => TranslateModule::t('Languages'),
 				'languageCount' => TranslateModule::t('Language Count'),
 				'acceptedLanguages' => TranslateModule::t('Accepted Languages'),

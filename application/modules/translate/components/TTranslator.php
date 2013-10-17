@@ -1,7 +1,7 @@
 <?php
 
 /**
- * 
+ *
  * @author Louis DaPrato <l.daprato@gmail.com>
  *
  */
@@ -106,14 +106,14 @@ class TTranslator extends CApplicationComponent
 	 * @var string The name of the message source component to use
 	 */
 	public $messageSource = 'messages';
-
+	
 	/**
-	 * @var TViewSource The view source component being used.
+	 * @var TDbViewSource The view source component being used.
 	 */
 	private $_viewSource;
 
 	/**
-	 * @var TMessageSource The message source component being used.
+	 * @var TDbMessageSource The message source component being used.
 	 */
 	private $_messageSource;
 
@@ -226,7 +226,9 @@ class TTranslator extends CApplicationComponent
 				}
 				asort($languages, SORT_LOCALE_STRING);
 				if($cache !== null)
+				{
 					$cache->set($cacheKey, $languages, $this->cacheDuration);
+				}
 			}
 			$this->_cache[$cacheKey] = $languages;
 		}
@@ -248,10 +250,14 @@ class TTranslator extends CApplicationComponent
 				$languageDisplayNames = $this->getLanguageDisplayNames();
 				$languages[Yii::app()->sourceLanguage] = isset($languageDisplayNames[Yii::app()->sourceLanguage]) ? $languageDisplayNames[Yii::app()->sourceLanguage] : Yii::app()->sourceLanguage;
 				foreach($this->getMessageSourceComponent()->getAcceptedLanguages() as $lang)
+				{
 					$languages[$lang['code']] = $languageDisplayNames[$lang['code']];
+				}
 				asort($languages, SORT_LOCALE_STRING);
 				if($cache !== null)
+				{
 					$cache->set($cacheKey, $languages, $this->cacheDuration);
+				}
 			}
 			$this->_cache[$cacheKey] = $languages;
 		}
@@ -300,7 +306,9 @@ class TTranslator extends CApplicationComponent
 	public function getLanguageID($localeId = null)
 	{
 		if($localeId === null)
+		{
 			$localeId = Yii::app()->getLanguage();
+		}
 		return Yii::app()->getLocale()->getLanguageID($localeId);
 	}
 
@@ -313,7 +321,9 @@ class TTranslator extends CApplicationComponent
 	public function getScriptID($localeId = null)
 	{
 		if($localeId === null)
+		{
 			$localeId = Yii::app()->getLanguage();
+		}
 		return Yii::app()->getLocale()->getScriptID($localeId);
 	}
 
@@ -326,7 +336,9 @@ class TTranslator extends CApplicationComponent
 	public function getTerritoryID($localeId = null)
 	{
 		if($localeId === null)
+		{
 			$localeId = Yii::app()->getLanguage();
+		}
 		return Yii::app()->getLocale()->getTerritoryID($localeId);
 	}
 
@@ -427,7 +439,9 @@ class TTranslator extends CApplicationComponent
 		}
 		$localeDisplayNames = $this->getLocaleDisplayNames($language, $category);
 		if($localeDisplayNames !== false && array_key_exists($id, $localeDisplayNames))
+		{
 			return $localeDisplayNames[$id];
+		}
 		return false;
 	}
 
@@ -465,7 +479,9 @@ class TTranslator extends CApplicationComponent
 				}
 				asort($languages, SORT_LOCALE_STRING);
 				if($cache !== null)
+				{
 					$cache->set($cacheKey, $languages, $this->cacheDuration);
+				}
 			}
 			$this->_cache[$cacheKey] = $languages;
 		}
@@ -473,18 +489,20 @@ class TTranslator extends CApplicationComponent
 	}
 
 	/**
-	 * gets the {@link TMessageSource} component
+	 * Gets the application's {@link ITMessageSource} component
 	 *
-	 * @throws CException If the message source component was either not found or was not an instance of TMessageSource.
-	 * @return TMessageSource the message source component currently in use.
+	 * @throws CException If the message source component was either not found or does not implement ITMessageSource.
+	 * @return ITMessageSource the message source component currently in use.
 	 */
 	public function getMessageSourceComponent()
 	{
 		if(!isset($this->_messageSource))
 		{
 			$this->_messageSource = Yii::app()->getComponent($this->messageSource);
-			if(!$this->_messageSource instanceof TMessageSource)
-				throw new CException("The component '$this->messageSource' must be defined and of type TMessageSource.");
+			if(!is_subclass_of($this->_messageSource, 'ITMessageSource'))
+			{
+				throw new CException("The component '$this->messageSource' must be defined and implement type ITMessageSource.");
+			}
 		}
 		return $this->_messageSource;
 	}
@@ -492,7 +510,7 @@ class TTranslator extends CApplicationComponent
 	/**
 	 * gets the {@link TViewSource} component
 	 *
-	 * @throws CException If the view source component was either not found or was not an instance of TViewSource.
+	 * @throws CException If the view source component was either not found or was not a subclass of TViewSource.
 	 * @return TViewSource the view source component currently in use.
 	 */
 	public function getViewSourceComponent()
@@ -500,8 +518,10 @@ class TTranslator extends CApplicationComponent
 		if(!isset($this->_viewSource))
 		{
 			$this->_viewSource = Yii::app()->getComponent($this->viewSource);
-			if(!$this->_viewSource instanceof TViewSource)
+			if(!is_subclass_of($this->_viewSource, 'TViewSource'))
+			{
 				throw new CException("The component '$this->viewSource' must be defined and of type TViewSource.");
+			}
 		}
 		return $this->_viewSource;
 	}
@@ -536,7 +556,7 @@ class TTranslator extends CApplicationComponent
 			{
 				if($useTransaction && $source->getDbConnection()->getCurrentTransaction() === null)
 					$transaction = $source->getDbConnection()->beginTransaction();
-				 
+					
 				try
 				{
 					$translation = $source->getTranslation($category, $message, $language, true);
@@ -563,27 +583,29 @@ class TTranslator extends CApplicationComponent
 						if($this->autoTranslate)
 						{
 							$translation['translation'] = $message;
-							 
+
 							preg_match_all('/\{(?:.*?)\}/s', $translation['translation'], $yiiParams);
 							$yiiParams = $yiiParams[0];
 							$escapedYiiParams = array();
 							foreach($yiiParams as $key => &$match)
+							{
 								$escapedYiiParams[$key] = "<span class='notranslate'>:mpt$key</span>";
-							 
+							}
+
 							$translation['translation'] = str_replace($yiiParams, $escapedYiiParams, $translation['translation']);
-							 
+
 							$translation['translation'] = $this->googleTranslate(
 									$translation['translation'],
 									$language,
 									$sourceLanguage
 							);
-							 
+
 							if($translation['translation'] !== false)
 							{
 								$translation['translation'] = trim($translation['translation'][0]);
 
 								$translation['translation'] = str_replace($escapedYiiParams, $yiiParams, $translation['translation']);
-								 
+									
 								if($source->addTranslation($translation['id'], $language, $translation['translation'], true) !== null)
 								{
 									$message = &$translation['translation'];
@@ -610,17 +632,21 @@ class TTranslator extends CApplicationComponent
 						$message = &$translation['translation'];
 					}
 					if(isset($transaction))
+					{
 						$transaction->commit();
+					}
 				}
 				catch(Exception $e)
 				{
 					if(isset($transaction))
+					{
 						$transaction->rollback();
+					}
 					throw $e;
 				}
 			}
 		}
-		 
+			
 		return $message;
 	}
 
@@ -675,12 +701,12 @@ class TTranslator extends CApplicationComponent
 				{
 					if(empty($messageChunk))
 						$this->_throwCharLimitException($messageLength, self::GOOGLE_TRANSLATE_MAX_CHARS);
-					 
+
 					$query = $this->_googleTranslate($messageChunk, $targetLanguage, $sourceLanguage);
 					if($query === false)
 						return false;
 					$translated = CMap::mergeArray($translated, $query);
-					 
+
 					$messageLength = 0;
 					$messageChunk = array();
 				}
@@ -698,14 +724,14 @@ class TTranslator extends CApplicationComponent
 
 				$translated = CMap::mergeArray($translated, $query);
 			}
-			 
+
 		}
 		else
 		{
 			$msg = strval($message);
 			if(strlen($msg) > self::GOOGLE_TRANSLATE_MAX_CHARS)
 				$this->_throwCharLimitException(strlen($msg), self::GOOGLE_TRANSLATE_MAX_CHARS);
-				
+
 			$translated = $this->_googleTranslate($msg, $targetLanguage, $sourceLanguage);
 		}
 

@@ -4,7 +4,7 @@ $buttonConfig = array(
 	'viewButtonLabel' => TranslateModule::t('View Translations'),
 	'viewButtonUrl' => 'Yii::app()->getController()->createUrl("language/view", array("id" => $data->id))',
 	'deleteButtonUrl' => 'Yii::app()->getController()->createUrl("language/delete", array("id" => $data->id))',
-	'deleteConfirmation' => TranslateModule::t('Are you certain that you would like to delete this language as well as all messages and views that have been translated to this language?')
+	'deleteConfirmation' => TranslateModule::t('Are you certain that you would like to delete this language as well as all messages and views associated with this language?')
 );
 if(isset($messageId))
 {

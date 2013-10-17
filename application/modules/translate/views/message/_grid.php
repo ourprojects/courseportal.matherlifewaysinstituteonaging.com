@@ -12,9 +12,7 @@ $this->widget('zii.widgets.grid.CGridView',
 					'filter' => '',
 					'sortable' => false
 				),
-				array(
-					'name' => 'translation',
-				),
+				'translation',
 				array(
 					'class' => 'CButtonColumn',
 					'template' => '{update}{delete}',

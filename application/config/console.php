@@ -28,7 +28,7 @@ return array(
 		'components' => array(
 
 				'messages' => array(
-						'class' => 'translate.components.TMessageSource',
+						'class' => 'translate.components.TDbMessageSource',
 						'forceTranslation' => false,
 						'onMissingTranslation' => array('TranslateModule', 'missingTranslation'),
 						'acceptedLanguageTable' => '{{translate_accepted_language}}',
@@ -39,7 +39,7 @@ return array(
 				),
 
 				'views' => array(
-						'class' => 'translate.components.TViewSource',
+						'class' => 'translate.components.TDbViewSource',
 						'onMissingViewTranslation' => array('TranslateModule', 'missingViewTranslation'),
 						'routeTable' => '{{translate_route}}',
 						'routeViewTable' => '{{translate_route_view}}',

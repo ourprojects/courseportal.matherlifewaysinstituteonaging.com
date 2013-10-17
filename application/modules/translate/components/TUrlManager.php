@@ -107,7 +107,7 @@ class TUrlManager extends CUrlManager
 		if(!isset($_GET[$translator->languageVarName]) || $_GET[$translator->languageVarName] !== $language)
 		{
 			$request->redirect(
-					Yii::app()->createUrl($route, array_merge_recursive($_GET, array($translator->languageVarName => $language))), 
+					Yii::app()->createUrl($route, array_merge($_GET, array($translator->languageVarName => $language))), 
 					true, 
 					($request->getIsPostRequest() && isset($_SERVER['SERVER_PROTOCOL']) && $_SERVER['SERVER_PROTOCOL'] === 'HTTP/1.1') ? 303 : 302
 			);
