@@ -23,9 +23,9 @@ class Language extends CActiveRecord
 	public function behaviors()
 	{
 		return array(
-				'ERememberFiltersBehavior' => array(
-						'class' => 'ext.ERememberFiltersBehavior.ERememberFiltersBehavior',
-				)
+			'ERememberFiltersBehavior' => array(
+				'class' => 'ext.ERememberFiltersBehavior.ERememberFiltersBehavior',
+			)
 		);
 	}
 
@@ -59,49 +59,55 @@ class Language extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-				// Attributes
-				'id' => TranslateModule::t('ID'),
-				'code' => TranslateModule::t('Code'),
-				// Relations
-				'messages' => TranslateModule::t('Messages'),
-				'messageCount' => TranslateModule::t('Message Count'),
-				'messageSources' => TranslateModule::t('Message Sources'),
-				'messageSourceCount' => TranslateModule::t('Message Source Count'),
-				'views' => TranslateModule::t('Views'),
-				'viewCount' => TranslateModule::t('View Count'),
-				'viewSources' => TranslateModule::t('View Sources'),
-				'viewSourceCount' => TranslateModule::t('View Source Count'),
-				'acceptedLanguage' => TranslateModule::t('Accepted Language'),
-				// Virtual Attributes
-				'name' => TranslateModule::t('Name'),
-				'isAccepted' => TranslateModule::t('Accepted?'),
-				'isMissingTranslations' => TranslateModule::t('Missing Translations?'),
+			// Attributes
+			'id' => TranslateModule::t('ID'),
+			'code' => TranslateModule::t('Code'),
+			// Relations
+			'messages' => TranslateModule::t('Messages'),
+			'messageCount' => TranslateModule::t('Message Count'),
+			'messageSources' => TranslateModule::t('Message Sources'),
+			'messageSourceCount' => TranslateModule::t('Message Source Count'),
+			'views' => TranslateModule::t('Views'),
+			'viewCount' => TranslateModule::t('View Count'),
+			'viewSources' => TranslateModule::t('View Sources'),
+			'viewSourceCount' => TranslateModule::t('View Source Count'),
+			'acceptedLanguage' => TranslateModule::t('Accepted Language'),
+			// Virtual Attributes
+			'name' => TranslateModule::t('Name'),
+			'isAccepted' => TranslateModule::t('Accepted?'),
+			'isMissingTranslations' => TranslateModule::t('Missing Translations?'),
 		);
 	}
 
 	public function scopes()
 	{
 		return array(
-				'accepted' => array('with' => array('acceptedLanguage' => array('joinType' => 'INNER JOIN'))),
-				'notAccepted' => array('with' => array('acceptedLanguage' => array('joinType' => 'LEFT JOIN')), 'condition' => 'acceptedLanguage.id IS NULL')
+			'accepted' => array('with' => array('acceptedLanguage' => array('joinType' => 'INNER JOIN'))),
+			'notAccepted' => array('with' => array('acceptedLanguage' => array('joinType' => 'LEFT JOIN')), 'condition' => $this->getDbConnection()->quoteColumnName('acceptedLanguage.id').' IS NULL')
 		);
 	}
 
 	public function missingTranslations($messageId = null)
 	{
+		$db = $this->getDbConnection();
 		$criteria = array(
-				'with' => array('messages' => array('joinType' => 'LEFT JOIN', 'on' => 'messageSources.id=messages.id')),
-				'condition' => 'messages.id IS NULL',
-				'together' => true
+			'with' => array('messages' => array('joinType' => 'LEFT JOIN', 'on' => $db->quoteColumnName('messageSources.id').'='.$db->quoteColumnName('messages.id'))),
+			'condition' => $db->quoteColumnName($this->getTableAlias().'.id').'!='.$db->quoteColumnName('messageSources.language_id').' AND '.$db->quoteColumnName('messages.id').' IS NULL',
+			'together' => true
 		);
+		if(isset($this->id))
+		{
+			$criteria['condition'] .= ' AND '.$db->quoteColumnName($this->getTableAlias().'.id').'=:id';
+			$criteria['params'][':id'] = $this->id;
+		}
 		if($messageId === null)
 		{
-			$criteria['join'] = 'CROSS JOIN '.MessageSource::model()->tableName().' messageSources';
+			$criteria['join'] = 'CROSS JOIN '.$db->quoteTableName(MessageSource::model()->tableName()).' '.$db->quoteTableName('messageSources');
 		}
 		else
 		{
 			$criteria['params'] = array(':message_id' => $messageId);
-			$criteria['join'] = 'JOIN '.MessageSource::model()->tableName().' messageSources ON messageSources.id=:message_id';
+			$criteria['join'] = 'JOIN '.$db->quoteTableName(MessageSource::model()->tableName()).' '.$db->quoteTableName('messageSources').' ON '.$db->quoteColumnName('messageSources.id').'=:message_id';
 		}
 		$this->getDbCriteria()->mergeWith($criteria);
 		return $this;
@@ -113,10 +119,14 @@ class Language extends CActiveRecord
 		{
 			$this->_name = TranslateModule::translator()->getLanguageDisplayName($this->code);
 			if($this->_name === false)
+			{
 				$this->_name = strval($this->code);
+			}
 		}
 		return $this->_name;
 	}
+	
+	
 
 	public function getIsMissingTranslations($messageId = null)
 	{

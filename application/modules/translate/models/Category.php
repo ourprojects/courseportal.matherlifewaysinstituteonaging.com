@@ -20,15 +20,15 @@ class Category extends CActiveRecord {
 	public function behaviors()
 	{
 		return array(
-				'ERememberFiltersBehavior' => array(
-						'class' => 'ext.ERememberFiltersBehavior.ERememberFiltersBehavior',
-				)
+			'ERememberFiltersBehavior' => array(
+				'class' => 'ext.ERememberFiltersBehavior.ERememberFiltersBehavior',
+			)
 		);
 	}
 
 	public function rules() {
 		return array(
-            array('category', 'required', 'except' => 'search'),
+			array('category', 'required', 'except' => 'search'),
 			array('id', 'numerical', 'integerOnly' => true),
 			array('id, category', 'unique', 'except' => 'search'),
 			array('category', 'length', 'max' => 32),
@@ -50,16 +50,16 @@ class Category extends CActiveRecord {
 
 	public function attributeLabels() {
 		return array(
-				// Attributes
-				'id' => TranslateModule::t('ID'),
-				'category' => TranslateModule::t('Category'),
-				// Relations
-				'categoryMessages' => TranslateModule::t('Category Messages'),
-				'categoryMessageCount' => TranslateModule::t('Category Message Count'),
-				'messageSources' => TranslateModule::t('Message Sources'),
-				'messageSourceCount' => TranslateModule::t('Message Source Count'),
-				'messages' => TranslateModule::t('Messages'),
-				'messageCount' => TranslateModule::t('Message Count'),
+			// Attributes
+			'id' => TranslateModule::t('ID'),
+			'category' => TranslateModule::t('Category'),
+			// Relations
+			'categoryMessages' => TranslateModule::t('Category Messages'),
+			'categoryMessageCount' => TranslateModule::t('Category Message Count'),
+			'messageSources' => TranslateModule::t('Message Sources'),
+			'messageSourceCount' => TranslateModule::t('Message Source Count'),
+			'messages' => TranslateModule::t('Messages'),
+			'messageCount' => TranslateModule::t('Message Count'),
 		);
 	}
 

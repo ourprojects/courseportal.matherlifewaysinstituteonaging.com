@@ -106,7 +106,7 @@ class TTranslator extends CApplicationComponent
 	 * @var string The name of the message source component to use
 	 */
 	public $messageSource = 'messages';
-	
+
 	/**
 	 * @var TDbViewSource The view source component being used.
 	 */

@@ -17,7 +17,7 @@ class TranslateModule extends CWebModule
 	 * @const string
 	 */
 	const ID = 'TranslateModule';
-	
+
 	/**
 	 * The language of all source messages in this module.
 	 *
@@ -136,5 +136,5 @@ class TranslateModule extends CWebModule
 		return Yii::t(self::ID, $message, $params, self::translator()->messageSource);
 		$messageSource->setLanguage($oldLanguage);
 	}
-	
+
 }

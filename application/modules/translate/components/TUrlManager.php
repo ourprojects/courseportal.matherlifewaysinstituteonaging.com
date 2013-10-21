@@ -1,20 +1,20 @@
 <?php
 
 /**
- * 
+ *
  * @author Louis DaPrato <l.daprato@gmail.com>
  *
  */
 class TUrlManager extends CUrlManager
 {
-	
+
 	/**
 	 * @var string The name of the {@link TTranslator} component.
 	 */
 	public $translatorComponentId = 'translate';
-	
+
 	private $_translator;
-	
+
 	/**
 	 * Gets the translator component used by this URL manager.
 	 *
@@ -42,7 +42,7 @@ class TUrlManager extends CUrlManager
 		}
 		return parent::createUrl($route, $params, $ampersand);
 	}
-	
+
 	/**
 	 * (non-PHPdoc)
 	 * @see CUrlManager::parseUrl()
@@ -51,9 +51,9 @@ class TUrlManager extends CUrlManager
 	{
 		$route = parent::parseUrl($request);
 		$translator = $this->getTranslator();
-		
+
 		// Determine request's preferred language by:
-		
+
 		// Post parameter
 		if(isset($_POST[$translator->languageVarName]))
 		{
@@ -85,30 +85,30 @@ class TUrlManager extends CUrlManager
 		{
 			$language = Yii::app()->getLanguage();
 		}
-		
+
 		// Process language:
-		
+
 		// Canonicalize the language if we don't care about the locale portion
 		if($translator->genericLocale)
 		{
 			$language = Yii::app()->getLocale()->getLanguageID($language);
 		}
-		
+
 		// If we should enforce accepted languages only and the language is not acceptable set it to the application's default language.
 		if($translator->forceAcceptedLanguage && !$translator->isAcceptedLanguage($language))
 		{
 			$language = $translator->genericLocale ? Yii::app()->getLocale()->getLanguageID(Yii::app()->getLanguage()) : Yii::app()->getLanguage();
 		}
-		
+
 		// Set application's current language to derived language.
 		$translator->setLanguage($language);
-		
+
 		// Check that the URL contained the correct language GET parameter. If not redirect to the same URL with language GET parameter inserted.
 		if(!isset($_GET[$translator->languageVarName]) || $_GET[$translator->languageVarName] !== $language)
 		{
 			$request->redirect(
-					Yii::app()->createUrl($route, array_merge($_GET, array($translator->languageVarName => $language))), 
-					true, 
+					Yii::app()->createUrl($route, array_merge($_GET, array($translator->languageVarName => $language))),
+					true,
 					($request->getIsPostRequest() && isset($_SERVER['SERVER_PROTOCOL']) && $_SERVER['SERVER_PROTOCOL'] === 'HTTP/1.1') ? 303 : 302
 			);
 		}
@@ -119,5 +119,5 @@ class TUrlManager extends CUrlManager
 
 		return $route;
 	}
-	
+
 }

@@ -6,7 +6,7 @@
  * The followings are the available columns in table '{{translate_view_source}}':
  * @property integer $id
  * @property string $path
- * 
+ *
  * @author Louis DaPrato <l.daprato@gmail.com>
  */
 class ViewSource extends CActiveRecord
@@ -33,12 +33,12 @@ class ViewSource extends CActiveRecord
 	public function behaviors()
 	{
 		return array(
-				'ERememberFiltersBehavior' => array(
-						'class' => 'ext.ERememberFiltersBehavior.ERememberFiltersBehavior',
-				),
+			'ERememberFiltersBehavior' => array(
+				'class' => 'ext.ERememberFiltersBehavior.ERememberFiltersBehavior',
+			),
 		);
 	}
-	
+
 	public function getRelativePath()
 	{
 		if(substr($this->getAttribute('path'), 0, strlen(Yii::app()->getBasePath())) == Yii::app()->getBasePath())
@@ -47,7 +47,7 @@ class ViewSource extends CActiveRecord
 		}
 		return $this->getAttribute('path');
 	}
-	
+
 	public function setRelativePath($path)
 	{
 		return $this->setAttribute('path', Yii::app()->getBasePath().DIRECTORY_SEPARATOR.$path);
@@ -87,19 +87,19 @@ class ViewSource extends CActiveRecord
 			'languageCount' => array(self::STAT, 'Language', View::model()->tableName().'(id, language_id)'),
 			'acceptedLanguages' => array(self::MANY_MANY, 'AcceptedLanguage', View::model()->tableName().'(id, language_id)'),
 			'acceptedLanguageCount' => array(self::STAT, 'AcceptedLanguage', View::model()->tableName().'(id, language_id)'),
-			
-			'messages' => array(self::HAS_MANY, 'Message', array('message_id' => 'id'), 
-					'through' => 'viewMessages', 
-					'join' => 'INNER JOIN '.View::model()->tableName().' t ON t.language_id=messages.language_id',
-					'condition' => 't.id=viewMessages.view_id'),
+
+			'messages' => array(self::HAS_MANY, 'Message', array('message_id' => 'id'),
+				'through' => 'viewMessages',
+				'join' => 'INNER JOIN '.View::model()->tableName().' t ON t.language_id=messages.language_id',
+				'condition' => 't.id=viewMessages.view_id'),
 		);
 	}
-	
+
 	public function scopes()
 	{
 		return array(
-				'havingAcceptedLanguages' => array('with' => array('acceptedLanguages' => array('joinType' => 'INNER JOIN'))),
-				'havingOtherLanguages' => array('with' => array('acceptedLanguages' => array('joinType' => 'LEFT JOIN', 'condition' => 'acceptedLanguages.id IS NULL')))
+			'havingAcceptedLanguages' => array('with' => array('acceptedLanguages' => array('joinType' => 'INNER JOIN'))),
+			'havingOtherLanguages' => array('with' => array('acceptedLanguages' => array('joinType' => 'LEFT JOIN', 'condition' => 'acceptedLanguages.id IS NULL')))
 		);
 	}
 
@@ -130,7 +130,7 @@ class ViewSource extends CActiveRecord
 			'relativePath' => TranslateModule::t('Relative Path'),
 		);
 	}
-	
+
 	/**
 	 * Retrieves a list of models based on the current search/filter conditions.
 	 * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.
@@ -140,18 +140,18 @@ class ViewSource extends CActiveRecord
 		if(!isset($dataProviderConfig['criteria']))
 		{
 			$dataProviderConfig['criteria'] = new CDbCriteria;
-	
+
 			$dataProviderConfig['criteria']
 			->compare($this->getTableAlias(false, false).'.id', $this->id)
 			->compare($this->getTableAlias(false, false).'.path', $this->path, true);
 		}
-	
+
 		return new CActiveDataProvider($this, $dataProviderConfig);
 	}
-	
+
 	public function __toString()
 	{
 		return strval($this->path);
 	}
-	
+
 }

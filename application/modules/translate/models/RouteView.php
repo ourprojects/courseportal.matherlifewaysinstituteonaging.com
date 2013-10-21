@@ -6,7 +6,7 @@
  * The followings are the available columns in table '{{translate_route_view}}':
  * @property integer $route_id
  * @property integer $view_id
- * 
+ *
  * @author Louis DaPrato <l.daprato@gmail.com>
  *
  */
@@ -29,13 +29,13 @@ class RouteView extends CActiveRecord
 	{
 		return TranslateModule::translator()->getViewSourceComponent()->routeViewTable;
 	}
-	
+
 	public function behaviors()
 	{
 		return array(
-				'ERememberFiltersBehavior' => array(
-						'class' => 'ext.ERememberFiltersBehavior.ERememberFiltersBehavior',
-				)
+			'ERememberFiltersBehavior' => array(
+				'class' => 'ext.ERememberFiltersBehavior.ERememberFiltersBehavior',
+			)
 		);
 	}
 
@@ -49,7 +49,7 @@ class RouteView extends CActiveRecord
 			array('route_id, view_id', 'numerical', 'integerOnly' => true),
 			array('route_id', 'exist', 'attributeName' => 'id', 'className' => 'Route', 'except' => 'search'),
 			array('view_id', 'exist', 'attributeName' => 'id', 'className' => 'ViewSource', 'except' => 'search'),
-				
+
 			array('route_id, view_id', 'safe', 'on' => 'search')
 		);
 	}
@@ -84,7 +84,7 @@ class RouteView extends CActiveRecord
 	 * Retrieves a list of models based on the current search/filter conditions.
 	 * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.
 	 */
-	public function search($dataProviderConfig = array()) 
+	public function search($dataProviderConfig = array())
 	{
 		if(!isset($dataProviderConfig['criteria']))
 		{

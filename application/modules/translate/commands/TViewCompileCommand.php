@@ -7,7 +7,7 @@
  */
 class TViewCompileCommand extends CConsoleCommand
 {
-	
+
 	/**
 	 * The regular expression used to extract translate tags inside views.
 	 *
@@ -16,7 +16,7 @@ class TViewCompileCommand extends CConsoleCommand
 	 * @const string
 	 */
 	const TRANSLATE_TAG_REGEX = '/\{t(?:\s+category\s*=\s*[\'"](.*?)[\'"])?(?:\s*params\s*=\s*([\'"].*?[\'"]\s*=>\s*[\'"].*?[\'"])+)?\}\s*(.+?)\s*\{\/t\}/s';
-	
+
 	/**
 	 * The regular expression used to parse the params option of translate tags.
 	 *
@@ -25,7 +25,7 @@ class TViewCompileCommand extends CConsoleCommand
 	 * @const string
 	 */
 	const PARAM_PARSE_REGEX = '/[\'"](.*?)[\'"]=>[\'"](.*?)[\'"](?:\s*,\s*|\s*$)/';
-	
+
 	/**
 	 * (non-PHPdoc)
 	 * @see CConsoleCommand::defaultAction
@@ -34,7 +34,7 @@ class TViewCompileCommand extends CConsoleCommand
 
 	/**
 	 * Strips all translate translate tags from a view file.
-	 * 
+	 *
 	 * @param string $sourcePath Path to view file with translate tags.
 	 * @param string $compiledPath Path to generate new file at without translate tags.
 	 * @param integer $filePermission File permissions for to set on the generated file.
@@ -51,13 +51,13 @@ class TViewCompileCommand extends CConsoleCommand
 					throw new CException(TranslateModule::t("The compiled view directory '{dir}' does not exist and could not be created.", array('{dir}' => $compiledPathDir)));
 				}
 			}
-			
+				
 			$sourceViewContents = file_get_contents($sourcePath);
 			if($sourceViewContents === false)
 			{
 				throw new CException(TranslateModule::t("Unable to read the contents of the source view at path '{path}'.", array('{path}' => $sourcePath)));
 			}
-	
+
 			if(file_put_contents($compiledPath, preg_replace(self::TRANSLATE_TAG_REGEX, '$3', $sourceViewContents)) === false)
 			{
 				throw new CException(TranslateModule::t("Failed to create compiled view file at path '{path}'.", array('{path}' => $compiledPath)));
@@ -76,13 +76,13 @@ class TViewCompileCommand extends CConsoleCommand
 
 	/**
 	 * Compiles a view file by translating the text between translate tags.
-	 * 
+	 *
 	 * @param string $sourcePath Path to view file with translate tags.
 	 * @param string $compiledPath Path to generate new file at with text between translate tags translated and tags removed.
 	 * @param string $route Request route that this compiled view should be associated with (roughly used to categorize compiled views).
 	 * @param string $source The name of the translated messsage source component to use.
 	 * @param string $language The language the source view should be translated to.
-	 * @param integer $filePermission File permissions for to set on the generated file. 
+	 * @param integer $filePermission File permissions for to set on the generated file.
 	 * @param boolean $useTransaction Whether all database queries should be wrapped in a transaction.
 	 * @throws Exception If any part of the tag translation process fails.
 	 */

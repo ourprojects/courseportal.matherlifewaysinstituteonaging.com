@@ -1,7 +1,7 @@
 <?php
 
 /**
- * 
+ *
  * @author Louis DaPrato <l.daprato@gmail.com>
  *
  */
@@ -68,7 +68,7 @@ class ViewController extends TController
 			$this->actionGrid($id, $languageId, $_GET['ajax']);
 		}
 	}
-	
+
 	public function actionGrid($id, $languageId, $name)
 	{
 		$this->internalActionGrid($id, $languageId, $name);

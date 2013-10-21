@@ -6,7 +6,7 @@
  * The followings are the available columns in table '{{translate_route}}':
  * @property integer $id
  * @property string $route
- * 
+ *
  * @author Louis DaPrato <l.daprato@gmail.com>
  *
  */
@@ -29,13 +29,13 @@ class Route extends CActiveRecord
 	{
 		return TranslateModule::translator()->getViewSourceComponent()->routeTable;
 	}
-	
+
 	public function behaviors()
 	{
 		return array(
-				'ERememberFiltersBehavior' => array(
-						'class' => 'ext.ERememberFiltersBehavior.ERememberFiltersBehavior',
-				)
+			'ERememberFiltersBehavior' => array(
+				'class' => 'ext.ERememberFiltersBehavior.ERememberFiltersBehavior',
+			)
 		);
 	}
 
@@ -94,7 +94,7 @@ class Route extends CActiveRecord
 	 * Retrieves a list of models based on the current search/filter conditions.
 	 * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.
 	 */
-	public function search($dataProviderConfig = array()) 
+	public function search($dataProviderConfig = array())
 	{
 		if(!isset($dataProviderConfig['criteria']))
 		{
@@ -108,10 +108,10 @@ class Route extends CActiveRecord
 
 		return new CActiveDataProvider($this, $dataProviderConfig);
 	}
-	
+
 	public function __toString()
 	{
 		return strval($this->route);
 	}
-	
+
 }

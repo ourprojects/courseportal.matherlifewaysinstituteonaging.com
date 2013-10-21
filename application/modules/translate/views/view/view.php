@@ -11,10 +11,10 @@
 			'zii.widgets.jui.CJuiTabs',
 			array(
 				'tabs' => array(
-						TranslateModule::t('Categories') => $this->internalActionGrid($view->id, $view->language_id, 'category-grid', true),
-						TranslateModule::t('Source Messages') => $this->internalActionGrid($view->id, $view->language_id, 'messageSource-grid', true),
-						TranslateModule::t('Translated Messages') => $this->internalActionGrid($view->id, $view->language_id, 'message-grid', true),
-						TranslateModule::t('Routes') => $this->internalActionGrid($view->id, $view->language_id, 'route-grid', true),
+					TranslateModule::t('Categories') => $this->internalActionGrid($view->id, $view->language_id, 'category-grid', true),
+					TranslateModule::t('Source Messages') => $this->internalActionGrid($view->id, $view->language_id, 'messageSource-grid', true),
+					TranslateModule::t('Translated Messages') => $this->internalActionGrid($view->id, $view->language_id, 'message-grid', true),
+					TranslateModule::t('Routes') => $this->internalActionGrid($view->id, $view->language_id, 'route-grid', true),
 				),
 				'headerTemplate' => '<li><a href="{url}" title="{title}">{title}</a></li>',
 				'id' => 'relatedDetails'

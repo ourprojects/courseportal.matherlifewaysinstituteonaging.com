@@ -11,12 +11,12 @@
 			'zii.widgets.jui.CJuiTabs',
 			array(
 				'tabs' => array(
-						TranslateModule::t('Categories') => $this->internalActionGrid($viewSource->id, 'category-grid', true),
-						TranslateModule::t('Source Messages') => $this->internalActionGrid($viewSource->id, 'messageSource-grid', true),
-						TranslateModule::t('Translated Messages') => $this->internalActionGrid($viewSource->id, 'message-grid', true),
-						TranslateModule::t('Languages') => $this->internalActionGrid($viewSource->id, 'language-grid', true),
-						TranslateModule::t('Routes') => $this->internalActionGrid($viewSource->id, 'route-grid', true),
-						TranslateModule::t('Translated Views') => $this->internalActionGrid($viewSource->id, 'view-grid', true)
+					TranslateModule::t('Categories') => $this->internalActionGrid($viewSource->id, 'category-grid', true),
+					TranslateModule::t('Source Messages') => $this->internalActionGrid($viewSource->id, 'messageSource-grid', true),
+					TranslateModule::t('Translated Messages') => $this->internalActionGrid($viewSource->id, 'message-grid', true),
+					TranslateModule::t('Languages') => $this->internalActionGrid($viewSource->id, 'language-grid', true),
+					TranslateModule::t('Routes') => $this->internalActionGrid($viewSource->id, 'route-grid', true),
+					TranslateModule::t('Translated Views') => $this->internalActionGrid($viewSource->id, 'view-grid', true)
 				),
 				'headerTemplate' => '<li><a href="{url}" title="{title}">{title}</a></li>',
 				'id' => 'relatedDetails'

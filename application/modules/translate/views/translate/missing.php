@@ -19,21 +19,21 @@ if($google)
 			'messages[count]=$(this).html();' .
 			'});' .
 			CHtml::ajax(array(
-					'url' => $this->createUrl('translate/googleTranslate'),
-					'type' => 'post',
-					'dataType' => 'json',
-					'data' => array(
-							'language' => Yii::app()->getLanguage(),
-							'sourceLanguage' => Yii::app()->sourceLanguage,
-							'message' => 'js:messages'
-					),
-					'success' => 'js:function(response){' .
-					'$("'.TranslateModule::ID.'-google-translation").each(function(count){' .
-					'$(this).val(response[count]);' .
-					'});' .
-					'$("'.TranslateModule::ID.'-google-button, #'.TranslateModule::ID.'-google-translateall").hide();' .
-					'},',
-					'error' => 'js:function(xhr){alert(xhr.statusText);}',
+				'url' => $this->createUrl('translate/googleTranslate'),
+				'type' => 'post',
+				'dataType' => 'json',
+				'data' => array(
+					'language' => Yii::app()->getLanguage(),
+					'sourceLanguage' => Yii::app()->sourceLanguage,
+					'message' => 'js:messages'
+				),
+				'success' => 'js:function(response){' .
+				'$("'.TranslateModule::ID.'-google-translation").each(function(count){' .
+				'$(this).val(response[count]);' .
+				'});' .
+				'$("'.TranslateModule::ID.'-google-button, #'.TranslateModule::ID.'-google-translateall").hide();' .
+				'},',
+				'error' => 'js:function(xhr){alert(xhr.statusText);}',
 			)) .
 			'return false;' .
 			'});');

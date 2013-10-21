@@ -1,7 +1,7 @@
 <?php
 
 /**
- * 
+ *
  * @author Louis DaPrato <l.daprato@gmail.com>
  *
  */
@@ -140,7 +140,7 @@ class MessageController extends TController
 			throw new CHttpException(404, TranslateModule::t('The requested message does not exist.'));
 		}
 	}
-	
+
 	public function actionGrid($id, $languageId, $name)
 	{
 		$this->internalActionGrid($id, $languageId, $name);

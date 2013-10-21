@@ -8,7 +8,7 @@
  * @property string $language
  * @property string $path
  * @property integer $created
- * 
+ *
  * @author Louis DaPrato <l.daprato@gmail.com>
  */
 class View extends CActiveRecord
@@ -30,13 +30,13 @@ class View extends CActiveRecord
 	{
 		return TranslateModule::translator()->getViewSourceComponent()->viewTable;
 	}
-	
+
 	public function behaviors()
 	{
 		return array(
-				'ERememberFiltersBehavior' => array(
-						'class' => 'ext.ERememberFiltersBehavior.ERememberFiltersBehavior',
-				)
+			'ERememberFiltersBehavior' => array(
+				'class' => 'ext.ERememberFiltersBehavior.ERememberFiltersBehavior',
+			)
 		);
 	}
 
@@ -54,14 +54,14 @@ class View extends CActiveRecord
 			array('id', 'numerical', 'integerOnly' => true),
 			array('id', 'exist', 'attributeName' => 'id', 'className' => 'ViewSource', 'except' => 'search'),
 			array('id',
-					'unique',
-					'caseSensitive' => false,
-					'criteria' => array(
-							'condition' => 'language = :language',
-							'params' => array(':language' => $this->language),
-					),
-					'message' => 'Source view {attribute} "{value}" has already been translated to "'.$this->language.'" ("'.TranslateModule::translator()->getLanguageDisplayName($this->language).'").',
-					'except' => 'search'
+				'unique',
+				'caseSensitive' => false,
+				'criteria' => array(
+					'condition' => 'language = :language',
+					'params' => array(':language' => $this->language),
+				),
+				'message' => 'Source view {attribute} "{value}" has already been translated to "'.$this->language.'" ("'.TranslateModule::translator()->getLanguageDisplayName($this->language).'").',
+				'except' => 'search'
 			),
 
 			array('id, language, path, created', 'safe', 'on' => 'search'),
@@ -81,15 +81,15 @@ class View extends CActiveRecord
 			'messages' => array(self::HAS_MANY, 'Message', array('message_id' => 'id'), 'through' => 'viewMessages', 'on' => $this->getTableAlias(false, false).'.language_id=messages.language_id'),
 		);
 	}
-	
+
 	public function scopes()
 	{
 		return array(
-				'isAcceptedLanguage' => array('with' => array('acceptedLanguage' => array('joinType' => 'INNER JOIN'))),
-				'isOtherLanguage' => array('with' => array('acceptedLanguage' => array('joinType' => 'LEFT JOIN')), 'condition' => 'acceptedLanguage.id IS NULL')
+			'isAcceptedLanguage' => array('with' => array('acceptedLanguage' => array('joinType' => 'INNER JOIN'))),
+			'isOtherLanguage' => array('with' => array('acceptedLanguage' => array('joinType' => 'LEFT JOIN')), 'condition' => 'acceptedLanguage.id IS NULL')
 		);
 	}
-	
+
 	public function getRelativePath()
 	{
 		if (substr($this->getAttribute('path'), 0, strlen(Yii::app()->getBasePath())) == Yii::app()->getBasePath())
@@ -98,7 +98,7 @@ class View extends CActiveRecord
 		}
 		return $this->getAttribute('path');
 	}
-	
+
 	public function setRelativePath($path)
 	{
 		return $this->setAttribute('path', Yii::app()->getBasePath().DIRECTORY_SEPARATOR.$path);
@@ -130,7 +130,7 @@ class View extends CActiveRecord
 	 * Retrieves a list of models based on the current search/filter conditions.
 	 * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.
 	 */
-	public function search($dataProviderConfig = array()) 
+	public function search($dataProviderConfig = array())
 	{
 		if(!isset($dataProviderConfig['criteria']))
 		{
@@ -145,10 +145,10 @@ class View extends CActiveRecord
 
 		return new CActiveDataProvider($this, $dataProviderConfig);
 	}
-	
+
 	public function __toString()
 	{
 		return strval($this->path);
 	}
-	
+
 }

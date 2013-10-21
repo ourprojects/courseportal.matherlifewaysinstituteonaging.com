@@ -24,13 +24,13 @@ class CategoryMessage extends CActiveRecord
 	{
 		return TranslateModule::translator()->getMessageSourceComponent()->categoryMessageTable;
 	}
-	
+
 	public function behaviors()
 	{
 		return array(
-				'ERememberFiltersBehavior' => array(
-						'class' => 'ext.ERememberFiltersBehavior.ERememberFiltersBehavior',
-				)
+			'ERememberFiltersBehavior' => array(
+				'class' => 'ext.ERememberFiltersBehavior.ERememberFiltersBehavior',
+			)
 		);
 	}
 
@@ -44,7 +44,7 @@ class CategoryMessage extends CActiveRecord
 			array('message_id, category_id', 'numerical', 'integerOnly' => true),
 			array('message_id', 'exist', 'attributeName' => 'id', 'className' => 'MessageSource', 'except' => 'search'),
 			array('category_id', 'exist', 'attributeName' => 'id', 'className' => 'Category', 'except' => 'search'),
-				
+
 			array('message_id, category_id', 'safe', 'on' => 'search'),
 		);
 	}
@@ -55,8 +55,8 @@ class CategoryMessage extends CActiveRecord
 	public function relations()
 	{
 		return array(
-				'messageSource' => array(self::BELONGS_TO, 'MessageSource', 'message_id'),
-				'category' => array(self::BELONGS_TO, 'Category', 'category_id'),
+			'messageSource' => array(self::BELONGS_TO, 'MessageSource', 'message_id'),
+			'category' => array(self::BELONGS_TO, 'Category', 'category_id'),
 		);
 	}
 
@@ -79,7 +79,7 @@ class CategoryMessage extends CActiveRecord
 	 * Retrieves a list of models based on the current search/filter conditions.
 	 * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.
 	 */
-	public function search($dataProviderConfig = array()) 
+	public function search($dataProviderConfig = array())
 	{
 		if(!isset($dataProviderConfig['criteria']))
 		{

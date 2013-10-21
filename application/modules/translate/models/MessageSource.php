@@ -21,9 +21,9 @@ class MessageSource extends CActiveRecord
 	public function behaviors()
 	{
 		return array(
-				'ERememberFiltersBehavior' => array(
-						'class' => 'ext.ERememberFiltersBehavior.ERememberFiltersBehavior',
-				)
+			'ERememberFiltersBehavior' => array(
+				'class' => 'ext.ERememberFiltersBehavior.ERememberFiltersBehavior',
+			)
 		);
 	}
 
@@ -63,59 +63,66 @@ class MessageSource extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-				// Attributes
-				'id' => TranslateModule::t('ID'),
-				'message' => TranslateModule::t('Message'),
-				// Relations
-				'viewMessages' => TranslateModule::t('View Messages'),
-				'views' => TranslateModule::t('Views'),
-				'viewCount' => TranslateModule::t('View Count'),
-				'viewSources' => TranslateModule::t('View Sources'),
-				'viewSourceCount' => TranslateModule::t('View Source Count'),
-				'translations' => TranslateModule::t('Translations'),
-				'translationCount' => TranslateModule::t('Translation Count'),
-				'sourceLanguage' => TranslateModule::t('Source Language'),
-				'languages' => TranslateModule::t('Languages'),
-				'languageCount' => TranslateModule::t('Language Count'),
-				'acceptedLanguages' => TranslateModule::t('Accepted Languages'),
-				'acceptedLanguageCount' => TranslateModule::t('Accepted Language Count'),
-				'messageCategories' => TranslateModule::t('Message Categories'),
-				'categories' => TranslateModule::t('Categories'),
-				'categoryCount' => TranslateModule::t('Category Count'),
-				// Virtual Attributes
-				'isMissingTranslations' => TranslateModule::t('Missing Translations?'),
+			// Attributes
+			'id' => TranslateModule::t('ID'),
+			'message' => TranslateModule::t('Message'),
+			// Relations
+			'viewMessages' => TranslateModule::t('View Messages'),
+			'views' => TranslateModule::t('Views'),
+			'viewCount' => TranslateModule::t('View Count'),
+			'viewSources' => TranslateModule::t('View Sources'),
+			'viewSourceCount' => TranslateModule::t('View Source Count'),
+			'translations' => TranslateModule::t('Translations'),
+			'translationCount' => TranslateModule::t('Translation Count'),
+			'sourceLanguage' => TranslateModule::t('Source Language'),
+			'languages' => TranslateModule::t('Languages'),
+			'languageCount' => TranslateModule::t('Language Count'),
+			'acceptedLanguages' => TranslateModule::t('Accepted Languages'),
+			'acceptedLanguageCount' => TranslateModule::t('Accepted Language Count'),
+			'messageCategories' => TranslateModule::t('Message Categories'),
+			'categories' => TranslateModule::t('Categories'),
+			'categoryCount' => TranslateModule::t('Category Count'),
+			// Virtual Attributes
+			'isMissingTranslations' => TranslateModule::t('Missing Translations?'),
 		);
 	}
 
 	public function scopes()
 	{
+		$db = $this->getDbConnection();
 		return array(
-				'translated' => array('with' => array('translations' => array('joinType' => 'INNER JOIN'))),
-				'havingAcceptedLanguages' => array('with' => array('acceptedLanguages' => array('joinType' => 'INNER JOIN'))),
-				'havingOtherLanguages' => array('with' => array('acceptedLanguages' => array('joinType' => 'LEFT JOIN')), 'condition' => 'acceptedLanguages.id IS NULL'),
-				'missingAcceptedLanguageTranslations' => array(
-						'join' => 'CROSS JOIN '.AcceptedLanguage::model()->tableName().' acceptedLanguages',
-						'with' => array('translations' => array('joinType' => 'LEFT JOIN', 'on' => 'acceptedLanguages.id=translations.language_id')),
-						'condition' => 'translations.id IS NULL'
-				),
+			'translated' => array('with' => array('translations' => array('joinType' => 'INNER JOIN'))),
+			'havingAcceptedLanguages' => array('with' => array('acceptedLanguages' => array('joinType' => 'INNER JOIN'))),
+			'havingOtherLanguages' => array('with' => array('acceptedLanguages' => array('joinType' => 'LEFT JOIN')), 'condition' => $db->quoteColumnName('acceptedLanguages.id').' IS NULL'),
+			'missingAcceptedLanguageTranslations' => array(
+				'join' => 'CROSS JOIN '.$db->quoteTableName(AcceptedLanguage::model()->tableName()).' '.$db->quoteTableName('acceptedLanguages'),
+				'with' => array('translations' => array('joinType' => 'LEFT JOIN', 'on' => $db->quoteColumnName('acceptedLanguages.id').'='.$db->quoteColumnName('translations.language_id'))),
+				'condition' => $db->quoteColumnName('translations.id').' IS NULL'
+			),
 		);
 	}
 
 	public function missingTranslations($languageId = null)
 	{
+		$db = $this->getDbConnection();
 		$criteria = array(
-					'with' => array('translations' => array('joinType' => 'LEFT JOIN', 'on' => 'languages.id=translations.language_id')),
-					'condition' => 'translations.id IS NULL',
-					'together' => true
-			);
+			'with' => array('translations' => array('joinType' => 'LEFT JOIN', 'on' => $db->quoteColumnName('languages.id').'='.$db->quoteColumnName('translations.language_id'))),
+			'condition' => $db->quoteColumnName($this->getTableAlias().'.language_id').'!='.$db->quoteColumnName('languages.id').' AND '.$db->quoteColumnName('translations.id').' IS NULL',
+			'together' => true
+		);
+		if(isset($this->id))
+		{
+			$criteria['condition'] .= ' AND '.$db->quoteColumnName($this->getTableAlias().'.id').'=:id';
+			$criteria['params'][':id'] = $this->id;
+		}
 		if($languageId === null)
 		{
-			$criteria['join'] = 'CROSS JOIN '.Language::model()->tableName().' languages';
+			$criteria['join'] = 'CROSS JOIN '.$db->quoteTableName(Language::model()->tableName()).' '.$db->quoteTableName('languages');
 		}
 		else
 		{
-			$criteria['params'] = array(':language_id' => $languageId);
-			$criteria['join'] = 'JOIN '.Language::model()->tableName().' languages ON languages.id=:language_id';
+			$criteria['params'][':language_id'] = $languageId;
+			$criteria['join'] = 'JOIN '.$db->quoteTableName(Language::model()->tableName()).' '.$db->quoteTableName('languages').' ON '.$db->quoteColumnName('languages.id').'=:language_id';
 		}
 		$this->getDbCriteria()->mergeWith($criteria);
 		return $this;

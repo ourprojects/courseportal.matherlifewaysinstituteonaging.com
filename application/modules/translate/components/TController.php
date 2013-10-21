@@ -1,7 +1,7 @@
 <?php
 
 /**
- * 
+ *
  * @author Louis DaPrato <l.daprato@gmail.com>
  *
  */
@@ -20,15 +20,15 @@ class TController extends CController
 	/**
 	 * (non-PHPdoc)
 	 * @see CController::filters()
-	 */
+	*/
 	public function filters()
 	{
 		return array(
-				array('application.filters.HttpsFilter'),
-				'accessControl' => array(
-						'srbac.components.SrbacAccessControlFilter',
-						'rules' => $this->accessRules()
-				),
+			array('application.filters.HttpsFilter'),
+			'accessControl' => array(
+				'srbac.components.SrbacAccessControlFilter',
+				'rules' => $this->accessRules()
+			),
 		);
 	}
 
@@ -40,7 +40,7 @@ class TController extends CController
 	{
 		return array(array('deny'));
 	}
-	
+
 	/**
 	 * (non-PHPdoc)
 	 * @see CController::getActionParams()
@@ -62,16 +62,16 @@ class TController extends CController
 
 	/**
 	 * Given a sub directory within the assets directory this function returns the URL to that asset directory.
-	 * 
+	 *
 	 * @param string $location The sub directory in the assets directory to get a URL for.
 	 * @return string The URL to the asset directory
 	 */
 	public function getAssetsUrl($location = '_shared')
 	{
-		if(!isset($this->_assetsUrls[$location])) 
+		if(!isset($this->_assetsUrls[$location]))
 		{
 			$assetsDir = Yii::getPathOfAlias('translate.assets.'.$location);
-			
+				
 			if(is_dir($assetsDir))
 			{
 				$this->_assetsUrls[$location] = Yii::app()->getAssetManager()->publish($assetsDir, false, -1, YII_DEBUG);
@@ -86,7 +86,7 @@ class TController extends CController
 
 	/**
 	 * Convenience method for getting the URL to a stylesheet asset.
-	 * 
+	 *
 	 * @param string $file The stylesheet asset file name to get a URL for
 	 * @param string $location The sub directory in the assets directory to get a URL for
 	 * @return string The URL to the stylesheet asset
