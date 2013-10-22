@@ -105,12 +105,9 @@ class MessageSourceController extends TController
 		$this->render('index');
 	}
 
-	public function actionAjaxIndex()
+	public function actionAjaxIndex($ajax)
 	{
-		if(isset($_GET['ajax']))
-		{
-			$this->actionGrid($id, $_GET['ajax']);
-		}
+		$this->actionGrid($id, $ajax);
 	}
 
 	public function actionView($id)
@@ -118,12 +115,9 @@ class MessageSourceController extends TController
 		$this->render('view', array('messageSource' => MessageSource::model()->findByPk($id)));
 	}
 
-	public function actionAjaxView($id)
+	public function actionAjaxView($id, $ajax)
 	{
-		if(isset($_GET['ajax']))
-		{
-			$this->actionGrid($id, $_GET['ajax']);
-		}
+		$this->actionGrid($id, $ajax);
 	}
 
 	public function actionGrid($id, $name)

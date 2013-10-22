@@ -48,6 +48,8 @@ class Message extends CActiveRecord
 			'acceptedLanguage' => array(self::BELONGS_TO, 'AcceptedLanguage', 'language_id'),
 			'viewMessages' => array(self::HAS_MANY, 'ViewMessage', 'message_id'),
 			'views' => array(self::HAS_MANY, 'View', array('view_id' => 'id'), 'through' => 'viewMessages', 'on' => $this->getTableAlias(false, false).'.language_id=views.language_id'),
+			'massageCategories' => array(self::HAS_MANY, 'MessageCategory', 'message_id'),
+			'categories' => array(self::HAS_MANY, 'Category', array('category_id' => 'id'), 'through' => 'messageCategories')
 		);
 	}
 
@@ -62,6 +64,7 @@ class Message extends CActiveRecord
 			'source' => TranslateModule::t('Source Message'),
 			'language' => TranslateModule::t('Language'),
 			'acceptedLanguage' => TranslateModule::t('Accepted Language'),
+			'categories' => TranslateModule::t('Categories')
 		);
 	}
 

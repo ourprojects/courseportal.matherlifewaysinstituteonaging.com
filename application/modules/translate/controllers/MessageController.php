@@ -95,12 +95,16 @@ class MessageController extends TController
 		{
 			$message->setAttributes($_POST['Message']);
 			if($message->save())
+			{
 				$this->redirect(Yii::app()->getUser()->getReturnUrl());
+			}
 		}
 		else
 		{
 			if($referer = Yii::app()->getRequest()->getUrlReferrer())
+			{
 				Yii::app()->getUser()->setReturnUrl($referer);
+			}
 		}
 
 		$this->render('view', array('message' => $message));
@@ -126,14 +130,52 @@ class MessageController extends TController
 			{
 				$message->setAttributes($_POST['Message']);
 				if($message->save())
+				{
 					$this->redirect(Yii::app()->getUser()->getReturnUrl());
+				}
 			}
 			else
 			{
 				if($referer = Yii::app()->getRequest()->getUrlReferrer())
+				{
 					Yii::app()->getUser()->setReturnUrl($referer);
+				}
 			}
-			$this->render('view', array('message' => $message));
+			if(Yii::app()->getRequest()->getIsAjaxRequest())
+			{
+				$result = array();
+				if($message->hasErrors())
+				{
+					$result['status'] = array('success' => 'error', 'message' => TranslateModule::t('An error occurred saving the translation.'));
+					foreach($message->getErrors() as $attribute => $errors)
+					{
+						$result[CHtml::activeId($message, $attribute)] = $errors;
+					}
+				}
+				else
+				{
+					$result['status'] = array('success' => 'success', 'message' => TranslateModule::t('Translation saved successfully.'));
+					$result['scenario'] = $message->getScenario(); 
+					$result['title'] = TranslateModule::t(($message->getIsNewRecord() ? 'Create' : 'Update').' Message Translation');
+					$result['id'] = $message->id;
+					$result['language'] = $message->language->getName();
+					foreach(Category::model()->findAll() as $category)
+					{
+						$result['categories'][$category->id] = array('text' => $category->category, 'selected' => false);
+					}
+					foreach($message->source->getRelated('categories', true) as $category)
+					{
+						$result['categories'][$category->id]['selected'] = true;
+					}
+					$result['message'] = $message->source->message;
+					$result['translation'] = $message->translation;
+				}
+				echo function_exists('json_encode') ? json_encode($result) : CJSON::encode($result);
+			}
+			else
+			{
+				$this->render('view', array('Message' => $message, 'MessageSource' => $message->source));
+			}
 		}
 		else
 		{
