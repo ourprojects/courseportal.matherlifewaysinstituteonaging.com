@@ -40,7 +40,7 @@ foreach(array(
   <div class="box-sidebar one">
     <h3>{t}Media Storm{/t}</h3>
     <p>The result is It Ain't Television... It's Brain Surgery, an honest, touching, and surprisingly funny account of one man's attempt to regain the quality of life that's so easy to take for granted.</p>
-    <p style="text-align:center;"><img src="<?php echo $this->getImagesUrl('spencer/mediastormimage.png'); ?>" alt="{t}Certificate of Completion{/t}"></p>
+    <p style="text-align:center;"><a href="http://mediastorm.com/publication/it-aint-television-its-brain-surgery" target="_blank"><img src="<?php echo $this->getImagesUrl('spencer/mediastormimage.png'); ?>" alt="{t}MediaStorm.com{/t}"></a></p>
     <p style="text-align:center;"><a href="http://mediastorm.com" target="_blank">MediaStorm</a></p>
   </div>
   <div class="box-sidebar one">
@@ -55,7 +55,6 @@ foreach(array(
     <p><img src="<?php echo $this->getImagesUrl('spencer/92735298.png'); ?>" alt="{t}Certificate of Completion{/t}"> </p>
     <p><a href="http://www.ninds.nih.gov/disorders/dementias/detail_dementia.htm" target="_blank">National Institute of Neurological Disorders and Stroke</a></p>
   </div>
-  
   <div class="box-sidebar one">
     <h3>{t}Coming Soon!{/t}</h3>
     <div class="text-center">
@@ -79,11 +78,6 @@ foreach(array(
 		$this->endWidget('zii.widgets.jui.CJuiDialog');
 		?>
   </div>
- 
-  
-  
-  
-  
 </div>
 
 <!-- start main content -->
@@ -94,7 +88,6 @@ foreach(array(
   <p style="color: #E80000;"> {t}<strong>Disclaimer: </strong>We want to emphasize that there are still risk factors that we cannot control, so living a brain healthy lifestyle does not guarantee that you will not get dementia, just like living a heart healthy lifestyle does not guarantee you won’t have a heart attack.{/t} </p>
   <h4>{t}Participant Access{/t}</h4>
   <p>{t}<strong>Particiants</strong> have <strong>access</strong> to this pilot study for <strong>exactly 90 days</strong> <strong>from</strong> the initial <strong>enrollment</strong> date.{/t}</p>
- 
   <h4>{t}Objectives{/t}</h4>
   <ul>
     <?php 
@@ -107,7 +100,7 @@ foreach(array(
   <div class="box-white">
     <h4>{t}Course Evaluations{/t}</h4>
     <p>{t}Please complete the following surveys at the appropriate times.{/t}</p>
-    <table width="100%" border="0">
+    <table border="0">
       <tr>
         <td><p>
             <button type="button" class="cupid-green" onClick="location.href('http://www.vovici.com/home_index.aspx');">Pre-Course Survey</button>
@@ -139,7 +132,7 @@ foreach(array(
 				data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-13" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-14" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-15" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-16" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-17" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-18" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-19" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-20" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-21" data-fancybox-group="lesson-6" class="hide lesson-6"></a> </li>
       <li> <a href="#lesson-7-slide-1" data-fancybox-group="lesson-7" class="teal lesson-7">{t}Social{/t}</a> <a href="#lesson-7-slide-2" data-fancybox-group="lesson-7" class="hide lesson-7"></a> <a href="#lesson-7-slide-3" data-fancybox-group="lesson-7" class="hide lesson-7"></a> <a href="#lesson-7-slide-4" data-fancybox-group="lesson-7" class="hide lesson-7"></a> <a href="#lesson-7-slide-5" data-fancybox-group="lesson-7" class="hide lesson-7"></a> <a href="#lesson-7-slide-6" data-fancybox-group="lesson-7" class="hide lesson-7"></a> <a href="#lesson-7-slide-7" data-fancybox-group="lesson-7" class="hide lesson-7"></a> <a href="#lesson-7-slide-8" data-fancybox-group="lesson-7" class="hide lesson-7"></a> <a href="#lesson-7-slide-9" data-fancybox-group="lesson-7" class="hide lesson-7"></a> <a href="#lesson-7-slide-10" data-fancybox-group="lesson-7" class="hide lesson-7"></a> <a href="#lesson-7-slide-11" data-fancybox-group="lesson-7" class="hide lesson-7"></a> <a href="#lesson-7-slide-12"
 				data-fancybox-group="lesson-7" class="hide lesson-7"></a> <a href="#lesson-7-slide-13" data-fancybox-group="lesson-7" class="hide lesson-7"></a> <a href="#lesson-7-slide-14" data-fancybox-group="lesson-7" class="hide lesson-7"></a> <a href="#lesson-7-slide-15" data-fancybox-group="lesson-7" class="hide lesson-7"></a> <a href="#lesson-7-slide-16" data-fancybox-group="lesson-7" class="hide lesson-7"></a> <a href="#lesson-7-slide-17" data-fancybox-group="lesson-7" class="hide lesson-7"></a> <a href="#lesson-7-slide-18" data-fancybox-group="lesson-7" class="hide lesson-7"></a> <a href="#lesson-7-slide-19" data-fancybox-group="lesson-7" class="hide lesson-7"></a> <a href="#lesson-7-slide-20" data-fancybox-group="lesson-7" class="hide lesson-7"></a> <a href="#lesson-7-slide-21" data-fancybox-group="lesson-7" class="hide lesson-7"></a> <a href="#lesson-7-slide-22" data-fancybox-group="lesson-7" class="hide lesson-7"></a> </li>
-      <li> <a href="#lesson-8-slide-1" data-fancybox-group="lesson-8" class="teal lesson-8">{t}Closing{/t}</a></li>
+      <li> <a href="#lesson-8-slide-1" data-fancybox-group="lesson-8" class="teal lesson-8">{t}Closing{/t}</a> <a href="#lesson-8-slide-2" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-3" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-4" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-5" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-6" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-7" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-8" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-9" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-10" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-11" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-12" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-13" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-14" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-15" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-16" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-17" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-18" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-19" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-20" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-21" data-fancybox-group="lesson-8" class="hide lesson-8"></a></li>
     </ul>
   </div>
   <div class="box-white">
@@ -149,7 +142,7 @@ foreach(array(
   </div>
   <div class="box-white">
     <h4>{t}Certificate of Completion{/t}</h4>
-    <p>{t}You must complete the first four Modules before accessing your Certificate of Completion.{/t}</p>
+    <p>{t}You must complete the first four Modules before accessing your Certificate of Completion. Click the image icon below to donwload your certificate where you will be able to manually add your name and date.{/t}</p>
     <img src="<?php echo $this->getImagesUrl('spencer/ArtworkCertificate.png'); ?>" alt="{t}Certificate of Completion{/t}"> </div>
   <h4>{t}Resources{/t}</h4>
   <p>{t}Please use these listed resources in the completion of this online course. Please contact your facilitator or the program director if you have additional resources you would like to see added here.{/t}</p>
@@ -199,7 +192,7 @@ foreach(array(
             </select>
           </p>
           <p class="right-answer hide">{t}Great! Thank you! Please continue.{/t}</p>
-          <p class="wrong-answer hide">{t}Please return to this course's home page and complete the pre-course evaluation. It is accessible via the sidebar.{/t}</p>
+          <p class="wrong-answer hide">{t}No Problem! Please <a href="location.href('http://www.vovici.com/home_index.aspx" target="_blank">click here</a> to participate.{/t}</p>
         </div>
       </div>
       <div class="buttons"> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Start Course &raquo;{/t}</a> </div>
@@ -208,7 +201,7 @@ foreach(array(
       <div class="content">
         <h2 class="flowers">{t}You Tube - The Brain Fitness Program{/t}</h2>
         <hr />
-        <p>{t}This short video will provide you with a first look at some of the exciting new discoveries about neuroplasticity (the ability of the adult brain to change itself) that form the foundation of this course. You may have already seen this popular PBS special, which helped pave the way for many incredible advances, including this course, that can help you strengthen your brain and lower your risk for dementia.{/t}</p>
+        <p>{t}This short video will provide you with a first look at some of the exciting new discoveries about neuroplasticity (the ability of the adult brain to change itself) that form the foundation of this course. You may have already seen this popular <a href="http://www.pbs.org" target="_blank">PBS</a> (Public Broacdcasting Service) special, which helped pave the way for many incredible advances, including this course, that can help you strengthen your brain and lower your risk for dementia.{/t}</p>
         <iframe style="width: 480px; height: 360px; display: block; margin: 15px auto;" src="//www.youtube.com/embed/WBSNQi4es5k?rel=0" frameborder="0" allowfullscreen></iframe>
         <!-- 'url' => Yii::app()->getComponent('phpBB')->getForumUrl(), --> 
       </div>
@@ -3034,7 +3027,7 @@ foreach(array(
         <p>{t}Congratulations on completing the Spencer Powell Brain Fitness Course! You know have the knowledge and tools to lead a brain-healthy life. We hope that you will continue to strive to make healthy choices in each of the six areas we&rsquo;ve discussed. We are available for any questions you might have as you move forward.{/t}</p>
         <p>{t}We have really enjoyed getting to know you, and hope this course was helpful. Best wishes as you carry on in the future!{/t}</p>
         <h4>{t}Evaluation (optional){/t}</h4>
-        <p>{t}Please complete the Post-Course Evaluation. It is accessible via the course page, in the right sidebar.{/t}</p>
+        <p>{t}Please complete the Post-Course Evaluation located on the course home page.{/t}</p>
         <p>{t}Your feedback is greatly appreciated, and will help us to better serve other participants in the future. We ask that you complete it before you exit this course portal. You do not have to include your name on the evaluation. It is completely confidential.{/t}</p>
         <script>
 				function myFunction(){
@@ -3045,7 +3038,7 @@ foreach(array(
           <input type="button" style="width: 175px;" onclick="myFunction()" value="Post-Course Evaluation" />
         </p>
       </div>
-      <div class="buttons"> <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}End Course{/t}</a> </div>
+      <div class="buttons"> <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="parent.jQuery.fancybox.close();">{t}Exit{/t}</a> </div>
     </div>
   </div>
 </div>
