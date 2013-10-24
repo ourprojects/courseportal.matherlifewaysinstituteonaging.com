@@ -66,8 +66,12 @@ class TController extends CController
 	 * @param string $location The sub directory in the assets directory to get a URL for.
 	 * @return string The URL to the asset directory
 	 */
-	public function getAssetsUrl($location = '_shared')
+	public function getAssetsUrl($location = null)
 	{
+		if(!isset($location))
+		{
+			$location = $this->getId();
+		}
 		if(!isset($this->_assetsUrls[$location]))
 		{
 			$assetsDir = Yii::getPathOfAlias('translate.assets.'.$location);
@@ -91,9 +95,9 @@ class TController extends CController
 	 * @param string $location The sub directory in the assets directory to get a URL for
 	 * @return string The URL to the stylesheet asset
 	 */
-	public function getStylesUrl($file = '', $location = '_shared')
+	public function getStylesUrl($file = '', $directory = null)
 	{
-		return $this->getAssetsUrl($location).'/styles/'.$file;
+		return $this->getAssetsUrl($directory).'/styles/'.$file;
 	}
 
 	/**
@@ -103,9 +107,9 @@ class TController extends CController
 	 * @param string $location The sub directory in the assets directory to get a URL for
 	 * @return string The URL to the script asset
 	 */
-	public function getScriptsUrl($file = '', $location = '_shared')
+	public function getScriptsUrl($file = '', $directory = null)
 	{
-		return $this->getAssetsUrl($location).'/scripts/'.$file;
+		return $this->getAssetsUrl($directory).'/scripts/'.$file;
 	}
 
 	/**
@@ -115,9 +119,9 @@ class TController extends CController
 	 * @param string $location The sub directory in the assets directory to get a URL for
 	 * @return string The URL to the image asset
 	 */
-	public function getImagesUrl($file = '', $location = '_shared')
+	public function getImagesUrl($file = '', $directory = null)
 	{
-		return $this->getAssetsUrl($location).'/images/'.$file;
+		return $this->getAssetsUrl($directory).'/images/'.$file;
 	}
 
 }

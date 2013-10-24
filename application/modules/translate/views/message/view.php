@@ -1,10 +1,12 @@
 <?php
-Yii::app()->getClientScript()->registerScriptFile($this->getScriptsUrl('jquery.messageForm.js'));
+$clientScript = Yii::app()->getClientScript();
+$clientScript->registerCssFile($this->getStylesUrl('messageForm.css', 'message'));
+$clientScript->registerScriptFile($this->getScriptsUrl('jquery.messageForm.js', 'message'));
 $action = $Message->getIsNewRecord() ? 'Create' : 'Update';
-$this->beginWidget('zii.widgets.jui.CJuiDialog', array(
-	'id' => 'message-form-dialog',
+$dialog = $this->beginWidget('zii.widgets.jui.CJuiDialog', array(
+	'id' => $id,
 	'options' => array(
-		'title' => TranslateModule::t($action.' Message Translation'),
+		'title' => TranslateModule::t($action.' Translation'),
 		'autoOpen' => false,
 		'modal' => true,
 		'width' => 'auto',
@@ -12,98 +14,99 @@ $this->beginWidget('zii.widgets.jui.CJuiDialog', array(
 	),
 ));
 ?>
-	<div id="messageForm" class="form">
+<div class="form">
+	<?php 
+	$form = $this->beginWidget('CActiveForm',
+			array(
+				'action' => $this->createUrl('message/view'),
+				'enableAjaxValidation' => true,
+				'enableClientValidation' => true,
+				'clientOptions' => array(
+					'validateOnSubmit' => true,
+					'afterValidate' => 'js:'.
+						'function(form, data, hasError){'.
+							'if (!hasError)'.
+							'{'.
+								'$("#'.$id.'").tMessageForm("submit");'.
+								'return false;'.
+							'}'.
+						'}'
+				),
+			)
+	);
+	?>
+	<p class="status hide"></p>
+	<?php 
+	echo $form->errorSummary($Message);
+	?>
+	<p class="note">
+		<?php echo TranslateModule::t('Fields with {span} are required.', array('{span}' => '<span class="required">*</span>')); ?>
+	</p>
+	<div class="row">
 		<?php 
-		$form = $this->beginWidget('CActiveForm',
+		echo $form->label($MessageSource, 'message');
+		echo $form->textArea($MessageSource, 'message', array('readonly' => 'readonly', 'rows' => 3, 'cols' => 90));
+		echo $form->error($MessageSource, 'message');
+		?>
+	</div>
+	<div class="row">
+		<?php 
+		echo $form->labelEx($Message, 'language_id');
+		if($Message->getIsNewRecord())
+		{
+			echo $form->dropDownList($Message, 'language_id', CHtml::listData(Language::model()->missingTranslations($Message->id)->findAll(), 'id', 'name'));
+		}
+		else
+		{
+			echo $form->hiddenField($Message, 'language_id');
+			echo '<p id="Message_language"></p>';
+		}
+		echo $form->error($Message, 'language_id'); 
+		?>
+	</div>
+	<div class="row">
+		<?php 
+		echo $form->labelEx($Message, 'translation');
+		echo $form->textArea($Message, 'translation', array('rows' => 3, 'cols' => 90));
+		echo $form->error($Message, 'translation'); 
+		?>
+	</div>
+	<?php
+	echo $form->hiddenField($Message, 'id');
+	echo CHtml::hiddenField('_method', $Message->getIsNewRecord() ? 'POST' : 'PUT'); 
+	?>
+	<div class="row buttons">
+		<?php 
+		echo CHtml::submitButton(TranslateModule::t($action));
+
+		$this->widget('translate.widgets.message.GoogleTranslateAjaxButton',
 				array(
-					'id' => 'message-form',
-					'enableAjaxValidation' => true,
-					'enableClientValidation' => true,
-					'clientOptions' => array(
-						'validateOnSubmit' => true,
-						'afterValidate' => 'js:'.
-							'function(form, data, hasError){'.
-								'if (!hasError)'.
-								'{'.
-									'form.tMessageForm("submit");'.
-									'return false;'.
-								'}'.
-							'}'
-					),
+					'message' => $MessageSource->message,
+					'targetLanguage' => $Message->language_id,
+					'target' => '#message-form #Message_translation',
+					'ajaxOptions' => array(
+						'success' => 'js:function(data){$("#message-form #Message_translation").val(data);}'
+					)
 				)
 		);
 		?>
-		<p class="status hide"></p>
-		<?php 
-		echo $form->errorSummary(array($Message, $MessageSource));
-		?>
-		<p class="note">
-			<?php echo TranslateModule::t('Fields with {span} are required.', array('{span}' => '<span class="required">*</span>')); ?>
-		</p>
-		<div class="row">
-			<?php 
-			echo $form->labelEx($Message, 'id');
-			echo $form->textField($Message, 'id', array('disabled' => 'disabled'));
-			echo $form->error($Message, 'id'); 
-			?>
-		</div>
-		<div class="row">
-			<?php 
-			echo $form->labelEx($Message, 'language');
-			echo $form->textField($Message, 'language', array('disabled' => 'disabled'));
-			echo $form->error($Message, 'language'); 
-			?>
-		</div>
-		<div class="row">
-			<?php 
-			echo $form->labelEx($MessageSource, 'categories');
-			echo $form->dropDownList($MessageSource, 'categories', CHtml::listData(Category::model()->findAll(), 'id', 'category'), array('disabled' => 'disabled', 'multiple' => 'multiple')); 
-			echo $form->error($MessageSource, 'categories');
-			?>
-		</div>
-		<div class="row">
-			<?php 
-			echo $form->label($MessageSource, 'message');
-			echo $form->textArea($MessageSource, 'message', array('disabled' => 'disabled', 'rows' => 3, 'cols' => 90));
-			echo $form->error($MessageSource, 'message');
-			?>
-		</div>
-		<div class="row">
-			<?php 
-			echo $form->labelEx($Message, 'translation');
-			echo $form->textArea($Message, 'translation', array('rows' => 3, 'cols' => 90));
-			echo $form->error($Message, 'translation'); 
-			?>
-		</div>
-		<div class="row buttons">
-			<?php 
-			echo CHtml::submitButton(TranslateModule::t($action));
-
-			$this->widget('translate.widgets.message.GoogleTranslateAjaxButton',
-					array(
-						'message' => $MessageSource->message,
-						'targetLanguage' => $Message->language_id,
-						'target' => '#message-form #Message_translation',
-						'ajaxOptions' => array(
-							'success' => 'js:function(data){$("#message-form #Message_translation").val(data);}'
-						)
-					)
-			);
-			?>
-		</div>
-		<?php $this->endWidget($form->getId()); ?>
 	</div>
+	<?php $this->endWidget($form->getId()); ?>
+</div>
 <?php 
-$this->endWidget($form->getId()); 
-$options = CJavaScript::encode(
-	array(
+$this->endWidget($dialog->getId()); 
+$options = array(
 		'scenario' => $Message->getScenario(),
 		'loading' => true,
 		'createText' => TranslateModule::t('Create'),
 		'saveText' => TranslateModule::t('Save'),
-		'loadingClass' => 'loading'
-	)
-);
-Yii::app()->getClientScript()->registerScript(__CLASS__.'-div#messageForm', "jQuery('div#messageForm').tMessageForm($options);");
+		'loadingClass' => 'loading',
+		'status' => array('success' => 'success', 'message' => null)
+	);
+if(isset($clientOptions))
+{
+	$options = array_merge($options, $clientOptions);
+}
+$clientScript->registerScript(__CLASS__.'-'.$id, "jQuery('#$id').tMessageForm(".CJavaScript::encode($options).");");
 ?>
 

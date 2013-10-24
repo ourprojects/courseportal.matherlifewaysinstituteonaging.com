@@ -36,7 +36,7 @@ class Message extends CActiveRecord
 			array('language_id', 'exist', 'attributeName' => 'id', 'className' => 'Language', 'except' => 'search'),
 			array('id', 'exist', 'attributeName' => 'id', 'className' => 'MessageSource', 'except' => 'search'),
 
-			array('id, language_id, category, translation', 'safe', 'on' => 'search'),
+			array('id, language_id, translation', 'safe', 'on' => 'search'),
 		);
 	}
 
@@ -48,7 +48,7 @@ class Message extends CActiveRecord
 			'acceptedLanguage' => array(self::BELONGS_TO, 'AcceptedLanguage', 'language_id'),
 			'viewMessages' => array(self::HAS_MANY, 'ViewMessage', 'message_id'),
 			'views' => array(self::HAS_MANY, 'View', array('view_id' => 'id'), 'through' => 'viewMessages', 'on' => $this->getTableAlias(false, false).'.language_id=views.language_id'),
-			'massageCategories' => array(self::HAS_MANY, 'MessageCategory', 'message_id'),
+			'messageCategories' => array(self::HAS_MANY, 'CategoryMessage', 'message_id'),
 			'categories' => array(self::HAS_MANY, 'Category', array('category_id' => 'id'), 'through' => 'messageCategories')
 		);
 	}
@@ -58,7 +58,7 @@ class Message extends CActiveRecord
 		return array(
 			// Attributes
 			'id' => TranslateModule::t('ID'),
-			'language_id' => TranslateModule::t('Language ID'),
+			'language_id' => TranslateModule::t('Language'),
 			'translation' => TranslateModule::t('Translation'),
 			// Relations
 			'source' => TranslateModule::t('Source Message'),

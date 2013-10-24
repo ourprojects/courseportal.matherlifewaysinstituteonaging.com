@@ -89,9 +89,14 @@ class CategoryController extends TController
 				$model->with(array('source.categories' => array('condition' => 'categories.id=:id', 'params' => array(':id' => $id))))->together()->getDbCriteria()->group = 't.id, t.language_id';
 				$gridPath = '../message/_grid';
 				break;
-			case 'language-grid':
+			case 'sourceMessageLanguage-grid':
 				$model = new Language('search');
-				$model->with(array('messageSources.categories' => array('condition' => 'categories.id=:id', 'params' => array(':id' => $id))))->together()->getDbCriteria()->group = 't.id';
+				$model->with(array('sourceMessages.categories' => array('condition' => 'categories.id=:id', 'params' => array(':id' => $id))))->together()->getDbCriteria()->group = 't.id';
+				$gridPath = '../language/_grid';
+				break;
+			case 'translatedMessageLanguage-grid':
+				$model = new Language('search');
+				$model->with(array('messages.categories' => array('condition' => 'categories.id=:id', 'params' => array(':id' => $id))))->together()->getDbCriteria()->group = 't.id';
 				$gridPath = '../language/_grid';
 				break;
 			case 'route-grid':
@@ -112,7 +117,7 @@ class CategoryController extends TController
 			default:
 				return;
 		}
-		return $this->renderPartial($gridPath, array('model' => $model), $return);
+		return $this->renderPartial($gridPath, array('model' => $model, 'id' => $id), $return);
 	}
 
 	/**

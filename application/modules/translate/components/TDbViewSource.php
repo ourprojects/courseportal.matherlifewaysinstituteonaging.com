@@ -264,7 +264,7 @@ class TDbViewSource extends TViewSource
 		->where($db->quoteColumnName('rt.route').'=:route', array(':route' => $route))
 		->queryScalar();
 
-		return $routeId === false && $createIfNotExists && ($routeId = $this->addRoute($route)) === null ? false : $routeId;
+		return ($routeId === false && $createIfNotExists && ($routeId = $this->addRoute($route)) === null) ? false : $routeId;
 	}
 
 	/**

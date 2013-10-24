@@ -8,7 +8,7 @@
 	</div>
 	<div id="missingMessageSources" class="box-white">
 		<h2>
-			<?php echo TranslateModule::t('Source Messages Missing a Translation For Language'); ?>
+			<?php echo TranslateModule::t('Messages Missing a Translation For This Language'); ?>
 		</h2>
 		<?php $this->actionGrid($language->id, 'missingMessageSource-grid'); ?>
 	</div>
@@ -17,8 +17,9 @@
 			'zii.widgets.jui.CJuiTabs',
 			array(
 				'tabs' => array(
-					TranslateModule::t('Categories') => $this->internalActionGrid($language->id, 'category-grid', true),
+					TranslateModule::t('Source Messsage Categories') => $this->internalActionGrid($language->id, 'sourceMessageCategory-grid', true),
 					TranslateModule::t('Source Messages') => $this->internalActionGrid($language->id, 'messageSource-grid', true),
+					TranslateModule::t('Translated Messsage Categories') => $this->internalActionGrid($language->id, 'translatedMessageCategory-grid', true),
 					TranslateModule::t('Translated Messages') => $this->internalActionGrid($language->id, 'message-grid', true),
 					TranslateModule::t('Routes') => $this->internalActionGrid($language->id, 'route-grid', true),
 					TranslateModule::t('Source Views') => $this->internalActionGrid($language->id, 'viewSource-grid', true),

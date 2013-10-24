@@ -18,8 +18,11 @@ class MessageController extends TController
 			),
 			array(
 				'ext.LDConditionChainFilter.LDForwardActionFilter.LDForwardActionFilter + view',
-				'conditions' => 'update'
-			)
+				'conditions' => array(
+					'update + put',
+					'create + post'
+				)
+			),
 		));
 	}
 
@@ -72,115 +75,119 @@ class MessageController extends TController
 		$this->render('index');
 	}
 
-	public function actionAjaxIndex()
+	public function actionAjaxIndex($ajax)
 	{
-		if(isset($_GET['ajax']))
-		{
-			$this->actionGrid(null, null, $_GET['ajax']);
-		}
+		$this->actionGrid(null, null, $ajax);
 	}
 
-	/**
-	 * Updates a particular model.
-	 * If update is successful, the browser will be redirected to the 'view' page.
-	 * @param integer $id the ID of the model to be updated
-	 */
-	public function actionCreate($id, $languageId)
+	public function actionCreate(array $Message = array(), $ajax = null)
 	{
 		$message = new Message;
-		$message->id = $id;
-		$message->language_id = $languageId;
-
-		if(isset($_POST['Message']))
+		$message->setAttributes($Message);
+		if(isset($ajax))
 		{
-			$message->setAttributes($_POST['Message']);
-			if($message->save())
-			{
-				$this->redirect(Yii::app()->getUser()->getReturnUrl());
-			}
+			$message->validate();
 		}
 		else
 		{
-			if($referer = Yii::app()->getRequest()->getUrlReferrer())
-			{
-				Yii::app()->getUser()->setReturnUrl($referer);
-			}
+			$message->save();
 		}
-
-		$this->render('view', array('message' => $message));
+		return $this->internalActionView($message, TranslateModule::t($message->hasErrors() ? 'Error creating translation.' : 'Translation created.'));
 	}
 
 	public function actionView($id, $languageId)
 	{
-		// Forwarded to update action
-	}
-
-	/**
-	 * Updates a particular model.
-	 * If update is successful, the browser will be redirected to the 'view' page.
-	 * @param integer $id the ID of the model to be updated
-	 */
-	public function actionUpdate($id, $languageId)
-	{
-		$message = Message::model()->with('source')->findByPk(array('id' => $id, 'language_id' => $languageId));
-
-		if($message !== null)
+		$Message = Message::model()->with('source')->findByPk(array('id' => $id, 'language_id' => $languageId));
+		if($Message === null)
 		{
-			if(isset($_POST['Message']))
+			$Message = new Message;
+			$Message->id = $id;
+			$Message->language_id = $languageId;
+		}
+			
+		return $this->internalActionView($Message, null);
+	}
+	
+	public function internalActionView($Message, $statusMessage)
+	{
+		if($Message === null)
+		{
+			throw new CHttpException(404, TranslateModule::t('Message not found.'));
+		}
+		
+		if(!isset($Message->language))
+		{
+			$Message->language = isset($Message->language_id) ? Language::model()->findByPk($Message->language_id) : new Language;
+		}
+		
+		if(!isset($Message->source))
+		{
+			$Message->source = isset($Message->id) ? MessageSource::model()->findByPk($Message->id) : new MessageSource;
+		}
+		
+		
+		$status = array('success' => $Message->hasErrors() ? 'warning' : 'success', 'message' => $statusMessage);
+		if(Yii::app()->getRequest()->getIsAjaxRequest())
+		{
+			$result = array('status' => $status);
+			if($Message->hasErrors())
 			{
-				$message->setAttributes($_POST['Message']);
-				if($message->save())
+				foreach($Message->getErrors() as $attribute => $errors)
 				{
-					$this->redirect(Yii::app()->getUser()->getReturnUrl());
+					$result[CHtml::activeId($Message, $attribute)] = $errors;
 				}
 			}
 			else
 			{
-				if($referer = Yii::app()->getRequest()->getUrlReferrer())
+				$result['scenario'] = $Message->getScenario();
+				$result['title'] = TranslateModule::t(($Message->getIsNewRecord() ? 'Create' : 'Update').' Message Translation');
+				$result['id'] = $Message->id;
+				$result['message'] = $Message->source->message;
+				$result['translation'] = $Message->translation;
+				if($Message->getIsNewRecord())
 				{
-					Yii::app()->getUser()->setReturnUrl($referer);
-				}
-			}
-			if(Yii::app()->getRequest()->getIsAjaxRequest())
-			{
-				$result = array();
-				if($message->hasErrors())
-				{
-					$result['status'] = array('success' => 'error', 'message' => TranslateModule::t('An error occurred saving the translation.'));
-					foreach($message->getErrors() as $attribute => $errors)
+					foreach(Language::model()->missingTranslations($Message->id)->findAll() as $language)
 					{
-						$result[CHtml::activeId($message, $attribute)] = $errors;
+						$result['language_id'][$language->id] = array('text' => $language->name, 'selected' => false);
 					}
+					$result['language_id'][$Message->language_id]['selected'] = true;
 				}
 				else
 				{
-					$result['status'] = array('success' => 'success', 'message' => TranslateModule::t('Translation saved successfully.'));
-					$result['scenario'] = $message->getScenario(); 
-					$result['title'] = TranslateModule::t(($message->getIsNewRecord() ? 'Create' : 'Update').' Message Translation');
-					$result['id'] = $message->id;
-					$result['language'] = $message->language->getName();
-					foreach(Category::model()->findAll() as $category)
-					{
-						$result['categories'][$category->id] = array('text' => $category->category, 'selected' => false);
-					}
-					foreach($message->source->getRelated('categories', true) as $category)
-					{
-						$result['categories'][$category->id]['selected'] = true;
-					}
-					$result['message'] = $message->source->message;
-					$result['translation'] = $message->translation;
+					$result['language_id'] = $Message->language_id;
+					$result['language'] = $Message->language->getName();
 				}
-				echo function_exists('json_encode') ? json_encode($result) : CJSON::encode($result);
 			}
-			else
-			{
-				$this->render('view', array('Message' => $message, 'MessageSource' => $message->source));
-			}
+			echo function_exists('json_encode') ? json_encode($result) : CJSON::encode($result);
 		}
 		else
 		{
-			throw new CHttpException(404, TranslateModule::t('The requested message does not exist.'));
+			$this->render('view', array('Message' => $Message, 'MessageSource' => $Message->source, 'id' => $Message->getIsNewRecord() ? 'message-create-form' : 'message-update-form', 'clientOptions' => array('status' => $status)));
 		}
+	}
+
+	public function actionUpdate(array $Message = array(), $ajax = null)
+	{
+		if(!isset($Message['id']) || !isset($Message['language_id']))
+		{
+			throw new CHttpException(400, TranslateModule::t('The source message ID and language ID of the translation to be updated must be specified.'));
+		}
+		$messageModel = Message::model()->with('source')->findByPk(array('id' => $Message['id'], 'language_id' => $Message['language_id']));
+
+		if($messageModel !== null)
+		{
+			$messageModel->setAttributes($Message);
+			if(isset($ajax))
+			{
+				$messageModel->validate();
+			}
+			else
+			{
+				$messageModel->save();
+			}
+		}
+		
+		return $this->internalActionView($messageModel, TranslateModule::t($messageModel->hasErrors() ? 'Error updating translation!' : 'Translation updated.'));
 	}
 
 	public function actionGrid($id, $languageId, $name)
@@ -226,10 +233,6 @@ class MessageController extends TController
 		return $this->renderPartial($gridPath, array('model' => $model), $return);
 	}
 
-	/**
-	 * Deletes a record
-	 * @param integer $id the ID of the model to be deleted
-	 */
 	public function actionDelete($id, $languageId)
 	{
 		$model = Message::model()->findByPk(array('id' => $id, 'language_id' => $languageId));

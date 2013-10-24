@@ -1,4 +1,5 @@
 <?php
+$relatedGrids = array('viewSource-grid', 'view-grid');
 Yii::app()->getClientScript()->registerCss('route-grid-table-width', 'div#route-grid table.items{min-width:100%;width:100%;max-width:100%;}');
 $this->widget('zii.widgets.grid.CGridView',
 		array(
@@ -18,7 +19,8 @@ $this->widget('zii.widgets.grid.CGridView',
 					'viewButtonLabel' => TranslateModule::t('View Details'),
 					'viewButtonUrl' => 'Yii::app()->getController()->createUrl("route/view", array("id" => $data->id))',
 					'deleteButtonUrl' => 'Yii::app()->getController()->createUrl("route/delete", array("id" => $data->id))',
-					'deleteConfirmation' => TranslateModule::t('Are you certain that you would like to delete this route?')
+					'deleteConfirmation' => TranslateModule::t('Are you certain that you would like to delete this route?'),
+					'afterDelete' => 'function(link, success, data){if(success){$("#'.implode('").yiiGridView("update");$("#', $relatedGrids).'").yiiGridView("update");}}'
 				)
 			),
 		)

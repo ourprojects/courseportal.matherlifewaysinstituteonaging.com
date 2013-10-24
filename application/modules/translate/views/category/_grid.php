@@ -1,8 +1,9 @@
 <?php
 Yii::app()->getClientScript()->registerCss('category-grid-table-width', 'div#category-grid table.items{min-width:100%;width:100%;max-width:100%;}');
+$relatedGrids = array('messageSource-grid', 'message-grid', 'missingLanguage-grid', 'missingMessageSource-grid');
 $this->widget('zii.widgets.grid.CGridView',
 		array(
-			'id' => 'category-grid',
+			'id' => isset($id) ? $id : 'category-grid',
 			'filter' => $model,
 			'dataProvider' => $model->search(),
 			'selectableRows' => 0,
@@ -18,7 +19,8 @@ $this->widget('zii.widgets.grid.CGridView',
 					'viewButtonLabel' => TranslateModule::t('View Details'),
 					'viewButtonUrl' => 'Yii::app()->getController()->createUrl("category/view", array("id" => $data->id))',
 					'deleteButtonUrl' => 'Yii::app()->getController()->createUrl("category/delete", array("id" => $data->id))',
-					'deleteConfirmation' => TranslateModule::t('All messages and their translations will be delete for this category! Are you absolutely sure that you would like to delete this message category, as well as all of the messages and translations in it?')
+					'deleteConfirmation' => TranslateModule::t('All messages and their translations will be delete for this category! Are you absolutely sure that you would like to delete this message category, as well as all of the messages and translations in it?'),
+					'afterDelete' => 'function(link, success, data){if(success){$("#'.implode('").yiiGridView("update");$("#', $relatedGrids).'").yiiGridView("update");}}'
 				)
 			),
 		)

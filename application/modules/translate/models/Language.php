@@ -48,6 +48,8 @@ class Language extends CActiveRecord
 			'messageCount' => array(self::STAT, 'Message', 'language_id'),
 			'messageSources' => array(self::MANY_MANY, 'MessageSource', Message::model()->tableName().'(language_id, id)'),
 			'messageSourceCount' => array(self::STAT, 'MessageSource', Message::model()->tableName().'(language_id, id)'),
+			'sourceMessages' => array(self::HAS_MANY, 'MessageSource', 'language_id'),
+			'sourceMessageCount' => array(self::STAT, 'MessageSource', 'language_id'),
 			'views' => array(self::HAS_MANY, 'View', 'language_id'),
 			'viewCount' => array(self::STAT, 'View', 'language_id'),
 			'viewSources' => array(self::MANY_MANY, 'ViewSource', View::model()->tableName().'(language_id, id)'),
@@ -125,8 +127,6 @@ class Language extends CActiveRecord
 		}
 		return $this->_name;
 	}
-	
-	
 
 	public function getIsMissingTranslations($messageId = null)
 	{

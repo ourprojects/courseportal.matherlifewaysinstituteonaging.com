@@ -95,14 +95,19 @@ class LanguageController extends TController
 	{
 		switch($name)
 		{
-			case 'category-grid':
+			case 'translatedMessageCategory-grid':
 				$model = new Category('search');
 				$model->with(array('messages.language' => array('condition' => 'language.id=:id', 'params' => array(':id' => $id))))->together()->getDbCriteria()->group = 't.id';
 				$gridPath = '../category/_grid';
 				break;
+			case 'sourceMessageCategory-grid':
+				$model = new Category('search');
+				$model->with(array('messageSources.sourceLanguage' => array('condition' => 'sourceLanguage.id=:id', 'params' => array(':id' => $id))))->together()->getDbCriteria()->group = 't.id';
+				$gridPath = '../category/_grid';
+				break;
 			case 'messageSource-grid':
 				$model = new MessageSource('search');
-				$model->with(array('languages' => array('condition' => 'languages.id=:id', 'params' => array(':id' => $id))))->together()->getDbCriteria()->group = 't.id';
+				$model->with(array('sourceLanguage' => array('condition' => 'sourceLanguage.id=:id', 'params' => array(':id' => $id))))->together()->getDbCriteria()->group = 't.id';
 				$gridPath = '../messageSource/_grid';
 				break;
 			case 'message-grid':
@@ -141,7 +146,7 @@ class LanguageController extends TController
 			default:
 				return;
 		}
-		return $this->renderPartial($gridPath, array('model' => $model), $return);
+		return $this->renderPartial($gridPath, array('model' => $model, 'id' => $id), $return);
 	}
 
 	public function actionCreate($id)
