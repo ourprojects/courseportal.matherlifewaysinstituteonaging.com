@@ -1,116 +1,71 @@
 <?php
 
-$this->breadcrumbs = array(t('Courses') => $this->createUrl('course/'), t($course->title));
-$clientScript = Yii::app()->getClientScript();
-$clientScript->registerCssFile($this->getStylesUrl('course.css'));
+$this -> breadcrumbs = array(t('Courses') => $this -> createUrl('course/'), t($course -> title));
+$clientScript = Yii::app() -> getClientScript();
+$clientScript -> registerCssFile($this -> getStylesUrl('course.css'));
 
-foreach(array(
-		'.lesson-1',
-		'.lesson-2',
-		'.lesson-3',
-		'.lesson-4',
-		'.lesson-5',
-		'.lesson-6',
-		'.lesson-7',
-		'.lesson-8',
-		'.activityLog') as $lesson)
-{
-	$this->widget(
-			'ext.fancybox.EFancyBox',
-			array('id' => $lesson,
-					'config' => array('width' => '1000px',
-							'height' => '1000px',
-							'arrows' => false,
-							'autoSize' => false,
-							'mouseWheel' => false))
-	);
+foreach (array(
+'.lesson-1',
+'.lesson-2',
+'.lesson-3',
+'.lesson-4',
+'.lesson-5',
+'.lesson-6',
+'.lesson-7',
+'.lesson-8',
+'.activityLog') as $lesson) {
+	$this -> widget('ext.fancybox.EFancyBox', array('id' => $lesson, 'config' => array('width' => '1000px', 'height' => '1000px', 'arrows' => false, 'autoSize' => false, 'mouseWheel' => false)));
 }
 ?>
 
-<div class="small-masthead" style="background-image: url(<?php echo $this->getImagesUrl('spencer/126945521r.jpeg'); ?>);">
-  <h1 class="bottom"> <?php echo t($course->title); ?> </h1>
+<div class="small-masthead" style="background-image: url(<?php echo $this -> getImagesUrl('spencer/126945521r.jpeg'); ?>);">
+  <h1 class="bottom"> <?php echo t($course -> title); ?> </h1>
 </div>
+
 <div id="sidebar">
   <div class="box-sidebar one">
-    <h3>{t}Brain Fitness Research{/t}</h3>
-    <p>{t}Brain research is showing that the way people live their lives actually seems to account for as much or more of the risk for dementia than family history.{/t}</p>
-    <p><img src="<?php echo $this->getImagesUrl('spencer/92735298.png'); ?>" alt="{t}Certificate of Completion{/t}"> </p>
-    <p style="text-align:center;"><a href="http://www.ninds.nih.gov/disorders/dementias/detail_dementia.htm" target="_blank">National Institute of Neurological Disorders and Stroke</a></p>
-  </div>
-  <div class="box-sidebar one">
-    <h3>{t}Media Storm{/t}</h3>
-    <p>The result is It Ain't Television... It's Brain Surgery, an honest, touching, and surprisingly funny account of one man's attempt to regain the quality of life that's so easy to take for granted.</p>
-    <p style="text-align:center;"><a href="http://mediastorm.com/publication/it-aint-television-its-brain-surgery" target="_blank"><img src="<?php echo $this->getImagesUrl('spencer/mediastormimage.png'); ?>" alt="{t}MediaStorm.com{/t}"></a></p>
-    <p style="text-align:center;"><a href="http://mediastorm.com" target="_blank">MediaStorm</a></p>
-  </div>
-  <div class="box-sidebar one">
-    <h3>{t}Physical Activity{/t}</h3>
-    <p>{t}Participation in physical activity may also help to prevent or postpone the onset of dementia and cognitive decline.{/t}</p>
-    <p><img src="<?php echo $this->getImagesUrl('spencer/92735298.png'); ?>" alt="{t}Certificate of Completion{/t}"> </p>
-    <p><a href="http://www.ninds.nih.gov/disorders/dementias/detail_dementia.htm" target="_blank">National Institute of Neurological Disorders and Stroke</a></p>
-  </div>
-  <div class="box-sidebar one">
-    <h3>{t}Brain Fitness Research{/t}</h3>
-    <p>{t}Brain research is showing that the way people live their lives actually seems to account for as much or more of the risk for dementia than family history.{/t}</p>
-    <p><img src="<?php echo $this->getImagesUrl('spencer/92735298.png'); ?>" alt="{t}Certificate of Completion{/t}"> </p>
-    <p><a href="http://www.ninds.nih.gov/disorders/dementias/detail_dementia.htm" target="_blank">National Institute of Neurological Disorders and Stroke</a></p>
-  </div>
-  <div class="box-sidebar one">
-    <h3>{t}Coming Soon!{/t}</h3>
-    <div class="text-center">
-      <?php
-			echo CHtml::button('{t}Activity Log{/t}', array('onclick' => '$("#activityLog").dialog("open")', 'class' => 'cupid-green'));
-			?>
-    </div>
-    <?php 
-		$this->beginWidget('zii.widgets.jui.CJuiDialog', array(
-				'id' => 'activityLog',
-				'options' => array(
-						'title' => '{t}Activity Log{/t}',
-						'autoOpen' => false,
-						'modal' => true,
-						'width' => 720,
-						'maxWidth' => 720,
-						'maxHeight' => 1000
-				),
-		));
-		$this->widget('course.widgets.SpencerPowell.ActivityLogWidget');
-		$this->endWidget('zii.widgets.jui.CJuiDialog');
+    <h3>{t}Activity Log{/t}</h3>
+
+    	<p>{t}Please click the button below to access your personal Actvity Log.{/t}</p>
+     <p><?php
+	echo CHtml::button('{t}Activity Log{/t}', array('onclick' => '$("#activityLog").dialog("open")', 'class' => 'cupid-green'));
+			?></p>
+
+    <?php
+	$this -> beginWidget('zii.widgets.jui.CJuiDialog', array('id' => 'activityLog', 'options' => array('title' => '{t}Activity Log{/t}', 'autoOpen' => false, 'modal' => true, 'width' => 720, 'maxWidth' => 720, 'maxHeight' => 1000), ));
+	$this -> widget('course.widgets.SpencerPowell.ActivityLogWidget');
+	$this -> endWidget('zii.widgets.jui.CJuiDialog');
 		?>
+  </div>
+    <div class="box-sidebar one">
+    <h3>{t}Course Evaluations{/t}</h3>
+    	<p>{t}Please click the button below to access the pre-course and post-course surveys. Participation is anonymous. Please complete each survey at the appropriate time.{/t}</p>
+    	<p><button type="button" class="cupid-green" onClick="location.href('http://www.vovici.com/home_index.aspx');">Pre-Course Survey</button></p>
+        <p><button type="button" class="cupid-green" onClick="location.href('http://www.vovici.com/home_index.aspx');">Post-Course Survey</button></p>
+  </div>
+    <div class="box-sidebar one">
+    <h3>{t}Certificate of Completion{/t}</h3>
+    <p>{t}You must complete the first four Modules before accessing your Certificate of Completion.{/t}</p>
+    <p>Click the image icon below to donwload your certificate where you will be able to manually add your name and date.{/t}</p>
+    <p><a href="#" target="_blank"><img src="<?php echo $this -> getImagesUrl('spencer/ArtworkCertificate.png'); ?>" alt="{t}Certificate of Completion{/t}"></a></p> 
   </div>
 </div>
 
-<!-- start main content -->
 
 <div class="column-wide">
-  <h2 class="flowers"> <?php echo t($course->title); ?> </h2>
-  <p> <?php echo t($course->description); ?></p>
+  <h2 class="flowers"> <?php echo t($course -> title); ?> </h2>
+  <p> <?php echo t($course -> description); ?></p>
   <p style="color: #E80000;"> {t}<strong>Disclaimer: </strong>We want to emphasize that there are still risk factors that we cannot control, so living a brain healthy lifestyle does not guarantee that you will not get dementia, just like living a heart healthy lifestyle does not guarantee you won’t have a heart attack.{/t} </p>
   <h4>{t}Participant Access{/t}</h4>
   <p>{t}<strong>Particiants</strong> have <strong>access</strong> to this pilot study for <strong>exactly 90 days</strong> <strong>from</strong> the initial <strong>enrollment</strong> date.{/t}</p>
   <h4>{t}Objectives{/t}</h4>
   <ul>
-    <?php 
-		foreach($course->objectives as $objective)
-			echo '<li>' . t($objective->text) . '</li>';
+    <?php
+	foreach ($course->objectives as $objective)
+		echo '<li>' . t($objective -> text) . '</li>';
 		?>
   </ul>
-  
-  <!-- course lesson list start here -->
-  <div class="box-white">
-    <h4>{t}Course Evaluations{/t}</h4>
-    <p>{t}Please complete the following surveys at the appropriate times.{/t}</p>
-    <table border="0">
-      <tr>
-        <td><p>
-            <button type="button" class="cupid-green" onClick="location.href('http://www.vovici.com/home_index.aspx');">Pre-Course Survey</button>
-          </p></td>
-        <td><p>
-            <button type="button" class="cupid-green" onClick="location.href('http://www.vovici.com/home_index.aspx');">Post-Course Survey</button>
-          </p></td>
-      </tr>
-    </table>
-  </div>
+    
   <div class="box-white">
     <h4>{t}Modules{/t}</h4>
     <ul>
@@ -135,15 +90,7 @@ foreach(array(
       <li> <a href="#lesson-8-slide-1" data-fancybox-group="lesson-8" class="teal lesson-8">{t}Closing{/t}</a> <a href="#lesson-8-slide-2" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-3" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-4" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-5" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-6" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-7" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-8" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-9" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-10" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-11" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-12" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-13" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-14" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-15" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-16" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-17" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-18" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-19" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-20" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-21" data-fancybox-group="lesson-8" class="hide lesson-8"></a></li>
     </ul>
   </div>
-  <div class="box-white">
-    <h4>{t}Activity Log{/t}</h4>
-    <p>{t}Please click the button below to access your Activity Log.{/t}</p>
-    <button  class="cupid-green">Activity Log</button>
-  </div>
-  <div class="box-white">
-    <h4>{t}Certificate of Completion{/t}</h4>
-    <p>{t}You must complete the first four Modules before accessing your Certificate of Completion. Click the image icon below to donwload your certificate where you will be able to manually add your name and date.{/t}</p>
-    <img src="<?php echo $this->getImagesUrl('spencer/ArtworkCertificate.png'); ?>" alt="{t}Certificate of Completion{/t}"> </div>
+
   <h4>{t}Resources{/t}</h4>
   <p>{t}Please use these listed resources in the completion of this online course. Please contact your facilitator or the program director if you have additional resources you would like to see added here.{/t}</p>
   <ul>
@@ -163,17 +110,7 @@ foreach(array(
   <p>{t}Licensed clinical neuropsychologist specializing in brain fitness, healthy aging and cognitive enhancement. She is building a private practice in clinical neuropsychological assessment combined with interventions aimed at enhancing cognition and promoting healthy aging. And has specialties in Neuropsychological Assessment, Individual and Group Psychotherapy, Brain Fitness and Healthy Aging Therapy, and Coaching{/t}</p>
 </div>
 <div id="course" class="hide">
-  <?php $clientScript->registerScript('question-answer-handler',
-			"$('.course-slide .question').change(function() {".
-			"if($(this).find('select').val() == '1') {".
-			"$(this).find('.right-answer').removeClass('hide');".
-			"$(this).find('.wrong-answer').addClass('hide');".
-			"} else {".
-			"$(this).find('.right-answer').addClass('hide');".
-			"$(this).find('.wrong-answer').removeClass('hide');".
-			"}".
-			"});");
-	?>
+  <?php $clientScript -> registerScript('question-answer-handler', "$('.course-slide .question').change(function() {" . "if($(this).find('select').val() == '1') {" . "$(this).find('.right-answer').removeClass('hide');" . "$(this).find('.wrong-answer').addClass('hide');" . "} else {" . "$(this).find('.right-answer').addClass('hide');" . "$(this).find('.wrong-answer').removeClass('hide');" . "}" . "});"); ?>
   <div id="lesson-1">
     <div id="lesson-1-slide-1" class="course-slide">
       <div class="content">
@@ -3030,9 +2967,9 @@ foreach(array(
         <p>{t}Please complete the Post-Course Evaluation located on the course home page.{/t}</p>
         <p>{t}Your feedback is greatly appreciated, and will help us to better serve other participants in the future. We ask that you complete it before you exit this course portal. You do not have to include your name on the evaluation. It is completely confidential.{/t}</p>
         <script>
-				function myFunction(){
-					alert("Coming Soon!");
-				}
+			function myFunction() {
+				alert("Coming Soon!");
+			}
 				</script>
         <p style="text-align: center;">
           <input type="button" style="width: 175px;" onclick="myFunction()" value="Post-Course Evaluation" />
