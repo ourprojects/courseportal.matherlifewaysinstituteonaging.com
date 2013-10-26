@@ -5,12 +5,11 @@ $buttonConfig = array(
 	'viewButtonLabel' => TranslateModule::t('View Translations'),
 	'viewButtonUrl' => 'Yii::app()->getController()->createUrl("messageSource/view", array("id" => $data->id))',
 	'deleteButtonUrl' => 'Yii::app()->getController()->createUrl("messageSource/delete", array("id" => $data->id))',
-	'deleteConfirmation' => TranslateModule::t('Are you certain that you would like to delete this source message as well as all translations of this message?'),
-	'afterDelete' => 'function(link, success, data){if(success){$("#'.implode('").yiiGridView("update");$("#', $relatedGrids).'").yiiGridView("update");}}'
+	'deleteConfirmation' => TranslateModule::t('Are you certain that you would like to delete this source message as well as all associated translations?'),
+	'afterDelete' => 'function(link, success, data){if(success){alert(data);$("#'.implode('").yiiGridView("update");$("#', $relatedGrids).'").yiiGridView("update");}}'
 );
 if(isset($languageId))
 {
-	$id = 'missingMessageSource-grid';
 	$buttonConfig['template'] = '{view}{update}{delete}';
 	$buttonConfig['buttons'] = array(
 		'update' => array(
@@ -25,7 +24,6 @@ if(isset($languageId))
 }
 else
 {
-	$id = 'messageSource-grid';
 	$buttonConfig['template'] = '{view}{delete}';
 }
 $this->widget('zii.widgets.grid.CGridView',

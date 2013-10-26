@@ -230,35 +230,28 @@ class MessageController extends TController
 			default:
 				return;
 		}
-		return $this->renderPartial($gridPath, array('model' => $model), $return);
+		return $this->renderPartial($gridPath, array('model' => $model, 'id' => $name), $return);
 	}
 
+	/**
+	 * Deletes a Message
+	 * 
+	 * @param integer $id The message's ID
+	 * @param integer $languageId The ID of the message's language
+	 */
 	public function actionDelete($id, $languageId)
 	{
-		$model = Message::model()->findByPk(array('id' => $id, 'language_id' => $languageId));
-		if($model !== null)
-		{
-			if($model->delete())
-			{
-				$message = 'The translation has been deleted.';
-			}
-			else
-			{
-				$message = 'The translation could not be deleted.';
-			}
-		}
-		else
-		{
-			$message = 'The translation could not be found.';
-		}
+		$recordsDeleted = Message::model()->deleteByPk(array('id' => $id, 'language_id' => $languageId));
+		
+		$message = TranslateModule::t('{recordCount} translations have been deleted.', array('{recordCount}' => $recordsDeleted));
 
 		if(Yii::app()->getRequest()->getIsAjaxRequest())
 		{
-			echo TranslateModule::t($message);
+			echo $message;
 		}
 		else
 		{
-			Yii::app()->getUser()->setFlash(TranslateModule::t($message));
+			Yii::app()->getUser()->setFlash($message);
 			$this->redirect(Yii::app()->getRequest()->getUrlReferrer());
 		}
 	}

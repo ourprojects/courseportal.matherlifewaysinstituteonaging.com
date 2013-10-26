@@ -1,9 +1,9 @@
 <?php
-//$relatedGrids = array();
+$relatedGrids = array();
 Yii::app()->getClientScript()->registerCss('view-grid-table-width', 'div#view-grid table.items{min-width:100%;width:100%;max-width:100%;}');
 $this->widget('zii.widgets.grid.CGridView',
 		array(
-			'id' => 'view-grid',
+			'id' => $id,
 			'filter' => $model,
 			'dataProvider' => $model->with('language')->search(),
 			'selectableRows' => 0,
@@ -26,7 +26,7 @@ $this->widget('zii.widgets.grid.CGridView',
 					'viewButtonUrl' => 'Yii::app()->getController()->createUrl("view/view", array("id" => $data->id, "languageId" => $data->language_id))',
 					'deleteButtonUrl' => 'Yii::app()->getController()->createUrl("view/delete", array("id" => $data->id, "languageId" => $data->language_id))',
 					'deleteConfirmation' => TranslateModule::t('Are you certain that you would like to delete this view?'),
-					//'afterDelete' => 'function(link, success, data){if(success){$("#'.implode('").yiiGridView("update");$("#', $relatedGrids).'").yiiGridView("update");}}'
+					'afterDelete' => 'function(link, success, data){if(success){alert(data);$("#'.implode('").yiiGridView("update");$("#', $relatedGrids).'").yiiGridView("update");}}'
 				)
 			),
 		)

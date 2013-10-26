@@ -36,12 +36,9 @@ class CategoryController extends TController
 		$this->render('index');
 	}
 
-	public function actionAjaxIndex()
+	public function actionAjaxIndex($ajax)
 	{
-		if(isset($_GET['ajax']))
-		{
-			$this->actionGrid(null, $_GET['ajax']);
-		}
+		$this->actionGrid(null, $ajax);
 	}
 
 	/**
@@ -54,12 +51,9 @@ class CategoryController extends TController
 		$this->render('view', array('category' => Category::model()->findByPk($id)));
 	}
 
-	public function actionAjaxView($id)
+	public function actionAjaxView($id, $ajax)
 	{
-		if(isset($_GET['ajax']))
-		{
-			$this->actionGrid($id, $_GET['ajax']);
-		}
+		$this->actionGrid($id, $ajax);
 	}
 
 	public function actionGrid($id, $name)
@@ -117,36 +111,44 @@ class CategoryController extends TController
 			default:
 				return;
 		}
-		return $this->renderPartial($gridPath, array('model' => $model, 'id' => $id), $return);
+		return $this->renderPartial($gridPath, array('model' => $model, 'id' => $name), $return);
 	}
 
 	/**
-	 * Deletes a Category
+	 * Deletes a Category and any associated Messages and MessageSources.
+	 * 
 	 * @param integer $id the ID of the Category to be deleted
 	 */
 	public function actionDelete($id)
 	{
-		$model = Category::model()->findByPk($id);
-		if($model !== null)
+		$db = Category::model()->getDbConnection();
+		$transaction = $db->beginTransaction();
+		try
 		{
-			if($model->delete())
-			{
-				$message = 'The category and its translations have been deleted.';
-			}
-			else
-			{
-				$message = 'The category could not be deleted.';
-			}
+			$categoriesDeleted = Category::model()->deleteByPk($id);
+			CategoryMessage::model()->deleteAllByAttributes(array('category_id' => $id));
+			$messagesDeleted = Message::model()->deleteAll(array('join' => 'LEFT OUTER JOIN '.$db->quoteTableName(CategoryMessage::model()->tableName()).' '.$db->quoteTableName('messageCategories').' ON '.$db->quoteColumnName(Message::model()->tableName().'.id').'='.$db->quoteColumnName('messageCategories.message_id'), 'condition' => $db->quoteColumnName('messageCategories.category_id').' IS NULL'));
+			$sourceMessagesDeleted = MessageSource::model()->deleteAll(array('join' => 'LEFT OUTER JOIN '.$db->quoteTableName(CategoryMessage::model()->tableName()).' '.$db->quoteTableName('messageCategories').' ON '.$db->quoteColumnName(MessageSource::model()->tableName().'.id').'='.$db->quoteColumnName('messageCategories.message_id'), 'condition' => $db->quoteColumnName('messageCategories.category_id').' IS NULL'));
+			ViewMessage::model()->deleteAll(array('join' => 'LEFT OUTER JOIN '.$db->quoteTableName(MessageSource::model()->tableName()).' '.$db->quoteTableName('messageSource').' ON '.$db->quoteColumnName(ViewMessage::model()->tableName().'.message_id').'='.$db->quoteColumnName('messageSource.id'), 'condition' => $db->quoteColumnName('messageSource.id').' IS NULL'));
 		}
-		else
+		catch(Exception $e)
 		{
-			$message = 'The category could not be found.';
+			$transaction->rollback();
+			throw $e;
 		}
+		$transaction->commit();
 
+		$message = TranslateModule::t('{categories} categories, {sourceMessages} source messages, and {messages} translations have been deleted.', array('{categories}' => $categoriesDeleted, '{sourceMessages}' => $sourceMessagesDeleted, '{messages}' => $messagesDeleted));
+		
 		if(Yii::app()->getRequest()->getIsAjaxRequest())
-			echo TranslateModule::t($message);
+		{
+			echo $message;
+		}
 		else
+		{
+			Yii::app()->getUser()->setFlash($message);
 			$this->redirect(Yii::app()->getRequest()->getUrlReferrer());
+		}
 	}
 
 }

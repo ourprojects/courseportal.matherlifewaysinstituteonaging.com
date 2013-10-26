@@ -79,6 +79,7 @@ class View extends CActiveRecord
 			'acceptedLanguage' => array(self::BELONGS_TO, 'AcceptedLanguage', 'language_id'),
 			'viewMessages' => array(self::HAS_MANY, 'ViewMessage', 'view_id'),
 			'messages' => array(self::HAS_MANY, 'Message', array('message_id' => 'id'), 'through' => 'viewMessages', 'on' => $this->getTableAlias(false, false).'.language_id=messages.language_id'),
+			'viewRoutes' => array(self::HAS_MANY, 'ViewMessage', array('id' => 'view_id'), 'through' => 'sourceView'),
 		);
 	}
 

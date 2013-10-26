@@ -65,12 +65,9 @@ class LanguageController extends TController
 		$this->render('index');
 	}
 
-	public function ajaxIndex()
+	public function actionAjaxIndex($ajax)
 	{
-		if(isset($_GET['ajax']))
-		{
-			$this->actionGrid(null, $_GET['ajax']);
-		}
+		$this->actionGrid(null, $ajax);
 	}
 
 	public function actionView($id)
@@ -78,12 +75,9 @@ class LanguageController extends TController
 		$this->render('view', array('language' => Language::model()->findByPk($id)));
 	}
 
-	public function actionAjaxView($id)
+	public function actionAjaxView($id, $ajax)
 	{
-		if(isset($_GET['ajax']))
-		{
-			$this->actionGrid($id, $_GET['ajax']);
-		}
+		$this->actionGrid($id, $ajax);
 	}
 
 	public function actionGrid($id, $name)
@@ -118,7 +112,7 @@ class LanguageController extends TController
 			case 'missingMessageSource-grid':
 				$model = new MessageSource('search');
 				$model->missingTranslations($id);
-				$this->renderPartial('../messageSource/_grid', array('model' => $model, 'languageId' => $id));
+				$this->renderPartial('../messageSource/_grid', array('model' => $model, 'languageId' => $id, 'id' => $name));
 				return;
 			case 'language-grid':
 				$model = new Language('search');
@@ -146,7 +140,7 @@ class LanguageController extends TController
 			default:
 				return;
 		}
-		return $this->renderPartial($gridPath, array('model' => $model, 'id' => $id), $return);
+		return $this->renderPartial($gridPath, array('model' => $model, 'id' => $name), $return);
 	}
 
 	public function actionCreate($id)
@@ -182,34 +176,40 @@ class LanguageController extends TController
 	}
 
 	/**
-	 * Deletes a record
-	 * @param integer $id the ID of the model to be deleted
+	 * Deletes a Language and any associated AcceptedLanguages, MessageSources, Messages, and Views
+	 * 
+	 * @param integer $id the ID of the Language to be deleted
 	 */
 	public function actionDelete($id)
 	{
-		$model = Language::model()->findByPk($id);
-		if($model !== null) {
-			if($model->delete())
-			{
-				$message = 'The language has been deleted.';
-			}
-			else
-			{
-				$message = 'The language could not be deleted.';
-			}
-		}
-		else
+		$db = Language::model()->getDbConnection();
+		$transaction = $db->beginTransaction();
+		try
 		{
-			$message = 'The language could not be found.';
+			$messagesDeleted = Message::model()->deleteAllByAttributes(array('language_id' => $id));
+			$sourceMessagesDeleted = MessageSource::model()->deleteAllByAttributes(array('language_id' => $id));
+			$viewsDeleted = View::model()->deleteAllByAttributes(array('language_id' => $id));
+			$acceptedLanguagesDeleted = AcceptedLanguage::model()->deleteByPk($id);
+			$languagesDeleted = Language::model()->deleteByPk($id);
+			ViewMessage::model()->deleteAll(array('join' => 'LEFT OUTER JOIN '.$db->quoteTableName(MessageSource::model()->tableName()).' '.$db->quoteTableName('messageSource').' ON '.$db->quoteColumnName(ViewMessage::model()->tableName().'.message_id').'='.$db->quoteColumnName('messageSource.id'), 'condition' => $db->quoteColumnName('messageSource.id').' IS NULL'));
+			CategoryMessage::model()->deleteAll(array('join' => 'LEFT OUTER JOIN '.$db->quoteTableName(MessageSource::model()->tableName()).' '.$db->quoteTableName('messageSource').' ON '.$db->quoteColumnName(CategoryMessage::model()->tableName().'.message_id').'='.$db->quoteColumnName('messageSource.id'), 'condition' => $db->quoteColumnName('messageSource.id').' IS NULL'));
 		}
-
+		catch(Exception $e)
+		{
+			$transaction->rollback();
+			throw $e;
+		}
+		$transaction->commit();
+		
+		$message = TranslateModule::t('{languages} languages, {acceptedLanguages} accepted languages, {sourceMessages} source messages, {messages} translations, and {views} translated views have been deleted.', array('{languages}' => $languagesDeleted, '{sourceMessages}' => $sourceMessagesDeleted, '{messages}' => $messagesDeleted, '{acceptedLanguages}' => $acceptedLanguagesDeleted, '{views}' => $viewsDeleted));
+		
 		if(Yii::app()->getRequest()->getIsAjaxRequest())
 		{
-			echo TranslateModule::t($message);
+			echo $message;
 		}
 		else
 		{
-			Yii::app()->getUser()->setFlash(TranslateModule::t($message));
+			Yii::app()->getUser()->setFlash($message);
 			$this->redirect(Yii::app()->getRequest()->getUrlReferrer());
 		}
 	}

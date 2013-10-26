@@ -36,12 +36,9 @@ class ViewSourceController extends TController
 		$this->render('index');
 	}
 
-	public function actionAjaxIndex()
+	public function actionAjaxIndex($ajax)
 	{
-		if(isset($_GET['ajax']))
-		{
-			$this->actionGrid(null, $_GET['ajax']);
-		}
+		$this->actionGrid(null, $ajax);
 	}
 
 	/**
@@ -54,12 +51,9 @@ class ViewSourceController extends TController
 		$this->render('view', array('viewSource' => ViewSource::model()->findByPk($id)));
 	}
 
-	public function actionAjaxView($id)
+	public function actionAjaxView($id, $ajax)
 	{
-		if(isset($_GET['ajax']))
-		{
-			$this->actionGrid($id, $_GET['ajax']);
-		}
+		$this->actionGrid($id, $ajax);
 	}
 
 	public function actionGrid($id, $name)
@@ -115,40 +109,39 @@ class ViewSourceController extends TController
 			default:
 				return;
 		}
-		return $this->renderPartial($gridPath, array('model' => $model), $return);
+		return $this->renderPartial($gridPath, array('model' => $model, 'id' => $name), $return);
 	}
 
 	/**
-	 * Deletes a ViewSource
+	 * Deletes a ViewSource and all associated Views
 	 *
 	 * @param integer $id the ID of the ViewSource to be deleted
 	 */
 	public function actionDelete($id)
 	{
-		$model = ViewSource::model()->findByPk($id);
-		if($model !== null)
+		$transaction = ViewSource::model()->getDbConnection()->beginTransaction();
+		try
 		{
-			if($model->delete())
-			{
-				$message = 'The source view and its translated views have been deleted.';
-			}
-			else
-			{
-				$message = 'The source view could not be deleted.';
-			}
+			$viewsDeleted = View::model()->deleteAllByAttributes(array('id' => $id));
+			$sourceViewsDeleted = ViewSource::model()->deleteByPk($id);
+			ViewMessage::model()->deleteAllByAttributes(array('view_id' => $id));
 		}
-		else
+		catch(Exception $e)
 		{
-			$message = 'The source view could not be found.';
+			$transaction->rollback();
+			throw $e;
 		}
-
+		$transaction->commit();
+		
+		$message = TranslateModule::t('{sourceViews} source views and {views} translated views have been deleted.', array('{sourceViews}' => $sourceViewsDeleted, '{views}' => $viewsDeleted));
+		
 		if(Yii::app()->getRequest()->getIsAjaxRequest())
 		{
-			echo TranslateModule::t($message);
+			echo $message;
 		}
 		else
 		{
-			Yii::app()->getUser()->setFlash(TranslateModule::t($message));
+			Yii::app()->getUser()->setFlash($message);
 			$this->redirect(Yii::app()->getRequest()->getUrlReferrer());
 		}
 	}

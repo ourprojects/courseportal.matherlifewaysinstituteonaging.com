@@ -36,12 +36,9 @@ class RouteController extends TController
 		$this->render('index');
 	}
 
-	public function actionAjaxIndex()
+	public function actionAjaxIndex($ajax)
 	{
-		if(isset($_GET['ajax']))
-		{
-			$this->actionGrid(null, $_GET['ajax']);
-		}
+		$this->actionGrid(null, $ajax);
 	}
 
 	/**
@@ -54,12 +51,9 @@ class RouteController extends TController
 		$this->render('view', array('route' => Route::model()->findByPk($id)));
 	}
 
-	public function actionAjaxView($id)
+	public function actionAjaxView($id, $ajax)
 	{
-		if(isset($_GET['ajax']))
-		{
-			$this->actionGrid($id, $_GET['ajax']);
-		}
+		$this->actionGrid($id, $ajax);
 	}
 
 	public function actionGrid($id, $name)
@@ -112,40 +106,42 @@ class RouteController extends TController
 			default:
 				return;
 		}
-		return $this->renderPartial($gridPath, array('model' => $model), $return);
+		return $this->renderPartial($gridPath, array('model' => $model, 'id' => $name), $return);
 	}
 
 	/**
-	 * Deletes a Route
+	 * Deletes a Route and all associated ViewSources and Views
 	 *
 	 * @param integer $id the ID of the Route to be deleted
 	 */
 	public function actionDelete($id)
 	{
-		$model = Route::model()->findByPk($id);
-		if($model !== null)
+		$db = Route::model()->getDbConnection();
+		$transaction = $db->beginTransaction();
+		try
 		{
-			if($model->delete())
-			{
-				$message = 'The route was successfully deleted.';
-			}
-			else
-			{
-				$message = 'The route could not be deleted.';
-			}
+			$routesDeleted = Route::model()->deleteByPk($id);
+			RouteView::model()->deleteAllByAttributes(array('route_id' => $id));
+			$viewsDeleted = View::model()->deleteAll(array('join' => 'LEFT OUTER JOIN '.$db->quoteTableName(RouteView::model()->tableName()).' '.$db->quoteTableName('viewRoutes').' ON '.$db->quoteColumnName(View::model()->tableName().'.id').'='.$db->quoteColumnName('viewRoutes.view_id'), 'condition' => $db->quoteColumnName('viewRoutes.route_id').' IS NULL'));
+			$sourceViewsDeleted = ViewSource::model()->deleteAll(array('join' => 'LEFT OUTER JOIN '.$db->quoteTableName(RouteView::model()->tableName()).' '.$db->quoteTableName('viewRoutes').' ON '.$db->quoteColumnName(ViewSource::model()->tableName().'.id').'='.$db->quoteColumnName('viewRoutes.view_id'), 'condition' => $db->quoteColumnName('viewRoutes.route_id').' IS NULL'));
+			ViewMessage::model()->deleteAll(array('join' => 'LEFT OUTER JOIN '.$db->quoteTableName(ViewSource::model()->tableName()).' '.$db->quoteTableName('viewSource').' ON '.$db->quoteColumnName(ViewMessage::model()->tableName().'.view_id').'='.$db->quoteColumnName('viewSource.id'), 'condition' => $db->quoteColumnName('viewSource.id').' IS NULL'));
 		}
-		else
+		catch(Exception $e)
 		{
-			$message = 'The route could not be found.';
+			$transaction->rollback();
+			throw $e;
 		}
+		$transaction->commit();
 
+		$message = TranslateModule::t('{routes} routes, {sourceViews} source views, and {views} translated views have been deleted.', array('{routes}' => $routesDeleted, '{sourceViews}' => $sourceViewsDeleted, '{views}' => $viewsDeleted));
+		
 		if(Yii::app()->getRequest()->getIsAjaxRequest())
 		{
-			echo TranslateModule::t($message);
+			echo $message;
 		}
 		else
 		{
-			Yii::app()->getUser()->setFlash(TranslateModule::t($message));
+			Yii::app()->getUser()->setFlash($message);
 			$this->redirect(Yii::app()->getRequest()->getUrlReferrer());
 		}
 	}

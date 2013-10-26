@@ -36,12 +36,9 @@ class ViewController extends TController
 		$this->render('index');
 	}
 
-	public function actionAjaxIndex()
+	public function actionAjaxIndex($ajax)
 	{
-		if(isset($_GET['ajax']))
-		{
-			$this->actionGrid(null, null, $_GET['ajax']);
-		}
+		$this->actionGrid(null, null, $ajax);
 	}
 
 	/**
@@ -61,12 +58,9 @@ class ViewController extends TController
 	 * @param integer $id The ID of the view to get an info grid for
 	 * @param integer $languageId The ID of the view's language to show details for
 	 */
-	public function actionAjaxView($id, $languageId)
+	public function actionAjaxView($id, $languageId, $ajax)
 	{
-		if(isset($_GET['ajax']))
-		{
-			$this->actionGrid($id, $languageId, $_GET['ajax']);
-		}
+		$this->actionGrid($id, $languageId, $ajax);
 	}
 
 	public function actionGrid($id, $languageId, $name)
@@ -113,45 +107,28 @@ class ViewController extends TController
 			default:
 				return;
 		}
-		return $this->renderPartial($gridPath, array('model' => $model), $return);
+		return $this->renderPartial($gridPath, array('model' => $model, 'id' => $name), $return);
 	}
 
 	/**
 	 * Deletes a View
 	 *
 	 * @param integer $id the ID of the View to be deleted
-	 * @param integer $languageId The ID of the view's language to show details for
+	 * @param integer $languageId The ID of the view's language to be deleted
 	 */
 	public function actionDelete($id, $languageId)
 	{
-		$model = View::model()->findByPk(array('id' => $id, 'language_id' => $languageId));
-		if($model !== null)
-		{
-			if($model->delete())
-			{
-				if(file_exists($model['path']))
-				{
-					unlink($model['path']);
-				}
-				$message = 'The view was successfully deleted.';
-			}
-			else
-			{
-				$message = 'The view could not be deleted.';
-			}
-		}
-		else
-		{
-			$message = 'The view could not be found.';
-		}
+		$recordsDeleted = View::model()->deleteByPk(array('id' => $id, 'language_id' => $languageId));
+		
+		$message = TranslateModule::t('{recordCount} translated views have been deleted.', array('{recordCount}' => $recordsDeleted));
 
 		if(Yii::app()->getRequest()->getIsAjaxRequest())
 		{
-			echo TranslateModule::t($message);
+			echo $message;
 		}
 		else
 		{
-			Yii::app()->getUser()->setFlash(TranslateModule::t($message));
+			Yii::app()->getUser()->setFlash($message);
 			$this->redirect(Yii::app()->getRequest()->getUrlReferrer());
 		}
 	}

@@ -155,7 +155,7 @@ class MessageSourceController extends TController
 			case 'missingLanguage-grid':
 				$model = new Language('search');
 				$model->missingTranslations($id);
-				$this->renderPartial('../language/_grid', array('model' => $model, 'messageId' => $id));
+				$this->renderPartial('../language/_grid', array('model' => $model, 'messageId' => $id, 'id' => $name));
 				return;
 			case 'route-grid':
 				$model = new Route('search');
@@ -175,39 +175,41 @@ class MessageSourceController extends TController
 			default:
 				return;
 		}
-		return $this->renderPartial($gridPath, array('model' => $model), $return);
+		return $this->renderPartial($gridPath, array('model' => $model, 'id' => $name), $return);
 	}
 
 	/**
-	 * Deletes a record
-	 * @param integer $id the ID of the model to be deleted
+	 * Deletes a MessageSource and all associated Messages
+	 * 
+	 * @param integer $id the ID of the MessageSource to be deleted
 	 */
 	public function actionDelete($id)
 	{
-		$model = MessageSource::model()->findByPk($id);
-		if($model !== null)
+		$db = MessageSource::model()->getDbConnection();
+		$transaction = $db->beginTransaction();
+		try
 		{
-			if($model->delete())
-			{
-				$message = 'The message source and its translations have been deleted.';
-			}
-			else
-			{
-				$message = 'The message source could not be deleted.';
-			}
+			$messagesDeleted = Message::model()->deleteAllByAttributes(array('id' => $id));
+			$sourceMessagesDeleted = MessageSource::model()->deleteByPk($id);
+			CategoryMessage::model()->deleteAllByAttributes(array('message_id' => $id));
+			ViewMessage::model()->deleteAll(array('join' => 'LEFT OUTER JOIN '.$db->quoteTableName(MessageSource::model()->tableName()).' '.$db->quoteTableName('messageSource').' ON '.$db->quoteColumnName(ViewMessage::model()->tableName().'.message_id').'='.$db->quoteColumnName('messageSource.id'), 'condition' => $db->quoteColumnName('messageSource.id').' IS NULL'));
 		}
-		else
+		catch(Exception $e)
 		{
-			$message = 'The message source could not be found.';
+			$transaction->rollback();
+			throw $e;
 		}
-
+		$transaction->commit();
+		
+		$message = TranslateModule::t('{sourceMessages} source messages and {messages} translations have been deleted.', array('{sourceMessages}' => $sourceMessagesDeleted, '{messages}' => $messagesDeleted));
+		
 		if(Yii::app()->getRequest()->getIsAjaxRequest())
 		{
-			echo TranslateModule::t($message);
+			echo $message;
 		}
 		else
 		{
-			Yii::app()->getUser()->setFlash(TranslateModule::t($message));
+			Yii::app()->getUser()->setFlash($message);
 			$this->redirect(Yii::app()->getRequest()->getUrlReferrer());
 		}
 	}
