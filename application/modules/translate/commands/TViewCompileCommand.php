@@ -127,7 +127,11 @@ class TViewCompileCommand extends CConsoleCommand
 
 			if(is_dir($compiledPathDir = dirname($compiledPath)) === false)
 			{
-				if(mkdir($compiledPathDir, $filePermission, true) === false)
+				if(file_exists($compiledPathDir))
+				{
+					throw new CException(TranslateModule::t("The compiled view directory '{dir}' exists, but is not a directory. Your compiled view's path may be corrupted.", array('{dir}' => $compiledPathDir)));
+				}
+				else if(mkdir($compiledPathDir, $filePermission, true) === false)
 				{
 					throw new CException(TranslateModule::t("The compiled view directory '{dir}' does not exist and could not be created.", array('{dir}' => $compiledPathDir)));
 				}

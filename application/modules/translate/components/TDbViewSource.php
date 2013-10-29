@@ -141,16 +141,16 @@ class TDbViewSource extends TViewSource
 		$messageSource = TranslateModule::translator()->getMessageSourceComponent();
 		$db = $this->getDbConnection();
 		$cmd = $db->createCommand()
-		->select(array('vst.path AS source_path', 'vt.path AS view_path'))
-		->from($this->routeTable.' rt')
-		->join($this->routeViewTable.' rvt', $db->quoteColumnName('rt.id').'='.$db->quoteColumnName('rvt.route_id'))
-		->join($this->viewSourceTable.' vst', $db->quoteColumnName('rvt.view_id').'='.$db->quoteColumnName('vst.id'))
-		->join($messageSource->languageTable.' lt', $db->quoteColumnName('lt.code').'=:language', array(':language' => $language))
-		->join($this->viewTable.' vt', array('and', $db->quoteColumnName('vst.id').'='.$db->quoteColumnName('vt.id'), $db->quoteColumnName('vt.language_id').'='.$db->quoteColumnName('lt.id')))
-		->leftJoin($this->viewMessageTable.' vmt', $db->quoteColumnName('vst.id').'='.$db->quoteColumnName('vmt.view_id'))
-		->leftJoin($messageSource->translatedMessageTable.' tmt', array('and', $db->quoteColumnName('vmt.message_id').'='.$db->quoteColumnName('tmt.id'), $db->quoteColumnName('tmt.language_id').'='.$db->quoteColumnName('vt.language_id')))
-		->where(array('and', $db->quoteColumnName('rt.route').'=:route', array('or', $db->quoteColumnName('tmt.last_modified').' IS NULL', $db->quoteColumnName('tmt.last_modified').'<'.$db->quoteColumnName('vt.created'))), array(':route' => $route))
-		->group('vst.id');
+			->select(array('vst.path AS source_path', 'vt.path AS view_path'))
+			->from($this->routeTable.' rt')
+			->join($this->routeViewTable.' rvt', $db->quoteColumnName('rt.id').'='.$db->quoteColumnName('rvt.route_id'))
+			->join($this->viewSourceTable.' vst', $db->quoteColumnName('rvt.view_id').'='.$db->quoteColumnName('vst.id'))
+			->join($messageSource->languageTable.' lt', $db->quoteColumnName('lt.code').'=:language', array(':language' => $language))
+			->join($this->viewTable.' vt', array('and', $db->quoteColumnName('vst.id').'='.$db->quoteColumnName('vt.id'), $db->quoteColumnName('vt.language_id').'='.$db->quoteColumnName('lt.id')))
+			->leftJoin($this->viewMessageTable.' vmt', $db->quoteColumnName('vst.id').'='.$db->quoteColumnName('vmt.view_id'))
+			->leftJoin($messageSource->translatedMessageTable.' tmt', array('and', $db->quoteColumnName('vmt.message_id').'='.$db->quoteColumnName('tmt.id'), $db->quoteColumnName('tmt.language_id').'='.$db->quoteColumnName('vt.language_id')))
+			->where(array('and', $db->quoteColumnName('rt.route').'=:route', array('or', $db->quoteColumnName('tmt.last_modified').' IS NULL', $db->quoteColumnName('tmt.last_modified').'<'.$db->quoteColumnName('vt.created'))), array(':route' => $route))
+			->group('vst.id');
 
 		$views = array();
 		foreach($cmd->queryAll() as $row)

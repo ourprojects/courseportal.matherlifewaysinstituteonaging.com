@@ -87,6 +87,26 @@
 				}
 			},
 			
+			source_language_id: function(value)
+			{
+				var element = this.find("input#MessageSource_language_id");
+				if(value)
+				{
+					return element.val(value);
+				}
+				return element.val("");
+			},
+			
+			source_language: function(value)
+			{
+				var element = this.find("p#MessageSource_language");
+				if(value)
+				{
+					return element.text(value);
+				}
+				return element.text("");
+			},
+			
 			message: function(value) 
 			{
 				var element = this.find("textarea#MessageSource_message");

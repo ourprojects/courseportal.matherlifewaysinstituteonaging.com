@@ -12,6 +12,18 @@ abstract class TViewSource extends CApplicationComponent
 	 * @var boolean If true each call to the translate method will be profiled.
 	 */
 	public $enableProfiling = false;
+	
+	/**
+	 * @var boolean If true a file lock will be used to ensure only 1 missing translation event per request is fired at a time.
+	 */
+	public $synchronizeEvents = true;
+	
+	/**
+	 * @var integer The permissions to set for the event synchronization locking file.
+	 */
+	public $eventSyncLockFilePermissions = 0700;
+	
+	private $_eventSyncLockFile;
 
 	private $_views = array();
 
@@ -118,6 +130,40 @@ abstract class TViewSource extends CApplicationComponent
 	 * @return integer The number of views updated.
 	*/
 	abstract public function updateView($viewId, $languageId, $created, $path);
+	
+	/**
+	 * 
+	 * @param string $path The path to the lock file to use for event synchronization.
+	 * @throws CException Thrown if any errors occur setting up the event synchronization locking file.
+	 */
+	public function setEventSyncLockFile($path)
+	{
+		if(is_dir($pathDir = dirname($path)) === false)
+		{
+			if(file_exists($pathDir))
+			{
+				throw new CException(TranslateModule::t("The view source's event syncronization locking directory '{dir}' exists, but is not a directory. Your view source's event syncronization locking path may be corrupted.", array('{dir}' => $pathDir)));
+			}
+			else if(mkdir($pathDir, $this->eventSyncLockFilePermissions, true) === false)
+			{
+				throw new CException(TranslateModule::t("The view source's event syncronization locking directory '{dir}' does not exist and could not be created.", array('{dir}' => $pathDir)));
+			}
+		}
+		$this->_eventSyncLockFile = $path;
+	}
+	
+	/**
+	 * 
+	 * @return string The path of the event synchronization locking file.
+	 */
+	public function getEventSyncLockFile()
+	{
+		if(!isset($this->_eventSyncLockFile))
+		{
+			$this->setEventSyncLockFile(Yii::app()->getRuntimePath().DIRECTORY_SEPARATOR.TranslateModule::ID.DIRECTORY_SEPARATOR.'locks'.DIRECTORY_SEPARATOR.'viewSource.lock');
+		}
+		return $this->_eventSyncLockFile;
+	}
 
 	/**
 	 * Translates a view to the specified language.
@@ -198,11 +244,30 @@ abstract class TViewSource extends CApplicationComponent
 	 * Handlers may log this view or do some default handling.
 	 * The {@link TMissingViewTranslationEvent::path} property
 	 * will be returned by {@link translateView}.
+	 * 
 	 * @param TMissingViewTranslationEvent $event the event parameter
 	 */
 	public function onMissingViewTranslation($event)
 	{
-		$this->raiseEvent('onMissingViewTranslation', $event);
+		if($this->synchronizeEvents)
+		{
+			$fh = fopen($this->getEventSyncLockFile(), 'c');
+			if($fh === false)
+			{
+				throw new CException(TranslateModule::t("The view source's event syncronization lock file '{path}' could not be opened.", array('{path}' => $this->getEventSyncLockFile())));
+			}
+			if(flock($fh, LOCK_EX) === false)
+			{
+				throw new CException(TranslateModule::t("Failed to acquire a lock on the view source's event syncronization lock file '{path}'.", array('{path}' => $this->getEventSyncLockFile())));
+			}
+			$this->raiseEvent('onMissingViewTranslation', $event);
+			flock($fh, LOCK_UN);
+			fclose($fh);
+		}
+		else
+		{
+			$this->raiseEvent('onMissingViewTranslation', $event);
+		}
 	}
 
 }

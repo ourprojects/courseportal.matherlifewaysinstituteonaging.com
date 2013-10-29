@@ -44,6 +44,13 @@ $dialog = $this->beginWidget('zii.widgets.jui.CJuiDialog', array(
 	</p>
 	<div class="row">
 		<?php 
+		echo CHtml::label(TranslateModule::t('Source Language'), CHtml::activeId($MessageSource, 'language_id'));
+		echo $form->hiddenField($MessageSource, 'language_id');
+		echo '<p id="MessageSource_language"></p>';
+		?>
+	</div>
+	<div class="row">
+		<?php 
 		echo $form->label($MessageSource, 'message');
 		echo $form->textArea($MessageSource, 'message', array('readonly' => 'readonly', 'rows' => 3, 'cols' => 90));
 		echo $form->error($MessageSource, 'message');
@@ -78,15 +85,13 @@ $dialog = $this->beginWidget('zii.widgets.jui.CJuiDialog', array(
 	<div class="row buttons">
 		<?php 
 		echo CHtml::submitButton(TranslateModule::t($action));
-
+		
 		$this->widget('translate.widgets.message.GoogleTranslateAjaxButton',
 				array(
-					'message' => $MessageSource->message,
-					'targetLanguage' => $Message->language_id,
-					'target' => '#message-form #Message_translation',
-					'ajaxOptions' => array(
-						'success' => 'js:function(data){$("#message-form #Message_translation").val(data);}'
-					)
+					'messageInputSelector' => '#'.$id.' #MessageSource_message',
+					'sourceLanguageInputSelector' => '#'.$id.' #MessageSource_language_id',
+					'targetLanguageInputSelector' => '#'.$id.' #Message_language_id',
+					'target' => "#$id #Message_translation",
 				)
 		);
 		?>

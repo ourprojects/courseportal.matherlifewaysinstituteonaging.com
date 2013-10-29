@@ -122,9 +122,16 @@ class MessageController extends TController
 		
 		if(!isset($Message->source))
 		{
-			$Message->source = isset($Message->id) ? MessageSource::model()->findByPk($Message->id) : new MessageSource;
+			if(!isset($Message->id))
+			{
+				$Message->source = new MessageSource;
+				$Message->source->sourceLanguage = new Language;
+			}
+			else
+			{
+				$Message->source = MessageSource::model()->with('sourceLanguage')->findByPk($Message->id);
+			}
 		}
-		
 		
 		$status = array('success' => $Message->hasErrors() ? 'warning' : 'success', 'message' => $statusMessage);
 		if(Yii::app()->getRequest()->getIsAjaxRequest())
@@ -157,6 +164,8 @@ class MessageController extends TController
 					$result['language_id'] = $Message->language_id;
 					$result['language'] = $Message->language->getName();
 				}
+				$result['source_language_id'] = $Message->source->language_id;
+				$result['source_language'] = $Message->source->sourceLanguage->getName();
 			}
 			echo function_exists('json_encode') ? json_encode($result) : CJSON::encode($result);
 		}

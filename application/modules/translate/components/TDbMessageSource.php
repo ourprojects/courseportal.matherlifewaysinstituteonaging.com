@@ -127,7 +127,8 @@ class TDbMessageSource extends CDbMessageSource implements ITMessageSource
 	 */
 	public function addSourceMessage($message, $createLanguageIfNotExists = false)
 	{
-		if($languageId !== false && $this->getDbConnection()->createCommand()->insert($this->sourceMessageTable, array('message' => $message, 'language_id' => $this->getSourceLanguageId())) > 0)
+		$languageId = $this->getSourceLanguageId();
+		if($languageId !== false && $this->getDbConnection()->createCommand()->insert($this->sourceMessageTable, array('message' => $message, 'language_id' => $languageId)) > 0)
 		{
 			return $this->getDbConnection()->getLastInsertID($this->sourceMessageTable);
 		}

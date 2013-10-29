@@ -7,14 +7,20 @@
  */
 class GoogleTranslateAjaxButton extends CWidget
 {
-
+	
 	public $label = 'Google Translate';
 
 	public $message;
+	
+	public $messageInputSelector;
 
 	public $targetLanguage;
+	
+	public $targetLanguageInputSelector;
 
 	public $sourceLanguage;
+	
+	public $sourceLanguageInputSelector;
 
 	public $target;
 
@@ -34,34 +40,43 @@ class GoogleTranslateAjaxButton extends CWidget
 		else
 		{
 			throw new CException(TranslateModule::t(
-					'{class_name} - Error: Couldn\'t find assets to publish. Please make sure the directory exists and is readable {dir_name}',
+					'{class_name} - Error: Couldn\'t find assets to publish. Please make sure the directory "{dir_name}" exists and is readable.',
 					array('{class_name}' => get_class($this), '{dir_name}' => $assetsDir))
 			);
 		}
 
-		if(!isset($this->sourceLanguage))
+		if(!isset($this->sourceLanguageInputSelector) && !isset($this->sourceLanguage))
+		{
 			$this->sourceLanguage = Yii::app()->sourceLanguage;
+		}
 
-		if(!isset($this->targetLanguage))
+		if(!isset($this->targetLanguageInputSelector) && !isset($this->targetLanguage))
+		{
 			$this->targetLanguage = Yii::app()->getLanguage();
+		}
+		
+		if(!isset($this->messageInputSelector) && !isset($this->message))
+		{
+			throw new CException(TranslateModule::t('A message must be specified.'));
+		}
 
 		if(!isset($this->target))
+		{
 			$this->target = $this->getId();
+		}
 
 		// Set required ajax options unless already specified
 		$this->ajaxOptions = CMap::mergeArray(
-				array(
-					'data' => array(
-						'message' => $this->message,
-						'targetLanguage' => $this->targetLanguage,
-						'sourceLanguage' => $this->sourceLanguage,
-					),
-					'beforeSend' => 'js:function(jqXHR, settings){$("'.$this->target.'").addClass("googleTranslating");}',
-					'complete' => 'js:function(jqXHR, textStatus){$("'.$this->target.'").removeClass("googleTranslating");}',
-					'success' => 'js:function(data){alert(data);}',
-					'error' => 'js:function(xhr){alert(xhr.responseText);}'
-				),
-				$this->ajaxOptions
+			array(
+				'data' => 'js:(function($){return "message="+'.(isset($this->messageInputSelector) ? '$("'.$this->messageInputSelector.'").val()' : '"'.$this->message.'"')
+						.'+"&targetLanguage="+'.(isset($this->targetLanguageInputSelector) ? '$("'.$this->targetLanguageInputSelector.'").val()' : '"'.$this->targetLanguage.'"')
+						.'+"&sourceLanguage="+'.(isset($this->sourceLanguageInputSelector) ? '$("'.$this->sourceLanguageInputSelector.'").val()' : '"'.$this->sourceLanguage.'"').';}(jQuery))',
+				'beforeSend' => 'js:function(jqXHR, settings){$("'.$this->target.'").addClass("googleTranslating");}',
+				'complete' => 'js:function(jqXHR, textStatus){$("'.$this->target.'").removeClass("googleTranslating");}',
+				'success' => 'js:function(data){$("'.$this->target.'").val(data);}',
+				'error' => 'js:function(xhr){alert(xhr.responseText);}'
+			),
+			$this->ajaxOptions
 		);
 	}
 

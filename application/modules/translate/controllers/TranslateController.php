@@ -13,15 +13,21 @@ class TranslateController extends TController
 	 */
 	public function redirect($url, $terminate = true, $statusCode = 302)
 	{
-		if(Yii::app()->getRequest()->getIsAjaxRequest()) {
-			if(is_array($url)) {
+		if(Yii::app()->getRequest()->getIsAjaxRequest()) 
+		{
+			if(is_array($url)) 
+			{
 				$route = isset($url[0]) ? $url[0] : '';
 				$url = $this->createUrl($route, array_slice($url, 1));
 			}
 			Yii::app()->getClientScript()->registerScript('redirect', "window.top.location='$url'");
 			if($terminate)
+			{
 				Yii::app()->end($statusCode);
-		} else {
+			}
+		}
+		else 
+		{
 			return parent::redirect($url, $terminate, $statusCode);
 		}
 	}
@@ -69,6 +75,24 @@ class TranslateController extends TController
 
 	public function actionGoogleTranslate($message, $targetLanguage = null, $sourceLanguage = null)
 	{
+		if(is_numeric($targetLanguage))
+		{
+			$targetLanguage = Language::model()->findByPk($targetLanguage);
+			if($targetLanguage === null)
+			{
+				throw new CHttpException(400, TranslateModule::t('Unknown target language requested.'));
+			}
+			$targetLanguage = $targetLanguage->code;
+		}
+		if(is_numeric($sourceLanguage))
+		{
+			$sourceLanguage = Language::model()->findByPk($sourceLanguage);
+			if($sourceLanguage === null)
+			{
+				throw new CHttpException(400, TranslateModule::t('Unknown source language requested.'));
+			}
+			$sourceLanguage = $sourceLanguage->code;
+		}
 		$translation = TranslateModule::translator()->googleTranslate($message, $targetLanguage, $sourceLanguage);
 		if(is_array($message))
 		{
