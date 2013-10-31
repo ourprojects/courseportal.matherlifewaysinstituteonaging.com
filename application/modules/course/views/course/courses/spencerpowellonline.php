@@ -31,7 +31,7 @@ foreach (array(
 		<p>{t}Please click the button below to access your personal Actvity Log.{/t}</p>
 		<p>
 			<?php
-			echo CHtml::button('{t}Activity Log{/t}', array('onclick' => '$("#activityLog").dialog("open")', 'class' => 'cupid-green'));
+			echo CHtml::button('{t}Activity Log{/t}', array('onclick' => '$("#activityLog").dialog("open")', 'class' => 'button'));
 			?>
 		</p>
 
@@ -45,10 +45,10 @@ foreach (array(
 		<h3>{t}Course Evaluations{/t}</h3>
 		<p>{t}Please click the button below to access the pre-course and post-course surveys. Participation is anonymous. Please complete each survey at the appropriate time.{/t}</p>
 		<p>
-			<button type="button" class="cupid-green" onClick="location.href('http://www.vovici.com/home_index.aspx');">Pre-Course Survey</button>
+			<a href="http://www.vovici.com/home_index.aspx" target="_blank" class="button">Pre-Course Survey</a>
 		</p>
 		<p>
-			<button type="button" class="cupid-green" onClick="location.href('http://www.vovici.com/home_index.aspx');">Post-Course Survey</button>
+			<a href="http://www.vovici.com/home_index.aspx" target="_blank" class="button">Post-Course Survey</a>
 		</p>
 	</div>
 	<div class="box-sidebar one">
