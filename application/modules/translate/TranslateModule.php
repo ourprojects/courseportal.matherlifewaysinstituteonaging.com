@@ -26,6 +26,10 @@ class TranslateModule extends CWebModule
 	 * @const string
 	 */
 	const LANGUAGE = 'en';
+	
+	const SUCCESS = 0;
+	const OVERWRITE = 1;
+	const ERROR = 2;
 
 	/**
 	 * @var string The name of the translate component. Change this to what ever component name you used in your configuration.
@@ -69,7 +73,7 @@ class TranslateModule extends CWebModule
 		if(!isset(self::$_translator))
 		{
 			self::$_translator = Yii::app()->getComponent(self::$translatorComponentName);
-			if(self::$_translator === null)
+			if(!self::$_translator instanceof TTranslator)
 			{
 				throw new CException(self::$translatorComponentName.' component must be defined');
 			}
@@ -135,6 +139,35 @@ class TranslateModule extends CWebModule
 		$messageSource->setLanguage(self::LANGUAGE);
 		return Yii::t(self::ID, $message, $params, self::translator()->messageSource);
 		$messageSource->setLanguage($oldLanguage);
+	}
+	
+	/**
+	 * Checks if srbac is installed by checking if Auth items table exists.
+	 * @return boolean Whether srbac is installed or not
+	 */
+	public static function isInstalled()
+	{
+		$translator = self::translator();
+		return $translator->getMessageSourceComponent()->isInstalled() && $translator->getViewSourceComponent()->isInstalled();
+	}
+	
+	/**
+	 * Performs the installation and returns the status
+	 * @param int reinstall If true and the tables are already installed they will be dropped and recreated.
+	 * @return array statuses of installing message source and view source in the format array(componentName => (0:Success, 1:Ovewrite, 2: Error))
+	 */
+	public static function install($reinstall = false)
+	{
+		$translator = self::translator();
+		return array(
+			$translator->messageSource => $translator->getMessageSourceComponent()->install($reinstall), 
+			$translator->viewSource => $translator->getViewSourceComponent()->install($reinstall)
+		);
+	}
+	
+	public static function checkSettings($setting)
+	{
+		return self::translator()->checkSettings($setting);
 	}
 
 }

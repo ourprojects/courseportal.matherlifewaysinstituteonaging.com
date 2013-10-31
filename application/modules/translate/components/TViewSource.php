@@ -26,7 +26,19 @@ abstract class TViewSource extends CApplicationComponent
 	private $_eventSyncLockFile;
 
 	private $_views = array();
+	
+	/**
+	 * @return boolean True if all components needed by this view source are installed and configured. False otherwise.
+	 */
+	abstract public function getIsInstalled();
 
+	/**
+	 * Performs the installation of this component and returns the status.
+	 * 
+	 * @param boolean reinstall If true and the tables are already installed they will be dropped and recreated.
+	 * @return integer status (0:Success, 1:Ovewrite, 2: Error)
+	 */
+	abstract public function install($reinstall = false);
 
 	/**
 	 * Loads and returns the views for a particular route and language.

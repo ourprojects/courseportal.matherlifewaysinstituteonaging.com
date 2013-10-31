@@ -1237,5 +1237,10 @@ class TTranslator extends CApplicationComponent
 
 		return $res;
 	}
+	
+	public function checkSettings($setting)
+	{
+		
+	}
 
 }

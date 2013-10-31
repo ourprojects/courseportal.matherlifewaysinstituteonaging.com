@@ -2,6 +2,19 @@
 
 interface ITMessageSource extends IApplicationComponent
 {
+	
+	/**
+	 * @return boolean True if all components needed by this message source are installed and configured. False otherwise. 
+	 */
+	public function getIsInstalled();
+	
+	/**
+	 * Performs the installation of this component and returns the status.
+	 * 
+	 * @param boolean reinstall If true and the tables are already installed they will be dropped and recreated.
+	 * @return integer status (0:Success, 1:Ovewrite, 2: Error)
+	 */
+	public function install($reinstall = false);
 
 	/**
 	 * @return string the language that the source messages are written in.

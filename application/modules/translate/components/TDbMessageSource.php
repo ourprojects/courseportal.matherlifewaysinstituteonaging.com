@@ -47,6 +47,185 @@ class TDbMessageSource extends CDbMessageSource implements ITMessageSource
 	 * @var boolean Flag marking whether the data in the cache is stale.
 	 */
 	private $_cacheInvalidated = true;
+	
+	/**
+	 * (non-PHPdoc)
+	 * @see ITMessageSource::getIsInstalled()
+	 */
+	public function getIsInstalled()
+	{
+		$schema = $this->getDbConnection()->getSchema();
+		return $schema->getTable($this->languageTable) !== null &&
+			$schema->getTable($this->acceptedLanguageTable) !== null &&
+			$schema->getTable($this->categoryTable) !== null &&
+			$schema->getTable($this->categoryMessageTable) !== null &&
+			$schema->getTable($this->sourceMessageTable) !== null &&
+			$schema->getTable($this->translatedMessageTable) !== null;
+	}
+	
+	/**
+	 * (non-PHPdoc)
+	 * @see ITMessageSource::install()
+	 */
+	public function install($reinstall = false)
+	{
+		if(!$reinstall && $this->isInstalled())
+		{
+			return TranslateModule::OVERWRITE; // Already installed
+		}
+		
+		$tableNames = array(
+			$this->languageTable => $this->languageTable,
+			$this->acceptedLanguageTable => $this->acceptedLanguageTable,
+			$this->categoryTable => $this->categoryTable,
+			$this->categoryMessageTable => $this->categoryMessageTable,
+			$this->sourceMessageTable => $this->sourceMessageTable,
+			$this->translatedMessageTable => $this->translatedMessageTable);
+		
+		$db = $this->getDbConnection();
+		if($db->tablePrefix !== null)
+		{
+			foreach($tableNames as &$name)
+			{
+				if(strpos($name, '{{') !== false)
+				{
+					$name = preg_replace('/\{\{(.*?)\}\}/', $db->tablePrefix.'$1', $name);
+				}
+			}
+		}
+		
+		$transaction = $db->beginTransaction();
+		$schema = $db->getSchema();
+		try
+		{
+			$schema->checkIntegrity(false);
+			$sql = '';
+			// Drop the tables if they exist
+			foreach($tableNames as $table)
+			{
+				if(($table = $schema->getTable($table)) !== null)
+				{
+					$sql .= $schema->dropTable($table->name).';';
+				}
+			}
+		
+			// Create tables
+			$sql .= $schema->createTable(
+				$tableNames[$this->languageTable],
+				array(
+					'id' => 'pk',
+					'code' => 'varchar(16) NOT NULL',
+					'UNIQUE KEY '.$schema->quoteColumnName('code').' ('.$schema->quoteColumnName('code').')'
+				)
+			).';';
+			
+			$sql .= $schema->createTable(
+				$tableNames[$this->acceptedLanguageTable],
+				array(
+					'id' => 'pk',
+				)
+			).';';
+		
+			$sql .= $schema->createTable(
+				$tableNames[$this->categoryTable],
+				array(
+					'id' => 'pk',
+					'category' => 'varchar(255) NOT NULL',
+					'UNIQUE KEY ('.$schema->quoteColumnName('category').','.$schema->quoteColumnName('category').')'
+				)
+			).';';
+		
+			$sql .= $schema->createTable(
+				$tableNames[$this->categoryMessageTable],
+				array(
+					'category_id' => 'integer NOT NULL',
+					'message_id' => 'integer NOT NULL',
+					'PRIMARY KEY ('.$schema->quoteColumnName('category_id').','.$schema->quoteColumnName('message_id').')'
+				)
+			).';';
+				
+			$sql .= $schema->createTable(
+				$tableNames[$this->sourceMessageTable],
+				array(
+					'id' => 'pk',
+					'language_id' => 'integer NOT NULL',
+					'message' => 'text',
+					'KEY '.$schema->quoteColumnName('language_id').' ('.$schema->quoteColumnName('language_id').')'
+				)
+			).';';
+				
+			$sql .= $schema->createTable(
+				$tableNames[$this->translatedMessageTable],
+				array(
+					'id' => 'integer NOT NULL',
+					'language_id' => 'integer NOT NULL',
+					'translation' => 'text',
+					'last_updated' => 'datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP',
+					'PRIMARY KEY ('.$schema->quoteColumnName('id').','.$schema->quoteColumnName('language_id').')'.
+					'KEY '.$schema->quoteColumnName('last_modified').' ('.$schema->quoteColumnName('last_modified').')'
+				)
+			).';';
+		
+			// Add foreign key constraints
+			$sql .= $schema->addForeignKey(
+				$tableNames[$this->acceptedLanguageTable].'_fk_1',
+				$tableNames[$this->acceptedLanguageTable],
+				'id',
+				$tableNames[$this->languageTable],
+				'id',
+				'CASCADE',
+				'CASCADE').';';
+				
+			$sql .= $schema->addForeignKey(
+				$tableNames[$this->categoryMessageTable].'_fk_1',
+				$tableNames[$this->categoryMessageTable],
+				'message_id',
+				$tableNames[$this->sourceMessageTable],
+				'id',
+				'CASCADE',
+				'CASCADE').';';
+		
+			$sql .= $schema->addForeignKey(
+				$tableNames[$this->categoryMessageTable].'_fk_2',
+				$tableNames[$this->categoryMessageTable],
+				'category_id',
+				$tableNames[$this->categoryTable],
+				'id',
+				'CASCADE',
+				'CASCADE').';';
+				
+			$sql .= $schema->addForeignKey(
+				$tableNames[$this->translatedMessageTable].'_fk_1',
+				$tableNames[$this->translatedMessageTable],
+				'id',
+				$tableNames[$this->sourceMessageTable],
+				'id',
+				'CASCADE',
+				'CASCADE').';';
+				
+			$sql .= $schema->addForeignKey(
+				$tableNames[$this->translatedMessageTable].'_fk_2',
+				$tableNames[$this->translatedMessageTable],
+				'language_id',
+				$tableNames[$this->languageTable],
+				'id',
+				'CASCADE',
+				'CASCADE').';';
+		
+			$db->createCommand($sql)->execute();
+		
+			$schema->checkIntegrity(true);
+				
+			$transaction->commit();
+		}
+		catch(Exception $ex)
+		{
+			$transaction->rollback();
+			return TranslateModule::ERROR;
+		}
+		
+		return TranslateModule::SUCCESS;
+	}
 
 	public function setLanguage($language)
 	{

@@ -61,6 +61,185 @@ class TDbViewSource extends TViewSource
 	private $_cacheInvalidated = true;
 
 	private $_db;
+	
+	/**
+	 * (non-PHPdoc)
+	 * @see TViewSource::getIsInstalled()
+	 */
+	public function getIsInstalled()
+	{
+		$schema = $this->getDbConnection()->getSchema();
+		return $schema->getTable($this->routeTable) !== null &&
+			$schema->getTable($this->routeViewTable) !== null &&
+			$schema->getTable($this->viewMessageTable) !== null &&
+			$schema->getTable($this->viewSourceTable) !== null &&
+			$schema->getTable($this->viewTable) !== null;
+	}
+	
+	/**
+	 * (non-PHPdoc)
+	 * @see TViewSource::install()
+	 */
+	public function install($reinstall = false)
+	{
+		if(!$reinstall && $this->isInstalled())
+		{
+			return TranslateModule::OVERWRITE; // Already installed
+		}
+		
+		$tableNames = array(
+			$this->routeTable => $this->routeTable, 
+			$this->routeViewTable => $this->routeViewTable, 
+			$this->viewMessageTable => $this->viewMessageTable, 
+			$this->viewSourceTable => $this->viewSourceTable, 
+			$this->viewTable => $this->viewTable);
+		
+		$db = $this->getDbConnection();
+		if($db->tablePrefix !== null)
+		{
+			foreach($tableNames as &$name)
+			{
+				if(strpos($name, '{{') !== false)
+				{
+					$name = preg_replace('/\{\{(.*?)\}\}/', $db->tablePrefix.'$1', $name);
+				}
+			}
+		}
+		
+		$transaction = $db->beginTransaction();
+		$schema = $db->getSchema();
+		try
+		{
+			$schema->checkIntegrity(false);
+			$sql = '';
+			// Drop the tables if they exist
+			foreach($tableNames as $table)
+			{
+				if(($table = $schema->getTable($table)) !== null)
+				{
+					$sql .= $schema->dropTable($table->name).';';
+				}
+			}
+		
+			// Create tables
+			$sql .= $schema->createTable(
+				$tableNames[$this->routeTable],
+				array(
+					'id' => 'pk',
+					'route' => 'varchar(255) NOT NULL',
+					'UNIQUE KEY '.$schema->quoteColumnName('route').' ('.$schema->quoteColumnName('route').')'
+				)
+			).';';
+		
+			$sql .= $schema->createTable(
+				$tableNames[$this->routeViewTable],
+				array(
+					'route_id' => 'integer NOT NULL',
+					'view_id' => 'integer NOT NULL',
+					'PRIMARY KEY ('.$schema->quoteColumnName('route_id').','.$schema->quoteColumnName('view_id').')'
+				)
+			).';';
+		
+			$sql .= $schema->createTable(
+				$tableNames[$this->viewMessageTable],
+				array(
+					'view_id' => 'integer NOT NULL',
+					'message_id' => 'integer NOT NULL',
+					'PRIMARY KEY ('.$schema->quoteColumnName('view_id').','.$schema->quoteColumnName('message_id').')'
+				)
+			).';';
+			
+			$sql .= $schema->createTable(
+				$tableNames[$this->viewSourceTable],
+				array(
+					'id' => 'pk',
+					'path' => 'varchar(255) NOT NULL',
+					'UNIQUE KEY '.$schema->quoteColumnName('path').' ('.$schema->quoteColumnName('path').')'
+				)
+			).';';
+			
+			$sql .= $schema->createTable(
+				$tableNames[$this->viewTable],
+				array(
+					'id' => 'integer NOT NULL',
+					'language_id' => 'integer NOT NULL',
+					'path' => 'varchar(255) NOT NULL',
+					'created' => 'datetime NOT NULL DEFAULT CURRENT_TIMESTAMP',
+					'PRIMARY KEY ('.$schema->quoteColumnName('id').','.$schema->quoteColumnName('language_id').')'.
+					'UNIQUE KEY '.$schema->quoteColumnName('path').' ('.$schema->quoteColumnName('path').')'.
+					'KEY '.$schema->quoteColumnName('created').' ('.$schema->quoteColumnName('created').')'
+				)
+			).';';
+		
+			// Add foreign key constraints
+			$sql .= $schema->addForeignKey(
+				$tableNames[$this->routeViewTable].'_fk_1',
+				$tableNames[$this->routeViewTable],
+				'view_id',
+				$tableNames[$this->viewSourceTable],
+				'id',
+				'CASCADE',
+				'CASCADE').';';
+			
+			$sql .= $schema->addForeignKey(
+				$tableNames[$this->routeViewTable].'_fk_2',
+				$tableNames[$this->routeViewTable],
+				'route_id',
+				$tableNames[$this->routeTable],
+				'id',
+				'CASCADE',
+				'CASCADE').';';
+		
+			$sql .= $schema->addForeignKey(
+				$tableNames[$this->viewMessageTable].'_fk_1',
+				$tableNames[$this->viewMessageTable],
+				'view_id',
+				$tableNames[$this->viewSourceTable],
+				'id',
+				'CASCADE',
+				'CASCADE').';';
+			
+			$sql .= $schema->addForeignKey(
+				$tableNames[$this->viewMessageTable].'_fk_2',
+				$tableNames[$this->viewMessageTable],
+				'message_id',
+				TranslateModule::translator()->getMessageSourceComponent()->sourceMessageTable,
+				'id',
+				'CASCADE',
+				'CASCADE').';';
+			
+			$sql .= $schema->addForeignKey(
+				$tableNames[$this->viewTable].'_fk_1',
+				$tableNames[$this->viewTable],
+				'id',
+				$tableNames[$this->viewSourceTable],
+				'id',
+				'CASCADE',
+				'CASCADE').';';
+			
+			$sql .= $schema->addForeignKey(
+				$tableNames[$this->viewTable].'_fk_2',
+				$tableNames[$this->viewTable],
+				'language_id',
+				TranslateModule::translator()->getMessageSourceComponent()->languageTable,
+				'id',
+				'CASCADE',
+				'CASCADE').';';
+		
+			$db->createCommand($sql)->execute();
+		
+			$schema->checkIntegrity(true);
+			
+			$transaction->commit();
+		}
+		catch(Exception $ex)
+		{
+			$transaction->rollback();
+			return TranslateModule::ERROR;
+		}
+		
+		return TranslateModule::SUCCESS;
+	}
 
 	/**
 	 * Returns the DB connection used for the view source.

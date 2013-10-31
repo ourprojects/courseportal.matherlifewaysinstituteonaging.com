@@ -1,0 +1,66 @@
+@CHARSET "ISO-8859-1";
+
+#statistics th {
+	text-align: right;
+}
+
+#statistics td {
+	text-align: left;
+}
+
+#configOptions li {
+	margin: 10px 2px;
+}
+
+#GoogleTranslateLogo {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 90%;
+	height: auto;
+	display: block;
+}
+
+.translateNoError {
+	color: #070;
+	background: #D8FFD8;
+	background-image: url(noError.png);
+	background-repeat: no-repeat;
+	background-position: right;
+}
+
+.translateError {
+	color: #B00;
+	background: #FFD8D8;
+	font-weight: bold;
+	background-image: url(error.png);
+	background-repeat: no-repeat;
+	background-position: right;
+}
+
+table {
+	max-width: 100%;
+}
+
+table th.right {
+	text-align: right;
+}
+
+table th.center {
+	text-align: center;
+	font-size: 1.6em;
+}
+
+table td.fill {
+	min-width:100%;
+	width:100%;
+	max-width:100%;
+}
+
+table td.break {
+	word-wrap:break-word;
+	word-break:break-all;
+}
+
+table.attributesGrid th,table.attributesGrid td {
+	padding: .135em;
+}
