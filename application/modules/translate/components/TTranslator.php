@@ -555,7 +555,7 @@ class TTranslator extends CApplicationComponent
 		if(!isset($this->_messageSource))
 		{
 			$this->_messageSource = Yii::app()->getComponent($this->messageSource);
-			if(!is_subclass_of($this->_messageSource, 'ITMessageSource'))
+			if(!$this->_messageSource instanceof ITMessageSource)
 			{
 				throw new CException("The component '$this->messageSource' must be defined and implement type ITMessageSource.");
 			}
@@ -574,7 +574,7 @@ class TTranslator extends CApplicationComponent
 		if(!isset($this->_viewSource))
 		{
 			$this->_viewSource = Yii::app()->getComponent($this->viewSource);
-			if(!is_subclass_of($this->_viewSource, 'TViewSource'))
+			if(!$this->_viewSource instanceof TViewSource)
 			{
 				throw new CException("The component '$this->viewSource' must be defined and of type TViewSource.");
 			}

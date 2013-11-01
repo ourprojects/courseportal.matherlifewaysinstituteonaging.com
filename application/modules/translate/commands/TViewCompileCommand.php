@@ -176,7 +176,7 @@ class TViewCompileCommand extends CConsoleCommand
 				}
 				// extract parameters into their keys and values
 				preg_match_all(self::PARAM_PARSE_REGEX, $messages[2][$i], $params);
-				$message = Yii::t($messages[1][$i] === '' ? $messageSource->messageCategory : $messages[1][$i], $message, array_combine($params[1], $params[2]), $source, $language);
+				$message = Yii::t($messages[1][$i] === '' ? $messageSource->messageCategory : $messages[1][$i], $message, @array_combine($params[1], $params[2]), $source, $language);
 			}
 
 			$viewSource->deleteViewMessages($view['id'], $unconfirmedMessages);
