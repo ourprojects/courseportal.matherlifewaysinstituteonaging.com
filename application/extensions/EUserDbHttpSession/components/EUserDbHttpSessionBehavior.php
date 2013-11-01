@@ -38,7 +38,6 @@ class EUserDbHttpSessionBehavior extends CActiveRecordBehavior
 						'"{thisClass}" is not compatible with a session manager of type "{sessionClass}". Please check your application\'s session manager configuration.', 
 						array('{thisClass}' => getClass($this), '{sessionClass}' => getClass(Yii::app()->getClass()))));
 		}
-		require_once(dirname(__FILE__).DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'models'.DIRECTORY_SEPARATOR.'EUserHttpSession.php');
 	}
 	
 	/**

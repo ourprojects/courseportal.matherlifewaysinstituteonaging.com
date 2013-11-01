@@ -152,6 +152,7 @@ class CPUser extends CActiveRecord
 	{
 		Yii::import('course.models.*');
 		Yii::import('ext.EUserDbHttpSession.components.EUserDbHttpSessionBehavior');
+		Yii::import('ext.EUserDbHttpSession.models.EUserHttpSession');
 		return array_merge(
 				CourseUser::model()->relations(),
 				EUserDbHttpSessionBehavior::relations(),
