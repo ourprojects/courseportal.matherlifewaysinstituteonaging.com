@@ -631,6 +631,7 @@ class TTranslator extends CApplicationComponent
 	 * @param string $category The category the message should be associated with
 	 * @param string $message The message to be translated
 	 * @param string $language The language the message should be translate to
+	 * @param ITMessageSource $source The message source to use.
 	 * @param bool $useTransaction If true a transaction will be used when updating the database entries for this category, message, language, translation.
 	 * @throws CException If the source message, source message category, language, or translation could not be added to the message source.
 	 * @return string The translation for the message or the message it self if either the translation failed or the target language was the same as source language.
@@ -673,29 +674,11 @@ class TTranslator extends CApplicationComponent
 					{
 						if($this->autoTranslate)
 						{
-							$translation['translation'] = $message;
-
-							preg_match_all('/\{(?:.*?)\}/s', $translation['translation'], $yiiParams);
-							$yiiParams = $yiiParams[0];
-							$escapedYiiParams = array();
-							foreach($yiiParams as $key => &$match)
-							{
-								$escapedYiiParams[$key] = "<span class='notranslate'>:mpt$key</span>";
-							}
-
-							$translation['translation'] = str_replace($yiiParams, $escapedYiiParams, $translation['translation']);
-
-							$translation['translation'] = $this->googleTranslate(
-									$translation['translation'],
-									$language,
-									$sourceLanguage
-							);
+							$translation['translation'] = $this->googleTranslate($message, $language, $sourceLanguage);
 
 							if($translation['translation'] !== false)
 							{
 								$translation['translation'] = trim($translation['translation'][0]);
-
-								$translation['translation'] = str_replace($escapedYiiParams, $yiiParams, $translation['translation']);
 									
 								if($source->addTranslation($translation['id'], $language, $translation['translation'], true) !== null)
 								{
@@ -768,16 +751,24 @@ class TTranslator extends CApplicationComponent
 	public function googleTranslate(&$message, $targetLanguage = null, $sourceLanguage = null)
 	{
 		if($targetLanguage === null)
+		{
 			$targetLanguage = Yii::app()->getLanguage();
-
+		}
+		
 		if($sourceLanguage === null)
+		{
 			$sourceLanguage = Yii::app()->sourceLanguage;
+		}
 
 		if(empty($sourceLanguage))
+		{
 			throw new CException(TranslateModule::t('Source language must be defined'));
+		}
 
 		if($targetLanguage === $sourceLanguage)
+		{
 			throw new CException(TranslateModule::t('targetLanguage must be different than sourceLanguage'));
+		}
 
 		if(is_array($message))
 		{
@@ -787,15 +778,30 @@ class TTranslator extends CApplicationComponent
 			foreach($message as $m)
 			{
 				$m = strval($m);
+				preg_match_all('/\{(?:.*?)\}/s', $m, $yiiParams);
+				$yiiParams = $yiiParams[0];
+				$escapedYiiParams = array();
+				foreach($yiiParams as $key => &$match)
+				{
+					$escapedYiiParams[$key] = "<span class='notranslate'>:mpt$key</span>";
+				}
+				
+				$m = str_replace($yiiParams, $escapedYiiParams, $m);
+				
 				$messageLength += strlen($m);
 				if($messageLength > self::GOOGLE_TRANSLATE_MAX_CHARS)
 				{
 					if(empty($messageChunk))
+					{
 						$this->_throwCharLimitException($messageLength, self::GOOGLE_TRANSLATE_MAX_CHARS);
+					}
 
 					$query = $this->_googleTranslate($messageChunk, $targetLanguage, $sourceLanguage);
 					if($query === false)
+					{
 						return false;
+					}
+					$query[0] = str_replace($escapedYiiParams, $yiiParams, $query[0]);
 					$translated = CMap::mergeArray($translated, $query);
 
 					$messageLength = 0;
@@ -811,8 +817,10 @@ class TTranslator extends CApplicationComponent
 			{
 				$query = $this->_googleTranslate($messageChunk, $targetLanguage, $sourceLanguage);
 				if($query === false)
+				{
 					return false;
-
+				}
+				$query[0] = str_replace($escapedYiiParams, $yiiParams, $query[0]);
 				$translated = CMap::mergeArray($translated, $query);
 			}
 
@@ -821,11 +829,28 @@ class TTranslator extends CApplicationComponent
 		{
 			$msg = strval($message);
 			if(strlen($msg) > self::GOOGLE_TRANSLATE_MAX_CHARS)
+			{
 				$this->_throwCharLimitException(strlen($msg), self::GOOGLE_TRANSLATE_MAX_CHARS);
+			}
+
+			preg_match_all('/\{(?:.*?)\}/s', $msg, $yiiParams);
+			$yiiParams = $yiiParams[0];
+			$escapedYiiParams = array();
+			foreach($yiiParams as $key => &$match)
+			{
+				$escapedYiiParams[$key] = "<span class='notranslate'>:mpt$key</span>";
+			}
+			
+			$msg = str_replace($yiiParams, $escapedYiiParams, $msg);
 
 			$translated = $this->_googleTranslate($msg, $targetLanguage, $sourceLanguage);
+			
+			if($translated !== false)
+			{
+				$translated[0] = str_replace($escapedYiiParams, $yiiParams, $translated[0]);
+			}
 		}
-
+		
 		return $translated;
 	}
 
