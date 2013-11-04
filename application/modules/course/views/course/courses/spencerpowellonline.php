@@ -59,8 +59,15 @@ foreach (array(
 			<a href="#" target="_blank"><img src="<?php echo $this -> getImagesUrl('spencer/ArtworkCertificate.png'); ?>" alt="{t}Certificate of Completion{/t}"> </a>
 		</p>
 	</div>
-</div>
+	<div class="box-sidebar one">
+		<h3>{t}Facilitator: Sherrie All, PhD{/t}</h3>
+		<p>
+			<button class="button">Contact Facilitator</button>
+		</p>
+		<p>{t}Licensed clinical neuropsychologist specializing in brain fitness, healthy aging and cognitive enhancement. She is building a private practice in clinical neuropsychological assessment combined with interventions aimed at enhancing cognition and promoting healthy aging.{/t}</p>
 
+	</div>
+</div>
 
 <div class="column-wide">
 	<h2 class="flowers">
@@ -74,7 +81,7 @@ foreach (array(
 	</p>
 	<h4>{t}Participant Access{/t}</h4>
 	<p>
-		{t}<strong>Particiants</strong> have <strong>access</strong> to this pilot study for <strong>exactly 90 days</strong> <strong>from</strong> the initial <strong>enrollment</strong> date.{/t}
+		{t}<strong>Particiants</strong> have <strong>access</strong> to this pilot study for <strong>exactly 90 days</strong><strong>from</strong> the initial <strong>enrollment</strong> date.{/t}
 	</p>
 	<h4>{t}Objectives{/t}</h4>
 	<ul>
@@ -84,47 +91,45 @@ foreach (array(
 		?>
 	</ul>
 
-
 	<h4>{t}Modules{/t}</h4>
 	<ul>
 		<li>
-			<a href="#lesson-1-slide-1" data-fancybox-group="lesson-1" class="teal lesson-1">{t}Introduction{/t}</a> <a href="#lesson-1-slide-2" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-3" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-4" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-5" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-6" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-7" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-8" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-9" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-10" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-11" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-12"
-				data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-13" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-14" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-15" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-16" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-17" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-18" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-19" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-20" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-21" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-22" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-23" data-fancybox-group="lesson-1"
-				class="hide lesson-1"></a> <a href="#lesson-1-slide-24" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-25" data-fancybox-group="lesson-1" class="hide lesson-1"></a>
+			<a href="#lesson-1-slide-1" data-fancybox-group="lesson-1" class="teal lesson-1">{t}Introduction{/t}</a><a href="#lesson-1-slide-2" data-fancybox-group="lesson-1" class="hide lesson-1"></a><a href="#lesson-1-slide-3" data-fancybox-group="lesson-1" class="hide lesson-1"></a><a href="#lesson-1-slide-4" data-fancybox-group="lesson-1" class="hide lesson-1"></a><a href="#lesson-1-slide-5" data-fancybox-group="lesson-1" class="hide lesson-1"></a><a href="#lesson-1-slide-6" data-fancybox-group="lesson-1" class="hide lesson-1"></a><a href="#lesson-1-slide-7" data-fancybox-group="lesson-1" class="hide lesson-1"></a><a href="#lesson-1-slide-8" data-fancybox-group="lesson-1" class="hide lesson-1"></a><a href="#lesson-1-slide-9" data-fancybox-group="lesson-1" class="hide lesson-1"></a><a href="#lesson-1-slide-10" data-fancybox-group="lesson-1" class="hide lesson-1"></a><a href="#lesson-1-slide-11" data-fancybox-group="lesson-1" class="hide lesson-1"></a><a href="#lesson-1-slide-12"
+				data-fancybox-group="lesson-1" class="hide lesson-1"></a><a href="#lesson-1-slide-13" data-fancybox-group="lesson-1" class="hide lesson-1"></a><a href="#lesson-1-slide-14" data-fancybox-group="lesson-1" class="hide lesson-1"></a><a href="#lesson-1-slide-15" data-fancybox-group="lesson-1" class="hide lesson-1"></a><a href="#lesson-1-slide-16" data-fancybox-group="lesson-1" class="hide lesson-1"></a><a href="#lesson-1-slide-17" data-fancybox-group="lesson-1" class="hide lesson-1"></a><a href="#lesson-1-slide-18" data-fancybox-group="lesson-1" class="hide lesson-1"></a><a href="#lesson-1-slide-19" data-fancybox-group="lesson-1" class="hide lesson-1"></a><a href="#lesson-1-slide-20" data-fancybox-group="lesson-1" class="hide lesson-1"></a><a href="#lesson-1-slide-21" data-fancybox-group="lesson-1" class="hide lesson-1"></a><a href="#lesson-1-slide-22" data-fancybox-group="lesson-1" class="hide lesson-1"></a><a href="#lesson-1-slide-23" data-fancybox-group="lesson-1"
+				class="hide lesson-1"></a><a href="#lesson-1-slide-24" data-fancybox-group="lesson-1" class="hide lesson-1"></a><a href="#lesson-1-slide-25" data-fancybox-group="lesson-1" class="hide lesson-1"></a>
 		</li>
 		<li>
-			<a href="#lesson-2-slide-1" data-fancybox-group="lesson-2" class="teal lesson-2">{t}Physical Activity{/t}</a> <a href="#lesson-2-slide-2" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-3" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-4" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-5" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-6" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-7" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-8" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-9" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-10" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-11" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a
-				href="#lesson-2-slide-12" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-13" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-14" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-15" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-16" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-17" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-18" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-19" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-20" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-21" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-22" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-23"
-				data-fancybox-group="lesson-2" class="hide lesson-2"></a>
+			<a href="#lesson-2-slide-1" data-fancybox-group="lesson-2" class="teal lesson-2">{t}Physical Activity{/t}</a><a href="#lesson-2-slide-2" data-fancybox-group="lesson-2" class="hide lesson-2"></a><a href="#lesson-2-slide-3" data-fancybox-group="lesson-2" class="hide lesson-2"></a><a href="#lesson-2-slide-4" data-fancybox-group="lesson-2" class="hide lesson-2"></a><a href="#lesson-2-slide-5" data-fancybox-group="lesson-2" class="hide lesson-2"></a><a href="#lesson-2-slide-6" data-fancybox-group="lesson-2" class="hide lesson-2"></a><a href="#lesson-2-slide-7" data-fancybox-group="lesson-2" class="hide lesson-2"></a><a href="#lesson-2-slide-8" data-fancybox-group="lesson-2" class="hide lesson-2"></a><a href="#lesson-2-slide-9" data-fancybox-group="lesson-2" class="hide lesson-2"></a><a href="#lesson-2-slide-10" data-fancybox-group="lesson-2" class="hide lesson-2"></a><a href="#lesson-2-slide-11" data-fancybox-group="lesson-2" class="hide lesson-2"></a><a href="#lesson-2-slide-12"
+				data-fancybox-group="lesson-2" class="hide lesson-2"></a><a href="#lesson-2-slide-13" data-fancybox-group="lesson-2" class="hide lesson-2"></a><a href="#lesson-2-slide-14" data-fancybox-group="lesson-2" class="hide lesson-2"></a><a href="#lesson-2-slide-15" data-fancybox-group="lesson-2" class="hide lesson-2"></a><a href="#lesson-2-slide-16" data-fancybox-group="lesson-2" class="hide lesson-2"></a><a href="#lesson-2-slide-17" data-fancybox-group="lesson-2" class="hide lesson-2"></a><a href="#lesson-2-slide-18" data-fancybox-group="lesson-2" class="hide lesson-2"></a><a href="#lesson-2-slide-19" data-fancybox-group="lesson-2" class="hide lesson-2"></a><a href="#lesson-2-slide-20" data-fancybox-group="lesson-2" class="hide lesson-2"></a><a href="#lesson-2-slide-21" data-fancybox-group="lesson-2" class="hide lesson-2"></a><a href="#lesson-2-slide-22" data-fancybox-group="lesson-2" class="hide lesson-2"></a><a href="#lesson-2-slide-23" data-fancybox-group="lesson-2"
+				class="hide lesson-2"></a>
 		</li>
 		<li>
-			<a href="#lesson-3-slide-1" data-fancybox-group="lesson-3" class="teal lesson-3">{t}Emotional{/t}</a> <a href="#lesson-3-slide-2" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-3" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-4" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-5" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-6" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-7" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-8" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-9" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-10" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-11" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-12"
-				data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-13" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-14" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-15" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-16" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-17" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-18" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-19" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-20" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-21" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-22" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-23" data-fancybox-group="lesson-3"
-				class="hide lesson-3"></a> <a href="#lesson-3-slide-24" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-25" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-26" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-27" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-28" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-29" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-30" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-31" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-32" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-33" data-fancybox-group="lesson-3" class="hide lesson-3"></a>
+			<a href="#lesson-3-slide-1" data-fancybox-group="lesson-3" class="teal lesson-3">{t}Emotional{/t}</a><a href="#lesson-3-slide-2" data-fancybox-group="lesson-3" class="hide lesson-3"></a><a href="#lesson-3-slide-3" data-fancybox-group="lesson-3" class="hide lesson-3"></a><a href="#lesson-3-slide-4" data-fancybox-group="lesson-3" class="hide lesson-3"></a><a href="#lesson-3-slide-5" data-fancybox-group="lesson-3" class="hide lesson-3"></a><a href="#lesson-3-slide-6" data-fancybox-group="lesson-3" class="hide lesson-3"></a><a href="#lesson-3-slide-7" data-fancybox-group="lesson-3" class="hide lesson-3"></a><a href="#lesson-3-slide-8" data-fancybox-group="lesson-3" class="hide lesson-3"></a><a href="#lesson-3-slide-9" data-fancybox-group="lesson-3" class="hide lesson-3"></a><a href="#lesson-3-slide-10" data-fancybox-group="lesson-3" class="hide lesson-3"></a><a href="#lesson-3-slide-11" data-fancybox-group="lesson-3" class="hide lesson-3"></a><a href="#lesson-3-slide-12"
+				data-fancybox-group="lesson-3" class="hide lesson-3"></a><a href="#lesson-3-slide-13" data-fancybox-group="lesson-3" class="hide lesson-3"></a><a href="#lesson-3-slide-14" data-fancybox-group="lesson-3" class="hide lesson-3"></a><a href="#lesson-3-slide-15" data-fancybox-group="lesson-3" class="hide lesson-3"></a><a href="#lesson-3-slide-16" data-fancybox-group="lesson-3" class="hide lesson-3"></a><a href="#lesson-3-slide-17" data-fancybox-group="lesson-3" class="hide lesson-3"></a><a href="#lesson-3-slide-18" data-fancybox-group="lesson-3" class="hide lesson-3"></a><a href="#lesson-3-slide-19" data-fancybox-group="lesson-3" class="hide lesson-3"></a><a href="#lesson-3-slide-20" data-fancybox-group="lesson-3" class="hide lesson-3"></a><a href="#lesson-3-slide-21" data-fancybox-group="lesson-3" class="hide lesson-3"></a><a href="#lesson-3-slide-22" data-fancybox-group="lesson-3" class="hide lesson-3"></a><a href="#lesson-3-slide-23" data-fancybox-group="lesson-3"
+				class="hide lesson-3"></a><a href="#lesson-3-slide-24" data-fancybox-group="lesson-3" class="hide lesson-3"></a><a href="#lesson-3-slide-25" data-fancybox-group="lesson-3" class="hide lesson-3"></a><a href="#lesson-3-slide-26" data-fancybox-group="lesson-3" class="hide lesson-3"></a><a href="#lesson-3-slide-27" data-fancybox-group="lesson-3" class="hide lesson-3"></a><a href="#lesson-3-slide-28" data-fancybox-group="lesson-3" class="hide lesson-3"></a><a href="#lesson-3-slide-29" data-fancybox-group="lesson-3" class="hide lesson-3"></a><a href="#lesson-3-slide-30" data-fancybox-group="lesson-3" class="hide lesson-3"></a><a href="#lesson-3-slide-31" data-fancybox-group="lesson-3" class="hide lesson-3"></a><a href="#lesson-3-slide-32" data-fancybox-group="lesson-3" class="hide lesson-3"></a><a href="#lesson-3-slide-33" data-fancybox-group="lesson-3" class="hide lesson-3"></a>
 		</li>
 		<li>
-			<a href="#lesson-4-slide-1" data-fancybox-group="lesson-4" class="teal lesson-4">{t}Intellectual{/t}</a> <a href="#lesson-4-slide-2" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-3" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-4" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-5" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-6" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-7" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-8" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-9" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-10" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-11" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-12"
-				data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-13" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-14" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-15" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-16" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-17" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-18" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-19" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-20" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-21" data-fancybox-group="lesson-4" class="hide lesson-4"></a> <a href="#lesson-4-slide-22" data-fancybox-group="lesson-4" class="hide lesson-4"></a>
+			<a href="#lesson-4-slide-1" data-fancybox-group="lesson-4" class="teal lesson-4">{t}Intellectual{/t}</a><a href="#lesson-4-slide-2" data-fancybox-group="lesson-4" class="hide lesson-4"></a><a href="#lesson-4-slide-3" data-fancybox-group="lesson-4" class="hide lesson-4"></a><a href="#lesson-4-slide-4" data-fancybox-group="lesson-4" class="hide lesson-4"></a><a href="#lesson-4-slide-5" data-fancybox-group="lesson-4" class="hide lesson-4"></a><a href="#lesson-4-slide-6" data-fancybox-group="lesson-4" class="hide lesson-4"></a><a href="#lesson-4-slide-7" data-fancybox-group="lesson-4" class="hide lesson-4"></a><a href="#lesson-4-slide-8" data-fancybox-group="lesson-4" class="hide lesson-4"></a><a href="#lesson-4-slide-9" data-fancybox-group="lesson-4" class="hide lesson-4"></a><a href="#lesson-4-slide-10" data-fancybox-group="lesson-4" class="hide lesson-4"></a><a href="#lesson-4-slide-11" data-fancybox-group="lesson-4" class="hide lesson-4"></a><a href="#lesson-4-slide-12"
+				data-fancybox-group="lesson-4" class="hide lesson-4"></a><a href="#lesson-4-slide-13" data-fancybox-group="lesson-4" class="hide lesson-4"></a><a href="#lesson-4-slide-14" data-fancybox-group="lesson-4" class="hide lesson-4"></a><a href="#lesson-4-slide-15" data-fancybox-group="lesson-4" class="hide lesson-4"></a><a href="#lesson-4-slide-16" data-fancybox-group="lesson-4" class="hide lesson-4"></a><a href="#lesson-4-slide-17" data-fancybox-group="lesson-4" class="hide lesson-4"></a><a href="#lesson-4-slide-18" data-fancybox-group="lesson-4" class="hide lesson-4"></a><a href="#lesson-4-slide-19" data-fancybox-group="lesson-4" class="hide lesson-4"></a><a href="#lesson-4-slide-20" data-fancybox-group="lesson-4" class="hide lesson-4"></a><a href="#lesson-4-slide-21" data-fancybox-group="lesson-4" class="hide lesson-4"></a><a href="#lesson-4-slide-22" data-fancybox-group="lesson-4" class="hide lesson-4"></a>
 		</li>
 		<li>
-			<a href="#lesson-5-slide-1" data-fancybox-group="lesson-5" class="teal lesson-5">{t}Nutritional{/t}</a> <a href="#lesson-5-slide-2" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-3" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-4" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-5" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-6" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-7" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-8" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-9" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-10" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-11" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-12"
-				data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-13" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-14" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-15" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-16" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-17" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-18" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-19" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-20" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-21" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-22" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-23" data-fancybox-group="lesson-5"
-				class="hide lesson-5"></a> <a href="#lesson-5-slide-24" data-fancybox-group="lesson-5" class="hide lesson-5"></a> <a href="#lesson-5-slide-25" data-fancybox-group="lesson-5" class="hide lesson-5"></a>
+			<a href="#lesson-5-slide-1" data-fancybox-group="lesson-5" class="teal lesson-5">{t}Nutritional{/t}</a><a href="#lesson-5-slide-2" data-fancybox-group="lesson-5" class="hide lesson-5"></a><a href="#lesson-5-slide-3" data-fancybox-group="lesson-5" class="hide lesson-5"></a><a href="#lesson-5-slide-4" data-fancybox-group="lesson-5" class="hide lesson-5"></a><a href="#lesson-5-slide-5" data-fancybox-group="lesson-5" class="hide lesson-5"></a><a href="#lesson-5-slide-6" data-fancybox-group="lesson-5" class="hide lesson-5"></a><a href="#lesson-5-slide-7" data-fancybox-group="lesson-5" class="hide lesson-5"></a><a href="#lesson-5-slide-8" data-fancybox-group="lesson-5" class="hide lesson-5"></a><a href="#lesson-5-slide-9" data-fancybox-group="lesson-5" class="hide lesson-5"></a><a href="#lesson-5-slide-10" data-fancybox-group="lesson-5" class="hide lesson-5"></a><a href="#lesson-5-slide-11" data-fancybox-group="lesson-5" class="hide lesson-5"></a><a href="#lesson-5-slide-12"
+				data-fancybox-group="lesson-5" class="hide lesson-5"></a><a href="#lesson-5-slide-13" data-fancybox-group="lesson-5" class="hide lesson-5"></a><a href="#lesson-5-slide-14" data-fancybox-group="lesson-5" class="hide lesson-5"></a><a href="#lesson-5-slide-15" data-fancybox-group="lesson-5" class="hide lesson-5"></a><a href="#lesson-5-slide-16" data-fancybox-group="lesson-5" class="hide lesson-5"></a><a href="#lesson-5-slide-17" data-fancybox-group="lesson-5" class="hide lesson-5"></a><a href="#lesson-5-slide-18" data-fancybox-group="lesson-5" class="hide lesson-5"></a><a href="#lesson-5-slide-19" data-fancybox-group="lesson-5" class="hide lesson-5"></a><a href="#lesson-5-slide-20" data-fancybox-group="lesson-5" class="hide lesson-5"></a><a href="#lesson-5-slide-21" data-fancybox-group="lesson-5" class="hide lesson-5"></a><a href="#lesson-5-slide-22" data-fancybox-group="lesson-5" class="hide lesson-5"></a><a href="#lesson-5-slide-23" data-fancybox-group="lesson-5"
+				class="hide lesson-5"></a><a href="#lesson-5-slide-24" data-fancybox-group="lesson-5" class="hide lesson-5"></a><a href="#lesson-5-slide-25" data-fancybox-group="lesson-5" class="hide lesson-5"></a>
 		</li>
 		<li>
-			<a href="#lesson-6-slide-1" data-fancybox-group="lesson-6" class="teal lesson-6">{t}Spiritual{/t}</a> <a href="#lesson-6-slide-2" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-3" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-4" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-5" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-6" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-7" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-8" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-9" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-10" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-11" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-12"
-				data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-13" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-14" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-15" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-16" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-17" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-18" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-19" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-20" data-fancybox-group="lesson-6" class="hide lesson-6"></a> <a href="#lesson-6-slide-21" data-fancybox-group="lesson-6" class="hide lesson-6"></a>
+			<a href="#lesson-6-slide-1" data-fancybox-group="lesson-6" class="teal lesson-6">{t}Spiritual{/t}</a><a href="#lesson-6-slide-2" data-fancybox-group="lesson-6" class="hide lesson-6"></a><a href="#lesson-6-slide-3" data-fancybox-group="lesson-6" class="hide lesson-6"></a><a href="#lesson-6-slide-4" data-fancybox-group="lesson-6" class="hide lesson-6"></a><a href="#lesson-6-slide-5" data-fancybox-group="lesson-6" class="hide lesson-6"></a><a href="#lesson-6-slide-6" data-fancybox-group="lesson-6" class="hide lesson-6"></a><a href="#lesson-6-slide-7" data-fancybox-group="lesson-6" class="hide lesson-6"></a><a href="#lesson-6-slide-8" data-fancybox-group="lesson-6" class="hide lesson-6"></a><a href="#lesson-6-slide-9" data-fancybox-group="lesson-6" class="hide lesson-6"></a><a href="#lesson-6-slide-10" data-fancybox-group="lesson-6" class="hide lesson-6"></a><a href="#lesson-6-slide-11" data-fancybox-group="lesson-6" class="hide lesson-6"></a><a href="#lesson-6-slide-12"
+				data-fancybox-group="lesson-6" class="hide lesson-6"></a><a href="#lesson-6-slide-13" data-fancybox-group="lesson-6" class="hide lesson-6"></a><a href="#lesson-6-slide-14" data-fancybox-group="lesson-6" class="hide lesson-6"></a><a href="#lesson-6-slide-15" data-fancybox-group="lesson-6" class="hide lesson-6"></a><a href="#lesson-6-slide-16" data-fancybox-group="lesson-6" class="hide lesson-6"></a><a href="#lesson-6-slide-17" data-fancybox-group="lesson-6" class="hide lesson-6"></a><a href="#lesson-6-slide-18" data-fancybox-group="lesson-6" class="hide lesson-6"></a><a href="#lesson-6-slide-19" data-fancybox-group="lesson-6" class="hide lesson-6"></a><a href="#lesson-6-slide-20" data-fancybox-group="lesson-6" class="hide lesson-6"></a><a href="#lesson-6-slide-21" data-fancybox-group="lesson-6" class="hide lesson-6"></a>
 		</li>
 		<li>
-			<a href="#lesson-7-slide-1" data-fancybox-group="lesson-7" class="teal lesson-7">{t}Social{/t}</a> <a href="#lesson-7-slide-2" data-fancybox-group="lesson-7" class="hide lesson-7"></a> <a href="#lesson-7-slide-3" data-fancybox-group="lesson-7" class="hide lesson-7"></a> <a href="#lesson-7-slide-4" data-fancybox-group="lesson-7" class="hide lesson-7"></a> <a href="#lesson-7-slide-5" data-fancybox-group="lesson-7" class="hide lesson-7"></a> <a href="#lesson-7-slide-6" data-fancybox-group="lesson-7" class="hide lesson-7"></a> <a href="#lesson-7-slide-7" data-fancybox-group="lesson-7" class="hide lesson-7"></a> <a href="#lesson-7-slide-8" data-fancybox-group="lesson-7" class="hide lesson-7"></a> <a href="#lesson-7-slide-9" data-fancybox-group="lesson-7" class="hide lesson-7"></a> <a href="#lesson-7-slide-10" data-fancybox-group="lesson-7" class="hide lesson-7"></a> <a href="#lesson-7-slide-11" data-fancybox-group="lesson-7" class="hide lesson-7"></a> <a href="#lesson-7-slide-12"
-				data-fancybox-group="lesson-7" class="hide lesson-7"></a> <a href="#lesson-7-slide-13" data-fancybox-group="lesson-7" class="hide lesson-7"></a> <a href="#lesson-7-slide-14" data-fancybox-group="lesson-7" class="hide lesson-7"></a> <a href="#lesson-7-slide-15" data-fancybox-group="lesson-7" class="hide lesson-7"></a> <a href="#lesson-7-slide-16" data-fancybox-group="lesson-7" class="hide lesson-7"></a> <a href="#lesson-7-slide-17" data-fancybox-group="lesson-7" class="hide lesson-7"></a> <a href="#lesson-7-slide-18" data-fancybox-group="lesson-7" class="hide lesson-7"></a> <a href="#lesson-7-slide-19" data-fancybox-group="lesson-7" class="hide lesson-7"></a> <a href="#lesson-7-slide-20" data-fancybox-group="lesson-7" class="hide lesson-7"></a> <a href="#lesson-7-slide-21" data-fancybox-group="lesson-7" class="hide lesson-7"></a> <a href="#lesson-7-slide-22" data-fancybox-group="lesson-7" class="hide lesson-7"></a>
+			<a href="#lesson-7-slide-1" data-fancybox-group="lesson-7" class="teal lesson-7">{t}Social{/t}</a><a href="#lesson-7-slide-2" data-fancybox-group="lesson-7" class="hide lesson-7"></a><a href="#lesson-7-slide-3" data-fancybox-group="lesson-7" class="hide lesson-7"></a><a href="#lesson-7-slide-4" data-fancybox-group="lesson-7" class="hide lesson-7"></a><a href="#lesson-7-slide-5" data-fancybox-group="lesson-7" class="hide lesson-7"></a><a href="#lesson-7-slide-6" data-fancybox-group="lesson-7" class="hide lesson-7"></a><a href="#lesson-7-slide-7" data-fancybox-group="lesson-7" class="hide lesson-7"></a><a href="#lesson-7-slide-8" data-fancybox-group="lesson-7" class="hide lesson-7"></a><a href="#lesson-7-slide-9" data-fancybox-group="lesson-7" class="hide lesson-7"></a><a href="#lesson-7-slide-10" data-fancybox-group="lesson-7" class="hide lesson-7"></a><a href="#lesson-7-slide-11" data-fancybox-group="lesson-7" class="hide lesson-7"></a><a href="#lesson-7-slide-12"
+				data-fancybox-group="lesson-7" class="hide lesson-7"></a><a href="#lesson-7-slide-13" data-fancybox-group="lesson-7" class="hide lesson-7"></a><a href="#lesson-7-slide-14" data-fancybox-group="lesson-7" class="hide lesson-7"></a><a href="#lesson-7-slide-15" data-fancybox-group="lesson-7" class="hide lesson-7"></a><a href="#lesson-7-slide-16" data-fancybox-group="lesson-7" class="hide lesson-7"></a><a href="#lesson-7-slide-17" data-fancybox-group="lesson-7" class="hide lesson-7"></a><a href="#lesson-7-slide-18" data-fancybox-group="lesson-7" class="hide lesson-7"></a><a href="#lesson-7-slide-19" data-fancybox-group="lesson-7" class="hide lesson-7"></a><a href="#lesson-7-slide-20" data-fancybox-group="lesson-7" class="hide lesson-7"></a><a href="#lesson-7-slide-21" data-fancybox-group="lesson-7" class="hide lesson-7"></a><a href="#lesson-7-slide-22" data-fancybox-group="lesson-7" class="hide lesson-7"></a>
 		</li>
 		<li>
-			<a href="#lesson-8-slide-1" data-fancybox-group="lesson-8" class="teal lesson-8">{t}Closing{/t}</a> <a href="#lesson-8-slide-2" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-3" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-4" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-5" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-6" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-7" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-8" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-9" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-10" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-11" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-12"
-				data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-13" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-14" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-15" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-16" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-17" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-18" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-19" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-20" data-fancybox-group="lesson-8" class="hide lesson-8"></a> <a href="#lesson-8-slide-21" data-fancybox-group="lesson-8" class="hide lesson-8"></a>
+			<a href="#lesson-8-slide-1" data-fancybox-group="lesson-8" class="teal lesson-8">{t}Closing{/t}</a><a href="#lesson-8-slide-2" data-fancybox-group="lesson-8" class="hide lesson-8"></a><a href="#lesson-8-slide-3" data-fancybox-group="lesson-8" class="hide lesson-8"></a><a href="#lesson-8-slide-4" data-fancybox-group="lesson-8" class="hide lesson-8"></a><a href="#lesson-8-slide-5" data-fancybox-group="lesson-8" class="hide lesson-8"></a><a href="#lesson-8-slide-6" data-fancybox-group="lesson-8" class="hide lesson-8"></a><a href="#lesson-8-slide-7" data-fancybox-group="lesson-8" class="hide lesson-8"></a><a href="#lesson-8-slide-8" data-fancybox-group="lesson-8" class="hide lesson-8"></a><a href="#lesson-8-slide-9" data-fancybox-group="lesson-8" class="hide lesson-8"></a><a href="#lesson-8-slide-10" data-fancybox-group="lesson-8" class="hide lesson-8"></a><a href="#lesson-8-slide-11" data-fancybox-group="lesson-8" class="hide lesson-8"></a><a href="#lesson-8-slide-12"
+				data-fancybox-group="lesson-8" class="hide lesson-8"></a><a href="#lesson-8-slide-13" data-fancybox-group="lesson-8" class="hide lesson-8"></a><a href="#lesson-8-slide-14" data-fancybox-group="lesson-8" class="hide lesson-8"></a><a href="#lesson-8-slide-15" data-fancybox-group="lesson-8" class="hide lesson-8"></a><a href="#lesson-8-slide-16" data-fancybox-group="lesson-8" class="hide lesson-8"></a><a href="#lesson-8-slide-17" data-fancybox-group="lesson-8" class="hide lesson-8"></a><a href="#lesson-8-slide-18" data-fancybox-group="lesson-8" class="hide lesson-8"></a><a href="#lesson-8-slide-19" data-fancybox-group="lesson-8" class="hide lesson-8"></a><a href="#lesson-8-slide-20" data-fancybox-group="lesson-8" class="hide lesson-8"></a><a href="#lesson-8-slide-21" data-fancybox-group="lesson-8" class="hide lesson-8"></a>
 		</li>
 	</ul>
-
 
 	<h4>{t}Resources{/t}</h4>
 	<p>{t}Please use these listed resources in the completion of this online course. Please contact your facilitator or the program director if you have additional resources you would like to see added here.{/t}</p>
@@ -181,7 +186,7 @@ foreach (array(
 				</p>
 				<div id="question1" class="question">
 					<p style="text-align: center;">
-						<b>{t}Have you taken the pre-course evaluation yet?{/t}</b><br />
+						<b>{t}Have you taken the pre-course evaluation yet?{/t}</b> <br />
 						<select style="text-align: center;">
 							<option selected="selected" value="select">{t}Select{/t}</option>
 							<option value="1">{t}Yes{/t}</option>
@@ -209,7 +214,7 @@ foreach (array(
 				<!-- 'url' => Yii::app()->getComponent('phpBB')->getForumUrl(), -->
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"> {t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();"> {t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-1-slide-3" class="course-slide">
@@ -229,7 +234,7 @@ foreach (array(
 				</ol>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();"> {t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();"> {t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-1-slide-4" class="course-slide">
@@ -240,7 +245,7 @@ foreach (array(
 				<p>{t}To describe some of the key concepts underlying the field of brain health, we will start by talking a bit about how to protect brain health as you age.{/t}</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-1-slide-5" class="course-slide">
@@ -255,7 +260,7 @@ foreach (array(
 				<p>&nbsp;</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-1-slide-6" class="course-slide">
@@ -272,7 +277,7 @@ foreach (array(
 				<p>{t}Head trauma, Parkinson’s disease, Huntington Disease, Pick’s disease, infections such as HIV and CJD (Creutzfeldt-Jakob Disease – the human form of mad cow disease), substance abuse and environmental toxins can also cause dementia.{/t}</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-1-slide-7" class="course-slide">
@@ -283,7 +288,7 @@ foreach (array(
 				<p>{t}We know that hypertension (high blood pressure) is a common result of the pressure that diabetes puts on the vascular system. We still have a lot to learn in this area, but we mention it here because there are a lot of things that we can do to lessen the effects of many of these disease conditions on our aging brains, which may help us ward off or delay the clinical symptoms of dementia.{/t}</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-1-slide-8" class="course-slide">
@@ -302,7 +307,7 @@ foreach (array(
 				</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-1-slide-9" class="course-slide">
@@ -318,7 +323,7 @@ foreach (array(
 				</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-1-slide-10" class="course-slide">
@@ -340,7 +345,7 @@ foreach (array(
 				<p>{t}The key word to learn from this is “neurogenesis,” meaning the growth of new brain cells.{/t}</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-1-slide-11" class="course-slide">
@@ -362,7 +367,7 @@ foreach (array(
 				</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-1-slide-12" class="course-slide">
@@ -384,7 +389,7 @@ foreach (array(
 				</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-1-slide-13" class="course-slide">
@@ -402,7 +407,7 @@ foreach (array(
 				</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-1-slide-14" class="course-slide">
@@ -437,7 +442,7 @@ foreach (array(
 				<p>{t}However, this course will help you understand the things you can do that may lower the risk for dementia or postpone cognitive decline in the hopes that you will maintain independence for as long as possible.{/t}</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-1-slide-15" class="course-slide">
@@ -448,7 +453,7 @@ foreach (array(
 				<p>{t}Some of the strategies will come to you directly through the memory tips that you will learn in modules 2-7 and the lifestyle demonstrations we will present in each module. Other strategies will come to you indirectly as you practice the exercises included in both the course assignments and the brain training software being providing.{/t}</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-1-slide-16" class="course-slide">
@@ -466,7 +471,7 @@ foreach (array(
 				<p>{t}We aim to help you identify areas of your lifestyle where you could increase your investment in your Cognitive Reserve, diversifying your “Brain Portfolio.”{/t}</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-1-slide-17" class="course-slide">
@@ -483,7 +488,7 @@ foreach (array(
 				</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-1-slide-18" class="course-slide">
@@ -510,7 +515,7 @@ foreach (array(
 				</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-1-slide-19" class="course-slide">
@@ -535,7 +540,7 @@ foreach (array(
 				</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-1-slide-20" class="course-slide">
@@ -579,7 +584,7 @@ foreach (array(
 				<p>{t}Finally, it is also important to remember that emotions can interrupt our attention! Feeling anxious or being distracted by self-criticism or worried thoughts is often one of the biggest robbers of our attention. So learning to relax is also very important for improving attention. You will learn more about caring for your emotions and dealing with stress in the coming modules.{/t}</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-1-slide-21" class="course-slide">
@@ -591,7 +596,7 @@ foreach (array(
 				</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-1-slide-22" class="course-slide">
@@ -624,7 +629,7 @@ foreach (array(
 				<p>{t}Daily Reward: Read my favorite book before bed{/t}</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-1-slide-23" class="course-slide">
@@ -722,7 +727,7 @@ foreach (array(
 				</ul>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-2-slide-3" class="course-slide">
@@ -734,7 +739,7 @@ foreach (array(
 				<p>{t}We are going to present how physical activity seems to be a key component of brain health. In fact, it may be one of the best things you can do for your brain. {/t}</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-2-slide-4" class="course-slide">
@@ -778,7 +783,7 @@ foreach (array(
 				<p>As you&rsquo;ve been learning, scientists have learned that the brain stays plastic (changeable) all the way into our later years – this means that the brain can change in response to exercise no matter how old or young you are. (Eckmann, 2011)</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-2-slide-5" class="course-slide">
@@ -791,7 +796,7 @@ foreach (array(
 				<p>But first let’s get a better understanding of the impact that your vascular health on your brain performance and aging.</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-2-slide-6" class="course-slide">
@@ -810,7 +815,7 @@ foreach (array(
 				<p>How is it that these conditions reduce our cognitive reserve? Well let’s look inside the brain to find out more.</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-2-slide-7" class="course-slide">
@@ -823,7 +828,7 @@ foreach (array(
 				<p>Cerebrovascular disease is a serious condition, which includes stroke, and it is the 4th leading cause of death in people over 65, more than Alzheimer’s which is #5. Most of us are familiar with the effects of stroke and maybe even TIA’s, which are basically just short-acting strokes, but you may not be familiar with this “white dot syndrome,” which can occur without any symptoms. The white dots form from an accumulation of little silent strokes. The effects on thinking build up over time, in many cases leading to dementia. White dots start forming somewhat early in adulthood, with some detected in people as young as their 30’s. White dots are common in the brains of older adults, and a certain number of them are considered to be “age appropriate.” But since they are linked to high blood pressure, high cholesterol and diabetes, we can work to reduce or prevent them.</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-2-slide-8" class="course-slide">
@@ -837,7 +842,7 @@ foreach (array(
 				<p>The same type of thing happens when blood sugar is too high. High blood sugar causes the red blood cells to swell up, (Click to animate) and this can block off capillaries as well. High blood sugar also damages the walls of blood vessels increasing the risk for high blood pressure.</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-2-slide-9" class="course-slide">
@@ -862,7 +867,7 @@ foreach (array(
 				</ul>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-2-slide-10" class="course-slide">
@@ -892,7 +897,7 @@ foreach (array(
 				<p>Erikson, et al, 2010 http://www.pnas.org/content/early/2011/01/25/1015950108.full.pdf</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-2-slide-11" class="course-slide">
@@ -908,7 +913,7 @@ foreach (array(
 				<p>There is still much research that needs to be done in this area to understand the relationship between exercise and specific types of dementia, but from what we know so far, exercise seems to be one of the best ways to protect your brain as you age. It has some of the best evidence supporting it in terms of helping people build the “hardware” (brain cells) aspect of cognitive reserve.</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-2-slide-12" class="course-slide">
@@ -927,7 +932,7 @@ foreach (array(
 				</ul>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-2-slide-13" class="course-slide">
@@ -938,7 +943,7 @@ foreach (array(
 				<p>We tend to experience the greatest benefit from endurance type exercises, however, we can’t keep up with endurance routines without maintaining our flexibility and balance. When we were young, balance was something that came naturally to us, as we age, it is something we need to work on to maintain. Flexibility is also often over-looked in terms of its importance. In order to maintain our range of motion to be able to do things like reaching a can on the top shelf or bending down to pick up something that we dropped we need to work on our flexibility. Finally, maintaining our strength is another key component that will allow us to continue caring for ourselves and keeping up with our daily activities. Strength training can also help build bone density and seems to help us generate a different type of nerve growth factor than endurance exercise. Ideally, you should try to incorporate each one of these types of exercises into your routine.</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-2-slide-14" class="course-slide">
@@ -981,7 +986,7 @@ foreach (array(
 				</ul>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-2-slide-15" class="course-slide">
@@ -991,7 +996,7 @@ foreach (array(
 				<p>Another thing you can do to increase your activity and help your body is to take opportunities to stand as much as possible.</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-2-slide-16" class="course-slide">
@@ -1020,7 +1025,7 @@ foreach (array(
 				<p>If you try this challenge then it will probably be a good idea to put the GPS or a map in the car just in case you get yourself</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-2-slide-17" class="course-slide">
@@ -1051,7 +1056,7 @@ foreach (array(
 				<p>A great resource for learning more about this and a few other methods like it is the book Moonwalking with Einstein: The Art and Science of Remembering Everything by Joshua Foer, an entertaining account of how an average journalist (Mr. Foer, himself) trains to win the U.S. Memory Championship.</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-2-slide-18" class="course-slide">
@@ -1061,7 +1066,7 @@ foreach (array(
 				<p>The more Memory Palaces you have, the easier it will be for you to use the Roman Room Technique in different circumstances. So spend some time this week &ldquo;revisiting,&rdquo; (either literally or in your mind) familiar spaces that you can use as Memory Palaces. Then spend some time practicing this technique. Even though it is powerful (you may be surprised at how easily you remember the list of foods from this week) it does take some work, and as with most things, the more you practice them the easier they get.</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-2-slide-19" class="course-slide">
@@ -1072,7 +1077,7 @@ foreach (array(
 				<p>Start by identifying a long term goal, then create action steps for short-term (1-week) to help you reach your long term goals. Often times, long term goals are too daunting that we don&rsquo;t even know where to begin!</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-2-slide-20" class="course-slide">
@@ -1085,7 +1090,7 @@ foreach (array(
 				<p>And make sure to reward yourself for your accomplishments. Changing your lifestyle is difficult to do and you need to be patient with yourself and give yourself credit for trying!</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-2-slide-21" class="course-slide">
@@ -1104,7 +1109,7 @@ foreach (array(
 				</ul>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-2-slide-22" class="course-slide">
@@ -1139,7 +1144,7 @@ foreach (array(
 				</ul>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-3-slide-2" class="course-slide">
@@ -1175,7 +1180,7 @@ foreach (array(
 				<p>If people did not practice the memory strategy, have them imagine and generate scenarios where they might use it. Also emphasize that memory strategies are most effective when they are practiced,</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-3-slide-3" class="course-slide">
@@ -1191,7 +1196,7 @@ foreach (array(
 				</ul>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-3-slide-4" class="course-slide">
@@ -1202,7 +1207,7 @@ foreach (array(
 				<p>Since we experience such a wide range of emotions, to cover all of the ways that emotions affect the brain would be a whole course all by itself. Therefore, our discussion will focus on the short-term (or “acute”) effects of stress on how we think and the long-term effects of chronic stress on our bodies and brains.</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-3-slide-5" class="course-slide">
@@ -1213,7 +1218,7 @@ foreach (array(
 				<p>While our minds conceive of these emotions as very different things, our bodies actually don’t know the difference. To understand the impact that stress has on our brains, we need to spend a little time talking about the body’s reaction to stress. What we call “the stress response.”</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-3-slide-6" class="course-slide">
@@ -1241,7 +1246,7 @@ foreach (array(
 				</ul>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-3-slide-7" class="course-slide">
@@ -1260,7 +1265,7 @@ foreach (array(
 				</ul>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-3-slide-8" class="course-slide">
@@ -1271,7 +1276,7 @@ foreach (array(
 				<p>Since we humans are uniquely able to activate our stress response simply with our thoughts, what starts off as a senior moment, can be made much, much worse if we start to worry about what that means about our brains.</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-3-slide-9" class="course-slide">
@@ -1285,7 +1290,7 @@ foreach (array(
 				<p>An important way to use your brain more effectively is to know when the logical prefrontal cortex has been hijacked by the emotional part of the brain (the limbic system) and take steps to release it. By noticing when a the stress response kicks in and taking steps to calm down, we can direct our brains to focus better, dialing down the emotional brain and dialing up the prefrontal cortex. One way to do this is to learn how to activate the PNS, which you will learn in today’s demonstration.</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-3-slide-10" class="course-slide">
@@ -1305,7 +1310,7 @@ foreach (array(
 				<p>This inverted u-shaped curve is referred to as the Yerkes-Dodson Curve, and it was proposed by Yerkes and Dodson to explain this phenomenon. You can use this curve to your advantage by thinking about where you fall on the curve in any given situation where you want perform at your best. If you feel you are not performing at your best, are you on the left side of the curve and unmotivated? Or are you on the right side and “stressed-out”?</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-3-slide-11" class="course-slide">
@@ -1318,7 +1323,7 @@ foreach (array(
 				<p>You can harness this effect when you are trying to remember something by adding a flare for the dramatic. That is why we made the images in our Roman Room exercise so absurd and in some cases either disgusting or arousing.</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-3-slide-12" class="course-slide">
@@ -1331,7 +1336,7 @@ foreach (array(
 				<p>Heart rate and respiration slow back to the resting baseline Blood flow is re-routed from the skeletal muscles to the internal organs, so muscles relax Salivation occurs and Digestion resumes, allowing our body to consume and convert food to energy in preparation for the next fight-or-flight spike Pupils constrict back to their baseline Rest-and-Digest is intended to be our normal resting state, while fight-or-flight is actually a change from our resting baseline.</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-3-slide-13" class="course-slide">
@@ -1357,7 +1362,7 @@ foreach (array(
 				<p>Due to chronic stressors and daily hassles, most of us experience an ongoing activation of the stress response. Therefore, most people may not be getting the “rest and digest” breaks that their bodies and brains need.</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-3-slide-14" class="course-slide">
@@ -1410,7 +1415,7 @@ foreach (array(
 				<p>What sorts of health conditions do you think are caused by or exacerbated by chronic stress?</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-3-slide-15" class="course-slide">
@@ -1436,7 +1441,7 @@ foreach (array(
 				<p>These effects can lead to a decline in cognitive function and can interrupt the ability to make new memories</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-3-slide-16" class="course-slide">
@@ -1449,7 +1454,7 @@ foreach (array(
 				<p>Chronic stress can become like a pot on a low simmer. That low bubbling can result in the chronic feeling of anxiety, and when faced with a stressor, we react strongly—the simmer turns into a boil. This does not feel good, and definitely does not make us better at problem-solving or thinking clearly.</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-3-slide-17" class="course-slide">
@@ -1476,7 +1481,7 @@ foreach (array(
 				</ul>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-3-slide-18" class="course-slide">
@@ -1491,7 +1496,7 @@ foreach (array(
 				<p>With practice you can lower your baseline level of stress and feel more calm, restoring balance and returning your body to the more natural Stress/Recovery cycle. This will lower your risk for that huge list of stress-related medical issues, including cognitive decline!</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-3-slide-19" class="course-slide">
@@ -1524,7 +1529,7 @@ foreach (array(
 				<p>Neurofeedback: Brain wave monitors are also becoming less and less expensive. Alpha waves are associated with a relaxed brain state, so using a brain wave monitor can help you ensure that you are spending some good quality time in a relaxed state.</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-3-slide-20" class="course-slide">
@@ -1545,7 +1550,7 @@ foreach (array(
 				<p>Centering Prayer: Centering Prayer was first described in the 14th century text, The Cloud of Unknowing. Centering prayer was reintroduced in the 1970s by Friar Thomas Keating and two other trappist monks. This simple meditation involves choosing a word, concept, or passage (such as love, inner peace, God&rsquo;s presence) that has sacred meaning for you and focusing on it for 20 minutes or more with your eyes closed. The goal is not to concentrate on the single word, rather, allow your mind to reflect on the qualities associated with this particular word. As with the sitting meditation, when your mind wanders, you gently return to your sacred word or idea. This is not meant to replace other types of prayer, and can be used on it&rsquo;s own or, if it appeals to you, to enhance an existing prayer practice.</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-3-slide-21" class="course-slide">
@@ -1579,7 +1584,7 @@ foreach (array(
 				<p>There have been many books written about ways to cope with negative thoughts. Counselors and psychologists can also be helpful with this process. Simply writing down thoughts when your are feeling stressed or upset (we call these “hot” or emotionally charged thoughts) can be a good place to start.</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-3-slide-22" class="course-slide">
@@ -1601,7 +1606,7 @@ foreach (array(
 				<p>We know that exercise has positive effects on mood and is a great way to cope with stress. Other self-care strategies such as taking time to do something healthy and pleasant, like enjoying a good meal, talking with a friend, engaging in a hobby, or taking a bath can turn also down the stress response and turn up the relaxation response.</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-3-slide-23" class="course-slide">
@@ -1637,7 +1642,7 @@ foreach (array(
 				<p>Often we do not take the time to organize our space in this way because we feel like we don&rsquo;t have the time, but imagine the time that you will save by not having to search for your things. Enlisting the help of a relative or trusted friend or even a professional organizer can help to get you started if it feels overwhelming.</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-3-slide-24" class="course-slide">
@@ -1650,7 +1655,7 @@ foreach (array(
 				<p>You can capitalize on this natural association when you are trying to remember things. Say for instance if you are trying to memorize a list of words, group similar items together. This way you only have to recall the category and then remembering the category will cue you to think of the items within that category.</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-3-slide-25" class="course-slide">
@@ -1688,7 +1693,7 @@ foreach (array(
 				<p>How would you reorganize this list?</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-3-slide-26" class="course-slide">
@@ -1698,7 +1703,7 @@ foreach (array(
 				<p>removed questions</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-3-slide-27" class="course-slide">
@@ -1717,7 +1722,7 @@ foreach (array(
 				</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-3-slide-28" class="course-slide">
@@ -1739,7 +1744,7 @@ foreach (array(
 				<p>To use the Roman Room Method for poems, articles etc, each chunk or phrase should have it’s own image in the memory palace.</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-3-slide-29" class="course-slide">
@@ -1766,7 +1771,7 @@ foreach (array(
 				</ul>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-3-slide-30" class="course-slide">
@@ -1793,7 +1798,7 @@ foreach (array(
 				<p>Please ensure that you are logging your goals and that you do not this course until you have recorded something on the activity log.</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-3-slide-31" class="course-slide">
@@ -1818,7 +1823,7 @@ foreach (array(
 				</ul>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-3-slide-32" class="course-slide">
@@ -1878,7 +1883,7 @@ foreach (array(
 				</ul>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-4-slide-3" class="course-slide">
@@ -1889,7 +1894,7 @@ foreach (array(
 				<hr />
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-4-slide-4" class="course-slide">
@@ -1900,7 +1905,7 @@ foreach (array(
 				<p>Research has shown that practicing a skill can make the pathways between cells, or the “connection highways,” bigger! These brain images show different levels of the brain from the vantage point of peering down into the brain as though you were standing over the top of someone's head. Connection highways are shown in blue. The red area is an area of connection highway that actually got bigger in adults during 10 weeks of training in using the “Roman Room” or “Method of Loci” memory technique that you learned back in week 3, so if you’ve been practicing this technique, chances are that you are building up the pathways in the front right part of your brain.</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-4-slide-5" class="course-slide">
@@ -1911,7 +1916,7 @@ foreach (array(
 				<p>So by stimulating your new baby brain cells – by stimulating your brain and learning new things – you are helping these stem cells grow into new, functioning neurons.</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-4-slide-6" class="course-slide">
@@ -1925,7 +1930,7 @@ foreach (array(
 				<p>Now this study is a) preliminary and b) just showed a relationship, so we cannot be sure yet if the intellectual stimulation prevented the growth of the Beta-Amyloid. That is, we cannot say that intellectual stimulation caused the effect. It may be the case that Alzheimer’s disease can have effects very early in a person’s life that prevents him or her from pursuing intellectual activities, but the new association is exciting and may be a newly discovered benefit to staying mentally active.</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-4-slide-7" class="course-slide">
@@ -1951,7 +1956,7 @@ foreach (array(
 				<p>Studies of people with high reserve have shown that these people tend to have engaged in intellectually stimulating activities over their lifetimes. While we still have a lot to learn about which activities are most protective, here is a list of most of the activities that have been studied so far (reading, writing letters, playing games, getting a higher education, intellectually demanding professions and hobbies).</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-4-slide-8" class="course-slide">
@@ -1969,7 +1974,7 @@ foreach (array(
 				<p>Well-designed studies attempt to control for for these alternate relationships, but the gold standard for testing a causal relationship is to perform an experiment where similar groups of people are to assigned to different conditions and the effects are observed. We saw some of these types of studies in the exercise lecture. But when it comes to other areas of lifestyle such as intellectual activity or social activity, these types of studies can be quite difficult to pull of.</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-4-slide-9" class="course-slide">
@@ -1981,7 +1986,7 @@ foreach (array(
 				<p>The people who participated in a brain training group retained more functional independence in the 5 years following the study than people who did not do any training. Therefore, it seems that investing in your intellectual stimulation, even relatively late in life, can pay big dividends in helping you maintain your independence.</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-4-slide-10" class="course-slide">
@@ -1993,7 +1998,7 @@ foreach (array(
 				<p>Dr. Marie Pasinski, a neurologist at Harvard Medical School and author of the book “Beautiful Brain, Beautiful You” challenges her readers to “Indulge in the New.” It’s actually the first step in her 7-step “brain beauty makeover.” She describes this step as “surprisingly simple,” recommending her readers to open themselves up to 5 new experiences as a way to get started.</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-4-slide-11" class="course-slide">
@@ -2005,7 +2010,7 @@ foreach (array(
 				<p>This doesn’t mean that your brain fitness activities should not be fun or rewarding. We just want to emphasize the importance of exercising your whole brain and engaging in mental activities that involve brain skills that have not traditionally been “your thing” and have the most room for improvement. Just like with your body, the brain needs to sweat a little to truly grow.</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-4-slide-12" class="course-slide">
@@ -2030,7 +2035,7 @@ foreach (array(
 				<p>There is more information about each of these regions in your workbook.</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-4-slide-13" class="course-slide">
@@ -2041,7 +2046,7 @@ foreach (array(
 				<p>Another way we can direct our brains is to know when the logical prefrontal cortex has been hijacked by the emotional part of the brain and take steps to release it. We learned a lot about this during the Emotion Module, so we won&rsquo;t go into any further detail here, but just remember that we can regain control of the logical brain by relaxing, engaging the PNS or relaxation response (turning off the SNS or fight-or-flight).</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-4-slide-14" class="course-slide">
@@ -2055,7 +2060,7 @@ foreach (array(
 				</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-4-slide-15" class="course-slide">
@@ -2085,11 +2090,11 @@ foreach (array(
 					<u>Use all of your senses</u> when linking memories together. Be aware of sights, sounds, smells, tastes, textures, temperatures, and emotions.
 				</p>
 				<p>
-					When remembering <u>people&rsquo;s</u> <u>names</u>, either associate something the name with another person you know with the same or a similar name or associate something about the name with a special feature about he person. (Often it is best to keep these associations to yourself, especially if you try to make this association funny or dramatic. It can make people self-conscious to know what you&rsquo;ve noticed about them).
+					When remembering <u>people&rsquo;s</u><u>names</u>, either associate something the name with another person you know with the same or a similar name or associate something about the name with a special feature about he person. (Often it is best to keep these associations to yourself, especially if you try to make this association funny or dramatic. It can make people self-conscious to know what you&rsquo;ve noticed about them).
 				</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-4-slide-16" class="course-slide">
@@ -2111,7 +2116,7 @@ foreach (array(
 				<p>It’s important to know about Working Memory because these platforms are where you hold new information long enough to LINK IT in with your existing knowledge. Working memory provides you the “work-space” to shape, form and manipulate new and old information – working memory is where you would figure the tip on a restaurant bill in your head. Now that you are familiar with these processes, you can notice and feel when they are working and you can step into the role of the Central Executive to make better use of the two systems in order to remember things better.</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-4-slide-17" class="course-slide">
@@ -2141,7 +2146,7 @@ foreach (array(
 				<p>Use all of your senses when linking memories together. Be aware of sights, sounds, smells, tastes, textures, temperatures, and emotions.</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-4-slide-18" class="course-slide">
@@ -2176,7 +2181,7 @@ foreach (array(
 				<p>After about 2-3 minutes of practice, have participants talk briefly about their experience, noting the techniques that they used to link up items.</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-4-slide-19" class="course-slide">
@@ -2206,7 +2211,7 @@ foreach (array(
 				</ul>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-5-slide-2" class="course-slide">
@@ -2219,7 +2224,7 @@ foreach (array(
 				<p>Ask: Who remembers the items from the list of brain healthy foods that you learned last week using the Roman Room method? How many times did you have to practice it to remember? Ask: Did anyone complete the multiplication table in the workbook?</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-5-slide-3" class="course-slide">
@@ -2234,7 +2239,7 @@ foreach (array(
 				</ul>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-5-slide-4" class="course-slide">
@@ -2258,7 +2263,7 @@ foreach (array(
 				<p>Reminder: In our previous module on physical activity we talked about how our cardiovascular health is linked to Alzheimer’s disease and cognition and how blocked arteries and diabetes can lower Cognitive Reserve.</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-5-slide-5" class="course-slide">
@@ -2276,7 +2281,7 @@ foreach (array(
 				<p>Researchers are beginning to look at patterns of food consumption in order to understand how different food could work together to help promote a brain healthy lifestyle. A diet pattern similar to the Mediterranean diet has been identified as helping reduce the risk of Alzheimer’s disease. This diet was discovered by researchers in the 1960’s who noticed that people who lived in the Mediterranean region had very low rates of Alzheimer’s disease. Overall, the Mediterranean Diet includes eating lots of fruits and vegetables, “good fats” from olive oil, walnuts, fish and avocados, and low-fat and non-fat cheeses and yogurt (Greek yogurt is great!). The diet also includes reliance on fish, poultry and legumes for protein with much more limited consumption of red meat. Fresh or dried fruit is eaten for dessert, and lots of water and moderate wine consumption are also recommended.</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-5-slide-6" class="course-slide">
@@ -2321,7 +2326,7 @@ foreach (array(
 				<p>Many of the antioxidants are found in the skins of fruits and vegetables including potatoes and apples – so peeling or boiling these foods may lessen the amount of antioxidants found in them.</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-5-slide-7" class="course-slide">
@@ -2339,7 +2344,7 @@ foreach (array(
 				<p>A recent study using mice found that a daily glass of pomegranate juice cut the build-up of harmful proteins linked to Alzheimer’s disease in half for these mice. In fact, the study showed that pomegranates worked just as well as pharmaceutical medicines in the mice. Pomegranate's are extremely high in antioxidants, and they have been used as folk-medicine for ages.</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-5-slide-8" class="course-slide">
@@ -2365,7 +2370,7 @@ foreach (array(
 				<p>Researchers have also found that diets rich in Omega 3’s could help to combat other nutrition-related problems. For example people who consume diets that are high in sugars are more likely to be effected by metabolic syndrome problems with insulin levels that could negatively affect brain health. However, people who also had diets high in Omega-3 had less trouble from the high rates of sugar in their diet.</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-5-slide-9" class="course-slide">
@@ -2376,7 +2381,7 @@ foreach (array(
 				<p>We know that drinking water has many health benefits – it is good for our body and good for our brains! Our brains are made up of 90% water! First and foremost, water helps to ward off dehydration which could cause symptoms of dementia. It also helps us stay focused, and it helps transport nutrients and oxygen to our cells, helps our organisms absorb all those helpful nutrients that we discussed earlier, and helps detoxify us.</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-5-slide-10" class="course-slide">
@@ -2387,7 +2392,7 @@ foreach (array(
 				<p>Scientists have found a very interesting relationship between alcohol and Alzheimer's disease, it is described as a “Curvilinear relationship.” That means the relationship looks more like a “U”. So, people who abstain from alcohol and those who over-indulge tend to have a greater risk for cognitive decline than those who drink in moderation (ie, approximately 1 glass per day). This relationship has mystified many researchers and scientists for years, yet findings replicating this relationship have been strong and consistent.</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-5-slide-11" class="course-slide">
@@ -2407,7 +2412,7 @@ foreach (array(
 				</ul>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-5-slide-12" class="course-slide">
@@ -2431,7 +2436,7 @@ foreach (array(
 				</ul>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-5-slide-13" class="course-slide">
@@ -2450,7 +2455,7 @@ foreach (array(
 				<p>Now daydreaming isn’t all bad, and we are not suggesting you shouldn’t do it. It can be a very helpful process. What we want is to provide you with the skills to approach your world with intention, daydreaming when you want to and making memories when you want to.</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-5-slide-14" class="course-slide">
@@ -2463,7 +2468,7 @@ foreach (array(
 				<p>Attention or Awareness is the signal that feeds into our Memories. We can’t expect to have high quality memories if we are not sending high definition information into the memory system. Mindfulness allows you to make high definition memories. Having improved awareness, enhances your attention, so there is more information available to memory circuits to create those memories.</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-5-slide-15" class="course-slide">
@@ -2475,7 +2480,7 @@ foreach (array(
 				<p>(complex cognitive activity including planning, goal-setting, decision-making, attention, short-term memory)</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-5-slide-16" class="course-slide">
@@ -2509,7 +2514,7 @@ foreach (array(
 				<p>Doing things mindfully does not always mean that you have to do them more slowly. This exercise is slow because it is sort of like a “drill” for the skill of paying attention, other rehearsals can be done more in real time.</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-5-slide-17" class="course-slide">
@@ -2538,7 +2543,7 @@ foreach (array(
 				(Review List)
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-5-slide-18" class="course-slide">
@@ -2557,7 +2562,7 @@ foreach (array(
 				<p>Memory tip for the week:</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-5-slide-19" class="course-slide">
@@ -2588,7 +2593,7 @@ foreach (array(
 				<p>Today’s discussion is about spiritual health. Research has shown that spiritual practice has many very positive effects on the brain and body. So, today we are going to discuss these benefits as well as practical ideas for enhancing spiritual practice. There is an extremely wide variety of types of spiritual practice, and it’s important to keep in mind that spiritual practice can be part of organized religion, completely separate from organized religion, or a mix of both. Today’s discussion is all about finding practices that you are personally drawn to—practices that fit YOUR personal interests, values, and lifestyle.</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-6-slide-2" class="course-slide">
@@ -2599,7 +2604,7 @@ foreach (array(
 				<p>removed questions</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-6-slide-3" class="course-slide">
@@ -2618,7 +2623,7 @@ foreach (array(
 				<p>Preliminary evidence suggests that mindfulness mediation practices may enhance cognitive functions such as working memory.</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-6-slide-4" class="course-slide">
@@ -2636,7 +2641,7 @@ foreach (array(
 				<p>Studies have shown that meditation increases the gray matter in areas of the brain important for consciousness and awareness of body states, short- and long-term memory, and complex cognitive processes such as planning, decision-making, attention, and short-term memory. Meditation has also been shown to reduce cortical thinning due to aging in the prefrontal cortex. And it has been shown to increase the activation of the left frontal regions of the brain, which lift mood.</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-6-slide-5" class="course-slide">
@@ -2674,7 +2679,7 @@ foreach (array(
 				<p>Meditation has a wide variety of health and psychological benefits and has been shown to strengthen the immune system, decrease stress-related cortisol, and lower blood pressure. You may also remember that chronic stress and cortisol are toxic to the brain.</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-6-slide-6" class="course-slide">
@@ -2703,7 +2708,7 @@ foreach (array(
 				<p>Transition: Now, let us discuss some brain-healthy spiritual practices. This is presenting a wide variety of types of religious and spiritual practice; notice what you are personally drawn to.</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-6-slide-7" class="course-slide">
@@ -2718,7 +2723,7 @@ foreach (array(
 				<p>A review by Powell and colleagues published in American Psychologist in 2003 concluded that attending religious services protected healthy people from death. This is a strong and consistent finding. In addition, two longitudinal studies have found that the more individuals attended services, the more the risk of mortality decreased. So, the more you go, the more it helps. Attending religious services is an opportunity for extended prayer, and prayer as part of a weekly religious service has been shown to have health benefits. Additionally, attending religious services is a way to build social connections. And we know that social support has tremendous positive effects on one’s health.</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-6-slide-8" class="course-slide">
@@ -2730,7 +2735,7 @@ foreach (array(
 				<p>A word of caution about spiritual dialogue: friendly, intellectual, philosophical conversations or mutually respectful discussions can be stimulating and rewarding; arguments about religion and worldviews, on the other hand, can be stressful and even damaging to relationships. Engage in study or conversation that feels safe and rewarding; avoid those conversations that leave you feeling hurt or angry.</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-6-slide-9" class="course-slide">
@@ -2757,7 +2762,7 @@ foreach (array(
 				</ul>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-6-slide-10" class="course-slide">
@@ -2776,7 +2781,7 @@ foreach (array(
 				<p>Centering Prayer: Centering Prayer was first described in the 14th century text, The Cloud of Unknowing. Centering prayer was reintroduced in the 1970s by Friar Thomas Keating and two other trappist monks. This simple meditation involves choosing a word, concept, or passage (such as love, inner peace, God’s presence) that has sacred meaning for you and focusing on it for 20 minutes or more with your eyes closed. The goal is not to concentrate on the single word, rather, allow your mind to reflect on the qualities associated with this particular word. As with the sitting meditation, when your mind wanders, you gently return to your sacred word or idea. This is not meant to replace other types of prayer, and can be used on it’s own or, if it appeals to you, to enhance an existing prayer practice.</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-6-slide-11" class="course-slide">
@@ -2786,7 +2791,7 @@ foreach (array(
 				<p>Movement practices such as Tai Chi, Feldenkrais, and yoga have meditative aspects to them, including awareness of the breath or body, and yoga has been shown to have brain benefits that are similar to other forms of meditation. Additionally, any exercise, such as taking a walk, lifting weights, or jogging, can be done in a mindful or meditative way. Exercising mindfully means that you pay attention to, or notice, each movement and how it feels in your body. Instead of getting on the treadmill and zoning out by watching TV or counting down the minutes until you are done with the exercise, pay attention to any pleasant sensations that arise. This sustained concentration can enhance the exercise experience and, as stated earlier, is a type of attention-training for your brain!</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-6-slide-12" class="course-slide">
@@ -2799,7 +2804,7 @@ foreach (array(
 				<p>TRAINER TIP: This leads in to today’s exercise. Have clients write down three good things that have happened in the last 24 hours and why those things happened. Spend 5 minutes discussing their experience during and after the exercise: What did clients notice went writing these things down? Was it awkward or difficult? Explain that, with practice, this exercise of noticing the good becomes easier and often becomes addictive!</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-6-slide-13" class="course-slide">
@@ -2815,7 +2820,7 @@ foreach (array(
 				<p>Memory tip of the week.</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-6-slide-14" class="course-slide">
@@ -2879,7 +2884,7 @@ foreach (array(
 				<p>{t}In the last module we discussed the impact of spirituality on longevity and brain health.{/t}</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-7-slide-3" class="course-slide">
@@ -2899,7 +2904,7 @@ foreach (array(
 					forms of dementia, and they are less likely to develop disabilities and loss of independence.{/t}</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-7-slide-4" class="course-slide">
@@ -2917,7 +2922,7 @@ foreach (array(
 				<p>{t}Finally, many social activities challenge us physically and mentally. Two other modules in this class will teach you why physical activity and mentally stimulating activity is good for you. Many social activities have these same elements and can be good for our brains in multiple ways! {/t}</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-7-slide-5" class="course-slide">
@@ -2947,7 +2952,7 @@ foreach (array(
 				</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-7-slide-6" class="course-slide">
@@ -2972,7 +2977,7 @@ foreach (array(
 				</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-7-slide-7" class="course-slide">
@@ -2982,7 +2987,7 @@ foreach (array(
 				<p>{t}In fact, I would encourage you all to think of engaging in a general “active lifestyle”, replete with physical, mental, and social activities. Many activities are both social and physical, including going for walks with friends, exercise groups, and dancing. Many activities are both social and mental, including playing cards and other games, taking group classes, and book clubs. And then there are activities that hit that sweet spot of social, physical, and mental activity, such as learning new dance moves with a dance partner, playing sports which require strategy such as golf, and discovering new places with friends or a tour group.{/t}</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-7-slide-8" class="course-slide">
@@ -2993,7 +2998,7 @@ foreach (array(
 					experience problems like dementia.{/t}</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-7-slide-9" class="course-slide">
@@ -3005,7 +3010,7 @@ foreach (array(
 				<p>{t}The most well-designed studies have attempted to address these challenges to establishing a causal role for social activity, and the preponderance of evidence supports the idea that social activity actually affects our brain health, but these concerns cannot totally be ruled out. Because of the complexity of randomizing people to years of social activity, it is very difficult to conceive of randomized controlled trials in this area. But, despite some doubts about social activity having a direct effect on our brains, given that there are very few negative effects of social activity, there is little reason to not engage!{/t}</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-7-slide-10" class="course-slide">
@@ -3017,7 +3022,7 @@ foreach (array(
 				<p>{t}Therefore, these animal experiments give some biological evidence that humans who are socially active and engaged may be experiencing some of these same beneficial changes in their brain as compared to people who socially disengage from the world. Coupled with the observational evidence in humans, the animal evidence helps to paint a convincing picture of social activity&rsquo;s role in keeping our brains healthy.{/t}</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-7-slide-11" class="course-slide">
@@ -3034,12 +3039,12 @@ foreach (array(
 				</ol>
 				<p>
 					<a href="http://www.beautiful-minds.com/FourDimensionsOfBrainHealth/TheSociallyConnectedMind.aspx
-" target="_blank">Beautiful-Minds.com</a>
+					" target="_blank">Beautiful-Minds.com</a>
 				</p>
 				<p>{t}OK, now that we have gone over the scientific evidence, let’s talk about some ways that we can stay socially active to improve our brain health. Here are some healthy tips that are adapted from this website, beautiful-minds.com. [read list and go over each point individually.{/t}</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-7-slide-12" class="course-slide">
@@ -3052,7 +3057,7 @@ foreach (array(
 				</ul>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-7-slide-13" class="course-slide">
@@ -3071,7 +3076,7 @@ foreach (array(
 				<p>{t}To give you some good ideas, here are some fun social activities that you can engage in. Remember, you are more likely to stay socially active if you are doing something you have a lot of fun doing, and having fun may be the key to staying happy and healthy!{/t}</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-7-slide-14" class="course-slide">
@@ -3099,7 +3104,7 @@ foreach (array(
 				<p>{t}Before we leave, I would like you to set some goals for staying socially active. We can set some long term goals, which may take a little longer to get into but hopefully can last a lifetime. But we can start with some short term goals, that you can accomplish by next week.{/t}</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-7-slide-15" class="course-slide">
@@ -3158,7 +3163,7 @@ foreach (array(
 				</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-7-slide-16" class="course-slide">
@@ -3188,7 +3193,7 @@ foreach (array(
 				<p>{t}Then ask them to share what they learned.{/t}</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-7-slide-17" class="course-slide">
@@ -3234,7 +3239,7 @@ foreach (array(
 				</ul>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-7-slide-18" class="course-slide">
@@ -3284,7 +3289,7 @@ foreach (array(
 				<p>{t}Fortunately, it is never too late to adopt brain healthy behaviors. Although someone with a lifetime of participation in these behaviors may fare the best, even older adult will gain from them, so it is never too late to get started!{/t}</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-8-slide-3" class="course-slide">
@@ -3310,7 +3315,7 @@ foreach (array(
 				<p>{t}The adult brain can change much more than we ever thought possible. Adult brains can grow new neurons and existing neurons can modify and grow new connections between each other. Brains can recover from injury better than we ever thought before as well. All of this malleability is referred to as plasticity – the brain is more plastic or changeable than we ever thought before.{/t}</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-8-slide-4" class="course-slide">
@@ -3333,7 +3338,7 @@ foreach (array(
 				<p>{t} What kinds of behaviors in these areas can promote brain health? Let us review some key points from each of the areas now.{/t}</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-8-slide-5" class="course-slide">
@@ -3362,7 +3367,7 @@ foreach (array(
 				<p>{t}But moderate levels of physical activity are enough to reduce the risk of cognitive impairment to some degree.{/t}</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-8-slide-6" class="course-slide">
@@ -3377,7 +3382,7 @@ foreach (array(
 				<p>{t}In this module, we learned about the physiology of stress and its effect on the body and brain. We know that chronic stress can lead to depression, which has been linked with a higher risk of Alzheimer's disease. Controlling stress is an important component in a brain healthy lifestyle. We talked about several practices, such as mindfulness meditation, that can be used to reduce stress.{/t}</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-8-slide-7" class="course-slide">
@@ -3392,7 +3397,7 @@ foreach (array(
 				<p>{t}In this module you learned how intellectual stimulation promotes cognitive reserve. And while doing crossword puzzles every day is generally a good thing, it really seems that you may get a bigger return on your investment by learning something new. We also taught you about diversifying your cognitive investments.{/t}</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-8-slide-8" class="course-slide">
@@ -3408,7 +3413,7 @@ foreach (array(
 				<p class="forum">{t}What foods should we avoid because they are not good for our brain (examples can include: high fat dairy products, red meats, organ meats, butter, fried foods, too many sweets)?{/t}</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-8-slide-9" class="course-slide">
@@ -3433,7 +3438,7 @@ foreach (array(
 				</ul>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-8-slide-10" class="course-slide">
@@ -3459,7 +3464,7 @@ foreach (array(
 				</ul>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-8-slide-11" class="course-slide">
@@ -3470,7 +3475,7 @@ foreach (array(
 				<p>{t}However, if you started any new habits over the last six weeks, these habits may be new enough to where they are vulnerable to disruptions. This is comparable to earning overtime pay or a bonus and having the discipline to throw a bit of that toward your 401(k). Set-backs, distractions, and competing priorities can easily get in the way of this &ldquo;investing goal&rdquo; much like they can get in the way of a new &ldquo;brain investment goal&rdquo; such as a new habit.{/t}</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-8-slide-12" class="course-slide">
@@ -3490,7 +3495,7 @@ foreach (array(
 				<p>{t}If on the other hand you say to yourself, &quot;Uh, oh, I forgot my goal. I slipped! Oh well, back on the horse.&quot; Then you are much more likely to stick with your goal.{/t}</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-8-slide-13" class="course-slide">
@@ -3543,7 +3548,7 @@ foreach (array(
 				</ul>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-8-slide-14" class="course-slide">
@@ -3558,7 +3563,7 @@ foreach (array(
 				<p>{t}(This is a sub-set of the stages of change that are part of what are called the &ldquo;Transtheoretical Model&rdquo; of change proposed by Prochaska an Di Clemente, two psychological researchers. It is widely used, particularly in a method of psychological treatment and coaching practice called Motivational Interviewing (MI). The goal of MI is to identify where a person is in the stages of change and gently work to motivate him or her to the next step. It actually plays on the person&rsquo;s cognitive dissonance, which was discussed in Session 4 and was part of the exercises of that session. By amplifying or pointing out discrepancies between a person&rsquo;s ideal of themselves versus their current behavior, an uncomfortable feeling emerges, which the coach uses to guide the person toward changing the behavior to make it more in line with the ideal self. You have been doing this throughout this entire program.){/t}</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-8-slide-15" class="course-slide">
@@ -3583,7 +3588,7 @@ foreach (array(
 				</ul>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-8-slide-16" class="course-slide">
@@ -3616,7 +3621,7 @@ foreach (array(
 				<p>{t}(This meditation is referred to as Lovingkindness Meditation, and there is more information about it included in the workbook. This particular exercise is adapted from Martha Beck, PhD and her book The Four-day Win, and she is credited with the terms &ldquo;wild child,&rdquo; &ldquo;dictator,&rdquo; and &ldquo;watcher&rdquo;){/t}</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
 			</div>
 		</div>
 		<div id="lesson-8-slide-17" class="course-slide">
@@ -3630,16 +3635,16 @@ foreach (array(
 				<p>{t}Please complete the Post-Course Evaluation located on the course home page.{/t}</p>
 				<p>{t}Your feedback is greatly appreciated, and will help us to better serve other participants in the future. We ask that you complete it before you exit this course portal. You do not have to include your name on the evaluation. It is completely confidential.{/t}</p>
 				<script>
-			function myFunction() {
-				alert("Coming Soon!");
-			}
+					function myFunction() {
+						alert("Coming Soon!");
+					}
 				</script>
 				<p style="text-align: center;">
 					<input type="button" style="width: 175px;" onclick="myFunction()" value="Post-Course Evaluation" />
 				</p>
 			</div>
 			<div class="buttons">
-				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="parent.jQuery.fancybox.close();">{t}Exit{/t}</a>
+				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a href="javascript:;" class="button right" onclick="parent.jQuery.fancybox.close();">{t}Exit{/t}</a>
 			</div>
 		</div>
 	</div>

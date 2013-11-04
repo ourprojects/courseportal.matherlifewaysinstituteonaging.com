@@ -9,7 +9,7 @@ class CourseController extends CoursePortalController
 				parent::accessRules(),
 				array(
 					array('allow',
-							'actions' => array('index', 'notRegistered', 'survey.submit'),
+							'actions' => array('index', 'notRegistered', 'survey.submit', 'spencerpowell.dimension', 'spencerpowell.logActivity', 'spencerpowell.logActivityGrid'),
 							'users' => array('@'),
 					),
 					array('deny'),

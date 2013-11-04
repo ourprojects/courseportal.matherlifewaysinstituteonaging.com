@@ -96,7 +96,7 @@
 													'success' => 'function(data){'.
 														'$.fn.yiiGridView.update("'.$this->getId().'-'.$dimension->id.'-userActivityGrid");'.
 														'var $data = $.parseJSON(data);'.
-														'alert($data.message);'.
+														//'alert($data.message);'.
 													'}',
 													'error' => 'function(data){alert("{t}Unable to contact server.{/t}");}',
 													'complete' => 'function(){$("#'.$this->getId().'-'.$dimension->id.'-activities").removeClass("loading");}',

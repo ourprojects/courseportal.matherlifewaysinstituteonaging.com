@@ -96,7 +96,7 @@
 				var element = this.find("input#UserActivity_activity_id");
 				if(value === undefined || value === null)
 				{
-					return element.text("");
+					return element.val("");
 				}
 				return element.val(value);
 			},
@@ -106,7 +106,7 @@
 				var element = this.find("input#UserActivity_id");
 				if(value === undefined || value === null)
 				{
-					return element.text("");
+					return element.val("");
 				}
 				return element.val(value);
 			},
