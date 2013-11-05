@@ -1,8 +1,9 @@
 @charset "UTF-8";
 /* CSS Document */
+ul#resources li {
+	margin-bottom: 10px;
+}
 
-@import url(http://fonts.googleapis.com/css?family=Happy+Monkey);
-@import url(http://fonts.googleapis.com/css?family=Finger+Paint);
 div.course-slide {
 	min-height: 100%;
 	position: relative;
@@ -38,7 +39,7 @@ div.course-slide div.question {
 	margin: 10px auto 10px auto;
 	padding: 10px;
 	-moz-box-shadow: 0 0 5px 5px #888;
-	-webkit-box-shadow: 0 0 5px 5px#888;
+	-webkit-box-shadow: 0 0 5px 5px #888;
 	box-shadow: 0 0 5px 5px #888;
 }
 div.course-slide div.box-white {
@@ -54,19 +55,13 @@ div.course-slide div#video {
 	margin: 20px auto;
 	background-color: #FFF;
 	-moz-box-shadow: 0 0 5px 5px #888;
-	-webkit-box-shadow: 0 0 5px 5px#888;
+	-webkit-box-shadow: 0 0 5px 5px #888;
 	box-shadow: 0 0 5px 5px #888;
 }
 .forum {
-	font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif;
 	color: #00F;
-	font-size: 20px;
 }
-ul.forum li {
-	font-family: 'Swanky and Moo Moo', cursive;
-	color: #000;
-	font-size: 22px;
-}
+
 /* course-slide table properties */
 
 div.course-slide table {
@@ -85,15 +80,6 @@ div.course-slide table td {
 }
 /* all non-slide css3 */
 
-div#resources p {
-	font-size: small;
-}
-div#resources ul li {
-	font-size: small;
-}
-div#developers p {
-	font-size: small;
-}
 .h5 {
 	color: #666;
 	margin: 0;
@@ -115,6 +101,65 @@ div.box-sidebar img {
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
 }
+<<<<<<< HEAD
+
+div.box-sidebar img#facilitator {
+	border: none;
+	display: block;
+	margin: 10px 0 0 0;
+	-webkit-border-radius: 0px -webkit-border-bottom-right-radius : 5px;
+	-webkit-border-bottom-left-radius: 5px;
+	-moz-border-radius: 0px;
+	-moz-border-radius-bottomright: 5px;
+	-moz-border-radius-bottomleft: 5px;
+	border-radius: 0px;
+	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+
+/* cupid green (inspired by okcupid.com) http://hellohappy.org/css3-buttons/
+ *******************************************************************************/
+button.cupid-green {
+	background-color: #7fbf4d;
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #7fbf4d), color-stop(100%, #63a62f));
+	background-image: -webkit-linear-gradient(top, #7fbf4d, #63a62f);
+	background-image: -moz-linear-gradient(top, #7fbf4d, #63a62f);
+	background-image: -ms-linear-gradient(top, #7fbf4d, #63a62f);
+	background-image: -o-linear-gradient(top, #7fbf4d, #63a62f);
+	background-image: linear-gradient(top, #7fbf4d, #63a62f);
+	border: 1px solid #63a62f;
+	border-bottom: 1px solid #5b992b;
+	border-radius: 3px;
+	-webkit-box-shadow: inset 0 1px 0 0 #96ca6d;
+	box-shadow: inset 0 1px 0 0 #96ca6d;
+	color: #fff;
+	font: bold 11px/1 "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+	padding: 7px 0 8px 0;
+	text-align: center;
+	text-shadow: 0 -1px 0 #4c9021;
+	width: 150px;
+	margin: 0px;
+}
+button.cupid-green:hover {
+	background-color: #76b347;
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #76b347), color-stop(100%, #5e9e2e));
+	background-image: -webkit-linear-gradient(top, #76b347, #5e9e2e);
+	background-image: -moz-linear-gradient(top, #76b347, #5e9e2e);
+	background-image: -ms-linear-gradient(top, #76b347, #5e9e2e);
+	background-image: -o-linear-gradient(top, #76b347, #5e9e2e);
+	background-image: linear-gradient(top, #76b347, #5e9e2e);
+	-webkit-box-shadow: inset 0 1px 0 0 #8dbf67;
+	box-shadow: inset 0 1px 0 0 #8dbf67;
+	cursor: pointer;
+}
+button.cupid-green:active {
+	border: 1px solid #5b992b;
+	border-bottom: 1px solid #538c27;
+	-webkit-box-shadow: inset 0 0 8px 4px #548c29, 0 1px 0 0 #eeeeee;
+	box-shadow: inset 0 0 8px 4px #548c29, 0 1px 0 0 #eeeeee;
+}
+=======
 ul.bulletlist li {
 	margin-bottom: 10px;
 }
+>>>>>>> 18eab3bb646c73ecafc3e9b9fab0819394553445
