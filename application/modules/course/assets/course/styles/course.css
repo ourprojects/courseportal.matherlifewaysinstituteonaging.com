@@ -1,165 +1,134 @@
 @charset "UTF-8";
 /* CSS Document */
 ul#resources li {
-	margin-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+ul.modules li {
+    margin-bottom: 10px;
+    list-style-type: none;
 }
 
 div.course-slide {
-	min-height: 100%;
-	position: relative;
+    min-height: 100%;
+    position: relative;
 }
+
 div.course-slide div.content {
-	padding: 5px 0px 50px 0px;
-	margin: 0;
+    padding: 5px 0px 50px 0px;
+    margin: 0;
 }
+
 div.course-slide div.buttons {
-	text-align: center;
-	background: #333;
-	border-radius: 10px;
-	height: 40px;
-	padding: 5px;
-	position: absolute;
-	left: 5px;
-	right: 5px;
-	bottom: 5px;
+    text-align: center;
+    background: #333;
+    border-radius: 10px;
+    height: 40px;
+    padding: 5px;
+    position: absolute;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
 }
+
 div.course-slide img {
-	border: none;
-	display: block;
-	margin: 0 auto 10px auto;
-	border-radius: 5px;
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
+    border: none;
+    display: block;
+    margin: 0 auto 10px auto;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
 }
+
 div.course-slide div.question {
-	background-color: #FFF;
-	border-radius: 10px;
-	width: 90%;
-	height: 100px;
-	margin: 10px auto 10px auto;
-	padding: 10px;
-	-moz-box-shadow: 0 0 5px 5px #888;
-	-webkit-box-shadow: 0 0 5px 5px #888;
-	box-shadow: 0 0 5px 5px #888;
+    background-color: #FFF;
+    border-radius: 10px;
+    width: 90%;
+    height: 100px;
+    margin: 10px auto 10px auto;
+    padding: 10px;
+    -moz-box-shadow: 0 0 5px 5px #888;
+    -webkit-box-shadow: 0 0 5px 5px #888;
+    box-shadow: 0 0 5px 5px #888;
 }
+
 div.course-slide div.box-white {
-	padding: 10px;
-	background: #fff;
-	margin: 10px 0 30px 10px;
-	border-radius: 5px;
-	box-shadow: 0 0 10px #999;
-	width: 60%;
+    padding: 10px;
+    background: #fff;
+    margin: 10px 0 30px 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #999;
+    width: 60%;
 }
+
 div.course-slide div#video {
-	display: block;
-	margin: 20px auto;
-	background-color: #FFF;
-	-moz-box-shadow: 0 0 5px 5px #888;
-	-webkit-box-shadow: 0 0 5px 5px #888;
-	box-shadow: 0 0 5px 5px #888;
+    display: block;
+    margin: 20px auto;
+    background-color: #FFF;
+    -moz-box-shadow: 0 0 5px 5px #888;
+    -webkit-box-shadow: 0 0 5px 5px #888;
+    box-shadow: 0 0 5px 5px #888;
 }
+
 .forum {
-	color: #00F;
+    color: #00F;
 }
 
 /* course-slide table properties */
 
 div.course-slide table {
-	width: 100%;
-	margin: 10px auto 10px auto;
-	border: none;
+    width: 100%;
+    margin: 10px auto 10px auto;
+    border: none;
 }
+
 div.course-slide table th {
-	background-color: #008080;
-	color: #FFF;
-	text-align: center;
+    background-color: #008080;
+    color: #FFF;
+    text-align: center;
 }
+
 div.course-slide table td {
-	background-color: #666;
-	color: #FFF;
+    background-color: #666;
+    color: #FFF;
 }
+
 /* all non-slide css3 */
 
 .h5 {
-	color: #666;
-	margin: 0;
-	padding: 10px 0 10px 0;
-	font-weight: bold;
-	line-height: normal;
-	font-size: 12pt;
+    color: #666;
+    margin: 0;
+    padding: 10px 0 10px 0;
+    font-weight: bold;
+    line-height: normal;
+    font-size: 12pt;
 }
+
 .name {
-	font-family: 'Swanky and Moo Moo', cursive;
-	color: #F00;
-	font-size: 18px;
+    font-family: 'Swanky and Moo Moo', cursive;
+    color: #F00;
+    font-size: 18px;
 }
+
 div.box-sidebar img {
-	border: none;
-	display: block;
-	margin: 0 auto 10px auto;
-	border-radius: 5px;
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
+    border: none;
+    display: block;
+    margin: 0 auto 10px auto;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
 }
-<<<<<<< HEAD
 
 div.box-sidebar img#facilitator {
-	border: none;
-	display: block;
-	margin: 10px 0 0 0;
-	-webkit-border-radius: 0px -webkit-border-bottom-right-radius : 5px;
-	-webkit-border-bottom-left-radius: 5px;
-	-moz-border-radius: 0px;
-	-moz-border-radius-bottomright: 5px;
-	-moz-border-radius-bottomleft: 5px;
-	border-radius: 0px;
-	border-bottom-right-radius: 5px;
-	border-bottom-left-radius: 5px;
+    border: none;
+    display: block;
+    margin: 10px 0 0 0;
+    -webkit-border-radius: 0px -webkit-border-bottom-right-radius : 5 px;
+    -webkit-border-bottom-left-radius: 5px;
+    -moz-border-radius: 0px;
+    -moz-border-radius-bottomright: 5px;
+    -moz-border-radius-bottomleft: 5px;
+    border-radius: 0px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
 }
-
-/* cupid green (inspired by okcupid.com) http://hellohappy.org/css3-buttons/
- *******************************************************************************/
-button.cupid-green {
-	background-color: #7fbf4d;
-	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #7fbf4d), color-stop(100%, #63a62f));
-	background-image: -webkit-linear-gradient(top, #7fbf4d, #63a62f);
-	background-image: -moz-linear-gradient(top, #7fbf4d, #63a62f);
-	background-image: -ms-linear-gradient(top, #7fbf4d, #63a62f);
-	background-image: -o-linear-gradient(top, #7fbf4d, #63a62f);
-	background-image: linear-gradient(top, #7fbf4d, #63a62f);
-	border: 1px solid #63a62f;
-	border-bottom: 1px solid #5b992b;
-	border-radius: 3px;
-	-webkit-box-shadow: inset 0 1px 0 0 #96ca6d;
-	box-shadow: inset 0 1px 0 0 #96ca6d;
-	color: #fff;
-	font: bold 11px/1 "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
-	padding: 7px 0 8px 0;
-	text-align: center;
-	text-shadow: 0 -1px 0 #4c9021;
-	width: 150px;
-	margin: 0px;
-}
-button.cupid-green:hover {
-	background-color: #76b347;
-	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #76b347), color-stop(100%, #5e9e2e));
-	background-image: -webkit-linear-gradient(top, #76b347, #5e9e2e);
-	background-image: -moz-linear-gradient(top, #76b347, #5e9e2e);
-	background-image: -ms-linear-gradient(top, #76b347, #5e9e2e);
-	background-image: -o-linear-gradient(top, #76b347, #5e9e2e);
-	background-image: linear-gradient(top, #76b347, #5e9e2e);
-	-webkit-box-shadow: inset 0 1px 0 0 #8dbf67;
-	box-shadow: inset 0 1px 0 0 #8dbf67;
-	cursor: pointer;
-}
-button.cupid-green:active {
-	border: 1px solid #5b992b;
-	border-bottom: 1px solid #538c27;
-	-webkit-box-shadow: inset 0 0 8px 4px #548c29, 0 1px 0 0 #eeeeee;
-	box-shadow: inset 0 0 8px 4px #548c29, 0 1px 0 0 #eeeeee;
-}
-=======
-ul.bulletlist li {
-	margin-bottom: 10px;
-}
->>>>>>> 18eab3bb646c73ecafc3e9b9fab0819394553445
