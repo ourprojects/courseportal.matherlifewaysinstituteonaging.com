@@ -30,8 +30,10 @@ foreach(array(
 	</h1>
 </div>
 <div id="sidebar">
-	<div class="box-sidebar one" style="background-color: #FFF;">
-		<h3>{t}Evaluations{/t}</h3>
+	<div class="box-sidebar one">
+        <h3>{t}Course Evaluations{/t}</h3>
+        <p>{t}Please click the button below to access the pre-course and post-course surveys. Participation is
+            anonymous. Please complete each survey at the appropriate time.{/t}</p>
 		<br />
 		<ul id="surveys">
 			<?php
@@ -65,35 +67,35 @@ foreach(array(
 				$survey->model->user_id = Yii::app()->getUser()->getId();
 				?>
 				<li>
-					<a id="survey_link_<?php echo $survey->getId(); ?>" href="#survey_<?php echo $survey->getId(); ?>" title="<?php echo t($survey->model->title); ?>"><?php echo t($survey->model->title); ?> </a>
+					<a id="survey_link_<?php echo $survey->getId(); ?>" class="button" href="#survey_<?php echo $survey->getId(); ?>" title="<?php echo t($survey->model->title); ?>"><?php echo t($survey->model->title); ?> </a>
 					<?php $survey->run(); ?>
 				</li>
 				<?php
 			}
 			?>
 		</ul>
-		<br /> <img src="<?php echo $this->getImagesUrl('care/153075496.png'); ?>" alt="image">
 	</div>
 	<div class="box-sidebar one">
 		<h3>{t}Working Caregivers in America{/t}</h3>
 		<img src="<?php echo $this->getImagesUrl('care/286x366_Grafix_69pc.png'); ?>" alt="image" class="block center" />
 		<p>{t}69% of working caregivers report having to rearrange their work schedule, decrease their hours, or take an unpaid leave of absence to meet their care-giving responsibilities.{/t}</p>
 	</div>
-	<div class="box-sidebar two">
-		<h3>{t}Magnitude - Informal Caregivers{/t}</h3>
-		<p>
-			<a href="http://www.caregiver.org/caregiver/jsp/home.jsp" target="_blank">FAMILY CAREGIVER ALLIANCE</a>
-		</p>
-		<p style="text-align: center;">
-			<b> {t}National Center on Caregiving (USA){/t}</b>
-		</p>
-		<p style="text-align: center; font-weight: bold; font-style: italic;">{t}65.7 million{/t}</p>
-		<p>{t}caregivers make up 29% of the U.S. adult population providing care to someone who is ill, disabled or aged{/t}</p>
-		<hr />
-		<img src="<?php echo $this->getImagesUrl('care/piechart.png'); ?>" alt="image">
-		<p style="text-align: center;">
-			<a href="http://www.caregiver.org/caregiver/jsp/content_node.jsp?nodeid=439" target="_blank">more statistics...</a>
-		</p>
+    <div class="box-sidebar one">
+        <h3>{t}Certificate of Completion{/t}</h3>
+
+        <p>{t}You must complete the first four Modules before accessing your Certificate of Completion. Click the button
+            below to access your certificate where you will be able to manually add your name and date.{/t}</p>
+
+        <p>
+            <a href="<?php echo $this->createDownloadUrl('CourseCompletionCertificate.pdf'); ?>" target="_blank" class="button">Download Certificate</a>
+        </p>
+    </div>
+	<div class="box-sidebar one">
+        <h3>{t}Facilitator: Ellen Ziegemeier, MA{/t}</h3>
+        <p>{t}Ms. Ziegemeier has been facilitating online courses for Mather LifeWays Institute on Aging since 2004. She earned her Masters in Anthropology, and has worked locally and abroad - Latin America and South America for various aging services. She is fluent in English and Spanish, and has a strong passion for caregiver training.{/t}</p>
+        <p>
+            <a href="#" target="_blank" class="button">Contact Facilitator</a>
+        </p>
 	</div>
 </div>
 <!-- Start main content here -->
@@ -113,12 +115,13 @@ foreach(array(
 			echo '<li>' . t($objective->text) . '</li>';
 		?>
 	</ul>
-	<h5>{t}Course Agenda{/t}</h5>
-	<a href="<?php echo $this->createDownloadUrl('carecoachingonline/CARECoachingSyllabus.pdf'); ?>" target="_blank"><img src="<?php echo $this->getImagesUrl('care/pdf-icon.png'); ?>" alt="{t}Course Syllabus{/t}" /> </a> <br />
+	<h4>{t}Course Agenda{/t}</h4>
+    <p>{t}Please click the button below to download the course Agenda.{/t}</p>
+	<a href="<?php echo $this->createDownloadUrl('carecoachingonline/CARECoachingSyllabus.pdf'); ?>" target="_blank" class="button">{t}Download Agenda{/t}</a> <br />
 	<h4>{t}Course Modules{/t}</h4>
 
 	<!-- Bullet points start here for course lessons, hyperlinks to FancyBox -->
-	<ul>
+	<ul class="modules">
 		<li>
 			<a href="#lesson-1-slide-1" data-fancybox-group="lesson-1" class="teal lesson-1"> {t}Care Coaching{/t} </a> <a href="#lesson-1-slide-2" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-3" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-4" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-5" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-6" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-7" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-8" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-9" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-10" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-11" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a
 				href="#lesson-1-slide-12" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-13" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-14" data-fancybox-group="lesson-1" class="hide lesson-1"></a>
@@ -147,7 +150,7 @@ foreach(array(
 	</ul>
 	<h4>{t}Resources{/t}</h4>
 	<p>{t}Please use these listed resources for additional reading. Please contact your course facilitator if you have additional resources you would like to see added here.{/t}</p>
-	<ul>
+	<ul id="resources">
 		<li>
 			<a href="http://www.nlm.nih.gov/medlineplus/talkingwithyourdoctor.html" target="_blank">{t}Talking with Your Doctor{/t}</a>
 			<!-- 
@@ -189,9 +192,7 @@ Find help providing care, government agencies, long-distance caregiving, and sup
 AARP provides various articles of interest and resources for family caregivers. -->
 		</li>
 	</ul>
-	<h4>{t}Facilitator:{/t}</h4>
-	<h5>Ellen Ziegemeier</h5>
-	<p>{t}Ms. Ziegemeier has been facilitating online courses for Mather LifeWays Institute on Aging since 2004. She earned her Masters in Anthropology, and has worked locally and abroad - Latin America and South America for various aging services. She is fluent in English and Spanish, and has a strong passion for caregiver training.{/t}</p>
+
 </div>
 <div id="course" class="hide">
 	<?php $clientScript->registerScript('question-answer-handler',
