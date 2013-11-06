@@ -57,11 +57,11 @@ foreach (array(
             anonymous. Please complete each survey at the appropriate time.{/t}</p>
 
         <p>
-            <a href="http://www.vovici.com/home_index.aspx" target="_blank" class="button">Pre-Course Survey</a>
+            <a href="https://survey.vovici.com/se.ashx?s=4C32B0216020938B" target="_blank" class="button">Pre-Course Survey</a>
         </p>
 
         <p>
-            <a href="http://www.vovici.com/home_index.aspx" target="_blank" class="button">Post-Course Survey</a>
+            <a href="https://survey.vovici.com/se.ashx?s=4C32B0216020938B" target="_blank" class="button">Post-Course Survey</a>
         </p>
     </div>
     <div class="box-sidebar one">
@@ -71,7 +71,7 @@ foreach (array(
             below to access your certificate where you will be able to manually add your name and date.{/t}</p>
 
         <p>
-            <a href="#" target="_blank" class="button">Download Certificate</a>
+            <a href="<?php echo $this->createDownloadUrl('spencer/certificate.pdf'); ?>" target="_blank" class="button">Download Certificate</a>
         </p>
     </div>
     <div class="box-sidebar one">
@@ -102,8 +102,7 @@ foreach (array(
 <h4>{t}Participant Access{/t}</h4>
 
 <p>
-    {t}<strong>Particiants</strong> have <strong>access</strong> to this pilot study for <strong>exactly 90
-        days</strong><strong>from</strong> the initial <strong>enrollment</strong> date.{/t}
+    {t}<strong>90 days</strong> from the <strong>initial enrollment</strong> date.{/t}
 </p>
 <h4>{t}Objectives{/t}</h4>
 <ul>
@@ -995,144 +994,7 @@ foreach (array(
             href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
     </div>
 </div>
-<div id="lesson-1-slide-19" class="course-slide">
-    <div class="content">
-        <h2 class="flowers">{t}Memory Strategy #1{/t}</h2>
-        <hr/>
-        <h4>{t}5 Minute Explanation – 10 Minute Practice{/t}</h4>
-        <h5>{t}Memory Tip #1 - Improve Memory by Improving Attention {/t}</h5>
 
-        <p>{t}In each module, you will learn a new strategy for improving your memory in your everyday life. Today,
-            please focus on helping build a cognitive skill that is not “memory” per se but is essential for having a
-            better memory.{/t}</p>
-
-        <p>
-            {t}In this module we are going to help you improve your memory by helping you improve your ATTENTION. The
-            reason we are starting here is because <strong>attention is the gateway to memory</strong>. You can’t expect
-            to remember things that you don’t see, hear, feel or otherwise experience, right? How can we expect our
-            brains to hold onto information that doesn’t get in in the first place?{/t}
-        </p>
-        <h5>{t}What are some ways that you can improve your attention?{/t}</h5>
-
-        <p>
-            {t}<strong>Look up and around</strong> - Open your eyes - <strong>Simply being more aware</strong> can
-            improve your attention. <strong>Putting in the effort</strong> to look around and making mental notes of
-            where you parked your car or whether or not you locked the door, can do wonders for setting a good
-            foundation for remembering things!{/t}
-        </p>
-
-        <p>
-            {t}<strong>Stay</strong> “<strong>Present</strong>” - <strong>Dial down the internal chatter or the mental
-                to-do list</strong>. In conversations, remind yourself that you will be able to come up with something
-            to say after the person is finished talking in order to stop the mental rehearsal of your next point. This
-            way you can really pay attention to what the other person is saying{/t}
-        </p>
-
-        <p>
-            {t}<strong>Get your hearing or vision checked and corrected if needed</strong> – Do not let vanity get in
-            the way of your brain health. Vision and hearing loss not only keep you from taking in current information,
-            but over time it seems that they can weaken you whole brain. As we just learned today, cells that fire
-            together, wire together, so if your brain is not getting good quality stimulation from your ears or your
-            eyes, all of the brain circuits that process that information (including your memory circuits) have less
-            stimulation, and therefore seem to also weaken over time.{/t}
-        </p>
-    </div>
-    <div class="buttons">
-        <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a
-            href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
-    </div>
-</div>
-<div id="lesson-1-slide-20" class="course-slide">
-    <div class="content">
-        <h2 class="flowers">{t}Improving Attention{/t}</h2>
-        <hr/>
-        <p>
-            {t}<strong>Manage Your Environment</strong>{/t}
-        </p>
-
-        <p>{t} - Reduce Distractions and Interruptions{/t}</p>
-
-        <p>
-            {t}<strong>Do One Thing at a Time</strong>{/t}
-        </p>
-
-        <p>{t} - Multi-tasking is a Myth!{/t}</p>
-
-        <p>{t} - Multi-tasking can be toxic to the brain{/t}</p>
-
-        <p>
-            {t}<strong>Bribe Yourself</strong>{/t}
-        </p>
-
-        <p>
-            {t}<strong>Get Plenty of Rest</strong>{/t}
-        </p>
-
-        <p>{t} - May need to see a sleep doctor{/t}</p>
-
-        <p>{t} - Resting when you're awake{/t}</p>
-
-        <p>
-            {t}<strong>Manage your Emotions</strong>{/t}
-        </p>
-
-        <p>{t}You may be saying to yourself, “I’m just not good at paying attention.” “I have ADD” or “I’ve always been
-            bad at paying attention.” Well keep in mind that the brain is plastic and very much capable of change. In
-            fact, new research is showing that through brain exercises and through the tips that you will learn in this
-            course, even people with attention problems caused by brain injury and people with Attention Deficit /
-            Hyperactivity Disorder (ADD/ADHD) can improve their attention.{/t}</p>
-
-        <p>
-            {t}<strong>Strategies that are used to help people with attention deficits improving their attention – we
-                list them here because they are also important for many of us.</strong>{/t}
-        </p>
-        <h5>
-            {t}<strong>Manage your environment</strong> –{/t}
-        </h5>
-
-        <p>{t}Distractions and interruptions some of the biggest threats to attention.{/t}</p>
-        <h5>{t}Do one thing at a time –{/t}</h5>
-
-        <p>{t}Multi-tasking is a myth! Our brains really don’t seem to process more than one thing at a time. What may
-            feel like multi-tasking, for example checking your email while having a conversation, really seems to just
-            involve your brain switching rapidly back and forth between the two tasks. This inability to multitask the
-            way we think we can is also starting to influence public policy in terms of limiting cell phone use while
-            driving. Texting has received a lot of focus, but talking may be just a bad.{/t}</p>
-        <h5>{t}Bribe yourself –{/t}</h5>
-
-        <p>{t}Often we have trouble paying attention simply because we are not motivated to do so. Sometimes we don’t
-            admit this and just get mad at ourselves for not being able to pay attention.{/t}</p>
-        <h5>{t}Get Plenty of Rest -{/t}</h5>
-
-        <p>{t}Feeling tired, either by not sleeping well or from mental fatigue, can limit our attention. People who do
-            not get enough, good quality sleep perform considerably worse on tests of attention, which can have a big
-            impact on important tasks such as driving.{/t}</p>
-
-        <p>{t}Finally, it is also important to remember that emotions can interrupt our attention! Feeling anxious or
-            being distracted by self-criticism or worried thoughts is often one of the biggest robbers of our attention.
-            So learning to relax is also very important for improving attention. You will learn more about caring for
-            your emotions and dealing with stress in the coming modules.{/t}</p>
-    </div>
-    <div class="buttons">
-        <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a
-            href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
-    </div>
-</div>
-<div id="lesson-1-slide-21" class="course-slide">
-    <div class="content">
-        <h2 class="flowers">{t}Attention Exercise{/t}</h2>
-        <hr/>
-        <p>
-            {t}Allow 10 minutes of time for this activity. Please visit the following <a
-                href="http://sharpbrains.com/blog/2007/10/16/brain-teasers-and-games-for-adults-our-top-50/"
-                target="_blank">website</a> and participate in one of the 'Attention' activities.{/t}
-        </p>
-    </div>
-    <div class="buttons">
-        <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a
-            href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
-    </div>
-</div>
 <div id="lesson-1-slide-22" class="course-slide">
     <div class="content">
         <h2 class="flowers">{t}Set Some Goals for This Week{/t}</h2>
@@ -5992,12 +5854,136 @@ foreach (array(
 
 <div id="lesson-9-slide-1" class="course-slide">
     <div class="content">
-        <h2 class="flowers">{t}Improving Attention{/t}</h2>
-        <hr/>
-         <p>{t}Congratulations on completing the Spencer Powell Brain Fitness Course! You know have the knowledge and
-            tools to lead a brain-healthy life. We hope that you will continue to strive to make healthy choices in each
-            of the six areas we&rsquo;ve discussed. We are available for any questions you might have as you move
-            forward.{/t}</p>
+    <h2 class="flowers">{t}Memory Strategy #1{/t}</h2>
+                <hr/>
+                <h4>{t}5 Minute Explanation – 10 Minute Practice{/t}</h4>
+                <h5>{t}Memory Tip #1 - Improve Memory by Improving Attention {/t}</h5>
+
+                <p>{t}In each module, you will learn a new strategy for improving your memory in your everyday life. Today,
+                    please focus on helping build a cognitive skill that is not “memory” per se but is essential for having a
+                    better memory.{/t}</p>
+
+                <p>
+                    {t}In this module we are going to help you improve your memory by helping you improve your ATTENTION. The
+                    reason we are starting here is because <strong>attention is the gateway to memory</strong>. You can’t expect
+                    to remember things that you don’t see, hear, feel or otherwise experience, right? How can we expect our
+                    brains to hold onto information that doesn’t get in in the first place?{/t}
+                </p>
+                <h5>{t}What are some ways that you can improve your attention?{/t}</h5>
+
+                <p>
+                    {t}<strong>Look up and around</strong> - Open your eyes - <strong>Simply being more aware</strong> can
+                    improve your attention. <strong>Putting in the effort</strong> to look around and making mental notes of
+                    where you parked your car or whether or not you locked the door, can do wonders for setting a good
+                    foundation for remembering things!{/t}
+                </p>
+
+                <p>
+                    {t}<strong>Stay</strong> “<strong>Present</strong>” - <strong>Dial down the internal chatter or the mental
+                        to-do list</strong>. In conversations, remind yourself that you will be able to come up with something
+                    to say after the person is finished talking in order to stop the mental rehearsal of your next point. This
+                    way you can really pay attention to what the other person is saying{/t}
+                </p>
+
+                <p>
+                    {t}<strong>Get your hearing or vision checked and corrected if needed</strong> – Do not let vanity get in
+                    the way of your brain health. Vision and hearing loss not only keep you from taking in current information,
+                    but over time it seems that they can weaken you whole brain. As we just learned today, cells that fire
+                    together, wire together, so if your brain is not getting good quality stimulation from your ears or your
+                    eyes, all of the brain circuits that process that information (including your memory circuits) have less
+                    stimulation, and therefore seem to also weaken over time.{/t}
+                </p>
+            </div>
+            <div class="buttons">
+                <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a
+                    href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+            </div>
+        </div>
+        <div id="lesson-9-slide-2" class="course-slide">
+            <div class="content">
+                <h2 class="flowers">{t}Improving Attention{/t}</h2>
+                <hr/>
+                <p>
+                    {t}<strong>Manage Your Environment</strong>{/t}
+                </p>
+
+                <p>{t} - Reduce Distractions and Interruptions{/t}</p>
+
+                <p>
+                    {t}<strong>Do One Thing at a Time</strong>{/t}
+                </p>
+
+                <p>{t} - Multi-tasking is a Myth!{/t}</p>
+
+                <p>{t} - Multi-tasking can be toxic to the brain{/t}</p>
+
+                <p>
+                    {t}<strong>Bribe Yourself</strong>{/t}
+                </p>
+
+                <p>
+                    {t}<strong>Get Plenty of Rest</strong>{/t}
+                </p>
+
+                <p>{t} - May need to see a sleep doctor{/t}</p>
+
+                <p>{t} - Resting when you're awake{/t}</p>
+
+                <p>
+                    {t}<strong>Manage your Emotions</strong>{/t}
+                </p>
+
+                <p>{t}You may be saying to yourself, “I’m just not good at paying attention.” “I have ADD” or “I’ve always been
+                    bad at paying attention.” Well keep in mind that the brain is plastic and very much capable of change. In
+                    fact, new research is showing that through brain exercises and through the tips that you will learn in this
+                    course, even people with attention problems caused by brain injury and people with Attention Deficit /
+                    Hyperactivity Disorder (ADD/ADHD) can improve their attention.{/t}</p>
+
+                <p>
+                    {t}<strong>Strategies that are used to help people with attention deficits improving their attention – we
+                        list them here because they are also important for many of us.</strong>{/t}
+                </p>
+                <h5>
+                    {t}<strong>Manage your environment</strong> –{/t}
+                </h5>
+
+                <p>{t}Distractions and interruptions some of the biggest threats to attention.{/t}</p>
+                <h5>{t}Do one thing at a time –{/t}</h5>
+
+                <p>{t}Multi-tasking is a myth! Our brains really don’t seem to process more than one thing at a time. What may
+                    feel like multi-tasking, for example checking your email while having a conversation, really seems to just
+                    involve your brain switching rapidly back and forth between the two tasks. This inability to multitask the
+                    way we think we can is also starting to influence public policy in terms of limiting cell phone use while
+                    driving. Texting has received a lot of focus, but talking may be just a bad.{/t}</p>
+                <h5>{t}Bribe yourself –{/t}</h5>
+
+                <p>{t}Often we have trouble paying attention simply because we are not motivated to do so. Sometimes we don’t
+                    admit this and just get mad at ourselves for not being able to pay attention.{/t}</p>
+                <h5>{t}Get Plenty of Rest -{/t}</h5>
+
+                <p>{t}Feeling tired, either by not sleeping well or from mental fatigue, can limit our attention. People who do
+                    not get enough, good quality sleep perform considerably worse on tests of attention, which can have a big
+                    impact on important tasks such as driving.{/t}</p>
+
+                <p>{t}Finally, it is also important to remember that emotions can interrupt our attention! Feeling anxious or
+                    being distracted by self-criticism or worried thoughts is often one of the biggest robbers of our attention.
+                    So learning to relax is also very important for improving attention. You will learn more about caring for
+                    your emotions and dealing with stress in the coming modules.{/t}</p>
+            </div>
+            <div class="buttons">
+                <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a
+                    href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+            </div>
+        </div>
+        <div id="lesson-9-slide-3" class="course-slide">
+            <div class="content">
+                <h2 class="flowers">{t}Attention Exercise{/t}</h2>
+                <hr/>
+                <p>
+                    {t}Allow 10 minutes of time for this activity. Please visit the following <a
+                        href="http://sharpbrains.com/blog/2007/10/16/brain-teasers-and-games-for-adults-our-top-50/"
+                        target="_blank">website</a> and participate in one of the 'Attention' activities.{/t}
+                </p>
     </div>
     <div class="buttons">
         <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a
