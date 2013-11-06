@@ -34,7 +34,7 @@ foreach(array(
 <!-- Start sidebar here -->
 
 <div id="sidebar">
-	<div class="box-sidebar one" style="background-color: #FFF;">
+	<div class="box-sidebar one">
 		<h3>{t}Evaluations{/t}</h3>
 		<br />
 		<ul id="surveys">
@@ -69,43 +69,29 @@ foreach(array(
 				$survey->model->user_id = Yii::app()->getUser()->getId();
 				?>
 				<li>
-					<a id="survey_link_<?php echo $survey->getId(); ?>" href="#survey_<?php echo $survey->getId(); ?>" title="<?php echo t($survey->model->title); ?>"><?php echo t($survey->model->title); ?> </a>
+					<a id="survey_link_<?php echo $survey->getId(); ?>" href="#survey_<?php echo $survey->getId(); ?>" class="button" title="<?php echo t($survey->model->title); ?>"><?php echo t($survey->model->title); ?> </a>
 					<?php $survey->run(); ?>
 				</li>
 				<?php
 			}
 			?>
 		</ul>
-		<br /> <img src="<?php echo $this->getImagesUrl('empower/153075496.png'); ?>" alt="image">
-	</div>
+			</div>
 	<div class="box-sidebar one">
-		<h3>Alzheimer's Association</h3>
-		<p>{t}How to respond when dementia causes unpredictable behaviors{/t}</p>
-		<p>
-			<a href="http://www.alz.org/national/documents/brochure_behaviors.pdf" target="_blank"><img src="<?php echo $this->getImagesUrl('empower/cover_behaviors.jpg'); ?>" /> </a>
-		</p>
+		<h3>Coming Soon</h3>
+		<p>{t}Coming Soon{/t}</p>
+
 	</div>
-	<div class="box-sidebar three">
-		<h3>{t}Caregiver Resources{/t}</h3>
-		<p>{t}Find a nursing home, assisted living, or hospice; check your eligibility for benefits; get resources for long-distance caregiving; review legal issues; and find support for caregivers. {/t}</p>
-		<p>
-			<a href="http://www.usa.gov/Citizen/Topics/Health/caregivers.shtml#Government_Benefits" target="_blank"><img class="block center" src="<?php echo $this->getImagesUrl('empower/usagov_logo.gif'); ?>" alt="image"> </a>
-		</p>
-	</div>
-	<div class="box-sidebar two">
-		<h3>AARP</h3>
-		<p>{t}The AARP website provides a list of tips for those providing care at a distance.{/t}</p>
-		<p>
-			<img class="block center" style="-webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px;" src="<?php echo $this->getImagesUrl('empower/162496418.png'); ?>" alt="EAP Assocation Logo">
-		</p>
-		<p>{t} Caregiving from afar is no easy task. Here are some helpful tips to keep in mind while contemplating caring for your parent from a distance..{/t}</p>
-		<p class="text-center bold">
-			<a href="http://www.aarp.org/relationships/caregiving-resource-center/info-09-2010/pc_tips_for_long_distance_caregiver.html" target="_blank">{t}Tips for the Long-Distance Caregiver{/t}</a>
-		</p>
-		<p>
-			<a href="http://www.eapassn.org/" target="_blank"></a>
-		</p>
-	</div>
+    <div class="box-sidebar one">
+        <h3>Coming Soon</h3>
+        <p>{t}Coming Soon{/t}</p>
+
+    </div>
+    <div class="box-sidebar one">
+        <h3>Coming Soon</h3>
+        <p>{t}Coming Soon{/t}</p>
+
+    </div>
 
 	<!-- need this final closing div for 'sidebar' -->
 </div>
@@ -157,7 +143,7 @@ foreach(array(
 
 	<!-- Resources div white box here -->
 
-	<div class="box-white" id="resources">
+
 		<h4>{t}Resources{/t}</h4>
 		<p>{t}Please click on your countries flag to access resources that may be required to complete this online course. Please contact your instructor or the program director if you have additional resources you would like to see added to your geographical location.{/t}</p>
 		<table>
@@ -195,21 +181,17 @@ foreach(array(
 				</td>
 			</tr>
 		</table>
-	</div>
+
 
 	<!-- Developers div white box here -->
 
-	<div class="box-white" id="developers">
+
 		<h4>{t}Course Contacts{/t}</h4>
-		<br /> <SPAN class="h5">{t}Content Designer:{/t}</SPAN> <span class="name">Linda Hollinger-Smith, PhD</SPAN>
-		<p>{t}Dr. Hollinger-Smith is a doctorally prepared registered nurse focusing her research in gerontology, workforce development, and quality improvement. She has more than 28 years of experience working with older adults in senior living, long-term care settings, in the community, and in acute care settings in various staff and managerial positions. Her past positions include Assistant Dean of the Rush University College of Nursing, Nursing Director of the Rush Primary Care Institute, and Associate Chairperson of the Department of Adult Health Nursing at Rush University College of Nursing.{/t}</p>
-		<span class="h5">{t}Developer:{/t}</span> <span class="name">Jon Woodall</span>
-		<p>{t}Mr. Woodall is responsible for all MLIA corporate workforce wellness programs related to design, implementation, publication, and evaluation. Additionally, he seeks new grant funding to support or extend current grants related to corporate workforce wellness programs.{/t}</p>
 		<span class="h5">{t}Facilitator (English / Spanish / Portuguese):{/t}</span> <span class="name">Elise Foss</span>
 		<p>{t}Ms. Foss has been facilitating online courses for Mather LifeWays Institute on Aging since 2004. Currently, she is the Fitness Coordinator for a Mather LifeWays Senior Living community. Originally from Venezuela, and educated in Brazil, Elise is fluent in English, Spanish and Portuguese, and travels to family in Brazil each year.{/t}</p>
 		<span class="h5">{t}Facilitator (Chinese):{/t}</span> <span class="name">LiJuan Yin</span>
 		<p>{t}Mrs. Lin is currently a PhD student at the University of Illinois at Chicago (UIC), studying Public Health. She has helped research, develop, and facilitate online courses for Mather LifeWays Institute on aging for the past 3 years.{/t}</p>
-	</div>
+
 
 </div>
 
