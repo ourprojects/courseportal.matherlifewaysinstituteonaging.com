@@ -18,7 +18,7 @@ foreach(array(
 
 ?>
 
-<div class="small-masthead" style="background-image: url(<?php echo $this->getImagesUrl('care/78458492r.png'); ?>);">
+<div class="small-masthead" style="background-image: url(<?php echo $this->getImagesUrl('becomingamoreconfidentcaregiver/84008631.png'); ?>);">
     <h1 class="bottom">
         <?php echo t($course->title); ?>
     </h1>
@@ -87,9 +87,8 @@ foreach(array(
     <div class="box-sidebar one">
         <h3>{t}Facilitator: Ellen Ziegemeier, MA{/t}</h3>
         <p>{t}Ms. Ziegemeier has been facilitating online courses for Mather LifeWays Institute on Aging since 2004. She earned her Masters in Anthropology, and has worked locally and abroad - Latin America and South America for various aging services. She is fluent in English and Spanish, and has a strong passion for caregiver training.{/t}</p>
-        <p>
-            <a href="#" target="_blank" class="button">Contact Facilitator</a>
-        </p>
+        <p><a href="#" target="_blank" class="button">Contact Facilitator</a></p>
+        <img src="<?php echo $this->getImagesUrl('becomingamoreconfidentcaregiver/80608570.png'); ?>" alt="{t}Facilitator{/t}" id="facilitator">
     </div>
 </div>
 <!-- Start main content here -->
@@ -117,12 +116,12 @@ foreach(array(
 
     <table style="border-bottom: 2px solid black; border-top: 2px solid black; margin-top: 10px;">
         <tr>
-            <td><h5>{t}Download the course Agenda - {/t}</h5></td>
+            <td><h5>{t}Download the course Agenda ---> {/t}</h5></td>
             <td><p><a href="<?php echo $this->createDownloadUrl('carecoachingonline/CARECoachingSyllabus.pdf'); ?>" target="_blank" class="button">{t}Agenda{/t}</a></p></td>
         </tr>
         <tr>
             <td>
-                <h5>{t}Becoming a More Confident Caregiver -{/t}</h5>
+                <h5>{t}Becoming a More Confident Caregiver --->{/t}</h5>
             </td>
             <td>
                 <p><a href="#lesson-1-slide-1" data-fancybox-group="lesson-1" class="teal lesson-1 button"> {t}Module{/t} </a> <a href="#lesson-1-slide-2" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-3" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-4" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-5" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-6" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-7" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-8" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-9" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-10" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-11" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-12" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-13" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-14" data-fancybox-group="lesson-1" class="hide lesson-1"></a></p>
