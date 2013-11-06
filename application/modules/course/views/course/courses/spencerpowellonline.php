@@ -1077,7 +1077,7 @@ foreach (array(
         </ul>
     </div>
     <div class="buttons">
-        <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Start Course &raquo;{/t}</a>
+        <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Start Module &raquo;{/t}</a>
     </div>
 </div>
 <div id="lesson-2-slide-2" class="course-slide">
@@ -1860,8 +1860,7 @@ foreach (array(
         </ul>
     </div>
     <div class="buttons">
-        <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a
-            href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+        <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Start Module &raquo;{/t}</a>
     </div>
 </div>
 <div id="lesson-3-slide-2" class="course-slide">
@@ -3543,8 +3542,7 @@ foreach (array(
         </ul>
     </div>
     <div class="buttons">
-        <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a
-            href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+        <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Start Module &raquo;{/t}</a>
     </div>
 </div>
 <div id="lesson-5-slide-2" class="course-slide">
@@ -3982,8 +3980,7 @@ foreach (array(
             memory)</p>
     </div>
     <div class="buttons">
-        <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a
-            href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
+        <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Start Module &raquo;{/t}</a>
     </div>
 </div>
 <div id="lesson-5-slide-16" class="course-slide">
@@ -5894,10 +5891,9 @@ foreach (array(
                     stimulation, and therefore seem to also weaken over time.{/t}
                 </p>
             </div>
-            <div class="buttons">
-                <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a
-                    href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
-            </div>
+    <div class="buttons">
+        <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Start &raquo;{/t}</a>
+    </div>
         </div>
         <div id="lesson-9-slide-2" class="course-slide">
             <div class="content">
@@ -5993,7 +5989,7 @@ foreach (array(
 
 <div id="lesson-10-slide-1" class="course-slide">
     <div class="content">
-        <h2 class="flowers">{t}Improving Attention{/t}</h2>
+        <h2 class="flowers">{t}Visualization{/t}</h2>
         <hr/>
         <p>{t}Congratulations on completing the Spencer Powell Brain Fitness Course! You know have the knowledge and
             tools to lead a brain-healthy life. We hope that you will continue to strive to make healthy choices in each
