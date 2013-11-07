@@ -183,7 +183,7 @@ foreach (array(
                     <a href="#lesson-1-slide-24" data-fancybox-group="lesson-1" class="hide lesson-1"></a>
                     <a href="#lesson-1-slide-25" data-fancybox-group="lesson-1" class="hide lesson-1"></a>
                     <a href="#lesson-1-slide-26" data-fancybox-group="lesson-1" class="hide lesson-1"></a>
-                    <a href="#lesson-1-slide-27" data-fancybox-group="lesson-1" class="hide lesson-1"></a>
+
                 </p>
             </td>
         </tr>
