@@ -72,23 +72,20 @@ foreach (array(
             ?>
         </ul>
     </div>
-    <div class="box-sidebar one">
-        <h3>{t}Working Caregivers in America{/t}</h3>
-        <img src="<?php echo $this->getImagesUrl('care/286x366_Grafix_69pc.png'); ?>" alt="image" class="block center"/>
 
-        <p>{t}69% of working caregivers report having to rearrange their work schedule, decrease their hours, or take an
-            unpaid leave of absence to meet their care-giving responsibilities.{/t}</p>
-    </div>
     <div class="box-sidebar one">
         <h3>{t}Certificate of Completion{/t}</h3>
 
-        <p>{t}Click the button below to access your certificate once you have successfully completed the module. You will be able to manually add your name, date, and
+        <p>{t}Click the button below to access your certificate once you have successfully completed the module. You
+            will be able to manually add your name, date, and
             course title.{/t}</p>
 
         <p>
             <a href="<?php echo $this->createDownloadUrl('CourseCompletionCertificate.pdf'); ?>" target="_blank"
                class="button">Download Certificate</a>
         </p>
+        <img src="<?php echo $this->getImagesUrl('becomingamoreconfidentcaregiver/166312138.png'); ?>" id="certificate"
+             alt="{t}Image{/t}">
     </div>
     <div class="box-sidebar one">
         <h3>{t}Facilitator: Ellen Ziegemeier, MA{/t}</h3>
@@ -101,6 +98,13 @@ foreach (array(
         <p><a href="#" target="_blank" class="button">Contact Facilitator</a></p>
         <img src="<?php echo $this->getImagesUrl('becomingamoreconfidentcaregiver/80608570.png'); ?>"
              alt="{t}Facilitator{/t}" id="facilitator">
+    </div>
+    <div class="box-sidebar one">
+        <h3>{t}Working Caregivers in America{/t}</h3>
+        <img src="<?php echo $this->getImagesUrl('care/286x366_Grafix_69pc.png'); ?>" alt="image" class="block center"/>
+
+        <p>{t}69% of working caregivers report having to rearrange their work schedule, decrease their hours, or take an
+            unpaid leave of absence to meet their care-giving responsibilities.{/t}</p>
     </div>
 </div>
 <!-- Start main content here -->
@@ -130,8 +134,9 @@ foreach (array(
     <table style="border-bottom: 2px solid black; border-top: 2px solid black; margin-top: 10px;">
         <tr>
             <td><h5>{t}Download the course Agenda - {/t}</h5></td>
-            <td><p><a href="<?php echo $this->createDownloadUrl('becomingamoreconfidentcaregiver/Agenda_becomingamoreconfidentcaregiver.pdf'); ?>"
-                      target="_blank" class="button">{t}Agenda{/t}</a></p></td>
+            <td><p>
+                    <a href="<?php echo $this->createDownloadUrl('becomingamoreconfidentcaregiver/Agenda_becomingamoreconfidentcaregiver.pdf'); ?>"
+                       target="_blank" class="button">{t}Agenda{/t}</a></p></td>
         </tr>
         <tr>
             <td>
@@ -224,7 +229,7 @@ AARP provides various articles of interest and resources for family caregivers. 
         </li>
     </ul>
 
-    <h4>{t}Video - Working Caregivers{/t}</h4>
+    <h4>{t}Optional Video - Working Caregivers{/t}</h4>
 
     <h5>The Sandwich Generation - by Media Storm</h5>
 
