@@ -2,6 +2,9 @@
 .DS_Store
 _notes
 
+#PhpStorm Files
+.idea
+
 # Directories with dynamic content
 /assets/*
 /application/runtime/*
