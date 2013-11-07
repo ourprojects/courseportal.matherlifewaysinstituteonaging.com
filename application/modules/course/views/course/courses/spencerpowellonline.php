@@ -71,7 +71,7 @@ foreach (array(
             below to access your certificate where you will be able to manually add your name and date.{/t}</p>
 
         <p>
-            <a href="<?php echo $this->createDownloadUrl('spencer/certificate.pdf'); ?>" target="_blank" class="button">Download Certificate</a>
+            <a href="<?php echo $this->createDownloadUrl('spencer/CertificateOfCompletion_SpencerPowell.pdf'); ?>" target="_blank" class="button">Download Certificate</a>
         </p>
     </div>
     <div class="box-sidebar one">
