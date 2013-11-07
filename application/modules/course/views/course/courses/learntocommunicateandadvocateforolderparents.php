@@ -19,7 +19,7 @@ foreach (array(
 ?>
 
 <div class="small-masthead"
-     style="background-image: url(<?php echo $this->getImagesUrl('becomingamoreconfidentcaregiver/84008631.png'); ?>);">
+     style="background-image: url(<?php echo $this->getImagesUrl('learntocommunicateandadvocateforolderparents/163354198.png'); ?>);">
     <h1 class="bottom">
         <?php echo t($course->title); ?>
     </h1>
@@ -84,7 +84,8 @@ foreach (array(
             <a href="<?php echo $this->createDownloadUrl('CourseCompletionCertificate.pdf'); ?>" target="_blank"
                class="button">Download Certificate</a>
         </p>
-        <img src="<?php echo $this->getImagesUrl('becomingamoreconfidentcaregiver/166312138.png'); ?>" id="certificate"
+        <img src="<?php echo $this->getImagesUrl('learntocommunicateandadvocateforolderparents/166312138.png'); ?>"
+             id="certificate"
              alt="{t}Image{/t}">
     </div>
     <div class="box-sidebar one">
@@ -96,7 +97,7 @@ foreach (array(
             training.{/t}</p>
 
         <p><a href="#" target="_blank" class="button">Contact Facilitator</a></p>
-        <img src="<?php echo $this->getImagesUrl('becomingamoreconfidentcaregiver/80608570.png'); ?>"
+        <img src="<?php echo $this->getImagesUrl('learntocommunicateandadvocateforolderparents/80608570.png'); ?>"
              alt="{t}Facilitator{/t}" id="facilitator">
     </div>
     <div class="box-sidebar one">
@@ -132,7 +133,6 @@ foreach (array(
         to access this course:{/t}
     </p>
     <ul>
-        <li>{t}Spreadsheet processor (Microsoft Excel or similar){/t}</li>
         <li><a href="http://get.adobe.com/reader/" target="_blank">{t}Adobe Acrobat{/t}</a></li>
     </ul>
     <h4>{t}Objectives{/t}</h4>
@@ -148,7 +148,7 @@ foreach (array(
         <tr>
             <td><h5>{t}Download the course Agenda - {/t}</h5></td>
             <td><p>
-                    <a href="<?php echo $this->createDownloadUrl('becomingamoreconfidentcaregiver/Agenda_becomingamoreconfidentcaregiver.pdf'); ?>"
+                    <a href="<?php echo $this->createDownloadUrl('learntocommunicateandadvocateforolderparents/Agenda_learntocommunicateandadvocateforolderparents.pdf'); ?>"
                        target="_blank" class="button">{t}Agenda{/t}</a></p></td>
         </tr>
         <tr>
@@ -555,7 +555,7 @@ AARP provides various articles of interest and resources for family caregivers. 
             activities from this course for future reference.{/t}</p>
 
         <p>
-            <a href="<?php echo $this->createDownloadUrl('becomingamoreconfidentcaregiver/Activity_Self_Awareness_Survey.doc'); ?>"
+            <a href="<?php echo $this->createDownloadUrl('learntocommunicateandadvocateforolderparents/Activity_Self_Awareness_Survey.doc'); ?>"
                target="_blank" class="button">Download Activity</a>
         </p>
 
@@ -737,7 +737,7 @@ AARP provides various articles of interest and resources for family caregivers. 
             responses.{/t}</p>
 
         <p>
-            <a href="<?php echo $this->createDownloadUrl('becomingamoreconfidentcaregiver/Activity_Principles_of_Success.xls'); ?>"
+            <a href="<?php echo $this->createDownloadUrl('learntocommunicateandadvocateforolderparents/Activity_Principles_of_Success.xls'); ?>"
                target="_blank" class="button">Download Activity</a>
         </p>
 
@@ -1035,7 +1035,7 @@ AARP provides various articles of interest and resources for family caregivers. 
         <p>{t}Click below to download a copy of this page to write in your goals.{/t}</p>
 
         <p>
-            <a href="<?php echo $this->createDownloadUrl('becomingamoreconfidentcaregiver/Exercise_Setting_your_Goals.docx'); ?>"
+            <a href="<?php echo $this->createDownloadUrl('learntocommunicateandadvocateforolderparents/Exercise_Setting_your_Goals.docx'); ?>"
                target="_blank" class="button">Download Activity</a>
         </p>
 
@@ -1077,7 +1077,7 @@ AARP provides various articles of interest and resources for family caregivers. 
 
     </div>
     <div class="buttons">
-        <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Complete Module{/t} </a>
+        <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Complete Course{/t} </a>
     </div>
 </div>
 
