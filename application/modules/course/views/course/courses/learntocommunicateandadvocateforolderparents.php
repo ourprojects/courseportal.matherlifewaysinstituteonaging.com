@@ -265,11 +265,11 @@ AARP provides various articles of interest and resources for family caregivers. 
 <div id="lesson-1">
 <div id="lesson-1-slide-1" class="course-slide">
     <div class="content">
-        <h2 class="flowers">{t}Becoming a More Confident Caregiver{/t}</h2>
+        <h2 class="flowers">{t}Learning to Communicate and Advocate for Older Parents{/t}</h2>
         <hr/>
-        <p>{t}Welcome to the course, “Becoming a More Confident Caregiver.” This course is geared towards family members
-            who provide support or care to an older adult who may be a parent, spouse, other relative, or a significant
-            other.{/t}</p>
+        <p>{t}Welcome to the course, “Learning to Communicate and Advocate for Older Parents.” This course is geared
+            towards family members who provide support or care to an older adult who may be a parent, spouse, other
+            relative, or a significant other. {/t}</p>
 
         <p>{t}Also, this course may be of help to a “future caregiver” to better prepare oneself for a future caregiving
             role. Whether you are now – or will be in the future – a caregiver for an older adult, it is important to
@@ -312,7 +312,9 @@ AARP provides various articles of interest and resources for family caregivers. 
             caregiving situation so you may better prepare and feel confident about your caregiving responsibilities and
             actions.{/t}</p>
 
-        <p>{t}So let's begin with some facts about family caregivers!{/t}</p>
+        <p>{t}In this course, we’ll focus on the first two elements of CARE Coaching, that of “Communicating” and
+            “Advocating.”{/t}</p>
+
     </div>
     <div class="buttons">
         <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t} </a> <a
@@ -321,31 +323,28 @@ AARP provides various articles of interest and resources for family caregivers. 
 </div>
 <div id="lesson-1-slide-3" class="course-slide">
     <div class="content">
-        <h2 class="flowers">{t}Some facts about family caregivers{/t}</h2>
+        <h2 class="flowers">{t}CARE Coaching: Communicating{/t}</h2>
         <hr/>
-        <p>{t}Here are some interesting facts about family caregivers:{/t}</p>
+        <p>{t}Caregiving commonly brings up feelings of burden, confusion, and guilt for caregivers. Communicating is
+            the first component of CARE Coaching. As a first step, using some key communication skills can relieve some
+            of these concerns.{/t}</p>
 
-        <ul>
-            <li>{t}Nearly 44 million family caregivers provided support or care to someone ages 50 years or older.{/t}
-            </li>
-            <li>{t}Nearly 15 million family caregivers care for someone with Alzheimer’s disease or other forms of
-                dementia.{/t}
-            </li>
-            <li>{t}More than two-thirds of family caregivers taking care of an older adult are female.{/t}</li>
-            <li>{t}Two-thirds of family caregivers do not live with the older adults they are caring for.{/t}</li>
-            <li>{t}Nearly 60 percent of care recipients live in their own homes.{/t}</li>
-            <li>{t}The number of male caregivers is steadily growing. Male caregivers are more likely to help with tasks
-                related to the home of the older adult (such as home repairs or financial issues) while female
-                caregivers perform more physical care tasks (such as bathing or dressing).{/t}
-            </li>
-            <li>{t}A significant portion of family caregiver’s time focuses on errands (such as shopping,
-                transportation, picking up medications), researching and making care arrangements, transportation to
-                physician appointments, and managing financial matters.{/t}
-            </li>
-            <li>{t}More than one in six working caregivers care for one or more older adults.{/t}</li>
-        </ul>
+        <p>{t} Does this scenario sound familiar? You are in a restaurant having dinner with your older parents. Your
+            mother has some memory problems which means she takes quite a long time to figure out what to order. The
+            waiter is standing over your table, and your father gets frustrated waiting for her to order. He says,
+            “Helen, just order the chicken. You like the chicken!” She says, “I guess I’ll have the chicken.”{/t}</p>
 
-        <p>{t}Next, we’ll learn more about the CARE Coaching concepts.{/t}</p>
+        <p>{t}After the waiter leaves (and in front of your mother), he says, “She takes too long to order. She’s
+            distracted with other things going on. She can’t figure it out, so it’s easy for her if I just tell her, and
+            all she has to do is repeat it.” Your mother subsequently doesn’t say much through the rest of the evening.
+            The mood around the table is not much better.{/t}</p>
+
+        <p>{t}Communicating in CARE Coaching is all about choice. Your father’s response is based on his own perceptions
+            and feelings about what’s going on with your mother rather than supporting her remaining potential to make
+            choices. Perhaps her memory problems do interfere with her capacity to make choices, but being able to
+            “modify” the situation can maximize Helen’s remaining capacities.{/t}</p>
+
+        <p>{t}Let’s look at an alternative approach.{/t}</p>
 
     </div>
     <div class="buttons">
@@ -356,20 +355,23 @@ AARP provides various articles of interest and resources for family caregivers. 
 
 <div id="lesson-1-slide-4" class="course-slide">
     <div class="content">
-        <h2 class="flowers">{t}What’s coaching all about?{/t}</h2>
+        <h2 class="flowers">{t}An example of an alternative approach{/t}</h2>
         <hr/>
-        <p>{t}You are probably familiar with the term “coaching” from many aspects of our daily lives.{/t}</p>
+        <p>{t}Back at the restaurant, the waiter is ready to take the order. You say, “Mom, this restaurant is really
+            well known for their delicious chicken and fish dishes, just the way you like them. What do you have a taste
+            for today – chicken or fish?” Your mother says, “Well, I just don’t know. I had chicken for lunch today. So
+            I think I’d like to try their fish!” {/t}</p>
 
-        <p>{t}As a parent or sibling, you may be involved in coaching little league or some other sport. Usually this
-            form of coaching involves teams. The role of the coach is to motivate, set ground rules, and draw out the
-            best in each player for the good of the team.{/t}</p>
+        <p>{t}So what is different in the two approaches? In your approach, you are taking a CARE Coaching approach by
+            asking a version of “What do you want?” through your conversation. Taking into consideration your mother’s
+            limitations, you have supported her remaining abilities to participate in daily life activities.{/t}</p>
 
-        <p>{t}In the work environment, coaching may also involve the work team or individual. Coaching the work team may
-            involve looking at ways to turn barriers into opportunities for the good of the team and company. An
-            organization may bring in a professional coach to build sustainable, high-performance work teams and thus
-            build the company’s competitive advantage over other organizations. At the individual level, a coach may
-            focus on leadership development showing the company’s commitment to build a strong base of effective
-            leaders.{/t}</p>
+        <p>{t}You may not yet be in a “caregiving” role for your older parents or other loved ones (or you may not
+            consider what you now do for them as “caregiving”), but this course is designed to help you think about the
+            future. People may find themselves “plunged” into the caregiving role at a time in life when they themselves
+            are facing challenges such as mid-career transitions, their own health issues, or before retirement.
+            Additionally, they may be contending with raising their own children simultaneously.
+            {/t}</p>
 
     </div>
     <div class="buttons">
@@ -380,36 +382,34 @@ AARP provides various articles of interest and resources for family caregivers. 
 
 <div id="lesson-1-slide-5" class="course-slide">
     <div class="content">
-        <h2 class="flowers">{t}Role reversals with aging parents{/t}</h2>
+        <h2 class="flowers">{t}Common feelings about caregiving{/t}</h2>
         <hr/>
-        <p>{t}As a current or future caregiver, you may be feeling as if you are in a “reversed role” to an elderly
-            parent, other relative, or friend. When we are young, we look up to parents or others as a “coach” in many
-            respects. Though it may have been difficult at times for all of us growing up, the effective parent “coach”
-            had the following skill set:{/t}</p>
+        <p>{t}Caregiving commonly brings up feelings of burden, confusion, and guilt for caregivers. As a first step,
+            using some key communication skills can relieve some of these concerns. Where do these feelings stem from?
+            Burden refers to emotional response to changes and demands that occur as caregivers give help and support to
+            the older person.{/t}</p>
 
-        <ul>
-            <li>
-                {t}They respected us, so we listened to them.{/t}
-            </li>
-            <li>
-                {t}They listened to us, so we felt understood.{/t}
-            </li>
-            <li>
-                {t}They appreciated us, so we felt supported.{/t}
-            </li>
-            <li>
-                {t}They supported us when we tried new things, so we grew more responsible.{/t}
-            </li>
-        </ul>
-        <p>{t}As our parents age, they may suffer declining physical or cognitive health and thus have greater need for
-            our help and understanding, and so we may become their “coach” in life. That is easier said than done in
-            many cases! Regardless of their age, our parents always see themselves in that role in our relationship with
-            them.{/t}</p>
+        <p>{t}We have developed a Caregiver Burden Assessment to help you identify aspects of your life that may or may
+            not be impacted by caregiving at this time. Click on the following to access the tool.{/t}</p>
 
-        <p>{t}We also tend to go back into old habits, communication styles, or reactions when dealing with our parents.
-            How do you deal with a situation where your father begins to have minor car accidents or “forgets” the way
-            home? Talking with a parent about giving up the car keys is probably one of the most challenging situations
-            we may face as a caregiver.{/t}</p>
+        <p>
+            <a href="<?php echo $this->createDownloadUrl('learntocommunicateandadvocateforolderparents/Caregiver_Burden_Assessment_Tool.doc'); ?>"
+               target="_blank" class="button">Download Assessment</a>
+        </p>
+
+        <p>{t}Confusion about the healthcare system and utilization of those services by older adults is a universal
+            experience for caregivers. Later in this course, we will address important ways for you to better understand
+            the key roles and responsibilities of care providers as well as where concise, accurate information may be
+            found to also share with your older parents.{/t}</p>
+
+        <p>{t}Guilt is often an ongoing feeling for many caregivers. Sometimes caregivers get so focused on their frail,
+            older parent that they feel guilty focusing on someone else – including themselves. Empower Online addresses
+            these issues for caregivers and provides tools focused on self-care of the caregiver.{/t}</p>
+
+        <p>{t}As a first step to better communication with your older parents about their needs and preferences, it is
+            important that you have a clear understanding of what you may know and do not know about these needs and
+            preferences. The next exercise will help you determine your level of knowledge as well as your own feelings
+            about your parents’ future planning.{/t}</p>
     </div>
     <div class="buttons">
         <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t} </a> <a
@@ -419,24 +419,21 @@ AARP provides various articles of interest and resources for family caregivers. 
 
 <div id="lesson-1-slide-6" class="course-slide">
     <div class="content">
-        <h2 class="flowers">{t}What’s CARE Coaching all about?{/t}</h2>
+        <h2 class="flowers">{t}Exercise – understanding your parents' needs and preferences{/t}</h2>
         <hr/>
-        <p>{t}CARE Coaching involves a method to help you as a caregiver think differently about a caregiving situation
-            so you may better prepare and feel confident about your caregiving responsibilities and actions. Learning
-            what is important to older parents – and learning how to draw that out – often bringing to light new
-            information about what is important to them in terms of their own health and care.{/t}</p>
+        <p>{t}This exercise is designed to help you determine what you know and do not know about your parents needs and
+            preferences. Determining this now will help you on the road of communicating more openly about your parents’
+            future wishes to reduce your experience of burden, confusion, and guilt as a caregiver. {/t}</p>
 
-        <p>{t}CARE Coaching will provide your tools, resources, and experiences targeted towards strengthening your
-            caregiving abilities to Communicate, Advocate, Relate, and Encourage older parents or other loved ones.
-            Throughout this course, we will highlight these terms and provide examples and activities to help you on
-            this journey.{/t}</p>
+        <p>{t}Everyone has a different level of knowledge when it comes to the following information, so do not feel
+            overwhelmed if you do not recall or have not addressed some of these areas with your parents.{/t}</p>
 
-        <p>{t}In this course, we’ll usually talk about “older parents,” but we realize that caregivers may be involved
-            in caring for older siblings, other relatives, friends, or neighbors. For the purposes of this course, we
-            will use “older parents” as our “short-hand” descriptor of any older adult that you may be caring
-            for!{/t}</p>
+        <p>{t}Please note that you may print or save any activities from this course for future reference.{/t}</p>
 
-        <p>{t}Before we can start coaching others, let’s consider our skills related to coaching ourselves!{/t}</p>
+        <p>
+            <a href="<?php echo $this->createDownloadUrl('learntocommunicateandadvocateforolderparents/Exercise_Understanding_Needs_and_Preferences.doc'); ?>"
+               target="_blank" class="button">Download Exercise</a>
+        </p>
 
     </div>
     <div class="buttons">
@@ -448,35 +445,17 @@ AARP provides various articles of interest and resources for family caregivers. 
 
 <div id="lesson-1-slide-7" class="course-slide">
     <div class="content">
-        <h2 class="flowers">{t}Self-coaching: It all starts with me!{/t}</h2>
+        <h2 class="flowers">{t}Where to start "the talk"!{/t}</h2>
         <hr/>
-        <p>{t}Self-coaching shifts the approach from the cycling negative “internal dialogue” to help you focus on
-            what’s important to you right now and how you may accomplish that goal.{/t}</p>
+        <p>{t}Don't feel anxious if you had a number of "blanks" when working through the previous exercise - it is not
+            a reflection on "bad" caregiving. Your parents have been independent through these many years and may not
+            have felt the need to share much of these matters with "the kids."{/t}</p>
 
-        <p>{t}In this case, it’s alright to say “it’s all about me!” There is quite a bit of information published about
-            “self-coaching.” Think about the fact that we each represent a unique individual surrounded by a myriad of
-            things going on inside and outside of ourselves.{/t}</p>
+        <p>{t}What do we mean by “the talk”? In the context of this course, it is the often difficult discussion about
+            what they are wanting for their future.{/t}</p>
 
-        <p>{t}We constantly have an “internal dialogue” going on that no one else can hear. As a caregiver, that
-            “internal dialogue” may be reliving negative experiences:{/t}</p>
-
-        <ul>
-            <li>
-                {t}“If only my mother listened to me and moved in with us years ago, she wouldn’t have fallen, broken
-                her hip, and wound up in that terrible nursing home!”{/t}
-            </li>
-            <li>
-                {t}“I just can’t take on more responsibility for my dad’s care. I already work 50 to 60 hours a week and
-                have family responsibilities. But if I don’t, who will?”{/t}
-            </li>
-            <li>
-                {t}“How am I going to bring up the issue of long-term care planning with my parents? They always shut me
-                off when I bring up questions about their finances.”{/t}
-            </li>
-        </ul>
-
-        <p>{t}Going over and over these types of thoughts and questions in our minds does not get to problem
-            solving.{/t}</p>
+        <p>{t}How do you start to talk to your older parents about the future? What fears do you have about bringing up
+            this topic with them?{/t}</p>
 
     </div>
     <div class="buttons">
@@ -487,47 +466,33 @@ AARP provides various articles of interest and resources for family caregivers. 
 
 <div id="lesson-1-slide-8" class="course-slide">
     <div class="content">
-        <h2 class="flowers">{t}Self-coaching “self talk”{/t}</h2>
+        <h2 class="flowers">{t}A framework to start "the talk"{/t}</h2>
         <hr/>
-        <p>{t}Self-coaching shifts the approach from the cycling negative “internal dialogue” to help you focus on
-            what’s important to you right now and how you may accomplish that goal.{/t}</p>
+        <p>{t}A framework has been developed to help you getting the conversations going. Overall, start small while
+            your parents are still healthy and can fully participate in the discussions about their lives and health
+            without undue pressure.{/t}</p>
 
-        <p>{t}Say this to yourself:{/t}</p>
-        <ul>
-            <li>
-                {t}I am going to accomplish something.{/t}
-            </li>
-            <li>
-                {t}I am going to figure it out.{/t}
-            </li>
-            <li>
-                {t}I am going to do my best thinking, because I want to get to what’s important.{/t}
-            </li>
-        </ul>
-
-        <p>{t}Now, say this out loud:{/t}</p>
+        <p>{t} Think of this paced way to communicate as "TEMPO." This acronym stands for:{/t}</p>
 
         <ul>
             <li>
-                {t}I am going to accomplish something.{/t}
+                {t}Timing{/t}
             </li>
             <li>
-                {t}I am going to figure it out.{/t}
+                {t}Experience{/t}
             </li>
             <li>
-                {t}I am going to do my best thinking, because I want to get to what’s important.{/t}
+                {t}Motivation{/t}
+            </li>
+            <li>
+                {t}Place{/t}
+            </li>
+            <li>
+                {t}Outcome{/t}
             </li>
         </ul>
 
-        <p>{t}This is just a simple exercise in positive self-talk. Our internal voice and thoughts have the capability
-            to create our reality, and so it is our daily challenge to move aside the negative, cyclical thinking and
-            focus on positive steps we may take to move forward. Focusing on the many skills you already have inside of
-            yourself not only will benefit your own health, success, and self-esteem, but will be of great aide to your
-            caregiving responsibilities.{/t}</p>
-
-        <p>{t}Let’s first assess where you currently are related to your readiness and awareness for self-coaching, and
-            then we will move into some self-coaching exercises that you may continue as often as you feel it would be
-            helpful to you.{/t}</p>
+        <p>{t}Let’s look at each of these components.{/t}</p>
 
     </div>
     <div class="buttons">
@@ -538,16 +503,17 @@ AARP provides various articles of interest and resources for family caregivers. 
 
 <div id="lesson-1-slide-9" class="course-slide">
     <div class="content">
-        <h2 class="flowers">{t}Activity – Self-awareness survey{/t}</h2>
+        <h2 class="flowers">{t}A framework to start "the talk" - timing{/t}</h2>
         <hr/>
-        <p>{t}This activity invites you to explore and live several questions. Your responses should open up more
-            self-awareness of what is important to you in your life. Please note that you may print or save any
-            activities from this course for future reference.{/t}</p>
+        <p>{t}Plan to set aside time for conversations with your parents. You may want to have a “standing day and time”
+            scheduled.{/t}</p>
 
-        <p>
-            <a href="<?php echo $this->createDownloadUrl('learntocommunicateandadvocateforolderparents/Activity_Self_Awareness_Survey.doc'); ?>"
-               target="_blank" class="button">Download Activity</a>
-        </p>
+        <p>{t}Be respectful and ask them when would be the best time for them to have these conversations.{/t}</p>
+
+        <p>{t}In turn, make sure you have time to listen. No ringing cell phones or texting at this time!{/t}</p>
+
+        <p>{t}Above all, be patient. Your parents may feel uncomfortable at first with the idea of these conversations
+            and may want to put them off for some time.{/t}</p>
 
     </div>
     <div class="buttons">
@@ -558,19 +524,40 @@ AARP provides various articles of interest and resources for family caregivers. 
 
 <div id="lesson-1-slide-10" class="course-slide">
     <div class="content">
-        <h2 class="flowers">{t}Creating the environment for self-coaching{/t}</h2>
+        <h2 class="flowers">{t}A framework to start "the talk" – experience{/t}</h2>
         <hr/>
-        <p>{t}The principle behind self-coaching (and CARE Coaching for that matter!) is the revelation of solutions
-            already inherent in each person. For those who may be fortunate to experience an external coach, their role
-            is to facilitate the experience and create an environment for the person being coached to do their best
-            thinking. {/t}</p>
+        <p>{t}A good approach to bringing up these difficult topics is to relate it to your experiences.{/t}</p>
 
-        <p>{t}Self-coaching can work in the same way for many individuals who commit some time and effort into the
-            process. We have included several exercises throughout this course that will help you practice coaching
-            skills that will be valuable when coaching yourself or communicating in your caregiving role with older
-            parents. {/t}</p>
+        <p>{t}Some openers sound like this:{/t}</p>
 
-        <p>{t}Let’s look at the five steps necessary to create an effective self-coaching experience.{/t}</p>
+        <p>{t}"Dad, I just came from my attorney's office. We finished updating my will. I was wondering when the last
+            time you took a look at yours?"{/t}</p>
+
+        <p>{t}"Mom, a colleague of mine at work just had an unfortunate experience. His father had a sudden heart
+            attack, and it took a long time before they could notify him because his dad did not have any emergency
+            contact information in place. Can we go over how your information is organized particularly since my office
+            recently moved and I have new phone numbers?"{/t}</p>
+
+        <p>{t}"It's really gotten to be a challenge driving out there. I'm on the road all day and see quite a few bad
+            drivers, especially those on their cell phones. I'm concerned about how you're feeling about driving these
+            days."{/t}</p>
+
+        <p>{t}Try this yourself.{/t}</p>
+
+        <ul>
+            <li>
+                {t}Identify the difficult topic you are wanting to bring up with your parent.{/t}
+            </li>
+            </li>
+            <li>
+                {t}Think of an experience you or someone you may know that addresses this topic.{/t}
+            </li>
+            </li>
+            <li>
+                {t}Describe the experience and impact in no more than two sentences.{/t}
+            </li>
+            </li>
+        </ul>
 
     </div>
     <div class="buttons">
@@ -581,15 +568,21 @@ AARP provides various articles of interest and resources for family caregivers. 
 
 <div id="lesson-1-slide-11" class="course-slide">
     <div class="content">
-        <h2 class="flowers">{t}What is necessary to create an effective self-coaching experience?{/t}</h2>
+        <h2 class="flowers">{t}A framework to start "the talk" – experience{/t}</h2>
         <hr/>
-        <h4>{t}Step 1{/t}</h4>
+        <p>{t}Relate the topic back to you or your concerns about your parent. It is very important not to put blame on
+            your parent. For example, looking at the last opener noted above, saying to your parent, “You really seem
+            confused sometimes behind the wheel” will not move the conversation forward. Rather, saying “I’m concerned
+            about how you’re feeling about driving these days” puts the focus on you rather than setting up a potential
+            confrontation. A framework to start "the talk" – motivation.{/t}</p>
 
-        <p>{t}You are aware of the need for change and are prepared to accept that you cannot blame others or
-            circumstances of a situation.{/t}</p>
+        <p>{t}Be clear about your motive for having the conversation.{/t}</p>
 
-        <p>{t}In other words, you are willing to be open to choices and you are willing to make those choices. It would
-            be most like stepping outside of your situation and viewing it as impartially as possible.{/t}</p>
+        <p>{t}The motivating factors should be related to safety, quality of life, and well-being - both theirs and
+            yours.{/t}</p>
+
+        <p>{t}Their best interests are prime consideration, but your life and the lives of your family also
+            matter.{/t}</p>
 
     </div>
     <div class="buttons">
@@ -600,26 +593,17 @@ AARP provides various articles of interest and resources for family caregivers. 
 
 <div id="lesson-1-slide-12" class="course-slide">
     <div class="content">
-        <h2 class="flowers">{t}What is necessary to create an effective self-coaching experience?{/t}</h2>
+        <h2 class="flowers">{t}What are the motivators in your situation?A framework to start "the talk" –
+            place{/t}</h2>
         <hr/>
-        <h4>{t}Step 2{/t}</h4>
+        <p>{t}The place where these conversations take place needs to be a "safe space" as your parents would define
+            that.{/t}</p>
 
-        <p>{t}You are prepared to ask yourself some difficult questions and not avoid answering them. {/t}</p>
+        <p>{t}It may not necessarily be in their home.{/t}</p>
 
-        <p>{t}Imagine that you are in some tough discussions with your father and siblings about dad’s lack of caring
-            for himself living alone. Dad has grown more isolated day by day. When visiting one day, you are shocked to
-            find empty food containers and spoiled food in the refrigerator. There is a stack of unpaid bills on the
-            kitchen counter next to a jar of various pills mixed together. You bring this up with your siblings, but
-            their reaction is, “Dad is fine. He wants to stay in his house, and it’s not our place to kick him out!”
-            Your dad says, “I just haven’t gotten around to some things…and I’d thank you to stay out of my
-            business!”{/t}</p>
-
-        <p>{t}Are your prepared to ask yourself some key questions like…”Am I an effective caregiver? Why do I think
-            that I am not getting the response I need from my dad or siblings? What response should I expect? Why do I
-            believe that I should expect it? Is it realistic and upon what observations do I base the
-            perception?”{/t}</p>
-
-        <p>{t}Most importantly, “When I think about being a good caregiver, what’s important to me?”{/t}</p>
+        <p>{t}Some of these topics are sensitive and so one parent may feel more comfortable taking the lead in the
+            conversations.
+            {/t}</p>
 
     </div>
     <div class="buttons">
@@ -630,14 +614,17 @@ AARP provides various articles of interest and resources for family caregivers. 
 
 <div id="lesson-1-slide-13" class="course-slide">
     <div class="content">
-        <h2 class="flowers">{t}What is necessary to create an effective self-coaching experience?{/t}</h2>
+        <h2 class="flowers">{t}What may be a comfortable place for your conversations?A framework to start "the talk" –
+            outcome{/t}</h2>
         <hr/>
-        <h4>{t}Step 3{/t}</h4>
+        <p>{t}One conversation is not going to address all the important topics that need to be discussed.{/t}</p>
 
-        <p>{t}You accept that through self-coaching, you are going to persist until you identify a solution and set of
-            actions that you will then commit to implementing. {/t}</p>
+        <p>{t}The initial conversations may be laying the groundwork for you to better understand your parents’
+            feelings.{/t}</p>
 
-        <p>{t}It may take some time to achieve results, but you need to stick to your goal.{/t}</p>
+        <p>{t}Not only do you want to get information, but you also want to share information.{/t}</p>
+
+        <p>{t} What outcomes would be your goal in your conversations?{/t}</p>
 
     </div>
     <div class="buttons">
@@ -648,23 +635,16 @@ AARP provides various articles of interest and resources for family caregivers. 
 
 <div id="lesson-1-slide-14" class="course-slide">
     <div class="content">
-        <h2 class="flowers">{t}What is necessary to create an effective self-coaching experience?{/t}</h2>
+        <h2 class="flowers">{t}Activity - Practice "The Talk"{/t}</h2>
         <hr/>
-        <h4>{t}Step 4{/t}</h4>
+        <p>{t}Some caregivers feel that practice sessions are valuable to "test out" the conversations in other
+            situations. Here are some practice activities for you to try out.{/t}</p>
 
-        <p>{t}Be willing to “let it go.”{/t}</p>
-
-        <p>
-            {t}We’ve all been in the situation where something just nags at us. Things always seem worse when we pay too
-            much attention to them. If I feel anxious, overwhelmed, or depressed and focus on those feelings, I become
-            it. By letting go, I turn away from it. I don’t feed those problems any longer.{/t}
-        </p>
+        <h5>{t}Practice “The Talk”){/t}</h5>
 
         <p>
-            {t}It is sort of like flipping to another television channel. You may not be able to stop a thought from
-            “percolating” in your mind, but you can say “no!” to thoughts that result in anxiety or depression. We
-            always have choices. In this case, we have the choice not be become a victim of negative thoughts or
-            insecurities.{/t}
+            <a href="<?php echo $this->createDownloadUrl('learntocommunicateandadvocateforolderparents/Activity_Practice_the_Talk.doc'); ?>"
+               target="_blank" class="button">Download Activity</a>
         </p>
 
     </div>
@@ -676,17 +656,54 @@ AARP provides various articles of interest and resources for family caregivers. 
 
 <div id="lesson-1-slide-15" class="course-slide">
     <div class="content">
-        <h2 class="flowers">{t}What is necessary to create an effective self-coaching experience?{/t}</h2>
+        <h2 class="flowers">{t}CARE Coaching: Advocating{/t}</h2>
         <hr/>
-        <h4>{t}Step 5{/t}</h4>
+        <p>{t}It’s time to bring up the second component of CARE Coaching – that of advocating. We are talking about
+            advocating in a caring sense – that of supporting another – rather than in the legal sense – that of
+            defending another.{/t}</p>
 
-        <p>{t}Set a time frame for the self-coaching session.{/t}</p>
+        <p>{t}Caregivers often view their parents as “stubborn” or “resistant” to their help:{/t}</p>
 
-        <p>
-            {t}The focus of self-coaching is to identify your goal, commit to your actions, and then move on to do
-            something else. Sometimes your best thinking goes on when you do move onto something else and then come back
-            to your goal. {/t}
-        </p>
+        <ul>
+            <li>
+                {t}“I just can’t get them to listen to me!”
+            </li>
+            <li>
+                {t}“They just won’t talk to me about their problem, even though I’ve got the answer!”
+            </li>
+            <li>
+                {t}“They never take my advice – even though it’s for their own good!”
+            </li>
+        </ul>
+
+        <p>{t} Sounds like some things your parents may have said to you growing up? In these situations, the caregiver
+            is thinking more like the parent, and we remember from our early experiences hearing these – how much did
+            they work when your parents were saying these words to you?{/t}</p>
+
+        <p>{t}Consider this comparison:{/t}</p>
+
+        <ul>
+            <li>
+                {t}In the role of PARENT – you are in charge, make the rules, and set the agenda. Negotiating is
+                unnecessary. You are a “teller of information.”{/t}
+            </li>
+            </li>
+            <li>
+                {t} In the role of PARTNER – you have a common goal, mutual interests, and work towards collaborating on
+                common goals. You are a “listener for information.”{/t}
+            </li>
+            </li>
+        </ul>
+
+        <p>{t}You are on the same team as your parents and want to collaborate with them as a partner in their best
+            future. You may need to reassure them that you are on the same team and you want to be a partner in their
+            best future. Your goal is to collaborate with them to uphold their needs, beliefs, and values. It is not
+            your intention to switch to a “parenting” role so as not to diminish their independence.{/t}</p>
+
+        <p>{t}Self-Coaching Hint: As reinforcement, you need to make sure your intentions are clear. You are not trying
+            to subtly coerce them or manipulate them in some way. You intend to make every action and word worthy of
+            trust. Practice holding that intention in your mind and heart, and it will make a difference in how you
+            listen and influence what you say!{/t}</p>
 
     </div>
     <div class="buttons">
@@ -697,19 +714,37 @@ AARP provides various articles of interest and resources for family caregivers. 
 
 <div id="lesson-1-slide-16" class="course-slide">
     <div class="content">
-        <h2 class="flowers">{t}Video – 5 steps to self-coaching{/t}</h2>
+        <h2 class="flowers">{t}Congratulations on completing the course!{/t}</h2>
         <hr/>
-        <p>{t}Serving as an introduction to self-coaching exercises, this video outlines a simple self-coaching process
-            can be used over and over again whenever you need it.{/t}</p>
+        <p>{t}Let’s summarize the top five points we covered in this course:{/t}</p>
 
-        <p>
-            {t}View the video, self-coaching 101 by Brooke Castillo from The Life Coach School. This video is a new way
-            for you to experience a self-coaching session in the comfort of your own home. This video shows an example
-            of self-coaching in action.{/t}
-        </p>
-
-        <iframe style="display: block; width: 640px; height: 360px; framebroder: 0; margin: 15px auto;"
-                src="//www.youtube.com/embed/0_otisZVT8A?rel=0" allowfullscreen></iframe>
+        <ol>
+            <li>
+                {t}Communicating in CARE Coaching focuses on asking a version of the question, “What do you want?”
+                through your conversation with older parents to support their participation in decisions. It is the
+                first step towards better communication with your older parents about their needs and preferences.{/t}
+            </li>
+            <li>
+                {t}Plan to set aside time for conversations with your older parents. Be patient, as it may take some
+                time for everyone to be comfortable with discussions about their future.{/t}
+            </li>
+            <li>
+                {t}Try to relate your own experiences or those of others in situations of difficult conversation as
+                openers to difficult conversations.{/t}
+            </li>
+            <li>
+                {t}Difficult conversations should focus on what is the positive outcome being sought (such as better
+                quality of life or personal safety) rather than the negative (“If you keep driving, you are going to
+                kill yourself or somebody else!).
+                {/t}
+            </li>
+            <li>
+                {t}Focus on being an Advocate to your older parents. Sometimes you may feel that you are now the parent.
+                Try to see yourself as a partner on the same team with your parents – your goal is to uphold their
+                needs, beliefs, and values to support their independence as long as possible.
+                {/t}
+            </li>
+        </ol>
 
     </div>
     <div class="buttons">
