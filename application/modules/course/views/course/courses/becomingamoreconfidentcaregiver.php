@@ -117,11 +117,23 @@ foreach (array(
     <p>
         <?php echo t($course->description); ?>
     </p>
-    <h4>{t}Participant Access{/t}</h4>
+    <h4>{t}Access{/t}</h4>
 
     <p>
         {t}<strong>90 days</strong> from the <strong>initial enrollment</strong> date.{/t}
     </p>
+
+    <h4>
+        {t}Requirements{/t}
+    </h4>
+    <p>
+        {t}To successfully participate, you will need access to the following software on the computer(s) you are using to access this course:{/t}
+    </p>
+    <ul>
+        <li>
+            {t}here{/t}
+        </li>
+    </ul>
     <h4>{t}Objectives{/t}</h4>
     <ul>
         <?php
@@ -129,7 +141,7 @@ foreach (array(
             echo '<li>' . t($objective->text) . '</li>';
         ?>
     </ul>
-    <h4>{t}Course Agenda &amp; Module{/t}</h4>
+    <h4>{t}Agenda &amp; Module(s){/t}</h4>
 
     <table style="border-bottom: 2px solid black; border-top: 2px solid black; margin-top: 10px;">
         <tr>
