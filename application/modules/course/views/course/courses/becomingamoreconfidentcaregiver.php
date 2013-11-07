@@ -1077,7 +1077,7 @@ AARP provides various articles of interest and resources for family caregivers. 
 
     </div>
     <div class="buttons">
-        <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Complete Module{/t} </a>
+        <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Complete Course{/t} </a>
     </div>
 </div>
 
