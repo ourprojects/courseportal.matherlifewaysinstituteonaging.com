@@ -126,13 +126,14 @@ foreach (array(
     <h4>
         {t}Requirements{/t}
     </h4>
+
     <p>
-        {t}To successfully participate, you will need access to the following software on the computer(s) you are using to access this course:{/t}
+        {t}To successfully participate, you will need access to the following software on the computer(s) you are using
+        to access this course:{/t}
     </p>
     <ul>
-        <li>
-            {t}here{/t}
-        </li>
+        <li>{t}Spreadsheet processor (Microsoft Excel or similar){/t}</li>
+        <li><a href="http://get.adobe.com/reader/" target="_blank">{t}Adobe Acrobat{/t}</a></li>
     </ul>
     <h4>{t}Objectives{/t}</h4>
     <ul>
@@ -194,12 +195,7 @@ foreach (array(
     <p>{t}Please use these listed resources for additional reading. Please contact your course facilitator if you have
         additional resources you would like to see added here.{/t}</p>
     <ul id="resources">
-        <li>
-            <a href="http://www.nlm.nih.gov/medlineplus/talkingwithyourdoctor.html" target="_blank">{t}Talking with Your
-                Doctor{/t}</a>
-            <!--
-From the National Library of Medicine's MedlinePlus consumer health website.  Links to online brochures from the federal government and national health organizations on obtaining a second opinion, talking to your doctor, informed consent, being an active participant in your healthcare, and related communication topics. -->
-        </li>
+
         <li>
             <a href="http://www.aarp.org/health/doctors-hospitals/info-09-2010/finding_your_way_how_to_talk_to_8212_and_understand_8212_your_doctor.html"
                target="_blank">{t}How To Talk To Your Doctor{/t}</a>
@@ -212,21 +208,13 @@ Emphasis on the importance of building a "successful partnership with your docto
             <!--
 How good are you at taking care of yourself?  Take this brief quiz to get some ideas! -->
         </li>
-        <li>
-            <a href="http://www.meditationsociety.com/108meds.html" target="_blank">{t}Meditation Exercises{/t}</a>
-            <!--
-The Meditation Society of America provides a free resource of over 100 meditation activities for you to try via the web.   -->
-        </li>
+
         <li>
             <a href="http://www.allaboutdepression.com/relax/" target="_blank">{t}Guided Imagery{/t}</a>
             <!--
 Guided imagery is an effective relaxation technique to reduce stress.  There are many benefits to being able to induce the "relaxation response" in your own body.  Some benefits include a reduction of generalized anxiety, prevention of cumulative stress, increased energy, improved concentration, reduction of some physical problems, and increased self-confidence. -->
         </li>
-        <li>
-            <a href="http://www.caregiverslibrary.org/home.aspx" target="_blank">{t}National Caregiver Library{/t}</a>
-            <!--
-Provides state-by-state information and resources for caregivers.  -->
-        </li>
+
         <li>
             <a href="http://www.usa.gov/Citizen/Topics/Health/caregivers.shtml" target="_blank">{t}Caregiver Resources
                 on USA.gov{/t}</a>

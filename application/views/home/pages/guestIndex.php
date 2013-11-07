@@ -65,28 +65,25 @@ $this->widget(
 			<a href="http://www.ibm.com" target="_blank"><img src="<?php echo $this->getImagesUrl('customers/ibm.png'); ?>" alt="IBM" /> </a> <a href="http://www.merck.com" target="_blank"><img src="<?php echo $this->getImagesUrl('customers/merck.png'); ?>" alt="Merck Pharmaceuticals" /> </a> <a href="http://www.exxonmobil.com" target="_blank"><img src="<?php echo $this->getImagesUrl('customers/exxon.png'); ?>" alt="Exxon" /> </a> <a href="http://matherlifeways.com/" target="_blank"><img src="<?php echo $this->getImagesUrl('customers/mather.png'); ?>" alt="Mather Lifeways" /> </a>
 		</div>
 	</div>
-	<div class="box-sidebar two">
-		<h3>{t}National Caregivers Month{/t}</h3>
-		<p style="font-weight: bold; text-align: center; font-size: 30px;">{t}November{/t}</p>
-		<p style="text-align: center;">
-			<b><a href="http://www.whitehouse.gov/the-press-office/2012/11/01/presidential-proclamation-national-family-caregivers-month-2012" target="_blank">{t}Presidential Proclamation -- National Family Caregivers Month{/t}</a> </b>
-		</p>
-		<p>{t}November is National Caregivers Month. It is a time to acknowledge the important role that family, friends and neighbors play in caring for sick, elderly and disabled friends and relations.{/t}</p>
+	<div class="box-sidebar one">
+		<h3>{t}National Caregiver Month{/t}</h3>
+		<p style="font-weight: bold; text-align: center;">{t}November is National Caregivers Month.{/t}</p>
+        <p>{t}This month is a time for us to acknowledge the important role that caregivers play every day in caring for their sick, elderly, or disabled family members or friends. These caregivers include many members of today’s workforce, who need support and information to better cope with their caregiving duties.{/t}</p>
+        <img src="<?php echo $this->getImagesUrl('168813140.png'); ?>" alt="{t}Caregiver Month{/t}">
 	</div>
-	<div class="box-sidebar three">
-		<h3>{t}Caregiver Needs &amp; Resources{/t}</h3>
-		<h5 style="text-align: center;">{t}Survey of Working Caregiver Needs and Resources{/t}</h5>
-		<p>{t}Currently, 39% of U.S. adults are caregivers, up from 30% in 2010. Nearly two‐thirds of family caregivers are employed full or part‐time. As the U.S. population ages and medical advances save and extend more lives, the numbers of employees with eldercare responsibilities is on the rise...{/t}</p>
-		<p>
-			<img class="block center" src="<?php echo $this->getImagesUrl('174280723.png'); ?>" alt="Image">
-		</p>
-		<p>
-			{t}<strong>Prepared by Mather LifeWays Institute on Aging - August, 2013</strong>{/t}
-		</p>
-		<p>
-			<a href="http://www.matherlifewaysinstituteonaging.com/wp-content/uploads/2013/08/Survey-of-Working-Caregiver-Needs-and-Resources.pdf" target="_blank">{t}Survey of Working Caregiver Needs and Resources{/t}</a>
-		</p>
-	</div>
+    <div class="box-sidebar two">
+        <h3>{t}Approved Courses{/t}</h3>
+        <p style="font-weight: bold;">{t}EACC has approved certain courses for PDH credit.{/t}</p>
+        <p style="text-align: center;"> <b><a href="http://www.eapassn.org/files/public/EACCroster2012.pdf" target="_blank">{t}Employee Assistance Certification Commission (EACC){/t}</a></b> </p>
+        <p>{t}Established in 1986, the EACC is the credentialing governance body responsible for upholding all professional standards, policies, and procedures concerning the Certified Employee Assistance Professional (CEAP) credential.{/t}</p>
+        <p> <a href="http://www.eapassn.org/" target="_blank"><img class="block center" src="<?php echo $this->getImagesUrl('EAPlogo.png'); ?>" alt="EAP Assocation Logo"></a> </p>
+    </div>
+    <div class="box-sidebar one">
+        <h3>{t}Aging in Action{/t}</h3>
+        <p>{t}<a href="http://twitter.com/aginginaction" target="_blank">Aging in Action</a> is Mather LifeWays Institute on Aging's monthly e-newsletter and blog containing the latest research news in the field of aging.{/t}</p>
+        <p> <img style="display:block; margin:0 auto;" src="<?php echo $this->getImagesUrl('twitter-bird.png'); ?>" /></p>
+    </div>
+
 
 	<!-- sidebar for Participating locations here -->
 	<!-- sidebar on Resent Research here -->
@@ -167,7 +164,7 @@ $this->widget(
 		array(
 			'id' => 'workingCaregiver',
 			'options' => array(
-				'htmlOptions' => array('class' => 'box-white'),
+				'htmlOptions' => array('class' => 'none'),
 				'title' => array('htmlOptions' => array('class' => 'flowers')),
 			)
 		)
