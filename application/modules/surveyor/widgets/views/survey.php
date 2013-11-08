@@ -8,7 +8,7 @@ echo CHtml::openTag('div', array('class' => 'form'));
 
 if($title['show'])
 {
-	echo CHtml::tag('div', $title['htmlOptions'], $model->title);
+	echo CHtml::tag('h2', $title['htmlOptions'], $model->title);
 }
 
 if($description['show'])
