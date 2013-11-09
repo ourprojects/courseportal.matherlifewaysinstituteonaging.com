@@ -19,7 +19,7 @@ foreach (array(
 ?>
 
 <div class="small-masthead"
-     style="background-image: url(<?php echo $this->getImagesUrl('becomingamoreconfidentcaregiver/84008631.png'); ?>);">
+     style="background-image: url(<?php echo $this->getImagesUrl('improvingcommunicationwithhealthcareproviders/153233524.png'); ?>);">
     <h1 class="bottom">
         <?php echo t($course->title); ?>
     </h1>
@@ -84,8 +84,10 @@ foreach (array(
             <a href="<?php echo $this->createDownloadUrl('CourseCompletionCertificate.pdf'); ?>" target="_blank"
                class="button">Download Certificate</a>
         </p>
-        <img src="<?php echo $this->getImagesUrl('becomingamoreconfidentcaregiver/166312138.png'); ?>" id="certificate"
-             alt="{t}Image{/t}">
+        <img
+            src="<?php echo $this->getImagesUrl('improvingcommunicationwithhealthcareproviders/166312138.png'); ?>"
+            id="certificate"
+            alt="{t}Image{/t}">
     </div>
     <div class="box-sidebar one">
         <h3>{t}Facilitator: Ellen Ziegemeier, MA{/t}</h3>
@@ -96,7 +98,7 @@ foreach (array(
             training.{/t}</p>
 
         <p><a href="#" target="_blank" class="button">Contact Facilitator</a></p>
-        <img src="<?php echo $this->getImagesUrl('becomingamoreconfidentcaregiver/80608570.png'); ?>"
+        <img src="<?php echo $this->getImagesUrl('improvingcommunicationwithhealthcareproviders/80608570.png'); ?>"
              alt="{t}Facilitator{/t}" id="facilitator">
     </div>
     <div class="box-sidebar one">
@@ -132,7 +134,6 @@ foreach (array(
         to access this course:{/t}
     </p>
     <ul>
-        <li>{t}Spreadsheet processor (Microsoft Excel or similar){/t}</li>
         <li><a href="http://get.adobe.com/reader/" target="_blank">{t}Adobe Acrobat{/t}</a></li>
     </ul>
     <h4>{t}Objectives{/t}</h4>
@@ -148,7 +149,7 @@ foreach (array(
         <tr>
             <td><h5>{t}Download the course Agenda - {/t}</h5></td>
             <td><p>
-                    <a href="<?php echo $this->createDownloadUrl('becomingamoreconfidentcaregiver/Agenda_becomingamoreconfidentcaregiver.pdf'); ?>"
+                    <a href="<?php echo $this->createDownloadUrl('improvingcommunicationwithhealthcareproviders/Agenda_improvingcommunicationwithhealthcareproviders.pdf'); ?>"
                        target="_blank" class="button">{t}Agenda{/t}</a></p></td>
         </tr>
         <tr>
@@ -171,20 +172,6 @@ foreach (array(
                         href="#lesson-1-slide-11" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a
                         href="#lesson-1-slide-12" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a
                         href="#lesson-1-slide-13" data-fancybox-group="lesson-1" class="hide lesson-1"></a>
-                    <a href="#lesson-1-slide-14" data-fancybox-group="lesson-1" class="hide lesson-1"></a>
-                    <a href="#lesson-1-slide-15" data-fancybox-group="lesson-1" class="hide lesson-1"></a>
-                    <a href="#lesson-1-slide-16" data-fancybox-group="lesson-1" class="hide lesson-1"></a>
-                    <a href="#lesson-1-slide-17" data-fancybox-group="lesson-1" class="hide lesson-1"></a>
-                    <a href="#lesson-1-slide-18" data-fancybox-group="lesson-1" class="hide lesson-1"></a>
-                    <a href="#lesson-1-slide-19" data-fancybox-group="lesson-1" class="hide lesson-1"></a>
-                    <a href="#lesson-1-slide-20" data-fancybox-group="lesson-1" class="hide lesson-1"></a>
-                    <a href="#lesson-1-slide-21" data-fancybox-group="lesson-1" class="hide lesson-1"></a>
-                    <a href="#lesson-1-slide-22" data-fancybox-group="lesson-1" class="hide lesson-1"></a>
-                    <a href="#lesson-1-slide-23" data-fancybox-group="lesson-1" class="hide lesson-1"></a>
-                    <a href="#lesson-1-slide-24" data-fancybox-group="lesson-1" class="hide lesson-1"></a>
-                    <a href="#lesson-1-slide-25" data-fancybox-group="lesson-1" class="hide lesson-1"></a>
-                    <a href="#lesson-1-slide-26" data-fancybox-group="lesson-1" class="hide lesson-1"></a>
-                    <a href="#lesson-1-slide-27" data-fancybox-group="lesson-1" class="hide lesson-1"></a>
                 </p>
             </td>
         </tr>
@@ -275,11 +262,11 @@ AARP provides various articles of interest and resources for family caregivers. 
 <div id="lesson-1">
 <div id="lesson-1-slide-1" class="course-slide">
     <div class="content">
-        <h2 class="flowers">{t}Becoming a More Confident Caregiver{/t}</h2>
+        <h2 class="flowers">{t}Improving Communication with Health Care Providers{/t}</h2>
         <hr/>
-        <p>{t}Welcome to the course, “Becoming a More Confident Caregiver.” This course is geared towards family members
-            who provide support or care to an older adult who may be a parent, spouse, other relative, or a significant
-            other.{/t}</p>
+        <p>{t}Welcome to the course, “Improving Communication with Health Care Providers.” This course is geared towards
+            family members who provide support or care to an older adult who may be a parent, spouse, other relative, or
+            a significant other.{/t}</p>
 
         <p>{t}Also, this course may be of help to a “future caregiver” to better prepare oneself for a future caregiving
             role. Whether you are now – or will be in the future – a caregiver for an older adult, it is important to
@@ -322,7 +309,6 @@ AARP provides various articles of interest and resources for family caregivers. 
             caregiving situation so you may better prepare and feel confident about your caregiving responsibilities and
             actions.{/t}</p>
 
-        <p>{t}So let's begin with some facts about family caregivers!{/t}</p>
     </div>
     <div class="buttons">
         <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t} </a> <a
@@ -331,31 +317,34 @@ AARP provides various articles of interest and resources for family caregivers. 
 </div>
 <div id="lesson-1-slide-3" class="course-slide">
     <div class="content">
-        <h2 class="flowers">{t}Some facts about family caregivers{/t}</h2>
+        <h2 class="flowers">{t}Navigating the health care system{/t}</h2>
         <hr/>
-        <p>{t}Here are some interesting facts about family caregivers:{/t}</p>
+        <p>{t}Talk to anyone today about the state of health care and you will probably get an earful of complaints,
+            “horror” stories, and head shaking. Complaints run the gamut of problems with insurance companies and
+            Medicare, physicians who don’t spend enough time with patients, and quick hospital discharges.{/t}</p>
+
+        <p>{t}Here are common issues voiced by older adult patients:{/t}</p>
 
         <ul>
-            <li>{t}Nearly 44 million family caregivers provided support or care to someone ages 50 years or older.{/t}
+            <li>
+                {t}They cannot get an accurate diagnosis, understand they need treatment, and need someone to help them
+                find physicians, or get tests, that can help them.{/t}
             </li>
-            <li>{t}Nearly 15 million family caregivers care for someone with Alzheimer’s disease or other forms of
-                dementia.{/t}
+            <li>
+                {t}They are seeing too many specialists who are not coordinating their care.  They need someone who will
+                take a look at their reams of medical records to help them sort out their treatment.
+                {/t}
             </li>
-            <li>{t}More than two-thirds of family caregivers taking care of an older adult are female.{/t}</li>
-            <li>{t}Two-thirds of family caregivers do not live with the older adults they are caring for.{/t}</li>
-            <li>{t}Nearly 60 percent of care recipients live in their own homes.{/t}</li>
-            <li>{t}The number of male caregivers is steadily growing. Male caregivers are more likely to help with tasks
-                related to the home of the older adult (such as home repairs or financial issues) while female
-                caregivers perform more physical care tasks (such as bathing or dressing).{/t}
+            <li>
+                {t}They are having trouble with their insurer, who isn’t paying as promised, or who is denying them
+                care.{/t}
             </li>
-            <li>{t}A significant portion of family caregiver’s time focuses on errands (such as shopping,
-                transportation, picking up medications), researching and making care arrangements, transportation to
-                physician appointments, and managing financial matters.{/t}
+            <li>
+                {t} They have received physician or hospital bills that they cannot sort out or decipher.  They believe
+                they have been billed for services they did not receive.  They have read that up to 80% of hospital
+                bills are incorrect, and they want someone to help them negotiate with whoever has billed them.{/t}
             </li>
-            <li>{t}More than one in six working caregivers care for one or more older adults.{/t}</li>
         </ul>
-
-        <p>{t}Next, we’ll learn more about the CARE Coaching concepts.{/t}</p>
 
     </div>
     <div class="buttons">
@@ -366,20 +355,34 @@ AARP provides various articles of interest and resources for family caregivers. 
 
 <div id="lesson-1-slide-4" class="course-slide">
     <div class="content">
-        <h2 class="flowers">{t}What’s coaching all about?{/t}</h2>
+        <h2 class="flowers">{t}Interacting with the health care system{/t}</h2>
         <hr/>
-        <p>{t}You are probably familiar with the term “coaching” from many aspects of our daily lives.{/t}</p>
+        <p>{t}Some of our parents may fondly remember the days when physicians took time with their patients or even
+            came to the home for a visit! We may not be able to “fix” all the problems with the health care system, but
+            what we can do is focus on two things:{/t}</p>
 
-        <p>{t}As a parent or sibling, you may be involved in coaching little league or some other sport. Usually this
-            form of coaching involves teams. The role of the coach is to motivate, set ground rules, and draw out the
-            best in each player for the good of the team.{/t}</p>
+        <ul>
+            <li>
+                {t}Learning to communicate effectively with health care providers – particularly with physicians – to
+                manage relationships with providers, and {/t}
+            </li>
+            <li>
+                {t}Becoming empowered with knowledge to better understanding health care and roles of providers{/t}
+            </li>
+        </ul>
 
-        <p>{t}In the work environment, coaching may also involve the work team or individual. Coaching the work team may
-            involve looking at ways to turn barriers into opportunities for the good of the team and company. An
-            organization may bring in a professional coach to build sustainable, high-performance work teams and thus
-            build the company’s competitive advantage over other organizations. At the individual level, a coach may
-            focus on leadership development showing the company’s commitment to build a strong base of effective
-            leaders.{/t}</p>
+        <p>{t}Particularly for many older adults, the experience of the patient-physician relationship is really what’s
+            missing in much of today’s health care experience. We can use CARE Coaching techniques to help build that
+            relationship.{/t}</p>
+
+        <p>{t}The goal for any patient in the health care system should be to optimize your chances of achieving a good
+            outcome when health care is needed. Taking charge of one’s health care is key. For older parents who may not
+            be used to or feel comfortable “taking charge of their health care,” this may be a difficult concept for
+            them. We’ll look at some CARE Coaching techniques to help your parents feel comfortable being in
+            charge.{/t}</p>
+
+        <p>{t}This course will also reinforce your important role as “advocate.” So let’s begin with that all important
+            “patient-physician” relationship.{/t}</p>
 
     </div>
     <div class="buttons">
@@ -390,36 +393,41 @@ AARP provides various articles of interest and resources for family caregivers. 
 
 <div id="lesson-1-slide-5" class="course-slide">
     <div class="content">
-        <h2 class="flowers">{t}Role reversals with aging parents{/t}</h2>
+        <h2 class="flowers">{t}CARE Coaching: Relating{/t}</h2>
         <hr/>
-        <p>{t}As a current or future caregiver, you may be feeling as if you are in a “reversed role” to an elderly
-            parent, other relative, or friend. When we are young, we look up to parents or others as a “coach” in many
-            respects. Though it may have been difficult at times for all of us growing up, the effective parent “coach”
-            had the following skill set:{/t}</p>
+        <p>{t}Over the years, the patient-physician relationship has been defined, though rules of ethics and rules of
+            law, as a fiduciary one, as a relationship founded in trust. When a patient seeks out a physician’s help,
+            and the physician agrees to give that help, a special covenant is made. The patient agrees to take the
+            physician into confidence, to reveal intimate information related to one’s health. The physician, in turn,
+            agrees to honor that trust, and to become the patient’s advocate in all health-related matters.{/t}</p>
+
+        <p>{t}As a caregiver, you are probably stepping into a situation where your older parents already are seeing one
+            or more physicians for various ailments. Stepping into those relationships can often make you feel like the
+            “third wheel” initially. We are not suggesting that you go to every office visit with your older parents,
+            but in the future, your caregiving role may include and require this so that you may best advocate for you
+            parents. {/t}</p>
+
+        <p>{t}This brings us to the third component of CARE Coaching, that of relating. The most important factor in the
+            patient-physician relationship is communicating or relating. It fairly obvious that if a patient cannot
+            communicate well with his or her physician, that’s a problem. How do you know that your older parents’
+            physician is relating? Here are some questions to asking your parents:{/t}</p>
 
         <ul>
             <li>
-                {t}They respected us, so we listened to them.{/t}
+                {t}Is your physician listening to what you are saying?{/t}
+            </li>
+
+            <li>
+                {t}Does your physician show understanding about your concerns by responding meaningfully to them?{/t}
             </li>
             <li>
-                {t}They listened to us, so we felt understood.{/t}
+                {t}When your physician explains medical issues to you, are they made to be understandable?{/t}
             </li>
             <li>
-                {t}They appreciated us, so we felt supported.{/t}
-            </li>
-            <li>
-                {t}They supported us when we tried new things, so we grew more responsible.{/t}
+                {t}Is your physician patient with you and willing to draw out questions you may have?{/t}
             </li>
         </ul>
-        <p>{t}As our parents age, they may suffer declining physical or cognitive health and thus have greater need for
-            our help and understanding, and so we may become their “coach” in life. That is easier said than done in
-            many cases! Regardless of their age, our parents always see themselves in that role in our relationship with
-            them.{/t}</p>
 
-        <p>{t}We also tend to go back into old habits, communication styles, or reactions when dealing with our parents.
-            How do you deal with a situation where your father begins to have minor car accidents or “forgets” the way
-            home? Talking with a parent about giving up the car keys is probably one of the most challenging situations
-            we may face as a caregiver.{/t}</p>
     </div>
     <div class="buttons">
         <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t} </a> <a
@@ -429,24 +437,16 @@ AARP provides various articles of interest and resources for family caregivers. 
 
 <div id="lesson-1-slide-6" class="course-slide">
     <div class="content">
-        <h2 class="flowers">{t}What’s CARE Coaching all about?{/t}</h2>
+        <h2 class="flowers">{t}Video – How to communicate with the physician{/t}</h2>
         <hr/>
-        <p>{t}CARE Coaching involves a method to help you as a caregiver think differently about a caregiving situation
-            so you may better prepare and feel confident about your caregiving responsibilities and actions. Learning
-            what is important to older parents – and learning how to draw that out – often bringing to light new
-            information about what is important to them in terms of their own health and care.{/t}</p>
+        <p>{t}Have you ever left a physician's appoinment feeling that your questions weren't answered? Or not sure what
+            you were supposed to do next? Don't worry, you're not alone. Dr. Lori Whittaker, a family physician in
+            Seattle, shares tips and advice for how to speak up for yourself when you're at the physician's office. Good
+            communication is a two way street, and it's up to you to make sure you get the treatment and the information
+            you need to stay healthy.{/t}</p>
 
-        <p>{t}CARE Coaching will provide your tools, resources, and experiences targeted towards strengthening your
-            caregiving abilities to Communicate, Advocate, Relate, and Encourage older parents or other loved ones.
-            Throughout this course, we will highlight these terms and provide examples and activities to help you on
-            this journey.{/t}</p>
-
-        <p>{t}In this course, we’ll usually talk about “older parents,” but we realize that caregivers may be involved
-            in caring for older siblings, other relatives, friends, or neighbors. For the purposes of this course, we
-            will use “older parents” as our “short-hand” descriptor of any older adult that you may be caring
-            for!{/t}</p>
-
-        <p>{t}Before we can start coaching others, let’s consider our skills related to coaching ourselves!{/t}</p>
+        <iframe style="width: 640px; height: 480px; display: block; margin: 15px auto; frameborder: 0;" width="640"
+                height="480" src="//www.youtube.com/embed/rEt8xfQ9z1U?rel=0" allowfullscreen></iframe>
 
     </div>
     <div class="buttons">
@@ -458,35 +458,35 @@ AARP provides various articles of interest and resources for family caregivers. 
 
 <div id="lesson-1-slide-7" class="course-slide">
     <div class="content">
-        <h2 class="flowers">{t}Self-coaching: It all starts with me!{/t}</h2>
+        <h2 class="flowers">{t}Helping older parents talk to medical professionals about health care{/t}</h2>
         <hr/>
-        <p>{t}Self-coaching shifts the approach from the cycling negative “internal dialogue” to help you focus on
-            what’s important to you right now and how you may accomplish that goal.{/t}</p>
+        <p>{t}
+            Occasionally, it may be feel intimidating to speak to physicians for one reason or another. At times, the
+            actions of the physician may appear that he or she has little time to spend with us. At other times, we may
+            feel “inadequate” in our knowledge and use of “medical terms,” feeling like we speak a different language
+            than physicians.{/t}</p>
 
-        <p>{t}In this case, it’s alright to say “it’s all about me!” There is quite a bit of information published about
-            “self-coaching.” Think about the fact that we each represent a unique individual surrounded by a myriad of
-            things going on inside and outside of ourselves.{/t}</p>
+        <p>{t}Older adults may especially loath to question physicians because they were raised in a generation where
+            physicians were considered to be above reproach. Many of today’s generation of health care professionals
+            encourage questions and want their patients to play a role in their health care.{/t}</p>
 
-        <p>{t}We constantly have an “internal dialogue” going on that no one else can hear. As a caregiver, that
-            “internal dialogue” may be reliving negative experiences:{/t}</p>
+        <p>{t}In planning for your discussions with your older parents and their physicians, remember that as their
+            caregiver, you have an obligation to understand your parents’ medical care.{/t}</p>
 
-        <ul>
-            <li>
-                {t}“If only my mother listened to me and moved in with us years ago, she wouldn’t have fallen, broken
-                her hip, and wound up in that terrible nursing home!”{/t}
-            </li>
-            <li>
-                {t}“I just can’t take on more responsibility for my dad’s care. I already work 50 to 60 hours a week and
-                have family responsibilities. But if I don’t, who will?”{/t}
-            </li>
-            <li>
-                {t}“How am I going to bring up the issue of long-term care planning with my parents? They always shut me
-                off when I bring up questions about their finances.”{/t}
-            </li>
-        </ul>
+        <p>{t}Another important consideration for you as the caregiver to understand relates to patient privacy
+            requirements and rights. If you are not the medical guardian (or power of attorney) for your parents, they
+            must give consent for you to get information about their health care.{/t}</p>
 
-        <p>{t}Going over and over these types of thoughts and questions in our minds does not get to problem
-            solving.{/t}</p>
+        <p>{t}On the other hand, if you are the medical guardian of your parents and they are either too young, too old
+            or too sick to speak about their medical history themselves, it is perfectly reasonable for you to take that
+            role with health care professionals. Remember to be especially diplomatic with older adults who may take
+            offense at being “spoken for.” Try to work out who will be the chief medical historian and speaker before
+            you enter the physician’s office.{/t}</p>
+
+        <p>{t}The next exercise will coach you through learning to use “PowerPhrases” – short, specific expressions that
+            get results by saying what it means and meaning what it says. By planning some specific phrases to use in
+            advance of a physician’s appointment, older adults find that they can impact the outcome of the
+            interaction.{/t}</p>
 
     </div>
     <div class="buttons">
@@ -497,47 +497,36 @@ AARP provides various articles of interest and resources for family caregivers. 
 
 <div id="lesson-1-slide-8" class="course-slide">
     <div class="content">
-        <h2 class="flowers">{t}Self-coaching “self talk”{/t}</h2>
+        <h2 class="flowers">{t}Exercise – how are you with PowerPhrases?{/t}</h2>
         <hr/>
-        <p>{t}Self-coaching shifts the approach from the cycling negative “internal dialogue” to help you focus on
-            what’s important to you right now and how you may accomplish that goal.{/t}</p>
+        <p>{t}How familiar does this sound? George has been waiting in the exam room for his physician to come in for
+            over 50 minutes. He has counted the floor and ceiling tiles at least six times and needs to use the bathroom
+            out in the hall, but is unwilling to get up with just the examining gown to cover him.{/t}</p>
 
-        <p>{t}Say this to yourself:{/t}</p>
-        <ul>
-            <li>
-                {t}I am going to accomplish something.{/t}
-            </li>
-            <li>
-                {t}I am going to figure it out.{/t}
-            </li>
-            <li>
-                {t}I am going to do my best thinking, because I want to get to what’s important.{/t}
-            </li>
-        </ul>
+        <p>{t}When George’s physician entered, he seemed rush and distracted. He glanced at George’s file and talked
+            rapidly throughout the brief exam. George has several questions that he wanted to discuss that were very
+            personal. Because the physician seemed so rushed, George was not comfortable asking his questions.{/t}</p>
 
-        <p>{t}Now, say this out loud:{/t}</p>
+        <p>{t}The physician told George that his blood pressure was high and he was going to give him a prescription for
+            something (he didn’t say what!). The physician walked out. A few minutes later, a nurse walked in and handed
+            George a prescription telling him that he may get dressed now. George figured that he would just have to ask
+            his pharmacist the questions.{/t}</p>
 
-        <ul>
-            <li>
-                {t}I am going to accomplish something.{/t}
-            </li>
-            <li>
-                {t}I am going to figure it out.{/t}
-            </li>
-            <li>
-                {t}I am going to do my best thinking, because I want to get to what’s important.{/t}
-            </li>
-        </ul>
+        <p>{t}Given the pressures of managed care, it is common for physicians to space appointments 15 minutes apart.
+            The need for expediency can result in communication breakdowns that may result in inadequate care or serious
+            consequences.{/t}</p>
 
-        <p>{t}This is just a simple exercise in positive self-talk. Our internal voice and thoughts have the capability
-            to create our reality, and so it is our daily challenge to move aside the negative, cyclical thinking and
-            focus on positive steps we may take to move forward. Focusing on the many skills you already have inside of
-            yourself not only will benefit your own health, success, and self-esteem, but will be of great aide to your
-            caregiving responsibilities.{/t}</p>
+        <p>{t}A “PowerPhrase” is a short, specific expression that gets results by saying what it means and meaning what
+            it says (without being mean!). By planning specific phrases to use prior to an appointment, the results can
+            be much more favorable to the patient.{/t}</p>
 
-        <p>{t}Let’s first assess where you currently are related to your readiness and awareness for self-coaching, and
-            then we will move into some self-coaching exercises that you may continue as often as you feel it would be
-            helpful to you.{/t}</p>
+        <p>{t}Let’s do an exercise to see your current “PowerPhrase” skill level. Click on the following link to take a
+            quick survey.{/t}</p>
+
+        <p>
+            <a href="<?php echo $this->createDownloadUrl('improvingcommunicationwithhealthcareproviders/Exercise_PowerPhrase_Survey.doc'); ?>"
+               target="_blank" class="button">Download Survey</a>
+        </p>
 
     </div>
     <div class="buttons">
@@ -548,16 +537,30 @@ AARP provides various articles of interest and resources for family caregivers. 
 
 <div id="lesson-1-slide-9" class="course-slide">
     <div class="content">
-        <h2 class="flowers">{t}Activity – Self-awareness survey{/t}</h2>
+        <h2 class="flowers">{t}Activity – practicing PowerPhrases with your health provider{/t}</h2>
         <hr/>
-        <p>{t}This activity invites you to explore and live several questions. Your responses should open up more
-            self-awareness of what is important to you in your life. Please note that you may print or save any
-            activities from this course for future reference.{/t}</p>
+        <p>{t}Now that you have assessed your PowerPhrase skill level, we will now focus on PowerPhrases related to your
+            health care provider to ensure a positive visit. By planning specific phrases to use in advance of the
+            appointment, the patient can impact the outcome of the visit. You may find these helpful not only for your
+            older parents, but also for your own use when visiting your physician.{/t}</p>
 
-        <p>
-            <a href="<?php echo $this->createDownloadUrl('becomingamoreconfidentcaregiver/Activity_Self_Awareness_Survey.doc'); ?>"
-               target="_blank" class="button">Download Activity</a>
-        </p>
+        <p>{t}Here is another typical scenario. You are visiting your mother one Sunday afternoon. You notice that she
+            appears to be limping and favoring one side when she walks. You say, “Mom, I noticed you are limping. Are
+            you having some difficulty walking?” {/t}</p>
+
+        <p>{t}She says, “Yes, my left shin is very painful. It’s been like this for about a week.” You ask to see her
+            shin and you notice that there is redness and swelling. She tells you that she will be seeing her physician
+            this Thursday. You offer to accompany her, and she agrees.{/t}</p>
+
+        <p>{t}On Thursday, you take her to her appointment and accompany her to the exam room. Dr. Palmer enters and
+            asks your mom how she is feeling. Your mom replies, “Fine, thank you.” Dr. Palmer reviews the laboratory
+            results and says, “Your iron level is a bit low. I’ll give you a B12 injection and you’ll feel as good as
+            new!” “Thank you, physician,” replies your mom. With that the physician exits to see his next
+            patient.{/t}</p>
+
+        <p>{t}What just happened here? Unfortunately for many older adults, this is a typical office visit. Without some
+            preplanning for the visit and selection of PowerPhrases, that potentially serious problems may go
+            unaddressed.{/t}</p>
 
     </div>
     <div class="buttons">
@@ -568,19 +571,77 @@ AARP provides various articles of interest and resources for family caregivers. 
 
 <div id="lesson-1-slide-10" class="course-slide">
     <div class="content">
-        <h2 class="flowers">{t}Creating the environment for self-coaching{/t}</h2>
+        <h2 class="flowers">{t}PowerPhrases in action{/t}</h2>
         <hr/>
-        <p>{t}The principle behind self-coaching (and CARE Coaching for that matter!) is the revelation of solutions
-            already inherent in each person. For those who may be fortunate to experience an external coach, their role
-            is to facilitate the experience and create an environment for the person being coached to do their best
-            thinking. {/t}</p>
 
-        <p>{t}Self-coaching can work in the same way for many individuals who commit some time and effort into the
-            process. We have included several exercises throughout this course that will help you practice coaching
-            skills that will be valuable when coaching yourself or communicating in your caregiving role with older
-            parents. {/t}</p>
+        <p>{t}Think of PowerPhrases as the means to tell the physician exactly what he or she needs to know. You or your
+            older parent should not leave the visit until all your questions are answered.{/t}</p>
 
-        <p>{t}Let’s look at the five steps necessary to create an effective self-coaching experience.{/t}</p>
+        <p>{t}Here are some starter PowerPhrases to be used in response to the physician’s opening question “How are you
+            doing?”:{/t}</p>
+
+        <ul>
+            <li>
+                {t}“I have a pain in my…..that started about……”{/t}
+            </li>
+            <li>
+                {t}“My symptoms are….”{/t}
+            </li>
+        </ul>
+
+        <p>{t}With these simple prompts, the physician can begin the exam with the understanding of “what brought you
+            here today.”{/t}</p>
+
+        <p>{t} It is important that your older parent brings a list of pertinent information to readily provide the
+            physician with details that may be important. It is also an opportunity to learn more about potential issues
+            that may arise, say from drug interactions. Some PowerPhrases include:{/t}</p>
+
+        <ul>
+            <li>
+                {t}“These are the medications I am currently taking…..”{/t}
+            </li>
+            <li>
+                {t}“These are the vitamins and herbs I take….Which of these may interact with my medications?”{/t}
+            <li>
+                {t}“What does this drug do?”{/t}
+            </li>
+            </li>
+        </ul>
+
+
+        <p>{t}At times, you or your older parent may feel rushed. It is essential that you or your older parent feels
+            comfortable saying so to the physician. This one may take practice!{/t}</p>
+
+        <p>{t} Some PowerPhrases are:{/t}</p>
+
+        <ul>
+            <li>
+                {t}“I am aware that you are busy. However, I am feeling rushed and I need to be sure that my questions
+                are
+                answered. Please give me the time I need.”{/t}
+            </li>
+            <li>
+                {t}“I’m not comfortable with how fast you are talking. I need you to slow down and help me
+                understand.”{/t}
+            <li>
+                {t}“I understand that you are busy. However, I want to make sure you understand my symptoms and that I
+                learn
+                everything you can teach me about my condition and care.”{/t}
+            </li>
+            </li>
+        </ul>
+
+        <p>{t}For this activity, you will prepare for the physician’s visit and practice PowerPhrases. You may want to
+            practice with your older parent or you may role play with your spouse, relative, or friend.{/t}</p>
+
+        <p>
+            <a href="<?php echo $this->createDownloadUrl('improvingcommunicationwithhealthcareproviders/Activity_Practicing_PowerPhrases_with_Your_Health_Provide.docx'); ?>"
+               target="_blank" class="button">Download Activity</a>
+        </p>
+
+        <p>{t}Self-Coaching Hint: Be assertive but not aggressive in communicating with your parent’s physicians. Most
+            physicians and other health care professionals today want to ask questions and be asked about health care
+            issues by their patients.{/t}</p>
 
     </div>
     <div class="buttons">
@@ -591,399 +652,43 @@ AARP provides various articles of interest and resources for family caregivers. 
 
 <div id="lesson-1-slide-11" class="course-slide">
     <div class="content">
-        <h2 class="flowers">{t}What is necessary to create an effective self-coaching experience?{/t}</h2>
+        <h2 class="flowers">{t}Learning what you need to know about the health care system{/t}</h2>
         <hr/>
-        <h4>{t}Step 1{/t}</h4>
 
-        <p>{t}You are aware of the need for change and are prepared to accept that you cannot blame others or
-            circumstances of a situation.{/t}</p>
+        <p>{t}Learning what you need to know about the health care system can seem a daunting task. We break down some
+            of the core components that are key for you to understand as caregivers for older parents.{/t}</p>
 
-        <p>{t}In other words, you are willing to be open to choices and you are willing to make those choices. It would
-            be most like stepping outside of your situation and viewing it as impartially as possible.{/t}</p>
-
-    </div>
-    <div class="buttons">
-        <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t} </a> <a
-            href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
-    </div>
-</div>
-
-<div id="lesson-1-slide-12" class="course-slide">
-    <div class="content">
-        <h2 class="flowers">{t}What is necessary to create an effective self-coaching experience?{/t}</h2>
-        <hr/>
-        <h4>{t}Step 2{/t}</h4>
-
-        <p>{t}You are prepared to ask yourself some difficult questions and not avoid answering them. {/t}</p>
-
-        <p>{t}Imagine that you are in some tough discussions with your father and siblings about dad’s lack of caring
-            for himself living alone. Dad has grown more isolated day by day. When visiting one day, you are shocked to
-            find empty food containers and spoiled food in the refrigerator. There is a stack of unpaid bills on the
-            kitchen counter next to a jar of various pills mixed together. You bring this up with your siblings, but
-            their reaction is, “Dad is fine. He wants to stay in his house, and it’s not our place to kick him out!”
-            Your dad says, “I just haven’t gotten around to some things…and I’d thank you to stay out of my
-            business!”{/t}</p>
-
-        <p>{t}Are your prepared to ask yourself some key questions like…”Am I an effective caregiver? Why do I think
-            that I am not getting the response I need from my dad or siblings? What response should I expect? Why do I
-            believe that I should expect it? Is it realistic and upon what observations do I base the
-            perception?”{/t}</p>
-
-        <p>{t}Most importantly, “When I think about being a good caregiver, what’s important to me?”{/t}</p>
-
-    </div>
-    <div class="buttons">
-        <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t} </a> <a
-            href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
-    </div>
-</div>
-
-<div id="lesson-1-slide-13" class="course-slide">
-    <div class="content">
-        <h2 class="flowers">{t}What is necessary to create an effective self-coaching experience?{/t}</h2>
-        <hr/>
-        <h4>{t}Step 3{/t}</h4>
-
-        <p>{t}You accept that through self-coaching, you are going to persist until you identify a solution and set of
-            actions that you will then commit to implementing. {/t}</p>
-
-        <p>{t}It may take some time to achieve results, but you need to stick to your goal.{/t}</p>
-
-    </div>
-    <div class="buttons">
-        <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t} </a> <a
-            href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
-    </div>
-</div>
-
-<div id="lesson-1-slide-14" class="course-slide">
-    <div class="content">
-        <h2 class="flowers">{t}What is necessary to create an effective self-coaching experience?{/t}</h2>
-        <hr/>
-        <h4>{t}Step 4{/t}</h4>
-
-        <p>{t}Be willing to “let it go.”{/t}</p>
-
-        <p>
-            {t}We’ve all been in the situation where something just nags at us. Things always seem worse when we pay too
-            much attention to them. If I feel anxious, overwhelmed, or depressed and focus on those feelings, I become
-            it. By letting go, I turn away from it. I don’t feed those problems any longer.{/t}
-        </p>
-
-        <p>
-            {t}It is sort of like flipping to another television channel. You may not be able to stop a thought from
-            “percolating” in your mind, but you can say “no!” to thoughts that result in anxiety or depression. We
-            always have choices. In this case, we have the choice not be become a victim of negative thoughts or
-            insecurities.{/t}
-        </p>
-
-    </div>
-    <div class="buttons">
-        <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t} </a> <a
-            href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
-    </div>
-</div>
-
-<div id="lesson-1-slide-15" class="course-slide">
-    <div class="content">
-        <h2 class="flowers">{t}What is necessary to create an effective self-coaching experience?{/t}</h2>
-        <hr/>
-        <h4>{t}Step 5{/t}</h4>
-
-        <p>{t}Set a time frame for the self-coaching session.{/t}</p>
-
-        <p>
-            {t}The focus of self-coaching is to identify your goal, commit to your actions, and then move on to do
-            something else. Sometimes your best thinking goes on when you do move onto something else and then come back
-            to your goal. {/t}
-        </p>
-
-    </div>
-    <div class="buttons">
-        <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t} </a> <a
-            href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
-    </div>
-</div>
-
-<div id="lesson-1-slide-16" class="course-slide">
-    <div class="content">
-        <h2 class="flowers">{t}Video – 5 steps to self-coaching{/t}</h2>
-        <hr/>
-        <p>{t}Serving as an introduction to self-coaching exercises, this video outlines a simple self-coaching process
-            can be used over and over again whenever you need it.{/t}</p>
-
-        <p>
-            {t}View the video, self-coaching 101 by Brooke Castillo from The Life Coach School. This video is a new way
-            for you to experience a self-coaching session in the comfort of your own home. This video shows an example
-            of self-coaching in action.{/t}
-        </p>
-
-        <iframe style="display: block; width: 640px; height: 360px; framebroder: 0; margin: 15px auto;"
-                src="//www.youtube.com/embed/0_otisZVT8A?rel=0" allowfullscreen></iframe>
-
-    </div>
-    <div class="buttons">
-        <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t} </a> <a
-            href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
-    </div>
-</div>
-
-<div id="lesson-1-slide-17" class="course-slide">
-    <div class="content">
-        <h2 class="flowers">{t}Activity – principles of success{/t}</h2>
-        <hr/>
-        <p>{t}This activity focuses on assessing your awareness of ten principles of success and your rating of how you
-            presently live according to them. Complete a 10 item assessment and then review results based on your
-            responses.{/t}</p>
-
-        <p>
-            <a href="<?php echo $this->createDownloadUrl('becomingamoreconfidentcaregiver/Activity_Principles_of_Success.xls'); ?>"
-               target="_blank" class="button">Download Activity</a>
-        </p>
-
-    </div>
-    <div class="buttons">
-        <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t} </a> <a
-            href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
-    </div>
-</div>
-
-<div id="lesson-1-slide-18" class="course-slide">
-    <div class="content">
-        <h2 class="flowers">{t}Self-coaching exercises – the power of journaling{/t}</h2>
-        <hr/>
-        <p>{t}Journaling is one powerful technique to refocus the negative into positive affirmations. With consistent
-            practice, this method can help create a more positive outlook in our own lives as well as create more
-            positive interactions with others.{/t}</p>
-
-        <p>{t}Journaling facilitates positive self-talk. Positive self-talk has been demonstrated to build one’s
-            self-esteem and self-confidence across a variety of situations. {/t}</p>
-
-        <p>{t}Journaling requires a time commitment to have an impact on one’s self-confidence. We recommend that you
-            commit 30 days to this exercise to see a difference.{/t}</p>
-
-        <p>{t}Because journaling is a private experience, you can create your own unique experience!{/t}</p>
-
-        <p>{t}Continue to the next page to learn more about the process of journaling.{/t}</p>
-
-    </div>
-    <div class="buttons">
-        <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t} </a> <a
-            href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
-    </div>
-</div>
-
-<div id="lesson-1-slide-19" class="course-slide">
-    <div class="content">
-        <h2 class="flowers">{t}The process of journaling{/t}</h2>
-        <hr/>
-        <ol>
-            <li>{t}Begin with getting yourself a notebook or journal for your entries. Although there are inexpensive
-                wire bound notebooks that work just fine, I like to get a little nicer journal with a page marker for my
-                journaling. It makes it more special!{/t}
-            </li>
-        </ol>
-
-    </div>
-    <div class="buttons">
-        <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t} </a> <a
-            href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
-    </div>
-</div>
-
-<div id="lesson-1-slide-20" class="course-slide">
-    <div class="content">
-        <h2 class="flowers">{t}The process of journaling{/t}</h2>
-        <hr/>
-        <ol start="2">
-            <li>{t}Make daily entries about your accomplishments – no matter how big or small. They may be
-                accomplishments in relation to either work or your personal life.{/t}
-            </li>
-        </ol>
-
-    </div>
-    <div class="buttons">
-        <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t} </a> <a
-            href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
-    </div>
-</div>
-
-<div id="lesson-1-slide-21" class="course-slide">
-    <div class="content">
-        <h2 class="flowers">{t}The process of journaling{/t}</h2>
-        <hr/>
-        <ol start="3">
-            <li>{t}Answer these questions:{/t}
-            </li>
-        </ol>
-
-        <ol>
-            <li>{t}What makes me unique?{/t}
-            </li>
-            <li>{t}In what areas of my life do I appear most satisfied or content?{/t}
-            </li>
-            <li>{t}In which areas do I appear to be struggling or unfulfilled?{/t}
-            </li>
-            <li>{t}What are my strengths? (look back at your “Principles of Success” ratings for ideas){/t}
-            </li>
-            <li>{t}How have these strengths helped me in the past?{/t}
-            </li>
-            <li>{t}How do these strengths now help me?/t}
-            </li>
-        </ol>
-
-    </div>
-    <div class="buttons">
-        <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t} </a> <a
-            href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
-    </div>
-</div>
-
-<div id="lesson-1-slide-22" class="course-slide">
-    <div class="content">
-        <h2 class="flowers">{t}The process of journaling{/t}</h2>
-        <hr/>
-        <ol start="4">
-            <li>{t}Review your journal entries of recent accomplishments to connect with your values and talents.{/t}
-            </li>
-        </ol>
-
-        <ul>
-            <li>{t}What can you truly brag about?{/t}
-            </li>
-            <li>{t}What do your successes say about you?{/t}
-            </li>
-
-        </ul>
-
-    </div>
-    <div class="buttons">
-        <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t} </a> <a
-            href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
-    </div>
-</div>
-
-<div id="lesson-1-slide-23" class="course-slide">
-    <div class="content">
-        <h2 class="flowers">{t}The process of journaling{/t}</h2>
-        <hr/>
-        <ol start="5">
-            <li>{t}Create a personal “bragging” statement. Be authentic and positive in your statement. Print out the
-                statement and keep it visible so that you can refer to it often.{/t}
-            </li>
-        </ol>
-
-    </div>
-    <div class="buttons">
-        <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t} </a> <a
-            href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
-    </div>
-</div>
-
-<div id="lesson-1-slide-24" class="course-slide">
-    <div class="content">
-        <h2 class="flowers">{t}The process of journaling{/t}</h2>
-        <hr/>
-        <ol start="6">
-            <li>{t}Recite it out loud daily, saying, “This is me….This is what makes me special.”{/t}
-            </li>
-        </ol>
-
-    </div>
-    <div class="buttons">
-        <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t} </a> <a
-            href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
-    </div>
-</div>
-
-<div id="lesson-1-slide-25" class="course-slide">
-    <div class="content">
-        <h2 class="flowers">{t}Self-coaching exercise – focus on the goal{/t}</h2>
-        <hr/>
-        <p>{t}How do we identify the goal? The goal answers the question, “What do you want that’s really important to
-            you?” This exercise allows you to practice writing goals.{/t}</p>
-
-        <p>{t}Which of these sound like goals to you?{/t}</p>
-
-        <ul>
-            <li>
-                {t}I want to lose 30 pounds.{/t}
-            </li>
-            <li>
-                {t}I want to get better at negotiating.{/t}
-            </li>
-            <li>
-                {t}I want to get my mother to start considering her long-term care options.{/t}
-            </li>
-        </ul>
-
-        <p>{t}None of these are goals – these are strategies towards goals. Strategies are important, as they focus on
-            the “how to get to” goals. It is easy to focus on strategies rather than goals because strategies seem to
-            focus on actions. {/t}</p>
-
-        <p>{t}How do we identify the goal? The goal answers the question, “What do you want that’s really important to
-            you?”{/t}</p>
-
-        <p>{t}Another way to differentiate between setting goals and identifying strategies is to look at differences
-            between goal setting and problem solving. Here are some different terms that describe the two:{/t}</p>
+        <p>{t}This information is not meant to be comprehensive, but provides you a starting point to better understand
+            the complexities that are today’s health care system.{/t}</p>
 
         <table>
-            <th>
-                <p>{t}Goal Setting{/t}</p>
-            </th>
-            <th>
-                <p>{t}Identifying Strategies{/t}</p>
-            </th>
             <tr>
                 <td>
-                    <ul>
-                        <li>
-                            {t}Proactive{/t}
-                        </li>
-                        <li>
-                            {t}Finding what is possible{/t}
-                        </li>
-                        <li>
-                            {t}Developing{/t}
-                        </li>
-                        <li>
-                            {t}Identifying priorities{/t}
-                        </li>
-                        <li>
-                            {t}Dynamic{/t}
-                        </li>
-                        <li>
-                            {t}Working with the whole{/t}
-                        </li>
-                    </ul>
+                    <p>{t}People - {/t}</p>
                 </td>
                 <td>
-                    <ul>
-                        <li>
-                            {t}Reactive{/t}
-
-                        </li>
-                        <li>
-                            {t}Finding what is wrong{/t}
-
-                        </li>
-                        <li>
-
-                            {t}Fixing{/t}
-
-                        </li>
-                        <li>
-
-                            {t}Addressing crises{/t}
-
-                        </li>
-                        <li>
-
-                            {t}Static{/t}
-
-                        </li>
-                        <li>{t}Working with parts{/t}</li>
-                    </ul>
+                    <a href="<?php echo $this->createDownloadUrl('improvingcommunicationwithhealthcareproviders/People.docx'); ?>"
+                       target="_blank" class="button">Download Handout</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>{t}Places - {/t}</p>
+                </td>
+                <td>
+                    <a
+                        href="<?php echo $this->createDownloadUrl('improvingcommunicationwithhealthcareproviders/Places.docx'); ?>"
+                        target="_blank" class="button">Download Handout</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>{t}Things and More Things - {/t}</p>
+                </td>
+                <td>
+                    <a
+                        href="<?php echo $this->createDownloadUrl('improvingcommunicationwithhealthcareproviders/Things_and_More_Things.docx'); ?>"
+                        target="_blank" class="button">Download Handouty</a>
                 </td>
             </tr>
         </table>
@@ -995,89 +700,45 @@ AARP provides various articles of interest and resources for family caregivers. 
     </div>
 </div>
 
-
-<div id="lesson-1-slide-26" class="course-slide">
-    <div class="content">
-        <h2 class="flowers">{t}Setting your goals{/t}</h2>
-        <hr/>
-        <p>{t}Think of goal setting in terms of NOUNS:{/t}</p>
-
-        <ul>
-
-            <li>{t}“I want more confidence dealing with my parents.”{/t}</li>
-            <li>{t}“I want a more positive attitude about my caregiving responsibilities.”{/t}</li>
-            <li>{t}“I want better health for myself.”{/t}</li>
-        </ul>
-
-        <p>{t}Think of goal setting in terms of NOUNS:{/t}</p>
-
-        <ul>
-            <li>{t}I want to lose 30 pounds.{/t}</li>
-            <li>{t}I want to get better at negotiating.{/t}</li>
-            <li>{t} I want to get my mother to start considering her long-term care options.{/t}</li>
-        </ul>
-
-        <p>{t}For this exercise, look back at your responses to the two activities in this module. In the Self-Awareness
-            Survey, you explored what is important to you in your life. In the Principles of Success activity, you rated
-            yourself against these principles. Based on these results, develop three statements of goals for yourself.
-            {/t}</p>
-
-        <p>{t}Remember that goals should be stated in terms of nouns. Goals also answer the question, “What do you want
-            that’s really important to you?”{/t}</p>
-
-        <p>{t}Goal #1: {/t}<input style="margin-left: 15px;" type="text" name="Goal#1" value="(Example)" size="45"></p>
-
-        <p>{t}Goal #2: {/t}<input style="margin-left: 15px;" type="text" name="Goal#2" value="(Example)" size="45"></p>
-
-        <p>{t}Goal #3: {/t}<input style="margin-left: 15px;" type="text" name="Goal#3" value="(Example)" size="45"></p>
-
-
-        <p>{t}Click below to download a copy of this page to write in your goals.{/t}</p>
-
-        <p>
-            <a href="<?php echo $this->createDownloadUrl('becomingamoreconfidentcaregiver/Exercise_Setting_your_Goals.docx'); ?>"
-               target="_blank" class="button">Download Activity</a>
-        </p>
-
-
-    </div>
-    <div class="buttons">
-        <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t} </a> <a
-            href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
-    </div>
-</div>
-
-<div id="lesson-1-slide-27" class="course-slide">
+<div id="lesson-1-slide-12" class="course-slide">
     <div class="content">
         <h2 class="flowers">{t}Congratulations on completing the course!{/t}</h2>
         <hr/>
+
         <p>{t}Let’s summarize the top five points we covered in this course:{/t}</p>
+
         <ol>
-            <li>{t}You are not alone as a caregiver of an older adult! More than one in six working caregivers care for
-                one or more older adults.{/t}
+            <li>
+                {t}The goal for any patient in the health care system should be to optimize one’s chances of achieving a
+                good outcome when health care is needed. Taking charge of one’s health care is key.{/t}
             </li>
-
-            <li>{t}A “role reversal” with aging parents is common, although it is not uncommon for that to be
-                challenging to now be the “coach” for your aging parents. So remember to be a successful coach, use the
-                skills of appreciating, listening, appreciating, and supporting.{/t}
+            <li>
+                {t}The third component of CARE Coaching is Relating. The most important factor in the patient-physician
+                relationship is communicating or relating.{/t}
             </li>
-
-            <li>{t} Focus on shifting from negative “self talk” to positive “self talk” to get to what’s important to
-                you as a caregiver.{/t}
+            <li>
+                {t}In planning for your discussions with your older parents and their physicians, their caregiver, you
+                have an obligation to understand your parents’ medical care as well as patient privacy requirements and
+                rights. If you are not the medical guardian (or power of attorney) for your parents, they must give
+                consent for you to get information about their health care. Try to work out who will be the chief
+                medical historian and speaker before you enter the physician’s office.{/t}
             </li>
-
-            <li>{t}Use the five steps involved in creating an effective self-coaching experience to help you move your
-                thinking forward as an effective caregiver and focus on the goal.{/t}
+            <li>
+                {t}A “PowerPhrase” is a short, specific expression that gets results by saying what it means and meaning
+                what it says. By planning specific phrases to use prior to an appointment, the results can be much more
+                favorable to the patient so that the physician can begin the exam with the understanding of “what
+                brought you here today.”{/t}
             </li>
-
-            <li>{t} Try journaling to facilitate positive “self talk” and boost your self-confidence as an effective
-                caregiver.{/t}
+            <li>
+                {t}Be assertive but not aggressive in communicating with your parent’s physicians. Most physicians and
+                other health care professionals today want to ask questions and be asked about health care issues by
+                their patients.{/t}
             </li>
         </ol>
 
     </div>
     <div class="buttons">
-        <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Complete Module{/t} </a>
+        <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Complete Course{/t} </a>
     </div>
 </div>
 
