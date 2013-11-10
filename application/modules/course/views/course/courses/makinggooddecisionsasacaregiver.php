@@ -132,7 +132,6 @@ foreach (array(
         to access this course:{/t}
     </p>
     <ul>
-        <li>{t}Spreadsheet processor (Microsoft Excel or similar){/t}</li>
         <li><a href="http://get.adobe.com/reader/" target="_blank">{t}Adobe Acrobat{/t}</a></li>
     </ul>
     <h4>{t}Objectives{/t}</h4>
@@ -270,11 +269,12 @@ AARP provides various articles of interest and resources for family caregivers. 
 <div id="lesson-1">
 <div id="lesson-1-slide-1" class="course-slide">
     <div class="content">
-        <h2 class="flowers">{t}Becoming a More Confident Caregiver{/t}</h2>
+        <h2 class="flowers">{t}Making Good Decisions as a Caregiver{/t}</h2>
         <hr/>
-        <p>{t}Welcome to the course, “Becoming a More Confident Caregiver.” This course is geared towards family members
-            who provide support or care to an older adult who may be a parent, spouse, other relative, or a significant
-            other.{/t}</p>
+        <p>{t}Welcome to the course, “Making Good Decisions as a Caregiver.” This course is geared towards family
+            members who provide support or care to an older adult who may be a parent, spouse, other relative, or a
+            significant other. In particular, long distance caregiving is a growing phenomenon as adult children may
+            need to relocate because of career changes, new job opportunities, or other reasons.{/t}</p>
 
         <p>{t}Also, this course may be of help to a “future caregiver” to better prepare oneself for a future caregiving
             role. Whether you are now – or will be in the future – a caregiver for an older adult, it is important to
@@ -317,7 +317,6 @@ AARP provides various articles of interest and resources for family caregivers. 
             caregiving situation so you may better prepare and feel confident about your caregiving responsibilities and
             actions.{/t}</p>
 
-        <p>{t}So let's begin with some facts about family caregivers!{/t}</p>
     </div>
     <div class="buttons">
         <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t} </a> <a
@@ -326,31 +325,37 @@ AARP provides various articles of interest and resources for family caregivers. 
 </div>
 <div id="lesson-1-slide-3" class="course-slide">
     <div class="content">
-        <h2 class="flowers">{t}Some facts about family caregivers{/t}</h2>
+        <h2 class="flowers">{t}Long distance caregiving{/t}</h2>
         <hr/>
-        <p>{t}Here are some interesting facts about family caregivers:{/t}</p>
+        <p>{t}With many grown children seeking new career opportunities or needing to relocate due to their job away
+            from their parents and the home in which they were raised, long distance caregiving has grown as an issue in
+            our society.{/t}</p>
+
+        <p>
+            {t}Here are some fast facts to consider:{/t}
+        </p>
 
         <ul>
-            <li>{t}Nearly 44 million family caregivers provided support or care to someone ages 50 years or older.{/t}
+            <li>{t}Seven million American caregivers provide 80% of the care to vulnerable or ill family members.{/t}
             </li>
-            <li>{t}Nearly 15 million family caregivers care for someone with Alzheimer’s disease or other forms of
-                dementia.{/t}
+            <li>{t}There are approximately 3.3 million long distance caregivers.{/t}
             </li>
-            <li>{t}More than two-thirds of family caregivers taking care of an older adult are female.{/t}</li>
-            <li>{t}Two-thirds of family caregivers do not live with the older adults they are caring for.{/t}</li>
-            <li>{t}Nearly 60 percent of care recipients live in their own homes.{/t}</li>
-            <li>{t}The number of male caregivers is steadily growing. Male caregivers are more likely to help with tasks
-                related to the home of the older adult (such as home repairs or financial issues) while female
-                caregivers perform more physical care tasks (such as bathing or dressing).{/t}
+            <li>{t}Caregivers live an average of 480 miles from the people for which they care.{/t}</li>
+            <li>{t}Caregivers spend an average of four hours traveling to that person.{/t}</li>
+            <li>{t}15 millions days are missed from work each year because of long distance caregiving.{/t}</li>
+            <li>{t}The number of long distance caregivers will double over the next 15 years.{/t}
             </li>
-            <li>{t}A significant portion of family caregiver’s time focuses on errands (such as shopping,
-                transportation, picking up medications), researching and making care arrangements, transportation to
-                physician appointments, and managing financial matters.{/t}
-            </li>
-            <li>{t}More than one in six working caregivers care for one or more older adults.{/t}</li>
         </ul>
 
-        <p>{t}Next, we’ll learn more about the CARE Coaching concepts.{/t}</p>
+        <p>{t}Long distance caregiving can range from providing physical care to helping with bills or just paying a
+            visit. The good news is that you are not on your own as a long distance caregiver. There are many resources
+            available. Sometimes, the main issue is not the availability of resources, but acceptance by older adults to
+            receiving outside help. The final course in this series goes into more depth about issues and solutions for
+            long distance caregivers.{/t}</p>
+
+        <p>
+            {t}Let’s practice some coaching skills.{/t}
+        </p>
 
     </div>
     <div class="buttons">
@@ -361,20 +366,15 @@ AARP provides various articles of interest and resources for family caregivers. 
 
 <div id="lesson-1-slide-4" class="course-slide">
     <div class="content">
-        <h2 class="flowers">{t}What’s coaching all about?{/t}</h2>
+        <h2 class="flowers">{t}Activity – CARE Coaching through long distance caregiving{/t}</h2>
         <hr/>
-        <p>{t}You are probably familiar with the term “coaching” from many aspects of our daily lives.{/t}</p>
+        <p>{t}YRead the following scenario and then respond to the CARE coaching questions. We provide some initial
+            “openers” for CARE coaching questions for you to more fully develop your own questions.{/t}</p>
 
-        <p>{t}As a parent or sibling, you may be involved in coaching little league or some other sport. Usually this
-            form of coaching involves teams. The role of the coach is to motivate, set ground rules, and draw out the
-            best in each player for the good of the team.{/t}</p>
-
-        <p>{t}In the work environment, coaching may also involve the work team or individual. Coaching the work team may
-            involve looking at ways to turn barriers into opportunities for the good of the team and company. An
-            organization may bring in a professional coach to build sustainable, high-performance work teams and thus
-            build the company’s competitive advantage over other organizations. At the individual level, a coach may
-            focus on leadership development showing the company’s commitment to build a strong base of effective
-            leaders.{/t}</p>
+        <p>
+            <a href="<?php echo $this->createDownloadUrl('makinggooddecisionsasacaregiver/Activity_CARE_Coaching_through_Long_Distance_Caregiving.docx'); ?>"
+               target="_blank" class="button">Download Activity</a>
+        </p>
 
     </div>
     <div class="buttons">
@@ -385,36 +385,22 @@ AARP provides various articles of interest and resources for family caregivers. 
 
 <div id="lesson-1-slide-5" class="course-slide">
     <div class="content">
-        <h2 class="flowers">{t}Role reversals with aging parents{/t}</h2>
+        <h2 class="flowers">{t}A checklist for long distance caregivers{/t}</h2>
         <hr/>
-        <p>{t}As a current or future caregiver, you may be feeling as if you are in a “reversed role” to an elderly
-            parent, other relative, or friend. When we are young, we look up to parents or others as a “coach” in many
-            respects. Though it may have been difficult at times for all of us growing up, the effective parent “coach”
-            had the following skill set:{/t}</p>
+        <p>{t}It is often helpful for the long distance caregiver to have checklists to identify core areas that older
+            parents now or in the future may need some assistance. Think about your own caregiving situation and review
+            the following list.{/t}</p>
 
-        <ul>
-            <li>
-                {t}They respected us, so we listened to them.{/t}
-            </li>
-            <li>
-                {t}They listened to us, so we felt understood.{/t}
-            </li>
-            <li>
-                {t}They appreciated us, so we felt supported.{/t}
-            </li>
-            <li>
-                {t}They supported us when we tried new things, so we grew more responsible.{/t}
-            </li>
-        </ul>
-        <p>{t}As our parents age, they may suffer declining physical or cognitive health and thus have greater need for
-            our help and understanding, and so we may become their “coach” in life. That is easier said than done in
-            many cases! Regardless of their age, our parents always see themselves in that role in our relationship with
-            them.{/t}</p>
+        <p>{t}Check off areas of care needs that are important now for you as a caregiver. Go through the list again and
+            check off those areas of care needs that may be important for you in the future as a caregiver. This will
+            give you some important discussion points to bring up with your parents and/or your siblings. We have
+            attached this form at the bottom of the page for downloading and printing.{/t}</p>
 
-        <p>{t}We also tend to go back into old habits, communication styles, or reactions when dealing with our parents.
-            How do you deal with a situation where your father begins to have minor car accidents or “forgets” the way
-            home? Talking with a parent about giving up the car keys is probably one of the most challenging situations
-            we may face as a caregiver.{/t}</p>
+        <p>
+            <a href="<?php echo $this->createDownloadUrl('makinggooddecisionsasacaregiver/Caregiver_Checklist.docx'); ?>"
+               target="_blank" class="button">Download Activity</a>
+        </p>
+
     </div>
     <div class="buttons">
         <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t} </a> <a
@@ -424,24 +410,18 @@ AARP provides various articles of interest and resources for family caregivers. 
 
 <div id="lesson-1-slide-6" class="course-slide">
     <div class="content">
-        <h2 class="flowers">{t}What’s CARE Coaching all about?{/t}</h2>
+        <h2 class="flowers">{t}Sharpening your observation skills{/t}</h2>
         <hr/>
-        <p>{t}CARE Coaching involves a method to help you as a caregiver think differently about a caregiving situation
-            so you may better prepare and feel confident about your caregiving responsibilities and actions. Learning
-            what is important to older parents – and learning how to draw that out – often bringing to light new
-            information about what is important to them in terms of their own health and care.{/t}</p>
+        <p>{t}Having a checklist as reference to identify areas that may now or in the future be important to your aging
+            parents is a good first step. Sharpening your observation skills is important to identify if your parents
+            are beginning to have some cognitive, physical, or emotional challenges. Some changes may be very subtle.
+            {/t}</p>
 
-        <p>{t}CARE Coaching will provide your tools, resources, and experiences targeted towards strengthening your
-            caregiving abilities to Communicate, Advocate, Relate, and Encourage older parents or other loved ones.
-            Throughout this course, we will highlight these terms and provide examples and activities to help you on
-            this journey.{/t}</p>
-
-        <p>{t}In this course, we’ll usually talk about “older parents,” but we realize that caregivers may be involved
-            in caring for older siblings, other relatives, friends, or neighbors. For the purposes of this course, we
-            will use “older parents” as our “short-hand” descriptor of any older adult that you may be caring
-            for!{/t}</p>
-
-        <p>{t}Before we can start coaching others, let’s consider our skills related to coaching ourselves!{/t}</p>
+        <p>{t}Above all, be respectful of their privacy in your observations. Rather than “challenging” your parent
+            about something out of the ordinary (i.e., “Mom, I’ve noticed you’ve lost a lot of weight. Aren’t you
+            eating?), try to involve her in some activity (i.e., “Mom, I was hoping that you can show me how to make
+            some of those great recipes of yours. Being that I’m here for the week, I know you can give me lots of
+            pointers and we can enjoy some great meals together!” {/t}</p>
 
     </div>
     <div class="buttons">
@@ -453,35 +433,56 @@ AARP provides various articles of interest and resources for family caregivers. 
 
 <div id="lesson-1-slide-7" class="course-slide">
     <div class="content">
-        <h2 class="flowers">{t}Self-coaching: It all starts with me!{/t}</h2>
+        <h2 class="flowers">{t}Areas to observe during your visits{/t}</h2>
         <hr/>
-        <p>{t}Self-coaching shifts the approach from the cycling negative “internal dialogue” to help you focus on
-            what’s important to you right now and how you may accomplish that goal.{/t}</p>
+        <p>{t}
+            Try to use all of your senses to observe changes related to your parent or the home environment during your
+            visits.{/t}</p>
 
-        <p>{t}In this case, it’s alright to say “it’s all about me!” There is quite a bit of information published about
-            “self-coaching.” Think about the fact that we each represent a unique individual surrounded by a myriad of
-            things going on inside and outside of ourselves.{/t}</p>
-
-        <p>{t}We constantly have an “internal dialogue” going on that no one else can hear. As a caregiver, that
-            “internal dialogue” may be reliving negative experiences:{/t}</p>
+        <p>{t}Some questions to consider related to your parent:{/t}</p>
 
         <ul>
             <li>
-                {t}“If only my mother listened to me and moved in with us years ago, she wouldn’t have fallen, broken
-                her hip, and wound up in that terrible nursing home!”{/t}
+                {t}Do you notice changes in their personal appearance or hygiene?{/t}
             </li>
             <li>
-                {t}“I just can’t take on more responsibility for my dad’s care. I already work 50 to 60 hours a week and
-                have family responsibilities. But if I don’t, who will?”{/t}
+                {t}Do you notice any weight changes?{/t}
             </li>
             <li>
-                {t}“How am I going to bring up the issue of long-term care planning with my parents? They always shut me
-                off when I bring up questions about their finances.”{/t}
+                {t}Does your parent seem unsteady in their gait or have difficulties getting up from the chair?{/t}
+            </li>
+            <li>
+                {t}Does your parent misplace things or forget what he or she is doing in the middle of an activity?{/t}
+            </li>
+            <li>
+                {t}Do you notice that your parent is having difficulties remembering how to do routine tasks?{/t}
+            </li>
+            <li>
+                {t}Is your parent going out to visit friends or have contacts lessened recently?{/t}
+            </li>
+            <li>
+                {t}Has your parent kept up with physician appointments?{/t}
             </li>
         </ul>
 
-        <p>{t}Going over and over these types of thoughts and questions in our minds does not get to problem
-            solving.{/t}</p>
+        <p>{t}Some questions to consider related to the environment:{/t}</p>
+
+        <ul>
+            <li>
+                {t}Are there changes in relation to tidiness or cleanliness of the home environment?{/t}
+            </li>
+            <li>
+                {t}Are bills not getting paid or mail stacking up?{/t}
+            </li>
+            <li>
+                {t} Is the refrigerator empty of food or is food spoiling? (Hint: There may be containers in the
+                refrigerator, but check if there is food actually in those containers or if they are sitting empty.){/t}
+            </li>
+            <li>
+                {t}Are there safety issues or potential risks in the home such as loose throw rugs on the floors,
+                nonfunctioning fire detectors, or burnt pots on the stove?{/t}
+            </li>
+        </ul>
 
     </div>
     <div class="buttons">
@@ -492,47 +493,34 @@ AARP provides various articles of interest and resources for family caregivers. 
 
 <div id="lesson-1-slide-8" class="course-slide">
     <div class="content">
-        <h2 class="flowers">{t}Self-coaching “self talk”{/t}</h2>
+        <h2 class="flowers">{t}Some common questions (and answers) for long distance caregivers{/t}</h2>
         <hr/>
-        <p>{t}Self-coaching shifts the approach from the cycling negative “internal dialogue” to help you focus on
-            what’s important to you right now and how you may accomplish that goal.{/t}</p>
+        <p>{t}Long distance caregivers can be helpful regardless of the distance! Here are some common questions (and
+            answers) for long distance caregivers.{/t}</p>
 
-        <p>{t}Say this to yourself:{/t}</p>
+        <ol>
+            <li>
+                {t}What is the basic information I should have at hand as a long distance caregiver?{/t}
+            </li>
+        </ol>
         <ul>
             <li>
-                {t}I am going to accomplish something.{/t}
+                {t}Have contact information from your older parents’ neighbors. Make sure they know how to reach you in
+                an emergency.{/t}
             </li>
             <li>
-                {t}I am going to figure it out.{/t}
+                {t}Check out local resources and services (usually through a local area agency on aging, library, or
+                senior center). Check with your parents which ones they may find helpful and check back on whether they
+                have initiated contacts.{/t}
             </li>
-            <li>
-                {t}I am going to do my best thinking, because I want to get to what’s important.{/t}
+            <li>{t}Have a current list of your parents’ medications (prescription and over-the-counter) including
+                dosages, schedule, and reasons they are taking.{/t}
+            </li>
+            <li>{t}When you visit their home, be observant for changes in the environment or potential safety hazards.
+                Find out if you parents have “advanced directives” that outline their health care treatment
+                preferences.{/t}
             </li>
         </ul>
-
-        <p>{t}Now, say this out loud:{/t}</p>
-
-        <ul>
-            <li>
-                {t}I am going to accomplish something.{/t}
-            </li>
-            <li>
-                {t}I am going to figure it out.{/t}
-            </li>
-            <li>
-                {t}I am going to do my best thinking, because I want to get to what’s important.{/t}
-            </li>
-        </ul>
-
-        <p>{t}This is just a simple exercise in positive self-talk. Our internal voice and thoughts have the capability
-            to create our reality, and so it is our daily challenge to move aside the negative, cyclical thinking and
-            focus on positive steps we may take to move forward. Focusing on the many skills you already have inside of
-            yourself not only will benefit your own health, success, and self-esteem, but will be of great aide to your
-            caregiving responsibilities.{/t}</p>
-
-        <p>{t}Let’s first assess where you currently are related to your readiness and awareness for self-coaching, and
-            then we will move into some self-coaching exercises that you may continue as often as you feel it would be
-            helpful to you.{/t}</p>
 
     </div>
     <div class="buttons">
@@ -543,16 +531,43 @@ AARP provides various articles of interest and resources for family caregivers. 
 
 <div id="lesson-1-slide-9" class="course-slide">
     <div class="content">
-        <h2 class="flowers">{t}Activity – Self-awareness survey{/t}</h2>
+        <h2 class="flowers">{t}Some common questions (and answers) for long distance caregivers{/t}</h2>
         <hr/>
-        <p>{t}This activity invites you to explore and live several questions. Your responses should open up more
-            self-awareness of what is important to you in your life. Please note that you may print or save any
-            activities from this course for future reference.{/t}</p>
 
-        <p>
-            <a href="<?php echo $this->createDownloadUrl('makinggooddecisionsasacaregiver/Activity_Self_Awareness_Survey.doc'); ?>"
-               target="_blank" class="button">Download Activity</a>
-        </p>
+        <ol start="2">
+            <li>
+                {t}What can I really expect to do from a distance? I don’t feel comfortable just stepping into a
+                situation.{/t}
+            </li>
+        </ol>
+        <ul>
+            <li>
+                {t}Educate yourself on what you need to know about your parents’ health care, their needs and
+                preferences, and other pertinent information.{/t}
+            </li>
+            <li>
+                {t}Plan your visits ahead of time. Decide on priorities they may have.{/t}
+            </li>
+            <li>{t}Everything in your visit should not just be about caregiving. Plan to actually “visit” during your
+                visits!{/t}
+            </li>
+            <li>{t}Stay in contact and encourage your parents to do the same.{/t}
+            </li>
+        </ul>
+
+        <ol start="3">
+            <li>
+                {t}How can I feel less frustrated and angry with the caregiving situation?{/t}
+            </li>
+        </ol>
+        <ul>
+            <li>
+                {t}Feeling frustrated and angry is very common among caregivers regardless of distance.{/t}
+            </li>
+            <li>
+                {t}Plan to give yourself a break and just do something for yourself.{/t}
+            </li>
+        </ul>
 
     </div>
     <div class="buttons">
@@ -563,19 +578,38 @@ AARP provides various articles of interest and resources for family caregivers. 
 
 <div id="lesson-1-slide-10" class="course-slide">
     <div class="content">
-        <h2 class="flowers">{t}Creating the environment for self-coaching{/t}</h2>
+        <h2 class="flowers">{t}Some common questions (and answers) for long distance caregivers{/t}</h2>
         <hr/>
-        <p>{t}The principle behind self-coaching (and CARE Coaching for that matter!) is the revelation of solutions
-            already inherent in each person. For those who may be fortunate to experience an external coach, their role
-            is to facilitate the experience and create an environment for the person being coached to do their best
-            thinking. {/t}</p>
+        <ol start="4">
+            <li>
+                {t}What is a geriatric care manager and how can one help?{/t}
+            </li>
+        </ol>
+        <ul>
+            <li>
+                {t}Geriatric care managers are licensed nurses or social workers who specialize in geriatric care. {/t}
+            </li>
+            <li>
+                {t}The geriatric care manager is hired by a family to evaluate and assess an older parent’s needs and to
+                coordinate care through community resources.{/t}
+            </li>
+            <li>{t}When choosing one, you want to check references as well as find out their experience, fees, and if
+                they are a member of the National Association of Professional Geriatric Care Managers.{/t}
+            </li>
+        </ul>
 
-        <p>{t}Self-coaching can work in the same way for many individuals who commit some time and effort into the
-            process. We have included several exercises throughout this course that will help you practice coaching
-            skills that will be valuable when coaching yourself or communicating in your caregiving role with older
-            parents. {/t}</p>
+        <ol start="5">
+            <li>
+                {t}Respite care provides one a break from caregiving responsibilities – it can be for an afternoon or
+                for several days.{/t}
+            </li>
+        </ol>
+        <ul>
+            <li>
+                {t}Care can be provided in the home, in an adult day care center, or in a senior living community.{/t}
+            </li>
+        </ul>
 
-        <p>{t}Let’s look at the five steps necessary to create an effective self-coaching experience.{/t}</p>
 
     </div>
     <div class="buttons">
@@ -586,15 +620,30 @@ AARP provides various articles of interest and resources for family caregivers. 
 
 <div id="lesson-1-slide-11" class="course-slide">
     <div class="content">
-        <h2 class="flowers">{t}What is necessary to create an effective self-coaching experience?{/t}</h2>
+        <h2 class="flowers">{t}Some common questions (and answers) for long distance caregivers{/t}</h2>
         <hr/>
-        <h4>{t}Step 1{/t}</h4>
-
-        <p>{t}You are aware of the need for change and are prepared to accept that you cannot blame others or
-            circumstances of a situation.{/t}</p>
-
-        <p>{t}In other words, you are willing to be open to choices and you are willing to make those choices. It would
-            be most like stepping outside of your situation and viewing it as impartially as possible.{/t}</p>
+        <ol start="6">
+            <li>
+                {t}What if my mom says, “Promise me you’ll never put me in a nursing home”?{/t}
+            </li>
+        </ol>
+        <ul>
+            <li>
+                {t}This request usually follows some horrendous story on the news about a nursing home death. Most of us
+                want to stay in our own homes, to be independent, and to be cared for by relatives and friends.{/t}
+            </li>
+            <li>
+                {t}Think carefully before making this type of promise. Assuring your parents that you will look out for
+                them in their best interests and provide quality of care is what is really important. For some
+                illnesses, long-term care may be the sole option. Discovering too late that such promises cannot be kept
+                has often resulted in terrible feelings of guilt by the caregiver for many years.{/t}
+            </li>
+            <li>
+                {t}Rather than a promise that cannot be kept, another way to respond is, “Dad, I will make sure you have
+                the best care we can arrange. You can count on me to try and do what’s best for everyone. I can’t think
+                of a situation where I’d walk out on you.”{/t}
+            </li>
+        </ul>
 
     </div>
     <div class="buttons">
@@ -605,26 +654,36 @@ AARP provides various articles of interest and resources for family caregivers. 
 
 <div id="lesson-1-slide-12" class="course-slide">
     <div class="content">
-        <h2 class="flowers">{t}What is necessary to create an effective self-coaching experience?{/t}</h2>
+        <h2 class="flowers">{t}Some common questions (and answers) for long distance caregivers{/t}</h2>
         <hr/>
-        <h4>{t}Step 2{/t}</h4>
 
-        <p>{t}You are prepared to ask yourself some difficult questions and not avoid answering them. {/t}</p>
-
-        <p>{t}Imagine that you are in some tough discussions with your father and siblings about dad’s lack of caring
-            for himself living alone. Dad has grown more isolated day by day. When visiting one day, you are shocked to
-            find empty food containers and spoiled food in the refrigerator. There is a stack of unpaid bills on the
-            kitchen counter next to a jar of various pills mixed together. You bring this up with your siblings, but
-            their reaction is, “Dad is fine. He wants to stay in his house, and it’s not our place to kick him out!”
-            Your dad says, “I just haven’t gotten around to some things…and I’d thank you to stay out of my
-            business!”{/t}</p>
-
-        <p>{t}Are your prepared to ask yourself some key questions like…”Am I an effective caregiver? Why do I think
-            that I am not getting the response I need from my dad or siblings? What response should I expect? Why do I
-            believe that I should expect it? Is it realistic and upon what observations do I base the
-            perception?”{/t}</p>
-
-        <p>{t}Most importantly, “When I think about being a good caregiver, what’s important to me?”{/t}</p>
+        <ol start="7">
+            <li>
+                {t}What are some other resources for long distance caregivers?{/t}
+            </li>
+        </ol>
+        <ul>
+            <li>
+                {t}Obtain a free Caregiver Resource Directory that provides resources, facts, and advice about caring
+                for a family member as well as for yourself. www.netofcare.org/crd/resource_form.asp{/t}
+            </li>
+            <li>
+                {t}Benefits Check UP is a free online service provided by the National Council on Aging which allows
+                people to find programs that can help them meet health care costs. www.benefitscheckup.org{/t}
+            </li>
+            <li>
+                {t}ARCH National Respite Network and Resource Center provides resources and information including a
+                respite locator program and information clearinghouse. www.archrespite.org{/t}
+            </li>
+            <li>
+                {t}Eldercare Locator is a nationwide service helping identify local resources for older adults.
+                www.eldercare.gov{/t}
+            </li>
+            <li>
+                {t}National Family Caregivers Association supports family caregivers and offers education, information,
+                and referrals. www.nfcacares.org{/t}
+            </li>
+        </ul>
 
     </div>
     <div class="buttons">
@@ -635,14 +694,51 @@ AARP provides various articles of interest and resources for family caregivers. 
 
 <div id="lesson-1-slide-13" class="course-slide">
     <div class="content">
-        <h2 class="flowers">{t}What is necessary to create an effective self-coaching experience?{/t}</h2>
+        <h2 class="flowers">{t}Other benefits for long distance caregivers who are working{/t}</h2>
         <hr/>
-        <h4>{t}Step 3{/t}</h4>
 
-        <p>{t}You accept that through self-coaching, you are going to persist until you identify a solution and set of
-            actions that you will then commit to implementing. {/t}</p>
+        <p>{t}Long distance caregiving can have a great impact on one’s job. Because of fear of losing one’s job or
+            impact on job security, many working caregivers do not inform their employers of their caregiving
+            obligations. On the other side of the coin, employers are seeing a growing number of employees with family
+            caregiving obligations particularly related to older parents. In fact, it may not surprise you that your
+            supervisor could also be going through this experience now or in the near future.{/t}</p>
 
-        <p>{t}It may take some time to achieve results, but you need to stick to your goal.{/t}</p>
+        <p>{t}Many organizations have programs in place to assist employees better meet their obligations as caregivers
+            to older adults. You may want to discuss some of these benefits with your human resources department to see
+            what may be available to you.{/t}</p>
+
+        <p>
+            {t}Some examples of family caregiving options include:{/t}
+        </p>
+
+        <ul>
+            <li>
+                {t}Employee assistance programs – Human Resources may provide information to you from your EAP provider
+                regarding programs and counseling services available to employees and their families.{/t}
+            </li>
+            <li>
+                {t}Flex time – employees with family caregiving responsibilities may be able to work flexible hours or
+                days of the week to meet both work and home obligations more effectively.{/t}
+            </li>
+            <li>
+                {t}Job sharing with another employee – employees with family caregiving obligations may be able to
+                partner and share a work schedule to cover each other’s responsibilities.{/t}
+            </li>
+            <li>
+                {t}Telecommuting or working from home – an occasion day to work at home may alleviate some of the
+                pressures balancing work and home life.{/t}
+            </li>
+            <li>
+                {t}Case management services – community services in your area may include case management or care
+                management assistance in the home. This may include home care services, respite care, meals-on-wheels,
+                or other referral services.{/t}
+            </li>
+            <li>
+                {t}Family and Medical Leave Act (FMLA) – available to employees in certain companies that allow up to 12
+                weeks of unpaid leave to eligible employees in order to care for certain family members for medical
+                reasons.{/t}
+            </li>
+        </ul>
 
     </div>
     <div class="buttons">
@@ -653,24 +749,28 @@ AARP provides various articles of interest and resources for family caregivers. 
 
 <div id="lesson-1-slide-14" class="course-slide">
     <div class="content">
-        <h2 class="flowers">{t}What is necessary to create an effective self-coaching experience?{/t}</h2>
+        <h2 class="flowers">{t}Are you a “sandwich generation” caregiver?{/t}</h2>
         <hr/>
-        <h4>{t}Step 4{/t}</h4>
 
-        <p>{t}Be willing to “let it go.”{/t}</p>
+        <p>{t}If you are between the ages of 35 to 54 and are caring for both younger ones such as children and older
+            parents or other family members and probably employed at the same time, you may be a “sandwich generation”
+            caregivers. You are not alone as approximately 20 million American fit this description.{/t}</p>
 
         <p>
-            {t}We’ve all been in the situation where something just nags at us. Things always seem worse when we pay too
-            much attention to them. If I feel anxious, overwhelmed, or depressed and focus on those feelings, I become
-            it. By letting go, I turn away from it. I don’t feed those problems any longer.{/t}
+            {t}A survey by the American Psychological Association reported that women in the “sandwich generation” feel
+            more stress than any other age group as they have to balance the demands of caregiving two generations.
+            Nearly 40% of them report “extreme levels” of stress which takes a toll on both their personal relationships
+            but also on their own well-being as they may often put their own health on the “backburner.”{/t}
         </p>
 
         <p>
-            {t}It is sort of like flipping to another television channel. You may not be able to stop a thought from
-            “percolating” in your mind, but you can say “no!” to thoughts that result in anxiety or depression. We
-            always have choices. In this case, we have the choice not be become a victim of negative thoughts or
-            insecurities.{/t}
+            {t}Watch the following video to see one family’s experience.{/t}
         </p>
+
+        <h4>{t}Video – Part of the Sandwich Generation{/t}</h4>
+
+        <iframe style="width: 640px; height: 360px; display: block; margin: 15px auto; frameborder: 0;"
+                src="//www.youtube.com/embed/55UCToPajd4?rel=0" allowfullscreen></iframe>
 
     </div>
     <div class="buttons">
@@ -681,16 +781,22 @@ AARP provides various articles of interest and resources for family caregivers. 
 
 <div id="lesson-1-slide-15" class="course-slide">
     <div class="content">
-        <h2 class="flowers">{t}What is necessary to create an effective self-coaching experience?{/t}</h2>
+        <h2 class="flowers">{t}Activity – ways to manage your own stress{/t}</h2>
         <hr/>
-        <h4>{t}Step 5{/t}</h4>
 
-        <p>{t}Set a time frame for the self-coaching session.{/t}</p>
+        <p>{t}The American Psychological Association offers several strategies to help those in the “sandwich
+            generation” manage their stress. In another course, we address the power of journaling as a self-coaching
+            exercise to help create positive self-talk.{/t}</p>
 
         <p>
-            {t}The focus of self-coaching is to identify your goal, commit to your actions, and then move on to do
-            something else. Sometimes your best thinking goes on when you do move onto something else and then come back
-            to your goal. {/t}
+            {t}In managing stress, journaling can also be a very effective tool to help identify what situations or
+            events trigger stressful feelings, how you deal (or don’t deal) with stress, and how you may manage
+            stress.{/t}
+        </p>
+
+        <p>
+            <a href="<?php echo $this->createDownloadUrl('makinggooddecisionsasacaregiver/Activity_Ways_to_Manage_Your_Own_Stress.doc'); ?>"
+               target="_blank" class="button">Download Activity</a>
         </p>
 
     </div>
@@ -702,19 +808,36 @@ AARP provides various articles of interest and resources for family caregivers. 
 
 <div id="lesson-1-slide-16" class="course-slide">
     <div class="content">
-        <h2 class="flowers">{t}Video – 5 steps to self-coaching{/t}</h2>
+        <h2 class="flowers">{t}Family communication: when siblings attack!{/t}</h2>
         <hr/>
-        <p>{t}Serving as an introduction to self-coaching exercises, this video outlines a simple self-coaching process
-            can be used over and over again whenever you need it.{/t}</p>
+        <p>{t}Family dynamics can be very complex. We have been talking about your caregiving throughout this course in
+            relation to your older parents. We cannot forget that, in many families, family dynamics also include
+            siblings – whether they are yours or your parents.{/t}</p>
 
         <p>
-            {t}View the video, self-coaching 101 by Brooke Castillo from The Life Coach School. This video is a new way
-            for you to experience a self-coaching session in the comfort of your own home. This video shows an example
-            of self-coaching in action.{/t}
+            {t}Family conflict regarding caregiving of older parents is quite common. Dealing with care of older parents
+            can rekindle early rivalries or jealousies among siblings. Family dynamics can be very complext, but there
+            are some common underlying causes of conflict. In some families, siblings may perceive imbalance of care and
+            responsibilities among family members. For example, siblings who live nearest to parents or those who are
+            single females may be “expected” by their siblings to be primary caregivers regardless of other
+            responsibilities. In some families, conflicts about money can be a significant source of conflict. One
+            sibling may feel he or she deserves a greater portion of an inheritance, while the long distance sibling may
+            feel that too much was spent on parent’s care by a brother or sister.{/t}
         </p>
 
-        <iframe style="display: block; width: 640px; height: 360px; framebroder: 0; margin: 15px auto;"
-                src="//www.youtube.com/embed/0_otisZVT8A?rel=0" allowfullscreen></iframe>
+        <p>{t}Central to most sibling conflicts is a breakdown of communication. Many care relate to this common
+            scenario:{/t}</p>
+
+        <blockquote>{t} Cara is a long distance caregiver. Unfortunately her new job meant she has not been able to
+            visit her aging mother for the past three years. She never had a very close relationship with her mother,
+            and so their conversations always tended to be on a superficial level. She calls her mother about every two
+            weeks. Over the phone, Cara’s mother tells her she is fine. On the other hand, Cara’s sister, Joyce, who is
+            the primary caregiver, calls Cara and tells her that caring for their mother has become very challenging.
+            Their mother has wandered from home on numerous occasions and has difficulty finding her way back home. She
+            also leaves pots on the stove and forgets to turn off the burners. Joyce wants to talk about potentially
+            moving their mother to an assisted living community, but Cara does not want any part of such a decision, as
+            she does not see any problem as her mother “sounds fine” on the phone.{/t}
+        </blockquote>
 
     </div>
     <div class="buttons">
@@ -725,15 +848,65 @@ AARP provides various articles of interest and resources for family caregivers. 
 
 <div id="lesson-1-slide-17" class="course-slide">
     <div class="content">
-        <h2 class="flowers">{t}Activity – principles of success{/t}</h2>
+        <h2 class="flowers">{t}Improving sibling communications{/t}</h2>
         <hr/>
-        <p>{t}This activity focuses on assessing your awareness of ten principles of success and your rating of how you
-            presently live according to them. Complete a 10 item assessment and then review results based on your
-            responses.{/t}</p>
+        <p>{t}The following are some recommendations to work on sibling communications. Realize that this may take time,
+            but if all parties commit to making improvements, the effect benefits the older parents – and isn’t that the
+            goal?{/t}</p>
 
         <p>
-            <a href="<?php echo $this->createDownloadUrl('makinggooddecisionsasacaregiver/Activity_Principles_of_Success.xls'); ?>"
-               target="_blank" class="button">Download Activity</a>
+            {t}Suggestion #1:{/t}
+        </p>
+
+        <p>
+            {t}Hold regular family meetings. You may need to explore different ways to make these happen particularly if
+            some of the siblings are long distant.{/t}
+        </p>
+
+        <p>
+            {t}Suggestion #2:{/t}
+        </p>
+
+        <p>
+            {t}Divide caregiving responsbilities up according to abilities and availability. Long distance siblings may
+            be able to take care of financial responsibilities or come in to provide respite for siblings who typically
+            provide more direct caregiving.{/t}
+        </p>
+
+        <p>
+            {t}Suggestion #3:{/t}
+        </p>
+
+        <p>
+            {t}Don’t be afraid to communicate your concerns, observations, or feelings to your siblings. The more open
+            your communication, the better the understanding by your siblings of the entire caregiving situation.{/t}
+        </p>
+
+        <p>
+            {t}Suggestion #4:{/t}
+        </p>
+
+        <p>
+            {t}Express appreciation to siblings for help they provide. You may soon find that they are offering more
+            assistance as they receive recognitions for their contributions.{/t}
+        </p>
+
+        <p>
+            {t}Suggestion #5:{/t}
+        </p>
+
+        <p>
+            {t}During family meetings, focus on caregiving issues rather than bringing up old family conflicts or
+            issues. Try to “feed forward” rather than “feedback.”{/t}
+        </p>
+
+        <p>
+            {t}Suggestion #6:{/t}
+        </p>
+
+        <p>
+            {t}Consider keeping a care notebook to record and document tasks, reminders, and responsibilities. Encourage
+            siblings to add to the notebook their observations and reports.{/t}
         </p>
 
     </div>
@@ -745,21 +918,22 @@ AARP provides various articles of interest and resources for family caregivers. 
 
 <div id="lesson-1-slide-18" class="course-slide">
     <div class="content">
-        <h2 class="flowers">{t}Self-coaching exercises – the power of journaling{/t}</h2>
+        <h2 class="flowers">{t}Identifying resources and connections{/t}</h2>
         <hr/>
-        <p>{t}Journaling is one powerful technique to refocus the negative into positive affirmations. With consistent
-            practice, this method can help create a more positive outlook in our own lives as well as create more
-            positive interactions with others.{/t}</p>
+        <p>{t}A good method to evaluate an older parent’s environment and connections is to use an “ecomap.” Important
+            perspective may be learned by considering the older parent in the context of the various systems that are
+            part of his or her experiences. Systems may include individuals (such as spouse or adult child), groups
+            (such as physicians or therapists), and organizations (such as hospitals) that interact with the older
+            adult. Considering the older adult’s interactions with these systems may reveal areas where help may be
+            needed.{/t}</p>
 
-        <p>{t}Journaling facilitates positive self-talk. Positive self-talk has been demonstrated to build one’s
-            self-esteem and self-confidence across a variety of situations. {/t}</p>
+        <p>{t}Open the exercise below, “Developing an Ecomap” and follow the directions. Once systems are identified
+            that interact with your older parent, respond to the questions that follow.{/t}</p>
 
-        <p>{t}Journaling requires a time commitment to have an impact on one’s self-confidence. We recommend that you
-            commit 30 days to this exercise to see a difference.{/t}</p>
-
-        <p>{t}Because journaling is a private experience, you can create your own unique experience!{/t}</p>
-
-        <p>{t}Continue to the next page to learn more about the process of journaling.{/t}</p>
+        <p>
+            <a href="<?php echo $this->createDownloadUrl('makinggooddecisionsasacaregiver/Exercise_Developing_an_Ecomap.doc'); ?>"
+               target="_blank" class="button">Download Activity</a>
+        </p>
 
     </div>
     <div class="buttons">
@@ -770,14 +944,45 @@ AARP provides various articles of interest and resources for family caregivers. 
 
 <div id="lesson-1-slide-19" class="course-slide">
     <div class="content">
-        <h2 class="flowers">{t}The process of journaling{/t}</h2>
+        <h2 class="flowers">{t}Dealing with resistance by your older parent{/t}</h2>
         <hr/>
-        <ol>
-            <li>{t}Begin with getting yourself a notebook or journal for your entries. Although there are inexpensive
-                wire bound notebooks that work just fine, I like to get a little nicer journal with a page marker for my
-                journaling. It makes it more special!{/t}
+        <p>
+            {t}It is important that your older parent retains as much decision making abilities as possible. Your
+            primary objecdtive is to help your parent fulfill his or her needs and choices, not to take over your
+            parent’s life.{/t}
+        </p>
+
+        <p>
+            {t}In some cases, your older parent may reject your assistance. There may be several reasons why older
+            adults do not accept help from others:{/t}
+        </p>
+
+        <ul>
+            <li>
+                {t}Some older adults feel that accepting help is a sign of dependency.{/t}
             </li>
-        </ol>
+            <li>
+                {t}Some older adults regard accepting services as a form of welfare.{/t}
+            </li>
+            <li>
+                {t}An older parent may be concerned about the cost of the service.{/t}
+            </li>
+            <li>
+                {t}An older parent may want you, rather than someone else, deliver the care needed.{/t}
+            </li>
+            <li>
+                {t}Some older adults fear allowing strangers in the home.{/t}
+            </li>
+        </ul>
+
+        <p>
+            {t}Once you know why your relative is refusing assistance, you can develop strategies to encourage her to
+            accept help. Everyone wants to feel able to take care of themselves and control their own destiny. Some
+            older persons feel that social services are either a form of welfare or are too expensive. Concerns about
+            who delivers services are also common. One way to make strangers more acceptable is to ask someone whom the
+            older person trusts to recommend a care provider. Or you may want to ask someone the older person trusts to
+            be on hand when the “stranger” is present.{/t}
+        </p>
 
     </div>
     <div class="buttons">
@@ -788,13 +993,24 @@ AARP provides various articles of interest and resources for family caregivers. 
 
 <div id="lesson-1-slide-20" class="course-slide">
     <div class="content">
-        <h2 class="flowers">{t}The process of journaling{/t}</h2>
+        <h2 class="flowers">{t}Identifying solutions to support choice and preferences{/t}</h2>
         <hr/>
-        <ol start="2">
-            <li>{t}Make daily entries about your accomplishments – no matter how big or small. They may be
-                accomplishments in relation to either work or your personal life.{/t}
-            </li>
-        </ol>
+
+        <p>{t}Throughout this course, you have had several opportunities to gain more understanding regarding your older
+            parents’ needs and preferences. Every caregiving situation is unique. Understanding this will help you make
+            good decisions as a caregiver.{/t}</p>
+
+        <p>{t}Many factors come into play when considering the best possible solutions about your parents and their
+            future. These factors may include: your parents’ health and functional abilities, mobility, values and
+            beliefs, and family and community support systems.{/t}</p>
+
+        <p>{t}In this exercise, we provide several questions for you to use as a framework to “interview” your parents
+            regarding their choices and preferences for their future.{/t}</p>
+
+        <p>
+            <a href="<?php echo $this->createDownloadUrl('makinggooddecisionsasacaregiver/ExerciseIdentifyingSolutionstoSupportChoiceandPreferences.pdf'); ?>"
+               target="_blank" class="button">Download Exercise</a>
+        </p>
 
     </div>
     <div class="buttons">
@@ -805,51 +1021,39 @@ AARP provides various articles of interest and resources for family caregivers. 
 
 <div id="lesson-1-slide-21" class="course-slide">
     <div class="content">
-        <h2 class="flowers">{t}The process of journaling{/t}</h2>
+        <h2 class="flowers">{t}Congratulations on completing the course!{/t}</h2>
         <hr/>
-        <ol start="3">
-            <li>{t}Answer these questions:{/t}
-            </li>
-        </ol>
+
+        <p>{t}Let’s summarize the top five points we covered in this course:{/t}</p>
 
         <ol>
-            <li>{t}What makes me unique?{/t}
+            <li>
+                {t}With many grown children seeking new career opportunities or needing to relocate due to their job
+                away from their parents and the home in which they were raised, long distance caregiving has grown as an
+                issue in our society with the number of long distance caregivers doubling over the next 15 years.{/t}
             </li>
-            <li>{t}In what areas of my life do I appear most satisfied or content?{/t}
+            <li>
+                {t}Use all of your senses to observe changes related to your parent or the home environment during your
+                visits.{/t}
             </li>
-            <li>{t}In which areas do I appear to be struggling or unfulfilled?{/t}
+            <li>
+                {t}If you are a long distance caregiver, have basic information at your fingertips regarding your older
+                parents including: contact information from their neighbors (and they have your information); local
+                resources and services for older adults; current list of their medications; and copies of “advanced
+                directives.”{/t}
             </li>
-            <li>{t}What are my strengths? (look back at your “Principles of Success” ratings for ideas){/t}
+            <li>
+                {t}Geriatric care managers (licensed nurses or social workers who specialize in geriatric care) may be
+                helpful to assist in evaluating and assessing older adults’ needs and in the coordination of care
+                through community resources.{/t}
             </li>
-            <li>{t}How have these strengths helped me in the past?{/t}
-            </li>
-            <li>{t}How do these strengths now help me?/t}
-            </li>
-        </ol>
-
-    </div>
-    <div class="buttons">
-        <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t} </a> <a
-            href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
-    </div>
-</div>
-
-<div id="lesson-1-slide-22" class="course-slide">
-    <div class="content">
-        <h2 class="flowers">{t}The process of journaling{/t}</h2>
-        <hr/>
-        <ol start="4">
-            <li>{t}Review your journal entries of recent accomplishments to connect with your values and talents.{/t}
+            <li>
+                {t}Many organizations have programs in place to assist employees better meet their obligations as
+                caregivers to older adults. You may want to discuss some of these benefits with your human resources
+                department to see what may be available to you.{/t}
             </li>
         </ol>
 
-        <ul>
-            <li>{t}What can you truly brag about?{/t}
-            </li>
-            <li>{t}What do your successes say about you?{/t}
-            </li>
-
-        </ul>
     </div>
     <div class="buttons">
         <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Complete Course{/t} </a>
