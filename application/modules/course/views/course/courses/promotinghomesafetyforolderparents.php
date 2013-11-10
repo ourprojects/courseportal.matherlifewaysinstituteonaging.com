@@ -84,7 +84,8 @@ foreach (array(
             <a href="<?php echo $this->createDownloadUrl('CourseCompletionCertificate.pdf'); ?>" target="_blank"
                class="button">Download Certificate</a>
         </p>
-        <img src="<?php echo $this->getImagesUrl('promotinghomesafetyforolderparents/166312138.png'); ?>" id="certificate"
+        <img src="<?php echo $this->getImagesUrl('promotinghomesafetyforolderparents/166312138.png'); ?>"
+             id="certificate"
              alt="{t}Image{/t}">
     </div>
     <div class="box-sidebar one">
@@ -132,7 +133,6 @@ foreach (array(
         to access this course:{/t}
     </p>
     <ul>
-        <li>{t}Spreadsheet processor (Microsoft Excel or similar){/t}</li>
         <li><a href="http://get.adobe.com/reader/" target="_blank">{t}Adobe Acrobat{/t}</a></li>
     </ul>
     <h4>{t}Objectives{/t}</h4>
@@ -275,9 +275,9 @@ AARP provides various articles of interest and resources for family caregivers. 
 <div id="lesson-1">
 <div id="lesson-1-slide-1" class="course-slide">
     <div class="content">
-        <h2 class="flowers">{t}Becoming a More Confident Caregiver{/t}</h2>
+        <h2 class="flowers">{t}Promoting Home Safety for Older Parents{/t}</h2>
         <hr/>
-        <p>{t}Welcome to the course, “Becoming a More Confident Caregiver.” This course is geared towards family members
+        <p>{t}Welcome to the course, “Promoting Safety for Older Parents.” This course is geared towards family members
             who provide support or care to an older adult who may be a parent, spouse, other relative, or a significant
             other.{/t}</p>
 
@@ -331,31 +331,25 @@ AARP provides various articles of interest and resources for family caregivers. 
 </div>
 <div id="lesson-1-slide-3" class="course-slide">
     <div class="content">
-        <h2 class="flowers">{t}Some facts about family caregivers{/t}</h2>
+        <h2 class="flowers">{t}Knowledge itself is power{/t}</h2>
         <hr/>
-        <p>{t}Here are some interesting facts about family caregivers:{/t}</p>
+        <p>{t}You’ve heard this phrase many times – probably even from your parents during your education years. It was
+            actually first documented by Sir Frances Bacon back in the 16th century. When we consider how to promote
+            safety of older adults so that they may remain independent for as long as possible, having knowledge and
+            understanding what’s important will facilitate decision making in the future. {/t}</p>
 
         <ul>
-            <li>{t}Nearly 44 million family caregivers provided support or care to someone ages 50 years or older.{/t}
+            <li>{t}Home safety tips{/t}
             </li>
-            <li>{t}Nearly 15 million family caregivers care for someone with Alzheimer’s disease or other forms of
-                dementia.{/t}
+            <li>{t}Moving my parents into my home{/t}
             </li>
-            <li>{t}More than two-thirds of family caregivers taking care of an older adult are female.{/t}</li>
-            <li>{t}Two-thirds of family caregivers do not live with the older adults they are caring for.{/t}</li>
-            <li>{t}Nearly 60 percent of care recipients live in their own homes.{/t}</li>
-            <li>{t}The number of male caregivers is steadily growing. Male caregivers are more likely to help with tasks
-                related to the home of the older adult (such as home repairs or financial issues) while female
-                caregivers perform more physical care tasks (such as bathing or dressing).{/t}
-            </li>
-            <li>{t}A significant portion of family caregiver’s time focuses on errands (such as shopping,
-                transportation, picking up medications), researching and making care arrangements, transportation to
-                physician appointments, and managing financial matters.{/t}
-            </li>
-            <li>{t}More than one in six working caregivers care for one or more older adults.{/t}</li>
+            <li>{t}The “driving” conversation{/t}</li>
+            <li>{t}Importance of exercise for older adults and its impact on safety{/t}</li>
+
         </ul>
 
-        <p>{t}Next, we’ll learn more about the CARE Coaching concepts.{/t}</p>
+        <p>{t}In this section, we look at several scenarios – all of which relate to safety in some way – that are
+            commonly faced by family caregivers and their older parents. We address several topics including:{/t}</p>
 
     </div>
     <div class="buttons">
@@ -366,20 +360,13 @@ AARP provides various articles of interest and resources for family caregivers. 
 
 <div id="lesson-1-slide-4" class="course-slide">
     <div class="content">
-        <h2 class="flowers">{t}What’s coaching all about?{/t}</h2>
+        <h2 class="flowers">{t}Home safety and older adults{/t}</h2>
         <hr/>
-        <p>{t}You are probably familiar with the term “coaching” from many aspects of our daily lives.{/t}</p>
+        <p>{t}Regardless if your parents remain in their own home, move to a senior living community, or move in with you, home safety is an important topic for discussion.  The overall goal of assessing home safety needs and making modifications as necessary is to give older adults a sense of independence in their environment.{/t}</p>
 
-        <p>{t}As a parent or sibling, you may be involved in coaching little league or some other sport. Usually this
-            form of coaching involves teams. The role of the coach is to motivate, set ground rules, and draw out the
-            best in each player for the good of the team.{/t}</p>
+        <p>{t}Accidents in the home are a major source of injury for older adults and can cause disability and sometimes death.  For older adults, did you know that the vast majority of falls occurs going between the bedroom and bathroom?   A simple fall that results in broken bones can develop into a serious, disabling injury limiting one’s independence.  As one ages, senses of sight, hearing, touch, and smell tend to decline.  Physical abilities are often reduced and certain movements that are important in daily tasks (such as stretching, lifting, and bending) are more difficult.  Reaction time or judgment may slow.{/t}</p>
 
-        <p>{t}In the work environment, coaching may also involve the work team or individual. Coaching the work team may
-            involve looking at ways to turn barriers into opportunities for the good of the team and company. An
-            organization may bring in a professional coach to build sustainable, high-performance work teams and thus
-            build the company’s competitive advantage over other organizations. At the individual level, a coach may
-            focus on leadership development showing the company’s commitment to build a strong base of effective
-            leaders.{/t}</p>
+        <p>{t}As a result, an older person cannot respond as quickly as a younger person in all situations.  These normal aging changes may make an older person more prone to accidents.  Simple precautions and adjustments may ensure a safe home. {/t}</p>
 
     </div>
     <div class="buttons">
@@ -390,36 +377,43 @@ AARP provides various articles of interest and resources for family caregivers. 
 
 <div id="lesson-1-slide-5" class="course-slide">
     <div class="content">
-        <h2 class="flowers">{t}Role reversals with aging parents{/t}</h2>
+        <h2 class="flowers">{t}Home safety – areas to assess{/t}</h2>
         <hr/>
-        <p>{t}As a current or future caregiver, you may be feeling as if you are in a “reversed role” to an elderly
-            parent, other relative, or friend. When we are young, we look up to parents or others as a “coach” in many
-            respects. Though it may have been difficult at times for all of us growing up, the effective parent “coach”
-            had the following skill set:{/t}</p>
+        <p>{t}There are several areas of the home to assess regarding safety issues:{/t}</p>
 
-        <ul>
+        <ol>
             <li>
-                {t}They respected us, so we listened to them.{/t}
+                {t}General safety (lighting, access, electrical, heating, water, medication storage){/t}
             </li>
             <li>
-                {t}They listened to us, so we felt understood.{/t}
+                {t}Kitchen{/t}
             </li>
             <li>
-                {t}They appreciated us, so we felt supported.{/t}
+                {t}Stairways and halls{/t}
             </li>
             <li>
-                {t}They supported us when we tried new things, so we grew more responsible.{/t}
+                {t}Living room{/t}
             </li>
-        </ul>
-        <p>{t}As our parents age, they may suffer declining physical or cognitive health and thus have greater need for
-            our help and understanding, and so we may become their “coach” in life. That is easier said than done in
-            many cases! Regardless of their age, our parents always see themselves in that role in our relationship with
-            them.{/t}</p>
+            <li>
+                {t}Bathroom{/t}
+            </li>
+            <li>
+                {t}Bedroom{/t}
+            </li>
+            <li>
+                {t}Outdoor area{/t}
+            </li>
+        </ol>
+        <p>{t}CARE Coaching Tip – Be Alert!{/t}</p>
 
-        <p>{t}We also tend to go back into old habits, communication styles, or reactions when dealing with our parents.
-            How do you deal with a situation where your father begins to have minor car accidents or “forgets” the way
-            home? Talking with a parent about giving up the car keys is probably one of the most challenging situations
-            we may face as a caregiver.{/t}</p>
+        <p>{t}You may be a situation where your older parents are living alone and you live quite a distance away, maybe even across the country.  You may not get back to visit on a regular basis, but the last time you visited, you noticed “little things” around the house that seemed “out of place” for them.  You decide that on the Thanksgiving holiday visit, you want to evaluate how they are doing.  Remember, this should not be an inspection for purposes of judgment or criticism.  Rather, think of this as a part wellness check, part well-being check, and part safety check.  Things may be getting difficult to handle around the house for your older parents, and they may just be reluctant to bring them up with you because “you’ve got so much on your plate just now.”{/t}</p>
+
+        <p>{t}You want to try to be as subtle as possible.  Don’t look like you are checking up on them.  Use what you notice as openings for conversations.  Do it privately (not a great opener for the family Thanksgiving table conversation!).{/t}</p>
+
+        <p>{t}“Mom, I noticed you were having a bit of trouble reading that label.  What if we change the light bulbs in here?”{/t}</p>
+
+        <p>{t}Offer to do little things around the house.  Don’t always wait for a “yes” or “no” response, as they may be too proud to ask for help.  Just let them know that you’d like to use some of the time to be helpful and supportive.  If they are resistant, invite them to do a chore together.{/t}</p>
+
     </div>
     <div class="buttons">
         <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t} </a> <a
@@ -429,24 +423,81 @@ AARP provides various articles of interest and resources for family caregivers. 
 
 <div id="lesson-1-slide-6" class="course-slide">
     <div class="content">
-        <h2 class="flowers">{t}What’s CARE Coaching all about?{/t}</h2>
+        <h2 class="flowers">{t}Activity – using your powers of observation{/t}</h2>
         <hr/>
-        <p>{t}CARE Coaching involves a method to help you as a caregiver think differently about a caregiving situation
-            so you may better prepare and feel confident about your caregiving responsibilities and actions. Learning
-            what is important to older parents – and learning how to draw that out – often bringing to light new
-            information about what is important to them in terms of their own health and care.{/t}</p>
+        <p>{t}During your next visit, use your powers of observation to note changes in the following areas.  You may want to make mental notes and then jot down some of your observations privately.  We have included some general questions to get you started.  In this activity, you will add some of your own specific questions that you may want to assess during your visit.{/t}</p>
 
-        <p>{t}CARE Coaching will provide your tools, resources, and experiences targeted towards strengthening your
-            caregiving abilities to Communicate, Advocate, Relate, and Encourage older parents or other loved ones.
-            Throughout this course, we will highlight these terms and provide examples and activities to help you on
-            this journey.{/t}</p>
+        <p>{t}Please note that you may print or save any activities from this course for future reference.{/t}</p>
 
-        <p>{t}In this course, we’ll usually talk about “older parents,” but we realize that caregivers may be involved
-            in caring for older siblings, other relatives, friends, or neighbors. For the purposes of this course, we
-            will use “older parents” as our “short-hand” descriptor of any older adult that you may be caring
-            for!{/t}</p>
+        <h5>
+            {t}Additional home safety resources{/t}
+        </h5>
 
-        <p>{t}Before we can start coaching others, let’s consider our skills related to coaching ourselves!{/t}</p>
+        <p>
+            <a href="<?php echo $this->createDownloadUrl('promotinghomesafetyforolderparents/Activity_Using_Your_Powers_of_Observation.docx'); ?>"
+               target="_blank" class="button">Download Activity</a>
+        </p>
+
+        <p>{t}The U.S. Consumer Product Safety Commission estimates that over 1.5 million adults ages 65 and older are treated each year in hospital emergency rooms due to injuries from hazards in the home.  The Commission believes that many of these injuries are preventable with some simple steps to correct the hazards.  Some of these steps are valuable in your own home to prevent injuries in general.  Here are some general recommendations to consider.  Following the general recommendations are links to downloadable resources.{/t}</p>
+
+        <h5>{t}General Recommendations for Home Safety{/t}</h5>
+
+        <table>
+            <th>
+                {t}Area{/t}
+            </th>
+            <th>
+                {t}Recommendations{/t}
+            </th>
+            <tr>
+                <td>
+                    {t}Exposed cords from lamps, extensions, and telephones{/t}
+                </td>
+                <td>
+                    <ul>
+                        <li>
+                            {t}Arrange furniture so that outlets are available for lamps and appliances without use of numerous extension cords.{/t}
+                        </li>
+                        <li>
+                            {t}If you use extension cords, place it along the wall on the floor where people cannot trip over it.{/t}
+                        </li>
+                        <li>
+                            {t}Move the telephone so that the cord does not lie where people walk.{/t}
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    {t}Cords covered by carpets and rugs{/t}
+                </td>
+                <td>
+                    <ul>
+                        <li>
+                            {t}Remove cords from under carpeting or rugs as they may fray and cause a fire.{/t}
+                        </li>
+                        <li>
+                            {t}Replace damaged or frayed cords.{/t}
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    {t}Overloaded extension cords{/t}
+                </td>
+                <td>
+                    <ul>
+                        <li>
+                            {t}Overloaded extension cords may cause fires.  A standard 18 gauge extension cord can carry 1250 watts.{/t}
+                        </li>
+                        <li>
+                            {t}Change to a higher rated cord if the wattage is exceeded.{/t}
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
 
     </div>
     <div class="buttons">
@@ -458,35 +509,15 @@ AARP provides various articles of interest and resources for family caregivers. 
 
 <div id="lesson-1-slide-7" class="course-slide">
     <div class="content">
-        <h2 class="flowers">{t}Self-coaching: It all starts with me!{/t}</h2>
+        <h2 class="flowers">{t}Additional resources on home safety{/t}</h2>
         <hr/>
-        <p>{t}Self-coaching shifts the approach from the cycling negative “internal dialogue” to help you focus on
-            what’s important to you right now and how you may accomplish that goal.{/t}</p>
+        <p>{t}Here are links to other resources on home safety particularly in relation to older adults.{/t}</p>
 
-        <p>{t}In this case, it’s alright to say “it’s all about me!” There is quite a bit of information published about
-            “self-coaching.” Think about the fact that we each represent a unique individual surrounded by a myriad of
-            things going on inside and outside of ourselves.{/t}</p>
+        <p>{t}<a href="http://www.homemods.org/resources/doable-home/index.shtml" target="_blank>" The Do Able Renewable Home</a>.  This booklet is designed to help overcome problems experienced in the home as one grows older.  Content was developed in collaboration with gerontologists to make the home more livable.{/t}</p>
 
-        <p>{t}We constantly have an “internal dialogue” going on that no one else can hear. As a caregiver, that
-            “internal dialogue” may be reliving negative experiences:{/t}</p>
+        <p>{t}Lighting the Way: A Key to Independence (add hyperlink to pdf).  This resource provides a number of recommendations to help older adults see better.  From home lighting to doing small tasks, many suggestions can easily be implemented with simple modifications.{/t}</p>
 
-        <ul>
-            <li>
-                {t}“If only my mother listened to me and moved in with us years ago, she wouldn’t have fallen, broken
-                her hip, and wound up in that terrible nursing home!”{/t}
-            </li>
-            <li>
-                {t}“I just can’t take on more responsibility for my dad’s care. I already work 50 to 60 hours a week and
-                have family responsibilities. But if I don’t, who will?”{/t}
-            </li>
-            <li>
-                {t}“How am I going to bring up the issue of long-term care planning with my parents? They always shut me
-                off when I bring up questions about their finances.”{/t}
-            </li>
-        </ul>
-
-        <p>{t}Going over and over these types of thoughts and questions in our minds does not get to problem
-            solving.{/t}</p>
+        <p>{t}Home Safety Checklist (add hyperlink to pdf).  This is a simple checklist that you can use when visiting your older parents to assess safety issues in their home environment.{/t}</p>
 
     </div>
     <div class="buttons">
@@ -497,47 +528,15 @@ AARP provides various articles of interest and resources for family caregivers. 
 
 <div id="lesson-1-slide-8" class="course-slide">
     <div class="content">
-        <h2 class="flowers">{t}Self-coaching “self talk”{/t}</h2>
+        <h2 class="flowers">{t}Considering your older parents moving in with you?{/t}</h2>
         <hr/>
-        <p>{t}Self-coaching shifts the approach from the cycling negative “internal dialogue” to help you focus on
-            what’s important to you right now and how you may accomplish that goal.{/t}</p>
+        <p>{t}More than 3.6 million older adults live with their children (up 67% from 2000) according to U.S. Census figures. With the economy and housing market issues, many more examples of older parents moving in with their children are coming to light.  Older adults who may have been planning to sell their home and use the proceeds to living in a senior living residence may be delaying their decision or realizing they will not get enough money from the house sale to make the move.{/t}</p>
 
-        <p>{t}Say this to yourself:{/t}</p>
-        <ul>
-            <li>
-                {t}I am going to accomplish something.{/t}
-            </li>
-            <li>
-                {t}I am going to figure it out.{/t}
-            </li>
-            <li>
-                {t}I am going to do my best thinking, because I want to get to what’s important.{/t}
-            </li>
-        </ul>
+        <p>{t}The children may also be facing financial difficulties of their own.  “Merging” finances and obligations may benefit everyone in these types of arrangements.  One son commented that he “gets to see a different side of his mother and father.  They are not just parents, they’re people, and once you recognize that, you work with it and it’s fun.” {/t}</p>
 
-        <p>{t}Now, say this out loud:{/t}</p>
+        <p>{t}Interestingly, an entire new housing opportunity is developing with this “return” to multiple generations living under a single roof.  Called “multigenerational housing,” these homes are often designed with a master and guest (in-law) suite on the main floor, both with private bath and walk-in closet.  An open plan with lots of gathering areas and additional bedroom and recreation areas upstairs provides families with flexible living space.{/t}</p>
 
-        <ul>
-            <li>
-                {t}I am going to accomplish something.{/t}
-            </li>
-            <li>
-                {t}I am going to figure it out.{/t}
-            </li>
-            <li>
-                {t}I am going to do my best thinking, because I want to get to what’s important.{/t}
-            </li>
-        </ul>
-
-        <p>{t}This is just a simple exercise in positive self-talk. Our internal voice and thoughts have the capability
-            to create our reality, and so it is our daily challenge to move aside the negative, cyclical thinking and
-            focus on positive steps we may take to move forward. Focusing on the many skills you already have inside of
-            yourself not only will benefit your own health, success, and self-esteem, but will be of great aide to your
-            caregiving responsibilities.{/t}</p>
-
-        <p>{t}Let’s first assess where you currently are related to your readiness and awareness for self-coaching, and
-            then we will move into some self-coaching exercises that you may continue as often as you feel it would be
-            helpful to you.{/t}</p>
+        <p>{t}“Giving each other space” is a valuable recommendation for those considering these living arrangements, particularly if the older parents are independent.{/t}</p>
 
     </div>
     <div class="buttons">
@@ -548,16 +547,23 @@ AARP provides various articles of interest and resources for family caregivers. 
 
 <div id="lesson-1-slide-9" class="course-slide">
     <div class="content">
-        <h2 class="flowers">{t}Activity – Self-awareness survey{/t}</h2>
+        <h2 class="flowers">{t}CARE Coaching hints{/t}</h2>
         <hr/>
-        <p>{t}This activity invites you to explore and live several questions. Your responses should open up more
-            self-awareness of what is important to you in your life. Please note that you may print or save any
-            activities from this course for future reference.{/t}</p>
 
-        <p>
-            <a href="<?php echo $this->createDownloadUrl('promotinghomesafetyforolderparents/Activity_Self_Awareness_Survey.doc'); ?>"
-               target="_blank" class="button">Download Activity</a>
-        </p>
+        <ul>
+            <li>
+                {t}Hold regular family conferences to discuss issues or problems that may come up.  Often, it is much easier to discuss awkward subjects when everyone is together and in the mood to talk.{/t}
+            </li>
+            <li>
+                {t}If your parents have health problems, set up an emergency contact system and make sure everyone knows what it is.  This could be a buzzer or alarm in the bedroom or shower.  Preprogram their telephones with your cell phone or pager number.{/t}
+            </li>
+            <li>
+                {t}Consider safety issues for children and seniors living in the same house.  Make sure that medications with non-childproof bottle tops are not easily within reach, and make sure toys are left on the floor or stairs.{/t}
+            </li>
+            <li>
+                {t}Caregiving can take a lot of time and energy, so make sure you still put aside some quality time for yourself, and for your spouse and children.  If you begin to feel overwhelmed by your family responsibilities, arrange for outside help or respite, or find a caregivers support group in your area.{/t}
+            </li>
+        </ul>
 
     </div>
     <div class="buttons">
@@ -568,19 +574,16 @@ AARP provides various articles of interest and resources for family caregivers. 
 
 <div id="lesson-1-slide-10" class="course-slide">
     <div class="content">
-        <h2 class="flowers">{t}Creating the environment for self-coaching{/t}</h2>
+        <h2 class="flowers">{t}Exercise – assessing the situation{/t}</h2>
         <hr/>
-        <p>{t}The principle behind self-coaching (and CARE Coaching for that matter!) is the revelation of solutions
-            already inherent in each person. For those who may be fortunate to experience an external coach, their role
-            is to facilitate the experience and create an environment for the person being coached to do their best
-            thinking. {/t}</p>
+        <p>{t}This exercise provides an opportunity for you and your family to consider key questions to explore potential for having older parents move in with you.  You may not be thinking about this at the present time, but you may have other family members or friends considering various options and so this may be helpful to them as well.{/t}</p>
 
-        <p>{t}Self-coaching can work in the same way for many individuals who commit some time and effort into the
-            process. We have included several exercises throughout this course that will help you practice coaching
-            skills that will be valuable when coaching yourself or communicating in your caregiving role with older
-            parents. {/t}</p>
+        <p>{t}These questions can serve as a guide for discussions with your family.  As you read through each section, we include some CARE Coaching questions to bring out your best thinking about what would be important to you.{/t}</p>
 
-        <p>{t}Let’s look at the five steps necessary to create an effective self-coaching experience.{/t}</p>
+        <p>
+            <a href="<?php echo $this->createDownloadUrl('promotinghomesafetyforolderparents/Exercise_Assessing_the_Situation.docx'); ?>"
+               target="_blank" class="button">Download Activity</a>
+        </p>
 
     </div>
     <div class="buttons">
@@ -591,15 +594,40 @@ AARP provides various articles of interest and resources for family caregivers. 
 
 <div id="lesson-1-slide-11" class="course-slide">
     <div class="content">
-        <h2 class="flowers">{t}What is necessary to create an effective self-coaching experience?{/t}</h2>
+        <h2 class="flowers">{t}Driving concerns and older adults{/t}</h2>
         <hr/>
-        <h4>{t}Step 1{/t}</h4>
 
-        <p>{t}You are aware of the need for change and are prepared to accept that you cannot blame others or
-            circumstances of a situation.{/t}</p>
+        <p>{t}According to driving statistics, older adults have more fatal car accidents than any other age group.  Additionally, older adults are more at risk for death after being involved in a car accident because of their age and health condition.{/t}</p>
 
-        <p>{t}In other words, you are willing to be open to choices and you are willing to make those choices. It would
-            be most like stepping outside of your situation and viewing it as impartially as possible.{/t}</p>
+        <p>{t}By 2030, it is estimated that 25% of the driving population will be age 65 years and older.  Currently, about 14% of all people killed in traffic accidents are older adults, and that percent is expected to increase to 25%.{/t}</p>
+
+        <p>{t}In addition to being a danger to themselves, many of these accidents result in injury or death of others.{/t}</p>
+
+        <p>{t}How does increased age impact driving ability?  Several physical and cognitive changes that are part of normal aging or that are related to chronic illnesses may affect driving ability in older adults.  Not all older adults experience these changes, but the following are some of the reasons older adults are more prone to car accidents:{/t}</p>
+
+        <ul>
+            <li>
+                {t}Slowed reaction time{/t}
+            </li>
+            <li>
+                {t}Vision problems{/t}
+            </li>
+            <li>
+                {t}Hearing problems{/t}
+            </li>
+            <li>
+                {t}Decreased ability to focus{/t}
+            </li>
+            <li>
+                {t}Changes in depth perception{/t}
+            </li>
+            <li>
+                {t}Feeling nervous or anxious{/t}
+            </li>
+            <li>
+                {t}Medical conditions that impact mobility{/t}
+            </li>
+        </ul>
 
     </div>
     <div class="buttons">
@@ -610,26 +638,14 @@ AARP provides various articles of interest and resources for family caregivers. 
 
 <div id="lesson-1-slide-12" class="course-slide">
     <div class="content">
-        <h2 class="flowers">{t}What is necessary to create an effective self-coaching experience?{/t}</h2>
+        <h2 class="flowers">{t}Driving and older adults{/t}</h2>
         <hr/>
-        <h4>{t}Step 2{/t}</h4>
 
-        <p>{t}You are prepared to ask yourself some difficult questions and not avoid answering them. {/t}</p>
+        <p>{t}Why is driving so important to older adults?  Driving for most people – and particularly for older adults – means independence.  I can go where I want, when I want, without having to rely on others.  Some older adults may not want to inconvenience their family or friends.{/t}</p>
 
-        <p>{t}Imagine that you are in some tough discussions with your father and siblings about dad’s lack of caring
-            for himself living alone. Dad has grown more isolated day by day. When visiting one day, you are shocked to
-            find empty food containers and spoiled food in the refrigerator. There is a stack of unpaid bills on the
-            kitchen counter next to a jar of various pills mixed together. You bring this up with your siblings, but
-            their reaction is, “Dad is fine. He wants to stay in his house, and it’s not our place to kick him out!”
-            Your dad says, “I just haven’t gotten around to some things…and I’d thank you to stay out of my
-            business!”{/t}</p>
+        <p>{t}How can I help someone else limit or stop driving?  In most cases, drivers monitor themselves and gradually limit or stop driving when they feel that a certain driving situation or driving in general is not safe.  However, some people fail to recognize declining abilities, or they fear stopping to drive because it will make them permanently dependent on others for the necessities of life, and it may reduce their social and leisure activities as well.  Conditions such as dementia or early stages of Alzheimers' disease may make some drivers unable to evaluate their driving properly. {/t}</p>
 
-        <p>{t}Are your prepared to ask yourself some key questions like…”Am I an effective caregiver? Why do I think
-            that I am not getting the response I need from my dad or siblings? What response should I expect? Why do I
-            believe that I should expect it? Is it realistic and upon what observations do I base the
-            perception?”{/t}</p>
-
-        <p>{t}Most importantly, “When I think about being a good caregiver, what’s important to me?”{/t}</p>
+        <p>{t}Let’s look at some of the warning signs and steps you may take to address this issue with older family members or friends.{/t}</p>
 
     </div>
     <div class="buttons">
@@ -640,14 +656,32 @@ AARP provides various articles of interest and resources for family caregivers. 
 
 <div id="lesson-1-slide-13" class="course-slide">
     <div class="content">
-        <h2 class="flowers">{t}What is necessary to create an effective self-coaching experience?{/t}</h2>
+        <h2 class="flowers">{t}When to limit or stop driving – warning signs{/t}</h2>
         <hr/>
-        <h4>{t}Step 3{/t}</h4>
 
-        <p>{t}You accept that through self-coaching, you are going to persist until you identify a solution and set of
-            actions that you will then commit to implementing. {/t}</p>
+        <p>{t}The following list of warning signs comes from the American Association of Retired People (AARP). {/t}</p>
 
-        <p>{t}It may take some time to achieve results, but you need to stick to your goal.{/t}</p>
+        <p>{t}What are the warning signs when someone should begin to limit driving or stop altogether?{/t}</p>
+
+        1. Feeling uncomfortable and nervous or fearful while driving
+        2. Dents and scrapes on the car or on fences, mailboxes, garage doors, curbs etc.
+        3. Difficulty staying in the lane of travel
+        4. Getting lost
+        5. Trouble paying attention to signals, road signs and pavement markings
+        6. Slower response to unexpected situations
+        7. Medical conditions or medications that may be affecting the ability to handle the car safely
+        8. Frequent "close calls" (i.e. almost crashing)
+        9. Trouble judging gaps in traffics at intersections and on highway entrance/exit ramps
+        10. Other drivers honking at you and instances when you are angry at other drivers
+        11. Friends or relatives not wanting to drive with you
+        12. Difficulty seeing the sides of the road when looking straight ahead
+        13. Easily distracted or having a hard time concentrating while driving
+        14. Having a hard time turning around to check over your shoulder while backing up or changing lanes
+        15. Frequent traffic tickets or "warnings" by traffic or law enforcement officers in the last year or two
+
+        <p>{t} If you notice one or more of these warning signs with your older parents, you may want to have their driving assessed by a professional or have them attend a driver refresher class.{/t}</p>
+
+        <p>{t} You may also want to consult with their physician if you notice unusual concentration or memory problems, or other physical symptoms that may be affecting ability to drive.{/t}</p>
 
     </div>
     <div class="buttons">
