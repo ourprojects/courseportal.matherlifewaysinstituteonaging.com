@@ -659,25 +659,57 @@ AARP provides various articles of interest and resources for family caregivers. 
         <h2 class="flowers">{t}When to limit or stop driving – warning signs{/t}</h2>
         <hr/>
 
-        <p>{t}The following list of warning signs comes from the American Association of Retired People (AARP). {/t}</p>
+        <p>{t}The following list of warning signs comes from the American Association of Retired People (AARP).{/t}</p>
 
         <p>{t}What are the warning signs when someone should begin to limit driving or stop altogether?{/t}</p>
 
-        1. Feeling uncomfortable and nervous or fearful while driving
-        2. Dents and scrapes on the car or on fences, mailboxes, garage doors, curbs etc.
-        3. Difficulty staying in the lane of travel
-        4. Getting lost
-        5. Trouble paying attention to signals, road signs and pavement markings
-        6. Slower response to unexpected situations
-        7. Medical conditions or medications that may be affecting the ability to handle the car safely
-        8. Frequent "close calls" (i.e. almost crashing)
-        9. Trouble judging gaps in traffics at intersections and on highway entrance/exit ramps
-        10. Other drivers honking at you and instances when you are angry at other drivers
-        11. Friends or relatives not wanting to drive with you
-        12. Difficulty seeing the sides of the road when looking straight ahead
-        13. Easily distracted or having a hard time concentrating while driving
-        14. Having a hard time turning around to check over your shoulder while backing up or changing lanes
-        15. Frequent traffic tickets or "warnings" by traffic or law enforcement officers in the last year or two
+        <ol>
+            <li>
+                {t}Feeling uncomfortable and nervous or fearful while driving{/t}
+            </li>
+            <li>
+                {t}Dents and scrapes on the car or on fences, mailboxes, garage doors, curbs etc.{/t}
+            </li>
+            <li>
+                {t}Difficulty staying in the lane of travel{/t}
+            </li>
+            <li>
+                {t}Getting lost{/t}
+            </li>
+            <li>
+                {t}Trouble paying attention to signals, road signs and pavement markings{/t}
+            </li>
+            <li>
+                {t}Slower response to unexpected situations{/t}
+            </li>
+            <li>
+                {t}Medical conditions or medications that may be affecting the ability to handle the car safely{/t}
+            </li>
+            <li>
+                {t}Frequent "close calls" (i.e. almost crashing){/t}
+            </li>
+            <li>
+                {t}Trouble judging gaps in traffics at intersections and on highway entrance/exit ramps{/t}
+            </li>
+            <li>
+                {t}Other drivers honking at you and instances when you are angry at other drivers{/t}
+            </li>
+            <li>
+                {t}Friends or relatives not wanting to drive with you{/t}
+            </li>
+            <li>
+                {t}Difficulty seeing the sides of the road when looking straight ahead{/t}
+            </li>
+            <li>
+                {t}Easily distracted or having a hard time concentrating while driving{/t}
+            </li>
+            <li>
+                {t}Having a hard time turning around to check over your shoulder while backing up or changing lanes{/t}
+            </li>
+            <li>
+                {t}Frequent traffic tickets or "warnings" by traffic or law enforcement officers in the last year or two{/t}
+            </li>
+        </ol>
 
         <p>{t} If you notice one or more of these warning signs with your older parents, you may want to have their driving assessed by a professional or have them attend a driver refresher class.{/t}</p>
 
@@ -692,23 +724,17 @@ AARP provides various articles of interest and resources for family caregivers. 
 
 <div id="lesson-1-slide-14" class="course-slide">
     <div class="content">
-        <h2 class="flowers">{t}What is necessary to create an effective self-coaching experience?{/t}</h2>
+        <h2 class="flowers">{t}CARE Coaching: talking to your parents about their driving{/t}</h2>
         <hr/>
-        <h4>{t}Step 4{/t}</h4>
 
-        <p>{t}Be willing to “let it go.”{/t}</p>
+        <p>{t}Remember what it was like when you got your first driver’s license?  That sense of pride and freedom stays with you throughout your life.  You certainly come to appreciate the independence driving means if you have ever been dependent on someone to drive you around even for a short time period perhaps while you were recuperating from surgery.{/t}</p>
 
         <p>
-            {t}We’ve all been in the situation where something just nags at us. Things always seem worse when we pay too
-            much attention to them. If I feel anxious, overwhelmed, or depressed and focus on those feelings, I become
-            it. By letting go, I turn away from it. I don’t feed those problems any longer.{/t}
+            {t}We are a mobile culture.  In many areas, public transportation is scarce or unsafe for older adults.  We want our older parents to be safe, but the last thing we want is for them to feel isolated, trapped, and alone in their own home.{/t}
         </p>
 
         <p>
-            {t}It is sort of like flipping to another television channel. You may not be able to stop a thought from
-            “percolating” in your mind, but you can say “no!” to thoughts that result in anxiety or depression. We
-            always have choices. In this case, we have the choice not be become a victim of negative thoughts or
-            insecurities.{/t}
+            {t}Bringing up the discussion on driving is very challenging.  The best way to think about this is to keep the perspective that there is a continuum of possibilities on the “continue driving” to “quit driving” scale.  By using CARE Coaching methods and breaking the driving conversation with your older parents into steps, you can better draw out the issues and support your parents in their transition.{/t}
         </p>
 
     </div>
@@ -720,17 +746,46 @@ AARP provides various articles of interest and resources for family caregivers. 
 
 <div id="lesson-1-slide-15" class="course-slide">
     <div class="content">
-        <h2 class="flowers">{t}What is necessary to create an effective self-coaching experience?{/t}</h2>
+        <h2 class="flowers">{t}CARE Coaching: talking to your parents about their driving{/t}</h2>
         <hr/>
-        <h4>{t}Step 5{/t}</h4>
+        <h4>{t}Step 1: Be a coach in the driving discussion{/t}</h4>
 
-        <p>{t}Set a time frame for the self-coaching session.{/t}</p>
+        <p>{t}Remember that most children wait too long for the driving discussion – either until their parents driving has deteriorated or until a major accident occurs.  Consider yourself more of a coach in the discussion.  Begin by letting them know how much you value their independence, judgment, and their concern for safety for themselves and for others.  Let them know that this conversation will help all of you think through what happens if and when they need to retire from driving.  At this point, you want them to think and imagine what that would be like for them and how they would like that process to go.{/t}</p>
+
+        <h5>{t}CARE Coaching Questions{/t}</h5>
+
+        <ul>
+            <li>
+                {t}How will you know when it’s time to retire from driving?{/t}
+            </li>
+            <li>
+                {t}How do you think we should plan along the way?{/t}
+            </li>
+            <li>
+                {t}What would you think about using some assessments along the way?{/t}
+            </li>
+            <li>
+                {t}If you don’t notice it’s time to retire from driving, how would you like the conversation to go?{/t}
+            </li>
+            <li>
+                {t}As we continue this discussion, can we include a plan so that you can continue to be as independent as possible?{/t}
+            </li>
+        </ul>
+
+        <h5>{t}Resources{/t}</h5>
+
+        <p>{t}Driver Self-Assessment<br /> Here is a self-assessment for older adults from ElderSafety.org to help them identify what should be noticed regarding aging changes that may impact their ability to drive safely.{/t}</p>
 
         <p>
-            {t}The focus of self-coaching is to identify your goal, commit to your actions, and then move on to do
-            something else. Sometimes your best thinking goes on when you do move onto something else and then come back
-            to your goal. {/t}
+            <a href="<?php echo $this->createDownloadUrl('promotinghomesafetyforolderparents/Driver_Self-Assessment.pdf'); ?>"
+               target="_blank" class="button">Download Activity</a>
         </p>
+
+
+
+        <p>{t}<a href="http://www.usatoday.com/life/graphics/elderly_drivers_popup/flash.htm" target="_blank>">How Age Affects the Ability to Drive</a><br />This interactive guide from USA Today provides visual descriptions of changes that occur during normal aging that may impact one’s ability in driving.{/t}</p>
+
+
 
     </div>
     <div class="buttons">
@@ -741,19 +796,12 @@ AARP provides various articles of interest and resources for family caregivers. 
 
 <div id="lesson-1-slide-16" class="course-slide">
     <div class="content">
-        <h2 class="flowers">{t}Video – 5 steps to self-coaching{/t}</h2>
+        <h2 class="flowers">{t}CARE Coaching: talking to your parents about their driving{/t}</h2>
         <hr/>
-        <p>{t}Serving as an introduction to self-coaching exercises, this video outlines a simple self-coaching process
-            can be used over and over again whenever you need it.{/t}</p>
 
-        <p>
-            {t}View the video, self-coaching 101 by Brooke Castillo from The Life Coach School. This video is a new way
-            for you to experience a self-coaching session in the comfort of your own home. This video shows an example
-            of self-coaching in action.{/t}
-        </p>
+        <h4>{t}Step 2:  Noticing the first changes{/t}</h4>
 
-        <iframe style="display: block; width: 640px; height: 360px; framebroder: 0; margin: 15px auto;"
-                src="//www.youtube.com/embed/0_otisZVT8A?rel=0" allowfullscreen></iframe>
+
 
     </div>
     <div class="buttons">
@@ -764,16 +812,11 @@ AARP provides various articles of interest and resources for family caregivers. 
 
 <div id="lesson-1-slide-17" class="course-slide">
     <div class="content">
-        <h2 class="flowers">{t}Activity – principles of success{/t}</h2>
+        <h2 class="flowers">{t}Step 3: Tracking warning signs{/t}</h2>
         <hr/>
-        <p>{t}This activity focuses on assessing your awareness of ten principles of success and your rating of how you
-            presently live according to them. Complete a 10 item assessment and then review results based on your
-            responses.{/t}</p>
 
-        <p>
-            <a href="<?php echo $this->createDownloadUrl('promotinghomesafetyforolderparents/Activity_Principles_of_Success.xls'); ?>"
-               target="_blank" class="button">Download Activity</a>
-        </p>
+        <h4>{t}Step 2:  Noticing the first changes{/t}</h4>
+
 
     </div>
     <div class="buttons">
@@ -786,19 +829,9 @@ AARP provides various articles of interest and resources for family caregivers. 
     <div class="content">
         <h2 class="flowers">{t}Self-coaching exercises – the power of journaling{/t}</h2>
         <hr/>
-        <p>{t}Journaling is one powerful technique to refocus the negative into positive affirmations. With consistent
-            practice, this method can help create a more positive outlook in our own lives as well as create more
-            positive interactions with others.{/t}</p>
+        <h4>{t}Step 2:  Noticing the first changes{/t}</h4>
 
-        <p>{t}Journaling facilitates positive self-talk. Positive self-talk has been demonstrated to build one’s
-            self-esteem and self-confidence across a variety of situations. {/t}</p>
 
-        <p>{t}Journaling requires a time commitment to have an impact on one’s self-confidence. We recommend that you
-            commit 30 days to this exercise to see a difference.{/t}</p>
-
-        <p>{t}Because journaling is a private experience, you can create your own unique experience!{/t}</p>
-
-        <p>{t}Continue to the next page to learn more about the process of journaling.{/t}</p>
 
     </div>
     <div class="buttons">
