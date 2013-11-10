@@ -77,9 +77,13 @@ div.course-slide div#video {
 /* course-slide table properties */
 
 div.course-slide table {
-    width: 100%;
-    margin: 10px auto 10px auto;
-    border: none;
+    width: 95%;
+    margin: 10px auto 25px auto;
+    border: solid #000000;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px; /* future proofing */
+    -khtml-border-radius: 10px; /* for old Konqueror browsers */
 }
 
 div.course-slide table th {
@@ -104,12 +108,6 @@ div.course-slide table td {
     font-size: 12pt;
 }
 
-.name {
-    font-family: 'Swanky and Moo Moo', cursive;
-    color: #F00;
-    font-size: 18px;
-}
-
 div.box-sidebar img {
     border: none;
     display: block;
@@ -132,6 +130,7 @@ div.box-sidebar img#facilitator {
     border-bottom-right-radius: 5px;
     border-bottom-left-radius: 5px;
 }
+
 div.box-sidebar img#certificate {
     border: none;
     display: block;

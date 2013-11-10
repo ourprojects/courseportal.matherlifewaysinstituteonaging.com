@@ -474,20 +474,21 @@ AARP provides various articles of interest and resources for family caregivers. 
 
         <table>
             <th>
-                {t}Area{/t}
+                <p>{t}Area{/t}</p>
             </th>
             <th>
-                {t}Recommendations{/t}
+                <p>{t}Recommendations{/t}</p>
             </th>
             <tr>
                 <td>
-                    {t}Exposed cords from lamps, extensions, and telephones{/t}
+                    <p>{t}Exposed cords from lamps, extensions, and telephones{/t}</p>
                 </td>
                 <td>
                     <ul>
                         <li>
-                            {t}Arrange furniture so that outlets are available for lamps and appliances without use of
-                            numerous extension cords.{/t}
+                            <p>{t}Arrange furniture so that outlets are available for lamps and appliances without use
+                                of
+                                numerous extension cords.{/t}</p>
                         </li>
                         <li>
                             {t}If you use extension cords, place it along the wall on the floor where people cannot trip
@@ -941,21 +942,19 @@ AARP provides various articles of interest and resources for family caregivers. 
             </li>
         </ul>
 
-
         <h5>{t}Resources{/t}</h5>
 
-        Drivers Self-Assessment
-        http://apps.dmv.ca.gov/about/senior/senior_self_ess.html
-        This self-assessment at seniordrivers.org provides a quick self-assessment for older drivers to review their
-        driving knowledge and skills.
+        <p>{t}<a href="http://apps.dmv.ca.gov/about/senior/senior_self_ess.html" target="_blank">Drivers
+                Self-Assessment</a><br/>
+            This self-assessment at seniordrivers.org provides a quick self-assessment for older drivers to review their
+            driving knowledge and skills.{/t}</p>
 
-        AARP Driver Safety Online Course
-        http://www.aarp.org/families/driver_safety/driver_safety_online_course.html
-        AARP offers an online driver safety course (about 8 hours in length) for a nominal charge. The course is
-        designed for older drivers to learn about normal age-related changes and how to adjust driving to allow for
-        these changes. Successful completion of the course may qualify participants for car insurance discounts (please
-        check with your insurance company for specifics in your state).
-
+        <p>{t}<a href="http://www.aarp.org/families/driver_safety/driver_safety_online_course.html" target="_blank">AARP
+                Driver Safety Online Course</a><br/>
+            AARP offers an online driver safety course (about 8 hours in length) for a nominal charge. The course is
+            designed for older drivers to learn about normal age-related changes and how to adjust driving to allow for
+            these changes. Successful completion of the course may qualify participants for car insurance discounts
+            (please check with your insurance company for specifics in your state).{/t}</p>
 
     </div>
     <div class="buttons">
@@ -997,7 +996,7 @@ AARP provides various articles of interest and resources for family caregivers. 
             {t}Video – Driving Rehabilitation Specialist{/t}
         </h4>
 
-        <iframe style="width: 640px; height: 480px; display: block; margin: 15px auto; frameborder: 0; src="
+        <iframe style="width: 640px; height: 480px; display: block; margin: 15px auto; frameborder: 0;" src="
         //www.youtube.com/embed/6GpNJ-zh1rc?rel=0" allowfullscreen></iframe>
 
         <h5>{t}CARE Coaching Questions{/t}</h5>
@@ -1023,7 +1022,7 @@ AARP provides various articles of interest and resources for family caregivers. 
             This checklist is for families to track potential warning signs for older drivers so that patterns may be
             identified early on.{/t}</p>
 
-        <p>
+        <p style="margin-bottom: 25px;">
             <a href="<?php echo $this->createDownloadUrl('promotinghomesafetyforolderparents/Warning_Signs_Older_Drivers.pdf'); ?>"
                target="_blank" class="button">Download Activity</a>
         </p>
@@ -1178,6 +1177,25 @@ AARP provides various articles of interest and resources for family caregivers. 
     <div class="content">
         <h2 class="flowers">{t}Where to start exercising{/t}</h2>
         <hr/>
+
+        <p>
+            {t}It is important to wear loose, comfortable clothing and well-fitting, sturdy shoes. Shoes should have a
+            good arch support, and an elevated and cushioned heel to absorb shock.{/t}
+        </p>
+
+        <p>
+            {t}If not already active, one should begin slowly. Starting slowly makes it less likely that injury will
+            occur. Starting slowly also helps prevent soreness from "overdoing" it. The saying "no pain, no gain" is not
+            true for older or elderly adults. One does not have to exercise at a high intensity to get most health
+            benefits{/t}
+        </p>
+
+        <p>
+            {t}Walking, for example, is an excellent activity to start. As one gets used to exercising, or if already
+            active, a person can slowly increase the intensity of the exercise program.{/t}
+        </p>
+
+
     </div>
     <div class="buttons">
         <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t} </a> <a
@@ -1187,20 +1205,20 @@ AARP provides various articles of interest and resources for family caregivers. 
 
 <div id="lesson-1-slide-22" class="course-slide">
     <div class="content">
-        <h2 class="flowers">{t}The process of journaling{/t}</h2>
+        <h2 class="flowers">{t}What types of exercises are good for older adults?{/t}</h2>
         <hr/>
-        <ol start="4">
-            <li>{t}Review your journal entries of recent accomplishments to connect with your values and talents.{/t}
-            </li>
-        </ol>
 
-        <ul>
-            <li>{t}What can you truly brag about?{/t}
-            </li>
-            <li>{t}What do your successes say about you?{/t}
-            </li>
+        <p>
+            {t}There are several types of exercise that are effective for older adults. At least 30 minutes of aerobic
+            activity is recommended daily. Examples are walking, swimming, and bicycling. Resistance or strength
+            training is recommended twice a week. {/t}
+        </p>
 
-        </ul>
+        <p>
+            {t}Warm up for five minutes before each exercise session. Walking slowly and stretching are good warm-up
+            activities. After finishing exercising, cool down with more stretching for five minutes. Cool down longer in
+            warmer weather. {/t}
+        </p>
 
     </div>
     <div class="buttons">
@@ -1211,11 +1229,31 @@ AARP provides various articles of interest and resources for family caregivers. 
 
 <div id="lesson-1-slide-23" class="course-slide">
     <div class="content">
-        <h2 class="flowers">{t}The process of journaling{/t}</h2>
+        <h2 class="flowers">{t}What are some safety tips for older adults related to exercise?{/t}</h2>
         <hr/>
-        <ol start="5">
-            <li>{t}Create a personal “bragging” statement. Be authentic and positive in your statement. Print out the
-                statement and keep it visible so that you can refer to it often.{/t}
+
+        <ol>
+            <li>
+                {t}Wait at least 2 hours after you eat to start your exercise routine.{/t}
+            </li>
+            <li>
+                {t}Don't exercise if you have a fever.{/t}
+            </li>
+            <li>
+                {t}Do not exercise if you have high blood pressure and have not consulted your doctor for your
+                limits.{/t}
+            </li>
+            <li>
+                {t}If your knee or elbow or ankle is swollen, painful and warm to the touch DON'T exercise, see a
+                doctor.{/t}
+            </li>
+            <li>
+                {t}If you have osteoporosis, talk to your doctor about any exercises that would be safe. Exercise that
+                involves stretching or flexing the spine should be approved directly by your doctor.{/t}
+            </li>
+            <li>
+                {t}Do not exercise if you develop a new pain or symptom. Swelling, shortness of breath, extreme
+                tiredness and you should get your parents to the doctor.{/t}
             </li>
         </ol>
 
@@ -1228,10 +1266,44 @@ AARP provides various articles of interest and resources for family caregivers. 
 
 <div id="lesson-1-slide-24" class="course-slide">
     <div class="content">
-        <h2 class="flowers">{t}The process of journaling{/t}</h2>
+        <h2 class="flowers">{t}Activity – resources on exercises designed for older adults{/t}</h2>
         <hr/>
-        <ol start="6">
-            <li>{t}Recite it out loud daily, saying, “This is me….This is what makes me special.”{/t}
+
+        <p>
+            {t}The National Institutes on Aging has developed an online guide for older adults. A number of example
+            exercises are presented with easy to follow steps and pictures. Exercises focus on areas including
+            endurance, flexibility, balance, and strength training. Click on the following link to access the guide:{/t}
+        </p>
+
+        <p><{t}Exercise & Physical Activity: Your Everyday Guide from the National Institute on Aging{/t}</p>
+
+        <h4>{t}Exercise Videos{/t}</h4>
+
+        <p>{t}These are meant to be example exercises and do not constitute a complete exercise regimen.{/t}</p>
+
+        <ol>
+            <li>
+                <a href="http://www.youtube.com/watch?v=ukJnjYM9LeA" target="_blank">{t}Video – Chair Stand
+                    Strengthening{/t}</a>
+            </li>
+            <li>
+                <a href="http://www.youtube.com/watch?v=ueHKUenfLtY" target="_blank">{t}Video – Seated Chair Leg
+                    Stretch{/t}</a>
+            </li>
+            <li>
+                <a href="http://www.youtube.com/watch?v=q7b7HgPYQN8" target="_blank">{t}Video – Seated Knee
+                    Extensions{/t}</a>
+            </li>
+            <li>
+                <a href="http://www.youtube.com/watch?v=rEfS6AfIgS4" target="_blank">{t}Video – Calf Muscle
+                    Exercise{/t}</a>
+            </li>
+            <li>
+                <a href="http://www.youtube.com/watch?v=SUWH6Tf6bNk" target="_blank">{t}Video – Shoulder
+                    Strengthening{/t}</a>
+            </li>
+            <li>
+                <a href="http://www.youtube.com/watch?v=7NqpW_TWEi0" target="_blank">{t}Video – Bicep Curls{/t}</a>
             </li>
         </ol>
 
@@ -1244,180 +1316,35 @@ AARP provides various articles of interest and resources for family caregivers. 
 
 <div id="lesson-1-slide-25" class="course-slide">
     <div class="content">
-        <h2 class="flowers">{t}Self-coaching exercise – focus on the goal{/t}</h2>
-        <hr/>
-        <p>{t}How do we identify the goal? The goal answers the question, “What do you want that’s really important to
-            you?” This exercise allows you to practice writing goals.{/t}</p>
-
-        <p>{t}Which of these sound like goals to you?{/t}</p>
-
-        <ul>
-            <li>
-                {t}I want to lose 30 pounds.{/t}
-            </li>
-            <li>
-                {t}I want to get better at negotiating.{/t}
-            </li>
-            <li>
-                {t}I want to get my mother to start considering her long-term care options.{/t}
-            </li>
-        </ul>
-
-        <p>{t}None of these are goals – these are strategies towards goals. Strategies are important, as they focus on
-            the “how to get to” goals. It is easy to focus on strategies rather than goals because strategies seem to
-            focus on actions. {/t}</p>
-
-        <p>{t}How do we identify the goal? The goal answers the question, “What do you want that’s really important to
-            you?”{/t}</p>
-
-        <p>{t}Another way to differentiate between setting goals and identifying strategies is to look at differences
-            between goal setting and problem solving. Here are some different terms that describe the two:{/t}</p>
-
-        <table>
-            <th>
-                <p>{t}Goal Setting{/t}</p>
-            </th>
-            <th>
-                <p>{t}Identifying Strategies{/t}</p>
-            </th>
-            <tr>
-                <td>
-                    <ul>
-                        <li>
-                            {t}Proactive{/t}
-                        </li>
-                        <li>
-                            {t}Finding what is possible{/t}
-                        </li>
-                        <li>
-                            {t}Developing{/t}
-                        </li>
-                        <li>
-                            {t}Identifying priorities{/t}
-                        </li>
-                        <li>
-                            {t}Dynamic{/t}
-                        </li>
-                        <li>
-                            {t}Working with the whole{/t}
-                        </li>
-                    </ul>
-                </td>
-                <td>
-                    <ul>
-                        <li>
-                            {t}Reactive{/t}
-
-                        </li>
-                        <li>
-                            {t}Finding what is wrong{/t}
-
-                        </li>
-                        <li>
-
-                            {t}Fixing{/t}
-
-                        </li>
-                        <li>
-
-                            {t}Addressing crises{/t}
-
-                        </li>
-                        <li>
-
-                            {t}Static{/t}
-
-                        </li>
-                        <li>{t}Working with parts{/t}</li>
-                    </ul>
-                </td>
-            </tr>
-        </table>
-
-    </div>
-    <div class="buttons">
-        <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t} </a> <a
-            href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
-    </div>
-</div>
-
-
-<div id="lesson-1-slide-26" class="course-slide">
-    <div class="content">
-        <h2 class="flowers">{t}Setting your goals{/t}</h2>
-        <hr/>
-        <p>{t}Think of goal setting in terms of NOUNS:{/t}</p>
-
-        <ul>
-
-            <li>{t}“I want more confidence dealing with my parents.”{/t}</li>
-            <li>{t}“I want a more positive attitude about my caregiving responsibilities.”{/t}</li>
-            <li>{t}“I want better health for myself.”{/t}</li>
-        </ul>
-
-        <p>{t}Think of goal setting in terms of NOUNS:{/t}</p>
-
-        <ul>
-            <li>{t}I want to lose 30 pounds.{/t}</li>
-            <li>{t}I want to get better at negotiating.{/t}</li>
-            <li>{t} I want to get my mother to start considering her long-term care options.{/t}</li>
-        </ul>
-
-        <p>{t}For this exercise, look back at your responses to the two activities in this module. In the Self-Awareness
-            Survey, you explored what is important to you in your life. In the Principles of Success activity, you rated
-            yourself against these principles. Based on these results, develop three statements of goals for yourself.
-            {/t}</p>
-
-        <p>{t}Remember that goals should be stated in terms of nouns. Goals also answer the question, “What do you want
-            that’s really important to you?”{/t}</p>
-
-        <p>{t}Goal #1: {/t}<input style="margin-left: 15px;" type="text" name="Goal#1" value="(Example)" size="45"></p>
-
-        <p>{t}Goal #2: {/t}<input style="margin-left: 15px;" type="text" name="Goal#2" value="(Example)" size="45"></p>
-
-        <p>{t}Goal #3: {/t}<input style="margin-left: 15px;" type="text" name="Goal#3" value="(Example)" size="45"></p>
-
-
-        <p>{t}Click below to download a copy of this page to write in your goals.{/t}</p>
-
-        <p>
-            <a href="<?php echo $this->createDownloadUrl('promotinghomesafetyforolderparents/Exercise_Setting_your_Goals.docx'); ?>"
-               target="_blank" class="button">Download Activity</a>
-        </p>
-
-
-    </div>
-    <div class="buttons">
-        <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t} </a> <a
-            href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
-    </div>
-</div>
-
-<div id="lesson-1-slide-27" class="course-slide">
-    <div class="content">
         <h2 class="flowers">{t}Congratulations on completing the course!{/t}</h2>
         <hr/>
         <p>{t}Let’s summarize the top five points we covered in this course:{/t}</p>
         <ol>
-            <li>{t}You are not alone as a caregiver of an older adult! More than one in six working caregivers care for
-                one or more older adults.{/t}
+            <li>{t}Accidents in the home are a major source of injury for older adults and can cause disability and
+                sometimes death. For older adults, the vast majority of falls occurs going between the bedroom and
+                bathroom.{/t}
             </li>
 
-            <li>{t}A “role reversal” with aging parents is common, although it is not uncommon for that to be
-                challenging to now be the “coach” for your aging parents. So remember to be a successful coach, use the
-                skills of appreciating, listening, appreciating, and supporting.{/t}
+            <li>{t}During your next visit with your older parents, use your powers of observation to note changes around
+                their home or in their appearance. This should not be an inspection for purposes of judgment or
+                criticism. Rather, think of this as a part wellness check, part well-being check, and part safety
+                check.{/t}
             </li>
 
-            <li>{t} Focus on shifting from negative “self talk” to positive “self talk” to get to what’s important to
-                you as a caregiver.{/t}
+            <li>{t}According to driving statistics, older adults have more fatal car accidents than any other age group.
+                Additionally, older adults are more at risk for death after being involved in a car accident because of
+                their age and health condition. {/t}
             </li>
 
-            <li>{t}Use the five steps involved in creating an effective self-coaching experience to help you move your
-                thinking forward as an effective caregiver and focus on the goal.{/t}
+            <li>{t}Bringing up the discussion on driving is very challenging. The best way to think about this is to
+                keep the perspective that there is a continuum of possibilities on the “continue driving” to “quit
+                driving” scale. By using CARE Coaching methods and breaking the driving conversation with your older
+                parents into steps, you can better draw out the issues and support your parents in their transition.{/t}
             </li>
 
-            <li>{t} Try journaling to facilitate positive “self talk” and boost your self-confidence as an effective
-                caregiver.{/t}
+            <li>{t}Exercise for older adults is an important contributor to safety and independence. Many studies have
+                demonstrated the positive benefits of exercise for older adults regardless of age. As we get older
+                exercise is incredibly important to our overall health.{/t}
             </li>
         </ol>
 
