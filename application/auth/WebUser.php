@@ -4,7 +4,13 @@ class WebUser extends CWebUser
 {
 
 	private $_userModel = null;
-
+	
+	public function init()
+	{
+		parent::init();
+		$this->attachBehavior('PhpBBLoginBehavior', Yii::createComponent(array('class' => 'phpbb.components.PhpBBAuthBehavior')));
+	}
+	
 	public function getModel()
 	{
 		if(!isset($this->_userModel))
@@ -48,13 +54,7 @@ class WebUser extends CWebUser
 	{
 		if(parent::login($identity, $duration) && ($identity->getIsAuthenticated() || $identity->authenticate()))
 		{
-			$this->_userModel = $identity->getModel();
-			$phpBB = Yii::app()->getComponent('phpBB');
-			if(!$phpBB->getUserIdFromName($identity->getName()) && $identity->canGetProperty('password') && $this->_userModel !== null)
-			{
-				$identity->getModel()->phpBBAddUser($identity->password);
-			}
-			return $phpBB->login($identity, '', $this->allowAutoLogin);
+			return $this->phpbbLogin($identity->getModel(), $identity, $this->allowAutoLogin);
 		}
 		return false;
 	}
@@ -67,7 +67,7 @@ class WebUser extends CWebUser
 			{
 				$identity = new SessionIdentity($id);
 				$identity->setPersistentStates($states);
-				return ($identity->getIsAuthenticated() || $identity->authenticate()) && Yii::app()->getComponent('phpBB')->login($identity, '', $this->allowAutoLogin);
+				return ($identity->getIsAuthenticated() || $identity->authenticate()) && $this->phpbbLogin($identity->getModel(), $identity, $this->allowAutoLogin);
 			}
 			return true;
 		}
@@ -91,7 +91,7 @@ class WebUser extends CWebUser
 	protected function afterLogout()
 	{
 		parent::afterLogout();
-		Yii::app()->getComponent('phpBB')->logout();
+		$this->phpbbLogout();
 	}
 
 }

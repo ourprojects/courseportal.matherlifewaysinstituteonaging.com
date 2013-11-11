@@ -112,7 +112,6 @@ class CPUser extends CActiveRecord
 						'userTypeAttribute' => 'phpbbUserType',
 						'avatarAttribute' => 'avatar',
 						'avatarPath' => Yii::getPathOfAlias(Avatar::AVATARS_PATH_ALIAS),
-						'forumDbConnection' => 'forumDb',
 						'syncAttributes' => array(
 								'name' => 'username',
 								'email' => 'email',
@@ -193,9 +192,9 @@ class CPUser extends CActiveRecord
 	{
 		if($this->getIsActivated())
 		{
-			return Yii::app()->getAuthManager()->isSuperUser($this->getAttribute('id')) ? phpBB::USER_FOUNDER : phpBB::USER_NORMAL;
+			return Yii::app()->getAuthManager()->isSuperUser($this->getAttribute('id')) ? PhpbbModule::USER_FOUNDER : PhpbbModule::USER_NORMAL;
 		}
-		return phpBB::USER_INACTIVE;
+		return PhpbbModule::USER_INACTIVE;
 	}
 
 	public function getCountry()

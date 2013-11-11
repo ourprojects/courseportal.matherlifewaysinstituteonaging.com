@@ -490,7 +490,7 @@ foreach (array(
         </p>
         <iframe style="width: 480px; height: 360px; display: block; margin: 15px auto;"
                 src="//www.youtube.com/embed/WBSNQi4es5k?rel=0" frameborder="0" allowfullscreen></iframe>
-        <!-- 'url' => Yii::app()->getComponent('phpBB')->getForumUrl(), -->
+        <!-- 'url' => PhpbbModule::getInstance()->getForumUrl(), -->
     </div>
     <div class="buttons">
         <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a><a
