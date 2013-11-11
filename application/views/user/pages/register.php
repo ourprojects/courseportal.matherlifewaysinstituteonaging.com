@@ -31,7 +31,12 @@
 </div>
 <div class="column-wide">
     <p>{t}Complete the fields below to register. You will be sent a verification email to authenticate your email
-        address.{/t}
+        address.{/t}</p>
+
+    <p>
+        {t}If you work at one of the following organizations, you will be required to use your employee email address to
+        register:{/t}
+    </p>
 
     <p class="bold">
     <ul>
