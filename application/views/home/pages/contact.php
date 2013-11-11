@@ -21,6 +21,15 @@
 </div>
 <div class="column-wide">
 	<div class="box-white">
-		<?php echo $this->renderPartial('forms/contact', $models); ?>
+		<?php 
+		$this->widget(
+			'ext.LDContactUsWidget.LDContactUsWidget',
+			array(
+				'options' => array(
+					'htmlOptions' => array('class' => 'form')
+				)
+			)
+		);
+		?>
 	</div>
 </div>
