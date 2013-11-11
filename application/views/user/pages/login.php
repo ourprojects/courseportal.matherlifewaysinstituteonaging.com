@@ -15,7 +15,6 @@
 	</div>
 </div>
 <div class="column-wide">
-	<h2 class="flowers">Login</h2>
 	<p>{t}Please complete the form below to login.{/t}</p>
 	<div class="box-white">
 		<p>

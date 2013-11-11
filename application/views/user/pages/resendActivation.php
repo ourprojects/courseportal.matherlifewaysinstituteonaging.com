@@ -6,27 +6,24 @@
 </div>
 <div id="sidebar">
     <div class="box-sidebar one">
-        <h3>{t}Did you know?{/t}</h3>
+        <h3>Mather LifeWays Institute on Aging</h3>
 
-        <p style="font-weight: bold; text-align: center;">{t}Pew Internet &amp; American Life Project: Family Caregivers
-            Online{/t}</p>
-
-        <p>
-            {t}Women are slightly more likely than men to be caring for a loved one, as are adults ages 50-64, compared
-            with other age groups.{/t}
+        <p class="text-center bold">
+            <a href="http://www.matherlifewaysinstituteonaging.com/family-caregivers/" target="_blank">{t}Family
+                Caregivers{/t}</a>
         </p>
 
-        <p><img class="block center" src="<?php echo $this->getImagesUrl('93061617sidebar1.png'); ?>"
-                alt="EAP Assocation Logo"></p>
+        <p>{t}More than 40 million Americans provide care for relatives or friends with a chronic illness such as
+            dementia, stroke, or Parkinson&rsquo;s disease. This takes an enormous physical and emotional toll on
+            caregivers.{/t}</p>
 
-        <p>
-            <a href="http://www.pewinternet.org/Reports/2012/Caregivers-online/Main-Report.aspx?view=all"
-               target="_blank"> {t}Caregivers in the U.S.{/t} </a>
-        </p>
+        <p>{t}Mather LifeWays Institute on Aging provides tools and online courses to support caregivers through
+            education, advice, and valuable insights.{/t}</p>
+        <img src="<?php echo $this->getImagesUrl('148950191.png'); ?>" alt="Image">
     </div>
+
 </div>
 <div class="column-wide">
-    <h2 class="flowers">{t} Account Activation Email {/t}</h2>
 
     <p>{t}Please complete the form below to have your activation email sent to you again. You must already be registered
         to receive this email. {/t}</p>

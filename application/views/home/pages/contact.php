@@ -20,7 +20,6 @@
 	</div>
 </div>
 <div class="column-wide">
-	<h2 class="flowers">{t}Contact Us{/t}</h2>
 	<div class="box-white">
 		<?php echo $this->renderPartial('forms/contact', $models); ?>
 	</div>
