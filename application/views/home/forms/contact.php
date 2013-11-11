@@ -20,19 +20,19 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($ContactUs,'name'); ?>
-		<?php echo $form->textField($ContactUs,'name'); ?>
+		<?php echo $form->textField($ContactUs,'name', array('size' =>35)); ?>
 		<?php echo $form->error($ContactUs, 'name'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($ContactUs,'email'); ?>
-		<?php echo $form->textField($ContactUs,'email'); ?>
+		<?php echo $form->textField($ContactUs,'email', array('size' =>35)); ?>
 		<?php echo $form->error($ContactUs, 'email'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($ContactUs,'subject'); ?>
-		<?php echo $form->textField($ContactUs,'subject',array('size'=>60)); ?>
+		<?php echo $form->textField($ContactUs,'subject',array('size'=>35)); ?>
 		<?php echo $form->error($ContactUs, 'subject'); ?>
 	</div>
 
