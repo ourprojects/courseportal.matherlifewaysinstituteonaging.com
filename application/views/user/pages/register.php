@@ -25,9 +25,8 @@
 
         <p>{t}Aging in Action is Mather LifeWays Institute on Aging's monthly e-newsletter and blog containing the
             latest research news in the field of aging.{/t}</p>
-        <a href="http://twitter.com/aginginaction" target="_blank"> <img class="block center"
-                                                                         src="<?php echo $this->getImagesUrl('twitter-bird.png'); ?>"
-                                                                         alt="Twitter"/></a>
+        <a href="http://twitter.com/aginginaction" target="_blank">
+            <img class="block center" src="<?php echo $this->getImagesUrl('twitter-bird.png'); ?>" alt="Twitter"></a>
     </div>
 </div>
 <div class="column-wide">
