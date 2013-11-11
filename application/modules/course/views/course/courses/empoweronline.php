@@ -11,7 +11,10 @@ foreach (array(
              '.lesson-4',
              '.lesson-5',
              '.lesson-6',
-             '.lesson-7') as $lesson)
+             '.lesson-7',
+             '.lesson-8',
+             '.lesson-9',
+             '.lesson-10') as $lesson)
     $this->widget(
         'ext.fancybox.EFancyBox',
         array('id' => $lesson,
@@ -100,20 +103,54 @@ foreach (array(
     <div class="box-sidebar one">
         <h3>{t}Facilitator(s){/t}</h3>
 
-        <p>{t}Facilitator (English / Spanish / Portuguese): Elise Foss{/t}</p>
+        <table style="margin: 0px; padding: 0px;">
+            <tr>
+                <td>
+                    <p style="font-weight: bold;">Elise Foss</p>
+                </td>
+                <td>
+                    <img style="width: 32px; height: 32px;"
+                         src="<?php echo $this->getImagesUrl('empower/Brazil-Flag-64.png'); ?>"
+                         alt="{t}Country Flag{/t}">
+                </td>
+                <td>
+                    <img style="width: 32px; height: 32px;"
+                         src="<?php echo $this->getImagesUrl('empower/United-States-Flag-64.png'); ?>"
+                         alt="{t}Country Flag{/t}">
+                </td>
+                <td>
+                    <img style="width: 32px; height: 32px;"
+                         src="<?php echo $this->getImagesUrl('empower/Mexico-Flag-64.png'); ?>"
+                         alt="{t}Country Flag{/t}">
+                </td>
+            </tr>
+        </table>
 
         <p>{t}Ms. Foss has been facilitating online courses for Mather LifeWays Institute on Aging since 2004.
-            Currently,
-            she is the Fitness Coordinator for a Mather LifeWays Senior Living community. Originally from Venezuela, and
+            Currently, she is the Fitness Coordinator for a Mather LifeWays Senior Living community. Originally from
+            Venezuela, and
             educated in Brazil, Elise is fluent in English, Spanish and Portuguese, and travels to family in Brazil each
             year.{/t}</p>
-        <p>{t}Facilitator (Chinese): LiJuan Yin{/t}</p>
+
+        <hr/>
+
+        <table style="margin: 0px; padding: 0px;">
+            <tr>
+                <td>
+                    <p style="font-weight: bold;">LiJuan Yin</p>
+                </td>
+                <td>
+                    <img style="width: 32px; height: 32px;"
+                         src="<?php echo $this->getImagesUrl('empower/China-Flag-64.png'); ?>"
+                         alt="{t}Country Flag{/t}">
+                </td>
+            </tr>
+        </table>
 
         <p>{t}Mrs. Lin is currently a PhD student at the University of Illinois at Chicago (UIC), studying Public
-            Health.
-            She has helped research, develop, and facilitate online courses for Mather LifeWays Institute on aging for
-            the
-            past 3 years.{/t}</p>
+            Health. She has helped research, develop, and facilitate online courses for Mather LifeWays Institute on
+            aging for
+            the past 3 years.{/t}</p>
 
         <p><a href="#" target="_blank" class="button">Contact Facilitator</a></p>
         <img src="<?php echo $this->getImagesUrl('promotinghomesafetyforolderparents/80608570.png'); ?>"
@@ -302,9 +339,6 @@ foreach (array(
     </li>
 </ul>
 
-<!-- Resources div white box here -->
-
-
 <h4>{t}Resources{/t}</h4>
 
 <p>{t}Please click on your countries flag to access resources that may be required to complete this online course.
@@ -314,48 +348,28 @@ foreach (array(
     <tr>
         <td>
             <a href="#lesson-6-slide-1" data-fancybox-group="lesson-6" class="teal lesson-6"><img
-                    src="<?php echo $this->getImagesUrl('flags/United-States-Flag-64.png'); ?>" alt="{t}USA{/t}"/>
+                    src="<?php echo $this->getImagesUrl('empower/United-States-Flag-64.png'); ?>" alt="{t}USA{/t}"/>
             </a>
         </td>
         <td>
             <a href="#lesson-7-slide-1" data-fancybox-group="lesson-7" class="teal lesson-7"><img
-                    src="<?php echo $this->getImagesUrl('flags/China-Flag-64.png'); ?>" alt="{t}China{/t}"/> </a>
+                    src="<?php echo $this->getImagesUrl('empower/China-Flag-64.png'); ?>" alt="{t}China{/t}"/> </a>
         </td>
+
         <td>
-            <a href="#lesson-8-slide-1" data-fancybox-group="lesson-6" class="teal lesson-6"><img
-                    src="<?php echo $this->getImagesUrl('flags/Hong-Kong-Flag-64.png'); ?>" alt="{t}Hong Kong{/t}"/>
-            </a>
+            <a href="#lesson-8-slide-1" data-fancybox-group="lesson-8" class="teal lesson-8"><img
+                    src="<?php echo $this->getImagesUrl('empower/Brazil-Flag-64.png'); ?>" alt="{t}Brazil{/t}"/> </a>
         </td>
-    </tr>
-    <tr>
+
         <td>
-            <a href="#lesson-9-slide-1" data-fancybox-group="lesson-6" class="teal lesson-6"><img
-                    src="<?php echo $this->getImagesUrl('flags/Brazil-Flag-64.png'); ?>" alt="{t}Brazil{/t}"/> </a>
-        </td>
-        <td>
-            <a href="#lesson-10-slide-1" data-fancybox-group="lesson-6" class="teal lesson-6"><img
-                    src="<?php echo $this->getImagesUrl('flags/Mexico-Flag-64.png'); ?>" alt="{t}Mexico{/t}"/> </a>
-        </td>
-        <td>
-            <a href="#lesson-11-slide-1" data-fancybox-group="lesson-6" class="teal lesson-6"><img
-                    src="<?php echo $this->getImagesUrl('flags/Taiwan-Flag-64.png'); ?>" alt="{t}Taiwan{/t}"/> </a>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <a href="#lesson-12-slide-1" data-fancybox-group="lesson-6" class="teal lesson-6"><img
-                    src="<?php echo $this->getImagesUrl('flags/Argentina-Flag-64.png'); ?>" alt="{t}Argentina{/t}"/>
-            </a>
-        </td>
-        <td>
-            <a href="#lesson-13-slide-1" data-fancybox-group="lesson-6" class="teal lesson-6"><img
-                    src="<?php echo $this->getImagesUrl('flags/United-Kingdom-flag-64.png'); ?>"
+            <a href="#lesson-9-slide-1" data-fancybox-group="lesson-9" class="teal lesson-9"><img
+                    src="<?php echo $this->getImagesUrl('empower/United-Kingdom-flag-64.png'); ?>"
                     alt="{t}England{/t}"/> </a>
         </td>
         <td>
-            <a href="#lesson-14-slide-1" data-fancybox-group="lesson-6" class="teal lesson-6"><img
-                    src="<?php echo $this->getImagesUrl('flags/Luxembourg-Flag-64.png'); ?>"
-                    alt="{t}Luxembourg{/t}"/> </a>
+            <a href="#lesson-10-slide-1" data-fancybox-group="lesson-10" class="teal lesson-10"><img
+                    src="<?php echo $this->getImagesUrl('empower/Benelux-flag-64.png'); ?>"
+                    alt="{t}Benelux{/t}"/> </a>
         </td>
     </tr>
 </table>
@@ -5305,7 +5319,8 @@ HTML Output:
 <div id="lesson-6">
     <div id="lesson-6-slide-1" class="course-slide">
         <div class="content">
-            <p>{t}this is a test!{/t}</p>
+            <h2 class="flowers">{t}Resources - USA{/t}</h2>
+            <hr/>
         </div>
         <div class="buttons">
             <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Close{/t}</a>
@@ -5317,15 +5332,53 @@ HTML Output:
 <div id="lesson-7">
     <div id="lesson-7-slide-1" class="course-slide">
         <div class="content">
-            <p>{t}this is a test!{/t}</p>
+            <h2 class="flowers">{t}Resources - China (Mainland){/t}</h2>
+            <hr/>
+            <p>{t}Please check back later.{/t}</p>
         </div>
         <div class="buttons">
             <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Close{/t}</a>
         </div>
     </div>
 
-    <!-- need this final div here to close lesson-6 -->
-</div>
+    <div id="lesson-8">
+        <div id="lesson-8-slide-1" class="course-slide">
+            <div class="content">
+                <h2 class="flowers">{t}Resources - Brazil{/t}</h2>
+                <hr/>
+                <p>{t}Please check back later.{/t}</p>
+            </div>
+            <div class="buttons">
+                <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Close{/t}</a>
+            </div>
+        </div>
 
-<!-- need this final div to close the course -->
-</div>
+        <div id="lesson-9">
+            <div id="lesson-9-slide-1" class="course-slide">
+                <div class="content">
+                    <h2 class="flowers">{t}Resources - United Kingdom{/t}</h2>
+                    <hr/>
+                    <p>{t}Please check back later.{/t}</p>
+                </div>
+                <div class="buttons">
+                    <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Close{/t}</a>
+                </div>
+            </div>
+
+            <div id="lesson-10">
+                <div id="lesson-10-slide-1" class="course-slide">
+                    <div class="content">
+                        <h2 class="flowers">{t}Resources - Benelux{/t}</h2>
+                        <hr/>
+                        <p>{t}Please check back later.{/t}</p>
+                    </div>
+                    <div class="buttons">
+                        <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Close{/t}</a>
+                    </div>
+                </div>
+
+                <!-- need this final div here to close lesson-6 -->
+            </div>
+
+            <!-- need this final div to close the course -->
+        </div>

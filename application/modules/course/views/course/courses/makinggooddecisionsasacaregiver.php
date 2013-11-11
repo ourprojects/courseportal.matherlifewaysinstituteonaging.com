@@ -368,7 +368,7 @@ AARP provides various articles of interest and resources for family caregivers. 
     <div class="content">
         <h2 class="flowers">{t}Activity – CARE Coaching through long distance caregiving{/t}</h2>
         <hr/>
-        <p>{t}YRead the following scenario and then respond to the CARE coaching questions. We provide some initial
+        <p>{t}Read the following scenario and then respond to the CARE coaching questions. We provide some initial
             “openers” for CARE coaching questions for you to more fully develop your own questions.{/t}</p>
 
         <p>
@@ -828,7 +828,7 @@ AARP provides various articles of interest and resources for family caregivers. 
         <p>{t}Central to most sibling conflicts is a breakdown of communication. Many care relate to this common
             scenario:{/t}</p>
 
-        <blockquote>{t} Cara is a long distance caregiver. Unfortunately her new job meant she has not been able to
+        <blockquote>{t}Cara is a long distance caregiver. Unfortunately her new job meant she has not been able to
             visit her aging mother for the past three years. She never had a very close relationship with her mother,
             and so their conversations always tended to be on a superficial level. She calls her mother about every two
             weeks. Over the phone, Cara’s mother tells her she is fine. On the other hand, Cara’s sister, Joyce, who is
