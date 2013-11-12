@@ -25,7 +25,8 @@ return array(
 				'application.helpers.*',
 				'ext.yii-mail.*',
 				'application.modules.translate.TranslateModule',
-				'application.modules.translate.components.*'
+				'application.modules.translate.components.*',
+				'application.modules.phpbb.PhpbbModule'
 		),
 
 		// configured modules
@@ -35,7 +36,13 @@ return array(
 		        'password'=>false,
 		        'ipFilters'=>array('*'),
 		    ),*/
-			'phpbb',
+			'phpbb' => array(
+				'userClass' => 'CPUser',
+				'userName' => 'name',
+				'path' => 'webroot.forum',
+				'webPath' => 'forum',
+				'connectionID' => 'forumDb'
+			),
 			'translate',
 			'surveyor' => array(
 				'userClass' => 'CPUser',
@@ -145,12 +152,6 @@ return array(
 						'userIdColumnType' => 'integer',
 						'userModelClassName' => 'CPUser',
 						'userIdColumnName' => 'id',
-				),
-
-				'phpBB' => array(
-						'class' => 'phpbb.extensions.phpBB.phpBB',
-						'path' => 'webroot.forum',
-						'webPath' => 'forum'
 				),
 
 				'mail' => array(

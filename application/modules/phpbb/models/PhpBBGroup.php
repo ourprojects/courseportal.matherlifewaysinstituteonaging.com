@@ -33,42 +33,48 @@
  *
  * @property PhpBBGroup[] $users
  */
-class PhpBBGroup extends CActiveRecord {
+class PhpBBGroup extends CActiveRecord 
+{
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
 	 * @return PhpBBGroup the static model class
 	 */
-	public static function model($className=__CLASS__) {
+	public static function model($className = __CLASS__) 
+	{
 		return parent::model($className);
 	}
 
-    public function getDbConnection() {
-        return Yii::app()->forumDb;
-    }
+	public function getDbConnection() 
+	{
+		return PhpbbModule::getInstance()->getDbConnection();
+	}
 
 	/**
 	 * @return string the associated database table name
 	 */
-	public function tableName() {
+	public function tableName() 
+	{
 		return '{{groups}}';
 	}
 
-    /**
-     * @return array relational rules.
-     */
-    public function relations() {
-        return array(
-            'users'=>array(self::HAS_MANY, Yii::app()->params['userModelClassName'], 'group_id'),
-        );
-    }
+	/**
+	 * @return array relational rules.
+	 */
+	public function relations() 
+	{
+		return array(
+			'users' => array(self::HAS_MANY, 'PhpBBUser', 'group_id'),
+		);
+	}
 
-    /**
-     * @param string $name
-     * @return PhpBBGroup the static model class
-     */
-    public function findByName($name) {
-         return $this->findByAttributes(array('group_name' => $name));
-    }
+	/**
+	 * @param string $name
+	 * @return PhpBBGroup the static model class
+	 */
+	public function findByName($name) 
+	{
+		return $this->findByAttributes(array('group_name' => $name));
+	}
 
 }

@@ -5,7 +5,13 @@ class HomeController extends CoursePortalController
 	
 	public function actions()
 	{
-		return array_merge(parent::actions(), array('survey.' => 'surveyor.widgets.Survey'));
+		return array_merge(
+			parent::actions(), 
+			array(
+				'survey.' => 'surveyor.widgets.Survey', 
+				'contactUs.' => 'ext.LDContactUsWidget.LDContactUsWidget'
+			)
+		);
 	}
 
 	public function accessRules()

@@ -96,15 +96,15 @@ class PhpBBUser extends CActiveRecord
 	 * @param string $className active record class name.
 	 * @return PhpBBUser the static model class
 	 */
-	public static function model($className=__CLASS__)
+	public static function model($className = __CLASS__)
 	{
 		return parent::model($className);
 	}
 
-    public function getDbConnection()
-    {
-        return Yii::app()->forumDb;
-    }
+	public function getDbConnection()
+	{
+		return PhpbbModule::getInstance()->getDbConnection();
+	}
 
 	/**
 	 * @return string the associated database table name
@@ -114,41 +114,42 @@ class PhpBBUser extends CActiveRecord
 		return '{{users}}';
 	}
 
-    /**
-     * @return array relational rules.
-     */
-    public function relations()
-    {
-        return array(
-            'user' => array(self::HAS_ONE, Yii::app()->params['userModelClassName'], array('username' => 'username')),
-            'friends' => array(self::MANY_MANY, 'PhpBBUser', '{{zebra}}(user_id, zebra_id)', 'condition' => 'friend=1'),
-        	'group' => array(self::BELONGS_TO, 'PhpBBGroup', 'group_id')
-        );
-    }
+	/**
+	 * @return array relational rules.
+	 */
+	public function relations()
+	{
+		$phpBB = PhpbbModule::getInstance();
+		return array(
+			'user' => array(self::BELONGS_TO, $phpBB->userClass, array('username' => $phpBB->userName)),
+			'friends' => array(self::MANY_MANY, 'PhpBBUser', '{{zebra}}(user_id, zebra_id)', 'condition' => 'friend=1'),
+			'group' => array(self::BELONGS_TO, 'PhpBBGroup', 'group_id')
+		);
+	}
 
-    /**
-     * @param string $name
-     * @return PhpBBUser the static model class
-     */
-    public function findByName($name)
-    {
-         return $this->findByAttributes(array('username'=>$name));
-    }
+	/**
+	 * @param string $name
+	 * @return PhpBBUser the static model class
+	 */
+	public function findByName($name)
+	{
+		return $this->findByAttributes(array('username' => $name));
+	}
 
-    protected $_age;
+	protected $_age;
 
-    public function getAge()
-    {
-        if ($this->_age === null)
-            $this->_age = $this->user_birthday && $this->user_birthday != '0- 0- 0' ? $this->calcAge($this->user_birthday) : 0;
+	public function getAge()
+	{
+		if ($this->_age === null)
+			$this->_age = $this->user_birthday && $this->user_birthday != '0- 0- 0' ? $this->calcAge($this->user_birthday) : 0;
 
-        return $this->_age;
-    }
+		return $this->_age;
+	}
 
-    protected function calcAge($birthday)
-    {
-        list($d, $m, $y) = explode('-', $birthday);
-        $m_age = date("Y") - $y - ((intval($m . $d) - intval(date("m") . date("d")) > 0) ? 1 : 0);
-        return $m_age;
-    }
+	protected function calcAge($birthday)
+	{
+		list($d, $m, $y) = explode('-', $birthday);
+		$m_age = date("Y") - $y - ((intval($m . $d) - intval(date("m") . date("d")) > 0) ? 1 : 0);
+		return $m_age;
+	}
 }

@@ -28,7 +28,7 @@ $this->breadcrumbs = array('{t}Admin{/t}');
 	<div class="box-white">
 		<h5>{t}phpBB{/t}</h5>
 		<p>{t}phpBB is a free flat-forum bulletin board software solution that can be used to stay in touch with a group of people or can power your entire website. With an extensive database of user-created modifications and styles database containing hundreds of style and image packages to customize your board, you can create a very unique forum in minutes.{/t}</p>
-		<a href="<?php echo Yii::app()->getComponent('phpBB')->getACPUrl(); ?>" class="button">{t}phpBB Administration Control Panel{/t}</a>
+		<a href="<?php echo PhpbbModule::getInstance()->getACPUrl(); ?>" class="button">{t}phpBB Administration Control Panel{/t}</a>
 	</div>
 	<div class="box-white">
 		<h5>{t}Users{/t}</h5>
