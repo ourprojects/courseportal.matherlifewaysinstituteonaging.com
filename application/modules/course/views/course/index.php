@@ -1,10 +1,10 @@
-<?php $this->breadcrumbs = array('{t}Courses{/t}'); ?>
+<?php $this->breadcrumbs = array('{t}Online Courses - Work/Life Balance{/t}'); ?>
 
 <div class="small-masthead" style="background-image: url(<?php echo $this->getImagesUrl('header-courses.png'); ?>);">
-	<h1 class="bottom">{t}Courses, Surveys, &amp; Toolkits{/t}</h1>
+	<h1 class="bottom">{t}Online Courses - Work/Life Balance{/t}</h1>
 </div>
 <div id="single-column">
-	<h2 class="flowers">{t}Online Workforce Support Courses{/t}</h2>
+	<h2 class="flowers">{t}Online Courses - Work/Life Balance{/t}</h2>
 	<p>{t}To help individual caregivers transition into their new role, be better prepared to manage their loved one's needs, and learn how to effectively practice self-care, Mather LifeWays Institute on Aging has developed online programs that are designed to educate caregivers while fitting into any schedule.{/t}</p>
 	<hr />
 	<?php foreach($courses as $course): 
