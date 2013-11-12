@@ -152,7 +152,7 @@ foreach (array(
         </tr>
         <tr>
             <td>
-                <h5>{t}Becoming a More Confident Caregiver - {/t}</h5>
+                <h5>{t}Staying at Home or Retirement Living? Helping Parents Plan for the Future - {/t}</h5>
             </td>
             <td>
                 <p><a href="#lesson-1-slide-1" data-fancybox-group="lesson-1" class="teal lesson-1 button">
@@ -279,7 +279,7 @@ AARP provides various articles of interest and resources for family caregivers. 
         <blockquote style="font-size: 24px;">{t}To be self-determined is to endorse one's actions at the highest level
             of reflection.{/t}
         </blockquote>
-        <blockquote style="font-size: 24px;">{t}When self-determined people experince a sense of freedom to do what is
+        <blockquote style="font-size: 24px;">{t}When self-determined people experience a sense of freedom to do what is
             interesting, personally important, and vitalizing.{/t}
         </blockquote>
 
@@ -403,7 +403,7 @@ AARP provides various articles of interest and resources for family caregivers. 
                 {t}What gives meaning to your lives?{/t}
             </li>
             <li>
-                {t}What give you joy in your lives?{/t}
+                {t}What gives you joy in your lives?{/t}
             </li>
         </ul>
 
@@ -553,7 +553,7 @@ AARP provides various articles of interest and resources for family caregivers. 
 
         <p>{t}Please note that you may print or save any activities from this course for future reference.{/t}</p>
 
-        <p>{t}Click here to access the Exercise – Identifying Solutions to Support Choice and Preferences{/t}</p>
+        <p>{t}Click below to access the Exercise – Identifying Solutions to Support Choice and Preferences{/t}</p>
 
         <p>
             <a href="<?php echo $this->createDownloadUrl('stayingathomeorretirementliving/Exercise_Identifying_Solutions_to_Support_Choice_and_Prefe.doc'); ?>"
@@ -669,14 +669,13 @@ AARP provides various articles of interest and resources for family caregivers. 
 <div id="lesson-1-slide-13" class="course-slide">
     <div class="content">
         <h2 class="flowers">{t}Activity – relocating scenarios{/t}</h2>
-        <hr/>
-        <h4>{t}Step 3{/t}</h4>
+        <hr/>       
 
         <p>{t}How can I convince my older parents to move to a retirement community? Here are two scenarios for you to
             respond to.{/t}</p>
 
         <p>
-            <a href="<?php echo $this->createDownloadUrl('stayingathomeorretirementliving/Activity_Relocatin_ Scenarios.docx'); ?>"
+            <a href="<?php echo $this->createDownloadUrl('stayingathomeorretirementliving/Activity_Relocating_Scenarios.docx'); ?>"
                target="_blank" class="button">Download Activity</a>
         </p>
 
@@ -807,12 +806,7 @@ AARP provides various articles of interest and resources for family caregivers. 
             they are no different from other residential enclaves except that there is an age restriction (over 55) or
             an age target. Depending on the community, residents are often able to bring in home care services or
             personal assistants for periods of time after an illness episode or hospitalization to aid in
-            recuperation.{/t}</p>
-
-        <p>
-            <a href="<?php echo $this->createDownloadUrl('stayingathomeorretirementliving/Activity_Principles_of_Success.xls'); ?>"
-               target="_blank" class="button">Download Activity</a>
-        </p>
+            recuperation.{/t}</p>      
 
     </div>
     <div class="buttons">
