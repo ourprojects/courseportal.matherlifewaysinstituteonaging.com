@@ -16,7 +16,7 @@
 			var settings = $.extend({
 				loadingClass: 'loading',
 			}, options || {});
-			showRecaptcha('EReCaptcha');
+			showRecaptcha('LDReCaptchaWidget');
 			contactUsSettings = settings;
 		},
 			
@@ -37,7 +37,7 @@
 			if(success) 
 			{
 				this[0].reset();
-				showRecaptcha('EReCaptcha');
+				showRecaptcha('LDReCaptchaWidget');
 				$el.css({"background": "#E6EFC2", "color": "#264409", "border-color": "#C6D880"});
 				this.loadJSON(data);
 			} 

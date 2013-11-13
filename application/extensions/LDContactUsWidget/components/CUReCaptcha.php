@@ -5,7 +5,7 @@ require_once(dirname(__FILE__).DIRECTORY_SEPARATOR.'CUCaptcha.php');
 class CUReCaptcha extends CUCaptcha
 {
 
-	public $reCaptchaWidgetPathAlias = 'ext.recaptcha.EReCaptcha';
+	public $reCaptchaWidgetPathAlias = 'ext.LDReCaptcha.LDReCaptchaWidget';
 	
 	private $_reCaptchaWidget;
 	
@@ -25,6 +25,11 @@ class CUReCaptcha extends CUCaptcha
 	public function getModel()
 	{
 		return $this->getReCaptchaWidget()->model;
+	}
+	
+	public function loadAttributes($actionParams)
+	{
+		$this->getModel()->loadAttributes($actionParams);
 	}
 
 	public function render($activeForm)

@@ -161,6 +161,12 @@ return array(
 						'logging' => defined('YII_DEBUG') && YII_DEBUG,
 						'dryRun' => false,
 				),
+				
+				'reCaptcha' => array(
+					'class' => 'ext.LDReCaptcha.LDReCaptcha',
+					'privateKey' => '6LfoftgSAAAAAA0U102uNfbQ-FmJraQ1-PahYn5h',
+					'publicKey' => '6LfoftgSAAAAADPNNNQh_50aIjqXayHiEy3uqOwk'
+				),
 
 				'image' => array(
 						'class' => 'ext.image.CImageComponent',

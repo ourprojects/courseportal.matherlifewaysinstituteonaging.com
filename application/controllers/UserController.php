@@ -63,15 +63,15 @@ class UserController extends ApiController
 		$this->render('pages/login', array('model' => $loginModel));
 	}
 
-	public function actionForgotPassword(array $UserNameEmail = array(), array $EReCaptchaForm = array(), $ajax = null)
+	public function actionForgotPassword(array $UserNameEmail = array(), $ajax = null)
 	{
 		$models = array(
-				'UserNameEmail' => new UserNameEmail,
-				'EReCaptchaForm' => Yii::createComponent('ext.recaptcha.EReCaptchaForm', Yii::app()->params['reCaptcha']['privateKey'], $this)
+			'UserNameEmail' => new UserNameEmail,
+			'reCaptchaWidget' => Yii::app()->getComponent('reCaptcha')->createWidget($this)
 		);
 		if(Yii::app()->getRequest()->getIsPostRequest())
 		{
-			$models['EReCaptchaForm']->setAttributes($EReCaptchaForm);
+			$models['reCaptchaWidget']->model->loadAttributes($this->getActionParams());
 			$models['UserNameEmail']->setAttributes($UserNameEmail);
 			// if it is ajax validation request
 			if(isset($ajax) && $ajax === 'user-maintenance-form')
@@ -79,7 +79,7 @@ class UserController extends ApiController
 				echo CActiveForm::validate($models, null, false);
 				return;
 			}
-			elseif($models['EReCaptchaForm']->validate() && $models['UserNameEmail']->validate())
+			elseif($models['reCaptchaWidget']->model->validate() && $models['UserNameEmail']->validate())
 			{
 				$user = $models['UserNameEmail']->getUser();
 				if($user === null)
@@ -161,18 +161,19 @@ class UserController extends ApiController
 	/**
 	 * Displays the register page
 	 */
-	public function actionRegister(array $EReCaptchaForm = array(), array $CPUser = array(), array $UserAgreement = array(), $ajax = null)
+	public function actionRegister(array $CPUser = array(), array $UserAgreement = array(), $ajax = null)
 	{
 		$models = array(
 					'CPUser' => new CPUser(),
 					'UserAgreement' => new UserAgreement(),
-					'EReCaptchaForm' => Yii::createComponent('ext.recaptcha.EReCaptchaForm', Yii::app()->params['reCaptcha']['privateKey'], $this),
+					'reCaptchaWidget' => Yii::app()->getComponent('reCaptcha')->createWidget($this)
 				);
+		
 		$models['UserAgreement']->agreement_id = 1;
 
 		if(Yii::app()->getRequest()->getIsPostRequest())
 		{
-			$models['EReCaptchaForm']->setAttributes($EReCaptchaForm);
+			$models['reCaptchaWidget']->model->loadAttributes($this->getActionParams());
 			$models['CPUser']->setAttributes($CPUser);
 			$models['UserAgreement']->setAttributes($UserAgreement);
 			
@@ -181,7 +182,7 @@ class UserController extends ApiController
 				echo CActiveForm::validateTabular($models, null, false);
 				return;
 			}
-			elseif($models['EReCaptchaForm']->validate() && $models['CPUser']->validate())
+			elseif($models['reCaptchaWidget']->model->validate() && $models['CPUser']->validate())
 			{
 				$transaction = Yii::app()->db->beginTransaction();
 				try
@@ -230,14 +231,15 @@ class UserController extends ApiController
 		$this->render('pages/activationFailure');
 	}
 
-	public function actionResendActivation(array $EReCaptchaForm = array(), array $UserNameEmail = array(), $ajax = null) {
+	public function actionResendActivation(array $UserNameEmail = array(), $ajax = null) {
 		$models = array(
-				'UserNameEmail' => new UserNameEmail,
-				'EReCaptchaForm' => Yii::createComponent('ext.recaptcha.EReCaptchaForm', Yii::app()->params['reCaptcha']['privateKey'], $this)
+			'UserNameEmail' => new UserNameEmail,
+			'reCaptchaWidget' => Yii::app()->getComponent('reCaptcha')->createWidget($this)
 		);
+		
 		if(Yii::app()->getRequest()->getIsPostRequest())
 		{
-			$models['EReCaptchaForm']->setAttributes($EReCaptchaForm);
+			$models['reCaptchaWidget']->model->loadAttributes($this->getActionParams());
 			$models['UserNameEmail']->setAttributes($UserNameEmail);
 			// if it is ajax validation request
 			if(isset($ajax) && $ajax === 'user-maintenance-form') 
@@ -246,7 +248,7 @@ class UserController extends ApiController
 				echo CActiveForm::validate($models, null, false);
 				Yii::app()->end();
 			}
-			elseif($models['EReCaptchaForm']->validate() && $models['UserNameEmail']->validate())
+			elseif($models['reCaptchaWidget']->model->validate() && $models['UserNameEmail']->validate())
 			{
 				$user = $models['UserNameEmail']->getUser();
 				if($user->getIsActivated())

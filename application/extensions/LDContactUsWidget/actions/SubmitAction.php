@@ -28,6 +28,7 @@ class SubmitAction extends CAction
 
 		$contactFormModel = new ContactUs();
 		$contactFormModel->setAttributes($ContactUs);
+		$this->captcha->loadAttributes($this->getController()->getActionParams());
 		$captchaModel = $this->captcha->getModel();
 		
 		if($contactFormModel->validate() && !isset($ajax) && $captchaModel->validate() && Yii::app()->getRequest()->getIsPostRequest())

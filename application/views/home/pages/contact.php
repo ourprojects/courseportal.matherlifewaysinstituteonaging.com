@@ -28,8 +28,7 @@
 				'captcha' => array(
 					'class' => 'ext.LDContactUsWidget.components.CUReCaptcha',
 					'config' => array(
-						'publicKey' => Yii::app()->params['reCaptcha']['publicKey'],
-						'privateKey' => Yii::app()->params['reCaptcha']['privateKey'],
+						'reCaptcha' => Yii::app()->getComponent('reCaptcha'),
 						'useAjax' => true
 					)
 				),

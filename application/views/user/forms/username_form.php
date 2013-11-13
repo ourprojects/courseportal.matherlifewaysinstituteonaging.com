@@ -4,25 +4,18 @@
 			'enableAjaxValidation' => true,
 )); ?>
 
-	<?php echo $form->errorSummary(array($UserNameEmail, $EReCaptchaForm)); ?>
+	<?php echo $form->errorSummary(array($UserNameEmail, $reCaptchaWidget->model)); ?>
 	<div class="row">
-		<?php echo $form->labelEx($UserNameEmail,'name_email'); ?>
-		<?php echo $form->textField($UserNameEmail,'name_email'); ?>
-		<?php echo $form->error($UserNameEmail,'name_email'); ?>
+		<?php echo $form->labelEx($UserNameEmail, 'name_email'); ?>
+		<?php echo $form->textField($UserNameEmail, 'name_email'); ?>
+		<?php echo $form->error($UserNameEmail, 'name_email'); ?>
 	</div>
 
 	<div class="row">
 		<?php 
-		echo $form->labelEx($EReCaptchaForm, 'captcha');
-		$this->widget('ext.recaptcha.EReCaptcha',
-					array(
-							'publicKey' => Yii::app()->params['reCaptcha']['publicKey'],
-							'model' => $EReCaptchaForm,
-							'attribute' => 'captcha',
-							'language' => Yii::app()->getLanguage()
-					)
-		);
-		echo $form->error($EReCaptchaForm, 'captcha');
+		echo $form->labelEx($reCaptchaWidget->model, 'captcha');
+		$reCaptchaWidget->run();
+		echo $form->error($reCaptchaWidget->model, 'captcha');
 		?>
 	</div>
 

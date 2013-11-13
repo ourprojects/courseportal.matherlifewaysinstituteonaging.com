@@ -12,6 +12,8 @@ abstract class CUCaptcha extends CComponent
 	
 	abstract public function getModel();
 	
+	abstract public function loadAttributes($actionParams);
+	
 	abstract public function render($activeForm);
 	
 }

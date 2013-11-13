@@ -11,11 +11,7 @@ class HomeController extends CoursePortalController
 				'class' => 'ext.LDContactUsWidget.LDContactUsWidget',
 				'captcha' => array(
 					'class' => 'ext.LDContactUsWidget.components.CUReCaptcha',
-					'config' => array(
-						'publicKey' => Yii::app()->params['reCaptcha']['publicKey'],
-						'privateKey' => Yii::app()->params['reCaptcha']['privateKey'],
-						'useAjax' => true
-					)
+					'config' => array('useAjax' => true)
 				),
 			)
 		);
