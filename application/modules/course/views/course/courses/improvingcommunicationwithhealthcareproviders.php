@@ -5,7 +5,9 @@ $clientScript = Yii::app()->getClientScript();
 $clientScript->registerCssFile($this->getStylesUrl('course.css'));
 
 foreach (array(
-             '.lesson-1') as $lesson)
+             '.lesson-1',
+             '.lesson-2',
+             '.lesson-3') as $lesson)
     $this->widget(
         'ext.fancybox.EFancyBox',
         array('id' => $lesson,
@@ -97,7 +99,12 @@ foreach (array(
             various aging services. She is fluent in English and Spanish, and has a strong passion for caregiver
             training.{/t}</p>
 
-        <p><a href="#" target="_blank" class="button">Contact Facilitator</a></p>
+        <p>
+            <a href="#lesson-2-slide-1" data-fancybox-group="lesson-2" class="teal lesson-2 button">
+                {t}Contact your Facilitator{/t} </a>
+
+        </p>
+
         <img src="<?php echo $this->getImagesUrl('improvingcommunicationwithhealthcareproviders/80608570.png'); ?>"
              alt="{t}Facilitator{/t}" id="facilitator">
     </div>
@@ -286,10 +293,12 @@ AARP provides various articles of interest and resources for family caregivers. 
             effectively deal with a variety of issues arising from caring for older relatives or friends through
             application of effective coaching skills.{/t}</p>
 
-        <p>{t} CARE Coaching considers “real life” situations that family caregivers must often deal with (such as
+        <p>{t}CARE Coaching considers “real life” situations that family caregivers must often deal with (such as
             having conversations with aging parents about their needs and preferences for their future care, managing
             health information, communicating with health care providers, maneuvering the health care system, and
-            addressing home safety issues, to name a few), activities in the course help stimulate “new thinking” by
+            addressing home safety issues, to name a few).{/t}</p>
+
+        <p>{t}Activities in the course help stimulate “new thinking” by
             family caregivers providing them with tools to strengthen their knowledge, skills, and self-awareness about
             their role and responsibilities. As a result, family caregivers can focus on what is most important to be
             effective in caring for their loved ones.{/t}</p>
@@ -320,14 +329,15 @@ AARP provides various articles of interest and resources for family caregivers. 
         <h2 class="flowers">{t}Navigating the health care system{/t}</h2>
         <hr/>
         <p>{t}Talk to anyone today about the state of health care and you will probably get an earful of complaints,
-            “horror” stories, and head shaking. Complaints run the gamut of problems with insurance companies and
-            Medicare, physicians who don’t spend enough time with patients, and quick hospital discharges.{/t}</p>
+            “horror” stories, and head shaking. Complaints run the gamut from problems with insurance companies and
+            Medicare, physicians who don’t spend enough time with patients, to quick hospital discharges.{/t}</p>
 
         <p>{t}Here are common issues voiced by older adult patients:{/t}</p>
 
         <ul>
             <li>
-                {t}They cannot get an accurate diagnosis, understand they need treatment, and need someone to help them
+                {t}They cannot get an accurate diagnosis, don't understand they need treatment, and need someone to help
+                them
                 find physicians, or get tests, that can help them.{/t}
             </li>
             <li>
@@ -367,7 +377,7 @@ AARP provides various articles of interest and resources for family caregivers. 
                 manage relationships with providers, and {/t}
             </li>
             <li>
-                {t}Becoming empowered with knowledge to better understanding health care and roles of providers{/t}
+                {t}Becoming empowered with knowledge to better understanding health care and roles of providers.{/t}
             </li>
         </ul>
 
@@ -375,7 +385,7 @@ AARP provides various articles of interest and resources for family caregivers. 
             missing in much of today’s health care experience. We can use CARE Coaching techniques to help build that
             relationship.{/t}</p>
 
-        <p>{t}The goal for any patient in the health care system should be to optimize your chances of achieving a good
+        <p>{t}The goal for any patient in the health care system should be to optimize chances of achieving a good
             outcome when health care is needed. Taking charge of one’s health care is key. For older parents who may not
             be used to or feel comfortable “taking charge of their health care,” this may be a difficult concept for
             them. We’ll look at some CARE Coaching techniques to help your parents feel comfortable being in
@@ -408,9 +418,9 @@ AARP provides various articles of interest and resources for family caregivers. 
             parents. {/t}</p>
 
         <p>{t}This brings us to the third component of CARE Coaching, that of relating. The most important factor in the
-            patient-physician relationship is communicating or relating. It fairly obvious that if a patient cannot
+            patient-physician relationship is communicating or relating. It is fairly obvious that if a patient cannot
             communicate well with his or her physician, that’s a problem. How do you know that your older parents’
-            physician is relating? Here are some questions to asking your parents:{/t}</p>
+            physician is relating? Here are some questions to ask your parents:{/t}</p>
 
         <ul>
             <li>
@@ -442,7 +452,7 @@ AARP provides various articles of interest and resources for family caregivers. 
         <p>{t}Have you ever left a physician's appoinment feeling that your questions weren't answered? Or not sure what
             you were supposed to do next? Don't worry, you're not alone. Dr. Lori Whittaker, a family physician in
             Seattle, shares tips and advice for how to speak up for yourself when you're at the physician's office. Good
-            communication is a two way street, and it's up to you to make sure you get the treatment and the information
+            communication is a two-way street, and it's up to you to make sure you get the treatment and the information
             you need to stay healthy.{/t}</p>
 
         <iframe style="width: 640px; height: 480px; display: block; margin: 15px auto; frameborder: 0;" width="640"
@@ -461,9 +471,10 @@ AARP provides various articles of interest and resources for family caregivers. 
         <h2 class="flowers">{t}Helping older parents talk to medical professionals about health care{/t}</h2>
         <hr/>
         <p>{t}
-            Occasionally, it may be feel intimidating to speak to physicians for one reason or another. At times, the
-            actions of the physician may appear that he or she has little time to spend with us. At other times, we may
-            feel “inadequate” in our knowledge and use of “medical terms,” feeling like we speak a different language
+            Occasionally, it may feel intimidating to speak to physicians for one reason or another. At times, the
+            actions of the physician may make it appear that he or she has little time to spend with us. At other times,
+            we may
+            feel inadequate in our knowledge and use of medical terms, feeling like we speak a different language
             than physicians.{/t}</p>
 
         <p>{t}Older adults may especially loath to question physicians because they were raised in a generation where
@@ -471,20 +482,20 @@ AARP provides various articles of interest and resources for family caregivers. 
             encourage questions and want their patients to play a role in their health care.{/t}</p>
 
         <p>{t}In planning for your discussions with your older parents and their physicians, remember that as their
-            caregiver, you have an obligation to understand your parents’ medical care.{/t}</p>
+            caregiver you have an obligation to understand your parents’ medical care.{/t}</p>
 
-        <p>{t}Another important consideration for you as the caregiver to understand relates to patient privacy
+        <p>{t}Another important consideration for you to understand as the caregiver relates to patient privacy
             requirements and rights. If you are not the medical guardian (or power of attorney) for your parents, they
             must give consent for you to get information about their health care.{/t}</p>
 
-        <p>{t}On the other hand, if you are the medical guardian of your parents and they are either too young, too old
+        <p>{t}On the other hand, if you are the medical guardian of someone and they are either too young, too old
             or too sick to speak about their medical history themselves, it is perfectly reasonable for you to take that
             role with health care professionals. Remember to be especially diplomatic with older adults who may take
             offense at being “spoken for.” Try to work out who will be the chief medical historian and speaker before
             you enter the physician’s office.{/t}</p>
 
         <p>{t}The next exercise will coach you through learning to use “PowerPhrases” – short, specific expressions that
-            get results by saying what it means and meaning what it says. By planning some specific phrases to use in
+            get results by saying what you mean and meaning what you say. By planning some specific phrases to use in
             advance of a physician’s appointment, older adults find that they can impact the outcome of the
             interaction.{/t}</p>
 
@@ -517,7 +528,7 @@ AARP provides various articles of interest and resources for family caregivers. 
             consequences.{/t}</p>
 
         <p>{t}A “PowerPhrase” is a short, specific expression that gets results by saying what it means and meaning what
-            it says (without being mean!). By planning specific phrases to use prior to an appointment, the results can
+            it says (without being cruel!). By planning specific phrases to use prior to an appointment, the results can
             be much more favorable to the patient.{/t}</p>
 
         <p>{t}Let’s do an exercise to see your current “PowerPhrase” skill level. Click on the following link to take a
@@ -582,7 +593,7 @@ AARP provides various articles of interest and resources for family caregivers. 
 
         <ul>
             <li>
-                {t}“I have a pain in my…..that started about……”{/t}
+                {t}“I have a pain in my... that started about..."{/t}
             </li>
             <li>
                 {t}“My symptoms are….”{/t}
@@ -593,7 +604,8 @@ AARP provides various articles of interest and resources for family caregivers. 
             here today.”{/t}</p>
 
         <p>{t} It is important that your older parent brings a list of pertinent information to readily provide the
-            physician with details that may be important. It is also an opportunity to learn more about potential issues
+            physician with details that may be important. The Physician visit is also an opportunity to learn more about
+            potential issues
             that may arise, say from drug interactions. Some PowerPhrases include:{/t}</p>
 
         <ul>
@@ -631,7 +643,7 @@ AARP provides various articles of interest and resources for family caregivers. 
             </li>
         </ul>
 
-        <p>{t}For this activity, you will prepare for the physician’s visit and practice PowerPhrases. You may want to
+        <p>{t}For this activity, you will prepare for the physician visit and practice PowerPhrases. You may want to
             practice with your older parent or you may role play with your spouse, relative, or friend.{/t}</p>
 
         <p>
@@ -717,7 +729,7 @@ AARP provides various articles of interest and resources for family caregivers. 
                 relationship is communicating or relating.{/t}
             </li>
             <li>
-                {t}In planning for your discussions with your older parents and their physicians, their caregiver, you
+                {t}In planning for your discussions with your older parents and their physicians, as their caregiver you
                 have an obligation to understand your parents’ medical care as well as patient privacy requirements and
                 rights. If you are not the medical guardian (or power of attorney) for your parents, they must give
                 consent for you to get information about their health care. Try to work out who will be the chief
@@ -726,7 +738,7 @@ AARP provides various articles of interest and resources for family caregivers. 
             <li>
                 {t}A “PowerPhrase” is a short, specific expression that gets results by saying what it means and meaning
                 what it says. By planning specific phrases to use prior to an appointment, the results can be much more
-                favorable to the patient so that the physician can begin the exam with the understanding of “what
+                favorable to the patient since the physician can begin the exam with the understanding of “what
                 brought you here today.”{/t}
             </li>
             <li>
@@ -742,7 +754,42 @@ AARP provides various articles of interest and resources for family caregivers. 
     </div>
 </div>
 
-<!-- need final 2 divs to close course and lesson id -->
+<div id="lesson-2">
+    <div id="lesson-2-slide-1" class="course-slide">
+        <div class="content">
+            <h2 class="flowers">{t}Contact Facilitator{/t}</h2>
+            <hr/>
+            <p>{t}Please complete the form below to contact your facilitator.{/t}</p>
+
+            <div class="box-white">
+                <?php
+                $this->widget(
+                    'ext.LDContactUsWidget.LDContactUsWidget',
+                    array(
+                        'captcha' => array(
+                            'class' => 'ext.LDContactUsWidget.components.CUReCaptcha',
+                            'config' => array(
+                                'publicKey' => Yii::app()->params['reCaptcha']['publicKey'],
+                                'privateKey' => Yii::app()->params['reCaptcha']['privateKey'],
+                                'useAjax' => true
+                            )
+                        ),
+                        'options' => array(
+                            'htmlOptions' => array('class' => 'form')
+                        )
+                    )
+                );
+                ?>
+            </div>
+
+
+        </div>
+        <div class="buttons">
+            <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Close{/t} </a>
+        </div>
+    </div>
+
+    <!-- need final 2 divs to close course and lesson id -->
 
 </div>
 </div>

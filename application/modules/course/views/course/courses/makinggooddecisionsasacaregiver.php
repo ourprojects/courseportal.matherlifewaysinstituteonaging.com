@@ -5,7 +5,9 @@ $clientScript = Yii::app()->getClientScript();
 $clientScript->registerCssFile($this->getStylesUrl('course.css'));
 
 foreach (array(
-             '.lesson-1') as $lesson)
+             '.lesson-1',
+             '.lesson-2',
+             '.lesson-3') as $lesson)
     $this->widget(
         'ext.fancybox.EFancyBox',
         array('id' => $lesson,
@@ -94,8 +96,12 @@ foreach (array(
             earned her Masters in Anthropology, and has worked locally and abroad - Latin America and South America for
             various aging services. She is fluent in English and Spanish, and has a strong passion for caregiver
             training.{/t}</p>
+        <p>
+            <a href="#lesson-2-slide-1" data-fancybox-group="lesson-2" class="teal lesson-2 button">
+                {t}Contact your Facilitator{/t} </a>
 
-        <p><a href="#" target="_blank" class="button">Contact Facilitator</a></p>
+        </p>
+
         <img src="<?php echo $this->getImagesUrl('makinggooddecisionsasacaregiver/80608570.png'); ?>"
              alt="{t}Facilitator{/t}" id="facilitator">
     </div>
@@ -155,11 +161,11 @@ foreach (array(
                 <h5>{t}Becoming a More Confident Caregiver - {/t}</h5>
             </td>
             <td>
-                <p><a href="#lesson-1-slide-1" data-fancybox-group="lesson-1" class="teal lesson-1 button">
-                        {t}Start{/t} </a> <a href="#lesson-1-slide-2" data-fancybox-group="lesson-1"
-                                             class="hide lesson-1"></a> <a href="#lesson-1-slide-3"
-                                                                           data-fancybox-group="lesson-1"
-                                                                           class="hide lesson-1"></a> <a
+                <p>
+                    <a href="#lesson-1-slide-1" data-fancybox-group="lesson-1" class="teal lesson-1 button">
+                        {t}Start{/t} </a>
+                    <a href="#lesson-1-slide-2" data-fancybox-group="lesson-1" class="hide lesson-1"></a>
+                    <a href="#lesson-1-slide-3" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a
                         href="#lesson-1-slide-4" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a
                         href="#lesson-1-slide-5" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a
                         href="#lesson-1-slide-6" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a
@@ -664,24 +670,29 @@ AARP provides various articles of interest and resources for family caregivers. 
         </ol>
         <ul>
             <li>
-                {t}Obtain a free Caregiver Resource Directory that provides resources, facts, and advice about caring
-                for a family member as well as for yourself. www.netofcare.org/crd/resource_form.asp{/t}
+                {t}Obtain a free <a href="www.netofcare.org/crd/resource_form.asp" target="_blank">Caregiver Resource
+                    Directory</a> that provides resources, facts, and advice about caring
+                for a family member as well as for yourself.{/t}
             </li>
             <li>
-                {t}Benefits Check UP is a free online service provided by the National Council on Aging which allows
-                people to find programs that can help them meet health care costs. www.benefitscheckup.org{/t}
+                {t}<a href="www.benefitscheckup.org" target="_blank">Benefits Check UP</a> is a free online service
+                provided by the National Council on Aging which allows
+                people to find programs that can help them meet health care costs.{/t}
             </li>
             <li>
-                {t}ARCH National Respite Network and Resource Center provides resources and information including a
-                respite locator program and information clearinghouse. www.archrespite.org{/t}
+                {t}<a href="www.archrespite.org" target="_blank">ARCH National Respite Network and Resource Center</a>
+                provides resources and information including a
+                respite locator program and information clearinghouse.{/t}
             </li>
             <li>
-                {t}Eldercare Locator is a nationwide service helping identify local resources for older adults.
-                www.eldercare.gov{/t}
+                {t}<a href="www.eldercare.gov" target="_blank">Eldercare Locator</a> is a nationwide service helping
+                identify local resources for older adults.
+                {/t}
             </li>
             <li>
-                {t}National Family Caregivers Association supports family caregivers and offers education, information,
-                and referrals. www.nfcacares.org{/t}
+                {t}<a href="www.nfcacares.org" target="_blank">National Family Caregivers Association</a> supports
+                family caregivers and offers education, information,
+                and referrals.{/t}
             </li>
         </ul>
 
@@ -703,7 +714,8 @@ AARP provides various articles of interest and resources for family caregivers. 
             caregiving obligations particularly related to older parents. In fact, it may not surprise you that your
             supervisor could also be going through this experience now or in the near future.{/t}</p>
 
-        <p>{t}Many organizations have programs in place to assist employees better meet their obligations as caregivers
+        <p>{t}Many organizations have programs in place to assist employees to better meet their obligations as
+            caregivers
             to older adults. You may want to discuss some of these benefits with your human resources department to see
             what may be available to you.{/t}</p>
 
@@ -769,8 +781,9 @@ AARP provides various articles of interest and resources for family caregivers. 
 
         <h4>{t}Video – Part of the Sandwich Generation{/t}</h4>
 
-        <iframe style="width: 640px; height: 360px; display: block; margin: 15px auto; frameborder: 0;"
-                src="//www.youtube.com/embed/55UCToPajd4?rel=0" allowfullscreen></iframe>
+        <!-- MediaStorm Player Embed Code -->
+        <script type="text/javascript" id="mediastorm-player-e5282f8c15c9d3853198"
+                src="https://player.mediastorm.com/players/embed?id=e5282f8c15c9d3853198&w=460&h=366&lang=none"></script>
 
     </div>
     <div class="buttons">
@@ -816,7 +829,7 @@ AARP provides various articles of interest and resources for family caregivers. 
 
         <p>
             {t}Family conflict regarding caregiving of older parents is quite common. Dealing with care of older parents
-            can rekindle early rivalries or jealousies among siblings. Family dynamics can be very complext, but there
+            can rekindle early rivalries or jealousies among siblings. Family dynamics can be very complex, but there
             are some common underlying causes of conflict. In some families, siblings may perceive imbalance of care and
             responsibilities among family members. For example, siblings who live nearest to parents or those who are
             single females may be “expected” by their siblings to be primary caregivers regardless of other
@@ -825,7 +838,7 @@ AARP provides various articles of interest and resources for family caregivers. 
             feel that too much was spent on parent’s care by a brother or sister.{/t}
         </p>
 
-        <p>{t}Central to most sibling conflicts is a breakdown of communication. Many care relate to this common
+        <p>{t}Central to most sibling conflicts is a breakdown of communication. Many caregivers relate to this common
             scenario:{/t}</p>
 
         <blockquote>{t}Cara is a long distance caregiver. Unfortunately her new job meant she has not been able to
@@ -849,6 +862,7 @@ AARP provides various articles of interest and resources for family caregivers. 
 <div id="lesson-1-slide-17" class="course-slide">
     <div class="content">
         <h2 class="flowers">{t}Improving sibling communications{/t}</h2>
+
         <hr/>
         <p>{t}The following are some recommendations to work on sibling communications. Realize that this may take time,
             but if all parties commit to making improvements, the effect benefits the older parents – and isn’t that the
@@ -859,8 +873,8 @@ AARP provides various articles of interest and resources for family caregivers. 
         </p>
 
         <p>
-            {t}Hold regular family meetings. You may need to explore different ways to make these happen particularly if
-            some of the siblings are long distant.{/t}
+            {t}Hold regular family meetings. You may need to explore different ways to make these happen, particularly
+            if some of the siblings are long distance.{/t}
         </p>
 
         <p>
@@ -948,7 +962,7 @@ AARP provides various articles of interest and resources for family caregivers. 
         <hr/>
         <p>
             {t}It is important that your older parent retains as much decision making abilities as possible. Your
-            primary objecdtive is to help your parent fulfill his or her needs and choices, not to take over your
+            primary objective is to help your parent fulfill his or her needs and choices, not to take over your
             parent’s life.{/t}
         </p>
 
@@ -968,7 +982,7 @@ AARP provides various articles of interest and resources for family caregivers. 
                 {t}An older parent may be concerned about the cost of the service.{/t}
             </li>
             <li>
-                {t}An older parent may want you, rather than someone else, deliver the care needed.{/t}
+                {t}An older parent may want you, rather than someone else, to deliver the care needed.{/t}
             </li>
             <li>
                 {t}Some older adults fear allowing strangers in the home.{/t}
@@ -1048,7 +1062,7 @@ AARP provides various articles of interest and resources for family caregivers. 
                 through community resources.{/t}
             </li>
             <li>
-                {t}Many organizations have programs in place to assist employees better meet their obligations as
+                {t}Many organizations have programs in place to assist employees to better meet their obligations as
                 caregivers to older adults. You may want to discuss some of these benefits with your human resources
                 department to see what may be available to you.{/t}
             </li>
@@ -1059,8 +1073,45 @@ AARP provides various articles of interest and resources for family caregivers. 
         <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Complete Course{/t} </a>
     </div>
 </div>
+</div>
 
-<!-- need final 2 divs to close course and lesson id -->
+
+<div id="lesson-2">
+    <div id="lesson-2-slide-1" class="course-slide">
+        <div class="content">
+            <h2 class="flowers">{t}Contact Facilitator{/t}</h2>
+            <hr/>
+            <p>{t}Please complete the form below to contact your facilitator.{/t}</p>
+
+            <div class="box-white">
+                <?php
+                $this->widget(
+                    'ext.LDContactUsWidget.LDContactUsWidget',
+                    array(
+                        'captcha' => array(
+                            'class' => 'ext.LDContactUsWidget.components.CUReCaptcha',
+                            'config' => array(
+                                'publicKey' => Yii::app()->params['reCaptcha']['publicKey'],
+                                'privateKey' => Yii::app()->params['reCaptcha']['privateKey'],
+                                'useAjax' => true
+                            )
+                        ),
+                        'options' => array(
+                            'htmlOptions' => array('class' => 'form')
+                        )
+                    )
+                );
+                ?>
+            </div>
+
+
+        </div>
+        <div class="buttons">
+            <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Close{/t} </a>
+        </div>
+    </div>
+
+    <!-- need final 2 divs to close course and lesson id -->
 
 </div>
 </div>
