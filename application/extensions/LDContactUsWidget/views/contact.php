@@ -32,7 +32,7 @@ echo CHtml::openTag('div', $htmlOptions);
 		<span class="required">*</span><?php echo Yii::t(LDContactUsWidget::ID, 'Required.'); ?>
 	</p>
 
-	<?php echo $activeForm->errorSummary(array($ContactUs, $EReCaptchaForm)); ?>
+	<?php echo $activeForm->errorSummary(array($ContactUs, $Captcha->getModel())); ?>
 
 	<div class="row">
 		<?php 
@@ -66,22 +66,9 @@ echo CHtml::openTag('div', $htmlOptions);
 		?>
 	</div>
 
-	<?php if($reCaptcha['show']): ?>
+	<?php if($Captcha->show): ?>
 	<div class="row">
-		<?php
-		echo $activeForm->labelEx($EReCaptchaForm, 'captcha', $reCaptcha['labelHtmlOptions']);
-		$this->widget('ext.recaptcha.EReCaptcha',
-				array_merge_recursive(
-					$reCaptcha['options'],
-					array(
-						'model' => $EReCaptchaForm,
-						'attribute' => 'captcha',
-						'language' => Yii::app()->getLanguage()
-					)
-				)
-		);
-		echo $activeForm->error($EReCaptchaForm, 'captcha', $reCaptcha['errorHtmlOptions']);
-		?>
+		<?php $Captcha->render($activeForm); ?>
 	</div>
 	<?php endif; ?>
 

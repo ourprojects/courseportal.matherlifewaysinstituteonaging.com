@@ -16,7 +16,7 @@
 			var settings = $.extend({
 				loadingClass: 'loading',
 			}, options || {});
-			
+			showRecaptcha('EReCaptcha');
 			contactUsSettings = settings;
 		},
 			
@@ -33,10 +33,11 @@
 			{
 				$el.addClass("hide");
 			}
-			console.debug($el);
+
 			if(success) 
 			{
 				this[0].reset();
+				showRecaptcha('EReCaptcha');
 				$el.css({"background": "#E6EFC2", "color": "#264409", "border-color": "#C6D880"});
 				this.loadJSON(data);
 			} 

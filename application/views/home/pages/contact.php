@@ -25,6 +25,14 @@
 		$this->widget(
 			'ext.LDContactUsWidget.LDContactUsWidget',
 			array(
+				'captcha' => array(
+					'class' => 'ext.LDContactUsWidget.components.CUReCaptcha',
+					'config' => array(
+						'publicKey' => Yii::app()->params['reCaptcha']['publicKey'],
+						'privateKey' => Yii::app()->params['reCaptcha']['privateKey'],
+						'useAjax' => true
+					)
+				),
 				'options' => array(
 					'htmlOptions' => array('class' => 'form')
 				)

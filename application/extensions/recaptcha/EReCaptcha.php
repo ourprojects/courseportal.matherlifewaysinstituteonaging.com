@@ -55,6 +55,8 @@ class EReCaptcha extends CInputWidget
 	//***************************************************************************
 	// Configuration.
 	//***************************************************************************
+	
+	const ID = 'LDReCaptcha';
 
 	/**
 	 * The theme name for the widget. Valid themes are 'red', 'white', 'blackglass', 'clean', 'custom'
@@ -68,7 +70,7 @@ class EReCaptcha extends CInputWidget
 	 *
 	 * @var string the language suffix
 	 */
-	public $language = null;
+	public $language;
 
 	/**
 	 * @var string the tab index for the HTML tag
@@ -85,9 +87,13 @@ class EReCaptcha extends CInputWidget
 	 */
 	public $useSsl = false;
 	
-	public $error = null;
+	public $error;
 	
-	public $publicKey = null;
+	public $publicKey;
+	
+	public $privateKey;
+	
+	public $useAjax = false;
 
 	//***************************************************************************
 	// Internal properties.
@@ -111,7 +117,10 @@ class EReCaptcha extends CInputWidget
 	 */
 	public function setTheme($value)
 	{
-		if (in_array($value, $this->validThemes)) $this->theme = $value;
+		if(in_array($value, $this->validThemes))
+		{
+			$this->theme = $value;
+		}
 	}
 
 	/**
@@ -123,6 +132,11 @@ class EReCaptcha extends CInputWidget
 	{
 		return $this->theme;
 	}
+	
+	public function getUseSecureConnections()
+	{
+		return $this->useSsl || Yii::app()->getRequest()->getIsSecureConnection();
+	}
 
 	//***************************************************************************
 	// Run Lola Run
@@ -130,27 +144,54 @@ class EReCaptcha extends CInputWidget
 
 	public function init()
 	{	
-		if(empty($this->publicKey) || !is_string($this->publicKey))
+		if(!is_string($this->publicKey) || $this->publicKey === '')
 		{
-			throw new CException(Yii::t('ReCaptcha', 'EReCaptcha.publicKey requires your public key to be specified in your config file.'));
+			throw new CException(Yii::t(self::ID, 'EReCaptcha.publicKey requires your public key to be specified in your config file.'));
+		}
+		
+		if(!is_string($this->privateKey) || $this->privateKey === '')
+		{
+			throw new CException(Yii::t(self::ID, 'EReCaptcha.privateKey requires your private key to be specified in your config file.'));
 		}
 		
 		if(!isset($this->language))
 		{
 			$this->language = Yii::app()->getLanguage();
 		}
+		
+		if(!isset($this->model) && !isset($this->name))
+		{
+			$this->model = new EReCaptchaForm($this->privateKey, $this->getController());
+			$this->attribute = 'captcha';
+		}
 
-		if (!Yii::app()->getClientScript()->isScriptRegistered(get_class($this).'_options', CClientScript::POS_HEAD)) 
+		$recaptchaOptions = CJavaScript::encode(
+			array(
+				'theme' => $this->theme,
+				'custom_theme_widget' => ($this->customThemeWidget !== '' ? $this->customThemeWidget : null),
+				'lang' => $this->language,
+				'tabindex' => $this->tabIndex,
+			)
+		);
+
+		if($this->useAjax) 
+		{
+			Yii::app()->getClientScript()->registerScriptFile(($this->getUseSecureConnections() ? 'https://' : 'http://') . 'www.google.com/recaptcha/api/js/recaptcha_ajax.js');
+			Yii::app()->getClientScript()->registerScript(
+				get_class($this).'_ajaxCreate',
+				'function showRecaptcha(element){'.
+					'Recaptcha.create("'.$this->publicKey.'",element,'.$recaptchaOptions.');'.
+				'}',
+				CClientScript::POS_HEAD
+			);
+		}
+		else
 		{
 			Yii::app()->getClientScript()->registerScript(
 				get_class($this).'_options',
-				'var RecaptchaOptions = {'.
-					'theme:"'.$this->theme.'",'.
-					'custom_theme_widget:"'.(($this->customThemeWidget != '') ? '"'.$this->customThemeWidget.'"' : 'null').'",'.
-					'lang:"'.$this->language.'",'.
-					'tabindex:"'.$this->tabIndex.'"'.
-				'};', 
-				CClientScript::POS_HEAD);
+				'var RecaptchaOptions = '.$recaptchaOptions,
+				CClientScript::POS_HEAD
+			);
 		}
 	}
 
@@ -160,14 +201,147 @@ class EReCaptcha extends CInputWidget
 	public function run()
 	{
 		$this->render(
-				'ReCaptcha',
-				array(
-						'publicKey' => $this->publicKey,
-						'error' => $this->error,
-						'language' => $this->language,
-						'useSsl' => $this->useSsl || Yii::app()->getRequest()->getIsSecureConnection(),
-						'model' => $this->model,
-						'attribute' => $this->attribute)
+			'ReCaptcha',
+			array(
+				'publicKey' => $this->publicKey,
+				'error' => $this->error,
+				'language' => $this->language,
+				'useSsl' => $this->getUseSecureConnections(),
+				'useAjax' => $this->useAjax,
+				'model' => $this->model,
+				'attribute' => $this->attribute
+			)
 		);
 	}
+	
+}
+
+class EReCaptchaValidator extends CValidator
+{
+	
+	public $enableClientValidation = false;
+	
+	public $privateKey;
+	
+	public $recaptcha_challenge_field;
+	
+	public $recaptcha_response_field;
+	
+	/**
+	 * Validates the attribute of the object.
+	 * If there is any error, the error message is added to the object.
+	 * @param CModel $object the object being validated
+	 * @param string $attribute the attribute being validated
+	 */
+	protected function validateAttribute($object, $attribute)
+	{
+		$resp = recaptcha_check_answer(
+			$this->privateKey,
+			$_SERVER['REMOTE_ADDR'],
+			$this->recaptcha_challenge_field,
+			$this->recaptcha_response_field
+		);
+		if(!$resp->is_valid)
+		{
+			$this->addError($object, $attribute, isset($this->message) ? $this->message : Yii::t(EReCaptcha::ID, 'Your captcha response could not be validated.'));
+		}
+	}
+	
+}
+
+class EReCaptchaForm extends CFormModel
+{
+
+	public $loadInputsOnValidate = true;
+	
+	public $captcha;
+
+	public $recaptcha_challenge_field;
+
+	public $recaptcha_response_field;
+
+	private $_privateKey;
+	
+	private $_controller;
+	
+	public function __construct($privateKey, $controller, $scenario = '')
+	{
+		parent::__construct($scenario);
+		if(!is_string($privateKey) || $privateKey === '')
+		{
+			throw new CException(Yii::t(EReCaptcha::ID, 'EReCaptchaForm.privateKey requires your private key to be specified in your config file.'));
+		}
+		$this->_privateKey = $privateKey;
+		$this->_controller = $controller;
+	}
+
+	public function getRequiredAttributes($safeOnly = true)
+	{
+		return array_values(array_filter($safeOnly ? $this->getSafeAttributeNames() : $this->attributeNames(), array($this, 'isAttributeRequired')));
+	}
+
+	public function isAttributeOptional($attrName)
+	{
+		return !$this->isAttributeRequired($attrName);
+	}
+
+	public function getOptionalAttributes($safeOnly = true)
+	{
+		return array_values(array_filter($safeOnly ? $this->getSafeAttributeNames() : $this->attributeNames(), array($this, 'isAttributeOptional')));
+	}
+
+	/**
+	 * @return array validation rules for model attributes.
+	 */
+	public function rules()
+	{
+		return array(
+			array('recaptcha_challenge_field, recaptcha_response_field, loadInputsOnValidate', 'unsafe'),
+			array('captcha', 'safe'),
+			array('recaptcha_challenge_field, recaptcha_response_field', 'required'),
+			array('captcha', 
+				'EReCaptchaValidator', 
+				'privateKey' => $this->_privateKey,
+				'recaptcha_challenge_field' => $this->recaptcha_challenge_field,
+				'recaptcha_response_field' => $this->recaptcha_response_field,
+			),
+		);
+	}
+	
+	protected function beforeValidate()
+	{
+		if($this->loadInputsOnValidate)
+		{
+			$this->loadInputs();
+		}
+		return parent::beforeValidate();
+	}
+	
+	public function loadInputs()
+	{
+		$actionParams = $this->_controller->getActionParams();
+		if(isset($actionParams['recaptcha_challenge_field']))
+		{
+			$this->recaptcha_challenge_field = $actionParams['recaptcha_challenge_field'];
+		}
+		if(isset($actionParams['recaptcha_response_field']))
+		{
+			$this->recaptcha_response_field = $actionParams['recaptcha_response_field'];
+		}
+		if(isset($actionParams[get_class($this)]['captcha']))
+		{
+			$this->captcha = $actionParams[get_class($this)]['captcha'];
+		}
+	}
+
+	/**
+	 * @return array customized attribute labels (name => label)
+	 */
+	public function attributeLabels()
+	{
+		return array(
+			'captcha' => Yii::t(EReCaptcha::ID, 'Captcha'),
+		);
+	}
+
 }

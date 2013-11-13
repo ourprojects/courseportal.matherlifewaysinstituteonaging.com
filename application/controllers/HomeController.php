@@ -5,13 +5,29 @@ class HomeController extends CoursePortalController
 	
 	public function actions()
 	{
-		return array_merge(
-			parent::actions(), 
-			array(
-				'survey.' => 'surveyor.widgets.Survey', 
-				'contactUs.' => 'ext.LDContactUsWidget.LDContactUsWidget'
+		$actions = array(
+			'survey.' => 'surveyor.widgets.Survey', 
+			'contactUs.' => array(
+				'class' => 'ext.LDContactUsWidget.LDContactUsWidget',
+				'captcha' => array(
+					'class' => 'ext.LDContactUsWidget.components.CUReCaptcha',
+					'config' => array(
+						'publicKey' => Yii::app()->params['reCaptcha']['publicKey'],
+						'privateKey' => Yii::app()->params['reCaptcha']['privateKey'],
+						'useAjax' => true
+					)
+				),
 			)
 		);
+		$actions['contactUs.']['submit'] = array(
+			'mailer' => array(
+				'class' => 'ext.LDContactUsWidget.components.CUSimpleYiiMail',
+				'to' => Yii::app()->params['supportEmail'],
+				'yiiMailer' => Yii::app()->mail
+			),
+			'captcha' => $actions['contactUs.']['captcha']
+		);
+		return array_merge(parent::actions(), $actions);
 	}
 
 	public function accessRules()
@@ -53,7 +69,7 @@ class HomeController extends CoursePortalController
 	 */
 	public function actionContact(array $EReCaptchaForm = array(), array $ContactUs = array(), $ajax = null) 
 	{
-		$models = array(
+		/*$models = array(
 					'ContactUs' => new ContactUs,
 					'EReCaptchaForm' => Yii::createComponent('ext.recaptcha.EReCaptchaForm', Yii::app()->params['reCaptcha']['privateKey'], $this)
 				);
@@ -84,8 +100,8 @@ class HomeController extends CoursePortalController
 						'EReCaptchaForm' => Yii::createComponent('ext.recaptcha.EReCaptchaForm', Yii::app()->params['reCaptcha']['privateKey'], $this)
 					);
 			}
-		}
-		$this->render('pages/contact', array('models' => $models));
+		}*/
+		$this->render('pages/contact');
 	}
 
 }

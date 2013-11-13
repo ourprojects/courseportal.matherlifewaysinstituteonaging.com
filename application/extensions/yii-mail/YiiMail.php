@@ -189,7 +189,7 @@ class YiiMail extends CApplicationComponent
 
 		if ($this->logging===true) self::log($message);
 		if ($this->dryRun===true) return count($message->to);
-		else return $this->getMailer()->send($message);
+		else return $this->getMailer()->send($message->message);
 	}
 
 	/**

@@ -11,7 +11,7 @@ class LDContactUsWidget extends CInputWidget
 
 	public $options = array();
 	
-	public $reCaptchaPrivateKey;
+	public $captcha;
 
 	public static function actions()
 	{
@@ -54,13 +54,6 @@ class LDContactUsWidget extends CInputWidget
 				'inputHtmlOptions' => array(),
 				'errorHtmlOptions' => array()
 			),
-			'reCaptcha' => array(
-				'show' => true,
-				'options' => array('publicKey' => Yii::app()->params['reCaptcha']['publicKey']),
-				'labelHtmlOptions' => array(),
-				'inputHtmlOptions' => array(),
-				'errorHtmlOptions' => array()
-			),
 		);
 	}
 	
@@ -76,9 +69,9 @@ class LDContactUsWidget extends CInputWidget
 			$this->model = new ContactUs();
 		}
 		
-		if(!isset($this->reCaptchaPrivateKey))
+		if(is_string($this->captcha) || is_array($this->captcha))
 		{
-			$this->reCaptchaPrivateKey = Yii::app()->params['reCaptcha']['privateKey'];
+			$this->captcha = Yii::createComponent($this->captcha);
 		}
 		
 		$this->options = array_merge_recursive($this->getDefaultOptions(), $this->options);
@@ -95,13 +88,17 @@ class LDContactUsWidget extends CInputWidget
 	// function to run the widget
 	public function run()
 	{
+		if(!$this->captcha instanceof CUCaptcha)
+		{
+			throw new CException(Yii::t(self::ID, 'LDContactUsWidget.captcha must be an instance of CUCaptcha. Please check your configuration.'));
+		}
 		return $this->render(
 			'contact',
 			array_merge(
 				$this->options, 
 				array(
 					'ContactUs' => $this->model, 
-					'EReCaptchaForm' => Yii::createComponent('ext.recaptcha.EReCaptchaForm', $this->reCaptchaPrivateKey, $this->getController())
+					'Captcha' => $this->captcha
 				)
 			)
 		);

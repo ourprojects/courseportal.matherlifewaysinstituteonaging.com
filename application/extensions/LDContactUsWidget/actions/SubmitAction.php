@@ -3,34 +3,39 @@
 class SubmitAction extends CAction
 {
 	
-	public $reCaptchaPrivateKey;
+	public $mailer;
 	
-	public $contactUsEmail = 'support@courseportal.matherlifewaysinstituteonaging.com';
-	
-	public $mailComponent = 'mail';
-	
-	private $_mail;
+	public $captcha;
 
-	public function run(array $ContactUs = array(), array $EReCaptchaForm = array(), $ajax = null)
+	public function run(array $ContactUs = array(), $ajax = null)
 	{
-		if(!isset($this->reCaptchaPrivateKey))
+		if(is_string($this->captcha) || is_array($this->captcha))
 		{
-			$this->reCaptchaPrivateKey = Yii::app()->params['reCaptcha']['privateKey'];
+			$this->captcha = Yii::createComponent($this->captcha);
 		}
+		if(is_string($this->mailer) || is_array($this->mailer))
+		{
+			$this->mailer = Yii::createComponent($this->mailer);
+		}
+		if(!$this->captcha instanceof CUCaptcha)
+		{
+			throw new CException(Yii::t(LDContactUsWidget::ID, 'SubmitAction.captcha must be an instance of CUCaptcha. Please check your configuration.'));
+		}
+		if(!$this->mailer instanceof CUMail)
+		{
+			throw new CException(Yii::t(LDContactUsWidget::ID, 'SubmitAction.mailerer must be an instance of CUMail. Please check your configuration.'));
+		}
+
 		$contactFormModel = new ContactUs();
 		$contactFormModel->setAttributes($ContactUs);
-		$reCaptchaFormModel = Yii::createComponent('ext.recaptcha.EReCaptchaForm', $this->reCaptchaPrivateKey, $this->getController());
-		$reCaptchaFormModel->setAttributes($EReCaptchaForm);
+		$captchaModel = $this->captcha->getModel();
 		
-		if($contactFormModel->validate() && !isset($ajax) && $reCaptchaFormModel->validate() && Yii::app()->getRequest()->getIsPostRequest())
+		if($contactFormModel->validate() && !isset($ajax) && $captchaModel->validate() && Yii::app()->getRequest()->getIsPostRequest())
 		{
-			$mail = $this->getMail();
-			$message = $mail->getNewMessageInstance();
-			$message->setBody($contactFormModel->body, 'text/plain');
-			$message->setSubject($contactFormModel->subject);
-			$message->setTo($this->contactUsEmail);
-			$message->setFrom($contactFormModel->email);
-			$mail->send($message);
+			$this->mailer->setBody($contactFormModel->body, 'text/plain');
+			$this->mailer->setSubject($contactFormModel->subject);
+			$this->mailer->setFrom($contactFormModel->email);
+			$this->mailer->send();
 		}
 
 		$result = array();
@@ -38,9 +43,10 @@ class SubmitAction extends CAction
 		{
 			$result[CHtml::activeId($contactFormModel, $attribute)] = $errors;
 		}
-		foreach($reCaptchaFormModel->getErrors() as $attribute => $errors)
+		
+		foreach($captchaModel->getErrors() as $attribute => $errors)
 		{
-			$result[CHtml::activeId($reCaptchaFormModel, $attribute)] = $errors;
+			$result[CHtml::activeId($captchaModel, $attribute)] = $errors;
 		}
 
 		if(empty($result))
@@ -55,19 +61,6 @@ class SubmitAction extends CAction
 			);
 		}
 		echo function_exists('json_encode') ? json_encode($result) : CJSON::encode($result);
-	}
-	
-	public function getMail()
-	{
-		if(!isset($this->_mail))
-		{
-			$this->_mail = Yii::app()->getComponent($this->mailComponent);
-			if($this->_mail === null)
-			{
-				throw new CException(Yii::t(LDContactUsWidget::ID, 'Invalid mail component specified for LDContactUsWidget\'s SubmitAction. The application component named "{name}" could not be found.', array('{name}' => $this->mailComponent)));
-			}
-		}
-		return $this->_mail;
 	}
 
 }
