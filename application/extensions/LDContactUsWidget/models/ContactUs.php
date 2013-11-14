@@ -4,7 +4,8 @@
  * ContactUs class.
  * ContactUs is the data structure for keeping contact form data.
  */
-class ContactUs extends CFormModel {
+class ContactUs extends CFormModel 
+{
 
 	public $name;
 	public $email;
@@ -36,10 +37,10 @@ class ContactUs extends CFormModel {
 	 */
 	public function attributeLabels() {
 		return array(
-				'name' => t('Name'),
-				'email' => t('Email'),
-				'subject' => t('Subject'),
-				'body' => t('Body'),
+				'name' => Yii::t(LDContactUsWidget::ID, 'Name'),
+				'email' => Yii::t(LDContactUsWidget::ID, 'Email'),
+				'subject' => Yii::t(LDContactUsWidget::ID, 'Subject'),
+				'body' => Yii::t(LDContactUsWidget::ID, 'Body'),
 		);
 	}
 

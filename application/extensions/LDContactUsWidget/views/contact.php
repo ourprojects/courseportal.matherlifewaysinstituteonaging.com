@@ -29,7 +29,7 @@ echo CHtml::openTag('div', $htmlOptions);
 	?>
 
 	<p class="note">
-		<span class="required">*</span><?php echo Yii::t(LDContactUsWidget::ID, 'Required.'); ?>
+		<span class="required">*</span><?php echo Yii::t(LDContactUsWidget::ID, 'Required'); ?>
 	</p>
 
 	<?php echo $activeForm->errorSummary(array($ContactUs, $Captcha->getModel())); ?>
