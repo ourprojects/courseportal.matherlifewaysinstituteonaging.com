@@ -18,7 +18,9 @@ class EAuthAssignment extends CAuthAssignment
 	{
 		$this->_itemId = $itemId === null ? $auth->getAuthItemId($itemName) : $itemId;
 		if($this->_itemId === false)
-			throw new CException(Yii::t('yii', 'The item "{name}" does not exist.', array('{name}' => $itemName)));
+		{
+			throw new CException(SrbacModule::t('The item "{name}" does not exist.', array('{name}' => $itemName)));
+		}
 		parent::__construct($auth, $itemName, $userId, $bizRule, $data);
 	}
 

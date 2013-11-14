@@ -10,10 +10,10 @@ else if(!is_array($updateGridIds))
 $gridUpdateJs = $this->generateGridUpdateJS($updateGridIds);
 ?>
 <div id="<?php echo $formId; ?>" <?php if($model->getIsNewRecord()) echo 'style="display: none;"'?>>
-	<h2><?php echo $model->getIsNewRecord() ? Yii::t('srbac', 'Create New') : Yii::t('srbac', 'Update'); ?></h2>
+	<h2><?php echo $model->getIsNewRecord() ? SrbacModule::t('Create New') : SrbacModule::t('Update'); ?></h2>
 	<div class="srbacForm">
 		<p class="note">
-			<?php echo Yii::t('srbac', 'Fields with {span} are required.', array('{span}' => '<span class="required">*</span>')); ?>
+			<?php echo SrbacModule::t('Fields with {span} are required.', array('{span}' => '<span class="required">*</span>')); ?>
 		</p>
 		<?php
 		$form = $this->beginWidget(
@@ -80,7 +80,7 @@ $gridUpdateJs = $this->generateGridUpdateJS($updateGridIds);
 		<div class="action">
 			<?php
 			echo CHtml::ajaxButton(
-				Yii::t('srbac', 'Save'),
+				SrbacModule::t('Save'),
 				$this->createUrl('/'.SrbacUtilities::SRBAC_MODULE_NAME.'/authItem/authItem', array('ajax' => $formId)),
 				array(
 					'type' => 'PUT',
@@ -90,7 +90,7 @@ $gridUpdateJs = $this->generateGridUpdateJS($updateGridIds);
 				$model->getIsNewRecord() ? array('style' => 'display: none;', 'id' => $formId.'_save') : array('id' => $formId.'_save')
 			);
 			echo CHtml::ajaxButton(
-				Yii::t('srbac', 'Create'),
+				SrbacModule::t('Create'),
 				$this->createUrl('/'.SrbacUtilities::SRBAC_MODULE_NAME.'/authItem/authItem', array('ajax' => $formId)),
 				array(
 					'type' => 'POST',

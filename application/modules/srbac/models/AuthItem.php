@@ -237,13 +237,13 @@ class AuthItem extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-				'id' => Yii::t('srbac', 'ID'),
-				'name' => Yii::t('srbac', 'Name'),
-				'type' => Yii::t('srbac', 'Type'),
-				'description' => Yii::t('srbac', 'Description'),
-				'bizrule' => Yii::t('srbac', 'Bizrule'),
-				'data' => Yii::t('srbac', 'Data'),
-				'generated' => Yii::t('srbac', 'Generated'),
+				'id' => SrbacModule::t('ID'),
+				'name' => SrbacModule::t('Name'),
+				'type' => SrbacModule::t('Type'),
+				'description' => SrbacModule::t('Description'),
+				'bizrule' => SrbacModule::t('Bizrule'),
+				'data' => SrbacModule::t('Data'),
+				'generated' => SrbacModule::t('Generated'),
 		);
 	}
 

@@ -19,7 +19,7 @@ class EAuthItem extends CAuthItem
 	{
 		$this->_id = $id === null ? $auth->getAuthItemId($name) : $id;
 		if($this->_id === false)
-			throw new CException(Yii::t('yii', 'The item "{name}" does not exist.', array('{name}' => $name)));
+			throw new CException(SrbacModule::t('The item "{name}" does not exist.', array('{name}' => $name)));
 		parent::__construct($auth, $name, $type, $description, $bizRule, $data);
 	}
 

@@ -24,11 +24,11 @@ class AssignController extends SBaseController
 		{
 			if(!isset($userId))
 			{
-				Yii::app()->getUser()->setFlash($this->getModule()->flashKey, Yii::t('srbac', 'No User specified to '.($request->getIsPutRequest() ? 'assign' : 'revoke').' Role(s).'));
+				Yii::app()->getUser()->setFlash($this->getModule()->flashKey, SrbacModule::t('No User specified to '.($request->getIsPutRequest() ? 'assign' : 'revoke').' Role(s).'));
 			}
 			elseif(!isset($roles))
 			{
-				Yii::app()->getUser()->setFlash($this->getModule()->flashKey, Yii::t('srbac', 'No Role(s) were specified to be '.($request->getIsPutRequest() ? 'assigned to' : 'revoked from').' the User.'));
+				Yii::app()->getUser()->setFlash($this->getModule()->flashKey, SrbacModule::t('No Role(s) were specified to be '.($request->getIsPutRequest() ? 'assigned to' : 'revoked from').' the User.'));
 			}
 			else
 			{
@@ -38,7 +38,7 @@ class AssignController extends SBaseController
 				{
 					$auth->$method($role, $userId);
 				}
-				Yii::app()->getUser()->setFlash($this->getModule()->flashKey, Yii::t('srbac', 'Role'.(count($roles) > 1 ? 's' : '').' '.($request->getIsPutRequest() ? 'assigned to' : 'revoked from').' User.'));
+				Yii::app()->getUser()->setFlash($this->getModule()->flashKey, SrbacModule::t('Role'.(count($roles) > 1 ? 's' : '').' '.($request->getIsPutRequest() ? 'assigned to' : 'revoked from').' User.'));
 			}
 		}
 
@@ -57,18 +57,18 @@ class AssignController extends SBaseController
 	{
 		if($parentType == $childType)
 		{
-			throw new CHttpException(400, Yii::t('srbac', 'The parent type and child type cannot be the same.'));
+			throw new CHttpException(400, SrbacModule::t('The parent type and child type cannot be the same.'));
 		}
 		$request = Yii::app()->getRequest();
 		if($request->getIsPutRequest() || $request->getIsDeleteRequest())
 		{
 			if(!isset($parent))
 			{
-				Yii::app()->getUser()->setFlash($this->getModule()->flashKey, Yii::t('srbac', 'No '.AuthItem::$TYPES[$parentType].' specified to '.($request->getIsPutRequest() ? 'assign' : 'revoke').' '.AuthItem::$TYPES[$childType].'(s).'));
+				Yii::app()->getUser()->setFlash($this->getModule()->flashKey, SrbacModule::t('No '.AuthItem::$TYPES[$parentType].' specified to '.($request->getIsPutRequest() ? 'assign' : 'revoke').' '.AuthItem::$TYPES[$childType].'(s).'));
 			}
 			elseif(!isset($children))
 			{
-				Yii::app()->getUser()->setFlash($this->getModule()->flashKey, Yii::t('srbac', 'No '.AuthItem::$TYPES[$childType].'(s) specfied to '.($request->getIsPutRequest() ? 'assign to' : 'revoke from').' '.AuthItem::$TYPES[$parentType].'.'));
+				Yii::app()->getUser()->setFlash($this->getModule()->flashKey, SrbacModule::t('No '.AuthItem::$TYPES[$childType].'(s) specfied to '.($request->getIsPutRequest() ? 'assign to' : 'revoke from').' '.AuthItem::$TYPES[$parentType].'.'));
 			}
 			else
 			{
@@ -78,7 +78,7 @@ class AssignController extends SBaseController
 				{
 					$auth->$method($parent, $child);
 				}
-				Yii::app()->getUser()->setFlash($this->getModule()->flashKey, Yii::t('srbac', AuthItem::$TYPES[$childType].(count($children) > 1 ? 's' : '').' '.($request->getIsPutRequest() ? 'assigned to' : 'revoked from').' '.AuthItem::$TYPES[$parentType].'.'));
+				Yii::app()->getUser()->setFlash($this->getModule()->flashKey, SrbacModule::t(AuthItem::$TYPES[$childType].(count($children) > 1 ? 's' : '').' '.($request->getIsPutRequest() ? 'assigned to' : 'revoked from').' '.AuthItem::$TYPES[$parentType].'.'));
 			}
 		}
 
@@ -87,11 +87,11 @@ class AssignController extends SBaseController
 			$authItem =  AuthItem::model()->findByPk($parent);
 			if($authItem === null)
 			{
-				throw new CHttpException(404, Yii::t('srbac', 'The authorization item with id {id} could not be found.', array('{id}' => $id)));
+				throw new CHttpException(404, SrbacModule::t('The authorization item with id {id} could not be found.', array('{id}' => $id)));
 			}
 			else if($authItem->type != $parentType)
 			{
-				throw new CHttpException(400, Yii::t('srbac', 'The authorization item with id {id} does not match the specified parent type.', array('{id}' => $parent)));
+				throw new CHttpException(400, SrbacModule::t('The authorization item with id {id} does not match the specified parent type.', array('{id}' => $parent)));
 			}
 			$children = $authItem->children()->type($childType)->findAll();
 			$notChildren = $authItem->notChildren()->type($childType)->findAll();

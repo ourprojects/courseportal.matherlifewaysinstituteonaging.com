@@ -7,12 +7,12 @@ Yii::app()->getClientScript()->registerCssFile($this->getModule()->getStylesUrl(
 			<?php
 			echo CHtml::link(
 					CHtml::image($this->getModule()->getIconsUrl('system.png'),
-							Yii::t('srbac', 'System'),
+							SrbacModule::t('System'),
 							array('class' => 'icon',
-									'title' => Yii::t('srbac', 'System'),
+									'title' => SrbacModule::t('System'),
 									'border' => 0
 							)
-					).' '.Yii::t('srbac', 'System'),
+					).' '.SrbacModule::t('System'),
 					$this->createUrl('/'.SrbacUtilities::SRBAC_MODULE_NAME.'/system')
 			);
 			?>
@@ -21,12 +21,12 @@ Yii::app()->getClientScript()->registerCssFile($this->getModule()->getStylesUrl(
 			<?php
 			echo CHtml::link(
 					CHtml::image($this->getModule()->getIconsUrl('manageAuth.png'),
-							Yii::t('srbac', 'Auth Items'),
+							SrbacModule::t('Auth Items'),
 							array('class' => 'icon',
-									'title' => Yii::t('srbac', 'Auth Items'),
+									'title' => SrbacModule::t('Auth Items'),
 									'border' => 0
 							)
-					).' '.Yii::t('srbac', 'Auth Items'),
+					).' '.SrbacModule::t('Auth Items'),
 					$this->createUrl('/'.SrbacUtilities::SRBAC_MODULE_NAME.'/authItem')
 			);
 			?>
@@ -35,12 +35,12 @@ Yii::app()->getClientScript()->registerCssFile($this->getModule()->getStylesUrl(
 			<?php
 			echo CHtml::link(
 					CHtml::image($this->getModule()->getIconsUrl('hierarchy.png'),
-						Yii::t('srbac', 'Hierarchy'),
+						SrbacModule::t('Hierarchy'),
 						array('class' => 'icon',
-							'title' => Yii::t('srbac', 'Hierarchy'),
+							'title' => SrbacModule::t('Hierarchy'),
 							'border' => 0,
 						)
-					).' '.Yii::t('srbac', 'Hierarchy'),
+					).' '.SrbacModule::t('Hierarchy'),
 					$this->createUrl('/'.SrbacUtilities::SRBAC_MODULE_NAME.'/assign')
 			);
 			?>
@@ -49,12 +49,12 @@ Yii::app()->getClientScript()->registerCssFile($this->getModule()->getStylesUrl(
 			<?php
 			echo CHtml::link(
 					CHtml::image($this->getModule()->getIconsUrl('superman.png'),
-						Yii::t('srbac', 'Super Users'),
+						SrbacModule::t('Super Users'),
 						array('class' => 'icon',
-							'title' => Yii::t('srbac', 'Super Users'),
+							'title' => SrbacModule::t('Super Users'),
 							'border' => 0,
 						)
-					).' '.Yii::t('srbac', 'Super Users'),
+					).' '.SrbacModule::t('Super Users'),
 					$this->createUrl('/'.SrbacUtilities::SRBAC_MODULE_NAME.'/assign/superUsers')
 			);
 			?>
@@ -63,12 +63,12 @@ Yii::app()->getClientScript()->registerCssFile($this->getModule()->getStylesUrl(
 			<?php
 			echo CHtml::link(
 					CHtml::image($this->getModule()->getIconsUrl('users.png'),
-						Yii::t('srbac', 'User Assignments'),
+						SrbacModule::t('User Assignments'),
 						array('class' => 'icon',
-							'title' => Yii::t('srbac', 'User Assignments'),
+							'title' => SrbacModule::t('User Assignments'),
 							'border' => 0
 						)
-					).' '.Yii::t('srbac', 'User Assignments'),
+					).' '.SrbacModule::t('User Assignments'),
 					$this->createUrl('/'.SrbacUtilities::SRBAC_MODULE_NAME.'/user')
 			);
 			?>

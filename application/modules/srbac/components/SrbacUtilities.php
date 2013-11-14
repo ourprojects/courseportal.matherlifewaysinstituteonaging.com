@@ -25,7 +25,7 @@ class SrbacUtilities
 			self::$_srbacModule = self::_findSrbacModule(Yii::app());
 			if(self::$_srbacModule === null)
 			{
-				throw new CException(Yii::t('srbac', 'Unable to locate srbac module. Make sure the module is configured and named {name}.', array('{name}' => self::SRBAC_MODULE_NAME)));
+				throw new CException(SrbacModule::t('Unable to locate srbac module. Make sure the module is configured and named {name}.', array('{name}' => self::SRBAC_MODULE_NAME)));
 			}
 		}
 		return self::$_srbacModule;
@@ -187,8 +187,7 @@ class SrbacUtilities
 			if($controllerPath === false)
 			{
 				Yii::log(
-					Yii::t(
-						'srbac',
+					SrbacModule::t(
 						'Unable to extract controller actions. The controller path alias "{alias}" could not be found.',
 						array('{alias}' => $controllerPathAlias)
 					),
@@ -203,8 +202,7 @@ class SrbacUtilities
 			if($controllerFileContents === false)
 			{
 				Yii::log(
-					Yii::t(
-						'srbac',
+					SrbacModule::t(
 						'Unable to extract controller actions. Unable to read controller file "{file}".',
 						array('{file}' => $controllerPath)
 					),
@@ -218,8 +216,7 @@ class SrbacUtilities
 			if(!isset($classNameMap[$controllerClassName]))
 			{
 				Yii::log(
-					Yii::t(
-						'srbac',
+					SrbacModule::t(
 						'Unable to extract controller actions. The controller named "{controller}" could not be found in the file "{file}".',
 						array('{controller}' => $controllerClassName, '{file}' => $controllerPath)
 					),
@@ -273,8 +270,7 @@ class SrbacUtilities
 				if(!$reflection->isSubclassOf('CController'))
 				{
 					Yii::log(
-						Yii::t(
-							'srbac',
+						SrbacModule::t(
 							'Unable to extract controller actions. The class named "{controller}", in file "{file}" was determined not to be a subclass of type CController.',
 							array('{controller}' => $controllerClassName, '{file}' => $controllerPath)
 						),
@@ -293,8 +289,7 @@ class SrbacUtilities
 					unlink($tempFile);
 				}
 				Yii::log(
-					Yii::t(
-						'srbac', 
+					SrbacModule::t(
 						'An exception was thrown with message "{message}" while attempting to instantiate and extract the actions of the controller with class name "{controller}". An attempt to manually parse the controller as a string will be made.', 
 						array('{controller}' => $controllerClassName, '{message}' => $e->getMessage())
 					), 

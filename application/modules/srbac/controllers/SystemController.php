@@ -32,16 +32,16 @@ class SystemController extends SBaseController
 		switch(SrbacUtilities::install($overwrite))
 		{
 			case SrbacUtilities::ERROR:
-				Yii::app()->getUser()->setFlash($this->getModule()->flashKey, Yii::t('srbac', 'An error ocurred while attempting to install the necessary RBAC system.'));
+				Yii::app()->getUser()->setFlash($this->getModule()->flashKey, SrbacModule::t('An error ocurred while attempting to install the necessary RBAC system.'));
 				break;
 			case SrbacUtilities::SUCCESS:
-				Yii::app()->getUser()->setFlash($this->getModule()->flashKey, Yii::t('srbac', 'The RBAC system has been succesfully installed.'));
+				Yii::app()->getUser()->setFlash($this->getModule()->flashKey, SrbacModule::t('The RBAC system has been succesfully installed.'));
 				break;
 			case SrbacUtilities::OVERWRITE:
-				Yii::app()->getUser()->setFlash($this->getModule()->flashKey, Yii::t('srbac', 'Unable to install RBAC system, a previous installation already exists. If you would like to re-install the system anyways please confirm and try again.'));
+				Yii::app()->getUser()->setFlash($this->getModule()->flashKey, SrbacModule::t('Unable to install RBAC system, a previous installation already exists. If you would like to re-install the system anyways please confirm and try again.'));
 				break;
 			default:
-				Yii::app()->getUser()->setFlash($this->getModule()->flashKey, Yii::t('srbac', 'Received an unknown result from attempting to install the RBAC system.'));
+				Yii::app()->getUser()->setFlash($this->getModule()->flashKey, SrbacModule::t('Received an unknown result from attempting to install the RBAC system.'));
 				break;
 		}
 	}

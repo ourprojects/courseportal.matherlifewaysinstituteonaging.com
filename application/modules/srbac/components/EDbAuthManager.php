@@ -72,7 +72,7 @@ class EDbAuthManager extends CDbAuthManager
 		{
 			return array('name', strval($item));
 		}
-		throw new CException(Yii::t('srbac', 'Invalid authorization item type.'));
+		throw new CException(SrbacModule::t('Invalid authorization item type.'));
 	}
 
 	/**
@@ -115,7 +115,7 @@ class EDbAuthManager extends CDbAuthManager
 			}
 			$this->checkItemChildType($parentType, $childType);
 			if($this->detectLoop($parentName, $childName))
-				throw new CException(Yii::t('yii', 'Cannot add "{child}" as a child of "{name}". A loop has been detected.',
+				throw new CException(SrbacModule::t('Cannot add "{child}" as a child of "{name}". A loop has been detected.',
 					array('{child}' => $childName, '{name}' => $parentName)));
 
 			$this->db->createCommand()
@@ -127,7 +127,7 @@ class EDbAuthManager extends CDbAuthManager
 			return true;
 		}
 		else
-			throw new CException(Yii::t('yii', 'Either, "{parent}" or "{child}" does not exist, or "{parent}" and "{child}" are the same.', array('{child}' => $childItem, '{parent}' => $parentItem)));
+			throw new CException(SrbacModule::t('Either, "{parent}" or "{child}" does not exist, or "{parent}" and "{child}" are the same.', array('{child}' => $childItem, '{parent}' => $parentItem)));
 	}
 
 	/**
@@ -268,7 +268,7 @@ class EDbAuthManager extends CDbAuthManager
 			$itemName = $item;
 		}
 		if($itemId === false || $itemName === false)
-			throw new CException(Yii::t('yii', 'The item "{name}" does not exist.',array('{name}' => $item)));
+			throw new CException(SrbacModule::t('The item "{name}" does not exist.',array('{name}' => $item)));
 
 		$this->db->createCommand()
 			->insert($this->assignmentTable, array(

@@ -59,7 +59,7 @@ class AuthItemController extends SBaseController
 	
 	public function onInvalidRequest()
 	{
-		throw new CHttpException(400, Yii::t('srbac', 'Your request is invalid.'));
+		throw new CHttpException(400, SrbacModule::t('Your request is invalid.'));
 	}
 
 	/**
@@ -221,7 +221,7 @@ class AuthItemController extends SBaseController
 		}
 		Yii::app()->getUser()->setFlash(
 			$this->getModule()->flashKey,
-			($success ? Yii::t('srbac', 'Authorization item(s) were created successfully.') : Yii::t('srbac', 'An error occurred while creating one or more authorization items.')) . '<br />'
+			($success ? SrbacModule::t('Authorization item(s) were created successfully.') : SrbacModule::t('An error occurred while creating one or more authorization items.')) . '<br />'
 		);
 		$this->_model = new AuthItem;
 
@@ -252,7 +252,7 @@ class AuthItemController extends SBaseController
 
 		if($this->_model === null)
 		{
-			throw new CHttpException(404, Yii::t('srbac', 'The authorization item with ID {id} could not be found.', array('{id}' => $id)));
+			throw new CHttpException(404, SrbacModule::t('The authorization item with ID {id} could not be found.', array('{id}' => $id)));
 		}
 
 		if(Yii::app()->getRequest()->getIsAjaxRequest())
@@ -272,13 +272,13 @@ class AuthItemController extends SBaseController
 	{
 		if(!isset($AuthItem) || !isset($AuthItem['id']))
 		{
-			throw new CHttpException(400, Yii::t('srbac', 'The ID of the authorization item being updated must be specified.'));
+			throw new CHttpException(400, SrbacModule::t('The ID of the authorization item being updated must be specified.'));
 		}
 
 		$this->_model = AuthItem::model()->findByPk($AuthItem['id']);
 		if($this->_model === null)
 		{
-			throw new CHttpException(404, Yii::t('srbac', 'The authorization item requested to update could not be found.'));
+			throw new CHttpException(404, SrbacModule::t('The authorization item requested to update could not be found.'));
 		}
 		$this->_model->setAttributes($AuthItem);
 
@@ -286,12 +286,12 @@ class AuthItemController extends SBaseController
 		{
 			if ($this->_model->save())
 			{
-				Yii::app()->getUser()->setFlash($this->getModule()->flashKey, '"'.$this->_model->name.'" '.Yii::t('srbac', 'Authorization item updated successfully.'));
+				Yii::app()->getUser()->setFlash($this->getModule()->flashKey, '"'.$this->_model->name.'" '.SrbacModule::t('Authorization item updated successfully.'));
 			}
 		}
 		catch (CDbException $exc)
 		{
-			Yii::app()->getUser()->setFlash($this->getModule()->flashKey, Yii::t('srbac', 'Error while updating the authorization item.') . '<br />');
+			Yii::app()->getUser()->setFlash($this->getModule()->flashKey, SrbacModule::t('Error while updating the authorization item.') . '<br />');
 		}
 
 		if(Yii::app()->getRequest()->getIsAjaxRequest())
@@ -318,11 +318,11 @@ class AuthItemController extends SBaseController
 			try
 			{
 				$rowsDeleted = AuthItem::model()->deleteByPk($id);
-				Yii::app()->getUser()->setFlash($this->getModule()->flashKey, Yii::t('srbac', '{rowsDeleted} authorization item(s) deleted.', array('{rowsDeleted}' => $rowsDeleted)) . '<br />');
+				Yii::app()->getUser()->setFlash($this->getModule()->flashKey, SrbacModule::t('{rowsDeleted} authorization item(s) deleted.', array('{rowsDeleted}' => $rowsDeleted)) . '<br />');
 			}
 			catch (CDbException $exc)
 			{
-				Yii::app()->getUser()->setFlash($this->getModule()->flashKey, Yii::t('srbac', 'Error while deleting the authorization item(s).') . '<br />');
+				Yii::app()->getUser()->setFlash($this->getModule()->flashKey, SrbacModule::t('Error while deleting the authorization item(s).') . '<br />');
 			}
 		}
 

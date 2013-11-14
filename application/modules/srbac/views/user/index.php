@@ -1,10 +1,10 @@
-<?php $this->breadcrumbs = array(Yii::t('srbac', 'User Assignments')); ?>
+<?php $this->breadcrumbs = array(SrbacModule::t('User Assignments')); ?>
 <div>
 	<?php $this->renderPartial('../frontpage'); ?>
 	<table class="srbac">
 		<tr>
-			<th><?php echo Yii::t('srbac', 'Users');?></th>
-			<th><?php echo Yii::t('srbac', 'Assignments')?></th>
+			<th><?php echo SrbacModule::t('Users');?></th>
+			<th><?php echo SrbacModule::t('Assignments')?></th>
 		</tr>
 		<tr>
 			<td style="text-align: center; width: 33%; vertical-align: top;">
@@ -30,7 +30,7 @@
 												'template' => '{view}',
 												'buttons' => array(
 														'view' => array(
-																'label' => Yii::t('srbac', 'View User\'s Assignments'),
+																'label' => SrbacModule::t('View User\'s Assignments'),
 																'url' => 'Yii::app()->getController()->createUrl("/'.SrbacUtilities::SRBAC_MODULE_NAME.'/user/view", array("id" => $data->{$this->grid->getController()->getModule()->userId}))',
 																'click' => 'function(){'.CHtml::ajax(
 																		array(

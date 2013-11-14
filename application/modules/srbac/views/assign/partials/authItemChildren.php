@@ -7,7 +7,7 @@
 	<table>
 		<tr>
 			<th colspan="2">
-			<?php echo Yii::t('srbac','Assign '.AuthItem::$TYPES[$childType].'s to '.AuthItem::$TYPES[$parentType].'s') ?>
+			<?php echo SrbacModule::t('Assign '.AuthItem::$TYPES[$childType].'s to '.AuthItem::$TYPES[$parentType].'s') ?>
 			</th>
 		</tr>
 		<tr>
@@ -16,13 +16,13 @@
 				echo CHtml::ajaxLink(
 						CHtml::image(
 									$this->getModule()->getIconsUrl('create.png'),
-									Yii::t('srbac', 'Auto Assign Generated'),
+									SrbacModule::t('Auto Assign Generated'),
 									array(
 											'border' => 0,
 											'class' => 'icon',
-											'title' => Yii::t('srbac', 'Auto Assign Generated'),
+											'title' => SrbacModule::t('Auto Assign Generated'),
 									)
-						) . Yii::t('srbac', 'Auto Assign Generated'),
+						) . SrbacModule::t('Auto Assign Generated'),
 						$this->createUrl('/'.SrbacUtilities::SRBAC_MODULE_NAME.'/assign/auto'),
 						array(
 							'type' => 'GET',
@@ -30,7 +30,7 @@
 							'complete' => 'function(){$("#'.AuthItem::$TYPES[$childType].'Management").removeClass("srbacLoading");}',
 						),
 						array(
-							'title' => Yii::t('srbac', 'Auto Assign Generated')
+							'title' => SrbacModule::t('Auto Assign Generated')
 						)
 				);
 				?>
@@ -40,7 +40,7 @@
 			<td style="width: 50%;">
 				<table>
 					<tr>
-						<th><?php echo Yii::t('srbac', AuthItem::$TYPES[$parentType].'s')?></th>
+						<th><?php echo SrbacModule::t(AuthItem::$TYPES[$parentType].'s')?></th>
 					</tr>
 					<tr>
 						<td>

@@ -26,7 +26,8 @@ return array(
 				'ext.yii-mail.*',
 				'application.modules.translate.TranslateModule',
 				'application.modules.translate.components.*',
-				'application.modules.phpbb.PhpbbModule'
+				'application.modules.phpbb.PhpbbModule',
+				'application.modules.srbac.SrbacModule'
 		),
 
 		// configured modules

@@ -6,16 +6,14 @@ $this->breadcrumbs = array('SRBAC Super Users');
 	<table class="srbac">
 		<tr>
 			<th colspan="2">
-			<?php echo Yii::t('srbac', 'Manage Super User Assignments')?>
+			<?php echo SrbacModule::t('Manage Super User Assignments')?>
 			</th>
 		</tr>
 		<?php if(!SrbacUser::model()->superUser()->exists()): ?>
 			<tr class="srbacError">
 			<th colspan="2">
 				<?php
-				echo Yii::t(
-						'srbac',
-						'The super user role has not been assigned, access to the SRBAC administration interface will be granted to all users until this problem is resolved!');
+				echo SrbacModule::t('The super user role has not been assigned, access to the SRBAC administration interface will be granted to all users until this problem is resolved!');
 				?>
 			</th>
 			</tr>
@@ -24,7 +22,7 @@ $this->breadcrumbs = array('SRBAC Super Users');
 			<td id="superUsers" style="width:50%;vertical-align:top;">
 				<table>
 					<tr>
-						<th><?php echo Yii::t('srbac', 'Super Users'); ?></th>
+						<th><?php echo SrbacModule::t('Super Users'); ?></th>
 					</tr>
 					<tr>
 						<td><?php $this->renderPartial('partials/superUserGrid', array('model' => $superUserModel, 'gridId' => 'superUserGrid')); ?></td>
@@ -34,7 +32,7 @@ $this->breadcrumbs = array('SRBAC Super Users');
 			<td id="normalUsers" style="width:50%;vertical-align:top;">
 					<table>
 						<tr>
-							<th><?php echo Yii::t('srbac', 'Normal Users'); ?></th>
+							<th><?php echo SrbacModule::t('Normal Users'); ?></th>
 						</tr>
 						<tr>
 							<td><?php $this->renderPartial('partials/superUserGrid', array('model' => $userModel, 'gridId' => 'normalUserGrid')); ?></td>

@@ -3,6 +3,8 @@
 class SrbacModule extends CWebModule
 {
 	//Constants
+	const ID = 'LD_RBAC';
+	
 	const ICON_PACKS = 'noia,tango';
 
 	// Srbac Attributes
@@ -35,6 +37,15 @@ class SrbacModule extends CWebModule
 	 */
 	public $layout = 'application.views.layouts.main';
 
+	/**
+	 * Translate a message specific to Srbac module.
+	 *
+	 * @link YiiBase::t
+	 */
+	public static function t($message, $params = array(), $source = null, $language = null)
+	{
+		return Yii::t(self::ID, $message, $params, $source, $language);
+	}
 
 	/**
 	 * this method is called when the module is being created you may place code

@@ -22,13 +22,13 @@ var autoObsoleteAuthItems = <?php echo CJavaScript::encode(array('id' => $ids));
 	echo CHtml::ajaxLink(
 			CHtml::image(
 						$this->getModule()->getIconsUrl('create.png'),
-						Yii::t('srbac', 'Delete All'),
+						SrbacModule::t('Delete All'),
 						array(
 								'border' => 0,
 								'class' => 'icon',
-								'title' => Yii::t('srbac', 'Delete All'),
+								'title' => SrbacModule::t('Delete All'),
 						)
-			) . Yii::t('srbac', 'Delete All'),
+			) . SrbacModule::t('Delete All'),
 			$this->createUrl('/'.SrbacUtilities::SRBAC_MODULE_NAME.'/authItem/authItem', array('ajax' => 'autoObsoleteTab')),
 			array(
 				'type' => 'DELETE',
@@ -43,7 +43,7 @@ var autoObsoleteAuthItems = <?php echo CJavaScript::encode(array('id' => $ids));
 				'update' => '#autoObsoleteTab'
 			),
 			array(
-				'title' => Yii::t('srbac', 'Delete All')
+				'title' => SrbacModule::t('Delete All')
 			)
 	);
 	?>

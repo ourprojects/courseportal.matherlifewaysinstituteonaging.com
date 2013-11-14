@@ -89,10 +89,10 @@ class Assignments extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-				'item_id' => Yii::t('srbac', 'Item id'),
-				'user_id' => Yii::t('srbac', 'User id'),
-				'bizrule' => Yii::t('srbac', 'Bizrule'),
-				'data' => Yii::t('srbac', 'Data'),
+				'item_id' => SrbacModule::t('Item id'),
+				'user_id' => SrbacModule::t('User id'),
+				'bizrule' => SrbacModule::t('Bizrule'),
+				'data' => SrbacModule::t('Data'),
 		);
 	}
 

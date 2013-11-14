@@ -1,7 +1,7 @@
 <table class="srbac" align="center">
 	<tr>
-		<th width="50%"><?php echo Yii::t('srbac', 'Authorization items');?></th>
-		<th><?php echo Yii::t('srbac', 'Actions')?></th>
+		<th width="50%"><?php echo SrbacModule::t('Authorization items');?></th>
+		<th><?php echo SrbacModule::t('Actions')?></th>
 	</tr>
 	<tr>
 		<td style="vertical-align: top; text-align: center">
@@ -10,13 +10,13 @@
 				echo CHtml::ajaxLink(
 						CHtml::image(
 									$this->getModule()->getIconsUrl('create.png'),
-									Yii::t('srbac', 'Create New'),
+									SrbacModule::t('Create New'),
 									array(
 											'border' => 0,
 											'class' => 'icon',
-											'title' => Yii::t('srbac', 'Create New'),
+											'title' => SrbacModule::t('Create New'),
 									)
-						) . Yii::t('srbac', 'Create New'),
+						) . SrbacModule::t('Create New'),
 						$this->createUrl('/'.SrbacUtilities::SRBAC_MODULE_NAME.'/authItem/authItem', array('ajax' => 'authItem-form')),
 						array(
 							'type' => 'GET',
@@ -26,7 +26,7 @@
 						),
 						array(
 							'id' => 'authItem-form_createNewButton',
-							'title' => Yii::t('srbac', 'Create a new auth item')
+							'title' => SrbacModule::t('Create a new auth item')
 						)
 				);
 				?>

@@ -1,8 +1,8 @@
 <table>
 	<tr>
-		<th><?php echo Yii::t('srbac', 'Roles Assigned') ?></th>
+		<th><?php echo SrbacModule::t('Roles Assigned') ?></th>
 		<th>&nbsp;</th>
-		<th><?php echo Yii::t('srbac', 'Roles Not Assigned') ?></th>
+		<th><?php echo SrbacModule::t('Roles Not Assigned') ?></th>
 	</tr>
 	<tr>
 		<td style="width: 45%;">

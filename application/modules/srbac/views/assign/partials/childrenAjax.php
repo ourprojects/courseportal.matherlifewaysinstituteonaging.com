@@ -1,8 +1,8 @@
 <table>
 	<tr>
-		<th><?php echo Yii::t('srbac', AuthItem::$TYPES[$childType].'s Assigned')?></th>
+		<th><?php echo SrbacModule::t(AuthItem::$TYPES[$childType].'s Assigned')?></th>
 		<th>&nbsp;</th>
-		<th><?php echo Yii::t('srbac', AuthItem::$TYPES[$childType].'s Not Assigned')?></th>
+		<th><?php echo SrbacModule::t(AuthItem::$TYPES[$childType].'s Not Assigned')?></th>
 	</tr>
 	<tr>
 		<td style="width: 45%;">

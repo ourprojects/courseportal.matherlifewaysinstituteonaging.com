@@ -10,7 +10,7 @@ $this->breadcrumbs = array('SRBAC Assignments');
 			array(
 				'tabs' => array(
 						'tab1' => array(
-								'title' => Yii::t('srbac','Users'),
+								'title' => SrbacModule::t('Users'),
 								'view' => 'partials/roleToUser',
 								'data' => array(
 										'userId' => null,
@@ -20,7 +20,7 @@ $this->breadcrumbs = array('SRBAC Assignments');
 								)
 						),
 						'tab2' => array(
-								'title' => Yii::t('srbac','Roles'),
+								'title' => SrbacModule::t('Roles'),
 								'view' => 'partials/authItemChildren',
 								'data' => array(
 										'children' => $assignedTasks,
@@ -30,7 +30,7 @@ $this->breadcrumbs = array('SRBAC Assignments');
 								)
 						),
 						'tab3' => array(
-								'title' => Yii::t('srbac','Tasks'),
+								'title' => SrbacModule::t('Tasks'),
 								'view' => 'partials/authItemChildren',
 								'data' => array(
 										'children' => $assignedOperations,

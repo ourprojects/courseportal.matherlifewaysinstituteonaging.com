@@ -22,13 +22,13 @@ var autoMissingAuthItems = <?php echo CJavaScript::encode(array('AuthItems' => $
 	echo CHtml::ajaxLink(
 			CHtml::image(
 						$this->getModule()->getIconsUrl('create.png'),
-						Yii::t('srbac', 'Create All'),
+						SrbacModule::t('Create All'),
 						array(
 								'border' => 0,
 								'class' => 'icon',
-								'title' => Yii::t('srbac', 'Create All'),
+								'title' => SrbacModule::t('Create All'),
 						)
-			) . Yii::t('srbac', 'Create All'),
+			) . SrbacModule::t('Create All'),
 			$this->createUrl('/'.SrbacUtilities::SRBAC_MODULE_NAME.'/authItem/authItem', array('ajax' => 'autoMissingTab')),
 			array(
 				'type' => 'POST',
@@ -43,7 +43,7 @@ var autoMissingAuthItems = <?php echo CJavaScript::encode(array('AuthItems' => $
 				'update' => '#autoMissingTab'
 			),
 			array(
-				'title' => Yii::t('srbac', 'Create All')
+				'title' => SrbacModule::t('Create All')
 			)
 	);
 	?>

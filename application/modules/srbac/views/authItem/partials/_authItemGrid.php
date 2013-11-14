@@ -25,7 +25,7 @@ $this->widget('zii.widgets.grid.CGridView',
 								'template' => '{create}{update}{delete}',
 								'buttons' => array(
 										'create' => array(
-												'label' => Yii::t('srbac', 'Create'),
+												'label' => SrbacModule::t('Create'),
 												'url' => '$this->grid->getController()->createUrl("/'.SrbacUtilities::SRBAC_MODULE_NAME.'/authItem/authItem", array_merge($data instanceof AuthItem ? $data->getAttributes($data->getSafeAttributeNames()) : $data, array("ajax" => "'.$formId.'")))',
 												'imageUrl' => $this->getModule()->getIconsUrl('create.png'),
 												'click' => 'function(){'.CHtml::ajax(
@@ -56,7 +56,7 @@ $this->widget('zii.widgets.grid.CGridView',
 												'url' => '$this->grid->getController()->createUrl("/'.SrbacUtilities::SRBAC_MODULE_NAME.'/authItem/authItem", array("id" => $data["id"]))',
 												'imageUrl' => $this->getModule()->getIconsUrl('delete.png'),
 												'click' => 'function(){'.
-														'if(!confirm("'.Yii::t('srbac', 'Are you sure you want to delete this item?').'")) return false;'.
+														'if(!confirm("'.SrbacModule::t('Are you sure you want to delete this item?').'")) return false;'.
 														'var id = $(this).attr("href").split("?").pop().split("=").pop();'.
 														'$("#'.$gridId.'").yiiGridView("update",  '.
 														CJavaScript::encode(array(

@@ -7,14 +7,14 @@
 	<table>
 		<tr>
 			<th colspan="2">
-			<?php echo Yii::t('srbac', 'Assign Roles to Users')?>
+			<?php echo SrbacModule::t('Assign Roles to Users')?>
 			</th>
 		</tr>
 		<tr>
 			<td style="width: 50%;">
 				<table>
 					<tr>
-						<th><?php echo Yii::t('srbac', 'Users'); ?></th>
+						<th><?php echo SrbacModule::t('Users'); ?></th>
 					</tr>
 					<tr>
 						<td>

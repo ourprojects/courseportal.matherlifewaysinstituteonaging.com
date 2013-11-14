@@ -98,8 +98,8 @@ class ItemChildren extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-				'parent_id' => Yii::t('srbac', 'Parent ID'),
-				'child_id' => Yii::t('srbac', 'Child ID'),
+				'parent_id' => SrbacModule::t('Parent ID'),
+				'child_id' => SrbacModule::t('Child ID'),
 		);
 	}
 
