@@ -20,7 +20,20 @@ class CourseController extends CoursePortalController
 	public function actions()
 	{
 		$actions = array(
-			'spencerpowell.' => 'course.widgets.SpencerPowell.ActivityLogWidget',
+			'spencerpowell.' => array(
+				'class' => 'course.widgets.SpencerPowell.ActivityLogWidget',
+				'dimension' => array(
+					'widgetId' => 'spencerPowell',
+					'actionPrefix' => 'spencerpowell.'
+				),
+				'logActivity' => array(
+					'widgetId' => 'spencerPowell',
+				),
+				'logActivityGrid' => array(
+					'widgetId' => 'spencerPowell',
+					'actionPrefix' => 'spencerpowell.'
+				),
+			),
 			'survey.' => 'surveyor.widgets.Survey'
 		);
 		$courses = Yii::app()->getDb()->createCommand()->select('name')->from(Course::model()->tableName())->queryColumn();

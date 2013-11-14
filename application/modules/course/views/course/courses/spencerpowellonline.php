@@ -46,7 +46,10 @@ foreach (array(
         </p>
         <?php
         $this->beginWidget('zii.widgets.jui.CJuiDialog', array('id' => 'activityLog', 'options' => array('title' => '{t}Activity Log{/t}', 'autoOpen' => false, 'modal' => true, 'width' => 720, 'maxWidth' => 720, 'maxHeight' => 1000),));
-        $this->widget('course.widgets.SpencerPowell.ActivityLogWidget');
+        $this->widget(
+			'course.widgets.SpencerPowell.ActivityLogWidget',
+			array('id' => 'spencerPowell')
+		);
         $this->endWidget('zii.widgets.jui.CJuiDialog');
         ?>
     </div>

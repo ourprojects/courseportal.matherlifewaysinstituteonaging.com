@@ -25,11 +25,13 @@ class UserCourse extends CActiveRecord
 	/**
 	 * @return string the associated database table name
 	 */
-	public function tableName() {
+	public function tableName() 
+	{
 		return '{{user_course}}';
 	}
 
-	public function behaviors() {
+	public function behaviors() 
+	{
 		return array_merge(parent::behaviors(),
 				array(
 						'extendedFeatures' => array('class' => 'application.behaviors.EModelBehaviors'),
@@ -42,7 +44,8 @@ class UserCourse extends CActiveRecord
 	/**
 	 * @return array validation rules for model attributes.
 	 */
-	public function rules() {
+	public function rules() 
+	{
 		return array(
 				array('user_id, course_id', 'required'),
 				array('user_id, course_id', 'numerical', 'integerOnly' => true),
@@ -62,7 +65,8 @@ class UserCourse extends CActiveRecord
 	/**
 	 * @return array relational rules.
 	 */
-	public function relations() {
+	public function relations() 
+	{
 		return array(
 				'user' => array(self::BELONGS_TO, 'CourseUser', 'user_id'),
 				'course' => array(self::BELONGS_TO, 'Course', 'course_id'),
@@ -72,7 +76,8 @@ class UserCourse extends CActiveRecord
 	/**
 	 * @return array customized attribute labels (name => label)
 	 */
-	public function attributeLabels() {
+	public function attributeLabels() 
+	{
 		return array(
 				// column attributes
 				'user_id' => t('User ID'),
@@ -84,24 +89,21 @@ class UserCourse extends CActiveRecord
 		);
 	}
 
-	public function getSearchCriteria() {
-		$criteria = new CDbCriteria;
+	/**
+	 * Retrieves a list of models based on the current search/filter conditions.
+	 * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.
+	 */
+	public function search($config = array()) 
+	{
+		$criteria = new CDbCriteria($config);
 
 		$tableAlias = $this->getTableAlias();
 		$db = $this->getDbConnection();
 		$criteria->compare($db->quoteColumnName($tableAlias.'.user_id'), $this->user_id);
 		$criteria->compare($db->quoteColumnName($tableAlias.'.course_id'), $this->course_id);
-
-		return $criteria;
-	}
-
-	/**
-	 * Retrieves a list of models based on the current search/filter conditions.
-	 * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.
-	 */
-	public function search() {
+		
 		return new CActiveDataProvider($this, array(
-				'criteria' => $this->getSearchCriteria(),
+			'criteria' => $criteria,
 		));
 	}
 

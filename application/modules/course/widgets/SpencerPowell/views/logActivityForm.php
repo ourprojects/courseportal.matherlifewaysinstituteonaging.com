@@ -1,4 +1,4 @@
-<div id="<?php echo $this->getId(); ?>-activityLogForm" class="form">
+<div id="<?php echo $id; ?>-activityLogForm" class="form">
  	<h2 id="Activity_name">
 		<?php echo $Activity->name; ?>
 	</h2>
@@ -8,9 +8,9 @@
 	<?php $form = $this->beginWidget(
 				'CActiveForm',
 				array(
-					'id' => $this->getId().'-userActivityForm',
-					'actionPrefix' => $this->actionPrefix,
-					'action' => $this->actionPrefix.'logActivity',
+					'id' => $id.'-userActivityForm',
+					'actionPrefix' => $actionPrefix,
+					'action' => $actionPrefix.'logActivity',
 					'enableAjaxValidation' => true,
 					'enableClientValidation' => true,
 					'clientOptions' => array(
@@ -20,28 +20,28 @@
 								'if (!hasError) {'.
 									CHtml::ajax(array(
 										'type' => 'POST',
-										'url' => $this->getController()->createUrl($this->actionPrefix.'logActivity'),
+										'url' => $this->createUrl($actionPrefix.'logActivity'),
 										'cache' => false,
-										'data' => 'js:$("form#'.$this->getId().'-userActivityForm").serialize()',
-										'beforeSend' => 'function(){$("#'.$this->getId().'-userActivityForm").spUserActivityForm("loading", true);}',
+										'data' => 'js:$("form#'.$id.'-userActivityForm").serialize()',
+										'beforeSend' => 'function(){$("#'.$id.'-userActivityForm").spUserActivityForm("loading", true);}',
 										'success' => 'function(data){'.
 											'var $data = $.parseJSON(data);'.
-											'$.each($("form#'.$this->getId().'-userActivityForm").spUserActivityForm("dimensions"), function(value){'.
-												'var $grid = $("div#'.$this->getId().'-"+value+"-userActivityGrid");'.
+											'$.each($("form#'.$id.'-userActivityForm").spUserActivityForm("dimensions"), function(value){'.
+												'var $grid = $("div#'.$id.'-"+value+"-userActivityGrid");'.
 												'if($grid.length > 0){'.
 													'$grid.yiiGridView("update");'.
 												'}'.
 											'});'.
-											'var $form = $("div#'.$this->getId().'-activityLogForm");'.
+											'var $form = $("div#'.$id.'-activityLogForm");'.
 											'$.each($.parseJSON(data), function(attribute, value){'.
 												'$form.spUserActivityForm(attribute, value);'.
 											'});'.
 										'}',
 										'error' => 'function(data){'.
-											'$("form#'.$this->getId().'-userActivityForm").yiiactiveform("updateSummary", data);'.
+											'$("form#'.$id.'-userActivityForm").yiiactiveform("updateSummary", data);'.
 										'}',
 										'complete' => 'function(){'.
-											'$("#'.$this->getId().'-userActivityForm").spUserActivityForm("loading", false);'.
+											'$("#'.$id.'-userActivityForm").spUserActivityForm("loading", false);'.
 										'}',
 									)).
 									'return false;'.
@@ -97,5 +97,5 @@
 		<?php echo CHtml::submitButton('{t}Create{/t}'); ?>
 	</div>
 
-	<?php $this->endWidget($this->getId().'-userActivityForm'); ?>
+	<?php $this->endWidget($id.'-userActivityForm'); ?>
 </div>
