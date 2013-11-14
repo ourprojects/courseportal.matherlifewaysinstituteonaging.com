@@ -186,11 +186,8 @@ class SrbacUtilities
 
 			if($controllerPath === false)
 			{
-				Yii::log(
-					SrbacModule::t(
-						'Unable to extract controller actions. The controller path alias "{alias}" could not be found.',
-						array('{alias}' => $controllerPathAlias)
-					),
+				SrbacModule::log(
+					"Unable to extract controller actions. The controller path alias '$controllerPathAlias' could not be found.",
 					CLogger::LEVEL_WARNING
 				);
 				return false;
@@ -201,11 +198,8 @@ class SrbacUtilities
 			$controllerFileContents = @file_get_contents($controllerPath);
 			if($controllerFileContents === false)
 			{
-				Yii::log(
-					SrbacModule::t(
-						'Unable to extract controller actions. Unable to read controller file "{file}".',
-						array('{file}' => $controllerPath)
-					),
+				SrbacModule::log(
+					"Unable to extract controller actions. Unable to read controller file '$controllerPath'.",
 					CLogger::LEVEL_WARNING
 				);
 				return null;
@@ -215,11 +209,8 @@ class SrbacUtilities
 			
 			if(!isset($classNameMap[$controllerClassName]))
 			{
-				Yii::log(
-					SrbacModule::t(
-						'Unable to extract controller actions. The controller named "{controller}" could not be found in the file "{file}".',
-						array('{controller}' => $controllerClassName, '{file}' => $controllerPath)
-					),
+				SrbacModule::log(
+					"Unable to extract controller actions. The controller named '$controllerClassName' could not be found in the file '$controllerPath'.",
 					CLogger::LEVEL_WARNING
 				);
 				return null;
@@ -230,7 +221,7 @@ class SrbacUtilities
 			{
 				if(class_exists($classNameMap[$controllerClassName], false))
 				{
-					trigger_error('SRBAC controller class already exists.');
+					trigger_error('Controller class already exists.');
 				}
 				
 				$tempFile = Yii::app()->getRuntimePath().DIRECTORY_SEPARATOR.'srbac';
@@ -240,7 +231,7 @@ class SrbacUtilities
 				}
 				if(!is_dir($tempFile))
 				{
-					trigger_error('SRBAC bad runtime path. Runtime directory is not a directory or could not be created.');
+					trigger_error('Bad runtime path. Runtime directory is not a directory or could not be created.');
 				}
 				else
 				{
@@ -251,15 +242,19 @@ class SrbacUtilities
 				
 				if($tempFile === false)
 				{
-					trigger_error('SRBAC failed to create a controller temporary file in runtime path. Please check that this location is writable by the application.');
+					trigger_error('Failed to create a controller temporary file in runtime path. Please check that this location is writable by the application.');
 				}
 
 				file_put_contents($tempFile, $controllerFileContents);
 				chmod($tempFile, 0755);
 				
-				if((include $tempFile) === false || !class_exists($classNameMap[$controllerClassName], false))
+				if((include $tempFile) === false)
 				{
-					trigger_error('SRBAC failed to include generated temporary controller class.');
+					trigger_error('Failed to include generated temporary controller class file.');
+				}
+				else if(!class_exists($classNameMap[$controllerClassName], false))
+				{
+					trigger_error('Controller class could not be found after including generated controller class file.');
 				}
 				
 				unlink($tempFile);
@@ -269,13 +264,11 @@ class SrbacUtilities
 				
 				if(!$reflection->isSubclassOf('CController'))
 				{
-					Yii::log(
-						SrbacModule::t(
-							'Unable to extract controller actions. The class named "{controller}", in file "{file}" was determined not to be a subclass of type CController.',
-							array('{controller}' => $controllerClassName, '{file}' => $controllerPath)
-						),
-						CLogger::LEVEL_WARNING
+					SrbacModule::log(
+						"Unable to extract controller actions because the controller is not a controller... The class named '$controllerClassName', in file '$controllerPath' must be a subclass of type CController.",
+						CLogger::LEVEL_ERROR
 					);
+					restore_error_handler();
 					return null;
 				}
 				self::$_controllerActions[$controllerPathAlias] = self::getControllerActionsFromReflection($reflection);
@@ -288,12 +281,12 @@ class SrbacUtilities
 				{
 					unlink($tempFile);
 				}
-				Yii::log(
-					SrbacModule::t(
-						'An exception was thrown with message "{message}" while attempting to instantiate and extract the actions of the controller with class name "{controller}". An attempt to manually parse the controller as a string will be made.', 
-						array('{controller}' => $controllerClassName, '{message}' => $e->getMessage())
-					), 
-					CLogger::LEVEL_WARNING
+				SrbacModule::log(
+					"An exception was thrown in file {$e->getFile()}, at line {$e->getLine()}, while attempting to extract the actions from an instance of the controller named '{$controllerClassName}'." 
+					." An attempt to manually parse the controller as a string will be made."
+					." Exception message: '{$e->getMessage()}'"
+					." Exception trace: '{$e->getTraceAsString()}'", 
+					CLogger::LEVEL_ERROR
 				);
 				self::$_controllerActions[$controllerPathAlias] = self::getControllerActionsFromText($controllerFileContents, $classNameMap[$controllerClassName]);
 			}

@@ -46,6 +46,16 @@ class SrbacModule extends CWebModule
 	{
 		return Yii::t(self::ID, $message, $params, $source, $language);
 	}
+	
+	/**
+	 * Log something specific to Srbac module.
+	 *
+	 * @link YiiBase::log
+	 */
+	public static function log($message, $level = CLogger::LEVEL_INFO)
+	{
+		Yii::log($message, $level, self::ID);
+	}
 
 	/**
 	 * this method is called when the module is being created you may place code
