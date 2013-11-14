@@ -25,7 +25,7 @@ class SrbacAccessControlFilter extends CAccessControlFilter
 	 */
 	protected function preFilter($filterChain)
 	{
-		$role = array(preg_replace('/^(.+)Controller$/i', '$1', get_class($filterChain->controller)), $filterChain->action->getId());
+		$role = array(preg_replace('/^(.+)Controller$/i', '$1', get_class($filterChain->controller)), str_replace('.', '-', $filterChain->action->getId()));
 
 		for($module = $filterChain->controller->getModule(); $module !== null && $module !== Yii::app(); $module = $module->getParentModule())
 		{
