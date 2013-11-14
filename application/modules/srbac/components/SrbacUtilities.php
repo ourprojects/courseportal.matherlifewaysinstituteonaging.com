@@ -17,6 +17,8 @@ class SrbacUtilities
 	private static $_controllers;
 
 	private static $_controllerActions = array();
+	
+	private static $_providerActions = array();
 
 	public static function getSrbacModule()
 	{
@@ -190,7 +192,7 @@ class SrbacUtilities
 					"Unable to extract controller actions. The controller path alias '$controllerPathAlias' could not be found.",
 					CLogger::LEVEL_WARNING
 				);
-				return false;
+				return null;
 			}
 
 			$controllerClassName = str_ireplace('.php', '', basename($controllerPath));
@@ -221,7 +223,7 @@ class SrbacUtilities
 			{
 				if(class_exists($classNameMap[$controllerClassName], false))
 				{
-					trigger_error('Controller class already exists.');
+					trigger_error('Controller class still exists after an attempt was made to make class name unique.');
 				}
 				
 				$tempFile = Yii::app()->getRuntimePath().DIRECTORY_SEPARATOR.'srbac';
@@ -282,10 +284,11 @@ class SrbacUtilities
 					unlink($tempFile);
 				}
 				SrbacModule::log(
-					"An exception was thrown in file {$e->getFile()}, at line {$e->getLine()}, while attempting to extract the actions from an instance of the controller named '{$controllerClassName}'." 
-					." An attempt to manually parse the controller as a string will be made."
-					." Exception message: '{$e->getMessage()}'"
-					." Exception trace: '{$e->getTraceAsString()}'", 
+					"An exception was thrown while attempting to extract the actions from the instance of the controller class named '{$controllerClassName}'."
+					."\nFile: '{$e->getFile()}'"
+					."\nLine: '{$e->getLine()}'"
+					."\nMessage: '{$e->getMessage()}'"
+					."\nTrace: '{$e->getTraceAsString()}'",
 					CLogger::LEVEL_ERROR
 				);
 				self::$_controllerActions[$controllerPathAlias] = self::getControllerActionsFromText($controllerFileContents, $classNameMap[$controllerClassName]);
@@ -293,6 +296,123 @@ class SrbacUtilities
 			restore_error_handler();
 		}
 		return self::$_controllerActions[$controllerPathAlias];
+	}
+	
+	public static function getProviderActions($providerPathAlias)
+	{
+		if(!isset(self::$_providerActions[$providerPathAlias]))
+		{
+			$providerPath = Yii::getPathOfAlias($providerPathAlias);
+		
+			if($providerPath === false)
+			{
+				SrbacModule::log(
+					"Unable to extract provider actions. The provider path alias '$providerPathAlias' was invalid.",
+					CLogger::LEVEL_WARNING
+				);
+				return null;
+			}
+		
+			$providerClassName = basename($providerPath);
+		
+			$providerFileContents = @file_get_contents($providerPath.'.php');
+			if($providerFileContents === false)
+			{
+				SrbacModule::log(
+					"Unable to extract provider actions. Unable to read provider file '$providerPath'.",
+					CLogger::LEVEL_WARNING
+				);
+				return null;
+			}
+				
+			$classNameMap = self::ensureUniqueClassNames($providerFileContents);
+				
+			if(!isset($classNameMap[$providerClassName]))
+			{
+				SrbacModule::log(
+					"Unable to extract provider actions. The provider named '$providerClassName' could not be found in the file '$providerPath'.",
+					CLogger::LEVEL_WARNING
+				);
+				return null;
+			}
+				
+			set_error_handler(array(__CLASS__, 'handleErrorWithException'));
+			try
+			{
+				if(class_exists($classNameMap[$providerClassName], false))
+				{
+					trigger_error('Provider class still exists after an attempt was made to make the class name unique.');
+				}
+		
+				$tempFile = Yii::app()->getRuntimePath().DIRECTORY_SEPARATOR.'srbac';
+				if(!file_exists($tempFile))
+				{
+					mkdir($tempFile, 0755);
+				}
+				if(!is_dir($tempFile))
+				{
+					trigger_error('Bad runtime path. Runtime directory is not a directory or could not be created.');
+				}
+				else
+				{
+					chmod($tempFile, 0755);
+				}
+		
+				$tempFile = tempnam($tempFile, 'tempProvider_');
+		
+				if($tempFile === false)
+				{
+					trigger_error('Failed to create a provider temporary file in runtime path. Please check that this location is writable by the application.');
+				}
+		
+				file_put_contents($tempFile, $providerFileContents);
+				chmod($tempFile, 0755);
+		
+				if((include $tempFile) === false)
+				{
+					trigger_error('Failed to include generated temporary provider class file.');
+				}
+				else if(!class_exists($classNameMap[$providerClassName], false))
+				{
+					trigger_error('Provider class could not be found after including generated provider class file.');
+				}
+		
+				unlink($tempFile);
+				$tempFile = null;
+		
+				$reflection = new ReflectionClass($classNameMap[$providerClassName]);
+		
+				$actionsMethodReflection = $reflection->getMethod('actions');
+				if(!$actionsMethodReflection->isStatic())
+				{
+					trigger_error("Unable to extract provider '$providerClassName' actions because the provider's actions method is not static.");
+				}
+				else if(!$actionsMethodReflection->isPublic())
+				{
+					trigger_error("Unable to extract provider '$providerClassName' actions because the provider's actions method is not public.");
+				}
+				self::$_providerActions[$providerPathAlias] = self::_processActions($actionsMethodReflection->invoke(null));
+			}
+			catch(Exception $e)
+			{
+				restore_error_handler();
+				if(isset($tempFile) && is_file($tempFile))
+				{
+					unlink($tempFile);
+				}
+				SrbacModule::log(
+					"An exception was thrown while attempting to extract the actions from the provider named '{$providerClassName}'."
+					."\nFile: '{$e->getFile()}'"
+					."\nLine: '{$e->getLine()}'"
+					."\nMessage: '{$e->getMessage()}'"
+					."\nTrace: '{$e->getTraceAsString()}'",
+					CLogger::LEVEL_ERROR
+				);
+				return null;
+			}
+			restore_error_handler();
+		}
+		return self::$_providerActions[$providerPathAlias];
 	}
 	
 	public static function handleErrorWithException($errno, $errstr, $errfile, $errline, array $errcontext)
@@ -351,6 +471,7 @@ class SrbacUtilities
 
 	public static function getControllerActionsFromReflection($reflection)
 	{
+		$actions = array();
 		foreach($reflection->getMethods(ReflectionMethod::IS_PUBLIC) as $method)
 		{
 			if(preg_match('/^action(\w+)$/i', $method->getName(), $match) && strcasecmp($match[1], 's'))
@@ -362,17 +483,49 @@ class SrbacUtilities
 		if($reflection->isInstantiable())
 		{
 			$controllerObject = $reflection->newInstance($reflection->getName());
-			foreach($controllerObject->actions() as $action => $config)
-			{
-				$loweredAction = strtolower($action);
-				if(!isset($actions[$loweredAction]))
-				{
-					$actions[$loweredAction] = $action;
-				}
-			}
+			$actions = self::_processActions($controllerObject->actions(), $actions);
 		}
 
 		return array_values($actions);
+	}
+	
+	protected static function _processActions($newActions, $actions = array())
+	{
+		foreach($newActions as $action => $config)
+		{
+			if(substr($action, -1) === '.') // Check if we're dealing with an action provider.
+			{
+				if(is_array($config))
+				{
+					if(!isset($config['class']))
+					{
+						SrbacModule::log(
+							"Invalid action provider configuration found, no class defined. Skipping action provider.",
+							CLogger::LEVEL_WARNING
+						);
+						continue;
+					}
+					$providerActions = self::getProviderActions($config['class']);
+				}
+				else
+				{
+					$providerActions = self::getProviderActions($config);
+				}
+				if($providerActions !== null)
+				{
+					foreach($providerActions as $pAction)
+					{
+						$pAction = substr($action, 0, strlen($action) - 1).'-'.$pAction;
+						$actions[strtolower($pAction)] = $pAction;
+					}
+				}
+			}
+			else // Just add the action if it isn't a provider
+			{
+				$actions[strtolower($action)] = $action;
+			}
+		}
+		return $actions;
 	}
 	
 	public static function getControllerActionsFromText($controllerText, $className)
