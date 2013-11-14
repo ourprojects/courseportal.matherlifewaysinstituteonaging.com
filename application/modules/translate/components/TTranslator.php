@@ -615,14 +615,12 @@ class TTranslator extends CApplicationComponent
 			{
 				throw new CException(TranslateModule::t("Failed to acquire a lock on the translation syncronization lock file '{path}'.", array('{path}' => $this->getTranslateSyncLockFile())));
 			}
-			$this->_translate($category, $message, $language, $source, $useTransaction);
+			$translation = $this->_translate($category, $message, $language, $source, $useTransaction);
 			flock($fh, LOCK_UN);
 			fclose($fh);
+			return $translation;
 		}
-		else
-		{
-			$this->_translate($category, $message, $language, $source, $useTransaction);
-		}
+		return $this->_translate($category, $message, $language, $source, $useTransaction);
 	}
 	
 	/**
@@ -674,24 +672,27 @@ class TTranslator extends CApplicationComponent
 					{
 						if($this->autoTranslate)
 						{
-							$translation['translation'] = $this->googleTranslate($message, $language, $sourceLanguage);
-
-							if($translation['translation'] !== false)
+							try 
 							{
-								$translation['translation'] = trim($translation['translation'][0]);
-									
-								if($source->addTranslation($translation['id'], $language, $translation['translation'], true) !== null)
+								$translation['translation'] = $this->googleTranslate($message, $language, $sourceLanguage);
+								
+								if($translation['translation'] !== false)
 								{
-									$message = &$translation['translation'];
+									$message = trim($translation['translation']);
+									if($source->addTranslation($translation['id'], $language, $message, true) === null)
+									{
+										throw new CException("Translation '$message' could not be added to the message source");
+									}
 								}
 								else
 								{
-									throw new CException("Translation '{$translation['translation']}' could not be added to the message source");
+									Yii::log("Message '$message' could not be translated to '$language' by Google translate.", CLogger::LEVEL_ERROR, TranslateModule::ID);
+									$this->addMissingTranslation($translation['id'], $category, $message, $language);
 								}
 							}
-							else
+							catch(CharacterLimitExceededException $clee)
 							{
-								Yii::log("Message '$message' could not be translated to '$language' by Google translate.", CLogger::LEVEL_ERROR, TranslateModule::ID);
+								Yii::log($clee->getMessage(), CLogger::LEVEL_ERROR, TranslateModule::ID);
 								$this->addMissingTranslation($translation['id'], $category, $message, $language);
 							}
 						}
@@ -703,7 +704,7 @@ class TTranslator extends CApplicationComponent
 					}
 					else
 					{
-						$message = &$translation['translation'];
+						$message = $translation['translation'];
 					}
 					if(isset($transaction))
 					{
@@ -746,7 +747,7 @@ class TTranslator extends CApplicationComponent
 	 * if an array then the message will be translated into each language and an associative array of translations in the form of language=>translation will be returned.
 	 * @param mixed $sourceLanguage language that the message is written in,
 	 * if null it will use the application source language
-	 * @return array translated messages
+	 * @return string translated message
 	 */
 	public function googleTranslate(&$message, $targetLanguage = null, $sourceLanguage = null)
 	{
@@ -767,145 +768,46 @@ class TTranslator extends CApplicationComponent
 
 		if($targetLanguage === $sourceLanguage)
 		{
-			throw new CException(TranslateModule::t('targetLanguage must be different than sourceLanguage'));
+			return strval($message);
 		}
 
-		if(is_array($message))
+		$msg = strval($message);
+		if(strlen($msg) > self::GOOGLE_TRANSLATE_MAX_CHARS)
 		{
-			$translated = array();
-			$messageChunk = array();
-			$messageLength = 0;
-			foreach($message as $m)
-			{
-				$m = strval($m);
-				preg_match_all('/\{(?:.*?)\}/s', $m, $yiiParams);
-				$yiiParams = $yiiParams[0];
-				$escapedYiiParams = array();
-				foreach($yiiParams as $key => &$match)
-				{
-					$escapedYiiParams[$key] = "<span class='notranslate'>:mpt$key</span>";
-				}
-				
-				$m = str_replace($yiiParams, $escapedYiiParams, $m);
-				
-				$messageLength += strlen($m);
-				if($messageLength > self::GOOGLE_TRANSLATE_MAX_CHARS)
-				{
-					if(empty($messageChunk))
-					{
-						$this->_throwCharLimitException($messageLength, self::GOOGLE_TRANSLATE_MAX_CHARS);
-					}
-
-					$query = $this->_googleTranslate($messageChunk, $targetLanguage, $sourceLanguage);
-					if($query === false)
-					{
-						return false;
-					}
-					$query[0] = str_replace($escapedYiiParams, $yiiParams, $query[0]);
-					$translated = CMap::mergeArray($translated, $query);
-
-					$messageLength = 0;
-					$messageChunk = array();
-				}
-				else
-				{
-					$messageChunk[] = $m;
-				}
-			}
-
-			if(!empty($messageChunk))
-			{
-				$query = $this->_googleTranslate($messageChunk, $targetLanguage, $sourceLanguage);
-				if($query === false)
-				{
-					return false;
-				}
-				$query[0] = str_replace($escapedYiiParams, $yiiParams, $query[0]);
-				$translated = CMap::mergeArray($translated, $query);
-			}
-
+			throw new CharacterLimitExceededException(strlen($msg), self::GOOGLE_TRANSLATE_MAX_CHARS);
 		}
-		else
+
+		preg_match_all('/\{(?:.*?)\}/s', $msg, $yiiParams);
+		$yiiParams = $yiiParams[0];
+		$escapedYiiParams = array();
+		foreach($yiiParams as $key => &$match)
 		{
-			$msg = strval($message);
-			if(strlen($msg) > self::GOOGLE_TRANSLATE_MAX_CHARS)
-			{
-				$this->_throwCharLimitException(strlen($msg), self::GOOGLE_TRANSLATE_MAX_CHARS);
-			}
-
-			preg_match_all('/\{(?:.*?)\}/s', $msg, $yiiParams);
-			$yiiParams = $yiiParams[0];
-			$escapedYiiParams = array();
-			foreach($yiiParams as $key => &$match)
-			{
-				$escapedYiiParams[$key] = "<span class='notranslate'>:mpt$key</span>";
-			}
-			
-			$msg = str_replace($yiiParams, $escapedYiiParams, $msg);
-
-			$translated = $this->_googleTranslate($msg, $targetLanguage, $sourceLanguage);
-			
-			if($translated !== false)
-			{
-				$translated[0] = str_replace($escapedYiiParams, $yiiParams, $translated[0]);
-			}
+			$escapedYiiParams[$key] = "<span class='notranslate'>:mpt$key</span>";
 		}
 		
-		return $translated;
-	}
+		$msg = str_replace($yiiParams, $escapedYiiParams, $msg);
 
-	/**
-	 * Throws an exception to indicate the maximum number of characters allowed for a Google API request was exceeded.
-	 *
-	 * @param integer $charsInRequest The number of cahracters in the request
-	 * @param integer $maxChars The maximum number of characters allowed in a request
-	 * @throws CException An exception indicating the maximum number of characters allowed for a Google API request was exceeded.
-	 */
-	protected function _throwCharLimitException($charsInRequest, $maxChars)
-	{
-		throw new CException(TranslateModule::t(
-				'The message requested to be translated is {messageLength} characters long. A maximum of {characters} characters is allowed.',
-				array('{characters}' => $maxChars, '{messageLength}' => $charsInRequest)));
-	}
+		$query = $this->queryGoogle(array('q' => $msg, 'source' => $sourceLanguage, 'target' => $targetLanguage));
 
-	protected function _googleTranslate(&$messages, &$targetLanguage = null, &$sourceLanguage = null)
-	{
-		if(is_array($targetLanguage))
+		if($query === false)
 		{
-			$translated = array();
-			foreach($targetLanguage as $language)
-			{
-				$language = strval($language);
-				$query = $this->queryGoogle(array('q' => $messages, 'source' => $sourceLanguage, 'target' => $language));
-
-				if($query === false)
-				{
-					$translated[$language] = false;
-				}
-				else
-				{
-					foreach($query['translations'] as $translation)
-						$translated[$language][] = $translation['translatedText'];
-				}
-			}
+			return false;
 		}
-		else
+		
+		if(isset($query['translatedText']))
 		{
-			$query = $this->queryGoogle(array('q' => $messages, 'source' => $sourceLanguage, 'target' => $targetLanguage));
-
-			if($query === false)
-			{
-				$translated = false;
-			}
-			else
-			{
-				$translated = array();
-				foreach($query['translations'] as $translation)
-					$translated[] = $translation['translatedText'];
-			}
+			$msg = $query['translatedText'];
+		}
+		else if(isset($query['translations']))
+		{
+			$msg = $query['translations'][0]['translatedText'];
+		}
+		else 
+		{
+			return false;
 		}
 
-		return $translated;
+		return str_replace($escapedYiiParams, $yiiParams, $msg);
 	}
 
 	/**
@@ -919,7 +821,9 @@ class TTranslator extends CApplicationComponent
 		if(!isset($args['key']))
 		{
 			if(empty($this->googleApiKey))
+			{
 				throw new CException(TranslateModule::t('You must provide your google api key in option googleApiKey'));
+			}
 			$args['key'] = $this->googleApiKey;
 		}
 
@@ -1268,4 +1172,19 @@ class TTranslator extends CApplicationComponent
 		
 	}
 
+}
+
+class CharacterLimitExceededException extends CException
+{
+	
+	public function __construct($charCount, $maxAllowed)
+	{
+		parent::__construct(
+			TranslateModule::t(
+				'The message requested to be translated is {messageLength} characters long. A maximum of {characters} characters is allowed.',
+				array('{characters}' => $maxAllowed, '{messageLength}' => $charCount)
+			)
+		);
+	}
+	
 }
