@@ -155,8 +155,28 @@ class TranslateModule extends CWebModule
 	 */
 	public static function isInstalled()
 	{
-		$translator = self::translator();
-		return $translator->getMessageSourceComponent()->getIsInstalled() && $translator->getViewSourceComponent()->getIsInstalled();
+		try
+		{
+			$translator = TranslateModule::translator();
+		}
+		catch(Exception $e){}
+		try
+		{
+			if(isset($translator))
+			{
+				$messageSource = $translator->getMessageSourceComponent();
+			}
+		}
+		catch(Exception $e){}
+		try
+		{
+			if(isset($translator))
+			{
+				$viewSource = $translator->getViewSourceComponent();
+			}
+		}
+		catch(Exception $e){}
+		return isset($messageSource) && $messageSource->getIsInstalled() && isset($viewSource) && $viewSource->getIsInstalled();
 	}
 	
 	/**

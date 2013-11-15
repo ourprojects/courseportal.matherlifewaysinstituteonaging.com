@@ -115,5 +115,36 @@ class TranslateController extends TController
 	{
 		$this->render('index');
 	}
+	
+	public function actionInstall($overwrite = false)
+	{
+		if(is_numeric($overwrite))
+		{
+			$overwrite = intval($overwrite) > 0;
+		}
+		elseif(is_string($overwrite))
+		{
+			$overwrite = strcasecmp('true', $overwrite) === 0;
+		}
+		elseif(!is_bool($overwrite))
+		{
+			$overwrite = false;
+		}
+		switch(TranslateModule::install($overwrite))
+		{
+			case TranslateModule::ERROR:
+				Yii::app()->getUser()->setFlash('message', TranslateModule::t('An error ocurred while attempting to install the necessary Translation System system.'));
+				break;
+			case TranslateModule::SUCCESS:
+				Yii::app()->getUser()->setFlash('message', TranslateModule::t('The Translation System system has been succesfully installed.'));
+				break;
+			case TranslateModule::OVERWRITE:
+				Yii::app()->getUser()->setFlash('message', TranslateModule::t('Unable to install Translation System system, a previous installation already exists. If you would like to re-install the system anyways please confirm and try again.'));
+				break;
+			default:
+				Yii::app()->getUser()->setFlash('message', TranslateModule::t('Received an unknown result from attempting to install the Translation System system.'));
+				break;
+		}
+	}
 
 }

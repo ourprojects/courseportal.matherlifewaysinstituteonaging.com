@@ -1,26 +1,44 @@
 <?php
 Yii::app()->getClientScript()->registerCssFile($this->getStylesUrl('index.css'));
+$error = false;
 try
 {
 	$translator = TranslateModule::translator();
 }
-catch(Exception $e){}
+catch(Exception $e)
+{
+	$error = true;
+}
 try
 {
 	if(isset($translator))
 	{
 		$messageSource = $translator->getMessageSourceComponent();
 	}
+	if(isset($messageSource))
+	{
+		$error = !$messageSource->getIsInstalled();
+	}
 }
-catch(Exception $e){}
+catch(Exception $e)
+{
+	$error = true;
+}
 try
 {
 	if(isset($translator))
 	{
 		$viewSource = $translator->getViewSourceComponent();
 	}
+	if(isset($viewSource))
+	{
+		$error = !$viewSource->getIsInstalled();
+	}
 }
-catch(Exception $e){}
+catch(Exception $e)
+{
+	$error = true;
+}
 ?>
 <h1>
 	<?php echo TranslateModule::t('Translation Management'); ?>
@@ -1241,6 +1259,64 @@ catch(Exception $e){}
 			</tr>
 			<?php endif; ?>
 			<?php endif; ?>
+			<tr>
+				<th colspan="2" class="center"><?php echo TranslateModule::t('Installation'); ?></th>
+			</tr>
+			<?php $installed = TranslateModule::isInstalled(); ?>
+			<tr>
+				<th class="right"><?php echo TranslateModule::t('Status:'); ?></th>
+				<td class="fill <?php echo $installed ? 'translateNoError' : 'translateError'; ?>"><?php echo $installed ? TranslateModule::t('Installed') : TranslateModule::t('Not Installed'); ?></td>
+			</tr>
+			<tr>
+				<th class="right"></th>
+				<td class="fill">
+				<?php
+				if($installed)
+				{
+					echo CHtml::ajaxButton(
+						'Re-install Translation System',
+						$this->createUrl('translate/install'),
+						array(
+							'type' => 'POST',
+							'data' => array('overwrite' => true),
+							'beforeSend' => 'function(){if(!confirm("'.TranslateModule::t('Re-installing translation system will clear all data! All translations will be lost! Are you sure you want to continue?').'")) return false;$("#reInstall").addClass("loading");}',
+							'complete' => 'function(data){location.reload()}',
+						),
+						array(
+							'id' => 'reInstall',
+							'disabled' => $error
+						)
+					);
+					?>
+					<p style="font-size:1.15em;font-weight:bold;color:red;">
+					<?php echo TranslateModule::t('Beware! Re-installing translation system will clear all data! All translations will be lost!'); ?>
+					</p>
+					<?php
+				}
+				else
+				{
+					if($error)
+					{
+						echo '<p style="font-size:1.15em;font-weight:bold;color:red;">'.TranslateModule::t('You must fix the errors listed above before translation system can be installed.').'</p>';
+					}
+					echo CHtml::ajaxButton(
+						'Install Translation System',
+						$this->createUrl('translate/install'),
+						array(
+							'type' => 'POST',
+							'data' => array('overwrite' => false),
+							'beforeSend' => 'function(){$("#install").addClass("loading");}',
+							'complete' => 'function(data){location.reload()}',
+						),
+						array(
+							'id' => 'install',
+							'disabled' => $error
+						)
+					);
+				}
+				?>
+				</td>
+			</tr>
 		</table>
 	</div>
 </div>
