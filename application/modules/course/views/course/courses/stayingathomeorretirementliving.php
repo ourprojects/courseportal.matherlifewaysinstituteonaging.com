@@ -5,7 +5,9 @@ $clientScript = Yii::app()->getClientScript();
 $clientScript->registerCssFile($this->getStylesUrl('course.css'));
 
 foreach (array(
-             '.lesson-1') as $lesson)
+             '.lesson-1',
+             '.lesson-2',
+             '.lesson-3') as $lesson)
     $this->widget(
         'ext.fancybox.EFancyBox',
         array('id' => $lesson,
@@ -669,7 +671,7 @@ AARP provides various articles of interest and resources for family caregivers. 
 <div id="lesson-1-slide-13" class="course-slide">
     <div class="content">
         <h2 class="flowers">{t}Activity – relocating scenarios{/t}</h2>
-        <hr/>       
+        <hr/>
 
         <p>{t}How can I convince my older parents to move to a retirement community? Here are two scenarios for you to
             respond to.{/t}</p>
@@ -806,7 +808,7 @@ AARP provides various articles of interest and resources for family caregivers. 
             they are no different from other residential enclaves except that there is an age restriction (over 55) or
             an age target. Depending on the community, residents are often able to bring in home care services or
             personal assistants for periods of time after an illness episode or hospitalization to aid in
-            recuperation.{/t}</p>      
+            recuperation.{/t}</p>
 
     </div>
     <div class="buttons">
