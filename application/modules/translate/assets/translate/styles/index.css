@@ -28,6 +28,14 @@
 	background-position: right;
 }
 
+.translateWarning {
+	color: #514721;
+	background: #FFD324;
+	background-image: url(warning.png);
+	background-repeat: no-repeat;
+	background-position: right;
+}
+
 .translateError {
 	color: #B00;
 	background: #FFD8D8;
@@ -54,6 +62,7 @@ table td.fill {
 	min-width:100%;
 	width:100%;
 	max-width:100%;
+	padding-right: 2em;
 }
 
 table td.break {

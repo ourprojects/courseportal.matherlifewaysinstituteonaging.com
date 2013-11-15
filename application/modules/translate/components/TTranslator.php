@@ -106,21 +106,6 @@ class TTranslator extends CApplicationComponent
 	 * @var string The name of the message source component to use
 	 */
 	public $messageSource = 'messages';
-	
-	/**
-	 * @var boolean If true a file lock will be used to ensure only 1 translation will be performed at a time across processes.
-	 */
-	public $synchronizeTranslations = true;
-	
-	/**
-	 * @var integer The permissions to set for the translate synchronization locking file.
-	 */
-	public $translateSyncLockFilePermissions = 0700;
-	
-	/**
-	 * @var string the translation synchronization locking file
-	 */
-	private $_translateSyncLockFile;
 
 	/**
 	 * @var TDbViewSource The view source component being used.
@@ -169,44 +154,47 @@ class TTranslator extends CApplicationComponent
 	}
 	
 	/**
+	 * Checks whether a setting's value is OK.
 	 *
-	 * @param string $path The path to the lock file to use for translation synchronization.
-	 * @throws CException Thrown if any errors occur setting up the translation synchronization locking file.
+	 * @param string $setting The name of the setting to be checked.
+	 * @return mixed True if the setting is OK. Otherwise an error message string stating why the setting is not OK should be returned.
 	 */
-	public function setTranslateSyncLockFile($path)
+	public function checkSetting($setting)
 	{
-		if(is_dir($pathDir = dirname($path)) === false)
+		try
 		{
-			if(file_exists($pathDir))
+			switch(strtolower($setting))
 			{
-				throw new CException(TranslateModule::t("The translation syncronization locking directory '{dir}' exists, but is not a directory. Your translation syncronization locking path may be corrupted.", array('{dir}' => $pathDir)));
+				case 'googleapikey':
+					return is_string($this->googleApiKey) && !empty($this->googleApiKey) ? true : 'Must be a non-empty string containing a valid Google Translate API key.';
+				case 'autotranslate':
+					return is_bool($this->autoTranslate) ? true : 'Must be a boolean value, true or false.';
+				case 'languagevarname':
+					return is_string($this->languageVarName) && $this->languageVarName !== '' ? true : 'Must be a non-empty string.';
+				case 'cookieexpire':
+					return is_int($this->cookieExpire) && $this->cookieExpire > -1 ? true : 'Must be a positive integer.';
+				case 'defineglobaltranslatefunction':
+					return is_bool($this->defineGlobalTranslateFunction) ? true : 'Must be a boolean value, true or false.';
+				case 'usetransaction':
+					return is_bool($this->useTransaction) ? true : 'Must be a boolean value, true or false.';
+				case 'genericlocale':
+					return is_bool($this->genericLocale) ? true : 'Must be a boolean value, true or false.';
+				case 'forceacceptedlanguage':
+					return is_bool($this->forceAcceptedLanguage) ? true : 'Must be a boolean value, true or false.';
+				case 'cacheduration':
+					return is_int($this->cacheDuration) ? true : 'Must be an integer.';
+				case 'viewsource':
+					return $this->getViewSourceComponent() !== null ? true : 'Component not found.';
+				case 'messagesource':
+					return $this->getMessageSourceComponent() !== null ? true : 'Component not found.';
+				default:
+					return "Unknown setting '$setting'";
 			}
-			else if(mkdir($pathDir, $this->translateSyncLockFilePermissions, true) === false)
-			{
-				throw new CException(TranslateModule::t("The translation syncronization locking directory '{dir}' does not exist and could not be created.", array('{dir}' => $pathDir)));
-			}
 		}
-		$fh = fopen($path, 'c');
-		if($fh === false)
+		catch(Exception $e)
 		{
-			throw new CException(TranslateModule::t("The translation syncronization lock file '{path}' could not be opened.", array('{path}' => $this->getTranslateSyncLockFile())));
+			return $e->getMessage();
 		}
-		fclose($fh);
-		@chmod($path, $this->translateSyncLockFilePermissions);
-		$this->_translateSyncLockFile = $path;
-	}
-	
-	/**
-	 *
-	 * @return string The path of the translation synchronization locking file.
-	 */
-	public function getTranslateSyncLockFile()
-	{
-		if(!isset($this->_translateSyncLockFile))
-		{
-			$this->setTranslateSyncLockFile(Yii::app()->getRuntimePath().DIRECTORY_SEPARATOR.TranslateModule::ID.DIRECTORY_SEPARATOR.'locks'.DIRECTORY_SEPARATOR.'translate.lock');
-		}
-		return $this->_translateSyncLockFile;
 	}
 
 	/**
@@ -557,6 +545,7 @@ class TTranslator extends CApplicationComponent
 			$this->_messageSource = Yii::app()->getComponent($this->messageSource);
 			if(!$this->_messageSource instanceof ITMessageSource)
 			{
+				$this->_messageSource = null;
 				throw new CException("The component '$this->messageSource' must be defined and implement type ITMessageSource.");
 			}
 		}
@@ -576,6 +565,7 @@ class TTranslator extends CApplicationComponent
 			$this->_viewSource = Yii::app()->getComponent($this->viewSource);
 			if(!$this->_viewSource instanceof TViewSource)
 			{
+				$this->_viewSource = null;
 				throw new CException("The component '$this->viewSource' must be defined and of type TViewSource.");
 			}
 		}
@@ -591,37 +581,6 @@ class TTranslator extends CApplicationComponent
 	{
 		$event->message = $this->translate($event->category, $event->message, $event->language, $event->sender, $this->useTransaction);
 	}
-
-	/**
-	 * Attempts to translate a message.
-	 *
-	 * @param string $category The category the message should be associated with
-	 * @param string $message The message to be translated
-	 * @param string $language The language the message should be translate to
-	 * @param bool $useTransaction If true a transaction will be used when updating the database entries for this category, message, language, translation.
-	 * @throws CException If the source message, source message category, language, or translation could not be added to the message source.
-	 * @return string The translation for the message or the message it self if either the translation failed or the target language was the same as source language.
-	 */
-	public function translate($category, $message, $language, $source, $useTransaction = true)
-	{
-		if($this->synchronizeTranslations)
-		{
-			$fh = fopen($this->getTranslateSyncLockFile(), 'c');
-			if($fh === false)
-			{
-				throw new CException(TranslateModule::t("The translation syncronization lock file '{path}' could not be opened.", array('{path}' => $this->getTranslateSyncLockFile())));
-			}
-			if(flock($fh, LOCK_EX) === false)
-			{
-				throw new CException(TranslateModule::t("Failed to acquire a lock on the translation syncronization lock file '{path}'.", array('{path}' => $this->getTranslateSyncLockFile())));
-			}
-			$translation = $this->_translate($category, $message, $language, $source, $useTransaction);
-			flock($fh, LOCK_UN);
-			fclose($fh);
-			return $translation;
-		}
-		return $this->_translate($category, $message, $language, $source, $useTransaction);
-	}
 	
 	/**
 	 * Attempts to translate a message.
@@ -634,7 +593,7 @@ class TTranslator extends CApplicationComponent
 	 * @throws CException If the source message, source message category, language, or translation could not be added to the message source.
 	 * @return string The translation for the message or the message it self if either the translation failed or the target language was the same as source language.
 	 */
-	private function _translate($category, $message, $language, $source, $useTransaction = true)
+	public function translate($category, $message, $language, $source, $useTransaction = true)
 	{
 		if(trim($message) !== '')
 		{

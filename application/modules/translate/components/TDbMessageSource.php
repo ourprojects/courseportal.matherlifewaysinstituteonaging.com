@@ -32,6 +32,21 @@ class TDbMessageSource extends CDbMessageSource implements ITMessageSource
 	 * @var boolean If true each call to the translate method will be profiled.
 	 */
 	public $enableProfiling = false;
+	
+	/**
+	 * @var boolean If true a file lock will be used to ensure only 1 missing translation event per request is fired at a time.
+	 */
+	public $synchronizeEvents = true;
+	
+	/**
+	 * @var integer The permissions to set for the translate synchronization locking file.
+	 */
+	public $eventSyncLockFilePermissions = 0700;
+	
+	/**
+	 * @var string the translation synchronization locking file
+	 */
+	private $_eventSyncLockFile;
 
 	/**
 	 * @var array Cached message translation in the format 'message' => 'translation'
@@ -47,6 +62,101 @@ class TDbMessageSource extends CDbMessageSource implements ITMessageSource
 	 * @var boolean Flag marking whether the data in the cache is stale.
 	 */
 	private $_cacheInvalidated = true;
+	
+	/**
+	 * Checks whether a setting's value is OK.
+	 *
+	 * @param string $setting The name of the setting to be checked.
+	 * @return mixed True if the setting is OK. Otherwise an error message string stating why the setting is not OK should be returned.
+	 */
+	public function checkSetting($setting)
+	{
+		try
+		{
+			switch(strtolower($setting))
+			{
+				case 'sourcemessagetable':
+					return $this->getDbConnection()->getSchema()->getTable($this->sourceMessageTable) !== null ? true : 'The table could not be found.';
+				case 'translatedmessagetable':
+					return $this->getDbConnection()->getSchema()->getTable($this->translatedMessageTable) !== null ? true : 'The table could not be found.';
+				case 'languagetable':
+					return $this->getDbConnection()->getSchema()->getTable($this->languageTable) !== null ? true : 'The table could not be found.';
+				case 'acceptedlanguagetable':
+					return $this->getDbConnection()->getSchema()->getTable($this->acceptedLanguageTable) !== null ? true : 'The table could not be found.';
+				case 'categorytable':
+					return $this->getDbConnection()->getSchema()->getTable($this->categoryTable) !== null ? true : 'The table could not be found.';
+				case 'categorymessagetable':
+					return $this->getDbConnection()->getSchema()->getTable($this->categoryMessageTable) !== null ? true : 'The table could not be found.';
+				case 'messagecategory':
+					return is_string($this->messageCategory) ? true : 'Must be a string.';
+				case 'enableprofiling':
+					return is_bool($this->enableProfiling) ? true : 'Must be a boolean value, true or false.';
+				case 'synchronizeevents':
+					return is_bool($this->synchronizeEvents) ? true : 'Must be a boolean value, true or false.';
+				case 'eventsynclockfilepermissions':
+					return is_int($this->eventSyncLockFilePermissions) ? true : 'Must be a valid integer representation of an octal file permission.';
+				case 'eventsynclockfile':
+					return file_exists($this->getEventSyncLockFile()) ? true : 'File not found.';
+				case 'connectionid':
+					return Yii::app()->getComponent($this->connectionID) !== null ? true : 'Component not found.';
+				case 'cachingduration':
+					return is_int($this->cachingDuration) ? true : 'Must be an integer';
+				case 'cacheid':
+					return $this->cacheID === false || $this->getCache() !== null ? true : 'Component not found.';
+				case 'forcetranslation':
+					return is_bool($this->forceTranslation) ? true : 'Must be a boolean value, true or false.';
+				case 'language':
+					return is_string($this->getLanguage()) ? true : 'Must be a valid language code string value.';
+				default:
+					return "Unknown setting '$setting'";
+			}
+		}
+		catch(Exception $e)
+		{
+			return $e->getMessage();
+		}
+	}
+	
+	/**
+	 *
+	 * @param string $path The path to the lock file to use for translation synchronization.
+	 * @throws CException Thrown if any errors occur setting up the translation synchronization locking file.
+	 */
+	public function setEventSyncLockFile($path)
+	{
+		if(is_dir($pathDir = dirname($path)) === false)
+		{
+			if(file_exists($pathDir))
+			{
+				throw new CException(TranslateModule::t("The translation syncronization locking directory '{dir}' exists, but is not a directory. Your translation syncronization locking path may be corrupted.", array('{dir}' => $pathDir)));
+			}
+			else if(mkdir($pathDir, $this->eventSyncLockFilePermissions, true) === false)
+			{
+				throw new CException(TranslateModule::t("The translation syncronization locking directory '{dir}' does not exist and could not be created.", array('{dir}' => $pathDir)));
+			}
+		}
+		$fh = fopen($path, 'c');
+		if($fh === false)
+		{
+			throw new CException(TranslateModule::t("The translation syncronization lock file '{path}' could not be opened.", array('{path}' => $this->getEventSyncLockFile())));
+		}
+		fclose($fh);
+		@chmod($path, $this->eventSyncLockFilePermissions);
+		$this->_eventSyncLockFile = $path;
+	}
+	
+	/**
+	 *
+	 * @return string The path of the translation synchronization locking file.
+	 */
+	public function getEventSyncLockFile()
+	{
+		if(!isset($this->_eventSyncLockFile))
+		{
+			$this->setEventSyncLockFile(Yii::app()->getRuntimePath().DIRECTORY_SEPARATOR.TranslateModule::ID.DIRECTORY_SEPARATOR.'locks'.DIRECTORY_SEPARATOR.'translate.lock');
+		}
+		return $this->_eventSyncLockFile;
+	}
 	
 	/**
 	 * (non-PHPdoc)
@@ -537,7 +647,25 @@ class TDbMessageSource extends CDbMessageSource implements ITMessageSource
 			$category = $this->messageCategory;
 		}
 
-		$translation = parent::translate($category, $message, $language);
+		if($this->synchronizeEvents)
+		{
+			$fh = fopen($this->getEventSyncLockFile(), 'c');
+			if($fh === false)
+			{
+				throw new CException(TranslateModule::t("The translation syncronization lock file '{path}' could not be opened.", array('{path}' => $this->getEventSyncLockFile())));
+			}
+			if(flock($fh, LOCK_EX) === false)
+			{
+				throw new CException(TranslateModule::t("Failed to acquire a lock on the translation syncronization lock file '{path}'.", array('{path}' => $this->getEventSyncLockFile())));
+			}
+			$translation = parent::translate($category, $message, $language);
+			flock($fh, LOCK_UN);
+			fclose($fh);
+		}
+		else
+		{
+			$translation = parent::translate($category, $message, $language);
+		}
 
 		if($this->enableProfiling)
 		{

@@ -9,6 +9,14 @@ interface ITMessageSource extends IApplicationComponent
 	public function getIsInstalled();
 	
 	/**
+	 * Checks whether a setting's value is OK.
+	 * 
+	 * @param string $setting The name of the setting to be checked.
+	 * @return mixed True if the setting is OK. Otherwise an error message string stating why the setting is not OK should be returned.
+	 */
+	public function checkSetting($setting);
+	
+	/**
 	 * Performs the installation of this component and returns the status.
 	 * 
 	 * @param boolean reinstall If true and the tables are already installed they will be dropped and recreated.

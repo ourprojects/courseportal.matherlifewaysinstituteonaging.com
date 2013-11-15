@@ -63,6 +63,46 @@ class TDbViewSource extends TViewSource
 	private $_db;
 	
 	/**
+	 * Checks whether a setting's value is OK.
+	 *
+	 * @param string $setting The name of the setting to be checked.
+	 * @return mixed True if the setting is OK. Otherwise an error message string stating why the setting is not OK should be returned.
+	 */
+	public function checkSetting($setting)
+	{
+		try
+		{
+			switch(strtolower($setting))
+			{
+				case 'routetable':
+					return $this->getDbConnection()->getSchema()->getTable($this->routeTable) !== null ? true : 'The table could not be found.';
+				case 'routeviewtable':
+					return $this->getDbConnection()->getSchema()->getTable($this->routeViewTable) !== null ? true : 'The table could not be found.';
+				case 'viewsourcetable':
+					return $this->getDbConnection()->getSchema()->getTable($this->viewMessageTable) !== null ? true : 'The table could not be found.';
+				case 'viewtable':
+					return $this->getDbConnection()->getSchema()->getTable($this->viewSourceTable) !== null ? true : 'The table could not be found.';
+				case 'viewmessagetable':
+					return $this->getDbConnection()->getSchema()->getTable($this->viewTable) !== null ? true : 'The table could not be found.';
+				case 'databasetimestampformat':
+					return is_string($this->databaseTimestampFormat) && @date($this->databaseTimestampFormat) !== false ? true : 'This must be a valid PHP date format string.';
+				case 'connectionid':
+					return Yii::app()->getComponent($this->connectionID) !== null ? true : 'Component not found.';
+				case 'cachingduration':
+					return is_int($this->cachingDuration) ? true : 'Must be an integer';
+				case 'cacheid':
+					return $this->cacheID === false || $this->getCache() !== null ? true : 'Component not found.';
+				default:
+					return parent::checkSetting($setting);
+			}
+		}
+		catch(Exception $e)
+		{
+			return $e->getMessage();
+		}
+	}
+	
+	/**
 	 * (non-PHPdoc)
 	 * @see TViewSource::getIsInstalled()
 	 */

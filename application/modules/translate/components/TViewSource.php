@@ -144,6 +144,36 @@ abstract class TViewSource extends CApplicationComponent
 	abstract public function updateView($viewId, $languageId, $created, $path);
 	
 	/**
+	 * Checks whether a setting's value is OK.
+	 *
+	 * @param string $setting The name of the setting to be checked.
+	 * @return mixed True if the setting is OK. Otherwise an error message string stating why the setting is not OK should be returned.
+	 */
+	public function checkSetting($setting)
+	{
+		try
+		{
+			switch(strtolower($setting))
+			{
+				case 'enableprofiling':
+					return is_bool($this->enableProfiling) ? true : 'Must be a boolean value, true or false.';
+				case 'synchronizeevents':
+					return is_bool($this->synchronizeEvents) ? true : 'Must be a boolean value, true or false.';
+				case 'eventsynclockfilepermissions':
+					return is_int($this->eventSyncLockFilePermissions) ? true : 'Must be a valid integer representation of an octal file permission.';
+				case 'eventsynclockfile':
+					return file_exists($this->getEventSyncLockFile()) ? true : 'File not found.';
+				default:
+					return "Unknown setting '$setting'";
+			}
+		}
+		catch(Exception $e)
+		{
+			return $e->getMessage();
+		}
+	}
+	
+	/**
 	 * 
 	 * @param string $path The path to the lock file to use for event synchronization.
 	 * @throws CException Thrown if any errors occur setting up the event synchronization locking file.

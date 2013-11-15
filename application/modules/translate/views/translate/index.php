@@ -1,5 +1,26 @@
 <?php
 Yii::app()->getClientScript()->registerCssFile($this->getStylesUrl('index.css'));
+try
+{
+	$translator = TranslateModule::translator();
+}
+catch(Exception $e){}
+try
+{
+	if(isset($translator))
+	{
+		$messageSource = $translator->getMessageSourceComponent();
+	}
+}
+catch(Exception $e){}
+try
+{
+	if(isset($translator))
+	{
+		$viewSource = $translator->getViewSourceComponent();
+	}
+}
+catch(Exception $e){}
 ?>
 <h1>
 	<?php echo TranslateModule::t('Translation Management'); ?>
@@ -10,6 +31,7 @@ Yii::app()->getClientScript()->registerCssFile($this->getStylesUrl('index.css'))
 			<?php echo TranslateModule::t('Statistics'); ?>
 		</h3>
 		<table id="statistics">
+			<?php if(isset($messageSource) && $messageSource->getIsInstalled()): ?>
 			<tr>
 				<th>
 					<?php echo TranslateModule::t('Messages:');?>
@@ -46,6 +68,7 @@ Yii::app()->getClientScript()->registerCssFile($this->getStylesUrl('index.css'))
 					<?php echo Message::model()->count() . '&nbsp;' . TranslateModule::t('Total'); ?>
 				</td>
 			</tr>
+			<?php if(isset($viewSource) && $viewSource->getIsInstalled()): ?>
 			<tr>
 				<th></th>
 				<td>
@@ -58,9 +81,25 @@ Yii::app()->getClientScript()->registerCssFile($this->getStylesUrl('index.css'))
 					<?php echo Route::model()->count() . '&nbsp;' . TranslateModule::t('Routes'); ?>
 				</td>
 			</tr>
+			<?php else: ?>
+			<tr>
+				<th></th>
+				<td>
+					<?php echo TranslateModule::t('View statistics not available. The view source is not installed.'); ?>
+				</td>
+			</tr>
+			<?php endif; ?>
+			<?php else: ?>
+			<tr>
+				<th></th>
+				<td>
+					<?php echo TranslateModule::t('Not available. The system is not installed.'); ?>
+				</td>
+			</tr>
+			<?php endif; ?>
 		</table>
 	</div>
-	<?php if(TranslateModule::translator()->canUseGoogleTranslate()): ?>
+	<?php if(isset($translator) && $translator->canUseGoogleTranslate()): ?>
 	<div class="box-sidebar one">
 		<h3>
 			<?php echo TranslateModule::t('Google Translate'); ?>
@@ -78,6 +117,7 @@ Yii::app()->getClientScript()->registerCssFile($this->getStylesUrl('index.css'))
 	</h2>
 	<div class="box-white">
 		<ul id="configOptions">
+		<?php if(isset($messageSource) && $messageSource->getIsInstalled()): ?>
 			<li>
 				<?php echo CHtml::link(TranslateModule::t('Message Categories'), $this->createUrl('category/')); ?>
 			</li>
@@ -90,6 +130,7 @@ Yii::app()->getClientScript()->registerCssFile($this->getStylesUrl('index.css'))
 			<li>
 				<?php echo CHtml::link(TranslateModule::t('Languages'), $this->createUrl('language/')); ?>
 			</li>
+		<?php if(isset($viewSource) && $viewSource->getIsInstalled()): ?>
 			<li>
 				<?php echo CHtml::link(TranslateModule::t('Routes'), $this->createUrl('route/')); ?>
 			</li>
@@ -99,69 +140,32 @@ Yii::app()->getClientScript()->registerCssFile($this->getStylesUrl('index.css'))
 			<li>
 				<?php echo CHtml::link(TranslateModule::t('Translated Views'), $this->createUrl('view/')); ?>
 			</li>
+		<?php else: ?>
+			<li><?php echo TranslateModule::t('View components not available. View source is not installed.'); ?></li>
+		<?php endif; ?>
+		<?php else: ?>
+			<li><?php echo TranslateModule::t('Not available. The system is not installed.'); ?></li>
+		<?php endif; ?>
 		</ul>
 	</div>
 	<h2 class="flowers">
 		<?php echo TranslateModule::t('System Status'); ?>
 	</h2>
-	<?php 
-	$translator = TranslateModule::translator();
-	$messageSource = $translator->getMessageSourceComponent();
-	$viewSource = $translator->getViewSourceComponent();
-	?>
 	<div id="systemStatus" class="box-white">
 		<table class="systemGrid">
-			<tr>
-				<th colspan="2" class="center"><?php echo TranslateModule::t('Google Translate'); ?></th>
-			</tr>
-			<tr>
-				<th class="right"><?php echo TranslateModule::t('Configured:'); ?></th>
-				<td class="fill translateNoError"><?php echo $translator->canUseGoogleTranslate() ? TranslateModule::t('Yes') : TranslateModule::t('No'); ?></td>
-			</tr>
-			<tr>
-				<th class="right"><?php echo TranslateModule::t('API Key:'); ?></th>
-				<td class="fill <?php echo 'translateNoError'; ?>">
-					<table class="attributesGrid">
-						<tr>
-							<th class="right"><?php echo TranslateModule::t('Attribute:'); ?></th>
-							<td class="fill">googleApiKey</td>
-						</tr>
-						<tr>
-							<th class="right"><?php echo TranslateModule::t('Value:'); ?></th>
-							<td class="fill break"><?php echo $translator->googleApiKey; ?></td>
-						</tr>
-						<tr>
-							<th class="right"><?php echo TranslateModule::t('Description:'); ?></th>
-							<td class="fill break"><?php echo TranslateModule::t('The API key to use for translating messages with using Google translate.'); ?></td>
-						</tr>
-					</table>
-				</td>
-			</tr>
-			<tr>
-				<th class="right"><?php echo TranslateModule::t('Enabled:'); ?></th>
-				<td class="fill <?php echo 'translateNoError'; ?>">
-					<table class="attributesGrid">
-						<tr>
-							<th class="right"><?php echo TranslateModule::t('Attribute:'); ?></th>
-							<td class="fill">autoTranslate</td>
-						</tr>
-						<tr>
-							<th class="right"><?php echo TranslateModule::t('Value:'); ?></th>
-							<td class="fill"><?php echo $translator->autoTranslate ? TranslateModule::t('Yes') : TranslateModule::t('No'); ?></td>
-						</tr>
-						<tr>
-							<th class="right"><?php echo TranslateModule::t('Description:'); ?></th>
-							<td class="fill break"><?php echo TranslateModule::t('Enables or disables automatic translations using Google translate.'); ?></td>
-						</tr>
-					</table>
-				</td>
-			</tr>
+			<!-- General System Information -->
 			<tr>
 				<th colspan="2" class="center"><?php echo TranslateModule::t('General'); ?></th>
 			</tr>
+			<?php if(!isset($translator)): ?>
+			<tr>
+				<th colspan="2" class="fill translateError"><?php echo TranslateModule::t('The translation component named "{name}" could not be found. Please check your application\'s configuration.', array('{name}' => TranslateModule::$translatorComponentName)); ?></th>
+			</tr>
+			<?php else: ?>
 			<tr>
 				<th class="right"><?php echo TranslateModule::t('Language Variable Name:'); ?></th>
-				<td class="fill <?php echo 'translateNoError'; ?>">
+				<?php $settingCheck = $translator->checkSetting('languageVarName'); ?>
+				<td class="fill <?php echo $settingCheck === true ? 'translateNoError' : 'translateError'; ?>">
 					<table class="attributesGrid">
 						<tr>
 							<th class="right"><?php echo TranslateModule::t('Attribute:'); ?></th>
@@ -173,14 +177,21 @@ Yii::app()->getClientScript()->registerCssFile($this->getStylesUrl('index.css'))
 						</tr>
 						<tr>
 							<th class="right"><?php echo TranslateModule::t('Description:'); ?></th>
-							<td class="fill break"><?php echo TranslateModule::t('The name of the request variable specifying the language to translate any request content to.'); ?></td>
+							<td class="fill break"><?php echo TranslateModule::t('The name of the request variable specifying the language to translate content to.'); ?></td>
 						</tr>
+						<?php if($settingCheck !== true): ?>
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Error:'); ?></th>
+							<td class="fill break"><?php echo TranslateModule::t($settingCheck); ?></td>
+						</tr>
+						<?php endif; ?>
 					</table>
 				</td>
 			</tr>
 			<tr>
 				<th class="right"><?php echo TranslateModule::t('Language Cookie Expire Time:'); ?></th>
-				<td class="fill <?php echo 'translateNoError'; ?>">
+				<?php $settingCheck = $translator->checkSetting('cookieExpire'); ?>
+				<td class="fill <?php echo $settingCheck === true ? 'translateNoError' : 'translateError'; ?>">
 					<table class="attributesGrid">
 						<tr>
 							<th class="right"><?php echo TranslateModule::t('Attribute:'); ?></th>
@@ -192,14 +203,21 @@ Yii::app()->getClientScript()->registerCssFile($this->getStylesUrl('index.css'))
 						</tr>
 						<tr>
 							<th class="right"><?php echo TranslateModule::t('Description:'); ?></th>
-							<td class="fill break"><?php echo TranslateModule::t('Expire time in seconds of the cookie specifying the client\'s prefered language.'); ?></td>
+							<td class="fill break"><?php echo TranslateModule::t('Expire time in seconds of the cookie specifying the client\'s preferred language.'); ?></td>
 						</tr>
+						<?php if($settingCheck !== true): ?>
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Error:'); ?></th>
+							<td class="fill break"><?php echo TranslateModule::t($settingCheck); ?></td>
+						</tr>
+						<?php endif; ?>
 					</table>
 				</td>
 			</tr>
 			<tr>
 				<th class="right"><?php echo TranslateModule::t('Define a global translate function:'); ?></th>
-				<td class="fill <?php echo 'translateNoError'; ?>">
+				<?php $settingCheck = $translator->checkSetting('defineGlobalTranslateFunction'); ?>
+				<td class="fill <?php echo $settingCheck === true ? 'translateNoError' : 'translateError'; ?>">
 					<table class="attributesGrid">
 						<tr>
 							<th class="right"><?php echo TranslateModule::t('Attribute:'); ?></th>
@@ -211,14 +229,21 @@ Yii::app()->getClientScript()->registerCssFile($this->getStylesUrl('index.css'))
 						</tr>
 						<tr>
 							<th class="right"><?php echo TranslateModule::t('Description:'); ?></th>
-							<td class="fill break"><?php echo TranslateModule::t('Whether to define a global function "{t}" to simplify translations in code.', array('{t}' => 't()')); ?></td>
+							<td class="fill break"><?php echo TranslateModule::t('Whether to define a global function "{t}" to help simplify translating messages.', array('{t}' => 't()')); ?></td>
 						</tr>
+						<?php if($settingCheck !== true): ?>
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Error:'); ?></th>
+							<td class="fill break"><?php echo TranslateModule::t($settingCheck); ?></td>
+						</tr>
+						<?php endif; ?>
 					</table>
 				</td>
 			</tr>
 			<tr>
 				<th class="right"><?php echo TranslateModule::t('Use Transactions:'); ?></th>
-				<td class="fill <?php echo 'translateNoError'; ?>">
+				<?php $settingCheck = $translator->checkSetting('useTransaction'); ?>
+				<td class="fill <?php echo $settingCheck === true ? 'translateNoError' : 'translateError'; ?>">
 					<table class="attributesGrid">
 						<tr>
 							<th class="right"><?php echo TranslateModule::t('Attribute:'); ?></th>
@@ -232,12 +257,19 @@ Yii::app()->getClientScript()->registerCssFile($this->getStylesUrl('index.css'))
 							<th class="right"><?php echo TranslateModule::t('Description:'); ?></th>
 							<td class="fill break"><?php echo TranslateModule::t('Whether to use database transactions when translating messages.'); ?></td>
 						</tr>
+						<?php if($settingCheck !== true): ?>
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Error:'); ?></th>
+							<td class="fill break"><?php echo TranslateModule::t($settingCheck); ?></td>
+						</tr>
+						<?php endif; ?>
 					</table>
 				</td>
 			</tr>
 			<tr>
 				<th class="right"><?php echo TranslateModule::t('Use Generic Locales:'); ?></th>
-				<td class="fill <?php echo 'translateNoError'; ?>">
+				<?php $settingCheck = $translator->checkSetting('genericLocale'); ?>
+				<td class="fill <?php echo $settingCheck === true ? 'translateNoError' : 'translateError'; ?>">
 					<table class="attributesGrid">
 						<tr>
 							<th class="right"><?php echo TranslateModule::t('Attribute:'); ?></th>
@@ -249,14 +281,21 @@ Yii::app()->getClientScript()->registerCssFile($this->getStylesUrl('index.css'))
 						</tr>
 						<tr>
 							<th class="right"><?php echo TranslateModule::t('Description:'); ?></th>
-							<td class="fill break"><?php echo TranslateModule::t('Whether to use generic locales. If enabled the local protion of requested languages will be stripped off.'); ?></td>
+							<td class="fill break"><?php echo TranslateModule::t('Whether to use generic locales. If enabled the locale protion of requested languages will be stripped off and only the generic language code will be considered.'); ?></td>
 						</tr>
+						<?php if($settingCheck !== true): ?>
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Error:'); ?></th>
+							<td class="fill break"><?php echo TranslateModule::t($settingCheck); ?></td>
+						</tr>
+						<?php endif; ?>
 					</table>
 				</td>
 			</tr>
 			<tr>
 				<th class="right"><?php echo TranslateModule::t('Force Accepted Languages Only:'); ?></th>
-				<td class="fill <?php echo 'translateNoError'; ?>">
+				<?php $settingCheck = $translator->checkSetting('forceAcceptedLanguage'); ?>
+				<td class="fill <?php echo $settingCheck === true ? 'translateNoError' : 'translateError'; ?>">
 					<table class="attributesGrid">
 						<tr>
 							<th class="right"><?php echo TranslateModule::t('Attribute:'); ?></th>
@@ -268,14 +307,21 @@ Yii::app()->getClientScript()->registerCssFile($this->getStylesUrl('index.css'))
 						</tr>
 						<tr>
 							<th class="right"><?php echo TranslateModule::t('Description:'); ?></th>
-							<td class="fill break"><?php echo TranslateModule::t('Whether to only allow accepted languages. If enabled pages request in a non-accepted langauge will not be translated.'); ?></td>
+							<td class="fill break"><?php echo TranslateModule::t('Whether to only allow accepted languages. If enabled pages requested in a non-accepted language will not be translated.'); ?></td>
 						</tr>
+						<?php if($settingCheck !== true): ?>
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Error:'); ?></th>
+							<td class="fill break"><?php echo TranslateModule::t($settingCheck); ?></td>
+						</tr>
+						<?php endif; ?>
 					</table>
 				</td>
 			</tr>
 			<tr>
 				<th class="right"><?php echo TranslateModule::t('Caching Duration:'); ?></th>
-				<td class="fill <?php echo 'translateNoError'; ?>">
+				<?php $settingCheck = $translator->checkSetting('cacheDuration'); ?>
+				<td class="fill <?php echo $settingCheck === true ? 'translateNoError' : 'translateError'; ?>">
 					<table class="attributesGrid">
 						<tr>
 							<th class="right"><?php echo TranslateModule::t('Attribute:'); ?></th>
@@ -287,71 +333,21 @@ Yii::app()->getClientScript()->registerCssFile($this->getStylesUrl('index.css'))
 						</tr>
 						<tr>
 							<th class="right"><?php echo TranslateModule::t('Description:'); ?></th>
-							<td class="fill break"><?php echo TranslateModule::t('Duration to cache locale display name.'); ?></td>
+							<td class="fill break"><?php echo TranslateModule::t('Duration to cache locale display names.'); ?></td>
 						</tr>
-					</table>
-				</td>
-			</tr>
-			<tr>
-				<th class="right"><?php echo TranslateModule::t('Synchronize Translations:'); ?></th>
-				<td class="fill <?php echo 'translateNoError'; ?>">
-					<table class="attributesGrid">
+						<?php if($settingCheck !== true): ?>
 						<tr>
-							<th class="right"><?php echo TranslateModule::t('Attribute:'); ?></th>
-							<td class="fill">synchronizeTranslations</td>
+							<th class="right"><?php echo TranslateModule::t('Error:'); ?></th>
+							<td class="fill break"><?php echo TranslateModule::t($settingCheck); ?></td>
 						</tr>
-						<tr>
-							<th class="right"><?php echo TranslateModule::t('Value:'); ?></th>
-							<td class="fill"><?php echo $translator->synchronizeTranslations ? TranslateModule::t('Yes') : TranslateModule::t('No');; ?></td>
-						</tr>
-						<tr>
-							<th class="right"><?php echo TranslateModule::t('Description:'); ?></th>
-							<td class="fill break"><?php echo TranslateModule::t('Whether to synchronize translations. If enabled only one translation will be performed at a time across requests.'); ?></td>
-						</tr>
-					</table>
-				</td>
-			</tr>
-			<tr>
-				<th class="right"><?php echo TranslateModule::t('Translation Synchronization Lock File Permissions:'); ?></th>
-				<td class="fill <?php echo 'translateNoError'; ?>">
-					<table class="attributesGrid">
-						<tr>
-							<th class="right"><?php echo TranslateModule::t('Attribute:'); ?></th>
-							<td class="fill">translateSyncLockFilePermissions</td>
-						</tr>
-						<tr>
-							<th class="right"><?php echo TranslateModule::t('Value:'); ?></th>
-							<td class="fill"><?php echo decoct($translator->translateSyncLockFilePermissions); ?></td>
-						</tr>
-						<tr>
-							<th class="right"><?php echo TranslateModule::t('Description:'); ?></th>
-							<td class="fill break"><?php echo TranslateModule::t('Permissions for translation synchronization lock file.'); ?></td>
-						</tr>
-					</table>
-				</td>
-			</tr>
-			<tr>
-				<th class="right"><?php echo TranslateModule::t('Translation Synchronization Lock File Path:'); ?></th>
-				<td class="fill <?php echo 'translateNoError'; ?>">
-					<table class="attributesGrid">
-						<tr>
-							<th class="right"><?php echo TranslateModule::t('Attribute:'); ?></th>
-							<td class="fill">translateSyncLockFile</td>
-						</tr>
-						<tr>
-							<th class="right"><?php echo TranslateModule::t('Value:'); ?></th>
-							<td class="fill break"><?php echo $translator->getTranslateSyncLockFile(); ?></td>
-						</tr>
-						<tr>
-							<th class="right"><?php echo TranslateModule::t('Description:'); ?></th>
-							<td class="fill break"><?php echo TranslateModule::t('Name of the message source component.'); ?></td>
-						</tr>
+						<?php endif; ?>
 					</table>
 				</td>
 			</tr>
 			<tr>
 				<th class="right"><?php echo TranslateModule::t('View Source Component Name:'); ?></th>
-				<td class="fill <?php echo 'translateNoError'; ?>">
+				<?php $settingCheck = $translator->checkSetting('viewSource'); ?>
+				<td class="fill <?php echo $settingCheck === true ? 'translateNoError' : 'translateError'; ?>">
 					<table class="attributesGrid">
 						<tr>
 							<th class="right"><?php echo TranslateModule::t('Attribute:'); ?></th>
@@ -365,12 +361,19 @@ Yii::app()->getClientScript()->registerCssFile($this->getStylesUrl('index.css'))
 							<th class="right"><?php echo TranslateModule::t('Description:'); ?></th>
 							<td class="fill break"><?php echo TranslateModule::t('Name of the view source component.'); ?></td>
 						</tr>
+						<?php if($settingCheck !== true): ?>
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Error:'); ?></th>
+							<td class="fill break"><?php echo TranslateModule::t($settingCheck); ?></td>
+						</tr>
+						<?php endif; ?>
 					</table>
 				</td>
 			</tr>
 			<tr>
 				<th class="right"><?php echo TranslateModule::t('Message Source Component Name:'); ?></th>
-				<td class="fill <?php echo 'translateNoError'; ?>">
+				<?php $settingCheck = $translator->checkSetting('messageSource'); ?>
+				<td class="fill <?php echo $settingCheck === true ? 'translateNoError' : 'translateError'; ?>">
 					<table class="attributesGrid">
 						<tr>
 							<th class="right"><?php echo TranslateModule::t('Attribute:'); ?></th>
@@ -382,32 +385,760 @@ Yii::app()->getClientScript()->registerCssFile($this->getStylesUrl('index.css'))
 						</tr>
 						<tr>
 							<th class="right"><?php echo TranslateModule::t('Description:'); ?></th>
-							<td class="fill break"><?php echo TranslateModule::t('Expire time in seconds of the cookie specifying the client\'s prefered language.'); ?></td>
+							<td class="fill break"><?php echo TranslateModule::t('Name of the message source component.'); ?></td>
 						</tr>
+						<?php if($settingCheck !== true): ?>
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Error:'); ?></th>
+							<td class="fill break"><?php echo TranslateModule::t($settingCheck); ?></td>
+						</tr>
+						<?php endif; ?>
+					</table>
+				</td>
+			</tr>
+			<!-- Google Translate Information -->
+			<tr>
+				<th class="right"><?php echo TranslateModule::t('Google Translate API Key:'); ?></th>
+				<?php $settingCheck = $translator->checkSetting('googleApiKey'); ?>
+				<td class="fill <?php echo $settingCheck === true ? 'translateNoError' : ($translator->autoTranslate ? 'translateError' : 'translateWarning'); ?>">
+					<table class="attributesGrid">
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Attribute:'); ?></th>
+							<td class="fill">googleApiKey</td>
+						</tr>
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Value:'); ?></th>
+							<td class="fill break"><?php echo $translator->googleApiKey; ?></td>
+						</tr>
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Description:'); ?></th>
+							<td class="fill break"><?php echo TranslateModule::t('The API key to use for translating messages using Google Translate.'); ?></td>
+						</tr>
+						<?php if($settingCheck !== true): ?>
+						<tr>
+							<th class="right"><?php echo TranslateModule::t($translator->autoTranslate ? 'Error:' : 'Warning:'); ?></th>
+							<td class="fill break"><?php echo TranslateModule::t($settingCheck).($translator->autoTranslate ? '' : ' - This is only a warning because auto translate is disabled making a Google API key unecessary.'); ?></td>
+						</tr>
+						<?php endif; ?>
 					</table>
 				</td>
 			</tr>
 			<tr>
+				<th class="right"><?php echo TranslateModule::t('Google Translate Enabled:'); ?></th>
+				<?php $settingCheck = $translator->checkSetting('autoTranslate'); ?>
+				<td class="fill <?php echo $settingCheck === true ? 'translateNoError' : 'translateError'; ?>">
+					<table class="attributesGrid">
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Attribute:'); ?></th>
+							<td class="fill">autoTranslate</td>
+						</tr>
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Value:'); ?></th>
+							<td class="fill"><?php echo $translator->autoTranslate ? TranslateModule::t('Yes') : TranslateModule::t('No'); ?></td>
+						</tr>
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Description:'); ?></th>
+							<td class="fill break"><?php echo TranslateModule::t('Whether to try to automatically translate messages using Google translate.'); ?></td>
+						</tr>
+						<?php if($settingCheck !== true): ?>
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Error:'); ?></th>
+							<td class="fill break"><?php echo TranslateModule::t($settingCheck); ?></td>
+						</tr>
+						<?php endif; ?>
+					</table>
+				</td>
+			</tr>
+			<!-- Message Source Information -->
+			<tr>
 				<th colspan="2" class="center"><?php echo TranslateModule::t('Message Source'); ?></th>
+			</tr>
+			<?php if(!isset($messageSource)): ?>
+			<tr>
+				<th colspan="2" class="fill translateError"><?php echo TranslateModule::t('The message source component named "{name}" could not be found. Please check your application\'s configuration.', array('{name}' => $translator->messageSource)); ?></th>
+			</tr>
+			<?php else: ?>
+			<tr>
+				<th class="right"><?php echo TranslateModule::t('Installed:'); ?></th>
+				<?php $settingCheck = $messageSource->checkSetting('isInstalled'); ?>
+				<td class="fill break"><?php echo $messageSource->getIsInstalled() ? TranslateModule::t('Yes') : TranslateModule::t('No'); ?></td>
 			</tr>
 			<tr>
 				<th class="right"><?php echo TranslateModule::t('Type:'); ?></th>
-				<td class="fill translateNoError"><?php echo get_class($messageSource); ?></td>
+				<td class="fill"><?php echo get_class($messageSource); ?></td>
+			</tr>
+			<tr>
+				<th class="right"><?php echo TranslateModule::t('Source Message Table:'); ?></th>
+				<?php $settingCheck = $messageSource->checkSetting('sourceMessageTable'); ?>
+				<td class="fill <?php echo $settingCheck === true ? 'translateNoError' : 'translateError'; ?>">
+					<table class="attributesGrid">
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Attribute:'); ?></th>
+							<td class="fill">sourceMessageTable</td>
+						</tr>
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Value:'); ?></th>
+							<td class="fill"><?php echo $messageSource->sourceMessageTable; ?></td>
+						</tr>
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Description:'); ?></th>
+							<td class="fill break"><?php echo TranslateModule::t('The database table containing source messages.'); ?></td>
+						</tr>
+						<?php if($settingCheck !== true): ?>
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Error:'); ?></th>
+							<td class="fill break"><?php echo TranslateModule::t($settingCheck); ?></td>
+						</tr>
+						<?php endif; ?>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<th class="right"><?php echo TranslateModule::t('Translated Message Table:'); ?></th>
+				<?php $settingCheck = $messageSource->checkSetting('translatedMessageTable'); ?>
+				<td class="fill <?php echo $settingCheck === true ? 'translateNoError' : 'translateError'; ?>">
+					<table class="attributesGrid">
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Attribute:'); ?></th>
+							<td class="fill">translatedMessageTable</td>
+						</tr>
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Value:'); ?></th>
+							<td class="fill"><?php echo $messageSource->translatedMessageTable; ?></td>
+						</tr>
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Description:'); ?></th>
+							<td class="fill break"><?php echo TranslateModule::t('The database table containing message translations.'); ?></td>
+						</tr>
+						<?php if($settingCheck !== true): ?>
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Error:'); ?></th>
+							<td class="fill break"><?php echo TranslateModule::t($settingCheck); ?></td>
+						</tr>
+						<?php endif; ?>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<th class="right"><?php echo TranslateModule::t('Language Table:'); ?></th>
+				<?php $settingCheck = $messageSource->checkSetting('languageTable'); ?>
+				<td class="fill <?php echo $settingCheck === true ? 'translateNoError' : 'translateError'; ?>">
+					<table class="attributesGrid">
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Attribute:'); ?></th>
+							<td class="fill">languageTable</td>
+						</tr>
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Value:'); ?></th>
+							<td class="fill"><?php echo $messageSource->languageTable; ?></td>
+						</tr>
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Description:'); ?></th>
+							<td class="fill break"><?php echo TranslateModule::t('The database table containing languages. This table includes the languages of all source messages and translations ever handled by the system.'); ?></td>
+						</tr>
+						<?php if($settingCheck !== true): ?>
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Error:'); ?></th>
+							<td class="fill break"><?php echo TranslateModule::t($settingCheck); ?></td>
+						</tr>
+						<?php endif; ?>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<th class="right"><?php echo TranslateModule::t('Accepted Language Table:'); ?></th>
+				<?php $settingCheck = $messageSource->checkSetting('acceptedLanguageTable'); ?>
+				<td class="fill <?php echo $settingCheck === true ? 'translateNoError' : 'translateError'; ?>">
+					<table class="attributesGrid">
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Attribute:'); ?></th>
+							<td class="fill">acceptedLanguageTable</td>
+						</tr>
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Value:'); ?></th>
+							<td class="fill"><?php echo $messageSource->acceptedLanguageTable; ?></td>
+						</tr>
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Description:'); ?></th>
+							<td class="fill break"><?php echo TranslateModule::t('The database table containing accepted languages.'); ?></td>
+						</tr>
+						<?php if($settingCheck !== true): ?>
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Error:'); ?></th>
+							<td class="fill break"><?php echo TranslateModule::t($settingCheck); ?></td>
+						</tr>
+						<?php endif; ?>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<th class="right"><?php echo TranslateModule::t('Category Table:'); ?></th>
+				<?php $settingCheck = $messageSource->checkSetting('categoryTable'); ?>
+				<td class="fill <?php echo $settingCheck === true ? 'translateNoError' : 'translateError'; ?>">
+					<table class="attributesGrid">
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Attribute:'); ?></th>
+							<td class="fill">categoryTable</td>
+						</tr>
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Value:'); ?></th>
+							<td class="fill"><?php echo $messageSource->language; ?></td>
+						</tr>
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Description:'); ?></th>
+							<td class="fill break"><?php echo TranslateModule::t('The database table containing message categories.'); ?></td>
+						</tr>
+						<?php if($settingCheck !== true): ?>
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Error:'); ?></th>
+							<td class="fill break"><?php echo TranslateModule::t($settingCheck); ?></td>
+						</tr>
+						<?php endif; ?>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<th class="right"><?php echo TranslateModule::t('Category Message Table:'); ?></th>
+				<?php $settingCheck = $messageSource->checkSetting('categoryMessageTable'); ?>
+				<td class="fill <?php echo $settingCheck === true ? 'translateNoError' : 'translateError'; ?>">
+					<table class="attributesGrid">
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Attribute:'); ?></th>
+							<td class="fill">categoryMessageTable</td>
+						</tr>
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Value:'); ?></th>
+							<td class="fill"><?php echo $messageSource->categoryMessageTable; ?></td>
+						</tr>
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Description:'); ?></th>
+							<td class="fill break"><?php echo TranslateModule::t('The database table containing the links between source messages and message categories.'); ?></td>
+						</tr>
+						<?php if($settingCheck !== true): ?>
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Error:'); ?></th>
+							<td class="fill break"><?php echo TranslateModule::t($settingCheck); ?></td>
+						</tr>
+						<?php endif; ?>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<th class="right"><?php echo TranslateModule::t('Default Message Category:'); ?></th>
+				<?php $settingCheck = $messageSource->checkSetting('messageCategory'); ?>
+				<td class="fill <?php echo $settingCheck === true ? 'translateNoError' : 'translateError'; ?>">
+					<table class="attributesGrid">
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Attribute:'); ?></th>
+							<td class="fill">messageCategory</td>
+						</tr>
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Value:'); ?></th>
+							<td class="fill"><?php echo $messageSource->messageCategory; ?></td>
+						</tr>
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Description:'); ?></th>
+							<td class="fill break"><?php echo TranslateModule::t('The default category to assign messages when a category is not specified via the translate function.'); ?></td>
+						</tr>
+						<?php if($settingCheck !== true): ?>
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Error:'); ?></th>
+							<td class="fill break"><?php echo TranslateModule::t($settingCheck); ?></td>
+						</tr>
+						<?php endif; ?>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<th class="right"><?php echo TranslateModule::t('Database Connection ID:'); ?></th>
+				<?php $settingCheck = $messageSource->checkSetting('connectionID'); ?>
+				<td class="fill <?php echo $settingCheck === true ? 'translateNoError' : 'translateError'; ?>">
+					<table class="attributesGrid">
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Attribute:'); ?></th>
+							<td class="fill">connectionID</td>
+						</tr>
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Value:'); ?></th>
+							<td class="fill"><?php echo $messageSource->connectionID; ?></td>
+						</tr>
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Description:'); ?></th>
+							<td class="fill break"><?php echo TranslateModule::t('The name of the database connection component.'); ?></td>
+						</tr>
+						<?php if($settingCheck !== true): ?>
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Error:'); ?></th>
+							<td class="fill break"><?php echo TranslateModule::t($settingCheck); ?></td>
+						</tr>
+						<?php endif; ?>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<th class="right"><?php echo TranslateModule::t('Caching Duration:'); ?></th>
+				<?php $settingCheck = $messageSource->checkSetting('cachingDuration'); ?>
+				<td class="fill <?php echo $settingCheck === true ? 'translateNoError' : 'translateError'; ?>">
+					<table class="attributesGrid">
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Attribute:'); ?></th>
+							<td class="fill">cachingDuration</td>
+						</tr>
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Value:'); ?></th>
+							<td class="fill"><?php echo $messageSource->cachingDuration; ?></td>
+						</tr>
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Description:'); ?></th>
+							<td class="fill break"><?php echo TranslateModule::t('The time in seconds to cache translated messages in the caching component.'); ?></td>
+						</tr>
+						<?php if($settingCheck !== true): ?>
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Error:'); ?></th>
+							<td class="fill break"><?php echo TranslateModule::t($settingCheck); ?></td>
+						</tr>
+						<?php endif; ?>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<th class="right"><?php echo TranslateModule::t('Cache Component:'); ?></th>
+				<?php $settingCheck = $messageSource->checkSetting('cacheID'); ?>
+				<td class="fill <?php echo $settingCheck === true ? 'translateNoError' : 'translateWarning'; ?>">
+					<table class="attributesGrid">
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Attribute:'); ?></th>
+							<td class="fill">cacheID</td>
+						</tr>
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Value:'); ?></th>
+							<td class="fill"><?php echo $messageSource->cacheID; ?></td>
+						</tr>
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Description:'); ?></th>
+							<td class="fill break"><?php echo TranslateModule::t('The name of the caching component for caching message translations.'); ?></td>
+						</tr>
+						<?php if($settingCheck !== true): ?>
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Warning:'); ?></th>
+							<td class="fill break"><?php echo TranslateModule::t($settingCheck); ?></td>
+						</tr>
+						<?php endif; ?>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<th class="right"><?php echo TranslateModule::t('Force Translations:'); ?></th>
+				<?php $settingCheck = $messageSource->checkSetting('forceTranslation'); ?>
+				<td class="fill <?php echo $settingCheck === true ? 'translateNoError' : 'translateError'; ?>">
+					<table class="attributesGrid">
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Attribute:'); ?></th>
+							<td class="fill">forceTranslation</td>
+						</tr>
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Value:'); ?></th>
+							<td class="fill"><?php echo $messageSource->forceTranslation; ?></td>
+						</tr>
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Description:'); ?></th>
+							<td class="fill break"><?php echo TranslateModule::t('If false and the source message language is the same as the language to translate the message to then the translation will be skipped and the original message will be returned immediately. Otherwise the message will be translated.'); ?></td>
+						</tr>
+						<?php if($settingCheck !== true): ?>
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Error:'); ?></th>
+							<td class="fill break"><?php echo TranslateModule::t($settingCheck); ?></td>
+						</tr>
+						<?php endif; ?>
+					</table>
+				</td>
 			</tr>
 			<tr>
 				<th class="right"><?php echo TranslateModule::t('Language:'); ?></th>
-				<td class="fill translateNoError break"><?php echo $messageSource->getLanguage(); ?></td>
-			</tr>
-			<tr>
-				<th colspan="2" class="center"><?php echo TranslateModule::t('View Source'); ?></th>
-			</tr>
-			<tr>
-				<th class="right"><?php echo TranslateModule::t('Type:'); ?></th>
-				<td class="fill translateNoError break"><?php echo get_class($viewSource); ?></td>
+				<?php $settingCheck = $messageSource->checkSetting('language'); ?>
+				<td class="fill <?php echo $settingCheck === true ? 'translateNoError' : 'translateError'; ?>">
+					<table class="attributesGrid">
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Attribute:'); ?></th>
+							<td class="fill">language</td>
+						</tr>
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Value:'); ?></th>
+							<td class="fill"><?php echo $messageSource->language; ?></td>
+						</tr>
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Description:'); ?></th>
+							<td class="fill break"><?php echo TranslateModule::t('The source language of the messages translated by this source.'); ?></td>
+						</tr>
+						<?php if($settingCheck !== true): ?>
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Error:'); ?></th>
+							<td class="fill break"><?php echo TranslateModule::t($settingCheck); ?></td>
+						</tr>
+						<?php endif; ?>
+					</table>
+				</td>
 			</tr>
 			<tr>
 				<th class="right"><?php echo TranslateModule::t('Profiling Enabled:'); ?></th>
-				<td class="fill <?php echo 'translateNoError'; ?>">
+				<?php $settingCheck = $messageSource->checkSetting('enableProfiling'); ?>
+				<td class="fill <?php echo $settingCheck === true ? 'translateNoError' : 'translateError'; ?>">
+					<table class="attributesGrid">
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Attribute:'); ?></th>
+							<td class="fill">enableProfiling</td>
+						</tr>
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Value:'); ?></th>
+							<td class="fill"><?php echo $messageSource->enableProfiling ? TranslateModule::t('True') : TranslateModule::t('False'); ?></td>
+						</tr>
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Description:'); ?></th>
+							<td class="fill break"><?php echo TranslateModule::t('Whether to profile each message translation.'); ?></td>
+						</tr>
+						<?php if($settingCheck !== true): ?>
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Error:'); ?></th>
+							<td class="fill break"><?php echo TranslateModule::t($settingCheck); ?></td>
+						</tr>
+						<?php endif; ?>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<th class="right"><?php echo TranslateModule::t('Synchronize Events:'); ?></th>
+				<?php $settingCheck = $messageSource->checkSetting('synchronizeEvents'); ?>
+				<td class="fill <?php echo $settingCheck === true ? 'translateNoError' : 'translateError'; ?>">
+					<table class="attributesGrid">
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Attribute:'); ?></th>
+							<td class="fill">synchronizeEvents</td>
+						</tr>
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Value:'); ?></th>
+							<td class="fill"><?php echo $messageSource->synchronizeEvents ? TranslateModule::t('True') : TranslateModule::t('False'); ?></td>
+						</tr>
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Description:'); ?></th>
+							<td class="fill break"><?php echo TranslateModule::t('Whether to synchronize missing message translation events.'); ?></td>
+						</tr>
+						<?php if($settingCheck !== true): ?>
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Error:'); ?></th>
+							<td class="fill break"><?php echo TranslateModule::t($settingCheck); ?></td>
+						</tr>
+						<?php endif; ?>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<th class="right"><?php echo TranslateModule::t('Synchronization Lock File Permissions:'); ?></th>
+				<?php $settingCheck = $messageSource->checkSetting('eventSyncLockFilePermissions'); ?>
+				<td class="fill <?php echo $settingCheck === true ? 'translateNoError' : 'translateError'; ?>">
+					<table class="attributesGrid">
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Attribute:'); ?></th>
+							<td class="fill">eventSyncLockFilePermissions</td>
+						</tr>
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Value:'); ?></th>
+							<td class="fill"><?php echo decoct($messageSource->eventSyncLockFilePermissions); ?></td>
+						</tr>
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Description:'); ?></th>
+							<td class="fill break"><?php echo TranslateModule::t('Permissions of the event synchronization lock file.'); ?></td>
+						</tr>
+						<?php if($settingCheck !== true): ?>
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Error:'); ?></th>
+							<td class="fill break"><?php echo TranslateModule::t($settingCheck); ?></td>
+						</tr>
+						<?php endif; ?>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<th class="right"><?php echo TranslateModule::t('Synchronization Lock File Path:'); ?></th>
+				<?php $settingCheck = $messageSource->checkSetting('eventSyncLockFile'); ?>
+				<td class="fill <?php echo $settingCheck === true ? 'translateNoError' : 'translateError'; ?>">
+					<table class="attributesGrid">
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Attribute:'); ?></th>
+							<td class="fill">eventSyncLockFile</td>
+						</tr>
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Value:'); ?></th>
+							<td class="fill break"><?php echo $messageSource->getEventSyncLockFile(); ?></td>
+						</tr>
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Description:'); ?></th>
+							<td class="fill break"><?php echo TranslateModule::t('Path to the event synchronization lock file.'); ?></td>
+						</tr>
+						<?php if($settingCheck !== true): ?>
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Error:'); ?></th>
+							<td class="fill break"><?php echo TranslateModule::t($settingCheck); ?></td>
+						</tr>
+						<?php endif; ?>
+					</table>
+				</td>
+			</tr>
+			<?php endif; ?>
+			<!-- View Source Information -->
+			<tr>
+				<th colspan="2" class="center"><?php echo TranslateModule::t('View Source'); ?></th>
+			</tr>
+			<?php if(!isset($viewSource)): ?>
+			<tr>
+				<th colspan="2" class="fill translateError"><?php echo TranslateModule::t('The view source component named "{name}" could not be found. Please check your application\'s configuration.', array('{name}' => $translator->viewSource)); ?></th>
+			</tr>
+			<?php else: ?>
+			<tr>
+				<th class="right"><?php echo TranslateModule::t('Installed:'); ?></th>
+				<td class="fill break"><?php echo $viewSource->getIsInstalled() ? TranslateModule::t('Yes') : TranslateModule::t('No'); ?></td>
+			</tr>
+			<tr>
+				<th class="right"><?php echo TranslateModule::t('Type:'); ?></th>
+				<td class="fill break"><?php echo get_class($viewSource); ?></td>
+			</tr>
+			<tr>
+				<th class="right"><?php echo TranslateModule::t('Route Table:'); ?></th>
+				<?php $settingCheck = $viewSource->checkSetting('routeTable'); ?>
+				<td class="fill <?php echo $settingCheck === true ? 'translateNoError' : 'translateError'; ?>">
+					<table class="attributesGrid">
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Attribute:'); ?></th>
+							<td class="fill">routeTable</td>
+						</tr>
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Value:'); ?></th>
+							<td class="fill"><?php echo $viewSource->routeTable; ?></td>
+						</tr>
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Description:'); ?></th>
+							<td class="fill break"><?php echo TranslateModule::t('The database table containing requested routes.'); ?></td>
+						</tr>
+						<?php if($settingCheck !== true): ?>
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Error:'); ?></th>
+							<td class="fill break"><?php echo TranslateModule::t($settingCheck); ?></td>
+						</tr>
+						<?php endif; ?>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<th class="right"><?php echo TranslateModule::t('Route View Table:'); ?></th>
+				<?php $settingCheck = $viewSource->checkSetting('routeViewTable'); ?>
+				<td class="fill <?php echo $settingCheck === true ? 'translateNoError' : 'translateError'; ?>">
+					<table class="attributesGrid">
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Attribute:'); ?></th>
+							<td class="fill">routeViewTable</td>
+						</tr>
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Value:'); ?></th>
+							<td class="fill"><?php echo $viewSource->routeViewTable; ?></td>
+						</tr>
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Description:'); ?></th>
+							<td class="fill break"><?php echo TranslateModule::t('The database table containing associations of routes with views.'); ?></td>
+						</tr>
+						<?php if($settingCheck !== true): ?>
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Error:'); ?></th>
+							<td class="fill break"><?php echo TranslateModule::t($settingCheck); ?></td>
+						</tr>
+						<?php endif; ?>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<th class="right"><?php echo TranslateModule::t('View Source Table:'); ?></th>
+				<?php $settingCheck = $viewSource->checkSetting('viewSourceTable'); ?>
+				<td class="fill <?php echo $settingCheck === true ? 'translateNoError' : 'translateError'; ?>">
+					<table class="attributesGrid">
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Attribute:'); ?></th>
+							<td class="fill">viewSourceTable</td>
+						</tr>
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Value:'); ?></th>
+							<td class="fill"><?php echo $viewSource->viewSourceTable; ?></td>
+						</tr>
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Description:'); ?></th>
+							<td class="fill break"><?php echo TranslateModule::t('The database table containing source views.'); ?></td>
+						</tr>
+						<?php if($settingCheck !== true): ?>
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Error:'); ?></th>
+							<td class="fill break"><?php echo TranslateModule::t($settingCheck); ?></td>
+						</tr>
+						<?php endif; ?>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<th class="right"><?php echo TranslateModule::t('View Table:'); ?></th>
+				<?php $settingCheck = $viewSource->checkSetting('viewTable'); ?>
+				<td class="fill <?php echo $settingCheck === true ? 'translateNoError' : 'translateError'; ?>">
+					<table class="attributesGrid">
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Attribute:'); ?></th>
+							<td class="fill">viewTable</td>
+						</tr>
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Value:'); ?></th>
+							<td class="fill"><?php echo $viewSource->viewTable; ?></td>
+						</tr>
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Description:'); ?></th>
+							<td class="fill break"><?php echo TranslateModule::t('The database table containing translated views.'); ?></td>
+						</tr>
+						<?php if($settingCheck !== true): ?>
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Error:'); ?></th>
+							<td class="fill break"><?php echo TranslateModule::t($settingCheck); ?></td>
+						</tr>
+						<?php endif; ?>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<th class="right"><?php echo TranslateModule::t('View Message Table:'); ?></th>
+				<?php $settingCheck = $viewSource->checkSetting('viewMessageTable'); ?>
+				<td class="fill <?php echo $settingCheck === true ? 'translateNoError' : 'translateError'; ?>">
+					<table class="attributesGrid">
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Attribute:'); ?></th>
+							<td class="fill">viewMessageTable</td>
+						</tr>
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Value:'); ?></th>
+							<td class="fill"><?php echo $viewSource->viewMessageTable; ?></td>
+						</tr>
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Description:'); ?></th>
+							<td class="fill break"><?php echo TranslateModule::t('The database table containing the associations of messages and views.'); ?></td>
+						</tr>
+						<?php if($settingCheck !== true): ?>
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Error:'); ?></th>
+							<td class="fill break"><?php echo TranslateModule::t($settingCheck); ?></td>
+						</tr>
+						<?php endif; ?>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<th class="right"><?php echo TranslateModule::t('Database Timestamp Format:'); ?></th>
+				<?php $settingCheck = $viewSource->checkSetting('databaseTimestampFormat'); ?>
+				<td class="fill <?php echo $settingCheck === true ? 'translateNoError' : 'translateError'; ?>">
+					<table class="attributesGrid">
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Attribute:'); ?></th>
+							<td class="fill">databaseTimestampFormat</td>
+						</tr>
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Value:'); ?></th>
+							<td class="fill"><?php echo $viewSource->databaseTimestampFormat; ?></td>
+						</tr>
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Description:'); ?></th>
+							<td class="fill break"><?php echo TranslateModule::t('A PHP date format string matching the format of timestamp data type in your DBMS.'); ?></td>
+						</tr>
+						<?php if($settingCheck !== true): ?>
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Error:'); ?></th>
+							<td class="fill break"><?php echo TranslateModule::t($settingCheck); ?></td>
+						</tr>
+						<?php endif; ?>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<th class="right"><?php echo TranslateModule::t('Database Connection ID:'); ?></th>
+				<?php $settingCheck = $viewSource->checkSetting('connectionID'); ?>
+				<td class="fill <?php echo $settingCheck === true ? 'translateNoError' : 'translateError'; ?>">
+					<table class="attributesGrid">
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Attribute:'); ?></th>
+							<td class="fill">connectionID</td>
+						</tr>
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Value:'); ?></th>
+							<td class="fill"><?php echo $viewSource->connectionID; ?></td>
+						</tr>
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Description:'); ?></th>
+							<td class="fill break"><?php echo TranslateModule::t('The name of the database connection component.'); ?></td>
+						</tr>
+						<?php if($settingCheck !== true): ?>
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Error:'); ?></th>
+							<td class="fill break"><?php echo TranslateModule::t($settingCheck); ?></td>
+						</tr>
+						<?php endif; ?>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<th class="right"><?php echo TranslateModule::t('Caching Duration:'); ?></th>
+				<?php $settingCheck = $viewSource->checkSetting('cachingDuration'); ?>
+				<td class="fill <?php echo $settingCheck === true ? 'translateNoError' : 'translateError'; ?>">
+					<table class="attributesGrid">
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Attribute:'); ?></th>
+							<td class="fill">cachingDuration</td>
+						</tr>
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Value:'); ?></th>
+							<td class="fill"><?php echo $viewSource->cachingDuration; ?></td>
+						</tr>
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Description:'); ?></th>
+							<td class="fill break"><?php echo TranslateModule::t('The time in seconds to cache translated view in the caching component.'); ?></td>
+						</tr>
+						<?php if($settingCheck !== true): ?>
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Error:'); ?></th>
+							<td class="fill break"><?php echo TranslateModule::t($settingCheck); ?></td>
+						</tr>
+						<?php endif; ?>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<th class="right"><?php echo TranslateModule::t('Cache Component:'); ?></th>
+				<?php $settingCheck = $viewSource->checkSetting('cacheID'); ?>
+				<td class="fill <?php echo $settingCheck === true ? 'translateNoError' : 'translateWarning'; ?>">
+					<table class="attributesGrid">
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Attribute:'); ?></th>
+							<td class="fill">cacheID</td>
+						</tr>
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Value:'); ?></th>
+							<td class="fill"><?php echo $viewSource->cacheID; ?></td>
+						</tr>
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Description:'); ?></th>
+							<td class="fill break"><?php echo TranslateModule::t('The name of the caching component for caching view translations.'); ?></td>
+						</tr>
+						<?php if($settingCheck !== true): ?>
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Warning:'); ?></th>
+							<td class="fill break"><?php echo TranslateModule::t($settingCheck); ?></td>
+						</tr>
+						<?php endif; ?>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<th class="right"><?php echo TranslateModule::t('Profiling Enabled:'); ?></th>
+				<?php $settingCheck = $viewSource->checkSetting('enableProfiling'); ?>
+				<td class="fill <?php echo $settingCheck === true ? 'translateNoError' : 'translateError'; ?>">
 					<table class="attributesGrid">
 						<tr>
 							<th class="right"><?php echo TranslateModule::t('Attribute:'); ?></th>
@@ -421,12 +1152,19 @@ Yii::app()->getClientScript()->registerCssFile($this->getStylesUrl('index.css'))
 							<th class="right"><?php echo TranslateModule::t('Description:'); ?></th>
 							<td class="fill break"><?php echo TranslateModule::t('Whether to profile each view translation.'); ?></td>
 						</tr>
+						<?php if($settingCheck !== true): ?>
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Error:'); ?></th>
+							<td class="fill break"><?php echo TranslateModule::t($settingCheck); ?></td>
+						</tr>
+						<?php endif; ?>
 					</table>
 				</td>
 			</tr>
 			<tr>
 				<th class="right"><?php echo TranslateModule::t('Synchronize Events:'); ?></th>
-				<td class="fill <?php echo 'translateNoError'; ?>">
+				<?php $settingCheck = $viewSource->checkSetting('synchronizeEvents'); ?>
+				<td class="fill <?php echo $settingCheck === true ? 'translateNoError' : 'translateError'; ?>">
 					<table class="attributesGrid">
 						<tr>
 							<th class="right"><?php echo TranslateModule::t('Attribute:'); ?></th>
@@ -440,12 +1178,19 @@ Yii::app()->getClientScript()->registerCssFile($this->getStylesUrl('index.css'))
 							<th class="right"><?php echo TranslateModule::t('Description:'); ?></th>
 							<td class="fill break"><?php echo TranslateModule::t('Whether to synchronize missing view translation events.'); ?></td>
 						</tr>
+						<?php if($settingCheck !== true): ?>
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Error:'); ?></th>
+							<td class="fill break"><?php echo TranslateModule::t($settingCheck); ?></td>
+						</tr>
+						<?php endif; ?>
 					</table>
 				</td>
 			</tr>
 			<tr>
 				<th class="right"><?php echo TranslateModule::t('Synchronization Lock File Permissions:'); ?></th>
-				<td class="fill <?php echo 'translateNoError'; ?>">
+				<?php $settingCheck = $viewSource->checkSetting('eventSyncLockFilePermissions'); ?>
+				<td class="fill <?php echo $settingCheck === true ? 'translateNoError' : 'translateError'; ?>">
 					<table class="attributesGrid">
 						<tr>
 							<th class="right"><?php echo TranslateModule::t('Attribute:'); ?></th>
@@ -457,14 +1202,21 @@ Yii::app()->getClientScript()->registerCssFile($this->getStylesUrl('index.css'))
 						</tr>
 						<tr>
 							<th class="right"><?php echo TranslateModule::t('Description:'); ?></th>
-							<td class="fill break"><?php echo TranslateModule::t('Permissions to set for event synchronization lock file.'); ?></td>
+							<td class="fill break"><?php echo TranslateModule::t('Permissions of the event synchronization lock file.'); ?></td>
 						</tr>
+						<?php if($settingCheck !== true): ?>
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Error:'); ?></th>
+							<td class="fill break"><?php echo TranslateModule::t($settingCheck); ?></td>
+						</tr>
+						<?php endif; ?>
 					</table>
 				</td>
 			</tr>
 			<tr>
 				<th class="right"><?php echo TranslateModule::t('Synchronization Lock File Path:'); ?></th>
-				<td class="fill <?php echo 'translateNoError'; ?>">
+				<?php $settingCheck = $viewSource->checkSetting('eventSyncLockFile'); ?>
+				<td class="fill <?php echo $settingCheck === true ? 'translateNoError' : 'translateError'; ?>">
 					<table class="attributesGrid">
 						<tr>
 							<th class="right"><?php echo TranslateModule::t('Attribute:'); ?></th>
@@ -478,9 +1230,17 @@ Yii::app()->getClientScript()->registerCssFile($this->getStylesUrl('index.css'))
 							<th class="right"><?php echo TranslateModule::t('Description:'); ?></th>
 							<td class="fill break"><?php echo TranslateModule::t('Path to the event synchronization lock file.'); ?></td>
 						</tr>
+						<?php if($settingCheck !== true): ?>
+						<tr>
+							<th class="right"><?php echo TranslateModule::t('Error:'); ?></th>
+							<td class="fill break"><?php echo TranslateModule::t($settingCheck); ?></td>
+						</tr>
+						<?php endif; ?>
 					</table>
 				</td>
 			</tr>
+			<?php endif; ?>
+			<?php endif; ?>
 		</table>
 	</div>
 </div>

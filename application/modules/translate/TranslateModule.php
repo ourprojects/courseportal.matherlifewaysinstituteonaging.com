@@ -134,11 +134,19 @@ class TranslateModule extends CWebModule
 	 */
 	public static function t($message, $params = array())
 	{
-		$messageSource = self::translator()->getMessageSourceComponent();
-		$oldLanguage = $messageSource->getLanguage();
-		$messageSource->setLanguage(self::LANGUAGE);
-		return Yii::t(self::ID, $message, $params, self::translator()->messageSource);
-		$messageSource->setLanguage($oldLanguage);
+		try 
+		{
+			$messageSource = self::translator()->getMessageSourceComponent();
+			$oldLanguage = $messageSource->getLanguage();
+			$messageSource->setLanguage(self::LANGUAGE);
+			$translation = Yii::t(self::ID, $message, $params, self::translator()->messageSource);
+			$messageSource->setLanguage($oldLanguage);
+			return $translation;
+		}
+		catch(Exception $e)
+		{
+			return $message;
+		}
 	}
 	
 	/**
@@ -148,7 +156,7 @@ class TranslateModule extends CWebModule
 	public static function isInstalled()
 	{
 		$translator = self::translator();
-		return $translator->getMessageSourceComponent()->isInstalled() && $translator->getViewSourceComponent()->isInstalled();
+		return $translator->getMessageSourceComponent()->getIsInstalled() && $translator->getViewSourceComponent()->getIsInstalled();
 	}
 	
 	/**
@@ -163,11 +171,6 @@ class TranslateModule extends CWebModule
 			$translator->messageSource => $translator->getMessageSourceComponent()->install($reinstall), 
 			$translator->viewSource => $translator->getViewSourceComponent()->install($reinstall)
 		);
-	}
-	
-	public static function checkSettings($setting)
-	{
-		return self::translator()->checkSettings($setting);
 	}
 
 }
