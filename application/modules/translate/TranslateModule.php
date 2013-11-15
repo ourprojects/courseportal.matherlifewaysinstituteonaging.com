@@ -187,10 +187,25 @@ class TranslateModule extends CWebModule
 	public static function install($reinstall = false)
 	{
 		$translator = self::translator();
-		return array(
-			$translator->messageSource => $translator->getMessageSourceComponent()->install($reinstall), 
-			$translator->viewSource => $translator->getViewSourceComponent()->install($reinstall)
-		);
+		if(!isset($translator))
+		{
+			return self::ERROR;
+		}
+		$messageSource = $translator->getMessageSourceComponent();
+		if(!isset($messageSource) || $messageSource->install($reinstall) === self::ERROR)
+		{ 
+			return self::ERROR;
+		}
+		$viewSource = $translator->getViewSourceComponent();
+		if(!isset($viewSource) || $viewSource->install($reinstall) === self::ERROR)
+		{
+			return self::ERROR;
+		}
+		if($reinstall)
+		{
+			return self::OVERWRITE;
+		}
+		return self::SUCCESS;
 	}
 
 }

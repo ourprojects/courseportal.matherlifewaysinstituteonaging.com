@@ -4,6 +4,10 @@ $error = false;
 try
 {
 	$translator = TranslateModule::translator();
+	if(!isset($translator))
+	{
+		$error = true;
+	}
 }
 catch(Exception $e)
 {
@@ -15,9 +19,9 @@ try
 	{
 		$messageSource = $translator->getMessageSourceComponent();
 	}
-	if(isset($messageSource))
+	if(!isset($messageSource))
 	{
-		$error = !$messageSource->getIsInstalled();
+		$error = true;
 	}
 }
 catch(Exception $e)
@@ -30,9 +34,9 @@ try
 	{
 		$viewSource = $translator->getViewSourceComponent();
 	}
-	if(isset($viewSource))
+	if(!isset($viewSource))
 	{
-		$error = !$viewSource->getIsInstalled();
+		$error = true;
 	}
 }
 catch(Exception $e)
@@ -1279,8 +1283,8 @@ catch(Exception $e)
 						array(
 							'type' => 'POST',
 							'data' => array('overwrite' => true),
-							'beforeSend' => 'function(){if(!confirm("'.TranslateModule::t('Re-installing translation system will clear all data! All translations will be lost! Are you sure you want to continue?').'")) return false;$("#reInstall").addClass("loading");}',
-							'complete' => 'function(data){location.reload()}',
+							'beforeSend' => 'function(){if(!confirm("'.TranslateModule::t('Re-installing translation system will clear all data! All translations will be lost! Are you sure you want to continue?').'")) return false;$("#reInstall").addClass("translateLoading");}',
+							'complete' => 'function(data){location.reload();}',
 						),
 						array(
 							'id' => 'reInstall',
@@ -1305,8 +1309,8 @@ catch(Exception $e)
 						array(
 							'type' => 'POST',
 							'data' => array('overwrite' => false),
-							'beforeSend' => 'function(){$("#install").addClass("loading");}',
-							'complete' => 'function(data){location.reload()}',
+							'beforeSend' => 'function(){$("#install").addClass("translateLoading");}',
+							'complete' => 'function(data){location.reload();}',
 						),
 						array(
 							'id' => 'install',

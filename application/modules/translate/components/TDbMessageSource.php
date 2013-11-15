@@ -1,6 +1,6 @@
 <?php
 
-class TDbMessageSource extends CDbMessageSource implements ITMessageSource
+class TDbMessageSource extends CDbMessageSource
 {
 
 	/**
@@ -241,7 +241,7 @@ class TDbMessageSource extends CDbMessageSource implements ITMessageSource
 				array(
 					'id' => 'pk',
 					'category' => 'varchar(255) NOT NULL',
-					'UNIQUE KEY ('.$schema->quoteColumnName('category').','.$schema->quoteColumnName('category').')'
+					'UNIQUE KEY '.$schema->quoteColumnName('category').' ('.$schema->quoteColumnName('category').')'
 				)
 			).';';
 		
@@ -250,7 +250,8 @@ class TDbMessageSource extends CDbMessageSource implements ITMessageSource
 				array(
 					'category_id' => 'integer NOT NULL',
 					'message_id' => 'integer NOT NULL',
-					'PRIMARY KEY ('.$schema->quoteColumnName('category_id').','.$schema->quoteColumnName('message_id').')'
+					'PRIMARY KEY ('.$schema->quoteColumnName('category_id').','.$schema->quoteColumnName('message_id').'),'.
+					'KEY '.$schema->quoteColumnName('message_id').' ('.$schema->quoteColumnName('message_id').')'
 				)
 			).';';
 				
@@ -270,9 +271,10 @@ class TDbMessageSource extends CDbMessageSource implements ITMessageSource
 					'id' => 'integer NOT NULL',
 					'language_id' => 'integer NOT NULL',
 					'translation' => 'text',
-					'last_updated' => 'datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP',
-					'PRIMARY KEY ('.$schema->quoteColumnName('id').','.$schema->quoteColumnName('language_id').')'.
-					'KEY '.$schema->quoteColumnName('last_modified').' ('.$schema->quoteColumnName('last_modified').')'
+					'last_modified' => 'timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP',
+					'PRIMARY KEY ('.$schema->quoteColumnName('id').','.$schema->quoteColumnName('language_id').'),'.
+					'KEY '.$schema->quoteColumnName('last_modified').' ('.$schema->quoteColumnName('last_modified').'),'.
+					'KEY '.$schema->quoteColumnName('language_id').' ('.$schema->quoteColumnName('language_id').')'
 				)
 			).';';
 		
@@ -316,6 +318,15 @@ class TDbMessageSource extends CDbMessageSource implements ITMessageSource
 			$sql .= $schema->addForeignKey(
 				$tableNames[$this->translatedMessageTable].'_fk_2',
 				$tableNames[$this->translatedMessageTable],
+				'language_id',
+				$tableNames[$this->languageTable],
+				'id',
+				'CASCADE',
+				'CASCADE').';';
+			
+			$sql .= $schema->addForeignKey(
+				$tableNames[$this->sourceMessageTable].'_fk_2',
+				$tableNames[$this->sourceMessageTable],
 				'language_id',
 				$tableNames[$this->languageTable],
 				'id',

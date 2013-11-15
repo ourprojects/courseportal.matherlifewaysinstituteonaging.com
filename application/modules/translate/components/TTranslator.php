@@ -543,7 +543,7 @@ class TTranslator extends CApplicationComponent
 		if(!isset($this->_messageSource))
 		{
 			$this->_messageSource = Yii::app()->getComponent($this->messageSource);
-			if(!$this->_messageSource instanceof ITMessageSource)
+			if(!$this->_messageSource instanceof TDbMessageSource)
 			{
 				$this->_messageSource = null;
 				throw new CException("The component '$this->messageSource' must be defined and implement type ITMessageSource.");

@@ -133,12 +133,15 @@ class TranslateController extends TController
 		switch(TranslateModule::install($overwrite))
 		{
 			case TranslateModule::ERROR:
+				echo 'error';
 				Yii::app()->getUser()->setFlash('message', TranslateModule::t('An error ocurred while attempting to install the necessary Translation System system.'));
 				break;
 			case TranslateModule::SUCCESS:
+				echo 'success';
 				Yii::app()->getUser()->setFlash('message', TranslateModule::t('The Translation System system has been succesfully installed.'));
 				break;
 			case TranslateModule::OVERWRITE:
+				echo 'overwrite';
 				Yii::app()->getUser()->setFlash('message', TranslateModule::t('Unable to install Translation System system, a previous installation already exists. If you would like to re-install the system anyways please confirm and try again.'));
 				break;
 			default:

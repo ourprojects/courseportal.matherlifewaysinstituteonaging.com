@@ -45,6 +45,17 @@
 	background-position: right;
 }
 
+.translateLoading {
+	background-position: center center;
+	background-repeat: no-repeat;
+	opacity: 1;
+	background-image: url('process-working.gif');
+}
+
+.translateLoading * {
+	opacity: .2;
+}
+
 table {
 	max-width: 100%;
 }

@@ -176,7 +176,8 @@ class TDbViewSource extends TViewSource
 				array(
 					'route_id' => 'integer NOT NULL',
 					'view_id' => 'integer NOT NULL',
-					'PRIMARY KEY ('.$schema->quoteColumnName('route_id').','.$schema->quoteColumnName('view_id').')'
+					'PRIMARY KEY ('.$schema->quoteColumnName('route_id').','.$schema->quoteColumnName('view_id').'),'.
+					'KEY '.$schema->quoteColumnName('view_id').' ('.$schema->quoteColumnName('view_id').')'
 				)
 			).';';
 		
@@ -185,7 +186,8 @@ class TDbViewSource extends TViewSource
 				array(
 					'view_id' => 'integer NOT NULL',
 					'message_id' => 'integer NOT NULL',
-					'PRIMARY KEY ('.$schema->quoteColumnName('view_id').','.$schema->quoteColumnName('message_id').')'
+					'PRIMARY KEY ('.$schema->quoteColumnName('view_id').','.$schema->quoteColumnName('message_id').'),'.
+					'KEY '.$schema->quoteColumnName('message_id').' ('.$schema->quoteColumnName('message_id').')'
 				)
 			).';';
 			
@@ -204,10 +206,11 @@ class TDbViewSource extends TViewSource
 					'id' => 'integer NOT NULL',
 					'language_id' => 'integer NOT NULL',
 					'path' => 'varchar(255) NOT NULL',
-					'created' => 'datetime NOT NULL DEFAULT CURRENT_TIMESTAMP',
-					'PRIMARY KEY ('.$schema->quoteColumnName('id').','.$schema->quoteColumnName('language_id').')'.
-					'UNIQUE KEY '.$schema->quoteColumnName('path').' ('.$schema->quoteColumnName('path').')'.
-					'KEY '.$schema->quoteColumnName('created').' ('.$schema->quoteColumnName('created').')'
+					'created' => 'timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP',
+					'PRIMARY KEY ('.$schema->quoteColumnName('id').','.$schema->quoteColumnName('language_id').'),'.
+					'UNIQUE KEY '.$schema->quoteColumnName('path').' ('.$schema->quoteColumnName('path').'),'.
+					'KEY '.$schema->quoteColumnName('created').' ('.$schema->quoteColumnName('created').'),'.
+					'KEY '.$schema->quoteColumnName('language_id').' ('.$schema->quoteColumnName('language_id').')'
 				)
 			).';';
 		
