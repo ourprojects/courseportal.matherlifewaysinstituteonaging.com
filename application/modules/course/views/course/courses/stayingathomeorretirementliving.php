@@ -185,7 +185,6 @@ foreach (array(
                     <a href="#lesson-1-slide-24" data-fancybox-group="lesson-1" class="hide lesson-1"></a>
                     <a href="#lesson-1-slide-25" data-fancybox-group="lesson-1" class="hide lesson-1"></a>
                     <a href="#lesson-1-slide-26" data-fancybox-group="lesson-1" class="hide lesson-1"></a>
-
                 </p>
             </td>
         </tr>
@@ -262,17 +261,17 @@ AARP provides various articles of interest and resources for family caregivers. 
 
 </div>
 <div id="course" class="hide">
-<?php $clientScript->registerScript('question-answer-handler',
-    "$('.course-slide .question').change(function() {" .
-    "if($(this).find('select').val() == '1') {" .
-    "$(this).find('.right-answer').removeClass('hide');" .
-    "$(this).find('.wrong-answer').addClass('hide');" .
-    "} else {" .
-    "$(this).find('.right-answer').addClass('hide');" .
-    "$(this).find('.wrong-answer').removeClass('hide');" .
-    "}" .
-    "});");
-?>
+    <?php $clientScript->registerScript('question-answer-handler',
+        "$('.course-slide .question').change(function() {" .
+        "if($(this).find('select').val() == '1') {" .
+        "$(this).find('.right-answer').removeClass('hide');" .
+        "$(this).find('.wrong-answer').addClass('hide');" .
+        "} else {" .
+        "$(this).find('.right-answer').addClass('hide');" .
+        "$(this).find('.wrong-answer').removeClass('hide');" .
+        "}" .
+        "});");
+    ?>
 <div id="lesson-1">
 <div id="lesson-1-slide-1" class="course-slide">
     <div class="content">
@@ -1075,7 +1074,6 @@ AARP provides various articles of interest and resources for family caregivers. 
             href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
     </div>
 </div>
-
 
 <div id="lesson-1-slide-26" class="course-slide">
     <div class="content">
