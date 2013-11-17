@@ -261,17 +261,6 @@ AARP provides various articles of interest and resources for family caregivers. 
 
 </div>
 <div id="course" class="hide">
-    <?php $clientScript->registerScript('question-answer-handler',
-        "$('.course-slide .question').change(function() {" .
-        "if($(this).find('select').val() == '1') {" .
-        "$(this).find('.right-answer').removeClass('hide');" .
-        "$(this).find('.wrong-answer').addClass('hide');" .
-        "} else {" .
-        "$(this).find('.right-answer').addClass('hide');" .
-        "$(this).find('.wrong-answer').removeClass('hide');" .
-        "}" .
-        "});");
-    ?>
 <div id="lesson-1">
 <div id="lesson-1-slide-1" class="course-slide">
     <div class="content">
@@ -1035,7 +1024,7 @@ AARP provides various articles of interest and resources for family caregivers. 
             operations. Rents are calculated according to income, and rental assistance funds pay whatever balance
             remains.{/t}</p>
 
-        <p>{t}View the following brief video about affordable senior housing.{/t}</h4>
+        <p>{t}View the following brief video about affordable senior housing.{/t}</p>
 
         <h4>{t}Video – Affordable Senior Housing{/t}</h4>
 
