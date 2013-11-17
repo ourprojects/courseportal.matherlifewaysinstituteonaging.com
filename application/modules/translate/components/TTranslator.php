@@ -499,7 +499,9 @@ class TTranslator extends CApplicationComponent
 	public function getLocaleDisplayNames($language = null, $category = 'language')
 	{
 		if($language === null)
+		{
 			$language = Yii::app()->getLanguage();
+		}
 		$category = strtolower($category);
 		$cacheKey = TranslateModule::ID . "-cache-i18n-$category-$language";
 
@@ -563,7 +565,7 @@ class TTranslator extends CApplicationComponent
 		if(!isset($this->_viewSource))
 		{
 			$this->_viewSource = Yii::app()->getComponent($this->viewSource);
-			if(!$this->_viewSource instanceof TViewSource)
+			if(!$this->_viewSource instanceof TDbViewSource)
 			{
 				$this->_viewSource = null;
 				throw new CException("The component '$this->viewSource' must be defined and of type TViewSource.");

@@ -193,14 +193,22 @@ class MessageSourceController extends TController
 			$sourceMessagesDeleted = MessageSource::model()->deleteByPk($id);
 			CategoryMessage::model()->deleteAllByAttributes(array('message_id' => $id));
 			ViewMessage::model()->deleteAll(array('join' => 'LEFT OUTER JOIN '.$db->quoteTableName(MessageSource::model()->tableName()).' '.$db->quoteTableName('messageSource').' ON '.$db->quoteColumnName(ViewMessage::model()->tableName().'.message_id').'='.$db->quoteColumnName('messageSource.id'), 'condition' => $db->quoteColumnName('messageSource.id').' IS NULL'));
+			$transaction->commit();
 		}
 		catch(Exception $e)
 		{
 			$transaction->rollback();
-			throw $e;
+			if(Yii::app()->getRequest()->getIsAjaxRequest())
+			{
+				throw $e;
+			}
+			else
+			{
+				Yii::app()->getUser()->setFlash(TranslateModule::ID.'-error', $e->getMessage());
+				$this->redirect(Yii::app()->getRequest()->getUrlReferrer());
+			}
 		}
-		$transaction->commit();
-		
+
 		$message = TranslateModule::t('{sourceMessages} source messages and {messages} translations have been deleted.', array('{sourceMessages}' => $sourceMessagesDeleted, '{messages}' => $messagesDeleted));
 		
 		if(Yii::app()->getRequest()->getIsAjaxRequest())
@@ -209,8 +217,8 @@ class MessageSourceController extends TController
 		}
 		else
 		{
-			Yii::app()->getUser()->setFlash($message);
-			$this->redirect(Yii::app()->getRequest()->getUrlReferrer());
+			Yii::app()->getUser()->setFlash(TranslateModule::ID.'-success', $message);
+			$this->redirect($this->createUrl('index'));
 		}
 	}
 

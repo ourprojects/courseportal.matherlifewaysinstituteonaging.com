@@ -250,7 +250,22 @@ class MessageController extends TController
 	 */
 	public function actionDelete($id, $languageId)
 	{
-		$recordsDeleted = Message::model()->deleteByPk(array('id' => $id, 'language_id' => $languageId));
+		try
+		{
+			$recordsDeleted = Message::model()->deleteByPk(array('id' => $id, 'language_id' => $languageId));
+		}
+		catch(Exception $e)
+		{
+			if(Yii::app()->getRequest()->getIsAjaxRequest())
+			{
+				throw $e;
+			}
+			else
+			{
+				Yii::app()->getUser()->setFlash(TranslateModule::ID.'-error', $e->getMessage());
+				$this->redirect(Yii::app()->getRequest()->getUrlReferrer());
+			}
+		}
 		
 		$message = TranslateModule::t('{recordCount} translations have been deleted.', array('{recordCount}' => $recordsDeleted));
 
@@ -260,8 +275,8 @@ class MessageController extends TController
 		}
 		else
 		{
-			Yii::app()->getUser()->setFlash($message);
-			$this->redirect(Yii::app()->getRequest()->getUrlReferrer());
+			Yii::app()->getUser()->setFlash(TranslateModule::ID.'-success', $message);
+			$this->redirect($this->createUrl('index'));
 		}
 	}
 

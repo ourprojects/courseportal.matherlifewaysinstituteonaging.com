@@ -13,4 +13,8 @@ $this->widget('zii.widgets.CDetailView',
 			),
 		)
 );
+echo CHtml::button(
+	TranslateModule::t('Delete'),
+	array('onClick' => 'if(confirm("'.TranslateModule::t('You are about to delete this category and all associated source messages and translations! Are you sure you would like to continue?').'")){document.location.href = "'.Yii::app()->getController()->createUrl('category/delete', array('id' => $model->id)).'";}')
+);
 ?>

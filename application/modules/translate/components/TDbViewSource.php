@@ -5,7 +5,7 @@
  * @author Louis DaPrato <l.daprato@gmail.com>
  *
  */
-class TDbViewSource extends TViewSource
+class TDbViewSource extends CApplicationComponent
 {
 
 	/**
@@ -56,12 +56,29 @@ class TDbViewSource extends TViewSource
 	 */
 	public $cacheID = 'cache';
 
+	/**
+	 * @var boolean If true each call to the translate method will be profiled.
+	 */
+	public $enableProfiling = false;
+
+	/**
+	 * @var boolean If true a file lock will be used to ensure only 1 missing translation event per request is fired at a time.
+	 */
+	public $synchronizeEvents = true;
+
+	/**
+	 * @var integer The permissions to set for the event synchronization locking file.
+	 */
+	public $eventSyncLockFilePermissions = 0700;
+
+	private $_eventSyncLockFile;
+
 	private $_views = array();
 
 	private $_cacheInvalidated = true;
 
 	private $_db;
-	
+
 	/**
 	 * Checks whether a setting's value is OK.
 	 *
@@ -92,8 +109,16 @@ class TDbViewSource extends TViewSource
 					return is_int($this->cachingDuration) ? true : 'Must be an integer';
 				case 'cacheid':
 					return $this->cacheID === false || $this->getCache() !== null ? true : 'Component not found.';
+				case 'enableprofiling':
+					return is_bool($this->enableProfiling) ? true : 'Must be a boolean value, true or false.';
+				case 'synchronizeevents':
+					return is_bool($this->synchronizeEvents) ? true : 'Must be a boolean value, true or false.';
+				case 'eventsynclockfilepermissions':
+					return is_int($this->eventSyncLockFilePermissions) ? true : 'Must be a valid integer representation of an octal file permission.';
+				case 'eventsynclockfile':
+					return file_exists($this->getEventSyncLockFile()) ? true : 'File not found.';
 				default:
-					return parent::checkSetting($setting);
+					return "Unknown setting '$setting'";
 			}
 		}
 		catch(Exception $e)
@@ -101,7 +126,7 @@ class TDbViewSource extends TViewSource
 			return $e->getMessage();
 		}
 	}
-	
+
 	/**
 	 * (non-PHPdoc)
 	 * @see TViewSource::getIsInstalled()
@@ -110,12 +135,12 @@ class TDbViewSource extends TViewSource
 	{
 		$schema = $this->getDbConnection()->getSchema();
 		return $schema->getTable($this->routeTable) !== null &&
-			$schema->getTable($this->routeViewTable) !== null &&
-			$schema->getTable($this->viewMessageTable) !== null &&
-			$schema->getTable($this->viewSourceTable) !== null &&
-			$schema->getTable($this->viewTable) !== null;
+		$schema->getTable($this->routeViewTable) !== null &&
+		$schema->getTable($this->viewMessageTable) !== null &&
+		$schema->getTable($this->viewSourceTable) !== null &&
+		$schema->getTable($this->viewTable) !== null;
 	}
-	
+
 	/**
 	 * (non-PHPdoc)
 	 * @see TViewSource::install()
@@ -126,14 +151,14 @@ class TDbViewSource extends TViewSource
 		{
 			return TranslateModule::OVERWRITE; // Already installed
 		}
-		
+
 		$tableNames = array(
-			$this->routeTable => $this->routeTable, 
-			$this->routeViewTable => $this->routeViewTable, 
-			$this->viewMessageTable => $this->viewMessageTable, 
-			$this->viewSourceTable => $this->viewSourceTable, 
+			$this->routeTable => $this->routeTable,
+			$this->routeViewTable => $this->routeViewTable,
+			$this->viewMessageTable => $this->viewMessageTable,
+			$this->viewSourceTable => $this->viewSourceTable,
 			$this->viewTable => $this->viewTable);
-		
+
 		$db = $this->getDbConnection();
 		if($db->tablePrefix !== null)
 		{
@@ -145,7 +170,7 @@ class TDbViewSource extends TViewSource
 				}
 			}
 		}
-		
+
 		$transaction = $db->beginTransaction();
 		$schema = $db->getSchema();
 		try
@@ -160,7 +185,7 @@ class TDbViewSource extends TViewSource
 					$sql .= $schema->dropTable($table->name).';';
 				}
 			}
-		
+
 			// Create tables
 			$sql .= $schema->createTable(
 				$tableNames[$this->routeTable],
@@ -170,7 +195,7 @@ class TDbViewSource extends TViewSource
 					'UNIQUE KEY '.$schema->quoteColumnName('route').' ('.$schema->quoteColumnName('route').')'
 				)
 			).';';
-		
+
 			$sql .= $schema->createTable(
 				$tableNames[$this->routeViewTable],
 				array(
@@ -180,7 +205,7 @@ class TDbViewSource extends TViewSource
 					'KEY '.$schema->quoteColumnName('view_id').' ('.$schema->quoteColumnName('view_id').')'
 				)
 			).';';
-		
+
 			$sql .= $schema->createTable(
 				$tableNames[$this->viewMessageTable],
 				array(
@@ -190,7 +215,7 @@ class TDbViewSource extends TViewSource
 					'KEY '.$schema->quoteColumnName('message_id').' ('.$schema->quoteColumnName('message_id').')'
 				)
 			).';';
-			
+				
 			$sql .= $schema->createTable(
 				$tableNames[$this->viewSourceTable],
 				array(
@@ -199,7 +224,7 @@ class TDbViewSource extends TViewSource
 					'UNIQUE KEY '.$schema->quoteColumnName('path').' ('.$schema->quoteColumnName('path').')'
 				)
 			).';';
-			
+				
 			$sql .= $schema->createTable(
 				$tableNames[$this->viewTable],
 				array(
@@ -213,7 +238,7 @@ class TDbViewSource extends TViewSource
 					'KEY '.$schema->quoteColumnName('language_id').' ('.$schema->quoteColumnName('language_id').')'
 				)
 			).';';
-		
+
 			// Add foreign key constraints
 			$sql .= $schema->addForeignKey(
 				$tableNames[$this->routeViewTable].'_fk_1',
@@ -223,7 +248,7 @@ class TDbViewSource extends TViewSource
 				'id',
 				'CASCADE',
 				'CASCADE').';';
-			
+				
 			$sql .= $schema->addForeignKey(
 				$tableNames[$this->routeViewTable].'_fk_2',
 				$tableNames[$this->routeViewTable],
@@ -232,7 +257,7 @@ class TDbViewSource extends TViewSource
 				'id',
 				'CASCADE',
 				'CASCADE').';';
-		
+
 			$sql .= $schema->addForeignKey(
 				$tableNames[$this->viewMessageTable].'_fk_1',
 				$tableNames[$this->viewMessageTable],
@@ -241,7 +266,7 @@ class TDbViewSource extends TViewSource
 				'id',
 				'CASCADE',
 				'CASCADE').';';
-			
+				
 			$sql .= $schema->addForeignKey(
 				$tableNames[$this->viewMessageTable].'_fk_2',
 				$tableNames[$this->viewMessageTable],
@@ -250,7 +275,7 @@ class TDbViewSource extends TViewSource
 				'id',
 				'CASCADE',
 				'CASCADE').';';
-			
+				
 			$sql .= $schema->addForeignKey(
 				$tableNames[$this->viewTable].'_fk_1',
 				$tableNames[$this->viewTable],
@@ -259,7 +284,7 @@ class TDbViewSource extends TViewSource
 				'id',
 				'CASCADE',
 				'CASCADE').';';
-			
+				
 			$sql .= $schema->addForeignKey(
 				$tableNames[$this->viewTable].'_fk_2',
 				$tableNames[$this->viewTable],
@@ -268,11 +293,11 @@ class TDbViewSource extends TViewSource
 				'id',
 				'CASCADE',
 				'CASCADE').';';
-		
+
 			$db->createCommand($sql)->execute();
-		
+
 			$schema->checkIntegrity(true);
-			
+				
 			$transaction->commit();
 		}
 		catch(Exception $ex)
@@ -280,7 +305,7 @@ class TDbViewSource extends TViewSource
 			$transaction->rollback();
 			return TranslateModule::ERROR;
 		}
-		
+
 		return TranslateModule::SUCCESS;
 	}
 
@@ -296,7 +321,7 @@ class TDbViewSource extends TViewSource
 			if(!$this->_db instanceof CDbConnection)
 			{
 				throw new CException(TranslateModule::t('TDbViewSource.connectionID is invalid. Please make sure "{id}" refers to a valid database application component.',
-						array('{id}' => $this->connectionID)));
+					array('{id}' => $this->connectionID)));
 			}
 		}
 		return $this->_db;
@@ -363,16 +388,16 @@ class TDbViewSource extends TViewSource
 		$messageSource = TranslateModule::translator()->getMessageSourceComponent();
 		$db = $this->getDbConnection();
 		$cmd = $db->createCommand()
-			->select(array('vst.path AS source_path', 'vt.path AS view_path'))
-			->from($this->routeTable.' rt')
-			->join($this->routeViewTable.' rvt', $db->quoteColumnName('rt.id').'='.$db->quoteColumnName('rvt.route_id'))
-			->join($this->viewSourceTable.' vst', $db->quoteColumnName('rvt.view_id').'='.$db->quoteColumnName('vst.id'))
-			->join($messageSource->languageTable.' lt', $db->quoteColumnName('lt.code').'=:language', array(':language' => $language))
-			->join($this->viewTable.' vt', array('and', $db->quoteColumnName('vst.id').'='.$db->quoteColumnName('vt.id'), $db->quoteColumnName('vt.language_id').'='.$db->quoteColumnName('lt.id')))
-			->leftJoin($this->viewMessageTable.' vmt', $db->quoteColumnName('vst.id').'='.$db->quoteColumnName('vmt.view_id'))
-			->leftJoin($messageSource->translatedMessageTable.' tmt', array('and', $db->quoteColumnName('vmt.message_id').'='.$db->quoteColumnName('tmt.id'), $db->quoteColumnName('tmt.language_id').'='.$db->quoteColumnName('vt.language_id')))
-			->where(array('and', $db->quoteColumnName('rt.route').'=:route', array('or', $db->quoteColumnName('tmt.last_modified').' IS NULL', $db->quoteColumnName('tmt.last_modified').'<'.$db->quoteColumnName('vt.created'))), array(':route' => $route))
-			->group('vst.id');
+		->select(array('vst.path AS source_path', 'vt.path AS view_path'))
+		->from($this->routeTable.' rt')
+		->join($this->routeViewTable.' rvt', $db->quoteColumnName('rt.id').'='.$db->quoteColumnName('rvt.route_id'))
+		->join($this->viewSourceTable.' vst', $db->quoteColumnName('rvt.view_id').'='.$db->quoteColumnName('vst.id'))
+		->join($messageSource->languageTable.' lt', $db->quoteColumnName('lt.code').'=:language', array(':language' => $language))
+		->join($this->viewTable.' vt', array('and', $db->quoteColumnName('vst.id').'='.$db->quoteColumnName('vt.id'), $db->quoteColumnName('vt.language_id').'='.$db->quoteColumnName('lt.id')))
+		->leftJoin($this->viewMessageTable.' vmt', $db->quoteColumnName('vst.id').'='.$db->quoteColumnName('vmt.view_id'))
+		->leftJoin($messageSource->translatedMessageTable.' tmt', array('and', $db->quoteColumnName('vmt.message_id').'='.$db->quoteColumnName('tmt.id'), $db->quoteColumnName('tmt.language_id').'='.$db->quoteColumnName('vt.language_id')))
+		->where(array('and', $db->quoteColumnName('rt.route').'=:route', array('or', $db->quoteColumnName('tmt.last_modified').' IS NULL', $db->quoteColumnName('tmt.last_modified').'<'.$db->quoteColumnName('vt.created'))), array(':route' => $route))
+		->group('vst.id');
 
 		$views = array();
 		foreach($cmd->queryAll() as $row)
@@ -585,6 +610,80 @@ class TDbViewSource extends TViewSource
 	}
 
 	/**
+	 *
+	 * @param string $path The path to the lock file to use for event synchronization.
+	 * @throws CException Thrown if any errors occur setting up the event synchronization locking file.
+	 */
+	public function setEventSyncLockFile($path)
+	{
+		if(is_dir($pathDir = dirname($path)) === false)
+		{
+			if(file_exists($pathDir))
+			{
+				throw new CException(TranslateModule::t("The view source's event syncronization locking directory '{dir}' exists, but is not a directory. Your view source's event syncronization locking path may be corrupted.", array('{dir}' => $pathDir)));
+			}
+			else if(mkdir($pathDir, $this->eventSyncLockFilePermissions, true) === false)
+			{
+				throw new CException(TranslateModule::t("The view source's event syncronization locking directory '{dir}' does not exist and could not be created.", array('{dir}' => $pathDir)));
+			}
+		}
+		$this->_eventSyncLockFile = $path;
+	}
+
+	/**
+	 *
+	 * @return string The path of the event synchronization locking file.
+	 */
+	public function getEventSyncLockFile()
+	{
+		if(!isset($this->_eventSyncLockFile))
+		{
+			$this->setEventSyncLockFile(Yii::app()->getRuntimePath().DIRECTORY_SEPARATOR.TranslateModule::ID.DIRECTORY_SEPARATOR.'locks'.DIRECTORY_SEPARATOR.'viewSource.lock');
+		}
+		return $this->_eventSyncLockFile;
+	}
+
+	/**
+	 * Translates a view to the specified language.
+	 *
+	 * If the view is not found in the translated views, an {@link onMissingViewTranslation}
+	 * event will be raised. Handlers can mark this message or do some
+	 * default handling. The {@link TMissingViewTranslationEvent::path}
+	 * property of the event parameter will be returned.
+	 *
+	 * @param CBaseController $context the controller or widget who is rendering the view file.
+	 * @param string $path the path to the source file to be translated
+	 * @param string $language the target language. If null (default), the {@link CApplication::getLanguage application language} will be used.
+	 * @return string the path to the translated view
+	 */
+	public function translate($context, $path, $language = null)
+	{
+		if($this->enableProfiling)
+		{
+			Yii::beginProfile(TranslateModule::ID.'.'.get_class($this).'.translate()', TranslateModule::ID);
+		}
+
+		if(!is_file($path) || ($realPath = realpath($path)) === false)
+		{
+			throw new CException(TranslateModule::t('Source view file "{file}" does not exist.', array('{file}' => $path)));
+		}
+
+		if($language === null)
+		{
+			$language = Yii::app()->getLanguage();
+		}
+
+		$translatedPath = $this->translateView($context instanceof CController ?  $context->getRoute() : $context->getController()->getRoute(), $realPath, $language);
+
+		if($this->enableProfiling)
+		{
+			Yii::endProfile(TranslateModule::ID.'.'.get_class($this).'.translate()', TranslateModule::ID);
+		}
+
+		return $translatedPath;
+	}
+
+	/**
 	 * Translates the specified view.
 	 * If the translated view is not found, an {@link onMissingViewTranslation}
 	 * event will be raised.
@@ -621,6 +720,76 @@ class TDbViewSource extends TViewSource
 		}
 
 		return $path;
+	}
+
+	/**
+	 * Raised when a view cannot be translated.
+	 * Handlers may log this view or do some default handling.
+	 * The {@link TMissingViewTranslationEvent::path} property
+	 * will be returned by {@link translateView}.
+	 *
+	 * @param TMissingViewTranslationEvent $event the event parameter
+	 */
+	public function onMissingViewTranslation($event)
+	{
+		if($this->synchronizeEvents)
+		{
+			$fh = fopen($this->getEventSyncLockFile(), 'c');
+			if($fh === false)
+			{
+				throw new CException(TranslateModule::t("The view source's event syncronization lock file '{path}' could not be opened.", array('{path}' => $this->getEventSyncLockFile())));
+			}
+			if(flock($fh, LOCK_EX) === false)
+			{
+				throw new CException(TranslateModule::t("Failed to acquire a lock on the view source's event syncronization lock file '{path}'.", array('{path}' => $this->getEventSyncLockFile())));
+			}
+			$this->raiseEvent('onMissingViewTranslation', $event);
+			flock($fh, LOCK_UN);
+			fclose($fh);
+		}
+		else
+		{
+			$this->raiseEvent('onMissingViewTranslation', $event);
+		}
+	}
+
+}
+
+/**
+ * TMissingViewTranslationEvent represents the parameter for the {@link TViewSource::onMissingViewTranslation onMissingViewTranslation} event.
+ *
+ * @author Louis DaPrato <l.daprato@gmail.com>
+ * @package translate
+ */
+class TMissingViewTranslationEvent extends CEvent
+{
+
+	/**
+	 * @var string the path of the source file to be translated
+	 */
+	public $path;
+	/**
+	 * @var string the route requesting this view
+	 */
+	public $route;
+	/**
+	 * @var string the ID of the language that the source file is to be translated to
+	 */
+	public $language;
+
+	/**
+	 * Constructor.
+	 * @param mixed $sender sender of this event
+	 * @param string $path the path of the source file to be translated
+	 * @param string $route the route requesting this view
+	 * @param string $language the ID of the language that the source file is to be translated to
+	 */
+	public function __construct($sender, $path, $route, $language)
+	{
+		parent::__construct($sender);
+		$this->path = $path;
+		$this->route = $route;
+		$this->language = $language;
 	}
 
 }

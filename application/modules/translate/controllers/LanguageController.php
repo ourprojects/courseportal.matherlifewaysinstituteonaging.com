@@ -193,14 +193,22 @@ class LanguageController extends TController
 			$languagesDeleted = Language::model()->deleteByPk($id);
 			ViewMessage::model()->deleteAll(array('join' => 'LEFT OUTER JOIN '.$db->quoteTableName(MessageSource::model()->tableName()).' '.$db->quoteTableName('messageSource').' ON '.$db->quoteColumnName(ViewMessage::model()->tableName().'.message_id').'='.$db->quoteColumnName('messageSource.id'), 'condition' => $db->quoteColumnName('messageSource.id').' IS NULL'));
 			CategoryMessage::model()->deleteAll(array('join' => 'LEFT OUTER JOIN '.$db->quoteTableName(MessageSource::model()->tableName()).' '.$db->quoteTableName('messageSource').' ON '.$db->quoteColumnName(CategoryMessage::model()->tableName().'.message_id').'='.$db->quoteColumnName('messageSource.id'), 'condition' => $db->quoteColumnName('messageSource.id').' IS NULL'));
+			$transaction->commit();
 		}
 		catch(Exception $e)
 		{
 			$transaction->rollback();
-			throw $e;
+			if(Yii::app()->getRequest()->getIsAjaxRequest())
+			{
+				throw $e;
+			}
+			else
+			{
+				Yii::app()->getUser()->setFlash(TranslateModule::ID.'-error', $e->getMessage());
+				$this->redirect(Yii::app()->getRequest()->getUrlReferrer());
+			}
 		}
-		$transaction->commit();
-		
+
 		$message = TranslateModule::t('{languages} languages, {acceptedLanguages} accepted languages, {sourceMessages} source messages, {messages} translations, and {views} translated views have been deleted.', array('{languages}' => $languagesDeleted, '{sourceMessages}' => $sourceMessagesDeleted, '{messages}' => $messagesDeleted, '{acceptedLanguages}' => $acceptedLanguagesDeleted, '{views}' => $viewsDeleted));
 		
 		if(Yii::app()->getRequest()->getIsAjaxRequest())
@@ -209,8 +217,8 @@ class LanguageController extends TController
 		}
 		else
 		{
-			Yii::app()->getUser()->setFlash($message);
-			$this->redirect(Yii::app()->getRequest()->getUrlReferrer());
+			Yii::app()->getUser()->setFlash(TranslateModule::ID.'-success', $message);
+			$this->redirect($this->createUrl('index'));
 		}
 	}
 

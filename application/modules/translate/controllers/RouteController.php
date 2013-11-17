@@ -125,13 +125,21 @@ class RouteController extends TController
 			$viewsDeleted = View::model()->deleteAll(array('join' => 'LEFT OUTER JOIN '.$db->quoteTableName(RouteView::model()->tableName()).' '.$db->quoteTableName('viewRoutes').' ON '.$db->quoteColumnName(View::model()->tableName().'.id').'='.$db->quoteColumnName('viewRoutes.view_id'), 'condition' => $db->quoteColumnName('viewRoutes.route_id').' IS NULL'));
 			$sourceViewsDeleted = ViewSource::model()->deleteAll(array('join' => 'LEFT OUTER JOIN '.$db->quoteTableName(RouteView::model()->tableName()).' '.$db->quoteTableName('viewRoutes').' ON '.$db->quoteColumnName(ViewSource::model()->tableName().'.id').'='.$db->quoteColumnName('viewRoutes.view_id'), 'condition' => $db->quoteColumnName('viewRoutes.route_id').' IS NULL'));
 			ViewMessage::model()->deleteAll(array('join' => 'LEFT OUTER JOIN '.$db->quoteTableName(ViewSource::model()->tableName()).' '.$db->quoteTableName('viewSource').' ON '.$db->quoteColumnName(ViewMessage::model()->tableName().'.view_id').'='.$db->quoteColumnName('viewSource.id'), 'condition' => $db->quoteColumnName('viewSource.id').' IS NULL'));
+			$transaction->commit();
 		}
 		catch(Exception $e)
 		{
 			$transaction->rollback();
-			throw $e;
+			if(Yii::app()->getRequest()->getIsAjaxRequest())
+			{
+				throw $e;
+			}
+			else
+			{
+				Yii::app()->getUser()->setFlash(TranslateModule::ID.'-error', $e->getMessage());
+				$this->redirect(Yii::app()->getRequest()->getUrlReferrer());
+			}
 		}
-		$transaction->commit();
 
 		$message = TranslateModule::t('{routes} routes, {sourceViews} source views, and {views} translated views have been deleted.', array('{routes}' => $routesDeleted, '{sourceViews}' => $sourceViewsDeleted, '{views}' => $viewsDeleted));
 		
@@ -141,8 +149,8 @@ class RouteController extends TController
 		}
 		else
 		{
-			Yii::app()->getUser()->setFlash($message);
-			$this->redirect(Yii::app()->getRequest()->getUrlReferrer());
+			Yii::app()->getUser()->setFlash(TranslateModule::ID.'-success', $message);
+			$this->redirect($this->createUrl('index'));
 		}
 	}
 

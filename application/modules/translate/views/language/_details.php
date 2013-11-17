@@ -18,4 +18,8 @@ $this->widget('zii.widgets.CDetailView',
 			),
 		)
 );
+echo CHtml::button(
+	TranslateModule::t('Delete'),
+	array('onClick' =>  'if(confirm("'.TranslateModule::t('Are you certain that you would like to delete this language as well as all associated messages, translations, and views?').'")){document.location.href = "'.Yii::app()->getController()->createUrl('language/delete', array('id' => $model->id)).'";}')
+);
 ?>
