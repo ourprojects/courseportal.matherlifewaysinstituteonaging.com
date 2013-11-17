@@ -104,7 +104,7 @@ foreach (array(
         <img src="<?php echo $this->getImagesUrl('care/286x366_Grafix_69pc.png'); ?>" alt="image" class="block center"/>
 
         <p>{t}69% of working caregivers report having to rearrange their work schedule, decrease their hours, or take an
-            unpaid leave of absence to meet their care-giving responsibilities.{/t}</p>
+            unpaid leave of absence to meet their caregiving responsibilities.{/t}</p>
     </div>
 </div>
 <!-- Start main content here -->
@@ -828,7 +828,7 @@ AARP provides various articles of interest and resources for family caregivers. 
             </li>
             <li>{t}How have these strengths helped me in the past?{/t}
             </li>
-            <li>{t}How do these strengths now help me?/t}
+            <li>{t}How do these strengths now help me?{/t}
             </li>
         </ol>
 

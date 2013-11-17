@@ -399,17 +399,10 @@ AARP provides various articles of interest and resources for family caregivers. 
             documented in a PHR. Additionally, critical information about ones health in an emergency situation would
             easily be accessed.{/t}</p>
 
-
         <p>{t}You will learn about several different types of PHRs and have the chance to test some of these out for
             your own use or for your older parents.{/t}</p>
 
-        <p>{t}Click on the following link to view a brief video on some personal experiences with PHRs.{/t}</p>
-
-        (embed)
-        <iframe src="http://player.vimeo.com/video/5001493" style="width: 500px; height: 338px; frameborder: 0;"
-                webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
-        <p><a href="http://vimeo.com/5001493">PHR Video</a> from <a href="http://vimeo.com/ahima">AHIMA</a> on <a
-                href="http://vimeo.com">Vimeo</a>.</p>
+        <p>{t}Click <a href="http://vimeo.com/5001493" target="_blank"> here</a> to view a brief video on some personal experiences with PHRs.{/t}</p>
 
     </div>
     <div class="buttons">
@@ -464,11 +457,20 @@ AARP provides various articles of interest and resources for family caregivers. 
     <div class="content">
         <h2 class="flowers">{t}How to choose a personal health record{/t}</h2>
         <hr/>
-        <p>{t}Choosing a Personal Health Record (PHR) is really a matter of personal choice. A PHR is controlled by the individual and can be shared with others including family members, caregivers, and health care providers.  This is different from a health care provider’s electronic or paper health records which are controlled by the provider.  One can get access to one’s own health records from a provider, but family members do not have access without your permission.  {/t}</p>
+        <p>{t}Choosing a Personal Health Record (PHR) is really a matter of personal choice. A PHR is controlled by the
+            individual and can be shared with others including family members, caregivers, and health care providers.
+            This is different from a health care provider’s electronic or paper health records which are controlled by
+            the provider. One can get access to one’s own health records from a provider, but family members do not have
+            access without your permission. {/t}</p>
 
-        <p>{t}This can be challenging in the caregiving situation if you as the caregiver do not have permission to access your parents’ health records, and you may need to provide information to a health care provider in an emergency situation.  If one of your parents was hospitalized and unable to speak for himself or herself, did you know that the hospital cannot legally provide any information to you as a child without previous permission of your parent?{/t}</p>
+        <p>{t}This can be challenging in the caregiving situation if you as the caregiver do not have permission to
+            access your parents’ health records, and you may need to provide information to a health care provider in an
+            emergency situation. If one of your parents was hospitalized and unable to speak for himself or herself, did
+            you know that the hospital cannot legally provide any information to you as a child without previous
+            permission of your parent?{/t}</p>
 
-        <p>{t}Ideally, a PHR contains a fairly complete summary of one’s medical and health history based on data from a number of sources.  PHRs are available from a number of sources:{/t}</p>
+        <p>{t}Ideally, a PHR contains a fairly complete summary of one’s medical and health history based on data from a
+            number of sources. PHRs are available from a number of sources:{/t}</p>
 
         <ul>
             <li>
@@ -493,17 +495,32 @@ AARP provides various articles of interest and resources for family caregivers. 
     <div class="content">
         <h2 class="flowers">{t}Types of PHRs{/t}</h2>
         <hr/>
-        <p>{t}PHRs may be kept as hardcopy on paper or electronically on one’s computer or on the Internet through a service provider.  In considering what form may be most suitable, you should consider things like accessibility, convenience, and ease of updating.  {/t}</p>
+        <p>{t}PHRs may be kept as hardcopy on paper or electronically on one’s computer or on the Internet through a
+            service provider. In considering what form may be most suitable, you should consider things like
+            accessibility, convenience, and ease of updating. {/t}</p>
 
-        <p>{t}Paper versions can range from a formal document to a file folder with information from health care providers, insurance companies and hospitals.  This is at least a good starting point for most people to get a snapshot of one’s health history.  The difficulties come in when trying to keep all the information current as well as having emergency access to the information.  {/t}</p>
+        <p>{t}Paper versions can range from a formal document to a file folder with information from health care
+            providers, insurance companies and hospitals. This is at least a good starting point for most people to get
+            a snapshot of one’s health history. The difficulties come in when trying to keep all the information current
+            as well as having emergency access to the information. {/t}</p>
 
-        <p>{t}The greatest risk of keeping health information on paper can easily be understood when considering the saga of Hurricane Katrina.  The risks of keeping health information on paper were fully exposed when hundreds of thousands of evacuees sought care in new medical communities across the country.  Evacuees lacked even the most basic personal health information, such as their medications and dosages.  Most of their paper records were destroyed in the muck of hurricane-caused flooding, and many medical practices and hospitals were shut down for weeks, perhaps forever.  {/t}</p>
+        <p>{t}The greatest risk of keeping health information on paper can easily be understood when considering the
+            saga of Hurricane Katrina. The risks of keeping health information on paper were fully exposed when hundreds
+            of thousands of evacuees sought care in new medical communities across the country. Evacuees lacked even the
+            most basic personal health information, such as their medications and dosages. Most of their paper records
+            were destroyed in the muck of hurricane-caused flooding, and many medical practices and hospitals were shut
+            down for weeks, perhaps forever. {/t}</p>
 
 
+        <p>{t}Out of necessity, a program called KatrinaHealth was created to rapidly develop electronic health records
+            for those displaced by the hurricane. (For more on this program, go to http://www.katrinahealth.org.) Since
+            then, the American Association of Family Practitioners (AAFP) has collaborated with the city of New Orleans
+            and Intel, among others, to provide digital PHRs to every New Orleans resident who wants one, and to
+            transfer these to medical practices and hospitals in the displaced residents' current location for follow-up
+            care. {/t}</p>
 
-        <p>{t}Out of necessity, a program called KatrinaHealth was created to rapidly develop electronic health records for those displaced by the hurricane.  (For more on this program, go to http://www.katrinahealth.org.) Since then, the American Association of Family Practitioners (AAFP) has collaborated with the city of New Orleans and Intel, among others, to provide digital PHRs to every New Orleans resident who wants one, and to transfer these to medical practices and hospitals in the displaced residents' current location for follow-up care. {/t}</p>
-
-        <p>{t}The American Health Information Management Association (AHIMA) created a PHR form that is downloadable.{/t}</p>
+        <p>{t}The American Health Information Management Association (AHIMA) created a PHR form that is
+            downloadable.{/t}</p>
 
         <p>
             <a href="<?php echo $this->createDownloadUrl('managinghealthinformationwithapersonalhealthrecord/PHR_Form_from_AHIMA.pdf'); ?>"
@@ -522,11 +539,21 @@ AARP provides various articles of interest and resources for family caregivers. 
     <div class="content">
         <h2 class="flowers">{t}Software versions of PHRs{/t}</h2>
         <hr/>
-        <p>{t}Software versions of PHRs can be stored on personal computers.  Information is inputted directly into electronic forms or by scanning documents from health care providers.  A hardcopy can then be easily printed.  The user controls access to the information.  The major drawback is the lack of accessibility in case of an emergency unless one carries a copy of the records on a flash drive or on a data card.  Most software versions of PHRs are available at a cost to consumers.{/t}</p>
+        <p>{t}Software versions of PHRs can be stored on personal computers. Information is inputted directly into
+            electronic forms or by scanning documents from health care providers. A hardcopy can then be easily printed.
+            The user controls access to the information. The major drawback is the lack of accessibility in case of an
+            emergency unless one carries a copy of the records on a flash drive or on a data card. Most software
+            versions of PHRs are available at a cost to consumers.{/t}</p>
 
-        <p>{t}Internet versions of PHRs are very new having just been developed over the past 1-2 years.  Through the web, consumers may access their private PHR accounts by connecting to the Internet and logging in with their username and password.  Information may easily be updated, and consumers may elect to share information with specific individuals of their choosing.  The major advantage is the access and availability of information in emergency situations – all one needs is Internet connection and logon information.  {/t}</p>
+        <p>{t}Internet versions of PHRs are very new having just been developed over the past 1-2 years. Through the
+            web, consumers may access their private PHR accounts by connecting to the Internet and logging in with their
+            username and password. Information may easily be updated, and consumers may elect to share information with
+            specific individuals of their choosing. The major advantage is the access and availability of information in
+            emergency situations – all one needs is Internet connection and logon information. {/t}</p>
 
-        <p>{t}If you are looking at an internet-based PHR, it is very important that the provider describes security and privacy standards that are in place to protect the information being stored.  We will look at a few examples in the next section.{/t}</p>
+        <p>{t}If you are looking at an internet-based PHR, it is very important that the provider describes security and
+            privacy standards that are in place to protect the information being stored. We will look at a few examples
+            in the next section.{/t}</p>
 
         <p>
             <a href="<?php echo $this->createDownloadUrl('managinghealthinformationwithapersonalhealthrecord/Activity_Self_Awareness_Survey.doc'); ?>"
@@ -546,13 +573,23 @@ AARP provides various articles of interest and resources for family caregivers. 
         <hr/>
 
         <h4>My Family Health Portrait</h4>
-        <p>{t}My Family Health Portrait is a web-based program developed from the U.S. Department of Health and Human Services, Family History Initiative.  This initiative is designed to encourage families to learn more about their family health history.  Because health providers have long understood that common illnesses can run in families (like high blood pressure, diabetes, and heart disease – to name a few), tracing illnesses experienced by your parents, grandparents, and other blood relatives may help your physician predict disorders to which you may be at risk and take preventive action.{/t}</p>
 
-        <p>{t}My Family Health Portrait helps users organize family history information, save it to their own computer, and print a hard copy to take to the physician’s visit.  Additionally, users may grant permission for other family members to view information on their website.{/t}</p>
+        <p>{t}My Family Health Portrait is a web-based program developed from the U.S. Department of Health and Human
+            Services, Family History Initiative. This initiative is designed to encourage families to learn more about
+            their family health history. Because health providers have long understood that common illnesses can run in
+            families (like high blood pressure, diabetes, and heart disease – to name a few), tracing illnesses
+            experienced by your parents, grandparents, and other blood relatives may help your physician predict
+            disorders to which you may be at risk and take preventive action.{/t}</p>
 
-        <p>{t}Visit the <a href="https://familyhistory.hhs.gov/fhh-web/home.action" target="_blank">My Family Health Portrait</a> website.{/t}</p>
+        <p>{t}My Family Health Portrait helps users organize family history information, save it to their own computer,
+            and print a hard copy to take to the physician’s visit. Additionally, users may grant permission for other
+            family members to view information on their website.{/t}</p>
 
-        <p>Read the section on the website, “Learn More About My Family Health Portrait” to answer the following questions.</p>
+        <p>{t}Visit the <a href="https://familyhistory.hhs.gov/fhh-web/home.action" target="_blank">My Family Health
+                Portrait</a> website.{/t}</p>
+
+        <p>Read the section on the website, “Learn More About My Family Health Portrait” to answer the following
+            questions.</p>
 
         <ol>
             <li>
@@ -562,10 +599,10 @@ AARP provides various articles of interest and resources for family caregivers. 
                 What is done to assure that my information is private that I enter in My Family Health Portrait?
             </li>
             <li>
-                What does it mean that this tool is EHR (Electronic Health Record) ready?  How does this benefit me?
+                What does it mean that this tool is EHR (Electronic Health Record) ready? How does this benefit me?
             </li>
             <li>
-                What is “clinical decision support”?  How does it benefit me?
+                What is “clinical decision support”? How does it benefit me?
             </li>
         </ol>
 
@@ -582,32 +619,45 @@ AARP provides various articles of interest and resources for family caregivers. 
         <hr/>
         <h4>{t}Google Health{/t}</h4>
 
-        <p>{t}Google offers a free, secure web-based program to store and manage health information in a central place.  Information is accessible anywhere and at anytime.  In addition to health information, test results, x-rays, and other scans may be easily uploaded into your PHR.  You may also keep track of test results and laboratory values visually to see how you progress over time.  Finally, you may print a wallet card to carry your health profile with you.   {/t}</p>
+        <p>{t}Google offers a free, secure web-based program to store and manage health information in a central place.
+            Information is accessible anywhere and at anytime. In addition to health information, test results, x-rays,
+            and other scans may be easily uploaded into your PHR. You may also keep track of test results and laboratory
+            values visually to see how you progress over time. Finally, you may print a wallet card to carry your health
+            profile with you. {/t}</p>
 
         <p>{t}Click on the following link to view a brief video taking you on a tour of Google Health.{/t}</p>
 
         <h4>Video – Introduction to Google Health</h4>
 
-        (URL) http://www.youtube.com/watch?v=yNe6-p4G7Ik
-
-        (embed)
-        <iframe width="560" height="315" src="http://www.youtube.com/embed/yNe6-p4G7Ik" frameborder="0" allowfullscreen></iframe>
-
+        <iframe style="width: 640px; height: 360px; frameborder: 0;" src="//www.youtube.com/embed/yNe6-p4G7Ik"
+                allowfullscreen></iframe>
 
         <p>To summarize aspects of Google Health:</p>
 
         <ul>
             <li>
-
+                Store and manage all health information securely.
+            </li>
+            <li>
+                Create and save a health profile and link to numerous resources to learn more about symptoms, causes,
+                and treatments.
+            </li>
+            <li>
+                Import medical record files and prescription history through links with partners such as hospitals,
+                labs, pharmacies, and insurance companies.
+            </li>
+            <li>
+                Track your medical history to keep your physician updated.
+            </li>
+            <li>
+                Learn how medications may interact through an integrated program that checks for potential problems
+                between drugs.
+            </li>
+            <li>
+                Select those with whom you want to share key medical information.
             </li>
         </ul>
 
-        Store and manage all health information securely.
-        Create and save a health profile and link to numerous resources to learn more about symptoms, causes, and treatments.
-        Import medical record files and prescription history through links with partners such as hospitals, labs, pharmacies, and insurance companies.
-        Track your medical history to keep your physician updated.
-        Learn how medications may interact through an integrated program that checks for potential problems between drugs.
-        Select those with whom you want to share key medical information.
 
     </div>
     <div class="buttons">
@@ -620,24 +670,30 @@ AARP provides various articles of interest and resources for family caregivers. 
     <div class="content">
         <h2 class="flowers">{t}Activity – reviewing internet-based PHR tools {/t}</h2>
         <hr/>
-        <h4>{t}Step 2{/t}</h4>
+        <h4>{t}ProfileMD{/t}</h4>
 
-        <p>{t}You are prepared to ask yourself some difficult questions and not avoid answering them. {/t}</p>
+        <p>{t}The final PHR tool we will review is one of the latest Internet-based programs designed for Smartphones.
+            ProfileMD is a freeware PHR that allows immediate access to medical health history and information via your
+            smart phone. {/t}</p>
 
-        <p>{t}Imagine that you are in some tough discussions with your father and siblings about dad’s lack of caring
-            for himself living alone. Dad has grown more isolated day by day. When visiting one day, you are shocked to
-            find empty food containers and spoiled food in the refrigerator. There is a stack of unpaid bills on the
-            kitchen counter next to a jar of various pills mixed together. You bring this up with your siblings, but
-            their reaction is, “Dad is fine. He wants to stay in his house, and it’s not our place to kick him out!”
-            Your dad says, “I just haven’t gotten around to some things…and I’d thank you to stay out of my
-            business!”{/t}</p>
+        <p>{t}Download the software to your computer and sync with your handheld device.{/t}</p>
 
-        <p>{t}Are your prepared to ask yourself some key questions like…”Am I an effective caregiver? Why do I think
-            that I am not getting the response I need from my dad or siblings? What response should I expect? Why do I
-            believe that I should expect it? Is it realistic and upon what observations do I base the
-            perception?”{/t}</p>
+        <p>If the files do not download, go to one of these websites to download the software:</p>
 
-        <p>{t}Most importantly, “When I think about being a good caregiver, what’s important to me?”{/t}</p>
+        <p>
+            <a href="<?php echo $this->createDownloadUrl('managinghealthinformationwithapersonalhealthrecord/ProfileMDClassic106.zip'); ?>"
+               target="_blank" class="button">Download Zip</a>
+        </p>
+
+        <p>
+            <a href="<?php echo $this->createDownloadUrl('managinghealthinformationwithapersonalhealthrecord/ProfileMDClassic106.sit'); ?>"
+               target="_blank" class="button">Download Sit</a>
+        </p>
+
+        <p>
+            <a href="http://download.cnet.com/Profile-MD/3640-2094_4-23947.html" target="_blank">Download Site for
+                ProfileMD</a>
+        </p>
 
     </div>
     <div class="buttons">
@@ -648,14 +704,19 @@ AARP provides various articles of interest and resources for family caregivers. 
 
 <div id="lesson-1-slide-13" class="course-slide">
     <div class="content">
-        <h2 class="flowers">{t}What is necessary to create an effective self-coaching experience?{/t}</h2>
+        <h2 class="flowers">{t}Exercise – CARE Coaching and Selecting PHRs{/t}</h2>
         <hr/>
-        <h4>{t}Step 3{/t}</h4>
 
-        <p>{t}You accept that through self-coaching, you are going to persist until you identify a solution and set of
-            actions that you will then commit to implementing. {/t}</p>
+        <p>{t}Asking the right questions is key to determine which PHR product is right for you and your family. This
+            exercise is designed to help you determine exactly that. Review the previously described Internet-based
+            tools, My Family Health Profile and ProfileMD, and respond to the following questions.{/t}</p>
 
-        <p>{t}It may take some time to achieve results, but you need to stick to your goal.{/t}</p>
+        <p>{t}Please note that you may print or save any activities from this course for future reference.{/t}</p>
+
+        <p>
+            <a href="<?php echo $this->createDownloadUrl('managinghealthinformationwithapersonalhealthrecord/Exercise_CARE_Coaching_and_Selecting_PHRs.docx'); ?>"
+               target="_blank" class="button">Download Activity</a>
+        </p>
 
     </div>
     <div class="buttons">
@@ -666,23 +727,26 @@ AARP provides various articles of interest and resources for family caregivers. 
 
 <div id="lesson-1-slide-14" class="course-slide">
     <div class="content">
-        <h2 class="flowers">{t}What is necessary to create an effective self-coaching experience?{/t}</h2>
+        <h2 class="flowers">{t}Emergency contact information list{/t}</h2>
         <hr/>
-        <h4>{t}Step 4{/t}</h4>
 
-        <p>{t}Be willing to “let it go.”{/t}</p>
+        <p>{t}In some situations where you as a family caregiver may feel you just don’t have enough time at this point
+            to put together a PHR for your older parents. You may also find that your parents are just not ready to
+            share a more comprehensive profile of their entire health history at this point in their lives.{/t}</p>
 
         <p>
-            {t}We’ve all been in the situation where something just nags at us. Things always seem worse when we pay too
-            much attention to them. If I feel anxious, overwhelmed, or depressed and focus on those feelings, I become
-            it. By letting go, I turn away from it. I don’t feed those problems any longer.{/t}
+            {t}You may then suggest completing an emergency contact information list as a first step. You may suggest to
+            them that they keep a copy in their home in a location convenient to both of them and also provide you a
+            copy for your reference. {/t}
         </p>
 
         <p>
-            {t}It is sort of like flipping to another television channel. You may not be able to stop a thought from
-            “percolating” in your mind, but you can say “no!” to thoughts that result in anxiety or depression. We
-            always have choices. In this case, we have the choice not be become a victim of negative thoughts or
-            insecurities.{/t}
+            {t}You may download an example of an Emergency Contact Information Sheet below.{/t}
+        </p>
+
+        <p>
+            <a href="<?php echo $this->createDownloadUrl('managinghealthinformationwithapersonalhealthrecord/Emergency_Contact_Information_Sheet.doc'); ?>"
+               target="_blank" class="button">Download Activity</a>
         </p>
 
     </div>
@@ -694,16 +758,50 @@ AARP provides various articles of interest and resources for family caregivers. 
 
 <div id="lesson-1-slide-15" class="course-slide">
     <div class="content">
-        <h2 class="flowers">{t}What is necessary to create an effective self-coaching experience?{/t}</h2>
+        <h2 class="flowers">{t}Congratulations on completing the course!{/t}</h2>
         <hr/>
-        <h4>{t}Step 5{/t}</h4>
 
-        <p>{t}Set a time frame for the self-coaching session.{/t}</p>
+        <p>{t}Let’s summarize the top five points we covered in this course:{/t}</p>
 
-        <p>
-            {t}The focus of self-coaching is to identify your goal, commit to your actions, and then move on to do
-            something else. Sometimes your best thinking goes on when you do move onto something else and then come back
-            to your goal.{/t}</p>
+        <ol>
+            <li>
+                {t}Personal Health Records (PHR) are easy-to-use tools to help manage health information in a single
+                place. {/t}
+            </li>
+            <li>
+                {t}A PHR for your older parents has several benefits including:{/t}
+            </li>
+
+            <ul>
+                <li>
+                    Allow sharing health information among multiple health care providers
+                </li>
+                <li>
+                    Track appointments and outcomes between health care visits
+                </li>
+                <li>
+                    Provide a comprehensive list of past and current medications
+                </li>
+                <li>
+                    Improve the physician visit experience
+                </li>
+            </ul>
+
+            <li>
+                {t}Releasing of one’s personal health information is protected by law, and so health care providers
+                cannot share protected health information of someone else (even close relatives) without their written
+                permission.{/t}
+            </li>
+            <li>
+                {t}PHRs may be kept as hard copy or electronically. In considering a format, look at accessibility,
+                convenience, and ease of updating.{/t}
+            </li>
+            <li>
+                {t}There are several software versions of PHRs as well as Internet versions. Security is a very
+                important consideration when reviewing Internet versions where information may be stored outside of your
+                computer.{/t}
+            </li>
+        </ol>
 
     </div>
     <div class="buttons">

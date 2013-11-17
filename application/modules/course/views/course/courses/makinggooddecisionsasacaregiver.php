@@ -1083,8 +1083,9 @@ AARP provides various articles of interest and resources for family caregivers. 
             <hr/>
             <p>{t}Please complete the form below to contact your facilitator.{/t}</p>
 
+            <!--
             <div class="box-white">
-                <?php
+                <?php /*
                 $this->widget(
                     'ext.LDContactUsWidget.LDContactUsWidget',
                     array(
@@ -1101,9 +1102,9 @@ AARP provides various articles of interest and resources for family caregivers. 
                         )
                     )
                 );
-                ?>
+            */    ?>
             </div>
-
+-->
 
         </div>
         <div class="buttons">
