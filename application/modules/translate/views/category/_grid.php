@@ -1,5 +1,5 @@
 <?php
-Yii::app()->getClientScript()->registerCss('category-grid-table-width', 'div#category-grid table.items{min-width:100%;width:100%;max-width:100%;}');
+Yii::app()->getClientScript()->registerCss($id.'-table-width', 'div#'.$id.' table.items{min-width:100%;width:100%;max-width:100%;}');
 $relatedGrids = array('messageSource-grid', 'message-grid', 'missingLanguage-grid', 'missingMessageSource-grid');
 $this->widget('zii.widgets.grid.CGridView',
 		array(

@@ -1,6 +1,6 @@
 <?php
 $relatedGrids = array('view-grid');
-Yii::app()->getClientScript()->registerCss('viewSource-grid-table-width', 'div#viewSource-grid table.items{min-width:100%;width:100%;max-width:100%;}');
+Yii::app()->getClientScript()->registerCss($id.'-table-width', 'div#'.$id.' table.items{min-width:100%;width:100%;max-width:100%;}');
 $this->widget('zii.widgets.grid.CGridView',
 		array(
 			'id' => $id,

@@ -26,6 +26,7 @@ else
 {
 	$buttonConfig['template'] = '{view}{delete}';
 }
+Yii::app()->getClientScript()->registerCss($id.'-table-width', 'div#'.$id.' table.items{min-width:100%;width:100%;max-width:100%;}');
 $this->widget('zii.widgets.grid.CGridView',
 		array(
 			'id' => $id,
