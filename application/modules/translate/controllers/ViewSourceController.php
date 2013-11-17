@@ -125,24 +125,32 @@ class ViewSourceController extends TController
 			$viewsDeleted = View::model()->deleteAllByAttributes(array('id' => $id));
 			$sourceViewsDeleted = ViewSource::model()->deleteByPk($id);
 			ViewMessage::model()->deleteAllByAttributes(array('view_id' => $id));
+			$transaction->commit();			
 		}
 		catch(Exception $e)
 		{
 			$transaction->rollback();
-			throw $e;
+			if(Yii::app()->getRequest()->getIsAjaxRequest())
+			{
+				throw $e;
+			}
+			else
+			{
+				Yii::app()->getUser()->setFlash(TranslateModule::ID.'-error', $e->getMessage());
+				$this->redirect(Yii::app()->getRequest()->getUrlReferrer());
+			}
 		}
-		$transaction->commit();
-		
+
 		$message = TranslateModule::t('{sourceViews} source views and {views} translated views have been deleted.', array('{sourceViews}' => $sourceViewsDeleted, '{views}' => $viewsDeleted));
-		
+
 		if(Yii::app()->getRequest()->getIsAjaxRequest())
 		{
 			echo $message;
 		}
 		else
 		{
-			Yii::app()->getUser()->setFlash($message);
-			$this->redirect(Yii::app()->getRequest()->getUrlReferrer());
+			Yii::app()->getUser()->setFlash(TranslateModule::ID.'-success', $message);
+			$this->redirect($this->createUrl('index'));
 		}
 	}
 

@@ -1267,11 +1267,11 @@ catch(Exception $e)
 				<th colspan="2" class="center"><?php echo TranslateModule::t('Installation'); ?></th>
 			</tr>
 			<?php $installed = TranslateModule::isInstalled(); ?>
-			<tr>
+			<tr id="installStatus">
 				<th class="right"><?php echo TranslateModule::t('Status:'); ?></th>
 				<td class="fill <?php echo $installed ? 'translateNoError' : 'translateError'; ?>"><?php echo $installed ? TranslateModule::t('Installed') : TranslateModule::t('Not Installed'); ?></td>
 			</tr>
-			<tr>
+			<tr id="install">
 				<th class="right"></th>
 				<td class="fill">
 				<?php
@@ -1283,11 +1283,10 @@ catch(Exception $e)
 						array(
 							'type' => 'POST',
 							'data' => array('overwrite' => true),
-							'beforeSend' => 'function(){if(!confirm("'.TranslateModule::t('Re-installing translation system will clear all data! All translations will be lost! Are you sure you want to continue?').'")) return false;$("#reInstall").addClass("translateLoading");}',
+							'beforeSend' => 'function(){if(!confirm("'.TranslateModule::t('Re-installing translation system will clear all data! All translations will be lost! Are you sure you want to continue?').'")) return false;$("#install").addClass("translateLoading");$("#installStatus td").text("'.TranslateModule::t('Installing...').'");}',
 							'complete' => 'function(data){location.reload();}',
 						),
 						array(
-							'id' => 'reInstall',
 							'disabled' => $error
 						)
 					);
@@ -1301,7 +1300,7 @@ catch(Exception $e)
 				{
 					if($error)
 					{
-						echo '<p style="font-size:1.15em;font-weight:bold;color:red;">'.TranslateModule::t('You must fix the errors listed above before translation system can be installed.').'</p>';
+						echo '<p style="font-size:1.15em;font-weight:bold;color:red;">'.TranslateModule::t('You must fix the errors listed above before the translation system can be installed.').'</p>';
 					}
 					echo CHtml::ajaxButton(
 						'Install Translation System',
@@ -1309,11 +1308,10 @@ catch(Exception $e)
 						array(
 							'type' => 'POST',
 							'data' => array('overwrite' => false),
-							'beforeSend' => 'function(){$("#install").addClass("translateLoading");}',
+							'beforeSend' => 'function(){$("#install").addClass("translateLoading");$("#installStatus td").text("'.TranslateModule::t('Installing...').'");}',
 							'complete' => 'function(data){location.reload();}',
 						),
 						array(
-							'id' => 'install',
 							'disabled' => $error
 						)
 					);

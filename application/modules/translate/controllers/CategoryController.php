@@ -130,24 +130,32 @@ class CategoryController extends TController
 			$messagesDeleted = Message::model()->deleteAll(array('join' => 'LEFT OUTER JOIN '.$db->quoteTableName(CategoryMessage::model()->tableName()).' '.$db->quoteTableName('messageCategories').' ON '.$db->quoteColumnName(Message::model()->tableName().'.id').'='.$db->quoteColumnName('messageCategories.message_id'), 'condition' => $db->quoteColumnName('messageCategories.category_id').' IS NULL'));
 			$sourceMessagesDeleted = MessageSource::model()->deleteAll(array('join' => 'LEFT OUTER JOIN '.$db->quoteTableName(CategoryMessage::model()->tableName()).' '.$db->quoteTableName('messageCategories').' ON '.$db->quoteColumnName(MessageSource::model()->tableName().'.id').'='.$db->quoteColumnName('messageCategories.message_id'), 'condition' => $db->quoteColumnName('messageCategories.category_id').' IS NULL'));
 			ViewMessage::model()->deleteAll(array('join' => 'LEFT OUTER JOIN '.$db->quoteTableName(MessageSource::model()->tableName()).' '.$db->quoteTableName('messageSource').' ON '.$db->quoteColumnName(ViewMessage::model()->tableName().'.message_id').'='.$db->quoteColumnName('messageSource.id'), 'condition' => $db->quoteColumnName('messageSource.id').' IS NULL'));
+			$transaction->commit();
 		}
 		catch(Exception $e)
 		{
 			$transaction->rollback();
-			throw $e;
+			if(Yii::app()->getRequest()->getIsAjaxRequest())
+			{
+				throw $e;
+			}
+			else
+			{
+				Yii::app()->getUser()->setFlash(TranslateModule::ID.'-error', $e->getMessage());
+				$this->redirect(Yii::app()->getRequest()->getUrlReferrer());
+			}
 		}
-		$transaction->commit();
 
 		$message = TranslateModule::t('{categories} categories, {sourceMessages} source messages, and {messages} translations have been deleted.', array('{categories}' => $categoriesDeleted, '{sourceMessages}' => $sourceMessagesDeleted, '{messages}' => $messagesDeleted));
-		
+
 		if(Yii::app()->getRequest()->getIsAjaxRequest())
 		{
 			echo $message;
 		}
 		else
 		{
-			Yii::app()->getUser()->setFlash($message);
-			$this->redirect(Yii::app()->getRequest()->getUrlReferrer());
+			Yii::app()->getUser()->setFlash(TranslateModule::ID.'-success', $message);
+			$this->redirect($this->createUrl('index'));
 		}
 	}
 

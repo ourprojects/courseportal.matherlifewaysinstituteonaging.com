@@ -118,7 +118,22 @@ class ViewController extends TController
 	 */
 	public function actionDelete($id, $languageId)
 	{
-		$recordsDeleted = View::model()->deleteByPk(array('id' => $id, 'language_id' => $languageId));
+		try
+		{
+			$recordsDeleted = View::model()->deleteByPk(array('id' => $id, 'language_id' => $languageId));
+		}
+		catch(Exception $e)
+		{
+			if(Yii::app()->getRequest()->getIsAjaxRequest())
+			{
+				throw $e;
+			}
+			else
+			{
+				Yii::app()->getUser()->setFlash(TranslateModule::ID.'-error', $e->getMessage());
+				$this->redirect(Yii::app()->getRequest()->getUrlReferrer());
+			}
+		}
 		
 		$message = TranslateModule::t('{recordCount} translated views have been deleted.', array('{recordCount}' => $recordsDeleted));
 
@@ -128,8 +143,8 @@ class ViewController extends TController
 		}
 		else
 		{
-			Yii::app()->getUser()->setFlash($message);
-			$this->redirect(Yii::app()->getRequest()->getUrlReferrer());
+			Yii::app()->getUser()->setFlash(TranslateModule::ID.'-success', $message);
+			$this->redirect($this->createUrl('index'));
 		}
 	}
 
