@@ -70,44 +70,50 @@ class ViewController extends TController
 
 	public function internalActionGrid($id, $languageId, $name, $return = false)
 	{
+		$data = array('id' => $name);
 		switch($name)
 		{
 			case 'category-grid':
-				$model = new Category('search');
-				$model->with(array('messageSources.views' => array('condition' => 'views.id=:id AND views.language_id=:language_id', 'params' => array(':id' => $id, ':language_id' => $languageId))))->together()->getDbCriteria()->group = 't.id';
+				$data['relatedGrids'] = array('messageSource-grid', 'message-grid');
+				$data['model'] = new Category('search');
+				$data['model']->with(array('messageSources.views' => array('condition' => 'views.id=:id AND views.language_id=:language_id', 'params' => array(':id' => $id, ':language_id' => $languageId))))->together()->getDbCriteria()->group = 't.id';
 				$gridPath = '../category/_grid';
 				break;
 			case 'messageSource-grid':
-				$model = new MessageSource('search');
-				$model->with(array('views' => array('condition' => 'views.id=:id AND views.language_id=:language_id', 'params' => array(':id' => $id, ':language_id' => $languageId))))->together()->getDbCriteria()->group = 't.id';
+				$data['relatedGrids'] = array('message-grid');
+				$data['model'] = new MessageSource('search');
+				$data['model']->with(array('views' => array('condition' => 'views.id=:id AND views.language_id=:language_id', 'params' => array(':id' => $id, ':language_id' => $languageId))))->together()->getDbCriteria()->group = 't.id';
 				$gridPath = '../messageSource/_grid';
 				break;
 			case 'message-grid':
-				$model = new Message('search');
-				$model->with(array('views' => array('condition' => 'views.id=:id AND views.language_id=:language_id', 'params' => array(':id' => $id, ':language_id' => $languageId))))->together()->getDbCriteria()->group = 't.id, t.language_id';
+				$data['relatedGrids'] = array();
+				$data['model'] = new Message('search');
+				$data['model']->with(array('views' => array('condition' => 'views.id=:id AND views.language_id=:language_id', 'params' => array(':id' => $id, ':language_id' => $languageId))))->together()->getDbCriteria()->group = 't.id, t.language_id';
 				$gridPath = '../message/_grid';
 				break;
 			case 'route-grid':
-				$model = new Route('search');
-				$model->with(array('views' => array('condition' => 'views.id=:id AND views.language_id=:language_id', 'params' => array(':id' => $id, ':language_id' => $languageId))))->together()->getDbCriteria()->group = 't.id';
+				$data['relatedGrids'] = array();
+				$data['model'] = new Route('search');
+				$data['model']->with(array('views' => array('condition' => 'views.id=:id AND views.language_id=:language_id', 'params' => array(':id' => $id, ':language_id' => $languageId))))->together()->getDbCriteria()->group = 't.id';
 				$gridPath = '../route/_grid';
 				break;
 			case 'view-grid':
-				$model = new View('search');
+				$data['relatedGrids'] = array();
+				$data['model'] = new View('search');
 				if(isset($id))
 				{
-					$model->setAttribute('id', $id);
+					$data['model']->setAttribute('id', $id);
 				}
 				if(isset($languageId))
 				{
-					$model->setAttribute('language_id', $languageId);
+					$data['model']->setAttribute('language_id', $languageId);
 				}
 				$gridPath = '_grid';
 				break;
 			default:
 				return;
 		}
-		return $this->renderPartial($gridPath, array('model' => $model, 'id' => $name), $return);
+		return $this->renderPartial($gridPath, $data, $return);
 	}
 
 	/**

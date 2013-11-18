@@ -1,5 +1,4 @@
 <?php
-$relatedGrids = array(isset($languageId) ? 'messageSource-grid' : 'missingMessageSource-grid', 'message-grid');
 $buttonConfig = array(
 	'class' => 'CButtonColumn',
 	'viewButtonLabel' => TranslateModule::t('View Translations'),

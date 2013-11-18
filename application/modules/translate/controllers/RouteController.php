@@ -63,50 +63,58 @@ class RouteController extends TController
 
 	public function internalActionGrid($id, $name, $return = false)
 	{
+		$data = array('id' => $name);
 		switch($name)
 		{
 			case 'category-grid':
-				$model = new Category('search');
-				$model->with(array('messageSources.viewSources.routes' => array('condition' => 'routes.id=:id', 'params' => array(':id' => $id))))->together()->getDbCriteria()->group = 't.id';
+				$data['relatedGrids'] = array('messageSource-grid', 'message-grid');
+				$data['model'] = new Category('search');
+				$data['model']->with(array('messageSources.viewSources.routes' => array('condition' => 'routes.id=:id', 'params' => array(':id' => $id))))->together()->getDbCriteria()->group = 't.id';
 				$gridPath = '../category/_grid';
 				break;
 			case 'messageSource-grid':
-				$model = new MessageSource('search');
-				$model->with(array('viewSources.routes' => array('condition' => 'routes.id=:id', 'params' => array(':id' => $id))))->together()->getDbCriteria()->group = 't.id';
+				$data['relatedGrids'] = array('message-grid');
+				$data['model'] = new MessageSource('search');
+				$data['model']->with(array('viewSources.routes' => array('condition' => 'routes.id=:id', 'params' => array(':id' => $id))))->together()->getDbCriteria()->group = 't.id';
 				$gridPath = '../messageSource/_grid';
 				break;
 			case 'message-grid':
-				$model = new Message('search');
-				$model->with(array('views.sourceView.routes' => array('condition' => 'routes.id=:id', 'params' => array(':id' => $id))))->together()->getDbCriteria()->group = 't.id, t.language_id';
+				$data['relatedGrids'] = array();
+				$data['model'] = new Message('search');
+				$data['model']->with(array('views.sourceView.routes' => array('condition' => 'routes.id=:id', 'params' => array(':id' => $id))))->together()->getDbCriteria()->group = 't.id, t.language_id';
 				$gridPath = '../message/_grid';
 				break;
 			case 'language-grid':
-				$model = new Language('search');
-				$model->with(array('views.sourceView.routes' => array('condition' => 'routes.id=:id', 'params' => array(':id' => $id))))->together()->getDbCriteria()->group = 't.id';
+				$data['relatedGrids'] = array('messageSource-grid', 'message-grid', 'view-grid');
+				$data['model'] = new Language('search');
+				$data['model']->with(array('views.sourceView.routes' => array('condition' => 'routes.id=:id', 'params' => array(':id' => $id))))->together()->getDbCriteria()->group = 't.id';
 				$gridPath = '../language/_grid';
 				break;
 			case 'route-grid':
-				$model = new Route('search');
+				$data['relatedGrids'] = array();
+				$data['model'] = new Route('search');
 				if(isset($id))
 				{
-					$model->setAttribute('id', $id);
+					$data['model']->setAttribute('id', $id);
 				}
 				$gridPath = '_grid';
 				break;
 			case 'viewSource-grid':
-				$model = new ViewSource('search');
-				$model->with(array('routes' => array('condition' => 'routes.id=:id', 'params' => array(':id' => $id))))->together()->getDbCriteria()->group = 't.id';
+				$data['relatedGrids'] = array('view-grid');
+				$data['model'] = new ViewSource('search');
+				$data['model']->with(array('routes' => array('condition' => 'routes.id=:id', 'params' => array(':id' => $id))))->together()->getDbCriteria()->group = 't.id';
 				$gridPath = '../viewSource/_grid';
 				break;
 			case 'view-grid':
-				$model = new View('search');
-				$model->with(array('sourceView.routes' => array('condition' => 'routes.id=:id', 'params' => array(':id' => $id))))->together()->getDbCriteria()->group = 't.id, t.language_id';
+				$data['relatedGrids'] = array();
+				$data['model'] = new View('search');
+				$data['model']->with(array('sourceView.routes' => array('condition' => 'routes.id=:id', 'params' => array(':id' => $id))))->together()->getDbCriteria()->group = 't.id, t.language_id';
 				$gridPath = '../view/_grid';
 				break;
 			default:
 				return;
 		}
-		return $this->renderPartial($gridPath, array('model' => $model, 'id' => $name), $return);
+		return $this->renderPartial($gridPath, $data, $return);
 	}
 
 	/**

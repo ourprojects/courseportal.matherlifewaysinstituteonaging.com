@@ -63,55 +63,63 @@ class CategoryController extends TController
 
 	public function internalActionGrid($id, $name, $return = false)
 	{
+		$data = array('id' => $name);
 		switch($name)
 		{
 			case 'category-grid':
-				$model = new Category('search');
+				$data['model'] = new Category('search'); 
 				if(isset($id))
 				{
-					$model->setAttribute('id', $id);
+					$data['model']->setAttribute('id', $id);
 				}
 				$gridPath = '_grid';
 				break;
 			case 'messageSource-grid':
-				$model = new MessageSource('search');
-				$model->with(array('categories' => array('condition' => 'categories.id=:id', 'params' => array(':id' => $id))))->together()->getDbCriteria()->group = 't.id';
+				$data['relatedGrids'] = array('message-grid', 'missingMessageSource-grid');
+				$data['model'] = new MessageSource('search');
+				$data['model']->with(array('categories' => array('condition' => 'categories.id=:id', 'params' => array(':id' => $id))))->together()->getDbCriteria()->group = 't.id';
 				$gridPath = '../messageSource/_grid';
 				break;
 			case 'message-grid':
-				$model = new Message('search');
-				$model->with(array('source.categories' => array('condition' => 'categories.id=:id', 'params' => array(':id' => $id))))->together()->getDbCriteria()->group = 't.id, t.language_id';
+				$data['relatedGrids'] = array('missingMessageSource-grid');
+				$data['model'] = new Message('search');
+				$data['model']->with(array('source.categories' => array('condition' => 'categories.id=:id', 'params' => array(':id' => $id))))->together()->getDbCriteria()->group = 't.id, t.language_id';
 				$gridPath = '../message/_grid';
 				break;
 			case 'sourceMessageLanguage-grid':
-				$model = new Language('search');
-				$model->with(array('sourceMessages.categories' => array('condition' => 'categories.id=:id', 'params' => array(':id' => $id))))->together()->getDbCriteria()->group = 't.id';
+				$data['relatedGrids'] = array('translatedMessageLanguage-grid', 'messageSource-grid', 'message-grid');
+				$data['model'] = new Language('search');
+				$data['model']->with(array('sourceMessages.categories' => array('condition' => 'categories.id=:id', 'params' => array(':id' => $id))))->together()->getDbCriteria()->group = 't.id';
 				$gridPath = '../language/_grid';
 				break;
 			case 'translatedMessageLanguage-grid':
-				$model = new Language('search');
-				$model->with(array('messages.categories' => array('condition' => 'categories.id=:id', 'params' => array(':id' => $id))))->together()->getDbCriteria()->group = 't.id';
+				$data['relatedGrids'] = array('sourceMessageLanguage-grid', 'messageSource-grid', 'message-grid');
+				$data['model'] = new Language('search');
+				$data['model']->with(array('messages.categories' => array('condition' => 'categories.id=:id', 'params' => array(':id' => $id))))->together()->getDbCriteria()->group = 't.id';
 				$gridPath = '../language/_grid';
 				break;
 			case 'route-grid':
-				$model = new Route('search');
-				$model->with(array('viewSources.messageSources.categories' => array('condition' => 'categories.id=:id', 'params' => array(':id' => $id))))->together()->getDbCriteria()->group = 't.id';
+				$data['relatedGrids'] = array('viewSource-grid', 'view-grid');
+				$data['model'] = new Route('search');
+				$data['model']->with(array('viewSources.messageSources.categories' => array('condition' => 'categories.id=:id', 'params' => array(':id' => $id))))->together()->getDbCriteria()->group = 't.id';
 				$gridPath = '../route/_grid';
 				break;
 			case 'viewSource-grid':
-				$model = new ViewSource('search');
-				$model->with(array('messageSources.categories' => array('condition' => 'categories.id=:id', 'params' => array(':id' => $id))))->together()->getDbCriteria()->group = 't.id';
+				$data['relatedGrids'] = array('view-grid');
+				$data['model'] = new ViewSource('search');
+				$data['model']->with(array('messageSources.categories' => array('condition' => 'categories.id=:id', 'params' => array(':id' => $id))))->together()->getDbCriteria()->group = 't.id';
 				$gridPath = '../viewSource/_grid';
 				break;
 			case 'view-grid':
-				$model = new View('search');
-				$model->with(array('sourceView.messageSources.categories' => array('condition' => 'categories.id=:id', 'params' => array(':id' => $id))))->together()->getDbCriteria()->group = 't.id, t.language_id';
+				$data['relatedGrids'] = array();
+				$data['model'] = new View('search');
+				$data['model']->with(array('sourceView.messageSources.categories' => array('condition' => 'categories.id=:id', 'params' => array(':id' => $id))))->together()->getDbCriteria()->group = 't.id, t.language_id';
 				$gridPath = '../view/_grid';
 				break;
 			default:
 				return;
 		}
-		return $this->renderPartial($gridPath, array('model' => $model, 'id' => $name), $return);
+		return $this->renderPartial($gridPath, $data, $return);
 	}
 
 	/**
