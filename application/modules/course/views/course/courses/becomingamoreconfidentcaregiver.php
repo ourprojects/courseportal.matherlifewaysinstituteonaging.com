@@ -97,7 +97,8 @@ foreach (array(
             various aging services. She is fluent in English and Spanish, and has a strong passion for caregiver
             training.{/t}</p>
 
-        <p><a href="#" target="_blank" class="button">Contact Facilitator</a></p>
+        <p><a href="#lesson-2-slide-1" data-fancybox-group="lesson-2" class="teal lesson-1 button">Contact
+                Facilitator</a></p>
         <img src="<?php echo $this->getImagesUrl('becomingamoreconfidentcaregiver/80608570.png'); ?>"
              alt="{t}Facilitator{/t}" id="facilitator">
     </div>
