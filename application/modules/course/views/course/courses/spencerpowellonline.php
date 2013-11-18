@@ -1065,7 +1065,10 @@ foreach (array(
         <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Complete Module{/t}</a>
     </div>
 </div>
-</div>
+
+
+<!--
+
 <div id="lesson-2">
 <div id="lesson-2-slide-1" class="course-slide">
     <div class="content">
@@ -5852,6 +5855,8 @@ foreach (array(
     </div>
 </div>
 
+-->
+
 <div id="lesson-9-slide-1" class="course-slide">
     <div class="content">
     <h2 class="flowers">{t}Memory Strategy #1{/t}</h2>
@@ -5990,6 +5995,8 @@ foreach (array(
     </div>
 </div>
 
+<!--
+
 <div id="lesson-10-slide-1" class="course-slide">
     <div class="content">
         <h2 class="flowers">{t}Visualization{/t}</h2>
@@ -6094,6 +6101,8 @@ foreach (array(
             href="javascript:;" class="button right" onclick="parent.jQuery.fancybox.close();">{t}Exit{/t}</a>
     </div>
 </div>
+
+-->
 
 </div>
 </div>

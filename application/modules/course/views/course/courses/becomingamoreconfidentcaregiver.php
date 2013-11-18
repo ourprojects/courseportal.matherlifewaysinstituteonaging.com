@@ -5,7 +5,9 @@ $clientScript = Yii::app()->getClientScript();
 $clientScript->registerCssFile($this->getStylesUrl('course.css'));
 
 foreach (array(
-             '.lesson-1') as $lesson)
+             '.lesson-1',
+             '.lesson-2',
+             '.lesson-3') as $lesson)
     $this->widget(
         'ext.fancybox.EFancyBox',
         array('id' => $lesson,
@@ -95,7 +97,8 @@ foreach (array(
             various aging services. She is fluent in English and Spanish, and has a strong passion for caregiver
             training.{/t}</p>
 
-        <p><a href="#" target="_blank" class="button">Contact Facilitator</a></p>
+        <p><a href="#lesson-2-slide-1" data-fancybox-group="lesson-2" class="teal lesson-1 button">Contact
+                Facilitator</a></p>
         <img src="<?php echo $this->getImagesUrl('becomingamoreconfidentcaregiver/80608570.png'); ?>"
              alt="{t}Facilitator{/t}" id="facilitator">
     </div>
@@ -987,14 +990,12 @@ AARP provides various articles of interest and resources for family caregivers. 
                 </td>
             </tr>
         </table>
-
     </div>
     <div class="buttons">
         <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t} </a> <a
             href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo; </a>
     </div>
 </div>
-
 
 <div id="lesson-1-slide-26" class="course-slide">
     <div class="content">
@@ -1081,7 +1082,43 @@ AARP provides various articles of interest and resources for family caregivers. 
     </div>
 </div>
 
-<!-- need final 2 divs to close course and lesson id -->
+<div id="lesson-2">
+    <div id="lesson-2-slide-1" class="course-slide">
+        <div class="content">
+            <h2 class="flowers">{t}Contact Facilitator{/t}</h2>
+            <hr/>
+            <p>{t}Please complete the form below to contact your facilitator.{/t}</p>
+
+            <!--
+            <div class="box-white">
+                <?php /*
+                $this->widget(
+                    'ext.LDContactUsWidget.LDContactUsWidget',
+                    array(
+                        'captcha' => array(
+                            'class' => 'ext.LDContactUsWidget.components.CUReCaptcha',
+                            'config' => array(
+                                'publicKey' => Yii::app()->params['reCaptcha']['publicKey'],
+                                'privateKey' => Yii::app()->params['reCaptcha']['privateKey'],
+                                'useAjax' => true
+                            )
+                        ),
+                        'options' => array(
+                            'htmlOptions' => array('class' => 'form')
+                        )
+                    )
+                );
+            */    ?>
+            </div>
+-->
+
+        </div>
+        <div class="buttons">
+            <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Close{/t} </a>
+        </div>
+    </div>
+
+    <!-- need final 2 divs to close course and lesson id -->
 
 </div>
 </div>
