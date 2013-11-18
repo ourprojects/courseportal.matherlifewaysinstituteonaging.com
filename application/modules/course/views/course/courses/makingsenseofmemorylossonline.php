@@ -5,19 +5,19 @@ $clientScript = Yii::app()->getClientScript();
 $clientScript->registerCssFile($this->getStylesUrl('course.css'));
 
 foreach(array(
-		'.lesson-1',
-		'.lesson-2',
-		'.lesson-3',
-		'.lesson-4',
-		'.lesson-5',) as $lesson)
+	'.lesson-1',
+	'.lesson-2',
+	'.lesson-3',
+	'.lesson-4',
+	'.lesson-5',) as $lesson)
 	$this->widget(
-			'ext.fancybox.EFancyBox',
-			array('id' => $lesson,
-					'config' => array('width' => '720',
-							'height' => '1000',
-							'arrows' => false,
-							'autoSize' => false,
-							'mouseWheel' => false))
+		'ext.fancybox.EFancyBox',
+		array('id' => $lesson,
+			'config' => array('width' => '720',
+				'height' => '1000',
+				'arrows' => false,
+				'autoSize' => false,
+				'mouseWheel' => false))
 	);
 
 ?>
@@ -62,11 +62,11 @@ foreach(array(
 				);
 				$survey->model->user_id = Yii::app()->getUser()->getId();
 				?>
-				<li>
-					<a id="survey_link_<?php echo $survey->getId(); ?>" href="#survey_<?php echo $survey->getId(); ?>" title="<?php echo t($survey->model->title); ?>"><?php echo t($survey->model->title); ?> </a>
-					<?php $survey->run(); ?>
-				</li>
-				<?php
+			<li>
+				<a id="survey_link_<?php echo $survey->getId(); ?>" href="#survey_<?php echo $survey->getId(); ?>" title="<?php echo t($survey->model->title); ?>"><?php echo t($survey->model->title); ?> </a>
+				<?php $survey->run(); ?>
+			</li>
+			<?php
 			}
 			?>
 		</ul>
@@ -177,15 +177,15 @@ foreach(array(
 
 <div id="course" class="hide">
 	<?php $clientScript->registerScript('question-answer-handler',
-			"$('.course-slide .question').change(function() {".
-			"if($(this).find('select').val() == '1') {".
-			"$(this).find('.right-answer').removeClass('hide');".
-			"$(this).find('.wrong-answer').addClass('hide');".
-			"} else {".
-			"$(this).find('.right-answer').addClass('hide');".
-			"$(this).find('.wrong-answer').removeClass('hide');".
-			"}".
-			"});");
+		"$('.course-slide .question').change(function() {".
+		"if($(this).find('select').val() == '1') {".
+		"$(this).find('.right-answer').removeClass('hide');".
+		"$(this).find('.wrong-answer').addClass('hide');".
+		"} else {".
+		"$(this).find('.right-answer').addClass('hide');".
+		"$(this).find('.wrong-answer').removeClass('hide');".
+		"}".
+		"});");
 	?>
 	<div id="lesson-1">
 		<div id="lesson-1-slide-1" class="course-slide">
@@ -247,7 +247,7 @@ foreach(array(
 			<div class="content">
 				<h2 class="flowers">{t}Course Overview{/t}</h2>
 				<hr />
-				<p>{t}The course is divided into five  Each module is approximately two to three hours. Modules build upon each other, so it is recommended that the agenda be followed as prescribed.{/t}</p>
+				<p>{t}The course is divided into five Each module is approximately two to three hours. Modules build upon each other, so it is recommended that the agenda be followed as prescribed.{/t}</p>
 				<p>{t}Module One ‐ Overview of Memory Loss and Related Symptoms, is an introduction of class leaders and participants. Discussion of the medical aspects of memory loss, causes of memory loss, the need for a medical evaluation, drug treatments, and the current state of research.{/t}</p>
 				<p>{t}Module Two ‐ Communication Strategies, is an overview of communication changes typical in early memory loss. Familiarize participants with general principles for maintaining communication with a person experiencing early memory loss.{/t}</p>
 				<p>{t}Module Three ‐ Making Decisions, addresses practical issues in everyday life such as driving a car, handling health and financial decisions, or managing household tasks.{/t}</p>
@@ -2251,7 +2251,7 @@ foreach(array(
 				<h2 class="flowers">{t}Ten Steps for Living with Memory Loss{/t}</h2>
 				<hr />
 				<img src="<?php echo $this->getImagesUrl('msml/90329967.png'); ?>" alt="image">
-				<p>{t}We have covered a lot of information in these past five  We are going to take a bit of time now to review and discuss a few new ideas that you may want to consider as you continue on this journey.{/t}</p>
+				<p>{t}We have covered a lot of information in these past five We are going to take a bit of time now to review and discuss a few new ideas that you may want to consider as you continue on this journey.{/t}</p>
 				<div id="question1" class="question">
 					<p>
 						<b>{t}Could you describe dementia, Alzheimer's disease, Medicare and its various parts?{/t}</b>

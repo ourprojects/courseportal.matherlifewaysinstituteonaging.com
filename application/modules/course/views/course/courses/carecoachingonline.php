@@ -5,21 +5,21 @@ $clientScript = Yii::app()->getClientScript();
 $clientScript->registerCssFile($this->getStylesUrl('course.css'));
 
 foreach(array(
-		'.lesson-1',
-		'.lesson-2',
-		'.lesson-3',
-		'.lesson-4',
-		'.lesson-5',
-		'.lesson-6',
-		'.lesson-7') as $lesson)
+	'.lesson-1',
+	'.lesson-2',
+	'.lesson-3',
+	'.lesson-4',
+	'.lesson-5',
+	'.lesson-6',
+	'.lesson-7') as $lesson)
 	$this->widget(
-			'ext.fancybox.EFancyBox',
-			array('id' => $lesson,
-					'config' => array('width' => '720',
-							'height' => '1000',
-							'arrows' => false,
-							'autoSize' => false,
-							'mouseWheel' => false))
+		'ext.fancybox.EFancyBox',
+		array('id' => $lesson,
+			'config' => array('width' => '720',
+				'height' => '1000',
+				'arrows' => false,
+				'autoSize' => false,
+				'mouseWheel' => false))
 	);
 
 ?>
@@ -31,9 +31,8 @@ foreach(array(
 </div>
 <div id="sidebar">
 	<div class="box-sidebar one">
-        <h3>{t}Course Evaluations{/t}</h3>
-        <p>{t}Please click the button below to access the pre-course and post-course surveys. Participation is
-            anonymous. Please complete each survey at the appropriate time.{/t}</p>
+		<h3>{t}Course Evaluations{/t}</h3>
+		<p>{t}Please click the button below to access the pre-course and post-course surveys. Participation is anonymous. Please complete each survey at the appropriate time.{/t}</p>
 		<br />
 		<ul id="surveys">
 			<?php
@@ -66,11 +65,11 @@ foreach(array(
 				);
 				$survey->model->user_id = Yii::app()->getUser()->getId();
 				?>
-				<li>
-					<a id="survey_link_<?php echo $survey->getId(); ?>" class="button" href="#survey_<?php echo $survey->getId(); ?>" title="<?php echo t($survey->model->title); ?>"><?php echo t($survey->model->title); ?> </a>
-					<?php $survey->run(); ?>
-				</li>
-				<?php
+			<li>
+				<a id="survey_link_<?php echo $survey->getId(); ?>" class="button" href="#survey_<?php echo $survey->getId(); ?>" title="<?php echo t($survey->model->title); ?>"><?php echo t($survey->model->title); ?> </a>
+				<?php $survey->run(); ?>
+			</li>
+			<?php
 			}
 			?>
 		</ul>
@@ -80,22 +79,21 @@ foreach(array(
 		<img src="<?php echo $this->getImagesUrl('care/286x366_Grafix_69pc.png'); ?>" alt="image" class="block center" />
 		<p>{t}69% of working caregivers report having to rearrange their work schedule, decrease their hours, or take an unpaid leave of absence to meet their care-giving responsibilities.{/t}</p>
 	</div>
-    <div class="box-sidebar one">
-        <h3>{t}Certificate of Completion{/t}</h3>
-
-        <p>{t}You must complete the first four Modules before accessing your Certificate of Completion. Click the button
-            below to access your certificate where you will be able to manually add your name and date.{/t}</p>
-
-        <p>
-            <a href="<?php echo $this->createDownloadUrl('CourseCompletionCertificate.pdf'); ?>" target="_blank" class="button">Download Certificate</a>
-        </p>
-    </div>
 	<div class="box-sidebar one">
-        <h3>{t}Facilitator: Ellen Ziegemeier, MA{/t}</h3>
-        <p>{t}Ms. Ziegemeier has been facilitating online courses for Mather LifeWays Institute on Aging since 2004. She earned her Masters in Anthropology, and has worked locally and abroad - Latin America and South America for various aging services. She is fluent in English and Spanish, and has a strong passion for caregiver training.{/t}</p>
-        <p>
-            <a href="#" target="_blank" class="button">Contact Facilitator</a>
-        </p>
+		<h3>{t}Certificate of Completion{/t}</h3>
+
+		<p>{t}You must complete the first four Modules before accessing your Certificate of Completion. Click the button below to access your certificate where you will be able to manually add your name and date.{/t}</p>
+
+		<p>
+			<a href="<?php echo $this->createDownloadUrl('CourseCompletionCertificate.pdf'); ?>" target="_blank" class="button">Download Certificate</a>
+		</p>
+	</div>
+	<div class="box-sidebar one">
+		<h3>{t}Facilitator: Ellen Ziegemeier, MA{/t}</h3>
+		<p>{t}Ms. Ziegemeier has been facilitating online courses for Mather LifeWays Institute on Aging since 2004. She earned her Masters in Anthropology, and has worked locally and abroad - Latin America and South America for various aging services. She is fluent in English and Spanish, and has a strong passion for caregiver training.{/t}</p>
+		<p>
+			<a href="#" target="_blank" class="button">Contact Facilitator</a>
+		</p>
 	</div>
 </div>
 <!-- Start main content here -->
@@ -116,7 +114,7 @@ foreach(array(
 		?>
 	</ul>
 	<h4>{t}Course Agenda{/t}</h4>
-    <p>{t}Please click the button below to download the course Agenda.{/t}</p>
+	<p>{t}Please click the button below to download the course Agenda.{/t}</p>
 	<a href="<?php echo $this->createDownloadUrl('carecoachingonline/CARECoachingSyllabus.pdf'); ?>" target="_blank" class="button">{t}Download Agenda{/t}</a> <br />
 	<h4>{t}Course Modules{/t}</h4>
 
@@ -196,15 +194,15 @@ AARP provides various articles of interest and resources for family caregivers. 
 </div>
 <div id="course" class="hide">
 	<?php $clientScript->registerScript('question-answer-handler',
-			"$('.course-slide .question').change(function() {".
-			"if($(this).find('select').val() == '1') {".
-			"$(this).find('.right-answer').removeClass('hide');".
-			"$(this).find('.wrong-answer').addClass('hide');".
-			"} else {".
-			"$(this).find('.right-answer').addClass('hide');".
-			"$(this).find('.wrong-answer').removeClass('hide');".
-			"}".
-			"});");
+		"$('.course-slide .question').change(function() {".
+		"if($(this).find('select').val() == '1') {".
+		"$(this).find('.right-answer').removeClass('hide');".
+		"$(this).find('.wrong-answer').addClass('hide');".
+		"} else {".
+		"$(this).find('.right-answer').addClass('hide');".
+		"$(this).find('.wrong-answer').removeClass('hide');".
+		"}".
+		"});");
 	?>
 	<div id="lesson-1">
 		<div id="lesson-1-slide-1" class="course-slide">
@@ -1609,8 +1607,10 @@ AARP provides various articles of interest and resources for family caregivers. 
 			<div class="content">
 				<h2 class="flowers">{t}Exercise – Visiting a Senior Living Community{/t}</h2>
 				<hr />
-			  <p>{t}The best way to understand senior living communities is to actually visit one in your area. Because many adult children visit senior living communities prior to having their older parents come for a tour, many senior living communities are very welcoming to adult children.{/t}</p>
-				<p><a href="<?php echo $this->createDownloadUrl('carecoachingonline/ExerciseVisitingaSeniorLivingCommunity.pdf'); ?>" target="_blank"><img class="normal" src="<?php echo $this->getImagesUrl('care/pdf-icon.png'); ?>" alt="image" /> </a>			    </p>
+				<p>{t}The best way to understand senior living communities is to actually visit one in your area. Because many adult children visit senior living communities prior to having their older parents come for a tour, many senior living communities are very welcoming to adult children.{/t}</p>
+				<p>
+					<a href="<?php echo $this->createDownloadUrl('carecoachingonline/ExerciseVisitingaSeniorLivingCommunity.pdf'); ?>" target="_blank"><img class="normal" src="<?php echo $this->getImagesUrl('care/pdf-icon.png'); ?>" alt="image" /> </a>
+				</p>
 			</div>
 			<div class="buttons">
 				<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;{t}Back{/t}</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">{t}Next{/t}&nbsp;&raquo;</a>
