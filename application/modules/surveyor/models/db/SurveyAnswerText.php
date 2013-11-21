@@ -63,9 +63,9 @@ class SurveyAnswerText extends SActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'answer_id' => Yii::app()->getModule('surveyor')->t('Answer ID'),
-			'answer' => Yii::app()->getModule('surveyor')->t('Answer'),
-			'text' => Yii::app()->getModule('surveyor')->t('Text'),
+			'answer_id' => SurveyorModule::t('Answer ID'),
+			'answer' => SurveyorModule::t('Answer'),
+			'text' => SurveyorModule::t('Text'),
 		);
 	}
 

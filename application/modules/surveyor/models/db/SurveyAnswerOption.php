@@ -66,10 +66,10 @@ class SurveyAnswerOption extends SActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'answer_id' => Yii::app()->getModule('surveyor')->t('Answer ID'),
-			'option_id' => Yii::app()->getModule('surveyor')->t('Option ID'),
-			'option' => Yii::app()->getModule('surveyor')->t('Option'),
-			'option' => Yii::app()->getModule('surveyor')->t('Answer'),
+			'answer_id' => SurveyorModule::t('Answer ID'),
+			'option_id' => SurveyorModule::t('Option ID'),
+			'option' => SurveyorModule::t('Option'),
+			'option' => SurveyorModule::t('Answer'),
 		);
 	}
 

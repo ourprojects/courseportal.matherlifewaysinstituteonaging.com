@@ -81,18 +81,18 @@ class SurveyQuestion extends SActiveRecord {
 	public function attributeLabels() {
 		return array(
 			// column attributes
-			'id' => Yii::app()->getModule('surveyor')->t('ID'),
-			'type_id' => Yii::app()->getModule('surveyor')->t('Type ID'),
-			'text' => Yii::app()->getModule('surveyor')->t('Text'),
-			'required' => Yii::app()->getModule('surveyor')->t('Required'),
+			'id' => SurveyorModule::t('ID'),
+			'type_id' => SurveyorModule::t('Type ID'),
+			'text' => SurveyorModule::t('Text'),
+			'required' => SurveyorModule::t('Required'),
 
 			// relational attributes
-			'type' => Yii::app()->getModule('surveyor')->t('Type'),
-			'survey' => Yii::app()->getModule('surveyor')->t('Survey'),
-			'answers' => Yii::app()->getModule('surveyor')->t('Answers'),
-			'options' => Yii::app()->getModule('surveyor')->t('Options'),
-			'users' => Yii::app()->getModule('surveyor')->t('Users'),
-			'optionCount' => Yii::app()->getModule('surveyor')->t('Option Count'),
+			'type' => SurveyorModule::t('Type'),
+			'survey' => SurveyorModule::t('Survey'),
+			'answers' => SurveyorModule::t('Answers'),
+			'options' => SurveyorModule::t('Options'),
+			'users' => SurveyorModule::t('Users'),
+			'optionCount' => SurveyorModule::t('Option Count'),
 		);
 	}
 

@@ -8,12 +8,12 @@ echo CHtml::openTag('div', array('class' => 'form'));
 
 if($title['show'])
 {
-	echo CHtml::tag('h2', $title['htmlOptions'], $model->title);
+	echo CHtml::tag('h2', $title['htmlOptions'], SurveyorModule::t($model->title));
 }
 
 if($description['show'])
 {
-	echo CHtml::tag('div', $description['htmlOptions'], $model->description);
+	echo CHtml::tag('div', $description['htmlOptions'], SurveyorModule::t($model->description));
 }
 
 if($form['show'])

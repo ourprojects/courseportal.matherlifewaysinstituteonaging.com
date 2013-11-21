@@ -70,14 +70,14 @@ class SurveyQuestionType extends SActiveRecord
 	{
 		return array(
 			// Column attributes
-			'id' => Yii::app()->getModule('surveyor')->t('ID'),
-			'name' => Yii::app()->getModule('surveyor')->t('Name'),
-			'textual' => Yii::app()->getModule('surveyor')->t('Textual'),
-			'multiple' => Yii::app()->getModule('surveyor')->t('Multiple'),
+			'id' => SurveyorModule::t('ID'),
+			'name' => SurveyorModule::t('Name'),
+			'textual' => SurveyorModule::t('Textual'),
+			'multiple' => SurveyorModule::t('Multiple'),
 
 			// Relation attributes
-			'questions' => Yii::app()->getModule('surveyor')->t('Questions'),
-			'surveys' => Yii::app()->getModule('surveyor')->t('Surveys'),
+			'questions' => SurveyorModule::t('Questions'),
+			'surveys' => SurveyorModule::t('Surveys'),
 		);
 	}
 

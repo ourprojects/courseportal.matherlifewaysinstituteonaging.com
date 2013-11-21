@@ -33,7 +33,7 @@ class Survey extends CWidget
 				'show' => true,
 				'options' => array()
 			),
-			'submitButtonLabel' =>  Yii::app()->getModule('surveyor')->t('Submit'),
+			'submitButtonLabel' =>  SurveyorModule::t('Submit'),
 			'submitButtonHtmlOptions' => array('id' => 'survey_submit_'.$id),
 			'questionsHtmlOptions' => array(),
 			'rowsHtmlOptions' => array(),
@@ -97,12 +97,12 @@ class Survey extends CWidget
 		{
 			if(!isset($id))
 			{
-				throw new CException(Yii::app()->getModule('surveyor')->t('The survey model or survey name must be specified in survey widget.'));
+				throw new CException(SurveyorModule::t('The survey model or survey name must be specified in survey widget.'));
 			}
 			$this->model = new SurveyForm($id);
 			if(!isset($this->model))
 			{
-				throw new CException(Yii::app()->getModule('surveyor')->t('Survey with name {name} was not found.', array('{name}' => $id)));
+				throw new CException(SurveyorModule::t('Survey with name {name} was not found.', array('{name}' => $id)));
 			}
 		}
 		else if(!isset($id))
@@ -114,7 +114,7 @@ class Survey extends CWidget
 		// check if options parameter is an array or a json string
 		if(!is_array($this->options) && is_string($this->options) && !$this->options = CJSON::decode($this->options))
 		{
-			throw new CException(Yii::app()->getModule('surveyor')->t('The options parameter is not an array or a valid JSON string.'));
+			throw new CException(SurveyorModule::t('The options parameter is not an array or a valid JSON string.'));
 		}
 
 		// merge options with default values

@@ -79,15 +79,15 @@ class SurveyAR extends SActiveRecord {
 	 */
 	public function attributeLabels() {
 		return array(
-			'id' => Yii::app()->getModule('surveyor')->t('ID'),
-			'name' => Yii::app()->getModule('surveyor')->t('Name'),
-			'title' => Yii::app()->getModule('surveyor')->t('Title'),
-			'description' => Yii::app()->getModule('surveyor')->t('Description'),
-			'questions' => Yii::app()->getModule('surveyor')->t('Questions'),
-			'options' => Yii::app()->getModule('surveyor')->t('Options'),
-			'types' => Yii::app()->getModule('surveyor')->t('Question Types'),
-			'answers' => Yii::app()->getModule('surveyor')->t('Answers'),
-			'anonymous' => Yii::app()->getModule('surveyor')->t('Anonymous'),
+			'id' => SurveyorModule::t('ID'),
+			'name' => SurveyorModule::t('Name'),
+			'title' => SurveyorModule::t('Title'),
+			'description' => SurveyorModule::t('Description'),
+			'questions' => SurveyorModule::t('Questions'),
+			'options' => SurveyorModule::t('Options'),
+			'types' => SurveyorModule::t('Question Types'),
+			'answers' => SurveyorModule::t('Answers'),
+			'anonymous' => SurveyorModule::t('Anonymous'),
 		);
 	}
 

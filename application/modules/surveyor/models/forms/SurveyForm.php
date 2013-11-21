@@ -37,7 +37,7 @@ class SurveyForm extends CFormModel
 
 		if(!isset($this->_survey))
 		{
-			throw new CException(Yii::app()->getModule('surveyor')->t('Invalid survey parameter when constructing SurveyForm. A valid Survey name, id, or ActiveRecord object is required.'));
+			throw new CException(SurveyorModule::t('Invalid survey parameter when constructing SurveyForm. A valid Survey name, id, or ActiveRecord object is required.'));
 		}
 
 		$this->_attributes = array();
@@ -95,14 +95,14 @@ class SurveyForm extends CFormModel
 				parent::attributeLabels(),
 				$this->_survey->attributeLabels(),
 				array(
-					'user_id' => Yii::app()->getModule('surveyor')->t('User ID'),
-					'name' => Yii::app()->getModule('surveyor')->t('Name'),
-					'title' => Yii::app()->getModule('surveyor')->t('Title'),
-					'description' => Yii::app()->getModule('surveyor')->t('Description'),
+					'user_id' => SurveyorModule::t('User ID'),
+					'name' => SurveyorModule::t('Name'),
+					'title' => SurveyorModule::t('Title'),
+					'description' => SurveyorModule::t('Description'),
 				));
 			foreach($this->_survey->questions as $question)
 			{
-				$this->_attributeLabels[$question->id] = Yii::app()->getModule('surveyor')->t($question->text);
+				$this->_attributeLabels[$question->id] = SurveyorModule::t($question->text);
 			}
 		}
 		return $this->_attributeLabels;
@@ -186,7 +186,7 @@ class SurveyForm extends CFormModel
 	{
 		if(!$this->_survey->anonymous && !isset($this->_user_id))
 		{
-			$this->addError($attribute, Yii::app()->getModule('surveyor')->t('This survey is not anonymous and a user was not specified.'));
+			$this->addError($attribute, SurveyorModule::t('This survey is not anonymous and a user was not specified.'));
 		}
 	}
 
@@ -223,28 +223,28 @@ class SurveyForm extends CFormModel
 							{
 								if(!isset($questionOptions[$answer]))
 								{
-									$this->addError('['.$this->_survey->name.']'.$question->id, Yii::app()->getModule('surveyor')->t('Invalid option selected.'));
+									$this->addError('['.$this->_survey->name.']'.$question->id, SurveyorModule::t('Invalid option selected.'));
 									break;
 								}
 							}
 						}
 						else
 						{
-							$this->addError('['.$this->_survey->name.']'.$question->id, Yii::app()->getModule('surveyor')->t('Only one answer is allowed.'));
+							$this->addError('['.$this->_survey->name.']'.$question->id, SurveyorModule::t('Only one answer is allowed.'));
 						}
 					}
 					else
 					{
 						if(!isset($questionOptions[$answers[$question->id]]))
 						{
-							$this->addError('['.$this->_survey->name.']'.$question->id, Yii::app()->getModule('surveyor')->t('Invalid option selected.'));
+							$this->addError('['.$this->_survey->name.']'.$question->id, SurveyorModule::t('Invalid option selected.'));
 						}
 					}
 				}
 			}
 			else if($question->required)
 			{
-				$this->addError('['.$this->_survey->name.']'.$question->id, Yii::app()->getModule('surveyor')->t('This question is required.'));
+				$this->addError('['.$this->_survey->name.']'.$question->id, SurveyorModule::t('This question is required.'));
 			}
 		}
 	}
