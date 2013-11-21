@@ -40,19 +40,6 @@ $this->widget(
 	<h1>{t}Web-based Training for Caregivers{/t}</h1>
 </div>
 
-<!--
-
-<div id="Stage" class="EDGE-4473686">
-
-
-  <h1>{t}Web-based Training for Caregivers{/t}</h1>
-  
- 
-  
-</div>
-
--->
-
 <!-- Begin sidebar -->
 
 <div id="sidebar">
@@ -131,7 +118,7 @@ $this->widget(
 	<ul>
 		<li>{t}Increased employee morale due to greater self-efficacy.{/t}</li>
 		<li>{t}Improved employee to employer, and employee to family relations.{/t}</li>
-		<li>{t}Reduced employee absenteeism which leads to increased productvity.{/t}</li>
+		<li>{t}Reduced employee absenteeism which leads to increased productivity.{/t}</li>
 	</ul>
 
 	<!-- video and text here div -->
@@ -179,39 +166,19 @@ $this->widget(
 <!--  start tutorial course here -->
 
 <div id="tutorial" class="hide">
-	<?php $clientScript->registerScript('question-answer-handler',
-		"$('.course-slide .question').change(function() {".
-			"if($(this).find('select').val() == '1') {".
-				"$(this).find('.right-answer').removeClass('hide');".
-				"$(this).find('.wrong-answer').addClass('hide');".
-			"} else {".
-				"$(this).find('.right-answer').addClass('hide');".
-				"$(this).find('.wrong-answer').removeClass('hide');".
-			"}".
-		"});");
-	?>
+
 	<div id="slide-1" class="course-slide">
 		<div class="content">
-			<h2 class="flowers">{t}Caregiving - Impact on the Workplace{/t}</h2>
+			<h2 class="flowers">{t}Under Construction{/t}</h2>
 			<hr />
-			<h4>{t}Free Webinar coming Soon!{/t}</h4>
-			<div id="question1" class="question">
-				<p>
-					<b>{t}Estimated cost to employers for employees with caregiving responsibilities is in the billions of dollars.{/t}</b><br />
-					<select>
-						<option selected="selected" value="select">{t}Select{/t}</option>
-						<option value="1">{t}True{/t}</option>
-						<option value="0">{t}False{/t}</option>
-					</select>
-				</p>
-				<p class="right-answer hide">{t}Correct! According to the The MetLife Caregiving Cost Study (2013), the costs are in the billions of dollars.{/t}</p>
-				<p class="wrong-answer hide">
-					{t}The costs associated are in the billions of dollars. Please review <a href="https://www.metlife.com/assets/cao/mmi/publications/studies/2011/mmi-caregiving-costs-working-caregivers.pdf" target="_blank">The MetLife Caregiving Cost Study (2013)</a>{/t}
-				</p>
-			</div>
+			<h4>{t}Please check back later today. Thank you!{/t}</h4>
+            <p>
+                {t}We are currently revising this content. Please check back later today.{/t}
+            </p>
+
 		</div>
 		<div class="buttons">
-			<a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Exit{/t} </a>
+			<a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> {t}Close{/t} </a>
 		</div>
 	</div>
 </div>
