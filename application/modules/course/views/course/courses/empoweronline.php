@@ -116,19 +116,6 @@ foreach (array(
 
 		<hr />
 
-		<table style="margin: 0px; padding: 0px;">
-			<tr>
-				<td>
-					<p style="font-weight: bold;">LiJuan Yin</p>
-				</td>
-				<td>
-					<img style="width: 32px; height: 32px;" src="<?php echo $this->getImagesUrl('empower/China-Flag-64.png'); ?>" alt="{t}Country Flag{/t}">
-				</td>
-			</tr>
-		</table>
-
-		<p>{t}Mrs. Lin is currently a PhD student at the University of Illinois at Chicago (UIC), studying Public Health. She has helped research, develop, and facilitate online courses for Mather LifeWays Institute on aging for the past 3 years.{/t}</p>
-
 		<p>
 			<a href="#" target="_blank" class="button">Contact Facilitator</a>
 		</p>
