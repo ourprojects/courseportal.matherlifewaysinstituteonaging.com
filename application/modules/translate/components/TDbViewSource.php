@@ -34,11 +34,6 @@ class TDbViewSource extends CApplicationComponent
 	public $viewMessageTable = '{{translate_view_message}}';
 
 	/**
-	 * @var string The format of timestamp dates in the database used by this view source.
-	 */
-	public $databaseTimestampFormat = 'Y-m-d H:i:s';
-
-	/**
 	 * @var string the ID of the database connection application component. Defaults to 'db'.
 	 */
 	public $connectionID = 'db';
@@ -101,8 +96,6 @@ class TDbViewSource extends CApplicationComponent
 					return $this->getDbConnection()->getSchema()->getTable($this->viewSourceTable) !== null ? true : 'The table could not be found.';
 				case 'viewmessagetable':
 					return $this->getDbConnection()->getSchema()->getTable($this->viewTable) !== null ? true : 'The table could not be found.';
-				case 'databasetimestampformat':
-					return is_string($this->databaseTimestampFormat) && @date($this->databaseTimestampFormat) !== false ? true : 'This must be a valid PHP date format string.';
 				case 'connectionid':
 					return Yii::app()->getComponent($this->connectionID) !== null ? true : 'Component not found.';
 				case 'cachingduration':
@@ -231,7 +224,7 @@ class TDbViewSource extends CApplicationComponent
 					'id' => 'integer NOT NULL',
 					'language_id' => 'integer NOT NULL',
 					'path' => 'varchar(255) NOT NULL',
-					'created' => 'timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP',
+					'created' => 'integer NOT NULL',
 					'PRIMARY KEY ('.$schema->quoteColumnName('id').','.$schema->quoteColumnName('language_id').'),'.
 					'UNIQUE KEY '.$schema->quoteColumnName('path').' ('.$schema->quoteColumnName('path').'),'.
 					'KEY '.$schema->quoteColumnName('created').' ('.$schema->quoteColumnName('created').'),'.
@@ -388,7 +381,7 @@ class TDbViewSource extends CApplicationComponent
 		$messageSource = TranslateModule::translator()->getMessageSourceComponent();
 		$db = $this->getDbConnection();
 		$cmd = $db->createCommand()
-		->select(array('vst.path AS source_path', 'vt.path AS view_path'))
+		->select(array('vst.path AS source_path', 'vt.path AS view_path', 'MAX('.$db->quoteColumnName('tmt.last_modified').') AS '.$db->quoteColumnName('tmt_last_modified'), 'vt.created AS vt_created'))
 		->from($this->routeTable.' rt')
 		->join($this->routeViewTable.' rvt', $db->quoteColumnName('rt.id').'='.$db->quoteColumnName('rvt.route_id'))
 		->join($this->viewSourceTable.' vst', $db->quoteColumnName('rvt.view_id').'='.$db->quoteColumnName('vst.id'))
@@ -396,8 +389,9 @@ class TDbViewSource extends CApplicationComponent
 		->join($this->viewTable.' vt', array('and', $db->quoteColumnName('vst.id').'='.$db->quoteColumnName('vt.id'), $db->quoteColumnName('vt.language_id').'='.$db->quoteColumnName('lt.id')))
 		->leftJoin($this->viewMessageTable.' vmt', $db->quoteColumnName('vst.id').'='.$db->quoteColumnName('vmt.view_id'))
 		->leftJoin($messageSource->translatedMessageTable.' tmt', array('and', $db->quoteColumnName('vmt.message_id').'='.$db->quoteColumnName('tmt.id'), $db->quoteColumnName('tmt.language_id').'='.$db->quoteColumnName('vt.language_id')))
-		->where(array('and', $db->quoteColumnName('rt.route').'=:route', array('or', $db->quoteColumnName('tmt.last_modified').' IS NULL', $db->quoteColumnName('tmt.last_modified').'<'.$db->quoteColumnName('vt.created'))), array(':route' => $route))
-		->group('vst.id');
+		->where($db->quoteColumnName('rt.route').'=:route', array(':route' => $route))
+		->group('vst.id')
+		->having(array('or', $db->quoteColumnName('tmt_last_modified').' IS NULL', $db->quoteColumnName('tmt_last_modified').'<'.$db->quoteColumnName('vt_created')));
 
 		$views = array();
 		foreach($cmd->queryAll() as $row)
@@ -487,7 +481,7 @@ class TDbViewSource extends CApplicationComponent
 	 */
 	public function addView($sourceViewId, $path, $languageId)
 	{
-		$args = array('id' => $sourceViewId, 'language_id' => $languageId, 'path' => $path);
+		$args = array('id' => $sourceViewId, 'language_id' => $languageId, 'path' => $path, 'created' => time());
 		if($this->getDbConnection()->createCommand()->insert($this->viewTable, $args) > 0)
 		{
 			return $args;

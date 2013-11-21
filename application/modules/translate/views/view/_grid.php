@@ -17,7 +17,7 @@ $this->widget('zii.widgets.grid.CGridView',
 					'filter' => '',
 					'sortable' => false
 				),
-				'created',
+				'createdDate',
 				array(
 					'class' => 'CButtonColumn',
 					'template' => '{view}{delete}',

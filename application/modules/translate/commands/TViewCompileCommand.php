@@ -189,7 +189,7 @@ class TViewCompileCommand extends CConsoleCommand
 			@chmod($compiledPath, $filePermission);
 
 			// Update the created time for the view.
-			$viewSource->updateView($view['id'], $view['language_id'], date($viewSource->databaseTimestampFormat), $compiledPath);
+			$viewSource->updateView($view['id'], $view['language_id'], time(), $compiledPath);
 
 			if(isset($transaction))
 			{

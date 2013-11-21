@@ -120,7 +120,7 @@ class LanguageController extends TController
 				$data['model']->missingTranslations($id);
 				$gridPath = '../messageSource/_grid';
 				$data['languageId'] = $id;
-				return;
+				break;
 			case 'language-grid':
 				$data['relatedGrids'] = array();
 				$data['model'] = new Language('search');

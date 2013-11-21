@@ -15,6 +15,11 @@ $this->widget('zii.widgets.grid.CGridView',
 			),
 			'translation',
 			array(
+				'name' => 'lastModifiedDate',
+				'filter' => '',
+				'sortable' => false
+			),
+			array(
 				'class' => 'CButtonColumn',
 				'template' => '{update}{delete}',
 				'deleteButtonUrl' => 'Yii::app()->getController()->createUrl("message/delete", array("id" => $data->id, "languageId" => $data->language_id))',

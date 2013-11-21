@@ -22,6 +22,11 @@ class View extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+	
+	public function init()
+	{
+		$this->created = time();
+	}
 
 	/**
 	 * @return string the associated database table name
@@ -48,10 +53,10 @@ class View extends CActiveRecord
 		return array(
 			array('path', 'filter', 'filter' => 'realpath'),
 			array('id, language, path', 'required', 'except' => 'search'),
-			array('created', 'date', 'format' => 'yyyy-M-d H:m:s'),
 			array('path', 'length', 'max' => 255),
 			array('language', 'length', 'max' => 3),
-			array('id', 'numerical', 'integerOnly' => true),
+			array('created', 'default', 'value' => time()),
+			array('id, created', 'numerical', 'integerOnly' => true),
 			array('id', 'exist', 'attributeName' => 'id', 'className' => 'ViewSource', 'except' => 'search'),
 			array('id',
 				'unique',
@@ -104,6 +109,11 @@ class View extends CActiveRecord
 	{
 		return $this->setAttribute('path', Yii::app()->getBasePath().DIRECTORY_SEPARATOR.$path);
 	}
+	
+	public function getCreatedDate()
+	{
+		return date('Y-m-d H:i:s', $this->created);
+	}
 
 	/**
 	 * @return array customized attribute labels (name=>label)
@@ -114,6 +124,7 @@ class View extends CActiveRecord
 			// Attributes
 			'id' => TranslateModule::t('ID'),
 			'path' => TranslateModule::t('Compiled Path'),
+			'created' => TranslateModule::t('Created'),
 			// Relations
 			'sourceView' => TranslateModule::t('Source'),
 			'language' => TranslateModule::t('Language'),
@@ -124,6 +135,7 @@ class View extends CActiveRecord
 			'messages' => TranslateModule::t('Translations'),
 			// Virtual Attributes
 			'relativePath' => TranslateModule::t('Relative Path'),
+			'createdDate' => TranslateModule::t('Date Created')
 		);
 	}
 

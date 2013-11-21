@@ -7,7 +7,7 @@ $this->widget('zii.widgets.CDetailView',
 			'attributes' => array(
 				'id',
 				'language',
-				'created',
+				'createdDate',
 				array(
 					'name' => 'path',
 					'template' => "<tr class=\"{class}\"><th>{label}</th><td style=\"word-wrap:break-word;word-break:break-all;\">{value}</td></tr>\n"

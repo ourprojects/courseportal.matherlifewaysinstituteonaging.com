@@ -12,6 +12,11 @@ class Message extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+	
+	public function init()
+	{
+		$this->last_modified = time();
+	}
 
 	public function tableName()
 	{
@@ -31,12 +36,12 @@ class Message extends CActiveRecord
 	{
 		return array(
 			array('id, language_id, translation', 'required', 'except' => 'search'),
-			array('id, language_id', 'numerical', 'integerOnly' => true),
-			array('last_modified', 'date', 'format' => 'yyyy-M-d H:m:s'),
+			array('last_modified', 'default', 'value' => time()),
+			array('id, language_id, last_modified', 'numerical', 'integerOnly' => true),
 			array('language_id', 'exist', 'attributeName' => 'id', 'className' => 'Language', 'except' => 'search'),
 			array('id', 'exist', 'attributeName' => 'id', 'className' => 'MessageSource', 'except' => 'search'),
 
-			array('id, language_id, translation', 'safe', 'on' => 'search'),
+			array('id, language_id, translation, last_modified', 'safe', 'on' => 'search'),
 		);
 	}
 
@@ -52,6 +57,11 @@ class Message extends CActiveRecord
 			'categories' => array(self::HAS_MANY, 'Category', array('category_id' => 'id'), 'through' => 'messageCategories')
 		);
 	}
+	
+	public function getLastModifiedDate()
+	{
+		return date('Y-m-d H:i:s', $this->last_modified);
+	}
 
 	public function attributeLabels()
 	{
@@ -60,11 +70,14 @@ class Message extends CActiveRecord
 			'id' => TranslateModule::t('ID'),
 			'language_id' => TranslateModule::t('Language'),
 			'translation' => TranslateModule::t('Translation'),
+			'last_modified' => TranslateModule::t('Last Modified'),
 			// Relations
 			'source' => TranslateModule::t('Source Message'),
 			'language' => TranslateModule::t('Language'),
 			'acceptedLanguage' => TranslateModule::t('Accepted Language'),
-			'categories' => TranslateModule::t('Categories')
+			'categories' => TranslateModule::t('Categories'),
+			// Virtual Attributes
+			'lastModifiedDate' => TranslateModule::t('Date Last Modified')
 		);
 	}
 
@@ -74,6 +87,16 @@ class Message extends CActiveRecord
 			'isAcceptedLanguage' => array('with' => array('acceptedLanguage' => array('joinType' => 'INNER JOIN'))),
 			'isOtherLanguage' => array('with' => array('acceptedLanguage' => array('joinType' => 'LEFT JOIN')), 'condition' => 'acceptedLanguage.id IS NULL')
 		);
+	}
+	
+	protected function beforeSave()
+	{
+		if(parent::beforeSave())
+		{
+			$this->last_modified = time();
+			return true;
+		}
+		return false;
 	}
 
 	/**

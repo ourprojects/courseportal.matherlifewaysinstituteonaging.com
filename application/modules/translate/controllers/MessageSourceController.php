@@ -161,8 +161,9 @@ class MessageSourceController extends TController
 				$data['relatedGrids'] = array('language-grid', 'message-grid');
 				$data['model'] = new Language('search');
 				$data['model']->missingTranslations($id);
-				$this->renderPartial('../language/_grid', array('model' => $data['model'], 'messageId' => $id, 'id' => $name));
-				return;
+				$data['messageId'] = $id;
+				$gridPath = '../language/_grid';
+				break;
 			case 'route-grid':
 				$data['relatedGrids'] = array('viewSource-grid', 'view-grid');
 				$data['model'] = new Route('search');
@@ -184,7 +185,7 @@ class MessageSourceController extends TController
 			default:
 				return;
 		}
-		return $this->renderPartial($gridPath, array('model' => $model, 'id' => $name), $return);
+		return $this->renderPartial($gridPath, $data, $return);
 	}
 
 	/**

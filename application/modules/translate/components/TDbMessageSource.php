@@ -271,7 +271,7 @@ class TDbMessageSource extends CDbMessageSource
 					'id' => 'integer NOT NULL',
 					'language_id' => 'integer NOT NULL',
 					'translation' => 'text',
-					'last_modified' => 'timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP',
+					'last_modified' => 'integer NOT NULL',
 					'PRIMARY KEY ('.$schema->quoteColumnName('id').','.$schema->quoteColumnName('language_id').'),'.
 					'KEY '.$schema->quoteColumnName('last_modified').' ('.$schema->quoteColumnName('last_modified').'),'.
 					'KEY '.$schema->quoteColumnName('language_id').' ('.$schema->quoteColumnName('language_id').')'
@@ -493,7 +493,7 @@ class TDbMessageSource extends CDbMessageSource
 	public function addTranslation($sourceMessageId, $language, $translation, $createLanguageIfNotExists = false)
 	{
 		$languageId = $this->getLanguageId($language, $createLanguageIfNotExists);
-		if($languageId !== false && $this->getDbConnection()->createCommand()->insert($this->translatedMessageTable, array('id' => $sourceMessageId, 'language_id' => $languageId, 'translation' => $translation)) > 0)
+		if($languageId !== false && $this->getDbConnection()->createCommand()->insert($this->translatedMessageTable, array('id' => $sourceMessageId, 'language_id' => $languageId, 'translation' => $translation, 'last_modified' => time())) > 0)
 		{
 			return $languageId;
 		}

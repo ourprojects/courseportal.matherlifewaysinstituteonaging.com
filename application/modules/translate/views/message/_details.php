@@ -8,6 +8,7 @@ $this->widget('zii.widgets.CDetailView',
 				'source.message',
 				'language',
 				'translation',
+				'lastModifiedDate'
 			),
 		)
 );

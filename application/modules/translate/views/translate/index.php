@@ -1054,32 +1054,6 @@ catch(Exception $e)
 				</td>
 			</tr>
 			<tr>
-				<th class="right"><?php echo TranslateModule::t('Database Timestamp Format:'); ?></th>
-				<?php $settingCheck = $viewSource->checkSetting('databaseTimestampFormat'); ?>
-				<td class="fill <?php echo $settingCheck === true ? 'translateNoError' : 'translateError'; ?>">
-					<table class="attributesGrid">
-						<tr>
-							<th class="right"><?php echo TranslateModule::t('Attribute:'); ?></th>
-							<td class="fill">databaseTimestampFormat</td>
-						</tr>
-						<tr>
-							<th class="right"><?php echo TranslateModule::t('Value:'); ?></th>
-							<td class="fill"><?php echo $viewSource->databaseTimestampFormat; ?></td>
-						</tr>
-						<tr>
-							<th class="right"><?php echo TranslateModule::t('Description:'); ?></th>
-							<td class="fill break"><?php echo TranslateModule::t('A PHP date format string matching the format of timestamp data type in your DBMS.'); ?></td>
-						</tr>
-						<?php if($settingCheck !== true): ?>
-						<tr>
-							<th class="right"><?php echo TranslateModule::t('Error:'); ?></th>
-							<td class="fill break"><?php echo TranslateModule::t($settingCheck); ?></td>
-						</tr>
-						<?php endif; ?>
-					</table>
-				</td>
-			</tr>
-			<tr>
 				<th class="right"><?php echo TranslateModule::t('Database Connection ID:'); ?></th>
 				<?php $settingCheck = $viewSource->checkSetting('connectionID'); ?>
 				<td class="fill <?php echo $settingCheck === true ? 'translateNoError' : 'translateError'; ?>">
