@@ -43,9 +43,9 @@ div.course-slide img {
 div.course-slide div.question {
     background-color: #FFF;
     border-radius: 10px;
-    width: 90%;
-    height: 100px;
-    margin: 10px auto 10px auto;
+    width: 95%;
+    height: 125px;
+    margin: 5px auto;
     padding: 10px;
     -moz-box-shadow: 0 0 5px 5px #888;
     -webkit-box-shadow: 0 0 5px 5px #888;
@@ -77,7 +77,7 @@ div.course-slide div#video {
 /* course-slide table properties */
 
 div.course-slide table {
-    width: 95%;
+    width: 100%;
     margin: 10px auto 25px auto;
     border: solid #000000;
     -moz-border-radius: 10px;
