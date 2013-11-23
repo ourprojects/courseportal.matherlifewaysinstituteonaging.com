@@ -80,7 +80,7 @@ class Course extends CActiveRecord
 		);
 	}
 
-	public function hasUser($userId, $hasUser = false) 
+	public function hasUser($userId, $hasUser = true) 
 	{
 		$criteria = array('params' => array(':user_id' => $userId), 'together' => true);
 		$userCourses = $this->getDbConnection()->quoteColumnName('userCourses.user_id');
