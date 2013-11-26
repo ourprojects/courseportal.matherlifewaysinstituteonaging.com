@@ -44,10 +44,6 @@ class SubmitAction extends CAction
 				}
 				else
 				{
-					if(empty($question->options))
-					{
-						echo 'options emtpy. ID: '.$question->id.', text: '.$question->text;
-					}
 					foreach($question->options as $option)
 					{
 						$qData['data'][] = array($option->text, $option->getPercentAnswered());

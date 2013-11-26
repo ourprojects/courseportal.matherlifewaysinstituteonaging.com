@@ -1,7 +1,7 @@
 <?php 
-$id = $this->getId();
+
 $options = CJavaScript::encode(array('submitButtonId' => $submitButtonHtmlOptions['id']));
-Yii::app()->getClientScript()->registerScript(__CLASS__.'#'.$id, "jQuery('#$id').yiiSurvey($options);");
+Yii::app()->getClientScript()->registerScript(__CLASS__.'#'.$htmlOptions['id'], "jQuery('#{$htmlOptions['id']}').yiiSurvey($options);");
 
 echo CHtml::openTag('div', $htmlOptions);
 echo CHtml::openTag('div', array('class' => 'form'));
@@ -31,11 +31,11 @@ if($form['show'])
 					'validateOnSubmit' => true,
 					'afterValidate' => 'js:'.
 					'function(form, data, hasError){'.
-					'if (!hasError)'.
-					'{'.
-					'form.yiiSurvey("submit");'.
-					'return false;'.
-					'}'.
+						'if (!hasError)'.
+						'{'.
+							"jQuery('#{$htmlOptions['id']}').yiiSurvey('submit');".
+							'return false;'.
+						'}'.
 					'}'
 				),
 			)

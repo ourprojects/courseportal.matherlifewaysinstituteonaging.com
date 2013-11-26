@@ -7,7 +7,7 @@
 
 (function ($) {
 	
-	var methods, surveySettings = {};
+	var methods;
 	
 	methods = {
 			
@@ -16,8 +16,8 @@
 			var settings = $.extend({
 				loadingClass: 'loading',
 			}, options || {});
-			
-			surveySettings = settings;
+
+			$(this).data('surveySettings', settings);
 		},
 			
 		loadJSON: function (data) 
@@ -60,7 +60,7 @@
 					$('#' + index + '_highchart_').css("display", "block");
 				}
 			});
-			$('#' + surveySettings.submitButtonId).css("display", "none");
+			$('#' + $(this).data('surveySettings').submitButtonId).css("display", "none");
 		},
 		
 		showQuestions: function(questions)
@@ -73,21 +73,21 @@
 				$('#' + index + '_highchart_').css("display", "none");
 				$('#' + index).css("display", "inline");
 			});
-			$('#' + surveySettings.submitButtonId).css("display", "inline");
+			$('#' + $(this).data('surveySettings').submitButtonId).css("display", "inline");
 		},
 		
 		submit: function()
 		{
-			var $form = $(this);
-
+			var $survey = $(this), $form = $survey.find("form");
+			
 			$.ajax({
 				url: $form.attr('action'),
 				type: $form.attr('method'),
 				data: $form.serialize(),
-				beforeSend: function(){$form.addClass(surveySettings.loadingClass);},
-				success: function(data){$form.yiiSurvey("showCharts", $.parseJSON(data));},
+				beforeSend: function(){$form.addClass($survey.data('surveySettings').loadingClass);},
+				success: function(data){$survey.yiiSurvey("showCharts", $.parseJSON(data));},
 				error: function(data){$form.yiiactiveform("updateSummary", $.parseJSON(data));},
-				complete: function(){$form.removeClass(surveySettings.loadingClass);}
+				complete: function(){$form.removeClass($survey.data('surveySettings').loadingClass);}
 			});
 		}
 			
