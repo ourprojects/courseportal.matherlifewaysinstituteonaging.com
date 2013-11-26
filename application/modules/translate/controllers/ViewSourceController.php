@@ -161,5 +161,13 @@ class ViewSourceController extends TController
 			$this->redirect($this->createUrl('index'));
 		}
 	}
+	
+	/**
+	 * Flushes the cache of the translator's view source component.
+	 */
+	public function actionFlushCache()
+	{
+		TranslateModule::translator()->getViewSourceComponent()->flushCache();
+	}
 
 }

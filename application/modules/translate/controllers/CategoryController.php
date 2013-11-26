@@ -67,6 +67,7 @@ class CategoryController extends TController
 		switch($name)
 		{
 			case 'category-grid':
+				$data['relatedGrids'] = array();
 				$data['model'] = new Category('search'); 
 				if(isset($id))
 				{

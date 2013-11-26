@@ -57,11 +57,6 @@ class TDbMessageSource extends CDbMessageSource
 	 * @var integer The database ID of the language of the source messages
 	*/
 	private $_languageId;
-
-	/**
-	 * @var boolean Flag marking whether the data in the cache is stale.
-	 */
-	private $_cacheInvalidated = true;
 	
 	/**
 	 * Checks whether a setting's value is OK.
@@ -353,12 +348,45 @@ class TDbMessageSource extends CDbMessageSource
 		parent::setLanguage($language);
 		$this->_languageId = null;
 	}
+	
+	/**
+	 * Gets whether caching is enabled for this message source.
+	 *
+	 * @return boolean True if caching is enabled false otherwise.
+	 */
+	public function getIsCachingEnabled()
+	{
+		return $this->getCache() !== null;
+	}
+	
+	/**
+	 * Flushes the cache component used by this message source if it is configured.
+	 */
+	public function flushCache()
+	{
+		if(($cache = $this->getCache()) !== null)
+		{
+			$cache->flush();
+		}
+	}
 
+	/**
+	 * Returns the cache component used by this message source or null if no cache has been configured.
+	 * 
+	 * @return ICache The cache component used by this message source or null if no cache has been configured.
+	 */
 	protected function getCache()
 	{
 		return $this->cachingDuration > 0 && $this->cacheID !== false ? Yii::app()->getComponent($this->cacheID) : null;
 	}
 
+	/**
+	 * Returns the string ID of the message source component used by this message source.
+	 * 
+	 * @param string $category
+	 * @param string $language
+	 * @return string The ID of the cache to use for this message source.
+	 */
 	protected function getCacheKey($category, $language)
 	{
 		return TranslateModule::ID.'.'.$this->getLanguage().'.messages.'.$category.'.'.$language;
@@ -381,7 +409,6 @@ class TDbMessageSource extends CDbMessageSource
 				$messages = $this->loadMessagesFromDb($category, $language);
 				$cache->set($key, $messages, $this->cachingDuration);
 			}
-			$this->_cacheInvalidated = false;
 		}
 		else
 		{
@@ -718,15 +745,25 @@ class TDbMessageSource extends CDbMessageSource
 		{
 			$event = new CMissingTranslationEvent($this, $category, $message, $language);
 			$this->onMissingTranslation($event);
-			if(!$this->_cacheInvalidated && ($cache = $this->getCache()) !== null)
-			{
-				$cache->delete($this->getCacheKey($category, $language));
-				$this->_cacheInvalidated = true;
-			}
+			$this->invalidateCache($category, $language);
 			return $this->_messages[$key][$message] = $event->message;
 		}
 
 		return $message;
+	}
+	
+	/**
+	 * Invalidates the current cache. This must be called if a translation changes while caching is enabled.
+	 * 
+	 * @param string $category the category of the message that has invalidated the cache.
+	 * @param unknown $language the language of the message that has invalidated the cache.
+	 */
+	public function invalidateCache($category, $language)
+	{
+		if(($cache = $this->getCache()) !== null)
+		{
+			$cache->delete($this->getCacheKey($category, $language));
+		}
 	}
 
 }

@@ -70,8 +70,6 @@ class TDbViewSource extends CApplicationComponent
 
 	private $_views = array();
 
-	private $_cacheInvalidated = true;
-
 	private $_db;
 
 	/**
@@ -319,11 +317,32 @@ class TDbViewSource extends CApplicationComponent
 		}
 		return $this->_db;
 	}
+	
+	/**
+	 * Gets whether caching is enabled for this message source.
+	 * 
+	 * @return boolean True if caching is enabled false otherwise.
+	 */
+	public function getIsCachingEnabled()
+	{
+		return $this->getCache() !== null;
+	}
+	
+	/**
+	 * Flushes the cache component used by this view source if it is configured.
+	 */
+	public function flushCache()
+	{
+		if(($cache = $this->getCache()) !== null)
+		{
+			$cache->flush();
+		}
+	}
 
 	/**
 	 * Returns the cache component used by this view source.
 	 *
-	 * @return CCache The caching component used by this view source or null if caching is disabled.
+	 * @return ICache The caching component used by this view source or null if caching is disabled.
 	 */
 	protected function getCache()
 	{
@@ -705,15 +724,25 @@ class TDbViewSource extends CApplicationComponent
 		{
 			$event = new TMissingViewTranslationEvent($this, $path, $route, $language);
 			$this->onMissingViewTranslation($event);
-			if(!$this->_cacheInvalidated && ($cache = $this->getCache()) !== null)
-			{
-				$cache->delete($this->getCacheKey($route, $language));
-				$this->_cacheInvalidated = true;
-			}
+			$this->invalidateCache($route, $language);
 			return $this->_views[$key][$path] = $event->path;
 		}
 
 		return $path;
+	}
+	
+	/**
+	 * Invalidates the current cache. This must be called if a view or a message associated with a view changes while caching is enabled.
+	 * 
+	 * @param unknown $route The route associated with the view that has invalidated this cache.
+	 * @param unknown $language The language of the view that has invalidate this cache.
+	 */
+	public function invalidateCache($route, $language)
+	{
+		if(($cache = $this->getCache()) !== null)
+		{
+			$cache->delete($this->getCacheKey($route, $language));
+		}
 	}
 
 	/**

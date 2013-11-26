@@ -231,5 +231,13 @@ class MessageSourceController extends TController
 			$this->redirect($this->createUrl('index'));
 		}
 	}
+	
+	/**
+	 * Flushes the cache of the translator's message source component.
+	 */
+	public function actionFlushCache()
+	{
+		TranslateModule::translator()->getMessageSourceComponent()->flushCache();
+	}
 
 }

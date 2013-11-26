@@ -740,7 +740,23 @@ catch(Exception $e)
 							<th class="right"><?php echo TranslateModule::t('Description:'); ?></th>
 							<td class="fill break"><?php echo TranslateModule::t('The name of the caching component for caching message translations.'); ?></td>
 						</tr>
-						<?php if($settingCheck !== true): ?>
+						<?php if($settingCheck === true): ?>
+						<tr id="messageFlushCache">
+							<th class="right"></th>
+							<td class="fill break">
+							<?php 
+							echo CHtml::ajaxButton(
+								'Flush Cache',
+								$this->createUrl('messageSource/flushCache'),
+								array(
+									'beforeSend' => 'function(){if(!confirm("'.TranslateModule::t('Are you sure you would like to flush the cache for all message translations?').'")) return false;$("#messageFlushCache").addClass("translateLoading");}',
+									'complete' => 'function(data){$("#messageFlushCache").removeClass("translateLoading");alert("'.TranslateModule::t('Message translation cache flush complete.').'");}',
+								)
+							);
+							?>
+							</td>
+						</tr>
+						<?php else: ?>
 						<tr>
 							<th class="right"><?php echo TranslateModule::t('Warning:'); ?></th>
 							<td class="fill break"><?php echo TranslateModule::t($settingCheck); ?></td>
@@ -1122,7 +1138,23 @@ catch(Exception $e)
 							<th class="right"><?php echo TranslateModule::t('Description:'); ?></th>
 							<td class="fill break"><?php echo TranslateModule::t('The name of the caching component for caching view translations.'); ?></td>
 						</tr>
-						<?php if($settingCheck !== true): ?>
+						<?php if($settingCheck === true): ?>
+						<tr id="viewFlushCache">
+							<th class="right"></th>
+							<td class="fill break">
+							<?php 
+							echo CHtml::ajaxButton(
+								'Flush Cache',
+								$this->createUrl('viewSource/flushCache'),
+								array(
+									'beforeSend' => 'function(){if(!confirm("'.TranslateModule::t('Are you sure you would like to flush the cache for all view translations?').'")) return false;$("#viewFlushCache").addClass("translateLoading");}',
+									'complete' => 'function(data){$("#viewFlushCache").removeClass("translateLoading");alert("'.TranslateModule::t('View translation cache flush complete.').'");}',
+								)
+							);
+							?>
+							</td>
+						</tr>
+						<?php else: ?>
 						<tr>
 							<th class="right"><?php echo TranslateModule::t('Warning:'); ?></th>
 							<td class="fill break"><?php echo TranslateModule::t($settingCheck); ?></td>

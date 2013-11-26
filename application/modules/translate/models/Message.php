@@ -52,7 +52,7 @@ class Message extends CActiveRecord
 			'language' => array(self::BELONGS_TO, 'Language', 'language_id'),
 			'acceptedLanguage' => array(self::BELONGS_TO, 'AcceptedLanguage', 'language_id'),
 			'viewMessages' => array(self::HAS_MANY, 'ViewMessage', 'message_id'),
-			'views' => array(self::HAS_MANY, 'View', array('view_id' => 'id'), 'through' => 'viewMessages', 'on' => $this->getTableAlias(false, false).'.language_id=views.language_id'),
+			'viewSources' => array(self::HAS_MANY, 'ViewSource', array('view_id' => 'id'), 'through' => 'source.viewMessages'),
 			'messageCategories' => array(self::HAS_MANY, 'CategoryMessage', 'message_id'),
 			'categories' => array(self::HAS_MANY, 'Category', array('category_id' => 'id'), 'through' => 'messageCategories')
 		);
@@ -93,6 +93,29 @@ class Message extends CActiveRecord
 	{
 		if(parent::beforeSave())
 		{
+			if(!$this->getIsNewRecord())
+			{
+				$languageCode = $this->language->code;
+				$translator = TranslateModule::translator();
+				$messageSource = $translator->getMessageSourceComponent();
+				if($messageSource->getIsCachingEnabled())
+				{
+					foreach($this->categories as $category)
+					{
+						$messageSource->invalidateCache($category, $languageCode);
+					}
+				}
+				$viewSource = $translator->getViewSourceComponent();
+				if($viewSource->getIsCachingEnabled())
+				{
+					$criteria = new CDbCriteria();
+					$criteria->addInCondition('view_id', CHtml::listData(View::model()->with('messages')->findAll('messages.language_id=:language_id AND messages.id=:message_id', array(':language_id' => $this->language_id, ':message_id' => $this->id)), 'id', 'id'));
+					foreach(Route::model()->with(array('routeViews' => $criteria))->findAll() as $route)
+					{
+						$viewSource->invalidateCache($route->route, $languageCode);
+					}
+				}
+			}
 			$this->last_modified = time();
 			return true;
 		}
