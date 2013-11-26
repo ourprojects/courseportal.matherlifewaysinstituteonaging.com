@@ -9,3 +9,4 @@ _notes
 /assets/*
 /application/runtime/*
 /tmp/*
+/forum/cache/*
