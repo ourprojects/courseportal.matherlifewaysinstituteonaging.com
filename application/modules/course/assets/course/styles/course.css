@@ -4,6 +4,14 @@ ul#resources li {
     margin-bottom: 10px;
 }
 
+ul.contentlist li {
+    margin-bottom: 10px;
+}
+
+ol.contentlist li {
+    margin-bottom: 10px;
+}
+
 ul.modules li {
     margin-bottom: 10px;
     list-style-type: none;

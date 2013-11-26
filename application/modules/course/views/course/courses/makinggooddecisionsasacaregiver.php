@@ -277,6 +277,8 @@ AARP provides various articles of interest and resources for family caregivers. 
     <div class="content">
         <h2 class="flowers">Making Good Decisions as a Caregiver</h2>
         <hr/>
+        <img src="<?php echo $this->getImagesUrl('makinggooddecisionsasacaregiver/179227415r.png'); ?>" alt="image">
+
         <p>Welcome to the course, “Making Good Decisions as a Caregiver.” This course is geared towards family members
             who provide support or care to an older adult who may be a parent, spouse, other relative, or a significant
             other. In particular, long distance caregiving is a growing phenomenon as adult children may need to
@@ -312,7 +314,7 @@ AARP provides various articles of interest and resources for family caregivers. 
             model developed specifically for working caregivers that combines the best of what we know about coaching
             methods. CARE Coaching improves working caregivers’ abilities to:</p>
 
-        <ul>
+        <ul class="contentlist">
             <li>Communicate</li>
             <li>Advocate</li>
             <li>Relate</li>
@@ -339,7 +341,7 @@ AARP provides various articles of interest and resources for family caregivers. 
 
         <p>Here are some fast facts to consider:</p>
 
-        <ul>
+        <ul class="contentlist">
             <li>Seven million American caregivers provide 80% of the care to vulnerable or ill family members.</li>
             <li>There are approximately 3.3 million long distance caregivers.</li>
             <li>Caregivers live an average of 480 miles from the people for which they care.</li>
@@ -368,6 +370,7 @@ AARP provides various articles of interest and resources for family caregivers. 
         <h2 class="flowers">Activity – CARE Coaching through long distance caregiving</h2>
         <hr/>
         <img src="<?php echo $this->getImagesUrl('makinggooddecisionsasacaregiver/163881431.png'); ?>" alt="image">
+
         <p>Read the following scenario and then respond to the CARE coaching questions. We provide some initial
             “openers” for CARE coaching questions for you to more fully develop your own questions.</p>
 
@@ -387,6 +390,8 @@ AARP provides various articles of interest and resources for family caregivers. 
     <div class="content">
         <h2 class="flowers">A checklist for long distance caregivers</h2>
         <hr/>
+        <img src="<?php echo $this->getImagesUrl('makinggooddecisionsasacaregiver/163881431.png'); ?>" alt="image">
+
         <p>It is often helpful for the long distance caregiver to have checklists to identify core areas that older
             parents now or in the future may need some assistance. Think about your own caregiving situation and review
             the following list.</p>
@@ -412,6 +417,9 @@ AARP provides various articles of interest and resources for family caregivers. 
     <div class="content">
         <h2 class="flowers">Sharpening your observation skills</h2>
         <hr/>
+        <img src="<?php echo $this->getImagesUrl('makinggooddecisionsasacaregiver/sb10068250ch-001.png'); ?>"
+             alt="image">
+
         <p>Having a checklist as reference to identify areas that may now or in the future be important to your aging
             parents is a good first step. Sharpening your observation skills is important to identify if your parents
             are beginning to have some cognitive, physical, or emotional challenges. Some changes may be very
@@ -440,7 +448,7 @@ AARP provides various articles of interest and resources for family caregivers. 
 
         <p>Some questions to consider related to your parent:</p>
 
-        <ul>
+        <ul class="contentlist">
             <li>Do you notice changes in their personal appearance or hygiene?</li>
             <li>Do you notice any weight changes?</li>
             <li>Does your parent seem unsteady in their gait or have difficulties getting up from the chair?</li>
@@ -452,7 +460,7 @@ AARP provides various articles of interest and resources for family caregivers. 
 
         <p>Some questions to consider related to the environment:</p>
 
-        <ul>
+        <ul class="contentlist">
             <li>Are there changes in relation to tidiness or cleanliness of the home environment?</li>
             <li>Are bills not getting paid or mail stacking up?</li>
             <li> Is the refrigerator empty of food or is food spoiling? (Hint: There may be containers in the
@@ -480,7 +488,7 @@ AARP provides various articles of interest and resources for family caregivers. 
         <ol>
             <li>What is the basic information I should have at hand as a long distance caregiver?</li>
         </ol>
-        <ul>
+        <ul class="contentlist">
             <li>Have contact information from your older parents’ neighbors. Make sure they know how to reach you in an
                 emergency.
             </li>
@@ -513,7 +521,7 @@ AARP provides various articles of interest and resources for family caregivers. 
                 situation.
             </li>
         </ol>
-        <ul>
+        <ul class="contentlist">
             <li>Educate yourself on what you need to know about your parents’ health care, their needs and preferences,
                 and other pertinent information.
             </li>
@@ -527,7 +535,7 @@ AARP provides various articles of interest and resources for family caregivers. 
         <ol start="3">
             <li>How can I feel less frustrated and angry with the caregiving situation?</li>
         </ol>
-        <ul>
+        <ul class="contentlist">
             <li>Feeling frustrated and angry is very common among caregivers regardless of distance.</li>
             <li>Plan to give yourself a break and just do something for yourself.</li>
         </ul>
@@ -546,7 +554,7 @@ AARP provides various articles of interest and resources for family caregivers. 
         <ol start="4">
             <li>What is a geriatric care manager and how can one help?</li>
         </ol>
-        <ul>
+        <ul class="contentlist">
             <li>Geriatric care managers are licensed nurses or social workers who specialize in geriatric care.</li>
             <li>The geriatric care manager is hired by a family to evaluate and assess an older parent’s needs and to
                 coordinate care through community resources.
@@ -580,7 +588,7 @@ AARP provides various articles of interest and resources for family caregivers. 
         <ol start="6">
             <li>What if my mom says, “Promise me you’ll never put me in a nursing home”?</li>
         </ol>
-        <ul>
+        <ul class="contentlist">
             <li>This request usually follows some horrendous story on the news about a nursing home death. Most of us
                 want to stay in our own homes, to be independent, and to be cared for by relatives and friends.
             </li>
@@ -610,7 +618,8 @@ AARP provides various articles of interest and resources for family caregivers. 
         <ol start="7">
             <li>What are some other resources for long distance caregivers?</li>
         </ol>
-        <ul>
+
+        <ul class="contentlist">
             <li>
                 Obtain a free <a href="www.netofcare.org/crd/resource_form.asp" target="_blank">Caregiver Resource
                     Directory</a> that provides resources, facts, and advice about caring for a family member as well as
@@ -659,7 +668,7 @@ AARP provides various articles of interest and resources for family caregivers. 
 
         <p>Some examples of family caregiving options include:</p>
 
-        <ul>
+        <ul class="contentlist">
             <li>Employee assistance programs – Human Resources may provide information to you from your EAP provider
                 regarding programs and counseling services available to employees and their families.
             </li>
@@ -707,9 +716,12 @@ AARP provides various articles of interest and resources for family caregivers. 
 
         <h4>Video – Part of the Sandwich Generation</h4>
 
-        <!-- MediaStorm Player Embed Code -->
-        <script type="text/javascript" id="mediastorm-player-e5282f8c15c9d3853198"
-                src="https://player.mediastorm.com/players/embed?id=e5282f8c15c9d3853198&w=460&h=366&lang=none"></script>
+        <div style="display: block; margin: 15px auto;">
+
+            <!-- MediaStorm Player Embed Code -->
+            <script type="text/javascript" id="mediastorm-player-e5282f8c15c9d3853198"
+                    src="https://player.mediastorm.com/players/embed?id=e5282f8c15c9d3853198&w=460&h=366&lang=none"></script>
+        </div>
 
     </div>
     <div class="buttons">
@@ -722,6 +734,7 @@ AARP provides various articles of interest and resources for family caregivers. 
     <div class="content">
         <h2 class="flowers">Activity – ways to manage your own stress</h2>
         <hr/>
+        <img src="<?php echo $this->getImagesUrl('makinggooddecisionsasacaregiver/163881431.png'); ?>" alt="image">
 
         <p>The American Psychological Association offers several strategies to help those in the “sandwich generation”
             manage their stress. In another course, we address the power of journaling as a self-coaching exercise to
@@ -762,7 +775,8 @@ AARP provides various articles of interest and resources for family caregivers. 
         <p>Central to most sibling conflicts is a breakdown of communication. Many caregivers relate to this common
             scenario:</p>
 
-        <blockquote>Cara is a long distance caregiver. Unfortunately her new job meant she has not been able to visit
+        <p style="font-style: italic;">Cara is a long distance caregiver. Unfortunately her new job meant she has not
+            been able to visit
             her aging mother for the past three years. She never had a very close relationship with her mother, and so
             their conversations always tended to be on a superficial level. She calls her mother about every two weeks.
             Over the phone, Cara’s mother tells her she is fine. On the other hand, Cara’s sister, Joyce, who is the
@@ -771,7 +785,7 @@ AARP provides various articles of interest and resources for family caregivers. 
             leaves pots on the stove and forgets to turn off the burners. Joyce wants to talk about potentially moving
             their mother to an assisted living community, but Cara does not want any part of such a decision, as she
             does not see any problem as her mother “sounds fine” on the phone.
-        </blockquote>
+        </p>
 
     </div>
     <div class="buttons">
@@ -831,6 +845,8 @@ AARP provides various articles of interest and resources for family caregivers. 
     <div class="content">
         <h2 class="flowers">Identifying resources and connections</h2>
         <hr/>
+        <img src="<?php echo $this->getImagesUrl('makinggooddecisionsasacaregiver/163881431.png'); ?>" alt="image">
+
         <p>A good method to evaluate an older parent’s environment and connections is to use an “ecomap.” Important
             perspective may be learned by considering the older parent in the context of the various systems that are
             part of his or her experiences. Systems may include individuals (such as spouse or adult child), groups
@@ -857,6 +873,8 @@ AARP provides various articles of interest and resources for family caregivers. 
     <div class="content">
         <h2 class="flowers">Dealing with resistance by your older parent</h2>
         <hr/>
+        <img src="<?php echo $this->getImagesUrl('makinggooddecisionsasacaregiver/94360449.png'); ?>" alt="image">
+
         <p>It is important that your older parent retains as much decision making abilities as possible. Your primary
             objective is to help your parent fulfill his or her needs and choices, not to take over your parent’s
             life.</p>
@@ -864,7 +882,7 @@ AARP provides various articles of interest and resources for family caregivers. 
         <p>In some cases, your older parent may reject your assistance. There may be several reasons why older adults do
             not accept help from others:</p>
 
-        <ul>
+        <ul class="contentlist">
             <li>Some older adults feel that accepting help is a sign of dependency.</li>
             <li>Some older adults regard accepting services as a form of welfare.</li>
             <li>An older parent may be concerned about the cost of the service.</li>
@@ -890,6 +908,7 @@ AARP provides various articles of interest and resources for family caregivers. 
     <div class="content">
         <h2 class="flowers">Identifying solutions to support choice and preferences</h2>
         <hr/>
+        <img src="<?php echo $this->getImagesUrl('makinggooddecisionsasacaregiver/163881431.png'); ?>" alt="image">
 
         <p>Throughout this course, you have had several opportunities to gain more understanding regarding your older
             parents’ needs and preferences. Every caregiving situation is unique. Understanding this will help you make
@@ -921,7 +940,7 @@ AARP provides various articles of interest and resources for family caregivers. 
 
         <p>Let’s summarize the top five points we covered in this course:</p>
 
-        <ol>
+        <ol class="contentlist">
             <li>With many grown children seeking new career opportunities or needing to relocate due to their job away
                 from their parents and the home in which they were raised, long distance caregiving has grown as an
                 issue in our society with the number of long distance caregivers doubling over the next 15 years.
@@ -946,7 +965,8 @@ AARP provides various articles of interest and resources for family caregivers. 
 
     </div>
     <div class="buttons">
-        <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> Complete Course </a>
+        <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;Back</a>
+        <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left">Complete Course</a>
     </div>
 </div>
 </div>
