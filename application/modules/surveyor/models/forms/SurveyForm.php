@@ -56,8 +56,8 @@ class SurveyForm extends CFormModel
 	{
 		return array(
 			// @ TODO We should just set the allowEmpty based on the anonymous state of the survey.
-			array('user_id', 'exist', 'attributeName' => 'id', 'className' => Yii::app()->getModule('surveyor')->userClass, 'allowEmpty' => true),
-			array('user_id', 'checkAnonymous'),
+			array('user_id', 'default', 'value' => Yii::app()->getUser()->getId()),
+			array('user_id', 'exist', 'attributeName' => 'id', 'className' => Yii::app()->getModule('surveyor')->userClass, 'allowEmpty' => $this->_survey->anonymous),
 			array('_attributes', 'validateAnswers'),
 		);
 	}
@@ -179,14 +179,6 @@ class SurveyForm extends CFormModel
 		else
 		{
 			parent::__set($name, $value);
-		}
-	}
-
-	public function checkAnonymous($attribute, $params)
-	{
-		if(!$this->_survey->anonymous && !isset($this->_user_id))
-		{
-			$this->addError($attribute, SurveyorModule::t('This survey is not anonymous and a user was not specified.'));
 		}
 	}
 
