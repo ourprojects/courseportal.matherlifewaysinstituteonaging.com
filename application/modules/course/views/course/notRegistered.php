@@ -33,6 +33,22 @@
         response within 24 hours of submitting your request.{/t}</p>
 
     <div class="box-white">
-        <?php echo $this->renderPartial('forms/contact', $models); ?>
+		<?php 
+		$this->widget(
+			'ext.LDContactUsWidget.LDContactUsWidget',
+			array(
+				'captcha' => array(
+					'class' => 'ext.LDContactUsWidget.components.CUReCaptcha',
+					'config' => array(
+						'reCaptcha' => Yii::app()->getComponent('reCaptcha'),
+						'useAjax' => true
+					)
+				),
+				'options' => array(
+					'htmlOptions' => array('class' => 'form')
+				)
+			)
+		);
+		?>
     </div>
 </div>
