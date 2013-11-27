@@ -51,7 +51,7 @@ class SubmitAction extends CAction
 				}
 				$result[get_class($surveyFormModel).'_'.$surveyFormModel->name.'_'.$question->id] = $qData;
 			}
-			$result = array('success' => $result);
+			$result = array('success' => $result, 'message' => $surveyFormModel->after_submit_message);
 		}
 		echo function_exists('json_encode') ? json_encode($result) : CJSON::encode($result);
 	}

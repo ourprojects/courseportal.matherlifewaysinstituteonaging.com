@@ -27,11 +27,11 @@
 			$el = this.find("p.message");
 			if(data.message) 
 			{
-				$el.removeClass("hide");
+				$el.css("display", "");
 			} 
 			else 
 			{
-				$el.addClass("hide");
+				$el.css("display", "none");
 			}
 			if(success) 
 			{
@@ -48,32 +48,66 @@
 		
 		showCharts: function(questions)
 		{
-			if(questions.success == undefined)
-			{
-				return;
-			}
-			$.each(questions.success, function(index, question){
+			$(this).yiiSurvey('hideQuestions', questions);
+			$.each(questions, function(index, question){
 				if(question.textual == 0)
 				{
 					highcharts[index + '_highchart_'].series[0].setData(question.data, true);
-					$('#' + index).css("display", "none");
-					$('#' + index + '_highchart_').css("display", "block");
+					$('#' + index + '_highchart_').css("display", "");
 				}
 			});
-			$('#' + $(this).data('surveySettings').submitButtonId).css("display", "none");
+			$('#' + $(this).data('surveySettings').submitButtonId).css("display", "");
+		},
+		
+		hideCharts: function(questions)
+		{
+			$.each(questions, function(index, question){
+				$('#' + index + '_highchart_').css("display", "none");
+			});
 		},
 		
 		showQuestions: function(questions)
 		{
-			if(questions.success == undefined)
-			{
-				return;
-			}
-			$.each(questions.success, function(index, question){
-				$('#' + index + '_highchart_').css("display", "none");
-				$('#' + index).css("display", "inline");
+			$(this).yiiSurvey("hideCharts", questions);
+			$.each(questions, function(index, question){
+				$('#' + index).css("display", "");
 			});
-			$('#' + $(this).data('surveySettings').submitButtonId).css("display", "inline");
+			$('#' + $(this).data('surveySettings').submitButtonId).css("display", "");
+		},
+		
+		hideQuestions: function(questions)
+		{
+			$.each(questions, function(index, question){
+				$('#' + index).css("display", "none");
+			});
+			$('#' + $(this).data('surveySettings').submitButtonId).css("display", "none");
+		},
+		
+		showRows: function(questions)
+		{
+			$.each(questions, function(index, question){
+				$('#' + index + "_row_").css("display", "");
+			});
+		},
+		
+		hideRows: function(questions)
+		{
+			$.each(questions, function(index, question){
+				$('#' + index + "_row_").css("display", "none");
+			});
+			$('#' + $(this).data('surveySettings').submitButtonId).css("display", "none");
+		},
+		
+		showMessage: function(message)
+		{
+			$message = $('#'+$(this).data('surveySettings').messageId);
+			$message.html(message);
+			$message.css("display", "");
+		},
+		
+		hideMessage: function()
+		{
+			$('#'+$(this).data('surveySettings').messageId).css("display", "none");
 		},
 		
 		submit: function()
@@ -84,10 +118,36 @@
 				url: $form.attr('action'),
 				type: $form.attr('method'),
 				data: $form.serialize(),
-				beforeSend: function(){$form.addClass($survey.data('surveySettings').loadingClass);},
-				success: function(data){$survey.yiiSurvey("showCharts", $.parseJSON(data));},
-				error: function(data){$form.yiiactiveform("updateSummary", $.parseJSON(data));},
-				complete: function(){$form.removeClass($survey.data('surveySettings').loadingClass);}
+				beforeSend: function(){
+					$form.find('#' + $survey.data('surveySettings').submitButtonId).attr('disabled', 'disabled');
+					$form.addClass($survey.data('surveySettings').loadingClass);
+				},
+				success: function(data){
+					$data = $.parseJSON(data);
+					settings = $survey.data('surveySettings');
+					if(settings.messageShow)
+					{
+						$survey.yiiSurvey("showMessage", $data.message);
+					}
+					if($data.success)
+					{
+						if(settings.highchartsShow)
+						{
+							$survey.yiiSurvey("showCharts", $data.success);
+						}
+						else
+						{
+							$survey.yiiSurvey("hideRows", $data.success);
+						}
+					}
+				},
+				error: function(data){
+					$form.yiiactiveform("updateSummary", $.parseJSON(data));
+				},
+				complete: function(){
+					$form.removeClass($survey.data('surveySettings').loadingClass);
+					$form.find('#' + $survey.data('surveySettings').submitButtonId).removeAttr('disabled');
+				}
 			});
 		}
 			

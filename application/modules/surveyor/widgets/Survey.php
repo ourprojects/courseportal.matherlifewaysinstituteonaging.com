@@ -35,10 +35,9 @@ class Survey extends CWidget
 			),
 			'submitButtonLabel' =>  SurveyorModule::t('Submit'),
 			'submitButtonHtmlOptions' => array('id' => 'survey_submit_'.$id),
-			'questionsHtmlOptions' => array(),
-			'rowsHtmlOptions' => array(),
+			'rowHtmlOptions' => array(),
 			'messageShow' => true,
-			'messageHtmlOptions' => array(),
+			'messageHtmlOptions' => array('id' => 'survey_message_'.$id),
 			'highcharts' => array(
 				'show' => true,
 				'options' => array(
@@ -118,7 +117,7 @@ class Survey extends CWidget
 		}
 
 		// merge options with default values
-		$this->options = array_merge_recursive($this->getDefaultOptions(), $this->options);
+		$this->options = CMap::mergeArray($this->getDefaultOptions(), $this->options);
 
 		$assetsDir = dirname(__FILE__).DIRECTORY_SEPARATOR.'assets';
 		if(is_dir($assetsDir))

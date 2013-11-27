@@ -1,6 +1,11 @@
 <?php 
 
-$options = CJavaScript::encode(array('submitButtonId' => $submitButtonHtmlOptions['id']));
+$options = CJavaScript::encode(array(
+		'submitButtonId' => $submitButtonHtmlOptions['id'], 
+		'messageShow' => $messageShow,
+		'messageId' => $messageHtmlOptions['id'],
+		'highchartsShow' => $highcharts['show'],
+));
 Yii::app()->getClientScript()->registerScript(__CLASS__.'#'.$htmlOptions['id'], "jQuery('#{$htmlOptions['id']}').yiiSurvey($options);");
 
 echo CHtml::openTag('div', $htmlOptions);
@@ -20,7 +25,7 @@ if($form['show'])
 {
 	$activeForm = $this->beginWidget(
 		'CActiveForm',
-		array_merge_recursive(
+		CMap::mergeArray(
 			$form['options'],
 			array(
 				'actionPrefix' => $this->actionPrefix,
@@ -43,15 +48,14 @@ if($form['show'])
 	);
 	if($messageShow)
 	{
-		echo CHtml::tag('p', array_merge_recursive($messageHtmlOptions, array('style' => 'display: '.($message === '' ? 'none' : 'block').';')), $message);
+		echo CHtml::tag('p', CMap::mergeArray($messageHtmlOptions, $message === '' ? array('style' => 'display:none;') : array()), $message);
 	}
 	echo $activeForm->errorSummary($model);
 	foreach($model->questions as $q)
 	{
 		$attributeName = '['.$model->name.']'.$q->id;
 		$attributeId = CHtml::activeId($model, $attributeName);
-		echo CHtml::openTag('div', array_merge_recursive($rowsHtmlOptions, array('id' => $attributeId.'_row_', 'class' => 'row')));
-		echo CHtml::openTag('div',array_merge_recursive($questionsHtmlOptions, array('id' => $attributeId.'_question_')));
+		echo CHtml::openTag('div',CMap::mergeArray($rowHtmlOptions, array('id' => $attributeId.'_row_', 'class' => 'row')));
 		echo $activeForm->labelEx($model, $attributeName);
 
 		switch($q->type->name)
@@ -97,12 +101,11 @@ if($form['show'])
 				break;
 		}
 		echo $activeForm->error($model, $attributeName);
-		echo CHtml::closeTag('div');
 		if(!$q->type->textual && $highcharts['show'])
 		{
 			$this->widget(
 				'ext.highcharts.HighchartsWidget',
-				array_merge_recursive(
+				CMap::mergeArray(
 					$highcharts['options'],
 					array(
 						'id' => $attributeId.'_highchart_',
@@ -113,7 +116,6 @@ if($form['show'])
 		}
 		echo CHtml::closeTag('div');
 	}
-
 	echo CHtml::submitButton($submitButtonLabel, $submitButtonHtmlOptions);
 	$this->endWidget($activeForm->getId());
 }

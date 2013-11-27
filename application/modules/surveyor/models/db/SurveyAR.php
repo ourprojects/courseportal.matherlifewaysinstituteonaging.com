@@ -79,15 +79,20 @@ class SurveyAR extends SActiveRecord {
 	 */
 	public function attributeLabels() {
 		return array(
+			// column attributes
 			'id' => SurveyorModule::t('ID'),
 			'name' => SurveyorModule::t('Name'),
 			'title' => SurveyorModule::t('Title'),
 			'description' => SurveyorModule::t('Description'),
+			'anonymous' => SurveyorModule::t('Anonymous'),
+			'after_submit_message' => SurveyorModule::t('After Submit Message'),
+				
+			// relational attributes
 			'questions' => SurveyorModule::t('Questions'),
+			'questionsCount' => SurveyorModule::t('Question Count'),
 			'options' => SurveyorModule::t('Options'),
 			'types' => SurveyorModule::t('Question Types'),
 			'answers' => SurveyorModule::t('Answers'),
-			'anonymous' => SurveyorModule::t('Anonymous'),
 		);
 	}
 
@@ -99,12 +104,14 @@ class SurveyAR extends SActiveRecord {
 		$criteria = new CDbCriteria;
 
 		$criteria->compare('id', $this->id);
-		$criteria->compare('title', $this->title);
-		$criteria->compare('description', $this->description);
-		$criteria->compare('name', $this->name);
+		$criteria->compare('name', $this->name, true);
+		$criteria->compare('title', $this->title, true);
+		$criteria->compare('description', $this->description, true);
+		$criteria->compare('after_submit_message', $this->after_submit_message, true);
+		$criteria->compare('anonymous', $this->anonymous);
 
 		return new CActiveDataProvider($this, array(
-			'criteria'=>$criteria,
+			'criteria' => $criteria,
 		));
 	}
 
