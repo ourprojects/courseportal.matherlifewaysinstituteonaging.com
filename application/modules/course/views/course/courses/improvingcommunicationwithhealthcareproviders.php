@@ -57,7 +57,8 @@ foreach (array(
                         'id' => $surveyName,
                         'options' => array(
                             'htmlOptions' => array('style' => 'display:none;'),
-                            'title' => array('htmlOptions' => array('class' => 'flowers'))
+                            'title' => array('htmlOptions' => array('class' => 'flowers')),
+							'highcharts' => array('show' => false)
                         )
                     )
                 );

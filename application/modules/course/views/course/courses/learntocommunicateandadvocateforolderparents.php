@@ -55,11 +55,12 @@ foreach (array(
                         'id' => $surveyName,
                         'options' => array(
                             'htmlOptions' => array('style' => 'display:none;'),
-                            'title' => array('htmlOptions' => array('class' => 'flowers'))
+                            'title' => array('htmlOptions' => array('class' => 'flowers')),
+							'highcharts' => array('show' => false)
                         )
                     )
                 );
-                $survey->model->user_id = Yii::app()->getUser()->getId();
+				$survey->model->user_id = Yii::app()->getUser()->getId();
                 ?>
                 <li>
                     <a id="survey_link_<?php echo $survey->getId(); ?>" class="button"
