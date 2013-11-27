@@ -56,7 +56,6 @@
 					$('#' + index + '_highchart_').css("display", "");
 				}
 			});
-			$('#' + $(this).data('surveySettings').submitButtonId).css("display", "");
 		},
 		
 		hideCharts: function(questions)
