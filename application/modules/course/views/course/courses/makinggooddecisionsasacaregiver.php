@@ -168,15 +168,11 @@ foreach (array(
             Identifying solutions to support choices and preferences of older parents
         </li>
     </ul>
-                <p>
-                    <a href="<?php echo $this->createDownloadUrl('makinggooddecisionsasacaregiver/Agenda_makinggooddecisionsasacaregiver.pdf'); ?>"
-                       target="_blank" class="button">Agenda</a>
-                </p>
 
-                <h5>Becoming a More Confident Caregiver - </h5>
+<h5 style: border-top: solid black; padding-bottom: 10px;>Making Good Decisions as a Long-Distance Caregiver -</h5>
 
                 <p>
-                    <a href="#lesson-1-slide-1" data-fancybox-group="lesson-1" class="teal lesson-1 button"> Start </a>
+                    <a href="#lesson-1-slide-1" data-fancybox-group="lesson-1" class="teal lesson-1 button">Start Course</a>
                     <a href="#lesson-1-slide-2" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a
                         href="#lesson-1-slide-3" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a
                         href="#lesson-1-slide-4" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a
@@ -200,11 +196,11 @@ foreach (array(
                         href="#lesson-1-slide-22" data-fancybox-group="lesson-1" class="hide lesson-1"></a>
                 </p>
 
-    <h4>Resources</h4>
+    <h5>Resources</h5>
 
     <p>Please use these listed resources for additional reading. Please contact your course facilitator if you have
         additional resources you would like to see added here.</p>
-    <ul id="resources">
+<ul id="resources" style: bottom-border: solid black;>
 
         <li>
             <a href="http://www.aarp.org/health/doctors-hospitals/info-09-2010/finding_your_way_how_to_talk_to_8212_and_understand_8212_your_doctor.html"
@@ -237,9 +233,7 @@ AARP provides various articles of interest and resources for family caregivers. 
         </li>
     </ul>
 
-    <h4>Optional Video - Working Caregivers</h4>
-
-    <h5>The Sandwich Generation - by Media Storm</h5>
+    <h4>Optional Video - The Sandwich Generation (Media Storm)</h4>
 
     <p>Filmmaker and photographer couple Julie Winokur and Ed Kashi were busy pursuing their careers and raising two
         children when Winokurs 83-year-old father, Herbie, became too infirm to care for himself. At that moment they
