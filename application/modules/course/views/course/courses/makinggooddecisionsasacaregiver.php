@@ -169,7 +169,7 @@ foreach (array(
         </li>
     </ul>
 
-<h5 style: border-top: solid black; padding-bottom: 10px;>Making Good Decisions as a Long-Distance Caregiver -</h5>
+<h5 style="border-top: solid black; padding-bottom: 10px;"><?php echo t($course->title); ?> -</h5>
 
                 <p>
                     <a href="#lesson-1-slide-1" data-fancybox-group="lesson-1" class="teal lesson-1 button">Start Course</a>
@@ -200,7 +200,7 @@ foreach (array(
 
     <p>Please use these listed resources for additional reading. Please contact your course facilitator if you have
         additional resources you would like to see added here.</p>
-<ul id="resources" style: bottom-border: solid black;>
+<ul id="resources" style="bottom-border: solid black;">
 
         <li>
             <a href="http://www.aarp.org/health/doctors-hospitals/info-09-2010/finding_your_way_how_to_talk_to_8212_and_understand_8212_your_doctor.html"
@@ -277,7 +277,7 @@ AARP provides various articles of interest and resources for family caregivers. 
 <div id="lesson-1">
 <div id="lesson-1-slide-1" class="course-slide">
     <div class="content">
-        <h2 class="flowers">Making Good Decisions as a Caregiver</h2>
+        <h2 class="flowers"><?php echo t($course->title); ?></h2>
         <hr/>
         <img src="<?php echo $this->getImagesUrl('makinggooddecisionsasacaregiver/179227415r.png'); ?>" alt="image">
 

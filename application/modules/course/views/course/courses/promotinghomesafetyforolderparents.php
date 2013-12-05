@@ -125,15 +125,10 @@ foreach (array(
         <strong>90 days</strong> from the <strong>initial enrollment</strong> date.
     </p>
 
-    <h4>Requirements</h4>
+<h4>Requirements</h4>
 
-    <p>To successfully participate, you will need access to the following software on the computer(s) you are using to
-        access this course:</p>
-    <ul>
-        <li>
-            <a href="http://get.adobe.com/reader/" target="_blank">Adobe Acrobat</a>
-        </li>
-    </ul>
+<p>To successfully participate, you will need <a href="http://get.adobe.com/reader/" target="_blank">Adobe Acrobat</a>.</p>
+
     <h4>Objectives</h4>
     <ul>
         <?php
@@ -141,25 +136,25 @@ foreach (array(
             echo '<li>' . t($objective->text) . '</li>';
         ?>
     </ul>
-    <h4>Agenda &amp; Module(s)</h4>
 
-    <table style="border-bottom: 2px solid black; border-top: 2px solid black; margin-top: 10px;">
-        <tr>
-            <td>
-                <h5>Download the course Agenda - </h5>
-            </td>
-            <td>
-                <p>
-                    <a href="<?php echo $this->createDownloadUrl('promotinghomesafetyforolderparents/Agenda_promotinghomesafetyforolderparents.pdf'); ?>"
-                       target="_blank" class="button">Agenda</a>
-                </p>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <h5>Becoming a More Confident Caregiver - </h5>
-            </td>
-            <td>
+<h4>Agenda</h4>
+
+<ul>
+<li>
+Home safety tips
+<li>
+Moving my parents into my home
+</li>
+<li>
+The “driving” conversation
+</li>
+<li>
+Importance of exercise for older adults and its impact on safety
+</li>
+</ul>
+
+<h5 style="border-top: solid black; padding-bottom: 10px;"><?php echo t($course->title); ?> -</h5>
+
                 <p>
                     <a href="#lesson-1-slide-1" data-fancybox-group="lesson-1" class="teal lesson-1 button"> Start </a>
                     <a href="#lesson-1-slide-2" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a
@@ -191,9 +186,6 @@ foreach (array(
                         href="#lesson-1-slide-26" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a
                         href="#lesson-1-slide-27" data-fancybox-group="lesson-1" class="hide lesson-1"></a>
                 </p>
-            </td>
-        </tr>
-    </table>
 
     <h4>Resources</h4>
 
@@ -278,7 +270,7 @@ AARP provides various articles of interest and resources for family caregivers. 
 <div id="lesson-1">
 <div id="lesson-1-slide-1" class="course-slide">
     <div class="content">
-        <h2 class="flowers">Promoting Home Safety for Older Parents</h2>
+        <h2 class="flowers"><?php echo t($course->title); ?></h2>
         <hr/>
         <p>Welcome to the course, “Promoting Safety for Older Parents.” This course is geared towards family members who
             provide support or care to an older adult who may be a parent, spouse, other relative, or a significant
