@@ -169,9 +169,13 @@ foreach (array(
         </li>
     </ul>
 
-<h5 style="border-top: solid black; padding-bottom: 10px;"><?php echo t($course->title); ?> -</h5>
+<table style="border-top: solid black; margin-top: 50px;">
+<tr>
+<td>
 
-                <p>
+<h5><?php echo t($course->title); ?> &rarr; </h5>
+</td>
+<td>
                     <a href="#lesson-1-slide-1" data-fancybox-group="lesson-1" class="teal lesson-1 button">&rarr; &rarr; Start Course &larr; &larr;</a>
                     <a href="#lesson-1-slide-2" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a
                         href="#lesson-1-slide-3" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a
@@ -194,12 +198,13 @@ foreach (array(
                         href="#lesson-1-slide-20" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a
                         href="#lesson-1-slide-21" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a
                         href="#lesson-1-slide-22" data-fancybox-group="lesson-1" class="hide lesson-1"></a>
-                </p>
+</td>
+</tr>
+</table>
 
     <h5>Resources</h5>
 
-    <p>Please use these listed resources for additional reading. Please contact your course facilitator if you have
-        additional resources you would like to see added here.</p>
+    <p>Please use these listed resources for additional reading.</p>
 <ul id="resources">
 
         <li>
@@ -232,6 +237,8 @@ Find help providing care, government agencies, long-distance caregiving, and sup
 AARP provides various articles of interest and resources for family caregivers. -->
         </li>
     </ul>
+
+<p style="border-bottom: solid black; margin-bottom: 35px;">Please contact your course facilitator if you have additional resources you would like to see added here.</p>
 
     <h4>Optional Video - The Sandwich Generation (Media Storm)</h4>
 

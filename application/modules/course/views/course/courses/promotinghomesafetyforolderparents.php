@@ -194,7 +194,7 @@ Importance of exercise for older adults and its impact on safety
     <h5>Resources</h5>
 
     <p>Please use these listed resources for additional reading.</p>
-    <ul id="resources" style="bottom-border: solid black; margin-top: 35px;">
+    <ul id="resources">
 
         <li>
             <a href="http://www.aarp.org/health/doctors-hospitals/info-09-2010/finding_your_way_how_to_talk_to_8212_and_understand_8212_your_doctor.html"
