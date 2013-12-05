@@ -132,13 +132,8 @@ foreach (array(
 
     <h4>Requirements</h4>
 
-    <p>To successfully participate, you will need access to the following software on the computer(s) you are using to
-        access this course:</p>
-    <ul>
-        <li>
-            <a href="http://get.adobe.com/reader/" target="_blank">Adobe Acrobat</a>
-        </li>
-    </ul>
+    <p>To successfully participate, you will need <a href="http://get.adobe.com/reader/" target="_blank">Adobe Acrobat</a>.</p>
+
     <h4>Objectives</h4>
     <ul>
         <?php
@@ -146,25 +141,40 @@ foreach (array(
             echo '<li>' . t($objective->text) . '</li>';
         ?>
     </ul>
-    <h4>Agenda &amp; Module(s)</h4>
+    <h4>Agenda</h4>
 
-    <table style="border-bottom: 2px solid black; border-top: 2px solid black; margin-top: 10px;">
-        <tr>
-            <td>
-                <h5>Download the course Agenda - </h5>
-            </td>
-            <td>
+    <ul>
+        <li>
+            Long distance caregiving
+        <li>
+            Sharpening your observation skills during home visits
+        </li>
+        <li>
+            Common issues faced by long distance caregivers
+        </li>
+        <li>
+            Worksite benefits for employed long distance caregivers
+        </li>
+        <li>
+            Ways to manage stress
+        </li>
+        <li>
+            Family dynamics and improving sibling communication
+        </li>
+        <li>
+            Dealing with resistance from older parents
+        </li>
+        <li>
+            Identifying solutions to support choices and preferences of older parents
+        </li>
+    </ul>
                 <p>
                     <a href="<?php echo $this->createDownloadUrl('makinggooddecisionsasacaregiver/Agenda_makinggooddecisionsasacaregiver.pdf'); ?>"
                        target="_blank" class="button">Agenda</a>
                 </p>
-            </td>
-        </tr>
-        <tr>
-            <td>
+
                 <h5>Becoming a More Confident Caregiver - </h5>
-            </td>
-            <td>
+
                 <p>
                     <a href="#lesson-1-slide-1" data-fancybox-group="lesson-1" class="teal lesson-1 button"> Start </a>
                     <a href="#lesson-1-slide-2" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a
@@ -189,9 +199,6 @@ foreach (array(
                         href="#lesson-1-slide-21" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a
                         href="#lesson-1-slide-22" data-fancybox-group="lesson-1" class="hide lesson-1"></a>
                 </p>
-            </td>
-        </tr>
-    </table>
 
     <h4>Resources</h4>
 
