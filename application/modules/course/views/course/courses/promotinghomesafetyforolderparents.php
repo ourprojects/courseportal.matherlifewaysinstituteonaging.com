@@ -153,12 +153,12 @@ Importance of exercise for older adults and its impact on safety
 </li>
 </ul>
 
-<h5 style="border-top: solid black; padding-bottom: 10px;"><?php echo t($course->title); ?> -</h5>
+<h5 style="border-top: solid black; padding: 25px 0px;"><?php echo t($course->title); ?> -</h5>
 
                 <p>
-                    <a href="#lesson-1-slide-1" data-fancybox-group="lesson-1" class="teal lesson-1 button"> Start </a>
-                    <a href="#lesson-1-slide-2" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a
-                        href="#lesson-1-slide-3" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a
+                    <a href="#lesson-1-slide-1" data-fancybox-group="lesson-1" class="teal lesson-1 button">Start</a>
+                    <a href="#lesson-1-slide-2" data-fancybox-group="lesson-1" class="hide lesson-1"></a>
+                    <a href="#lesson-1-slide-3" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a
                         href="#lesson-1-slide-4" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a
                         href="#lesson-1-slide-5" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a
                         href="#lesson-1-slide-6" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a
@@ -177,17 +177,15 @@ Importance of exercise for older adults and its impact on safety
                         href="#lesson-1-slide-19" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a
                         href="#lesson-1-slide-20" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a
                         href="#lesson-1-slide-21" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a
-                        href="#lesson-1-slide-22" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a
-                        href="#lesson-1-slide-23"
-                        data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-24"
-                                                                                     data-fancybox-group="lesson-1"
-                                                                                     class="hide lesson-1"></a> <a
+                        href="#lesson-1-slide-22" data-fancybox-group="lesson-1" class="hide lesson-1"></a>
+                    <a href="#lesson-1-slide-23" data-fancybox-group="lesson-1" class="hide lesson-1"></a>
+                    <a href="#lesson-1-slide-24"  data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a
                         href="#lesson-1-slide-25" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a
                         href="#lesson-1-slide-26" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a
                         href="#lesson-1-slide-27" data-fancybox-group="lesson-1" class="hide lesson-1"></a>
                 </p>
 
-    <h4>Resources</h4>
+    <h5>Resources</h5>
 
     <p>Please use these listed resources for additional reading. Please contact your course facilitator if you have
         additional resources you would like to see added here.</p>
@@ -224,9 +222,7 @@ AARP provides various articles of interest and resources for family caregivers. 
         </li>
     </ul>
 
-    <h4>Optional Video - Working Caregivers</h4>
-
-    <h5>The Sandwich Generation - by Media Storm</h5>
+    <h4 style="border-top: solid black; padding-bottom: 25px 0px;">Optional Video - The Sandwich Generation (Media Storm)</h4>
 
     <p>Filmmaker and photographer couple Julie Winokur and Ed Kashi were busy pursuing their careers and raising two
         children when Winokurs 83-year-old father, Herbie, became too infirm to care for himself. At that moment they
