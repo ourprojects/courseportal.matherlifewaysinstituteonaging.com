@@ -153,44 +153,40 @@ Importance of exercise for older adults and its impact on safety
 </li>
 </ul>
 
-<table style="border-top: solid black; margin-top: 50px;">
+<table style="border-top: solid black; margin-top: 35px; padding: 0px;">
 <tr>
 <td>
 
 <h5><?php echo t($course->title); ?> &rarr; </h5>
 </td>
 <td>
-
-                <p>
-                    <a href="#lesson-1-slide-1" data-fancybox-group="lesson-1" class="teal lesson-1 button">&rarr; &rarr; Start Course &larr; &larr;</a>
-                    <a href="#lesson-1-slide-2" data-fancybox-group="lesson-1" class="hide lesson-1"></a>
-                    <a href="#lesson-1-slide-3" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a
-                        href="#lesson-1-slide-4" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a
-                        href="#lesson-1-slide-5" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a
-                        href="#lesson-1-slide-6" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a
-                        href="#lesson-1-slide-7" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a
-                        href="#lesson-1-slide-8" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a
-                        href="#lesson-1-slide-9" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a
-                        href="#lesson-1-slide-10" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a
-                        href="#lesson-1-slide-11" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a
-                        href="#lesson-1-slide-12" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a
-                        href="#lesson-1-slide-13" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a
-                        href="#lesson-1-slide-14" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a
-                        href="#lesson-1-slide-15" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a
-                        href="#lesson-1-slide-16" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a
-                        href="#lesson-1-slide-17" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a
-                        href="#lesson-1-slide-18" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a
-                        href="#lesson-1-slide-19" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a
-                        href="#lesson-1-slide-20" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a
-                        href="#lesson-1-slide-21" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a
-                        href="#lesson-1-slide-22" data-fancybox-group="lesson-1" class="hide lesson-1"></a>
-                    <a href="#lesson-1-slide-23" data-fancybox-group="lesson-1" class="hide lesson-1"></a>
-                    <a href="#lesson-1-slide-24"  data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a
-                        href="#lesson-1-slide-25" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a
-                        href="#lesson-1-slide-26" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a
-                        href="#lesson-1-slide-27" data-fancybox-group="lesson-1" class="hide lesson-1"></a>
-                </p>
-
+<a href="#lesson-1-slide-1" data-fancybox-group="lesson-1" class="teal lesson-1 button">&rarr; &rarr; Start Course &larr; &larr;</a>
+<a href="#lesson-1-slide-2" data-fancybox-group="lesson-1" class="hide lesson-1"></a>
+<a href="#lesson-1-slide-3" data-fancybox-group="lesson-1" class="hide lesson-1"></a>
+<a href="#lesson-1-slide-4" data-fancybox-group="lesson-1" class="hide lesson-1"></a>
+<a href="#lesson-1-slide-5" data-fancybox-group="lesson-1" class="hide lesson-1"></a>
+<a href="#lesson-1-slide-6" data-fancybox-group="lesson-1" class="hide lesson-1"></a>
+<a href="#lesson-1-slide-7" data-fancybox-group="lesson-1" class="hide lesson-1"></a>
+<a href="#lesson-1-slide-8" data-fancybox-group="lesson-1" class="hide lesson-1"></a>
+<a href="#lesson-1-slide-9" data-fancybox-group="lesson-1" class="hide lesson-1"></a>
+<a href="#lesson-1-slide-10" data-fancybox-group="lesson-1" class="hide lesson-1"></a>
+<a href="#lesson-1-slide-11" data-fancybox-group="lesson-1" class="hide lesson-1"></a>
+<a href="#lesson-1-slide-12" data-fancybox-group="lesson-1" class="hide lesson-1"></a>
+<a href="#lesson-1-slide-13" data-fancybox-group="lesson-1" class="hide lesson-1"></a>
+<a href="#lesson-1-slide-14" data-fancybox-group="lesson-1" class="hide lesson-1"></a>
+<a href="#lesson-1-slide-15" data-fancybox-group="lesson-1" class="hide lesson-1"></a>
+<a href="#lesson-1-slide-16" data-fancybox-group="lesson-1" class="hide lesson-1"></a>
+<a href="#lesson-1-slide-17" data-fancybox-group="lesson-1" class="hide lesson-1"></a>
+<a href="#lesson-1-slide-18" data-fancybox-group="lesson-1" class="hide lesson-1"></a>
+<a href="#lesson-1-slide-19" data-fancybox-group="lesson-1" class="hide lesson-1"></a>
+<a href="#lesson-1-slide-20" data-fancybox-group="lesson-1" class="hide lesson-1"></a>
+<a href="#lesson-1-slide-21" data-fancybox-group="lesson-1" class="hide lesson-1"></a>
+<a href="#lesson-1-slide-22" data-fancybox-group="lesson-1" class="hide lesson-1"></a>
+<a href="#lesson-1-slide-23" data-fancybox-group="lesson-1" class="hide lesson-1"></a>
+<a href="#lesson-1-slide-24" data-fancybox-group="lesson-1" class="hide lesson-1"></a>
+<a href="#lesson-1-slide-25" data-fancybox-group="lesson-1" class="hide lesson-1"></a>
+<a href="#lesson-1-slide-26" data-fancybox-group="lesson-1" class="hide lesson-1"></a>
+<a href="#lesson-1-slide-27" data-fancybox-group="lesson-1" class="hide lesson-1"></a>
 </td>
 </tr>
 </table>
@@ -199,7 +195,7 @@ Importance of exercise for older adults and its impact on safety
 
     <p>Please use these listed resources for additional reading. Please contact your course facilitator if you have
         additional resources you would like to see added here.</p>
-    <ul id="resources">
+    <ul id="resources" style="bottom-border: solid black; margin-top: 35px;">
 
         <li>
             <a href="http://www.aarp.org/health/doctors-hospitals/info-09-2010/finding_your_way_how_to_talk_to_8212_and_understand_8212_your_doctor.html"
@@ -232,7 +228,7 @@ AARP provides various articles of interest and resources for family caregivers. 
         </li>
     </ul>
 
-    <h4 style="border-top: solid black; margin-top: 25px;">Optional Video - The Sandwich Generation (Media Storm)</h4>
+    <h4>Optional Video - The Sandwich Generation (Media Storm)</h4>
 
     <p>Filmmaker and photographer couple Julie Winokur and Ed Kashi were busy pursuing their careers and raising two
         children when Winokurs 83-year-old father, Herbie, became too infirm to care for himself. At that moment they
