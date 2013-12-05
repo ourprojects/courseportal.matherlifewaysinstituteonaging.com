@@ -200,7 +200,7 @@ foreach (array(
 
     <p>Please use these listed resources for additional reading. Please contact your course facilitator if you have
         additional resources you would like to see added here.</p>
-<ul id="resources" style="bottom-border: solid black;">
+<ul id="resources">
 
         <li>
             <a href="http://www.aarp.org/health/doctors-hospitals/info-09-2010/finding_your_way_how_to_talk_to_8212_and_understand_8212_your_doctor.html"

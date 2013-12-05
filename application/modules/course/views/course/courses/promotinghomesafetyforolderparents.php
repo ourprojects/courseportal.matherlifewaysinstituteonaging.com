@@ -153,7 +153,7 @@ Importance of exercise for older adults and its impact on safety
 </li>
 </ul>
 
-<table style="border-top: solid black; margin-top: 35px; padding: 0px;">
+<table style="border-top: solid black; margin-top: 50px;">
 <tr>
 <td>
 
@@ -193,8 +193,7 @@ Importance of exercise for older adults and its impact on safety
 
     <h5>Resources</h5>
 
-    <p>Please use these listed resources for additional reading. Please contact your course facilitator if you have
-        additional resources you would like to see added here.</p>
+    <p>Please use these listed resources for additional reading.</p>
     <ul id="resources" style="bottom-border: solid black; margin-top: 35px;">
 
         <li>
@@ -227,6 +226,8 @@ Find help providing care, government agencies, long-distance caregiving, and sup
 AARP provides various articles of interest and resources for family caregivers. -->
         </li>
     </ul>
+
+<p style="border-bottom: solid black; margin-bottom: 35px;">Please contact your course facilitator if you have additional resources you would like to see added here.</p>
 
     <h4>Optional Video - The Sandwich Generation (Media Storm)</h4>
 
