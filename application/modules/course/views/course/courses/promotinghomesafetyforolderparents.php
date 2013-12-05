@@ -153,11 +153,11 @@ Importance of exercise for older adults and its impact on safety
 </li>
 </ul>
 
-<tabel>
-    <tr>
+<table style="border-top: solid black; margin-top: 50px;">
+<tr>
 <td>
 
-<h5 style="border-top: solid black; padding-top: 50px; margin-top: 50px;"><?php echo t($course->title); ?> &rarr; </h5>
+<h5><?php echo t($course->title); ?> &rarr; </h5>
 </td>
 <td>
 
@@ -232,7 +232,7 @@ AARP provides various articles of interest and resources for family caregivers. 
         </li>
     </ul>
 
-    <h4 style="border-top: solid black; padding-top: 50px; margin-top:50px;">Optional Video - The Sandwich Generation (Media Storm)</h4>
+    <h4 style="border-top: solid black; margin-top: 25px;">Optional Video - The Sandwich Generation (Media Storm)</h4>
 
     <p>Filmmaker and photographer couple Julie Winokur and Ed Kashi were busy pursuing their careers and raising two
         children when Winokurs 83-year-old father, Herbie, became too infirm to care for himself. At that moment they
