@@ -127,42 +127,47 @@ foreach (array(
         <strong>90 days</strong> from the <strong>initial enrollment</strong> date.
     </p>
 
-    <h4>Requirements</h4>
+<h4>Requirements</h4>
 
-    <p>To successfully participate, you will need access to the following software on the computer(s) you are using to
-        access this course:</p>
-    <ul>
-        <li>
-            <a href="http://get.adobe.com/reader/" target="_blank">Adobe Acrobat</a>
-        </li>
-    </ul>
-    <h4>Objectives</h4>
-    <ul>
-        <?php
-        foreach ($course->objectives as $objective)
-            echo '<li>' . t($objective->text) . '</li>';
-        ?>
-    </ul>
-    <h4>Agenda &amp; Module(s)</h4>
+<p>To successfully participate, you will need <a href="http://get.adobe.com/reader/" target="_blank">Adobe Acrobat</a>.</p>
 
-    <table style="border-bottom: 2px solid black; border-top: 2px solid black; margin-top: 10px;">
-        <tr>
-            <td>
-                <h5>Download the course Agenda - </h5>
+<h4>Objectives</h4>
+<ul>
+<?php
+    foreach ($course->objectives as $objective)
+    echo '<li>' . t($objective->text) . '</li>';
+    ?>
+</ul>
+<h4>Agenda</h4>
+
+<ul>
+<li>
+Introduction to senior living options
+<li>
+Encouraging in CARE Coaching
+</li>
+<li>
+Self-determination and importance of choice
+</li>
+<li>
+Transition to retirement living
+</li>
+<li>
+General indicators when it may be time to consider moving
+</li>
+<li>
+Understanding options: from staying at home to retirement living
+</li>
+</ul>
+
+<table style="border-top: solid black; margin-top: 50px;">
+<tr>
+<td>
+
+<h5><?php echo t($course->title); ?> &rarr; </h5>
             </td>
             <td>
-                <p>
-                    <a href="<?php echo $this->createDownloadUrl('stayingathomeorretirementliving/Agenda_stayingathomeorretirementliving.pdf'); ?>"
-                       target="_blank" class="button">Agenda</a>
-                </p>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <h5>Staying at Home or Retirement Living? Helping Parents Plan for the Future - </h5>
-            </td>
-            <td>
-                <p>
+
                     <a href="#lesson-1-slide-1" data-fancybox-group="lesson-1" class="teal lesson-1 button"> Start </a>
                     <a href="#lesson-1-slide-2" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a
                         href="#lesson-1-slide-3" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a
@@ -194,16 +199,19 @@ foreach (array(
                     <a href="#lesson-1-slide-27 data-fancybox-group="lesson-1" class="hide lesson-1"></a>
                     <a href="#lesson-1-slide-28" data-fancybox-group="lesson-1" class="hide lesson-1"></a>
                     <a href="#lesson-1-slide-29" data-fancybox-group="lesson-1" class="hide lesson-1"></a>
-                </p>
+
             </td>
         </tr>
     </table>
 
-    <h4>Resources</h4>
+    <h4>Agenda</h4>
+        <p>test here
+        </p>
 
-    <p>Please use these listed resources for additional reading. Please contact your course facilitator if you have
-        additional resources you would like to see added here.</p>
-    <ul id="resources">
+<h5>Resources</h5>
+
+<p>Please use these listed resources for additional reading.</p>
+<ul id="resources">
 
         <li>
             <a href="http://www.aarp.org/health/doctors-hospitals/info-09-2010/finding_your_way_how_to_talk_to_8212_and_understand_8212_your_doctor.html"
@@ -236,9 +244,9 @@ AARP provides various articles of interest and resources for family caregivers. 
         </li>
     </ul>
 
-    <h4>Optional Video - Working Caregivers</h4>
+<p style="border-bottom: solid black; margin-bottom: 35px;">Please contact your course facilitator if you have additional resources you would like to see added here.</p>
 
-    <h5>The Sandwich Generation - by Media Storm</h5>
+ <h4>Optional Video - The Sandwich Generation (Media Storm)</h4>
 
     <p>Filmmaker and photographer couple Julie Winokur and Ed Kashi were busy pursuing their careers and raising two
         children when Winokurs 83-year-old father, Herbie, became too infirm to care for himself. At that moment they
@@ -288,7 +296,7 @@ AARP provides various articles of interest and resources for family caregivers. 
 </div>
 <div id="lesson-1-slide-2" class="course-slide">
     <div class="content">
-        <h2 class="flowers">Staying at Home or Retirement Living? Helping Parents Plan for the Future</h2>
+        <h2 class="flowers"><?php echo t($course->title); ?></h2>
         <hr/>
 
         <p>Welcome to the course, “Staying at Home or Retirement Living? Helping Parents Plan for the Future.” This
