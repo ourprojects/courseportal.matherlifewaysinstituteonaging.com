@@ -27,25 +27,25 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($CPUser, 'new_password'); ?>
-		<?php echo $form->passwordField($CPUser, 'new_password', array('size' =>35); ?>
+		<?php echo $form->passwordField($CPUser, 'new_password', array('size' =>35)); ?>
 		<?php echo $form->error($CPUser, 'new_password'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($CPUser, 'new_password_repeat'); ?>
-		<?php echo $form->passwordField($CPUser, 'new_password_repeat', array('size' =>35); ?>
+		<?php echo $form->passwordField($CPUser, 'new_password_repeat', array('size' =>35)); ?>
 		<?php echo $form->error($CPUser, 'new_password_repeat'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($CPUser, 'firstname'); ?>
-		<?php echo $form->textField($CPUser, 'firstname', array('size' =>35); ?>
+		<?php echo $form->textField($CPUser, 'firstname', array('size' =>35)); ?>
 		<?php echo $form->error($CPUser, 'firstname'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($CPUser, 'lastname'); ?>
-		<?php echo $form->textField($CPUser, 'lastname', array('size' =>35); ?>
+		<?php echo $form->textField($CPUser, 'lastname', array('size' =>35)); ?>
 		<?php echo $form->error($CPUser, 'lastname'); ?>
 	</div>
 
