@@ -15,7 +15,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($CPUser, 'email'); ?>
-		<?php echo $form->emailField($CPUser, 'email' array('size' =>35)); ?>
+		<?php echo $form->emailField($CPUser, 'email', array('size' =>35)); ?>
 		<?php echo $form->error($CPUser, 'email'); ?>
 	</div>
 
