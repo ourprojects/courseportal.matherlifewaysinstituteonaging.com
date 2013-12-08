@@ -167,7 +167,6 @@ Understanding options: from staying at home to retirement living
 <h5><?php echo t($course->title); ?> &rarr; </h5>
             </td>
             <td>
-
                     <a href="#lesson-1-slide-1" data-fancybox-group="lesson-1" class="teal lesson-1 button"> Start </a>
                     <a href="#lesson-1-slide-2" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a
                         href="#lesson-1-slide-3" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a
@@ -203,10 +202,6 @@ Understanding options: from staying at home to retirement living
             </td>
         </tr>
     </table>
-
-    <h4>Agenda</h4>
-        <p>test here
-        </p>
 
 <h5>Resources</h5>
 
