@@ -27,31 +27,31 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($CPUser, 'name'); ?>
-		<?php echo $form->textField($CPUser, 'name', array('size' =>35)); ?>
+		<?php echo $form->textField($CPUser, 'name', array('size' =>45)); ?>
 		<?php echo $form->error($CPUser, 'name'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($CPUser, 'email'); ?>
-		<?php echo $form->emailField($CPUser, 'email', array('size' =>35)); ?>
+		<?php echo $form->emailField($CPUser, 'email', array('size' =>45)); ?>
 		<?php echo $form->error($CPUser, 'email'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($CPUser, 'firstname'); ?>
-		<?php echo $form->textField($CPUser, 'firstname', array('size' =>35)); ?>
+		<?php echo $form->textField($CPUser, 'firstname', array('size' =>45)); ?>
 		<?php echo $form->error($CPUser, 'firstname'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($CPUser, 'lastname'); ?>
-		<?php echo $form->textField($CPUser, 'lastname', array('size' =>35)); ?>
+		<?php echo $form->textField($CPUser, 'lastname', array('size' =>45)); ?>
 		<?php echo $form->error($CPUser, 'lastname'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($CPUser, 'location'); ?>
-		<?php echo $form->textField($CPUser, 'location', array('size' =>35)); ?>
+		<?php echo $form->textField($CPUser, 'location', array('size' =>45)); ?>
 		<?php echo $form->error($CPUser, 'location'); ?>
 	</div>
 
