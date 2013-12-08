@@ -25,19 +25,19 @@
 	<?php if($ChangePassword->getScenario() === 'change'): ?>
 	<div class="row">
 		<?php echo $form->labelEx($ChangePassword, 'current_password'); ?>
-		<?php echo $form->passwordField($ChangePassword, 'current_password'); ?>
+		<?php echo $form->passwordField($ChangePassword, 'current_password', array('size' =>45)); ?>
 		<?php echo $form->error($ChangePassword, 'current_password'); ?>
 	</div>
 	<?php endif; ?>
 	<div class="row">
 		<?php echo $form->labelEx($ChangePassword, 'new_password'); ?>
-		<?php echo $form->passwordField($ChangePassword, 'new_password'); ?>
+		<?php echo $form->passwordField($ChangePassword, 'new_password', array('size' =>45)); ?>
 		<?php echo $form->error($ChangePassword, 'new_password'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($ChangePassword, 'new_password_repeat'); ?>
-		<?php echo $form->passwordField($ChangePassword, 'new_password_repeat'); ?>
+		<?php echo $form->passwordField($ChangePassword, 'new_password_repeat', array('size' =>45)); ?>
 		<?php echo $form->error($ChangePassword, 'new_password_repeat'); ?>
 	</div>
 
