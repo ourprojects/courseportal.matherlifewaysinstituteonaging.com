@@ -99,7 +99,7 @@ foreach (array(
 
     <h4>Course Topic - Introduction</h4>
     <p>
-       this is a test of the new clone. 
+       this is a test of the new clone.
     </p>
 
 
