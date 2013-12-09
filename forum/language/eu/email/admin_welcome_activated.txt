@@ -1,9 +1,0 @@
-Subject: Kontua gaituta
-
-Kaixo {USERNAME},
-
-Administradoreren batek zure kontua "{SITENAME}"(e)n gaitu egin du, bertara konektatu zaitezke orain.
-
-Pasahitza era seguruan gorde da gure datubaseetan eta ezin da berriro lortu. Ahazten baldin baduzu, helbide elektronikoa erabiliz ezarri zenezake berria.
-
-{EMAIL_SIG}

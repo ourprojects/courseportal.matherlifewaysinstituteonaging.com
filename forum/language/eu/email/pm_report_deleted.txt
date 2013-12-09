@@ -1,8 +1,0 @@
-Gaia: "{PM_SUBJECT}"(e)ri buruzko ohartarazpena ezabatuta
-
-Kaixo {USERNAME},
-
-"{SITENAME}"(e)an "{PM_SUBJECT}" Mezu Pribatuari buruz egindako ohartarazpena moderadore edo administrariren batek ezabatu egin duela jakinarazteko bidaltzen dizugu honako hau. 
-
-
-{EMAIL_SIG}

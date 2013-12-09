@@ -1,9 +1,0 @@
-Subject: Zure kontua berriro gaitu
-
-Hola {USERNAME},
-
-Zure "{SITENAME}"(e)ko kontua ezgaitua izan da. Seguruenik zure profilan eginiko aldaketengaitik gertatu da hau. Kontua berriro gaitzeko jarraitu hurrengo lotura:
-
-{U_ACTIVATE}
-
-{EMAIL_SIG}
