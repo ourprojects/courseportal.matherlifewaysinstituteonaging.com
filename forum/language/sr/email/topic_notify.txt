@@ -1,0 +1,17 @@
+Subject: Obaveštenje o odgovoru na temu — “{TOPIC_TITLE}”
+
+Zdravo {USERNAME},
+
+Dobili ste ovo obaveštenje jer ste izabrali da pratite temu, “{TOPIC_TITLE}” na forumu “{SITENAME}”. Na ovu temu je odgovoreno od vaše poslednje posete. Možete koristiti sledeći link da bi pogledali odgovore, i nećete biti više obaveštavani sve dok ne posetite temu.
+
+Ako želite da pogledate najnoviji odgovor od vaše poslednje posete, kliknite na sledeći link:
+{U_NEWEST_POST}
+
+Ako želite da pogledate temu, kliknite na link ispod:
+{U_TOPIC}
+
+Ako ne želite više da pratite temu možete ili da kliknete na “Prekid praćenja teme” link koji se nalazi u dnu tene iznad, ili klikom na sledeći link:
+
+{U_STOP_WATCHING_TOPIC}
+
+{EMAIL_SIG}

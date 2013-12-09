@@ -1,0 +1,8 @@
+Subject: Izveštaj obrisan - "{PM_SUBJECT}"
+
+Tdravo {USERNAME},
+
+Ovo obaveštenje ste dobili jer je izveštaj u vezi privatne poruke "{PM_SUBJECT}" na "{SITENAME}" obrisan od moderatora ili administratora.
+
+
+{EMAIL_SIG}

@@ -1,0 +1,43 @@
+Subject: Dobrodošli na “{SITENAME}” — {U_BOARD}
+
+{WELCOME_MSG}
+
+Zbog potrebnog odobravanja od strane roditelja (COPPA) vaš nalog je trenutno neaktivan.
+
+Molimo vas da odštampate ovu poruku i date je roditelju ili staratelju da je potpiše i stavi datum. Tek tada taj papir pošaljite na fax:
+
+{FAX_INFO}
+
+ili pošaljite poštom na:
+
+{MAIL_INFO}
+
+------------------------------ ISECITE OVDE ------------------------------
+Dozvola za pristup forumu “{SITENAME}”
+
+Korisničko ime: {USERNAME}
+Šifra: {PASSWORD}
+Email: {EMAIL_ADDRESS}
+
+UPOZNAT SAM SA INFORMACIJOM KOJU MI JE DETE DALO I ODOBRAVAM FORUMU “{SITENAME}” DA SAČUVA OVE INFORMACIJE. 
+RAZUMEM DA SE OVE INFORMACIJE MOGU KASNIJE MENJATI UNOSOM ŠIFRE. 
+RAZUMEM DA MOGU DA ZATRAŽIM DA SE OVE INFORMACIJE UKLONE SA FORUMA “{SITENAME}” BILO KADA.
+
+
+Roditelj ili staratelj 
+(napišite vaše ime ovde): _____________________
+
+(potpišite se ovde): __________________ 
+
+Datum: _______________
+
+------------------------------ ISECITE OVDE ------------------------------
+
+
+Kada administrator primi ovaj obrazac iznad bilo putem faksa ili kalsičnom poštom vaš nalog će biti aktiviran.
+
+Molimo vas da ne zaboravite vašu šifru jer je ona kriptovana u našoj bazi i ne možemo vam je posalti nazad. Međutim, ukoliko se desi da zaboravite šifru možete zatražiti novu koja će biti aktivirana na isti način kao i ovaj nalog.
+
+Hvala vam što ste se registrovali.
+
+{EMAIL_SIG}

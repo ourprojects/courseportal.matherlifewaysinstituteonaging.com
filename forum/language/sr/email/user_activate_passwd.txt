@@ -1,0 +1,17 @@
+Subject: Aktivacija nove šifre
+
+Zdravo {USERNAME}
+
+Ovo obaveštenje ste dobili zato što ste (ili neko ko se predstavlja kao vi) zahtevali da novu šifruru pošaljemo na vaš email na forumu “{SITENAME}”. Ako niste zahtevali ovo obaveštenje onda vas molimo da ga ignorišete, a ako nastavite da primate ovakva obaveštenja molimo vas da kontaktirate administratora foruma.
+
+Da bi koristili novu šifru morate je aktivirati. Da bi to uradili, kliknite na link ispod.
+
+{U_ACTIVATE}
+
+Ako je nova šifra uspešno aktivirana moći ćete da se prijavite koristeći sledeću šifru:
+
+Šifra: {PASSWORD}
+
+Naravno, možete promeniti ovu šifru sami na stranici sa profilom. Ako imate nekih poteškoća molimo vas da kontaktirate administratora.
+
+{EMAIL_SIG}

@@ -1,0 +1,12 @@
+Subject: Post nije odobren — “{POST_SUBJECT}”
+
+Zdravo {USERNAME},
+
+Dobili ste ovo obaveštenje jer vaš post “{POST_SUBJECT}” na forumu “{SITENAME}” nije odobrio moderator ili administrator.
+
+Sledi obražloženje:
+
+{REASON}
+
+
+{EMAIL_SIG}

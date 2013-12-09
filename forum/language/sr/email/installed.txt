@@ -1,0 +1,20 @@
+Subject: phpBB je instaliran
+
+Čestitamo,
+
+Uspešno ste instalirali phpBB na vaš server.
+
+Ovaj email sadrži važne informacije za vašu instalaciju i trebalo bi da ga sačuvate. Šifra je kriptovana u našoj bazi i ne može da se povrati, mada možete zatražiti novu šifru ako izgubite ovu
+
+----------------------------
+Korisničko ime: {USERNAME}
+Šifra: {PASSWORD}
+
+Adresa foruma: {U_BOARD}
+----------------------------
+
+Korisne informacije o vašoj phpBB instalaciji možete pronaći u docs folderu vaše instalacije i na phpBB.com’s stranici za podrški — http://www.phpbb.com/support/
+
+Da bi board bio bezbedan, preporučljivo je da ga redovno ažurirate tako što ćete se jednostavno prijaviti na phpBB.com’s mailing listu, na adresi iznad.
+
+{EMAIL_SIG}

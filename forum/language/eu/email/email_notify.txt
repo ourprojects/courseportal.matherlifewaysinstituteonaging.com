@@ -1,0 +1,17 @@
+Subject: "{SITENAME}" - E-maila lagun bati
+
+Kaixo {TO_USERNAME},
+
+Mezu hau "{SITENAME}"(e)tik bidalia izan da {FROM_USERNAME}(e)gaitik hurrengo gaia interesatuko litzaizukelakoan:
+
+{TOPIC_NAME}
+
+Hemen ikusi zenezake:
+
+{U_TOPIC}
+
+Behekaldean {FROM_USERNAME}(r)en mezua ere egon daiteke. Mesedez, izan kontuan mezu hau ez dutela foroko administrariek onartu ezta irakurri ere. Mezu hau jasotzeari buruzko kexarik baldin baduzu, jar zaitez, mesedez, foroko administrariekin kontaktuan helbide honetan {BOARD_CONTACT}. Azpimarra itzazu mezu honen goiburuak (headerrak) helbide honetara joz gero.
+
+----------
+
+{MESSAGE}

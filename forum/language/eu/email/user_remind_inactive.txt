@@ -1,0 +1,11 @@
+Subject: Jarduerarik gabeko kontuaren oroigarria
+
+Kaixo {USERNAME},
+
+Honako hau idazten dizugu "{SITENAME}"(e)an {REGISTER_DATE}(e)an izena emandako kontuak ez duela jarduerarik erakutsi abisatzeko. Oraindik ez duzu kontua gaitu eta pausu hori beharrezkoa da foroan sartzeko. Kontua gaitzeko jarraitu hurrengo lotura: 
+
+{U_ACTIVATE}
+
+Eskerrik asko "{SITENAME}"(e)an izena emateagatik, zure parte-hartzearen zain gaituzu.
+
+{EMAIL_SIG}

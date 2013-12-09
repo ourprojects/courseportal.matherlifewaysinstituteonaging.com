@@ -1,0 +1,13 @@
+
+Zdravo {TO_USERNAME},
+
+Sledi email koji vam je poslao {FROM_USERNAME} putem vašeg naloga na forumu “{SITENAME}”. Ako je ova poruka spak, sadrži uvredljive ili neke druge komentare molimo vas da kontaktirate webmastera na sledecoj adresi:
+
+{BOARD_EMAIL}
+
+Priložite i kompletan email (naročito zaglavlje). Znajte da je adresa za odgovor na ovaj email podešena na korisnika {FROM_USERNAME}.
+
+Sledi vaša poruka
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+{MESSAGE}

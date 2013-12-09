@@ -1,0 +1,18 @@
+Subject: Dobrodošli na “{SITENAME}” — {U_BOARD}
+
+{WELCOME_MSG}
+
+Molimo vas da sačuvate ovaj email. Slede informacije o vašem nalogu:
+
+----------------------------
+Korisničko ime: {USERNAME}
+Šifra: {PASSWORD}
+----------------------------
+
+Vaš nalog je trenutno neaktivan, administrator foruma će morati da ga aktivira pre nego što ćete biti u mogućnosti da se prijavite. Dobićete još jedan email kada se to desi.
+
+Molimo vas da ne zaboravite vašu šifru jer je ona kriptovana u našoj bazi i ne možemo vam je poslati. Međutim, ukoliko zaboravite šifru možete zatražiti da vam pošaljemo novu koja će biti aktivirana na isti način kao i ovaj nalog.
+
+Hvala vam što ste se registrovali.
+
+{EMAIL_SIG}

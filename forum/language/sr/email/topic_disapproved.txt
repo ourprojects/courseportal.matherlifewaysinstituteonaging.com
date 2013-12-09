@@ -1,0 +1,12 @@
+Subject: Tema nije odobrena — “{TOPIC_TITLE}”
+
+Zdravo {USERNAME},
+
+Dobili ste ovo obaveštenje jer vašu temu “{TOPIC_TITLE}” na forumu “{SITENAME}” nije odobrio moderator ili administrator.
+
+Sledeći razlog je dat kao obrazloženje:
+
+{REASON}
+
+
+{EMAIL_SIG}

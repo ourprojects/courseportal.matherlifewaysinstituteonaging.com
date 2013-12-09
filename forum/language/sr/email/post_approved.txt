@@ -1,0 +1,14 @@
+Subject: Odobren post — “{POST_SUBJECT}”
+
+Zdravo {USERNAME},
+
+Dobili ste ovo obaveštenje jer je vaš post “{POST_SUBJECT}” na forumu “{SITENAME}” odobrio moderator ili administrator.
+
+Da pogledate post, kliknite na sledeći link:
+{U_VIEW_POST}
+
+Ako želite da pogledate temu, kliknite na sledeći link:
+{U_VIEW_TOPIC}
+
+
+{EMAIL_SIG}

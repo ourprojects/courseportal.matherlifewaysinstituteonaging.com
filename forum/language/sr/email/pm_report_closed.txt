@@ -1,0 +1,8 @@
+Subject: Izveštaj zatvoren - "{PM_SUBJECT}"
+
+Zdravo {USERNAME},
+
+Ovo pbaveštenje ste dobili zato što je izveštaj koji se tiče privatne porukue "{PM_SUBJECT}" na "{SITENAME}" prihvaćen od moderatora ili administratora. Izveštaj je sada zatvoren. Ukoliko imate dodatna pitanja, kontaktirajte {CLOSER_NAME} privatnom porukom.
+
+
+{EMAIL_SIG}

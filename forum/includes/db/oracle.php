@@ -25,7 +25,6 @@ include_once($phpbb_root_path . 'includes/db/dbal.' . $phpEx);
 class dbal_oracle extends dbal
 {
 	var $last_query_text = '';
-	var $connect_error = '';
 
 	/**
 	* Connect to server
@@ -49,33 +48,7 @@ class dbal_oracle extends dbal
 			$connect = $sqlserver . (($port) ? ':' . $port : '') . '/' . $database;
 		}
 
-		if ($new_link)
-		{
-			if (!function_exists('ocinlogon'))
-			{
-				$this->connect_error = 'ocinlogon function does not exist, is oci extension installed?';
-				return $this->sql_error('');
-			}
-			$this->db_connect_id = @ocinlogon($this->user, $sqlpassword, $connect, 'UTF8');
-		}
-		else if ($this->persistency)
-		{
-			if (!function_exists('ociplogon'))
-			{
-				$this->connect_error = 'ociplogon function does not exist, is oci extension installed?';
-				return $this->sql_error('');
-			}
-			$this->db_connect_id = @ociplogon($this->user, $sqlpassword, $connect, 'UTF8');
-		}
-		else
-		{
-			if (!function_exists('ocilogon'))
-			{
-				$this->connect_error = 'ocilogon function does not exist, is oci extension installed?';
-				return $this->sql_error('');
-			}
-			$this->db_connect_id = @ocilogon($this->user, $sqlpassword, $connect, 'UTF8');
-		}
+		$this->db_connect_id = ($new_link) ? @ocinlogon($this->user, $sqlpassword, $connect, 'UTF8') : (($this->persistency) ? @ociplogon($this->user, $sqlpassword, $connect, 'UTF8') : @ocilogon($this->user, $sqlpassword, $connect, 'UTF8'));
 
 		return ($this->db_connect_id) ? $this->db_connect_id : $this->sql_error('');
 	}
@@ -674,27 +647,17 @@ class dbal_oracle extends dbal
 	*/
 	function _sql_error()
 	{
-		if (function_exists('ocierror'))
-		{
-			$error = @ocierror();
-			$error = (!$error) ? @ocierror($this->query_result) : $error;
-			$error = (!$error) ? @ocierror($this->db_connect_id) : $error;
+		$error = @ocierror();
+		$error = (!$error) ? @ocierror($this->query_result) : $error;
+		$error = (!$error) ? @ocierror($this->db_connect_id) : $error;
 
-			if ($error)
-			{
-				$this->last_error_result = $error;
-			}
-			else
-			{
-				$error = (isset($this->last_error_result) && $this->last_error_result) ? $this->last_error_result : array();
-			}
+		if ($error)
+		{
+			$this->last_error_result = $error;
 		}
 		else
 		{
-			$error = array(
-				'message'	=> $this->connect_error,
-				'code'		=> '',
-			);
+			$error = (isset($this->last_error_result) && $this->last_error_result) ? $this->last_error_result : array();
 		}
 
 		return $error;

@@ -1,0 +1,19 @@
+Subject: Mezu berria foroan - "{FORUM_NAME}"
+
+Kaixo {USERNAME},
+
+"{SITENAME}"(e)ko "{FORUM_NAME}" forora harpidetuta zaudenez, zure azkeneko bisitatik hona "{TOPIC_TITLE}" gaiak mezu barriren bat duela jakinarazi nahi dizugu. Hurrengo lotura jarraituz, irakurrigabeko azkeneko erantzuna ikusi zenezake. Ez zaizu jakinarazpen gehiagorik bidaliko gaia bisitatu dezazun arte.
+
+{U_NEWEST_POST}
+
+Gaia ikusi nahi baduzu, jarrai ezazu hurrengo lotura:
+{U_TOPIC}
+
+Foroa ikusi nahi baduzu, jarrai ezazu hurrengo lotura:
+{U_FORUM}
+
+Ez baldin baduzu foroa gehiago jarraitu nahi "Foroaren harpidetza ezeztatu" loturan klikatu edo hurrengo lotura hau jarraitu:
+
+{U_STOP_WATCHING_FORUM}
+
+{EMAIL_SIG}
