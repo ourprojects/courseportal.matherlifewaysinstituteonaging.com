@@ -5,17 +5,6 @@ _notes
 # PhpStorm Files
 .idea
 
-# screenflow
-.screenflow
-
-# Directory and Video files (temporary)
-.m4v
-.ogv
-.webm
-/application/data/*
-
-
-
 # Directories with dynamic content
 /assets/*
 /application/runtime/*
