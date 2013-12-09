@@ -147,28 +147,20 @@ foreach (array(
 
 <ul>
 <li>
-Long distance caregiving
+Navigating the healthcare system
 <li>
-Sharpening your observation skills during home visits
+Relating in CARE Coaching
 </li>
 <li>
-Common issues faced by long distance caregivers
+Helping older parents talk to medical professionals about healthcare
 </li>
 <li>
-Worksite benefits for employed long distance caregivers
+Practicing PowerPhrases
 </li>
 <li>
-Ways to manage stress
+People and places in the healthcare system
 </li>
-<li>
-Family dynamics and improving sibling communication
-</li>
-<li>
-Dealing with resistance from older parents
-</li>
-<li>
-Identifying solutions to support choices and preferences of older parents
-</li>
+
 </ul>
 
 <table style="border-top: solid black; margin-top: 50px;">
@@ -178,19 +170,21 @@ Identifying solutions to support choices and preferences of older parents
 <h5><?php echo t($course->title); ?> &rarr; </h5>
 </td>
 <td>
-                    <a href="#lesson-1-slide-1" data-fancybox-group="lesson-1" class="teal lesson-1 button"> Start </a>
-                    <a href="#lesson-1-slide-2" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a
-                        href="#lesson-1-slide-3" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a
-                        href="#lesson-1-slide-4" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a
-                        href="#lesson-1-slide-5" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a
-                        href="#lesson-1-slide-6" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a
-                        href="#lesson-1-slide-7" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a
-                        href="#lesson-1-slide-8" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a
-                        href="#lesson-1-slide-9" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a
-                        href="#lesson-1-slide-10" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a
-                        href="#lesson-1-slide-11" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a
-                        href="#lesson-1-slide-12" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a
-                        href="#lesson-1-slide-13" data-fancybox-group="lesson-1" class="hide lesson-1"></a>
+
+<a href="#lesson-1-slide-1" data-fancybox-group="lesson-1" class="teal lesson-1 button">&rarr; &rarr; Start Course &larr; &larr;</a>
+<a href="#lesson-1-slide-2" data-fancybox-group="lesson-1" class="hide lesson-1"></a>
+<a href="#lesson-1-slide-3" data-fancybox-group="lesson-1" class="hide lesson-1"></a>
+<a href="#lesson-1-slide-4" data-fancybox-group="lesson-1" class="hide lesson-1"></a>
+<a href="#lesson-1-slide-5" data-fancybox-group="lesson-1" class="hide lesson-1"></a>
+<a href="#lesson-1-slide-6" data-fancybox-group="lesson-1" class="hide lesson-1"></a>
+<a href="#lesson-1-slide-7" data-fancybox-group="lesson-1" class="hide lesson-1"></a>
+<a href="#lesson-1-slide-8" data-fancybox-group="lesson-1" class="hide lesson-1"></a>
+<a href="#lesson-1-slide-9" data-fancybox-group="lesson-1" class="hide lesson-1"></a>
+<a href="#lesson-1-slide-10" data-fancybox-group="lesson-1" class="hide lesson-1"></a>
+<a href="#lesson-1-slide-11" data-fancybox-group="lesson-1" class="hide lesson-1"></a>
+<a href="#lesson-1-slide-12" data-fancybox-group="lesson-1" class="hide lesson-1"></a>
+<a href="#lesson-1-slide-13" data-fancybox-group="lesson-1" class="hide lesson-1"></a>
+
 </td>
 </tr>
 </table>
