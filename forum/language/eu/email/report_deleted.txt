@@ -1,8 +1,0 @@
-Subject: Berri-ematea ezabaturik - "{POST_SUBJECT}"
-
-Kaixo {USERNAME},
-
-Mezu hau jaso duzu "{SITENAME}"(e)ko "{TOPIC_TITLE}" gaira bidalitako "{POST_SUBJECT}" mezuari buruz bidali zenuen berri-ematea foroko moderadore edo administrariren batek ezabatu egin duela jakinarazteko.
-
-
-{EMAIL_SIG}

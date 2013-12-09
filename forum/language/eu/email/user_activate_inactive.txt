@@ -1,7 +1,0 @@
-Subject: Zure kontua ezgaitua izan da
-
-Kaixo {USERNAME},
-
-Zure "{SITENAME}"(e)ko kontua ezgaitua izan da. Seguruenik zure profilan eginiko aldaketengaitik gertatu da hau. Foroko administrariek kontua berriro gaitu beharko dute forora sartu zaitezen. Jakinarazpen berria jasoko duzu hau gertatzerakoan.
-
-{EMAIL_SIG}

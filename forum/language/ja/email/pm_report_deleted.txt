@@ -1,9 +1,0 @@
-Subject: 通報 [ PM ] は削除されました - "{PM_SUBJECT}"
-
-{USERNAME} さん
-
-フォーラムサイト「{SITENAME}」 で
-あなたが通報したプライベートメッセージ「{PM_SUBJECT}」 が
-モデレータまたはフォーラムサイト管理人によって削除されました。
-
-{EMAIL_SIG}
