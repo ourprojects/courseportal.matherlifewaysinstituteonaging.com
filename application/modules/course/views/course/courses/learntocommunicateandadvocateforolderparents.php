@@ -125,15 +125,11 @@ foreach (array(
         <strong>90 days</strong> from the <strong>initial enrollment</strong> date.
     </p>
 
-    <h4>Requirements</h4>
+<h4>Requirements</h4>
 
-    <p>To successfully participate, you will need access to the following software on the computer(s) you are using to
-        access this course:</p>
-    <ul>
-        <li>
-            <a href="http://get.adobe.com/reader/" target="_blank">Adobe Acrobat</a>
-        </li>
-    </ul>
+<p>To successfully participate, you will need <a href="http://get.adobe.com/reader/" target="_blank">Adobe Acrobat</a>.</p>
+
+
     <h4>Objectives</h4>
     <ul>
         <?php
@@ -141,26 +137,35 @@ foreach (array(
             echo '<li>' . t($objective->text) . '</li>';
         ?>
     </ul>
-    <h4>Agenda &amp; Module(s)</h4>
 
-    <table style="border-bottom: 2px solid black; border-top: 2px solid black; margin-top: 10px;">
-        <tr>
-            <td>
-                <h5>Download the course Agenda - </h5>
-            </td>
-            <td>
-                <p>
-                    <a href="<?php echo $this->createDownloadUrl('learntocommunicateandadvocateforolderparents/Agenda_learntocommunicateandadvocateforolderparents.pdf'); ?>"
-                       target="_blank" class="button">Agenda</a>
-                </p>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <h5>Becoming a More Confident Caregiver - </h5>
-            </td>
-            <td>
-                <p>
+
+<h4>Agenda</h4>
+
+<ul>
+<li>
+Communicating in CARE Coaching
+<li>
+Common feelings about caregiving
+</li>
+<li>
+Understanding older parents’ needs and preferences
+</li>
+<li>
+The TEMPO framework for communicating
+</li>
+<li>
+Advocating in CARE Coaching
+</li>
+
+</ul>
+
+<table style="border-top: solid black; margin-top: 50px;">
+<tr>
+<td>
+
+<h5><?php echo t($course->title); ?> &rarr; </h5>
+</td>
+<td>
                     <a href="#lesson-1-slide-1" data-fancybox-group="lesson-1" class="teal lesson-1 button"> Start </a>
                     <a href="#lesson-1-slide-2" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a
                         href="#lesson-1-slide-3" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a
@@ -178,16 +183,12 @@ foreach (array(
                         href="#lesson-1-slide-15" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a
                         href="#lesson-1-slide-16" data-fancybox-group="lesson-1" class="hide lesson-1"></a>
 
-                </p>
-            </td>
-        </tr>
-    </table>
+</td>
+</tr>
+</table>
 
-    <h4>Resources</h4>
-
-    <p>Please use these listed resources for additional reading. Please contact your course facilitator if you have
-        additional resources you would like to see added here.</p>
-    <ul id="resources">
+<p>Please use these listed resources for additional reading.</p>
+<ul id="resources">
 
         <li>
             <a href="http://www.aarp.org/health/doctors-hospitals/info-09-2010/finding_your_way_how_to_talk_to_8212_and_understand_8212_your_doctor.html"
@@ -220,9 +221,9 @@ AARP provides various articles of interest and resources for family caregivers. 
         </li>
     </ul>
 
-    <h4>Optional Video - Working Caregivers</h4>
+<p style="border-bottom: solid black; margin-bottom: 35px;">Please contact your course facilitator if you have additional resources you would like to see added here.</p>
 
-    <h5>The Sandwich Generation - by Media Storm</h5>
+<h4>Optional Video - The Sandwich Generation (Media Storm)</h4>
 
     <p>Filmmaker and photographer couple Julie Winokur and Ed Kashi were busy pursuing their careers and raising two
         children when Winokurs 83-year-old father, Herbie, became too infirm to care for himself. At that moment they
@@ -266,7 +267,7 @@ AARP provides various articles of interest and resources for family caregivers. 
 <div id="lesson-1">
 <div id="lesson-1-slide-1" class="course-slide">
     <div class="content">
-        <h2 class="flowers">Learning to Communicate and Advocate for Older Parents</h2>
+        <h2 class="flowers"><?php echo t($course->title); ?></h2>
         <hr/>
         <p>Welcome to the course, "Learning to Communicate and Advocate for Older Parents." This course is geared
             towards family members who provide support or care for an older adult who may be a parent, spouse, other
