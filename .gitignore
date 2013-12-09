@@ -5,6 +5,9 @@ _notes
 #PhpStorm Files
 .idea
 
+#screenflow
+.screenflow
+
 # Directories with dynamic content
 /assets/*
 /application/runtime/*
