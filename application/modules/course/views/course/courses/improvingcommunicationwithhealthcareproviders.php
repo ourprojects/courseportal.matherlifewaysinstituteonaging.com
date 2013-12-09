@@ -723,44 +723,43 @@ AARP provides various articles of interest and resources for family caregivers. 
     </div>
 </div>
 
+<div id="lesson-2">
+<div id="lesson-2-slide-1" class="course-slide">
+<div class="content">
+<h2 class="flowers">Contact Facilitator</h2>
+<hr/>
+<p>Please complete the form below to contact your facilitator.</p>
+
+<h4>Maintenance - Please check back later today.</h4>
+
 <!--
-
-		<div id="lesson-2">
-			<div id="lesson-2-slide-1" class="course-slide">
-				<div class="content">
-					<h2 class="flowers">Contact Facilitator</h2>
-					<hr />
-					<p>Please complete the form below to contact your facilitator.</p>
-
-					<div class="box-white">
-						<?php
-						$this->widget(
-                    'ext.LDContactUsWidget.LDContactUsWidget',
-                    array(
+<div class="box-white">
+<?php /*
+    $this->widget(
+                  'ext.LDContactUsWidget.LDContactUsWidget',
+                  array(
                         'captcha' => array(
-                            'class' => 'ext.LDContactUsWidget.components.CUReCaptcha',
-                            'config' => array(
-                                'publicKey' => Yii::app()->params['reCaptcha']['publicKey'],
-                                'privateKey' => Yii::app()->params['reCaptcha']['privateKey'],
-                                'useAjax' => true
-                            )
-                        ),
+                                           'class' => 'ext.LDContactUsWidget.components.CUReCaptcha',
+                                           'config' => array(
+                                                             'publicKey' => Yii::app()->params['reCaptcha']['publicKey'],
+                                                             'privateKey' => Yii::app()->params['reCaptcha']['privateKey'],
+                                                             'useAjax' => true
+                                                             )
+                                           ),
                         'options' => array(
-                            'htmlOptions' => array('class' => 'form')
+                                           'htmlOptions' => array('class' => 'form')
+                                           )
                         )
-                    )
-                );
-                ?>
-					</div>
+                  );
+    */    ?>
+</div>
+-->
 
-
-				</div>
-				<div class="buttons">
-					<a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> Close </a>
-				</div>
-			</div>
-
-			-->
+</div>
+<div class="buttons">
+<a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> Close </a>
+</div>
+</div>
 
 <!-- need final 2 divs to close course and lesson id -->
 
