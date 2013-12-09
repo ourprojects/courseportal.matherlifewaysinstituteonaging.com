@@ -8,6 +8,11 @@ _notes
 #screenflow
 .screenflow
 
+Video files (temporary)
+.m4v
+.ogv
+.webm
+
 # Directories with dynamic content
 /assets/*
 /application/runtime/*
