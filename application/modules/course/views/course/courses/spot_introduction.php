@@ -272,8 +272,6 @@ foreach (array(
                                           'width' => '540px',
                                           'height' => '400px',
                                           'levels' => array(
-                                                            array('file' => $this->createDownloadUrl('videos/TheSandwichGeneration/course1_snip1.mp4')),
-                                                            array('file' => $this->createDownloadUrl('videos/TheSandwichGeneration/course1_snip1.mp4')),
                                                             array('file' => $this->createDownloadUrl('videos/TheSandwichGeneration/course1_snip1.mp4'))
                                                             )
                                           )
@@ -417,9 +415,9 @@ target="_blank" class="button">Download Excercise</a>
 
 <h5>Daily Reward: Read my favorite book before bed</h5>
 
-    
+
 <p>
-<a href="<?php echo $this->createDownloadUrl('spencer/attentinexcercise.docx'); ?>"
+<a href="<?php echo $this->createDownloadUrl('spencer/weeklygoalsteps.docx'); ?>"
 target="_blank" class="button">Download Excercise</a>
 </p>
 
