@@ -404,15 +404,20 @@ target="_blank" class="button">Download Excercise</a>
     <div class="content">
         <h2 class="flowers">Weeky Goal Steps</h2>
         <hr/>
-<p>Memory Goal:
-Goal: Practice paying close attention to my surroundings for at least 30 seconds, 2 times a day for 4 days
-Daily Reward: A spray of my favorite cologne or perfume
-Behavior Goal:
-Goal: Fill out activity log before bed at least 4 days in a row
-Daily Reward: Read my favorite book before bed
 
-        </p>
+<h4>Memory Goal:</h4>
 
+<h5>Goal: Practice paying close attention to my surroundings for at least 30 seconds, 2 times a day for 4 days<h5>
+
+<h5>Daily Reward: A spray of my favorite cologne or perfume</h5>
+
+<h4>Behavior Goal:</h4>
+
+<h5>Goal: Fill out activity log before bed at least 4 days in a row</h5>
+
+<h5>Daily Reward: Read my favorite book before bed</h5>
+
+    
 <p>
 <a href="<?php echo $this->createDownloadUrl('spencer/attentinexcercise.docx'); ?>"
 target="_blank" class="button">Download Excercise</a>
