@@ -15,12 +15,8 @@
 </div>
 </div>
 <div class="column-wide">
-    <p style="color: #000; font-size: 24px;">
-        <?php echo t($course->title); ?>
-    </p>
 
-    <p>{t}You have not registered for this course yet. Please use the form below to contact support. You will receive a
-        response within 24 hours of submitting your request.{/t}</p>
+    <p>{t}You have not registered for <?php echo t($course->title); ?> yet. Please use the form below to contact support. You will receive a response within 24 hours of submitting your request.{/t}</p>
 
     <div class="box-white">
 		<?php 
