@@ -260,12 +260,25 @@ foreach (array(
         <h2 class="flowers">Brain Health</h2>
         <hr/>
 
-        <p>video 1 here</p>
 
-<video width="320" height="240" controls>
-<source src="course1_snip1.mp4" type="video/mp4">
-Your browser does not support the video tag.
-</video>
+<div class="box-grey">
+<?php
+    $this->widget(
+                  'ext.JWplayer.JWplayer',
+                  array(
+                        'id' => 'spencer',
+                        'config' => array(
+                                          'image' => $this->createDownloadUrl(''),
+                                          'width' => '540px',
+                                          'height' => '400px',
+                                          'levels' => array(
+                                                            array('file' => $this->createDownloadUrl('videos/course1_snip1.mp4'))
+                                                            )
+                                          )
+                        )
+                  );
+    ?>
+</div>
 
 
 </div>
