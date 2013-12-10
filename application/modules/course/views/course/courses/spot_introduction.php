@@ -261,24 +261,9 @@ foreach (array(
         <hr/>
 
 
-<div class="box-grey">
-<?php
-    $this->widget(
-                  'ext.JWplayer.JWplayer',
-                  array(
-                        'id' => 'TheSandwichGeneration',
-                        'config' => array(
-                                          'image' => $this->createDownloadUrl('videos/TheSandwichGeneration/poster.jpg'),
-                                          'width' => '540px',
-                                          'height' => '400px',
-                                          'levels' => array(
-                                                            array('file' => $this->createDownloadUrl('videos/TheSandwichGeneration/course1_snip1.mp4'))
-                                                            )
-                                          )
-                        )
-                  );
-    ?>
-</div>
+<iframe src="course1_snip1.mp4">
+
+</iframe>
 
 
 </div>
