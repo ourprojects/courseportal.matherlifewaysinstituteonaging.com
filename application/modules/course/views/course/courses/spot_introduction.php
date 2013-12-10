@@ -97,14 +97,12 @@ foreach (array(
     </p>
 
     <h4>Course Topic - Introduction</h4>
-    <p>
-       We need to add the description of the COURSE/TOPIC area here. Not more than a few sentances.
+    <p>The field of brain health and brain fitness has exploded over the past decade with many new programs and applications emerging to help people think and perform better both now in their daily lives at work or at home and later in life as people age.  Maintaining independence later in life is a concern for many people, especially older adults, but even for younger people this can be a nagging concern.  Through the course of this program you will learn how investing in your brain health now can pay dividends both immediately and (zoom in on second picture) as you age.
     </p>
-
 
     <h4>Agenda</h4>
 
-<ul>
+<ol>
     <li>Discuss Brain Health and Dementia
     </li>
     <li>Discuss Cognitive Reserve
@@ -115,7 +113,7 @@ foreach (array(
     </li>
     <li>Complete Memory and Attention Excercises, and Course Recap
     </li>
-</ul>
+</ol>
 
 
     <h4>Objectives</h4>
@@ -195,10 +193,11 @@ foreach (array(
     <div class="content">
         <h2 class="flowers"><?php echo t($course->title); ?></h2>
         <hr/>
+
+<img src="<?php echo $this->getImagesUrl('spencer/134203608.png'); ?>" alt="image">
         <h4>Introduction Course</h4>
-
-     <img src="<?php echo $this->getImagesUrl('spencer/here.png'); ?>" alt="image">
-
+        <p>Welcome to the course! We are pleased you have decided to join us. Please contact your facilitator if you
+            experience any difficulties or need help. Thank you!</p>
 
 <!--
         <div id="question1" class="question">
