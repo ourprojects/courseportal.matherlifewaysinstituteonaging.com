@@ -113,8 +113,6 @@ foreach (array(
         ?>
     </ul>
 
-                <h4>SPOT - Introduction</h4>
-
                 <ul class="modules">
                     <li>
                         <a href="#lesson-1-slide-1" data-fancybox-group="lesson-1" class="teal lesson-1 button">Start Course</a>
