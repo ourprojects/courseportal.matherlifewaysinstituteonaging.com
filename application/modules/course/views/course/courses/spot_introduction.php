@@ -75,7 +75,7 @@ foreach (array(
             aimed at enhancing cognition and promoting healthy aging.</p>
 
         <p>
-            <a href="#lesson-3-slide-1" data-fancybox-group="lesson-3" class="teal lesson-3 button">Contact
+            <a href="#lesson-2-slide-1" data-fancybox-group="lesson-2" class="teal lesson-2 button">Contact
                 Facilitator</a>
         </p>
         <img src="<?php echo $this->getImagesUrl('spencer/80608570.png'); ?>" alt="Facilitator" id="facilitator">
@@ -104,9 +104,20 @@ foreach (array(
 
     <h4>Agenda</h4>
 
-    <p>
-        We need to have a few bullet points here that list the main topic areas of the course.
-    </p>
+<ul>
+    <li>Discuss Brain Health and Dementia
+    </li>
+    <li>Discuss Cognitive Reserve
+    </li>
+    <li>Discuss Brain Performance
+    </li>
+    <li>Review the Activity Log
+    </li>
+    <li>Complete Memory and Attention Excercises, and Course Recap
+    </li>
+</ul>
+
+
     <h4>Objectives</h4>
     <ul>
         <?php
@@ -115,12 +126,8 @@ foreach (array(
         ?>
     </ul>
 
-    <table style="border: none; padding: 0px; margin-top: 15px; table-layout: fixed; border-bottom-style: solid; border-top-style: solid;">
-        <tr>
-            <td>
-                <h4>Introduction ---</h4>
-            </td>
-            <td>
+                <h4>SPOT - Introduction</h4>
+
                 <ul class="modules">
                     <li>
                         <a href="#lesson-1-slide-1" data-fancybox-group="lesson-1" class="teal lesson-1 button">Start Course</a>
@@ -135,26 +142,7 @@ foreach (array(
                         <a href="#lesson-1-slide-10" data-fancybox-group="lesson-1" class="hide lesson-1"></a>
                     </li>
                 </ul>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <h4>Memory Strategy / Activity ---</h4>
-            </td>
 
-            <td>
-                <ul class="modules">
-                    <li>
-                        <a href="#lesson-2-slide-1" data-fancybox-group="lesson-2" class="teal lesson-2 button">Improving
-                            Attention</a>
-                        <a href="#lesson-2-slide-2" data-fancybox-group="lesson-2" class="hide lesson-2"></a>
-                        <a href="#lesson-2-slide-3" data-fancybox-group="lesson-2" class="hide lesson-2"></a>
-                    </li>
-
-                </ul>
-            </td>
-        </tr>
-    </table>
 
     <h4>Resources</h4>
 
