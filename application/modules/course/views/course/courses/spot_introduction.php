@@ -334,7 +334,7 @@ foreach (array(
     <div class="content">
         <h2 class="flowers">Memory Strategy</h2>
         <hr/>
-<img srg="<?php echo $this->getImagesUrl('spencer/173262053.png'); ?>" alt="image">
+<img src="<?php echo $this->getImagesUrl('spencer/173262053.png'); ?>" alt="image">
 <h4>Improve Memory by Improving Attention</h4>
 
     <ul>
@@ -344,7 +344,10 @@ foreach (array(
     <li>Get your Hearing or Vision Checked</li>
 </ul>
 
-
+<p>
+<a href="<?php echo $this->createDownloadUrl('spencer/spencer1_memoryStrategy1.docx'); ?>"
+target="_blank" class="button">Download Handout</a>
+</p>
 
     </div>
     <div class="buttons">
