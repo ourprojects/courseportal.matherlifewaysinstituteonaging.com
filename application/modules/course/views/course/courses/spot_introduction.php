@@ -141,51 +141,7 @@ foreach (array(
                     </li>
                 </ul>
 
-
-    <h4>Resources</h4>
-
-    <p>Please use these listed resources in the completion of this online course. Please contact your facilitator or the
-        program director if you have additional resources you would like to see added here.</p>
-    <ul id="resources">
-        <li>
-            <a href=" http://www.ncbi.nlm.nih.gov/pubmedhealth/PMH0008821/" target="_blank">PubMed Health</a>
-        </li>
-        <li>
-            <a href="http://www.nih.gov/health/wellness/" target="_blank">National Institutes of Health</a>
-        </li>
-        <li>
-            <a href="http://sharpbrains.com/" target="_blank">SharpBrains</a>
-        </li>
-    </ul>
-
-    <h4>Optional Video - The Sandwich Generation</h4>
-
-    <p>Filmmaker and photographer couple Julie Winokur and Ed Kashi were busy pursuing their careers and raising two
-        children when Winokurs 83-year-old father, Herbie, became too infirm to care for himself. At that moment they
-        joined some twenty million other Americans who make up the sandwich generation, those who find themselves
-        responsible for the care of both their children and their aging parents.</p>
-
-    <div class="box-grey">
-        <?php
-        $this->widget(
-            'ext.JWplayer.JWplayer',
-            array(
-                'id' => 'TheSandwichGeneration',
-                'config' => array(
-                    'image' => $this->createDownloadUrl('videos/TheSandwichGeneration/poster.jpg'),
-                    'width' => '540px',
-                    'height' => '400px',
-                    'levels' => array(
-                        array('file' => $this->createDownloadUrl('videos/TheSandwichGeneration/video.m4v')),
-                        array('file' => $this->createDownloadUrl('videos/TheSandwichGeneration/video.webm')),
-                        array('file' => $this->createDownloadUrl('videos/TheSandwichGeneration/video.ogv'))
-                    )
-                )
-            )
-        );
-        ?>
-    </div>
-</div>
+   </div>
 <div id="course" class="hide">
 <?php $clientScript->registerScript('question-answer-handler', "$('.course-slide .question').change(function() {" . "if($(this).find('select').val() == '1') {" . "$(this).find('.right-answer').removeClass('hide');" . "$(this).find('.wrong-answer').addClass('hide');" . "} else {" . "$(this).find('.right-answer').addClass('hide');" . "$(this).find('.wrong-answer').removeClass('hide');" . "}" . "});"); ?>
 <div id="lesson-1">
