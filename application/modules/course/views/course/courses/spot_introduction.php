@@ -213,23 +213,12 @@ foreach (array(
     <div class="content">
         <h2 class="flowers"><?php echo t($course->title); ?></h2>
         <hr/>
-        <h4>Welcome!</h4>
+        <h4>Introduction Course</h4>
 
-        <p>
-            Welcome and thank you for your interest and participation in the <strong>Spencer Powell Brain Fitness
-                Program</strong> online course. We are excited to have your participation and look forward to our
-            interactions! Please contact us if you need help, have questions, or suggestions for course improvements.
-        </p>
-        <h4>Course Description</h4>
+     <img src="<?php echo $this->getImagesUrl('spencer/here.png'); ?>" alt="image">
 
-        <p>
-            <strong>Spencer Powell Online Training (SPOT)</strong> is designed to promote cognitive health and
-            healthy lifestyle changes. The course provides information on how lifestyle factors such as physical
-            activity and cognitive engagement affect your brain and your risk for dementia. Practical strategies are
-            suggested for maintaining memory over time. In addition, the course includes memory training such as
-            chunking, the story method, and mnemonic techniques.
-        </p>
 
+<!--
         <div id="question1" class="question">
             <p style="text-align: center;">
                 <b>Have you taken the pre-course evaluation yet?</b> <br/>
@@ -246,6 +235,8 @@ foreach (array(
                     here</a> to participate.
             </p>
         </div>
+-->
+
     </div>
     <div class="buttons">
         <a href="javascript:;" class="button right" onclick="$.fancybox.next();">Start Course &raquo;</a>
@@ -253,18 +244,14 @@ foreach (array(
 </div>
 <div id="lesson-1-slide-2" class="course-slide">
     <div class="content">
-        <h2 class="flowers">You Tube - The Brain Fitness Program</h2>
+        <h2 class="flowers">Course Outline</h2>
         <hr/>
         <p>
-            This short video will provide you with a first look at some of the exciting new discoveries about
-            neuroplasticity (the ability of the adult brain to change itself) that form the foundation of this course.
-            You may have already seen this popular <a href="http://www.pbs.org" target="_blank">PBS</a> (Public
-            Broacdcasting Service) special, which helped pave the way for many incredible advances, including this
-            course, that can help you strengthen your brain and lower your risk for dementia.
+            text here
         </p>
-        <iframe style="width: 480px; height: 360px; display: block; margin: 15px auto;"
-                src="//www.youtube.com/embed/WBSNQi4es5k?rel=0" frameborder="0" allowfullscreen></iframe>
-        <!-- 'url' => PhpbbModule::getInstance()->getForumUrl(), -->
+
+
+
     </div>
     <div class="buttons">
         <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;Back</a><a
@@ -823,8 +810,7 @@ foreach (array(
 -->
         </div>
         <div class="buttons">
-            <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;Back</a><a
-                href="javascript:;" class="button right" onclick="parent.jQuery.fancybox.close();">Exit</a>
+            <a href="javascript:;" class="button right" onclick="parent.jQuery.fancybox.close();"> Close </a>
         </div>
     </div>
 </div>
