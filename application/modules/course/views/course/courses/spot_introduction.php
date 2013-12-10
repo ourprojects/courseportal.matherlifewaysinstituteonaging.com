@@ -266,13 +266,15 @@ foreach (array(
     $this->widget(
                   'ext.JWplayer.JWplayer',
                   array(
-                        'id' => 'spencer',
+                        'id' => 'TheSandwichGeneration',
                         'config' => array(
-                                          'image' => $this->createDownloadUrl(''),
+                                          'image' => $this->createDownloadUrl('videos/TheSandwichGeneration/poster.jpg'),
                                           'width' => '540px',
                                           'height' => '400px',
                                           'levels' => array(
-                                                            array('file' => $this->createDownloadUrl('videos/course1_snip1.mp4'))
+                                                            array('file' => $this->createDownloadUrl('videos/TheSandwichGeneration/course1_snip1.mp4')),
+                                                            array('file' => $this->createDownloadUrl('videos/TheSandwichGeneration/course1_snip1.mp4')),
+                                                            array('file' => $this->createDownloadUrl('videos/TheSandwichGeneration/course1_snip1.mp4'))
                                                             )
                                           )
                         )
