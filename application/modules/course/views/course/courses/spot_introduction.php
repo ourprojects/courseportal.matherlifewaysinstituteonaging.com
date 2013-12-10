@@ -360,29 +360,37 @@ target="_blank" class="button">Download Handout</a>
         <h2 class="flowers">Improving Attention</h2>
         <hr/>
         <p>
-            One key way that we can lower our risk for dementia is through understanding and utilizing a theory that is
-            central to this area of science, called the <strong>Theory of Cognitive Reserve</strong>. You can think of
-            this as your brain’s 401(k) or retirement account.
-        </p>
 
-        <p>
-            Simply put, the Theory of Cognitive Reserve is based on observations that <strong>no 2 brains respond to
-                injury or illness in exactly the same way</strong>. There are people who can sustain a small amount of
-            damage to their brains and lose a lot of brain function, and there are people who can sustain large amounts
-            of damage and never develop dementia. <strong>What seems to differentiate these types of people is the
-                amount of brain reserve that they have “stored in the bank” that can make up for the losses</strong>.
-        </p>
+        <h5>Manage Your Environment</h5>
+ <ul>
+    <li>Reduce Distractions and Interruptions
+    </li>
+</ul>
 
-        <p>So when planning financially for retirement, if you have a lot invested in your retirement account, you can
-            survive losses - such as fluctuations in the market or an unexpected expense - much better if your account
-            is bigger than if it were smaller. This principle seems to apply to our brains too, which serves as the
-            basis for the theory of cognitive reserve. People with high levels of Cognitive Reserve have to sustain many
-            more losses before crossing over the threshold to having dementia than people who have lower reserve.</p>
+<h5>Do One Thing at a Time</h5>
+<ul>
+    <li>Multi-tasking is a Myth!</li>
+    <li>Multi-tasking can be toxic to the brain</li>
+</ul>
 
-        <p>
-            The keyword to learn from this is “Cognitive Reserve” – which is your<strong> brain’s reserve of both tissue
-                and abilities</strong> that affects your risk for dementia. Or your Brain’s retirement account.
-        </p>
+<h5>Bribe yourself<h5>
+<h5>Get Plenty of Rest</h5>
+<ul>
+<li>May need to see a sleep doctor</li>
+<li>Resting your when you’re awake</li>
+<ul>
+<h5>Manage your Emotions</h5>
+
+<p>You may be saying to yourself, “I’m just not good at paying attention.”  “I have ADD” or “I’ve always been bad at paying attention.”  Well keep in mind that the brain is plastic and very much capable of change.  In fact, new research is showing that through brain exercises and through the tips that you will learn in this class, even people with attention problems caused by brain injury and people with Attention Deficit / Hyperactivity Disorder (ADD/ADHD) can improve their attention.</p>
+
+<p>Here are some of the strategies that are used to help people with attention deficits improving their attention – we list them here because they are also important for many of us:</p>
+
+<p>
+<a href="<?php echo $this->createDownloadUrl('spencer/spencer1_improvingattention.docx'); ?>"
+target="_blank" class="button">Download Handout</a>
+</p>
+
+
     </div>
     <div class="buttons">
         <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;Back</a><a
