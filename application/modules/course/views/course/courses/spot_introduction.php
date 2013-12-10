@@ -334,9 +334,18 @@ foreach (array(
     <div class="content">
         <h2 class="flowers">Memory Strategy</h2>
         <hr/>
-        <p>text here
+<img srg="<?php echo $this->getImagesUrl('spencer/173262053.png'); ?>" alt="image">
+<h4>Improve Memory by Improving Attention</h4>
 
-</p>
+    <ul>
+    <li>Look Up and Around</li>
+    <li>Put in the Effort</li>
+    <li>Stay “Present”</li>
+    <li>Get your Hearing or Vision Checked</li>
+</ul>
+
+
+
     </div>
     <div class="buttons">
         <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;Back</a><a
