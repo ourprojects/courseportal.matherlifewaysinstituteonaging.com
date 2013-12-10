@@ -15,37 +15,37 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($CPUser, 'email'); ?>
-		<?php echo $form->emailField($CPUser, 'email'); ?>
+		<?php echo $form->emailField($CPUser, 'email', array('size' =>45)); ?>
 		<?php echo $form->error($CPUser, 'email'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($CPUser, 'name'); ?>
-		<?php echo $form->textField($CPUser, 'name'); ?>
+		<?php echo $form->textField($CPUser, 'name', array('size' =>45)); ?>
 		<?php echo $form->error($CPUser, 'name'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($CPUser, 'new_password'); ?>
-		<?php echo $form->passwordField($CPUser, 'new_password'); ?>
+		<?php echo $form->passwordField($CPUser, 'new_password', array('size' =>45)); ?>
 		<?php echo $form->error($CPUser, 'new_password'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($CPUser, 'new_password_repeat'); ?>
-		<?php echo $form->passwordField($CPUser, 'new_password_repeat'); ?>
+		<?php echo $form->passwordField($CPUser, 'new_password_repeat', array('size' =>45)); ?>
 		<?php echo $form->error($CPUser, 'new_password_repeat'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($CPUser, 'firstname'); ?>
-		<?php echo $form->textField($CPUser, 'firstname'); ?>
+		<?php echo $form->textField($CPUser, 'firstname', array('size' =>45)); ?>
 		<?php echo $form->error($CPUser, 'firstname'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($CPUser, 'lastname'); ?>
-		<?php echo $form->textField($CPUser, 'lastname'); ?>
+		<?php echo $form->textField($CPUser, 'lastname', array('size' =>45)); ?>
 		<?php echo $form->error($CPUser, 'lastname'); ?>
 	</div>
 

@@ -191,9 +191,10 @@ Importance of exercise for older adults and its impact on safety
 </tr>
 </table>
 
-    <h5>Resources</h5>
+<h4>Resources</h4>
 
-    <p>Please use these listed resources for additional reading.</p>
+<p>Please use these listed resources for additional reading. Please contact your course facilitator if you have
+additional resources you would like to see added here.</p>
     <ul id="resources">
 
         <li>

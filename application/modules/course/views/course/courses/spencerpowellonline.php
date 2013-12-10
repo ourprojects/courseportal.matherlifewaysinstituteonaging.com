@@ -99,9 +99,7 @@ foreach (array(
 
     <h4>Course Topic - Introduction</h4>
     <p>
-        Fake text hereFake text hereFake text hereFake text hereFake text hereFake text hereFake text hereFake text here
-        Fake text hereFake text hereFake text hereFake text hereFake text hereFake text hereFake text hereFake text here
-        Fake text hereFake text hereFake text hereFake text hereFake text hereFake text hereFake text hereFake text here
+       this is a test of the new clone. 
     </p>
 
 

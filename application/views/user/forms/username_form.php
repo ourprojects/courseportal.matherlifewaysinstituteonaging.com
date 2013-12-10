@@ -7,7 +7,7 @@
 	<?php echo $form->errorSummary(array($UserNameEmail, $reCaptchaWidget->model)); ?>
 	<div class="row">
 		<?php echo $form->labelEx($UserNameEmail, 'name_email'); ?>
-		<?php echo $form->textField($UserNameEmail, 'name_email'); ?>
+		<?php echo $form->textField($UserNameEmail, 'name_email', array('size' =>45)); ?>
 		<?php echo $form->error($UserNameEmail, 'name_email'); ?>
 	</div>
 

@@ -11,13 +11,13 @@
 	<?php echo $form->errorSummary($Login); ?>
 	<div class="row">
 		<?php echo $form->labelEx($Login,'username_email'); ?>
-		<?php echo $form->textField($Login,'username_email'); ?>
+		<?php echo $form->textField($Login,'username_email', array('size' =>45)); ?>
 		<?php echo $form->error($Login,'username_email'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($Login,'password'); ?>
-		<?php echo $form->passwordField($Login,'password'); ?>
+		<?php echo $form->passwordField($Login,'password', array('size' =>45)); ?>
 		<?php echo $form->error($Login,'password'); ?>
 	</div>
 
