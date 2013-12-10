@@ -99,14 +99,14 @@ foreach (array(
 
     <h4>Course Topic - Introduction</h4>
     <p>
-       this is a test of the new clone. 
+       We need to add the description of the COURSE/TOPIC area here. Not more than a few sentances.
     </p>
 
 
     <h4>Agenda</h4>
 
     <p>
-        Add link/download button for course agenda, need pdf file here
+        We need to have a few bullet points here that list the main topic areas of the course.
     </p>
     <h4>Objectives</h4>
     <ul>
@@ -178,9 +178,7 @@ foreach (array(
         </li>
     </ul>
 
-    <h4>Optional Video - Working Caregivers</h4>
-
-    <h5>The Sandwich Generation - by Media Storm</h5>
+    <h4>Optional Video - The Sandwich Generation</h4>
 
     <p>Filmmaker and photographer couple Julie Winokur and Ed Kashi were busy pursuing their careers and raising two
         children when Winokurs 83-year-old father, Herbie, became too infirm to care for himself. At that moment they
@@ -213,7 +211,7 @@ foreach (array(
 <div id="lesson-1">
 <div id="lesson-1-slide-1" class="course-slide">
     <div class="content">
-        <h2 class="flowers">Spencer Powell Brain Fitness Program online</h2>
+        <h2 class="flowers"><?php echo t($course->title); ?></h2>
         <hr/>
         <h4>Welcome!</h4>
 
