@@ -83,21 +83,10 @@ foreach (array(
 </div>
 
 <div class="column-wide">
-    <h2 class="flowers">Spencer Powerll Online Training (SPOT)</h2>
-    <?php // echo t($course->title); ?>
+    <h2 class="flowers"><?php echo t($course->title); ?></h2>
 
     <p>
         <?php echo t($course->description); ?>
-    </p>
-
-    <p style="color: #E80000; font-size: 10pt;">
-        <strong>Disclaimer: </strong>We want to emphasize that there are still risk factors that we cannot control, so
-        living a brain healthy lifestyle does not guarantee that you will not get dementia, just like living a heart
-        healthy lifestyle does not guarantee you won’t have a heart attack.
-    </p>
-
-    <h4>Course Topic - Introduction</h4>
-    <p>The field of brain health and brain fitness has exploded over the past decade with many new programs and applications emerging to help people think and perform better both now in their daily lives at work or at home and later in life as people age.  Maintaining independence later in life is a concern for many people, especially older adults, but even for younger people this can be a nagging concern.  Through the course of this program you will learn how investing in your brain health now can pay dividends both immediately and (zoom in on second picture) as you age.
     </p>
 
     <h4>Agenda</h4>
