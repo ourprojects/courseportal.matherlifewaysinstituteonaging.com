@@ -261,9 +261,27 @@ foreach (array(
         <hr/>
 
 
-<iframe src="course1_snip1.mp4">
 
-</iframe>
+<div class="box-grey">
+<?php
+    $this->widget(
+                  'ext.JWplayer.JWplayer',
+                  array(
+                        'id' => 'TheSandwichGeneration',
+                        'config' => array(
+                                          'image' => $this->createDownloadUrl('videos/TheSandwichGeneration/poster.jpg'),
+                                          'width' => '540px',
+                                          'height' => '400px',
+                                          'levels' => array(
+                                                            array('file' => $this->createDownloadUrl('videos/TheSandwichGeneration/course1_snip1.m4v')),
+                                                            array('file' => $this->createDownloadUrl('videos/TheSandwichGeneration/course1_snip1.mp4')),
+                                                            array('file' => $this->createDownloadUrl('videos/TheSandwichGeneration/course1_snip1.ogv'))
+                                                            )
+                                          )
+                        )
+                  );
+    ?>
+</div>
 
 
 </div>
