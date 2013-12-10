@@ -79,7 +79,7 @@ echo CHtml::encode($this->pageTitle);
 											'url' => Yii::app()->createUrl('/user/profile'),
 											'visible' => !$user->getIsGuest()),
 									array('label' => '<span id="menu-forum" title="{t}Forum{/t}"></span>',
-											'url' => PhpbbModule::getInstance()->getForumUrl(),
+											'url' => PhpbbModule::getInstance()->getForumUrlWithSid(),
 											'linkOptions' => array('target' => '_blank'),
 											'visible' => !$user->getIsGuest()),
 									array('label' => '<span id="menu-courses" title="{t}Courses{/t}"></span>',

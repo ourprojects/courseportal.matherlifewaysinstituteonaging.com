@@ -154,6 +154,18 @@ class PhpbbModule extends CWebModule
 	{
 		return Yii::app()->getBaseUrl(true).'/'.$this->webPath;
 	}
+	
+	public function getForumUrlWithSid()
+	{
+		
+		global $phpbb_root_path, $phpEx, $user;
+		
+		$this->prepare();
+		
+		require_once($phpbb_root_path.'includes'.DIRECTORY_SEPARATOR.'functions.'.$phpEx);
+		
+		return append_sid($this->getForumUrl(), false, true, $user->session_id);
+	}
 
 	public function getACPurl($params = false, $is_amp = true)
 	{

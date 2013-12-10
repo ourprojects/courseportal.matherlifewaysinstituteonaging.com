@@ -2,13 +2,15 @@
 
 // Bootstrap configuration. 
 // Please see "application/extensions/Bootstrap/defaultConfig.php" for an explanation of all available options.
+define('COURSEPORTAL_DEBUG', true);
+
 $config = array(
 		'application' => array(
 				'path' => 'core',
 				'classname' => 'CoursePortalApplication',
 		),
 		'debug' => array(
-				'level' => E_ALL,
+				'level' => defined('COURSEPORTAL_DEBUG') && COURSEPORTAL_DEBUG ? E_ALL : 0,
 				'yiiTraceLevel' => 3,
 				'yiiEnableExceptionHandler' => true,
 				'yiiEnableErrorHandler' => true,

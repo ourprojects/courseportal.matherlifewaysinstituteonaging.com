@@ -106,6 +106,10 @@ class TUrlManager extends CUrlManager
 		// Check that the URL contained the correct language GET parameter. If not redirect to the same URL with language GET parameter inserted.
 		if(!isset($_GET[$translator->languageVarName]) || $_GET[$translator->languageVarName] !== $language)
 		{
+			if(isset($_GET[$translator->languageVarName]))
+			{
+				$route = $_GET[$translator->languageVarName].'/'.$route;
+			}
 			$request->redirect(
 					Yii::app()->createUrl($route, array_merge($_GET, array($translator->languageVarName => $language))),
 					true,
