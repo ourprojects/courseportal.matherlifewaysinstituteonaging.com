@@ -228,7 +228,7 @@ foreach (array(
         <h2 class="flowers">Course Outline</h2>
         <hr/>
         <h4>
-            Overview of:
+            Overview of the following topics:
         </h4>
         <ul>
             <li>
@@ -243,6 +243,7 @@ foreach (array(
 <li>
 <h5>Peak Performance</h5>
 </li>
+</ul>
 
 <h5>Introduction to Course Format</h5>
 <h5>Memory Exercise</h5>
@@ -260,6 +261,11 @@ foreach (array(
         <hr/>
 
         <p>video 1 here</p>
+
+<video width="320" height="240" controls>
+<source src="course1_snip1.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
 
 
 </div>
