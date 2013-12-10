@@ -359,7 +359,6 @@ target="_blank" class="button">Download Handout</a>
     <div class="content">
         <h2 class="flowers">Improving Attention</h2>
         <hr/>
-        <p>
 
         <h5>Manage Your Environment</h5>
  <ul>
@@ -378,18 +377,22 @@ target="_blank" class="button">Download Handout</a>
 <ul>
 <li>May need to see a sleep doctor</li>
 <li>Resting your when you’re awake</li>
-<ul>
+</ul>
 <h5>Manage your Emotions</h5>
 
 <p>You may be saying to yourself, “I’m just not good at paying attention.”  “I have ADD” or “I’ve always been bad at paying attention.”  Well keep in mind that the brain is plastic and very much capable of change.  In fact, new research is showing that through brain exercises and through the tips that you will learn in this class, even people with attention problems caused by brain injury and people with Attention Deficit / Hyperactivity Disorder (ADD/ADHD) can improve their attention.</p>
 
-<p>Here are some of the strategies that are used to help people with attention deficits improving their attention – we list them here because they are also important for many of us:</p>
+<p>Here are some of the strategies, and a excercise that are used to help people with attention deficits improving their attention – we list them here because they are also important for many of us:</p>
 
 <p>
 <a href="<?php echo $this->createDownloadUrl('spencer/spencer1_improvingattention.docx'); ?>"
 target="_blank" class="button">Download Handout</a>
 </p>
 
+<p>
+<a href="<?php echo $this->createDownloadUrl('spencer/attentinexcercise.docx'); ?>"
+target="_blank" class="button">Download Excercise</a>
+</p>
 
     </div>
     <div class="buttons">
@@ -399,10 +402,24 @@ target="_blank" class="button">Download Handout</a>
 </div>
 <div id="lesson-1-slide-9" class="course-slide">
     <div class="content">
-        <h2 class="flowers">Weekly Goal Steps</h2>
+        <h2 class="flowers">Weeky Goal Steps</h2>
         <hr/>
-        <p>text here
+<p>Memory Goal:
+Goal: Practice paying close attention to my surroundings for at least 30 seconds, 2 times a day for 4 days
+Daily Reward: A spray of my favorite cologne or perfume
+Behavior Goal:
+Goal: Fill out activity log before bed at least 4 days in a row
+Daily Reward: Read my favorite book before bed
+
         </p>
+
+<p>
+<a href="<?php echo $this->createDownloadUrl('spencer/attentinexcercise.docx'); ?>"
+target="_blank" class="button">Download Excercise</a>
+</p>
+
+
+
     </div>
     <div class="buttons">
         <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;Back</a><a
@@ -413,8 +430,17 @@ target="_blank" class="button">Download Handout</a>
     <div class="content">
         <h2 class="flowers">Course Recap</h2>
         <hr/>
-        <p>text here
+        <p>Thank you so much for particiatping in this course. Please contact your facilitator if you have any suggestions or recommednations
+on how we can make this course better.
             </p>
+
+<p>Please download the final handout below and submit your completed form back to your factiliator via email.</p>
+<p>
+<a href="<?php echo $this->createDownloadUrl('spencer/recap.docx'); ?>"
+target="_blank" class="button">Download Excercise</a>
+</p>
+
+
     </div>
     <div class="buttons">
         <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> Complete Course</a>
