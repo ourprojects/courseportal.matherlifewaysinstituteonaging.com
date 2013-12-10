@@ -27,19 +27,12 @@ include_once($phpbb_root_path . 'includes/db/dbal.' . $phpEx);
 class dbal_mysqli extends dbal
 {
 	var $multi_insert = true;
-	var $connect_error = '';
 
 	/**
 	* Connect to server
 	*/
 	function sql_connect($sqlserver, $sqluser, $sqlpassword, $database, $port = false, $persistency = false , $new_link = false)
 	{
-		if (!function_exists('mysqli_connect'))
-		{
-			$this->connect_error = 'mysqli_connect function does not exist, is mysqli extension installed?';
-			return $this->sql_error('');
-		}
-
 		// Mysqli extension supports persistent connection since PHP 5.3.0
 		$this->persistency = (version_compare(PHP_VERSION, '5.3.0', '>=')) ? $persistency : false;
 		$this->user = $sqluser;
@@ -423,29 +416,18 @@ class dbal_mysqli extends dbal
 	*/
 	function _sql_error()
 	{
-		if ($this->db_connect_id)
+		if (!$this->db_connect_id)
 		{
-			$error = array(
-				'message'	=> @mysqli_error($this->db_connect_id),
-				'code'		=> @mysqli_errno($this->db_connect_id)
-			);
-		}
-		else if (function_exists('mysqli_connect_error'))
-		{
-			$error = array(
+			return array(
 				'message'	=> @mysqli_connect_error(),
-				'code'		=> @mysqli_connect_errno(),
-			);
-		}
-		else
-		{
-			$error = array(
-				'message'	=> $this->connect_error,
-				'code'		=> '',
+				'code'		=> @mysqli_connect_errno()
 			);
 		}
 
-		return $error;
+		return array(
+			'message'	=> @mysqli_error($this->db_connect_id),
+			'code'		=> @mysqli_errno($this->db_connect_id)
+		);
 	}
 
 	/**

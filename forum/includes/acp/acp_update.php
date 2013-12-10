@@ -39,7 +39,7 @@ class acp_update
 
 		$info = obtain_latest_version_info(request_var('versioncheck_force', false));
 
-		if (empty($info))
+		if ($info === false)
 		{
 			trigger_error('VERSIONCHECK_FAIL', E_USER_WARNING);
 		}

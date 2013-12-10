@@ -1,0 +1,14 @@
+Subject: Aktiviranje korisničkog naloga
+
+Zdravo,
+
+Nalog koji je u vlasništvu korisnika “{USERNAME}” je deaktiviran ili novokreiran, trebalo bi da proverite detalje ovog korisnika (ako je obavezno) i popunite ih kako treba.
+
+Možete iskoristiti ovaj link da pogledate profil korisnika:
+{U_USER_DETAILS}
+
+Možete iskoristiti ovaj link da aktivirate nalog:
+{U_ACTIVATE}
+
+
+{EMAIL_SIG}

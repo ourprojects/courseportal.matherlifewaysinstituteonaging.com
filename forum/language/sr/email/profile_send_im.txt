@@ -1,0 +1,13 @@
+
+Zdravo {TO_USERNAME},
+
+Ovo je poruka koju vam je poslao {FROM_USERNAME} preko vašeg naloga na forumu “{SITENAME}”. Ako je ova poruka spam, sadrži uvredljive ili neke druge komentare molimo vas da kontaktirate webmastera na sledećoj adresi:
+
+{BOARD_EMAIL}
+
+Pošaljite i kompletnu poruku. Znajte da je adresa pošaljioca podešena na forumov IM nalog.
+
+Sledi poruka koja vam je poslata
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+{MESSAGE}

@@ -1,0 +1,10 @@
+Subject: Zure taldeko kide izateko eskaera sortu da
+
+{USERNAME},
+
+"{REQUEST_USERNAME}" erabiltzaileak "{SITENAME}"(e)n moderatzen duzun "{GROUP_NAME}" taldean sartzeko eskaera egin du. 
+Eskaera hau onartu edo ukatzeko, jarrai ezazu hurrengo lotura:
+
+{U_PENDING}
+
+{EMAIL_SIG}

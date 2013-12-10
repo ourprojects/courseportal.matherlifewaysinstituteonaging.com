@@ -71,7 +71,7 @@ class phpbb_questionnaire_data_collector
 	/**
 	* Collect info into the data property.
 	*
-	* @return	null
+	* @return	void
 	*/
 	function collect()
 	{

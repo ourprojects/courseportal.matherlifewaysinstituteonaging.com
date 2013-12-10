@@ -1,0 +1,19 @@
+Subject: Reaktiviranje vašeg naloga na "{SITENAME}" - {U_BOARD}
+
+Administrator boarda je insistirao da reaktivirate nalog. Vaš nalog je trenutno neaktivan.
+Molimo vas da pratite korake koji su prikazani ovde da bi ponova aktivirali vaš nalog.
+
+Molimo vas da sačuvate ovaj email. Sledi informacija o vašem nalogu:
+
+----------------------------
+Korisničko ime: {USERNAME}
+----------------------------
+
+Vaša šifra je kriptovana u našoj bazi. Ukoliko je zaboravite, možete potražiti novu koja će biti aktivirana na isti način kao i ovaj nalog.
+
+Molimo vas da posetite sledeći link da bi reaktivirali vaš nalog:
+
+{U_ACTIVATE}
+
+
+{EMAIL_SIG}

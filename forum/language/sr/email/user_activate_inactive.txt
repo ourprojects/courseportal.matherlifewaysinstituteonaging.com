@@ -1,0 +1,7 @@
+Subject: Vaš nalog je deaktiviran
+
+Zdravo {USERNAME},
+
+Vaš nalog na forumu “{SITENAME}” je deaktiviran, najverovatnije zbog izmena u profilu. Administrator boarda će morati da ga aktivira pre nego što možete da se prijavite. Dobićete još jedno obaveštenje kada se to desi.
+
+{EMAIL_SIG}

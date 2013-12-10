@@ -48,7 +48,7 @@ class acm extends acm_memory
 	/**
 	* Purge cache data
 	*
-	* @return null
+	* @return void
 	*/
 	function purge()
 	{

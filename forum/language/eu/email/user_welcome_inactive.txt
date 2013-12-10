@@ -1,0 +1,22 @@
+Subject: Ongietorri "{SITENAME}"(e)ra 
+
+{WELCOME_MSG}
+
+Mesedez, gorde ezazu e-mail hau gerorako zure kontuari buruzko informazio garrantzitsua bait du: 
+
+----------------------------
+Erabiltzaile izena: {USERNAME}
+
+
+Foroko URLa:  {U_BOARD} 
+----------------------------
+
+Zure kontua oraindik ezgaituta dago. Kontua gaitzeko jarrai ezazu hurrengo lotura:
+
+{U_ACTIVATE}
+
+Pasahitza era seguruan gorde da gure datubaseetan eta ezin da berriro lortu. Ahazten baldin baduzu, helbide elektronikoa erabiliz ezarri zenezake berria.
+
+Eskerrik asko izena emateagatik.
+
+{EMAIL_SIG}

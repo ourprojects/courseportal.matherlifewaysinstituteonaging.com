@@ -1,0 +1,15 @@
+Subject: Mezu pribatu berria jaso duzu
+
+Kaixo {USERNAME},
+
+"{AUTHOR_NAME}"(r)en mezu pribatu berria jaso duzu zure "{SITENAME}"(e)ko kontuan hurrengo izenburuarekin:
+
+{SUBJECT}
+
+Mezua ikusteko jarraitu hurrengo lotura:
+
+{U_VIEW_MESSAGE}
+
+Jakinarazi diezaizugula eskatu duzu. Ez baduzu jakinarazpen gehiagorik jaso nahi, alda ezazu aukera hori zure profilan.
+
+{EMAIL_SIG}

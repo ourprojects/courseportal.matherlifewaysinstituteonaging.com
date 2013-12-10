@@ -1,0 +1,13 @@
+Subject: Obaveštenje o novoj temi — “{FORUM_NAME}”
+
+Zdravo {USERNAME},
+
+Dobili ste ovo obaveštenje jer ste izabrali da pratite forum “{FORUM_NAME}” na sajtu “{SITENAME}”. Ovaj forum ima novu temu od vaše poslednje posete “{TOPIC_TITLE}”. Možete iskoristiti sledeći link da pogledate forum, a nećete dobijati više obaveštenja dok ne posetite forum.
+
+{U_FORUM}
+
+Ako ne želite da više pratite ovaj forum možete ili da kliknete na  “Otkaži pretplatu na forum” link koji se nalazi na forumu, ili klikom na sledeći link:
+
+{U_STOP_WATCHING_FORUM}
+
+{EMAIL_SIG}

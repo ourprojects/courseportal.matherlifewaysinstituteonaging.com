@@ -1,0 +1,8 @@
+Subject: Obrisan izveštaj — “{POST_SUBJECT}”
+
+Zdravo {USERNAME},
+
+Dobili ste ovo obaveštenje jer je izveštaj koji ste popunili na postu “{POST_SUBJECT}” u “{TOPIC_TITLE}” na forumu “{SITENAME}” obrisao moderator ili administrator.
+
+
+{EMAIL_SIG}

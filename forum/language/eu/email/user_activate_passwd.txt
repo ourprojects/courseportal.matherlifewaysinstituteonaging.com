@@ -1,0 +1,17 @@
+Subject: Pasahitz berria gaitu
+
+Kaixo {USERNAME}
+
+Mezu hau jaso duzu pasahitz berria eskatu duzulako (zuk edo ordezkatu egin zaituen nonork) zure "{SITENAME}"(e)ko konturako. Ez baldin baduzu zuk eskatu, mesedez, bazter ezazu jakinarazpen hau, baina berriro jasoz gero, jar zaitez foroko administrariekin harremanetan.
+
+Pasahitz berria erabilteko, lehenik gaitu egin behar duzu. Pasahitza gaitzeko jarraitu hurrengo lotura:
+
+{U_ACTIVATE}
+
+Gaitzea zuzen burutu egin baldin bada, foroan pasahitz berriarekin sartu zaitezke:
+
+Pasahitza: {PASSWORD}
+
+Pasahitz hau gerorago alda zenezake Erabiltzaile Kontrol Paneletik. Arazorik izanez gero, jar zaitez foroko administrariekin harremanetan.
+
+{EMAIL_SIG}

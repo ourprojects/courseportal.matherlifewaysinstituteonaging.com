@@ -1,0 +1,7 @@
+Subject: Vaš nalog je aktiviran
+
+Zdravo {USERNAME},
+
+Vaš nalog na forumu “{SITENAME}” je aktiviran, tako da se sada možete prijaviti koristeči korisničko ime i šifru koje ste dobili u prethodnom email-u.
+
+{EMAIL_SIG}

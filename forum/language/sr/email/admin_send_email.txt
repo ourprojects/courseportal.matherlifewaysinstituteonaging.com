@@ -1,0 +1,14 @@
+
+Ovaj email vam je poslao administrator foruma “{SITENAME}”. Ako je ova poruka spam, sadrži uvredljive ili bilo kakve druge komentare i smatrate se uvređenim, molimo vas da kontaktirate webmastera foruma na sledećoj adresi:
+
+{CONTACT_EMAIL}
+
+Pošaljite i kompletan email (naročito zaglavlje). 
+
+Sledi poruka koja vam je poslata:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+{MESSAGE}
+
+
+{EMAIL_SIG}
