@@ -86,28 +86,6 @@ foreach (array(
 <hr/>
 <p>Please complete the form below to contact your facilitator.</p>
 
-<!--
-<div class="box-white">
-<?php /*
-    $this->widget(
-                  'ext.LDContactUsWidget.LDContactUsWidget',
-                  array(
-                        'captcha' => array(
-                                           'class' => 'ext.LDContactUsWidget.components.CUReCaptcha',
-                                           'config' => array(
-                                                             'publicKey' => Yii::app()->params['reCaptcha']['publicKey'],
-                                                             'privateKey' => Yii::app()->params['reCaptcha']['privateKey'],
-                                                             'useAjax' => true
-                                                             )
-                                           ),
-                        'options' => array(
-                                           'htmlOptions' => array('class' => 'form')
-                                           )
-                        )
-                  );
-    */    ?>
-</div>
--->
 </div>
 <div class="buttons">
 <a href="javascript:;" class="button right" onclick="parent.jQuery.fancybox.close();"> Close </a>
@@ -393,13 +371,10 @@ target="_blank" class="button">Download Excercise</a>
 
 <h5>Daily Reward: Read my favorite book before bed</h5>
 
-
 <p>
 <a href="<?php echo $this->createDownloadUrl('spencer/weeklygoalsteps.docx'); ?>"
 target="_blank" class="button">Download Excercise</a>
 </p>
-
-
 
     </div>
     <div class="buttons">
@@ -421,11 +396,10 @@ on how we can make this course better.
 target="_blank" class="button">Download Excercise</a>
 </p>
 
-
     </div>
     <div class="buttons">
         <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> Complete Course</a>
     </div>
 </div>
-
+</div>
 </div>
