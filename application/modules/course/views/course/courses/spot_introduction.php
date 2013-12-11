@@ -22,7 +22,7 @@
     
     ?>
 
-<div class="small-masthead" style="background-image: url(<?php echo $this->getImagesUrl('msml/154418413r.png'); ?>);">
+<div class="small-masthead" style="background-image: url(<?php echo $this->getImagesUrl('spencer/CC000596.png'); ?>);">
 <h1 class="bottom">
 <?php echo t($course->title); ?>
 </h1>
@@ -56,7 +56,18 @@ Please complete each survey at the appropriate time.</p>
     echo '<li>' . t($objective->text) . '</li>';
     ?>
 </ul>
-<h4>Course Modules</h4>
+
+<h4>Agenda</h4>
+
+<ol>
+<li>Discuss Brain Health and Dementia</li>
+<li>Discuss Cognitive Reserve</li>
+<li>Discuss Brain Performance</li>
+<li>Review the Activity Log</li>
+<li>Complete Memory and Attention Excercises, and Course Recap</li>
+</ol>
+
+<h4>Course Content</h4>
 <ul>
 <li>
 <a href="#lesson-1-slide-1" data-fancybox-group="lesson-1" class="teal lesson-1"> Overview of Memory Loss</a> <a href="#lesson-1-slide-2" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-3" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-4" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-5" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-6" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-7" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-8" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-9" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-10" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-11" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a
@@ -82,35 +93,7 @@ href="#lesson-5-slide-12" data-fancybox-group="lesson-5" class="hide lesson-5"><
 data-fancybox-group="lesson-5" class="hide lesson-5"></a>
 </li>
 </ul>
-<div class="box-white" id="resources">
-<h4>Resources</h4>
-<p>Please use these listed resources for additional reading. Please contact your course facilitator if you have additional resources you would like to see added here.</p>
-<ul>
-<li>
-<a href="http://www.alz.org" target="_blank">Alzheimer's Association</a>
-</li>
-<li>
-<a href="http://www.nih.gov" target="_blank">National Institute on Health (NIH)</a>
-</li>
-<li>
-<a href="http://pewinternet.org" target="_blank">Pew Internet &amp; American Life Project</a>
-</li>
-</ul>
-</div>
-<div class="box-white" id="developers">
-<h4>Course Contacts</h4>
-<h5>Content Designer:</h5>
-<p>
-<a href="http://matherlifewaysinstituteonaging.com" target="_blank">Mather LifeWays Institute on Aging</a><br /> Through research-based programs and innovative techniques, Mather LifeWays Institute on Aging is committed to advancing the field of geriatric care. Cutting-edge research lays the foundation for our solid solutions to senior care challenges, including recruitment, mentorship, training, and retention. Used by individuals and entire organizations, our nationally recognized, award-winning programs include training modules, online courses, toolkits, and learning modules designed to make learning fun and easy. Our programs have been shown to result in measurable improvements in the quality of care provided and workforce retention.
-</p>
-<p>
-<a href="http://www.alz.org/illinois/" target="_blank">Greater Illinois Chapter | Alzheimer's Association</a><br /> The Alzheimer’s Association, Greater Illinois Chapter serves 68 counties in Illinois with offices in Bloomington, Carbondale, Chicago, Joliet, Rockford and Springfield. Since 1980, the Chapter has provided reliable information and care consultation; created supportive services for families; increased funding for dementia research; and influenced public policy changes. Today, the Greater Illinois Chapter serves the more than a half million Illinois residents affected by Alzheimer’s disease throughout our chapter area, including 210,000 people with the disease.
-</p>
-<span class="h5">Developer: </span><span class="name">Jon Woodall</span>
-<p>Mr. Woodall is responsible for all MLIA corporate workforce wellness programs related to design, implementation, publication, and evaluation. Additionally, he seeks new grant funding to support or extend current grants related to corporate workforce wellness programs.</p>
-<span class="h5">Facilitator: </span><span class="name">Ellen Ziegemeier</span>
-<p>Ms. Ziegemeier has been facilitating online courses for Mather LifeWays Institute on Aging since 2004. She earned her Masters in Anthropology and has worked locally and abroad (Central America) for various aging services. She is fluent in English and Spanish and has a strong passion for caregiver training. </p>
-</div>
+
 </div>
 
 <!-- start course content here -->
