@@ -190,15 +190,15 @@ href="#lesson-1-slide-12" data-fancybox-group="lesson-1" class="hide lesson-1"><
     $this->widget(
                   'ext.JWplayer.JWplayer',
                   array(
-                        'id' => 'TheSandwichGeneration',
+                        'id' => 'spencer',
                         'config' => array(
-                                          'image' => $this->createDownloadUrl('videos/TheSandwichGeneration/poster.jpg'),
+                                          'image' => $this->createDownloadUrl('videos/spencer/posterhere.png'),
                                           'width' => '540px',
                                           'height' => '400px',
                                           'levels' => array(
-                                                            array('file' => $this->createDownloadUrl('videos/TheSandwichGeneration/video.m4v')),
-                                                            array('file' => $this->createDownloadUrl('videos/TheSandwichGeneration/video.webm')),
-                                                            array('file' => $this->createDownloadUrl('videos/TheSandwichGeneration/video.ogv'))
+                                                            array('file' => $this->createDownloadUrl('videos/course1_snip1/video.m4v')),
+                                                            array('file' => $this->createDownloadUrl('videos/course1_snip1/video.webm')),
+                                                            array('file' => $this->createDownloadUrl('videos/course1_snip1/video.ogv'))
                                                             )
                                           )
                         )
@@ -433,28 +433,10 @@ target="_blank" class="button">Download Excercise</a>
 <div id="lesson-2">
 <div id="lesson-2-slide-1" class="course-slide">
 <div class="content">
-<h2 class="flowers">Communication Strategies</h2>
+<h2 class="flowers">TBD</h2>
 <hr />
-<img src="<?php echo $this->getImagesUrl('msml/135810412.png'); ?>" alt="image">
-<h4>Purposes:</h4>
-<ul>
-<li>To give an overview of communication changes typical in early memory loss.</li>
-<li>To familiarize participants with general principles for maintaining communication with a person experiencing early memory loss.</li>
-<li>To describe several ways to encourage verbal expression.</li>
-<li>To review common communication pitfalls, and how to avoid them.</li>
-</ul>
-<div id="question1" class="question">
-<p>
-<b>Does Alzheimer's disease affect communication?</b>
-<select>
-<option selected="selected" value="select">Select</option>
-<option value="1">Yes</option>
-<option value="0">No</option>
-</select>
-</p>
-<p class="right-answer hide">Correct! People with Alzheimer's lose particular communication abilities during the early, middle, and late stages of the disease.</p>
-<p class="wrong-answer hide">Incorrect. Please review Module One.</p>
-</div>
+
+
 </div>
 <div class="buttons">
 <a href="javascript:;" class="button right" onclick="$.fancybox.next();">Start Module &raquo;</a>
@@ -464,24 +446,9 @@ target="_blank" class="button">Download Excercise</a>
 
 <div id="lesson-2-slide-2" class="course-slide">
 <div class="content">
-<h2 class="flowers">Good Sources of Information</h2>
+<h2 class="flowers">TBD</h2>
 <hr />
-<ul>
-<li>Coping with Communication Challenges in Alzheimer’s Disease by Marie T. Rau, San Diego, CA: Singular Publishing Company, 1993.</li>
-<li>My Journey into Alzheimer’s Disease by Robert Davis. Carol Stream, lL: Tyndale House Publishers, 1989.</li>
-<li>Steps to Enhancing Communication: Interacting with Persons with Alzheimer’s Disease (brochure) available through the Alzheimer’s Association.</li>
-</ul>
-<h4>Closing</h4>
-<h5>In this module, we have learned:</h5>
-<ul>
-<li>Typical communication changes experienced by persons with early memory loss,</li>
-<li>General principles for enhancing communication with a person experiencing early memory loss,</li>
-<li>Ways to encourage verbal expression, and</li>
-<li>How to avoid communication pitfalls.</li>
-</ul>
-<p>
-For more ideas about communication strategies, please refer to chapters 5 and 8 of the book, <i>Alzheimer's Early Stages</i>. Chapter 5 is especially helpful in understanding the communication challenges faced by persons with memory loss. If possible, read these chapters during the coming week.
-</p>
+
 </div>
 <div class="buttons">
 <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> Complete Module</a>
@@ -494,27 +461,10 @@ For more ideas about communication strategies, please refer to chapters 5 and 8 
 <div id="lesson-3">
 <div id="lesson-3-slide-1" class="course-slide">
 <div class="content">
-<h2 class="flowers">Making Decisions</h2>
+<h2 class="flowers">TBD</h2>
 <hr />
-<img src="<?php echo $this->getImagesUrl('msml/142532454.png'); ?>" alt="image">
-<h4>Purposes</h4>
-<ul>
-<li>Understand the shifting balance of power in the relationship,</li>
-<li>Address practical issues in everyday life such as driving a car, handling health &amp; financial decisions or managing household tasks,</li>
-<li>Share the diagnosis and involved others in helping out.</li>
-</ul>
-<div id="question1" class="question">
-<p>
-<b>There are different kinds of memory. Understanding them can help us to understand some of the communication challenges faced by persons with dementia.</b>
-<select>
-<option selected="selected" value="select">Select</option>
-<option value="1">True</option>
-<option value="0">False</option>
-</select>
-</p>
-<p class="right-answer hide">Correct!</p>
-<p class="wrong-answer hide">Incorrect. Please review module two.</p>
-</div>
+
+
 </div>
 <div class="buttons">
 <a href="javascript:;" class="button right" onclick="$.fancybox.next();">Start Module &raquo;</a>
@@ -527,20 +477,11 @@ For more ideas about communication strategies, please refer to chapters 5 and 8 
 
 <div id="lesson-3-slide-2" class="course-slide">
 <div class="content">
-<h2 class="flowers">Good Sources of Information</h2>
+<h2 class="flowers">TBD</h2>
 <hr />
-<ul>
-<li>Dancing on Quicksand: A Gift of Friendship in the Age of Alzheimer's by Marilyn Mitchell. Boulder, CO: Johnson Books, 2002.</li>
-<li>Learning To Speak Alzheimer's by Joanne Koenig Coste, New York: Houghton Miflin Co., 2003.</li>
-<li>The Majesty of Your Loving: A Couple's Journey through Alzheimer's by Olivia Hoblitzelle. Lyndonville, VT: Green Mountain Books, 2008.</li>
-</ul>
-<h4>Closing</h4>
-<p>We have just finished module three</p>
-<p class="forum">Please post any questions about this module to the Forum.</p>
-<p>
-Contact your class leader in order to address specific issues that did not get answered on the Forum. Chapters 6 and 7 in the book, <i>Alzheimer's Early Stages</i>, relate to this class. Please read those chapters for more information about the issues we covered today. Next module will focus on planning for the future. Thanks your for participating.
-</p>
-<img src="<?php echo $this->getImagesUrl('msml/forum_icon.png'); ?>" alt="image">
+
+
+
 </div>
 <div class="buttons">
 <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left">Complete Module</a>
@@ -550,4 +491,3 @@ Contact your class leader in order to address specific issues that did not get a
 
 </div>
 </div>
-<!-- used this div below to correct open div with no closing somewhere above -->
