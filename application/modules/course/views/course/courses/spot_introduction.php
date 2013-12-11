@@ -214,25 +214,10 @@ href="#lesson-1-slide-12" data-fancybox-group="lesson-1" class="hide lesson-1"><
 </div>
 <div id="lesson-1-slide-6" class="course-slide">
 <div class="content">
-<h2 class="flowers">Course Effectiveness</h2>
-<hr />
-<p>MSML Online has undergone numerous revisions. The program it is based on, MSML, went through several formal evaluations to demonstrate its effectiveness.</p>
-<p>Research evaluation was conducted among more than 200 participants in the original program. In one study, good outcomes were reported in terms of increased knowledge and improved coping skills at post‐course and six months later (Kuhn and Mendes de Leon, 2001). Similar positive outcomes plus improved self‐confidence were reported by another group (Kuhn and Fulton, 2004). Likewise, when the education program was implemented in nine chapters of the Alzheimer’s Association, participants reported improvements in their knowledge and coping skills.</p>
-<p>Outcome measures used in this original research included:</p>
-<ol>
-<li>A 15‐item Knowledge about Memory Loss and Care Test, (Kuhn, King, and Fulton, 2005);</li>
-<li>A 10‐item Measure of Self‐Efficacy (Fulton and Kuhn, 2004) and;</li>
-<li>The 7‐item memory sub‐scale of the Revised Memory and Behavior Problems Checklist (Teri et al., 1992).</li>
-</ol>
-<h5>References</h5>
-<div id="resources">
-<ul>
-<li>Kuhn D, Mendes de Leon, C. (2001). Evaluation of an educational intervention with relatives of persons in the early stage of Alzheimer’s disease. Research on Social Work Practice, 11, 531‐548.</li>
-<li>Kuhn D., Fulton BR. (2004). Efficacy of an educational program for relatives of persons in the early stages of Alzheimer’s disease. Journal of Gerontological Social Work, 42(3), 109‐130.</li>
-<li>Kuhn D, King SP, Fulton BF. (2005). Development of the Knowledge about Memory Loss and Care test. American Journal of Alzheimer’s Disease, 20(1):41‐49.</li>
-<li>Teri, L., Truax, P., Logsdon, R., Uomoto, J., Zarit, S., and Vilatiano, P.P. (1992). Assessment of behavioral problems in dementia: The Revised Memory and Behavior Problems Checklist. Psychology and Aging, 7, 622‐631.</li>
-</ul>
-</div>
+
+<p> Video 4 here, activity log tutorial</p>
+
+
 </div>
 <div class="buttons">
 <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;Back</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">Next&nbsp;&raquo; </a>
@@ -240,71 +225,97 @@ href="#lesson-1-slide-12" data-fancybox-group="lesson-1" class="hide lesson-1"><
 </div>
 <div id="lesson-1-slide-7" class="course-slide">
 <div class="content">
-<h2 class="flowers">Module 1: Overview of Memory Loss &amp; Related Symptoms</h2>
-<hr />
-<img src="<?php echo $this->getImagesUrl('msml/164088989.png'); ?>" alt="image">
-<h4>Purposes</h4>
+<h2 class="flowers">Memory Strategy</h2>
+<h4>Improve Memory by Improving Attention</h4>
+
 <ul>
-<li>Introduce Class Leader(s) and participants and give an overview of the course</li>
-<li>Explain major medical causes of memory loss</li>
-<li>Ensure that a medical evaluation is done to explore reasons for memory loss</li>
-<li>Explain symptoms of Alzheimer’s disease and related dementias</li>
-<li>Describe current and proposed medical treatments</li>
-<li>Describe research efforts to treat or prevent memory loss</li>
+<li>Look Up and Around</li>
+<li>Put in the Effort</li>
+<li>Stay “Present”</li>
+<li>Get your Hearing or Vision Checked</li>
 </ul>
+
+<p>
+<a href="<?php echo $this->createDownloadUrl('spencer/spencer1_memoryStrategy1.docx'); ?>"
+target="_blank" class="button">Download Handout</a>
+</p>
+
 </div>
 <div class="buttons">
 <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;Back</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">Next&nbsp;&raquo; </a>
 </div>
 </div>
+
+
 <div id="lesson-1-slide-8" class="course-slide">
 <div class="content">
-<h2 class="flowers">Introductions</h2>
-<hr />
-<img src="<?php echo $this->getImagesUrl('msml/72968269.png'); ?>" alt="image">
-<p class="forum">We will begin by asking you to say something about who you are and what brings you here. Please answer these questions on the Forum:</p>
-<ul class="forum">
-<li>What is your relationship with the person who is experiencing memory loss?</li>
-<li>How long have you noticed their problem with memory or thinking?</li>
-<li>What is the name of the medical condition or diagnosis, if known, that accounts for the problem?</li>
+<h2 class="flowers">Improving Attention</h2>
+<hr/>
+
+<h5>Manage Your Environment</h5>
+<ul>
+<li>Reduce Distractions and Interruptions
+</li>
 </ul>
-<img src="<?php echo $this->getImagesUrl('msml/forum_icon.png'); ?>" alt="image">
 
-<!--
+<h5>Do One Thing at a Time</h5>
+<ul>
+<li>Multi-tasking is a Myth!</li>
+<li>Multi-tasking can be toxic to the brain</li>
+</ul>
 
+<h5>Bribe yourself<h5>
+<h5>Get Plenty of Rest</h5>
+<ul>
+<li>May need to see a sleep doctor</li>
+<li>Resting your when you’re awake</li>
+</ul>
+<h5>Manage your Emotions</h5>
 
-<p>As you can see, dementia is an umbrella term that includes reversible and irreversible conditions.</p>
-<div id="question1" class="question">
-<p><b>Have you ever visited the Alzheimer's Assocation website?</b>
-<select>
-<option selected="selected" value="select"> Select </option>
-<option value="1"> Yes </option>
-<option value="0"> No </option>
-</select>
+<p>You may be saying to yourself, “I’m just not good at paying attention.”  “I have ADD” or “I’ve always been bad at paying attention.”  Well keep in mind that the brain is plastic and very much capable of change.  In fact, new research is showing that through brain exercises and through the tips that you will learn in this class, even people with attention problems caused by brain injury and people with Attention Deficit / Hyperactivity Disorder (ADD/ADHD) can improve their attention.</p>
+
+<p>Here are some of the strategies, and a excercise that are used to help people with attention deficits improving their attention – we list them here because they are also important for many of us:</p>
+
+<p>
+<a href="<?php echo $this->createDownloadUrl('spencer/spencer1_improvingattention.docx'); ?>"
+target="_blank" class="button">Download Handout</a>
 </p>
-<p class="right-answer hide"> Great! We will use this resource throughout this course. </p>
-<p class="wrong-answer hide"> Please familiarize yourself with their website. </p>
-</div>
--->
+
+<p>
+<a href="<?php echo $this->createDownloadUrl('spencer/attentinexcercise.docx'); ?>"
+target="_blank" class="button">Download Excercise</a>
+</p>
+
+
+
 </div>
 <div class="buttons">
 <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;Back</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">Next&nbsp;&raquo; </a>
 </div>
 </div>
+
+
 <div id="lesson-1-slide-9" class="course-slide">
 <div class="content">
-<h2 class="flowers">Who We Are</h2>
-<hr />
-<ul>
-<li>Name</li>
-<li>Relationship</li>
-<li>How Long Ago was Noted?</li>
-<li>Diagnosis</li>
-</ul>
-<h4>Goals of the Program</h4>
-<p>This five‐week series of classes is intended to help you meet the current challenges of caring for someone in the early stages of memory loss. This condition is usually due to a medical condition such as Alzheimer’s disease or a related dementia. Therefore, this first session focuses on medical reasons for memory loss and its treatments. If your relative has not had a thorough medical evaluation yet, we hope this information will encourage you to seek one right away. This first class is also intended to give you other medical information. The remaining classes provide other types of information and guidance for coping with your relative’s memory loss.</p>
-<p>Memory loss and other signs of mental decline have profound effects on the lives of individuals and families. Nevertheless, we are convinced that a good quality of life can still be maintained for all concerned by learning to make changes in lifestyle and outlook. For many family members, this involves a change in relationships and priorities. At times the demands may seem overwhelming. This educational series is aimed at helping you make decisions about how and when to make changes in your lifestyle, both now and in the future.</p>
-<p>In writing the content for these classes, the developers spent many years talking to countless people with memory loss and their family members. They believe that there is no single way of coping successfully. Everyone must find ways that suit their own particular needs or situation, but it can be done. Those who have met the challenges of memory loss have taught us about the need for flexibility, patience, humor, faith, and friendship. Such qualities are developed over time. It is our sincere hope that a solid understanding of memory loss in the early stages will assist you in this process.</p>
+
+<h2 class="flowers">Weeky Goal Steps</h2>
+<hr/>
+
+<h4>Memory Goal:</h4>
+
+<h5>Goal: Practice paying close attention to my surroundings for at least 30 seconds, 2 times a day for 4 days<h5>
+
+<h5>Daily Reward: A spray of my favorite cologne or perfume</h5>
+
+<h4>Behavior Goal:</h4>
+
+<h5>Goal: Fill out activity log before bed at least 4 days in a row</h5>
+
+<h5>Daily Reward: Read my favorite book before bed</h5>
+
+<p><a href="<?php echo $this->createDownloadUrl('spencer/weeklygoalsteps.docx'); ?>" target="_blank" class="button">Download Excercise</a></p>
+
+
 </div>
 <div class="buttons">
 <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;Back</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">Next&nbsp;&raquo; </a>
@@ -312,71 +323,15 @@ href="#lesson-1-slide-12" data-fancybox-group="lesson-1" class="hide lesson-1"><
 </div>
 <div id="lesson-1-slide-10" class="course-slide">
 <div class="content">
-<h2 class="flowers">Agenda: MSML Online</h2>
-<hr />
-<ul>
-<li>Module 1: Overview of Memory Loss &amp; Related Symptoms</li>
-<li>Module 2: Communications Strategies</li>
-<li>Module 3: Making Decisions</li>
-<li>Module 4: Planning for the Future</li>
-<li>Module 5: Effective Ways of Coping &amp; Caring</li>
-</ul>
-<p>The agenda for these five modules include these general topics. We strongly encourage you to participate in all five modules as the information of each class flows into the next one. In this first module, an overview of memory loss and a host of brain diseases known as dementias will be given. Again, this information is mainly medical in nature.</p>
-<p>Module number two covers communication skills that will help you and others in caring for your relative. Module three prepares you for the major decisions that need to be made as memory loss progresses: when to stop driving; health; and financial decisions. In module number four, planning for the future is the focus.</p>
-<p>Finally, in module five we talk about how to keep your relative engaged in meaningful activities and the need to take steps to care for yourself. It is our belief that if you take good care of yourself, your relative with memory loss will be better off too.</p>
-<p class="forum">To make sure that we address your questions, please tell us what questions you have on the Forum.</p>
-<p>In this first class, we will address the following questions:</p>
-<img src="<?php echo $this->getImagesUrl('msml/forum_icon.png'); ?>" alt="image">
-<ul>
-<li>What causes memory loss?</li>
-<li>How are brain diseases diagnosed?</li>
-<li>What are the symptoms and stages of Alzheimer's disease?</li>
-<li>How is memory loss treated?</li>
-<li>What is being done in the area of medical research?</li>
-</ul>
-</div>
-<div class="buttons">
-<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;Back</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">Next&nbsp;&raquo; </a>
-</div>
-</div>
-<div id="lesson-1-slide-11" class="course-slide">
-<div class="content">
-<h2 class="flowers">Definition of Dementia</h2>
-<hr />
-<img src="<?php echo $this->getImagesUrl('msml/135095760.png'); ?>" alt="image">
-<ul>
-<li>Deterioration of at least two brain functions, including memory</li>
-<li>A syndrome, not a diagnosis</li>
-<li>
-In the past, referred to as senility or <i>hardening or the arteries</i>
-</li>
-</ul>
-<p>Dementia is not a specific disease. It is an overall term that describes a wide range of symptoms associated with a decline in memory or other thinking skills severe enough to reduce a person's ability to perform everyday activities. Alzheimer's disease accounts for 60 to 80% of cases. Vascular dementia, which occurs after a stroke, is the second most common dementia type. But there are many other conditions that can cause symptoms of dementia, including some that are reversible, such as thyroid problems and vitamin deficiencies.</p>
-<p>Dementia is often incorrectly referred to as senility or senile dementia, which reflects the formerly widespread but incorrect belief that serious mental decline is a normal part of aging.</p>
-</div>
-<div class="buttons">
-<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;Back</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">Next&nbsp;&raquo; </a>
-</div>
-</div>
-<div id="lesson-1-slide-12" class="course-slide">
-<div class="content">
-<h2 class="flowers">Brain Functions</h2>
-<hr />
-<ul>
-<li>Memory</li>
-<li>Orientation</li>
-<li>Language</li>
-<li>Judgment</li>
-<li>Perception</li>
-<li>Attention</li>
-<li>Ability to perform tasks in sequence</li>
-</ul>
-<p>Dementia typically unfolds gradually over a period of many years but it can begin suddenly or unexpectedly. It affects some or all of these brain functions listed below.</p>
-<p class="forum">Search the Internet for examples of how dementia affects some of these brain functions listed above, and report your findings on the Forum.</p>
-<p class="forum">Did you ever forget a name or forget an appointment or get lost? What did it feel like at the time? Please describe those experiences on the Forum</p>
-<img src="<?php echo $this->getImagesUrl('msml/forum_icon.png'); ?>" alt="image">
-<p>Imagine how difficult it would be to experience this type of problem on a regular basis. We address the experience of living dementia during the next module.</p>
-<p>Is everyone familiar with terms like congestive heart failure, liver failure and kidney failure? When the brain fails to do its work, dementia is the appropriate medical term.</p>
+
+<h2 class="flowers">Course Recap</h2>
+<hr/>
+<p>Thank you so much for particiatping in this course. Please contact your facilitator if you have any suggestions or recommednations on how we can make this course better.
+</p>
+
+<p>Please download the final handout below and submit your completed form back to your factiliator via email.</p>
+<p><a href="<?php echo $this->createDownloadUrl('spencer/recap.docx'); ?>" target="_blank" class="button">Download Excercise</a></p>
+
 </div>
 <div class="buttons">
 <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;Back</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">Next&nbsp;&raquo; </a>
