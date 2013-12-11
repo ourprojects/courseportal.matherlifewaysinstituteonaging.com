@@ -45,6 +45,6 @@
 		<?php echo $this->renderPartial('forms/register_form', $models); ?>
 	</div>
 	<p>
-		{t} Please click{/t} <strong><?php echo CHtml::link('{t}here{/t}', $this->createUrl('resendActivation')); ?> </strong> {t} to request you activation email again. {/t}
+		{t} Please click{/t} <strong><?php echo CHtml::link('{t}here{/t}', $this->createUrl('resendActivation')); ?> </strong> {t} to request your activation email again. {/t}
 	</p>
 </div>
