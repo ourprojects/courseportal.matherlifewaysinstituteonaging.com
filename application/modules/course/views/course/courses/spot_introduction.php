@@ -79,7 +79,9 @@ foreach (array(
     <li>Complete Memory and Attention Excercises, and Course Recap</li>
 </ol>
 
-                <ul>
+<h4>Course Content</h4>
+
+                <ul id="modules">
                     <li>
                         <a href="#lesson-1-slide-1" data-fancybox-group="lesson-1" class="teal lesson-1 button">&rarr; &rarr; Start Course &larr; &larr;</a>
                         <a href="#lesson-1-slide-2" data-fancybox-group="lesson-1" class="hide lesson-1"></a>
@@ -95,18 +97,5 @@ foreach (array(
                 </ul>
    </div>
 
-<!-- Course Starts here -->
 
-<div id="lesson-1">
-<div id="lesson-1-slide-1" class="course-slide">
-<div class="content">
-<h2 class="flowers"><?php echo t($course->title); ?></h2>
-<hr/>
-
-<p>Welcome to the course! We are pleased you have decided to join us. Please contact your facilitator if you experience any difficulties or need help. Thank you!</p>
-
-</div>
-<div class="buttons"><a href="javascript:;" class="button right" onclick="$.fancybox.next();">Start Course &raquo;</a></div>
-</div>
 <div>
-
