@@ -1,5 +1,4 @@
 <?php
-
 $this->breadcrumbs = array(t('Courses') => $this->createUrl('course/'), t($course->title));
 $clientScript = Yii::app()->getClientScript();
 $clientScript->registerCssFile($this->getStylesUrl('course.css'));
@@ -15,33 +14,6 @@ foreach (array(
     <h1 class="bottom"><?php echo t($course->title); ?></h1>
 </div>
 
-<div id="sidebar">
-    <div class="box-sidebar one">
-        <h3>Activity Log</h3>
-        <p>Please click the button below to access your personal Activity Log.</p>
-        <p>
-            <?php
-            echo CHtml::button('Activity Log', array('onclick' => '$("#activityLog").dialog("open")', 'class' => 'button'));
-            ?>
-        </p>
-        <?php
-        $this->beginWidget('zii.widgets.jui.CJuiDialog', array('id' => 'activityLog', 'options' => array('title' => 'Activity Log', 'autoOpen' => false, 'modal' => true, 'width' => 720, 'maxWidth' => 720, 'maxHeight' => 1000),));
-        $this->widget(
-            'course.widgets.SpencerPowell.ActivityLogWidget',
-            array('id' => 'spencerPowell')
-        );
-        $this->endWidget('zii.widgets.jui.CJuiDialog');
-        ?>
-    </div>
-    <div class="box-sidebar one">
-        <h3>Course Evaluations</h3>
-        <p>Please click the button below to access the pre-course and post-course surveys. Participation is anonymous.
-            Please complete each survey at the appropriate time.</p>
-        <p><a href="https://survey.vovici.com/se.ashx?s=4C32B0216020938B" target="_blank" class="button">Pre-Course Survey</a></p>
-        <p><a href="https://survey.vovici.com/se.ashx?s=4C32B0216020938B" target="_blank" class="button">Post-Course Survey</a></p>
-    </div>
-
-   </div>
 
 <div class="column-wide"><h2 class="flowers"><?php echo t($course->title); ?></h2>
 
@@ -61,9 +33,8 @@ foreach (array(
 </ol>
 
 <h4>Course Content</h4>
+<p>
 
-                <ul class="modules">
-                    <li>
                         <a href="#lesson-1-slide-1" data-fancybox-group="lesson-1" class="teal lesson-1 button">&rarr; &rarr; Start Course &larr; &larr;</a>
                         <a href="#lesson-1-slide-2" data-fancybox-group="lesson-1" class="hide lesson-1"></a>
                         <a href="#lesson-1-slide-3" data-fancybox-group="lesson-1" class="hide lesson-1"></a>
@@ -74,8 +45,7 @@ foreach (array(
                         <a href="#lesson-1-slide-8" data-fancybox-group="lesson-1" class="hide lesson-1"></a>
                         <a href="#lesson-1-slide-9" data-fancybox-group="lesson-1" class="hide lesson-1"></a>
                         <a href="#lesson-1-slide-10" data-fancybox-group="lesson-1" class="hide lesson-1"></a>
-                    </li>
-                </ul>
+</p>
    </div>
 
 
