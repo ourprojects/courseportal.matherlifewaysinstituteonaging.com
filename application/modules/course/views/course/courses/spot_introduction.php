@@ -70,12 +70,9 @@ class="button">Download Certificate</a>
 alt="Image">
 </div>
 <div class="box-sidebar one">
-<h3>Facilitator: Ellen Ziegemeier, MA</h3>
+<h3>Facilitator: Sherrie All PhD</h3>
 
-<p>Ms. Ziegemeier has been facilitating online courses for Mather LifeWays Institute on Aging since 2004. She
-earned her Masters in Anthropology, and has worked locally and abroad - Latin America and South America for
-various aging services. She is fluent in English and Spanish, and has a strong passion for caregiver
-training.</p>
+<p>Fake TextFake TextFake TextFake TextFake TextFake TextFake TextFake TextFake TextFake TextFake TextFake TextFake TextFake TextFake TextFake TextFake TextFake TextFake TextFake TextFake TextFake TextFake TextFake TextFake TextFake TextFake TextFake TextFake TextFake TextFake Text</p>
 
 <p>
 <a href="" class="button">Contact Facilitator</a>
@@ -116,6 +113,7 @@ id="facilitator">
 </ol>
 
 <h4>Course Content</h4>
+<p>Please click the button below to begin the course. This course consist of videos, handouts/downlaods, comprehension quetions, forum postings and text content.</p>
 <ul class="modules">
 <li>
 <a href="#lesson-1-slide-1" data-fancybox-group="lesson-1" class="teal lesson-1 button">Start Course</a> <a href="#lesson-1-slide-2" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-3" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-4" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-5" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-6" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-7" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-8" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-9" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-10" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-11" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a
@@ -151,34 +149,33 @@ href="#lesson-1-slide-12" data-fancybox-group="lesson-1" class="hide lesson-1"><
 <div class="content">
 <h2 class="flowers"><?php echo t($course->title); ?></h2>
 <hr />
-<img src="<?php echo $this->getImagesUrl('msml/154418413.png'); ?>" alt="image">
-<h4>Developers</h4>
-<p>This educational program was jointly developed by:</p>
-<h5>
-<a href="http://matherlifewaysinstituteonaging.com" target="_blank">Mather LifeWays Institute on Aging</a>
-</h5>
-<p>Mather LifeWays Institute on Aging creates Ways to Age Well for older adults by conducting translational research and education for professionals who serve them.</p>
-<h5>
-<a href="http://www.alz.org" target="_blank">Alzheimer's Association ‐ Greater Illinois Chapter</a>
-</h5>
-<p>The Alzheimer's Association is the leading, global voluntary health organization in Alzheimer's care and support, and the largest private, nonprofit funder of Alzheimer's research.</p>
-<h4>Use of Information</h4>
-<p>Any person is hereby authorized to view the information available from this guide for informational purposes only. No part of the information on this guide can be redistributed, copied, or reproduced without prior written consent of Mather LifeWays Institute on Aging.</p>
-<h4>Copyright</h4>
-<p>Information and materials of Mather LifeWays Institute on Aging included in its guides are protected by the copyright laws of the United States and international treaties.</p>
+
+<p>Welcome to the course! We are pleased you have decided to join us. Please contact your facilitator if you experience any difficulties or need help. Thank you!</p>
+
 </div>
 <div class="buttons">
 <a href="javascript:;" class="button right" onclick="$.fancybox.next();">Start Course &raquo;</a>
 </div>
 </div>
+
+
 <div id="lesson-1-slide-2" class="course-slide">
 <div class="content">
 <h2 class="flowers">Welcome</h2>
 <hr />
-<img src="<?php echo $this->getImagesUrl('msml/135545925.png'); ?>" alt="image">
-<p>We are delighted that you are interested in MSML Online. This five‐part online course is intended to help family members of someone in the early stages of memory loss to meet the challenges they face now and in the future. Research evaluation has shown that participation in this online course increases family members’ knowledge and improves coping skills with respect to their relatives’ memory and behavior changes.</p>
-<p>MSML Online is primarily intended to educate families with a relative who has been diagnosed with the early stages of Alzheimer's disease or a related dementia. Families with a relative who has not yet been diagnosed with one of these conditions may also benefit from participation. Individuals and families facing the later stages of dementia should be directed to programs that better suit their needs. Likewise, persons with memory loss should be encouraged to attend education and support programs specifically suited to them.</p>
-<p>It is our experience that this course is essential for your success in acquiring knowledge and coping skills.</p>
+
+<h4>Overview of the following topics:</h4>
+<ul>
+<li><h5>Brain Health Now and Later</h5></li>
+<li><h5>Dementia and Cognitive Reserve</h5></li>
+<li><h5>Brain Plasticity</h5></li>
+<li><h5>Peak Performance</h5></li>
+</ul>
+
+<h5>Introduction to Course Format</h5>
+<h5>Memory Exercise</h5>
+<h5>Goal Setting</h5>
+
 </div>
 <div class="buttons">
 <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;Back</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">Next&nbsp;&raquo; </a>
@@ -186,38 +183,20 @@ href="#lesson-1-slide-12" data-fancybox-group="lesson-1" class="hide lesson-1"><
 </div>
 <div id="lesson-1-slide-3" class="course-slide">
 <div class="content">
-<h2 class="flowers">Media Storm</h2>
-<hr />
-<p>Filmmaker-photographer couple Julie Winokur and Ed Kashi were busy pursuing their careers and raising two children when Winokur's 83-year-old father, Herbie, became too infirm to care for himself.</p>
-<div id="video" style="width: 400px;">
-<div style="height: 340px;">
-<script type="text/javascript" src="http://mediastorm.com/player/embed.php?id=e5178ce9beaabc886268&w=400&h=340&amp;lang=none"></script>
-</div>
-<div style="padding: 10px; font-family: Helvetica, Arial, sans-serif; font-size: 12px; line-height: 16px; color: #999999; background-color: #000000;">
-Millions of middle-aged Americans are caring for their children as well as their aging parents. When filmmaker-photographer pair Julie Winokur and Ed Kashi took in Winokur's 83-year-old father, they decided to document their own story. See the project at <a href="http://mediastorm.com/publication/the-sandwich-generation" target="_blank" style="color: #0083c5;">http://mediastorm.com/publication/the-sandwich-generation</a>
-</div>
-</div>
+<p>Video 1 here</p>
+
+
+
 </div>
 <div class="buttons">
 <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;Back</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">Next&nbsp;&raquo; </a>
 </div>
 </div>
+
 <div id="lesson-1-slide-4" class="course-slide">
 <div class="content">
-<h2 class="flowers">Course Overview</h2>
-<hr />
-<p>The course is divided into five Each module is approximately two to three hours. Modules build upon each other, so it is recommended that the agenda be followed as prescribed.</p>
-<p>Module One ‐ Overview of Memory Loss and Related Symptoms, is an introduction of class leaders and participants. Discussion of the medical aspects of memory loss, causes of memory loss, the need for a medical evaluation, drug treatments, and the current state of research.</p>
-<p>Module Two ‐ Communication Strategies, is an overview of communication changes typical in early memory loss. Familiarize participants with general principles for maintaining communication with a person experiencing early memory loss.</p>
-<p>Module Three ‐ Making Decisions, addresses practical issues in everyday life such as driving a car, handling health and financial decisions, or managing household tasks.</p>
-<p>Module Four ‐ Planning for the Future, addresses a number of ways to prepare for changes that are likely to occur over the course of progressive memory loss. The need for legal and financial planning and other community resources are covered.</p>
-<p>Module Five ‐ Effective Ways of Coping and Caring, addresses how to involve the person with memory loss in a variety of activities and discusses ways for family members to take care of themselves.</p>
-<h4>Companion Book</h4>
-<p>
-<a href="http://www.amazon.com/Alzheimers-Early-Stages-Friends-Caregivers/dp/0897933974" target="_blank">Alzheimer’s Early Stages: First steps for family, friends and caregivers.</a>
-</p>
-<p>We recommend you read this book while participating in MSML Online. Recommended chapters at the start of the course reinforce the course content.</p>
-<img src="<?php echo $this->getImagesUrl('msml/logo04.jpg'); ?>" alt="image">
+<p>Video 2 here</p>
+
 </div>
 <div class="buttons">
 <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;Back</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">Next&nbsp;&raquo; </a>
@@ -225,11 +204,9 @@ Millions of middle-aged Americans are caring for their children as well as their
 </div>
 <div id="lesson-1-slide-5" class="course-slide">
 <div class="content">
-<h2 class="flowers">Course Components</h2>
-<hr />
-<img src="<?php echo $this->getImagesUrl('msml/153539296.png'); ?>" alt="image">
-<p>It is important to note that every effort has been made to include accurate information, but sometimes health care professionals have differing opinions. Also, future scientific advances may make some of this information outdated. The developers of this course will make periodic revisions as needed. We want to encourage participants to address their specific concerns with licensed professionals. We can offer general information and guidance for participants to seek out solutions to their unique challenges.</p>
-<p>This program was developed as an overview for families on what to expect as early memory loss progresses. Each module is meant to provide basic information only. Following this course, you may wish to locate content experts who can address specific issues such as legal and financial planning.</p>
+
+<p>Video 3 here</p>
+
 </div>
 <div class="buttons">
 <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;Back</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">Next&nbsp;&raquo; </a>
@@ -237,24 +214,9 @@ Millions of middle-aged Americans are caring for their children as well as their
 </div>
 <div id="lesson-1-slide-6" class="course-slide">
 <div class="content">
-<h2 class="flowers">Course Effectiveness</h2>
-<hr />
-<p>MSML Online has undergone numerous revisions. The program it is based on, MSML, went through several formal evaluations to demonstrate its effectiveness.</p>
-<p>Research evaluation was conducted among more than 200 participants in the original program. In one study, good outcomes were reported in terms of increased knowledge and improved coping skills at post‐course and six months later (Kuhn and Mendes de Leon, 2001). Similar positive outcomes plus improved self‐confidence were reported by another group (Kuhn and Fulton, 2004). Likewise, when the education program was implemented in nine chapters of the Alzheimer’s Association, participants reported improvements in their knowledge and coping skills.</p>
-<p>Outcome measures used in this original research included:</p>
-<ol>
-<li>A 15‐item Knowledge about Memory Loss and Care Test, (Kuhn, King, and Fulton, 2005);</li>
-<li>A 10‐item Measure of Self‐Efficacy (Fulton and Kuhn, 2004) and;</li>
-<li>The 7‐item memory sub‐scale of the Revised Memory and Behavior Problems Checklist (Teri et al., 1992).</li>
-</ol>
-<h5>References</h5>
-<div id="resources">
-<ul>
-<li>Kuhn D, Mendes de Leon, C. (2001). Evaluation of an educational intervention with relatives of persons in the early stage of Alzheimer’s disease. Research on Social Work Practice, 11, 531‐548.</li>
-<li>Kuhn D., Fulton BR. (2004). Efficacy of an educational program for relatives of persons in the early stages of Alzheimer’s disease. Journal of Gerontological Social Work, 42(3), 109‐130.</li>
-<li>Kuhn D, King SP, Fulton BF. (2005). Development of the Knowledge about Memory Loss and Care test. American Journal of Alzheimer’s Disease, 20(1):41‐49.</li>
-<li>Teri, L., Truax, P., Logsdon, R., Uomoto, J., Zarit, S., and Vilatiano, P.P. (1992). Assessment of behavioral problems in dementia: The Revised Memory and Behavior Problems Checklist. Psychology and Aging, 7, 622‐631.</li>
-</ul>
+
+<p>Video 4 here, activity log tutorial</p>
+
 </div>
 </div>
 <div class="buttons">
@@ -263,18 +225,24 @@ Millions of middle-aged Americans are caring for their children as well as their
 </div>
 <div id="lesson-1-slide-7" class="course-slide">
 <div class="content">
-<h2 class="flowers">Module 1: Overview of Memory Loss &amp; Related Symptoms</h2>
+<h2 class="flowers">Memory Strategy</h2>
 <hr />
-<img src="<?php echo $this->getImagesUrl('msml/164088989.png'); ?>" alt="image">
-<h4>Purposes</h4>
+
+<h4>Improve Memory by Improving Attention</h4>
+
 <ul>
-<li>Introduce Class Leader(s) and participants and give an overview of the course</li>
-<li>Explain major medical causes of memory loss</li>
-<li>Ensure that a medical evaluation is done to explore reasons for memory loss</li>
-<li>Explain symptoms of Alzheimer’s disease and related dementias</li>
-<li>Describe current and proposed medical treatments</li>
-<li>Describe research efforts to treat or prevent memory loss</li>
+<li>Look Up and Around</li>
+<li>Put in the Effort</li>
+<li>Stay “Present”</li>
+<li>Get your Hearing or Vision Checked</li>
 </ul>
+
+<p>
+<a href="<?php echo $this->createDownloadUrl('spencer/spencer1_memoryStrategy1.docx'); ?>"
+target="_blank" class="button">Download Handout</a>
+</p>
+
+
 </div>
 <div class="buttons">
 <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;Back</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">Next&nbsp;&raquo; </a>
