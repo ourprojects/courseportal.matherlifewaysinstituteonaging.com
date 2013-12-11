@@ -66,6 +66,9 @@ foreach (array(
 
     <p><?php echo t($course->description); ?></p>
 
+<h4>Objectives</h4>
+<ul><?php foreach ($course->objectives as $objective) echo '<li>' . t($objective->text) . '</li>';?></ul>
+
     <h4>Agenda</h4>
 
 <ol>
@@ -76,11 +79,9 @@ foreach (array(
     <li>Complete Memory and Attention Excercises, and Course Recap</li>
 </ol>
 
-    <h4>Objectives</h4>
-    <ul><?php foreach ($course->objectives as $objective) echo '<li>' . t($objective->text) . '</li>';?></ul>
                 <ul>
                     <li>
-                        <a href="#lesson-1-slide-1" data-fancybox-group="lesson-1" class="teal lesson-1 button">Start Course</a>
+                        <a href="#lesson-1-slide-1" data-fancybox-group="lesson-1" class="teal lesson-1 button">&rarr; &rarr; Start Course &larr; &larr;</a>
                         <a href="#lesson-1-slide-2" data-fancybox-group="lesson-1" class="hide lesson-1"></a>
                         <a href="#lesson-1-slide-3" data-fancybox-group="lesson-1" class="hide lesson-1"></a>
                         <a href="#lesson-1-slide-4" data-fancybox-group="lesson-1" class="hide lesson-1"></a>
