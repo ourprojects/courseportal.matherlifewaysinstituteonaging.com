@@ -190,7 +190,7 @@ href="#lesson-1-slide-12" data-fancybox-group="lesson-1" class="hide lesson-1"><
     $this->widget(
                   'ext.JWplayer.JWplayer',
                   array(
-                        'id' => 'spencer_introduction',
+                        'id' => 'course1_snip1',
                         'config' => array(
                                           'image' => $this->createDownloadUrl('videos/spencer_introduction/posterhere.png'),
                                           'width' => '540px',
@@ -224,15 +224,15 @@ href="#lesson-1-slide-12" data-fancybox-group="lesson-1" class="hide lesson-1"><
     $this->widget(
                   'ext.JWplayer.JWplayer',
                   array(
-                        'id' => 'TheSandwichGeneration',
+                        'id' => 'course1_snip2',
                         'config' => array(
-                                          'image' => $this->createDownloadUrl('videos/TheSandwichGeneration/poster.jpg'),
+                                          'image' => $this->createDownloadUrl('videos/spencer_introduction/posterhere.png'),
                                           'width' => '540px',
                                           'height' => '400px',
                                           'levels' => array(
-                                                            array('file' => $this->createDownloadUrl('videos/TheSandwichGeneration/video.m4v')),
-                                                            array('file' => $this->createDownloadUrl('videos/TheSandwichGeneration/video.webm')),
-                                                            array('file' => $this->createDownloadUrl('videos/TheSandwichGeneration/video.ogv'))
+                                                            array('file' => $this->createDownloadUrl('videos/spencer_introduction/course1_snip2.m4v')),
+                                                            array('file' => $this->createDownloadUrl('videos/spencer_introduction/course1_snip2.webm')),
+                                                            array('file' => $this->createDownloadUrl('videos/spencer_introduction/course1_snip2.ogv'))
                                                             )
                                           )
                         )
@@ -256,15 +256,15 @@ href="#lesson-1-slide-12" data-fancybox-group="lesson-1" class="hide lesson-1"><
     $this->widget(
                   'ext.JWplayer.JWplayer',
                   array(
-                        'id' => 'TheSandwichGeneration',
+                        'id' => 'course1_snip3',
                         'config' => array(
-                                          'image' => $this->createDownloadUrl('videos/TheSandwichGeneration/poster.jpg'),
+                                          'image' => $this->createDownloadUrl('videos/spencer_introduction/posterhere.png'),
                                           'width' => '540px',
                                           'height' => '400px',
                                           'levels' => array(
-                                                            array('file' => $this->createDownloadUrl('videos/TheSandwichGeneration/video.m4v')),
-                                                            array('file' => $this->createDownloadUrl('videos/TheSandwichGeneration/video.webm')),
-                                                            array('file' => $this->createDownloadUrl('videos/TheSandwichGeneration/video.ogv'))
+                                                            array('file' => $this->createDownloadUrl('videos/spencer_introduction/course1_snip3.m4v')),
+                                                            array('file' => $this->createDownloadUrl('videos/spencer_introduction/course1_snip3.webm')),
+                                                            array('file' => $this->createDownloadUrl('videos/spencer_introduction/course1_snip3.ogv'))
                                                             )
                                           )
                         )
@@ -288,15 +288,15 @@ href="#lesson-1-slide-12" data-fancybox-group="lesson-1" class="hide lesson-1"><
     $this->widget(
                   'ext.JWplayer.JWplayer',
                   array(
-                        'id' => 'TheSandwichGeneration',
+                        'id' => 'course1_snip4',
                         'config' => array(
-                                          'image' => $this->createDownloadUrl('videos/TheSandwichGeneration/poster.jpg'),
+                                          'image' => $this->createDownloadUrl('videos/spencer_introduction/posterhere.png'),
                                           'width' => '540px',
                                           'height' => '400px',
                                           'levels' => array(
-                                                            array('file' => $this->createDownloadUrl('videos/TheSandwichGeneration/video.m4v')),
-                                                            array('file' => $this->createDownloadUrl('videos/TheSandwichGeneration/video.webm')),
-                                                            array('file' => $this->createDownloadUrl('videos/TheSandwichGeneration/video.ogv'))
+                                                            array('file' => $this->createDownloadUrl('videos/spencer_introduction/course1_snip4.m4v')),
+                                                            array('file' => $this->createDownloadUrl('videos/spencer_introduction/course1_snip4.webm')),
+                                                            array('file' => $this->createDownloadUrl('videos/spencer_introduction/course1_snip4.ogv'))
                                                             )
                                           )
                         )
