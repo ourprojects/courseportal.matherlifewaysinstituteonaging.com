@@ -78,6 +78,41 @@ foreach (array(
             <a href="#lesson-2-slide-1" data-fancybox-group="lesson-2" class="teal lesson-2 button">Contact
                 Facilitator</a>
         </p>
+
+<div id="lesson-2">
+<div id="lesson-2-slide-1" class="course-slide">
+<div class="content">
+<h2 class="flowers">Contact Facilitator</h2>
+<hr/>
+<p>Please complete the form below to contact your facilitator.</p>
+
+<!--
+<div class="box-white">
+<?php /*
+    $this->widget(
+                  'ext.LDContactUsWidget.LDContactUsWidget',
+                  array(
+                        'captcha' => array(
+                                           'class' => 'ext.LDContactUsWidget.components.CUReCaptcha',
+                                           'config' => array(
+                                                             'publicKey' => Yii::app()->params['reCaptcha']['publicKey'],
+                                                             'privateKey' => Yii::app()->params['reCaptcha']['privateKey'],
+                                                             'useAjax' => true
+                                                             )
+                                           ),
+                        'options' => array(
+                                           'htmlOptions' => array('class' => 'form')
+                                           )
+                        )
+                  );
+    */    ?>
+</div>
+-->
+</div>
+<div class="buttons">
+<a href="javascript:;" class="button right" onclick="parent.jQuery.fancybox.close();"> Close </a>
+</div>
+</div>
         <img src="<?php echo $this->getImagesUrl('spencer/80608570.png'); ?>" alt="Facilitator" id="facilitator">
     </div>
 </div>
@@ -103,7 +138,6 @@ foreach (array(
     <li>Complete Memory and Attention Excercises, and Course Recap
     </li>
 </ol>
-
 
     <h4>Objectives</h4>
     <ul>
@@ -203,22 +237,20 @@ foreach (array(
         <h2 class="flowers">Brain Health</h2>
         <hr/>
 
-
-
 <div class="box-grey">
 <?php
     $this->widget(
                   'ext.JWplayer.JWplayer',
                   array(
-                        'id' => 'TheSandwichGeneration',
+                        'id' => 'spencer_introduction',
                         'config' => array(
-                                          'image' => $this->createDownloadUrl('videos/TheSandwichGeneration/poster.jpg'),
+                                          'image' => $this->createDownloadUrl('videos/spencer_introduction/poster.jpg'),
                                           'width' => '540px',
                                           'height' => '400px',
                                           'levels' => array(
-                                                            array('file' => $this->createDownloadUrl('videos/TheSandwichGeneration/course1_snip1.m4v')),
-                                                            array('file' => $this->createDownloadUrl('videos/TheSandwichGeneration/course1_snip1.mp4')),
-                                                            array('file' => $this->createDownloadUrl('videos/TheSandwichGeneration/course1_snip1.ogv'))
+                                                            array('file' => $this->createDownloadUrl('videos/spencer_introduction/course1_snip1.mp4')),
+                                                            array('file' => $this->createDownloadUrl('videos/spencer_introduction/course1_snip1.webm')),
+                                                            array('file' => $this->createDownloadUrl('videos/spencer_introduction/course1_snip1.ogv'))
                                                             )
                                           )
                         )
@@ -396,39 +428,4 @@ target="_blank" class="button">Download Excercise</a>
     </div>
 </div>
 
-<div id="lesson-2">
-    <div id="lesson-2-slide-1" class="course-slide">
-        <div class="content">
-            <h2 class="flowers">Contact Facilitator</h2>
-            <hr/>
-            <p>Please complete the form below to contact your facilitator.</p>
-
-            <!--
-            <div class="box-white">
-                <?php /*
-                $this->widget(
-                    'ext.LDContactUsWidget.LDContactUsWidget',
-                    array(
-                        'captcha' => array(
-                            'class' => 'ext.LDContactUsWidget.components.CUReCaptcha',
-                            'config' => array(
-                                'publicKey' => Yii::app()->params['reCaptcha']['publicKey'],
-                                'privateKey' => Yii::app()->params['reCaptcha']['privateKey'],
-                                'useAjax' => true
-                            )
-                        ),
-                        'options' => array(
-                            'htmlOptions' => array('class' => 'form')
-                        )
-                    )
-                );
-            */    ?>
-            </div>
--->
-        </div>
-        <div class="buttons">
-            <a href="javascript:;" class="button right" onclick="parent.jQuery.fancybox.close();"> Close </a>
-        </div>
-    </div>
-</div>
 </div>
