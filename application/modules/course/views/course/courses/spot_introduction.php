@@ -41,25 +41,7 @@ foreach (array(
         <p><a href="https://survey.vovici.com/se.ashx?s=4C32B0216020938B" target="_blank" class="button">Post-Course Survey</a></p>
     </div>
 
-    <div class="box-sidebar one">
-        <h3>Certificate of Completion</h3>
-        <p>You must complete the first four Modules before accessing your Certificate of Completion. Click the button
-            below to access your certificate where you will be able to manually add your name and date.</p>
-        <p>
-            <a href="<?php echo $this->createDownloadUrl('spencer/CertificateOfCompletion_SpencerPowell.pdf'); ?>"
-               target="_blank" class="button">Download Certificate</a>
-        </p>
-        <img src="<?php echo $this->getImagesUrl('spencer/166312138.png'); ?>" id="certificate" alt="Image">
-    </div>
-
-    <div class="box-sidebar one">
-        <h3>Facilitator: Sherrie All, PhD</h3>
-        <p>Licensed clinical neuropsychologist specializing in brain fitness, healthy aging and cognitive enhancement.
-            She is building a private practice in clinical neuropsychological assessment combined with interventions
-            aimed at enhancing cognition and promoting healthy aging.</p>
-        <img src="<?php echo $this->getImagesUrl('spencer/80608570.png'); ?>" alt="Facilitator" id="facilitator">
-    </div>
-</div>
+   </div>
 
 <div class="column-wide"><h2 class="flowers"><?php echo t($course->title); ?></h2>
 
