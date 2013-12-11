@@ -29,6 +29,26 @@
 <div id="sidebar">
 
 <div class="box-sidebar one">
+<h3>Activity Log</h3>
+<p>Please click the button below to access your personal Activity Log.</p>
+<p>
+<?php
+    echo CHtml::button('Activity Log', array('onclick' => '$("#activityLog").dialog("open")', 'class' => 'button'));
+    ?>
+</p>
+<?php
+    $this->beginWidget('zii.widgets.jui.CJuiDialog', array('id' => 'activityLog', 'options' => array('title' => 'Activity Log', 'autoOpen' => false, 'modal' => true, 'width' => 720, 'maxWidth' => 720, 'maxHeight' => 1000),));
+    $this->widget(
+                  'course.widgets.SpencerPowell.ActivityLogWidget',
+                  array('id' => 'spencerPowell')
+                  );
+    $this->endWidget('zii.widgets.jui.CJuiDialog');
+    ?>
+</div>
+
+
+
+<div class="box-sidebar one">
 <h3>Course Evaluations</h3>
 <p>Please click the button below to access the pre-course and post-course surveys. Participation is anonymous.
 Please complete each survey at the appropriate time.</p>
