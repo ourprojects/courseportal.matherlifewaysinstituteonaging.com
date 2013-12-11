@@ -9,11 +9,11 @@
                   '.lesson-2',
                   '.lesson-3',
                   '.lesson-4',
-                  '.lesson-5',) as $lesson)
+                  '.activityLog',) as $lesson)
 	$this->widget(
                   'ext.fancybox.EFancyBox',
                   array('id' => $lesson,
-                        'config' => array('width' => '720',
+                        'config' => array('width' => '1000',
                                           'height' => '1000',
                                           'arrows' => false,
                                           'autoSize' => false,
@@ -28,76 +28,15 @@
 </h1>
 </div>
 <div id="sidebar">
-<div class="box-sidebar one" style="background-color: #FFF;">
-<h3>Evaluations</h3>
-<br />
-<ul id="surveys">
-<?php
-    $this->widget(
-                  'ext.fancybox.EFancyBox',
-                  array(
-                        'id' => 'a[id^="survey_link_"]',
-                        'config' => array(
-                                          'width' => '95%',
-                                          'height' => '95%',
-                                          'arrows' => false,
-                                          'autoSize' => false,
-                                          'mouseWheel' => false,
-                                          )
-                        )
-                  );
-    foreach(array(
-                  'precourse',
-                  'postcourse') as $surveyName)
-    {
-        $survey = $this->createWidget(
-                                      'surveyor.widgets.Survey',
-                                      array(
-                                            'id' => $surveyName,
-                                            'options' => array(
-                                                               'htmlOptions' => array('style' => 'display:none;'),
-                                                               'title' => array('htmlOptions' => array('class' => 'flowers')),
-                                                               'highcharts' => array('show' => false)
-                                                               )
-                                            )
-                                      );
-        $survey->model->user_id = Yii::app()->getUser()->getId();
-        ?>
-<li>
-<a id="survey_link_<?php echo $survey->getId(); ?>" href="#survey_<?php echo $survey->getId(); ?>" title="<?php echo t($survey->model->title); ?>"><?php echo t($survey->model->title); ?> </a>
-<?php $survey->run(); ?>
-</li>
-<?php
-    }
-    ?>
-</ul>
-<br /> <img src="<?php echo $this->getImagesUrl('msml/153075496.png'); ?>" alt="image">
-</div>
+
 <div class="box-sidebar one">
-<h3>Statistics</h3>
-<br /> <img src="<?php echo $this->getImagesUrl('msml/286x352_Grafix_1in5.png'); ?>" alt="image" />
-<p>One in five caregivers report having had some degree of training, but continue to seek additional resources.</p>
-<br />
+<h3>Course Evaluations</h3>
+<p>Please click the button below to access the pre-course and post-course surveys. Participation is anonymous.
+Please complete each survey at the appropriate time.</p>
+<p><a href="https://survey.vovici.com/se.ashx?s=4C32B0216020938B" target="_blank" class="button">Pre-Course Survey</a></p>
+<p><a href="https://survey.vovici.com/se.ashx?s=4C32B0216020938B" target="_blank" class="button">Post-Course Survey</a></p>
 </div>
-<div class="box-sidebar one">
-<h3>Alzheimer's Association</h3>
-<br />
-<p>10 Early Signs and Symptoms of Alzheimer's</p>
-<p>
-<a href="https://www.alz.org/alzheimers_disease_10_signs_of_alzheimers.asp" target="_blank"><img class="block-center" src="<?php echo $this->getImagesUrl('msml/alz.png'); ?>" alt="image" /> </a>
-</p>
-<p>Memory loss that disrupts daily life may be a symptom of Alzheimer's or another dementia. Alzheimer's is a brain disease that causes a slow decline in memory, thinking and reasoning skills. There are 10 warning signs and symptoms. Every individual may experience one or more of these signs in different degrees. If you notice any of them, please see a doctor.</p>
-<br />
-</div>
-<div class="box-sidebar one">
-<h3>U.S. Dept. of Health &amp; Human Srvc.</h3>
-<p>2011 - 2012 Alzheimer's Disease Progress Report</p>
-<p>
-<a href="http://www.nia.nih.gov/alzheimers/publication/2011-2012-alzheimers-disease-progress-report" target="_blank"><img class="block-center" src="<?php echo $this->getImagesUrl('msml/adpr-front.png'); ?>" style="width: 150px; height: 95px;" alt="image" /> </a>
-</p>
-<p>A summary of Alzheimer's disease research, infrastructure, and funding supported by the NIH.</p>
-<br />
-</div>
+
 </div>
 
 <!-- start main content section here -->
@@ -109,7 +48,7 @@
 <p>
 <?php echo t($course->description); ?>
 </p>
-<h5>Independent Study / One-Year Access</h5>
+
 <h4>Objectives</h4>
 <ul>
 <?php
