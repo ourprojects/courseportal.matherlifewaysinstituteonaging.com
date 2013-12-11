@@ -214,9 +214,24 @@ href="#lesson-1-slide-12" data-fancybox-group="lesson-1" class="hide lesson-1"><
 </div>
 <div id="lesson-1-slide-6" class="course-slide">
 <div class="content">
-
-<p>Video 4 here, activity log tutorial</p>
-
+<h2 class="flowers">Course Effectiveness</h2>
+<hr />
+<p>MSML Online has undergone numerous revisions. The program it is based on, MSML, went through several formal evaluations to demonstrate its effectiveness.</p>
+<p>Research evaluation was conducted among more than 200 participants in the original program. In one study, good outcomes were reported in terms of increased knowledge and improved coping skills at post‐course and six months later (Kuhn and Mendes de Leon, 2001). Similar positive outcomes plus improved self‐confidence were reported by another group (Kuhn and Fulton, 2004). Likewise, when the education program was implemented in nine chapters of the Alzheimer’s Association, participants reported improvements in their knowledge and coping skills.</p>
+<p>Outcome measures used in this original research included:</p>
+<ol>
+<li>A 15‐item Knowledge about Memory Loss and Care Test, (Kuhn, King, and Fulton, 2005);</li>
+<li>A 10‐item Measure of Self‐Efficacy (Fulton and Kuhn, 2004) and;</li>
+<li>The 7‐item memory sub‐scale of the Revised Memory and Behavior Problems Checklist (Teri et al., 1992).</li>
+</ol>
+<h5>References</h5>
+<div id="resources">
+<ul>
+<li>Kuhn D, Mendes de Leon, C. (2001). Evaluation of an educational intervention with relatives of persons in the early stage of Alzheimer’s disease. Research on Social Work Practice, 11, 531‐548.</li>
+<li>Kuhn D., Fulton BR. (2004). Efficacy of an educational program for relatives of persons in the early stages of Alzheimer’s disease. Journal of Gerontological Social Work, 42(3), 109‐130.</li>
+<li>Kuhn D, King SP, Fulton BF. (2005). Development of the Knowledge about Memory Loss and Care test. American Journal of Alzheimer’s Disease, 20(1):41‐49.</li>
+<li>Teri, L., Truax, P., Logsdon, R., Uomoto, J., Zarit, S., and Vilatiano, P.P. (1992). Assessment of behavioral problems in dementia: The Revised Memory and Behavior Problems Checklist. Psychology and Aging, 7, 622‐631.</li>
+</ul>
 </div>
 </div>
 <div class="buttons">
@@ -225,24 +240,18 @@ href="#lesson-1-slide-12" data-fancybox-group="lesson-1" class="hide lesson-1"><
 </div>
 <div id="lesson-1-slide-7" class="course-slide">
 <div class="content">
-<h2 class="flowers">Memory Strategy</h2>
+<h2 class="flowers">Module 1: Overview of Memory Loss &amp; Related Symptoms</h2>
 <hr />
-
-<h4>Improve Memory by Improving Attention</h4>
-
+<img src="<?php echo $this->getImagesUrl('msml/164088989.png'); ?>" alt="image">
+<h4>Purposes</h4>
 <ul>
-<li>Look Up and Around</li>
-<li>Put in the Effort</li>
-<li>Stay “Present”</li>
-<li>Get your Hearing or Vision Checked</li>
+<li>Introduce Class Leader(s) and participants and give an overview of the course</li>
+<li>Explain major medical causes of memory loss</li>
+<li>Ensure that a medical evaluation is done to explore reasons for memory loss</li>
+<li>Explain symptoms of Alzheimer’s disease and related dementias</li>
+<li>Describe current and proposed medical treatments</li>
+<li>Describe research efforts to treat or prevent memory loss</li>
 </ul>
-
-<p>
-<a href="<?php echo $this->createDownloadUrl('spencer/spencer1_memoryStrategy1.docx'); ?>"
-target="_blank" class="button">Download Handout</a>
-</p>
-
-
 </div>
 <div class="buttons">
 <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;Back</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">Next&nbsp;&raquo; </a>
