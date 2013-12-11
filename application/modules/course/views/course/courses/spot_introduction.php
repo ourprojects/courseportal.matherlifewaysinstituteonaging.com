@@ -348,6 +348,8 @@ target="_blank" class="button">Download Excercise</a>
             href="javascript:;" class="button right" onclick="$.fancybox.next();">Next&nbsp;&raquo; </a>
     </div>
 </div>
+
+
 <div id="lesson-1-slide-10" class="course-slide">
     <div class="content">
         <h2 class="flowers">Course Recap</h2>
@@ -365,6 +367,5 @@ target="_blank" class="button">Download Excercise</a>
     <div class="buttons">
         <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> Complete Course</a>
     </div>
-</div>
 </div>
 </div>
