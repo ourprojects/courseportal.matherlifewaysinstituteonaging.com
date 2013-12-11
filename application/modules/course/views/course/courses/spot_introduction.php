@@ -185,6 +185,28 @@ href="#lesson-1-slide-12" data-fancybox-group="lesson-1" class="hide lesson-1"><
 <div class="content">
 <p>Video 1 here</p>
 
+<div class="box-grey">
+<?php
+    $this->widget(
+                  'ext.JWplayer.JWplayer',
+                  array(
+                        'id' => 'TheSandwichGeneration',
+                        'config' => array(
+                                          'image' => $this->createDownloadUrl('videos/TheSandwichGeneration/poster.jpg'),
+                                          'width' => '540px',
+                                          'height' => '400px',
+                                          'levels' => array(
+                                                            array('file' => $this->createDownloadUrl('videos/TheSandwichGeneration/video.m4v')),
+                                                            array('file' => $this->createDownloadUrl('videos/TheSandwichGeneration/video.webm')),
+                                                            array('file' => $this->createDownloadUrl('videos/TheSandwichGeneration/video.ogv'))
+                                                            )
+                                          )
+                        )
+                  );
+    ?>
+</div>
+
+
 
 
 </div>
@@ -197,6 +219,28 @@ href="#lesson-1-slide-12" data-fancybox-group="lesson-1" class="hide lesson-1"><
 <div class="content">
 <p>Video 2 here</p>
 
+<div class="box-grey">
+<?php
+    $this->widget(
+                  'ext.JWplayer.JWplayer',
+                  array(
+                        'id' => 'TheSandwichGeneration',
+                        'config' => array(
+                                          'image' => $this->createDownloadUrl('videos/TheSandwichGeneration/poster.jpg'),
+                                          'width' => '540px',
+                                          'height' => '400px',
+                                          'levels' => array(
+                                                            array('file' => $this->createDownloadUrl('videos/TheSandwichGeneration/video.m4v')),
+                                                            array('file' => $this->createDownloadUrl('videos/TheSandwichGeneration/video.webm')),
+                                                            array('file' => $this->createDownloadUrl('videos/TheSandwichGeneration/video.ogv'))
+                                                            )
+                                          )
+                        )
+                  );
+    ?>
+</div>
+
+
 </div>
 <div class="buttons">
 <a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;Back</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">Next&nbsp;&raquo; </a>
@@ -206,6 +250,28 @@ href="#lesson-1-slide-12" data-fancybox-group="lesson-1" class="hide lesson-1"><
 <div class="content">
 
 <p>Video 3 here</p>
+
+<div class="box-grey">
+<?php
+    $this->widget(
+                  'ext.JWplayer.JWplayer',
+                  array(
+                        'id' => 'TheSandwichGeneration',
+                        'config' => array(
+                                          'image' => $this->createDownloadUrl('videos/TheSandwichGeneration/poster.jpg'),
+                                          'width' => '540px',
+                                          'height' => '400px',
+                                          'levels' => array(
+                                                            array('file' => $this->createDownloadUrl('videos/TheSandwichGeneration/video.m4v')),
+                                                            array('file' => $this->createDownloadUrl('videos/TheSandwichGeneration/video.webm')),
+                                                            array('file' => $this->createDownloadUrl('videos/TheSandwichGeneration/video.ogv'))
+                                                            )
+                                          )
+                        )
+                  );
+    ?>
+</div>
+
 
 </div>
 <div class="buttons">
@@ -217,6 +283,28 @@ href="#lesson-1-slide-12" data-fancybox-group="lesson-1" class="hide lesson-1"><
 
 <p> Video 4 here, activity log tutorial</p>
 
+<div class="box-grey">
+<?php
+    $this->widget(
+                  'ext.JWplayer.JWplayer',
+                  array(
+                        'id' => 'TheSandwichGeneration',
+                        'config' => array(
+                                          'image' => $this->createDownloadUrl('videos/TheSandwichGeneration/poster.jpg'),
+                                          'width' => '540px',
+                                          'height' => '400px',
+                                          'levels' => array(
+                                                            array('file' => $this->createDownloadUrl('videos/TheSandwichGeneration/video.m4v')),
+                                                            array('file' => $this->createDownloadUrl('videos/TheSandwichGeneration/video.webm')),
+                                                            array('file' => $this->createDownloadUrl('videos/TheSandwichGeneration/video.ogv'))
+                                                            )
+                                          )
+                        )
+                  );
+    ?>
+</div>
+
+
 
 </div>
 <div class="buttons">
@@ -226,6 +314,7 @@ href="#lesson-1-slide-12" data-fancybox-group="lesson-1" class="hide lesson-1"><
 <div id="lesson-1-slide-7" class="course-slide">
 <div class="content">
 <h2 class="flowers">Memory Strategy</h2>
+<hr/>
 <h4>Improve Memory by Improving Attention</h4>
 
 <ul>
@@ -334,7 +423,8 @@ target="_blank" class="button">Download Excercise</a>
 
 </div>
 <div class="buttons">
-<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;Back</a> <a href="javascript:;" class="button right" onclick="$.fancybox.next();">Next&nbsp;&raquo; </a>
+<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;Back</a>
+<a href="#" onclick="parent.jQuery.fancybox.close();" class="button left">Complete Course</a>
 </div>
 </div>
 </div>
