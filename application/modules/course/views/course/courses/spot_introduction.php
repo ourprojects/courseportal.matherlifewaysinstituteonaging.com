@@ -74,11 +74,6 @@ foreach (array(
             She is building a private practice in clinical neuropsychological assessment combined with interventions
             aimed at enhancing cognition and promoting healthy aging.</p>
 
-        <p>
-            <a href="#lesson-2-slide-1" data-fancybox-group="lesson-2" class="teal lesson-2 button">Contact
-                Facilitator</a>
-        </p>
-
         <img src="<?php echo $this->getImagesUrl('spencer/80608570.png'); ?>" alt="Facilitator" id="facilitator">
     </div>
 </div>
@@ -129,9 +124,7 @@ foreach (array(
                 </ul>
 
    </div>
-<div id="course" class="hide">
-<?php $clientScript->registerScript('question-answer-handler', "$('.course-slide .question').change(function() {" . "if($(this).find('select').val() == '1') {" . "$(this).find('.right-answer').removeClass('hide');" . "$(this).find('.wrong-answer').addClass('hide');" . "} else {" . "$(this).find('.right-answer').addClass('hide');" . "$(this).find('.wrong-answer').removeClass('hide');" . "}" . "});"); ?>
-</div>
+
 
 
 
@@ -145,24 +138,6 @@ foreach (array(
         <h4>Introduction Course</h4>
         <p>Welcome to the course! We are pleased you have decided to join us. Please contact your facilitator if you
             experience any difficulties or need help. Thank you!</p>
-
-<!--
-        <div id="question1" class="question">
-            <p style="text-align: center;">
-                <b>Have you taken the pre-course evaluation yet?</b> <br/>
-                <select style="text-align: center;">
-                    <option selected="selected" value="select">Select</option>
-                    <option value="1">Yes</option>
-                    <option value="0">No</option>
-                </select>
-            </p>
-            <p class="right-answer hide">Great! Thank you! Please continue.</p>
-
-            <p class="wrong-answer hide">
-                No Problem! Please click here</a> to participate.
-            </p>
-        </div>
--->
 
     </div>
     <div class="buttons">
