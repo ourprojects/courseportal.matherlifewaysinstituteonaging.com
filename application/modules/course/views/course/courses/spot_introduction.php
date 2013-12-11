@@ -190,15 +190,15 @@ href="#lesson-1-slide-12" data-fancybox-group="lesson-1" class="hide lesson-1"><
     $this->widget(
                   'ext.JWplayer.JWplayer',
                   array(
-                        'id' => 'spencer',
+                        'id' => 'spencer_introduction',
                         'config' => array(
-                                          'image' => $this->createDownloadUrl('videos/spencer/posterhere.png'),
+                                          'image' => $this->createDownloadUrl('videos/spencer_introduction/posterhere.png'),
                                           'width' => '540px',
                                           'height' => '400px',
                                           'levels' => array(
-                                                            array('file' => $this->createDownloadUrl('videos/course1_snip1/video.m4v')),
-                                                            array('file' => $this->createDownloadUrl('videos/course1_snip1/video.webm')),
-                                                            array('file' => $this->createDownloadUrl('videos/course1_snip1/video.ogv'))
+                                                            array('file' => $this->createDownloadUrl('videos/spencer_introduction/course1_snip1.m4v')),
+                                                            array('file' => $this->createDownloadUrl('videos/spencer_introduction/course1_snip1.webm')),
+                                                            array('file' => $this->createDownloadUrl('videos/spencer_introduction/course1_snip1.ogv'))
                                                             )
                                           )
                         )
