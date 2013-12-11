@@ -78,7 +78,7 @@ foreach (array(
 
     <h4>Objectives</h4>
     <ul><?php foreach ($course->objectives as $objective) echo '<li>' . t($objective->text) . '</li>';?></ul>
-                <ul class="modules">
+                <ul>
                     <li>
                         <a href="#lesson-1-slide-1" data-fancybox-group="lesson-1" class="teal lesson-1 button">Start Course</a>
                         <a href="#lesson-1-slide-2" data-fancybox-group="lesson-1" class="hide lesson-1"></a>
@@ -97,11 +97,11 @@ foreach (array(
 <!-- Course Starts here -->
 
 <div id="lesson-1">
-<div id="lesson-1-slide-1" class="course-slide"><div class="content"><h2 class="flowers"><?php echo t($course->title); ?></h2>
+<div id="lesson-1-slide-1" class="course-slide">
+<div class="content">
+<h2 class="flowers"><?php echo t($course->title); ?></h2>
 <hr/>
-<img src="<?php echo $this->getImagesUrl('spencer/134203608.png'); ?>" alt="image">
 
-<h4>Introduction Course</h4>
 <p>Welcome to the course! We are pleased you have decided to join us. Please contact your facilitator if you experience any difficulties or need help. Thank you!</p>
 
 </div>
