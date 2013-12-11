@@ -12,11 +12,8 @@ foreach (array(
 }
 ?>
 
-<div class="small-masthead"
-     style="background-image: url(<?php echo $this->getImagesUrl('spencer/126945521r.jpeg'); ?>);">
-    <h1 class="bottom">
-        <?php echo t($course->title); ?>
-    </h1>
+<div class="small-masthead" style="background-image: url(<?php echo $this->getImagesUrl('spencer/126945521r.jpeg'); ?>);">
+    <h1 class="bottom"><?php echo t($course->title); ?></h1>
 </div>
 
 <div id="sidebar">
@@ -65,36 +62,22 @@ foreach (array(
     </div>
 </div>
 
-<div class="column-wide">
-    <h2 class="flowers"><?php echo t($course->title); ?></h2>
+<div class="column-wide"><h2 class="flowers"><?php echo t($course->title); ?></h2>
 
-    <p>
-        <?php echo t($course->description); ?>
-    </p>
+    <p><?php echo t($course->description); ?></p>
 
     <h4>Agenda</h4>
 
 <ol>
-    <li>Discuss Brain Health and Dementia
-    </li>
-    <li>Discuss Cognitive Reserve
-    </li>
-    <li>Discuss Brain Performance
-    </li>
-    <li>Review the Activity Log
-    </li>
-    <li>Complete Memory and Attention Excercises, and Course Recap
-    </li>
+    <li>Discuss Brain Health and Dementia</li>
+    <li>Discuss Cognitive Reserve</li>
+    <li>Discuss Brain Performance</li>
+    <li>Review the Activity Log</li>
+    <li>Complete Memory and Attention Excercises, and Course Recap</li>
 </ol>
 
     <h4>Objectives</h4>
-    <ul>
-        <?php
-        foreach ($course->objectives as $objective)
-            echo '<li>' . t($objective->text) . '</li>';
-        ?>
-    </ul>
-
+    <ul><?php foreach ($course->objectives as $objective) echo '<li>' . t($objective->text) . '</li>';?></ul>
                 <ul class="modules">
                     <li>
                         <a href="#lesson-1-slide-1" data-fancybox-group="lesson-1" class="teal lesson-1 button">Start Course</a>
@@ -124,16 +107,5 @@ foreach (array(
 </div>
 <div class="buttons"><a href="javascript:;" class="button right" onclick="$.fancybox.next();">Start Course &raquo;</a></div>
 </div>
+<div>
 
-<div id="lesson-1-slide-10" class="course-slide"><div class="content"><h2 class="flowers">Course Recap</h2>
-<hr/>
-<p>Thank you so much for particiatping in this course. Please contact your facilitator if you have any suggestions or recommednations on how we can make this course better.
-</p>
-
-<p>Please download the final handout below and submit your completed form back to your factiliator via email.</p>
-<p><a href="<?php echo $this->createDownloadUrl('spencer/recap.docx'); ?>" target="_blank" class="button">Download Excercise</a></p>
-
-</div>
-<div class="buttons"><a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> Complete Course</a></div>
-</div>
-</div>
