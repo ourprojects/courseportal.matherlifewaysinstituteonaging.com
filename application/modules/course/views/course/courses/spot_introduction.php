@@ -22,9 +22,7 @@ foreach (array(
 <div id="sidebar">
     <div class="box-sidebar one">
         <h3>Activity Log</h3>
-
         <p>Please click the button below to access your personal Activity Log.</p>
-
         <p>
             <?php
             echo CHtml::button('Activity Log', array('onclick' => '$("#activityLog").dialog("open")', 'class' => 'button'));
@@ -41,39 +39,28 @@ foreach (array(
     </div>
     <div class="box-sidebar one">
         <h3>Course Evaluations</h3>
-
         <p>Please click the button below to access the pre-course and post-course surveys. Participation is anonymous.
             Please complete each survey at the appropriate time.</p>
-
-        <p>
-            <a href="https://survey.vovici.com/se.ashx?s=4C32B0216020938B" target="_blank" class="button">Pre-Course
-                Survey</a>
-        </p>
-
-        <p>
-            <a href="https://survey.vovici.com/se.ashx?s=4C32B0216020938B" target="_blank" class="button">Post-Course
-                Survey</a>
-        </p>
+        <p><a href="https://survey.vovici.com/se.ashx?s=4C32B0216020938B" target="_blank" class="button">Pre-Course Survey</a></p>
+        <p><a href="https://survey.vovici.com/se.ashx?s=4C32B0216020938B" target="_blank" class="button">Post-Course Survey</a></p>
     </div>
+
     <div class="box-sidebar one">
         <h3>Certificate of Completion</h3>
-
         <p>You must complete the first four Modules before accessing your Certificate of Completion. Click the button
             below to access your certificate where you will be able to manually add your name and date.</p>
-
         <p>
             <a href="<?php echo $this->createDownloadUrl('spencer/CertificateOfCompletion_SpencerPowell.pdf'); ?>"
                target="_blank" class="button">Download Certificate</a>
         </p>
         <img src="<?php echo $this->getImagesUrl('spencer/166312138.png'); ?>" id="certificate" alt="Image">
     </div>
+
     <div class="box-sidebar one">
         <h3>Facilitator: Sherrie All, PhD</h3>
-
         <p>Licensed clinical neuropsychologist specializing in brain fitness, healthy aging and cognitive enhancement.
             She is building a private practice in clinical neuropsychological assessment combined with interventions
             aimed at enhancing cognition and promoting healthy aging.</p>
-
         <img src="<?php echo $this->getImagesUrl('spencer/80608570.png'); ?>" alt="Facilitator" id="facilitator">
     </div>
 </div>
@@ -124,8 +111,6 @@ foreach (array(
                 </ul>
 
    </div>
-
-
 
 <!-- Course Starts -->
 <div id="lesson-1">
@@ -179,29 +164,6 @@ Overview of the following topics:
 
 <div id="lesson-1-slide-3" class="course-slide">
 <div class="content">
-<h2 class="flowers">Brain Health</h2>
-<hr/>
-
-<div class="box-grey">
-<?php
-    $this->widget(
-                  'ext.JWplayer.JWplayer',
-                  array(
-                        'id' => 'spencer_introduction',
-                        'config' => array(
-                                          'image' => $this->createDownloadUrl('videos/spencer_introduction/poster.jpg'),
-                                          'width' => '540px',
-                                          'height' => '400px',
-                                          'levels' => array(
-                                                            array('file' => $this->createDownloadUrl('videos/spencer_introduction/course1_snip1.mp4')),
-                                                            array('file' => $this->createDownloadUrl('videos/spencer_introduction/course1_snip1.webm')),
-                                                            array('file' => $this->createDownloadUrl('videos/spencer_introduction/course1_snip1.ogv'))
-                                                            )
-                                          )
-                        )
-                  );
-    ?>
-</div>
 
 
 </div>
@@ -214,8 +176,8 @@ href="javascript:;" class="button right" onclick="$.fancybox.next();"> Next&nbsp
 
 <div id="lesson-1-slide-4" class="course-slide">
 <div class="content">
-<h2 class="flowers">Cognitive Reserve</h2>
-<hr/>
+
+
 
 <p>video 2 here</p>
 
@@ -228,8 +190,6 @@ href="javascript:;" class="button right" onclick="$.fancybox.next();">Next&nbsp;
 </div>
 <div id="lesson-1-slide-5" class="course-slide">
 <div class="content">
-<h2 class="flowers">Peak Performance</h2>
-<hr/>
 <p>video 3 here</p>
 
 
@@ -243,8 +203,6 @@ href="javascript:;" class="button right" onclick="$.fancybox.next();">Next&nbsp;
 
 <div id="lesson-1-slide-6" class="course-slide">
 <div class="content">
-<h2 class="flowers">Activity Log</h2>
-<hr/>
 
 <p>Video 4 here, activity log example</p>
 
@@ -255,6 +213,8 @@ href="javascript:;" class="button right" onclick="$.fancybox.next();">Next&nbsp;
 href="javascript:;" class="button right" onclick="$.fancybox.next();">Next&nbsp;&raquo; </a>
 </div>
 </div>
+
+
 <div id="lesson-1-slide-7" class="course-slide">
 <div class="content">
 <h2 class="flowers">Memory Strategy</h2>
@@ -280,6 +240,8 @@ target="_blank" class="button">Download Handout</a>
 href="javascript:;" class="button right" onclick="$.fancybox.next();">Next&nbsp;&raquo; </a>
 </div>
 </div>
+
+
 <div id="lesson-1-slide-8" class="course-slide">
 <div class="content">
 <h2 class="flowers">Improving Attention</h2>
@@ -325,6 +287,8 @@ target="_blank" class="button">Download Excercise</a>
 href="javascript:;" class="button right" onclick="$.fancybox.next();">Next&nbsp;&raquo; </a>
 </div>
 </div>
+
+
 <div id="lesson-1-slide-9" class="course-slide">
 <div class="content">
 <h2 class="flowers">Weeky Goal Steps</h2>
@@ -348,10 +312,8 @@ target="_blank" class="button">Download Excercise</a>
 </p>
 
 </div>
-<div class="buttons">
-<a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;Back</a><a
-href="javascript:;" class="button right" onclick="$.fancybox.next();">Next&nbsp;&raquo; </a>
-</div>
+<div class="buttons"><a href="javascript:;" class="button left" onclick="$.fancybox.prev();">&laquo;&nbsp;Back</a><a
+href="javascript:;" class="button right" onclick="$.fancybox.next();">Next&nbsp;&raquo; </a></div>
 </div>
 
 
