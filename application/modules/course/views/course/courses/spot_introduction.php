@@ -79,18 +79,6 @@ foreach (array(
                 Facilitator</a>
         </p>
 
-<div id="lesson-2">
-<div id="lesson-2-slide-1" class="course-slide">
-<div class="content">
-<h2 class="flowers">Contact Facilitator</h2>
-<hr/>
-<p>Please complete the form below to contact your facilitator.</p>
-
-</div>
-<div class="buttons">
-<a href="javascript:;" class="button right" onclick="parent.jQuery.fancybox.close();"> Close </a>
-</div>
-</div>
         <img src="<?php echo $this->getImagesUrl('spencer/80608570.png'); ?>" alt="Facilitator" id="facilitator">
     </div>
 </div>
@@ -143,6 +131,10 @@ foreach (array(
    </div>
 <div id="course" class="hide">
 <?php $clientScript->registerScript('question-answer-handler', "$('.course-slide .question').change(function() {" . "if($(this).find('select').val() == '1') {" . "$(this).find('.right-answer').removeClass('hide');" . "$(this).find('.wrong-answer').addClass('hide');" . "} else {" . "$(this).find('.right-answer').addClass('hide');" . "$(this).find('.wrong-answer').removeClass('hide');" . "}" . "});"); ?>
+</div>
+
+
+
 <div id="lesson-1">
 <div id="lesson-1-slide-1" class="course-slide">
     <div class="content">
@@ -167,8 +159,7 @@ foreach (array(
             <p class="right-answer hide">Great! Thank you! Please continue.</p>
 
             <p class="wrong-answer hide">
-                No Problem! Please <a href="location.href('http://www.vovici.com/home_index.aspx" target="_blank">click
-                    here</a> to participate.
+                No Problem! Please click here</a> to participate.
             </p>
         </div>
 -->
@@ -395,7 +386,6 @@ on how we can make this course better.
 <a href="<?php echo $this->createDownloadUrl('spencer/recap.docx'); ?>"
 target="_blank" class="button">Download Excercise</a>
 </p>
-
     </div>
     <div class="buttons">
         <a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> Complete Course</a>
