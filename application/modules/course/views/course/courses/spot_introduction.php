@@ -6,7 +6,6 @@ $clientScript->registerCssFile($this->getStylesUrl('course.css'));
 
 foreach (array(
              '.lesson-1',
-             '.lesson-2',
              '.activityLog') as $lesson) {
     $this->widget('ext.fancybox.EFancyBox', array('id' => $lesson, 'config' => array('width' => '1000px', 'height' => '1000px', 'arrows' => false, 'autoSize' => false, 'mouseWheel' => false)));
 }
@@ -81,7 +80,7 @@ foreach (array(
 
 <h4>Course Content</h4>
 
-                <ul id="modules">
+                <ul class="modules">
                     <li>
                         <a href="#lesson-1-slide-1" data-fancybox-group="lesson-1" class="teal lesson-1 button">&rarr; &rarr; Start Course &larr; &larr;</a>
                         <a href="#lesson-1-slide-2" data-fancybox-group="lesson-1" class="hide lesson-1"></a>
