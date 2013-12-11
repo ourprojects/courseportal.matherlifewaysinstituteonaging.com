@@ -56,6 +56,35 @@ Please complete each survey at the appropriate time.</p>
 <p><a href="https://survey.vovici.com/se.ashx?s=4C32B0216020938B" target="_blank" class="button">Post-Course Survey</a></p>
 </div>
 
+<div class="box-sidebar one">
+<h3>Certificate of Completion</h3>
+
+<p>Click the button below to access your certificate once you have successfully completed the module. You will
+be able to manually add your name, date, and course title.</p>
+
+<p>
+<a href="<?php echo $this->createDownloadUrl('CourseCompletionCertificate.pdf'); ?>" target="_blank"
+class="button">Download Certificate</a>
+</p>
+<img src="<?php echo $this->getImagesUrl('spencer/166312138.png'); ?>" id="certificate"
+alt="Image">
+</div>
+<div class="box-sidebar one">
+<h3>Facilitator: Ellen Ziegemeier, MA</h3>
+
+<p>Ms. Ziegemeier has been facilitating online courses for Mather LifeWays Institute on Aging since 2004. She
+earned her Masters in Anthropology, and has worked locally and abroad - Latin America and South America for
+various aging services. She is fluent in English and Spanish, and has a strong passion for caregiver
+training.</p>
+
+<p>
+<a href="#" target="_blank" class="button">Contact Facilitator</a>
+</p>
+<img src="<?php echo $this->getImagesUrl('spencer/80608570.png'); ?>" alt="Facilitator"
+id="facilitator">
+</div>
+
+
 </div>
 
 <!-- start main content section here -->
