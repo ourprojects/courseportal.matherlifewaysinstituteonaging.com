@@ -80,19 +80,6 @@ $clientScript->registerCssFile($this->getStylesUrl('homeUser.css'));
         positioned to help conduct pilot studies that measure the impact on both working caregivers and the bottom line
         for interested corporations.{/t}</p>
 
-    <h2 class="flowers top-pad">{t}Pedagogy{/t}</h2>
-
-    <p>{t}Effective online instruction depends on learning experiences appropriately designed and facilitated by
-        knowledgeable facilitators. Because learners have different learning styles or a combination of styles, our
-        web-based training has been design using activities that address their modes of learning in order to provide
-        significant experiences for each course user.{/t}</p>
-
-    <p> {t}Institution Wide Content Management - 25%{/t}<br/>
-        {t}Online Course Delivery - 25%{/t}<br/>
-        {t}Targeted Collaboration - 50%{/t} </p>
-    <img id="pie-chart" class="block center" height="300" src="<?php echo $this->getImagesUrl('home-chart.png'); ?>"
-         alt="{t}Pie chart{/t}"/>
-
     <h2 class="flowers top-pad">The Sandwich Generation - by Media Storm</h2>
 
     <p>{t}Filmmaker and photographer couple Julie Winokur and Ed Kashi were busy pursuing their careers and raising two
