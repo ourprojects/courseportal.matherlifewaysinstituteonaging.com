@@ -6,8 +6,7 @@ $this->breadcrumbs = array('{t}Admin{/t}');
 <div class="small-masthead" style="background-image: url(<?php echo $this->getImagesUrl('159325162.png'); ?>);">
 	<h1 class="bottom">{t}Administrator{/t}</h1>
 </div>
-<div class="column-wide" id="categories">
-	<h2 class="flowers">{t}Administrator{/t}</h2>
+<div id="single-column" id="categories">
 	<p>{t}This Administrator panel gives users within the group "Administrator" the ability to manage this course portal and various interfaces via these listed panels:{/t}</p>
 	<h4>{t}Controls and Configurations{/t}</h4>
 	<div class="box-white">
