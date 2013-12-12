@@ -608,6 +608,7 @@ div.breadcrumbs span {
 
 #single-column {
     padding: 20px 50px;
+    min-height: 1000px;
 }
 
 .column-half {

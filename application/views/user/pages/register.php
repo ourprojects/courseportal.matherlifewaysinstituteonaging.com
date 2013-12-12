@@ -8,7 +8,7 @@
     <ol>
         <li>{t}Complete the fields below.{/t}</li>
         <li>{t}Check your email. You will be sent a verification email to authenticate your email address.{/t}</li>
-        <li>{t}That's all! You're done.{/t}</li>
+        <li>{t}Login and participate.{/t}</li>
     </ol>
 
 		<?php echo $this->renderPartial('forms/register_form', $models); ?>
