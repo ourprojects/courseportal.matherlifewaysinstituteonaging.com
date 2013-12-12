@@ -5,9 +5,11 @@
 </div>
 
 <div id="single-column">
-	<p>{t}Complete the fields below to register. You will be sent a verification email to authenticate your email address.{/t}</p>
-
-	<p>{t}If you work at one of the following organizations, you will be required to use your employee email address to register:{/t}</p>
+    <ol>
+        <li>{t}Complete the fields below.{/t}</li>
+        <li>{t}Check your email. You will be sent a verification email to authenticate your email address.{/t}</li>
+        <li>{t}That's all! You're done.{/t}</li>
+    </ol>
 
 		<?php echo $this->renderPartial('forms/register_form', $models); ?>
 
