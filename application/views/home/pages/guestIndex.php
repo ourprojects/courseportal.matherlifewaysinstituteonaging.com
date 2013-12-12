@@ -2,7 +2,6 @@
 
 $clientScript = Yii::app()->getClientScript();
 $clientScript->registerCssFile($this->getStylesUrl('homeGuest.css'));
-$clientScript->registerCssFile($this->getStylesUrl('tutorial.css'));
 $clientScript->registerScriptFile($this->getScriptsUrl('jquery.cycle.all.js'), CClientScript::POS_HEAD);
 $clientScript->registerScript('customers_cycle', "$('#customers').cycle();");
 
@@ -45,8 +44,8 @@ $this->widget(
 <div id="sidebar">
     <div class="box-sidebar zero">
         <a href="<?php echo $this->createUrl('user/register'); ?>">{t}Register{/t} </a>
+        <a href="<?php echo $this->createUrl('user/login'); ?>" class="teal">{t}Login{/t} </a>
         <a href="<?php echo $this->createUrl('home/contact'); ?>" class="teal">{t}Contact Us{/t} </a>
-        <a href="<?php echo $this->createUrl('home/login'); ?>" class="teal">{t}Login{/t} </a>
         <!--
         <a href="#slide-1" data-fancybox-group="open-tutorial" class="teal open-tutorial"> {t}Login{/t} </a>
         <a href="#slide-2" data-fancybox-group="open-tutorial" class="hide open-tutorial"></a>
