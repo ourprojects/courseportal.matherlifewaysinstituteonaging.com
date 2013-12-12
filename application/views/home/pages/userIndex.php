@@ -28,40 +28,14 @@ $clientScript->registerCssFile($this->getStylesUrl('homeUser.css'));
     </div>
 
     <div class="box-sidebar one">
-        <h3>{t}Caregiver Needs &amp; Resources{/t}</h3>
-        <h5 style="text-align: center;">{t}Survey of Working Caregiver Needs and Resources{/t}</h5>
-
-        <p>{t}Currently, 39% of U.S. adults are caregivers, up from 30% in 2010. Nearly two‐thirds of family caregivers
-            are employed full or part‐time. As the U.S. population ages and medical advances save and extend more lives,
-            the numbers of employees with eldercare responsibilities is on the rise...{/t}</p>
+        <h3>{t}Resources{/t}</h3>
 
         <p>
-            <img class="block center" src="<?php echo $this->getImagesUrl('174280723.png'); ?>" alt="Image">
-        </p>
-
-        <p>
-            {t}<strong>Prepared by Mather LifeWays Institute on Aging - August, 2013</strong>{/t}
-        </p>
-
-        <p>
-            <a href="http://www.matherlifewaysinstituteonaging.com/wp-content/uploads/2013/08/Survey-of-Working-Caregiver-Needs-and-Resources.pdf"
-               target="_blank">{t}Survey of Working Caregiver Needs and Resources{/t}</a>
+            <a href="http://www.matherlifewaysinstituteonaging.com/wp-content/uploads/2013/08/Survey-of-Working-Caregiver-Needs-and-Resources.pdf" target="_blank">{t}Survey of Working Caregiver Needs and Resources{/t}</a>
+            <a href="http://www.matherlifewaysinstituteonaging.com/wp-content/uploads/2012/03/eLearning-Maturing-Technology.pdf" class="pdf" target="_blank">{t}e-Learning: Maturing Technology Brings Balance &amp; Possibilities to Nursing Education{/t}</a>
+            <a href="http://www.matherlifewaysinstituteonaging.com/wp-content/uploads/2012/03/How-eLearning-Can-Reduce-Expenses-and-Improve-Staff-Performance.pdf" class="pdf" target="_blank">{t}The Bottom Line: How e-Learning Can Reduce Expenses and Improve Staff Performance{/t}</a>
         </p>
     </div>
-
-
-    <div class="box-sidebar one">
-        <h3>{t}White papers{/t}</h3>
-
-        <p>
-            <a href="http://www.matherlifewaysinstituteonaging.com/wp-content/uploads/2012/03/eLearning-Maturing-Technology.pdf"
-               class="pdf" target="_blank">{t}e-Learning: Maturing Technology Brings Balance &amp; Possibilities to
-                Nursing Education{/t} </a> <a
-                href="http://www.matherlifewaysinstituteonaging.com/wp-content/uploads/2012/03/How-eLearning-Can-Reduce-Expenses-and-Improve-Staff-Performance.pdf"
-                class="pdf" target="_blank">{t}The Bottom Line: How e-Learning Can Reduce Expenses and Improve Staff
-                Performance{/t} </a></p>
-    </div>
-
 
 </div>
 <div class="column-wide">
