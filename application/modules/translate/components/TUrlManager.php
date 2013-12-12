@@ -94,8 +94,14 @@ class TUrlManager extends CUrlManager
 			$language = Yii::app()->getLocale()->getLanguageID($language);
 		}
 
+		// Check if the language is a Yii accepted language. If not, assume it is part of the route being requested and use the application language as a default
+		if(!$translator->isYiiAcceptedLocale($language))
+		{
+			$route = $language.'/'.$route;
+			$language = $translator->genericLocale ? Yii::app()->getLocale()->getLanguageID(Yii::app()->getLanguage()) : Yii::app()->getLanguage();
+		}
 		// If we should enforce accepted languages only and the language is not acceptable set it to the application's default language.
-		if($translator->forceAcceptedLanguage && !$translator->isAcceptedLanguage($language))
+		else if($translator->forceAcceptedLanguage && !$translator->isAcceptedLanguage($language))
 		{
 			$language = $translator->genericLocale ? Yii::app()->getLocale()->getLanguageID(Yii::app()->getLanguage()) : Yii::app()->getLanguage();
 		}
@@ -106,10 +112,6 @@ class TUrlManager extends CUrlManager
 		// Check that the URL contained the correct language GET parameter. If not redirect to the same URL with language GET parameter inserted.
 		if(!isset($_GET[$translator->languageVarName]) || $_GET[$translator->languageVarName] !== $language)
 		{
-			if(isset($_GET[$translator->languageVarName]))
-			{
-				$route = $_GET[$translator->languageVarName].'/'.$route;
-			}
 			$request->redirect(
 					Yii::app()->createUrl($route, array_merge($_GET, array($translator->languageVarName => $language))),
 					true,
