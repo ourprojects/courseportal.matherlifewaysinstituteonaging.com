@@ -7,6 +7,6 @@
     <p>{t}Please enter your username or email address below to have your activation email sent to you again. You must already be registered to receive this email.{/t}</p>
         <?php echo $this->renderPartial('forms/username_form', $models); ?>
     <p>
-{t}Please click <?php echo CHtml::link('here', $this->createUrl('register')); ?> if you still need to register.{/t}
+{t}Please click{/t} <?php echo CHtml::link('{t}here{/t}', $this->createUrl('register')); ?> {t}if you still need to register.{/t}
     </p>
 </div>
