@@ -3,7 +3,8 @@
 	<h1 class="bottom">{t}Contact Us{/t}</h1>
 </div>
 <div id="single-column">
-		<?php 
+<p>{t}Please complete the form below to contact us. You will receive a response within approximately 24 hours.{/t}</p>
+		<?php
 		$this->widget(
 			'ext.LDContactUsWidget.LDContactUsWidget',
 			array(
