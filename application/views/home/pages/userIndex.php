@@ -31,7 +31,7 @@ $clientScript->registerCssFile($this->getStylesUrl('homeUser.css'));
         <h3>{t}Resources{/t}</h3>
 
         <p>
-            <a href="http://www.matherlifewaysinstituteonaging.com/wp-content/uploads/2013/08/Survey-of-Working-Caregiver-Needs-and-Resources.pdf" target="_blank">{t}Survey of Working Caregiver Needs and Resources{/t}</a>
+            <a href="http://www.matherlifewaysinstituteonaging.com/wp-content/uploads/2013/08/Survey-of-Working-Caregiver-Needs-and-Resources.pdf" class="pdf" target="_blank">{t}Survey of Working Caregiver Needs and Resources{/t}</a>
             <a href="http://www.matherlifewaysinstituteonaging.com/wp-content/uploads/2012/03/eLearning-Maturing-Technology.pdf" class="pdf" target="_blank">{t}e-Learning: Maturing Technology Brings Balance &amp; Possibilities to Nursing Education{/t}</a>
             <a href="http://www.matherlifewaysinstituteonaging.com/wp-content/uploads/2012/03/How-eLearning-Can-Reduce-Expenses-and-Improve-Staff-Performance.pdf" class="pdf" target="_blank">{t}The Bottom Line: How e-Learning Can Reduce Expenses and Improve Staff Performance{/t}</a>
         </p>
@@ -54,7 +54,7 @@ $clientScript->registerCssFile($this->getStylesUrl('homeUser.css'));
         positioned to help conduct pilot studies that measure the impact on both working caregivers and the bottom line
         for interested corporations.{/t}</p>
 
-    <h2 class="flowers top-pad">The Sandwich Generation - by Media Storm</h2>
+    <h2 class="flowers top-pad">The Sandwich Generation</h2>
 
     <p>{t}Filmmaker and photographer couple Julie Winokur and Ed Kashi were busy pursuing their careers and raising two
         children when Winokurs 83-year-old father, Herbie, became too infirm to care for himself. At that moment they
@@ -69,8 +69,8 @@ $clientScript->registerCssFile($this->getStylesUrl('homeUser.css'));
                 'id' => 'TheSandwichGeneration',
                 'config' => array(
                     'image' => $this->createDownloadUrl('videos/TheSandwichGeneration/poster.jpg'),
-                    'width' => '540px',
-                    'height' => '400px',
+                    'width' => '240px',
+                    'height' => '178px',
                     'levels' => array(
                         array('file' => $this->createDownloadUrl('videos/TheSandwichGeneration/video.m4v')),
                         array('file' => $this->createDownloadUrl('videos/TheSandwichGeneration/video.webm')),
