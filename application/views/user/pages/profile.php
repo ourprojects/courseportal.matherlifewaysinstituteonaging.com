@@ -24,9 +24,9 @@ $this->widget(
         important geographical data, so we have better information when updating course content.{/t}</p>
     <br/>
 
-
+    <div class="box-white">
         <?php echo $this->renderPartial('forms/profile_form', array('CPUser' => $CPUser, 'Avatar' => $Avatar)); ?>
-   
+   </div>
     <div class="box-white">
         <p>{t}Your agreements{/t}</p>
         <br/>
