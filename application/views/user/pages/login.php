@@ -3,7 +3,7 @@
 <div class="small-masthead" style="background-image: url(<?php echo $this->getImagesUrl('header-login.png'); ?>);">
 	<h1 class="bottom">{t}Login{/t}</h1>
 </div>
-<div class="single-column" style="min-height: 1000px;">
+<div id="single-column" style="min-height: 1000px;">
 	<p>{t}Please complete the form below to login.{/t}</p>
 		<p>
 			<?php echo $this->renderPartial('forms/login_form', array('Login' => $model)); ?>
