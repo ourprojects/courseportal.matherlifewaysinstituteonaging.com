@@ -1,9 +1,9 @@
 <?php $this->breadcrumbs = array('{t}Login{/t}'); ?>
 
-<div class="small-masthead" style="background-image: url(<?php echo $this->getImagesUrl('header-login.png'); ?>);" style="min-height: 1000px;">
+<div class="small-masthead" style="background-image: url(<?php echo $this->getImagesUrl('header-login.png'); ?>);">
 	<h1 class="bottom">{t}Login{/t}</h1>
 </div>
-<div class="column-wide">
+<div class="column-wide" style="min-height: 1000px;">
 	<p>{t}Please complete the form below to login.{/t}</p>
 		<p>
 			<?php echo $this->renderPartial('forms/login_form', array('Login' => $model)); ?>
