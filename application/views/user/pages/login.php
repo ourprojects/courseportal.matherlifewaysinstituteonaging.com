@@ -1,6 +1,6 @@
 <?php $this->breadcrumbs = array('{t}Login{/t}'); ?>
 
-<div class="small-masthead" style="background-image: url(<?php echo $this->getImagesUrl('header-login.png'); ?>);">
+<div class="small-masthead" style="background-image: url(<?php echo $this->getImagesUrl('header-login.png'); ?>);" style="min-height: 1000px;">
 	<h1 class="bottom">{t}Login{/t}</h1>
 </div>
 <div class="column-wide">
