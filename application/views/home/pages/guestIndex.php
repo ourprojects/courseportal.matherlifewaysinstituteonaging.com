@@ -45,9 +45,12 @@ $this->widget(
 <div id="sidebar">
     <div class="box-sidebar zero">
         <a href="<?php echo $this->createUrl('user/register'); ?>">{t}Register{/t} </a>
-        <a href="<?php echo $this->createUrl('home/contact'); ?>" class="teal">{t}Request Information{/t} </a>
-        <a href="#slide-1" data-fancybox-group="open-tutorial" class="teal open-tutorial"> {t}Free Webinar{/t} </a>
+        <a href="<?php echo $this->createUrl('home/contact'); ?>" class="teal">{t}Contact Us{/t} </a>
+        <a href="<?php echo $this->createUrl('home/login'); ?>" class="teal">{t}Login{/t} </a>
+        <!--
+        <a href="#slide-1" data-fancybox-group="open-tutorial" class="teal open-tutorial"> {t}Login{/t} </a>
         <a href="#slide-2" data-fancybox-group="open-tutorial" class="hide open-tutorial"></a>
+        -->
     </div>
     <div class="box-sidebar one">
         <h3>{t}Our Clients{/t}</h3>
@@ -63,7 +66,7 @@ $this->widget(
                     src="<?php echo $this->getImagesUrl('customers/mather.png'); ?>" alt="Mather Lifeways"/> </a>
         </div>
     </div>
-   
+
     <div class="box-sidebar two">
         <h3>{t}Approved Courses{/t}</h3>
         <p style="font-weight: bold;">{t}EACC has approved certain courses for PDH credit.{/t}</p>
