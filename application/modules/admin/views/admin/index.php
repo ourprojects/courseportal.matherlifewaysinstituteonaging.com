@@ -27,7 +27,7 @@ $this->breadcrumbs = array('{t}Admin{/t}');
 	<div class="box-white">
 		<h5>{t}phpBB{/t}</h5>
 		<p>{t}phpBB is a free flat-forum bulletin board software solution that can be used to stay in touch with a group of people or can power your entire website. With an extensive database of user-created modifications and styles database containing hundreds of style and image packages to customize your board, you can create a very unique forum in minutes.{/t}</p>
-		<a href="<?php echo PhpbbModule::getInstance()->getACPUrl(); ?>" class="button">{t}phpBB Administration Control Panel{/t}</a>
+		<a href="<?php echo PhpbbModule::getInstance()->getACPUrl(); ?>" class="button">{t}Admin cPanel{/t}</a>
 	</div>
 	<div class="box-white">
 		<h5>{t}Users{/t}</h5>
@@ -42,6 +42,6 @@ $this->breadcrumbs = array('{t}Admin{/t}');
 	<div class="box-white">
 		<h5>{t}HostMySite.com cPanel{/t}</h5>
 		<p>{t}HostMySite is a division of Hosting.com, a leader in enterprise hosting solutions such as Cloud Hosting, Dedicated Hosting, Disaster Recovery, and Business Continuity Services. Hosting.com owns and operates its own data centers and networks, employs more than 325 employees, and has been financially stable and profitable since its inception in 1997. Our passion for customer service and our carrier-class resources and facilities are what enable us to offer enterprise class service at affordable small business prices on HostMySite.{/t}</p>
-		<a href="https://my.hostmysite.com/single.html" class="button">{t}HostMySite Control Panel{/t}</a>
+		<a href="https://my.hostmysite.com/single.html" class="button">{t}Admin cPanel{/t}</a>
 	</div>
 </div>
