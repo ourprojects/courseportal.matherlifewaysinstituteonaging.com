@@ -63,16 +63,7 @@ $this->widget(
                     src="<?php echo $this->getImagesUrl('customers/mather.png'); ?>" alt="Mather Lifeways"/> </a>
         </div>
     </div>
-    <div class="box-sidebar one">
-        <h3>{t}National Caregiver Month{/t}</h3>
-
-        <p style="font-weight: bold; text-align: center;">{t}November is National Caregivers Month.{/t}</p>
-
-        <p>{t}This month is a time for us to acknowledge the important role that caregivers play every day in caring for
-            their sick, elderly, or disabled family members or friends. These caregivers include many members of today’s
-            workforce, who need support and information to better cope with their caregiving duties.{/t}</p>
-        <img src="<?php echo $this->getImagesUrl('168813140.png'); ?>" alt="{t}Caregiver Month{/t}">
-    </div>
+   
     <div class="box-sidebar two">
         <h3>{t}Approved Courses{/t}</h3>
         <p style="font-weight: bold;">{t}EACC has approved certain courses for PDH credit.{/t}</p>
@@ -86,16 +77,6 @@ $this->widget(
                                                                   src="<?php echo $this->getImagesUrl('EAPlogo.png'); ?>"
                                                                   alt="EAP Assocation Logo"></a></p>
     </div>
-    <div class="box-sidebar one">
-        <h3>{t}Aging in Action{/t}</h3>
-
-        <p>{t}<a href="http://twitter.com/aginginaction" target="_blank">Aging in Action</a> is Mather LifeWays
-            Institute on Aging's monthly e-newsletter and blog containing the latest research news in the field of
-            aging.{/t}</p>
-
-        <p><img style="display:block; margin:0 auto;" src="<?php echo $this->getImagesUrl('twitter-bird.png'); ?>"/></p>
-    </div>
-
 
     <!-- sidebar for Participating locations here -->
     <!-- sidebar on Resent Research here -->
