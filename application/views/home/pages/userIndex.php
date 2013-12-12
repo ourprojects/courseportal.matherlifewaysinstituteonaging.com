@@ -27,6 +27,34 @@ $clientScript->registerCssFile($this->getStylesUrl('homeUser.css'));
         </ul>
     </div>
 
+<div class="box-sidebar one">
+<h3>The Sandwich Generation</h3>
+
+<p>{t}Filmmaker and photographer couple Julie Winokur and Ed Kashi were busy pursuing their careers and raising two
+children when Winokurs 83-year-old father, Herbie, became too infirm to care for himself. At that moment they
+joined some twenty million other Americans who make up the sandwich generation, those who find themselves
+responsible for the care of both their children and their aging parents.{/t}</p>
+
+<?php
+    $this->widget(
+                  'ext.JWplayer.JWplayer',
+                  array(
+                        'id' => 'TheSandwichGeneration',
+                        'config' => array(
+                                          'image' => $this->createDownloadUrl('videos/TheSandwichGeneration/poster.jpg'),
+                                          'width' => '240px',
+                                          'height' => '178px',
+                                          'levels' => array(
+                                                            array('file' => $this->createDownloadUrl('videos/TheSandwichGeneration/video.m4v')),
+                                                            array('file' => $this->createDownloadUrl('videos/TheSandwichGeneration/video.webm')),
+                                                            array('file' => $this->createDownloadUrl('videos/TheSandwichGeneration/video.ogv'))
+                                                            )
+                                          )
+                        )
+                  );
+    ?>
+</div>
+
     <div class="box-sidebar one">
         <h3>{t}Resources{/t}</h3>
 
@@ -38,7 +66,7 @@ $clientScript->registerCssFile($this->getStylesUrl('homeUser.css'));
     </div>
 
 </div>
-<div class="column-wide">
+<div class="column-wide" style="min-height: 1000px;">
     <h2 class="flowers">{t}Employers and Employees{/t}</h2>
 
     <p>{t}We are uniquely positioned to provide corporations with innovative programs and products, all thoughtfully
@@ -53,32 +81,4 @@ $clientScript->registerCssFile($this->getStylesUrl('homeUser.css'));
         incorporate key topics for working caregivers into current training programs. In addition, we are well
         positioned to help conduct pilot studies that measure the impact on both working caregivers and the bottom line
         for interested corporations.{/t}</p>
-
-    <h2 class="flowers top-pad">The Sandwich Generation</h2>
-
-    <p>{t}Filmmaker and photographer couple Julie Winokur and Ed Kashi were busy pursuing their careers and raising two
-        children when Winokurs 83-year-old father, Herbie, became too infirm to care for himself. At that moment they
-        joined some twenty million other Americans who make up the sandwich generation, those who find themselves
-        responsible for the care of both their children and their aging parents.{/t}</p>
-
-    <div class="box-grey">
-        <?php
-        $this->widget(
-            'ext.JWplayer.JWplayer',
-            array(
-                'id' => 'TheSandwichGeneration',
-                'config' => array(
-                    'image' => $this->createDownloadUrl('videos/TheSandwichGeneration/poster.jpg'),
-                    'width' => '240px',
-                    'height' => '178px',
-                    'levels' => array(
-                        array('file' => $this->createDownloadUrl('videos/TheSandwichGeneration/video.m4v')),
-                        array('file' => $this->createDownloadUrl('videos/TheSandwichGeneration/video.webm')),
-                        array('file' => $this->createDownloadUrl('videos/TheSandwichGeneration/video.ogv'))
-                    )
-                )
-            )
-        );
-        ?>
-    </div>
 </div>
