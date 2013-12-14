@@ -108,6 +108,7 @@ class ViewController extends TController
 				{
 					$data['model']->setAttribute('language_id', $languageId);
 				}
+				$data['dataProvider'] = new TActiveDataProvider($data['model'], array('criteria' => $data['model']->with('language')->getSearchCriteria(), 'virtualAttributes' => array('isReadable' => false)));
 				$gridPath = '_grid';
 				break;
 			default:
