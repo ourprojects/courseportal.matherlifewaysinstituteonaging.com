@@ -50,7 +50,7 @@ class Language extends CActiveRecord
 			'messageSourceCount' => array(self::STAT, 'MessageSource', Message::model()->tableName().'(language_id, id)'),
 			'sourceMessages' => array(self::HAS_MANY, 'MessageSource', 'language_id'),
 			'sourceMessageCount' => array(self::STAT, 'MessageSource', 'language_id'),
-			'views' => array(self::HAS_MANY, 'View', 'language_id'),
+			'views' => array(self::HAS_MANY, 'View', 'language_id', 'joinType' => 'INNER JOIN'),
 			'viewCount' => array(self::STAT, 'View', 'language_id'),
 			'viewSources' => array(self::MANY_MANY, 'ViewSource', View::model()->tableName().'(language_id, id)'),
 			'viewSourceCount' => array(self::STAT, 'ViewSource', View::model()->tableName().'(language_id, id)'),
@@ -115,6 +115,32 @@ class Language extends CActiveRecord
 		return $this;
 	}
 
+	public function missingViewTranslations($viewId = null)
+	{
+		$db = $this->getDbConnection();
+		$criteria = array(
+				'with' => array('views' => array('joinType' => 'LEFT JOIN', 'on' => $db->quoteColumnName('viewSources.id').'='.$db->quoteColumnName('views.id'))),
+				'condition' => $db->quoteColumnName('views.id').' IS NULL',
+				'together' => true
+		);
+		if(isset($this->id))
+		{
+			$criteria['condition'] .= ' AND '.$db->quoteColumnName($this->getTableAlias().'.id').'=:id';
+			$criteria['params'][':id'] = $this->id;
+		}
+		if($viewId === null)
+		{
+			$criteria['join'] = 'CROSS JOIN '.$db->quoteTableName(ViewSource::model()->tableName()).' '.$db->quoteTableName('viewSources');
+		}
+		else
+		{
+			$criteria['params'] = array(':view_id' => $viewId);
+			$criteria['join'] = 'JOIN '.$db->quoteTableName(ViewSource::model()->tableName()).' '.$db->quoteTableName('viewSources').' ON '.$db->quoteColumnName('viewSources.id').'=:view_id';
+		}
+		$this->getDbCriteria()->mergeWith($criteria);
+		return $this;
+	}
+	
 	public function getName()
 	{
 		if(!isset($this->_name) && isset($this->code))

@@ -4,7 +4,7 @@ $this->widget('zii.widgets.grid.CGridView',
 		array(
 			'id' => $id,
 			'filter' => $model,
-			'dataProvider' => $model->with('language')->search(),
+			'dataProvider' => isset($dataProvider) ? $dataProvider : $model->with('language')->search(),
 			'selectableRows' => 0,
 			'columns' => array(
 				'id',
@@ -18,6 +18,11 @@ $this->widget('zii.widgets.grid.CGridView',
 					'sortable' => false
 				),
 				'createdDate',
+				array(
+						'name' => 'isReadable',
+						'type' => 'boolean',
+						'filter' => array(false => TranslateModule::t('No'), true => TranslateModule::t('Yes'))
+				),
 				array(
 					'class' => 'CButtonColumn',
 					'template' => '{view}{delete}',

@@ -6,7 +6,13 @@
 	<div id="details" class="box-white">
 		<?php $this->renderPartial('_details', array('model' => $viewSource)); ?>
 	</div>
-	<?php 
+	<div id="missingLanguages" class="box-white">
+		<h2>
+			<?php echo TranslateModule::t('Languages Missing A Translation For This Source View'); ?>
+		</h2>
+		<?php $this->actionGrid($viewSource->id, 'missingLanguage-grid'); ?>
+	</div>
+	<?php
 	$this->widget(
 			'zii.widgets.jui.CJuiTabs',
 			array(

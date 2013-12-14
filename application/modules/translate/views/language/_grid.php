@@ -8,19 +8,35 @@ $buttonConfig = array(
 	'afterDelete' => 'function(link, success, data){if(success){alert(data);$("#'.implode('").yiiGridView("update");$("#', $relatedGrids).'").yiiGridView("update");}}'
 );
 
-if(isset($messageId))
+if(isset($messageId) || isset($viewId))
 {
 	$buttonConfig['template'] = '{view}{update}{delete}';
 	$buttonConfig['buttons'] = array(
 		'update' => array(
 			'label' => TranslateModule::t('Create Translation'),
-			'url' => '$this->grid->getOwner()->createUrl("message/view", array("id" => '.$messageId.', "languageId" => $data->id))',
+			'url' => isset($messageId) ? '$this->grid->getOwner()->createUrl("message/view", array("id" => '.$messageId.', "languageId" => $data->id))' : '$this->grid->getOwner()->createUrl("view/view", array("id" => '.$viewId.', "languageId" => $data->id))',
 			'click' => 'function(){'.
 							'$("div#message-create-form").tMessageForm("open", $(this).attr("href"));'.
 							'return false;'.
 						'}'
 		)
 	);
+	if(isset($messageId))
+	{
+		$buttonConfig['buttons']['url'] = '$this->grid->getOwner()->createUrl("message/view", array("id" => '.$messageId.', "languageId" => $data->id))';
+		$buttonConfig['buttons']['click'] = 'function(){'.
+				'$("div#message-create-form").tMessageForm("open", $(this).attr("href"));'.
+				'return false;'.
+			'}';
+	}
+	else
+	{
+		$buttonConfig['buttons']['url'] = '$this->grid->getOwner()->createUrl("view/compile", array("id" => '.$viewId.', "languageId" => $data->id))';
+		$buttonConfig['buttons']['click'] = 'function(){'.
+				'$("div#view-compile-form").tViewCompileForm("open", $(this).attr("href"));'.
+				'return false;'.
+			'}';
+	}
 }
 else
 {
@@ -58,5 +74,22 @@ if(isset($messageId))
 			)
 		)
 	);
+}
+else if(isset($viewId))
+{
+	/*
+	 @ TODO 
+	 $this->renderPartial(
+		'../view/compile', 
+		array(
+			'id' => 'view-compile-form', 
+			'Message' => new Message, 
+			'MessageSource' => new MessageSource,
+			'clientOptions' => array(
+				'submitSuccess' => 'js:function($dialog, $form, data){$("#'.$id.'").yiiGridView("update");$("#'.implode('").yiiGridView("update");$("#', $relatedGrids).'").yiiGridView("update");return true;}'
+			)
+		)
+	);
+	*/
 }
 ?>

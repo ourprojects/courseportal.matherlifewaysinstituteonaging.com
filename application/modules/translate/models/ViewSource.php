@@ -11,6 +11,8 @@
  */
 class ViewSource extends CActiveRecord
 {
+	
+	private $_isReadable;
 
 	/**
 	 * Returns the static model of the specified AR class.
@@ -65,7 +67,7 @@ class ViewSource extends CActiveRecord
 			array('path', 'length', 'max' => 255),
 			array('id, path', 'unique', 'except' => 'search'),
 
-			array('id, path, messageCount, translationCount, acceptedLanguageCount, routeCount, viewCount', 'safe', 'on' => 'search'),
+			array('id, path, messageCount, translationCount, acceptedLanguageCount, routeCount, viewCount, isReadable', 'safe', 'on' => 'search'),
 		);
 	}
 
@@ -128,7 +130,36 @@ class ViewSource extends CActiveRecord
 			'messages' => TranslateModule::t('Translations'),
 			// Virtual Attributes
 			'relativePath' => TranslateModule::t('Relative Path'),
+			'isReadable' => TranslateModule::t('Readable'),
 		);
+	}
+	
+	/**
+	 * Returns whether this view source's path exists and is readable.
+	 * 
+	 * @return boolean True if this view source's path exists and is readable, false otherwise
+	 */
+	public function getIsReadable($refresh = false)
+	{
+		if($refresh || !isset($this->_isReadable))
+		{
+			$this->_isReadable = $this->getScenario() === 'search' ? null : is_readable($this->path);
+		}
+		return $this->_isReadable;
+	}
+	
+	public function setIsReadable($readable)
+	{
+		$this->_isReadable = $readable;
+	}
+	
+	public function getSearchCriteria()
+	{
+		$criteria = new CDbCriteria;
+		
+		return $criteria
+			->compare($this->getTableAlias(false, false).'.id', $this->id)
+			->compare($this->getTableAlias(false, false).'.path', $this->path, true);
 	}
 
 	/**
@@ -139,11 +170,7 @@ class ViewSource extends CActiveRecord
 	{
 		if(!isset($dataProviderConfig['criteria']))
 		{
-			$dataProviderConfig['criteria'] = new CDbCriteria;
-
-			$dataProviderConfig['criteria']
-			->compare($this->getTableAlias(false, false).'.id', $this->id)
-			->compare($this->getTableAlias(false, false).'.path', $this->path, true);
+			$dataProviderConfig['criteria'] = $this->getSearchCriteria();
 		}
 
 		return new CActiveDataProvider($this, $dataProviderConfig);

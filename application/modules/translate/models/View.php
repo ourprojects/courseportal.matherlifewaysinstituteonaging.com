@@ -13,6 +13,9 @@
  */
 class View extends CActiveRecord
 {
+	
+	private $_isReadable;
+	
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
@@ -69,7 +72,7 @@ class View extends CActiveRecord
 				'except' => 'search'
 			),
 
-			array('id, language, path, created', 'safe', 'on' => 'search'),
+			array('id, language, path, created, isReadable', 'safe', 'on' => 'search'),
 		);
 	}
 
@@ -94,6 +97,25 @@ class View extends CActiveRecord
 			'isAcceptedLanguage' => array('with' => array('acceptedLanguage' => array('joinType' => 'INNER JOIN'))),
 			'isOtherLanguage' => array('with' => array('acceptedLanguage' => array('joinType' => 'LEFT JOIN')), 'condition' => 'acceptedLanguage.id IS NULL')
 		);
+	}
+	
+	/**
+	 * Returns whether this view source's path exists and is readable.
+	 * 
+	 * @return boolean True if this view source's path exists and is readable, false otherwise
+	 */
+	public function getIsReadable($refresh = false)
+	{
+		if($refresh || !isset($this->_isReadable))
+		{
+			$this->_isReadable = $this->getScenario() === 'search' ? null : is_readable($this->path);
+		}
+		return $this->_isReadable;
+	}
+	
+	public function setIsReadable($readable)
+	{
+		$this->_isReadable = $readable;
 	}
 
 	public function getRelativePath()
@@ -135,10 +157,28 @@ class View extends CActiveRecord
 			'messages' => TranslateModule::t('Translations'),
 			// Virtual Attributes
 			'relativePath' => TranslateModule::t('Relative Path'),
-			'createdDate' => TranslateModule::t('Date Created')
+			'createdDate' => TranslateModule::t('Date Created'),
+			'isReadable' => TranslateModule::t('Readable'),
 		);
 	}
 
+	/**
+	 * Retrieves a list of models based on the current search/filter conditions.
+	 * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.
+	 */
+	public function getSearchCriteria($dataProviderConfig = array())
+	{
+			$criteria = new CDbCriteria;
+
+			$criteria
+			->compare($this->getTableAlias(false, false).'.id', $this->id)
+			->compare($this->getTableAlias(false, false).'.path', $this->path, true)
+			->compare($this->getTableAlias(false, false).'.language_id', $this->language_id, true)
+			->compare($this->getTableAlias(false, false).'.created', $this->created, true);
+
+		return $criteria;
+	}
+	
 	/**
 	 * Retrieves a list of models based on the current search/filter conditions.
 	 * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.
@@ -147,15 +187,9 @@ class View extends CActiveRecord
 	{
 		if(!isset($dataProviderConfig['criteria']))
 		{
-			$dataProviderConfig['criteria'] = new CDbCriteria;
-
-			$dataProviderConfig['criteria']
-			->compare($this->getTableAlias(false, false).'.id', $this->id)
-			->compare($this->getTableAlias(false, false).'.path', $this->path, true)
-			->compare($this->getTableAlias(false, false).'.language_id', $this->language_id, true)
-			->compare($this->getTableAlias(false, false).'.created', $this->created, true);
+			$dataProviderConfig['criteria'] = $this->getSearchCriteria();
 		}
-
+	
 		return new CActiveDataProvider($this, $dataProviderConfig);
 	}
 

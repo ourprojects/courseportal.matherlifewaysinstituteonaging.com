@@ -81,13 +81,20 @@ class ViewSourceController extends TController
 			case 'message-grid':
 				$data['relatedGrids'] = array();
 				$data['model'] = new Message('search');
-				$data['model']->with(array('views.sourceView' => array('condition' => 'sourceView.id=:id', 'params' => array(':id' => $id))))->together()->getDbCriteria()->group = 't.id, t.language_id';
+				$data['model']->with(array('viewSources' => array('condition' => 'viewSources.id=:id', 'params' => array(':id' => $id))))->together()->getDbCriteria()->group = 't.id, t.language_id';
 				$gridPath = '../message/_grid';
 				break;
 			case 'language-grid':
 				$data['relatedGrids'] = array('messageSource-grid', 'message-grid', 'view-grid');
 				$data['model'] = new Language('search');
 				$data['model']->with(array('viewSources' => array('condition' => 'viewSources.id=:id', 'params' => array(':id' => $id))))->together()->getDbCriteria()->group = 't.id';
+				$gridPath = '../language/_grid';
+				break;
+			case 'missingLanguage-grid':
+				$data['relatedGrids'] = array('language-grid', 'view-grid');
+				$data['model'] = new Language('search');
+				$data['model']->missingViewTranslations($id);
+				$data['viewId'] = $id;
 				$gridPath = '../language/_grid';
 				break;
 			case 'route-grid':
@@ -103,6 +110,7 @@ class ViewSourceController extends TController
 				{
 					$data['model']->setAttribute('id', $id);
 				}
+				$data['dataProvider'] = new TActiveDataProvider($data['model'], array('criteria' => $data['model']->getSearchCriteria(), 'virtualAttributes' => array('isReadable' => false)));
 				$gridPath = '_grid';
 				break;
 			case 'view-grid':
@@ -112,6 +120,7 @@ class ViewSourceController extends TController
 				{
 					$data['model']->setAttribute('id', $id);
 				}
+				$data['dataProvider'] = new TActiveDataProvider($data['model'], array('criteria' => $data['model']->with('language')->getSearchCriteria(), 'virtualAttributes' => array('isReadable' => false)));
 				$gridPath = '../view/_grid';
 				break;
 			default:

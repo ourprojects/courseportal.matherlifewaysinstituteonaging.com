@@ -4,13 +4,18 @@ $this->widget('zii.widgets.grid.CGridView',
 		array(
 			'id' => $id,
 			'filter' => $model,
-			'dataProvider' => $model->search(),
+			'dataProvider' => isset($dataProvider) ? $dataProvider : $model->search(),
 			'selectableRows' => 0,
 			'columns' => array(
 				'id',
 				array(
 					'name' => 'path',
 					'htmlOptions' => array('style' => 'word-wrap:break-word;word-break:break-all;'),
+				),
+				array(
+					'name' => 'isReadable',
+					'type' => 'boolean',
+					'filter' => array(false => TranslateModule::t('No'), true => TranslateModule::t('Yes'))
 				),
 				array(
 					'class' => 'CButtonColumn',

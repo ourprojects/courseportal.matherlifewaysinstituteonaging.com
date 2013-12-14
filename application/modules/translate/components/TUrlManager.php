@@ -94,14 +94,8 @@ class TUrlManager extends CUrlManager
 			$language = Yii::app()->getLocale()->getLanguageID($language);
 		}
 
-		// Check if the language is a Yii accepted language. If not, assume it is part of the route being requested and use the application language as a default
-		if(!$translator->isYiiAcceptedLocale($language))
-		{
-			$route = $language.'/'.$route;
-			$language = $translator->genericLocale ? Yii::app()->getLocale()->getLanguageID(Yii::app()->getLanguage()) : Yii::app()->getLanguage();
-		}
 		// If we should enforce accepted languages only and the language is not acceptable set it to the application's default language.
-		else if($translator->forceAcceptedLanguage && !$translator->isAcceptedLanguage($language))
+		if($translator->forceAcceptedLanguage && !$translator->isAcceptedLanguage($language))
 		{
 			$language = $translator->genericLocale ? Yii::app()->getLocale()->getLanguageID(Yii::app()->getLanguage()) : Yii::app()->getLanguage();
 		}
