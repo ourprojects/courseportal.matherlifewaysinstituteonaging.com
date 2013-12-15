@@ -259,10 +259,7 @@ class ERememberFiltersBehavior extends CModelBehavior
 				$this->getOwner()->setAttributes($_GET[$modelName]);
 				foreach($this->getOwner()->getSafeAttributeNames() as $attribute)
 				{
-					if(isset($this->getOwner()->$attribute))
-					{
-						Yii::app()->getUser()->setState($stateKeyPrefix . $attribute, $this->getOwner()->$attribute);
-					}
+					Yii::app()->getUser()->setState($stateKeyPrefix . $attribute, $this->getOwner()->$attribute);
 				}
 			}
 			else
