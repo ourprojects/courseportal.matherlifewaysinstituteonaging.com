@@ -114,28 +114,68 @@ class LDFilterRawModelDataBehavior extends CModelBehavior
 		}
 		
 		$owner = $this->getOwner();
-		$attributes = $owner->getAttributes($safeOnly ? $owner->getSafeAttributeNames() : null);
+		$attributes = array();
+		foreach(($safeOnly ? $owner->getSafeAttributeNames() : $owner->attributeNames()) as $attributeName)
+		{
+			$attributes[$attributeName] = $owner->$attributeName;
+		}
 
 		foreach($data as $rowIndex => $row)
 		{
 			foreach($attributes as $name => $value)
 			{
-				if(array_key_exists($name, $row))
+				if(isset($callbacks[$name]))
 				{
-					if(isset($callbacks[$name]))
-					{
-						if(call_user_func($callbacks[$name], $name, $value, $row) !== false)
-						{
-							continue;
-						}
-					}
-					else if(empty($value) || stripos(strval($row[$name]), strval($value)) !== false)
+					if(call_user_func($callbacks[$name], $name, $value, $row) !== false)
 					{
 						continue;
 					}
-					unset($data[$rowIndex]);
-					break;
 				}
+				else if($value === null)
+				{
+					continue;
+				}
+				
+				if(is_array($row))
+				{
+					if(array_key_exists($name, $row))
+					{
+						$rowValue = $row[$name];
+					}
+					else
+					{
+						continue;
+					}
+				}
+				else if($row instanceof CComponent)
+				{
+					if($row->canGetProperty($name))
+					{
+						$rowValue = $row->$name;
+					}
+					else
+					{
+						continue;
+					}
+				}
+				else
+				{
+					$rowValue = $row;
+				}
+
+				if(is_string($rowValue))
+				{
+					if(stripos($rowValue, strval($value)) !== false)
+					{
+						continue;
+					}
+				}
+				else if($rowValue == $value)
+				{
+					continue;
+				}
+				unset($data[$rowIndex]);
+				break;
 			}
 		}
 		
