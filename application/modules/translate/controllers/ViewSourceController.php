@@ -110,7 +110,6 @@ class ViewSourceController extends TController
 				{
 					$data['model']->setAttribute('id', $id);
 				}
-				$data['dataProvider'] = new TActiveDataProvider($data['model'], array('criteria' => $data['model']->getSearchCriteria(), 'virtualAttributes' => array('isReadable' => false)));
 				$gridPath = '_grid';
 				break;
 			case 'view-grid':
@@ -119,8 +118,8 @@ class ViewSourceController extends TController
 				if(isset($id))
 				{
 					$data['model']->setAttribute('id', $id);
+					$data['viewId'] = $id;
 				}
-				$data['dataProvider'] = new TActiveDataProvider($data['model'], array('criteria' => $data['model']->with('language')->getSearchCriteria(), 'virtualAttributes' => array('isReadable' => false)));
 				$gridPath = '../view/_grid';
 				break;
 			default:

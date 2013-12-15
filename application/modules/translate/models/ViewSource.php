@@ -38,6 +38,9 @@ class ViewSource extends CActiveRecord
 			'ERememberFiltersBehavior' => array(
 				'class' => 'ext.ERememberFiltersBehavior.ERememberFiltersBehavior',
 			),
+			'LDFilterRawModelDataBehavior' => array(
+				'class' => 'ext.LDFilterRawModelDataBehavior.LDFilterRawModelDataBehavior',
+			)
 		);
 	}
 
@@ -67,7 +70,7 @@ class ViewSource extends CActiveRecord
 			array('path', 'length', 'max' => 255),
 			array('id, path', 'unique', 'except' => 'search'),
 
-			array('id, path, messageCount, translationCount, acceptedLanguageCount, routeCount, viewCount, isReadable', 'safe', 'on' => 'search'),
+			array('id, path, isReadable', 'safe', 'on' => 'search'),
 		);
 	}
 
@@ -153,10 +156,10 @@ class ViewSource extends CActiveRecord
 		$this->_isReadable = $readable;
 	}
 	
-	public function getSearchCriteria()
+	public function getSearchCriteria($mergeCriteria = array(), $operator = 'AND')
 	{
 		$criteria = new CDbCriteria;
-		
+		$criteria->mergeWith($mergeCriteria, $operator);
 		return $criteria
 			->compare($this->getTableAlias(false, false).'.id', $this->id)
 			->compare($this->getTableAlias(false, false).'.path', $this->path, true);
@@ -166,14 +169,21 @@ class ViewSource extends CActiveRecord
 	 * Retrieves a list of models based on the current search/filter conditions.
 	 * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.
 	 */
-	public function search($dataProviderConfig = array())
+	public function search($dataProviderConfig = array(), $mergeCriteria = array(), $operator = 'AND')
 	{
-		if(!isset($dataProviderConfig['criteria']))
-		{
-			$dataProviderConfig['criteria'] = $this->getSearchCriteria();
-		}
+		$records = $this->filter(self::model()->findAll($this->getSearchCriteria($mergeCriteria, $operator)));
 
-		return new CActiveDataProvider($this, $dataProviderConfig);
+		foreach($records as $key => $record)
+		{
+			$records[$key] = array('id' => $record->id, 'path' => $record->path, 'isReadable' => $record->isReadable);
+		}
+		
+		if(!isset($dataProviderConfig['sort']))
+		{
+			$dataProviderConfig['sort'] = array('attributes' => array('id', 'path', 'isReadable'));
+		}
+		
+		return new CArrayDataProvider($records, $dataProviderConfig);
 	}
 
 	public function __toString()

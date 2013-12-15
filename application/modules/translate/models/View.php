@@ -28,7 +28,10 @@ class View extends CActiveRecord
 	
 	public function init()
 	{
-		$this->created = time();
+		if($this->getScenario() !== 'search')
+		{
+			$this->created = time();
+		}
 	}
 
 	/**
@@ -44,6 +47,9 @@ class View extends CActiveRecord
 		return array(
 			'ERememberFiltersBehavior' => array(
 				'class' => 'ext.ERememberFiltersBehavior.ERememberFiltersBehavior',
+			),
+			'LDFilterRawModelDataBehavior' => array(
+					'class' => 'ext.LDFilterRawModelDataBehavior.LDFilterRawModelDataBehavior',
 			)
 		);
 	}
@@ -58,7 +64,7 @@ class View extends CActiveRecord
 			array('id, language, path', 'required', 'except' => 'search'),
 			array('path', 'length', 'max' => 255),
 			array('language', 'length', 'max' => 3),
-			array('created', 'default', 'value' => time()),
+			array('created', 'default', 'value' => time(), 'except' => 'search'),
 			array('id, created', 'numerical', 'integerOnly' => true),
 			array('id', 'exist', 'attributeName' => 'id', 'className' => 'ViewSource', 'except' => 'search'),
 			array('id',
@@ -72,7 +78,7 @@ class View extends CActiveRecord
 				'except' => 'search'
 			),
 
-			array('id, language, path, created, isReadable', 'safe', 'on' => 'search'),
+			array('id, language, path, created, createdDate, isReadable', 'safe', 'on' => 'search'),
 		);
 	}
 
@@ -115,7 +121,7 @@ class View extends CActiveRecord
 	
 	public function setIsReadable($readable)
 	{
-		$this->_isReadable = $readable;
+		$this->_isReadable = $readable === '' ? null : $readable;
 	}
 
 	public function getRelativePath()
@@ -134,7 +140,13 @@ class View extends CActiveRecord
 	
 	public function getCreatedDate()
 	{
-		return date('Y-m-d H:i:s', $this->created);
+		return isset($this->created) ? date('Y-m-d H:i:s', $this->created) : null;
+	}
+	
+	public function setCreatedDate($date)
+	{
+		$created = empty($date) ? null : strtotime($date);
+		$this->created = $created === false || $created === -1 ? null : $created;
 	}
 
 	/**
@@ -166,31 +178,36 @@ class View extends CActiveRecord
 	 * Retrieves a list of models based on the current search/filter conditions.
 	 * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.
 	 */
-	public function getSearchCriteria($dataProviderConfig = array())
+	public function getSearchCriteria($mergeCriteria = array(), $operator = 'AND')
 	{
-			$criteria = new CDbCriteria;
-
-			$criteria
+		$criteria = new CDbCriteria;
+		$criteria->mergeWith($mergeCriteria, $operator);
+		return $criteria
 			->compare($this->getTableAlias(false, false).'.id', $this->id)
 			->compare($this->getTableAlias(false, false).'.path', $this->path, true)
-			->compare($this->getTableAlias(false, false).'.language_id', $this->language_id, true)
-			->compare($this->getTableAlias(false, false).'.created', $this->created, true);
-
-		return $criteria;
+			->compare($this->getTableAlias(false, false).'.language_id', $this->language_id)
+			->compare($this->getTableAlias(false, false).'.created', $this->created);
 	}
 	
 	/**
 	 * Retrieves a list of models based on the current search/filter conditions.
 	 * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.
 	 */
-	public function search($dataProviderConfig = array())
+	public function search($dataProviderConfig = array(), $mergeCriteria = array(), $operator = 'AND')
 	{
-		if(!isset($dataProviderConfig['criteria']))
+		$records = $this->filter(self::model()->findAll($this->getSearchCriteria($mergeCriteria, $operator)));
+
+		foreach($records as $key => $record)
 		{
-			$dataProviderConfig['criteria'] = $this->getSearchCriteria();
+			$records[$key] = array('id' => $record->id, 'path' => $record->path, 'language' => $record->language, 'language_id' => $record->language_id, 'createdDate' => $record->createdDate, 'isReadable' => $record->isReadable);
 		}
-	
-		return new CActiveDataProvider($this, $dataProviderConfig);
+		
+		if(!isset($dataProviderConfig['sort']))
+		{
+			$dataProviderConfig['sort'] = array('attributes' => array('id', 'path', 'language', 'createdDate', 'isReadable'));
+		}
+		
+		return new CArrayDataProvider($records, $dataProviderConfig);
 	}
 
 	public function __toString()

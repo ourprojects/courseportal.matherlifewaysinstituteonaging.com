@@ -140,14 +140,12 @@ class LanguageController extends TController
 				$data['relatedGrids'] = array('view-grid');
 				$data['model'] = new ViewSource('search');
 				$data['model']->with(array('languages' => array('condition' => 'languages.id=:id', 'params' => array(':id' => $id))))->together()->getDbCriteria()->group = 't.id';
-				$data['dataProvider'] = new TActiveDataProvider($data['model'], array('criteria' => $data['model']->getSearchCriteria(), 'virtualAttributes' => array('isReadable' => false)));
 				$gridPath = '../viewSource/_grid';
 				break;
 			case 'view-grid':
 				$data['relatedGrids'] = array();
 				$data['model'] = new View('search');
 				$data['model']->with(array('language' => array('condition' => 'language.id=:id', 'params' => array(':id' => $id))))->together()->getDbCriteria()->group = 't.id, t.language_id';
-				$data['dataProvider'] = new TActiveDataProvider($data['model'], array('criteria' => $data['model']->with('language')->getSearchCriteria(), 'virtualAttributes' => array('isReadable' => false)));
 				$gridPath = '../view/_grid';
 				break;
 			default:

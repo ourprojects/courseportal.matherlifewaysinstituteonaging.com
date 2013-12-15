@@ -15,7 +15,10 @@ class Message extends CActiveRecord
 	
 	public function init()
 	{
-		$this->last_modified = time();
+		if($this->getScenario() !== 'search')
+		{
+			$this->last_modified = time();
+		}
 	}
 
 	public function tableName()
@@ -36,7 +39,7 @@ class Message extends CActiveRecord
 	{
 		return array(
 			array('id, language_id, translation', 'required', 'except' => 'search'),
-			array('last_modified', 'default', 'value' => time()),
+			array('last_modified', 'default', 'value' => time(), 'except' => 'search'),
 			array('id, language_id, last_modified', 'numerical', 'integerOnly' => true),
 			array('language_id', 'exist', 'attributeName' => 'id', 'className' => 'Language', 'except' => 'search'),
 			array('id', 'exist', 'attributeName' => 'id', 'className' => 'MessageSource', 'except' => 'search'),
@@ -60,7 +63,13 @@ class Message extends CActiveRecord
 	
 	public function getLastModifiedDate()
 	{
-		return date('Y-m-d H:i:s', $this->last_modified);
+		return isset($this->last_modified) ? date('Y-m-d H:i:s', $this->last_modified) : null;
+	}
+	
+	public function setLastModifiedDate($date)
+	{
+		$last_modified = strtotime($date);
+		$this->last_modified = ($last_modified === false || $last_modified === -1 ? null : $last_modified);
 	}
 
 	public function attributeLabels()

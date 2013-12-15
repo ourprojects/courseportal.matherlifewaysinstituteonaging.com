@@ -88,7 +88,7 @@ class ViewController extends TController
 			case 'message-grid':
 				$data['relatedGrids'] = array();
 				$data['model'] = new Message('search');
-				$data['model']->with(array('views' => array('condition' => 'views.id=:id AND views.language_id=:language_id', 'params' => array(':id' => $id, ':language_id' => $languageId))))->together()->getDbCriteria()->group = 't.id, t.language_id';
+				$data['model']->with(array('viewSources.views' => array('condition' => 'views.id=:id AND views.language_id=:language_id', 'params' => array(':id' => $id, ':language_id' => $languageId))))->together()->getDbCriteria()->group = 't.id, t.language_id';
 				$gridPath = '../message/_grid';
 				break;
 			case 'route-grid':
@@ -108,7 +108,6 @@ class ViewController extends TController
 				{
 					$data['model']->setAttribute('language_id', $languageId);
 				}
-				$data['dataProvider'] = new TActiveDataProvider($data['model'], array('criteria' => $data['model']->with('language')->getSearchCriteria(), 'virtualAttributes' => array('isReadable' => false)));
 				$gridPath = '_grid';
 				break;
 			default:
