@@ -21,7 +21,7 @@
     
     ?>
 
-<div class="small-masthead" style="background-image: url(<?php echo $this->getImagesUrl('spencer/CC000596.png'); ?>);">
+<div class="small-masthead" style="background-image: url(<?php echo $this->getImagesUrl('spencer/106446137.png'); ?>);">
 <h1 class="bottom">
 <?php echo t($course->title); ?>
 </h1>
