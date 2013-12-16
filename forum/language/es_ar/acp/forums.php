@@ -51,7 +51,7 @@ $lang = array_merge($lang, array(
 	'COPY_PERMISSIONS_EXPLAIN'		=> 'Para facilitar la configuración de los permisos de tu nuevo foro podes copiar los permisos de un foro ya existente.',
 	'COPY_PERMISSIONS_ADD_EXPLAIN'	=> 'Una vez creado, el foro tendrá los mismos permisos que el seleccionado acá. Si no seleccionas ninguno, el foro creado no será visible hasta que se establezcan sus permisos.',
 	'COPY_PERMISSIONS_EDIT_EXPLAIN'	=> 'Si seleccionas copiar permisos, el foro tendrá los mismos permisos que el seleccionado. Esto sobrescribirá cualquier permiso que hayas establecido previamente con los permisos del foro seleccionado. Si no seleccionas ningún foro, se mantendrán los permisos actuales.',
-	'COPY_TO_ACL'					=> 'A su vez también podes %configurar nuevos permisos%s para este foro.',
+	'COPY_TO_ACL'					=> 'A su vez también podes configurar%s nuevos permisos%s para este foro.',
 	'CREATE_FORUM'					=> 'Crear Foro nuevo',
 
 	'DECIDE_MOVE_DELETE_CONTENT'	=> 'Borrar contenido o mover a foro',

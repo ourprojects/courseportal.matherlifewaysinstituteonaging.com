@@ -53,7 +53,7 @@ $lang = array_merge($lang, array(
 
 		<br />
 
-		<p>需要瞭解您的 phpBB3 論壇更多的權限設定和管理資訊，請參訪 <a href="http://www.phpbb.com/support/documentation/3.0/quickstart/quick_permissions.html">Chapter 1.5 of our Quick Start Guide</a>。</p>
+		<p>需要瞭解您的 phpBB3 論壇更多的權限設定和管理資訊，請參訪 <a href="https://www.phpbb.com/support/documentation/3.0/quickstart/quick_permissions.html">Chapter 1.5 of our Quick Start Guide</a>。</p>
 	',
 
 	'ACL_NEVER'				=> '從不',

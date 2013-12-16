@@ -25,10 +25,10 @@
 * viewforum.php [Spanish [Es]]
 *
 * @package language
-* @copyright (c) 2007 phpBB Group. Modified by Huan Manwe for phpbb-es.com in 2007 
+* @copyright (c) 2007 phpBB Group. Modified by Huan Manwe for phpbb-es.com in 2007
 * @author 2007-11-26 - Traducido por Huan Manwe junto con phpbb-es.com (http://www.phpbb-es.com) basado en la version argentina hecha por larveando.com.ar ).
-* @author - ImagePack made by Xoom (webmaster of http://www.muchografico.com and colaborator of http://www.phpbb-es.com) 
-* @license http://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU General Public License 
+* @author - ImagePack made by Xoom (webmaster of http://www.muchografico.com and colaborator of http://www.phpbb-es.com)
+* @license http://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU General Public License
 *
 */
 
@@ -72,10 +72,10 @@ $lang = array_merge($lang, array(
 
 	'MARK_TOPICS_READ'		=> 'Marcar temas como leídos',
 
-	'NEW_POSTS_HOT'			=> 'Mensajes nuevos [ Popular ]',   // No usado más 
-	'NEW_POSTS_LOCKED'		=> 'Mensajes nuevos [ Cerrado ]',   // No usado más 
-	'NO_NEW_POSTS_HOT'		=> 'No hay mensajes nuevos [ Popular ]',   // No usado más
-	'NO_NEW_POSTS_LOCKED'	=> 'No hay mensajes nuevos [ Cerrado ]',   // No usado más
+	'NEW_POSTS_HOT'			=> 'Mensajes nuevos [ Popular ]',
+	'NEW_POSTS_LOCKED'		=> 'Mensajes nuevos [ Cerrado ]',
+	'NO_NEW_POSTS_HOT'		=> 'No hay mensajes nuevos [ Popular ]',
+	'NO_NEW_POSTS_LOCKED'	=> 'No hay mensajes nuevos [ Cerrado ]',
 	'NO_READ_ACCESS'		=> 'No tiene los permisos requeridos para leer temas en este foro.',
 	'NO_UNREAD_POSTS_HOT'      => 'No hay mensajes sin leer [ Popular ]',
 	'NO_UNREAD_POSTS_LOCKED'   => 'No hay mensajes sin leer [ Cerrado ]',

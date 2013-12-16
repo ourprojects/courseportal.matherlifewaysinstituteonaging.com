@@ -20,16 +20,16 @@
 *
 **/
 
-/** 
+/**
 *
 * search_ignore_words [Spanish [Es]]
 *
 * @package language
 * @version $Id: groups.php,v 1.0 2007/03/18 16:22:56 merlin Exp $
-* @copyright (c) 2007 phpBB Group. Modified by Huan Manwe for phpbb-es.com in 2007 
+* @copyright (c) 2007 phpBB Group. Modified by Huan Manwe for phpbb-es.com in 2007
 * @author 2007-11-26 - Traducido por Huan Manwe junto con phpbb-es.com (http://www.phpbb-es.com) basado en la version argentina hecha por larveando.com.ar ).
-* @author - ImagePack made by Xoom (webmaster of http://www.muchografico.com and colaborator of http://www.phpbb-es.com) 
-* @license http://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU General Public License 
+* @author - ImagePack made by Xoom (webmaster of http://www.muchografico.com and colaborator of http://www.phpbb-es.com)
+* @license http://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU General Public License
 *
 */
 if (!defined('IN_PHPBB'))

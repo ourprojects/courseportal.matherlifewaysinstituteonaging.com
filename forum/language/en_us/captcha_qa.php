@@ -5,7 +5,7 @@
 *
 * @package language
 * @version $Id$
-* @copyright (c) 2009 phpBB Group
+* @copyright (c) 2009 phpBB Group, (c) Maël Soucaze
 * @license http://opensource.org/licenses/gpl-2.0.php GNU General Public License 2.0
 *
 */

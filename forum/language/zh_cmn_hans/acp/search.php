@@ -53,7 +53,7 @@ $lang = array_merge($lang, array(
 	'DELETING_INDEX_IN_PROGRESS_EXPLAIN'	=> '搜索后端正在清除索引, 这需要几分钟的时间.',
 
 	'FULLTEXT_MYSQL_INCOMPATIBLE_VERSION'	=> 'MySQL全文检索后端只能在MySQL4或更高的版本中使用.',
-	'FULLTEXT_MYSQL_NOT_MYISAM'				=> 'MySQL全文检索只能在MyISAM格式表单中使用.',
+	'FULLTEXT_MYSQL_NOT_SUPPORTED'				=> 'MySQL全文索引只能用于MyISAM或InnoDB表. 需要MySQL 5.6.4 或更新版本来在InnoDB表中全文索引.',
 	'FULLTEXT_MYSQL_TOTAL_POSTS'			=> '索引帖子总数',
 	'FULLTEXT_MYSQL_MBSTRING'				=> '支持非拉丁 UTF-8 字符使用mbstring:',
 	'FULLTEXT_MYSQL_PCRE'					=> '支持非拉丁 UTF-8 字符使用 PCRE:',

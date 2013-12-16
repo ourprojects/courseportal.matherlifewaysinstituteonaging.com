@@ -1,5 +1,5 @@
 <?php
-/** 
+/**
 *
 * common [正體中文]
 *
@@ -160,6 +160,7 @@ $lang = array_merge($lang, array(
 	'EDIT_POST'	=> '編輯文章',
 	'EMAIL'	=> 'E-mail',// EMAIL_ADDRESS 的簡寫
 	'EMAIL_ADDRESS'	=> 'E-mail 位址',
+	'EMAIL_INVALID_EMAIL'				=> '您輸入的 e-mail 位址是無效的。',
 	'EMAIL_SMTP_ERROR_RESPONSE'	=> '發送 e-mail 在 <strong>第 %1$s 行</strong> 遇到問題。回應訊息：%2$s。',
 	'EMPTY_SUBJECT'	=> '您必須為新主題指定一個標題。',
 	'EMPTY_MESSAGE_SUBJECT'	=> '您沒有輸入標題。',
@@ -390,6 +391,7 @@ $lang = array_merge($lang, array(
 	'NO_POSTS_TIME_FRAME'	=> '在選定的時段中這個主題沒有文章存在。',
 	'NO_FEED_ENABLED'			=> '在這個論壇的消息來源是不可用的。',
 	'NO_FEED'					=> '所需求的消息來源是不可用的。',
+	'NO_STYLE_DATA'				=> '無法得到風格的資料',
 	'NO_SUBJECT'	=> '沒有輸入標題',
 	'NO_SUCH_SEARCH_MODULE'	=> '指定的搜尋模組不存在。',
 	'NO_SUPPORTED_AUTH_METHODS'	=> '沒有可支援的認證方式。',
@@ -568,9 +570,11 @@ $lang = array_merge($lang, array(
 	'SUBJECT'	=> '主題',
 	'SUBMIT'	=> '送出',
 
+	'TB'				=> 'TB',
 	'TERMS_USE'	=> '使用條款',
 	'TEST_CONNECTION'	=> '連結測試',
 	'THE_TEAM'	=> '管理團隊',
+	'TIB'				=> 'TiB',
 	'TIME'	=> '時間',
 	
 	'TOO_LARGE'                  => '您輸入的值太大。',
@@ -717,6 +721,7 @@ $lang = array_merge($lang, array(
 	'WHOIS'				=> 'Whois',
 	'WHO_IS_ONLINE'	=> '誰在線上',
 	'WRONG_PASSWORD'	=> '您輸入了錯誤的密碼。',
+	'WRONG_DATA_COLOUR'			=> '您輸入的顏色值是無效的。',
 
 	'WRONG_DATA_ICQ'	=> '您輸入的數字不是一個有效的 ICQ 號碼。',
 	'WRONG_DATA_JABBER'	=> '您輸入的名字不是一個有效的 Jabber 帳號。',

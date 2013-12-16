@@ -1,8 +1,8 @@
 Subject: 版面帖子通知 - "{FORUM_NAME}"
 
-Hello {USERNAME},
+您好 {USERNAME},
 
-您收到这个通知是因为您设置了在 "{SITENAME}" 上监视版面 "{FORUM_NAME}". 这个版面上刚有人回复了主题 "{TOPIC_TITLE}". 您可以使用下面的链接查看这个主题, 在您查看这个主题前不会再有任何通知.
+您收到此通知是因为您正在浏览论坛, "{FORUM_NAME}" 在 "{SITENAME}". 此论坛收到一个新的回复在主题 "{TOPIC_TITLE}"<!-- IF AUTHOR_NAME !== '' --> 由 {AUTHOR_NAME}<!-- ENDIF --> 从您上次访问后. 您可以用下面的链接来查看最新未读回复, 在您访问该主题之前不会再发送更多的通知.
 
 {U_NEWEST_POST}
 

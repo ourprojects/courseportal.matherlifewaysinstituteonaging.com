@@ -329,11 +329,11 @@ $help = array(
 	),
 	array(
 		0 => '誰寫了這個討論區程式？',
-		1 => '這個軟體（未經修改的版本）的開發及釋出，著作版權歸於 <a href="http://www.phpbb.com/">phpBB Group</a>。遵循 GNU General Public Licence 版權宣告，可以自由使用和發佈，檢視連結以獲得更詳細的資料。'
+		1 => '這個軟體（未經修改的版本）的開發及釋出，著作版權歸於 <a href="https://www.phpbb.com/">phpBB Group</a>。遵循 GNU General Public Licence 版權宣告，可以自由使用和發佈，檢視連結以獲得更詳細的資料。'
 	),
 	array(
 		0 => '為何沒有我需要的功能？',
-		1 => '這個軟體由 phpBB Group 編寫與授權。如果您確信有必要增加的功能，或者您想要報告一個 bug，那麼請訪問 phpBB <a href="http://area51.phpbb.com/">Area51</a> 網站，在那裡您會發現相關的資源。'
+		1 => '這個軟體由 phpBB Group 編寫與授權。如果您確信有必要增加的功能，那麼請訪問 <a href="https://www.phpbb.com/ideas/">phpBB Ideas Centre</a> 網站，在那裡您可以票選已有的想法或建議新的功能。'
 	),
 	array(
 		0 => '關於這個討論區上的濫用或法律上的相關事務，我該向誰反應？',

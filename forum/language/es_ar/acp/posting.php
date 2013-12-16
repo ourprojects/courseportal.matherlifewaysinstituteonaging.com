@@ -83,7 +83,8 @@ $lang = array_merge($lang, array(
 		'NUMBER'	=> 'Cualquier serie de dígitos',
 		'EMAIL'		=> 'Una dirección de email válida',
 		'URL'		=> 'Una URL válida usando cualquier protocolo (http, ftp, etc… no puede ser usado para exploits de javascript). Si no se proporciona, se asumirá “http://” antes de la cadena dada',
-		'LOCAL_URL'	=> 'Una URL local. La URL debe ser relativa a la página del tema y no puede contener nombre de servidor o protocolo',
+		'LOCAL_URL'		=> 'Una URL local. La URL debe ser relativa a la página del tema y no puede contener nombre de servidor o protocolo, los enlaces tienen el prefijo “%s”',
+		'RELATIVE_URL'	=> 'Una URL relativa. Usted puede utilizar esto para que coincida con las partes de una URL, pero tenga cuidado: una URL completa es una URL relativa válida. Cuando se desea utilizar URLs relativas de su foro, utilice la ficha LOCAL_URL',
 		'COLOR'		=> 'Un color HTML, puede ser bien en formato numérico <samp>#FF1234</samp> o un <a href="http://www.w3.org/TR/CSS21/syndata.html#value-def-color">color CSS</a> como ser <samp>fuchsia</samp> o <samp>InactiveBorder</samp>',
 	)
 ));

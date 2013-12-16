@@ -292,7 +292,7 @@ $lang = array_merge($lang, array(
 
 // PHP info
 $lang = array_merge($lang, array(
-	'ACP_PHP_INFO_EXPLAIN'	=> '這個頁面列出了這個伺服器上所安裝的 PHP 版本資訊。它包括了已裝載模組的細節，可用的變數和預設的設定。在診斷問題時這些資訊可能會有用。請注意！某些主機商可能會因為安全理由限制顯示某些資訊。建議您不要洩露這頁的任何細節，除非在支援論壇中被 <a href="http://www.phpbb.com/about/">官方團隊成員</a> 要求提供。',
+	'ACP_PHP_INFO_EXPLAIN'	=> '這個頁面列出了這個伺服器上所安裝的 PHP 版本資訊。它包括了已裝載模組的細節，可用的變數和預設的設定。在診斷問題時這些資訊可能會有用。請注意！某些主機商可能會因為安全理由限制顯示某些資訊。建議您不要洩露這頁的任何細節，除非在支援論壇中被 <a href="https://www.phpbb.com/about/team/">官方團隊成員</a> 要求提供。',
 
 	'NO_PHPINFO_AVAILABLE'	=> '關於您的 PHP 組態的資訊無法認定，Phpinfo() 因為安全理由已經被停用。',
 ));
@@ -517,9 +517,9 @@ $lang = array_merge($lang, array(
 
 	'LOG_APPROVE_TOPIC'			=> '<strong>已核准主題</strong><br />» %s',
 	'LOG_BUMP_TOPIC'			=> '<strong>已推文主題</strong><br />» %s',
-	'LOG_DELETE_POST'			=> '<strong>已刪除文章</strong><br />» %s',
+	'LOG_DELETE_POST'			=> '<strong>已刪除文章「%1$s」，其作者是</strong><br />» %2$s',
 	'LOG_DELETE_SHADOW_TOPIC'	=> '<strong>在舊的版面上刪除已移動的主題</strong><br /> %s',
-	'LOG_DELETE_TOPIC'			=> '<strong>已刪除主題</strong><br /> %s',
+	'LOG_DELETE_TOPIC'			=> '<strong>已刪除主題「%1$s」，其作者是</strong><br />» %2$s',
 	'LOG_FORK'					=> '<strong>已複製主題</strong><br /> 從 %s',
 	'LOG_LOCK'					=> '<strong>已鎖定主題</strong><br /> %s',
 	'LOG_LOCK_POST'				=> '<strong>已鎖定文章</strong><br /> %s',
@@ -559,7 +559,7 @@ $lang = array_merge($lang, array(
 	'LOG_FORUM_ADD'							=> '<strong>已建立新的版面</strong><br />» %s',
 	'LOG_FORUM_COPIED_PERMISSIONS'			=> '<strong>已複製版面權限</strong> 自 %1$s<br />» %2$s',
 	'LOG_FORUM_DEL_FORUM'					=> '<strong>已刪除版面</strong><br />» %s',
-	'LOG_FORUM_DEL_FORUMS'					=> '<strong>已刪除版面和它的子版面/strong><br />» %s',
+	'LOG_FORUM_DEL_FORUMS'					=> '<strong>已刪除版面和它的子版面</strong><br />» %s',
 	'LOG_FORUM_DEL_MOVE_FORUMS'				=> '<strong>已刪除版面和已移動子版面</strong> 到 %1$s<br />» %2$s',
 	'LOG_FORUM_DEL_MOVE_POSTS'				=> '<strong>已刪除版面和已移動文章 </strong> 到 %1$s<br />» %2$s',
 	'LOG_FORUM_DEL_MOVE_POSTS_FORUMS'		=> '<strong>已刪除版面和它的子版面，已移動文章</strong> 到 %1$s<br />» %2$s',

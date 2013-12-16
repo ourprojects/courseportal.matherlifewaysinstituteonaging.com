@@ -40,7 +40,7 @@ if (empty($lang) || !is_array($lang))
 //
 
 $lang = array_merge($lang, array(
-	'TRANSLATION_INFO'	=> '简体中文语系由 <a href="mailto:48596@qq.com">王笑宇</a> 翻译',
+	'TRANSLATION_INFO'	=> '简体中文语系由 <a href="mailto:48596@qq.com">王笑宇</a> 维护',
 	'DIRECTION'			=> 'ltr',
 	'DATE_FORMAT'		=> '|d M Y|', // 01 Jan 2007 (with Relative days enabled)
 	'USER_LANG'			=> 'zh-cmn-hans',
@@ -101,9 +101,9 @@ $lang = array_merge($lang, array(
 	'BBCODE_GUIDE'			=> 'BBCode使用指南',
 	'BCC'					=> 'BCC',
 	'BIRTHDAYS'				=> '生日',
-	'BOARD_BAN_PERM'		=> '您被这个论坛<strong>永远</strong>封禁。<br /><br />请联络 %2$s论坛管理员3$s 以得到更多的信息。',
+	'BOARD_BAN_PERM'		=> '你已被<strong>永久</strong> 从论坛封禁.<br /><br />请联系 %2$s论坛管理员%3$s 获得更多信息.',
 	'BOARD_BAN_REASON'		=> '被封禁的原因: <strong>%s</strong>',
-	'BOARD_BAN_TIME'		=> '您在 <strong>%1$s</strong> 之前将被禁止浏览论坛。<br /><br />请联络 %2$s论坛管理员 %3$s 以得到更多信息。',
+	'BOARD_BAN_TIME'		=> '您在 <strong>%1$s</strong> 之前将被禁止浏览论坛。<br /><br />请联络 %2$s论坛管理员%3$s 以得到更多信息。',
 	'BOARD_DISABLE'			=> '很抱歉本论坛暂时关闭',
 	'BOARD_DISABLED'		=> '本论坛暂时关闭',
 	'BOARD_UNAVAILABLE'		=> '很抱歉本论坛暂时无法使用，请过几分钟再登录',
@@ -160,6 +160,7 @@ $lang = array_merge($lang, array(
 	'EDIT_POST'							=> '编辑此帖',
 	'EMAIL'								=> 'Email',
 	'EMAIL_ADDRESS'						=> 'Email 地址',
+	'EMAIL_INVALID_EMAIL'				=> '您输入的电子邮件地址是无效的.',
 	'EMAIL_SMTP_ERROR_RESPONSE'			=> '发送email遇到问题 <strong>Line %1$s</strong>。Response: %2$s',
 	'EMPTY_SUBJECT'						=> '您必须为新主题指定一个标题。',
 	'EMPTY_MESSAGE_SUBJECT'				=> '您没有输入标题.',
@@ -171,8 +172,8 @@ $lang = array_merge($lang, array(
 	'ERR_JAB_AUTH'						=> '无法通过Jabber服务器验证.',
 	'ERR_JAB_CONNECT'					=> '无法连接到Jabber服务器.',
 	'ERR_UNABLE_TO_LOGIN'				=> '登录错误。提供的用户名或密码错误。',
-	'ERR_UNWATCHING'					=> '在取消订阅的过程中发生错误.',
-	'ERR_WATCHING'						=> '在订阅的过程中发生错误.',
+	'ERR_UNWATCHING'					=> '取消订阅时发生错误.',
+	'ERR_WATCHING'						=> '订阅时发生错误.',
 	'ERR_WRONG_PATH_TO_PHPBB'			=> '输入的 phpBB 路径无效。',
 	'EXPAND_VIEW'						=> '展开视图',
 	'EXTENSION'							=> '扩展名',
@@ -297,7 +298,7 @@ $lang = array_merge($lang, array(
 	'LAST_VISIT'						=> '最后浏览',
 	'LDAP_NO_LDAP_EXTENSION'			=> 'LDAP 扩展不可用',
 	'LDAP_NO_SERVER_CONNECTION'			=> '无法连接 LDAP 服务器',
-	'LDAP_SEARCH_FAILED'            => '搜索LDAP目录时遇到错误.',
+	'LDAP_SEARCH_FAILED'            => '搜索LDAP目录时发生错误.',
 	'LEGEND'							=> '团队',
 	'LOCATION'							=> '地址',
 	'LOCK_POST'							=> '锁定帖子',
@@ -390,6 +391,7 @@ $lang = array_merge($lang, array(
 	'NO_POSTS_TIME_FRAME'		=> '在选定的时间段中没有这个主题的帖子。',
 	'NO_FEED_ENABLED'			=> 'ATOM输出尚未启用.',
 	'NO_FEED'					=> '请求的ATOM输出无效.',
+	'NO_STYLE_DATA'				=> '不能获得样式数据',
 	'NO_SUBJECT'				=> '没有输入标题',								// Used for posts having no subject defined but displayed within management pages.
 	'NO_SUCH_SEARCH_MODULE'		=> '指定的搜索模块不存在',
 	'NO_SUPPORTED_AUTH_METHODS'	=> '没有可支持的认证方法',
@@ -567,10 +569,11 @@ $lang = array_merge($lang, array(
 	'SUBFORUMS'					=> '子版面',
 	'SUBJECT'					=> '文章标题',
 	'SUBMIT'					=> '提交',
-
+  'TB'				=> 'TB',
 	'TERMS_USE'			=> '使用条款',
 	'TEST_CONNECTION'	=> '连接测试',
 	'THE_TEAM'			=> '团队',
+	'TIB'				=> 'TiB',
 	'TIME'				=> '时间',
 	
 	'TOO_LARGE'                  => '您输入的值太大了.',
@@ -717,7 +720,7 @@ $lang = array_merge($lang, array(
 	'WHOIS'				=> 'Whois',
 	'WHO_IS_ONLINE'		=> '在线用户',
 	'WRONG_PASSWORD'	=> '您输入了错误的密码。',
-
+  'WRONG_DATA_COLOUR'			=> '您输入的颜色值是无效的.',
 	'WRONG_DATA_ICQ'			=> '您输入的数字不是一个有效的 ICQ 号码。',
 	'WRONG_DATA_JABBER'			=> '您输入的名字不是一个有效的 Jabber 帐号。',
 	'WRONG_DATA_LANG'			=> '您指定了一个无效的语言。',

@@ -207,6 +207,11 @@ $help = array(
 		0 => '¿Qué son los iconos para los temas?',
 		1 => 'Son imágenes elegidas por el autor del tema para indicar el contenido del mismo. La posibilidad de usar iconos en los mensajes depende de los permisos otorgados por La Administración.'
 	),
+	// This block will switch the FAQ-Questions to the second template column
+	array(
+		0 => '--',
+		1 => '--'
+	),
 	array(
 		0 => '--',
 		1 => 'Niveles de usuario y grupos'
@@ -329,16 +334,16 @@ $help = array(
 	),
 	array(
 		0 => '¿Quién programó este foro?',
-		1 => 'Esta aplicación (en su forma original) es desarrollada, publicada y contiene derechos de autor pertenecientes a <a href="http://www.phpbb.com/">phpBB Group</a>. Está hecho bajo la GNU (Licencia Pública General) y es de libre distribución. Visite el enlace para más detalles.'
+		1 => 'Esta aplicación (en su forma original) es desarrollada, publicada y contiene derechos de autor pertenecientes a <a href="https://www.phpbb.com/">phpBB Group</a>. Está hecho bajo la GNU (Licencia Pública General) y es de libre distribución. Visite el enlace para más detalles.'
 	),
 	array(
 		0 => '¿Por qué este foro no tiene tal cosa?',
-		1 => 'Este foro fue escrito y licenciado a través de phpBB Group. Si usted cree que se debe añadir alguna característica, o si desea informar de un error, por favor visite el sitio web <a phpBB href="http://area51.phpbb.com/">Area51</a>, donde encontrará recursos para poder hacerlo.',
+ 		1 => 'Este foro fue escrito y licenciado a través de phpBB Group. Si usted cree que se debe añadir alguna característica por favor visite <a href="https://www.phpbb.com/ideas/">Centro de phpBB Ideas</a> (en Inglés), donde se puede votar en ideas existentes o sugerir nuevas características.'
 	),
 	array(
 		0 => '¿Con quién se puede contactar acerca de abusos o usos ilegales relacionados con este foro?',
 		1 => 'Cada uno de los administradores que figuran en la lista del grupo donde dice "El Equipo" es un contacto apropiado para enviar sus quejas. Si así no obtiene respuesta debería tratar de contactar con el dueño del dominio (efectúe una <a href="http://www.google.com/search?q=whois">búsqueda whois</a>) o, si este foro tiene correo sobre un dominio gratuito (Yahoo!, gmail.com, hotmail.com, etc.), al departamento o administración de abusos de ese servicio. Por favor, tenga en cuenta que el Grupo phpBB <strong>carece de cualquier tipo de control</strong> y no puede ser de ninguna manera responsable sobre cómo, dónde o por quién es usado este sistema de foros. No tiene ningún sentido contactar con el Grupo phpBB en relación a asuntos legales (difamación, responsabilidad, deformación de comentarios, etc.) que no sean con respecto al sitio phpbb.com o la discreción misma del software phpBB. Si envia un correo al Grupo phpBB <strong>respecto del uso de terceras partes</strong> de este software esté dispuesto a recibir una respuesta cortante o directamente no recibir respuesta.'
-	),
+	)
 );
 
 ?>

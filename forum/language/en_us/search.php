@@ -5,7 +5,7 @@
 *
 * @package language
 * @version $Id$
-* @copyright (c) 2005 phpBB Group
+* @copyright (c) 2005 phpBB Group, (c) Maël Soucaze
 * @license http://opensource.org/licenses/gpl-2.0.php GNU General Public License 2.0
 *
 */
@@ -77,6 +77,7 @@ $lang = array_merge($lang, array(
 
 	'SEARCHED_FOR'				=> 'Search term used',
 	'SEARCHED_TOPIC'			=> 'Searched topic',
+	'SEARCHED_QUERY'			=> 'Searched query',
 	'SEARCH_ALL_TERMS'			=> 'Search for all terms or use query as entered',
 	'SEARCH_ANY_TERMS'			=> 'Search for any terms',
 	'SEARCH_AUTHOR'				=> 'Search for author',
