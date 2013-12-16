@@ -105,11 +105,11 @@ id="facilitator">
 <h4>Agenda</h4>
 
 <ol>
-<li>Discuss Brain Health and Dementia</li>
-<li>Discuss Cognitive Reserve</li>
-<li>Discuss Brain Performance</li>
+<li>Review of the introductoion Course</li>
+<li>Benefits of physical activity</li>
+<li>Memory exercises</li>
 <li>Review the Activity Log</li>
-<li>Complete Memory and Attention Excercises, and Course Recap</li>
+<li>Goal setting</li>
 </ol>
 
 <h4>Course Content</h4>
