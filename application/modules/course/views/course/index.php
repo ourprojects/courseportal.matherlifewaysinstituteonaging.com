@@ -20,8 +20,7 @@
 		foreach($course->objectives as $objective)
 			echo '<li>' . t($objective->text) . '</li>';
 		?>
-<?php end foreach ?>
 	</ul>
-
+<?php end foreach ?>
 	<hr />
 </div>
