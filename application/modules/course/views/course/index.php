@@ -9,6 +9,7 @@
 	<hr />
 	<?php foreach($courses as $course):
 
+        /*
 	// The following 2 if statements are a BAD HACK!!! Need to find a better way here.
 	if($course->name === 'introtocaregivingonline')
 	{
@@ -18,6 +19,7 @@
 	{
 		echo CHtml::image($this->getImagesUrl('image-grocery.png'), '{t}groceries{/t}', array('class' => 'image-right'));
 	}
+         */
 	?>
 	<h3>
 		<?php echo CHtml::link(t($course->title), $this->createUrl($course->name)); ?>
