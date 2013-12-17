@@ -22,5 +22,4 @@
 		?>
 	</ul>
 	<hr />
-	<?php endforeach; ?>
 </div>
