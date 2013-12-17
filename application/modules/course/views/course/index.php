@@ -21,5 +21,6 @@
 			echo '<li>' . t($objective->text) . '</li>';
 		?>
 	</ul>
+<?php end foreach ?>
 	<hr />
 </div>
