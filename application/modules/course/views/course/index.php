@@ -5,7 +5,7 @@
 </div>
 <div id="single-column">
 	<h2 class="flowers">{t}Online Courses - Work/Life Balance{/t}</h2>
-	<p>{t}To help individual caregivers transition into their new role, be better prepared to manage their loved one's needs, and learn how to effectively practice self-care, Mather LifeWays Institute on Aging has developed online programs that are designed to educate caregivers while fitting into any schedule.{/t}</p>
+	<p>{t}To help individual caregivers transition into their role, be better prepared to manage their care recipients needs, and learn how to effectively practice self-care, Mather LifeWays Institute on Aging has developed online programs that are designed to educate caregivers while fitting into any schedule.{/t}</p>
 	<hr />
 
 	<h3>
@@ -20,7 +20,8 @@
 		foreach($course->objectives as $objective)
 			echo '<li>' . t($objective->text) . '</li>';
 		?>
-	</ul>
 <?php end foreach ?>
+	</ul>
+
 	<hr />
 </div>
