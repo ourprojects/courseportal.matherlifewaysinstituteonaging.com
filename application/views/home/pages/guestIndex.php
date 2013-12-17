@@ -80,16 +80,19 @@ $this->widget(
                                                                   alt="EAP Assocation Logo"></a></p>
     </div>
 
-    <!-- sidebar for Participating locations here -->
-    <!-- sidebar on Resent Research here -->
-
 </div>
 <div class="column-wide">
-    <h2 class="flowers">Mather LifeWays Institute on Aging</h2>
+<h2 style="font-weight: bold;">{t}Web-based Training for Working Caregivers{/t}</h2>
 
-    <p>{t}Through research-based programs and innovative techniques, Mather LifeWays Institute on Aging is committed to
-        advancing the field of eldercare. We deliver online learning and web-based modalities using the latest
-        technologies to efficiently and cost-effectively empower professionals in the workplace.{/t}</p>
+    <p>{t}Mather LifeWays Institute on Aging delivers online learning and web-based modalities using the latest
+        technologies to efficiently and cost-effectively empower professionals in the workplace. Our programs have been shown to result in measurable
+improvements in the quality of care provided and workforce retention. Past participation has yieled many benfits
+for our clients, including, but not limited to: {/t}</p>
+<ul>
+<li>{t}Increased employee morale due to greater self-efficacy.{/t}</li>
+<li>{t}Improved employee to employer, and employee to family relations.{/t}</li>
+<li>{t}Reduced employee absenteeism which leads to increased productivity.{/t}</li>
+</ul>
 
     <h2 class="flowers top-pad">{t}Health status of your working caregivers{/t}</h2>
 
@@ -131,18 +134,6 @@ $this->widget(
     $hrEmployerSurvey->run();
     $caregiverSurvey->run();
     ?>
-    <h2 class="flowers top-pad">{t}Benefits of Participation{/t}</h2>
-
-    <p style="padding-bottom: 5px;">{t}Why participate? Our programs have been shown to result in measurable
-        improvements in the quality of care provided and workforce retention. Past participation has yieled many benfits
-        for our clients, including, but not limited to: {/t}</p>
-    <ul>
-        <li>{t}Increased employee morale due to greater self-efficacy.{/t}</li>
-        <li>{t}Improved employee to employer, and employee to family relations.{/t}</li>
-        <li>{t}Reduced employee absenteeism which leads to increased productivity.{/t}</li>
-    </ul>
-
-    <!-- video and text here div -->
 
     <h2 class="flowers top-pad">{t}A Closer Look - Lives of Caregivers{/t}</h2>
 
