@@ -86,6 +86,14 @@ class LDFilterRawModelDataBehavior extends CModelBehavior
 {
 	
 	/**
+	 * If true all filtered data will be returned as a raw array with keys being the attributes/property names you are filtering by and 
+	 * the values being their respective value. Otherwise the data will only be filtered, not unaltered. Defaults to true.
+	 * 
+	 * @var boolean If true data will be normalized to a raw array, otherwise data will only be filtered, not altered. Defaults to true.
+	 */
+	public $normalizeData = true;
+	
+	/**
 	 * Set this if you require custom comparisons to be done for certain attributes.
 	 * The default comparison checks if the value is empty or if there is a partial match of the string value of the attribute and the data.
 	 * If either is true the data row will NOT be filtered.
@@ -106,7 +114,7 @@ class LDFilterRawModelDataBehavior extends CModelBehavior
 	 * @param boolean $callbacks A list of comparison callbacks in the form array('attribute name' => 'callable') {@see LDFilterRawModelDataBehavior::$callbacks}
 	 * @return array The filtered data
 	 */
-	public function filter(array $data, $safeOnly = true, $callbacks = null)
+	public function filter(array $data, $attributeNames = true, $callbacks = null)
 	{
 		if(!isset($callbacks))
 		{
@@ -115,14 +123,19 @@ class LDFilterRawModelDataBehavior extends CModelBehavior
 		
 		$owner = $this->getOwner();
 		$attributes = array();
-		foreach(($safeOnly ? $owner->getSafeAttributeNames() : $owner->attributeNames()) as $attributeName)
+		foreach(($attributeNames === true ? $owner->getSafeAttributeNames() : ($attributeNames === null ? $owner->attributeNames() : $attributeNames)) as $attributeName)
 		{
 			$attributes[$attributeName] = $owner->$attributeName;
 		}
-
+		
+		if($this->normalizeData)
+		{
+			return $this->_filterAndNormalize($data, $attributes, $callbacks);
+		}
+		
 		foreach($data as $rowIndex => $row)
 		{
-			foreach($attributes as $name => $value)
+			foreach($attributes as $name => &$value)
 			{
 				if(isset($callbacks[$name]))
 				{
@@ -131,7 +144,7 @@ class LDFilterRawModelDataBehavior extends CModelBehavior
 						continue;
 					}
 				}
-				else if($value === null)
+				else if($value === null || $value === '')
 				{
 					continue;
 				}
@@ -147,13 +160,13 @@ class LDFilterRawModelDataBehavior extends CModelBehavior
 						continue;
 					}
 				}
-				else if($row instanceof CComponent)
+				else if(is_object($row))
 				{
-					if($row->canGetProperty($name))
+					try 
 					{
 						$rowValue = $row->$name;
 					}
-					else
+					catch(CException $e)
 					{
 						continue;
 					}
@@ -164,6 +177,72 @@ class LDFilterRawModelDataBehavior extends CModelBehavior
 				}
 
 				if(is_string($rowValue))
+				{
+					if(stripos($rowValue, strval($value)) !== false)
+					{
+						continue;
+					}
+				}
+				else if($rowValue == $value)
+				{
+					continue;
+				}
+				unset($data[$rowIndex]);
+				break;
+			}
+		}
+		
+		return $data;
+	}
+	
+	protected function _filterAndNormalize(array $data, $attributes, $callbacks)
+	{
+		foreach($data as $rowIndex => $row)
+		{
+			$data[$rowIndex] = array();
+			foreach($attributes as $name => &$value)
+			{
+				if(is_array($row))
+				{
+					if(array_key_exists($name, $row))
+					{
+						$rowValue = $row[$name];
+					}
+					else
+					{
+						continue;
+					}
+				}
+				else if(is_object($row))
+				{
+					try 
+					{
+						$rowValue = $row->$name;
+					}
+					catch(CException $e)
+					{
+						continue;
+					}
+				}
+				else
+				{
+					$rowValue = $row;
+				}
+				
+				$data[$rowIndex][$name] = $rowValue;
+		
+				if(isset($callbacks[$name]))
+				{
+					if(call_user_func($callbacks[$name], $name, $value, $row) !== false)
+					{
+						continue;
+					}
+				}
+				else if($value === null || $value === '')
+				{
+					continue;
+				}
+				else if(is_string($rowValue))
 				{
 					if(stripos($rowValue, strval($value)) !== false)
 					{
