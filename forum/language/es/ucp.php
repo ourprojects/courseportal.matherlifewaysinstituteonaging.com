@@ -62,7 +62,7 @@ if (empty($lang) || !is_array($lang))
 $lang = array_merge($lang, array(
 	'TERMS_OF_USE_CONTENT'	=> 'Al ingresar en "%1$s" (de aquí en adelante "nosotros", "nos", "nuestro", "%1$s", "%2$s"), <strong>acuerda</strong> estar legalmente sometido a los siguientes términos. En caso contrario por favor no se registre y/o use "%1$s". Podemos cambiar estos términos en cualquier momento e intentaríamos avisarle, sin embargo sería prudente que los revisase por su cuenta periódicamente. Seguir registrado a "%1$s" después de esos cambios significa que <strong>acuerda</strong> estar legalmente sometido a esos nuevos términos tal como fueron actualizados y/o reformados.<br />
 	<br />
-	Nuestros foros están desarrollados por phpBB (de aquí en adelante "ellos", "sus", "software phpBB", "www.phpbb.com", "phpBB Group", "phpBB Teams") el cual es una solución de tablón de anuncios liberada bajo la "<a href="http://opensource.org/licenses/gpl-license.php">Licencia Pública General (General Public License en inglés)</a>" (de aquí en adelante "GPL") y puede ser descargada de <a href="http://www.phpbb.com/">www.phpbb.com</a>. El software phpBB solamente facilita discusiones basadas en Internet y la GPL estrictamente los excluye de lo que aprobamos y/o desaprobamos como conductas y/o contenido permisible. Para más información sobre phpBB, por favor visite: <a href="http://www.phpbb.com/">http://www.phpbb.com/</a>.<br />
+	Nuestros foros están desarrollados por phpBB (de aquí en adelante "ellos", "sus", "software phpBB", "www.phpbb.com", "phpBB Group", "phpBB Teams") el cual es una solución de tablón de anuncios liberada bajo la "<a href="http://opensource.org/licenses/gpl-license.php">Licencia Pública General (General Public License en inglés)</a>" (de aquí en adelante "GPL") y puede ser descargada de <a href="https://www.phpbb.com/">www.phpbb.com</a>. El software phpBB solamente facilita discusiones basadas en Internet y la GPL estrictamente los excluye de lo que aprobamos y/o desaprobamos como conductas y/o contenido permisible. Para más información sobre phpBB, por favor visite: <a href="https://www.phpbb.com/">https://www.phpbb.com/</a>.<br />
 	<br />
 	<strong>Acuerda</strong> no enviar ningun contenido abusivo, obsceno, vulgar, difamatorio, indecente, amenazante, sexual o cualquier otro material que pueda violar cualquier ley de su país, el país donde "%1$s" está instalado o Leyes Internacionales. Hacer eso provocará que sea inmediata y permanentemente expulsado y, si lo creemos oportuno, con notificación a su Proveedor de Servicios de Internet. Las direcciones IP de todos los envíos son registradas como ayuda para reforzar estas condiciones. <strong>Acuerda</strong> que "%1$s" tiene derecho a eliminar, editar, mover o cerrar cualquier tema en cualquier momento que lo creamos conveniente. Como usuario <strong>acuerda</strong> que cualquier información que haya ingresado será almacenada en una base de datos. Dado que esta información no será compartida con ninguna tercera parte sin su consentimiento, ni "%1$s" ni phpBB podrán considerarse responsables por cualquier intento de hacking que conlleve a que los datos sean comprometidos.
 	',
@@ -198,7 +198,7 @@ $lang = array_merge($lang, array(
 
 	'EDIT_DRAFT_EXPLAIN'			=> 'Aquí podrá editar su borrador. Los borradores no contienen adjuntos ni encuestas.',
 	'EMAIL_BANNED_EMAIL'			=> 'La dirección de email que introdujo está excluida.',
-	'EMAIL_INVALID_EMAIL'			=> 'La dirección de email que introdujo no es válida.',
+
 	'EMAIL_REMIND'					=> 'Esta debe ser la dirección de email que introdujo al registrarse.',
 	'EMAIL_TAKEN_EMAIL'				=> 'La dirección de email introducida ya está en uso',
 	'EMPTY_DRAFT'					=> 'Debe introducir un mensaje para enviar los cambios',
@@ -279,8 +279,9 @@ $lang = array_merge($lang, array(
 	'MESSAGE_BY_AUTHOR'				=> 'por',
 	'MESSAGE_COLOURS'				=> 'Colores de mensaje',
 	'MESSAGE_DELETED'				=> 'Mensaje borrado correctamente',
+	'MESSAGE_EDITED'				=> 'Mensaje editado correctamente.',
 	'MESSAGE_HISTORY'				=> 'Historial de mensajes',
-	'MESSAGE_REMOVED_FROM_OUTBOX'	=> 'Este mensaje ha sido removido por su autor antes de ser despachado',
+	'MESSAGE_REMOVED_FROM_OUTBOX'	=> 'Este mensaje ha sido borrado por el autor.',
 	'MESSAGE_SENT_ON'				=> 'en',
 	'MESSAGE_STORED'				=> 'Este mensaje ha sido enviado correctamente',
 	'MESSAGE_TO'					=> 'Para',

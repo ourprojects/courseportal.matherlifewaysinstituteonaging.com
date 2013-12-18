@@ -34,6 +34,18 @@ if (!defined('IN_PHPBB'))
 	exit;
 }
 
+// DEVELOPERS PLEASE NOTE
+//
+// All language files should use UTF-8 as their encoding and the files must not contain a BOM.
+//
+// Placeholders can now contain order information, e.g. instead of
+// 'Page %s of %s' you can (and should) write 'Page %1$s of %2$s', this allows
+// translators to re-order the output of data while ensuring it remains correct
+//
+// You do not need this where single placeholders are used, e.g. 'Message %d' is fine
+// equally where a string contains only two placeholders which are used to wrap text
+// in a url you again do not need to specify an order e.g., 'Click %sHERE%s' is fine
+
 $help = array(
 	array(
 		0 => '--',
@@ -83,6 +95,11 @@ $help = array(
 		0 => 'Creando una lista ordenada',
 		1 => 'El segundo tipo de lista, la ordenada, le permite controlar qué va detrás de cada ítem (elemento). Para crear una lista ordenada debe usar <strong>[list=1][/list]</strong> para crear una lista numérica o en su caso <strong>[list=a][/list]</strong> una lista alfabética. Como en las listas desordenadas, los ítems deben ser identificados usando <strong>[*]</strong>. Por ejemplo: <br /><br /><strong>[list=1]</strong><br /><strong>[*]</strong>Ir de compras<br /><strong>[*]</strong>Comprar un PC nuevo<br /><strong>[*]</strong>Llevar el PC a arreglar cuando se rompe<br /><strong>[/list]</strong><br /><br />generará lo siguiente: <ol style="list-style-type: decimal;"><li>Ir de compras</li><li>Comprar un PC nuevo</li><li>Insultar al PC cuando se rompe</li></ol> Y para una lista alfabética usaría: <br /><br /><strong>[list=a]</strong><br /><strong>[*]</strong>Primera respuesta posible<br /><strong>[*]</strong>Segunda respuesta posible<br /><strong>[*]</strong>Tercera respuesta posible<br /><strong>[/list]</strong><br /><br /> creando: <ol style="list-style-type: lower-alpha"><li>Primera respuesta posible</li><li>Segunda respuesta posible</li><li>Tercera respuesta posible</li></ol>'
 	),
+	// This block will switch the FAQ-Questions to the second template column
+	array(
+		0 => '--',
+		1 => '--'
+	),
 	array(
 		0 => '--',
 		1 => 'Creando enlaces'
@@ -110,7 +127,7 @@ $help = array(
 	array(
 		0 => '¿Puedo agregar mis propias etiquetas?',
 		1 => 'Si pertenece a La Administración de este foro y posee los permisos apropiados, puede agregar nuevos BBCodes desde el Panel del Administrador.'
-	),
+	)
 );
 
 ?>

@@ -42,7 +42,7 @@ if (empty($lang) || !is_array($lang))
 //
 
 $lang = array_merge($lang, array(
-	'TRANSLATION_INFO'	=> 'Traducción al Español Argentino por <a href="http://www.phpbbargentina.com/">phpBB Argentina</a> con la colaboración de <a href="http://www.phpbb-es.com/">phpbb-es.com</a>',
+	'TRANSLATION_INFO'	=> 'Traducción al Español Argentino por <a href="http://www.phpbbargentina.com/">nextgen</a><br /> en colaboración con <a href="http://www.phpbb-es.com/">phpBB España</a>',
 	'DIRECTION'	=> 'ltr',
 	'DATE_FORMAT'	=> '|d M Y|',
 	'USER_LANG'	=> 'es-ar',
@@ -162,6 +162,7 @@ $lang = array_merge($lang, array(
 	'EDIT_POST'	=> 'Editar mensaje',
 	'EMAIL'	=> 'E-mail', // Forma corta de EMAIL_ADDRESS (dirección de correo electrónico)
 	'EMAIL_ADDRESS'	=> 'Dirección de email',
+	'EMAIL_INVALID_EMAIL'				=> 'La dirección de correo electrónico que haz introducido no es válida.',
 	'EMAIL_SMTP_ERROR_RESPONSE'	=> 'Se produjeron problemas enviando email en la <strong>línea %1$s</strong>. Respuesta: %2$s',
 	'EMPTY_SUBJECT'	=> 'Debés especificar un asunto cuando publiques un nuevo tema.',
 	'EMPTY_MESSAGE_SUBJECT'	=> 'Tenés que especificar un asunto cuando redactes un nuevo mensaje.',
@@ -377,6 +378,7 @@ $lang = array_merge($lang, array(
 	'NO_EMAIL_SUBJECT'	=> 'Email sin asunto',
 	'NO_FEED_ENABLED'	=> 'Los Feeds no están disponibles en este Sitio.',
 	'NO_FEED'	=> 'El Feed pedido no está disponible.',
+	'NO_STYLE_DATA'				=> 'No se pudo obtener datos del estilo',
 	'NO_FORUM'	=> 'El Foro que seleccionó no existe.',
 	'NO_FORUMS'	=> 'Este Sitio no tiene Foros',
 	'NO_GROUP'	=> 'El grupo solicitado no existe.',
@@ -558,7 +560,7 @@ $lang = array_merge($lang, array(
 	'SORT_TOPIC_TITLE'	=> 'Título del Tema',
 	'SORT_USERNAME'	=> 'Nombre de Usuario',
 	'SPLIT_TOPIC'	=> 'Dividir tema',
-	'SQL_ERROR_OCCURRED'	=> 'Ocurrió un error SQL mientras recuperaba esta página. Por favor contacta con La Administración del Sitio%s si el problema persiste.',
+	'SQL_ERROR_OCCURRED'	=> 'Ocurrió un error SQL mientras recuperaba esta página. Por favor contacta con La %sAdministración del Sitio%s si el problema persiste.',
 	'STATISTICS'	=> 'Estadísticas',
 	'START_WATCHING_FORUM'	=> 'Suscribir Foro',
 	'START_WATCHING_TOPIC'	=> 'Suscribir Tema',
@@ -568,10 +570,12 @@ $lang = array_merge($lang, array(
 	'SUBFORUMS'	=> 'Subforos',
 	'SUBJECT'	=> 'Asunto',
 	'SUBMIT'	=> 'Enviar',
+	'TB'				=> 'TB',
 	
 	'TERMS_USE'	=> 'Condiciones de uso',
 	'TEST_CONNECTION'	=> 'Probar conexión',
 	'THE_TEAM'	=> 'El Equipo',
+	'TIB'				=> 'TiB',
 	'TIME'	=> 'Hora',
 	'TOO_LARGE'		=> 'El valor que has introducido es demasiado grande.',
 	'TOO_LARGE_MAX_RECIPIENTS'		=> 'El valor de la configuración de <strong>Número máximo de destinatarios permitidos por mensaje privado</strong> que has introducido es demasiado grande.',
@@ -713,6 +717,7 @@ $lang = array_merge($lang, array(
 	'WHOIS'	=> '¿Quién es?',
 	'WHO_IS_ONLINE'	=> '¿Quién está conectado?',
 	'WRONG_PASSWORD'	=> 'Introdujiste una contraseña incorrecta.',
+	'WRONG_DATA_COLOUR'			=> 'El valor del color que ha introducido no es válido.',
 	
 	'WRONG_DATA_ICQ'	=> 'El número que introdujiste no es un número válido de ICQ.',
 	'WRONG_DATA_JABBER'	=> 'El nombre que introdujiste no es un nombre de cuenta Jabber válido.',

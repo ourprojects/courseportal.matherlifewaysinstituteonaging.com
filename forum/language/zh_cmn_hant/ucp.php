@@ -39,7 +39,7 @@ if (empty($lang) || !is_array($lang))
 $lang = array_merge($lang, array(
 	'TERMS_OF_USE_CONTENT'   => '當您使用「%1$s」(以下以「我們」、「我們的」、「%1$s」、「%2$s」代表) 時，即表示您已同意接受本服務條款之所有內容。如果您不同意本服務條款的內容，請您停止存取和/或使用「%1$s」。我們或許會於任何時間修改或變更本服務條款之內容，雖然我們也會盡力通知您任何條款的修改或變更，但仍建議您在使用「%1$s」時隨時注意是否有修改或變更。您於任何修改或變更後繼續使用本服務，將視為您已同意接受該條款的修改或變更。<br />
 	<br />
-	我們的討論區使用的是 phpBB (以下以「他們」、「他們的」、「phpBB 軟體」、「www.phpbb.com」、「phpBB Group」、「phpBB Teams」代表)，該討論版系統是以「<a href="http://opensource.org/licenses/gpl-license.php">General Public License</a>」(以下以「GPL」代表) 授權釋出並且可以從 <a href="http://www.phpbb.com/">www.phpbb.com</a> 下載取得。phpBB 軟體僅協助網路上的討論以及交流，phpBB Group 無須對我們允許或不允許的內容或行為舉止負責。如果您想知道更多有關 phpBB 的資訊，請前往：<a href="http://www.phpbb.com/">http://www.phpbb.com/</a>。<br />
+	我們的討論區使用的是 phpBB (以下以「他們」、「他們的」、「phpBB 軟體」、「www.phpbb.com」、「phpBB Group」、「phpBB Teams」代表)，該討論版系統是以「<a href="http://opensource.org/licenses/gpl-license.php">General Public License</a>」(以下以「GPL」代表) 授權釋出並且可以從 <a href="https://www.phpbb.com/">www.phpbb.com</a> 下載取得。phpBB 軟體僅協助網路上的討論以及交流，phpBB Group 無須對我們允許或不允許的內容或行為舉止負責。如果您想知道更多有關 phpBB 的資訊，請前往：<a href="https://www.phpbb.com/">https://www.phpbb.com/</a>。<br />
 	<br />
 	您同意不發表任何誹謗、侮辱、具威脅性、攻擊性、不雅、猥褻、不實、違反公共秩序或善良風俗、或其他違反「%1$s」所在國家或地域或國際公法之文字、圖片或任何形式的檔案於本服務上。如果您觸犯了以上的規定，我們將會立即並且永久的限制您的進入。在必要的情況下，您的網路服務業者 (ISP) 也將會收到我們的通知。所有發表文章的 IP 位址都將被記錄儲存以防止任何的違法情節發生。您同意「%1$s」有權在任何時間移除、修改、移動或關閉任何主題的權力。作為一個使用者，您同意您所提供的任何資訊都將被存入資料庫中。這些資訊在您尚未允許前將不會提供給任何第三方公司，對於因駭客入侵所造成的資料外洩以及其損失，「%1$s」和 phpBB 不負任何賠償責任。
 	',
@@ -176,7 +176,6 @@ $lang = array_merge($lang, array(
 
 	'EDIT_DRAFT_EXPLAIN'   => '在這裡您可以編輯您的草稿。草稿不能包含附加檔案和投票資訊。',
 	'EMAIL_BANNED_EMAIL'   => '您輸入的 e-mail 位址已被禁止使用。',
-	'EMAIL_INVALID_EMAIL'   => '您輸入的 e-mail 位址是無效的。',
 	'EMAIL_REMIND'   => '您輸入的 e-mail 位址必須能讓我們聯絡到您。如果您從未在會員控制台做過更動，那麼它就是您註冊時所提供的 e-mail 位址。',
 	'EMAIL_TAKEN_EMAIL'   => '您輸入的 e-mail 位址已經被他人使用。',
 	'EMPTY_DRAFT'   => '您必須輸入內容才能送出更換。',
@@ -257,8 +256,9 @@ $lang = array_merge($lang, array(
 	'MESSAGE_BY_AUTHOR'   => '寄件人',
 	'MESSAGE_COLOURS'   => '訊息顏色',
 	'MESSAGE_DELETED'   => '私人訊息已經成功刪除。',
-	'MESSAGE_HISTORY'   => '這個私人訊息的歷史紀錄',
-	'MESSAGE_REMOVED_FROM_OUTBOX'   => '這個私人訊息在被送達前已經被寄件人移除。',
+	'MESSAGE_EDITED'				=> '私人訊息已經成功編輯。',
+	'MESSAGE_HISTORY'				=> '這個私人訊息的歷史紀錄',
+	'MESSAGE_REMOVED_FROM_OUTBOX'	=> '這個私人訊息已經被寄件人移除。',
 	'MESSAGE_SENT_ON'   => '發送時間',
 	'MESSAGE_STORED'   => '私人訊息已經成功發送。',
 	'MESSAGE_TO'   => '收件人',

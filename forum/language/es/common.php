@@ -20,7 +20,7 @@
 *
 **/
 
-/** 
+/**
 *
 * common.php [Spanish formal honorifics [Es]]
 *
@@ -28,8 +28,8 @@
 * @version $Id: $
 * @copyright (c) 2007 phpBB Group. Modified by Huan Manwe for phpbb-es.com in 2007-Nov-26
 * @author 2007-11-26 - Traducido por Huan Manwe junto con phpbb-es.com (http://www.phpbb-es.com) basado en la version argentina hecha por larveando.com.ar ).
-* @author - ImagePack made by Xoom (webmaster of http://www.muchografico.com and colaborator of http://www.phpbb-es.com) 
-* @license http://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU General Public License 
+* @author - ImagePack made by Xoom (webmaster of http://www.muchografico.com and colaborator of http://www.phpbb-es.com)
+* @license http://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU General Public License
 *
 */
 
@@ -63,12 +63,12 @@ if (empty($lang) || !is_array($lang))
 //
 
 $lang = array_merge($lang, array(
-	'TRANSLATION_INFO'	=> 'Traducción al español por <a href="http://www.mjinmo.com/">Huan Manwë</a> para <a href="http://www.phpbb-es.com/">phpBB-Es.COM</a>',
-	'DIRECTION'	=> 'ltr',
-	'DATE_FORMAT'	=> '|d M Y|',
-	'USER_LANG'	=> 'es',
+	'TRANSLATION_INFO'	=> 'Traducción al español por <a href="http://www.mjinmo.com/">Huan Manwë</a> para <a href="http://www.phpbb-es.com/">phpBB España</a>',
+	'DIRECTION'		=> 'ltr',
+	'DATE_FORMAT'		=> '|d M Y|',
+	'USER_LANG'		=> 'es',
 	
-	'1_DAY'	=> '1 día',
+	'1_DAY'		=> '1 día',
 	'1_MONTH'	=> '1 mes',
 	'1_YEAR'	=> '1 año',
 	'2_WEEKS'	=> '2 semanas',
@@ -77,15 +77,15 @@ $lang = array_merge($lang, array(
 	'7_DAYS'	=> '7 días',
 	
 	'ACCOUNT_ALREADY_ACTIVATED'	=> 'Su cuenta ya ha sido activada',
-	'ACCOUNT_DEACTIVATED'	=> 'Su cuenta ha sido desactivada manualmente y solo puede ser reactivada por La Administración.',
-	'ACCOUNT_NOT_ACTIVATED'	=> 'Su cuenta todavía no ha sido activada',
-	'ACP'	=> 'Ir al Panel de Administración (ACP)',
+	'ACCOUNT_DEACTIVATED'		=> 'Su cuenta ha sido desactivada manualmente y solo puede ser reactivada por La Administración.',
+	'ACCOUNT_NOT_ACTIVATED'		=> 'Su cuenta todavía no ha sido activada',
+	'ACP'				=> 'Ir al Panel de Administración (ACP)',
 	'ACTIVE'	=> 'Activo',
 	'ACTIVE_ERROR'	=> 'El usuario especificado está inactivo de momento. Si tiene problemas para activar su cuenta por favor contacte con La Administración del Sitio.',
 	'ADMINISTRATOR'	=> 'Administrador(a)',
 	'ADMINISTRATORS'	=> 'Administradores',
-	'AGE'	=> 'Edad',
-	'AIM'	=> 'AIM',
+	'AGE'		=> 'Edad',
+	'AIM'		=> 'AIM',
 	'ALLOWED'	=> 'Permitido',
 	'ALL_FILES'	=> 'Todos los archivos',
 	'ALL_FORUMS'	=> 'Todos los Foros',
@@ -93,13 +93,13 @@ $lang = array_merge($lang, array(
 	'ALL_POSTS'	=> 'Todos los mensajes',
 	'ALL_TIMES'	=> 'Todos los horarios son %1$s %2$s',
 	'ALL_TOPICS'	=> 'Todos los Temas',
-	'AND'	=> 'Y',
+	'AND'		=> 'Y',
 	'ARE_WATCHING_FORUM'	=> 'Está suscrito a recibir novedades en este Foro',
 	'ARE_WATCHING_TOPIC'	=> 'Está suscrito a recibir novedades en este Tema.',
-	'ASCENDING'	=> 'Ascendente',
-	'ATTACHMENTS'	=> 'Adjuntos',
+	'ASCENDING'		=> 'Ascendente',
+	'ATTACHMENTS'		=> 'Adjuntos',
 	'ATTACHED_IMAGE_NOT_IMAGE'	=> 'El archivo de imagen que ha intentado adjuntar no es válido.',
-	'AUTHOR'	=> 'Autor',
+	'AUTHOR'		=> 'Autor',
 	'AUTH_NO_PROFILE_CREATED'	=> 'Falló la creación del perfil de usuario',
 	'AVATAR_DISALLOWED_CONTENT'		=> 'La subida fue rechazada porque el archivo a subir fue identificado como un posible vector de ataque.',
 	'AVATAR_DISALLOWED_EXTENSION'	=> 'Este archivo no puede ser mostrado porque la extensión <strong>%s</strong> no está permitida',
@@ -179,10 +179,11 @@ $lang = array_merge($lang, array(
 	'VIEWED_COUNT'	=> 'Visto %d vez',
 	'VIEWED_COUNTS'	=> 'Visto %d veces',
 	'VIEWED_COUNT_NONE'	=> 'No visto aún',
-	
+
 	'EDIT_POST'	=> 'Editar mensaje',
 	'EMAIL'	=> 'E-mail', // Forma corta de EMAIL_ADDRESS (dirección de correo electrónico)
 	'EMAIL_ADDRESS'	=> 'Dirección de email',
+	'EMAIL_INVALID_EMAIL'				=> 'La dirección de correo electrónico que ha introducido no es válida.',
 	'EMAIL_SMTP_ERROR_RESPONSE'	=> 'Se produjeron problemas enviando email en la <strong>línea %1$s</strong>. Respuesta: %2$s',
 	'EMPTY_SUBJECT'	=> 'Debe especificar un asunto cuando publique un nuevo tema.',
 	'EMPTY_MESSAGE_SUBJECT'	=> 'Tiene que especificar un asunto cuando redacte un nuevo mensaje.',
@@ -211,7 +212,7 @@ $lang = array_merge($lang, array(
 	'FIND_USERNAME'	=> 'Buscar un usuario',
 	'FOLDER'	=> 'Carpeta',
 	'FORGOT_PASS'	=> 'Olvidé mi contraseña',
-	'FORM_INVALID'			=> 'El formulario enviado era no válido. Intente enviarlo de nuevo.',
+	'FORM_INVALID'			=> 'El formulario enviado no era válido. Intente enviarlo de nuevo.',
 	'FORUM'	=> 'Foro',
 	'FORUMS'	=> 'Foros',
 	'FORUMS_MARKED'			=> 'Los foros han sido marcados como leídos.',
@@ -253,8 +254,8 @@ $lang = array_merge($lang, array(
 	'FTP_USERNAME_EXPLAIN'	=> 'Usuario para identificarse en su servidor FTP',
 	
 	'GENERAL_ERROR'	=> 'Error General',	
-    'GB'	=> 'GB',
-    'GIB'	=> 'GiB',
+    	'GB'	=> 'GB',
+    	'GIB'	=> 'GiB',
 	'GO'	=> 'Ir',
 	'GOTO_PAGE'	=> 'Ir a página',
 	'GROUP'	=> 'Grupo',
@@ -398,6 +399,7 @@ $lang = array_merge($lang, array(
 	'NO_EMAIL_SUBJECT'	=> 'Email sin asunto',
 	'NO_FEED_ENABLED'	=> 'Los Feeds no están disponibles en este Sitio.',
 	'NO_FEED'	=> 'El Feed pedido no está disponible.',
+	'NO_STYLE_DATA'				=> 'No se pudo obtener datos de estilo',
 	'NO_FORUM'	=> 'El Foro que seleccionó no existe.',
 	'NO_FORUMS'	=> 'Este Sitio no tiene Foros',
 	'NO_GROUP'	=> 'El grupo solicitado no existe.',
@@ -459,7 +461,7 @@ $lang = array_merge($lang, array(
 	'POSTS'	=> 'Mensajes',
 	'POSTS_UNAPPROVED'	=> 'Al menos un mensaje en este tema no ha sido aprobado',
 	'POST_BY_AUTHOR'	=> 'por',
-    'POST_BY_FOE'   => 'Este mensaje lo ha escrito <strong>%1$s</strong> que actualmente está en su lista de ignorados. %2$sMostrar este mensaje%3$s.',
+    	'POST_BY_FOE'   => 'Este mensaje lo ha escrito <strong>%1$s</strong> que actualmente está en su lista de ignorados. %2$sMostrar este mensaje%3$s.',
 	'POST_DAY'	=> '%.2f mensajes por dia',
 	'POST_DETAILS'	=> 'Detalles del mensaje',
 	'POST_NEW_TOPIC'	=> 'Nuevo tema',
@@ -481,7 +483,7 @@ $lang = array_merge($lang, array(
 	'PRIVATE_MESSAGES'	=> 'Mensajes privados',
 	'PRIVATE_MESSAGING'	=> 'Mensajería privada',
 	'PROFILE'	=> 'Panel de Control del Usuario',
-	'RANK'						=> 'Rango',    
+	'RANK'						=> 'Rango',
 	
 	'READING_FORUM'	=> 'Viendo temas en %s',
 	'READING_GLOBAL_ANNOUNCE'	=> 'Leyendo anuncios globales',
@@ -579,7 +581,7 @@ $lang = array_merge($lang, array(
 	'SORT_TOPIC_TITLE'	=> 'Título del Tema',
 	'SORT_USERNAME'	=> 'Nombre de Usuario',
 	'SPLIT_TOPIC'	=> 'Dividir tema',
-	'SQL_ERROR_OCCURRED'	=> 'Ocurrió un error SQL mientras recuperaba esta página. Por favor contacte con La Administración del Sitio%s si el problema persiste.',
+	'SQL_ERROR_OCCURRED'	=> 'Ocurrió un error SQL mientras recuperaba esta página. Por favor contacte con %sLa Administración del Sitio%s si el problema persiste.',
 	'STATISTICS'	=> 'Estadísticas',
 	'START_WATCHING_FORUM'	=> 'Suscribir Foro',
 	'START_WATCHING_TOPIC'	=> 'Suscribir Tema',
@@ -589,10 +591,12 @@ $lang = array_merge($lang, array(
 	'SUBFORUMS'	=> 'Subforos',
 	'SUBJECT'	=> 'Asunto',
 	'SUBMIT'	=> 'Enviar',
+	'TB'				=> 'TB',
 	
 	'TERMS_USE'	=> 'Condiciones de uso',
 	'TEST_CONNECTION'	=> 'Probar conexión',
 	'THE_TEAM'	=> 'El Equipo',
+	'TIB'				=> 'TiB',
 	'TIME'	=> 'Hora',
 	'TOO_LARGE'		=> 'El valor que ha introducido es demasiado grande.',
 	'TOO_LARGE_MAX_RECIPIENTS'		=> 'El valor de la configuración de <strong>Número máximo de destinatarios permitidos por mensaje privado</strong> que ha introducido es demasiado grande.',
@@ -695,7 +699,7 @@ $lang = array_merge($lang, array(
 	'USE_PERMISSIONS'	=> 'Transferirme los permisos del Usuario',
 	'USER_NEW_PERMISSION_DISALLOWED'	=> 'Lo sentimos pero no está autorizado a usar esta opción. Puede que se haya registrado hace poco aquí y necesite participar más para poder hacer uso de esta opción.',
 
-	'VARIANT_DATE_SEPARATOR'	=> ' / ',	
+	'VARIANT_DATE_SEPARATOR'	=> ' / ',
 	'VIEWED'	=> 'Visto',
 	'VIEWING_FAQ'	=> 'Viendo FAQ',
 	'VIEWING_MEMBERS'	=> 'Viendo detalles de los Usuarios',
@@ -734,7 +738,8 @@ $lang = array_merge($lang, array(
 	'WHOIS'	=> '¿Quién es?',
 	'WHO_IS_ONLINE'	=> '¿Quién está conectado?',
 	'WRONG_PASSWORD'	=> 'Introdujo una contraseña incorrecta.',
-	
+	'WRONG_DATA_COLOUR'			=> 'El valor del color introducido no es válido.',
+
 	'WRONG_DATA_ICQ'	=> 'El número que introdujo no es un número válido de ICQ.',
 	'WRONG_DATA_JABBER'	=> 'El nombre que introdujo no es un nombre de cuenta Jabber válido.',
 	'WRONG_DATA_LANG'	=> 'El idioma que especificó no es válido.',

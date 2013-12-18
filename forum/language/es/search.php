@@ -96,9 +96,10 @@ $lang = array_merge($lang, array(
 	'RESULT_SORT'			=> 'Ordenar resultados por',
 	'RETURN_FIRST'			=> 'Mostrar los primeros',
 	'RETURN_TO_SEARCH_ADV'	=> 'Volver a búsqueda avanzada',
-	
+
 	'SEARCHED_FOR'				=> 'Término buscado',
 	'SEARCHED_TOPIC'			=> 'Mensaje buscado',
+	'SEARCHED_QUERY'			=> 'Consulta buscada',
 	'SEARCH_ALL_TERMS'			=> 'Buscar todos los términos',
 	'SEARCH_ANY_TERMS'			=> 'Buscar cualquier término',
 	'SEARCH_AUTHOR'				=> 'Buscar autor',

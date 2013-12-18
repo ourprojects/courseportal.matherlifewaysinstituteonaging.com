@@ -20,11 +20,6 @@ if (!defined('IN_PHPBB'))
 	exit;
 }
 
-if (empty($lang) || !is_array($lang))
-{
-	$lang = array();
-}
-
 // DEVELOPERS PLEASE NOTE
 //
 // All language files should use UTF-8 as their encoding and the files must not contain a BOM.
@@ -338,11 +333,11 @@ $help = array(
 	),
 	array(
 		0	=> '¿Quién programó este foro?',
-		1	=> 'Esta aplicación (en su forma original) es desarrollada, publicada y contiene derechos de autor pertenecientes a <a href="http://www.phpbb.com/">phpBB Group</a>. Está hecho bajo la GNU (Licencia Pública General) y es de libre distribución. Visita el enlace para más detalles.',
+		1	=> 'Esta aplicación (en su forma original) es desarrollada, publicada y contiene derechos de autor pertenecientes a <a href="https://www.phpbb.com/">phpBB Group</a>. Está hecho bajo la GNU (Licencia Pública General) y es de libre distribución. Visita el enlace para más detalles.',
 	),
 	array(
 		0	=> '¿Por qué este foro no tiene tal cosa?',
-		1	=> 'Este foro fue escrito y licenciado a través de phpBB Group. Si crees que debería tener alguna otra opción o característica, o si querés informar de un bug, por favor visita el phpBB <a href="http://area51.phpbb.com/">Area51</a>, donde encontrarás los recursos para hacerlo.',
+		1 => 'Este foro fue escrito y licenciado a través de phpBB Group. Si usted cree que se debe añadir alguna característica por favor visita <a href="https://www.phpbb.com/ideas/">Centro de Ídeas phpBB</a>, donde se puede votar en ideas existentes o sugerir nuevas características.'
 	),
 	array(
 		0	=> '¿Con quién se puede contactar acerca de abusos o usos ilegales relacionados con este foro?',

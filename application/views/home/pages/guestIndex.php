@@ -5,8 +5,6 @@ $clientScript->registerCssFile($this->getStylesUrl('homeGuest.css'));
 $clientScript->registerScriptFile($this->getScriptsUrl('jquery.cycle.all.js'), CClientScript::POS_HEAD);
 $clientScript->registerScript('customers_cycle', "$('#customers').cycle();");
 
-// $clientScript->registerScriptFile($this->getScriptsUrl('homeslideshow_edgePreload.js'), CClientScript::POS_HEAD);
-
 $fancyBoxConfig = array(
     'width' => '720px',
     'height' => '720px',
@@ -15,15 +13,7 @@ $fancyBoxConfig = array(
     'mouseWheel' => false,
 );
 
-$this->widget(
-    'ext.fancybox.EFancyBox',
-    array(
-        'id' => '.open-tutorial',
-        'config' => $fancyBoxConfig
-    )
-);
-
-$this->widget(
+ $this->widget(
     'ext.fancybox.EFancyBox',
     array(
         'id' => 'a[id^="survey_link_"]',
@@ -33,23 +23,15 @@ $this->widget(
 
 ?>
 
-<!-- index page main image -->
-
 <div id="home-image">
-    <h1>{t}Web-based Training for Caregivers{/t}</h1>
+    <!-- <h1>{t}Web-based Training for Caregivers{/t}</h1> -->
 </div>
-
-<!-- Begin sidebar -->
 
 <div id="sidebar">
     <div class="box-sidebar zero">
         <a href="<?php echo $this->createUrl('user/register'); ?>">{t}Register{/t} </a>
         <a href="<?php echo $this->createUrl('user/login'); ?>" class="teal">{t}Login{/t} </a>
         <a href="<?php echo $this->createUrl('home/contact'); ?>" class="teal">{t}Contact Us{/t} </a>
-        <!--
-        <a href="#slide-1" data-fancybox-group="open-tutorial" class="teal open-tutorial"> {t}Login{/t} </a>
-        <a href="#slide-2" data-fancybox-group="open-tutorial" class="hide open-tutorial"></a>
-        -->
     </div>
     <div class="box-sidebar one">
         <h3>{t}Our Clients{/t}</h3>
@@ -66,7 +48,7 @@ $this->widget(
         </div>
     </div>
 
-    <div class="box-sidebar two">
+    <div class="box-sidebar one">
         <h3>{t}Approved Courses{/t}</h3>
         <p style="font-weight: bold;">{t}EACC has approved certain courses for PDH credit.{/t}</p>
         <p style="text-align: center;"><b><a href="http://www.eapassn.org/files/public/EACCroster2012.pdf"
@@ -80,16 +62,44 @@ $this->widget(
                                                                   alt="EAP Assocation Logo"></a></p>
     </div>
 
-    <!-- sidebar for Participating locations here -->
-    <!-- sidebar on Resent Research here -->
-
 </div>
 <div class="column-wide">
-    <h2 class="flowers">Mather LifeWays Institute on Aging</h2>
+<h2 class="flowers top-pad">{t}Web-based Training for Working Caregivers{/t}</h2>
 
-    <p>{t}Through research-based programs and innovative techniques, Mather LifeWays Institute on Aging is committed to
-        advancing the field of eldercare. We deliver online learning and web-based modalities using the latest
-        technologies to efficiently and cost-effectively empower professionals in the workplace.{/t}</p>
+<p>{t}Mather LifeWays Institute on Aging delivers provides online training using the latest technologies to efficiently and cost-effectively empower professionals in the workplace. Our online courses have been shown to result in measurable improvements in the quality of care provided and workforce retention. Participation may yieled:{/t}</p>
+
+<ul>
+<li>{t}Increased employee morale due to greater self-efficacy;{/t}</li>
+<li>{t}Improved employee to employer, and employee to family relations; and{/t}</li>
+<li>{t}Reduced employee absenteeism which leads to increased productivity.{/t}</li>
+</ul>
+
+<h2 class="flowers top-pad">{t}A Closer Look - Lives of Caregivers{/t}</h2>
+
+<p style="padding-bottom: 25px;">{t}Join us in looking at the incredible lives of several, unique caregivers, as
+they recall their experience and emotion. Capturing various age groups and ethnicities, you will quickly relate
+to the situation these caregivers were in. (English){/t}</p>
+
+<div class="box-grey">
+<?php
+    $this->widget(
+                  'ext.JWplayer.JWplayer',
+                  array(
+                        'id' => 'MatherCaregivers',
+                        'config' => array(
+                                          'image' => $this->createDownloadUrl('videos/MatherCaregivers/poster.jpg'),
+                                          'width' => '540px',
+                                          'height' => '305px',
+                                          'levels' => array(
+                                                            array('file' => $this->createDownloadUrl('videos/MatherCaregivers/video.m4v')),
+                                                            array('file' => $this->createDownloadUrl('videos/MatherCaregivers/video.webm')),
+                                                            array('file' => $this->createDownloadUrl('videos/MatherCaregivers/video.ogv'))
+                                                            )
+                                          )
+                        )
+                  );
+    ?>
+</div>
 
     <h2 class="flowers top-pad">{t}Health status of your working caregivers{/t}</h2>
 
@@ -131,45 +141,7 @@ $this->widget(
     $hrEmployerSurvey->run();
     $caregiverSurvey->run();
     ?>
-    <h2 class="flowers top-pad">{t}Benefits of Participation{/t}</h2>
 
-    <p style="padding-bottom: 5px;">{t}Why participate? Our programs have been shown to result in measurable
-        improvements in the quality of care provided and workforce retention. Past participation has yieled many benfits
-        for our clients, including, but not limited to: {/t}</p>
-    <ul>
-        <li>{t}Increased employee morale due to greater self-efficacy.{/t}</li>
-        <li>{t}Improved employee to employer, and employee to family relations.{/t}</li>
-        <li>{t}Reduced employee absenteeism which leads to increased productivity.{/t}</li>
-    </ul>
-
-    <!-- video and text here div -->
-
-    <h2 class="flowers top-pad">{t}A Closer Look - Lives of Caregivers{/t}</h2>
-
-    <p style="padding-bottom: 25px;">{t}Join us in looking at the incredible lives of several, unique caregivers, as
-        they recall their experience and emotion. Capturing various age groups and ethnicities, you will quickly relate
-        to the situation these caregivers were in. (English){/t}</p>
-
-    <div class="box-grey">
-        <?php
-        $this->widget(
-            'ext.JWplayer.JWplayer',
-            array(
-                'id' => 'MatherCaregivers',
-                'config' => array(
-                    'image' => $this->createDownloadUrl('videos/MatherCaregivers/poster.jpg'),
-                    'width' => '540px',
-                    'height' => '305px',
-                    'levels' => array(
-                        array('file' => $this->createDownloadUrl('videos/MatherCaregivers/video.m4v')),
-                        array('file' => $this->createDownloadUrl('videos/MatherCaregivers/video.webm')),
-                        array('file' => $this->createDownloadUrl('videos/MatherCaregivers/video.ogv'))
-                    )
-                )
-            )
-        );
-        ?>
-    </div>
     <?php
     $this->createWidget(
         'surveyor.widgets.Survey',

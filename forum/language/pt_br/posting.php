@@ -4,7 +4,7 @@
 * posting [Português Brasileiro]
 *
 * @package language
-* @version 1.0.6
+* @version 1.0.7
 * @author Suporte phpBB <contato@suportephpbb.com.br> http://www.suportephpbb.com.br/
 * @copyright (c) 2005 phpBB Group, 2012 Suporte phpBB
 * @license http://opensource.org/licenses/gpl-license.php GNU Public License
@@ -56,8 +56,8 @@ $lang = array_merge($lang, array(
 	'BBCODE_IS_ON'				=> '%sBBCode%s está <em>Ativo</em>',
 	'BBCODE_I_HELP'				=> 'Itálico: [i]texto[/i]',
 	'BBCODE_L_HELP'				=> 'Lista: [list]lista[/list]',
-	'BBCODE_LISTITEM_HELP'		=> 'Listar Itens: [*]texto[/*]',
-	'BBCODE_O_HELP'				=> 'Lista Ordenada: [list=]lista ordenada[/list]',
+	'BBCODE_LISTITEM_HELP'		=> 'Listar Itens: [*]texto',
+	'BBCODE_O_HELP'				=> 'Lista Ordenada: isto é [list=1][*]Primeiro Item[/list] ou [list=a][*]Item a[/list]',
 	'BBCODE_P_HELP'				=> 'Imagem: [img]http://url_da_imagem[/img]',
 	'BBCODE_Q_HELP'				=> 'Citação: [quote]citação[/quote]',
 	'BBCODE_S_HELP'				=> 'Cor: [color=red]texto[/color]  Dica: Você também pode utilizar color=#FF0000',

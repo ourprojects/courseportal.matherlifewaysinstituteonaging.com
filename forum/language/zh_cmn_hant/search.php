@@ -77,6 +77,7 @@ $lang = array_merge($lang, array(
 
 	'SEARCHED_FOR'				=> '使用過的關鍵字',
 	'SEARCHED_TOPIC'			=> '搜尋過的主題',
+	'SEARCHED_QUERY'			=> '搜尋過的方式',
 	'SEARCH_ALL_TERMS'			=> '搜尋符合以上所有關鍵字的資料',
 	'SEARCH_ANY_TERMS'			=> '搜尋符合以上任一關鍵字的資料',
 	'SEARCH_AUTHOR'				=> '搜尋發表人',

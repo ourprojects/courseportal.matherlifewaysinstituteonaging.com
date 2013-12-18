@@ -7,7 +7,7 @@
 * @version $Id: $
 * @copyright (c) 2007 phpBB Group. Modified by nextgen for phpbbargentina.com in 2012 
 * @author 2007-11-26 - Traducido por Huan Manwe junto con phpbb-es.com (http://www.phpbb-es.com) basado en la version argentina hecha por larveando.com.ar ).
-* @author - ImagePack made nextgen (Styles Team Leader of http://www.phpbbargentina.com)
+* @author - ImagePack made nextgen (Styles Team Leader of http://www.phpbbargentina.com/)
 * @license http://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU General Public License 
 *
 */
@@ -264,11 +264,7 @@ $lang = array_merge($lang, array(
 	'ACP_FEED_OVERALL_EXPLAIN'			=> 'Nuevos mensajes en todo el Sitio.',
 	'ACP_FEED_OVERALL_FORUMS'			=> 'Habilitar los Feeds en todo el foro',
 	'ACP_FEED_OVERALL_FORUMS_EXPLAIN'	=> 'Este Feed muestra los últimos mensajes de todos los temas del foro.',
-	'ACP_FEED_OVERALL_FORUMS_LIMIT'		=> 'Número de ítems a mostrar por página en el Feed de los foros',
 
-	'ACP_FEED_OVERALL_TOPIC'			=> 'Habilitar Feed en todos los temas',
-	'ACP_FEED_OVERALL_TOPIC_EXPLAIN'	=> 'Habilita el Feed para “Todos los Temas”',
-	'ACP_FEED_OVERALL_TOPIC_LIMIT'		=> 'Número de ítems a mostrar por página en el Feed de los temas',
 	'ACP_FEED_FORUM'					=> 'Habilitar Feeds Por-Foro',
 	'ACP_FEED_FORUM_EXPLAIN'			=> 'Nuevos mensajes en un único foro y sus subforos.',
 	'ACP_FEED_TOPIC'					=> 'Habilitar Feeds Por-Tema',

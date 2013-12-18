@@ -83,7 +83,8 @@ $lang = array_merge($lang, array(
 		'NUMBER'		=> '任何数字序列',
 		'EMAIL'			=> '有效的email地址',
 		'URL'			=> '使用任何协议的有效的URL(http, ftp, 等等… 不能用作javascript掠夺). 如果没有提供, 将添加“http://”',
-		'LOCAL_URL'		=> '本地URL. URL必须和主题页相关并且不能包含服务器名称和协议',
+		'LOCAL_URL'		=> '本地URL. URL必须和主题页相关并且不能包含服务器名称和协议, 就像带前缀"%s"的链接',
+		'RELATIVE_URL'	=> '相对URL. 您可以使用这个来匹配部分URL, 但是注意: 一个完整的URL是一个有效的相对URL. 当你想使用相对URL时,使用 LOCAL_URL 标记.',
 		'COLOR'			=> 'HTML颜色, 可以是六位十六进制数<samp>#FF1234</samp> 或者<a href="http://www.w3.org/TR/CSS21/syndata.html#value-def-color">CSS色彩关键字</a> 例如<samp>fuchsia</samp> 或 <samp>InactiveBorder</samp>'
 	)
 ));

@@ -1,8 +1,8 @@
 Subject: 新主题通知 - "{FORUM_NAME}"
 
-Hello {USERNAME},
+您好 {USERNAME},
 
-您收到这个通知是因为您在 "{SITENAME}" 上订阅了版面 "{FORUM_NAME}". 刚刚有人在这个版面发表了新主题 "{TOPIC_TITLE}". 您可以点击下面的链接查看版面, 在您查看版面前不会再有更多的通知.
+您收到此通知是因为您正在浏览论坛, "{FORUM_NAME}" 在 "{SITENAME}". 此论坛收到一个新的主题<!-- IF AUTHOR_NAME !== '' --> 由 {AUTHOR_NAME}<!-- ENDIF -->从您上次访问后, "{TOPIC_TITLE}". 您可以用下面的链接来查看论坛, 在您访问该论坛之前不会再发送更多的通知.
 
 {U_FORUM}
 

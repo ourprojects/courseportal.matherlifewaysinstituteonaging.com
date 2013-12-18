@@ -33,7 +33,7 @@ Fecha: _______________
 ------------------------------ CORTE POR AQUÍ ------------------------------
 
 
-Una vez que el/la administrador(a) haya recibido el formulario de arriba vía fax o correo tradicional su cuenta será activada.
+Una vez que el/la Administrador(a) haya recibido el formulario de arriba vía fax o correo tradicional su cuenta será activada.
 
 Su contraseña ha sido guardada de forma segura en nuestra base de datos y no puede ser recuperada. En caso de que sea olvidada, podrás restaurarla usando la dirección de email asociada a tu cuenta.
 

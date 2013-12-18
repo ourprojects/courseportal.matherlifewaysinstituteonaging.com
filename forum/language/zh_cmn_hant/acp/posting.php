@@ -40,6 +40,7 @@ if (empty($lang) || !is_array($lang))
 $lang = array_merge($lang, array(
 	'ACP_BBCODES_EXPLAIN'		=> 'BBCode 是一種特殊的 HTML 簡易使用方式，它可以提供有效的控制各種頁面效果的顯示。在這裡，您可以增加/移除/編輯自行定義 BBCode。',
 	'ADD_BBCODE'				=> '增加 BBCode',
+
 	'BBCODE_DANGER'				=> '您嘗試新增的 BBCode 似乎是使用 {TEXT} 標記在 HTML 語法。這很有可能發生 XSS 安全問題。試試使用更多限制的 {SIMPLETEXT} 或 {INTTEXT} 型式取代。如果您瞭解潛在的風險，以及認為使用 {TEXT} 絕對無法避免的話，那麼繼續執行它。',
 	'BBCODE_DANGER_PROCEED'		=> '繼續執行', //'I understand the risk',
 
@@ -82,7 +83,8 @@ $lang = array_merge($lang, array(
 		'NUMBER'		=> '任何數字序列',
 		'EMAIL'			=> '有效的 e-mail 位址',
 		'URL'			=> '使用任何通訊協議的有效的 URL (如 http、ftp、...等，但不能使用 javascript 功能)。如果沒有提供，將將自動以「http://」當作字符串的開頭。',
-		'LOCAL_URL'		=> '本地的 URL。URL 必須和主題頁相關，並且不能包含伺服器名稱或通訊協議。',
+		'LOCAL_URL'		=> '本地的 URL。URL 必須和主題頁相關，並且不能包含伺服器名稱或通訊協議，以「%s」做為連結的前綴。',
+		'RELATIVE_URL'	=> '相對的 URL。您可以用它來匹配為 URL 的一部分，但要小心：一個完整的 URL 是一個有效而相對的 URL。當您的論壇想使用相對的 URL，得使用本地的 URL 之標誌符號。',
 		'COLOR'			=> 'HTML 顏色，可以是 3 組十六進位數格式，例如：<samp>#FF1234</samp>，或者是 <a href="http://www.w3.org/TR/CSS21/syndata.html#value-def-color">CSS 顏色關鍵字</a>，例如：<samp>fuchsia</samp> 或 <samp>InactiveBorder</samp>。'
 	)
 ));

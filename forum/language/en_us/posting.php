@@ -5,7 +5,7 @@
 *
 * @package language
 * @version $Id$
-* @copyright (c) 2005 phpBB Group
+* @copyright (c) 2005 phpBB Group, (c) Maël Soucaze
 * @license http://opensource.org/licenses/gpl-2.0.php GNU General Public License 2.0
 *
 */
@@ -54,9 +54,9 @@ $lang = array_merge($lang, array(
 	'BBCODE_IS_OFF'				=> '%sBBCode%s is <em>OFF</em>',
 	'BBCODE_IS_ON'				=> '%sBBCode%s is <em>ON</em>',
 	'BBCODE_I_HELP'				=> 'Italic text: [i]text[/i]',
-	'BBCODE_L_HELP'				=> 'List: [list]text[/list]',
-	'BBCODE_LISTITEM_HELP'		=> 'List item: [*]text[/*]',
-	'BBCODE_O_HELP'				=> 'Ordered list: [list=]text[/list]',
+	'BBCODE_L_HELP'				=> 'List: [list][*]text[/list]', 
+	'BBCODE_LISTITEM_HELP'		=> 'List item: [*]text',
+	'BBCODE_O_HELP'				=> 'Ordered list: e.g. [list=1][*]First point[/list] or [list=a][*]Point a[/list]',
 	'BBCODE_P_HELP'				=> 'Insert image: [img]http://image_url[/img]',
 	'BBCODE_Q_HELP'				=> 'Quote text: [quote]text[/quote]',
 	'BBCODE_S_HELP'				=> 'Font color: [color=red]text[/color]  Tip: you can also use color=#FF0000',

@@ -53,7 +53,7 @@ $lang = array_merge($lang, array(
 	'SYSTEM_TIMEZONE'            => '访客时区',
 	'SYSTEM_TIMEZONE_EXPLAIN'         => '时区用来为未登录的用户（游客，爬虫）显示时区。已登陆用户在注册过程中选择时区并且可以在用户控制面板中修改。',
 	'WARNINGS_EXPIRE'				=> '警告失效时间',
-	'WARNINGS_EXPIRE_EXPLAIN'		=> '用户记录警告自动消失的天数。设为0使警告永不过期。',
+	'WARNINGS_EXPIRE_EXPLAIN'		=> '用户记录警告自动消失的天数.设为0使警告永不过期.',
 ));
 
 // Board Features

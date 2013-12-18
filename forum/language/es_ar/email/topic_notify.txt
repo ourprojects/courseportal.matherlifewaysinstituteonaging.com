@@ -2,8 +2,7 @@ Subject: Notificación de respuesta al tema - "{TOPIC_TITLE}"
 
 Hola {USERNAME},
 
-Estás recibiendo esta notificación porque estás siguiendo el foro, "{FORUM_NAME}" de "{SITENAME}".
-Este tema ha recibido una respuesta desde tu última visita. 
+Este tema ha recibido una respuesta<!-- IF AUTHOR_NAME !== '' --> por {AUTHOR_NAME}<!-- ENDIF --> desde tu última visita.
 Siguiendo este enlace podés ver esta respuesta, no se enviarán más notificaciones hasta que visites este tema.
 
 Si querés ver los nuevos mensajes desde tu última visita, hace clic en el siguiente enlace:

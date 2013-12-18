@@ -329,11 +329,11 @@ $help = array(
 	),
 	array(
 		0 => '这个论坛程序是谁写的?',
-		1 => '这份软件 (官方发行的版本) 由 <a href="http://www.phpbb.com/">phpBB Group</a> 制作, 发布并持有版权. 遵循 GNU General Public Licence 开源协议, 可以自由使用和发布, 查看链接以得到更多信息'
+		1 => '这份软件(官方发行的版本)由 <a href="https://www.phpbb.com/">phpBB Group</a> 制作, 发布并持有版权. 遵循 GNU General Public Licence 开源协议, 可以自由发布, 查看链接以得到更多信息.'
 	),
 	array(
 		0 => '为什么没有 X 功能?',
-		1 => '本软件由 phpBB Group 编写和授权，如果您认为某个功能需要被添加，或者想报告 bug，请访问 phpBB <a href="http://area51.phpbb.com/">Area51</a> 网站，在这里可以找到所需资源。'
+		1 => '本软件由 phpBB Group 编写和授权, 如果您认为某个功能需要被添加, 请访问 <a href="https://www.phpbb.com/ideas/">phpBB Ideas Centre</a>, 在这里您可以投票或建议新功能.'
 	),
 	array(
 		0 => '对于论坛上诽谤, 脏话和其他触及法律的事务, 我该联络谁?',

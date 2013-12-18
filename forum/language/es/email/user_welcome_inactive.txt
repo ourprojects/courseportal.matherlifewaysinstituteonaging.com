@@ -1,4 +1,4 @@
-Subject: Bienvenido a "{SITENAME}" - {U_BOARD}
+Subject: Bienvenido a "{SITENAME}"
 
 {WELCOME_MSG}
 
@@ -14,8 +14,8 @@ Por favor visite el siguiente enlace para activar su cuenta:
 
 {U_ACTIVATE}
 
-Su contraseña ha sido guardada de forma segura en nuestra base de datos y no puede ser recuperada. En el caso de que la olvide tendrá la posibilidad de regenerarla usando la misma dirección de correo electrónico asociada a su cuenta.
-
+Su contraseña ha sido guardada de forma segura en nuestra base de datos y no puede ser recuperada.
+En el caso de que la olvide tendrá la posibilidad de regenerarla usando la misma dirección de correo electrónico asociada a su cuenta.
 
 Gracias por registrarse.
 

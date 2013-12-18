@@ -77,6 +77,7 @@ $lang = array_merge($lang, array(
 
 	'SEARCHED_FOR'				=> '使用的搜索条件',
 	'SEARCHED_TOPIC'			=> '查找的主题',
+	'SEARCHED_QUERY'			=> '搜索的查询',
 	'SEARCH_ALL_TERMS'			=> '满足全部条件或使用输入的搜索串',
 	'SEARCH_ANY_TERMS'			=> '满足任意条件',
 	'SEARCH_AUTHOR'				=> '按作者搜索',

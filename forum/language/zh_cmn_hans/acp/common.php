@@ -292,7 +292,7 @@ $lang = array_merge($lang, array(
 
 // PHP info
 $lang = array_merge($lang, array(
-	'ACP_PHP_INFO_EXPLAIN'	=> '这个页面列出了这个服务器上所安装的PHP的信息. 这包括装载的模块, 可用的变量和默认设定, 在诊断问题时这些信息可能会有用. 请注意一些主机服务商可能会因为安全因素禁止显示某些信息. 您尽可能不要泄露这些信息, 除非在技术支持中 <a href="http://www.phpbb.com/about/">官方开发成员</a> 需要这些信息.',
+	'ACP_PHP_INFO_EXPLAIN'	=> '这个页面列出了这个服务器上所安装的PHP的信息. 这包括装载的模块, 可用的变量和默认设定, 在诊断问题时这些信息可能会有用. 请注意一些主机服务商可能会因为安全因素禁止显示某些信息. 您尽可能不要泄露这些信息, 除非技术支持中的 <a href="https://www.phpbb.com/about/">官方开发成员</a> 需要这些信息.',
 
 	'NO_PHPINFO_AVAILABLE'	=> '无法获取PHP信息, Phpinfo() 因为安全原因被禁用.',
 ));
@@ -517,9 +517,9 @@ $lang = array_merge($lang, array(
 
 	'LOG_APPROVE_TOPIC'			=> '<strong>批准主题</strong><br />» %s',
 	'LOG_BUMP_TOPIC'			=> '<strong>用户推举主题</strong><br />» %s',
-	'LOG_DELETE_POST'			=> '<strong>删除帖子</strong><br />» %s',
+	'LOG_DELETE_POST'			=> '<strong>删除帖子 "%1$s" 创建自</strong><br />» %2$s',
 	'LOG_DELETE_SHADOW_TOPIC'   => '<strong>删除影子主题</strong><br />» %s',
-	'LOG_DELETE_TOPIC'			=> '<strong>删除主题</strong><br />» %s',
+	'LOG_DELETE_TOPIC'			=> '<strong>删除主题 "%1$s" 创建自</strong><br />» %2$s',
 	'LOG_FORK'					=> '<strong>复制主题</strong><br />» from %s',
 	'LOG_LOCK'					=> '<strong>锁定主题</strong><br />» %s',
 	'LOG_LOCK_POST'				=> '<strong>锁定帖子</strong><br />» %s',
@@ -575,7 +575,7 @@ $lang = array_merge($lang, array(
 	'LOG_GENERAL_ERROR'	=> '<strong>发生错误</strong>: %1$s <br />» %2$s',
 
 	'LOG_GROUP_CREATED'		=> '<strong>创建新用户组</strong><br />» %s',
-	'LOG_GROUP_DEFAULTS'	=> '<strong>设置为成员默认用户组</strong><br />» %s',
+	'LOG_GROUP_DEFAULTS'	=> '<strong>组 "%1$s" 默认为成员</strong><br />» %2$s',
 	'LOG_GROUP_DELETE'		=> '<strong>删除用户组</strong><br />» %s',
 	'LOG_GROUP_DEMOTED'		=> '<strong>组管理员降级为一般成员</strong> %1$s<br />» %2$s',
 	'LOG_GROUP_PROMOTED'	=> '<strong>成员升级为组管理员</strong> %1$s<br />» %2$s',
@@ -621,10 +621,10 @@ $lang = array_merge($lang, array(
 
 	'LOG_MCP_CHANGE_POSTER'	=> '<strong>更改主题作者 "%1$s"</strong><br />» 自 %2$s to %3$s',
 
-	'LOG_MODULE_DISABLE'	=> '<strong>模块停用</strong>',
-	'LOG_MODULE_ENABLE'		=> '<strong>模块启用</strong>',
-	'LOG_MODULE_MOVE_DOWN'	=> '<strong>模块下移</strong><br />» %s',
-	'LOG_MODULE_MOVE_UP'	=> '<strong>模块上移</strong><br />» %s',
+	'LOG_MODULE_DISABLE'	=> '<strong>模块关闭</strong><br />» %s',
+	'LOG_MODULE_ENABLE'		=> '<strong>模块启用</strong><br />» %s',
+	'LOG_MODULE_MOVE_DOWN'	=> '<strong>模块下移</strong><br />» %1$s 在 %2$s 下面',
+	'LOG_MODULE_MOVE_UP'	=> '<strong>模块上移</strong><br />» %1$s 在 %2$s 上面',
 	'LOG_MODULE_REMOVED'	=> '<strong>删除模块</strong><br />» %s',
 	'LOG_MODULE_ADD'		=> '<strong>添加模块</strong><br />» %s',
 	'LOG_MODULE_EDIT'		=> '<strong>编辑模块</strong><br />» %s',
@@ -693,7 +693,7 @@ $lang = array_merge($lang, array(
 	'LOG_THEME_ADD_FS'			=> '<strong>添加新风格主题至文件系统</strong><br />» %s',
 	'LOG_THEME_DELETE'			=> '<strong>风格主题删除</strong><br />» %s',
 	'LOG_THEME_EDIT_DETAILS'	=> '<strong>编辑风格主题细节</strong><br />» %s',
-	'LOG_THEME_EDIT'			=> '<strong>编辑风格主题 <em>%1$s</em></strong><br />» 编辑类型 <em>%2$s</em>',
+	'LOG_THEME_EDIT'			=> '<strong>编辑风格主题<em>%1$s</em></strong>',
 	'LOG_THEME_EDIT_FILE'		=> '<strong>编辑风格主题 <em>%1$s</em></strong><br />» Modified file <em>%2$s</em>',
 	'LOG_THEME_EXPORT'			=> '<strong>导出风格主题</strong><br />» %s',
 	'LOG_THEME_REFRESHED'		=> '<strong>刷新风格主题</strong><br />» %s',
@@ -748,10 +748,5 @@ $lang = array_merge($lang, array(
 	'LOG_WORD_DELETE'		=> '<strong>删除敏感词</strong><br />» %s',
 	'LOG_WORD_EDIT'			=> '<strong>编辑敏感词</strong><br />» %s',
 ));
-
-	// Two language keys with the same text were used in different locations
-	// LOG_DELETE_TOPIC is the correct one, this line is here so that existing
-	// log entries are not broken. Ensure it is included in your language file.
-	$lang['LOG_TOPIC_DELETED'] = $lang['LOG_DELETE_TOPIC'];
 
 ?>

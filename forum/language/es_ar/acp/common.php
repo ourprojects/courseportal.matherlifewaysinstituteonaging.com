@@ -292,7 +292,7 @@ $lang = array_merge($lang, array(
 
 // PHP info
 $lang = array_merge($lang, array(
-	'ACP_PHP_INFO_EXPLAIN'	=> 'Esta página muestra información de la versión de PHP instalada en el servidor. Incluye detalles de módulos cargados, variables disponibles y parámetros por defecto. Esta información puede ser útil para diagnosticar problemas. Por favor observa que algunas empresas de hosting pueden limitar la información que se muestre acá por razones de seguridad. Te advertimos que no deberías proporcionar ningún detalle de esta página excepto cuando lo requiera el <a href="http://www.phpbb.com/about/">usuarios del equipo oficial</a> en su Foro de Soporte.',
+	'ACP_PHP_INFO_EXPLAIN'	=> 'Esta página muestra información de la versión de PHP instalada en el servidor. Incluye detalles de módulos cargados, variables disponibles y parámetros por defecto. Esta información puede ser útil para diagnosticar problemas. Por favor observa que algunas empresas de hosting pueden limitar la información que se muestre acá por razones de seguridad. Te advertimos que no deberías proporcionar ningún detalle de esta página excepto cuando lo requiera el <a href="https://www.phpbb.com/about/">usuarios del equipo oficial</a> en su Foro de Soporte.',
 
 	'NO_PHPINFO_AVAILABLE'	=> 'La información sobre tu configuración PHP no se puede determinar. Phpinfo() ha sido deshabilitado por razones de seguridad.',
 ));
@@ -514,10 +514,10 @@ $lang = array_merge($lang, array(
 
 	'LOG_APPROVE_TOPIC'			=> '<strong>Tema aprobado</strong><br />» %1$s',
 	'LOG_BUMP_TOPIC'			=> '<strong>Tema reactivado por usuario</strong><br />» %1$s',
-	'LOG_DELETE_POST'			=> '<strong>Borrado: mensaje</strong><br />» %1$s',
+	'LOG_DELETE_POST'			=> '<strong>Borrado: mensaje “%1$s” escrito por</strong><br />» %2$s',
 
 	'LOG_DELETE_SHADOW_TOPIC'	=> '<strong>Tema sombreado eliminado</strong><br />» %s',
-	'LOG_DELETE_TOPIC'			=> '<strong>Tema eliminado</strong><br />» %s',
+	'LOG_DELETE_TOPIC'			=> '<strong>Tema eliminado “%1$s” escrito por</strong><br />» %2$s',
 	'LOG_FORK'					=> '<strong>Tema copiado </strong><br />» de %s',
 	'LOG_LOCK'					=> '<strong>Tema cerrado</strong><br />» %s',
 	'LOG_LOCK_POST'				=> '<strong>Mensaje cerrado</strong><br />» %s',
@@ -530,8 +530,8 @@ $lang = array_merge($lang, array(
 	'LOG_POST_EDITED'           => '<strong>Mensaje editado "%1$s" escrito por</strong><br />» %2$s',
 	'LOG_REPORT_CLOSED'			=> '<strong>Informe cerrado</strong><br />» %s',
 	'LOG_REPORT_DELETED'		=> '<strong>Informe borrado</strong><br />» %s',
-	'LOG_SPLIT_DESTINATION'		=> '<strong>Mensajes divididos movidos</strong><br />» a $s',
-	'LOG_SPLIT_SOURCE'			=> '<strong>Mensajes divididos</strong><br />» de $s',
+	'LOG_SPLIT_DESTINATION'		=> '<strong>Mensajes divididos movidos</strong><br />» a %s',
+	'LOG_SPLIT_SOURCE'			=> '<strong>Mensajes divididos</strong><br />» de %s',
 
 	'LOG_TOPIC_APPROVED'		=> '<strong>Tema aprobado</strong><br />» %s',
 	'LOG_TOPIC_DISAPPROVED'		=> '<strong>Tema desaprobado “%1$s” por la siguiente razón</strong><br />» %2$s',
@@ -569,10 +569,10 @@ $lang = array_merge($lang, array(
 	'LOG_FORUM_MOVE_DOWN'					=> '<strong>Movido: foro</strong> %1$s <strong>de abajo</strong> %2$s',
 	'LOG_FORUM_MOVE_UP'						=> '<strong>Movido: foro</strong> %1$s <strong>encima de</strong> %2$s',
 	'LOG_FORUM_SYNC'						=> '<strong>Foro resincronizado</strong><br />» %1$s',
-	'LOG_GENERAL_ERROR'	=> '<strong>Ha ocurrido un error general</strong>: %1$s <br />» %2$s',
+	'LOG_GENERAL_ERROR'	                    => '<strong>Ha ocurrido un error general</strong>: %1$s <br />» %2$s',
 
 	'LOG_GROUP_CREATED'		=> '<strong>: nuevo grupo de usuarios</strong><br />» %1$s',
-	'LOG_GROUP_DEFAULTS'	=> '<strong>Grupo por defecto para usuarios</strong><br />» %1$s',
+	'LOG_GROUP_DEFAULTS'	=> '<strong>Grupo %1$s por defecto para usuarios</strong><br />» %2$s',
 	'LOG_GROUP_DELETE'		=> '<strong>Borrado grupo de usuarios</strong><br />» %1$s',
 	'LOG_GROUP_DEMOTED'		=> '<strong>Responsables depuestos en grupo</strong> %1$s<br />» %2$s',
 	'LOG_GROUP_PROMOTED'	=> '<strong>Usuarios promovidos a responsables en grupo</strong> %1$s<br />» %2$s',
@@ -618,10 +618,10 @@ $lang = array_merge($lang, array(
 
 	'LOG_MCP_CHANGE_POSTER'				=> '<strong>Cambiado remitente en el tema "%1$s"</strong><br />» de %2$s a %3$s',
 
-	'LOG_MODULE_DISABLE'				=> '<strong>Módulo deshabilitado</strong>',
-	'LOG_MODULE_ENABLE'					=> '<strong>Módulo habilitado</strong>',
-	'LOG_MODULE_MOVE_DOWN'				=> '<strong>Módulo movido bajo</strong><br />» %1$s',
-	'LOG_MODULE_MOVE_UP'				=> '<strong>Módulo movido sobre</strong><br />» %1$s',
+	'LOG_MODULE_DISABLE'				=> '<strong>Módulo deshabilitado</strong><br />» %s',
+	'LOG_MODULE_ENABLE'					=> '<strong>Módulo habilitado</strong><br />» %s',
+	'LOG_MODULE_MOVE_DOWN'				=> '<strong>Módulo movido bajo</strong><br />» %1$s abajo %2$s',
+	'LOG_MODULE_MOVE_UP'				=> '<strong>Módulo movido sobre</strong><br />» %1$s arriba %2$s',
 	'LOG_MODULE_REMOVED'				=> '<strong>Módulo eliminado</strong><br />» %1$s',
 	'LOG_MODULE_ADD'					=> '<strong>Módulo añadido</strong><br />» %1$s',
 	'LOG_MODULE_EDIT'					=> '<strong>Módulo editado</strong><br />» %1$s',
@@ -689,7 +689,7 @@ $lang = array_merge($lang, array(
 	'LOG_THEME_ADD_FS'			=> '<strong>Añadido: tema a filesystem</strong><br />» %1$s',
 	'LOG_THEME_DELETE'			=> '<strong>Borrado: tema</strong><br />» %1$s',
 	'LOG_THEME_EDIT_DETAILS'	=> '<strong>Editado: detalles de tema</strong><br />» %1$s',
-	'LOG_THEME_EDIT'			=> '<strong>Editado: tema <em>%1$s</em></strong><br />» Modificada: clase <em>%2$s</em>',
+	'LOG_THEME_EDIT'			=> '<strong>Editado: tema <em>%1$s</em></strong>',
 	'LOG_THEME_EDIT_FILE'		=> '<strong>Editado: tema <em>%1$s</em></strong><br />» Añadida: clase <em>%2$s</em>',
 	'LOG_THEME_EXPORT'			=> '<strong>Exportado tema</strong><br />» %1$s',
 	'LOG_THEME_REFRESHED'		=> '<strong>Actualizado: tema</strong><br />» %1$s',
