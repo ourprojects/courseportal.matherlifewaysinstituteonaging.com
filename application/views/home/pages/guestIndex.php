@@ -74,6 +74,33 @@ $fancyBoxConfig = array(
 <li>{t}Reduced employee absenteeism which leads to increased productivity.{/t}</li>
 </ul>
 
+<h2 class="flowers top-pad">{t}A Closer Look - Lives of Caregivers{/t}</h2>
+
+<p style="padding-bottom: 25px;">{t}Join us in looking at the incredible lives of several, unique caregivers, as
+they recall their experience and emotion. Capturing various age groups and ethnicities, you will quickly relate
+to the situation these caregivers were in. (English){/t}</p>
+
+<div class="box-grey">
+<?php
+    $this->widget(
+                  'ext.JWplayer.JWplayer',
+                  array(
+                        'id' => 'MatherCaregivers',
+                        'config' => array(
+                                          'image' => $this->createDownloadUrl('videos/MatherCaregivers/poster.jpg'),
+                                          'width' => '540px',
+                                          'height' => '305px',
+                                          'levels' => array(
+                                                            array('file' => $this->createDownloadUrl('videos/MatherCaregivers/video.m4v')),
+                                                            array('file' => $this->createDownloadUrl('videos/MatherCaregivers/video.webm')),
+                                                            array('file' => $this->createDownloadUrl('videos/MatherCaregivers/video.ogv'))
+                                                            )
+                                          )
+                        )
+                  );
+    ?>
+</div>
+
     <h2 class="flowers top-pad">{t}Health status of your working caregivers{/t}</h2>
 
     <p>{t}Please choose one of the surveys below to take. Depending on your position, employer or employee, submit this
@@ -115,32 +142,6 @@ $fancyBoxConfig = array(
     $caregiverSurvey->run();
     ?>
 
-    <h2 class="flowers top-pad">{t}A Closer Look - Lives of Caregivers{/t}</h2>
-
-    <p style="padding-bottom: 25px;">{t}Join us in looking at the incredible lives of several, unique caregivers, as
-        they recall their experience and emotion. Capturing various age groups and ethnicities, you will quickly relate
-        to the situation these caregivers were in. (English){/t}</p>
-
-    <div class="box-grey">
-        <?php
-        $this->widget(
-            'ext.JWplayer.JWplayer',
-            array(
-                'id' => 'MatherCaregivers',
-                'config' => array(
-                    'image' => $this->createDownloadUrl('videos/MatherCaregivers/poster.jpg'),
-                    'width' => '540px',
-                    'height' => '305px',
-                    'levels' => array(
-                        array('file' => $this->createDownloadUrl('videos/MatherCaregivers/video.m4v')),
-                        array('file' => $this->createDownloadUrl('videos/MatherCaregivers/video.webm')),
-                        array('file' => $this->createDownloadUrl('videos/MatherCaregivers/video.ogv'))
-                    )
-                )
-            )
-        );
-        ?>
-    </div>
     <?php
     $this->createWidget(
         'surveyor.widgets.Survey',

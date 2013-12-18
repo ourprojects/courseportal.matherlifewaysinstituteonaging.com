@@ -36,4 +36,10 @@
 	</ul>
 	<hr />
 	<?php endforeach; ?>
+
+<h2 class="flowers">{t}CARE Coaching Online{/t}</h2>
+<p>{t}To help individual caregivers transition into their new role, be better prepared to manage their loved one's needs, and learn how to effectively practice self-care, Mather LifeWays Institute on Aging has developed online programs that are designed to educate caregivers while fitting into any schedule.{/t}</p>
+
+<h2 class="flowers">{t}Spencer Powell Online Training (SPOT){/t}</h2>
+<p>{t}To help individual caregivers transition into their new role, be better prepared to manage their loved one's needs, and learn how to effectively practice self-care, Mather LifeWays Institute on Aging has developed online programs that are designed to educate caregivers while fitting into any schedule.{/t}</p>
 </div>
