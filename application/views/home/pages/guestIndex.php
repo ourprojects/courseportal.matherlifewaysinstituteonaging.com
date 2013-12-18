@@ -24,7 +24,7 @@ $fancyBoxConfig = array(
 ?>
 
 <div id="home-image">
-    // <h1>{t}Web-based Training for Caregivers{/t}</h1> text over image here
+    <!-- <h1>{t}Web-based Training for Caregivers{/t}</h1> -->
 </div>
 
 <div id="sidebar">
