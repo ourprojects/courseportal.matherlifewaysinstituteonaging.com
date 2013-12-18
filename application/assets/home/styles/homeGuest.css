@@ -1,7 +1,7 @@
 #home-image {
 	background: url(../images/84008631.png) top center no-repeat;
-	max-height: 150px;
-    min-height: 150px;
+	max-height: 125px;
+    min-height: 125px;
 	box-shadow: inset 0 0 10px #396caa;
 	overflow: hidden;
 }

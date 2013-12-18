@@ -13,7 +13,7 @@ $fancyBoxConfig = array(
     'mouseWheel' => false,
 );
 
-$this->widget(
+ $this->widget(
     'ext.fancybox.EFancyBox',
     array(
         'id' => 'a[id^="survey_link_"]',
@@ -24,7 +24,7 @@ $this->widget(
 ?>
 
 <div id="home-image">
-    <h1>{t}Web-based Training for Caregivers{/t}</h1>
+    // <h1>{t}Web-based Training for Caregivers{/t}</h1> text over image here
 </div>
 
 <div id="sidebar">
