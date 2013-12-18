@@ -16,14 +16,6 @@ $fancyBoxConfig = array(
 $this->widget(
     'ext.fancybox.EFancyBox',
     array(
-        'id' => '.open-tutorial',
-        'config' => $fancyBoxConfig
-    )
-);
-
-$this->widget(
-    'ext.fancybox.EFancyBox',
-    array(
         'id' => 'a[id^="survey_link_"]',
         'config' => $fancyBoxConfig
     )
@@ -74,7 +66,7 @@ $this->widget(
 <div class="column-wide">
 <h2 class="flowers top-pad">{t}Web-based Training for Working Caregivers{/t}</h2>
 
-<p>{t}Mather LifeWays Institute on Aging delivers provides online training using the latest technologies to efficiently and cost-effectively empower professionals in the workplace. Our online courses have been shown to result in measurable improvements in the quality of care provided and workforce retention. Past participation has yieled:{/t}</p>
+<p>{t}Mather LifeWays Institute on Aging delivers provides online training using the latest technologies to efficiently and cost-effectively empower professionals in the workplace. Our online courses have been shown to result in measurable improvements in the quality of care provided and workforce retention. Participation may yieled:{/t}</p>
 
 <ul>
 <li>{t}Increased employee morale due to greater self-efficacy;{/t}</li>
