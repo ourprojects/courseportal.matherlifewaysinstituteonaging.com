@@ -5,8 +5,6 @@ $clientScript->registerCssFile($this->getStylesUrl('homeGuest.css'));
 $clientScript->registerScriptFile($this->getScriptsUrl('jquery.cycle.all.js'), CClientScript::POS_HEAD);
 $clientScript->registerScript('customers_cycle', "$('#customers').cycle();");
 
-// $clientScript->registerScriptFile($this->getScriptsUrl('homeslideshow_edgePreload.js'), CClientScript::POS_HEAD);
-
 $fancyBoxConfig = array(
     'width' => '720px',
     'height' => '720px',
@@ -33,23 +31,15 @@ $this->widget(
 
 ?>
 
-<!-- index page main image -->
-
 <div id="home-image">
     <h1>{t}Web-based Training for Caregivers{/t}</h1>
 </div>
-
-<!-- Begin sidebar -->
 
 <div id="sidebar">
     <div class="box-sidebar zero">
         <a href="<?php echo $this->createUrl('user/register'); ?>">{t}Register{/t} </a>
         <a href="<?php echo $this->createUrl('user/login'); ?>" class="teal">{t}Login{/t} </a>
         <a href="<?php echo $this->createUrl('home/contact'); ?>" class="teal">{t}Contact Us{/t} </a>
-        <!--
-        <a href="#slide-1" data-fancybox-group="open-tutorial" class="teal open-tutorial"> {t}Login{/t} </a>
-        <a href="#slide-2" data-fancybox-group="open-tutorial" class="hide open-tutorial"></a>
-        -->
     </div>
     <div class="box-sidebar one">
         <h3>{t}Our Clients{/t}</h3>
@@ -66,7 +56,7 @@ $this->widget(
         </div>
     </div>
 
-    <div class="box-sidebar two">
+    <div class="box-sidebar one">
         <h3>{t}Approved Courses{/t}</h3>
         <p style="font-weight: bold;">{t}EACC has approved certain courses for PDH credit.{/t}</p>
         <p style="text-align: center;"><b><a href="http://www.eapassn.org/files/public/EACCroster2012.pdf"
@@ -82,15 +72,13 @@ $this->widget(
 
 </div>
 <div class="column-wide">
-<h2 style="font-weight: bold;">{t}Web-based Training for Working Caregivers{/t}</h2>
+<h2 class="flowers top-pad">{t}Web-based Training for Working Caregivers{/t}</h2>
 
-    <p>{t}Mather LifeWays Institute on Aging delivers online learning and web-based modalities using the latest
-        technologies to efficiently and cost-effectively empower professionals in the workplace. Our programs have been shown to result in measurable
-improvements in the quality of care provided and workforce retention. Past participation has yieled many benfits
-for our clients, including, but not limited to: {/t}</p>
+<p>{t}Mather LifeWays Institute on Aging delivers provides online training using the latest technologies to efficiently and cost-effectively empower professionals in the workplace. Our online courses have been shown to result in measurable improvements in the quality of care provided and workforce retention. Past participation has yieled:{/t}</p>
+
 <ul>
-<li>{t}Increased employee morale due to greater self-efficacy.{/t}</li>
-<li>{t}Improved employee to employer, and employee to family relations.{/t}</li>
+<li>{t}Increased employee morale due to greater self-efficacy;{/t}</li>
+<li>{t}Improved employee to employer, and employee to family relations; and{/t}</li>
 <li>{t}Reduced employee absenteeism which leads to increased productivity.{/t}</li>
 </ul>
 
