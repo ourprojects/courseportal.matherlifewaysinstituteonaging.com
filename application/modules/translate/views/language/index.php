@@ -4,6 +4,19 @@
 </h1>
 <div id="single-column">
 	<div id="languages" class="box-white">
-		<?php $this->actionGrid(null, 'language-grid'); ?>
+		<?php
+		$this->widget(
+				'translate.widgets.gridSelectionHandler.GridSelectionHandler',
+				array(
+					'gridId' => 'language-grid',
+					'activeRecordClass' => 'Language',
+					'url' => Yii::app()->getController()->createUrl('language/delete'),
+					'buttonText' => TranslateModule::t('Delete All'),
+					'loadingText' => TranslateModule::t('Loading...'),
+					'dialogTitle' => TranslateModule::t('Delete Languages'),
+				)
+		);
+		$this->actionGrid(null, 'language-grid'); 
+		?>
 	</div>
 </div>

@@ -49,7 +49,7 @@ $this->widget('zii.widgets.grid.CGridView',
 			'id' => $id,
 			'filter' => $model,
 			'dataProvider' => $model->with('language')->search(),
-			'selectableRows' => 0,
+			'selectableRows' => 10,
 			'columns' => $columns,
 		)
 );

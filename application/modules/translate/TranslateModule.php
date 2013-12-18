@@ -61,6 +61,11 @@ class TranslateModule extends CWebModule
 		));
 		return parent::init();
 	}
+	
+	public static function getRuntimePath()
+	{
+		return Yii::app()->getRuntimePath().DIRECTORY_SEPARATOR.self::ID;
+	}
 
 	/**
 	 * get the translate component
@@ -177,35 +182,6 @@ class TranslateModule extends CWebModule
 		}
 		catch(Exception $e){}
 		return isset($messageSource) && $messageSource->getIsInstalled() && isset($viewSource) && $viewSource->getIsInstalled();
-	}
-	
-	/**
-	 * Performs the installation and returns the status
-	 * @param int reinstall If true and the tables are already installed they will be dropped and recreated.
-	 * @return array statuses of installing message source and view source in the format array(componentName => (0:Success, 1:Ovewrite, 2: Error))
-	 */
-	public static function install($reinstall = false)
-	{
-		$translator = self::translator();
-		if(!isset($translator))
-		{
-			return self::ERROR;
-		}
-		$messageSource = $translator->getMessageSourceComponent();
-		if(!isset($messageSource) || $messageSource->install($reinstall) === self::ERROR)
-		{ 
-			return self::ERROR;
-		}
-		$viewSource = $translator->getViewSourceComponent();
-		if(!isset($viewSource) || $viewSource->install($reinstall) === self::ERROR)
-		{
-			return self::ERROR;
-		}
-		if($reinstall)
-		{
-			return self::OVERWRITE;
-		}
-		return self::SUCCESS;
 	}
 
 }

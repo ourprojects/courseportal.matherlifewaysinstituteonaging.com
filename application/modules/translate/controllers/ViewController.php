@@ -76,25 +76,25 @@ class ViewController extends TController
 			case 'category-grid':
 				$data['relatedGrids'] = array('messageSource-grid', 'message-grid');
 				$data['model'] = new Category('search');
-				$data['model']->with(array('messageSources.views' => array('condition' => 'views.id=:id AND views.language_id=:language_id', 'params' => array(':id' => $id, ':language_id' => $languageId))))->together()->getDbCriteria()->group = 't.id';
+				$data['model']->view($id, $languageId);
 				$gridPath = '../category/_grid';
 				break;
 			case 'messageSource-grid':
 				$data['relatedGrids'] = array('message-grid');
 				$data['model'] = new MessageSource('search');
-				$data['model']->with(array('views' => array('condition' => 'views.id=:id AND views.language_id=:language_id', 'params' => array(':id' => $id, ':language_id' => $languageId))))->together()->getDbCriteria()->group = 't.id';
+				$data['model']->view($id, $languageId);
 				$gridPath = '../messageSource/_grid';
 				break;
 			case 'message-grid':
 				$data['relatedGrids'] = array();
 				$data['model'] = new Message('search');
-				$data['model']->with(array('viewSources.views' => array('condition' => 'views.id=:id AND views.language_id=:language_id', 'params' => array(':id' => $id, ':language_id' => $languageId))))->together()->getDbCriteria()->group = 't.id, t.language_id';
+				$data['model']->view($id, $languageId);
 				$gridPath = '../message/_grid';
 				break;
 			case 'route-grid':
 				$data['relatedGrids'] = array();
 				$data['model'] = new Route('search');
-				$data['model']->with(array('views' => array('condition' => 'views.id=:id AND views.language_id=:language_id', 'params' => array(':id' => $id, ':language_id' => $languageId))))->together()->getDbCriteria()->group = 't.id';
+				$data['model']->view($id, $languageId);
 				$gridPath = '../route/_grid';
 				break;
 			case 'view-grid':

@@ -4,6 +4,19 @@
 </h1>
 <div id="single-column">
 	<div id="routes" class="box-white">
-		<?php $this->actionGrid(null, 'route-grid'); ?>
+		<?php
+		$this->widget(
+				'translate.widgets.gridSelectionHandler.GridSelectionHandler',
+				array(
+					'gridId' => 'route-grid',
+					'activeRecordClass' => 'Route',
+					'url' => Yii::app()->getController()->createUrl('route/delete'),
+					'buttonText' => TranslateModule::t('Delete All'),
+					'loadingText' => TranslateModule::t('Loading...'),
+					'dialogTitle' => TranslateModule::t('Delete Routes'),
+				)
+		);
+		$this->actionGrid(null, 'route-grid'); 
+		?>
 	</div>
 </div>

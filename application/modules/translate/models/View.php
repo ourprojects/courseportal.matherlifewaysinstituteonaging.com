@@ -78,7 +78,7 @@ class View extends CActiveRecord
 				'except' => 'search'
 			),
 
-			array('id, language, path, created, createdDate, isReadable', 'safe', 'on' => 'search'),
+			array('id, language, language_id, path, created, createdDate, isReadable', 'safe', 'on' => 'search'),
 		);
 	}
 
@@ -97,6 +97,8 @@ class View extends CActiveRecord
 		);
 	}
 
+	/************ BEGIN SCOPES **********/
+	
 	public function scopes()
 	{
 		return array(
@@ -104,6 +106,49 @@ class View extends CActiveRecord
 			'isOtherLanguage' => array('with' => array('acceptedLanguage' => array('joinType' => 'LEFT JOIN')), 'condition' => 'acceptedLanguage.id IS NULL')
 		);
 	}
+	
+	public function viewSource($id)
+	{
+		$this->setAttribute('id', $id);
+		return $this;
+	}
+	
+	public function route($id)
+	{
+		$dbConnection = $this->getDbConnection();
+		$this->with(array('sourceView.routes' => array('condition' => $dbConnection->quoteColumnName('routes.id').'=:id', 'params' => array(':id' => $id))))->together()->getDbCriteria()->group = $dbConnection->quoteColumnName($this->getTableAlias().'.id').', '.$dbConnection->quoteColumnName($this->getTableAlias().'.language_id');
+		return $this;
+	}
+	
+	public function messageSource($id)
+	{
+		$dbConnection = $this->getDbConnection();
+		$this->with(array('sourceView.messageSources' => array('condition' => $dbConnection->quoteColumnName('messageSources.id').'=:id', 'params' => array(':id' => $id))))->together()->getDbCriteria()->group = $dbConnection->quoteColumnName($this->getTableAlias().'.id').', '.$dbConnection->quoteColumnName($this->getTableAlias().'.language_id');
+		return $this;
+	}
+	
+	public function message($id, $language_id)
+	{
+		$dbConnection = $this->getDbConnection();
+		$this->with(array('messages' => array('condition' => $dbConnection->quoteColumnName('messages.id').'=:id AND '.$dbConnection->quoteColumnName('messages.language_id').'=:language_id', 'params' => array(':id' => $id, ':language_id' => $language_id))))->together()->getDbCriteria()->group = $dbConnection->quoteColumnName($this->getTableAlias().'.id').', '.$dbConnection->quoteColumnName($this->getTableAlias().'.language_id');
+		return $this;
+	}
+	
+	public function language($id)
+	{
+		$dbConnection = $this->getDbConnection();
+		$this->with(array('language' => array('condition' => $dbConnection->quoteColumnName('language.id').'=:id', 'params' => array(':id' => $id))))->together()->getDbCriteria()->group = $dbConnection->quoteColumnName($this->getTableAlias().'.id').', '.$dbConnection->quoteColumnName($this->getTableAlias().'.language_id');
+		return $this;
+	}
+	
+	public function category($id)
+	{
+		$dbConnection = $this->getDbConnection();
+		$this->with(array('sourceView.messageSources.categories' => array('condition' => $dbConnection->quoteColumnName('categories.id').'=:id', 'params' => array(':id' => $id))))->together()->getDbCriteria()->group = $dbConnection->quoteColumnName($this->getTableAlias().'.id').', '.$dbConnection->quoteColumnName($this->getTableAlias().'.language_id');
+		return $this;
+	}
+	
+	/************ END SCOPES **********/
 	
 	/**
 	 * Returns whether this view source's path exists and is readable.
@@ -195,12 +240,7 @@ class View extends CActiveRecord
 	 */
 	public function search($dataProviderConfig = array(), $mergeCriteria = array(), $operator = 'AND')
 	{
-		$records = $this->filter(self::model()->findAll($this->getSearchCriteria($mergeCriteria, $operator)));
-
-		foreach($records as $key => $record)
-		{
-			$records[$key] = array('id' => $record->id, 'path' => $record->path, 'language' => $record->language, 'language_id' => $record->language_id, 'createdDate' => $record->createdDate, 'isReadable' => $record->isReadable);
-		}
+		$records = $this->filter($this->findAll($this->getSearchCriteria($mergeCriteria, $operator)));
 		
 		if(!isset($dataProviderConfig['sort']))
 		{

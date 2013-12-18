@@ -35,6 +35,9 @@ class Route extends CActiveRecord
 		return array(
 			'ERememberFiltersBehavior' => array(
 				'class' => 'ext.ERememberFiltersBehavior.ERememberFiltersBehavior',
+			),
+			'LDFilterRawModelDataBehavior' => array(
+					'class' => 'ext.LDFilterRawModelDataBehavior.LDFilterRawModelDataBehavior',
 			)
 		);
 	}
@@ -89,23 +92,69 @@ class Route extends CActiveRecord
 			'viewMessageCount' => TranslateModule::t('View Message Count'),
 		);
 	}
+	
+	/************ BEGIN SCOPES **********/
+	
+	public function viewSource($id)
+	{
+		$dbConnection = $this->getDbConnection();
+		$this->with(array('viewSources' => array('condition' => $dbConnection->quoteColumnName('viewSources.id').'=:id', 'params' => array(':id' => $id))))->together()->getDbCriteria()->group = $dbConnection->quoteColumnName($this->getTableAlias().'.id');
+		return $this;
+	}
+	
+	public function view($id, $language_id)
+	{
+		$dbConnection = $this->getDbConnection();
+		$this->with(array('views' => array('condition' => $dbConnection->quoteColumnName('views.id').'=:id AND '.$dbConnection->quoteColumnName('views.language_id').'=:language_id', 'params' => array(':id' => $id, ':language_id' => $language_id))))->together()->getDbCriteria()->group = $dbConnection->quoteColumnName($this->getTableAlias().'.id');
+		return $this;
+	}
+	
+	public function messageSource($id)
+	{
+		$dbConnection = $this->getDbConnection();
+		$this->with(array('viewSources.messageSources' => array('condition' => $dbConnection->quoteColumnName('messageSources.id').'=:id', 'params' => array(':id' => $id))))->together()->getDbCriteria()->group = $dbConnection->quoteColumnName($this->getTableAlias().'.id');
+		return $this;
+	}
+	
+	public function message($id, $language_id)
+	{
+		$dbConnection = $this->getDbConnection();
+		$this->with(array('views.messages' => array('condition' => $dbConnection->quoteColumnName('messages.id').'=:id AND '.$dbConnection->quoteColumnName('messages.language_id').'=:language_id', 'params' => array(':id' => $id, ':language_id' => $language_id))))->together()->getDbCriteria()->group = $dbConnection->quoteColumnName($this->getTableAlias().'.id');
+		return $this;
+	}
+	
+	public function language($id)
+	{
+		$dbConnection = $this->getDbConnection();
+		$this->with(array('views.language' => array('condition' => $dbConnection->quoteColumnName('language.id').'=:id', 'params' => array(':id' => $id))))->together()->getDbCriteria()->group = $dbConnection->quoteColumnName($this->getTableAlias().'.id');
+		return $this;
+	}
+	
+	public function category($id)
+	{
+		$dbConnection = $this->getDbConnection();
+		$this->with(array('viewSources.messageSources.categories' => array('condition' => $dbConnection->quoteColumnName('categories.id').'=:id', 'params' => array(':id' => $id))))->together()->getDbCriteria()->group = $dbConnection->quoteColumnName($this->getTableAlias().'.id');
+		return $this;
+	}
+	
+	/************ END SCOPES **********/
+	
+	public function getSearchCriteria($mergeCriteria = array(), $operator = 'AND')
+	{
+		$criteria = new CDbCriteria;
+		$criteria->mergeWith($mergeCriteria, $operator);
+		return $criteria
+			->compare($this->getTableAlias(false, false).'.id', $this->id)
+			->compare($this->getTableAlias(false, false).'.route', $this->route, true);
+	}
 
 	/**
 	 * Retrieves a list of models based on the current search/filter conditions.
 	 * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.
 	 */
-	public function search($dataProviderConfig = array())
+	public function search($dataProviderConfig = array(), $mergeCriteria = array(), $operator = 'AND')
 	{
-		if(!isset($dataProviderConfig['criteria']))
-		{
-			$dataProviderConfig['criteria'] = new CDbCriteria;
-
-			$dataProviderConfig['criteria']
-			->compare($this->getTableAlias(false, false).'.id', $this->id)
-			->compare($this->getTableAlias(false, false).'.route', $this->route, true);
-		}
-
-
+		$dataProviderConfig['criteria'] = $this->getSearchCriteria($mergeCriteria, $operator);
 		return new CActiveDataProvider($this, $dataProviderConfig);
 	}
 

@@ -133,7 +133,7 @@ class MessageSourceController extends TController
 			case 'category-grid':
 				$data['relatedGrids'] = array('message-grid');
 				$data['model'] = new Category('search');
-				$data['model']->with(array('messageSources' => array('condition' => 'messageSources.id=:id', 'params' => array(':id' => $id))))->together()->getDbCriteria()->group = 't.id';
+				$data['model']->messageSource($id);
 				$gridPath = '../category/_grid';
 				break;
 			case 'messageSource-grid':
@@ -148,14 +148,14 @@ class MessageSourceController extends TController
 			case 'message-grid':
 				$data['relatedGrids'] = array('missingLanguage-grid');
 				$data['model'] = new Message('search');
-				$data['model']->with(array('source' => array('condition' => 'source.id=:id', 'params' => array(':id' => $id))))->together()->getDbCriteria()->group = 't.id, t.language_id';
+				$data['model']->messageSource($id);
 				$data['messageId'] = $id;
 				$gridPath = '../message/_grid';
 				break;
 			case 'language-grid':
 				$data['relatedGrids'] = array('missingLanguage-grid', 'message-grid');
 				$data['model'] = new Language('search');
-				$data['model']->with(array('messageSources' => array('condition' => 'messageSources.id=:id', 'params' => array(':id' => $id))))->together()->getDbCriteria()->group = 't.id';
+				$data['model']->messageSource($id);
 				$gridPath = '../language/_grid';
 				break;
 			case 'missingLanguage-grid':
@@ -168,19 +168,19 @@ class MessageSourceController extends TController
 			case 'route-grid':
 				$data['relatedGrids'] = array('viewSource-grid', 'view-grid');
 				$data['model'] = new Route('search');
-				$data['model']->with(array('viewSources.messageSources' => array('condition' => 'messageSources.id=:id', 'params' => array(':id' => $id))))->together()->getDbCriteria()->group = 't.id';
+				$data['model']->messageSource($id);
 				$gridPath = '../route/_grid';
 				break;
 			case 'viewSource-grid':
 				$data['relatedGrids'] = array('view-grid');
 				$data['model'] = new ViewSource('search');
-				$data['model']->with(array('messageSources' => array('condition' => 'messageSources.id=:id', 'params' => array(':id' => $id))))->together()->getDbCriteria()->group = 't.id';
+				$data['model']->messageSource($id);
 				$gridPath = '../viewSource/_grid';
 				break;
 			case 'view-grid':
 				$data['relatedGrids'] = array();
 				$data['model'] = new View('search');
-				$data['model']->with(array('sourceView.messageSources' => array('condition' => 'messageSources.id=:id', 'params' => array(':id' => $id))))->together()->getDbCriteria()->group = 't.id, t.language_id';
+				$data['model']->messageSource($id);
 				$gridPath = '../view/_grid';
 				break;
 			default:

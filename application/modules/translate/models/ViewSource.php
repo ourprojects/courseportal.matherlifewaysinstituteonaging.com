@@ -99,6 +99,8 @@ class ViewSource extends CActiveRecord
 				'condition' => 't.id=viewMessages.view_id'),
 		);
 	}
+	
+	/************ BEGIN SCOPES **********/
 
 	public function scopes()
 	{
@@ -107,7 +109,44 @@ class ViewSource extends CActiveRecord
 			'havingOtherLanguages' => array('with' => array('acceptedLanguages' => array('joinType' => 'LEFT JOIN', 'condition' => 'acceptedLanguages.id IS NULL')))
 		);
 	}
+	
+	public function route($id)
+	{
+		$dbConnection = $this->getDbConnection();
+		$this->with(array('routes' => array('condition' => $dbConnection->quoteColumnName('routes.id').'=:id', 'params' => array(':id' => $id))))->together()->getDbCriteria()->group = $dbConnection->quoteColumnName($this->getTableAlias().'.id');
+		return $this;
+	}
+	
+	public function messageSource($id)
+	{
+		$dbConnection = $this->getDbConnection();
+		$this->with(array('messageSources' => array('condition' => $dbConnection->quoteColumnName('messageSources.id').'=:id', 'params' => array(':id' => $id))))->together()->getDbCriteria()->group = $dbConnection->quoteColumnName($this->getTableAlias().'.id');
+		return $this;
+	}
+	
+	public function message($id, $language_id)
+	{
+		$dbConnection = $this->getDbConnection();
+		$this->with(array('messages' => array('condition' => $dbConnection->quoteColumnName('messages.id').'=:id AND '.$dbConnection->quoteColumnName('messages.language_id').'=:language_id', 'params' => array(':id' => $id, ':language_id' => $language_id))))->together()->getDbCriteria()->group = $dbConnection->quoteColumnName($this->getTableAlias().'.id');
+		return $this;
+	}
+	
+	public function language($id)
+	{
+		$dbConnection = $this->getDbConnection();
+		$this->with(array('languages' => array('condition' => $dbConnection->quoteColumnName('languages.id').'=:id', 'params' => array(':id' => $id))))->together()->getDbCriteria()->group = $dbConnection->quoteColumnName($this->getTableAlias().'.id');
+		return $this;
+	}
 
+	public function category($id)
+	{
+		$dbConnection = $this->getDbConnection();
+		$this->with(array('messageSources.categories' => array('condition' => $dbConnection->quoteColumnName('categories.id').'=:id', 'params' => array(':id' => $id))))->together()->getDbCriteria()->group = $dbConnection->quoteColumnName($this->getTableAlias().'.id');
+		return $this;
+	}
+	
+	/************ END SCOPES **********/
+	
 	/**
 	 * @return array customized attribute labels (name=>label)
 	 */
@@ -167,16 +206,11 @@ class ViewSource extends CActiveRecord
 
 	/**
 	 * Retrieves a list of models based on the current search/filter conditions.
-	 * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.
+	 * @return CArrayDataProvider the data provider that can return the models based on the search/filter conditions.
 	 */
 	public function search($dataProviderConfig = array(), $mergeCriteria = array(), $operator = 'AND')
 	{
-		$records = $this->filter(self::model()->findAll($this->getSearchCriteria($mergeCriteria, $operator)));
-
-		foreach($records as $key => $record)
-		{
-			$records[$key] = array('id' => $record->id, 'path' => $record->path, 'isReadable' => $record->isReadable);
-		}
+		$records = $this->filter($this->findAll($this->getSearchCriteria($mergeCriteria, $operator)));
 		
 		if(!isset($dataProviderConfig['sort']))
 		{

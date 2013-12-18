@@ -1,11 +1,12 @@
 <?php
 Yii::app()->getClientScript()->registerCss($id.'-table-width', 'div#'.$id.' table.items{min-width:100%;width:100%;max-width:100%;}');
+
 $this->widget('zii.widgets.grid.CGridView',
 		array(
 			'id' => $id,
 			'filter' => $model,
 			'dataProvider' => $model->search(),
-			'selectableRows' => 0,
+			'selectableRows' => 10,
 			'columns' => array(
 				'id',
 				array(

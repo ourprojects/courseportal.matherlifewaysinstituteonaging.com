@@ -651,7 +651,7 @@ class TDbViewSource extends CApplicationComponent
 	{
 		if(!isset($this->_eventSyncLockFile))
 		{
-			$this->setEventSyncLockFile(Yii::app()->getRuntimePath().DIRECTORY_SEPARATOR.TranslateModule::ID.DIRECTORY_SEPARATOR.'locks'.DIRECTORY_SEPARATOR.'viewSource.lock');
+			$this->setEventSyncLockFile(TranslateModule::getRuntimePath().DIRECTORY_SEPARATOR.'locks'.DIRECTORY_SEPARATOR.'viewSource.lock');
 		}
 		return $this->_eventSyncLockFile;
 	}

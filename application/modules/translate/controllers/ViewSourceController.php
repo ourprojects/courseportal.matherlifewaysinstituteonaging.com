@@ -67,27 +67,27 @@ class ViewSourceController extends TController
 		switch($name)
 		{
 			case 'category-grid':
-				$data['relatedGrids'] = array('messageSource-grid', 'message-gridS');
+				$data['relatedGrids'] = array('messageSource-grid', 'message-grid');
 				$data['model'] = new Category('search');
-				$data['model']->with(array('messageSources.viewSources' => array('condition' => 'viewSources.id=:id', 'params' => array(':id' => $id))))->together()->getDbCriteria()->group = 't.id';
+				$data['model']->viewSource($id);
 				$gridPath = '../category/_grid';
 				break;
 			case 'messageSource-grid':
 				$data['relatedGrids'] = array('message-grid');
 				$data['model'] = new MessageSource('search');
-				$data['model']->with(array('viewSources' => array('condition' => 'viewSources.id=:id', 'params' => array(':id' => $id))))->together()->getDbCriteria()->group = 't.id';
+				$data['model']->viewSource($id);
 				$gridPath = '../messageSource/_grid';
 				break;
 			case 'message-grid':
 				$data['relatedGrids'] = array();
 				$data['model'] = new Message('search');
-				$data['model']->with(array('viewSources' => array('condition' => 'viewSources.id=:id', 'params' => array(':id' => $id))))->together()->getDbCriteria()->group = 't.id, t.language_id';
+				$data['model']->viewSource($id);
 				$gridPath = '../message/_grid';
 				break;
 			case 'language-grid':
 				$data['relatedGrids'] = array('messageSource-grid', 'message-grid', 'view-grid');
 				$data['model'] = new Language('search');
-				$data['model']->with(array('viewSources' => array('condition' => 'viewSources.id=:id', 'params' => array(':id' => $id))))->together()->getDbCriteria()->group = 't.id';
+				$data['model']->viewSource($id);
 				$gridPath = '../language/_grid';
 				break;
 			case 'missingLanguage-grid':
@@ -100,7 +100,7 @@ class ViewSourceController extends TController
 			case 'route-grid':
 				$data['relatedGrids'] = array('view-grid');
 				$data['model'] = new Route('search');
-				$data['model']->with(array('viewSources' => array('condition' => 'viewSources.id=:id', 'params' => array(':id' => $id))))->together()->getDbCriteria()->group = 't.id';
+				$data['model']->viewSource($id);
 				$gridPath = '../route/_grid';
 				break;
 			case 'viewSource-grid':
@@ -117,7 +117,7 @@ class ViewSourceController extends TController
 				$data['model'] = new View('search');
 				if(isset($id))
 				{
-					$data['model']->setAttribute('id', $id);
+					$data['model']->viewSource($id);
 					$data['viewId'] = $id;
 				}
 				$gridPath = '../view/_grid';
@@ -133,15 +133,65 @@ class ViewSourceController extends TController
 	 *
 	 * @param integer $id the ID of the ViewSource to be deleted
 	 */
-	public function actionDelete($id)
+	public function actionDelete(array $ViewSource = array(), $dryRun = true, $scope = null, $scopeParameters = array())
 	{
+		unset($_GET['ViewSource']);
+		$model = new ViewSource('search');
+		$model->setAttributes($ViewSource);
+		
+		switch($scope)
+		{
+			case 'route':
+			case 'messageSource':
+			case 'language':
+			case 'category':
+			case 'message':
+				call_user_func_array(array($model, $scope), $scopeParameters);
+				break;
+		}
+		
+		$viewsDeleted = 0;
+		$sourceViewsDeleted = 0;
 		$transaction = ViewSource::model()->getDbConnection()->beginTransaction();
 		try
 		{
-			$viewsDeleted = View::model()->deleteAllByAttributes(array('id' => $id));
-			$sourceViewsDeleted = ViewSource::model()->deleteByPk($id);
-			ViewMessage::model()->deleteAllByAttributes(array('view_id' => $id));
-			$transaction->commit();			
+			if(!empty($ViewSource))
+			{
+				$primaryKeys = array();
+				foreach($model->filter($model->findAll($model->getSearchCriteria())) as $record)
+				{
+					$primaryKeys[] = $record['id'];
+				}
+			}
+			if($dryRun)
+			{
+				if(empty($ViewSource))
+				{
+					$viewsDeleted = View::model()->count();
+					$sourceViewsDeleted = ViewSource::model()->count();
+				}
+				else
+				{
+					$viewsDeleted = View::model()->countByAttributes(array('id' => $primaryKeys));
+					$sourceViewsDeleted = ViewSource::model()->countByAttributes(array('id' => $primaryKeys));
+				}
+			}
+			else
+			{
+				if(empty($ViewSource))
+				{
+					$viewsDeleted = View::model()->deleteAll();
+					$sourceViewsDeleted = ViewSource::model()->deleteAll();
+					ViewMessage::model()->deleteAll();
+				}
+				else
+				{
+					$viewsDeleted = View::model()->deleteAllByAttributes(array('id' => $primaryKeys));
+					$sourceViewsDeleted = ViewSource::model()->deleteByPk($primaryKeys);
+					ViewMessage::model()->deleteAllByAttributes(array('view_id' => $primaryKeys));
+				}
+			}
+			$transaction->commit();
 		}
 		catch(Exception $e)
 		{
@@ -157,11 +207,18 @@ class ViewSourceController extends TController
 			}
 		}
 
-		$message = TranslateModule::t('{sourceViews} source views and {views} translated views have been deleted.', array('{sourceViews}' => $sourceViewsDeleted, '{views}' => $viewsDeleted));
-
+		if($dryRun)
+		{
+			$message = TranslateModule::t('This action will delete {sourceViews} source views and {views} translated views. Are you sure that you would like to continue?', array('{sourceViews}' => $sourceViewsDeleted, '{views}' => $viewsDeleted));
+		}
+		else
+		{
+			$message = TranslateModule::t('{sourceViews} source views and {views} translated views have been deleted.', array('{sourceViews}' => $sourceViewsDeleted, '{views}' => $viewsDeleted));
+		}
+		
 		if(Yii::app()->getRequest()->getIsAjaxRequest())
 		{
-			echo $message;
+			echo CJavaScript::jsonEncode(array('status' => 'normal', 'message' => $message));
 		}
 		else
 		{

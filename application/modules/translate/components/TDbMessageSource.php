@@ -148,7 +148,7 @@ class TDbMessageSource extends CDbMessageSource
 	{
 		if(!isset($this->_eventSyncLockFile))
 		{
-			$this->setEventSyncLockFile(Yii::app()->getRuntimePath().DIRECTORY_SEPARATOR.TranslateModule::ID.DIRECTORY_SEPARATOR.'locks'.DIRECTORY_SEPARATOR.'translate.lock');
+			$this->setEventSyncLockFile(TranslateModule::getRuntimePath().DIRECTORY_SEPARATOR.'locks'.DIRECTORY_SEPARATOR.'translate.lock');
 		}
 		return $this->_eventSyncLockFile;
 	}

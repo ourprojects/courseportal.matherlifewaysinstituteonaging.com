@@ -17,12 +17,96 @@
 			'zii.widgets.jui.CJuiTabs',
 			array(
 				'tabs' => array(
-					TranslateModule::t('Categories') => $this->internalActionGrid($messageSource->id, 'category-grid', true),
-					TranslateModule::t('Translated Messages') => $this->internalActionGrid($messageSource->id, 'message-grid', true),
-					TranslateModule::t('Languages') => $this->internalActionGrid($messageSource->id, 'language-grid', true),
-					TranslateModule::t('Routes') => $this->internalActionGrid($messageSource->id, 'route-grid', true),
-					TranslateModule::t('Source Views') => $this->internalActionGrid($messageSource->id, 'viewSource-grid', true),
-					TranslateModule::t('Translated Views') => $this->internalActionGrid($messageSource->id, 'view-grid', true)
+					TranslateModule::t('Categories') => 
+						$this->widget(
+								'translate.widgets.gridSelectionHandler.GridSelectionHandler',
+								array(
+									'gridId' => 'category-grid',
+									'activeRecordClass' => 'Category',
+									'url' => Yii::app()->getController()->createUrl('category/delete'),
+									'scope' => 'messageSource',
+									'scopeParameters' => array('id' => $messageSource->id),
+									'buttonText' => TranslateModule::t('Delete All'),
+									'loadingText' => TranslateModule::t('Loading...'),
+									'dialogTitle' => TranslateModule::t('Delete Categories'),
+								),
+								true
+						).$this->internalActionGrid($messageSource->id, 'category-grid', true),
+					TranslateModule::t('Translated Messages') => 
+						$this->widget(
+								'translate.widgets.gridSelectionHandler.GridSelectionHandler',
+								array(
+									'gridId' => 'message-grid',
+									'activeRecordClass' => 'Message',
+									'url' => Yii::app()->getController()->createUrl('message/delete'),
+									'scope' => 'messageSource',
+									'scopeParameters' => array('id' => $messageSource->id),
+									'buttonText' => TranslateModule::t('Delete All'),
+									'loadingText' => TranslateModule::t('Loading...'),
+									'dialogTitle' => TranslateModule::t('Delete Message Translations'),
+								),
+								true
+						).$this->internalActionGrid($messageSource->id, 'message-grid', true),
+					TranslateModule::t('Languages') => 
+						$this->widget(
+								'translate.widgets.gridSelectionHandler.GridSelectionHandler',
+								array(
+									'gridId' => 'language-grid',
+									'activeRecordClass' => 'Language',
+									'url' => Yii::app()->getController()->createUrl('language/delete'),
+									'scope' => 'messageSource',
+									'scopeParameters' => array('id' => $messageSource->id),
+									'buttonText' => TranslateModule::t('Delete All'),
+									'loadingText' => TranslateModule::t('Loading...'),
+									'dialogTitle' => TranslateModule::t('Delete Languages'),
+								),
+								true
+						).$this->internalActionGrid($messageSource->id, 'language-grid', true),
+					TranslateModule::t('Routes') => 
+						$this->widget(
+								'translate.widgets.gridSelectionHandler.GridSelectionHandler',
+								array(
+									'gridId' => 'route-grid',
+									'activeRecordClass' => 'Route',
+									'url' => Yii::app()->getController()->createUrl('route/delete'),
+									'scope' => 'messageSource',
+									'scopeParameters' => array('id' => $messageSource->id),
+									'buttonText' => TranslateModule::t('Delete All'),
+									'loadingText' => TranslateModule::t('Loading...'),
+									'dialogTitle' => TranslateModule::t('Delete Routes'),
+								),
+								true
+						).$this->internalActionGrid($messageSource->id, 'route-grid', true),
+					TranslateModule::t('Source Views') => 
+						$this->widget(
+								'translate.widgets.gridSelectionHandler.GridSelectionHandler',
+								array(
+									'gridId' => 'viewSource-grid',
+									'activeRecordClass' => 'ViewSource',
+									'url' => Yii::app()->getController()->createUrl('viewSource/delete'),
+									'scope' => 'messageSource',
+									'scopeParameters' => array('id' => $messageSource->id),
+									'buttonText' => TranslateModule::t('Delete All'),
+									'loadingText' => TranslateModule::t('Loading...'),
+									'dialogTitle' => TranslateModule::t('Delete Source Views'),
+								),
+								true
+						).$this->internalActionGrid($messageSource->id, 'viewSource-grid', true),
+					TranslateModule::t('Translated Views') => 
+						$this->widget(
+								'translate.widgets.gridSelectionHandler.GridSelectionHandler',
+								array(
+									'gridId' => 'view-grid',
+									'activeRecordClass' => 'View',
+									'url' => Yii::app()->getController()->createUrl('view/delete'),
+									'scope' => 'messageSource',
+									'scopeParameters' => array('id' => $messageSource->id),
+									'buttonText' => TranslateModule::t('Delete All'),
+									'loadingText' => TranslateModule::t('Loading...'),
+									'dialogTitle' => TranslateModule::t('Delete View Translations'),
+								),
+								true
+						).$this->internalActionGrid($messageSource->id, 'view-grid', true)
 				),
 				'headerTemplate' => '<li><a href="{url}" title="{title}">{title}</a></li>',
 				'id' => 'relatedDetails'

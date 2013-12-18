@@ -10,6 +10,7 @@ $this->widget('zii.widgets.CDetailView',
 					'name' => 'path',
 					'template' => "<tr class=\"{class}\"><th>{label}</th><td style=\"word-wrap:break-word;word-break:break-all;\">{value}</td></tr>\n"
 				),
+				'isReadable:boolean'
 			),
 		)
 );

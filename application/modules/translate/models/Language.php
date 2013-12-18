@@ -25,6 +25,9 @@ class Language extends CActiveRecord
 		return array(
 			'ERememberFiltersBehavior' => array(
 				'class' => 'ext.ERememberFiltersBehavior.ERememberFiltersBehavior',
+			),
+			'LDFilterRawModelDataBehavior' => array(
+					'class' => 'ext.LDFilterRawModelDataBehavior.LDFilterRawModelDataBehavior',
 			)
 		);
 	}
@@ -80,6 +83,8 @@ class Language extends CActiveRecord
 			'isMissingTranslations' => TranslateModule::t('Missing Translations?'),
 		);
 	}
+	
+	/************ BEGIN SCOPES **********/
 
 	public function scopes()
 	{
@@ -140,6 +145,43 @@ class Language extends CActiveRecord
 		$this->getDbCriteria()->mergeWith($criteria);
 		return $this;
 	}
+	
+	public function viewSource($id)
+	{
+		$dbConnection = $this->getDbConnection();
+		$this->with(array('viewSources' => array('condition' => $dbConnection->quoteColumnName('viewSources.id').'=:id', 'params' => array(':id' => $id))))->together()->getDbCriteria()->group = $dbConnection->quoteColumnName($this->getTableAlias().'.id');
+		return $this;
+	}
+	
+	public function route($id)
+	{
+		$dbConnection = $this->getDbConnection();
+		$this->with(array('views.sourceView.routes' => array('condition' => $dbConnection->quoteColumnName('routes.id').'=:id', 'params' => array(':id' => $id))))->together()->getDbCriteria()->group = $dbConnection->quoteColumnName($this->getTableAlias().'.id');
+		return $this;
+	}
+	
+	public function messageSource($id)
+	{
+		$dbConnection = $this->getDbConnection();
+		$this->with(array('messageSources' => array('condition' => $dbConnection->quoteColumnName('messageSources.id').'=:id', 'params' => array(':id' => $id))))->together()->getDbCriteria()->group = $dbConnection->quoteColumnName($this->getTableAlias().'.id');
+		return $this;
+	}
+	
+	public function categoryMessage($id)
+	{
+		$dbConnection = $this->getDbConnection();
+		$this->with(array('messages.categories' => array('condition' => $dbConnection->quoteColumnName('categories.id').'=:id', 'params' => array(':id' => $id))))->together()->getDbCriteria()->group = $dbConnection->quoteColumnName($this->getTableAlias().'.id');
+		return $this;
+	}
+	
+	public function categoryMessageSource($id)
+	{
+		$dbConnection = $this->getDbConnection();
+		$this->with(array('sourceMessages.categories' => array('condition' => $dbConnection->quoteColumnName('categories.id').'=:id', 'params' => array(':id' => $id))))->together()->getDbCriteria()->group = $dbConnection->quoteColumnName($this->getTableAlias().'.id');
+		return $this;
+	}
+	
+	/************ END SCOPES **********/
 	
 	public function getName()
 	{
@@ -202,21 +244,23 @@ class Language extends CActiveRecord
 			$acceptedLanguage->save();
 		}
 	}
+	
+	public function getSearchCriteria($mergeCriteria = array(), $operator = 'AND')
+	{
+		$criteria = new CDbCriteria;
+		$criteria->mergeWith($mergeCriteria, $operator);
+		return $criteria
+			->compare($this->getTableAlias(false, false).'.id', $this->id)
+			->compare($this->getTableAlias(false, false).'.code', $this->code, true);
+	}
 
 	/**
 	 * Retrieves a list of models based on the current search/filter conditions.
 	 * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.
 	 */
-	public function search($dataProviderConfig = array())
+	public function search($dataProviderConfig = array(), $mergeCriteria = array(), $operator = 'AND')
 	{
-		if(!isset($dataProviderConfig['criteria']))
-		{
-			$dataProviderConfig['criteria'] = $this->getDbCriteria();
-
-			$dataProviderConfig['criteria']
-			->compare($this->getTableAlias(false, false).'.id', $this->id, true)
-			->compare($this->getTableAlias(false, false).'.code', $this->code, true);
-		}
+		$dataProviderConfig['criteria'] = $this->getSearchCriteria($mergeCriteria, $operator);
 
 		return new CActiveDataProvider($this, $dataProviderConfig);
 	}

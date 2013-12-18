@@ -5,7 +5,7 @@ $this->widget('zii.widgets.grid.CGridView',
 			'id' => $id,
 			'filter' => $model,
 			'dataProvider' => $model->search(),
-			'selectableRows' => 0,
+			'selectableRows' => 10,
 			'columns' => array(
 				'id',
 				array(

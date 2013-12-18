@@ -6,6 +6,7 @@ $this->widget('zii.widgets.CDetailView',
 			'attributes' => array(
 				'id',
 				'message',
+				'sourceLanguage',
 				array(
 					'name' => 'isMissingTranslations',
 					'type' => 'boolean'
