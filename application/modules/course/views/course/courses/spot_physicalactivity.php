@@ -74,9 +74,37 @@ alt="Image">
 
 <p>Fake TextFake TextFake TextFake TextFake TextFake TextFake TextFake TextFake TextFake TextFake TextFake TextFake TextFake TextFake TextFake TextFake TextFake TextFake TextFake TextFake TextFake TextFake TextFake TextFake TextFake TextFake TextFake TextFake TextFake TextFake Text</p>
 
+
+
+
 <p>
 <a href="" class="button">Contact Facilitator</a>
+
+
+<?php
+    $this->widget(
+                  'ext.LDContactUsWidget.LDContactUsWidget',
+                  array(
+                        'captcha' => array(
+                                           'class' => 'ext.LDContactUsWidget.components.CUReCaptcha',
+                                           'config' => array(
+                                                             'reCaptcha' => Yii::app()->getComponent('reCaptcha'),
+                                                             'useAjax' => true
+                                                             )
+                                           ),
+                        'options' => array(
+                                           'htmlOptions' => array('class' => 'form')
+                                           )
+                        )
+                  );
+    ?>
+
 </p>
+
+
+
+
+
 <img src="<?php echo $this->getImagesUrl('spencer/80608570.png'); ?>" alt="Facilitator"
 id="facilitator">
 </div>
@@ -122,10 +150,8 @@ href="#lesson-1-slide-12" data-fancybox-group="lesson-1" class="hide lesson-1"><
 <li>
 <a href="#lesson-2-slide-1" data-fancybox-group="lesson-2" class="teal lesson-2 button">TBD</a> <a href="#lesson-2-slide-2" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-3" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-4" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-5" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-6" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-7" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-8" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-9" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-10" data-fancybox-group="lesson-2" class="hide lesson-2"></a>
 </li>
-<li>
-<a href="#lesson-3-slide-1" data-fancybox-group="lesson-3" class="teal lesson-3 button">TBD</a> <a href="#lesson-3-slide-2" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-3" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-4" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-5" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-6" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-7" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-8" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-9" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-10" data-fancybox-group="lesson-3" class="hide lesson-3"></a>
-</li>
-</li>
+<li><a href="#lesson-3-slide-1" data-fancybox-group="lesson-3" class="teal lesson-3 button">TBD</a></li>
+
 </ul>
 
 </div>
@@ -457,7 +483,6 @@ target="_blank" class="button">Download Excercise</a>
 </div>
 
 
-
 <div id="lesson-3">
 <div id="lesson-3-slide-1" class="course-slide">
 <div class="content">
@@ -468,23 +493,6 @@ target="_blank" class="button">Download Excercise</a>
 </div>
 <div class="buttons">
 <a href="javascript:;" class="button right" onclick="$.fancybox.next();">Start Module &raquo;</a>
-</div>
-</div>
-
-
-
-
-
-<div id="lesson-3-slide-2" class="course-slide">
-<div class="content">
-<h2 class="flowers">TBD</h2>
-<hr />
-
-
-
-</div>
-<div class="buttons">
-<a href="#" onclick="parent.jQuery.fancybox.close();" class="button left">Complete Module</a>
 </div>
 </div>
 
