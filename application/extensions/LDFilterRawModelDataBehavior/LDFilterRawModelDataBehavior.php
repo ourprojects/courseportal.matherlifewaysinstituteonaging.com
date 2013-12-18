@@ -85,6 +85,8 @@
 class LDFilterRawModelDataBehavior extends CModelBehavior
 {
 	
+	public $ignoreUndefinedAttributes = true;
+	
 	/**
 	 * If true all filtered data will be returned as a raw array with keys being the attributes/property names you are filtering by and 
 	 * the values being their respective value. Otherwise the data will only be filtered, not unaltered. Defaults to true.
@@ -151,7 +153,7 @@ class LDFilterRawModelDataBehavior extends CModelBehavior
 				
 				if(is_array($row))
 				{
-					if(array_key_exists($name, $row))
+					if(array_key_exists($name, $row) || !$this->ignoreUndefinedAttributes)
 					{
 						$rowValue = $row[$name];
 					}
@@ -168,7 +170,14 @@ class LDFilterRawModelDataBehavior extends CModelBehavior
 					}
 					catch(CException $e)
 					{
-						continue;
+						if($this->ignoreUndefinedAttributes)
+						{
+							continue;
+						}
+						else
+						{
+							throw $e;
+						}
 					}
 				}
 				else
@@ -178,7 +187,14 @@ class LDFilterRawModelDataBehavior extends CModelBehavior
 
 				if(is_string($rowValue))
 				{
-					if(stripos($rowValue, strval($value)) !== false)
+					if(is_array($value))
+					{
+						if(in_array($rowValue, $value))
+						{
+							continue;
+						}
+					}
+					else if(stripos($rowValue, strval($value)) !== false)
 					{
 						continue;
 					}
@@ -204,7 +220,7 @@ class LDFilterRawModelDataBehavior extends CModelBehavior
 			{
 				if(is_array($row))
 				{
-					if(array_key_exists($name, $row))
+					if(array_key_exists($name, $row) || !$this->ignoreUndefinedAttributes)
 					{
 						$rowValue = $row[$name];
 					}
@@ -219,9 +235,16 @@ class LDFilterRawModelDataBehavior extends CModelBehavior
 					{
 						$rowValue = $row->$name;
 					}
-					catch(CException $e)
+					catch(Exception $e)
 					{
-						continue;
+						if($this->ignoreUndefinedAttributes)
+						{
+							continue;
+						}
+						else
+						{
+							throw $e;
+						}
 					}
 				}
 				else
@@ -244,7 +267,14 @@ class LDFilterRawModelDataBehavior extends CModelBehavior
 				}
 				else if(is_string($rowValue))
 				{
-					if(stripos($rowValue, strval($value)) !== false)
+					if(is_array($value))
+					{
+						if(in_array($rowValue, $value))
+						{
+							continue;
+						}
+					}
+					else if(stripos($rowValue, strval($value)) !== false)
 					{
 						continue;
 					}
