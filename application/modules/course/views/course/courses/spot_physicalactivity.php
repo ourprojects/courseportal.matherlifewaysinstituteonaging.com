@@ -81,23 +81,6 @@ alt="Image">
 <a href="" class="button">Contact Facilitator</a>
 
 
-<?php
-    $this->widget(
-                  'ext.LDContactUsWidget.LDContactUsWidget',
-                  array(
-                        'captcha' => array(
-                                           'class' => 'ext.LDContactUsWidget.components.CUReCaptcha',
-                                           'config' => array(
-                                                             'reCaptcha' => Yii::app()->getComponent('reCaptcha'),
-                                                             'useAjax' => true
-                                                             )
-                                           ),
-                        'options' => array(
-                                           'htmlOptions' => array('class' => 'form')
-                                           )
-                        )
-                  );
-    ?>
 
 </p>
 
@@ -486,8 +469,28 @@ target="_blank" class="button">Download Excercise</a>
 <div id="lesson-3">
 <div id="lesson-3-slide-1" class="course-slide">
 <div class="content">
-<h2 class="flowers">TBD</h2>
+<h2 class="flowers">Contact Facilitator</h2>
 <hr />
+<p>Please complete the below to contact your Facilitator.</p>
+
+
+<?php
+    $this->widget(
+                  'ext.LDContactUsWidget.LDContactUsWidget',
+                  array(
+                        'captcha' => array(
+                                           'class' => 'ext.LDContactUsWidget.components.CUReCaptcha',
+                                           'config' => array(
+                                                             'reCaptcha' => Yii::app()->getComponent('reCaptcha'),
+                                                             'useAjax' => true
+                                                             )
+                                           ),
+                        'options' => array(
+                                           'htmlOptions' => array('class' => 'form')
+                                           )
+                        )
+                  );
+    ?>
 
 
 </div>
