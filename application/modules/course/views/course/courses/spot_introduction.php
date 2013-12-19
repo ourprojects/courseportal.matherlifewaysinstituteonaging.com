@@ -68,18 +68,6 @@ class="button">Download Certificate</a>
 <img src="<?php echo $this->getImagesUrl('spencer/166312138.png'); ?>" id="certificate"
 alt="Image">
 </div>
-<div class="box-sidebar one">
-<h3>Facilitator: Sherrie All PhD</h3>
-
-<p>Fake TextFake TextFake TextFake TextFake TextFake TextFake TextFake TextFake TextFake TextFake TextFake TextFake TextFake TextFake TextFake TextFake TextFake TextFake TextFake TextFake TextFake TextFake TextFake TextFake TextFake TextFake TextFake TextFake TextFake TextFake Text</p>
-
-<p>
-<a href="" class="button">Contact Facilitator</a>
-</p>
-<img src="<?php echo $this->getImagesUrl('spencer/80608570.png'); ?>" alt="Facilitator"
-id="facilitator">
-</div>
-
 
 </div>
 
@@ -120,7 +108,7 @@ href="#lesson-1-slide-12" data-fancybox-group="lesson-1" class="hide lesson-1"><
 </li>
 </ul>
 
-<h4>Facilitato: Sherrie All, PhD</h4>
+<h4>Facilitator: Sherrie All, PhD</h4>
 <p>Dr. All has supported Mather LifeWays Insitute on Aging for 2 years. She researched and developed the course content and is the Director and Principle for the Chicago Center for Cognitive Wellness.</p>
 <ul class="modules">
 
