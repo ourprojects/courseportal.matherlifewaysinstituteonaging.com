@@ -422,10 +422,9 @@ target="_blank" class="button">Download Excercise</a>
 <div id="lesson-2">
 <div id="lesson-2-slide-1" class="course-slide">
 <div class="content">
-<h2 class="flowers">Contact Facilitator</h2>
-<hr />
+<p>Please compplete the form below to contact your facilitator.</p>
 
-<div>
+<div class="box-white">
 <?php
     $this->widget(
                   'ext.LDContactUsWidget.LDContactUsWidget',
