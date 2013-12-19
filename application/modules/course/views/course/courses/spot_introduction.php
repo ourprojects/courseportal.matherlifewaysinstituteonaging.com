@@ -7,7 +7,6 @@
     foreach(array(
                   '.lesson-1',
                   '.lesson-2',
-                  '.lesson-3',
                   '.activityLog',) as $lesson)
 	$this->widget(
                   'ext.fancybox.EFancyBox',
@@ -433,7 +432,7 @@ target="_blank" class="button">Download Excercise</a>
 <div id="lesson-2">
 <div id="lesson-2-slide-1" class="course-slide">
 <div class="content">
-<h2 class="flowers">TBD</h2>
+<h2 class="flowers">Memory</h2>
 <hr />
 
 
@@ -458,36 +457,6 @@ target="_blank" class="button">Download Excercise</a>
 
 
 
-<div id="lesson-3">
-<div id="lesson-3-slide-1" class="course-slide">
-<div class="content">
-<h2 class="flowers">TBD</h2>
-<hr />
 
 
-</div>
-<div class="buttons">
-<a href="javascript:;" class="button right" onclick="$.fancybox.next();">Start Module &raquo;</a>
-</div>
-</div>
-
-
-
-
-
-<div id="lesson-3-slide-2" class="course-slide">
-<div class="content">
-<h2 class="flowers">TBD</h2>
-<hr />
-
-
-
-</div>
-<div class="buttons">
-<a href="#" onclick="parent.jQuery.fancybox.close();" class="button left">Complete Module</a>
-</div>
-</div>
-
-
-</div>
 </div>
