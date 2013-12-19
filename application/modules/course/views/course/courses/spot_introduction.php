@@ -100,10 +100,10 @@ alt="Image">
 </ol>
 
 <h4>Course Content</h4>
-<p>Please click the button below to begin the course. This course consist of videos, handouts/downlaods, comprehension quetions, forum postings and text content.</p>
+<p>This course consist of videos, handouts, comprehension quetions, forum postings and text content.</p>
 <ul class="modules">
 <li>
-<a href="#lesson-1-slide-1" data-fancybox-group="lesson-1" class="teal lesson-1 button"> &Rarr;  Start Course &Larr;  </a> <a href="#lesson-1-slide-2" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-3" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-4" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-5" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-6" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-7" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-8" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-9" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-10" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-11" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a
+<a href="#lesson-1-slide-1" data-fancybox-group="lesson-1" class="teal lesson-1 button"> &rarr; &rarr; Start Course &larr; &larr;  </a> <a href="#lesson-1-slide-2" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-3" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-4" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-5" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-6" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-7" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-8" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-9" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-10" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-11" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a
 href="#lesson-1-slide-12" data-fancybox-group="lesson-1" class="hide lesson-1"></a>
 </li>
 </ul>
@@ -424,6 +424,26 @@ target="_blank" class="button">Download Excercise</a>
 <div class="content">
 <h2 class="flowers">Contact Facilitator</h2>
 <hr />
+
+<div>
+<?php
+    $this->widget(
+                  'ext.LDContactUsWidget.LDContactUsWidget',
+                  array(
+                        'captcha' => array(
+                                           'class' => 'ext.LDContactUsWidget.components.CUReCaptcha',
+                                           'config' => array(
+                                                             'reCaptcha' => Yii::app()->getComponent('reCaptcha'),
+                                                             'useAjax' => true
+                                                             )
+                                           ),
+                        'options' => array(
+                                           'htmlOptions' => array('class' => 'form')
+                                           )
+                        )
+                  );
+    ?>
+</div>
 
 
 </div>
