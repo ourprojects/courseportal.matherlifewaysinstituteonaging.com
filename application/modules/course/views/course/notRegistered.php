@@ -3,23 +3,13 @@
 <div class="small-masthead" style="background-image: url(<?php echo $this->getImagesUrl('126922518.png'); ?>);">
     <h1 class="bottom">{t}Online Course Access{/t}</h1>
 </div>
-<div id="sidebar">
-<div class="box-sidebar one">
-<h3>Mather LifeWays Institute on Aging</h3>
-<p class="text-center bold">
-<a href="http://www.matherlifewaysinstituteonaging.com/family-caregivers/" target="_blank">{t}Family Caregivers{/t}</a>
-</p>
-<p>{t}More than 40 million Americans provide care for relatives or friends with a chronic illness such as dementia, stroke, or Parkinson&rsquo;s disease. This takes an enormous physical and emotional toll on caregivers.{/t}</p>
-<p>{t}Mather LifeWays Institute on Aging provides tools and online courses to support caregivers through education, advice, and valuable insights.{/t}</p>
-<img src="<?php echo $this->getImagesUrl('148950191.png'); ?>" alt="Image">
-</div>
-</div>
-<div class="column-wide">
+
+<div class="single-column">
 <h2>{t}You are not registered.{/t}</h2>
 
     <p>{t}You have not registered for "<?php echo t($course->title); ?>" yet. Please use the form below to contact support. You will receive a response within 24 hours of submitting your request.{/t}</p>
 
-    <div class="box-white">
+    <div>
 		<?php 
 		$this->widget(
 			'ext.LDContactUsWidget.LDContactUsWidget',
