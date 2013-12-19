@@ -4,7 +4,7 @@
     <h1 class="bottom">{t}Online Course Access{/t}</h1>
 </div>
 
-<div class="single-column">
+<div id="single-column">
 <h2>{t}You are not registered.{/t}</h2>
 
     <p>{t}You have not registered for "<?php echo t($course->title); ?>" yet. Please use the form below to contact support. You will receive a response within 24 hours of submitting your request.{/t}</p>
