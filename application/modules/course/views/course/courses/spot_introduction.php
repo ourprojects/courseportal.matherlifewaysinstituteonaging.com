@@ -432,31 +432,16 @@ target="_blank" class="button">Download Excercise</a>
 <div id="lesson-2">
 <div id="lesson-2-slide-1" class="course-slide">
 <div class="content">
-<h2 class="flowers">Memory</h2>
+<h2 class="flowers">Contact Facilitator</h2>
 <hr />
 
 
 </div>
 <div class="buttons">
-<a href="javascript:;" class="button right" onclick="$.fancybox.next();">Start Module &raquo;</a>
+<a href="#" onclick="parent.jQuery.fancybox.close();" class="button left">Close</a>
 </div>
 </div>
 
 
-<div id="lesson-2-slide-2" class="course-slide">
-<div class="content">
-<h2 class="flowers">TBD</h2>
-<hr />
-
 </div>
-<div class="buttons">
-<a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> Complete Module</a>
-</div>
-</div>
-</div>
-
-
-
-
-
 </div>
