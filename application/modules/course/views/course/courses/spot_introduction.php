@@ -12,7 +12,7 @@
                   'ext.fancybox.EFancyBox',
                   array('id' => $lesson,
                         'config' => array('width' => '1000',
-                                          'height' => '1000',
+                                          'min-height' => '720',
                                           'arrows' => false,
                                           'autoSize' => false,
                                           'mouseWheel' => false))
