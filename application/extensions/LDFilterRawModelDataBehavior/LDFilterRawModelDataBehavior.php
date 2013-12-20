@@ -129,6 +129,30 @@ class LDFilterRawModelDataBehavior extends CModelBehavior
 		{
 			$attributes[$attributeName] = $owner->$attributeName;
 		}
+
+		// Do a type cast on known columns if this is an active record
+		if($owner instanceof CActiveRecord)
+		{
+			$table = $owner->getTableSchema();
+			foreach($attributes as $name => &$value)
+			{
+				if(isset($table->columns[$name]))
+				{
+					$column = $table->getColumn($name);
+					if(is_array($value))
+					{
+						foreach($value as $key => &$val)
+						{
+							$val = $column->typecast($val);
+						}
+					}
+					else
+					{
+						$value = $column->typecast($value);
+					}
+				}
+			}
+		}
 		
 		if($this->normalizeData)
 		{
@@ -199,8 +223,16 @@ class LDFilterRawModelDataBehavior extends CModelBehavior
 						continue;
 					}
 				}
+				else if(is_array($value))
+				{
+					if(in_array($rowValue, $value))
+					{
+						continue;
+					}
+				} 
 				else if($rowValue == $value)
 				{
+					
 					continue;
 				}
 				unset($data[$rowIndex]);
@@ -279,6 +311,13 @@ class LDFilterRawModelDataBehavior extends CModelBehavior
 						continue;
 					}
 				}
+				else if(is_array($value))
+				{
+					if(in_array($rowValue, $value))
+					{
+						continue;
+					}
+				} 
 				else if($rowValue == $value)
 				{
 					continue;
