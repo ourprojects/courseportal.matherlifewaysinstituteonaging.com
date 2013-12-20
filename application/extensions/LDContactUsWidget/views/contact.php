@@ -45,7 +45,7 @@ echo CHtml::openTag('div', $htmlOptions);
 	<div class="row">
 		<?php 
 		echo $activeForm->labelEx($ContactUs, 'email', $email['labelHtmlOptions']);
-		echo $activeForm->emailField($ContactUs, 'email', $email['inputHtmlOptions']);
+		echo $activeForm->emailField($ContactUs, 'email', $email['inputHtmlOptions'], array('size' => 45));
 		echo $activeForm->error($ContactUs, 'email', $email['errorHtmlOptions']); 
 		?>
 	</div>
