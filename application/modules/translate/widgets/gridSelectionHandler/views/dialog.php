@@ -22,6 +22,7 @@ $selectionHandlerOptions['completeButtons'] = array(
 		'jQuery("#'.$id.'").tSelectionHandler("status");'.
 	'}'
 );
+
 $selectionHandlerOptions['progressBarSelector'] = 'div#'.$progressBarOptions['id'];
 $clientScript->registerScript(__CLASS__.$id, "jQuery('#$id').tSelectionHandler(".CJavaScript::encode($selectionHandlerOptions).");");
 

@@ -11,6 +11,7 @@
 					'gridId' => 'message-grid',
 					'activeRecordClass' => 'Message',
 					'url' => Yii::app()->getController()->createUrl('message/delete'),
+					'keys' => array('id', 'language_id'),
 					'buttonText' => TranslateModule::t('Delete All'),
 					'loadingText' => TranslateModule::t('Loading...'),
 					'dialogTitle' => TranslateModule::t('Delete Message Translations'),

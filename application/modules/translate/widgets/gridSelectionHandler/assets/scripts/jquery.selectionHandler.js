@@ -16,15 +16,33 @@
 				$dialog = $(this);
 				
 				settings = $.extend({
-					scope: null,
-					scopeParameters: null,
+					gridId: '',
+					url: document.URL,
+					activeRecordClassName: '',
+					scopes: [],
+					keys: ['id'],
+					keyDelimiter: ',',
 					statusClass: 'status',
 					hiddenClass: 'hide',
 					errorClass: 'error',
 					warningClass: 'warning',
 					successClass: 'success',
 					dialogNoCloseClass: 'no-close',
-					loadingText: 'Loading...'
+					loadingText: 'Loading...',
+					confirmButtons: {
+						'Cancel': function() {
+							$dialog.dialog("close");
+						},
+						'Confirm': function() {
+							$dialog.tSelectionHandler("handleSelection");
+						}
+					},
+					completeButtons: {
+						'Close': function() {
+							$dialog.dialog("close");
+							$dialog.tSelectionHandler("status");
+						}
+					}
 				}, options || {});
 				
 				settings.gridSelector = 'div#' + settings.gridId;
@@ -75,17 +93,27 @@
 				
 				if(selection.length == 0)
 				{
-					return $($selection.yiiGridView.settings[settings.gridId].filterSelector).serialize();
+					return $.param({scopes: settings.scopes})+'&'+$($selection.yiiGridView.settings[settings.gridId].filterSelector).serialize();
 				}
 
 				data = {
-						scope: settings.scope,
-						scopeParameters: settings.scopeParameters
+						scopes: settings.scopes,
 				};
-				data[settings.activeRecordClass] = {
-							id: selection
-						};
+				data[settings.activeRecordClass] = {};
 				
+				for(var i = 0; i < selection.length; i++)
+				{
+					var keys = selection[i].split(settings.keyDelimiter);
+					for(var j = 0; j < keys.length; j++)
+					{
+						if(data[settings.activeRecordClass][settings.keys[j]] === undefined)
+						{
+							data[settings.activeRecordClass][settings.keys[j]] = [];
+						}
+						data[settings.activeRecordClass][settings.keys[j]].push(keys[j]);
+					}
+				}
+
 				return $.param(data);
 			},
 			
@@ -95,7 +123,6 @@
 					settings = $dialog.data('selectionSettings');
 
 				$dialog.tSelectionHandler('sendRequest', $dialog.tSelectionHandler('serializeSelection')+'&dryRun=1');
-				$dialog.dialog("option", "title", settings.title);
 				$dialog.dialog("option", "buttons", settings.confirmButtons);
 				$dialog.dialog('open');
 			},

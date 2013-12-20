@@ -26,6 +26,9 @@ class MessageSource extends CActiveRecord
 			),
 			'LDFilterRawModelDataBehavior' => array(
 					'class' => 'ext.LDFilterRawModelDataBehavior.LDFilterRawModelDataBehavior',
+			),
+			'LDActiveRecordConditionBehavior' => array(
+				'class' => 'ext.LDActiveRecordConditionBehavior.LDActiveRecordConditionBehavior'
 			)
 		);
 	}
@@ -137,35 +140,35 @@ class MessageSource extends CActiveRecord
 	public function viewSource($id)
 	{
 		$dbConnection = $this->getDbConnection();
-		$this->with(array('viewSources' => array('condition' => $dbConnection->quoteColumnName('viewSources.id').'=:id', 'params' => array(':id' => $id))))->together()->getDbCriteria()->group = $dbConnection->quoteColumnName($this->getTableAlias().'.id');
+		$this->with(array('viewSources' => ViewSource::model()->createCondition('id', $id, 'viewSources')))->together()->getDbCriteria()->group = $dbConnection->quoteColumnName($this->getTableAlias().'.id');
 		return $this;
 	}
 	
 	public function view($id, $language_id)
 	{
 		$dbConnection = $this->getDbConnection();
-		$this->with(array('views' => array('condition' => $dbConnection->quoteColumnName('views.id').'=:id AND '.$dbConnection->quoteColumnName('views.language_id').'=:language_id', 'params' => array(':id' => $id, ':language_id' => $language_id))))->together()->getDbCriteria()->group = $dbConnection->quoteColumnName($this->getTableAlias().'.id');
+		$this->with(array('views' => View::model()->createCondition(array('id', 'language_id'), array('id' => $id, 'language_id' => $language_id), 'views', true, true)))->together()->getDbCriteria()->group = $dbConnection->quoteColumnName($this->getTableAlias().'.id');
 		return $this;
 	}
 	
 	public function route($id)
 	{
 		$dbConnection = $this->getDbConnection();
-		$this->with(array('viewSources.routes' => array('condition' => $dbConnection->quoteColumnName('routes.id').'=:id', 'params' => array(':id' => $id))))->together()->getDbCriteria()->group = $dbConnection->quoteColumnName($this->getTableAlias().'.id');
+		$this->with(array('viewSources.routes' => Route::model()->createCondition('id', $id, 'routes')))->together()->getDbCriteria()->group = $dbConnection->quoteColumnName($this->getTableAlias().'.id');
 		return $this;
 	}
 	
 	public function language($id)
 	{
 		$dbConnection = $this->getDbConnection();
-		$this->with(array('sourceLanguage' => array('condition' => $dbConnection->quoteColumnName('sourceLanguage.id').'=:id', 'params' => array(':id' => $id))))->together()->getDbCriteria()->group = $dbConnection->quoteColumnName($this->getTableAlias().'.id');
+		$this->with(array('sourceLanguage' => Language::model()->createCondition('id', $id, 'sourceLanguage')))->together()->getDbCriteria()->group = $dbConnection->quoteColumnName($this->getTableAlias().'.id');
 		return $this;
 	}
 	
 	public function category($id)
 	{
 		$dbConnection = $this->getDbConnection();
-		$this->with(array('categories' => array('condition' => $dbConnection->quoteColumnName('categories.id').'=:id', 'params' => array(':id' => $id))))->together()->getDbCriteria()->group = $dbConnection->quoteColumnName($this->getTableAlias().'.id');
+		$this->with(array('categories' => Category::model()->createCondition('id', $id, 'categories')))->together()->getDbCriteria()->group = $dbConnection->quoteColumnName($this->getTableAlias().'.id');
 		return $this;
 	}
 	

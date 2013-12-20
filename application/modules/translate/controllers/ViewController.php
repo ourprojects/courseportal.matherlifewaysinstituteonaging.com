@@ -122,14 +122,73 @@ class ViewController extends TController
 	 * @param integer $id the ID of the View to be deleted
 	 * @param integer $languageId The ID of the view's language to be deleted
 	 */
-	public function actionDelete($id, $languageId)
+	public function actionDelete(array $View = array(), $dryRun = true, array $scopes = array())
 	{
+		unset($_GET['View']);
+		$model = new View('search');
+		$model->setAttributes($View);
+		
+		foreach($scopes as $scope => $scopeParameters)
+		{
+			switch($scope)
+			{
+				case 'viewSource':
+				case 'route':
+				case 'messageSource':
+				case 'language':
+				case 'category':
+				case 'message':
+					call_user_func_array(array($model, $scope), $scopeParameters);
+					break;
+			}
+		}
+		
+		if(is_array($View['id']) && is_array($View['language_id']))
+		{
+			$condition = $model->createCondition(array('id', 'language_id'), $View, null, true, true);
+		}
+		else
+		{
+			$condition = $model->getSearchCriteria();
+		}
+
+		$viewsDeleted = 0;
+		
+		$transaction = View::model()->getDbConnection()->beginTransaction();
 		try
 		{
-			$recordsDeleted = View::model()->deleteByPk(array('id' => $id, 'language_id' => $languageId));
+			if(empty($View))
+			{
+				if($dryRun)
+				{
+					$viewsDeleted = View::model()->count();
+				}
+				else 
+				{
+					$viewsDeleted = View::model()->deleteAll();
+				}
+			}
+			else
+			{
+				if($dryRun)
+				{
+					$viewsDeleted = $model->count($condition);
+				}
+				else
+				{
+					$primaryKeys = array();
+					foreach($model->filter($model->findAll($condition)) as $record)
+					{
+						$primaryKeys[] = array('id' => $record['id'], 'language_id' => $record['language_id']);
+					}
+					$viewsDeleted = View::model()->deleteByPk($primaryKeys);
+				}
+			}
+			$transaction->commit();
 		}
 		catch(Exception $e)
 		{
+			$transaction->rollback();
 			if(Yii::app()->getRequest()->getIsAjaxRequest())
 			{
 				throw $e;
@@ -141,11 +200,18 @@ class ViewController extends TController
 			}
 		}
 		
-		$message = TranslateModule::t('{recordCount} translated views have been deleted.', array('{recordCount}' => $recordsDeleted));
-
+		if($dryRun)
+		{
+			$message = TranslateModule::t('This action will delete {views} translated views. Are you sure that you would like to continue?', array('{views}' => $viewsDeleted));
+		}
+		else
+		{
+			$message = TranslateModule::t('{views} translated views have been deleted.', array('{views}' => $viewsDeleted));
+		}
+		
 		if(Yii::app()->getRequest()->getIsAjaxRequest())
 		{
-			echo $message;
+			echo CJavaScript::jsonEncode(array('status' => 'normal', 'message' => $message));
 		}
 		else
 		{

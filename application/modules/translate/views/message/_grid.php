@@ -1,7 +1,20 @@
 <?php
 Yii::app()->getClientScript()->registerCss($id.'-table-width', 'div#'.$id.' table.items{min-width:100%;width:100%;max-width:100%;}');
 
-$columns = array(
+$this->widget('zii.widgets.grid.CGridView',
+	array(
+		'id' => $id,
+		'filter' => $model,
+		'dataProvider' => $model->with(array('source', 'language'))->search(),
+		'selectableRows' => 10,
+		'columns' => array(
+			array(
+				'name' => 'id',
+				'headerHtmlOptions' => isset($messageId) ? array('style' => 'display:none;') : array(),
+				'filterHtmlOptions' => isset($messageId) ? array('style' => 'display:none;') : array(),
+				'htmlOptions' => isset($messageId) ? array('style' => 'display:none;') : array(),
+				'footerHtmlOptions' => isset($messageId) ? array('style' => 'display:none;') : array(),
+			),
 			array(
 				'name' => 'language',
 				'filter' => '',
@@ -30,20 +43,7 @@ $columns = array(
 					),
 				)
 			)
-		);
-
-if(!isset($messageId))
-{
-	array_unshift($columns, 'id');
-}
-
-$this->widget('zii.widgets.grid.CGridView',
-	array(
-		'id' => $id,
-		'filter' => $model,
-		'dataProvider' => $model->with(array('source', 'language'))->search(),
-		'selectableRows' => 10,
-		'columns' => $columns,
+		),
 	)
 );
 

@@ -12,6 +12,7 @@
 					'gridId' => 'view-grid',
 					'activeRecordClass' => 'View',
 					'url' => Yii::app()->getController()->createUrl('view/delete'),
+					'keys' => array('id', 'language_id'),
 					'buttonText' => TranslateModule::t('Delete All'),
 					'loadingText' => TranslateModule::t('Loading...'),
 					'dialogTitle' => TranslateModule::t('Delete View Translations'),

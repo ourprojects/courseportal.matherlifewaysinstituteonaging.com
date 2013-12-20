@@ -50,6 +50,9 @@ class View extends CActiveRecord
 			),
 			'LDFilterRawModelDataBehavior' => array(
 					'class' => 'ext.LDFilterRawModelDataBehavior.LDFilterRawModelDataBehavior',
+			),
+			'LDActiveRecordConditionBehavior' => array(
+				'class' => 'ext.LDActiveRecordConditionBehavior.LDActiveRecordConditionBehavior'
 			)
 		);
 	}
@@ -116,35 +119,35 @@ class View extends CActiveRecord
 	public function route($id)
 	{
 		$dbConnection = $this->getDbConnection();
-		$this->with(array('sourceView.routes' => array('condition' => $dbConnection->quoteColumnName('routes.id').'=:id', 'params' => array(':id' => $id))))->together()->getDbCriteria()->group = $dbConnection->quoteColumnName($this->getTableAlias().'.id').', '.$dbConnection->quoteColumnName($this->getTableAlias().'.language_id');
+		$this->with(array('sourceView.routes' => Route::model()->createCondition('id', $id, 'routes')))->together()->getDbCriteria()->group = $dbConnection->quoteColumnName($this->getTableAlias().'.id').', '.$dbConnection->quoteColumnName($this->getTableAlias().'.language_id');
 		return $this;
 	}
 	
 	public function messageSource($id)
 	{
 		$dbConnection = $this->getDbConnection();
-		$this->with(array('sourceView.messageSources' => array('condition' => $dbConnection->quoteColumnName('messageSources.id').'=:id', 'params' => array(':id' => $id))))->together()->getDbCriteria()->group = $dbConnection->quoteColumnName($this->getTableAlias().'.id').', '.$dbConnection->quoteColumnName($this->getTableAlias().'.language_id');
+		$this->with(array('sourceView.messageSources' => MessageSource::model()->createCondition('id', $id, 'messageSources')))->together()->getDbCriteria()->group = $dbConnection->quoteColumnName($this->getTableAlias().'.id').', '.$dbConnection->quoteColumnName($this->getTableAlias().'.language_id');
 		return $this;
 	}
 	
 	public function message($id, $language_id)
 	{
 		$dbConnection = $this->getDbConnection();
-		$this->with(array('messages' => array('condition' => $dbConnection->quoteColumnName('messages.id').'=:id AND '.$dbConnection->quoteColumnName('messages.language_id').'=:language_id', 'params' => array(':id' => $id, ':language_id' => $language_id))))->together()->getDbCriteria()->group = $dbConnection->quoteColumnName($this->getTableAlias().'.id').', '.$dbConnection->quoteColumnName($this->getTableAlias().'.language_id');
+		$this->with(array('messages' => Message::model()->createCondition(array('id', 'language_id'), array('id' => $id, 'language_id' => $language_id), 'messages', true, true)))->together()->getDbCriteria()->group = $dbConnection->quoteColumnName($this->getTableAlias().'.id').', '.$dbConnection->quoteColumnName($this->getTableAlias().'.language_id');
 		return $this;
 	}
 	
 	public function language($id)
 	{
 		$dbConnection = $this->getDbConnection();
-		$this->with(array('language' => array('condition' => $dbConnection->quoteColumnName('language.id').'=:id', 'params' => array(':id' => $id))))->together()->getDbCriteria()->group = $dbConnection->quoteColumnName($this->getTableAlias().'.id').', '.$dbConnection->quoteColumnName($this->getTableAlias().'.language_id');
+		$this->with(array('language' => Language::model()->createCondition('id', $id, 'language')))->together()->getDbCriteria()->group = $dbConnection->quoteColumnName($this->getTableAlias().'.id').', '.$dbConnection->quoteColumnName($this->getTableAlias().'.language_id');
 		return $this;
 	}
 	
 	public function category($id)
 	{
 		$dbConnection = $this->getDbConnection();
-		$this->with(array('sourceView.messageSources.categories' => array('condition' => $dbConnection->quoteColumnName('categories.id').'=:id', 'params' => array(':id' => $id))))->together()->getDbCriteria()->group = $dbConnection->quoteColumnName($this->getTableAlias().'.id').', '.$dbConnection->quoteColumnName($this->getTableAlias().'.language_id');
+		$this->with(array('sourceView.messageSources.categories' => Category::model()->createCondition('id', $id, 'categories')))->together()->getDbCriteria()->group = $dbConnection->quoteColumnName($this->getTableAlias().'.id').', '.$dbConnection->quoteColumnName($this->getTableAlias().'.language_id');
 		return $this;
 	}
 	
@@ -242,12 +245,13 @@ class View extends CActiveRecord
 	{
 		$records = $this->filter($this->findAll($this->getSearchCriteria($mergeCriteria, $operator)));
 		
+		$dataProviderConfig['keyField'] = array('id', 'language_id');
 		if(!isset($dataProviderConfig['sort']))
 		{
 			$dataProviderConfig['sort'] = array('attributes' => array('id', 'path', 'language', 'createdDate', 'isReadable'));
 		}
 		
-		return new CArrayDataProvider($records, $dataProviderConfig);
+		return new TArrayDataProvider($records, $dataProviderConfig);
 	}
 
 	public function __toString()

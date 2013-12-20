@@ -254,14 +254,73 @@ class MessageController extends TController
 	 * @param integer $id The message's ID
 	 * @param integer $languageId The ID of the message's language
 	 */
-	public function actionDelete($id, $languageId)
+	public function actionDelete(array $Message = array(), $dryRun = true, array $scopes = array())
 	{
+		unset($_GET['Message']);
+		$model = new Message('search');
+		$model->setAttributes($Message);
+		
+		foreach($scopes as $scope => $scopeParameters)
+		{
+			switch($scope)
+			{
+				case 'viewSource':
+				case 'view':
+				case 'route':
+				case 'messageSource':
+				case 'language':
+				case 'category':
+					call_user_func_array(array($model, $scope), $scopeParameters);
+					break;
+			}
+		}
+		
+		if(is_array($Message['id']) && is_array($Message['language_id']))
+		{
+			$condition = $model->createCondition(array('id', 'language_id'), $Message, null, true, true);
+		}
+		else
+		{
+			$condition = $model->getSearchCriteria();
+		}
+
+		$messagesDeleted = 0;
+		
+		$transaction = Message::model()->getDbConnection()->beginTransaction();
 		try
 		{
-			$recordsDeleted = Message::model()->deleteByPk(array('id' => $id, 'language_id' => $languageId));
+			if(empty($Message))
+			{
+				if($dryRun)
+				{
+					$messagesDeleted = Message::model()->count();
+				}
+				else 
+				{
+					$messagesDeleted = Message::model()->deleteAll();
+				}
+			}
+			else
+			{
+				if($dryRun)
+				{
+					$messagesDeleted = $model->count($condition);
+				}
+				else
+				{
+					$primaryKeys = array();
+					foreach($model->filter($model->findAll($condition)) as $record)
+					{
+						$primaryKeys[] = array('id' => $record['id'], 'language_id' => $record['language_id']);
+					}
+					$messagesDeleted = Message::model()->deleteByPk($primaryKeys);
+				}
+			}
+			$transaction->commit();
 		}
 		catch(Exception $e)
 		{
+			$transaction->rollback();
 			if(Yii::app()->getRequest()->getIsAjaxRequest())
 			{
 				throw $e;
@@ -273,11 +332,18 @@ class MessageController extends TController
 			}
 		}
 		
-		$message = TranslateModule::t('{recordCount} translations have been deleted.', array('{recordCount}' => $recordsDeleted));
-
+		if($dryRun)
+		{
+			$message = TranslateModule::t('This action will delete {messages} translations. Are you sure that you would like to continue?', array('{messages}' => $messagesDeleted));
+		}
+		else
+		{
+			$message = TranslateModule::t('{messages} translations have been deleted.', array('{messages}' => $messagesDeleted));
+		}
+		
 		if(Yii::app()->getRequest()->getIsAjaxRequest())
 		{
-			echo $message;
+			echo CJavaScript::jsonEncode(array('status' => 'normal', 'message' => $message));
 		}
 		else
 		{

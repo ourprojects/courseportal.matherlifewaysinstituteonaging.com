@@ -133,56 +133,66 @@ class ViewSourceController extends TController
 	 *
 	 * @param integer $id the ID of the ViewSource to be deleted
 	 */
-	public function actionDelete(array $ViewSource = array(), $dryRun = true, $scope = null, $scopeParameters = array())
+	public function actionDelete(array $ViewSource = array(), $dryRun = true, array $scopes = array())
 	{
 		unset($_GET['ViewSource']);
 		$model = new ViewSource('search');
 		$model->setAttributes($ViewSource);
 		
-		switch($scope)
+		foreach($scopes as $scope => $scopeParameters)
 		{
-			case 'route':
-			case 'messageSource':
-			case 'language':
-			case 'category':
-			case 'message':
-				call_user_func_array(array($model, $scope), $scopeParameters);
-				break;
+			switch($scope)
+			{
+				case 'route':
+				case 'messageSource':
+				case 'language':
+				case 'category':
+				case 'message':
+					call_user_func_array(array($model, $scope), $scopeParameters);
+					break;
+			}
 		}
 		
+		if(is_array($ViewSource['id']))
+		{
+			$condition = $model->createCondition('id', $ViewSource['id']);
+		}
+		else
+		{
+			$condition = $model->getSearchCriteria();
+		}
+
 		$viewsDeleted = 0;
 		$sourceViewsDeleted = 0;
+		
 		$transaction = ViewSource::model()->getDbConnection()->beginTransaction();
 		try
 		{
-			if(!empty($ViewSource))
+			if(empty($ViewSource))
 			{
-				$primaryKeys = array();
-				foreach($model->filter($model->findAll($model->getSearchCriteria())) as $record)
-				{
-					$primaryKeys[] = $record['id'];
-				}
-			}
-			if($dryRun)
-			{
-				if(empty($ViewSource))
+				if($dryRun)
 				{
 					$viewsDeleted = View::model()->count();
 					$sourceViewsDeleted = ViewSource::model()->count();
 				}
 				else
 				{
-					$viewsDeleted = View::model()->countByAttributes(array('id' => $primaryKeys));
-					$sourceViewsDeleted = ViewSource::model()->countByAttributes(array('id' => $primaryKeys));
+					$viewsDeleted = View::model()->deleteAll();
+					$sourceViewsDeleted = ViewSource::model()->deleteAll();
+					ViewMessage::model()->deleteAll();
 				}
 			}
 			else
 			{
-				if(empty($ViewSource))
+				$primaryKeys = array();
+				foreach($model->filter($model->findAll($condition)) as $record)
 				{
-					$viewsDeleted = View::model()->deleteAll();
-					$sourceViewsDeleted = ViewSource::model()->deleteAll();
-					ViewMessage::model()->deleteAll();
+					$primaryKeys[] = $record['id'];
+				}
+				if($dryRun)
+				{
+					$viewsDeleted = View::model()->countByAttributes(array('id' => $primaryKeys));
+					$sourceViewsDeleted = count($primaryKeys);
 				}
 				else
 				{

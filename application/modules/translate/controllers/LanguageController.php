@@ -191,19 +191,92 @@ class LanguageController extends TController
 	 * 
 	 * @param integer $id the ID of the Language to be deleted
 	 */
-	public function actionDelete($id)
+	public function actionDelete(array $Language = array(), $dryRun = true, array $scopes = array())
 	{
-		$db = Language::model()->getDbConnection();
-		$transaction = $db->beginTransaction();
+		unset($_GET['Language']);
+		$model = new Language('search');
+		$model->setAttributes($Language);
+		
+		foreach($scopes as $scope => $scopeParameters)
+		{
+			switch($scope)
+			{
+				case 'viewSource':
+				case 'messageSource':
+				case 'route':
+				case 'categoryMessage':
+				case 'categoryMessageSource':
+					call_user_func_array(array($model, $scope), $scopeParameters);
+					break;
+			}
+		}
+		
+		if(is_array($Language['id']))
+		{
+			$condition = $model->createCondition('id', $Language['id']);
+		}
+		else
+		{
+			$condition = $model->getSearchCriteria();
+		}
+
+		$messagesDeleted = 0;
+		$sourceMessagesDeleted = 0;
+		$viewsDeleted = 0;
+		$acceptedLanguagesDeleted = 0;
+		$languagesDeleted = 0;
+		
+		$transaction = Language::model()->getDbConnection()->beginTransaction();
 		try
 		{
-			$messagesDeleted = Message::model()->deleteAllByAttributes(array('language_id' => $id));
-			$sourceMessagesDeleted = MessageSource::model()->deleteAllByAttributes(array('language_id' => $id));
-			$viewsDeleted = View::model()->deleteAllByAttributes(array('language_id' => $id));
-			$acceptedLanguagesDeleted = AcceptedLanguage::model()->deleteByPk($id);
-			$languagesDeleted = Language::model()->deleteByPk($id);
-			ViewMessage::model()->deleteAll(array('join' => 'LEFT OUTER JOIN '.$db->quoteTableName(MessageSource::model()->tableName()).' '.$db->quoteTableName('messageSource').' ON '.$db->quoteColumnName(ViewMessage::model()->tableName().'.message_id').'='.$db->quoteColumnName('messageSource.id'), 'condition' => $db->quoteColumnName('messageSource.id').' IS NULL'));
-			CategoryMessage::model()->deleteAll(array('join' => 'LEFT OUTER JOIN '.$db->quoteTableName(MessageSource::model()->tableName()).' '.$db->quoteTableName('messageSource').' ON '.$db->quoteColumnName(CategoryMessage::model()->tableName().'.message_id').'='.$db->quoteColumnName('messageSource.id'), 'condition' => $db->quoteColumnName('messageSource.id').' IS NULL'));
+			if(empty($Language))
+			{
+				if($dryRun)
+				{
+					$messagesDeleted = Message::model()->count();
+					$sourceMessagesDeleted = MessageSource::model()->count();
+					$viewsDeleted = View::model()->count();
+					$acceptedLanguagesDeleted = AcceptedLanguage::model()->count();
+					$languagesDeleted = Language::model()->count();
+				}
+				else 
+				{
+					$messagesDeleted = Message::model()->deleteAll();
+					$sourceMessagesDeleted = MessageSource::model()->deleteAll();
+					$viewsDeleted = View::model()->deleteAll();
+					$acceptedLanguagesDeleted = AcceptedLanguage::model()->deleteAll();
+					$languagesDeleted = Language::model()->deleteAll();
+					ViewMessage::model()->deleteAll();
+					CategoryMessage::model()->deleteAll();
+				}
+			}
+			else
+			{
+				$primaryKeys = array();
+				foreach($model->filter($model->findAll($condition)) as $record)
+				{
+					$primaryKeys[] = $record['id'];
+				}
+				
+				if($dryRun)
+				{
+					$messagesDeleted = Message::model()->languageSelfOrSource($primaryKeys)->count();
+					$sourceMessagesDeleted = MessageSource::model()->language($primaryKeys)->count();
+					$viewsDeleted = View::model()->language($primaryKeys)->count();
+					$acceptedLanguagesDeleted = AcceptedLanguage::model()->countByAttributes(array('id' => $primaryKeys));
+					$languagesDeleted = count($primaryKeys);
+				}
+				else
+				{
+					$messagesDeleted = Message::model()->language($primaryKeys)->deleteAll();
+					$sourceMessagesDeleted = MessageSource::model()->language($primaryKeys)->deleteAll();
+					$viewsDeleted = View::model()->language($primaryKeys)->deleteAll();
+					$acceptedLanguagesDeleted = AcceptedLanguage::model()->deleteAllByPk($primaryKeys);
+					$languagesDeleted = Language::model()->deleteAllByPk($primaryKeys);
+					ViewMessage::model()->deleteAllByAttributes(array('message_id' => $primaryKeys));
+					CategoryMessage::model()->deleteAllByAttributes(array('message_id' => $primaryKeys));
+				}
+			}
 			$transaction->commit();
 		}
 		catch(Exception $e)
@@ -219,12 +292,19 @@ class LanguageController extends TController
 				$this->redirect(Yii::app()->getRequest()->getUrlReferrer());
 			}
 		}
-
-		$message = TranslateModule::t('{languages} languages, {acceptedLanguages} accepted languages, {sourceMessages} source messages, {messages} translations, and {views} translated views have been deleted.', array('{languages}' => $languagesDeleted, '{sourceMessages}' => $sourceMessagesDeleted, '{messages}' => $messagesDeleted, '{acceptedLanguages}' => $acceptedLanguagesDeleted, '{views}' => $viewsDeleted));
+		
+		if($dryRun)
+		{
+			$message = TranslateModule::t('This action will deleted {languages} languages, {acceptedLanguages} accepted languages, {sourceMessages} source messages, {messages} translations, and {views} translated views. Are you sure that you would like to continue?', array('{languages}' => $languagesDeleted, '{sourceMessages}' => $sourceMessagesDeleted, '{messages}' => $messagesDeleted, '{acceptedLanguages}' => $acceptedLanguagesDeleted, '{views}' => $viewsDeleted));
+		}
+		else
+		{
+			$message = TranslateModule::t('{languages} languages, {acceptedLanguages} accepted languages, {sourceMessages} source messages, {messages} translations, and {views} translated views have been deleted.', array('{languages}' => $languagesDeleted, '{sourceMessages}' => $sourceMessagesDeleted, '{messages}' => $messagesDeleted, '{acceptedLanguages}' => $acceptedLanguagesDeleted, '{views}' => $viewsDeleted));
+		}
 		
 		if(Yii::app()->getRequest()->getIsAjaxRequest())
 		{
-			echo $message;
+			echo CJavaScript::jsonEncode(array('status' => 'normal', 'message' => $message));
 		}
 		else
 		{

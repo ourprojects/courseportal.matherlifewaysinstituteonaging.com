@@ -122,17 +122,81 @@ class RouteController extends TController
 	 *
 	 * @param integer $id the ID of the Route to be deleted
 	 */
-	public function actionDelete($id)
+	public function actionDelete(array $Route = array(), $dryRun = true, array $scopes = array())
 	{
-		$db = Route::model()->getDbConnection();
-		$transaction = $db->beginTransaction();
+		unset($_GET['Route']);
+		$model = new Route('search');
+		$model->setAttributes($Route);
+		
+		foreach($scopes as $scope => $scopeParameters)
+		{
+			switch($scope)
+			{
+				case 'viewSource':
+				case 'view':
+				case 'messageSource':
+				case 'language':
+				case 'category':
+				case 'message':
+					call_user_func_array(array($model, $scope), $scopeParameters);
+					break;
+			}
+		}
+		
+		if(is_array($Route['id']))
+		{
+			$condition = $model->createCondition('id', $Route['id']);
+		}
+		else
+		{
+			$condition = $model->getSearchCriteria();
+		}
+
+		$routesDeleted = 0;
+		$viewsDeleted = 0;
+		$sourceViewsDeleted = 0;
+		
+		$transaction = Route::model()->getDbConnection()->beginTransaction();
 		try
 		{
-			$routesDeleted = Route::model()->deleteByPk($id);
-			RouteView::model()->deleteAllByAttributes(array('route_id' => $id));
-			$viewsDeleted = View::model()->deleteAll(array('join' => 'LEFT OUTER JOIN '.$db->quoteTableName(RouteView::model()->tableName()).' '.$db->quoteTableName('viewRoutes').' ON '.$db->quoteColumnName(View::model()->tableName().'.id').'='.$db->quoteColumnName('viewRoutes.view_id'), 'condition' => $db->quoteColumnName('viewRoutes.route_id').' IS NULL'));
-			$sourceViewsDeleted = ViewSource::model()->deleteAll(array('join' => 'LEFT OUTER JOIN '.$db->quoteTableName(RouteView::model()->tableName()).' '.$db->quoteTableName('viewRoutes').' ON '.$db->quoteColumnName(ViewSource::model()->tableName().'.id').'='.$db->quoteColumnName('viewRoutes.view_id'), 'condition' => $db->quoteColumnName('viewRoutes.route_id').' IS NULL'));
-			ViewMessage::model()->deleteAll(array('join' => 'LEFT OUTER JOIN '.$db->quoteTableName(ViewSource::model()->tableName()).' '.$db->quoteTableName('viewSource').' ON '.$db->quoteColumnName(ViewMessage::model()->tableName().'.view_id').'='.$db->quoteColumnName('viewSource.id'), 'condition' => $db->quoteColumnName('viewSource.id').' IS NULL'));
+			if(empty($Route))
+			{
+				if($dryRun)
+				{
+					$routesDeleted = Route::model()->count();
+					$viewsDeleted = View::model()->count();
+					$sourceViewsDeleted = ViewSource::model()->count();
+				}
+				else 
+				{
+					$viewsDeleted = View::model()->deleteAll();
+					$sourceViewsDeleted = ViewSource::model()->deleteAll();
+					$routesDeleted = Route::model()->deleteAll();
+					RouteView::model()->deleteAll();
+				}
+			}
+			else
+			{
+				$primaryKeys = array();
+				foreach($model->filter($model->findAll($condition)) as $record)
+				{
+					$primaryKeys[] = $record['id'];
+				}
+				
+				if($dryRun)
+				{
+					$routesDeleted = count($primaryKeys);
+					$viewsDeleted = View::model()->route($primaryKeys)->count();
+					$sourceViewsDeleted = ViewSource::model()->route($primaryKeys)->count();
+				}
+				else
+				{
+					$viewsDeleted = View::model()->route($primaryKeys)->deleteAll();
+					$sourceViewsDeleted = ViewSource::model()->route($primaryKeys)->deleteAll();
+					$routesDeleted = Route::model()->deleteByPk($primaryKeys);
+					RouteView::model()->deleteAllByAttributes(array('route_id' => $primaryKeys));
+				}
+			}
 			$transaction->commit();
 		}
 		catch(Exception $e)
@@ -148,12 +212,19 @@ class RouteController extends TController
 				$this->redirect(Yii::app()->getRequest()->getUrlReferrer());
 			}
 		}
-
-		$message = TranslateModule::t('{routes} routes, {sourceViews} source views, and {views} translated views have been deleted.', array('{routes}' => $routesDeleted, '{sourceViews}' => $sourceViewsDeleted, '{views}' => $viewsDeleted));
+		
+		if($dryRun)
+		{
+			$message = TranslateModule::t('This action will delete {routes} routes, {sourceViews} source views, and {views} translated views. Are you sure that you would like to continue?', array('{routes}' => $routesDeleted, '{sourceViews}' => $sourceViewsDeleted, '{views}' => $viewsDeleted));
+		}
+		else
+		{
+			$message = TranslateModule::t('{routes} routes, {sourceViews} source views, and {views} translated views have been deleted.', array('{routes}' => $routesDeleted, '{sourceViews}' => $sourceViewsDeleted, '{views}' => $viewsDeleted));
+		}
 		
 		if(Yii::app()->getRequest()->getIsAjaxRequest())
 		{
-			echo $message;
+			echo CJavaScript::jsonEncode(array('status' => 'normal', 'message' => $message));
 		}
 		else
 		{

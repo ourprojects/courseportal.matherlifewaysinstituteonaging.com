@@ -128,17 +128,84 @@ class CategoryController extends TController
 	 * 
 	 * @param integer $id the ID of the Category to be deleted
 	 */
-	public function actionDelete($id)
+	public function actionDelete(array $Category = array(), $dryRun = true, array $scopes = array())
 	{
-		$db = Category::model()->getDbConnection();
-		$transaction = $db->beginTransaction();
+		unset($_GET['Category']);
+		$model = new Category('search');
+		$model->setAttributes($Category);
+		
+		foreach($scopes as $scope => $scopeParameters)
+		{
+			switch($scope)
+			{
+				case 'viewSource':
+				case 'view':
+				case 'route':
+				case 'messageSource':
+				case 'languageMessage':
+				case 'languageMessageSource':
+				case 'message':
+					call_user_func_array(array($model, $scope), $scopeParameters);
+					break;
+			}
+		}
+		
+		if(is_array($Category['id']))
+		{
+			$condition = $model->createCondition('id', $Category['id']);
+		}
+		else
+		{
+			$condition = $model->getSearchCriteria();
+		}
+
+		$categoriesDeleted = 0;
+		$messagesDeleted = 0;
+		$sourceMessagesDeleted = 0;
+		
+		$transaction = Category::model()->getDbConnection()->beginTransaction();
 		try
 		{
-			$categoriesDeleted = Category::model()->deleteByPk($id);
-			CategoryMessage::model()->deleteAllByAttributes(array('category_id' => $id));
-			$messagesDeleted = Message::model()->deleteAll(array('join' => 'LEFT OUTER JOIN '.$db->quoteTableName(CategoryMessage::model()->tableName()).' '.$db->quoteTableName('messageCategories').' ON '.$db->quoteColumnName(Message::model()->tableName().'.id').'='.$db->quoteColumnName('messageCategories.message_id'), 'condition' => $db->quoteColumnName('messageCategories.category_id').' IS NULL'));
-			$sourceMessagesDeleted = MessageSource::model()->deleteAll(array('join' => 'LEFT OUTER JOIN '.$db->quoteTableName(CategoryMessage::model()->tableName()).' '.$db->quoteTableName('messageCategories').' ON '.$db->quoteColumnName(MessageSource::model()->tableName().'.id').'='.$db->quoteColumnName('messageCategories.message_id'), 'condition' => $db->quoteColumnName('messageCategories.category_id').' IS NULL'));
-			ViewMessage::model()->deleteAll(array('join' => 'LEFT OUTER JOIN '.$db->quoteTableName(MessageSource::model()->tableName()).' '.$db->quoteTableName('messageSource').' ON '.$db->quoteColumnName(ViewMessage::model()->tableName().'.message_id').'='.$db->quoteColumnName('messageSource.id'), 'condition' => $db->quoteColumnName('messageSource.id').' IS NULL'));
+			if(empty($Category))
+			{
+				if($dryRun)
+				{
+					$categoriesDeleted = Category::model()->count();
+					$messagesDeleted = Message::model()->count();
+					$sourceMessagesDeleted = MessageSource::model()->count();
+				}
+				else 
+				{
+					$categoriesDeleted = Category::model()->deleteAll();
+					$messagesDeleted = Message::model()->deleteAll();
+					$sourceMessagesDeleted = MessageSource::model()->deleteAll();
+					CategoryMessage::model()->deleteAll();
+					ViewMessage::model()->deleteAll();
+				}
+			}
+			else
+			{
+				$primaryKeys = array();
+				foreach($model->filter($model->findAll($condition)) as $record)
+				{
+					$primaryKeys[] = $record['id'];
+				}
+				
+				if($dryRun)
+				{
+					$categoriesDeleted = count($primaryKeys);
+					$messagesDeleted = Message::model()->category($primaryKeys)->count();
+					$sourceMessagesDeleted = MessageSource::model()->category($primaryKeys)->count();
+				}
+				else
+				{
+					$categoriesDeleted = Category::model()->deleteAllByPk($primaryKeys);
+					$messagesDeleted = Message::model()->category($primaryKeys)->deleteAll();
+					$sourceMessagesDeleted = MessageSource::model()->category($primaryKeys)->deleteAll();
+					CategoryMessage::model()->deleteAllByAttributes(array('category_id' => $primaryKeys));
+					ViewMessage::model()->deleteAllByAttributes(array('category_id' => $primaryKeys));
+				}
+			}
 			$transaction->commit();
 		}
 		catch(Exception $e)
@@ -154,12 +221,19 @@ class CategoryController extends TController
 				$this->redirect(Yii::app()->getRequest()->getUrlReferrer());
 			}
 		}
-
-		$message = TranslateModule::t('{categories} categories, {sourceMessages} source messages, and {messages} translations have been deleted.', array('{categories}' => $categoriesDeleted, '{sourceMessages}' => $sourceMessagesDeleted, '{messages}' => $messagesDeleted));
-
+		
+		if($dryRun)
+		{
+			$message = TranslateModule::t('This action will deleted {categories} categories, {sourceMessages} source messages, and {messages} translations. Are you sure that you would like to continue?', array('{categories}' => $categoriesDeleted, '{sourceMessages}' => $sourceMessagesDeleted, '{messages}' => $messagesDeleted));
+		}
+		else
+		{
+			$message = TranslateModule::t('{categories} categories, {sourceMessages} source messages, and {messages} translations have been deleted.', array('{categories}' => $categoriesDeleted, '{sourceMessages}' => $sourceMessagesDeleted, '{messages}' => $messagesDeleted));
+		}
+		
 		if(Yii::app()->getRequest()->getIsAjaxRequest())
 		{
-			echo $message;
+			echo CJavaScript::jsonEncode(array('status' => 'normal', 'message' => $message));
 		}
 		else
 		{

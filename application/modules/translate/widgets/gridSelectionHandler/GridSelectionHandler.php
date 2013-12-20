@@ -8,23 +8,23 @@
 class GridSelectionHandler extends CWidget
 {
 	
-	public $gridId;
+	public $gridId = '';
 	
-	public $url;
+	public $url = '';
 	
-	public $activeRecordClass;
+	public $activeRecordClass = '';
 	
-	public $scope = null;
+	public $scopes = array();
 	
-	public $scopeParameters = null;
+	public $keys = array('id');
 	
-	public $buttonText;
+	public $buttonText = 'Handle Selection';
 	
-	public $loadingText;
+	public $loadingText = 'Loading...';
 	
 	public $buttonHtmlOptions = array();
 	
-	public $dialogTitle;
+	public $dialogTitle = 'Selection Handler Dialog';
 	
 	public $dialogOptions = array(
 			'autoOpen' => false,
@@ -62,9 +62,9 @@ class GridSelectionHandler extends CWidget
 		$selectionHandlerOptions['gridId'] = $this->gridId;
 		$selectionHandlerOptions['url'] = $this->url;
 		$selectionHandlerOptions['activeRecordClass'] = $this->activeRecordClass;
+		$selectionHandlerOptions['keys'] = $this->keys;
 		$selectionHandlerOptions['loadingText'] = $this->loadingText;
-		$selectionHandlerOptions['scope'] = $this->scope;
-		$selectionHandlerOptions['scopeParameters'] = $this->scopeParameters;
+		$selectionHandlerOptions['scopes'] = $this->scopes;
 		
 		$dialogOptions = $this->dialogOptions;
 		$dialogOptions['title'] = $this->dialogTitle;
