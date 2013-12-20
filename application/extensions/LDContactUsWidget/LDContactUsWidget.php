@@ -36,17 +36,17 @@ class LDContactUsWidget extends CInputWidget
 			'message' => '',
 			'name' => array(
 				'labelHtmlOptions' => array(),
-				'inputHtmlOptions' => array(),
+				'inputHtmlOptions' => array('size' =>45),
 				'errorHtmlOptions' => array()
 			),
 			'email' => array(
 				'labelHtmlOptions' => array(),
-				'inputHtmlOptions' => array(),
+				'inputHtmlOptions' => array('size' =>45),
 				'errorHtmlOptions' => array()
 			),
 			'subject' => array(
 				'labelHtmlOptions' => array(),
-				'inputHtmlOptions' => array(),
+				'inputHtmlOptions' => array('size' =>45),
 				'errorHtmlOptions' => array()
 			),
 			'body' => array(

@@ -7,13 +7,12 @@
     foreach(array(
                   '.lesson-1',
                   '.lesson-2',
-                  '.lesson-3',
                   '.activityLog',) as $lesson)
 	$this->widget(
                   'ext.fancybox.EFancyBox',
                   array('id' => $lesson,
                         'config' => array('width' => '1000',
-                                          'height' => '1000',
+                                          'min-height' => '720',
                                           'arrows' => false,
                                           'autoSize' => false,
                                           'mouseWheel' => false))
@@ -69,18 +68,6 @@ class="button">Download Certificate</a>
 <img src="<?php echo $this->getImagesUrl('spencer/166312138.png'); ?>" id="certificate"
 alt="Image">
 </div>
-<div class="box-sidebar one">
-<h3>Facilitator: Sherrie All PhD</h3>
-
-<p>Fake TextFake TextFake TextFake TextFake TextFake TextFake TextFake TextFake TextFake TextFake TextFake TextFake TextFake TextFake TextFake TextFake TextFake TextFake TextFake TextFake TextFake TextFake TextFake TextFake TextFake TextFake TextFake TextFake TextFake TextFake Text</p>
-
-<p>
-<a href="" class="button">Contact Facilitator</a>
-</p>
-<img src="<?php echo $this->getImagesUrl('spencer/80608570.png'); ?>" alt="Facilitator"
-id="facilitator">
-</div>
-
 
 </div>
 
@@ -113,18 +100,20 @@ id="facilitator">
 </ol>
 
 <h4>Course Content</h4>
-<p>Please click the button below to begin the course. This course consist of videos, handouts/downlaods, comprehension quetions, forum postings and text content.</p>
+<p>This course consist of videos, handouts, comprehension quetions, forum postings and text content.</p>
 <ul class="modules">
 <li>
-<a href="#lesson-1-slide-1" data-fancybox-group="lesson-1" class="teal lesson-1 button">Start Course</a> <a href="#lesson-1-slide-2" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-3" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-4" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-5" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-6" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-7" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-8" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-9" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-10" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-11" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a
+<a href="#lesson-1-slide-1" data-fancybox-group="lesson-1" class="teal lesson-1 button"> &rarr; &rarr; Start Course &larr; &larr;  </a> <a href="#lesson-1-slide-2" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-3" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-4" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-5" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-6" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-7" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-8" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-9" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-10" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a href="#lesson-1-slide-11" data-fancybox-group="lesson-1" class="hide lesson-1"></a> <a
 href="#lesson-1-slide-12" data-fancybox-group="lesson-1" class="hide lesson-1"></a>
 </li>
+</ul>
+
+<h4>Facilitator: Sherrie All, PhD</h4>
+<p>Dr. All has supported Mather LifeWays Insitute on Aging for 2 years. She researched and developed the course content and is the Director and Principle for the Chicago Center for Cognitive Wellness.</p>
+<ul class="modules">
+
 <li>
-<a href="#lesson-2-slide-1" data-fancybox-group="lesson-2" class="teal lesson-2 button">TBD</a> <a href="#lesson-2-slide-2" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-3" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-4" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-5" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-6" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-7" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-8" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-9" data-fancybox-group="lesson-2" class="hide lesson-2"></a> <a href="#lesson-2-slide-10" data-fancybox-group="lesson-2" class="hide lesson-2"></a>
-</li>
-<li>
-<a href="#lesson-3-slide-1" data-fancybox-group="lesson-3" class="teal lesson-3 button">TBD</a> <a href="#lesson-3-slide-2" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-3" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-4" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-5" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-6" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-7" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-8" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-9" data-fancybox-group="lesson-3" class="hide lesson-3"></a> <a href="#lesson-3-slide-10" data-fancybox-group="lesson-3" class="hide lesson-3"></a>
-</li>
+<a href="#lesson-2-slide-1" data-fancybox-group="lesson-2" class="teal lesson-2 button">Contact Facilitator</a>
 </li>
 </ul>
 
@@ -149,6 +138,7 @@ href="#lesson-1-slide-12" data-fancybox-group="lesson-1" class="hide lesson-1"><
 <div class="content">
 <h2 class="flowers"><?php echo t($course->title); ?></h2>
 <hr />
+<img src="<?php echo $this->getImagesUrl('spencer/134203608.png'); ?>" alt="image">
 
 <p>Welcome to the course! We are pleased you have decided to join us. Please contact your facilitator if you experience any difficulties or need help. Thank you!</p>
 
@@ -433,58 +423,32 @@ target="_blank" class="button">Download Excercise</a>
 <div id="lesson-2">
 <div id="lesson-2-slide-1" class="course-slide">
 <div class="content">
-<h2 class="flowers">TBD</h2>
-<hr />
+<p>Please compplete the form below to contact your facilitator.</p>
+
+<div class="box-white">
+<?php
+    $this->widget(
+                  'ext.LDContactUsWidget.LDContactUsWidget',
+                  array(
+                        'captcha' => array(
+                                           'class' => 'ext.LDContactUsWidget.components.CUReCaptcha',
+                                           'config' => array(
+                                                             'reCaptcha' => Yii::app()->getComponent('reCaptcha'),
+                                                             'useAjax' => true
+                                                             )
+                                           ),
+                        'options' => array(
+                                           'htmlOptions' => array('class' => 'form')
+                                           )
+                        )
+                  );
+    ?>
+</div>
 
 
 </div>
 <div class="buttons">
-<a href="javascript:;" class="button right" onclick="$.fancybox.next();">Start Module &raquo;</a>
-</div>
-</div>
-
-
-<div id="lesson-2-slide-2" class="course-slide">
-<div class="content">
-<h2 class="flowers">TBD</h2>
-<hr />
-
-</div>
-<div class="buttons">
-<a href="#" onclick="parent.jQuery.fancybox.close();" class="button left"> Complete Module</a>
-</div>
-</div>
-</div>
-
-
-
-<div id="lesson-3">
-<div id="lesson-3-slide-1" class="course-slide">
-<div class="content">
-<h2 class="flowers">TBD</h2>
-<hr />
-
-
-</div>
-<div class="buttons">
-<a href="javascript:;" class="button right" onclick="$.fancybox.next();">Start Module &raquo;</a>
-</div>
-</div>
-
-
-
-
-
-<div id="lesson-3-slide-2" class="course-slide">
-<div class="content">
-<h2 class="flowers">TBD</h2>
-<hr />
-
-
-
-</div>
-<div class="buttons">
-<a href="#" onclick="parent.jQuery.fancybox.close();" class="button left">Complete Module</a>
+<a href="#" onclick="parent.jQuery.fancybox.close();" class="button left">Close</a>
 </div>
 </div>
 

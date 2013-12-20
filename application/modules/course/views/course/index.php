@@ -41,5 +41,5 @@
 <p>{t}CARE Coaching Online provides working caregivers with essential tools, knowledge, and skills to effectively deal with the variety of issues arising from caring for their aging parents, relatives, or loved ones. Developed by Mather LifeWays Institute on Aging, CARE Coaching Online improves working caregivers abilities to communicate, advocate, relate, and encourage their older parents or loved ones in making future plans.{/t}</p>
 
 <h2 class="flowers">{t}Spencer Powell Online Training (SPOT){/t}</h2>
-<p>{t}Spencer Powell Online Training is designed to promote cognitive health and healthy lifestyle changes. Fake textFake textFake textFake textFake textFake textFake textFake textFake textFake textFake textFake textFake textFake textFake textFake textFake textFake textFake textFake textFake text{/t}</p>
+<p>{t}Alzheimer’s disease is not simply a matter of fate. Although genes play a role, we now know that lifestyle behaviors such as physical activity and nutrition can help keep your brain healthy and reduce your risk of developing Alzheimer’s Disease and other dementias.  The Spencer Powell Brain Fitness Program is designed to provide you with information and strategies for engaging in a brain-healthy lifestyle, as well as help you learn memory techniques that you can start using right away.{/t}</p>
 </div>
