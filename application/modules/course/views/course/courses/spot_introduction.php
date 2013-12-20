@@ -138,6 +138,7 @@ href="#lesson-1-slide-12" data-fancybox-group="lesson-1" class="hide lesson-1"><
 <div class="content">
 <h2 class="flowers"><?php echo t($course->title); ?></h2>
 <hr />
+<img src="<?php echo $this->getImagesUrl('spencer/134203608.png'); ?>" alt="image">
 
 <p>Welcome to the course! We are pleased you have decided to join us. Please contact your facilitator if you experience any difficulties or need help. Thank you!</p>
 
