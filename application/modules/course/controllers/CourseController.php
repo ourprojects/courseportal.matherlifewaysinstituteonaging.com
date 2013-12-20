@@ -34,7 +34,22 @@ class CourseController extends CoursePortalController
 					'actionPrefix' => 'spencerpowell.'
 				),
 			),
-			'survey.' => 'surveyor.widgets.Survey'
+			'survey.' => 'surveyor.widgets.Survey',
+			'contactUs.' => array(
+				'class' => 'ext.LDContactUsWidget.LDContactUsWidget',
+				'captcha' => array(
+					'class' => 'ext.LDContactUsWidget.components.CUReCaptcha',
+					'config' => array('useAjax' => true)
+				),
+			)
+		);
+		$actions['contactUs.']['submit'] = array(
+			'mailer' => array(
+				'class' => 'ext.LDContactUsWidget.components.CUSimpleYiiMail',
+				'to' => Yii::app()->params['supportEmail'],
+				'yiiMailer' => Yii::app()->mail
+			),
+			'captcha' => $actions['contactUs.']['captcha']
 		);
 		$courses = Yii::app()->getDb()->createCommand()->select('name')->from(Course::model()->tableName())->queryColumn();
 		foreach($courses as $course)
