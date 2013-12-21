@@ -107,7 +107,7 @@ class MessageSourceController extends TController
 
 	public function actionAjaxIndex($ajax)
 	{
-		$this->actionGrid($id, $ajax);
+		$this->actionGrid(null, $ajax);
 	}
 
 	public function actionView($id)

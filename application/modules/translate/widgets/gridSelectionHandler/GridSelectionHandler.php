@@ -8,7 +8,7 @@
 class GridSelectionHandler extends CWidget
 {
 	
-	public $gridId = '';
+	private $_gridId;
 	
 	public $url = '';
 	
@@ -58,8 +58,13 @@ class GridSelectionHandler extends CWidget
 
 	public function run()
 	{
+		if(!isset($this->_gridId))
+		{
+			throw new CException(TranslateModule::t('A grid ID has not been sepcifed for GridSelectionHandler.'));
+		}
+	
 		$selectionHandlerOptions = $this->selectionHandlerOptions;
-		$selectionHandlerOptions['gridId'] = $this->gridId;
+		$selectionHandlerOptions['gridId'] = $this->getGridId();
 		$selectionHandlerOptions['url'] = $this->url;
 		$selectionHandlerOptions['activeRecordClass'] = $this->activeRecordClass;
 		$selectionHandlerOptions['keys'] = $this->keys;
@@ -85,6 +90,17 @@ class GridSelectionHandler extends CWidget
 	public function getAssetsUrl()
 	{
 		return $this->_assetsUrl;
+	}
+	
+	public function getGridId()
+	{
+		return $this->_gridId;
+	}
+	
+	public function setGridId($gridId)
+	{
+		$this->setId('selectionHandler_'.$gridId);
+		$this->_gridId = $gridId;
 	}
 
 }
