@@ -35,6 +35,9 @@ class RouteView extends CActiveRecord
 		return array(
 			'ERememberFiltersBehavior' => array(
 				'class' => 'ext.ERememberFiltersBehavior.ERememberFiltersBehavior',
+			),
+			'LDActiveRecordConditionBehavior' => array(
+				'class' => 'ext.LDActiveRecordConditionBehavior.LDActiveRecordConditionBehavior'
 			)
 		);
 	}

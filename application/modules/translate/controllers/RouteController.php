@@ -23,11 +23,6 @@ class RouteController extends TController
 		));
 	}
 
-	public function actionTranslateMissing($id = null, $class = 'View')
-	{
-
-	}
-
 	/**
 	 * View all Categories.
 	 */
@@ -111,10 +106,22 @@ class RouteController extends TController
 				$data['model']->route($id);
 				$gridPath = '../view/_grid';
 				break;
+			case 'missingTranslationsLanguage-grid':
+				$data['relatedGrids'] = array('language-grid', 'view-grid', 'messageSource-grid', 'message-grid');
+				$data['model'] = new Language('search');
+				$data['model']->missingTranslationsRoute($id);
+				$data['routeId'] = $id;
+				$gridPath = '../language/_grid';
+				break;
 			default:
 				return;
 		}
 		return $this->renderPartial($gridPath, $data, $return);
+	}
+	
+	public function actionTranslate(array $Route = array(), $dryRun = true, array $scopes = array())
+	{
+	
 	}
 
 	/**

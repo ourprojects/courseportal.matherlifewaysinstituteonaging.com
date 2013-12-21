@@ -61,7 +61,7 @@ $dialog = $this->beginWidget('zii.widgets.jui.CJuiDialog', array(
 		echo $form->labelEx($Message, 'language_id');
 		if($Message->getIsNewRecord())
 		{
-			echo $form->dropDownList($Message, 'language_id', CHtml::listData(Language::model()->missingTranslations($Message->id)->findAll(), 'id', 'name'));
+			echo $form->dropDownList($Message, 'language_id', CHtml::listData(Language::model()->missingTranslationsMessageSource($Message->id)->findAll(), 'id', 'name'));
 		}
 		else
 		{

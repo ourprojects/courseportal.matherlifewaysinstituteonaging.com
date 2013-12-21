@@ -23,11 +23,6 @@ class ViewSourceController extends TController
 		));
 	}
 
-	public function actionTranslateMissing($id = null, $class = 'View')
-	{
-
-	}
-
 	/**
 	 * View all ViewSources.
 	 */
@@ -93,7 +88,7 @@ class ViewSourceController extends TController
 			case 'missingLanguage-grid':
 				$data['relatedGrids'] = array('language-grid', 'view-grid');
 				$data['model'] = new Language('search');
-				$data['model']->missingViewTranslations($id);
+				$data['model']->missingTranslationsViewSource($id);
 				$data['viewId'] = $id;
 				$gridPath = '../language/_grid';
 				break;
@@ -126,6 +121,11 @@ class ViewSourceController extends TController
 				return;
 		}
 		return $this->renderPartial($gridPath, $data, $return);
+	}
+	
+	public function actionTranslate(array $ViewSource = array(), $dryRun = true, array $scopes = array())
+	{
+		
 	}
 
 	/**

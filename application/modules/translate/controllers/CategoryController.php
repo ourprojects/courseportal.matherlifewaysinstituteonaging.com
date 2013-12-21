@@ -23,11 +23,6 @@ class CategoryController extends TController
 		));
 	}
 
-	public function actionTranslateMissing($id = null, $class = 'Category')
-	{
-
-	}
-
 	/**
 	 * View all Categories.
 	 */
@@ -99,6 +94,13 @@ class CategoryController extends TController
 				$data['model']->categoryMessage($id);
 				$gridPath = '../language/_grid';
 				break;
+			case 'missingTranslationsLanguage-grid':
+				$data['relatedGrids'] = array('language-grid', 'message-grid');
+				$data['model'] = new Language('search');
+				$data['model']->missingTranslationsCategory($id);
+				$data['categoryId'] = $id;
+				$gridPath = '../language/_grid';
+				break;
 			case 'route-grid':
 				$data['relatedGrids'] = array('viewSource-grid', 'view-grid');
 				$data['model'] = new Route('search');
@@ -121,6 +123,11 @@ class CategoryController extends TController
 				return;
 		}
 		return $this->renderPartial($gridPath, $data, $return);
+	}
+	
+	public function actionTranslate(array $Category = array(), $dryRun = true, array $scopes = array())
+	{
+	
 	}
 
 	/**

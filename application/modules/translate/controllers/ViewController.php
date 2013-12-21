@@ -23,11 +23,6 @@ class ViewController extends TController
 		));
 	}
 
-	public function actionTranslateMissing($id = null, $class = 'View')
-	{
-
-	}
-
 	/**
 	 * View all Views.
 	 */

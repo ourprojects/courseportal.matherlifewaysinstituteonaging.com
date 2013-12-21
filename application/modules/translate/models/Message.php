@@ -108,55 +108,92 @@ class Message extends CActiveRecord
 	
 	public function viewSource($id)
 	{
-		$dbConnection = $this->getDbConnection();
-		$this->with(array('viewSources' => ViewSource::model()->createCondition('id', $id, 'viewSources')))->together()->getDbCriteria()->group = $dbConnection->quoteColumnName($this->getTableAlias().'.id').', '.$dbConnection->quoteColumnName($this->getTableAlias().'.language_id');
+		$db = $this->getDbConnection();
+		$this->getDbCriteria()->mergeWith(array(
+			'with' => array(
+				'viewSources' => ViewSource::model()->createCondition('id', $id, 'viewSources')
+			),
+			'together' => true,
+			'group' => $db->quoteColumnName($this->getTableAlias().'.id').', '.$db->quoteColumnName($this->getTableAlias().'.language_id'),
+		));
 		return $this;
 	}
 	
 	public function view($id, $language_id)
 	{
-		$dbConnection = $this->getDbConnection();
-		$this->with(array('viewSources.views' => View::model()->createCondition(array('id', 'language_id'), array('id' => $id, 'language_id' => $language_id), 'views', true, true)))->together()->getDbCriteria()->group = $dbConnection->quoteColumnName($this->getTableAlias().'.id').', '.$dbConnection->quoteColumnName($this->getTableAlias().'.language_id');
+		$db = $this->getDbConnection();
+		$this->getDbCriteria()->mergeWith(array(
+			'with' => array(
+				'viewSources.views' => View::model()->createCondition(array('id', 'language_id'), array('id' => $id, 'language_id' => $language_id), 'views', true, true)
+			),
+			'together' => true,
+			'group' => $db->quoteColumnName($this->getTableAlias().'.id').', '.$db->quoteColumnName($this->getTableAlias().'.language_id'),
+		));
 		return $this;
 	}
 	
 	public function route($id)
 	{
-		$dbConnection = $this->getDbConnection();
-		$this->with(array('viewSources.routes' => Route::model()->createCondition('id', $id, 'routes')))->together()->getDbCriteria()->group = $dbConnection->quoteColumnName($this->getTableAlias().'.id').', '.$dbConnection->quoteColumnName($this->getTableAlias().'.language_id');
+		$db = $this->getDbConnection();
+		$this->getDbCriteria()->mergeWith(array(
+			'with' => array(
+				'viewSources.routes' => Route::model()->createCondition('id', $id, 'routes')
+			),
+			'together' => true,
+			'group' => $db->quoteColumnName($this->getTableAlias().'.id').', '.$db->quoteColumnName($this->getTableAlias().'.language_id'),
+		));
 		return $this;
 	}
 	
 	public function messageSource($id)
 	{
-		$dbConnection = $this->getDbConnection();
-		$this->with(array('source' => MessageSource::model()->createCondition('id', $id, 'source')))->together()->getDbCriteria()->group = $dbConnection->quoteColumnName($this->getTableAlias().'.id').', '.$dbConnection->quoteColumnName($this->getTableAlias().'.language_id');
+		$db = $this->getDbConnection();
+		$this->getDbCriteria()->mergeWith(array(
+			'with' => array(
+				'source' => MessageSource::model()->createCondition('id', $id, 'source')
+			),
+			'together' => true,
+			'group' => $db->quoteColumnName($this->getTableAlias().'.id').', '.$db->quoteColumnName($this->getTableAlias().'.language_id'),
+		));
 		return $this;
 	}
 	
 	public function language($id)
 	{
-		$dbConnection = $this->getDbConnection();
-		$this->with(array('language' => Language::model()->createCondition('id', $id, 'language')))->together()->getDbCriteria()->group = $dbConnection->quoteColumnName($this->getTableAlias().'.id').', '.$dbConnection->quoteColumnName($this->getTableAlias().'.language_id');
+		$db = $this->getDbConnection();
+		$this->getDbCriteria()->mergeWith(array(
+			'with' => array(
+				'language' => Language::model()->createCondition('id', $id, 'language')
+			),
+			'together' => true,
+			'group' => $db->quoteColumnName($this->getTableAlias().'.id').', '.$db->quoteColumnName($this->getTableAlias().'.language_id'),
+		));
 		return $this;
 	}
 	
 	public function languageSelfOrSource($id)
 	{
-		$dbConnection = $this->getDbConnection();
-		$criteria = $this->with(array('language', 'source'))->together()->getDbCriteria();
-		$criteria->group = $dbConnection->quoteColumnName($this->getTableAlias().'.id').', '.$dbConnection->quoteColumnName($this->getTableAlias().'.language_id');
-		$languageCondition = Language::model()->createCondition('id', $id, 'language');
-		$sourceLanguageCondition = MessageSource::model()->createCondition('language_id', $id, 'source');
-		$criteria->addCondition(array($languageCondition['condition'], $sourceLanguageCondition['condition']), 'OR');
-		$criteria->params += $languageCondition['params'] + $sourceLanguageCondition['params'];
+		$db = $this->getDbConnection();
+		$criteria = $this->getDbCriteria()->mergeWith(array(
+			'with' => array('language', 'source'),
+			'together' => true,
+			'group' => $db->quoteColumnName($this->getTableAlias().'.id').', '.$db->quoteColumnName($this->getTableAlias().'.language_id'),
+			'condition' => '('.Language::model()->createCondition('id', $id, 'language').') AND ('.MessageSource::model()->createCondition('language_id', $id, 'source').')',
+			'params' => $languageCondition['params'] + $sourceLanguageCondition['params'],
+		));
 		return $this;
 	}
 	
 	public function category($id)
 	{
-		$dbConnection = $this->getDbConnection();
-		$this->with(array('source.categories' => Category::model()->createCondition('id', $id, 'categories')))->together()->getDbCriteria()->group = $dbConnection->quoteColumnName($this->getTableAlias().'.id').', '.$dbConnection->quoteColumnName($this->getTableAlias().'.language_id');
+		$db = $this->getDbConnection();
+		$this->getDbCriteria()->mergeWith(array(
+			'with' => array(
+				'source.categories' => Category::model()->createCondition('id', $id, 'categories')
+			),
+			'together' => true,
+			'group' => $db->quoteColumnName($this->getTableAlias().'.id').', '.$db->quoteColumnName($this->getTableAlias().'.language_id'),
+		));
 		return $this;
 	}
 	

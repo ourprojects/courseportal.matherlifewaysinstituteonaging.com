@@ -6,11 +6,25 @@
 	<div id="details" class="box-white">
 		<?php $this->renderPartial('_details', array('model' => $language)); ?>
 	</div>
-	<div id="missingMessageSources" class="box-white">
+	<div id="missingTranslations" class="box-white">
 		<h2>
-			<?php echo TranslateModule::t('Messages Missing a Translation For This Language'); ?>
+			<?php echo TranslateModule::t('Missing Translations'); ?>
 		</h2>
-		<?php $this->actionGrid($language->id, 'missingMessageSource-grid'); ?>
+		<?php 
+		$this->widget(
+				'zii.widgets.jui.CJuiTabs',
+				array(
+					'tabs' => array(
+						TranslateModule::t('Categories') => $this->internalActionGrid($language->id, 'missingTranslationsCategory-grid', true),
+						TranslateModule::t('Source Messages') => $this->internalActionGrid($language->id, 'missingTranslationsMessageSource-grid', true),
+						TranslateModule::t('Routes') => $this->internalActionGrid($language->id, 'missingTranslationsRoute-grid', true),
+						TranslateModule::t('Source Views') => $this->internalActionGrid($language->id, 'missingTranslationsViewSource-grid', true),
+					),
+					'headerTemplate' => '<li><a href="{url}" title="{title}">{title}</a></li>',
+					'id' => 'missingTranslationsDetails'
+				)
+		);
+		?>
 	</div>
 	<?php 
 	$this->widget(
@@ -21,7 +35,7 @@
 						$this->widget(
 								'translate.widgets.gridSelectionHandler.GridSelectionHandler',
 								array(
-									'gridId' => 'category-grid',
+									'gridId' => 'sourceMessageCategory-grid',
 									'activeRecordClass' => 'Category',
 									'url' => Yii::app()->getController()->createUrl('category/delete'),
 									'scopes' => array('languageMessageSource' => array('id' => $language->id)),
@@ -49,7 +63,7 @@
 						$this->widget(
 								'translate.widgets.gridSelectionHandler.GridSelectionHandler',
 								array(
-									'gridId' => 'category-grid',
+									'gridId' => 'translatedMessageCategory-grid',
 									'activeRecordClass' => 'Category',
 									'url' => Yii::app()->getController()->createUrl('category/delete'),
 									'scopes' => array('languageMessage' => array('id' => $language->id)),

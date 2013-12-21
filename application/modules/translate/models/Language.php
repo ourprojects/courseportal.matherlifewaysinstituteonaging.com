@@ -60,7 +60,7 @@ class Language extends CActiveRecord
 			'viewCount' => array(self::STAT, 'View', 'language_id'),
 			'viewSources' => array(self::MANY_MANY, 'ViewSource', View::model()->tableName().'(language_id, id)'),
 			'viewSourceCount' => array(self::STAT, 'ViewSource', View::model()->tableName().'(language_id, id)'),
-			'acceptedLanguage' => array(self::HAS_ONE, 'AcceptedLanguage', 'id')
+			'acceptedLanguage' => array(self::HAS_ONE, 'AcceptedLanguage', 'id'),
 		);
 	}
 
@@ -96,91 +96,159 @@ class Language extends CActiveRecord
 			'notAccepted' => array('with' => array('acceptedLanguage' => array('joinType' => 'LEFT JOIN')), 'condition' => $this->getDbConnection()->quoteColumnName('acceptedLanguage.id').' IS NULL')
 		);
 	}
-
-	public function missingTranslations($messageId = null)
+	
+	public function missingTranslationsCategory($categoryId = null)
 	{
 		$db = $this->getDbConnection();
-		$criteria = array(
-			'with' => array('messages' => array('joinType' => 'LEFT JOIN', 'on' => $db->quoteColumnName('messageSources.id').'='.$db->quoteColumnName('messages.id'))),
+		$condition = $categoryId === null ? array('condition' => '1=1', 'params' => array()) : CategoryMessage::model()->createCondition('category_id', $categoryId, 'categories_categories');
+
+		$this->getDbCriteria()->mergeWith(array(
+			'with' => array(
+				'messages' => array(
+					'joinType' => 'LEFT JOIN', 
+					'on' => $db->quoteColumnName('messageSources.id').'='.$db->quoteColumnName('messages.id'),
+				)
+			),
 			'condition' => $db->quoteColumnName($this->getTableAlias().'.id').'!='.$db->quoteColumnName('messageSources.language_id').' AND '.$db->quoteColumnName('messages.id').' IS NULL',
+			'join' => 
+				'CROSS JOIN '.$db->quoteTableName(MessageSource::model()->tableName()).' '.$db->quoteTableName('messageSources').
+				'INNER JOIN '.$db->quoteTableName(CategoryMessage::model()->tableName()).' '.$db->quoteTableName('categories_categories').' ON ('.$db->quoteColumnName('messageSources.id').'='.$db->quoteColumnName('categories_categories.message_id').') AND ('.$condition['condition'].')'
+			,
+			'params' => $condition['params'],
+			'group' => $db->quoteColumnName($this->getTableAlias().'.id'),
 			'together' => true
-		);
-		if(isset($this->id))
-		{
-			$criteria['condition'] .= ' AND '.$db->quoteColumnName($this->getTableAlias().'.id').'=:id';
-			$criteria['params'][':id'] = $this->id;
-		}
-		if($messageId === null)
-		{
-			$criteria['join'] = 'CROSS JOIN '.$db->quoteTableName(MessageSource::model()->tableName()).' '.$db->quoteTableName('messageSources');
-		}
-		else
-		{
-			$criteria['params'] = array(':message_id' => $messageId);
-			$criteria['join'] = 'JOIN '.$db->quoteTableName(MessageSource::model()->tableName()).' '.$db->quoteTableName('messageSources').' ON '.$db->quoteColumnName('messageSources.id').'=:message_id';
-		}
-		$this->getDbCriteria()->mergeWith($criteria);
+		));
+		return $this;
+	}
+	
+	public function missingTranslationsRoute($routeId = null)
+	{
+		$db = $this->getDbConnection();
+		$condition = $routeId === null ? array('condition' => '1=1', 'params' => array()) : RouteView::model()->createCondition('route_id', $routeId, 'routes_routes');
+
+		$this->getDbCriteria()->mergeWith(array(
+			'with' => array(
+				'views' => array(
+					'joinType' => 'LEFT JOIN', 
+					'on' => $db->quoteColumnName('sourceViews.id').'='.$db->quoteColumnName('views.id'),
+				)
+			),
+			'condition' => $db->quoteColumnName('views.id').' IS NULL',
+			'join' => 
+				'CROSS JOIN '.$db->quoteTableName(ViewSource::model()->tableName()).' '.$db->quoteTableName('sourceViews').
+				'INNER JOIN '.$db->quoteTableName(RouteView::model()->tableName()).' '.$db->quoteTableName('routes_routes').' ON ('.$db->quoteColumnName('sourceViews.id').'='.$db->quoteColumnName('routes_routes.view_id').') AND ('.$condition['condition'].')'
+			,
+			'params' => $condition['params'],
+			'group' => $db->quoteColumnName($this->getTableAlias().'.id'),
+			'together' => true
+		));
 		return $this;
 	}
 
-	public function missingViewTranslations($viewId = null)
+	public function missingTranslationsMessageSource($messageId = null)
 	{
 		$db = $this->getDbConnection();
-		$criteria = array(
-				'with' => array('views' => array('joinType' => 'LEFT JOIN', 'on' => $db->quoteColumnName('viewSources.id').'='.$db->quoteColumnName('views.id'))),
-				'condition' => $db->quoteColumnName('views.id').' IS NULL',
-				'together' => true
-		);
-		if(isset($this->id))
-		{
-			$criteria['condition'] .= ' AND '.$db->quoteColumnName($this->getTableAlias().'.id').'=:id';
-			$criteria['params'][':id'] = $this->id;
-		}
-		if($viewId === null)
-		{
-			$criteria['join'] = 'CROSS JOIN '.$db->quoteTableName(ViewSource::model()->tableName()).' '.$db->quoteTableName('viewSources');
-		}
-		else
-		{
-			$criteria['params'] = array(':view_id' => $viewId);
-			$criteria['join'] = 'JOIN '.$db->quoteTableName(ViewSource::model()->tableName()).' '.$db->quoteTableName('viewSources').' ON '.$db->quoteColumnName('viewSources.id').'=:view_id';
-		}
-		$this->getDbCriteria()->mergeWith($criteria);
+		$condition = $messageId === null ? array('condition' => '1=1', 'params' => array()) : MessageSource::model()->createCondition('id', $messageId, 'messageSources');
+		
+		$this->getDbCriteria()->mergeWith(array(
+			'with' => array(
+				'messages' => array(
+					'joinType' => 'LEFT JOIN', 
+					'on' => $db->quoteColumnName('messageSources.id').'='.$db->quoteColumnName('messages.id')
+				)
+			),
+			'condition' => $db->quoteColumnName($this->getTableAlias().'.id').'!='.$db->quoteColumnName('messageSources.language_id').' AND '.$db->quoteColumnName('messages.id').' IS NULL',
+			'join' => 'JOIN '.$db->quoteTableName(MessageSource::model()->tableName()).' '.$db->quoteTableName('messageSources').' ON '.$condition['condition'],
+			'params' => $condition['params'],
+			'group' => $db->quoteColumnName($this->getTableAlias().'.id'),
+			'together' => true
+		));
+		return $this;
+	}
+
+	public function missingTranslationsViewSource($viewId = null)
+	{
+		$db = $this->getDbConnection();
+		$condition = $viewId === null ? array('condition' => '1=1', 'params' => array()) : ViewSource::model()->createCondition('id', $viewId, 'viewSources');
+
+		$this->getDbCriteria()->mergeWith(array(
+			'with' => array(
+				'views' => array(
+					'joinType' => 'LEFT JOIN', 
+					'on' => $db->quoteColumnName('viewSources.id').'='.$db->quoteColumnName('views.id')
+				)
+			),
+			'condition' => $db->quoteColumnName('views.id').' IS NULL',
+			'join' => 'JOIN '.$db->quoteTableName(ViewSource::model()->tableName()).' '.$db->quoteTableName('viewSources').' ON '.$condition['condition'],
+			'params' => $condition['params'],
+			'group' => $db->quoteColumnName($this->getTableAlias().'.id'),
+			'together' => true
+		));
 		return $this;
 	}
 	
 	public function viewSource($id)
 	{
-		$dbConnection = $this->getDbConnection();
-		$this->with(array('viewSources' => ViewSource::model()->createCondition('id', $id, 'viewSources')))->together()->getDbCriteria()->group = $dbConnection->quoteColumnName($this->getTableAlias().'.id');
+		$db = $this->getDbConnection();
+		$this->getDbCriteria()->mergeWith(array(
+			'with' => array(
+				'viewSources' => ViewSource::model()->createCondition('id', $id, 'viewSources')
+			),
+			'together' => true,
+			'group' => $db->quoteColumnName($this->getTableAlias().'.id')
+		));
 		return $this;
 	}
 	
 	public function route($id)
 	{
-		$dbConnection = $this->getDbConnection();
-		$this->with(array('views.sourceView.routes' => Route::model()->createCondition('id', $id, 'routes')))->together()->getDbCriteria()->group = $dbConnection->quoteColumnName($this->getTableAlias().'.id');
+		$db = $this->getDbConnection();
+		$this->getDbCriteria()->mergeWith(array(
+			'with' => array(
+				'views.sourceView.routes' => Route::model()->createCondition('id', $id, 'routes')
+			),
+			'together' => true,
+			'group' => $db->quoteColumnName($this->getTableAlias().'.id')
+		));
 		return $this;
 	}
 	
 	public function messageSource($id)
 	{
-		$dbConnection = $this->getDbConnection();
-		$this->with(array('messageSources' => MessageSource::model()->createCondition('id', $id, 'messageSources')))->together()->getDbCriteria()->group = $dbConnection->quoteColumnName($this->getTableAlias().'.id');
+		$db = $this->getDbConnection();
+		$this->getDbCriteria()->mergeWith(array(
+			'with' => array(
+				'messageSources' => MessageSource::model()->createCondition('id', $id, 'messageSources')
+			),
+			'together' => true,
+			'group' => $db->quoteColumnName($this->getTableAlias().'.id'),
+		));
 		return $this;
 	}
 	
 	public function categoryMessage($id)
 	{
-		$dbConnection = $this->getDbConnection();
-		$this->with(array('messages.categories' => Category::model()->createCondition('id', $id, 'categories')))->together()->getDbCriteria()->group = $dbConnection->quoteColumnName($this->getTableAlias().'.id');
+		$db = $this->getDbConnection();
+		$this->getDbCriteria()->mergeWith(array(
+			'with' => array(
+				'messages.categories' => Category::model()->createCondition('id', $id, 'categories'),
+			),
+			'together' => true,
+			'group' => $db->quoteColumnName($this->getTableAlias().'.id'),
+		));
 		return $this;
 	}
 	
 	public function categoryMessageSource($id)
 	{
-		$dbConnection = $this->getDbConnection();
-		$this->with(array('sourceMessages.categories' => Category::model()->createCondition('id', $id, 'categories')))->together()->getDbCriteria()->group = $dbConnection->quoteColumnName($this->getTableAlias().'.id');
+		$db = $this->getDbConnection();
+		$this->getDbCriteria()->mergeWith(array(
+			'with' => array(
+				'sourceMessages.categories' => Category::model()->createCondition('id', $id, 'categories')
+			),
+			'together' => true,
+			'group' => $db->quoteColumnName($this->getTableAlias().'.id'),
+		));
 		return $this;
 	}
 	
@@ -201,7 +269,7 @@ class Language extends CActiveRecord
 
 	public function getIsMissingTranslations($messageId = null)
 	{
-		return $this->missingTranslations($messageId)->exists();
+		return $this->missingTranslationsMessageSource($messageId)->exists();
 	}
 
 	public function getIsAccepted()

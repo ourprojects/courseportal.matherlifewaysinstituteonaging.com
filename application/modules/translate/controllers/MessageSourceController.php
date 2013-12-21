@@ -161,7 +161,7 @@ class MessageSourceController extends TController
 			case 'missingLanguage-grid':
 				$data['relatedGrids'] = array('language-grid', 'message-grid');
 				$data['model'] = new Language('search');
-				$data['model']->missingTranslations($id);
+				$data['model']->missingTranslationsMessageSource($id);
 				$data['messageId'] = $id;
 				$gridPath = '../language/_grid';
 				break;

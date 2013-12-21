@@ -6,6 +6,12 @@
 	<div id="details" class="box-white">
 		<?php $this->renderPartial('_details', array('model' => $category)); ?>
 	</div>
+	<div id="missingTranslationsLanguages" class="box-white">
+		<h2>
+			<?php echo TranslateModule::t('Languages Missing A Translation For This Category'); ?>
+		</h2>
+		<?php $this->actionGrid($category->id, 'missingTranslationsLanguage-grid'); ?>
+	</div>
 	<?php 
 	$this->widget(
 			'zii.widgets.jui.CJuiTabs',

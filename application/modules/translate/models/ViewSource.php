@@ -109,42 +109,63 @@ class ViewSource extends CActiveRecord
 	{
 		return array(
 			'havingAcceptedLanguages' => array('with' => array('acceptedLanguages' => array('joinType' => 'INNER JOIN'))),
-			'havingOtherLanguages' => array('with' => array('acceptedLanguages' => array('joinType' => 'LEFT JOIN', 'condition' => 'acceptedLanguages.id IS NULL')))
+			'havingOtherLanguages' => array('with' => array('acceptedLanguages' => array('joinType' => 'LEFT JOIN', 'condition' => 'acceptedLanguages.id IS NULL'))),
 		);
 	}
 	
 	public function route($id)
 	{
-		$dbConnection = $this->getDbConnection();
-		$this->with(array('routes' => Route::model()->createCondition('id', $id, 'routes')))->together()->getDbCriteria()->group = $dbConnection->quoteColumnName($this->getTableAlias().'.id');
+		$db = $this->getDbConnection();
+		$this->with(array('routes' => Route::model()->createCondition('id', $id, 'routes')))->together()->getDbCriteria()->group = $db->quoteColumnName($this->getTableAlias().'.id');
 		return $this;
 	}
 	
 	public function messageSource($id)
 	{
-		$dbConnection = $this->getDbConnection();
-		$this->with(array('messageSources' => MessageSource::model()->createCondition('id', $id, 'messageSources')))->together()->getDbCriteria()->group = $dbConnection->quoteColumnName($this->getTableAlias().'.id');
+		$db = $this->getDbConnection();
+		$this->with(array('messageSources' => MessageSource::model()->createCondition('id', $id, 'messageSources')))->together()->getDbCriteria()->group = $db->quoteColumnName($this->getTableAlias().'.id');
 		return $this;
 	}
 	
 	public function message($id, $language_id)
 	{
-		$dbConnection = $this->getDbConnection();
-		$this->with(array('messages' => Message::model()->createCondition(array('id', 'language_id'), array('id' => $id, 'language_id' => $language_id), 'messages', true, true)))->together()->getDbCriteria()->group = $dbConnection->quoteColumnName($this->getTableAlias().'.id');
+		$db = $this->getDbConnection();
+		$this->with(array('messages' => Message::model()->createCondition(array('id', 'language_id'), array('id' => $id, 'language_id' => $language_id), 'messages', true, true)))->together()->getDbCriteria()->group = $db->quoteColumnName($this->getTableAlias().'.id');
 		return $this;
 	}
 	
 	public function language($id)
 	{
-		$dbConnection = $this->getDbConnection();
-		$this->with(array('languages' => Language::model()->createCondition('id', $id, 'languages')))->together()->getDbCriteria()->group = $dbConnection->quoteColumnName($this->getTableAlias().'.id');
+		$db = $this->getDbConnection();
+		$this->with(array('languages' => Language::model()->createCondition('id', $id, 'languages')))->together()->getDbCriteria()->group = $db->quoteColumnName($this->getTableAlias().'.id');
 		return $this;
 	}
 
 	public function category($id)
 	{
-		$dbConnection = $this->getDbConnection();
-		$this->with(array('messageSources.categories' => Category::model()->createCondition('id', $id, 'categories')))->together()->getDbCriteria()->group = $dbConnection->quoteColumnName($this->getTableAlias().'.id');
+		$db = $this->getDbConnection();
+		$this->with(array('messageSources.categories' => Category::model()->createCondition('id', $id, 'categories')))->together()->getDbCriteria()->group = $db->quoteColumnName($this->getTableAlias().'.id');
+		return $this;
+	}
+	
+	public function missingTranslations($id = null)
+	{
+		$db = $this->getDbConnection();
+		$condition = $id === null ? array('condition' => '1=1', 'params' => array()) : Language::model()->createCondition('id', $id, 'languages');
+
+		$this->getDbCriteria()->mergeWith(array(
+			'with' => array(
+				'views' => array(
+					'joinType' => 'LEFT JOIN', 
+					'on' => $db->quoteColumnName('views.language_id').'='.$db->quoteColumnName('languages.id')
+				)
+			),
+			'condition' => $db->quoteColumnName('views.id').' IS NULL',
+			'join' => 'JOIN '.$db->quoteTableName(Language::model()->tableName()).' '.$db->quoteTableName('languages').' ON '.$condition['condition'],
+			'group' => $db->quoteColumnName($this->getTableAlias().'.id'),
+			'params' => $condition['params'],
+			'together' => true
+		));
 		return $this;
 	}
 	

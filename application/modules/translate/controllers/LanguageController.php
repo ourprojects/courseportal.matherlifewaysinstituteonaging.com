@@ -114,13 +114,6 @@ class LanguageController extends TController
 				$data['model']->language($id);
 				$gridPath = '../message/_grid';
 				break;
-			case 'missingMessageSource-grid':
-				$data['relatedGrids'] = array('messageSource-grid');
-				$data['model'] = new MessageSource('search');
-				$data['model']->missingTranslations($id);
-				$gridPath = '../messageSource/_grid';
-				$data['languageId'] = $id;
-				break;
 			case 'language-grid':
 				$data['relatedGrids'] = array();
 				$data['model'] = new Language('search');
@@ -147,6 +140,34 @@ class LanguageController extends TController
 				$data['model'] = new View('search');
 				$data['model']->language($id);
 				$gridPath = '../view/_grid';
+				break;
+			case 'missingTranslationsCategory-grid':
+				$data['relatedGrids'] = array('messageSource-grid', 'message-grid');
+				$data['model'] = new Category('search');
+				$data['model']->missingTranslations($id);
+				$gridPath = '../category/_grid';
+				$data['languageId'] = $id;
+				break;
+			case 'missingTranslationsMessageSource-grid':
+				$data['relatedGrids'] = array('messageSource-grid', 'message-grid');
+				$data['model'] = new MessageSource('search');
+				$data['model']->missingTranslations($id);
+				$gridPath = '../messageSource/_grid';
+				$data['languageId'] = $id;
+				break;
+			case 'missingTranslationsRoute-grid':
+				$data['relatedGrids'] = array('messageSource-grid', 'message-grid', 'viewSource-grid', 'view-grid');
+				$data['model'] = new Route('search');
+				$data['model']->missingTranslations($id);
+				$gridPath = '../route/_grid';
+				$data['languageId'] = $id;
+				break;
+			case 'missingTranslationsViewSource-grid':
+				$data['relatedGrids'] = array('messageSource-grid', 'message-grid', 'view-grid');
+				$data['model'] = new ViewSource('search');
+				$data['model']->missingTranslations($id);
+				$gridPath = '../viewSource/_grid';
+				$data['languageId'] = $id;
 				break;
 			default:
 				return;
