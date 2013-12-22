@@ -3,39 +3,38 @@ $buttonConfig = array(
 	'class' => 'CButtonColumn',
 	'viewButtonLabel' => TranslateModule::t('View Translations'),
 	'viewButtonUrl' => 'Yii::app()->getController()->createUrl("language/view", array("id" => $data->id))',
-	'deleteButtonUrl' => 'Yii::app()->getController()->createUrl("language/delete", array("id" => $data->id))',
+	'deleteButtonUrl' => 'Yii::app()->getController()->createUrl("language/delete", array("Language" => array("id" => $data->id), "dryRun" => 0))',
 	'deleteConfirmation' => TranslateModule::t('Are you certain that you would like to delete this language as well as all associated messages, translations, and views?'),
-	'afterDelete' => 'function(link, success, data){if(success){alert(data);$("#'.implode('").yiiGridView("update");$("#', $relatedGrids).'").yiiGridView("update");}}'
+	'afterDelete' => 'function(link, success, data){if(success){alert($.parseJSON(data).message);$("#'.implode('").yiiGridView("update");$("#', $relatedGrids).'").yiiGridView("update");}}'
 );
 
-if(isset($messageId) || isset($viewId))
+if(isset($messageId) || isset($viewId) || isset($categoryId) || isset($routeId))
 {
 	$buttonConfig['template'] = '{view}{update}{delete}';
 	$buttonConfig['buttons'] = array(
 		'update' => array(
 			'label' => TranslateModule::t('Create Translation'),
-			'url' => isset($messageId) ? '$this->grid->getOwner()->createUrl("message/view", array("id" => '.$messageId.', "languageId" => $data->id))' : '$this->grid->getOwner()->createUrl("view/view", array("id" => '.$viewId.', "languageId" => $data->id))',
-			'click' => 'function(){'.
-							'$("div#message-create-form").tMessageForm("open", $(this).attr("href"));'.
-							'return false;'.
-						'}'
 		)
 	);
 	if(isset($messageId))
 	{
-		$buttonConfig['buttons']['url'] = '$this->grid->getOwner()->createUrl("message/view", array("id" => '.$messageId.', "languageId" => $data->id))';
-		$buttonConfig['buttons']['click'] = 'function(){'.
+		$buttonConfig['buttons']['update']['url'] = '$this->grid->getOwner()->createUrl("message/view", array("id" => '.$messageId.', "languageId" => $data->id))';
+		$buttonConfig['buttons']['update']['click'] = 'function(){'.
 				'$("div#message-create-form").tMessageForm("open", $(this).attr("href"));'.
 				'return false;'.
 			'}';
 	}
-	else
+	else if(isset($viewId))
 	{
-		$buttonConfig['buttons']['url'] = '$this->grid->getOwner()->createUrl("view/compile", array("id" => '.$viewId.', "languageId" => $data->id))';
-		$buttonConfig['buttons']['click'] = 'function(){'.
-				'$("div#view-compile-form").tViewCompileForm("open", $(this).attr("href"));'.
-				'return false;'.
-			'}';
+		$buttonConfig['buttons']['update']['url'] = '$this->grid->getOwner()->createUrl("viewSource/translate", array("id" => '.$viewId.', "Language" => array("language_id" => $data->id), "dryRun" => 0))';
+	}
+	else if(isset($categoryId))
+	{
+		$buttonConfig['buttons']['update']['url'] = '$this->grid->getOwner()->createUrl("category/translate", array("id" => '.$categoryId.', "Language" => array("language_id" => $data->id), "dryRun" => 0))';
+	}
+	else if(isset($routeId))
+	{
+		$buttonConfig['buttons']['update']['url'] = '$this->grid->getOwner()->createUrl("route/translate", array("id" => '.$routeId.', "Language" => array("language_id" => $data->id), "dryRun" => 0))';
 	}
 }
 else
@@ -74,22 +73,5 @@ if(isset($messageId))
 			)
 		)
 	);
-}
-else if(isset($viewId))
-{
-	/*
-	 @ TODO 
-	 $this->renderPartial(
-		'../view/compile', 
-		array(
-			'id' => 'view-compile-form', 
-			'Message' => new Message, 
-			'MessageSource' => new MessageSource,
-			'clientOptions' => array(
-				'submitSuccess' => 'js:function($dialog, $form, data){$("#'.$id.'").yiiGridView("update");$("#'.implode('").yiiGridView("update");$("#', $relatedGrids).'").yiiGridView("update");return true;}'
-			)
-		)
-	);
-	*/
 }
 ?>

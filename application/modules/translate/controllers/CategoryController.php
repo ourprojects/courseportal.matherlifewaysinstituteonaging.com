@@ -125,9 +125,10 @@ class CategoryController extends TController
 		return $this->renderPartial($gridPath, $data, $return);
 	}
 	
-	public function actionTranslate(array $Category = array(), $dryRun = true, array $scopes = array())
+	public function actionTranslate($id, array $Category = array(), $dryRun = true)
 	{
-	
+		// @ TODO
+		$this->redirect(Yii::app()->getRequest()->getUrlReferrer());
 	}
 
 	/**

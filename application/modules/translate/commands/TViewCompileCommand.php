@@ -103,7 +103,7 @@ class TViewCompileCommand extends CConsoleCommand
 				throw new CException(TranslateModule::t("The source view with path '{path}' could not be found or added to the view source.", array('{path}' => $sourcePath)));
 			}
 
-			if($view['route_id'] === null)
+			if($route !== null && $view['route_id'] === null)
 			{
 				throw new CException(TranslateModule::t("The source view with path '{path}' could not be associated with the route {route}.", array('{path}' => $sourcePath, '{route}' => $route)));
 			}

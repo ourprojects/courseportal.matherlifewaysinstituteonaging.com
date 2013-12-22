@@ -8,7 +8,7 @@
 	</div>
 	<div id="missingTranslationsLanguages" class="box-white">
 		<h2>
-			<?php echo TranslateModule::t('Languages Missing A Translation For This Category'); ?>
+			<?php echo TranslateModule::t('Missing Translations'); ?>
 		</h2>
 		<?php $this->actionGrid($category->id, 'missingTranslationsLanguage-grid'); ?>
 	</div>

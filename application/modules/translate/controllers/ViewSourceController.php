@@ -123,9 +123,114 @@ class ViewSourceController extends TController
 		return $this->renderPartial($gridPath, $data, $return);
 	}
 	
-	public function actionTranslate(array $ViewSource = array(), $dryRun = true, array $scopes = array())
+	public function actionTranslate($id, array $Language = array(), $dryRun = true)
 	{
+		$translator = TranslateModule::translator();
+		if(!$translator->isViewRendererConfigured())
+		{
+			throw new CHttpException(501, TranslateModule::t("View translations is not configured. Please check your system configuration."));
+		}
+		unset($_GET['Language']);
+		$model = new Language('search');
+		$model->setAttributes($Language);
+		$model->missingTranslationsViewSource($id);
 		
+		if(is_array($Language['id']))
+		{
+			$condition = $model->createCondition('id', $Language['id']);
+		}
+		else
+		{
+			$condition = $model->getSearchCriteria();
+		}
+		
+		$translationsCreated = 0;
+		$translationErrors = 0;
+		
+		$transaction = Yii::app()->db->beginTransaction();
+		try
+		{
+			if($dryRun)
+			{
+				$translationsCreated = $model->count($condition);
+			}
+			else
+			{
+				$viewSource = ViewSource::model()->findByPk($id);
+				if($viewSource === null)
+				{
+					throw new CHttpException(404, TranslateModule::t('A source view with ID {id} could not be found.', array('{id}' => $id)));
+				}						
+				else if($viewSource->getIsReadable())
+				{
+					$viewRenderer = Yii::app()->getViewRenderer();
+					foreach($model->findAll($condition) as $record)
+					{
+						try
+						{
+							$viewRenderer->generateViewFile($viewSource->path, $viewRenderer->getViewFile($viewSource->path, $record->code), null, $translator->messageSource, $record->code, false);
+						}
+						catch(CException $ce)
+						{
+							Yii::log($ce->getMessage(), CLogger::LEVEL_ERROR, TranslateModule::ID);
+							$translationErrors++;
+							continue;
+						}
+						$translationsCreated++;
+					}
+				}
+				else
+				{
+					throw new CHttpException(500, TranslateModule::t('Unreadable source views cannot be translated.'));
+				}
+			}
+			$transaction->commit();
+		}
+		catch(Exception $e)
+		{
+			$transaction->rollback();
+			if(Yii::app()->getRequest()->getIsAjaxRequest())
+			{
+				throw $e;
+			}
+			else
+			{
+				Yii::app()->getUser()->setFlash(TranslateModule::ID.'-error', $e->getMessage());
+				$this->redirect(Yii::app()->getRequest()->getUrlReferrer());
+			}
+		}
+		
+		if($dryRun)
+		{
+			$message = array(
+				'status' => 'success',
+				'message' => TranslateModule::t('This action will create {translationsCreated} new view translations. Are you sure that you would like to continue?', array('{translationsCreated}' => $translationsCreated))
+			);
+		}
+		else if($translationErrors > 0)
+		{
+			$message = array(
+				'status' => 'warning',
+				'message' => TranslateModule::t('{translationErrors} errors occurred while creating the view translations. Only {translationsCreated} new view translations were created. Please see the system\'s logs for details.', array('{translationsCreated}' => $translationsCreated, '{translationErrors}' => $translationErrors))
+			);
+		}
+		else
+		{
+			$message = array(
+				'status' => 'success',
+				'message' => TranslateModule::t('{translationsCreated} new view translations have been created.', array('{translationsCreated}' => $translationsCreated))
+			);
+		}
+		
+		if(Yii::app()->getRequest()->getIsAjaxRequest())
+		{
+			echo CJavaScript::jsonEncode($message);
+		}
+		else
+		{
+			Yii::app()->getUser()->setFlash(TranslateModule::ID.'-'.$message['status'], $message['message']);
+			$this->redirect(Yii::app()->getRequest()->getUrlReferrer());
+		}
 	}
 
 	/**

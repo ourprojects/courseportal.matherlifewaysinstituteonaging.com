@@ -16,9 +16,33 @@
 				array(
 					'tabs' => array(
 						TranslateModule::t('Categories') => $this->internalActionGrid($language->id, 'missingTranslationsCategory-grid', true),
-						TranslateModule::t('Source Messages') => $this->internalActionGrid($language->id, 'missingTranslationsMessageSource-grid', true),
+						TranslateModule::t('Source Messages') => 
+							$this->widget(
+									'translate.widgets.gridSelectionHandler.GridSelectionHandler',
+									array(
+										'gridId' => 'missingTranslationsMessageSource-grid',
+										'activeRecordClass' => 'MessageSource',
+										'url' => Yii::app()->getController()->createUrl('language/translateMessageSource', array('id' => $language->id)),
+										'buttonText' => TranslateModule::t('Translate All'),
+										'loadingText' => TranslateModule::t('Translating...'),
+										'dialogTitle' => TranslateModule::t('Translate Source Messages'),
+									),
+									true
+							).$this->internalActionGrid($language->id, 'missingTranslationsMessageSource-grid', true),
 						TranslateModule::t('Routes') => $this->internalActionGrid($language->id, 'missingTranslationsRoute-grid', true),
-						TranslateModule::t('Source Views') => $this->internalActionGrid($language->id, 'missingTranslationsViewSource-grid', true),
+						TranslateModule::t('Source Views') => 
+							$this->widget(
+									'translate.widgets.gridSelectionHandler.GridSelectionHandler',
+									array(
+										'gridId' => 'missingTranslationsViewSource-grid',
+										'activeRecordClass' => 'ViewSource',
+										'url' => Yii::app()->getController()->createUrl('language/translateViewSource', array('id' => $language->id)),
+										'buttonText' => TranslateModule::t('Translate All'),
+										'loadingText' => TranslateModule::t('Translating...'),
+										'dialogTitle' => TranslateModule::t('Translate Source View'),
+									),
+									true
+							).$this->internalActionGrid($language->id, 'missingTranslationsViewSource-grid', true),
 					),
 					'headerTemplate' => '<li><a href="{url}" title="{title}">{title}</a></li>',
 					'id' => 'missingTranslationsDetails'

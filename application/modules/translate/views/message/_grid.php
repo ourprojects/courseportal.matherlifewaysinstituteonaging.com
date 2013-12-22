@@ -29,9 +29,9 @@ $this->widget('zii.widgets.grid.CGridView',
 			array(
 				'class' => 'CButtonColumn',
 				'template' => '{update}{delete}',
-				'deleteButtonUrl' => 'Yii::app()->getController()->createUrl("message/delete", array("id" => $data->id, "languageId" => $data->language_id))',
+				'deleteButtonUrl' => 'Yii::app()->getController()->createUrl("message/delete", array("Message" => array("id" => $data->id, "language_id" => $data->language_id), "dryRun" => 0))',
 				'deleteConfirmation' => TranslateModule::t('Are you certain that you would like to delete this message?'),
-				'afterDelete' => 'function(link, success, data){if(success){alert(data);$("#'.implode('").yiiGridView("update");$("#', $relatedGrids).'").yiiGridView("update");}}',
+				'afterDelete' => 'function(link, success, data){if(success){alert($.parseJSON(data).message);$("#'.implode('").yiiGridView("update");$("#', $relatedGrids).'").yiiGridView("update");}}',
 				'buttons' => array(
 					'update' => array(
 						'label' => TranslateModule::t('Update'),

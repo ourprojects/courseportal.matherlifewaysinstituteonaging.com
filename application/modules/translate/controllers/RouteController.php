@@ -119,9 +119,10 @@ class RouteController extends TController
 		return $this->renderPartial($gridPath, $data, $return);
 	}
 	
-	public function actionTranslate(array $Route = array(), $dryRun = true, array $scopes = array())
+	public function actionTranslate($id, array $Route = array(), $dryRun = true)
 	{
-	
+		// @ TODO
+		$this->redirect(Yii::app()->getRequest()->getUrlReferrer());
 	}
 
 	/**

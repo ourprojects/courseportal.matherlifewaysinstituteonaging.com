@@ -41,9 +41,9 @@ $this->widget('zii.widgets.grid.CGridView',
 					'template' => '{view}{delete}',
 					'viewButtonLabel' => TranslateModule::t('View Details'),
 					'viewButtonUrl' => 'Yii::app()->getController()->createUrl("view/view", array("id" => $data["id"], "languageId" => $data["language_id"]))',
-					'deleteButtonUrl' => 'Yii::app()->getController()->createUrl("view/delete", array("id" => $data["id"], "languageId" => $data["language_id"]))',
+					'deleteButtonUrl' => 'Yii::app()->getController()->createUrl("view/delete", array("View" => array("id" => $data["id"], "language_id" => $data["language_id"]), "dryRun" => 0))',
 					'deleteConfirmation' => TranslateModule::t('Are you certain that you would like to delete this view?'),
-					'afterDelete' => 'function(link, success, data){if(success){alert(data);$("#'.implode('").yiiGridView("update");$("#', $relatedGrids).'").yiiGridView("update");}}'
+					'afterDelete' => 'function(link, success, data){if(success){alert($.parseJSON(data).message);$("#'.implode('").yiiGridView("update");$("#', $relatedGrids).'").yiiGridView("update");}}'
 				)
 			),
 		)

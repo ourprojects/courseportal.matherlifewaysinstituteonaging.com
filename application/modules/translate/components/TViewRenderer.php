@@ -31,9 +31,9 @@ class TViewRenderer extends CViewRenderer
 	 * If not set the message source component name at {@link TTranslator::messageSource} will be used.
 	 * @param string $language The language that this view is being translated to.
 	 * If not set the application's current language will be used.
-	 * @param $background boolean If true the view will be generated in the background.
+	 * @param $useTransaction boolean If true all database queries will be wrapped in a transaction.
 	 */
-	protected function generateViewFile($sourcePath, $compiledPath, $route = 'default', $source = null, $language = null, $useTransaction = true)
+	public function generateViewFile($sourcePath, $compiledPath, $route = null, $source = null, $language = null, $useTransaction = true)
 	{
 		if(!isset($source))
 		{
@@ -64,7 +64,7 @@ class TViewRenderer extends CViewRenderer
 	 * If not set the application's current language setting will be used.
 	 * @return string resulting view file path.
 	 */
-	protected function getViewFile($file, $language = null)
+	public function getViewFile($file, $language = null)
 	{
 		if($language === null)
 		{

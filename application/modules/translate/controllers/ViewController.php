@@ -138,7 +138,7 @@ class ViewController extends TController
 			}
 		}
 		
-		if(is_array($View['id']) && is_array($View['language_id']))
+		if(isset($View['id']) && is_array($View['id']) && isset($View['language_id']) && is_array($View['language_id']))
 		{
 			$condition = $model->createCondition(array('id', 'language_id'), $View, null, true, true);
 		}

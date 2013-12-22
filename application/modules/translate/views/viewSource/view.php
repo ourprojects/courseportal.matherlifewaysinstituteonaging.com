@@ -8,9 +8,22 @@
 	</div>
 	<div id="missingLanguages" class="box-white">
 		<h2>
-			<?php echo TranslateModule::t('Languages Missing A Translation For This Source View'); ?>
+			<?php echo TranslateModule::t('Missing Translations'); ?>
 		</h2>
-		<?php $this->actionGrid($viewSource->id, 'missingLanguage-grid'); ?>
+		<?php
+		$this->widget(
+				'translate.widgets.gridSelectionHandler.GridSelectionHandler',
+				array(
+					'gridId' => 'missingLanguage-grid',
+					'activeRecordClass' => 'Language',
+					'url' => Yii::app()->getController()->createUrl('viewSource/translate', array('id' => $viewSource->id)),
+					'buttonText' => TranslateModule::t('Translate All'),
+					'loadingText' => TranslateModule::t('Translating...'),
+					'dialogTitle' => TranslateModule::t('Translate Source Views'),
+				)
+		);
+		$this->actionGrid($viewSource->id, 'missingLanguage-grid'); 
+		?>
 	</div>
 	<?php
 	$this->widget(

@@ -557,29 +557,38 @@ class TDbViewSource extends CApplicationComponent
 	{
 		$messageSource = TranslateModule::translator()->getMessageSourceComponent();
 		$db = $this->getDbConnection();
-		$view = $db->createCommand()
-		->select(array('MIN('.$db->quoteColumnName('rt.id').') AS '.$db->quoteColumnName('route_id'), 'vst.id AS id', 'lt.id AS language_id', 'vt.path AS path'))
-		->from($this->viewSourceTable.' vst')
-		->leftJoin($this->routeViewTable.' rvt', $db->quoteColumnName('vst.id').'='.$db->quoteColumnName('rvt.view_id'))
-		->leftJoin($this->routeTable.' rt', array('and', $db->quoteColumnName('rvt.route_id').'='.$db->quoteColumnName('rt.id'), $db->quoteColumnName('rt.route').'=:route'), array(':route' => $route))
-		->leftJoin($messageSource->languageTable.' lt', $db->quoteColumnName('lt.code').'=:code', array(':code' => $language))
-		->leftJoin($this->viewTable.' vt', array('and', $db->quoteColumnName('vst.id').'='.$db->quoteColumnName('vt.id'), $db->quoteColumnName('vt.language_id').'='.$db->quoteColumnName('lt.id')))
-		->where($db->quoteColumnName('vst.path').'=:source_path', array(':source_path' => $sourcePath))
-		->queryRow();
+		$cmd = $db->createCommand()
+			->select(array(($route === null ? '(NULL)' : 'MIN('.$db->quoteColumnName('rt.id').')').' AS '.$db->quoteColumnName('route_id'), 'vst.id AS id', 'lt.id AS language_id', 'vt.path AS path'))
+			->from($this->viewSourceTable.' vst');
+		
+		if($route !== null)
+		{
+			$cmd->leftJoin($this->routeViewTable.' rvt', $db->quoteColumnName('vst.id').'='.$db->quoteColumnName('rvt.view_id'))
+				->leftJoin($this->routeTable.' rt', array('and', $db->quoteColumnName('rvt.route_id').'='.$db->quoteColumnName('rt.id'), $db->quoteColumnName('rt.route').'=:route'), array(':route' => $route));
+		}
+		
+		$cmd->leftJoin($messageSource->languageTable.' lt', $db->quoteColumnName('lt.code').'=:code', array(':code' => $language))
+			->leftJoin($this->viewTable.' vt', array('and', $db->quoteColumnName('vst.id').'='.$db->quoteColumnName('vt.id'), $db->quoteColumnName('vt.language_id').'='.$db->quoteColumnName('lt.id')))
+			->where($db->quoteColumnName('vst.path').'=:source_path', array(':source_path' => $sourcePath));
 
+		 
+		$view = $cmd->queryRow();
 		if($createSourceViewIfNotExists)
 		{
 			if($view['id'] === null)
 			{
 				if(($view['id'] = $this->addSourceView($sourcePath)) !== null)
 				{
-					$view['route_id'] = $this->addViewToRoute($view['id'], $route, true);
+					if($route !== null)
+					{
+						$view['route_id'] = $this->addViewToRoute($view['id'], $route, true);
+					}
 					$view['language_id'] = $messageSource->getLanguageId($language, true);
 				}
 			}
 			else
 			{
-				if($view['route_id'] === null)
+				if($route !== null && $view['route_id'] === null)
 				{
 					$view['route_id'] = $this->addViewToRoute($view['id'], $route, true);
 				}

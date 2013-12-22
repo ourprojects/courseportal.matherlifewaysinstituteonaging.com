@@ -3,9 +3,9 @@ $buttonConfig = array(
 	'class' => 'CButtonColumn',
 	'viewButtonLabel' => TranslateModule::t('View Translations'),
 	'viewButtonUrl' => 'Yii::app()->getController()->createUrl("messageSource/view", array("id" => $data->id))',
-	'deleteButtonUrl' => 'Yii::app()->getController()->createUrl("messageSource/delete", array("id" => $data->id))',
+	'deleteButtonUrl' => 'Yii::app()->getController()->createUrl("messageSource/delete", array("MessageSource" => array("id" => $data->id), "dryRun" => 0))',
 	'deleteConfirmation' => TranslateModule::t('Are you certain that you would like to delete this source message as well as all associated translations?'),
-	'afterDelete' => 'function(link, success, data){if(success){alert(data);$("#'.implode('").yiiGridView("update");$("#', $relatedGrids).'").yiiGridView("update");}}'
+	'afterDelete' => 'function(link, success, data){if(success){alert($.parseJSON(data).message);$("#'.implode('").yiiGridView("update");$("#', $relatedGrids).'").yiiGridView("update");}}'
 );
 if(isset($languageId))
 {

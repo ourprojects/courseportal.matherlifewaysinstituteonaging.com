@@ -234,6 +234,11 @@ class TTranslator extends CApplicationComponent
 	{
 		return !empty($this->googleApiKey);
 	}
+	
+	public function isViewRendererConfigured()
+	{
+		return Yii::app()->getViewRenderer() instanceof TViewRenderer;
+	}
 
 	/**
 	 * Get the list of Yii accepted locales. Alias for {@link CLocale::getLocaleIds()}.
@@ -710,7 +715,7 @@ class TTranslator extends CApplicationComponent
 	 * if null it will use the application source language
 	 * @return string translated message
 	 */
-	public function googleTranslate(&$message, $targetLanguage = null, $sourceLanguage = null)
+	public function googleTranslate($message, $targetLanguage = null, $sourceLanguage = null)
 	{
 		if($targetLanguage === null)
 		{

@@ -23,80 +23,6 @@ class MessageSourceController extends TController
 		));
 	}
 
-	public function actionTranslateMissing($id = null, $class = 'Message')
-	{
-		$transaction = Yii::app()->db->beginTransaction();
-		try
-		{
-			$missingTranslations = MessageSource::model()->missingTranslations($id)->findAll();
-			if($id === null)
-			{
-				foreach($missingTranslations as $messageSource)
-				{
-					$translations[] = TranslateModule::translator()->googleTranslate(
-							$messageSource,
-							call_user_func(array($class, 'model'))->missingTranslations($messageSource->id)->findAll()
-					);
-				}
-				for($i = 0; $i < count($missingTranslations); $i++)
-				{
-					if($translations[$i] === false)
-					{
-						throw new CHttpException(500, TranslateModule::t('An error occured translating message {message} with google translate.', array('{message}' => $missingTranslations[$i]->message)));
-					}
-					foreach($translations[$i] as $language => $t)
-					{
-						$translation = new Message();
-						$translation->setAttributes(array(
-							'id' => $missingTranslations[$i]->id,
-							'language' => $language,
-							'translation' => $t
-						));
-
-						if(!$translation->save())
-						{
-							$transaction->rollback();
-							throw new CHttpException(500, TranslateModule::t('An error occured while saving a translation'));
-						}
-					}
-				}
-			}
-			else
-			{
-				$translations = TranslateModule::translator()->googleTranslate($missingTranslations, $id);
-				if(is_array($translations) && count($translations) === count($missingTranslations))
-				{
-					for($i = 0; $i < count($missingTranslations); $i++)
-					{
-						$translation = new Message();
-						$translation->setAttributes(array(
-							'id' => $missingTranslations[$i]->id,
-							'language' => $id,
-							'translation' => $translations[$i]
-						));
-
-						if(!$translation->save())
-						{
-							$transaction->rollback();
-							throw new CHttpException(500, TranslateModule::t('An error occured while saving a translation'));
-						}
-					}
-				}
-				else
-				{
-					throw new CHttpException(500, TranslateModule::t('An error occured translating a message to {language} with google translate.', array('{language}' => $acceptedLanguage->id)));
-				}
-			}
-		}
-		catch(Exception $e)
-		{
-			$transaction->rollback();
-			throw $e;
-		}
-		$transaction->commit();
-		return true;
-	}
-
 	/**
 	 * Manages all models.
 	 */
@@ -187,6 +113,126 @@ class MessageSourceController extends TController
 				return;
 		}
 		return $this->renderPartial($gridPath, $data, $return);
+	}
+	
+	public function actionTranslate($id, array $Language = array(), $dryRun = true)
+	{
+		$translator = TranslateModule::translator();
+		if(!$translator->canUseGoogleTranslate())
+		{
+			throw new CHttpException(501, TranslateModule::t("Google translate is not available. Please check your system configuration."));
+		}
+		unset($_GET['Language']);
+		$model = new Language('search');
+		$model->setAttributes($Language);
+		$model->missingTranslationsMessageSource($id);
+		
+		if(is_array($Language['id']))
+		{
+			$condition = $model->createCondition('id', $Language['id']);
+		}
+		else
+		{
+			$condition = $model->getSearchCriteria();
+		}
+		
+		$translationsCreated = 0;
+		$translationErrors = 0;
+		
+		$transaction = Yii::app()->db->beginTransaction();
+		try
+		{
+			if($dryRun)
+			{
+				$translationsCreated = $model->count($condition);
+			}
+			else
+			{
+				$messageSource = MessageSource::model()->with('sourceLanguage')->findByPk($id);
+				if($messageSource === null)
+				{
+					throw new CHttpException(404, TranslateModule::t('A source message with ID {id} could not be found.', array('{id}' => $id)));
+				}
+
+				$source = $translator->getMessageSourceComponent();
+				foreach($model->findAll($condition) as $record)
+				{
+					try
+					{
+						$translation = $translator->googleTranslate($messageSource->message, $record->code, $messageSource->sourceLanguage->code);
+						if($translation !== false)
+						{
+							$translation = trim($translation);
+							if($source->addTranslation($messageSource->id, $record->code, $translation) === null)
+							{
+								Yii::log("Message with ID '{$messageSource->id}' could not be added to the message source component after translating it to language '{$record->code}'", CLogger::LEVEL_ERROR, TranslateModule::ID);
+								$translationErrors++;
+								continue;
+							}
+						}
+						else
+						{
+							Yii::log("Message with ID '{$messageSource->id}' could not be translated to '{$record->code}' by Google translate.", CLogger::LEVEL_ERROR, TranslateModule::ID);
+							$translationErrors++;
+							continue;
+						}
+					}
+					catch(CharacterLimitExceededException $clee)
+					{
+						Yii::log("Message with ID '{$messageSource->id}' could not be translate to language '{$record->code}' because the message is too long.", CLogger::LEVEL_ERROR, TranslateModule::ID);
+						$translationErrors++;
+						continue;
+					}
+					$translationsCreated++;
+				}
+			}
+			$transaction->commit();
+		}
+		catch(Exception $e)
+		{
+			$transaction->rollback();
+			if(Yii::app()->getRequest()->getIsAjaxRequest())
+			{
+				throw $e;
+			}
+			else
+			{
+				Yii::app()->getUser()->setFlash(TranslateModule::ID.'-error', $e->getMessage());
+				$this->redirect(Yii::app()->getRequest()->getUrlReferrer());
+			}
+		}
+		
+		if($dryRun)
+		{
+			$message = array(
+				'status' => 'success',
+				'message' => TranslateModule::t('This action will create {translationsCreated} new translations. Are you sure that you would like to continue?', array('{translationsCreated}' => $translationsCreated))
+			);
+		}
+		else if($translationErrors > 0)
+		{
+			$message = array(
+				'status' => 'warning',
+				'message' => TranslateModule::t('{translationErrors} errors occurred while creating the translations. Only {translationsCreated} new translations were created. Please see the system\'s logs for details.', array('{translationsCreated}' => $translationsCreated, '{translationErrors}' => $translationErrors))
+			);
+		}
+		else
+		{
+			$message = array(
+				'status' => 'success',
+				'message' => TranslateModule::t('{translationsCreated} new translations have been created.', array('{translationsCreated}' => $translationsCreated))
+			);
+		}
+		
+		if(Yii::app()->getRequest()->getIsAjaxRequest())
+		{
+			echo CJavaScript::jsonEncode($message);
+		}
+		else
+		{
+			Yii::app()->getUser()->setFlash(TranslateModule::ID.'-'.$message['status'], $message['message']);
+			$this->redirect(Yii::app()->getRequest()->getUrlReferrer());
+		}
 	}
 
 	/**
