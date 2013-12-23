@@ -80,7 +80,7 @@ class RouteController extends TController
 				$gridPath = '../message/_grid';
 				break;
 			case 'language-grid':
-				$data['relatedGrids'] = array('messageSource-grid', 'message-grid', 'view-grid');
+				$data['relatedGrids'] = array('messageSource-grid', 'message-grid', 'view-grid', 'missingTranslationsViewSource-grid', 'missingTranslationsLanguage-grid');
 				$data['model'] = new Language('search');
 				$data['model']->route($id);
 				$gridPath = '../language/_grid';
@@ -95,34 +95,35 @@ class RouteController extends TController
 				$gridPath = '_grid';
 				break;
 			case 'viewSource-grid':
-				$data['relatedGrids'] = array('view-grid');
+				$data['relatedGrids'] = array('missingTranslationsViewSource-grid', 'missingTranslationsLanguage-grid', 'language-grid', 'view-grid', 'messageSource-grid', 'message-grid');
 				$data['model'] = new ViewSource('search');
 				$data['model']->route($id);
 				$gridPath = '../viewSource/_grid';
 				break;
 			case 'view-grid':
-				$data['relatedGrids'] = array();
+				$data['relatedGrids'] = array('missingTranslationsLanguage-grid', 'missingTranslationsViewSource-grid', 'message-grid', 'language-grid');
 				$data['model'] = new View('search');
 				$data['model']->route($id);
 				$gridPath = '../view/_grid';
 				break;
 			case 'missingTranslationsLanguage-grid':
-				$data['relatedGrids'] = array('language-grid', 'view-grid', 'messageSource-grid', 'message-grid');
+				$data['relatedGrids'] = array('missingTranslationsViewSource-grid', 'language-grid', 'view-grid', 'messageSource-grid', 'message-grid', 'category-grid');
 				$data['model'] = new Language('search');
 				$data['model']->missingTranslationsRoute($id);
 				$data['routeId'] = $id;
 				$gridPath = '../language/_grid';
 				break;
+			case 'missingTranslationsViewSource-grid':
+				$data['relatedGrids'] = array('missingTranslationsLanguage-grid', 'language-grid', 'view-grid', 'messageSource-grid', 'message-grid', 'category-grid');
+				$data['model'] = new ViewSource('search');
+				$data['model']->route($id)->missingTranslations();
+				$data['categoryId'] = $id;
+				$gridPath = '../viewSource/_grid';
+				break;
 			default:
 				return;
 		}
 		return $this->renderPartial($gridPath, $data, $return);
-	}
-	
-	public function actionTranslate($id, array $Route = array(), $dryRun = true)
-	{
-		// @ TODO
-		$this->redirect(Yii::app()->getRequest()->getUrlReferrer());
 	}
 
 	/**
@@ -151,7 +152,7 @@ class RouteController extends TController
 			}
 		}
 		
-		if(is_array($Route['id']))
+		if(isset($Route['id']) && is_array($Route['id']))
 		{
 			$condition = $model->createCondition('id', $Route['id']);
 		}

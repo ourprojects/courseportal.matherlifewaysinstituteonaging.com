@@ -14,8 +14,6 @@ class GridSelectionHandler extends CWidget
 	
 	public $activeRecordClass = '';
 	
-	public $scopes = array();
-	
 	public $keys = array('id');
 	
 	public $buttonText = 'Handle Selection';
@@ -69,7 +67,6 @@ class GridSelectionHandler extends CWidget
 		$selectionHandlerOptions['activeRecordClass'] = $this->activeRecordClass;
 		$selectionHandlerOptions['keys'] = $this->keys;
 		$selectionHandlerOptions['loadingText'] = $this->loadingText;
-		$selectionHandlerOptions['scopes'] = $this->scopes;
 		
 		$dialogOptions = $this->dialogOptions;
 		$dialogOptions['title'] = $this->dialogTitle;

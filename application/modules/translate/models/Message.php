@@ -119,12 +119,12 @@ class Message extends CActiveRecord
 		return $this;
 	}
 	
-	public function view($id, $language_id)
+	public function view($id)
 	{
 		$db = $this->getDbConnection();
 		$this->getDbCriteria()->mergeWith(array(
 			'with' => array(
-				'viewSources.views' => View::model()->createCondition(array('id', 'language_id'), array('id' => $id, 'language_id' => $language_id), 'views', true, true)
+				'source.views' => View::model()->createCondition('id', $id, 'views', true, true) + array('on' => $db->quoteColumnName($this->getTableAlias().'.language_id').'='.$db->quoteColumnName('views.language_id'))
 			),
 			'together' => true,
 			'group' => $db->quoteColumnName($this->getTableAlias().'.id').', '.$db->quoteColumnName($this->getTableAlias().'.language_id'),

@@ -57,7 +57,7 @@ class MessageSourceController extends TController
 		switch($name)
 		{
 			case 'category-grid':
-				$data['relatedGrids'] = array('message-grid');
+				$data['relatedGrids'] = array('message-grid', 'messageSource-grid', 'missingLanguage-grid');
 				$data['model'] = new Category('search');
 				$data['model']->messageSource($id);
 				$gridPath = '../category/_grid';
@@ -72,14 +72,14 @@ class MessageSourceController extends TController
 				$gridPath = '_grid';
 				break;
 			case 'message-grid':
-				$data['relatedGrids'] = array('missingLanguage-grid');
+				$data['relatedGrids'] = array('missingLanguage-grid', 'language-grid');
 				$data['model'] = new Message('search');
 				$data['model']->messageSource($id);
 				$data['messageId'] = $id;
 				$gridPath = '../message/_grid';
 				break;
 			case 'language-grid':
-				$data['relatedGrids'] = array('missingLanguage-grid', 'message-grid');
+				$data['relatedGrids'] = array('missingLanguage-grid', 'message-grid', 'messageSource-grid');
 				$data['model'] = new Language('search');
 				$data['model']->messageSource($id);
 				$gridPath = '../language/_grid';
@@ -98,7 +98,7 @@ class MessageSourceController extends TController
 				$gridPath = '../route/_grid';
 				break;
 			case 'viewSource-grid':
-				$data['relatedGrids'] = array('view-grid');
+				$data['relatedGrids'] = array('view-grid', 'route-grid');
 				$data['model'] = new ViewSource('search');
 				$data['model']->messageSource($id);
 				$gridPath = '../viewSource/_grid';
@@ -115,7 +115,7 @@ class MessageSourceController extends TController
 		return $this->renderPartial($gridPath, $data, $return);
 	}
 	
-	public function actionTranslate($id, array $Language = array(), $dryRun = true)
+	public function actionTranslate(array $MessageSource = array(), array $Language = array(), $dryRun = true, array $scopes = array())
 	{
 		$translator = TranslateModule::translator();
 		if(!$translator->canUseGoogleTranslate())
@@ -123,68 +123,114 @@ class MessageSourceController extends TController
 			throw new CHttpException(501, TranslateModule::t("Google translate is not available. Please check your system configuration."));
 		}
 		unset($_GET['Language']);
-		$model = new Language('search');
-		$model->setAttributes($Language);
-		$model->missingTranslationsMessageSource($id);
+		$languageModel = new Language('search');
 		
-		if(is_array($Language['id']))
+		if(isset($Language['id']) && is_array($Language['id']))
 		{
-			$condition = $model->createCondition('id', $Language['id']);
+			$languageCondition = $languageModel->createCondition('id', $Language['id']);
 		}
 		else
 		{
-			$condition = $model->getSearchCriteria();
+			$languageModel->setAttributes($Language);
+			$languageCondition = $languageModel->getSearchCriteria();
+		}
+		
+		unset($_GET['MessageSource']);
+		$messageSourceModel = new MessageSource('search');
+		
+		foreach($scopes as $scope => $scopeParameters)
+		{
+			switch($scope)
+			{
+				case 'viewSource':
+				case 'view':
+				case 'route':
+				case 'language':
+				case 'category':
+					call_user_func_array(array($messageSourceModel, $scope), $scopeParameters);
+					break;
+			}
+		}
+		
+		if(isset($MessageSource['id']) && is_array($MessageSource['id']))
+		{
+			$messageSourceCondition = $messageSourceModel->createCondition('id', $MessageSource['id']);
+		}
+		else
+		{
+			$messageSourceModel->setAttributes($MessageSource);
+			$messageSourceCondition = $messageSourceModel->getSearchCriteria();
 		}
 		
 		$translationsCreated = 0;
+		$messagesTranslated = 0;
+		$languagesCount = 0;
 		$translationErrors = 0;
 		
 		$transaction = Yii::app()->db->beginTransaction();
 		try
 		{
+			$languageIds = array();
+			foreach($languageModel->missingTranslationsMessageSource()->findAll($languageCondition) as $language)
+			{
+				$languageIds[] = $language->id;
+			}
+			$criteria = new CDbCriteria($languageModel->createCondition('id', $languageIds, 'missingTranslationsLanguages'));
+			$criteria->mergeWith($messageSourceCondition);
+			$messageSources = $messageSourceModel->with('missingTranslationsLanguages')->findAll($criteria);
 			if($dryRun)
 			{
-				$translationsCreated = $model->count($condition);
+				$languageIds = array();
+				foreach($messageSources as $messageSource)
+				{
+					foreach($messageSource->missingTranslationsLanguages as $language)
+					{
+						$languageIds[$language->id] = $language->id;
+						$translationsCreated++;
+					}
+					$messagesTranslated++;
+				}
+				$languagesCount = count($languageIds);
 			}
 			else
 			{
-				$messageSource = MessageSource::model()->with('sourceLanguage')->findByPk($id);
-				if($messageSource === null)
-				{
-					throw new CHttpException(404, TranslateModule::t('A source message with ID {id} could not be found.', array('{id}' => $id)));
-				}
-
 				$source = $translator->getMessageSourceComponent();
-				foreach($model->findAll($condition) as $record)
+				$languageIds = array();
+				foreach($messageSources as $messageSource)
 				{
-					try
+					foreach($messageSource->missingTranslationsLanguages as $language)
 					{
-						$translation = $translator->googleTranslate($messageSource->message, $record->code, $messageSource->sourceLanguage->code);
-						if($translation !== false)
+						$languageIds[$language->id] = $language->id;
+						try
 						{
-							$translation = trim($translation);
-							if($source->addTranslation($messageSource->id, $record->code, $translation) === null)
+							$translation = $translator->googleTranslate($messageSource->message, $language->code, $messageSource->sourceLanguage->code);
+							if($translation !== false)
 							{
-								Yii::log("Message with ID '{$messageSource->id}' could not be added to the message source component after translating it to language '{$record->code}'", CLogger::LEVEL_ERROR, TranslateModule::ID);
+								if($source->addTranslation($messageSource->id, $language->code, trim($translation)) === null)
+								{
+									Yii::log("Message with ID '{$messageSource->id}' could not be added to the message source component after translating it to language '{$language->code}'", CLogger::LEVEL_ERROR, TranslateModule::ID);
+									$translationErrors++;
+									continue;
+								}
+							}
+							else
+							{
+								Yii::log("Message with ID '{$messageSource->id}' could not be translated to '{$language->code}' by Google translate.", CLogger::LEVEL_ERROR, TranslateModule::ID);
 								$translationErrors++;
 								continue;
 							}
 						}
-						else
+						catch(CharacterLimitExceededException $clee)
 						{
-							Yii::log("Message with ID '{$messageSource->id}' could not be translated to '{$record->code}' by Google translate.", CLogger::LEVEL_ERROR, TranslateModule::ID);
+							Yii::log("Message with ID '{$messageSource->id}' could not be translate to language '{$language->code}' because the message is too long.", CLogger::LEVEL_ERROR, TranslateModule::ID);
 							$translationErrors++;
 							continue;
 						}
+						$translationsCreated++;
 					}
-					catch(CharacterLimitExceededException $clee)
-					{
-						Yii::log("Message with ID '{$messageSource->id}' could not be translate to language '{$record->code}' because the message is too long.", CLogger::LEVEL_ERROR, TranslateModule::ID);
-						$translationErrors++;
-						continue;
-					}
-					$translationsCreated++;
+					$messagesTranslated++;
 				}
+				$languagesCount = count($languageIds);
 			}
 			$transaction->commit();
 		}
@@ -206,21 +252,21 @@ class MessageSourceController extends TController
 		{
 			$message = array(
 				'status' => 'success',
-				'message' => TranslateModule::t('This action will create {translationsCreated} new translations. Are you sure that you would like to continue?', array('{translationsCreated}' => $translationsCreated))
+				'message' => TranslateModule::t('This action will translate {messagesTranslated} source messages into {languagesCount} languages. {translationsCreated} message translations in total will be created. Are you sure that you would like to continue?', array('{translationsCreated}' => $translationsCreated, '{languagesCount}' => $languagesCount, '{messagesTranslated}' => $messagesTranslated))
 			);
 		}
 		else if($translationErrors > 0)
 		{
 			$message = array(
 				'status' => 'warning',
-				'message' => TranslateModule::t('{translationErrors} errors occurred while creating the translations. Only {translationsCreated} new translations were created. Please see the system\'s logs for details.', array('{translationsCreated}' => $translationsCreated, '{translationErrors}' => $translationErrors))
+				'message' => TranslateModule::t('{translationErrors} messages could not be translated. Only {translationsCreated} messages were successfully translated. Please see the system\'s logs for details.', array('{translationsCreated}' => $translationsCreated, '{translationErrors}' => $translationErrors))
 			);
 		}
 		else
 		{
 			$message = array(
 				'status' => 'success',
-				'message' => TranslateModule::t('{translationsCreated} new translations have been created.', array('{translationsCreated}' => $translationsCreated))
+				'message' => TranslateModule::t('{translationsCreated} translations were created for {messagesTranslated} source messages in {languagesCount} languages.', array('{translationsCreated}' => $translationsCreated, '{languagesCount}' => $languagesCount, '{messagesTranslated}' => $messagesTranslated))
 			);
 		}
 		
@@ -260,7 +306,7 @@ class MessageSourceController extends TController
 			}
 		}
 		
-		if(is_array($MessageSource['id']))
+		if(isset($MessageSource['id']) && is_array($MessageSource['id']))
 		{
 			$condition = $model->createCondition('id', $MessageSource['id']);
 		}

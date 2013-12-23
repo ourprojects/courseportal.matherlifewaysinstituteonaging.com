@@ -19,7 +19,6 @@
 					gridId: '',
 					url: document.URL,
 					activeRecordClassName: '',
-					scopes: [],
 					keys: ['id'],
 					keyDelimiter: ',',
 					statusClass: 'status',
@@ -93,12 +92,10 @@
 				
 				if(selection.length == 0)
 				{
-					return $.param({scopes: settings.scopes})+'&'+$($selection.yiiGridView.settings[settings.gridId].filterSelector).serialize();
+					return $($selection.yiiGridView.settings[settings.gridId].filterSelector).serialize();
 				}
 
-				data = {
-						scopes: settings.scopes,
-				};
+				data = {};
 				data[settings.activeRecordClass] = {};
 				
 				for(var i = 0; i < selection.length; i++)

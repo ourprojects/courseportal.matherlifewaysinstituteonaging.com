@@ -71,35 +71,42 @@ class CategoryController extends TController
 				$gridPath = '_grid';
 				break;
 			case 'messageSource-grid':
-				$data['relatedGrids'] = array('message-grid', 'missingMessageSource-grid');
+				$data['relatedGrids'] = array('message-grid', 'missingTranslationsLanguage-grid', 'missingTranslationsMessageSource-grid', 'translatedMessageLanguage-grid');
 				$data['model'] = new MessageSource('search');
 				$data['model']->category($id);
 				$gridPath = '../messageSource/_grid';
 				break;
 			case 'message-grid':
-				$data['relatedGrids'] = array('missingMessageSource-grid');
+				$data['relatedGrids'] = array('missingTranslationsLanguage-grid', 'missingTranslationsMessageSource-grid', 'translatedMessageLanguage-grid');
 				$data['model'] = new Message('search');
 				$data['model']->category($id);
 				$gridPath = '../message/_grid';
 				break;
 			case 'sourceMessageLanguage-grid':
-				$data['relatedGrids'] = array('translatedMessageLanguage-grid', 'messageSource-grid', 'message-grid');
+				$data['relatedGrids'] = array('sourceMessageLanguage-grid', 'messageSource-grid', 'message-grid', 'missingTranslationsMessageSource-grid', 'missingTranslationsLanguage-grid', 'translatedMessageLanguage-grid');
 				$data['model'] = new Language('search');
 				$data['model']->categoryMessageSource($id);
 				$gridPath = '../language/_grid';
 				break;
 			case 'translatedMessageLanguage-grid':
-				$data['relatedGrids'] = array('sourceMessageLanguage-grid', 'messageSource-grid', 'message-grid');
+				$data['relatedGrids'] = array('sourceMessageLanguage-grid', 'messageSource-grid', 'message-grid', 'missingTranslationsMessageSource-grid', 'missingTranslationsLanguage-grid', 'translatedMessageLanguage-grid');
 				$data['model'] = new Language('search');
 				$data['model']->categoryMessage($id);
 				$gridPath = '../language/_grid';
 				break;
 			case 'missingTranslationsLanguage-grid':
-				$data['relatedGrids'] = array('language-grid', 'message-grid');
+				$data['relatedGrids'] = array('message-grid', 'missingTranslationsMessageSource-grid', 'translatedMessageLanguage-grid');
 				$data['model'] = new Language('search');
 				$data['model']->missingTranslationsCategory($id);
 				$data['categoryId'] = $id;
 				$gridPath = '../language/_grid';
+				break;
+			case 'missingTranslationsMessageSource-grid':
+				$data['relatedGrids'] = array('message-grid', 'missingTranslationsLanguage-grid', 'translatedMessageLanguage-grid');
+				$data['model'] = new MessageSource('search');
+				$data['model']->category($id)->missingTranslations();
+				$data['categoryId'] = $id;
+				$gridPath = '../messageSource/_grid';
 				break;
 			case 'route-grid':
 				$data['relatedGrids'] = array('viewSource-grid', 'view-grid');
@@ -108,7 +115,7 @@ class CategoryController extends TController
 				$gridPath = '../route/_grid';
 				break;
 			case 'viewSource-grid':
-				$data['relatedGrids'] = array('view-grid');
+				$data['relatedGrids'] = array('view-grid', 'route-grid');
 				$data['model'] = new ViewSource('search');
 				$data['model']->category($id);
 				$gridPath = '../viewSource/_grid';
@@ -123,12 +130,6 @@ class CategoryController extends TController
 				return;
 		}
 		return $this->renderPartial($gridPath, $data, $return);
-	}
-	
-	public function actionTranslate($id, array $Category = array(), $dryRun = true)
-	{
-		// @ TODO
-		$this->redirect(Yii::app()->getRequest()->getUrlReferrer());
 	}
 
 	/**
@@ -158,7 +159,7 @@ class CategoryController extends TController
 			}
 		}
 		
-		if(is_array($Category['id']))
+		if(isset($Category['id']) && is_array($Category['id']))
 		{
 			$condition = $model->createCondition('id', $Category['id']);
 		}

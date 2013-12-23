@@ -90,12 +90,13 @@ class View extends CActiveRecord
 	 */
 	public function relations()
 	{
+		$db = $this->getDbConnection();
 		return array(
 			'sourceView' => array(self::BELONGS_TO, 'ViewSource', 'id'),
 			'language' => array(self::BELONGS_TO, 'Language', 'language_id'),
 			'acceptedLanguage' => array(self::BELONGS_TO, 'AcceptedLanguage', 'language_id'),
 			'viewMessages' => array(self::HAS_MANY, 'ViewMessage', 'view_id'),
-			'messages' => array(self::HAS_MANY, 'Message', array('message_id' => 'id'), 'through' => 'viewMessages', 'on' => $this->getTableAlias(false, false).'.language_id=messages.language_id'),
+			'messages' => array(self::HAS_MANY, 'Message', array('message_id' => 'id'), 'through' => 'viewMessages', 'on' => $db->quoteColumnName($this->getTableAlias(false, false).'.language_id').'='.$db->quoteColumnName('messages.language_id')),
 			'viewRoutes' => array(self::HAS_MANY, 'RouteView', array('id' => 'view_id'), 'through' => 'sourceView'),
 		);
 	}

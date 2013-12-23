@@ -85,7 +85,7 @@ class Category extends CActiveRecord
 				'messageSources.viewSources' => ViewSource::model()->createCondition('id', $id, 'viewSources')
 			),
 			'together' => true,
-			'group' => $db->quoteColumnName($this->getTableAlias().'.id')
+			//'group' => $db->quoteColumnName($this->getTableAlias().'.id')
 		));
 		return $this;
 	}
@@ -98,7 +98,7 @@ class Category extends CActiveRecord
 				'messageSources.views' => View::model()->createCondition(array('id', 'language_id'), array('id' => $id, 'language_id' => $language_id), 'views', true, true)
 			),
 			'together' => true,
-			'group' => $db->quoteColumnName($this->getTableAlias().'.id')
+			//'group' => $db->quoteColumnName($this->getTableAlias().'.id')
 		));
 		return $this;
 	}
@@ -111,7 +111,7 @@ class Category extends CActiveRecord
 				'messageSources.viewSources.routes' => Route::model()->createCondition('id', $id, 'routes')
 			),
 			'together' => true,
-			'group' => $db->quoteColumnName($this->getTableAlias().'.id')
+			//'group' => $db->quoteColumnName($this->getTableAlias().'.id')
 		));
 		return $this;
 	}
@@ -124,7 +124,7 @@ class Category extends CActiveRecord
 				'messageSources' => MessageSource::model()->createCondition('id', $id, 'messageSources')
 			),
 			'together' => true,
-			'group' => $db->quoteColumnName($this->getTableAlias().'.id')
+			//'group' => $db->quoteColumnName($this->getTableAlias().'.id')
 		));
 		return $this;
 	}
@@ -137,7 +137,7 @@ class Category extends CActiveRecord
 				'messages' => Message::model()->createCondition(array('id', 'language_id'), array('id' => $id, 'language_id' => $language_id), 'messages', true, true)
 			),
 			'together' => true,
-			'group' => $db->quoteColumnName($this->getTableAlias().'.id')
+			//'group' => $db->quoteColumnName($this->getTableAlias().'.id')
 		));
 		return $this;
 	}
@@ -150,7 +150,7 @@ class Category extends CActiveRecord
 				'messages.language' => Language::model()->createCondition('id', $id, 'language')
 			),
 			'together' => true,
-			'group' => $db->quoteColumnName($this->getTableAlias().'.id'),
+			//'group' => $db->quoteColumnName($this->getTableAlias().'.id'),
 		));
 		return $this;
 	}
@@ -163,7 +163,7 @@ class Category extends CActiveRecord
 				'messageSources.sourceLanguage' => Language::model()->createCondition('id', $id, 'sourceLanguage')
 			),
 			'together' => true,
-			'group' => $db->quoteColumnName($this->getTableAlias().'.id'),
+			//'group' => $db->quoteColumnName($this->getTableAlias().'.id'),
 		));
 		return $this;
 	}
@@ -182,7 +182,7 @@ class Category extends CActiveRecord
 			),
 			'condition' => $db->quoteColumnName('messages.id').' IS NULL',
 			'join' => 'JOIN '.$db->quoteTableName(Language::model()->tableName()).' '.$db->quoteTableName('languages').' ON '.$condition['condition'],
-			'group' => $db->quoteColumnName($this->getTableAlias().'.id'),
+			//'group' => $db->quoteColumnName($this->getTableAlias().'.id'),
 			'params' => $condition['params'],
 			'together' => true
 		));

@@ -83,11 +83,12 @@ class ViewController extends TController
 			case 'message-grid':
 				$data['relatedGrids'] = array();
 				$data['model'] = new Message('search');
-				$data['model']->view($id, $languageId);
+				$data['model']->setAttribute('language_id', $languageId);
+				$data['model']->view($id);
 				$gridPath = '../message/_grid';
 				break;
 			case 'route-grid':
-				$data['relatedGrids'] = array();
+				$data['relatedGrids'] = array('view-grid', 'viewSource-grid');
 				$data['model'] = new Route('search');
 				$data['model']->view($id, $languageId);
 				$gridPath = '../route/_grid';

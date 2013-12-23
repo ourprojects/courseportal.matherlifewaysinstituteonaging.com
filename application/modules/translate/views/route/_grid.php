@@ -3,7 +3,6 @@ Yii::app()->getClientScript()->registerCss($id.'-table-width', 'div#'.$id.' tabl
 
 $buttonConfig = array(
 	'class' => 'CButtonColumn',
-	'template' => '{view}{delete}',
 	'viewButtonLabel' => TranslateModule::t('View Details'),
 	'viewButtonUrl' => 'Yii::app()->getController()->createUrl("route/view", array("id" => $data->id))',
 	'deleteButtonUrl' => 'Yii::app()->getController()->createUrl("route/delete", array("Route" => array("id" => $data->id), "dryRun" => 0))',
@@ -17,7 +16,7 @@ if(isset($languageId))
 	$buttonConfig['buttons'] = array(
 		'update' => array(
 			'label' => TranslateModule::t('Create Translation'),
-			'url' => '$this->grid->getOwner()->createUrl("route/translate", array("id" => $data->id, "Language" => array("language_id" => '.$languageId.'), "dryRun" => 0))',
+			'url' => '$this->grid->getOwner()->createUrl("viewSource/translate", array("scopes" => array("route" => array("id" => $data->id)), "Language" => array("id" => '.$languageId.'), "dryRun" => 0))',
 		)
 	);
 }

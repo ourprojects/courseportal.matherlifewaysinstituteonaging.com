@@ -16,7 +16,7 @@ if(isset($languageId))
 	$buttonConfig['buttons'] = array(
 		'update' => array(
 			'label' => TranslateModule::t('Create Translation'),
-			'url' => '$this->grid->getOwner()->createUrl("viewSource/translate", array("id" => $data["id"], "Language" => array("language_id" => '.$languageId.'), "dryRun" => 0))',
+			'url' => '$this->grid->getOwner()->createUrl("viewSource/translate", array("ViewSource" => array("id" => $data["id"]), "Language" => array("id" => '.$languageId.'), "dryRun" => 0))',
 		)
 	);
 }

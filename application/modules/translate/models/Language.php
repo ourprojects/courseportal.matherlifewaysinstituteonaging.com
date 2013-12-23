@@ -256,12 +256,19 @@ class Language extends CActiveRecord
 	
 	public function getName()
 	{
-		if(!isset($this->_name) && isset($this->code))
+		if(!isset($this->_name))
 		{
-			$this->_name = TranslateModule::translator()->getLanguageDisplayName($this->code);
-			if($this->_name === false)
+			if(isset($this->code))
 			{
-				$this->_name = strval($this->code);
+				$this->_name = TranslateModule::translator()->getLanguageDisplayName($this->code);
+				if($this->_name === false)
+				{
+					$this->_name = strval($this->code);
+				}
+			}
+			else
+			{
+				return '';
 			}
 		}
 		return $this->_name;

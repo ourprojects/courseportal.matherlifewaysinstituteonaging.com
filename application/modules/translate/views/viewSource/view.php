@@ -16,7 +16,7 @@
 				array(
 					'gridId' => 'missingLanguage-grid',
 					'activeRecordClass' => 'Language',
-					'url' => Yii::app()->getController()->createUrl('viewSource/translate', array('id' => $viewSource->id)),
+					'url' => Yii::app()->getController()->createUrl('viewSource/translate', array('ViewSource' => array('id' => $viewSource->id))),
 					'buttonText' => TranslateModule::t('Translate All'),
 					'loadingText' => TranslateModule::t('Translating...'),
 					'dialogTitle' => TranslateModule::t('Translate Source Views'),
@@ -36,8 +36,7 @@
 								array(
 									'gridId' => 'category-grid',
 									'activeRecordClass' => 'Category',
-									'url' => Yii::app()->getController()->createUrl('category/delete'),
-									'scopes' => array('viewSource' => array('id' => $viewSource->id)),
+									'url' => Yii::app()->getController()->createUrl('category/delete', array('scopes' => array('viewSource' => array('id' => $viewSource->id)))),
 									'buttonText' => TranslateModule::t('Delete All'),
 									'loadingText' => TranslateModule::t('Loading...'),
 									'dialogTitle' => TranslateModule::t('Delete Categories'),
@@ -50,8 +49,7 @@
 								array(
 									'gridId' => 'messageSource-grid',
 									'activeRecordClass' => 'MessageSource',
-									'url' => Yii::app()->getController()->createUrl('messageSource/delete'),
-									'scopes' => array('viewSource' => array('id' => $viewSource->id)),
+									'url' => Yii::app()->getController()->createUrl('messageSource/delete', array('scopes' => array('viewSource' => array('id' => $viewSource->id)))),
 									'buttonText' => TranslateModule::t('Delete All'),
 									'loadingText' => TranslateModule::t('Loading...'),
 									'dialogTitle' => TranslateModule::t('Delete Source Messsages'),
@@ -64,9 +62,8 @@
 								array(
 									'gridId' => 'message-grid',
 									'activeRecordClass' => 'Message',
-									'url' => Yii::app()->getController()->createUrl('message/delete'),
+									'url' => Yii::app()->getController()->createUrl('message/delete', array('scopes' => array('viewSource' => array('id' => $viewSource->id)))),
 									'keys' => array('id', 'language_id'),
-									'scopes' => array('viewSource' => array('id' => $viewSource->id)),
 									'buttonText' => TranslateModule::t('Delete All'),
 									'loadingText' => TranslateModule::t('Loading...'),
 									'dialogTitle' => TranslateModule::t('Delete Message Translations'),
@@ -79,8 +76,7 @@
 								array(
 									'gridId' => 'language-grid',
 									'activeRecordClass' => 'Language',
-									'url' => Yii::app()->getController()->createUrl('language/delete'),
-									'scopes' => array('viewSource' => array('id' => $viewSource->id)),
+									'url' => Yii::app()->getController()->createUrl('language/delete', array('scopes' => array('viewSource' => array('id' => $viewSource->id)))),
 									'buttonText' => TranslateModule::t('Delete All'),
 									'loadingText' => TranslateModule::t('Loading...'),
 									'dialogTitle' => TranslateModule::t('Delete Languages'),
@@ -93,8 +89,7 @@
 								array(
 									'gridId' => 'route-grid',
 									'activeRecordClass' => 'Route',
-									'url' => Yii::app()->getController()->createUrl('route/delete'),
-									'scopes' => array('viewSource' => array('id' => $viewSource->id)),
+									'url' => Yii::app()->getController()->createUrl('route/delete', array('scopes' => array('viewSource' => array('id' => $viewSource->id)),)),
 									'buttonText' => TranslateModule::t('Delete All'),
 									'loadingText' => TranslateModule::t('Loading...'),
 									'dialogTitle' => TranslateModule::t('Delete Routes'),
@@ -107,9 +102,8 @@
 								array(
 									'gridId' => 'view-grid',
 									'activeRecordClass' => 'View',
-									'url' => Yii::app()->getController()->createUrl('view/delete'),
+									'url' => Yii::app()->getController()->createUrl('view/delete', array('scopes' => array('viewSource' => array('id' => $viewSource->id)))),
 									'keys' => array('id', 'language_id'),
-									'scopes' => array('viewSource' => array('id' => $viewSource->id)),
 									'buttonText' => TranslateModule::t('Delete All'),
 									'loadingText' => TranslateModule::t('Loading...'),
 									'dialogTitle' => TranslateModule::t('Delete View Translations'),

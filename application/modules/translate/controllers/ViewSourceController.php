@@ -80,20 +80,20 @@ class ViewSourceController extends TController
 				$gridPath = '../message/_grid';
 				break;
 			case 'language-grid':
-				$data['relatedGrids'] = array('messageSource-grid', 'message-grid', 'view-grid');
+				$data['relatedGrids'] = array('missingLanguage-grid', 'view-grid', 'message-grid', 'messageSource-grid', 'category-grid');
 				$data['model'] = new Language('search');
 				$data['model']->viewSource($id);
 				$gridPath = '../language/_grid';
 				break;
 			case 'missingLanguage-grid':
-				$data['relatedGrids'] = array('language-grid', 'view-grid');
+				$data['relatedGrids'] = array('language-grid', 'view-grid', 'message-grid', 'messageSource-grid', 'category-grid');
 				$data['model'] = new Language('search');
 				$data['model']->missingTranslationsViewSource($id);
 				$data['viewId'] = $id;
 				$gridPath = '../language/_grid';
 				break;
 			case 'route-grid':
-				$data['relatedGrids'] = array('view-grid');
+				$data['relatedGrids'] = array('view-grid', 'viewSource-grid');
 				$data['model'] = new Route('search');
 				$data['model']->viewSource($id);
 				$gridPath = '../route/_grid';
@@ -108,7 +108,7 @@ class ViewSourceController extends TController
 				$gridPath = '_grid';
 				break;
 			case 'view-grid':
-				$data['relatedGrids'] = array();
+				$data['relatedGrids'] = array('language-grid', 'missingLanguage-grid');
 				$data['model'] = new View('search');
 				if(isset($id))
 				{
@@ -123,66 +123,115 @@ class ViewSourceController extends TController
 		return $this->renderPartial($gridPath, $data, $return);
 	}
 	
-	public function actionTranslate($id, array $Language = array(), $dryRun = true)
+	public function actionTranslate(array $ViewSource = array(), array $Language = array(), $dryRun = true, array $scopes = array())
 	{
 		$translator = TranslateModule::translator();
-		if(!$translator->isViewRendererConfigured())
+		if(!$translator->canUseGoogleTranslate())
 		{
-			throw new CHttpException(501, TranslateModule::t("View translations is not configured. Please check your system configuration."));
+			throw new CHttpException(501, TranslateModule::t("Google translate is not available. Please check your system configuration."));
 		}
 		unset($_GET['Language']);
-		$model = new Language('search');
-		$model->setAttributes($Language);
-		$model->missingTranslationsViewSource($id);
-		
-		if(is_array($Language['id']))
+		$languageModel = new Language('search');
+	
+		if(isset($Language['id']) && is_array($Language['id']))
 		{
-			$condition = $model->createCondition('id', $Language['id']);
+			$languageCondition = $languageModel->createCondition('id', $Language['id']);
 		}
 		else
 		{
-			$condition = $model->getSearchCriteria();
+			$languageModel->setAttributes($Language);
+			$languageCondition = $languageModel->getSearchCriteria();
 		}
-		
+	
+		unset($_GET['ViewSource']);
+		$viewSourceModel = new ViewSource('search');
+	
+		foreach($scopes as $scope => $scopeParameters)
+		{
+			switch($scope)
+			{
+				case 'route':
+				case 'messageSource':
+				case 'language':
+				case 'category':
+				case 'message':
+					call_user_func_array(array($viewSourceModel, $scope), $scopeParameters);
+					break;
+			}
+		}
+	
+		if(isset($ViewSource['id']) && is_array($ViewSource['id']))
+		{
+			$viewSourceCondition = $viewSourceModel->createCondition('id', $ViewSource['id']);
+		}
+		else
+		{
+			$viewSourceModel->setAttributes($ViewSource);
+			$viewSourceCondition = $viewSourceModel->getSearchCriteria();
+		}
+	
 		$translationsCreated = 0;
+		$viewsTranslated = 0;
+		$languagesCount = 0;
 		$translationErrors = 0;
-		
+	
 		$transaction = Yii::app()->db->beginTransaction();
 		try
 		{
+			$languageIds = array();
+			foreach($languageModel->missingTranslationsViewSource()->findAll($languageCondition) as $language)
+			{
+				$languageIds[] = $language->id;
+			}
+			$criteria = new CDbCriteria($languageModel->createCondition('id', $languageIds, 'missingTranslationsLanguages'));
+			$criteria->mergeWith($viewSourceCondition);
+			$viewSources = $viewSourceModel->with('missingTranslationsLanguages')->findAll($criteria);
 			if($dryRun)
 			{
-				$translationsCreated = $model->count($condition);
+				$languageIds = array();
+				foreach($viewSources as $viewSource)
+				{
+					foreach($viewSource->missingTranslationsLanguages as $language)
+					{
+						$languageIds[$language->id] = $language->id;
+						$translationsCreated++;
+					}
+					$viewsTranslated++;
+				}
+				$languagesCount = count($languageIds);
 			}
 			else
 			{
-				$viewSource = ViewSource::model()->findByPk($id);
-				if($viewSource === null)
+				$viewRenderer = Yii::app()->getViewRenderer();
+				$languageIds = array();
+				foreach($viewSources as $viewSource)
 				{
-					throw new CHttpException(404, TranslateModule::t('A source view with ID {id} could not be found.', array('{id}' => $id)));
-				}						
-				else if($viewSource->getIsReadable())
-				{
-					$viewRenderer = Yii::app()->getViewRenderer();
-					foreach($model->findAll($condition) as $record)
+					if($viewSource->getIsReadable())
 					{
-						try
+						foreach($viewSource->missingTranslationsLanguages as $language)
 						{
-							$viewRenderer->generateViewFile($viewSource->path, $viewRenderer->getViewFile($viewSource->path, $record->code), null, $translator->messageSource, $record->code, false);
+							$languageIds[$language->id] = $language->id;
+							try
+							{
+								$viewRenderer->generateViewFile($viewSource->path, $viewRenderer->getViewFile($viewSource->path, $language->code), null, $translator->messageSource, $language->code, false);
+							}
+							catch(CException $ce)
+							{
+								Yii::log($ce->getMessage(), CLogger::LEVEL_ERROR, TranslateModule::ID);
+								$translationErrors++;
+								continue;
+							}
+							$translationsCreated++;
 						}
-						catch(CException $ce)
-						{
-							Yii::log($ce->getMessage(), CLogger::LEVEL_ERROR, TranslateModule::ID);
-							$translationErrors++;
-							continue;
-						}
-						$translationsCreated++;
+						$viewsTranslated++;
+					}
+					else
+					{
+						Yii::log('The source view with ID "'.$viewSource->id.'" could not be translated because its path not readable.', CLogger::LEVEL_ERROR, TranslateModule::ID);
+						$translationErrors++;
 					}
 				}
-				else
-				{
-					throw new CHttpException(500, TranslateModule::t('Unreadable source views cannot be translated.'));
-				}
+				$languagesCount = count($languageIds);
 			}
 			$transaction->commit();
 		}
@@ -195,33 +244,33 @@ class ViewSourceController extends TController
 			}
 			else
 			{
-				Yii::app()->getUser()->setFlash(TranslateModule::ID.'-error', $e->getMessage());
+				Yii::app()->getUser()->setFlash(TranslateModule::ID.'-error', $e->getView());
 				$this->redirect(Yii::app()->getRequest()->getUrlReferrer());
 			}
 		}
-		
+	
 		if($dryRun)
 		{
 			$message = array(
 				'status' => 'success',
-				'message' => TranslateModule::t('This action will create {translationsCreated} new view translations. Are you sure that you would like to continue?', array('{translationsCreated}' => $translationsCreated))
+				'message' => TranslateModule::t('This action will translate {viewsTranslated} source views into {languagesCount} languages. {translationsCreated} view translations in total will be created. Are you sure that you would like to continue?', array('{translationsCreated}' => $translationsCreated, '{languagesCount}' => $languagesCount, '{viewsTranslated}' => $viewsTranslated))
 			);
 		}
 		else if($translationErrors > 0)
 		{
 			$message = array(
 				'status' => 'warning',
-				'message' => TranslateModule::t('{translationErrors} errors occurred while creating the view translations. Only {translationsCreated} new view translations were created. Please see the system\'s logs for details.', array('{translationsCreated}' => $translationsCreated, '{translationErrors}' => $translationErrors))
+				'message' => TranslateModule::t('{translationErrors} views could not be translated. Only {translationsCreated} views were successfully translated. Please see the system\'s logs for details.', array('{translationsCreated}' => $translationsCreated, '{translationErrors}' => $translationErrors))
 			);
 		}
 		else
 		{
 			$message = array(
 				'status' => 'success',
-				'message' => TranslateModule::t('{translationsCreated} new view translations have been created.', array('{translationsCreated}' => $translationsCreated))
+				'message' => TranslateModule::t('{translationsCreated} view translations have been created for {viewsTranslated} source views in {languagesCount} languages.', array('{translationsCreated}' => $translationsCreated, '{languagesCount}' => $languagesCount, '{viewsTranslated}' => $viewsTranslated))
 			);
 		}
-		
+	
 		if(Yii::app()->getRequest()->getIsAjaxRequest())
 		{
 			echo CJavaScript::jsonEncode($message);
@@ -258,7 +307,7 @@ class ViewSourceController extends TController
 			}
 		}
 		
-		if(is_array($ViewSource['id']))
+		if(isset($ViewSource['id']) && is_array($ViewSource['id']))
 		{
 			$condition = $model->createCondition('id', $ViewSource['id']);
 		}

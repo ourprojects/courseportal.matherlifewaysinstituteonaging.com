@@ -26,47 +26,6 @@ class MessageController extends TController
 		));
 	}
 
-	public function actionTranslateMissing($id = null)
-	{
-		$transaction = Yii::app()->db->beginTransaction();
-		try
-		{
-			foreach(Message::model()->missingTranslations($id)->findAll() as $message)
-			{
-				$missingTranslations = $id === null ? MessageSource::model()->missingTranslations($message->language)->findAll() :
-				MessageSource::model()->missingTranslations($message->language)->findAllByPk($id);
-				$translations = TranslateModule::translator()->googleTranslate($missingTranslations, $message->language);
-
-				if(is_array($translations) && count($translations) === count($missingTranslations))
-				{
-					for($i = 0; $i < count($missingTranslations); $i++)
-					{
-						$translation = new Message();
-						$translation->id = $missingTranslations[$i]->id;
-						$translation->language = $message->language;
-						$translation->translation = $translations[$i];
-						if(!$translation->save())
-						{
-							$transaction->rollback();
-							throw new CHttpException(500, TranslateModule::t('An error occured while saving a translation'));
-						}
-					}
-				}
-				else
-				{
-					throw new CHttpException(500, TranslateModule::t('An error occured translating a message to {language} with google translate.', array('{language}' => $message->language)));
-				}
-			}
-		}
-		catch(Exception $e)
-		{
-			$transaction->rollback();
-			throw $e;
-		}
-		$transaction->commit();
-		return true;
-	}
-
 	/**
 	 * Manages all models.
 	 */
@@ -153,7 +112,7 @@ class MessageController extends TController
 				$result['translation'] = $Message->translation;
 				if($Message->getIsNewRecord())
 				{
-					foreach(Language::model()->missingTranslations($Message->id)->findAll() as $language)
+					foreach(Language::model()->missingTranslationsMessageSource($Message->id)->findAll() as $language)
 					{
 						$result['language_id'][$language->id] = array('text' => $language->name, 'selected' => false);
 					}
@@ -210,7 +169,7 @@ class MessageController extends TController
 		switch($name)
 		{
 			case 'category-grid':
-				$data['relatedGrids'] = array();
+				$data['relatedGrids'] = array('message-grid');
 				$data['model'] = new Category('search');
 				$data['model']->message($id, $languageId);
 				$gridPath = '../category/_grid';
@@ -231,7 +190,7 @@ class MessageController extends TController
 				$gridPath = '../route/_grid';
 				break;
 			case 'viewSource-grid':
-				$data['relatedGrids'] = array('view-grid');
+				$data['relatedGrids'] = array('view-grid', 'route-grid');
 				$data['model'] = new ViewSource('search');
 				$data['model']->message($id, $languageId);
 				$gridPath = '../viewSource/_grid';
@@ -275,7 +234,7 @@ class MessageController extends TController
 			}
 		}
 		
-		if(is_array($Message['id']) && is_array($Message['language_id']))
+		if(isset($Message['id']) &&  is_array($Message['id']) && isset($Message['language_id']) && is_array($Message['language_id']))
 		{
 			$condition = $model->createCondition(array('id', 'language_id'), $Message, null, true, true);
 		}

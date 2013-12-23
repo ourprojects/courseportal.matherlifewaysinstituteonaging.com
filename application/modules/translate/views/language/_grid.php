@@ -26,15 +26,15 @@ if(isset($messageId) || isset($viewId) || isset($categoryId) || isset($routeId))
 	}
 	else if(isset($viewId))
 	{
-		$buttonConfig['buttons']['update']['url'] = '$this->grid->getOwner()->createUrl("viewSource/translate", array("id" => '.$viewId.', "Language" => array("language_id" => $data->id), "dryRun" => 0))';
+		$buttonConfig['buttons']['update']['url'] = '$this->grid->getOwner()->createUrl("viewSource/translate", array("ViewSource" => array("id" => '.$viewId.'), "Language" => array("id" => $data->id), "dryRun" => 0))';
 	}
 	else if(isset($categoryId))
 	{
-		$buttonConfig['buttons']['update']['url'] = '$this->grid->getOwner()->createUrl("category/translate", array("id" => '.$categoryId.', "Language" => array("language_id" => $data->id), "dryRun" => 0))';
+		$buttonConfig['buttons']['update']['url'] = '$this->grid->getOwner()->createUrl("messageSource/translate", array("scopes" => array("category" => array("id" => '.$categoryId.')), "Language" => array("id" => $data->id), "dryRun" => 0))';
 	}
 	else if(isset($routeId))
 	{
-		$buttonConfig['buttons']['update']['url'] = '$this->grid->getOwner()->createUrl("route/translate", array("id" => '.$routeId.', "Language" => array("language_id" => $data->id), "dryRun" => 0))';
+		$buttonConfig['buttons']['update']['url'] = '$this->grid->getOwner()->createUrl("viewSource/translate", array("scopes" => array("route" => array("id" => '.$routeId.')), "Language" => array("id" => $data->id), "dryRun" => 0))';
 	}
 }
 else

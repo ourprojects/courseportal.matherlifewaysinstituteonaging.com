@@ -47,6 +47,7 @@ class MessageSource extends CActiveRecord
 
 	public function relations()
 	{
+		$db = $this->getDbConnection();
 		return array(
 			'viewMessages' => array(self::HAS_MANY, 'ViewMessage', 'message_id'),
 			'views' => array(self::MANY_MANY, 'View', ViewMessage::model()->tableName().'(message_id, view_id)'),
@@ -63,6 +64,21 @@ class MessageSource extends CActiveRecord
 			'messageCategories' => array(self::HAS_MANY, 'CategoryMessage', 'message_id'),
 			'categories' => array(self::MANY_MANY, 'Category', CategoryMessage::model()->tableName().'(message_id, category_id)'),
 			'categoryCount' => array(self::STAT, 'Category', CategoryMessage::model()->tableName().'(message_id, category_id)'),
+			'missingTranslationsLanguages' => array(
+				self::HAS_MANY, 
+				'Language', 
+				Language::model(), 
+				'with' => array(
+					'messages' => array(
+						'joinType' => 'LEFT OUTER JOIN', 
+						'on' => $db->quoteColumnName($this->getTableAlias().'.id').'='.$db->quoteColumnName('messages.id')
+					)
+				),
+				'on' => '1=1',
+				'condition' => '(('.$db->quoteColumnName('missingTranslationsLanguages.id').'!='.$db->quoteColumnName($this->getTableAlias().'.language_id').') AND ('.$db->quoteColumnName('messages.id').' IS NULL))',
+				'together' => true,
+				'group' => $db->quoteColumnName('missingTranslationsLanguages.id')
+			),
 		);
 	}
 

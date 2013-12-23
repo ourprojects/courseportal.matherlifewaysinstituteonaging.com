@@ -17,8 +17,7 @@
 								array(
 									'gridId' => 'category-grid',
 									'activeRecordClass' => 'Category',
-									'url' => Yii::app()->getController()->createUrl('category/delete'),
-									'scopes' => array('view' => array('id' => $view->id, 'language_id' => $view->language_id)),
+									'url' => Yii::app()->getController()->createUrl('category/delete', array('scopes' => array('view' => array('id' => $view->id, 'language_id' => $view->language_id)))),
 									'buttonText' => TranslateModule::t('Delete All'),
 									'loadingText' => TranslateModule::t('Loading...'),
 									'dialogTitle' => TranslateModule::t('Delete Categories'),
@@ -31,8 +30,7 @@
 								array(
 									'gridId' => 'messageSource-grid',
 									'activeRecordClass' => 'MessageSource',
-									'url' => Yii::app()->getController()->createUrl('messageSource/delete'),
-									'scopes' => array('view' => array('id' => $view->id, 'language_id' => $view->language_id)),
+									'url' => Yii::app()->getController()->createUrl('messageSource/delete', array('scopes' => array('view' => array('id' => $view->id, 'language_id' => $view->language_id)))),
 									'buttonText' => TranslateModule::t('Delete All'),
 									'loadingText' => TranslateModule::t('Loading...'),
 									'dialogTitle' => TranslateModule::t('Delete Source Messages'),
@@ -45,9 +43,8 @@
 								array(
 									'gridId' => 'message-grid',
 									'activeRecordClass' => 'Message',
-									'url' => Yii::app()->getController()->createUrl('message/delete'),
+									'url' => Yii::app()->getController()->createUrl('message/delete', array('scopes' => array('view' => array('id' => $view->id, 'language_id' => $view->language_id)))),
 									'keys' => array('id', 'language_id'),
-									'scopes' => array('view' => array('id' => $view->id, 'language_id' => $view->language_id)),
 									'buttonText' => TranslateModule::t('Delete All'),
 									'loadingText' => TranslateModule::t('Loading...'),
 									'dialogTitle' => TranslateModule::t('Delete Message Translations'),
@@ -60,8 +57,7 @@
 								array(
 									'gridId' => 'route-grid',
 									'activeRecordClass' => 'Route',
-									'url' => Yii::app()->getController()->createUrl('route/delete'),
-									'scopes' => array('view' => array('id' => $view->id, 'language_id' => $view->language_id)),
+									'url' => Yii::app()->getController()->createUrl('route/delete', array('scopes' => array('view' => array('id' => $view->id, 'language_id' => $view->language_id)))),
 									'buttonText' => TranslateModule::t('Delete All'),
 									'loadingText' => TranslateModule::t('Loading...'),
 									'dialogTitle' => TranslateModule::t('Delete Routes'),
