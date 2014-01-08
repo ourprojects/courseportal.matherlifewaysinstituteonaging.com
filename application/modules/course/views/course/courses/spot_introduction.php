@@ -11,8 +11,8 @@
 	$this->widget(
                   'ext.fancybox.EFancyBox',
                   array('id' => $lesson,
-                        'config' => array('width' => '1000',
-                                          'min-height' => '720',
+                        'config' => array('width' => '1280',
+                                          'min-height' => '820',
                                           'arrows' => false,
                                           'autoSize' => false,
                                           'mouseWheel' => false))
@@ -180,15 +180,13 @@ href="#lesson-1-slide-12" data-fancybox-group="lesson-1" class="hide lesson-1"><
     $this->widget(
                   'ext.JWplayer.JWplayer',
                   array(
-                        'id' => 'course1_snip1',
+                        'id' => 'test1',
                         'config' => array(
                                           'image' => $this->createDownloadUrl('videos/spencer_introduction/posterhere.png'),
-                                          'width' => '540px',
-                                          'height' => '400px',
+                                          'width' => '1280px',
+                                          'height' => '720px',
                                           'levels' => array(
-                                                            array('file' => $this->createDownloadUrl('videos/spencer_introduction/course1_snip1.m4v')),
-                                                            array('file' => $this->createDownloadUrl('videos/spencer_introduction/course1_snip1.webm')),
-                                                            array('file' => $this->createDownloadUrl('videos/spencer_introduction/course1_snip1.ogv'))
+                                                            array('file' => $this->createDownloadUrl('videos/spencer_introduction/test1.mp4'))
                                                             )
                                           )
                         )
