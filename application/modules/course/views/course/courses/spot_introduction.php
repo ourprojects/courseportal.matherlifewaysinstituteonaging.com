@@ -174,7 +174,7 @@ href="#lesson-1-slide-12" data-fancybox-group="lesson-1" class="hide lesson-1"><
 <div id="lesson-1-slide-3" class="course-slide">
 <div class="content">
 
-<div class="box-grey">
+<div class="box-grey" style="margin-left: auto; margin-right: auto;">
 <?php
     $this->widget(
                   'ext.JWplayer.JWplayer',
