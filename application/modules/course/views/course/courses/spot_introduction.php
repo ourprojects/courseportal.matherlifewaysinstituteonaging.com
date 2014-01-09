@@ -182,7 +182,7 @@ href="#lesson-1-slide-12" data-fancybox-group="lesson-1" class="hide lesson-1"><
                         'id' => 'test1',
                         'config' => array(
                                           'image' => $this->createDownloadUrl('videos/spencer_introduction/posterhere.png'),
-                                          'width' => '885px',
+                                          'width' => '900px',
                                           'height' => '480px',
                                           'levels' => array(
                                                             array('file' => $this->createDownloadUrl('videos/spencer_introduction/test1.mp4'))
